@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__LimitKt$take$$inlined$unsafeFlow$1"
     f = "Limit.kt"
     l = {
-        0x74
+        0x73
     }
     m = "collect"
 .end annotation

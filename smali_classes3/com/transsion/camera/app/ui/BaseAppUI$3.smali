@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
     .registers 2
 
-    .line 1875
+    .line 1866
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$3;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAllGuideFragmentExit()V
     .registers 2
 
-    .line 1878
+    .line 1869
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$3;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     const/16 v0, 0x4e
@@ -51,14 +51,14 @@
 .method public onGuideFragmentResume()V
     .registers 3
 
-    .line 1883
+    .line 1874
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$3;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     const/16 v1, 0x4d
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/BaseAppUI;->notifyRawActionToAppUI(I)V
 
-    .line 1884
+    .line 1875
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$3;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     const/16 v0, 0x6b

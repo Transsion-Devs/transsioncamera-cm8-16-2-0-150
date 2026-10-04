@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)V
     .registers 2
 
-    .line 445
+    .line 467
     iput-object p1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$MyConfigChooser;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,17 +40,17 @@
 
     const/16 v0, 0x13
 
-    .line 450
+    .line 472
     new-array v3, v0, [I
 
     fill-array-data v3, :array_26
 
     const/4 v0, 0x1
 
-    .line 462
+    .line 484
     new-array v4, v0, [Ljavax/microedition/khronos/egl/EGLConfig;
 
-    .line 463
+    .line 485
     new-array v6, v0, [I
 
     const/4 v5, 0x1
@@ -59,10 +59,10 @@
 
     move-object v2, p2
 
-    .line 464
+    .line 486
     invoke-interface/range {v1 .. v6}, Ljavax/microedition/khronos/egl/EGL10;->eglChooseConfig(Ljavax/microedition/khronos/egl/EGLDisplay;[I[Ljavax/microedition/khronos/egl/EGLConfig;I[I)Z
 
-    .line 466
+    .line 488
     iget-object p0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$MyConfigChooser;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fgetmWindowSurfaceFactory(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)Lcom/transsion/camera/app/ui/opengl/WindowSurfaceFactory;
@@ -73,7 +73,7 @@
 
     const/4 p0, 0x0
 
-    .line 468
+    .line 490
     aget p1, v6, p0
 
     if-nez p1, :cond_22
@@ -82,7 +82,7 @@
 
     return-object p0
 
-    .line 472
+    .line 494
     :cond_22
     aget-object p0, v4, p0
 

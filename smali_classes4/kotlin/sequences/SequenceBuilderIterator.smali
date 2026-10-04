@@ -197,8 +197,6 @@
     iput-object v1, p0, Lkotlin/sequences/SequenceBuilderIterator;->nextStep:Lkotlin/coroutines/Continuation;
 
     .line 129
-    sget-object v1, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
-
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     invoke-static {v1}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;

@@ -1,14 +1,11 @@
 .class Lcom/transsion/camera/app/ui/PopSettingUI$5;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/app/ui/PopSettingUI;->showPopSettingView(ZZZ)V
+    value = Lcom/transsion/camera/app/ui/PopSettingUI;->showPopOptionAnimation(Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,59 +14,41 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic val$entryText:Landroid/widget/TextView;
-
-
 # direct methods
-.method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI;Landroid/widget/TextView;)V
-    .registers 3
+.method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI;)V
+    .registers 2
 
-    .line 887
-    iput-object p2, p0, Lcom/transsion/camera/app/ui/PopSettingUI$5;->val$entryText:Landroid/widget/TextView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 816
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPreDraw()Z
-    .registers 4
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .registers 2
 
-    .line 890
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$5;->val$entryText:Landroid/widget/TextView;
+    .line 829
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    return-void
+.end method
 
-    move-result-object v0
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .registers 2
 
-    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+    .line 824
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 891
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$5;->val$entryText:Landroid/widget/TextView;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getLineCount()I
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .registers 2
 
-    move-result v0
+    .line 819
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    const/4 v1, 0x2
-
-    const/4 v2, 0x1
-
-    if-le v0, v1, :cond_1d
-
-    .line 893
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$5;->val$entryText:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setSelected(Z)V
-
-    .line 894
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$5;->val$entryText:Landroid/widget/TextView;
-
-    invoke-virtual {p0, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
-
-    :cond_1d
-    return v2
+    return-void
 .end method

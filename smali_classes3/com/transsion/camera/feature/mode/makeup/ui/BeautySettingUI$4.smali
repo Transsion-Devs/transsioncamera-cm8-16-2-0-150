@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$SeekBarChangeListener;
+.implements Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$BarClickListener;
 
 
 # annotations
@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
     .registers 2
 
-    .line 104
+    .line 133
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$4;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,27 +35,30 @@
 
 
 # virtual methods
-.method public onProgressChanged(IZ)V
-    .registers 3
+.method public barOnClick(I)V
+    .registers 4
 
-    .line 107
-    iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$4;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
+    const-wide/16 v0, 0xc8
 
-    invoke-static {p2}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
+    .line 136
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isFastDoubleClick(J)Z
 
-    move-result-object p2
+    move-result v0
 
-    if-eqz p2, :cond_11
+    if-eqz v0, :cond_9
 
-    .line 108
+    return-void
+
+    :cond_9
+    const/4 v0, 0x0
+
+    .line 139
+    sput-boolean v0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->isPressBack:Z
+
+    .line 140
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$4;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
-    invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
+    invoke-static {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$msettingUIAnimShowOrHide(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;I)Z
 
-    move-result-object p0
-
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->progressChanged(I)V
-
-    :cond_11
     return-void
 .end method

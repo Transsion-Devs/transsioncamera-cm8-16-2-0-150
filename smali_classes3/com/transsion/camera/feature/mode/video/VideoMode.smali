@@ -117,7 +117,7 @@
 .method public static synthetic $r8$lambda$j97DerHljmlcxn-Gj5-sQSm5S14(Lcom/transsion/camera/app/common/mode/IVideoModeCallback;)V
     .registers 1
 
-    .line 1793
+    .line 1792
     invoke-interface {p0}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->previewViewTypeChanged()V
 
     return-void
@@ -292,21 +292,21 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mTextureHolder:Lcom/transsion/camera/featurelibs/media/ITextureHolder;
 
-    .line 906
+    .line 905
     new-instance p1, Lcom/transsion/camera/feature/mode/video/VideoMode$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/video/VideoMode$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/feature/mode/video/VideoMode;)V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mPauseResumeListener:Landroid/view/View$OnClickListener;
 
-    .line 915
+    .line 914
     new-instance p1, Lcom/transsion/camera/feature/mode/video/VideoMode$3;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/video/VideoMode$3;-><init>(Lcom/transsion/camera/feature/mode/video/VideoMode;)V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoSnapShotListener:Landroid/view/View$OnClickListener;
 
-    .line 1352
+    .line 1353
     new-instance p1, Lcom/transsion/camera/feature/mode/video/VideoMode$4;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/video/VideoMode$4;-><init>(Lcom/transsion/camera/feature/mode/video/VideoMode;)V
@@ -493,22 +493,22 @@
 .method private createVideoUISpec()Lcom/transsion/camera/app/common/ui/VideoUISpec;
     .registers 4
 
-    .line 950
+    .line 949
     new-instance v0, Lcom/transsion/camera/app/common/ui/VideoUISpec;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/ui/VideoUISpec;-><init>()V
 
     const-wide/16 v1, 0x0
 
-    .line 953
+    .line 952
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/ui/VideoUISpec;->setRecordingTotalSize(J)V
 
     const/4 v1, 0x1
 
-    .line 955
+    .line 954
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/VideoUISpec;->setSupportedPause(Z)V
 
-    .line 956
+    .line 955
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->isVssSupported()Z
@@ -517,12 +517,12 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/VideoUISpec;->setSupportedVss(Z)V
 
-    .line 957
+    .line 956
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mPauseResumeListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/VideoUISpec;->setPauseResumeListener(Landroid/view/View$OnClickListener;)V
 
-    .line 958
+    .line 957
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoSnapShotListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/ui/VideoUISpec;->setVideoSnapShotListener(Landroid/view/View$OnClickListener;)V
@@ -533,24 +533,24 @@
 .method private doOnFrameResultCallback(Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
     .registers 9
 
-    .line 1420
+    .line 1421
     invoke-interface {p3, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->checkBrightnessResult(Landroid/hardware/camera2/CaptureResult;)[I
 
     move-result-object p1
 
-    if-eqz p1, :cond_ce
-
-    .line 1422
-    array-length p2, p1
-
-    if-lez p2, :cond_ce
+    if-eqz p1, :cond_ca
 
     .line 1423
+    array-length p2, p1
+
+    if-lez p2, :cond_ca
+
+    .line 1424
     iget-boolean p2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHDRState:Z
 
     const/4 p3, 0x0
 
-    .line 1425
+    .line 1426
     aget v0, p1, p3
 
     iget v1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoSuperNightOutBvLimit:I
@@ -565,7 +565,7 @@
 
     goto :goto_1f
 
-    .line 1428
+    .line 1429
     :cond_16
     iget v1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoSuperNightBvLimit:I
 
@@ -585,7 +585,7 @@
     :goto_1f
     if-eq p2, v0, :cond_7d
 
-    .line 1432
+    .line 1433
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p2}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->isVideoRecording()Z
@@ -598,7 +598,7 @@
 
     const-string v3, "key_video_enhance"
 
-    .line 1433
+    .line 1434
     invoke-interface {p2, v3}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -632,7 +632,7 @@
 
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 1434
+    .line 1435
     invoke-interface {p2}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->getCurrentUIState()I
 
     move-result p2
@@ -649,10 +649,10 @@
 
     if-eqz p2, :cond_7d
 
-    .line 1435
+    .line 1436
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHDRState:Z
 
-    .line 1436
+    .line 1437
     sget-object p2, Lcom/transsion/camera/feature/mode/video/VideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -673,14 +673,14 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1437
+    .line 1438
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHDRState:Z
 
     invoke-interface {p2, v0}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->setVideoHDRState(Z)V
 
-    .line 1439
+    .line 1440
     :cond_7d
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -690,7 +690,7 @@
 
     move-result-object p2
 
-    .line 1440
+    .line 1441
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v3
@@ -701,14 +701,14 @@
 
     if-eqz p2, :cond_b4
 
-    .line 1441
+    .line 1442
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result p2
 
     if-le p2, v2, :cond_b4
 
-    .line 1442
+    .line 1443
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p2
@@ -719,7 +719,7 @@
 
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 1443
+    .line 1444
     invoke-interface {p2, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -738,33 +738,28 @@
 
     if-nez p2, :cond_b4
 
-    .line 1446
+    .line 1447
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->showPreispHint()V
 
-    .line 1449
-    :cond_b4
-    iget-boolean p2, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mIsLowlightHintSupport:Z
-
-    if-eqz p2, :cond_ce
-
     .line 1450
+    :cond_b4
     iget-boolean p2, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPaused:Z
 
-    if-eqz p2, :cond_bd
+    if-eqz p2, :cond_b9
 
-    goto :goto_ce
+    goto :goto_ca
 
     .line 1453
-    :cond_bd
+    :cond_b9
     aget p1, p1, p3
 
     iget p2, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mSuperAntiLowLightBvLimit:I
 
-    if-gt p1, p2, :cond_cb
+    if-gt p1, p2, :cond_c7
 
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoModeSuperAntiValueOn:Z
 
-    if-eqz p1, :cond_cb
+    if-eqz p1, :cond_c7
 
     .line 1455
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->showLowlightHint()V
@@ -772,18 +767,18 @@
     return-void
 
     .line 1457
-    :cond_cb
+    :cond_c7
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->hideLowlightHint()V
 
-    :cond_ce
-    :goto_ce
+    :cond_ca
+    :goto_ca
     return-void
 .end method
 
 .method private enableDVMask()V
     .registers 3
 
-    .line 1343
+    .line 1344
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->supportDVGLRecording()Z
 
     move-result v0
@@ -792,7 +787,7 @@
 
     goto :goto_b
 
-    .line 1346
+    .line 1347
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
@@ -801,7 +796,7 @@
     :goto_b
     return-void
 
-    .line 1349
+    .line 1350
     :cond_c
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mScreenFormType:I
 
@@ -825,7 +820,7 @@
 .method private getConfigForSuperAntiVideo()Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 8
 
-    .line 1715
+    .line 1716
     sget v0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_RATIO_UNIT:I
 
     int-to-float v1, v0
@@ -834,7 +829,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
-    .line 1716
+    .line 1717
     invoke-virtual {v2, v3}, Lcom/transsion/camera/app/common/CameraRepository;->getDeviceZoomRatio(Ljava/lang/String;)F
 
     move-result v2
@@ -843,7 +838,7 @@
 
     float-to-int v1, v1
 
-    .line 1717
+    .line 1718
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
@@ -852,7 +847,7 @@
 
     if-eqz v2, :cond_88
 
-    .line 1718
+    .line 1719
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
@@ -863,20 +858,20 @@
 
     goto :goto_88
 
-    .line 1722
+    .line 1723
     :cond_1e
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackWideCameraId()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1723
+    .line 1724
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->getBackMainCameraId()Ljava/lang/String;
 
     move-result-object v2
 
     int-to-float v0, v0
 
-    .line 1724
+    .line 1725
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
 
     invoke-virtual {v3, v1}, Lcom/transsion/camera/app/common/CameraRepository;->getDeviceZoomRatio(Ljava/lang/String;)F
@@ -887,12 +882,12 @@
 
     float-to-int v0, v0
 
-    .line 1726
+    .line 1727
     new-instance v3, Lcom/transsion/camera/app/common/ZoomConfig;
 
     invoke-direct {v3}, Lcom/transsion/camera/app/common/ZoomConfig;-><init>()V
 
-    .line 1727
+    .line 1728
     new-instance v4, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     invoke-direct {v4}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;-><init>()V
@@ -903,14 +898,14 @@
 
     sget v5, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
 
-    .line 1728
+    .line 1729
     invoke-virtual {v4, v0, v5}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setRatioRange(II)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v4
 
     const/4 v6, 0x1
 
-    .line 1729
+    .line 1730
     invoke-virtual {v4, v6}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setLensType(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v4
@@ -919,10 +914,10 @@
 
     move-result-object v4
 
-    .line 1727
+    .line 1728
     invoke-virtual {v3, v4}, Lcom/transsion/camera/app/common/ZoomConfig;->addLensInfo(Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;)Lcom/transsion/camera/app/common/ZoomConfig;
 
-    .line 1730
+    .line 1731
     new-instance v4, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     invoke-direct {v4}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;-><init>()V
@@ -931,14 +926,14 @@
 
     move-result-object v4
 
-    .line 1731
+    .line 1732
     invoke-virtual {v4, v5, v5, v6}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setRatioRange(IIZ)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v4
 
     const/4 v6, 0x2
 
-    .line 1732
+    .line 1733
     invoke-virtual {v4, v6}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setLensType(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v4
@@ -947,10 +942,10 @@
 
     move-result-object v2
 
-    .line 1730
+    .line 1731
     invoke-virtual {v3, v2}, Lcom/transsion/camera/app/common/ZoomConfig;->addLensInfo(Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;)Lcom/transsion/camera/app/common/ZoomConfig;
 
-    .line 1733
+    .line 1734
     invoke-virtual {v3, v0, v5}, Lcom/transsion/camera/app/common/ZoomConfig;->setZoomRange(II)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v2
@@ -959,19 +954,19 @@
 
     move-result-object v4
 
-    .line 1734
+    .line 1735
     invoke-virtual {v2, v4}, Lcom/transsion/camera/app/common/ZoomConfig;->setSupportedZoomTypes([I)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v2
 
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
-    .line 1735
+    .line 1736
     invoke-virtual {v2, v4}, Lcom/transsion/camera/app/common/ZoomConfig;->setCurrentLensTypeByCameraId(Ljava/lang/String;)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v2
 
-    .line 1736
+    .line 1737
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
     invoke-static {v1, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -990,7 +985,7 @@
 
     return-object v3
 
-    .line 1719
+    .line 1720
     :cond_88
     :goto_88
     new-instance p0, Lcom/transsion/camera/app/common/ZoomConfig;
@@ -1007,17 +1002,17 @@
 .method private getFlashKey()Ljava/lang/String;
     .registers 2
 
-    .line 636
+    .line 634
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 637
+    .line 635
     const-string v0, "key_flash_facade"
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 636
+    .line 634
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -1026,7 +1021,7 @@
 
     return-object v0
 
-    .line 640
+    .line 638
     :cond_f
     const-string p0, "key_flash"
 
@@ -1036,12 +1031,12 @@
 .method private hideLowlightHint()V
     .registers 3
 
-    .line 1483
+    .line 1482
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsLowlightHintShowing:Z
 
     if-eqz v0, :cond_e
 
-    .line 1484
+    .line 1483
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mLowLightHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -1050,7 +1045,7 @@
 
     const/4 v0, 0x0
 
-    .line 1485
+    .line 1484
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsLowlightHintShowing:Z
 
     :cond_e
@@ -1187,24 +1182,24 @@
 .method private initVideoModeUI(Landroid/view/LayoutInflater;Lcom/transsion/camera/app/common/ui/VideoUISpec;)V
     .registers 4
 
-    .line 866
+    .line 865
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->onCreateVideoUI()Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
-    .line 867
+    .line 866
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->initVideoUI(Lcom/transsion/camera/app/common/ui/VideoUISpec;)V
 
-    .line 868
+    .line 867
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 869
+    .line 868
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getModeSettingUISpec()Lcom/transsion/camera/app/common/ModeSettingUISpec;
@@ -1213,26 +1208,26 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->setModeSettingUISpec(Lcom/transsion/camera/app/common/ModeSettingUISpec;)V
 
-    .line 870
+    .line 869
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getOrientation()I
 
     move-result p1
 
     const/4 p2, 0x6
 
-    .line 871
+    .line 870
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mScreenFormType:I
 
     if-ne p2, v0, :cond_28
 
-    .line 872
+    .line 871
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getAodUIOrientation()I
 
     move-result p1
 
-    .line 874
+    .line 873
     :cond_28
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -1242,19 +1237,19 @@
 
     move-result-object p2
 
-    .line 875
+    .line 874
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {v0, p2}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->updateSwitchPreviewValue(Ljava/lang/String;)V
 
-    .line 876
+    .line 875
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mScreenFormType:I
 
     invoke-virtual {p2, v0, p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->setScreenFormType(II)V
 
-    .line 877
+    .line 876
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     new-instance p2, Lcom/transsion/camera/feature/mode/video/VideoMode$$ExternalSyntheticLambda4;
@@ -1263,21 +1258,21 @@
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/common/IAppUI;->setVideoPowerSavingListener(Lcom/transsion/camera/app/common/IAppUIListener$VideoPowerSavingListener;)V
 
-    .line 878
+    .line 877
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/common/IAppUI;->registerPreviewRectListener(Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;)V
 
-    .line 879
+    .line 878
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->updateLowLight(Z)V
 
-    .line 880
+    .line 879
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     new-instance p2, Lcom/transsion/camera/feature/mode/video/VideoMode$2;
@@ -1294,7 +1289,7 @@
 
     monitor-enter p0
 
-    .line 1312
+    .line 1313
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1324,12 +1319,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1313
+    .line 1314
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsVideoPreviewCallbackInit:Z
 
     if-eqz v0, :cond_32
 
-    .line 1314
+    .line 1315
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[initVideoPreviewCallback], return"
@@ -1338,7 +1333,7 @@
     :try_end_2e
     .catchall {:try_start_1 .. :try_end_2e} :catchall_30
 
-    .line 1315
+    .line 1316
     monitor-exit p0
 
     return-void
@@ -1348,7 +1343,7 @@
 
     goto :goto_6f
 
-    .line 1317
+    .line 1318
     :cond_32
     :try_start_32
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
@@ -1363,21 +1358,21 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->init(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/preview/IPreviewOperator;I)V
 
-    .line 1318
+    .line 1319
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->initAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 1319
+    .line 1320
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mHDRDataPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoHDRRecordingCallback;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->setHDRDataPreviewDataCallback(Lcom/transsion/camera/app/common/mode/IVideoHDRRecordingCallback;)V
 
-    .line 1320
+    .line 1321
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
@@ -1388,10 +1383,10 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->setVideoBackWideSupport360Hdr(Z)V
 
-    .line 1321
+    .line 1322
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->enableDVMask()V
 
-    .line 1322
+    .line 1323
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isModeSupportVideoAsd(Landroid/content/Context;)Z
@@ -1400,7 +1395,7 @@
 
     if-nez v0, :cond_6a
 
-    .line 1323
+    .line 1324
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHDRState:Z
@@ -1410,12 +1405,12 @@
     :cond_6a
     const/4 v0, 0x1
 
-    .line 1325
+    .line 1326
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsVideoPreviewCallbackInit:Z
     :try_end_6d
     .catchall {:try_start_32 .. :try_end_6d} :catchall_30
 
-    .line 1326
+    .line 1327
     monitor-exit p0
 
     return-void
@@ -1432,7 +1427,7 @@
 .method private isVideoBeautyHasConfig(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
     .registers 4
 
-    .line 814
+    .line 813
     invoke-static {p1, p3}, Lcom/transsion/camera/utils/CameraUtil;->getStringArray(Landroid/content/Context;Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p0
@@ -1447,7 +1442,7 @@
 .method private isVideoBeautyNeedReduce(I)Z
     .registers 10
 
-    .line 1069
+    .line 1068
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1464,7 +1459,7 @@
 
     if-eqz v0, :cond_e8
 
-    .line 1070
+    .line 1069
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->getVideoBeautyType(Landroid/content/Context;)I
@@ -1479,21 +1474,21 @@
 
     if-ne v0, v2, :cond_9a
 
-    .line 1071
+    .line 1070
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0, v3}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1072
+    .line 1071
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 1073
+    .line 1072
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v2
@@ -1510,7 +1505,7 @@
 
     if-nez v2, :cond_79
 
-    .line 1074
+    .line 1073
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v2
@@ -1523,7 +1518,7 @@
 
     goto :goto_79
 
-    .line 1080
+    .line 1079
     :cond_43
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -1535,7 +1530,7 @@
 
     if-eqz v2, :cond_e8
 
-    .line 1081
+    .line 1080
     sget-object v2, Lcom/transsion/camera/feature/mode/video/VideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1562,7 +1557,7 @@
 
     invoke-static {v2, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1083
+    .line 1082
     invoke-static {v0, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -1575,7 +1570,7 @@
 
     return v4
 
-    .line 1075
+    .line 1074
     :cond_79
     :goto_79
     sget-object p1, Lcom/transsion/camera/feature/mode/video/VideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1598,7 +1593,7 @@
 
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1077
+    .line 1076
     invoke-static {v0, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -1607,7 +1602,7 @@
 
     return v4
 
-    .line 1088
+    .line 1087
     :cond_9a
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
@@ -1621,14 +1616,14 @@
 
     if-ne p1, v4, :cond_ca
 
-    .line 1089
+    .line 1088
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->isSupportLiteFaceBeauty()Z
 
     move-result p1
 
     if-eqz p1, :cond_bc
 
-    .line 1090
+    .line 1089
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0, v2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
@@ -1637,7 +1632,7 @@
 
     if-eqz p0, :cond_bb
 
-    .line 1091
+    .line 1090
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -1649,7 +1644,7 @@
     :cond_bb
     return v1
 
-    .line 1093
+    .line 1092
     :cond_bc
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -1665,7 +1660,7 @@
 
     return p0
 
-    .line 1094
+    .line 1093
     :cond_ca
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->isSupportLiteFaceBeauty()Z
 
@@ -1683,7 +1678,7 @@
 
     if-ne p1, v3, :cond_e8
 
-    .line 1095
+    .line 1094
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0, v2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
@@ -1692,7 +1687,7 @@
 
     if-eqz p0, :cond_e8
 
-    .line 1096
+    .line 1095
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -1708,17 +1703,17 @@
 .method private isVideoBeautyOn()Z
     .registers 2
 
-    .line 1176
+    .line 1175
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_video_facebeauty"
 
-    .line 1177
+    .line 1176
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 1176
+    .line 1175
     const-string/jumbo v0, "video_facebeauty_on"
 
     invoke-static {v0, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1731,7 +1726,7 @@
 .method private isVideoHumanDetectSupported(Landroid/content/Context;)Z
     .registers 2
 
-    .line 1104
+    .line 1103
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -1748,17 +1743,17 @@
 .method private isVideoMakeUpOn()Z
     .registers 2
 
-    .line 1171
+    .line 1170
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_video_makeup"
 
-    .line 1172
+    .line 1171
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 1171
+    .line 1170
     const-string v0, "on"
 
     invoke-static {v0, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1771,7 +1766,7 @@
 .method private isVideoPortraitNeedReduce()Z
     .registers 3
 
-    .line 1060
+    .line 1059
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_video_portrait"
@@ -1790,7 +1785,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
-    .line 1061
+    .line 1060
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -1816,17 +1811,17 @@
 .method private isVideoPortraitOn()Z
     .registers 2
 
-    .line 1181
+    .line 1180
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_video_portrait"
 
-    .line 1182
+    .line 1181
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 1181
+    .line 1180
     const-string v0, "on"
 
     invoke-static {v0, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1839,7 +1834,7 @@
 .method private isWideOrLongFocusSupport(Ljava/lang/String;)Z
     .registers 9
 
-    .line 1211
+    .line 1210
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1852,7 +1847,7 @@
 
     move-result v0
 
-    .line 1212
+    .line 1211
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->isVideoSuperNightSupport()Z
@@ -1867,7 +1862,7 @@
 
     if-eqz v0, :cond_24
 
-    .line 1213
+    .line 1212
     :cond_18
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -1889,7 +1884,7 @@
     :goto_25
     if-eqz v1, :cond_33
 
-    .line 1214
+    .line 1213
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v5
@@ -1907,7 +1902,7 @@
     :cond_33
     move p1, v2
 
-    .line 1215
+    .line 1214
     :goto_34
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2046,26 +2041,26 @@
 .method private synthetic lambda$new$1(Landroid/view/View;)V
     .registers 3
 
-    .line 907
+    .line 906
     sget-object p1, Lcom/transsion/camera/feature/mode/video/VideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[mPauseResumeListener] click"
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 908
+    .line 907
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
     if-eqz p1, :cond_11
 
-    .line 909
+    .line 908
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mTextureRecorder:Lcom/transsion/camera/app/common/recorder/RecorderManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/recorder/RecorderManager;->pauseResume()V
 
     return-void
 
-    .line 911
+    .line 910
     :cond_11
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->pauseResumeRecording()V
 
@@ -2075,7 +2070,7 @@
 .method private needReducePreviewSize(I)Z
     .registers 5
 
-    .line 1043
+    .line 1042
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isVideoPortraitNeedReduce()Z
 
     move-result v0
@@ -2084,7 +2079,7 @@
 
     if-nez v0, :cond_2b
 
-    .line 1044
+    .line 1043
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isVideoBeautyNeedReduce(I)Z
 
     move-result p1
@@ -2093,7 +2088,7 @@
 
     goto :goto_2b
 
-    .line 1048
+    .line 1047
     :cond_e
     iget p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mScreenFormType:I
 
@@ -2103,7 +2098,7 @@
 
     if-ne p1, v0, :cond_2a
 
-    .line 1049
+    .line 1048
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_360_video_hdr"
@@ -2120,7 +2115,7 @@
 
     if-eqz p1, :cond_29
 
-    .line 1050
+    .line 1049
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHDRState:Z
 
     if-eqz p0, :cond_29
@@ -2141,14 +2136,14 @@
 .method private saveJpegToFile([BLandroid/graphics/Bitmap;)V
     .registers 7
 
-    .line 1387
+    .line 1388
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 1392
+    .line 1393
     :cond_5
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -2162,20 +2157,20 @@
 
     move-result-object v1
 
-    .line 1393
+    .line 1394
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mPhotoHelper:Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;
 
-    .line 1394
+    .line 1395
     invoke-interface {v0}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->getCameraDirectory()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1393
+    .line 1394
     invoke-virtual {v2, p1, p2, v1, v3}, Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;->createContentValues([BLandroid/graphics/Bitmap;Landroid/location/Location;Ljava/lang/String;)Landroid/content/ContentValues;
 
     move-result-object v1
 
-    .line 1395
+    .line 1396
     new-instance v2, Lcom/transsion/camera/feature/mode/video/VideoMode$5;
 
     invoke-direct {v2, p0}, Lcom/transsion/camera/feature/mode/video/VideoMode$5;-><init>(Lcom/transsion/camera/feature/mode/video/VideoMode;)V
@@ -2188,14 +2183,14 @@
 .method private showLowlightHint()V
     .registers 3
 
-    .line 1474
+    .line 1473
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsLowlightHintShowing:Z
 
     if-eqz v0, :cond_5
 
     return-void
 
-    .line 1477
+    .line 1476
     :cond_5
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mLowLightHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
@@ -2203,7 +2198,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 1478
+    .line 1477
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mLowLightHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -2212,7 +2207,7 @@
 
     const/4 v0, 0x1
 
-    .line 1479
+    .line 1478
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsLowlightHintShowing:Z
 
     return-void
@@ -2221,7 +2216,7 @@
 .method private showPreispHint()V
     .registers 5
 
-    .line 1464
+    .line 1463
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -2234,36 +2229,36 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 1465
+    .line 1464
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->enableBackground(Z)V
 
-    .line 1466
+    .line 1465
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setHighlight(Z)V
 
-    .line 1467
+    .line 1466
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->showHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1468
+    .line 1467
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsPreIspHintShown:Z
 
-    .line 1469
+    .line 1468
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object p0
 
-    .line 1470
+    .line 1469
     const-string v0, "on"
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -2282,7 +2277,7 @@
 
     monitor-enter p0
 
-    .line 1329
+    .line 1330
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2312,12 +2307,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1330
+    .line 1331
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsVideoPreviewCallbackInit:Z
 
     if-nez v0, :cond_32
 
-    .line 1331
+    .line 1332
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[unInitVideoPreviewCallback], return"
@@ -2326,7 +2321,7 @@
     :try_end_2e
     .catchall {:try_start_1 .. :try_end_2e} :catchall_30
 
-    .line 1332
+    .line 1333
     monitor-exit p0
 
     return-void
@@ -2339,31 +2334,31 @@
     :cond_32
     const/4 v0, 0x0
 
-    .line 1334
+    .line 1335
     :try_start_33
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsVideoPreviewCallbackInit:Z
 
-    .line 1335
+    .line 1336
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     if-eqz v0, :cond_44
 
     const/4 v1, 0x0
 
-    .line 1336
+    .line 1337
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->setHDRDataPreviewDataCallback(Lcom/transsion/camera/app/common/mode/IVideoHDRRecordingCallback;)V
 
-    .line 1337
+    .line 1338
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->unInit()V
 
-    .line 1338
+    .line 1339
     iput-object v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
     :try_end_44
     .catchall {:try_start_33 .. :try_end_44} :catchall_30
 
-    .line 1340
+    .line 1341
     :cond_44
     monitor-exit p0
 
@@ -2381,7 +2376,7 @@
 .method private updateGLRecordingOrientation()V
     .registers 3
 
-    .line 826
+    .line 825
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->isSupportGLRecording()Z
 
     move-result v0
@@ -2392,7 +2387,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 827
+    .line 826
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUI;->getOrientation()I
@@ -2424,14 +2419,14 @@
 
     if-eqz p3, :cond_41
 
-    .line 672
+    .line 670
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->getSupportedHighFpsResolutions()Ljava/util/List;
 
     move-result-object p0
 
-    .line 673
+    .line 671
     const-string p2, "6_60"
 
     const/4 p3, 0x6
@@ -2450,7 +2445,7 @@
 
     const/16 p0, 0x8
 
-    .line 674
+    .line 672
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -2461,12 +2456,12 @@
 
     if-eq p0, v0, :cond_26
 
-    .line 676
+    .line 674
     const-string v1, "8_60"
 
     invoke-virtual {p1, p0, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 678
+    .line 676
     :cond_26
     invoke-static {p3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -2478,12 +2473,12 @@
 
     if-eq p0, v0, :cond_41
 
-    .line 680
+    .line 678
     invoke-virtual {p1, p0, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     return-void
 
-    .line 683
+    .line 681
     :cond_34
     invoke-static {p3}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
@@ -2495,7 +2490,7 @@
 
     if-eq p0, v0, :cond_41
 
-    .line 685
+    .line 683
     invoke-virtual {p1, p0, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     :cond_41
@@ -2505,7 +2500,7 @@
 .method private updateVideoPowerSavingUIVisibility(Z)V
     .registers 3
 
-    .line 1593
+    .line 1592
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
@@ -2518,7 +2513,7 @@
 .method private updateVideoPreviewCallback(Ljava/lang/String;)V
     .registers 5
 
-    .line 429
+    .line 427
     sget-object v0, Lcom/transsion/camera/feature/mode/video/VideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2545,10 +2540,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 430
+    .line 428
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->unInitVideoPreviewCallback()V
 
-    .line 431
+    .line 429
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     filled-new-array {v0}, [Ljava/lang/Object;
@@ -2563,7 +2558,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
-    .line 432
+    .line 430
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->initVideoPreviewCallback()V
 
     return-void
@@ -2582,7 +2577,7 @@
         }
     .end annotation
 
-    .line 644
+    .line 642
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_video_quality"
@@ -2591,14 +2586,14 @@
 
     move-result-object p0
 
-    .line 645
+    .line 643
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     if-eqz p1, :cond_8a
 
-    .line 647
+    .line 645
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
@@ -2612,7 +2607,7 @@
 
     if-ge v4, v5, :cond_36
 
-    .line 649
+    .line 647
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -2639,7 +2634,7 @@
 
     goto :goto_15
 
-    .line 651
+    .line 649
     :cond_36
     invoke-interface {p1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2649,7 +2644,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 652
+    .line 650
     sget-object v2, Lcom/transsion/camera/feature/mode/video/VideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2668,14 +2663,14 @@
 
     invoke-static {v2, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 653
+    .line 651
     invoke-interface {p1, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_64
 
-    .line 654
+    .line 652
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -2684,7 +2679,7 @@
 
     return-void
 
-    .line 656
+    .line 654
     :cond_64
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -2694,7 +2689,7 @@
 
     const/4 p0, 0x6
 
-    .line 657
+    .line 655
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -2707,7 +2702,7 @@
 
     if-eq p0, v2, :cond_7d
 
-    .line 660
+    .line 658
     invoke-interface {p1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -2716,7 +2711,7 @@
 
     goto :goto_83
 
-    .line 662
+    .line 660
     :cond_7d
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2724,7 +2719,7 @@
 
     check-cast p0, Ljava/lang/String;
 
-    .line 664
+    .line 662
     :goto_83
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2739,7 +2734,7 @@
 .method private updateVideoTheramalWaring()V
     .registers 5
 
-    .line 546
+    .line 544
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_video_quality"
@@ -2748,7 +2743,7 @@
 
     move-result-object v0
 
-    .line 547
+    .line 545
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v2, "key_anti_video"
@@ -2757,7 +2752,7 @@
 
     move-result-object v1
 
-    .line 548
+    .line 546
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v3, "key_super_anti_video"
@@ -2766,12 +2761,12 @@
 
     move-result-object v2
 
-    .line 550
+    .line 548
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v3, 0x8
 
-    .line 551
+    .line 549
     invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v3
@@ -2790,7 +2785,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 552
+    .line 550
     :cond_2e
     const-string v0, "on"
 
@@ -2806,7 +2801,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 553
+    .line 551
     :cond_3c
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -2823,7 +2818,7 @@
     :cond_46
     const/4 v0, 0x0
 
-    .line 550
+    .line 548
     :goto_47
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->setVideoThermalWaringSupport(Z)V
 
@@ -2835,10 +2830,10 @@
 .method protected addVideoToDataBase(Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo;IJ)V
     .registers 5
 
-    .line 1307
+    .line 1308
     invoke-super {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->addVideoToDataBase(Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo;IJ)V
 
-    .line 1308
+    .line 1309
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToIdle()V
 
     return-void
@@ -2847,7 +2842,7 @@
 .method protected getBackMainCameraId()Ljava/lang/String;
     .registers 5
 
-    .line 1773
+    .line 1772
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -2856,12 +2851,12 @@
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 1774
+    .line 1773
     invoke-virtual {p0, v1, v2, v3}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->isSupportSAT(Landroid/content/Context;ZLcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)Z
 
     move-result p0
 
-    .line 1773
+    .line 1772
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/CameraRepository;->getBackDefaultCamera(Z)Ljava/lang/String;
 
     move-result-object p0
@@ -2872,19 +2867,19 @@
 .method protected getBackMaxZoomRatio()I
     .registers 2
 
-    .line 1803
+    .line 1802
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isForceZoom10XForVideo()Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    .line 1804
+    .line 1803
     sget p0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_10X:I
 
     return p0
 
-    .line 1806
+    .line 1805
     :cond_9
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->getBackTeleCameraId()Ljava/lang/String;
 
@@ -2892,12 +2887,12 @@
 
     if-eqz v0, :cond_12
 
-    .line 1807
+    .line 1806
     sget p0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_15X:I
 
     return p0
 
-    .line 1809
+    .line 1808
     :cond_12
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackMaxZoomRatio()I
 
@@ -2909,7 +2904,7 @@
 .method protected getBackTeleCameraId()Ljava/lang/String;
     .registers 8
 
-    .line 1743
+    .line 1744
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_video_preisp"
@@ -2926,7 +2921,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 1744
+    .line 1745
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object p0
@@ -3108,7 +3103,7 @@
 
     return-object p0
 
-    .line 1768
+    .line 1767
     :cond_ad
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackTeleCameraId()Ljava/lang/String;
 
@@ -3120,7 +3115,7 @@
 .method protected getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 7
 
-    .line 1685
+    .line 1686
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_super_anti_video"
@@ -3137,14 +3132,14 @@
 
     if-eqz v0, :cond_15
 
-    .line 1687
+    .line 1688
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->getConfigForSuperAntiVideo()Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object p0
 
     return-object p0
 
-    .line 1690
+    .line 1691
     :cond_15
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
 
@@ -3160,7 +3155,7 @@
 
     const/16 v5, 0x8
 
-    .line 1691
+    .line 1692
     filled-new-array {v3, v4, v5, v1, v2}, [I
 
     move-result-object v1
@@ -3169,7 +3164,7 @@
 
     move-result-object v1
 
-    .line 1694
+    .line 1695
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ZoomConfig;->isSATSupported()Z
 
     move-result v2
@@ -3192,21 +3187,21 @@
     :goto_37
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/common/ZoomConfig;->setZoomRangeLimited(Z)Lcom/transsion/camera/app/common/ZoomConfig;
 
-    .line 1695
+    .line 1696
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ZoomConfig;->getCurrentLensType()I
 
     move-result v1
 
     if-ne v1, v3, :cond_55
 
-    .line 1696
+    .line 1697
     sget v1, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_RATIO_UNIT:I
 
     int-to-float v1, v1
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
 
-    .line 1697
+    .line 1698
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackWideCameraId()Ljava/lang/String;
 
     move-result-object p0
@@ -3219,14 +3214,14 @@
 
     float-to-int p0, v1
 
-    .line 1698
+    .line 1699
     sget v1, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_2X:I
 
     invoke-virtual {v0, p0, v1}, Lcom/transsion/camera/app/common/ZoomConfig;->setLimitedZoomRange(II)Lcom/transsion/camera/app/common/ZoomConfig;
 
     return-object v0
 
-    .line 1699
+    .line 1700
     :cond_55
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ZoomConfig;->getCurrentLensType()I
 
@@ -3236,12 +3231,12 @@
 
     if-ne v1, v2, :cond_77
 
-    .line 1700
+    .line 1701
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/common/ZoomConfig;->getLensInfoByType(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v1
 
-    .line 1701
+    .line 1702
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->getCurrentRatio()I
 
     move-result v2
@@ -3259,7 +3254,7 @@
 
     move-result v1
 
-    .line 1702
+    .line 1703
     :goto_6f
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->getBackMaxZoomRatio()I
 
@@ -3269,7 +3264,7 @@
 
     return-object v0
 
-    .line 1704
+    .line 1705
     :cond_77
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -3289,7 +3284,7 @@
 
     goto :goto_90
 
-    .line 1707
+    .line 1708
     :cond_88
     sget p0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
 
@@ -3299,7 +3294,7 @@
 
     return-object v0
 
-    .line 1705
+    .line 1706
     :cond_90
     :goto_90
     sget p0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
@@ -3314,7 +3309,7 @@
 .method public getDataFlowType()I
     .registers 6
 
-    .line 1111
+    .line 1110
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_video_super_night"
@@ -3340,7 +3335,7 @@
     :cond_13
     move v0, v2
 
-    .line 1114
+    .line 1113
     :goto_14
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -3356,7 +3351,7 @@
 
     const-string v4, "key_dol_video_hdr"
 
-    .line 1115
+    .line 1114
     invoke-interface {v3, v4}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -3374,7 +3369,7 @@
     :cond_2e
     const/4 v3, 0x0
 
-    .line 1116
+    .line 1115
     :goto_2f
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/taintdetection/TaintAlgorithm;->getInstance()Lcom/transsion/camera/app/common/algorithm/taintdetection/TaintAlgorithm;
 
@@ -3386,7 +3381,7 @@
 
     if-eqz v4, :cond_50
 
-    .line 1117
+    .line 1116
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isForceTaintDetectRemove()Z
 
     move-result v4
@@ -3397,7 +3392,7 @@
 
     const-string v4, "key_video_hdr_10_plus"
 
-    .line 1118
+    .line 1117
     invoke-interface {p0, v4}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -3412,7 +3407,7 @@
 
     const/4 v2, 0x4
 
-    .line 1122
+    .line 1121
     :cond_50
     invoke-static {v0, v2}, Lcom/transsion/camera/adapter/DataFlowSpec;->makeDataFlowSpec(II)I
 
@@ -3424,7 +3419,7 @@
 .method protected getFrontZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 8
 
-    .line 1671
+    .line 1672
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getFrontZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v0
@@ -3441,14 +3436,14 @@
 
     move-result-object v1
 
-    .line 1672
+    .line 1673
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ZoomConfig;->setSupportedZoomTypes([I)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v0
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    .line 1674
+    .line 1675
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ZoomConfig;->setTickViewDegreeScaleFactor(F)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v0
@@ -3459,7 +3454,7 @@
 
     sget v2, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
 
-    .line 1675
+    .line 1676
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setBaseRatio(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v1
@@ -3468,12 +3463,12 @@
 
     const/4 v5, 0x1
 
-    .line 1676
+    .line 1677
     invoke-virtual {v1, v2, v4, v5}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setRatioRange(IIZ)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v1
 
-    .line 1677
+    .line 1678
     invoke-virtual {v1, v3}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setLensType(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v1
@@ -3484,7 +3479,7 @@
 
     move-result-object v1
 
-    .line 1675
+    .line 1676
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ZoomConfig;->addLensInfo(Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v0
@@ -3493,17 +3488,17 @@
 
     invoke-direct {v1}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;-><init>()V
 
-    .line 1678
+    .line 1679
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setBaseRatio(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v1
 
-    .line 1679
+    .line 1680
     invoke-virtual {v1, v4, v4, v5}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setRatioRange(IIZ)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v1
 
-    .line 1680
+    .line 1681
     invoke-virtual {v1, v3}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setLensType(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v1
@@ -3514,7 +3509,7 @@
 
     move-result-object p0
 
-    .line 1678
+    .line 1679
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/ZoomConfig;->addLensInfo(Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object p0
@@ -3525,220 +3520,225 @@
 .method public getModeFeatures(Landroid/content/Context;)[Ljava/lang/String;
     .registers 10
 
-    .line 734
+    .line 732
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 735
+    .line 733
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 736
+    .line 734
     const-string v2, "key_mood_light"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 737
+    .line 735
     const-string v2, "key_anti_video"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 738
+    .line 736
     const-string v2, "key_super_anti_video"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 739
+    .line 737
     const-string v2, "key_night_hawk"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 740
+    .line 738
     const-string v2, "key_animal_eye_detection"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 741
+    .line 739
     const-string v2, "key_eye_detection"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 742
+    .line 740
+    const-string v2, "key_auto_focus_switch"
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 741
     const-string v2, "key_tran_plugin_mode_can_support"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 743
+    .line 742
     const-string v2, "key_transsion_filter"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 744
+    .line 743
     const-string v2, "key_video_sight_shock"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 745
+    .line 744
     const-string v2, "key_video_filter"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 746
+    .line 745
     const-string v2, "key_video_effect"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 747
+    .line 746
     const-string v2, "key_video_frame"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 748
+    .line 747
     const-string v2, "key_activity_orientation"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 749
+    .line 748
     const-string v2, "key_fingerprint_capture"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 750
+    .line 749
     const-string v2, "key_distortion_correction"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 751
+    .line 750
     sget v2, Lcom/transsion/camera/R$bool;->auto_video_fps_support:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v2
 
-    if-eqz v2, :cond_61
+    if-eqz v2, :cond_66
 
-    .line 752
+    .line 751
     const-string v2, "key_auto_video_fps"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 754
-    :cond_61
+    .line 753
+    :cond_66
     sget v2, Lcom/transsion/camera/app/common/R$bool;->dol_video_hdr_support:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v2
 
-    if-eqz v2, :cond_7c
+    if-eqz v2, :cond_81
 
     const-string v2, "com.transsion.camera.feature.setting.dolvideohdr.DolVideoHDR"
 
-    .line 755
+    .line 754
     invoke-static {v2}, Lcom/transsion/camera/utils/ReflectionUtils;->findClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v2
 
-    if-eqz v2, :cond_7c
+    if-eqz v2, :cond_81
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->isCameraFacingBack()Z
 
     move-result v2
 
-    if-eqz v2, :cond_7c
+    if-eqz v2, :cond_81
 
-    .line 756
+    .line 755
     const-string v2, "key_dol_video_hdr"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 758
-    :cond_7c
+    .line 757
+    :cond_81
     const-string v2, "key_secondary_screen"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 759
+    .line 758
     const-string v2, "key_video_enhance"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 760
+    .line 759
     sget v2, Lcom/transsion/camera/R$bool;->video_asd_support:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result v2
 
-    if-eqz v2, :cond_93
+    if-eqz v2, :cond_98
 
-    .line 761
+    .line 760
     const-string v2, "key_video_asd"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 763
-    :cond_93
+    .line 762
+    :cond_98
     const-string v2, "key_dxo_scene_detection"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 764
+    .line 763
     const-string v2, "key_video_super_night"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 765
+    .line 764
     const-string v2, "key_video_enhance_yuv"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 766
+    .line 765
     const-string v2, "key_video_super_night_yuv"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 768
+    .line 767
     const-string v2, "key_video_preisp"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 769
+    .line 768
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isModeSupport360VideoHDR(Landroid/content/Context;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_b7
+    if-eqz v2, :cond_bc
 
-    .line 770
+    .line 769
     const-string v2, "key_360_video_hdr"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 772
-    :cond_b7
+    .line 771
+    :cond_bc
     const-string v2, "key_video_facebeauty"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 773
+    .line 772
     const-string v2, "key_video_makeup"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 774
+    .line 773
     const-string v2, "key_video_portrait"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 775
+    .line 774
     const-string v2, "key_video_portrait_level"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 776
+    .line 775
     sget v2, Lcom/transsion/camera/R$array;->video_mode_interactive_setting_ui_back_entries:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
@@ -3761,11 +3761,11 @@
 
     const-string v6, "com.transsion.camera.feature.mode.makeup.ui.VideoFaceBeautyMakeupSettingUIEntry"
 
-    if-nez v2, :cond_f4
+    if-nez v2, :cond_f9
 
     sget v2, Lcom/transsion/camera/R$array;->video_mode_interactive_setting_ui_back_entries:I
 
-    .line 777
+    .line 776
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
     move-result-object v2
@@ -3778,21 +3778,21 @@
 
     move-result v2
 
-    if-eqz v2, :cond_f2
+    if-eqz v2, :cond_f7
 
-    goto :goto_f4
+    goto :goto_f9
 
-    :cond_f2
+    :cond_f7
     move v2, v5
 
-    goto :goto_f5
+    goto :goto_fa
 
-    :cond_f4
-    :goto_f4
+    :cond_f9
+    :goto_f9
     move v2, v4
 
-    .line 778
-    :goto_f5
+    .line 777
+    :goto_fa
     sget v7, Lcom/transsion/camera/R$array;->video_mode_interactive_setting_ui_front_entries:I
 
     invoke-virtual {v0, v7}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
@@ -3807,11 +3807,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_117
+    if-nez v3, :cond_11c
 
     sget v3, Lcom/transsion/camera/R$array;->video_mode_interactive_setting_ui_front_entries:I
 
-    .line 779
+    .line 778
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
     move-result-object v3
@@ -3824,142 +3824,142 @@
 
     move-result v3
 
-    if-eqz v3, :cond_116
+    if-eqz v3, :cond_11b
 
-    goto :goto_117
+    goto :goto_11c
 
-    :cond_116
+    :cond_11b
     move v4, v5
 
-    :cond_117
-    :goto_117
-    if-nez v2, :cond_11b
+    :cond_11c
+    :goto_11c
+    if-nez v2, :cond_120
 
-    if-eqz v4, :cond_120
+    if-eqz v4, :cond_125
 
-    .line 781
-    :cond_11b
+    .line 780
+    :cond_120
     const-string v2, "key_mu_face_beauty"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 783
-    :cond_120
+    .line 782
+    :cond_125
     const-string v2, "key_video_spot"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 784
+    .line 783
     const-string v2, "key_video_spot_level"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 785
+    .line 784
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isVideoHumanDetectSupported(Landroid/content/Context;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_135
+    if-eqz p1, :cond_13a
 
-    .line 786
+    .line 785
     const-string p1, "key_human_detection"
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 788
-    :cond_135
+    .line 787
+    :cond_13a
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->isCameraFacingBack()Z
 
     move-result p1
 
-    if-eqz p1, :cond_140
+    if-eqz p1, :cond_145
 
-    .line 789
+    .line 788
     const-string p1, "key_micro_pan_tilt_calibration"
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 791
-    :cond_140
+    .line 790
+    :cond_145
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->isSupportLiteFaceBeauty()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14b
+    if-eqz p1, :cond_150
 
-    .line 792
+    .line 791
     const-string p1, "key_face_beauty"
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 794
-    :cond_14b
+    .line 793
+    :cond_150
     sget p1, Lcom/transsion/camera/R$bool;->video_mode_not_support_facedetection:I
 
     invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result p1
 
-    if-eqz p1, :cond_158
+    if-eqz p1, :cond_15d
 
-    .line 795
+    .line 794
     const-string p1, "key_limit_face_detection"
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 797
-    :cond_158
+    .line 796
+    :cond_15d
     const-string p1, "key_taint_detection"
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 798
+    .line 797
     const-string p1, "key_dv_template_entrance"
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 799
+    .line 798
     const-string p1, "key_dv_template_entrance_option"
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 800
+    .line 799
     const-string p1, "key_viull"
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 801
+    .line 800
     const-string p1, "key_feature_2_mode"
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 802
+    .line 801
     const-string p1, "key_in_sensor_zoom"
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 803
+    .line 802
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mProductConfigHDRFormatSupport:Z
 
-    if-eqz p1, :cond_189
+    if-eqz p1, :cond_18e
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->isCameraFacingBack()Z
 
     move-result p0
 
-    if-eqz p0, :cond_189
+    if-eqz p0, :cond_18e
 
-    .line 804
+    .line 803
     const-string p0, "key_hdr_format"
 
     invoke-virtual {v1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 806
-    :cond_189
+    .line 805
+    :cond_18e
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -3968,15 +3968,15 @@
 
     move-result p0
 
-    if-eqz p0, :cond_198
+    if-eqz p0, :cond_19d
 
-    .line 807
+    .line 806
     const-string p0, "key_video_hdr_10_plus"
 
     invoke-virtual {v1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 810
-    :cond_198
+    .line 809
+    :cond_19d
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result p0
@@ -3995,19 +3995,19 @@
 .method public getModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
     .registers 9
 
-    .line 693
+    .line 691
     invoke-static {}, Lcom/transsion/camera/feature/mode/video/VideoRestriction;->getPreviewRelation()Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object v0
 
-    .line 694
+    .line 692
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 695
+    .line 693
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v2
@@ -4018,7 +4018,7 @@
 
     if-eqz v2, :cond_80
 
-    .line 696
+    .line 694
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -4027,7 +4027,7 @@
 
     const/4 v3, 0x0
 
-    .line 697
+    .line 695
     invoke-virtual {v2, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->getCameraScope(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -4038,7 +4038,7 @@
 
     move-result-object v2
 
-    .line 698
+    .line 696
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v3
@@ -4047,7 +4047,7 @@
 
     move-result v3
 
-    .line 699
+    .line 697
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v4
@@ -4056,7 +4056,7 @@
 
     move-result v4
 
-    .line 700
+    .line 698
     sget-object v5, Lcom/transsion/camera/feature/mode/video/VideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -4095,14 +4095,14 @@
 
     if-eqz v2, :cond_8b
 
-    .line 704
+    .line 702
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v1
 
     if-ge v1, v4, :cond_6f
 
-    .line 706
+    .line 704
     const-string/jumbo v1, "wide"
 
     goto :goto_76
@@ -4110,16 +4110,16 @@
     :cond_6f
     if-lt v1, v3, :cond_74
 
-    .line 708
+    .line 706
     const-string v1, "long-focus"
 
     goto :goto_76
 
-    .line 710
+    .line 708
     :cond_74
     const-string v1, "main"
 
-    .line 712
+    .line 710
     :goto_76
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
@@ -4127,12 +4127,12 @@
 
     move-result-object v1
 
-    .line 713
+    .line 711
     invoke-static {v0, v1}, Lcom/transsion/camera/app/common/mode/CameraMode;->mergeRelation(Lcom/transsion/camera/app/common/relation/Relation;Lcom/transsion/camera/app/common/relation/Relation;)V
 
     goto :goto_8b
 
-    .line 716
+    .line 714
     :cond_80
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
@@ -4142,10 +4142,10 @@
 
     move-result-object v1
 
-    .line 717
+    .line 715
     invoke-static {v0, v1}, Lcom/transsion/camera/app/common/mode/CameraMode;->mergeRelation(Lcom/transsion/camera/app/common/relation/Relation;Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 719
+    .line 717
     :cond_8b
     :goto_8b
     invoke-static {}, Lcom/transsion/camera/feature/mode/video/VideoRestriction;->getCamModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
@@ -4154,21 +4154,21 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/common/mode/CameraMode;->mergeRelation(Lcom/transsion/camera/app/common/relation/Relation;Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 720
+    .line 718
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->pocketScreen()Z
 
     move-result p0
 
     if-eqz p0, :cond_a4
 
-    .line 721
+    .line 719
     const-string p0, "key_flash"
 
     const-string v1, "off"
 
     invoke-virtual {v0, p0, v1, v1}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 722
+    .line 720
     const-string p0, "key_flash_facade"
 
     invoke-virtual {v0, p0, v1, v1}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
@@ -4180,12 +4180,12 @@
 .method protected getOverrideSize()Landroid/util/Size;
     .registers 1
 
-    .line 991
+    .line 990
     sget-boolean p0, Lcom/transsion/camera/utils/FeatureSupport;->DEBUG_VIDEO_PREVIEW_SIZE_TO_1440_X_1080:Z
 
     if-eqz p0, :cond_7
 
-    .line 992
+    .line 991
     sget-object p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->DEBUG_PREVIEW_SIZE:Landroid/util/Size;
 
     return-object p0
@@ -4208,25 +4208,25 @@
         }
     .end annotation
 
-    .line 999
+    .line 998
     sget-boolean v0, Lcom/transsion/camera/utils/FeatureSupport;->DEBUG_VIDEO_PREVIEW_SIZE_TO_1440_X_1080:Z
 
     if-eqz v0, :cond_9
 
-    .line 1000
+    .line 999
     sget-object p1, Lcom/transsion/camera/feature/mode/video/VideoMode;->DEBUG_PREVIEW_SIZE:Landroid/util/Size;
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPreviewSize:Landroid/util/Size;
 
     return-object p1
 
-    .line 1003
+    .line 1002
     :cond_9
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->getPreviewSize(Ljava/util/List;)Landroid/util/Size;
 
     move-result-object v0
 
-    .line 1004
+    .line 1003
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoQuality:Ljava/lang/String;
 
     const-string v2, "_"
@@ -4235,7 +4235,7 @@
 
     move-result v1
 
-    .line 1005
+    .line 1004
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/mode/video/VideoMode;->needReducePreviewSize(I)Z
 
     move-result v2
@@ -4248,21 +4248,21 @@
 
     if-eqz v0, :cond_4b
 
-    .line 1006
+    .line 1005
     invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
 
     move-result v2
 
     if-lt v2, v4, :cond_4b
 
-    .line 1007
+    .line 1006
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->qualityValid(I)Z
 
     move-result v2
 
     if-nez v2, :cond_38
 
-    .line 1008
+    .line 1007
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "getPreviewSize videoFrameSize is null"
@@ -4271,12 +4271,12 @@
 
     const/4 p1, 0x0
 
-    .line 1009
+    .line 1008
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPreviewSize:Landroid/util/Size;
 
     return-object p1
 
-    .line 1013
+    .line 1012
     :cond_38
     iget-wide v5, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoRatio:D
 
@@ -4286,24 +4286,24 @@
 
     double-to-int v2, v5
 
-    .line 1014
+    .line 1013
     new-instance v5, Landroid/util/Size;
 
     invoke-direct {v5, v2, v3}, Landroid/util/Size;-><init>(II)V
 
-    .line 1016
+    .line 1015
     invoke-interface {p1, v5}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_4b
 
-    .line 1017
+    .line 1016
     iput-object v5, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPreviewSize:Landroid/util/Size;
 
     return-object v5
 
-    .line 1021
+    .line 1020
     :cond_4b
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isInVideoHDRState()Z
 
@@ -4325,7 +4325,7 @@
 
     goto :goto_78
 
-    .line 1031
+    .line 1030
     :cond_5d
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -4337,7 +4337,7 @@
 
     if-ne v1, v6, :cond_6d
 
-    .line 1033
+    .line 1032
     new-instance v0, Landroid/util/Size;
 
     invoke-direct {v0, v5, v3}, Landroid/util/Size;-><init>(II)V
@@ -4349,12 +4349,12 @@
 
     if-ne v1, p1, :cond_75
 
-    .line 1035
+    .line 1034
     new-instance v0, Landroid/util/Size;
 
     invoke-direct {v0, v2, v4}, Landroid/util/Size;-><init>(II)V
 
-    .line 1038
+    .line 1037
     :cond_75
     :goto_75
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPreviewSize:Landroid/util/Size;
@@ -4365,20 +4365,20 @@
     :goto_78
     if-ne v1, v6, :cond_80
 
-    .line 1024
+    .line 1023
     new-instance p1, Landroid/util/Size;
 
     invoke-direct {p1, v5, v3}, Landroid/util/Size;-><init>(II)V
 
     goto :goto_85
 
-    .line 1026
+    .line 1025
     :cond_80
     new-instance p1, Landroid/util/Size;
 
     invoke-direct {p1, v2, v4}, Landroid/util/Size;-><init>(II)V
 
-    .line 1028
+    .line 1027
     :goto_85
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPreviewSize:Landroid/util/Size;
 
@@ -4388,7 +4388,7 @@
 .method public getPreviewViewType()Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
     .registers 1
 
-    .line 1784
+    .line 1783
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mPreviewViewType:Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
     return-object p0
@@ -4397,7 +4397,7 @@
 .method public getSettingGroup()J
     .registers 5
 
-    .line 729
+    .line 727
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->getSettingGroup()J
 
     move-result-wide v0
@@ -4867,7 +4867,7 @@
 .method protected isInVideoHDRState()Z
     .registers 6
 
-    .line 1187
+    .line 1186
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isModeSupportVideoAsd(Landroid/content/Context;)Z
@@ -4880,7 +4880,7 @@
 
     return v1
 
-    .line 1190
+    .line 1189
     :cond_a
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsVideoPreviewCallbackInit:Z
 
@@ -4890,14 +4890,14 @@
 
     if-eqz v0, :cond_64
 
-    .line 1191
+    .line 1190
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1192
+    .line 1191
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -4916,7 +4916,7 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1193
+    .line 1192
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
 
     invoke-virtual {v2, v0}, Lcom/transsion/camera/app/common/CameraRepository;->isBackMainCamera(Ljava/lang/String;)Z
@@ -4935,7 +4935,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
 
-    .line 1194
+    .line 1193
     invoke-virtual {v2, v0}, Lcom/transsion/camera/app/common/CameraRepository;->isFrontFolderCamera(Ljava/lang/String;)Z
 
     move-result v2
@@ -4953,7 +4953,7 @@
     :cond_4d
     return v1
 
-    .line 1195
+    .line 1194
     :cond_4e
     :goto_4e
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -4987,7 +4987,7 @@
 .method protected isInVideoSightShockState()Z
     .registers 4
 
-    .line 1204
+    .line 1203
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsVideoPreviewCallbackInit:Z
 
     if-eqz v0, :cond_36
@@ -5000,7 +5000,7 @@
 
     const-string v1, "key_video_filter"
 
-    .line 1205
+    .line 1204
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -5017,7 +5017,7 @@
 
     const-string v2, "key_video_effect"
 
-    .line 1206
+    .line 1205
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -5032,7 +5032,7 @@
 
     const-string v0, "key_video_frame"
 
-    .line 1207
+    .line 1206
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -5063,7 +5063,7 @@
 
     return v0
 
-    .line 1225
+    .line 1224
     :cond_4
     const-string v1, "com.transsion.camera.feature.setting.videohdr.preview.VideoHDRPreview"
 
@@ -5075,7 +5075,7 @@
 
     return v0
 
-    .line 1228
+    .line 1227
     :cond_d
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->isCameraFacingBack()Z
 
@@ -5083,7 +5083,7 @@
 
     if-eqz p0, :cond_1e
 
-    .line 1229
+    .line 1228
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -5096,7 +5096,7 @@
 
     return p0
 
-    .line 1231
+    .line 1230
     :cond_1e
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -5114,7 +5114,7 @@
 .method protected isModeSupportThumbnailTransition(Landroid/content/Context;)Z
     .registers 2
 
-    .line 1250
+    .line 1251
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -5127,22 +5127,38 @@
 .end method
 
 .method protected isModeSupportVSS()Z
-    .registers 1
+    .registers 2
+
+    .line 1236
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
 
     .line 1237
+    sget v0, Lcom/transsion/camera/app/common/R$bool;->video_filter_20_support:I
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_18
+
     const-string p0, "com.transsion.camera.feature.setting.videofilter.VideoFilterEntry"
 
+    .line 1238
     invoke-static {p0}, Lcom/transsion/camera/utils/ReflectionUtils;->findClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object p0
 
-    if-eqz p0, :cond_a
+    if-eqz p0, :cond_18
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_a
+    :cond_18
     const/4 p0, 0x0
 
     return p0
@@ -5157,7 +5173,7 @@
 
     return p0
 
-    .line 1245
+    .line 1246
     :cond_4
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -5175,7 +5191,7 @@
 .method public isSupportBackgroundPreview()Z
     .registers 2
 
-    .line 1496
+    .line 1495
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mPreviewBackgroundSupport:Z
 
     if-eqz v0, :cond_c
@@ -5199,7 +5215,7 @@
 .method public isSupportPowerSavingMode()Z
     .registers 1
 
-    .line 1491
+    .line 1490
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->flipScreen()Z
 
     move-result p0
@@ -5212,7 +5228,7 @@
 .method protected isVideoFileValid()Z
     .registers 5
 
-    .line 862
+    .line 861
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->getRecordingTotalDuration()J
@@ -5246,12 +5262,12 @@
 .method public notifyCameraOperateAction(I)V
     .registers 6
 
-    .line 1501
+    .line 1500
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     if-eqz v0, :cond_7
 
-    .line 1502
+    .line 1501
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->notifyCameraOperateAction(I)V
 
     :cond_7
@@ -5313,81 +5329,81 @@
 
     goto/16 :goto_10d
 
-    .line 1547
+    .line 1546
     :pswitch_41
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     if-eqz p0, :cond_10d
 
-    .line 1548
+    .line 1547
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->restoreRecordingUI()V
 
     return-void
 
-    .line 1542
+    .line 1541
     :pswitch_49
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     if-eqz p0, :cond_10d
 
-    .line 1543
+    .line 1542
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->tempHideRecordingUI()V
 
     return-void
 
-    .line 1529
+    .line 1528
     :pswitch_51
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     if-eqz p0, :cond_10d
 
-    .line 1530
+    .line 1529
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->setRecordingUIEnable(Z)V
 
     return-void
 
-    .line 1517
+    .line 1516
     :pswitch_59
     sput-boolean v1, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsZoomWheelShowing:Z
 
     return-void
 
-    .line 1511
+    .line 1510
     :pswitch_5c
     sput-boolean v3, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsZoomWheelShowing:Z
 
-    .line 1512
+    .line 1511
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
     if-eqz p1, :cond_10d
 
-    .line 1513
+    .line 1512
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->setZoomState(Z)V
 
     return-void
 
-    .line 1534
+    .line 1533
     :pswitch_6a
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {p1, v1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->setZoomState(Z)V
 
-    .line 1537
+    .line 1536
     :pswitch_6f
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     if-eqz p0, :cond_10d
 
-    .line 1538
+    .line 1537
     invoke-virtual {p0, v3}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->setRecordingUIEnable(Z)V
 
     return-void
 
-    .line 1520
+    .line 1519
     :pswitch_77
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -5399,29 +5415,29 @@
 
     if-nez p1, :cond_86
 
-    .line 1521
+    .line 1520
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {p1, v3}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->setZoomState(Z)V
 
-    .line 1523
+    .line 1522
     :cond_86
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     if-eqz p0, :cond_10d
 
-    .line 1524
+    .line 1523
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->setRecordingUIEnable(Z)V
 
     return-void
 
-    .line 1559
+    .line 1558
     :cond_8e
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {p1, v3}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->enablePreviewStream(Z)V
 
-    .line 1560
+    .line 1559
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->getFlashKey()Ljava/lang/String;
@@ -5432,13 +5448,13 @@
 
     return-void
 
-    .line 1555
+    .line 1554
     :cond_9d
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {p1, v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->enablePreviewStream(Z)V
 
-    .line 1556
+    .line 1555
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->getFlashKey()Ljava/lang/String;
@@ -5449,7 +5465,7 @@
 
     return-void
 
-    .line 1573
+    .line 1572
     :cond_ac
     :pswitch_ac
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
@@ -5464,10 +5480,10 @@
 
     if-eqz v0, :cond_bb
 
-    .line 1574
+    .line 1573
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
 
-    .line 1576
+    .line 1575
     :cond_bb
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -5481,7 +5497,7 @@
 
     if-ne p1, v0, :cond_10d
 
-    .line 1578
+    .line 1577
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-static {p0}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -5496,7 +5512,7 @@
 
     return-void
 
-    .line 1565
+    .line 1564
     :cond_d6
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -5510,18 +5526,18 @@
 
     if-eqz p0, :cond_10d
 
-    .line 1566
+    .line 1565
     invoke-virtual {p0, v3, v2}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
 
     return-void
 
-    .line 1552
+    .line 1551
     :cond_e6
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->updateGLRecordingOrientation()V
 
     return-void
 
-    .line 1582
+    .line 1581
     :cond_ea
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -5535,22 +5551,22 @@
 
     if-eqz p0, :cond_f9
 
-    .line 1583
+    .line 1582
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->resetRecordingUI()V
 
-    .line 1585
+    .line 1584
     :cond_f9
     sput-boolean v1, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsZoomWheelShowing:Z
 
     return-void
 
-    .line 1506
+    .line 1505
     :cond_fc
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     if-eqz p1, :cond_10d
 
-    .line 1507
+    .line 1506
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->getVideoUISpec()Lcom/transsion/camera/app/common/ui/VideoUISpec;
 
     move-result-object p1
@@ -5594,15 +5610,15 @@
 .method protected notifyToVideoUI(Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;)V
     .registers 4
 
-    .line 847
+    .line 846
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToVideoUI(Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;)V
 
-    .line 848
+    .line 847
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     if-nez v0, :cond_1e
 
-    .line 850
+    .line 849
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -5623,24 +5639,24 @@
 
     return-void
 
-    .line 853
+    .line 852
     :cond_1e
     sget-object v1, Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;->STATE_PRE_RECORDING:Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;
 
     if-ne v1, p1, :cond_29
 
-    .line 854
+    .line 853
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->createVideoUISpec()Lcom/transsion/camera/app/common/ui/VideoUISpec;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->initVideoUI(Lcom/transsion/camera/app/common/ui/VideoUISpec;)V
 
-    .line 856
+    .line 855
     :cond_29
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->updateUIState(Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;)V
 
-    .line 857
+    .line 856
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->updateGLRecordingOrientation()V
 
     return-void
@@ -5649,7 +5665,7 @@
 .method public onBackPressed()Z
     .registers 4
 
-    .line 1279
+    .line 1280
     sget-object v0, Lcom/transsion/camera/feature/mode/video/VideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5670,19 +5686,19 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1280
+    .line 1281
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->isSupportGLRecording()Z
 
     move-result v0
 
     if-eqz v0, :cond_3a
 
-    .line 1281
+    .line 1282
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
     if-eqz v0, :cond_3a
 
-    .line 1282
+    .line 1283
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->supportDVGLRecording()Z
 
     move-result v0
@@ -5691,7 +5707,7 @@
 
     if-eqz v0, :cond_30
 
-    .line 1283
+    .line 1284
     invoke-static {}, Lcom/transsion/camera/utils/manager/GlobalClickManager;->checkCanClick()Z
 
     move-result v0
@@ -5703,10 +5719,10 @@
     :cond_30
     const/4 v0, 0x0
 
-    .line 1287
+    .line 1288
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
-    .line 1288
+    .line 1289
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mTextureRecorder:Lcom/transsion/camera/app/common/recorder/RecorderManager;
 
     invoke-virtual {p0, v1, v0, v0}, Lcom/transsion/camera/app/common/recorder/RecorderManager;->leave(ZZZ)Z
@@ -5715,7 +5731,7 @@
 
     return p0
 
-    .line 1291
+    .line 1292
     :cond_3a
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onBackPressed()Z
 
@@ -5747,7 +5763,7 @@
 .method protected onCreateVideoUI()Lcom/transsion/camera/app/ui/mode/video/VideoUI;
     .registers 4
 
-    .line 903
+    .line 902
     new-instance v0, Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -5772,10 +5788,10 @@
 .method public onMediaRecorderPreparing()V
     .registers 2
 
-    .line 558
+    .line 556
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onMediaRecorderPreparing()V
 
-    .line 559
+    .line 557
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getOrientation()I
@@ -5827,14 +5843,14 @@
 .method public onMediaRecorderStarted()V
     .registers 4
 
-    .line 536
+    .line 534
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mScreenFormType:I
 
     const/4 v1, 0x7
 
     if-ne v0, v1, :cond_e
 
-    .line 537
+    .line 535
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     const-wide/32 v1, 0x927c0
@@ -5843,7 +5859,7 @@
 
     goto :goto_15
 
-    .line 539
+    .line 537
     :cond_e
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
@@ -5851,11 +5867,11 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->setLimitRecorderTime(J)V
 
-    .line 541
+    .line 539
     :goto_15
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->updateVideoTheramalWaring()V
 
-    .line 542
+    .line 540
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onMediaRecorderStarted()V
 
     return-void
@@ -5866,18 +5882,18 @@
 
     if-nez p1, :cond_7
 
-    .line 971
+    .line 970
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->hideInfo()V
 
-    .line 973
+    .line 972
     :cond_7
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onMediaRecorderStopping(IZ)V
 
     const/16 p1, 0xc9
 
-    .line 974
+    .line 973
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyRawActionToUI(I)V
 
     return-void
@@ -5895,15 +5911,15 @@
 .method public onOrientationChanged(I)V
     .registers 3
 
-    .line 820
+    .line 819
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraMode;->onOrientationChanged(I)V
 
-    .line 821
+    .line 820
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->onOrientationChanged(I)V
 
-    .line 822
+    .line 821
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->updateGLRecordingOrientation()V
 
     return-void
@@ -5912,12 +5928,12 @@
 .method public onPreviewTypeChanged(Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;)V
     .registers 3
 
-    .line 1789
+    .line 1788
     sget-object v0, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->GL_SURFACE_VIEW:Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
     if-ne p1, v0, :cond_28
 
-    .line 1790
+    .line 1789
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoFilterOn:Z
 
     if-nez p1, :cond_10
@@ -5930,13 +5946,13 @@
 
     if-eqz p1, :cond_28
 
-    .line 1791
+    .line 1790
     :cond_10
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsVideoPreviewCallbackInit:Z
 
     if-eqz p1, :cond_23
 
-    .line 1792
+    .line 1791
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     invoke-static {p0}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -5947,12 +5963,12 @@
 
     invoke-direct {p1}, Lcom/transsion/camera/feature/mode/video/VideoMode$$ExternalSyntheticLambda3;-><init>()V
 
-    .line 1793
+    .line 1792
     invoke-virtual {p0, p1}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
     return-void
 
-    .line 1795
+    .line 1794
     :cond_23
     const-string p1, "com.transsion.camera.base_business.vss_sdk.VSSPreview"
 
@@ -5965,14 +5981,14 @@
 .method protected onSATStreamIdChanged(IIZZ)V
     .registers 16
 
-    .line 564
+    .line 562
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 565
+    .line 563
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -6015,7 +6031,7 @@
 
     if-eq p1, v0, :cond_46
 
-    .line 567
+    .line 565
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     if-eqz p1, :cond_46
@@ -6024,7 +6040,7 @@
 
     if-nez p1, :cond_46
 
-    .line 568
+    .line 566
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->reset()V
@@ -6032,13 +6048,13 @@
     :cond_46
     return-void
 
-    .line 573
+    .line 571
     :cond_47
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 574
+    .line 572
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v2
@@ -6047,7 +6063,7 @@
 
     move-result-object v2
 
-    .line 575
+    .line 573
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v3
@@ -6056,7 +6072,7 @@
 
     move-result-object v3
 
-    .line 576
+    .line 574
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v4
@@ -6065,7 +6081,7 @@
 
     move-result-object v4
 
-    .line 577
+    .line 575
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v5
@@ -6074,7 +6090,7 @@
 
     move-result-object v5
 
-    .line 580
+    .line 578
     invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -6095,7 +6111,7 @@
 
     goto :goto_97
 
-    .line 582
+    .line 580
     :cond_7e
     invoke-static {v1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -6107,7 +6123,7 @@
 
     goto :goto_97
 
-    .line 584
+    .line 582
     :cond_86
     invoke-static {v1, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -6115,7 +6131,7 @@
 
     if-eqz v2, :cond_96
 
-    .line 585
+    .line 583
     invoke-static {v5, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -6134,7 +6150,7 @@
     :cond_96
     move-object v2, v6
 
-    .line 593
+    .line 591
     :goto_97
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
@@ -6142,19 +6158,19 @@
 
     move-result-object v3
 
-    .line 594
+    .line 592
     invoke-static {v2, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-nez v4, :cond_bf
 
-    .line 595
+    .line 593
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 596
+    .line 594
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v5
@@ -6163,23 +6179,23 @@
 
     move-result-object v5
 
-    .line 597
+    .line 595
     invoke-interface {v5, v1}, Lcom/transsion/camera/adapter/ICameraDeviceInfo;->getSupportedVideoSizes(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v5
 
-    .line 598
+    .line 596
     sget-object v6, Lcom/transsion/camera/feature/setting/videoquality/VideoQualityHelper;->sVideoQualities:[I
 
     invoke-static {p2, v4, v5, v6}, Lcom/transsion/camera/utils/CameraUtil;->generateSupportedList(ILjava/util/ArrayList;Ljava/util/List;[I)V
 
-    .line 600
+    .line 598
     invoke-direct {p0, v4, v1, p3}, Lcom/transsion/camera/feature/mode/video/VideoMode;->updateSupportedList(Ljava/util/ArrayList;Ljava/lang/String;Z)V
 
-    .line 601
+    .line 599
     invoke-direct {p0, v4, v3}, Lcom/transsion/camera/feature/mode/video/VideoMode;->updateVideoQualityRelation(Ljava/util/List;Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 603
+    .line 601
     :cond_bf
     iget-object p3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -6187,12 +6203,12 @@
 
     if-eqz p4, :cond_115
 
-    .line 606
+    .line 604
     iget-object p3, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     if-eqz p3, :cond_115
 
-    .line 607
+    .line 605
     sget-boolean p3, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mDHdrAndRawSuperNightBothSupport:Z
 
     if-nez p3, :cond_fa
@@ -6205,21 +6221,21 @@
 
     if-eqz p3, :cond_fa
 
-    .line 608
+    .line 606
     invoke-static {v2, v7}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p3
 
     if-nez p3, :cond_f2
 
-    .line 609
+    .line 607
     invoke-static {v2, v10}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p3
 
     if-nez p3, :cond_f2
 
-    .line 610
+    .line 608
     invoke-static {v2, v8}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p3
@@ -6231,7 +6247,7 @@
     :cond_e9
     const/4 p3, 0x1
 
-    .line 613
+    .line 611
     invoke-static {p3}, Lcom/transsion/camera/feature/mode/video/VideoRestriction;->getVideoHDRRelation(Z)Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object p3
@@ -6244,14 +6260,14 @@
     :goto_f2
     const/4 p3, 0x0
 
-    .line 611
+    .line 609
     invoke-static {p3}, Lcom/transsion/camera/feature/mode/video/VideoRestriction;->getVideoHDRRelation(Z)Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object p3
 
     invoke-static {v3, p3}, Lcom/transsion/camera/app/common/mode/CameraMode;->mergeRelation(Lcom/transsion/camera/app/common/relation/Relation;Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 616
+    .line 614
     :cond_fa
     :goto_fa
     iget-boolean p3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mNeedCloseQuickPreview:Z
@@ -6270,7 +6286,7 @@
 
     if-eqz p3, :cond_115
 
-    .line 617
+    .line 615
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p2
@@ -6281,7 +6297,7 @@
 
     invoke-static {v3, p2}, Lcom/transsion/camera/app/common/mode/CameraMode;->mergeRelation(Lcom/transsion/camera/app/common/relation/Relation;Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 622
+    .line 620
     :cond_115
     invoke-static {v2, v9}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -6293,28 +6309,28 @@
 
     if-eqz p4, :cond_12e
 
-    .line 623
+    .line 621
     const-string p1, "key_video_portrait"
 
     invoke-virtual {v3, p1}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
 
-    .line 624
+    .line 622
     const-string p1, "key_video_spot"
 
     invoke-virtual {v3, p1}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
 
-    .line 625
+    .line 623
     const-string p1, "key_video_enhance_yuv"
 
     invoke-virtual {v3, p1}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
 
-    .line 628
+    .line 626
     :cond_12e
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p1, v3}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 629
+    .line 627
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->getFlashKey()Ljava/lang/String;
@@ -6323,17 +6339,17 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->requestChangeSettingValue(Ljava/lang/String;)V
 
-    .line 630
+    .line 628
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->updateOnlyInteractiveUI()V
 
-    .line 631
+    .line 629
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->updateHelpGuide()V
 
-    .line 632
+    .line 630
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUI;->updatePopSettingUI()V
@@ -6344,10 +6360,10 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 833
+    .line 832
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CameraMode;->onScreenFormChanged(IZ)V
 
-    .line 835
+    .line 834
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->onScreenFormChanged(IZ)V
@@ -6358,10 +6374,10 @@
 .method protected onSettingChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 11
 
-    .line 437
+    .line 435
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onSettingChanged(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 438
+    .line 436
     sget-object v0, Lcom/transsion/camera/feature/mode/video/VideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6418,7 +6434,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 440
+    .line 438
     const-string v0, "key_360_video_hdr"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -6433,7 +6449,7 @@
 
     if-eqz v1, :cond_88
 
-    .line 441
+    .line 439
     invoke-static {p2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -6450,7 +6466,7 @@
 
     goto :goto_7b
 
-    .line 447
+    .line 445
     :cond_64
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHdrOn:Z
 
@@ -6468,32 +6484,32 @@
 
     if-nez v1, :cond_158
 
-    .line 448
+    .line 446
     iput-boolean v4, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHdrOn:Z
 
-    .line 449
+    .line 447
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->unInitVideoPreviewCallback()V
 
     goto/16 :goto_158
 
-    .line 442
+    .line 440
     :cond_7b
     :goto_7b
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHdrOn:Z
 
     if-nez v1, :cond_158
 
-    .line 443
+    .line 441
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHdrOn:Z
 
-    .line 444
+    .line 442
     const-string v1, "com.transsion.camera.feature.setting.videohdr.preview.VideoHDRPreview"
 
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/mode/video/VideoMode;->updateVideoPreviewCallback(Ljava/lang/String;)V
 
     goto/16 :goto_158
 
-    .line 452
+    .line 450
     :cond_88
     const-string v1, "key_video_filter"
 
@@ -6521,7 +6537,7 @@
 
     goto :goto_b3
 
-    .line 493
+    .line 491
     :cond_a1
     const-string v1, "key_super_anti_video"
 
@@ -6531,7 +6547,7 @@
 
     if-eqz v1, :cond_158
 
-    .line 494
+    .line 492
     const-string v1, "super"
 
     invoke-static {p2, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -6542,7 +6558,7 @@
 
     goto/16 :goto_158
 
-    .line 453
+    .line 451
     :cond_b3
     :goto_b3
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -6553,14 +6569,14 @@
 
     if-eqz v1, :cond_ed
 
-    .line 454
+    .line 452
     invoke-static {p2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_d6
 
-    .line 455
+    .line 453
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoFilterOn:Z
 
     if-nez v1, :cond_d0
@@ -6573,19 +6589,19 @@
 
     if-nez v1, :cond_d0
 
-    .line 456
+    .line 454
     invoke-direct {p0, v5}, Lcom/transsion/camera/feature/mode/video/VideoMode;->updateVideoPreviewCallback(Ljava/lang/String;)V
 
-    .line 458
+    .line 456
     :cond_d0
     iput-boolean v4, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHdrOn:Z
 
-    .line 459
+    .line 457
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoFilterOn:Z
 
     goto/16 :goto_158
 
-    .line 461
+    .line 459
     :cond_d6
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHdrOn:Z
 
@@ -6603,16 +6619,16 @@
 
     if-nez v1, :cond_e9
 
-    .line 462
+    .line 460
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->unInitVideoPreviewCallback()V
 
-    .line 464
+    .line 462
     :cond_e9
     iput-boolean v4, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoFilterOn:Z
 
     goto/16 :goto_158
 
-    .line 466
+    .line 464
     :cond_ed
     invoke-static {p1, v7}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -6620,14 +6636,14 @@
 
     if-eqz v1, :cond_123
 
-    .line 467
+    .line 465
     invoke-static {p2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_10d
 
-    .line 468
+    .line 466
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoFilterOn:Z
 
     if-nez v1, :cond_108
@@ -6640,19 +6656,19 @@
 
     if-nez v1, :cond_108
 
-    .line 469
+    .line 467
     invoke-direct {p0, v5}, Lcom/transsion/camera/feature/mode/video/VideoMode;->updateVideoPreviewCallback(Ljava/lang/String;)V
 
-    .line 471
+    .line 469
     :cond_108
     iput-boolean v4, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHdrOn:Z
 
-    .line 472
+    .line 470
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoEffectOn:Z
 
     goto :goto_158
 
-    .line 474
+    .line 472
     :cond_10d
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHdrOn:Z
 
@@ -6670,16 +6686,16 @@
 
     if-nez v1, :cond_120
 
-    .line 475
+    .line 473
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->unInitVideoPreviewCallback()V
 
-    .line 477
+    .line 475
     :cond_120
     iput-boolean v4, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoEffectOn:Z
 
     goto :goto_158
 
-    .line 479
+    .line 477
     :cond_123
     invoke-static {p1, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -6687,14 +6703,14 @@
 
     if-eqz v1, :cond_158
 
-    .line 480
+    .line 478
     invoke-static {p2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_143
 
-    .line 481
+    .line 479
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoFilterOn:Z
 
     if-nez v1, :cond_13e
@@ -6707,19 +6723,19 @@
 
     if-nez v1, :cond_13e
 
-    .line 482
+    .line 480
     invoke-direct {p0, v5}, Lcom/transsion/camera/feature/mode/video/VideoMode;->updateVideoPreviewCallback(Ljava/lang/String;)V
 
-    .line 484
+    .line 482
     :cond_13e
     iput-boolean v4, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHdrOn:Z
 
-    .line 485
+    .line 483
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoFrameOn:Z
 
     goto :goto_158
 
-    .line 487
+    .line 485
     :cond_143
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoHdrOn:Z
 
@@ -6737,14 +6753,14 @@
 
     if-eqz v1, :cond_156
 
-    .line 488
+    .line 486
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->unInitVideoPreviewCallback()V
 
-    .line 490
+    .line 488
     :cond_156
     iput-boolean v4, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoFrameOn:Z
 
-    .line 497
+    .line 495
     :cond_158
     :goto_158
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -6753,7 +6769,7 @@
 
     if-eqz v0, :cond_174
 
-    .line 498
+    .line 496
     invoke-virtual {v3, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -6764,7 +6780,7 @@
 
     if-eqz p1, :cond_1a0
 
-    .line 499
+    .line 497
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getOrientation()I
 
     move-result p2
@@ -6777,7 +6793,7 @@
 
     return-void
 
-    .line 501
+    .line 499
     :cond_174
     const-string v0, "key_fold_switch_preview"
 
@@ -6787,12 +6803,12 @@
 
     if-eqz v0, :cond_189
 
-    .line 502
+    .line 500
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->updateSwitchPreviewValue(Ljava/lang/String;)V
 
-    .line 503
+    .line 501
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mScreenFormType:I
@@ -6801,7 +6817,7 @@
 
     return-void
 
-    .line 504
+    .line 502
     :cond_189
     const-string p2, "key_update_top_bar_ui"
 
@@ -6811,17 +6827,17 @@
 
     if-eqz p1, :cond_1a0
 
-    .line 505
+    .line 503
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->updateTopBarUI()V
 
-    .line 506
+    .line 504
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->updateHelpGuide()V
 
-    .line 507
+    .line 505
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUI;->updatePopSettingUI()V
@@ -6833,10 +6849,10 @@
 .method public onSettingReady()V
     .registers 4
 
-    .line 518
+    .line 516
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onSettingReady()V
 
-    .line 519
+    .line 517
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;
 
     check-cast v0, Lcom/transsion/camera/app/common/mode/CommonVideoImageProcessor;
@@ -6845,46 +6861,46 @@
 
     const-string v2, "key_algorithm_migrate"
 
-    .line 521
+    .line 519
     invoke-interface {v1, v2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 520
+    .line 518
     const-string v2, "on"
 
     invoke-static {v2, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    .line 519
+    .line 517
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/mode/CommonVideoImageProcessor;->algorithmMigrate(Z)V
 
-    .line 522
+    .line 520
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     if-eqz v0, :cond_21
 
-    .line 523
+    .line 521
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mFrameResultCallback:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->registerFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
 
-    .line 525
+    .line 523
     :cond_21
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     if-eqz v0, :cond_44
 
-    .line 526
+    .line 524
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     if-eqz v1, :cond_44
 
-    .line 527
+    .line 525
     invoke-interface {v0}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->onSettingReady()V
 
-    .line 528
+    .line 526
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->isVideoSuperNightSupport()Z
@@ -6893,7 +6909,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->setVideoSuperNightSupport(Z)V
 
-    .line 529
+    .line 527
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -6906,7 +6922,7 @@
 
     move-result p0
 
-    .line 530
+    .line 528
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->setVideoBackWideSupport360Hdr(Z)V
 
     :cond_44
@@ -6916,7 +6932,7 @@
 .method protected onSnapShotStart()V
     .registers 2
 
-    .line 946
+    .line 945
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -6929,7 +6945,7 @@
 .method protected onVideoMediaRecorderInfoConstruct(Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;)V
     .registers 6
 
-    .line 840
+    .line 839
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -6938,7 +6954,7 @@
 
     move-result-wide v0
 
-    .line 841
+    .line 840
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -6957,7 +6973,7 @@
 
     invoke-static {p0, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 842
+    .line 841
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;->setMaxFileSize(J)Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;
 
     return-void
@@ -7042,14 +7058,8 @@
 
     .line 423
     :cond_3f
-    iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mIsLowlightHintSupport:Z
-
-    if-eqz v0, :cond_46
-
-    .line 424
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->hideLowlightHint()V
 
-    :cond_46
     return-void
 .end method
 
@@ -7106,7 +7116,7 @@
 .method protected sendNotification(Landroid/content/Context;)V
     .registers 2
 
-    .line 985
+    .line 984
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->sendNotification(Landroid/content/Context;)V
@@ -7117,7 +7127,7 @@
 .method protected showInfo(I)V
     .registers 2
 
-    .line 964
+    .line 963
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->showInfo(I)V
@@ -7128,10 +7138,10 @@
 .method protected showRemainingRecordingTime(Ljava/lang/String;)V
     .registers 2
 
-    .line 979
+    .line 978
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->showRemainingRecordingTime(Ljava/lang/String;)V
 
-    .line 980
+    .line 979
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/video/VideoUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->showRemainingTime(Ljava/lang/String;)V
@@ -7142,7 +7152,7 @@
 .method protected starStopHDRRecording()V
     .registers 4
 
-    .line 1263
+    .line 1264
     sget-object v0, Lcom/transsion/camera/feature/mode/video/VideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7171,7 +7181,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1264
+    .line 1265
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsVideoPreviewCallbackInit:Z
 
     if-eqz v0, :cond_49
@@ -7180,22 +7190,22 @@
 
     if-eqz v0, :cond_49
 
-    .line 1265
+    .line 1266
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
     if-eqz v0, :cond_3c
 
     const/4 v0, 0x0
 
-    .line 1266
+    .line 1267
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
-    .line 1267
+    .line 1268
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     invoke-interface {v1, v0}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->startStopRecording(Z)V
 
-    .line 1268
+    .line 1269
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mTextureRecorder:Lcom/transsion/camera/app/common/recorder/RecorderManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/recorder/RecorderManager;->startStop()V
@@ -7205,15 +7215,15 @@
     :cond_3c
     const/4 v0, 0x1
 
-    .line 1270
+    .line 1271
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
-    .line 1271
+    .line 1272
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     invoke-interface {v1, v0}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->startStopRecording(Z)V
 
-    .line 1272
+    .line 1273
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mTextureRecorder:Lcom/transsion/camera/app/common/recorder/RecorderManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/recorder/RecorderManager;->startStop()V
@@ -7225,19 +7235,19 @@
 .method protected stopRecordingByForce()V
     .registers 2
 
-    .line 1255
+    .line 1256
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
     if-eqz v0, :cond_c
 
-    .line 1256
+    .line 1257
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mTextureRecorder:Lcom/transsion/camera/app/common/recorder/RecorderManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/recorder/RecorderManager;->startStop()V
 
     const/4 v0, 0x0
 
-    .line 1257
+    .line 1258
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
     :cond_c
@@ -7245,22 +7255,38 @@
 .end method
 
 .method protected supportVSSGLRecording()Z
-    .registers 1
+    .registers 2
+
+    .line 1665
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
 
     .line 1666
+    sget v0, Lcom/transsion/camera/app/common/R$bool;->video_sight_shock_support:I
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_18
+
     const-string p0, "com.transsion.camera.base_business.vss_sdk.VSSPreview"
 
+    .line 1667
     invoke-static {p0}, Lcom/transsion/camera/utils/ReflectionUtils;->findClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object p0
 
-    if-eqz p0, :cond_a
+    if-eqz p0, :cond_18
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_a
+    :cond_18
     const/4 p0, 0x0
 
     return p0
@@ -7269,21 +7295,21 @@
 .method protected supportedLockStateBackCamera()Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
     .registers 2
 
-    .line 1127
+    .line 1126
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isVideoBeautyOn()Z
 
     move-result v0
 
     if-nez v0, :cond_31
 
-    .line 1128
+    .line 1127
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isVideoPortraitOn()Z
 
     move-result v0
 
     if-nez v0, :cond_31
 
-    .line 1129
+    .line 1128
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isVideoMakeUpOn()Z
 
     move-result v0
@@ -7292,7 +7318,7 @@
 
     goto :goto_31
 
-    .line 1134
+    .line 1133
     :cond_13
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->aeLockSupport()Z
 
@@ -7306,12 +7332,12 @@
 
     if-eqz v0, :cond_22
 
-    .line 1135
+    .line 1134
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AE_AF_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
 
-    .line 1137
+    .line 1136
     :cond_22
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->aeLockSupport()Z
 
@@ -7325,12 +7351,12 @@
 
     if-nez p0, :cond_3a
 
-    .line 1138
+    .line 1137
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AE_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
 
-    .line 1130
+    .line 1129
     :cond_31
     :goto_31
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->aeLockSupport()Z
@@ -7339,12 +7365,12 @@
 
     if-eqz p0, :cond_3a
 
-    .line 1131
+    .line 1130
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AE_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
 
-    .line 1141
+    .line 1140
     :cond_3a
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
@@ -7354,21 +7380,21 @@
 .method protected supportedLockStateFrontCamera()Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
     .registers 2
 
-    .line 1153
+    .line 1152
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isVideoBeautyOn()Z
 
     move-result v0
 
     if-nez v0, :cond_31
 
-    .line 1154
+    .line 1153
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isVideoPortraitOn()Z
 
     move-result v0
 
     if-nez v0, :cond_31
 
-    .line 1155
+    .line 1154
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->isVideoMakeUpOn()Z
 
     move-result v0
@@ -7377,7 +7403,7 @@
 
     goto :goto_31
 
-    .line 1160
+    .line 1159
     :cond_13
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->aeLockSupport()Z
 
@@ -7391,12 +7417,12 @@
 
     if-eqz v0, :cond_22
 
-    .line 1161
+    .line 1160
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AE_AF_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
 
-    .line 1163
+    .line 1162
     :cond_22
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->aeLockSupport()Z
 
@@ -7410,12 +7436,12 @@
 
     if-nez p0, :cond_3a
 
-    .line 1164
+    .line 1163
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AE_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
 
-    .line 1156
+    .line 1155
     :cond_31
     :goto_31
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->aeLockSupport()Z
@@ -7424,12 +7450,12 @@
 
     if-eqz p0, :cond_3a
 
-    .line 1157
+    .line 1156
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AE_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
 
-    .line 1167
+    .line 1166
     :cond_3a
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
@@ -7593,7 +7619,7 @@
 .method public updatePreviewViewType(Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;)V
     .registers 2
 
-    .line 1779
+    .line 1778
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mPreviewViewType:Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
     return-void
@@ -7602,10 +7628,10 @@
 .method public updateStorageOperator(Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;I)V
     .registers 3
 
-    .line 1297
+    .line 1298
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->updateStorageOperator(Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;I)V
 
-    .line 1298
+    .line 1299
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
     if-eqz p1, :cond_17
@@ -7614,7 +7640,7 @@
 
     if-eqz p1, :cond_17
 
-    .line 1299
+    .line 1300
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
     if-eqz p1, :cond_17
@@ -7623,7 +7649,7 @@
 
     if-ne p2, p1, :cond_17
 
-    .line 1300
+    .line 1301
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mTextureRecorder:Lcom/transsion/camera/app/common/recorder/RecorderManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/recorder/RecorderManager;->storageUnMount()V

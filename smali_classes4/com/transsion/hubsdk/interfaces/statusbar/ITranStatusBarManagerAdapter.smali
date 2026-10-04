@@ -25,6 +25,9 @@
 .method public abstract disable(I)V
 .end method
 
+.method public abstract disable2(I)V
+.end method
+
 .method public abstract enableAction(Ljava/lang/String;Ljava/lang/String;Z)V
 .end method
 

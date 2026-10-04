@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 54
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method public final getINFINITE-UwyO8pc()J
     .registers 3
 
-    .line 59
+    .line 58
     # getter for: Lkotlin/time/Duration;->INFINITE:J
     invoke-static {}, Lkotlin/time/Duration;->access$getINFINITE$cp()J
 
@@ -50,7 +50,7 @@
 .method public final getZERO-UwyO8pc()J
     .registers 3
 
-    .line 56
+    .line 55
     # getter for: Lkotlin/time/Duration;->ZERO:J
     invoke-static {}, Lkotlin/time/Duration;->access$getZERO$cp()J
 

@@ -82,7 +82,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 42
+    .line 43
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "CaptureSurface"
@@ -91,7 +91,7 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 43
+    .line 44
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v0
@@ -109,7 +109,7 @@
     :cond_16
     const/4 v0, 0x1
 
-    .line 44
+    .line 45
     :goto_17
     sput v0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->DEFAULT_MAX_IMAGE:I
 
@@ -121,15 +121,15 @@
 
     move-object/from16 v6, p8
 
-    .line 88
+    .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v0, 0x0
 
-    .line 59
+    .line 60
     iput-wide v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mPreReleaseTime:J
 
-    .line 89
+    .line 90
     sget-object v7, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -166,30 +166,30 @@
 
     invoke-static {v7, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 90
+    .line 91
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mName:Ljava/lang/String;
 
-    .line 91
+    .line 92
     iput p2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mWidth:I
 
-    .line 92
+    .line 93
     iput p3, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHeight:I
 
-    .line 93
+    .line 94
     iput p4, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mFormat:I
 
     move-object/from16 v0, p7
 
-    .line 94
+    .line 95
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mBackgroundServiceType:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
 
-    .line 95
+    .line 96
     iput-object v6, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
-    .line 96
+    .line 97
     invoke-virtual {v6, p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->addCaptureSurface(Lcom/transsion/camera/app/common/mode/CaptureSurface;)V
 
-    .line 97
+    .line 98
     new-instance v0, Lcom/transsion/camera/app/common/mode/CaptureSurface$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/common/mode/CaptureSurface;)V
@@ -215,7 +215,7 @@
 
     if-ne v0, p4, :cond_82
 
-    .line 102
+    .line 103
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->shouldForceConvertNV21()Z
 
     move-result v0
@@ -234,14 +234,14 @@
 
     move v3, p5
 
-    .line 103
+    .line 104
     invoke-static/range {v0 .. v5}, Landroid/media/ImageReader;->newInstance(IIIIJ)Landroid/media/ImageReader;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mImageReader:Landroid/media/ImageReader;
 
-    .line 104
+    .line 105
     invoke-virtual {v6, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->getImageAvailableListener(Ljava/lang/String;)Landroid/media/ImageReader$OnImageAvailableListener;
 
     move-result-object p1
@@ -267,14 +267,14 @@
 
     move-wide v4, v8
 
-    .line 106
+    .line 107
     invoke-static/range {v0 .. v5}, Landroid/media/ImageReader;->newInstance(IIIIJ)Landroid/media/ImageReader;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mImageReader:Landroid/media/ImageReader;
 
-    .line 107
+    .line 108
     invoke-virtual {v6, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->getImageAvailableListener(Ljava/lang/String;)Landroid/media/ImageReader$OnImageAvailableListener;
 
     move-result-object p1
@@ -285,7 +285,7 @@
 
     invoke-virtual {p2, p1, p3}, Landroid/media/ImageReader;->setOnImageAvailableListener(Landroid/media/ImageReader$OnImageAvailableListener;Landroid/os/Handler;)V
 
-    .line 109
+    .line 110
     :goto_98
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mImageReader:Landroid/media/ImageReader;
 
@@ -295,7 +295,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mId:I
 
-    .line 110
+    .line 111
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -336,7 +336,7 @@
 .method private constructor <init>(Ljava/lang/String;IIIZLcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;)V
     .registers 17
 
-    .line 83
+    .line 84
     sget v5, Lcom/transsion/camera/app/common/mode/CaptureSurface;->DEFAULT_MAX_IMAGE:I
 
     move-object v0, p0
@@ -372,7 +372,7 @@
 .method private static getBufferFromImage(Landroid/media/Image;)[B
     .registers 7
 
-    .line 315
+    .line 324
     sget-object v0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -395,7 +395,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 316
+    .line 325
     invoke-virtual {p0}, Landroid/media/Image;->getFormat()I
 
     move-result v1
@@ -404,7 +404,7 @@
 
     if-ne v1, v2, :cond_3a
 
-    .line 319
+    .line 328
     invoke-virtual {p0}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
 
     move-result-object v1
@@ -413,22 +413,22 @@
 
     aget-object v1, v1, v2
 
-    .line 320
+    .line 329
     invoke-virtual {v1}, Landroid/media/Image$Plane;->getBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    .line 321
+    .line 330
     invoke-virtual {v1}, Ljava/nio/Buffer;->remaining()I
 
     move-result v2
 
     new-array v2, v2, [B
 
-    .line 322
+    .line 331
     invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
-    .line 323
+    .line 332
     invoke-virtual {v1}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
     goto :goto_44
@@ -438,7 +438,7 @@
 
     if-ne v1, v2, :cond_43
 
-    .line 327
+    .line 336
     invoke-static {p0}, Lcom/transsion/camera/utils/CameraUtil;->getNV21Buffer(Landroid/media/Image;)[B
 
     move-result-object v2
@@ -451,7 +451,7 @@
     :goto_44
     if-nez v2, :cond_49
 
-    .line 331
+    .line 340
     const-string v1, "null"
 
     goto :goto_5b
@@ -473,7 +473,7 @@
 
     move-result-object v1
 
-    .line 332
+    .line 341
     :goto_5b
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -507,7 +507,7 @@
 .method private synthetic lambda$new$0(Ljava/lang/Void;)V
     .registers 2
 
-    .line 97
+    .line 98
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->realReleaseSurface()V
 
     return-void
@@ -516,7 +516,7 @@
 .method private realReleaseSurface()V
     .registers 4
 
-    .line 251
+    .line 260
     sget-object v0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -541,7 +541,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 252
+    .line 261
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->isReleased()Z
@@ -552,7 +552,7 @@
 
     goto :goto_5e
 
-    .line 255
+    .line 264
     :cond_25
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -570,46 +570,46 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 256
+    .line 265
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->setImageCallback(Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;)V
 
-    .line 257
+    .line 266
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->onImageReaderClose()V
 
-    .line 258
+    .line 267
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mImageReader:Landroid/media/ImageReader;
 
     invoke-virtual {v0}, Landroid/media/ImageReader;->close()V
 
-    .line 259
+    .line 268
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->onRelease(Lcom/transsion/camera/app/common/mode/CaptureSurface;)V
 
-    .line 260
+    .line 269
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mSurfaceStateListener:Lcom/transsion/camera/app/common/mode/CaptureSurface$SurfaceStateListener;
 
     if-eqz v0, :cond_57
 
-    .line 261
+    .line 270
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$SurfaceStateListener;->onSurfaceReleased(Lcom/transsion/camera/app/common/mode/CaptureSurface;)V
 
-    .line 262
+    .line 271
     iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mSurfaceStateListener:Lcom/transsion/camera/app/common/mode/CaptureSurface$SurfaceStateListener;
 
-    .line 264
+    .line 273
     :cond_57
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     if-eqz v0, :cond_5e
 
-    .line 265
+    .line 274
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->onCaptureSurfaceReleased(Lcom/transsion/camera/app/common/mode/CaptureSurface;)V
 
     :cond_5e
@@ -620,7 +620,7 @@
 .method private shouldReleaseSurface()Z
     .registers 4
 
-    .line 270
+    .line 279
     sget-object v0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -641,7 +641,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 271
+    .line 280
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->getPictureCount()I
@@ -654,7 +654,7 @@
 
     return p0
 
-    .line 274
+    .line 283
     :cond_22
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
@@ -670,12 +670,12 @@
 .method public checkNotifyBgOfflineErr()V
     .registers 5
 
-    .line 304
+    .line 313
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->getPictureCount()I
 
     move-result v0
 
-    .line 305
+    .line 314
     sget-object v1, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -701,10 +701,10 @@
     :goto_1d
     if-ge v1, v0, :cond_28
 
-    .line 308
+    .line 317
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->decreasePicCount()V
 
-    .line 309
+    .line 318
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->decreaseCaptureCount()V
 
     add-int/lit8 v1, v1, 0x1
@@ -718,7 +718,7 @@
 .method public decreaseCaptureCount()V
     .registers 1
 
-    .line 225
+    .line 234
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->decreaseCaptureCount()V
@@ -729,7 +729,7 @@
 .method public decreasePicCount()V
     .registers 1
 
-    .line 233
+    .line 242
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->decreasePicCount()V
@@ -740,7 +740,7 @@
 .method public disableBGEnable()V
     .registers 1
 
-    .line 212
+    .line 213
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->disableBGEnable()V
@@ -751,7 +751,7 @@
 .method public forceReleaseSurface()V
     .registers 4
 
-    .line 292
+    .line 301
     sget-object v0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -770,7 +770,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 293
+    .line 302
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->getReleaseLock()Ljava/lang/Object;
@@ -779,11 +779,11 @@
 
     monitor-enter v0
 
-    .line 294
+    .line 303
     :try_start_1d
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->realReleaseSurface()V
 
-    .line 295
+    .line 304
     monitor-exit v0
 
     return-void
@@ -801,7 +801,7 @@
 .method public getFormat()I
     .registers 1
 
-    .line 204
+    .line 205
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mFormat:I
 
     return p0
@@ -810,7 +810,7 @@
 .method public getHeight()I
     .registers 1
 
-    .line 200
+    .line 201
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHeight:I
 
     return p0
@@ -819,7 +819,7 @@
 .method public getId()I
     .registers 1
 
-    .line 145
+    .line 146
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mId:I
 
     return p0
@@ -828,7 +828,7 @@
 .method public getImageReader()Landroid/media/ImageReader;
     .registers 1
 
-    .line 155
+    .line 156
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mImageReader:Landroid/media/ImageReader;
 
     return-object p0
@@ -837,7 +837,7 @@
 .method public getListener()Landroid/media/ImageReader$OnImageAvailableListener;
     .registers 2
 
-    .line 160
+    .line 161
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mName:Ljava/lang/String;
@@ -852,7 +852,7 @@
 .method public getPictureCount()I
     .registers 1
 
-    .line 217
+    .line 226
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->getPictureCount()I
@@ -865,7 +865,7 @@
 .method public getPreReleaseTime()J
     .registers 3
 
-    .line 247
+    .line 256
     iget-wide v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mPreReleaseTime:J
 
     return-wide v0
@@ -874,7 +874,7 @@
 .method public getSurface()Landroid/view/Surface;
     .registers 1
 
-    .line 150
+    .line 151
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mImageReader:Landroid/media/ImageReader;
 
     invoke-virtual {p0}, Landroid/media/ImageReader;->getSurface()Landroid/view/Surface;
@@ -887,7 +887,7 @@
 .method public getWidth()I
     .registers 1
 
-    .line 196
+    .line 197
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mWidth:I
 
     return p0
@@ -896,7 +896,7 @@
 .method public increaseCaptureCount()V
     .registers 1
 
-    .line 221
+    .line 230
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->increaseCaptureCount()V
@@ -907,7 +907,7 @@
 .method public increasePicCount(J)V
     .registers 3
 
-    .line 229
+    .line 238
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->increasePicCount(J)V
@@ -918,7 +918,7 @@
 .method public isBGEnable()Z
     .registers 1
 
-    .line 165
+    .line 166
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->isEnable()Z
@@ -931,7 +931,7 @@
 .method public isBGOfflineEnable()Z
     .registers 1
 
-    .line 170
+    .line 171
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->isEnable()Z
@@ -944,7 +944,7 @@
 .method public isOfflineJniEnable()Z
     .registers 1
 
-    .line 175
+    .line 176
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->isEnable()Z
@@ -957,7 +957,7 @@
 .method public isSurfaceDirty()Z
     .registers 1
 
-    .line 185
+    .line 186
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->isSurfaceDirty()Z
@@ -970,7 +970,7 @@
 .method public isUserBGService()Z
     .registers 4
 
-    .line 133
+    .line 134
     sget-object v0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -991,7 +991,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 134
+    .line 135
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mBackgroundServiceType:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
 
     sget-object v0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;->BG_SERVICE:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
@@ -1011,7 +1011,7 @@
 .method public isUserTZService()Z
     .registers 4
 
-    .line 139
+    .line 140
     sget-object v0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1032,7 +1032,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 140
+    .line 141
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mBackgroundServiceType:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
 
     sget-object v0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;->TZ_SERVICE:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
@@ -1052,7 +1052,7 @@
 .method public notifyEventCallback(Ljava/lang/Class;Ljava/lang/Object;)V
     .registers 6
 
-    .line 299
+    .line 308
     sget-object v0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1077,7 +1077,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 300
+    .line 309
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->notifyEventCallback(Ljava/lang/Class;Ljava/lang/Object;)V
@@ -1088,14 +1088,14 @@
 .method public onBGServiceDied()V
     .registers 3
 
-    .line 237
+    .line 246
     sget-object v0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onBGServiceDied"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 238
+    .line 247
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->onBGServiceDied()V
@@ -1106,14 +1106,14 @@
 .method public onPostAlgoServiceDied()V
     .registers 3
 
-    .line 242
+    .line 251
     sget-object v0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onPostAlgoServiceDied"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 243
+    .line 252
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->onBGServiceDied()V
@@ -1124,12 +1124,12 @@
 .method public releaseSurface()V
     .registers 5
 
-    .line 278
+    .line 287
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->shouldReleaseSurface()Z
 
     move-result v0
 
-    .line 279
+    .line 288
     sget-object v1, Lcom/transsion/camera/app/common/mode/CaptureSurface;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1154,7 +1154,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 280
+    .line 289
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->getReleaseLock()Ljava/lang/Object;
@@ -1165,7 +1165,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 282
+    .line 291
     :try_start_2b
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->realReleaseSurface()V
 
@@ -1176,7 +1176,7 @@
 
     goto :goto_3f
 
-    .line 284
+    .line 293
     :cond_31
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -1184,14 +1184,14 @@
 
     iput-wide v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mPreReleaseTime:J
 
-    .line 285
+    .line 294
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->setCanReleaseCaptureSurface(Z)V
 
-    .line 287
+    .line 296
     :goto_3d
     monitor-exit v1
 
@@ -1208,7 +1208,7 @@
 .method public resetBGEnable(ZZ)V
     .registers 3
 
-    .line 208
+    .line 209
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->resetBGEnable(ZZ)V
@@ -1219,14 +1219,14 @@
 .method public setCameraProxy(Lcom/transsion/camera/adapter/CameraProxy;)V
     .registers 3
 
-    .line 114
+    .line 115
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     instance-of v0, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;
 
     if-eqz v0, :cond_b
 
-    .line 115
+    .line 116
     check-cast p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->setCameraProxy(Lcom/transsion/camera/adapter/CameraProxy;)V
@@ -1235,10 +1235,21 @@
     return-void
 .end method
 
+.method public setContinuousShot(Z)V
+    .registers 2
+
+    .line 217
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
+
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->setContinuousShot(Z)V
+
+    return-void
+.end method
+
 .method public setImageCallback(Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;)V
     .registers 2
 
-    .line 120
+    .line 121
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->setImageCallback(Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;)V
@@ -1249,7 +1260,7 @@
 .method public setProcessMediaManager(Lcom/transsion/camera/app/common/provider/ProcessMediaManager;)V
     .registers 2
 
-    .line 128
+    .line 129
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     return-void
@@ -1258,7 +1269,7 @@
 .method public setSurfaceStateListener(Lcom/transsion/camera/app/common/mode/CaptureSurface$SurfaceStateListener;)V
     .registers 2
 
-    .line 124
+    .line 125
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mSurfaceStateListener:Lcom/transsion/camera/app/common/mode/CaptureSurface$SurfaceStateListener;
 
     return-void
@@ -1267,7 +1278,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 191
+    .line 192
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1300,7 +1311,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
-    .line 192
+    .line 193
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->getCaptureCount()I
 
     move-result v1
@@ -1337,7 +1348,7 @@
 .method public updateBGOfflineState(I)V
     .registers 2
 
-    .line 180
+    .line 181
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface;->mHelper:Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->updateBGOfflineState(I)V

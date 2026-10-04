@@ -30,8 +30,8 @@
 .method public abstract onLongPressStart(I)V
 .end method
 
-.method public abstract onShoulderButtonSwipeEnd()V
+.method public abstract onSwipeEnd()V
 .end method
 
-.method public abstract onShoulderButtonSwiping(ZI)V
+.method public abstract onSwiping(II)V
 .end method

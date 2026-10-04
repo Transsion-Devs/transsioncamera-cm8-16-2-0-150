@@ -4,6 +4,17 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$suVJiKXDg8rNb_5a9akjjxV_a10(Ljava/lang/Object;)Z
+    .registers 1
+
+    .line 0
+    invoke-static {p0}, Lkotlin/sequences/SequencesKt___SequencesKt;->filterNotNull$lambda$0$SequencesKt___SequencesKt(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public static asIterable(Lkotlin/sequences/Sequence;)Ljava/lang/Iterable;
     .registers 2
 
@@ -11,7 +22,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2903
+    .line 3027
     new-instance v0, Lkotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1;
 
     invoke-direct {v0, p0}, Lkotlin/sequences/SequencesKt___SequencesKt$asIterable$$inlined$Iterable$1;-><init>(Lkotlin/sequences/Sequence;)V
@@ -32,7 +43,7 @@
 
     return-object p0
 
-    .line 407
+    .line 411
     :cond_a
     instance-of v0, p0, Lkotlin/sequences/DropTakeSequence;
 
@@ -46,7 +57,7 @@
 
     return-object p0
 
-    .line 408
+    .line 412
     :cond_15
     new-instance v0, Lkotlin/sequences/DropSequence;
 
@@ -54,7 +65,7 @@
 
     return-object v0
 
-    .line 404
+    .line 408
     :cond_1b
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -96,7 +107,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 431
+    .line 435
     new-instance v0, Lkotlin/sequences/FilteringSequence;
 
     const/4 v1, 0x1
@@ -117,7 +128,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 496
+    .line 500
     new-instance v0, Lkotlin/sequences/FilteringSequence;
 
     const/4 v1, 0x0
@@ -134,8 +145,10 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 508
-    sget-object v0, Lkotlin/sequences/SequencesKt___SequencesKt$filterNotNull$1;->INSTANCE:Lkotlin/sequences/SequencesKt___SequencesKt$filterNotNull$1;
+    .line 512
+    new-instance v0, Lkotlin/sequences/SequencesKt___SequencesKt$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0}, Lkotlin/sequences/SequencesKt___SequencesKt$$ExternalSyntheticLambda0;-><init>()V
 
     invoke-static {p0, v0}, Lkotlin/sequences/SequencesKt___SequencesKt;->filterNot(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
@@ -146,6 +159,21 @@
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
+.end method
+
+.method private static final filterNotNull$lambda$0$SequencesKt___SequencesKt(Ljava/lang/Object;)Z
+    .registers 1
+
+    if-nez p0, :cond_4
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_4
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public static final joinTo(Lkotlin/sequences/Sequence;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;)Ljava/lang/Appendable;
@@ -175,10 +203,10 @@
 
     invoke-static {p6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2872
+    .line 2996
     invoke-interface {p1, p3}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    .line 2874
+    .line 2998
     invoke-interface {p0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -202,7 +230,7 @@
 
     if-le p3, v1, :cond_38
 
-    .line 2875
+    .line 2999
     invoke-interface {p1, p2}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
     :cond_38
@@ -210,7 +238,7 @@
 
     if-gt p3, p5, :cond_40
 
-    .line 2877
+    .line 3001
     :cond_3c
     invoke-static {p1, v0, p7}, Lkotlin/text/StringsKt;->appendElement(Ljava/lang/Appendable;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
 
@@ -221,10 +249,10 @@
 
     if-le p3, p5, :cond_47
 
-    .line 2880
+    .line 3004
     invoke-interface {p1, p6}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    .line 2881
+    .line 3005
     :cond_47
     invoke-interface {p1, p4}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
@@ -254,7 +282,7 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2896
+    .line 3020
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -283,10 +311,6 @@
 
     move-result-object p0
 
-    const-string p1, "joinTo(StringBuilder(), \u2026ed, transform).toString()"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     return-object p0
 .end method
 
@@ -297,7 +321,7 @@
 
     if-eqz p8, :cond_6
 
-    .line 2895
+    .line 3019
     const-string p1, ", "
 
     :cond_6
@@ -366,24 +390,24 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 242
+    .line 246
     invoke-interface {p0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    .line 243
+    .line 247
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_1f
 
-    .line 245
+    .line 249
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 246
+    .line 250
     :goto_13
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -391,7 +415,7 @@
 
     if-eqz v1, :cond_1e
 
-    .line 247
+    .line 251
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -401,7 +425,7 @@
     :cond_1e
     return-object v0
 
-    .line 244
+    .line 248
     :cond_1f
     new-instance p0, Ljava/util/NoSuchElementException;
 
@@ -423,7 +447,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1052
+    .line 1078
     new-instance v0, Lkotlin/sequences/TransformingSequence;
 
     invoke-direct {v0, p0, p1}, Lkotlin/sequences/TransformingSequence;-><init>(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)V
@@ -442,7 +466,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1116
+    .line 1142
     new-instance v0, Lkotlin/sequences/TransformingSequence;
 
     invoke-direct {v0, p0, p1}, Lkotlin/sequences/TransformingSequence;-><init>(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)V
@@ -465,7 +489,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 636
+    .line 644
     new-instance v0, Lkotlin/sequences/SequencesKt___SequencesKt$sortedWith$1;
 
     invoke-direct {v0, p0, p1}, Lkotlin/sequences/SequencesKt___SequencesKt$sortedWith$1;-><init>(Lkotlin/sequences/Sequence;Ljava/util/Comparator;)V
@@ -484,7 +508,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 787
+    .line 795
     invoke-interface {p0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -500,7 +524,7 @@
 
     move-result-object v0
 
-    .line 788
+    .line 796
     invoke-interface {p1, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_e
@@ -510,22 +534,78 @@
 .end method
 
 .method public static toList(Lkotlin/sequences/Sequence;)Ljava/util/List;
-    .registers 2
+    .registers 3
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 808
-    invoke-static {p0}, Lkotlin/sequences/SequencesKt___SequencesKt;->toMutableList(Lkotlin/sequences/Sequence;)Ljava/util/List;
+    .line 816
+    invoke-interface {p0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->optimizeReadOnlyList(Ljava/util/List;)Ljava/util/List;
+    .line 817
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_14
+
+    .line 818
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
+
+    .line 819
+    :cond_14
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 820
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-nez v1, :cond_23
+
+    .line 821
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 822
+    :cond_23
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 823
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 824
+    :goto_2b
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_39
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2b
+
+    :cond_39
+    return-object v1
 .end method
 
 .method public static final toMutableList(Lkotlin/sequences/Sequence;)Ljava/util/List;
@@ -535,7 +615,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 817
+    .line 834
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V

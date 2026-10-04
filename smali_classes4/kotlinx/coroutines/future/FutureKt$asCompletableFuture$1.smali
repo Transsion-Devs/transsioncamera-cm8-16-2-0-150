@@ -73,7 +73,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 77
+    .line 73
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/future/FutureKt$asCompletableFuture$1;->invoke(Ljava/lang/Throwable;)V
@@ -86,7 +86,7 @@
 .method public final invoke(Ljava/lang/Throwable;)V
     .registers 3
 
-    .line 79
+    .line 75
     :try_start_0
     iget-object p1, p0, Lkotlinx/coroutines/future/FutureKt$asCompletableFuture$1;->$future:Ljava/util/concurrent/CompletableFuture;
 
@@ -105,7 +105,7 @@
     :catchall_c
     move-exception p1
 
-    .line 81
+    .line 77
     iget-object p0, p0, Lkotlinx/coroutines/future/FutureKt$asCompletableFuture$1;->$future:Ljava/util/concurrent/CompletableFuture;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CompletableFuture;->completeExceptionally(Ljava/lang/Throwable;)Z

@@ -36,14 +36,14 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)V
     .registers 3
 
-    .line 119
+    .line 118
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 120
+    .line 119
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -67,7 +67,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 3
 
-    .line 125
+    .line 124
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$MainHandler;->mTimeLapseVideoMode:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -78,7 +78,7 @@
 
     if-nez p0, :cond_14
 
-    .line 127
+    .line 126
     invoke-static {}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -89,7 +89,7 @@
 
     return-void
 
-    .line 130
+    .line 129
     :cond_14
     iget p1, p1, Landroid/os/Message;->what:I
 
@@ -99,7 +99,7 @@
 
     return-void
 
-    .line 134
+    .line 133
     :cond_1a
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->onBackPressed()Z
 

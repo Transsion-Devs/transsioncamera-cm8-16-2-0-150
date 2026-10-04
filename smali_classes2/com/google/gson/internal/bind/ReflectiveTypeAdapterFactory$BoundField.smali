@@ -15,39 +15,43 @@
 
 
 # instance fields
-.field final deserialized:Z
+.field final field:Ljava/lang/reflect/Field;
 
-.field final name:Ljava/lang/String;
+.field final fieldName:Ljava/lang/String;
 
-.field final serialized:Z
+.field final serializedName:Ljava/lang/String;
 
 
 # direct methods
-.method protected constructor <init>(Ljava/lang/String;ZZ)V
-    .registers 4
+.method protected constructor <init>(Ljava/lang/String;Ljava/lang/reflect/Field;)V
+    .registers 3
 
-    .line 187
+    .line 436
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 188
-    iput-object p1, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$BoundField;->name:Ljava/lang/String;
+    .line 437
+    iput-object p1, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$BoundField;->serializedName:Ljava/lang/String;
 
-    .line 189
-    iput-boolean p2, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$BoundField;->serialized:Z
+    .line 438
+    iput-object p2, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$BoundField;->field:Ljava/lang/reflect/Field;
 
-    .line 190
-    iput-boolean p3, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$BoundField;->deserialized:Z
+    .line 439
+    invoke-virtual {p2}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/google/gson/internal/bind/ReflectiveTypeAdapterFactory$BoundField;->fieldName:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method abstract read(Lcom/google/gson/stream/JsonReader;Ljava/lang/Object;)V
+.method abstract readIntoArray(Lcom/google/gson/stream/JsonReader;I[Ljava/lang/Object;)V
+.end method
+
+.method abstract readIntoField(Lcom/google/gson/stream/JsonReader;Ljava/lang/Object;)V
 .end method
 
 .method abstract write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
-.end method
-
-.method abstract writeField(Ljava/lang/Object;)Z
 .end method

@@ -192,7 +192,7 @@
 .method protected getBackMaxZoomRatio()I
     .registers 1
 
-    .line 466
+    .line 467
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -211,13 +211,13 @@
 
     goto :goto_14
 
-    .line 469
+    .line 470
     :cond_11
     sget p0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_10X:I
 
     return p0
 
-    .line 467
+    .line 468
     :cond_14
     :goto_14
     sget p0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_4X:I
@@ -226,22 +226,24 @@
 .end method
 
 .method protected getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
-    .registers 5
+    .registers 6
 
     .line 459
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object p0
 
-    const/16 v0, 0x8
+    const/16 v0, 0x10
 
-    const/16 v1, 0x10
+    const/16 v1, 0x80
 
     const/4 v2, 0x2
 
     const/4 v3, 0x4
 
-    filled-new-array {v2, v3, v0, v1}, [I
+    const/16 v4, 0x8
+
+    filled-new-array {v2, v3, v4, v0, v1}, [I
 
     move-result-object v0
 

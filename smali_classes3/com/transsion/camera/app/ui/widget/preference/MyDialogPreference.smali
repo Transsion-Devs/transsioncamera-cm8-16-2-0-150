@@ -53,7 +53,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 27
+    .line 28
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "MyDialogPreference"
@@ -68,21 +68,21 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
 
-    .line 48
+    .line 49
     invoke-direct {p0, p1}, Landroid/preference/DialogPreference;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x0
 
-    .line 33
+    .line 34
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mIsDebugPreference:Z
 
-    .line 35
+    .line 36
     iput v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mCurrentCount:I
 
-    .line 49
+    .line 50
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mContext:Landroid/content/Context;
 
-    .line 50
+    .line 51
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -101,7 +101,7 @@
 .method private closeDeveloperMode()V
     .registers 2
 
-    .line 140
+    .line 142
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mContext:Landroid/content/Context;
 
     const/4 v0, 0x0
@@ -116,10 +116,10 @@
 
     const/4 p2, 0x1
 
-    .line 100
+    .line 101
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->onDialogClosed(Z)V
 
-    .line 101
+    .line 102
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
@@ -130,10 +130,10 @@
 
     const/4 p2, 0x0
 
-    .line 104
+    .line 105
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->onDialogClosed(Z)V
 
-    .line 105
+    .line 106
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
@@ -142,7 +142,7 @@
 .method private openDeveloperMode()V
     .registers 2
 
-    .line 136
+    .line 138
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mContext:Landroid/content/Context;
 
     const/4 v0, 0x1
@@ -152,12 +152,64 @@
     return-void
 .end method
 
+.method private updateDialogWindowBg(Lcom/transsion/widgetslib/dialog/PromptDialog;)V
+    .registers 3
+
+    .line 146
+    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_23
+
+    invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    if-nez v0, :cond_d
+
+    goto :goto_23
+
+    .line 149
+    :cond_d
+    invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcom/transsion/camera/utils/UIUtils;->isDarkMode(Landroid/content/Context;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1e
+
+    .line 150
+    sget p0, Lcom/transsion/camera/featurelibs/commonwidget/R$drawable;->bg_dialog_night_round_corner:I
+
+    goto :goto_20
+
+    .line 151
+    :cond_1e
+    sget p0, Lcom/transsion/camera/featurelibs/commonwidget/R$drawable;->bg_dialog_round_corner:I
+
+    .line 149
+    :goto_20
+    invoke-virtual {p1, p0}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
+
+    :cond_23
+    :goto_23
+    return-void
+.end method
+
 
 # virtual methods
 .method public hideDialog()V
     .registers 2
 
-    .line 130
+    .line 132
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mDialog:Lcom/transsion/widgetslib/dialog/PromptDialog;
 
     if-eqz v0, :cond_f
@@ -168,7 +220,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 131
+    .line 133
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mDialog:Lcom/transsion/widgetslib/dialog/PromptDialog;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->dismiss()V
@@ -180,7 +232,7 @@
 .method protected onClick()V
     .registers 5
 
-    .line 88
+    .line 89
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mDialog:Lcom/transsion/widgetslib/dialog/PromptDialog;
 
     if-eqz v0, :cond_b
@@ -193,7 +245,7 @@
 
     return-void
 
-    .line 91
+    .line 92
     :cond_b
     new-instance v0, Lcom/transsion/widgetslib/dialog/PromptDialog$Builder;
 
@@ -203,19 +255,19 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mBuilder:Lcom/transsion/widgetslib/dialog/PromptDialog$Builder;
 
-    .line 92
+    .line 93
     invoke-virtual {p0}, Landroid/preference/DialogPreference;->getPositiveButtonText()Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 93
+    .line 94
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_26
 
-    .line 94
+    .line 95
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mContext:Landroid/content/Context;
 
     sget v1, Lcom/transsion/widgetslib/R$string;->os_preference_dialog_positive_string:I
@@ -224,7 +276,7 @@
 
     move-result-object v0
 
-    .line 96
+    .line 97
     :cond_26
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mContext:Landroid/content/Context;
 
@@ -234,7 +286,7 @@
 
     move-result-object v1
 
-    .line 97
+    .line 98
     iget-object v2, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mBuilder:Lcom/transsion/widgetslib/dialog/PromptDialog$Builder;
 
     invoke-virtual {p0}, Landroid/preference/DialogPreference;->getDialogTitle()Ljava/lang/CharSequence;
@@ -245,7 +297,7 @@
 
     move-result-object v2
 
-    .line 98
+    .line 99
     invoke-virtual {p0}, Landroid/preference/DialogPreference;->getDialogMessage()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -258,7 +310,7 @@
 
     invoke-direct {v3, p0}, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;)V
 
-    .line 99
+    .line 100
     invoke-virtual {v2, v0, v3}, Lcom/transsion/widgetslib/dialog/PromptDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lcom/transsion/widgetslib/dialog/PromptDialog$Builder;
 
     move-result-object v0
@@ -267,20 +319,25 @@
 
     invoke-direct {v2, p0}, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;)V
 
-    .line 103
+    .line 104
     invoke-virtual {v0, v1, v2}, Lcom/transsion/widgetslib/dialog/PromptDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lcom/transsion/widgetslib/dialog/PromptDialog$Builder;
 
     move-result-object v0
 
-    .line 107
+    .line 108
     invoke-virtual {v0}, Lcom/transsion/widgetslib/dialog/PromptDialog$Builder;->create()Lcom/transsion/widgetslib/dialog/PromptDialog;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mDialog:Lcom/transsion/widgetslib/dialog/PromptDialog;
 
-    .line 108
-    invoke-virtual {v0}, Lcom/transsion/widgetslib/dialog/PromptDialog;->show()V
+    .line 109
+    invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->updateDialogWindowBg(Lcom/transsion/widgetslib/dialog/PromptDialog;)V
+
+    .line 110
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mDialog:Lcom/transsion/widgetslib/dialog/PromptDialog;
+
+    invoke-virtual {p0}, Lcom/transsion/widgetslib/dialog/PromptDialog;->show()V
 
     return-void
 .end method
@@ -288,7 +345,7 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .registers 5
 
-    .line 72
+    .line 73
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mDialog:Lcom/transsion/widgetslib/dialog/PromptDialog;
 
     if-eqz v0, :cond_f
@@ -299,12 +356,12 @@
 
     if-eqz v0, :cond_f
 
-    .line 73
+    .line 74
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mDialog:Lcom/transsion/widgetslib/dialog/PromptDialog;
 
     invoke-virtual {v0, p1}, Lcom/transsion/widgetslib/dialog/PromptDialog;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 75
+    .line 76
     :cond_f
     iget v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mUIMode:I
 
@@ -314,7 +371,7 @@
 
     return-void
 
-    .line 78
+    .line 79
     :cond_16
     sget-object v0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -352,7 +409,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 80
+    .line 81
     iget v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mUIMode:I
 
     and-int/lit8 v0, v0, 0x30
@@ -363,10 +420,10 @@
 
     if-eq v0, v1, :cond_4e
 
-    .line 81
+    .line 82
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->hideDialog()V
 
-    .line 83
+    .line 84
     :cond_4e
     iget p1, p1, Landroid/content/res/Configuration;->uiMode:I
 
@@ -378,15 +435,15 @@
 .method protected onDialogClosed(Z)V
     .registers 3
 
-    .line 113
+    .line 115
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mDialogListener:Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference$DialogListener;
 
     if-eqz v0, :cond_7
 
-    .line 114
+    .line 116
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference$DialogListener;->onDialogClosed(Z)V
 
-    .line 116
+    .line 118
     :cond_7
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mIsDebugPreference:Z
 
@@ -394,7 +451,7 @@
 
     if-nez p1, :cond_1a
 
-    .line 118
+    .line 120
     iget p1, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mCurrentCount:I
 
     add-int/lit8 p1, p1, 0x1
@@ -405,7 +462,7 @@
 
     if-ne p1, v0, :cond_20
 
-    .line 120
+    .line 122
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->openDeveloperMode()V
 
     return-void
@@ -413,10 +470,10 @@
     :cond_1a
     const/4 p1, 0x0
 
-    .line 123
+    .line 125
     iput p1, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mCurrentCount:I
 
-    .line 124
+    .line 126
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->closeDeveloperMode()V
 
     :cond_20
@@ -426,7 +483,7 @@
 .method public setDialogListener(Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference$DialogListener;)V
     .registers 2
 
-    .line 44
+    .line 45
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference;->mDialogListener:Lcom/transsion/camera/app/ui/widget/preference/MyDialogPreference$DialogListener;
 
     return-void
@@ -435,10 +492,10 @@
 .method public setKey(Ljava/lang/String;)V
     .registers 3
 
-    .line 67
+    .line 68
     invoke-super {p0, p1}, Landroid/preference/Preference;->setKey(Ljava/lang/String;)V
 
-    .line 68
+    .line 69
     const-string v0, "key_restore_settings"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

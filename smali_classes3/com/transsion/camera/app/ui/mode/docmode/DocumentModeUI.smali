@@ -302,14 +302,14 @@
 .method private varargs createObjectAnimatorWithDuration(Ljava/lang/Object;ILjava/lang/String;[F)Landroid/animation/Animator;
     .registers 5
 
-    .line 246
+    .line 249
     invoke-static {p1, p3, p4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p0
 
     int-to-long p1, p2
 
-    .line 247
+    .line 250
     invoke-virtual {p0, p1, p2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     return-object p0
@@ -1395,17 +1395,17 @@
 
     const/4 v0, 0x0
 
-    .line 252
+    .line 255
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mShowing:Z
 
-    .line 253
+    .line 256
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocBg:Landroid/widget/RelativeLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 254
+    .line 257
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
@@ -1416,7 +1416,7 @@
 .method public hideViewWithAnim(Z)V
     .registers 14
 
-    .line 262
+    .line 265
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_a
@@ -1444,22 +1444,22 @@
     :cond_15
     const/4 v0, 0x0
 
-    .line 265
+    .line 268
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mShowing:Z
 
-    .line 266
+    .line 269
     iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mShowAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 267
+    .line 270
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mHideAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 268
+    .line 271
     iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocImage:Landroid/widget/ImageView;
 
     const/16 v2, 0x12c
@@ -1486,7 +1486,7 @@
 
     move-result-object v6
 
-    .line 269
+    .line 272
     iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocImage:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_3f
@@ -1511,7 +1511,7 @@
 
     move-result-object v7
 
-    .line 270
+    .line 273
     iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocImage:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_51
@@ -1529,7 +1529,7 @@
 
     move-result-object v8
 
-    .line 271
+    .line 274
     iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocBg:Landroid/widget/RelativeLayout;
 
     if-eqz p1, :cond_61
@@ -1548,14 +1548,14 @@
 
     move-result-object v11
 
-    .line 272
+    .line 275
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mPathInterpolator2:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 273
+    .line 276
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget-object v9, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mTranslationXAnim:Landroid/animation/Animator;
@@ -1568,7 +1568,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 274
+    .line 277
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     new-instance v0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI$1;
@@ -1577,7 +1577,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 295
+    .line 298
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
@@ -1625,7 +1625,7 @@
 .method public isShowing()Z
     .registers 1
 
-    .line 299
+    .line 302
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mShowing:Z
 
     return p0
@@ -1725,7 +1725,7 @@
 .method public setDocStatusListener(Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI$IDocStatusListener;)V
     .registers 2
 
-    .line 258
+    .line 261
     iput-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocStatusListener:Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI$IDocStatusListener;
 
     return-void
@@ -1735,16 +1735,27 @@
     .registers 9
 
     .line 224
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+
+    if-eqz v0, :cond_9
+
+    if-eqz p1, :cond_9
+
+    .line 225
+    invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/IAppUI;->setThumbnail(Landroid/graphics/Bitmap;)V
+
+    .line 227
+    :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocImage:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     const/4 v0, 0x1
 
-    .line 225
+    .line 228
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mShowing:Z
 
-    .line 226
+    .line 229
     iget v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mCenterX:I
 
     iget v1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mCenterY:I
@@ -1759,7 +1770,7 @@
 
     invoke-direct {p0, v0, v1, v2, v3}, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->updateDocLayoutPosition(IIII)V
 
-    .line 227
+    .line 230
     iget v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mOrientation:I
 
     iget v1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mScreenFormType:I
@@ -1774,43 +1785,43 @@
 
     invoke-direct {p0, v0, v1, v2, p1}, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->updateTranslationAnimator(IIII)V
 
-    .line 228
+    .line 231
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocImage:Landroid/widget/ImageView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 229
+    .line 232
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 230
+    .line 233
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocBg:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 231
+    .line 234
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mShowAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 232
+    .line 235
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mShowAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 233
+    .line 236
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocImage:Landroid/widget/ImageView;
 
     const/4 v0, 0x2
 
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_9a
+    fill-array-data v1, :array_a4
 
     const/16 v2, 0x12c
 
@@ -1820,12 +1831,12 @@
 
     move-result-object p1
 
-    .line 234
+    .line 237
     iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocImage:Landroid/widget/ImageView;
 
     new-array v4, v0, [F
 
-    fill-array-data v4, :array_a2
+    fill-array-data v4, :array_ac
 
     const-string v5, "scaleX"
 
@@ -1833,12 +1844,12 @@
 
     move-result-object v1
 
-    .line 235
+    .line 238
     iget-object v4, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocImage:Landroid/widget/ImageView;
 
     new-array v5, v0, [F
 
-    fill-array-data v5, :array_aa
+    fill-array-data v5, :array_b4
 
     const-string v6, "scaleY"
 
@@ -1846,38 +1857,38 @@
 
     move-result-object v4
 
-    .line 236
+    .line 239
     iget-object v5, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocBg:Landroid/widget/RelativeLayout;
 
     new-array v0, v0, [F
 
-    fill-array-data v0, :array_b2
+    fill-array-data v0, :array_bc
 
     invoke-direct {p0, v5, v2, v3, v0}, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->createObjectAnimatorWithDuration(Ljava/lang/Object;ILjava/lang/String;[F)Landroid/animation/Animator;
 
     move-result-object v0
 
-    .line 237
+    .line 240
     iget-object v2, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mPathInterpolator1:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, v2}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 238
+    .line 241
     iget-object v2, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mPathInterpolator1:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v1, v2}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 239
+    .line 242
     iget-object v2, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mPathInterpolator1:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v4, v2}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 240
+    .line 243
     iget-object v2, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mPathInterpolator2:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v2}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 241
+    .line 244
     iget-object v2, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mShowAnimatorSet:Landroid/animation/AnimatorSet;
 
     filled-new-array {p1, v1, v4, v0}, [Landroid/animation/Animator;
@@ -1886,32 +1897,34 @@
 
     invoke-virtual {v2, p1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 242
+    .line 245
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mShowAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
 
-    :array_9a
+    nop
+
+    :array_a4
     .array-data 4
         0x0
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_a2
+    :array_ac
     .array-data 4
         0x3f666666    # 0.9f
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_aa
+    :array_b4
     .array-data 4
         0x3f666666    # 0.9f
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_b2
+    :array_bc
     .array-data 4
         0x0
         0x3f800000    # 1.0f
@@ -1923,10 +1936,10 @@
 
     const/4 v0, 0x1
 
-    .line 303
+    .line 306
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mIsUnInit:Z
 
-    .line 304
+    .line 307
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mParentViewGroup:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mRootLayout:Landroid/widget/RelativeLayout;
@@ -1935,7 +1948,7 @@
 
     const/4 v0, 0x0
 
-    .line 305
+    .line 308
     iput-object v0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mRootLayout:Landroid/widget/RelativeLayout;
 
     return-void

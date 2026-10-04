@@ -177,20 +177,63 @@
 .method public enableNightNetwork(Z)V
     .registers 2
 
-    .line 350
+    .line 369
     invoke-static {}, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager$Singleton;->getService()Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;
 
     move-result-object p0
 
     if-eqz p0, :cond_a
 
-    .line 354
+    .line 373
     invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;->enableNightNetwork(Z)V
 
     return-void
 
-    .line 352
+    .line 371
     :cond_a
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "service is Null"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public enableThermalUx(Ljava/lang/String;J)V
+    .registers 5
+
+    .line 315
+    invoke-static {}, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager$Singleton;->getService()Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_18
+
+    .line 320
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_10
+
+    .line 324
+    invoke-interface {p0, p1, p2, p3}, Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;->enableThermalUx(Ljava/lang/String;J)V
+
+    return-void
+
+    .line 321
+    :cond_10
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "reason is null"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    .line 317
+    :cond_18
     new-instance p0, Ljava/lang/NullPointerException;
 
     const-string p1, "service is Null"
@@ -203,26 +246,26 @@
 .method public fastFreeze(Ljava/lang/String;)V
     .registers 3
 
-    .line 314
+    .line 333
     invoke-static {}, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager$Singleton;->getService()Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;
 
     move-result-object p0
 
     if-eqz p0, :cond_18
 
-    .line 319
+    .line 338
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_10
 
-    .line 323
+    .line 342
     invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;->fastFreeze(Ljava/lang/String;)V
 
     return-void
 
-    .line 320
+    .line 339
     :cond_10
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -232,7 +275,7 @@
 
     throw p0
 
-    .line 316
+    .line 335
     :cond_18
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -321,26 +364,26 @@
 .method public fastUnfreeze(Ljava/lang/String;)V
     .registers 3
 
-    .line 332
+    .line 351
     invoke-static {}, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager$Singleton;->getService()Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;
 
     move-result-object p0
 
     if-eqz p0, :cond_18
 
-    .line 337
+    .line 356
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_10
 
-    .line 341
+    .line 360
     invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;->fastUnfreeze(Ljava/lang/String;)V
 
     return-void
 
-    .line 338
+    .line 357
     :cond_10
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -350,7 +393,7 @@
 
     throw p0
 
-    .line 334
+    .line 353
     :cond_18
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -620,21 +663,21 @@
 .method public isEnableNightNetwork()Z
     .registers 2
 
-    .line 363
+    .line 382
     invoke-static {}, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager$Singleton;->getService()Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;
 
     move-result-object p0
 
     if-eqz p0, :cond_b
 
-    .line 367
+    .line 386
     invoke-interface {p0}, Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;->isEnableNightNetwork()Z
 
     move-result p0
 
     return p0
 
-    .line 365
+    .line 384
     :cond_b
     new-instance p0, Ljava/lang/NullPointerException;
 

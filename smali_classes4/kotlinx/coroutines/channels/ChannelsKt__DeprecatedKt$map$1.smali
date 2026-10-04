@@ -27,9 +27,9 @@
     c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$map$1"
     f = "Deprecated.kt"
     l = {
-        0x1e7,
-        0x14d,
-        0x14d
+        0x205,
+        0x16b,
+        0x16b
     }
     m = "invokeSuspend"
 .end annotation
@@ -175,7 +175,7 @@
 
     move-result-object v0
 
-    .line 331
+    .line 361
     iget v1, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$map$1;->label:I
 
     const/4 v2, 0x3
@@ -299,12 +299,12 @@
 
     check-cast p1, Lkotlinx/coroutines/channels/ProducerScope;
 
-    .line 332
+    .line 362
     iget-object v6, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$map$1;->$this_map:Lkotlinx/coroutines/channels/ReceiveChannel;
 
     iget-object v1, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$map$1;->$transform:Lkotlin/jvm/functions/Function2;
 
-    .line 106
+    .line 82
     :try_start_6e
     invoke-interface {v6}, Lkotlinx/coroutines/channels/ReceiveChannel;->iterator()Lkotlinx/coroutines/channels/ChannelIterator;
 
@@ -355,7 +355,7 @@
 
     move-result-object p1
 
-    .line 333
+    .line 363
     iput-object v8, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$map$1;->L$0:Ljava/lang/Object;
 
     iput-object v7, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$map$1;->L$1:Ljava/lang/Object;
@@ -425,22 +425,22 @@
 
     goto :goto_75
 
-    .line 107
+    .line 83
     :cond_c5
     :try_start_c5
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_c7
     .catchall {:try_start_c5 .. :try_end_c7} :catchall_27
 
-    .line 92
+    .line 68
     invoke-static {v6, v5}, Lkotlinx/coroutines/channels/ChannelsKt;->cancelConsumed(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/lang/Throwable;)V
 
-    .line 335
+    .line 365
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 90
+    .line 66
     :goto_cd
     :try_start_cd
     throw p0
@@ -450,7 +450,7 @@
     :catchall_ce
     move-exception p1
 
-    .line 92
+    .line 68
     invoke-static {v6, p0}, Lkotlinx/coroutines/channels/ChannelsKt;->cancelConsumed(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/lang/Throwable;)V
 
     throw p1

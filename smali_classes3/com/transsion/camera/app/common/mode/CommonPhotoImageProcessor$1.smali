@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;)V
     .registers 2
 
-    .line 119
+    .line 122
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 1
 
-    .line 122
+    .line 125
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->releaseAlgorithm()V

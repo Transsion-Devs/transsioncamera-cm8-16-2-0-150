@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;)V
     .registers 2
 
-    .line 553
+    .line 544
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$FlashChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onDataCallback(Ljava/lang/Object;I)V
     .registers 4
 
-    .line 556
+    .line 547
     invoke-static {}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -56,7 +56,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 557
+    .line 548
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$FlashChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
@@ -78,7 +78,7 @@
     :cond_16
     const/16 p1, 0xc
 
-    .line 562
+    .line 553
     invoke-virtual {p0, p1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
@@ -86,7 +86,7 @@
     :cond_1c
     const/16 p1, 0xa
 
-    .line 565
+    .line 556
     invoke-virtual {p0, p1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void

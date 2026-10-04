@@ -6,20 +6,10 @@
 .implements Lcom/google/common/collect/Multimap;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/common/collect/AbstractMultimap$Values;
-    }
-.end annotation
-
-
 # instance fields
 .field private transient asMap:Ljava/util/Map;
 
 .field private transient keySet:Ljava/util/Set;
-
-.field private transient values:Ljava/util/Collection;
 
 
 # direct methods
@@ -105,9 +95,6 @@
 .method abstract createKeySet()Ljava/util/Set;
 .end method
 
-.method abstract createValues()Ljava/util/Collection;
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .registers 2
 
@@ -166,26 +153,4 @@
     move-result-object p0
 
     return-object p0
-.end method
-
-.method abstract valueIterator()Ljava/util/Iterator;
-.end method
-
-.method public values()Ljava/util/Collection;
-    .registers 2
-
-    .line 174
-    iget-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->values:Ljava/util/Collection;
-
-    if-nez v0, :cond_a
-
-    .line 175
-    invoke-virtual {p0}, Lcom/google/common/collect/AbstractMultimap;->createValues()Ljava/util/Collection;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/AbstractMultimap;->values:Ljava/util/Collection;
-
-    :cond_a
-    return-object v0
 .end method

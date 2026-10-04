@@ -76,6 +76,8 @@
 
 .field private mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
+.field private mZoomScaling:Z
+
 
 # direct methods
 .method public static synthetic $r8$lambda$rTu5UfeRJzlmYls5DxpFLZOK3JA(Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;Ljava/lang/String;Ljava/lang/String;)V
@@ -130,7 +132,7 @@
 
     move-object v7, p5
 
-    .line 92
+    .line 93
     invoke-direct/range {v0 .. v7}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;-><init>(Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;Lcom/transsion/camera/utils/sound/IActionSound;Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 
     move-object p4, v0
@@ -181,21 +183,24 @@
     .line 82
     iput-boolean p0, p4, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsVideoRecordBegin:Z
 
-    .line 84
+    .line 83
+    iput-boolean p0, p4, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mZoomScaling:Z
+
+    .line 85
     new-instance p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager$$ExternalSyntheticLambda0;
 
     invoke-direct {p0, p4}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;)V
 
     iput-object p0, p4, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
 
-    .line 562
+    .line 565
     new-instance p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager$$ExternalSyntheticLambda1;
 
     invoke-direct {p0, p4}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;)V
 
     iput-object p0, p4, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 94
+    .line 95
     new-instance p0, Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     move-object p5, p6
@@ -204,43 +209,43 @@
 
     iput-object p0, p4, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
-    .line 95
+    .line 96
     new-instance p0, Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
     invoke-direct/range {p0 .. p5}, Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;-><init>(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
     iput-object p0, p4, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
-    .line 96
+    .line 97
     new-instance p0, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-direct/range {p0 .. p5}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;-><init>(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
     iput-object p0, p4, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
-    .line 97
+    .line 98
     new-instance p0, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     invoke-direct/range {p0 .. p5}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;-><init>(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
     iput-object p0, p4, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
-    .line 98
+    .line 99
     iput-object v7, p4, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
-    .line 99
+    .line 100
     iput-object p1, p4, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mContext:Landroid/content/Context;
 
-    .line 100
+    .line 101
     iput-object p3, p4, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 101
+    .line 102
     invoke-interface {p3, p0}, Lcom/transsion/camera/app/common/IAppUI;->registerPreviewRectListener(Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;)V
 
-    .line 102
+    .line 103
     invoke-interface {p3, p4}, Lcom/transsion/camera/app/common/IAppUIControl$IPrivacyControl;->registerPrivacyCallback(Lcom/transsion/camera/app/common/IPrivacyCallback;)V
 
-    .line 103
+    .line 104
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object p0
@@ -255,12 +260,12 @@
 .method private gestureGuideUIShowCase()V
     .registers 6
 
-    .line 483
+    .line 486
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     if-eqz v0, :cond_5a
 
-    .line 484
+    .line 487
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
 
     move-result v0
@@ -269,7 +274,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
-    .line 485
+    .line 488
     const-string v1, "gesture_guide_master_show_flag"
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->showFlag(Ljava/lang/String;)Z
@@ -314,12 +319,12 @@
 
     if-nez v0, :cond_5a
 
-    .line 495
+    .line 498
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideView:Landroid/view/View;
 
     if-nez v0, :cond_4a
 
-    .line 496
+    .line 499
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
@@ -337,22 +342,22 @@
     :cond_4a
     const/4 v0, 0x1
 
-    .line 498
+    .line 501
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsGestureGuideInflate:Z
 
-    .line 499
+    .line 502
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;->showGuideView()V
 
-    .line 500
+    .line 503
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->updateFlag(Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
-    .line 501
+    .line 504
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsTriggerGestureGuideUIShow:Z
 
     :cond_5a
@@ -362,7 +367,7 @@
 .method private iconBubbleGuideUIShowCase(II)V
     .registers 11
 
-    .line 461
+    .line 464
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
     const-string v1, "icon_bubble_master_guide_show_flag"
@@ -371,14 +376,14 @@
 
     move-result-object v0
 
-    .line 462
+    .line 465
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     if-eqz v1, :cond_76
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
-    .line 463
+    .line 466
     const-string v2, "com.transsion.camera.feature.mode.magicsky.MagicSkyModeEntry"
 
     invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -393,7 +398,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
-    .line 464
+    .line 467
     invoke-static {v1, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -402,7 +407,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
-    .line 465
+    .line 468
     invoke-static {v1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -412,7 +417,7 @@
     :cond_2a
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
-    .line 466
+    .line 469
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
 
     move-result v1
@@ -421,19 +426,19 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
-    .line 467
+    .line 470
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->showFlag(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_76
 
-    .line 468
+    .line 471
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideView:Landroid/view/View;
 
     if-nez v1, :cond_4c
 
-    .line 469
+    .line 472
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     iget-object v5, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
@@ -451,10 +456,10 @@
     :cond_4c
     const/4 v1, 0x1
 
-    .line 471
+    .line 474
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsIconBubbleGuideInflate:Z
 
-    .line 472
+    .line 475
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
     invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -465,7 +470,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
-    .line 473
+    .line 476
     invoke-static {v1, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -474,26 +479,26 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
-    .line 474
+    .line 477
     invoke-static {v1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_6c
 
-    .line 475
+    .line 478
     :cond_67
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {v1, p1, p2}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->setIconBubbleCoordinate(II)V
 
-    .line 477
+    .line 480
     :cond_6c
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->showGuideView()V
 
-    .line 478
+    .line 481
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->updateFlag(Ljava/lang/String;)V
@@ -505,7 +510,7 @@
 .method private synthetic lambda$new$0(Z)V
     .registers 2
 
-    .line 84
+    .line 85
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->updateRingScreenLight(Z)V
 
     return-void
@@ -514,16 +519,16 @@
 .method private synthetic lambda$new$1(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 563
+    .line 566
     const-string p1, "begin"
 
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_7b
+    if-eqz p1, :cond_7d
 
-    .line 564
+    .line 567
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
     const-string p2, "gesture_guide_master_show_flag"
@@ -534,144 +539,147 @@
 
     const/4 p2, 0x0
 
-    .line 565
+    .line 568
     iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsEnterSettingFragment:Z
 
-    .line 566
+    .line 569
     iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsTriggerGestureGuideUIShow:Z
 
-    .line 567
+    .line 570
+    iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mZoomScaling:Z
+
+    .line 571
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_2b
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
 
     move-result v0
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_2b
 
-    .line 568
+    .line 572
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
 
-    .line 569
+    .line 573
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->resetFlag(Ljava/lang/String;)V
 
-    .line 571
-    :cond_29
+    .line 575
+    :cond_2b
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     const-string v0, "4:3"
 
-    if-eqz p1, :cond_37
+    if-eqz p1, :cond_39
 
-    .line 572
+    .line 576
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->resetParams()V
 
-    .line 573
+    .line 577
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->setCurrentPictureRatio(Ljava/lang/String;)V
 
-    .line 575
-    :cond_37
+    .line 579
+    :cond_39
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
-    if-eqz p1, :cond_3e
-
-    .line 576
-    invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->setCurrentPictureRatio(Ljava/lang/String;)V
-
-    .line 578
-    :cond_3e
-    iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsPreviewCoverGuideInflate:Z
-
-    .line 579
-    iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsGestureGuideInflate:Z
+    if-eqz p1, :cond_40
 
     .line 580
-    iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsPopWindowGuideInflate:Z
-
-    .line 581
-    iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsIconBubbleGuideInflate:Z
+    invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->setCurrentPictureRatio(Ljava/lang/String;)V
 
     .line 582
+    :cond_40
+    iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsPreviewCoverGuideInflate:Z
+
+    .line 583
+    iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsGestureGuideInflate:Z
+
+    .line 584
+    iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsPopWindowGuideInflate:Z
+
+    .line 585
+    iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsIconBubbleGuideInflate:Z
+
+    .line 586
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideView:Landroid/view/View;
 
     const/4 p2, 0x0
 
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_56
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_54
-
-    .line 583
-    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
-
-    .line 584
-    iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideView:Landroid/view/View;
-
-    .line 586
-    :cond_54
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideView:Landroid/view/View;
-
-    if-eqz p1, :cond_61
-
-    iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
-
-    if-eqz v0, :cond_61
+    if-eqz v0, :cond_56
 
     .line 587
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     .line 588
-    iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideView:Landroid/view/View;
+    iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideView:Landroid/view/View;
 
     .line 590
-    :cond_61
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideView:Landroid/view/View;
+    :cond_56
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideView:Landroid/view/View;
 
-    if-eqz p1, :cond_6e
+    if-eqz p1, :cond_63
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_6e
+    if-eqz v0, :cond_63
 
     .line 591
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     .line 592
-    iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideView:Landroid/view/View;
+    iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideView:Landroid/view/View;
 
     .line 594
-    :cond_6e
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideView:Landroid/view/View;
+    :cond_63
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideView:Landroid/view/View;
 
-    if-eqz p1, :cond_7b
+    if-eqz p1, :cond_70
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_7b
+    if-eqz v0, :cond_70
 
     .line 595
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     .line 596
+    iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideView:Landroid/view/View;
+
+    .line 598
+    :cond_70
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideView:Landroid/view/View;
+
+    if-eqz p1, :cond_7d
+
+    iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
+
+    if-eqz v0, :cond_7d
+
+    .line 599
+    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 600
     iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideView:Landroid/view/View;
 
-    :cond_7b
+    :cond_7d
     return-void
 .end method
 
 .method private popWindowGuideUIShowCase()V
     .registers 6
 
-    .line 506
+    .line 509
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
     const-string v1, "pop_window_master_guide_show_flag"
@@ -680,7 +688,7 @@
 
     move-result-object v0
 
-    .line 507
+    .line 510
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
     if-eqz v1, :cond_3d
@@ -689,7 +697,7 @@
 
     const-string v2, "com.transsion.camera.feature.mode.motioncapture.MotionCaptureModeEntry"
 
-    .line 508
+    .line 511
     invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -698,19 +706,19 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
-    .line 509
+    .line 512
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->showFlag(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3d
 
-    .line 510
+    .line 513
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideView:Landroid/view/View;
 
     if-nez v1, :cond_30
 
-    .line 511
+    .line 514
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
@@ -728,15 +736,15 @@
     :cond_30
     const/4 v1, 0x1
 
-    .line 513
+    .line 516
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsPopWindowGuideInflate:Z
 
-    .line 514
+    .line 517
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;->showGuideView()V
 
-    .line 515
+    .line 518
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->updateFlag(Ljava/lang/String;)V
@@ -748,7 +756,7 @@
 .method private previewCoverGuideUIShowCase()V
     .registers 6
 
-    .line 444
+    .line 447
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
     const-string v1, "preview_cover_master_guide_show_flag"
@@ -757,7 +765,7 @@
 
     move-result-object v0
 
-    .line 445
+    .line 448
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     if-eqz v1, :cond_56
@@ -766,7 +774,7 @@
 
     const-string v2, "com.transsion.camera.feature.mode.aigc.AIGCModeEntry"
 
-    .line 446
+    .line 449
     invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -777,7 +785,7 @@
 
     const-string v2, "com.transsion.camera.feature.mode.aiartmuseum.AIArtMuseumModeEntry"
 
-    .line 447
+    .line 450
     invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -787,7 +795,7 @@
     :cond_20
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
-    .line 448
+    .line 451
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
 
     move-result v1
@@ -796,19 +804,19 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
-    .line 449
+    .line 452
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->showFlag(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_56
 
-    .line 450
+    .line 453
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideView:Landroid/view/View;
 
     if-nez v1, :cond_42
 
-    .line 451
+    .line 454
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
@@ -826,22 +834,22 @@
     :cond_42
     const/4 v1, 0x1
 
-    .line 453
+    .line 456
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsPreviewCoverGuideInflate:Z
 
-    .line 454
+    .line 457
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mLastMode:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->setLastMode(Ljava/lang/String;)V
 
-    .line 455
+    .line 458
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->showGuideView()V
 
-    .line 456
+    .line 459
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->updateFlag(Ljava/lang/String;)V
@@ -855,7 +863,7 @@
 .method public currentModeSupportPreviewCover()Z
     .registers 3
 
-    .line 602
+    .line 606
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
     const-string v1, "com.transsion.camera.feature.mode.aigc.AIGCModeEntry"
@@ -870,7 +878,7 @@
 
     const-string v0, "com.transsion.camera.feature.mode.aiartmuseum.AIArtMuseumModeEntry"
 
-    .line 603
+    .line 607
     invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -894,12 +902,12 @@
 .method public hideMasterGuide(Lcom/transsion/camera/app/common/MasterGuideUIBean;)V
     .registers 5
 
-    .line 244
+    .line 245
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/MasterGuideUIBean;->getType()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 245
+    .line 246
     sget-object v0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -918,7 +926,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 246
+    .line 247
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -998,46 +1006,46 @@
 
     goto :goto_74
 
-    .line 258
+    .line 259
     :pswitch_55
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
     if-eqz p0, :cond_74
 
-    .line 259
+    .line 260
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;->hideGuideView()V
 
     return-void
 
-    .line 263
+    .line 264
     :pswitch_5d
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     if-eqz p0, :cond_74
 
-    .line 264
+    .line 265
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
 
     return-void
 
-    .line 248
+    .line 249
     :pswitch_65
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     if-eqz p0, :cond_74
 
-    .line 249
+    .line 250
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->hideGuideView()V
 
     return-void
 
-    .line 253
+    .line 254
     :pswitch_6d
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     if-eqz p0, :cond_74
 
-    .line 254
+    .line 255
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->hideGuideView()V
 
     :cond_74
@@ -1066,10 +1074,10 @@
 .method public notifyCameraOperateActionToUI(I)V
     .registers 8
 
-    .line 273
+    .line 274
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->notifyCameraOperateActionToUI(I)V
 
-    .line 274
+    .line 275
     const-string v0, "com.transsion.camera.feature.mode.longexposure.LongExposureModeEntry"
 
     const-string v1, "com.transsion.camera.feature.mode.magicsky.MagicSkyModeEntry"
@@ -1078,15 +1086,15 @@
 
     const-string v3, "com.transsion.camera.feature.mode.aiartmuseum.AIArtMuseumModeEntry"
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
-    sparse-switch p1, :sswitch_data_1e2
+    sparse-switch p1, :sswitch_data_1dc
 
-    goto/16 :goto_1d9
+    goto/16 :goto_1d2
 
-    .line 305
+    .line 306
     :sswitch_12
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
@@ -1094,105 +1102,105 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1d9
+    if-eqz p1, :cond_1d2
 
-    .line 306
+    .line 307
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     if-eqz p1, :cond_21
 
-    .line 307
+    .line 308
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->hideGuideView()V
 
-    .line 309
+    .line 310
     :cond_21
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
-    if-eqz p1, :cond_1d9
+    if-eqz p1, :cond_1d2
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_1d9
+    if-nez p1, :cond_1d2
 
-    .line 310
+    .line 311
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->hideGuideView()V
 
     return-void
 
-    .line 429
+    .line 432
     :sswitch_31
-    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsShutterStatusChange:Z
+    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsShutterStatusChange:Z
 
-    .line 430
+    .line 433
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->gestureGuideUIShowCase()V
 
     return-void
 
-    .line 426
+    .line 429
     :sswitch_37
-    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsShutterStatusChange:Z
+    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsShutterStatusChange:Z
 
     return-void
 
-    .line 398
+    .line 401
     :sswitch_3a
-    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsTwinkleShow:Z
-
-    return-void
-
-    .line 391
-    :sswitch_3d
     iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsTwinkleShow:Z
 
-    .line 392
+    return-void
+
+    .line 394
+    :sswitch_3d
+    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsTwinkleShow:Z
+
+    .line 395
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
-    if-eqz p1, :cond_1d9
+    if-eqz p1, :cond_1d2
 
-    .line 393
+    .line 396
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_1d9
+    if-nez p1, :cond_1d2
 
-    .line 394
+    .line 397
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
 
     return-void
 
-    .line 402
+    .line 405
     :sswitch_4f
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
-    if-eqz p0, :cond_1d9
+    if-eqz p0, :cond_1d2
 
-    .line 403
+    .line 406
     const-string p1, "gesture_guide_master_show_flag"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->updateFlag(Ljava/lang/String;)V
 
     return-void
 
-    .line 315
+    .line 316
     :sswitch_59
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->gestureGuideUIShowCase()V
 
     return-void
 
-    .line 345
+    .line 347
     :sswitch_5d
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->popWindowGuideUIShowCase()V
 
     return-void
 
-    .line 281
+    .line 282
     :sswitch_61
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
@@ -1204,45 +1212,36 @@
 
     if-nez p1, :cond_77
 
-    .line 282
+    .line 283
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
 
     goto :goto_77
 
-    .line 368
+    .line 371
     :sswitch_71
-    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsQrIconShow:Z
-
-    return-void
-
-    .line 365
-    :sswitch_74
     iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsQrIconShow:Z
 
     return-void
 
-    .line 285
+    .line 368
+    :sswitch_74
+    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsQrIconShow:Z
+
+    return-void
+
+    .line 286
     :cond_77
     :goto_77
     :sswitch_77
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
-    if-eqz p1, :cond_ba
+    if-eqz p1, :cond_aa
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_9b
-
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
-
-    .line 286
-    invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
@@ -1251,7 +1250,7 @@
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
     .line 287
-    invoke-static {p1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
@@ -1260,96 +1259,86 @@
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
     .line 288
+    invoke-static {p1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_9b
+
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
+
+    .line 289
     invoke-static {p1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_ba
+    if-eqz p1, :cond_aa
 
-    .line 289
+    .line 290
     :cond_9b
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->hideGuideView()V
 
-    goto :goto_ba
+    goto :goto_aa
 
-    .line 418
+    .line 421
     :sswitch_a1
-    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsSuperNightLiteAnimBegin:Z
+    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsSuperNightLiteAnimBegin:Z
 
-    .line 419
+    .line 422
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->gestureGuideUIShowCase()V
 
     return-void
 
-    .line 415
+    .line 418
     :sswitch_a7
-    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsSuperNightLiteAnimBegin:Z
+    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsSuperNightLiteAnimBegin:Z
 
     return-void
 
-    .line 326
+    .line 294
+    :cond_aa
+    :goto_aa
     :sswitch_aa
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
-
-    if-eqz p1, :cond_110
-
-    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
-
-    move-result p1
-
-    if-nez p1, :cond_110
-
-    .line 327
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
-
-    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
-
-    goto :goto_110
-
-    .line 293
-    :cond_ba
-    :goto_ba
-    :sswitch_ba
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
-    if-eqz p1, :cond_c9
+    if-eqz p1, :cond_b9
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_c9
+    if-nez p1, :cond_b9
 
-    .line 294
+    .line 295
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->hideGuideView()V
 
-    .line 296
-    :cond_c9
+    .line 297
+    :cond_b9
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
-    if-eqz p1, :cond_d8
+    if-eqz p1, :cond_c8
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_d8
+    if-nez p1, :cond_c8
 
-    .line 297
+    .line 298
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
 
-    .line 300
-    :cond_d8
-    :sswitch_d8
+    .line 301
+    :cond_c8
+    :sswitch_c8
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
-    if-eqz p1, :cond_1d9
+    if-eqz p1, :cond_1d2
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
@@ -1357,252 +1346,266 @@
 
     move-result p1
 
-    if-eqz p1, :cond_1d9
+    if-eqz p1, :cond_1d2
 
-    .line 301
+    .line 302
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->hideGuideView()V
 
     return-void
 
-    .line 371
-    :sswitch_ea
-    iget-object v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
+    .line 374
+    :sswitch_da
+    iget-object v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
-    if-eqz v4, :cond_163
+    if-eqz v5, :cond_15c
 
-    invoke-virtual {v4}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
+    invoke-virtual {v5}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_163
+    if-nez v5, :cond_15c
 
-    .line 372
-    iget-object v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
+    .line 375
+    iget-object v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
-    invoke-virtual {v4}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
+    invoke-virtual {v5}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
 
-    goto :goto_163
+    goto/16 :goto_15c
 
-    .line 321
-    :sswitch_fa
+    .line 322
+    :sswitch_eb
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
-    if-eqz p1, :cond_1d9
+    if-eqz p1, :cond_1d2
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_1d9
+    if-nez p1, :cond_1d2
 
-    .line 322
+    .line 323
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
 
     return-void
 
-    .line 412
-    :sswitch_10a
-    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsFilterUIShow:Z
-
-    return-void
-
-    .line 408
-    :sswitch_10d
+    .line 415
+    :sswitch_fb
     iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsFilterUIShow:Z
 
     return-void
 
-    .line 331
-    :cond_110
-    :goto_110
-    :sswitch_110
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
-
-    if-eqz p1, :cond_11f
-
-    .line 332
-    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
-
-    move-result p1
-
-    if-nez p1, :cond_11f
-
-    .line 333
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
-
-    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
-
-    .line 335
-    :cond_11f
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
-
-    if-eqz p1, :cond_1d9
-
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
-
-    .line 336
-    invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_143
-
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
-
-    .line 337
-    invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_143
-
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
-
-    .line 338
-    invoke-static {p1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_143
-
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
-
-    .line 339
-    invoke-static {p1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1d9
-
-    :cond_143
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
-
-    .line 340
-    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
-
-    move-result p1
-
-    if-nez p1, :cond_1d9
-
-    .line 341
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
-
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->hideGuideView()V
+    .line 411
+    :sswitch_fe
+    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsFilterUIShow:Z
 
     return-void
 
     .line 362
-    :sswitch_151
-    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsEnterSettingFragment:Z
+    :sswitch_101
+    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mZoomScaling:Z
+
+    goto :goto_14a
+
+    .line 344
+    :sswitch_104
+    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mZoomScaling:Z
 
     return-void
 
-    .line 357
-    :sswitch_154
-    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsEnterSettingFragment:Z
+    .line 328
+    :sswitch_107
+    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mZoomScaling:Z
 
-    return-void
+    .line 330
+    :sswitch_109
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
-    .line 436
-    :sswitch_157
-    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsVideoRecordBegin:Z
+    if-eqz p1, :cond_118
 
-    return-void
-
-    .line 433
-    :sswitch_15a
-    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsVideoRecordBegin:Z
-
-    return-void
-
-    .line 422
-    :sswitch_15d
-    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsSelfTimerCaptureBegin:Z
-
-    .line 423
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->gestureGuideUIShowCase()V
-
-    return-void
-
-    .line 375
-    :cond_163
-    :goto_163
-    :sswitch_163
-    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsSelfTimerCaptureBegin:Z
-
-    :sswitch_165
-    const/16 v4, 0x4d
-
-    if-ne p1, v4, :cond_16b
-
-    .line 379
-    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsEnterSettingFragment:Z
-
-    .line 381
-    :cond_16b
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
-
-    if-eqz p1, :cond_1d9
-
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
-
-    .line 382
-    invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_18f
-
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
-
-    .line 383
-    invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_18f
-
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
-
-    .line 384
-    invoke-static {p1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_18f
-
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
-
-    .line 385
-    invoke-static {p1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1d9
-
-    :cond_18f
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
-
-    .line 386
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_1d9
+    if-nez p1, :cond_118
 
-    .line 387
+    .line 331
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
+
+    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
+
+    .line 333
+    :cond_118
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
+
+    if-eqz p1, :cond_1d2
+
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
+
+    .line 334
+    invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_13c
+
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
+
+    .line 335
+    invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_13c
+
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
+
+    .line 336
+    invoke-static {p1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_13c
+
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
+
+    .line 337
+    invoke-static {p1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1d2
+
+    :cond_13c
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
+
+    .line 338
+    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
+
+    move-result p1
+
+    if-nez p1, :cond_1d2
+
+    .line 339
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->hideGuideView()V
 
     return-void
 
-    .line 348
-    :sswitch_19d
+    .line 365
+    :goto_14a
+    :sswitch_14a
+    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsEnterSettingFragment:Z
+
+    return-void
+
+    .line 359
+    :sswitch_14d
+    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsEnterSettingFragment:Z
+
+    return-void
+
+    .line 439
+    :sswitch_150
+    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsVideoRecordBegin:Z
+
+    return-void
+
+    .line 436
+    :sswitch_153
+    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsVideoRecordBegin:Z
+
+    return-void
+
+    .line 425
+    :sswitch_156
+    iput-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsSelfTimerCaptureBegin:Z
+
+    .line 426
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->gestureGuideUIShowCase()V
+
+    return-void
+
+    .line 378
+    :cond_15c
+    :goto_15c
+    :sswitch_15c
+    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsSelfTimerCaptureBegin:Z
+
+    :sswitch_15e
+    const/16 v5, 0x4d
+
+    if-ne p1, v5, :cond_164
+
+    .line 382
+    iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsEnterSettingFragment:Z
+
+    .line 384
+    :cond_164
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
+
+    if-eqz p1, :cond_1d2
+
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
+
+    .line 385
+    invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_188
+
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
+
+    .line 386
+    invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_188
+
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
+
+    .line 387
+    invoke-static {p1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_188
+
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
+
+    .line 388
+    invoke-static {p1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1d2
+
+    :cond_188
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
+
+    .line 389
+    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->getGuideViewVisibility()I
+
+    move-result p1
+
+    if-nez p1, :cond_1d2
+
+    .line 390
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
+
+    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->hideGuideView()V
+
+    return-void
+
+    .line 350
+    :sswitch_196
     iget-object p1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -1627,12 +1630,12 @@
 
     move-result-object p1
 
-    .line 349
+    .line 351
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     const-string v1, "com.transsion.camera.feature.mode.more.MoreModeEntry"
 
-    if-eqz v0, :cond_1c8
+    if-eqz v0, :cond_1c1
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
@@ -1640,18 +1643,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_1c8
+    if-nez v0, :cond_1c1
 
-    .line 350
+    .line 352
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->setCurrentPictureRatio(Ljava/lang/String;)V
 
-    .line 352
-    :cond_1c8
+    .line 354
+    :cond_1c1
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
-    if-eqz v0, :cond_1d9
+    if-eqz v0, :cond_1d2
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
@@ -1659,19 +1662,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_1d9
+    if-nez v0, :cond_1d2
 
-    .line 353
+    .line 355
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->setCurrentPictureRatio(Ljava/lang/String;)V
 
-    :cond_1d9
-    :goto_1d9
+    :cond_1d2
+    :goto_1d2
     return-void
 
-    .line 277
-    :sswitch_1da
+    .line 278
+    :sswitch_1d3
     iget p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleMarginLeft:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleMarginBottom:I
@@ -1680,42 +1683,46 @@
 
     return-void
 
-    :sswitch_data_1e2
+    nop
+
+    :sswitch_data_1dc
     .sparse-switch
-        0x1 -> :sswitch_1da
-        0x3 -> :sswitch_1da
-        0x5 -> :sswitch_19d
-        0xb -> :sswitch_163
-        0xc -> :sswitch_15d
-        0xf -> :sswitch_15a
-        0x10 -> :sswitch_157
-        0x11 -> :sswitch_154
-        0x12 -> :sswitch_151
-        0x17 -> :sswitch_110
-        0x19 -> :sswitch_110
-        0x1c -> :sswitch_151
-        0x30 -> :sswitch_10d
-        0x31 -> :sswitch_10a
-        0x4d -> :sswitch_165
-        0x4e -> :sswitch_151
-        0x50 -> :sswitch_fa
-        0x58 -> :sswitch_fa
-        0x64 -> :sswitch_ea
-        0xc0 -> :sswitch_ba
-        0xc2 -> :sswitch_aa
-        0xcf -> :sswitch_fa
-        0xdb -> :sswitch_ba
+        0x1 -> :sswitch_1d3
+        0x3 -> :sswitch_1d3
+        0x5 -> :sswitch_196
+        0xb -> :sswitch_15c
+        0xc -> :sswitch_156
+        0xf -> :sswitch_153
+        0x10 -> :sswitch_150
+        0x11 -> :sswitch_14d
+        0x12 -> :sswitch_14a
+        0x17 -> :sswitch_107
+        0x18 -> :sswitch_104
+        0x19 -> :sswitch_107
+        0x1a -> :sswitch_104
+        0x1c -> :sswitch_101
+        0x30 -> :sswitch_fe
+        0x31 -> :sswitch_fb
+        0x4d -> :sswitch_15e
+        0x4e -> :sswitch_14a
+        0x50 -> :sswitch_eb
+        0x58 -> :sswitch_eb
+        0x64 -> :sswitch_da
+        0xc0 -> :sswitch_aa
+        0xc2 -> :sswitch_109
+        0xcf -> :sswitch_eb
+        0xdb -> :sswitch_aa
         0xed -> :sswitch_a7
         0xee -> :sswitch_a1
         0xf9 -> :sswitch_77
-        0x103 -> :sswitch_d8
-        0x113 -> :sswitch_165
+        0x103 -> :sswitch_c8
+        0x113 -> :sswitch_15e
         0x115 -> :sswitch_74
         0x116 -> :sswitch_71
         0x12f -> :sswitch_61
         0x149 -> :sswitch_61
         0x15d -> :sswitch_5d
-        0x16b -> :sswitch_fa
+        0x16b -> :sswitch_eb
         0x16f -> :sswitch_59
         0x170 -> :sswitch_4f
         0x171 -> :sswitch_3d
@@ -1723,8 +1730,8 @@
         0x17a -> :sswitch_4f
         0x17e -> :sswitch_37
         0x17f -> :sswitch_31
-        0x183 -> :sswitch_10d
-        0x184 -> :sswitch_10a
+        0x183 -> :sswitch_fe
+        0x184 -> :sswitch_fb
         0x18e -> :sswitch_12
     .end sparse-switch
 .end method
@@ -1732,7 +1739,7 @@
 .method public notifyPreviewCoverHide()V
     .registers 2
 
-    .line 535
+    .line 538
     const-string/jumbo v0, "value_preview_cover_guide_ui_hide"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->showOrHideSettingHint(Ljava/lang/String;)V
@@ -1743,7 +1750,7 @@
 .method public notifyPreviewCoverShowOrHide(Ljava/lang/String;)V
     .registers 2
 
-    .line 531
+    .line 534
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->showOrHideSettingHint(Ljava/lang/String;)V
 
     return-void
@@ -1752,7 +1759,7 @@
 .method public notifyRawActionToAppUI(I)V
     .registers 2
 
-    .line 520
+    .line 523
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
@@ -1763,7 +1770,7 @@
 .method public onBackPressed()Z
     .registers 3
 
-    .line 547
+    .line 550
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     const/4 v1, 0x1
@@ -1776,14 +1783,14 @@
 
     if-nez v0, :cond_11
 
-    .line 548
+    .line 551
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->hideGuideView()V
 
     return v1
 
-    .line 551
+    .line 554
     :cond_11
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
@@ -1795,14 +1802,14 @@
 
     if-nez v0, :cond_21
 
-    .line 552
+    .line 555
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
 
     return v1
 
-    .line 555
+    .line 558
     :cond_21
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
@@ -1814,7 +1821,7 @@
 
     if-nez v0, :cond_31
 
-    .line 556
+    .line 559
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->hideGuideView()V
@@ -1830,7 +1837,7 @@
 .method protected onInflateLayout(Landroid/view/LayoutInflater;)Landroid/view/View;
     .registers 5
 
-    .line 108
+    .line 109
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     if-eqz v0, :cond_12
@@ -1839,7 +1846,7 @@
 
     if-eqz v1, :cond_12
 
-    .line 109
+    .line 110
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
@@ -1850,7 +1857,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideView:Landroid/view/View;
 
-    .line 111
+    .line 112
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
@@ -1860,7 +1867,7 @@
 
     if-eqz v1, :cond_24
 
-    .line 112
+    .line 113
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
@@ -1871,7 +1878,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideView:Landroid/view/View;
 
-    .line 114
+    .line 115
     :cond_24
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
@@ -1881,7 +1888,7 @@
 
     if-eqz v1, :cond_36
 
-    .line 115
+    .line 116
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
@@ -1892,7 +1899,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideView:Landroid/view/View;
 
-    .line 117
+    .line 118
     :cond_36
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
@@ -1902,7 +1909,7 @@
 
     if-eqz v1, :cond_48
 
-    .line 118
+    .line 119
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
@@ -1913,11 +1920,11 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideView:Landroid/view/View;
 
-    .line 120
+    .line 121
     :cond_48
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    .line 121
+    .line 122
     iget-object p0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
 
     return-object p0
@@ -1926,7 +1933,7 @@
 .method public onLeftSideItemClick()V
     .registers 2
 
-    .line 623
+    .line 627
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     if-eqz v0, :cond_f
@@ -1937,7 +1944,7 @@
 
     if-nez v0, :cond_f
 
-    .line 624
+    .line 628
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
@@ -1949,39 +1956,39 @@
 .method public onModePause()V
     .registers 2
 
-    .line 175
+    .line 176
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     if-eqz v0, :cond_7
 
-    .line 176
+    .line 177
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->hideGuideView()V
 
-    .line 179
+    .line 180
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     if-eqz v0, :cond_e
 
-    .line 180
+    .line 181
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->hideGuideView()V
 
-    .line 183
+    .line 184
     :cond_e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
     if-eqz v0, :cond_15
 
-    .line 184
+    .line 185
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;->hideGuideView()V
 
-    .line 187
+    .line 188
     :cond_15
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     if-eqz p0, :cond_1c
 
-    .line 188
+    .line 189
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
 
     :cond_1c
@@ -1991,39 +1998,39 @@
 .method public onPrivacyModeChange(ZF)V
     .registers 3
 
-    .line 636
+    .line 640
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     if-eqz p1, :cond_7
 
-    .line 637
+    .line 641
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->hideGuideViewNoAnim()V
 
-    .line 639
+    .line 643
     :cond_7
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
     if-eqz p1, :cond_e
 
-    .line 640
+    .line 644
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;->hideGuideView()V
 
-    .line 642
+    .line 646
     :cond_e
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     if-eqz p1, :cond_15
 
-    .line 643
+    .line 647
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->hideGuideView()V
 
-    .line 645
+    .line 649
     :cond_15
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     if-eqz p0, :cond_1c
 
-    .line 646
+    .line 650
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->hideGuideView()V
 
     :cond_1c
@@ -2033,7 +2040,7 @@
 .method protected onSetupViews()V
     .registers 2
 
-    .line 126
+    .line 127
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object v0
@@ -2048,7 +2055,7 @@
 .method public onTopBarItemListClick(Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;)V
     .registers 4
 
-    .line 608
+    .line 612
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getSupportedEntryValues()[Ljava/lang/String;
 
     move-result-object v0
@@ -2059,7 +2066,7 @@
 
     if-gt v0, v1, :cond_22
 
-    .line 609
+    .line 613
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
 
     move-result-object v0
@@ -2072,7 +2079,7 @@
 
     if-nez v0, :cond_22
 
-    .line 610
+    .line 614
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
 
     move-result-object p1
@@ -2094,7 +2101,7 @@
     :goto_22
     const/4 p1, 0x1
 
-    .line 611
+    .line 615
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsTriggerGestureGuideUIShow:Z
 
     return-void
@@ -2103,17 +2110,17 @@
 .method public setSettingController(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
     .registers 3
 
-    .line 525
+    .line 528
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->setSettingController(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
 
-    .line 526
+    .line 529
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    .line 527
+    .line 530
     const-string v0, "key_restore_settings_notify_ui"
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
@@ -2128,10 +2135,10 @@
 
     if-nez p3, :cond_1d
 
-    .line 654
+    .line 658
     iget-object p3, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mContext:Landroid/content/Context;
 
-    .line 655
+    .line 659
     invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p3
@@ -2144,10 +2151,10 @@
 
     add-int/2addr p1, p3
 
-    .line 656
+    .line 660
     iget-object p3, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mContext:Landroid/content/Context;
 
-    .line 657
+    .line 661
     invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p3
@@ -2163,7 +2170,7 @@
 
     goto :goto_3f
 
-    .line 659
+    .line 663
     :cond_1d
     const-string p3, "key_magic_sky_type"
 
@@ -2173,10 +2180,10 @@
 
     if-eqz p3, :cond_3f
 
-    .line 660
+    .line 664
     iget-object p3, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mContext:Landroid/content/Context;
 
-    .line 661
+    .line 665
     invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p3
@@ -2189,10 +2196,10 @@
 
     add-int/2addr p1, p3
 
-    .line 662
+    .line 666
     iget-object p3, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mContext:Landroid/content/Context;
 
-    .line 663
+    .line 667
     invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p3
@@ -2205,12 +2212,12 @@
 
     goto :goto_1b
 
-    .line 666
+    .line 670
     :cond_3f
     :goto_3f
     iput p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleMarginLeft:I
 
-    .line 667
+    .line 671
     iput p2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleMarginBottom:I
 
     return-void
@@ -2219,12 +2226,12 @@
 .method public setSettingResourceId(IIIILjava/lang/String;)V
     .registers 6
 
-    .line 617
+    .line 621
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
     if-eqz p0, :cond_7
 
-    .line 618
+    .line 622
     invoke-virtual/range {p0 .. p5}, Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;->setSettingResourceId(IIIILjava/lang/String;)V
 
     :cond_7
@@ -2234,12 +2241,12 @@
 .method public showMasterGuide(Lcom/transsion/camera/app/common/MasterGuideUIBean;)V
     .registers 7
 
-    .line 193
+    .line 194
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/MasterGuideUIBean;->getType()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 194
+    .line 195
     sget-object v1, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2258,7 +2265,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 195
+    .line 196
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -2269,7 +2276,7 @@
 
     const/4 v3, -0x1
 
-    sparse-switch v1, :sswitch_data_f0
+    sparse-switch v1, :sswitch_data_f4
 
     goto :goto_52
 
@@ -2336,22 +2343,22 @@
     const/4 v3, 0x0
 
     :goto_52
-    packed-switch v3, :pswitch_data_102
+    packed-switch v3, :pswitch_data_106
 
-    goto/16 :goto_ee
+    goto/16 :goto_f2
 
-    .line 219
+    .line 220
     :pswitch_57
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
-    if-eqz v0, :cond_ee
+    if-eqz v0, :cond_f2
 
-    .line 220
+    .line 221
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideView:Landroid/view/View;
 
     if-nez v1, :cond_6b
 
-    .line 221
+    .line 222
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
@@ -2364,34 +2371,34 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideView:Landroid/view/View;
 
-    .line 223
+    .line 224
     :cond_6b
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsPopWindowGuideInflate:Z
 
-    .line 224
+    .line 225
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->initGuideUIData(Lcom/transsion/camera/app/common/MasterGuideUIBean;)V
 
-    .line 225
+    .line 226
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;->showGuideView()V
 
     return-void
 
-    .line 229
+    .line 230
     :pswitch_78
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
-    if-eqz v0, :cond_ee
+    if-eqz v0, :cond_f2
 
-    .line 230
+    .line 231
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideView:Landroid/view/View;
 
     if-nez v1, :cond_8c
 
-    .line 231
+    .line 232
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
@@ -2404,34 +2411,34 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideView:Landroid/view/View;
 
-    .line 233
+    .line 234
     :cond_8c
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsGestureGuideInflate:Z
 
-    .line 234
+    .line 235
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->initGuideUIData(Lcom/transsion/camera/app/common/MasterGuideUIBean;)V
 
-    .line 235
+    .line 236
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;->showGuideView()V
 
     return-void
 
-    .line 197
+    .line 198
     :pswitch_99
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
-    if-eqz v0, :cond_ee
+    if-eqz v0, :cond_f2
 
-    .line 198
+    .line 199
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideView:Landroid/view/View;
 
     if-nez v1, :cond_ad
 
-    .line 199
+    .line 200
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
@@ -2444,41 +2451,45 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideView:Landroid/view/View;
 
-    .line 201
+    .line 202
     :cond_ad
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsPreviewCoverGuideInflate:Z
 
-    .line 202
+    .line 203
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->setCurrentMode(Ljava/lang/String;)V
 
-    .line 203
+    .line 204
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->initGuideUIData(Lcom/transsion/camera/app/common/MasterGuideUIBean;)V
 
-    .line 204
+    .line 205
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->showGuideView()V
 
     return-void
 
-    .line 208
+    .line 209
     :pswitch_c1
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
-    if-eqz v0, :cond_ee
+    if-eqz v0, :cond_f2
 
-    .line 209
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideView:Landroid/view/View;
+    iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mZoomScaling:Z
 
-    if-nez v1, :cond_d5
+    if-nez v1, :cond_f2
 
     .line 210
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideView:Landroid/view/View;
+
+    if-nez v1, :cond_d9
+
+    .line 211
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
@@ -2491,16 +2502,16 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideView:Landroid/view/View;
 
-    .line 212
-    :cond_d5
+    .line 213
+    :cond_d9
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIsIconBubbleGuideInflate:Z
 
-    .line 213
+    .line 214
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->initGuideUIData(Lcom/transsion/camera/app/common/MasterGuideUIBean;)V
 
-    .line 214
+    .line 215
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/MasterGuideUIBean;->getLeftMargin()I
@@ -2513,18 +2524,18 @@
 
     invoke-virtual {v0, v1, p1}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->setIconBubbleCoordinate(II)V
 
-    .line 215
+    .line 216
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;->showGuideView()V
 
-    :cond_ee
-    :goto_ee
+    :cond_f2
+    :goto_f2
     return-void
 
     nop
 
-    :sswitch_data_f0
+    :sswitch_data_f4
     .sparse-switch
         -0x712e16a4 -> :sswitch_48
         0x1ca5f9cd -> :sswitch_3d
@@ -2532,7 +2543,7 @@
         0x7ae494e8 -> :sswitch_27
     .end sparse-switch
 
-    :pswitch_data_102
+    :pswitch_data_106
     .packed-switch 0x0
         :pswitch_c1
         :pswitch_99
@@ -2544,19 +2555,19 @@
 .method public showOrHideSettingHint(Ljava/lang/String;)V
     .registers 3
 
-    .line 539
+    .line 542
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p0, :cond_d
 
-    .line 540
+    .line 543
     const-string v0, " key_preview_cover_ui "
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     move-result-object p0
 
-    .line 541
+    .line 544
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_d
@@ -2566,7 +2577,7 @@
 .method public unInit()V
     .registers 4
 
-    .line 131
+    .line 132
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_restore_settings_notify_ui"
@@ -2575,12 +2586,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 132
+    .line 133
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IPrivacyControl;->unregisterPrivacyCallback(Lcom/transsion/camera/app/common/IPrivacyCallback;)V
 
-    .line 133
+    .line 134
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object v0
@@ -2595,12 +2606,12 @@
 .method public updateModeSettingUISpec(Lcom/transsion/camera/app/common/ModeSettingUISpec;)V
     .registers 7
 
-    .line 137
+    .line 138
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ModeSettingUISpec;->getMasterGuideUIBean()Ljava/util/List;
 
     move-result-object v0
 
-    .line 139
+    .line 140
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ModeSettingUISpec;->getName()Ljava/lang/String;
 
     move-result-object p1
@@ -2609,7 +2620,7 @@
 
     if-eqz v0, :cond_b3
 
-    .line 141
+    .line 142
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result p1
@@ -2639,7 +2650,7 @@
 
     move v1, p1
 
-    .line 150
+    .line 151
     :goto_26
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -2647,7 +2658,7 @@
 
     if-ge v1, v2, :cond_ae
 
-    .line 151
+    .line 152
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -2658,7 +2669,7 @@
 
     move-result-object v2
 
-    .line 152
+    .line 153
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
@@ -2738,7 +2749,7 @@
 
     goto :goto_aa
 
-    .line 162
+    .line 163
     :pswitch_71
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPopWindowGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PopWindowGuideUI;
 
@@ -2752,7 +2763,7 @@
 
     goto :goto_aa
 
-    .line 165
+    .line 166
     :pswitch_7d
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mGestureGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/GestureGuideUI;
 
@@ -2766,7 +2777,7 @@
 
     goto :goto_aa
 
-    .line 154
+    .line 155
     :pswitch_89
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
@@ -2774,7 +2785,7 @@
 
     invoke-virtual {v2, v3}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->setCurrentMode(Ljava/lang/String;)V
 
-    .line 155
+    .line 156
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2785,12 +2796,12 @@
 
     invoke-virtual {v2, v3}, Lcom/transsion/camera/app/ui/masterguide/AbstractMasterGuideUI;->initGuideUIData(Lcom/transsion/camera/app/common/MasterGuideUIBean;)V
 
-    .line 156
+    .line 157
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->previewCoverGuideUIShowCase()V
 
     goto :goto_aa
 
-    .line 159
+    .line 160
     :pswitch_9f
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mIconBubbleGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/IconBubbleGuideUI;
 
@@ -2807,7 +2818,7 @@
 
     goto/16 :goto_26
 
-    .line 171
+    .line 172
     :cond_ae
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
 
@@ -2815,7 +2826,7 @@
 
     return-void
 
-    .line 146
+    .line 147
     :cond_b3
     :goto_b3
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mCurrentModeName:Ljava/lang/String;
@@ -2844,12 +2855,12 @@
 .method protected updateRingScreenLight(Z)V
     .registers 2
 
-    .line 629
+    .line 633
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;->mPreviewCoverGuideUI:Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;
 
     if-eqz p0, :cond_7
 
-    .line 630
+    .line 634
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/masterguide/guideType/PreviewCoverGuideUI;->updateRingScreenLight(Z)V
 
     :cond_7

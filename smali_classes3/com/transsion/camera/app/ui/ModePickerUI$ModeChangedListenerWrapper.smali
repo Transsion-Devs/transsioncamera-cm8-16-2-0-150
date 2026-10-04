@@ -36,12 +36,12 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/transsion/camera/app/common/IAppUIListener$IModeChangedListener;)V
     .registers 3
 
-    .line 1839
+    .line 1726
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1840
+    .line 1727
     iput-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->mDelegate:Lcom/transsion/camera/app/common/IAppUIListener$IModeChangedListener;
 
     return-void
@@ -50,7 +50,7 @@
 .method private synthetic lambda$onSwitchMode$0()V
     .registers 3
 
-    .line 1862
+    .line 1749
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmCurrentModeName(Lcom/transsion/camera/app/ui/ModePickerUI;)Ljava/lang/String;
@@ -71,14 +71,14 @@
 
     const-string v1, "com.transsion.camera.feature.mode.more.MoreModeEntry"
 
-    .line 1863
+    .line 1750
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_31
 
-    .line 1864
+    .line 1751
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmMoreTabChangeListener(Lcom/transsion/camera/app/ui/ModePickerUI;)Lcom/transsion/camera/app/common/IAppUIListener$IMoreTabChangeListener;
@@ -87,7 +87,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 1865
+    .line 1752
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmMoreTabChangeListener(Lcom/transsion/camera/app/ui/ModePickerUI;)Lcom/transsion/camera/app/common/IAppUIListener$IMoreTabChangeListener;
@@ -102,7 +102,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIListener$IMoreTabChangeListener;->onMoreTabChanged(Ljava/lang/String;)V
 
-    .line 1868
+    .line 1755
     :cond_31
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
@@ -110,7 +110,7 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->updateHeadFootPadding()V
 
-    .line 1869
+    .line 1756
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$mupdateMoreCancelRootState(Lcom/transsion/camera/app/ui/ModePickerUI;)V
@@ -123,12 +123,12 @@
 .method public onSwitchMode(Ljava/lang/String;)V
     .registers 5
 
-    .line 1845
+    .line 1732
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->mDelegate:Lcom/transsion/camera/app/common/IAppUIListener$IModeChangedListener;
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IModeChangedListener;->onSwitchMode(Ljava/lang/String;)V
 
-    .line 1846
+    .line 1733
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
@@ -137,7 +137,7 @@
 
     if-eqz v0, :cond_7e
 
-    .line 1847
+    .line 1734
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmCurrentModeName(Lcom/transsion/camera/app/ui/ModePickerUI;)Ljava/lang/String;
@@ -150,7 +150,7 @@
 
     if-nez v0, :cond_73
 
-    .line 1848
+    .line 1735
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
@@ -159,7 +159,7 @@
 
     goto/16 :goto_98
 
-    .line 1851
+    .line 1738
     :cond_21
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getMoreTabView()Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;
 
@@ -169,7 +169,7 @@
 
     goto :goto_98
 
-    .line 1855
+    .line 1742
     :cond_28
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->getTab()Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
@@ -187,7 +187,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->setText(Ljava/lang/CharSequence;)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
-    .line 1856
+    .line 1743
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->isTabLayoutMode(Ljava/lang/String;)Z
@@ -196,7 +196,7 @@
 
     if-eqz v0, :cond_7e
 
-    .line 1857
+    .line 1744
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
@@ -213,7 +213,7 @@
 
     if-eqz v0, :cond_64
 
-    .line 1859
+    .line 1746
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmContext(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/content/Context;
@@ -232,7 +232,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->setText(Ljava/lang/CharSequence;)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
-    .line 1861
+    .line 1748
     :cond_64
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
@@ -248,7 +248,7 @@
 
     goto :goto_7e
 
-    .line 1873
+    .line 1760
     :cond_73
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
@@ -260,14 +260,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1876
+    .line 1763
     :cond_7e
     :goto_7e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fputmCurrentModeName(Lcom/transsion/camera/app/ui/ModePickerUI;Ljava/lang/String;)V
 
-    .line 1877
+    .line 1764
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmModeOrderProvider(Lcom/transsion/camera/app/ui/ModePickerUI;)Lcom/transsion/camera/app/mode/ModeOrderProvider;
@@ -284,7 +284,7 @@
 
     if-eqz v0, :cond_98
 
-    .line 1878
+    .line 1765
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$mupdateMoreModeGuideUI(Lcom/transsion/camera/app/ui/ModePickerUI;Ljava/lang/String;)V

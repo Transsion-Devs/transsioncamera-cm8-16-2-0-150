@@ -33,13 +33,13 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;Landroid/view/View;)V
     .registers 5
 
-    .line 1637
+    .line 1657
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$FooterVH;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
-    .line 1638
+    .line 1658
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/makeup/adapter/ItemVH;-><init>(Landroid/view/View;)V
 
-    .line 1639
+    .line 1659
     sget v0, Lcom/transsion/camera/feature/makeup/R$id;->mu_item_icon:I
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -50,7 +50,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$FooterVH;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
-    .line 1640
+    .line 1660
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->-$$Nest$fgetmScreenFormType(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;)I
 
     move-result p0
@@ -79,7 +79,7 @@
 
     goto :goto_2a
 
-    .line 1645
+    .line 1665
     :cond_26
     invoke-virtual {p2, v1, v1}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
@@ -89,7 +89,7 @@
     :goto_2a
     const/16 p0, 0x5a
 
-    .line 1643
+    .line 1663
     invoke-virtual {p2, p0, v1}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
     return-void
@@ -100,15 +100,15 @@
 .method public bindHolder(Ljava/lang/Object;Z)V
     .registers 6
 
-    .line 1656
+    .line 1676
     instance-of v0, p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Footer;
 
     if-eqz v0, :cond_4b
 
-    .line 1657
+    .line 1677
     check-cast p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Footer;
 
-    .line 1658
+    .line 1678
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$FooterVH;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->-$$Nest$fgetmScreenFormType(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;)I
@@ -143,7 +143,7 @@
 
     goto :goto_29
 
-    .line 1663
+    .line 1683
     :cond_23
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$FooterVH;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
@@ -151,7 +151,7 @@
 
     goto :goto_30
 
-    .line 1661
+    .line 1681
     :cond_29
     :goto_29
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$FooterVH;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
@@ -160,7 +160,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
-    .line 1665
+    .line 1685
     :goto_30
     iget v0, p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Footer;->drawableId:I
 
@@ -174,7 +174,7 @@
 
     if-eqz p2, :cond_44
 
-    .line 1667
+    .line 1687
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$FooterVH;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     iget p1, p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Footer;->blackDrawableId:I
@@ -183,7 +183,7 @@
 
     return-void
 
-    .line 1669
+    .line 1689
     :cond_44
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$FooterVH;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 

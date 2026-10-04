@@ -194,6 +194,21 @@
 
 
 # virtual methods
+.method public applyToAppLockAsUser(ILandroid/os/Bundle;I)Landroid/os/Bundle;
+    .registers 4
+
+    .line 1166
+    sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->TAG:Ljava/lang/String;
+
+    const-string p1, "can not find method applyToAppLockAsUser"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
 .method public backgroundAllowlistUid(I)V
     .registers 5
 
@@ -247,7 +262,7 @@
 .method public calculateReclaimableMemory()J
     .registers 3
 
-    .line 1121
+    .line 1128
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->TAG:Ljava/lang/String;
 
     const-string v0, "can not find method calculateReclaimableMemory"
@@ -262,7 +277,7 @@
 .method public changeCompactionMem(Ljava/lang/String;)V
     .registers 5
 
-    .line 778
+    .line 785
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -275,7 +290,7 @@
 
     move-result-object p0
 
-    .line 779
+    .line 786
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -292,7 +307,7 @@
 
     if-eqz v0, :cond_21
 
-    .line 781
+    .line 788
     filled-new-array {p1}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -427,6 +442,15 @@
     invoke-static {v0, p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
+.end method
+
+.method public doClean(ZZZZ[I[Ljava/lang/String;Landroid/os/Bundle;)Z
+    .registers 8
+
+    .line 0
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public enableHiber(Z)V
@@ -577,7 +601,7 @@
 .method public gameSceneEnd(Ljava/lang/String;Z)V
     .registers 6
 
-    .line 835
+    .line 842
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -590,7 +614,7 @@
 
     move-result-object p0
 
-    .line 836
+    .line 843
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -609,7 +633,7 @@
 
     if-eqz v0, :cond_27
 
-    .line 838
+    .line 845
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p2
@@ -638,7 +662,7 @@
         }
     .end annotation
 
-    .line 826
+    .line 833
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -651,7 +675,7 @@
 
     move-result-object p0
 
-    .line 827
+    .line 834
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -672,7 +696,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 829
+    .line 836
     invoke-static {p3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p3
@@ -739,7 +763,7 @@
 .method public getBackgroundRestrictionExemptionReason(I)I
     .registers 5
 
-    .line 1062
+    .line 1069
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -752,7 +776,7 @@
 
     move-result-object p0
 
-    .line 1063
+    .line 1070
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -769,7 +793,7 @@
 
     if-eqz v0, :cond_2d
 
-    .line 1065
+    .line 1072
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1148,7 +1172,7 @@
 .method public getJavaProcessRss()Landroid/os/Bundle;
     .registers 2
 
-    .line 1097
+    .line 1104
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->TAG:Ljava/lang/String;
 
     const-string v0, "can not find method getJavaProcessRss"
@@ -1163,7 +1187,7 @@
 .method public getKernelMemInfo()[J
     .registers 2
 
-    .line 1109
+    .line 1116
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->TAG:Ljava/lang/String;
 
     const-string v0, "can not find method getKernelMemInfo"
@@ -1296,7 +1320,7 @@
         }
     .end annotation
 
-    .line 933
+    .line 940
     sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
@@ -1305,7 +1329,7 @@
 .method public getLightStyleDataBundle(I)Landroid/os/Bundle;
     .registers 2
 
-    .line 943
+    .line 950
     new-instance p0, Landroid/os/Bundle;
 
     invoke-direct {p0}, Landroid/os/Bundle;-><init>()V
@@ -1318,7 +1342,7 @@
 
     const/4 p0, 0x0
 
-    .line 928
+    .line 935
     new-array p0, p0, [I
 
     return-object p0
@@ -1329,7 +1353,7 @@
 
     const/4 p0, 0x0
 
-    .line 938
+    .line 945
     new-array p0, p0, [I
 
     return-object p0
@@ -1471,7 +1495,7 @@
         }
     .end annotation
 
-    .line 699
+    .line 706
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -1484,7 +1508,7 @@
 
     move-result-object p0
 
-    .line 700
+    .line 707
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -1501,7 +1525,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 702
+    .line 709
     filled-new-array {p1}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -1514,7 +1538,7 @@
 
     return-object p0
 
-    .line 704
+    .line 711
     :cond_25
     new-instance p0, Ljava/util/ArrayList;
 
@@ -1526,7 +1550,7 @@
 .method public getMemoryForMF(Ljava/lang/String;)I
     .registers 5
 
-    .line 796
+    .line 803
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -1539,7 +1563,7 @@
 
     move-result-object p0
 
-    .line 797
+    .line 804
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -1556,7 +1580,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 799
+    .line 806
     filled-new-array {p1}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -1582,7 +1606,7 @@
 .method public getNativeProcessRss()Landroid/os/Bundle;
     .registers 2
 
-    .line 1103
+    .line 1110
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->TAG:Ljava/lang/String;
 
     const-string v0, "can not find method getNativeProcessRss"
@@ -1673,7 +1697,7 @@
         }
     .end annotation
 
-    .line 739
+    .line 746
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -1686,7 +1710,7 @@
 
     move-result-object p0
 
-    .line 740
+    .line 747
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-string v3, "getSwapFileSizeList"
@@ -1699,7 +1723,7 @@
 
     if-eqz v1, :cond_1f
 
-    .line 742
+    .line 749
     new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v1, p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -1717,7 +1741,7 @@
 .method public getTargetFps(Ljava/lang/String;Ljava/lang/String;)I
     .registers 7
 
-    .line 709
+    .line 716
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -1730,7 +1754,7 @@
 
     move-result-object p0
 
-    .line 710
+    .line 717
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-class v2, Ljava/lang/String;
@@ -1747,7 +1771,7 @@
 
     if-eqz v1, :cond_29
 
-    .line 712
+    .line 719
     filled-new-array {p1, p2}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -1945,7 +1969,7 @@
 .method public getTranAppmSystemInfo(Ljava/lang/String;)Ljava/lang/String;
     .registers 6
 
-    .line 844
+    .line 851
     const-string p0, "com.transsion.hubsdk.TranServiceManager"
 
     invoke-static {p0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -1954,7 +1978,7 @@
 
     if-eqz p0, :cond_5e
 
-    .line 846
+    .line 853
     const-string v0, "getServiceIBinder"
 
     const-class v1, Ljava/lang/String;
@@ -1969,7 +1993,7 @@
 
     if-eqz p0, :cond_5e
 
-    .line 848
+    .line 855
     const-string v0, "activity"
 
     filled-new-array {v0}, [Ljava/lang/Object;
@@ -1984,7 +2008,7 @@
 
     check-cast p0, Landroid/os/IBinder;
 
-    .line 849
+    .line 856
     const-string v0, "com.transsion.hubsdk.app.ITranActivityManager$Stub"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -1995,7 +2019,7 @@
 
     if-eqz v0, :cond_5e
 
-    .line 851
+    .line 858
     const-class v2, Landroid/os/IBinder;
 
     filled-new-array {v2}, [Ljava/lang/Class;
@@ -2008,7 +2032,7 @@
 
     move-result-object v2
 
-    .line 852
+    .line 859
     filled-new-array {p0}, [Ljava/lang/Object;
 
     move-result-object p0
@@ -2019,7 +2043,7 @@
 
     if-eqz p0, :cond_5e
 
-    .line 854
+    .line 861
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -2036,7 +2060,7 @@
 
     if-eqz v0, :cond_5e
 
-    .line 856
+    .line 863
     filled-new-array {p1}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -2049,7 +2073,7 @@
 
     return-object p0
 
-    .line 862
+    .line 869
     :cond_5e
     const-string p0, "unknown"
 
@@ -2067,7 +2091,7 @@
         }
     .end annotation
 
-    .line 689
+    .line 696
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -2080,7 +2104,7 @@
 
     move-result-object p0
 
-    .line 690
+    .line 697
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -2097,7 +2121,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 692
+    .line 699
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -2114,7 +2138,7 @@
 
     return-object p0
 
-    .line 694
+    .line 701
     :cond_29
     new-instance p0, Ljava/util/ArrayList;
 
@@ -2489,7 +2513,7 @@
 .method public isGameGuardSupport()Z
     .registers 5
 
-    .line 816
+    .line 823
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -2502,7 +2526,7 @@
 
     move-result-object p0
 
-    .line 817
+    .line 824
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-string v2, "isGameGuardSupport"
@@ -2515,7 +2539,7 @@
 
     if-eqz v1, :cond_23
 
-    .line 819
+    .line 826
     new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v1, p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -2537,7 +2561,7 @@
 .method public isInGameGuardProtectedList(Ljava/lang/String;)Z
     .registers 6
 
-    .line 806
+    .line 813
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -2550,7 +2574,7 @@
 
     move-result-object p0
 
-    .line 807
+    .line 814
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-class v2, Ljava/lang/String;
@@ -2567,7 +2591,7 @@
 
     if-eqz v1, :cond_29
 
-    .line 809
+    .line 816
     filled-new-array {p1}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -2737,7 +2761,7 @@
 .method public isMatchCurMemSelection()Z
     .registers 5
 
-    .line 729
+    .line 736
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -2750,7 +2774,7 @@
 
     move-result-object p0
 
-    .line 730
+    .line 737
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-string v2, "isMatchCurMemSelection"
@@ -2763,7 +2787,7 @@
 
     if-eqz v1, :cond_23
 
-    .line 732
+    .line 739
     new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v1, p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -2785,7 +2809,7 @@
 .method public isMemSettingEnterEnabled()Z
     .registers 5
 
-    .line 719
+    .line 726
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -2798,7 +2822,7 @@
 
     move-result-object p0
 
-    .line 720
+    .line 727
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-string v2, "isMemSettingEnterEnabled"
@@ -2811,7 +2835,7 @@
 
     if-eqz v1, :cond_23
 
-    .line 722
+    .line 729
     sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -2833,7 +2857,7 @@
 .method public isMemoryEnoughToMF(Ljava/lang/String;)I
     .registers 5
 
-    .line 768
+    .line 775
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -2846,7 +2870,7 @@
 
     move-result-object p0
 
-    .line 769
+    .line 776
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -2863,7 +2887,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 771
+    .line 778
     filled-new-array {p1}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -2949,7 +2973,7 @@
 .method public isUserRunning(II)Z
     .registers 7
 
-    .line 1135
+    .line 1142
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -2962,7 +2986,7 @@
 
     move-result-object p0
 
-    .line 1136
+    .line 1143
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -2979,7 +3003,7 @@
 
     if-eqz v1, :cond_31
 
-    .line 1138
+    .line 1145
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3004,7 +3028,7 @@
 
     return p0
 
-    .line 1140
+    .line 1147
     :cond_31
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->TAG:Ljava/lang/String;
 
@@ -3018,7 +3042,7 @@
 .method public isUxCompactionSupport()Z
     .registers 5
 
-    .line 749
+    .line 756
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -3031,7 +3055,7 @@
 
     move-result-object p0
 
-    .line 750
+    .line 757
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-string v2, "isUxCompactionSupport"
@@ -3044,7 +3068,7 @@
 
     if-eqz v1, :cond_23
 
-    .line 752
+    .line 759
     new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v1, p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -3207,7 +3231,7 @@
 .method public registerActivityStartObserver([Ljava/lang/String;Lcom/transsion/hubsdk/api/app/TranActivityManager$TranActivityStartObserver;)Z
     .registers 3
 
-    .line 1087
+    .line 1094
     new-instance p0, Lcom/transsion/hubsdk/common/exception/TranThubIncompatibleException;
 
     const-string p1, "can not find method registerActivityStartObserver"
@@ -3220,7 +3244,7 @@
 .method public registerAppRecoveryCallback(Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranAppRecoveryCallback;Landroid/os/IBinder;)V
     .registers 3
 
-    .line 892
+    .line 899
     new-instance p0, Lcom/transsion/hubsdk/common/exception/TranThubIncompatibleException;
 
     const-string p1, "can not find method registerAppRecoveryCallback"
@@ -3233,7 +3257,7 @@
 .method public registerBloodOxygenLedStateListener(Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranBloodOxygenLedStateCallback;)V
     .registers 2
 
-    .line 907
+    .line 914
     new-instance p0, Lcom/transsion/hubsdk/common/exception/TranThubIncompatibleException;
 
     const-string p1, "can not find method unRegisterAppRecoveryCallback"
@@ -3285,6 +3309,19 @@
     return-void
 .end method
 
+.method public registerTranNecessityServices(Lcom/transsion/hubsdk/api/app/ITranNecessityWindowService;)V
+    .registers 2
+
+    .line 680
+    new-instance p0, Lcom/transsion/hubsdk/common/exception/TranThubIncompatibleException;
+
+    const-string p1, "Do not support method registerEmergencyNecessity in AOSP"
+
+    invoke-direct {p0, p1}, Lcom/transsion/hubsdk/common/exception/TranThubIncompatibleException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
 .method public registerUserSwitchObserver(Lcom/transsion/hubsdk/api/app/TranUserSwitchObserver;Ljava/lang/String;)V
     .registers 5
 
@@ -3326,7 +3363,7 @@
 .method public resumeAppSwitches()V
     .registers 5
 
-    .line 1044
+    .line 1051
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -3339,7 +3376,7 @@
 
     move-result-object p0
 
-    .line 1045
+    .line 1052
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-string v2, "resumeAppSwitches"
@@ -3352,7 +3389,7 @@
 
     if-eqz v1, :cond_1b
 
-    .line 1047
+    .line 1054
     new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v1, p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -3364,7 +3401,7 @@
 .method public sendMallocDebugSignal(Ljava/lang/String;Ljava/lang/String;)Z
     .registers 3
 
-    .line 1115
+    .line 1122
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->TAG:Ljava/lang/String;
 
     const-string p1, "can not find method sendMallocDebugSignal"
@@ -3405,7 +3442,7 @@
         }
     .end annotation
 
-    .line 974
+    .line 981
     sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
@@ -3463,7 +3500,7 @@
 .method public setAudioPatch(Ljava/lang/String;)V
     .registers 2
 
-    .line 1128
+    .line 1135
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->TAG:Ljava/lang/String;
 
     const-string p1, "can not find method setAudioPatch"
@@ -3723,7 +3760,7 @@
 .method public setGameParam(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
     .registers 8
 
-    .line 679
+    .line 686
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -3736,7 +3773,7 @@
 
     move-result-object p0
 
-    .line 680
+    .line 687
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-class v2, Ljava/lang/String;
@@ -3753,7 +3790,7 @@
 
     if-eqz v1, :cond_29
 
-    .line 682
+    .line 689
     filled-new-array {p1, p2, p3}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -3886,7 +3923,7 @@
 .method public setLightingEffect([I)V
     .registers 2
 
-    .line 917
+    .line 924
     new-instance p0, Lcom/transsion/hubsdk/common/exception/TranThubIncompatibleException;
 
     const-string p1, "can not find method setLightingEffect"
@@ -3899,7 +3936,7 @@
 .method public setLightingScene(I[ILandroid/os/Bundle;)V
     .registers 4
 
-    .line 923
+    .line 930
     new-instance p0, Lcom/transsion/hubsdk/common/exception/TranThubIncompatibleException;
 
     const-string p1, "can not find method setLightingScene"
@@ -4259,7 +4296,7 @@
 .method public stopAppForUser(Ljava/lang/String;I)V
     .registers 6
 
-    .line 1053
+    .line 1060
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -4272,7 +4309,7 @@
 
     move-result-object p0
 
-    .line 1054
+    .line 1061
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -4291,7 +4328,7 @@
 
     if-eqz v0, :cond_27
 
-    .line 1056
+    .line 1063
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -4306,10 +4343,18 @@
     return-void
 .end method
 
+.method public swipeUpClean(Ljava/lang/String;I)Z
+    .registers 3
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method public switchMemFusion(Z)V
     .registers 5
 
-    .line 787
+    .line 794
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -4322,7 +4367,7 @@
 
     move-result-object p0
 
-    .line 788
+    .line 795
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -4339,7 +4384,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 790
+    .line 797
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -4357,7 +4402,7 @@
 .method public switchUXCompaction(Z)V
     .registers 5
 
-    .line 759
+    .line 766
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->mMethodGetService:Ljava/lang/reflect/Method;
 
     const/4 v0, 0x0
@@ -4370,7 +4415,7 @@
 
     move-result-object p0
 
-    .line 760
+    .line 767
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager;->sClassName:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -4387,7 +4432,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 762
+    .line 769
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -4549,7 +4594,7 @@
 .method public unRegisterAppRecoveryCallback(Landroid/os/IBinder;)V
     .registers 2
 
-    .line 897
+    .line 904
     new-instance p0, Lcom/transsion/hubsdk/common/exception/TranThubIncompatibleException;
 
     const-string p1, "can not find method unRegisterAppRecoveryCallback"
@@ -4562,7 +4607,7 @@
 .method public unRegisterBloodOxygenLedStateListener(Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranBloodOxygenLedStateCallback;)V
     .registers 2
 
-    .line 912
+    .line 919
     new-instance p0, Lcom/transsion/hubsdk/common/exception/TranThubIncompatibleException;
 
     const-string p1, "can not find method unRegisterAppRecoveryCallback"
@@ -4603,7 +4648,7 @@
 .method public unregisterActivityStartObserver(Lcom/transsion/hubsdk/api/app/TranActivityManager$TranActivityStartObserver;)V
     .registers 2
 
-    .line 1092
+    .line 1099
     new-instance p0, Lcom/transsion/hubsdk/common/exception/TranThubIncompatibleException;
 
     const-string p1, "can not find method registerActivityStartObserver"

@@ -29,7 +29,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;Landroid/util/Size;Landroid/util/Size;)V
     .registers 4
 
-    .line 200
+    .line 195
     iput-object p1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$4;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$4;->val$oldPreviewSize:Landroid/util/Size;
@@ -46,7 +46,7 @@
 .method public run()V
     .registers 5
 
-    .line 203
+    .line 198
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$4;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->-$$Nest$fgetmGpuProcessers(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -70,7 +70,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
 
-    .line 204
+    .line 199
     iget-object v2, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$4;->val$oldPreviewSize:Landroid/util/Size;
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$4;->val$newPreviewSize:Landroid/util/Size;

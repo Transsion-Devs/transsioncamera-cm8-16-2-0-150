@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;)V
     .registers 2
 
-    .line 126
+    .line 131
     iput-object p1, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$2;->this$0:Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 129
+    .line 134
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$2;->this$0:Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->-$$Nest$fgetmPopSettingTitleContainer(Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;)Landroid/widget/FrameLayout;
@@ -46,7 +46,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 130
+    .line 135
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
     return-void

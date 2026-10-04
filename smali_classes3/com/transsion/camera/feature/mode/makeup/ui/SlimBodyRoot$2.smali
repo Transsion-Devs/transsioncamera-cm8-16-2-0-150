@@ -34,7 +34,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;)V
     .registers 2
 
-    .line 238
+    .line 244
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,14 +49,14 @@
 
     if-eqz p2, :cond_22
 
-    .line 250
+    .line 256
     iget p1, p2, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;->featureId:I
 
     const/4 p2, 0x1
 
     if-ne p1, p2, :cond_1d
 
-    .line 251
+    .line 257
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->-$$Nest$fgetmSlimBodyHelper(Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;)Lcom/transsion/camera/feature/mode/makeup/helper/SlimBodyHelper;
@@ -65,7 +65,7 @@
 
     if-eqz p1, :cond_22
 
-    .line 252
+    .line 258
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->-$$Nest$fgetmSlimBodyHelper(Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;)Lcom/transsion/camera/feature/mode/makeup/helper/SlimBodyHelper;
@@ -80,7 +80,7 @@
 
     return-void
 
-    .line 255
+    .line 261
     :cond_1d
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
@@ -93,7 +93,7 @@
 .method public bridge synthetic onClickSelectedItem(Landroid/view/View;Ljava/lang/Object;I)V
     .registers 4
 
-    .line 238
+    .line 244
     check-cast p2, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$2;->onClickSelectedItem(Landroid/view/View;Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;I)V
@@ -106,7 +106,7 @@
 
     if-eqz p2, :cond_10
 
-    .line 242
+    .line 248
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
     iget p3, p2, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;->featureId:I
@@ -115,7 +115,7 @@
 
     invoke-static {p1, p3, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->-$$Nest$mupdateValueByFeatureId(Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;ILjava/lang/String;)V
 
-    .line 243
+    .line 249
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
     invoke-static {p0, p2}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->-$$Nest$mhandleAnalytics(Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;)V
@@ -127,7 +127,7 @@
 .method public bridge synthetic onItemSelected(Landroid/view/View;Ljava/lang/Object;I)V
     .registers 4
 
-    .line 238
+    .line 244
     check-cast p2, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$2;->onItemSelected(Landroid/view/View;Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;I)V

@@ -30,7 +30,7 @@
         }
     .end annotation
 
-    .line 435
+    .line 438
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$7;->val$animator:Landroid/animation/ValueAnimator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
 .method public run()V
     .registers 1
 
-    .line 438
+    .line 441
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$7;->val$animator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V

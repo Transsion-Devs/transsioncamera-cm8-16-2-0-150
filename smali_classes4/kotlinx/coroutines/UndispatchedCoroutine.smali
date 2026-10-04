@@ -43,7 +43,7 @@
         }
     .end annotation
 
-    .line 168
+    .line 164
     sget-object v0, Lkotlinx/coroutines/UndispatchedMarker;->INSTANCE:Lkotlinx/coroutines/UndispatchedMarker;
 
     invoke-interface {p1, v0}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
@@ -64,14 +64,14 @@
     :goto_e
     invoke-direct {p0, v0, p2}, Lkotlinx/coroutines/internal/ScopeCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)V
 
-    .line 201
+    .line 197
     new-instance v0, Ljava/lang/ThreadLocal;
 
     invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
     iput-object v0, p0, Lkotlinx/coroutines/UndispatchedCoroutine;->threadStateToRecover:Ljava/lang/ThreadLocal;
 
-    .line 236
+    .line 232
     invoke-interface {p2}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p2
@@ -88,15 +88,15 @@
 
     const/4 p2, 0x0
 
-    .line 243
+    .line 239
     invoke-static {p1, p2}, Lkotlinx/coroutines/internal/ThreadContextKt;->updateThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
 
-    .line 244
+    .line 240
     invoke-static {p1, p2}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
 
-    .line 245
+    .line 241
     invoke-virtual {p0, p1, p2}, Lkotlinx/coroutines/UndispatchedCoroutine;->saveThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
 
     :cond_31
@@ -108,12 +108,12 @@
 .method protected afterResume(Ljava/lang/Object;)V
     .registers 7
 
-    .line 261
+    .line 257
     iget-boolean v0, p0, Lkotlinx/coroutines/UndispatchedCoroutine;->threadLocalIsSet:Z
 
     if-eqz v0, :cond_20
 
-    .line 262
+    .line 258
     iget-object v0, p0, Lkotlinx/coroutines/UndispatchedCoroutine;->threadStateToRecover:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -134,16 +134,16 @@
 
     move-result-object v0
 
-    .line 263
+    .line 259
     invoke-static {v1, v0}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
 
-    .line 265
+    .line 261
     :cond_1b
     iget-object v0, p0, Lkotlinx/coroutines/UndispatchedCoroutine;->threadStateToRecover:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->remove()V
 
-    .line 268
+    .line 264
     :cond_20
     iget-object v0, p0, Lkotlinx/coroutines/internal/ScopeCoroutine;->uCont:Lkotlin/coroutines/Continuation;
 
@@ -151,46 +151,46 @@
 
     move-result-object p1
 
-    .line 269
+    .line 265
     iget-object v0, p0, Lkotlinx/coroutines/internal/ScopeCoroutine;->uCont:Lkotlin/coroutines/Continuation;
 
-    .line 107
+    .line 103
     invoke-interface {v0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    .line 108
+    .line 104
     invoke-static {v1, v2}, Lkotlinx/coroutines/internal/ThreadContextKt;->updateThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 109
+    .line 105
     sget-object v4, Lkotlinx/coroutines/internal/ThreadContextKt;->NO_THREAD_ELEMENTS:Lkotlinx/coroutines/internal/Symbol;
 
     if-eq v3, v4, :cond_39
 
-    .line 111
+    .line 107
     invoke-static {v0, v1, v3}, Lkotlinx/coroutines/CoroutineContextKt;->updateUndispatchedCompletion(Lkotlin/coroutines/Continuation;Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)Lkotlinx/coroutines/UndispatchedCoroutine;
 
     move-result-object v2
 
-    .line 270
+    .line 266
     :cond_39
     :try_start_39
     iget-object p0, p0, Lkotlinx/coroutines/internal/ScopeCoroutine;->uCont:Lkotlin/coroutines/Continuation;
 
     invoke-interface {p0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    .line 271
+    .line 267
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_40
     .catchall {:try_start_39 .. :try_end_40} :catchall_4e
 
     if-eqz v2, :cond_4a
 
-    .line 118
+    .line 114
     invoke-virtual {v2}, Lkotlinx/coroutines/UndispatchedCoroutine;->clearThreadContext()Z
 
     move-result p0
@@ -202,7 +202,7 @@
     :cond_49
     return-void
 
-    .line 119
+    .line 115
     :cond_4a
     :goto_4a
     invoke-static {v1, v3}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
@@ -214,14 +214,14 @@
 
     if-eqz v2, :cond_57
 
-    .line 118
+    .line 114
     invoke-virtual {v2}, Lkotlinx/coroutines/UndispatchedCoroutine;->clearThreadContext()Z
 
     move-result p1
 
     if-eqz p1, :cond_5a
 
-    .line 119
+    .line 115
     :cond_57
     invoke-static {v1, v3}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
 
@@ -232,7 +232,7 @@
 .method public final clearThreadContext()Z
     .registers 3
 
-    .line 255
+    .line 251
     iget-boolean v0, p0, Lkotlinx/coroutines/UndispatchedCoroutine;->threadLocalIsSet:Z
 
     const/4 v1, 0x1
@@ -254,7 +254,7 @@
     :cond_f
     const/4 v0, 0x0
 
-    .line 256
+    .line 252
     :goto_10
     iget-object p0, p0, Lkotlinx/coroutines/UndispatchedCoroutine;->threadStateToRecover:Ljava/lang/ThreadLocal;
 
@@ -270,10 +270,10 @@
 
     const/4 v0, 0x1
 
-    .line 250
+    .line 246
     iput-boolean v0, p0, Lkotlinx/coroutines/UndispatchedCoroutine;->threadLocalIsSet:Z
 
-    .line 251
+    .line 247
     iget-object p0, p0, Lkotlinx/coroutines/UndispatchedCoroutine;->threadStateToRecover:Ljava/lang/ThreadLocal;
 
     invoke-static {p1, p2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;

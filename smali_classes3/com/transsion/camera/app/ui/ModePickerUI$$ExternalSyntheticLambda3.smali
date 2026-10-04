@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -24,13 +24,13 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 2
+.method public final run()V
+    .registers 1
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda3;->f$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->$r8$lambda$U-OWi2f85rbJDPiJZlLPiT_nhxQ(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/view/View;)V
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->$r8$lambda$BvacuP0wq8E1IwxSM2qy12gNXWU(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     return-void
 .end method

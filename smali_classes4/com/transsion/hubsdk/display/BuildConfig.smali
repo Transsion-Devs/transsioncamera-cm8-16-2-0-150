@@ -8,6 +8,8 @@
 
 .field public static final DEBUG:Z = false
 
+.field public static final FLAVOR:Ljava/lang/String; = "display"
+
 .field public static final LIBRARY_PACKAGE_NAME:Ljava/lang/String; = "com.transsion.hubsdk.display"
 
 

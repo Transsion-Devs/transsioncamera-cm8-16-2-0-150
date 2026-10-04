@@ -15,7 +15,7 @@
 .method public static parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
     .registers 3
 
-    .line 46
+    .line 44
     :try_start_0
     invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
     :try_end_3
@@ -26,7 +26,7 @@
 
     const/4 v0, 0x0
 
-    .line 48
+    .line 46
     :try_start_4
     sget-object v1, Lcom/google/gson/internal/bind/TypeAdapters;->JSON_ELEMENT:Lcom/google/gson/TypeAdapter;
 
@@ -51,7 +51,7 @@
     :catch_f
     move-exception p0
 
-    .line 64
+    .line 62
     new-instance v0, Lcom/google/gson/JsonSyntaxException;
 
     invoke-direct {v0, p0}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
@@ -61,7 +61,7 @@
     :catch_16
     move-exception p0
 
-    .line 62
+    .line 60
     new-instance v0, Lcom/google/gson/JsonIOException;
 
     invoke-direct {v0, p0}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/Throwable;)V
@@ -71,7 +71,7 @@
     :catch_1d
     move-exception p0
 
-    .line 60
+    .line 58
     new-instance v0, Lcom/google/gson/JsonSyntaxException;
 
     invoke-direct {v0, p0}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
@@ -86,12 +86,12 @@
     :goto_26
     if-eqz v0, :cond_2b
 
-    .line 55
+    .line 53
     sget-object p0, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
 
     return-object p0
 
-    .line 58
+    .line 56
     :cond_2b
     new-instance v0, Lcom/google/gson/JsonSyntaxException;
 
@@ -103,7 +103,7 @@
 .method public static write(Lcom/google/gson/JsonElement;Lcom/google/gson/stream/JsonWriter;)V
     .registers 3
 
-    .line 72
+    .line 68
     sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->JSON_ELEMENT:Lcom/google/gson/TypeAdapter;
 
     invoke-virtual {v0, p1, p0}, Lcom/google/gson/TypeAdapter;->write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
@@ -114,7 +114,7 @@
 .method public static writerForAppendable(Ljava/lang/Appendable;)Ljava/io/Writer;
     .registers 2
 
-    .line 76
+    .line 72
     instance-of v0, p0, Ljava/io/Writer;
 
     if-eqz v0, :cond_7

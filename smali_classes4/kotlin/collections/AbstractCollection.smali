@@ -8,6 +8,17 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$RRlQOBNvJqinm9A-K_sSPMZpvJY(Lkotlin/collections/AbstractCollection;Ljava/lang/Object;)Ljava/lang/CharSequence;
+    .registers 2
+
+    .line 0
+    invoke-static {p0, p1}, Lkotlin/collections/AbstractCollection;->toString$lambda$0(Lkotlin/collections/AbstractCollection;Ljava/lang/Object;)Ljava/lang/CharSequence;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method protected constructor <init>()V
     .registers 1
 
@@ -15,6 +26,24 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method private static final toString$lambda$0(Lkotlin/collections/AbstractCollection;Ljava/lang/Object;)Ljava/lang/CharSequence;
+    .registers 2
+
+    if-ne p1, p0, :cond_5
+
+    .line 27
+    const-string p0, "(this Collection)"
+
+    return-object p0
+
+    :cond_5
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 
@@ -72,15 +101,8 @@
 
 .method public contains(Ljava/lang/Object;)Z
     .registers 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")Z"
-        }
-    .end annotation
 
-    .line 1747
+    .line 1761
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
@@ -91,7 +113,7 @@
 
     return v1
 
-    .line 1748
+    .line 1762
     :cond_8
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -129,9 +151,7 @@
         value = {
             "(",
             "Ljava/util/Collection<",
-            "+",
-            "Ljava/lang/Object;",
-            ">;)Z"
+            "*>;)Z"
         }
     .end annotation
 
@@ -142,7 +162,7 @@
     .line 22
     check-cast p1, Ljava/lang/Iterable;
 
-    .line 1726
+    .line 1740
     move-object v0, p1
 
     check-cast v0, Ljava/util/Collection;
@@ -157,7 +177,7 @@
 
     return v1
 
-    .line 1727
+    .line 1741
     :cond_12
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -230,9 +250,7 @@
         value = {
             "(",
             "Ljava/util/Collection<",
-            "+",
-            "Ljava/lang/Object;",
-            ">;)Z"
+            "*>;)Z"
         }
     .end annotation
 
@@ -251,9 +269,7 @@
         value = {
             "(",
             "Ljava/util/Collection<",
-            "+",
-            "Ljava/lang/Object;",
-            ">;)Z"
+            "*>;)Z"
         }
     .end annotation
 
@@ -302,7 +318,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 40
+    .line 48
     invoke-static {p0, p1}, Lkotlin/jvm/internal/CollectionToArray;->toArray(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p0
@@ -314,9 +330,9 @@
     .registers 10
 
     .line 26
-    new-instance v6, Lkotlin/collections/AbstractCollection$toString$1;
+    new-instance v6, Lkotlin/collections/AbstractCollection$$ExternalSyntheticLambda0;
 
-    invoke-direct {v6, p0}, Lkotlin/collections/AbstractCollection$toString$1;-><init>(Lkotlin/collections/AbstractCollection;)V
+    invoke-direct {v6, p0}, Lkotlin/collections/AbstractCollection$$ExternalSyntheticLambda0;-><init>(Lkotlin/collections/AbstractCollection;)V
 
     const/16 v7, 0x18
 

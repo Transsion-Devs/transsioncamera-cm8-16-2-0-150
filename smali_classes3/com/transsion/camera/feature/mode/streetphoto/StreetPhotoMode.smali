@@ -25,7 +25,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 57
+    .line 56
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-class v1, Lcom/transsion/camera/feature/mode/streetphoto/StreetPhotoMode;
@@ -44,7 +44,7 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 2
 
-    .line 63
+    .line 62
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -53,7 +53,7 @@
 .method private queryFlashValue()Ljava/lang/String;
     .registers 3
 
-    .line 124
+    .line 123
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_flash_facade"
@@ -62,7 +62,7 @@
 
     move-result-object v0
 
-    .line 125
+    .line 124
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -71,7 +71,7 @@
 
     return-object v0
 
-    .line 128
+    .line 127
     :cond_f
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -87,7 +87,7 @@
 .method private queryHDRValue()Ljava/lang/String;
     .registers 2
 
-    .line 132
+    .line 131
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_hdr"
@@ -96,7 +96,7 @@
 
     move-result-object p0
 
-    .line 133
+    .line 132
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -105,7 +105,7 @@
 
     return-object p0
 
-    .line 136
+    .line 135
     :cond_f
     const-string p0, "off"
 
@@ -117,7 +117,7 @@
 .method public buildCaptureInfo()Lcom/transsion/camera/app/common/mode/CaptureInfo;
     .registers 4
 
-    .line 179
+    .line 178
     new-instance v0, Lcom/transsion/camera/app/common/mode/CaptureInfo;
 
     iget v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mCaptureOrientation:I
@@ -144,7 +144,7 @@
         }
     .end annotation
 
-    .line 184
+    .line 183
     new-instance v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     invoke-direct {v0, p0, p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;-><init>(Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;Lcom/transsion/camera/app/common/ICameraControl$IContinuousShotCallback;)V
@@ -155,7 +155,7 @@
 .method public bridge synthetic createImageProcessor()Lcom/transsion/camera/app/common/mode/IImageProcessor;
     .registers 1
 
-    .line 55
+    .line 54
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/streetphoto/StreetPhotoMode;->createImageProcessor()Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     move-result-object p0
@@ -166,27 +166,27 @@
 .method protected getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 14
 
-    .line 216
+    .line 215
     new-instance v0, Lcom/transsion/camera/app/common/ZoomConfig;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/ZoomConfig;-><init>()V
 
-    .line 217
+    .line 216
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v1
 
-    .line 219
+    .line 218
     sget v2, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
 
-    .line 220
+    .line 219
     sget v3, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_3X:I
 
     const/4 v4, 0x0
 
     move v5, v4
 
-    .line 222
+    .line 221
     :goto_f
     iget-object v6, p0, Lcom/transsion/camera/feature/mode/streetphoto/StreetPhotoMode;->mStreetPhotoZoomLens:[Ljava/lang/String;
 
@@ -196,7 +196,7 @@
 
     if-ge v5, v7, :cond_75
 
-    .line 223
+    .line 222
     aget-object v6, v6, v5
 
     const-string v7, "_"
@@ -205,10 +205,10 @@
 
     move-result-object v6
 
-    .line 224
+    .line 223
     aget-object v7, v6, v4
 
-    .line 225
+    .line 224
     aget-object v9, v6, v8
 
     invoke-static {v9}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -225,7 +225,7 @@
 
     const/4 v11, 0x2
 
-    .line 226
+    .line 225
     aget-object v6, v6, v11
 
     invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -234,7 +234,7 @@
 
     if-ne v11, v6, :cond_38
 
-    .line 228
+    .line 227
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/CameraRepository;->getMainBackCamera()Ljava/lang/String;
 
     move-result-object v11
@@ -246,7 +246,7 @@
 
     move-result-object v11
 
-    .line 229
+    .line 228
     :goto_3c
     invoke-virtual {v1, v11}, Lcom/transsion/camera/app/common/CameraRepository;->getDeviceZoomRatio(Ljava/lang/String;)F
 
@@ -258,12 +258,12 @@
 
     float-to-int v10, v12
 
-    .line 231
+    .line 230
     new-instance v12, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     invoke-direct {v12}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;-><init>()V
 
-    .line 232
+    .line 231
     invoke-virtual {v12, v9}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setCurrentRatio(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v12
@@ -272,7 +272,7 @@
 
     move-result-object v10
 
-    .line 233
+    .line 232
     invoke-virtual {v10, v9, v9, v8}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setRatioRange(IIZ)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v10
@@ -285,7 +285,7 @@
 
     move-result-object v7
 
-    .line 234
+    .line 233
     invoke-virtual {v7, v6}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setLensType(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v6
@@ -294,7 +294,7 @@
 
     move-result-object v6
 
-    .line 231
+    .line 230
     invoke-virtual {v0, v6}, Lcom/transsion/camera/app/common/ZoomConfig;->addLensInfo(Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;)Lcom/transsion/camera/app/common/ZoomConfig;
 
     if-nez v5, :cond_6b
@@ -303,7 +303,7 @@
 
     goto :goto_72
 
-    .line 238
+    .line 237
     :cond_6b
     iget-object v6, p0, Lcom/transsion/camera/feature/mode/streetphoto/StreetPhotoMode;->mStreetPhotoZoomLens:[Ljava/lang/String;
 
@@ -326,7 +326,7 @@
 
     const/16 v4, 0x80
 
-    .line 243
+    .line 242
     filled-new-array {v1, v4}, [I
 
     move-result-object v1
@@ -335,26 +335,26 @@
 
     move-result-object v1
 
-    .line 244
+    .line 243
     invoke-virtual {v1, v8}, Lcom/transsion/camera/app/common/ZoomConfig;->setFocalLengthCustom(Z)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v1
 
     const-string v4, "28"
 
-    .line 245
+    .line 244
     invoke-virtual {v1, v4}, Lcom/transsion/camera/app/common/ZoomConfig;->setCurrentFocalLength(Ljava/lang/String;)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v1
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
-    .line 246
+    .line 245
     invoke-virtual {v1, p0}, Lcom/transsion/camera/app/common/ZoomConfig;->setCurrentLensTypeByCameraId(Ljava/lang/String;)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object p0
 
-    .line 247
+    .line 246
     invoke-virtual {p0, v2, v3}, Lcom/transsion/camera/app/common/ZoomConfig;->setZoomRange(II)Lcom/transsion/camera/app/common/ZoomConfig;
 
     return-object v0
@@ -363,7 +363,7 @@
 .method public getDataFlowType()I
     .registers 3
 
-    .line 104
+    .line 103
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -376,7 +376,7 @@
 
     if-eqz p0, :cond_11
 
-    .line 105
+    .line 104
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isForceCloseOfflineJNISupport()Z
 
     move-result p0
@@ -391,7 +391,7 @@
     :cond_13
     const/16 p0, 0x8
 
-    .line 113
+    .line 112
     :goto_15
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/smiledetection/SmileAlgorithm;->getInstance()Lcom/transsion/camera/app/common/algorithm/smiledetection/SmileAlgorithm;
 
@@ -403,7 +403,7 @@
 
     if-nez v1, :cond_47
 
-    .line 114
+    .line 113
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/gesturedetection/GestureAlgorithm;->getInstance()Lcom/transsion/camera/app/common/algorithm/gesturedetection/GestureAlgorithm;
 
     move-result-object v1
@@ -414,7 +414,7 @@
 
     if-nez v1, :cond_47
 
-    .line 115
+    .line 114
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/taintdetection/TaintAlgorithm;->getInstance()Lcom/transsion/camera/app/common/algorithm/taintdetection/TaintAlgorithm;
 
     move-result-object v1
@@ -425,7 +425,7 @@
 
     if-nez v1, :cond_47
 
-    .line 116
+    .line 115
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/barcodedetection/BarcodeAlgorithm;->getInstance()Lcom/transsion/camera/app/common/algorithm/barcodedetection/BarcodeAlgorithm;
 
     move-result-object v1
@@ -436,7 +436,7 @@
 
     if-nez v1, :cond_47
 
-    .line 117
+    .line 116
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/qrcodedetection/QRcodeAlgorithm;->getInstance()Lcom/transsion/camera/app/common/algorithm/qrcodedetection/QRcodeAlgorithm;
 
     move-result-object v1
@@ -450,7 +450,7 @@
     :cond_47
     const/4 v0, 0x4
 
-    .line 120
+    .line 119
     :cond_48
     invoke-static {p0, v0}, Lcom/transsion/camera/adapter/DataFlowSpec;->makeDataFlowSpec(II)I
 
@@ -462,92 +462,92 @@
 .method public getModeFeatures(Landroid/content/Context;)[Ljava/lang/String;
     .registers 2
 
-    .line 157
+    .line 156
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 158
+    .line 157
     const-string p1, "key_street_photo"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 159
+    .line 158
     const-string p1, "key_edit_watermark"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 160
+    .line 159
     const-string p1, "key_gold_watermark"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 161
+    .line 160
     const-string p1, "key_pro_watermark"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 162
+    .line 161
     const-string p1, "key_asd"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 163
+    .line 162
     const-string p1, "key_hdr"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 164
+    .line 163
     const-string p1, "key_tran_plugin"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 165
+    .line 164
     const-string p1, "key_ai_shutter"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 166
+    .line 165
     const-string p1, "key_ai_shutter_switch"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 167
+    .line 166
     const-string p1, "key_taint_detection"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 168
+    .line 167
     const-string p1, "key_voice_detection"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 169
+    .line 168
     const-string p1, "key_touch_capture"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 170
+    .line 169
     const-string p1, "key_mood_light"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 171
+    .line 170
     const-string p1, "key_airaw_tf"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 172
+    .line 171
     const-string p1, "key_in_sensor_zoom"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 173
+    .line 172
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result p1
 
-    .line 174
+    .line 173
     new-array p1, p1, [Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
@@ -562,12 +562,12 @@
 .method public getModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
     .registers 3
 
-    .line 141
+    .line 140
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/streetphoto/StreetPhotoMode;->queryFlashValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 142
+    .line 141
     const-string v1, "on"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -576,10 +576,10 @@
 
     if-nez v1, :cond_e
 
-    .line 143
+    .line 142
     const-string v0, "off"
 
-    .line 145
+    .line 144
     :cond_e
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/streetphoto/StreetPhotoMode;->queryHDRValue()Ljava/lang/String;
 
@@ -589,7 +589,7 @@
 
     move-result-object p0
 
-    .line 146
+    .line 145
     invoke-static {}, Lcom/transsion/camera/feature/mode/streetphoto/StreetPhotoRestriction;->getCamModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object v0
@@ -602,7 +602,7 @@
 .method public getSettingGroup()J
     .registers 5
 
-    .line 152
+    .line 151
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->getSettingGroup()J
 
     move-result-wide v0
@@ -617,10 +617,10 @@
 .method public init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Ljava/lang/String;Lcom/transsion/camera/app/common/IApp$IIntentAction;I)V
     .registers 8
 
-    .line 68
+    .line 67
     invoke-super/range {p0 .. p7}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Ljava/lang/String;Lcom/transsion/camera/app/common/IApp$IIntentAction;I)V
 
-    .line 69
+    .line 68
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -639,10 +639,10 @@
 .method public onCameraStateChanged(I)V
     .registers 4
 
-    .line 74
+    .line 73
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onCameraStateChanged(I)V
 
-    .line 75
+    .line 74
     sget-object p0, Lcom/transsion/camera/feature/mode/streetphoto/StreetPhotoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -667,7 +667,7 @@
 .method public onSettingReady()V
     .registers 1
 
-    .line 80
+    .line 79
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onSettingReady()V
 
     return-void
@@ -676,10 +676,10 @@
 .method public pause()V
     .registers 5
 
-    .line 85
+    .line 84
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->pause()V
 
-    .line 86
+    .line 85
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -688,7 +688,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 87
+    .line 86
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object p0
@@ -699,14 +699,14 @@
 
     const/4 v1, 0x1
 
-    .line 86
+    .line 85
     const-string v2, "key_exposure_private"
 
     const-string v3, "off"
 
     invoke-virtual {v0, v2, v3, p0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 88
+    .line 87
     sget-object p0, Lcom/transsion/camera/feature/mode/streetphoto/StreetPhotoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[pause]"
@@ -730,10 +730,10 @@
 .method public resume()V
     .registers 5
 
-    .line 189
+    .line 188
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->resume()V
 
-    .line 190
+    .line 189
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -742,7 +742,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 191
+    .line 190
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object p0
@@ -753,14 +753,14 @@
 
     const/4 v1, 0x1
 
-    .line 190
+    .line 189
     const-string v2, "key_exposure_private"
 
     const-string v3, "on"
 
     invoke-virtual {v0, v2, v3, p0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 192
+    .line 191
     sget-object p0, Lcom/transsion/camera/feature/mode/streetphoto/StreetPhotoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[resume]"
@@ -773,14 +773,14 @@
 .method protected supportedLockStateBackCamera()Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
     .registers 5
 
-    .line 202
+    .line 201
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object v0
 
-    .line 203
+    .line 202
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v1
@@ -793,19 +793,19 @@
 
     move-result-object v0
 
-    .line 204
+    .line 203
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->afLockSupport()Z
 
     move-result p0
 
     if-nez p0, :cond_1b
 
-    .line 205
+    .line 204
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
 
-    .line 207
+    .line 206
     :cond_1b
     invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -817,13 +817,13 @@
 
     goto :goto_27
 
-    .line 210
+    .line 209
     :cond_24
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
 
-    .line 208
+    .line 207
     :cond_27
     :goto_27
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AF_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
@@ -834,7 +834,7 @@
 .method protected supportedLockStateFrontCamera()Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
     .registers 1
 
-    .line 197
+    .line 196
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
@@ -843,10 +843,10 @@
 .method public unInit()V
     .registers 2
 
-    .line 93
+    .line 92
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->unInit()V
 
-    .line 94
+    .line 93
     sget-object p0, Lcom/transsion/camera/feature/mode/streetphoto/StreetPhotoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[unInit]"

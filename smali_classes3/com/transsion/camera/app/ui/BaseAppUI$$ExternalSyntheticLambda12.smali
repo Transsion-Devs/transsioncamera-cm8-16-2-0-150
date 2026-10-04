@@ -3,36 +3,36 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/MessageQueue$IdleHandler;
+.implements Ljava/util/function/Consumer;
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/transsion/camera/app/ui/BaseAppUI;
+.field public final synthetic f$0:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
+.method public synthetic constructor <init>(Z)V
     .registers 2
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda12;->f$0:Lcom/transsion/camera/app/ui/BaseAppUI;
+    iput-boolean p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda12;->f$0:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final queueIdle()Z
-    .registers 1
+.method public final accept(Ljava/lang/Object;)V
+    .registers 2
 
     .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda12;->f$0:Lcom/transsion/camera/app/ui/BaseAppUI;
+    iget-boolean p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda12;->f$0:Z
 
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$Gcy9UCr0JLrTrZPSjbRj55BbBOg(Lcom/transsion/camera/app/ui/BaseAppUI;)Z
+    check-cast p1, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;
 
-    move-result p0
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$fvO6mTKW6KcgCUWL27eu6Ooa8bM(ZLcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;)V
 
-    return p0
+    return-void
 .end method

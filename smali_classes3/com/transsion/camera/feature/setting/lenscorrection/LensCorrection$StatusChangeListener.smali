@@ -32,7 +32,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection;)V
     .registers 2
 
-    .line 85
+    .line 90
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 85
+    .line 90
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection$StatusChangeListener;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -65,18 +65,18 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 89
+    .line 94
     const-string v0, "key_camera_zoom"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result p1
+    move-result v0
 
-    if-eqz p1, :cond_2d
+    if-eqz v0, :cond_2e
 
     if-nez p2, :cond_c
 
-    .line 90
+    .line 95
     sget-object p2, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_INIT_VALUE:Ljava/lang/String;
 
     :cond_c
@@ -84,7 +84,7 @@
 
     move-result p1
 
-    .line 91
+    .line 96
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection;
 
     invoke-static {}, Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection;->-$$Nest$sfgetZOOM_EFFECT_VALUE()I
@@ -103,7 +103,7 @@
     :goto_1b
     invoke-static {p2, p1}, Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection;->-$$Nest$fputmIsCurrentZoomSupportLens(Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection;Z)V
 
-    .line 92
+    .line 97
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
@@ -119,6 +119,23 @@
 
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;->requestChangeSettingValue(Ljava/lang/String;)V
 
-    :cond_2d
+    return-void
+
+    .line 98
+    :cond_2e
+    const-string v0, "key_sat_stream_id"
+
+    invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_3b
+
+    .line 99
+    iget-object p0, p0, Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection;
+
+    invoke-static {p0, p2}, Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection;->-$$Nest$fputmCurrentStreamId(Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrection;Ljava/lang/String;)V
+
+    :cond_3b
     return-void
 .end method

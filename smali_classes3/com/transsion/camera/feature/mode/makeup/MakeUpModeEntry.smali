@@ -76,13 +76,13 @@
 .method private getModeGuideLayoutsArrayId(Ljava/lang/String;)I
     .registers 9
 
-    .line 75
+    .line 76
     sget v0, Lcom/transsion/camera/utils/AreaUtil;->AREA_CODE:I
 
-    .line 76
+    .line 77
     sget v1, Lcom/transsion/camera/utils/AreaUtil;->ICON_AREA_CODE:I
 
-    .line 78
+    .line 79
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraInfoUtil;->isCameraFacingFront(Ljava/lang/String;)Z
 
     move-result p1
@@ -95,12 +95,12 @@
 
     if-eqz p1, :cond_79
 
-    .line 79
+    .line 80
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/MakeUpModeEntry;->mIsSupportMakeup:Z
 
     if-eqz p1, :cond_5b
 
-    .line 80
+    .line 81
     iget p0, p0, Lcom/transsion/camera/feature/mode/makeup/MakeUpModeEntry;->mFaceBeautyType:I
 
     const/4 p1, 0x6
@@ -113,7 +113,7 @@
 
     if-ne v4, v1, :cond_1e
 
-    .line 82
+    .line 83
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->itd_support_make_up_mode_guide_layouts_front_south_asia_icon:I
 
     return p0
@@ -121,7 +121,7 @@
     :cond_1e
     if-ne v2, v0, :cond_23
 
-    .line 84
+    .line 85
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->itd_support_make_up_mode_guide_layouts_front_south_asia:I
 
     return p0
@@ -129,7 +129,7 @@
     :cond_23
     if-ne v6, v0, :cond_28
 
-    .line 86
+    .line 87
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->itd_support_make_up_mode_guide_layouts_front_middle_east:I
 
     return p0
@@ -137,7 +137,7 @@
     :cond_28
     if-ne v3, v0, :cond_2d
 
-    .line 88
+    .line 89
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->itd_support_make_up_mode_guide_layouts_front_africa:I
 
     return p0
@@ -145,7 +145,7 @@
     :cond_2d
     if-ne v5, v0, :cond_32
 
-    .line 90
+    .line 91
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->itd_support_make_up_mode_guide_layouts_front_southeast_asia:I
 
     return p0
@@ -153,12 +153,12 @@
     :cond_32
     if-ne p1, v0, :cond_37
 
-    .line 92
+    .line 93
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->itd_support_make_up_mode_guide_layouts_front_eastern_europe:I
 
     return p0
 
-    .line 94
+    .line 95
     :cond_37
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->itd_support_make_up_mode_guide_layouts_front_universal:I
 
@@ -167,7 +167,7 @@
     :cond_3a
     if-ne v4, v1, :cond_3f
 
-    .line 98
+    .line 99
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_itd_support_make_up_mode_guide_layouts_front_south_asia_icon:I
 
     return p0
@@ -175,7 +175,7 @@
     :cond_3f
     if-ne v2, v0, :cond_44
 
-    .line 100
+    .line 101
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_itd_support_make_up_mode_guide_layouts_front_south_asia:I
 
     return p0
@@ -183,7 +183,7 @@
     :cond_44
     if-ne v6, v0, :cond_49
 
-    .line 102
+    .line 103
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_itd_support_make_up_mode_guide_layouts_front_middle_east:I
 
     return p0
@@ -191,7 +191,7 @@
     :cond_49
     if-ne v3, v0, :cond_4e
 
-    .line 104
+    .line 105
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_itd_support_make_up_mode_guide_layouts_front_africa:I
 
     return p0
@@ -199,7 +199,7 @@
     :cond_4e
     if-ne v5, v0, :cond_53
 
-    .line 106
+    .line 107
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_itd_support_make_up_mode_guide_layouts_front_southeast_asia:I
 
     return p0
@@ -207,18 +207,18 @@
     :cond_53
     if-ne p1, v0, :cond_58
 
-    .line 108
+    .line 109
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_itd_support_make_up_mode_guide_layouts_front_eastern_europe:I
 
     return p0
 
-    .line 110
+    .line 111
     :cond_58
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_itd_support_make_up_mode_guide_layouts_front_universal:I
 
     return p0
 
-    .line 114
+    .line 115
     :cond_5b
     iget p0, p0, Lcom/transsion/camera/feature/mode/makeup/MakeUpModeEntry;->mFaceBeautyType:I
 
@@ -226,7 +226,7 @@
 
     if-ne v4, v1, :cond_64
 
-    .line 116
+    .line 117
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->itd_not_support_make_up_mode_guide_layouts_front_south_asia:I
 
     return p0
@@ -234,12 +234,12 @@
     :cond_64
     if-ne v3, v1, :cond_69
 
-    .line 118
+    .line 119
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->itd_not_support_support_make_up_mode_guide_layouts_front_africa:I
 
     return p0
 
-    .line 120
+    .line 121
     :cond_69
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->itd_not_support_make_up_mode_guide_layouts_front_universal:I
 
@@ -248,7 +248,7 @@
     :cond_6c
     if-ne v4, v1, :cond_71
 
-    .line 124
+    .line 125
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_itd_not_support_make_up_mode_guide_layouts_front_south_asia:I
 
     return p0
@@ -256,18 +256,18 @@
     :cond_71
     if-ne v3, v1, :cond_76
 
-    .line 126
+    .line 127
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_itd_not_support_make_up_mode_guide_layouts_front_africa:I
 
     return p0
 
-    .line 128
+    .line 129
     :cond_76
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_itd_not_support_make_up_mode_guide_layouts_front_universal:I
 
     return p0
 
-    .line 133
+    .line 134
     :cond_79
     iget p0, p0, Lcom/transsion/camera/feature/mode/makeup/MakeUpModeEntry;->mFaceBeautyType:I
 
@@ -275,7 +275,7 @@
 
     if-ne v4, v1, :cond_82
 
-    .line 135
+    .line 136
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_support_make_up_mode_guide_layouts_back_south_asia:I
 
     return p0
@@ -283,12 +283,12 @@
     :cond_82
     if-ne v3, v1, :cond_87
 
-    .line 137
+    .line 138
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_support_make_up_mode_guide_layouts_back_africa:I
 
     return p0
 
-    .line 139
+    .line 140
     :cond_87
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->not_support_make_up_mode_guide_layouts_back_universal:I
 
@@ -297,7 +297,7 @@
     :cond_8a
     if-ne v4, v1, :cond_8f
 
-    .line 143
+    .line 144
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->make_up_mode_guide_layouts_back_south_asia:I
 
     return p0
@@ -305,12 +305,12 @@
     :cond_8f
     if-ne v3, v1, :cond_94
 
-    .line 145
+    .line 146
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->make_up_mode_guide_layouts_back_africa:I
 
     return p0
 
-    .line 147
+    .line 148
     :cond_94
     sget p0, Lcom/transsion/camera/feature/makeup/R$array;->make_up_mode_guide_layouts_back_universal:I
 
@@ -442,6 +442,11 @@
     invoke-virtual {p1, v1}, Lcom/transsion/camera/app/common/ModeSettingUISpec;->setAeAfLockSupport(Z)V
 
     .line 53
+    iget-object p1, p0, Lcom/transsion/camera/app/common/provider/ModeFeatureEntryBase;->mModeSettingSpec:Lcom/transsion/camera/app/common/ModeSettingUISpec;
+
+    invoke-virtual {p1, v1}, Lcom/transsion/camera/app/common/ModeSettingUISpec;->setBothCameraSupport(Z)V
+
+    .line 54
     iget-object p0, p0, Lcom/transsion/camera/app/common/provider/ModeFeatureEntryBase;->mModeSettingSpec:Lcom/transsion/camera/app/common/ModeSettingUISpec;
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->setModeSettingUISpec(Lcom/transsion/camera/app/common/ModeSettingUISpec;)V
@@ -452,19 +457,19 @@
 .method public createFeatureResource()Lcom/transsion/camera/app/common/FeatureResource;
     .registers 4
 
-    .line 166
+    .line 167
     new-instance v0, Lcom/transsion/camera/app/common/FeatureResource;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/FeatureResource;-><init>()V
 
-    .line 167
+    .line 168
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/MakeUpModeEntry;->getFeatureName()Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
-    .line 168
+    .line 169
     iget-object p0, p0, Lcom/transsion/camera/app/common/provider/FeatureEntryBase;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$string;->face_beauty_mode_title:I
@@ -475,12 +480,12 @@
 
     iput-object p0, v0, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureTitle:Ljava/lang/String;
 
-    .line 169
+    .line 170
     sget p0, Lcom/transsion/camera/featurelibs/commonwidget/R$drawable;->ic_beauty:I
 
     iput p0, v0, Lcom/transsion/camera/app/common/FeatureResource;->mIconId:I
 
-    .line 170
+    .line 171
     sget-object p0, Lcom/transsion/camera/feature/mode/makeup/MakeUpModeEntry;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -515,7 +520,7 @@
 .method protected currentModeSupportTeleCamera()Z
     .registers 2
 
-    .line 65
+    .line 66
     iget-object p0, p0, Lcom/transsion/camera/app/common/provider/FeatureEntryBase;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/feature/makeup/R$bool;->makeup_mode_support_tele_camera:I
@@ -530,7 +535,7 @@
 .method protected currentModeSupportWideCamera()Z
     .registers 2
 
-    .line 60
+    .line 61
     iget-object p0, p0, Lcom/transsion/camera/app/common/provider/FeatureEntryBase;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/feature/makeup/R$bool;->makeup_mode_support_wide_camera:I
@@ -545,7 +550,7 @@
 .method public getFeatureName()Ljava/lang/String;
     .registers 1
 
-    .line 161
+    .line 162
     const-class p0, Lcom/transsion/camera/feature/mode/makeup/MakeUpModeEntry;
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -558,7 +563,7 @@
 .method public getType()Ljava/lang/Class;
     .registers 1
 
-    .line 156
+    .line 157
     const-class p0, Lcom/transsion/camera/app/common/mode/ICameraMode;
 
     return-object p0
@@ -567,7 +572,7 @@
 .method public isSupport()Z
     .registers 2
 
-    .line 176
+    .line 177
     iget-object p0, p0, Lcom/transsion/camera/app/common/provider/FeatureEntryBase;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/app/common/R$bool;->make_up_mode_support:I

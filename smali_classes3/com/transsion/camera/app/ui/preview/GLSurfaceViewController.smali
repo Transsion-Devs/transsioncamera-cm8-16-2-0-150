@@ -147,21 +147,10 @@
     return-object v0
 .end method
 
-.method static bridge synthetic -$$Nest$smtranslateToMultiple2(I)I
-    .registers 1
-
-    .line 0
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->translateToMultiple2(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 32
+    .line 34
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "GLSurfaceViewCtrl"
@@ -176,27 +165,27 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/preview/algorithm/IAlgoRenderer;Z)V
     .registers 4
 
-    .line 60
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 43
+    .line 45
     iput v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mSurfaceDisplayWidth:I
 
-    .line 44
+    .line 46
     iput v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mSurfaceDisplayHeight:I
 
-    .line 48
+    .line 50
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mProjectSupportAux:Z
 
-    .line 61
+    .line 55
     iput-object p1, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAlgoRenderer:Lcom/transsion/camera/app/common/preview/algorithm/IAlgoRenderer;
 
-    .line 62
+    .line 56
     iput-boolean p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mSlaveScreen:Z
 
-    .line 63
+    .line 57
     new-instance p1, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;
 
     const/4 p2, 0x0
@@ -208,33 +197,17 @@
     return-void
 .end method
 
-.method private static final translateToMultiple2(I)I
-    .registers 2
-
-    .line 53
-    rem-int/lit8 v0, p0, 0x2
-
-    if-nez v0, :cond_5
-
-    return p0
-
-    :cond_5
-    add-int/lit8 p0, p0, 0x1
-
-    return p0
-.end method
-
 
 # virtual methods
 .method public cameraOperateAction(I)V
     .registers 2
 
-    .line 508
+    .line 502
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mGLPreviewView:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     if-eqz p0, :cond_7
 
-    .line 509
+    .line 503
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->cameraOperateAction(I)V
 
     :cond_7
@@ -244,7 +217,7 @@
 .method public getAuxExpandView()Landroid/view/View;
     .registers 1
 
-    .line 434
+    .line 428
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxExpandView:Landroid/view/View;
 
     return-object p0
@@ -253,7 +226,7 @@
 .method public getAuxPreviewView()Landroid/view/View;
     .registers 1
 
-    .line 419
+    .line 413
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxPreviewRoot:Landroid/view/View;
 
     return-object p0
@@ -262,7 +235,7 @@
 .method public getLocateAuxView()Landroid/view/View;
     .registers 1
 
-    .line 424
+    .line 418
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxLocateView:Landroid/view/View;
 
     return-object p0
@@ -271,7 +244,7 @@
 .method public getPreviewOperator()Lcom/transsion/camera/app/common/preview/IPreviewOperator;
     .registers 1
 
-    .line 503
+    .line 497
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     return-object p0
@@ -288,7 +261,7 @@
 .method public getPreviewView()Landroid/view/View;
     .registers 1
 
-    .line 414
+    .line 408
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mGLPreviewView:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     return-object p0
@@ -297,7 +270,7 @@
 .method public getPreviewViewCover()Landroid/view/View;
     .registers 1
 
-    .line 429
+    .line 423
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mPreviewViewCover:Landroid/view/View;
 
     return-object p0
@@ -306,7 +279,7 @@
 .method public getProjectAuxSupport()Z
     .registers 1
 
-    .line 520
+    .line 514
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mProjectSupportAux:Z
 
     return p0
@@ -315,7 +288,7 @@
 .method public inflateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;)Landroid/view/View;
     .registers 7
 
-    .line 375
+    .line 369
     sget-object v0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -344,10 +317,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 376
+    .line 370
     iput-object p3, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mSurfaceStatusListener:Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;
 
-    .line 379
+    .line 373
     iget-boolean p3, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mSlaveScreen:Z
 
     const/4 v0, 0x0
@@ -356,20 +329,63 @@
 
     if-nez p3, :cond_79
 
-    .line 380
+    .line 374
     sget p3, Lcom/transsion/camera/R$layout;->preview_ui_gl_surface_view_layout:I
 
     invoke-virtual {p1, p3, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object p1
 
-    .line 381
+    .line 375
     iget-boolean p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mProjectSupportAux:Z
 
     if-eqz p2, :cond_7f
 
-    .line 382
+    .line 376
     sget p2, Lcom/transsion/camera/R$id;->preview_aux_ui:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/view/ViewStub;
+
+    .line 377
+    invoke-virtual {p2}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
+
+    .line 378
+    sget p2, Lcom/transsion/camera/R$id;->aux_preview_root:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxPreviewRoot:Landroid/view/View;
+
+    .line 379
+    sget p3, Lcom/transsion/camera/R$id;->aux_preview_content:I
+
+    invoke-virtual {p2, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/view/TextureView;
+
+    iput-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxPreviewView:Landroid/view/TextureView;
+
+    .line 380
+    iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxPreviewRoot:Landroid/view/View;
+
+    sget p3, Lcom/transsion/camera/R$id;->aux_preview_locate_view:I
+
+    invoke-virtual {p2, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxLocateView:Landroid/view/View;
+
+    .line 382
+    sget p2, Lcom/transsion/camera/R$id;->aux_preview_expand_ui:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -381,49 +397,6 @@
     invoke-virtual {p2}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
     .line 384
-    sget p2, Lcom/transsion/camera/R$id;->aux_preview_root:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxPreviewRoot:Landroid/view/View;
-
-    .line 385
-    sget p3, Lcom/transsion/camera/R$id;->aux_preview_content:I
-
-    invoke-virtual {p2, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/view/TextureView;
-
-    iput-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxPreviewView:Landroid/view/TextureView;
-
-    .line 386
-    iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxPreviewRoot:Landroid/view/View;
-
-    sget p3, Lcom/transsion/camera/R$id;->aux_preview_locate_view:I
-
-    invoke-virtual {p2, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxLocateView:Landroid/view/View;
-
-    .line 388
-    sget p2, Lcom/transsion/camera/R$id;->aux_preview_expand_ui:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/view/ViewStub;
-
-    .line 389
-    invoke-virtual {p2}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
-
-    .line 390
     sget p2, Lcom/transsion/camera/R$id;->aux_preview_expand:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -432,7 +405,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxExpandView:Landroid/view/View;
 
-    .line 391
+    .line 385
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxPreviewView:Landroid/view/TextureView;
 
     new-instance p3, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$MySurfaceTextureListener;
@@ -443,7 +416,7 @@
 
     goto :goto_7f
 
-    .line 394
+    .line 388
     :cond_79
     sget p3, Lcom/transsion/camera/R$layout;->only_gl_surface_view_layout:I
 
@@ -451,7 +424,7 @@
 
     move-result-object p1
 
-    .line 397
+    .line 391
     :cond_7f
     :goto_7f
     sget p2, Lcom/transsion/camera/R$id;->preview_content:I
@@ -464,12 +437,12 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mGLPreviewView:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
-    .line 399
+    .line 393
     iget-object p3, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAlgoRenderer:Lcom/transsion/camera/app/common/preview/algorithm/IAlgoRenderer;
 
     invoke-virtual {p2, p3}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->setAlgoRenderer(Lcom/transsion/camera/app/common/preview/algorithm/IAlgoRenderer;)V
 
-    .line 400
+    .line 394
     sget p2, Lcom/transsion/camera/R$id;->preview_content_cover:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -480,7 +453,7 @@
 
     if-eqz p2, :cond_bc
 
-    .line 402
+    .line 396
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p2
@@ -491,7 +464,7 @@
 
     if-eqz p2, :cond_aa
 
-    .line 403
+    .line 397
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mPreviewViewCover:Landroid/view/View;
 
     sget p3, Lcom/transsion/camera/R$drawable;->preview_qcom_border_lines:I
@@ -500,7 +473,7 @@
 
     goto :goto_bc
 
-    .line 405
+    .line 399
     :cond_aa
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mPreviewViewCover:Landroid/view/View;
 
@@ -522,7 +495,7 @@
     :goto_b9
     invoke-virtual {p2, p3}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 408
+    .line 402
     :cond_bc
     :goto_bc
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mGLPreviewView:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -539,17 +512,17 @@
 .method public setAuxPreviewSize(II)V
     .registers 7
 
-    .line 439
+    .line 433
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxPreviewView:Landroid/view/TextureView;
 
     if-eqz v0, :cond_40
 
-    .line 440
+    .line 434
     invoke-virtual {v0}, Landroid/view/TextureView;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
 
     move-result-object v0
 
-    .line 441
+    .line 435
     sget-object v1, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -586,24 +559,24 @@
 
     if-eqz p2, :cond_40
 
-    .line 444
+    .line 438
     invoke-virtual {v0, p1, p2}, Landroid/graphics/SurfaceTexture;->setDefaultBufferSize(II)V
 
-    .line 445
+    .line 439
     iget-object v1, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mSurfaceStatusListener:Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;
 
     if-eqz v1, :cond_40
 
-    .line 446
+    .line 440
     sget-object v2, Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;->AUX:Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;
 
     invoke-interface {v1, v2, v0, p1, p2}, Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;->surfaceChanged(Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;Ljava/lang/Object;II)V
 
-    .line 450
+    .line 444
     :cond_40
     iput p1, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxPreviewWidth:I
 
-    .line 451
+    .line 445
     iput p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mAuxPreviewHeight:I
 
     return-void
@@ -612,7 +585,7 @@
 .method public setFixedSize(II)V
     .registers 6
 
-    .line 494
+    .line 488
     sget-object v0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -641,7 +614,7 @@
 
     if-eqz p2, :cond_2b
 
-    .line 497
+    .line 491
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mGLPreviewView:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-virtual {p0}, Landroid/view/SurfaceView;->getHolder()Landroid/view/SurfaceHolder;
@@ -657,14 +630,14 @@
 .method public setPreviewSize(II)V
     .registers 8
 
-    .line 456
+    .line 450
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mGLPreviewView:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
 
     move-result-object v0
 
-    .line 457
+    .line 451
     sget-object v1, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -711,7 +684,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 459
+    .line 453
     iget v2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mPreviewWidth:I
 
     if-ne v2, p1, :cond_4e
@@ -720,7 +693,7 @@
 
     if-ne v2, p2, :cond_4e
 
-    .line 460
+    .line 454
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mGLPreviewView:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-virtual {p0, p2, p1}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->setSurfaceSize(II)V
@@ -730,7 +703,7 @@
     :cond_4e
     if-eqz v0, :cond_96
 
-    .line 464
+    .line 458
     iget v2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mPreviewWidth:I
 
     if-ne v2, p1, :cond_58
@@ -739,7 +712,7 @@
 
     if-eq v2, p2, :cond_96
 
-    .line 466
+    .line 460
     :cond_58
     iget-boolean v2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mSlaveScreen:Z
 
@@ -753,7 +726,7 @@
 
     if-lez v2, :cond_8a
 
-    .line 467
+    .line 461
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -778,7 +751,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 468
+    .line 462
     iget v1, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mSurfaceDisplayWidth:I
 
     iget v2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mSurfaceDisplayHeight:I
@@ -787,26 +760,26 @@
 
     goto :goto_8d
 
-    .line 470
+    .line 464
     :cond_8a
     invoke-virtual {v0, p1, p2}, Landroid/graphics/SurfaceTexture;->setDefaultBufferSize(II)V
 
-    .line 472
+    .line 466
     :goto_8d
     iget-object v1, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mSurfaceStatusListener:Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;
 
     if-eqz v1, :cond_96
 
-    .line 473
+    .line 467
     sget-object v2, Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;->DEFAULT:Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;
 
     invoke-interface {v1, v2, v0, p1, p2}, Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;->surfaceChanged(Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;Ljava/lang/Object;II)V
 
-    .line 476
+    .line 470
     :cond_96
     iput p1, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mPreviewWidth:I
 
-    .line 477
+    .line 471
     iput p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mPreviewHeight:I
 
     return-void
@@ -815,7 +788,7 @@
 .method public setProjectAuxSupport(Z)V
     .registers 2
 
-    .line 515
+    .line 509
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->mProjectSupportAux:Z
 
     return-void

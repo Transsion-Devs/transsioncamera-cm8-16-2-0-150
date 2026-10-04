@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/AbstractHintUI;)V
     .registers 2
 
-    .line 1453
+    .line 1461
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -44,7 +44,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 6
 
-    .line 1456
+    .line 1464
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     iget-boolean v0, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsNeedWaitScale:Z
@@ -53,27 +53,27 @@
 
     if-eqz v0, :cond_11
 
-    .line 1457
+    .line 1465
     iput-boolean v1, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsNeedWaitScale:Z
 
-    .line 1458
+    .line 1466
     iput-boolean v1, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHideAsdOnly:Z
 
-    .line 1459
+    .line 1467
     iput-boolean v1, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHideAsdTemp:Z
 
-    .line 1460
+    .line 1468
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->hideAsdHintViewWithAnim()V
 
     return-void
 
-    .line 1463
+    .line 1471
     :cond_11
     iget-boolean v0, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHideAsdTemp:Z
 
     if-eqz v0, :cond_114
 
-    .line 1464
+    .line 1472
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmTempInfo(Lcom/transsion/camera/app/ui/AbstractHintUI;)Lcom/transsion/camera/app/common/ui/HintInfo;
 
     move-result-object p1
@@ -110,7 +110,7 @@
 
     if-nez p1, :cond_42
 
-    .line 1465
+    .line 1473
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmTempInfo(Lcom/transsion/camera/app/ui/AbstractHintUI;)Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -119,7 +119,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateEffectLayout(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1467
+    .line 1475
     :cond_42
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
@@ -159,7 +159,7 @@
 
     if-nez p1, :cond_71
 
-    .line 1468
+    .line 1476
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmTempInfo(Lcom/transsion/camera/app/ui/AbstractHintUI;)Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -168,7 +168,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateAlgoritLayout(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1470
+    .line 1478
     :cond_71
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
@@ -176,7 +176,7 @@
 
     if-nez v0, :cond_9c
 
-    .line 1471
+    .line 1479
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getExpandInitValue()[I
 
     move-result-object v0
@@ -195,7 +195,7 @@
 
     invoke-virtual {p1, v0, v2, v3}, Lcom/transsion/camera/app/ui/AbstractHintUI;->initExpandAnimator([I[ILcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1472
+    .line 1480
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     iget-object v0, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdExpandAnimatorSet:Landroid/animation/AnimatorSet;
@@ -206,14 +206,14 @@
 
     invoke-virtual {v0, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1473
+    .line 1481
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdExpandAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1475
+    .line 1483
     :cond_9c
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
@@ -235,7 +235,7 @@
 
     invoke-virtual {p1, v0, v2, v3}, Lcom/transsion/camera/app/ui/AbstractHintUI;->initShrinkAnimator([I[ILcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1476
+    .line 1484
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     iget-object v0, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
@@ -246,22 +246,22 @@
 
     invoke-virtual {v0, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1477
+    .line 1485
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1478
+    .line 1486
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     iput-boolean v1, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHideAsdOnly:Z
 
-    .line 1479
+    .line 1487
     iput-boolean v1, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHideAsdTemp:Z
 
-    .line 1480
+    .line 1488
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmCurrentAsdInfo(Lcom/transsion/camera/app/ui/AbstractHintUI;)Lcom/transsion/camera/app/common/ui/HintInfo;
 
     move-result-object p1
@@ -278,7 +278,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1481
+    .line 1489
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmCurrentAsdInfo(Lcom/transsion/camera/app/ui/AbstractHintUI;)Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -297,7 +297,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 1482
+    .line 1490
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmCurrentAsdInfo(Lcom/transsion/camera/app/ui/AbstractHintUI;)Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -316,7 +316,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1483
+    .line 1491
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmCurrentAsdInfo(Lcom/transsion/camera/app/ui/AbstractHintUI;)Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -337,7 +337,7 @@
 
     return-void
 
-    .line 1485
+    .line 1493
     :cond_114
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->hideAsdHintView()V
 

@@ -4,10 +4,10 @@
 
 
 # virtual methods
-.method public abstract onShoulderButtonZoomSwipeEnd()V
+.method public abstract onContinuousZoomSwiping(ZI)V
 .end method
 
-.method public abstract onShoulderButtonZoomSwiping(ZI)V
+.method public abstract onCriticalZoomSwitchSwiping(Z)V
 .end method
 
 .method public abstract onZoomClick(Z)V
@@ -20,4 +20,7 @@
 .end method
 
 .method public abstract onZoomScaling(Z)V
+.end method
+
+.method public abstract onZoomSwipeEnd()V
 .end method

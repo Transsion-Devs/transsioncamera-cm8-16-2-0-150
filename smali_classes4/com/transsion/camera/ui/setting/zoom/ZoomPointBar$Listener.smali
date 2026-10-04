@@ -18,5 +18,8 @@
 .method public abstract onLongPressed()V
 .end method
 
+.method public abstract onZoomPointBarTouchDown(I)V
+.end method
+
 .method public abstract onZoomRatioChanged(I)V
 .end method

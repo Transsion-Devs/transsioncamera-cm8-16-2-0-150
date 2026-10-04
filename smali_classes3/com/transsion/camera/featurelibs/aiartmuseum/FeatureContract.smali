@@ -108,7 +108,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 55
+    .line 56
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "FeatureContract"
@@ -117,42 +117,42 @@
 
     sput-object v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 59
+    .line 60
     new-instance v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$1;
 
     invoke-direct {v0}, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$1;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->sFeatureMap:Ljava/util/Map;
 
-    .line 67
+    .line 68
     new-instance v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$2;
 
     invoke-direct {v0}, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$2;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->sFeatureSyncMap:Ljava/util/Map;
 
-    .line 73
+    .line 74
     new-instance v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$3;
 
     invoke-direct {v0}, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$3;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->sStyleValueMap:Ljava/util/Map;
 
-    .line 91
+    .line 93
     new-instance v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$4;
 
     invoke-direct {v0}, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$4;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->sTravelValueMap:Ljava/util/Map;
 
-    .line 104
+    .line 106
     new-instance v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$5;
 
     invoke-direct {v0}, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$5;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->sPartialValueMap:Ljava/util/Map;
 
-    .line 117
+    .line 119
     new-instance v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$6;
 
     invoke-direct {v0}, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract$6;-><init>()V
@@ -165,7 +165,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 53
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -176,7 +176,7 @@
 
     const/4 v0, -0x1
 
-    .line 128
+    .line 130
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -193,7 +193,7 @@
 
     goto :goto_18
 
-    .line 130
+    .line 132
     :cond_10
     sget-object p1, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->sFeatureMap:Ljava/util/Map;
 
@@ -206,7 +206,7 @@
     :goto_18
     if-nez p1, :cond_31
 
-    .line 133
+    .line 135
     sget-object p1, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -227,7 +227,7 @@
 
     return v0
 
-    .line 136
+    .line 138
     :cond_31
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -239,7 +239,7 @@
 .method static getFeatureValue(Ljava/lang/String;Ljava/lang/String;)I
     .registers 5
 
-    .line 140
+    .line 142
     sget-object v0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->sFeatureValueMap:Ljava/util/Map;
 
     invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -252,7 +252,7 @@
 
     if-nez v0, :cond_22
 
-    .line 142
+    .line 144
     sget-object p1, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -273,7 +273,7 @@
 
     return v1
 
-    .line 145
+    .line 147
     :cond_22
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -287,7 +287,7 @@
 
     if-nez p0, :cond_45
 
-    .line 147
+    .line 149
     sget-object p0, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -308,7 +308,7 @@
 
     return v1
 
-    .line 150
+    .line 152
     :cond_45
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 

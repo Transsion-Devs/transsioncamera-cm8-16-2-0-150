@@ -138,15 +138,34 @@
     .line 376
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
-    invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmPreviewCover(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
+    invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmRootView(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
 
     move-result-object p1
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    if-eqz p1, :cond_1b
 
     .line 377
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
+
+    invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmRootView(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 379
+    :cond_1b
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
+
+    invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmPreviewCover(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 380
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmStabilizerOrigin(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
@@ -155,7 +174,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 378
+    .line 381
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmStabilizerOrigin(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
@@ -166,7 +185,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 379
+    .line 382
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmStabilizer(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
@@ -175,7 +194,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 380
+    .line 383
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmStabilizer(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
@@ -184,7 +203,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 381
+    .line 384
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmStabilizer(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
@@ -193,7 +212,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 382
+    .line 385
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmStabilizer(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
@@ -202,7 +221,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setRotation(F)V
 
-    .line 383
+    .line 386
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmStabilizer(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
@@ -211,27 +230,27 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 384
+    .line 387
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fputxPosition(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;F)V
 
-    .line 385
+    .line 388
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fputyPosition(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;F)V
 
-    .line 386
+    .line 389
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fputzPosition(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;F)V
 
-    .line 387
+    .line 390
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$mupdateDevicePosition(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)V
 
-    .line 388
+    .line 391
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmOffsetXAngle(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)F
@@ -240,7 +259,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fputmStartAngleX(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;F)V
 
-    .line 389
+    .line 392
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmOffsetYAngle(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)F
@@ -249,7 +268,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fputmStartAngleY(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;F)V
 
-    .line 390
+    .line 393
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$4;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmOffsetZAngle(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)F

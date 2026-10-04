@@ -726,7 +726,7 @@
 .method private isSupportForceSkipToNone()Z
     .registers 2
 
-    .line 633
+    .line 649
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -737,14 +737,14 @@
 
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mAsdModeFeatures:Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
 
-    .line 634
+    .line 650
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->isPMaterMode()Z
 
     move-result p0
 
     if-eqz p0, :cond_1c
 
-    .line 635
+    .line 651
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -1828,7 +1828,7 @@
 .method protected onAllCaptureEnd()V
     .registers 4
 
-    .line 615
+    .line 621
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1841,7 +1841,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mShot2ShotSkipPolicy:Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;
 
-    .line 616
+    .line 622
     invoke-virtual {v2}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->getCurrentPreviewAlgoType()I
 
     move-result v2
@@ -1856,39 +1856,103 @@
 
     move-result-object v1
 
-    .line 615
+    .line 621
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 618
+    .line 624
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportDeferSystem:Z
+
+    if-eqz v0, :cond_2e
+
+    .line 625
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mAlgoPolicy:Lcom/transsion/camera/feature/setting/asd/policy/IAlgoPolicy;
 
     const/4 v1, 0x1
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/feature/setting/asd/policy/IAlgoPolicy;->setCaptureEndFlag(Z)V
 
-    .line 619
+    .line 627
+    :cond_2e
+    iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mAlgoPolicy:Lcom/transsion/camera/feature/setting/asd/policy/IAlgoPolicy;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Lcom/transsion/camera/feature/setting/asd/policy/IAlgoPolicy;->setCapturingFlag(Z)V
+
+    .line 628
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mShot2ShotSkipPolicy:Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->resetCount()V
 
-    .line 621
+    .line 630
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
     move-result-object v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_48
 
-    .line 623
+    .line 632
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     const/16 v2, 0x64
 
     invoke-interface {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;->onDataCallback(Ljava/lang/Object;I)V
 
-    .line 625
-    :cond_3a
+    .line 634
+    :cond_48
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->sendSettingChangeRequest()V
+
+    return-void
+.end method
+
+.method protected onAllHighQualityJpegEnd()V
+    .registers 4
+
+    .line 638
+    iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[Shot2ShotPolicy] onAllHighQualityEnd."
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mShot2ShotSkipPolicy:Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;
+
+    .line 639
+    invoke-virtual {v2}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->getCurrentPreviewAlgoType()I
+
+    move-result v2
+
+    invoke-static {v2}, Lcom/transsion/camera/feature/setting/asd/AsdAlgoType;->toString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 638
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 640
+    iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mAlgoPolicy:Lcom/transsion/camera/feature/setting/asd/policy/IAlgoPolicy;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Lcom/transsion/camera/feature/setting/asd/policy/IAlgoPolicy;->setCaptureEndFlag(Z)V
+
+    .line 641
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->sendSettingChangeRequest()V
 
     return-void
@@ -1897,7 +1961,7 @@
 .method protected onCaptureJpegEnd()V
     .registers 4
 
-    .line 605
+    .line 611
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -1906,7 +1970,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 607
+    .line 613
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1919,7 +1983,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mShot2ShotSkipPolicy:Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;
 
-    .line 608
+    .line 614
     invoke-virtual {v2}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->getCurrentPreviewAlgoType()I
 
     move-result v2
@@ -1934,10 +1998,10 @@
 
     move-result-object v1
 
-    .line 607
+    .line 613
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 610
+    .line 616
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mShot2ShotSkipPolicy:Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->getCurrentPreviewAlgoType()I
@@ -1950,10 +2014,30 @@
     return-void
 .end method
 
+.method onCaptureStart()V
+    .registers 3
+
+    .line 583
+    iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string v1, "[Shot2ShotPolicy] onCaptureStart, set Capturing = true"
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 584
+    iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mAlgoPolicy:Lcom/transsion/camera/feature/setting/asd/policy/IAlgoPolicy;
+
+    const/4 v0, 0x1
+
+    invoke-interface {p0, v0}, Lcom/transsion/camera/feature/setting/asd/policy/IAlgoPolicy;->setCapturingFlag(Z)V
+
+    return-void
+.end method
+
 .method onCaptureStarted()V
     .registers 4
 
-    .line 583
+    .line 588
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1966,7 +2050,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mShot2ShotSkipPolicy:Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;
 
-    .line 584
+    .line 589
     invoke-virtual {v2}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->getCurrentPreviewAlgoType()I
 
     move-result v2
@@ -1981,10 +2065,10 @@
 
     move-result-object v1
 
-    .line 583
+    .line 588
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 586
+    .line 591
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mShot2ShotSkipPolicy:Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->getCurrentPreviewAlgoType()I
@@ -1993,7 +2077,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->increaseCount(I)V
 
-    .line 588
+    .line 593
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
@@ -2002,7 +2086,7 @@
 
     if-eqz p0, :cond_38
 
-    .line 590
+    .line 595
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     const/16 v1, 0x64
@@ -2016,7 +2100,7 @@
 .method onShot2ShotEnd()V
     .registers 4
 
-    .line 595
+    .line 600
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2029,7 +2113,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mShot2ShotSkipPolicy:Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;
 
-    .line 596
+    .line 601
     invoke-virtual {v2}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->getCurrentPreviewAlgoType()I
 
     move-result v2
@@ -2044,10 +2128,10 @@
 
     move-result-object v1
 
-    .line 595
+    .line 600
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 598
+    .line 603
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mShot2ShotSkipPolicy:Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->getCurrentPreviewAlgoType()I
@@ -2056,34 +2140,36 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mAsdModeFeatures:Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
 
-    .line 599
+    .line 604
     invoke-virtual {v2}, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->isModeSupportAiRawLite()Z
 
     move-result v2
 
-    .line 598
+    .line 603
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->algoIsReplaced(IZ)Z
 
     move-result v0
 
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_38
 
-    .line 599
+    .line 604
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->isSupportForceSkipToNone()Z
 
     move-result v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_3b
 
-    goto :goto_3a
-
-    :cond_39
-    return-void
-
-    .line 600
-    :cond_3a
-    :goto_3a
+    .line 605
+    :cond_38
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->sendSettingChangeRequest()V
+
+    .line 607
+    :cond_3b
+    iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mAlgoPolicy:Lcom/transsion/camera/feature/setting/asd/policy/IAlgoPolicy;
+
+    const/4 v0, 0x0
+
+    invoke-interface {p0, v0}, Lcom/transsion/camera/feature/setting/asd/policy/IAlgoPolicy;->setCapturingFlag(Z)V
 
     return-void
 .end method
@@ -2594,7 +2680,7 @@
 .method setCelebrityScene(Ljava/lang/String;)V
     .registers 2
 
-    .line 629
+    .line 645
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->mCelebritySceneValue:Ljava/lang/String;
 
     return-void

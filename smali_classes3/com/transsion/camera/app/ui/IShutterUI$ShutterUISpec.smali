@@ -17,8 +17,6 @@
 # instance fields
 .field public idleDrawableId:I
 
-.field public idleSmallDrawableId:I
-
 .field public idleToProcessingDrawableId:I
 
 .field public idleToSmileDrawableId:I
@@ -27,18 +25,12 @@
 
 .field public processingToIdleDrawableId:I
 
-.field public regularToSmallDrawableId:I
-
-.field public smallToRegularDrawableId:I
-
-.field public smallToSmileDrawableId:I
-
 
 # direct methods
 .method public constructor <init>()V
     .registers 1
 
-    .line 87
+    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

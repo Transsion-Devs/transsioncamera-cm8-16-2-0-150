@@ -18,11 +18,11 @@
 
 .field public static dual_device_root_layout:I = 0x7f0e0088
 
-.field public static dual_video_normal_recording:I = 0x7f0e0089
+.field public static dual_video_normal_recording:I = 0x7f0e008a
 
-.field public static dual_video_recording_time:I = 0x7f0e008a
+.field public static dual_video_recording_time:I = 0x7f0e008b
 
-.field public static dualvideo_split_view_layout:I = 0x7f0e008b
+.field public static dualvideo_split_view_layout:I = 0x7f0e008c
 
 
 # direct methods

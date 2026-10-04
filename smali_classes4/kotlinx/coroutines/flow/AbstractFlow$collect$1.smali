@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.flow.AbstractFlow"
     f = "Flow.kt"
     l = {
-        0xe6
+        0xe2
     }
     m = "collect"
 .end annotation

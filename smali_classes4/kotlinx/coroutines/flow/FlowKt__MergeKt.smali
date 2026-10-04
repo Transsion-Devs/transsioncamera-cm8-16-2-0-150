@@ -15,7 +15,7 @@
 
     const v1, 0x7fffffff
 
-    .line 31
+    .line 27
     const-string v2, "kotlinx.coroutines.flow.defaultConcurrency"
 
     const/16 v3, 0x10
@@ -50,12 +50,12 @@
     .annotation build Lkotlinx/coroutines/ExperimentalCoroutinesApi;
     .end annotation
 
-    .line 107
+    .line 105
     new-instance v0, Lkotlinx/coroutines/flow/FlowKt__MergeKt$flatMapConcat$$inlined$map$1;
 
     invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/flow/FlowKt__MergeKt$flatMapConcat$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
 
-    .line 47
+    .line 43
     invoke-static {v0}, Lkotlinx/coroutines/flow/FlowKt;->flattenConcat(Lkotlinx/coroutines/flow/Flow;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p0
@@ -84,7 +84,7 @@
     .annotation build Lkotlinx/coroutines/ExperimentalCoroutinesApi;
     .end annotation
 
-    .line 193
+    .line 189
     new-instance v0, Lkotlinx/coroutines/flow/FlowKt__MergeKt$flatMapLatest$1;
 
     const/4 v1, 0x0
@@ -119,12 +119,12 @@
     .annotation build Lkotlinx/coroutines/ExperimentalCoroutinesApi;
     .end annotation
 
-    .line 107
+    .line 105
     new-instance v0, Lkotlinx/coroutines/flow/FlowKt__MergeKt$flatMapMerge$$inlined$map$1;
 
     invoke-direct {v0, p0, p2}, Lkotlinx/coroutines/flow/FlowKt__MergeKt$flatMapMerge$$inlined$map$1;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
 
-    .line 74
+    .line 70
     invoke-static {v0, p1}, Lkotlinx/coroutines/flow/FlowKt;->flattenMerge(Lkotlinx/coroutines/flow/Flow;I)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p0
@@ -139,10 +139,10 @@
 
     if-eqz p3, :cond_6
 
-    .line 71
+    .line 67
     sget p1, Lkotlinx/coroutines/flow/FlowKt__MergeKt;->DEFAULT_CONCURRENCY:I
 
-    .line 70
+    .line 66
     :cond_6
     invoke-static {p0, p1, p2}, Lkotlinx/coroutines/flow/FlowKt;->flatMapMerge(Lkotlinx/coroutines/flow/Flow;ILkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/flow/Flow;
 
@@ -170,7 +170,7 @@
     .annotation build Lkotlinx/coroutines/ExperimentalCoroutinesApi;
     .end annotation
 
-    .line 107
+    .line 105
     new-instance v0, Lkotlinx/coroutines/flow/FlowKt__MergeKt$flattenConcat$$inlined$unsafeFlow$1;
 
     invoke-direct {v0, p0}, Lkotlinx/coroutines/flow/FlowKt__MergeKt$flattenConcat$$inlined$unsafeFlow$1;-><init>(Lkotlinx/coroutines/flow/Flow;)V
@@ -203,7 +203,7 @@
 
     if-ne p1, v0, :cond_a
 
-    .line 141
+    .line 137
     invoke-static {p0}, Lkotlinx/coroutines/flow/FlowKt;->flattenConcat(Lkotlinx/coroutines/flow/Flow;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p0
@@ -234,7 +234,7 @@
     :cond_18
     move v2, p1
 
-    .line 140
+    .line 136
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -267,7 +267,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 139
+    .line 135
     sget p1, Lkotlinx/coroutines/flow/FlowKt__MergeKt;->DEFAULT_CONCURRENCY:I
 
     :cond_6
@@ -281,7 +281,7 @@
 .method public static final getDEFAULT_CONCURRENCY()I
     .registers 1
 
-    .line 31
+    .line 27
     sget v0, Lkotlinx/coroutines/flow/FlowKt__MergeKt;->DEFAULT_CONCURRENCY:I
 
     return v0
@@ -324,7 +324,7 @@
     .annotation build Lkotlinx/coroutines/ExperimentalCoroutinesApi;
     .end annotation
 
-    .line 217
+    .line 213
     new-instance v0, Lkotlinx/coroutines/flow/FlowKt__MergeKt$mapLatest$1;
 
     const/4 v1, 0x0
@@ -354,7 +354,7 @@
         }
     .end annotation
 
-    .line 106
+    .line 102
     new-instance v0, Lkotlinx/coroutines/flow/internal/ChannelLimitedFlowMerge;
 
     const/16 v5, 0xe
@@ -388,7 +388,7 @@
         }
     .end annotation
 
-    .line 118
+    .line 114
     invoke-static {p0}, Lkotlin/collections/ArraysKt;->asIterable([Ljava/lang/Object;)Ljava/lang/Iterable;
 
     move-result-object p0
@@ -421,7 +421,7 @@
     .annotation build Lkotlinx/coroutines/ExperimentalCoroutinesApi;
     .end annotation
 
-    .line 167
+    .line 163
     new-instance v0, Lkotlinx/coroutines/flow/internal/ChannelFlowTransformLatest;
 
     const/16 v6, 0x1c

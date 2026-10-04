@@ -75,32 +75,32 @@
         }
     .end annotation
 
-    .line 760
+    .line 766
     iput-object p1, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->this$0:Lkotlinx/coroutines/selects/SelectImplementation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 761
+    .line 767
     iput-object p2, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->clauseObject:Ljava/lang/Object;
 
-    .line 762
+    .line 768
     iput-object p3, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->regFunc:Lkotlin/jvm/functions/Function3;
 
-    .line 763
+    .line 769
     iput-object p4, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->processResFunc:Lkotlin/jvm/functions/Function3;
 
-    .line 764
+    .line 770
     iput-object p5, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->param:Ljava/lang/Object;
 
-    .line 765
+    .line 771
     iput-object p6, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->block:Ljava/lang/Object;
 
-    .line 766
+    .line 772
     iput-object p7, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->onCancellationConstructor:Lkotlin/jvm/functions/Function3;
 
     const/4 p1, -0x1
 
-    .line 769
+    .line 775
     iput p1, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->indexInSegment:I
 
     return-void
@@ -121,7 +121,7 @@
         }
     .end annotation
 
-    .line 836
+    .line 842
     iget-object v0, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->onCancellationConstructor:Lkotlin/jvm/functions/Function3;
 
     if-eqz v0, :cond_d
@@ -145,19 +145,19 @@
 .method public final dispose()V
     .registers 5
 
-    .line 826
+    .line 832
     iget-object v0, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->disposableHandleOrSegment:Ljava/lang/Object;
 
     iget-object v1, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->this$0:Lkotlinx/coroutines/selects/SelectImplementation;
 
-    .line 827
+    .line 833
     instance-of v2, v0, Lkotlinx/coroutines/internal/Segment;
 
     const/4 v3, 0x0
 
     if-eqz v2, :cond_15
 
-    .line 828
+    .line 834
     check-cast v0, Lkotlinx/coroutines/internal/Segment;
 
     iget p0, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->indexInSegment:I
@@ -170,7 +170,7 @@
 
     return-void
 
-    .line 830
+    .line 836
     :cond_15
     instance-of p0, v0, Lkotlinx/coroutines/DisposableHandle;
 
@@ -201,10 +201,10 @@
         }
     .end annotation
 
-    .line 807
+    .line 813
     iget-object v0, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->block:Ljava/lang/Object;
 
-    .line 816
+    .line 822
     iget-object p0, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->param:Ljava/lang/Object;
 
     invoke-static {}, Lkotlinx/coroutines/selects/SelectKt;->getPARAM_CLAUSE_0()Lkotlinx/coroutines/internal/Symbol;
@@ -213,21 +213,21 @@
 
     if-ne p0, v1, :cond_16
 
-    .line 817
+    .line 823
     const-string p0, "null cannot be cast to non-null type kotlin.coroutines.SuspendFunction0<R of kotlinx.coroutines.selects.SelectImplementation>"
 
     invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     check-cast v0, Lkotlin/jvm/functions/Function1;
 
-    .line 818
+    .line 824
     invoke-interface {v0, p2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 
-    .line 820
+    .line 826
     :cond_16
     const-string p0, "null cannot be cast to non-null type kotlin.coroutines.SuspendFunction1<kotlin.Any?, R of kotlinx.coroutines.selects.SelectImplementation>"
 
@@ -235,7 +235,7 @@
 
     check-cast v0, Lkotlin/jvm/functions/Function2;
 
-    .line 821
+    .line 827
     invoke-interface {v0, p1, p2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -246,7 +246,7 @@
 .method public final processResult(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    .line 799
+    .line 805
     iget-object v0, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->processResFunc:Lkotlin/jvm/functions/Function3;
 
     iget-object v1, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->clauseObject:Ljava/lang/Object;
@@ -270,7 +270,7 @@
         }
     .end annotation
 
-    .line 785
+    .line 791
     iget-object v0, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->regFunc:Lkotlin/jvm/functions/Function3;
 
     iget-object v1, p0, Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;->clauseObject:Ljava/lang/Object;
@@ -279,7 +279,7 @@
 
     invoke-interface {v0, v1, p1, p0}, Lkotlin/jvm/functions/Function3;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 786
+    .line 792
     # getter for: Lkotlinx/coroutines/selects/SelectImplementation;->internalResult:Ljava/lang/Object;
     invoke-static {p1}, Lkotlinx/coroutines/selects/SelectImplementation;->access$getInternalResult$p(Lkotlinx/coroutines/selects/SelectImplementation;)Ljava/lang/Object;
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/setting/PopupOption$2;)V
     .registers 2
 
-    .line 193
+    .line 194
     iput-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$2$1;->this$1:Lcom/transsion/camera/app/ui/setting/PopupOption$2;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 196
+    .line 197
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    .line 197
+    .line 198
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$2$1;->this$1:Lcom/transsion/camera/app/ui/setting/PopupOption$2;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$2;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
@@ -53,10 +53,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 202
+    .line 203
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 203
+    .line 204
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$2$1;->this$1:Lcom/transsion/camera/app/ui/setting/PopupOption$2;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$2;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
@@ -71,10 +71,10 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 208
+    .line 209
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    .line 209
+    .line 210
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$2$1;->this$1:Lcom/transsion/camera/app/ui/setting/PopupOption$2;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$2;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;

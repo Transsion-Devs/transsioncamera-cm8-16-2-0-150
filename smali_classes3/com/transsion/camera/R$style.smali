@@ -5,8 +5,8 @@
 # static fields
 .field public static ConfirmAlertDialogStyle:I = 0x7f140116
 
-.field public static VoiceActivityAniamtion:I = 0x7f1403b3
+.field public static VoiceActivityAniamtion:I = 0x7f1403b2
 
-.field public static prowm_default:I = 0x7f14053d
+.field public static prowm_default:I = 0x7f14053c
 
-.field public static qrcode_pop_window_anim_style:I = 0x7f140546
+.field public static qrcode_pop_window_anim_style:I = 0x7f140545

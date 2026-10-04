@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
     .registers 2
 
-    .line 370
+    .line 372
     iput-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI$2;->this$0:Lcom/transsion/camera/app/ui/SellingPointGuideUI;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,7 +35,7 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .registers 9
 
-    .line 373
+    .line 375
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v3
@@ -50,7 +50,7 @@
 
     move-result-object p0
 
-    .line 374
+    .line 376
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -69,7 +69,7 @@
 
     move-object v0, p2
 
-    .line 373
+    .line 375
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
 
     return-void

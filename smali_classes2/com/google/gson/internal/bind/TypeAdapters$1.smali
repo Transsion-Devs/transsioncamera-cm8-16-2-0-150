@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/bind/TypeAdapters$1;
+.class Lcom/google/gson/internal/bind/TypeAdapters$1;
 .super Lcom/google/gson/TypeAdapter;
 .source "SourceFile"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -24,7 +24,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 69
+    .line 73
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
     return-void
@@ -33,12 +33,31 @@
 
 # virtual methods
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Class;
-    .registers 2
+    .registers 3
 
-    .line 77
+    .line 86
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    const-string p1, "Attempted to deserialize a java.lang.Class. Forgot to register a type adapter?"
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "Attempted to deserialize a java.lang.Class. Forgot to register a type adapter?\nSee "
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "java-lang-class-unsupported"
+
+    .line 89
+    invoke-static {v0}, Lcom/google/gson/internal/TroubleshootingGuide;->createUrl(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
 
     invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
@@ -48,7 +67,7 @@
 .method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .registers 2
 
-    .line 69
+    .line 73
     invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$1;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Class;
 
     move-result-object p0
@@ -59,7 +78,7 @@
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Class;)V
     .registers 4
 
-    .line 72
+    .line 76
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -70,14 +89,23 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 73
+    .line 78
     invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p2, ". Forgot to register a type adapter?"
+    const-string p2, ". Forgot to register a type adapter?\nSee "
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p2, "java-lang-class-unsupported"
+
+    .line 81
+    invoke-static {p2}, Lcom/google/gson/internal/TroubleshootingGuide;->createUrl(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -93,7 +121,7 @@
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
 
-    .line 69
+    .line 73
     check-cast p2, Ljava/lang/Class;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$1;->write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Class;)V

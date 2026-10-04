@@ -32,7 +32,7 @@
 
     check-cast p1, Ljava/lang/ref/WeakReference;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$OnLowQualityImageStateChangeListener;->$r8$lambda$P4cnSJszjmn9R7D5frtK3yh8Qyg(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$OnLowQualityImageStateChangeListener;Ljava/lang/ref/WeakReference;)Lcom/transsion/camera/app/common/taps/IThumbnailController;
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$OnLowQualityImageStateChangeListener;->$r8$lambda$Pvf_s9hKXmKDyz4XzzmkhKg5Uyc(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$OnLowQualityImageStateChangeListener;Ljava/lang/ref/WeakReference;)Lcom/transsion/camera/app/common/taps/IThumbnailController;
 
     move-result-object p0
 

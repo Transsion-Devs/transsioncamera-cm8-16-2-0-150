@@ -51,13 +51,13 @@
         }
     .end annotation
 
-    .line 370
+    .line 366
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 372
+    .line 368
     iput-object p2, p0, Lkotlinx/coroutines/flow/ReadonlySharedFlow;->job:Lkotlinx/coroutines/Job;
 
-    .line 374
+    .line 370
     iput-object p1, p0, Lkotlinx/coroutines/flow/ReadonlySharedFlow;->$$delegate_0:Lkotlinx/coroutines/flow/SharedFlow;
 
     return-void
@@ -101,7 +101,7 @@
         }
     .end annotation
 
-    .line 376
+    .line 372
     invoke-static {p0, p1, p2, p3}, Lkotlinx/coroutines/flow/SharedFlowKt;->fuseSharedFlow(Lkotlinx/coroutines/flow/SharedFlow;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p0

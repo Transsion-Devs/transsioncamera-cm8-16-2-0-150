@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__ReduceKt$first$$inlined$collectWhile$2"
     f = "Reduce.kt"
     l = {
-        0x8e
+        0x8b
     }
     m = "emit"
 .end annotation

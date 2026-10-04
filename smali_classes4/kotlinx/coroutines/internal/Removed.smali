@@ -11,7 +11,7 @@
 .method public constructor <init>(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)V
     .registers 2
 
-    .line 322
+    .line 320
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlinx/coroutines/internal/Removed;->ref:Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
@@ -24,7 +24,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 323
+    .line 321
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

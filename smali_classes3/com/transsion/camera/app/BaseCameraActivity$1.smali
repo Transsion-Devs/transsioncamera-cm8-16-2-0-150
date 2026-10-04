@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;Landroid/os/Looper;)V
     .registers 3
 
-    .line 353
+    .line 365
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -35,7 +35,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 356
+    .line 368
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_b2
@@ -43,7 +43,7 @@
     :pswitch_5
     goto/16 :goto_97
 
-    .line 405
+    .line 417
     :pswitch_7
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -53,7 +53,7 @@
 
     return-void
 
-    .line 402
+    .line 414
     :pswitch_f
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -61,7 +61,7 @@
 
     return-void
 
-    .line 395
+    .line 407
     :pswitch_15
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -71,12 +71,12 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->setVideoPowerSavingUIVisible(Z)V
 
-    .line 396
+    .line 408
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iput-boolean v0, p1, Lcom/transsion/camera/app/BaseCameraActivity;->mIsVideoPowerSavingUIShowing:Z
 
-    .line 397
+    .line 409
     invoke-static {p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmState(Lcom/transsion/camera/app/BaseCameraActivity;)Lcom/transsion/camera/app/common/IApp$State;
 
     move-result-object p1
@@ -99,7 +99,7 @@
 
     if-eqz p1, :cond_97
 
-    .line 398
+    .line 410
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetVIDEO_POWER_SAVING_UI_SHOW_DELAY_MILLS()I
 
     move-result p1
@@ -112,7 +112,7 @@
 
     return-void
 
-    .line 389
+    .line 401
     :pswitch_42
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -134,21 +134,21 @@
 
     if-eqz v0, :cond_97
 
-    .line 390
+    .line 402
     iget-object p1, p1, Lcom/transsion/camera/app/BaseCameraActivity;->mAppUI:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->setVideoPowerSavingUIVisible(Z)V
 
-    .line 391
+    .line 403
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iput-boolean v0, p0, Lcom/transsion/camera/app/BaseCameraActivity;->mIsVideoPowerSavingUIShowing:Z
 
     return-void
 
-    .line 384
+    .line 396
     :pswitch_61
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -158,14 +158,14 @@
 
     if-nez p1, :cond_97
 
-    .line 385
+    .line 397
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     return-void
 
-    .line 381
+    .line 393
     :pswitch_6f
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -175,7 +175,7 @@
 
     return-void
 
-    .line 378
+    .line 390
     :pswitch_76
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -191,7 +191,7 @@
 
     return-void
 
-    .line 375
+    .line 387
     :pswitch_84
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -199,7 +199,7 @@
 
     return-void
 
-    .line 367
+    .line 379
     :pswitch_8a
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -207,7 +207,7 @@
 
     if-eqz v0, :cond_97
 
-    .line 368
+    .line 380
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/String;
@@ -218,7 +218,7 @@
     :goto_97
     return-void
 
-    .line 364
+    .line 376
     :pswitch_98
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -226,7 +226,7 @@
 
     return-void
 
-    .line 372
+    .line 384
     :pswitch_9e
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -234,7 +234,7 @@
 
     return-void
 
-    .line 361
+    .line 373
     :pswitch_a4
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -244,7 +244,7 @@
 
     return-void
 
-    .line 358
+    .line 370
     :pswitch_ac
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$1;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 

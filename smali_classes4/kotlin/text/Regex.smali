@@ -23,6 +23,17 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$e-xakchuIqKiaOGSDowV8aNl-y8(Lkotlin/text/Regex;Ljava/lang/CharSequence;I)Lkotlin/text/MatchResult;
+    .registers 3
+
+    .line 0
+    invoke-static {p0, p1, p2}, Lkotlin/text/Regex;->findAll$lambda$0(Lkotlin/text/Regex;Ljava/lang/CharSequence;I)Lkotlin/text/MatchResult;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method static constructor <clinit>()V
     .registers 2
 
@@ -44,12 +55,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 89
+    .line 90
     invoke-static {p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object p1
 
-    const-string v0, "compile(pattern)"
+    const-string v0, "compile(...)"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -68,7 +79,7 @@
     .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 85
+    .line 86
     iput-object p1, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     return-void
@@ -83,9 +94,20 @@
 
     const/4 p2, 0x0
 
-    .line 132
+    .line 133
     :cond_5
     invoke-virtual {p0, p1, p2}, Lkotlin/text/Regex;->findAll(Ljava/lang/CharSequence;I)Lkotlin/sequences/Sequence;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final findAll$lambda$0(Lkotlin/text/Regex;Ljava/lang/CharSequence;I)Lkotlin/text/MatchResult;
+    .registers 3
+
+    .line 137
+    invoke-virtual {p0, p1, p2}, Lkotlin/text/Regex;->find(Ljava/lang/CharSequence;I)Lkotlin/text/MatchResult;
 
     move-result-object p0
 
@@ -101,14 +123,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 122
+    .line 123
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object p0
 
-    const-string v0, "nativePattern.matcher(input)"
+    const-string v0, "matcher(...)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -129,17 +151,17 @@
 
     if-ltz p2, :cond_19
 
-    .line 133
+    .line 134
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
     if-gt p2, v0, :cond_19
 
-    .line 136
-    new-instance v0, Lkotlin/text/Regex$findAll$1;
+    .line 137
+    new-instance v0, Lkotlin/text/Regex$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0, p1, p2}, Lkotlin/text/Regex$findAll$1;-><init>(Lkotlin/text/Regex;Ljava/lang/CharSequence;I)V
+    invoke-direct {v0, p0, p1, p2}, Lkotlin/text/Regex$$ExternalSyntheticLambda0;-><init>(Lkotlin/text/Regex;Ljava/lang/CharSequence;I)V
 
     sget-object p0, Lkotlin/text/Regex$findAll$2;->INSTANCE:Lkotlin/text/Regex$findAll$2;
 
@@ -149,7 +171,7 @@
 
     return-object p0
 
-    .line 134
+    .line 135
     :cond_19
     new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -189,7 +211,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 107
+    .line 108
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -214,7 +236,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 179
+    .line 182
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -225,7 +247,7 @@
 
     move-result-object p0
 
-    const-string p1, "nativePattern.matcher(in\u2026).replaceAll(replacement)"
+    const-string p1, "replaceAll(...)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -239,10 +261,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 240
+    .line 245
     invoke-static {p2}, Lkotlin/text/StringsKt__StringsKt;->requireNonNegativeLimit(I)V
 
-    .line 242
+    .line 247
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -253,7 +275,7 @@
 
     if-eq p2, v0, :cond_58
 
-    .line 243
+    .line 248
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v1
@@ -262,7 +284,7 @@
 
     goto :goto_58
 
-    .line 245
+    .line 250
     :cond_18
     new-instance v1, Ljava/util/ArrayList;
 
@@ -281,7 +303,7 @@
 
     const/4 v0, 0x0
 
-    .line 250
+    .line 255
     :cond_27
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->start()I
 
@@ -297,21 +319,21 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 251
+    .line 256
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->end()I
 
     move-result v0
 
     if-ltz p2, :cond_42
 
-    .line 252
+    .line 257
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
     if-eq v2, p2, :cond_48
 
-    .line 253
+    .line 258
     :cond_42
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
@@ -319,7 +341,7 @@
 
     if-nez v2, :cond_27
 
-    .line 255
+    .line 260
     :cond_48
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -337,7 +359,7 @@
 
     return-object v1
 
-    .line 243
+    .line 248
     :cond_58
     :goto_58
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -354,14 +376,14 @@
 .method public toString()Ljava/lang/String;
     .registers 2
 
-    .line 298
+    .line 302
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0}, Ljava/util/regex/Pattern;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v0, "nativePattern.toString()"
+    const-string v0, "toString(...)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -34,7 +34,7 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;)V
     .registers 2
 
-    .line 638
+    .line 637
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

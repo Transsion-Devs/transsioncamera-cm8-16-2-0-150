@@ -26,8 +26,8 @@
     c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt"
     f = "Deprecated.kt"
     l = {
-        0x1a4,
-        0x1a6
+        0x1c2,
+        0x1c4
     }
     m = "maxWith"
 .end annotation

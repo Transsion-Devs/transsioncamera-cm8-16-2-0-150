@@ -56,7 +56,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 32
+    .line 34
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "SmileDetectAlgorithmImpl"
@@ -71,10 +71,10 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
     .registers 3
 
-    .line 44
+    .line 46
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithm;-><init>(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
 
-    .line 35
+    .line 37
     new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 p2, 0x0
@@ -83,14 +83,14 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mIsAttributing:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 36
+    .line 38
     new-instance p1, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {p1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mHashMap:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 37
+    .line 39
     new-instance p1, Ljava/util/concurrent/ArrayBlockingQueue;
 
     const/4 p2, 0x3
@@ -107,7 +107,7 @@
 
     const/4 v0, 0x0
 
-    .line 219
+    .line 229
     :try_start_1
     new-instance v1, Ljava/io/File;
 
@@ -117,7 +117,7 @@
 
     invoke-direct {v1, v2, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 220
+    .line 230
     invoke-virtual {p0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object p0
@@ -129,7 +129,7 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_12} :catch_58
     .catchall {:try_start_1 .. :try_end_12} :catchall_53
 
-    .line 221
+    .line 231
     :try_start_12
     invoke-virtual {v1}, Ljava/io/File;->length()J
 
@@ -148,16 +148,16 @@
 
     if-nez p1, :cond_26
 
-    .line 235
+    .line 245
     invoke-static {v0}, Lcom/transsion/camera/utils/CameraUtil;->closeSilently(Ljava/io/Closeable;)V
 
-    .line 236
+    .line 246
     :goto_22
     invoke-static {p0}, Lcom/transsion/camera/utils/CameraUtil;->closeSilently(Ljava/io/Closeable;)V
 
     return-void
 
-    .line 224
+    .line 234
     :cond_26
     :try_start_26
     new-instance p1, Ljava/io/FileOutputStream;
@@ -169,11 +169,11 @@
 
     const/16 v0, 0x400
 
-    .line 225
+    .line 235
     :try_start_2d
     new-array v0, v0, [B
 
-    .line 226
+    .line 236
     invoke-virtual {p0, v0}, Ljava/io/InputStream;->read([B)I
 
     move-result v1
@@ -183,10 +183,10 @@
 
     const/4 v2, 0x0
 
-    .line 228
+    .line 238
     invoke-virtual {p1, v0, v2, v1}, Ljava/io/OutputStream;->write([BII)V
 
-    .line 229
+    .line 239
     invoke-virtual {p0, v0}, Ljava/io/InputStream;->read([B)I
 
     move-result v1
@@ -203,14 +203,14 @@
 
     goto :goto_5c
 
-    .line 231
+    .line 241
     :cond_42
     invoke-virtual {p1}, Ljava/io/OutputStream;->flush()V
     :try_end_45
     .catch Ljava/io/IOException; {:try_start_2d .. :try_end_45} :catch_40
     .catchall {:try_start_2d .. :try_end_45} :catchall_3e
 
-    .line 235
+    .line 245
     :goto_45
     invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->closeSilently(Ljava/io/Closeable;)V
 
@@ -258,7 +258,7 @@
 
     move-object p0, p1
 
-    .line 233
+    .line 243
     :goto_5c
     :try_start_5c
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
@@ -267,21 +267,21 @@
 
     goto :goto_45
 
-    .line 235
+    .line 245
     :goto_60
     invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->closeSilently(Ljava/io/Closeable;)V
 
-    .line 236
+    .line 246
     invoke-static {p0}, Lcom/transsion/camera/utils/CameraUtil;->closeSilently(Ljava/io/Closeable;)V
 
-    .line 237
+    .line 247
     throw v0
 .end method
 
 .method private static copyModelFile(Landroid/content/Context;)V
     .registers 2
 
-    .line 212
+    .line 222
     const-string v0, "M_FaceAttribute_RGB_Smile_2_1.2.22.model"
 
     invoke-static {p0, v0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->copyFileIfNeed(Landroid/content/Context;Ljava/lang/String;)V
@@ -292,7 +292,7 @@
 .method private correctFaceOrientationForScreenFlip(Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;)Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
     .registers 2
 
-    .line 110
+    .line 120
     sget-object p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$1;->$SwitchMap$com$stmobile$facebasejni$common$FaceCommon$FaceOrientation:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -317,30 +317,30 @@
 
     if-eq p0, p1, :cond_17
 
-    .line 124
+    .line 134
     sget-object p0, Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;->UNKNOWN:Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     return-object p0
 
-    .line 121
+    .line 131
     :cond_17
     sget-object p0, Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;->LEFT:Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     return-object p0
 
-    .line 118
+    .line 128
     :cond_1a
     sget-object p0, Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;->RIGHT:Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     return-object p0
 
-    .line 115
+    .line 125
     :cond_1d
     sget-object p0, Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;->UP:Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     return-object p0
 
-    .line 112
+    .line 122
     :cond_20
     sget-object p0, Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;->DOWN:Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
@@ -350,7 +350,7 @@
 .method private correctFaceOrientationForScreenPocket(Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;)Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
     .registers 2
 
-    .line 87
+    .line 97
     sget-object p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$1;->$SwitchMap$com$stmobile$facebasejni$common$FaceCommon$FaceOrientation:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -375,30 +375,30 @@
 
     if-eq p0, p1, :cond_17
 
-    .line 101
+    .line 111
     sget-object p0, Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;->UNKNOWN:Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     return-object p0
 
-    .line 98
+    .line 108
     :cond_17
     sget-object p0, Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;->RIGHT:Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     return-object p0
 
-    .line 95
+    .line 105
     :cond_1a
     sget-object p0, Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;->LEFT:Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     return-object p0
 
-    .line 92
+    .line 102
     :cond_1d
     sget-object p0, Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;->UP:Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     return-object p0
 
-    .line 89
+    .line 99
     :cond_20
     sget-object p0, Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;->DOWN:Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
@@ -412,14 +412,14 @@
 
     if-eqz p1, :cond_32
 
-    .line 252
+    .line 262
     array-length v1, p1
 
     if-nez v1, :cond_7
 
     goto :goto_32
 
-    .line 258
+    .line 268
     :cond_7
     array-length v1, p1
 
@@ -432,7 +432,7 @@
 
     aget-object v5, p1, v4
 
-    .line 259
+    .line 269
     iget-object v6, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mHashMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     iget v7, v5, Lcom/stmobile/facebasejni/common/FaceInfo;->id:I
@@ -451,7 +451,7 @@
 
     return-object v5
 
-    .line 264
+    .line 274
     :cond_20
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -490,7 +490,7 @@
 
     return v0
 
-    .line 278
+    .line 288
     :cond_4
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mHashMap:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -512,7 +512,7 @@
 
     return p1
 
-    .line 282
+    .line 292
     :cond_16
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -539,7 +539,7 @@
 .method private postAttribute([Lcom/stmobile/facebasejni/common/FaceInfo;[BII)V
     .registers 8
 
-    .line 241
+    .line 251
     sget-object v0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -572,7 +572,7 @@
 
     if-eqz p1, :cond_45
 
-    .line 242
+    .line 252
     array-length v0, p1
 
     if-lez v0, :cond_45
@@ -585,24 +585,24 @@
 
     if-nez v0, :cond_45
 
-    .line 243
+    .line 253
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->getOldestFace([Lcom/stmobile/facebasejni/common/FaceInfo;)Lcom/stmobile/facebasejni/common/FaceInfo;
 
     move-result-object p1
 
-    .line 244
+    .line 254
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->isValid(Lcom/stmobile/facebasejni/common/FaceInfo;)Z
 
     move-result v0
 
     if-eqz v0, :cond_45
 
-    .line 245
+    .line 255
     new-instance v0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$AttributeData;
 
     invoke-direct {v0, p1, p2, p3, p4}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$AttributeData;-><init>(Lcom/stmobile/facebasejni/common/FaceInfo;[BII)V
 
-    .line 246
+    .line 256
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mAttributeData:Ljava/util/concurrent/ArrayBlockingQueue;
 
     invoke-virtual {p0, v0}, Ljava/util/concurrent/ArrayBlockingQueue;->offer(Ljava/lang/Object;)Z
@@ -616,7 +616,7 @@
 .method public detectSmile([BII)Z
     .registers 16
 
-    .line 133
+    .line 143
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v0
@@ -627,7 +627,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithm;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 134
+    .line 144
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
     move-result-object v1
@@ -653,13 +653,13 @@
     :cond_1c
     move v0, v1
 
-    .line 135
+    .line 145
     :goto_1d
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/smiledetection/AccelerometerManager;->getFaceOrientation(Z)Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     move-result-object v3
 
-    .line 136
+    .line 146
     iget-object v4, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithm;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v4}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->screenPocket()Z
@@ -668,7 +668,7 @@
 
     if-eqz v4, :cond_2f
 
-    .line 137
+    .line 147
     invoke-direct {p0, v3}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->correctFaceOrientationForScreenPocket(Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;)Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     move-result-object v3
@@ -679,7 +679,7 @@
 
     goto :goto_3c
 
-    .line 138
+    .line 148
     :cond_2f
     iget-object v4, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithm;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -689,20 +689,20 @@
 
     if-eqz v4, :cond_2d
 
-    .line 139
+    .line 149
     invoke-direct {p0, v3}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->correctFaceOrientationForScreenFlip(Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;)Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     move-result-object v3
 
     goto :goto_2d
 
-    .line 141
+    .line 151
     :goto_3c
     iget-object v4, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mTracker:Lcom/stmobile/facebasejni/FaceTracker;
 
     if-eqz v4, :cond_4a
 
-    .line 142
+    .line 152
     sget-object v6, Lcom/stmobile/facebasejni/common/FaceCommon$CvPixelFormat;->NV21:Lcom/stmobile/facebasejni/common/FaceCommon$CvPixelFormat;
 
     move-object v5, p1
@@ -726,11 +726,11 @@
 
     const/4 p1, 0x0
 
-    .line 144
+    .line 154
     :goto_4e
     invoke-direct {p0, p1, v5, v7, v8}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->postAttribute([Lcom/stmobile/facebasejni/common/FaceInfo;[BII)V
 
-    .line 145
+    .line 155
     sget-object p1, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -759,7 +759,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 147
+    .line 157
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mAttributeData:Ljava/util/concurrent/ArrayBlockingQueue;
 
     invoke-virtual {p2}, Ljava/util/concurrent/ArrayBlockingQueue;->poll()Ljava/lang/Object;
@@ -770,14 +770,14 @@
 
     if-nez p2, :cond_83
 
-    .line 150
+    .line 160
     const-string p0, " attributeData == null"
 
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return v1
 
-    .line 154
+    .line 164
     :cond_83
     iget-object p3, p2, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$AttributeData;->faceInfo:Lcom/stmobile/facebasejni/common/FaceInfo;
 
@@ -785,24 +785,24 @@
 
     move-result-object v8
 
-    .line 155
+    .line 165
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v10
 
-    .line 156
+    .line 166
     iget-object p3, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mIsAttributing:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {p3, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 157
+    .line 167
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mAttribute:Lcom/stmobile/facebasejni/FaceAttribute;
 
     if-nez v3, :cond_97
 
     return v1
 
-    .line 160
+    .line 170
     :cond_97
     iget-object v4, p2, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$AttributeData;->nv21:[B
 
@@ -818,7 +818,7 @@
 
     move-result-object p3
 
-    .line 163
+    .line 173
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -835,12 +835,12 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 164
+    .line 174
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mAttributeData:Ljava/util/concurrent/ArrayBlockingQueue;
 
     invoke-virtual {v0, p2}, Ljava/util/concurrent/ArrayBlockingQueue;->remove(Ljava/lang/Object;)Z
 
-    .line 165
+    .line 175
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mIsAttributing:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
@@ -849,7 +849,7 @@
 
     return v1
 
-    .line 169
+    .line 179
     :cond_c5
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -889,7 +889,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 170
+    .line 180
     aget-object p1, p3, v1
 
     iget-boolean p1, p1, Lcom/stmobile/facebasejni/common/FaceAttrInfo;->hasMask:Z
@@ -898,7 +898,7 @@
 
     return v1
 
-    .line 173
+    .line 183
     :cond_f9
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -906,7 +906,7 @@
 
     sub-long/2addr v3, v10
 
-    .line 174
+    .line 184
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mHashMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     iget-object v0, p2, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$AttributeData;->faceInfo:Lcom/stmobile/facebasejni/common/FaceInfo;
@@ -925,20 +925,20 @@
 
     if-nez p1, :cond_12b
 
-    .line 176
+    .line 186
     new-instance p1, Lcom/transsion/camera/feature/setting/smiledetection/FaceAttr;
 
     invoke-direct {p1}, Lcom/transsion/camera/feature/setting/smiledetection/FaceAttr;-><init>()V
 
-    .line 177
+    .line 187
     aget-object v0, p3, v1
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/feature/setting/smiledetection/FaceAttr;->addAttr(Lcom/stmobile/facebasejni/common/FaceAttrInfo;)V
 
-    .line 178
+    .line 188
     invoke-virtual {p1, v3, v4}, Lcom/transsion/camera/feature/setting/smiledetection/FaceAttr;->setAttributeTime(J)V
 
-    .line 179
+    .line 189
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mHashMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     iget-object p2, p2, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$AttributeData;->faceInfo:Lcom/stmobile/facebasejni/common/FaceInfo;
@@ -953,16 +953,16 @@
 
     goto :goto_133
 
-    .line 181
+    .line 191
     :cond_12b
     aget-object p2, p3, v1
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/feature/setting/smiledetection/FaceAttr;->addAttr(Lcom/stmobile/facebasejni/common/FaceAttrInfo;)V
 
-    .line 182
+    .line 192
     invoke-virtual {p1, v3, v4}, Lcom/transsion/camera/feature/setting/smiledetection/FaceAttr;->setAttributeTime(J)V
 
-    .line 184
+    .line 194
     :goto_133
     aget-object p1, p3, v1
 
@@ -970,7 +970,7 @@
 
     if-eqz p1, :cond_144
 
-    .line 185
+    .line 195
     iget p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mSmileCount:I
 
     add-int/2addr p1, v2
@@ -981,13 +981,13 @@
 
     return v1
 
-    .line 188
+    .line 198
     :cond_141
     iput v1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mSmileCount:I
 
     return v2
 
-    .line 191
+    .line 201
     :cond_144
     iput v1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mSmileCount:I
 
@@ -997,7 +997,7 @@
 .method public initSmile()Z
     .registers 8
 
-    .line 49
+    .line 51
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithm;->mContext:Landroid/content/Context;
 
     const-string v1, "face_license.lic"
@@ -1006,35 +1006,35 @@
 
     move-result-object v0
 
-    .line 50
+    .line 52
     invoke-static {v0}, Lcom/stmobile/facebasejni/FaceAPI;->initLicense(Ljava/lang/String;)I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    .line 52
+    .line 54
     invoke-static {v1}, Lcom/stmobile/facebasejni/common/FaceConfig;->pointConfigFromInt(I)Lcom/stmobile/facebasejni/common/FaceConfig$FaceKeyPointsCount;
 
     move-result-object v2
 
     const/4 v3, 0x0
 
-    .line 53
+    .line 55
     invoke-static {v3}, Lcom/stmobile/facebasejni/common/FaceConfig;->resizeConfigFromInt(I)Lcom/stmobile/facebasejni/common/FaceConfig$FaceImageResize;
 
     move-result-object v4
 
     iput-object v4, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->resizeConfig:Lcom/stmobile/facebasejni/common/FaceConfig$FaceImageResize;
 
-    .line 54
+    .line 56
     new-instance v4, Lcom/stmobile/facebasejni/FaceTracker;
 
     invoke-direct {v4}, Lcom/stmobile/facebasejni/FaceTracker;-><init>()V
 
     iput-object v4, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mTracker:Lcom/stmobile/facebasejni/FaceTracker;
 
-    .line 55
+    .line 57
     iget-object v5, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->resizeConfig:Lcom/stmobile/facebasejni/common/FaceConfig$FaceImageResize;
 
     sget-object v6, Lcom/stmobile/facebasejni/common/FaceConfig$TrackThreadCount;->DEFAULT_CONFIG:Lcom/stmobile/facebasejni/common/FaceConfig$TrackThreadCount;
@@ -1043,41 +1043,81 @@
 
     move-result-object v2
 
-    .line 56
+    .line 58
     sget-object v4, Lcom/stmobile/facebasejni/common/StatusCode;->STM_OK:Lcom/stmobile/facebasejni/common/StatusCode;
 
-    if-ne v2, v4, :cond_96
+    if-ne v2, v4, :cond_b5
 
-    .line 57
+    .line 59
     sget-object v2, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v4, "track createHandle ok."
 
     invoke-static {v2, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 62
+    .line 65
+    invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
+
+    move-result-object v4
+
+    iget-boolean v4, v4, Lcom/transsion/camera/app/common/CommonConfigUtil;->mTonesAssetSupport:Z
+
+    const-string v5, "M_FaceAttribute_RGB_Smile_2_1.2.22.model"
+
+    if-eqz v4, :cond_54
+
+    .line 66
+    invoke-static {}, Lcom/transsion/camera/utils/manager/CamAssetManager;->getInstance()Lcom/transsion/camera/utils/manager/CamAssetManager;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v5}, Lcom/transsion/camera/utils/manager/CamAssetManager;->getAssetPath(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_52
+
+    .line 67
+    invoke-virtual {v4}, Ljava/io/File;->exists()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_52
+
+    .line 68
+    invoke-virtual {v4}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v4
+
+    goto :goto_73
+
+    :cond_52
+    const/4 v4, 0x0
+
+    goto :goto_73
+
+    .line 71
+    :cond_54
     iget-object v4, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithm;->mContext:Landroid/content/Context;
 
     invoke-static {v4}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->copyModelFile(Landroid/content/Context;)V
 
-    .line 63
+    .line 72
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v5, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithm;->mContext:Landroid/content/Context;
+    iget-object v6, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithm;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v5}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+    invoke-virtual {v6}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v5, "/"
+    const-string v6, "/"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v5, "M_FaceAttribute_RGB_Smile_2_1.2.22.model"
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1085,7 +1125,8 @@
 
     move-result-object v4
 
-    .line 64
+    .line 74
+    :goto_73
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1100,23 +1141,23 @@
 
     move-result-object v5
 
-    invoke-static {v2, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {v2, v5}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 66
+    .line 76
     new-instance v5, Lcom/stmobile/facebasejni/FaceAttribute;
 
     invoke-direct {v5}, Lcom/stmobile/facebasejni/FaceAttribute;-><init>()V
 
     iput-object v5, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mAttribute:Lcom/stmobile/facebasejni/FaceAttribute;
 
-    .line 67
+    .line 77
     iget-object v6, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->resizeConfig:Lcom/stmobile/facebasejni/common/FaceConfig$FaceImageResize;
 
     invoke-virtual {v5, v4, v6}, Lcom/stmobile/facebasejni/FaceAttribute;->createHandle(Ljava/lang/String;Lcom/stmobile/facebasejni/common/FaceConfig$FaceImageResize;)Lcom/stmobile/facebasejni/common/StatusCode;
 
     move-result-object v4
 
-    .line 68
+    .line 78
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1137,20 +1178,20 @@
 
     invoke-static {v2, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 69
+    .line 79
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithm;->mContext:Landroid/content/Context;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/smiledetection/AccelerometerManager;->start(Landroid/content/Context;)V
 
-    if-ltz v0, :cond_95
+    if-ltz v0, :cond_b4
 
     return v1
 
-    :cond_95
+    :cond_b4
     return v3
 
-    .line 59
-    :cond_96
+    .line 61
+    :cond_b5
     sget-object p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1179,24 +1220,24 @@
 .method public onPause()V
     .registers 2
 
-    .line 202
+    .line 212
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mAttribute:Lcom/stmobile/facebasejni/FaceAttribute;
 
     if-eqz v0, :cond_7
 
-    .line 203
+    .line 213
     invoke-virtual {v0}, Lcom/stmobile/facebasejni/FaceAttribute;->destoryHandle()V
 
-    .line 205
+    .line 215
     :cond_7
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mTracker:Lcom/stmobile/facebasejni/FaceTracker;
 
     if-eqz p0, :cond_e
 
-    .line 206
+    .line 216
     invoke-virtual {p0}, Lcom/stmobile/facebasejni/FaceTracker;->destoryHandle()V
 
-    .line 208
+    .line 218
     :cond_e
     invoke-static {}, Lcom/transsion/camera/feature/setting/smiledetection/AccelerometerManager;->stop()V
 
@@ -1206,7 +1247,7 @@
 .method public onResume()V
     .registers 1
 
-    .line 197
+    .line 207
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithm;->mContext:Landroid/content/Context;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/smiledetection/AccelerometerManager;->start(Landroid/content/Context;)V
@@ -1217,24 +1258,24 @@
 .method public unInitSmile()V
     .registers 2
 
-    .line 75
+    .line 85
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mAttribute:Lcom/stmobile/facebasejni/FaceAttribute;
 
     if-eqz v0, :cond_7
 
-    .line 76
+    .line 86
     invoke-virtual {v0}, Lcom/stmobile/facebasejni/FaceAttribute;->destoryHandle()V
 
-    .line 78
+    .line 88
     :cond_7
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;->mTracker:Lcom/stmobile/facebasejni/FaceTracker;
 
     if-eqz p0, :cond_e
 
-    .line 79
+    .line 89
     invoke-virtual {p0}, Lcom/stmobile/facebasejni/FaceTracker;->destoryHandle()V
 
-    .line 81
+    .line 91
     :cond_e
     invoke-static {}, Lcom/transsion/camera/feature/setting/smiledetection/AccelerometerManager;->stop()V
 

@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static guide_super_night_layout:I = 0x7f0e00e6
+.field public static guide_super_night_layout:I = 0x7f0e00e2
 
-.field public static layout_super_night_processing:I = 0x7f0e0102
+.field public static layout_super_night_processing:I = 0x7f0e00fe
 
-.field public static layout_super_night_processing_root:I = 0x7f0e0103
+.field public static layout_super_night_processing_root:I = 0x7f0e00ff
 
 
 # direct methods

@@ -26,7 +26,7 @@
     .annotation build Lkotlinx/coroutines/ObsoleteCoroutinesApi;
     .end annotation
 
-    .line 116
+    .line 112
     invoke-static {p0, p1}, Lkotlinx/coroutines/CoroutineContextKt;->newCoroutineContext(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -35,26 +35,26 @@
 
     const/4 v0, 0x6
 
-    .line 117
+    .line 113
     invoke-static {p2, p1, p1, v0, p1}, Lkotlinx/coroutines/channels/ChannelKt;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lkotlinx/coroutines/channels/Channel;
 
     move-result-object p1
 
-    .line 118
+    .line 114
     invoke-virtual {p3}, Lkotlinx/coroutines/CoroutineStart;->isLazy()Z
 
     move-result p2
 
     if-eqz p2, :cond_16
 
-    .line 119
+    .line 115
     new-instance p2, Lkotlinx/coroutines/channels/LazyActorCoroutine;
 
     invoke-direct {p2, p0, p1, p5}, Lkotlinx/coroutines/channels/LazyActorCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/channels/Channel;Lkotlin/jvm/functions/Function2;)V
 
     goto :goto_1c
 
-    .line 120
+    .line 116
     :cond_16
     new-instance p2, Lkotlinx/coroutines/channels/ActorCoroutine;
 
@@ -65,10 +65,10 @@
     :goto_1c
     if-eqz p4, :cond_21
 
-    .line 121
+    .line 117
     invoke-virtual {p2, p4}, Lkotlinx/coroutines/JobSupport;->invokeOnCompletion(Lkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/DisposableHandle;
 
-    .line 122
+    .line 118
     :cond_21
     invoke-virtual {p2, p3, p2, p5}, Lkotlinx/coroutines/AbstractCoroutine;->start(Lkotlinx/coroutines/CoroutineStart;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
@@ -82,7 +82,7 @@
 
     if-eqz p7, :cond_6
 
-    .line 110
+    .line 106
     sget-object p1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     :cond_6
@@ -97,7 +97,7 @@
 
     if-eqz p7, :cond_11
 
-    .line 112
+    .line 108
     sget-object p3, Lkotlinx/coroutines/CoroutineStart;->DEFAULT:Lkotlinx/coroutines/CoroutineStart;
 
     :cond_11
@@ -120,7 +120,7 @@
 
     move-object p3, p1
 
-    .line 109
+    .line 105
     invoke-static/range {p2 .. p7}, Lkotlinx/coroutines/channels/ActorKt;->actor(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/channels/SendChannel;
 
     move-result-object p0

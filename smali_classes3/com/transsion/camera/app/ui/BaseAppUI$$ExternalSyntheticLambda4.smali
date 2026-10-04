@@ -3,34 +3,42 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/function/Consumer;
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/transsion/camera/app/ui/BaseAppUI;
+.field public final synthetic f$0:Z
+
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
-    .registers 2
+.method public synthetic constructor <init>(ZI)V
+    .registers 3
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda4;->f$0:Lcom/transsion/camera/app/ui/BaseAppUI;
+    iput-boolean p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda4;->f$0:Z
+
+    iput p2, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda4;->f$1:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 1
+.method public final accept(Ljava/lang/Object;)V
+    .registers 3
 
     .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda4;->f$0:Lcom/transsion/camera/app/ui/BaseAppUI;
+    iget-boolean v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda4;->f$0:Z
 
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$cn0ecSrFPUdbedIF_lGz8HTe2oA(Lcom/transsion/camera/app/ui/BaseAppUI;)V
+    iget p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda4;->f$1:I
+
+    check-cast p1, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;
+
+    invoke-static {v0, p0, p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$sQ3OsQe81LZH6_aAU-xqQtO-aXQ(ZILcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;)V
 
     return-void
 .end method

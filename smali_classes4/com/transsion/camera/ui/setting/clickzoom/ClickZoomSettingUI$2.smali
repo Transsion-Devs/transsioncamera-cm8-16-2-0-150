@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;II)V
     .registers 4
 
-    .line 578
+    .line 581
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$2;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     iput p2, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$2;->val$orientation:I
@@ -43,10 +43,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 581
+    .line 584
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 582
+    .line 585
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$2;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     iget v0, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$2;->val$orientation:I
@@ -55,7 +55,7 @@
 
     invoke-static {p1, v0, v1}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$mupdateLayoutParams(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;II)V
 
-    .line 583
+    .line 586
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$2;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fgetmFadeInAnimator(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;)Landroid/animation/ObjectAnimator;

@@ -35,12 +35,12 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 178
+    .line 174
     sget-object v0, Lkotlinx/coroutines/selects/SelectKt$DUMMY_PROCESS_RESULT_FUNCTION$1;->INSTANCE:Lkotlinx/coroutines/selects/SelectKt$DUMMY_PROCESS_RESULT_FUNCTION$1;
 
     sput-object v0, Lkotlinx/coroutines/selects/SelectKt;->DUMMY_PROCESS_RESULT_FUNCTION:Lkotlin/jvm/functions/Function3;
 
-    .line 864
+    .line 870
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "STATE_REG"
@@ -49,7 +49,7 @@
 
     sput-object v0, Lkotlinx/coroutines/selects/SelectKt;->STATE_REG:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 865
+    .line 871
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "STATE_COMPLETED"
@@ -58,7 +58,7 @@
 
     sput-object v0, Lkotlinx/coroutines/selects/SelectKt;->STATE_COMPLETED:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 866
+    .line 872
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "STATE_CANCELLED"
@@ -67,7 +67,7 @@
 
     sput-object v0, Lkotlinx/coroutines/selects/SelectKt;->STATE_CANCELLED:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 869
+    .line 875
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "NO_RESULT"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lkotlinx/coroutines/selects/SelectKt;->NO_RESULT:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 872
+    .line 878
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "PARAM_CLAUSE_0"
@@ -129,7 +129,7 @@
 
     if-ne p0, v0, :cond_e
 
-    .line 859
+    .line 865
     sget-object p0, Lkotlinx/coroutines/selects/TrySelectDetailedResult;->ALREADY_SELECTED:Lkotlinx/coroutines/selects/TrySelectDetailedResult;
 
     return-object p0
@@ -137,7 +137,7 @@
     :cond_e
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 860
+    .line 866
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -160,19 +160,19 @@
 
     throw v0
 
-    .line 858
+    .line 864
     :cond_29
     sget-object p0, Lkotlinx/coroutines/selects/TrySelectDetailedResult;->CANCELLED:Lkotlinx/coroutines/selects/TrySelectDetailedResult;
 
     return-object p0
 
-    .line 857
+    .line 863
     :cond_2c
     sget-object p0, Lkotlinx/coroutines/selects/TrySelectDetailedResult;->REREGISTER:Lkotlinx/coroutines/selects/TrySelectDetailedResult;
 
     return-object p0
 
-    .line 856
+    .line 862
     :cond_2f
     sget-object p0, Lkotlinx/coroutines/selects/TrySelectDetailedResult;->SUCCESSFUL:Lkotlinx/coroutines/selects/TrySelectDetailedResult;
 
@@ -249,7 +249,7 @@
 .method public static final getPARAM_CLAUSE_0()Lkotlinx/coroutines/internal/Symbol;
     .registers 1
 
-    .line 872
+    .line 878
     sget-object v0, Lkotlinx/coroutines/selects/SelectKt;->PARAM_CLAUSE_0:Lkotlinx/coroutines/internal/Symbol;
 
     return-object v0
@@ -269,7 +269,7 @@
         }
     .end annotation
 
-    .line 58
+    .line 54
     new-instance v0, Lkotlinx/coroutines/selects/SelectImplementation;
 
     invoke-interface {p1}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
@@ -278,10 +278,10 @@
 
     invoke-direct {v0, v1}, Lkotlinx/coroutines/selects/SelectImplementation;-><init>(Lkotlin/coroutines/CoroutineContext;)V
 
-    .line 59
+    .line 55
     invoke-interface {p0, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 62
+    .line 58
     invoke-virtual {v0, p1}, Lkotlinx/coroutines/selects/SelectImplementation;->doSelect(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -303,7 +303,7 @@
         }
     .end annotation
 
-    .line 58
+    .line 54
     new-instance p0, Lkotlinx/coroutines/selects/SelectImplementation;
 
     const/4 p0, 0x3
@@ -329,7 +329,7 @@
         }
     .end annotation
 
-    .line 841
+    .line 847
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     const/4 v1, 0x0
@@ -344,7 +344,7 @@
 
     return p0
 
-    .line 842
+    .line 848
     :cond_b
     invoke-interface {p0, p1}, Lkotlinx/coroutines/CancellableContinuation;->completeResume(Ljava/lang/Object;)V
 

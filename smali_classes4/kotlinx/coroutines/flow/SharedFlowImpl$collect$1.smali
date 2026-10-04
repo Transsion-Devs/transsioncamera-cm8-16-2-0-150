@@ -26,9 +26,9 @@
     c = "kotlinx.coroutines.flow.SharedFlowImpl"
     f = "SharedFlow.kt"
     l = {
-        0x174,
-        0x17b,
-        0x17e
+        0x17e,
+        0x185,
+        0x188
     }
     m = "collect$suspendImpl"
 .end annotation

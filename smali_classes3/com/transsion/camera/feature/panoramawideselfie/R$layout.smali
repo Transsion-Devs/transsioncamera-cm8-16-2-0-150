@@ -16,7 +16,7 @@
 # static fields
 .field public static burstpmk_layout:I = 0x7f0e0050
 
-.field public static wideselfie_layout:I = 0x7f0e0290
+.field public static wideselfie_layout:I = 0x7f0e028a
 
 
 # direct methods

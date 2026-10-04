@@ -11,7 +11,7 @@
 
     return p0
 
-    .line 33
+    .line 30
     :cond_3
     new-instance p0, Ljava/lang/ArithmeticException;
 
@@ -22,19 +22,11 @@
     throw p0
 .end method
 
-.method public static final checkOwnership(Lkotlinx/coroutines/flow/internal/AbortFlowException;Lkotlinx/coroutines/flow/FlowCollector;)V
+.method public static final checkOwnership(Lkotlinx/coroutines/flow/internal/AbortFlowException;Ljava/lang/Object;)V
     .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlinx/coroutines/flow/internal/AbortFlowException;",
-            "Lkotlinx/coroutines/flow/FlowCollector<",
-            "*>;)V"
-        }
-    .end annotation
 
-    .line 21
-    iget-object v0, p0, Lkotlinx/coroutines/flow/internal/AbortFlowException;->owner:Lkotlinx/coroutines/flow/FlowCollector;
+    .line 18
+    iget-object v0, p0, Lkotlinx/coroutines/flow/internal/AbortFlowException;->owner:Ljava/lang/Object;
 
     if-ne v0, p1, :cond_5
 

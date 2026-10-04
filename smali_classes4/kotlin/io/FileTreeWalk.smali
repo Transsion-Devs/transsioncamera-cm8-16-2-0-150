@@ -9,9 +9,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lkotlin/io/FileTreeWalk$WalkState;,
         Lkotlin/io/FileTreeWalk$DirectoryState;,
-        Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;
+        Lkotlin/io/FileTreeWalk$FileTreeWalkIterator;,
+        Lkotlin/io/FileTreeWalk$WalkState;
     }
 .end annotation
 

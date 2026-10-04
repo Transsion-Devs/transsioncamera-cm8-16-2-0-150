@@ -29,7 +29,7 @@
 
     sput-object v0, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
 
-    .line 271
+    .line 273
     sget-object v0, Lkotlin/internal/PlatformImplementationsKt;->IMPLEMENTATIONS:Lkotlin/internal/PlatformImplementations;
 
     invoke-virtual {v0}, Lkotlin/internal/PlatformImplementations;->defaultPlatformRandom()Lkotlin/random/Random;
@@ -44,7 +44,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 19
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -53,7 +53,7 @@
 .method public static final synthetic access$getDefaultRandom$cp()Lkotlin/random/Random;
     .registers 1
 
-    .line 19
+    .line 21
     sget-object v0, Lkotlin/random/Random;->defaultRandom:Lkotlin/random/Random;
 
     return-object v0
@@ -72,7 +72,7 @@
 
     const/4 v0, 0x0
 
-    .line 53
+    .line 55
     invoke-virtual {p0, v0, p1}, Lkotlin/random/Random;->nextInt(II)I
 
     move-result p0
@@ -83,7 +83,7 @@
 .method public nextInt(II)I
     .registers 6
 
-    .line 65
+    .line 67
     invoke-static {p1, p2}, Lkotlin/random/RandomKt;->checkRangeBounds(II)V
 
     sub-int v0, p2, p1
@@ -96,7 +96,7 @@
 
     goto :goto_15
 
-    .line 82
+    .line 84
     :cond_c
     invoke-virtual {p0}, Lkotlin/random/Random;->nextInt()I
 
@@ -116,19 +116,19 @@
 
     if-ne p2, v0, :cond_22
 
-    .line 69
+    .line 71
     invoke-static {v0}, Lkotlin/random/RandomKt;->fastLog2(I)I
 
     move-result p2
 
-    .line 70
+    .line 72
     invoke-virtual {p0, p2}, Lkotlin/random/Random;->nextBits(I)I
 
     move-result p0
 
     goto :goto_31
 
-    .line 74
+    .line 76
     :cond_22
     invoke-virtual {p0}, Lkotlin/random/Random;->nextInt()I
 
@@ -136,7 +136,7 @@
 
     ushr-int/lit8 p2, p2, 0x1
 
-    .line 75
+    .line 77
     rem-int v1, p2, v0
 
     sub-int/2addr p2, v1

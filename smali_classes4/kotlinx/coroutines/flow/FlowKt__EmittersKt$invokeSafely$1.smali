@@ -26,7 +26,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__EmittersKt"
     f = "Emitters.kt"
     l = {
-        0xd8
+        0xd4
     }
     m = "invokeSafely$FlowKt__EmittersKt"
 .end annotation

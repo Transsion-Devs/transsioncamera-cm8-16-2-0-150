@@ -100,7 +100,7 @@
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_10
+    if-eq v0, v1, :cond_14
 
     const/4 v1, 0x3
 
@@ -110,13 +110,21 @@
 
     .line 149
     :cond_d
-    sget p0, Lcom/transsion/camera/feature/longexposure/R$array;->long_exposure_guide_layouts_fold:I
+    const-string p0, "long_exposure_guide_layouts_fold"
+
+    invoke-static {p0}, Lcom/transsion/camera/utils/CameraUtil;->getArrayId(Ljava/lang/String;)I
+
+    move-result p0
 
     return p0
 
     .line 146
-    :cond_10
-    sget p0, Lcom/transsion/camera/feature/longexposure/R$array;->long_exposure_guide_layouts_flip:I
+    :cond_14
+    const-string p0, "long_exposure_guide_layouts_flip"
+
+    invoke-static {p0}, Lcom/transsion/camera/utils/CameraUtil;->getArrayId(Ljava/lang/String;)I
+
+    move-result p0
 
     return p0
 .end method

@@ -51,13 +51,13 @@
         }
     .end annotation
 
-    .line 412
+    .line 408
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 413
+    .line 409
     iput-object p1, p0, Lkotlinx/coroutines/flow/SubscribedFlowCollector;->collector:Lkotlinx/coroutines/flow/FlowCollector;
 
-    .line 414
+    .line 410
     iput-object p2, p0, Lkotlinx/coroutines/flow/SubscribedFlowCollector;->action:Lkotlin/jvm/functions/Function2;
 
     return-void
@@ -134,7 +134,7 @@
 
     move-result-object v1
 
-    .line 416
+    .line 412
     iget v2, v0, Lkotlinx/coroutines/flow/SubscribedFlowCollector$onSubscription$1;->label:I
 
     const/4 v3, 0x2
@@ -184,20 +184,20 @@
     :cond_42
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 417
+    .line 413
     new-instance p1, Lkotlinx/coroutines/flow/internal/SafeCollector;
 
     iget-object v2, p0, Lkotlinx/coroutines/flow/SubscribedFlowCollector;->collector:Lkotlinx/coroutines/flow/FlowCollector;
 
-    .line 329
+    .line 326
     invoke-interface {v0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v5
 
-    .line 417
+    .line 413
     invoke-direct {p1, v2, v5}, Lkotlinx/coroutines/flow/internal/SafeCollector;-><init>(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/CoroutineContext;)V
 
-    .line 419
+    .line 415
     :try_start_50
     iget-object v2, p0, Lkotlinx/coroutines/flow/SubscribedFlowCollector;->action:Lkotlin/jvm/functions/Function2;
 
@@ -222,11 +222,11 @@
 
     move-object p0, p1
 
-    .line 421
+    .line 417
     :goto_61
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/internal/SafeCollector;->releaseIntercepted()V
 
-    .line 423
+    .line 419
     iget-object p0, v2, Lkotlinx/coroutines/flow/SubscribedFlowCollector;->collector:Lkotlinx/coroutines/flow/FlowCollector;
 
     instance-of p1, p0, Lkotlinx/coroutines/flow/SubscribedFlowCollector;
@@ -252,7 +252,7 @@
     :goto_79
     return-object v1
 
-    .line 424
+    .line 420
     :cond_7a
     :goto_7a
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -273,7 +273,7 @@
 
     move-object p0, v6
 
-    .line 421
+    .line 417
     :goto_84
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/internal/SafeCollector;->releaseIntercepted()V
 

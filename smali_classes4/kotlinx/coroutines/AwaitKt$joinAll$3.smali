@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.AwaitKt"
     f = "Await.kt"
     l = {
-        0x42
+        0x3a
     }
     m = "joinAll"
 .end annotation

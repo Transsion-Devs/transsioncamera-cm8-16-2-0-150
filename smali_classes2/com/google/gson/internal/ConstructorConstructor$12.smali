@@ -17,17 +17,11 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lcom/google/gson/internal/ConstructorConstructor;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/gson/internal/ConstructorConstructor;)V
-    .registers 2
+.method constructor <init>()V
+    .registers 1
 
-    .line 201
-    iput-object p1, p0, Lcom/google/gson/internal/ConstructorConstructor$12;->this$0:Lcom/google/gson/internal/ConstructorConstructor;
-
+    .line 352
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,10 +32,10 @@
 .method public construct()Ljava/lang/Object;
     .registers 1
 
-    .line 203
-    new-instance p0, Ljava/util/LinkedHashMap;
+    .line 355
+    new-instance p0, Ljava/util/ArrayDeque;
 
-    invoke-direct {p0}, Ljava/util/LinkedHashMap;-><init>()V
+    invoke-direct {p0}, Ljava/util/ArrayDeque;-><init>()V
 
     return-object p0
 .end method

@@ -25,7 +25,7 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
     .registers 2
 
-    .line 2000
+    .line 1884
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ActionInterceptImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onInterceptClick()Z
     .registers 1
 
-    .line 2003
+    .line 1887
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ActionInterceptImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmIsHALCaptureProcessing(Lcom/transsion/camera/app/ui/ModePickerUI;)Z

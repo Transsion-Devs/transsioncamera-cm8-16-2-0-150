@@ -26,7 +26,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 383
+    .line 402
     invoke-direct {p0}, Lcom/transsion/hubsdk/api/util/TranSingletonUtils$Singleton;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method protected create()Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;
     .registers 2
 
-    .line 386
+    .line 405
     sget-object p0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33351:Ljava/lang/String;
 
     invoke-static {p0}, Lcom/transsion/hubsdk/common/version/TranVersion;->isIntegratedThubCore(Ljava/lang/String;)Z
@@ -46,14 +46,14 @@
 
     if-eqz p0, :cond_1d
 
-    .line 387
+    .line 406
     invoke-static {}, Lcom/transsion/hubsdk/common/version/TranThubVersionUtil;->isRecentAndroidU()Z
 
     move-result p0
 
     if-eqz p0, :cond_1d
 
-    .line 388
+    .line 407
     # getter for: Lcom/transsion/hubsdk/api/tranusf/TranUsfManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager;->access$000()Ljava/lang/String;
 
@@ -63,14 +63,14 @@
 
     invoke-static {p0, v0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 389
+    .line 408
     new-instance p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;-><init>()V
 
     return-object p0
 
-    .line 391
+    .line 410
     :cond_1d
     # getter for: Lcom/transsion/hubsdk/api/tranusf/TranUsfManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager;->access$000()Ljava/lang/String;
@@ -81,7 +81,7 @@
 
     invoke-static {p0, v0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 392
+    .line 411
     new-instance p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;-><init>()V
@@ -92,7 +92,7 @@
 .method protected bridge synthetic create()Ljava/lang/Object;
     .registers 1
 
-    .line 383
+    .line 402
     invoke-virtual {p0}, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager$Singleton$1;->create()Lcom/transsion/hubsdk/interfaces/tranusf/ITranThubUsfManagerAdapter;
 
     move-result-object p0

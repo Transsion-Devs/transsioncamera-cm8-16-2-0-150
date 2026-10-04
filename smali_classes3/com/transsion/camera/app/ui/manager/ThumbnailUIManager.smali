@@ -97,7 +97,7 @@
 
     move-object v7, p3
 
-    .line 92
+    .line 91
     invoke-direct/range {v0 .. v7}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;-><init>(Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;Lcom/transsion/camera/utils/sound/IActionSound;Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 
     const/4 p0, 0x0
@@ -120,41 +120,41 @@
 
     iput-object p0, v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mOnThumbnailUIEnableTask:Lcom/transsion/camera/app/common/taps/IThumbnailController;
 
-    .line 93
+    .line 92
     iput-object p1, v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mContentResolver:Landroid/content/ContentResolver;
 
-    .line 94
+    .line 93
     invoke-virtual {v0, p5}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->createThumbnailUI(Lcom/transsion/camera/app/common/storage/DataStore;)Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     move-result-object p1
 
     iput-object p1, v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
-    .line 95
+    .line 94
     new-instance p1, Lcom/transsion/camera/manager/ThumbnailLoader;
 
     invoke-direct {p1}, Lcom/transsion/camera/manager/ThumbnailLoader;-><init>()V
 
     iput-object p1, v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailLoader:Lcom/transsion/camera/manager/ThumbnailLoader;
 
-    .line 96
+    .line 95
     iput-boolean p4, v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsSecurityCamera:Z
 
-    .line 98
+    .line 97
     new-instance p1, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager$2;
 
     invoke-direct {p1, v0}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager$2;-><init>(Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;)V
 
     iput-object p1, v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mTaskCallbackWithListener:Lcom/transsion/camera/manager/ThumbnailLoader$TaskCallback;
 
-    .line 122
+    .line 121
     new-instance p1, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager$3;
 
     invoke-direct {p1, v0}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager$3;-><init>(Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;)V
 
     iput-object p1, v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mDefaultTaskCallback:Lcom/transsion/camera/manager/ThumbnailLoader$TaskCallback;
 
-    .line 140
+    .line 139
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->getInstance()Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;
 
     move-result-object p1
@@ -177,7 +177,7 @@
 
     move-object p5, p7
 
-    .line 146
+    .line 145
     invoke-direct/range {p0 .. p5}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;-><init>(Landroid/content/ContentResolver;Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;ZLcom/transsion/camera/app/common/storage/DataStore;)V
 
     return-void
@@ -186,12 +186,12 @@
 .method private hideRecommendPopupTips()V
     .registers 1
 
-    .line 194
+    .line 193
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     if-eqz p0, :cond_7
 
-    .line 195
+    .line 194
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->hideRecommendPopupTips()V
 
     :cond_7
@@ -201,7 +201,7 @@
 .method private onThumbnailUIEnable()V
     .registers 3
 
-    .line 456
+    .line 457
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -210,12 +210,12 @@
 
     if-eqz v0, :cond_d
 
-    .line 457
+    .line 458
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->performPendingClick()V
 
-    .line 459
+    .line 460
     :cond_d
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -223,7 +223,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 460
+    .line 461
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
@@ -236,7 +236,7 @@
 
     if-ge v0, v1, :cond_22
 
-    .line 461
+    .line 462
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->setEnable(Z)V
 
     :cond_22
@@ -246,18 +246,18 @@
 .method private showRecommendPopupTips()V
     .registers 7
 
-    .line 150
+    .line 149
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
 
-    .line 151
+    .line 150
     iget-boolean v1, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mAiFramePopTipsSupport:Z
 
-    .line 152
+    .line 151
     iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mUltraHdPopTipsSupport:Z
 
-    .line 154
+    .line 153
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     if-eqz v2, :cond_af
@@ -268,7 +268,7 @@
 
     goto/16 :goto_af
 
-    .line 158
+    .line 157
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
@@ -286,7 +286,7 @@
 
     goto/16 :goto_af
 
-    .line 163
+    .line 162
     :cond_22
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -296,7 +296,7 @@
 
     move-result-object v0
 
-    .line 164
+    .line 163
     sget-object v1, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -315,7 +315,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 166
+    .line 165
     const-string v2, "on"
 
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -324,7 +324,7 @@
 
     if-eqz v0, :cond_4f
 
-    .line 167
+    .line 166
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     const/4 v0, 0x1
@@ -333,7 +333,7 @@
 
     return-void
 
-    .line 172
+    .line 171
     :cond_4f
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -343,7 +343,7 @@
 
     move-result-object v0
 
-    .line 173
+    .line 172
     iget-object v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v4, "key_camera_zoom"
@@ -352,7 +352,7 @@
 
     move-result-object v3
 
-    .line 174
+    .line 173
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -375,7 +375,7 @@
 
     invoke-static {v1, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 176
+    .line 175
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -390,7 +390,7 @@
 
     goto :goto_af
 
-    .line 182
+    .line 181
     :cond_88
     :try_start_88
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -403,7 +403,7 @@
 
     if-lt v0, v1, :cond_af
 
-    .line 189
+    .line 188
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     const/4 v0, 0x0
@@ -415,7 +415,7 @@
     :catch_98
     move-exception p0
 
-    .line 184
+    .line 183
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -444,7 +444,7 @@
 .method protected createThumbnailUI(Lcom/transsion/camera/app/common/storage/DataStore;)Lcom/transsion/camera/app/ui/IThumbnailUI;
     .registers 2
 
-    .line 200
+    .line 199
     new-instance p0, Lcom/transsion/camera/app/ui/ThumbnailUI;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ThumbnailUI;-><init>(Lcom/transsion/camera/app/common/storage/DataStore;)V
@@ -455,7 +455,7 @@
 .method public getThumbnail()Landroid/graphics/Bitmap;
     .registers 1
 
-    .line 282
+    .line 281
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->getThumbnail()Landroid/graphics/Bitmap;
@@ -468,7 +468,7 @@
 .method public getThumbnailView()Landroid/view/View;
     .registers 1
 
-    .line 475
+    .line 476
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->getThumbnailView()Landroid/view/View;
@@ -481,7 +481,7 @@
 .method public hide()V
     .registers 3
 
-    .line 217
+    .line 216
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -490,7 +490,7 @@
 
     if-eqz v0, :cond_26
 
-    .line 218
+    .line 217
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mRootView:Landroid/view/View;
 
     if-nez v0, :cond_e
@@ -504,7 +504,7 @@
 
     move-result-object v0
 
-    .line 219
+    .line 218
     :goto_12
     instance-of v1, v0, Landroid/animation/Animator;
 
@@ -518,7 +518,7 @@
 
     if-eqz v0, :cond_26
 
-    .line 220
+    .line 219
     sget-object p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "hide: dismiss"
@@ -527,7 +527,7 @@
 
     return-void
 
-    .line 224
+    .line 223
     :cond_26
     invoke-super {p0}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->hide()V
 
@@ -537,7 +537,7 @@
 .method public isUpdateThumbnail()Z
     .registers 1
 
-    .line 471
+    .line 472
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->isUpdateThumbnail()Z
@@ -550,7 +550,7 @@
 .method public loadLatestThumbnail(Ljava/util/ArrayList;)V
     .registers 4
 
-    .line 317
+    .line 318
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailLoader:Lcom/transsion/camera/manager/ThumbnailLoader;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mContentResolver:Landroid/content/ContentResolver;
@@ -565,7 +565,7 @@
 .method public loadThumbnailByUri(Ljava/util/ArrayList;Landroid/net/Uri;)V
     .registers 5
 
-    .line 321
+    .line 322
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailLoader:Lcom/transsion/camera/manager/ThumbnailLoader;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mContentResolver:Landroid/content/ContentResolver;
@@ -580,7 +580,7 @@
 .method public notifyCameraOperateActionToUI(I)V
     .registers 7
 
-    .line 330
+    .line 331
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -641,7 +641,7 @@
 
     const/16 v2, 0x57
 
-    .line 331
+    .line 332
     const-string v4, "ThumbnailUI enable, action:"
 
     if-eq p1, v2, :cond_120
@@ -702,57 +702,57 @@
 
     packed-switch p1, :pswitch_data_184
 
-    .line 440
+    .line 441
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->notifyCameraOperateActionToUI(I)V
 
     return-void
 
-    .line 420
+    .line 421
     :pswitch_7d
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mNeedShowRecommendPopUpTips:Z
 
-    .line 421
+    .line 422
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->restoreRecommendPopupTips()V
 
     return-void
 
-    .line 433
+    .line 434
     :pswitch_85
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mNeedShowRecommendPopUpTips:Z
 
     return-void
 
-    .line 424
+    .line 425
     :pswitch_88
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mNeedShowRecommendPopUpTips:Z
 
-    .line 425
+    .line 426
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->hideRecommendPopupTips()V
 
     return-void
 
-    .line 377
+    .line 378
     :pswitch_8e
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsVideoRecording:Z
 
-    .line 378
+    .line 379
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->setEnable(Z)V
 
     goto :goto_af
 
-    .line 362
+    .line 363
     :pswitch_94
     invoke-virtual {p0, v3}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->setEnable(Z)V
 
     goto :goto_c1
 
-    .line 334
+    .line 335
     :pswitch_98
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsCapturing:Z
 
-    .line 335
+    .line 336
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsSecurityCamera:Z
 
     if-nez p1, :cond_13f
@@ -761,29 +761,29 @@
 
     if-eqz p1, :cond_13f
 
-    .line 336
+    .line 337
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->showRecommendPopupTips()V
 
     return-void
 
-    .line 340
+    .line 341
     :pswitch_a6
     invoke-virtual {p0, v3}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->setEnable(Z)V
 
-    .line 341
+    .line 342
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsCapturing:Z
 
-    .line 343
+    .line 344
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->hideRecommendPopupTips()V
 
     return-void
 
-    .line 381
+    .line 382
     :cond_af
     :goto_af
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsVideoRecording:Z
 
-    .line 382
+    .line 383
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -796,17 +796,17 @@
 
     if-eqz p0, :cond_13f
 
-    .line 383
+    .line 384
     invoke-interface {p0, v3, v2}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
 
     return-void
 
-    .line 365
+    .line 366
     :cond_c1
     :goto_c1
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsVideoRecording:Z
 
-    .line 366
+    .line 367
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -819,29 +819,29 @@
 
     if-eqz p0, :cond_13f
 
-    .line 367
+    .line 368
     invoke-interface {p0, v1, v2}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
 
     return-void
 
-    .line 346
+    .line 347
     :cond_d3
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsCapturing:Z
 
     if-nez p1, :cond_13f
 
-    .line 347
+    .line 348
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->setEnable(Z)V
 
     return-void
 
-    .line 387
+    .line 388
     :cond_db
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mOnThumbnailUIEnableTask:Lcom/transsion/camera/app/common/taps/IThumbnailController;
 
     if-eqz p1, :cond_13f
 
-    .line 388
+    .line 389
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->getInstance()Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;
 
     move-result-object p1
@@ -852,32 +852,32 @@
 
     return-void
 
-    .line 436
+    .line 437
     :cond_e9
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->setEnable(Z)V
 
-    .line 437
+    .line 438
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mNeedShowRecommendPopUpTips:Z
 
     return-void
 
-    .line 428
+    .line 429
     :cond_ef
     invoke-virtual {p0, v3}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->setEnable(Z)V
 
-    .line 429
+    .line 430
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mNeedShowRecommendPopUpTips:Z
 
-    .line 430
+    .line 431
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->hideRecommendPopupTips()V
 
     return-void
 
-    .line 371
+    .line 372
     :cond_f8
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsVideoRecording:Z
 
-    .line 372
+    .line 373
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -890,12 +890,12 @@
 
     if-eqz p0, :cond_13f
 
-    .line 373
+    .line 374
     invoke-interface {p0, v3, v2}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
 
     return-void
 
-    .line 351
+    .line 352
     :cond_10a
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -911,12 +911,12 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 352
+    .line 353
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->onThumbnailUIEnable()V
 
     return-void
 
-    .line 356
+    .line 357
     :cond_120
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -932,7 +932,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 357
+    .line 358
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object p1
@@ -943,20 +943,20 @@
 
     if-ge p1, v1, :cond_13f
 
-    .line 358
+    .line 359
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->setEnable(Z)V
 
     :cond_13f
     return-void
 
-    .line 392
+    .line 393
     :cond_140
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsCapturing:Z
 
-    .line 393
+    .line 394
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsVideoRecording:Z
 
-    .line 394
+    .line 395
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -965,12 +965,12 @@
 
     if-eqz v0, :cond_151
 
-    .line 395
+    .line 396
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->cancelPendingClick()V
 
-    .line 397
+    .line 398
     :cond_151
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -984,23 +984,23 @@
 
     if-eqz v0, :cond_160
 
-    .line 398
+    .line 399
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->resetRecordingUI()V
 
-    .line 400
+    .line 401
     :cond_160
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->notifyCameraOperateActionToUI(I)V
 
     goto :goto_17f
 
-    .line 413
+    .line 414
     :cond_164
     :pswitch_164
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     if-eqz v0, :cond_17b
 
-    .line 414
+    .line 415
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_picture_size"
@@ -1009,7 +1009,7 @@
 
     move-result-object v0
 
-    .line 415
+    .line 416
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1020,13 +1020,13 @@
 
     invoke-interface {v1, v2, v0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->updateThumbnailDefaultView(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 417
+    .line 418
     :cond_17b
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->notifyCameraOperateActionToUI(I)V
 
     return-void
 
-    .line 406
+    .line 407
     :cond_17f
     :goto_17f
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->hideRecommendPopupTips()V
@@ -1051,7 +1051,7 @@
 .method protected notifyCameraOperateActionToUI(II)V
     .registers 6
 
-    .line 447
+    .line 448
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1080,7 +1080,7 @@
 
     if-ne p2, p1, :cond_28
 
-    .line 449
+    .line 450
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     const/4 p1, 0x0
@@ -1092,7 +1092,7 @@
     :cond_28
     if-nez p2, :cond_2f
 
-    .line 451
+    .line 452
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IThumbnailUI;->setClickable(Z)V
@@ -1106,7 +1106,7 @@
 
     const/4 v0, 0x1
 
-    .line 306
+    .line 307
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsBackPressed:Z
 
     const/4 p0, 0x0
@@ -1117,7 +1117,7 @@
 .method protected onInflateLayout(Landroid/view/LayoutInflater;)Landroid/view/View;
     .registers 4
 
-    .line 205
+    .line 204
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
@@ -1134,10 +1134,10 @@
 .method public onOrientationChanged(IZ)V
     .registers 3
 
-    .line 234
+    .line 233
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->onOrientationChanged(IZ)V
 
-    .line 235
+    .line 234
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/ui/IThumbnailUI;->onOrientationChanged(IZ)V
@@ -1148,7 +1148,7 @@
 .method protected onSetupViews()V
     .registers 1
 
-    .line 211
+    .line 210
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->setupViews()V
@@ -1159,12 +1159,12 @@
 .method public performClick(Landroid/view/View;)V
     .registers 2
 
-    .line 276
+    .line 275
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailListener:Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;
 
     if-eqz p0, :cond_7
 
-    .line 277
+    .line 276
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;->onThumbnailClicked(Landroid/view/View;)V
 
     :cond_7
@@ -1174,7 +1174,7 @@
 .method public playThumbLottieAnimation()V
     .registers 1
 
-    .line 325
+    .line 326
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->playThumbLottieAnimation()V
@@ -1185,7 +1185,7 @@
 .method public setEnable(Z)V
     .registers 5
 
-    .line 240
+    .line 239
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1204,24 +1204,24 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 241
+    .line 240
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->setEnable(Z)V
 
     if-eqz p1, :cond_25
 
-    .line 242
+    .line 241
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsVideoRecording:Z
 
     if-eqz v1, :cond_25
 
-    .line 243
+    .line 242
     const-string p0, "[setEnable] return because video is recording."
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 246
+    .line 245
     :cond_25
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
@@ -1233,7 +1233,7 @@
 .method public setThumbnail(Landroid/graphics/Bitmap;)V
     .registers 2
 
-    .line 286
+    .line 285
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IThumbnailUI;->setThumbnail(Landroid/graphics/Bitmap;)V
@@ -1244,7 +1244,7 @@
 .method public setThumbnailClickable(Z)V
     .registers 2
 
-    .line 272
+    .line 271
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IThumbnailUI;->setThumbnailClickable(Z)V
@@ -1255,17 +1255,17 @@
 .method public setThumbnailListener(Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;)V
     .registers 5
 
-    .line 250
+    .line 249
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailListener:Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;
 
     if-eqz p1, :cond_52
 
-    .line 252
+    .line 251
     invoke-static {}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->getProcessingMedia()Ljava/util/List;
 
     move-result-object p1
 
-    .line 253
+    .line 252
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsSecurityCamera:Z
 
     if-nez v0, :cond_52
@@ -1276,7 +1276,7 @@
 
     if-nez v0, :cond_52
 
-    .line 254
+    .line 253
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -1289,7 +1289,7 @@
 
     check-cast p1, Lcom/transsion/camera/app/common/provider/ProcessMediaItem;
 
-    .line 255
+    .line 254
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1322,21 +1322,21 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 256
+    .line 255
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/provider/ProcessMediaItem;->getUri()Landroid/net/Uri;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->updateProcessingThumbUri(Landroid/net/Uri;)V
 
-    .line 257
+    .line 256
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/provider/ProcessMediaItem;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->setThumbnail(Landroid/graphics/Bitmap;)V
 
-    .line 260
+    .line 259
     :cond_52
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
@@ -1352,7 +1352,7 @@
 .method public show()V
     .registers 1
 
-    .line 467
+    .line 468
     invoke-super {p0}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->show()V
 
     return-void
@@ -1361,7 +1361,7 @@
 .method public unInit()V
     .registers 1
 
-    .line 229
+    .line 228
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->unInit()V
@@ -1372,12 +1372,12 @@
 .method public updateCurrentMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 480
+    .line 481
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     if-eqz p0, :cond_7
 
-    .line 481
+    .line 482
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IThumbnailUI;->updateCurrentMode(Ljava/lang/String;)V
 
     :cond_7
@@ -1387,7 +1387,7 @@
 .method public updateProcessingThumbUri(Landroid/net/Uri;)V
     .registers 4
 
-    .line 311
+    .line 312
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailListener:Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;
 
     if-eqz p0, :cond_9
@@ -1396,7 +1396,7 @@
 
     const/4 v1, 0x1
 
-    .line 312
+    .line 313
     invoke-interface {p0, p1, v0, v1}, Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;->onThumbnailUriUpdated(Landroid/net/Uri;ZZ)V
 
     :cond_9
@@ -1406,7 +1406,7 @@
 .method public updateThumbnail(Landroid/graphics/Bitmap;Z)V
     .registers 3
 
-    .line 290
+    .line 289
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/ui/IThumbnailUI;->updateThumbnail(Landroid/graphics/Bitmap;Z)V
@@ -1417,13 +1417,23 @@
 .method public updateThumbnailUri(Landroid/net/Uri;ZZ)V
     .registers 7
 
-    const/4 p3, 0x0
+    .line 293
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object p3
+
+    iget-boolean p3, p3, Lcom/transsion/camera/utils/CustomConfigUtil;->mProcessStatusNewStrategy:Z
+
+    const/4 v0, 0x0
+
+    if-nez p3, :cond_c
 
     .line 294
-    invoke-static {p3}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->setProcessStatus(Z)V
+    invoke-static {v0}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->setProcessStatus(Z)V
 
-    .line 295
-    sget-object v0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    .line 296
+    :cond_c
+    sget-object p3, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1449,27 +1459,27 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {p3, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 296
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailListener:Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;
+    .line 297
+    iget-object p3, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailListener:Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;
 
-    if-eqz v0, :cond_32
+    if-eqz p3, :cond_3a
 
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsBackPressed:Z
 
-    if-nez v1, :cond_32
+    if-nez v1, :cond_3a
 
-    .line 297
-    invoke-interface {v0, p1, p2, p3}, Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;->onThumbnailUriUpdated(Landroid/net/Uri;ZZ)V
+    .line 298
+    invoke-interface {p3, p1, p2, v0}, Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;->onThumbnailUriUpdated(Landroid/net/Uri;ZZ)V
 
     return-void
 
-    .line 299
-    :cond_32
-    iput-boolean p3, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsBackPressed:Z
-
     .line 300
+    :cond_3a
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mIsBackPressed:Z
+
+    .line 301
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object p0

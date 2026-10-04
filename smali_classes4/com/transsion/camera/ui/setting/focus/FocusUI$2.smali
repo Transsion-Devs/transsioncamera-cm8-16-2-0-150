@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/focus/FocusUI;)V
     .registers 2
 
-    .line 1025
+    .line 1031
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI$2;->this$0:Lcom/transsion/camera/ui/setting/focus/FocusUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,17 +35,17 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 1028
+    .line 1034
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1029
+    .line 1035
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI$2;->this$0:Lcom/transsion/camera/ui/setting/focus/FocusUI;
 
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->-$$Nest$fputmFocusAnimateEnd(Lcom/transsion/camera/ui/setting/focus/FocusUI;Z)V
 
-    .line 1030
+    .line 1036
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI$2;->this$0:Lcom/transsion/camera/ui/setting/focus/FocusUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->-$$Nest$mnotifyFocused(Lcom/transsion/camera/ui/setting/focus/FocusUI;)V

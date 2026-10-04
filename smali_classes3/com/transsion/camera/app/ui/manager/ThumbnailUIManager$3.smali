@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;)V
     .registers 2
 
-    .line 122
+    .line 121
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager$3;->this$0:Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 
     if-nez p1, :cond_15
 
-    .line 126
+    .line 125
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -51,7 +51,7 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 127
+    .line 126
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager$3;->this$0:Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;
@@ -62,13 +62,13 @@
 
     return-void
 
-    .line 129
+    .line 128
     :cond_15
     iget-object p1, p1, Lcom/transsion/camera/manager/ThumbnailItem;->mBitmap:Landroid/graphics/Bitmap;
 
     if-nez p1, :cond_23
 
-    .line 130
+    .line 129
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -79,7 +79,7 @@
 
     return-void
 
-    .line 133
+    .line 132
     :cond_23
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager$3;->this$0:Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;
 
@@ -87,7 +87,7 @@
 
     invoke-interface {v1, p1, v0}, Lcom/transsion/camera/app/ui/IThumbnailUI;->updateThumbnail(Landroid/graphics/Bitmap;Z)V
 
-    .line 134
+    .line 133
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager$3;->this$0:Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->mThumbnailUI:Lcom/transsion/camera/app/ui/IThumbnailUI;

@@ -17,6 +17,8 @@
 
 
 # static fields
+.field private static final RANDOM:Ljava/util/Random;
+
 .field private static final TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
 .field private static final sAllHashCodeList:Ljava/util/List;
@@ -96,6 +98,15 @@
     return-void
 .end method
 
+.method static bridge synthetic -$$Nest$sfgetRANDOM()Ljava/util/Random;
+    .registers 1
+
+    .line 0
+    sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->RANDOM:Ljava/util/Random;
+
+    return-object v0
+.end method
+
 .method static bridge synthetic -$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
     .registers 1
 
@@ -108,7 +119,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 21
+    .line 22
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "ScreenBrightnessManager"
@@ -117,7 +128,14 @@
 
     sput-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 24
+    .line 25
+    new-instance v0, Ljava/util/Random;
+
+    invoke-direct {v0}, Ljava/util/Random;-><init>()V
+
+    sput-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->RANDOM:Ljava/util/Random;
+
+    .line 27
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -130,46 +148,46 @@
 .method public constructor <init>(Landroid/app/Activity;)V
     .registers 8
 
-    .line 57
+    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 30
+    .line 33
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStopped:Z
 
-    .line 38
+    .line 41
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityStartFlow:I
 
     const/16 v1, 0xff
 
-    .line 41
+    .line 44
     iput v1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mInitialBrightness:I
 
-    .line 43
+    .line 46
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mCurrentBrightness:I
 
-    .line 47
+    .line 50
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mForceSetMode:Z
 
-    .line 58
+    .line 61
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isEnhanceScreenBrightnessSupport()Z
 
     move-result v0
 
-    .line 59
+    .line 62
     const-string v1, "enhance_screen_brightness_strategy"
 
     invoke-static {p1, v1}, Lcom/transsion/camera/utils/CameraUtil;->getInteger(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v1
 
-    .line 60
+    .line 63
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->isUserAMonkey()Z
 
     move-result v2
 
-    .line 61
+    .line 64
     sget-object v3, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -215,10 +233,79 @@
 
     if-ne v1, v0, :cond_5e
 
-    .line 67
+    .line 70
     new-instance v0, Lcom/transsion/camera/manager/AutoV1BrightnessStrategy;
 
     invoke-direct {v0, p0, p1}, Lcom/transsion/camera/manager/AutoV1BrightnessStrategy;-><init>(Lcom/transsion/camera/manager/BrightnessStrategy$BrightnessControl;Landroid/app/Activity;)V
+
+    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
+
+    .line 71
+    new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;
+
+    invoke-direct {v0, v3}, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager-IA;)V
+
+    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
+
+    goto :goto_97
+
+    .line 73
+    :cond_5e
+    new-instance v0, Lcom/transsion/camera/manager/AutoV2BrightnessStrategy;
+
+    invoke-direct {v0, p0, p1}, Lcom/transsion/camera/manager/AutoV2BrightnessStrategy;-><init>(Lcom/transsion/camera/manager/BrightnessStrategy$BrightnessControl;Landroid/app/Activity;)V
+
+    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
+
+    .line 74
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x21
+
+    if-le v0, v1, :cond_81
+
+    .line 75
+    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSystemBacklightV2()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_79
+
+    .line 76
+    new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;
+
+    invoke-direct {v0, v3}, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager-IA;)V
+
+    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
+
+    goto :goto_97
+
+    .line 78
+    :cond_79
+    new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;
+
+    invoke-direct {v0}, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;-><init>()V
+
+    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
+
+    goto :goto_97
+
+    .line 81
+    :cond_81
+    new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;
+
+    invoke-direct {v0, v3}, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager-IA;)V
+
+    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
+
+    goto :goto_97
+
+    .line 67
+    :cond_89
+    :goto_89
+    new-instance v0, Lcom/transsion/camera/manager/NullBrightnessStrategy;
+
+    invoke-direct {v0, p0, p1}, Lcom/transsion/camera/manager/NullBrightnessStrategy;-><init>(Lcom/transsion/camera/manager/BrightnessStrategy$BrightnessControl;Landroid/app/Activity;)V
 
     iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
 
@@ -229,80 +316,11 @@
 
     iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
 
-    goto :goto_97
-
-    .line 70
-    :cond_5e
-    new-instance v0, Lcom/transsion/camera/manager/AutoV2BrightnessStrategy;
-
-    invoke-direct {v0, p0, p1}, Lcom/transsion/camera/manager/AutoV2BrightnessStrategy;-><init>(Lcom/transsion/camera/manager/BrightnessStrategy$BrightnessControl;Landroid/app/Activity;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
-
-    .line 71
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x21
-
-    if-le v0, v1, :cond_81
-
-    .line 72
-    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSystemBacklightV2()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_79
-
-    .line 73
-    new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;
-
-    invoke-direct {v0, v3}, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager-IA;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
-
-    goto :goto_97
-
-    .line 75
-    :cond_79
-    new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;
-
-    invoke-direct {v0}, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;-><init>()V
-
-    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
-
-    goto :goto_97
-
-    .line 78
-    :cond_81
-    new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;
-
-    invoke-direct {v0, v3}, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager-IA;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
-
-    goto :goto_97
-
-    .line 64
-    :cond_89
-    :goto_89
-    new-instance v0, Lcom/transsion/camera/manager/NullBrightnessStrategy;
-
-    invoke-direct {v0, p0, p1}, Lcom/transsion/camera/manager/NullBrightnessStrategy;-><init>(Lcom/transsion/camera/manager/BrightnessStrategy$BrightnessControl;Landroid/app/Activity;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
-
-    .line 65
-    new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;
-
-    invoke-direct {v0, v3}, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager-IA;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
-
-    .line 82
+    .line 85
     :goto_97
     iput-object p1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivity:Landroid/app/Activity;
 
-    .line 83
+    .line 86
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result p1
@@ -313,7 +331,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityHashCode:Ljava/lang/String;
 
-    .line 84
+    .line 87
     iget-object p1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivity:Landroid/app/Activity;
 
     const-string v0, "max_enhance_screen_brightness"
@@ -326,7 +344,7 @@
 
     if-lez p1, :cond_b6
 
-    .line 89
+    .line 92
     invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
 
     move-result p1
@@ -335,7 +353,7 @@
 
     return-void
 
-    .line 91
+    .line 94
     :cond_b6
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mLimitedMaxBrightness:I
 
@@ -347,17 +365,17 @@
 
     const/4 v0, 0x0
 
-    .line 166
+    .line 169
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityStartFlow:I
 
-    .line 167
+    .line 170
     sget-object v1, Lcom/transsion/camera/manager/ScreenBrightnessManager;->sAllHashCodeList:Ljava/util/List;
 
     iget-object v2, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityHashCode:Ljava/lang/String;
 
     invoke-interface {v1, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 168
+    .line 171
     sget-object v2, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -384,19 +402,19 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 169
+    .line 172
     iget-object v2, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
 
     invoke-virtual {v2}, Lcom/transsion/camera/manager/BrightnessStrategy;->stop()V
 
-    .line 171
+    .line 174
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
     if-eqz v1, :cond_3f
 
-    .line 172
+    .line 175
     iget-object v1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
 
     iget-object v2, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivity:Landroid/app/Activity;
@@ -407,11 +425,11 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;->resetToDefault(Landroid/app/Activity;ZZ)V
 
-    .line 174
+    .line 177
     :cond_3f
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mForceSetMode:Z
 
-    .line 175
+    .line 178
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mRingScreenLightMode:Z
 
     return-void
@@ -420,7 +438,7 @@
 .method private enterForceSetMode(I)V
     .registers 5
 
-    .line 263
+    .line 267
     sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -441,10 +459,10 @@
 
     const/4 v0, 0x1
 
-    .line 264
+    .line 268
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mForceSetMode:Z
 
-    .line 266
+    .line 270
     invoke-virtual {p0, p1}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->setScreenBrightness(I)V
 
     return-void
@@ -453,7 +471,7 @@
 .method private exitForceSetMode()V
     .registers 4
 
-    .line 270
+    .line 274
     sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -474,19 +492,19 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 272
+    .line 276
     iget-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mPaused:Z
 
     if-nez v0, :cond_23
 
     const/4 v0, 0x0
 
-    .line 273
+    .line 277
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mForceSetMode:Z
 
     const/4 v0, 0x2
 
-    .line 274
+    .line 278
     invoke-direct {p0, v0}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->resetBrightnessLogic(I)V
 
     :cond_23
@@ -496,7 +514,7 @@
 .method private synthetic lambda$resetToFollowSystem$0(Landroid/app/Activity;)V
     .registers 3
 
-    .line 289
+    .line 293
     iget-object p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
 
     const/4 v0, 0x0
@@ -509,7 +527,7 @@
 .method private synthetic lambda$setScreenBrightness$1(Landroid/app/Activity;I)V
     .registers 4
 
-    .line 317
+    .line 321
     iget-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
 
     add-int/lit8 p2, p2, -0x1
@@ -524,7 +542,7 @@
 .method private synthetic lambda$setScreenBrightness$2(Landroid/app/Activity;I)V
     .registers 4
 
-    .line 321
+    .line 325
     iget-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
 
     iget-boolean p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mForceSetMode:Z
@@ -537,7 +555,7 @@
 .method private synthetic lambda$setScreenBrightness$3(Landroid/app/Activity;I)V
     .registers 5
 
-    .line 316
+    .line 320
     new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/transsion/camera/manager/ScreenBrightnessManager$$ExternalSyntheticLambda3;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager;Landroid/app/Activity;I)V
@@ -546,10 +564,10 @@
 
     const-wide/16 v0, 0x64
 
-    .line 319
+    .line 323
     invoke-static {v0, v1}, Landroid/os/SystemClock;->sleep(J)V
 
-    .line 320
+    .line 324
     new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/transsion/camera/manager/ScreenBrightnessManager$$ExternalSyntheticLambda4;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager;Landroid/app/Activity;I)V
@@ -562,7 +580,7 @@
 .method private synthetic lambda$setScreenBrightness$4(Landroid/app/Activity;I)V
     .registers 4
 
-    .line 326
+    .line 330
     iget-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
 
     iget-boolean p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mForceSetMode:Z
@@ -575,12 +593,12 @@
 .method private resetBrightnessLogic(I)V
     .registers 4
 
-    .line 339
+    .line 343
     iget-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mForceSetMode:Z
 
     if-eqz v0, :cond_c
 
-    .line 340
+    .line 344
     sget-object p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[resetBrightnessLogic] mForceMaxMode already set max brightness."
@@ -589,7 +607,7 @@
 
     return-void
 
-    .line 343
+    .line 347
     :cond_c
     iget-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mNeedCustomSetBrightness:Z
 
@@ -607,12 +625,12 @@
 
     const/high16 p1, 0x43160000    # 150.0f
 
-    .line 344
+    .line 348
     invoke-virtual {p0, p1}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->updateScreenBrightness(F)V
 
     return-void
 
-    .line 348
+    .line 352
     :cond_20
     iget-object p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
 
@@ -628,12 +646,12 @@
 
     const/4 v0, 0x1
 
-    .line 253
+    .line 257
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mRingScreenLightMode:Z
 
     const/16 v0, 0xff
 
-    .line 254
+    .line 258
     invoke-direct {p0, v0}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->enterForceSetMode(I)V
 
     return-void
@@ -642,12 +660,12 @@
 .method public enterScreenFlashMode(I)V
     .registers 3
 
-    .line 236
+    .line 240
     iget-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mRingScreenLightMode:Z
 
     if-eqz v0, :cond_c
 
-    .line 237
+    .line 241
     sget-object p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "RingScreenLightMode on, ignore it!"
@@ -656,7 +674,7 @@
 
     return-void
 
-    .line 240
+    .line 244
     :cond_c
     invoke-direct {p0, p1}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->enterForceSetMode(I)V
 
@@ -666,7 +684,7 @@
 .method public enterVideoSavePowerMode()V
     .registers 3
 
-    .line 208
+    .line 211
     iget-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
 
     iget-object v1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivity:Landroid/app/Activity;
@@ -687,12 +705,12 @@
 
     float-to-int v0, v0
 
-    .line 210
+    .line 213
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mInitialBrightness:I
 
     goto :goto_1c
 
-    .line 212
+    .line 215
     :cond_14
     iget-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
 
@@ -702,7 +720,7 @@
 
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mInitialBrightness:I
 
-    .line 214
+    .line 217
     :goto_1c
     iget v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mInitialBrightness:I
 
@@ -716,10 +734,10 @@
 
     const/4 v0, 0x0
 
-    .line 258
+    .line 262
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mRingScreenLightMode:Z
 
-    .line 259
+    .line 263
     invoke-direct {p0}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->exitForceSetMode()V
 
     return-void
@@ -728,12 +746,12 @@
 .method public exitScreenFlashMode()V
     .registers 2
 
-    .line 244
+    .line 248
     iget-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mRingScreenLightMode:Z
 
     if-eqz v0, :cond_c
 
-    .line 245
+    .line 249
     sget-object p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "RingScreenLightMode on, ignore it!"
@@ -742,7 +760,7 @@
 
     return-void
 
-    .line 248
+    .line 252
     :cond_c
     invoke-direct {p0}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->exitForceSetMode()V
 
@@ -752,22 +770,25 @@
 .method public exitVideoSavePowerMode()V
     .registers 2
 
-    .line 218
+    .line 221
     iget-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mForceSetMode:Z
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_c
 
     const/16 v0, 0xff
 
-    .line 219
+    .line 222
     invoke-direct {p0, v0}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->enterForceSetMode(I)V
+
+    .line 223
+    iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mCurrentBrightness:I
 
     return-void
 
-    :cond_a
+    :cond_c
     const/4 v0, 0x2
 
-    .line 221
+    .line 225
     invoke-direct {p0, v0}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->resetBrightnessLogic(I)V
 
     return-void
@@ -776,7 +797,7 @@
 .method public getCurrentBrightness()I
     .registers 1
 
-    .line 204
+    .line 207
     iget p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mCurrentBrightness:I
 
     return p0
@@ -785,7 +806,7 @@
 .method public getGotoGalleryBrightness()F
     .registers 2
 
-    .line 195
+    .line 198
     iget-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mSetBrightnessAPI:Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;
 
     iget-object p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivity:Landroid/app/Activity;
@@ -800,7 +821,7 @@
 .method public getInitialBrightness()I
     .registers 1
 
-    .line 200
+    .line 203
     iget p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mInitialBrightness:I
 
     return p0
@@ -811,10 +832,10 @@
 
     const/4 v0, 0x0
 
-    .line 96
+    .line 99
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityStartFlow:I
 
-    .line 97
+    .line 100
     iget-object p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
 
     invoke-virtual {p0}, Lcom/transsion/camera/manager/BrightnessStrategy;->init()V
@@ -825,7 +846,7 @@
 .method public isForceSetMode()Z
     .registers 1
 
-    .line 280
+    .line 284
     iget-boolean p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mForceSetMode:Z
 
     return p0
@@ -834,7 +855,7 @@
 .method public needCustomSetBrightness(Z)V
     .registers 2
 
-    .line 335
+    .line 339
     iput-boolean p1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mNeedCustomSetBrightness:Z
 
     return-void
@@ -843,7 +864,7 @@
 .method public onWindowsFocusChanged(Z)V
     .registers 5
 
-    .line 105
+    .line 108
     sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -874,31 +895,31 @@
 
     if-eqz p1, :cond_46
 
-    .line 108
+    .line 111
     iget p1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityStartFlow:I
 
     const/4 v1, 0x1
 
     if-ne p1, v1, :cond_32
 
-    .line 109
+    .line 112
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityStartFlow:I
 
-    .line 110
+    .line 113
     invoke-direct {p0, v1}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->resetBrightnessLogic(I)V
 
-    .line 111
+    .line 114
     iget-object p1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
 
     invoke-virtual {p1}, Lcom/transsion/camera/manager/BrightnessStrategy;->start()V
 
-    .line 113
+    .line 116
     :cond_32
     iget-boolean p1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mNeedCustomSetBrightness:Z
 
     if-eqz p1, :cond_4f
 
-    .line 114
+    .line 117
     iget-object p1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
 
     invoke-virtual {p1}, Lcom/transsion/camera/manager/BrightnessStrategy;->getSystemBrightness()I
@@ -911,21 +932,21 @@
 
     const/high16 p1, 0x43160000    # 150.0f
 
-    .line 115
+    .line 118
     invoke-virtual {p0, p1}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->updateScreenBrightness(F)V
 
     return-void
 
-    .line 119
+    .line 122
     :cond_46
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityStartFlow:I
 
-    .line 120
+    .line 123
     iget-boolean p1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mNeedCustomSetBrightness:Z
 
     if-eqz p1, :cond_4f
 
-    .line 121
+    .line 124
     invoke-virtual {p0}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->resetToFollowSystem()V
 
     :cond_4f
@@ -937,17 +958,17 @@
 
     const/4 v0, 0x1
 
-    .line 143
+    .line 146
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mPaused:Z
 
-    .line 144
+    .line 147
     iget-object p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivity:Landroid/app/Activity;
 
     invoke-static {p0}, Lcom/transsion/camera/utils/CameraUtil;->isScreenOn(Landroid/content/Context;)Z
 
     move-result p0
 
-    .line 145
+    .line 148
     sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -968,7 +989,7 @@
 
     if-nez p0, :cond_48
 
-    .line 148
+    .line 151
     new-instance p0, Lcom/transsion/hubsdk/api/hardware/display/TranDisplayManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/api/hardware/display/TranDisplayManager;-><init>()V
@@ -977,7 +998,7 @@
 
     const/high16 v1, -0x40800000    # -1.0f
 
-    .line 150
+    .line 153
     :try_start_29
     invoke-virtual {p0, v0, v1}, Lcom/transsion/hubsdk/api/hardware/display/TranDisplayManager;->setTemporaryBrightness(IF)V
     :try_end_2c
@@ -988,7 +1009,7 @@
     :catch_2d
     move-exception p0
 
-    .line 152
+    .line 155
     sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1018,7 +1039,7 @@
 .method public resetToFollowSystem()V
     .registers 4
 
-    .line 285
+    .line 289
     sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1039,12 +1060,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 286
+    .line 290
     iget-object v1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivity:Landroid/app/Activity;
 
     if-eqz v1, :cond_25
 
-    .line 288
+    .line 292
     new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/manager/ScreenBrightnessManager$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager;Landroid/app/Activity;)V
@@ -1053,7 +1074,7 @@
 
     return-void
 
-    .line 292
+    .line 296
     :cond_25
     const-string p0, "resetToFollowSystem, activity is null."
 
@@ -1067,7 +1088,7 @@
 
     const/4 v0, 0x1
 
-    .line 101
+    .line 104
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityStartFlow:I
 
     return-void
@@ -1078,7 +1099,7 @@
 
     const/4 v0, 0x0
 
-    .line 139
+    .line 142
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mPaused:Z
 
     return-void
@@ -1087,7 +1108,7 @@
 .method public setScreenBrightness(I)V
     .registers 5
 
-    .line 302
+    .line 306
     iget v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mLimitedMaxBrightness:I
 
     if-le p1, v0, :cond_9
@@ -1098,7 +1119,7 @@
 
     move p1, v0
 
-    .line 305
+    .line 309
     :cond_9
     iget-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mNeedCustomSetBrightness:Z
 
@@ -1110,7 +1131,7 @@
 
     move p1, v0
 
-    .line 309
+    .line 313
     :cond_12
     sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1138,17 +1159,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 312
+    .line 316
     iget-object v1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivity:Landroid/app/Activity;
 
     if-eqz v1, :cond_4c
 
-    .line 314
+    .line 318
     iget-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mForceSetMode:Z
 
     if-eqz v0, :cond_43
 
-    .line 315
+    .line 319
     new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, v1, p1}, Lcom/transsion/camera/manager/ScreenBrightnessManager$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager;Landroid/app/Activity;I)V
@@ -1157,7 +1178,7 @@
 
     return-void
 
-    .line 325
+    .line 329
     :cond_43
     new-instance v0, Lcom/transsion/camera/manager/ScreenBrightnessManager$$ExternalSyntheticLambda1;
 
@@ -1167,7 +1188,7 @@
 
     return-void
 
-    .line 330
+    .line 334
     :cond_4c
     const-string p0, "setBrightness activity is null."
 
@@ -1181,10 +1202,10 @@
 
     const/4 v0, 0x0
 
-    .line 127
+    .line 130
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStopped:Z
 
-    .line 128
+    .line 131
     sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1221,24 +1242,24 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 131
+    .line 134
     sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->sAllHashCodeList:Ljava/util/List;
 
     iget-object v1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityHashCode:Ljava/lang/String;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 132
+    .line 135
     iget v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityStartFlow:I
 
     if-nez v0, :cond_43
 
     const/4 v0, 0x1
 
-    .line 133
+    .line 136
     invoke-direct {p0, v0}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->resetBrightnessLogic(I)V
 
-    .line 134
+    .line 137
     iget-object p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
 
     invoke-virtual {p0}, Lcom/transsion/camera/manager/BrightnessStrategy;->start()V
@@ -1250,7 +1271,7 @@
 .method public stop()V
     .registers 4
 
-    .line 158
+    .line 161
     sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1271,17 +1292,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 159
+    .line 162
     iget-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStopped:Z
 
     if-nez v0, :cond_22
 
     const/4 v0, 0x1
 
-    .line 160
+    .line 163
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStopped:Z
 
-    .line 161
+    .line 164
     invoke-direct {p0}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->doStop()V
 
     :cond_22
@@ -1291,7 +1312,7 @@
 .method public unInit()V
     .registers 4
 
-    .line 179
+    .line 182
     sget-object v0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1312,20 +1333,20 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 181
+    .line 184
     iget-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStopped:Z
 
     if-nez v0, :cond_23
 
     const/4 v0, 0x1
 
-    .line 182
+    .line 185
     iput-boolean v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStopped:Z
 
-    .line 183
+    .line 186
     invoke-direct {p0}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->doStop()V
 
-    .line 185
+    .line 188
     :cond_23
     iget-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mStrategy:Lcom/transsion/camera/manager/BrightnessStrategy;
 
@@ -1333,10 +1354,10 @@
 
     const/4 v0, 0x0
 
-    .line 186
+    .line 189
     iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivity:Landroid/app/Activity;
 
-    .line 187
+    .line 190
     iput-object v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mActivityHashCode:Ljava/lang/String;
 
     return-void
@@ -1347,10 +1368,10 @@
 
     float-to-int p1, p1
 
-    .line 230
+    .line 234
     iput p1, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager;->mCurrentBrightness:I
 
-    .line 231
+    .line 235
     invoke-virtual {p0, p1}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->setScreenBrightness(I)V
 
     return-void

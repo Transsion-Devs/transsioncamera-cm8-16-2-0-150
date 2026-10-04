@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;)V
     .registers 2
 
-    .line 274
+    .line 277
     iput-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI$1;->this$0:Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 281
+    .line 284
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI$1;->this$0:Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocBg:Landroid/widget/RelativeLayout;
@@ -53,14 +53,14 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 282
+    .line 285
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI$1;->this$0:Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 283
+    .line 286
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI$1;->this$0:Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocImage:Landroid/widget/ImageView;
@@ -69,7 +69,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 284
+    .line 287
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI$1;->this$0:Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/docmode/DocumentModeUI;->mDocImage:Landroid/widget/ImageView;

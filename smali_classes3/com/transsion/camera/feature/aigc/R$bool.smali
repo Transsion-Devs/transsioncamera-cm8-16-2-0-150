@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static aigc_mode_support_aux_preview:I = 0x7f050012
+.field public static aigc_mode_support_aux_preview:I = 0x7f050013
 
-.field public static aigc_mode_support_clothing_afcon:I = 0x7f050013
+.field public static aigc_mode_support_clothing_afcon:I = 0x7f050014
 
-.field public static aigc_mode_support_sat:I = 0x7f050014
+.field public static aigc_mode_support_sat:I = 0x7f050015
 
-.field public static aigc_mode_support_wide_camera:I = 0x7f050015
+.field public static aigc_mode_support_wide_camera:I = 0x7f050016
 
 
 # direct methods

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/ModeManager;)V
     .registers 2
 
-    .line 718
+    .line 711
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$2;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public supportSat()Z
     .registers 4
 
-    .line 721
+    .line 714
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$2;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -57,7 +57,7 @@
 
     goto :goto_2e
 
-    .line 725
+    .line 718
     :cond_11
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$2;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 

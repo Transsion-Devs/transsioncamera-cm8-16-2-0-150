@@ -228,7 +228,7 @@
 .method public forceUpdateRequestFlashMode(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Z)[Ljava/lang/Integer;
     .registers 8
 
-    .line 1381
+    .line 1354
     filled-new-array {p5, p6}, [Ljava/lang/Integer;
 
     move-result-object p0
@@ -335,22 +335,6 @@
 .end method
 
 .method public abstract getMultiCameraZoomSteps(Landroid/hardware/camera2/CameraCharacteristics;)[F
-.end method
-
-.method public getOfflineConfigSize()Landroid/util/Size;
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public getOfflineFacing()I
-    .registers 1
-
-    const/4 p0, -0x1
-
-    return p0
 .end method
 
 .method public getOfflineOpMode(ZZ)I
@@ -921,12 +905,6 @@
     return-void
 .end method
 
-.method public offlineUpdateOpMode(II)V
-    .registers 3
-
-    return-void
-.end method
-
 .method public onCaptureFailed(I)V
     .registers 2
 
@@ -948,14 +926,6 @@
 .end method
 
 .method public abstract requestCancelFocus(Landroid/hardware/camera2/CaptureRequest$Builder;)V
-.end method
-
-.method public restartOffine()I
-    .registers 1
-
-    const/4 p0, -0x1
-
-    return p0
 .end method
 
 .method public abstract set360VideoHdrInitMode(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -1130,6 +1100,12 @@
 .end method
 
 .method public abstract setCelebritySceneMode(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
+.end method
+
+.method public abstract setClickDownZoomRatio(FLandroid/hardware/camera2/CaptureRequest$Builder;)V
+.end method
+
+.method public abstract setClickUpZoomRatio(FLandroid/hardware/camera2/CaptureRequest$Builder;)V
 .end method
 
 .method public abstract setColorLevelValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -1774,20 +1750,6 @@
 .end method
 
 .method public abstract updateOISMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
-.end method
-
-.method public updateOfflineConfig([Landroid/util/Size;ZZ)I
-    .registers 4
-
-    const/4 p0, -0x1
-
-    return p0
-.end method
-
-.method public updateOfflineFacing(I)V
-    .registers 2
-
-    return-void
 .end method
 
 .method public abstract updateOnePeriodFlashTime(Landroid/hardware/camera2/CaptureResult;)[I

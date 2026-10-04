@@ -15,21 +15,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 400
+    .line 377
     invoke-static {p0, p1}, Ljava/nio/file/Files;->newDirectoryStream(Ljava/nio/file/Path;Ljava/lang/String;)Ljava/nio/file/DirectoryStream;
 
     move-result-object p0
 
     :try_start_e
-    const-string p1, "it"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-static {p0}, Lkotlin/collections/CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object p1
-    :try_end_17
-    .catchall {:try_start_e .. :try_end_17} :catchall_1c
+    :try_end_15
+    .catchall {:try_start_e .. :try_end_15} :catchall_1a
 
     const/4 v0, 0x0
 
@@ -37,15 +35,15 @@
 
     return-object p1
 
-    :catchall_1c
+    :catchall_1a
     move-exception p1
 
-    :try_start_1d
+    :try_start_1b
     throw p1
-    :try_end_1e
-    .catchall {:try_start_1d .. :try_end_1e} :catchall_1e
+    :try_end_1c
+    .catchall {:try_start_1b .. :try_end_1c} :catchall_1c
 
-    :catchall_1e
+    :catchall_1c
     move-exception v0
 
     invoke-static {p0, p1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
@@ -60,7 +58,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 399
+    .line 376
     const-string p1, "*"
 
     :cond_6

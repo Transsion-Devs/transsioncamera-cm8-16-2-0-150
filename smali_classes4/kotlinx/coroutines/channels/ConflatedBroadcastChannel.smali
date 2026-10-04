@@ -37,7 +37,7 @@
 .method public constructor <init>()V
     .registers 3
 
-    .line 104
+    .line 100
     new-instance v0, Lkotlinx/coroutines/channels/BroadcastChannelImpl;
 
     const/4 v1, -0x1
@@ -57,10 +57,10 @@
         }
     .end annotation
 
-    .line 111
+    .line 107
     invoke-direct {p0}, Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;-><init>()V
 
-    .line 112
+    .line 108
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;->trySend-JP2dKIU(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -76,10 +76,10 @@
         }
     .end annotation
 
-    .line 99
+    .line 95
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
+    .line 98
     iput-object p1, p0, Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;->broadcast:Lkotlinx/coroutines/channels/BroadcastChannelImpl;
 
     return-void
@@ -152,7 +152,7 @@
         }
     .end annotation
 
-    .line 122
+    .line 118
     iget-object p0, p0, Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;->broadcast:Lkotlinx/coroutines/channels/BroadcastChannelImpl;
 
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BroadcastChannelImpl;->getValue()Ljava/lang/Object;
@@ -170,7 +170,7 @@
         }
     .end annotation
 
-    .line 127
+    .line 123
     iget-object p0, p0, Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;->broadcast:Lkotlinx/coroutines/channels/BroadcastChannelImpl;
 
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BroadcastChannelImpl;->getValueOrNull()Ljava/lang/Object;

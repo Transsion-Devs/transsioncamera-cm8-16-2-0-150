@@ -21,20 +21,20 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 478
+    .line 529
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 479
+    .line 530
     iput-object p1, p0, Lkotlin/sequences/DropSequence;->sequence:Lkotlin/sequences/Sequence;
 
-    .line 480
+    .line 531
     iput p2, p0, Lkotlin/sequences/DropSequence;->count:I
 
     if-ltz p2, :cond_f
 
     return-void
 
-    .line 483
+    .line 534
     :cond_f
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -68,7 +68,7 @@
 .method public static final synthetic access$getCount$p(Lkotlin/sequences/DropSequence;)I
     .registers 1
 
-    .line 478
+    .line 529
     iget p0, p0, Lkotlin/sequences/DropSequence;->count:I
 
     return p0
@@ -77,7 +77,7 @@
 .method public static final synthetic access$getSequence$p(Lkotlin/sequences/DropSequence;)Lkotlin/sequences/Sequence;
     .registers 1
 
-    .line 478
+    .line 529
     iget-object p0, p0, Lkotlin/sequences/DropSequence;->sequence:Lkotlin/sequences/Sequence;
 
     return-object p0
@@ -88,7 +88,7 @@
 .method public drop(I)Lkotlin/sequences/Sequence;
     .registers 3
 
-    .line 486
+    .line 537
     iget v0, p0, Lkotlin/sequences/DropSequence;->count:I
 
     add-int/2addr v0, p1
@@ -114,7 +114,7 @@
 .method public iterator()Ljava/util/Iterator;
     .registers 2
 
-    .line 489
+    .line 540
     new-instance v0, Lkotlin/sequences/DropSequence$iterator$1;
 
     invoke-direct {v0, p0}, Lkotlin/sequences/DropSequence$iterator$1;-><init>(Lkotlin/sequences/DropSequence;)V

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)V
     .registers 2
 
-    .line 315
+    .line 310
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreviewStarted()V
     .registers 5
 
-    .line 325
+    .line 320
     sget-object v0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -63,38 +63,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 326
+    .line 321
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fputmIsPreview(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;Z)V
 
-    .line 327
-    iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
-
-    invoke-static {v0}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmRestored(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_38
-
-    .line 328
-    iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
-
-    invoke-static {v0}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmIsModeSupportOriginal(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Z
-
-    move-result v2
-
-    invoke-static {v0, v2}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fputmIsModeSupport(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;Z)V
-
-    .line 329
-    iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
-
-    invoke-static {v0}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$msyncRemoteCaptureFragment(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)V
-
-    .line 331
-    :cond_38
+    .line 322
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -107,18 +83,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_ad
+    if-eqz v0, :cond_97
 
-    .line 332
+    .line 323
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmIsModeSupport(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_ad
+    if-eqz v0, :cond_97
 
-    .line 333
+    .line 324
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
@@ -134,7 +110,7 @@
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;->requestChangeCommand(Ljava/lang/String;)V
 
-    .line 334
+    .line 325
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Landroid/os/Handler;
@@ -149,7 +125,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 335
+    .line 326
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Landroid/os/Handler;
@@ -160,7 +136,7 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 336
+    .line 327
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Landroid/os/Handler;
@@ -189,7 +165,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 337
+    .line 328
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Landroid/os/Handler;
@@ -200,7 +176,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 338
+    .line 329
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Landroid/os/Handler;
@@ -215,21 +191,21 @@
 
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
-    :cond_ad
+    :cond_97
     return-void
 .end method
 
 .method public onPreviewStopped()V
     .registers 3
 
-    .line 319
+    .line 314
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fputmIsPreview(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;Z)V
 
-    .line 320
+    .line 315
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;

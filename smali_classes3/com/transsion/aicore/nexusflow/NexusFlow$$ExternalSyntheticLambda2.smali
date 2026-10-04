@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/String;
+.field public final synthetic f$0:Lcom/transsion/aicore/nexusflow/NexusFlow;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lcom/transsion/aicore/nexusflow/NexusFlow;)V
     .registers 2
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda2;->f$0:Ljava/lang/String;
+    iput-object p1, p0, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda2;->f$0:Lcom/transsion/aicore/nexusflow/NexusFlow;
 
     return-void
 .end method
@@ -28,11 +28,11 @@
     .registers 2
 
     .line 0
-    iget-object p0, p0, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda2;->f$0:Ljava/lang/String;
+    iget-object p0, p0, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda2;->f$0:Lcom/transsion/aicore/nexusflow/NexusFlow;
 
     check-cast p1, Landroid/os/Bundle;
 
-    invoke-static {p0, p1}, Lcom/transsion/aicore/nexusflow/NexusFlow;->$r8$lambda$xyTMrtAmHFExxoYifnIB_OiVC58(Ljava/lang/String;Landroid/os/Bundle;)Lkotlin/Unit;
+    invoke-static {p0, p1}, Lcom/transsion/aicore/nexusflow/NexusFlow;->$r8$lambda$1J0k1wj_rBrp36dWAr5wUAc5XEw(Lcom/transsion/aicore/nexusflow/NexusFlow;Landroid/os/Bundle;)Lkotlin/Unit;
 
     move-result-object p0
 

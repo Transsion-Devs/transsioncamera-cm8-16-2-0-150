@@ -91,3 +91,29 @@
 
     return p0
 .end method
+
+.method public subList(II)Ljava/util/List;
+    .registers 5
+
+    .line 54
+    sget-object v0, Lkotlin/collections/AbstractList;->Companion:Lkotlin/collections/AbstractList$Companion;
+
+    iget v1, p0, Lkotlin/collections/AbstractList$SubList;->_size:I
+
+    invoke-virtual {v0, p1, p2, v1}, Lkotlin/collections/AbstractList$Companion;->checkRangeIndexes$kotlin_stdlib(III)V
+
+    .line 55
+    new-instance v0, Lkotlin/collections/AbstractList$SubList;
+
+    iget-object v1, p0, Lkotlin/collections/AbstractList$SubList;->list:Lkotlin/collections/AbstractList;
+
+    iget p0, p0, Lkotlin/collections/AbstractList$SubList;->fromIndex:I
+
+    add-int/2addr p1, p0
+
+    add-int/2addr p0, p2
+
+    invoke-direct {v0, v1, p1, p0}, Lkotlin/collections/AbstractList$SubList;-><init>(Lkotlin/collections/AbstractList;II)V
+
+    return-object v0
+.end method

@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3"
     f = "Merge.kt"
     l = {
-        0x1b
+        0x17
     }
     m = "invokeSuspend"
 .end annotation
@@ -166,7 +166,7 @@
 
     move-result-object v0
 
-    .line 25
+    .line 21
     iget v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowTransformLatest$flowCollect$3;->label:I
 
     const/4 v2, 0x1
@@ -195,12 +195,12 @@
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
-    .line 26
+    .line 22
     new-instance v1, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v1}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    .line 27
+    .line 23
     iget-object v3, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowTransformLatest$flowCollect$3;->this$0:Lkotlinx/coroutines/flow/internal/ChannelFlowTransformLatest;
 
     iget-object v4, v3, Lkotlinx/coroutines/flow/internal/ChannelFlowOperator;->flow:Lkotlinx/coroutines/flow/Flow;
@@ -221,7 +221,7 @@
 
     return-object v0
 
-    .line 37
+    .line 33
     :cond_37
     :goto_37
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

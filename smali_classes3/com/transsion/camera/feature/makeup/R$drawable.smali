@@ -14,15 +14,15 @@
 
 
 # static fields
-.field public static video_face_beauty_makeup_tab_indicator:I = 0x7f080b39
+.field public static video_face_beauty_makeup_tab_indicator:I = 0x7f080aab
 
-.field public static video_face_beauty_makeup_tab_indicator_low_light:I = 0x7f080b3a
+.field public static video_face_beauty_makeup_tab_indicator_low_light:I = 0x7f080aac
 
-.field public static video_face_beauty_makeup_tab_indicator_normal:I = 0x7f080b3b
+.field public static video_face_beauty_makeup_tab_indicator_normal:I = 0x7f080aad
 
-.field public static video_face_beauty_makeup_tab_indicator_normal_low_light:I = 0x7f080b3c
+.field public static video_face_beauty_makeup_tab_indicator_normal_low_light:I = 0x7f080aae
 
-.field public static video_face_beauty_makeup_tab_indicator_selected:I = 0x7f080b3d
+.field public static video_face_beauty_makeup_tab_indicator_selected:I = 0x7f080aaf
 
 
 # direct methods

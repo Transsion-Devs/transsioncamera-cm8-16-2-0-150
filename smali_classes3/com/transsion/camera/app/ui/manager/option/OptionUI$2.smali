@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/option/OptionUI;)V
     .registers 2
 
-    .line 219
+    .line 231
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI$2;->this$0:Lcom/transsion/camera/app/ui/manager/option/OptionUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 233
+    .line 245
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI$2;->this$0:Lcom/transsion/camera/app/ui/manager/option/OptionUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
@@ -44,7 +44,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 234
+    .line 246
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI$2;->this$0:Lcom/transsion/camera/app/ui/manager/option/OptionUI;
 
     const/4 p1, 0x1
@@ -57,7 +57,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 227
+    .line 239
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI$2;->this$0:Lcom/transsion/camera/app/ui/manager/option/OptionUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
@@ -66,7 +66,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 228
+    .line 240
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI$2;->this$0:Lcom/transsion/camera/app/ui/manager/option/OptionUI;
 
     const/4 p1, 0x1
@@ -79,7 +79,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 222
+    .line 234
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI$2;->this$0:Lcom/transsion/camera/app/ui/manager/option/OptionUI;
 
     const/4 p1, 0x0

@@ -19,19 +19,19 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 23
+    .line 19
     const-class v0, Lkotlinx/coroutines/CoroutineExceptionHandler;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
 
-    .line 21
+    .line 17
     invoke-static {v0, v1}, Ljava/util/ServiceLoader;->load(Ljava/lang/Class;Ljava/lang/ClassLoader;)Ljava/util/ServiceLoader;
 
     move-result-object v0
 
-    .line 24
+    .line 20
     invoke-virtual {v0}, Ljava/util/ServiceLoader;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -54,7 +54,7 @@
 .method public static final ensurePlatformExceptionHandlerLoaded(Lkotlinx/coroutines/CoroutineExceptionHandler;)V
     .registers 2
 
-    .line 29
+    .line 25
     sget-object v0, Lkotlinx/coroutines/internal/CoroutineExceptionHandlerImplKt;->platformExceptionHandlers:Ljava/util/Collection;
 
     invoke-interface {v0, p0}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
@@ -86,7 +86,7 @@
         }
     .end annotation
 
-    .line 21
+    .line 17
     sget-object v0, Lkotlinx/coroutines/internal/CoroutineExceptionHandlerImplKt;->platformExceptionHandlers:Ljava/util/Collection;
 
     return-object v0
@@ -95,12 +95,12 @@
 .method public static final propagateExceptionFinalResort(Ljava/lang/Throwable;)V
     .registers 3
 
-    .line 34
+    .line 30
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
-    .line 35
+    .line 31
     invoke-virtual {v0}, Ljava/lang/Thread;->getUncaughtExceptionHandler()Ljava/lang/Thread$UncaughtExceptionHandler;
 
     move-result-object v1

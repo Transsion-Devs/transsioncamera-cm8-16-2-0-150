@@ -32,7 +32,7 @@
         }
     .end annotation
 
-    .line 198
+    .line 203
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$2;->this$0:Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$2;->val$oldModeName:Ljava/lang/String;
@@ -47,14 +47,14 @@
 .method public run()V
     .registers 4
 
-    .line 201
+    .line 206
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$2;->this$0:Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;
 
     iget-object v0, v0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     if-eqz v0, :cond_32
 
-    .line 202
+    .line 207
     const-string v0, "com.transsion.camera.feature.mode.underwater.UnderwaterModeEntry"
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$2;->val$oldModeName:Ljava/lang/String;
@@ -71,21 +71,21 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$2;->val$oldModeName:Ljava/lang/String;
 
-    .line 203
+    .line 208
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_2a
 
-    .line 204
+    .line 209
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$2;->this$0:Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;
 
     iget-object v0, v0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->showNotice()V
 
-    .line 205
+    .line 210
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$2;->this$0:Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
@@ -94,7 +94,7 @@
 
     return-void
 
-    .line 207
+    .line 212
     :cond_2a
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$2;->this$0:Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;
 

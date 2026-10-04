@@ -702,7 +702,7 @@
 
     iput-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mSwitchPreviewValue:Ljava/lang/String;
 
-    .line 2073
+    .line 2081
     new-instance v1, Lcom/transsion/camera/app/ui/AbstractHintUI$5;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/AbstractHintUI$5;-><init>(Lcom/transsion/camera/app/ui/AbstractHintUI;)V
@@ -755,7 +755,7 @@
 .method private asdHintShow()Z
     .registers 1
 
-    .line 1015
+    .line 1023
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -787,7 +787,7 @@
 .method private doAsdHintSlideAnim(ZZ)V
     .registers 6
 
-    .line 1409
+    .line 1417
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -814,12 +814,12 @@
 
     if-eqz p1, :cond_34
 
-    .line 1411
+    .line 1419
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHintSlideOutAnimator:Landroid/animation/Animator;
 
     invoke-virtual {p1}, Landroid/animation/Animator;->end()V
 
-    .line 1412
+    .line 1420
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHintSlideOutAnimator:Landroid/animation/Animator;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getAsdHintRootLayout()Landroid/view/ViewGroup;
@@ -828,14 +828,14 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
 
-    .line 1413
+    .line 1421
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHintSlideOutAnimator:Landroid/animation/Animator;
 
     invoke-virtual {p0}, Landroid/animation/Animator;->start()V
 
     return-void
 
-    .line 1415
+    .line 1423
     :cond_34
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mSuperNightScaleAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -847,12 +847,12 @@
 
     if-nez p1, :cond_6a
 
-    .line 1416
+    .line 1424
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHintSlideOutAnimator:Landroid/animation/Animator;
 
     invoke-virtual {p1}, Landroid/animation/Animator;->end()V
 
-    .line 1417
+    .line 1425
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getAsdHintRootLayout()Landroid/view/ViewGroup;
 
     move-result-object p1
@@ -863,7 +863,7 @@
 
     if-eqz p2, :cond_57
 
-    .line 1419
+    .line 1427
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getAsdHintRootLayout()Landroid/view/ViewGroup;
 
     move-result-object p0
@@ -874,13 +874,13 @@
 
     return-void
 
-    .line 1421
+    .line 1429
     :cond_57
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHintSlideInAnimator:Landroid/animation/Animator;
 
     invoke-virtual {p1}, Landroid/animation/Animator;->end()V
 
-    .line 1422
+    .line 1430
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHintSlideInAnimator:Landroid/animation/Animator;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getAsdHintRootLayout()Landroid/view/ViewGroup;
@@ -889,7 +889,7 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
 
-    .line 1423
+    .line 1431
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHintSlideInAnimator:Landroid/animation/Animator;
 
     invoke-virtual {p0}, Landroid/animation/Animator;->start()V
@@ -1541,14 +1541,14 @@
 .method private hideAlwaysHintView()V
     .registers 3
 
-    .line 1019
+    .line 1027
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "hideAlwaysHintView"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1020
+    .line 1028
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAlwaysHintText:Landroid/widget/TextView;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->hideHintView(Landroid/widget/TextView;)V
@@ -1559,7 +1559,7 @@
 .method private hideAutoHideHintView()V
     .registers 4
 
-    .line 1038
+    .line 1046
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "hideAutoHideHintView"
@@ -1568,13 +1568,13 @@
 
     const/4 v0, 0x0
 
-    .line 1039
+    .line 1047
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Z)V
 
-    .line 1040
+    .line 1048
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsAutoInfoShowing:Z
 
-    .line 1041
+    .line 1049
     iget v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
     const/4 v2, 0x4
@@ -1589,19 +1589,19 @@
 
     if-ne v1, v2, :cond_1d
 
-    .line 1044
+    .line 1052
     :cond_18
     iget v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentOrientation:I
 
     invoke-virtual {p0, v1, v0, v2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateProgressBarLayout(IZI)V
 
-    .line 1046
+    .line 1054
     :cond_1d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAutoHideHintText:Landroid/widget/TextView;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->hideHintView(Landroid/widget/TextView;)V
 
-    .line 1048
+    .line 1056
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
 
     const/16 v0, 0x65
@@ -1616,20 +1616,20 @@
 
     const/4 v0, 0x0
 
-    .line 1098
+    .line 1106
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateHintState(Z)V
 
     const/16 p0, 0x8
 
-    .line 1099
+    .line 1107
     invoke-virtual {p1, p0}, Landroid/view/View;->setVisibility(I)V
 
     const/4 p0, 0x0
 
-    .line 1100
+    .line 1108
     invoke-virtual {p1, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1101
+    .line 1109
     invoke-virtual {p1, p0, p0, p0, p0}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     return-void
@@ -1638,33 +1638,33 @@
 .method private hideProgressHintView()V
     .registers 3
 
-    .line 1132
+    .line 1140
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "hideProgressHintView"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1133
+    .line 1141
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1134
+    .line 1142
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressHintRoot:Landroid/widget/FrameLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1135
+    .line 1143
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressBarView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1136
+    .line 1144
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressHintText:Landroid/widget/TextView;
 
     const/4 v0, 0x0
@@ -1677,7 +1677,7 @@
 .method private synthetic lambda$setTwinkleGuideRootGone$0()V
     .registers 2
 
-    .line 1405
+    .line 1413
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideRoot:Landroid/view/View;
 
     const/16 v0, 0x8
@@ -1690,7 +1690,7 @@
 .method private synthetic lambda$updateLayout$1(IIILandroid/animation/ValueAnimator;)V
     .registers 7
 
-    .line 1712
+    .line 1720
     const-string v0, "alpha"
 
     invoke-virtual {p4, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1703,12 +1703,12 @@
 
     move-result v0
 
-    .line 1713
+    .line 1721
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1714
+    .line 1722
     const-string v0, "padding"
 
     invoke-virtual {p4, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1721,7 +1721,7 @@
 
     move-result p4
 
-    .line 1715
+    .line 1723
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, p1, p4, p2, p3}, Landroid/view/View;->setPadding(IIII)V
@@ -1732,7 +1732,7 @@
 .method private synthetic lambda$updateLayout$2(IIILandroid/animation/ValueAnimator;)V
     .registers 5
 
-    .line 1729
+    .line 1737
     invoke-virtual {p4}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p4
@@ -1743,7 +1743,7 @@
 
     move-result p4
 
-    .line 1730
+    .line 1738
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, p1, p4, p2, p3}, Landroid/view/View;->setPadding(IIII)V
@@ -1754,7 +1754,7 @@
 .method private synthetic lambda$updateProgressBarLayoutForHover$3(Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
     .registers 3
 
-    .line 2063
+    .line 2071
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -1767,7 +1767,7 @@
 
     iput p2, p1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 2064
+    .line 2072
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressGroupLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -1778,7 +1778,7 @@
 .method private removeDynamicAlwaysHintShowMessage(Lcom/transsion/camera/app/common/ui/HintInfo;)V
     .registers 5
 
-    .line 905
+    .line 913
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1805,12 +1805,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 907
+    .line 915
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mDelayedShowDynamicHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     if-ne p1, v0, :cond_2b
 
-    .line 908
+    .line 916
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
 
     const/16 p1, 0x6a
@@ -1824,33 +1824,33 @@
 .method private removeTwinkleGuideMessages(Z)V
     .registers 4
 
-    .line 1309
+    .line 1317
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[removeTwinkleGuideMessages]"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1310
+    .line 1318
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
 
     if-eqz v0, :cond_30
 
     const/16 v1, 0x6b
 
-    .line 1311
+    .line 1319
     invoke-virtual {v0, v1}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_18
 
-    .line 1312
+    .line 1320
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1314
+    .line 1322
     :cond_18
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
 
@@ -1862,7 +1862,7 @@
 
     if-eqz v0, :cond_27
 
-    .line 1315
+    .line 1323
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
@@ -1872,13 +1872,13 @@
 
     const/4 p1, 0x0
 
-    .line 1318
+    .line 1326
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideEnabled:Z
 
     :cond_2c
     const/4 p1, 0x1
 
-    .line 1320
+    .line 1328
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->stopTwinkleGuideAnim(Z)V
 
     :cond_30
@@ -1890,10 +1890,10 @@
 
     const/4 v0, 0x0
 
-    .line 1297
+    .line 1305
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->removeTwinkleGuideMessages(Z)V
 
-    .line 1298
+    .line 1306
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideEnabled:Z
 
     if-eqz v0, :cond_1f
@@ -1906,10 +1906,10 @@
 
     const-wide/16 v2, 0xbb8
 
-    .line 1299
+    .line 1307
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 1300
+    .line 1308
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getGuideTwinkleDuration()J
@@ -1929,7 +1929,7 @@
 .method private resetHintRotateLayout()V
     .registers 4
 
-    .line 804
+    .line 812
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v0
@@ -1940,7 +1940,7 @@
 
     return-void
 
-    .line 805
+    .line 813
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -1952,22 +1952,22 @@
 
     const/4 v1, -0x1
 
-    .line 806
+    .line 814
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 807
+    .line 815
     iput v1, v0, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintPercentHeight:F
 
-    .line 808
+    .line 816
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2, v2}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 809
+    .line 817
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -1978,7 +1978,7 @@
 .method private runHintRootAnimator()V
     .registers 5
 
-    .line 1845
+    .line 1853
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorIn:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_f
@@ -1989,12 +1989,12 @@
 
     if-eqz v0, :cond_f
 
-    .line 1846
+    .line 1854
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorIn:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 1849
+    .line 1857
     :cond_f
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
@@ -2005,10 +2005,10 @@
     :cond_14
     const/4 v1, 0x0
 
-    .line 1853
+    .line 1861
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1855
+    .line 1863
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x1
@@ -2035,12 +2035,12 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorIn:Landroid/animation/ObjectAnimator;
 
-    .line 1856
+    .line 1864
     sget-object v1, Lcom/transsion/camera/app/ui/AbstractHintUI;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1857
+    .line 1865
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorIn:Landroid/animation/ObjectAnimator;
 
     new-instance v1, Lcom/transsion/camera/app/ui/AbstractHintUI$4;
@@ -2049,14 +2049,14 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1869
+    .line 1877
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorIn:Landroid/animation/ObjectAnimator;
 
     const-wide/16 v1, 0x64
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 1870
+    .line 1878
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorIn:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
@@ -2067,7 +2067,7 @@
 .method private runHintRootAnimator(I)V
     .registers 9
 
-    .line 1815
+    .line 1823
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorIn:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_f
@@ -2078,12 +2078,12 @@
 
     if-eqz v0, :cond_f
 
-    .line 1816
+    .line 1824
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorIn:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 1818
+    .line 1826
     :cond_f
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorOut:Landroid/animation/ObjectAnimator;
 
@@ -2095,12 +2095,12 @@
 
     if-eqz v0, :cond_1e
 
-    .line 1819
+    .line 1827
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 1822
+    .line 1830
     :cond_1e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
@@ -2111,10 +2111,10 @@
     :cond_23
     const/4 v1, 0x0
 
-    .line 1827
+    .line 1835
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1828
+    .line 1836
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     const/4 v2, 0x1
@@ -2139,7 +2139,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorOut:Landroid/animation/ObjectAnimator;
 
-    .line 1829
+    .line 1837
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     new-array v2, v2, [F
@@ -2158,17 +2158,17 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorIn:Landroid/animation/ObjectAnimator;
 
-    .line 1830
+    .line 1838
     sget-object v1, Lcom/transsion/camera/app/ui/AbstractHintUI;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1831
+    .line 1839
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1832
+    .line 1840
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorOut:Landroid/animation/ObjectAnimator;
 
     new-instance v1, Lcom/transsion/camera/app/ui/AbstractHintUI$3;
@@ -2177,7 +2177,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1841
+    .line 1849
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mFoldAnimatorOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
@@ -2188,12 +2188,12 @@
 .method private setTwinkleGuideImageResource(I)V
     .registers 2
 
-    .line 1009
+    .line 1017
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideImageView:Landroid/widget/ImageView;
 
     if-eqz p0, :cond_7
 
-    .line 1010
+    .line 1018
     invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     :cond_7
@@ -2205,17 +2205,17 @@
 
     const/4 v0, 0x0
 
-    .line 1403
+    .line 1411
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsTwinkleGuideShowing:Z
 
-    .line 1404
+    .line 1412
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v1, 0x172
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 1405
+    .line 1413
     new-instance v0, Lcom/transsion/camera/app/ui/AbstractHintUI$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/AbstractHintUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/ui/AbstractHintUI;)V
@@ -2228,7 +2228,7 @@
 .method private showAlwaysHintView(Lcom/transsion/camera/app/common/ui/HintInfo;)V
     .registers 11
 
-    .line 928
+    .line 936
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2255,46 +2255,46 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 929
+    .line 937
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mEnableUI:Z
 
     if-nez v1, :cond_2a
 
-    .line 930
+    .line 938
     const-string p0, "It shows dynamic always hint view ,but disable."
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 933
+    .line 941
     :cond_2a
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsTwinkleGuideShowing:Z
 
     if-eqz v1, :cond_34
 
-    .line 934
+    .line 942
     const-string p0, "TwinkleGuide is showing, return"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 938
+    .line 946
     :cond_34
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsAutoInfoShowing:Z
 
     if-nez v1, :cond_143
 
-    .line 939
+    .line 947
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAlwaysInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 940
+    .line 948
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAlwaysInfoStack:Ljava/util/LinkedList;
 
     invoke-virtual {v1, p1}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
 
-    .line 941
+    .line 949
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isAsdDynamic()Z
 
     move-result v1
@@ -2320,7 +2320,7 @@
 
     if-eqz v1, :cond_130
 
-    .line 942
+    .line 950
     :cond_57
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -2338,7 +2338,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdExpandAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 943
+    .line 951
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->isRunning()Z
 
     move-result v1
@@ -2347,7 +2347,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 944
+    .line 952
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->isRunning()Z
 
     move-result v1
@@ -2356,14 +2356,14 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHideAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 945
+    .line 953
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->isRunning()Z
 
     move-result v1
 
     if-nez v1, :cond_d5
 
-    .line 946
+    .line 954
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
@@ -2382,7 +2382,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 947
+    .line 955
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->getOtherMessage()Ljava/lang/String;
 
     move-result-object v0
@@ -2397,7 +2397,7 @@
 
     if-nez v0, :cond_ce
 
-    .line 948
+    .line 956
     :cond_9c
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTempInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
@@ -2407,7 +2407,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 949
+    .line 957
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTempInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
@@ -2416,7 +2416,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 950
+    .line 958
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTempInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getOtherDrawable()Landroid/graphics/drawable/Drawable;
@@ -2425,7 +2425,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 951
+    .line 959
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTempInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getOtherMessage()Ljava/lang/String;
@@ -2434,23 +2434,23 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherMessage(Ljava/lang/String;)V
 
-    .line 952
+    .line 960
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->asdHintShow()Z
 
     move-result v0
 
     if-eqz v0, :cond_cb
 
-    .line 953
+    .line 961
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTempInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->showAsdHintView(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 955
+    .line 963
     :cond_cb
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->hideAlwaysHintView()V
 
-    .line 957
+    .line 965
     :cond_ce
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -2460,39 +2460,39 @@
 
     goto :goto_104
 
-    .line 959
+    .line 967
     :cond_d5
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
 
     if-eqz v1, :cond_104
 
-    .line 960
+    .line 968
     new-instance v1, Landroid/os/Message;
 
     invoke-direct {v1}, Landroid/os/Message;-><init>()V
 
     const/16 v2, 0x6a
 
-    .line 961
+    .line 969
     iput v2, v1, Landroid/os/Message;->what:I
 
-    .line 962
+    .line 970
     iput-object p1, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 963
+    .line 971
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mDelayedShowDynamicHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 964
+    .line 972
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
 
     invoke-virtual {v5, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 965
+    .line 973
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
 
     invoke-virtual {v2, v1, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 966
+    .line 974
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2509,7 +2509,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 970
+    .line 978
     :cond_104
     :goto_104
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getTwinkleGuideMode()Ljava/lang/String;
@@ -2518,47 +2518,47 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
-    .line 971
+    .line 979
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isTwinkleEnabled()Z
 
     move-result v2
 
-    .line 972
+    .line 980
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isSuperNightGuideSupport()Z
 
     move-result v3
 
-    .line 973
+    .line 981
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isMagicSkyGuideSupport()Z
 
     move-result v4
 
-    .line 974
+    .line 982
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isPmasterGuideSupport()Z
 
     move-result v5
 
-    .line 975
+    .line 983
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isDocumentGuideSupport()Z
 
     move-result v6
 
-    .line 976
+    .line 984
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isFlareCaptureGuideSupport()Z
 
     move-result v7
 
-    .line 977
+    .line 985
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isCelebritySceneGuideSupport()Z
 
     move-result v8
 
     move-object v1, p0
 
-    .line 971
+    .line 979
     invoke-virtual/range {v1 .. v8}, Lcom/transsion/camera/app/ui/AbstractHintUI;->showTwinkleGuide(ZZZZZZZ)V
 
-    .line 978
+    .line 986
     iget-object p0, v1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
     invoke-virtual {v1, p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateTwinkleGuideInfo(Ljava/lang/String;)V
@@ -2568,22 +2568,22 @@
     :cond_130
     move-object v1, p0
 
-    .line 980
+    .line 988
     invoke-direct {v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateHintRotateLayoutInDVVideoMode()V
 
-    .line 981
+    .line 989
     iget-object p0, v1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAlwaysHintText:Landroid/widget/TextView;
 
     invoke-direct {v1, p1, p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->showHintView(Lcom/transsion/camera/app/common/ui/HintInfo;Landroid/widget/TextView;)V
 
-    .line 982
+    .line 990
     invoke-direct {v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->asdHintShow()Z
 
     move-result p0
 
     if-eqz p0, :cond_151
 
-    .line 983
+    .line 991
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->hideAsdHintView()V
 
     goto :goto_151
@@ -2591,7 +2591,7 @@
     :cond_143
     move-object v1, p0
 
-    .line 987
+    .line 995
     iget-object p0, v1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAlwaysInfoStack:Ljava/util/LinkedList;
 
     invoke-virtual {p0, p1}, Ljava/util/LinkedList;->contains(Ljava/lang/Object;)Z
@@ -2600,7 +2600,7 @@
 
     if-nez p0, :cond_151
 
-    .line 988
+    .line 996
     iget-object p0, v1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAlwaysInfoStack:Ljava/util/LinkedList;
 
     invoke-virtual {p0, p1}, Ljava/util/LinkedList;->push(Ljava/lang/Object;)V
@@ -2609,7 +2609,7 @@
     :goto_151
     const/4 p0, 0x1
 
-    .line 991
+    .line 999
     invoke-virtual {v1, p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateHintState(Z)V
 
     return-void
@@ -2618,7 +2618,7 @@
 .method private showAutoHideHintView(Lcom/transsion/camera/app/common/ui/HintInfo;)V
     .registers 6
 
-    .line 1024
+    .line 1032
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "showAutoHideHintView"
@@ -2627,18 +2627,18 @@
 
     const/4 v0, 0x1
 
-    .line 1025
+    .line 1033
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsAutoInfoShowing:Z
 
     const/4 v1, 0x0
 
-    .line 1026
+    .line 1034
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Lcom/transsion/camera/app/common/ui/HintInfo;Z)V
 
-    .line 1027
+    .line 1035
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateHintRotateLayoutInDVVideoMode()V
 
-    .line 1028
+    .line 1036
     iget v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
     const/4 v3, 0x4
@@ -2653,19 +2653,19 @@
 
     if-ne v2, v3, :cond_21
 
-    .line 1031
+    .line 1039
     :cond_1c
     iget v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentOrientation:I
 
     invoke-virtual {p0, v2, v1, v3}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateProgressBarLayout(IZI)V
 
-    .line 1033
+    .line 1041
     :cond_21
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAutoHideHintText:Landroid/widget/TextView;
 
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->showHintView(Lcom/transsion/camera/app/common/ui/HintInfo;Landroid/widget/TextView;)V
 
-    .line 1034
+    .line 1042
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->stopTwinkleGuideAnim(Z)V
 
     return-void
@@ -2674,7 +2674,7 @@
 .method private showDynamicAlwaysHintView(Lcom/transsion/camera/app/common/ui/HintInfo;)V
     .registers 5
 
-    .line 899
+    .line 907
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2695,10 +2695,10 @@
 
     const/4 v0, 0x0
 
-    .line 900
+    .line 908
     iput-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mDelayedShowDynamicHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 901
+    .line 909
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->showAlwaysHintView(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
     return-void
@@ -2707,7 +2707,7 @@
 .method private showHintView(Lcom/transsion/camera/app/common/ui/HintInfo;Landroid/widget/TextView;)V
     .registers 8
 
-    .line 1052
+    .line 1060
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
 
     move-result-object v0
@@ -2728,7 +2728,7 @@
 
     if-eqz v0, :cond_26
 
-    .line 1053
+    .line 1061
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -2743,7 +2743,7 @@
 
     const/16 p0, 0x8
 
-    .line 1054
+    .line 1062
     invoke-virtual {p2, p0}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -2751,10 +2751,10 @@
     :cond_26
     const/4 v0, 0x0
 
-    .line 1057
+    .line 1065
     invoke-virtual {p2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1058
+    .line 1066
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
 
     move-result-object v1
@@ -2763,7 +2763,7 @@
 
     if-eqz v1, :cond_39
 
-    .line 1059
+    .line 1067
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
 
     move-result-object v1
@@ -2772,11 +2772,11 @@
 
     goto :goto_3c
 
-    .line 1061
+    .line 1069
     :cond_39
     invoke-virtual {p2, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1064
+    .line 1072
     :goto_3c
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isHighlight()Z
 
@@ -2784,7 +2784,7 @@
 
     if-eqz v1, :cond_4d
 
-    .line 1065
+    .line 1073
     invoke-virtual {p2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2797,7 +2797,7 @@
 
     goto :goto_57
 
-    .line 1067
+    .line 1075
     :cond_4d
     invoke-virtual {p2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
@@ -2809,23 +2809,23 @@
 
     move-result v1
 
-    .line 1069
+    .line 1077
     :goto_57
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1070
+    .line 1078
     sget-object v1, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1071
+    .line 1079
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     if-eqz v1, :cond_74
 
-    .line 1073
+    .line 1081
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v3
@@ -2836,16 +2836,16 @@
 
     invoke-virtual {v1, v0, v0, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1074
+    .line 1082
     invoke-virtual {p2, v1, v2, v2, v2}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_77
 
-    .line 1076
+    .line 1084
     :cond_74
     invoke-virtual {p2, v2, v2, v2, v2}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 1079
+    .line 1087
     :goto_77
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isBackgroundEnabled()Z
 
@@ -2853,21 +2853,21 @@
 
     if-eqz v0, :cond_9d
 
-    .line 1080
+    .line 1088
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isHighlight()Z
 
     move-result p1
 
     if-eqz p1, :cond_89
 
-    .line 1081
+    .line 1089
     sget p1, Lcom/transsion/camera/R$drawable;->hint_text_layout_highlight_background:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundResource(I)V
 
     goto :goto_a0
 
-    .line 1083
+    .line 1091
     :cond_89
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -2877,14 +2877,14 @@
 
     if-eqz p1, :cond_97
 
-    .line 1084
+    .line 1092
     sget p1, Lcom/transsion/camera/R$drawable;->hint_text_layout_background_ui_5:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundResource(I)V
 
     goto :goto_a0
 
-    .line 1086
+    .line 1094
     :cond_97
     sget p1, Lcom/transsion/camera/R$drawable;->hint_text_layout_background:I
 
@@ -2892,19 +2892,19 @@
 
     goto :goto_a0
 
-    .line 1090
+    .line 1098
     :cond_9d
     invoke-virtual {p2, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :goto_a0
     const/4 p1, 0x2
 
-    .line 1092
+    .line 1100
     invoke-virtual {p2, p1}, Landroid/view/View;->setImportantForAccessibility(I)V
 
     const/4 p1, 0x1
 
-    .line 1093
+    .line 1101
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateHintState(Z)V
 
     return-void
@@ -2913,21 +2913,21 @@
 .method private showProgressHintView(Lcom/transsion/camera/app/common/ui/HintInfo;)V
     .registers 6
 
-    .line 1105
+    .line 1113
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "showProgressHintView"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1106
+    .line 1114
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressHintRoot:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1107
+    .line 1115
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getProgressType()I
 
     move-result v0
@@ -2940,59 +2940,59 @@
 
     goto :goto_48
 
-    .line 1120
+    .line 1128
     :pswitch_19
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1121
+    .line 1129
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1122
+    .line 1130
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressBarView:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_48
 
-    .line 1115
+    .line 1123
     :pswitch_29
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1116
+    .line 1124
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1117
+    .line 1125
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressBarView:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_48
 
-    .line 1110
+    .line 1118
     :pswitch_39
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1111
+    .line 1119
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1112
+    .line 1120
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressBarView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1126
+    .line 1134
     :goto_48
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
 
@@ -3000,7 +3000,7 @@
 
     if-eqz v0, :cond_57
 
-    .line 1127
+    .line 1135
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressHintText:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
@@ -3023,15 +3023,15 @@
 .method private startAlwaysHintAnimator(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 1140
+    .line 1148
     invoke-virtual {p1}, Landroid/animation/Animator;->end()V
 
-    .line 1141
+    .line 1149
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAlwaysHintText:Landroid/widget/TextView;
 
     invoke-virtual {p1, p0}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
 
-    .line 1142
+    .line 1150
     invoke-virtual {p1}, Landroid/animation/Animator;->start()V
 
     return-void
@@ -3040,15 +3040,15 @@
 .method private startAutoHideHintAnimator(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 1146
+    .line 1154
     invoke-virtual {p1}, Landroid/animation/Animator;->end()V
 
-    .line 1147
+    .line 1155
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAutoHideHintText:Landroid/widget/TextView;
 
     invoke-virtual {p1, p0}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
 
-    .line 1148
+    .line 1156
     invoke-virtual {p1}, Landroid/animation/Animator;->start()V
 
     return-void
@@ -3057,14 +3057,14 @@
 .method private startTwinkleGuideAnim()V
     .registers 7
 
-    .line 1325
+    .line 1333
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[startTwinkleGuideAnim] ++"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1326
+    .line 1334
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
     const-string v2, "com.transsion.camera.feature.mode.supernight.SuperNightModeEntry"
@@ -3079,7 +3079,7 @@
 
     const-string v2, "com.transsion.camera.feature.supernightfilter.mode.SuperNightFilterModeEntry"
 
-    .line 1327
+    .line 1335
     invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -3095,44 +3095,44 @@
 
     goto/16 :goto_c9
 
-    .line 1331
+    .line 1339
     :cond_23
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mSuperNightScaleAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_2f
 
-    .line 1332
+    .line 1340
     invoke-virtual {v1}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1333
+    .line 1341
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mSuperNightScaleAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1335
+    .line 1343
     :cond_2f
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleSlideAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_3b
 
-    .line 1336
+    .line 1344
     invoke-virtual {v1}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1337
+    .line 1345
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleSlideAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1339
+    .line 1347
     :cond_3b
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsAutoInfoShowing:Z
 
     if-eqz v1, :cond_42
 
-    .line 1340
+    .line 1348
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->hideAutoHideHintView()V
 
-    .line 1342
+    .line 1350
     :cond_42
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsTwinkleGuideShowing:Z
 
@@ -3144,13 +3144,13 @@
 
     goto/16 :goto_c9
 
-    .line 1345
+    .line 1353
     :cond_4c
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsTransparent:Z
 
     if-eqz v1, :cond_54
 
-    .line 1346
+    .line 1354
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->resendTwinkleGuideMessages()V
 
     return-void
@@ -3158,24 +3158,24 @@
     :cond_54
     const/4 v1, 0x1
 
-    .line 1349
+    .line 1357
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsTwinkleGuideShowing:Z
 
-    .line 1350
+    .line 1358
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v3, 0x171
 
     invoke-interface {v2, v3}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 1351
+    .line 1359
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideRoot:Landroid/view/View;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1352
+    .line 1360
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideRoot:Landroid/view/View;
 
     iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRootView:Landroidx/constraintlayout/widget/ConstraintLayout;
@@ -3194,7 +3194,7 @@
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1353
+    .line 1361
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideRoot:Landroid/view/View;
 
     iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRootView:Landroidx/constraintlayout/widget/ConstraintLayout;
@@ -3231,17 +3231,17 @@
 
     move-result-object v2
 
-    .line 1355
+    .line 1363
     iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleSlideAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v4, :cond_af
 
-    .line 1356
+    .line 1364
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPathInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v4, v5}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1357
+    .line 1365
     iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleSlideAnimatorSet:Landroid/animation/AnimatorSet;
 
     new-array v5, v1, [Landroid/animation/Animator;
@@ -3250,12 +3250,12 @@
 
     invoke-virtual {v4, v5}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1358
+    .line 1366
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleSlideAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1360
+    .line 1368
     :cond_af
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideView:Lcom/opensource/svgaplayer/SVGAImageView;
 
@@ -3267,19 +3267,19 @@
 
     if-nez v2, :cond_be
 
-    .line 1361
+    .line 1369
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideView:Lcom/opensource/svgaplayer/SVGAImageView;
 
     invoke-virtual {v2}, Lcom/opensource/svgaplayer/SVGAImageView;->startAnimation()V
 
-    .line 1364
+    .line 1372
     :cond_be
     invoke-direct {p0, v1, v3}, Lcom/transsion/camera/app/ui/AbstractHintUI;->doAsdHintSlideAnim(ZZ)V
 
-    .line 1365
+    .line 1373
     invoke-virtual {p0, v3, v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateAnalytics(ZZ)V
 
-    .line 1366
+    .line 1374
     const-string p0, "[startTwinkleGuideAnim] start SuperNightGuideAnim] --"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
@@ -3292,7 +3292,7 @@
 .method private stopTwinkleGuideAnim(Z)V
     .registers 7
 
-    .line 1370
+    .line 1378
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3321,42 +3321,42 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1371
+    .line 1379
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsTwinkleGuideShowing:Z
 
     if-nez v1, :cond_27
 
     return-void
 
-    .line 1375
+    .line 1383
     :cond_27
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_33
 
-    .line 1376
+    .line 1384
     invoke-virtual {v1}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1377
+    .line 1385
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1379
+    .line 1387
     :cond_33
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleSlideAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_3f
 
-    .line 1380
+    .line 1388
     invoke-virtual {v1}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1381
+    .line 1389
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleSlideAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1383
+    .line 1391
     :cond_3f
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideView:Lcom/opensource/svgaplayer/SVGAImageView;
 
@@ -3368,14 +3368,14 @@
 
     if-eqz v1, :cond_4f
 
-    .line 1384
+    .line 1392
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideView:Lcom/opensource/svgaplayer/SVGAImageView;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lcom/opensource/svgaplayer/SVGAImageView;->stopAnimation(Z)V
 
-    .line 1386
+    .line 1394
     :cond_4f
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mSuperNightScaleAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -3385,17 +3385,17 @@
 
     if-nez v1, :cond_68
 
-    .line 1388
+    .line 1396
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideHideImmediately:Z
 
     if-eqz v1, :cond_5f
 
-    .line 1389
+    .line 1397
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->setTwinkleGuideRootGone()V
 
     goto :goto_68
 
-    .line 1391
+    .line 1399
     :cond_5f
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
 
@@ -3409,20 +3409,20 @@
     :goto_68
     const/4 v1, 0x0
 
-    .line 1395
+    .line 1403
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsTwinkleGuideShowing:Z
 
-    .line 1397
+    .line 1405
     invoke-direct {p0, v1, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->doAsdHintSlideAnim(ZZ)V
 
-    .line 1398
+    .line 1406
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->setTwinkleGuildState(Lcom/transsion/camera/app/common/storage/DataStore;Ljava/lang/String;)V
 
-    .line 1399
+    .line 1407
     const-string p0, "[stopTwinkleGuideAnim] --"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
@@ -3433,7 +3433,7 @@
 .method private updateCommonHintRotateOrientation(IZ)I
     .registers 12
 
-    .line 1589
+    .line 1597
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3490,7 +3490,7 @@
 
     if-eq p1, v5, :cond_c2
 
-    .line 1593
+    .line 1601
     iget v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
     const/16 v7, 0x10e
@@ -3499,12 +3499,12 @@
 
     if-ne v0, v6, :cond_7d
 
-    .line 1594
+    .line 1602
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-eqz v0, :cond_4c
 
-    .line 1595
+    .line 1603
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRecordingOrientation:I
 
     :cond_4c
@@ -3516,7 +3516,7 @@
 
     goto :goto_68
 
-    .line 1602
+    .line 1610
     :cond_53
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
@@ -3529,7 +3529,7 @@
     :goto_5a
     if-ge v1, v0, :cond_98
 
-    .line 1603
+    .line 1611
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -3542,7 +3542,7 @@
 
     goto :goto_5a
 
-    .line 1598
+    .line 1606
     :cond_68
     :goto_68
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
@@ -3556,7 +3556,7 @@
     :goto_6f
     if-ge v2, v0, :cond_98
 
-    .line 1599
+    .line 1607
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -3569,16 +3569,16 @@
 
     goto :goto_6f
 
-    .line 1606
+    .line 1614
     :cond_7d
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTextViewIsRotate:Z
 
     if-eqz v0, :cond_98
 
-    .line 1607
+    .line 1615
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTextViewIsRotate:Z
 
-    .line 1608
+    .line 1616
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -3590,7 +3590,7 @@
     :goto_8a
     if-ge v1, v0, :cond_98
 
-    .line 1609
+    .line 1617
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -3603,7 +3603,7 @@
 
     goto :goto_8a
 
-    .line 1612
+    .line 1620
     :cond_98
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
@@ -3619,7 +3619,7 @@
 
     goto :goto_aa
 
-    .line 1625
+    .line 1633
     :cond_a3
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -3627,7 +3627,7 @@
 
     goto/16 :goto_138
 
-    .line 1615
+    .line 1623
     :cond_aa
     :goto_aa
     iget-boolean v4, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
@@ -3636,7 +3636,7 @@
 
     if-ne v0, v3, :cond_b2
 
-    .line 1616
+    .line 1624
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRecordingOrientation:I
 
     :cond_b2
@@ -3654,7 +3654,7 @@
     :cond_b9
     move v7, p1
 
-    .line 1623
+    .line 1631
     :goto_ba
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -3664,7 +3664,7 @@
 
     goto/16 :goto_138
 
-    .line 1629
+    .line 1637
     :cond_c2
     iget-boolean v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
@@ -3674,10 +3674,10 @@
 
     if-ne v7, v3, :cond_e2
 
-    .line 1630
+    .line 1638
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRecordingOrientation:I
 
-    .line 1632
+    .line 1640
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -3687,7 +3687,7 @@
     :goto_d2
     if-ge v4, v0, :cond_e0
 
-    .line 1633
+    .line 1641
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -3705,7 +3705,7 @@
 
     goto :goto_133
 
-    .line 1635
+    .line 1643
     :cond_e2
     iget v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
@@ -3713,14 +3713,14 @@
 
     if-eqz v6, :cond_103
 
-    .line 1637
+    .line 1645
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRecordingOrientation:I
 
     if-nez v0, :cond_ed
 
     move v5, v4
 
-    .line 1638
+    .line 1646
     :cond_ed
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
@@ -3733,7 +3733,7 @@
     :goto_f4
     if-ge v1, v0, :cond_133
 
-    .line 1639
+    .line 1647
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -3748,7 +3748,7 @@
 
     goto :goto_f4
 
-    .line 1642
+    .line 1650
     :cond_103
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
@@ -3761,7 +3761,7 @@
     :goto_10a
     if-ge v2, v0, :cond_133
 
-    .line 1643
+    .line 1651
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -3774,13 +3774,13 @@
 
     goto :goto_10a
 
-    .line 1647
+    .line 1655
     :cond_118
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTextViewIsRotate:Z
 
     if-nez v0, :cond_133
 
-    .line 1648
+    .line 1656
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -3792,7 +3792,7 @@
     :goto_123
     if-ge v2, v0, :cond_131
 
-    .line 1649
+    .line 1657
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -3805,18 +3805,18 @@
 
     goto :goto_123
 
-    .line 1651
+    .line 1659
     :cond_131
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTextViewIsRotate:Z
 
-    .line 1654
+    .line 1662
     :cond_133
     :goto_133
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v0, v4, p2}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 1656
+    .line 1664
     :goto_138
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressGroupLayout:Landroid/widget/LinearLayout;
 
@@ -3832,20 +3832,20 @@
 .method private updateHintRootPaddingInfo(II)V
     .registers 11
 
-    .line 1491
+    .line 1499
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     if-nez v0, :cond_6
 
     goto/16 :goto_197
 
-    .line 1494
+    .line 1502
     :cond_6
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenWidth()I
 
     move-result v0
 
-    .line 1495
+    .line 1503
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenHeight()I
@@ -3858,14 +3858,14 @@
 
     mul-int/lit8 v3, v0, 0x4
 
-    .line 1500
+    .line 1508
     div-int/lit8 v3, v3, 0x3
 
     if-le v3, v1, :cond_1d
 
     mul-int/lit8 v1, v1, 0x3
 
-    .line 1503
+    .line 1511
     div-int/2addr v1, v2
 
     goto :goto_22
@@ -3878,22 +3878,22 @@
     :cond_1f
     mul-int/lit8 v1, v1, 0x3
 
-    .line 1507
+    .line 1515
     div-int/2addr v1, v2
 
     :goto_22
     const/4 v3, 0x0
 
-    .line 1509
+    .line 1517
     iput v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingTop:I
 
-    .line 1510
+    .line 1518
     iput v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingLeft:I
 
-    .line 1511
+    .line 1519
     iput v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingRight:I
 
-    .line 1512
+    .line 1520
     iput v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingBottom:I
 
     const/4 v4, 0x1
@@ -3906,7 +3906,7 @@
 
     if-ne p2, v4, :cond_94
 
-    .line 1514
+    .line 1522
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v2, Lcom/transsion/camera/R$dimen;->hint_root_expand_margin_top:I
@@ -3919,7 +3919,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 1515
+    .line 1523
     div-int/2addr v0, v7
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
@@ -3934,7 +3934,7 @@
 
     iput p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingLeft:I
 
-    .line 1516
+    .line 1524
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->hint_text_expand_view_margin_top:I
@@ -3947,7 +3947,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingRight:I
 
-    .line 1517
+    .line 1525
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/R$dimen;->hint_root_expand_margin_top:I
@@ -3958,7 +3958,7 @@
 
     iput p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingBottom:I
 
-    .line 1518
+    .line 1526
     iget-boolean p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-nez p2, :cond_66
@@ -3970,7 +3970,7 @@
 
     if-eq p1, v5, :cond_7f
 
-    .line 1531
+    .line 1539
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_expand_margin_recorder_0_top:I
@@ -3981,7 +3981,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingTop:I
 
-    .line 1532
+    .line 1540
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_expand_margin_recorder_0_top:I
@@ -3994,7 +3994,7 @@
 
     return-void
 
-    .line 1524
+    .line 1532
     :cond_7f
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
@@ -4006,7 +4006,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingLeft:I
 
-    .line 1525
+    .line 1533
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_expand_margin_recorder_90_top:I
@@ -4022,10 +4022,10 @@
     :cond_94
     if-ne p2, v7, :cond_ab
 
-    .line 1536
+    .line 1544
     iput v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingTop:I
 
-    .line 1537
+    .line 1545
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getColumnPreviewStartMargin()I
@@ -4034,10 +4034,10 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingLeft:I
 
-    .line 1538
+    .line 1546
     iput v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingRight:I
 
-    .line 1539
+    .line 1547
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getModePlusBottomBarHeight()I
@@ -4048,7 +4048,7 @@
 
     return-void
 
-    .line 1540
+    .line 1548
     :cond_ab
     const-string v0, "com.transsion.camera.feature.wideselfie.WideSelfieModeEntry"
 
@@ -4060,7 +4060,7 @@
 
     if-ne p2, v2, :cond_112
 
-    .line 1541
+    .line 1549
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_lr_hover_previewtop_margin_top:I
@@ -4071,7 +4071,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingLeft:I
 
-    .line 1542
+    .line 1550
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsAutoInfoShowing:Z
 
     if-eqz p1, :cond_df
@@ -4088,14 +4088,14 @@
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAutoHideInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 1543
+    .line 1551
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getFeedbackType()I
 
     move-result p1
 
     if-ne p1, v3, :cond_df
 
-    .line 1544
+    .line 1552
     :cond_d5
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
@@ -4107,13 +4107,13 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingLeft:I
 
-    .line 1546
+    .line 1554
     :cond_df
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-eqz p1, :cond_ed
 
-    .line 1547
+    .line 1555
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_lr_hover_recording_margin_top:I
@@ -4124,7 +4124,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingLeft:I
 
-    .line 1549
+    .line 1557
     :cond_ed
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mSwitchPreviewValue:Ljava/lang/String;
 
@@ -4134,7 +4134,7 @@
 
     if-eqz p1, :cond_197
 
-    .line 1550
+    .line 1558
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_lr_hover_previewbottom_margin_top:I
@@ -4145,7 +4145,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingLeft:I
 
-    .line 1551
+    .line 1559
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentModeName:Ljava/lang/String;
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -4154,7 +4154,7 @@
 
     if-eqz p1, :cond_197
 
-    .line 1552
+    .line 1560
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_lr_hover_wide_selfie_margin_top:I
@@ -4172,7 +4172,7 @@
 
     if-ne p2, v2, :cond_172
 
-    .line 1556
+    .line 1564
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_lr_hover_previewtop_margin_top:I
@@ -4183,7 +4183,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingRight:I
 
-    .line 1557
+    .line 1565
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsAutoInfoShowing:Z
 
     if-eqz p1, :cond_13f
@@ -4200,14 +4200,14 @@
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAutoHideInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 1558
+    .line 1566
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getFeedbackType()I
 
     move-result p1
 
     if-ne p1, v3, :cond_13f
 
-    .line 1559
+    .line 1567
     :cond_135
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
@@ -4219,13 +4219,13 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingRight:I
 
-    .line 1561
+    .line 1569
     :cond_13f
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-eqz p1, :cond_14d
 
-    .line 1562
+    .line 1570
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_lr_hover_recording_margin_top:I
@@ -4236,7 +4236,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingRight:I
 
-    .line 1564
+    .line 1572
     :cond_14d
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mSwitchPreviewValue:Ljava/lang/String;
 
@@ -4246,7 +4246,7 @@
 
     if-eqz p1, :cond_197
 
-    .line 1565
+    .line 1573
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_lr_hover_previewbottom_margin_top:I
@@ -4257,7 +4257,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingRight:I
 
-    .line 1566
+    .line 1574
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentModeName:Ljava/lang/String;
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -4266,7 +4266,7 @@
 
     if-eqz p1, :cond_197
 
-    .line 1567
+    .line 1575
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_lr_hover_wide_selfie_margin_top:I
@@ -4284,7 +4284,7 @@
 
     if-ne p2, v0, :cond_197
 
-    .line 1571
+    .line 1579
     iget-boolean p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-nez p2, :cond_17a
@@ -4300,7 +4300,7 @@
 
     if-eq p1, v5, :cond_18d
 
-    .line 1582
+    .line 1590
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->hint_root_filp_margin_recorder_0_top:I
@@ -4313,7 +4313,7 @@
 
     return-void
 
-    .line 1578
+    .line 1586
     :cond_18d
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
@@ -4333,7 +4333,7 @@
 .method private updateHintRotateLayoutInDVVideoMode()V
     .registers 5
 
-    .line 813
+    .line 821
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v0
@@ -4344,7 +4344,7 @@
 
     return-void
 
-    .line 814
+    .line 822
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -4360,12 +4360,12 @@
 
     if-nez v0, :cond_1b
 
-    .line 815
+    .line 823
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->resetHintRotateLayout()V
 
     return-void
 
-    .line 819
+    .line 827
     :cond_1b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAutoHideInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
@@ -4379,12 +4379,12 @@
 
     if-ne v0, v1, :cond_2b
 
-    .line 820
+    .line 828
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->resetHintRotateLayout()V
 
     return-void
 
-    .line 824
+    .line 832
     :cond_2b
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
@@ -4408,13 +4408,13 @@
 
     goto :goto_41
 
-    .line 832
+    .line 840
     :cond_3d
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->resetHintRotateLayout()V
 
     return-void
 
-    .line 826
+    .line 834
     :cond_41
     :goto_41
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
@@ -4427,20 +4427,20 @@
 
     const/4 v2, 0x0
 
-    .line 827
+    .line 835
     iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
     const/high16 v3, 0x3f000000    # 0.5f
 
-    .line 828
+    .line 836
     iput v3, v1, Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;->matchConstraintPercentHeight:F
 
-    .line 829
+    .line 837
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3, v0, v2}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 830
+    .line 838
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -4681,19 +4681,19 @@
 .method private updateProgressBarLayoutForHover(IZI)V
     .registers 9
 
-    .line 2033
+    .line 2041
     iget-object p3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressBarHoverAnimator:Landroid/animation/ValueAnimator;
 
     invoke-static {p3}, Lcom/transsion/camera/utils/AnimationUtils;->stopAnimator(Landroid/animation/Animator;)V
 
-    .line 2035
+    .line 2043
     iget-object p3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressGroupLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p3}, Landroid/view/View;->getTop()I
 
     move-result p3
 
-    .line 2037
+    .line 2045
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressGroupLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4702,7 +4702,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 2039
+    .line 2047
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -4723,10 +4723,10 @@
 
     if-nez p1, :cond_30
 
-    .line 2041
+    .line 2049
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2042
+    .line 2050
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->hint_layout_loading_margin_top_normal:I
@@ -4742,10 +4742,10 @@
 
     if-ne p1, v4, :cond_50
 
-    .line 2044
+    .line 2052
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2045
+    .line 2053
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->hint_layout_loading_margin_top_hover:I
@@ -4754,7 +4754,7 @@
 
     move-result v2
 
-    .line 2046
+    .line 2054
     const-string p1, "on"
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mSwitchPreviewValue:Ljava/lang/String;
@@ -4765,7 +4765,7 @@
 
     if-eqz p1, :cond_55
 
-    .line 2047
+    .line 2055
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->hint_layout_loading_margin_preview_on_top_hover:I
@@ -4776,17 +4776,17 @@
 
     goto :goto_55
 
-    .line 2050
+    .line 2058
     :cond_50
     iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     goto :goto_55
 
-    .line 2054
+    .line 2062
     :cond_53
     iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2058
+    .line 2066
     :cond_55
     :goto_55
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressHintRoot:Landroid/widget/FrameLayout;
@@ -4803,7 +4803,7 @@
 
     if-eqz p2, :cond_89
 
-    .line 2059
+    .line 2067
     filled-new-array {p3, v2}, [I
 
     move-result-object p1
@@ -4816,17 +4816,17 @@
 
     const-wide/16 p2, 0x190
 
-    .line 2060
+    .line 2068
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 2061
+    .line 2069
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressBarHoverAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lcom/transsion/camera/app/ui/AbstractHintUI;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2062
+    .line 2070
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressBarHoverAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lcom/transsion/camera/app/ui/AbstractHintUI$$ExternalSyntheticLambda3;
@@ -4835,18 +4835,18 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2066
+    .line 2074
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressBarHoverAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
 
-    .line 2068
+    .line 2076
     :cond_89
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 2069
+    .line 2077
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressGroupLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -4878,14 +4878,14 @@
 
     if-ltz p1, :cond_f
 
-    .line 2174
+    .line 2183
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p0
 
     if-nez p0, :cond_f
 
-    .line 2175
+    .line 2184
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -4901,7 +4901,7 @@
 
     const/4 p0, 0x2
 
-    .line 1199
+    .line 1207
     new-array p0, p0, [F
 
     const/4 v0, 0x0
@@ -4922,7 +4922,7 @@
 
     move-result-object p0
 
-    .line 1200
+    .line 1208
     invoke-virtual {p0, p4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     return-object p0
@@ -4931,7 +4931,7 @@
 .method protected createValueAnimator(IIILandroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
     .registers 5
 
-    .line 1193
+    .line 1201
     filled-new-array {p1, p2}, [I
 
     move-result-object p0
@@ -4946,7 +4946,7 @@
 
     move-result-object p0
 
-    .line 1194
+    .line 1202
     invoke-virtual {p0, p4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     return-object p0
@@ -5130,7 +5130,7 @@
 .method public getAlwaysHintText()Landroid/widget/TextView;
     .registers 1
 
-    .line 2180
+    .line 2189
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAlwaysHintText:Landroid/widget/TextView;
 
     return-object p0
@@ -5153,16 +5153,31 @@
 .method public getAutoHideHintText()Landroid/widget/TextView;
     .registers 1
 
-    .line 2184
+    .line 2193
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAutoHideHintText:Landroid/widget/TextView;
 
     return-object p0
 .end method
 
+.method public getBurstPMKAeAfLockMarginTop()I
+    .registers 2
+
+    .line 2211
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
+
+    sget v0, Lcom/transsion/camera/R$dimen;->hint_text_view_burst_pmk_lock_margin_top_land:I
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
 .method protected getCommonHintRootPaddingTopDst(Lcom/transsion/camera/app/common/ui/HintInfo;Z)Landroid/graphics/Rect;
     .registers 8
 
-    .line 1740
+    .line 1748
     new-instance p2, Landroid/graphics/Rect;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
@@ -5179,7 +5194,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
-    .line 1741
+    .line 1749
     invoke-virtual {v2}, Landroid/view/View;->getPaddingRight()I
 
     move-result v2
@@ -5192,14 +5207,14 @@
 
     invoke-direct {p2, v0, v1, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 1742
+    .line 1750
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
 
     move-result v0
 
-    .line 1743
+    .line 1751
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getFeedbackType()I
 
     move-result v1
@@ -5216,7 +5231,7 @@
 
     if-ne v1, v4, :cond_4b
 
-    .line 1745
+    .line 1753
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/R$dimen;->hint_layout_padding_top_hover_feedback:I
@@ -5225,7 +5240,7 @@
 
     move-result v0
 
-    .line 1746
+    .line 1754
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mSwitchPreviewValue:Ljava/lang/String;
 
     invoke-static {v3, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -5234,7 +5249,7 @@
 
     if-eqz p1, :cond_6f
 
-    .line 1747
+    .line 1755
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p1, Lcom/transsion/camera/R$dimen;->hint_layout_padding_preview_on_top_hover_feedback:I
@@ -5245,7 +5260,7 @@
 
     goto :goto_6f
 
-    .line 1749
+    .line 1757
     :cond_4b
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getFeedbackType()I
 
@@ -5259,7 +5274,7 @@
 
     if-ne p1, v4, :cond_6f
 
-    .line 1751
+    .line 1759
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/R$dimen;->hint_layout_padding_top_hover:I
@@ -5268,7 +5283,7 @@
 
     move-result v0
 
-    .line 1752
+    .line 1760
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mSwitchPreviewValue:Ljava/lang/String;
 
     invoke-static {v3, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -5277,7 +5292,7 @@
 
     if-eqz p1, :cond_6f
 
-    .line 1753
+    .line 1761
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget p1, Lcom/transsion/camera/R$dimen;->hint_layout_padding_preview_on_top_hover_feedback:I
@@ -5286,7 +5301,7 @@
 
     move-result v0
 
-    .line 1756
+    .line 1764
     :cond_6f
     :goto_6f
     iput v0, p2, Landroid/graphics/Rect;->top:I
@@ -5297,14 +5312,14 @@
 .method protected getCommonHintRootPaddingTopDst(Z)Landroid/graphics/Rect;
     .registers 13
 
-    .line 1761
+    .line 1769
     new-instance p1, Landroid/graphics/Rect;
 
     const v0, 0x7fffffff
 
     invoke-direct {p1, v0, v0, v0, v0}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 1763
+    .line 1771
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPreviewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
@@ -5329,7 +5344,7 @@
 
     float-to-double v1, v0
 
-    .line 1764
+    .line 1772
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenWidth()I
@@ -5346,7 +5361,7 @@
 
     move-result v3
 
-    .line 1765
+    .line 1773
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenWidth()I
@@ -5369,7 +5384,7 @@
 
     double-to-int v6, v4
 
-    .line 1767
+    .line 1775
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
     const-wide/high16 v7, 0x3ff0000000000000L    # 1.0
@@ -5380,12 +5395,12 @@
 
     if-ne v0, v4, :cond_d2
 
-    .line 1768
+    .line 1776
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-eqz v0, :cond_53
 
-    .line 1769
+    .line 1777
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v5, Lcom/transsion/camera/R$dimen;->hint_layout_padding_top_hover_recording:I
@@ -5396,7 +5411,7 @@
 
     goto :goto_5b
 
-    .line 1771
+    .line 1779
     :cond_53
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
@@ -5406,7 +5421,7 @@
 
     move-result v0
 
-    .line 1773
+    .line 1781
     :goto_5b
     const-string v5, "on"
 
@@ -5418,7 +5433,7 @@
 
     if-eqz v5, :cond_91
 
-    .line 1774
+    .line 1782
     div-int/lit8 v0, v3, 0x2
 
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
@@ -5431,7 +5446,7 @@
 
     add-int/2addr v0, v5
 
-    .line 1775
+    .line 1783
     invoke-static {v1, v2, v7, v8}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result v1
@@ -5440,7 +5455,7 @@
 
     mul-int/2addr v3, v4
 
-    .line 1776
+    .line 1784
     div-int/lit8 v3, v3, 0x4
 
     div-int/2addr v6, v9
@@ -5459,13 +5474,13 @@
 
     move v0, v3
 
-    .line 1778
+    .line 1786
     :cond_85
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-eqz v1, :cond_91
 
-    .line 1779
+    .line 1787
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->hint_layout_padding_preview_on_recording_top_hover:I
@@ -5474,7 +5489,7 @@
 
     move-result v0
 
-    .line 1782
+    .line 1790
     :cond_91
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
@@ -5498,7 +5513,7 @@
 
     if-eqz v1, :cond_13e
 
-    .line 1783
+    .line 1791
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAutoHideInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     if-eqz v1, :cond_13e
@@ -5511,7 +5526,7 @@
 
     if-eq v1, v2, :cond_13e
 
-    .line 1784
+    .line 1792
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-eqz v1, :cond_ba
@@ -5537,7 +5552,7 @@
 
     const/16 v0, 0x40
 
-    .line 1786
+    .line 1794
     :goto_c8
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->dp(I)I
 
@@ -5566,7 +5581,7 @@
 
     goto :goto_13e
 
-    .line 1792
+    .line 1800
     :cond_da
     :goto_da
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
@@ -5577,22 +5592,22 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 1793
+    .line 1801
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getModePlusBottomBarHeight()I
 
     move-result v5
 
-    .line 1792
+    .line 1800
     invoke-static/range {v1 .. v6}, Lcom/transsion/camera/utils/CameraUtil;->getTopMargin(DIIII)I
 
     move-result v0
 
-    .line 1795
+    .line 1803
     iget v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
     if-nez v3, :cond_10a
 
-    .line 1796
+    .line 1804
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->hint_layout_padding_top_normal:I
@@ -5601,7 +5616,7 @@
 
     move-result v10
 
-    .line 1797
+    .line 1805
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v3}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -5614,7 +5629,7 @@
 
     if-eqz v3, :cond_10a
 
-    .line 1798
+    .line 1806
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->hint_layout_padding_top_normal_tb:I
@@ -5623,7 +5638,7 @@
 
     move-result v10
 
-    .line 1801
+    .line 1809
     :cond_10a
     iget v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
@@ -5635,14 +5650,14 @@
 
     if-eqz v3, :cond_123
 
-    .line 1802
+    .line 1810
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v3
 
     if-eqz v3, :cond_123
 
-    .line 1803
+    .line 1811
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->normal_1_1_preview_margin_offset:I
@@ -5653,7 +5668,7 @@
 
     sub-int/2addr v0, v3
 
-    .line 1805
+    .line 1813
     :cond_123
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
@@ -5667,7 +5682,7 @@
 
     add-int/2addr v0, v10
 
-    .line 1806
+    .line 1814
     iget v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
     if-ne v3, v9, :cond_13e
@@ -5678,14 +5693,14 @@
 
     if-eqz v1, :cond_13e
 
-    .line 1807
+    .line 1815
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getTopBarHeight()I
 
     move-result v0
 
-    .line 1810
+    .line 1818
     :cond_13e
     :goto_13e
     iput v0, p1, Landroid/graphics/Rect;->top:I
@@ -5702,6 +5717,15 @@
     return-object p0
 .end method
 
+.method public getCurrentOrientation()I
+    .registers 1
+
+    .line 2201
+    iget p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentOrientation:I
+
+    return p0
+.end method
+
 .method abstract getExpandInitValue()[I
 .end method
 
@@ -5716,7 +5740,7 @@
 .method public getHintState()Z
     .registers 1
 
-    .line 886
+    .line 894
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHintShown:Z
 
     return p0
@@ -5728,7 +5752,7 @@
 .method protected getRootView()Landroid/view/View;
     .registers 1
 
-    .line 2137
+    .line 2146
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRootView:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     return-object p0
@@ -5737,7 +5761,7 @@
 .method public getScreenFormType()I
     .registers 1
 
-    .line 2196
+    .line 2220
     iget p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
     return p0
@@ -5749,7 +5773,7 @@
 .method public getTwinkleGuideMode()Ljava/lang/String;
     .registers 1
 
-    .line 2200
+    .line 2224
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
     return-object p0
@@ -5758,7 +5782,7 @@
 .method public getTwinkleGuideRoot()Landroid/view/View;
     .registers 1
 
-    .line 2188
+    .line 2197
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideRoot:Landroid/view/View;
 
     return-object p0
@@ -5767,7 +5791,7 @@
 .method public getTwinkleGuideTextView()Landroid/widget/TextView;
     .registers 1
 
-    .line 2192
+    .line 2216
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideTextView:Landroid/widget/TextView;
 
     return-object p0
@@ -5792,14 +5816,14 @@
 .method protected hideAsdHintViewWithAnim()V
     .registers 3
 
-    .line 1430
+    .line 1438
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPreviousExpandTime:J
 
-    .line 1431
+    .line 1439
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_10
@@ -5815,7 +5839,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 1432
+    .line 1440
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isRunning()Z
 
     move-result v0
@@ -5827,7 +5851,7 @@
 
     if-eqz v0, :cond_28
 
-    .line 1433
+    .line 1441
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isRunning()Z
 
     move-result v0
@@ -5837,26 +5861,26 @@
     :cond_24
     const/4 v0, 0x1
 
-    .line 1434
+    .line 1442
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsNeedWaitScale:Z
 
     return-void
 
-    .line 1437
+    .line 1445
     :cond_28
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->stopAsdAnimatorSet()V
 
-    .line 1438
+    .line 1446
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->initAsdHieAnimator()V
 
-    .line 1439
+    .line 1447
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHideListener:Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1440
+    .line 1448
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
@@ -6249,7 +6273,7 @@
 .method protected initTwinkleGuideImageLayout()Landroid/widget/ImageView;
     .registers 2
 
-    .line 2141
+    .line 2150
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideRoot:Landroid/view/View;
 
     sget v0, Lcom/transsion/camera/R$id;->twinkle_guide_img:I
@@ -6266,15 +6290,15 @@
 .method protected isTwinkleGuildShowed(Lcom/transsion/camera/app/common/storage/DataStore;Ljava/lang/String;)Z
     .registers 4
 
-    .line 1224
+    .line 1232
     const-string p0, "off"
 
-    .line 1225
+    .line 1233
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 1224
+    .line 1232
     const-string v0, "key_twinkle_guild"
 
     invoke-virtual {p1, v0, p0, p2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -6543,17 +6567,17 @@
     .line 769
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
-    if-eqz v0, :cond_a3
+    if-eqz v0, :cond_be
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    if-eqz v0, :cond_a3
+    if-eqz v0, :cond_be
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressGroupLayout:Landroid/widget/LinearLayout;
 
     if-nez v0, :cond_e
 
-    goto/16 :goto_a3
+    goto/16 :goto_be
 
     :cond_e
     const/4 v0, 0x6
@@ -6567,11 +6591,11 @@
 
     if-ne v0, v1, :cond_1d
 
-    if-eq p1, v3, :cond_a3
+    if-eq p1, v3, :cond_be
 
     if-ne p1, v2, :cond_1d
 
-    goto/16 :goto_a3
+    goto/16 :goto_be
 
     .line 778
     :cond_1d
@@ -6686,16 +6710,50 @@
     :cond_7e
     invoke-virtual {p0, v0, v2, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateProgressBarLayout(IZI)V
 
-    .line 795
+    .line 794
     :cond_81
     :goto_81
+    iget p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
+
+    if-nez p1, :cond_9c
+
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentModeName:Ljava/lang/String;
+
+    const-string p2, "com.transsion.camera.feature.burstpmk.BurstPMKModeEntry"
+
+    .line 795
+    invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_9c
+
+    .line 796
+    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsAutoInfoShowing:Z
+
+    if-eqz p1, :cond_99
+
+    .line 797
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAutoHideInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
+
+    invoke-virtual {p0, p1, v2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Lcom/transsion/camera/app/common/ui/HintInfo;Z)V
+
+    goto :goto_9c
+
+    .line 799
+    :cond_99
+    invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Z)V
+
+    .line 803
+    :cond_9c
+    :goto_9c
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/app/common/CommonConfigUtil;->mEnableDVMode:Z
 
-    if-eqz p1, :cond_a3
+    if-eqz p1, :cond_be
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -6709,31 +6767,31 @@
 
     move-result p1
 
-    if-eqz p1, :cond_a3
+    if-eqz p1, :cond_be
 
-    .line 796
+    .line 804
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsAutoInfoShowing:Z
 
-    if-eqz p1, :cond_a0
+    if-eqz p1, :cond_bb
 
-    .line 797
+    .line 805
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAutoHideInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p0, p1, v2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Lcom/transsion/camera/app/common/ui/HintInfo;Z)V
 
-    .line 799
-    :cond_a0
+    .line 807
+    :cond_bb
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateHintRotateLayoutInDVVideoMode()V
 
-    :cond_a3
-    :goto_a3
+    :cond_be
+    :goto_be
     return-void
 .end method
 
 .method public onScreenFormChanged(IZ)V
     .registers 6
 
-    .line 838
+    .line 846
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6766,26 +6824,26 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 839
+    .line 847
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
-    .line 840
+    .line 848
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsAutoInfoShowing:Z
 
     if-eqz v0, :cond_34
 
-    .line 841
+    .line 849
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAutoHideInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p0, v0, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Lcom/transsion/camera/app/common/ui/HintInfo;Z)V
 
     goto :goto_37
 
-    .line 843
+    .line 851
     :cond_34
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Z)V
 
-    .line 845
+    .line 853
     :goto_37
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentOrientation:I
 
@@ -6793,18 +6851,18 @@
 
     if-ne p1, v1, :cond_42
 
-    .line 847
+    .line 855
     iget-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-eqz v2, :cond_42
 
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRecordingOrientation:I
 
-    .line 849
+    .line 857
     :cond_42
     invoke-direct {p0, v0, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateCommonHintRotateOrientation(IZ)I
 
-    .line 850
+    .line 858
     invoke-virtual {p0, p1, v1, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateProgressBarLayout(IZI)V
 
     return-void
@@ -6813,14 +6871,14 @@
 .method public refreshHintViewVisibility()V
     .registers 4
 
-    .line 914
+    .line 922
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAlwaysInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     if-nez v0, :cond_5
 
     goto :goto_27
 
-    .line 919
+    .line 927
     :cond_5
     const-string v1, "key_night_hawk"
 
@@ -6836,7 +6894,7 @@
 
     goto :goto_27
 
-    .line 920
+    .line 928
     :cond_12
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->isAsdDynamic()Z
 
@@ -6844,7 +6902,7 @@
 
     if-eqz v1, :cond_27
 
-    .line 921
+    .line 929
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
 
     move-result-object v1
@@ -6857,7 +6915,7 @@
 
     if-nez v0, :cond_27
 
-    .line 922
+    .line 930
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->hideAsdHintView()V
 
     :cond_27
@@ -6868,7 +6926,7 @@
 .method public registerHintStateListener(Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;)V
     .registers 2
 
-    .line 876
+    .line 884
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHintStateChangeListener:Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;
 
     return-void
@@ -7071,19 +7129,19 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 4
 
-    .line 1662
+    .line 1670
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p1, :cond_1d
 
-    .line 1664
+    .line 1672
     const-string v0, "key_fold_switch_preview"
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 1665
+    .line 1673
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_camera_zoom"
@@ -7092,7 +7150,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 1666
+    .line 1674
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_sat_stream_id"
@@ -7144,7 +7202,7 @@
 .method protected setTwinkleGuildState(Lcom/transsion/camera/app/common/storage/DataStore;Ljava/lang/String;)V
     .registers 5
 
-    .line 1229
+    .line 1237
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object p0
@@ -7281,6 +7339,42 @@
     return-void
 .end method
 
+.method public shouldApplyBurstPMKAeAfLockMargin(II)Z
+    .registers 3
+
+    if-nez p1, :cond_16
+
+    const/16 p1, 0x5a
+
+    if-eq p2, p1, :cond_a
+
+    const/16 p1, 0x10e
+
+    if-ne p2, p1, :cond_16
+
+    .line 2205
+    :cond_a
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentModeName:Ljava/lang/String;
+
+    const-string p1, "com.transsion.camera.feature.burstpmk.BurstPMKModeEntry"
+
+    .line 2207
+    invoke-static {p0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_16
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_16
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method abstract showAsdHintView(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 .end method
 
@@ -7376,7 +7470,7 @@
 .method protected showTwinkleGuide(ZZZZZZZ)V
     .registers 12
 
-    .line 1236
+    .line 1244
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
@@ -7385,7 +7479,7 @@
 
     move-result v0
 
-    .line 1237
+    .line 1245
     sget-object v1, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -7456,27 +7550,27 @@
 
     if-eqz v0, :cond_68
 
-    .line 1247
+    .line 1255
     const-string p0, "TwinkleGuide has showed, return!"
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1250
+    .line 1258
     :cond_68
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsTwinkleGuideAvailable:Z
 
     if-nez v0, :cond_72
 
-    .line 1251
+    .line 1259
     const-string p0, "TwinkleGuide is not Available, return !"
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1254
+    .line 1262
     :cond_72
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsTwinkleGuideShowing:Z
 
@@ -7484,27 +7578,27 @@
 
     if-eqz p1, :cond_7e
 
-    .line 1255
+    .line 1263
     const-string p0, "TwinkleGuide is showing, return !"
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1258
+    .line 1266
     :cond_7e
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideEnabled:Z
 
     if-ne v0, p1, :cond_89
 
-    .line 1259
+    .line 1267
     const-string/jumbo p0, "twinkleGuideEnabled do not changed , return ! "
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1262
+    .line 1270
     :cond_89
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -7520,7 +7614,7 @@
 
     const-string v2, "com.transsion.camera.feature.supernightfilter.mode.SuperNightFilterModeEntry"
 
-    .line 1263
+    .line 1271
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -7538,7 +7632,7 @@
 
     goto/16 :goto_121
 
-    .line 1268
+    .line 1276
     :cond_a7
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -7552,14 +7646,14 @@
 
     if-nez p3, :cond_ba
 
-    .line 1269
+    .line 1277
     const-string/jumbo p0, "twinkleGuideEnabled do not support  MAGIC_SKY_MODE, return ! "
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1272
+    .line 1280
     :cond_ba
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -7573,14 +7667,14 @@
 
     if-nez p4, :cond_cd
 
-    .line 1273
+    .line 1281
     const-string/jumbo p0, "twinkleGuideEnabled do not support  PMASTER_MODE, return ! "
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1276
+    .line 1284
     :cond_cd
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -7594,14 +7688,14 @@
 
     if-nez p5, :cond_e0
 
-    .line 1277
+    .line 1285
     const-string/jumbo p0, "twinkleGuideEnabled do not support  DOCUMENT_MODE, return ! "
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1280
+    .line 1288
     :cond_e0
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -7615,14 +7709,14 @@
 
     if-nez p6, :cond_f3
 
-    .line 1281
+    .line 1289
     const-string/jumbo p0, "twinkleGuideEnabled do not support  FLARE_CAPTURE_UI_ENTRY, return ! "
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1284
+    .line 1292
     :cond_f3
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -7636,14 +7730,14 @@
 
     if-nez p7, :cond_107
 
-    .line 1285
+    .line 1293
     const-string/jumbo p0, "twinkleGuideEnabled do not support  VALUE_CELEBRITY_SCENE_FOOD, return ! "
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1288
+    .line 1296
     :cond_107
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -7657,23 +7751,23 @@
 
     if-nez p7, :cond_11b
 
-    .line 1289
+    .line 1297
     const-string/jumbo p0, "twinkleGuideEnabled do not support  VALUE_CELEBRITY_SCENE_SUNSET, return ! "
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1292
+    .line 1300
     :cond_11b
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideEnabled:Z
 
-    .line 1293
+    .line 1301
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->resendTwinkleGuideMessages()V
 
     return-void
 
-    .line 1265
+    .line 1273
     :cond_121
     :goto_121
     const-string/jumbo p0, "twinkleGuideEnabled do not support  SUPER_NIGHT_MODE or zoomValue is greater than 10X, return ! "
@@ -7689,34 +7783,34 @@
 .method protected startAsdScaleAnimator(Lcom/transsion/camera/app/common/ui/HintInfo;)V
     .registers 4
 
-    .line 1153
+    .line 1161
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdExpandAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_c
 
-    .line 1154
+    .line 1162
     invoke-virtual {v0}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1155
+    .line 1163
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdExpandAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1157
+    .line 1165
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_18
 
-    .line 1158
+    .line 1166
     invoke-virtual {v0}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1159
+    .line 1167
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1161
+    .line 1169
     :cond_18
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getAsdHintRootLayout()Landroid/view/ViewGroup;
 
@@ -7726,12 +7820,12 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1162
+    .line 1170
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsTransparent:Z
 
     if-nez v0, :cond_2d
 
-    .line 1163
+    .line 1171
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getAsdHintRootLayout()Landroid/view/ViewGroup;
 
     move-result-object v0
@@ -7740,7 +7834,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1165
+    .line 1173
     :cond_2d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
@@ -7761,7 +7855,7 @@
     :cond_3d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 1166
+    .line 1174
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
 
     move-result-object v0
@@ -7787,7 +7881,7 @@
     :cond_55
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 1167
+    .line 1175
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->getOtherMessage()Ljava/lang/String;
 
     move-result-object v0
@@ -7810,7 +7904,7 @@
 
     if-nez v0, :cond_f6
 
-    .line 1168
+    .line 1176
     :cond_6d
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getOtherMessage()Ljava/lang/String;
 
@@ -7836,10 +7930,10 @@
 
     if-nez v0, :cond_88
 
-    .line 1169
+    .line 1177
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateEffectLayout(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1171
+    .line 1179
     :cond_88
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
 
@@ -7865,10 +7959,10 @@
 
     if-nez v0, :cond_a3
 
-    .line 1172
+    .line 1180
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateAlgoritLayout(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1174
+    .line 1182
     :cond_a3
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getExpandInitValue()[I
 
@@ -7880,7 +7974,7 @@
 
     invoke-virtual {p0, v0, v1, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->initExpandAnimator([I[ILcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1175
+    .line 1183
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getOverallValue()[I
 
     move-result-object v0
@@ -7891,31 +7985,31 @@
 
     invoke-virtual {p0, v0, v1, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->initShrinkAnimator([I[ILcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1176
+    .line 1184
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdExpandAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScaleListener:Lcom/transsion/camera/app/ui/AbstractHintUI$ScaleAnimationEndListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1177
+    .line 1185
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScaleListener:Lcom/transsion/camera/app/ui/AbstractHintUI$ScaleAnimationEndListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1178
+    .line 1186
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdExpandAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1179
+    .line 1187
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1180
+    .line 1188
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -7924,7 +8018,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1181
+    .line 1189
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
@@ -7933,7 +8027,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 1182
+    .line 1190
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getOtherDrawable()Landroid/graphics/drawable/Drawable;
@@ -7942,7 +8036,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1183
+    .line 1191
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getOtherMessage()Ljava/lang/String;
@@ -7953,23 +8047,23 @@
 
     return-void
 
-    .line 1185
+    .line 1193
     :cond_f6
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->initAsdHieAnimatorByInfo(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
     const/4 p1, 0x1
 
-    .line 1186
+    .line 1194
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHideAsdTemp:Z
 
-    .line 1187
+    .line 1195
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHideListener:Lcom/transsion/camera/app/ui/AbstractHintUI$HideAnimationEndListener;
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1188
+    .line 1196
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
@@ -7980,7 +8074,7 @@
 .method protected stopAsdAnimatorSet()V
     .registers 3
 
-    .line 1205
+    .line 1213
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdExpandAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_14
@@ -7991,17 +8085,17 @@
 
     if-eqz v0, :cond_14
 
-    .line 1206
+    .line 1214
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdExpandAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1207
+    .line 1215
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdExpandAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1209
+    .line 1217
     :cond_14
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -8013,17 +8107,17 @@
 
     if-eqz v0, :cond_28
 
-    .line 1210
+    .line 1218
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1211
+    .line 1219
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdShrinkAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1213
+    .line 1221
     :cond_28
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHideAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -8035,17 +8129,17 @@
 
     if-eqz v0, :cond_3c
 
-    .line 1214
+    .line 1222
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1215
+    .line 1223
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdHideAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->removeAllListeners()V
 
-    .line 1217
+    .line 1225
     :cond_3c
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
@@ -8053,17 +8147,17 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 1218
+    .line 1226
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1219
+    .line 1227
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherMessage(Ljava/lang/String;)V
 
-    .line 1220
+    .line 1228
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAsdInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherDrawable(Landroid/graphics/drawable/Drawable;)V
@@ -8184,7 +8278,7 @@
 
     const/4 v0, 0x0
 
-    .line 881
+    .line 889
     iput-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHintStateChangeListener:Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;
 
     return-void
@@ -8217,7 +8311,7 @@
     :goto_c
     if-eq p1, v0, :cond_76
 
-    .line 2153
+    .line 2162
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
     const-string v0, "com.transsion.camera.feature.mode.supernight.SuperNightModeEntry"
@@ -8232,7 +8326,7 @@
 
     const-string v0, "com.transsion.camera.feature.supernightfilter.mode.SuperNightFilterModeEntry"
 
-    .line 2154
+    .line 2163
     invoke-static {p2, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p2
@@ -8241,7 +8335,7 @@
 
     goto :goto_73
 
-    .line 2156
+    .line 2165
     :cond_23
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -8253,12 +8347,12 @@
 
     if-eqz p2, :cond_30
 
-    .line 2157
+    .line 2166
     const-string p2, "2"
 
     goto :goto_78
 
-    .line 2158
+    .line 2167
     :cond_30
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -8270,12 +8364,12 @@
 
     if-eqz p2, :cond_3d
 
-    .line 2159
+    .line 2168
     const-string p2, "3"
 
     goto :goto_78
 
-    .line 2160
+    .line 2169
     :cond_3d
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -8287,12 +8381,12 @@
 
     if-eqz p2, :cond_4a
 
-    .line 2161
+    .line 2170
     const-string p2, "4"
 
     goto :goto_78
 
-    .line 2162
+    .line 2171
     :cond_4a
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -8304,12 +8398,12 @@
 
     if-eqz p2, :cond_57
 
-    .line 2163
+    .line 2172
     const-string p2, "5"
 
     goto :goto_78
 
-    .line 2164
+    .line 2173
     :cond_57
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -8321,12 +8415,12 @@
 
     if-eqz p2, :cond_65
 
-    .line 2165
+    .line 2174
     const-string p2, "6"
 
     goto :goto_78
 
-    .line 2166
+    .line 2175
     :cond_65
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -8338,19 +8432,19 @@
 
     if-eqz p2, :cond_76
 
-    .line 2167
+    .line 2176
     const-string p2, "7"
 
     goto :goto_78
 
-    .line 2155
+    .line 2164
     :cond_73
     :goto_73
     const-string p2, "1"
 
     goto :goto_78
 
-    .line 2170
+    .line 2179
     :cond_76
     const-string p2, ""
 
@@ -8363,10 +8457,10 @@
 .method public updateCurrentMode(Ljava/lang/String;)V
     .registers 3
 
-    .line 1672
+    .line 1680
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentModeName:Ljava/lang/String;
 
-    .line 1673
+    .line 1681
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object p1
@@ -8385,7 +8479,7 @@
 
     if-nez p1, :cond_17
 
-    .line 1674
+    .line 1682
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->resetHintRotateLayout()V
 
     :cond_17
@@ -8398,15 +8492,15 @@
 .method protected updateHintState(Z)V
     .registers 2
 
-    .line 890
+    .line 898
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHintShown:Z
 
-    .line 891
+    .line 899
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHintStateChangeListener:Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;
 
     if-eqz p0, :cond_9
 
-    .line 892
+    .line 900
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;->onHintStateChange(Z)V
 
     :cond_9
@@ -8416,7 +8510,7 @@
 .method public updateLayout(Lcom/transsion/camera/app/common/ui/HintInfo;Z)V
     .registers 7
 
-    .line 1874
+    .line 1882
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsAutoInfoShowing:Z
 
     if-eqz v0, :cond_72
@@ -8427,7 +8521,7 @@
 
     goto :goto_72
 
-    .line 1879
+    .line 1887
     :cond_9
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getFeedbackType()I
 
@@ -8445,29 +8539,29 @@
 
     if-ne v0, v3, :cond_3f
 
-    .line 1881
+    .line 1889
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getPaddingStart()I
 
     move-result v0
 
-    .line 1882
+    .line 1890
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/view/View;->getPaddingEnd()I
 
     move-result v1
 
-    .line 1883
+    .line 1891
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getCommonHintRootPaddingTopDst(Lcom/transsion/camera/app/common/ui/HintInfo;Z)Landroid/graphics/Rect;
 
     move-result-object p1
 
-    .line 1884
+    .line 1892
     iget p2, p1, Landroid/graphics/Rect;->top:I
 
-    .line 1885
+    .line 1893
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
     if-eq p1, v2, :cond_30
@@ -8481,18 +8575,18 @@
 
     move-result p1
 
-    .line 1886
+    .line 1894
     :goto_36
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->resetHintRotateLayout()V
 
-    .line 1887
+    .line 1895
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, v0, p2, v1, p1}, Landroid/view/View;->setPadding(IIII)V
 
     return-void
 
-    .line 1888
+    .line 1896
     :cond_3f
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getFeedbackType()I
 
@@ -8506,29 +8600,29 @@
 
     if-ne v0, v3, :cond_6e
 
-    .line 1890
+    .line 1898
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getPaddingStart()I
 
     move-result v0
 
-    .line 1891
+    .line 1899
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/view/View;->getPaddingEnd()I
 
     move-result v1
 
-    .line 1892
+    .line 1900
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getCommonHintRootPaddingTopDst(Lcom/transsion/camera/app/common/ui/HintInfo;Z)Landroid/graphics/Rect;
 
     move-result-object p1
 
-    .line 1893
+    .line 1901
     iget p2, p1, Landroid/graphics/Rect;->top:I
 
-    .line 1894
+    .line 1902
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
     if-eq p1, v2, :cond_62
@@ -8542,7 +8636,7 @@
 
     move-result p1
 
-    .line 1895
+    .line 1903
     :goto_68
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
@@ -8550,13 +8644,13 @@
 
     return-void
 
-    .line 1897
+    .line 1905
     :cond_6e
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Z)V
 
     return-void
 
-    .line 1875
+    .line 1883
     :cond_72
     :goto_72
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Z)V
@@ -8567,39 +8661,39 @@
 .method public updateLayout(Z)V
     .registers 15
 
-    .line 1679
+    .line 1687
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/AnimationUtils;->stopAnimator(Landroid/animation/Animator;)V
 
-    .line 1680
+    .line 1688
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     if-nez v0, :cond_a
 
     return-void
 
-    .line 1683
+    .line 1691
     :cond_a
     invoke-virtual {v0}, Landroid/view/View;->getPaddingStart()I
 
     move-result v0
 
-    .line 1684
+    .line 1692
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/view/View;->getPaddingEnd()I
 
     move-result v1
 
-    .line 1686
+    .line 1694
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2}, Landroid/view/View;->getPaddingTop()I
 
     move-result v2
 
-    .line 1687
+    .line 1695
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->hint_layout_padding_top_hover_feedback:I
@@ -8617,16 +8711,16 @@
     :cond_26
     const/4 v3, 0x0
 
-    .line 1692
+    .line 1700
     :goto_27
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getCommonHintRootPaddingTopDst(Z)Landroid/graphics/Rect;
 
     move-result-object v4
 
-    .line 1693
+    .line 1701
     iget v5, v4, Landroid/graphics/Rect;->top:I
 
-    .line 1694
+    .line 1702
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
     const v6, 0x7fffffff
@@ -8642,7 +8736,7 @@
 
     move-result v4
 
-    .line 1696
+    .line 1704
     :goto_3b
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
@@ -8666,24 +8760,24 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 1698
+    .line 1706
     invoke-static {p1, v3}, Landroid/animation/Keyframe;->ofFloat(FF)Landroid/animation/Keyframe;
 
     move-result-object v8
 
     const/high16 v9, 0x3f000000    # 0.5f
 
-    .line 1699
+    .line 1707
     invoke-static {v9, p1}, Landroid/animation/Keyframe;->ofFloat(FF)Landroid/animation/Keyframe;
 
     move-result-object v10
 
-    .line 1700
+    .line 1708
     invoke-static {v3, v3}, Landroid/animation/Keyframe;->ofFloat(FF)Landroid/animation/Keyframe;
 
     move-result-object v11
 
-    .line 1701
+    .line 1709
     const-string v12, "alpha"
 
     filled-new-array {v8, v10, v11}, [Landroid/animation/Keyframe;
@@ -8694,27 +8788,27 @@
 
     move-result-object v8
 
-    .line 1703
+    .line 1711
     invoke-static {p1, v2}, Landroid/animation/Keyframe;->ofInt(FI)Landroid/animation/Keyframe;
 
     move-result-object p1
 
-    .line 1704
+    .line 1712
     invoke-static {v9, v2}, Landroid/animation/Keyframe;->ofInt(FI)Landroid/animation/Keyframe;
 
     move-result-object v2
 
-    .line 1705
+    .line 1713
     invoke-static {v9, v5}, Landroid/animation/Keyframe;->ofInt(FI)Landroid/animation/Keyframe;
 
     move-result-object v9
 
-    .line 1706
+    .line 1714
     invoke-static {v3, v5}, Landroid/animation/Keyframe;->ofInt(FI)Landroid/animation/Keyframe;
 
     move-result-object v3
 
-    .line 1707
+    .line 1715
     const-string v5, "padding"
 
     filled-new-array {p1, v2, v9, v3}, [Landroid/animation/Keyframe;
@@ -8725,7 +8819,7 @@
 
     move-result-object p1
 
-    .line 1708
+    .line 1716
     filled-new-array {v8, p1}, [Landroid/animation/PropertyValuesHolder;
 
     move-result-object p1
@@ -8736,17 +8830,17 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1709
+    .line 1717
     invoke-virtual {p1, v6, v7}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1710
+    .line 1718
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v2, Lcom/transsion/camera/app/ui/AbstractHintUI;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1711
+    .line 1719
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v2, Lcom/transsion/camera/app/ui/AbstractHintUI$$ExternalSyntheticLambda1;
@@ -8755,7 +8849,7 @@
 
     invoke-virtual {p1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1717
+    .line 1725
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lcom/transsion/camera/app/ui/AbstractHintUI$2;
@@ -8766,7 +8860,7 @@
 
     goto :goto_c9
 
-    .line 1725
+    .line 1733
     :cond_ab
     filled-new-array {v2, v5}, [I
 
@@ -8778,17 +8872,17 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1726
+    .line 1734
     invoke-virtual {p1, v6, v7}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1727
+    .line 1735
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v2, Lcom/transsion/camera/app/ui/AbstractHintUI;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1728
+    .line 1736
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v2, Lcom/transsion/camera/app/ui/AbstractHintUI$$ExternalSyntheticLambda2;
@@ -8797,7 +8891,7 @@
 
     invoke-virtual {p1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1733
+    .line 1741
     :goto_c9
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
@@ -8805,7 +8899,7 @@
 
     return-void
 
-    .line 1735
+    .line 1743
     :cond_cf
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
 
@@ -8817,57 +8911,57 @@
 .method public updatePreviewRect(Landroid/graphics/Rect;)V
     .registers 5
 
-    .line 857
+    .line 865
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPreviewRect:Landroid/graphics/Rect;
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v0
 
-    .line 858
+    .line 866
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPreviewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
     if-nez v0, :cond_2b
 
-    .line 860
+    .line 868
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsAutoInfoShowing:Z
 
     const/4 v0, 0x0
 
     if-eqz p1, :cond_18
 
-    .line 861
+    .line 869
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAutoHideInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Lcom/transsion/camera/app/common/ui/HintInfo;Z)V
 
     goto :goto_1b
 
-    .line 863
+    .line 871
     :cond_18
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Z)V
 
-    .line 866
+    .line 874
     :goto_1b
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentOrientation:I
 
-    .line 867
+    .line 875
     iget v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_28
 
-    .line 868
+    .line 876
     iget-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-eqz v2, :cond_28
 
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRecordingOrientation:I
 
-    .line 870
+    .line 878
     :cond_28
     invoke-virtual {p0, v1, v0, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateProgressBarLayout(IZI)V
 
@@ -8878,18 +8972,18 @@
 .method public updateProgressBarLayout(IZI)V
     .registers 14
 
-    .line 1902
+    .line 1910
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressGroupLayout:Landroid/widget/LinearLayout;
 
     if-nez v0, :cond_6
 
     goto/16 :goto_2da
 
-    .line 1905
+    .line 1913
     :cond_6
     invoke-direct {p0, p3, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateHintRootPaddingInfo(II)V
 
-    .line 1906
+    .line 1914
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -8898,7 +8992,7 @@
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 1907
+    .line 1915
     iget v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingLeft:I
 
     iget v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mPaddingTop:I
@@ -8909,12 +9003,12 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1908
+    .line 1916
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1910
+    .line 1918
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAlwaysHintText:Landroid/widget/TextView;
 
     if-eqz v0, :cond_2da
@@ -8928,30 +9022,30 @@
     :cond_2b
     const/4 v1, 0x0
 
-    .line 1913
+    .line 1921
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1914
+    .line 1922
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdAlgorithResultLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1915
+    .line 1923
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdEffectLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1916
+    .line 1924
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideRoot:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1917
+    .line 1925
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAutoHideHintText:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1918
+    .line 1926
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAlwaysHintText:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -8960,7 +9054,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1919
+    .line 1927
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAutoHideHintText:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -8969,7 +9063,7 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1920
+    .line 1928
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideRoot:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -8978,7 +9072,7 @@
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1921
+    .line 1929
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdAlgorithResultLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -8987,7 +9081,7 @@
 
     check-cast v3, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 1922
+    .line 1930
     iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdEffectLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -8996,7 +9090,7 @@
 
     check-cast v4, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 1923
+    .line 1931
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mProgressHintRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -9011,22 +9105,22 @@
 
     if-eqz v5, :cond_7e
 
-    .line 1924
+    .line 1932
     iput v6, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1925
+    .line 1933
     iput v6, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1926
+    .line 1934
     iput v6, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     :cond_7e
     const/4 v5, 0x0
 
-    .line 1928
+    .line 1936
     invoke-virtual {v0, v5, v5, v5, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1929
+    .line 1937
     iget-object v7, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->hint_text_view_margin_top:I
@@ -9037,10 +9131,10 @@
 
     iput v7, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1930
+    .line 1938
     invoke-virtual {v1, v5, v5, v5, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1931
+    .line 1939
     iget-object v7, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->hint_text_view_margin_top:I
@@ -9051,13 +9145,13 @@
 
     iput v7, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1932
+    .line 1940
     invoke-virtual {v2, v5, v5, v5, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1933
+    .line 1941
     invoke-virtual {v3, v5, v5, v5, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1934
+    .line 1942
     invoke-virtual {v4, v5, v5, v5, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     const/16 v7, 0x10e
@@ -9070,7 +9164,7 @@
 
     if-eq p3, v7, :cond_e0
 
-    .line 1948
+    .line 1956
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_expand:I
@@ -9081,7 +9175,7 @@
 
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1949
+    .line 1957
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_expand:I
@@ -9092,7 +9186,7 @@
 
     iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1950
+    .line 1958
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->twinkle_guide_root_margin_top_expand:I
@@ -9103,7 +9197,7 @@
 
     iput v5, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1951
+    .line 1959
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_view_asd_margin_top_expand:I
@@ -9114,7 +9208,7 @@
 
     iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    .line 1952
+    .line 1960
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_view_asd_margin_top_expand:I
@@ -9127,7 +9221,7 @@
 
     goto/16 :goto_285
 
-    .line 1939
+    .line 1947
     :cond_e0
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
@@ -9139,7 +9233,7 @@
 
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1940
+    .line 1948
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_view_margin_90_top:I
@@ -9150,7 +9244,7 @@
 
     iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1941
+    .line 1949
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->twinkle_guide_root_margin_top_expand_90:I
@@ -9161,7 +9255,7 @@
 
     iput v5, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1942
+    .line 1950
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_view_asd_margin_left_expand_90:I
@@ -9172,7 +9266,7 @@
 
     iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    .line 1943
+    .line 1951
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_view_asd_margin_left_expand_90:I
@@ -9190,7 +9284,7 @@
 
     if-ne p1, v6, :cond_14b
 
-    .line 1956
+    .line 1964
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_column:I
@@ -9201,7 +9295,7 @@
 
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1957
+    .line 1965
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_column:I
@@ -9212,7 +9306,7 @@
 
     iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1958
+    .line 1966
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->twinkle_guide_root_margin_0_top_column:I
@@ -9223,7 +9317,7 @@
 
     iput v5, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1959
+    .line 1967
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_view_asd_margin_0_top_column:I
@@ -9234,7 +9328,7 @@
 
     iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    .line 1960
+    .line 1968
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_view_asd_margin_0_top_column:I
@@ -9247,7 +9341,7 @@
 
     goto/16 :goto_285
 
-    .line 1961
+    .line 1969
     :cond_14b
     iget v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mScreenFormType:I
 
@@ -9266,12 +9360,12 @@
 
     if-ne p1, v5, :cond_285
 
-    .line 1978
+    .line 1986
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-nez v5, :cond_1a2
 
-    .line 1979
+    .line 1987
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAlwaysHintText:Landroid/widget/TextView;
 
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
@@ -9286,7 +9380,7 @@
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1980
+    .line 1988
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdAlgorithResultLayout:Landroid/view/ViewGroup;
 
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
@@ -9301,7 +9395,7 @@
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1981
+    .line 1989
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdEffectLayout:Landroid/view/ViewGroup;
 
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
@@ -9316,7 +9410,7 @@
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1982
+    .line 1990
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideRoot:Landroid/view/View;
 
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
@@ -9331,7 +9425,7 @@
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1983
+    .line 1991
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAutoHideHintText:Landroid/widget/TextView;
 
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
@@ -9357,16 +9451,16 @@
 
     const/16 v5, 0x31
 
-    .line 2001
+    .line 2009
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2002
+    .line 2010
     iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2003
+    .line 2011
     iput v5, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2005
+    .line 2013
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_filp:I
@@ -9377,7 +9471,7 @@
 
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 2006
+    .line 2014
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_filp:I
@@ -9388,7 +9482,7 @@
 
     iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 2007
+    .line 2015
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_filp:I
@@ -9399,7 +9493,7 @@
 
     iput v5, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 2008
+    .line 2016
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_filp:I
@@ -9410,7 +9504,7 @@
 
     iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    .line 2009
+    .line 2017
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_filp:I
@@ -9426,16 +9520,16 @@
     :cond_1e6
     const/16 v5, 0x51
 
-    .line 1989
+    .line 1997
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1990
+    .line 1998
     iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1991
+    .line 1999
     iput v5, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1993
+    .line 2001
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_filp:I
@@ -9446,7 +9540,7 @@
 
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 1994
+    .line 2002
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_filp:I
@@ -9457,7 +9551,7 @@
 
     iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 1995
+    .line 2003
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_filp:I
@@ -9468,7 +9562,7 @@
 
     iput v5, v2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 1996
+    .line 2004
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_filp:I
@@ -9479,7 +9573,7 @@
 
     iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->bottomMargin:I
 
-    .line 1997
+    .line 2005
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_always_auto_view_margin_0_top_filp:I
@@ -9492,7 +9586,7 @@
 
     goto :goto_285
 
-    .line 1963
+    .line 1971
     :cond_221
     :goto_221
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
@@ -9505,7 +9599,7 @@
 
     iput v6, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1964
+    .line 1972
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v7, Lcom/transsion/camera/R$dimen;->hint_text_view_margin_90_top:I
@@ -9516,7 +9610,7 @@
 
     iput v6, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1965
+    .line 1973
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v7, Lcom/transsion/camera/R$dimen;->twinkle_guide_root_margin_top_expand_90:I
@@ -9527,7 +9621,7 @@
 
     iput v6, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1966
+    .line 1974
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v7, Lcom/transsion/camera/R$dimen;->hint_text_view_asd_margin_left_expand_90:I
@@ -9538,7 +9632,7 @@
 
     iput v6, v3, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    .line 1967
+    .line 1975
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v7, Lcom/transsion/camera/R$dimen;->hint_text_view_asd_margin_left_expand_90:I
@@ -9549,7 +9643,7 @@
 
     iput v6, v4, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    .line 1968
+    .line 1976
     iget-boolean v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsVideoRecording:Z
 
     if-nez v6, :cond_27b
@@ -9572,7 +9666,7 @@
 
     if-eqz v6, :cond_285
 
-    .line 1969
+    .line 1977
     invoke-virtual {v6}, Lcom/transsion/camera/app/common/ui/HintInfo;->getFeedbackType()I
 
     move-result v6
@@ -9583,7 +9677,7 @@
 
     iget-object v6, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCurrentAutoHideInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 1970
+    .line 1978
     invoke-virtual {v6}, Lcom/transsion/camera/app/common/ui/HintInfo;->getFeedbackType()I
 
     move-result v6
@@ -9592,23 +9686,23 @@
 
     if-ne v6, v7, :cond_285
 
-    .line 1971
+    .line 1979
     :cond_27b
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1972
+    .line 1980
     iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1973
+    .line 1981
     iput v5, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1974
+    .line 1982
     iput v5, v3, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    .line 1975
+    .line 1983
     iput v5, v4, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    .line 2013
+    .line 2021
     :cond_285
     :goto_285
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mContext:Landroid/content/Context;
@@ -9621,7 +9715,7 @@
 
     if-nez p1, :cond_2a4
 
-    .line 2015
+    .line 2023
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_view_normal_margin_top:I
@@ -9632,7 +9726,7 @@
 
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 2016
+    .line 2024
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_view_normal_margin_top:I
@@ -9650,7 +9744,7 @@
 
     if-ne p1, v5, :cond_2bb
 
-    .line 2018
+    .line 2026
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_view_hover_margin_top:I
@@ -9661,7 +9755,7 @@
 
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 2019
+    .line 2027
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->hint_text_view_hover_margin_top:I
@@ -9672,37 +9766,37 @@
 
     iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 2022
+    .line 2030
     :cond_2bb
     :goto_2bb
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAlwaysHintText:Landroid/widget/TextView;
 
     invoke-virtual {v5, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2023
+    .line 2031
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAutoHideHintText:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2024
+    .line 2032
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideRoot:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2025
+    .line 2033
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdAlgorithResultLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2026
+    .line 2034
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mAsdEffectLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2028
+    .line 2036
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateHintTextLayout()V
 
-    .line 2029
+    .line 2037
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateProgressBarLayoutForHover(IZI)V
 
     :cond_2da
@@ -9713,7 +9807,7 @@
 .method protected updateTwinkleGuideInfo(Ljava/lang/String;)V
     .registers 4
 
-    .line 995
+    .line 1003
     const-string v0, "com.transsion.camera.feature.mode.supernight.SuperNightModeEntry"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -9724,7 +9818,7 @@
 
     const-string v0, "com.transsion.camera.feature.supernightfilter.mode.SuperNightFilterModeEntry"
 
-    .line 996
+    .line 1004
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -9733,7 +9827,7 @@
 
     goto :goto_51
 
-    .line 999
+    .line 1007
     :cond_11
     const-string v0, "com.transsion.camera.feature.mode.magicsky.MagicSkyModeEntry"
 
@@ -9743,7 +9837,7 @@
 
     if-eqz p1, :cond_30
 
-    .line 1000
+    .line 1008
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideTextView:Landroid/widget/TextView;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRootView:Landroidx/constraintlayout/widget/ConstraintLayout;
@@ -9760,14 +9854,14 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1001
+    .line 1009
     sget p1, Lcom/transsion/camera/R$drawable;->ic_magicsky_twinkle_guide:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->setTwinkleGuideImageResource(I)V
 
     return-void
 
-    .line 1002
+    .line 1010
     :cond_30
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideMode:Ljava/lang/String;
 
@@ -9779,7 +9873,7 @@
 
     if-eqz p1, :cond_50
 
-    .line 1003
+    .line 1011
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideTextView:Landroid/widget/TextView;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mRootView:Landroidx/constraintlayout/widget/ConstraintLayout;
@@ -9796,7 +9890,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1004
+    .line 1012
     sget p1, Lcom/transsion/camera/R$drawable;->ic_flare_capture_guide:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->setTwinkleGuideImageResource(I)V
@@ -9804,7 +9898,7 @@
     :cond_50
     return-void
 
-    .line 997
+    .line 1005
     :cond_51
     :goto_51
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mTwinkleGuideTextView:Landroid/widget/TextView;
@@ -9823,7 +9917,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 998
+    .line 1006
     sget p1, Lcom/transsion/camera/R$drawable;->ic_supernight_guide:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->setTwinkleGuideImageResource(I)V

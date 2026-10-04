@@ -203,7 +203,7 @@
 .end method
 
 .method public getAppUsageWithtime(J)Ljava/util/List;
-    .registers 12
+    .registers 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -217,7 +217,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/transsion/hubsdk/core/app/usage/TranThubUsageStatsManager;->mService:Lcom/transsion/hubsdk/app/usage/ITranUsageStatsManager;
 
-    if-eqz v0, :cond_73
+    if-eqz v0, :cond_77
 
     .line 91
     new-instance v0, Ljava/util/ArrayList;
@@ -245,7 +245,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_5a
+    if-eqz p1, :cond_5e
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -273,7 +273,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_51
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -292,7 +292,11 @@
 
     iget-wide v7, v2, Lcom/transsion/hubsdk/app/usage/TranUidConsumer;->mConsumer:D
 
-    invoke-direct/range {v3 .. v8}, Lcom/transsion/hubsdk/api/app/usage/TranUidConsumer;-><init>(IIID)V
+    iget-wide v9, v2, Lcom/transsion/hubsdk/app/usage/TranUidConsumer;->mForegroundPower:D
+
+    iget-wide v11, v2, Lcom/transsion/hubsdk/app/usage/TranUidConsumer;->mBackgroundPower:D
+
+    invoke-direct/range {v3 .. v12}, Lcom/transsion/hubsdk/api/app/usage/TranUidConsumer;-><init>(IIIDDD)V
 
     .line 99
     invoke-interface {p2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -300,7 +304,7 @@
     goto :goto_30
 
     .line 101
-    :cond_4d
+    :cond_51
     new-instance v1, Lcom/transsion/hubsdk/api/app/usage/TranAppUsage;
 
     iget-wide v2, p1, Lcom/transsion/hubsdk/app/usage/TranAppUsage;->mTimeStamp:J
@@ -311,15 +315,15 @@
 
     .line 102
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_59
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_59} :catch_5b
+    :try_end_5d
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_5d} :catch_5f
 
     goto :goto_17
 
-    :cond_5a
+    :cond_5e
     return-object v0
 
-    :catch_5b
+    :catch_5f
     move-exception v0
 
     move-object p0, v0
@@ -344,14 +348,14 @@
     invoke-static {p1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 109
-    :cond_73
+    :cond_77
     sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0
 .end method
 
 .method public getBatteryLevelWithTime(J)Ljava/util/List;
-    .registers 7
+    .registers 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J)",
@@ -365,7 +369,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/transsion/hubsdk/core/app/usage/TranThubUsageStatsManager;->mService:Lcom/transsion/hubsdk/app/usage/ITranUsageStatsManager;
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_4d
 
     .line 116
     new-instance v0, Ljava/util/ArrayList;
@@ -393,7 +397,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_32
+    if-eqz p1, :cond_34
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -402,28 +406,32 @@
     check-cast p1, Lcom/transsion/hubsdk/app/usage/TranBatteryUsage;
 
     .line 119
-    new-instance p2, Lcom/transsion/hubsdk/api/app/usage/TranBatteryUsage;
+    new-instance v1, Lcom/transsion/hubsdk/api/app/usage/TranBatteryUsage;
 
-    iget-wide v1, p1, Lcom/transsion/hubsdk/app/usage/TranBatteryUsage;->mTimeStamp:J
+    iget-wide v2, p1, Lcom/transsion/hubsdk/app/usage/TranBatteryUsage;->mTimeStamp:J
 
-    iget v3, p1, Lcom/transsion/hubsdk/app/usage/TranBatteryUsage;->mBatteryLevel:I
+    iget v4, p1, Lcom/transsion/hubsdk/app/usage/TranBatteryUsage;->mBatteryLevel:I
 
-    iget p1, p1, Lcom/transsion/hubsdk/app/usage/TranBatteryUsage;->mScreenOnTime:I
+    iget v5, p1, Lcom/transsion/hubsdk/app/usage/TranBatteryUsage;->mScreenOnTime:I
 
-    invoke-direct {p2, v1, v2, v3, p1}, Lcom/transsion/hubsdk/api/app/usage/TranBatteryUsage;-><init>(JII)V
+    iget v6, p1, Lcom/transsion/hubsdk/app/usage/TranBatteryUsage;->mScreenOffActiveTime:I
+
+    invoke-direct/range {v1 .. v6}, Lcom/transsion/hubsdk/api/app/usage/TranBatteryUsage;-><init>(JIII)V
 
     .line 120
-    invoke-interface {v0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_31
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_31} :catch_33
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_33
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_33} :catch_35
 
     goto :goto_17
 
-    :cond_32
+    :cond_34
     return-object v0
 
-    :catch_33
-    move-exception p0
+    :catch_35
+    move-exception v0
+
+    move-object p0, v0
 
     .line 125
     sget-object p1, Lcom/transsion/hubsdk/core/app/usage/TranThubUsageStatsManager;->TAG:Ljava/lang/String;
@@ -432,7 +440,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "getAppUsageWithtime failed: "
+    const-string v0, "getBatteryLevelWithTime failed: "
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -445,7 +453,7 @@
     invoke-static {p1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 127
-    :cond_4a
+    :cond_4d
     sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0

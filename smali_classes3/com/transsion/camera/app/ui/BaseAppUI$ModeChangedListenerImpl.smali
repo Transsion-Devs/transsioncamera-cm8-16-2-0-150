@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
     .registers 2
 
-    .line 4158
+    .line 4144
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,15 +47,15 @@
 .method public onSwitchMode(Ljava/lang/String;)V
     .registers 5
 
-    .line 4161
+    .line 4147
     const-string v0, "onSwitchMode"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/debug/TraceUtil;->begin(Ljava/lang/String;)V
 
-    .line 4162
+    .line 4148
     invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
 
-    .line 4163
+    .line 4149
     invoke-static {}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -76,20 +76,20 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->iTrace(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 4164
+    .line 4150
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iput-object p1, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mCurrentModeName:Ljava/lang/String;
 
-    .line 4166
+    .line 4152
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mWideCameraUIManager:Lcom/transsion/camera/app/ui/manager/WideCameraUIManager;
 
     if-eqz v0, :cond_2b
 
-    .line 4167
+    .line 4153
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/manager/WideCameraUIManager;->setCurrentModeName(Ljava/lang/String;)V
 
-    .line 4170
+    .line 4156
     :cond_2b
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isLaunchWithDeveloperMode()Z
 
@@ -97,15 +97,15 @@
 
     if-eqz v0, :cond_38
 
-    .line 4171
+    .line 4157
     invoke-static {}, Lcom/transsion/camera/utils/tuning/TuningFeatureApi;->getInstance()Lcom/transsion/camera/utils/tuning/TuningFeatureApi;
 
     move-result-object v0
 
-    .line 4172
+    .line 4158
     invoke-interface {v0, p1}, Lcom/transsion/camera/utils/tuning/ITuningFeatureApi$ICamInfoTracker;->setCurrentModeName(Ljava/lang/String;)V
 
-    .line 4175
+    .line 4161
     :cond_38
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -113,7 +113,7 @@
 
     if-eqz v0, :cond_5a
 
-    .line 4180
+    .line 4166
     const-string v0, "com.transsion.camera.feature.mode.gopro.GoProModeEntry"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -122,14 +122,14 @@
 
     if-eqz v0, :cond_4c
 
-    .line 4181
+    .line 4167
     iget-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$menterGoProMode(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
     goto :goto_5a
 
-    .line 4183
+    .line 4169
     :cond_4c
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -137,14 +137,14 @@
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IModeChangedListener;->onSwitchMode(Ljava/lang/String;)V
 
-    .line 4184
+    .line 4170
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mPreviewUIManager:Lcom/transsion/camera/app/ui/manager/PreviewUIManager;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/manager/PreviewUIManager;->onSwitchMode(Ljava/lang/String;)V
 
-    .line 4187
+    .line 4173
     :cond_5a
     :goto_5a
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;

@@ -40,10 +40,10 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)V
     .registers 3
 
-    .line 517
+    .line 520
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 518
+    .line 521
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -58,7 +58,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 5
 
-    .line 523
+    .line 526
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$UIHandler;->mModeUIReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -69,7 +69,7 @@
 
     if-nez p0, :cond_23
 
-    .line 525
+    .line 528
     sget-object p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -92,7 +92,7 @@
 
     return-void
 
-    .line 528
+    .line 531
     :cond_23
     sget-object v0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -114,26 +114,26 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 529
+    .line 532
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_5a
 
     return-void
 
-    .line 540
+    .line 543
     :pswitch_41
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$mdoHideProcessingAnim(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)V
 
     return-void
 
-    .line 537
+    .line 540
     :pswitch_45
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$mdoShowEndingAnim(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)V
 
     return-void
 
-    .line 534
+    .line 537
     :pswitch_49
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -147,7 +147,7 @@
 
     return-void
 
-    .line 531
+    .line 534
     :pswitch_55
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$mdoInflateView(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)V
 

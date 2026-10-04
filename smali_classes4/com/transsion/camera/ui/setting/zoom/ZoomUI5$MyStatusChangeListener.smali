@@ -41,7 +41,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)V
     .registers 2
 
-    .line 1804
+    .line 1956
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 1804
+    .line 1956
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$MyStatusChangeListener;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -74,7 +74,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 8
 
-    .line 1808
+    .line 1960
     invoke-static {}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -101,7 +101,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1810
+    .line 1962
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -203,7 +203,7 @@
 
     goto :goto_cd
 
-    .line 1820
+    .line 1972
     :pswitch_69
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
@@ -215,7 +215,7 @@
 
     return-void
 
-    .line 1812
+    .line 1964
     :pswitch_74
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
@@ -223,7 +223,7 @@
 
     return-void
 
-    .line 1823
+    .line 1975
     :pswitch_7a
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
@@ -247,7 +247,7 @@
 
     goto :goto_cd
 
-    .line 1827
+    .line 1979
     :cond_8f
     const-string p1, ","
 
@@ -255,14 +255,14 @@
 
     move-result-object p1
 
-    .line 1828
+    .line 1980
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-eq v0, v1, :cond_b4
 
-    .line 1829
+    .line 1981
     invoke-static {}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -285,7 +285,7 @@
 
     return-void
 
-    .line 1833
+    .line 1985
     :cond_b4
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -297,7 +297,7 @@
 
     move-result p2
 
-    .line 1834
+    .line 1986
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -308,7 +308,7 @@
 
     move-result p1
 
-    .line 1835
+    .line 1987
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {p0, p2, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$msetOrientation(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;IZ)V
@@ -317,7 +317,7 @@
     :goto_cd
     return-void
 
-    .line 1817
+    .line 1969
     :pswitch_ce
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 

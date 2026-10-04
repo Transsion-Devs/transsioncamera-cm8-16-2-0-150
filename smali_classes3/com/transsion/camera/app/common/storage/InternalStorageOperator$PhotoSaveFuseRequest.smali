@@ -147,7 +147,7 @@
     move-result-object v2
     :try_end_30
     .catch Ljava/io/IOException; {:try_start_2c .. :try_end_30} :catch_48
-    .catchall {:try_start_2c .. :try_end_30} :catchall_a7
+    .catchall {:try_start_2c .. :try_end_30} :catchall_a8
 
     if-eqz v2, :cond_4a
 
@@ -180,13 +180,13 @@
     invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
     :try_end_44
     .catch Ljava/io/IOException; {:try_start_41 .. :try_end_44} :catch_48
-    .catchall {:try_start_41 .. :try_end_44} :catchall_a7
+    .catchall {:try_start_41 .. :try_end_44} :catchall_a8
 
     .line 478
     :cond_44
     invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
 
-    goto :goto_9f
+    goto :goto_a0
 
     :catch_48
     move-exception v1
@@ -211,7 +211,7 @@
     invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
     :try_end_56
     .catch Ljava/io/IOException; {:try_start_53 .. :try_end_56} :catch_48
-    .catchall {:try_start_53 .. :try_end_56} :catchall_a7
+    .catchall {:try_start_53 .. :try_end_56} :catchall_a8
 
     .line 478
     :cond_56
@@ -241,7 +241,7 @@
     throw v1
     :try_end_65
     .catch Ljava/io/IOException; {:try_start_61 .. :try_end_65} :catch_48
-    .catchall {:try_start_61 .. :try_end_65} :catchall_a7
+    .catchall {:try_start_61 .. :try_end_65} :catchall_a8
 
     .line 470
     :goto_65
@@ -286,7 +286,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v2, "th retry"
+    const-string/jumbo v2, "th retry"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -300,8 +300,8 @@
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/storage/InternalStorageOperator$PhotoSaveFuseRequest;->writeJpegFile(Landroid/content/ContentResolver;Landroid/net/Uri;[BLandroid/graphics/Bitmap;)Z
 
     move-result p0
-    :try_end_9b
-    .catchall {:try_start_65 .. :try_end_9b} :catchall_a7
+    :try_end_9c
+    .catchall {:try_start_65 .. :try_end_9c} :catchall_a8
 
     .line 478
     invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
@@ -309,7 +309,7 @@
     return p0
 
     .line 480
-    :goto_9f
+    :goto_a0
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/InternalStorageOperator$BaseSaveRequest;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[CapturePerformance] save data in file finish"
@@ -318,7 +318,7 @@
 
     return v0
 
-    :catchall_a7
+    :catchall_a8
     move-exception p0
 
     .line 478

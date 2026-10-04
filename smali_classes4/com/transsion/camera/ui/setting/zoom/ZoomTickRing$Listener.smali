@@ -20,3 +20,6 @@
 
 .method public abstract onZoomRatioChanged(I)V
 .end method
+
+.method public abstract onZoomTickRingTouchDown(I)V
+.end method

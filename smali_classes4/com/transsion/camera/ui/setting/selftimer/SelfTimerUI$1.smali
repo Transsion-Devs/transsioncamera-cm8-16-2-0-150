@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;)V
     .registers 2
 
-    .line 693
+    .line 759
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$1;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 693
+    .line 759
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$1;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -49,7 +49,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 8
 
-    .line 696
+    .line 762
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -74,7 +74,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 697
+    .line 763
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -160,7 +160,7 @@
 
     return-void
 
-    .line 699
+    .line 765
     :pswitch_5c
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$1;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
@@ -172,27 +172,27 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$fputmSoundEnable(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;Z)V
 
-    .line 700
+    .line 766
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$1;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$mloadSelfTimerSoundIfNeed(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;)V
 
     return-void
 
-    .line 710
+    .line 776
     :pswitch_6d
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$1;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     invoke-static {p1, v3}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$fputmCurrentPriority(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;I)V
 
-    .line 711
+    .line 777
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$1;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     invoke-static {p0, p2, v1}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$mstartSelfTimerImmediately(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;Ljava/lang/String;I)V
 
     return-void
 
-    .line 703
+    .line 769
     :pswitch_78
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$1;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
@@ -200,13 +200,13 @@
 
     return-void
 
-    .line 706
+    .line 772
     :pswitch_7e
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$1;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     invoke-static {p1, v3}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$fputmCurrentPriority(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;I)V
 
-    .line 707
+    .line 773
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$1;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     invoke-static {p0, p2, v2}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$mstartSelfTimerImmediately(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;Ljava/lang/String;I)V

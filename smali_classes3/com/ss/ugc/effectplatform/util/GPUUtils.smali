@@ -840,7 +840,7 @@
 
     if-nez v3, :cond_b4
 
-    .line 303
+    .line 672
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v3
@@ -849,7 +849,7 @@
 
     move-result-object v3
 
-    .line 304
+    .line 673
     :goto_95
     invoke-interface {v3}, Ljava/util/ListIterator;->hasPrevious()Z
 
@@ -857,7 +857,7 @@
 
     if-eqz v6, :cond_b4
 
-    .line 305
+    .line 674
     invoke-interface {v3}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
 
     move-result-object v6
@@ -873,7 +873,7 @@
 
     goto :goto_95
 
-    .line 306
+    .line 675
     :cond_a8
     check-cast v2, Ljava/lang/Iterable;
 
@@ -889,7 +889,7 @@
 
     goto :goto_b8
 
-    .line 310
+    .line 679
     :cond_b4
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 

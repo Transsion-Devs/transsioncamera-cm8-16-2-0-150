@@ -62,7 +62,7 @@
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1620
+    .line 193
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -78,7 +78,7 @@
 
     move-result-object p2
 
-    .line 1621
+    .line 194
     check-cast p2, Ljava/nio/file/Path;
 
     .line 77
@@ -88,7 +88,7 @@
 
     move-result-object p2
 
-    .line 1621
+    .line 194
     invoke-interface {p1, p2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_16

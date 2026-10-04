@@ -27,7 +27,7 @@
 
     const/4 v0, 0x0
 
-    .line 177
+    .line 174
     invoke-direct {p0, p1, v0}, Lkotlinx/coroutines/TimeoutCancellationException;-><init>(Ljava/lang/String;Lkotlinx/coroutines/Job;)V
 
     return-void
@@ -36,10 +36,10 @@
 .method public constructor <init>(Ljava/lang/String;Lkotlinx/coroutines/Job;)V
     .registers 3
 
-    .line 172
+    .line 169
     invoke-direct {p0, p1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
 
-    .line 171
+    .line 168
     iput-object p2, p0, Lkotlinx/coroutines/TimeoutCancellationException;->coroutine:Lkotlinx/coroutines/Job;
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic createCopy()Ljava/lang/Throwable;
     .registers 1
 
-    .line 169
+    .line 166
     invoke-virtual {p0}, Lkotlinx/coroutines/TimeoutCancellationException;->createCopy()Lkotlinx/coroutines/TimeoutCancellationException;
 
     move-result-object p0
@@ -61,7 +61,7 @@
 .method public createCopy()Lkotlinx/coroutines/TimeoutCancellationException;
     .registers 4
 
-    .line 181
+    .line 178
     new-instance v0, Lkotlinx/coroutines/TimeoutCancellationException;
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;

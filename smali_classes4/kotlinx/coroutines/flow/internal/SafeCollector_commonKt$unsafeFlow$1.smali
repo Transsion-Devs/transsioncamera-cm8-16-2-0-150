@@ -48,7 +48,7 @@
 
     iput-object p1, p0, Lkotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1;->$block:Lkotlin/jvm/functions/Function2;
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -71,7 +71,7 @@
         }
     .end annotation
 
-    .line 109
+    .line 107
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1;->$block:Lkotlin/jvm/functions/Function2;
 
     invoke-interface {p0, p1, p2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -119,7 +119,7 @@
 
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
-    .line 109
+    .line 107
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1;->$block:Lkotlin/jvm/functions/Function2;
 
     invoke-interface {p0, p1, p2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

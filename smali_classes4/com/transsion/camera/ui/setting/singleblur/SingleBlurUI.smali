@@ -174,7 +174,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIconClickListener:Landroid/view/View$OnClickListener;
 
-    .line 329
+    .line 333
     new-instance p1, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;-><init>(Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;)V
@@ -192,14 +192,14 @@
 .method private hideAlwaysHint()V
     .registers 3
 
-    .line 322
+    .line 326
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mAlwaysPortraitHintShowing:Z
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 325
+    .line 329
     :cond_5
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -209,7 +209,7 @@
 
     const/4 v0, 0x0
 
-    .line 326
+    .line 330
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mAlwaysPortraitHintShowing:Z
 
     return-void
@@ -218,7 +218,7 @@
 .method private synthetic lambda$hideIcon$3()V
     .registers 2
 
-    .line 210
+    .line 214
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     const/16 v0, 0x8
@@ -308,7 +308,7 @@
 .method private synthetic lambda$setDeviceSetting$1(Ljava/lang/Object;I)V
     .registers 5
 
-    .line 166
+    .line 170
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -331,10 +331,10 @@
 
     if-ne p2, p1, :cond_2b
 
-    .line 168
+    .line 172
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mCanShowPortraitAlwaysHint:Z
 
-    .line 169
+    .line 173
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->getValue()Ljava/lang/String;
 
     move-result-object p1
@@ -347,7 +347,7 @@
 
     if-eqz p1, :cond_2a
 
-    .line 170
+    .line 174
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->showAlwaysHint()V
 
     :cond_2a
@@ -356,10 +356,10 @@
     :cond_2b
     const/4 p1, 0x0
 
-    .line 173
+    .line 177
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mCanShowPortraitAlwaysHint:Z
 
-    .line 174
+    .line 178
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->hideAlwaysHint()V
 
     return-void
@@ -368,7 +368,7 @@
 .method private synthetic lambda$showIcon$2()V
     .registers 2
 
-    .line 202
+    .line 206
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     const/4 v0, 0x0
@@ -381,7 +381,7 @@
 .method private showAlwaysHint()V
     .registers 4
 
-    .line 313
+    .line 317
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mAlwaysPortraitHintShowing:Z
 
     if-nez v0, :cond_20
@@ -392,7 +392,7 @@
 
     goto :goto_20
 
-    .line 316
+    .line 320
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mAlwaysHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
@@ -406,7 +406,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 317
+    .line 321
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mAlwaysHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -415,7 +415,7 @@
 
     const/4 v0, 0x1
 
-    .line 318
+    .line 322
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mAlwaysPortraitHintShowing:Z
 
     :cond_20
@@ -648,7 +648,7 @@
 .method protected hideHint()V
     .registers 2
 
-    .line 273
+    .line 277
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_11
@@ -659,7 +659,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 274
+    .line 278
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -673,12 +673,12 @@
 .method protected hideIcon()V
     .registers 3
 
-    .line 208
+    .line 212
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     if-eqz v0, :cond_c
 
-    .line 209
+    .line 213
     new-instance v1, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;)V
@@ -711,7 +711,7 @@
 
     const/16 v0, 0xc
 
-    .line 217
+    .line 221
     const-string v2, "1"
 
     const/4 v3, 0x0
@@ -756,13 +756,13 @@
 
     goto :goto_86
 
-    .line 245
+    .line 249
     :cond_31
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->hideIcon()V
 
     return-void
 
-    .line 236
+    .line 240
     :cond_35
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->getValue()Ljava/lang/String;
 
@@ -778,22 +778,22 @@
 
     if-eqz p1, :cond_86
 
-    .line 238
+    .line 242
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->showAlwaysHint()V
 
     return-void
 
-    .line 233
+    .line 237
     :cond_47
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->hideAlwaysHint()V
 
     return-void
 
-    .line 258
+    .line 262
     :cond_4b
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsZoomWheelShowing:Z
 
-    .line 259
+    .line 263
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsSelfTimerStarted:Z
 
     if-nez p1, :cond_86
@@ -802,54 +802,54 @@
 
     if-nez p1, :cond_86
 
-    .line 260
+    .line 264
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->showIcon()V
 
     return-void
 
-    .line 248
+    .line 252
     :cond_59
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsZoomWheelShowing:Z
 
-    .line 249
+    .line 253
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->hideIcon()V
 
     return-void
 
-    .line 253
+    .line 257
     :cond_5f
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsSelfTimerStarted:Z
 
     if-nez p1, :cond_86
 
-    .line 254
+    .line 258
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->showIcon()V
 
     return-void
 
-    .line 264
+    .line 268
     :cond_67
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsSelfTimerStarted:Z
 
-    .line 265
+    .line 269
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsZoomWheelShowing:Z
 
     return-void
 
-    .line 242
+    .line 246
     :cond_6c
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->restoreDefaultState()V
 
     return-void
 
-    .line 225
+    .line 229
     :cond_70
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsSelfTimerStarted:Z
 
-    .line 226
+    .line 230
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->showIcon()V
 
-    .line 227
+    .line 231
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->getValue()Ljava/lang/String;
 
     move-result-object p1
@@ -864,24 +864,24 @@
 
     if-eqz p1, :cond_86
 
-    .line 229
+    .line 233
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->showAlwaysHint()V
 
     :cond_86
     :goto_86
     return-void
 
-    .line 219
+    .line 223
     :cond_87
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsSelfTimerStarted:Z
 
-    .line 220
+    .line 224
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->hideIcon()V
 
-    .line 221
+    .line 225
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->hideHint()V
 
-    .line 222
+    .line 226
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->hideAlwaysHint()V
 
     return-void
@@ -890,7 +890,7 @@
 .method public onBackPressed(Z)Z
     .registers 2
 
-    .line 290
+    .line 294
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onBackPressed(Z)Z
 
     move-result p0
@@ -941,7 +941,7 @@
 .method public releaseResource()V
     .registers 1
 
-    .line 309
+    .line 313
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->restoreDefaultState()V
 
     return-void
@@ -950,7 +950,7 @@
 .method protected restoreDefaultState()V
     .registers 4
 
-    .line 279
+    .line 283
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -971,22 +971,22 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 280
+    .line 284
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsIconSelected:Z
 
     if-eqz v0, :cond_28
 
     const/4 v0, 0x0
 
-    .line 281
+    .line 285
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsIconSelected:Z
 
-    .line 282
+    .line 286
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_28
 
-    .line 283
+    .line 287
     const-string v0, "0"
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
@@ -998,10 +998,10 @@
 .method public setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
     .registers 2
 
-    .line 195
+    .line 199
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 
-    .line 196
+    .line 200
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     return-void
@@ -1010,44 +1010,49 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 5
 
-    .line 165
+    if-nez p1, :cond_3
+
+    return-void
+
+    .line 169
+    :cond_3
     new-instance v0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$$ExternalSyntheticLambda3;-><init>(Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;)V
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
 
-    .line 177
+    .line 181
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    .line 178
+    .line 182
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 179
+    .line 183
     const-string v0, "1"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    .line 180
+    .line 184
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsIconSelected:Z
 
-    .line 181
+    .line 185
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2f
 
-    .line 182
+    .line 186
     const-string v1, "key_camera_zoom"
 
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 183
+    .line 187
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->getKey()Ljava/lang/String;
@@ -1058,8 +1063,8 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 185
-    :cond_2c
+    .line 189
+    :cond_2f
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1107,7 +1112,7 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 190
+    .line 194
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-void
@@ -1180,7 +1185,7 @@
 .method protected showIcon()V
     .registers 3
 
-    .line 200
+    .line 204
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsWideCamera:Z
 
     if-nez v0, :cond_10
@@ -1189,7 +1194,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 201
+    .line 205
     new-instance v1, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;)V
@@ -1203,40 +1208,40 @@
 .method public unInit()V
     .registers 4
 
-    .line 295
+    .line 299
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_10
 
-    .line 296
+    .line 300
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->endHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 297
+    .line 301
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 299
+    .line 303
     :cond_10
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->hideAlwaysHint()V
 
-    .line 300
+    .line 304
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_29
 
-    .line 301
+    .line 305
     const-string v1, "key_camera_zoom"
 
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 302
+    .line 306
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->getKey()Ljava/lang/String;
@@ -1247,7 +1252,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 304
+    .line 308
     :cond_29
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->unInit()V
 

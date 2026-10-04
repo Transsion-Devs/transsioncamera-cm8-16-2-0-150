@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static long_exposure_mode_support_front_wide_camera:I = 0x7f050110
+.field public static long_exposure_mode_support_front_wide_camera:I = 0x7f05011a
 
-.field public static long_exposure_mode_support_wide_camera:I = 0x7f050111
+.field public static long_exposure_mode_support_wide_camera:I = 0x7f05011b
 
 
 # direct methods

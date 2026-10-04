@@ -36,7 +36,7 @@
         }
     .end annotation
 
-    .line 416
+    .line 419
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$6;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     iput p2, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$6;->val$targetTranslationX:F
@@ -55,12 +55,12 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .registers 6
 
-    .line 419
+    .line 422
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result p1
 
-    .line 420
+    .line 423
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$6;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmStabilizer(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
@@ -89,7 +89,7 @@
 
     add-float/2addr v0, v1
 
-    .line 421
+    .line 424
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$6;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmStabilizer(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
@@ -126,10 +126,10 @@
 
     float-to-double v2, v2
 
-    .line 422
+    .line 425
     invoke-static {v2, v3}, Ljava/lang/Math;->sqrt(D)D
 
-    .line 425
+    .line 428
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$6;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {v2}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmPreviewSize(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/util/Size;
@@ -168,7 +168,7 @@
 
     if-lez v2, :cond_6b
 
-    .line 426
+    .line 429
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$6;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {v2}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmStabilizer(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
@@ -177,7 +177,7 @@
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 428
+    .line 431
     :cond_6b
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$6;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
@@ -217,7 +217,7 @@
 
     if-lez v0, :cond_97
 
-    .line 429
+    .line 432
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$6;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->-$$Nest$fgetmStabilizer(Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;)Landroid/view/View;
@@ -226,7 +226,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 431
+    .line 434
     :cond_97
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI$6;->this$0:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 

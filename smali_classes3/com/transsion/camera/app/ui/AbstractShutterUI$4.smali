@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
     .registers 2
 
-    .line 627
+    .line 622
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$4;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(F)V
     .registers 3
 
-    .line 630
+    .line 625
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$4;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmShutterButtonView(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/ui/view/ShutterButtonView;
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 631
+    .line 626
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$4;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmShutterButtonView(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/ui/view/ShutterButtonView;
@@ -63,7 +63,7 @@
 .method public onFadeOutEnd()V
     .registers 3
 
-    .line 637
+    .line 632
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$4;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmShutterButtonView(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/ui/view/ShutterButtonView;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 638
+    .line 633
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$4;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmShutterButtonView(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/ui/view/ShutterButtonView;
@@ -83,7 +83,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 640
+    .line 635
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$4;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)V
     .registers 2
 
-    .line 865
+    .line 868
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$4;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,21 +38,21 @@
 .method public onFileSaved(Landroid/net/Uri;)V
     .registers 3
 
-    .line 868
+    .line 871
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$4;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0, v0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->doOnFileSaved(Landroid/net/Uri;ZZ)V
 
-    .line 869
+    .line 872
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setShot2SeeEndTime()V
 
-    .line 870
+    .line 873
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0

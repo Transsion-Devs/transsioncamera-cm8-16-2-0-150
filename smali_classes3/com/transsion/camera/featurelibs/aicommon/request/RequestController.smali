@@ -1029,7 +1029,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "terminate request@"
+    const-string/jumbo v2, "terminate request@"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1049,25 +1049,25 @@
     monitor-enter p0
 
     .line 265
-    :try_start_1b
+    :try_start_1c
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ai/AIRequest;->getRequestStatus()I
 
     move-result v1
 
     const/4 v2, 0x1
 
-    if-eq v1, v2, :cond_5e
+    if-eq v1, v2, :cond_60
 
     const/4 v3, 0x2
 
-    if-eq v1, v3, :cond_41
+    if-eq v1, v3, :cond_43
 
     .line 280
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "terminate invalid status: "
+    const-string/jumbo v2, "terminate invalid status: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1085,15 +1085,15 @@
 
     const/4 v2, 0x0
 
-    goto :goto_82
-
-    :catchall_3f
-    move-exception p1
-
     goto :goto_84
 
+    :catchall_41
+    move-exception p1
+
+    goto :goto_86
+
     .line 274
-    :cond_41
+    :cond_43
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aicommon/request/RequestController;->mRequestCallMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ai/AIRequest;->getRequestId()J
@@ -1121,10 +1121,10 @@
     .line 275
     invoke-virtual {p1, v0}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
-    goto :goto_82
+    goto :goto_84
 
     .line 267
-    :cond_5e
+    :cond_60
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aicommon/request/RequestController;->mRequestCallMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ai/AIRequest;->getRequestId()J
@@ -1160,16 +1160,16 @@
     invoke-virtual {p0, p1}, Lcom/transsion/camera/featurelibs/aicommon/request/RequestController;->remove(Lcom/transsion/camera/app/common/ai/AIRequest;)V
 
     .line 284
-    :goto_82
+    :goto_84
     monitor-exit p0
 
     return v2
 
     .line 285
-    :goto_84
+    :goto_86
     monitor-exit p0
-    :try_end_85
-    .catchall {:try_start_1b .. :try_end_85} :catchall_3f
+    :try_end_87
+    .catchall {:try_start_1c .. :try_end_87} :catchall_41
 
     throw p1
 .end method

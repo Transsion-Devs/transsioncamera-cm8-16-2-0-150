@@ -49,9 +49,6 @@
 .method public abstract onCameraOperateAction(I)V
 .end method
 
-.method public abstract onModeSwitch(Z)V
-.end method
-
 .method public abstract setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 .end method
 

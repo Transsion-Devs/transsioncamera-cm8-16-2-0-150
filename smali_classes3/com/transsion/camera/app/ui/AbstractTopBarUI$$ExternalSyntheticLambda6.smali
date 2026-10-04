@@ -3,34 +3,36 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/function/Consumer;
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+.field public final synthetic f$0:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/transsion/camera/app/ui/AbstractTopBarUI;)V
+.method public synthetic constructor <init>(Z)V
     .registers 2
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda6;->f$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+    iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda6;->f$0:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 1
+.method public final accept(Ljava/lang/Object;)V
+    .registers 2
 
     .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda6;->f$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+    iget-boolean p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda6;->f$0:Z
 
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->$r8$lambda$leaCveKyC_myAds3w1x9lAm-Jz0(Lcom/transsion/camera/app/ui/AbstractTopBarUI;)V
+    check-cast p1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->$r8$lambda$R5zCAtF1jhewsN6Keuamx4zJqcE(ZLcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;)V
 
     return-void
 .end method

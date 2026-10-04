@@ -3,38 +3,30 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/function/Predicate;
-
-
-# instance fields
-.field public final synthetic f$0:Ljava/lang/String;
+.implements Ljava/util/function/Function;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;)V
-    .registers 2
+.method public synthetic constructor <init>()V
+    .registers 1
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcom/transsion/camera/app/common/provider/SettingFeatureProvider$$ExternalSyntheticLambda0;->f$0:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final test(Ljava/lang/Object;)Z
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
     .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/common/provider/SettingFeatureProvider$$ExternalSyntheticLambda0;->f$0:Ljava/lang/String;
+    check-cast p1, Ljava/lang/Long;
 
-    check-cast p1, Lcom/transsion/camera/app/common/setting/ICameraSetting;
+    invoke-static {p1}, Lcom/transsion/camera/app/common/provider/SettingFeatureProvider;->$r8$lambda$p-PJZvDlLXqMElP_zIvZ0NPK0I4(Ljava/lang/Long;)Ljava/util/Set;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/provider/SettingFeatureProvider;->$r8$lambda$xij8T8q29G0UME7WWX6OB-TciE0(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/ICameraSetting;)Z
+    move-result-object p0
 
-    move-result p0
-
-    return p0
+    return-object p0
 .end method

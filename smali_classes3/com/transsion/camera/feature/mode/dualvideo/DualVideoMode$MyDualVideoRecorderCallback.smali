@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)V
     .registers 2
 
-    .line 759
+    .line 762
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public notifyVideoRecorderData([FI)V
     .registers 4
 
-    .line 776
+    .line 779
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->-$$Nest$fgetmDualVideoRecorder(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)Lcom/transsion/camera/feature/mode/dualvideo/DualVideoRecorder;
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 777
+    .line 780
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->-$$Nest$fgetmDualVideoRecorder(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)Lcom/transsion/camera/feature/mode/dualvideo/DualVideoRecorder;
@@ -72,7 +72,7 @@
 .method public notifyVideoStartRecorder()V
     .registers 5
 
-    .line 762
+    .line 765
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -102,7 +102,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 763
+    .line 766
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -114,7 +114,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->updateRecordingHint(Z)V
 
-    .line 764
+    .line 767
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->-$$Nest$fgetmDualVideoRecorder(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)Lcom/transsion/camera/feature/mode/dualvideo/DualVideoRecorder;
@@ -129,12 +129,12 @@
 
     if-eqz v2, :cond_5d
 
-    .line 765
+    .line 768
     const-string v2, "continuous-video"
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->updateFocusMode(Ljava/lang/String;)V
 
-    .line 766
+    .line 769
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -143,7 +143,7 @@
 
     if-eqz v0, :cond_4d
 
-    .line 767
+    .line 770
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     const/4 v2, 0x2
@@ -152,7 +152,7 @@
 
     invoke-virtual {v0, v2, v1, v3}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->notifyToAppUI(IILjava/lang/String;)V
 
-    .line 769
+    .line 772
     :cond_4d
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
@@ -162,7 +162,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoRecorder;->startOrStop(Z)V
 
-    .line 770
+    .line 773
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->mPreviewProcessor:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
@@ -176,7 +176,7 @@
 .method public notifyVideoStopRecorder()V
     .registers 5
 
-    .line 783
+    .line 786
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -206,7 +206,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 784
+    .line 787
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -218,7 +218,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->updateRecordingHint(Z)V
 
-    .line 785
+    .line 788
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->-$$Nest$fgetmDualVideoRecorder(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)Lcom/transsion/camera/feature/mode/dualvideo/DualVideoRecorder;
@@ -233,28 +233,28 @@
 
     if-eqz v2, :cond_65
 
-    .line 786
+    .line 789
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->-$$Nest$fgetmDualVideoRecorder(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)Lcom/transsion/camera/feature/mode/dualvideo/DualVideoRecorder;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoRecorder;->startOrStop(Z)V
 
-    .line 787
+    .line 790
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->mPreviewProcessor:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->startRecordHideRoot(Z)V
 
-    .line 788
+    .line 791
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     const-string v1, "continuous-picture"
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->updateFocusMode(Ljava/lang/String;)V
 
-    .line 789
+    .line 792
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -263,7 +263,7 @@
 
     if-eqz v0, :cond_65
 
-    .line 790
+    .line 793
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     const/4 v1, -0x1
@@ -274,7 +274,7 @@
 
     invoke-virtual {v0, v3, v1, v2}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->notifyToAppUI(IILjava/lang/String;)V
 
-    .line 791
+    .line 794
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoRecorderCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     const/16 v0, 0xc9

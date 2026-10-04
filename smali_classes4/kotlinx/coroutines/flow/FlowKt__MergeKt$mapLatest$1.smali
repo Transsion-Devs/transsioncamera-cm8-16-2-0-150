@@ -27,8 +27,8 @@
     c = "kotlinx.coroutines.flow.FlowKt__MergeKt$mapLatest$1"
     f = "Merge.kt"
     l = {
-        0xd9,
-        0xd9
+        0xd5,
+        0xd5
     }
     m = "invokeSuspend"
 .end annotation
@@ -132,7 +132,7 @@
 
     move-result-object v0
 
-    .line 217
+    .line 213
     iget v1, p0, Lkotlinx/coroutines/flow/FlowKt__MergeKt$mapLatest$1;->label:I
 
     const/4 v2, 0x2

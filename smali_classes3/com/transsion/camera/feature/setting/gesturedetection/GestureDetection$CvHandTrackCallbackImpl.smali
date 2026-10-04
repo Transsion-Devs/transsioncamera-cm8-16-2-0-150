@@ -25,7 +25,7 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;)V
     .registers 2
 
-    .line 498
+    .line 495
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$CvHandTrackCallbackImpl;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onGestureDetected([Lcom/tetras/hand/model/CvHandInfo;)Z
     .registers 9
 
-    .line 501
+    .line 498
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$CvHandTrackCallbackImpl;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
@@ -49,10 +49,10 @@
 
     const/16 v1, 0x6e
 
-    .line 503
+    .line 500
     invoke-interface {v0, p1, v1}, Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;->onDataCallback(Ljava/lang/Object;I)V
 
-    .line 505
+    .line 502
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$CvHandTrackCallbackImpl;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
@@ -114,7 +114,7 @@
 
     goto/16 :goto_100
 
-    .line 510
+    .line 507
     :cond_48
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -134,7 +134,7 @@
 
     if-gez v0, :cond_63
 
-    .line 511
+    .line 508
     invoke-static {}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -148,7 +148,7 @@
     :cond_63
     if-eqz p1, :cond_ff
 
-    .line 515
+    .line 512
     array-length v0, p1
 
     move v2, v1
@@ -158,14 +158,14 @@
 
     aget-object v3, p1, v2
 
-    .line 516
+    .line 513
     iget v4, v3, Lcom/tetras/hand/model/CvHandInfo;->handType:I
 
     const/4 v5, 0x3
 
     if-ne v4, v5, :cond_ce
 
-    .line 517
+    .line 514
     iget p1, v3, Lcom/tetras/hand/model/CvHandInfo;->score:F
 
     const v0, 0x3f733333    # 0.95f
@@ -174,7 +174,7 @@
 
     if-gez p1, :cond_9e
 
-    .line 518
+    .line 515
     invoke-static {}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -207,7 +207,7 @@
 
     return v1
 
-    .line 521
+    .line 518
     :cond_9e
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$CvHandTrackCallbackImpl;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
@@ -217,7 +217,7 @@
 
     invoke-interface {p1, v1}, Lcom/transsion/camera/feature/setting/gesturedetection/IGestureDetectAlgorithm;->setDetAllowed(Z)V
 
-    .line 522
+    .line 519
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$CvHandTrackCallbackImpl;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;)Landroid/os/Handler;
@@ -228,7 +228,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 523
+    .line 520
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$CvHandTrackCallbackImpl;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -237,7 +237,7 @@
 
     invoke-static {p1, v0, v1}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fputmPreviousCaptureTime(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;J)V
 
-    .line 524
+    .line 521
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$CvHandTrackCallbackImpl;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     const-string p1, "key_gesture_state"
@@ -246,7 +246,7 @@
 
     invoke-static {p0, p1, v0}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$mnotifyStatusChanged(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 525
+    .line 522
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -259,7 +259,7 @@
 
     return p0
 
-    .line 528
+    .line 525
     :cond_ce
     invoke-static {}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -306,7 +306,7 @@
     :cond_ff
     return v1
 
-    .line 506
+    .line 503
     :cond_100
     :goto_100
     invoke-static {}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;

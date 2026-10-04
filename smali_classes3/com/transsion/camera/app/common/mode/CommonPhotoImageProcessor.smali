@@ -141,22 +141,22 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;Lcom/transsion/camera/app/common/ICameraControl$IContinuousShotCallback;)V
     .registers 4
 
-    .line 85
+    .line 88
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/ImageProcessor;-><init>(Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;)V
 
     const/4 p1, 0x0
 
-    .line 60
+    .line 63
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mPhotoHelper:Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;
 
-    .line 71
+    .line 74
     new-instance p1, Ljava/lang/Object;
 
     invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailPairProducerLock:Ljava/lang/Object;
 
-    .line 73
+    .line 76
     new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v0, 0x0
@@ -165,14 +165,14 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mIsShotJpeg:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 80
+    .line 83
     new-instance p1, Ljava/lang/Object;
 
     invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mExecuteListenersLock:Ljava/lang/Object;
 
-    .line 81
+    .line 84
     new-instance p1, Ljava/util/ArrayList;
 
     const/4 v0, 0x4
@@ -181,17 +181,17 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mExecuteListeners:Ljava/util/List;
 
-    .line 86
+    .line 89
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mCSImageCallback:Lcom/transsion/camera/app/common/ICameraControl$IContinuousShotCallback;
 
-    .line 87
+    .line 90
     new-instance p1, Lcom/transsion/camera/utils/PairProducer;
 
     invoke-direct {p1}, Lcom/transsion/camera/utils/PairProducer;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mResultPairProducer:Lcom/transsion/camera/utils/PairProducer;
 
-    .line 88
+    .line 91
     new-instance p1, Lcom/transsion/camera/utils/PairProducer;
 
     invoke-direct {p1}, Lcom/transsion/camera/utils/PairProducer;-><init>()V
@@ -204,18 +204,18 @@
 .method private addExecuteListenerLocked(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$IExecuteListener;)V
     .registers 5
 
-    .line 167
+    .line 170
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mExecuteListenersLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 168
+    .line 171
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mExecuteListeners:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 169
+    .line 172
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -240,7 +240,7 @@
 
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 170
+    .line 173
     monitor-exit v0
 
     return-void
@@ -258,16 +258,16 @@
 .method private addLocationInfoToResults(Lcom/transsion/camera/adapter/CameraResults;)V
     .registers 7
 
-    .line 593
+    .line 606
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTempLocation:Landroid/location/Location;
 
-    .line 595
+    .line 608
     :try_start_2
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mLocationManager:Lcom/transsion/camera/app/common/location/LocationManager;
 
     if-eqz v1, :cond_28
 
-    .line 596
+    .line 609
     const-string v2, "key_location"
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/common/location/LocationManager;->getCurrentLocation(Ljava/lang/String;)Landroid/location/Location;
@@ -281,7 +281,7 @@
     :catch_d
     move-exception v1
 
-    .line 599
+    .line 612
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -292,7 +292,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 600
+    .line 613
     invoke-virtual {v1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v1
@@ -303,14 +303,14 @@
 
     move-result-object v1
 
-    .line 599
+    .line 612
     invoke-static {v2, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     :cond_28
     :goto_28
     if-nez v0, :cond_32
 
-    .line 603
+    .line 616
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "addLocationInfoToResults location is null"
@@ -319,7 +319,7 @@
 
     return-void
 
-    .line 606
+    .line 619
     :cond_32
     invoke-virtual {v0}, Landroid/location/Location;->getLatitude()D
 
@@ -327,14 +327,14 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/transsion/camera/adapter/CameraResults;->setGpsLatitude(D)V
 
-    .line 607
+    .line 620
     invoke-virtual {v0}, Landroid/location/Location;->getLongitude()D
 
     move-result-wide v1
 
     invoke-virtual {p1, v1, v2}, Lcom/transsion/camera/adapter/CameraResults;->setGpsLongitude(D)V
 
-    .line 608
+    .line 621
     invoke-virtual {v0}, Landroid/location/Location;->getTime()J
 
     move-result-wide v0
@@ -347,7 +347,7 @@
 .method private algorithmPostViewData([BIIIIJ)V
     .registers 17
 
-    .line 702
+    .line 715
     new-instance v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;
 
     move-object v1, p0
@@ -374,14 +374,14 @@
 .method private checkExecuteCompleted()V
     .registers 2
 
-    .line 189
+    .line 192
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->isExecuteListenersEmptyLocked()Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    .line 190
+    .line 193
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->realReleaseImageProcessor()V
 
     :cond_9
@@ -391,12 +391,12 @@
 .method private createExecuteListener()Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$IExecuteListener;
     .registers 2
 
-    .line 154
+    .line 157
     new-instance v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$2;-><init>(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;)V
 
-    .line 162
+    .line 165
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->addExecuteListenerLocked(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$IExecuteListener;)V
 
     return-object v0
@@ -405,12 +405,12 @@
 .method private encodeThumbnail([BIIIIZLandroid/util/Size;)[B
     .registers 17
 
-    .line 783
+    .line 796
     invoke-virtual/range {p7 .. p7}, Landroid/util/Size;->getWidth()I
 
     move-result v5
 
-    .line 784
+    .line 797
     invoke-virtual/range {p7 .. p7}, Landroid/util/Size;->getHeight()I
 
     move-result v6
@@ -429,7 +429,7 @@
 
     move v8, p6
 
-    .line 783
+    .line 796
     invoke-virtual/range {v0 .. v8}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->jpegEncode([BIIIIIIZ)[B
 
     move-result-object p0
@@ -440,7 +440,7 @@
 .method private generateJpegWithoutThumbnail(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;)V
     .registers 4
 
-    .line 562
+    .line 575
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "generateJpegWithoutThumbnail"
@@ -449,12 +449,12 @@
 
     const/4 v0, 0x0
 
-    .line 565
+    .line 578
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->writeJpegExif(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;)[B
 
     move-result-object v0
 
-    .line 568
+    .line 581
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;->-$$Nest$fgetmBGImage(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;)Z
 
     move-result p1
@@ -469,7 +469,7 @@
 .method private generateThumbnail([BIIII)Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;
     .registers 14
 
-    .line 736
+    .line 749
     invoke-static {p5}, Ljava/lang/Math;->abs(I)I
 
     move-result p5
@@ -499,13 +499,13 @@
 
     move p5, p4
 
-    .line 743
+    .line 756
     :goto_14
     invoke-direct {p0, p5, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->getThumbnailSize(II)Landroid/util/Size;
 
     move-result-object v7
 
-    .line 744
+    .line 757
     iget-boolean v6, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mMirror:Z
 
     move-object v0, p0
@@ -522,7 +522,7 @@
 
     move-result-object p0
 
-    .line 746
+    .line 759
     new-instance p1, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;
 
     invoke-virtual {v7}, Landroid/util/Size;->getWidth()I
@@ -541,17 +541,17 @@
 .method private getDstJpegSize(II)Landroid/util/Size;
     .registers 4
 
-    .line 657
+    .line 670
     new-instance v0, Landroid/util/Size;
 
     invoke-direct {v0, p1, p2}, Landroid/util/Size;-><init>(II)V
 
-    .line 658
+    .line 671
     iget-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mSizeConverted:Z
 
     if-nez p1, :cond_20
 
-    .line 659
+    .line 672
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -572,13 +572,13 @@
 
     return-object v0
 
-    .line 662
+    .line 675
     :cond_20
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mSizeConvert:Lcom/transsion/camera/app/common/algorithm/size/SizeConvert;
 
     if-nez p1, :cond_2c
 
-    .line 663
+    .line 676
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "getDstJpegSize mSizeConvert is null"
@@ -587,13 +587,13 @@
 
     return-object v0
 
-    .line 666
+    .line 679
     :cond_2c
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/algorithm/size/SizeConvert;->getOriginalSize(Landroid/util/Size;)Landroid/util/Size;
 
     move-result-object p1
 
-    .line 667
+    .line 680
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -637,19 +637,19 @@
     :cond_9
     move v1, p2
 
-    .line 752
+    .line 765
     :goto_a
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->greatestCommonDivisor(II)I
 
     move-result v0
 
-    .line 753
+    .line 766
     div-int v1, p1, v0
 
-    .line 754
+    .line 767
     div-int v0, p2, v0
 
-    .line 756
+    .line 769
     :goto_12
     rem-int/lit8 v2, v1, 0x10
 
@@ -667,7 +667,7 @@
 
     goto :goto_55
 
-    .line 761
+    .line 774
     :cond_21
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -705,7 +705,7 @@
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 763
+    .line 776
     new-instance p0, Landroid/util/Size;
 
     invoke-direct {p0, v1, v0}, Landroid/util/Size;-><init>(II)V
@@ -724,14 +724,14 @@
 .method private greatestCommonDivisor(II)I
     .registers 3
 
-    .line 774
+    .line 787
     rem-int/2addr p1, p2
 
     if-nez p1, :cond_4
 
     return p2
 
-    .line 778
+    .line 791
     :cond_4
     invoke-direct {p0, p2, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->greatestCommonDivisor(II)I
 
@@ -743,12 +743,12 @@
 .method private isExecuteListenersEmptyLocked()Z
     .registers 5
 
-    .line 181
+    .line 184
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mExecuteListenersLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 182
+    .line 185
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mExecuteListeners:Ljava/util/List;
 
@@ -756,7 +756,7 @@
 
     move-result v1
 
-    .line 183
+    .line 186
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -784,7 +784,7 @@
     :cond_23
     const/4 p0, 0x0
 
-    .line 184
+    .line 187
     :goto_24
     monitor-exit v0
 
@@ -793,7 +793,7 @@
     :catchall_26
     move-exception p0
 
-    .line 185
+    .line 188
     monitor-exit v0
     :try_end_28
     .catchall {:try_start_3 .. :try_end_28} :catchall_26
@@ -804,14 +804,14 @@
 .method private onPairJpegInfoAndThumbnailInfo(Landroid/util/Pair;)V
     .registers 4
 
-    .line 572
+    .line 585
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onPairJpegInfoAndThumbnailInfo"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 575
+    .line 588
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;
@@ -824,7 +824,7 @@
 
     move-result-object v0
 
-    .line 578
+    .line 591
     iget-object p1, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast p1, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;
@@ -845,7 +845,7 @@
 
     const/4 v0, 0x0
 
-    .line 415
+    .line 428
     invoke-direct {p0, p1, p2, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->onPictureDataAndCameraResults(Lcom/transsion/camera/adapter/CameraResults;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$IExecuteListener;)V
 
     return-void
@@ -854,14 +854,14 @@
 .method private onPictureDataAndCameraResults(Lcom/transsion/camera/adapter/CameraResults;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$IExecuteListener;)V
     .registers 6
 
-    .line 420
+    .line 433
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onPictureDataAndCameraResults"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 421
+    .line 434
     new-instance v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$3;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$3;-><init>(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;Lcom/transsion/camera/adapter/CameraResults;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$IExecuteListener;)V
@@ -874,7 +874,7 @@
 .method private onThumbnailGenerated(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;)V
     .registers 3
 
-    .line 725
+    .line 738
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailPairProducer:Lcom/transsion/camera/utils/PairProducer;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/utils/PairProducer;->addSecond(Ljava/lang/Object;)Landroid/util/Pair;
@@ -883,7 +883,7 @@
 
     if-nez p1, :cond_10
 
-    .line 727
+    .line 740
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "pair JpegInfo and ThumbnailInfo failed"
@@ -892,7 +892,7 @@
 
     return-void
 
-    .line 730
+    .line 743
     :cond_10
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->onPairJpegInfoAndThumbnailInfo(Landroid/util/Pair;)V
 
@@ -902,7 +902,7 @@
 .method private onYuvImage(Lcom/transsion/camera/adapter/CameraResults;[BIIIIZ)V
     .registers 18
 
-    .line 435
+    .line 448
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v2, "[CapturePerformance] onYuvImage start"
@@ -921,27 +921,27 @@
 
     move/from16 v5, p6
 
-    .line 438
+    .line 451
     invoke-virtual/range {v0 .. v5}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->algorithmProcess([BIIII)[B
 
     move-result-object v1
 
-    .line 441
+    .line 454
     invoke-direct {p0, p3, p4}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->getDstJpegSize(II)Landroid/util/Size;
 
     move-result-object v2
 
-    .line 442
+    .line 455
     invoke-virtual {v2}, Landroid/util/Size;->getWidth()I
 
     move-result v5
 
-    .line 443
+    .line 456
     invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
 
     move-result v2
 
-    .line 444
+    .line 457
     invoke-static/range {p6 .. p6}, Ljava/lang/Math;->abs(I)I
 
     move-result v6
@@ -988,11 +988,11 @@
 
     goto :goto_2f
 
-    .line 455
+    .line 468
     :goto_3b
     invoke-direct/range {v0 .. v9}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->transformAndEncode(Lcom/transsion/camera/adapter/CameraResults;[BIIIIIIZ)V
 
-    .line 459
+    .line 472
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[CapturePerformance] onYuvImage end"
@@ -1005,12 +1005,12 @@
 .method private processPictureDataWhenRelease()V
     .registers 5
 
-    .line 138
+    .line 141
     invoke-static {}, Lcom/transsion/camera/adapter/CameraResults;->stub()Lcom/transsion/camera/adapter/CameraResults;
 
     move-result-object v0
 
-    .line 139
+    .line 142
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mResultPairProducer:Lcom/transsion/camera/utils/PairProducer;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/utils/PairProducer;->addFirst(Ljava/lang/Object;)Landroid/util/Pair;
@@ -1019,14 +1019,14 @@
 
     if-nez v1, :cond_17
 
-    .line 141
+    .line 144
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "processPictureDataWhenRelease pair failed"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 142
+    .line 145
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->realReleaseImageProcessor()V
 
     return-void
@@ -1035,14 +1035,14 @@
     :goto_17
     if-eqz v1, :cond_36
 
-    .line 146
+    .line 149
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v3, "processPictureDataWhenRelease pair success"
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 147
+    .line 150
     iget-object v2, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v2, Lcom/transsion/camera/adapter/CameraResults;
@@ -1051,15 +1051,15 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;
 
-    .line 148
+    .line 151
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->createExecuteListener()Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$IExecuteListener;
 
     move-result-object v3
 
-    .line 147
+    .line 150
     invoke-direct {p0, v2, v1, v3}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->onPictureDataAndCameraResults(Lcom/transsion/camera/adapter/CameraResults;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$IExecuteListener;)V
 
-    .line 149
+    .line 152
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mResultPairProducer:Lcom/transsion/camera/utils/PairProducer;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/utils/PairProducer;->addFirst(Ljava/lang/Object;)Landroid/util/Pair;
@@ -1075,24 +1075,24 @@
 .method private realReleaseImageProcessor()V
     .registers 3
 
-    .line 116
+    .line 119
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "realReleaseImageProcessor"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 117
+    .line 120
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailPairProducer:Lcom/transsion/camera/utils/PairProducer;
 
     invoke-virtual {v0}, Lcom/transsion/camera/utils/PairProducer;->clear()V
 
-    .line 118
+    .line 121
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mResultPairProducer:Lcom/transsion/camera/utils/PairProducer;
 
     invoke-virtual {v0}, Lcom/transsion/camera/utils/PairProducer;->clear()V
 
-    .line 119
+    .line 122
     new-instance v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$1;-><init>(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;)V
@@ -1105,18 +1105,18 @@
 .method private removeExecuteListenerLocked(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$IExecuteListener;)V
     .registers 5
 
-    .line 174
+    .line 177
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mExecuteListenersLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 175
+    .line 178
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mExecuteListeners:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 176
+    .line 179
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1141,7 +1141,7 @@
 
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 177
+    .line 180
     monitor-exit v0
 
     return-void
@@ -1159,14 +1159,14 @@
 .method private transformAndEncode(Lcom/transsion/camera/adapter/CameraResults;[BIIIIIIZ)V
     .registers 19
 
-    .line 540
+    .line 553
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v2, "[CapturePerformance] transformAndEncode"
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 543
+    .line 556
     iget-boolean v8, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mMirror:Z
 
     move-object v0, p0
@@ -1191,7 +1191,7 @@
 
     if-nez v2, :cond_21
 
-    .line 546
+    .line 559
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onNv21 jpegData is null"
@@ -1200,7 +1200,7 @@
 
     return-void
 
-    .line 550
+    .line 563
     :cond_21
     new-instance v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;
 
@@ -1214,7 +1214,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;-><init>(Lcom/transsion/camera/adapter/CameraResults;[BIIZ)V
 
-    .line 551
+    .line 564
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailPairProducer:Lcom/transsion/camera/utils/PairProducer;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/utils/PairProducer;->addFirst(Ljava/lang/Object;)Landroid/util/Pair;
@@ -1223,34 +1223,67 @@
 
     if-nez v1, :cond_3f
 
-    .line 553
+    .line 566
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v2, "pair Jpeg and Thumbnail fail"
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 554
+    .line 567
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->generateJpegWithoutThumbnail(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;)V
 
     return-void
 
-    .line 558
+    .line 571
     :cond_3f
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->onPairJpegInfoAndThumbnailInfo(Landroid/util/Pair;)V
 
     return-void
 .end method
 
+.method private updateContinuousShotState(Z)V
+    .registers 3
+
+    .line 888
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
+
+    if-eqz v0, :cond_7
+
+    .line 889
+    invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->setContinuousShot(Z)V
+
+    .line 891
+    :cond_7
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPostAlgoPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
+
+    if-eqz v0, :cond_e
+
+    .line 892
+    invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->setContinuousShot(Z)V
+
+    .line 894
+    :cond_e
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mQcomPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
+
+    if-eqz p0, :cond_15
+
+    .line 895
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->setContinuousShot(Z)V
+
+    :cond_15
+    return-void
+.end method
+
 .method private updateProcessMediaItem(J)V
     .registers 7
 
-    .line 401
+    .line 414
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->supportProcessingMedia()Z
 
     move-result v0
 
-    .line 402
+    .line 415
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1283,7 +1316,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 404
+    .line 417
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     if-eqz v1, :cond_4b
@@ -1296,7 +1329,7 @@
 
     if-eqz v0, :cond_4b
 
-    .line 405
+    .line 418
     invoke-virtual {v1, p1, p2}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->queryProcessMediaItem(J)Lcom/transsion/camera/app/common/provider/ProcessMediaItem;
 
     move-result-object p1
@@ -1305,12 +1338,12 @@
 
     const/4 p0, 0x1
 
-    .line 407
+    .line 420
     iput-boolean p0, p1, Lcom/transsion/camera/app/common/provider/ProcessMediaItem;->mSaving:Z
 
     return-void
 
-    .line 409
+    .line 422
     :cond_43
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1325,12 +1358,12 @@
 .method private writeJpegExif(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;)[B
     .registers 7
 
-    .line 582
+    .line 595
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;->-$$Nest$fgetmResults(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;)Lcom/transsion/camera/adapter/CameraResults;
 
     move-result-object v0
 
-    .line 583
+    .line 596
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;->-$$Nest$fgetmWidth(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;)I
 
     move-result v1
@@ -1339,7 +1372,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/adapter/CameraResults;->setImageWidth(J)V
 
-    .line 584
+    .line 597
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;->-$$Nest$fgetmHeight(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;)I
 
     move-result v1
@@ -1350,7 +1383,7 @@
 
     if-eqz p2, :cond_26
 
-    .line 586
+    .line 599
     new-instance v1, Landroid/util/Size;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;->-$$Nest$fgetmWidth(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;)I
@@ -1365,11 +1398,11 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/adapter/CameraResults;->setThumbnailSize(Landroid/util/Size;)V
 
-    .line 588
+    .line 601
     :cond_26
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->addLocationInfoToResults(Lcom/transsion/camera/adapter/CameraResults;)V
 
-    .line 589
+    .line 602
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;->-$$Nest$fgetmJpeg(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;)[B
 
     move-result-object p0
@@ -1398,7 +1431,7 @@
 .method public algorithmMigrate(Z)V
     .registers 2
 
-    .line 196
+    .line 199
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mAlgorithmMigrate:Z
 
     return-void
@@ -1419,7 +1452,7 @@
 .method protected algorithmProcessPostView([BIIII)[B
     .registers 6
 
-    .line 636
+    .line 649
     invoke-virtual/range {p0 .. p5}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->algorithmProcess([BIIII)[B
 
     move-result-object p0
@@ -1430,7 +1463,7 @@
 .method public checkNotifyBgOfflineErr()V
     .registers 4
 
-    .line 310
+    .line 313
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1453,7 +1486,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 311
+    .line 314
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->getPictureSurfaceId()I
 
     move-result v0
@@ -1465,15 +1498,15 @@
     :cond_21
     const/4 v0, 0x1
 
-    .line 314
+    .line 317
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->removeCaptureInfo(Z)V
 
-    .line 315
+    .line 318
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     if-eqz p0, :cond_2c
 
-    .line 316
+    .line 319
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->checkNotifyBgOfflineErr()V
 
     :cond_2c
@@ -1484,22 +1517,22 @@
 .method public createProcessingMedia(Landroid/content/Context;Landroid/graphics/Bitmap;Lcom/transsion/camera/app/common/provider/ProcessMediaItem$ProcessMode;Lcom/transsion/camera/app/common/mode/TimestampInfo;)Landroid/net/Uri;
     .registers 16
 
-    .line 892
+    .line 920
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->supportProcessingMedia()Z
 
     move-result p1
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_ec
+    if-eqz p1, :cond_e8
 
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     if-nez p1, :cond_d
 
-    goto/16 :goto_ec
+    goto/16 :goto_e8
 
-    .line 895
+    .line 923
     :cond_d
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -1517,12 +1550,12 @@
 
     if-eqz p1, :cond_29
 
-    .line 896
+    .line 924
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mQcomPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
-    if-nez p1, :cond_64
+    if-nez p1, :cond_60
 
-    .line 897
+    .line 925
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "createProcessingMedia: mQcomPicSurface is null, return"
@@ -1531,13 +1564,13 @@
 
     return-object v0
 
-    .line 901
+    .line 929
     :cond_29
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     if-nez p1, :cond_35
 
-    .line 902
+    .line 930
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "createProcessingMedia: mPicSurface is null, return"
@@ -1546,13 +1579,13 @@
 
     return-object v0
 
-    .line 905
+    .line 933
     :cond_35
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->isBGEnable()Z
 
     move-result p1
 
-    if-nez p1, :cond_64
+    if-nez p1, :cond_60
 
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
@@ -1560,20 +1593,16 @@
 
     move-result p1
 
-    if-nez p1, :cond_64
+    if-nez p1, :cond_60
 
-    iget-boolean p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mIsBgCaptureSupport:Z
-
-    if-nez p1, :cond_64
-
-    .line 906
+    .line 934
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p3, "createProcessingMedia: BGEnable or BgCapture is false, return: "
+    const-string p3, "createProcessingMedia: BGEnable or isBGOffline is false, return: "
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1593,13 +1622,13 @@
 
     return-object v0
 
-    .line 911
-    :cond_64
+    .line 939
+    :cond_60
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
-    if-nez p1, :cond_70
+    if-nez p1, :cond_6c
 
-    .line 913
+    .line 941
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "createProcessingMedia: storageOperator is null, return"
@@ -1608,8 +1637,8 @@
 
     return-object v0
 
-    .line 916
-    :cond_70
+    .line 944
+    :cond_6c
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mPhotoHelper:Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->getCameraDirectory()Ljava/lang/String;
@@ -1620,7 +1649,7 @@
 
     move-result-object v8
 
-    .line 917
+    .line 945
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->getInstance()Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;
 
     move-result-object v1
@@ -1631,14 +1660,14 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->setAppIOOperationStart(II)V
 
-    .line 919
+    .line 947
     invoke-interface {p1, v8}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->insertProcessMedia(Landroid/content/ContentValues;)Landroid/net/Uri;
 
     move-result-object v7
 
-    if-nez v7, :cond_92
+    if-nez v7, :cond_8e
 
-    .line 921
+    .line 949
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "insertProcessMedia: fail uri is null, return"
@@ -1647,8 +1676,8 @@
 
     return-object v0
 
-    .line 924
-    :cond_92
+    .line 952
+    :cond_8e
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     const/4 v1, 0x1
@@ -1657,7 +1686,7 @@
 
     move-result-object v9
 
-    .line 925
+    .line 953
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1682,14 +1711,14 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    if-eqz v9, :cond_d7
+    if-eqz v9, :cond_d3
 
-    .line 927
+    .line 955
     iget-boolean p1, v9, Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;->captureFail:Z
 
-    if-nez p1, :cond_d7
+    if-nez p1, :cond_d3
 
-    .line 928
+    .line 956
     new-instance v3, Lcom/transsion/camera/app/common/provider/ProcessMediaItem;
 
     sget-object v4, Lcom/transsion/camera/app/common/provider/ProcessMediaItem$ProgressStatus;->INDETERMINATE:Lcom/transsion/camera/app/common/provider/ProcessMediaItem$ProgressStatus;
@@ -1702,7 +1731,7 @@
 
     invoke-direct/range {v3 .. v10}, Lcom/transsion/camera/app/common/provider/ProcessMediaItem;-><init>(Lcom/transsion/camera/app/common/provider/ProcessMediaItem$ProgressStatus;Lcom/transsion/camera/app/common/provider/ProcessMediaItem$ProcessMode;Landroid/graphics/Bitmap;Landroid/net/Uri;Landroid/content/ContentValues;Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;Lcom/transsion/camera/app/common/mode/TimestampInfo;)V
 
-    .line 930
+    .line 958
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     const-string p2, "datetaken"
@@ -1719,40 +1748,40 @@
 
     move-result v3
 
-    :cond_d7
-    if-nez v3, :cond_eb
+    :cond_d3
+    if-nez v3, :cond_e7
 
-    .line 933
+    .line 961
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p2, "add processMediaItem fail, remove it."
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 934
+    .line 962
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {p1, v9}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->remove(Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;)V
 
-    .line 935
+    .line 963
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     invoke-interface {p0, v7}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->removeProcessMedia(Landroid/net/Uri;)V
 
     return-object v0
 
-    :cond_eb
+    :cond_e7
     return-object v7
 
-    :cond_ec
-    :goto_ec
+    :cond_e8
+    :goto_e8
     return-object v0
 .end method
 
 .method protected getContentValues([BLandroid/graphics/Bitmap;Landroid/location/Location;Ljava/lang/String;)Landroid/content/ContentValues;
     .registers 5
 
-    .line 834
+    .line 847
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mPhotoHelper:Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;
 
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;->createContentValues([BLandroid/graphics/Bitmap;Landroid/location/Location;Ljava/lang/String;)Landroid/content/ContentValues;
@@ -1765,7 +1794,7 @@
 .method protected getProcessedContentValues([BLandroid/graphics/Bitmap;Landroid/location/Location;Landroid/content/ContentValues;)Landroid/content/ContentValues;
     .registers 5
 
-    .line 839
+    .line 852
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mPhotoHelper:Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;
 
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;->createProcessedContentValues([BLandroid/graphics/Bitmap;Landroid/location/Location;Landroid/content/ContentValues;)Landroid/content/ContentValues;
@@ -1778,10 +1807,10 @@
 .method public init(Lcom/transsion/camera/app/common/location/LocationManager;Lcom/transsion/camera/app/common/algorithm/size/SizeConvert;Landroid/content/Context;)V
     .registers 4
 
-    .line 93
+    .line 96
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->init(Lcom/transsion/camera/app/common/location/LocationManager;Lcom/transsion/camera/app/common/algorithm/size/SizeConvert;Landroid/content/Context;)V
 
-    .line 94
+    .line 97
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mSizeConvert:Lcom/transsion/camera/app/common/algorithm/size/SizeConvert;
 
     return-void
@@ -1790,7 +1819,7 @@
 .method protected jpegEncode([BIII)[B
     .registers 5
 
-    .line 678
+    .line 691
     invoke-static {p1, p2, p3, p4}, Lcom/transsion/camera/app/common/algorithm/jpegcodec/JpegCodec;->jpegEncode([BIII)[B
 
     move-result-object p0
@@ -1801,7 +1830,7 @@
 .method protected jpegEncode([BIIIIIIZ)[B
     .registers 9
 
-    .line 683
+    .line 696
     invoke-static/range {p1 .. p8}, Lcom/transsion/camera/app/common/algorithm/jpegcodec/JpegCodec;->jpegEncode([BIIIIIIZ)[B
 
     move-result-object p0
@@ -1812,7 +1841,7 @@
 .method protected needAlgorithmMigrateProcess()Z
     .registers 1
 
-    .line 470
+    .line 483
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mWatermark:Z
 
     if-eqz p0, :cond_c
@@ -1836,22 +1865,22 @@
 .method public onCaptureCompleted(Lcom/transsion/camera/adapter/CameraResults;)V
     .registers 4
 
-    .line 213
+    .line 216
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->onCaptureCompleted(Lcom/transsion/camera/adapter/CameraResults;)V
 
-    .line 214
+    .line 217
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[CapturePerformance] onCaptureCompleted in ImageProcessor"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 215
+    .line 218
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mAlgorithmMigrate:Z
 
     if-eqz v0, :cond_29
 
-    .line 216
+    .line 219
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mResultPairProducer:Lcom/transsion/camera/utils/PairProducer;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/utils/PairProducer;->addFirst(Ljava/lang/Object;)Landroid/util/Pair;
@@ -1860,7 +1889,7 @@
 
     if-nez p1, :cond_1e
 
-    .line 218
+    .line 221
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onCaptureCompleted pair is null"
@@ -1869,7 +1898,7 @@
 
     return-void
 
-    .line 221
+    .line 224
     :cond_1e
     iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -1888,33 +1917,33 @@
 .method public onCaptureFailed(Z)V
     .registers 6
 
-    .line 227
+    .line 230
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->onCaptureFailed(Z)V
 
-    .line 228
+    .line 231
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[CapturePerformance] onCaptureFailed in ImageProcessor"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 229
+    .line 232
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailPairProducerLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 230
+    .line 233
     :try_start_d
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailPairProducer:Lcom/transsion/camera/utils/PairProducer;
 
     invoke-virtual {v1}, Lcom/transsion/camera/utils/PairProducer;->pollSecondLast()Ljava/lang/Object;
 
-    .line 231
+    .line 234
     monitor-exit v0
     :try_end_13
     .catchall {:try_start_d .. :try_end_13} :catchall_93
 
-    .line 233
+    .line 236
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->isOffLineSessionSupport()Z
 
     move-result v0
@@ -1925,16 +1954,16 @@
 
     if-eqz v0, :cond_20
 
-    .line 234
+    .line 237
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->decreaseCaptureCount()V
 
-    .line 236
+    .line 239
     :cond_20
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mSurfaceLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 237
+    .line 240
     :try_start_23
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->isPostALgoCapturing()Z
 
@@ -1942,12 +1971,12 @@
 
     if-eqz v0, :cond_36
 
-    .line 238
+    .line 241
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPostAlgoPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->decreasePicCount()V
 
-    .line 239
+    .line 242
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPostAlgoPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->decreaseCaptureCount()V
@@ -1959,7 +1988,7 @@
 
     goto :goto_91
 
-    .line 241
+    .line 244
     :cond_36
     :goto_36
     monitor-exit v1
@@ -1968,31 +1997,31 @@
 
     if-eqz p1, :cond_90
 
-    .line 243
+    .line 246
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     if-eqz p1, :cond_90
 
-    .line 244
+    .line 247
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->getLatestCaptureThumbInfo()Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;
 
     move-result-object p1
 
     if-eqz p1, :cond_90
 
-    .line 245
+    .line 248
     iget v0, p1, Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;->thumbnilType:I
 
     if-lez v0, :cond_90
 
-    .line 247
+    .line 250
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->getProcessMediaItem(Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;)Lcom/transsion/camera/app/common/provider/ProcessMediaItem;
 
     move-result-object v0
 
-    .line 248
+    .line 251
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2015,7 +2044,7 @@
 
     if-eqz v0, :cond_89
 
-    .line 250
+    .line 253
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
@@ -2028,20 +2057,20 @@
 
     if-eqz v2, :cond_77
 
-    .line 251
+    .line 254
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {v2, v0, v1}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->onCaptureEnded(Lcom/transsion/camera/app/common/provider/ProcessMediaItem;Z)V
 
     goto :goto_7c
 
-    .line 253
+    .line 256
     :cond_77
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {v1, v0, v3}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->onCaptureEnded(Lcom/transsion/camera/app/common/provider/ProcessMediaItem;Z)V
 
-    .line 255
+    .line 258
     :goto_7c
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
@@ -2051,16 +2080,16 @@
 
     invoke-interface {v1, v0}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->removeProcessMedia(Landroid/net/Uri;)V
 
-    .line 256
+    .line 259
     invoke-static {v3}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->setProcessStatus(Z)V
 
     goto :goto_8b
 
-    .line 258
+    .line 261
     :cond_89
     iput-boolean v1, p1, Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;->captureFail:Z
 
-    .line 261
+    .line 264
     :goto_8b
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
@@ -2069,7 +2098,7 @@
     :cond_90
     return-void
 
-    .line 241
+    .line 244
     :goto_91
     :try_start_91
     monitor-exit v1
@@ -2081,7 +2110,7 @@
     :catchall_93
     move-exception p0
 
-    .line 231
+    .line 234
     :try_start_94
     monitor-exit v0
     :try_end_95
@@ -2093,27 +2122,35 @@
 .method public onContinuousShotStart()V
     .registers 3
 
-    .line 861
+    .line 875
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mIsShotJpeg:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 862
+    .line 876
+    invoke-direct {p0, v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->updateContinuousShotState(Z)V
+
+    .line 877
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
-    if-eqz p0, :cond_d
+    if-eqz p0, :cond_10
 
-    .line 863
+    .line 878
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->disableBGEnable()V
 
-    :cond_d
+    :cond_10
     return-void
 .end method
 
 .method public onContinuousShotStop()V
-    .registers 1
+    .registers 2
+
+    const/4 v0, 0x0
+
+    .line 884
+    invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->updateContinuousShotState(Z)V
 
     return-void
 .end method
@@ -2121,7 +2158,7 @@
 .method protected onJpeg(Lcom/transsion/camera/app/common/mode/PictureInfo;)V
     .registers 10
 
-    .line 389
+    .line 397
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPictureCallback:Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;->checkSingleCapture()Z
@@ -2138,7 +2175,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 390
+    .line 398
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mCSImageCallback:Lcom/transsion/camera/app/common/ICameraControl$IContinuousShotCallback;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getData()[B
@@ -2149,7 +2186,7 @@
 
     return-void
 
-    .line 392
+    .line 400
     :cond_1a
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getTimestamp()J
 
@@ -2157,7 +2194,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->updateProcessMediaItem(J)V
 
-    .line 393
+    .line 401
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPictureCallback:Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getData()[B
@@ -2180,14 +2217,35 @@
 
     move-result v0
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_3e
 
     const/4 v0, 0x0
 
-    .line 395
+    .line 403
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->saveJpegToFile(Lcom/transsion/camera/app/common/mode/PictureInfo;Landroid/graphics/Bitmap;)V
 
-    :cond_3d
+    return-void
+
+    :cond_3e
+    const/4 p0, -0x2
+
+    if-ne v0, p0, :cond_4e
+
+    .line 405
+    invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getListener()Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_4e
+
+    .line 407
+    invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getTimestamp()J
+
+    move-result-wide v0
+
+    invoke-interface {p0, v0, v1}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveCancel(J)V
+
+    :cond_4e
     return-void
 .end method
 
@@ -2204,7 +2262,7 @@
 
     move v3, p3
 
-    .line 374
+    .line 377
     invoke-virtual/range {v0 .. v5}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->onJpeg([BZIJ)V
 
     return-void
@@ -2213,7 +2271,7 @@
 .method protected onJpeg([BZIJ)V
     .registers 12
 
-    .line 377
+    .line 380
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPictureCallback:Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;->checkSingleCapture()Z
@@ -2230,18 +2288,18 @@
 
     if-eqz v0, :cond_16
 
-    .line 378
+    .line 381
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mCSImageCallback:Lcom/transsion/camera/app/common/ICameraControl$IContinuousShotCallback;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/ICameraControl$IContinuousShotCallback;->onContinuousShotProgress([B)V
 
     return-void
 
-    .line 380
+    .line 383
     :cond_16
     invoke-direct {p0, p4, p5}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->updateProcessMediaItem(J)V
 
-    .line 381
+    .line 384
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPictureCallback:Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;
 
     move-object v1, p1
@@ -2256,7 +2314,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_2b
+    if-nez p1, :cond_2c
 
     move v3, v2
 
@@ -2264,22 +2322,43 @@
 
     move-object v0, p0
 
-    .line 383
+    .line 386
     invoke-virtual/range {v0 .. v5}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->saveJpegToFile([BLandroid/graphics/Bitmap;ZJ)V
 
-    :cond_2b
+    return-void
+
+    :cond_2c
+    const/4 p0, -0x2
+
+    if-ne p1, p0, :cond_3c
+
+    .line 388
+    invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->getInstance()Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->getLowQualityMediaSaverListener()Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_3c
+
+    .line 390
+    invoke-interface {p0, v4, v5}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveCancel(J)V
+
+    :cond_3c
     return-void
 .end method
 
 .method protected onPictureData(Lcom/transsion/camera/app/common/mode/PictureInfo;)V
     .registers 9
 
-    .line 324
+    .line 327
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getFormat()I
 
     move-result v2
 
-    .line 325
+    .line 328
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2312,7 +2391,7 @@
 
     if-ne v0, v2, :cond_50
 
-    .line 328
+    .line 331
     sget-boolean v0, Lcom/transsion/camera/utils/FeatureSupport;->sRenderFaceInfoToImage:Z
 
     if-eqz v0, :cond_4c
@@ -2321,7 +2400,7 @@
 
     if-eqz v0, :cond_4c
 
-    .line 329
+    .line 332
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getData()[B
 
     move-result-object v1
@@ -2332,7 +2411,7 @@
 
     check-cast v0, [B
 
-    .line 330
+    .line 333
     new-instance v1, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;
 
     invoke-direct {v1, p1}, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;-><init>(Lcom/transsion/camera/app/common/mode/PictureInfo;)V
@@ -2347,7 +2426,7 @@
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->onJpeg(Lcom/transsion/camera/app/common/mode/PictureInfo;)V
 
-    .line 332
+    .line 335
     :cond_4c
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->onJpeg(Lcom/transsion/camera/app/common/mode/PictureInfo;)V
 
@@ -2364,7 +2443,7 @@
 
     goto :goto_71
 
-    .line 343
+    .line 346
     :cond_5a
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2386,7 +2465,7 @@
 
     goto :goto_a5
 
-    .line 334
+    .line 337
     :cond_71
     :goto_71
     new-instance v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;
@@ -2399,7 +2478,7 @@
 
     move-result v3
 
-    .line 335
+    .line 338
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getHeight()I
 
     move-result v4
@@ -2414,7 +2493,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;-><init>([BIIIIZ)V
 
-    .line 336
+    .line 339
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mResultPairProducer:Lcom/transsion/camera/utils/PairProducer;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/utils/PairProducer;->addSecond(Ljava/lang/Object;)Landroid/util/Pair;
@@ -2423,7 +2502,7 @@
 
     if-nez v0, :cond_9a
 
-    .line 338
+    .line 341
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onPictureData pair is null"
@@ -2432,7 +2511,7 @@
 
     return-void
 
-    .line 341
+    .line 344
     :cond_9a
     iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -2444,7 +2523,7 @@
 
     invoke-direct {p0, v1, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->onPictureDataAndCameraResults(Lcom/transsion/camera/adapter/CameraResults;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;)V
 
-    .line 345
+    .line 348
     :goto_a5
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getTimestamp()J
 
@@ -2458,14 +2537,14 @@
 .method protected onPictureDataFail(J)V
     .registers 6
 
-    .line 349
+    .line 352
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[CapturePerformance] onPictureDataFail in ImageProcessor"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 350
+    .line 353
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     if-eqz v0, :cond_49
@@ -2476,26 +2555,26 @@
 
     if-nez v1, :cond_29
 
-    .line 353
+    .line 356
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->getLatestCaptureThumbInfo()Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;
 
     move-result-object p1
 
     if-eqz p1, :cond_27
 
-    .line 354
+    .line 357
     iget p2, p1, Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;->thumbnilType:I
 
     if-lez p2, :cond_27
 
-    .line 355
+    .line 358
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {p2, p1}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->getProcessMediaItem(Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;)Lcom/transsion/camera/app/common/provider/ProcessMediaItem;
 
     move-result-object p2
 
-    .line 356
+    .line 359
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->remove(Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;)V
@@ -2507,7 +2586,7 @@
 
     goto :goto_38
 
-    .line 359
+    .line 362
     :cond_29
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->getProcessMediaItem(J)Lcom/transsion/camera/app/common/provider/ProcessMediaItem;
 
@@ -2515,7 +2594,7 @@
 
     if-eqz p2, :cond_38
 
-    .line 361
+    .line 364
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/provider/ProcessMediaItem;->getTimestamp()J
@@ -2528,7 +2607,7 @@
     :goto_38
     if-eqz p2, :cond_49
 
-    .line 365
+    .line 368
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/provider/ProcessMediaItem;->getUri()Landroid/net/Uri;
@@ -2537,7 +2616,7 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->removeProcessMedia(Landroid/net/Uri;)V
 
-    .line 366
+    .line 369
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     const/4 v0, 0x1
@@ -2547,10 +2626,10 @@
     :cond_49
     const/4 p1, 0x0
 
-    .line 369
+    .line 372
     invoke-static {p1}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->setProcessStatus(Z)V
 
-    .line 370
+    .line 373
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPictureCallback:Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;->notifyPictureDataFail()V
@@ -2561,7 +2640,7 @@
 .method protected onPostViewData([BIIIIJ)V
     .registers 11
 
-    .line 690
+    .line 703
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2580,17 +2659,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 691
+    .line 704
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mAlgorithmMigrate:Z
 
     if-eqz v0, :cond_1e
 
-    .line 692
+    .line 705
     invoke-direct/range {p0 .. p7}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->algorithmPostViewData([BIIIIJ)V
 
     return-void
 
-    .line 695
+    .line 708
     :cond_1e
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPictureCallback:Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;
 
@@ -2602,14 +2681,14 @@
 .method public onProcessedMediaUriSaved(Lcom/transsion/camera/app/common/provider/ProcessMediaItem;)V
     .registers 3
 
-    .line 944
+    .line 972
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     if-eqz p0, :cond_8
 
     const/4 v0, 0x1
 
-    .line 945
+    .line 973
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->onCaptureEnded(Lcom/transsion/camera/app/common/provider/ProcessMediaItem;Z)V
 
     :cond_8
@@ -2626,28 +2705,31 @@
         }
     .end annotation
 
-    .line 844
+    .line 857
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->onTakePicture(Lcom/transsion/camera/app/common/mode/CaptureInfo;)V
 
-    .line 845
+    .line 858
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mIsShotJpeg:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 846
+    .line 859
+    invoke-direct {p0, v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->updateContinuousShotState(Z)V
+
+    .line 860
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_32
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->isPostALgoCapturing()Z
 
     move-result v0
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_32
 
-    .line 847
+    .line 861
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->isOffLineSessionSupport()Z
@@ -2662,49 +2744,49 @@
 
     move v0, v1
 
-    .line 848
-    :goto_21
+    .line 862
+    :goto_24
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CaptureInfo;->getCaptureCount()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_2f
+    if-ge v0, v2, :cond_32
 
-    .line 849
+    .line 863
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->increaseCaptureCount()V
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_21
+    goto :goto_24
 
-    .line 852
-    :cond_2f
+    .line 866
+    :cond_32
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->isPostALgoCapturing()Z
 
     move-result v0
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_46
 
-    .line 853
-    :goto_35
+    .line 867
+    :goto_38
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CaptureInfo;->getCaptureCount()I
 
     move-result v0
 
-    if-ge v1, v0, :cond_43
+    if-ge v1, v0, :cond_46
 
-    .line 854
+    .line 868
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPostAlgoPicSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->increaseCaptureCount()V
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_35
+    goto :goto_38
 
-    :cond_43
+    :cond_46
     return-void
 .end method
 
@@ -2713,7 +2795,7 @@
 
     if-nez p1, :cond_c
 
-    .line 812
+    .line 825
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo p1, "updateFastThumbSurface: size is null"
@@ -2724,7 +2806,7 @@
 
     return-object p0
 
-    .line 815
+    .line 828
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mFastThumbSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
@@ -2742,7 +2824,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mFastThumbSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
-    .line 816
+    .line 829
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->getHeight()I
 
     move-result v0
@@ -2753,16 +2835,16 @@
 
     if-eq v0, v1, :cond_5a
 
-    .line 817
+    .line 830
     :cond_26
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mFastThumbSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     if-eqz v0, :cond_2d
 
-    .line 818
+    .line 831
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->releaseSurface()V
 
-    .line 820
+    .line 833
     :cond_2d
     new-instance v0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
 
@@ -2770,12 +2852,12 @@
 
     const-string v1, "FastThumb"
 
-    .line 821
+    .line 834
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->setName(Ljava/lang/String;)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
 
     move-result-object v0
 
-    .line 822
+    .line 835
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
 
     move-result v1
@@ -2790,31 +2872,31 @@
 
     const/16 v0, 0x23
 
-    .line 823
+    .line 836
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->setFormat(I)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
 
     move-result-object p1
 
     const/4 v0, 0x1
 
-    .line 824
+    .line 837
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->setPostViewSurface(Z)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
 
     move-result-object p1
 
-    .line 825
+    .line 838
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->build()Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mFastThumbSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
-    .line 826
+    .line 839
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPostViewCallback:Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->setImageCallback(Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;)V
 
-    .line 828
+    .line 841
     :cond_5a
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mFastThumbSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
@@ -2826,7 +2908,7 @@
 
     if-nez p1, :cond_c
 
-    .line 790
+    .line 803
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo p1, "updateThumbnailSurface: size is null"
@@ -2837,7 +2919,7 @@
 
     return-object p0
 
-    .line 793
+    .line 806
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
@@ -2855,7 +2937,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
-    .line 794
+    .line 807
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->getHeight()I
 
     move-result v0
@@ -2866,16 +2948,16 @@
 
     if-eq v0, v1, :cond_5a
 
-    .line 795
+    .line 808
     :cond_26
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     if-eqz v0, :cond_2d
 
-    .line 796
+    .line 809
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->releaseSurface()V
 
-    .line 798
+    .line 811
     :cond_2d
     new-instance v0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
 
@@ -2883,12 +2965,12 @@
 
     const-string v1, "PostView"
 
-    .line 799
+    .line 812
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->setName(Ljava/lang/String;)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
 
     move-result-object v0
 
-    .line 800
+    .line 813
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
 
     move-result v1
@@ -2903,31 +2985,31 @@
 
     const/16 v0, 0x23
 
-    .line 801
+    .line 814
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->setFormat(I)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
 
     move-result-object p1
 
     const/4 v0, 0x1
 
-    .line 802
+    .line 815
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->setPostViewSurface(Z)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
 
     move-result-object p1
 
-    .line 803
+    .line 816
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->build()Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
-    .line 804
+    .line 817
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPostViewCallback:Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->setImageCallback(Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;)V
 
-    .line 806
+    .line 819
     :cond_5a
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
@@ -2937,10 +3019,10 @@
 .method protected releaseAlgorithm()V
     .registers 2
 
-    .line 129
+    .line 132
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->releaseAlgorithm()V
 
-    .line 130
+    .line 133
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "releaseAlgorithm"
@@ -2953,17 +3035,17 @@
 .method protected releaseImageProcessor()V
     .registers 3
 
-    .line 110
+    .line 113
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->releaseImageProcessor()V
 
-    .line 111
+    .line 114
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "releaseImageProcessor"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 112
+    .line 115
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->processPictureDataWhenRelease()V
 
     return-void
@@ -2972,32 +3054,32 @@
 .method protected releaseSurface()V
     .registers 3
 
-    .line 873
+    .line 901
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->releaseSurface()V
 
-    .line 874
+    .line 902
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_d
 
-    .line 875
+    .line 903
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->releaseSurface()V
 
-    .line 876
+    .line 904
     iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mThumbnailSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
-    .line 879
+    .line 907
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mFastThumbSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     if-eqz v0, :cond_16
 
-    .line 880
+    .line 908
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->releaseSurface()V
 
-    .line 881
+    .line 909
     iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mFastThumbSurface:Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     :cond_16
@@ -3007,14 +3089,14 @@
 .method public removeCaptureInfo(Z)V
     .registers 10
 
-    .line 268
+    .line 271
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     if-nez v0, :cond_6
 
     goto/16 :goto_ed
 
-    .line 271
+    .line 274
     :cond_6
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3044,7 +3126,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 272
+    .line 275
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->getAllCaptureThumbInfo()Ljava/util/List;
@@ -3053,7 +3135,7 @@
 
     if-eqz v0, :cond_ee
 
-    .line 273
+    .line 276
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
@@ -3062,7 +3144,7 @@
 
     goto/16 :goto_ee
 
-    .line 277
+    .line 280
     :cond_38
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -3084,12 +3166,12 @@
 
     if-eqz v1, :cond_3c
 
-    .line 278
+    .line 281
     iget v2, v1, Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;->thumbnilType:I
 
     if-lez v2, :cond_3c
 
-    .line 279
+    .line 282
     const-string v2, "removeCaptureInfo , captureThumbInfo: "
 
     const-string v3, "removeProcessMedia , item: "
@@ -3098,7 +3180,7 @@
 
     if-eqz p1, :cond_a5
 
-    .line 280
+    .line 283
     iget v5, v1, Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;->captureSurfaceId:I
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->getPictureSurfaceId()I
@@ -3107,7 +3189,7 @@
 
     if-ne v5, v6, :cond_3c
 
-    .line 281
+    .line 284
     iget-object v5, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {v5, v1}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->getProcessMediaItem(Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;)Lcom/transsion/camera/app/common/provider/ProcessMediaItem;
@@ -3116,7 +3198,7 @@
 
     if-eqz v5, :cond_89
 
-    .line 283
+    .line 286
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -3133,14 +3215,14 @@
 
     invoke-static {v4, v3}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 284
+    .line 287
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     const/4 v4, 0x0
 
     invoke-virtual {v3, v5, v4}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->onCaptureEnded(Lcom/transsion/camera/app/common/provider/ProcessMediaItem;Z)V
 
-    .line 285
+    .line 288
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     invoke-virtual {v5}, Lcom/transsion/camera/app/common/provider/ProcessMediaItem;->getUri()Landroid/net/Uri;
@@ -3151,11 +3233,11 @@
 
     goto :goto_8b
 
-    .line 287
+    .line 290
     :cond_89
     iput-boolean v4, v1, Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;->captureFail:Z
 
-    .line 289
+    .line 292
     :goto_8b
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3173,14 +3255,14 @@
 
     invoke-static {v3, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 290
+    .line 293
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {v2, v1}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->remove(Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;)V
 
     goto :goto_3c
 
-    .line 293
+    .line 296
     :cond_a5
     iget-object v5, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
@@ -3190,7 +3272,7 @@
 
     if-eqz v5, :cond_d0
 
-    .line 295
+    .line 298
     iget-object v6, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -3207,12 +3289,12 @@
 
     invoke-static {v6, v3}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 296
+    .line 299
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {v3, v5, v4}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->onCaptureEnded(Lcom/transsion/camera/app/common/provider/ProcessMediaItem;Z)V
 
-    .line 297
+    .line 300
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     invoke-virtual {v5}, Lcom/transsion/camera/app/common/provider/ProcessMediaItem;->getUri()Landroid/net/Uri;
@@ -3223,11 +3305,11 @@
 
     goto :goto_d2
 
-    .line 299
+    .line 302
     :cond_d0
     iput-boolean v4, v1, Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;->captureFail:Z
 
-    .line 301
+    .line 304
     :goto_d2
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3245,7 +3327,7 @@
 
     invoke-static {v3, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 302
+    .line 305
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mProcessMediaManager:Lcom/transsion/camera/app/common/provider/ProcessMediaManager;
 
     invoke-virtual {v2, v1}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->remove(Lcom/transsion/camera/app/common/mode/CaptureThumbInfo;)V
@@ -3256,7 +3338,7 @@
     :goto_ed
     return-void
 
-    .line 274
+    .line 277
     :cond_ee
     :goto_ee
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -3271,7 +3353,7 @@
 .method protected setPhotoHelper(Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;)V
     .registers 2
 
-    .line 98
+    .line 101
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mPhotoHelper:Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;
 
     return-void
@@ -3288,7 +3370,7 @@
 .method protected transform([BIIIIIIZ)[B
     .registers 9
 
-    .line 673
+    .line 686
     invoke-static/range {p1 .. p8}, Lcom/transsion/camera/app/common/algorithm/jpegcodec/JpegCodec;->transform([BIIIIIIZ)[B
 
     move-result-object p0
@@ -3299,17 +3381,17 @@
 .method public unInit()V
     .registers 2
 
-    .line 103
+    .line 106
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->unInit()V
 
-    .line 104
+    .line 107
     new-instance v0, Lcom/transsion/camera/app/common/mode/NullContinousShotCallback;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/mode/NullContinousShotCallback;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mCSImageCallback:Lcom/transsion/camera/app/common/ICameraControl$IContinuousShotCallback;
 
-    .line 105
+    .line 108
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->removeAllRunnableAndClear()V
 
     return-void
@@ -3318,7 +3400,7 @@
 .method public updateYuvPicSurface(Landroid/util/Size;IZ)Lcom/transsion/camera/app/common/mode/CaptureSurface;
     .registers 8
 
-    .line 201
+    .line 204
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3345,17 +3427,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 202
+    .line 205
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mSizeConvert:Lcom/transsion/camera/app/common/algorithm/size/SizeConvert;
 
     if-eqz v0, :cond_51
 
-    .line 204
+    .line 207
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/algorithm/size/SizeConvert;->convertSize(Landroid/util/Size;)Landroid/util/Size;
 
     move-result-object v0
 
-    .line 205
+    .line 208
     invoke-virtual {p1, v0}, Landroid/util/Size;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -3364,7 +3446,7 @@
 
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->mSizeConverted:Z
 
-    .line 206
+    .line 209
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3391,7 +3473,7 @@
 
     move-object p1, v0
 
-    .line 208
+    .line 211
     :cond_51
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->updateYuvPicSurface(Landroid/util/Size;IZ)Lcom/transsion/camera/app/common/mode/CaptureSurface;
 

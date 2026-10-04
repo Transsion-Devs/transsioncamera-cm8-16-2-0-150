@@ -17,7 +17,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 23
+    .line 25
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "TopBarUI5"
@@ -32,7 +32,7 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/ui/PopupOptionManager;Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;)V
     .registers 5
 
-    .line 35
+    .line 37
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/ui/TopBarUI;-><init>(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/ui/PopupOptionManager;Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;)V
 
     return-void
@@ -41,7 +41,7 @@
 .method private hasFlag(I)Z
     .registers 3
 
-    .line 197
+    .line 199
     iget v0, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mShowedFlags:I
 
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/app/ui/TopBarUI5;->hasFlag(II)Z
@@ -72,7 +72,7 @@
 .method private isNoNeedAnimation(I)Z
     .registers 7
 
-    .line 93
+    .line 96
     sget-object v0, Lcom/transsion/camera/app/ui/TopBarUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -99,7 +99,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 94
+    .line 97
     iget v0, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mNextUIType:I
 
     const/4 v1, 0x2
@@ -135,13 +135,13 @@
 
     if-ne p1, v4, :cond_3f
 
-    .line 98
+    .line 101
     :cond_3c
     iput v2, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mNextUIType:I
 
     return v3
 
-    .line 101
+    .line 104
     :cond_3f
     iput v2, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mNextUIType:I
 
@@ -151,10 +151,10 @@
 .method private setNextUIType(I)V
     .registers 4
 
-    .line 128
+    .line 136
     iput p1, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mNextUIType:I
 
-    .line 129
+    .line 137
     sget-object p1, Lcom/transsion/camera/app/ui/TopBarUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -183,7 +183,7 @@
 
     if-eqz p2, :cond_9
 
-    .line 189
+    .line 191
     iget p2, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mShowedFlags:I
 
     not-int p1, p1
@@ -194,7 +194,7 @@
 
     goto :goto_e
 
-    .line 191
+    .line 193
     :cond_9
     iget p2, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mShowedFlags:I
 
@@ -202,7 +202,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mShowedFlags:I
 
-    .line 193
+    .line 195
     :goto_e
     sget-object p1, Lcom/transsion/camera/app/ui/TopBarUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -242,7 +242,7 @@
 .method private updatePopSettingViewRotateLayout(Landroid/view/ViewGroup;)V
     .registers 5
 
-    .line 50
+    .line 49
     sget-object v0, Lcom/transsion/camera/app/ui/TopBarUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -263,24 +263,24 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 51
+    .line 50
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 52
+    .line 51
     iget p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mCurrentScreenType:I
 
     if-nez p0, :cond_27
 
     const/16 p0, 0x31
 
-    .line 53
+    .line 52
     iput p0, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 55
+    .line 54
     :cond_27
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -292,7 +292,7 @@
 .method protected createPopupOption(Landroid/view/LayoutInflater;Landroid/view/View;Landroid/view/View;IILcom/transsion/camera/app/ui/PopupOptionManager;ILcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/common/IAppUI;)Lcom/transsion/camera/app/ui/setting/PopupOption;
     .registers 10
 
-    .line 142
+    .line 144
     new-instance p0, Lcom/transsion/camera/app/ui/setting/PopupOption5;
 
     invoke-direct/range {p0 .. p9}, Lcom/transsion/camera/app/ui/setting/PopupOption5;-><init>(Landroid/view/LayoutInflater;Landroid/view/View;Landroid/view/View;IILcom/transsion/camera/app/ui/PopupOptionManager;ILcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/common/IAppUI;)V
@@ -303,14 +303,14 @@
 .method protected getSettingControlViewMargins(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 60
+    .line 59
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->getSettingControlViewMargins(I)Landroid/graphics/Rect;
 
     move-result-object v0
 
     if-nez p1, :cond_12
 
-    .line 62
+    .line 61
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
@@ -323,7 +323,7 @@
 
     iput p0, v0, Landroid/graphics/Rect;->top:I
 
-    .line 64
+    .line 63
     :cond_12
     sget-object p0, Lcom/transsion/camera/app/ui/TopBarUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -413,16 +413,16 @@
     :cond_2e
     move v1, v0
 
-    .line 176
+    .line 178
     :goto_2f
     invoke-direct {p0, v4, v1}, Lcom/transsion/camera/app/ui/TopBarUI5;->updateFlag(IZ)V
 
-    .line 178
+    .line 180
     iget p1, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mNextUIType:I
 
     if-ne p1, v2, :cond_60
 
-    .line 179
+    .line 181
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/TopBarUI5;->setNextUIType(I)V
 
     return-void
@@ -435,25 +435,25 @@
     :cond_3d
     move v1, v0
 
-    .line 156
+    .line 158
     :goto_3e
     invoke-direct {p0, v5, v1}, Lcom/transsion/camera/app/ui/TopBarUI5;->updateFlag(IZ)V
 
-    .line 158
+    .line 160
     iget p1, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mNextUIType:I
 
     if-ne p1, v5, :cond_60
 
-    .line 159
+    .line 161
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/TopBarUI5;->setNextUIType(I)V
 
     return-void
 
-    .line 163
+    .line 165
     :cond_49
     invoke-direct {p0, v5, v1}, Lcom/transsion/camera/app/ui/TopBarUI5;->updateFlag(IZ)V
 
-    .line 164
+    .line 166
     invoke-direct {p0, v4, v1}, Lcom/transsion/camera/app/ui/TopBarUI5;->updateFlag(IZ)V
 
     return-void
@@ -471,22 +471,22 @@
     :goto_55
     const/4 v2, 0x4
 
-    .line 168
+    .line 170
     invoke-direct {p0, v2, p1}, Lcom/transsion/camera/app/ui/TopBarUI5;->updateFlag(IZ)V
 
-    .line 170
+    .line 172
     iget p1, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mNextUIType:I
 
     if-ne p1, v1, :cond_60
 
-    .line 171
+    .line 173
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/TopBarUI5;->setNextUIType(I)V
 
     :cond_60
     :goto_60
     return-void
 
-    .line 152
+    .line 154
     :cond_61
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/TopBarUI5;->setNextUIType(I)V
 
@@ -516,65 +516,61 @@
     :cond_c
     const/4 p1, 0x1
 
-    .line 124
+    .line 132
     :goto_d
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/TopBarUI5;->setNextUIType(I)V
 
     return-void
 .end method
 
-.method protected onPopSettingShowViewAnimationCancel(Landroid/animation/Animator;)V
-    .registers 2
-
-    const/4 p1, 0x0
-
-    .line 135
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updateItemClickDisable(Z)V
-
-    return-void
-.end method
-
 .method public playHidePopSettingAnimation(ZI)V
-    .registers 4
+    .registers 5
 
-    .line 70
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopSettingShowView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 69
+    iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mIsArrowExpanded:Z
 
-    if-eqz v0, :cond_1a
+    if-nez v0, :cond_7
 
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    if-nez p1, :cond_7
 
-    move-result v0
-
-    if-nez v0, :cond_1a
-
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopSettingShowView:Lcom/airbnb/lottie/LottieAnimationView;
-
-    .line 71
-    invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->isAnimating()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1a
+    goto :goto_1b
 
     .line 72
-    sget-object p0, Lcom/transsion/camera/app/ui/TopBarUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    :cond_7
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopSettingArrowView:Landroid/widget/ImageView;
 
-    const-string p1, "playShowPopSettingAnimation: mPopSettingShowView has showed"
+    if-eqz v0, :cond_1c
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    .line 73
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
+    move-result-object v0
+
+    .line 74
+    instance-of v1, v0, Landroid/graphics/drawable/Animatable;
+
+    if-eqz v1, :cond_1c
+
+    check-cast v0, Landroid/graphics/drawable/Animatable;
+
+    invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->isRunning()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1c
+
+    :goto_1b
     return-void
 
-    :cond_1a
+    :cond_1c
     const/4 v0, 0x2
 
-    .line 75
+    .line 78
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/TopBarUI5;->hasFlag(I)Z
 
     move-result v0
 
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_41
 
     const/16 v0, 0x8
 
@@ -582,24 +578,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2c
 
-    goto :goto_3f
+    goto :goto_41
 
-    .line 79
-    :cond_2a
+    .line 82
+    :cond_2c
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/ui/TopBarUI5;->isNoNeedAnimation(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_3d
 
     const/4 p1, 0x0
 
-    .line 80
+    .line 83
     iput p1, p0, Lcom/transsion/camera/app/ui/TopBarUI5;->mNextUIType:I
 
-    .line 81
+    .line 84
     sget-object p0, Lcom/transsion/camera/app/ui/TopBarUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "playHidePopSettingAnimation: mNextUIType check, return."
@@ -608,15 +604,15 @@
 
     return-void
 
-    .line 84
-    :cond_3b
+    .line 87
+    :cond_3d
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playHidePopSettingAnimation(ZI)V
 
     return-void
 
-    .line 76
-    :cond_3f
-    :goto_3f
+    .line 79
+    :cond_41
+    :goto_41
     sget-object p0, Lcom/transsion/camera/app/ui/TopBarUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "playHidePopSettingAnimation: filter ui has showed, return."
@@ -627,30 +623,44 @@
 .end method
 
 .method public playShowPopSettingAnimation(I)V
-    .registers 3
+    .registers 4
 
-    .line 107
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopSettingHideView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 110
+    iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mIsArrowExpanded:Z
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_5
 
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    goto :goto_19
+
+    .line 113
+    :cond_5
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopSettingArrowView:Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_1a
+
+    .line 114
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    .line 115
+    instance-of v1, v0, Landroid/graphics/drawable/Animatable;
+
+    if-eqz v1, :cond_1a
+
+    check-cast v0, Landroid/graphics/drawable/Animatable;
+
+    invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->isRunning()Z
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-eqz v0, :cond_1a
 
-    .line 108
-    sget-object p0, Lcom/transsion/camera/app/ui/TopBarUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    const-string p1, "playShowPopSettingAnimation: mPopSettingHideView has showed"
-
-    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
+    :goto_19
     return-void
 
-    .line 111
-    :cond_12
+    .line 119
+    :cond_1a
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playShowPopSettingAnimation(I)V
 
     return-void
@@ -659,26 +669,17 @@
 .method protected updateSettingControlViewLayout(Landroid/view/View;)V
     .registers 2
 
-    .line 40
+    .line 42
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updateSettingControlViewLayout(Landroid/view/View;)V
 
-    .line 41
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopSettingHideViewRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateFrameLayout;
+    .line 43
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopSettingArrowRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateFrameLayout;
 
     if-eqz p1, :cond_a
 
-    .line 42
-    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/TopBarUI5;->updatePopSettingViewRotateLayout(Landroid/view/ViewGroup;)V
-
     .line 44
-    :cond_a
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopSettingShowViewRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateFrameLayout;
-
-    if-eqz p1, :cond_11
-
-    .line 45
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/TopBarUI5;->updatePopSettingViewRotateLayout(Landroid/view/ViewGroup;)V
 
-    :cond_11
+    :cond_a
     return-void
 .end method

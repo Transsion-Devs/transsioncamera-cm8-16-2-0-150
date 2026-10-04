@@ -16,7 +16,7 @@
 
 
 # static fields
-.field private static final owner$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic owner$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
 
 # instance fields
@@ -28,7 +28,7 @@
     .end annotation
 .end field
 
-.field private volatile owner:Ljava/lang/Object;
+.field private volatile synthetic owner$volatile:Ljava/lang/Object;
 
 
 # direct methods
@@ -37,7 +37,7 @@
 
     const-class v0, Ljava/lang/Object;
 
-    const-string v1, "owner"
+    const-string v1, "owner$volatile"
 
     const-class v2, Lkotlinx/coroutines/sync/MutexImpl;
 
@@ -45,7 +45,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/sync/MutexImpl;->owner$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/sync/MutexImpl;->owner$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     return-void
 .end method
@@ -55,7 +55,7 @@
 
     const/4 v0, 0x1
 
-    .line 134
+    .line 129
     invoke-direct {p0, v0, p1}, Lkotlinx/coroutines/sync/SemaphoreImpl;-><init>(II)V
 
     if-eqz p1, :cond_8
@@ -64,7 +64,7 @@
 
     goto :goto_c
 
-    .line 141
+    .line 136
     :cond_8
     # getter for: Lkotlinx/coroutines/sync/MutexKt;->NO_OWNER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/sync/MutexKt;->access$getNO_OWNER$p()Lkotlinx/coroutines/internal/Symbol;
@@ -72,9 +72,9 @@
     move-result-object p1
 
     :goto_c
-    iput-object p1, p0, Lkotlinx/coroutines/sync/MutexImpl;->owner:Ljava/lang/Object;
+    iput-object p1, p0, Lkotlinx/coroutines/sync/MutexImpl;->owner$volatile:Ljava/lang/Object;
 
-    .line 144
+    .line 139
     new-instance p1, Lkotlinx/coroutines/sync/MutexImpl$onSelectCancellationUnlockConstructor$1;
 
     invoke-direct {p1, p0}, Lkotlinx/coroutines/sync/MutexImpl$onSelectCancellationUnlockConstructor$1;-><init>(Lkotlinx/coroutines/sync/MutexImpl;)V
@@ -84,11 +84,13 @@
     return-void
 .end method
 
-.method public static final synthetic access$getOwner$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.method public static final synthetic access$getOwner$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
     .registers 1
 
-    .line 134
-    sget-object v0, Lkotlinx/coroutines/sync/MutexImpl;->owner$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 129
+    invoke-static {}, Lkotlinx/coroutines/sync/MutexImpl;->getOwner$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -96,7 +98,7 @@
 .method public static final synthetic access$lockSuspend(Lkotlinx/coroutines/sync/MutexImpl;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .registers 3
 
-    .line 134
+    .line 129
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/sync/MutexImpl;->lockSuspend(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -110,10 +112,26 @@
     return-void
 .end method
 
+.method private final synthetic getOwner$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/sync/MutexImpl;->owner$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic getOwner$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/sync/MutexImpl;->owner$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
 .method private final holdsLockImpl(Ljava/lang/Object;)I
     .registers 4
 
-    .line 161
+    .line 156
     :cond_0
     invoke-virtual {p0}, Lkotlinx/coroutines/sync/MutexImpl;->isLocked()Z
 
@@ -126,14 +144,16 @@
     return p0
 
     :cond_8
-    sget-object v0, Lkotlinx/coroutines/sync/MutexImpl;->owner$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/sync/MutexImpl;->getOwner$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 162
+    move-result-object v0
+
+    .line 157
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 164
+    .line 159
     # getter for: Lkotlinx/coroutines/sync/MutexKt;->NO_OWNER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/sync/MutexKt;->access$getNO_OWNER$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -141,13 +161,13 @@
 
     if-eq v0, v1, :cond_0
 
-    if-ne v0, p1, :cond_18
+    if-ne v0, p1, :cond_1a
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_18
+    :cond_1a
     const/4 p0, 0x2
 
     return p0
@@ -168,7 +188,7 @@
         }
     .end annotation
 
-    .line 171
+    .line 166
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/sync/MutexImpl;->tryLock(Ljava/lang/Object;)Z
 
     move-result v0
@@ -179,7 +199,7 @@
 
     return-object p0
 
-    .line 172
+    .line 167
     :cond_9
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/sync/MutexImpl;->lockSuspend(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -213,7 +233,7 @@
         }
     .end annotation
 
-    .line 333
+    .line 329
     invoke-static {p2}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v0
@@ -222,23 +242,23 @@
 
     move-result-object v0
 
-    .line 176
+    .line 171
     :try_start_8
     new-instance v1, Lkotlinx/coroutines/sync/MutexImpl$CancellableContinuationWithOwner;
 
     invoke-direct {v1, p0, v0, p1}, Lkotlinx/coroutines/sync/MutexImpl$CancellableContinuationWithOwner;-><init>(Lkotlinx/coroutines/sync/MutexImpl;Lkotlinx/coroutines/CancellableContinuationImpl;Ljava/lang/Object;)V
 
-    .line 177
+    .line 172
     invoke-virtual {p0, v1}, Lkotlinx/coroutines/sync/SemaphoreImpl;->acquire(Lkotlinx/coroutines/CancellableContinuation;)V
     :try_end_10
     .catchall {:try_start_8 .. :try_end_10} :catchall_27
 
-    .line 342
+    .line 338
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 332
+    .line 328
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p1
@@ -256,7 +276,7 @@
 
     return-object p0
 
-    .line 343
+    .line 339
     :cond_24
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -265,59 +285,69 @@
     :catchall_27
     move-exception p0
 
-    .line 339
+    .line 335
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->releaseClaimedReusableContinuation$kotlinx_coroutines_core()V
 
-    .line 340
+    .line 336
     throw p0
+.end method
+
+.method private final synthetic setOwner$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/sync/MutexImpl;->owner$volatile:Ljava/lang/Object;
+
+    return-void
 .end method
 
 .method private final tryLockImpl(Ljava/lang/Object;)I
     .registers 5
 
-    .line 189
+    .line 184
     :goto_0
     invoke-virtual {p0}, Lkotlinx/coroutines/sync/SemaphoreImpl;->tryAcquire()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_f
 
-    .line 190
-    sget-object v0, Lkotlinx/coroutines/sync/MutexImpl;->owner$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 185
+    invoke-static {}, Lkotlinx/coroutines/sync/MutexImpl;->getOwner$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 191
+    move-result-object v0
+
+    .line 186
     invoke-virtual {v0, p0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_d
+    :cond_f
     const/4 v0, 0x1
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_13
 
     return v0
 
-    .line 198
-    :cond_11
+    .line 193
+    :cond_13
     invoke-direct {p0, p1}, Lkotlinx/coroutines/sync/MutexImpl;->holdsLockImpl(Ljava/lang/Object;)I
 
     move-result v1
 
     const/4 v2, 0x2
 
-    if-eq v1, v0, :cond_1c
+    if-eq v1, v0, :cond_1e
 
-    if-eq v1, v2, :cond_1b
+    if-eq v1, v2, :cond_1d
 
     goto :goto_0
 
-    :cond_1b
+    :cond_1d
     return v0
 
-    :cond_1c
+    :cond_1e
     return v2
 .end method
 
@@ -335,10 +365,10 @@
         }
     .end annotation
 
-    .line 228
+    .line 223
     new-instance v0, Lkotlinx/coroutines/selects/SelectClause2Impl;
 
-    .line 230
+    .line 225
     sget-object v1, Lkotlinx/coroutines/sync/MutexImpl$onLock$1;->INSTANCE:Lkotlinx/coroutines/sync/MutexImpl$onLock$1;
 
     const-string v2, "null cannot be cast to non-null type kotlin.Function3<@[ParameterName(name = \'clauseObject\')] kotlin.Any, @[ParameterName(name = \'select\')] kotlinx.coroutines.selects.SelectInstance<*>, @[ParameterName(name = \'param\')] kotlin.Any?, kotlin.Unit>{ kotlinx.coroutines.selects.SelectKt.RegistrationFunction }"
@@ -353,7 +383,7 @@
 
     check-cast v1, Lkotlin/jvm/functions/Function3;
 
-    .line 231
+    .line 226
     sget-object v3, Lkotlinx/coroutines/sync/MutexImpl$onLock$2;->INSTANCE:Lkotlinx/coroutines/sync/MutexImpl$onLock$2;
 
     const-string v4, "null cannot be cast to non-null type kotlin.Function3<@[ParameterName(name = \'clauseObject\')] kotlin.Any, @[ParameterName(name = \'param\')] kotlin.Any?, @[ParameterName(name = \'clauseResult\')] kotlin.Any?, kotlin.Any?>{ kotlinx.coroutines.selects.SelectKt.ProcessResultFunction }"
@@ -366,10 +396,10 @@
 
     check-cast v2, Lkotlin/jvm/functions/Function3;
 
-    .line 232
+    .line 227
     iget-object v3, p0, Lkotlinx/coroutines/sync/MutexImpl;->onSelectCancellationUnlockConstructor:Lkotlin/jvm/functions/Function3;
 
-    .line 228
+    .line 223
     invoke-direct {v0, p0, v1, v2, v3}, Lkotlinx/coroutines/selects/SelectClause2Impl;-><init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;)V
 
     return-object v0
@@ -378,7 +408,7 @@
 .method public holdsLock(Ljava/lang/Object;)Z
     .registers 2
 
-    .line 151
+    .line 146
     invoke-direct {p0, p1}, Lkotlinx/coroutines/sync/MutexImpl;->holdsLockImpl(Ljava/lang/Object;)I
 
     move-result p0
@@ -398,7 +428,7 @@
 .method public isLocked()Z
     .registers 1
 
-    .line 149
+    .line 144
     invoke-virtual {p0}, Lkotlinx/coroutines/sync/SemaphoreImpl;->getAvailablePermits()I
 
     move-result p0
@@ -439,7 +469,7 @@
 .method protected onLockProcessResult(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    .line 244
+    .line 239
     # getter for: Lkotlinx/coroutines/sync/MutexKt;->ON_LOCK_ALREADY_LOCKED_BY_OWNER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/sync/MutexKt;->access$getON_LOCK_ALREADY_LOCKED_BY_OWNER$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -456,7 +486,7 @@
     :cond_b
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 245
+    .line 240
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -494,14 +524,14 @@
 
     if-eqz p2, :cond_10
 
-    .line 236
+    .line 231
     invoke-virtual {p0, p2}, Lkotlinx/coroutines/sync/MutexImpl;->holdsLock(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_10
 
-    .line 237
+    .line 232
     # getter for: Lkotlinx/coroutines/sync/MutexKt;->ON_LOCK_ALREADY_LOCKED_BY_OWNER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/sync/MutexKt;->access$getON_LOCK_ALREADY_LOCKED_BY_OWNER$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -511,7 +541,7 @@
 
     return-void
 
-    .line 239
+    .line 234
     :cond_10
     new-instance v0, Lkotlinx/coroutines/sync/MutexImpl$SelectInstanceWithOwner;
 
@@ -531,7 +561,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 297
+    .line 292
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -560,7 +590,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v1, Lkotlinx/coroutines/sync/MutexImpl;->owner$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/sync/MutexImpl;->getOwner$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -582,7 +614,7 @@
 .method public tryLock(Ljava/lang/Object;)Z
     .registers 4
 
-    .line 183
+    .line 178
     invoke-direct {p0, p1}, Lkotlinx/coroutines/sync/MutexImpl;->tryLockImpl(Ljava/lang/Object;)I
 
     move-result p0
@@ -599,18 +631,18 @@
 
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 184
+    .line 179
     const-string p1, "unexpected"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
-    .line 182
+    .line 177
     :cond_14
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 183
+    .line 178
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -645,46 +677,48 @@
 .method public unlock(Ljava/lang/Object;)V
     .registers 5
 
-    .line 213
+    .line 208
     :cond_0
     invoke-virtual {p0}, Lkotlinx/coroutines/sync/MutexImpl;->isLocked()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_53
 
-    sget-object v0, Lkotlinx/coroutines/sync/MutexImpl;->owner$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/sync/MutexImpl;->getOwner$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 215
+    move-result-object v0
+
+    .line 210
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 216
+    .line 211
     # getter for: Lkotlinx/coroutines/sync/MutexKt;->NO_OWNER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/sync/MutexKt;->access$getNO_OWNER$p()Lkotlinx/coroutines/internal/Symbol;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-eq v1, v2, :cond_0
+    if-eq v0, v1, :cond_0
 
-    if-eq v1, p1, :cond_3f
+    if-eq v0, p1, :cond_41
 
-    if-nez p1, :cond_17
+    if-nez p1, :cond_19
 
-    goto :goto_3f
+    goto :goto_41
 
-    .line 218
-    :cond_17
+    .line 213
+    :cond_19
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "This mutex is locked by "
+    const-string v1, "This mutex is locked by "
 
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v0, ", but "
 
@@ -710,27 +744,31 @@
 
     throw p1
 
-    .line 220
-    :cond_3f
-    :goto_3f
+    .line 215
+    :cond_41
+    :goto_41
+    invoke-static {}, Lkotlinx/coroutines/sync/MutexImpl;->getOwner$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v1
+
     # getter for: Lkotlinx/coroutines/sync/MutexKt;->NO_OWNER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/sync/MutexKt;->access$getNO_OWNER$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v2
 
-    invoke-static {v0, p0, v1, v2}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p0, v0, v2}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 222
+    .line 217
     invoke-virtual {p0}, Lkotlinx/coroutines/sync/SemaphoreImpl;->release()V
 
     return-void
 
-    .line 213
-    :cond_4d
+    .line 208
+    :cond_53
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "This mutex is not locked"

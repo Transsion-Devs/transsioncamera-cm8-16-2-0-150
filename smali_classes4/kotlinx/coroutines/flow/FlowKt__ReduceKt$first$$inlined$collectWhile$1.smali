@@ -35,7 +35,7 @@
 
     iput-object p1, p0, Lkotlinx/coroutines/flow/FlowKt__ReduceKt$first$$inlined$collectWhile$1;->$result$inlined:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    .line 126
+    .line 123
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,15 +56,15 @@
         }
     .end annotation
 
-    .line 142
+    .line 139
     iget-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__ReduceKt$first$$inlined$collectWhile$1;->$result$inlined:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iput-object p1, p2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 131
+    .line 128
     new-instance p1, Lkotlinx/coroutines/flow/internal/AbortFlowException;
 
-    invoke-direct {p1, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Lkotlinx/coroutines/flow/FlowCollector;)V
+    invoke-direct {p1, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Ljava/lang/Object;)V
 
     throw p1
 .end method

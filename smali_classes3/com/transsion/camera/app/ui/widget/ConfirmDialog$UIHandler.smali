@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/widget/ConfirmDialog;)V
     .registers 2
 
-    .line 97
+    .line 99
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$UIHandler;->this$0:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -44,7 +44,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 3
 
-    .line 101
+    .line 103
     iget p1, p1, Landroid/os/Message;->what:I
 
     const/4 v0, 0x1
@@ -53,7 +53,7 @@
 
     return-void
 
-    .line 103
+    .line 105
     :cond_6
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$UIHandler;->this$0:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 

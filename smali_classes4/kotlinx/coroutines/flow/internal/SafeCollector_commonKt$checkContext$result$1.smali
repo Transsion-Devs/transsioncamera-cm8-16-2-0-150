@@ -60,12 +60,12 @@
 .method public final invoke(ILkotlin/coroutines/CoroutineContext$Element;)Ljava/lang/Integer;
     .registers 5
 
-    .line 27
+    .line 25
     invoke-interface {p2}, Lkotlin/coroutines/CoroutineContext$Element;->getKey()Lkotlin/coroutines/CoroutineContext$Key;
 
     move-result-object v0
 
-    .line 28
+    .line 26
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/SafeCollector_commonKt$checkContext$result$1;->$this_checkContext:Lkotlinx/coroutines/flow/internal/SafeCollector;
 
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/SafeCollector;->collectContext:Lkotlin/coroutines/CoroutineContext;
@@ -74,7 +74,7 @@
 
     move-result-object p0
 
-    .line 29
+    .line 27
     sget-object v1, Lkotlinx/coroutines/Job;->Key:Lkotlinx/coroutines/Job$Key;
 
     if-eq v0, v1, :cond_1c
@@ -88,7 +88,7 @@
     :cond_15
     add-int/lit8 p0, p1, 0x1
 
-    .line 31
+    .line 29
     :goto_17
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -96,11 +96,11 @@
 
     return-object p0
 
-    .line 34
+    .line 32
     :cond_1c
     check-cast p0, Lkotlinx/coroutines/Job;
 
-    .line 35
+    .line 33
     const-string v0, "null cannot be cast to non-null type kotlinx.coroutines.Job"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -120,7 +120,7 @@
     :cond_2e
     add-int/lit8 p1, p1, 0x1
 
-    .line 82
+    .line 80
     :goto_30
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -128,11 +128,11 @@
 
     return-object p0
 
-    .line 68
+    .line 66
     :cond_35
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    .line 69
+    .line 67
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -143,18 +143,18 @@
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 71
+    .line 69
     const-string p2, ", expected child of "
 
-    .line 69
+    .line 67
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 71
+    .line 69
     const-string p0, ".\n\t\tFlowCollector is not thread-safe and concurrent emissions are prohibited.\n\t\tTo mitigate this restriction please use \'channelFlow\' builder instead of \'flow\'"
 
-    .line 69
+    .line 67
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -173,7 +173,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 26
+    .line 24
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I

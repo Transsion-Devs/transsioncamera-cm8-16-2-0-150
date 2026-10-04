@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/ModeManager;)V
     .registers 2
 
-    .line 253
+    .line 252
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 253
+    .line 252
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/ModeManager$1;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -49,7 +49,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 8
 
-    .line 256
+    .line 255
     const-string v0, "key_google_lens_click"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -62,7 +62,7 @@
 
     const-string v1, "action_barcode_activity_start"
 
-    .line 257
+    .line 256
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -71,7 +71,7 @@
 
     const-string v1, "action_gallery_activity_start"
 
-    .line 258
+    .line 257
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -80,7 +80,7 @@
 
     const-string v1, "action_movie_review_activity_start"
 
-    .line 259
+    .line 258
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -89,14 +89,14 @@
 
     const-string v1, "action_sleep_activity_start"
 
-    .line 260
+    .line 259
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_59
 
-    .line 261
+    .line 260
     :cond_29
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -114,10 +114,10 @@
 
     move-result-object v1
 
-    .line 262
+    .line 261
     invoke-virtual {v1, v3, v3}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 263
+    .line 262
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v1
@@ -138,12 +138,12 @@
 
     invoke-static {v1, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 264
+    .line 263
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1, v2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmNeedSaveCameraId(Lcom/transsion/camera/app/common/mode/ModeManager;Z)V
 
-    .line 266
+    .line 265
     :cond_59
     const-string v1, "key_restore_settings_notify_ui"
 
@@ -155,7 +155,7 @@
 
     if-eqz v1, :cond_ab
 
-    .line 267
+    .line 266
     const-string v1, "begin"
 
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -164,12 +164,12 @@
 
     if-eqz v4, :cond_9b
 
-    .line 268
+    .line 267
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v4, v1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmCurrentRestoreState(Lcom/transsion/camera/app/common/mode/ModeManager;Ljava/lang/String;)V
 
-    .line 269
+    .line 268
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -178,7 +178,7 @@
 
     if-eqz v1, :cond_ab
 
-    .line 270
+    .line 269
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -205,7 +205,7 @@
     :goto_8c
     invoke-static {v1, v4}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmPreviewSize(Lcom/transsion/camera/app/common/mode/ModeManager;Landroid/util/Size;)V
 
-    .line 271
+    .line 270
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -218,7 +218,7 @@
 
     goto :goto_ab
 
-    .line 273
+    .line 272
     :cond_9b
     invoke-virtual {v3, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -226,17 +226,17 @@
 
     if-eqz v1, :cond_ab
 
-    .line 274
+    .line 273
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$mhandleRestoreSettings(Lcom/transsion/camera/app/common/mode/ModeManager;)V
 
-    .line 275
+    .line 274
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1, v3}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmCurrentRestoreState(Lcom/transsion/camera/app/common/mode/ModeManager;Ljava/lang/String;)V
 
-    .line 278
+    .line 277
     :cond_ab
     :goto_ab
     const-string v1, "key_wide_camera_item_seleccted"
@@ -249,7 +249,7 @@
 
     if-eqz v1, :cond_c2
 
-    .line 279
+    .line 278
     const-string/jumbo v1, "value_wide_camera_item_multiple_cam_seleccted_by_user"
 
     invoke-static {v1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -258,12 +258,12 @@
 
     if-eqz v1, :cond_c2
 
-    .line 280
+    .line 279
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1, v4}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmNeedCheckOrientation(Lcom/transsion/camera/app/common/mode/ModeManager;Z)V
 
-    .line 283
+    .line 282
     :cond_c2
     const-string v1, "key_ai_group_photo_camera_id"
 
@@ -273,7 +273,7 @@
 
     if-eqz v1, :cond_e7
 
-    .line 284
+    .line 283
     const-string/jumbo v1, "value_ai_group_photo_id_multiple"
 
     invoke-static {v1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -282,14 +282,14 @@
 
     if-eqz v1, :cond_d9
 
-    .line 285
+    .line 284
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1, v2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmNeedCheckAIGroup(Lcom/transsion/camera/app/common/mode/ModeManager;Z)V
 
     goto :goto_e7
 
-    .line 286
+    .line 285
     :cond_d9
     const-string/jumbo v1, "value_ai_group_photo_id_single"
 
@@ -299,12 +299,12 @@
 
     if-eqz v1, :cond_e7
 
-    .line 287
+    .line 286
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1, v4}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmNeedCheckAIGroup(Lcom/transsion/camera/app/common/mode/ModeManager;Z)V
 
-    .line 290
+    .line 289
     :cond_e7
     :goto_e7
     const-string v1, "key_video_camera_change"
@@ -315,12 +315,12 @@
 
     if-eqz v1, :cond_f4
 
-    .line 291
+    .line 290
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1, p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$mswitchVideoCamera(Lcom/transsion/camera/app/common/mode/ModeManager;Ljava/lang/String;)V
 
-    .line 293
+    .line 292
     :cond_f4
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -328,7 +328,7 @@
 
     if-eqz v0, :cond_117
 
-    .line 294
+    .line 293
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -349,12 +349,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 295
+    .line 294
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0, v2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmGoogleLenClick(Lcom/transsion/camera/app/common/mode/ModeManager;Z)V
 
-    .line 297
+    .line 296
     :cond_117
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -370,19 +370,19 @@
 
     const-string v0, "key_switch_camera_on_zoom"
 
-    .line 298
+    .line 297
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_130
 
-    .line 299
+    .line 298
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-virtual {v0, p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->onSwitchOpticalZoomCamera(Ljava/lang/String;)V
 
-    .line 301
+    .line 300
     :cond_130
     const-string v0, "key_video_hdr_10_plus"
 
@@ -392,7 +392,7 @@
 
     if-eqz v0, :cond_162
 
-    .line 302
+    .line 301
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -413,7 +413,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 303
+    .line 302
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     const-string v1, "on"
@@ -424,20 +424,20 @@
 
     if-eqz v1, :cond_15d
 
-    .line 304
+    .line 303
     sget-object v1, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->SURFACE_VIEW:Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
     goto :goto_15f
 
-    .line 305
+    .line 304
     :cond_15d
     sget-object v1, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->GL_SURFACE_VIEW:Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
-    .line 303
+    .line 302
     :goto_15f
     invoke-static {v0, v1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$mupdatePreviewViewType(Lcom/transsion/camera/app/common/mode/ModeManager;Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;)V
 
-    .line 307
+    .line 306
     :cond_162
     const-string v0, "key_hdr_format"
 
@@ -447,7 +447,7 @@
 
     if-eqz p1, :cond_17d
 
-    .line 308
+    .line 307
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$1;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     const-string/jumbo p1, "value_hdr_hlg"
@@ -458,16 +458,16 @@
 
     if-eqz p1, :cond_178
 
-    .line 309
+    .line 308
     sget-object p1, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->SURFACE_VIEW:Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
     goto :goto_17a
 
-    .line 310
+    .line 309
     :cond_178
     sget-object p1, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->GL_SURFACE_VIEW:Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
-    .line 308
+    .line 307
     :goto_17a
     invoke-static {p0, p1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$mupdatePreviewViewType(Lcom/transsion/camera/app/common/mode/ModeManager;Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;)V
 

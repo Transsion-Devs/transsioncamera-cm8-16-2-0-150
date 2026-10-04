@@ -260,6 +260,21 @@
     return p0
 .end method
 
+.method public getRecordingFrameCount(Landroid/view/View;)J
+    .registers 2
+
+    .line 145
+    sget-object p0, Lcom/transsion/hubsdk/aosp/view/TranAospView;->TAG:Ljava/lang/String;
+
+    const-string p1, "getRecordingFrameCount not support"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-wide/16 p0, -0x1
+
+    return-wide p0
+.end method
+
 .method public getUnionRenderEffect(Landroid/view/View;)Lcom/transsion/hubsdk/api/view/TranUnionRenderEffectProxy;
     .registers 2
 

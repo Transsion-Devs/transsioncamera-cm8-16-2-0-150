@@ -27,7 +27,7 @@
 .method private static synthetic $values()[Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
     .registers 8
 
-    .line 53
+    .line 54
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->GRASSLAND:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     sget-object v1, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->KREMLIN:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
@@ -54,7 +54,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 54
+    .line 55
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     const-string v1, "GRASSLAND"
@@ -65,7 +65,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->GRASSLAND:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
-    .line 55
+    .line 56
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     const-string v1, "KREMLIN"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->KREMLIN:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
-    .line 56
+    .line 57
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     const-string v1, "TAJMAHAL"
@@ -87,7 +87,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->TAJMAHAL:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
-    .line 57
+    .line 58
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     const-string v1, "PENIDA"
@@ -98,7 +98,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->PENIDA:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
-    .line 58
+    .line 59
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     const-string v1, "BADSHAHI"
@@ -109,7 +109,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->BADSHAHI:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
-    .line 59
+    .line 60
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     const-string v1, "VOLCANO"
@@ -120,7 +120,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->VOLCANO:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
-    .line 60
+    .line 61
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     const-string v1, "PYRAMIDS"
@@ -131,7 +131,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->PYRAMIDS:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
-    .line 61
+    .line 62
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     const-string v1, "SUNTEMPLE"
@@ -142,7 +142,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->SUNTEMPLE:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
-    .line 53
+    .line 54
     invoke-static {}, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->$values()[Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     move-result-object v0
@@ -155,7 +155,7 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
 
-    .line 53
+    .line 54
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -164,7 +164,7 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
     .registers 2
 
-    .line 53
+    .line 54
     const-class v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -179,7 +179,7 @@
 .method public static values()[Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
     .registers 1
 
-    .line 53
+    .line 54
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->$VALUES:[Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     invoke-virtual {v0}, [Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->clone()Ljava/lang/Object;

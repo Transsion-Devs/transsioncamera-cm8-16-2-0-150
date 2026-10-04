@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;)V
     .registers 2
 
-    .line 543
+    .line 559
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$7;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,7 +36,7 @@
 .method private saveExpandState(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
     .registers 6
 
-    .line 556
+    .line 572
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$7;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->-$$Nest$fgetmFaceBeautySetting(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;)Lcom/transsion/camera/app/common/setting/SettingBase;
@@ -45,7 +45,7 @@
 
     if-nez v0, :cond_12
 
-    .line 557
+    .line 573
     invoke-static {}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -56,7 +56,7 @@
 
     return-void
 
-    .line 560
+    .line 576
     :cond_12
     instance-of v0, p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;
 
@@ -64,11 +64,11 @@
 
     return-void
 
-    .line 563
+    .line 579
     :cond_17
     check-cast p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;
 
-    .line 564
+    .line 580
     iget-boolean v0, p1, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->isExpand:Z
 
     const/4 v1, 0x1
@@ -88,7 +88,7 @@
 
     move-result-object v0
 
-    .line 565
+    .line 581
     :goto_28
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$7;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
@@ -122,12 +122,12 @@
 
     move-result-object p0
 
-    .line 566
+    .line 582
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getStoreScope()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 565
+    .line 581
     invoke-virtual {v2, p1, v0, p0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
@@ -138,7 +138,7 @@
 .method public onCollapse(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
     .registers 2
 
-    .line 552
+    .line 568
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$7;->saveExpandState(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
 
     return-void
@@ -157,7 +157,7 @@
         }
     .end annotation
 
-    .line 546
+    .line 562
     invoke-static {}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -184,7 +184,7 @@
 
     invoke-static {p1, p3}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 547
+    .line 563
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$7;->saveExpandState(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
 
     return-void

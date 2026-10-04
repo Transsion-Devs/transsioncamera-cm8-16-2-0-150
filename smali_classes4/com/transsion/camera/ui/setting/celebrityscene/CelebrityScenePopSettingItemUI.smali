@@ -62,14 +62,33 @@
 .method private synthetic lambda$showPopupTips$0(Ljava/lang/String;)V
     .registers 4
 
-    .line 99
+    .line 101
+    :try_start_0
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/celebrityscene/CelebrityScenePopSettingItemUI;->mRecommendPopupTipsView:Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
 
+    if-eqz v0, :cond_b
+
+    .line 102
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const/16 v1, 0x31
 
     invoke-virtual {v0, p0, p1, v1}, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;->show(Landroid/view/View;Ljava/lang/String;I)V
+    :try_end_b
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_b} :catch_c
+
+    :cond_b
+    return-void
+
+    :catch_c
+    move-exception p0
+
+    .line 106
+    sget-object p1, Lcom/transsion/camera/ui/setting/celebrityscene/CelebrityScenePopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string v0, "showPopupTips "
+
+    invoke-static {p1, v0, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
@@ -194,14 +213,14 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/celebrityscene/CelebrityScenePopSettingItemUI;->mPopupTipsShowRunnable:Ljava/lang/Runnable;
 
-    .line 101
+    .line 109
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mUIHandler:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$UIHandler;
 
     const-wide/16 v2, 0x12c
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 102
+    .line 110
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v0, 0x185

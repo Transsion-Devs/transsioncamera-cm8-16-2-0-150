@@ -10,7 +10,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 1355
+    .line 1352
     invoke-direct {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListHead;-><init>()V
 
     return-void
@@ -27,25 +27,25 @@
 .method public final getString(Ljava/lang/String;)Ljava/lang/String;
     .registers 6
 
-    .line 1359
+    .line 1356
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1360
+    .line 1357
     const-string v1, "List{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1361
+    .line 1358
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1362
+    .line 1359
     const-string p1, "}["
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 341
+    .line 336
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNext()Ljava/lang/Object;
 
     move-result-object p1
@@ -58,7 +58,7 @@
 
     const/4 v1, 0x1
 
-    .line 342
+    .line 337
     :goto_1e
     invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -66,7 +66,7 @@
 
     if-nez v2, :cond_3c
 
-    .line 343
+    .line 338
     instance-of v2, p1, Lkotlinx/coroutines/JobNode;
 
     if-eqz v2, :cond_37
@@ -81,17 +81,17 @@
 
     goto :goto_34
 
-    .line 1365
+    .line 1362
     :cond_2f
     const-string v3, ", "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1366
+    .line 1363
     :goto_34
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 344
+    .line 339
     :cond_37
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNextNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
@@ -99,18 +99,18 @@
 
     goto :goto_1e
 
-    .line 1368
+    .line 1365
     :cond_3c
     const-string p0, "]"
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1359
+    .line 1356
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string p1, "StringBuilder().apply(builderAction).toString()"
+    const-string p1, "toString(...)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -128,7 +128,7 @@
 .method public toString()Ljava/lang/String;
     .registers 1
 
-    .line 1372
+    .line 1369
     invoke-super {p0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->toString()Ljava/lang/String;
 
     move-result-object p0

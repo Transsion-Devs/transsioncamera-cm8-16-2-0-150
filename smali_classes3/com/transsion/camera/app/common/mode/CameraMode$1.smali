@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CameraMode;)V
     .registers 2
 
-    .line 1170
+    .line 1160
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CameraMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public getZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 2
 
-    .line 1173
+    .line 1163
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CameraMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
@@ -49,7 +49,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 1174
+    .line 1164
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CameraMode;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getFrontZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;

@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;)V
     .registers 2
 
-    .line 261
+    .line 264
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$WideCameraListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onClick(Landroid/view/View;)V
     .registers 3
 
-    .line 264
+    .line 267
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$WideCameraListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->-$$Nest$fgetmSwitchWideCameraListener(Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;)Lcom/transsion/camera/app/common/IAppUIListener$ISwitchWideCameraListener;
@@ -64,7 +64,7 @@
 
     if-eqz v0, :cond_20
 
-    .line 265
+    .line 268
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$WideCameraListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->-$$Nest$fgetmSwitchWideCameraListener(Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;)Lcom/transsion/camera/app/common/IAppUIListener$ISwitchWideCameraListener;

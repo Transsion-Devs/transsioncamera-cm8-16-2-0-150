@@ -70,22 +70,22 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;ILjava/lang/String;ILjava/lang/String;Z)V
     .registers 7
 
-    .line 1317
+    .line 1337
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;-><init>()V
 
-    .line 1318
+    .line 1338
     iput p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Child;->featureId:I
 
-    .line 1319
+    .line 1339
     iput-object p3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Child;->key:Ljava/lang/String;
 
-    .line 1320
+    .line 1340
     iput p4, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Child;->drawableId:I
 
-    .line 1321
+    .line 1341
     iput-object p5, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Child;->title:Ljava/lang/String;
 
-    .line 1322
+    .line 1342
     iput-boolean p6, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Child;->isSecondary:Z
 
     return-void
@@ -96,7 +96,7 @@
 .method public getType()I
     .registers 1
 
-    .line 1327
+    .line 1347
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Child;->isSecondary:Z
 
     if-eqz p0, :cond_8

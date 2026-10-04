@@ -129,7 +129,7 @@
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
-    .line 227
+    .line 257
     iget v0, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$filterNotNull$1;->label:I
 
     if-nez v0, :cond_16

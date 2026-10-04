@@ -35,25 +35,25 @@
 .method public constructor <init>(IIIIFI)V
     .registers 7
 
-    .line 626
+    .line 632
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 627
+    .line 633
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mSnapButtonValue:I
 
-    .line 628
+    .line 634
     iput p2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mSnapType:I
 
-    .line 629
+    .line 635
     iput p3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mSnapTriggerMode:I
 
-    .line 630
+    .line 636
     iput p4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mBanding:I
 
-    .line 631
+    .line 637
     iput p5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mMainFreq:F
 
-    .line 632
+    .line 638
     iput p6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mMotionIntensity:I
 
     return-void
@@ -64,7 +64,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 637
+    .line 643
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

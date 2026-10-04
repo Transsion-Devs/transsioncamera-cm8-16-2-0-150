@@ -38,7 +38,7 @@
 
 .field private mCurrentItemType:I
 
-.field private mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
+.field protected mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
 .field private mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 

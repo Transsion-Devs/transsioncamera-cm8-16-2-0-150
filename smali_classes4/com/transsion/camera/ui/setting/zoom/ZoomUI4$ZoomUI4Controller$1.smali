@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;)V
     .registers 2
 
-    .line 3136
+    .line 3117
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller$1;->this$1:Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 4
 
-    .line 3139
+    .line 3120
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller$1;->this$1:Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;->-$$Nest$fgetisValueIncreasing(Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;)Z
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_23
 
-    .line 3140
+    .line 3121
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller$1;->this$1:Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;
 
     # getter for: Lcom/transsion/camera/ui/setting/BaseRunnableController;->originalValue:Ljava/lang/Object;
@@ -78,7 +78,7 @@
 
     goto :goto_3d
 
-    .line 3142
+    .line 3123
     :cond_23
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller$1;->this$1:Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;
 
@@ -108,7 +108,7 @@
     # setter for: Lcom/transsion/camera/ui/setting/BaseRunnableController;->originalValue:Ljava/lang/Object;
     invoke-static {v0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;->access$202(Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3144
+    .line 3125
     :goto_3d
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller$1;->this$1:Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;
 
@@ -121,7 +121,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;->applyNewValue(Ljava/lang/Integer;)V
 
-    .line 3145
+    .line 3126
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller$1;->this$1:Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;
 
     invoke-virtual {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;->shouldContinue()Z
@@ -130,7 +130,7 @@
 
     if-eqz v0, :cond_5c
 
-    .line 3146
+    .line 3127
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller$1;->this$1:Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;
 
     # getter for: Lcom/transsion/camera/ui/setting/BaseRunnableController;->mUIHandler:Landroid/os/Handler;
@@ -144,7 +144,7 @@
 
     return-void
 
-    .line 3148
+    .line 3129
     :cond_5c
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller$1;->this$1:Lcom/transsion/camera/ui/setting/zoom/ZoomUI4$ZoomUI4Controller;
 

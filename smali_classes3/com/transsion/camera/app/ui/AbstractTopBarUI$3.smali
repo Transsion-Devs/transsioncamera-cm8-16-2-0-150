@@ -1,14 +1,11 @@
 .class Lcom/transsion/camera/app/ui/AbstractTopBarUI$3;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/app/ui/AbstractTopBarUI;->startVideoSizePointAnimation(Z)V
+    value = Lcom/transsion/camera/app/ui/AbstractTopBarUI;->runTopBarTranslateAnimator(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,10 +22,10 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractTopBarUI;)V
     .registers 2
 
-    .line 590
+    .line 1497
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
@@ -38,44 +35,65 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 603
+    .line 1500
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
+
+    .line 1501
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    const/4 p1, 0x0
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->-$$Nest$fgetmRoot(Lcom/transsion/camera/app/ui/AbstractTopBarUI;)Landroid/view/View;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->-$$Nest$fputmIsAnimationRunning(Lcom/transsion/camera/app/ui/AbstractTopBarUI;Z)V
+    move-result-object p0
+
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
 
     return-void
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .registers 2
+    .registers 3
 
-    .line 598
+    .line 1506
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    .line 1507
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+
+    invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->-$$Nest$fgetmRoot(Lcom/transsion/camera/app/ui/AbstractTopBarUI;)Landroid/view/View;
+
+    move-result-object p1
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
+
+    .line 1508
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+
+    iget-object v0, p1, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOption:Lcom/transsion/camera/app/ui/setting/PopupOption;
+
+    if-eqz v0, :cond_25
+
+    .line 1509
+    invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->-$$Nest$fgetmCurPreviewValue(Lcom/transsion/camera/app/ui/AbstractTopBarUI;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/setting/PopupOption;->updateSwitchPreviewValue(Ljava/lang/String;)V
+
+    .line 1510
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    const/4 p1, 0x0
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOption:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->-$$Nest$fputmIsAnimationRunning(Lcom/transsion/camera/app/ui/AbstractTopBarUI;Z)V
+    iget p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mCurrentScreenType:I
 
-    return-void
-.end method
+    const/4 v0, 0x0
 
-.method public onAnimationRepeat(Landroid/animation/Animator;)V
-    .registers 2
+    invoke-virtual {p1, p0, v0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->onScreenFormChanged(IZ)V
 
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .registers 2
-
-    .line 593
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
-
-    const/4 p1, 0x1
-
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->-$$Nest$fputmIsAnimationRunning(Lcom/transsion/camera/app/ui/AbstractTopBarUI;Z)V
-
+    :cond_25
     return-void
 .end method

@@ -7,6 +7,8 @@
 
 
 # static fields
+.field private static final TAG:Ljava/lang/String; = "TranAospSchedManager"
+
 .field private static sClassName:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -25,7 +27,7 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    .line 11
+    .line 15
     const-string v0, "com.transsion.hubsdk.TranServiceManager"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -40,10 +42,10 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 14
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
+    .line 19
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->getBinderObject()Ljava/lang/Object;
 
     move-result-object v0
@@ -56,14 +58,14 @@
 .method private getBinderObject()Ljava/lang/Object;
     .registers 4
 
-    .line 74
+    .line 102
     sget-object p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->sClassName:Ljava/lang/Class;
 
     const/4 v0, 0x0
 
     if-eqz p0, :cond_3e
 
-    .line 75
+    .line 103
     const-class v1, Ljava/lang/String;
 
     filled-new-array {v1}, [Ljava/lang/Class;
@@ -78,7 +80,7 @@
 
     if-eqz p0, :cond_3e
 
-    .line 77
+    .line 105
     const-string v1, "TranSchedService"
 
     filled-new-array {v1}, [Ljava/lang/Object;
@@ -91,7 +93,7 @@
 
     check-cast p0, Landroid/os/IBinder;
 
-    .line 78
+    .line 106
     const-string v1, "com.transsion.hubsdk.uiawarescheduling.ITranSchedManager$Stub"
 
     invoke-static {v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -102,7 +104,7 @@
 
     if-eqz v1, :cond_3e
 
-    .line 80
+    .line 108
     const-class v0, Landroid/os/IBinder;
 
     filled-new-array {v0}, [Ljava/lang/Class;
@@ -115,7 +117,7 @@
 
     move-result-object v0
 
-    .line 81
+    .line 109
     filled-new-array {p0}, [Ljava/lang/Object;
 
     move-result-object p0
@@ -135,12 +137,12 @@
 .method public cancelTranSchedUxTags(I)Z
     .registers 5
 
-    .line 30
+    .line 34
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     if-eqz v0, :cond_29
 
-    .line 31
+    .line 35
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -157,7 +159,7 @@
 
     move-result-object v0
 
-    .line 32
+    .line 36
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -186,17 +188,99 @@
     return p0
 .end method
 
+.method public cancelTranSchedUxTagsAsync(ILcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager$ITranSchedManagerCallback;)V
+    .registers 3
+
+    .line 93
+    const-string p0, "TranAospSchedManager"
+
+    const-string p1, "cancelTranSchedUxTagsAsync no support"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public cancelTransSchedUxTagsByName(ILjava/lang/String;)Z
+    .registers 6
+
+    .line 43
+    iget-object v0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
+
+    if-eqz v0, :cond_2b
+
+    .line 44
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    const-class v2, Ljava/lang/String;
+
+    filled-new-array {v1, v2}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "cancelTransSchedUxTagsByName"
+
+    invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    .line 45
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v0, p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Boolean;
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    return p0
+
+    :cond_2b
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public cancelTransSchedUxTagsByNameAsync(ILjava/lang/String;Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager$ITranSchedManagerCallback;)V
+    .registers 4
+
+    .line 98
+    const-string p0, "TranAospSchedManager"
+
+    const-string p1, "cancelTransSchedUxTagsByNameAsync no support"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
 .method public getTranSchedScene()I
     .registers 5
 
-    .line 57
+    .line 70
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_20
 
-    .line 58
+    .line 71
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -209,7 +293,7 @@
 
     move-result-object v0
 
-    .line 59
+    .line 72
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -233,14 +317,14 @@
 .method public getTranSchedState()I
     .registers 5
 
-    .line 39
+    .line 52
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_20
 
-    .line 40
+    .line 53
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -253,7 +337,7 @@
 
     move-result-object v0
 
-    .line 41
+    .line 54
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -277,12 +361,12 @@
 .method public getTranSchedUxTags(I)J
     .registers 5
 
-    .line 66
+    .line 79
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     if-eqz v0, :cond_29
 
-    .line 67
+    .line 80
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -299,7 +383,7 @@
 
     move-result-object v0
 
-    .line 68
+    .line 81
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -331,12 +415,12 @@
 .method public setTranSchedScene(I)Z
     .registers 5
 
-    .line 48
+    .line 61
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     if-eqz v0, :cond_29
 
-    .line 49
+    .line 62
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -353,7 +437,7 @@
 
     move-result-object v0
 
-    .line 50
+    .line 63
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -385,12 +469,12 @@
 .method public setTranSchedUxTagsByName(ILjava/lang/String;)Z
     .registers 6
 
-    .line 20
+    .line 24
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     if-eqz v0, :cond_2b
 
-    .line 21
+    .line 25
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -409,7 +493,7 @@
 
     move-result-object v0
 
-    .line 22
+    .line 26
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/uiawarescheduling/TranAospSchedManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -436,4 +520,17 @@
     const/4 p0, 0x0
 
     return p0
+.end method
+
+.method public setTranSchedUxTagsByNameAsync(ILjava/lang/String;Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager$ITranSchedManagerCallback;)V
+    .registers 4
+
+    .line 88
+    const-string p0, "TranAospSchedManager"
+
+    const-string p1, "setTranSchedUxTagsByNameAsync no support"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
 .end method

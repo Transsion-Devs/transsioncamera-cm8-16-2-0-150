@@ -242,14 +242,14 @@
 .method private hidePopupTips()V
     .registers 3
 
-    .line 208
+    .line 216
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v1, 0x186
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 209
+    .line 217
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/celebrityscene/CelebritySceneTopBarItemUI;->mPopupTipsView:Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;->hide()V
@@ -461,14 +461,33 @@
 .method private synthetic lambda$showPopupTips$3(Ljava/lang/String;)V
     .registers 4
 
-    .line 201
+    .line 203
+    :try_start_0
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/celebrityscene/CelebritySceneTopBarItemUI;->mPopupTipsView:Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
 
+    if-eqz v0, :cond_b
+
+    .line 204
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const/16 v1, 0x50
 
     invoke-virtual {v0, p0, p1, v1}, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;->show(Landroid/view/View;Ljava/lang/String;I)V
+    :try_end_b
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_b} :catch_c
+
+    :cond_b
+    return-void
+
+    :catch_c
+    move-exception p0
+
+    .line 207
+    sget-object p1, Lcom/transsion/camera/ui/setting/celebrityscene/CelebritySceneTopBarItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string v0, "showPopupTips error: "
+
+    invoke-static {p1, v0, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
@@ -630,7 +649,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 202
+    .line 210
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mUIHandler:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$UIHandler;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/celebrityscene/CelebritySceneTopBarItemUI;->hidePopupRunnable:Ljava/lang/Runnable;
@@ -639,7 +658,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 203
+    .line 211
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/celebrityscene/CelebritySceneTopBarItemUI;->mCelebrityValue:Ljava/lang/String;
 
     :cond_7e

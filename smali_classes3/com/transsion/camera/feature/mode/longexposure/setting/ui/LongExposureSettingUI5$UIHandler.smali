@@ -30,10 +30,10 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;)V
     .registers 3
 
-    .line 283
+    .line 295
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 284
+    .line 296
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -48,7 +48,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 289
+    .line 301
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5$UIHandler;->mUIReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -59,7 +59,7 @@
 
     if-nez p0, :cond_25
 
-    .line 291
+    .line 303
     invoke-static {}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -84,7 +84,7 @@
 
     return-void
 
-    .line 294
+    .line 306
     :cond_25
     iget p1, p1, Landroid/os/Message;->what:I
 
@@ -92,7 +92,7 @@
 
     if-ne p1, v0, :cond_2e
 
-    .line 295
+    .line 307
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->-$$Nest$mhidePopSettingTitle(Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;)V
 
     :cond_2e

@@ -31,7 +31,7 @@
 .method constructor <init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
     .registers 2
 
-    .line 3414
+    .line 3348
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
 .method private checkPreCapture()V
     .registers 4
 
-    .line 3476
+    .line 3410
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -81,7 +81,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3478
+    .line 3412
     iget-boolean v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->mPreAEDone:Z
 
     if-eqz v0, :cond_46
@@ -96,10 +96,10 @@
 
     const/4 v0, 0x1
 
-    .line 3479
+    .line 3413
     iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->mPreCaptureDone:Z
 
-    .line 3480
+    .line 3414
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCapturePictureCallback(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy2Impl$CapturePictureCallback;
@@ -117,7 +117,7 @@
 .method public onAEPreCaptureDone()V
     .registers 4
 
-    .line 3423
+    .line 3357
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -128,10 +128,10 @@
 
     const/4 v0, 0x1
 
-    .line 3424
+    .line 3358
     iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->mPreAEDone:Z
 
-    .line 3425
+    .line 3359
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmReleased(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Z
@@ -140,7 +140,7 @@
 
     if-eqz v1, :cond_3e
 
-    .line 3427
+    .line 3361
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v1
@@ -149,15 +149,15 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3428
+    .line 3362
     iget-boolean v1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->mPreCaptureDone:Z
 
     if-nez v1, :cond_3d
 
-    .line 3429
+    .line 3363
     iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->mPreCaptureDone:Z
 
-    .line 3430
+    .line 3364
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCapturePictureCallback(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy2Impl$CapturePictureCallback;
@@ -170,7 +170,7 @@
 
     if-eqz v0, :cond_3d
 
-    .line 3431
+    .line 3365
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCapturePictureCallback(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy2Impl$CapturePictureCallback;
@@ -188,7 +188,7 @@
     :cond_3d
     return-void
 
-    .line 3436
+    .line 3370
     :cond_3e
     invoke-direct {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->checkPreCapture()V
 
@@ -198,7 +198,7 @@
 .method public onAutoFocus(Z)V
     .registers 4
 
-    .line 3441
+    .line 3375
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -209,10 +209,10 @@
 
     const/4 p1, 0x1
 
-    .line 3442
+    .line 3376
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->mPreAFDone:Z
 
-    .line 3443
+    .line 3377
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmReleased(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Z
@@ -221,7 +221,7 @@
 
     if-eqz v0, :cond_3e
 
-    .line 3445
+    .line 3379
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -230,15 +230,15 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3446
+    .line 3380
     iget-boolean v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->mPreCaptureDone:Z
 
     if-nez v0, :cond_3d
 
-    .line 3447
+    .line 3381
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->mPreCaptureDone:Z
 
-    .line 3448
+    .line 3382
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCapturePictureCallback(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy2Impl$CapturePictureCallback;
@@ -251,7 +251,7 @@
 
     if-eqz p1, :cond_3d
 
-    .line 3449
+    .line 3383
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCapturePictureCallback(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy2Impl$CapturePictureCallback;
@@ -269,7 +269,7 @@
     :cond_3d
     return-void
 
-    .line 3455
+    .line 3389
     :cond_3e
     :try_start_3e
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
@@ -290,7 +290,7 @@
 
     if-nez v0, :cond_58
 
-    .line 3456
+    .line 3390
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$mdoCancelAutoFocus(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
@@ -302,7 +302,7 @@
 
     goto :goto_70
 
-    .line 3458
+    .line 3392
     :cond_58
     :goto_58
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
@@ -313,10 +313,10 @@
 
     if-eqz v0, :cond_6c
 
-    .line 3459
+    .line 3393
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->mPreCaptureDone:Z
 
-    .line 3460
+    .line 3394
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -327,7 +327,7 @@
 
     return-void
 
-    .line 3463
+    .line 3397
     :cond_6c
     invoke-direct {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->checkPreCapture()V
     :try_end_6f
@@ -337,16 +337,16 @@
 
     return-void
 
-    .line 3465
+    .line 3399
     :goto_70
     iget-boolean v1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->mPreCaptureDone:Z
 
     if-nez v1, :cond_8f
 
-    .line 3466
+    .line 3400
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->mPreCaptureDone:Z
 
-    .line 3467
+    .line 3401
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCapturePictureCallback(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy2Impl$CapturePictureCallback;
@@ -359,7 +359,7 @@
 
     if-eqz v1, :cond_8f
 
-    .line 3468
+    .line 3402
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$8;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCapturePictureCallback(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy2Impl$CapturePictureCallback;
@@ -372,7 +372,7 @@
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;->onCaptureFailed(Z)V
 
-    .line 3471
+    .line 3405
     :cond_8f
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 

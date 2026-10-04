@@ -9,11 +9,11 @@
 # instance fields
 .field public final synthetic f$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
-.field public final synthetic f$1:I
+.field public final synthetic f$1:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;I)V
+.method public synthetic constructor <init>(Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;[I)V
     .registers 3
 
     .line 0
@@ -21,7 +21,7 @@
 
     iput-object p1, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$$ExternalSyntheticLambda4;->f$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
-    iput p2, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$$ExternalSyntheticLambda4;->f$1:I
+    iput-object p2, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$$ExternalSyntheticLambda4;->f$1:[I
 
     return-void
 .end method
@@ -34,9 +34,9 @@
     .line 0
     iget-object v0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$$ExternalSyntheticLambda4;->f$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
-    iget p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$$ExternalSyntheticLambda4;->f$1:I
+    iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$$ExternalSyntheticLambda4;->f$1:[I
 
-    invoke-static {v0, p0}, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->$r8$lambda$OGwfXnPddXa4QiQtgTc5AuMlknk(Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;I)Ljava/lang/Object;
+    invoke-static {v0, p0}, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->$r8$lambda$sRFkKL5oHxbIHJv1Yq7YpPz0kCo(Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;[I)Ljava/lang/Object;
 
     move-result-object p0
 

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/setting/PopupOption;)V
     .registers 2
 
-    .line 621
+    .line 637
     iput-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$5;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreDraw()Z
     .registers 3
 
-    .line 624
+    .line 640
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$5;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fgetmItemText(Lcom/transsion/camera/app/ui/setting/PopupOption;)Landroid/widget/TextView;
@@ -51,7 +51,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 625
+    .line 641
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$5;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fgetmItemText(Lcom/transsion/camera/app/ui/setting/PopupOption;)Landroid/widget/TextView;
@@ -60,7 +60,7 @@
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getLineCount()I
 
-    .line 627
+    .line 643
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$5;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fgetmItemText(Lcom/transsion/camera/app/ui/setting/PopupOption;)Landroid/widget/TextView;
@@ -71,7 +71,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
 
-    .line 628
+    .line 644
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$5;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fgetmItemText(Lcom/transsion/camera/app/ui/setting/PopupOption;)Landroid/widget/TextView;

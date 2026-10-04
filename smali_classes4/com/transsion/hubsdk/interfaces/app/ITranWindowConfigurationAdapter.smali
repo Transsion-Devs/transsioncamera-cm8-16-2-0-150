@@ -7,6 +7,12 @@
 .method public abstract getBounds(Landroid/content/res/Configuration;)Landroid/graphics/Rect;
 .end method
 
+.method public abstract getMultiWindowingId(Landroid/content/res/Configuration;)I
+.end method
+
+.method public abstract getMultiWindowingMode(Landroid/content/res/Configuration;)I
+.end method
+
 .method public abstract inMultiWindowMode(I)Z
 .end method
 

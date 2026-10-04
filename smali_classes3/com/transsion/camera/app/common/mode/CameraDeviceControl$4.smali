@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)V
     .registers 2
 
-    .line 2201
+    .line 2143
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public executeSwitchToOffline()V
     .registers 2
 
-    .line 2204
+    .line 2146
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -47,7 +47,7 @@
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2205
+    .line 2147
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object p0
@@ -62,7 +62,7 @@
 .method public onClosed()V
     .registers 3
 
-    .line 2247
+    .line 2189
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -71,7 +71,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2248
+    .line 2190
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
@@ -80,7 +80,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->countOfflineSession(Z)V
 
-    .line 2249
+    .line 2191
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmDeviceState(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)I
@@ -91,7 +91,7 @@
 
     if-ne v0, v1, :cond_3a
 
-    .line 2250
+    .line 2192
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
@@ -104,7 +104,7 @@
 
     if-ge v0, v1, :cond_3a
 
-    .line 2251
+    .line 2193
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
@@ -115,7 +115,7 @@
 
     if-eqz v0, :cond_3a
 
-    .line 2252
+    .line 2194
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUI;
@@ -133,7 +133,7 @@
 .method public onError(IZ)V
     .registers 5
 
-    .line 2237
+    .line 2179
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -142,7 +142,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2238
+    .line 2180
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
@@ -153,12 +153,12 @@
 
     if-eqz p2, :cond_18
 
-    .line 2240
+    .line 2182
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->checkNotifyBgOfflineErr()V
 
-    .line 2242
+    .line 2184
     :cond_18
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
@@ -170,7 +170,7 @@
 .method public onIdle()V
     .registers 2
 
-    .line 2232
+    .line 2174
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -185,7 +185,7 @@
 .method public onReady(I)V
     .registers 5
 
-    .line 2210
+    .line 2152
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -218,7 +218,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2211
+    .line 2153
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
@@ -227,12 +227,12 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->setSwitchingOffline(Z)V
 
-    .line 2212
+    .line 2154
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$mnotifyCaptureOfflineLock(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;I)V
 
-    .line 2213
+    .line 2155
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmOfflineSwitchCallback(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUIListener$IBGOfflineSwitchCallback;
@@ -241,7 +241,7 @@
 
     if-eqz v0, :cond_44
 
-    .line 2214
+    .line 2156
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmOfflineSwitchCallback(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUIListener$IBGOfflineSwitchCallback;
@@ -257,7 +257,7 @@
 .method public onSwitchFailed(I)V
     .registers 5
 
-    .line 2220
+    .line 2162
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -278,12 +278,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2221
+    .line 2163
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->checkNotifyBgOfflineErr()V
 
-    .line 2222
+    .line 2164
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
@@ -292,19 +292,19 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->setSwitchingOffline(Z)V
 
-    .line 2223
+    .line 2165
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->countOfflineSession(Z)V
 
-    .line 2224
+    .line 2166
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$mnotifyCaptureOfflineLock(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;I)V
 
-    .line 2225
+    .line 2167
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmOfflineSwitchCallback(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUIListener$IBGOfflineSwitchCallback;
@@ -313,7 +313,7 @@
 
     if-eqz v0, :cond_42
 
-    .line 2226
+    .line 2168
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmOfflineSwitchCallback(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUIListener$IBGOfflineSwitchCallback;

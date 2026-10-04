@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;)V
     .registers 2
 
-    .line 472
+    .line 468
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager$EditWaterMarkListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onClick(Landroid/view/View;)V
     .registers 2
 
-    .line 475
+    .line 471
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager$EditWaterMarkListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;->-$$Nest$fgetmFragmentListener(Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;)Lcom/transsion/camera/app/common/IAppUIListener$IFragmentListener;
@@ -56,7 +56,7 @@
 
     if-eqz p1, :cond_11
 
-    .line 476
+    .line 472
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager$EditWaterMarkListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;->-$$Nest$fgetmFragmentListener(Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;)Lcom/transsion/camera/app/common/IAppUIListener$IFragmentListener;
@@ -65,7 +65,7 @@
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUIListener$IFragmentListener;->onEditWaTerMarkClicked()V
 
-    .line 478
+    .line 474
     :cond_11
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager$EditWaterMarkListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;
 

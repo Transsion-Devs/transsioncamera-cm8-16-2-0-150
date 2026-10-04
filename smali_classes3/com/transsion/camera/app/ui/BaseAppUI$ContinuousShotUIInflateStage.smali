@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;Z)V
     .registers 4
 
-    .line 5915
+    .line 5780
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ContinuousShotUIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
-    .line 5916
+    .line 5781
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;-><init>(Lcom/transsion/camera/app/ui/BaseAppUI;Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;Z)V
 
     return-void
@@ -36,12 +36,12 @@
 .method public process()V
     .registers 2
 
-    .line 5921
+    .line 5786
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ContinuousShotUIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->doLoadContinuousShotUIManager()V
 
-    .line 5922
+    .line 5787
     invoke-super {p0}, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->process()V
 
     return-void

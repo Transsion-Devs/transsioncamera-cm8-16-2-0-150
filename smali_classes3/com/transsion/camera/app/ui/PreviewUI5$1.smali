@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/PreviewUI5;II)V
     .registers 4
 
-    .line 184
+    .line 185
     iput-object p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5$1;->this$0:Lcom/transsion/camera/app/ui/PreviewUI5;
 
     iput p2, p0, Lcom/transsion/camera/app/ui/PreviewUI5$1;->val$start:I
@@ -43,7 +43,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 199
+    .line 200
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5$1;->onAnimationEnd(Landroid/animation/Animator;)V
 
     return-void
@@ -52,7 +52,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 193
+    .line 194
     invoke-static {}, Lcom/transsion/camera/app/ui/PreviewUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -75,7 +75,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 194
+    .line 195
     iget-object p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5$1;->this$0:Lcom/transsion/camera/app/ui/PreviewUI5;
 
     iget p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5$1;->val$end:I
@@ -92,7 +92,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 187
+    .line 188
     invoke-static {}, Lcom/transsion/camera/app/ui/PreviewUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -115,7 +115,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 188
+    .line 189
     iget-object p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5$1;->this$0:Lcom/transsion/camera/app/ui/PreviewUI5;
 
     iget p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5$1;->val$start:I

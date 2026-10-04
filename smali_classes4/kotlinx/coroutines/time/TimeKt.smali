@@ -7,7 +7,7 @@
 .method private static final coerceToMillis(Ljava/time/Duration;)J
     .registers 5
 
-    .line 68
+    .line 65
     sget-object v0, Ljava/time/Duration;->ZERO:Ljava/time/Duration;
 
     invoke-virtual {p0, v0}, Ljava/time/Duration;->compareTo(Ljava/time/Duration;)I
@@ -20,7 +20,7 @@
 
     return-wide v0
 
-    .line 69
+    .line 66
     :cond_b
     sget-object v0, Ljava/time/temporal/ChronoUnit;->MILLIS:Ljava/time/temporal/ChronoUnit;
 
@@ -38,7 +38,7 @@
 
     return-wide v0
 
-    .line 74
+    .line 71
     :cond_1a
     invoke-virtual {p0}, Ljava/time/Duration;->getSeconds()J
 
@@ -101,7 +101,7 @@
     .annotation build Lkotlinx/coroutines/FlowPreview;
     .end annotation
 
-    .line 24
+    .line 21
     invoke-static {p1}, Lkotlinx/coroutines/time/TimeKt;->coerceToMillis(Ljava/time/Duration;)J
 
     move-result-wide v0
@@ -127,7 +127,7 @@
         }
     .end annotation
 
-    .line 18
+    .line 15
     invoke-static {p0}, Lkotlinx/coroutines/time/TimeKt;->coerceToMillis(Ljava/time/Duration;)J
 
     move-result-wide v0
@@ -165,7 +165,7 @@
         }
     .end annotation
 
-    .line 36
+    .line 33
     invoke-static {p1}, Lkotlinx/coroutines/time/TimeKt;->coerceToMillis(Ljava/time/Duration;)J
 
     move-result-wide v0
@@ -194,7 +194,7 @@
     .annotation build Lkotlinx/coroutines/FlowPreview;
     .end annotation
 
-    .line 30
+    .line 27
     invoke-static {p1}, Lkotlinx/coroutines/time/TimeKt;->coerceToMillis(Ljava/time/Duration;)J
 
     move-result-wide v0
@@ -221,7 +221,7 @@
         }
     .end annotation
 
-    .line 45
+    .line 42
     invoke-static {p0}, Lkotlinx/coroutines/time/TimeKt;->coerceToMillis(Ljava/time/Duration;)J
 
     move-result-wide v0
@@ -248,7 +248,7 @@
         }
     .end annotation
 
-    .line 52
+    .line 49
     invoke-static {p0}, Lkotlinx/coroutines/time/TimeKt;->coerceToMillis(Ljava/time/Duration;)J
 
     move-result-wide v0

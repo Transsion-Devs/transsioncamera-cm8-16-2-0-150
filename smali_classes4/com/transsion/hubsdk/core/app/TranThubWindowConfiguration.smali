@@ -42,6 +42,28 @@
     return-object p0
 .end method
 
+.method public getMultiWindowingId(Landroid/content/res/Configuration;)I
+    .registers 2
+
+    .line 47
+    invoke-static {p1}, Lcom/transsion/hubsdk/app/TranWindowConfiguration;->getMultiWindowingId(Landroid/content/res/Configuration;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public getMultiWindowingMode(Landroid/content/res/Configuration;)I
+    .registers 2
+
+    .line 42
+    invoke-static {p1}, Lcom/transsion/hubsdk/app/TranWindowConfiguration;->getMultiWindowingMode(Landroid/content/res/Configuration;)I
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public inMultiWindowMode(I)Z
     .registers 2
 

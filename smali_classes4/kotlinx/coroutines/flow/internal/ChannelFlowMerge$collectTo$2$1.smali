@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.internal.ChannelFlowMerge$collectTo$2$1"
     f = "Merge.kt"
     l = {
-        0x45
+        0x41
     }
     m = "invokeSuspend"
 .end annotation
@@ -169,7 +169,7 @@
 
     move-result-object v0
 
-    .line 67
+    .line 63
     iget v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge$collectTo$2$1;->label:I
 
     const/4 v2, 0x1
@@ -202,7 +202,7 @@
     :cond_19
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 69
+    .line 65
     :try_start_1c
     iget-object p1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge$collectTo$2$1;->$inner:Lkotlinx/coroutines/flow/Flow;
 
@@ -220,19 +220,19 @@
 
     return-object v0
 
-    .line 71
+    .line 67
     :cond_29
     :goto_29
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge$collectTo$2$1;->$semaphore:Lkotlinx/coroutines/sync/Semaphore;
 
     invoke-interface {p0}, Lkotlinx/coroutines/sync/Semaphore;->release()V
 
-    .line 73
+    .line 69
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 71
+    .line 67
     :goto_31
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge$collectTo$2$1;->$semaphore:Lkotlinx/coroutines/sync/Semaphore;
 

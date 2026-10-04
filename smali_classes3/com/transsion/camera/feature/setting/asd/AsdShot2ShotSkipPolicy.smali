@@ -309,12 +309,12 @@
 
     if-nez p1, :cond_5
 
-    .line 419
+    .line 421
     const-string p0, "null"
 
     return-object p0
 
-    .line 421
+    .line 423
     :cond_5
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
 
@@ -322,25 +322,25 @@
 
     if-gtz p0, :cond_f
 
-    .line 422
+    .line 424
     const-string/jumbo p0, "{}"
 
     return-object p0
 
-    .line 425
+    .line 427
     :cond_f
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
 
     move-result p0
 
-    .line 426
+    .line 428
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, p0}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const/16 v1, 0x7b
 
-    .line 427
+    .line 429
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     const/4 v1, 0x0
@@ -350,18 +350,18 @@
 
     if-lez v1, :cond_27
 
-    .line 430
+    .line 432
     const-string v2, ", "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 432
+    .line 434
     :cond_27
     invoke-virtual {p1, v1}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v2
 
-    .line 433
+    .line 435
     invoke-static {v2}, Lcom/transsion/camera/feature/setting/asd/AsdAlgoType;->toString(I)Ljava/lang/String;
 
     move-result-object v2
@@ -370,15 +370,15 @@
 
     const/16 v2, 0x3a
 
-    .line 434
+    .line 436
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 435
+    .line 437
     invoke-virtual {p1, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 436
+    .line 438
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     add-int/lit8 v1, v1, 0x1
@@ -388,10 +388,10 @@
     :cond_41
     const/16 p0, 0x7d
 
-    .line 438
+    .line 440
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 439
+    .line 441
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -402,7 +402,7 @@
 .method private isOfflineAccrueNumLimit()Z
     .registers 2
 
-    .line 454
+    .line 456
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -417,7 +417,7 @@
 
     if-lez v0, :cond_1c
 
-    .line 456
+    .line 458
     invoke-static {}, Lcom/transsion/camera/adapter/platformcamera/OfflineController;->getInstance()Lcom/transsion/camera/adapter/platformcamera/OfflineController;
 
     move-result-object v0
@@ -443,21 +443,21 @@
 .method private isSupportForceSkipToNone()Z
     .registers 2
 
-    .line 447
+    .line 449
     iget v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mShot2ShotPolicyExtCount:I
 
     if-lez v0, :cond_20
 
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mAsdModeFeatures:Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
 
-    .line 448
+    .line 450
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->isPMaterMode()Z
 
     move-result p0
 
     if-eqz p0, :cond_20
 
-    .line 449
+    .line 451
     invoke-static {}, Lcom/transsion/camera/utils/CameraUtil;->getRam()I
 
     move-result p0
@@ -466,7 +466,7 @@
 
     if-gt p0, v0, :cond_20
 
-    .line 450
+    .line 452
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -525,8 +525,20 @@
 
     return v1
 
-    .line 144
+    .line 143
     :cond_1d
+    iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mAsdModeFeatures:Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
+
+    invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->isFlashSnapMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_26
+
+    return v1
+
+    .line 146
+    :cond_26
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mAsdModeFeatures:Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->isModeSupportAiRawLite()Z
@@ -541,7 +553,7 @@
 
     move-result v0
 
-    .line 145
+    .line 147
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->isLastShotNotSkip()Z
 
     move-result p0
@@ -550,43 +562,43 @@
 
     const/4 p0, 0x1
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_45
 
-    .line 147
+    .line 149
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setSkipMultCapture(Z)V
 
-    .line 148
+    .line 150
     invoke-virtual {p1, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setMiddleNightMode(I)V
 
     return p0
 
-    :cond_3c
+    :cond_45
     const/16 v2, 0x65
 
-    if-ne v0, v2, :cond_48
+    if-ne v0, v2, :cond_51
 
-    .line 151
+    .line 153
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setSkipMultCapture(Z)V
 
     const/4 p2, 0x2
 
-    .line 152
+    .line 154
     invoke-virtual {p1, p2}, Lcom/transsion/camera/adapter/CameraParameters;->setMiddleNightMode(I)V
 
     return p0
 
-    .line 155
-    :cond_48
+    .line 157
+    :cond_51
     invoke-virtual {p1, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setSkipMultCapture(Z)V
 
     const/4 p0, 0x5
 
-    if-eq p2, p0, :cond_51
+    if-eq p2, p0, :cond_5a
 
-    .line 157
+    .line 159
     invoke-virtual {p1, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setMiddleNightMode(I)V
 
-    :cond_51
+    :cond_5a
     return v1
 .end method
 
@@ -595,7 +607,7 @@
 .method public algoIsReplaced(IZ)Z
     .registers 4
 
-    .line 410
+    .line 412
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->isSupportForceSkipToNone()Z
 
     move-result v0
@@ -707,7 +719,7 @@
 .method public getCurrentPreviewAlgoType()I
     .registers 1
 
-    .line 163
+    .line 165
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
     return p0
@@ -716,7 +728,7 @@
 .method protected getShot2ShotPlatform()I
     .registers 1
 
-    .line 443
+    .line 445
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mShot2ShotPlatform:I
 
     return p0
@@ -804,7 +816,7 @@
 .method public isLastShotNotSkip()Z
     .registers 1
 
-    .line 414
+    .line 416
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mIsLastShotNotSkip:Z
 
     return p0
@@ -847,12 +859,12 @@
 
     const/4 v3, 0x0
 
-    .line 352
+    .line 354
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
-    .line 327
+    .line 329
     iget-object v5, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mDebugMaxCountMap:Landroid/util/SparseArray;
 
     invoke-virtual {v5}, Landroid/util/SparseArray;->size()I
@@ -861,12 +873,12 @@
 
     if-eqz v5, :cond_16
 
-    .line 328
+    .line 330
     iget-object v5, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mDebugMaxCountMap:Landroid/util/SparseArray;
 
     goto :goto_20
 
-    .line 330
+    .line 332
     :cond_16
     iget v5, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mShot2ShotPlatform:I
 
@@ -881,7 +893,7 @@
     :goto_20
     if-nez v5, :cond_2a
 
-    .line 333
+    .line 335
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v2, "needReplace maxCountMap not found !!!"
@@ -893,7 +905,7 @@
     :cond_2a
     const/4 v6, -0x1
 
-    .line 337
+    .line 339
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -912,7 +924,7 @@
 
     if-nez v6, :cond_84
 
-    .line 338
+    .line 340
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
@@ -921,7 +933,7 @@
 
     if-nez v2, :cond_69
 
-    .line 339
+    .line 341
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
@@ -932,7 +944,7 @@
 
     goto :goto_69
 
-    .line 344
+    .line 346
     :cond_4e
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -944,7 +956,7 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 345
+    .line 347
     invoke-static {v1}, Lcom/transsion/camera/feature/setting/asd/AsdAlgoType;->toString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -955,12 +967,12 @@
 
     move-result-object v1
 
-    .line 344
+    .line 346
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return v3
 
-    .line 340
+    .line 342
     :cond_69
     :goto_69
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -973,7 +985,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 341
+    .line 343
     invoke-static {v1}, Lcom/transsion/camera/feature/setting/asd/AsdAlgoType;->toString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -984,7 +996,7 @@
 
     move-result-object v1
 
-    .line 340
+    .line 342
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return v7
@@ -992,7 +1004,7 @@
     :cond_84
     if-eqz v2, :cond_8e
 
-    .line 349
+    .line 351
     invoke-direct {v0}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->isOfflineAccrueNumLimit()Z
 
     move-result v8
@@ -1006,13 +1018,13 @@
     :cond_8e
     move v8, v3
 
-    .line 350
+    .line 352
     :goto_8f
     iget-object v9, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentCountMap:Landroid/util/SparseArray;
 
     monitor-enter v9
 
-    .line 352
+    .line 354
     :try_start_92
     iget-object v10, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentCountMap:Landroid/util/SparseArray;
 
@@ -1026,7 +1038,7 @@
 
     move-result v10
 
-    .line 353
+    .line 355
     iget-object v11, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v12, Ljava/lang/StringBuilder;
@@ -1049,7 +1061,7 @@
 
     iget-object v13, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentCountMap:Landroid/util/SparseArray;
 
-    .line 354
+    .line 356
     invoke-direct {v0, v13}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->dumpMap(Landroid/util/SparseArray;)Ljava/lang/String;
 
     move-result-object v13
@@ -1066,10 +1078,10 @@
 
     move-result-object v12
 
-    .line 353
+    .line 355
     invoke-static {v11, v12}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 355
+    .line 357
     iget-object v11, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v12, Ljava/lang/StringBuilder;
@@ -1094,7 +1106,7 @@
 
     if-lez v10, :cond_1c9
 
-    .line 362
+    .line 364
     iget-object v10, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentCountMap:Landroid/util/SparseArray;
 
     invoke-virtual {v10, v3, v4}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
@@ -1113,7 +1125,7 @@
 
     move v13, v12
 
-    .line 363
+    .line 365
     :goto_f9
     iget-object v14, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentCountMap:Landroid/util/SparseArray;
 
@@ -1123,14 +1135,14 @@
 
     if-ge v11, v14, :cond_1c9
 
-    .line 364
+    .line 366
     iget-object v14, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentCountMap:Landroid/util/SparseArray;
 
     invoke-virtual {v14, v11}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v14
 
-    .line 365
+    .line 367
     invoke-virtual {v5, v14, v4}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v15
@@ -1145,7 +1157,7 @@
 
     move/from16 v16, v3
 
-    .line 367
+    .line 369
     iget-object v3, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentCountMap:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v14, v4}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
@@ -1154,7 +1166,7 @@
 
     check-cast v3, Ljava/lang/Integer;
 
-    .line 368
+    .line 370
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v14
@@ -1184,7 +1196,7 @@
     :goto_132
     iput-boolean v6, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mIsLastShotNotSkip:Z
 
-    .line 369
+    .line 371
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v6
@@ -1199,24 +1211,24 @@
 
     if-nez v2, :cond_158
 
-    .line 370
+    .line 372
     iget-boolean v1, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mSkipToMFLL:Z
 
     if-eqz v1, :cond_14f
 
-    .line 371
+    .line 373
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "needReplace to ALGO_TYPE_MFLL."
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 372
+    .line 374
     monitor-exit v9
 
     return v7
 
-    .line 374
+    .line 376
     :cond_14f
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1224,12 +1236,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 375
+    .line 377
     monitor-exit v9
 
     return v16
 
-    .line 378
+    .line 380
     :cond_158
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
@@ -1250,7 +1262,7 @@
 
     if-eqz v2, :cond_171
 
-    .line 384
+    .line 386
     iget v1, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mShot2ShotPolicyExtCount:I
 
     add-int/2addr v1, v12
@@ -1267,7 +1279,7 @@
     :cond_171
     move/from16 v6, v16
 
-    .line 386
+    .line 388
     :goto_173
     iget-boolean v1, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mSkipToMFLL:Z
 
@@ -1275,7 +1287,7 @@
 
     if-nez v6, :cond_199
 
-    .line 387
+    .line 389
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1300,12 +1312,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 389
+    .line 391
     monitor-exit v9
 
     return v7
 
-    .line 391
+    .line 393
     :cond_199
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1337,7 +1349,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 394
+    .line 396
     monitor-exit v9
 
     return v16
@@ -1357,25 +1369,25 @@
 
     if-eqz v8, :cond_1d6
 
-    .line 401
+    .line 403
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "needReplace to ALGO_TYPE_NONE,because offlineAccrueNumLimit"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 402
+    .line 404
     monitor-exit v9
 
     return v16
 
-    .line 404
+    .line 406
     :cond_1d6
     monitor-exit v9
     :try_end_1d7
     .catchall {:try_start_92 .. :try_end_1d7} :catchall_12d
 
-    .line 405
+    .line 407
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v2, "needReplace false."
@@ -1384,7 +1396,7 @@
 
     return v1
 
-    .line 404
+    .line 406
     :goto_1df
     :try_start_1df
     monitor-exit v9
@@ -1444,10 +1456,10 @@
 
     const/4 v0, 0x0
 
-    .line 167
+    .line 169
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 168
+    .line 170
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionHDR()I
 
     move-result v1
@@ -1456,23 +1468,23 @@
 
     if-ne v1, v2, :cond_16
 
-    .line 169
+    .line 171
     invoke-direct {p0, p1, v2}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v1
 
     if-eqz v1, :cond_14
 
-    .line 170
+    .line 172
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionHDR(I)V
 
     goto :goto_16
 
-    .line 172
+    .line 174
     :cond_14
     iput v2, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 176
+    .line 178
     :cond_16
     :goto_16
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperNightAlgoType()Ljava/lang/String;
@@ -1489,19 +1501,19 @@
 
     if-eqz v1, :cond_38
 
-    .line 177
+    .line 179
     invoke-direct {p0, p1, v3}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v1
 
     if-eqz v1, :cond_36
 
-    .line 178
+    .line 180
     const-string v1, "None"
 
     invoke-virtual {p1, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setSuperNightAlgoType(Ljava/lang/String;)V
 
-    .line 179
+    .line 181
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v1
@@ -1510,11 +1522,11 @@
 
     goto :goto_38
 
-    .line 181
+    .line 183
     :cond_36
     iput v3, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 185
+    .line 187
     :cond_38
     :goto_38
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionNightMode()I
@@ -1525,23 +1537,23 @@
 
     if-ne v1, v2, :cond_4b
 
-    .line 186
+    .line 188
     invoke-direct {p0, p1, v4}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v1
 
     if-eqz v1, :cond_49
 
-    .line 187
+    .line 189
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionNightMode(I)V
 
     goto :goto_4b
 
-    .line 189
+    .line 191
     :cond_49
     iput v4, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 193
+    .line 195
     :cond_4b
     :goto_4b
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionLowLightMode()I
@@ -1552,23 +1564,23 @@
 
     if-ne v1, v2, :cond_5e
 
-    .line 194
+    .line 196
     invoke-direct {p0, p1, v5}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v1
 
     if-eqz v1, :cond_5c
 
-    .line 195
+    .line 197
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionLowLightMode(I)V
 
     goto :goto_5e
 
-    .line 197
+    .line 199
     :cond_5c
     iput v5, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 201
+    .line 203
     :cond_5e
     :goto_5e
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getMiddleNightMode()I
@@ -1579,7 +1591,7 @@
 
     if-ne v1, v2, :cond_6e
 
-    .line 202
+    .line 204
     invoke-direct {p0, p1, v6}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v1
@@ -1588,11 +1600,11 @@
 
     goto :goto_6e
 
-    .line 204
+    .line 206
     :cond_6c
     iput v6, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 208
+    .line 210
     :cond_6e
     :goto_6e
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperResolutionMode()I
@@ -1609,7 +1621,7 @@
 
     if-eqz v1, :cond_8a
 
-    .line 209
+    .line 211
     :cond_7b
     invoke-direct {p0, p1, v7}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
@@ -1617,19 +1629,19 @@
 
     if-eqz v1, :cond_88
 
-    .line 210
+    .line 212
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setSuperResolutionMode(I)V
 
-    .line 211
+    .line 213
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setP2RawCropResizeEnable(I)V
 
     goto :goto_8a
 
-    .line 213
+    .line 215
     :cond_88
     iput v7, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 217
+    .line 219
     :cond_8a
     :goto_8a
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
@@ -1644,7 +1656,7 @@
 
     if-eqz v1, :cond_14f
 
-    .line 218
+    .line 220
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionTurboFusionMode()I
 
     move-result v1
@@ -1653,23 +1665,23 @@
 
     const/4 v1, 0x7
 
-    .line 219
+    .line 221
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v11
 
     if-eqz v11, :cond_a8
 
-    .line 220
+    .line 222
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     goto :goto_aa
 
-    .line 222
+    .line 224
     :cond_a8
     iput v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 226
+    .line 228
     :cond_aa
     :goto_aa
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionTurboFusionMode()I
@@ -1680,23 +1692,23 @@
 
     const/16 v1, 0x8
 
-    .line 227
+    .line 229
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v4
 
     if-eqz v4, :cond_bc
 
-    .line 228
+    .line 230
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     goto :goto_be
 
-    .line 230
+    .line 232
     :cond_bc
     iput v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 234
+    .line 236
     :cond_be
     :goto_be
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionTurboFusionMode()I
@@ -1705,7 +1717,7 @@
 
     if-ne v1, v5, :cond_f1
 
-    .line 235
+    .line 237
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1724,7 +1736,7 @@
 
     invoke-static {v1, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 236
+    .line 238
     iget-wide v11, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mExposeTime:J
 
     cmp-long v1, v11, v8
@@ -1733,12 +1745,12 @@
 
     if-lez v1, :cond_e5
 
-    .line 237
+    .line 239
     iput v4, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
     goto :goto_f1
 
-    .line 238
+    .line 240
     :cond_e5
     invoke-direct {p0, p1, v4}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
@@ -1746,16 +1758,16 @@
 
     if-eqz v1, :cond_ef
 
-    .line 239
+    .line 241
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     goto :goto_f1
 
-    .line 241
+    .line 243
     :cond_ef
     iput v4, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 245
+    .line 247
     :cond_f1
     :goto_f1
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionTurboFusionMode()I
@@ -1766,23 +1778,23 @@
 
     const/16 v1, 0xa
 
-    .line 246
+    .line 248
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v4
 
     if-eqz v4, :cond_103
 
-    .line 247
+    .line 249
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     goto :goto_105
 
-    .line 249
+    .line 251
     :cond_103
     iput v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 253
+    .line 255
     :cond_105
     :goto_105
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionTurboFusionMode()I
@@ -1793,26 +1805,26 @@
 
     const/16 v1, 0xb
 
-    .line 254
+    .line 256
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v4
 
     if-eqz v4, :cond_11a
 
-    .line 255
+    .line 257
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setAirawSN2SRMode(I)V
 
-    .line 256
+    .line 258
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     goto :goto_11c
 
-    .line 258
+    .line 260
     :cond_11a
     iput v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 262
+    .line 264
     :cond_11c
     :goto_11c
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionTurboFusionMode()I
@@ -1821,7 +1833,7 @@
 
     if-ne v1, v7, :cond_14f
 
-    .line 263
+    .line 265
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1840,7 +1852,7 @@
 
     invoke-static {v1, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 264
+    .line 266
     iget-wide v11, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mExposeTime:J
 
     cmp-long v1, v11, v8
@@ -1849,12 +1861,12 @@
 
     if-lez v1, :cond_143
 
-    .line 265
+    .line 267
     iput v4, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
     goto :goto_14f
 
-    .line 266
+    .line 268
     :cond_143
     invoke-direct {p0, p1, v4}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
@@ -1862,16 +1874,16 @@
 
     if-eqz v1, :cond_14d
 
-    .line 267
+    .line 269
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     goto :goto_14f
 
-    .line 269
+    .line 271
     :cond_14d
     iput v4, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 274
+    .line 276
     :cond_14f
     :goto_14f
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
@@ -1882,7 +1894,7 @@
 
     if-eqz v1, :cond_1dd
 
-    .line 275
+    .line 277
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperAIRawMode()I
 
     move-result v1
@@ -1891,23 +1903,23 @@
 
     const/16 v1, 0xd
 
-    .line 276
+    .line 278
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v4
 
     if-eqz v4, :cond_169
 
-    .line 277
+    .line 279
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setSuperAIRawMode(I)V
 
     goto :goto_16b
 
-    .line 279
+    .line 281
     :cond_169
     iput v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 283
+    .line 285
     :cond_16b
     :goto_16b
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperAIRawMode()I
@@ -1918,23 +1930,23 @@
 
     const/16 v1, 0xe
 
-    .line 284
+    .line 286
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v2
 
     if-eqz v2, :cond_17d
 
-    .line 285
+    .line 287
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setSuperAIRawMode(I)V
 
     goto :goto_17f
 
-    .line 287
+    .line 289
     :cond_17d
     iput v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 291
+    .line 293
     :cond_17f
     :goto_17f
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperAIRawMode()I
@@ -1943,7 +1955,7 @@
 
     if-ne v1, v3, :cond_1b2
 
-    .line 292
+    .line 294
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1962,7 +1974,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 293
+    .line 295
     iget-wide v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mExposeTime:J
 
     cmp-long v1, v1, v8
@@ -1971,12 +1983,12 @@
 
     if-lez v1, :cond_1a6
 
-    .line 294
+    .line 296
     iput v2, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
     goto :goto_1b2
 
-    .line 295
+    .line 297
     :cond_1a6
     invoke-direct {p0, p1, v2}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
@@ -1984,16 +1996,16 @@
 
     if-eqz v1, :cond_1b0
 
-    .line 296
+    .line 298
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setSuperAIRawMode(I)V
 
     goto :goto_1b2
 
-    .line 298
+    .line 300
     :cond_1b0
     iput v2, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 302
+    .line 304
     :cond_1b2
     :goto_1b2
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperAIRawMode()I
@@ -2004,23 +2016,23 @@
 
     const/16 v1, 0x10
 
-    .line 303
+    .line 305
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v2
 
     if-eqz v2, :cond_1c4
 
-    .line 304
+    .line 306
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setSuperAIRawMode(I)V
 
     goto :goto_1c6
 
-    .line 306
+    .line 308
     :cond_1c4
     iput v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 310
+    .line 312
     :cond_1c6
     :goto_1c6
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperAIRawMode()I
@@ -2031,26 +2043,26 @@
 
     const/16 v1, 0x11
 
-    .line 311
+    .line 313
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->replaceAlgo(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result v2
 
     if-eqz v2, :cond_1db
 
-    .line 312
+    .line 314
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setAirawSN2SRMode(I)V
 
-    .line 313
+    .line 315
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setSuperAIRawMode(I)V
 
     goto :goto_1dd
 
-    .line 315
+    .line 317
     :cond_1db
     iput v1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 320
+    .line 322
     :cond_1dd
     :goto_1dd
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -2065,7 +2077,7 @@
 
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/AsdShot2ShotSkipPolicy;->mCurrentPreviewAlgoType:I
 
-    .line 321
+    .line 323
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/AsdAlgoType;->toString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -2076,7 +2088,7 @@
 
     move-result-object p0
 
-    .line 320
+    .line 322
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void

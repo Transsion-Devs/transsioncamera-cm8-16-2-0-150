@@ -581,6 +581,30 @@
     return-void
 .end method
 
+.method public updateBottomUIStatus(Z)V
+    .registers 3
+
+    .line 195
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->mFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
+
+    if-eqz v0, :cond_7
+
+    .line 196
+    invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->updateRecycleViewStatus(Z)V
+
+    .line 199
+    :cond_7
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->mSlimBodyRoot:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
+
+    if-eqz p0, :cond_e
+
+    .line 200
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->updateRecycleViewStatus(Z)V
+
+    :cond_e
+    return-void
+.end method
+
 .method public updateFeatureRv(I)V
     .registers 5
 

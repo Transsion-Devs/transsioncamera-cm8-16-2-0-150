@@ -56,7 +56,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 95
+    .line 91
     invoke-virtual {p0}, Lkotlinx/coroutines/debug/internal/DebugProbesImpl$startWeakRefCleanerThread$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -67,7 +67,7 @@
 .method public final invoke()V
     .registers 1
 
-    .line 96
+    .line 92
     # getter for: Lkotlinx/coroutines/debug/internal/DebugProbesImpl;->callerInfoCache:Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;
     invoke-static {}, Lkotlinx/coroutines/debug/internal/DebugProbesImpl;->access$getCallerInfoCache$p()Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;
 

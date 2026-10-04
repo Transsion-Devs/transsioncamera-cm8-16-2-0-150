@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)V
     .registers 2
 
-    .line 2126
+    .line 2078
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$8;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onCaptureCompleted(Lcom/transsion/camera/adapter/CameraResults;Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
     .registers 4
 
-    .line 2151
+    .line 2103
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$8;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetTAG(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -55,7 +55,7 @@
 .method public onCaptureFailed(Z)V
     .registers 3
 
-    .line 2138
+    .line 2090
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$8;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetTAG(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2139
+    .line 2091
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$8;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -81,7 +81,7 @@
 .method public onCaptureProgressed(Lcom/transsion/camera/adapter/CameraResults;Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
     .registers 3
 
-    .line 2162
+    .line 2114
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$8;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetTAG(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -98,7 +98,7 @@
 .method public onCaptureSequenceCompleted(IJ)V
     .registers 6
 
-    .line 2156
+    .line 2108
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$8;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetTAG(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -109,7 +109,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2157
+    .line 2109
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$8;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -124,7 +124,7 @@
 .method public onCaptureStarted(JLcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
     .registers 4
 
-    .line 2133
+    .line 2085
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$8;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetTAG(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/utils/debug/Log$Tag;

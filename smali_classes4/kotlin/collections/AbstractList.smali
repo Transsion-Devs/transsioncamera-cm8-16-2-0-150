@@ -10,16 +10,18 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lkotlin/collections/AbstractList$SubList;,
+        Lkotlin/collections/AbstractList$Companion;,
         Lkotlin/collections/AbstractList$IteratorImpl;,
         Lkotlin/collections/AbstractList$ListIteratorImpl;,
-        Lkotlin/collections/AbstractList$Companion;
+        Lkotlin/collections/AbstractList$SubList;
     }
 .end annotation
 
 
 # static fields
 .field public static final Companion:Lkotlin/collections/AbstractList$Companion;
+
+.field private static final maxArraySize:I = 0x7ffffff7
 
 
 # direct methods
@@ -40,7 +42,7 @@
 .method protected constructor <init>()V
     .registers 1
 
-    .line 21
+    .line 20
     invoke-direct {p0}, Lkotlin/collections/AbstractCollection;-><init>()V
 
     return-void
@@ -96,7 +98,7 @@
 
     return p0
 
-    .line 61
+    .line 71
     :cond_4
     instance-of v0, p1, Ljava/util/List;
 
@@ -106,7 +108,7 @@
 
     return p0
 
-    .line 63
+    .line 73
     :cond_a
     sget-object v0, Lkotlin/collections/AbstractList;->Companion:Lkotlin/collections/AbstractList$Companion;
 
@@ -125,7 +127,7 @@
 .method public hashCode()I
     .registers 2
 
-    .line 69
+    .line 79
     sget-object v0, Lkotlin/collections/AbstractList;->Companion:Lkotlin/collections/AbstractList$Companion;
 
     invoke-virtual {v0, p0}, Lkotlin/collections/AbstractList$Companion;->orderedHashCode$kotlin_stdlib(Ljava/util/Collection;)I
@@ -137,15 +139,8 @@
 
 .method public indexOf(Ljava/lang/Object;)I
     .registers 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")I"
-        }
-    .end annotation
 
-    .line 351
+    .line 361
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -204,15 +199,8 @@
 
 .method public lastIndexOf(Ljava/lang/Object;)I
     .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")I"
-        }
-    .end annotation
 
-    .line 378
+    .line 388
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -221,7 +209,7 @@
 
     move-result-object p0
 
-    .line 379
+    .line 389
     :cond_8
     invoke-interface {p0}, Ljava/util/ListIterator;->hasPrevious()Z
 
@@ -229,7 +217,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 380
+    .line 390
     invoke-interface {p0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
 
     move-result-object v0
@@ -241,7 +229,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 381
+    .line 391
     invoke-interface {p0}, Ljava/util/ListIterator;->nextIndex()I
 
     move-result p0

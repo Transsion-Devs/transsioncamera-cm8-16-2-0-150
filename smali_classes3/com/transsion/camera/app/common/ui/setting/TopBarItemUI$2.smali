@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)V
     .registers 2
 
-    .line 1364
+    .line 1353
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$2;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreDraw()Z
     .registers 4
 
-    .line 1367
+    .line 1356
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$2;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$fgetmFlipTextView(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)Landroid/widget/TextView;
@@ -51,7 +51,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 1368
+    .line 1357
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$2;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$fgetmFlipTextView(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)Landroid/widget/TextView;
@@ -68,7 +68,7 @@
 
     if-le v0, v1, :cond_2d
 
-    .line 1370
+    .line 1359
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$2;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$fgetmFlipTextView(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)Landroid/widget/TextView;
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setSelected(Z)V
 
-    .line 1371
+    .line 1360
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$2;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$fgetmFlipTextView(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)Landroid/widget/TextView;

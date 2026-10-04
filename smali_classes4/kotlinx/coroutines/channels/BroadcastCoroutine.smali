@@ -49,13 +49,13 @@
 
     const/4 v0, 0x0
 
-    .line 138
+    .line 134
     invoke-direct {p0, p1, v0, p3}, Lkotlinx/coroutines/AbstractCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;ZZ)V
 
-    .line 136
+    .line 132
     iput-object p2, p0, Lkotlinx/coroutines/channels/BroadcastCoroutine;->_channel:Lkotlinx/coroutines/channels/BroadcastChannel;
 
-    .line 142
+    .line 138
     sget-object p2, Lkotlinx/coroutines/Job;->Key:Lkotlinx/coroutines/Job$Key;
 
     invoke-interface {p1, p2}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
@@ -76,7 +76,7 @@
 
     if-nez p1, :cond_c
 
-    .line 707
+    .line 704
     new-instance p1, Lkotlinx/coroutines/JobCancellationException;
 
     # invokes: Lkotlinx/coroutines/JobSupport;->cancellationExceptionMessage()Ljava/lang/String;
@@ -88,7 +88,7 @@
 
     invoke-direct {p1, v0, v1, p0}, Lkotlinx/coroutines/JobCancellationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Lkotlinx/coroutines/Job;)V
 
-    .line 157
+    .line 155
     :cond_c
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/BroadcastCoroutine;->cancelInternal(Ljava/lang/Throwable;)V
 
@@ -100,7 +100,7 @@
 
     if-nez p1, :cond_c
 
-    .line 707
+    .line 704
     new-instance p1, Lkotlinx/coroutines/JobCancellationException;
 
     # invokes: Lkotlinx/coroutines/JobSupport;->cancellationExceptionMessage()Ljava/lang/String;
@@ -112,7 +112,7 @@
 
     invoke-direct {p1, v0, v1, p0}, Lkotlinx/coroutines/JobCancellationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Lkotlinx/coroutines/Job;)V
 
-    .line 152
+    .line 149
     :cond_c
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/BroadcastCoroutine;->cancelInternal(Ljava/lang/Throwable;)V
 
@@ -128,17 +128,17 @@
 
     const/4 v1, 0x1
 
-    .line 161
+    .line 159
     invoke-static {p0, p1, v0, v1, v0}, Lkotlinx/coroutines/JobSupport;->toCancellationException$default(Lkotlinx/coroutines/JobSupport;Ljava/lang/Throwable;Ljava/lang/String;ILjava/lang/Object;)Ljava/util/concurrent/CancellationException;
 
     move-result-object p1
 
-    .line 162
+    .line 160
     iget-object v0, p0, Lkotlinx/coroutines/channels/BroadcastCoroutine;->_channel:Lkotlinx/coroutines/channels/BroadcastChannel;
 
     invoke-interface {v0, p1}, Lkotlinx/coroutines/channels/BroadcastChannel;->cancel(Ljava/util/concurrent/CancellationException;)V
 
-    .line 163
+    .line 161
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->cancelCoroutine(Ljava/lang/Throwable;)Z
 
     return-void
@@ -147,14 +147,14 @@
 .method public close(Ljava/lang/Throwable;)Z
     .registers 3
 
-    .line 177
+    .line 175
     iget-object v0, p0, Lkotlinx/coroutines/channels/BroadcastCoroutine;->_channel:Lkotlinx/coroutines/channels/BroadcastChannel;
 
     invoke-interface {v0, p1}, Lkotlinx/coroutines/channels/SendChannel;->close(Ljava/lang/Throwable;)Z
 
     move-result p1
 
-    .line 178
+    .line 176
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->start()Z
 
     return p1
@@ -204,7 +204,7 @@
         }
     .end annotation
 
-    .line 136
+    .line 132
     iget-object p0, p0, Lkotlinx/coroutines/channels/BroadcastCoroutine;->_channel:Lkotlinx/coroutines/channels/BroadcastChannel;
 
     return-object p0
@@ -230,7 +230,7 @@
 .method public isActive()Z
     .registers 1
 
-    .line 145
+    .line 141
     invoke-super {p0}, Lkotlinx/coroutines/AbstractCoroutine;->isActive()Z
 
     move-result p0
@@ -270,7 +270,7 @@
 .method protected onCancelled(Ljava/lang/Throwable;Z)V
     .registers 4
 
-    .line 171
+    .line 169
     iget-object v0, p0, Lkotlinx/coroutines/channels/BroadcastCoroutine;->_channel:Lkotlinx/coroutines/channels/BroadcastChannel;
 
     invoke-interface {v0, p1}, Lkotlinx/coroutines/channels/SendChannel;->close(Ljava/lang/Throwable;)Z
@@ -281,7 +281,7 @@
 
     if-nez p2, :cond_11
 
-    .line 172
+    .line 170
     invoke-virtual {p0}, Lkotlinx/coroutines/AbstractCoroutine;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -295,7 +295,7 @@
 .method public bridge synthetic onCompleted(Ljava/lang/Object;)V
     .registers 2
 
-    .line 134
+    .line 130
     check-cast p1, Lkotlin/Unit;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/BroadcastCoroutine;->onCompleted(Lkotlin/Unit;)V
@@ -306,7 +306,7 @@
 .method protected onCompleted(Lkotlin/Unit;)V
     .registers 3
 
-    .line 167
+    .line 165
     iget-object p0, p0, Lkotlinx/coroutines/channels/BroadcastCoroutine;->_channel:Lkotlinx/coroutines/channels/BroadcastChannel;
 
     const/4 p1, 0x0

@@ -25,7 +25,7 @@
 .method public static final getMaskForStealingMode(Lkotlinx/coroutines/scheduling/Task;)I
     .registers 2
 
-    .line 93
+    .line 89
     iget-object p0, p0, Lkotlinx/coroutines/scheduling/Task;->taskContext:Lkotlinx/coroutines/scheduling/TaskContext;
 
     invoke-interface {p0}, Lkotlinx/coroutines/scheduling/TaskContext;->getTaskMode()I

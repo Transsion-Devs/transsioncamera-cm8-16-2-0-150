@@ -14,21 +14,21 @@
 
 
 # static fields
-.field public static shutter_sound_effect_1:I = 0x7f1304dd
+.field public static shutter_sound_effect_1:I = 0x7f1304d6
 
-.field public static shutter_sound_effect_2:I = 0x7f1304de
+.field public static shutter_sound_effect_2:I = 0x7f1304d7
 
-.field public static shutter_sound_effect_3:I = 0x7f1304df
+.field public static shutter_sound_effect_3:I = 0x7f1304d8
 
-.field public static shutter_sound_effect_4:I = 0x7f1304e0
+.field public static shutter_sound_effect_4:I = 0x7f1304d9
 
-.field public static shutter_sound_effect_5:I = 0x7f1304e1
+.field public static shutter_sound_effect_5:I = 0x7f1304da
 
-.field public static shutter_sound_effect_6:I = 0x7f1304e2
+.field public static shutter_sound_effect_6:I = 0x7f1304db
 
-.field public static shutter_sound_effect_7:I = 0x7f1304e3
+.field public static shutter_sound_effect_7:I = 0x7f1304dc
 
-.field public static shutter_sound_effect_8:I = 0x7f1304e4
+.field public static shutter_sound_effect_8:I = 0x7f1304dd
 
 
 # direct methods

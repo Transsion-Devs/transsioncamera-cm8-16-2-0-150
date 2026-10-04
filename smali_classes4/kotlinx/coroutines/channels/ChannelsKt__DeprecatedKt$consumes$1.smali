@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 476
+    .line 506
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$consumes$1;->invoke(Ljava/lang/Throwable;)V
@@ -73,7 +73,7 @@
 .method public final invoke(Ljava/lang/Throwable;)V
     .registers 2
 
-    .line 477
+    .line 507
     iget-object p0, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$consumes$1;->$this_consumes:Lkotlinx/coroutines/channels/ReceiveChannel;
 
     invoke-static {p0, p1}, Lkotlinx/coroutines/channels/ChannelsKt;->cancelConsumed(Lkotlinx/coroutines/channels/ReceiveChannel;Ljava/lang/Throwable;)V

@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 1981
+    .line 2003
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraErrorListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,20 +47,20 @@
 .method public onCameraError(I)V
     .registers 4
 
-    .line 1984
+    .line 2006
     new-instance v0, Landroid/os/Message;
 
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
     const/4 v1, 0x1
 
-    .line 1985
+    .line 2007
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 1986
+    .line 2008
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    .line 1987
+    .line 2009
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraErrorListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p0}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/BaseCameraActivity;)Landroid/os/Handler;

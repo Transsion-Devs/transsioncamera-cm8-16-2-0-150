@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI$MyAnimationStrategy;Landroid/view/View;)V
     .registers 3
 
-    .line 1804
+    .line 1292
     iput-object p2, p0, Lcom/transsion/camera/app/ui/PopSettingUI$MyAnimationStrategy$2;->val$view:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 1817
+    .line 1305
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$MyAnimationStrategy$2;->val$view:Landroid/view/View;
 
     const/high16 p1, 0x3f800000    # 1.0f
@@ -57,7 +57,7 @@
 .method public onAnimationRepeat(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 1822
+    .line 1310
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$MyAnimationStrategy$2;->val$view:Landroid/view/View;
 
     const/high16 p1, 0x3f800000    # 1.0f

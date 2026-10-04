@@ -55,7 +55,7 @@
 .method public static synthetic $r8$lambda$048UHys8nRHvp8UYwi2iGR_ap4w(Landroid/animation/ValueAnimator;[Landroid/animation/Animator$AnimatorListener;)V
     .registers 6
 
-    .line 532
+    .line 538
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -65,7 +65,7 @@
 
     aget-object v2, p1, v1
 
-    .line 533
+    .line 539
     invoke-static {v2}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
 
     move-result-object v2
@@ -89,7 +89,7 @@
 .method public static synthetic $r8$lambda$5uHO9Vbr2MEVEfW3tgdDBEnLI8c(Landroid/view/View;)Landroid/widget/ImageView;
     .registers 2
 
-    .line 202
+    .line 206
     instance-of v0, p0, Landroid/widget/ImageView;
 
     if-eqz v0, :cond_7
@@ -118,7 +118,7 @@
 
     const/4 v0, 0x1
 
-    .line 276
+    .line 280
     invoke-virtual {p1, v0}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v1
@@ -133,7 +133,7 @@
 
     if-nez v1, :cond_16
 
-    .line 277
+    .line 281
     invoke-virtual {p1, v0, p0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
@@ -147,7 +147,7 @@
 .method public static synthetic $r8$lambda$IHVccO5ao1GuF-Q_o_dGoTmwjGQ()Z
     .registers 2
 
-    .line 431
+    .line 437
     invoke-static {}, Lcom/transsion/camera/utils/threads/HandlerThreadPool;->getInstance()Lcom/transsion/camera/utils/threads/HandlerThreadPool;
 
     move-result-object v0
@@ -175,32 +175,32 @@
 
     const/4 v0, 0x0
 
-    .line 204
+    .line 208
     invoke-virtual {p0, v0}, Landroid/view/View;->setRenderEffect(Landroid/graphics/RenderEffect;)V
 
-    .line 205
+    .line 209
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     const/4 v1, 0x0
 
-    .line 206
+    .line 210
     invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 207
+    .line 211
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     if-eqz v1, :cond_18
 
-    .line 208
+    .line 212
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 210
+    .line 214
     :cond_18
     invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
@@ -208,18 +208,18 @@
 
     if-eqz v1, :cond_25
 
-    .line 211
+    .line 215
     invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 213
+    .line 217
     :cond_25
     invoke-virtual {p0}, Landroid/widget/ImageView;->clearColorFilter()V
 
-    .line 214
+    .line 218
     invoke-virtual {p0}, Landroid/view/View;->destroyDrawingCache()V
 
     return-void
@@ -263,7 +263,7 @@
 .method public static synthetic $r8$lambda$s6JBqcNjk0oZV-WfqjyIMEp-UbM(Ljava/lang/Object;)Ljava/lang/Integer;
     .registers 1
 
-    .line 539
+    .line 545
     check-cast p0, Ljava/lang/Integer;
 
     return-object p0
@@ -272,7 +272,7 @@
 .method public static synthetic $r8$lambda$vk9f0Oc42ELY5wsAsXUkseJCyFk(Lcom/transsion/camera/app/ui/view/ViewSwitcher;)Landroid/widget/ImageView;
     .registers 1
 
-    .line 464
+    .line 470
     invoke-virtual {p0}, Landroid/widget/ViewAnimator;->getCurrentView()Landroid/view/View;
 
     move-result-object p0
@@ -521,12 +521,12 @@
 .method private varargs createFadeBlurAnimator(Z[Landroid/animation/Animator$AnimatorListener;)Landroid/animation/ValueAnimator;
     .registers 4
 
-    .line 513
+    .line 519
     iget v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mCurrentRadius:I
 
     if-eqz p1, :cond_b
 
-    .line 514
+    .line 520
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurManager:Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;->getRadiusMax()I
@@ -547,19 +547,19 @@
 
     move-result-object p1
 
-    .line 513
+    .line 519
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
-    .line 515
+    .line 521
     new-instance v0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$6;
 
     invoke-direct {v0, p0, p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$6;-><init>(Lcom/transsion/camera/app/ui/view/SwitchAnimView;Landroid/animation/ValueAnimator;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 531
+    .line 537
     invoke-static {p2}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
 
     move-result-object p2
@@ -572,12 +572,12 @@
 
     const/4 p2, 0x0
 
-    .line 536
+    .line 542
     filled-new-array {p2}, [I
 
     move-result-object p2
 
-    .line 537
+    .line 543
     new-instance v0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0, p2}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/app/ui/view/SwitchAnimView;[I)V
@@ -590,19 +590,19 @@
 .method private getBlurBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
     .registers 9
 
-    .line 553
+    .line 559
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 555
+    .line 561
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->getTagBlurRadius()I
 
     move-result v2
 
     if-lez v2, :cond_11
 
-    .line 557
+    .line 563
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurManager:Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;
 
     invoke-interface {p0, p1, v2}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;->blur(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
@@ -614,7 +614,7 @@
     :cond_11
     move-object p0, p1
 
-    .line 559
+    .line 565
     :goto_12
     sget-object v3, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -644,7 +644,7 @@
 
     invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 560
+    .line 566
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
@@ -657,7 +657,7 @@
 
     move-result-object p1
 
-    .line 559
+    .line 565
     invoke-static {v3, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-object p0
@@ -666,12 +666,12 @@
 .method private getBlurHandler()Landroid/os/Handler;
     .registers 3
 
-    .line 437
+    .line 443
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_19
 
-    .line 438
+    .line 444
     invoke-static {}, Lcom/transsion/camera/utils/threads/HandlerThreadPool;->getInstance()Lcom/transsion/camera/utils/threads/HandlerThreadPool;
 
     move-result-object v0
@@ -682,7 +682,7 @@
 
     move-result-object v0
 
-    .line 439
+    .line 445
     new-instance v1, Lcom/transsion/camera/app/ui/view/SwitchAnimView$4;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -693,7 +693,7 @@
 
     iput-object v1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurHandler:Landroid/os/Handler;
 
-    .line 459
+    .line 465
     :cond_19
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurHandler:Landroid/os/Handler;
 
@@ -703,7 +703,7 @@
 .method private getCurrentImageView()Landroid/widget/ImageView;
     .registers 2
 
-    .line 463
+    .line 469
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-static {p0}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -714,14 +714,14 @@
 
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$$ExternalSyntheticLambda2;-><init>()V
 
-    .line 464
+    .line 470
     invoke-virtual {p0, v0}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object p0
 
     const/4 v0, 0x0
 
-    .line 465
+    .line 471
     invoke-virtual {p0, v0}, Ljava/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -734,7 +734,7 @@
 .method private getTagBlurRadius()I
     .registers 3
 
-    .line 565
+    .line 571
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->isUseBlurBitmap()Z
 
     move-result v0
@@ -745,7 +745,7 @@
 
     return v1
 
-    .line 568
+    .line 574
     :cond_8
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
@@ -753,7 +753,7 @@
 
     return v1
 
-    .line 571
+    .line 577
     :cond_d
     invoke-virtual {p0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -765,7 +765,7 @@
 
     return v1
 
-    .line 572
+    .line 578
     :cond_16
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
@@ -777,7 +777,7 @@
 .method private isUseBlurBitmap()Z
     .registers 1
 
-    .line 576
+    .line 582
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mUseFadeBlurAnimator:Z
 
     if-eqz p0, :cond_f
@@ -809,10 +809,10 @@
 
     const/4 v0, 0x0
 
-    .line 241
+    .line 245
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 242
+    .line 246
     invoke-static {}, Lcom/transsion/camera/utils/threads/HandlerThreadPool;->getInstance()Lcom/transsion/camera/utils/threads/HandlerThreadPool;
 
     move-result-object v1
@@ -827,7 +827,7 @@
 
     invoke-virtual {v1, p1}, Lcom/transsion/camera/utils/threads/HandlerThreadPool;->offer(Ljava/lang/Thread;)V
 
-    .line 243
+    .line 247
     iput-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurHandler:Landroid/os/Handler;
 
     return-void
@@ -838,7 +838,7 @@
 
     const/4 v0, 0x0
 
-    .line 541
+    .line 547
     aget v1, p1, v0
 
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -859,21 +859,21 @@
 
     if-lt v1, v2, :cond_21
 
-    .line 542
+    .line 548
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     aput v1, p1, v0
 
-    .line 543
+    .line 549
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result p2
 
     invoke-direct {p0, p2, v0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->setRenderEffect(IZ)V
 
-    .line 545
+    .line 551
     :cond_21
     aget p1, p1, v0
 
@@ -885,7 +885,7 @@
 .method private synthetic lambda$createFadeBlurAnimator$12([ILandroid/animation/ValueAnimator;)V
     .registers 4
 
-    .line 538
+    .line 544
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -898,7 +898,7 @@
 
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$$ExternalSyntheticLambda5;-><init>()V
 
-    .line 539
+    .line 545
     invoke-virtual {p2, v0}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object p2
@@ -907,7 +907,7 @@
 
     invoke-direct {v0, p0, p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$$ExternalSyntheticLambda6;-><init>(Lcom/transsion/camera/app/ui/view/SwitchAnimView;[I)V
 
-    .line 540
+    .line 546
     invoke-virtual {p2, v0}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
     return-void
@@ -918,14 +918,14 @@
 
     if-eqz p1, :cond_f
 
-    .line 270
+    .line 274
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v0
 
     if-nez v0, :cond_f
 
-    .line 271
+    .line 275
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->getBlurBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -939,7 +939,7 @@
 .method private synthetic lambda$updateTargetRect$6(Landroid/animation/ValueAnimator;)V
     .registers 6
 
-    .line 307
+    .line 311
     const-string v0, "left"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -954,7 +954,7 @@
 
     const-string/jumbo v1, "top"
 
-    .line 308
+    .line 312
     invoke-virtual {p1, v1}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
@@ -967,7 +967,7 @@
 
     const-string v2, "right"
 
-    .line 309
+    .line 313
     invoke-virtual {p1, v2}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
@@ -980,7 +980,7 @@
 
     const-string v3, "bottom"
 
-    .line 310
+    .line 314
     invoke-virtual {p1, v3}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v3
@@ -991,10 +991,10 @@
 
     move-result v3
 
-    .line 307
+    .line 311
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->setPreviewRect(IIII)V
 
-    .line 311
+    .line 315
     sget-object v0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1015,15 +1015,15 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 312
+    .line 316
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->requestLayout()V
 
-    .line 313
+    .line 317
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimProgressListener:Lcom/transsion/camera/app/ui/IAnimProgressListener;
 
     if-eqz p0, :cond_5b
 
-    .line 314
+    .line 318
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
     move-result p1
@@ -1037,14 +1037,14 @@
 .method private setRenderEffect(IZ)V
     .registers 5
 
-    .line 257
+    .line 261
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     if-nez v0, :cond_5
 
     goto :goto_11
 
-    .line 260
+    .line 264
     :cond_5
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->isUseBlurBitmap()Z
 
@@ -1052,7 +1052,7 @@
 
     if-eqz v0, :cond_44
 
-    .line 261
+    .line 265
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->getTagBlurRadius()I
 
     move-result v0
@@ -1067,7 +1067,7 @@
 
     if-le p1, v0, :cond_1e
 
-    .line 265
+    .line 269
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1076,13 +1076,13 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 267
+    .line 271
     :cond_1e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mPreviewBitmap:Landroid/graphics/Bitmap;
 
     if-eqz p2, :cond_33
 
-    .line 269
+    .line 273
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->getCurrentImageView()Landroid/widget/ImageView;
 
     move-result-object p2
@@ -1099,7 +1099,7 @@
 
     goto :goto_56
 
-    .line 275
+    .line 279
     :cond_33
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->getBlurHandler()Landroid/os/Handler;
 
@@ -1117,7 +1117,7 @@
 
     goto :goto_56
 
-    .line 282
+    .line 286
     :cond_44
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
@@ -1129,17 +1129,17 @@
 
     int-to-float p2, p1
 
-    .line 283
+    .line 287
     sget-object v0, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
     invoke-static {p2, p2, v0}, Landroid/graphics/RenderEffect;->createBlurEffect(FFLandroid/graphics/Shader$TileMode;)Landroid/graphics/RenderEffect;
 
     move-result-object p2
 
-    .line 284
+    .line 288
     invoke-virtual {p0, p2}, Landroid/view/View;->setRenderEffect(Landroid/graphics/RenderEffect;)V
 
-    .line 286
+    .line 290
     :goto_56
     sget-object p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1165,7 +1165,7 @@
 .method private updateTargetRect(Landroid/graphics/Rect;)V
     .registers 5
 
-    .line 387
+    .line 393
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
     iget v1, p1, Landroid/graphics/Rect;->top:I
@@ -1176,7 +1176,7 @@
 
     invoke-virtual {p0, v0, v1, v2, p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->setPreviewRect(IIII)V
 
-    .line 388
+    .line 394
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->requestLayout()V
 
     return-void
@@ -1187,12 +1187,12 @@
 .method public clear()V
     .registers 4
 
-    .line 196
+    .line 200
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     if-eqz v0, :cond_46
 
-    .line 197
+    .line 201
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->isUseBlurBitmap()Z
 
     move-result v0
@@ -1201,7 +1201,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 198
+    .line 202
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1210,7 +1210,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 200
+    .line 204
     :cond_14
     :goto_14
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
@@ -1221,7 +1221,7 @@
 
     if-ge v1, v0, :cond_3a
 
-    .line 201
+    .line 205
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -1236,7 +1236,7 @@
 
     invoke-direct {v2}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$$ExternalSyntheticLambda9;-><init>()V
 
-    .line 202
+    .line 206
     invoke-virtual {v0, v2}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object v0
@@ -1245,14 +1245,14 @@
 
     invoke-direct {v2}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$$ExternalSyntheticLambda10;-><init>()V
 
-    .line 203
+    .line 207
     invoke-virtual {v0, v2}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_14
 
-    .line 217
+    .line 221
     :cond_3a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
@@ -1260,12 +1260,12 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 218
+    .line 222
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
 
-    .line 221
+    .line 225
     :cond_46
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimator:Landroid/animation/ValueAnimator;
 
@@ -1277,7 +1277,7 @@
 
     if-eqz v0, :cond_55
 
-    .line 222
+    .line 226
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -1285,10 +1285,10 @@
     :cond_55
     const/4 v0, 0x0
 
-    .line 224
+    .line 228
     iput-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimator:Landroid/animation/ValueAnimator;
 
-    .line 226
+    .line 230
     iget-object v1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mFadeSwitchAnimator:Landroid/animation/Animator;
 
     if-eqz v1, :cond_67
@@ -1299,21 +1299,21 @@
 
     if-eqz v1, :cond_67
 
-    .line 227
+    .line 231
     iget-object v1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mFadeSwitchAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v1}, Landroid/animation/Animator;->cancel()V
 
-    .line 229
+    .line 233
     :cond_67
     iput-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mFadeSwitchAnimator:Landroid/animation/Animator;
 
-    .line 231
+    .line 235
     iget-object v1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 232
+    .line 236
     :try_start_6c
     iget-object v2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mPreviewBitmap:Landroid/graphics/Bitmap;
 
@@ -1325,7 +1325,7 @@
 
     if-nez v2, :cond_7e
 
-    .line 233
+    .line 237
     iget-object v2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mPreviewBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
@@ -1337,22 +1337,22 @@
 
     goto :goto_9c
 
-    .line 235
+    .line 239
     :cond_7e
     :goto_7e
     iput-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mPreviewBitmap:Landroid/graphics/Bitmap;
 
-    .line 237
+    .line 241
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurManager:Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;->destroy()V
 
-    .line 238
+    .line 242
     monitor-exit v1
     :try_end_86
     .catchall {:try_start_6c .. :try_end_86} :catchall_7c
 
-    .line 240
+    .line 244
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurHandler:Landroid/os/Handler;
 
     invoke-static {v0}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -1365,7 +1365,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
-    .line 245
+    .line 249
     sget-object p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "clear: "
@@ -1374,7 +1374,7 @@
 
     return-void
 
-    .line 238
+    .line 242
     :goto_9c
     :try_start_9c
     monitor-exit v1
@@ -1436,7 +1436,7 @@
 .method public isRectAnimatorStarted()Z
     .registers 2
 
-    .line 739
+    .line 745
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_14
@@ -1469,10 +1469,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .registers 4
 
-    .line 420
+    .line 426
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 421
+    .line 427
     iget v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mApertureHeight:I
 
     if-lez v0, :cond_2c
@@ -1493,10 +1493,10 @@
 
     if-eqz v0, :cond_2c
 
-    .line 422
+    .line 428
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 423
+    .line 429
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -1509,10 +1509,10 @@
 
     const/high16 p0, -0x1000000
 
-    .line 424
+    .line 430
     invoke-virtual {p1, p0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 425
+    .line 431
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_2c
@@ -1522,10 +1522,10 @@
 .method protected onFinishInflate()V
     .registers 3
 
-    .line 410
+    .line 416
     invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
-    .line 411
+    .line 417
     sget v0, Lcom/transsion/camera/R$id;->animation_view:I
 
     invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1536,17 +1536,17 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
-    .line 412
+    .line 418
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/view/ViewSwitcher;->reset()V
 
-    .line 413
+    .line 419
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->isUseBlurBitmap()Z
 
     move-result v0
 
     if-nez v0, :cond_1d
 
-    .line 414
+    .line 420
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     const/4 v0, 0x2
@@ -1562,10 +1562,10 @@
 .method protected onLayout(ZIIII)V
     .registers 6
 
-    .line 401
+    .line 407
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 402
+    .line 408
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     if-eqz p1, :cond_31
@@ -1574,7 +1574,7 @@
 
     if-eqz p2, :cond_31
 
-    .line 403
+    .line 409
     iget p3, p2, Landroid/graphics/Rect;->left:I
 
     iget p4, p2, Landroid/graphics/Rect;->top:I
@@ -1585,7 +1585,7 @@
 
     invoke-virtual {p1, p3, p4, p5, p2}, Landroid/view/View;->layout(IIII)V
 
-    .line 404
+    .line 410
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRect:Landroid/graphics/Rect;
 
     iget p2, p1, Landroid/graphics/Rect;->left:I
@@ -1623,7 +1623,7 @@
 
     if-eqz p1, :cond_10
 
-    .line 587
+    .line 593
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurManager:Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;->getRadiusMin()I
@@ -1632,14 +1632,14 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mCurrentRadius:I
 
-    .line 588
+    .line 594
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/view/ViewSwitcher;->reset()V
 
     return-void
 
-    .line 590
+    .line 596
     :cond_10
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurManager:Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;
 
@@ -1651,7 +1651,7 @@
 .method public preInit()V
     .registers 2
 
-    .line 430
+    .line 436
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object p0
@@ -1672,7 +1672,7 @@
 .method public rectAnimationListener(Lcom/transsion/camera/app/ui/IAnimProgressListener;)V
     .registers 2
 
-    .line 294
+    .line 298
     iput-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimProgressListener:Lcom/transsion/camera/app/ui/IAnimProgressListener;
 
     return-void
@@ -1681,15 +1681,15 @@
 .method public requestLayout()V
     .registers 1
 
-    .line 393
+    .line 399
     invoke-super {p0}, Landroid/view/View;->requestLayout()V
 
-    .line 394
+    .line 400
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     if-eqz p0, :cond_a
 
-    .line 395
+    .line 401
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     :cond_a
@@ -1699,7 +1699,7 @@
 .method public resetTargetRect(IIII)V
     .registers 5
 
-    .line 290
+    .line 294
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->setPreviewRect(IIII)V
 
     return-void
@@ -1708,14 +1708,14 @@
 .method public setMaxRenderEffect()V
     .registers 3
 
-    .line 249
+    .line 253
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurManager:Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 252
+    .line 256
     :cond_5
     invoke-interface {v0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;->getRadiusMax()I
 
@@ -1725,7 +1725,7 @@
 
     const/4 v1, 0x1
 
-    .line 253
+    .line 257
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->setRenderEffect(IZ)V
 
     return-void
@@ -1734,7 +1734,7 @@
 .method public setPreviewRect(IIII)V
     .registers 5
 
-    .line 735
+    .line 741
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/graphics/Rect;->set(IIII)V
@@ -1745,22 +1745,22 @@
 .method public setSwitchAnimInfo(I)V
     .registers 4
 
-    .line 175
+    .line 179
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     if-eqz v0, :cond_19
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 176
+    .line 180
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 177
+    .line 181
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
 
-    .line 178
+    .line 182
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-virtual {v0}, Landroid/widget/ViewAnimator;->getCurrentView()Landroid/view/View;
@@ -1769,10 +1769,10 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 179
+    .line 183
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 181
+    .line 185
     :cond_19
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->requestLayout()V
 
@@ -1794,15 +1794,32 @@
     .registers 8
 
     .line 144
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->isRecycled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    .line 145
+    sget-object p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string p1, "setSwitchAnimInfo err, bitmap is recycled"
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    return-void
+
+    .line 148
+    :cond_e
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->isUseBlurBitmap()Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_28
 
-    .line 145
+    .line 149
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
     move-result-object v0
@@ -1813,34 +1830,34 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mPreviewBitmap:Landroid/graphics/Bitmap;
 
-    if-nez p3, :cond_18
+    if-nez p3, :cond_26
 
-    .line 147
+    .line 151
     sget-object p3, Lcom/transsion/camera/utils/BitmapPoolUtil;->INSTANCE:Lcom/transsion/camera/utils/BitmapPoolUtil;
 
     invoke-virtual {p3, p1}, Lcom/transsion/camera/utils/BitmapPoolUtil;->put(Landroid/graphics/Bitmap;)V
 
-    .line 149
-    :cond_18
+    .line 153
+    :cond_26
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mPreviewBitmap:Landroid/graphics/Bitmap;
 
-    .line 151
-    :cond_1a
+    .line 155
+    :cond_28
     iget-object p3, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
-    if-nez p3, :cond_1f
+    if-nez p3, :cond_2d
 
     return-void
 
-    .line 154
-    :cond_1f
+    .line 158
+    :cond_2d
     invoke-virtual {p3}, Landroid/widget/ViewAnimator;->getCurrentView()Landroid/view/View;
 
     move-result-object p3
 
     check-cast p3, Landroid/widget/ImageView;
 
-    .line 155
+    .line 159
     sget-object v0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1869,7 +1886,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 156
+    .line 160
     invoke-virtual {p3}, Landroid/view/View;->getWidth()I
 
     move-result v3
@@ -1890,10 +1907,10 @@
 
     move-result-object v2
 
-    .line 155
+    .line 159
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 157
+    .line 161
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
@@ -1902,36 +1919,36 @@
 
     const/4 v3, 0x1
 
-    if-nez v2, :cond_77
+    if-nez v2, :cond_85
 
     iget-boolean v2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mUseFadeBlurAnimator:Z
 
-    if-eqz v2, :cond_77
+    if-eqz v2, :cond_85
 
-    .line 158
+    .line 162
     invoke-virtual {p3, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 159
+    .line 163
     new-array p1, v1, [Landroid/animation/Animator$AnimatorListener;
 
     invoke-virtual {p0, v3, p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->startFadeSwitchAnim(Z[Landroid/animation/Animator$AnimatorListener;)V
 
     return-void
 
-    .line 161
-    :cond_77
+    .line 165
+    :cond_85
     iget-object p3, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {p3, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 162
+    .line 166
     iget-object p3, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-virtual {p3, v1}, Landroid/view/View;->setScaleY(F)V
 
-    .line 163
+    .line 167
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1948,9 +1965,9 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    if-nez p2, :cond_a3
+    if-nez p2, :cond_b1
 
-    .line 165
+    .line 169
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mBlurManager:Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;->getRadiusDefault()I
@@ -1959,21 +1976,21 @@
 
     invoke-direct {p0, p1, v3}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->setRenderEffect(IZ)V
 
-    goto :goto_a7
+    goto :goto_b5
 
-    :cond_a3
+    :cond_b1
     const/4 p1, -0x1
 
-    .line 167
+    .line 171
     invoke-direct {p0, p1, v3}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->setRenderEffect(IZ)V
 
-    .line 169
-    :goto_a7
+    .line 173
+    :goto_b5
     const-string p1, "setSwitchAnimInfo end"
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 170
+    .line 174
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->requestLayout()V
 
     return-void
@@ -1982,10 +1999,10 @@
 .method public setVisibility(I)V
     .registers 2
 
-    .line 581
+    .line 587
     invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 582
+    .line 588
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->onVisibilityChanged(I)V
 
     return-void
@@ -1994,7 +2011,7 @@
 .method public varargs startFadeSwitchAnim(Z[Landroid/animation/Animator$AnimatorListener;)V
     .registers 9
 
-    .line 478
+    .line 484
     sget-object v0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2021,7 +2038,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 479
+    .line 485
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mFadeSwitchAnimator:Landroid/animation/Animator;
 
     const/4 v1, 0x0
@@ -2036,24 +2053,24 @@
 
     if-eqz v0, :cond_34
 
-    .line 480
+    .line 486
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mIsFadeBlurAnimReStart:Z
 
-    .line 481
+    .line 487
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mFadeSwitchAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
     goto :goto_36
 
-    .line 483
+    .line 489
     :cond_34
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mIsFadeBlurAnimReStart:Z
 
     :goto_36
     if-eqz p1, :cond_3f
 
-    .line 486
+    .line 492
     invoke-direct {p0, v2, p2}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->createFadeBlurAnimator(Z[Landroid/animation/Animator$AnimatorListener;)Landroid/animation/ValueAnimator;
 
     move-result-object p2
@@ -2062,7 +2079,7 @@
 
     goto :goto_71
 
-    .line 488
+    .line 494
     :cond_3f
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
@@ -2072,36 +2089,36 @@
 
     const/4 v3, 0x0
 
-    .line 489
+    .line 495
     invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
 
     const/4 v3, 0x2
 
-    .line 490
+    .line 496
     new-array v4, v3, [F
 
     fill-array-data v4, :array_98
 
-    .line 491
+    .line 497
     const-string v5, "alpha"
 
     invoke-static {v0, v5, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
 
-    .line 492
+    .line 498
     new-instance v5, Lcom/transsion/camera/app/ui/view/SwitchAnimView$5;
 
     invoke-direct {v5, p0, v0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$5;-><init>(Lcom/transsion/camera/app/ui/view/SwitchAnimView;Landroid/view/View;)V
 
     invoke-virtual {v4, v5}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 498
+    .line 504
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 500
+    .line 506
     invoke-direct {p0, v1, p2}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->createFadeBlurAnimator(Z[Landroid/animation/Animator$AnimatorListener;)Landroid/animation/ValueAnimator;
 
     move-result-object p2
@@ -2112,17 +2129,17 @@
 
     aput-object v4, v3, v2
 
-    .line 499
+    .line 505
     invoke-virtual {v0, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 502
+    .line 508
     iput-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mFadeSwitchAnimator:Landroid/animation/Animator;
 
-    .line 504
+    .line 510
     :goto_71
     iget-object p2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mFadeSwitchAnimator:Landroid/animation/Animator;
 
-    .line 505
+    .line 511
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -2145,11 +2162,11 @@
     :cond_83
     const-wide/16 v0, 0x96
 
-    .line 504
+    .line 510
     :goto_85
     invoke-virtual {p2, v0, v1}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 507
+    .line 513
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mFadeSwitchAnimator:Landroid/animation/Animator;
 
     new-instance p2, Landroid/view/animation/LinearInterpolator;
@@ -2158,7 +2175,7 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 508
+    .line 514
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mFadeSwitchAnimator:Landroid/animation/Animator;
 
     invoke-virtual {p0}, Landroid/animation/Animator;->start()V
@@ -2175,24 +2192,24 @@
 .method public startWideChangeAnim(ZLcom/transsion/camera/app/ui/view/SwitchAnimView$AnimEndCallback;)V
     .registers 5
 
-    .line 185
+    .line 189
     iput-object p2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mAnimEndCallback:Lcom/transsion/camera/app/ui/view/SwitchAnimView$AnimEndCallback;
 
     const p2, 0x3f99999a    # 1.2f
 
     if-eqz p1, :cond_31
 
-    .line 187
+    .line 191
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setScaleX(F)V
 
-    .line 188
+    .line 192
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setScaleY(F)V
 
-    .line 189
+    .line 193
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2225,7 +2242,7 @@
 
     return-void
 
-    .line 191
+    .line 195
     :cond_31
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mViewSwitcherRoot:Lcom/transsion/camera/app/ui/view/ViewSwitcher;
 
@@ -2281,7 +2298,7 @@
 .method public updateTargetRect(Landroid/graphics/Rect;ZJLandroid/animation/Animator$AnimatorListener;)V
     .registers 10
 
-    .line 298
+    .line 302
     sget-object v0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2322,14 +2339,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 299
+    .line 303
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimator:Landroid/animation/ValueAnimator;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/AnimationUtils;->stopAnimator(Landroid/animation/Animator;)V
 
     if-eqz p2, :cond_b7
 
-    .line 301
+    .line 305
     iget-object p2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRect:Landroid/graphics/Rect;
 
     iget p2, p2, Landroid/graphics/Rect;->left:I
@@ -2346,7 +2363,7 @@
 
     move-result-object p2
 
-    .line 302
+    .line 306
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRect:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -2363,7 +2380,7 @@
 
     move-result-object v0
 
-    .line 303
+    .line 307
     iget-object v1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRect:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->right:I
@@ -2380,7 +2397,7 @@
 
     move-result-object v1
 
-    .line 304
+    .line 308
     iget-object v2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRect:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->bottom:I
@@ -2397,7 +2414,7 @@
 
     move-result-object v2
 
-    .line 305
+    .line 309
     filled-new-array {p2, v0, v1, v2}, [Landroid/animation/PropertyValuesHolder;
 
     move-result-object p2
@@ -2408,7 +2425,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimator:Landroid/animation/ValueAnimator;
 
-    .line 306
+    .line 310
     new-instance v0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$$ExternalSyntheticLambda8;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$$ExternalSyntheticLambda8;-><init>(Lcom/transsion/camera/app/ui/view/SwitchAnimView;)V
@@ -2417,7 +2434,7 @@
 
     if-eqz p5, :cond_9b
 
-    .line 318
+    .line 322
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lcom/transsion/camera/app/ui/view/SwitchAnimView$2;
@@ -2428,7 +2445,7 @@
 
     goto :goto_a5
 
-    .line 346
+    .line 352
     :cond_9b
     iget-object p2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimator:Landroid/animation/ValueAnimator;
 
@@ -2438,43 +2455,43 @@
 
     invoke-virtual {p2, p5}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 374
+    .line 380
     :goto_a5
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1, p3, p4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 375
+    .line 381
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 376
+    .line 382
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
 
-    .line 378
+    .line 384
     :cond_b7
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->updateTargetRect(Landroid/graphics/Rect;)V
 
-    .line 379
+    .line 385
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimProgressListener:Lcom/transsion/camera/app/ui/IAnimProgressListener;
 
     if-eqz p1, :cond_c6
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 380
+    .line 386
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/ui/IAnimProgressListener;->onAnimProgress(F)V
 
     const/4 p1, 0x0
 
-    .line 381
+    .line 387
     iput-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->mRectAnimProgressListener:Lcom/transsion/camera/app/ui/IAnimProgressListener;
 
     :cond_c6

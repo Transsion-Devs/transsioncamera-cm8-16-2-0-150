@@ -53,13 +53,13 @@
         }
     .end annotation
 
-    .line 243
+    .line 239
     iput-object p1, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$KeyValueSet;->this$0:Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;
 
-    .line 245
+    .line 241
     invoke-direct {p0}, Lkotlin/collections/AbstractMutableSet;-><init>()V
 
-    .line 244
+    .line 240
     iput-object p2, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$KeyValueSet;->factory:Lkotlin/jvm/functions/Function2;
 
     return-void
@@ -75,7 +75,7 @@
         }
     .end annotation
 
-    .line 247
+    .line 243
     # invokes: Lkotlinx/coroutines/debug/internal/ConcurrentWeakMapKt;->noImpl()Ljava/lang/Void;
     invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMapKt;->access$noImpl()Ljava/lang/Void;
 
@@ -89,7 +89,7 @@
 .method public getSize()I
     .registers 1
 
-    .line 246
+    .line 242
     iget-object p0, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$KeyValueSet;->this$0:Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableMap;->size()I
@@ -109,12 +109,12 @@
         }
     .end annotation
 
-    # getter for: Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->access$getCore$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->getCore$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->access$getCore$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
-    .line 248
+    .line 244
     iget-object v1, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$KeyValueSet;->this$0:Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;

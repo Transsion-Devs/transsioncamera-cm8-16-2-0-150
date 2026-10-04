@@ -25,10 +25,10 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/mode/CommonVideoMode;)V
     .registers 3
 
-    .line 2037
+    .line 2047
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2038
+    .line 2048
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -43,7 +43,7 @@
 .method public onMediaScannerConnected()V
     .registers 3
 
-    .line 2043
+    .line 2053
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$VideoScannerConnectionClinet;->mModeRefence:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -52,19 +52,17 @@
 
     check-cast p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
-    if-eqz p0, :cond_1b
+    if-eqz p0, :cond_19
 
-    .line 2045
-    invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->-$$Nest$fgetmCurrentFile(Lcom/transsion/camera/app/common/mode/CommonVideoMode;)Ljava/lang/String;
+    .line 2055
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mCurrentFile:Ljava/lang/String;
 
-    move-result-object v0
-
-    .line 2046
+    .line 2056
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoFileInfo:Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_19
 
-    .line 2048
+    .line 2058
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoScannerConnection:Landroid/media/MediaScannerConnection;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo;->getMimeType()Ljava/lang/String;
@@ -73,14 +71,14 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/media/MediaScannerConnection;->scanFile(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_1b
+    :cond_19
     return-void
 .end method
 
 .method public onScanCompleted(Ljava/lang/String;Landroid/net/Uri;)V
     .registers 3
 
-    .line 2055
+    .line 2065
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$VideoScannerConnectionClinet;->mModeRefence:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -91,7 +89,7 @@
 
     if-eqz p0, :cond_f
 
-    .line 2057
+    .line 2067
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoScannerConnection:Landroid/media/MediaScannerConnection;
 
     invoke-virtual {p0}, Landroid/media/MediaScannerConnection;->disconnect()V

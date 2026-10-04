@@ -43,7 +43,7 @@
 .method constructor <init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
     .registers 2
 
-    .line 2403
+    .line 2402
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$4;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,14 +54,14 @@
 .method private synthetic lambda$run$0()V
     .registers 3
 
-    .line 2409
+    .line 2408
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$4;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fputmAeStable(Lcom/transsion/camera/adapter/CameraProxy2Impl;Z)V
 
-    .line 2410
+    .line 2409
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$4;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$mcheckAeAfStableToCapture(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
@@ -72,14 +72,14 @@
 .method private synthetic lambda$run$1(Z)V
     .registers 3
 
-    .line 2415
+    .line 2414
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$4;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fputmAfStable(Lcom/transsion/camera/adapter/CameraProxy2Impl;Z)V
 
-    .line 2416
+    .line 2415
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$4;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$mcheckAeAfStableToCapture(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
@@ -92,7 +92,7 @@
 .method public run()V
     .registers 7
 
-    .line 2406
+    .line 2405
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -101,14 +101,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2407
+    .line 2406
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$4;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fputmAeStable(Lcom/transsion/camera/adapter/CameraProxy2Impl;Z)V
 
-    .line 2408
+    .line 2407
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$4;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCaptureResultMonitor(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CaptureResultMonitor;
@@ -129,7 +129,7 @@
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/adapter/CaptureResultMonitor;->triggerAEPreCapturing(Lcom/transsion/camera/adapter/CaptureResultMonitor$AEPreCaptureResultCallback;)V
 
-    .line 2412
+    .line 2411
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$4;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$misAFSupport(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Z
@@ -138,12 +138,12 @@
 
     if-eqz v0, :cond_48
 
-    .line 2413
+    .line 2412
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$4;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fputmAfStable(Lcom/transsion/camera/adapter/CameraProxy2Impl;Z)V
 
-    .line 2414
+    .line 2413
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$4;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCaptureResultMonitor(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CaptureResultMonitor;
@@ -164,7 +164,7 @@
 
     return-void
 
-    .line 2419
+    .line 2418
     :cond_48
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$4;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 

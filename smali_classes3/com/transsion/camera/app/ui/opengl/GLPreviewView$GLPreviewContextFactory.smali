@@ -29,17 +29,17 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;I)V
     .registers 3
 
-    .line 386
+    .line 408
     iput-object p1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$GLPreviewContextFactory;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 p1, 0x3098
 
-    .line 383
+    .line 405
     iput p1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$GLPreviewContextFactory;->EGL_CONTEXT_CLIENT_VERSION:I
 
-    .line 387
+    .line 409
     iput p2, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$GLPreviewContextFactory;->mEGLContextClientVersion:I
 
     return-void
@@ -52,7 +52,7 @@
 
     const/4 v0, 0x3
 
-    .line 392
+    .line 414
     new-array v0, v0, [I
 
     const/4 v1, 0x0
@@ -80,7 +80,7 @@
     :cond_15
     const/4 v0, 0x0
 
-    .line 394
+    .line 416
     :goto_16
     sget-object p0, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_CONTEXT:Ljavax/microedition/khronos/egl/EGLContext;
 
@@ -88,7 +88,7 @@
 
     move-result-object p0
 
-    .line 396
+    .line 418
     invoke-static {}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -123,7 +123,7 @@
 .method public destroyContext(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLContext;)V
     .registers 7
 
-    .line 403
+    .line 425
     invoke-static {}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -152,24 +152,24 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 407
+    .line 429
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$GLPreviewContextFactory;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$mdestroySurfaceTexture(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)V
 
-    .line 408
+    .line 430
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$GLPreviewContextFactory;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$mdestroyGLProgram(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)V
 
-    .line 409
+    .line 431
     iget-object p0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$GLPreviewContextFactory;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     const-wide/16 v0, 0x0
 
     invoke-static {p0, v0, v1}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fputmFirstFrameTime(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;J)V
 
-    .line 410
+    .line 432
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->isUserAMonkey()Z
 
     move-result p0
@@ -184,7 +184,7 @@
 
     if-eq p0, v0, :cond_63
 
-    .line 411
+    .line 433
     invoke-static {}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -209,7 +209,7 @@
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 412
+    .line 434
     invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result p0
@@ -218,7 +218,7 @@
 
     return-void
 
-    .line 415
+    .line 437
     :cond_63
     invoke-interface {p1, p2, p3}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroyContext(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
@@ -228,7 +228,7 @@
 
     return-void
 
-    .line 416
+    .line 438
     :cond_6a
     invoke-static {}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -270,7 +270,7 @@
 
     invoke-static {p0, p2}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 417
+    .line 439
     new-instance p0, Ljava/lang/RuntimeException;
 
     new-instance p2, Ljava/lang/StringBuilder;

@@ -68,7 +68,7 @@
 
     move v2, p2
 
-    .line 28
+    .line 30
     invoke-direct/range {v0 .. v6}, Lkotlin/random/XorWowRandom;-><init>(IIIIII)V
 
     return-void
@@ -77,61 +77,80 @@
 .method public constructor <init>(IIIIII)V
     .registers 7
 
-    .line 25
+    .line 20
     invoke-direct {p0}, Lkotlin/random/Random;-><init>()V
 
-    .line 19
+    .line 21
     iput p1, p0, Lkotlin/random/XorWowRandom;->x:I
 
-    .line 20
+    .line 22
     iput p2, p0, Lkotlin/random/XorWowRandom;->y:I
 
-    .line 21
+    .line 23
     iput p3, p0, Lkotlin/random/XorWowRandom;->z:I
 
-    .line 22
+    .line 24
     iput p4, p0, Lkotlin/random/XorWowRandom;->w:I
 
-    .line 23
+    .line 25
     iput p5, p0, Lkotlin/random/XorWowRandom;->v:I
 
-    .line 24
+    .line 26
     iput p6, p0, Lkotlin/random/XorWowRandom;->addend:I
 
-    or-int/2addr p1, p2
-
-    or-int/2addr p1, p3
-
-    or-int/2addr p1, p4
-
-    or-int/2addr p1, p5
-
-    if-eqz p1, :cond_21
+    .line 33
+    invoke-direct {p0}, Lkotlin/random/XorWowRandom;->checkInvariants()V
 
     const/4 p1, 0x0
 
-    :goto_16
+    :goto_13
     const/16 p2, 0x40
 
-    if-ge p1, p2, :cond_20
+    if-ge p1, p2, :cond_1d
 
-    .line 34
+    .line 36
     invoke-virtual {p0}, Lkotlin/random/XorWowRandom;->nextInt()I
 
     add-int/lit8 p1, p1, 0x1
 
-    goto :goto_16
+    goto :goto_13
 
-    :cond_20
+    :cond_1d
+    return-void
+.end method
+
+.method private final checkInvariants()V
+    .registers 3
+
+    .line 40
+    iget v0, p0, Lkotlin/random/XorWowRandom;->x:I
+
+    iget v1, p0, Lkotlin/random/XorWowRandom;->y:I
+
+    or-int/2addr v0, v1
+
+    iget v1, p0, Lkotlin/random/XorWowRandom;->z:I
+
+    or-int/2addr v0, v1
+
+    iget v1, p0, Lkotlin/random/XorWowRandom;->w:I
+
+    or-int/2addr v0, v1
+
+    iget p0, p0, Lkotlin/random/XorWowRandom;->v:I
+
+    or-int/2addr p0, v0
+
+    if-eqz p0, :cond_11
+
     return-void
 
-    .line 31
-    :cond_21
+    :cond_11
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "Initial state must have at least one non-zero element."
+    const-string v0, "Initial state must have at least one non-zero element."
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
@@ -141,7 +160,7 @@
 .method public nextBits(I)I
     .registers 2
 
-    .line 54
+    .line 62
     invoke-virtual {p0}, Lkotlin/random/XorWowRandom;->nextInt()I
 
     move-result p0
@@ -156,32 +175,32 @@
 .method public nextInt()I
     .registers 4
 
-    .line 40
+    .line 48
     iget v0, p0, Lkotlin/random/XorWowRandom;->x:I
 
     ushr-int/lit8 v1, v0, 0x2
 
     xor-int/2addr v0, v1
 
-    .line 42
+    .line 50
     iget v1, p0, Lkotlin/random/XorWowRandom;->y:I
 
     iput v1, p0, Lkotlin/random/XorWowRandom;->x:I
 
-    .line 43
+    .line 51
     iget v1, p0, Lkotlin/random/XorWowRandom;->z:I
 
     iput v1, p0, Lkotlin/random/XorWowRandom;->y:I
 
-    .line 44
+    .line 52
     iget v1, p0, Lkotlin/random/XorWowRandom;->w:I
 
     iput v1, p0, Lkotlin/random/XorWowRandom;->z:I
 
-    .line 45
+    .line 53
     iget v1, p0, Lkotlin/random/XorWowRandom;->v:I
 
-    .line 46
+    .line 54
     iput v1, p0, Lkotlin/random/XorWowRandom;->w:I
 
     shl-int/lit8 v2, v0, 0x1
@@ -194,10 +213,10 @@
 
     xor-int/2addr v0, v1
 
-    .line 48
+    .line 56
     iput v0, p0, Lkotlin/random/XorWowRandom;->v:I
 
-    .line 49
+    .line 57
     iget v1, p0, Lkotlin/random/XorWowRandom;->addend:I
 
     const v2, 0x587c5

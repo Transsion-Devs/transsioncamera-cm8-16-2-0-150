@@ -44,7 +44,7 @@
 .method public static synthetic $r8$lambda$cBiaqJ6Nl18EMkMePd99tS0mmvM(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;Lcom/transsion/camera/app/common/taps/IThumbnailController;)V
     .registers 2
 
-    .line 1922
+    .line 1934
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->onThumbnailClicked()V
 
     return-void
@@ -53,31 +53,31 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)V
     .registers 4
 
-    .line 1892
+    .line 1904
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1886
+    .line 1898
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mLock:Ljava/lang/Object;
 
-    .line 1887
+    .line 1899
     new-instance v0, Ljava/util/Stack;
 
     invoke-direct {v0}, Ljava/util/Stack;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCaptureCache:Ljava/util/Stack;
 
-    .line 1888
+    .line 1900
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCusDeferCaptureCache:Ljava/util/List;
 
-    .line 1890
+    .line 1902
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
@@ -86,7 +86,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mIsShot2ShotFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 1893
+    .line 1905
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -101,12 +101,12 @@
 .method clearCache()V
     .registers 4
 
-    .line 1948
+    .line 1960
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1949
+    .line 1961
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCaptureCache:Ljava/util/Stack;
 
@@ -116,7 +116,7 @@
 
     if-nez v1, :cond_1c
 
-    .line 1950
+    .line 1962
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v1
@@ -125,7 +125,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1951
+    .line 1963
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCaptureCache:Ljava/util/Stack;
 
     invoke-virtual {v1}, Ljava/util/AbstractCollection;->clear()V
@@ -137,14 +137,14 @@
 
     goto :goto_23
 
-    .line 1953
+    .line 1965
     :cond_1c
     :goto_1c
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCusDeferCaptureCache:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->clear()V
 
-    .line 1954
+    .line 1966
     monitor-exit v0
 
     return-void
@@ -160,12 +160,12 @@
 .method isShot2ShotFinished()Z
     .registers 6
 
-    .line 1968
+    .line 1980
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1969
+    .line 1981
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mIsShot2ShotFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -173,7 +173,7 @@
 
     move-result v1
 
-    .line 1970
+    .line 1982
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v2
@@ -206,7 +206,7 @@
 
     invoke-static {v2, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1971
+    .line 1983
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCaptureCache:Ljava/util/Stack;
 
     invoke-virtual {v1}, Ljava/util/AbstractCollection;->isEmpty()Z
@@ -240,7 +240,7 @@
 
     return p0
 
-    .line 1972
+    .line 1984
     :goto_46
     monitor-exit v0
     :try_end_47
@@ -252,7 +252,7 @@
 .method public onCaptureFailed(J)V
     .registers 6
 
-    .line 1939
+    .line 1951
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -273,12 +273,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1940
+    .line 1952
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1941
+    .line 1953
     :try_start_1b
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCaptureCache:Ljava/util/Stack;
 
@@ -288,7 +288,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/AbstractCollection;->remove(Ljava/lang/Object;)Z
 
-    .line 1942
+    .line 1954
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCusDeferCaptureCache:Ljava/util/List;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -297,12 +297,12 @@
 
     invoke-interface {v1, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 1943
+    .line 1955
     monitor-exit v0
     :try_end_2e
     .catchall {:try_start_1b .. :try_end_2e} :catchall_35
 
-    .line 1944
+    .line 1956
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mIsShot2ShotFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 p1, 0x1
@@ -314,7 +314,7 @@
     :catchall_35
     move-exception p0
 
-    .line 1943
+    .line 1955
     :try_start_36
     monitor-exit v0
     :try_end_37
@@ -326,7 +326,7 @@
 .method public onCaptureProgressed(Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
     .registers 8
 
-    .line 1908
+    .line 1920
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -347,12 +347,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1909
+    .line 1921
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1910
+    .line 1922
     :try_start_1b
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCaptureCache:Ljava/util/Stack;
 
@@ -362,12 +362,12 @@
 
     if-nez v1, :cond_56
 
-    .line 1911
+    .line 1923
     invoke-interface {p1}, Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;->getTimestamp()J
 
     move-result-wide v1
 
-    .line 1912
+    .line 1924
     iget-object v3, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCaptureCache:Ljava/util/Stack;
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -376,7 +376,7 @@
 
     invoke-virtual {v3, v4}, Ljava/util/AbstractCollection;->remove(Ljava/lang/Object;)Z
 
-    .line 1913
+    .line 1925
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v3
@@ -412,7 +412,7 @@
 
     goto/16 :goto_d5
 
-    .line 1916
+    .line 1928
     :cond_56
     :goto_56
     invoke-interface {p1}, Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;->isSupportLowQualityMode()Z
@@ -423,7 +423,7 @@
 
     if-eqz p1, :cond_8c
 
-    .line 1917
+    .line 1929
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCaptureCache:Ljava/util/Stack;
 
     invoke-virtual {p1}, Ljava/util/AbstractCollection;->isEmpty()Z
@@ -432,7 +432,7 @@
 
     if-eqz p1, :cond_ce
 
-    .line 1918
+    .line 1930
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mContext:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -441,7 +441,7 @@
 
     check-cast p1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
-    .line 1919
+    .line 1931
     invoke-static {p1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
 
     move-result-object v2
@@ -450,7 +450,7 @@
 
     invoke-direct {v3}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl$$ExternalSyntheticLambda0;-><init>()V
 
-    .line 1920
+    .line 1932
     invoke-virtual {v2, v3}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object v2
@@ -459,7 +459,7 @@
 
     invoke-direct {v3}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl$$ExternalSyntheticLambda1;-><init>()V
 
-    .line 1921
+    .line 1933
     invoke-virtual {v2, v3}, Ljava/util/Optional;->filter(Ljava/util/function/Predicate;)Ljava/util/Optional;
 
     move-result-object v2
@@ -468,12 +468,12 @@
 
     invoke-direct {v3, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)V
 
-    .line 1922
+    .line 1934
     invoke-virtual {v2, v3}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
     goto :goto_ce
 
-    .line 1925
+    .line 1937
     :cond_8c
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCusDeferCaptureCache:Ljava/util/List;
 
@@ -483,7 +483,7 @@
 
     if-nez p1, :cond_ce
 
-    .line 1926
+    .line 1938
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCusDeferCaptureCache:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -492,7 +492,7 @@
 
     sub-int/2addr p1, v1
 
-    .line 1927
+    .line 1939
     iget-object v2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCusDeferCaptureCache:Ljava/util/List;
 
     invoke-interface {v2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -505,12 +505,12 @@
 
     move-result-wide v2
 
-    .line 1928
+    .line 1940
     iget-object v4, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCusDeferCaptureCache:Ljava/util/List;
 
     invoke-interface {v4, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 1929
+    .line 1941
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -539,21 +539,21 @@
 
     invoke-static {p1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1933
+    .line 1945
     :cond_ce
     :goto_ce
     monitor-exit v0
     :try_end_cf
     .catchall {:try_start_1b .. :try_end_cf} :catchall_53
 
-    .line 1934
+    .line 1946
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mIsShot2ShotFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     return-void
 
-    .line 1933
+    .line 1945
     :goto_d5
     :try_start_d5
     monitor-exit v0
@@ -566,7 +566,7 @@
 .method public onCaptureStarted(JLcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
     .registers 6
 
-    .line 1898
+    .line 1910
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p3
@@ -587,12 +587,12 @@
 
     invoke-static {p3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1899
+    .line 1911
     iget-object p3, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mLock:Ljava/lang/Object;
 
     monitor-enter p3
 
-    .line 1900
+    .line 1912
     :try_start_1b
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCaptureCache:Ljava/util/Stack;
 
@@ -602,7 +602,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1901
+    .line 1913
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCusDeferCaptureCache:Ljava/util/List;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -611,12 +611,12 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1902
+    .line 1914
     monitor-exit p3
     :try_end_2e
     .catchall {:try_start_1b .. :try_end_2e} :catchall_35
 
-    .line 1903
+    .line 1915
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mIsShot2ShotFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 p1, 0x0
@@ -628,7 +628,7 @@
     :catchall_35
     move-exception p0
 
-    .line 1902
+    .line 1914
     :try_start_36
     monitor-exit p3
     :try_end_37
@@ -640,12 +640,12 @@
 .method removeCacheAndGetResult(J)Z
     .registers 8
 
-    .line 1958
+    .line 1970
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1959
+    .line 1971
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCusDeferCaptureCache:Ljava/util/List;
 
@@ -655,14 +655,14 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 1960
+    .line 1972
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mCusDeferCaptureCache:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    .line 1961
+    .line 1973
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v2
@@ -691,7 +691,7 @@
 
     invoke-static {v2, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1963
+    .line 1975
     monitor-exit v0
 
     return v1
@@ -699,7 +699,7 @@
     :catchall_36
     move-exception p0
 
-    .line 1964
+    .line 1976
     monitor-exit v0
     :try_end_38
     .catchall {:try_start_3 .. :try_end_38} :catchall_36
@@ -710,7 +710,7 @@
 .method resetShot2ShotFinished()V
     .registers 3
 
-    .line 1976
+    .line 1988
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -719,7 +719,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1977
+    .line 1989
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->mIsShot2ShotFinished:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v0, 0x0

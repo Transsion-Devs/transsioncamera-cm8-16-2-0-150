@@ -14,25 +14,25 @@
 
 
 # static fields
-.field public static guide_supernight_content1:I = 0x7f130315
+.field public static guide_supernight_content1:I = 0x7f130310
 
-.field public static guide_supernight_content2:I = 0x7f130316
+.field public static guide_supernight_content2:I = 0x7f130311
 
-.field public static super_night_in_stable_tips:I = 0x7f130542
+.field public static super_night_in_stable_tips:I = 0x7f13053b
 
-.field public static super_night_stable_enter_tips:I = 0x7f130543
+.field public static super_night_stable_enter_tips:I = 0x7f13053c
 
-.field public static super_night_stable_opened_tips:I = 0x7f130544
+.field public static super_night_stable_opened_tips:I = 0x7f13053d
 
-.field public static supernight_mode_capture_ending:I = 0x7f130551
+.field public static supernight_mode_capture_ending:I = 0x7f13054a
 
-.field public static supernight_mode_description:I = 0x7f130552
+.field public static supernight_mode_description:I = 0x7f13054b
 
-.field public static supernight_mode_during_capture:I = 0x7f130553
+.field public static supernight_mode_during_capture:I = 0x7f13054c
 
-.field public static supernight_mode_steady_hint:I = 0x7f130554
+.field public static supernight_mode_steady_hint:I = 0x7f13054d
 
-.field public static supernight_mode_title:I = 0x7f130555
+.field public static supernight_mode_title:I = 0x7f13054e
 
 
 # direct methods

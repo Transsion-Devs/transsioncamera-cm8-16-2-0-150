@@ -4,55 +4,10 @@
 
 
 # direct methods
-.method private static final checkDebugMetadataVersion(II)V
-    .registers 5
-
-    if-gt p1, p0, :cond_3
-
-    return-void
-
-    .line 102
-    :cond_3
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    .line 103
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Debug metadata version mismatch. Expected: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, ", got "
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, ". Please update the Kotlin standard library."
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
 .method private static final getDebugMetadataAnnotation(Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;)Lkotlin/coroutines/jvm/internal/DebugMetadata;
     .registers 2
 
-    .line 90
+    .line 95
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
@@ -71,7 +26,7 @@
 .method private static final getLabel(Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;)I
     .registers 3
 
-    .line 94
+    .line 99
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -85,10 +40,10 @@
 
     const/4 v1, 0x1
 
-    .line 95
+    .line 100
     invoke-virtual {v0, v1}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
-    .line 96
+    .line 101
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -136,28 +91,31 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 47
     invoke-static {p0}, Lkotlin/coroutines/jvm/internal/DebugMetadataKt;->getDebugMetadataAnnotation(Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;)Lkotlin/coroutines/jvm/internal/DebugMetadata;
 
     move-result-object v0
 
+    const/4 v1, 0x0
+
     if-nez v0, :cond_d
 
-    const/4 p0, 0x0
+    return-object v1
 
-    return-object p0
-
+    .line 48
     :cond_d
-    const/4 v1, 0x1
-
-    .line 43
     invoke-interface {v0}, Lkotlin/coroutines/jvm/internal/DebugMetadata;->v()I
 
     move-result v2
 
-    invoke-static {v1, v2}, Lkotlin/coroutines/jvm/internal/DebugMetadataKt;->checkDebugMetadataVersion(II)V
+    const/4 v3, 0x1
 
-    .line 44
+    if-ge v2, v3, :cond_15
+
+    return-object v1
+
+    .line 49
+    :cond_15
     invoke-static {p0}, Lkotlin/coroutines/jvm/internal/DebugMetadataKt;->getLabel(Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;)I
 
     move-result v1
@@ -168,7 +126,7 @@
 
     goto :goto_23
 
-    .line 45
+    .line 50
     :cond_1d
     invoke-interface {v0}, Lkotlin/coroutines/jvm/internal/DebugMetadata;->l()[I
 
@@ -176,7 +134,7 @@
 
     aget v1, v2, v1
 
-    .line 46
+    .line 51
     :goto_23
     sget-object v2, Lkotlin/coroutines/jvm/internal/ModuleNameRetriever;->INSTANCE:Lkotlin/coroutines/jvm/internal/ModuleNameRetriever;
 
@@ -186,7 +144,7 @@
 
     if-nez p0, :cond_30
 
-    .line 47
+    .line 52
     invoke-interface {v0}, Lkotlin/coroutines/jvm/internal/DebugMetadata;->c()Ljava/lang/String;
 
     move-result-object p0
@@ -214,7 +172,7 @@
 
     move-result-object p0
 
-    .line 48
+    .line 53
     :goto_48
     new-instance v2, Ljava/lang/StackTraceElement;
 

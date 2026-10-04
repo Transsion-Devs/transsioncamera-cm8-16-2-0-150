@@ -22,12 +22,12 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 2270
+    .line 2378
     const-string v0, "ro.tr_animation.platform_level"
 
     const/4 v1, 0x3
 
-    .line 2271
+    .line 2379
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v0
@@ -40,7 +40,7 @@
 .method public static isHigherPlatform(I)Z
     .registers 2
 
-    .line 2290
+    .line 2398
     sget v0, Lcom/transsion/camera/utils/CameraUtil$PlatformLevel;->PLATFORM_LEVEL:I
 
     if-lt v0, p0, :cond_6

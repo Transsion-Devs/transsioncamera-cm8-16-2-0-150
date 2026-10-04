@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
     .registers 2
 
-    .line 94
+    .line 93
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$2;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
         }
     .end annotation
 
-    .line 98
+    .line 97
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$2;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCurrentState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 99
+    .line 98
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$2;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/transsion/camera/feature/common/BaseCapture;->onDataAvailable(Landroid/util/Pair;III)V

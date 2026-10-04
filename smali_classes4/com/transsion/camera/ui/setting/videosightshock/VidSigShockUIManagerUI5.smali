@@ -30,6 +30,8 @@
 
 .field private mHoverTabTextView:Landroid/widget/TextView;
 
+.field private mInflatedRootView:Landroid/view/View;
+
 .field private mIsAnimationRunning:Z
 
 .field private mResources:Landroid/content/res/Resources;
@@ -56,6 +58,8 @@
 
 .field private final mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
+.field private mViewInitialized:Z
+
 
 # direct methods
 .method public static synthetic $r8$lambda$1vVVmp-C0OOi39t2n0OXCMPXWvg(Ljava/lang/Runnable;)V
@@ -63,7 +67,7 @@
 
     if-eqz p0, :cond_5
 
-    .line 416
+    .line 446
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_5
@@ -361,33 +365,33 @@
 .method public constructor <init>(ZZZ)V
     .registers 9
 
-    .line 83
+    .line 87
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;-><init>()V
 
     const/16 v0, 0xc8
 
-    .line 48
+    .line 49
     iput v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->SHOW_ELEMENT_DURATION:I
 
-    .line 49
+    .line 50
     iput v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->HIDE_ELEMENT_DURATION:I
 
     const/16 v0, 0x96
 
-    .line 50
+    .line 51
     iput v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->SHOW_ELEMENT_DELAY:I
 
     const/16 v0, 0x15e
 
-    .line 51
+    .line 52
     iput v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->TRANSLATE_TAB_DURATION:I
 
     const v0, 0x3f19999a    # 0.6f
 
-    .line 52
+    .line 53
     iput v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScaleX:F
 
-    .line 54
+    .line 55
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v1, 0x3ecccccd    # 0.4f
@@ -402,7 +406,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
-    .line 55
+    .line 56
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v1, 0x3ea8f5c3    # 0.33f
@@ -413,31 +417,19 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
-    if-eqz p1, :cond_42
+    const/4 v0, 0x0
 
-    .line 85
+    .line 83
+    iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mViewInitialized:Z
+
+    if-eqz p1, :cond_45
+
+    .line 89
     new-instance v0, Lcom/transsion/camera/ui/setting/videosightshock/VideoFilterUI5;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VideoFilterUI5;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/listener/IVssListener;)V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
-
-    .line 86
-    iget v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
-
-    :cond_42
-    if-eqz p2, :cond_51
-
-    .line 89
-    new-instance v0, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoEffectUI;
-
-    invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoEffectUI;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/listener/IVssListener;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoEffectUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/IVssUI;
 
     .line 90
     iget v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
@@ -446,15 +438,15 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
 
-    :cond_51
-    if-eqz p3, :cond_60
+    :cond_45
+    if-eqz p2, :cond_54
 
     .line 93
-    new-instance v0, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFrameUI;
+    new-instance v0, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoEffectUI;
 
-    invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFrameUI;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/listener/IVssListener;)V
+    invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoEffectUI;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/listener/IVssListener;)V
 
-    iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFrameUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFrameUI;
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoEffectUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/IVssUI;
 
     .line 94
     iget v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
@@ -463,17 +455,34 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
 
+    :cond_54
+    if-eqz p3, :cond_63
+
     .line 97
-    :cond_60
-    iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportFilter:Z
+    new-instance v0, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFrameUI;
+
+    invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFrameUI;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/listener/IVssListener;)V
+
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFrameUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFrameUI;
 
     .line 98
-    iput-boolean p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportEffect:Z
+    iget v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
 
-    .line 99
-    iput-boolean p3, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportFrame:Z
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
 
     .line 101
+    :cond_63
+    iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportFilter:Z
+
+    .line 102
+    iput-boolean p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportEffect:Z
+
+    .line 103
+    iput-boolean p3, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportFrame:Z
+
+    .line 105
     new-instance p1, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     invoke-direct {p1}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;-><init>()V
@@ -486,7 +495,7 @@
 .method static synthetic access$000(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)Lcom/transsion/camera/app/ui/widget/RotateImageView;
     .registers 1
 
-    .line 47
+    .line 48
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     return-object p0
@@ -495,7 +504,7 @@
 .method static synthetic access$100(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)Lcom/transsion/camera/app/ui/widget/RotateImageView;
     .registers 1
 
-    .line 47
+    .line 48
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     return-object p0
@@ -504,7 +513,7 @@
 .method static synthetic access$200(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)Lcom/transsion/camera/app/ui/widget/RotateImageView;
     .registers 1
 
-    .line 47
+    .line 48
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     return-object p0
@@ -513,7 +522,7 @@
 .method static synthetic access$300(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)Lcom/transsion/camera/app/ui/widget/RotateImageView;
     .registers 1
 
-    .line 47
+    .line 48
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     return-object p0
@@ -522,7 +531,7 @@
 .method static synthetic access$400(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)Lcom/transsion/camera/app/ui/widget/RotateImageView;
     .registers 1
 
-    .line 47
+    .line 48
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     return-object p0
@@ -531,7 +540,7 @@
 .method static synthetic access$500(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)Lcom/transsion/camera/app/ui/widget/RotateImageView;
     .registers 1
 
-    .line 47
+    .line 48
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     return-object p0
@@ -542,7 +551,7 @@
 
     move-object/from16 v0, p0
 
-    .line 808
+    .line 838
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v2, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->scroller_scale_width:I
@@ -551,7 +560,7 @@
 
     move-result v1
 
-    .line 809
+    .line 839
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->scroller_scale_width_animator:I
@@ -560,7 +569,7 @@
 
     move-result v2
 
-    .line 811
+    .line 841
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->collapse_scroller_width:I
@@ -577,7 +586,7 @@
 
     float-to-int v3, v3
 
-    .line 813
+    .line 843
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v5}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -590,25 +599,25 @@
 
     move-result v5
 
-    .line 814
+    .line 844
     div-int/lit8 v6, v3, 0x2
 
     sub-int/2addr v6, v2
 
     const/4 v7, 0x2
 
-    .line 816
+    .line 846
     new-array v8, v7, [I
 
-    .line 817
+    .line 847
     iget-object v9, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v9, v8}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 818
+    .line 848
     new-array v9, v7, [I
 
-    .line 819
+    .line 849
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
     invoke-virtual {v10, v9}, Landroid/view/View;->getLocationOnScreen([I)V
@@ -619,10 +628,10 @@
 
     div-float/2addr v10, v11
 
-    .line 821
+    .line 851
     iget-object v12, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
-    .line 822
+    .line 852
     invoke-virtual {v12}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v12
@@ -645,14 +654,14 @@
 
     add-float/2addr v10, v12
 
-    .line 823
+    .line 853
     aget v9, v9, v11
 
     sub-int/2addr v9, v13
 
     iget-object v12, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
-    .line 824
+    .line 854
     invoke-virtual {v12}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v12
@@ -681,7 +690,7 @@
 
     iput v9, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerTranslationX:I
 
-    .line 826
+    .line 856
     iget-object v8, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v8}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->getCenterPointX()F
@@ -696,7 +705,7 @@
 
     if-eqz p1, :cond_f9
 
-    .line 829
+    .line 859
     new-array v4, v7, [F
 
     fill-array-data v4, :array_12c
@@ -707,7 +716,7 @@
 
     move-result-object v13
 
-    .line 830
+    .line 860
     new-array v4, v7, [F
 
     fill-array-data v4, :array_134
@@ -722,7 +731,7 @@
 
     int-to-float v2, v2
 
-    .line 831
+    .line 861
     new-array v4, v7, [F
 
     aput v1, v4, v11
@@ -735,7 +744,7 @@
 
     move-result-object v14
 
-    .line 832
+    .line 862
     iget v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerTranslationX:I
 
     filled-new-array {v11, v1}, [I
@@ -748,7 +757,7 @@
 
     move-result-object v16
 
-    .line 833
+    .line 863
     iget v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerViewWidth:I
 
     filled-new-array {v1, v3}, [I
@@ -761,7 +770,7 @@
 
     move-result-object v18
 
-    .line 834
+    .line 864
     const-string v1, "fadingEdgeLength"
 
     filled-new-array {v5, v6}, [I
@@ -772,7 +781,7 @@
 
     move-result-object v19
 
-    .line 835
+    .line 865
     new-array v1, v7, [F
 
     aput v9, v1, v11
@@ -785,7 +794,7 @@
 
     move-result-object v15
 
-    .line 837
+    .line 867
     filled-new-array/range {v13 .. v19}, [Landroid/animation/PropertyValuesHolder;
 
     move-result-object v1
@@ -796,36 +805,36 @@
 
     const-wide/16 v2, 0x15e
 
-    .line 840
+    .line 870
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 841
+    .line 871
     new-instance v2, Landroid/view/animation/AccelerateDecelerateInterpolator;
 
     invoke-direct {v2}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 843
+    .line 873
     new-instance v2, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 865
+    .line 895
     new-instance v2, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$10;
 
     invoke-direct {v2, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$10;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 877
+    .line 907
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
 
-    .line 879
+    .line 909
     :cond_f9
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
@@ -833,46 +842,46 @@
 
     move-result-object v1
 
-    .line 880
+    .line 910
     iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 881
+    .line 911
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v3, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 882
+    .line 912
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v1, v8}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setScrollerStatus(Z)V
 
-    .line 883
+    .line 913
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     int-to-float v2, v2
 
     invoke-virtual {v1, v2, v9}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setScrollerParamsForAnim(FF)V
 
-    .line 885
+    .line 915
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     neg-float v2, v10
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setCanvasTranslateX(F)V
 
-    .line 887
+    .line 917
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 888
+    .line 918
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     int-to-float v2, v6
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setFadingLength(F)V
 
-    .line 890
+    .line 920
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     iget v0, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerTranslationX:I
@@ -903,31 +912,31 @@
 
     move-object/from16 v0, p0
 
-    .line 895
+    .line 925
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 897
+    .line 927
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mCurrentSelectTabSwitch:Landroid/widget/LinearLayout;
 
     const/4 v3, 0x2
 
-    .line 898
+    .line 928
     new-array v4, v3, [I
 
-    .line 899
+    .line 929
     invoke-virtual {v2, v4}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 901
+    .line 931
     new-array v4, v3, [I
 
-    .line 902
+    .line 932
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabTextView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v4}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 904
+    .line 934
     sget v5, Lcom/transsion/camera/R$id;->tab_text:I
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -936,15 +945,15 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 905
+    .line 935
     new-array v5, v3, [I
 
-    .line 906
+    .line 936
     invoke-virtual {v2, v5}, Landroid/view/View;->getLocationOnScreen([I)V
 
     const/4 v6, 0x0
 
-    .line 908
+    .line 938
     aget v5, v5, v6
 
     aget v4, v4, v6
@@ -953,7 +962,7 @@
 
     int-to-float v4, v5
 
-    .line 910
+    .line 940
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     new-array v7, v3, [F
@@ -974,17 +983,17 @@
 
     const-wide/16 v9, 0x15e
 
-    .line 911
+    .line 941
     invoke-virtual {v4, v9, v10}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 912
+    .line 942
     new-instance v5, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$11;
 
     invoke-direct {v5, v0, v2}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$11;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;Landroid/widget/TextView;)V
 
     invoke-virtual {v4, v5}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 927
+    .line 957
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     sget v7, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->collapsed_tab_text:I
@@ -995,14 +1004,14 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 928
+    .line 958
     new-instance v7, Landroid/animation/ArgbEvaluator;
 
     invoke-direct {v7}, Landroid/animation/ArgbEvaluator;-><init>()V
 
     iget v9, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mUnSelectedColor:I
 
-    .line 929
+    .line 959
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
@@ -1017,7 +1026,7 @@
 
     move-result-object v9
 
-    .line 928
+    .line 958
     const-string v10, "textColor"
 
     invoke-static {v5, v10, v7, v9}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;
@@ -1026,10 +1035,10 @@
 
     const-wide/16 v9, 0x64
 
-    .line 930
+    .line 960
     invoke-virtual {v5, v9, v10}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 932
+    .line 962
     iget-object v7, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     new-array v9, v3, [F
@@ -1044,22 +1053,22 @@
 
     const-wide/16 v11, 0xc8
 
-    .line 933
+    .line 963
     invoke-virtual {v7, v11, v12}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 934
+    .line 964
     iget-object v9, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v7, v9}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 935
+    .line 965
     new-instance v9, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$12;
 
     invoke-direct {v9, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$12;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v7, v9}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 953
+    .line 983
     iget-object v9, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     sget v13, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->expand_arrow:I
@@ -1068,7 +1077,7 @@
 
     move-result-object v9
 
-    .line 954
+    .line 984
     new-array v13, v3, [F
 
     fill-array-data v13, :array_130
@@ -1077,15 +1086,15 @@
 
     move-result-object v9
 
-    .line 956
+    .line 986
     iget-object v13, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v9, v13}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 957
+    .line 987
     invoke-virtual {v9, v11, v12}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 959
+    .line 989
     iget-object v13, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
     new-array v14, v3, [F
@@ -1098,27 +1107,27 @@
 
     const-wide/16 v14, 0x96
 
-    .line 960
+    .line 990
     invoke-virtual {v13, v14, v15}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 961
+    .line 991
     invoke-virtual {v13, v11, v12}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     move/from16 v16, v6
 
-    .line 962
+    .line 992
     iget-object v6, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v13, v6}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 963
+    .line 993
     new-instance v6, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$13;
 
     invoke-direct {v6, v0, v2}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$13;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;Landroid/widget/TextView;)V
 
     invoke-virtual {v13, v6}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 978
+    .line 1008
     iget-object v6, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     move/from16 v17, v8
@@ -1131,25 +1140,25 @@
 
     move-result-object v6
 
-    .line 979
+    .line 1009
     invoke-virtual {v6, v14, v15}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 980
+    .line 1010
     invoke-virtual {v6, v11, v12}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 981
+    .line 1011
     iget-object v8, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v6, v8}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 982
+    .line 1012
     new-instance v8, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$14;
 
     invoke-direct {v8, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$14;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v6, v8}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 996
+    .line 1026
     iget-object v8, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
     new-array v14, v3, [F
@@ -1162,20 +1171,20 @@
 
     const-wide/16 v14, 0x12c
 
-    .line 997
+    .line 1027
     invoke-virtual {v8, v14, v15}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 998
+    .line 1028
     invoke-virtual {v8, v11, v12}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 999
+    .line 1029
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v8, v10}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     const/4 v10, 0x7
 
-    .line 1001
+    .line 1031
     new-array v10, v10, [Landroid/animation/Animator;
 
     aput-object v4, v10, v16
@@ -1202,14 +1211,14 @@
 
     invoke-virtual {v1, v10}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1006
+    .line 1036
     new-instance v3, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$15;
 
     invoke-direct {v3, v0, v2}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$15;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;Landroid/widget/TextView;)V
 
     invoke-virtual {v1, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1027
+    .line 1057
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -1250,10 +1259,10 @@
 .method private handleCollapseToExpand()V
     .registers 1
 
-    .line 561
+    .line 591
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->startCollapseToExpandAnimation()V
 
-    .line 562
+    .line 592
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->startExpandScrollerAnimation()V
 
     return-void
@@ -1264,10 +1273,10 @@
 
     const/4 v0, 0x1
 
-    .line 763
+    .line 793
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->updateTabSwitchLayout(Z)V
 
-    .line 764
+    .line 794
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->startCollapsedToNoEffectAnimation()V
 
     return-void
@@ -1276,7 +1285,7 @@
 .method private handleExpandToCollapse()V
     .registers 3
 
-    .line 799
+    .line 829
     new-instance v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda13;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda13;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
@@ -1291,7 +1300,7 @@
 .method private handleExpandToNoEffect()V
     .registers 3
 
-    .line 1031
+    .line 1061
     new-instance v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
@@ -1308,18 +1317,18 @@
 
     const/4 v0, 0x1
 
-    .line 1129
+    .line 1159
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->updateTabSwitchLayout(Z)V
 
-    .line 1130
+    .line 1160
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->startNoEffectToCollapseAnimation()V
 
-    .line 1131
+    .line 1161
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->resetScrollerRulerView()V
 
     const/4 v0, 0x0
 
-    .line 1132
+    .line 1162
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->collapseScrollerView(Z)V
 
     return-void
@@ -1328,10 +1337,10 @@
 .method private handleNoEffectToExpand()V
     .registers 1
 
-    .line 1168
+    .line 1198
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->resetScrollerRulerView()V
 
-    .line 1169
+    .line 1199
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->startNoEffectToExpandAnimation()V
 
     return-void
@@ -1340,7 +1349,7 @@
 .method private synthetic lambda$collapseScrollerView$19(Landroid/animation/ValueAnimator;)V
     .registers 5
 
-    .line 844
+    .line 874
     const-string v0, "alpha"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1353,7 +1362,7 @@
 
     move-result v0
 
-    .line 845
+    .line 875
     const-string v1, "scaleWidth"
 
     invoke-virtual {p1, v1}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1366,12 +1375,12 @@
 
     move-result v1
 
-    .line 846
+    .line 876
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v2, v1, v0}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setScrollerParamsForAnim(FF)V
 
-    .line 848
+    .line 878
     const-string v0, "scaleX"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1384,12 +1393,12 @@
 
     move-result v0
 
-    .line 849
+    .line 879
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setScaleX(F)V
 
-    .line 851
+    .line 881
     const-string v0, "fadingEdgeLength"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1402,14 +1411,14 @@
 
     move-result v0
 
-    .line 852
+    .line 882
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     int-to-float v0, v0
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setFadingLength(F)V
 
-    .line 854
+    .line 884
     const-string v0, "scrollerOffset"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1422,14 +1431,14 @@
 
     move-result v0
 
-    .line 855
+    .line 885
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     neg-float v0, v0
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setCanvasTranslateX(F)V
 
-    .line 857
+    .line 887
     const-string v0, "containerWidth"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1442,22 +1451,22 @@
 
     move-result v0
 
-    .line 858
+    .line 888
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    .line 859
+    .line 889
     iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 860
+    .line 890
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 862
+    .line 892
     const-string v0, "translationX"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1470,7 +1479,7 @@
 
     move-result p1
 
-    .line 863
+    .line 893
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     int-to-float p1, p1
@@ -1483,7 +1492,7 @@
 .method private synthetic lambda$init$0(Z)V
     .registers 2
 
-    .line 109
+    .line 113
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->handleNoEffectToExpand()V
 
     return-void
@@ -1492,7 +1501,7 @@
 .method private synthetic lambda$init$1(Z)V
     .registers 2
 
-    .line 111
+    .line 115
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->handleNoEffectToCollapse()V
 
     return-void
@@ -1501,7 +1510,7 @@
 .method private synthetic lambda$init$2(Z)V
     .registers 2
 
-    .line 113
+    .line 117
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->handleExpandToNoEffect()V
 
     return-void
@@ -1510,7 +1519,7 @@
 .method private synthetic lambda$init$3(Z)V
     .registers 2
 
-    .line 115
+    .line 119
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->handleExpandToCollapse()V
 
     return-void
@@ -1519,7 +1528,7 @@
 .method private synthetic lambda$init$4(Z)V
     .registers 2
 
-    .line 117
+    .line 121
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->handleCollapseToNoEffect()V
 
     return-void
@@ -1528,7 +1537,7 @@
 .method private synthetic lambda$init$5(Z)V
     .registers 2
 
-    .line 119
+    .line 123
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->handleCollapseToExpand()V
 
     return-void
@@ -1537,7 +1546,7 @@
 .method private synthetic lambda$initMainSwitchListener$15(Landroid/view/View;)V
     .registers 3
 
-    .line 507
+    .line 537
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
@@ -1548,7 +1557,7 @@
 
     return-void
 
-    .line 510
+    .line 540
     :cond_9
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
@@ -1556,15 +1565,15 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setSelected(Z)V
 
-    .line 511
+    .line 541
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->resetTabState()V
 
-    .line 512
+    .line 542
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;->resetCurrentItem()V
 
-    .line 514
+    .line 544
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     sget-object p1, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;->NO_EFFECT:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;
@@ -1577,7 +1586,7 @@
 .method private synthetic lambda$initViewListenerIfNeed$10(Landroid/view/View;)V
     .registers 4
 
-    .line 430
+    .line 460
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitch:Landroid/widget/LinearLayout;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
@@ -1588,7 +1597,7 @@
 
     goto :goto_11
 
-    .line 433
+    .line 463
     :cond_9
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitch:Landroid/widget/LinearLayout;
 
@@ -1601,32 +1610,32 @@
     :goto_11
     return-void
 
-    .line 436
+    .line 466
     :cond_12
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitch:Landroid/widget/LinearLayout;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mCurrentSelectTabSwitch:Landroid/widget/LinearLayout;
 
-    .line 437
+    .line 467
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabTextView:Landroid/widget/TextView;
 
     sget v0, Lcom/transsion/camera/R$string;->video_filter:I
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 438
+    .line 468
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverTabTextView:Landroid/widget/TextView;
 
     sget v0, Lcom/transsion/camera/R$string;->video_filter:I
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 439
+    .line 469
     const-string p1, "key_video_filter_style"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->setVideoSightMode(Ljava/lang/String;)V
 
-    .line 440
+    .line 470
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;->getmCurrentItem()Ljava/lang/String;
@@ -1637,7 +1646,7 @@
 
     if-eqz p1, :cond_42
 
-    .line 441
+    .line 471
     const-string v1, "0"
 
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1646,7 +1655,7 @@
 
     if-nez p1, :cond_42
 
-    .line 443
+    .line 473
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     sget-object p1, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;->COLLAPSE_SCROLLER_BAR:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;
@@ -1655,7 +1664,7 @@
 
     return-void
 
-    .line 445
+    .line 475
     :cond_42
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
@@ -1669,7 +1678,7 @@
 .method private synthetic lambda$initViewListenerIfNeed$11(Landroid/view/View;)V
     .registers 3
 
-    .line 453
+    .line 483
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitch:Landroid/widget/LinearLayout;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
@@ -1680,7 +1689,7 @@
 
     goto :goto_11
 
-    .line 456
+    .line 486
     :cond_9
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitch:Landroid/widget/LinearLayout;
 
@@ -1693,32 +1702,32 @@
     :goto_11
     return-void
 
-    .line 459
+    .line 489
     :cond_12
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitch:Landroid/widget/LinearLayout;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mCurrentSelectTabSwitch:Landroid/widget/LinearLayout;
 
-    .line 460
+    .line 490
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabTextView:Landroid/widget/TextView;
 
     sget v0, Lcom/transsion/camera/R$string;->video_effect:I
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 461
+    .line 491
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverTabTextView:Landroid/widget/TextView;
 
     sget v0, Lcom/transsion/camera/R$string;->video_effect:I
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 462
+    .line 492
     const-string p1, "key_video_effect_style"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->setVideoSightMode(Ljava/lang/String;)V
 
-    .line 463
+    .line 493
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     sget-object p1, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;->NO_EFFECT:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;
@@ -1733,7 +1742,7 @@
 .method private synthetic lambda$initViewListenerIfNeed$12(Landroid/view/View;)V
     .registers 4
 
-    .line 470
+    .line 500
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitch:Landroid/widget/LinearLayout;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
@@ -1744,7 +1753,7 @@
 
     goto :goto_11
 
-    .line 473
+    .line 503
     :cond_9
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitch:Landroid/widget/LinearLayout;
 
@@ -1757,27 +1766,27 @@
     :goto_11
     return-void
 
-    .line 476
+    .line 506
     :cond_12
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitch:Landroid/widget/LinearLayout;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mCurrentSelectTabSwitch:Landroid/widget/LinearLayout;
 
-    .line 477
+    .line 507
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabTextView:Landroid/widget/TextView;
 
     sget v0, Lcom/transsion/camera/R$string;->video_frame:I
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 478
+    .line 508
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverTabTextView:Landroid/widget/TextView;
 
     sget v0, Lcom/transsion/camera/R$string;->video_frame:I
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 479
+    .line 509
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     sget-object v0, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;->NO_EFFECT:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;
@@ -1786,7 +1795,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;->update(Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Z)V
 
-    .line 480
+    .line 510
     const-string p1, "key_video_frame_style"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->setVideoSightMode(Ljava/lang/String;)V
@@ -1797,7 +1806,7 @@
 .method private synthetic lambda$initViewListenerIfNeed$13(Landroid/view/View;)V
     .registers 3
 
-    .line 487
+    .line 517
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
@@ -1808,7 +1817,7 @@
 
     return-void
 
-    .line 490
+    .line 520
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
@@ -1824,7 +1833,7 @@
 .method private synthetic lambda$initViewListenerIfNeed$14(Landroid/view/View;)V
     .registers 3
 
-    .line 495
+    .line 525
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
@@ -1835,7 +1844,7 @@
 
     goto :goto_1b
 
-    .line 498
+    .line 528
     :cond_9
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
@@ -1847,7 +1856,7 @@
 
     if-eqz p1, :cond_1b
 
-    .line 499
+    .line 529
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     sget-object p1, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;->EXPAND_SCROLLER_BAR:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;
@@ -1864,7 +1873,7 @@
 .method private synthetic lambda$recoverSettingValueAndUI$16()V
     .registers 1
 
-    .line 556
+    .line 586
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->recoverSettingValueAndUI()V
 
     return-void
@@ -1873,7 +1882,7 @@
 .method private synthetic lambda$startExpandScrollerAnimation$17(Landroid/animation/ValueAnimator;)V
     .registers 4
 
-    .line 584
+    .line 614
     const-string v0, "scaleWidth"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1886,7 +1895,7 @@
 
     move-result v0
 
-    .line 585
+    .line 615
     const-string v1, "alpha"
 
     invoke-virtual {p1, v1}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1899,7 +1908,7 @@
 
     move-result p1
 
-    .line 586
+    .line 616
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setScrollerParamsForAnim(FF)V
@@ -1910,7 +1919,7 @@
 .method private synthetic lambda$startExpandScrollerAnimation$18(Landroid/animation/ValueAnimator;)V
     .registers 4
 
-    .line 602
+    .line 632
     const-string v0, "scaleX"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1923,12 +1932,12 @@
 
     move-result v0
 
-    .line 603
+    .line 633
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setScaleX(F)V
 
-    .line 605
+    .line 635
     const-string v0, "fadingEdgeLength"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1941,14 +1950,14 @@
 
     move-result v0
 
-    .line 606
+    .line 636
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     int-to-float v0, v0
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setFadingLength(F)V
 
-    .line 608
+    .line 638
     const-string v0, "containerWidth"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1961,22 +1970,22 @@
 
     move-result v0
 
-    .line 609
+    .line 639
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    .line 610
+    .line 640
     iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 611
+    .line 641
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 613
+    .line 643
     const-string v0, "translationX"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -1989,7 +1998,7 @@
 
     move-result p1
 
-    .line 614
+    .line 644
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     int-to-float p1, p1
@@ -2002,17 +2011,17 @@
 .method private synthetic lambda$updateScrollerViewLayout$6(Ljava/lang/Runnable;)V
     .registers 4
 
-    .line 355
+    .line 385
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->calculateCenterPointX()V
 
-    .line 356
+    .line 386
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 357
+    .line 387
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     sget-object v1, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;->COLLAPSE_SCROLLER_BAR:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;
@@ -2025,13 +2034,13 @@
 
     const/4 v0, 0x0
 
-    .line 358
+    .line 388
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->collapseScrollerView(Z)V
 
     :cond_18
     if-eqz p1, :cond_1d
 
-    .line 361
+    .line 391
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_1d
@@ -2041,7 +2050,7 @@
 .method private synthetic lambda$updateTabSwitchLayout$7(Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
     .registers 3
 
-    .line 389
+    .line 419
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -2054,7 +2063,7 @@
 
     iput p2, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 390
+    .line 420
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -2065,7 +2074,7 @@
 .method private synthetic lambda$updateTabSwitchLayout$8(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 395
+    .line 425
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -2086,21 +2095,21 @@
 .method private resetScrollerRulerView()V
     .registers 4
 
-    .line 1272
+    .line 1302
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setScrollerStatus(Z)V
 
-    .line 1273
+    .line 1303
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1274
+    .line 1304
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
@@ -2115,31 +2124,31 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setFadingLength(F)V
 
-    .line 1275
+    .line 1305
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1277
+    .line 1307
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 1278
+    .line 1308
     iget v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerViewWidth:I
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 1279
+    .line 1309
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1281
+    .line 1311
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->resetScrollerParams()V
@@ -2152,15 +2161,15 @@
 
     move-object/from16 v0, p0
 
-    .line 637
+    .line 667
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 639
+    .line 669
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mCurrentSelectTabSwitch:Landroid/widget/LinearLayout;
 
-    .line 640
+    .line 670
     sget v3, Lcom/transsion/camera/R$id;->tab_text:I
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -2171,23 +2180,23 @@
 
     const/4 v4, 0x2
 
-    .line 642
+    .line 672
     new-array v5, v4, [I
 
-    .line 643
+    .line 673
     invoke-virtual {v3, v5}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 644
+    .line 674
     new-array v6, v4, [I
 
-    .line 645
+    .line 675
     iget-object v7, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabTextView:Landroid/widget/TextView;
 
     invoke-virtual {v7, v6}, Landroid/view/View;->getLocationOnScreen([I)V
 
     const/4 v7, 0x0
 
-    .line 647
+    .line 677
     aget v5, v5, v7
 
     aget v6, v6, v7
@@ -2196,7 +2205,7 @@
 
     int-to-float v5, v5
 
-    .line 648
+    .line 678
     iget-object v6, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     new-array v8, v4, [F
@@ -2217,17 +2226,17 @@
 
     const-wide/16 v8, 0x15e
 
-    .line 650
+    .line 680
     invoke-virtual {v6, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 651
+    .line 681
     new-instance v8, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$4;
 
     invoke-direct {v8, v0, v3}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$4;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;Landroid/widget/TextView;)V
 
     invoke-virtual {v6, v8}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 673
+    .line 703
     iget-object v8, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     sget v9, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->collapsed_tab_text:I
@@ -2238,14 +2247,14 @@
 
     check-cast v8, Landroid/widget/TextView;
 
-    .line 674
+    .line 704
     new-instance v9, Landroid/animation/ArgbEvaluator;
 
     invoke-direct {v9}, Landroid/animation/ArgbEvaluator;-><init>()V
 
     iget v10, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSelectedColor:I
 
-    .line 675
+    .line 705
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -2260,7 +2269,7 @@
 
     move-result-object v10
 
-    .line 674
+    .line 704
     const-string v11, "textColor"
 
     invoke-static {v8, v11, v9, v10}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;
@@ -2269,10 +2278,10 @@
 
     const-wide/16 v9, 0x64
 
-    .line 676
+    .line 706
     invoke-virtual {v8, v9, v10}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 678
+    .line 708
     iget-object v9, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     sget v10, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->expand_arrow:I
@@ -2281,7 +2290,7 @@
 
     move-result-object v9
 
-    .line 679
+    .line 709
     new-array v10, v4, [F
 
     fill-array-data v10, :array_118
@@ -2292,17 +2301,17 @@
 
     move-result-object v9
 
-    .line 681
+    .line 711
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v9, v10}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     const-wide/16 v12, 0xc8
 
-    .line 682
+    .line 712
     invoke-virtual {v9, v12, v13}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 684
+    .line 714
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     new-array v14, v4, [F
@@ -2313,22 +2322,22 @@
 
     move-result-object v10
 
-    .line 685
+    .line 715
     invoke-virtual {v10, v12, v13}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 686
+    .line 716
     iget-object v14, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v10, v14}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 687
+    .line 717
     new-instance v14, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$5;
 
     invoke-direct {v14, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$5;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v10, v14}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 701
+    .line 731
     iget-object v14, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
     new-array v15, v4, [F
@@ -2339,22 +2348,22 @@
 
     move-result-object v14
 
-    .line 702
+    .line 732
     invoke-virtual {v14, v12, v13}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 703
+    .line 733
     iget-object v15, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v14, v15}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 704
+    .line 734
     new-instance v15, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$6;
 
     invoke-direct {v15, v0, v3, v2}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$6;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;Landroid/widget/TextView;Landroid/widget/LinearLayout;)V
 
     invoke-virtual {v14, v15}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 721
+    .line 751
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     new-array v3, v4, [F
@@ -2371,25 +2380,25 @@
 
     const-wide/16 v5, 0x96
 
-    .line 722
+    .line 752
     invoke-virtual {v2, v5, v6}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 723
+    .line 753
     invoke-virtual {v2, v12, v13}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 724
+    .line 754
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v2, v5}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 725
+    .line 755
     new-instance v5, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$7;
 
     invoke-direct {v5, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$7;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v2, v5}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 734
+    .line 764
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
     new-array v6, v4, [F
@@ -2400,17 +2409,17 @@
 
     move-result-object v5
 
-    .line 735
+    .line 765
     iget-object v6, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v5, v6}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 736
+    .line 766
     invoke-virtual {v5, v12, v13}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     const/4 v6, 0x7
 
-    .line 738
+    .line 768
     new-array v6, v6, [Landroid/animation/Animator;
 
     aput-object v10, v6, v7
@@ -2437,14 +2446,14 @@
 
     invoke-virtual {v1, v6}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 741
+    .line 771
     new-instance v2, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$8;
 
     invoke-direct {v2, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$8;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 759
+    .line 789
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -2483,12 +2492,12 @@
 .method private startCollapsedToNoEffectAnimation()V
     .registers 9
 
-    .line 768
+    .line 798
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 770
+    .line 800
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
     const/4 v2, 0x2
@@ -2505,15 +2514,15 @@
 
     const-wide/16 v5, 0xc8
 
-    .line 771
+    .line 801
     invoke-virtual {v1, v5, v6}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 772
+    .line 802
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v1, v3}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 774
+    .line 804
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mFilterTopUI:Landroid/view/View;
 
     new-array v7, v2, [F
@@ -2524,22 +2533,22 @@
 
     move-result-object v3
 
-    .line 775
+    .line 805
     invoke-virtual {v3, v5, v6}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 776
+    .line 806
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v3, v4}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 777
+    .line 807
     new-instance v4, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$9;
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$9;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v3, v4}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 793
+    .line 823
     new-array p0, v2, [Landroid/animation/Animator;
 
     const/4 v2, 0x0
@@ -2552,7 +2561,7 @@
 
     invoke-virtual {v0, p0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 795
+    .line 825
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -2575,7 +2584,7 @@
 .method private startExpandScrollerAnimation()V
     .registers 13
 
-    .line 566
+    .line 596
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->scroller_scale_width:I
@@ -2584,7 +2593,7 @@
 
     move-result v0
 
-    .line 567
+    .line 597
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v2, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->scroller_scale_width_animator:I
@@ -2593,7 +2602,7 @@
 
     move-result v1
 
-    .line 569
+    .line 599
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->collapse_scroller_width:I
@@ -2602,7 +2611,7 @@
 
     move-result v2
 
-    .line 571
+    .line 601
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v3}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -2615,14 +2624,14 @@
 
     move-result v3
 
-    .line 572
+    .line 602
     div-int/lit8 v4, v2, 0x2
 
     sub-int/2addr v4, v1
 
     const/4 v5, 0x2
 
-    .line 574
+    .line 604
     new-array v6, v5, [F
 
     fill-array-data v6, :array_c4
@@ -2633,7 +2642,7 @@
 
     move-result-object v6
 
-    .line 575
+    .line 605
     new-array v7, v5, [F
 
     fill-array-data v7, :array_cc
@@ -2644,7 +2653,7 @@
 
     move-result-object v7
 
-    .line 576
+    .line 606
     iget v8, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerTranslationX:I
 
     const/4 v9, 0x0
@@ -2659,7 +2668,7 @@
 
     move-result-object v8
 
-    .line 577
+    .line 607
     iget v10, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerViewWidth:I
 
     filled-new-array {v2, v10}, [I
@@ -2672,7 +2681,7 @@
 
     move-result-object v2
 
-    .line 578
+    .line 608
     const-string v10, "fadingEdgeLength"
 
     filled-new-array {v4, v3}, [I
@@ -2687,7 +2696,7 @@
 
     int-to-float v0, v0
 
-    .line 580
+    .line 610
     new-array v4, v5, [F
 
     aput v1, v4, v9
@@ -2702,7 +2711,7 @@
 
     move-result-object v0
 
-    .line 581
+    .line 611
     filled-new-array {v0, v6}, [Landroid/animation/PropertyValuesHolder;
 
     move-result-object v0
@@ -2713,24 +2722,24 @@
 
     const-wide/16 v10, 0x12c
 
-    .line 582
+    .line 612
     invoke-virtual {v0, v10, v11}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 583
+    .line 613
     new-instance v4, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda11;
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda11;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v0, v4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 588
+    .line 618
     new-instance v4, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$2;
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$2;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v0, v4}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 595
+    .line 625
     filled-new-array {v8, v7, v2, v3}, [Landroid/animation/PropertyValuesHolder;
 
     move-result-object v2
@@ -2741,36 +2750,36 @@
 
     const-wide/16 v3, 0x1f4
 
-    .line 598
+    .line 628
     invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 599
+    .line 629
     new-instance v3, Landroid/view/animation/AccelerateDecelerateInterpolator;
 
     invoke-direct {v3}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 601
+    .line 631
     new-instance v3, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda12;
 
     invoke-direct {v3, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda12;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 616
+    .line 646
     new-instance v3, Landroid/animation/AnimatorSet;
 
     invoke-direct {v3}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 617
+    .line 647
     new-instance v4, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$3;
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$3;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v3, v4}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 632
+    .line 662
     new-array p0, v5, [Landroid/animation/Animator;
 
     aput-object v2, p0, v9
@@ -2779,7 +2788,7 @@
 
     invoke-virtual {v3, p0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 633
+    .line 663
     invoke-virtual {v3}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -2800,12 +2809,12 @@
 .method private startExpandToCollapseAnimation()V
     .registers 2
 
-    .line 803
+    .line 833
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->doExpendToCollapsedAnimation()V
 
     const/4 v0, 0x1
 
-    .line 804
+    .line 834
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->collapseScrollerView(Z)V
 
     return-void
@@ -2816,31 +2825,31 @@
 
     move-object/from16 v0, p0
 
-    .line 1035
+    .line 1065
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 1037
+    .line 1067
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mCurrentSelectTabSwitch:Landroid/widget/LinearLayout;
 
     const/4 v3, 0x2
 
-    .line 1038
+    .line 1068
     new-array v4, v3, [I
 
-    .line 1039
+    .line 1069
     invoke-virtual {v2, v4}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 1041
+    .line 1071
     new-array v4, v3, [I
 
-    .line 1042
+    .line 1072
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabTextView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v4}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 1044
+    .line 1074
     sget v5, Lcom/transsion/camera/R$id;->tab_text:I
 
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -2849,15 +2858,15 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 1045
+    .line 1075
     new-array v5, v3, [I
 
-    .line 1046
+    .line 1076
     invoke-virtual {v2, v5}, Landroid/view/View;->getLocationOnScreen([I)V
 
     const/4 v6, 0x0
 
-    .line 1048
+    .line 1078
     aget v5, v5, v6
 
     aget v4, v4, v6
@@ -2866,7 +2875,7 @@
 
     int-to-float v4, v5
 
-    .line 1050
+    .line 1080
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     new-array v7, v3, [F
@@ -2887,17 +2896,17 @@
 
     const-wide/16 v9, 0x15e
 
-    .line 1052
+    .line 1082
     invoke-virtual {v4, v9, v10}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1053
+    .line 1083
     new-instance v5, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$16;
 
     invoke-direct {v5, v0, v2}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$16;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;Landroid/widget/TextView;)V
 
     invoke-virtual {v4, v5}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1073
+    .line 1103
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     sget v7, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->collapsed_tab_text:I
@@ -2908,14 +2917,14 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 1074
+    .line 1104
     new-instance v7, Landroid/animation/ArgbEvaluator;
 
     invoke-direct {v7}, Landroid/animation/ArgbEvaluator;-><init>()V
 
     iget v9, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mUnSelectedColor:I
 
-    .line 1075
+    .line 1105
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
@@ -2930,14 +2939,14 @@
 
     move-result-object v9
 
-    .line 1074
+    .line 1104
     const-string v10, "textColor"
 
     invoke-static {v5, v10, v7, v9}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
-    .line 1077
+    .line 1107
     iget-object v7, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mFilterTopUI:Landroid/view/View;
 
     new-array v9, v3, [F
@@ -2950,17 +2959,17 @@
 
     move-result-object v7
 
-    .line 1078
+    .line 1108
     iget-object v9, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v7, v9}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     const-wide/16 v11, 0xc8
 
-    .line 1079
+    .line 1109
     invoke-virtual {v7, v11, v12}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1081
+    .line 1111
     iget-object v9, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     new-array v13, v3, [F
@@ -2971,15 +2980,15 @@
 
     move-result-object v9
 
-    .line 1082
+    .line 1112
     iget-object v13, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v9, v13}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1083
+    .line 1113
     invoke-virtual {v9, v11, v12}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1085
+    .line 1115
     iget-object v13, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
     new-array v14, v3, [F
@@ -2992,20 +3001,20 @@
 
     const-wide/16 v14, 0x96
 
-    .line 1086
+    .line 1116
     invoke-virtual {v13, v14, v15}, Landroid/animation/Animator;->setStartDelay(J)V
 
     move/from16 v16, v6
 
-    .line 1087
+    .line 1117
     iget-object v6, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v13, v6}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1088
+    .line 1118
     invoke-virtual {v13, v11, v12}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1090
+    .line 1120
     iget-object v6, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     move/from16 v17, v8
@@ -3018,18 +3027,18 @@
 
     move-result-object v6
 
-    .line 1091
+    .line 1121
     invoke-virtual {v6, v11, v12}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1092
+    .line 1122
     invoke-virtual {v6, v14, v15}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 1093
+    .line 1123
     iget-object v8, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v6, v8}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1095
+    .line 1125
     iget-object v8, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     sget v14, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->expand_arrow:I
@@ -3038,7 +3047,7 @@
 
     move-result-object v8
 
-    .line 1096
+    .line 1126
     new-array v14, v3, [F
 
     fill-array-data v14, :array_126
@@ -3047,17 +3056,17 @@
 
     move-result-object v8
 
-    .line 1097
+    .line 1127
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v8, v10}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1098
+    .line 1128
     invoke-virtual {v8, v11, v12}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     const/4 v10, 0x7
 
-    .line 1100
+    .line 1130
     new-array v10, v10, [Landroid/animation/Animator;
 
     aput-object v7, v10, v16
@@ -3084,14 +3093,14 @@
 
     invoke-virtual {v1, v10}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1105
+    .line 1135
     new-instance v3, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$17;
 
     invoke-direct {v3, v0, v2}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$17;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;Landroid/widget/TextView;)V
 
     invoke-virtual {v1, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1125
+    .line 1155
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -3132,12 +3141,12 @@
 .method private startNoEffectToCollapseAnimation()V
     .registers 7
 
-    .line 1136
+    .line 1166
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 1138
+    .line 1168
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
     const/4 v2, 0x2
@@ -3152,7 +3161,7 @@
 
     move-result-object v1
 
-    .line 1139
+    .line 1169
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mFilterTopUI:Landroid/view/View;
 
     new-array v5, v2, [F
@@ -3165,22 +3174,22 @@
 
     const-wide/16 v4, 0xc8
 
-    .line 1141
+    .line 1171
     invoke-virtual {v0, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1142
+    .line 1172
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v4}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1143
+    .line 1173
     new-instance v4, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$18;
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$18;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v0, v4}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1162
+    .line 1192
     new-array p0, v2, [Landroid/animation/Animator;
 
     const/4 v2, 0x0
@@ -3193,7 +3202,7 @@
 
     invoke-virtual {v0, p0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1164
+    .line 1194
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -3216,15 +3225,15 @@
 .method private startNoEffectToExpandAnimation()V
     .registers 16
 
-    .line 1173
+    .line 1203
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 1175
+    .line 1205
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mCurrentSelectTabSwitch:Landroid/widget/LinearLayout;
 
-    .line 1176
+    .line 1206
     sget v2, Lcom/transsion/camera/R$id;->tab_text:I
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3235,23 +3244,23 @@
 
     const/4 v3, 0x2
 
-    .line 1178
+    .line 1208
     new-array v4, v3, [I
 
-    .line 1179
+    .line 1209
     invoke-virtual {v2, v4}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 1180
+    .line 1210
     new-array v5, v3, [I
 
-    .line 1181
+    .line 1211
     iget-object v6, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabTextView:Landroid/widget/TextView;
 
     invoke-virtual {v6, v5}, Landroid/view/View;->getLocationOnScreen([I)V
 
     const/4 v6, 0x0
 
-    .line 1182
+    .line 1212
     aget v4, v4, v6
 
     aget v5, v5, v6
@@ -3260,7 +3269,7 @@
 
     int-to-float v4, v4
 
-    .line 1184
+    .line 1214
     iget-object v5, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     new-array v7, v3, [F
@@ -3281,17 +3290,17 @@
 
     const-wide/16 v7, 0x15e
 
-    .line 1187
+    .line 1217
     invoke-virtual {v5, v7, v8}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1188
+    .line 1218
     new-instance v7, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$19;
 
     invoke-direct {v7, p0, v2, v1}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$19;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;Landroid/widget/TextView;Landroid/widget/LinearLayout;)V
 
     invoke-virtual {v5, v7}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1213
+    .line 1243
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     sget v2, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->expand_arrow:I
@@ -3300,7 +3309,7 @@
 
     move-result-object v1
 
-    .line 1214
+    .line 1244
     new-array v2, v3, [F
 
     fill-array-data v2, :array_100
@@ -3313,15 +3322,15 @@
 
     const-wide/16 v8, 0xc8
 
-    .line 1215
+    .line 1245
     invoke-virtual {v1, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1216
+    .line 1246
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v1, v2}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1218
+    .line 1248
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     sget v10, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->collapsed_tab_text:I
@@ -3332,14 +3341,14 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 1219
+    .line 1249
     new-instance v10, Landroid/animation/ArgbEvaluator;
 
     invoke-direct {v10}, Landroid/animation/ArgbEvaluator;-><init>()V
 
     iget v11, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSelectedColor:I
 
-    .line 1220
+    .line 1250
     invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
@@ -3354,7 +3363,7 @@
 
     move-result-object v11
 
-    .line 1219
+    .line 1249
     const-string v12, "textColor"
 
     invoke-static {v2, v12, v10, v11}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;
@@ -3363,10 +3372,10 @@
 
     const-wide/16 v10, 0x64
 
-    .line 1221
+    .line 1251
     invoke-virtual {v2, v10, v11}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1223
+    .line 1253
     iget-object v10, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mFilterTopUI:Landroid/view/View;
 
     new-array v11, v3, [F
@@ -3379,18 +3388,18 @@
 
     const-wide/16 v11, 0x96
 
-    .line 1224
+    .line 1254
     invoke-virtual {v10, v11, v12}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 1225
+    .line 1255
     invoke-virtual {v10, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1226
+    .line 1256
     iget-object v13, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v10, v13}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1228
+    .line 1258
     iget-object v13, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     new-array v14, v3, [F
@@ -3401,18 +3410,18 @@
 
     move-result-object v13
 
-    .line 1229
+    .line 1259
     invoke-virtual {v13, v11, v12}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 1230
+    .line 1260
     invoke-virtual {v13, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1231
+    .line 1261
     iget-object v11, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mShowElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v13, v11}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1233
+    .line 1263
     iget-object v11, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
     new-array v12, v3, [F
@@ -3423,15 +3432,15 @@
 
     move-result-object v11
 
-    .line 1234
+    .line 1264
     invoke-virtual {v11, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1235
+    .line 1265
     iget-object v12, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v11, v12}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1237
+    .line 1267
     iget-object v12, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     new-array v14, v3, [F
@@ -3442,17 +3451,17 @@
 
     move-result-object v7
 
-    .line 1238
+    .line 1268
     invoke-virtual {v7, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1239
+    .line 1269
     iget-object v8, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHideElementAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v7, v8}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     const/4 v8, 0x7
 
-    .line 1241
+    .line 1271
     new-array v8, v8, [Landroid/animation/Animator;
 
     aput-object v10, v8, v6
@@ -3479,14 +3488,14 @@
 
     invoke-virtual {v0, v8}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1245
+    .line 1275
     new-instance v1, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$20;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$20;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1268
+    .line 1298
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -3527,35 +3536,35 @@
 .method private updateMenuComponentVisible()V
     .registers 9
 
-    .line 338
+    .line 368
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     invoke-virtual {v0}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;->needShowTabBar()Z
 
     move-result v0
 
-    .line 339
+    .line 369
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     invoke-virtual {v1}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;->needShowCollapsedTab()Z
 
     move-result v1
 
-    .line 340
+    .line 370
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     invoke-virtual {v2}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;->needShowScrollerBackground()Z
 
     move-result v2
 
-    .line 341
+    .line 371
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     invoke-virtual {v3}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;->needShowScrollerBar()Z
 
     move-result v3
 
-    .line 343
+    .line 373
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
     const/4 v5, 0x4
@@ -3574,7 +3583,7 @@
     :goto_21
     invoke-virtual {v4, v7}, Landroid/view/View;->setVisibility(I)V
 
-    .line 344
+    .line 374
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     if-eqz v0, :cond_2a
@@ -3589,7 +3598,7 @@
     :goto_2b
     invoke-virtual {v4, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 345
+    .line 375
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     if-eqz v1, :cond_34
@@ -3604,7 +3613,7 @@
     :goto_35
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 346
+    .line 376
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mFilterTopUI:Landroid/view/View;
 
     if-eqz v3, :cond_3e
@@ -3619,7 +3628,7 @@
     :goto_3f
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 347
+    .line 377
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
     if-eqz v2, :cond_47
@@ -3635,7 +3644,7 @@
 .method private updateTabSwitchLayout(ZLjava/lang/Runnable;)V
     .registers 9
 
-    .line 373
+    .line 403
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -3644,14 +3653,14 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 375
+    .line 405
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v1}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
-    .line 376
+    .line 406
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     sget-object v3, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;->NO_EFFECT:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;
@@ -3662,10 +3671,10 @@
 
     if-eqz v2, :cond_24
 
-    .line 377
+    .line 407
     sget v2, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->tab_internal_margin:I
 
-    .line 378
+    .line 408
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->tab_container_left_margin:I
@@ -3679,11 +3688,11 @@
 
     goto :goto_2f
 
-    .line 381
+    .line 411
     :cond_24
     sget v2, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->tab_internal_margin_with_small_scroller_bar:I
 
-    .line 382
+    .line 412
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->tab_container_left_margin_with_small_scroller_bar:I
@@ -3697,7 +3706,7 @@
     :goto_2f
     if-eqz p1, :cond_81
 
-    .line 387
+    .line 417
     iget p1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     filled-new-array {p1, v3}, [I
@@ -3708,14 +3717,14 @@
 
     move-result-object p1
 
-    .line 388
+    .line 418
     new-instance p2, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda8;
 
     invoke-direct {p2, p0, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda8;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;Landroid/widget/FrameLayout$LayoutParams;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 392
+    .line 422
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->getCurrentTabInternalMargin()I
@@ -3724,7 +3733,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
-    .line 393
+    .line 423
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v1
@@ -3733,31 +3742,31 @@
 
     move-result-object p2
 
-    .line 392
+    .line 422
     invoke-static {p2}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
 
     move-result-object p2
 
-    .line 394
+    .line 424
     new-instance v1, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda9;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda9;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {p2, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 397
+    .line 427
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
     const-wide/16 v4, 0xc8
 
-    .line 398
+    .line 428
     invoke-virtual {v1, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
     const/4 v4, 0x2
 
-    .line 399
+    .line 429
     new-array v4, v4, [Landroid/animation/Animator;
 
     const/4 v5, 0x0
@@ -3770,33 +3779,33 @@
 
     invoke-virtual {v1, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 400
+    .line 430
     new-instance p1, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$1;
 
     invoke-direct {p1, p0, v2, v0, v3}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$1;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;ILandroid/widget/FrameLayout$LayoutParams;I)V
 
     invoke-virtual {v1, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 409
+    .line 439
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
 
-    .line 411
+    .line 441
     :cond_81
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {p1, v2}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->updateTabSwitchLeftMarginByResId(I)V
 
-    .line 412
+    .line 442
     iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 413
+    .line 443
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 414
+    .line 444
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
     new-instance p1, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda10;
@@ -3813,14 +3822,14 @@
 .method public adjustControlView(IIIII)V
     .registers 12
 
-    .line 309
+    .line 339
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mControlViewContent:Landroid/view/ViewGroup;
 
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p2
 
-    .line 310
+    .line 340
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     const/4 v1, 0x0
@@ -3841,10 +3850,10 @@
 .method public init()V
     .registers 6
 
-    .line 106
+    .line 110
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->init()V
 
-    .line 107
+    .line 111
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     invoke-virtual {v0}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;->getStateTransitionHandler()Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler;
@@ -3863,7 +3872,7 @@
 
     invoke-direct {v3, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
-    .line 108
+    .line 112
     invoke-virtual {v0, v1, v2, v3}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;->add(Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TransitionAction;)Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;
 
     move-result-object v0
@@ -3874,7 +3883,7 @@
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda3;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
-    .line 110
+    .line 114
     invoke-virtual {v0, v1, v3, v4}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;->add(Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TransitionAction;)Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;
 
     move-result-object v0
@@ -3883,7 +3892,7 @@
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda4;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
-    .line 112
+    .line 116
     invoke-virtual {v0, v2, v1, v4}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;->add(Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TransitionAction;)Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;
 
     move-result-object v0
@@ -3892,7 +3901,7 @@
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda5;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
-    .line 114
+    .line 118
     invoke-virtual {v0, v2, v3, v4}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;->add(Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TransitionAction;)Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;
 
     move-result-object v0
@@ -3901,7 +3910,7 @@
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda6;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
-    .line 116
+    .line 120
     invoke-virtual {v0, v3, v1, v4}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;->add(Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TransitionAction;)Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;
 
     move-result-object v0
@@ -3910,12 +3919,12 @@
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda7;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
-    .line 118
+    .line 122
     invoke-virtual {v0, v3, v2, v1}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;->add(Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TransitionAction;)Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;
 
     move-result-object p0
 
-    .line 120
+    .line 124
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$StateTransitionHandler$TransitionBuilder;->register()V
 
     return-void
@@ -3924,7 +3933,7 @@
 .method protected initMainSwitchListener()V
     .registers 4
 
-    .line 505
+    .line 535
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     const v1, 0x3f4ccccd    # 0.8f
@@ -3933,7 +3942,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
-    .line 506
+    .line 536
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda19;
@@ -3948,7 +3957,7 @@
 .method protected initVideoEffectView(Landroid/view/View;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/view/View;ILcom/transsion/camera/app/common/IAppUI;)V
     .registers 16
 
-    .line 204
+    .line 234
     sget p5, Lcom/transsion/camera/R$layout;->tab_item_layout_ui5:I
 
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabViewSwitchContainer:Landroid/widget/LinearLayout;
@@ -3961,12 +3970,12 @@
 
     check-cast p5, Landroid/widget/LinearLayout;
 
-    .line 205
+    .line 235
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabViewSwitchContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, p5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 207
+    .line 237
     sget v0, Lcom/transsion/camera/R$id;->tab_switch_item:I
 
     invoke-virtual {p5, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3977,7 +3986,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitch:Landroid/widget/LinearLayout;
 
-    .line 208
+    .line 238
     sget v0, Lcom/transsion/camera/R$id;->tab_rotate_layout:I
 
     invoke-virtual {p5, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3988,7 +3997,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    .line 209
+    .line 239
     sget v0, Lcom/transsion/camera/R$id;->tab_indicator:I
 
     invoke-virtual {p5, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3997,7 +4006,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitchDot:Landroid/view/View;
 
-    .line 211
+    .line 241
     sget v0, Lcom/transsion/camera/R$id;->tab_text:I
 
     invoke-virtual {p5, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4008,12 +4017,12 @@
 
     iput-object p5, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitchText:Landroid/widget/TextView;
 
-    .line 212
+    .line 242
     sget v0, Lcom/transsion/camera/R$string;->video_effect:I
 
     invoke-virtual {p5, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 214
+    .line 244
     iget-object p5, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitchText:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -4032,7 +4041,7 @@
 
     invoke-virtual {p5, v0, v1, v1, p1}, Landroid/widget/TextView;->setShadowLayer(FFFI)V
 
-    .line 215
+    .line 245
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoEffectUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/IVssUI;
 
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVssSettingMap:Ljava/util/Map;
@@ -4059,35 +4068,35 @@
 
     invoke-interface/range {v2 .. v8}, Lcom/transsion/camera/ui/setting/videosightshock/ui/IVssUI;->initView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/setting/ISetting;Landroid/view/View;ILcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 217
+    .line 247
     iget p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
 
     const/4 p2, 0x1
 
     if-ne p1, p2, :cond_74
 
-    .line 218
+    .line 248
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitchDot:Landroid/view/View;
 
     const/16 p3, 0x8
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 219
+    .line 249
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitchText:Landroid/widget/TextView;
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 221
+    .line 251
     :cond_74
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSelected:Z
 
     if-nez p1, :cond_7d
 
-    .line 222
+    .line 252
     invoke-virtual {p0, p5}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->setVideoSightMode(Ljava/lang/String;)V
 
-    .line 223
+    .line 253
     iput-boolean p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSelected:Z
 
     :cond_7d
@@ -4097,7 +4106,7 @@
 .method protected initVideoFilterView(Landroid/view/View;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/view/View;ILcom/transsion/camera/app/common/IAppUI;)V
     .registers 18
 
-    .line 176
+    .line 206
     sget v0, Lcom/transsion/camera/R$layout;->tab_item_layout_ui5:I
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabViewSwitchContainer:Landroid/widget/LinearLayout;
@@ -4110,12 +4119,12 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 177
+    .line 207
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabViewSwitchContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 179
+    .line 209
     sget v1, Lcom/transsion/camera/R$id;->tab_switch_item:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4126,7 +4135,7 @@
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitch:Landroid/widget/LinearLayout;
 
-    .line 180
+    .line 210
     sget v1, Lcom/transsion/camera/R$id;->tab_rotate_layout:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4137,7 +4146,7 @@
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    .line 181
+    .line 211
     sget v1, Lcom/transsion/camera/R$id;->tab_indicator:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4146,7 +4155,7 @@
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitchDot:Landroid/view/View;
 
-    .line 183
+    .line 213
     sget v1, Lcom/transsion/camera/R$id;->tab_text:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4157,12 +4166,12 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitchText:Landroid/widget/TextView;
 
-    .line 184
+    .line 214
     sget v1, Lcom/transsion/camera/R$string;->video_filter:I
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 185
+    .line 215
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitchText:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -4181,7 +4190,7 @@
 
     invoke-virtual {v0, v1, v2, v2, p1}, Landroid/widget/TextView;->setShadowLayer(FFFI)V
 
-    .line 187
+    .line 217
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVssSettingMap:Ljava/util/Map;
@@ -4210,7 +4219,7 @@
 
     invoke-virtual/range {v3 .. v10}, Lcom/transsion/camera/ui/setting/videosightshock/ui/AbstractVssUI;->initView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/setting/ISetting;Landroid/view/View;ILcom/transsion/camera/app/common/IAppUI;Landroid/view/ViewGroup;)V
 
-    .line 188
+    .line 218
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;->getScrollerViewContainer()Landroid/widget/RelativeLayout;
@@ -4219,38 +4228,38 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerViewContainer:Landroid/widget/RelativeLayout;
 
-    .line 190
+    .line 220
     iget p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
 
     const/4 p2, 0x1
 
     if-ne p1, p2, :cond_7f
 
-    .line 191
+    .line 221
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitchDot:Landroid/view/View;
 
     const/16 p3, 0x8
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 192
+    .line 222
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitchText:Landroid/widget/TextView;
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 194
+    .line 224
     :cond_7f
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSelected:Z
 
     if-nez p1, :cond_88
 
-    .line 195
+    .line 225
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->setVideoSightMode(Ljava/lang/String;)V
 
-    .line 196
+    .line 226
     iput-boolean p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSelected:Z
 
-    .line 199
+    .line 229
     :cond_88
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitch:Landroid/widget/LinearLayout;
 
@@ -4262,7 +4271,7 @@
 .method protected initVideoFrameView(Landroid/view/View;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/view/View;ILcom/transsion/camera/app/common/IAppUI;)V
     .registers 14
 
-    .line 229
+    .line 259
     sget p5, Lcom/transsion/camera/R$layout;->tab_item_layout_ui5:I
 
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabViewSwitchContainer:Landroid/widget/LinearLayout;
@@ -4275,12 +4284,12 @@
 
     check-cast p5, Landroid/widget/LinearLayout;
 
-    .line 230
+    .line 260
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabViewSwitchContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, p5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 232
+    .line 262
     sget v0, Lcom/transsion/camera/R$id;->tab_switch_item:I
 
     invoke-virtual {p5, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4291,7 +4300,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitch:Landroid/widget/LinearLayout;
 
-    .line 233
+    .line 263
     sget v0, Lcom/transsion/camera/R$id;->tab_rotate_layout:I
 
     invoke-virtual {p5, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4302,7 +4311,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    .line 235
+    .line 265
     sget v0, Lcom/transsion/camera/R$id;->tab_text:I
 
     invoke-virtual {p5, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4313,7 +4322,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitchText:Landroid/widget/TextView;
 
-    .line 236
+    .line 266
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -4330,14 +4339,14 @@
 
     invoke-virtual {v0, v1, v2, v2, p1}, Landroid/widget/TextView;->setShadowLayer(FFFI)V
 
-    .line 237
+    .line 267
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitchText:Landroid/widget/TextView;
 
     sget v0, Lcom/transsion/camera/R$string;->video_frame:I
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 239
+    .line 269
     sget p1, Lcom/transsion/camera/R$id;->tab_indicator:I
 
     invoke-virtual {p5, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4346,7 +4355,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitchDot:Landroid/view/View;
 
-    .line 240
+    .line 270
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFrameUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFrameUI;
 
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVssSettingMap:Ljava/util/Map;
@@ -4373,35 +4382,35 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/transsion/camera/ui/setting/videosightshock/ui/AbstractVssUI;->initView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/setting/ISetting;Landroid/view/View;ILcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 242
+    .line 272
     iget p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
 
     const/4 p2, 0x1
 
     if-ne p1, p2, :cond_74
 
-    .line 243
+    .line 273
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitchDot:Landroid/view/View;
 
     const/16 p3, 0x8
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 244
+    .line 274
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitchText:Landroid/widget/TextView;
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 246
+    .line 276
     :cond_74
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSelected:Z
 
     if-nez p1, :cond_7d
 
-    .line 247
+    .line 277
     invoke-virtual {p0, p5}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->setVideoSightMode(Ljava/lang/String;)V
 
-    .line 248
+    .line 278
     iput-boolean p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSelected:Z
 
     :cond_7d
@@ -4411,19 +4420,96 @@
 .method public initView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/view/View;ILcom/transsion/camera/app/common/IAppUI;)V
     .registers 15
 
-    .line 125
+    .line 134
+    iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mViewInitialized:Z
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_3e
+
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mControlView:Landroid/widget/FrameLayout;
+
+    if-eqz v0, :cond_3e
+
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mInflatedRootView:Landroid/view/View;
+
+    if-eqz v0, :cond_3e
+
+    .line 136
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    .line 137
+    instance-of p3, p1, Landroid/view/ViewGroup;
+
+    if-eqz p3, :cond_1e
+
+    if-eq p1, p2, :cond_1e
+
+    .line 138
+    check-cast p1, Landroid/view/ViewGroup;
+
+    iget-object p3, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mInflatedRootView:Landroid/view/View;
+
+    invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 140
+    :cond_1e
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mInflatedRootView:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    if-nez p1, :cond_2b
+
+    .line 141
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mInflatedRootView:Landroid/view/View;
+
+    invoke-virtual {p2, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 144
+    :cond_2b
     iput-object p5, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 126
-    sget v0, Lcom/transsion/camera/R$layout;->video_sight_shock_control_panel_layout_ui5:I
+    .line 145
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mControlView:Landroid/widget/FrameLayout;
 
-    const/4 v1, 0x1
+    invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
+
+    .line 146
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mControlView:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 147
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->updateMenuComponentVisible()V
+
+    return-void
+
+    .line 151
+    :cond_3e
+    iput-object p5, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+
+    .line 152
+    sget v0, Lcom/transsion/camera/R$layout;->video_sight_shock_control_panel_layout_ui5:I
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v3
 
-    .line 127
+    .line 153
+    iput-object v3, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mInflatedRootView:Landroid/view/View;
+
+    .line 154
+    invoke-virtual {p2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 155
     sget p2, Lcom/transsion/camera/R$id;->tab_control_view_container:I
 
     invoke-virtual {v3, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4434,7 +4520,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mControlViewContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    .line 128
+    .line 156
     sget p2, Lcom/transsion/camera/R$id;->video_sight_shock_control:I
 
     invoke-virtual {v3, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4445,12 +4531,10 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mControlView:Landroid/widget/FrameLayout;
 
-    const/4 v0, 0x0
+    .line 157
+    invoke-virtual {p2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 129
-    invoke-virtual {p2, v0}, Landroid/view/View;->setVisibility(I)V
-
-    .line 130
+    .line 158
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mControlViewContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -4459,7 +4543,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
-    .line 132
+    .line 160
     sget p2, Lcom/transsion/camera/R$id;->tab_control_view_container:I
 
     invoke-virtual {v3, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4470,14 +4554,14 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
-    .line 133
+    .line 161
     invoke-virtual {p2}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->getTabViewSwitchContainer()Landroid/widget/LinearLayout;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabViewSwitchContainer:Landroid/widget/LinearLayout;
 
-    .line 134
+    .line 162
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->getTopUI()Landroid/widget/FrameLayout;
@@ -4486,7 +4570,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTopUI:Landroid/widget/FrameLayout;
 
-    .line 135
+    .line 163
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->getMenuContainer()Landroid/widget/LinearLayout;
@@ -4495,14 +4579,14 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mControlViewContent:Landroid/view/ViewGroup;
 
-    .line 136
+    .line 164
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->getEffectListContainer()Landroid/widget/FrameLayout;
 
     move-result-object v5
 
-    .line 137
+    .line 165
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->getTabMenuContainer()Landroid/view/ViewGroup;
@@ -4511,7 +4595,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
-    .line 139
+    .line 167
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->getCollapsedTabContainer()Landroid/widget/LinearLayout;
@@ -4520,7 +4604,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
-    .line 140
+    .line 168
     sget v0, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->collapsed_tab_text:I
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4531,12 +4615,12 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabTextView:Landroid/widget/TextView;
 
-    .line 141
+    .line 169
     sget v0, Lcom/transsion/camera/R$string;->video_filter:I
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 142
+    .line 170
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     sget v0, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->expand_arrow:I
@@ -4549,7 +4633,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabExpandArrow:Landroid/widget/ImageView;
 
-    .line 144
+    .line 172
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->getHoverTabContainer()Landroid/widget/LinearLayout;
@@ -4558,7 +4642,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
-    .line 145
+    .line 173
     sget v0, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->collapsed_tab_text:I
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4569,12 +4653,12 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverTabTextView:Landroid/widget/TextView;
 
-    .line 146
+    .line 174
     sget v0, Lcom/transsion/camera/R$string;->video_filter:I
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 148
+    .line 176
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->getScrollerViewBackground()Landroid/widget/FrameLayout;
@@ -4583,7 +4667,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
-    .line 150
+    .line 178
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     move-object v2, p0
@@ -4596,12 +4680,12 @@
 
     move-object v8, p5
 
-    if-eqz p2, :cond_b5
+    if-eqz p2, :cond_f6
 
-    .line 151
+    .line 179
     invoke-virtual/range {v2 .. v8}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->initVideoFilterView(Landroid/view/View;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/view/View;ILcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 152
+    .line 180
     iget-object p0, v2, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;->getFilterTopUI()Landroid/view/View;
@@ -4610,7 +4694,7 @@
 
     iput-object p0, v2, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mFilterTopUI:Landroid/view/View;
 
-    .line 153
+    .line 181
     iget-object p0, v2, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;->getScrollerRulerView()Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
@@ -4619,26 +4703,26 @@
 
     iput-object p0, v2, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
-    .line 156
-    :cond_b5
+    .line 184
+    :cond_f6
     iget-object p0, v2, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoEffectUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/IVssUI;
 
-    if-eqz p0, :cond_bc
+    if-eqz p0, :cond_fd
 
-    .line 157
+    .line 185
     invoke-virtual/range {v2 .. v8}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->initVideoEffectView(Landroid/view/View;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/view/View;ILcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 160
-    :cond_bc
+    .line 188
+    :cond_fd
     iget-object p0, v2, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFrameUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFrameUI;
 
-    if-eqz p0, :cond_c3
+    if-eqz p0, :cond_104
 
-    .line 161
+    .line 189
     invoke-virtual/range {v2 .. v8}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->initVideoFrameView(Landroid/view/View;Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/view/View;ILcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 164
-    :cond_c3
+    .line 192
+    :cond_104
     iget-object p0, v2, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->getNoEffectImageView()Lcom/transsion/camera/app/ui/widget/RotateImageView;
@@ -4647,24 +4731,26 @@
 
     iput-object p0, v2, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
-    .line 165
+    .line 193
     iget p1, v2, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
 
-    if-ne p1, v1, :cond_d4
+    const/4 p2, 0x1
+
+    if-ne p1, p2, :cond_116
 
     const/16 p1, 0x8
 
-    .line 166
+    .line 194
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 169
-    :cond_d4
+    .line 197
+    :cond_116
     invoke-virtual {v2, v3}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->initTabColor(Landroid/view/View;)V
 
-    .line 170
+    .line 198
     invoke-virtual {v2}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->initViewListenerIfNeed()V
 
-    .line 171
+    .line 199
     iget-object p0, v2, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget p1, Lcom/transsion/camera/R$dimen;->video_filter_scroller_container_width:I
@@ -4675,13 +4761,16 @@
 
     iput p0, v2, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerRulerViewWidth:I
 
+    .line 201
+    iput-boolean p2, v2, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mViewInitialized:Z
+
     return-void
 .end method
 
 .method protected initViewListenerIfNeed()V
     .registers 5
 
-    .line 424
+    .line 454
     iget v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mSupportCount:I
 
     const/4 v1, 0x1
@@ -4690,11 +4779,11 @@
 
     return-void
 
-    .line 427
+    .line 457
     :cond_6
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->initMainSwitchListener()V
 
-    .line 428
+    .line 458
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportFilter:Z
 
     const/4 v1, 0x0
@@ -4703,7 +4792,7 @@
 
     if-eqz v0, :cond_20
 
-    .line 429
+    .line 459
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitch:Landroid/widget/LinearLayout;
 
     new-instance v3, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda14;
@@ -4712,18 +4801,18 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 448
+    .line 478
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitch:Landroid/widget/LinearLayout;
 
     invoke-static {v0, v2, v1}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
-    .line 451
+    .line 481
     :cond_20
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportEffect:Z
 
     if-eqz v0, :cond_33
 
-    .line 452
+    .line 482
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitch:Landroid/widget/LinearLayout;
 
     new-instance v3, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda15;
@@ -4732,18 +4821,18 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 465
+    .line 495
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitch:Landroid/widget/LinearLayout;
 
     invoke-static {v0, v2, v1}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
-    .line 468
+    .line 498
     :cond_33
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportFrame:Z
 
     if-eqz v0, :cond_46
 
-    .line 469
+    .line 499
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitch:Landroid/widget/LinearLayout;
 
     new-instance v3, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda16;
@@ -4752,18 +4841,18 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 482
+    .line 512
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitch:Landroid/widget/LinearLayout;
 
     invoke-static {v0, v2, v1}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
-    .line 485
+    .line 515
     :cond_46
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealWithoutAnimation(Landroid/view/View;)V
 
-    .line 486
+    .line 516
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda17;
@@ -4772,12 +4861,12 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 493
+    .line 523
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealWithoutAnimation(Landroid/view/View;)V
 
-    .line 494
+    .line 524
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda18;
@@ -4792,7 +4881,7 @@
 .method public notifyCameraOperateAction(I)V
     .registers 4
 
-    .line 315
+    .line 345
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->notifyCameraOperateAction(I)V
 
     const/16 v0, 0x13
@@ -4801,7 +4890,7 @@
 
     return-void
 
-    .line 318
+    .line 348
     :cond_8
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
@@ -4811,7 +4900,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;->update(Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;Z)V
 
-    .line 319
+    .line 349
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;->resetCurrentItem()V
@@ -4822,10 +4911,10 @@
 .method public onItemSelectStateChanged(Lcom/transsion/camera/ui/setting/videosightshock/bean/VidSigShockItemBean;)V
     .registers 4
 
-    .line 326
+    .line 356
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->onItemSelectStateChanged(Lcom/transsion/camera/ui/setting/videosightshock/bean/VidSigShockItemBean;)V
 
-    .line 328
+    .line 358
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mCurrentSelectStyle:Ljava/lang/String;
 
     const-string v1, "key_video_filter_style"
@@ -4842,14 +4931,14 @@
 
     const-string v0, "0"
 
-    .line 329
+    .line 359
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-nez p1, :cond_20
 
-    .line 331
+    .line 361
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     sget-object p1, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;->EXPAND_SCROLLER_BAR:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;
@@ -4858,7 +4947,7 @@
 
     return-void
 
-    .line 333
+    .line 363
     :cond_20
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
@@ -4872,7 +4961,7 @@
 .method public onOrientationChanged(I)V
     .registers 3
 
-    .line 521
+    .line 551
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->onOrientationChanged(I)V
 
     const/16 v0, 0x5a
@@ -4886,7 +4975,7 @@
     :cond_b
     const/4 p1, 0x0
 
-    .line 525
+    .line 555
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabTextView:Landroid/widget/TextView;
 
@@ -4894,7 +4983,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setRotation(F)V
 
-    .line 526
+    .line 556
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverTabTextView:Landroid/widget/TextView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setRotation(F)V
@@ -4905,14 +4994,14 @@
 .method public recoverSettingValueAndUI()V
     .registers 2
 
-    .line 556
+    .line 586
     new-instance v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda20;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda20;-><init>(Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;)V
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->updateScrollerViewLayout(Ljava/lang/Runnable;)V
 
-    .line 557
+    .line 587
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->updateMenuComponentVisible()V
 
     return-void
@@ -4921,10 +5010,10 @@
 .method protected resetTabState()V
     .registers 3
 
-    .line 550
+    .line 580
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->resetTabState()V
 
-    .line 551
+    .line 581
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mVideoSightShockMenuState:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState;
 
     sget-object v0, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;->NO_EFFECT:Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockMenuState$TemplateState;
@@ -4941,23 +5030,23 @@
 
     if-eqz p1, :cond_7
 
-    .line 531
+    .line 561
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mIsAnimationRunning:Z
 
     if-eqz v0, :cond_7
 
     return-void
 
-    .line 534
+    .line 564
     :cond_7
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->setEnable(Z)V
 
-    .line 535
+    .line 565
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->setEnable(Z)V
 
-    .line 536
+    .line 566
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
@@ -4968,10 +5057,10 @@
 .method protected updateControlViewLayout(II)V
     .registers 9
 
-    .line 254
+    .line 284
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->updateSwitchTextOrientation(I)V
 
-    .line 255
+    .line 285
     iget v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mDotsMarginBottom:I
 
     iget v2, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mDefaultControlViewHeight:I
@@ -4988,10 +5077,10 @@
 
     const/4 p0, 0x0
 
-    .line 256
+    .line 286
     invoke-virtual {v0, p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->updateTabSwitchLayout(Z)V
 
-    .line 258
+    .line 288
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mControlViewContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5000,15 +5089,15 @@
 
     check-cast p1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 259
+    .line 289
     invoke-virtual {p1, p0, p0, p0, p0}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     const/16 p2, 0x50
 
-    .line 260
+    .line 290
     iput p2, p1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 261
+    .line 291
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getBottomBarHeight()I
@@ -5019,7 +5108,7 @@
 
     sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->common_menu_bottom_margin:I
 
-    .line 262
+    .line 292
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v2
@@ -5028,17 +5117,17 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 263
+    .line 293
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mControlViewContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v1, p0, p0}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 264
+    .line 294
     iget-object p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mControlViewContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 266
+    .line 296
     iget-object p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTopUI:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5047,7 +5136,7 @@
 
     check-cast p0, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 267
+    .line 297
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->top_ui_left_margin:I
@@ -5058,7 +5147,7 @@
 
     iput p1, p0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    .line 268
+    .line 298
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->video_sight_shock_top_ui_bottom_margin:I
@@ -5069,12 +5158,12 @@
 
     iput p1, p0, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
-    .line 269
+    .line 299
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTopUI:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 271
+    .line 301
     iget-object p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5083,7 +5172,7 @@
 
     check-cast p0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 272
+    .line 302
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->video_sight_shock_tab_bottom_margin:I
@@ -5094,15 +5183,15 @@
 
     iput p1, p0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 273
+    .line 303
     iput p2, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 274
+    .line 304
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenuContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {p1, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 276
+    .line 306
     iget-object p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5111,10 +5200,10 @@
 
     check-cast p0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 277
+    .line 307
     iput p2, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 278
+    .line 308
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->no_effect_bottom_margin:I
@@ -5125,12 +5214,12 @@
 
     iput p1, p0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 279
+    .line 309
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mMainSwitch:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {p1, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 281
+    .line 311
     iget-object p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5139,10 +5228,10 @@
 
     check-cast p0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 282
+    .line 312
     iput p2, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 283
+    .line 313
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/R$dimen;->video_sight_shock_collapsed_tab_bottom_margin:I
@@ -5153,17 +5242,17 @@
 
     iput p1, p0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 284
+    .line 314
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 285
+    .line 315
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mHoverCollapsedTabContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 287
+    .line 317
     iget-object p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5174,10 +5263,10 @@
 
     const/16 p1, 0x55
 
-    .line 288
+    .line 318
     iput p1, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 289
+    .line 319
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->scroller_background_right_margin:I
@@ -5188,7 +5277,7 @@
 
     iput p1, p0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 290
+    .line 320
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mResources:Landroid/content/res/Resources;
 
     sget p2, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->scroller_background_bottom_margin:I
@@ -5199,12 +5288,12 @@
 
     iput p1, p0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 291
+    .line 321
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedScrollerBackground:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 293
+    .line 323
     iget-object p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     iget-object p1, v0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
@@ -5217,10 +5306,10 @@
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;->updateScrollerViewLayout(II)V
 
-    .line 294
+    .line 324
     invoke-direct {v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->updateMenuComponentVisible()V
 
-    .line 296
+    .line 326
     iget-boolean p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportFilter:Z
 
     const/4 p1, 0x0
@@ -5229,7 +5318,7 @@
 
     if-eqz p0, :cond_f7
 
-    .line 297
+    .line 327
     iget-object p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFilterSwitchText:Landroid/widget/TextView;
 
     if-eqz v5, :cond_f3
@@ -5250,13 +5339,13 @@
     :goto_f4
     invoke-virtual {p0, v1}, Landroid/view/View;->setRotation(F)V
 
-    .line 299
+    .line 329
     :cond_f7
     iget-boolean p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportEffect:Z
 
     if-eqz p0, :cond_108
 
-    .line 300
+    .line 330
     iget-object p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mEffectSwitchText:Landroid/widget/TextView;
 
     if-eqz v5, :cond_104
@@ -5277,13 +5366,13 @@
     :goto_105
     invoke-virtual {p0, v1}, Landroid/view/View;->setRotation(F)V
 
-    .line 302
+    .line 332
     :cond_108
     iget-boolean p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mbSupportFrame:Z
 
     if-eqz p0, :cond_116
 
-    .line 303
+    .line 333
     iget-object p0, v0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mFrameSwitchText:Landroid/widget/TextView;
 
     if-eqz v5, :cond_112
@@ -5303,10 +5392,10 @@
 .method public updateIndicatorRingScreenLight(Z)V
     .registers 4
 
-    .line 541
+    .line 571
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->updateIndicatorRingScreenLight(Z)V
 
-    .line 542
+    .line 572
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mTabMenu:Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/widget/menu/TabMenuCustomView;->updateRingScreenLight(Z)V
@@ -5317,7 +5406,7 @@
 
     goto :goto_17
 
-    .line 544
+    .line 574
     :cond_d
     invoke-static {}, Lcom/transsion/camera/app_info/AppInfo;->getContext()Landroid/content/Context;
 
@@ -5332,7 +5421,7 @@
     :goto_17
     iput v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mUnSelectedColor:I
 
-    .line 545
+    .line 575
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;->updateLowLight(Z)V
@@ -5343,7 +5432,7 @@
 .method public updateScrollerViewLayout(Ljava/lang/Runnable;)V
     .registers 5
 
-    .line 351
+    .line 381
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/manager/VidSigShockUIManager;->mVideoFilterUI:Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mCollapsedTabContainer:Landroid/widget/LinearLayout;
@@ -5356,10 +5445,10 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/ui/setting/videosightshock/ui/VideoFilterUI;->updateScrollerViewLayout(II)V
 
-    .line 353
+    .line 383
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->resetScrollerRulerView()V
 
-    .line 354
+    .line 384
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->mScrollerViewContainer:Landroid/widget/RelativeLayout;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5$$ExternalSyntheticLambda21;
@@ -5376,7 +5465,7 @@
 
     const/4 v0, 0x0
 
-    .line 367
+    .line 397
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/ui/setting/videosightshock/VidSigShockUIManagerUI5;->updateTabSwitchLayout(ZLjava/lang/Runnable;)V
 
     return-void

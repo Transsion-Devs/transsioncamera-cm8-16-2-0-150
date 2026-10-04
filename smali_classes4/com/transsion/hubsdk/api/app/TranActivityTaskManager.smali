@@ -33,7 +33,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 47
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
 
     if-eqz p1, :cond_d
 
-    .line 351
+    .line 353
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -59,7 +59,7 @@
 
     return p0
 
-    .line 349
+    .line 351
     :cond_d
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -78,7 +78,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 839
+    .line 841
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -89,7 +89,7 @@
 
     return-void
 
-    .line 837
+    .line 839
     :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -100,10 +100,25 @@
     throw p0
 .end method
 
+.method public addMultiExchangeListener(Ljava/lang/String;Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;)V
+    .registers 4
+
+    .line 1300
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->addMultiExchangeListener(Ljava/lang/String;Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;)V
+
+    return-void
+.end method
+
 .method public boostEndInLauncher(I)V
     .registers 3
 
-    .line 1164
+    .line 1188
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33371:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -111,6 +126,51 @@
     move-result-object p0
 
     invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->boostEndInLauncher(I)V
+
+    return-void
+.end method
+
+.method public boostIMEEnd(Ljava/lang/String;)V
+    .registers 3
+
+    .line 1144
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->boostIMEEnd(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public boostIMEStart(ILjava/lang/String;)V
+    .registers 4
+
+    .line 1140
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->boostIMEStart(ILjava/lang/String;)V
+
+    return-void
+.end method
+
+.method public boostInFling(IZI)V
+    .registers 5
+
+    .line 1156
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2, p3}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->boostInFling(IZI)V
 
     return-void
 .end method
@@ -127,7 +187,7 @@
 
     if-ge p1, v0, :cond_11
 
-    .line 886
+    .line 888
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -138,7 +198,7 @@
 
     return-void
 
-    .line 884
+    .line 886
     :cond_11
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -161,7 +221,7 @@
 
     if-ge p1, v0, :cond_11
 
-    .line 524
+    .line 526
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -172,7 +232,7 @@
 
     return-void
 
-    .line 522
+    .line 524
     :cond_11
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -186,7 +246,7 @@
 .method public boostStartInLauncher(I)V
     .registers 3
 
-    .line 1156
+    .line 1180
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33371:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -201,7 +261,7 @@
 .method public checkAndUpdateEventStateForMulti(Ljava/lang/String;ZZJ)Z
     .registers 8
 
-    .line 1074
+    .line 1076
     invoke-static {}, Lcom/transsion/hubsdk/common/version/TranThubVersionUtil;->isRecentAndroidU()Z
 
     move-result v0
@@ -227,7 +287,7 @@
 
     if-gtz v0, :cond_24
 
-    .line 1083
+    .line 1085
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33341:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -240,7 +300,7 @@
 
     return p0
 
-    .line 1081
+    .line 1083
     :cond_24
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -250,7 +310,7 @@
 
     throw p0
 
-    .line 1078
+    .line 1080
     :cond_2c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -264,7 +324,7 @@
 .method public checkTaskCanEnterMultiWin(I)Z
     .registers 3
 
-    .line 1260
+    .line 1284
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -284,7 +344,7 @@
         level = 0x2
     .end annotation
 
-    .line 535
+    .line 537
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -299,7 +359,7 @@
 .method public clearMultiWindowExtendSize(I)V
     .registers 3
 
-    .line 1224
+    .line 1248
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -322,7 +382,7 @@
         }
     .end annotation
 
-    .line 1264
+    .line 1288
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -347,7 +407,7 @@
         }
     .end annotation
 
-    .line 1061
+    .line 1063
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33311:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -380,7 +440,7 @@
 
     if-ge p1, v0, :cond_14
 
-    .line 1028
+    .line 1030
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33211:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -393,7 +453,7 @@
 
     return-object p0
 
-    .line 1026
+    .line 1028
     :cond_14
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -410,7 +470,7 @@
         level = 0x1
     .end annotation
 
-    .line 547
+    .line 549
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -434,7 +494,7 @@
 
     if-ltz p2, :cond_f
 
-    .line 567
+    .line 569
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -447,7 +507,7 @@
 
     return-object p0
 
-    .line 565
+    .line 567
     :cond_f
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -464,14 +524,14 @@
         level = 0x1
     .end annotation
 
-    .line 101
+    .line 103
     sget-object v0, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->TAG:Ljava/lang/String;
 
     const-string v1, "tran getFocusedWinPkgName"
 
     invoke-static {v0, v1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
+    .line 104
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33101:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -488,7 +548,7 @@
 .method public getGivenPkgWindowMode(Ljava/lang/String;)I
     .registers 3
 
-    .line 208
+    .line 210
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -505,7 +565,7 @@
 .method public getGivenPkgWindowModeForCls(Ljava/lang/String;Ljava/lang/String;)I
     .registers 4
 
-    .line 229
+    .line 231
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -530,7 +590,7 @@
 
     if-gt p1, v0, :cond_14
 
-    .line 404
+    .line 406
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -543,7 +603,7 @@
 
     return-object p0
 
-    .line 402
+    .line 404
     :cond_14
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -557,7 +617,7 @@
 .method public getMaxRecentTasksStatic()I
     .registers 2
 
-    .line 910
+    .line 912
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -571,13 +631,30 @@
     return p0
 .end method
 
+.method public getMultiDisplayAreaAppInfo(II)Landroid/os/Bundle;
+    .registers 4
+
+    .line 1304
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->getMultiDisplayAreaAppInfo(II)Landroid/os/Bundle;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public getMultiDisplayAreaTopPackageV4(II)Ljava/lang/String;
     .registers 4
     .annotation runtime Lcom/transsion/hubsdk/common/annotation/TranLevel;
         level = 0x1
     .end annotation
 
-    .line 581
+    .line 583
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -597,7 +674,7 @@
         level = 0x1
     .end annotation
 
-    .line 595
+    .line 597
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -622,7 +699,7 @@
         }
     .end annotation
 
-    .line 374
+    .line 376
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -639,7 +716,7 @@
 .method public getMultiWindowDefaultRect()Landroid/graphics/Rect;
     .registers 2
 
-    .line 1141
+    .line 1165
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33371:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -656,7 +733,7 @@
 .method public getMultiWindowParams(Ljava/lang/String;)Landroid/os/Bundle;
     .registers 3
 
-    .line 427
+    .line 429
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33161:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -673,7 +750,7 @@
 .method public getMultiWindowVersion()Ljava/lang/String;
     .registers 2
 
-    .line 384
+    .line 386
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -693,7 +770,7 @@
         level = 0x1
     .end annotation
 
-    .line 608
+    .line 610
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -710,7 +787,7 @@
 .method public getNeedExit(Ljava/lang/String;)Z
     .registers 3
 
-    .line 257
+    .line 259
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -735,7 +812,7 @@
         }
     .end annotation
 
-    .line 1256
+    .line 1280
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -752,7 +829,7 @@
 .method public getPackageUserId(Ljava/lang/String;)I
     .registers 3
 
-    .line 285
+    .line 287
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -781,7 +858,7 @@
         }
     .end annotation
 
-    .line 62
+    .line 64
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33101:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -798,7 +875,7 @@
 .method public getRootTaskInfoOnDisplay(III)Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;
     .registers 5
 
-    .line 442
+    .line 444
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33161:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -815,21 +892,21 @@
 .method protected getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
     .registers 3
 
-    .line 461
+    .line 463
     invoke-static {p1}, Lcom/transsion/hubsdk/common/version/TranVersion;->isIntegratedThubCore(Ljava/lang/String;)Z
 
     move-result p1
 
     if-eqz p1, :cond_19
 
-    .line 462
+    .line 464
     sget-object p1, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->TAG:Ljava/lang/String;
 
     const-string v0, "TranThubActivityTaskManager"
 
     invoke-static {p1, v0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 463
+    .line 465
     iget-object p1, p0, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->mThubService:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     if-nez p1, :cond_18
@@ -843,7 +920,7 @@
     :cond_18
     return-object p1
 
-    .line 465
+    .line 467
     :cond_19
     sget-object p1, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -851,7 +928,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 466
+    .line 468
     iget-object p1, p0, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->mAospService:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     if-nez p1, :cond_2b
@@ -869,7 +946,7 @@
 .method public getStackInfoTaskId(Ljava/lang/String;)I
     .registers 3
 
-    .line 173
+    .line 175
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -886,7 +963,7 @@
 .method public getTaskBounds(I)Landroid/graphics/Rect;
     .registers 3
 
-    .line 453
+    .line 455
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -903,7 +980,7 @@
 .method public getTaskIdByPkg(Ljava/lang/String;)I
     .registers 3
 
-    .line 271
+    .line 273
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -920,7 +997,7 @@
 .method public getTaskIdByPkgName(Ljava/lang/String;I)I
     .registers 4
 
-    .line 1236
+    .line 1260
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -940,7 +1017,7 @@
         level = 0x1
     .end annotation
 
-    .line 621
+    .line 623
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -965,7 +1042,7 @@
         }
     .end annotation
 
-    .line 854
+    .line 856
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -985,14 +1062,14 @@
         level = 0x1
     .end annotation
 
-    .line 74
+    .line 76
     sget-object v0, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->TAG:Ljava/lang/String;
 
     const-string v1, "tran getTopActivityComponent"
 
     invoke-static {v0, v1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 75
+    .line 77
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33101:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1009,7 +1086,7 @@
 .method public getTopAppWindowInfo()Landroid/os/Bundle;
     .registers 2
 
-    .line 1216
+    .line 1240
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33431:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1037,7 +1114,7 @@
 
     if-le p1, v0, :cond_14
 
-    .line 637
+    .line 639
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1050,7 +1127,7 @@
 
     return-object p0
 
-    .line 635
+    .line 637
     :cond_14
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1064,7 +1141,7 @@
 .method public getVideoNotFullscreen(Ljava/lang/String;)Z
     .registers 3
 
-    .line 243
+    .line 245
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1081,7 +1158,7 @@
 .method public hasMultiWindow()Z
     .registers 2
 
-    .line 415
+    .line 417
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33161:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1110,7 +1187,7 @@
 
     goto :goto_11
 
-    .line 298
+    .line 300
     :cond_9
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1120,7 +1197,7 @@
 
     throw p0
 
-    .line 300
+    .line 302
     :cond_11
     :goto_11
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
@@ -1136,10 +1213,25 @@
     return-object p0
 .end method
 
+.method public hookMultiWindowToClose(II)V
+    .registers 4
+
+    .line 1363
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->hookMultiWindowToClose(II)V
+
+    return-void
+.end method
+
 .method public hookMultiWindowToExchange(II)V
     .registers 4
 
-    .line 1232
+    .line 1256
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1154,7 +1246,7 @@
 .method public hookMultiWindowVisible()V
     .registers 2
 
-    .line 1148
+    .line 1172
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33371:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1166,13 +1258,28 @@
     return-void
 .end method
 
+.method public hookMultiWindowVisibleWithCallback(Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;)V
+    .registers 3
+
+    .line 1296
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->hookMultiWindowVisibleWithCallback(Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;)V
+
+    return-void
+.end method
+
 .method public hookReparentToDefaultDisplay(II)V
     .registers 4
     .annotation runtime Lcom/transsion/hubsdk/common/annotation/TranLevel;
         level = 0x1
     .end annotation
 
-    .line 650
+    .line 652
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1192,7 +1299,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 665
+    .line 667
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1203,7 +1310,7 @@
 
     return-void
 
-    .line 663
+    .line 665
     :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1219,14 +1326,14 @@
 
     if-eqz p1, :cond_12
 
-    .line 1173
+    .line 1197
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_12
 
-    .line 1176
+    .line 1200
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33371:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1237,7 +1344,7 @@
 
     return-void
 
-    .line 1174
+    .line 1198
     :cond_12
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1254,7 +1361,7 @@
         level = 0x1
     .end annotation
 
-    .line 676
+    .line 678
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1274,7 +1381,7 @@
 
     if-eqz p2, :cond_c
 
-    .line 692
+    .line 694
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1285,7 +1392,7 @@
 
     return-void
 
-    .line 690
+    .line 692
     :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1301,7 +1408,7 @@
 
     if-ltz p1, :cond_c
 
-    .line 315
+    .line 317
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1312,7 +1419,7 @@
 
     return-void
 
-    .line 313
+    .line 315
     :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1331,7 +1438,7 @@
 
     if-eqz p4, :cond_c
 
-    .line 969
+    .line 971
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1342,7 +1449,7 @@
 
     return-void
 
-    .line 967
+    .line 969
     :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1356,7 +1463,7 @@
 .method public hookToMultiWindow(Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
     .registers 4
 
-    .line 1252
+    .line 1276
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1376,14 +1483,14 @@
         level = 0x2
     .end annotation
 
-    .line 129
+    .line 131
     sget-object v0, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->TAG:Ljava/lang/String;
 
     const-string v1, "tran inMultiWindowMode"
 
     invoke-static {v0, v1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 130
+    .line 132
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33101:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1397,20 +1504,54 @@
     return p0
 .end method
 
+.method public isCanEnterMultiWin(Landroid/content/ComponentName;)Z
+    .registers 3
+
+    .line 1308
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->isCanEnterMultiWin(Landroid/content/ComponentName;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public isHasMultiWindow()Z
+    .registers 2
+
+    .line 1350
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->isHasMultiWindow()Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public isIMEShowing()Z
     .registers 3
     .annotation runtime Lcom/transsion/hubsdk/common/annotation/TranLevel;
         level = 0x1
     .end annotation
 
-    .line 114
+    .line 116
     sget-object v0, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->TAG:Ljava/lang/String;
 
     const-string v1, "tran isIMEShowing"
 
     invoke-static {v0, v1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 115
+    .line 117
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33101:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1430,7 +1571,7 @@
         level = 0x1
     .end annotation
 
-    .line 704
+    .line 706
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1444,13 +1585,30 @@
     return p0
 .end method
 
+.method public isPCSourceDisplay(I)Z
+    .registers 3
+
+    .line 1327
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->isPCSourceDisplay(I)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public isPinnedMode()Z
     .registers 2
     .annotation runtime Lcom/transsion/hubsdk/common/annotation/TranLevel;
         level = 0x1
     .end annotation
 
-    .line 716
+    .line 718
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1464,13 +1622,30 @@
     return p0
 .end method
 
+.method public isResizableActivity()Z
+    .registers 2
+
+    .line 1334
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->isResizableActivity()Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public isSecureWindow()Z
     .registers 2
     .annotation runtime Lcom/transsion/hubsdk/common/annotation/TranLevel;
         level = 0x1
     .end annotation
 
-    .line 900
+    .line 902
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1487,7 +1662,7 @@
 .method public isSplitScreen()Z
     .registers 2
 
-    .line 936
+    .line 938
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1504,7 +1679,7 @@
 .method public isSupportMultiWindow()Z
     .registers 2
 
-    .line 326
+    .line 328
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1521,7 +1696,7 @@
 .method public isTheMainScreen(Ljava/lang/String;Ljava/lang/String;)Z
     .registers 4
 
-    .line 188
+    .line 190
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1538,7 +1713,7 @@
 .method public notAllowKeyguardGoingAwayQuickly(Z)V
     .registers 3
 
-    .line 1053
+    .line 1055
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33311:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1553,7 +1728,7 @@
 .method public notifyAuthenticateSucceed(Z)V
     .registers 3
 
-    .line 1191
+    .line 1215
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33421:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1568,7 +1743,7 @@
 .method public notifyKeyguardGoingAwayQuickly(Z)V
     .registers 3
 
-    .line 1183
+    .line 1207
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33421:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1583,7 +1758,7 @@
 .method public notifyLauncherPageTurning(Z)V
     .registers 3
 
-    .line 1092
+    .line 1094
     invoke-static {}, Lcom/transsion/hubsdk/common/version/TranThubVersionUtil;->isRecentAndroidT()Z
 
     move-result v0
@@ -1592,7 +1767,7 @@
 
     return-void
 
-    .line 1095
+    .line 1097
     :cond_7
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33361:Ljava/lang/String;
 
@@ -1605,10 +1780,27 @@
     return-void
 .end method
 
+.method public registerActivityStarterExecutedObserver(Lcom/transsion/hubsdk/api/app/TranActivityStarterExecutedObserver;Landroid/content/IntentFilter;)Z
+    .registers 4
+
+    .line 1355
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->registerActivityStarterExecutedObserver(Lcom/transsion/hubsdk/api/app/TranActivityStarterExecutedObserver;Landroid/content/IntentFilter;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public registerMultiWindowWmShellListener(Landroid/os/IBinder;)V
     .registers 3
 
-    .line 1248
+    .line 1272
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1628,7 +1820,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 870
+    .line 872
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1639,7 +1831,7 @@
 
     return-void
 
-    .line 868
+    .line 870
     :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1656,7 +1848,7 @@
         level = 0x2
     .end annotation
 
-    .line 157
+    .line 159
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33101:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1674,14 +1866,14 @@
         level = 0x2
     .end annotation
 
-    .line 88
+    .line 90
     sget-object v0, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->TAG:Ljava/lang/String;
 
     const-string v1, "tran removeTask"
 
     invoke-static {v0, v1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 89
+    .line 91
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33101:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1693,6 +1885,21 @@
     move-result p0
 
     return p0
+.end method
+
+.method public removeTaskPC(II)V
+    .registers 4
+
+    .line 1320
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->removeTaskPC(II)V
+
+    return-void
 .end method
 
 .method public reparentActivity(IIZ)V
@@ -1710,7 +1917,7 @@
 
     if-ge p2, v1, :cond_17
 
-    .line 927
+    .line 929
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1721,7 +1928,7 @@
 
     return-void
 
-    .line 925
+    .line 927
     :cond_17
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1731,7 +1938,7 @@
 
     throw p0
 
-    .line 922
+    .line 924
     :cond_1f
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1745,7 +1952,7 @@
 .method public reparentTaskToDefaultTDA()V
     .registers 2
 
-    .line 1240
+    .line 1264
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1757,10 +1964,40 @@
     return-void
 .end method
 
+.method public requestHideDock()V
+    .registers 2
+
+    .line 1346
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->requestHideDock()V
+
+    return-void
+.end method
+
+.method public requestShowDock()V
+    .registers 2
+
+    .line 1340
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->requestShowDock()V
+
+    return-void
+.end method
+
 .method public setActivityController(Lcom/transsion/hubsdk/api/app/ITranActivityController;Z)V
     .registers 4
 
-    .line 144
+    .line 146
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33101:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1775,7 +2012,7 @@
 .method public setBoostSceneState(ILjava/lang/String;Z)V
     .registers 5
 
-    .line 1124
+    .line 1126
     invoke-static {}, Lcom/transsion/hubsdk/common/version/TranThubVersionUtil;->isRecentAndroidT()Z
 
     move-result v0
@@ -1784,7 +2021,7 @@
 
     return-void
 
-    .line 1127
+    .line 1129
     :cond_7
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1794,7 +2031,7 @@
 
     if-ltz p1, :cond_19
 
-    .line 1133
+    .line 1135
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33391:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1805,7 +2042,7 @@
 
     return-void
 
-    .line 1131
+    .line 1133
     :cond_19
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1815,7 +2052,7 @@
 
     throw p0
 
-    .line 1128
+    .line 1130
     :cond_21
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1843,14 +2080,14 @@
 
     if-eqz p1, :cond_12
 
-    .line 946
+    .line 948
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_12
 
-    .line 949
+    .line 951
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1861,7 +2098,7 @@
 
     return-void
 
-    .line 947
+    .line 949
     :cond_12
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1884,7 +2121,7 @@
 
     if-eqz p3, :cond_10
 
-    .line 734
+    .line 736
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1895,7 +2132,7 @@
 
     return-void
 
-    .line 732
+    .line 734
     :cond_10
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1906,10 +2143,25 @@
     throw p0
 .end method
 
+.method public setFlingState(Z)V
+    .registers 3
+
+    .line 1152
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->setFlingState(Z)V
+
+    return-void
+.end method
+
 .method public setJankScenarioState(ILjava/lang/String;Z)V
     .registers 5
 
-    .line 1105
+    .line 1107
     invoke-static {}, Lcom/transsion/hubsdk/common/version/TranThubVersionUtil;->isRecentAndroidT()Z
 
     move-result v0
@@ -1918,7 +2170,7 @@
 
     return-void
 
-    .line 1108
+    .line 1110
     :cond_7
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1928,7 +2180,7 @@
 
     if-ltz p1, :cond_19
 
-    .line 1114
+    .line 1116
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33361:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1939,7 +2191,7 @@
 
     return-void
 
-    .line 1112
+    .line 1114
     :cond_19
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1949,7 +2201,7 @@
 
     throw p0
 
-    .line 1109
+    .line 1111
     :cond_21
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1963,7 +2215,7 @@
 .method public setMultiEnableStateForOOBE(ZLandroid/os/Bundle;)V
     .registers 4
 
-    .line 1244
+    .line 1268
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -1989,7 +2241,7 @@
 
     if-le p1, v0, :cond_13
 
-    .line 750
+    .line 752
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2000,7 +2252,7 @@
 
     return-void
 
-    .line 748
+    .line 750
     :cond_13
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -2028,7 +2280,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 765
+    .line 767
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2039,7 +2291,7 @@
 
     return-void
 
-    .line 763
+    .line 765
     :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -2070,7 +2322,7 @@
 
     if-eqz p1, :cond_e
 
-    .line 781
+    .line 783
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2081,7 +2333,7 @@
 
     return-void
 
-    .line 779
+    .line 781
     :cond_e
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -2095,7 +2347,7 @@
 .method public setMultiWindowExtendSize(II)V
     .registers 4
 
-    .line 1220
+    .line 1244
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2115,7 +2367,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 998
+    .line 1000
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2126,7 +2378,7 @@
 
     return-void
 
-    .line 996
+    .line 998
     :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -2154,7 +2406,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 796
+    .line 798
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2165,7 +2417,7 @@
 
     return-void
 
-    .line 794
+    .line 796
     :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -2182,7 +2434,7 @@
         level = 0x1
     .end annotation
 
-    .line 809
+    .line 811
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2197,7 +2449,7 @@
 .method public setStartInMultiWindow(Ljava/lang/String;III)V
     .registers 6
 
-    .line 486
+    .line 488
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2212,7 +2464,7 @@
 .method public setStartInMultiWindowAsUser(Ljava/lang/String;IIII)V
     .registers 7
 
-    .line 507
+    .line 509
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2227,7 +2479,7 @@
 .method public setStartInMultiWindowWithBundle(Landroid/os/Bundle;IIII)V
     .registers 7
 
-    .line 1268
+    .line 1292
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2245,7 +2497,7 @@
         level = 0x1
     .end annotation
 
-    .line 983
+    .line 985
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2260,7 +2512,7 @@
 .method public setThunderbackAnimating(Z)V
     .registers 3
 
-    .line 1228
+    .line 1252
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2275,7 +2527,7 @@
 .method public startCurrentAppInMultiWindow(ZI)V
     .registers 4
 
-    .line 338
+    .line 340
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2287,13 +2539,43 @@
     return-void
 .end method
 
+.method public startLauncherAction(Landroid/content/Intent;I)V
+    .registers 4
+
+    .line 1148
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->startLauncherAction(Landroid/content/Intent;I)V
+
+    return-void
+.end method
+
+.method public stopTaskPC(II)V
+    .registers 4
+
+    .line 1314
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->stopTaskPC(II)V
+
+    return-void
+.end method
+
 .method public takeTaskSnapshot(IZ)Lcom/transsion/hubsdk/api/window/TranTaskSnapshot;
     .registers 4
     .annotation runtime Lcom/transsion/hubsdk/common/annotation/TranLevel;
         level = 0x1
     .end annotation
 
-    .line 1012
+    .line 1014
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33201:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2312,7 +2594,7 @@
 
     if-ltz p1, :cond_d
 
-    .line 364
+    .line 366
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33141:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2325,7 +2607,7 @@
 
     return p0
 
-    .line 362
+    .line 364
     :cond_d
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -2336,12 +2618,29 @@
     throw p0
 .end method
 
+.method public unRegisterActivityStarterExecutedObserver(Lcom/transsion/hubsdk/api/app/TranActivityStarterExecutedObserver;)Z
+    .registers 3
+
+    .line 1358
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;->unRegisterActivityStarterExecutedObserver(Lcom/transsion/hubsdk/api/app/TranActivityStarterExecutedObserver;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public updateConfiguration(Landroid/content/res/Configuration;)Z
     .registers 3
 
     if-eqz p1, :cond_d
 
-    .line 1043
+    .line 1045
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33221:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2354,7 +2653,7 @@
 
     return p0
 
-    .line 1041
+    .line 1043
     :cond_d
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -2368,14 +2667,14 @@
 .method public updateMediaMapForDynamicIsland(Ljava/lang/String;Z)V
     .registers 4
 
-    .line 1203
+    .line 1227
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_10
 
-    .line 1206
+    .line 1230
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33421:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2386,7 +2685,7 @@
 
     return-void
 
-    .line 1204
+    .line 1228
     :cond_10
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -2411,7 +2710,7 @@
 
     if-le p1, v0, :cond_13
 
-    .line 824
+    .line 826
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33171:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityTaskManagerAdapter;
@@ -2422,7 +2721,7 @@
 
     return-void
 
-    .line 822
+    .line 824
     :cond_13
     new-instance p0, Ljava/lang/IllegalArgumentException;
 

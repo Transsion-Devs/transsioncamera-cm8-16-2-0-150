@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/gson/internal/ConstructorConstructor;->newDefaultImplementationConstructor(Ljava/lang/reflect/Type;Ljava/lang/Class;)Lcom/google/gson/internal/ObjectConstructor;
+    value = Lcom/google/gson/internal/ConstructorConstructor;->newDefaultConstructor(Ljava/lang/Class;Lcom/google/gson/ReflectionAccessFilter$FilterResult;)Lcom/google/gson/internal/ObjectConstructor;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,15 +18,15 @@
 
 
 # instance fields
-.field final synthetic this$0:Lcom/google/gson/internal/ConstructorConstructor;
+.field final synthetic val$exceptionMessage:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/gson/internal/ConstructorConstructor;)V
+.method constructor <init>(Ljava/lang/String;)V
     .registers 2
 
-    .line 172
-    iput-object p1, p0, Lcom/google/gson/internal/ConstructorConstructor$8;->this$0:Lcom/google/gson/internal/ConstructorConstructor;
+    .line 280
+    iput-object p1, p0, Lcom/google/gson/internal/ConstructorConstructor$8;->val$exceptionMessage:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,12 +36,14 @@
 
 # virtual methods
 .method public construct()Ljava/lang/Object;
-    .registers 1
+    .registers 2
 
-    .line 174
-    new-instance p0, Ljava/util/ArrayList;
+    .line 286
+    new-instance v0, Lcom/google/gson/JsonIOException;
 
-    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
+    iget-object p0, p0, Lcom/google/gson/internal/ConstructorConstructor$8;->val$exceptionMessage:Ljava/lang/String;
 
-    return-object p0
+    invoke-direct {v0, p0}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

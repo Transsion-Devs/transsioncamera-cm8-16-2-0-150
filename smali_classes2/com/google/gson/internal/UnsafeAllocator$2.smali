@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/UnsafeAllocator$2;
+.class Lcom/google/gson/internal/UnsafeAllocator$2;
 .super Lcom/google/gson/internal/UnsafeAllocator;
 .source "SourceFile"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -24,7 +24,7 @@
 .method constructor <init>(Ljava/lang/reflect/Method;I)V
     .registers 3
 
-    .line 69
+    .line 84
     iput-object p1, p0, Lcom/google/gson/internal/UnsafeAllocator$2;->val$newInstance:Ljava/lang/reflect/Method;
 
     iput p2, p0, Lcom/google/gson/internal/UnsafeAllocator$2;->val$constructorId:I
@@ -39,10 +39,11 @@
 .method public newInstance(Ljava/lang/Class;)Ljava/lang/Object;
     .registers 3
 
-    .line 73
-    invoke-static {p1}, Lcom/google/gson/internal/UnsafeAllocator;->assertInstantiable(Ljava/lang/Class;)V
+    .line 88
+    # invokes: Lcom/google/gson/internal/UnsafeAllocator;->assertInstantiable(Ljava/lang/Class;)V
+    invoke-static {p1}, Lcom/google/gson/internal/UnsafeAllocator;->access$000(Ljava/lang/Class;)V
 
-    .line 74
+    .line 89
     iget-object v0, p0, Lcom/google/gson/internal/UnsafeAllocator$2;->val$newInstance:Ljava/lang/reflect/Method;
 
     iget p0, p0, Lcom/google/gson/internal/UnsafeAllocator$2;->val$constructorId:I

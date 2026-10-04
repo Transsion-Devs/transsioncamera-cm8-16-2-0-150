@@ -1,4 +1,4 @@
-.class public Lcom/transsion/camera/feature/setting/liveresult/LiveResult;
+.class public final Lcom/transsion/camera/feature/setting/liveresult/LiveResult;
 .super Lcom/transsion/camera/app/common/setting/SettingBase;
 .source "SourceFile"
 
@@ -6,8 +6,18 @@
 .implements Lcom/transsion/camera/app/common/setting/ICameraSetting$IParametersConfigure;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/transsion/camera/feature/setting/liveresult/LiveResult$Companion;
+    }
+.end annotation
+
+
 # static fields
-.field static final DEFAULT_VALUE:Ljava/lang/String; = "off"
+.field public static final Companion:Lcom/transsion/camera/feature/setting/liveresult/LiveResult$Companion;
+
+.field public static final DEFAULT_VALUE:Ljava/lang/String; = "off"
 
 .field public static final SETTING_KEY:Ljava/lang/String; = "key_live_result"
 
@@ -23,37 +33,27 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$k6B2_Jt65LIht5MExutvZMNf9YQ(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
+.method public static synthetic $r8$lambda$QeNa4krixabQOcER2h418pMP4KY(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
     .registers 4
 
     .line 0
-    invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->lambda$new$0(Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mLiveResultCallback$lambda$0(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
 
     return-void
-.end method
-
-.method static bridge synthetic -$$Nest$fputmIsWorking(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;Z)V
-    .registers 2
-
-    .line 0
-    iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mIsWorking:Z
-
-    return-void
-.end method
-
-.method static bridge synthetic -$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
-    .registers 1
-
-    .line 0
-    sget-object v0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    return-object v0
 .end method
 
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 30
+    new-instance v0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult$Companion;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    sput-object v0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->Companion:Lcom/transsion/camera/feature/setting/liveresult/LiveResult$Companion;
+
+    .line 24
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "LiveResult"
@@ -68,168 +68,198 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 29
+    .line 22
     invoke-direct {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;-><init>()V
 
-    .line 35
+    .line 31
     new-instance v0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mLiveResultCallback:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
 
-    .line 108
-    new-instance v0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult$1;
+    .line 100
+    new-instance v0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult$mPreviewStateCallback$1;
 
-    invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult$1;-><init>(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;)V
+    invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult$mPreviewStateCallback$1;-><init>(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
 
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
+.method public static final synthetic access$getMSettingDeviceRequester$p$s-1473126327(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
     .registers 1
 
-    .line 29
+    .line 22
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     return-object p0
 .end method
 
-.method private synthetic lambda$new$0(Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
+.method public static final synthetic access$getTAG$cp()Lcom/transsion/camera/utils/debug/Log$Tag;
+    .registers 1
+
+    .line 22
+    sget-object v0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    return-object v0
+.end method
+
+.method public static final synthetic access$setMIsWorking$p(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;Z)V
+    .registers 2
+
+    .line 22
+    iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mIsWorking:Z
+
+    return-void
+.end method
+
+.method private static final mLiveResultCallback$lambda$0(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
     .registers 8
 
-    .line 37
+    const-string v0, "captureResult"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 33
     invoke-virtual {p1}, Landroid/hardware/camera2/CaptureResult;->getFrameNumber()J
 
     move-result-wide v0
 
-    const-wide/16 v2, 0x3
+    const/4 v2, 0x3
 
-    .line 38
+    int-to-long v2, v2
+
+    .line 34
     rem-long/2addr v0, v2
 
     const-wide/16 v2, 0x0
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_22
 
-    .line 39
+    .line 35
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
     move-result-object p0
 
-    if-eqz p0, :cond_1b
+    if-eqz p0, :cond_22
 
-    .line 41
-    invoke-static {p1, p2, p3}, Lcom/transsion/camera/feature/setting/liveresult/Result;->buildFrom(Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)Lcom/transsion/camera/feature/setting/liveresult/Result;
+    .line 36
+    sget-object v0, Lcom/transsion/camera/feature/setting/liveresult/Result;->Companion:Lcom/transsion/camera/feature/setting/liveresult/Result$Companion;
+
+    invoke-virtual {v0, p1, p2, p3}, Lcom/transsion/camera/feature/setting/liveresult/Result$Companion;->buildFrom(Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)Lcom/transsion/camera/feature/setting/liveresult/Result;
 
     move-result-object p1
 
     const/4 p2, 0x0
 
-    .line 42
+    .line 40
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;->onDataCallback(Ljava/lang/Object;I)V
 
-    :cond_1b
+    :cond_22
     return-void
 .end method
 
 
 # virtual methods
 .method public configCommand(Lcom/transsion/camera/adapter/CameraProxy;)V
-    .registers 6
+    .registers 7
 
-    .line 143
+    const-string v0, "cameraProxy"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 132
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 144
+    .line 133
     sget-object v1, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    iget-boolean v2, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mIsWorking:Z
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string v3, "configCommand, value: "
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, "configCommand, value: "
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, ", mIsWorking: "
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, ", mIsWorking: "
 
-    iget-boolean v3, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mIsWorking:Z
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 145
+    .line 134
     const-string v2, "off"
 
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_44
 
-    .line 147
+    .line 136
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mIsWorking:Z
 
-    if-nez v0, :cond_36
+    if-nez v0, :cond_3b
 
-    .line 148
+    .line 137
     const-string p0, "[configCommand] already stopped, return"
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 151
-    :cond_36
+    .line 140
+    :cond_3b
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mLiveResultCallback:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy;->unRegisterFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
 
     const/4 p1, 0x0
 
-    .line 152
+    .line 141
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mIsWorking:Z
 
     return-void
 
-    .line 155
-    :cond_3f
+    .line 144
+    :cond_44
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mIsWorking:Z
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_4e
 
-    .line 156
+    .line 145
     const-string p0, "[configCommand] already started, return"
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 159
-    :cond_49
+    .line 148
+    :cond_4e
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mLiveResultCallback:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy;->registerFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
 
     const/4 p1, 0x1
 
-    .line 160
+    .line 149
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mIsWorking:Z
 
     return-void
@@ -238,7 +268,11 @@
 .method public configParameters(Lcom/transsion/camera/adapter/CameraParameters;)I
     .registers 3
 
-    .line 137
+    const-string v0, "parameters"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 123
     const-string v0, "on"
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -249,11 +283,23 @@
 
     move-result p0
 
+    const/4 v0, 0x0
+
+    if-eqz p0, :cond_17
+
+    const/4 p0, 0x1
+
+    .line 124
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setLiveResultMode(I)V
 
-    const/4 p0, 0x0
+    goto :goto_1a
 
-    return p0
+    .line 126
+    :cond_17
+    invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setLiveResultMode(I)V
+
+    :goto_1a
+    return v0
 .end method
 
 .method public bridge synthetic forceApplyValue(Ljava/lang/String;)V
@@ -277,7 +323,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 73
+    .line 69
     const-string p0, "key_live_result"
 
     return-object p0
@@ -292,7 +338,7 @@
 .method public getPreviewStateCallback()Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
     .registers 1
 
-    .line 105
+    .line 96
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
 
     return-object p0
@@ -312,25 +358,29 @@
 .method public getSettingType()Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
     .registers 1
 
-    .line 68
+    .line 65
     sget-object p0, Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;->PHOTO_AND_VIDEO:Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
 
     return-object p0
 .end method
 
 .method public getStoreScope()Ljava/lang/String;
-    .registers 1
+    .registers 2
 
-    .line 78
+    .line 73
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
 
     move-result-object p0
+
+    const-string v0, "getGlobalScope(...)"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method
 
 .method public getSupport()Ljava/util/List;
-    .registers 1
+    .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -340,10 +390,14 @@
         }
     .end annotation
 
-    .line 100
+    .line 92
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p0
+
+    const-string v0, "getEntryValues(...)"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method
@@ -360,9 +414,21 @@
 .end method
 
 .method public init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
-    .registers 4
+    .registers 5
 
-    .line 50
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "settingController"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "settingDataStore"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 49
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
     return-void
@@ -381,31 +447,39 @@
         }
     .end annotation
 
-    if-eqz p1, :cond_26
+    const-string v0, "defaultValue"
 
-    .line 55
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 53
+    move-object v0, p1
+
+    check-cast v0, Ljava/util/Collection;
+
+    if-eqz v0, :cond_2e
+
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
 
-    if-gtz v0, :cond_9
+    if-eqz v0, :cond_11
 
-    goto :goto_26
+    goto :goto_2e
 
-    .line 58
-    :cond_9
+    .line 56
+    :cond_11
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedPlatformValues(Ljava/util/List;)V
 
-    .line 59
+    .line 57
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedEntryValues(Ljava/util/List;)V
 
-    .line 60
+    .line 58
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setEntryValues(Ljava/util/List;)V
 
-    .line 61
+    .line 59
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/setting/SettingBase;->setDefaultValue(Ljava/lang/String;)V
 
-    .line 62
+    .line 60
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->getKey()Ljava/lang/String;
@@ -420,61 +494,65 @@
 
     move-result-object p1
 
-    .line 63
+    .line 61
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    :cond_26
-    :goto_26
+    :cond_2e
+    :goto_2e
     return-void
 .end method
 
 .method public onValueChanged(Ljava/lang/String;)V
-    .registers 5
+    .registers 6
 
-    .line 88
+    const-string/jumbo v0, "value"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 81
     sget-object v0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[onValueChanged] "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v2, " --> "
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v3, "[onValueChanged] "
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " --> "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 89
+    .line 82
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_58
+    if-nez v0, :cond_5e
 
-    .line 90
+    .line 83
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 91
+    .line 84
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->getKey()Ljava/lang/String;
@@ -483,7 +561,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;->requestChangeCommand(Ljava/lang/String;)V
 
-    .line 92
+    .line 85
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->getKey()Ljava/lang/String;
@@ -492,7 +570,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;->requestChangeSettingValue(Ljava/lang/String;)V
 
-    .line 93
+    .line 86
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->getKey()Ljava/lang/String;
@@ -507,7 +585,7 @@
 
     invoke-virtual {v0, v1, p1, p0, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 94
+    .line 87
     const-string p0, "on"
 
     invoke-static {p0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -516,7 +594,7 @@
 
     invoke-static {p0}, Lcom/transsion/camera/utils/debug/Log;->setExtraLogEnable(Z)V
 
-    :cond_58
+    :cond_5e
     return-void
 .end method
 
@@ -538,22 +616,26 @@
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
     .registers 3
 
-    .line 129
+    const-string v0, "cameraCapabilities"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 116
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 130
+    .line 117
     const-string v0, "on"
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 131
+    .line 118
     const-string v0, "off"
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 132
+    .line 119
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->initValueAndSupport(Ljava/util/List;Ljava/lang/String;)V
 
     return-void

@@ -884,7 +884,7 @@
 
     new-array v4, v2, [F
 
-    fill-array-data v4, :array_10e
+    fill-array-data v4, :array_110
 
     const-string v5, "alpha"
 
@@ -941,7 +941,7 @@
 
     move-result-object v11
 
-    const-string v12, "textColor"
+    const-string/jumbo v12, "textColor"
 
     invoke-static {v4, v12, v10, v11}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;
 
@@ -964,7 +964,7 @@
     .line 808
     new-array v11, v2, [F
 
-    fill-array-data v11, :array_116
+    fill-array-data v11, :array_118
 
     invoke-static {v10, v5, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -983,7 +983,7 @@
 
     new-array v12, v2, [F
 
-    fill-array-data v12, :array_11e
+    fill-array-data v12, :array_120
 
     invoke-static {v11, v5, v12}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -1014,7 +1014,7 @@
 
     new-array v13, v2, [F
 
-    fill-array-data v13, :array_126
+    fill-array-data v13, :array_128
 
     invoke-static {v12, v5, v13}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -1070,25 +1070,27 @@
 
     return-void
 
-    :array_10e
+    nop
+
+    :array_110
     .array-data 4
         0x3f800000    # 1.0f
         0x0
     .end array-data
 
-    :array_116
+    :array_118
     .array-data 4
         0x3f800000    # 1.0f
         0x0
     .end array-data
 
-    :array_11e
+    :array_120
     .array-data 4
         0x0
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_126
+    :array_128
     .array-data 4
         0x0
         0x3f800000    # 1.0f
@@ -1194,7 +1196,7 @@
     move-result-object v9
 
     .line 886
-    const-string v10, "textColor"
+    const-string/jumbo v10, "textColor"
 
     invoke-static {v7, v10, v8, v9}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;
 
@@ -1256,7 +1258,7 @@
 
     new-array v5, v2, [F
 
-    fill-array-data v5, :array_110
+    fill-array-data v5, :array_112
 
     const-string v6, "alpha"
 
@@ -1293,7 +1295,7 @@
     .line 934
     new-array v11, v2, [F
 
-    fill-array-data v11, :array_118
+    fill-array-data v11, :array_11a
 
     invoke-static {v5, v6, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -1312,7 +1314,7 @@
 
     new-array v12, v2, [F
 
-    fill-array-data v12, :array_120
+    fill-array-data v12, :array_122
 
     invoke-static {v11, v6, v12}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -1343,7 +1345,7 @@
 
     new-array v10, v2, [F
 
-    fill-array-data v10, :array_128
+    fill-array-data v10, :array_12a
 
     invoke-static {v9, v6, v10}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -1391,25 +1393,27 @@
 
     return-void
 
-    :array_110
+    nop
+
+    :array_112
     .array-data 4
         0x3f800000    # 1.0f
         0x0
     .end array-data
 
-    :array_118
+    :array_11a
     .array-data 4
         0x3f800000    # 1.0f
         0x0
     .end array-data
 
-    :array_120
+    :array_122
     .array-data 4
         0x0
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_128
+    :array_12a
     .array-data 4
         0x3f800000    # 1.0f
         0x0
@@ -1624,7 +1628,7 @@
 
     new-array v4, v2, [F
 
-    fill-array-data v4, :array_134
+    fill-array-data v4, :array_136
 
     const-string v7, "alpha"
 
@@ -1698,7 +1702,7 @@
     move-result-object v13
 
     .line 1090
-    const-string v14, "textColor"
+    const-string/jumbo v14, "textColor"
 
     invoke-static {v4, v14, v12, v13}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;
 
@@ -1721,7 +1725,7 @@
     .line 1095
     new-array v13, v2, [F
 
-    fill-array-data v13, :array_13c
+    fill-array-data v13, :array_13e
 
     invoke-static {v12, v7, v13}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -1743,7 +1747,7 @@
 
     new-array v15, v2, [F
 
-    fill-array-data v15, :array_144
+    fill-array-data v15, :array_146
 
     invoke-static {v14, v7, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -1771,7 +1775,7 @@
 
     new-array v5, v2, [F
 
-    fill-array-data v5, :array_14c
+    fill-array-data v5, :array_14e
 
     invoke-static {v15, v7, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -1830,25 +1834,27 @@
 
     return-void
 
-    :array_134
+    nop
+
+    :array_136
     .array-data 4
         0x0
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_13c
+    :array_13e
     .array-data 4
         0x0
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_144
+    :array_146
     .array-data 4
         0x3f800000    # 1.0f
         0x0
     .end array-data
 
-    :array_14c
+    :array_14e
     .array-data 4
         0x0
         0x3f800000    # 1.0f
@@ -2979,7 +2985,7 @@
     move-result-object v6
 
     .line 556
-    const-string v8, "textColor"
+    const-string/jumbo v8, "textColor"
 
     invoke-static {v1, v8, v4, v6}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Ljava/lang/String;Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ObjectAnimator;
 
@@ -2995,7 +3001,7 @@
 
     new-array v6, v2, [F
 
-    fill-array-data v6, :array_11c
+    fill-array-data v6, :array_11e
 
     const-string v8, "alpha"
 
@@ -3037,7 +3043,7 @@
     .line 583
     new-array v13, v2, [F
 
-    fill-array-data v13, :array_124
+    fill-array-data v13, :array_126
 
     invoke-static {v6, v8, v13}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -3059,7 +3065,7 @@
 
     new-array v10, v2, [F
 
-    fill-array-data v10, :array_12c
+    fill-array-data v10, :array_12e
 
     invoke-static {v9, v8, v10}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -3085,7 +3091,7 @@
 
     new-array v13, v2, [F
 
-    fill-array-data v13, :array_134
+    fill-array-data v13, :array_136
 
     invoke-static {v10, v8, v13}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
@@ -3136,25 +3142,27 @@
 
     return-void
 
-    :array_11c
+    nop
+
+    :array_11e
     .array-data 4
         0x0
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_124
+    :array_126
     .array-data 4
         0x0
         0x3f800000    # 1.0f
     .end array-data
 
-    :array_12c
+    :array_12e
     .array-data 4
         0x3f800000    # 1.0f
         0x0
     .end array-data
 
-    :array_134
+    :array_136
     .array-data 4
         0x3f800000    # 1.0f
         0x0

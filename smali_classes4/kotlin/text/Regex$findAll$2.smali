@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1000
+    accessFlags = 0x1018
     name = null
 .end annotation
 
@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 136
+    .line 137
     check-cast p1, Lkotlin/text/MatchResult;
 
     invoke-virtual {p0, p1}, Lkotlin/text/Regex$findAll$2;->invoke(Lkotlin/text/MatchResult;)Lkotlin/text/MatchResult;
@@ -76,7 +76,7 @@
 
     invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 136
+    .line 137
     invoke-interface {p1}, Lkotlin/text/MatchResult;->next()Lkotlin/text/MatchResult;
 
     move-result-object p0

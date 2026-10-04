@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lkotlin/coroutines/ContinuationInterceptor$Key;,
-        Lkotlin/coroutines/ContinuationInterceptor$DefaultImpls;
+        Lkotlin/coroutines/ContinuationInterceptor$DefaultImpls;,
+        Lkotlin/coroutines/ContinuationInterceptor$Key;
     }
 .end annotation
 

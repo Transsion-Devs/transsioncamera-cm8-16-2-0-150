@@ -29,7 +29,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;IZ)V
     .registers 4
 
-    .line 229
+    .line 251
     iput-object p1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$3;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     iput p2, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$3;->val$resId:I
@@ -46,7 +46,7 @@
 .method public run()V
     .registers 4
 
-    .line 232
+    .line 254
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$3;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fgetmCurrentPreviewCallback(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;
@@ -63,7 +63,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 233
+    .line 255
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$3;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fgetmLockObj(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)Ljava/lang/Object;
@@ -72,7 +72,7 @@
 
     monitor-enter v0
 
-    .line 234
+    .line 256
     :try_start_17
     iget-object v1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$3;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
@@ -82,7 +82,7 @@
 
     if-eqz v1, :cond_2d
 
-    .line 235
+    .line 257
     iget-object v1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$3;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v1}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fgetmCurrentPreviewCallback(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;
@@ -100,7 +100,7 @@
 
     goto :goto_2f
 
-    .line 237
+    .line 259
     :cond_2d
     :goto_2d
     monitor-exit v0
@@ -114,14 +114,14 @@
 
     throw p0
 
-    .line 239
+    .line 261
     :cond_31
     :goto_31
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$3;->val$isSync:Z
 
     if-eqz v0, :cond_3c
 
-    .line 240
+    .line 262
     iget-object p0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$3;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->mStateLock:Lcom/transsion/camera/utils/StateWait;

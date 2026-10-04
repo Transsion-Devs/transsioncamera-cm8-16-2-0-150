@@ -26,7 +26,7 @@
     c = "kotlinx.coroutines.channels.ChannelsKt__Channels_commonKt"
     f = "Channels.common.kt"
     l = {
-        0x6a
+        0x52
     }
     m = "consumeEach"
 .end annotation

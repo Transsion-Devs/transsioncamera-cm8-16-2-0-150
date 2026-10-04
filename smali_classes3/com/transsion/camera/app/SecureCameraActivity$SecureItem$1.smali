@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 144
+    .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;
     .registers 2
 
-    .line 147
+    .line 145
     new-instance p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;-><init>(Landroid/os/Parcel;)V
@@ -43,7 +43,7 @@
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .registers 2
 
-    .line 144
+    .line 142
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem$1;->createFromParcel(Landroid/os/Parcel;)Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;
 
     move-result-object p0
@@ -54,7 +54,7 @@
 .method public newArray(I)[Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;
     .registers 2
 
-    .line 152
+    .line 150
     new-array p0, p1, [Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;
 
     return-object p0
@@ -63,7 +63,7 @@
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .registers 2
 
-    .line 144
+    .line 142
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem$1;->newArray(I)[Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;
 
     move-result-object p0

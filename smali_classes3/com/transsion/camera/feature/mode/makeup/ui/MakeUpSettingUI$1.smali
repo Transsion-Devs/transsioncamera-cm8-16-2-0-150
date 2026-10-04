@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)V
     .registers 2
 
-    .line 64
+    .line 63
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$1;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .registers 4
 
-    .line 67
+    .line 66
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -49,7 +49,7 @@
 
     move-result p1
 
-    .line 68
+    .line 67
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$1;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$fgetmakeUpBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpBottomUI;
@@ -58,7 +58,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 69
+    .line 68
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$1;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$fgetmakeUpBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpBottomUI;
@@ -67,7 +67,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 70
+    .line 69
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$1;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     const/4 v1, 0x0
@@ -78,7 +78,7 @@
 
     if-eqz p1, :cond_29
 
-    .line 71
+    .line 70
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$1;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$mcomputeFilterRootVisibility(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)V

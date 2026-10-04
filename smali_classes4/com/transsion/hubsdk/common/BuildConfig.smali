@@ -10,9 +10,9 @@
 
 .field public static final LIBRARY_PACKAGE_NAME:Ljava/lang/String; = "com.transsion.hubsdk.common"
 
-.field public static final VERSION_CODE:I = 0x157b543c
+.field public static final VERSION_CODE:I = 0x157b5fd9
 
-.field public static final VERSION_NAME:Ljava/lang/String; = "36.4.4.028"
+.field public static final VERSION_NAME:Ljava/lang/String; = "36.4.7.001"
 
 
 # direct methods

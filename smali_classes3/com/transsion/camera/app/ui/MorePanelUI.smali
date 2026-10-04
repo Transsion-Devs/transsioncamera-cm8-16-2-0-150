@@ -423,12 +423,6 @@
     return-void
 .end method
 
-.method public setModePanelGuideEnable(Z)V
-    .registers 2
-
-    return-void
-.end method
-
 .method public setOnScrollListener(Lcom/transsion/camera/app/ui/mode/more/MoreView$IMorePanelScrollListener;)V
     .registers 2
 
@@ -507,18 +501,6 @@
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/more/MoreView;->showMoreView()V
 
     :cond_1c
-    return-void
-.end method
-
-.method public shrinkModePanel()V
-    .registers 1
-
-    return-void
-.end method
-
-.method public spreadModePanel()V
-    .registers 1
-
     return-void
 .end method
 

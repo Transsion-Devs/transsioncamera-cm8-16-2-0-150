@@ -23,19 +23,19 @@
 .method private getTranViewImpl()Lcom/transsion/hubsdk/view/TranView;
     .registers 2
 
-    .line 135
+    .line 146
     iget-object v0, p0, Lcom/transsion/hubsdk/core/view/TranThubView;->mTranView:Lcom/transsion/hubsdk/view/TranView;
 
     if-nez v0, :cond_b
 
-    .line 136
+    .line 147
     new-instance v0, Lcom/transsion/hubsdk/view/TranView;
 
     invoke-direct {v0}, Lcom/transsion/hubsdk/view/TranView;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/hubsdk/core/view/TranThubView;->mTranView:Lcom/transsion/hubsdk/view/TranView;
 
-    .line 138
+    .line 149
     :cond_b
     iget-object p0, p0, Lcom/transsion/hubsdk/core/view/TranThubView;->mTranView:Lcom/transsion/hubsdk/view/TranView;
 
@@ -158,6 +158,50 @@
     move-result p0
 
     return p0
+.end method
+
+.method public getRecordingFrameCount(Landroid/view/View;)J
+    .registers 5
+
+    .line 136
+    invoke-direct {p0}, Lcom/transsion/hubsdk/core/view/TranThubView;->getTranViewImpl()Lcom/transsion/hubsdk/view/TranView;
+
+    move-result-object v0
+
+    .line 137
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    const-class v1, Landroid/view/View;
+
+    filled-new-array {v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "getRecordingFrameCount"
+
+    invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-nez v0, :cond_19
+
+    const-wide/16 p0, -0x5
+
+    return-wide p0
+
+    .line 142
+    :cond_19
+    invoke-direct {p0}, Lcom/transsion/hubsdk/core/view/TranThubView;->getTranViewImpl()Lcom/transsion/hubsdk/view/TranView;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1}, Lcom/transsion/hubsdk/view/TranView;->getRecordingFrameCount(Landroid/view/View;)J
+
+    move-result-wide p0
+
+    return-wide p0
 .end method
 
 .method public getUnionRenderEffect(Landroid/view/View;)Lcom/transsion/hubsdk/api/view/TranUnionRenderEffectProxy;

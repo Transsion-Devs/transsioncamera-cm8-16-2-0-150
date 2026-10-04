@@ -82,19 +82,19 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;)V
     .registers 2
 
-    .line 479
+    .line 478
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->this$0:Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 480
+    .line 479
     new-instance p1, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {p1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    .line 481
+    .line 480
     new-instance p1, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {p1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
@@ -116,7 +116,7 @@
 .method private addAvoidKey(Ljava/lang/String;)V
     .registers 2
 
-    .line 551
+    .line 550
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mAvoidSettingKeys:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
@@ -127,7 +127,7 @@
 .method private clearAll()V
     .registers 1
 
-    .line 524
+    .line 523
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->clear()V
@@ -138,7 +138,7 @@
 .method private get(I)Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;
     .registers 2
 
-    .line 528
+    .line 527
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->get(I)Ljava/lang/Object;
@@ -153,7 +153,7 @@
 .method private getFirst()Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;
     .registers 2
 
-    .line 536
+    .line 535
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->size()I
@@ -166,7 +166,7 @@
 
     return-object p0
 
-    .line 539
+    .line 538
     :cond_a
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -186,7 +186,7 @@
 
     const/4 v0, 0x0
 
-    .line 514
+    .line 513
     :goto_1
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -196,7 +196,7 @@
 
     if-ge v0, v1, :cond_1d
 
-    .line 515
+    .line 514
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->get(I)Ljava/lang/Object;
@@ -205,7 +205,7 @@
 
     check-cast v1, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;
 
-    .line 516
+    .line 515
     iget-object v1, v1, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;->headerKey:Ljava/lang/String;
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -230,7 +230,7 @@
 .method private isContainAvoidKey(Ljava/lang/String;)Z
     .registers 5
 
-    .line 559
+    .line 558
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mAvoidSettingKeys:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->size()I
@@ -246,7 +246,7 @@
     :cond_a
     move v0, v1
 
-    .line 562
+    .line 561
     :goto_b
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mAvoidSettingKeys:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -256,7 +256,7 @@
 
     if-ge v0, v2, :cond_26
 
-    .line 563
+    .line 562
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mAvoidSettingKeys:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->get(I)Ljava/lang/Object;
@@ -265,7 +265,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 564
+    .line 563
     invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -288,7 +288,7 @@
 .method private remove(Ljava/lang/String;)I
     .registers 3
 
-    .line 543
+    .line 542
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->indexOf(Ljava/lang/String;)I
 
     move-result p1
@@ -297,7 +297,7 @@
 
     if-eq p1, v0, :cond_c
 
-    .line 545
+    .line 544
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(I)Ljava/lang/Object;
@@ -309,7 +309,7 @@
 .method private size()I
     .registers 1
 
-    .line 532
+    .line 531
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->size()I
@@ -322,7 +322,7 @@
 .method private sizeOfAvoidKeys()I
     .registers 1
 
-    .line 555
+    .line 554
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mAvoidSettingKeys:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->size()I
@@ -337,7 +337,7 @@
 .method public add(Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;)V
     .registers 6
 
-    .line 484
+    .line 483
     iget-object v0, p1, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;->headerKey:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->indexOf(Ljava/lang/String;)I
@@ -346,14 +346,14 @@
 
     const/4 v1, -0x1
 
-    .line 485
+    .line 484
     const-string v2, "override_values_off"
 
     const-string/jumbo v3, "value_change_off"
 
     if-eq v0, v1, :cond_24
 
-    .line 486
+    .line 485
     iget-object v1, p1, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;->currentValue:Ljava/lang/String;
 
     invoke-static {v1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -364,14 +364,14 @@
 
     iget-object p1, p1, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;->currentValue:Ljava/lang/String;
 
-    .line 487
+    .line 486
     invoke-static {p1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_39
 
-    .line 488
+    .line 487
     :cond_1e
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -379,7 +379,7 @@
 
     return-void
 
-    .line 496
+    .line 495
     :cond_24
     iget-object v0, p1, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;->currentValue:Ljava/lang/String;
 
@@ -391,14 +391,14 @@
 
     iget-object v0, p1, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;->currentValue:Ljava/lang/String;
 
-    .line 497
+    .line 496
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_39
 
-    .line 498
+    .line 497
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
@@ -410,22 +410,22 @@
 .method public addVideoKey(Ljava/lang/String;)V
     .registers 4
 
-    .line 505
+    .line 504
     new-instance v0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->this$0:Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;
 
     invoke-direct {v0, v1}, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;-><init>(Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;)V
 
-    .line 506
+    .line 505
     const-string v1, "key_video_quality"
 
     iput-object v1, v0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;->headerKey:Ljava/lang/String;
 
-    .line 507
+    .line 506
     iput-object p1, v0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;->currentValue:Ljava/lang/String;
 
-    .line 508
+    .line 507
     const-string p1, "null"
 
     invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
@@ -434,7 +434,7 @@
 
     iput-object p1, v0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$SettingValue;->supportValues:Ljava/util/List;
 
-    .line 509
+    .line 508
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->this$0:Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;->-$$Nest$fgetmAntiVideoMonitor(Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;)Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;
@@ -449,7 +449,7 @@
 .method public print()V
     .registers 5
 
-    .line 572
+    .line 571
     sget-object v0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -476,7 +476,7 @@
 
     const/4 v0, 0x0
 
-    .line 573
+    .line 572
     :goto_1d
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -486,7 +486,7 @@
 
     if-ge v0, v1, :cond_5a
 
-    .line 574
+    .line 573
     sget-object v1, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -515,7 +515,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    .line 575
+    .line 574
     invoke-virtual {v3, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -530,7 +530,7 @@
 
     move-result-object v2
 
-    .line 574
+    .line 573
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     add-int/lit8 v0, v0, 0x1

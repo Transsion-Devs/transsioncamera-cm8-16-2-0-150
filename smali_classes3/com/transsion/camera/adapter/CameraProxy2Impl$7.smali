@@ -24,7 +24,7 @@
 .method constructor <init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;Lcom/transsion/camera/adapter/CameraProxy$CameraAutoFocusCallback;)V
     .registers 3
 
-    .line 3367
+    .line 3301
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$7;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     iput-object p2, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$7;->val$cb:Lcom/transsion/camera/adapter/CameraProxy$CameraAutoFocusCallback;
@@ -39,7 +39,7 @@
 .method public onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
     .registers 4
 
-    .line 3372
+    .line 3306
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -48,7 +48,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3373
+    .line 3307
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$7;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCaptureResultMonitor(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CaptureResultMonitor;
@@ -65,7 +65,7 @@
 .method public onCaptureFailed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V
     .registers 5
 
-    .line 3378
+    .line 3312
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -90,7 +90,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3379
+    .line 3313
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$7;->val$cb:Lcom/transsion/camera/adapter/CameraProxy$CameraAutoFocusCallback;
 
     const/4 p1, 0x0

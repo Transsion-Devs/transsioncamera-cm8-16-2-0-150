@@ -91,16 +91,16 @@
 .method private constructor <init>(Landroid/view/View;Landroid/widget/TextView;Landroid/widget/ImageView;)V
     .registers 4
 
-    .line 2865
+    .line 2655
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2866
+    .line 2656
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mRoot:Landroid/view/View;
 
-    .line 2867
+    .line 2657
     iput-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mModeName:Landroid/widget/TextView;
 
-    .line 2868
+    .line 2658
     iput-object p3, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mCancel:Landroid/widget/ImageView;
 
     return-void
@@ -118,7 +118,7 @@
 .method private hide()V
     .registers 2
 
-    .line 2890
+    .line 2680
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mRoot:Landroid/view/View;
 
     const/16 v0, 0x8
@@ -131,7 +131,7 @@
 .method private isVisible()Z
     .registers 1
 
-    .line 2876
+    .line 2666
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mRoot:Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
@@ -153,7 +153,7 @@
 .method private setAlpha(F)V
     .registers 2
 
-    .line 2886
+    .line 2676
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mRoot:Landroid/view/View;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
@@ -164,7 +164,7 @@
 .method private setEnable(Z)V
     .registers 2
 
-    .line 2894
+    .line 2684
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mCancel:Landroid/widget/ImageView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
@@ -175,7 +175,7 @@
 .method private setOnClickListener(Landroid/view/View$OnClickListener;)V
     .registers 2
 
-    .line 2872
+    .line 2662
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mCancel:Landroid/widget/ImageView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
@@ -186,19 +186,19 @@
 .method private show(Ljava/lang/String;)V
     .registers 3
 
-    .line 2880
+    .line 2670
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mModeName:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2881
+    .line 2671
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mRoot:Landroid/view/View;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2882
+    .line 2672
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mRoot:Landroid/view/View;
 
     const/high16 p1, 0x3f800000    # 1.0f
@@ -211,7 +211,7 @@
 .method private updateRotation(I)V
     .registers 6
 
-    .line 2898
+    .line 2688
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mModeName:Landroid/widget/TextView;
 
     const/16 v1, 0xb4
@@ -228,7 +228,7 @@
     :goto_a
     invoke-virtual {v0, v2}, Landroid/view/View;->setRotation(F)V
 
-    .line 2899
+    .line 2689
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mModeName:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -241,12 +241,12 @@
 
     sget v2, Lcom/transsion/camera/R$dimen;->mode_picker_name_left_margin:I
 
-    .line 2900
+    .line 2690
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v0
 
-    .line 2901
+    .line 2691
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mModeName:Landroid/widget/TextView;
 
     const/4 v3, 0x0
@@ -255,7 +255,7 @@
 
     if-ne p1, v1, :cond_2a
 
-    .line 2903
+    .line 2693
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->mModeName:Landroid/widget/TextView;
 
     invoke-virtual {p0, v3, v3, v0, v3}, Landroid/widget/TextView;->setPadding(IIII)V

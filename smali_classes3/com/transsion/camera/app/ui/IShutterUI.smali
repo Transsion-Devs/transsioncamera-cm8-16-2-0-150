@@ -144,12 +144,6 @@
 .method public abstract transitionToProcessing()V
 .end method
 
-.method public abstract transitionToRegular()V
-.end method
-
-.method public abstract transitionToSmall()V
-.end method
-
 .method public abstract transitionToSmile()V
 .end method
 

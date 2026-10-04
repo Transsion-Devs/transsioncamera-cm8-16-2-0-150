@@ -2162,14 +2162,21 @@
 
     move-result v2
 
-    if-eqz v2, :cond_54
+    if-nez v2, :cond_3e
+
+    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5a
 
     .line 318
+    :cond_3e
     invoke-virtual {p0}, Landroid/app/Activity;->isInMultiWindowMode()Z
 
     move-result v2
 
-    if-eqz v2, :cond_54
+    if-eqz v2, :cond_5a
 
     .line 319
     sget v0, Lcom/transsion/camera/app/common/R$string;->no_support_split_screen:I
@@ -2196,7 +2203,7 @@
     return-void
 
     .line 327
-    :cond_54
+    :cond_5a
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
@@ -2205,7 +2212,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_74
+    if-eqz v2, :cond_7a
 
     .line 328
     sget v0, Lcom/transsion/camera/app/common/R$string;->no_support_thunder_Window:I
@@ -2232,7 +2239,7 @@
     return-void
 
     .line 334
-    :cond_74
+    :cond_7a
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/QuickActivity;->logLifecycle(Ljava/lang/String;Z)V
 
     return-void

@@ -24,17 +24,17 @@
 .method public constructor <init>(Ljava/util/List;)V
     .registers 4
 
-    .line 1904
+    .line 1912
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1901
+    .line 1909
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$FaceInfoWrapper;->time:J
 
-    .line 1905
+    .line 1913
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$FaceInfoWrapper;->infos:Ljava/util/List;
 
     return-void

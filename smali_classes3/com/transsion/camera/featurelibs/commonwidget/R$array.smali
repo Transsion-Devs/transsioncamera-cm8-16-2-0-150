@@ -3,6 +3,6 @@
 
 
 # static fields
-.field public static smooth_zoom_tick_resources:I = 0x7f030280
+.field public static smooth_zoom_tick_resources:I = 0x7f03027e
 
-.field public static smooth_zoom_vibrator_tick_resources:I = 0x7f030281
+.field public static smooth_zoom_vibrator_tick_resources:I = 0x7f03027f

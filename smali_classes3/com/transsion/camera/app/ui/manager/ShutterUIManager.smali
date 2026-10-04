@@ -466,7 +466,7 @@
 .method private isShutterEnable()Z
     .registers 8
 
-    .line 942
+    .line 935
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v1, 0x1
@@ -485,7 +485,7 @@
 
     goto :goto_4b
 
-    .line 945
+    .line 938
     :cond_10
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -495,7 +495,7 @@
 
     move-result-wide v2
 
-    .line 946
+    .line 939
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v0, 0xe
@@ -504,7 +504,7 @@
 
     move-result-wide v4
 
-    .line 947
+    .line 940
     sget-object p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -554,7 +554,7 @@
 .method private synthetic lambda$notifyCameraOperateActionToUI$0()V
     .registers 2
 
-    .line 782
+    .line 774
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     const/4 v0, 0x0
@@ -569,7 +569,7 @@
 .method protected createUI(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/common/IAppUI;)Lcom/transsion/camera/app/ui/ShutterUINew;
     .registers 4
 
-    .line 1027
+    .line 1020
     new-instance p0, Lcom/transsion/camera/app/ui/ShutterUINew;
 
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/app/ui/ShutterUINew;-><init>(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/common/IAppUI;)V
@@ -580,7 +580,7 @@
 .method public getCShotButtonViewVisible()I
     .registers 1
 
-    .line 960
+    .line 953
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IShutterUI;->getCShotButtonViewVisible()I
@@ -593,7 +593,7 @@
 .method public getQVButtonViewVisible()I
     .registers 1
 
-    .line 964
+    .line 957
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IShutterUI;->getQVideoButtonViewVisible()I
@@ -658,12 +658,12 @@
 .method public hideShutterButton()V
     .registers 1
 
-    .line 999
+    .line 992
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     if-eqz p0, :cond_7
 
-    .line 1000
+    .line 993
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IShutterUI;->hideShutterButton()V
 
     :cond_7
@@ -814,25 +814,25 @@
 
     if-eq p1, v3, :cond_205
 
-    sparse-switch p1, :sswitch_data_3f0
+    sparse-switch p1, :sswitch_data_402
 
-    packed-switch p1, :pswitch_data_4ce
+    packed-switch p1, :pswitch_data_4e0
 
-    packed-switch p1, :pswitch_data_4da
+    packed-switch p1, :pswitch_data_4ec
 
-    packed-switch p1, :pswitch_data_4e6
+    packed-switch p1, :pswitch_data_4f8
 
-    packed-switch p1, :pswitch_data_4f0
+    packed-switch p1, :pswitch_data_502
 
     goto/16 :goto_26f
 
-    .line 851
+    .line 843
     :pswitch_44
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsIntentPhotoModeSaving:Z
 
     goto/16 :goto_26f
 
-    .line 802
+    .line 794
     :pswitch_48
     iget v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
@@ -842,13 +842,13 @@
 
     if-eqz v3, :cond_26f
 
-    .line 803
+    .line 795
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mVideoMakeupUIShow:Z
 
-    .line 804
+    .line 796
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipSecondaryMenuShow:Z
 
-    .line 805
+    .line 797
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     iget-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mRecording:Z
@@ -859,7 +859,7 @@
 
     goto/16 :goto_26f
 
-    .line 795
+    .line 787
     :pswitch_5e
     iget v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
@@ -869,20 +869,20 @@
 
     if-nez v3, :cond_26f
 
-    .line 796
+    .line 788
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mVideoMakeupUIShow:Z
 
-    .line 797
+    .line 789
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipSecondaryMenuShow:Z
 
-    .line 798
+    .line 790
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v1, v1}, Lcom/transsion/camera/app/ui/IShutterUI;->updateFlipSecondaryMenuState(ZZ)V
 
     goto/16 :goto_26f
 
-    .line 809
+    .line 801
     :pswitch_71
     iget v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
@@ -892,58 +892,58 @@
 
     if-nez v3, :cond_26f
 
-    .line 810
+    .line 802
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mVideoPortraitUIShow:Z
 
-    .line 811
+    .line 803
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipSecondaryMenuShow:Z
 
-    .line 812
+    .line 804
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v1, v1}, Lcom/transsion/camera/app/ui/IShutterUI;->updateFlipSecondaryMenuState(ZZ)V
 
     goto/16 :goto_26f
 
-    .line 673
+    .line 665
     :pswitch_84
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInMicroPanTilt:Z
 
     goto/16 :goto_26f
 
-    .line 756
+    .line 748
     :pswitch_88
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v2}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsContinuousShooting(Z)V
 
-    .line 757
+    .line 749
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v2}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsCapturing(Z)V
 
-    .line 758
+    .line 750
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsContinuousShooting:Z
 
     goto/16 :goto_26f
 
-    .line 747
+    .line 739
     :pswitch_96
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v1}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsContinuousShooting(Z)V
 
-    .line 748
+    .line 740
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v1}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsCapturing(Z)V
 
-    .line 749
+    .line 741
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsContinuousShooting:Z
 
     goto/16 :goto_26f
 
-    .line 679
+    .line 671
     :pswitch_a4
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
@@ -951,7 +951,7 @@
 
     goto/16 :goto_26f
 
-    .line 676
+    .line 668
     :pswitch_ab
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
@@ -959,29 +959,29 @@
 
     goto/16 :goto_26f
 
-    .line 761
+    .line 753
     :pswitch_b2
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v2}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsCapturing(Z)V
 
-    .line 762
+    .line 754
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsShot2ShotCapturing:Z
 
     goto/16 :goto_26f
 
-    .line 752
+    .line 744
     :pswitch_bb
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v1}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsCapturing(Z)V
 
-    .line 753
+    .line 745
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsShot2ShotCapturing:Z
 
     goto/16 :goto_26f
 
-    .line 768
+    .line 760
     :pswitch_c4
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
@@ -989,7 +989,7 @@
 
     goto/16 :goto_26f
 
-    .line 765
+    .line 757
     :pswitch_cb
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
@@ -997,55 +997,55 @@
 
     goto/16 :goto_26f
 
-    .line 791
+    .line 783
     :sswitch_d2
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipPageShow:Z
 
-    .line 792
+    .line 784
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->show()V
 
     goto/16 :goto_26f
 
-    .line 786
+    .line 778
     :sswitch_d9
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipPageShow:Z
 
-    .line 787
+    .line 779
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->hide()V
 
     goto/16 :goto_26f
 
-    .line 844
+    .line 836
     :sswitch_e0
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsAIGCContinuousShooting:Z
 
-    .line 845
+    .line 837
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mAIArtMuseumCapturing:Z
 
     goto/16 :goto_26f
 
-    .line 840
+    .line 832
     :sswitch_e6
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsAIGCContinuousShooting:Z
 
-    .line 841
+    .line 833
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mAIArtMuseumCapturing:Z
 
     goto/16 :goto_26f
 
-    .line 741
+    .line 733
     :sswitch_ec
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInShutterSoundOptionalFragment:Z
 
     goto/16 :goto_26f
 
-    .line 738
+    .line 730
     :sswitch_f0
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInShutterSoundOptionalFragment:Z
 
     goto/16 :goto_26f
 
-    .line 857
+    .line 849
     :sswitch_f4
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
@@ -1053,7 +1053,7 @@
 
     goto/16 :goto_26f
 
-    .line 854
+    .line 846
     :sswitch_fb
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
@@ -1061,7 +1061,7 @@
 
     goto/16 :goto_26f
 
-    .line 782
+    .line 774
     :sswitch_102
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mMainHandler:Landroid/os/Handler;
 
@@ -1075,7 +1075,7 @@
 
     goto/16 :goto_26f
 
-    .line 779
+    .line 771
     :sswitch_110
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
@@ -1083,7 +1083,7 @@
 
     goto/16 :goto_26f
 
-    .line 666
+    .line 658
     :sswitch_117
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
@@ -1091,24 +1091,24 @@
 
     goto/16 :goto_26f
 
-    .line 593
+    .line 585
     :sswitch_11e
     iget-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mSwipeTouchUp:Z
 
     if-eqz v3, :cond_26f
 
-    .line 594
+    .line 586
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFloatingShutterHideEnd:Z
 
     goto/16 :goto_26f
 
-    .line 590
+    .line 582
     :sswitch_126
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFloatingShutterHideEnd:Z
 
     goto/16 :goto_26f
 
-    .line 771
+    .line 763
     :sswitch_12a
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
@@ -1118,19 +1118,19 @@
 
     if-nez v3, :cond_26f
 
-    .line 772
+    .line 764
     sget-object v3, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v4, "camera activity lose focus, stop continuous shot"
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 773
+    .line 765
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/ui/IShutterUI;->notifyLoseFocus()V
 
-    .line 774
+    .line 766
     iget-object v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -1145,12 +1145,12 @@
 
     const-string v5, "key_stop_continuous_shot_action"
 
-    .line 775
+    .line 767
     invoke-virtual {v3, v4, v5}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto/16 :goto_26f
 
-    .line 732
+    .line 724
     :sswitch_151
     iget-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsShot2ShotCapturing:Z
 
@@ -1164,30 +1164,30 @@
 
     if-nez v3, :cond_26f
 
-    .line 733
+    .line 725
     :cond_15d
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->setEnable(Z)V
 
     goto/16 :goto_26f
 
-    .line 727
+    .line 719
     :sswitch_162
     iget-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsShot2ShotCapturing:Z
 
     if-nez v3, :cond_26f
 
-    .line 728
+    .line 720
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->setEnable(Z)V
 
     goto/16 :goto_26f
 
-    .line 721
+    .line 713
     :sswitch_16b
     invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->setEnable(Z)V
 
     goto/16 :goto_26f
 
-    .line 817
+    .line 809
     :pswitch_170
     :sswitch_170
     iget v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
@@ -1198,13 +1198,13 @@
 
     if-eqz v3, :cond_26f
 
-    .line 818
+    .line 810
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mVideoPortraitUIShow:Z
 
-    .line 819
+    .line 811
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipSecondaryMenuShow:Z
 
-    .line 820
+    .line 812
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     iget-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mRecording:Z
@@ -1215,194 +1215,194 @@
 
     goto/16 :goto_26f
 
-    .line 848
+    .line 840
     :sswitch_186
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsIntentPhotoModeSaving:Z
 
     goto/16 :goto_26f
 
-    .line 699
+    .line 691
     :sswitch_18a
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsTimelapseForceEnable:Z
 
     goto/16 :goto_26f
 
-    .line 696
+    .line 688
     :sswitch_18e
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsTimelapseForceEnable:Z
 
     goto/16 :goto_26f
 
-    .line 693
+    .line 685
     :sswitch_192
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInRemoteCaptureFragment:Z
 
     goto/16 :goto_26f
 
-    .line 690
+    .line 682
     :sswitch_196
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInRemoteCaptureFragment:Z
 
     goto/16 :goto_26f
 
-    .line 670
+    .line 662
     :pswitch_19a
     :sswitch_19a
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInMicroPanTilt:Z
 
     goto/16 :goto_26f
 
-    .line 686
+    .line 678
     :sswitch_19e
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInEditWaterMarkFragment:Z
 
     goto/16 :goto_26f
 
-    .line 683
+    .line 675
     :sswitch_1a2
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInEditWaterMarkFragment:Z
 
     goto/16 :goto_26f
 
-    .line 744
+    .line 736
     :sswitch_1a6
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsShot2ShotCapturing:Z
 
     goto/16 :goto_26f
 
-    .line 634
+    .line 626
     :sswitch_1aa
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInSwitchingDevice:Z
 
-    .line 635
+    .line 627
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInFragment:Z
 
-    .line 636
+    .line 628
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInOrderEditorFragment:Z
 
-    .line 637
+    .line 629
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInMicroPanTilt:Z
 
-    .line 638
+    .line 630
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInEditWaterMarkFragment:Z
 
-    .line 639
+    .line 631
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInRemoteCaptureFragment:Z
 
-    .line 640
+    .line 632
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsTimelapseForceEnable:Z
 
-    .line 641
+    .line 633
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInModeSwitching:Z
 
-    .line 642
+    .line 634
     iget v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
     if-ne v4, v3, :cond_1d2
 
-    .line 643
+    .line 635
     iget-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipSecondaryMenuShow:Z
 
     if-eqz v3, :cond_1c9
 
-    .line 644
+    .line 636
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipSecondaryMenuShow:Z
 
-    .line 645
+    .line 637
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v2, v1}, Lcom/transsion/camera/app/ui/IShutterUI;->updateFlipSecondaryMenuState(ZZ)V
 
-    .line 647
+    .line 639
     :cond_1c9
     iget-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipPageShow:Z
 
     if-eqz v3, :cond_1d2
 
-    .line 648
+    .line 640
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipPageShow:Z
 
-    .line 649
+    .line 641
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->show()V
 
-    .line 652
+    .line 644
     :cond_1d2
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mRecording:Z
 
-    .line 653
+    .line 645
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mVideoMakeupUIShow:Z
 
-    .line 654
+    .line 646
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mVideoPortraitUIShow:Z
 
-    .line 655
+    .line 647
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipSecondaryMenuShow:Z
 
-    .line 656
+    .line 648
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInShutterSoundOptionalFragment:Z
 
-    .line 657
+    .line 649
     iget-boolean v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mIsShown:Z
 
     if-eqz v3, :cond_1e5
 
-    .line 658
+    .line 650
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/ui/IShutterUI;->stopQuickVideo()V
 
-    .line 660
+    .line 652
     :cond_1e5
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/ui/IShutterUI;->notifyContinuousShotStop()V
 
-    .line 661
+    .line 653
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v2}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsCameraSwitching(Z)V
 
-    .line 662
+    .line 654
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v2}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsPhotoSizeChanging(Z)V
 
-    .line 663
+    .line 655
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mContext:Landroid/content/Context;
 
     invoke-static {v3, v1}, Lcom/transsion/camera/utils/CameraUtil;->putFbCameraState(Landroid/content/Context;I)V
 
     goto/16 :goto_26f
 
-    .line 703
+    .line 695
     :pswitch_1fb
     :sswitch_1fb
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mResuming:Z
 
-    .line 704
+    .line 696
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInModeSwitching:Z
 
-    .line 705
+    .line 697
     iget-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mPendingWriting:Z
 
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mWriting:Z
 
     goto/16 :goto_26f
 
-    .line 631
+    .line 623
     :cond_205
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInOrderEditorFragment:Z
 
     goto/16 :goto_26f
 
-    .line 628
+    .line 620
     :cond_209
     :sswitch_209
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInOrderEditorFragment:Z
 
     goto :goto_26f
 
-    .line 834
+    .line 826
     :cond_20c
     :sswitch_20c
     iget v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
@@ -1413,154 +1413,154 @@
 
     if-eqz v3, :cond_26f
 
-    .line 835
+    .line 827
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipSecondaryMenuShow:Z
 
-    .line 836
+    .line 828
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v2, v1}, Lcom/transsion/camera/app/ui/IShutterUI;->updateFlipSecondaryMenuState(ZZ)V
 
     goto :goto_26f
 
-    .line 826
+    .line 818
     :cond_21c
     :sswitch_21c
     iget v3, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
     if-ne v3, v4, :cond_26f
 
-    .line 827
+    .line 819
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mFlipSecondaryMenuShow:Z
 
-    .line 828
+    .line 820
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v1, v1}, Lcom/transsion/camera/app/ui/IShutterUI;->updateFlipSecondaryMenuState(ZZ)V
 
     goto :goto_26f
 
-    .line 602
+    .line 594
     :cond_228
     :sswitch_228
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInFragment:Z
 
-    .line 603
+    .line 595
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mContext:Landroid/content/Context;
 
     invoke-static {v3, v1}, Lcom/transsion/camera/utils/CameraUtil;->putFbCameraState(Landroid/content/Context;I)V
 
     goto :goto_26f
 
-    .line 585
+    .line 577
     :cond_230
     :sswitch_230
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInFragment:Z
 
-    .line 586
+    .line 578
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mContext:Landroid/content/Context;
 
     invoke-static {v3, v2}, Lcom/transsion/camera/utils/CameraUtil;->putFbCameraState(Landroid/content/Context;I)V
 
     goto :goto_26f
 
-    .line 623
+    .line 615
     :cond_238
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsPhotoSizeChanging:Z
 
-    .line 624
+    .line 616
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v2}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsPhotoSizeChanging(Z)V
 
     goto :goto_26f
 
-    .line 619
+    .line 611
     :cond_240
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsPhotoSizeChanging:Z
 
-    .line 620
+    .line 612
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v1}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsPhotoSizeChanging(Z)V
 
     goto :goto_26f
 
-    .line 713
+    .line 705
     :cond_248
     iget-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mPendingWriting:Z
 
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mWriting:Z
 
-    .line 714
+    .line 706
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInModeSwitching:Z
 
     goto :goto_26f
 
-    .line 708
+    .line 700
     :cond_24f
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v2}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsCapturing(Z)V
 
-    .line 709
+    .line 701
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsShot2ShotCapturing:Z
 
-    .line 710
+    .line 702
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInModeSwitching:Z
 
     goto :goto_26f
 
-    .line 614
+    .line 606
     :cond_259
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v2}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsCameraSwitching(Z)V
 
-    .line 615
+    .line 607
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInSwitchingDevice:Z
 
     goto :goto_26f
 
-    .line 607
+    .line 599
     :cond_261
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v1}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsCameraSwitching(Z)V
 
-    .line 608
+    .line 600
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInSwitchingDevice:Z
 
-    .line 609
+    .line 601
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {v3, v2}, Lcom/transsion/camera/app/ui/IShutterUI;->setIsCapturing(Z)V
 
-    .line 610
+    .line 602
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsShot2ShotCapturing:Z
 
-    .line 863
+    .line 855
     :cond_26f
     :goto_26f
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
-    if-eqz v3, :cond_3ef
+    if-eqz v3, :cond_401
 
     const/16 v4, 0x1f
 
-    if-ne p1, v4, :cond_2dd
+    if-ne p1, v4, :cond_2ef
 
-    .line 865
+    .line 857
     invoke-interface {v3}, Lcom/transsion/camera/app/ui/IShutterUI;->getShutterType()I
 
     move-result v3
 
-    .line 866
+    .line 858
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->getShutterTypeSelftimerOn()I
 
     move-result v4
 
-    .line 867
+    .line 859
     sget-object v5, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1573,7 +1573,7 @@
 
     iget-object v7, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 868
+    .line 860
     invoke-interface {v7}, Lcom/transsion/camera/app/common/IAppUI;->getShutterPriority()I
 
     move-result v7
@@ -1586,29 +1586,48 @@
 
     invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    const-string v7, " selfTimerShutterType:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 867
+    .line 859
     invoke-static {v5, v6}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    if-eq v3, v4, :cond_2cd
+    if-eq v3, v4, :cond_2b1
 
     add-int/lit16 v5, v4, 0x2710
 
-    if-eq v3, v5, :cond_2cd
+    if-ne v3, v5, :cond_2bb
 
-    .line 870
+    .line 862
+    :cond_2b1
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/transsion/camera/utils/CustomConfigUtil;->isQcomCaptureFlow()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2df
+
+    .line 863
+    :cond_2bb
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mCapturingAddProcessing:Z
 
-    if-eqz p1, :cond_2c9
+    if-eqz p1, :cond_2db
 
-    .line 872
+    .line 865
     const-string p1, "com.transsion.camera.feature.mode.litefacebeauty.LiteFaceBeautyModeEntry"
 
     const-string v0, "com.transsion.camera.feature.mode.stblurmode.STBlurModeEntry"
@@ -1617,7 +1636,7 @@
 
     move-result-object p1
 
-    .line 873
+    .line 866
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -1628,91 +1647,91 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3ef
+    if-eqz p1, :cond_401
 
-    .line 875
+    .line 868
     invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->setEnable(Z)V
 
     return-void
 
-    .line 878
-    :cond_2c9
+    .line 871
+    :cond_2db
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->setEnable(Z)V
 
     return-void
 
-    :cond_2cd
-    if-ne v3, v4, :cond_2dd
+    :cond_2df
+    if-ne v3, v4, :cond_2ef
 
-    .line 881
+    .line 874
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 882
+    .line 875
     invoke-interface {v3}, Lcom/transsion/camera/app/common/IAppUI;->getShutterPriority()I
 
     move-result v3
 
     const/16 v4, 0xb
 
-    if-ne v3, v4, :cond_2dd
+    if-ne v3, v4, :cond_2ef
 
-    .line 883
+    .line 876
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->setEnable(Z)V
 
     return-void
 
-    :cond_2dd
+    :cond_2ef
     const/16 v3, 0x3e9
 
-    .line 887
+    .line 880
     invoke-static {v3, p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->respondUIManagerEvent(II)I
 
     move-result v3
 
-    .line 888
+    .line 881
     iget-object v4, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
-    if-eqz v4, :cond_389
+    if-eqz v4, :cond_39b
 
     const/16 v4, 0x26
 
-    if-ne p1, v4, :cond_2f4
+    if-ne p1, v4, :cond_306
 
-    .line 890
+    .line 883
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isMultiTouchSupport()Z
 
     move-result v3
 
-    if-eqz v3, :cond_2f3
+    if-eqz v3, :cond_305
 
     move v3, v2
 
-    goto :goto_2f4
+    goto :goto_306
 
-    :cond_2f3
+    :cond_305
     move v3, v1
 
-    .line 896
-    :cond_2f4
-    :goto_2f4
+    .line 889
+    :cond_306
+    :goto_306
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsShot2ShotCapturing:Z
 
-    if-eqz v5, :cond_31b
+    if-eqz v5, :cond_32d
 
-    if-nez v3, :cond_31b
+    if-nez v3, :cond_32d
 
     const/16 v5, 0x18
 
-    if-eq p1, v5, :cond_304
+    if-eq p1, v5, :cond_316
 
-    if-eq p1, v4, :cond_304
+    if-eq p1, v4, :cond_316
 
     const/16 v4, 0x27
 
-    if-ne p1, v4, :cond_31b
+    if-ne p1, v4, :cond_32d
 
-    .line 900
-    :cond_304
+    .line 893
+    :cond_316
     sget-object v3, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1733,17 +1752,17 @@
 
     move v3, v1
 
-    .line 903
-    :cond_31b
+    .line 896
+    :cond_32d
     iget-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsPhotoSizeChanging:Z
 
-    if-eqz v4, :cond_33a
+    if-eqz v4, :cond_34c
 
-    if-eq p1, v0, :cond_33a
+    if-eq p1, v0, :cond_34c
 
-    if-nez v3, :cond_33a
+    if-nez v3, :cond_34c
 
-    .line 904
+    .line 897
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1764,11 +1783,11 @@
 
     move v3, v1
 
-    .line 907
-    :cond_33a
+    .line 900
+    :cond_34c
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInModeSwitching:Z
 
-    if-nez v0, :cond_348
+    if-nez v0, :cond_35a
 
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
@@ -1778,16 +1797,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_37f
+    if-eqz v0, :cond_391
 
-    :cond_348
+    :cond_35a
     const/16 v0, 0xe
 
-    if-ne p1, v0, :cond_37f
+    if-ne p1, v0, :cond_391
 
-    if-nez v3, :cond_37f
+    if-nez v3, :cond_391
 
-    .line 910
+    .line 903
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1812,7 +1831,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 911
+    .line 904
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
     move-result-object v4
@@ -1827,13 +1846,13 @@
 
     move-result-object v3
 
-    .line 910
+    .line 903
     invoke-static {v0, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     move v3, v1
 
-    .line 914
-    :cond_37f
+    .line 907
+    :cond_391
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->getCurrentActionState()I
@@ -1844,19 +1863,19 @@
 
     move-result v3
 
-    :cond_389
+    :cond_39b
     const/4 v0, -0x1
 
-    if-ne v3, v0, :cond_391
+    if-ne v3, v0, :cond_3a3
 
     const/16 v0, 0x35
 
-    if-ne p1, v0, :cond_391
+    if-ne p1, v0, :cond_3a3
 
     move v3, v1
 
-    .line 926
-    :cond_391
+    .line 919
+    :cond_3a3
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1881,55 +1900,55 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    if-ne v3, v1, :cond_3b5
+    if-ne v3, v1, :cond_3c7
 
-    .line 929
+    .line 922
     invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->setEnable(Z)V
 
     return-void
 
-    :cond_3b5
-    if-nez v3, :cond_3d9
+    :cond_3c7
+    if-nez v3, :cond_3eb
 
-    .line 930
+    .line 923
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInFragment:Z
 
-    if-nez p1, :cond_3d9
+    if-nez p1, :cond_3eb
 
-    .line 931
+    .line 924
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->isShutterEnable()Z
 
     move-result p1
 
-    if-eqz p1, :cond_3d9
+    if-eqz p1, :cond_3eb
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInOrderEditorFragment:Z
 
-    if-nez p1, :cond_3d9
+    if-nez p1, :cond_3eb
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInRemoteCaptureFragment:Z
 
-    if-nez p1, :cond_3d9
+    if-nez p1, :cond_3eb
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInMicroPanTilt:Z
 
-    if-nez p1, :cond_3d9
+    if-nez p1, :cond_3eb
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInEditWaterMarkFragment:Z
 
-    if-nez p1, :cond_3d9
+    if-nez p1, :cond_3eb
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInShutterSoundOptionalFragment:Z
 
-    if-nez p1, :cond_3d9
+    if-nez p1, :cond_3eb
 
-    .line 934
+    .line 927
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->setEnable(Z)V
 
     return-void
 
-    .line 936
-    :cond_3d9
+    .line 929
+    :cond_3eb
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1948,10 +1967,10 @@
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    :cond_3ef
+    :cond_401
     return-void
 
-    :sswitch_data_3f0
+    :sswitch_data_402
     .sparse-switch
         0x9 -> :sswitch_1fb
         0x14 -> :sswitch_228
@@ -2010,7 +2029,7 @@
         0x18a -> :sswitch_162
     .end sparse-switch
 
-    :pswitch_data_4ce
+    :pswitch_data_4e0
     .packed-switch 0xb
         :pswitch_cb
         :pswitch_c4
@@ -2018,7 +2037,7 @@
         :pswitch_b2
     .end packed-switch
 
-    :pswitch_data_4da
+    :pswitch_data_4ec
     .packed-switch 0x22
         :pswitch_ab
         :pswitch_a4
@@ -2026,14 +2045,14 @@
         :pswitch_88
     .end packed-switch
 
-    :pswitch_data_4e6
+    :pswitch_data_4f8
     .packed-switch 0x61
         :pswitch_19a
         :pswitch_84
         :pswitch_1fb
     .end packed-switch
 
-    :pswitch_data_4f0
+    :pswitch_data_502
     .packed-switch 0x81
         :pswitch_71
         :pswitch_170
@@ -2048,10 +2067,10 @@
 
     const/4 v0, 0x0
 
-    .line 570
+    .line 562
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mInSwitchingDevice:Z
 
-    .line 571
+    .line 563
     invoke-super {p0}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->onConfigurationChanged()Z
 
     move-result p0
@@ -2133,15 +2152,15 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 992
+    .line 985
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->onScreenFormChanged(IZ)V
 
-    .line 993
+    .line 986
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     if-eqz p0, :cond_a
 
-    .line 994
+    .line 987
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/ui/IShutterUI;->onScreenFormChanged(IZ)V
 
     :cond_a
@@ -2300,28 +2319,28 @@
 .method public setEnable(Z)V
     .registers 5
 
-    .line 969
+    .line 962
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mIsTimelapseForceEnable:Z
 
     if-eqz v0, :cond_d
 
-    .line 970
+    .line 963
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     if-eqz p0, :cond_5c
 
     const/4 p1, 0x1
 
-    .line 971
+    .line 964
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IRootUI;->setEnable(Z)V
 
     return-void
 
-    .line 974
+    .line 967
     :cond_d
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->setEnable(Z)V
 
-    .line 975
+    .line 968
     invoke-static {}, Lcom/transsion/camera/utils/debug/Log;->isDebugLogEnable()Z
 
     move-result v0
@@ -2330,7 +2349,7 @@
 
     if-eqz v0, :cond_23
 
-    .line 976
+    .line 969
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/Throwable;
@@ -2341,7 +2360,7 @@
 
     goto :goto_37
 
-    .line 978
+    .line 971
     :cond_23
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2359,13 +2378,13 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 980
+    .line 973
     :goto_37
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mWriting:Z
 
     if-eqz v0, :cond_55
 
-    .line 981
+    .line 974
     sget-object p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2388,13 +2407,13 @@
 
     return-void
 
-    .line 984
+    .line 977
     :cond_55
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     if-eqz p0, :cond_5c
 
-    .line 985
+    .line 978
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IRootUI;->setEnable(Z)V
 
     :cond_5c
@@ -2471,10 +2490,10 @@
 .method public setWritingState(Z)V
     .registers 5
 
-    .line 1011
+    .line 1004
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mPendingWriting:Z
 
-    .line 1012
+    .line 1005
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     if-eqz v0, :cond_b
@@ -2488,7 +2507,7 @@
     :cond_b
     const/4 v0, 0x0
 
-    .line 1013
+    .line 1006
     :goto_c
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mResuming:Z
 
@@ -2502,11 +2521,11 @@
 
     goto :goto_3b
 
-    .line 1018
+    .line 1011
     :cond_17
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mWriting:Z
 
-    .line 1019
+    .line 1012
     sget-object v0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2527,20 +2546,20 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1020
+    .line 1013
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     if-eqz p0, :cond_3a
 
     xor-int/lit8 p1, p1, 0x1
 
-    .line 1021
+    .line 1014
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IRootUI;->setEnable(Z)V
 
     :cond_3a
     return-void
 
-    .line 1014
+    .line 1007
     :cond_3b
     :goto_3b
     sget-object p1, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -2585,7 +2604,7 @@
 
     const/4 v0, 0x7
 
-    .line 953
+    .line 946
     iget v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
     if-ne v0, v1, :cond_a
@@ -2596,7 +2615,7 @@
 
     return-void
 
-    .line 956
+    .line 949
     :cond_a
     invoke-super {p0}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->show()V
 
@@ -2621,12 +2640,12 @@
 .method public showShutterButton()V
     .registers 1
 
-    .line 1005
+    .line 998
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     if-eqz p0, :cond_7
 
-    .line 1006
+    .line 999
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IShutterUI;->showShutterButton()V
 
     :cond_7
@@ -2668,7 +2687,7 @@
 .method public transitionToPressed(Z)V
     .registers 2
 
-    .line 546
+    .line 538
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IShutterUI;->transitionToPressed(Z)V
@@ -2687,32 +2706,10 @@
     return-void
 .end method
 
-.method public transitionToRegular()V
-    .registers 1
-
-    .line 534
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
-
-    invoke-interface {p0}, Lcom/transsion/camera/app/ui/IShutterUI;->transitionToRegular()V
-
-    return-void
-.end method
-
-.method public transitionToSmall()V
-    .registers 1
-
-    .line 530
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
-
-    invoke-interface {p0}, Lcom/transsion/camera/app/ui/IShutterUI;->transitionToSmall()V
-
-    return-void
-.end method
-
 .method public transitionToSmile()V
     .registers 1
 
-    .line 538
+    .line 530
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IShutterUI;->transitionToSmile()V
@@ -2723,7 +2720,7 @@
 .method public transitionToVoice()V
     .registers 1
 
-    .line 542
+    .line 534
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterUI:Lcom/transsion/camera/app/ui/IShutterUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IShutterUI;->transitionToVoice()V
@@ -2736,7 +2733,7 @@
 
     const/4 v0, 0x7
 
-    .line 550
+    .line 542
     iget v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
     if-ne v0, v1, :cond_11
@@ -2745,7 +2742,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 551
+    .line 543
     sget-object p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[triggerShutterClick] interrupted, SCREEN_FORM_TYPE_FLIP"
@@ -2754,7 +2751,7 @@
 
     return-void
 
-    .line 554
+    .line 546
     :cond_11
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterListenerImpl:Lcom/transsion/camera/app/ui/manager/ShutterUIManager$ShutterListenerImpl;
 
@@ -2768,7 +2765,7 @@
 
     const/4 v0, 0x7
 
-    .line 558
+    .line 550
     iget v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
     if-ne v0, v1, :cond_a
@@ -2779,7 +2776,7 @@
 
     return-void
 
-    .line 561
+    .line 553
     :cond_a
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterListenerImpl:Lcom/transsion/camera/app/ui/manager/ShutterUIManager$ShutterListenerImpl;
 
@@ -2791,7 +2788,7 @@
 .method public triggerShutterUp()V
     .registers 2
 
-    .line 565
+    .line 557
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ShutterUIManager;->mShutterListenerImpl:Lcom/transsion/camera/app/ui/manager/ShutterUIManager$ShutterListenerImpl;
 
     const/4 v0, 0x0

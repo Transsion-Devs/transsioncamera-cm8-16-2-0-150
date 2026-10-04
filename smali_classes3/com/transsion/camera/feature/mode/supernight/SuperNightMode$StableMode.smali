@@ -37,24 +37,24 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)V
     .registers 3
 
-    .line 976
+    .line 978
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 974
+    .line 976
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mIsPaused:Z
 
-    .line 1039
+    .line 1041
     new-instance v0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableStatusCallback:Lcom/transsion/camera/app/common/gsensor/IStableMonitor$IStatusCallback;
 
-    .line 977
+    .line 979
     new-instance v0, Lcom/transsion/camera/app/common/gsensor/StableMonitor;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -72,7 +72,7 @@
 .method private hideAllHint()V
     .registers 3
 
-    .line 1064
+    .line 1066
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -88,7 +88,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1065
+    .line 1067
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -104,7 +104,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1066
+    .line 1068
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -126,7 +126,7 @@
 .method private onStableStatusChanged(I)V
     .registers 5
 
-    .line 1042
+    .line 1044
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -198,7 +198,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1046
+    .line 1048
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mIsPaused:Z
 
     if-nez v0, :cond_c8
@@ -230,7 +230,7 @@
 
     if-ne p1, v0, :cond_9d
 
-    .line 1050
+    .line 1052
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$fgetmIsZooming(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)Z
@@ -247,7 +247,7 @@
 
     if-eqz v1, :cond_9d
 
-    .line 1051
+    .line 1053
     :cond_7e
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
@@ -264,7 +264,7 @@
 
     invoke-interface {v1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->showHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1052
+    .line 1054
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -282,7 +282,7 @@
 
     goto :goto_bb
 
-    .line 1054
+    .line 1056
     :cond_9d
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
@@ -299,7 +299,7 @@
 
     invoke-interface {v1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1055
+    .line 1057
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -318,7 +318,7 @@
     :goto_bb
     if-ne p1, v0, :cond_c8
 
-    .line 1059
+    .line 1061
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$fgetmIsZooming(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)Z
@@ -339,7 +339,7 @@
 .method init()V
     .registers 4
 
-    .line 981
+    .line 983
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$fgetmStableModeOpenedInfo(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -356,7 +356,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 983
+    .line 985
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$fgetmStableModeEnteredInfo(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -373,7 +373,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 984
+    .line 986
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$fgetmStableModeEnteredInfo(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -384,7 +384,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->enableBackground(Z)V
 
-    .line 985
+    .line 987
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$fgetmStableModeEnteredInfo(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -393,7 +393,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setHighlight(Z)V
 
-    .line 987
+    .line 989
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$fgetmInStableModeInfo(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -410,12 +410,12 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 989
+    .line 991
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableMonitor:Lcom/transsion/camera/app/common/gsensor/StableMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/gsensor/StableMonitor;->init()V
 
-    .line 990
+    .line 992
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableMonitor:Lcom/transsion/camera/app/common/gsensor/StableMonitor;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableStatusCallback:Lcom/transsion/camera/app/common/gsensor/IStableMonitor$IStatusCallback;
@@ -428,7 +428,7 @@
 .method isStable()Z
     .registers 3
 
-    .line 1035
+    .line 1037
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableMonitor:Lcom/transsion/camera/app/common/gsensor/StableMonitor;
 
     const/4 v0, 0x0
@@ -437,7 +437,7 @@
 
     return v0
 
-    .line 1036
+    .line 1038
     :cond_6
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/gsensor/StableMonitor;->getLastStatus()I
 
@@ -458,21 +458,21 @@
 .method onClosed()V
     .registers 2
 
-    .line 1011
+    .line 1013
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableMonitor:Lcom/transsion/camera/app/common/gsensor/StableMonitor;
 
     if-eqz v0, :cond_7
 
-    .line 1012
+    .line 1014
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/gsensor/StableMonitor;->stop()V
 
-    .line 1014
+    .line 1016
     :cond_7
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->hideAllHint()V
 
     const/4 v0, 0x0
 
-    .line 1015
+    .line 1017
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mIsPaused:Z
 
     return-void
@@ -481,7 +481,7 @@
 .method onOpened()V
     .registers 3
 
-    .line 1000
+    .line 1002
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -492,7 +492,7 @@
 
     if-nez v0, :cond_19
 
-    .line 1001
+    .line 1003
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -508,19 +508,19 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->showHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1004
+    .line 1006
     :cond_19
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableMonitor:Lcom/transsion/camera/app/common/gsensor/StableMonitor;
 
     if-eqz v0, :cond_20
 
-    .line 1005
+    .line 1007
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/gsensor/StableMonitor;->start()V
 
     :cond_20
     const/4 v0, 0x0
 
-    .line 1007
+    .line 1009
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mIsPaused:Z
 
     return-void
@@ -531,10 +531,10 @@
 
     const/4 v0, 0x1
 
-    .line 1019
+    .line 1021
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mIsPaused:Z
 
-    .line 1020
+    .line 1022
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->hideAllHint()V
 
     return-void
@@ -543,7 +543,7 @@
 .method resume()V
     .registers 4
 
-    .line 1024
+    .line 1026
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableMonitor:Lcom/transsion/camera/app/common/gsensor/StableMonitor;
 
     const/4 v1, 0x2
@@ -556,7 +556,7 @@
 
     if-ne v0, v1, :cond_1a
 
-    .line 1025
+    .line 1027
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -572,7 +572,7 @@
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->showHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 1028
+    .line 1030
     :cond_1a
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableMonitor:Lcom/transsion/camera/app/common/gsensor/StableMonitor;
 
@@ -584,13 +584,13 @@
 
     if-eq v0, v1, :cond_27
 
-    .line 1029
+    .line 1031
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->hideAllHint()V
 
     :cond_27
     const/4 v0, 0x0
 
-    .line 1031
+    .line 1033
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mIsPaused:Z
 
     return-void
@@ -599,19 +599,19 @@
 .method unInit()V
     .registers 3
 
-    .line 994
+    .line 996
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableMonitor:Lcom/transsion/camera/app/common/gsensor/StableMonitor;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/gsensor/StableMonitor;->setStatusCallback(Lcom/transsion/camera/app/common/gsensor/IStableMonitor$IStatusCallback;)V
 
-    .line 995
+    .line 997
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableMonitor:Lcom/transsion/camera/app/common/gsensor/StableMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/gsensor/StableMonitor;->unInit()V
 
-    .line 996
+    .line 998
     iput-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->mStableMonitor:Lcom/transsion/camera/app/common/gsensor/StableMonitor;
 
     return-void

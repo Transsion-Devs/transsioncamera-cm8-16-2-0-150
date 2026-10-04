@@ -14,7 +14,7 @@
 .method public constructor <init>(Lkotlinx/coroutines/CoroutineDispatcher;)V
     .registers 2
 
-    .line 110
+    .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlinx/coroutines/DispatcherExecutor;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;
@@ -27,7 +27,7 @@
 .method public execute(Ljava/lang/Runnable;)V
     .registers 4
 
-    .line 112
+    .line 108
     iget-object v0, p0, Lkotlinx/coroutines/DispatcherExecutor;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;
 
     sget-object v1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
@@ -38,14 +38,14 @@
 
     if-eqz v0, :cond_10
 
-    .line 113
+    .line 109
     iget-object p0, p0, Lkotlinx/coroutines/DispatcherExecutor;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;
 
     invoke-virtual {p0, v1, p1}, Lkotlinx/coroutines/CoroutineDispatcher;->dispatch(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
 
     return-void
 
-    .line 115
+    .line 111
     :cond_10
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
@@ -55,7 +55,7 @@
 .method public toString()Ljava/lang/String;
     .registers 1
 
-    .line 119
+    .line 115
     iget-object p0, p0, Lkotlinx/coroutines/DispatcherExecutor;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;
 
     invoke-virtual {p0}, Lkotlinx/coroutines/CoroutineDispatcher;->toString()Ljava/lang/String;

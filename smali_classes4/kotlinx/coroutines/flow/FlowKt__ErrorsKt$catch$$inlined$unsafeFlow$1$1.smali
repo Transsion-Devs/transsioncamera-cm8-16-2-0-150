@@ -17,8 +17,8 @@
     c = "kotlinx.coroutines.flow.FlowKt__ErrorsKt$catch$$inlined$unsafeFlow$1"
     f = "Errors.kt"
     l = {
-        0x72,
-        0x73
+        0x70,
+        0x71
     }
     m = "collect"
 .end annotation

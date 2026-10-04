@@ -56,7 +56,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 45
+    .line 41
     check-cast p1, Lkotlinx/coroutines/ThreadContextElement;
 
     check-cast p2, Lkotlin/coroutines/CoroutineContext$Element;
@@ -86,7 +86,7 @@
 
     return-object p1
 
-    .line 47
+    .line 43
     :cond_3
     instance-of p0, p2, Lkotlinx/coroutines/ThreadContextElement;
 

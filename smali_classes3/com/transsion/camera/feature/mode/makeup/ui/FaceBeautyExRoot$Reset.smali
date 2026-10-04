@@ -24,7 +24,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;)V
     .registers 2
 
-    .line 909
+    .line 945
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;-><init>()V
 
     return-void

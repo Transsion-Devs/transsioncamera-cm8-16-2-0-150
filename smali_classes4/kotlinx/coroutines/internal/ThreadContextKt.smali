@@ -35,7 +35,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 11
+    .line 7
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "NO_THREAD_ELEMENTS"
@@ -44,17 +44,17 @@
 
     sput-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->NO_THREAD_ELEMENTS:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 35
+    .line 31
     sget-object v0, Lkotlinx/coroutines/internal/ThreadContextKt$countAll$1;->INSTANCE:Lkotlinx/coroutines/internal/ThreadContextKt$countAll$1;
 
     sput-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->countAll:Lkotlin/jvm/functions/Function2;
 
-    .line 45
+    .line 41
     sget-object v0, Lkotlinx/coroutines/internal/ThreadContextKt$findOne$1;->INSTANCE:Lkotlinx/coroutines/internal/ThreadContextKt$findOne$1;
 
     sput-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->findOne:Lkotlin/jvm/functions/Function2;
 
-    .line 52
+    .line 48
     sget-object v0, Lkotlinx/coroutines/internal/ThreadContextKt$updateState$1;->INSTANCE:Lkotlinx/coroutines/internal/ThreadContextKt$updateState$1;
 
     sput-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->updateState:Lkotlin/jvm/functions/Function2;
@@ -65,20 +65,20 @@
 .method public static final restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
     .registers 4
 
-    .line 85
+    .line 81
     sget-object v0, Lkotlinx/coroutines/internal/ThreadContextKt;->NO_THREAD_ELEMENTS:Lkotlinx/coroutines/internal/Symbol;
 
     if-ne p1, v0, :cond_5
 
     return-void
 
-    .line 86
+    .line 82
     :cond_5
     instance-of v0, p1, Lkotlinx/coroutines/internal/ThreadState;
 
     if-eqz v0, :cond_f
 
-    .line 88
+    .line 84
     check-cast p1, Lkotlinx/coroutines/internal/ThreadState;
 
     invoke-virtual {p1, p0}, Lkotlinx/coroutines/internal/ThreadState;->restore(Lkotlin/coroutines/CoroutineContext;)V
@@ -88,7 +88,7 @@
     :cond_f
     const/4 v0, 0x0
 
-    .line 93
+    .line 89
     sget-object v1, Lkotlinx/coroutines/internal/ThreadContextKt;->findOne:Lkotlin/jvm/functions/Function2;
 
     invoke-interface {p0, v0, v1}, Lkotlin/coroutines/CoroutineContext;->fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
@@ -101,7 +101,7 @@
 
     check-cast v0, Lkotlinx/coroutines/ThreadContextElement;
 
-    .line 94
+    .line 90
     invoke-interface {v0, p0, p1}, Lkotlinx/coroutines/ThreadContextElement;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
 
     return-void
@@ -112,7 +112,7 @@
 
     const/4 v0, 0x0
 
-    .line 59
+    .line 55
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -133,7 +133,7 @@
 
     if-nez p1, :cond_6
 
-    .line 65
+    .line 61
     invoke-static {p0}, Lkotlinx/coroutines/internal/ThreadContextKt;->threadContextElements(Lkotlin/coroutines/CoroutineContext;)Ljava/lang/Object;
 
     move-result-object p1
@@ -141,7 +141,7 @@
     :cond_6
     const/4 v0, 0x0
 
-    .line 68
+    .line 64
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -152,13 +152,13 @@
 
     return-object p0
 
-    .line 70
+    .line 66
     :cond_10
     instance-of v0, p1, Ljava/lang/Integer;
 
     if-eqz v0, :cond_26
 
-    .line 72
+    .line 68
     new-instance v0, Lkotlinx/coroutines/internal/ThreadState;
 
     check-cast p1, Ljava/lang/Number;
@@ -177,7 +177,7 @@
 
     return-object p0
 
-    .line 77
+    .line 73
     :cond_26
     const-string v0, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>"
 
@@ -185,7 +185,7 @@
 
     check-cast p1, Lkotlinx/coroutines/ThreadContextElement;
 
-    .line 78
+    .line 74
     invoke-interface {p1, p0}, Lkotlinx/coroutines/ThreadContextElement;->updateThreadContext(Lkotlin/coroutines/CoroutineContext;)Ljava/lang/Object;
 
     move-result-object p0

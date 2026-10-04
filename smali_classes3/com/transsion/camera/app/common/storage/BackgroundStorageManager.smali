@@ -70,6 +70,8 @@
 
 .field private final mScreenStateReceiver:Landroid/content/BroadcastReceiver;
 
+.field private mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
+
 .field private final mSystemUserID:Ljava/util/concurrent/atomic/AtomicInteger;
 
 .field private mThumbnailController:Ljava/lang/ref/WeakReference;
@@ -83,17 +85,17 @@
 .method public static synthetic $r8$lambda$-pv99j5JLRpDj55mpAurgpbkWlU(Landroid/database/Cursor;)Ljava/util/List;
     .registers 6
 
-    .line 1386
+    .line 1398
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1387
+    .line 1399
     new-instance v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;-><init>(Landroid/database/Cursor;)V
 
-    .line 1389
+    .line 1401
     :goto_a
     invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -101,96 +103,96 @@
 
     if-eqz v2, :cond_70
 
-    .line 1390
+    .line 1402
     new-instance v2, Landroid/content/ContentValues;
 
     invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1391
+    .line 1403
     const-string v3, "_display_name"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mDisplayNameIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putString(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1392
+    .line 1404
     const-string v3, "_id"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mIdIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1393
+    .line 1405
     const-string v3, "datetaken"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mDateTakenIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1394
+    .line 1406
     const-string/jumbo v3, "title"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mTitleIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putString(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1395
+    .line 1407
     const-string v3, "mime_type"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mMimeTypeIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putString(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1396
+    .line 1408
     const-string/jumbo v3, "width"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mWidthIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putInt(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1397
+    .line 1409
     const-string v3, "height"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mHeightIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putInt(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1398
+    .line 1410
     const-string v3, "orientation"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mOrientationIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putInt(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1399
+    .line 1411
     const-string v3, "_data"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mDataIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putString(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1400
+    .line 1412
     const-string v3, "latitude"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mLatitudeIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putDouble(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1401
+    .line 1413
     const-string v3, "longitude"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mLongitudeIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putDouble(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1402
+    .line 1414
     const-string/jumbo v3, "xmp"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mXmpIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putBlob(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1403
+    .line 1415
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_a
@@ -202,7 +204,7 @@
 .method public static synthetic $r8$lambda$2AzLAM8t9x5nKb6hPanvYfU2bh0(Landroid/os/Bundle;)V
     .registers 3
 
-    .line 1406
+    .line 1418
     const-string v0, "android:query-arg-match-trashed"
 
     const/4 v1, 0x1
@@ -233,17 +235,17 @@
 .method public static synthetic $r8$lambda$KyH6d9dKBQ9YW1hhbB4UR5VU-hw(Landroid/database/Cursor;)Ljava/util/List;
     .registers 9
 
-    .line 1527
+    .line 1539
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1528
+    .line 1540
     new-instance v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;-><init>(Landroid/database/Cursor;)V
 
-    .line 1530
+    .line 1542
     :goto_a
     invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -255,104 +257,104 @@
 
     if-eqz v2, :cond_75
 
-    .line 1531
+    .line 1543
     new-instance v2, Landroid/content/ContentValues;
 
     invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1532
+    .line 1544
     iget v5, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mDisplayNameIndex:I
 
     invoke-static {v2, v4, p0, v5}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putString(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1533
+    .line 1545
     const-string v4, "_id"
 
     iget v5, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mIdIndex:I
 
     invoke-static {v2, v4, p0, v5}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1534
+    .line 1546
     const-string v4, "bucket_id"
 
     iget v5, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mBucketIdIndex:I
 
     invoke-static {v2, v4, p0, v5}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1535
+    .line 1547
     const-string v4, "mime_type"
 
     iget v5, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mMimeTypeIndex:I
 
     invoke-static {v2, v4, p0, v5}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putString(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1536
+    .line 1548
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mDateTakenIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1537
+    .line 1549
     const-string v3, "date_added"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mDateAddedIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1538
+    .line 1550
     const-string v3, "date_modified"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mDateModifiedIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1539
+    .line 1551
     const-string v3, "_data"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mDataIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putString(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1540
+    .line 1552
     const-string v3, "_size"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mSizeIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1541
+    .line 1553
     const-string v3, "is_favorite"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mIsFavoriteIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putInt(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1542
+    .line 1554
     const-string/jumbo v3, "width"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mWidthIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putInt(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1543
+    .line 1555
     const-string v3, "height"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mHeightIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putInt(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1544
+    .line 1556
     const-string v3, "orientation"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mOrientationIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putInt(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1546
+    .line 1558
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_a
 
-    .line 1548
+    .line 1560
     :cond_75
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -371,7 +373,7 @@
 
     check-cast v2, Landroid/content/ContentValues;
 
-    .line 1549
+    .line 1561
     sget-object v5, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -392,7 +394,7 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1550
+    .line 1562
     invoke-virtual {v2, v3}, Landroid/content/ContentValues;->getAsString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -403,7 +405,7 @@
 
     move-result-object v2
 
-    .line 1549
+    .line 1561
     invoke-static {v5, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     goto :goto_7a
@@ -419,7 +421,7 @@
 
     return-object p4
 
-    .line 706
+    .line 713
     :cond_3
     sget-object p3, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -445,7 +447,7 @@
 
     invoke-static {p3, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 707
+    .line 714
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p0
@@ -467,7 +469,7 @@
 
     if-eqz p2, :cond_e
 
-    .line 661
+    .line 668
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo;->getDisplayNameInfo()Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;
 
     move-result-object v0
@@ -482,7 +484,7 @@
 
     return-object p0
 
-    .line 664
+    .line 671
     :cond_e
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -508,7 +510,7 @@
 
     invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 665
+    .line 672
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;->setDisplayNameInfo(Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;)Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;
 
     move-result-object p0
@@ -519,7 +521,7 @@
 .method public static synthetic $r8$lambda$U8HJznly-svYn9FlwD1MVzYroyc(Ljava/io/File;)Z
     .registers 2
 
-    .line 1439
+    .line 1451
     invoke-virtual {p0}, Ljava/io/File;->isDirectory()Z
 
     move-result v0
@@ -551,122 +553,122 @@
 .method public static synthetic $r8$lambda$XEuYZEw8ggZMK82mxjc2rwUs6mY(Landroid/database/Cursor;)Ljava/util/List;
     .registers 6
 
-    .line 1569
+    .line 1581
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     if-eqz p0, :cond_76
 
-    .line 1571
+    .line 1583
     new-instance v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;-><init>(Landroid/database/Cursor;)V
 
-    .line 1572
+    .line 1584
     invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v2
 
     if-eqz v2, :cond_76
 
-    .line 1573
+    .line 1585
     new-instance v2, Landroid/content/ContentValues;
 
     invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
 
-    .line 1574
+    .line 1586
     const-string v3, "_display_name"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mDisplayNameIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putString(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1575
+    .line 1587
     const-string v3, "_id"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mIdIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1576
+    .line 1588
     const-string v3, "bucket_id"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mBucketIdIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1577
+    .line 1589
     const-string v3, "mime_type"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mMimeTypeIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putString(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1578
+    .line 1590
     const-string v3, "datetaken"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mDateTakenIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1579
+    .line 1591
     const-string v3, "date_added"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mDateAddedIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1580
+    .line 1592
     const-string v3, "date_modified"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mDateModifiedIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1581
+    .line 1593
     const-string v3, "_data"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mDataIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putString(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1582
+    .line 1594
     const-string v3, "_size"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mSizeIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putLong(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1583
+    .line 1595
     const-string v3, "is_favorite"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mIsFavoriteIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putInt(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1584
+    .line 1596
     const-string/jumbo v3, "width"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mWidthIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putInt(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1585
+    .line 1597
     const-string v3, "height"
 
     iget v4, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mHeightIndex:I
 
     invoke-static {v2, v3, p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putInt(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1586
+    .line 1598
     const-string v3, "orientation"
 
     iget v1, v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$LowQualityColumnIndices;->mOrientationIndex:I
 
     invoke-static {v2, v3, p0, v1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->putInt(Landroid/content/ContentValues;Ljava/lang/String;Landroid/database/Cursor;I)V
 
-    .line 1588
+    .line 1600
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_76
@@ -678,7 +680,7 @@
 
     const/4 v0, 0x0
 
-    .line 987
+    .line 999
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/taps/IThumbnailController;->updateThumbnailUIEnable(Z)V
 
     return-void
@@ -698,7 +700,7 @@
 
     if-eqz p2, :cond_e
 
-    .line 636
+    .line 643
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo;->getImageInfo()Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
 
     move-result-object p2
@@ -713,7 +715,7 @@
 
     return-object p0
 
-    .line 639
+    .line 646
     :cond_e
     sget-object p2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -733,7 +735,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 640
+    .line 647
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;->setImageInfo(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;)Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;
 
     move-result-object p0
@@ -753,7 +755,7 @@
 .method public static synthetic $r8$lambda$fzL2EYrqvJpDtPLFTxctRdEPUUw([BLcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;)V
     .registers 2
 
-    .line 462
+    .line 469
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->setPostViewJpeg([B)Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
 
     return-void
@@ -773,7 +775,7 @@
 
     if-eqz p2, :cond_e
 
-    .line 650
+    .line 657
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo;->getQualityInfo()Lcom/transsion/camera/app/common/taps/entity/QualityInfo;
 
     move-result-object p2
@@ -788,7 +790,7 @@
 
     return-object p0
 
-    .line 653
+    .line 660
     :cond_e
     sget-object p2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -808,7 +810,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 654
+    .line 661
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;->setQualityInfo(Lcom/transsion/camera/app/common/taps/entity/QualityInfo;)Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;
 
     move-result-object p0
@@ -819,7 +821,7 @@
 .method public static synthetic $r8$lambda$hIaN1XmQXHl5dUvNfnTq9Id-GLE(Landroid/graphics/Bitmap;Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;)V
     .registers 2
 
-    .line 465
+    .line 472
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->setPostViewBitmap(Landroid/graphics/Bitmap;)Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
 
     return-void
@@ -841,7 +843,7 @@
 
     if-eqz p2, :cond_e
 
-    .line 598
+    .line 605
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo;->getLivePhotoInfo()Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;
 
     move-result-object v1
@@ -859,7 +861,7 @@
 
     goto :goto_15
 
-    .line 601
+    .line 608
     :cond_11
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo;->getLivePhotoInfo()Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;
 
@@ -870,13 +872,13 @@
 
     goto :goto_49
 
-    .line 606
+    .line 613
     :cond_18
     new-instance p2, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo$Builder;
 
     invoke-direct {p2, v0}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo$Builder;-><init>(Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;)V
 
-    .line 607
+    .line 614
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->getPresentationTimeUs()J
 
     move-result-wide v0
@@ -885,7 +887,7 @@
 
     move-result-object p2
 
-    .line 608
+    .line 615
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->getLivePhotoVideoPath()Ljava/lang/String;
 
     move-result-object v0
@@ -894,7 +896,7 @@
 
     move-result-object p2
 
-    .line 609
+    .line 616
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->isProcessing()Z
 
     move-result v0
@@ -903,7 +905,7 @@
 
     move-result-object p2
 
-    .line 610
+    .line 617
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->getCamFilePath()Ljava/lang/String;
 
     move-result-object v0
@@ -912,7 +914,7 @@
 
     move-result-object p2
 
-    .line 611
+    .line 618
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->getGyroFilePath()Ljava/lang/String;
 
     move-result-object p0
@@ -921,12 +923,12 @@
 
     move-result-object p0
 
-    .line 612
+    .line 619
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo$Builder;->build()Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;
 
     move-result-object p0
 
-    .line 614
+    .line 621
     :goto_49
     sget-object p2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -946,7 +948,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 615
+    .line 622
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;->setLivePhotoInfo(Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;)Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;
 
     move-result-object p0
@@ -959,7 +961,7 @@
 
     if-nez p2, :cond_c
 
-    .line 680
+    .line 687
     new-instance v0, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;
 
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
@@ -970,13 +972,13 @@
 
     goto :goto_11
 
-    .line 681
+    .line 688
     :cond_c
     new-instance v0, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;
 
     invoke-direct {v0, p2}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;-><init>(Lcom/transsion/camera/app/common/taps/entity/CacheInfo;)V
 
-    .line 683
+    .line 690
     :goto_11
     invoke-interface {p0, v0, p2}, Ljava/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -986,7 +988,7 @@
 
     if-eqz p0, :cond_1e
 
-    .line 685
+    .line 692
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;->build()Lcom/transsion/camera/app/common/taps/entity/CacheInfo;
 
     move-result-object p0
@@ -1018,7 +1020,7 @@
 .method public static synthetic $r8$lambda$vwD9YNTxuGlP5NC89N4ut4Qo77U(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;
     .registers 2
 
-    .line 1333
+    .line 1345
     invoke-interface {p1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -1033,14 +1035,14 @@
 
     if-eqz p0, :cond_b
 
-    .line 620
+    .line 627
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo;->getLivePhotoInfo()Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;
 
     move-result-object p0
 
     if-eqz p0, :cond_b
 
-    .line 622
+    .line 629
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->complete()V
 
     :cond_b
@@ -1050,7 +1052,7 @@
 .method public static synthetic $r8$lambda$ww9tmv7tZdoXF74p4ARdnXhzvR4(Ljava/io/File;)Z
     .registers 2
 
-    .line 1491
+    .line 1503
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
     move-result v0
@@ -1087,7 +1089,7 @@
 .method public static synthetic $r8$lambda$zmw2-KBwnUgLv-tWB7X6lkDq75M(Ljava/lang/String;)Z
     .registers 1
 
-    .line 1334
+    .line 1346
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -1255,7 +1257,7 @@
 .method static constructor <clinit>()V
     .registers 14
 
-    .line 105
+    .line 106
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "BackgroundStorageManager"
@@ -1264,7 +1266,7 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 119
+    .line 120
     const-string v12, "longitude"
 
     const-string/jumbo v13, "xmp"
@@ -1295,7 +1297,7 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->PROJECTION:[Ljava/lang/String;
 
-    .line 133
+    .line 134
     const-string v12, "height"
 
     const-string v13, "orientation"
@@ -1328,19 +1330,19 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->LOW_QUALITY_PROJECTION:[Ljava/lang/String;
 
-    .line 148
+    .line 149
     new-instance v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$1;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$1;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->USER_COMMENT_IDS:Ljava/util/Set;
 
-    .line 156
+    .line 157
     const-string v0, "debug.vendor.sys.taps.flush_before_low_quality_jpeg_save"
 
     const/4 v1, 0x1
 
-    .line 157
+    .line 158
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
@@ -1353,10 +1355,10 @@
 .method protected constructor <init>(Landroid/content/Context;Lcom/transsion/camera/app/common/storage/DataStore;Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;)V
     .registers 6
 
-    .line 202
+    .line 204
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/common/storage/BaseStorageManager;-><init>(Landroid/content/Context;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
-    .line 159
+    .line 160
     new-instance p2, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -1367,35 +1369,35 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mMainHandler:Landroid/os/Handler;
 
-    .line 162
+    .line 163
     new-instance p2, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {p2}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureCache:Ljava/util/Map;
 
-    .line 163
+    .line 164
     new-instance p2, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {p2}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureTimestampKey:Ljava/util/Map;
 
-    .line 164
+    .line 165
     invoke-static {}, Ljava/util/concurrent/ConcurrentHashMap;->newKeySet()Ljava/util/concurrent/ConcurrentHashMap$KeySetView;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureSavingCache:Ljava/util/Set;
 
-    .line 165
+    .line 166
     new-instance p2, Ljava/util/HashSet;
 
     invoke-direct {p2}, Ljava/util/HashSet;-><init>()V
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mFailedLowQualityPicture:Ljava/util/Set;
 
-    .line 166
+    .line 167
     new-instance p2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$OnLowQualityImageStateChangeListener;
 
     const/4 v0, 0x0
@@ -1404,14 +1406,14 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityMediaSaverListener:Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;
 
-    .line 169
+    .line 170
     new-instance p2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)V
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mCaptureProgressImpl:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;
 
-    .line 170
+    .line 171
     new-instance p2, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/high16 v1, -0x80000000
@@ -1420,7 +1422,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mSystemUserID:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 171
+    .line 172
     new-instance p2, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
@@ -1429,14 +1431,14 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mCTSVerifierInstalled:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 172
+    .line 173
     new-instance p2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda9;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda9;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)V
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mRestoreCacheTask:Ljava/lang/Runnable;
 
-    .line 176
+    .line 177
     new-instance p2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$2;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$2;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)V
@@ -1445,53 +1447,56 @@
 
     const/4 p2, 0x1
 
-    .line 199
+    .line 200
     iput-boolean p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mRestoreCacheNeeded:Z
 
-    .line 203
+    .line 201
+    iput-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
+
+    .line 205
     iput-object p3, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundStorageLifecycle:Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;
 
-    .line 204
+    .line 206
     new-instance p2, Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;
 
     invoke-direct {p2}, Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;-><init>()V
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mPhotoHelper:Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;
 
-    .line 205
+    .line 207
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->createWorkHandler()Landroid/os/Handler;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mWorkHandler:Landroid/os/Handler;
 
-    .line 207
+    .line 209
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v1
 
     iget-boolean v1, v1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportBackgroundShot2shotSkipPolicy:Z
 
-    if-eqz v1, :cond_76
+    if-eqz v1, :cond_78
 
-    .line 208
+    .line 210
     new-instance v0, Lcom/transsion/camera/app/common/taps/skilpolicy/BackgroundShot2ShotSkipPolicy;
 
     invoke-direct {v0, p2}, Lcom/transsion/camera/app/common/taps/skilpolicy/BackgroundShot2ShotSkipPolicy;-><init>(Landroid/os/Handler;)V
 
-    :cond_76
+    :cond_78
     iput-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
 
-    if-eqz p3, :cond_7d
-
-    .line 210
-    invoke-interface {p3, p0}, Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;->onBackgroundStorageCreate(Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager;)V
+    if-eqz p3, :cond_7f
 
     .line 212
-    :cond_7d
+    invoke-interface {p3, p0}, Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;->onBackgroundStorageCreate(Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager;)V
+
+    .line 214
+    :cond_7f
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->registerReceiver(Landroid/content/Context;)V
 
-    .line 213
+    .line 215
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->registerContentObserver(Landroid/content/Context;)V
 
     return-void
@@ -1502,7 +1507,7 @@
 
     const/4 v0, 0x0
 
-    .line 672
+    .line 679
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->applyLowQualityPictureCache(JLjava/util/function/BiFunction;Ljava/util/function/Consumer;)V
 
     return-void
@@ -1511,7 +1516,7 @@
 .method private applyLowQualityPictureCache(JLjava/util/function/BiFunction;Ljava/util/function/Consumer;)V
     .registers 5
 
-    .line 678
+    .line 685
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureCache:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1532,7 +1537,7 @@
 
     if-eqz p0, :cond_18
 
-    .line 688
+    .line 695
     invoke-interface {p4, p0}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
     :cond_18
@@ -1542,14 +1547,14 @@
 .method private applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;)V
     .registers 5
 
-    .line 630
+    .line 637
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;->getUri()Landroid/net/Uri;
 
     move-result-object v0
 
     if-nez v0, :cond_e
 
-    .line 631
+    .line 638
     sget-object p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "applyLowQualityPictureCache: invalid imageInfo"
@@ -1558,13 +1563,13 @@
 
     return-void
 
-    .line 634
+    .line 641
     :cond_e
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/taps/entity/BaseInfo;->getTimestampKey()J
 
     move-result-wide v0
 
-    .line 635
+    .line 642
     new-instance v2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda29;
 
     invoke-direct {v2, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda29;-><init>(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;)V
@@ -1581,12 +1586,12 @@
 .method private applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/CacheInfo;)V
     .registers 6
 
-    .line 693
+    .line 700
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/taps/entity/BaseInfo;->getTimestampKey()J
 
     move-result-wide v0
 
-    .line 694
+    .line 701
     iget-object v2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureCache:Ljava/util/Map;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1595,7 +1600,7 @@
 
     invoke-interface {v2, v3, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 695
+    .line 702
     invoke-static {p1}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
 
     move-result-object p1
@@ -1604,7 +1609,7 @@
 
     invoke-direct {v2}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda12;-><init>()V
 
-    .line 696
+    .line 703
     invoke-virtual {p1, v2}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object p1
@@ -1613,7 +1618,7 @@
 
     invoke-direct {v2}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda13;-><init>()V
 
-    .line 697
+    .line 704
     invoke-virtual {p1, v2}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object p1
@@ -1622,7 +1627,7 @@
 
     invoke-direct {v2, p0, v0, v1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda14;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;J)V
 
-    .line 698
+    .line 705
     invoke-virtual {p1, v2}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
     return-void
@@ -1631,7 +1636,7 @@
 .method private applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;)V
     .registers 5
 
-    .line 660
+    .line 667
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/taps/entity/BaseInfo;->getTimestampKey()J
 
     move-result-wide v0
@@ -1650,7 +1655,7 @@
 
     const/4 v0, 0x0
 
-    .line 584
+    .line 591
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;Z)Z
 
     return-void
@@ -1659,7 +1664,7 @@
 .method private applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/QualityInfo;)V
     .registers 5
 
-    .line 649
+    .line 656
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/taps/entity/BaseInfo;->getTimestampKey()J
 
     move-result-wide v0
@@ -1676,7 +1681,7 @@
 .method private applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;Z)Z
     .registers 7
 
-    .line 589
+    .line 596
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBackgroundServiceType()Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
 
     move-result-object v0
@@ -1689,7 +1694,7 @@
 
     return v2
 
-    .line 592
+    .line 599
     :cond_a
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/taps/entity/BaseInfo;->getTimestampKey()J
 
@@ -1697,7 +1702,7 @@
 
     if-eqz p2, :cond_1d
 
-    .line 593
+    .line 600
     iget-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureCache:Ljava/util/Map;
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1712,7 +1717,7 @@
 
     return v2
 
-    .line 596
+    .line 603
     :cond_1d
     new-instance p2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda15;
 
@@ -1732,7 +1737,7 @@
 .method private applyLowQualityPictureTimestampKeyCache(Landroid/net/Uri;J)V
     .registers 6
 
-    .line 702
+    .line 709
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureTimestampKey:Ljava/util/Map;
 
     invoke-static {p1}, Landroid/content/ContentUris;->parseId(Landroid/net/Uri;)J
@@ -1755,14 +1760,14 @@
 .method private checkBackgroundService()V
     .registers 2
 
-    .line 1069
+    .line 1081
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     if-eqz p0, :cond_5
 
     return-void
 
-    .line 1070
+    .line 1082
     :cond_5
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -1776,7 +1781,7 @@
 .method private clearLowQualityPictureCache(J)V
     .registers 6
 
-    .line 713
+    .line 720
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureCache:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1789,7 +1794,7 @@
 
     if-eqz v0, :cond_66
 
-    .line 714
+    .line 721
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureCache:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1810,7 +1815,7 @@
 
     invoke-direct {v1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda12;-><init>()V
 
-    .line 715
+    .line 722
     invoke-virtual {v0, v1}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object v0
@@ -1819,7 +1824,7 @@
 
     invoke-direct {v1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda13;-><init>()V
 
-    .line 716
+    .line 723
     invoke-virtual {v0, v1}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object v0
@@ -1828,10 +1833,10 @@
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda35;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)V
 
-    .line 717
+    .line 724
     invoke-virtual {v0, v1}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
-    .line 718
+    .line 725
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1850,7 +1855,7 @@
 
     iget-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureCache:Ljava/util/Map;
 
-    .line 719
+    .line 726
     invoke-interface {p2}, Ljava/util/Map;->size()I
 
     move-result p2
@@ -1871,7 +1876,7 @@
 
     move-result-object p0
 
-    .line 718
+    .line 725
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     :cond_66
@@ -1881,7 +1886,7 @@
 .method private static createSqlQueryBundle(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/os/Bundle;
     .registers 5
 
-    .line 1687
+    .line 1699
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
@@ -1897,7 +1902,7 @@
     :cond_c
     if-eqz p0, :cond_13
 
-    .line 1693
+    .line 1705
     const-string v1, "android:query-arg-sql-selection"
 
     invoke-virtual {v0, v1, p0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
@@ -1905,7 +1910,7 @@
     :cond_13
     if-eqz p1, :cond_1a
 
-    .line 1696
+    .line 1708
     const-string p0, "android:query-arg-sql-selection-args"
 
     invoke-virtual {v0, p0, p1}, Landroid/os/BaseBundle;->putStringArray(Ljava/lang/String;[Ljava/lang/String;)V
@@ -1913,7 +1918,7 @@
     :cond_1a
     if-eqz p2, :cond_21
 
-    .line 1699
+    .line 1711
     const-string p0, "android:query-arg-sql-sort-order"
 
     invoke-virtual {v0, p0, p2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
@@ -1926,17 +1931,17 @@
 .method private createWorkHandler()Landroid/os/Handler;
     .registers 2
 
-    .line 228
+    .line 230
     new-instance p0, Landroid/os/HandlerThread;
 
     const-string v0, "BackgroundStorageManager"
 
     invoke-direct {p0, v0}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    .line 229
+    .line 231
     invoke-virtual {p0}, Ljava/lang/Thread;->start()V
 
-    .line 230
+    .line 232
     new-instance v0, Landroid/os/Handler;
 
     invoke-virtual {p0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -1957,10 +1962,10 @@
 
     if-eqz v2, :cond_24
 
-    .line 490
+    .line 497
     invoke-static {p4}, Lcom/transsion/camera/utils/ExifUtils;->updateExifForAnalytics([B)V
 
-    .line 491
+    .line 498
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1973,7 +1978,7 @@
 
     const-string v4, "SceneType"
 
-    .line 492
+    .line 499
     invoke-static {p4, v4}, Lcom/transsion/camera/utils/ExifUtils;->getExifStringValue([BLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -1984,10 +1989,10 @@
 
     move-result-object v3
 
-    .line 491
+    .line 498
     invoke-static {v0, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 494
+    .line 501
     :cond_24
     const-string v0, "[TranMemoryFlow] available memory when save file:"
 
@@ -1999,7 +2004,7 @@
 
     const/4 v2, 0x0
 
-    .line 498
+    .line 505
     :try_start_2e
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
@@ -2018,7 +2023,7 @@
     :catch_39
     move-exception v0
 
-    .line 501
+    .line 508
     sget-object v3, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2039,7 +2044,7 @@
 
     const/4 v0, -0x1
 
-    .line 504
+    .line 511
     :goto_51
     new-instance v3, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
 
@@ -2054,7 +2059,7 @@
     :cond_5c
     move-object/from16 v4, p7
 
-    .line 506
+    .line 513
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getStorageOperator()Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     move-result-object v9
@@ -2095,7 +2100,7 @@
 .method private static getBaseSelection(Landroid/content/Context;)Ljava/lang/String;
     .registers 3
 
-    .line 1705
+    .line 1717
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2124,7 +2129,7 @@
 .method public static getBaseSelection(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
     .registers 4
 
-    .line 1709
+    .line 1721
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2147,7 +2152,7 @@
 
     move-result-object p0
 
-    .line 1710
+    .line 1722
     invoke-static {p1, p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mergeSelections(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -2158,14 +2163,14 @@
 .method public static getBytesFromUri(Landroid/content/Context;Landroid/net/Uri;)[B
     .registers 6
 
-    .line 1867
+    .line 1879
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p0
 
     const/4 v0, 0x0
 
-    .line 1868
+    .line 1880
     :try_start_5
     invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
 
@@ -2175,7 +2180,7 @@
 
     if-nez p0, :cond_1c
 
-    .line 1870
+    .line 1882
     :try_start_b
     sget-object p1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2183,14 +2188,14 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1871
+    .line 1883
     new-array p1, v0, [B
     :try_end_14
     .catchall {:try_start_b .. :try_end_14} :catchall_1a
 
     if-eqz p0, :cond_19
 
-    .line 1880
+    .line 1892
     :goto_16
     :try_start_16
     invoke-virtual {p0}, Ljava/io/InputStream;->close()V
@@ -2205,7 +2210,7 @@
 
     goto :goto_35
 
-    .line 1873
+    .line 1885
     :cond_1c
     :try_start_1c
     new-instance p1, Ljava/io/ByteArrayOutputStream;
@@ -2214,10 +2219,10 @@
 
     const/16 v1, 0x1000
 
-    .line 1874
+    .line 1886
     new-array v1, v1, [B
 
-    .line 1876
+    .line 1888
     :goto_25
     invoke-virtual {p0, v1}, Ljava/io/InputStream;->read([B)I
 
@@ -2227,12 +2232,12 @@
 
     if-eq v2, v3, :cond_30
 
-    .line 1877
+    .line 1889
     invoke-virtual {p1, v1, v0, v2}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
     goto :goto_25
 
-    .line 1879
+    .line 1891
     :cond_30
     invoke-virtual {p1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
@@ -2245,7 +2250,7 @@
     :goto_35
     if-eqz p0, :cond_3f
 
-    .line 1868
+    .line 1880
     :try_start_37
     invoke-virtual {p0}, Ljava/io/InputStream;->close()V
     :try_end_3a
@@ -2265,7 +2270,7 @@
     :try_end_40
     .catch Ljava/io/IOException; {:try_start_3c .. :try_end_40} :catch_40
 
-    .line 1881
+    .line 1893
     :catch_40
     new-array p0, v0, [B
 
@@ -2275,7 +2280,7 @@
 .method public static getContentUri(J)Landroid/net/Uri;
     .registers 3
 
-    .line 1356
+    .line 1368
     sget-object v0, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p0, p1}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
@@ -2288,12 +2293,12 @@
 .method public static getFileInfoFromContentUri(Landroid/content/ContentResolver;Landroid/net/Uri;)[Ljava/lang/String;
     .registers 14
 
-    .line 1662
+    .line 1674
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 1665
+    .line 1677
     const-string v0, "_data"
 
     const-string v3, "_display_name"
@@ -2314,7 +2319,7 @@
 
     move-object v5, p1
 
-    .line 1669
+    .line 1681
     :try_start_12
     invoke-virtual/range {v4 .. v9}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
@@ -2324,7 +2329,7 @@
 
     if-eqz p0, :cond_48
 
-    .line 1670
+    .line 1682
     :try_start_18
     invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -2332,25 +2337,25 @@
 
     if-eqz p1, :cond_48
 
-    .line 1671
+    .line 1683
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result p1
 
-    .line 1672
+    .line 1684
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object p1
     :try_end_26
     .catchall {:try_start_18 .. :try_end_26} :catchall_35
 
-    .line 1673
+    .line 1685
     :try_start_26
     invoke-interface {p0, v3}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 1674
+    .line 1686
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v10
@@ -2379,7 +2384,7 @@
 
     move-object p1, v10
 
-    .line 1669
+    .line 1681
     :goto_38
     :try_start_38
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
@@ -2420,7 +2425,7 @@
     :goto_49
     if-eqz p0, :cond_58
 
-    .line 1676
+    .line 1688
     :try_start_4b
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
     :try_end_4e
@@ -2442,11 +2447,11 @@
 
     move-object p1, v10
 
-    .line 1677
+    .line 1689
     :goto_55
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 1679
+    .line 1691
     :cond_58
     :goto_58
     sget-object p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -2473,7 +2478,7 @@
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1680
+    .line 1692
     filled-new-array {v10, p1}, [Ljava/lang/String;
 
     move-result-object p0
@@ -2484,12 +2489,12 @@
 .method private getHighQualityContentValues(Landroid/content/ContentValues;)Landroid/content/ContentValues;
     .registers 5
 
-    .line 1232
+    .line 1244
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->removeCustomContentValues(Landroid/content/ContentValues;)V
 
     const/4 v0, 0x0
 
-    .line 1233
+    .line 1245
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -2498,7 +2503,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1235
+    .line 1247
     const-string v0, "_display_name"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->getAsString(Ljava/lang/String;)Ljava/lang/String;
@@ -2509,10 +2514,10 @@
 
     move-result-object v1
 
-    .line 1234
+    .line 1246
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1236
+    .line 1248
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2553,12 +2558,12 @@
 
     if-eqz p4, :cond_1d
 
-    .line 1221
+    .line 1233
     invoke-virtual {p4}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;->getValues()Landroid/content/ContentValues;
 
     move-result-object p1
 
-    .line 1222
+    .line 1234
     sget-object p4, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2579,11 +2584,11 @@
 
     goto :goto_42
 
-    .line 1224
+    .line 1236
     :cond_1d
     iget-object p4, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mPhotoHelper:Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;
 
-    .line 1225
+    .line 1237
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getStorageOperator()Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     move-result-object v0
@@ -2594,12 +2599,12 @@
 
     const/4 v1, 0x0
 
-    .line 1224
+    .line 1236
     invoke-virtual {p4, p1, v1, v1, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;->createContentValues([BLandroid/graphics/Bitmap;Landroid/location/Location;Ljava/lang/String;)Landroid/content/ContentValues;
 
     move-result-object p1
 
-    .line 1226
+    .line 1238
     sget-object p4, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2618,7 +2623,7 @@
 
     invoke-static {p4, p2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1228
+    .line 1240
     :goto_42
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getHighQualityContentValues(Landroid/content/ContentValues;)Landroid/content/ContentValues;
 
@@ -2630,7 +2635,7 @@
 .method public static getHighQualityDisplayName(Ljava/lang/String;)Ljava/lang/String;
     .registers 1
 
-    .line 1360
+    .line 1372
     invoke-static {p0}, Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;->getHighQualityDisplayName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -2643,7 +2648,7 @@
 
     if-eqz p1, :cond_7
 
-    .line 1243
+    .line 1255
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;->getUri()Landroid/net/Uri;
 
     move-result-object p0
@@ -2659,7 +2664,7 @@
 .method private getInfoFromCache(JLjava/util/function/Function;)Ljava/lang/Object;
     .registers 4
 
-    .line 1350
+    .line 1362
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureCache:Ljava/util/Map;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2676,14 +2681,14 @@
 
     move-result-object p0
 
-    .line 1351
+    .line 1363
     invoke-virtual {p0, p3}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object p0
 
     const/4 p1, 0x0
 
-    .line 1352
+    .line 1364
     invoke-virtual {p0, p1}, Ljava/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -2698,14 +2703,14 @@
 
     if-eqz p2, :cond_32
 
-    .line 562
+    .line 569
     invoke-virtual {p2, v0}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->isProcessing(Z)Z
 
     move-result v1
 
     if-eqz v1, :cond_32
 
-    .line 563
+    .line 570
     sget-object v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2728,7 +2733,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 564
+    .line 571
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/BaseInfo;->getTimestampKey()J
 
     move-result-wide v1
@@ -2743,7 +2748,7 @@
 
     check-cast p2, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;
 
-    .line 568
+    .line 575
     :cond_32
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
@@ -2751,7 +2756,7 @@
 
     move-result-object p0
 
-    .line 569
+    .line 576
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -2760,7 +2765,7 @@
 
     if-eqz p2, :cond_77
 
-    .line 570
+    .line 577
     sget-object v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2779,32 +2784,32 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 571
+    .line 578
     new-instance v1, Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;
 
     invoke-direct {v1}, Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;-><init>()V
 
-    .line 572
+    .line 579
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;->setLiveShotTask(Z)V
 
-    .line 573
+    .line 580
     invoke-virtual {v1, p1}, Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;->fillJpegData([B)V
 
-    .line 574
+    .line 581
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->getPresentationTimeUs()J
 
     move-result-wide v2
 
     invoke-virtual {v1, p0, v2, v3}, Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;->fillVideoPath(Ljava/lang/String;J)V
 
-    .line 575
+    .line 582
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->getCamFilePath()Ljava/lang/String;
 
     move-result-object p0
 
     invoke-virtual {v1, p0}, Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;->setCamFilePath(Ljava/lang/String;)V
 
-    .line 576
+    .line 583
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->getGyroFilePath()Ljava/lang/String;
 
     move-result-object p0
@@ -2822,7 +2827,7 @@
 .method public static getLowQualityLiveMediaForProvider(Landroid/content/Context;J)Landroid/content/ContentValues;
     .registers 4
 
-    .line 1562
+    .line 1574
     invoke-static {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBaseSelection(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
@@ -2831,7 +2836,7 @@
 
     move-result-object v0
 
-    .line 1561
+    .line 1573
     invoke-static {p0, p1, p2, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLowQualityMediaForProvider(Landroid/content/Context;JLjava/lang/String;)Landroid/content/ContentValues;
 
     move-result-object p0
@@ -2842,7 +2847,7 @@
 .method public static getLowQualityLiveMediaForProvider(Landroid/content/Context;)Ljava/util/List;
     .registers 2
 
-    .line 1522
+    .line 1534
     invoke-static {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBaseSelection(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
@@ -2851,7 +2856,7 @@
 
     move-result-object v0
 
-    .line 1521
+    .line 1533
     invoke-static {p0, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLowQualityMediaForProvider(Landroid/content/Context;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p0
@@ -2864,7 +2869,7 @@
 
     const/4 v0, 0x0
 
-    .line 1647
+    .line 1659
     :try_start_1
     invoke-virtual {p0, p1, p2, p3, v0}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
 
@@ -2874,7 +2879,7 @@
 
     if-nez p0, :cond_c
 
-    .line 1649
+    .line 1661
     :try_start_7
     sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
@@ -2885,7 +2890,7 @@
 
     goto :goto_18
 
-    .line 1651
+    .line 1663
     :cond_c
     invoke-interface {p4, p0}, Ljava/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2898,7 +2903,7 @@
     :goto_12
     if-eqz p0, :cond_17
 
-    .line 1653
+    .line 1665
     :try_start_14
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
     :try_end_17
@@ -2910,7 +2915,7 @@
     :goto_18
     if-eqz p0, :cond_22
 
-    .line 1647
+    .line 1659
     :try_start_1a
     invoke-interface {p0}, Landroid/database/Cursor;->close()V
     :try_end_1d
@@ -2933,10 +2938,10 @@
     :catch_23
     move-exception p0
 
-    .line 1654
+    .line 1666
     sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-    .line 1655
+    .line 1667
     sget-object p2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -2955,7 +2960,7 @@
 
     invoke-static {p2, p3}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1656
+    .line 1668
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-object p1
@@ -2978,7 +2983,7 @@
 
     move-object v5, p5
 
-    .line 1618
+    .line 1630
     invoke-static/range {v0 .. v6}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLowQualityMedia(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Function;Ljava/util/function/Consumer;)Ljava/util/List;
 
     move-result-object p0
@@ -2989,26 +2994,26 @@
 .method public static getLowQualityMedia(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Function;Ljava/util/function/Consumer;)Ljava/util/List;
     .registers 8
 
-    .line 1629
+    .line 1641
     invoke-static {p3}, Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;->getLowQualityMediaSelection(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p3
 
     const/4 v0, 0x0
 
-    .line 1628
+    .line 1640
     invoke-static {p3, v0, p4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->createSqlQueryBundle(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object p3
 
-    .line 1631
+    .line 1643
     const-string p4, "android:query-arg-match-pending"
 
     const/4 v0, 0x1
 
     invoke-virtual {p3, p4, v0}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1632
+    .line 1644
     const-string p4, "android:query-arg-match-trashed"
 
     const/4 v0, 0x2
@@ -3017,10 +3022,10 @@
 
     if-eqz p6, :cond_1a
 
-    .line 1635
+    .line 1647
     invoke-interface {p6, p3}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 1637
+    .line 1649
     :cond_1a
     invoke-static {p0, p1, p2, p3, p5}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLowQualityMedia(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Ljava/util/function/Function;)Ljava/util/List;
 
@@ -3034,7 +3039,7 @@
 
     const/4 v0, 0x0
 
-    .line 1600
+    .line 1612
     invoke-static {p0, p1, p2, p3, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLowQualityMedia(Landroid/content/ContentResolver;[Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Function;Ljava/util/function/Consumer;)Ljava/util/List;
 
     move-result-object p0
@@ -3045,7 +3050,7 @@
 .method public static getLowQualityMedia(Landroid/content/ContentResolver;[Ljava/lang/String;Ljava/lang/String;Ljava/util/function/Function;Ljava/util/function/Consumer;)Ljava/util/List;
     .registers 12
 
-    .line 1608
+    .line 1620
     sget-object v1, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     const/4 v4, 0x0
@@ -3070,7 +3075,7 @@
 .method public static getLowQualityMediaForProvider(Landroid/content/Context;J)Landroid/content/ContentValues;
     .registers 4
 
-    .line 1557
+    .line 1569
     invoke-static {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBaseSelection(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
@@ -3085,7 +3090,7 @@
 .method private static getLowQualityMediaForProvider(Landroid/content/Context;JLjava/lang/String;)Landroid/content/ContentValues;
     .registers 10
 
-    .line 1567
+    .line 1579
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -3108,7 +3113,7 @@
 
     move-result-object p0
 
-    .line 1593
+    .line 1605
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
 
     move-result p1
@@ -3134,7 +3139,7 @@
 .method public static getLowQualityMediaForProvider(Landroid/content/Context;)Ljava/util/List;
     .registers 2
 
-    .line 1517
+    .line 1529
     invoke-static {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBaseSelection(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
@@ -3143,7 +3148,7 @@
 
     move-result-object v0
 
-    .line 1516
+    .line 1528
     invoke-static {p0, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLowQualityMediaForProvider(Landroid/content/Context;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p0
@@ -3154,7 +3159,7 @@
 .method private static getLowQualityMediaForProvider(Landroid/content/Context;Ljava/lang/String;)Ljava/util/List;
     .registers 4
 
-    .line 1526
+    .line 1538
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p0
@@ -3179,7 +3184,7 @@
 
     const-wide/16 v1, 0x0
 
-    .line 1313
+    .line 1325
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
@@ -3188,20 +3193,20 @@
 
     if-eqz v0, :cond_df
 
-    .line 1301
+    .line 1313
     array-length v5, v0
 
     if-nez v5, :cond_10
 
     goto/16 :goto_df
 
-    .line 1304
+    .line 1316
     :cond_10
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
 
-    .line 1306
+    .line 1318
     :try_start_14
     new-instance v7, Ljava/io/ByteArrayInputStream;
 
@@ -3209,16 +3214,16 @@
     :try_end_19
     .catch Ljava/io/IOException; {:try_start_14 .. :try_end_19} :catch_3e
 
-    .line 1307
+    .line 1319
     :try_start_19
     new-instance v0, Lcom/transsion/camera/utils/exif/ExifInterface;
 
     invoke-direct {v0}, Lcom/transsion/camera/utils/exif/ExifInterface;-><init>()V
 
-    .line 1308
+    .line 1320
     invoke-virtual {v0, v7}, Lcom/transsion/camera/utils/exif/ExifInterface;->readExif(Ljava/io/InputStream;)V
 
-    .line 1309
+    .line 1321
     sget v8, Lcom/transsion/camera/utils/exif/ExifInterface;->TAG_USER_COMMENT:I
 
     invoke-virtual {v0, v8}, Lcom/transsion/camera/utils/exif/ExifInterface;->getTagStringValue(I)Ljava/lang/String;
@@ -3233,7 +3238,7 @@
     :try_end_2d
     .catchall {:try_start_19 .. :try_end_2d} :catchall_33
 
-    .line 1310
+    .line 1322
     :try_start_2d
     invoke-virtual {v7}, Ljava/io/ByteArrayInputStream;->close()V
     :try_end_30
@@ -3251,7 +3256,7 @@
 
     move-object v8, v0
 
-    .line 1306
+    .line 1318
     :try_start_35
     invoke-virtual {v7}, Ljava/io/ByteArrayInputStream;->close()V
     :try_end_38
@@ -3275,11 +3280,11 @@
 
     move-object v8, v4
 
-    .line 1311
+    .line 1323
     :goto_40
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 1313
+    .line 1325
     :goto_43
     new-instance v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda0;
 
@@ -3297,7 +3302,7 @@
 
     move-result-wide v10
 
-    .line 1314
+    .line 1326
     new-instance v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda0;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda0;-><init>()V
@@ -3314,7 +3319,7 @@
 
     move-result-wide v12
 
-    .line 1315
+    .line 1327
     new-instance v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda1;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda1;-><init>()V
@@ -3337,7 +3342,7 @@
 
     move-result v14
 
-    .line 1316
+    .line 1328
     new-instance v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda1;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda1;-><init>()V
@@ -3360,7 +3365,7 @@
 
     move-result v15
 
-    .line 1317
+    .line 1329
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -3395,7 +3400,7 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1321
+    .line 1333
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v8
@@ -3412,7 +3417,7 @@
 
     move-result-object v5
 
-    .line 1317
+    .line 1329
     invoke-static {v0, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     cmp-long v0, v10, v1
@@ -3421,7 +3426,7 @@
 
     if-eq v14, v3, :cond_df
 
-    .line 1324
+    .line 1336
     new-instance v9, Lcom/transsion/camera/app/common/taps/entity/QualityInfo;
 
     invoke-direct/range {v9 .. v15}, Lcom/transsion/camera/app/common/taps/entity/QualityInfo;-><init>(JJII)V
@@ -3436,12 +3441,12 @@
 .method private getSystemUserIDFromAMS()I
     .registers 4
 
-    .line 820
+    .line 827
     new-instance p0, Lcom/transsion/hubsdk/api/app/TranActivityManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/api/app/TranActivityManager;-><init>()V
 
-    .line 823
+    .line 830
     :try_start_5
     invoke-virtual {p0}, Lcom/transsion/hubsdk/api/app/TranActivityManager;->getCurrentUser()I
 
@@ -3449,7 +3454,7 @@
     :try_end_9
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_9} :catch_20
 
-    .line 828
+    .line 835
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3473,7 +3478,7 @@
     :catch_20
     move-exception p0
 
-    .line 825
+    .line 832
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "getSystemUserID error "
@@ -3488,7 +3493,7 @@
 .method private getThumbnailController()Lcom/transsion/camera/app/common/taps/IThumbnailController;
     .registers 1
 
-    .line 322
+    .line 324
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mThumbnailController:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -3503,7 +3508,7 @@
 .method private static getUserCommentByKey(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Map;
     .registers 9
 
-    .line 1201
+    .line 1213
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -3514,20 +3519,20 @@
 
     goto :goto_3f
 
-    .line 1204
+    .line 1216
     :cond_9
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 1205
+    .line 1217
     const-string v1, ";"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object p0
 
-    .line 1206
+    .line 1218
     array-length v1, p0
 
     const/4 v2, 0x0
@@ -3539,28 +3544,28 @@
 
     aget-object v4, p0, v3
 
-    .line 1207
+    .line 1219
     const-string v5, ":"
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1208
+    .line 1220
     array-length v5, v4
 
     const/4 v6, 0x2
 
     if-ne v5, v6, :cond_3b
 
-    .line 1209
+    .line 1221
     aget-object v5, v4, v2
 
     invoke-virtual {v5}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1210
+    .line 1222
     invoke-interface {p1, v5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v6
@@ -3569,7 +3574,7 @@
 
     const/4 v6, 0x1
 
-    .line 1211
+    .line 1223
     aget-object v4, v4, v6
 
     invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -3586,7 +3591,7 @@
     :cond_3e
     return-object v0
 
-    .line 1202
+    .line 1214
     :cond_3f
     :goto_3f
     sget-object p0, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
@@ -3597,7 +3602,7 @@
 .method private static getUserCommentMessage(Ljava/util/Map;Ljava/lang/String;Ljava/util/function/Function;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 5
 
-    .line 1332
+    .line 1344
     invoke-static {p0}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
 
     move-result-object p0
@@ -3606,7 +3611,7 @@
 
     invoke-direct {v0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda7;-><init>(Ljava/lang/String;)V
 
-    .line 1333
+    .line 1345
     invoke-virtual {p0, v0}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object p0
@@ -3615,17 +3620,17 @@
 
     invoke-direct {p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda8;-><init>()V
 
-    .line 1334
+    .line 1346
     invoke-virtual {p0, p1}, Ljava/util/Optional;->filter(Ljava/util/function/Predicate;)Ljava/util/Optional;
 
     move-result-object p0
 
-    .line 1335
+    .line 1347
     invoke-virtual {p0, p2}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object p0
 
-    .line 1336
+    .line 1348
     invoke-virtual {p0, p3}, Ljava/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -3636,12 +3641,12 @@
 .method private isCTSVerifierInstalled(Landroid/content/Context;)Z
     .registers 4
 
-    .line 1282
+    .line 1294
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object p0
 
-    .line 1284
+    .line 1296
     :try_start_4
     const-string p1, "com.android.cts.verifier"
 
@@ -3656,7 +3661,7 @@
     :catch_b
     move-exception p0
 
-    .line 1286
+    .line 1298
     sget-object p1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3683,7 +3688,7 @@
 .method private synthetic lambda$applyLowQualityPictureCache$12(JLandroid/net/Uri;)V
     .registers 4
 
-    .line 698
+    .line 705
     invoke-direct {p0, p3, p1, p2}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->applyLowQualityPictureTimestampKeyCache(Landroid/net/Uri;J)V
 
     return-void
@@ -3692,7 +3697,7 @@
 .method private synthetic lambda$applyLowQualityPictureCache$7(JLandroid/net/Uri;)V
     .registers 4
 
-    .line 645
+    .line 652
     invoke-direct {p0, p3, p1, p2}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->applyLowQualityPictureTimestampKeyCache(Landroid/net/Uri;J)V
 
     return-void
@@ -3701,7 +3706,7 @@
 .method private synthetic lambda$applyLowQualityPictureCache$8(JLcom/transsion/camera/app/common/taps/entity/CacheInfo;)V
     .registers 5
 
-    .line 642
+    .line 649
     invoke-static {p3}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
 
     move-result-object p3
@@ -3710,7 +3715,7 @@
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda12;-><init>()V
 
-    .line 643
+    .line 650
     invoke-virtual {p3, v0}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object p3
@@ -3719,7 +3724,7 @@
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda13;-><init>()V
 
-    .line 644
+    .line 651
     invoke-virtual {p3, v0}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object p3
@@ -3728,7 +3733,7 @@
 
     invoke-direct {v0, p0, p1, p2}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda36;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;J)V
 
-    .line 645
+    .line 652
     invoke-virtual {p3, v0}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
     return-void
@@ -3737,7 +3742,7 @@
 .method private synthetic lambda$clearLowQualityPictureCache$14(Landroid/net/Uri;)V
     .registers 4
 
-    .line 717
+    .line 724
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureTimestampKey:Ljava/util/Map;
 
     invoke-static {p1}, Landroid/content/ContentUris;->parseId(Landroid/net/Uri;)J
@@ -3756,10 +3761,10 @@
 .method private synthetic lambda$new$0()V
     .registers 1
 
-    .line 173
+    .line 174
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->checkStorageVolume()V
 
-    .line 174
+    .line 175
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->restoreCache()V
 
     return-void
@@ -3768,7 +3773,7 @@
 .method private synthetic lambda$onActivityResume$17()V
     .registers 2
 
-    .line 1270
+    .line 1282
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mSystemUserID:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getSystemUserIDFromAMS()I
@@ -3783,7 +3788,7 @@
 .method private synthetic lambda$onActivityResume$18(Landroid/content/Context;)V
     .registers 4
 
-    .line 1275
+    .line 1287
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mCTSVerifierInstalled:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->isCTSVerifierInstalled(Landroid/content/Context;)Z
@@ -3792,7 +3797,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    .line 1276
+    .line 1288
     sget-object p1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3823,7 +3828,7 @@
 .method private synthetic lambda$onCaptureStarted$15(Ljava/lang/ref/WeakReference;)Lcom/transsion/camera/app/common/taps/IThumbnailController;
     .registers 2
 
-    .line 986
+    .line 998
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mThumbnailController:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -3838,22 +3843,22 @@
 .method private synthetic lambda$restoreCache$1()V
     .registers 2
 
-    .line 291
+    .line 293
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->restoreCacheFromDB(Landroid/content/Context;)V
 
-    .line 292
+    .line 294
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->restoreLivePhotoCacheFromStorage(Landroid/content/Context;)V
 
-    .line 293
+    .line 295
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundStorageLifecycle:Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;
 
     if-eqz v0, :cond_11
 
-    .line 294
+    .line 296
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;->onBackgroundStorageReady(Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager;)V
 
     :cond_11
@@ -3863,7 +3868,7 @@
 .method private synthetic lambda$restoreLivePhotoCacheFromStorage$25(J[Ljava/io/File;)V
     .registers 11
 
-    .line 1495
+    .line 1507
     array-length v0, p3
 
     const/4 v1, 0x0
@@ -3877,7 +3882,7 @@
 
     if-eqz v3, :cond_4b
 
-    .line 1496
+    .line 1508
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v4
@@ -3890,19 +3895,19 @@
 
     if-eqz v4, :cond_4b
 
-    .line 1497
+    .line 1509
     invoke-virtual {v3}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1498
+    .line 1510
     invoke-static {v4}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->isVideoValidName(Ljava/lang/String;)Z
 
     move-result v4
 
     if-eqz v4, :cond_31
 
-    .line 1499
+    .line 1511
     invoke-virtual {v3}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v4
@@ -3917,14 +3922,14 @@
 
     const/4 v3, 0x1
 
-    .line 1501
+    .line 1513
     invoke-direct {p0, v4, v3}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;Z)Z
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_4b
 
-    .line 1506
+    .line 1518
     :cond_31
     sget-object v4, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3954,7 +3959,7 @@
 
     goto :goto_3
 
-    .line 1509
+    .line 1521
     :cond_4e
     sget-object p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3972,7 +3977,7 @@
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1510
+    .line 1522
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -3985,7 +3990,7 @@
 
     move-result-object p1
 
-    .line 1509
+    .line 1521
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
@@ -3994,7 +3999,7 @@
 .method private static mergeSelections(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .registers 4
 
-    .line 1714
+    .line 1726
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -4003,7 +4008,7 @@
 
     return-object p1
 
-    .line 1717
+    .line 1729
     :cond_7
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -4035,10 +4040,10 @@
 .method private onLowQualityJpegSaved(JLjava/lang/String;)V
     .registers 4
 
-    .line 1064
+    .line 1076
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->checkBackgroundService()V
 
-    .line 1065
+    .line 1077
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     invoke-interface {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/taps/IBackgroundController;->onLowQualityJpegSaved(JLjava/lang/String;)V
@@ -4051,19 +4056,19 @@
 
     const/4 v0, 0x0
 
-    .line 528
+    .line 535
     new-array v0, v0, [Ljava/lang/Object;
 
     invoke-interface {p3, p1, p2, v0}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveCompleted(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;I[Ljava/lang/Object;)V
 
-    .line 529
+    .line 536
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;->getUri()Landroid/net/Uri;
 
     move-result-object p3
 
     if-eqz p3, :cond_16
 
-    .line 531
+    .line 538
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -4077,7 +4082,7 @@
     :cond_16
     if-nez p2, :cond_1f
 
-    .line 534
+    .line 541
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/taps/entity/BaseInfo;->getTimestampKey()J
 
     move-result-wide p1
@@ -4097,7 +4102,7 @@
 
     return-void
 
-    .line 1827
+    .line 1839
     :cond_4
     :try_start_4
     invoke-interface {p2, p3}, Landroid/database/Cursor;->getBlob(I)[B
@@ -4113,7 +4118,7 @@
     :catch_c
     const/4 p2, 0x0
 
-    .line 1829
+    .line 1841
     invoke-virtual {p0, p1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
     return-void
@@ -4128,7 +4133,7 @@
 
     return-void
 
-    .line 1860
+    .line 1872
     :cond_4
     :try_start_4
     invoke-interface {p2, p3}, Landroid/database/Cursor;->getDouble(I)D
@@ -4148,7 +4153,7 @@
     :catch_10
     const-wide/16 p2, 0x0
 
-    .line 1862
+    .line 1874
     invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object p2
@@ -4167,7 +4172,7 @@
 
     return-void
 
-    .line 1838
+    .line 1850
     :cond_4
     :try_start_4
     invoke-interface {p2, p3}, Landroid/database/Cursor;->getInt(I)I
@@ -4187,7 +4192,7 @@
     :catch_10
     const/4 p2, 0x0
 
-    .line 1840
+    .line 1852
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -4206,7 +4211,7 @@
 
     return-void
 
-    .line 1849
+    .line 1861
     :cond_4
     :try_start_4
     invoke-interface {p2, p3}, Landroid/database/Cursor;->getLong(I)J
@@ -4226,7 +4231,7 @@
     :catch_10
     const-wide/16 p2, 0x0
 
-    .line 1851
+    .line 1863
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
@@ -4245,7 +4250,7 @@
 
     return-void
 
-    .line 1816
+    .line 1828
     :cond_4
     :try_start_4
     invoke-interface {p2, p3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -4258,7 +4263,7 @@
 
     return-void
 
-    .line 1818
+    .line 1830
     :catch_c
     const-string p2, ""
 
@@ -4272,21 +4277,21 @@
 
     if-eqz p1, :cond_1e
 
-    .line 245
+    .line 247
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "registerContentObserver: "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 246
+    .line 248
     new-instance v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$3;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mWorkHandler:Landroid/os/Handler;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$3;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;Landroid/os/Handler;)V
 
-    .line 268
+    .line 270
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p0
@@ -4310,29 +4315,29 @@
 
     if-eqz p1, :cond_22
 
-    .line 235
+    .line 237
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "registerReceiver: "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 236
+    .line 238
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 237
+    .line 239
     const-string v1, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 238
+    .line 240
     const-string v1, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 239
+    .line 241
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
@@ -4352,7 +4357,7 @@
 
     const/4 v0, 0x0
 
-    .line 768
+    .line 775
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->removeCustomContentValues(Landroid/content/ContentValues;Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;)V
 
     return-void
@@ -4361,7 +4366,7 @@
 .method private restoreCache()V
     .registers 5
 
-    .line 289
+    .line 291
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
     if-eqz v0, :cond_1f
@@ -4382,7 +4387,7 @@
 
     if-lez v0, :cond_1f
 
-    .line 290
+    .line 292
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mWorkHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda10;
@@ -4393,7 +4398,7 @@
 
     return-void
 
-    .line 298
+    .line 300
     :cond_1f
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mMainHandler:Landroid/os/Handler;
 
@@ -4409,7 +4414,7 @@
 .method private restoreCacheFromDB(Landroid/content/Context;Lcom/transsion/camera/app/common/taps/ILowQualityPicturePolicy;)Ljava/util/List;
     .registers 14
 
-    .line 1384
+    .line 1396
     invoke-static {p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBaseSelection(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object p0
@@ -4418,7 +4423,7 @@
 
     move-result-object p0
 
-    .line 1385
+    .line 1397
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p1
@@ -4437,12 +4442,12 @@
 
     move-result-object p0
 
-    .line 1407
+    .line 1419
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1408
+    .line 1420
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -4460,7 +4465,7 @@
 
     check-cast v0, Landroid/content/ContentValues;
 
-    .line 1409
+    .line 1421
     const-string v1, "_id"
 
     invoke-virtual {v0, v1}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;
@@ -4471,17 +4476,17 @@
 
     move-result-wide v2
 
-    .line 1410
+    .line 1422
     invoke-virtual {v0, v1}, Landroid/content/ContentValues;->remove(Ljava/lang/String;)V
 
-    .line 1412
+    .line 1424
     invoke-interface {p2, v0}, Lcom/transsion/camera/app/common/taps/ILowQualityPicturePolicy;->getDisplayNameInfo(Landroid/content/ContentValues;)Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;
 
     move-result-object v1
 
     if-nez v1, :cond_60
 
-    .line 1414
+    .line 1426
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4506,18 +4511,18 @@
 
     goto :goto_25
 
-    .line 1417
+    .line 1429
     :cond_60
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/taps/entity/BaseInfo;->getTimestampKey()J
 
     move-result-wide v5
 
-    .line 1418
+    .line 1430
     new-instance v4, Lcom/transsion/camera/app/common/taps/entity/QualityInfo;
 
     const/4 v9, 0x0
 
-    .line 1419
+    .line 1431
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;->getUserID()I
 
     move-result v10
@@ -4526,7 +4531,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/transsion/camera/app/common/taps/entity/QualityInfo;-><init>(JJII)V
 
-    .line 1420
+    .line 1432
     new-instance v7, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
 
     invoke-static {v2, v3}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getContentUri(J)Landroid/net/Uri;
@@ -4535,32 +4540,32 @@
 
     invoke-direct {v7, v5, v6, v2, v0}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;-><init>(JLandroid/net/Uri;Landroid/content/ContentValues;)V
 
-    .line 1421
+    .line 1433
     new-instance v0, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;
 
     invoke-direct {v0, v5, v6}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;-><init>(J)V
 
-    .line 1422
+    .line 1434
     invoke-virtual {v0, v7}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;->setImageInfo(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;)Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;
 
     move-result-object v0
 
-    .line 1423
+    .line 1435
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;->setQualityInfo(Lcom/transsion/camera/app/common/taps/entity/QualityInfo;)Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;
 
     move-result-object v0
 
-    .line 1424
+    .line 1436
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;->setDisplayNameInfo(Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;)Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;
 
     move-result-object v0
 
-    .line 1425
+    .line 1437
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo$Builder;->build()Lcom/transsion/camera/app/common/taps/entity/CacheInfo;
 
     move-result-object v0
 
-    .line 1426
+    .line 1438
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_25
@@ -4572,17 +4577,17 @@
 .method private restoreCacheFromDB(Landroid/content/Context;)V
     .registers 10
 
-    .line 1372
+    .line 1384
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 1373
+    .line 1385
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1374
+    .line 1386
     new-instance v3, Lcom/transsion/camera/app/common/taps/policy/PrivateLowQualityPicturePolicy;
 
     invoke-direct {v3}, Lcom/transsion/camera/app/common/taps/policy/PrivateLowQualityPicturePolicy;-><init>()V
@@ -4593,7 +4598,7 @@
 
     invoke-interface {v2, v3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 1375
+    .line 1387
     new-instance v3, Lcom/transsion/camera/app/common/taps/policy/PublicLowQualityPicturePolicy;
 
     invoke-direct {v3}, Lcom/transsion/camera/app/common/taps/policy/PublicLowQualityPicturePolicy;-><init>()V
@@ -4604,7 +4609,7 @@
 
     invoke-interface {v2, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 1376
+    .line 1388
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -4622,10 +4627,10 @@
 
     check-cast v4, Lcom/transsion/camera/app/common/taps/entity/CacheInfo;
 
-    .line 1377
+    .line 1389
     invoke-direct {p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/CacheInfo;)V
 
-    .line 1378
+    .line 1390
     sget-object v5, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -4646,7 +4651,7 @@
 
     goto :goto_26
 
-    .line 1380
+    .line 1392
     :cond_4a
     sget-object p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -4690,19 +4695,19 @@
 
     move-object/from16 v0, p0
 
-    .line 1432
+    .line 1444
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 1433
+    .line 1445
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
 
     move-result-object v3
 
     if-eqz v3, :cond_110
 
-    .line 1434
+    .line 1446
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v4
@@ -4715,7 +4720,7 @@
 
     if-eqz v4, :cond_110
 
-    .line 1437
+    .line 1449
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v4
@@ -4724,7 +4729,7 @@
 
     if-eqz v4, :cond_ed
 
-    .line 1438
+    .line 1450
     new-instance v4, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda22;
 
     invoke-direct {v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda22;-><init>()V
@@ -4737,7 +4742,7 @@
 
     return-void
 
-    .line 1445
+    .line 1457
     :cond_2c
     array-length v4, v3
 
@@ -4750,7 +4755,7 @@
 
     aget-object v8, v3, v6
 
-    .line 1446
+    .line 1458
     new-instance v9, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda23;
 
     invoke-direct {v9}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda23;-><init>()V
@@ -4763,7 +4768,7 @@
 
     goto/16 :goto_c5
 
-    .line 1450
+    .line 1462
     :cond_40
     array-length v9, v8
 
@@ -4776,14 +4781,14 @@
 
     if-eqz v11, :cond_c1
 
-    .line 1452
+    .line 1464
     invoke-virtual {v11}, Ljava/io/File;->exists()Z
 
     move-result v12
 
     if-eqz v12, :cond_c1
 
-    .line 1453
+    .line 1465
     invoke-virtual {v11}, Ljava/io/File;->isDirectory()Z
 
     move-result v12
@@ -4792,7 +4797,7 @@
 
     goto/16 :goto_c1
 
-    .line 1459
+    .line 1471
     :cond_56
     invoke-virtual {v11}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
@@ -4802,7 +4807,7 @@
 
     goto :goto_c1
 
-    .line 1463
+    .line 1475
     :cond_5d
     array-length v12, v11
 
@@ -4821,7 +4826,7 @@
 
     if-eqz v16, :cond_8c
 
-    .line 1464
+    .line 1476
     invoke-virtual/range {v16 .. v16}, Ljava/io/File;->isFile()Z
 
     move-result v17
@@ -4830,13 +4835,13 @@
 
     goto :goto_8c
 
-    .line 1467
+    .line 1479
     :cond_70
     invoke-virtual/range {v16 .. v16}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v16
 
-    .line 1468
+    .line 1480
     invoke-static/range {v16 .. v16}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->isVideoValidName(Ljava/lang/String;)Z
 
     move-result v17
@@ -4845,7 +4850,7 @@
 
     move-object/from16 v13, v16
 
-    .line 1471
+    .line 1483
     :cond_7c
     invoke-static/range {v16 .. v16}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->isCamValidName(Ljava/lang/String;)Z
 
@@ -4855,7 +4860,7 @@
 
     move-object/from16 v14, v16
 
-    .line 1474
+    .line 1486
     :cond_84
     invoke-static/range {v16 .. v16}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->isGyroValidName(Ljava/lang/String;)Z
 
@@ -4874,7 +4879,7 @@
     :cond_8f
     add-int/lit8 v7, v7, 0x1
 
-    .line 1479
+    .line 1491
     sget-object v5, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -4905,7 +4910,7 @@
 
     invoke-static {v5, v11}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1481
+    .line 1493
     invoke-static {v13, v14, v15}, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;->getInstance(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;
 
     move-result-object v5
@@ -4914,7 +4919,7 @@
 
     const/4 v11, 0x1
 
-    .line 1483
+    .line 1495
     invoke-direct {v0, v5, v11}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;Z)Z
 
     :cond_c1
@@ -4929,7 +4934,7 @@
 
     goto/16 :goto_2f
 
-    .line 1487
+    .line 1499
     :cond_c9
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -4947,7 +4952,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1488
+    .line 1500
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -4960,12 +4965,12 @@
 
     move-result-object v1
 
-    .line 1487
+    .line 1499
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1490
+    .line 1502
     :cond_ed
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
 
@@ -4979,7 +4984,7 @@
 
     invoke-direct {v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda24;-><init>()V
 
-    .line 1491
+    .line 1503
     invoke-virtual {v3, v4}, Ljava/util/Optional;->filter(Ljava/util/function/Predicate;)Ljava/util/Optional;
 
     move-result-object v3
@@ -4988,7 +4993,7 @@
 
     invoke-direct {v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda25;-><init>()V
 
-    .line 1492
+    .line 1504
     invoke-virtual {v3, v4}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object v3
@@ -4997,12 +5002,12 @@
 
     invoke-direct {v4, v0, v1, v2}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda26;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;J)V
 
-    .line 1493
+    .line 1505
     invoke-virtual {v3, v4}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
     return-void
 
-    .line 1435
+    .line 1447
     :cond_110
     new-instance v0, Ljava/lang/NullPointerException;
 
@@ -5020,7 +5025,7 @@
 
     goto :goto_29
 
-    .line 1095
+    .line 1107
     :cond_3
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;->isAIFrame()Z
 
@@ -5030,7 +5035,7 @@
 
     if-eqz p0, :cond_17
 
-    .line 1096
+    .line 1108
     sget p0, Lcom/transsion/camera/utils/exif/ExifInterface;->TAG_USER_COMMENT:I
 
     const-string p2, ";ai_frame"
@@ -5039,14 +5044,14 @@
 
     move-result-object p0
 
-    .line 1098
+    .line 1110
     array-length p2, p0
 
     invoke-static {p0, v0, p1, v0, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-void
 
-    .line 1101
+    .line 1113
     :cond_17
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;->isAIZoomSR()Z
 
@@ -5054,7 +5059,7 @@
 
     if-eqz p0, :cond_29
 
-    .line 1102
+    .line 1114
     sget p0, Lcom/transsion/camera/utils/exif/ExifInterface;->TAG_USER_COMMENT:I
 
     const-string p2, ";ai_zoom"
@@ -5063,7 +5068,7 @@
 
     move-result-object p0
 
-    .line 1104
+    .line 1116
     array-length p2, p0
 
     invoke-static {p0, v0, p1, v0, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
@@ -5076,7 +5081,7 @@
 .method private updateJpegToHighQuality(Landroid/content/Context;Landroid/net/Uri;)V
     .registers 6
 
-    .line 1075
+    .line 1087
     const-string p0, "UserComment"
 
     :try_start_2
@@ -5094,30 +5099,30 @@
 
     if-eqz p1, :cond_4b
 
-    .line 1077
+    .line 1089
     :try_start_e
     invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object p2
 
-    .line 1078
+    .line 1090
     new-instance v0, Landroid/media/ExifInterface;
 
     invoke-direct {v0, p2}, Landroid/media/ExifInterface;-><init>(Ljava/io/FileDescriptor;)V
 
-    .line 1079
+    .line 1091
     invoke-virtual {v0, p0}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 1080
+    .line 1092
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_4b
 
-    .line 1081
+    .line 1093
     const-string v1, "qlty"
 
     const-string v2, "1"
@@ -5126,7 +5131,7 @@
 
     move-result-object p2
 
-    .line 1082
+    .line 1094
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -5143,7 +5148,7 @@
 
     invoke-virtual {v0, p0, p2}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1083
+    .line 1095
     invoke-virtual {v0}, Landroid/media/ExifInterface;->saveAttributes()V
     :try_end_40
     .catchall {:try_start_e .. :try_end_40} :catchall_41
@@ -5153,7 +5158,7 @@
     :catchall_41
     move-exception p0
 
-    .line 1075
+    .line 1087
     :try_start_42
     invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_45
@@ -5174,7 +5179,7 @@
     :goto_4b
     if-eqz p1, :cond_50
 
-    .line 1086
+    .line 1098
     invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_50
     .catch Ljava/io/IOException; {:try_start_47 .. :try_end_50} :catch_51
@@ -5185,7 +5190,7 @@
     :catch_51
     move-exception p0
 
-    .line 1087
+    .line 1099
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-void
@@ -5196,7 +5201,7 @@
 
     monitor-enter p0
 
-    .line 473
+    .line 480
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mPostViewInfo:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
 
@@ -5210,14 +5215,14 @@
 
     if-eqz v0, :cond_18
 
-    .line 474
+    .line 481
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mPostViewInfo:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->release()V
 
     const/4 v0, 0x0
 
-    .line 475
+    .line 482
     iput-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mPostViewInfo:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
 
     goto :goto_18
@@ -5227,14 +5232,14 @@
 
     goto :goto_45
 
-    .line 477
+    .line 484
     :cond_18
     :goto_18
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mPostViewInfo:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
 
     if-nez v0, :cond_23
 
-    .line 478
+    .line 485
     new-instance v0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
 
     invoke-direct {v0, p1, p2}, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;-><init>(J)V
@@ -5244,12 +5249,12 @@
     :cond_23
     if-eqz p3, :cond_2a
 
-    .line 481
+    .line 488
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mPostViewInfo:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
 
     invoke-interface {p3, p1}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 483
+    .line 490
     :cond_2a
     sget-object p1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5273,7 +5278,7 @@
     :try_end_43
     .catchall {:try_start_1 .. :try_end_43} :catchall_16
 
-    .line 484
+    .line 491
     monitor-exit p0
 
     return-void
@@ -5290,7 +5295,7 @@
 .method private static updateUserComment(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .registers 11
 
-    .line 1109
+    .line 1121
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -5305,20 +5310,20 @@
 
     goto :goto_50
 
-    .line 1112
+    .line 1124
     :cond_d
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1113
+    .line 1125
     invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_4c
 
-    .line 1114
+    .line 1126
     const-string v1, ";"
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -5327,16 +5332,16 @@
 
     const/4 v2, 0x0
 
-    .line 1115
+    .line 1127
     :goto_1f
     array-length v3, p0
 
     if-ge v2, v3, :cond_4c
 
-    .line 1116
+    .line 1128
     aget-object v3, p0, v2
 
-    .line 1117
+    .line 1129
     invoke-virtual {v3, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v4
@@ -5345,21 +5350,21 @@
 
     if-eqz v4, :cond_3f
 
-    .line 1118
+    .line 1130
     const-string v4, ":"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1119
+    .line 1131
     array-length v6, v4
 
     const/4 v7, 0x2
 
     if-ne v6, v7, :cond_42
 
-    .line 1120
+    .line 1132
     aget-object v4, v4, v5
 
     invoke-virtual {v3, v4, p2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
@@ -5370,11 +5375,11 @@
 
     goto :goto_42
 
-    .line 1123
+    .line 1135
     :cond_3f
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1125
+    .line 1137
     :cond_42
     :goto_42
     array-length v3, p0
@@ -5383,7 +5388,7 @@
 
     if-eq v2, v3, :cond_49
 
-    .line 1126
+    .line 1138
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_49
@@ -5391,7 +5396,7 @@
 
     goto :goto_1f
 
-    .line 1130
+    .line 1142
     :cond_4c
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -5407,7 +5412,7 @@
 .method public addCustomContentValues(Landroid/content/ContentValues;Lcom/transsion/camera/app/common/taps/entity/QualityInfo;)V
     .registers 5
 
-    .line 747
+    .line 754
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/BaseInfo;->getTimestampKey()J
 
     move-result-wide v0
@@ -5420,7 +5425,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 748
+    .line 755
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -5437,7 +5442,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 749
+    .line 756
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/QualityInfo;->getQuality()I
 
     move-result v0
@@ -5450,7 +5455,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 750
+    .line 757
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/taps/entity/QualityInfo;->getUserID()I
 
     move-result v0
@@ -5463,10 +5468,10 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 751
+    .line 758
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/QualityInfo;)V
 
-    .line 752
+    .line 759
     sget-object p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -5495,12 +5500,12 @@
 .method public deleteWrongStateLowQualityPictures()V
     .registers 7
 
-    .line 427
+    .line 434
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_c
 
-    .line 428
+    .line 435
     sget-object p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "deleteWrongStateLowQualityPictures: mContext is null"
@@ -5509,53 +5514,53 @@
 
     return-void
 
-    .line 431
+    .line 438
     :cond_c
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 432
+    .line 439
     iget-object v2, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    .line 434
+    .line 441
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBaseSelection(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 435
+    .line 442
     invoke-static {p0}, Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;->getLowQualityMediaSelection(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     const/4 v3, 0x0
 
-    .line 437
+    .line 444
     invoke-static {p0, v3, v3}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->createSqlQueryBundle(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object p0
 
-    .line 439
+    .line 446
     const-string v3, "android:query-arg-match-pending"
 
     const/4 v4, 0x1
 
     invoke-virtual {p0, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 440
+    .line 447
     const-string v3, "android:query-arg-match-trashed"
 
     const/4 v4, 0x2
 
     invoke-virtual {p0, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 445
+    .line 452
     :try_start_31
     sget-object v3, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
@@ -5570,7 +5575,7 @@
     :catch_38
     move-exception p0
 
-    .line 447
+    .line 454
     sget-object v2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v3, "deleteWrongStateLowQualityPictures: error deleting low quality pictures"
@@ -5579,7 +5584,7 @@
 
     const/4 p0, 0x0
 
-    .line 450
+    .line 457
     :goto_41
     sget-object v2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5597,7 +5602,7 @@
 
     invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 451
+    .line 458
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -5614,7 +5619,7 @@
 
     move-result-object p0
 
-    .line 450
+    .line 457
     invoke-static {v2, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
@@ -5623,12 +5628,12 @@
 .method public getAppUserID()I
     .registers 4
 
-    .line 808
+    .line 815
     invoke-static {}, Lcom/transsion/camera/utils/FileUtil;->getUserId()I
 
     move-result p0
 
-    .line 809
+    .line 816
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5653,7 +5658,7 @@
 .method public getBackgroundServiceType()Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
     .registers 2
 
-    .line 866
+    .line 873
     iget v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mTranssionCameraMode:I
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBackgroundServiceType(I)Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
@@ -5666,10 +5671,10 @@
 .method public getBackgroundServiceType(I)Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
     .registers 5
 
-    .line 871
+    .line 878
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->checkBackgroundService()V
 
-    .line 872
+    .line 879
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5688,7 +5693,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 873
+    .line 880
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/taps/IBackgroundController;->getBackgroundServiceType(I)Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
@@ -5701,7 +5706,7 @@
 .method public getBackgroundShot2ShotSkipPolicy()Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
     .registers 1
 
-    .line 1258
+    .line 1270
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
 
     return-object p0
@@ -5710,7 +5715,7 @@
 .method public getBaseSelection(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
 
-    .line 1263
+    .line 1275
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBaseSelection(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
@@ -5723,7 +5728,7 @@
 .method public getBatteryCapacity()I
     .registers 5
 
-    .line 799
+    .line 806
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
     const-string v0, "batterymanager"
@@ -5736,19 +5741,19 @@
 
     const/4 v0, 0x4
 
-    .line 800
+    .line 807
     invoke-virtual {p0, v0}, Landroid/os/BatteryManager;->getIntProperty(I)I
 
     move-result v0
 
     const/4 v1, 0x6
 
-    .line 801
+    .line 808
     invoke-virtual {p0, v1}, Landroid/os/BatteryManager;->getIntProperty(I)I
 
     move-result p0
 
-    .line 802
+    .line 809
     sget-object v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -5779,10 +5784,10 @@
 .method public getHandler()Landroid/os/Handler;
     .registers 1
 
-    .line 878
+    .line 890
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->checkBackgroundService()V
 
-    .line 879
+    .line 891
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/taps/IBackgroundController;->getHandler()Landroid/os/Handler;
@@ -5795,7 +5800,7 @@
 .method public getLastPostViewInfo()Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
     .registers 4
 
-    .line 904
+    .line 916
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5816,7 +5821,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 905
+    .line 917
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mPostViewInfo:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
 
     return-object p0
@@ -5825,7 +5830,7 @@
 .method public getLowQualityMediaForProcessProvider(Landroid/content/Context;)Landroid/content/ContentValues;
     .registers 6
 
-    .line 884
+    .line 896
     iget-wide v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mGoToGalleryMediaStoreId:J
 
     const-wide/16 v2, 0x0
@@ -5834,7 +5839,7 @@
 
     if-lez p0, :cond_d
 
-    .line 885
+    .line 897
     invoke-static {p1, v0, v1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLowQualityMediaForProvider(Landroid/content/Context;J)Landroid/content/ContentValues;
 
     move-result-object p0
@@ -5850,7 +5855,7 @@
 .method public getLowQualityMediaSaverListener()Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;
     .registers 1
 
-    .line 1252
+    .line 1264
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityMediaSaverListener:Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;
 
     return-object p0
@@ -5859,7 +5864,7 @@
 .method public getPostViewJpeg(J)[B
     .registers 6
 
-    .line 898
+    .line 910
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5886,7 +5891,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 899
+    .line 911
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mPostViewInfo:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
 
     if-nez p0, :cond_26
@@ -5906,35 +5911,35 @@
 .method public getQualityInfo(Landroid/content/ContentValues;)Lcom/transsion/camera/app/common/taps/entity/QualityInfo;
     .registers 13
 
-    .line 779
+    .line 786
     const-string/jumbo p0, "transsion_quality_timestamp_key"
 
     invoke-virtual {p1, p0}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;
 
     move-result-object p0
 
-    .line 780
+    .line 787
     const-string/jumbo v0, "transsion_quality_show_timestamp"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;
 
     move-result-object v0
 
-    .line 781
+    .line 788
     const-string/jumbo v1, "transsion_quality_state"
 
     invoke-virtual {p1, v1}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .line 782
+    .line 789
     const-string/jumbo v2, "transsion_user_id"
 
     invoke-virtual {p1, v2}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object p1
 
-    .line 783
+    .line 790
     sget-object v2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -5957,7 +5962,7 @@
 
     if-eqz v1, :cond_4c
 
-    .line 785
+    .line 792
     new-instance v4, Lcom/transsion/camera/app/common/taps/entity/QualityInfo;
 
     invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
@@ -5989,12 +5994,12 @@
 .method public getStorageOperator()Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
     .registers 4
 
-    .line 304
+    .line 306
     invoke-super {p0}, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->getStorageOperator()Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     move-result-object p0
 
-    .line 305
+    .line 307
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6019,7 +6024,7 @@
 .method public getSystemUserID()I
     .registers 3
 
-    .line 815
+    .line 822
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mSystemUserID:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -6032,7 +6037,7 @@
 
     return v0
 
-    .line 816
+    .line 823
     :cond_b
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getSystemUserIDFromAMS()I
 
@@ -6044,12 +6049,12 @@
 .method public getTopPackageName()Ljava/lang/String;
     .registers 1
 
-    .line 793
+    .line 800
     new-instance p0, Lcom/transsion/hubsdk/api/app/TranActivityManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/api/app/TranActivityManager;-><init>()V
 
-    .line 794
+    .line 801
     invoke-virtual {p0}, Lcom/transsion/hubsdk/api/app/TranActivityManager;->getTopActivityInfo()Landroid/content/pm/ActivityInfo;
 
     move-result-object p0
@@ -6062,18 +6067,18 @@
 .method public init(Lcom/transsion/camera/app/common/storage/DataStore;Lcom/transsion/camera/app/common/setting/ISettingManager;)V
     .registers 3
 
-    .line 275
+    .line 277
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->init(Lcom/transsion/camera/app/common/storage/DataStore;Lcom/transsion/camera/app/common/setting/ISettingManager;)V
 
-    .line 276
+    .line 278
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundStorageLifecycle:Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;
 
     if-eqz p1, :cond_a
 
-    .line 277
+    .line 279
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;->onBackgroundStorageInit(Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager;)V
 
-    .line 279
+    .line 281
     :cond_a
     sget-object p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -6087,7 +6092,7 @@
 .method protected initExternalStorageOperator()Lcom/transsion/camera/app/common/storage/ExternalStorageOperator;
     .registers 1
 
-    .line 223
+    .line 225
     new-instance p0, Lcom/transsion/camera/app/common/storage/BackgroundExternalStorageOperator;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundExternalStorageOperator;-><init>()V
@@ -6098,7 +6103,7 @@
 .method protected initInternalStorageOperator()Lcom/transsion/camera/app/common/storage/InternalStorageOperator;
     .registers 1
 
-    .line 218
+    .line 220
     new-instance p0, Lcom/transsion/camera/app/common/storage/BackgroundInternalStorageOperator;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundInternalStorageOperator;-><init>()V
@@ -6111,7 +6116,7 @@
 
     if-eqz p1, :cond_32
 
-    .line 726
+    .line 733
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureCache:Ljava/util/Map;
 
     invoke-interface {p0}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -6136,14 +6141,14 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/taps/entity/CacheInfo;
 
-    .line 727
+    .line 734
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/taps/entity/CacheInfo;->getImageInfo()Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
 
     move-result-object v0
 
     if-nez v0, :cond_26
 
-    .line 729
+    .line 736
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "isLowQualityJpeg: cache state error"
@@ -6152,7 +6157,7 @@
 
     goto :goto_c
 
-    .line 732
+    .line 739
     :cond_26
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;->getUri()Landroid/net/Uri;
 
@@ -6177,7 +6182,7 @@
 .method public isNeedASDShot2ShotSkipPolicy()Z
     .registers 1
 
-    .line 1050
+    .line 1062
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     if-eqz p0, :cond_c
@@ -6201,7 +6206,7 @@
 .method public isNeedMuSlimeBodyShot2ShotSkipPolicy()Z
     .registers 1
 
-    .line 1055
+    .line 1067
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     if-eqz p0, :cond_c
@@ -6225,7 +6230,7 @@
 .method public isNeedPortraitModeEnhanceShot2ShotSkipPolicy()Z
     .registers 1
 
-    .line 1060
+    .line 1072
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     if-eqz p0, :cond_c
@@ -6249,7 +6254,7 @@
 .method public isNeedShotSkipByCTSTest()Z
     .registers 2
 
-    .line 970
+    .line 982
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     if-eqz v0, :cond_14
@@ -6281,7 +6286,7 @@
 .method public isReady()Z
     .registers 2
 
-    .line 935
+    .line 947
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     instance-of v0, p0, Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;
@@ -6290,7 +6295,7 @@
 
     check-cast p0, Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;
 
-    .line 936
+    .line 948
     invoke-interface {p0}, Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;->isReady()Z
 
     move-result p0
@@ -6310,7 +6315,7 @@
 .method public isShutterEnable()Z
     .registers 2
 
-    .line 951
+    .line 963
     iget v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mTranssionCameraMode:I
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->isShutterEnable(I)Z
@@ -6323,7 +6328,7 @@
 .method public isShutterEnable(I)Z
     .registers 2
 
-    .line 965
+    .line 977
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     if-eqz p0, :cond_c
@@ -6347,7 +6352,7 @@
 .method public isSupport()Z
     .registers 2
 
-    .line 929
+    .line 941
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     instance-of v0, p0, Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;
@@ -6356,7 +6361,7 @@
 
     check-cast p0, Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;
 
-    .line 930
+    .line 942
     invoke-interface {p0}, Lcom/transsion/camera/app/common/taps/IBackgroundStorageLifecycleObserver;->isSupport()Z
 
     move-result p0
@@ -6376,7 +6381,7 @@
 .method public isSupportDefer()Z
     .registers 2
 
-    .line 941
+    .line 953
     iget v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mTranssionCameraMode:I
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->isSupportDefer(I)Z
@@ -6389,7 +6394,7 @@
 .method public isSupportDefer(I)Z
     .registers 2
 
-    .line 946
+    .line 958
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     if-eqz p0, :cond_c
@@ -6413,19 +6418,19 @@
 .method public onActivityPause()V
     .registers 3
 
-    .line 1294
+    .line 1306
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mSystemUserID:Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/high16 v1, -0x80000000
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 1295
+    .line 1307
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
 
     if-eqz p0, :cond_e
 
-    .line 1296
+    .line 1308
     invoke-interface {p0}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->resetCount()V
 
     :cond_e
@@ -6435,32 +6440,32 @@
 .method public onActivityResume()V
     .registers 4
 
-    .line 1268
+    .line 1280
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
     if-eqz v0, :cond_e
 
-    .line 1270
+    .line 1282
     new-instance v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda3;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1272
+    .line 1284
     :cond_e
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
     if-eqz v0, :cond_1e
 
-    .line 1273
+    .line 1285
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mWorkHandler:Landroid/os/Handler;
 
     if-eqz v1, :cond_1e
 
-    .line 1274
+    .line 1286
     new-instance v2, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda4;
 
     invoke-direct {v2, p0, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda4;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;Landroid/content/Context;)V
@@ -6474,12 +6479,12 @@
 .method public onAllHighQualityJpegCompleted()V
     .registers 8
 
-    .line 540
+    .line 547
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getSystemUserID()I
 
     move-result v0
 
-    .line 541
+    .line 548
     sget-object v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -6498,7 +6503,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 542
+    .line 549
     iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityPictureCache:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -6523,7 +6528,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 543
+    .line 550
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -6538,14 +6543,14 @@
 
     invoke-direct {v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda34;-><init>()V
 
-    .line 544
+    .line 551
     invoke-virtual {v3, v4}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object v3
 
     const/4 v4, 0x0
 
-    .line 545
+    .line 552
     invoke-virtual {v3, v4}, Ljava/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -6554,7 +6559,7 @@
 
     if-eqz v3, :cond_52
 
-    .line 546
+    .line 553
     invoke-virtual {v3}, Lcom/transsion/camera/app/common/taps/entity/QualityInfo;->getUserID()I
 
     move-result v3
@@ -6566,7 +6571,7 @@
 
     if-eqz v3, :cond_24
 
-    .line 547
+    .line 554
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -6577,23 +6582,23 @@
 
     move-result-wide v3
 
-    .line 548
+    .line 555
     iget-object v5, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mFailedLowQualityPicture:Ljava/util/Set;
 
     monitor-enter v5
 
-    .line 549
+    .line 556
     :try_start_63
     iget-object v6, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mFailedLowQualityPicture:Ljava/util/Set;
 
     invoke-interface {v6, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 550
+    .line 557
     monitor-exit v5
     :try_end_69
     .catchall {:try_start_63 .. :try_end_69} :catchall_6f
 
-    .line 551
+    .line 558
     iget-object v2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     invoke-interface {v2, v3, v4}, Lcom/transsion/camera/app/common/taps/IBackgroundController;->onHighQualityJpegFailed(J)V
@@ -6603,7 +6608,7 @@
     :catchall_6f
     move-exception p0
 
-    .line 550
+    .line 557
     :try_start_70
     monitor-exit v5
     :try_end_71
@@ -6611,7 +6616,7 @@
 
     throw p0
 
-    .line 554
+    .line 561
     :cond_72
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mRestoreCacheNeeded:Z
 
@@ -6629,10 +6634,10 @@
 
     const/4 v0, 0x0
 
-    .line 555
+    .line 562
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mRestoreCacheNeeded:Z
 
-    .line 556
+    .line 563
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mMainHandler:Landroid/os/Handler;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mRestoreCacheTask:Ljava/lang/Runnable;
@@ -6654,7 +6659,7 @@
 
     if-lez v0, :cond_2d
 
-    .line 1006
+    .line 1018
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6673,12 +6678,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1007
+    .line 1019
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mLowQualityMediaSaverListener:Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;
 
     invoke-interface {v0, p1, p2}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageFailed(J)V
 
-    .line 1008
+    .line 1020
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->isSupportDefer()Z
 
     move-result v0
@@ -6687,7 +6692,7 @@
 
     goto :goto_2d
 
-    .line 1011
+    .line 1023
     :cond_28
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mCaptureProgressImpl:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;
 
@@ -6701,7 +6706,7 @@
 .method public onCaptureProgressed(Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
     .registers 5
 
-    .line 993
+    .line 1005
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6720,7 +6725,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 994
+    .line 1006
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->isSupportDefer()Z
 
     move-result v0
@@ -6729,18 +6734,18 @@
 
     goto :goto_29
 
-    .line 997
+    .line 1009
     :cond_1d
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mCaptureProgressImpl:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->onCaptureProgressed(Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
 
-    .line 998
+    .line 1010
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
 
     if-eqz p0, :cond_29
 
-    .line 999
+    .line 1011
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->onCaptureCustomDefer(Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
 
     :cond_29
@@ -6751,7 +6756,7 @@
 .method public onCaptureProgressed(Ljava/util/function/UnaryOperator;)V
     .registers 3
 
-    .line 1017
+    .line 1029
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->isSupportDefer()Z
 
     move-result v0
@@ -6760,7 +6765,7 @@
 
     return-void
 
-    .line 1020
+    .line 1032
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mCurrentCaptureStartState:Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;
 
@@ -6772,12 +6777,12 @@
 
     if-eqz p1, :cond_15
 
-    .line 1024
+    .line 1036
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->onCaptureProgressed(Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
 
     return-void
 
-    .line 1022
+    .line 1034
     :cond_15
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -6791,7 +6796,7 @@
 .method public onCaptureStarted(JLcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
     .registers 7
 
-    .line 975
+    .line 987
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6810,7 +6815,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 976
+    .line 988
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->isSupportDefer()Z
 
     move-result v0
@@ -6819,24 +6824,24 @@
 
     goto :goto_3e
 
-    .line 979
+    .line 991
     :cond_1d
     iput-object p3, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mCurrentCaptureStartState:Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;
 
-    .line 980
+    .line 992
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mCaptureProgressImpl:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->onCaptureStarted(JLcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
 
-    .line 981
+    .line 993
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
 
     if-eqz v0, :cond_2b
 
-    .line 982
+    .line 994
     invoke-interface {v0, p1, p2, p3}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->increaseCount(JLcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
 
-    .line 984
+    .line 996
     :cond_2b
     invoke-interface {p3}, Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;->isCusDeferRequestMode()Z
 
@@ -6862,7 +6867,7 @@
     :goto_3e
     return-void
 
-    .line 985
+    .line 997
     :cond_3f
     :goto_3f
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mThumbnailController:Ljava/lang/ref/WeakReference;
@@ -6875,7 +6880,7 @@
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda20;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)V
 
-    .line 986
+    .line 998
     invoke-virtual {p1, p2}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object p0
@@ -6884,209 +6889,229 @@
 
     invoke-direct {p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda21;-><init>()V
 
-    .line 987
+    .line 999
     invoke-virtual {p0, p1}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
     return-void
 .end method
 
 .method public onHighQualityJpegAvailable([BJLcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
-    .registers 14
+    .registers 18
 
-    .line 337
-    invoke-interface {p4, p2, p3}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveStarted(J)V
+    move-wide v2, p2
 
-    .line 338
+    move-object/from16 v8, p4
+
+    .line 339
+    invoke-interface {v8, v2, v3}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveStarted(J)V
+
+    .line 340
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getAppUserID()I
 
     move-result v0
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getSystemUserID()I
 
-    move-result v1
+    move-result v4
 
-    const/4 v2, 0x0
+    const/4 v5, 0x0
 
-    const/4 v3, 0x0
+    const/4 v6, 0x0
 
-    if-eq v0, v1, :cond_22
+    if-eq v0, v4, :cond_25
 
-    .line 339
-    sget-object p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    .line 341
+    sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    const-string p1, "doSaveHighQualityJpeg: ignore by diff user id"
+    const-string v1, "doSaveHighQualityJpeg: ignore by diff user id"
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 340
-    new-instance p0, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
+    .line 342
+    new-instance v0, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
 
-    invoke-direct {p0, p2, p3, v3, v3}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;-><init>(JLandroid/net/Uri;Landroid/content/ContentValues;)V
+    invoke-direct {v0, v2, v3, v6, v6}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;-><init>(JLandroid/net/Uri;Landroid/content/ContentValues;)V
 
-    const/4 p1, -0x1
+    const/4 v1, -0x1
 
-    new-array p2, v2, [Ljava/lang/Object;
+    new-array v2, v5, [Ljava/lang/Object;
 
-    invoke-interface {p4, p0, p1, p2}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveCompleted(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;I[Ljava/lang/Object;)V
+    invoke-interface {v8, v0, v1, v2}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveCompleted(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;I[Ljava/lang/Object;)V
 
     return-void
 
-    .line 343
-    :cond_22
+    .line 345
+    :cond_25
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "doSaveHighQualityJpeg() called with: timestamp = ["
+    const-string v7, "doSaveHighQualityJpeg() called with: timestamp = ["
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v4, "]"
+    const-string v7, "]"
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 344
-    new-instance v1, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda12;
-
-    invoke-direct {v1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda12;-><init>()V
-
-    invoke-direct {p0, p2, p3, v1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getInfoFromCache(JLjava/util/function/Function;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
-
-    .line 345
-    new-instance v4, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda32;
-
-    invoke-direct {v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda32;-><init>()V
-
-    invoke-direct {p0, p2, p3, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getInfoFromCache(JLjava/util/function/Function;)Ljava/lang/Object;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    check-cast v4, Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;
+    invoke-static {v0, v4}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     .line 346
-    new-instance v5, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda33;
+    new-instance v4, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda12;
 
-    invoke-direct {v5}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda33;-><init>()V
+    invoke-direct {v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda12;-><init>()V
 
-    invoke-direct {p0, p2, p3, v5}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getInfoFromCache(JLjava/util/function/Function;)Ljava/lang/Object;
+    invoke-direct {p0, v2, v3, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getInfoFromCache(JLjava/util/function/Function;)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v4
 
-    check-cast v5, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;
+    check-cast v4, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
 
     .line 347
-    new-instance v6, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
+    new-instance v7, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda32;
 
-    invoke-direct {v6, p2, p3, v3, v3}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;-><init>(JLandroid/net/Uri;Landroid/content/ContentValues;)V
+    invoke-direct {v7}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda32;-><init>()V
 
-    new-array v7, v2, [Ljava/lang/Object;
-
-    invoke-interface {p4, v6, v7}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveProgressed(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;[Ljava/lang/Object;)V
-
-    if-nez p1, :cond_ed
-
-    if-eqz v1, :cond_d0
-
-    .line 351
-    :try_start_6c
-    invoke-virtual {v1}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;->getUri()Landroid/net/Uri;
+    invoke-direct {p0, v2, v3, v7}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getInfoFromCache(JLjava/util/function/Function;)Ljava/lang/Object;
 
     move-result-object v7
 
-    if-eqz v7, :cond_d0
+    check-cast v7, Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;
+
+    .line 348
+    new-instance v9, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda33;
+
+    invoke-direct {v9}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda33;-><init>()V
+
+    invoke-direct {p0, v2, v3, v9}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getInfoFromCache(JLjava/util/function/Function;)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;
+
+    .line 349
+    new-instance v10, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
+
+    invoke-direct {v10, v2, v3, v6, v6}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;-><init>(JLandroid/net/Uri;Landroid/content/ContentValues;)V
+
+    new-array v11, v5, [Ljava/lang/Object;
+
+    invoke-interface {v8, v10, v11}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveProgressed(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;[Ljava/lang/Object;)V
+
+    .line 351
+    const-string v10, "capture_all_high_quality_end"
+
+    const-string v11, "capture_state"
+
+    if-nez p1, :cond_10f
+
+    if-eqz v4, :cond_f2
 
     .line 353
-    const-string v2, "doSaveHighQualityJpeg: low quality picture without high quality picture"
+    :try_start_73
+    invoke-virtual {v4}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;->getUri()Landroid/net/Uri;
 
-    invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    move-result-object v12
 
-    .line 354
-    invoke-virtual {v1}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;->getValues()Landroid/content/ContentValues;
+    if-eqz v12, :cond_f2
+
+    .line 355
+    const-string v5, "doSaveHighQualityJpeg: low quality picture without high quality picture"
+
+    invoke-static {v0, v5}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 356
+    invoke-virtual {v4}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;->getValues()Landroid/content/ContentValues;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getHighQualityContentValues(Landroid/content/ContentValues;)Landroid/content/ContentValues;
 
-    move-result-object v0
-
-    .line 355
-    iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
-
-    invoke-direct {p0, v1, v7}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->updateJpegToHighQuality(Landroid/content/Context;Landroid/net/Uri;)V
-
-    .line 356
-    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
-
-    move-result-object v1
-
-    iget-boolean v1, v1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportLowQualityPicturePublic:Z
-
-    if-eqz v1, :cond_ab
+    move-result-object v4
 
     .line 357
-    iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
-    invoke-static {v1, v7}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBytesFromUri(Landroid/content/Context;Landroid/net/Uri;)[B
+    invoke-direct {p0, v0, v12}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->updateJpegToHighQuality(Landroid/content/Context;Landroid/net/Uri;)V
 
-    move-result-object v1
+    .line 358
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
-    const/4 v2, 0x1
+    move-result-object v0
 
-    invoke-static {v1, v4, v2}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->writeXMPMetadata([BLcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;Z)[B
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportLowQualityPicturePublic:Z
+    :try_end_91
+    .catchall {:try_start_73 .. :try_end_91} :catchall_a7
 
-    move-result-object v1
+    if-eqz v0, :cond_b3
 
-    if-eqz v5, :cond_9d
+    .line 359
+    :try_start_93
+    iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
-    .line 360
-    invoke-direct {p0, v1, v5}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLivePhotoInfo([BLcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;)Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;
+    invoke-static {v0, v12}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBytesFromUri(Landroid/content/Context;Landroid/net/Uri;)[B
 
-    move-result-object v3
+    move-result-object v0
 
-    :cond_9d
-    move-object v8, p4
+    const/4 v5, 0x1
 
-    move-object v4, v0
+    invoke-static {v0, v7, v5}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->writeXMPMetadata([BLcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;Z)[B
 
-    move-object v5, v1
+    move-result-object v5
+    :try_end_9e
+    .catchall {:try_start_93 .. :try_end_9e} :catchall_af
 
-    move-object v6, v3
+    if-eqz v9, :cond_a4
 
+    .line 362
+    :try_start_a0
+    invoke-direct {p0, v5, v9}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLivePhotoInfo([BLcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;)Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;
+
+    move-result-object v6
+    :try_end_a4
+    .catchall {:try_start_a0 .. :try_end_a4} :catchall_a7
+
+    :cond_a4
     move-object v1, p0
+
+    move-object v7, v12
+
+    goto :goto_aa
+
+    :catchall_a7
+    move-exception v0
+
+    goto/16 :goto_14a
+
+    .line 366
+    :goto_aa
+    :try_start_aa
+    invoke-direct/range {v1 .. v8}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->doSaveHighQualityJpeg(JLandroid/content/ContentValues;[BLcom/transsion/camera/app/common/livephoto/PhotoTaskData;Landroid/net/Uri;Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
+
+    :goto_ad
+    move-wide v2, p2
+
+    goto :goto_d1
+
+    :catchall_af
+    move-exception v0
 
     move-wide v2, p2
 
-    goto :goto_a7
+    goto/16 :goto_14a
 
-    :catchall_a4
-    move-exception v0
+    :cond_b3
+    move-object v7, v12
 
-    goto/16 :goto_113
-
-    .line 364
-    :goto_a7
-    invoke-direct/range {v1 .. v8}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->doSaveHighQualityJpeg(JLandroid/content/ContentValues;[BLcom/transsion/camera/app/common/livephoto/PhotoTaskData;Landroid/net/Uri;Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
-
-    goto :goto_c8
-
-    :cond_ab
-    move-object v4, v0
-
-    if-nez v5, :cond_b7
+    if-nez v9, :cond_c0
 
     const/4 v5, 0x0
 
@@ -7096,150 +7121,227 @@
 
     move-wide v2, p2
 
-    move-object v8, p4
-
-    .line 367
-    invoke-direct/range {v1 .. v8}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->doSaveHighQualityJpeg(JLandroid/content/ContentValues;[BLcom/transsion/camera/app/common/livephoto/PhotoTaskData;Landroid/net/Uri;Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
-
-    goto :goto_c8
+    move-object/from16 v8, p4
 
     .line 369
-    :cond_b7
+    invoke-direct/range {v1 .. v8}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->doSaveHighQualityJpeg(JLandroid/content/ContentValues;[BLcom/transsion/camera/app/common/livephoto/PhotoTaskData;Landroid/net/Uri;Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
+
+    goto :goto_ad
+
+    .line 371
+    :cond_c0
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->mContext:Landroid/content/Context;
 
     invoke-static {v0, v7}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getBytesFromUri(Landroid/content/Context;Landroid/net/Uri;)[B
 
+    move-result-object v5
+
+    .line 372
+    invoke-direct {p0, v5, v9}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLivePhotoInfo([BLcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;)Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;
+
+    move-result-object v6
+    :try_end_ca
+    .catchall {:try_start_aa .. :try_end_ca} :catchall_af
+
+    move-object v1, p0
+
+    move-wide v2, p2
+
+    move-object/from16 v8, p4
+
+    .line 373
+    :try_start_ce
+    invoke-direct/range {v1 .. v8}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->doSaveHighQualityJpeg(JLandroid/content/ContentValues;[BLcom/transsion/camera/app/common/livephoto/PhotoTaskData;Landroid/net/Uri;Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
+    :try_end_d1
+    .catchall {:try_start_ce .. :try_end_d1} :catchall_a7
+
+    .line 389
+    :goto_d1
+    iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
+
+    if-eqz v0, :cond_149
+
+    .line 390
+    invoke-interface {v0, p1, v2, v3}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->onHighQualityCaptureCompleted([BJ)V
+
+    .line 391
+    iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
+
+    if-eqz v0, :cond_149
+
+    .line 392
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
     move-result-object v0
 
-    .line 370
-    invoke-direct {p0, v0, v5}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLivePhotoInfo([BLcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;)Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportDeferSystem:Z
+
+    if-nez v0, :cond_149
+
+    iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
+
+    .line 393
+    invoke-interface {v0}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->isCurrentProcessingCountEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_149
+
+    .line 394
+    iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
+
+    invoke-virtual {v0, v11, v10}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
+
+    return-void
+
+    .line 379
+    :cond_f2
+    :try_start_f2
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "doSaveHighQualityJpeg: saveJpegToFile ignore, "
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v0, v4}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 380
+    new-instance v0, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
+
+    invoke-direct {v0, v2, v3, v6, v6}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;-><init>(JLandroid/net/Uri;Landroid/content/ContentValues;)V
+
+    invoke-direct {p0, v0, v5, v8}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->onSaveHighQualityJpeg(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;ILcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
+
+    goto :goto_129
+
+    .line 382
+    :cond_10f
+    const-string v5, "doSaveHighQualityJpeg: saveJpegToFile image"
+
+    invoke-static {v0, v5}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 383
+    invoke-direct {p0, p1, v2, v3, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getHighQualityContentValues([BJLcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;)Landroid/content/ContentValues;
+
+    move-result-object v0
+
+    .line 384
+    invoke-direct {p0, p1, v9}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLivePhotoInfo([BLcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;)Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;
 
     move-result-object v6
 
+    .line 385
+    invoke-direct {p0, p1, v7}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->updateJpegExif([BLcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;)V
+
+    .line 386
+    invoke-direct {p0, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getImageUri(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;)Landroid/net/Uri;
+
+    move-result-object v7
+
     move-object v1, p0
-
-    move-wide v2, p2
-
-    move-object v8, p4
-
-    move-object v5, v0
-
-    .line 371
-    invoke-direct/range {v1 .. v8}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->doSaveHighQualityJpeg(JLandroid/content/ContentValues;[BLcom/transsion/camera/app/common/livephoto/PhotoTaskData;Landroid/net/Uri;Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
-    :try_end_c8
-    .catchall {:try_start_6c .. :try_end_c8} :catchall_a4
-
-    .line 387
-    :goto_c8
-    iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
-
-    if-eqz p0, :cond_112
-
-    .line 388
-    invoke-interface {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->onHighQualityCaptureCompleted([BJ)V
-
-    return-void
-
-    .line 377
-    :cond_d0
-    :try_start_d0
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "doSaveHighQualityJpeg: saveJpegToFile ignore, "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 378
-    new-instance v0, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
-
-    invoke-direct {v0, p2, p3, v3, v3}, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;-><init>(JLandroid/net/Uri;Landroid/content/ContentValues;)V
-
-    invoke-direct {p0, v0, v2, p4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->onSaveHighQualityJpeg(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;ILcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
-
-    goto :goto_10b
-
-    .line 380
-    :cond_ed
-    const-string v2, "doSaveHighQualityJpeg: saveJpegToFile image"
-
-    invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 381
-    invoke-direct {p0, p1, p2, p3, v1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getHighQualityContentValues([BJLcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;)Landroid/content/ContentValues;
-
-    move-result-object v0
-
-    .line 382
-    invoke-direct {p0, p1, v5}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getLivePhotoInfo([BLcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;)Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;
-
-    move-result-object v2
-
-    .line 383
-    invoke-direct {p0, p1, v4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->updateJpegExif([BLcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;)V
-
-    .line 384
-    invoke-direct {p0, v1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getImageUri(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;)Landroid/net/Uri;
-
-    move-result-object v1
 
     move-object v5, p1
 
-    move-object v8, p4
-
     move-object v4, v0
 
-    move-object v7, v1
-
-    move-object v6, v2
-
-    move-object v1, p0
-
-    move-wide v2, p2
-
     invoke-direct/range {v1 .. v8}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->doSaveHighQualityJpeg(JLandroid/content/ContentValues;[BLcom/transsion/camera/app/common/livephoto/PhotoTaskData;Landroid/net/Uri;Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
-    :try_end_10b
-    .catchall {:try_start_d0 .. :try_end_10b} :catchall_a4
+    :try_end_129
+    .catchall {:try_start_f2 .. :try_end_129} :catchall_a7
 
-    .line 387
-    :goto_10b
-    iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
+    .line 389
+    :goto_129
+    iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
 
-    if-eqz p0, :cond_112
-
-    .line 388
-    invoke-interface {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->onHighQualityCaptureCompleted([BJ)V
-
-    :cond_112
-    return-void
-
-    .line 387
-    :goto_113
-    iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
-
-    if-eqz p0, :cond_11a
-
-    .line 388
-    invoke-interface {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->onHighQualityCaptureCompleted([BJ)V
+    if-eqz v0, :cond_149
 
     .line 390
-    :cond_11a
+    invoke-interface {v0, p1, v2, v3}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->onHighQualityCaptureCompleted([BJ)V
+
+    .line 391
+    iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
+
+    if-eqz v0, :cond_149
+
+    .line 392
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportDeferSystem:Z
+
+    if-nez v0, :cond_149
+
+    iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
+
+    .line 393
+    invoke-interface {v0}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->isCurrentProcessingCountEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_149
+
+    .line 394
+    iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
+
+    invoke-virtual {v0, v11, v10}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
+
+    :cond_149
+    return-void
+
+    .line 389
+    :goto_14a
+    iget-object v4, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
+
+    if-eqz v4, :cond_16a
+
+    .line 390
+    invoke-interface {v4, p1, v2, v3}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->onHighQualityCaptureCompleted([BJ)V
+
+    .line 391
+    iget-object v2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
+
+    if-eqz v2, :cond_16a
+
+    .line 392
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v2
+
+    iget-boolean v2, v2, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportDeferSystem:Z
+
+    if-nez v2, :cond_16a
+
+    iget-object v2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
+
+    .line 393
+    invoke-interface {v2}, Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;->isCurrentProcessingCountEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_16a
+
+    .line 394
+    iget-object v1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
+
+    invoke-virtual {v1, v11, v10}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
+
+    .line 397
+    :cond_16a
     throw v0
 .end method
 
 .method public onHighQualityJpegFailed(JLcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
     .registers 7
 
-    .line 395
+    .line 402
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7258,7 +7360,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 396
+    .line 403
     new-instance v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$4;
 
     invoke-direct {v0, p0, p3}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$4;-><init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
@@ -7273,7 +7375,7 @@
 .method public onLivePhotoStateChanged(Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;)V
     .registers 2
 
-    .line 1745
+    .line 1757
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/LivePhotoInfo;)V
 
     return-void
@@ -7282,27 +7384,27 @@
 .method public onThumbnailClicked()V
     .registers 3
 
-    .line 1029
+    .line 1041
     const-string v0, "onThumbnailClicked"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/debug/TraceUtil;->begin(Ljava/lang/String;)V
 
-    .line 1030
+    .line 1042
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onThumbnailClicked: "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1031
+    .line 1043
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->checkBackgroundService()V
 
-    .line 1032
+    .line 1044
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/taps/IBackgroundCommon;->onThumbnailClicked()V
 
-    .line 1033
+    .line 1045
     invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
 
     return-void
@@ -7311,7 +7413,7 @@
 .method public onThumbnailPendingClicked(Z)V
     .registers 5
 
-    .line 910
+    .line 922
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7332,7 +7434,7 @@
 
     if-eqz p1, :cond_30
 
-    .line 912
+    .line 924
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mCaptureProgressImpl:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->isShot2ShotFinished()Z
@@ -7356,14 +7458,14 @@
     :cond_2b
     return-void
 
-    .line 913
+    .line 925
     :cond_2c
     :goto_2c
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->onThumbnailClicked()V
 
     return-void
 
-    .line 916
+    .line 928
     :cond_30
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mCaptureProgressImpl:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;
 
@@ -7375,32 +7477,32 @@
 .method public removeCustomContentValues(Landroid/content/ContentValues;Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;)V
     .registers 4
 
-    .line 757
+    .line 764
     const-string/jumbo v0, "transsion_quality_show_timestamp"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->remove(Ljava/lang/String;)V
 
-    .line 758
+    .line 765
     const-string/jumbo v0, "transsion_quality_timestamp_key"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->remove(Ljava/lang/String;)V
 
-    .line 759
+    .line 766
     const-string/jumbo v0, "transsion_quality_state"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->remove(Ljava/lang/String;)V
 
-    .line 760
+    .line 767
     const-string/jumbo v0, "transsion_user_id"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->remove(Ljava/lang/String;)V
 
     if-eqz p2, :cond_1d
 
-    .line 762
+    .line 769
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->applyLowQualityPictureCache(Lcom/transsion/camera/app/common/taps/entity/DisplayNameInfo;)V
 
-    .line 764
+    .line 771
     :cond_1d
     sget-object p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -7426,10 +7528,10 @@
 .method public resume()V
     .registers 1
 
-    .line 284
+    .line 286
     invoke-super {p0}, Lcom/transsion/camera/app/common/storage/BaseStorageManager;->resume()V
 
-    .line 285
+    .line 287
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->restoreCache()V
 
     return-void
@@ -7438,10 +7540,10 @@
 .method public setAppIOOperationStart(II)V
     .registers 3
 
-    .line 1044
+    .line 1056
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->checkBackgroundService()V
 
-    .line 1045
+    .line 1057
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/common/taps/IBackgroundCommon;->setAppIOOperationStart(II)V
@@ -7452,7 +7554,7 @@
 .method public setBackgroundService(Lcom/transsion/camera/app/common/taps/IBackgroundController;)V
     .registers 5
 
-    .line 311
+    .line 313
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7471,7 +7573,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 312
+    .line 314
     iput-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     return-void
@@ -7480,8 +7582,17 @@
 .method public setGoToGalleryMediaStoreId(J)V
     .registers 3
 
-    .line 327
+    .line 329
     iput-wide p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mGoToGalleryMediaStoreId:J
+
+    return-void
+.end method
+
+.method public setStatusResponder(Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;)V
+    .registers 2
+
+    .line 885
+    iput-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     return-void
 .end method
@@ -7489,10 +7600,10 @@
 .method public setTapCapConfig(JII)V
     .registers 5
 
-    .line 1038
+    .line 1050
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->checkBackgroundService()V
 
-    .line 1039
+    .line 1051
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundService:Lcom/transsion/camera/app/common/taps/IBackgroundController;
 
     invoke-interface {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/taps/IBackgroundCommon;->setTapCapConfig(JII)V
@@ -7503,7 +7614,7 @@
 .method public setThumbnailController(Lcom/transsion/camera/app/common/taps/IThumbnailController;)V
     .registers 5
 
-    .line 317
+    .line 319
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7522,7 +7633,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 318
+    .line 320
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -7535,7 +7646,7 @@
 .method public updatePostViewPicture(J[BLandroid/graphics/Bitmap;Z)V
     .registers 9
 
-    .line 457
+    .line 464
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7556,7 +7667,7 @@
 
     if-eqz p5, :cond_21
 
-    .line 459
+    .line 466
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x1
@@ -7568,7 +7679,7 @@
     :cond_21
     if-eqz p3, :cond_2b
 
-    .line 462
+    .line 469
     new-instance v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda5;
 
     invoke-direct {v0, p3}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda5;-><init>([B)V
@@ -7578,7 +7689,7 @@
     :cond_2b
     if-eqz p4, :cond_35
 
-    .line 465
+    .line 472
     new-instance p3, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda6;
 
     invoke-direct {p3, p4}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$$ExternalSyntheticLambda6;-><init>(Landroid/graphics/Bitmap;)V
@@ -7588,12 +7699,12 @@
     :cond_35
     if-nez p5, :cond_3e
 
-    .line 467
+    .line 474
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mPostViewBitmapProcessingCount:Ljava/util/concurrent/CountDownLatch;
 
     if-eqz p0, :cond_3e
 
-    .line 468
+    .line 475
     invoke-virtual {p0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     :cond_3e
@@ -7603,10 +7714,10 @@
 .method public updateThumbnailUri(Landroid/net/Uri;)V
     .registers 4
 
-    .line 860
+    .line 867
     iput-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mProcessingThumbUri:Landroid/net/Uri;
 
-    .line 861
+    .line 868
     sget-object p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -7631,12 +7742,12 @@
 .method public updateTranssionCameraMode(Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;)V
     .registers 6
 
-    .line 835
+    .line 842
     const-string v0, "key_cam_mode"
 
     if-eqz p2, :cond_17
 
-    .line 837
+    .line 844
     invoke-interface {p2}, Lcom/transsion/camera/app/common/mode/ICameraMode;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -7649,7 +7760,7 @@
 
     move-result-object v0
 
-    .line 836
+    .line 843
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/TranssionCameraModeUtil;->getTranssionCameraMode(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
@@ -7661,7 +7772,7 @@
     :cond_17
     if-eqz p1, :cond_2c
 
-    .line 840
+    .line 847
     invoke-interface {p1}, Lcom/transsion/camera/app/common/mode/ICameraMode;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -7674,7 +7785,7 @@
 
     move-result-object v0
 
-    .line 839
+    .line 846
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/TranssionCameraModeUtil;->getTranssionCameraMode(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
@@ -7686,10 +7797,10 @@
     :cond_2c
     const/4 v0, -0x1
 
-    .line 842
+    .line 849
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mTranssionCameraMode:I
 
-    .line 844
+    .line 851
     :goto_2f
     sget-object v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -7723,19 +7834,19 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 846
+    .line 853
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mCaptureProgressImpl:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$CaptureProgressImpl;->clearCache()V
 
-    .line 847
+    .line 854
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mBackgroundShot2ShotSkipPolicy:Lcom/transsion/camera/app/common/taps/IBackgroundShot2ShotSkipPolicy;
 
     if-eqz p0, :cond_6d
 
     if-nez p2, :cond_66
 
-    .line 848
+    .line 855
     const-string p1, "empty"
 
     goto :goto_6a
@@ -7755,10 +7866,10 @@
 .method public updateTranssionCameraModeId(I)V
     .registers 4
 
-    .line 854
+    .line 861
     iput p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->mTranssionCameraMode:I
 
-    .line 855
+    .line 862
     sget-object p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;

@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__LimitKt$transformWhile$1"
     f = "Limit.kt"
     l = {
-        0x98
+        0x95
     }
     m = "invokeSuspend"
 .end annotation
@@ -165,7 +165,7 @@
 
     move-result-object v0
 
-    .line 117
+    .line 114
     iget v1, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$transformWhile$1;->label:I
 
     const/4 v2, 0x1
@@ -206,17 +206,17 @@
 
     check-cast p1, Lkotlinx/coroutines/flow/FlowCollector;
 
-    .line 119
+    .line 116
     iget-object v1, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$transformWhile$1;->$this_transformWhile:Lkotlinx/coroutines/flow/Flow;
 
     iget-object v3, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$transformWhile$1;->$transform:Lkotlin/jvm/functions/Function3;
 
-    .line 126
+    .line 123
     new-instance v4, Lkotlinx/coroutines/flow/FlowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1;
 
     invoke-direct {v4, v3, p1}, Lkotlinx/coroutines/flow/FlowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1;-><init>(Lkotlin/jvm/functions/Function3;Lkotlinx/coroutines/flow/FlowCollector;)V
 
-    .line 136
+    .line 133
     :try_start_2d
     iput-object v4, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$transformWhile$1;->L$0:Ljava/lang/Object;
 
@@ -237,11 +237,11 @@
 
     move-object p0, v4
 
-    .line 138
+    .line 135
     :goto_3a
-    invoke-static {p1, p0}, Lkotlinx/coroutines/flow/internal/FlowExceptions_commonKt;->checkOwnership(Lkotlinx/coroutines/flow/internal/AbortFlowException;Lkotlinx/coroutines/flow/FlowCollector;)V
+    invoke-static {p1, p0}, Lkotlinx/coroutines/flow/internal/FlowExceptions_commonKt;->checkOwnership(Lkotlinx/coroutines/flow/internal/AbortFlowException;Ljava/lang/Object;)V
 
-    .line 140
+    .line 137
     :cond_3d
     :goto_3d
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

@@ -32,12 +32,12 @@
 .method public constructor <init>()V
     .registers 3
 
-    .line 280
+    .line 290
     invoke-direct {p0}, Lkotlinx/coroutines/flow/internal/AbstractSharedFlowSlot;-><init>()V
 
     const-wide/16 v0, -0x1
 
-    .line 282
+    .line 292
     iput-wide v0, p0, Lkotlinx/coroutines/flow/SharedFlowSlot;->index:J
 
     return-void
@@ -48,7 +48,7 @@
 .method public bridge synthetic allocateLocked(Ljava/lang/Object;)Z
     .registers 2
 
-    .line 280
+    .line 290
     check-cast p1, Lkotlinx/coroutines/flow/SharedFlowImpl;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/flow/SharedFlowSlot;->allocateLocked(Lkotlinx/coroutines/flow/SharedFlowImpl;)Z
@@ -68,7 +68,7 @@
         }
     .end annotation
 
-    .line 288
+    .line 298
     iget-wide v0, p0, Lkotlinx/coroutines/flow/SharedFlowSlot;->index:J
 
     const-wide/16 v2, 0x0
@@ -81,7 +81,7 @@
 
     return p0
 
-    .line 289
+    .line 299
     :cond_a
     invoke-virtual {p1}, Lkotlinx/coroutines/flow/SharedFlowImpl;->updateNewCollectorIndexLocked$kotlinx_coroutines_core()J
 
@@ -97,7 +97,7 @@
 .method public bridge synthetic freeLocked(Ljava/lang/Object;)[Lkotlin/coroutines/Continuation;
     .registers 2
 
-    .line 280
+    .line 290
     check-cast p1, Lkotlinx/coroutines/flow/SharedFlowImpl;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/flow/SharedFlowSlot;->freeLocked(Lkotlinx/coroutines/flow/SharedFlowImpl;)[Lkotlin/coroutines/Continuation;
@@ -120,20 +120,20 @@
         }
     .end annotation
 
-    .line 295
+    .line 305
     iget-wide v0, p0, Lkotlinx/coroutines/flow/SharedFlowSlot;->index:J
 
     const-wide/16 v2, -0x1
 
-    .line 296
+    .line 306
     iput-wide v2, p0, Lkotlinx/coroutines/flow/SharedFlowSlot;->index:J
 
     const/4 v2, 0x0
 
-    .line 297
+    .line 307
     iput-object v2, p0, Lkotlinx/coroutines/flow/SharedFlowSlot;->cont:Lkotlin/coroutines/Continuation;
 
-    .line 298
+    .line 308
     invoke-virtual {p1, v0, v1}, Lkotlinx/coroutines/flow/SharedFlowImpl;->updateCollectorIndexLocked$kotlinx_coroutines_core(J)[Lkotlin/coroutines/Continuation;
 
     move-result-object p0

@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.DelayKt"
     f = "Delay.kt"
     l = {
-        0xa3
+        0xa0
     }
     m = "awaitCancellation"
 .end annotation

@@ -28,7 +28,7 @@
 .method constructor <init>(Lcom/google/gson/TypeAdapter;)V
     .registers 2
 
-    .line 186
+    .line 292
     iput-object p1, p0, Lcom/google/gson/TypeAdapter$1;->this$0:Lcom/google/gson/TypeAdapter;
 
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
@@ -41,7 +41,7 @@
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .registers 4
 
-    .line 195
+    .line 304
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     move-result-object v0
@@ -50,14 +50,14 @@
 
     if-ne v0, v1, :cond_d
 
-    .line 196
+    .line 305
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
     const/4 p0, 0x0
 
     return-object p0
 
-    .line 199
+    .line 308
     :cond_d
     iget-object p0, p0, Lcom/google/gson/TypeAdapter$1;->this$0:Lcom/google/gson/TypeAdapter;
 
@@ -73,12 +73,12 @@
 
     if-nez p2, :cond_6
 
-    .line 189
+    .line 296
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->nullValue()Lcom/google/gson/stream/JsonWriter;
 
     return-void
 
-    .line 191
+    .line 298
     :cond_6
     iget-object p0, p0, Lcom/google/gson/TypeAdapter$1;->this$0:Lcom/google/gson/TypeAdapter;
 

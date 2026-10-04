@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$UIHandler;,
         Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$NightLiteShutterListener;
     }
 .end annotation
@@ -64,7 +65,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 22
+    .line 23
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "SuperNightLiteUI5"
@@ -79,10 +80,10 @@
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .registers 2
 
-    .line 60
+    .line 58
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;-><init>(Landroid/content/res/Resources;)V
 
-    .line 24
+    .line 25
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -91,17 +92,17 @@
 
     const/4 p1, 0x0
 
-    .line 26
+    .line 27
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->mIsNightLiteCaptureEnable:Z
 
-    .line 29
+    .line 30
     new-instance p1, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$1;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$1;-><init>(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;)V
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->mPreviewRectListener:Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;
 
-    .line 47
+    .line 45
     new-instance p1, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;)V
@@ -114,7 +115,7 @@
 .method static synthetic access$000(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 21
+    .line 22
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -123,7 +124,7 @@
 .method static synthetic access$100(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 21
+    .line 22
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -132,7 +133,7 @@
 .method private synthetic lambda$new$0(Ljava/lang/Integer;ZZ)V
     .registers 7
 
-    .line 49
+    .line 47
     sget-object v0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -163,19 +164,19 @@
 
     invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 50
+    .line 48
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p2
 
     iput p2, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->mNightLiteSwitchTranslationY:I
 
-    .line 51
+    .line 49
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->mNightLiteSwitch:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-eqz p2, :cond_38
 
-    .line 52
+    .line 50
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -187,7 +188,7 @@
     :cond_38
     if-eqz p3, :cond_41
 
-    .line 55
+    .line 53
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->getValue()Ljava/lang/String;
 
     move-result-object p1
@@ -211,6 +212,19 @@
     move-result-object v1
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$NightLiteShutterListener;-><init>(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;)V
+
+    return-object v0
+.end method
+
+.method protected createUIHandler()Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$UIHandler;
+    .registers 3
+
+    .line 64
+    new-instance v0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$UIHandler;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$UIHandler;-><init>(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5-IA;)V
 
     return-object v0
 .end method
@@ -245,7 +259,7 @@
 .method protected getDefaultTranslationY()F
     .registers 1
 
-    .line 95
+    .line 99
     iget p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->mNightLiteSwitchTranslationY:I
 
     int-to-float p0, p0
@@ -267,7 +281,7 @@
 .method protected getNightLiteSwitchLayoutMargins(II)Landroid/graphics/Rect;
     .registers 6
 
-    .line 117
+    .line 121
     sget-object v0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -292,78 +306,23 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 118
+    .line 122
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->getNightLiteSwitchLayoutMargins(II)Landroid/graphics/Rect;
 
     move-result-object p2
 
-    if-nez p1, :cond_6d
+    if-nez p1, :cond_3f
 
     const/16 p1, 0x10
 
-    .line 120
+    .line 124
     invoke-static {p1}, Lcom/transsion/camera/utils/UIUtils;->dp(I)I
 
     move-result p1
 
     iput p1, p2, Landroid/graphics/Rect;->right:I
 
-    .line 121
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->mPreviewRect:Landroid/graphics/Rect;
-
-    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
-
-    invoke-static {p1, v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(Landroid/graphics/Rect;D)Z
-
-    move-result p1
-
-    const/16 v0, 0xa
-
-    if-eqz p1, :cond_5c
-
-    .line 122
-    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lcom/transsion/camera/app/common/manager/IScreenManager;->getModePlusBottomBarHeight()I
-
-    move-result p1
-
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->mPreviewRect:Landroid/graphics/Rect;
-
-    invoke-virtual {p0}, Landroid/graphics/Rect;->width()I
-
-    move-result p0
-
-    int-to-float p0, p0
-
-    const v1, 0x3eaaaaac
-
-    mul-float/2addr p0, v1
-
-    invoke-static {p0}, Ljava/lang/Math;->round(F)I
-
-    move-result p0
-
-    div-int/lit8 p0, p0, 0x2
-
-    add-int/2addr p1, p0
-
-    invoke-static {v0}, Lcom/transsion/camera/utils/UIUtils;->dp(I)I
-
-    move-result p0
-
-    add-int/2addr p1, p0
-
-    iput p1, p2, Landroid/graphics/Rect;->bottom:I
-
-    return-object p2
-
-    .line 124
-    :cond_5c
+    .line 125
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
@@ -374,7 +333,9 @@
 
     move-result p0
 
-    invoke-static {v0}, Lcom/transsion/camera/utils/UIUtils;->dp(I)I
+    const/16 p1, 0xa
+
+    invoke-static {p1}, Lcom/transsion/camera/utils/UIUtils;->dp(I)I
 
     move-result p1
 
@@ -382,14 +343,14 @@
 
     iput p0, p2, Landroid/graphics/Rect;->bottom:I
 
-    :cond_6d
+    :cond_3f
     return-object p2
 .end method
 
 .method protected isInitialPosition()Z
     .registers 3
 
-    .line 108
+    .line 112
     iget v0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->mNightLiteSwitchTranslationY:I
 
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
@@ -404,12 +365,12 @@
 
     if-lez v0, :cond_1c
 
-    .line 109
+    .line 113
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->mNightLiteSwitch:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-eqz p0, :cond_1a
 
-    invoke-virtual {p0}, Landroid/view/View;->getTranslationX()F
+    invoke-virtual {p0}, Landroid/view/View;->getTranslationY()F
 
     move-result p0
 
@@ -426,7 +387,7 @@
 
     return p0
 
-    .line 111
+    .line 115
     :cond_1c
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->isInitialPosition()Z
 
@@ -478,15 +439,15 @@
 .method public setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
     .registers 2
 
-    .line 65
+    .line 69
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 66
+    .line 70
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p1, :cond_c
 
-    .line 67
+    .line 71
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->mPreviewRectListener:Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;
 
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/IAppUI;->registerPreviewRectListener(Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;)V
@@ -535,7 +496,7 @@
 .method protected translateSwitchIcon(Z)V
     .registers 4
 
-    .line 100
+    .line 104
     iget v0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->mNightLiteSwitchTranslationY:I
 
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
@@ -552,7 +513,7 @@
 
     return-void
 
-    .line 103
+    .line 107
     :cond_d
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->translateSwitchIcon(Z)V
 
@@ -562,17 +523,17 @@
 .method public unInit()V
     .registers 3
 
-    .line 73
+    .line 77
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_9
 
-    .line 74
+    .line 78
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->mPreviewRectListener:Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUI;->unregisterPreviewRectListener(Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;)V
 
-    .line 76
+    .line 80
     :cond_9
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->unInit()V
 
@@ -582,7 +543,7 @@
 .method protected updateNightLiteSwitchLayout()V
     .registers 3
 
-    .line 87
+    .line 91
     iget v0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->mNightLiteSwitchTranslationY:I
 
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
@@ -599,7 +560,7 @@
 
     return-void
 
-    .line 90
+    .line 94
     :cond_d
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->updateNightLiteSwitchLayout()V
 
@@ -609,7 +570,7 @@
 .method protected updateProgressCircleLayoutInNormal(I)V
     .registers 3
 
-    .line 82
+    .line 86
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_c
@@ -622,7 +583,7 @@
 
     move-result p1
 
-    .line 81
+    .line 85
     :cond_c
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->updateProgressCircleLayoutInNormal(I)V
 

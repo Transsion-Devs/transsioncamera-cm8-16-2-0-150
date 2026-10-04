@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
+.implements Landroid/view/ViewStub$OnInflateListener;
 
 
 # instance fields
@@ -24,15 +24,13 @@
 
 
 # virtual methods
-.method public final onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
+.method public final onInflate(Landroid/view/ViewStub;Landroid/view/View;)V
     .registers 3
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$$ExternalSyntheticLambda1;->f$0:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;
 
-    check-cast p2, Ljava/lang/String;
-
-    invoke-static {p0, p1, p2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->$r8$lambda$4cp0TMoAl9_NqN1MwNN93wu_gro(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, p1, p2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->$r8$lambda$b-BvwUFCBYX5Qu9UbgXoy2k8jS4(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Landroid/view/ViewStub;Landroid/view/View;)V
 
     return-void
 .end method

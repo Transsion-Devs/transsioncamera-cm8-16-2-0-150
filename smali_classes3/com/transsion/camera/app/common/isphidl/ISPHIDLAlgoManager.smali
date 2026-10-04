@@ -1002,20 +1002,23 @@
     goto :goto_243
 
     :goto_273
-    if-ne v9, v11, :cond_27f
+    if-ne v9, v11, :cond_280
 
-    if-lez v8, :cond_27f
+    if-lez v8, :cond_280
 
-    if-nez v36, :cond_27f
+    if-nez v36, :cond_280
 
     const/4 v10, 0x4
 
     .line 154
     invoke-virtual {v1, v10}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
 
-    goto/16 :goto_3c4
+    :goto_27d
+    const/4 v3, 0x0
 
-    :cond_27f
+    goto/16 :goto_3ea
+
+    :cond_280
     const/4 v10, 0x2
 
     if-ne v9, v10, :cond_28c
@@ -1029,7 +1032,7 @@
     .line 156
     invoke-virtual {v1, v11}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
 
-    goto/16 :goto_3c4
+    goto :goto_27d
 
     .line 157
     :cond_28c
@@ -1037,48 +1040,48 @@
 
     move-result v11
 
-    if-ne v11, v10, :cond_2a0
+    if-ne v11, v10, :cond_29f
 
-    if-eqz v37, :cond_2a0
+    if-eqz v37, :cond_29f
 
     iget-boolean v10, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->mSkipFlag:Z
 
-    if-nez v10, :cond_2a0
+    if-nez v10, :cond_29f
 
-    if-nez v36, :cond_2a0
+    if-nez v36, :cond_29f
 
     const/4 v2, 0x7
 
     .line 158
     invoke-virtual {v1, v2}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
 
-    goto/16 :goto_3c4
+    goto :goto_27d
 
     .line 159
-    :cond_2a0
+    :cond_29f
     invoke-virtual {v1}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperResolutionMode()I
 
     move-result v10
 
-    if-lez v10, :cond_2b5
+    if-lez v10, :cond_2b3
 
-    if-eqz v37, :cond_2b5
+    if-eqz v37, :cond_2b3
 
     iget-boolean v10, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->mSkipFlag:Z
 
-    if-nez v10, :cond_2b5
+    if-nez v10, :cond_2b3
 
-    if-nez v36, :cond_2b5
+    if-nez v36, :cond_2b3
 
     const/16 v2, 0xb
 
     .line 160
     invoke-virtual {v1, v2}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
 
-    goto/16 :goto_3c4
+    goto :goto_27d
 
     .line 161
-    :cond_2b5
+    :cond_2b3
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v10
@@ -1091,13 +1094,13 @@
 
     const/4 v12, 0x6
 
-    if-eqz v10, :cond_32f
+    if-eqz v10, :cond_32d
 
     const/4 v10, 0x1
 
-    if-ne v13, v10, :cond_32f
+    if-ne v13, v10, :cond_32d
 
-    if-nez v24, :cond_32f
+    if-nez v24, :cond_32d
 
     .line 163
     invoke-virtual {v1, v12}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
@@ -1117,7 +1120,7 @@
 
     const/16 v3, 0xc80
 
-    if-ge v2, v3, :cond_2e1
+    if-ge v2, v3, :cond_2df
 
     .line 166
     invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1126,32 +1129,32 @@
 
     iput-object v3, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->TAPS_CAPTURE_INPUT_COUNT:Ljava/lang/Integer;
 
-    goto :goto_2f7
+    goto :goto_2f5
 
-    :cond_2e1
+    :cond_2df
     const/16 v3, 0x12c0
 
-    if-ge v2, v3, :cond_2e8
+    if-ge v2, v3, :cond_2e6
 
     .line 168
     iput-object v6, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->TAPS_CAPTURE_INPUT_COUNT:Ljava/lang/Integer;
 
-    goto :goto_2f7
+    goto :goto_2f5
 
-    :cond_2e8
+    :cond_2e6
     const/16 v3, 0x1900
 
-    if-ge v2, v3, :cond_2f1
+    if-ge v2, v3, :cond_2ef
 
     move-object/from16 v10, v32
 
     .line 170
     iput-object v10, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->TAPS_CAPTURE_INPUT_COUNT:Ljava/lang/Integer;
 
-    goto :goto_2f7
+    goto :goto_2f5
 
     .line 172
-    :cond_2f1
+    :cond_2ef
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -1159,14 +1162,14 @@
     iput-object v3, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->TAPS_CAPTURE_INPUT_COUNT:Ljava/lang/Integer;
 
     .line 174
-    :goto_2f7
+    :goto_2f5
     invoke-virtual {v1}, Lcom/transsion/camera/adapter/CameraParameters;->getDeBandingMode()I
 
     move-result v3
 
     const/4 v10, 0x1
 
-    if-ne v3, v10, :cond_306
+    if-ne v3, v10, :cond_304
 
     const/16 v18, 0x2
 
@@ -1178,7 +1181,7 @@
     iput-object v3, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->TAPS_CAPTURE_INPUT_COUNT:Ljava/lang/Integer;
 
     .line 177
-    :cond_306
+    :cond_304
     sget-object v3, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1212,9 +1215,9 @@
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/adapter/CameraParameters;->setBMMultiFrameNum(I)V
 
-    goto/16 :goto_3c4
+    goto/16 :goto_27d
 
-    :cond_32f
+    :cond_32d
     move-object/from16 v10, v32
 
     .line 179
@@ -1226,7 +1229,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_348
+    if-nez v2, :cond_343
 
     .line 180
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
@@ -1237,20 +1240,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_346
+    if-eqz v2, :cond_383
 
-    goto :goto_348
+    :cond_343
+    if-eqz v30, :cond_383
 
-    :cond_346
-    const/4 v11, 0x1
-
-    goto :goto_387
-
-    :cond_348
-    :goto_348
-    if-eqz v30, :cond_346
-
-    if-nez v24, :cond_346
+    if-nez v24, :cond_383
 
     .line 182
     invoke-virtual {v1, v12}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
@@ -1262,19 +1257,19 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_359
+    if-ne v2, v3, :cond_354
 
     .line 184
     iput-object v10, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->TAPS_CAPTURE_INPUT_COUNT:Ljava/lang/Integer;
 
-    goto :goto_35b
+    goto :goto_356
 
     .line 186
-    :cond_359
+    :cond_354
     iput-object v6, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->TAPS_CAPTURE_INPUT_COUNT:Ljava/lang/Integer;
 
     .line 188
-    :goto_35b
+    :goto_356
     iget-object v2, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->TAPS_CAPTURE_INPUT_COUNT:Ljava/lang/Integer;
 
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
@@ -1312,90 +1307,157 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    goto :goto_3c4
+    goto/16 :goto_27d
 
-    :goto_387
-    if-ne v4, v11, :cond_38d
+    .line 190
+    :cond_383
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/transsion/camera/utils/CustomConfigUtil;->isSupportFlashLiteV2()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3a7
 
     .line 191
+    invoke-virtual {v1}, Lcom/transsion/camera/adapter/CameraParameters;->getMotionCaptureMode()I
+
+    move-result v2
+
+    if-eqz v2, :cond_3a7
+
+    .line 192
+    invoke-virtual {v1}, Lcom/transsion/camera/adapter/CameraParameters;->getSkipMultCapture()Z
+
+    move-result v2
+
+    if-nez v2, :cond_3a7
+
+    .line 193
+    invoke-virtual {v1, v12}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
+
+    .line 194
+    iput-object v6, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->TAPS_CAPTURE_INPUT_COUNT:Ljava/lang/Integer;
+
+    .line 195
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Lcom/transsion/camera/adapter/CameraParameters;->setBMMultiFrameNum(I)V
+
+    goto/16 :goto_27d
+
+    :cond_3a7
+    const/4 v11, 0x1
+
+    if-ne v4, v11, :cond_3af
+
+    .line 197
     invoke-virtual {v1, v11}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
 
-    goto :goto_3c4
+    goto/16 :goto_27d
 
-    :cond_38d
-    if-lez v26, :cond_397
+    :cond_3af
+    if-lez v26, :cond_3ba
 
-    if-nez v36, :cond_397
+    if-nez v36, :cond_3ba
 
     const/16 v2, 0x9
 
-    .line 193
+    .line 199
     invoke-virtual {v1, v2}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
 
-    goto :goto_3c4
+    goto/16 :goto_27d
 
-    .line 194
-    :cond_397
+    .line 200
+    :cond_3ba
     invoke-static {v3, v7}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_3a3
+    if-eqz v2, :cond_3c7
 
     move/from16 v2, v16
 
-    .line 195
+    .line 201
     invoke-virtual {v1, v2}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
 
-    goto :goto_3c4
+    goto/16 :goto_27d
 
-    .line 196
-    :cond_3a3
+    .line 202
+    :cond_3c7
     invoke-static {v3, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_3af
+    if-eqz v2, :cond_3d4
 
     const/16 v2, 0x8
 
-    .line 197
+    .line 203
     invoke-virtual {v1, v2}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
 
-    goto :goto_3c4
+    goto/16 :goto_27d
 
-    :cond_3af
+    :cond_3d4
     move/from16 v2, v31
 
     const/4 v11, 0x1
 
-    if-ne v2, v11, :cond_3c0
+    if-ne v2, v11, :cond_3e6
 
-    .line 198
+    .line 204
     iget-boolean v2, v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->mSkipFlag:Z
 
-    if-nez v2, :cond_3c0
+    if-nez v2, :cond_3e6
 
-    if-nez v36, :cond_3c0
+    if-nez v36, :cond_3e6
 
     const/16 v5, 0xa
 
-    .line 199
+    .line 205
     invoke-virtual {v1, v5}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
 
-    goto :goto_3c4
+    goto/16 :goto_27d
 
-    :cond_3c0
+    :cond_3e6
     const/4 v3, 0x0
 
-    .line 201
+    .line 207
     invoke-virtual {v1, v3}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
 
-    .line 203
-    :goto_3c4
+    .line 209
+    :goto_3ea
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/transsion/camera/utils/CustomConfigUtil;->isFlashSnapLiteV1()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3fe
+
+    .line 210
+    invoke-virtual {v1}, Lcom/transsion/camera/adapter/CameraParameters;->getBestMomentDetectMode()I
+
+    move-result v2
+
+    const/4 v11, 0x1
+
+    if-ne v2, v11, :cond_3fe
+
+    .line 211
+    invoke-virtual {v1, v3}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoType(I)V
+
+    .line 213
+    :cond_3fe
     invoke-virtual {v1, v8}, Lcom/transsion/camera/adapter/CameraParameters;->setAiRawScene(I)V
 
-    .line 204
+    .line 214
     sget-object v2, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1524,7 +1586,7 @@
 .method protected getRemosaicLimitISO(Ljava/lang/String;I)I
     .registers 4
 
-    .line 212
+    .line 222
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -1535,7 +1597,7 @@
 
     if-nez v0, :cond_3d
 
-    .line 213
+    .line 223
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -1548,7 +1610,7 @@
 
     goto :goto_3d
 
-    .line 215
+    .line 225
     :cond_15
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -1560,12 +1622,12 @@
 
     if-eqz v0, :cond_22
 
-    .line 216
+    .line 226
     iget p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->mLongFocusIspHidlRemoaicISO:I
 
     return p0
 
-    .line 217
+    .line 227
     :cond_22
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraInfoUtil;->isCameraFacingFront(Ljava/lang/String;)Z
 
@@ -1573,18 +1635,18 @@
 
     if-eqz p1, :cond_2b
 
-    .line 218
+    .line 228
     iget p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->mFrontIspHidlRemoaicISO:I
 
     return p0
 
-    .line 220
+    .line 230
     :cond_2b
     sget p1, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
 
     mul-int/lit8 p1, p1, 0x2
 
-    .line 221
+    .line 231
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->m2XRemosaicAvailable:Z
 
     if-eqz v0, :cond_3a
@@ -1597,13 +1659,13 @@
 
     return v0
 
-    .line 224
+    .line 234
     :cond_3a
     iget p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->mIspHidlRemoaicISO:I
 
     return p0
 
-    .line 214
+    .line 224
     :cond_3d
     :goto_3d
     iget p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->mWideIspHidlRemoaicISO:I
@@ -1618,7 +1680,7 @@
 
     if-eqz p1, :cond_b
 
-    .line 234
+    .line 244
     array-length v0, p1
 
     if-lez v0, :cond_b
@@ -1664,7 +1726,7 @@
 .method public setSkipFlag(Z)V
     .registers 2
 
-    .line 230
+    .line 240
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->mSkipFlag:Z
 
     return-void

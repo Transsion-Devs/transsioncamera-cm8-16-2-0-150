@@ -52,7 +52,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)V
     .registers 2
 
-    .line 1114
+    .line 1108
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 .method private synthetic lambda$onStatusChanged$0(Ljava/lang/Object;)V
     .registers 2
 
-    .line 1139
+    .line 1133
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     check-cast p1, Ljava/lang/String;
@@ -76,7 +76,7 @@
 .method private synthetic lambda$onStatusChanged$1()V
     .registers 1
 
-    .line 1142
+    .line 1136
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$mreleaseActionSound(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)V
@@ -87,7 +87,7 @@
 .method private synthetic lambda$onStatusChanged$2()V
     .registers 2
 
-    .line 1148
+    .line 1142
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fgetmShutterSoundAssetFileName(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)Ljava/lang/String;
@@ -104,7 +104,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 11
 
-    .line 1117
+    .line 1111
     const-string v0, "key_update_low_light_state_to_qc"
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -113,7 +113,7 @@
 
     if-nez v1, :cond_34
 
-    .line 1118
+    .line 1112
     sget-object v1, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -150,7 +150,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1120
+    .line 1114
     :cond_34
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -336,7 +336,7 @@
 
     goto/16 :goto_253
 
-    .line 1131
+    .line 1125
     :pswitch_bb
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -348,7 +348,7 @@
 
     return-void
 
-    .line 1219
+    .line 1213
     :pswitch_c5
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -356,7 +356,7 @@
 
     return-void
 
-    .line 1151
+    .line 1145
     :pswitch_cb
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -375,7 +375,7 @@
 
     goto/16 :goto_253
 
-    .line 1157
+    .line 1151
     :cond_db
     check-cast p2, Ljava/lang/String;
 
@@ -437,7 +437,7 @@
 
     goto/16 :goto_253
 
-    .line 1159
+    .line 1153
     :pswitch_109
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -445,7 +445,7 @@
 
     return-void
 
-    .line 1163
+    .line 1157
     :pswitch_10f
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -453,7 +453,7 @@
 
     return-void
 
-    .line 1122
+    .line 1116
     :pswitch_115
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -483,7 +483,7 @@
 
     return-void
 
-    .line 1134
+    .line 1128
     :pswitch_12d
     const-string p1, "shutter_sound_value_change"
 
@@ -495,7 +495,7 @@
 
     const-string p1, "shutter_sound_value_ready"
 
-    .line 1135
+    .line 1129
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -504,7 +504,7 @@
 
     goto/16 :goto_253
 
-    .line 1138
+    .line 1132
     :cond_13f
     const-string p1, "sound_effect_default"
 
@@ -514,7 +514,7 @@
 
     if-eqz p1, :cond_156
 
-    .line 1139
+    .line 1133
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$UIHandler;
@@ -529,7 +529,7 @@
 
     return-void
 
-    .line 1142
+    .line 1136
     :cond_156
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -543,7 +543,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1144
+    .line 1138
     :try_start_164
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -555,7 +555,7 @@
 
     goto :goto_173
 
-    .line 1146
+    .line 1140
     :catch_16c
     sget-object p1, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -563,7 +563,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1148
+    .line 1142
     :goto_173
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -579,7 +579,7 @@
 
     return-void
 
-    .line 1216
+    .line 1210
     :pswitch_182
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -587,7 +587,7 @@
 
     return-void
 
-    .line 1172
+    .line 1166
     :pswitch_188
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -599,7 +599,7 @@
 
     goto/16 :goto_253
 
-    .line 1175
+    .line 1169
     :cond_192
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -609,14 +609,14 @@
 
     move-result v0
 
-    .line 1176
+    .line 1170
     invoke-static {p1, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v3
 
     if-eqz v3, :cond_1e7
 
-    .line 1177
+    .line 1171
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {v3}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fgetmLivePhotoChangedByUserInteraction(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)Z
@@ -627,7 +627,7 @@
 
     goto/16 :goto_253
 
-    .line 1180
+    .line 1174
     :cond_1aa
     move-object v3, p2
 
@@ -641,10 +641,41 @@
 
     if-nez v0, :cond_1e2
 
-    .line 1182
+    .line 1176
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {v3, v6}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmClosedByLivePhoto(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Z)V
+
+    .line 1177
+    iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
+
+    invoke-static {v3, v7}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmNeedNotifyLivePhoto(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Z)V
+
+    .line 1178
+    iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
+
+    iget-object v4, v3, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->mNightLiteSwitch:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
+
+    invoke-static {v3, v4}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$mupdateSwitchUIStateChanged(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Landroid/view/View;)V
+
+    goto :goto_1e2
+
+    .line 1181
+    :cond_1c7
+    iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
+
+    invoke-static {v3}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fgetmClosedByLivePhoto(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1e2
+
+    if-eqz v0, :cond_1e2
+
+    .line 1182
+    iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
+
+    invoke-static {v3, v7}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmClosedByLivePhoto(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Z)V
 
     .line 1183
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
@@ -658,45 +689,14 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$mupdateSwitchUIStateChanged(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Landroid/view/View;)V
 
-    goto :goto_1e2
-
     .line 1187
-    :cond_1c7
-    iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
-
-    invoke-static {v3}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fgetmClosedByLivePhoto(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1e2
-
-    if-eqz v0, :cond_1e2
-
-    .line 1188
-    iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
-
-    invoke-static {v3, v7}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmClosedByLivePhoto(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Z)V
-
-    .line 1189
-    iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
-
-    invoke-static {v3, v7}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmNeedNotifyLivePhoto(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Z)V
-
-    .line 1190
-    iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
-
-    iget-object v4, v3, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->mNightLiteSwitch:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
-
-    invoke-static {v3, v4}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$mupdateSwitchUIStateChanged(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Landroid/view/View;)V
-
-    .line 1193
     :cond_1e2
     :goto_1e2
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {v3, v7}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmLivePhotoChangedByUserInteraction(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Z)V
 
-    .line 1195
+    .line 1189
     :cond_1e7
     invoke-static {p1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -704,7 +704,7 @@
 
     if-eqz p1, :cond_253
 
-    .line 1196
+    .line 1190
     check-cast p2, Ljava/lang/CharSequence;
 
     invoke-static {p2, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -715,17 +715,17 @@
 
     if-nez v0, :cond_22d
 
-    .line 1198
+    .line 1192
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {p1, v6}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmClosedByFlare(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Z)V
 
-    .line 1199
+    .line 1193
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {p1, v7}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmNeedNotifyFlare(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Z)V
 
-    .line 1200
+    .line 1194
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     iget-object p2, p1, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->mNightLiteSwitch:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
@@ -734,7 +734,7 @@
 
     goto :goto_22d
 
-    .line 1203
+    .line 1197
     :cond_209
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -746,7 +746,7 @@
 
     goto :goto_253
 
-    .line 1206
+    .line 1200
     :cond_212
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -758,24 +758,24 @@
 
     if-eqz v0, :cond_22d
 
-    .line 1207
+    .line 1201
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {p1, v7}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmClosedByFlare(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Z)V
 
-    .line 1208
+    .line 1202
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {p1, v7}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmNeedNotifyFlare(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Z)V
 
-    .line 1209
+    .line 1203
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     iget-object p2, p1, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->mNightLiteSwitch:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$mupdateSwitchUIStateChanged(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;Landroid/view/View;)V
 
-    .line 1212
+    .line 1206
     :cond_22d
     :goto_22d
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
@@ -784,7 +784,7 @@
 
     return-void
 
-    .line 1125
+    .line 1119
     :pswitch_233
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -798,7 +798,7 @@
 
     if-nez p1, :cond_253
 
-    .line 1126
+    .line 1120
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$UIHandler;
@@ -811,7 +811,7 @@
 
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1127
+    .line 1121
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$4;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     check-cast p2, Ljava/lang/String;

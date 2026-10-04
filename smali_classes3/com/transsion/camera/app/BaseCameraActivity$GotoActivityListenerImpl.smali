@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 2176
+    .line 2198
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 
     if-ne v0, p2, :cond_e
 
-    .line 2182
+    .line 2204
     iget-object v1, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-boolean v1, v1, Lcom/transsion/camera/app/BaseCameraActivity;->mGoingToARCore:Z
@@ -70,7 +70,7 @@
 
     if-ne v1, p2, :cond_19
 
-    .line 2185
+    .line 2207
     iget-object v2, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-boolean v2, v2, Lcom/transsion/camera/app/BaseCameraActivity;->mGoingToARCore:Z
@@ -84,7 +84,7 @@
 
     if-ne v2, p2, :cond_24
 
-    .line 2186
+    .line 2208
     iget-object v3, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-boolean v3, v3, Lcom/transsion/camera/app/BaseCameraActivity;->mGoingToGoPro:Z
@@ -94,7 +94,7 @@
     :goto_23
     return-void
 
-    .line 2189
+    .line 2211
     :cond_24
     iget-object v3, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -106,10 +106,10 @@
 
     const v4, 0x10008000
 
-    .line 2191
+    .line 2213
     invoke-virtual {p1, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 2193
+    .line 2215
     :cond_32
     const-string v4, "isSecureCamera"
 
@@ -123,19 +123,19 @@
 
     if-ne v0, p2, :cond_4d
 
-    .line 2196
+    .line 2218
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object v0, v0, Lcom/transsion/camera/app/BaseCameraActivity;->mThumbnailUri:Landroid/net/Uri;
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 2197
+    .line 2219
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iput-boolean v4, v0, Lcom/transsion/camera/app/BaseCameraActivity;->mGoingToARCore:Z
 
-    .line 2198
+    .line 2220
     iget-object v0, v0, Lcom/transsion/camera/app/BaseCameraActivity;->mAppUI:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->updateRingScreenLightState()V
@@ -143,7 +143,7 @@
     :cond_4d
     if-ne v1, p2, :cond_53
 
-    .line 2201
+    .line 2223
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iput-boolean v4, v0, Lcom/transsion/camera/app/BaseCameraActivity;->mGoingToARCore:Z
@@ -151,12 +151,12 @@
     :cond_53
     if-ne v2, p2, :cond_59
 
-    .line 2204
+    .line 2226
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iput-boolean v4, v0, Lcom/transsion/camera/app/BaseCameraActivity;->mGoingToGoPro:Z
 
-    .line 2206
+    .line 2228
     :cond_59
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -164,13 +164,13 @@
 
     goto :goto_64
 
-    .line 2208
+    .line 2230
     :cond_5f
     iget-object p2, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-virtual {p2, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 2210
+    .line 2232
     :goto_64
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -178,7 +178,7 @@
 
     const/4 p1, 0x0
 
-    .line 2211
+    .line 2233
     invoke-virtual {p0, p1, p1}, Landroid/app/Activity;->overridePendingTransition(II)V
 
     return-void
@@ -191,7 +191,7 @@
 
     return-void
 
-    .line 2219
+    .line 2241
     :cond_3
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;)V
     .registers 2
 
-    .line 169
+    .line 167
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture$1;->this$0:Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreviewStarted()V
     .registers 3
 
-    .line 178
+    .line 176
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture$1;->this$0:Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->-$$Nest$fgetmRestored(Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;)Z
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 179
+    .line 177
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture$1;->this$0:Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->-$$Nest$fgetmIsModeSupportOriginal(Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;)Z
@@ -56,7 +56,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->-$$Nest$fputmIsModeSupport(Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;Z)V
 
-    .line 180
+    .line 178
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture$1;->this$0:Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->-$$Nest$msyncRemoteCaptureFragment(Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;)V

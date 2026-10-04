@@ -41,7 +41,7 @@
         }
     .end annotation
 
-    .line 495
+    .line 494
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$3;->this$0:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$3;->val$requestCallBack:Lcom/transsion/camera/featurelibs/aicommon/service/IAIService$IRequestCallBack;
@@ -54,7 +54,7 @@
 .method private synthetic lambda$onResponse$0(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;)V
     .registers 2
 
-    .line 500
+    .line 499
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$3;->this$0:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$fgetmRequestMap(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;)Ljava/util/concurrent/ConcurrentHashMap;
@@ -75,7 +75,7 @@
 .method public onResponse(Lcom/transsion/camera/app/common/ai/AIRequest;Lcom/transsion/camera/app/common/ai/AIResponse;)V
     .registers 6
 
-    .line 498
+    .line 497
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$3;->this$0:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$fgetmLockGuard(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;)Ljava/lang/Object;
@@ -84,7 +84,7 @@
 
     monitor-enter v0
 
-    .line 499
+    .line 498
     :try_start_7
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$3;->this$0:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;
 
@@ -106,15 +106,15 @@
 
     invoke-direct {v2, p0}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$3$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$3;)V
 
-    .line 500
+    .line 499
     invoke-virtual {v1, v2}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
-    .line 501
+    .line 500
     monitor-exit v0
     :try_end_20
     .catchall {:try_start_7 .. :try_end_20} :catchall_26
 
-    .line 503
+    .line 502
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$3;->val$requestCallBack:Lcom/transsion/camera/featurelibs/aicommon/service/IAIService$IRequestCallBack;
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/featurelibs/aicommon/service/IAIService$IRequestCallBack;->onResponse(Lcom/transsion/camera/app/common/ai/AIRequest;Lcom/transsion/camera/app/common/ai/AIResponse;)V
@@ -124,7 +124,7 @@
     :catchall_26
     move-exception p0
 
-    .line 501
+    .line 500
     :try_start_27
     monitor-exit v0
     :try_end_28

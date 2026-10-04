@@ -11,10 +11,10 @@
 .method public constructor <init>(Ljava/lang/Runnable;JLkotlinx/coroutines/scheduling/TaskContext;)V
     .registers 5
 
-    .line 100
+    .line 96
     invoke-direct {p0, p2, p3, p4}, Lkotlinx/coroutines/scheduling/Task;-><init>(JLkotlinx/coroutines/scheduling/TaskContext;)V
 
-    .line 97
+    .line 93
     iput-object p1, p0, Lkotlinx/coroutines/scheduling/TaskImpl;->block:Ljava/lang/Runnable;
 
     return-void
@@ -25,7 +25,7 @@
 .method public run()V
     .registers 2
 
-    .line 103
+    .line 99
     :try_start_0
     iget-object v0, p0, Lkotlinx/coroutines/scheduling/TaskImpl;->block:Ljava/lang/Runnable;
 
@@ -33,7 +33,7 @@
     :try_end_5
     .catchall {:try_start_0 .. :try_end_5} :catchall_b
 
-    .line 105
+    .line 101
     iget-object p0, p0, Lkotlinx/coroutines/scheduling/Task;->taskContext:Lkotlinx/coroutines/scheduling/TaskContext;
 
     invoke-interface {p0}, Lkotlinx/coroutines/scheduling/TaskContext;->afterTask()V
@@ -53,7 +53,7 @@
 .method public toString()Ljava/lang/String;
     .registers 5
 
-    .line 110
+    .line 106
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

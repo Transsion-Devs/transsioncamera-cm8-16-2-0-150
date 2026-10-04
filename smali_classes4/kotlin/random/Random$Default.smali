@@ -21,7 +21,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 270
+    .line 272
     invoke-direct {p0}, Lkotlin/random/Random;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public nextBits(I)I
     .registers 2
 
-    .line 281
+    .line 285
     # getter for: Lkotlin/random/Random;->defaultRandom:Lkotlin/random/Random;
     invoke-static {}, Lkotlin/random/Random;->access$getDefaultRandom$cp()Lkotlin/random/Random;
 
@@ -57,7 +57,7 @@
 .method public nextInt()I
     .registers 1
 
-    .line 282
+    .line 286
     # getter for: Lkotlin/random/Random;->defaultRandom:Lkotlin/random/Random;
     invoke-static {}, Lkotlin/random/Random;->access$getDefaultRandom$cp()Lkotlin/random/Random;
 
@@ -73,7 +73,7 @@
 .method public nextInt(I)I
     .registers 2
 
-    .line 283
+    .line 287
     # getter for: Lkotlin/random/Random;->defaultRandom:Lkotlin/random/Random;
     invoke-static {}, Lkotlin/random/Random;->access$getDefaultRandom$cp()Lkotlin/random/Random;
 
@@ -89,7 +89,7 @@
 .method public nextInt(II)I
     .registers 3
 
-    .line 284
+    .line 288
     # getter for: Lkotlin/random/Random;->defaultRandom:Lkotlin/random/Random;
     invoke-static {}, Lkotlin/random/Random;->access$getDefaultRandom$cp()Lkotlin/random/Random;
 

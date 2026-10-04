@@ -48,6 +48,35 @@
 
 
 # virtual methods
+.method public applyToAppLockAsUser(ILandroid/os/Bundle;I)Landroid/os/Bundle;
+    .registers 5
+
+    .line 1569
+    invoke-static {}, Lcom/transsion/hubsdk/common/version/TranThubVersionUtil;->isRecentAndroidW()Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    .line 1572
+    :cond_8
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2, p3}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityManagerAdapter;->applyToAppLockAsUser(ILandroid/os/Bundle;I)Landroid/os/Bundle;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public backgroundAllowlistUid(I)V
     .registers 3
     .annotation runtime Lcom/transsion/hubsdk/common/annotation/TranLevel;
@@ -167,6 +196,35 @@
     invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityManagerAdapter;->doClean(ILjava/util/List;)V
 
     return-void
+.end method
+
+.method public doClean(ZZZZ[I[Ljava/lang/String;Landroid/os/Bundle;)Z
+    .registers 9
+
+    .line 1545
+    invoke-static {}, Lcom/transsion/hubsdk/common/version/TranThubVersionUtil;->isRecentAndroidW()Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    const/4 p0, 0x0
+
+    return p0
+
+    .line 1548
+    :cond_8
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface/range {p0 .. p7}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityManagerAdapter;->doClean(ZZZZ[I[Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public enableHiber(Z)V
@@ -1664,6 +1722,21 @@
     return-void
 .end method
 
+.method public registerTranNecessityServices(Lcom/transsion/hubsdk/api/app/ITranNecessityWindowService;)V
+    .registers 3
+
+    .line 1560
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityManagerAdapter;->registerTranNecessityServices(Lcom/transsion/hubsdk/api/app/ITranNecessityWindowService;)V
+
+    return-void
+.end method
+
 .method public registerUserSwitchObserver(Lcom/transsion/hubsdk/api/app/TranUserSwitchObserver;Ljava/lang/String;)V
     .registers 4
 
@@ -2414,6 +2487,35 @@
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
+.end method
+
+.method public swipeUpClean(Ljava/lang/String;I)Z
+    .registers 4
+
+    .line 1528
+    invoke-static {}, Lcom/transsion/hubsdk/common/version/TranThubVersionUtil;->isRecentAndroidW()Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    const/4 p0, 0x0
+
+    return p0
+
+    .line 1531
+    :cond_8
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33441:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranActivityManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranActivityManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/app/ITranActivityManagerAdapter;->swipeUpClean(Ljava/lang/String;I)Z
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public switchMemFusion(Z)V

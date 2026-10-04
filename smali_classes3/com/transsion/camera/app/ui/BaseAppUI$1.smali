@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
     .registers 2
 
-    .line 464
+    .line 460
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$1;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAction(I)V
     .registers 5
 
-    .line 467
+    .line 463
     invoke-static {}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -51,7 +51,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 468
+    .line 464
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->actionToString(I)Ljava/lang/String;
 
     move-result-object v2
@@ -72,10 +72,10 @@
 
     move-result-object v1
 
-    .line 467
+    .line 463
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 469
+    .line 465
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$1;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$misMainThread(Lcom/transsion/camera/app/ui/BaseAppUI;)Z
@@ -84,14 +84,14 @@
 
     if-eqz v0, :cond_36
 
-    .line 470
+    .line 466
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$1;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$monCameraOperateAction(Lcom/transsion/camera/app/ui/BaseAppUI;I)V
 
     return-void
 
-    .line 472
+    .line 468
     :cond_36
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$1;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -101,7 +101,7 @@
 
     monitor-enter v0
 
-    .line 473
+    .line 469
     :try_start_3d
     iget-object v1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$1;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -109,7 +109,7 @@
 
     if-nez v1, :cond_55
 
-    .line 474
+    .line 470
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$1;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/app/ui/BaseAppUI;)Landroid/os/Handler;
@@ -131,7 +131,7 @@
 
     goto :goto_57
 
-    .line 476
+    .line 472
     :cond_55
     :goto_55
     monitor-exit v0

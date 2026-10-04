@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/ModeManager;)V
     .registers 2
 
-    .line 730
+    .line 723
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$3;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public currentLockState()Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
     .registers 2
 
-    .line 749
+    .line 742
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$3;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -47,12 +47,12 @@
 
     if-nez v0, :cond_b
 
-    .line 750
+    .line 743
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
 
-    .line 752
+    .line 745
     :cond_b
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$3;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -70,7 +70,7 @@
 .method public performAeAfLock(Lcom/transsion/camera/app/common/mode/IAeAfLock$State;Z)V
     .registers 4
 
-    .line 741
+    .line 734
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$3;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -81,7 +81,7 @@
 
     return-void
 
-    .line 744
+    .line 737
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$3;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -97,7 +97,7 @@
 .method public supportedLockState()Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
     .registers 2
 
-    .line 733
+    .line 726
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$3;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -106,12 +106,12 @@
 
     if-nez v0, :cond_b
 
-    .line 734
+    .line 727
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
 
-    .line 736
+    .line 729
     :cond_b
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$3;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 

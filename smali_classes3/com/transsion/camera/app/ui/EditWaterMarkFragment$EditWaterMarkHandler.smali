@@ -22,10 +22,10 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;Landroid/os/Looper;)V
     .registers 3
 
-    .line 895
+    .line 910
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
-    .line 896
+    .line 911
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -45,7 +45,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 7
 
-    .line 901
+    .line 916
     iget p1, p1, Landroid/os/Message;->what:I
 
     const/4 v0, 0x1
@@ -58,7 +58,7 @@
 
     goto :goto_2d
 
-    .line 921
+    .line 936
     :cond_9
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
@@ -76,7 +76,7 @@
 
     if-eqz p1, :cond_2d
 
-    .line 922
+    .line 937
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityWaterMark:Landroid/widget/RelativeLayout;
@@ -85,7 +85,7 @@
 
     return-void
 
-    .line 903
+    .line 918
     :cond_21
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
@@ -103,7 +103,7 @@
     :goto_2d
     return-void
 
-    .line 906
+    .line 921
     :cond_2e
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
@@ -121,7 +121,7 @@
 
     if-nez p1, :cond_54
 
-    .line 907
+    .line 922
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     iget-object v0, p1, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -144,7 +144,7 @@
 
     invoke-virtual {v0, v4, p1, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 909
+    .line 924
     :cond_54
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
@@ -152,7 +152,7 @@
 
     invoke-virtual {p1, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 911
+    .line 926
     :try_start_5b
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
@@ -166,14 +166,14 @@
 
     if-eqz p1, :cond_6d
 
-    .line 912
+    .line 927
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->-$$Nest$mupdateEditWaterMarkItem(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;)V
 
     return-void
 
-    .line 914
+    .line 929
     :cond_6d
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
@@ -186,7 +186,7 @@
     :catch_73
     move-exception p0
 
-    .line 917
+    .line 932
     invoke-static {}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1

@@ -31,3 +31,18 @@
 
     return-object v0
 .end method
+
+.method public isSupported()Z
+    .registers 2
+
+    .line 31
+    iget-object p0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mResources:Landroid/content/res/Resources;
+
+    sget v0, Lcom/transsion/camera/app/common/R$bool;->lens_correction_support:I
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p0
+
+    return p0
+.end method

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
     .registers 2
 
-    .line 1226
+    .line 1216
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ShutterResponseListener;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method public onShutterClick(II)Z
     .registers 3
 
-    .line 1230
+    .line 1220
     iget-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ShutterResponseListener;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->isModeTabScrolling()Z
@@ -57,7 +57,7 @@
 
     return p2
 
-    .line 1233
+    .line 1223
     :cond_a
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ShutterResponseListener;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -77,7 +77,7 @@
 .method public onShutterLongClick(II)Z
     .registers 3
 
-    .line 1239
+    .line 1229
     iget-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ShutterResponseListener;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->isModeTabScrolling()Z
@@ -90,7 +90,7 @@
 
     return p2
 
-    .line 1242
+    .line 1232
     :cond_a
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ShutterResponseListener;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 

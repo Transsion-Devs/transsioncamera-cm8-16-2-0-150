@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static doc_mode_tips:I = 0x7f130281
+.field public static doc_mode_tips:I = 0x7f13027c
 
-.field public static doc_mode_tips_correcting:I = 0x7f130282
+.field public static doc_mode_tips_correcting:I = 0x7f13027d
 
 
 # direct methods

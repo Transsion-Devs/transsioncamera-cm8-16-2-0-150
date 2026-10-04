@@ -41,12 +41,12 @@
 .method protected generateOrderModeList([Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
     .registers 9
 
-    .line 256
+    .line 248
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 257
+    .line 249
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -56,7 +56,7 @@
 
     aget-object v2, p1, v1
 
-    .line 259
+    .line 251
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -75,7 +75,7 @@
 
     check-cast v4, Lcom/transsion/camera/app/common/FeatureResource;
 
-    .line 260
+    .line 252
     iget-object v5, v4, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -84,7 +84,7 @@
 
     if-eqz v5, :cond_f
 
-    .line 261
+    .line 253
     invoke-virtual {p0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_f
@@ -215,9 +215,6 @@
 .method public abstract shouldExitCameraOnBackPressed()Z
 .end method
 
-.method public abstract showModePickerGuide()V
-.end method
-
 .method public abstract showModeRegion()V
 .end method
 
@@ -240,16 +237,13 @@
 
     const/4 v1, 0x0
 
-    .line 231
+    .line 223
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/transsion/camera/app/ui/manager/AbstractModePickerUIManager;->showOrHideModePickerRootUI(ZZZZ)V
 
     return-void
 .end method
 
 .method public abstract showOrHideModePickerRootUI(ZZZZ)V
-.end method
-
-.method public abstract updateArrowEnableState(Z)V
 .end method
 
 .method public updateCurrentCamera(Ljava/lang/String;Z)V
@@ -305,9 +299,6 @@
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IModeScrollUI;->setModeList(Ljava/util/List;)V
 
     return-void
-.end method
-
-.method public abstract updateCurrentModes(Ljava/util/List;ILjava/lang/String;)V
 .end method
 
 .method public abstract updateGuideRightRootVisibleState(I)V

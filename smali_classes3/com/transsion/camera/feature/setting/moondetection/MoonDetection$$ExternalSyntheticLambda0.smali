@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -24,13 +24,13 @@
 
 
 # virtual methods
-.method public final onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+.method public final run()V
+    .registers 1
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$$ExternalSyntheticLambda0;->f$0:Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;
 
-    invoke-static {p0, p1, p2}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->$r8$lambda$NkndxEK9kFQjS6us1NzGs2xt0tc(Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-static {p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->$r8$lambda$PG5osK--sEw8G_fG8hRtrchNtDk(Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;)V
 
     return-void
 .end method

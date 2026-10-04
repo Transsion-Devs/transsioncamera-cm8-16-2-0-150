@@ -27,7 +27,7 @@
 .method private static synthetic $values()[Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
     .registers 8
 
-    .line 42
+    .line 43
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->AFICAN_BOGOLANFINI:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     sget-object v1, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->PAINTED_TATTOO:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
@@ -54,7 +54,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 43
+    .line 44
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     const-string v1, "AFICAN_BOGOLANFINI"
@@ -65,7 +65,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->AFICAN_BOGOLANFINI:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
-    .line 44
+    .line 45
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     const-string v1, "PAINTED_TATTOO"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->PAINTED_TATTOO:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
-    .line 45
+    .line 46
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     const-string v1, "INDONESIAN_BATIK"
@@ -87,7 +87,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->INDONESIAN_BATIK:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
-    .line 46
+    .line 47
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     const-string v1, "MAASAI_FABRIC"
@@ -98,7 +98,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->MAASAI_FABRIC:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
-    .line 47
+    .line 48
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     const-string v1, "ANIME_CUSTOMIZATION"
@@ -109,7 +109,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->ANIME_CUSTOMIZATION:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
-    .line 48
+    .line 49
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     const-string v1, "KHOKHLOMA_GOLD_PATTERNED"
@@ -120,7 +120,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->KHOKHLOMA_GOLD_PATTERNED:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
-    .line 49
+    .line 50
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     const-string v1, "GOLD_PLATED_GARMENTS"
@@ -131,7 +131,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->GOLD_PLATED_GARMENTS:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
-    .line 50
+    .line 51
     new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     const-string v1, "BLUE_AND_WHITE_PORCELAIN"
@@ -142,7 +142,7 @@
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->BLUE_AND_WHITE_PORCELAIN:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
-    .line 42
+    .line 43
     invoke-static {}, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->$values()[Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     move-result-object v0
@@ -155,7 +155,7 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
 
-    .line 42
+    .line 43
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -164,7 +164,7 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
     .registers 2
 
-    .line 42
+    .line 43
     const-class v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -179,7 +179,7 @@
 .method public static values()[Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
     .registers 1
 
-    .line 42
+    .line 43
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->$VALUES:[Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     invoke-virtual {v0}, [Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->clone()Ljava/lang/Object;

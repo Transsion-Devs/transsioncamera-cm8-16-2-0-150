@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4008
+    accessFlags = 0x4010
     name = null
 .end annotation
 
@@ -20,7 +20,7 @@
 
     const/4 v0, 0x0
 
-    .line 90
+    .line 94
     invoke-direct {p0, p1, p2, v0}, Lcom/google/gson/FieldNamingPolicy;-><init>(Ljava/lang/String;ILcom/google/gson/FieldNamingPolicy$1;)V
 
     return-void
@@ -31,20 +31,20 @@
 .method public translateName(Ljava/lang/reflect/Field;)Ljava/lang/String;
     .registers 2
 
-    .line 92
+    .line 97
     invoke-virtual {p1}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string p1, "_"
+    const/16 p1, 0x5f
 
-    invoke-static {p0, p1}, Lcom/google/gson/FieldNamingPolicy;->separateCamelCase(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/google/gson/FieldNamingPolicy;->separateCamelCase(Ljava/lang/String;C)Ljava/lang/String;
 
     move-result-object p0
 
     sget-object p1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    invoke-virtual {p0, p1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object p0
 

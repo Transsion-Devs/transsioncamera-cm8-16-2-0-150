@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.channels.BufferedChannel"
     f = "BufferedChannel.kt"
     l = {
-        0xbf0
+        0xbf8
     }
     m = "receiveCatchingOnNoWaiterSuspend-GKJJFZk"
 .end annotation

@@ -4,14 +4,14 @@
 
 
 # static fields
-.field public static INSTANCE:Lcom/google/gson/internal/JsonReaderInternalAccess;
+.field public static volatile INSTANCE:Lcom/google/gson/internal/JsonReaderInternalAccess;
 
 
 # direct methods
 .method public constructor <init>()V
     .registers 1
 
-    .line 25
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

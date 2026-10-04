@@ -38,7 +38,7 @@
 .method private static synthetic $values()[Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
     .registers 8
 
-    .line 200
+    .line 209
     sget-object v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->URI:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     sget-object v1, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->MATTER:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
@@ -65,7 +65,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 200
+    .line 209
     new-instance v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     const-string v1, "URI"
@@ -158,7 +158,7 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
 
-    .line 200
+    .line 209
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -167,7 +167,7 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
     .registers 2
 
-    .line 200
+    .line 209
     const-class v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -182,7 +182,7 @@
 .method public static values()[Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
     .registers 1
 
-    .line 200
+    .line 209
     sget-object v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->$VALUES:[Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     invoke-virtual {v0}, [Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->clone()Ljava/lang/Object;

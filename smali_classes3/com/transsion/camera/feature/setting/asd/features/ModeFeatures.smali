@@ -12,6 +12,8 @@
 
 .field private mFilterSupport:Z
 
+.field private mFlashSnapMode:Z
+
 .field private mHighResolutionSupport:Z
 
 .field private mLivePhotoSupport:Z
@@ -37,7 +39,7 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 24
+    .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
@@ -84,15 +86,27 @@
     .line 22
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mPMasterMode:Z
 
+    .line 23
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mFlashSnapMode:Z
+
     return-void
 .end method
 
 
 # virtual methods
+.method public isFlashSnapMode()Z
+    .registers 1
+
+    .line 162
+    iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mFlashSnapMode:Z
+
+    return p0
+.end method
+
 .method public isModeSupportASDEnhance()Z
     .registers 1
 
-    .line 48
+    .line 50
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mASDEnhanceSupport:Z
 
     return p0
@@ -101,7 +115,7 @@
 .method public isModeSupportAiRawLite()Z
     .registers 1
 
-    .line 120
+    .line 122
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mAiRawLiteSupport:Z
 
     return p0
@@ -110,7 +124,7 @@
 .method public isModeSupportFakeCamera()Z
     .registers 1
 
-    .line 56
+    .line 58
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mFakeCameraSupport:Z
 
     return p0
@@ -119,7 +133,7 @@
 .method public isModeSupportFilter()Z
     .registers 1
 
-    .line 88
+    .line 90
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mFilterSupport:Z
 
     return p0
@@ -128,7 +142,7 @@
 .method public isModeSupportHighResolution()Z
     .registers 1
 
-    .line 80
+    .line 82
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mHighResolutionSupport:Z
 
     return p0
@@ -137,7 +151,7 @@
 .method public isModeSupportLivePhoto()Z
     .registers 1
 
-    .line 144
+    .line 146
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mLivePhotoSupport:Z
 
     return p0
@@ -146,7 +160,7 @@
 .method public isModeSupportMagicSky()Z
     .registers 1
 
-    .line 136
+    .line 138
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mMagicSkySupport:Z
 
     return p0
@@ -155,7 +169,7 @@
 .method public isModeSupportNight3DNR()Z
     .registers 1
 
-    .line 128
+    .line 130
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mNight3DNRSupport:Z
 
     return p0
@@ -164,7 +178,7 @@
 .method public isModeSupportPortraitEnhance()Z
     .registers 1
 
-    .line 96
+    .line 98
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mPortraitEnhanceSupport:Z
 
     return p0
@@ -173,7 +187,7 @@
 .method public isModeSupportSmartDenoise()Z
     .registers 1
 
-    .line 64
+    .line 66
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSmartDenoiseSupport:Z
 
     return p0
@@ -182,7 +196,7 @@
 .method public isModeSupportSuperNight()Z
     .registers 1
 
-    .line 112
+    .line 114
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSuperNightSupport:Z
 
     return p0
@@ -191,7 +205,7 @@
 .method public isModeSupportSuperNightLight()Z
     .registers 1
 
-    .line 104
+    .line 106
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSuperNightLightSupport:Z
 
     return p0
@@ -200,7 +214,7 @@
 .method public isModeSupportSuperResolution()Z
     .registers 1
 
-    .line 72
+    .line 74
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSuperResolutionSupport:Z
 
     return p0
@@ -209,7 +223,7 @@
 .method public isPMaterMode()Z
     .registers 1
 
-    .line 152
+    .line 154
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mPMasterMode:Z
 
     return p0
@@ -220,44 +234,56 @@
 
     const/4 v0, 0x0
 
-    .line 28
+    .line 29
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mASDEnhanceSupport:Z
 
-    .line 29
+    .line 30
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mFakeCameraSupport:Z
 
-    .line 30
+    .line 31
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSmartDenoiseSupport:Z
 
-    .line 31
+    .line 32
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSuperResolutionSupport:Z
 
-    .line 32
+    .line 33
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mHighResolutionSupport:Z
 
-    .line 33
+    .line 34
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mFilterSupport:Z
 
-    .line 34
+    .line 35
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mPortraitEnhanceSupport:Z
 
-    .line 35
+    .line 36
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSuperNightLightSupport:Z
 
-    .line 36
+    .line 37
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSuperNightSupport:Z
 
-    .line 37
+    .line 38
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mAiRawLiteSupport:Z
 
-    .line 38
+    .line 39
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mNight3DNRSupport:Z
 
-    .line 39
+    .line 40
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mMagicSkySupport:Z
 
-    .line 40
+    .line 41
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mLivePhotoSupport:Z
+
+    .line 42
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mFlashSnapMode:Z
+
+    return-void
+.end method
+
+.method public setFlashSnapMode(Z)V
+    .registers 2
+
+    .line 158
+    iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mFlashSnapMode:Z
 
     return-void
 .end method
@@ -265,7 +291,7 @@
 .method public setModeSupportASDEnhance(Z)V
     .registers 2
 
-    .line 44
+    .line 46
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mASDEnhanceSupport:Z
 
     return-void
@@ -274,7 +300,7 @@
 .method public setModeSupportAiRawLite(Z)V
     .registers 2
 
-    .line 116
+    .line 118
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mAiRawLiteSupport:Z
 
     return-void
@@ -283,7 +309,7 @@
 .method public setModeSupportFakeCamera(Z)V
     .registers 2
 
-    .line 52
+    .line 54
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mFakeCameraSupport:Z
 
     return-void
@@ -292,7 +318,7 @@
 .method public setModeSupportFilter(Z)V
     .registers 2
 
-    .line 84
+    .line 86
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mFilterSupport:Z
 
     return-void
@@ -301,7 +327,7 @@
 .method public setModeSupportHighResolution(Z)V
     .registers 2
 
-    .line 76
+    .line 78
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mHighResolutionSupport:Z
 
     return-void
@@ -310,7 +336,7 @@
 .method public setModeSupportLivePhoto(Z)V
     .registers 2
 
-    .line 140
+    .line 142
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mLivePhotoSupport:Z
 
     return-void
@@ -319,7 +345,7 @@
 .method public setModeSupportMagicSky(Z)V
     .registers 2
 
-    .line 132
+    .line 134
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mMagicSkySupport:Z
 
     return-void
@@ -328,7 +354,7 @@
 .method public setModeSupportNight3DNR(Z)V
     .registers 2
 
-    .line 124
+    .line 126
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mNight3DNRSupport:Z
 
     return-void
@@ -337,7 +363,7 @@
 .method public setModeSupportPortraitEnhance(Z)V
     .registers 2
 
-    .line 92
+    .line 94
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mPortraitEnhanceSupport:Z
 
     return-void
@@ -346,7 +372,7 @@
 .method public setModeSupportSmartDenoise(Z)V
     .registers 2
 
-    .line 60
+    .line 62
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSmartDenoiseSupport:Z
 
     return-void
@@ -355,7 +381,7 @@
 .method public setModeSupportSuperNight(Z)V
     .registers 2
 
-    .line 108
+    .line 110
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSuperNightSupport:Z
 
     return-void
@@ -364,7 +390,7 @@
 .method public setModeSupportSuperNightLight(Z)V
     .registers 2
 
-    .line 100
+    .line 102
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSuperNightLightSupport:Z
 
     return-void
@@ -373,7 +399,7 @@
 .method public setModeSupportSuperResolution(Z)V
     .registers 2
 
-    .line 68
+    .line 70
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mSuperResolutionSupport:Z
 
     return-void
@@ -382,7 +408,7 @@
 .method public setPMaterMode(Z)V
     .registers 2
 
-    .line 148
+    .line 150
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mPMasterMode:Z
 
     return-void
@@ -391,7 +417,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 158
+    .line 168
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -504,7 +530,15 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mPMasterMode:Z
+    iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mPMasterMode:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", mFlashSnapMode="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->mFlashSnapMode:Z
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 

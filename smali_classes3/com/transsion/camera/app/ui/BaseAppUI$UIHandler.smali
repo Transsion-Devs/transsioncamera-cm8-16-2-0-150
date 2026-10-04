@@ -22,14 +22,14 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
     .registers 3
 
-    .line 3946
+    .line 3932
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 3947
+    .line 3933
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -44,7 +44,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 5
 
-    .line 3952
+    .line 3938
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$UIHandler;->mAppUIReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -55,7 +55,7 @@
 
     if-nez p0, :cond_25
 
-    .line 3954
+    .line 3940
     invoke-static {}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -80,7 +80,7 @@
 
     return-void
 
-    .line 3957
+    .line 3943
     :cond_25
     invoke-static {}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -104,7 +104,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3958
+    .line 3944
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_96
@@ -112,31 +112,31 @@
     :pswitch_44
     return-void
 
-    .line 3976
+    .line 3962
     :pswitch_45
     invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$mdoUpdateOptionBar(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
     return-void
 
-    .line 3979
+    .line 3965
     :pswitch_49
     invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$mdoUpdatePopSettingUI(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
     return-void
 
-    .line 3967
+    .line 3953
     :pswitch_4d
     invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$mdoUpdateHelpGuide(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
     return-void
 
-    .line 3997
+    .line 3983
     :pswitch_51
     invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$mdoHideCustomPreviewCover(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
     return-void
 
-    .line 3994
+    .line 3980
     :pswitch_55
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -146,7 +146,7 @@
 
     return-void
 
-    .line 3991
+    .line 3977
     :pswitch_5d
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -162,19 +162,19 @@
 
     return-void
 
-    .line 3973
+    .line 3959
     :pswitch_6b
     invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$mdoUpdateTopBarAndOptionBar(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
     return-void
 
-    .line 3988
+    .line 3974
     :pswitch_6f
     invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$mdoDelayLoadUIManager(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
     return-void
 
-    .line 3985
+    .line 3971
     :pswitch_73
     iget p1, p1, Landroid/os/Message;->arg1:I
 
@@ -182,7 +182,7 @@
 
     return-void
 
-    .line 3982
+    .line 3968
     :pswitch_79
     iget p1, p1, Landroid/os/Message;->arg1:I
 
@@ -190,13 +190,13 @@
 
     return-void
 
-    .line 3970
+    .line 3956
     :pswitch_7f
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->doUpdateSettingUIList()V
 
     return-void
 
-    .line 3964
+    .line 3950
     :pswitch_83
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -210,11 +210,11 @@
 
     return-void
 
-    .line 3960
+    .line 3946
     :pswitch_8f
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->doSetupUIManagers()V
 
-    .line 3961
+    .line 3947
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->onOrientationChanged()V
 
     return-void

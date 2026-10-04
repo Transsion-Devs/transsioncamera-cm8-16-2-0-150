@@ -18,12 +18,12 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/widget/TabLayout;Landroid/content/Context;)V
     .registers 3
 
-    .line 1533
+    .line 1546
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 1534
+    .line 1547
     invoke-virtual {p0, p1}, Landroid/view/View;->setWillNotDraw(Z)V
 
     return-void
@@ -34,7 +34,7 @@
 .method childrenNeedLayout()Z
     .registers 5
 
-    .line 1538
+    .line 1551
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -46,12 +46,12 @@
     :goto_6
     if-ge v2, v0, :cond_17
 
-    .line 1539
+    .line 1552
     invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1540
+    .line 1553
     invoke-virtual {v3}, Landroid/view/View;->getWidth()I
 
     move-result v3
@@ -74,7 +74,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .registers 2
 
-    .line 1549
+    .line 1562
     invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
     return-void

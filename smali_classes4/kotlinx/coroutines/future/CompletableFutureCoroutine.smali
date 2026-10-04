@@ -48,10 +48,10 @@
 
     const/4 v0, 0x1
 
-    .line 51
+    .line 47
     invoke-direct {p0, p1, v0, v0}, Lkotlinx/coroutines/AbstractCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;ZZ)V
 
-    .line 50
+    .line 46
     iput-object p2, p0, Lkotlinx/coroutines/future/CompletableFutureCoroutine;->future:Ljava/util/concurrent/CompletableFuture;
 
     return-void
@@ -62,7 +62,7 @@
 .method public bridge synthetic apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 48
+    .line 44
     check-cast p2, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1, p2}, Lkotlinx/coroutines/future/CompletableFutureCoroutine;->apply(Ljava/lang/Object;Ljava/lang/Throwable;)V
@@ -86,7 +86,7 @@
 
     const/4 p2, 0x1
 
-    .line 53
+    .line 49
     invoke-static {p0, p1, p2, p1}, Lkotlinx/coroutines/Job$DefaultImpls;->cancel$default(Lkotlinx/coroutines/Job;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
     return-void
@@ -95,7 +95,7 @@
 .method protected onCancelled(Ljava/lang/Throwable;Z)V
     .registers 3
 
-    .line 66
+    .line 62
     iget-object p0, p0, Lkotlinx/coroutines/future/CompletableFutureCoroutine;->future:Ljava/util/concurrent/CompletableFuture;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CompletableFuture;->completeExceptionally(Ljava/lang/Throwable;)Z
@@ -111,7 +111,7 @@
         }
     .end annotation
 
-    .line 57
+    .line 53
     iget-object p0, p0, Lkotlinx/coroutines/future/CompletableFutureCoroutine;->future:Ljava/util/concurrent/CompletableFuture;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CompletableFuture;->complete(Ljava/lang/Object;)Z

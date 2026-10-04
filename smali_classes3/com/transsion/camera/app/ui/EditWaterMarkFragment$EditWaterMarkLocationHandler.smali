@@ -22,10 +22,10 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;Landroid/os/Looper;)V
     .registers 3
 
-    .line 931
+    .line 946
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkLocationHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
-    .line 932
+    .line 947
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -45,7 +45,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 937
+    .line 952
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/16 v1, 0x65
@@ -54,7 +54,7 @@
 
     goto :goto_1a
 
-    .line 940
+    .line 955
     :cond_7
     :try_start_7
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkLocationHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
@@ -69,7 +69,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 941
+    .line 956
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkLocationHandler;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     iget p1, p1, Landroid/os/Message;->arg1:I
@@ -85,7 +85,7 @@
     :catch_1b
     move-exception p0
 
-    .line 944
+    .line 959
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-void

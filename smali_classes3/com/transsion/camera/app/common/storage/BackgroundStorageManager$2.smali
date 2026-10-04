@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)V
     .registers 2
 
-    .line 176
+    .line 177
     iput-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$2;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,7 +35,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .registers 5
 
-    .line 179
+    .line 180
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$2;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$fgetmBackgroundService(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)Lcom/transsion/camera/app/common/taps/IBackgroundController;
@@ -44,12 +44,12 @@
 
     if-eqz p1, :cond_49
 
-    .line 180
+    .line 181
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 181
+    .line 182
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p2
@@ -70,7 +70,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 182
+    .line 183
     const-string p2, "android.intent.action.SCREEN_OFF"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -79,7 +79,7 @@
 
     if-eqz p2, :cond_37
 
-    .line 183
+    .line 184
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$2;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$fgetmBackgroundService(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)Lcom/transsion/camera/app/common/taps/IBackgroundController;
@@ -92,7 +92,7 @@
 
     return-void
 
-    .line 184
+    .line 185
     :cond_37
     const-string p2, "android.intent.action.SCREEN_ON"
 
@@ -102,7 +102,7 @@
 
     if-eqz p1, :cond_49
 
-    .line 185
+    .line 186
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$2;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$fgetmBackgroundService(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)Lcom/transsion/camera/app/common/taps/IBackgroundController;

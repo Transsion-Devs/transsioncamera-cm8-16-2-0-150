@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.debug.internal.DebugCoroutineInfoImpl"
     f = "DebugCoroutineInfoImpl.kt"
     l = {
-        0xab
+        0xa7
     }
     m = "yieldFrames"
 .end annotation

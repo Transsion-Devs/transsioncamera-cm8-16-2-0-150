@@ -73,7 +73,7 @@
     .line 83
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewRender:Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_32
 
     .line 84
     new-instance v0, Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;
@@ -88,21 +88,26 @@
     .line 86
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewShotCallback:Lcom/transsion/camera/feature/mode/aigc/preview/IPreviewShot$IPreviewShotCallback;
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_32
 
     .line 87
-    iget-object p0, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewRender:Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewRender:Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;
 
-    invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;->previewShot(Lcom/transsion/camera/feature/mode/aigc/preview/IPreviewShot$IPreviewShotCallback;)V
+    invoke-virtual {v1, v0}, Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;->previewShot(Lcom/transsion/camera/feature/mode/aigc/preview/IPreviewShot$IPreviewShotCallback;)V
 
-    :cond_2f
+    const/4 v0, 0x0
+
+    .line 88
+    iput-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewShotCallback:Lcom/transsion/camera/feature/mode/aigc/preview/IPreviewShot$IPreviewShotCallback;
+
+    :cond_32
     return-void
 .end method
 
 .method private unInitPreviewRender()V
     .registers 4
 
-    .line 93
+    .line 94
     sget-object v0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -123,17 +128,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 94
+    .line 95
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewRender:Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;
 
     if-eqz v0, :cond_23
 
-    .line 95
+    .line 96
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;->unInit()V
 
     const/4 v0, 0x0
 
-    .line 96
+    .line 97
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewRender:Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;
 
     :cond_23
@@ -145,7 +150,7 @@
 .method public draw(Landroid/graphics/SurfaceTexture;III)Z
     .registers 5
 
-    .line 103
+    .line 104
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewRender:Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;
 
     if-nez p0, :cond_6
@@ -154,7 +159,7 @@
 
     return p0
 
-    .line 107
+    .line 108
     :cond_6
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;->draw(Landroid/graphics/SurfaceTexture;III)Z
 
@@ -166,7 +171,7 @@
 .method public drawOffScreen(Landroid/graphics/SurfaceTexture;IIII)Z
     .registers 6
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewRender:Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;
 
     if-nez p0, :cond_6
@@ -175,7 +180,7 @@
 
     return p0
 
-    .line 116
+    .line 117
     :cond_6
     invoke-virtual/range {p0 .. p5}, Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;->drawOffScreen(Landroid/graphics/SurfaceTexture;IIII)Z
 
@@ -265,21 +270,21 @@
 .end method
 
 .method public previewShot(Lcom/transsion/camera/feature/mode/aigc/preview/IPreviewShot$IPreviewShotCallback;)V
-    .registers 2
-
-    .line 121
-    iput-object p1, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewShotCallback:Lcom/transsion/camera/feature/mode/aigc/preview/IPreviewShot$IPreviewShotCallback;
+    .registers 3
 
     .line 122
-    iget-object p0, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewRender:Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewRender:Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;
 
-    if-nez p0, :cond_7
+    if-nez v0, :cond_7
+
+    .line 123
+    iput-object p1, p0, Lcom/transsion/camera/feature/mode/aigc/AIGCPreview;->mPreviewShotCallback:Lcom/transsion/camera/feature/mode/aigc/preview/IPreviewShot$IPreviewShotCallback;
 
     return-void
 
-    .line 125
+    .line 126
     :cond_7
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;->previewShot(Lcom/transsion/camera/feature/mode/aigc/preview/IPreviewShot$IPreviewShotCallback;)V
+    invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/aigc/preview/PreviewRender;->previewShot(Lcom/transsion/camera/feature/mode/aigc/preview/IPreviewShot$IPreviewShotCallback;)V
 
     return-void
 .end method

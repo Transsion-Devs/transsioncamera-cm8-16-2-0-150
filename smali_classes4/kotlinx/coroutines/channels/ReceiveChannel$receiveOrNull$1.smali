@@ -26,7 +26,7 @@
     c = "kotlinx.coroutines.channels.ReceiveChannel$DefaultImpls"
     f = "Channel.kt"
     l = {
-        0x174
+        0x17c
     }
     m = "receiveOrNull"
 .end annotation

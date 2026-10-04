@@ -122,7 +122,7 @@
     .line 189
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
 
-    if-nez v0, :cond_65
+    if-nez v0, :cond_6a
 
     .line 190
     new-instance v0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
@@ -157,33 +157,41 @@
     .line 195
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mStreamCallback:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewStream$IStreamCallback;
 
-    if-eqz v0, :cond_43
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_46
 
     .line 196
-    iget-object v1, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
+    iget-object v2, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
 
-    invoke-virtual {v1, v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->previewStream(Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewStream$IStreamCallback;)V
+    invoke-virtual {v2, v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->previewStream(Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewStream$IStreamCallback;)V
 
-    .line 198
-    :cond_43
-    iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mPreviewShotCallback:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewShot$IPreviewShotCallback;
-
-    if-eqz v0, :cond_4c
+    .line 197
+    iput-object v1, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mStreamCallback:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewStream$IStreamCallback;
 
     .line 199
-    iget-object v1, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
+    :cond_46
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mPreviewShotCallback:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewShot$IPreviewShotCallback;
 
-    invoke-virtual {v1, v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->previewShot(Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewShot$IPreviewShotCallback;)V
+    if-eqz v0, :cond_51
 
-    .line 202
-    :cond_4c
+    .line 200
+    iget-object v2, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
+
+    invoke-virtual {v2, v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->previewShot(Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewShot$IPreviewShotCallback;)V
+
+    .line 201
+    iput-object v1, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mPreviewShotCallback:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewShot$IPreviewShotCallback;
+
+    .line 204
+    :cond_51
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mEffect:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-nez v0, :cond_65
+    if-nez v0, :cond_6a
 
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mEffectValue:Ljava/lang/String;
 
@@ -191,9 +199,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_65
+    if-nez v0, :cond_6a
 
-    .line 203
+    .line 205
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mEffect:Ljava/lang/String;
@@ -202,7 +210,7 @@
 
     invoke-virtual {v0, v1, p0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->updateEffect(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_65
+    :cond_6a
     return-void
 .end method
 
@@ -253,12 +261,12 @@
 .method private showFps()V
     .registers 7
 
-    .line 293
+    .line 295
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 294
+    .line 296
     iget-wide v2, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mTime:J
 
     sub-long v2, v0, v2
@@ -269,7 +277,7 @@
 
     if-ltz v2, :cond_2c
 
-    .line 295
+    .line 297
     sget-object v2, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -290,17 +298,17 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->logDrawing(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 296
+    .line 298
     iput-wide v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mTime:J
 
     const/4 v0, 0x0
 
-    .line 297
+    .line 299
     iput v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mCount:I
 
     return-void
 
-    .line 299
+    .line 301
     :cond_2c
     iget v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mCount:I
 
@@ -314,7 +322,7 @@
 .method private unInitRenderManager()V
     .registers 4
 
-    .line 209
+    .line 211
     sget-object v0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -335,17 +343,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 210
+    .line 212
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
 
     if-eqz v0, :cond_23
 
-    .line 211
+    .line 213
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->unInit()V
 
     const/4 v0, 0x0
 
-    .line 212
+    .line 214
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
 
     :cond_23
@@ -555,7 +563,7 @@
 .method public draw(Landroid/graphics/SurfaceTexture;III)Z
     .registers 8
 
-    .line 219
+    .line 221
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->aiArtMuseumPreviewDisable()Z
 
     move-result v0
@@ -566,7 +574,7 @@
 
     return v1
 
-    .line 223
+    .line 225
     :cond_8
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
 
@@ -574,18 +582,18 @@
 
     return v1
 
-    .line 227
+    .line 229
     :cond_d
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 229
+    .line 231
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
 
     invoke-virtual {v2, p1, p2, p3, p4}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->draw(Landroid/graphics/SurfaceTexture;III)Z
 
-    .line 231
+    .line 233
     sget-object p1, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -614,7 +622,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->logDrawing(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 233
+    .line 235
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->showFps()V
 
     const/4 p0, 0x1
@@ -625,7 +633,7 @@
 .method public drawOffScreen(Landroid/graphics/SurfaceTexture;IIII)Z
     .registers 8
 
-    .line 240
+    .line 242
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->aiArtMuseumPreviewDisable()Z
 
     move-result v0
@@ -636,7 +644,7 @@
 
     return v1
 
-    .line 244
+    .line 246
     :cond_8
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
 
@@ -644,7 +652,7 @@
 
     return v1
 
-    .line 248
+    .line 250
     :cond_d
     invoke-virtual/range {p0 .. p5}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->drawOffScreen(Landroid/graphics/SurfaceTexture;IIII)Z
 
@@ -656,7 +664,7 @@
 .method public execute(Ljava/lang/Runnable;)V
     .registers 2
 
-    .line 253
+    .line 255
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUI;->getPreviewOperator()Lcom/transsion/camera/app/common/preview/IPreviewOperator;
@@ -751,14 +759,14 @@
 .method public onPreviewChange()V
     .registers 1
 
-    .line 276
+    .line 278
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
 
     if-nez p0, :cond_5
 
     return-void
 
-    .line 279
+    .line 281
     :cond_5
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->onPreviewChange()V
 
@@ -768,20 +776,20 @@
 .method public onPreviewWindowTranslate(FF)V
     .registers 3
 
-    .line 284
+    .line 286
     iput p1, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mTranslateX:F
 
-    .line 285
+    .line 287
     iput p2, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mTranslateY:F
 
-    .line 286
+    .line 288
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
 
     if-nez p0, :cond_9
 
     return-void
 
-    .line 289
+    .line 291
     :cond_9
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->onPreviewWindowTranslate(FF)V
 
@@ -789,41 +797,41 @@
 .end method
 
 .method public previewShot(Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewShot$IPreviewShotCallback;)V
-    .registers 2
+    .registers 3
 
-    .line 267
+    .line 269
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
+
+    if-nez v0, :cond_7
+
+    .line 270
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mPreviewShotCallback:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewShot$IPreviewShotCallback;
-
-    .line 268
-    iget-object p0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
-
-    if-nez p0, :cond_7
 
     return-void
 
-    .line 271
+    .line 273
     :cond_7
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->previewShot(Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewShot$IPreviewShotCallback;)V
+    invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->previewShot(Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewShot$IPreviewShotCallback;)V
 
     return-void
 .end method
 
 .method public previewStream(Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewStream$IStreamCallback;)V
-    .registers 2
+    .registers 3
 
-    .line 258
+    .line 260
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
+
+    if-nez v0, :cond_7
+
+    .line 261
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mStreamCallback:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewStream$IStreamCallback;
-
-    .line 259
-    iget-object p0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/AIArtMuseumPreview;->mRenderManager:Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;
-
-    if-nez p0, :cond_7
 
     return-void
 
-    .line 262
+    .line 264
     :cond_7
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->previewStream(Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewStream$IStreamCallback;)V
+    invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/RenderManager;->previewStream(Lcom/transsion/camera/feature/mode/aiartmuseum/preview/IPreviewStream$IStreamCallback;)V
 
     return-void
 .end method

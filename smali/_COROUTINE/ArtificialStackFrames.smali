@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 21
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,7 +18,7 @@
 .method public final coroutineBoundary()Ljava/lang/StackTraceElement;
     .registers 2
 
-    .line 46
+    .line 42
     new-instance p0, Ljava/lang/Exception;
 
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
@@ -40,7 +40,7 @@
 .method public final coroutineCreation()Ljava/lang/StackTraceElement;
     .registers 2
 
-    .line 34
+    .line 30
     new-instance p0, Ljava/lang/Exception;
 
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V

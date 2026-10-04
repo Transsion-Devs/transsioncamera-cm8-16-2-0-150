@@ -104,7 +104,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 67
+    .line 68
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "FlashManager"
@@ -119,112 +119,112 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;)V
     .registers 4
 
-    .line 106
+    .line 107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 98
+    .line 99
     iput v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStreamId:I
 
     const/4 v0, 0x0
 
-    .line 102
+    .line 103
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mIsContinuousShot:Z
 
-    .line 104
+    .line 105
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mVideoRecordingState:Z
 
-    .line 354
+    .line 358
     new-instance v0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager$1;-><init>(Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 551
+    .line 557
     new-instance v0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStreamIdCallback:Lcom/transsion/camera/adapter/CameraProxy$StreamIdCallback;
 
-    .line 107
+    .line 108
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
-    .line 108
+    .line 109
     invoke-static {}, Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;->getInstance()Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashConfig:Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;
 
-    .line 109
+    .line 110
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
 
-    .line 110
+    .line 111
     new-instance p2, Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;
 
     invoke-direct {p2}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;-><init>()V
 
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mRecordStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;
 
-    .line 111
+    .line 112
     invoke-virtual {p2, p0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;->setRecordStateCallback(Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor$IRecordStateCallback;)V
 
-    .line 112
+    .line 113
     new-instance p2, Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;
 
     invoke-direct {p2}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;-><init>()V
 
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSelfTimerStatusMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;
 
-    .line 113
+    .line 114
     new-instance p2, Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;
 
     invoke-direct {p2}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;-><init>()V
 
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mShutterUIStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;
 
-    .line 114
+    .line 115
     invoke-virtual {p2, p0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;->setShutterStateCallback(Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor$IShutterStateCallback;)V
 
-    .line 115
+    .line 116
     new-instance p2, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;-><init>(Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;)V
 
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
-    .line 116
+    .line 117
     new-instance p2, Lcom/transsion/camera/feature/setting/flashfacade/values/FlashValueRepository;
 
     invoke-direct {p2, p1}, Lcom/transsion/camera/feature/setting/flashfacade/values/FlashValueRepository;-><init>(Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;)V
 
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashValueRepository:Lcom/transsion/camera/feature/setting/flashfacade/values/FlashValueRepository;
 
-    .line 117
+    .line 118
     new-instance p1, Lcom/transsion/camera/feature/setting/flashfacade/feature/FlashFeatureRepository;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/setting/flashfacade/feature/FlashFeatureRepository;-><init>(Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;)V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureRepository:Lcom/transsion/camera/feature/setting/flashfacade/feature/FlashFeatureRepository;
 
-    .line 118
+    .line 119
     new-instance v0, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-direct {v0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;-><init>(Lcom/transsion/camera/feature/setting/flashfacade/feature/FlashFeatureRepository;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
-    .line 119
+    .line 120
     new-instance p1, Lcom/transsion/camera/feature/setting/flashfacade/SupportedValuesBuilder;
 
     invoke-direct {p1, v0, p2}, Lcom/transsion/camera/feature/setting/flashfacade/SupportedValuesBuilder;-><init>(Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;Lcom/transsion/camera/feature/setting/flashfacade/values/FlashValueRepository;)V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSupportedValuesBuilder:Lcom/transsion/camera/feature/setting/flashfacade/SupportedValuesBuilder;
 
-    .line 120
+    .line 121
     new-instance p1, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     invoke-direct {p1, p0, v0}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;-><init>(Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;)V
@@ -237,7 +237,7 @@
 .method private isCurrentShouldCloseSfl()Z
     .registers 3
 
-    .line 454
+    .line 458
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
@@ -248,7 +248,7 @@
 
     move-result v0
 
-    .line 455
+    .line 459
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashConfig:Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;
 
     iget-boolean v1, v1, Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;->mBackWideUnSupportSFL:Z
@@ -280,7 +280,7 @@
 .method private isMainCamera()Z
     .registers 2
 
-    .line 611
+    .line 617
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -301,7 +301,7 @@
 .method private isTeleCamera()Z
     .registers 4
 
-    .line 615
+    .line 621
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -316,7 +316,7 @@
 
     move-result v0
 
-    .line 616
+    .line 622
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v1
@@ -331,7 +331,7 @@
 
     move-result v1
 
-    .line 617
+    .line 623
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSatSupport:Z
 
     if-eqz p0, :cond_22
@@ -355,7 +355,7 @@
 .method private isWideAngleCamera()Z
     .registers 4
 
-    .line 622
+    .line 628
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -370,7 +370,7 @@
 
     move-result v0
 
-    .line 623
+    .line 629
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v1
@@ -385,7 +385,7 @@
 
     move-result v1
 
-    .line 624
+    .line 630
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSatSupport:Z
 
     if-eqz p0, :cond_22
@@ -411,28 +411,28 @@
 
     if-eqz p1, :cond_29
 
-    .line 552
+    .line 558
     array-length v0, p1
 
     if-lez v0, :cond_29
 
     const/4 v0, 0x0
 
-    .line 553
+    .line 559
     aget p1, p1, v0
 
-    .line 554
+    .line 560
     iget v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStreamId:I
 
     if-eq v0, p1, :cond_29
 
-    .line 555
+    .line 561
     iput p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStreamId:I
 
-    .line 556
+    .line 562
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->sendSettingChangeRequest()V
 
-    .line 557
+    .line 563
     sget-object p1, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -460,7 +460,7 @@
 .method private setStreamIdCallback(Lcom/transsion/camera/adapter/CameraProxy;)V
     .registers 3
 
-    .line 544
+    .line 550
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSatSupport:Z
 
     if-eqz v0, :cond_e
@@ -469,14 +469,14 @@
 
     if-nez v0, :cond_e
 
-    .line 545
+    .line 551
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStreamIdCallback:Lcom/transsion/camera/adapter/CameraProxy$StreamIdCallback;
 
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraProxy;->registerStreamIdCallback(Lcom/transsion/camera/adapter/CameraProxy$StreamIdCallback;)V
 
     return-void
 
-    .line 547
+    .line 553
     :cond_e
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStreamIdCallback:Lcom/transsion/camera/adapter/CameraProxy$StreamIdCallback;
 
@@ -488,7 +488,7 @@
 .method private updateLowLightToRearCam(Z)V
     .registers 3
 
-    .line 629
+    .line 635
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_low_light_to_rear_cam"
@@ -511,7 +511,7 @@
 .method public capturing()Z
     .registers 1
 
-    .line 367
+    .line 371
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;->capturing()Z
@@ -524,7 +524,7 @@
 .method public configCommand(Lcom/transsion/camera/adapter/CameraProxy;)V
     .registers 4
 
-    .line 245
+    .line 246
     sget-object v0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager$2;->$SwitchMap$com$transsion$camera$feature$setting$flashfacade$monitor$IBrightnessMonitor$MonitorType:[I
 
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
@@ -541,62 +541,89 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_2e
+    if-eq v0, v1, :cond_40
 
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_23
+    if-eq v0, v1, :cond_2c
 
     const/4 v1, 0x3
 
     if-eq v0, v1, :cond_18
 
-    goto :goto_3c
+    goto :goto_57
 
-    .line 258
+    .line 261
     :cond_18
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy;->registerFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
 
-    .line 259
+    .line 262
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy;->registerShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
 
-    goto :goto_3c
+    .line 263
+    invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
-    .line 253
-    :cond_23
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
+
+    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->registerShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
+
+    goto :goto_57
+
+    .line 255
+    :cond_2c
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy;->setFlashStateCallback(Lcom/transsion/camera/adapter/CameraProxy$IFlashStateCallback;)V
 
-    .line 254
+    .line 256
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy;->registerShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
 
-    goto :goto_3c
+    .line 257
+    invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
-    :cond_2e
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
+
+    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->registerShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
+
+    goto :goto_57
+
+    :cond_40
     const/4 v0, 0x0
 
-    .line 247
+    .line 248
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy;->setFlashStateCallback(Lcom/transsion/camera/adapter/CameraProxy$IFlashStateCallback;)V
 
-    .line 248
+    .line 249
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy;->unRegisterFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
 
-    .line 249
+    .line 250
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy;->unregisterShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
 
-    .line 265
-    :goto_3c
+    .line 251
+    invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
+
+    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->unRegisterShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
+
+    .line 269
+    :goto_57
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->setStreamIdCallback(Lcom/transsion/camera/adapter/CameraProxy;)V
 
     return-void
@@ -605,7 +632,7 @@
 .method public configParameters(Lcom/transsion/camera/adapter/CameraParameters;)I
     .registers 4
 
-    .line 238
+    .line 239
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -614,7 +641,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setFlashFacade(Ljava/lang/String;)V
 
-    .line 239
+    .line 240
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v0
@@ -627,7 +654,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setFlash(Ljava/lang/String;)V
 
-    .line 240
+    .line 241
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->configParameters(Lcom/transsion/camera/adapter/CameraParameters;)I
@@ -640,7 +667,7 @@
 .method public currentCameraId()Ljava/lang/String;
     .registers 1
 
-    .line 391
+    .line 395
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
@@ -657,7 +684,7 @@
 
     const-wide/16 v0, -0x1
 
-    .line 351
+    .line 355
     invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object p0
@@ -681,7 +708,7 @@
 .method public facingFront()Z
     .registers 1
 
-    .line 395
+    .line 399
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
@@ -698,7 +725,7 @@
 .method public featureSupport(Ljava/lang/String;)Z
     .registers 2
 
-    .line 307
+    .line 311
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->featureSupport(Ljava/lang/String;)Z
@@ -711,7 +738,7 @@
 .method public featureValue(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
 
-    .line 322
+    .line 326
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->featureValue(Ljava/lang/String;)Ljava/lang/String;
@@ -724,7 +751,7 @@
 .method public forceLowLight()Z
     .registers 1
 
-    .line 417
+    .line 421
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mForceLowlight:Z
 
     return p0
@@ -733,7 +760,7 @@
 .method public forceLowLightState()Z
     .registers 1
 
-    .line 421
+    .line 425
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mForceLowlightState:Z
 
     return p0
@@ -742,7 +769,7 @@
 .method public getCurrentCameraType()I
     .registers 3
 
-    .line 595
+    .line 601
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->isMainCamera()Z
 
     move-result v0
@@ -753,7 +780,7 @@
 
     return v1
 
-    .line 599
+    .line 605
     :cond_8
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->isTeleCamera()Z
 
@@ -765,7 +792,7 @@
 
     return p0
 
-    .line 603
+    .line 609
     :cond_10
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->isWideAngleCamera()Z
 
@@ -784,7 +811,7 @@
 .method public getFlashConfig()Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;
     .registers 1
 
-    .line 387
+    .line 391
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashConfig:Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;
 
     return-object p0
@@ -793,7 +820,7 @@
 .method public getFlashFacade()Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
     .registers 1
 
-    .line 540
+    .line 546
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     return-object p0
@@ -802,7 +829,7 @@
 .method public getFlashFeatureRepository()Lcom/transsion/camera/feature/setting/flashfacade/feature/FlashFeatureRepository;
     .registers 1
 
-    .line 571
+    .line 577
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureRepository:Lcom/transsion/camera/feature/setting/flashfacade/feature/FlashFeatureRepository;
 
     return-object p0
@@ -811,7 +838,7 @@
 .method public getIsContinuousShot()Z
     .registers 1
 
-    .line 233
+    .line 234
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mIsContinuousShot:Z
 
     return p0
@@ -820,7 +847,7 @@
 .method public getIsMovieModeFrontNoFlash()Z
     .registers 1
 
-    .line 383
+    .line 387
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mIsMovieModeFrontNoFlash:Z
 
     return p0
@@ -829,7 +856,7 @@
 .method public getModeKey()Ljava/lang/String;
     .registers 1
 
-    .line 399
+    .line 403
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mModeKey:Ljava/lang/String;
 
     return-object p0
@@ -838,48 +865,48 @@
 .method public init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
     .registers 5
 
-    .line 124
+    .line 125
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashConfig:Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;
 
     iget-boolean v0, v0, Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;->mFlashFacadeMovieFrontNoFlash:Z
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mIsMovieModeFrontNoFlash:Z
 
-    .line 125
+    .line 126
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 126
+    .line 127
     invoke-interface {p2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    .line 127
+    .line 128
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mRecordStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;->init(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
-    .line 128
+    .line 129
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSelfTimerStatusMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;->init(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
-    .line 129
+    .line 130
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mShutterUIStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;->init(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
-    .line 130
+    .line 131
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
 
-    .line 131
+    .line 132
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "continuous_shot_light_state"
@@ -894,7 +921,7 @@
 .method public isAeLockTriggered()Z
     .registers 1
 
-    .line 429
+    .line 433
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mIsAeLockTriggered:Z
 
     return p0
@@ -903,7 +930,7 @@
 .method public isBackTeleUnSupport()Z
     .registers 1
 
-    .line 450
+    .line 454
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->isTeleCameraUnSupportSFL()Z
 
     move-result p0
@@ -914,7 +941,7 @@
 .method public isBackWideUnSupport()Z
     .registers 1
 
-    .line 446
+    .line 450
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->isCurrentShouldCloseSfl()Z
 
     move-result p0
@@ -925,7 +952,7 @@
 .method public isFrontCameraUnSupportSFL()Z
     .registers 2
 
-    .line 437
+    .line 441
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashConfig:Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;
 
     iget-boolean v0, v0, Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;->mFacingFrontSupportedSFL:Z
@@ -965,7 +992,7 @@
 .method public isMainCameraBackUnSupportSFL()Z
     .registers 2
 
-    .line 433
+    .line 437
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashConfig:Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;
 
     iget-boolean v0, v0, Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;->mFacingBackSupportedSFL:Z
@@ -1010,7 +1037,7 @@
 .method public isShutterProcessing()Z
     .registers 1
 
-    .line 379
+    .line 383
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mShutterUIStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;->isShutterProcessing()Z
@@ -1023,7 +1050,7 @@
 .method public isTeleCameraUnSupportSFL()Z
     .registers 3
 
-    .line 441
+    .line 445
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
@@ -1034,7 +1061,7 @@
 
     move-result v0
 
-    .line 442
+    .line 446
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashConfig:Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;
 
     iget-boolean v1, v1, Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;->mBackTeleUnSupportSFL:Z
@@ -1070,7 +1097,7 @@
 
     const/4 p0, -0x1
 
-    .line 346
+    .line 350
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -1094,7 +1121,7 @@
 .method public lowLight()Z
     .registers 1
 
-    .line 408
+    .line 412
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;->lowLight()Z
@@ -1107,7 +1134,7 @@
 .method public lowPower()Z
     .registers 2
 
-    .line 333
+    .line 337
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "Battery"
@@ -1133,7 +1160,7 @@
 .method public lowTemperature()Z
     .registers 2
 
-    .line 339
+    .line 343
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "Temperature"
@@ -1157,10 +1184,10 @@
 .method public onBrightnessDetected(Z)V
     .registers 3
 
-    .line 524
+    .line 530
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->updateLowLightToRearCam(Z)V
 
-    .line 525
+    .line 531
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->facingFront()Z
 
     move-result v0
@@ -1169,7 +1196,7 @@
 
     const-string v0, "key_ring_screen_light"
 
-    .line 526
+    .line 532
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->featureSupport(Ljava/lang/String;)Z
 
     move-result v0
@@ -1178,7 +1205,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSelfTimerStatusMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;
 
-    .line 527
+    .line 533
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;->selfTiming()Z
 
     move-result v0
@@ -1187,13 +1214,13 @@
 
     return-void
 
-    .line 530
+    .line 536
     :cond_1a
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->updateLowLightStateToQC(Z)V
 
-    .line 531
+    .line 537
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFeatureValueUpdater:Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;->brightnessDetected(Z)V
@@ -1204,19 +1231,19 @@
 .method public onCaptureStart()V
     .registers 2
 
-    .line 498
+    .line 502
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;->captureStart()V
 
-    .line 499
+    .line 503
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFeatureValueUpdater:Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;->captureStart()V
 
     const/4 v0, 0x0
 
-    .line 500
+    .line 504
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mPreviewStopped:Z
 
     return-void
@@ -1225,7 +1252,7 @@
 .method public onModeClosed(Ljava/lang/String;)V
     .registers 2
 
-    .line 296
+    .line 300
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->onModeClose(Ljava/lang/String;)V
@@ -1236,13 +1263,13 @@
 .method public onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
     .registers 4
 
-    .line 290
+    .line 294
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mModeType:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
-    .line 291
+    .line 295
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mModeKey:Ljava/lang/String;
 
-    .line 292
+    .line 296
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->onModeOpen(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
@@ -1253,23 +1280,35 @@
 .method public onNextReady()V
     .registers 2
 
-    .line 505
+    .line 509
+    invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isPostAlgoShot2ShotingOriginal()Z
+
+    move-result v0
+
+    if-nez v0, :cond_14
+
+    .line 510
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;->nextCaptureReady()V
 
-    .line 506
+    .line 511
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFeatureValueUpdater:Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;->nextCaptureReady()V
 
+    :cond_14
     return-void
 .end method
 
 .method public onPreviewStarted()V
     .registers 4
 
-    .line 459
+    .line 463
     sget-object v0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1290,27 +1329,27 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 460
+    .line 464
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mRecordStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;
 
     invoke-virtual {v1}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;->reset()V
 
-    .line 461
+    .line 465
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
 
     invoke-virtual {v1}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;->reset()V
 
-    .line 462
+    .line 466
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSelfTimerStatusMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;
 
     invoke-virtual {v1}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;->reset()V
 
-    .line 463
+    .line 467
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mShutterUIStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;
 
     invoke-virtual {v1}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;->reset()V
 
-    .line 464
+    .line 468
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->videoMode()Z
 
     move-result v1
@@ -1319,52 +1358,52 @@
 
     if-eqz v1, :cond_45
 
-    .line 465
+    .line 469
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mVideoRecordingState:Z
 
     if-nez v1, :cond_3d
 
-    .line 466
+    .line 470
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;->startMonitor()V
 
     goto :goto_4a
 
-    .line 468
+    .line 472
     :cond_3d
     const-string v1, "If user stops video recording,reset flag."
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 469
+    .line 473
     iput-boolean v2, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mVideoRecordingState:Z
 
     goto :goto_4a
 
-    .line 472
+    .line 476
     :cond_45
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;->startMonitor()V
 
-    .line 474
+    .line 478
     :goto_4a
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BaseBrightnessMonitor;->setBrightnessCallback(Lcom/transsion/camera/feature/setting/flashfacade/monitor/IBrightnessMonitor$BrightnessCallback;)V
 
-    .line 475
+    .line 479
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;->setCaptureStateCallback(Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor$ICaptureStateCallback;)V
 
-    .line 476
+    .line 480
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->previewStarted()V
 
-    .line 477
+    .line 481
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -1373,7 +1412,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->notifyNonsupportDualColor(Ljava/lang/String;)V
 
-    .line 478
+    .line 482
     iput-boolean v2, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mPreviewStopped:Z
 
     return-void
@@ -1382,7 +1421,7 @@
 .method public onPreviewStopped()V
     .registers 4
 
-    .line 483
+    .line 487
     sget-object v0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1403,56 +1442,56 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 484
+    .line 488
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mRecordStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;->reset()V
 
-    .line 485
+    .line 489
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;->reset()V
 
-    .line 486
+    .line 490
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSelfTimerStatusMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;->reset()V
 
-    .line 487
+    .line 491
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mShutterUIStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;->reset()V
 
-    .line 488
+    .line 492
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;->stopMonitor()V
 
-    .line 489
+    .line 493
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BaseBrightnessMonitor;->setBrightnessCallback(Lcom/transsion/camera/feature/setting/flashfacade/monitor/IBrightnessMonitor$BrightnessCallback;)V
 
-    .line 490
+    .line 494
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;->setCaptureStateCallback(Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor$ICaptureStateCallback;)V
 
-    .line 491
+    .line 495
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->previewStopped()V
 
     const/4 v0, 0x1
 
-    .line 492
+    .line 496
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mPreviewStopped:Z
 
     const/4 v0, 0x0
 
-    .line 493
+    .line 497
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mVideoRecordingState:Z
 
     return-void
@@ -1461,21 +1500,21 @@
 .method public onRecordStart()V
     .registers 3
 
-    .line 511
+    .line 517
     sget-object v0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onRecordStart"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 512
+    .line 518
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFeatureValueUpdater:Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;->recordStart()V
 
     const/4 v0, 0x1
 
-    .line 513
+    .line 519
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mVideoRecordingState:Z
 
     return-void
@@ -1484,14 +1523,14 @@
 .method public onRecordStop()V
     .registers 3
 
-    .line 518
+    .line 524
     sget-object v0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onRecordStop"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 519
+    .line 525
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFeatureValueUpdater:Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;->recordEnd()V
@@ -1502,7 +1541,7 @@
 .method public onShutterGuideHide()V
     .registers 1
 
-    .line 581
+    .line 587
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFeatureValueUpdater:Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;->onShutterGuideHide()V
@@ -1513,7 +1552,7 @@
 .method public onShutterGuideShow()V
     .registers 1
 
-    .line 576
+    .line 582
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFeatureValueUpdater:Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;->onShutterGuideShow()V
@@ -1526,44 +1565,44 @@
 
     const/4 v0, 0x0
 
-    .line 156
+    .line 157
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mForceLowlight:Z
 
-    .line 157
+    .line 158
     monitor-enter p0
 
-    .line 158
+    .line 159
     :try_start_4
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mRecordStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;->reset()V
 
-    .line 159
+    .line 160
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;->reset()V
 
-    .line 160
+    .line 161
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSelfTimerStatusMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;->reset()V
 
-    .line 161
+    .line 162
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mShutterUIStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;->reset()V
 
-    .line 162
+    .line 163
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;->pause()V
 
-    .line 163
+    .line 164
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->pause()V
 
-    .line 164
+    .line 165
     monitor-exit p0
 
     return-void
@@ -1581,14 +1620,14 @@
 .method public periscopeCamera()Z
     .registers 2
 
-    .line 403
+    .line 407
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 404
+    .line 408
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v0
@@ -1601,7 +1640,7 @@
 
     move-result-object v0
 
-    .line 403
+    .line 407
     invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -1612,7 +1651,7 @@
 .method public queryValue(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
 
-    .line 326
+    .line 330
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     if-nez p0, :cond_6
@@ -1621,7 +1660,7 @@
 
     return-object p0
 
-    .line 329
+    .line 333
     :cond_6
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1633,7 +1672,7 @@
 .method public recording()Z
     .registers 1
 
-    .line 371
+    .line 375
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mRecordStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;->recording()Z
@@ -1646,7 +1685,7 @@
 .method public resetBrightness()V
     .registers 1
 
-    .line 536
+    .line 542
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFeatureValueUpdater:Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;->resetBrightness()V
@@ -1657,7 +1696,7 @@
 .method public restoreToDefault()V
     .registers 3
 
-    .line 300
+    .line 304
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->lowPower()Z
 
     move-result v0
@@ -1670,7 +1709,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 301
+    .line 305
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
@@ -1678,7 +1717,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 303
+    .line 307
     :cond_13
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
@@ -1690,32 +1729,32 @@
 .method public resume()V
     .registers 2
 
-    .line 144
+    .line 145
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mRecordStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;->reset()V
 
-    .line 145
+    .line 146
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mCaptureStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/CaptureStateMonitor;->reset()V
 
-    .line 146
+    .line 147
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mShutterUIStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;->reset()V
 
-    .line 147
+    .line 148
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSelfTimerStatusMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;->reset()V
 
-    .line 148
+    .line 149
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;->resume()V
 
-    .line 149
+    .line 150
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->resume()V
@@ -1726,7 +1765,7 @@
 .method public screenFlip()Z
     .registers 1
 
-    .line 315
+    .line 319
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     if-nez p0, :cond_6
@@ -1735,7 +1774,7 @@
 
     return p0
 
-    .line 318
+    .line 322
     :cond_6
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->screenFlip()Z
 
@@ -1747,12 +1786,12 @@
 .method public sendCommandChangeRequest()V
     .registers 2
 
-    .line 192
+    .line 193
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     if-eqz v0, :cond_d
 
-    .line 193
+    .line 194
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->getKey()Ljava/lang/String;
@@ -1768,12 +1807,12 @@
 .method public sendSettingChangeRequest()V
     .registers 2
 
-    .line 174
+    .line 175
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     if-eqz v0, :cond_d
 
-    .line 175
+    .line 176
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->getKey()Ljava/lang/String;
@@ -1789,12 +1828,12 @@
 .method public sendSettingChangeRequestSelf()V
     .registers 2
 
-    .line 180
+    .line 181
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     if-eqz v0, :cond_11
 
-    .line 181
+    .line 182
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->getKey()Ljava/lang/String;
@@ -1814,12 +1853,12 @@
 .method public sendSettingChangeRequestSync()V
     .registers 2
 
-    .line 186
+    .line 187
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     if-eqz v0, :cond_d
 
-    .line 187
+    .line 188
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->getKey()Ljava/lang/String;
@@ -1835,7 +1874,7 @@
 .method public setAeLockTriggered(Z)V
     .registers 2
 
-    .line 425
+    .line 429
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mIsAeLockTriggered:Z
 
     return-void
@@ -1844,17 +1883,17 @@
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
     .registers 7
 
-    .line 199
+    .line 200
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;->facingDetect()V
 
-    .line 200
+    .line 201
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 201
+    .line 202
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->periscopeCamera()Z
 
     move-result v1
@@ -1863,18 +1902,18 @@
 
     if-eqz v1, :cond_16
 
-    .line 202
+    .line 203
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_24
 
-    .line 204
+    .line 205
     :cond_16
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {v1, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
 
-    .line 205
+    .line 206
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSupportedValuesBuilder:Lcom/transsion/camera/feature/setting/flashfacade/SupportedValuesBuilder;
 
     invoke-virtual {v1, p0}, Lcom/transsion/camera/feature/setting/flashfacade/SupportedValuesBuilder;->build(Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;)Ljava/util/List;
@@ -1883,7 +1922,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 208
+    .line 209
     :goto_24
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->videoMode()Z
 
@@ -1897,13 +1936,13 @@
 
     if-eqz v1, :cond_35
 
-    .line 209
+    .line 210
     :cond_30
     const-string v1, "on"
 
     invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 212
+    .line 213
     :cond_35
     invoke-static {}, Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;->getInstance()Lcom/transsion/camera/feature/setting/flashfacade/FlashConfig;
 
@@ -1934,10 +1973,10 @@
 
     if-nez v1, :cond_54
 
-    .line 213
+    .line 214
     invoke-interface {v0, v3}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 216
+    .line 217
     :cond_54
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mModeKey:Ljava/lang/String;
 
@@ -1953,15 +1992,15 @@
 
     if-eqz v1, :cond_6a
 
-    .line 217
+    .line 218
     invoke-interface {v0, v3}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 218
+    .line 219
     const-string v1, "ringscreenlight"
 
     invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 222
+    .line 223
     :cond_6a
     invoke-interface {v0, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -1977,7 +2016,7 @@
 
     move-object v2, v3
 
-    .line 228
+    .line 229
     :cond_77
     invoke-interface {p1}, Lcom/transsion/camera/adapter/ICameraCapabilities;->isSatModeSupport()Z
 
@@ -1985,7 +2024,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSatSupport:Z
 
-    .line 230
+    .line 231
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {p0, v0, v2}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->initValueAndSupport(Ljava/util/List;Ljava/lang/String;)V
@@ -1996,10 +2035,10 @@
 .method public setForceLowlight(Z)V
     .registers 2
 
-    .line 412
+    .line 416
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mForceLowlight:Z
 
-    .line 413
+    .line 417
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {p1}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;->lowLight()Z
@@ -2014,7 +2053,7 @@
 .method public setSettingDeviceRequester(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;)V
     .registers 2
 
-    .line 169
+    .line 170
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     return-void
@@ -2023,7 +2062,7 @@
 .method public shutterGuideLayoutShow()Z
     .registers 1
 
-    .line 375
+    .line 379
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mShutterUIStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;->shutterGuideLayoutShow()Z
@@ -2036,27 +2075,27 @@
 .method public unInit()V
     .registers 3
 
-    .line 136
+    .line 137
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mRecordStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/RecordStateMonitor;->unInit()V
 
-    .line 137
+    .line 138
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mSelfTimerStatusMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/SelfTimerStatusMonitor;->unInit()V
 
-    .line 138
+    .line 139
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mShutterUIStateMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/ShutterUIStateMonitor;->unInit()V
 
-    .line 139
+    .line 140
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFeatureManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFeatureManager;->unInit()V
 
-    .line 140
+    .line 141
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "continuous_shot_light_state"
@@ -2073,7 +2112,7 @@
 
     const/4 v0, 0x1
 
-    .line 273
+    .line 277
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->updateFacadeValue(Ljava/lang/String;Z)V
 
     return-void
@@ -2082,17 +2121,17 @@
 .method public updateFacadeValue(Ljava/lang/String;Z)V
     .registers 4
 
-    .line 277
+    .line 281
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFeatureValueUpdater:Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashValueRepository:Lcom/transsion/camera/feature/setting/flashfacade/values/FlashValueRepository;
 
-    .line 278
+    .line 282
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/values/FlashValueRepository;->getFlashValue(Ljava/lang/String;)Lcom/transsion/camera/feature/setting/flashfacade/values/IFlashValue;
 
     move-result-object p0
 
-    .line 277
+    .line 281
     invoke-virtual {v0, p0, p2}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;->updateFacadeValue(Lcom/transsion/camera/feature/setting/flashfacade/values/IFlashValue;Z)V
 
     return-void
@@ -2101,7 +2140,7 @@
 .method public updateFrontDualFlashInfo(Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;)V
     .registers 2
 
-    .line 567
+    .line 573
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->updateFrontDualFlashInfo(Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;)V
@@ -2112,7 +2151,7 @@
 .method public updateFrontDualFlashValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 563
+    .line 569
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFeatureValueUpdater:Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;->updateFrontDualFlashValue(Ljava/lang/String;)V
@@ -2123,7 +2162,7 @@
 .method public updateLuminanceInfo(Lcom/transsion/camera/feature/setting/flashfacade/info/LuminanceInfo;)V
     .registers 2
 
-    .line 286
+    .line 290
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->updateLuminanceInfo(Lcom/transsion/camera/feature/setting/flashfacade/info/LuminanceInfo;)V
@@ -2134,7 +2173,7 @@
 .method public updateLuminanceValue(I)V
     .registers 2
 
-    .line 282
+    .line 286
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFeatureValueUpdater:Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FeatureValueUpdater;->updateLuminanceValue(I)V
@@ -2145,7 +2184,7 @@
 .method public updateScreenFromType(I)V
     .registers 2
 
-    .line 269
+    .line 273
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mBrightnessMonitor:Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/monitor/BrightnessValueMonitor;->updateScreenFromType(I)V
@@ -2156,7 +2195,7 @@
 .method public videoMode()Z
     .registers 2
 
-    .line 311
+    .line 315
     sget-object v0, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;->VIDEO:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mModeType:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
@@ -2176,7 +2215,7 @@
 .method public videoModeType()Z
     .registers 1
 
-    .line 585
+    .line 591
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->mFlashFacade:Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;
 
     if-eqz p0, :cond_c

@@ -30,10 +30,10 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
     .registers 3
 
-    .line 1496
+    .line 1499
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 1497
+    .line 1500
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -57,10 +57,10 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 5
 
-    .line 1502
+    .line 1505
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 1503
+    .line 1506
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyHandler;->mPreviewProcessorRef:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -71,7 +71,7 @@
 
     if-nez p0, :cond_17
 
-    .line 1505
+    .line 1508
     invoke-static {}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -82,7 +82,7 @@
 
     return-void
 
-    .line 1508
+    .line 1511
     :cond_17
     invoke-static {}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -114,7 +114,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1509
+    .line 1512
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/16 v1, 0x3e8
@@ -125,7 +125,7 @@
 
     if-eq v0, v1, :cond_60
 
-    .line 1524
+    .line 1527
     invoke-static {}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -150,13 +150,13 @@
 
     return-void
 
-    .line 1515
+    .line 1518
     :cond_60
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$mprocessHandleSwitchScreen(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     return-void
 
-    .line 1511
+    .line 1514
     :cond_64
     iget p1, p1, Landroid/os/Message;->arg1:I
 

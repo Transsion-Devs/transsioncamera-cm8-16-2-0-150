@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;)V
     .registers 2
 
-    .line 1709
+    .line 1706
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$4;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 6
 
-    .line 1712
+    .line 1709
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$4;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     # getter for: Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
@@ -47,7 +47,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1713
+    .line 1710
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$4;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     # getter for: Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mOrientation:I
@@ -64,7 +64,7 @@
 
     invoke-static {p1, v0, v1}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->-$$Nest$mupdateTopBarLayoutParams(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;II)V
 
-    .line 1715
+    .line 1712
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$4;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     # getter for: Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
@@ -96,7 +96,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->-$$Nest$fputmTopBarIn(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;Landroid/animation/ObjectAnimator;)V
 
-    .line 1716
+    .line 1713
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$4;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->-$$Nest$fgetmTopBarIn(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;)Landroid/animation/ObjectAnimator;
@@ -109,7 +109,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1717
+    .line 1714
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$4;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->-$$Nest$fgetmTopBarIn(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;)Landroid/animation/ObjectAnimator;

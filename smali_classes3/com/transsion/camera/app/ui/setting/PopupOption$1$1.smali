@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/setting/PopupOption$1;)V
     .registers 2
 
-    .line 167
+    .line 168
     iput-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$1$1;->this$1:Lcom/transsion/camera/app/ui/setting/PopupOption$1;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 170
+    .line 171
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    .line 171
+    .line 172
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$1$1;->this$1:Lcom/transsion/camera/app/ui/setting/PopupOption$1;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$1;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
@@ -53,10 +53,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 176
+    .line 177
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 177
+    .line 178
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$1$1;->this$1:Lcom/transsion/camera/app/ui/setting/PopupOption$1;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$1;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
@@ -71,10 +71,10 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 182
+    .line 183
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    .line 183
+    .line 184
     iget-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$1$1;->this$1:Lcom/transsion/camera/app/ui/setting/PopupOption$1;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/setting/PopupOption$1;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
@@ -83,7 +83,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fputmEnable(Lcom/transsion/camera/app/ui/setting/PopupOption;Z)V
 
-    .line 184
+    .line 185
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$1$1;->this$1:Lcom/transsion/camera/app/ui/setting/PopupOption$1;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$1;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;

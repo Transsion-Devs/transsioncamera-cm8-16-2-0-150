@@ -3,4 +3,4 @@
 
 
 # static fields
-.field public static guide_makeup_title:I = 0x7f13030a
+.field public static guide_makeup_title:I = 0x7f130305

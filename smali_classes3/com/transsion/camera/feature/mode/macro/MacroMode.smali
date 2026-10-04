@@ -269,22 +269,33 @@
 
     move-result-object v2
 
-    .line 243
+    .line 244
+    invoke-virtual {v2}, Lcom/transsion/camera/app/common/CameraRepository;->getBackMacroCamera()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_1c
+
+    goto :goto_20
+
+    .line 248
+    :cond_1c
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/CameraRepository;->getBackWideCamera()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 244
+    .line 250
+    :goto_20
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/CameraRepository;->getMainBackCamera()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 245
+    .line 251
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/CameraRepository;->getBackLongFocusCamera()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 247
+    .line 253
     sget v6, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_RATIO_UNIT:I
 
     int-to-float v7, v6
@@ -299,7 +310,7 @@
 
     int-to-float v8, v6
 
-    .line 248
+    .line 254
     invoke-virtual {v2, v4}, Lcom/transsion/camera/app/common/CameraRepository;->getDeviceZoomRatio(Ljava/lang/String;)F
 
     move-result v9
@@ -310,7 +321,7 @@
 
     int-to-float v6, v6
 
-    .line 249
+    .line 255
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/CameraRepository;->getBackLongFocusRatio()F
 
     move-result v2
@@ -319,27 +330,27 @@
 
     float-to-int v2, v6
 
-    .line 251
+    .line 257
     sget v6, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
 
-    .line 252
+    .line 258
     sget v9, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_5X:I
 
     const/4 v10, 0x0
 
     move v11, v10
 
-    .line 254
-    :goto_3e
+    .line 260
+    :goto_45
     iget-object v12, v0, Lcom/transsion/camera/feature/mode/macro/MacroMode;->mMacroZoomLens:[Ljava/lang/String;
 
     array-length v13, v12
 
     const/4 v15, 0x1
 
-    if-ge v11, v13, :cond_cc
+    if-ge v11, v13, :cond_d3
 
-    .line 255
+    .line 261
     aget-object v12, v12, v11
 
     const-string v13, "_"
@@ -348,7 +359,7 @@
 
     move-result-object v12
 
-    .line 256
+    .line 262
     aget-object v13, v12, v10
 
     invoke-static {v13}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -363,7 +374,7 @@
 
     float-to-int v13, v13
 
-    .line 257
+    .line 263
     aget-object v14, v12, v15
 
     invoke-static {v14}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -372,12 +383,12 @@
 
     move/from16 v16, v2
 
-    .line 260
+    .line 266
     new-instance v2, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     invoke-direct {v2}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;-><init>()V
 
-    if-ne v15, v14, :cond_6c
+    if-ne v15, v14, :cond_73
 
     move-object/from16 v17, v3
 
@@ -385,12 +396,12 @@
 
     move v15, v7
 
-    goto :goto_7d
+    goto :goto_84
 
-    :cond_6c
+    :cond_73
     const/4 v15, 0x2
 
-    if-ne v15, v14, :cond_76
+    if-ne v15, v14, :cond_7d
 
     move-object/from16 v17, v3
 
@@ -400,9 +411,9 @@
 
     move v15, v8
 
-    goto :goto_7d
+    goto :goto_84
 
-    :cond_76
+    :cond_7d
     move-object/from16 v17, v3
 
     move-object/from16 v18, v4
@@ -411,8 +422,8 @@
 
     move/from16 v15, v16
 
-    .line 271
-    :goto_7d
+    .line 277
+    :goto_84
     invoke-virtual {v2, v13}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setCurrentRatio(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v4
@@ -425,24 +436,24 @@
 
     const/4 v5, 0x1
 
-    .line 272
+    .line 278
     invoke-virtual {v4, v15, v13, v5}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setRatioRange(IIZ)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v4
 
-    .line 273
+    .line 279
     invoke-virtual {v4, v14}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setLensType(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v4
 
     invoke-virtual {v4, v3}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setCameraId(Ljava/lang/String;)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
-    .line 274
+    .line 280
     array-length v3, v12
 
     const/4 v4, 0x2
 
-    if-le v3, v4, :cond_b0
+    if-le v3, v4, :cond_b7
 
     aget-object v3, v12, v4
 
@@ -450,9 +461,9 @@
 
     move-result v3
 
-    if-nez v3, :cond_b0
+    if-nez v3, :cond_b7
 
-    .line 275
+    .line 281
     aget-object v3, v12, v4
 
     invoke-static {v3}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -465,43 +476,43 @@
 
     float-to-int v3, v3
 
-    .line 276
+    .line 282
     invoke-virtual {v2, v3}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setFixedRatio(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     const/4 v5, 0x1
 
-    .line 277
+    .line 283
     invoke-virtual {v2, v15, v3, v5}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setRatioRange(IIZ)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
-    goto :goto_b1
+    goto :goto_b8
 
-    :cond_b0
+    :cond_b7
     const/4 v5, 0x1
 
-    .line 280
-    :goto_b1
+    .line 286
+    :goto_b8
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/common/ZoomConfig;->addLensInfo(Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;)Lcom/transsion/camera/app/common/ZoomConfig;
 
-    if-nez v11, :cond_b8
+    if-nez v11, :cond_bf
 
     move v6, v13
 
-    goto :goto_bf
+    goto :goto_c6
 
-    .line 283
-    :cond_b8
+    .line 289
+    :cond_bf
     iget-object v2, v0, Lcom/transsion/camera/feature/mode/macro/MacroMode;->mMacroZoomLens:[Ljava/lang/String;
 
     array-length v2, v2
 
     sub-int/2addr v2, v5
 
-    if-ne v11, v2, :cond_bf
+    if-ne v11, v2, :cond_c6
 
     move v9, v13
 
-    :cond_bf
-    :goto_bf
+    :cond_c6
+    :goto_c6
     add-int/lit8 v11, v11, 0x1
 
     move/from16 v2, v16
@@ -514,10 +525,10 @@
 
     const/4 v10, 0x0
 
-    goto/16 :goto_3e
+    goto/16 :goto_45
 
-    .line 288
-    :cond_cc
+    .line 294
+    :cond_d3
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
@@ -526,21 +537,21 @@
 
     move-result v2
 
-    if-eqz v2, :cond_d8
+    if-eqz v2, :cond_df
 
     move v2, v9
 
-    goto :goto_d9
+    goto :goto_e0
 
-    :cond_d8
+    :cond_df
     move v2, v6
 
-    :goto_d9
+    :goto_e0
     const/16 v3, 0x80
 
     const/4 v15, 0x2
 
-    .line 290
+    .line 296
     filled-new-array {v15, v3}, [I
 
     move-result-object v3
@@ -551,24 +562,24 @@
 
     const/4 v5, 0x1
 
-    .line 291
+    .line 297
     invoke-virtual {v3, v5}, Lcom/transsion/camera/app/common/ZoomConfig;->setFocalLengthCustom(Z)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v3
 
-    .line 292
+    .line 298
     invoke-virtual {v3, v6, v9}, Lcom/transsion/camera/app/common/ZoomConfig;->setZoomRange(II)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v3
 
-    .line 293
+    .line 299
     invoke-virtual {v3, v2}, Lcom/transsion/camera/app/common/ZoomConfig;->setDefaultZoomRatio(I)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v2
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
-    .line 294
+    .line 300
     invoke-virtual {v2, v0}, Lcom/transsion/camera/app/common/ZoomConfig;->setCurrentLensTypeByCameraId(Ljava/lang/String;)Lcom/transsion/camera/app/common/ZoomConfig;
 
     return-object v1
@@ -797,7 +808,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p3, "getOpenCamerId: resultCamera = "
+    const-string p3, "getOpenCameraId: resultCamera = "
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -807,7 +818,7 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-object p0
 .end method

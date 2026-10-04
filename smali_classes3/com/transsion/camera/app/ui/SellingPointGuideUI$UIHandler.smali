@@ -22,10 +22,10 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
     .registers 3
 
-    .line 1191
+    .line 1247
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 1192
+    .line 1248
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -49,7 +49,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 6
 
-    .line 1197
+    .line 1253
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI$UIHandler;->mUIReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -60,7 +60,7 @@
 
     if-nez p0, :cond_25
 
-    .line 1199
+    .line 1255
     invoke-static {}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -85,7 +85,7 @@
 
     return-void
 
-    .line 1203
+    .line 1259
     :cond_25
     iget p1, p1, Landroid/os/Message;->what:I
 
@@ -101,7 +101,7 @@
 
     return-void
 
-    .line 1213
+    .line 1269
     :cond_32
     invoke-static {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->-$$Nest$fgetmFloatingWindowViewPager(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)Landroidx/viewpager/widget/ViewPager;
 
@@ -113,14 +113,14 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    .line 1215
+    .line 1271
     invoke-static {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->-$$Nest$fgetmFloatingWindowViewPager(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)Landroidx/viewpager/widget/ViewPager;
 
     move-result-object v3
 
     invoke-virtual {v3, p1}, Landroidx/viewpager/widget/ViewPager;->setCurrentItem(I)V
 
-    .line 1217
+    .line 1273
     invoke-static {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)Landroid/os/Handler;
 
     move-result-object p0
@@ -129,7 +129,7 @@
 
     return-void
 
-    .line 1205
+    .line 1261
     :cond_4b
     invoke-static {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->-$$Nest$fgetmOverlayGuideViewPager(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)Landroidx/viewpager/widget/ViewPager;
 
@@ -141,14 +141,14 @@
 
     add-int/lit8 p1, p1, 0x1
 
-    .line 1207
+    .line 1263
     invoke-static {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->-$$Nest$fgetmOverlayGuideViewPager(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)Landroidx/viewpager/widget/ViewPager;
 
     move-result-object v3
 
     invoke-virtual {v3, p1}, Landroidx/viewpager/widget/ViewPager;->setCurrentItem(I)V
 
-    .line 1209
+    .line 1265
     invoke-static {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)Landroid/os/Handler;
 
     move-result-object p0

@@ -1,11 +1,14 @@
 .class Lcom/transsion/camera/app/ui/AbstractShutterUI$7;
-.super Landroid/graphics/drawable/Animatable2$AnimationCallback;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lcom/transsion/camera/app/common/IModuleTransfer;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/app/ui/AbstractShutterUI;->transitionToProcessing()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/transsion/camera/app/ui/AbstractShutterUI;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,23 +25,38 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
     .registers 2
 
-    .line 1228
+    .line 1391
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$7;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
-    invoke-direct {p0}, Landroid/graphics/drawable/Animatable2$AnimationCallback;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
-    .registers 2
+.method public onTransfer(Z)V
+    .registers 3
 
-    .line 1231
+    .line 1394
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$7;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
+
+    invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmOldValue(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Z
+
+    move-result v0
+
+    if-eq p1, v0, :cond_12
+
+    .line 1395
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$7;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
+
+    invoke-static {v0, p1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fputmOldValue(Lcom/transsion/camera/app/ui/AbstractShutterUI;Z)V
+
+    .line 1396
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$7;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$mupdateImageResourceByState(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$mringScreenLightUpdateUI(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
 
+    :cond_12
     return-void
 .end method

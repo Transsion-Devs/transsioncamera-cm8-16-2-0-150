@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 44
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,10 +33,25 @@
 
 
 # virtual methods
+.method public animateWallpaperToDim(F)V
+    .registers 3
+
+    .line 86
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/wallpaper/TranWallpaperManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/wallpaper/ITranWallpaperManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/wallpaper/ITranWallpaperManagerAdapter;->animateWallpaperToDim(F)V
+
+    return-void
+.end method
+
 .method public getBitmapAsUser(IZI)Landroid/graphics/Bitmap;
     .registers 5
 
-    .line 83
+    .line 82
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33311:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/wallpaper/TranWallpaperManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/wallpaper/ITranWallpaperManagerAdapter;
@@ -53,21 +68,21 @@
 .method protected getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/wallpaper/ITranWallpaperManagerAdapter;
     .registers 3
 
-    .line 32
+    .line 31
     invoke-static {p1}, Lcom/transsion/hubsdk/common/version/TranVersion;->isIntegratedThubCore(Ljava/lang/String;)Z
 
     move-result p1
 
     if-eqz p1, :cond_19
 
-    .line 33
+    .line 32
     sget-object p1, Lcom/transsion/hubsdk/api/wallpaper/TranWallpaperManager;->TAG:Ljava/lang/String;
 
     const-string v0, "TranThubWallpaperManager"
 
     invoke-static {p1, v0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 34
+    .line 33
     iget-object p1, p0, Lcom/transsion/hubsdk/api/wallpaper/TranWallpaperManager;->mThubService:Lcom/transsion/hubsdk/core/wallpaper/TranThubWallpaperManager;
 
     if-nez p1, :cond_18
@@ -81,7 +96,7 @@
     :cond_18
     return-object p1
 
-    .line 36
+    .line 35
     :cond_19
     sget-object p1, Lcom/transsion/hubsdk/api/wallpaper/TranWallpaperManager;->TAG:Ljava/lang/String;
 
@@ -89,7 +104,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 37
+    .line 36
     iget-object p1, p0, Lcom/transsion/hubsdk/api/wallpaper/TranWallpaperManager;->mAospService:Lcom/transsion/hubsdk/aosp/wallpaper/TranAospWallpaperManager;
 
     if-nez p1, :cond_2b
@@ -107,7 +122,7 @@
 .method public getWallpaperInfo(I)Landroid/app/WallpaperInfo;
     .registers 3
 
-    .line 70
+    .line 69
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/wallpaper/TranWallpaperManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/wallpaper/ITranWallpaperManagerAdapter;
@@ -129,7 +144,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 57
+    .line 56
     sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33181:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/wallpaper/TranWallpaperManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/wallpaper/ITranWallpaperManagerAdapter;
@@ -140,7 +155,7 @@
 
     return-void
 
-    .line 55
+    .line 54
     :cond_c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 

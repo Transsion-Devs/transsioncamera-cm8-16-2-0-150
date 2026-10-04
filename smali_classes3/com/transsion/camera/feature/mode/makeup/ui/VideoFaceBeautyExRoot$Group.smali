@@ -34,22 +34,22 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;Ljava/lang/String;Ljava/lang/String;III)V
     .registers 7
 
-    .line 1294
+    .line 1314
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;-><init>()V
 
-    .line 1295
+    .line 1315
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;->key:Ljava/lang/String;
 
-    .line 1296
+    .line 1316
     iput-object p3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;->title:Ljava/lang/String;
 
-    .line 1297
+    .line 1317
     iput p4, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;->drawableId:I
 
-    .line 1298
+    .line 1318
     iput p5, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;->expandDrawableId:I
 
-    .line 1299
+    .line 1319
     iput p6, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;->blackExpandDrawableId:I
 
     return-void

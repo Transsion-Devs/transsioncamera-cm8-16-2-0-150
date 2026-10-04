@@ -272,10 +272,10 @@
 .method public initWidthAndHeight(II)V
     .registers 3
 
-    .line 182
+    .line 180
     iput p1, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->mAvailableWidth:I
 
-    .line 183
+    .line 181
     iput p2, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->mAvailableHeight:I
 
     return-void
@@ -312,9 +312,9 @@
     .line 109
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
-    move-result v0
+    move-result p1
 
-    if-eqz v0, :cond_55
+    if-eqz p1, :cond_54
 
     .line 110
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -398,19 +398,14 @@
     .line 110
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    return-void
-
-    .line 114
-    :cond_55
-    invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
-
+    :cond_54
     return-void
 .end method
 
 .method public onOrientationChanged(I)V
     .registers 5
 
-    .line 177
+    .line 175
     sget-object v0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -429,7 +424,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 178
+    .line 176
     iput p1, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->mOrientation:I
 
     return-void
@@ -438,7 +433,7 @@
 .method public setPaddingByToolbarScroll(IIII)V
     .registers 8
 
-    .line 187
+    .line 185
     sget-object v0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -475,7 +470,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 188
+    .line 186
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->setPadding(IIII)V
 
     return-void
@@ -484,7 +479,7 @@
 .method public updatePopSetting(Ljava/util/Map;)V
     .registers 5
 
-    .line 120
+    .line 118
     sget-object v0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -511,7 +506,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 121
+    .line 119
     invoke-interface {p1}, Ljava/util/Map;->size()I
 
     move-result v2
@@ -522,32 +517,32 @@
 
     move-result-object v1
 
-    .line 120
+    .line 118
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 122
+    .line 120
     iput-object p1, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->mViewMap:Ljava/util/Map;
 
-    .line 123
+    .line 121
     iget v0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->mAvailableWidth:I
 
     if-lez v0, :cond_4d
 
-    .line 124
+    .line 122
     iget-object v1, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->mUpdateHelper:Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper;
 
     iget v2, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->mAvailableHeight:I
 
     invoke-virtual {v1, v0, v2}, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper;->setContainerWidthAndHeight(II)V
 
-    .line 125
+    .line 123
     iget-object v0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->mUpdateHelper:Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper;
 
     iget v1, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->mOrientation:I
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 126
+    .line 124
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p0
@@ -561,7 +556,7 @@
     :cond_49
     const/4 v2, 0x0
 
-    .line 125
+    .line 123
     :goto_4a
     invoke-virtual {v0, p1, v1, v2}, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper;->update(Ljava/util/Map;IZ)V
 

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)V
     .registers 2
 
-    .line 897
+    .line 910
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onScrollStateChanged(I)V
     .registers 5
 
-    .line 908
+    .line 921
     invoke-static {}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 909
+    .line 922
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmStatusMonitor(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -82,7 +82,7 @@
 
     if-eqz v0, :cond_3f
 
-    .line 910
+    .line 923
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmStatusMonitor(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -102,7 +102,7 @@
     :cond_3f
     if-nez p1, :cond_72
 
-    .line 913
+    .line 926
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmIsFocalLengthZoomBarScrolling(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)Z
@@ -111,21 +111,21 @@
 
     if-eqz p1, :cond_56
 
-    .line 914
+    .line 927
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fputmIsFocalLengthZoomBarScrolling(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;Z)V
 
-    .line 915
+    .line 928
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     const/16 v0, 0x18
 
     invoke-static {p1, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$mnotifyZoomAction(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;I)V
 
-    .line 917
+    .line 930
     :cond_56
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
@@ -143,7 +143,7 @@
 
     if-nez p1, :cond_9c
 
-    .line 918
+    .line 931
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmSettingStatusListener(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
@@ -161,19 +161,19 @@
 
     if-ne v0, p1, :cond_9c
 
-    .line 923
+    .line 936
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {p1, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fputmIsFocalLengthZoomBarScrolling(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;Z)V
 
-    .line 924
+    .line 937
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     const/16 v0, 0x17
 
     invoke-static {p1, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$mnotifyZoomAction(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;I)V
 
-    .line 925
+    .line 938
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmSettingStatusListener(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
@@ -190,7 +190,7 @@
 
     if-nez p1, :cond_9c
 
-    .line 926
+    .line 939
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmSettingStatusListener(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
@@ -208,12 +208,14 @@
 .method public onValueChanged(ILjava/lang/String;)V
     .registers 3
 
-    .line 900
+    .line 913
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$mdoOnZoomRatioChanged(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;I)V
+    const/16 p2, 0x20
 
-    .line 901
+    invoke-static {p0, p1, p2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$mdoOnZoomRatioChanged(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;II)V
+
+    .line 914
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -230,14 +232,14 @@
 
     div-float/2addr p1, p2
 
-    .line 903
+    .line 916
     invoke-static {p1}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
     move-result-object p1
 
     const/16 p2, 0x1b
 
-    .line 901
+    .line 914
     invoke-virtual {p0, p2, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(ILjava/lang/String;)V
 
     return-void

@@ -26,7 +26,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 33
+    .line 34
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "SuperDefinitionTopBarItemUI"
@@ -41,10 +41,10 @@
 .method constructor <init>(Landroid/content/res/Resources;Lcom/transsion/camera/ui/setting/livephoto/LivePhotoSettingUISpec;)V
     .registers 5
 
-    .line 39
+    .line 40
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;-><init>(Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;)V
 
-    .line 35
+    .line 36
     new-instance p2, Lcom/transsion/camera/app/common/ui/HintInfo;
 
     const/4 v0, 0x1
@@ -55,10 +55,10 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 40
+    .line 41
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;->mResources:Landroid/content/res/Resources;
 
-    .line 41
+    .line 42
     new-instance p1, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;)V
@@ -71,49 +71,56 @@
 .method private onClick(Landroid/view/View;)V
     .registers 4
 
-    .line 45
+    .line 46
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mPopupOptionsControl:Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;
 
     if-eqz p1, :cond_f
 
-    .line 46
+    .line 47
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mTreasureBoxSupport:Z
 
     if-eqz v0, :cond_c
 
-    .line 47
+    .line 48
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;->dismissPopupWithoutAnimation()V
 
     goto :goto_f
 
-    .line 49
+    .line 50
     :cond_c
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;->dismissPopup()V
 
-    .line 52
+    .line 53
     :cond_f
     :goto_f
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz p1, :cond_18
+    if-eqz p1, :cond_1f
+
+    const/16 v0, 0xd1
+
+    .line 54
+    invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
+
+    .line 55
+    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v0, 0x159
 
-    .line 53
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    :cond_18
+    :cond_1f
     const/4 p1, 0x0
 
-    .line 55
+    .line 57
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mPopupWindowShow:Z
 
-    .line 56
+    .line 58
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_53
 
-    .line 57
+    .line 59
     const-string p1, "on"
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mCurrentEntryValue:Ljava/lang/String;
@@ -124,9 +131,9 @@
 
     const-string v0, "key_live_photo_switch"
 
-    if-eqz p1, :cond_37
+    if-eqz p1, :cond_3e
 
-    .line 58
+    .line 60
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
@@ -137,10 +144,10 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_4c
+    goto :goto_53
 
-    .line 59
-    :cond_37
+    .line 61
+    :cond_3e
     const-string p1, "off"
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mCurrentEntryValue:Ljava/lang/String;
@@ -149,9 +156,9 @@
 
     move-result p1
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_53
 
-    .line 60
+    .line 62
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
@@ -162,9 +169,9 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 63
-    :cond_4c
-    :goto_4c
+    .line 65
+    :cond_53
+    :goto_53
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->setToNextIndex()V
 
     return-void
@@ -173,7 +180,7 @@
 .method private showLivePhotoHint(Ljava/lang/String;)V
     .registers 4
 
-    .line 134
+    .line 136
     const-string v0, "on"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -182,7 +189,7 @@
 
     if-eqz p1, :cond_28
 
-    .line 135
+    .line 137
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;->mResources:Landroid/content/res/Resources;
@@ -195,19 +202,19 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 136
+    .line 138
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->enableBackground(Z)V
 
-    .line 137
+    .line 139
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setHighlight(Z)V
 
-    .line 138
+    .line 140
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -216,7 +223,7 @@
 
     return-void
 
-    .line 140
+    .line 142
     :cond_28
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
@@ -232,7 +239,7 @@
 .method public doOnStatusChanged(Ljava/lang/String;)V
     .registers 5
 
-    .line 76
+    .line 78
     sget-object v0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -251,14 +258,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 77
+    .line 79
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-nez v0, :cond_1b
 
     return-void
 
-    .line 80
+    .line 82
     :cond_1b
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
@@ -270,10 +277,10 @@
 
     if-eqz v0, :cond_28
 
-    .line 82
+    .line 84
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;->showLivePhotoHint(Ljava/lang/String;)V
 
-    .line 84
+    .line 86
     :cond_28
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->doOnStatusChanged(Ljava/lang/String;)V
 
@@ -294,7 +301,7 @@
 .method public notifyCameraOperateAction(I)V
     .registers 5
 
-    .line 89
+    .line 91
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->notifyCameraOperateAction(I)V
 
     const/4 v0, 0x0
@@ -343,77 +350,77 @@
 
     goto :goto_5f
 
-    .line 107
+    .line 109
     :cond_2a
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_5f
 
-    .line 108
+    .line 110
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->notifyGroupCaptureIconHide()V
 
     return-void
 
-    .line 102
+    .line 104
     :cond_32
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_5f
 
-    .line 103
+    .line 105
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->notifyGroupCaptureIconShow()V
 
     return-void
 
-    .line 112
+    .line 114
     :cond_3a
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mLivePhotoIconClicked:Z
 
     return-void
 
-    .line 115
+    .line 117
     :cond_3d
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mLivePhotoIconClicked:Z
 
-    .line 116
+    .line 118
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_5f
 
-    .line 117
+    .line 119
     invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->notifyCameraStable(Z)V
 
     return-void
 
-    .line 124
+    .line 126
     :cond_47
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_5f
 
-    .line 125
+    .line 127
     invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->notifyCameraStable(Z)V
 
     return-void
 
-    .line 93
+    .line 95
     :cond_4f
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz p1, :cond_58
 
-    .line 94
+    .line 96
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {p1, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 97
+    .line 99
     :cond_58
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_5f
 
-    .line 98
+    .line 100
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->notifyCameraStable(Z)V
 
     :cond_5f
@@ -442,17 +449,17 @@
 .method public unInit()V
     .registers 3
 
-    .line 68
+    .line 70
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_9
 
-    .line 69
+    .line 71
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 71
+    .line 73
     :cond_9
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->unInit()V
 

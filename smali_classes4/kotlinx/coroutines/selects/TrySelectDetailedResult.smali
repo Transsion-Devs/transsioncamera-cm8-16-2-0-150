@@ -14,6 +14,8 @@
 
 
 # static fields
+.field private static final synthetic $ENTRIES:Lkotlin/enums/EnumEntries;
+
 .field private static final synthetic $VALUES:[Lkotlinx/coroutines/selects/TrySelectDetailedResult;
 
 .field public static final enum ALREADY_SELECTED:Lkotlinx/coroutines/selects/TrySelectDetailedResult;
@@ -47,7 +49,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 853
+    .line 859
     new-instance v0, Lkotlinx/coroutines/selects/TrySelectDetailedResult;
 
     const-string v1, "SUCCESSFUL"
@@ -94,6 +96,12 @@
 
     sput-object v0, Lkotlinx/coroutines/selects/TrySelectDetailedResult;->$VALUES:[Lkotlinx/coroutines/selects/TrySelectDetailedResult;
 
+    invoke-static {v0}, Lkotlin/enums/EnumEntriesKt;->enumEntries([Ljava/lang/Enum;)Lkotlin/enums/EnumEntries;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlinx/coroutines/selects/TrySelectDetailedResult;->$ENTRIES:Lkotlin/enums/EnumEntries;
+
     return-void
 .end method
 
@@ -105,10 +113,24 @@
         }
     .end annotation
 
-    .line 852
+    .line 858
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
+.end method
+
+.method public static getEntries()Lkotlin/enums/EnumEntries;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/enums/EnumEntries;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlinx/coroutines/selects/TrySelectDetailedResult;->$ENTRIES:Lkotlin/enums/EnumEntries;
+
+    return-object v0
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lkotlinx/coroutines/selects/TrySelectDetailedResult;

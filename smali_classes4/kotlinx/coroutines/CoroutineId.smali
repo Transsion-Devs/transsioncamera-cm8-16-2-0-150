@@ -52,12 +52,12 @@
 .method public constructor <init>(J)V
     .registers 4
 
-    .line 289
+    .line 285
     sget-object v0, Lkotlinx/coroutines/CoroutineId;->Key:Lkotlinx/coroutines/CoroutineId$Key;
 
     invoke-direct {p0, v0}, Lkotlin/coroutines/AbstractCoroutineContextElement;-><init>(Lkotlin/coroutines/CoroutineContext$Key;)V
 
-    .line 288
+    .line 284
     iput-wide p1, p0, Lkotlinx/coroutines/CoroutineId;->id:J
 
     return-void
@@ -138,7 +138,7 @@
 .method public final getId()J
     .registers 3
 
-    .line 288
+    .line 284
     iget-wide v0, p0, Lkotlinx/coroutines/CoroutineId;->id:J
 
     return-wide v0
@@ -159,7 +159,7 @@
 .method public bridge synthetic restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
     .registers 3
 
-    .line 284
+    .line 280
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lkotlinx/coroutines/CoroutineId;->restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/String;)V
@@ -170,7 +170,7 @@
 .method public restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/String;)V
     .registers 3
 
-    .line 311
+    .line 307
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object p0
@@ -183,7 +183,7 @@
 .method public toString()Ljava/lang/String;
     .registers 4
 
-    .line 292
+    .line 288
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -210,7 +210,7 @@
 .method public bridge synthetic updateThreadContext(Lkotlin/coroutines/CoroutineContext;)Ljava/lang/Object;
     .registers 2
 
-    .line 284
+    .line 280
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/CoroutineId;->updateThreadContext(Lkotlin/coroutines/CoroutineContext;)Ljava/lang/String;
 
     move-result-object p0
@@ -221,7 +221,7 @@
 .method public updateThreadContext(Lkotlin/coroutines/CoroutineContext;)Ljava/lang/String;
     .registers 9
 
-    .line 295
+    .line 291
     sget-object v0, Lkotlinx/coroutines/CoroutineName;->Key:Lkotlinx/coroutines/CoroutineName$Key;
 
     invoke-interface {p1, v0}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
@@ -241,13 +241,13 @@
     :cond_10
     const-string p1, "coroutine"
 
-    .line 296
+    .line 292
     :cond_12
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
-    .line 297
+    .line 293
     invoke-virtual {v0}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -256,7 +256,7 @@
 
     const/4 v6, 0x0
 
-    .line 298
+    .line 294
     const-string v2, " @"
 
     const/4 v3, 0x0
@@ -269,12 +269,12 @@
 
     if-gez v2, :cond_2a
 
-    .line 299
+    .line 295
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    .line 300
+    .line 296
     :cond_2a
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -290,41 +290,41 @@
 
     const/4 v3, 0x0
 
-    .line 301
+    .line 297
     invoke-virtual {v1, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string v3, "substring(...)"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 302
+    .line 298
     const-string v2, " @"
 
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 303
+    .line 299
     invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 p1, 0x23
 
-    .line 304
+    .line 300
     invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 305
+    .line 301
     iget-wide p0, p0, Lkotlinx/coroutines/CoroutineId;->id:J
 
     invoke-virtual {v4, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 300
+    .line 296
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string p1, "StringBuilder(capacity).\u2026builderAction).toString()"
+    const-string p1, "toString(...)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

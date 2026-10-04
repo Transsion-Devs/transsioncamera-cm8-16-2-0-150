@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # instance fields
@@ -24,13 +24,15 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final invoke()Ljava/lang/Object;
     .registers 1
 
     .line 0
     iget-object p0, p0, Lcom/transsion/aicore/nexusflow/a$$ExternalSyntheticLambda6;->f$0:Lcom/transsion/aicore/nexusflow/a;
 
-    invoke-static {p0}, Lcom/transsion/aicore/nexusflow/a;->c(Lcom/transsion/aicore/nexusflow/a;)V
+    invoke-static {p0}, Lcom/transsion/aicore/nexusflow/a;->a(Lcom/transsion/aicore/nexusflow/a;)Lkotlin/Unit;
 
-    return-void
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -3,6 +3,6 @@
 
 
 # static fields
-.field public static save_overlay_view:I = 0x7f0b058f
+.field public static save_overlay_view:I = 0x7f0b058b
 
-.field public static transition_current_scene:I = 0x7f0b06fd
+.field public static transition_current_scene:I = 0x7f0b06f6

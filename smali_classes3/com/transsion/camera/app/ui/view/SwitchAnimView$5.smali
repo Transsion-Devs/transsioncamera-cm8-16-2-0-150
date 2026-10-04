@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/view/SwitchAnimView;Landroid/view/View;)V
     .registers 3
 
-    .line 492
+    .line 498
     iput-object p2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$5;->val$foreground:Landroid/view/View;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 495
+    .line 501
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$5;->val$foreground:Landroid/view/View;
 
     const/high16 p1, 0x3f800000    # 1.0f

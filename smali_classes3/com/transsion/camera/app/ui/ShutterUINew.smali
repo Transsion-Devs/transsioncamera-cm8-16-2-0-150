@@ -78,7 +78,7 @@
 
     invoke-static {v1, p1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    goto :goto_54
+    goto :goto_53
 
     .line 106
     :cond_22
@@ -99,9 +99,9 @@
     .line 107
     array-length v4, v3
 
-    const/16 v5, 0x9
+    const/4 v5, 0x5
 
-    if-eq v4, v5, :cond_5b
+    if-eq v4, v5, :cond_5a
 
     .line 109
     sget-object v1, Lcom/transsion/camera/app/ui/ShutterUINew;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -131,7 +131,7 @@
     invoke-static {v1, p1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     .line 119
-    :goto_54
+    :goto_53
     invoke-virtual {v0, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -141,7 +141,7 @@
     check-cast v1, Ljava/lang/Integer;
 
     .line 122
-    :cond_5b
+    :cond_5a
     new-instance p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
     invoke-direct {p1}, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;-><init>()V
@@ -202,45 +202,9 @@
 
     move-result v0
 
-    iput v0, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleSmallDrawableId:I
-
-    const/4 v0, 0x5
-
-    .line 129
-    invoke-virtual {p0, v0, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v0
-
-    iput v0, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->regularToSmallDrawableId:I
-
-    const/4 v0, 0x6
-
-    .line 130
-    invoke-virtual {p0, v0, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v0
-
-    iput v0, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->smallToRegularDrawableId:I
-
-    const/4 v0, 0x7
-
-    .line 131
-    invoke-virtual {p0, v0, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v0
-
     iput v0, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleToSmileDrawableId:I
 
-    const/16 v0, 0x8
-
-    .line 132
-    invoke-virtual {p0, v0, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v0
-
-    iput v0, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->smallToSmileDrawableId:I
-
-    .line 133
+    .line 129
     invoke-virtual {p0}, Landroid/content/res/TypedArray;->close()V
 
     return-object p1

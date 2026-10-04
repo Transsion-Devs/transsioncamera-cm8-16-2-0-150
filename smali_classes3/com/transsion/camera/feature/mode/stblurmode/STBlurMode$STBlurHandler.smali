@@ -40,10 +40,10 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;Landroid/os/Looper;)V
     .registers 3
 
-    .line 779
+    .line 780
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
-    .line 780
+    .line 781
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -63,15 +63,15 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 785
+    .line 786
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 787
+    .line 788
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_66
 
-    .line 820
+    .line 821
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -99,7 +99,7 @@
 
     return-void
 
-    .line 815
+    .line 816
     :pswitch_25
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -109,19 +109,19 @@
 
     move-result p1
 
-    .line 816
+    .line 817
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$mhandleChangeLevel(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;I)V
 
-    .line 817
+    .line 818
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$mhandleChangeKernel(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;I)V
 
     return-void
 
-    .line 812
+    .line 813
     :pswitch_38
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
@@ -129,7 +129,7 @@
 
     return-void
 
-    .line 809
+    .line 810
     :pswitch_3e
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
@@ -141,7 +141,7 @@
 
     return-void
 
-    .line 805
+    .line 806
     :pswitch_48
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
@@ -149,7 +149,7 @@
 
     return-void
 
-    .line 801
+    .line 802
     :pswitch_4e
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
@@ -157,7 +157,7 @@
 
     return-void
 
-    .line 797
+    .line 798
     :pswitch_54
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
@@ -165,7 +165,7 @@
 
     return-void
 
-    .line 793
+    .line 794
     :pswitch_5a
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
@@ -173,7 +173,7 @@
 
     return-void
 
-    .line 789
+    .line 790
     :pswitch_60
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 

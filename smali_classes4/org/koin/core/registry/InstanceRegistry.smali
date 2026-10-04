@@ -605,7 +605,7 @@
 
     move-result-object p1
 
-    .line 215
+    .line 203
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p1
@@ -756,7 +756,7 @@
     .line 159
     iget-object v0, p0, Lorg/koin/core/registry/InstanceRegistry;->_instances:Ljava/util/Map;
 
-    .line 215
+    .line 238
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -1203,12 +1203,12 @@
 
     check-cast p0, Ljava/lang/Iterable;
 
-    .line 800
+    .line 225
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 809
+    .line 234
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -1293,12 +1293,12 @@
 
     check-cast p0, Ljava/lang/Iterable;
 
-    .line 766
+    .line 240
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 857
+    .line 241
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -1342,18 +1342,18 @@
 
     if-eqz v2, :cond_1b
 
-    .line 857
+    .line 241
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1b
 
-    .line 766
+    .line 243
     :cond_42
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 857
+    .line 244
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -1403,7 +1403,7 @@
 
     if-eqz v4, :cond_4c
 
-    .line 857
+    .line 244
     :cond_73
     invoke-interface {p0, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
@@ -1417,7 +1417,7 @@
 
     check-cast p0, Ljava/lang/Iterable;
 
-    .line 1549
+    .line 246
     new-instance p1, Ljava/util/ArrayList;
 
     const/16 v0, 0xa
@@ -1428,7 +1428,7 @@
 
     invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1620
+    .line 247
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -1444,7 +1444,7 @@
 
     move-result-object v0
 
-    .line 1621
+    .line 248
     check-cast v0, Lorg/koin/core/instance/InstanceFactory;
 
     .line 176
@@ -1452,7 +1452,7 @@
 
     move-result-object v0
 
-    .line 1621
+    .line 248
     invoke-interface {p1, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_8c

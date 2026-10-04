@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static stblur_fake_dual_lens_type:I = 0x7f0c00e4
+.field public static stblur_fake_dual_lens_type:I = 0x7f0c00e8
 
-.field public static stblur_flash_support_type:I = 0x7f0c00e5
+.field public static stblur_flash_support_type:I = 0x7f0c00e9
 
 
 # direct methods

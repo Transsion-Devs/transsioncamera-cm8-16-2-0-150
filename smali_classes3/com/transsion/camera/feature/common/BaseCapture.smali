@@ -291,7 +291,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 57
+    .line 56
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "BaseCapture"
@@ -306,106 +306,106 @@
 .method public constructor <init>(Ljava/lang/String;Lcom/transsion/camera/feature/common/I3AController;Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
     .registers 7
 
-    .line 107
+    .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
+    .line 80
     new-instance v0, Lcom/transsion/camera/feature/common/BaseCapture$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/common/BaseCapture$1;-><init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mAvailabilityListener:Lcom/transsion/camera/feature/common/IDataStream$IStreamListener;
 
-    .line 93
+    .line 92
     new-instance v0, Lcom/transsion/camera/feature/common/BaseCapture$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/common/BaseCapture$2;-><init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mDataListener:Lcom/transsion/camera/feature/common/IDataStream$IDataListener;
 
-    .line 348
+    .line 346
     new-instance v0, Lcom/transsion/camera/feature/common/BaseCapture$4;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/common/BaseCapture$4;-><init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mMediaSaverListener:Lcom/transsion/camera/app/common/storage/MediaSaver$MediaSaverListener;
 
-    .line 371
+    .line 369
     new-instance v0, Lcom/transsion/camera/feature/common/BaseCapture$IdleState;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/common/BaseCapture$IdleState;-><init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mIdleState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
-    .line 372
+    .line 370
     new-instance v1, Lcom/transsion/camera/feature/common/BaseCapture$CaptureEnableState;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/common/BaseCapture$CaptureEnableState;-><init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
 
     iput-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCaptureEnableState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
-    .line 373
+    .line 371
     new-instance v1, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;-><init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
 
     iput-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCaptureStartingState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
-    .line 374
+    .line 372
     new-instance v1, Lcom/transsion/camera/feature/common/BaseCapture$CapturingState;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/common/BaseCapture$CapturingState;-><init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
 
     iput-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCapturingState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
-    .line 375
+    .line 373
     new-instance v1, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStoppingState;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStoppingState;-><init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
 
     iput-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCaptureStoppingState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
-    .line 376
+    .line 374
     new-instance v1, Lcom/transsion/camera/feature/common/BaseCapture$CaptureSavingState;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/common/BaseCapture$CaptureSavingState;-><init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
 
     iput-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCaptureSavingState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
-    .line 383
+    .line 381
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mStateSwitchLock:Ljava/lang/Object;
 
-    .line 108
+    .line 107
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCameraId:Ljava/lang/String;
 
-    .line 109
+    .line 108
     iput-object p2, p0, Lcom/transsion/camera/feature/common/BaseCapture;->m3AController:Lcom/transsion/camera/feature/common/I3AController;
 
-    .line 110
+    .line 109
     iput-object p3, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
-    .line 111
+    .line 110
     iput-object p4, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 112
+    .line 111
     new-instance p1, Lcom/transsion/camera/feature/common/CommonModeHelper;
 
     invoke-direct {p1}, Lcom/transsion/camera/feature/common/CommonModeHelper;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mModeHelper:Lcom/transsion/camera/feature/common/CommonModeHelper;
 
-    .line 113
+    .line 112
     new-instance p1, Lcom/transsion/camera/feature/common/DataStream;
 
     invoke-direct {p1, p3}, Lcom/transsion/camera/feature/common/DataStream;-><init>(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mDataStream:Lcom/transsion/camera/feature/common/IDataStream;
 
-    .line 114
+    .line 113
     invoke-virtual {v0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->entry()V
 
     return-void
@@ -414,7 +414,7 @@
 .method private lock3A(Z)V
     .registers 5
 
-    .line 363
+    .line 361
     sget-object v0, Lcom/transsion/camera/feature/common/BaseCapture;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -433,7 +433,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 364
+    .line 362
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->m3AController:Lcom/transsion/camera/feature/common/I3AController;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/feature/common/I3AController;->lock3A(Z)V
@@ -444,17 +444,17 @@
 .method private triggerCaptureEnd()V
     .registers 2
 
-    .line 214
+    .line 212
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCurrentState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->captureSuccess()V
 
-    .line 215
+    .line 213
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mStatusListener:Lcom/transsion/camera/feature/common/ICapture$IStatusListener;
 
     if-eqz p0, :cond_c
 
-    .line 216
+    .line 214
     invoke-interface {p0}, Lcom/transsion/camera/feature/common/ICapture$IStatusListener;->onCaptureEnd()V
 
     :cond_c
@@ -464,7 +464,7 @@
 .method private triggerSavingStart()V
     .registers 1
 
-    .line 221
+    .line 219
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCurrentState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->startSaving()V
@@ -477,26 +477,26 @@
 .method public final createDataStream()V
     .registers 3
 
-    .line 137
+    .line 136
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mDataStream:Lcom/transsion/camera/feature/common/IDataStream;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mDataListener:Lcom/transsion/camera/feature/common/IDataStream$IDataListener;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/feature/common/IDataStream;->setDataListener(Lcom/transsion/camera/feature/common/IDataStream$IDataListener;)V
 
-    .line 138
+    .line 137
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mDataStream:Lcom/transsion/camera/feature/common/IDataStream;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mAvailabilityListener:Lcom/transsion/camera/feature/common/IDataStream$IStreamListener;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/feature/common/IDataStream;->setStreamListener(Lcom/transsion/camera/feature/common/IDataStream$IStreamListener;)V
 
-    .line 139
+    .line 138
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mDataStream:Lcom/transsion/camera/feature/common/IDataStream;
 
     invoke-interface {v0}, Lcom/transsion/camera/feature/common/IDataStream;->createStream()V
 
-    .line 140
+    .line 139
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCurrentState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->createStream()V
@@ -507,24 +507,24 @@
 .method public final destroyDataStream()V
     .registers 3
 
-    .line 144
+    .line 143
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mDataStream:Lcom/transsion/camera/feature/common/IDataStream;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/feature/common/IDataStream;->setDataListener(Lcom/transsion/camera/feature/common/IDataStream$IDataListener;)V
 
-    .line 145
+    .line 144
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mDataStream:Lcom/transsion/camera/feature/common/IDataStream;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/feature/common/IDataStream;->setStreamListener(Lcom/transsion/camera/feature/common/IDataStream$IStreamListener;)V
 
-    .line 146
+    .line 145
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mDataStream:Lcom/transsion/camera/feature/common/IDataStream;
 
     invoke-interface {v0}, Lcom/transsion/camera/feature/common/IDataStream;->destroyStream()V
 
-    .line 147
+    .line 146
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCurrentState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->destroyStream()V
@@ -535,28 +535,21 @@
 .method protected doCapture()V
     .registers 2
 
-    .line 165
+    .line 164
     sget-object p0, Lcom/transsion/camera/feature/common/BaseCapture;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "doCapture"
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 166
-    invoke-static {}, Lcom/transsion/camera/utils/smartmodeorder/SmartModeOrderUtils;->getInstance()Lcom/transsion/camera/utils/smartmodeorder/SmartModeOrderUtils;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lcom/transsion/camera/utils/smartmodeorder/SmartModeOrderUtils;->updateModeUsedCount()V
-
-    .line 167
+    .line 165
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->startCapture()V
 
-    .line 168
+    .line 166
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -571,22 +564,22 @@
 .method protected doPreCapture()V
     .registers 3
 
-    .line 156
+    .line 155
     sget-object v0, Lcom/transsion/camera/feature/common/BaseCapture;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "doPreCapture"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 157
+    .line 156
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mStatusListener:Lcom/transsion/camera/feature/common/ICapture$IStatusListener;
 
     if-eqz v0, :cond_e
 
-    .line 158
+    .line 157
     invoke-interface {v0}, Lcom/transsion/camera/feature/common/ICapture$IStatusListener;->onCaptureStart()V
 
-    .line 160
+    .line 159
     :cond_e
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
@@ -600,19 +593,19 @@
 .method protected doStopCapture()Z
     .registers 3
 
-    .line 177
+    .line 175
     sget-object v0, Lcom/transsion/camera/feature/common/BaseCapture;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "doStopCapture"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 178
+    .line 176
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mStatusListener:Lcom/transsion/camera/feature/common/ICapture$IStatusListener;
 
     if-eqz p0, :cond_e
 
-    .line 179
+    .line 177
     invoke-interface {p0}, Lcom/transsion/camera/feature/common/ICapture$IStatusListener;->onCaptureStop()V
 
     :cond_e
@@ -649,7 +642,7 @@
 .method public onFrameResult(Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
     .registers 4
 
-    .line 186
+    .line 184
     sget-object p2, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_STATE:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-virtual {p1, p2}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -662,14 +655,14 @@
 
     const/4 p2, 0x3
 
-    .line 187
+    .line 185
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
     if-ne p2, p1, :cond_16
 
-    .line 188
+    .line 186
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCurrentState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->onAeLocked()V
@@ -684,10 +677,10 @@
 .method protected savePicture([BIII)V
     .registers 12
 
-    .line 226
+    .line 224
     invoke-direct {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->triggerSavingStart()V
 
-    .line 228
+    .line 226
     sget-object v0, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     new-instance v1, Lcom/transsion/camera/feature/common/BaseCapture$3;
@@ -712,7 +705,7 @@
 .method public setStatusListener(Lcom/transsion/camera/feature/common/ICapture$IStatusListener;)V
     .registers 2
 
-    .line 119
+    .line 118
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mStatusListener:Lcom/transsion/camera/feature/common/ICapture$IStatusListener;
 
     return-void
@@ -721,7 +714,7 @@
 .method public setStreamStatusListener(Lcom/transsion/camera/feature/common/ICapture$IStreamStatusListener;)V
     .registers 2
 
-    .line 129
+    .line 128
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mStreamStatusListener:Lcom/transsion/camera/feature/common/ICapture$IStreamStatusListener;
 
     return-void
@@ -730,7 +723,7 @@
 .method public setThumbnailOperator(Lcom/transsion/camera/feature/common/ICapture$IThumbnailOperator;)V
     .registers 2
 
-    .line 124
+    .line 123
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mThumbnailOperator:Lcom/transsion/camera/feature/common/ICapture$IThumbnailOperator;
 
     return-void
@@ -739,7 +732,7 @@
 .method public final shutterClick()V
     .registers 1
 
-    .line 151
+    .line 150
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCurrentState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->shutterClick()V
@@ -750,7 +743,7 @@
 .method public final stopCapture()Z
     .registers 1
 
-    .line 172
+    .line 170
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCurrentState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->stopCapture()Z
@@ -763,17 +756,17 @@
 .method protected triggerCaptureFailed()V
     .registers 2
 
-    .line 207
+    .line 205
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mCurrentState:Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->captureFail()V
 
-    .line 208
+    .line 206
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mStatusListener:Lcom/transsion/camera/feature/common/ICapture$IStatusListener;
 
     if-eqz p0, :cond_c
 
-    .line 209
+    .line 207
     invoke-interface {p0}, Lcom/transsion/camera/feature/common/ICapture$IStatusListener;->onCaptureFailed()V
 
     :cond_c
@@ -785,7 +778,7 @@
 
     const/4 v0, 0x0
 
-    .line 193
+    .line 191
     iput v0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mOrientation:I
 
     return-void
@@ -794,7 +787,7 @@
 .method public updateOrientation(I)V
     .registers 5
 
-    .line 202
+    .line 200
     sget-object v0, Lcom/transsion/camera/feature/common/BaseCapture;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -813,7 +806,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 203
+    .line 201
     iput p1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mOrientation:I
 
     return-void
@@ -822,7 +815,7 @@
 .method public updateStorageOperator(Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;)V
     .registers 2
 
-    .line 198
+    .line 196
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     return-void

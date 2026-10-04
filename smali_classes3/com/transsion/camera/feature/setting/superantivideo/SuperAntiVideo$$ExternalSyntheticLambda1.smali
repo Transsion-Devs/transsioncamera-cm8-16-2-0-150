@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
+.implements Ljava/util/function/Function;
 
 
 # instance fields
@@ -24,15 +24,17 @@
 
 
 # virtual methods
-.method public final onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$$ExternalSyntheticLambda1;->f$0:Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;
 
-    check-cast p2, Ljava/lang/String;
+    check-cast p1, [Ljava/lang/String;
 
-    invoke-static {p0, p1, p2}, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;->$r8$lambda$Zl9I4DdySnePgtNwPh5sZaS9r48(Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;->$r8$lambda$ryOR3lbLl-iCIk_ARdhil1wXBB4(Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;[Ljava/lang/String;)Ljava/lang/Boolean;
 
-    return-void
+    move-result-object p0
+
+    return-object p0
 .end method

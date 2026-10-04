@@ -20,7 +20,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 175
+    .line 186
     invoke-interface {p0}, Ljava/util/Set;->size()I
 
     move-result v0
@@ -33,7 +33,7 @@
 
     return-object p0
 
-    .line 177
+    .line 188
     :cond_f
     invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -49,7 +49,7 @@
 
     return-object p0
 
-    .line 176
+    .line 187
     :cond_1c
     invoke-static {}, Lkotlin/collections/SetsKt__SetsKt;->emptySet()Ljava/util/Set;
 
@@ -66,18 +66,7 @@
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 44
-    array-length v0, p0
-
-    if-lez v0, :cond_d
-
     invoke-static {p0}, Lkotlin/collections/ArraysKt___ArraysKt;->toSet([Ljava/lang/Object;)Ljava/util/Set;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_d
-    invoke-static {}, Lkotlin/collections/SetsKt__SetsKt;->emptySet()Ljava/util/Set;
 
     move-result-object p0
 

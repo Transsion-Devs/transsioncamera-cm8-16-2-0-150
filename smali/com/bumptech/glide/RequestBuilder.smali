@@ -1149,6 +1149,55 @@
     return-object p0
 .end method
 
+.method public load([B)Lcom/bumptech/glide/RequestBuilder;
+    .registers 2
+
+    .line 559
+    invoke-direct {p0, p1}, Lcom/bumptech/glide/RequestBuilder;->loadGeneric(Ljava/lang/Object;)Lcom/bumptech/glide/RequestBuilder;
+
+    move-result-object p0
+
+    .line 560
+    invoke-virtual {p0}, Lcom/bumptech/glide/request/BaseRequestOptions;->isDiskCacheStrategySet()Z
+
+    move-result p1
+
+    if-nez p1, :cond_14
+
+    .line 561
+    sget-object p1, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->NONE:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
+
+    invoke-static {p1}, Lcom/bumptech/glide/request/RequestOptions;->diskCacheStrategyOf(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/request/RequestOptions;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestBuilder;->apply(Lcom/bumptech/glide/request/BaseRequestOptions;)Lcom/bumptech/glide/RequestBuilder;
+
+    move-result-object p0
+
+    .line 563
+    :cond_14
+    invoke-virtual {p0}, Lcom/bumptech/glide/request/BaseRequestOptions;->isSkipMemoryCacheSet()Z
+
+    move-result p1
+
+    if-nez p1, :cond_23
+
+    const/4 p1, 0x1
+
+    .line 564
+    invoke-static {p1}, Lcom/bumptech/glide/request/RequestOptions;->skipMemoryCacheOf(Z)Lcom/bumptech/glide/request/RequestOptions;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestBuilder;->apply(Lcom/bumptech/glide/request/BaseRequestOptions;)Lcom/bumptech/glide/RequestBuilder;
+
+    move-result-object p0
+
+    :cond_23
+    return-object p0
+.end method
+
 .method public submit(II)Lcom/bumptech/glide/request/FutureTarget;
     .registers 4
 

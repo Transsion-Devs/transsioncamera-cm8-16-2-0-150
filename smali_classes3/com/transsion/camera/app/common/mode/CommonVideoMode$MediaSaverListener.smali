@@ -29,15 +29,15 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CommonVideoMode;Ljava/lang/Object;I)V
     .registers 4
 
-    .line 2067
+    .line 2077
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2068
+    .line 2078
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$MediaSaverListener;->mFile:Ljava/lang/Object;
 
-    .line 2069
+    .line 2079
     iput p3, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$MediaSaverListener;->mReason:I
 
     return-void
@@ -48,12 +48,12 @@
 .method public onFileSaved(Landroid/net/Uri;)V
     .registers 5
 
-    .line 2074
+    .line 2084
     const-string v0, "[TranMemoryFlow] available memory when save video:"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/MemoryUtils;->logAvailMemoryAsync(Ljava/lang/String;)V
 
-    .line 2075
+    .line 2085
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -84,7 +84,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2076
+    .line 2086
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$MediaSaverListener;->mFile:Ljava/lang/Object;
@@ -93,7 +93,7 @@
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->processFileSaved(Landroid/net/Uri;Ljava/lang/Object;I)V
 
-    .line 2077
+    .line 2087
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;

@@ -210,7 +210,7 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
     .registers 2
 
-    .line 1200
+    .line 1197
     iput-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;-><init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
@@ -221,7 +221,7 @@
 .method private synthetic lambda$getFirstItemRect$3(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1240
+    .line 1237
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -236,7 +236,7 @@
 .method private synthetic lambda$getFirstItemRect$4(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1245
+    .line 1242
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -251,7 +251,7 @@
 .method private synthetic lambda$getFirstItemRect$5(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1250
+    .line 1247
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -266,7 +266,7 @@
 .method private synthetic lambda$getFirstItemRect$6(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1255
+    .line 1252
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -281,7 +281,7 @@
 .method private synthetic lambda$getFirstItemRect$7()Landroid/graphics/Rect;
     .registers 3
 
-    .line 1261
+    .line 1258
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -296,7 +296,7 @@
 .method private synthetic lambda$getLastItemRect$10(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1284
+    .line 1281
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -311,7 +311,7 @@
 .method private synthetic lambda$getLastItemRect$11(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1289
+    .line 1286
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -326,7 +326,7 @@
 .method private synthetic lambda$getLastItemRect$12(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1295
+    .line 1292
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -341,7 +341,7 @@
 .method private synthetic lambda$getLastItemRect$8(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1274
+    .line 1271
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -356,7 +356,7 @@
 .method private synthetic lambda$getLastItemRect$9(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1279
+    .line 1276
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -371,7 +371,7 @@
 .method private synthetic lambda$getOtherItemRect$13(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1309
+    .line 1306
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -386,7 +386,7 @@
 .method private synthetic lambda$getOtherItemRect$14(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1314
+    .line 1311
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -401,7 +401,7 @@
 .method private synthetic lambda$getOtherItemRect$15(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1320
+    .line 1317
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -416,7 +416,7 @@
 .method private synthetic lambda$getSplitItemRect$0(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1216
+    .line 1213
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -433,7 +433,7 @@
 .method private synthetic lambda$getSplitItemRect$1(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1221
+    .line 1218
     new-instance v0, Landroid/graphics/Rect;
 
     neg-int p1, p1
@@ -450,7 +450,7 @@
 .method private synthetic lambda$getSplitItemRect$2(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1227
+    .line 1224
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -469,12 +469,12 @@
 .method protected getFirstItemRect(I)Landroid/graphics/Rect;
     .registers 5
 
-    .line 1235
+    .line 1232
     invoke-virtual {p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->getItemPadding()I
 
     move-result v0
 
-    .line 1236
+    .line 1233
     iget-object v1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
@@ -498,7 +498,7 @@
 
     if-eq p1, v1, :cond_2b
 
-    .line 1254
+    .line 1251
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->mFirstItemRect0OrLastItemRect180:Landroid/graphics/Rect;
 
     invoke-static {p1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -517,7 +517,7 @@
 
     return-object p0
 
-    .line 1249
+    .line 1246
     :cond_2b
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->mFirstItemRect270OrLastItemRect90:Landroid/graphics/Rect;
 
@@ -537,7 +537,7 @@
 
     return-object p0
 
-    .line 1244
+    .line 1241
     :cond_3d
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->mFirstItemRect180OrLastItemRect0:Landroid/graphics/Rect;
 
@@ -557,7 +557,7 @@
 
     return-object p0
 
-    .line 1239
+    .line 1236
     :cond_4f
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->mFirstItemRect90OrLastItemRect270:Landroid/graphics/Rect;
 
@@ -577,7 +577,7 @@
 
     return-object p0
 
-    .line 1260
+    .line 1257
     :cond_61
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mFirstItemRect:Landroid/graphics/Rect;
 
@@ -601,14 +601,14 @@
 .method public getItemPadding()I
     .registers 3
 
-    .line 1328
+    .line 1325
     iget v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mItemPadding:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_13
 
-    .line 1329
+    .line 1326
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->-$$Nest$fgetmResources(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)Landroid/content/res/Resources;
@@ -623,7 +623,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mItemPadding:I
 
-    .line 1331
+    .line 1328
     :cond_13
     iget p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mItemPadding:I
 
@@ -633,12 +633,12 @@
 .method protected getLastItemRect(I)Landroid/graphics/Rect;
     .registers 5
 
-    .line 1269
+    .line 1266
     invoke-virtual {p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->getItemPadding()I
 
     move-result v0
 
-    .line 1270
+    .line 1267
     iget-object v1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
@@ -662,7 +662,7 @@
 
     if-eq p1, v1, :cond_2b
 
-    .line 1288
+    .line 1285
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->mFirstItemRect180OrLastItemRect0:Landroid/graphics/Rect;
 
     invoke-static {p1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -681,7 +681,7 @@
 
     return-object p0
 
-    .line 1283
+    .line 1280
     :cond_2b
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->mFirstItemRect90OrLastItemRect270:Landroid/graphics/Rect;
 
@@ -701,7 +701,7 @@
 
     return-object p0
 
-    .line 1278
+    .line 1275
     :cond_3d
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->mFirstItemRect0OrLastItemRect180:Landroid/graphics/Rect;
 
@@ -721,7 +721,7 @@
 
     return-object p0
 
-    .line 1273
+    .line 1270
     :cond_4f
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->mFirstItemRect270OrLastItemRect90:Landroid/graphics/Rect;
 
@@ -741,7 +741,7 @@
 
     return-object p0
 
-    .line 1294
+    .line 1291
     :cond_61
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mLastItemRect:Landroid/graphics/Rect;
 
@@ -765,12 +765,12 @@
 .method protected getOtherItemRect(I)Landroid/graphics/Rect;
     .registers 5
 
-    .line 1303
+    .line 1300
     invoke-virtual {p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->getItemPadding()I
 
     move-result v0
 
-    .line 1304
+    .line 1301
     iget-object v1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
@@ -790,7 +790,7 @@
 
     if-eq p1, v1, :cond_27
 
-    .line 1313
+    .line 1310
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mOtherItemRect:Landroid/graphics/Rect;
 
     invoke-static {p1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -809,7 +809,7 @@
 
     return-object p0
 
-    .line 1308
+    .line 1305
     :cond_27
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->mOtherItemRect90:Landroid/graphics/Rect;
 
@@ -829,7 +829,7 @@
 
     return-object p0
 
-    .line 1319
+    .line 1316
     :cond_39
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mOtherItemRect:Landroid/graphics/Rect;
 
@@ -853,12 +853,12 @@
 .method protected getSplitItemRect(I)Landroid/graphics/Rect;
     .registers 5
 
-    .line 1210
+    .line 1207
     invoke-virtual {p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->getItemPadding()I
 
     move-result v0
 
-    .line 1211
+    .line 1208
     iget-object v1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
@@ -878,7 +878,7 @@
 
     if-eq p1, v1, :cond_27
 
-    .line 1220
+    .line 1217
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mSplitItemRect:Landroid/graphics/Rect;
 
     invoke-static {p1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -897,7 +897,7 @@
 
     return-object p0
 
-    .line 1215
+    .line 1212
     :cond_27
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;->mSplitItemRect90:Landroid/graphics/Rect;
 
@@ -917,7 +917,7 @@
 
     return-object p0
 
-    .line 1226
+    .line 1223
     :cond_39
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mSplitItemRect:Landroid/graphics/Rect;
 

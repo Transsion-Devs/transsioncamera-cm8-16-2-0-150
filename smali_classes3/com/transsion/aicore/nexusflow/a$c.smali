@@ -50,7 +50,7 @@
     iget-object v0, p0, Lcom/transsion/aicore/nexusflow/a$c;->b:Lcom/transsion/aicore/nexusflow/a;
 
     .line 2
-    iget-object v0, v0, Lcom/transsion/aicore/nexusflow/a;->h:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, v0, Lcom/transsion/aicore/nexusflow/a;->i:Ljava/util/concurrent/ConcurrentHashMap;
 
     .line 3
     iget-object v1, p0, Lcom/transsion/aicore/nexusflow/a$c;->a:Ljava/lang/String;
@@ -268,7 +268,7 @@
     iget-object v1, p0, Lcom/transsion/aicore/nexusflow/a$c;->b:Lcom/transsion/aicore/nexusflow/a;
 
     .line 4
-    iget-object v1, v1, Lcom/transsion/aicore/nexusflow/a;->h:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v1, v1, Lcom/transsion/aicore/nexusflow/a;->i:Ljava/util/concurrent/ConcurrentHashMap;
 
     .line 5
     invoke-virtual {v1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -401,7 +401,7 @@
     iget-object v0, p0, Lcom/transsion/aicore/nexusflow/a$c;->b:Lcom/transsion/aicore/nexusflow/a;
 
     .line 2
-    iget-object v0, v0, Lcom/transsion/aicore/nexusflow/a;->h:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, v0, Lcom/transsion/aicore/nexusflow/a;->i:Ljava/util/concurrent/ConcurrentHashMap;
 
     .line 3
     iget-object v1, p0, Lcom/transsion/aicore/nexusflow/a$c;->a:Ljava/lang/String;

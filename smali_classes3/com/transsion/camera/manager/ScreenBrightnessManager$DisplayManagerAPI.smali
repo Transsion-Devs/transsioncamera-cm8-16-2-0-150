@@ -28,20 +28,20 @@
 
     const/4 v0, 0x0
 
-    .line 408
+    .line 418
     invoke-direct {p0, v0}, Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager-IA;)V
 
     const/4 v0, 0x0
 
-    .line 405
+    .line 415
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;->mDisplayId:I
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 406
+    .line 416
     iput v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;->mDisplayBrightness:F
 
-    .line 409
+    .line 419
     new-instance v0, Lcom/transsion/hubsdk/api/hardware/display/TranDisplayManager;
 
     invoke-direct {v0}, Lcom/transsion/hubsdk/api/hardware/display/TranDisplayManager;-><init>()V
@@ -54,7 +54,7 @@
 .method private setTemporaryBrightness(IF)V
     .registers 6
 
-    .line 455
+    .line 465
     invoke-static {}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -83,7 +83,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 456
+    .line 466
     iget v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;->mDisplayBrightness:F
 
     invoke-static {v0, p2}, Ljava/lang/Float;->compare(FF)I
@@ -92,10 +92,10 @@
 
     if-eqz v0, :cond_57
 
-    .line 457
+    .line 467
     iput p2, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;->mDisplayBrightness:F
 
-    .line 459
+    .line 469
     :try_start_2c
     iget-object p0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;->mTranDisplayManager:Lcom/transsion/hubsdk/api/hardware/display/TranDisplayManager;
 
@@ -108,7 +108,7 @@
     :catch_32
     move-exception p0
 
-    .line 461
+    .line 471
     invoke-static {}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -139,7 +139,7 @@
 
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 464
+    .line 474
     :cond_57
     :goto_57
     invoke-static {}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -158,7 +158,7 @@
 .method public getCurrent(Landroid/app/Activity;)F
     .registers 4
 
-    .line 447
+    .line 457
     iget v0, p0, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;->mDisplayBrightness:F
 
     const/4 v1, 0x0
@@ -169,7 +169,7 @@
 
     return v0
 
-    .line 450
+    .line 460
     :cond_8
     invoke-virtual {p0, p1}, Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;->getActivityBrightness(Landroid/app/Activity;)F
 
@@ -190,7 +190,7 @@
     :cond_5
     const/4 p2, -0x1
 
-    .line 441
+    .line 451
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;->setBrightness(Landroid/app/Activity;IZ)V
 
     return-void
@@ -215,15 +215,15 @@
 
     div-float/2addr p2, v1
 
-    .line 421
+    .line 431
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;->setActivityBrightness(Landroid/app/Activity;F)V
 
-    .line 422
+    .line 432
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;->setTemporaryBrightness(IF)V
 
     return-void
 
-    .line 424
+    .line 434
     :cond_13
     invoke-virtual {p0, p1, v3}, Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;->setActivityBrightness(Landroid/app/Activity;F)V
 
@@ -238,7 +238,7 @@
 
     div-float v3, p1, v1
 
-    .line 432
+    .line 442
     :goto_1d
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/manager/ScreenBrightnessManager$DisplayManagerAPI;->setTemporaryBrightness(IF)V
 
@@ -248,7 +248,7 @@
 .method public toString()Ljava/lang/String;
     .registers 1
 
-    .line 414
+    .line 424
     const-string p0, "DisplayManagerAPI"
 
     return-object p0

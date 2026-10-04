@@ -33,7 +33,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;[Landroid/graphics/Bitmap;IILcom/transsion/camera/utils/StateWait;)V
     .registers 6
 
-    .line 982
+    .line 1017
     iput-object p1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$12;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$12;->val$bitmap:[Landroid/graphics/Bitmap;
@@ -54,7 +54,7 @@
 .method public run()V
     .registers 5
 
-    .line 985
+    .line 1020
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$12;->val$bitmap:[Landroid/graphics/Bitmap;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$12;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -71,7 +71,7 @@
 
     aput-object v1, v0, v2
 
-    .line 986
+    .line 1021
     invoke-static {}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -96,7 +96,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 987
+    .line 1022
     iget-object p0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$12;->val$previewShotLock:Lcom/transsion/camera/utils/StateWait;
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/StateWait;->notifyState()V

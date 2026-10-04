@@ -101,14 +101,14 @@
 .method private static assertNotHardwareConfig(Landroid/graphics/Bitmap$Config;)V
     .registers 4
 
-    .line 187
+    .line 197
     sget-object v0, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
     if-eq p0, v0, :cond_5
 
     return-void
 
-    .line 188
+    .line 198
     :cond_5
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -142,7 +142,7 @@
 
     goto :goto_5
 
-    .line 177
+    .line 187
     :cond_3
     sget-object p2, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->DEFAULT_CONFIG:Landroid/graphics/Bitmap$Config;
 
@@ -157,7 +157,7 @@
 .method private dump()V
     .registers 3
 
-    .line 285
+    .line 299
     const-string v0, "LruBitmapPool"
 
     const/4 v1, 0x2
@@ -168,7 +168,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 286
+    .line 300
     invoke-direct {p0}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->dumpUnchecked()V
 
     :cond_c
@@ -178,7 +178,7 @@
 .method private dumpUnchecked()V
     .registers 4
 
-    .line 291
+    .line 305
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -264,7 +264,7 @@
 .method private static getDefaultAllowedConfigs()Ljava/util/Set;
     .registers 2
 
-    .line 316
+    .line 330
     new-instance v0, Ljava/util/HashSet;
 
     invoke-static {}, Landroid/graphics/Bitmap$Config;->values()[Landroid/graphics/Bitmap$Config;
@@ -279,15 +279,15 @@
 
     const/4 v1, 0x0
 
-    .line 321
+    .line 335
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 324
+    .line 338
     sget-object v1, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
     invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 326
+    .line 340
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object v0
@@ -298,7 +298,7 @@
 .method private static getDefaultStrategy()Lcom/transsion/camera/utils/bitmap_recycle/LruPoolStrategy;
     .registers 1
 
-    .line 311
+    .line 325
     new-instance v0, Lcom/transsion/camera/utils/bitmap_recycle/SizeConfigStrategy;
 
     invoke-direct {v0}, Lcom/transsion/camera/utils/bitmap_recycle/SizeConfigStrategy;-><init>()V
@@ -311,11 +311,11 @@
 
     monitor-enter p0
 
-    .line 199
+    .line 209
     :try_start_1
     invoke-static {p3}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->assertNotHardwareConfig(Landroid/graphics/Bitmap$Config;)V
 
-    .line 202
+    .line 212
     iget-object v0, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->strategy:Lcom/transsion/camera/utils/bitmap_recycle/LruPoolStrategy;
 
     if-eqz p3, :cond_a
@@ -334,7 +334,7 @@
 
     if-nez v0, :cond_41
 
-    .line 204
+    .line 214
     const-string v1, "LruBitmapPool"
 
     const/4 v2, 0x3
@@ -345,7 +345,7 @@
 
     if-eqz v1, :cond_3a
 
-    .line 205
+    .line 215
     const-string v1, "LruBitmapPool"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -377,7 +377,7 @@
 
     goto :goto_85
 
-    .line 207
+    .line 217
     :cond_3a
     :goto_3a
     iget v1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->misses:I
@@ -388,7 +388,7 @@
 
     goto :goto_5b
 
-    .line 209
+    .line 219
     :cond_41
     iget v1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->hits:I
 
@@ -396,7 +396,7 @@
 
     iput v1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->hits:I
 
-    .line 210
+    .line 220
     iget-wide v1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->currentSize:J
 
     iget-object v3, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->strategy:Lcom/transsion/camera/utils/bitmap_recycle/LruPoolStrategy;
@@ -411,15 +411,15 @@
 
     iput-wide v1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->currentSize:J
 
-    .line 211
+    .line 221
     iget-object v1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->tracker:Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool$BitmapTracker;
 
     invoke-interface {v1, v0}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool$BitmapTracker;->remove(Landroid/graphics/Bitmap;)V
 
-    .line 212
+    .line 222
     invoke-static {v0}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->normalize(Landroid/graphics/Bitmap;)V
 
-    .line 214
+    .line 224
     :goto_5b
     const-string v1, "LruBitmapPool"
 
@@ -431,7 +431,7 @@
 
     if-eqz v1, :cond_80
 
-    .line 215
+    .line 225
     const-string v1, "LruBitmapPool"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -456,13 +456,13 @@
 
     invoke-static {v1, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 217
+    .line 227
     :cond_80
     invoke-direct {p0}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->dump()V
     :try_end_83
     .catchall {:try_start_1 .. :try_end_83} :catchall_38
 
-    .line 219
+    .line 229
     monitor-exit p0
 
     return-object v0
@@ -481,7 +481,7 @@
 
     const/4 v0, 0x1
 
-    .line 232
+    .line 242
     invoke-virtual {p0, v0}, Landroid/graphics/Bitmap;->setPremultiplied(Z)V
 
     return-void
@@ -492,10 +492,10 @@
 
     const/4 v0, 0x1
 
-    .line 225
+    .line 235
     invoke-virtual {p0, v0}, Landroid/graphics/Bitmap;->setHasAlpha(Z)V
 
-    .line 226
+    .line 236
     invoke-static {p0}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->maybeSetPreMultiplied(Landroid/graphics/Bitmap;)V
 
     return-void
@@ -506,7 +506,7 @@
 
     monitor-enter p0
 
-    .line 262
+    .line 276
     :goto_1
     :try_start_1
     iget-wide v0, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->currentSize:J
@@ -515,7 +515,7 @@
 
     if-lez v0, :cond_6e
 
-    .line 263
+    .line 277
     iget-object v0, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->strategy:Lcom/transsion/camera/utils/bitmap_recycle/LruPoolStrategy;
 
     invoke-interface {v0}, Lcom/transsion/camera/utils/bitmap_recycle/LruPoolStrategy;->removeLast()Landroid/graphics/Bitmap;
@@ -524,7 +524,7 @@
 
     if-nez v0, :cond_2b
 
-    .line 266
+    .line 280
     const-string p1, "LruBitmapPool"
 
     const/4 p2, 0x5
@@ -535,14 +535,14 @@
 
     if-eqz p1, :cond_25
 
-    .line 267
+    .line 281
     const-string p1, "LruBitmapPool"
 
     const-string p2, "Size mismatch, resetting"
 
     invoke-static {p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 268
+    .line 282
     invoke-direct {p0}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->dumpUnchecked()V
 
     goto :goto_25
@@ -556,24 +556,24 @@
     :goto_25
     const-wide/16 p1, 0x0
 
-    .line 270
+    .line 284
     iput-wide p1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->currentSize:J
     :try_end_29
     .catchall {:try_start_1 .. :try_end_29} :catchall_23
 
-    .line 271
+    .line 285
     monitor-exit p0
 
     return-void
 
-    .line 273
+    .line 287
     :cond_2b
     :try_start_2b
     iget-object v1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->tracker:Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool$BitmapTracker;
 
     invoke-interface {v1, v0}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool$BitmapTracker;->remove(Landroid/graphics/Bitmap;)V
 
-    .line 274
+    .line 288
     iget-wide v1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->currentSize:J
 
     iget-object v3, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->strategy:Lcom/transsion/camera/utils/bitmap_recycle/LruPoolStrategy;
@@ -588,14 +588,14 @@
 
     iput-wide v1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->currentSize:J
 
-    .line 275
+    .line 289
     iget v1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->evictions:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->evictions:I
 
-    .line 276
+    .line 290
     const-string v1, "LruBitmapPool"
 
     const/4 v2, 0x3
@@ -606,7 +606,7 @@
 
     if-eqz v1, :cond_67
 
-    .line 277
+    .line 291
     const-string v1, "LruBitmapPool"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -631,18 +631,18 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 279
+    .line 293
     :cond_67
     invoke-direct {p0}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->dump()V
 
-    .line 280
+    .line 294
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_6d
     .catchall {:try_start_2b .. :try_end_6d} :catchall_23
 
     goto :goto_1
 
-    .line 282
+    .line 296
     :cond_6e
     monitor-exit p0
 
@@ -660,11 +660,11 @@
 
 # virtual methods
 .method public clearMemory()V
-    .registers 3
+    .registers 5
 
     const/4 v0, 0x3
 
-    .line 238
+    .line 248
     const-string v1, "LruBitmapPool"
 
     invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -673,43 +673,107 @@
 
     if-eqz v0, :cond_e
 
-    .line 239
+    .line 249
     const-string v0, "clearMemory"
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_e
-    const-wide/16 v0, 0x0
+    const-wide/16 v2, 0x0
 
-    .line 241
-    invoke-direct {p0, v0, v1}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->trimToSize(J)V
+    .line 252
+    :try_start_10
+    invoke-direct {p0, v2, v3}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->trimToSize(J)V
+    :try_end_13
+    .catch Ljava/lang/IllegalStateException; {:try_start_10 .. :try_end_13} :catch_14
+
+    return-void
+
+    :catch_14
+    move-exception p0
+
+    .line 254
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "clearMemory: "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 .end method
 
 .method public get(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-    .registers 4
+    .registers 6
 
-    .line 152
+    .line 154
+    :try_start_0
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->getDirtyOrNull(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object p0
+    :try_end_4
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_4} :catch_5
 
-    if-eqz p0, :cond_b
+    goto :goto_21
+
+    :catch_5
+    move-exception p0
+
+    .line 156
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "get Bitmap error: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "LruBitmapPool"
+
+    invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 p0, 0x0
+
+    :goto_21
+    if-eqz p0, :cond_28
 
     const/4 p1, 0x0
 
-    .line 157
+    .line 162
     invoke-virtual {p0, p1}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    return-object p0
+    goto :goto_2c
 
-    .line 159
-    :cond_b
+    .line 164
+    :cond_28
     invoke-static {p1, p2, p3}, Lcom/transsion/camera/utils/bitmap_recycle/LruBitmapPool;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object p0
 
+    :goto_2c
     return-object p0
 .end method
 

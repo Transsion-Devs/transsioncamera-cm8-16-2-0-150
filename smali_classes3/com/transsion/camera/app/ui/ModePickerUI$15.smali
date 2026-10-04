@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
     .registers 2
 
-    .line 2644
+    .line 2457
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$15;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreDraw()Z
     .registers 3
 
-    .line 2647
+    .line 2460
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$15;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
@@ -49,7 +49,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 2648
+    .line 2461
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$15;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmMoreModeGuideRightRoot(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/view/View;
@@ -60,7 +60,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2649
+    .line 2462
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$15;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$mupdateMoreCancelRootState(Lcom/transsion/camera/app/ui/ModePickerUI;)V

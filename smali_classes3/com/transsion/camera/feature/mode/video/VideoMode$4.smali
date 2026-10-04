@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/video/VideoMode;)V
     .registers 2
 
-    .line 1352
+    .line 1353
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$4;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,22 +44,22 @@
 
     if-eqz p1, :cond_3d
 
-    .line 1362
+    .line 1363
     array-length v2, p1
 
     if-lez v2, :cond_3d
 
-    .line 1363
+    .line 1364
     invoke-static {p1, v1}, Lcom/transsion/camera/utils/BitmapUtils;->createBitmapFromByte([BI)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 1364
+    .line 1365
     new-instance v3, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;
 
     invoke-direct {v3}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;-><init>()V
 
-    .line 1365
+    .line 1366
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$4;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -77,10 +77,10 @@
 
     move-result-object v4
 
-    .line 1366
+    .line 1367
     invoke-virtual {v3, v4}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;->updateLocation(Landroid/location/Location;)V
 
-    .line 1367
+    .line 1368
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$4;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     invoke-static {v4, p4}, Lcom/transsion/camera/feature/mode/video/VideoMode;->-$$Nest$mconvertJpegOrientation(Lcom/transsion/camera/feature/mode/video/VideoMode;I)I
@@ -89,18 +89,18 @@
 
     invoke-virtual {v3, v4}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;->updateOrientation(I)V
 
-    .line 1368
+    .line 1369
     invoke-virtual {v3, p3}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;->updateFlashState(Z)V
 
-    .line 1369
+    .line 1370
     invoke-virtual {v3, v2}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;->updateThumbnailSize(Landroid/graphics/Bitmap;)V
 
-    .line 1370
+    .line 1371
     invoke-static {p1, v2, v3}, Lcom/transsion/camera/app/common/algorithm/exif/ExifWriter;->writeExif([BLandroid/graphics/Bitmap;Lcom/transsion/camera/adapter/CameraResults;)[B
 
     move-result-object p1
 
-    .line 1371
+    .line 1372
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$4;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     invoke-static {v2, p1, v0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->-$$Nest$msaveJpegToFile(Lcom/transsion/camera/feature/mode/video/VideoMode;[BLandroid/graphics/Bitmap;)V
@@ -108,22 +108,22 @@
     :cond_3d
     if-eqz p2, :cond_63
 
-    .line 1374
+    .line 1375
     array-length p1, p2
 
     if-lez p1, :cond_63
 
-    .line 1375
+    .line 1376
     invoke-static {p2, v1}, Lcom/transsion/camera/utils/BitmapUtils;->createBitmapFromByte([BI)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    .line 1376
+    .line 1377
     new-instance v1, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;
 
     invoke-direct {v1}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;-><init>()V
 
-    .line 1377
+    .line 1378
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$4;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     invoke-static {v2, p4}, Lcom/transsion/camera/feature/mode/video/VideoMode;->-$$Nest$mconvertJpegOrientation(Lcom/transsion/camera/feature/mode/video/VideoMode;I)I
@@ -132,18 +132,18 @@
 
     invoke-virtual {v1, p4}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;->updateOrientation(I)V
 
-    .line 1378
+    .line 1379
     invoke-virtual {v1, p3}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;->updateFlashState(Z)V
 
-    .line 1379
+    .line 1380
     invoke-virtual {v1, p1}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;->updateThumbnailSize(Landroid/graphics/Bitmap;)V
 
-    .line 1380
+    .line 1381
     invoke-static {p2, p1, v1}, Lcom/transsion/camera/app/common/algorithm/exif/ExifWriter;->writeExif([BLandroid/graphics/Bitmap;Lcom/transsion/camera/adapter/CameraResults;)[B
 
     move-result-object p1
 
-    .line 1381
+    .line 1382
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$4;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     invoke-static {p0, p1, v0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->-$$Nest$msaveJpegToFile(Lcom/transsion/camera/feature/mode/video/VideoMode;[BLandroid/graphics/Bitmap;)V
@@ -155,7 +155,7 @@
 .method public onRecording(I[F)V
     .registers 4
 
-    .line 1355
+    .line 1356
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$4;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     iget-boolean v0, v0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
@@ -170,7 +170,7 @@
 
     if-eqz v0, :cond_18
 
-    .line 1356
+    .line 1357
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$4;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->-$$Nest$fgetmTextureUpdater(Lcom/transsion/camera/feature/mode/video/VideoMode;)Lcom/transsion/camera/featurelibs/media/ITextureHolder$ITextureUpdater;

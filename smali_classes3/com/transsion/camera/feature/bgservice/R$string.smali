@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static bgservice_type:I = 0x7f130182
+.field public static bgservice_type:I = 0x7f13017c
 
 
 # direct methods

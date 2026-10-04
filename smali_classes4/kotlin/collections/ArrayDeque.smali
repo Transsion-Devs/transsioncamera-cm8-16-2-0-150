@@ -39,10 +39,9 @@
 
     const/4 v0, 0x0
 
-    .line 26
+    .line 650
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 562
     sput-object v0, Lkotlin/collections/ArrayDeque;->emptyElementData:[Ljava/lang/Object;
 
     return-void
@@ -51,10 +50,10 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 39
+    .line 38
     invoke-direct {p0}, Lkotlin/collections/AbstractMutableList;-><init>()V
 
-    .line 40
+    .line 39
     sget-object v0, Lkotlin/collections/ArrayDeque;->emptyElementData:[Ljava/lang/Object;
 
     iput-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
@@ -65,12 +64,12 @@
 .method private final copyCollectionElements(ILjava/util/Collection;)V
     .registers 7
 
-    .line 257
+    .line 261
     invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 259
+    .line 263
     iget-object v1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v1, v1
@@ -78,14 +77,14 @@
     :goto_7
     if-ge p1, v1, :cond_1a
 
-    .line 260
+    .line 264
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
     if-eqz v2, :cond_1a
 
-    .line 261
+    .line 265
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -98,7 +97,7 @@
 
     goto :goto_7
 
-    .line 263
+    .line 267
     :cond_1a
     iget p1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
@@ -107,14 +106,14 @@
     :goto_1d
     if-ge v1, p1, :cond_30
 
-    .line 264
+    .line 268
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
     if-eqz v2, :cond_30
 
-    .line 265
+    .line 269
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -127,7 +126,7 @@
 
     goto :goto_1d
 
-    .line 268
+    .line 272
     :cond_30
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
@@ -147,10 +146,10 @@
 .method private final copyElements(I)V
     .registers 6
 
-    .line 74
+    .line 73
     new-array p1, p1, [Ljava/lang/Object;
 
-    .line 75
+    .line 74
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     iget v1, p0, Lkotlin/collections/ArrayDeque;->head:I
@@ -161,7 +160,7 @@
 
     invoke-static {v0, p1, v3, v1, v2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 76
+    .line 75
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v1, v0
@@ -172,10 +171,10 @@
 
     invoke-static {v0, p1, v1, v3, v2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 77
+    .line 76
     iput v3, p0, Lkotlin/collections/ArrayDeque;->head:I
 
-    .line 78
+    .line 77
     iput-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     return-void
@@ -186,7 +185,7 @@
 
     if-nez p1, :cond_9
 
-    .line 96
+    .line 95
     iget-object p0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     invoke-static {p0}, Lkotlin/collections/ArraysKt___ArraysKt;->getLastIndex([Ljava/lang/Object;)I
@@ -206,7 +205,7 @@
 
     if-ltz p1, :cond_22
 
-    .line 60
+    .line 59
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v1, v0
@@ -215,7 +214,7 @@
 
     return-void
 
-    .line 61
+    .line 60
     :cond_8
     sget-object v1, Lkotlin/collections/ArrayDeque;->emptyElementData:[Ljava/lang/Object;
 
@@ -223,7 +222,7 @@
 
     const/16 v0, 0xa
 
-    .line 62
+    .line 61
     invoke-static {p1, v0}, Lkotlin/ranges/RangesKt;->coerceAtLeast(II)I
 
     move-result p1
@@ -234,22 +233,22 @@
 
     return-void
 
-    .line 66
+    .line 65
     :cond_17
-    sget-object v1, Lkotlin/collections/ArrayDeque;->Companion:Lkotlin/collections/ArrayDeque$Companion;
+    sget-object v1, Lkotlin/collections/AbstractList;->Companion:Lkotlin/collections/AbstractList$Companion;
 
     array-length v0, v0
 
-    invoke-virtual {v1, v0, p1}, Lkotlin/collections/ArrayDeque$Companion;->newCapacity$kotlin_stdlib(II)I
+    invoke-virtual {v1, v0, p1}, Lkotlin/collections/AbstractList$Companion;->newCapacity$kotlin_stdlib(II)I
 
     move-result p1
 
-    .line 67
+    .line 66
     invoke-direct {p0, p1}, Lkotlin/collections/ArrayDeque;->copyElements(I)V
 
     return-void
 
-    .line 59
+    .line 58
     :cond_22
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -263,7 +262,7 @@
 .method private final incremented(I)I
     .registers 2
 
-    .line 94
+    .line 93
     iget-object p0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     invoke-static {p0}, Lkotlin/collections/ArraysKt___ArraysKt;->getLastIndex([Ljava/lang/Object;)I
@@ -287,7 +286,7 @@
 
     if-gez p1, :cond_6
 
-    .line 89
+    .line 88
     iget-object p0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length p0, p0
@@ -298,10 +297,42 @@
     return p1
 .end method
 
+.method private final nullifyNonEmpty(II)V
+    .registers 6
+
+    const/4 v0, 0x0
+
+    if-ge p1, p2, :cond_9
+
+    .line 633
+    iget-object p0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
+
+    invoke-static {p0, v0, p1, p2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->fill([Ljava/lang/Object;Ljava/lang/Object;II)V
+
+    return-void
+
+    .line 635
+    :cond_9
+    iget-object v1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
+
+    array-length v2, v1
+
+    invoke-static {v1, v0, p1, v2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->fill([Ljava/lang/Object;Ljava/lang/Object;II)V
+
+    .line 636
+    iget-object p0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
+
+    const/4 p1, 0x0
+
+    invoke-static {p0, v0, p1, p2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->fill([Ljava/lang/Object;Ljava/lang/Object;II)V
+
+    return-void
+.end method
+
 .method private final positiveMod(I)I
     .registers 3
 
-    .line 87
+    .line 86
     iget-object p0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v0, p0
@@ -316,12 +347,172 @@
     return p1
 .end method
 
+.method private final registerModification()V
+    .registers 2
+
+    .line 641
+    iget v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    return-void
+.end method
+
+.method private final removeRangeShiftPreceding(II)V
+    .registers 9
+
+    add-int/lit8 v0, p1, -0x1
+
+    .line 601
+    iget v1, p0, Lkotlin/collections/ArrayDeque;->head:I
+
+    add-int/2addr v1, v0
+
+    invoke-direct {p0, v1}, Lkotlin/collections/ArrayDeque;->positiveMod(I)I
+
+    move-result v0
+
+    add-int/lit8 p2, p2, -0x1
+
+    .line 602
+    iget v1, p0, Lkotlin/collections/ArrayDeque;->head:I
+
+    add-int/2addr v1, p2
+
+    invoke-direct {p0, v1}, Lkotlin/collections/ArrayDeque;->positiveMod(I)I
+
+    move-result p2
+
+    :goto_12
+    if-lez p1, :cond_35
+
+    add-int/lit8 v1, v0, 0x1
+
+    add-int/lit8 v2, p2, 0x1
+
+    .line 606
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v2
+
+    invoke-static {p1, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v2
+
+    .line 607
+    iget-object v3, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
+
+    sub-int/2addr p2, v2
+
+    add-int/lit8 v4, p2, 0x1
+
+    sub-int/2addr v0, v2
+
+    add-int/lit8 v5, v0, 0x1
+
+    invoke-static {v3, v3, v4, v5, v1}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
+
+    .line 609
+    invoke-direct {p0, v0}, Lkotlin/collections/ArrayDeque;->negativeMod(I)I
+
+    move-result v0
+
+    .line 610
+    invoke-direct {p0, p2}, Lkotlin/collections/ArrayDeque;->negativeMod(I)I
+
+    move-result p2
+
+    sub-int/2addr p1, v2
+
+    goto :goto_12
+
+    :cond_35
+    return-void
+.end method
+
+.method private final removeRangeShiftSucceeding(II)V
+    .registers 7
+
+    .line 616
+    iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
+
+    add-int/2addr v0, p2
+
+    invoke-direct {p0, v0}, Lkotlin/collections/ArrayDeque;->positiveMod(I)I
+
+    move-result v0
+
+    .line 617
+    iget v1, p0, Lkotlin/collections/ArrayDeque;->head:I
+
+    add-int/2addr v1, p1
+
+    invoke-direct {p0, v1}, Lkotlin/collections/ArrayDeque;->positiveMod(I)I
+
+    move-result p1
+
+    .line 618
+    invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
+
+    move-result v1
+
+    :goto_12
+    sub-int/2addr v1, p2
+
+    if-lez v1, :cond_34
+
+    .line 621
+    iget-object p2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
+
+    array-length v2, p2
+
+    sub-int/2addr v2, v0
+
+    array-length p2, p2
+
+    sub-int/2addr p2, p1
+
+    invoke-static {v2, p2}, Ljava/lang/Math;->min(II)I
+
+    move-result p2
+
+    invoke-static {v1, p2}, Ljava/lang/Math;->min(II)I
+
+    move-result p2
+
+    .line 622
+    iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
+
+    add-int v3, v0, p2
+
+    invoke-static {v2, v2, p1, v0, v3}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
+
+    .line 624
+    invoke-direct {p0, v3}, Lkotlin/collections/ArrayDeque;->positiveMod(I)I
+
+    move-result v0
+
+    add-int/2addr p1, p2
+
+    .line 625
+    invoke-direct {p0, p1}, Lkotlin/collections/ArrayDeque;->positiveMod(I)I
+
+    move-result p1
+
+    goto :goto_12
+
+    :cond_34
+    return-void
+.end method
+
 
 # virtual methods
 .method public add(ILjava/lang/Object;)V
     .registers 10
 
-    .line 184
+    .line 187
     sget-object v0, Lkotlin/collections/AbstractList;->Companion:Lkotlin/collections/AbstractList$Companion;
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -330,14 +521,14 @@
 
     invoke-virtual {v0, p1, v1}, Lkotlin/collections/AbstractList$Companion;->checkPositionIndex$kotlin_stdlib(II)V
 
-    .line 186
+    .line 189
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result v0
 
     if-ne p1, v0, :cond_13
 
-    .line 187
+    .line 190
     invoke-virtual {p0, p2}, Lkotlin/collections/ArrayDeque;->addLast(Ljava/lang/Object;)V
 
     return-void
@@ -345,13 +536,16 @@
     :cond_13
     if-nez p1, :cond_19
 
-    .line 190
+    .line 193
     invoke-virtual {p0, p2}, Lkotlin/collections/ArrayDeque;->addFirst(Ljava/lang/Object;)V
 
     return-void
 
-    .line 194
+    .line 197
     :cond_19
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
+
+    .line 198
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result v0
@@ -362,7 +556,7 @@
 
     invoke-direct {p0, v0}, Lkotlin/collections/ArrayDeque;->ensureCapacity(I)V
 
-    .line 221
+    .line 225
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     add-int/2addr v0, p1
@@ -371,7 +565,7 @@
 
     move-result v0
 
-    .line 223
+    .line 227
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result v2
@@ -382,26 +576,26 @@
 
     const/4 v3, 0x0
 
-    if-ge p1, v2, :cond_6a
+    if-ge p1, v2, :cond_6d
 
-    .line 225
+    .line 229
     invoke-direct {p0, v0}, Lkotlin/collections/ArrayDeque;->decremented(I)I
 
     move-result p1
 
-    .line 226
+    .line 230
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     invoke-direct {p0, v0}, Lkotlin/collections/ArrayDeque;->decremented(I)I
 
     move-result v0
 
-    .line 228
+    .line 232
     iget v2, p0, Lkotlin/collections/ArrayDeque;->head:I
 
-    if-lt p1, v2, :cond_4e
+    if-lt p1, v2, :cond_51
 
-    .line 229
+    .line 233
     iget-object v3, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v4, v3, v2
@@ -412,13 +606,13 @@
 
     add-int/lit8 v5, p1, 0x1
 
-    .line 230
+    .line 234
     invoke-static {v3, v3, v2, v4, v5}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_63
+    goto :goto_66
 
-    .line 232
-    :cond_4e
+    .line 236
+    :cond_51
     iget-object v4, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     add-int/lit8 v5, v2, -0x1
@@ -427,7 +621,7 @@
 
     invoke-static {v4, v4, v5, v2, v6}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 233
+    .line 237
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v4, v2
@@ -440,22 +634,22 @@
 
     add-int/lit8 v4, p1, 0x1
 
-    .line 234
+    .line 238
     invoke-static {v2, v2, v3, v1, v4}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 237
-    :goto_63
+    .line 241
+    :goto_66
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aput-object p2, v2, p1
 
-    .line 238
+    .line 242
     iput v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
-    goto :goto_97
+    goto :goto_9a
 
-    .line 241
-    :cond_6a
+    .line 245
+    :cond_6d
     iget p1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -468,24 +662,24 @@
 
     move-result p1
 
-    if-ge v0, p1, :cond_7f
+    if-ge v0, p1, :cond_82
 
-    .line 244
+    .line 248
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     add-int/lit8 v3, v0, 0x1
 
     invoke-static {v2, v2, v3, v0, p1}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_93
+    goto :goto_96
 
-    .line 246
-    :cond_7f
+    .line 250
+    :cond_82
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     invoke-static {v2, v2, v1, v3, p1}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 247
+    .line 251
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v2, p1
@@ -498,21 +692,21 @@
 
     add-int/lit8 v2, v0, 0x1
 
-    .line 248
+    .line 252
     array-length v3, p1
 
     sub-int/2addr v3, v1
 
     invoke-static {p1, p1, v2, v0, v3}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 251
-    :goto_93
+    .line 255
+    :goto_96
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aput-object p2, p1, v0
 
-    .line 253
-    :goto_97
+    .line 257
+    :goto_9a
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result p1
@@ -527,7 +721,7 @@
 .method public add(Ljava/lang/Object;)Z
     .registers 2
 
-    .line 179
+    .line 182
     invoke-virtual {p0, p1}, Lkotlin/collections/ArrayDeque;->addLast(Ljava/lang/Object;)V
 
     const/4 p0, 0x1
@@ -542,7 +736,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 279
+    .line 285
     sget-object v0, Lkotlin/collections/AbstractList;->Companion:Lkotlin/collections/AbstractList$Companion;
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -551,7 +745,7 @@
 
     invoke-virtual {v0, p1, v1}, Lkotlin/collections/AbstractList$Companion;->checkPositionIndex$kotlin_stdlib(II)V
 
-    .line 281
+    .line 287
     invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
@@ -562,7 +756,7 @@
 
     return v1
 
-    .line 283
+    .line 289
     :cond_16
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
@@ -570,15 +764,18 @@
 
     if-ne p1, v0, :cond_21
 
-    .line 284
+    .line 290
     invoke-virtual {p0, p2}, Lkotlin/collections/ArrayDeque;->addAll(Ljava/util/Collection;)Z
 
     move-result p0
 
     return p0
 
-    .line 287
+    .line 293
     :cond_21
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
+
+    .line 294
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result v0
@@ -591,7 +788,7 @@
 
     invoke-direct {p0, v0}, Lkotlin/collections/ArrayDeque;->ensureCapacity(I)V
 
-    .line 289
+    .line 296
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -604,7 +801,7 @@
 
     move-result v0
 
-    .line 290
+    .line 297
     iget v2, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     add-int/2addr v2, p1
@@ -613,12 +810,12 @@
 
     move-result v2
 
-    .line 291
+    .line 298
     invoke-interface {p2}, Ljava/util/Collection;->size()I
 
     move-result v3
 
-    .line 293
+    .line 300
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result v4
@@ -629,26 +826,26 @@
 
     shr-int/2addr v4, v5
 
-    if-ge p1, v4, :cond_9d
+    if-ge p1, v4, :cond_a0
 
-    .line 296
+    .line 303
     iget p1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     sub-int v0, p1, v3
 
-    if-lt v2, p1, :cond_76
+    if-lt v2, p1, :cond_79
 
-    if-ltz v0, :cond_5a
+    if-ltz v0, :cond_5d
 
-    .line 300
+    .line 307
     iget-object v1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     invoke-static {v1, v1, v0, p1, v2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_92
+    goto :goto_95
 
-    .line 302
-    :cond_5a
+    .line 309
+    :cond_5d
     iget-object v4, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v6, v4
@@ -657,25 +854,25 @@
 
     sub-int v6, v2, p1
 
-    .line 304
+    .line 311
     array-length v7, v4
 
     sub-int/2addr v7, v0
 
-    if-lt v7, v6, :cond_68
+    if-lt v7, v6, :cond_6b
 
-    .line 307
+    .line 314
     invoke-static {v4, v4, v0, p1, v2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_92
+    goto :goto_95
 
-    :cond_68
+    :cond_6b
     add-int v6, p1, v7
 
-    .line 309
+    .line 316
     invoke-static {v4, v4, v0, p1, v6}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 310
+    .line 317
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     iget v4, p0, Lkotlin/collections/ArrayDeque;->head:I
@@ -684,19 +881,19 @@
 
     invoke-static {p1, p1, v1, v4, v2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_92
+    goto :goto_95
 
-    .line 314
-    :cond_76
+    .line 321
+    :cond_79
     iget-object v4, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v6, v4
 
     invoke-static {v4, v4, v0, p1, v6}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    if-lt v3, v2, :cond_86
+    if-lt v3, v2, :cond_89
 
-    .line 316
+    .line 323
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v4, p1
@@ -705,10 +902,10 @@
 
     invoke-static {p1, p1, v4, v1, v2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_92
+    goto :goto_95
 
-    .line 318
-    :cond_86
+    .line 325
+    :cond_89
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v4, p1
@@ -717,92 +914,92 @@
 
     invoke-static {p1, p1, v4, v1, v3}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 319
+    .line 326
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     invoke-static {p1, p1, v1, v3, v2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 322
-    :goto_92
+    .line 329
+    :goto_95
     iput v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     sub-int/2addr v2, v3
 
-    .line 323
+    .line 330
     invoke-direct {p0, v2}, Lkotlin/collections/ArrayDeque;->negativeMod(I)I
 
     move-result p1
 
     invoke-direct {p0, p1, p2}, Lkotlin/collections/ArrayDeque;->copyCollectionElements(ILjava/util/Collection;)V
 
-    goto :goto_e2
+    goto :goto_e5
 
-    :cond_9d
+    :cond_a0
     add-int p1, v2, v3
 
-    if-ge v2, v0, :cond_c1
+    if-ge v2, v0, :cond_c4
 
     add-int/2addr v3, v0
 
-    .line 330
+    .line 337
     iget-object v4, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v6, v4
 
-    if-gt v3, v6, :cond_ab
+    if-gt v3, v6, :cond_ae
 
-    .line 331
+    .line 338
     invoke-static {v4, v4, p1, v2, v0}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_df
+    goto :goto_e2
 
-    .line 333
-    :cond_ab
+    .line 340
+    :cond_ae
     array-length v6, v4
 
-    if-lt p1, v6, :cond_b4
+    if-lt p1, v6, :cond_b7
 
-    .line 334
+    .line 341
     array-length v1, v4
 
     sub-int/2addr p1, v1
 
     invoke-static {v4, v4, p1, v2, v0}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_df
+    goto :goto_e2
 
-    .line 336
-    :cond_b4
+    .line 343
+    :cond_b7
     array-length v6, v4
 
     sub-int/2addr v3, v6
 
     sub-int v3, v0, v3
 
-    .line 337
+    .line 344
     invoke-static {v4, v4, v1, v3, v0}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 338
+    .line 345
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     invoke-static {v0, v0, p1, v2, v3}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_df
+    goto :goto_e2
 
-    .line 342
-    :cond_c1
+    .line 349
+    :cond_c4
     iget-object v4, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     invoke-static {v4, v4, v3, v1, v0}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 343
+    .line 350
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v4, v0
 
-    if-lt p1, v4, :cond_d2
+    if-lt p1, v4, :cond_d5
 
-    .line 344
+    .line 351
     array-length v1, v0
 
     sub-int/2addr p1, v1
@@ -811,10 +1008,10 @@
 
     invoke-static {v0, v0, p1, v2, v1}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_df
+    goto :goto_e2
 
-    .line 346
-    :cond_d2
+    .line 353
+    :cond_d5
     array-length v4, v0
 
     sub-int/2addr v4, v3
@@ -823,7 +1020,7 @@
 
     invoke-static {v0, v0, v1, v4, v6}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 347
+    .line 354
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v1, v0
@@ -832,11 +1029,11 @@
 
     invoke-static {v0, v0, p1, v2, v1}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 350
-    :goto_df
+    .line 357
+    :goto_e2
     invoke-direct {p0, v2, p2}, Lkotlin/collections/ArrayDeque;->copyCollectionElements(ILjava/util/Collection;)V
 
-    :goto_e2
+    :goto_e5
     return v5
 .end method
 
@@ -847,7 +1044,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 272
+    .line 276
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
@@ -858,8 +1055,11 @@
 
     return p0
 
-    .line 273
+    .line 278
     :cond_d
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
+
+    .line 279
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result v0
@@ -872,7 +1072,7 @@
 
     invoke-direct {p0, v0}, Lkotlin/collections/ArrayDeque;->ensureCapacity(I)V
 
-    .line 274
+    .line 280
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -894,6 +1094,9 @@
 
 .method public final addFirst(Ljava/lang/Object;)V
     .registers 4
+
+    .line 123
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
 
     .line 124
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -934,6 +1137,9 @@
     .registers 5
 
     .line 135
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
+
+    .line 136
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result v0
@@ -942,7 +1148,7 @@
 
     invoke-direct {p0, v0}, Lkotlin/collections/ArrayDeque;->ensureCapacity(I)V
 
-    .line 137
+    .line 138
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     iget v1, p0, Lkotlin/collections/ArrayDeque;->head:I
@@ -959,7 +1165,7 @@
 
     aput-object p1, v0, v1
 
-    .line 138
+    .line 139
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result p1
@@ -972,9 +1178,19 @@
 .end method
 
 .method public clear()V
-    .registers 7
+    .registers 3
 
-    .line 521
+    .line 532
+    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_19
+
+    .line 533
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
+
+    .line 535
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -987,51 +1203,19 @@
 
     move-result v0
 
-    .line 522
+    .line 536
     iget v1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
-    const/4 v2, 0x0
+    invoke-direct {p0, v1, v0}, Lkotlin/collections/ArrayDeque;->nullifyNonEmpty(II)V
 
-    const/4 v3, 0x0
+    :cond_19
+    const/4 v0, 0x0
 
-    if-ge v1, v0, :cond_17
+    .line 538
+    iput v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
-    .line 523
-    iget-object v4, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
-
-    invoke-static {v4, v3, v1, v0}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->fill([Ljava/lang/Object;Ljava/lang/Object;II)V
-
-    goto :goto_2a
-
-    .line 524
-    :cond_17
-    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2a
-
-    .line 525
-    iget-object v1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
-
-    iget v4, p0, Lkotlin/collections/ArrayDeque;->head:I
-
-    array-length v5, v1
-
-    invoke-static {v1, v3, v4, v5}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->fill([Ljava/lang/Object;Ljava/lang/Object;II)V
-
-    .line 526
-    iget-object v1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
-
-    invoke-static {v1, v3, v2, v0}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->fill([Ljava/lang/Object;Ljava/lang/Object;II)V
-
-    .line 528
-    :cond_2a
-    :goto_2a
-    iput v2, p0, Lkotlin/collections/ArrayDeque;->head:I
-
-    .line 529
-    iput v2, p0, Lkotlin/collections/ArrayDeque;->size:I
+    .line 539
+    iput v0, p0, Lkotlin/collections/ArrayDeque;->size:I
 
     return-void
 .end method
@@ -1039,7 +1223,7 @@
 .method public contains(Ljava/lang/Object;)Z
     .registers 2
 
-    .line 372
+    .line 379
     invoke-virtual {p0, p1}, Lkotlin/collections/ArrayDeque;->indexOf(Ljava/lang/Object;)I
 
     move-result p0
@@ -1061,7 +1245,7 @@
 .method public final firstOrNull()Ljava/lang/Object;
     .registers 2
 
-    .line 108
+    .line 107
     invoke-virtual {p0}, Lkotlin/collections/ArrayDeque;->isEmpty()Z
 
     move-result v0
@@ -1085,7 +1269,7 @@
 .method public get(I)Ljava/lang/Object;
     .registers 4
 
-    .line 357
+    .line 364
     sget-object v0, Lkotlin/collections/AbstractList;->Companion:Lkotlin/collections/AbstractList$Companion;
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -1094,7 +1278,7 @@
 
     invoke-virtual {v0, p1, v1}, Lkotlin/collections/AbstractList$Companion;->checkElementIndex$kotlin_stdlib(II)V
 
-    .line 359
+    .line 366
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     iget v1, p0, Lkotlin/collections/ArrayDeque;->head:I
@@ -1113,7 +1297,7 @@
 .method public getSize()I
     .registers 1
 
-    .line 22
+    .line 21
     iget p0, p0, Lkotlin/collections/ArrayDeque;->size:I
 
     return p0
@@ -1122,7 +1306,7 @@
 .method public indexOf(Ljava/lang/Object;)I
     .registers 6
 
-    .line 375
+    .line 382
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -1135,7 +1319,7 @@
 
     move-result v0
 
-    .line 377
+    .line 384
     iget v1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     if-ge v1, v0, :cond_22
@@ -1143,7 +1327,7 @@
     :goto_f
     if-ge v1, v0, :cond_50
 
-    .line 379
+    .line 386
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v2, v2, v1
@@ -1169,7 +1353,7 @@
     :cond_22
     if-lt v1, v0, :cond_50
 
-    .line 382
+    .line 389
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v2, v2
@@ -1177,7 +1361,7 @@
     :goto_27
     if-ge v1, v2, :cond_39
 
-    .line 383
+    .line 390
     iget-object v3, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v3, v3, v1
@@ -1203,7 +1387,7 @@
     :goto_3a
     if-ge v1, v0, :cond_50
 
-    .line 386
+    .line 393
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v2, v2, v1
@@ -1238,7 +1422,7 @@
 .method public isEmpty()Z
     .registers 1
 
-    .line 98
+    .line 97
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result p0
@@ -1258,7 +1442,7 @@
 .method public lastIndexOf(Ljava/lang/Object;)I
     .registers 6
 
-    .line 394
+    .line 401
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -1271,7 +1455,7 @@
 
     move-result v0
 
-    .line 396
+    .line 403
     iget v1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     const/4 v2, -0x1
@@ -1282,7 +1466,7 @@
 
     if-gt v1, v0, :cond_5d
 
-    .line 398
+    .line 405
     :goto_14
     iget-object v3, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
@@ -1316,7 +1500,7 @@
     :goto_2b
     if-ge v2, v0, :cond_41
 
-    .line 402
+    .line 409
     iget-object v1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v1, v1, v0
@@ -1342,7 +1526,7 @@
 
     goto :goto_2b
 
-    .line 404
+    .line 411
     :cond_41
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
@@ -1354,7 +1538,7 @@
 
     if-gt v1, v0, :cond_5d
 
-    .line 405
+    .line 412
     :goto_4b
     iget-object v3, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
@@ -1384,7 +1568,7 @@
 .method public remove(Ljava/lang/Object;)Z
     .registers 3
 
-    .line 413
+    .line 420
     invoke-virtual {p0, p1}, Lkotlin/collections/ArrayDeque;->indexOf(Ljava/lang/Object;)I
 
     move-result p1
@@ -1397,9 +1581,9 @@
 
     return p0
 
-    .line 415
+    .line 422
     :cond_9
-    invoke-virtual {p0, p1}, Lkotlin/collections/AbstractMutableList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lkotlin/collections/ArrayDeque;->removeAt(I)Ljava/lang/Object;
 
     const/4 p0, 0x1
 
@@ -1413,14 +1597,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 467
+    .line 476
     invoke-virtual {p0}, Lkotlin/collections/ArrayDeque;->isEmpty()Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8e
+    if-nez v0, :cond_91
 
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
@@ -1428,9 +1612,9 @@
 
     if-nez v0, :cond_13
 
-    goto/16 :goto_8e
+    goto/16 :goto_91
 
-    .line 470
+    .line 479
     :cond_13
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
@@ -1444,7 +1628,7 @@
 
     move-result v0
 
-    .line 471
+    .line 480
     iget v2, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     const/4 v3, 0x0
@@ -1458,19 +1642,19 @@
     :goto_25
     if-ge v2, v0, :cond_3d
 
-    .line 476
+    .line 485
     iget-object v6, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v6, v6, v2
 
-    .line 462
+    .line 471
     invoke-interface {p1, v6}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result v7
 
     if-nez v7, :cond_39
 
-    .line 480
+    .line 489
     iget-object v7, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     add-int/lit8 v8, v5, 0x1
@@ -1489,7 +1673,7 @@
 
     goto :goto_25
 
-    .line 485
+    .line 494
     :cond_3d
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
@@ -1497,7 +1681,7 @@
 
     goto :goto_83
 
-    .line 488
+    .line 497
     :cond_43
     iget-object v5, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
@@ -1510,22 +1694,22 @@
     :goto_48
     if-ge v2, v5, :cond_62
 
-    .line 489
+    .line 498
     iget-object v8, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v9, v8, v2
 
-    .line 490
+    .line 499
     aput-object v3, v8, v2
 
-    .line 462
+    .line 471
     invoke-interface {p1, v9}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result v8
 
     if-nez v8, :cond_5e
 
-    .line 494
+    .line 503
     iget-object v8, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     add-int/lit8 v10, v6, 0x1
@@ -1544,7 +1728,7 @@
 
     goto :goto_48
 
-    .line 499
+    .line 508
     :cond_62
     invoke-direct {p0, v6}, Lkotlin/collections/ArrayDeque;->positiveMod(I)I
 
@@ -1555,27 +1739,27 @@
     :goto_67
     if-ge v1, v0, :cond_82
 
-    .line 502
+    .line 511
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v6, v2, v1
 
-    .line 503
+    .line 512
     aput-object v3, v2, v1
 
-    .line 462
+    .line 471
     invoke-interface {p1, v6}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_7e
 
-    .line 507
+    .line 516
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aput-object v6, v2, v5
 
-    .line 508
+    .line 517
     invoke-direct {p0, v5}, Lkotlin/collections/ArrayDeque;->incremented(I)I
 
     move-result v5
@@ -1594,9 +1778,12 @@
     move v1, v7
 
     :goto_83
-    if-eqz v1, :cond_8e
+    if-eqz v1, :cond_91
 
-    .line 515
+    .line 524
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
+
+    .line 525
     iget p1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     sub-int/2addr v5, p1
@@ -1607,15 +1794,15 @@
 
     iput p1, p0, Lkotlin/collections/ArrayDeque;->size:I
 
-    :cond_8e
-    :goto_8e
+    :cond_91
+    :goto_91
     return v1
 .end method
 
 .method public removeAt(I)Ljava/lang/Object;
     .registers 10
 
-    .line 420
+    .line 427
     sget-object v0, Lkotlin/collections/AbstractList;->Companion:Lkotlin/collections/AbstractList$Companion;
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -1624,14 +1811,14 @@
 
     invoke-virtual {v0, p1, v1}, Lkotlin/collections/AbstractList$Companion;->checkElementIndex$kotlin_stdlib(II)V
 
-    .line 422
+    .line 429
     invoke-static {p0}, Lkotlin/collections/CollectionsKt__CollectionsKt;->getLastIndex(Ljava/util/List;)I
 
     move-result v0
 
     if-ne p1, v0, :cond_14
 
-    .line 423
+    .line 430
     invoke-virtual {p0}, Lkotlin/collections/ArrayDeque;->removeLast()Ljava/lang/Object;
 
     move-result-object p0
@@ -1641,15 +1828,18 @@
     :cond_14
     if-nez p1, :cond_1b
 
-    .line 425
+    .line 432
     invoke-virtual {p0}, Lkotlin/collections/ArrayDeque;->removeFirst()Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 
-    .line 428
+    .line 435
     :cond_1b
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
+
+    .line 437
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     add-int/2addr v0, p1
@@ -1658,12 +1848,12 @@
 
     move-result v0
 
-    .line 429
+    .line 438
     iget-object v1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v1, v1, v0
 
-    .line 431
+    .line 440
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result v2
@@ -1676,29 +1866,29 @@
 
     const/4 v5, 0x0
 
-    if-ge p1, v2, :cond_5f
+    if-ge p1, v2, :cond_62
 
-    .line 433
+    .line 442
     iget p1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
-    if-lt v0, p1, :cond_3c
+    if-lt v0, p1, :cond_3f
 
-    .line 434
+    .line 443
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     add-int/lit8 v5, p1, 0x1
 
     invoke-static {v2, v2, v5, p1, v0}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_52
+    goto :goto_55
 
-    .line 436
-    :cond_3c
+    .line 445
+    :cond_3f
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     invoke-static {p1, p1, v3, v5, v0}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 437
+    .line 446
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v0, p1
@@ -1709,7 +1899,7 @@
 
     aput-object v0, p1, v5
 
-    .line 438
+    .line 447
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     add-int/lit8 v2, v0, 0x1
@@ -1720,25 +1910,25 @@
 
     invoke-static {p1, p1, v2, v0, v5}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 441
-    :goto_52
+    .line 450
+    :goto_55
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     aput-object v4, p1, v0
 
-    .line 442
+    .line 451
     invoke-direct {p0, v0}, Lkotlin/collections/ArrayDeque;->incremented(I)I
 
     move-result p1
 
     iput p1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
-    goto :goto_8f
+    goto :goto_92
 
-    .line 445
-    :cond_5f
+    .line 454
+    :cond_62
     iget p1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     invoke-static {p0}, Lkotlin/collections/CollectionsKt__CollectionsKt;->getLastIndex(Ljava/util/List;)I
@@ -1751,9 +1941,9 @@
 
     move-result p1
 
-    if-gt v0, p1, :cond_76
+    if-gt v0, p1, :cond_79
 
-    .line 448
+    .line 457
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     add-int/lit8 v5, v0, 0x1
@@ -1762,10 +1952,10 @@
 
     invoke-static {v2, v2, v0, v5, v6}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    goto :goto_8b
+    goto :goto_8e
 
-    .line 450
-    :cond_76
+    .line 459
+    :cond_79
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     add-int/lit8 v6, v0, 0x1
@@ -1774,7 +1964,7 @@
 
     invoke-static {v2, v2, v0, v6, v7}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 451
+    .line 460
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v2, v0
@@ -1787,17 +1977,17 @@
 
     add-int/lit8 v2, p1, 0x1
 
-    .line 452
+    .line 461
     invoke-static {v0, v0, v5, v3, v2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 455
-    :goto_8b
+    .line 464
+    :goto_8e
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aput-object v4, v0, p1
 
-    .line 457
-    :goto_8f
+    .line 466
+    :goto_92
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result p1
@@ -1812,14 +2002,17 @@
 .method public final removeFirst()Ljava/lang/Object;
     .registers 5
 
-    .line 145
+    .line 146
     invoke-virtual {p0}, Lkotlin/collections/ArrayDeque;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_21
 
     .line 147
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
+
+    .line 149
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     iget v1, p0, Lkotlin/collections/ArrayDeque;->head:I
@@ -1828,17 +2021,17 @@
 
     const/4 v3, 0x0
 
-    .line 148
+    .line 150
     aput-object v3, v0, v1
 
-    .line 149
+    .line 151
     invoke-direct {p0, v1}, Lkotlin/collections/ArrayDeque;->incremented(I)I
 
     move-result v0
 
     iput v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
-    .line 150
+    .line 152
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result v0
@@ -1849,8 +2042,8 @@
 
     return-object v2
 
-    .line 145
-    :cond_1e
+    .line 146
+    :cond_21
     new-instance p0, Ljava/util/NoSuchElementException;
 
     const-string v0, "ArrayDeque is empty."
@@ -1863,7 +2056,7 @@
 .method public final removeFirstOrNull()Ljava/lang/Object;
     .registers 2
 
-    .line 157
+    .line 159
     invoke-virtual {p0}, Lkotlin/collections/ArrayDeque;->isEmpty()Z
 
     move-result v0
@@ -1885,14 +2078,17 @@
 .method public final removeLast()Ljava/lang/Object;
     .registers 5
 
-    .line 163
+    .line 165
     invoke-virtual {p0}, Lkotlin/collections/ArrayDeque;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_24
 
-    .line 165
+    .line 166
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
+
+    .line 168
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     invoke-static {p0}, Lkotlin/collections/CollectionsKt__CollectionsKt;->getLastIndex(Ljava/util/List;)I
@@ -1905,17 +2101,17 @@
 
     move-result v0
 
-    .line 166
+    .line 169
     iget-object v1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v2, v1, v0
 
     const/4 v3, 0x0
 
-    .line 167
+    .line 170
     aput-object v3, v1, v0
 
-    .line 168
+    .line 171
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result v0
@@ -1926,8 +2122,8 @@
 
     return-object v2
 
-    .line 163
-    :cond_21
+    .line 165
+    :cond_24
     new-instance p0, Ljava/util/NoSuchElementException;
 
     const-string v0, "ArrayDeque is empty."
@@ -1937,6 +2133,121 @@
     throw p0
 .end method
 
+.method protected removeRange(II)V
+    .registers 5
+
+    .line 565
+    sget-object v0, Lkotlin/collections/AbstractList;->Companion:Lkotlin/collections/AbstractList$Companion;
+
+    invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
+
+    move-result v1
+
+    invoke-virtual {v0, p1, p2, v1}, Lkotlin/collections/AbstractList$Companion;->checkRangeIndexes$kotlin_stdlib(III)V
+
+    sub-int v0, p2, p1
+
+    if-nez v0, :cond_e
+
+    return-void
+
+    .line 570
+    :cond_e
+    invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_18
+
+    .line 571
+    invoke-virtual {p0}, Lkotlin/collections/ArrayDeque;->clear()V
+
+    return-void
+
+    :cond_18
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_1f
+
+    .line 575
+    invoke-virtual {p0, p1}, Lkotlin/collections/ArrayDeque;->removeAt(I)Ljava/lang/Object;
+
+    return-void
+
+    .line 580
+    :cond_1f
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
+
+    .line 582
+    invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
+
+    move-result v1
+
+    sub-int/2addr v1, p2
+
+    if-ge p1, v1, :cond_3b
+
+    .line 584
+    invoke-direct {p0, p1, p2}, Lkotlin/collections/ArrayDeque;->removeRangeShiftPreceding(II)V
+
+    .line 586
+    iget p1, p0, Lkotlin/collections/ArrayDeque;->head:I
+
+    add-int/2addr p1, v0
+
+    invoke-direct {p0, p1}, Lkotlin/collections/ArrayDeque;->positiveMod(I)I
+
+    move-result p1
+
+    .line 587
+    iget p2, p0, Lkotlin/collections/ArrayDeque;->head:I
+
+    invoke-direct {p0, p2, p1}, Lkotlin/collections/ArrayDeque;->nullifyNonEmpty(II)V
+
+    .line 588
+    iput p1, p0, Lkotlin/collections/ArrayDeque;->head:I
+
+    goto :goto_52
+
+    .line 591
+    :cond_3b
+    invoke-direct {p0, p1, p2}, Lkotlin/collections/ArrayDeque;->removeRangeShiftSucceeding(II)V
+
+    .line 593
+    iget p1, p0, Lkotlin/collections/ArrayDeque;->head:I
+
+    invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
+
+    move-result p2
+
+    add-int/2addr p1, p2
+
+    invoke-direct {p0, p1}, Lkotlin/collections/ArrayDeque;->positiveMod(I)I
+
+    move-result p1
+
+    sub-int p2, p1, v0
+
+    .line 594
+    invoke-direct {p0, p2}, Lkotlin/collections/ArrayDeque;->negativeMod(I)I
+
+    move-result p2
+
+    invoke-direct {p0, p2, p1}, Lkotlin/collections/ArrayDeque;->nullifyNonEmpty(II)V
+
+    .line 597
+    :goto_52
+    invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
+
+    move-result p1
+
+    sub-int/2addr p1, v0
+
+    iput p1, p0, Lkotlin/collections/ArrayDeque;->size:I
+
+    return-void
+.end method
+
 .method public retainAll(Ljava/util/Collection;)Z
     .registers 13
 
@@ -1944,14 +2255,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 467
+    .line 476
     invoke-virtual {p0}, Lkotlin/collections/ArrayDeque;->isEmpty()Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_8e
+    if-nez v0, :cond_91
 
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
@@ -1959,9 +2270,9 @@
 
     if-nez v0, :cond_13
 
-    goto/16 :goto_8e
+    goto/16 :goto_91
 
-    .line 470
+    .line 479
     :cond_13
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
@@ -1975,7 +2286,7 @@
 
     move-result v0
 
-    .line 471
+    .line 480
     iget v2, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     const/4 v3, 0x0
@@ -1989,19 +2300,19 @@
     :goto_25
     if-ge v2, v0, :cond_3d
 
-    .line 476
+    .line 485
     iget-object v6, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v6, v6, v2
 
-    .line 464
+    .line 473
     invoke-interface {p1, v6}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result v7
 
     if-eqz v7, :cond_39
 
-    .line 480
+    .line 489
     iget-object v7, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     add-int/lit8 v8, v5, 0x1
@@ -2020,7 +2331,7 @@
 
     goto :goto_25
 
-    .line 485
+    .line 494
     :cond_3d
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
@@ -2028,7 +2339,7 @@
 
     goto :goto_83
 
-    .line 488
+    .line 497
     :cond_43
     iget-object v5, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
@@ -2041,22 +2352,22 @@
     :goto_48
     if-ge v2, v5, :cond_62
 
-    .line 489
+    .line 498
     iget-object v8, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v9, v8, v2
 
-    .line 490
+    .line 499
     aput-object v3, v8, v2
 
-    .line 464
+    .line 473
     invoke-interface {p1, v9}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result v8
 
     if-eqz v8, :cond_5e
 
-    .line 494
+    .line 503
     iget-object v8, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     add-int/lit8 v10, v6, 0x1
@@ -2075,7 +2386,7 @@
 
     goto :goto_48
 
-    .line 499
+    .line 508
     :cond_62
     invoke-direct {p0, v6}, Lkotlin/collections/ArrayDeque;->positiveMod(I)I
 
@@ -2086,27 +2397,27 @@
     :goto_67
     if-ge v1, v0, :cond_82
 
-    .line 502
+    .line 511
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v6, v2, v1
 
-    .line 503
+    .line 512
     aput-object v3, v2, v1
 
-    .line 464
+    .line 473
     invoke-interface {p1, v6}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_7e
 
-    .line 507
+    .line 516
     iget-object v2, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aput-object v6, v2, v5
 
-    .line 508
+    .line 517
     invoke-direct {p0, v5}, Lkotlin/collections/ArrayDeque;->incremented(I)I
 
     move-result v5
@@ -2125,9 +2436,12 @@
     move v1, v7
 
     :goto_83
-    if-eqz v1, :cond_8e
+    if-eqz v1, :cond_91
 
-    .line 515
+    .line 524
+    invoke-direct {p0}, Lkotlin/collections/ArrayDeque;->registerModification()V
+
+    .line 525
     iget p1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     sub-int/2addr v5, p1
@@ -2138,15 +2452,15 @@
 
     iput p1, p0, Lkotlin/collections/ArrayDeque;->size:I
 
-    :cond_8e
-    :goto_8e
+    :cond_91
+    :goto_91
     return v1
 .end method
 
 .method public set(ILjava/lang/Object;)Ljava/lang/Object;
     .registers 5
 
-    .line 363
+    .line 370
     sget-object v0, Lkotlin/collections/AbstractList;->Companion:Lkotlin/collections/AbstractList$Companion;
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -2155,7 +2469,7 @@
 
     invoke-virtual {v0, p1, v1}, Lkotlin/collections/AbstractList$Companion;->checkElementIndex$kotlin_stdlib(II)V
 
-    .line 365
+    .line 372
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     add-int/2addr v0, p1
@@ -2164,12 +2478,12 @@
 
     move-result p1
 
-    .line 366
+    .line 373
     iget-object p0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     aget-object v0, p0, p1
 
-    .line 367
+    .line 374
     aput-object p2, p0, p1
 
     return-object v0
@@ -2178,7 +2492,7 @@
 .method public toArray()[Ljava/lang/Object;
     .registers 2
 
-    .line 554
+    .line 561
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result v0
@@ -2199,7 +2513,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 535
+    .line 545
     array-length v0, p1
 
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
@@ -2224,7 +2538,7 @@
 
     goto :goto_c
 
-    .line 537
+    .line 547
     :goto_17
     iget p1, p0, Lkotlin/collections/ArrayDeque;->head:I
 
@@ -2238,12 +2552,12 @@
 
     move-result v4
 
-    .line 538
+    .line 548
     iget v3, p0, Lkotlin/collections/ArrayDeque;->head:I
 
     if-ge v3, v4, :cond_2f
 
-    .line 539
+    .line 549
     iget-object v0, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     const/4 v5, 0x2
@@ -2256,7 +2570,7 @@
 
     goto :goto_47
 
-    .line 540
+    .line 550
     :cond_2f
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
@@ -2264,7 +2578,7 @@
 
     if-nez p1, :cond_47
 
-    .line 541
+    .line 551
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     iget v0, p0, Lkotlin/collections/ArrayDeque;->head:I
@@ -2275,7 +2589,7 @@
 
     invoke-static {p1, v1, v3, v0, v2}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 542
+    .line 552
     iget-object p1, p0, Lkotlin/collections/ArrayDeque;->elementData:[Ljava/lang/Object;
 
     array-length v0, p1
@@ -2286,26 +2600,16 @@
 
     invoke-static {p1, v1, v0, v3, v4}, Lkotlin/collections/ArraysKt___ArraysJvmKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
-    .line 544
+    .line 556
     :cond_47
     :goto_47
-    array-length p1, v1
-
-    invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
-
-    move-result v0
-
-    if-le p1, v0, :cond_55
-
-    .line 545
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableList;->size()I
 
     move-result p0
 
-    const/4 p1, 0x0
+    invoke-static {p0, v1}, Lkotlin/collections/CollectionsKt__CollectionsJVMKt;->terminateCollectionToArray(I[Ljava/lang/Object;)[Ljava/lang/Object;
 
-    aput-object p1, v1, p0
+    move-result-object p0
 
-    :cond_55
-    return-object v1
+    return-object p0
 .end method

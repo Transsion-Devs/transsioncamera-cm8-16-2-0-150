@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
     .registers 2
 
-    .line 4142
+    .line 4128
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$SwitchDualAndMainCameraListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,14 +47,14 @@
 .method public onSwitchDualAndMainCamera(Ljava/lang/String;)V
     .registers 4
 
-    .line 4145
+    .line 4131
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$SwitchDualAndMainCameraListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$fputmSpecialCameraChange(Lcom/transsion/camera/app/ui/BaseAppUI;Z)V
 
-    .line 4146
+    .line 4132
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$SwitchDualAndMainCameraListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$fgetmSwitchDualAndMainCameraListener(Lcom/transsion/camera/app/ui/BaseAppUI;)Lcom/transsion/camera/app/common/IAppUIListener$ISwitchDualAndMainCameraListener;
@@ -63,7 +63,7 @@
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$ISwitchDualAndMainCameraListener;->onSwitchDualAndMainCamera(Ljava/lang/String;)V
 
-    .line 4147
+    .line 4133
     invoke-static {}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1

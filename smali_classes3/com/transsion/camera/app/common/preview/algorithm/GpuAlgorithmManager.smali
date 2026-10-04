@@ -24,8 +24,6 @@
 
 .field private final mContext:Landroid/content/Context;
 
-.field private final mCurrentModeAlgoList:Ljava/util/List;
-
 .field private mFullScreenFUDisplay2D:Lcom/transsion/camera/utils/gles/ProgramTexture2d;
 
 .field private mFullScreenFUDisplayOes:Lcom/transsion/camera/utils/gles/ProgramTextureOES;
@@ -67,15 +65,6 @@
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mAlgos:Ljava/util/HashMap;
-
-    return-object p0
-.end method
-
-.method static bridge synthetic -$$Nest$fgetmCurrentModeAlgoList(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)Ljava/util/List;
-    .registers 1
-
-    .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mCurrentModeAlgoList:Ljava/util/List;
 
     return-object p0
 .end method
@@ -157,7 +146,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 36
+    .line 34
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "GpuAlgorithmMan"
@@ -172,17 +161,17 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/transsion/camera/app/common/manager/IScreenManager;)V
     .registers 5
 
-    .line 66
+    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 44
     new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    .line 49
+    .line 47
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -191,35 +180,28 @@
 
     const/16 v0, 0x10
 
-    .line 53
+    .line 51
     new-array v1, v0, [F
 
     iput-object v1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mtx:[F
 
-    .line 54
+    .line 52
     new-array v0, v0, [F
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mOESMatrix:[F
 
     const/16 v0, 0x10e
 
-    .line 55
+    .line 53
     iput v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mSensorOrientation:I
 
-    .line 59
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mCurrentModeAlgoList:Ljava/util/List;
-
-    .line 67
+    .line 64
     iput-object p1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mContext:Landroid/content/Context;
 
-    .line 68
+    .line 65
     iput-object p2, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
-    .line 69
+    .line 66
     new-instance p1, Lcom/transsion/camera/app/common/preview/algorithm/TextureManager;
 
     invoke-direct {p1}, Lcom/transsion/camera/app/common/preview/algorithm/TextureManager;-><init>()V
@@ -232,12 +214,12 @@
 .method private create2DProgram()V
     .registers 4
 
-    .line 480
+    .line 475
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGLProgram2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
     if-nez v0, :cond_25
 
-    .line 481
+    .line 476
     new-instance v0, Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
     sget-object v1, Lcom/transsion/camera/app/ui/opengl/Texture2dProgram$ProgramType;->TEXTURE_2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram$ProgramType;
@@ -246,7 +228,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGLProgram2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
-    .line 482
+    .line 477
     sget-object v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -274,32 +256,32 @@
 .method private createRecordingBuffer(III)I
     .registers 13
 
-    .line 348
+    .line 343
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->initProgram()V
 
-    .line 349
+    .line 344
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mtx:[F
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
-    .line 350
+    .line 345
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mOESMatrix:[F
 
     invoke-static {v0, v1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
-    .line 351
+    .line 346
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->updateSensorOrientation()V
 
-    .line 352
+    .line 347
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mOESMatrix:[F
 
     iget-boolean v2, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mIsFacingBack:Z
 
     invoke-direct {p0, v0, v2, v1}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->flip([FZZ)[F
 
-    .line 353
+    .line 348
     iget-object v3, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mOESMatrix:[F
 
     iget v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mSensorOrientation:I
@@ -316,7 +298,7 @@
 
     invoke-static/range {v3 .. v8}, Landroid/opengl/Matrix;->rotateM([FIFFFF)V
 
-    .line 354
+    .line 349
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mFullScreenFUDisplayOes:Lcom/transsion/camera/utils/gles/ProgramTextureOES;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mOESMatrix:[F
@@ -331,17 +313,17 @@
 .method private destory2DProgram()V
     .registers 2
 
-    .line 487
+    .line 482
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGLProgram2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
     if-eqz v0, :cond_a
 
-    .line 488
+    .line 483
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;->release()V
 
     const/4 v0, 0x0
 
-    .line 489
+    .line 484
     iput-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGLProgram2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
     :cond_a
@@ -351,15 +333,15 @@
 .method private destoryResources()V
     .registers 2
 
-    .line 494
+    .line 489
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mTextureManager:Lcom/transsion/camera/app/common/preview/algorithm/TextureManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/preview/algorithm/TextureManager;->clear()V
 
-    .line 495
+    .line 490
     invoke-direct {p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->destory2DProgram()V
 
-    .line 496
+    .line 491
     sget-object p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "destoryResources"
@@ -372,10 +354,10 @@
 .method private draw2DTexture(Landroid/graphics/SurfaceTexture;Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;II)V
     .registers 5
 
-    .line 475
+    .line 470
     invoke-direct {p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->create2DProgram()V
 
-    .line 476
+    .line 471
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGLProgram2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
     iget p2, p2, Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;->texId:I
@@ -423,7 +405,7 @@
     :goto_13
     const/4 p3, 0x0
 
-    .line 369
+    .line 364
     invoke-static {p1, p3, p2, p0, v0}, Landroid/opengl/Matrix;->scaleM([FIFFF)V
 
     return-object p1
@@ -450,25 +432,25 @@
 
     return-object p0
 
-    .line 90
+    .line 87
     :cond_d
     const-string p0, "com.transsion.camera.base_business.transsionfilter_sdk.TranssionFilterAlgorithm"
 
     return-object p0
 
-    .line 88
+    .line 85
     :cond_10
     const-string p0, "com.transsion.camera.featurelibs.facebeauty.FaceBeautyAlgorithm"
 
     return-object p0
 
-    .line 86
+    .line 83
     :cond_13
     const-string p0, "com.transsion.algorithm.STBlurAlgorithm"
 
     return-object p0
 
-    .line 84
+    .line 81
     :cond_16
     const-string p0, "com.transsion.camera.featurelibs.makeup.MakeUpAlgorithm"
 
@@ -478,7 +460,7 @@
 .method private getFirstAlgo()Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
     .registers 2
 
-    .line 430
+    .line 425
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
@@ -487,7 +469,7 @@
 
     if-nez v0, :cond_16
 
-    .line 431
+    .line 426
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     const/4 v0, 0x0
@@ -500,7 +482,7 @@
 
     const/4 v0, 0x1
 
-    .line 432
+    .line 427
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->setPreProcessed(Z)V
 
     return-object p0
@@ -514,7 +496,7 @@
 .method private getNextAlgo()Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
     .registers 3
 
-    .line 438
+    .line 433
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -534,7 +516,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
 
-    .line 439
+    .line 434
     invoke-interface {v0}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->getPreProcessed()Z
 
     move-result v1
@@ -543,7 +525,7 @@
 
     const/4 p0, 0x1
 
-    .line 440
+    .line 435
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->setPreProcessed(Z)V
 
     return-object v0
@@ -557,14 +539,14 @@
 .method private instanceAlgo(ILandroid/content/Context;Lcom/transsion/camera/app/common/manager/IScreenManager;)Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
     .registers 5
 
-    .line 107
+    .line 105
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->isAlgoSupport(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_15
 
-    .line 108
+    .line 106
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->getAlgoName(I)Ljava/lang/String;
 
     move-result-object p0
@@ -588,23 +570,18 @@
 .end method
 
 .method private isAlgoSupport(I)Z
-    .registers 2
+    .registers 3
 
-    .line 97
+    .line 94
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
 
-    if-eqz p1, :cond_a
+    if-nez p1, :cond_f
 
-    const/4 p0, 0x1
-
-    return p0
-
-    .line 100
-    :cond_a
+    .line 96
     sget p1, Lcom/transsion/camera/app/common/R$bool;->make_up_algo_support:I
 
     invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getBoolean(I)Z
@@ -612,12 +589,29 @@
     move-result p0
 
     return p0
+
+    :cond_f
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_19
+
+    .line 99
+    sget p1, Lcom/transsion/camera/app/common/R$bool;->stblur_algo_support:I
+
+    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_19
+    return v0
 .end method
 
 .method private needPreviewFrame()Z
     .registers 2
 
-    .line 500
+    .line 495
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -639,7 +633,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 501
+    .line 496
     invoke-interface {v0}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->needPreviewFrame()Z
 
     move-result v0
@@ -659,7 +653,7 @@
 .method private peekFirstAlgoToProcess(Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;II[FJI)Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;
     .registers 18
 
-    .line 396
+    .line 391
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
@@ -670,7 +664,7 @@
 
     goto :goto_27
 
-    .line 400
+    .line 395
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mTextureManager:Lcom/transsion/camera/app/common/preview/algorithm/TextureManager;
 
@@ -682,7 +676,7 @@
 
     goto :goto_27
 
-    .line 405
+    .line 400
     :cond_12
     invoke-direct {p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->getFirstAlgo()Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
 
@@ -708,7 +702,7 @@
 
     const/4 p0, 0x0
 
-    .line 407
+    .line 402
     iput-boolean p0, v3, Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;->isIdle:Z
 
     return-object v3
@@ -721,7 +715,7 @@
 .method private peekNextAlgoToProcess(Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;II[FJI)Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;
     .registers 18
 
-    .line 415
+    .line 410
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mTextureManager:Lcom/transsion/camera/app/common/preview/algorithm/TextureManager;
 
     invoke-virtual {p0, p4, p3}, Lcom/transsion/camera/app/common/preview/algorithm/TextureManager;->getA2DTexture(II)Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;
@@ -747,7 +741,7 @@
 
     move/from16 v8, p8
 
-    .line 419
+    .line 414
     invoke-interface/range {v0 .. v8}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->process(Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;II[FJI)Z
 
     move-result p0
@@ -756,7 +750,7 @@
 
     const/4 p0, 0x0
 
-    .line 421
+    .line 416
     iput-boolean p0, v2, Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;->isIdle:Z
 
     return-object v2
@@ -769,7 +763,7 @@
 .method private resetStatusForNextFrame()V
     .registers 4
 
-    .line 468
+    .line 463
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -791,12 +785,12 @@
 
     const/4 v2, 0x0
 
-    .line 469
+    .line 464
     invoke-interface {v1, v2}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->setPreProcessed(Z)V
 
     goto :goto_6
 
-    .line 471
+    .line 466
     :cond_17
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mTextureManager:Lcom/transsion/camera/app/common/preview/algorithm/TextureManager;
 
@@ -810,7 +804,7 @@
 
     monitor-enter p0
 
-    .line 73
+    .line 70
     :try_start_1
     sget-object v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -834,7 +828,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 74
+    .line 71
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -844,7 +838,7 @@
 
     aget v2, p1, v1
 
-    .line 75
+    .line 72
     iget-object v3, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mAlgos:Ljava/util/HashMap;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -857,7 +851,7 @@
 
     if-nez v3, :cond_41
 
-    .line 76
+    .line 73
     iget-object v3, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mAlgos:Ljava/util/HashMap;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -889,7 +883,7 @@
 
     goto :goto_1d
 
-    .line 79
+    .line 76
     :cond_44
     monitor-exit p0
 
@@ -909,7 +903,7 @@
 .method public algoAvoidFrameHasDrawCheck(Z)Z
     .registers 3
 
-    .line 154
+    .line 150
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mHasTranssionFilterAlgo:Z
 
     if-eqz v0, :cond_6
@@ -918,7 +912,7 @@
 
     return p0
 
-    .line 156
+    .line 152
     :cond_6
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mHasMakeupAlgo:Z
 
@@ -943,7 +937,7 @@
 
     if-eqz v3, :cond_94
 
-    .line 277
+    .line 272
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
@@ -954,23 +948,23 @@
 
     goto/16 :goto_94
 
-    .line 280
+    .line 275
     :cond_11
     invoke-direct {p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->resetStatusForNextFrame()V
 
-    .line 281
+    .line 276
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v10
 
-    .line 282
+    .line 277
     sget-object v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "algothimRender +"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->logDrawing(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 284
+    .line 279
     new-instance v1, Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;
 
     invoke-direct {v1, p2, v9, p3, v3}, Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;-><init>(IIII)V
@@ -985,14 +979,14 @@
 
     move/from16 v7, p8
 
-    .line 285
+    .line 280
     invoke-direct/range {v0 .. v7}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->peekFirstAlgoToProcess(Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;II[FJI)Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;
 
     move-result-object p2
 
     move-object v2, p2
 
-    .line 288
+    .line 283
     :goto_31
     invoke-direct {p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->getNextAlgo()Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
 
@@ -1012,7 +1006,7 @@
 
     move/from16 v8, p8
 
-    .line 289
+    .line 284
     invoke-direct/range {v0 .. v8}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->peekNextAlgoToProcess(Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;II[FJI)Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;
 
     move-result-object v2
@@ -1022,10 +1016,10 @@
     :cond_46
     move/from16 v4, p4
 
-    .line 292
+    .line 287
     invoke-static {v9, v9, p3, v4}, Landroid/opengl/GLES20;->glViewport(IIII)V
 
-    .line 293
+    .line 288
     iget p2, v2, Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;->texType:I
 
     const-string v1, "ms"
@@ -1034,18 +1028,18 @@
 
     if-ne p2, v5, :cond_76
 
-    .line 294
+    .line 289
     invoke-direct {p0, p1, v2, p3, v4}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->draw2DTexture(Landroid/graphics/SurfaceTexture;Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;II)V
 
-    .line 295
+    .line 290
     iput-boolean v5, v2, Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;->isTexToDraw:Z
 
-    .line 296
+    .line 291
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide p0
 
-    .line 297
+    .line 292
     sget-object p2, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -1070,13 +1064,13 @@
 
     return v5
 
-    .line 301
+    .line 296
     :cond_76
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide p0
 
-    .line 302
+    .line 297
     sget-object p2, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -1107,7 +1101,7 @@
 .method public algorithmRenderOffScreen(Landroid/graphics/SurfaceTexture;II)Z
     .registers 5
 
-    .line 308
+    .line 303
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mTextureManager:Lcom/transsion/camera/app/common/preview/algorithm/TextureManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/preview/algorithm/TextureManager;->getTexForDraw()Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;
@@ -1116,7 +1110,7 @@
 
     if-eqz v0, :cond_d
 
-    .line 310
+    .line 305
     invoke-direct {p0, p1, v0, p2, p3}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->draw2DTexture(Landroid/graphics/SurfaceTexture;Lcom/transsion/camera/app/common/preview/algorithm/MyTexture;II)V
 
     const/4 p0, 0x1
@@ -1132,7 +1126,7 @@
 .method public getYUVCallback()Lcom/transsion/camera/adapter/CameraProxy$CameraPreviewDataCallback;
     .registers 3
 
-    .line 392
+    .line 387
     new-instance v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;
 
     const/4 v1, 0x0
@@ -1145,25 +1139,25 @@
 .method public initProgram()V
     .registers 2
 
-    .line 448
+    .line 443
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mFullScreenFUDisplay2D:Lcom/transsion/camera/utils/gles/ProgramTexture2d;
 
     if-nez v0, :cond_b
 
-    .line 449
+    .line 444
     new-instance v0, Lcom/transsion/camera/utils/gles/ProgramTexture2d;
 
     invoke-direct {v0}, Lcom/transsion/camera/utils/gles/ProgramTexture2d;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mFullScreenFUDisplay2D:Lcom/transsion/camera/utils/gles/ProgramTexture2d;
 
-    .line 451
+    .line 446
     :cond_b
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mFullScreenFUDisplayOes:Lcom/transsion/camera/utils/gles/ProgramTextureOES;
 
     if-nez v0, :cond_16
 
-    .line 452
+    .line 447
     new-instance v0, Lcom/transsion/camera/utils/gles/ProgramTextureOES;
 
     invoke-direct {v0}, Lcom/transsion/camera/utils/gles/ProgramTextureOES;-><init>()V
@@ -1177,7 +1171,7 @@
 .method public notifyCameraOperateAction(I)V
     .registers 3
 
-    .line 255
+    .line 250
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -1197,7 +1191,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
 
-    .line 256
+    .line 251
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->onCameraOperateAction(I)V
 
     goto :goto_6
@@ -1209,7 +1203,7 @@
 .method public onFirstSteadyFrame()V
     .registers 6
 
-    .line 246
+    .line 241
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mAlgos:Ljava/util/HashMap;
 
     const/4 v1, 0x0
@@ -1224,7 +1218,7 @@
 
     if-nez v0, :cond_1a
 
-    .line 247
+    .line 242
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mAlgos:Ljava/util/HashMap;
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mContext:Landroid/content/Context;
@@ -1237,7 +1231,7 @@
 
     invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 249
+    .line 244
     :cond_1a
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -1258,7 +1252,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
 
-    .line 250
+    .line 245
     invoke-interface {v0}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->onFirstSteadyFrame()V
 
     goto :goto_20
@@ -1270,7 +1264,7 @@
 .method public onModeInit([ILcom/transsion/camera/app/common/mode/IImageProcessor;Ljava/lang/String;Ljava/lang/String;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/preview/IPreviewOperator;)V
     .registers 15
 
-    .line 115
+    .line 113
     sget-object v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1301,14 +1295,14 @@
 
     if-eqz p1, :cond_61
 
-    .line 116
+    .line 114
     array-length v3, p1
 
     if-nez v3, :cond_28
 
     goto :goto_61
 
-    .line 119
+    .line 117
     :cond_28
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1336,13 +1330,13 @@
 
     invoke-static {v0, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 120
+    .line 118
     iput-object p6, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
-    .line 121
+    .line 119
     iput-object p5, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 122
+    .line 120
     new-instance v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$1;
 
     move-object v1, p0
@@ -1363,12 +1357,12 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessRunnable:Ljava/lang/Runnable;
 
-    .line 147
+    .line 143
     iget-object v1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v1, :cond_61
 
-    .line 148
+    .line 144
     invoke-interface {v1, v0}, Lcom/transsion/camera/app/common/preview/IGLThreadRunnable;->executeInGLThread(Ljava/lang/Runnable;)V
 
     :cond_61
@@ -1379,19 +1373,19 @@
 .method public onModePaused()V
     .registers 3
 
-    .line 184
+    .line 179
     sget-object v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onModePaused"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 185
+    .line 180
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v0, :cond_13
 
-    .line 186
+    .line 181
     new-instance v1, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$3;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$3;-><init>(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)V
@@ -1405,19 +1399,19 @@
 .method public onModeResumed()V
     .registers 3
 
-    .line 212
+    .line 207
     sget-object v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onModeResumed"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 213
+    .line 208
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v0, :cond_13
 
-    .line 214
+    .line 209
     new-instance v1, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$5;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$5;-><init>(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)V
@@ -1431,19 +1425,19 @@
 .method public onModeUnInit()V
     .registers 3
 
-    .line 164
+    .line 160
     sget-object v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onModeUnInit"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 165
+    .line 161
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v0, :cond_13
 
-    .line 166
+    .line 162
     new-instance v1, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$2;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$2;-><init>(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)V
@@ -1453,7 +1447,7 @@
     :cond_13
     const/4 v0, 0x0
 
-    .line 180
+    .line 175
     iput-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     return-void
@@ -1462,7 +1456,7 @@
 .method public onOrientationChanged(I)V
     .registers 3
 
-    .line 510
+    .line 505
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -1482,7 +1476,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
 
-    .line 511
+    .line 506
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IOrientationListener;->onOrientationChanged(I)V
 
     goto :goto_6
@@ -1494,7 +1488,7 @@
 .method public onRecording(III)V
     .registers 5
 
-    .line 335
+    .line 330
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
@@ -1505,7 +1499,7 @@
 
     goto :goto_19
 
-    .line 338
+    .line 333
     :cond_9
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->createRecordingBuffer(III)I
 
@@ -1515,13 +1509,13 @@
 
     goto :goto_19
 
-    .line 342
+    .line 337
     :cond_10
     iget-object p2, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mRecordCallback:Lcom/transsion/camera/app/common/mode/IRecordCallback;
 
     if-eqz p2, :cond_19
 
-    .line 343
+    .line 338
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mtx:[F
 
     invoke-interface {p2, p1, p0}, Lcom/transsion/camera/app/common/mode/IRecordCallback;->onRecording(I[F)V
@@ -1534,12 +1528,12 @@
 .method public onSettingReady()V
     .registers 3
 
-    .line 233
+    .line 228
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v0, :cond_c
 
-    .line 234
+    .line 229
     new-instance v1, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$6;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$6;-><init>(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)V
@@ -1553,19 +1547,19 @@
 .method public onSurfaceCreated()V
     .registers 3
 
-    .line 262
+    .line 257
     sget-object v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onSurfaceCreated"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 263
+    .line 258
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v0, :cond_13
 
-    .line 264
+    .line 259
     new-instance v1, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$7;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$7;-><init>(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)V
@@ -1579,26 +1573,26 @@
 .method public onSurfaceDestroyed()V
     .registers 3
 
-    .line 318
+    .line 313
     sget-object v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onSurfaceDestroyed"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 319
+    .line 314
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v0, :cond_13
 
-    .line 320
+    .line 315
     new-instance v1, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$8;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$8;-><init>(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)V
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/preview/IGLThreadRunnable;->executeInGLThread(Ljava/lang/Runnable;)V
 
-    .line 330
+    .line 325
     :cond_13
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->unInitProgram()V
 
@@ -1608,7 +1602,7 @@
 .method public previewViewTypeChanged()V
     .registers 3
 
-    .line 381
+    .line 376
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v0, :cond_b
@@ -1617,10 +1611,10 @@
 
     if-eqz v1, :cond_b
 
-    .line 382
+    .line 377
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/preview/IGLThreadRunnable;->executeInGLThread(Ljava/lang/Runnable;)V
 
-    .line 384
+    .line 379
     :cond_b
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->onModeResumed()V
 
@@ -1630,10 +1624,10 @@
 .method public setRecordCallback(Lcom/transsion/camera/app/common/mode/IRecordCallback;)V
     .registers 3
 
-    .line 226
+    .line 221
     iput-object p1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mRecordCallback:Lcom/transsion/camera/app/common/mode/IRecordCallback;
 
-    .line 227
+    .line 222
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mGpuProcessers:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -1653,7 +1647,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
 
-    .line 228
+    .line 223
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->setRecordCallback(Lcom/transsion/camera/app/common/mode/IRecordCallback;)V
 
     goto :goto_8
@@ -1665,7 +1659,7 @@
 .method public setSupportPostAlgoDeferRequest(Z)V
     .registers 2
 
-    .line 388
+    .line 383
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mSupportPostAlgoDeferRequest:Z
 
     return-void
@@ -1674,29 +1668,29 @@
 .method public unInitProgram()V
     .registers 3
 
-    .line 457
+    .line 452
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mFullScreenFUDisplay2D:Lcom/transsion/camera/utils/gles/ProgramTexture2d;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_a
 
-    .line 458
+    .line 453
     invoke-virtual {v0}, Lcom/transsion/camera/utils/gles/core/Program;->release()V
 
-    .line 459
+    .line 454
     iput-object v1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mFullScreenFUDisplay2D:Lcom/transsion/camera/utils/gles/ProgramTexture2d;
 
-    .line 461
+    .line 456
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mFullScreenFUDisplayOes:Lcom/transsion/camera/utils/gles/ProgramTextureOES;
 
     if-eqz v0, :cond_13
 
-    .line 462
+    .line 457
     invoke-virtual {v0}, Lcom/transsion/camera/utils/gles/core/Program;->release()V
 
-    .line 463
+    .line 458
     iput-object v1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mFullScreenFUDisplayOes:Lcom/transsion/camera/utils/gles/ProgramTextureOES;
 
     :cond_13
@@ -1706,7 +1700,7 @@
 .method public updatePreviewSize(Landroid/util/Size;Landroid/util/Size;)V
     .registers 6
 
-    .line 198
+    .line 193
     sget-object v0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1735,12 +1729,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 199
+    .line 194
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v0, :cond_30
 
-    .line 200
+    .line 195
     new-instance v1, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$4;
 
     invoke-direct {v1, p0, p1, p2}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$4;-><init>(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;Landroid/util/Size;Landroid/util/Size;)V
@@ -1754,24 +1748,24 @@
 .method public updateSensorOrientation()V
     .registers 3
 
-    .line 358
+    .line 353
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_c
 
-    .line 359
+    .line 354
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mIsFacingBack:Z
 
     const/16 v0, 0x10e
 
-    .line 360
+    .line 355
     iput v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mSensorOrientation:I
 
     return-void
 
-    .line 363
+    .line 358
     :cond_c
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraFacing()I
 
@@ -1784,7 +1778,7 @@
     :cond_13
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mIsFacingBack:Z
 
-    .line 364
+    .line 359
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getSensorOrientation()I

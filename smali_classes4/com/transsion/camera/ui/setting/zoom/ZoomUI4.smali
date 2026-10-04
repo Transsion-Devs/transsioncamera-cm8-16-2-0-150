@@ -1477,7 +1477,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 3071
+    .line 3052
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     if-eqz v0, :cond_d
@@ -1495,7 +1495,7 @@
 
     const/4 p0, 0x1
 
-    .line 3076
+    .line 3057
     invoke-static {p1, p0}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
 
     return-void
@@ -1503,12 +1503,12 @@
     :cond_14
     const/4 p0, 0x4
 
-    .line 3078
+    .line 3059
     invoke-static {p1, p0}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
 
     return-void
 
-    .line 3072
+    .line 3053
     :cond_19
     :goto_19
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -6371,7 +6371,7 @@
 .method private updateInstantViewBG()V
     .registers 5
 
-    .line 3057
+    .line 3038
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -6382,7 +6382,7 @@
 
     return-void
 
-    .line 3060
+    .line 3041
     :cond_9
     new-instance v0, Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -6390,7 +6390,7 @@
 
     invoke-direct {v0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;-><init>(Landroid/content/Context;)V
 
-    .line 3061
+    .line 3042
     const-string v1, "key_picture_ratio"
 
     const-string v2, "_global_scope"
@@ -6401,7 +6401,7 @@
 
     move-result-object v0
 
-    .line 3062
+    .line 3043
     invoke-static {v0, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -6410,7 +6410,7 @@
 
     const-string v1, "1:1"
 
-    .line 3063
+    .line 3044
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -6419,7 +6419,7 @@
 
     goto :goto_37
 
-    .line 3066
+    .line 3047
     :cond_29
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mInstantAdapter:Lcom/transsion/camera/ui/setting/zoom/InstantZoomAdapter;
 
@@ -6435,7 +6435,7 @@
 
     return-void
 
-    .line 3064
+    .line 3045
     :cond_37
     :goto_37
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mInstantAdapter:Lcom/transsion/camera/ui/setting/zoom/InstantZoomAdapter;
@@ -7219,14 +7219,14 @@
 .method private updateZoomRatioLayout()V
     .registers 5
 
-    .line 3083
+    .line 3064
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mCurrentZoomRatioGroup:Landroid/view/ViewGroup;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 3087
+    .line 3068
     :cond_5
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -7234,7 +7234,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 3088
+    .line 3069
     iget v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/4 v2, 0x4
@@ -7254,12 +7254,12 @@
 
     const/16 v1, 0x11
 
-    .line 3095
+    .line 3076
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     goto :goto_42
 
-    .line 3097
+    .line 3078
     :cond_1c
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->getZoomRatioLayoutMargins(I)Landroid/graphics/Rect;
 
@@ -7275,10 +7275,10 @@
     :goto_25
     const/4 v1, -0x1
 
-    .line 3090
+    .line 3071
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 3091
+    .line 3072
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mPreviewViewRect:Landroid/graphics/Rect;
 
     iget v2, v1, Landroid/graphics/Rect;->left:I
@@ -7289,7 +7289,7 @@
 
     invoke-virtual {v0, v2, v1, v3, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 3092
+    .line 3073
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
@@ -7298,7 +7298,7 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 3093
+    .line 3074
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
@@ -7307,7 +7307,7 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 3099
+    .line 3080
     :goto_42
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mCurrentZoomRatioGroup:Landroid/view/ViewGroup;
 
@@ -7751,14 +7751,14 @@
 .method protected getZoomRatioLayoutMargins(I)Landroid/graphics/Rect;
     .registers 5
 
-    .line 3104
+    .line 3085
     new-instance p1, Landroid/graphics/Rect;
 
     const v0, 0x7fffffff
 
     invoke-direct {p1, v0, v0, v0, v0}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 3105
+    .line 3086
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -7767,7 +7767,7 @@
 
     if-eqz v0, :cond_41
 
-    .line 3106
+    .line 3087
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mCurrentZoomRatioGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -7780,7 +7780,7 @@
 
     move-result v0
 
-    .line 3108
+    .line 3089
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mPreviewViewRect:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->top:I
@@ -7789,7 +7789,7 @@
 
     const/16 v1, 0x63
 
-    .line 3109
+    .line 3090
     invoke-static {v1}, Lcom/transsion/camera/utils/UIUtils;->dp(I)I
 
     move-result v1
@@ -7799,7 +7799,7 @@
     :cond_29
     const/16 v1, 0x14
 
-    .line 3111
+    .line 3092
     invoke-static {v1}, Lcom/transsion/camera/utils/UIUtils;->dp(I)I
 
     move-result v1
@@ -7807,14 +7807,14 @@
     :goto_2f
     const/16 v2, 0xf
 
-    .line 3113
+    .line 3094
     invoke-static {v2}, Lcom/transsion/camera/utils/UIUtils;->dp(I)I
 
     move-result v2
 
     add-int/2addr v1, v2
 
-    .line 3114
+    .line 3095
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mPreviewViewRect:Landroid/graphics/Rect;
 
     iget p0, p0, Landroid/graphics/Rect;->top:I
@@ -7829,7 +7829,7 @@
 
     return-object p1
 
-    .line 3116
+    .line 3097
     :cond_41
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mCurrentZoomRatioGroup:Landroid/view/ViewGroup;
 
@@ -7843,14 +7843,14 @@
 
     move-result v0
 
-    .line 3117
+    .line 3098
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mPreviewViewRect:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->top:I
 
     if-nez v1, :cond_5c
 
-    .line 3118
+    .line 3099
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getTopRegionHeight()I
@@ -7864,7 +7864,7 @@
     :cond_5c
     sub-int/2addr v1, v0
 
-    .line 3120
+    .line 3101
     iput v1, p1, Landroid/graphics/Rect;->top:I
 
     return-object p1
@@ -8325,15 +8325,15 @@
 
     const/4 v3, 0x1
 
-    sparse-switch p1, :sswitch_data_1d4
+    sparse-switch p1, :sswitch_data_1b2
 
-    goto/16 :goto_1d2
+    goto/16 :goto_1b1
 
-    .line 3032
+    .line 3013
     :sswitch_12
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mbSegmentDragging:Z
 
-    .line 3033
+    .line 3014
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mVlogCorrectOrientation:I
 
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
@@ -8342,36 +8342,36 @@
 
     return-void
 
-    .line 3028
+    .line 3009
     :sswitch_1c
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mbSegmentDragging:Z
 
-    .line 3029
+    .line 3010
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mVlogCorrectOrientation:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mFreeShotDraggingOrientation:I
 
     return-void
 
-    .line 2909
+    .line 2890
     :sswitch_23
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsVlogSegmentEmpty:Z
 
-    .line 2910
+    .line 2891
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->translateZoomBarIfNeed()V
 
     return-void
 
-    .line 2905
+    .line 2886
     :sswitch_29
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsVlogSegmentEmpty:Z
 
-    .line 2906
+    .line 2887
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->translateZoomBarIfNeed()V
 
     return-void
 
-    .line 3018
+    .line 2999
     :sswitch_2f
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mCurrentZoomRatioGroup:Landroid/view/ViewGroup;
 
@@ -8379,7 +8379,7 @@
 
     return-void
 
-    .line 3021
+    .line 3002
     :sswitch_35
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mCurrentZoomRatioGroup:Landroid/view/ViewGroup;
 
@@ -8387,125 +8387,125 @@
 
     return-void
 
-    .line 2901
+    .line 2882
     :sswitch_3b
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsVlogSegmentFull:Z
 
-    .line 2902
+    .line 2883
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
 
     return-void
 
-    .line 2895
+    .line 2876
     :sswitch_41
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsVlogSegmentFull:Z
 
-    .line 2896
+    .line 2877
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideCenterZoomView()V
 
-    .line 2897
+    .line 2878
     invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomWheel(ZZ)V
 
-    .line 2898
+    .line 2879
     invoke-direct {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomItemRoot(ZZ)V
 
     return-void
 
-    .line 2890
+    .line 2871
     :sswitch_4d
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideCenterZoomView()V
 
-    .line 2891
+    .line 2872
     invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomWheel(ZZ)V
 
-    .line 2892
+    .line 2873
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
 
     return-void
 
-    .line 2919
+    .line 2900
     :sswitch_57
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mIsVlogHomepage:Z
 
-    .line 2920
+    .line 2901
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mActionZoomWheelBegin:Z
 
-    if-nez p1, :cond_1d2
+    if-nez p1, :cond_1b1
 
-    .line 2921
+    .line 2902
     invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomWheel(ZZ)V
 
-    .line 2922
+    .line 2903
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
 
     return-void
 
-    .line 2851
+    .line 2832
     :sswitch_64
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mIsVlogHomepage:Z
 
-    .line 2852
+    .line 2833
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->setZoomUIState(Z)V
 
-    .line 2853
+    .line 2834
     invoke-static {}, Lcom/transsion/camera/ui/setting/zoom/ZoomAnimationUtils;->cancelShow()V
 
-    .line 2854
+    .line 2835
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mIsConflictUIShow:Z
 
     if-eqz p1, :cond_72
 
-    .line 2855
+    .line 2836
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mIsConflictUIShow:Z
 
-    .line 2857
+    .line 2838
     :cond_72
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideCenterZoomView()V
 
-    .line 2858
+    .line 2839
     invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomWheel(ZZ)V
 
-    .line 2859
+    .line 2840
     invoke-direct {p0, v1, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomItemRoot(ZZ)V
 
     return-void
 
-    .line 2958
+    .line 2939
     :sswitch_7c
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mImageStyleShow:Z
 
-    .line 2959
+    .line 2940
     invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomWheel(ZZ)V
 
-    .line 2960
+    .line 2941
     invoke-direct {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomItemRoot(ZZ)V
 
     return-void
 
-    .line 2997
+    .line 2978
     :sswitch_85
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mTimeLapseWheelShow:Z
 
-    if-nez p1, :cond_1d2
+    if-nez p1, :cond_1b1
 
-    .line 2998
+    .line 2979
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
 
     return-void
 
-    .line 2840
+    .line 2829
     :sswitch_8d
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsZoomClick:Z
 
     return-void
 
-    .line 2837
+    .line 2826
     :sswitch_90
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsZoomClick:Z
 
     return-void
 
-    .line 2963
+    .line 2944
     :sswitch_93
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mTreasureBoxShow:Z
 
@@ -8514,45 +8514,45 @@
 
     if-ne v0, p1, :cond_9b
 
-    .line 2966
+    .line 2947
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mImageStyleShow:Z
 
-    .line 2968
+    .line 2949
     :cond_9b
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsCapturing:Z
 
-    if-nez p1, :cond_1d2
+    if-nez p1, :cond_1b1
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->modeOrCameraSwitching()Z
 
     move-result p1
 
-    if-nez p1, :cond_1d2
+    if-nez p1, :cond_1b1
 
-    .line 2969
+    .line 2950
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
 
     return-void
 
-    .line 3015
+    .line 2996
     :sswitch_a9
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mIsFrontDualFlashUiShow:Z
 
     return-void
 
-    .line 3012
+    .line 2993
     :sswitch_ac
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mIsFrontDualFlashUiShow:Z
 
     return-void
 
-    .line 2955
+    .line 2936
     :sswitch_af
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->updateCenterZoomView(Z)V
 
     return-void
 
-    .line 2952
+    .line 2933
     :sswitch_b3
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mSmoothZoomView:Lcom/transsion/camera/app/ui/widget/SmoothZoomView;
 
@@ -8560,84 +8560,41 @@
 
     return-void
 
-    .line 2884
+    .line 2865
     :sswitch_b9
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mTimeLapseWheelShow:Z
 
-    .line 2885
+    .line 2866
     invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomWheel(ZZ)V
 
-    .line 2886
+    .line 2867
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
 
     return-void
 
-    .line 2843
+    .line 2972
     :sswitch_c2
-    iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInSuperMoonMode:Z
-
-    if-eqz p1, :cond_ca
-
-    .line 2844
-    invoke-virtual {p0, v3, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomWheel(ZZ)V
-
-    return-void
-
-    .line 2846
-    :cond_ca
-    invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomWheel(ZZ)V
-
-    .line 2847
-    invoke-direct {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomItemRoot(ZZ)V
-
-    return-void
-
-    .line 2831
-    :sswitch_d1
-    iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInSuperMoonMode:Z
-
-    if-nez p1, :cond_1d2
-
-    .line 2832
-    invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomWheel(ZZ)V
-
-    .line 2833
-    invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
-
-    return-void
-
-    .line 2827
-    :sswitch_dc
-    invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomWheel(ZZ)V
-
-    .line 2828
-    invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
-
-    return-void
-
-    .line 2991
-    :sswitch_e3
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mTimeLapseWheelShow:Z
 
-    if-nez p1, :cond_1d2
+    if-nez p1, :cond_1b1
 
-    .line 2992
+    .line 2973
     invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomWheel(ZZ)V
 
-    .line 2993
+    .line 2974
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
 
     return-void
 
-    .line 2985
-    :sswitch_ee
+    .line 2966
+    :sswitch_cd
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mSmoothZoomView:Lcom/transsion/camera/app/ui/widget/SmoothZoomView;
 
     invoke-virtual {p1}, Landroid/view/View;->isEnabled()Z
 
     move-result p1
 
-    if-eqz p1, :cond_fe
+    if-eqz p1, :cond_dd
 
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mGraduationContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -8645,123 +8602,123 @@
 
     move-result p1
 
-    if-nez p1, :cond_1d2
+    if-nez p1, :cond_1b1
 
-    .line 2986
-    :cond_fe
+    .line 2967
+    :cond_dd
     invoke-direct {p0, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->setZoomWheelEnable(Z)V
 
     return-void
 
-    .line 2949
-    :sswitch_102
+    .line 2930
+    :sswitch_e1
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mSmoothZoomView:Lcom/transsion/camera/app/ui/widget/SmoothZoomView;
 
     invoke-virtual {p0, v3}, Landroid/view/View;->setEnabled(Z)V
 
     return-void
 
-    .line 2913
-    :sswitch_108
+    .line 2894
+    :sswitch_e7
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mPopWindowShow:Z
 
-    .line 2914
+    .line 2895
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->modeOrCameraSwitching()Z
 
     move-result p1
 
-    if-nez p1, :cond_1d2
+    if-nez p1, :cond_1b1
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mPausedZoom:Z
 
-    if-nez p1, :cond_1d2
+    if-nez p1, :cond_1b1
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsQuickRecording:Z
 
-    if-nez p1, :cond_1d2
+    if-nez p1, :cond_1b1
 
-    .line 2915
+    .line 2896
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
 
     return-void
 
-    .line 2866
-    :sswitch_11c
+    .line 2847
+    :sswitch_fb
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mIsConflictUIShow:Z
 
-    if-eqz v0, :cond_122
+    if-eqz v0, :cond_101
 
-    .line 2867
+    .line 2848
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mIsConflictUIShow:Z
 
-    :cond_122
+    :cond_101
     const/16 v0, 0x1d
 
-    if-ne p1, v0, :cond_128
+    if-ne p1, v0, :cond_107
 
-    .line 2870
+    .line 2851
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mPopWindowShow:Z
 
-    :cond_128
+    :cond_107
     const/16 v0, 0xcf
 
-    if-ne p1, v0, :cond_12e
+    if-ne p1, v0, :cond_10d
 
-    .line 2873
+    .line 2854
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mTreasureBoxShow:Z
 
-    :cond_12e
+    :cond_10d
     const/16 v0, 0x50
 
-    if-ne p1, v0, :cond_134
+    if-ne p1, v0, :cond_113
 
-    .line 2876
+    .line 2857
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mTimeLapseWheelShow:Z
 
-    .line 2878
-    :cond_134
+    .line 2859
+    :cond_113
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideCenterZoomView()V
 
-    .line 2879
+    .line 2860
     invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomWheel(ZZ)V
 
-    .line 2880
+    .line 2861
     invoke-direct {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomItemRoot(ZZ)V
 
     return-void
 
-    .line 2936
-    :sswitch_13e
+    .line 2917
+    :sswitch_11d
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->updateVideoRecordStopStatus(Z)V
 
-    .line 2937
+    .line 2918
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mVideoRecording:Z
 
-    .line 2938
+    .line 2919
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mTreasureBoxShow:Z
 
-    .line 2939
+    .line 2920
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mTimeLapseWheelShow:Z
 
-    .line 2940
+    .line 2921
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mImageStyleShow:Z
 
-    .line 2941
+    .line 2922
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mIsZoomWheelShow:Z
 
-    .line 2942
+    .line 2923
     iput v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mRecordingOrientation:I
 
-    .line 2943
+    .line 2924
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mIsFrontDualFlashUiShow:Z
 
-    .line 2944
+    .line 2925
     invoke-virtual {p0, v1, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomWheel(ZZ)V
 
-    .line 2945
+    .line 2926
     invoke-direct {p0, v1, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideZoomItemRoot(ZZ)V
 
-    .line 2946
+    .line 2927
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
     move-result-object p1
@@ -8770,8 +8727,8 @@
 
     return-void
 
-    .line 3041
-    :sswitch_15d
+    .line 3022
+    :sswitch_13c
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
     move-result-object p1
@@ -8780,8 +8737,8 @@
 
     return-void
 
-    .line 3037
-    :sswitch_165
+    .line 3018
+    :sswitch_144
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
     move-result-object p1
@@ -8790,82 +8747,82 @@
 
     return-void
 
-    .line 3005
-    :sswitch_16d
+    .line 2986
+    :sswitch_14c
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->updateVideoRecordStopStatus(Z)V
 
-    .line 3006
+    .line 2987
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mVideoRecording:Z
 
-    .line 3007
+    .line 2988
     iput v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mRecordingOrientation:I
 
-    .line 3008
+    .line 2989
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInVlogMode:Z
 
-    if-eqz p1, :cond_17b
+    if-eqz p1, :cond_15a
 
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mVlogCorrectOrientation:I
 
-    goto :goto_17d
+    goto :goto_15c
 
-    :cond_17b
+    :cond_15a
     iget p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
-    .line 3009
-    :goto_17d
+    .line 2990
+    :goto_15c
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->updateGradationRootLayout(II)V
 
     return-void
 
-    .line 2975
-    :sswitch_183
+    .line 2956
+    :sswitch_162
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mVideoRecording:Z
 
-    .line 2976
+    .line 2957
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mRecordingOrientation:I
 
-    if-ne p1, v2, :cond_194
+    if-ne p1, v2, :cond_173
 
-    .line 2977
+    .line 2958
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInVlogMode:Z
 
-    if-eqz p1, :cond_190
+    if-eqz p1, :cond_16f
 
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mVlogCorrectOrientation:I
 
-    goto :goto_192
+    goto :goto_171
 
-    :cond_190
+    :cond_16f
     iget p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
-    :goto_192
+    :goto_171
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mRecordingOrientation:I
 
-    .line 2979
-    :cond_194
+    .line 2960
+    :cond_173
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mSuperAntiVideoOn:Z
 
-    if-eqz p1, :cond_1d2
+    if-eqz p1, :cond_1b1
 
-    .line 2980
+    .line 2961
     invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomWheel(ZZ)V
 
-    .line 2981
+    .line 2962
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
 
     return-void
 
     .line 2820
-    :sswitch_19f
+    :sswitch_17e
     invoke-direct {p0, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->setZoomWheelEnable(Z)V
 
     .line 2821
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInSuperMoonMode:Z
 
-    if-nez p1, :cond_1d2
+    if-nez p1, :cond_1b1
 
     .line 2822
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
@@ -8873,103 +8830,97 @@
     return-void
 
     .line 2817
-    :sswitch_1aa
+    :sswitch_189
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->setZoomWheelEnable(Z)V
 
     return-void
 
-    .line 2929
-    :sswitch_1ae
+    .line 2910
+    :sswitch_18d
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInProfessionMode:Z
 
-    if-eqz p1, :cond_1b5
+    if-eqz p1, :cond_194
 
-    .line 2930
+    .line 2911
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->setZoomViewCanShow(Z)V
 
-    .line 2932
-    :cond_1b5
+    .line 2913
+    :cond_194
     invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomWheel(ZZ)V
 
-    .line 2933
+    .line 2914
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->showZoomItemRoot(Z)V
 
     return-void
 
-    .line 3049
-    :sswitch_1bc
+    .line 3030
+    :sswitch_19b
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->updateInstantViewBG()V
 
     return-void
 
-    .line 3024
-    :sswitch_1c0
+    .line 3005
+    :sswitch_19f
     invoke-direct {p0, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->setZoomWheelEnable(Z)V
 
-    .line 3025
+    .line 3006
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->hideCenterZoomView()V
 
     return-void
 
-    .line 3044
-    :sswitch_1c7
+    .line 3025
+    :sswitch_1a6
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInVlogMode:Z
 
-    if-eqz p1, :cond_1d2
+    if-eqz p1, :cond_1b1
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI4;->mIsVlogHomepage:Z
 
-    if-nez p1, :cond_1d2
+    if-nez p1, :cond_1b1
 
-    .line 3045
+    .line 3026
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->setZoomUIState(Z)V
 
-    :cond_1d2
-    :goto_1d2
+    :cond_1b1
+    :goto_1b1
     return-void
 
-    nop
-
-    :sswitch_data_1d4
+    :sswitch_data_1b2
     .sparse-switch
-        0x0 -> :sswitch_1c7
-        0x2 -> :sswitch_1c0
-        0x5 -> :sswitch_1bc
-        0xc -> :sswitch_1ae
-        0xd -> :sswitch_1aa
-        0xe -> :sswitch_19f
-        0xf -> :sswitch_183
-        0x10 -> :sswitch_16d
-        0x11 -> :sswitch_165
-        0x12 -> :sswitch_15d
-        0x1c -> :sswitch_13e
-        0x1d -> :sswitch_11c
-        0x1e -> :sswitch_108
-        0x20 -> :sswitch_102
-        0x25 -> :sswitch_1ae
-        0x2e -> :sswitch_ee
-        0x2f -> :sswitch_1ae
-        0x3a -> :sswitch_e3
-        0x48 -> :sswitch_dc
-        0x49 -> :sswitch_d1
-        0x4a -> :sswitch_dc
-        0x4c -> :sswitch_c2
-        0x4d -> :sswitch_165
-        0x4e -> :sswitch_15d
-        0x50 -> :sswitch_11c
+        0x0 -> :sswitch_1a6
+        0x2 -> :sswitch_19f
+        0x5 -> :sswitch_19b
+        0xc -> :sswitch_18d
+        0xd -> :sswitch_189
+        0xe -> :sswitch_17e
+        0xf -> :sswitch_162
+        0x10 -> :sswitch_14c
+        0x11 -> :sswitch_144
+        0x12 -> :sswitch_13c
+        0x1c -> :sswitch_11d
+        0x1d -> :sswitch_fb
+        0x1e -> :sswitch_e7
+        0x20 -> :sswitch_e1
+        0x25 -> :sswitch_18d
+        0x2e -> :sswitch_cd
+        0x2f -> :sswitch_18d
+        0x3a -> :sswitch_c2
+        0x4d -> :sswitch_144
+        0x4e -> :sswitch_13c
+        0x50 -> :sswitch_fb
         0x51 -> :sswitch_b9
-        0x52 -> :sswitch_183
-        0x53 -> :sswitch_16d
+        0x52 -> :sswitch_162
+        0x53 -> :sswitch_14c
         0x5d -> :sswitch_b3
-        0x5e -> :sswitch_1ae
-        0x5f -> :sswitch_11c
-        0x6d -> :sswitch_16d
+        0x5e -> :sswitch_18d
+        0x5f -> :sswitch_fb
+        0x6d -> :sswitch_14c
         0x8e -> :sswitch_af
-        0x90 -> :sswitch_183
-        0x91 -> :sswitch_16d
+        0x90 -> :sswitch_162
+        0x91 -> :sswitch_14c
         0xaa -> :sswitch_ac
         0xab -> :sswitch_a9
-        0xcf -> :sswitch_11c
+        0xcf -> :sswitch_fb
         0xd0 -> :sswitch_93
         0xe0 -> :sswitch_90
         0xe1 -> :sswitch_8d
@@ -8977,13 +8928,13 @@
         0xf2 -> :sswitch_7c
         0xf3 -> :sswitch_95
         0x106 -> :sswitch_b9
-        0x10b -> :sswitch_11c
+        0x10b -> :sswitch_fb
         0x119 -> :sswitch_64
         0x11a -> :sswitch_57
         0x11b -> :sswitch_4d
         0x11d -> :sswitch_41
         0x11e -> :sswitch_3b
-        0x129 -> :sswitch_e3
+        0x129 -> :sswitch_c2
         0x138 -> :sswitch_35
         0x139 -> :sswitch_2f
         0x140 -> :sswitch_29

@@ -3,6 +3,6 @@
 
 
 # static fields
-.field public static facebeauty_3_0_config:I = 0x7f12000b
+.field public static facebeauty_3_0_config:I = 0x7f120009
 
-.field public static facebeauty_config:I = 0x7f12000c
+.field public static facebeauty_config:I = 0x7f12000a

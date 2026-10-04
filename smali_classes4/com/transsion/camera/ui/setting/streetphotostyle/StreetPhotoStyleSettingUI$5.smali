@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;)V
     .registers 2
 
-    .line 653
+    .line 656
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI$5;->this$0:Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 656
+    .line 659
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    .line 657
+    .line 660
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI$5;->this$0:Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->-$$Nest$fgetmStreetPhotoStyleSelectRoot(Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;)Landroid/view/ViewGroup;
@@ -47,7 +47,7 @@
 
     if-eqz p1, :cond_15
 
-    .line 658
+    .line 661
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI$5;->this$0:Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->-$$Nest$fgetmStreetPhotoStyleSelectRoot(Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;)Landroid/view/ViewGroup;

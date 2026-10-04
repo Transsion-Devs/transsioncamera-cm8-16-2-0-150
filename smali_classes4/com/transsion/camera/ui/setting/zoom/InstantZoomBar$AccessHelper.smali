@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;Landroid/view/View;)V
     .registers 3
 
-    .line 457
+    .line 478
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$AccessHelper;->this$0:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;
 
-    .line 458
+    .line 479
     invoke-direct {p0, p2}, Landroidx/customview/widget/ExploreByTouchHelper;-><init>(Landroid/view/View;)V
 
     return-void
@@ -36,7 +36,7 @@
 .method protected getVirtualViewAt(FF)I
     .registers 6
 
-    .line 463
+    .line 484
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$AccessHelper;->this$0:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->-$$Nest$fgetmItemList(Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;)Ljava/util/List;
@@ -52,7 +52,7 @@
     :goto_b
     if-ge v1, v0, :cond_25
 
-    .line 465
+    .line 486
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$AccessHelper;->this$0:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;
 
     invoke-static {v2}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->-$$Nest$fgetmItemList(Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;)Ljava/util/List;
@@ -89,7 +89,7 @@
 .method protected getVisibleVirtualViews(Ljava/util/List;)V
     .registers 4
 
-    .line 475
+    .line 496
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$AccessHelper;->this$0:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->-$$Nest$fgetmItemList(Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;)Ljava/util/List;
@@ -105,7 +105,7 @@
     :goto_b
     if-ge v0, p0, :cond_17
 
-    .line 477
+    .line 498
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -123,7 +123,7 @@
 .method protected onPerformActionForVirtualView(IILandroid/os/Bundle;)Z
     .registers 7
 
-    .line 498
+    .line 519
     invoke-static {}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p3
@@ -160,7 +160,7 @@
 
     if-eq p1, p2, :cond_52
 
-    .line 501
+    .line 522
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$AccessHelper;->this$0:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;
 
     invoke-static {p2}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->-$$Nest$fgetmItemList(Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;)Ljava/util/List;
@@ -178,7 +178,7 @@
 
     if-ge p3, p2, :cond_4c
 
-    .line 503
+    .line 524
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$AccessHelper;->this$0:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;
 
     invoke-static {v2}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->-$$Nest$fgetmItemList(Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;)Ljava/util/List;
@@ -205,7 +205,7 @@
 
     goto :goto_34
 
-    .line 505
+    .line 526
     :cond_4c
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$AccessHelper;->this$0:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;
 
@@ -220,7 +220,7 @@
 .method protected onPopulateNodeForVirtualView(ILandroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
     .registers 3
 
-    .line 484
+    .line 505
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$AccessHelper;->this$0:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->-$$Nest$fgetmItemList(Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;)Ljava/util/List;
@@ -233,32 +233,32 @@
 
     check-cast p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;
 
-    .line 485
+    .line 506
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;->mText:Ljava/lang/String;
 
     invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setText(Ljava/lang/CharSequence;)V
 
-    .line 487
+    .line 508
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    .line 488
+    .line 509
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;->mBounds:Landroid/graphics/RectF;
 
     invoke-virtual {p0, p1}, Landroid/graphics/RectF;->round(Landroid/graphics/Rect;)V
 
-    .line 489
+    .line 510
     invoke-virtual {p2, p1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setBoundsInParent(Landroid/graphics/Rect;)V
 
     const/16 p0, 0x10
 
-    .line 491
+    .line 512
     invoke-virtual {p2, p0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->addAction(I)V
 
     const/4 p0, 0x1
 
-    .line 492
+    .line 513
     invoke-virtual {p2, p0}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setClickable(Z)V
 
     return-void

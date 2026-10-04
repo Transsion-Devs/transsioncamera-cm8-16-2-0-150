@@ -34,7 +34,7 @@
         }
     .end annotation
 
-    .line 110
+    .line 106
     iput-object p1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher$Worker;->this$0:Lkotlinx/coroutines/internal/LimitedDispatcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 
     const/4 v0, 0x0
 
-    .line 115
+    .line 111
     :cond_1
     :try_start_1
     iget-object v1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher$Worker;->currentTask:Ljava/lang/Runnable;
@@ -65,12 +65,12 @@
     :catchall_7
     move-exception v1
 
-    .line 117
+    .line 113
     sget-object v2, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     invoke-static {v2, v1}, Lkotlinx/coroutines/CoroutineExceptionHandlerKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
 
-    .line 119
+    .line 115
     :goto_d
     iget-object v1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher$Worker;->this$0:Lkotlinx/coroutines/internal/LimitedDispatcher;
 
@@ -92,7 +92,7 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 121
+    .line 117
     iget-object v1, p0, Lkotlinx/coroutines/internal/LimitedDispatcher$Worker;->this$0:Lkotlinx/coroutines/internal/LimitedDispatcher;
 
     # getter for: Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;
@@ -108,7 +108,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 124
+    .line 120
     iget-object v0, p0, Lkotlinx/coroutines/internal/LimitedDispatcher$Worker;->this$0:Lkotlinx/coroutines/internal/LimitedDispatcher;
 
     # getter for: Lkotlinx/coroutines/internal/LimitedDispatcher;->dispatcher:Lkotlinx/coroutines/CoroutineDispatcher;

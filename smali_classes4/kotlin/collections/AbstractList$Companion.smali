@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 105
+    .line 115
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method public final checkBoundsIndexes$kotlin_stdlib(III)V
     .registers 6
 
-    .line 128
+    .line 138
     const-string p0, "startIndex: "
 
     if-ltz p1, :cond_26
@@ -49,7 +49,7 @@
 
     return-void
 
-    .line 132
+    .line 142
     :cond_9
     new-instance p3, Ljava/lang/IllegalArgumentException;
 
@@ -75,7 +75,7 @@
 
     throw p3
 
-    .line 129
+    .line 139
     :cond_26
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -117,7 +117,7 @@
 
     return-void
 
-    .line 108
+    .line 118
     :cond_5
     new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -155,7 +155,7 @@
 
     return-void
 
-    .line 114
+    .line 124
     :cond_5
     new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -187,7 +187,7 @@
 .method public final checkRangeIndexes$kotlin_stdlib(III)V
     .registers 6
 
-    .line 119
+    .line 129
     const-string p0, "fromIndex: "
 
     if-ltz p1, :cond_26
@@ -198,7 +198,7 @@
 
     return-void
 
-    .line 123
+    .line 133
     :cond_9
     new-instance p3, Ljava/lang/IllegalArgumentException;
 
@@ -224,7 +224,7 @@
 
     throw p3
 
-    .line 120
+    .line 130
     :cond_26
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -257,6 +257,37 @@
     throw v0
 .end method
 
+.method public final newCapacity$kotlin_stdlib(II)I
+    .registers 4
+
+    shr-int/lit8 p0, p1, 0x1
+
+    add-int/2addr p1, p0
+
+    sub-int p0, p1, p2
+
+    if-gez p0, :cond_8
+
+    move p1, p2
+
+    :cond_8
+    const p0, 0x7ffffff7
+
+    sub-int v0, p1, p0
+
+    if-lez v0, :cond_15
+
+    if-le p2, p0, :cond_14
+
+    const p0, 0x7fffffff
+
+    :cond_14
+    return p0
+
+    :cond_15
+    return p1
+.end method
+
 .method public final orderedEquals$kotlin_stdlib(Ljava/util/Collection;Ljava/util/Collection;)Z
     .registers 5
 
@@ -268,7 +299,7 @@
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 145
+    .line 168
     invoke-interface {p1}, Ljava/util/Collection;->size()I
 
     move-result p0
@@ -283,13 +314,13 @@
 
     return v1
 
-    .line 147
+    .line 170
     :cond_16
     invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    .line 148
+    .line 171
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -305,12 +336,12 @@
 
     move-result-object p2
 
-    .line 149
+    .line 172
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 150
+    .line 173
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p2
@@ -332,7 +363,7 @@
 
     invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 138
+    .line 161
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -354,7 +385,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 139
+    .line 162
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0

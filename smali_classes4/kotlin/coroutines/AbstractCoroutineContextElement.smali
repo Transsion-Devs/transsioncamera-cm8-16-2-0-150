@@ -24,10 +24,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 14
+    .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
+    .line 17
     iput-object p1, p0, Lkotlin/coroutines/AbstractCoroutineContextElement;->key:Lkotlin/coroutines/CoroutineContext$Key;
 
     return-void
@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
+.method public bridge fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -47,7 +47,7 @@
         }
     .end annotation
 
-    .line 14
+    .line 16
     invoke-static {p0, p1, p2}, Lkotlin/coroutines/CoroutineContext$Element$DefaultImpls;->fold(Lkotlin/coroutines/CoroutineContext$Element;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
 
     move-result-object p0
@@ -55,7 +55,7 @@
     return-object p0
 .end method
 
-.method public get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
+.method public bridge get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -67,7 +67,7 @@
         }
     .end annotation
 
-    .line 14
+    .line 16
     invoke-static {p0, p1}, Lkotlin/coroutines/CoroutineContext$Element$DefaultImpls;->get(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
 
     move-result-object p0
@@ -84,13 +84,13 @@
         }
     .end annotation
 
-    .line 15
+    .line 17
     iget-object p0, p0, Lkotlin/coroutines/AbstractCoroutineContextElement;->key:Lkotlin/coroutines/CoroutineContext$Key;
 
     return-object p0
 .end method
 
-.method public minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
+.method public bridge minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -101,7 +101,7 @@
         }
     .end annotation
 
-    .line 14
+    .line 16
     invoke-static {p0, p1}, Lkotlin/coroutines/CoroutineContext$Element$DefaultImpls;->minusKey(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -109,10 +109,10 @@
     return-object p0
 .end method
 
-.method public plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
+.method public bridge plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
     .registers 2
 
-    .line 14
+    .line 16
     invoke-static {p0, p1}, Lkotlin/coroutines/CoroutineContext$Element$DefaultImpls;->plus(Lkotlin/coroutines/CoroutineContext$Element;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0

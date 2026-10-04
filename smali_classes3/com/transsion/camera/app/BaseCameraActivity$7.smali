@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 2405
+    .line 2438
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$7;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Landroid/app/SharedElementCallback;-><init>()V
@@ -35,7 +35,7 @@
 .method public onCaptureSharedElementSnapshot(Landroid/view/View;Landroid/graphics/Matrix;Landroid/graphics/RectF;)Landroid/os/Parcelable;
     .registers 7
 
-    .line 2408
+    .line 2441
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -62,7 +62,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2409
+    .line 2442
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$7;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {v0}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmExitSharedElementBitmap(Lcom/transsion/camera/app/BaseCameraActivity;)Landroid/graphics/Bitmap;
@@ -83,7 +83,7 @@
 
     if-nez v0, :cond_39
 
-    .line 2410
+    .line 2443
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$7;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p0}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmExitSharedElementBitmap(Lcom/transsion/camera/app/BaseCameraActivity;)Landroid/graphics/Bitmap;
@@ -92,7 +92,7 @@
 
     return-object p0
 
-    .line 2412
+    .line 2445
     :cond_39
     invoke-super {p0, p1, p2, p3}, Landroid/app/SharedElementCallback;->onCaptureSharedElementSnapshot(Landroid/view/View;Landroid/graphics/Matrix;Landroid/graphics/RectF;)Landroid/os/Parcelable;
 

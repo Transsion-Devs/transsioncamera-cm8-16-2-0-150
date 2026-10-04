@@ -32,7 +32,7 @@
 
     const/4 p1, 0x0
 
-    .line 68
+    .line 64
     :cond_7
     invoke-interface {p0, p1, p2}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -61,7 +61,7 @@
 
     const/4 p1, 0x0
 
-    .line 42
+    .line 38
     :cond_7
     invoke-interface {p0, p1}, Lkotlinx/coroutines/sync/Mutex;->tryLock(Ljava/lang/Object;)Z
 
@@ -90,7 +90,7 @@
 
     const/4 p1, 0x0
 
-    .line 98
+    .line 94
     :cond_7
     invoke-interface {p0, p1}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 

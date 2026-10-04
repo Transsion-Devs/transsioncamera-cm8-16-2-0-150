@@ -894,7 +894,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p3, "textureToBitmap cost "
+    const-string/jumbo p3, "textureToBitmap cost "
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

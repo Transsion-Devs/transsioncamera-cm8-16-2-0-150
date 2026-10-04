@@ -30,7 +30,7 @@
     .line 0
     iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$$ExternalSyntheticLambda6;->f$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
-    invoke-static {p0}, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->$r8$lambda$BzTvbvqV882v25HZUsgAJgPj_bk(Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->$r8$lambda$pT-4J6nO9h-07EVRUGOsAhOcVj8(Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;)Ljava/lang/Object;
 
     move-result-object p0
 

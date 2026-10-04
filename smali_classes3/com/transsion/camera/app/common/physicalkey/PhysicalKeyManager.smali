@@ -82,6 +82,17 @@
     return-object p0
 .end method
 
+.method static bridge synthetic -$$Nest$misFingerprintSlideKey(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;I)Z
+    .registers 2
+
+    .line 0
+    invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isFingerprintSlideKey(I)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method static bridge synthetic -$$Nest$misNeedAiKeyLongPress(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
     .registers 1
 
@@ -154,7 +165,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 51
+    .line 55
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "PhysicalKeyManager"
@@ -169,46 +180,46 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;)V
     .registers 6
 
-    .line 113
+    .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 66
+    .line 70
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mIsDelayForCapture:Z
 
     const/4 v1, -0x1
 
-    .line 81
+    .line 85
     iput v1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyCode:I
 
     const-wide/16 v1, 0x0
 
-    .line 82
+    .line 86
     iput-wide v1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mLastLogPrintTime:J
 
     const/4 v1, 0x0
 
-    .line 83
+    .line 87
     iput-object v1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyEvent:Landroid/view/KeyEvent;
 
-    .line 85
+    .line 89
     iput v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mShoulderButtonState:I
 
-    .line 460
+    .line 486
     new-instance v0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;-><init>(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventCallBack:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$IKeyEventCallback;
 
-    .line 114
+    .line 118
     iput-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mContext:Landroid/content/Context;
 
-    .line 115
+    .line 119
     iput-object p2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mSettingProvide:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
 
-    .line 116
+    .line 120
     new-instance p1, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
 
     iget-object p2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventCallBack:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$IKeyEventCallback;
@@ -223,14 +234,14 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
 
-    .line 117
+    .line 121
     new-instance p1, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;-><init>(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)V
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mUIHandler:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
 
-    .line 118
+    .line 122
     const-string p1, "ro.side_fingerprint_support"
 
     const-string p2, "0"
@@ -239,7 +250,7 @@
 
     move-result-object p1
 
-    .line 119
+    .line 123
     const-string p2, "1"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -254,7 +265,7 @@
 .method private doFingerPrintAction()V
     .registers 4
 
-    .line 402
+    .line 428
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mIsDelayForCapture:Z
 
     if-eqz v0, :cond_5
@@ -264,27 +275,27 @@
     :cond_5
     const/4 v0, 0x1
 
-    .line 405
+    .line 431
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mIsDelayForCapture:Z
 
-    .line 406
+    .line 432
     iget-object v1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mUIHandler:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 407
+    .line 433
     iget-boolean v1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mIsSideFingerPrint:Z
 
     if-eqz v1, :cond_20
 
-    .line 408
+    .line 434
     sget-object v1, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v2, "[fingerPrintAction] send finger print action:delay"
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 409
+    .line 435
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mUIHandler:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
 
     const-wide/16 v1, 0x1f4
@@ -293,7 +304,7 @@
 
     return-void
 
-    .line 411
+    .line 437
     :cond_20
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mUIHandler:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
 
@@ -307,24 +318,24 @@
 .method private ensureVibrator()V
     .registers 3
 
-    .line 453
+    .line 479
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVibrator:Landroid/os/Vibrator;
 
     if-nez v0, :cond_15
 
-    .line 454
+    .line 480
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mContext:Landroid/content/Context;
 
     const-string/jumbo v1, "vibrator_manager"
 
-    .line 455
+    .line 481
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/os/VibratorManager;
 
-    .line 456
+    .line 482
     invoke-virtual {v0}, Landroid/os/VibratorManager;->getDefaultVibrator()Landroid/os/Vibrator;
 
     move-result-object v0
@@ -338,7 +349,7 @@
 .method private getShoulderButtonOrientation()I
     .registers 3
 
-    .line 137
+    .line 141
     iget p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mOrientation:I
 
     const/16 v0, 0x13b
@@ -377,12 +388,12 @@
 .method private isFingerprintOn()Z
     .registers 3
 
-    .line 416
+    .line 442
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mSettingProvide:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
 
     if-eqz v0, :cond_17
 
-    .line 417
+    .line 443
     const-string v1, "key_fingerprint_capture"
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;->findISettingByKey(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/ISetting;
@@ -391,7 +402,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 419
+    .line 445
     const-string p0, "on"
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
@@ -404,7 +415,7 @@
 
     return p0
 
-    .line 422
+    .line 448
     :cond_17
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mContext:Landroid/content/Context;
 
@@ -430,10 +441,41 @@
     return v1
 .end method
 
+.method private isFingerprintSlideKey(I)Z
+    .registers 2
+
+    .line 758
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object p0
+
+    iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mFingerprintSupportZoom:Z
+
+    if-eqz p0, :cond_12
+
+    const/16 p0, 0x167
+
+    if-eq p1, p0, :cond_10
+
+    const/16 p0, 0x168
+
+    if-ne p1, p0, :cond_12
+
+    :cond_10
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_12
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method private isNeedAiKeyLongPress()Z
     .registers 1
 
-    .line 443
+    .line 469
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isAiKeySupportBurst()Z
 
     move-result p0
@@ -444,7 +486,7 @@
 .method private isShoulderButtonClickSwitchOn()Z
     .registers 4
 
-    .line 426
+    .line 452
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -463,19 +505,19 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mContext:Landroid/content/Context;
 
-    .line 427
+    .line 453
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p0
 
-    .line 428
+    .line 454
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
 
     iget v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mShoulderButtonClickSwitchDefaultValue:I
 
-    .line 427
+    .line 453
     const-string/jumbo v1, "tran_smart_button_camera_click_switch"
 
     invoke-static {p0, v1, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
@@ -495,7 +537,7 @@
 .method private isShoulderButtonLongPressSwitchOn()Z
     .registers 4
 
-    .line 432
+    .line 458
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -514,19 +556,19 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mContext:Landroid/content/Context;
 
-    .line 433
+    .line 459
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p0
 
-    .line 434
+    .line 460
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
 
     iget v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mShoulderButtonLongPressSwitchDefaultValue:I
 
-    .line 433
+    .line 459
     const-string/jumbo v1, "tran_smart_button_camera_longpress_switch"
 
     invoke-static {p0, v1, v0}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
@@ -546,7 +588,7 @@
 .method private isShoulderButtonSlideHorizontallyOn()Z
     .registers 4
 
-    .line 438
+    .line 464
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -565,7 +607,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mContext:Landroid/content/Context;
 
-    .line 439
+    .line 465
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p0
@@ -587,31 +629,38 @@
 .end method
 
 .method private onShoulderButtonKeyDown(Lcom/transsion/camera/app/common/physicalkey/ShoulderButtonInfo;)V
-    .registers 6
+    .registers 4
 
-    .line 309
+    .line 328
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_10
 
-    goto/16 :goto_83
+    .line 329
+    sget-object p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 312
-    :cond_a
+    const-string p1, "[onShoulderButtonKeyDown] return for not support"
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    return-void
+
+    .line 332
+    :cond_10
     iget v0, p1, Lcom/transsion/camera/app/common/physicalkey/ShoulderButtonInfo;->mKeyCode:I
 
-    .line 313
+    .line 333
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isKeyNeedProcess(I)Z
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_2f
 
-    .line 314
+    .line 334
     sget-object p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -632,78 +681,65 @@
 
     return-void
 
-    .line 318
-    :cond_29
+    .line 338
+    :cond_2f
     iget p1, p1, Lcom/transsion/camera/app/common/physicalkey/ShoulderButtonInfo;->mDistance:I
 
     const/16 v1, 0x2d0
 
-    const/4 v2, 0x1
-
-    if-eq v0, v1, :cond_5d
+    if-eq v0, v1, :cond_5f
 
     const/16 v1, 0x2d2
 
-    if-eq v0, v1, :cond_5d
+    if-eq v0, v1, :cond_5f
 
     const/16 v1, 0x2da
 
-    if-eq v0, v1, :cond_5d
+    if-eq v0, v1, :cond_5f
 
     const/16 v1, 0x2dc
 
-    if-eq v0, v1, :cond_5d
+    if-eq v0, v1, :cond_5f
 
     const/16 v1, 0x2df
 
-    if-eq v0, v1, :cond_45
+    if-eq v0, v1, :cond_55
 
-    const/16 v3, 0x2e0
+    const/16 v1, 0x2e0
 
-    if-eq v0, v3, :cond_45
+    if-eq v0, v1, :cond_55
 
-    goto :goto_83
+    packed-switch v0, :pswitch_data_72
 
-    .line 322
-    :cond_45
-    invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isShoulderButtonSlideHorizontallyOn()Z
+    goto :goto_6c
 
-    move-result v3
-
-    if-eqz v3, :cond_83
-
-    .line 323
-    iget-object v3, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
-
-    if-ne v0, v1, :cond_50
-
-    goto :goto_51
-
-    :cond_50
-    const/4 v2, 0x0
-
-    :goto_51
-    invoke-virtual {v3, v2, p1}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->shoulderButtonKeySwiping(ZI)V
-
-    .line 324
-    iget p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mShoulderButtonState:I
-
-    const/4 v0, 0x2
-
-    if-eq p1, v0, :cond_83
-
-    .line 325
-    invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->switchShoulderButtonState(I)V
+    .line 359
+    :pswitch_4d
+    invoke-direct {p0, v0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->physicalKeySwiping(II)V
 
     return-void
 
-    .line 333
-    :cond_5d
-    iget p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mShoulderButtonState:I
+    .line 355
+    :pswitch_51
+    invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->physicalKeyDown(I)V
 
-    if-nez p1, :cond_83
+    return-void
 
-    .line 334
+    .line 342
+    :cond_55
+    invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isShoulderButtonSlideHorizontallyOn()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6c
+
+    .line 343
+    invoke-direct {p0, v0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->physicalKeySwiping(II)V
+
+    return-void
+
+    .line 350
+    :cond_5f
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isShoulderButtonClickSwitchOn()Z
 
     move-result p1
@@ -714,43 +750,35 @@
 
     move-result p1
 
-    if-eqz p1, :cond_7a
+    if-eqz p1, :cond_6c
 
-    .line 335
-    :cond_6d
-    invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->ensureVibrator()V
+    goto :goto_6d
 
-    .line 336
-    iget-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVibrator:Landroid/os/Vibrator;
-
-    const/4 v1, 0x5
-
-    invoke-static {v1}, Landroid/os/VibrationEffect;->createPredefined(I)Landroid/os/VibrationEffect;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v1}, Landroid/os/Vibrator;->vibrate(Landroid/os/VibrationEffect;)V
-
-    .line 339
-    :cond_7a
-    iget-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->keyDown(ILandroid/view/KeyEvent;)V
-
-    .line 340
-    invoke-direct {p0, v2}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->switchShoulderButtonState(I)V
-
-    :cond_83
-    :goto_83
+    :cond_6c
+    :goto_6c
     return-void
+
+    .line 351
+    :cond_6d
+    :goto_6d
+    invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->physicalKeyDown(I)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_72
+    .packed-switch 0x2e2
+        :pswitch_51
+        :pswitch_4d
+        :pswitch_4d
+    .end packed-switch
 .end method
 
 .method private onShoulderButtonKeyUp(Lcom/transsion/camera/app/common/physicalkey/ShoulderButtonInfo;)V
-    .registers 4
+    .registers 8
 
-    .line 354
+    .line 367
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
@@ -759,49 +787,144 @@
 
     if-eqz v0, :cond_9
 
-    goto :goto_13
+    goto :goto_1c
 
-    .line 358
+    .line 371
     :cond_9
     iget p1, p1, Lcom/transsion/camera/app/common/physicalkey/ShoulderButtonInfo;->mKeyCode:I
 
     const/16 v0, 0x2d7
 
-    if-eq p1, v0, :cond_14
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x5
+
+    const/4 v5, 0x1
+
+    if-eq p1, v0, :cond_3f
 
     const/16 v0, 0x2e1
 
-    if-eq p1, v0, :cond_14
+    if-eq p1, v0, :cond_3f
 
-    :goto_13
+    const/16 v0, 0x2e2
+
+    if-eq p1, v0, :cond_1d
+
+    :goto_1c
     return-void
 
-    .line 362
-    :cond_14
+    .line 390
+    :cond_1d
     iget v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mShoulderButtonState:I
 
-    const/4 v1, 0x1
+    if-ne v0, v5, :cond_32
 
-    if-ne v0, v1, :cond_38
+    .line 391
+    invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->ensureVibrator()V
 
-    .line 363
+    .line 392
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVibrator:Landroid/os/Vibrator;
+
+    invoke-static {v4}, Landroid/os/VibrationEffect;->createPredefined(I)Landroid/os/VibrationEffect;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Landroid/os/Vibrator;->vibrate(Landroid/os/VibrationEffect;)V
+
+    .line 393
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
+
+    invoke-virtual {v0, p1, v3}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->keyUp(ILandroid/view/KeyEvent;)V
+
+    .line 396
+    :cond_32
+    iget v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mShoulderButtonState:I
+
+    if-ne v0, v2, :cond_3b
+
+    .line 397
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
+
+    invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->swipeUp(I)V
+
+    .line 399
+    :cond_3b
+    invoke-direct {p0, v1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->switchShoulderButtonState(I)V
+
+    return-void
+
+    .line 376
+    :cond_3f
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isShoulderButtonClickSwitchOn()Z
 
     move-result v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_4b
 
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isShoulderButtonLongPressSwitchOn()Z
 
     move-result v0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_60
 
-    .line 364
-    :cond_25
+    .line 377
+    :cond_4b
+    iget v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mShoulderButtonState:I
+
+    if-ne v0, v5, :cond_60
+
+    .line 378
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->ensureVibrator()V
 
-    .line 365
+    .line 379
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVibrator:Landroid/os/Vibrator;
+
+    invoke-static {v4}, Landroid/os/VibrationEffect;->createPredefined(I)Landroid/os/VibrationEffect;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Landroid/os/Vibrator;->vibrate(Landroid/os/VibrationEffect;)V
+
+    .line 380
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
+
+    invoke-virtual {v0, p1, v3}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->keyUp(ILandroid/view/KeyEvent;)V
+
+    .line 384
+    :cond_60
+    iget v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mShoulderButtonState:I
+
+    if-ne v0, v2, :cond_69
+
+    .line 385
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
+
+    invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->swipeUp(I)V
+
+    .line 387
+    :cond_69
+    invoke-direct {p0, v1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->switchShoulderButtonState(I)V
+
+    return-void
+.end method
+
+.method private physicalKeyDown(I)V
+    .registers 4
+
+    .line 311
+    iget v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mShoulderButtonState:I
+
+    if-nez v0, :cond_1b
+
+    .line 312
+    invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->ensureVibrator()V
+
+    .line 313
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVibrator:Landroid/os/Vibrator;
 
     const/4 v1, 0x5
@@ -812,33 +935,48 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Vibrator;->vibrate(Landroid/os/VibrationEffect;)V
 
-    .line 368
-    :cond_32
+    .line 314
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, p1, v1}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->keyUp(ILandroid/view/KeyEvent;)V
+    invoke-virtual {v0, p1, v1}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->keyDown(ILandroid/view/KeyEvent;)V
 
-    .line 370
-    :cond_38
-    iget v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mShoulderButtonState:I
+    const/4 p1, 0x1
 
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_42
-
-    .line 371
-    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
-
-    invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->shoulderButtonSwipeUp(I)V
-
-    :cond_42
-    const/4 p1, 0x0
-
-    .line 373
+    .line 315
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->switchShoulderButtonState(I)V
 
+    :cond_1b
+    return-void
+.end method
+
+.method private physicalKeySwiping(II)V
+    .registers 4
+
+    .line 320
+    invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/ModuleTransferManager;->setPhysicalKeyCode(I)V
+
+    .line 321
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
+
+    invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->keySwiping(II)V
+
+    .line 322
+    iget p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mShoulderButtonState:I
+
+    const/4 p2, 0x2
+
+    if-eq p1, p2, :cond_14
+
+    .line 323
+    invoke-direct {p0, p2}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->switchShoulderButtonState(I)V
+
+    :cond_14
     return-void
 .end method
 
@@ -847,49 +985,59 @@
 
     const/16 p0, 0x19d
 
-    if-eq p1, p0, :cond_22
+    if-eq p1, p0, :cond_29
 
     const/16 p0, 0x2d0
 
-    if-eq p1, p0, :cond_1f
+    if-eq p1, p0, :cond_26
 
     const/16 p0, 0x2d2
 
-    if-eq p1, p0, :cond_1f
+    if-eq p1, p0, :cond_26
 
     const/16 p0, 0x2d7
 
-    if-eq p1, p0, :cond_1f
+    if-eq p1, p0, :cond_26
 
     const/16 p0, 0x2da
 
-    if-eq p1, p0, :cond_1f
+    if-eq p1, p0, :cond_26
 
     const/16 p0, 0x2dc
 
-    if-eq p1, p0, :cond_1f
+    if-eq p1, p0, :cond_26
 
     const/16 p0, 0x2e1
 
-    if-eq p1, p0, :cond_1f
+    if-eq p1, p0, :cond_26
 
-    .line 692
+    const/16 p0, 0x2e2
+
+    if-eq p1, p0, :cond_23
+
+    .line 751
     const-string p0, "-1"
 
-    goto :goto_24
+    goto :goto_2b
 
-    .line 687
-    :cond_1f
+    .line 749
+    :cond_23
+    const-string p0, "4"
+
+    goto :goto_2b
+
+    .line 743
+    :cond_26
     const-string p0, "2"
 
-    goto :goto_24
+    goto :goto_2b
 
-    .line 690
-    :cond_22
+    .line 746
+    :cond_29
     const-string p0, "3"
 
-    .line 695
-    :goto_24
+    .line 754
+    :goto_2b
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p1
@@ -904,17 +1052,17 @@
 
     const/4 v0, 0x0
 
-    .line 447
+    .line 473
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mIsDelayForCapture:Z
 
-    .line 448
+    .line 474
     sget-object v0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[resetFingerPrintStatus]"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 449
+    .line 475
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mUIHandler:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
 
     const/4 v0, 0x1
@@ -927,7 +1075,7 @@
 .method private switchShoulderButtonState(I)V
     .registers 5
 
-    .line 349
+    .line 306
     sget-object v0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -954,7 +1102,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 350
+    .line 307
     iput p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mShoulderButtonState:I
 
     return-void
@@ -965,17 +1113,17 @@
 .method public doShoulderButtonAction(IIII)V
     .registers 7
 
-    .line 381
+    .line 407
     new-instance v0, Landroid/os/Message;
 
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
-    .line 382
+    .line 408
     new-instance v1, Lcom/transsion/camera/app/common/physicalkey/ShoulderButtonInfo;
 
     invoke-direct {v1, p1, p3, p4}, Lcom/transsion/camera/app/common/physicalkey/ShoulderButtonInfo;-><init>(III)V
 
-    .line 383
+    .line 409
     iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     const/4 p1, 0x1
@@ -984,10 +1132,10 @@
 
     const/4 p1, 0x3
 
-    .line 385
+    .line 411
     iput p1, v0, Landroid/os/Message;->what:I
 
-    .line 386
+    .line 412
     iget-object p2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mUIHandler:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
 
     invoke-virtual {p2, p1}, Landroid/os/Handler;->removeMessages(I)V
@@ -997,15 +1145,15 @@
     :cond_18
     const/4 p1, 0x4
 
-    .line 388
+    .line 414
     iput p1, v0, Landroid/os/Message;->what:I
 
-    .line 389
+    .line 415
     iget-object p2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mUIHandler:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
 
     invoke-virtual {p2, p1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 391
+    .line 417
     :goto_20
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mUIHandler:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
 
@@ -1017,7 +1165,7 @@
 .method public isKeyNeedProcess(I)Z
     .registers 4
 
-    .line 149
+    .line 153
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->getShoulderButtonOrientation()I
 
     move-result p0
@@ -1061,9 +1209,9 @@
 .end method
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
-    .registers 12
+    .registers 11
 
-    .line 160
+    .line 164
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->isPhysicalKeyEnable()Z
@@ -1076,192 +1224,178 @@
 
     return v1
 
-    .line 164
+    .line 168
     :cond_a
-    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mFingerprintSupportZoom:Z
-
-    const/16 v2, 0x167
-
-    const/16 v3, 0x166
-
-    const/4 v4, 0x0
-
-    if-eqz v0, :cond_22
-
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isFingerprintOn()Z
 
     move-result v0
 
-    if-nez v0, :cond_22
+    const/4 v2, 0x0
 
-    if-eq p1, v3, :cond_21
+    if-nez v0, :cond_18
 
-    if-ne p1, v2, :cond_22
+    invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isFingerprintSlideKey(I)Z
 
-    :cond_21
-    return v4
+    move-result v0
 
-    .line 171
-    :cond_22
+    if-eqz v0, :cond_18
+
+    return v2
+
+    .line 172
+    :cond_18
     invoke-static {}, Lcom/transsion/camera/utils/UnderwaterUtils;->isUnderwater()Z
 
     move-result v0
 
-    .line 172
-    iget-object v5, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+    .line 173
+    iget-object v3, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
-    invoke-interface {v5}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->isSupportDoubleClickVolumeDown()Z
+    invoke-interface {v3}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->isSupportDoubleClickVolumeDown()Z
 
-    move-result v5
+    move-result v3
 
-    const/16 v6, 0x1b
+    const/16 v4, 0x1b
 
-    if-eq p1, v6, :cond_10a
+    if-eq p1, v4, :cond_fe
 
-    const/16 v6, 0x42
+    const/16 v4, 0x42
 
-    if-eq p1, v6, :cond_109
+    if-eq p1, v4, :cond_fd
 
-    const/16 v6, 0x4f
+    const/16 v4, 0x4f
 
-    const/16 v7, 0x19
+    const/16 v5, 0x19
 
-    const/16 v8, 0x18
+    const/16 v6, 0x18
 
-    if-eq p1, v6, :cond_f8
+    if-eq p1, v4, :cond_ec
 
-    const/16 v6, 0x55
+    const/16 v4, 0x55
 
-    if-eq p1, v6, :cond_10a
+    if-eq p1, v4, :cond_fe
 
-    const/16 v6, 0x8d
+    const/16 v4, 0x8d
 
-    if-eq p1, v6, :cond_a5
+    if-eq p1, v4, :cond_99
 
-    const/16 v6, 0x12a
+    const/16 v4, 0x12a
 
-    if-eq p1, v6, :cond_a5
+    if-eq p1, v4, :cond_99
 
-    const/16 v6, 0x15e
+    const/16 v4, 0x15e
 
-    if-eq p1, v6, :cond_10a
+    if-eq p1, v4, :cond_fe
 
-    const/16 v6, 0x162
+    const/16 v4, 0x162
 
-    if-eq p1, v6, :cond_a5
+    if-eq p1, v4, :cond_99
 
-    const/16 v6, 0xa8
+    const/16 v4, 0xa8
 
-    if-eq p1, v6, :cond_63
+    const/16 v7, 0x167
 
-    const/16 v6, 0xa9
+    if-eq p1, v4, :cond_5d
 
-    if-eq p1, v6, :cond_78
+    const/16 v4, 0xa9
 
-    if-eq p1, v3, :cond_63
+    if-eq p1, v4, :cond_72
 
-    if-eq p1, v2, :cond_78
+    if-eq p1, v7, :cond_5d
 
-    packed-switch p1, :pswitch_data_110
+    const/16 v4, 0x168
 
-    packed-switch p1, :pswitch_data_11a
+    if-eq p1, v4, :cond_72
 
-    return v4
+    packed-switch p1, :pswitch_data_104
 
-    .line 192
-    :cond_63
-    :pswitch_63
-    iget-object v6, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+    packed-switch p1, :pswitch_data_10e
 
-    invoke-interface {v6}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
+    return v2
 
-    move-result v6
+    .line 193
+    :cond_5d
+    :pswitch_5d
+    iget-object v4, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
-    if-eqz v6, :cond_72
+    invoke-interface {v4}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
 
-    if-ne v8, p1, :cond_71
+    move-result v4
 
-    if-nez v0, :cond_72
+    if-eqz v4, :cond_6c
 
-    if-eqz v5, :cond_72
+    if-ne v6, p1, :cond_6b
 
-    :cond_71
-    return v4
+    if-nez v0, :cond_6c
 
-    :cond_72
-    if-eq p1, v3, :cond_78
+    if-eqz v3, :cond_6c
 
-    .line 198
-    iput v8, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyCode:I
+    :cond_6b
+    return v2
+
+    :cond_6c
+    if-eq p1, v7, :cond_72
 
     .line 199
+    iput v6, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyCode:I
+
+    .line 200
     iput-object p2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyEvent:Landroid/view/KeyEvent;
 
-    .line 206
-    :cond_78
-    :pswitch_78
-    iget-object v6, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+    .line 207
+    :cond_72
+    :pswitch_72
+    iget-object v4, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
-    invoke-interface {v6}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
+    invoke-interface {v4}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
 
-    move-result v6
+    move-result v4
 
-    if-eqz v6, :cond_89
+    if-eqz v4, :cond_83
 
-    if-eq v8, p1, :cond_84
+    if-eq v6, p1, :cond_7e
 
-    if-ne v7, p1, :cond_88
+    if-ne v5, p1, :cond_82
 
-    :cond_84
-    if-nez v0, :cond_89
+    :cond_7e
+    if-nez v0, :cond_83
 
-    if-eqz v5, :cond_89
+    if-eqz v3, :cond_83
 
-    :cond_88
-    return v4
+    :cond_82
+    return v2
 
-    :cond_89
-    if-ne p1, v7, :cond_8f
-
-    .line 212
-    iput v7, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyCode:I
+    :cond_83
+    if-ne p1, v5, :cond_89
 
     .line 213
+    iput v5, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyCode:I
+
+    .line 214
     iput-object p2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyEvent:Landroid/view/KeyEvent;
 
-    .line 215
-    :cond_8f
-    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+    .line 217
+    :cond_89
+    invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isFingerprintSlideKey(I)Z
 
-    move-result-object v6
+    move-result v4
 
-    iget-boolean v6, v6, Lcom/transsion/camera/utils/CustomConfigUtil;->mFingerprintSupportZoom:Z
-
-    if-eqz v6, :cond_f8
-
-    if-eq p1, v3, :cond_9b
-
-    if-ne p1, v2, :cond_f8
+    if-eqz v4, :cond_ec
 
     .line 218
-    :cond_9b
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isFingerprintOn()Z
 
-    move-result v2
+    move-result v4
 
-    if-eqz v2, :cond_f8
+    if-eqz v4, :cond_ec
 
     .line 219
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->resetFingerPrintStatus()V
 
-    goto :goto_f8
+    goto :goto_ec
 
-    .line 177
-    :cond_a5
+    .line 178
+    :cond_99
     sget-object p2, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1282,19 +1416,19 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 178
+    .line 179
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
-    if-eqz v0, :cond_e1
+    if-eqz v0, :cond_d5
 
-    .line 179
+    .line 180
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e1
+    if-eqz v0, :cond_d5
 
-    .line 180
+    .line 181
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1317,92 +1451,92 @@
 
     return v1
 
-    .line 183
-    :cond_e1
+    .line 184
+    :cond_d5
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isFingerprintOn()Z
 
     move-result p1
 
-    if-eqz p1, :cond_eb
-
-    .line 184
-    invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->doFingerPrintAction()V
-
-    goto :goto_f7
+    if-eqz p1, :cond_df
 
     .line 185
-    :cond_eb
+    invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->doFingerPrintAction()V
+
+    goto :goto_eb
+
+    .line 186
+    :cond_df
     iget p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyCode:I
 
     const/4 p2, -0x1
 
-    if-eq p1, p2, :cond_f7
+    if-eq p1, p2, :cond_eb
 
-    .line 186
+    .line 187
     iget-object p2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyEvent:Landroid/view/KeyEvent;
 
     invoke-virtual {p2, p1, p0}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->keyDown(ILandroid/view/KeyEvent;)V
 
-    :cond_f7
-    :goto_f7
+    :cond_eb
+    :goto_eb
     return v1
 
-    .line 224
+    .line 223
+    :cond_ec
+    :goto_ec
+    iget-object v4, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+
+    invoke-interface {v4}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_fe
+
+    if-eq v6, p1, :cond_f8
+
+    if-ne v5, p1, :cond_fc
+
     :cond_f8
-    :goto_f8
-    iget-object v2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+    if-nez v0, :cond_fe
 
-    invoke-interface {v2}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
+    if-eqz v3, :cond_fe
 
-    move-result v2
+    :cond_fc
+    return v2
 
-    if-eqz v2, :cond_10a
-
-    if-eq v8, p1, :cond_104
-
-    if-ne v7, p1, :cond_108
-
-    :cond_104
-    if-nez v0, :cond_10a
-
-    if-eqz v5, :cond_10a
-
-    :cond_108
-    return v4
-
-    :cond_109
+    :cond_fd
     return v1
 
-    .line 234
-    :cond_10a
-    :pswitch_10a
+    .line 233
+    :cond_fe
+    :pswitch_fe
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->keyDown(ILandroid/view/KeyEvent;)V
 
     return v1
 
-    :pswitch_data_110
+    :pswitch_data_104
     .packed-switch 0x17
-        :pswitch_10a
-        :pswitch_63
-        :pswitch_78
+        :pswitch_fe
+        :pswitch_5d
+        :pswitch_72
     .end packed-switch
 
-    :pswitch_data_11a
+    :pswitch_data_10e
     .packed-switch 0x19b
-        :pswitch_78
-        :pswitch_78
-        :pswitch_10a
+        :pswitch_72
+        :pswitch_72
+        :pswitch_fe
     .end packed-switch
 .end method
 
 .method public onKeyUp(ILandroid/view/KeyEvent;)Z
-    .registers 14
+    .registers 12
 
-    .line 245
+    .line 244
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->isPhysicalKeyEnable()Z
@@ -1415,241 +1549,234 @@
 
     return v1
 
-    .line 249
+    .line 248
     :cond_a
-    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mFingerprintSupportZoom:Z
-
-    const/16 v2, 0x167
-
-    const/16 v3, 0x166
-
-    const/4 v4, 0x0
-
-    if-eqz v0, :cond_22
-
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isFingerprintOn()Z
 
     move-result v0
 
-    if-nez v0, :cond_22
+    const/4 v2, 0x0
 
-    if-eq p1, v3, :cond_21
+    if-nez v0, :cond_18
 
-    if-ne p1, v2, :cond_22
+    invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isFingerprintSlideKey(I)Z
 
-    :cond_21
-    return v4
+    move-result v0
 
-    .line 255
-    :cond_22
+    if-eqz v0, :cond_18
+
+    return v2
+
+    .line 252
+    :cond_18
     invoke-static {}, Lcom/transsion/camera/utils/UnderwaterUtils;->isUnderwater()Z
 
     move-result v0
 
-    .line 256
-    iget-object v5, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+    .line 253
+    iget-object v3, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
-    invoke-interface {v5}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->isSupportDoubleClickVolumeDown()Z
+    invoke-interface {v3}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->isSupportDoubleClickVolumeDown()Z
 
-    move-result v5
+    move-result v3
 
-    const/16 v6, 0x1b
+    const/16 v4, 0x1b
 
-    if-eq p1, v6, :cond_aa
+    if-eq p1, v4, :cond_a4
 
-    const/16 v6, 0x42
+    const/16 v4, 0x42
 
-    if-eq p1, v6, :cond_a9
+    if-eq p1, v4, :cond_a3
 
-    const/16 v6, 0x4f
+    const/16 v4, 0x4f
 
-    const/16 v7, 0x19
+    const/16 v5, 0x19
 
-    const/16 v8, 0x18
+    const/16 v6, 0x18
 
-    if-eq p1, v6, :cond_98
+    if-eq p1, v4, :cond_92
 
-    const/16 v6, 0x55
+    const/16 v4, 0x55
 
-    if-eq p1, v6, :cond_aa
+    if-eq p1, v4, :cond_a4
 
-    const/16 v6, 0x8d
+    const/16 v4, 0x8d
 
-    if-eq p1, v6, :cond_8e
+    if-eq p1, v4, :cond_88
 
-    const/16 v6, 0x12a
+    const/16 v4, 0x12a
 
-    if-eq p1, v6, :cond_8e
+    if-eq p1, v4, :cond_88
 
-    const/16 v6, 0x15e
+    const/16 v4, 0x15e
 
-    if-eq p1, v6, :cond_aa
+    if-eq p1, v4, :cond_a4
 
-    const/16 v6, 0x162
+    const/16 v4, 0x162
 
-    if-eq p1, v6, :cond_8e
+    if-eq p1, v4, :cond_88
 
-    const/16 v6, 0xa8
+    const/16 v4, 0xa8
 
-    const/4 v9, 0x0
+    const/4 v7, 0x0
 
-    const/4 v10, -0x1
+    const/4 v8, -0x1
 
-    if-eq p1, v6, :cond_65
+    if-eq p1, v4, :cond_5f
 
-    const/16 v6, 0xa9
+    const/16 v4, 0xa9
 
-    if-eq p1, v6, :cond_78
+    if-eq p1, v4, :cond_72
 
-    if-eq p1, v3, :cond_65
+    const/16 v4, 0x167
 
-    if-eq p1, v2, :cond_78
+    if-eq p1, v4, :cond_5f
 
-    packed-switch p1, :pswitch_data_b0
+    const/16 v4, 0x168
 
-    packed-switch p1, :pswitch_data_ba
+    if-eq p1, v4, :cond_72
 
-    return v4
+    packed-switch p1, :pswitch_data_aa
 
-    .line 270
-    :cond_65
-    :pswitch_65
-    iget-object v2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+    packed-switch p1, :pswitch_data_b4
 
-    invoke-interface {v2}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
+    return v2
 
-    move-result v2
+    .line 267
+    :cond_5f
+    :pswitch_5f
+    iget-object v4, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
-    if-eqz v2, :cond_74
+    invoke-interface {v4}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
 
-    if-ne v8, p1, :cond_73
+    move-result v4
 
-    if-nez v0, :cond_74
+    if-eqz v4, :cond_6e
 
-    if-eqz v5, :cond_74
+    if-ne v6, p1, :cond_6d
 
-    :cond_73
-    return v4
+    if-nez v0, :cond_6e
 
-    .line 275
-    :cond_74
-    iput v10, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyCode:I
+    if-eqz v3, :cond_6e
 
-    .line 276
-    iput-object v9, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyEvent:Landroid/view/KeyEvent;
+    :cond_6d
+    return v2
 
-    .line 280
-    :cond_78
-    :pswitch_78
-    iget-object v2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+    .line 272
+    :cond_6e
+    iput v8, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyCode:I
 
-    invoke-interface {v2}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
+    .line 273
+    iput-object v7, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyEvent:Landroid/view/KeyEvent;
 
-    move-result v2
+    .line 277
+    :cond_72
+    :pswitch_72
+    iget-object v4, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
-    if-eqz v2, :cond_89
+    invoke-interface {v4}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
 
-    if-eq v8, p1, :cond_84
+    move-result v4
 
-    if-ne v7, p1, :cond_88
+    if-eqz v4, :cond_83
 
-    :cond_84
-    if-nez v0, :cond_89
+    if-eq v6, p1, :cond_7e
 
-    if-eqz v5, :cond_89
+    if-ne v5, p1, :cond_82
 
+    :cond_7e
+    if-nez v0, :cond_83
+
+    if-eqz v3, :cond_83
+
+    :cond_82
+    return v2
+
+    .line 282
+    :cond_83
+    iput v8, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyCode:I
+
+    .line 283
+    iput-object v7, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyEvent:Landroid/view/KeyEvent;
+
+    goto :goto_92
+
+    .line 258
     :cond_88
-    return v4
-
-    .line 285
-    :cond_89
-    iput v10, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyCode:I
-
-    .line 286
-    iput-object v9, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mVolumeKeyEvent:Landroid/view/KeyEvent;
-
-    goto :goto_98
-
-    .line 261
-    :cond_8e
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->isFingerprintOn()Z
 
     move-result p1
 
-    if-eqz p1, :cond_97
+    if-eqz p1, :cond_91
 
-    .line 262
+    .line 259
     invoke-direct {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->resetFingerPrintStatus()V
 
-    :cond_97
+    :cond_91
     return v1
 
-    .line 288
-    :cond_98
-    :goto_98
-    iget-object v2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+    .line 285
+    :cond_92
+    :goto_92
+    iget-object v4, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
-    invoke-interface {v2}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
+    invoke-interface {v4}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->getVolumeIntercept()Z
 
-    move-result v2
+    move-result v4
 
-    if-eqz v2, :cond_aa
+    if-eqz v4, :cond_a4
 
-    if-eq v8, p1, :cond_a4
+    if-eq v6, p1, :cond_9e
 
-    if-ne v7, p1, :cond_a8
+    if-ne v5, p1, :cond_a2
 
+    :cond_9e
+    if-nez v0, :cond_a4
+
+    if-eqz v3, :cond_a4
+
+    :cond_a2
+    return v2
+
+    :cond_a3
+    return v1
+
+    .line 295
     :cond_a4
-    if-nez v0, :cond_aa
-
-    if-eqz v5, :cond_aa
-
-    :cond_a8
-    return v4
-
-    :cond_a9
-    return v1
-
-    .line 298
-    :cond_aa
-    :pswitch_aa
+    :pswitch_a4
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mKeyEventDetector:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->keyUp(ILandroid/view/KeyEvent;)V
 
     return v1
 
-    :pswitch_data_b0
+    :pswitch_data_aa
     .packed-switch 0x17
-        :pswitch_aa
-        :pswitch_65
-        :pswitch_78
+        :pswitch_a4
+        :pswitch_5f
+        :pswitch_72
     .end packed-switch
 
-    :pswitch_data_ba
+    :pswitch_data_b4
     .packed-switch 0x19b
-        :pswitch_65
-        :pswitch_65
-        :pswitch_aa
+        :pswitch_5f
+        :pswitch_5f
+        :pswitch_a4
     .end packed-switch
 .end method
 
 .method public onOrientationChanged(I)V
     .registers 8
 
-    .line 127
+    .line 131
     iput p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mOrientation:I
 
-    .line 129
+    .line 133
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 130
+    .line 134
     iget-wide v2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mLastLogPrintTime:J
 
     sub-long v2, v0, v2
@@ -1660,10 +1787,10 @@
 
     if-lez v2, :cond_28
 
-    .line 131
+    .line 135
     iput-wide v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mLastLogPrintTime:J
 
-    .line 132
+    .line 136
     sget-object p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1689,7 +1816,7 @@
 .method public setKeyEventCallback(Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;)V
     .registers 2
 
-    .line 123
+    .line 127
     iput-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->mPhysicalKeyEventCallback:Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
     return-void

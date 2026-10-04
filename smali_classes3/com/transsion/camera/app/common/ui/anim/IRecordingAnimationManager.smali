@@ -28,7 +28,7 @@
 .method public createRecordingAnimation(Landroid/view/View;ZF)Landroid/animation/Animator;
     .registers 15
 
-    .line 69
+    .line 75
     sget-object v0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->DTAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -53,7 +53,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 70
+    .line 76
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -66,7 +66,7 @@
 
     const/4 v0, 0x2
 
-    .line 77
+    .line 83
     const-string v1, "alpha"
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -75,7 +75,7 @@
 
     if-eqz p2, :cond_49
 
-    .line 78
+    .line 84
     new-array v4, v0, [F
 
     fill-array-data v4, :array_9e
@@ -84,7 +84,7 @@
 
     move-result-object v1
 
-    .line 79
+    .line 85
     new-instance v4, Landroid/view/animation/PathInterpolator;
 
     const v5, 0x3ea8f5c3    # 0.33f
@@ -99,7 +99,7 @@
 
     goto :goto_5d
 
-    .line 83
+    .line 89
     :cond_49
     new-array v4, v0, [F
 
@@ -109,7 +109,7 @@
 
     move-result-object v1
 
-    .line 84
+    .line 90
     new-instance v4, Landroid/view/animation/PathInterpolator;
 
     const/high16 v5, 0x3e800000    # 0.25f
@@ -120,7 +120,7 @@
 
     const-wide/16 v7, 0x96
 
-    .line 89
+    .line 95
     :goto_5d
     invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
@@ -130,12 +130,12 @@
 
     if-lez v2, :cond_83
 
-    .line 90
+    .line 96
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 91
+    .line 97
     new-array v9, v0, [F
 
     const/4 v10, 0x0
@@ -152,7 +152,7 @@
 
     move-result-object v3
 
-    .line 92
+    .line 98
     new-array v0, v0, [Landroid/animation/Animator;
 
     aput-object v1, v0, v10
@@ -163,17 +163,17 @@
 
     move-object v1, v2
 
-    .line 97
+    .line 103
     :cond_83
     invoke-virtual {v1, v4}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 98
+    .line 104
     invoke-virtual {v1, v5, v6}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 99
+    .line 105
     invoke-virtual {v1, v7, v8}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 100
+    .line 106
     new-instance p3, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$2;
 
     invoke-direct {p3, p0, p1, p2}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$2;-><init>(Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;Landroid/view/View;Z)V
@@ -182,7 +182,7 @@
 
     return-object v1
 
-    .line 71
+    .line 77
     :cond_95
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -305,7 +305,7 @@
 
     if-nez p1, :cond_b
 
-    .line 117
+    .line 123
     sget-object p1, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->DTAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p2, "[isNextVideoRecordingAnimationEnable]: rootView is null"
@@ -314,7 +314,7 @@
 
     return p0
 
-    .line 120
+    .line 126
     :cond_b
     sget v0, Lcom/transsion/camera/app/common/R$id;->key_video_recording_state:I
 
@@ -330,13 +330,13 @@
 
     goto :goto_1b
 
-    .line 121
+    .line 127
     :cond_17
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    .line 122
+    .line 128
     :goto_1b
     sget-object v0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->DTAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -393,7 +393,7 @@
 
     if-nez p1, :cond_b
 
-    .line 130
+    .line 136
     sget-object p1, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->DTAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[isRecordingAnimationComplete]: rootView is null"
@@ -402,7 +402,7 @@
 
     return p0
 
-    .line 133
+    .line 139
     :cond_b
     sget v0, Lcom/transsion/camera/app/common/R$id;->key_video_recording_state:I
 
@@ -420,7 +420,7 @@
 
     goto :goto_1c
 
-    .line 134
+    .line 140
     :cond_18
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -478,7 +478,7 @@
     :cond_f
     const/4 p0, 0x5
 
-    .line 148
+    .line 154
     :goto_10
     sget-object p2, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->DTAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -498,7 +498,7 @@
 
     invoke-static {p2, p3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 149
+    .line 155
     sget p2, Lcom/transsion/camera/app/common/R$id;->key_video_recording_state:I
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
     .registers 2
 
-    .line 4415
+    .line 4387
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$13;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 3
 
-    .line 4418
+    .line 4390
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$13;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmPreviewYUVReaderLock(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Ljava/util/concurrent/locks/ReentrantLock;
@@ -47,7 +47,7 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 4420
+    .line 4392
     :try_start_9
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$13;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
@@ -57,7 +57,7 @@
 
     if-eqz v0, :cond_23
 
-    .line 4421
+    .line 4393
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$13;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmPreviewYUVReader(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Landroid/media/ImageReader;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0}, Landroid/media/ImageReader;->close()V
 
-    .line 4422
+    .line 4394
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$13;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 v1, 0x0
@@ -82,7 +82,7 @@
 
     goto :goto_2d
 
-    .line 4425
+    .line 4397
     :cond_23
     :goto_23
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$13;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
@@ -104,6 +104,6 @@
 
     invoke-virtual {p0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 4426
+    .line 4398
     throw v0
 .end method

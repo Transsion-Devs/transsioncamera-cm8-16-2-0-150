@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)V
     .registers 2
 
-    .line 1906
+    .line 1858
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public getDataStoreValue(Ljava/lang/String;)Ljava/lang/String;
     .registers 4
 
-    .line 1927
+    .line 1879
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmSettingController(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_27
 
-    .line 1928
+    .line 1880
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmSettingController(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -89,7 +89,7 @@
 .method public getSettingValue(Ljava/lang/String;)Ljava/lang/String;
     .registers 3
 
-    .line 1919
+    .line 1871
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmSettingController(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -98,7 +98,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 1920
+    .line 1872
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmSettingController(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -120,7 +120,7 @@
 .method public onFirstSteadyFrame(Ljava/lang/String;)V
     .registers 4
 
-    .line 1909
+    .line 1861
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmIsRestore(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Z
@@ -129,14 +129,14 @@
 
     if-eqz v0, :cond_e
 
-    .line 1910
+    .line 1862
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fputmIsRestore(Lcom/transsion/camera/app/common/mode/SubDeviceControl;Z)V
 
-    .line 1912
+    .line 1864
     :cond_e
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -146,7 +146,7 @@
 
     if-eqz v0, :cond_1f
 
-    .line 1913
+    .line 1865
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmNotifyCallback(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;

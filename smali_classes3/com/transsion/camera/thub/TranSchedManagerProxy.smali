@@ -14,6 +14,10 @@
 # instance fields
 .field private volatile mCamIsVip:Z
 
+.field private volatile mCaptureStateIsVip:Z
+
+.field private volatile mDecodeBitmapIsVip:Z
+
 .field private volatile mGLIsVip:Z
 
 .field private volatile mGLTid:I
@@ -33,33 +37,39 @@
 .method private constructor <init>()V
     .registers 2
 
-    .line 26
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 36
+    .line 37
     iput-boolean v0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLIsVip:Z
 
-    .line 37
+    .line 38
     iput v0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLTid:I
 
-    .line 69
+    .line 70
     iput-boolean v0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mRendererRequestIsVip:Z
 
-    .line 98
+    .line 99
     iput-boolean v0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mCamIsVip:Z
 
-    .line 124
+    .line 125
     iput-boolean v0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mResponseIsVip:Z
 
-    .line 151
+    .line 152
     iput-boolean v0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mIsVip:Z
 
-    .line 180
+    .line 181
     iput-boolean v0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mPauseStateIsVip:Z
 
-    .line 27
+    .line 209
+    iput-boolean v0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mDecodeBitmapIsVip:Z
+
+    .line 236
+    iput-boolean v0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mCaptureStateIsVip:Z
+
+    .line 28
     new-instance v0, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     invoke-direct {v0}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;-><init>()V
@@ -81,7 +91,7 @@
 .method public static getInstance()Lcom/transsion/camera/thub/TranSchedManagerProxy;
     .registers 1
 
-    .line 22
+    .line 23
     invoke-static {}, Lcom/transsion/camera/thub/TranSchedManagerProxy$InstanceHolder;->-$$Nest$sfgetINSTANCE()Lcom/transsion/camera/thub/TranSchedManagerProxy;
 
     move-result-object v0
@@ -94,7 +104,7 @@
 .method public cancelCamTranSched(I)V
     .registers 4
 
-    .line 113
+    .line 114
     const-string v0, "TranSchedManagerProxy"
 
     iget-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mCamIsVip:Z
@@ -103,16 +113,16 @@
 
     const/4 v1, 0x0
 
-    .line 115
+    .line 116
     :try_start_7
     iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mCamIsVip:Z
 
-    .line 116
+    .line 117
     iget-object p0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     invoke-virtual {p0, p1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->cancelTranSchedUxTags(I)Z
 
-    .line 117
+    .line 118
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -136,7 +146,7 @@
     :catch_23
     move-exception p0
 
-    .line 119
+    .line 120
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -160,7 +170,7 @@
 .method public cancelDualVideoTranSched(I)V
     .registers 4
 
-    .line 219
+    .line 275
     const-string v0, "TranSchedManagerProxy"
 
     :try_start_2
@@ -168,7 +178,7 @@
 
     invoke-virtual {p0, p1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->cancelTranSchedUxTags(I)Z
 
-    .line 220
+    .line 276
     const-string p0, "Camera cancelDualVideoTranSched end."
 
     invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -180,7 +190,7 @@
     :catch_d
     move-exception p0
 
-    .line 222
+    .line 278
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -203,24 +213,26 @@
 .method public cancelGLTranSched()V
     .registers 6
 
-    .line 55
+    .line 56
     const-string v0, "TranSchedManagerProxy"
 
     iget-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLIsVip:Z
 
-    if-eqz v1, :cond_42
+    if-eqz v1, :cond_43
 
     const/4 v1, 0x0
 
-    .line 57
+    .line 58
     :try_start_7
     iget-object v2, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     iget v3, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLTid:I
 
-    invoke-virtual {v2, v3}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->cancelTranSchedUxTags(I)Z
+    const/4 v4, 0x0
 
-    .line 58
+    invoke-virtual {v2, v3, v4}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->cancelTranSchedUxTagsAsync(ILcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager$ITranSchedManagerCallback;)V
+
+    .line 59
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -239,20 +251,20 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 59
+    .line 60
     iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLIsVip:Z
 
-    .line 60
+    .line 61
     iput v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLTid:I
-    :try_end_28
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_28} :catch_29
+    :try_end_29
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_29} :catch_2a
 
     return-void
 
-    :catch_29
+    :catch_2a
     move-exception v2
 
-    .line 62
+    .line 63
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -269,20 +281,20 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 63
+    .line 64
     iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLIsVip:Z
 
-    .line 64
+    .line 65
     iput v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLTid:I
 
-    :cond_42
+    :cond_43
     return-void
 .end method
 
 .method public cancelRendererRequestTranSched(I)V
     .registers 6
 
-    .line 84
+    .line 85
     const-string v0, "TranSchedManagerProxy"
 
     iget-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mRendererRequestIsVip:Z
@@ -291,16 +303,16 @@
 
     const/4 v1, 0x0
 
-    .line 86
+    .line 87
     :try_start_7
     iget-object v2, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     invoke-virtual {v2, p1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->cancelTranSchedUxTags(I)Z
 
-    .line 87
+    .line 88
     iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mRendererRequestIsVip:Z
 
-    .line 88
+    .line 89
     const-string p1, "RendererRequestThread uas boost end."
 
     invoke-static {v0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -312,7 +324,7 @@
     :catch_14
     move-exception p1
 
-    .line 90
+    .line 91
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -329,7 +341,7 @@
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 91
+    .line 92
     iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mRendererRequestIsVip:Z
 
     :cond_2b
@@ -339,7 +351,7 @@
 .method public cancelResponseTranSched(I)V
     .registers 4
 
-    .line 139
+    .line 140
     const-string v0, "TranSchedManagerProxy"
 
     iget-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mResponseIsVip:Z
@@ -348,16 +360,16 @@
 
     const/4 v1, 0x0
 
-    .line 141
+    .line 142
     :try_start_7
     iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mResponseIsVip:Z
 
-    .line 142
+    .line 143
     iget-object p0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     invoke-virtual {p0, p1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->cancelTranSchedUxTags(I)Z
 
-    .line 143
+    .line 144
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -381,7 +393,7 @@
     :catch_23
     move-exception p0
 
-    .line 145
+    .line 146
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -402,10 +414,69 @@
     return-void
 .end method
 
+.method public cancelVipCaptureTranSched(I)V
+    .registers 4
+
+    .line 252
+    const-string v0, "TranSchedManagerProxy"
+
+    :try_start_2
+    iget-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mCaptureStateIsVip:Z
+
+    if-eqz v1, :cond_16
+
+    .line 253
+    iget-object v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
+
+    invoke-virtual {v1, p1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->cancelTranSchedUxTags(I)Z
+
+    const/4 p1, 0x0
+
+    .line 254
+    iput-boolean p1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mCaptureStateIsVip:Z
+
+    .line 255
+    const-string p0, "Camera cancelVipCaptureTranSched end."
+
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_13
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_13} :catch_14
+
+    return-void
+
+    :catch_14
+    move-exception p0
+
+    goto :goto_17
+
+    :cond_16
+    return-void
+
+    .line 259
+    :goto_17
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Camera cancelVipCaptureTranSched fail exception: "
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
 .method public cancelVipPauseTranSched(I)V
     .registers 4
 
-    .line 196
+    .line 197
     const-string v0, "TranSchedManagerProxy"
 
     :try_start_2
@@ -413,17 +484,17 @@
 
     if-eqz v1, :cond_16
 
-    .line 197
+    .line 198
     iget-object v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     invoke-virtual {v1, p1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->cancelTranSchedUxTags(I)Z
 
     const/4 p1, 0x0
 
-    .line 198
+    .line 199
     iput-boolean p1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mPauseStateIsVip:Z
 
-    .line 199
+    .line 200
     const-string p0, "Camera cancelVipPauseTranSched end."
 
     invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -440,7 +511,7 @@
     :cond_16
     return-void
 
-    .line 203
+    .line 204
     :goto_17
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -464,7 +535,7 @@
 .method public cancelVipTranSched(I)V
     .registers 4
 
-    .line 167
+    .line 168
     const-string v0, "TranSchedManagerProxy"
 
     :try_start_2
@@ -472,17 +543,17 @@
 
     if-eqz v1, :cond_16
 
-    .line 168
+    .line 169
     iget-object v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     invoke-virtual {v1, p1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->cancelTranSchedUxTags(I)Z
 
     const/4 p1, 0x0
 
-    .line 169
+    .line 170
     iput-boolean p1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mIsVip:Z
 
-    .line 170
+    .line 171
     const-string p0, "Camera Setting cancelVipTranSched end."
 
     invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -499,7 +570,7 @@
     :cond_16
     return-void
 
-    .line 174
+    .line 175
     :goto_17
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -523,7 +594,7 @@
 .method public setCamTranSched(I)V
     .registers 4
 
-    .line 101
+    .line 102
     const-string v0, "TranSchedManagerProxy"
 
     iget-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mCamIsVip:Z
@@ -532,18 +603,18 @@
 
     const/4 v1, 0x1
 
-    .line 103
+    .line 104
     :try_start_7
     iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mCamIsVip:Z
 
-    .line 104
+    .line 105
     iget-object p0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     const-string/jumbo v1, "ux_exact_camlaunch"
 
     invoke-virtual {p0, p1, v1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->setTranSchedUxTagsByName(ILjava/lang/String;)Z
 
-    .line 105
+    .line 106
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -567,7 +638,7 @@
     :catch_26
     move-exception p0
 
-    .line 107
+    .line 108
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -591,7 +662,7 @@
 .method public setDualVideoTranSched(I)V
     .registers 4
 
-    .line 210
+    .line 266
     const-string v0, "TranSchedManagerProxy"
 
     :try_start_2
@@ -601,7 +672,7 @@
 
     invoke-virtual {p0, p1, v1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->setTranSchedUxTagsByName(ILjava/lang/String;)Z
 
-    .line 211
+    .line 267
     const-string p0, "Camera setDualVideoTranSched start."
 
     invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -613,7 +684,7 @@
     :catch_10
     move-exception p0
 
-    .line 213
+    .line 269
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -634,9 +705,9 @@
 .end method
 
 .method public setGLTranSched(I)V
-    .registers 5
+    .registers 6
 
-    .line 39
+    .line 40
     const-string v0, "TranSchedManagerProxy"
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -653,13 +724,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_55
 
     iget-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLIsVip:Z
 
-    if-nez v1, :cond_54
+    if-nez v1, :cond_55
 
-    .line 41
+    .line 42
     :try_start_16
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -677,31 +748,33 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 42
+    .line 43
     iput p1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLTid:I
 
-    .line 43
+    .line 44
     iget-object p1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     iget v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLTid:I
 
     const-string/jumbo v2, "ux_exact_camlaunch"
 
-    invoke-virtual {p1, v1, v2}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->setTranSchedUxTagsByName(ILjava/lang/String;)Z
+    const/4 v3, 0x0
+
+    invoke-virtual {p1, v1, v2, v3}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->setTranSchedUxTagsByNameAsync(ILjava/lang/String;Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager$ITranSchedManagerCallback;)V
 
     const/4 p1, 0x1
 
-    .line 44
+    .line 45
     iput-boolean p1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLIsVip:Z
-    :try_end_39
-    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_39} :catch_3a
+    :try_end_3a
+    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_3a} :catch_3b
 
     return-void
 
-    :catch_3a
+    :catch_3b
     move-exception p1
 
-    .line 46
+    .line 47
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -720,20 +793,20 @@
 
     const/4 p1, 0x0
 
-    .line 47
+    .line 48
     iput p1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLTid:I
 
-    .line 48
+    .line 49
     iput-boolean p1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mGLIsVip:Z
 
-    :cond_54
+    :cond_55
     return-void
 .end method
 
 .method public setRendererRequestTranSched(I)V
     .registers 5
 
-    .line 71
+    .line 72
     const-string v0, "TranSchedManagerProxy"
 
     iget-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mRendererRequestIsVip:Z
@@ -742,18 +815,18 @@
 
     const/4 v1, 0x1
 
-    .line 73
+    .line 74
     :try_start_7
     iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mRendererRequestIsVip:Z
 
-    .line 74
+    .line 75
     iget-object v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     const-string/jumbo v2, "ux_exact_camlaunch"
 
     invoke-virtual {v1, p1, v2}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->setTranSchedUxTagsByName(ILjava/lang/String;)Z
 
-    .line 75
+    .line 76
     const-string p1, "RendererRequestThread uas boost start."
 
     invoke-static {v0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -765,7 +838,7 @@
     :catch_17
     move-exception p1
 
-    .line 77
+    .line 78
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -784,7 +857,7 @@
 
     const/4 p1, 0x0
 
-    .line 78
+    .line 79
     iput-boolean p1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mRendererRequestIsVip:Z
 
     :cond_2f
@@ -794,7 +867,7 @@
 .method public setResponseTranSched(I)V
     .registers 4
 
-    .line 127
+    .line 128
     const-string v0, "TranSchedManagerProxy"
 
     iget-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mResponseIsVip:Z
@@ -803,18 +876,18 @@
 
     const/4 v1, 0x1
 
-    .line 129
+    .line 130
     :try_start_7
     iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mResponseIsVip:Z
 
-    .line 130
+    .line 131
     iget-object p0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     const-string/jumbo v1, "ux_exact_camlaunch"
 
     invoke-virtual {p0, p1, v1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->setTranSchedUxTagsByName(ILjava/lang/String;)Z
 
-    .line 131
+    .line 132
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -838,7 +911,7 @@
     :catch_26
     move-exception p0
 
-    .line 133
+    .line 134
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -859,10 +932,132 @@
     return-void
 .end method
 
+.method public setVipCaptureTranSched(I)V
+    .registers 4
+
+    .line 239
+    const-string v0, "TranSchedManagerProxy"
+
+    :try_start_2
+    iget-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mCaptureStateIsVip:Z
+
+    if-nez v1, :cond_19
+
+    const/4 v1, 0x1
+
+    .line 240
+    iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mCaptureStateIsVip:Z
+
+    .line 241
+    iget-object p0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
+
+    const-string/jumbo v1, "ux_exact_camcapture"
+
+    invoke-virtual {p0, p1, v1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->setTranSchedUxTagsByName(ILjava/lang/String;)Z
+
+    .line 242
+    const-string p0, "Camera setVipCaptureTranSched start."
+
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_16
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_16} :catch_17
+
+    return-void
+
+    :catch_17
+    move-exception p0
+
+    goto :goto_1a
+
+    :cond_19
+    return-void
+
+    .line 246
+    :goto_1a
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Camera setVipCaptureTranSched fail exception: "
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public setVipDecodeBitmapTranSched(I)V
+    .registers 4
+
+    .line 212
+    const-string v0, "TranSchedManagerProxy"
+
+    :try_start_2
+    iget-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mDecodeBitmapIsVip:Z
+
+    if-nez v1, :cond_19
+
+    const/4 v1, 0x1
+
+    .line 213
+    iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mDecodeBitmapIsVip:Z
+
+    .line 214
+    iget-object p0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
+
+    const-string/jumbo v1, "ux_exact_campause"
+
+    invoke-virtual {p0, p1, v1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->setTranSchedUxTagsByName(ILjava/lang/String;)Z
+
+    .line 215
+    const-string p0, "Camera setVipDecodeBitmapTranSched start."
+
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_16
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_16} :catch_17
+
+    return-void
+
+    :catch_17
+    move-exception p0
+
+    goto :goto_1a
+
+    :cond_19
+    return-void
+
+    .line 219
+    :goto_1a
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Camera setVipDecodeBitmapTranSched fail exception: "
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
 .method public setVipPauseTranSched(I)V
     .registers 4
 
-    .line 183
+    .line 184
     const-string v0, "TranSchedManagerProxy"
 
     :try_start_2
@@ -872,17 +1067,17 @@
 
     const/4 v1, 0x1
 
-    .line 184
+    .line 185
     iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mPauseStateIsVip:Z
 
-    .line 185
+    .line 186
     iget-object p0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     const-string/jumbo v1, "ux_exact_campause"
 
     invoke-virtual {p0, p1, v1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->setTranSchedUxTagsByName(ILjava/lang/String;)Z
 
-    .line 186
+    .line 187
     const-string p0, "Camera setVipPauseTranSched start."
 
     invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -899,7 +1094,7 @@
     :cond_19
     return-void
 
-    .line 190
+    .line 191
     :goto_1a
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -923,7 +1118,7 @@
 .method public setVipTranSched(I)V
     .registers 4
 
-    .line 154
+    .line 155
     const-string v0, "TranSchedManagerProxy"
 
     :try_start_2
@@ -933,17 +1128,17 @@
 
     const/4 v1, 0x1
 
-    .line 155
+    .line 156
     iput-boolean v1, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mIsVip:Z
 
-    .line 156
+    .line 157
     iget-object p0, p0, Lcom/transsion/camera/thub/TranSchedManagerProxy;->mSchedManager:Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;
 
     const-string/jumbo v1, "ux_exact_camlaunch"
 
     invoke-virtual {p0, p1, v1}, Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager;->setTranSchedUxTagsByName(ILjava/lang/String;)Z
 
-    .line 157
+    .line 158
     const-string p0, "Camera Setting setVipTranSched start."
 
     invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
@@ -960,7 +1155,7 @@
     :cond_19
     return-void
 
-    .line 161
+    .line 162
     :goto_1a
     new-instance p1, Ljava/lang/StringBuilder;
 

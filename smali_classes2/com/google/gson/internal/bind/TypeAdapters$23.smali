@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/bind/TypeAdapters$23;
+.class Lcom/google/gson/internal/bind/TypeAdapters$23;
 .super Lcom/google/gson/TypeAdapter;
 .source "SourceFile"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -24,7 +24,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 524
+    .line 633
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 .method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .registers 2
 
-    .line 524
+    .line 633
     invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$23;->read(Lcom/google/gson/stream/JsonReader;)Ljava/net/InetAddress;
 
     move-result-object p0
@@ -46,7 +46,7 @@
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/net/InetAddress;
     .registers 3
 
-    .line 527
+    .line 636
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     move-result-object p0
@@ -55,14 +55,14 @@
 
     if-ne p0, v0, :cond_d
 
-    .line 528
+    .line 637
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
     const/4 p0, 0x0
 
     return-object p0
 
-    .line 532
+    .line 644
     :cond_d
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
@@ -78,7 +78,7 @@
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
 
-    .line 524
+    .line 633
     check-cast p2, Ljava/net/InetAddress;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$23;->write(Lcom/google/gson/stream/JsonWriter;Ljava/net/InetAddress;)V
@@ -95,7 +95,7 @@
 
     goto :goto_8
 
-    .line 536
+    .line 650
     :cond_4
     invoke-virtual {p2}, Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;
 

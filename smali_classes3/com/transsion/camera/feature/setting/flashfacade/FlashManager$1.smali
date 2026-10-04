@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;)V
     .registers 2
 
-    .line 354
+    .line 358
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager$1;->this$0:Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 4
 
-    .line 357
+    .line 361
     const-string v0, "continuous_shot_light_state"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -47,7 +47,7 @@
 
     if-eqz p1, :cond_24
 
-    .line 358
+    .line 362
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager$1;->this$0:Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->-$$Nest$fgetmIsContinuousShot(Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;)Z
@@ -62,7 +62,7 @@
 
     if-eq p1, v0, :cond_24
 
-    .line 359
+    .line 363
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager$1;->this$0:Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;
 
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
@@ -71,7 +71,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->-$$Nest$fputmIsContinuousShot(Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;Z)V
 
-    .line 360
+    .line 364
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager$1;->this$0:Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->sendSettingChangeRequestSelf()V

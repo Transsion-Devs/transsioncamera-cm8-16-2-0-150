@@ -1,4 +1,4 @@
-.class Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI$UIHandler;
+.class final Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI$UIHandler;
 .super Landroid/os/Handler;
 .source "SourceFile"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x1a
     name = "UIHandler"
 .end annotation
 
@@ -19,13 +19,17 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
+.method public constructor <init>(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
     .registers 3
 
-    .line 207
+    const-string v0, "liveResultUI"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 166
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 208
+    .line 167
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -38,9 +42,13 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 5
+    .registers 6
 
-    .line 213
+    const-string v0, "msg"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 170
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI$UIHandler;->mUIReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -49,12 +57,15 @@
 
     check-cast p0, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;
 
-    if-nez p0, :cond_25
+    if-nez p0, :cond_2a
 
-    .line 215
-    invoke-static {}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
+    .line 172
+    # getter for: Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    invoke-static {}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->access$getTAG$cp()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
+
+    iget p1, p1, Landroid/os/Message;->what:I
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -63,8 +74,6 @@
     const-string v1, "UIHandler handleMessage liveResultUI is null, return. "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p1, p1, Landroid/os/Message;->what:I
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -76,67 +85,71 @@
 
     return-void
 
-    .line 219
-    :cond_25
-    invoke-static {}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
+    .line 176
+    :cond_2a
+    # getter for: Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    invoke-static {}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->access$getTAG$cp()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget v1, p1, Landroid/os/Message;->what:I
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string v2, "UIHandler handleMessage: "
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v3, "UIHandler handleMessage: "
 
-    iget v2, p1, Landroid/os/Message;->what:I
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 220
+    .line 177
     iget p1, p1, Landroid/os/Message;->what:I
 
-    packed-switch p1, :pswitch_data_58
+    packed-switch p1, :pswitch_data_5c
 
     return-void
 
-    .line 230
-    :pswitch_45
-    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->-$$Nest$mdoUpdateAllValue(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
+    .line 188
+    :pswitch_4a
+    # invokes: Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->doUpdateAllValue()V
+    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->access$doUpdateAllValue(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
 
     return-void
 
-    .line 226
-    :pswitch_49
-    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->-$$Nest$mdoHideView(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
+    .line 184
+    :pswitch_4e
+    # invokes: Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->doHideView()V
+    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->access$doHideView(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
 
-    .line 227
-    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->-$$Nest$mstopSensorMonitors(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
-
-    return-void
-
-    .line 222
-    :pswitch_50
-    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->-$$Nest$mdoShowView(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
-
-    .line 223
-    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->-$$Nest$mstartSensorMonitors(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
+    .line 185
+    # invokes: Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->stopSensorMonitors()V
+    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->access$stopSensorMonitors(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
 
     return-void
 
-    nop
+    .line 179
+    :pswitch_55
+    # invokes: Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->doShowView()V
+    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->access$doShowView(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
 
-    :pswitch_data_58
+    .line 180
+    # invokes: Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->startSensorMonitors()V
+    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->access$startSensorMonitors(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
+
+    return-void
+
+    :pswitch_data_5c
     .packed-switch 0x65
-        :pswitch_50
-        :pswitch_49
-        :pswitch_45
+        :pswitch_55
+        :pswitch_4e
+        :pswitch_4a
     .end packed-switch
 .end method

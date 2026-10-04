@@ -232,7 +232,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1620
+    .line 244
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -248,7 +248,7 @@
 
     move-result-object v2
 
-    .line 1621
+    .line 245
     check-cast v2, Lokio/Path;
 
     .line 166
@@ -256,7 +256,7 @@
 
     move-result-object v2
 
-    .line 1621
+    .line 245
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1c
@@ -313,7 +313,7 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1620
+    .line 247
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -329,7 +329,7 @@
 
     move-result-object v2
 
-    .line 1621
+    .line 248
     check-cast v2, Lokio/Path;
 
     .line 174
@@ -337,7 +337,7 @@
 
     move-result-object v2
 
-    .line 1621
+    .line 248
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_20

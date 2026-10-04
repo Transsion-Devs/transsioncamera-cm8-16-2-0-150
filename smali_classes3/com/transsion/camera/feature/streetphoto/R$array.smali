@@ -14,27 +14,27 @@
 
 
 # static fields
-.field public static street_photo_mode_interactive_setting_ui_back_entries:I = 0x7f030292
+.field public static street_photo_mode_interactive_setting_ui_back_entries:I = 0x7f030290
 
-.field public static street_photo_mode_left_top_bar_setting_ui_entries:I = 0x7f030293
+.field public static street_photo_mode_left_top_bar_setting_ui_entries:I = 0x7f030291
 
-.field public static street_photo_mode_option_setting_ui_entries:I = 0x7f030294
+.field public static street_photo_mode_option_setting_ui_entries:I = 0x7f030292
 
-.field public static street_photo_mode_pop_setting_ui_entries:I = 0x7f030295
+.field public static street_photo_mode_pop_setting_ui_entries:I = 0x7f030293
 
-.field public static street_photo_mode_preference_setting_ui_entries:I = 0x7f030296
+.field public static street_photo_mode_preference_setting_ui_entries:I = 0x7f030294
 
-.field public static street_photo_mode_right_top_bar_setting_ui_entries:I = 0x7f030297
+.field public static street_photo_mode_right_top_bar_setting_ui_entries:I = 0x7f030295
 
-.field public static street_photo_mode_setting_tele_focal_zoom_ui_entries:I = 0x7f030298
+.field public static street_photo_mode_setting_tele_focal_zoom_ui_entries:I = 0x7f030296
 
-.field public static street_photo_mode_setting_ui_entries:I = 0x7f030299
+.field public static street_photo_mode_setting_ui_entries:I = 0x7f030297
 
-.field public static street_photo_mode_support_algos:I = 0x7f03029a
+.field public static street_photo_mode_support_algos:I = 0x7f030298
 
-.field public static street_photo_mode_top_bar_setting_ui_entries:I = 0x7f03029b
+.field public static street_photo_mode_top_bar_setting_ui_entries:I = 0x7f030299
 
-.field public static street_photo_zoom_lens:I = 0x7f03029f
+.field public static street_photo_zoom_lens:I = 0x7f03029d
 
 
 # direct methods

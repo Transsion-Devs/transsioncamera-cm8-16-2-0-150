@@ -21,7 +21,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
     .registers 2
 
-    .line 1226
+    .line 1229
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

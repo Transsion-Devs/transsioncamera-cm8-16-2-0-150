@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;Ljava/lang/String;)V
     .registers 3
 
-    .line 376
+    .line 379
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$2;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;
 
     invoke-direct {p0, p2}, Landroidx/dynamicanimation/animation/FloatPropertyCompat;-><init>(Ljava/lang/String;)V
@@ -43,12 +43,12 @@
 .method public setValue(Ljava/lang/Object;F)V
     .registers 3
 
-    .line 384
+    .line 387
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$2;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->-$$Nest$fputmCenterToEndsStretchFactor(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;F)V
 
-    .line 385
+    .line 388
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$2;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;
 
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V

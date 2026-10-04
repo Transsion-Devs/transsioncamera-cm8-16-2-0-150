@@ -46,7 +46,7 @@
 
     const v1, 0x7ffffffe
 
-    .line 754
+    .line 763
     const-string v2, "kotlinx.coroutines.channels.defaultBuffer"
 
     const/16 v3, 0x40
@@ -63,7 +63,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 720
+    .line 729
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -74,7 +74,7 @@
 .method public final getCHANNEL_DEFAULT_CAPACITY$kotlinx_coroutines_core()I
     .registers 1
 
-    .line 754
+    .line 763
     sget p0, Lkotlinx/coroutines/channels/Channel$Factory;->CHANNEL_DEFAULT_CAPACITY:I
 
     return p0

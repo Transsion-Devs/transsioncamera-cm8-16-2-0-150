@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/Gson$5;
+.class Lcom/google/gson/Gson$5;
 .super Lcom/google/gson/TypeAdapter;
 .source "SourceFile"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -28,7 +28,7 @@
 .method constructor <init>(Lcom/google/gson/TypeAdapter;)V
     .registers 2
 
-    .line 400
+    .line 558
     iput-object p1, p0, Lcom/google/gson/Gson$5;->val$longAdapter:Lcom/google/gson/TypeAdapter;
 
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
@@ -41,7 +41,7 @@
 .method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .registers 2
 
-    .line 400
+    .line 558
     invoke-virtual {p0, p1}, Lcom/google/gson/Gson$5;->read(Lcom/google/gson/stream/JsonReader;)Ljava/util/concurrent/atomic/AtomicLongArray;
 
     move-result-object p0
@@ -52,15 +52,15 @@
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/util/concurrent/atomic/AtomicLongArray;
     .registers 6
 
-    .line 409
+    .line 570
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 410
+    .line 571
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->beginArray()V
 
-    .line 411
+    .line 572
     :goto_8
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->hasNext()Z
 
@@ -68,7 +68,7 @@
 
     if-eqz v1, :cond_22
 
-    .line 412
+    .line 573
     iget-object v1, p0, Lcom/google/gson/Gson$5;->val$longAdapter:Lcom/google/gson/TypeAdapter;
 
     invoke-virtual {v1, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
@@ -81,7 +81,7 @@
 
     move-result-wide v1
 
-    .line 413
+    .line 574
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
@@ -90,16 +90,16 @@
 
     goto :goto_8
 
-    .line 415
+    .line 576
     :cond_22
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endArray()V
 
-    .line 416
+    .line 577
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result p0
 
-    .line 417
+    .line 578
     new-instance p1, Ljava/util/concurrent/atomic/AtomicLongArray;
 
     invoke-direct {p1, p0}, Ljava/util/concurrent/atomic/AtomicLongArray;-><init>(I)V
@@ -109,7 +109,7 @@
     :goto_2f
     if-ge v1, p0, :cond_41
 
-    .line 419
+    .line 580
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -133,7 +133,7 @@
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
 
-    .line 400
+    .line 558
     check-cast p2, Ljava/util/concurrent/atomic/AtomicLongArray;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/gson/Gson$5;->write(Lcom/google/gson/stream/JsonWriter;Ljava/util/concurrent/atomic/AtomicLongArray;)V
@@ -144,10 +144,10 @@
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/util/concurrent/atomic/AtomicLongArray;)V
     .registers 8
 
-    .line 402
+    .line 561
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->beginArray()Lcom/google/gson/stream/JsonWriter;
 
-    .line 403
+    .line 562
     invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicLongArray;->length()I
 
     move-result v0
@@ -157,7 +157,7 @@
     :goto_8
     if-ge v1, v0, :cond_1a
 
-    .line 404
+    .line 563
     iget-object v2, p0, Lcom/google/gson/Gson$5;->val$longAdapter:Lcom/google/gson/TypeAdapter;
 
     invoke-virtual {p2, v1}, Ljava/util/concurrent/atomic/AtomicLongArray;->get(I)J
@@ -174,7 +174,7 @@
 
     goto :goto_8
 
-    .line 406
+    .line 565
     :cond_1a
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->endArray()Lcom/google/gson/stream/JsonWriter;
 

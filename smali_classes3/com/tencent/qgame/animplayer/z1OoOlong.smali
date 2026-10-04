@@ -113,7 +113,7 @@
 
     iput p1, p0, Lcom/tencent/qgame/animplayer/z1OoOlong;->z1OoOchar:I
 
-    const-string v0, "texture"
+    const-string/jumbo v0, "texture"
 
     invoke-static {p1, v0}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
 

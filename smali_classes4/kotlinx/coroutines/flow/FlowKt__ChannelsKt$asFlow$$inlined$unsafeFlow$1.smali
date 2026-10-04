@@ -35,7 +35,7 @@
 
     iput-object p1, p0, Lkotlinx/coroutines/flow/FlowKt__ChannelsKt$asFlow$$inlined$unsafeFlow$1;->$this_asFlow$inlined:Lkotlinx/coroutines/channels/BroadcastChannel;
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -58,7 +58,7 @@
         }
     .end annotation
 
-    .line 114
+    .line 112
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__ChannelsKt$asFlow$$inlined$unsafeFlow$1;->$this_asFlow$inlined:Lkotlinx/coroutines/channels/BroadcastChannel;
 
     invoke-interface {p0}, Lkotlinx/coroutines/channels/BroadcastChannel;->openSubscription()Lkotlinx/coroutines/channels/ReceiveChannel;
@@ -77,7 +77,7 @@
 
     return-object p0
 
-    .line 109
+    .line 107
     :cond_11
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

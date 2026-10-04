@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static imagery_guide_title:I = 0x7f140527
+.field public static imagery_guide_title:I = 0x7f140526
 
 
 # direct methods

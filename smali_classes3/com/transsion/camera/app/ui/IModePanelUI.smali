@@ -63,9 +63,6 @@
 .method public abstract setModeNameBeforeSwitchMoreMode(Ljava/lang/String;)V
 .end method
 
-.method public abstract setModePanelGuideEnable(Z)V
-.end method
-
 .method public abstract setOnScrollListener(Lcom/transsion/camera/app/ui/mode/more/MoreView$IMorePanelScrollListener;)V
 .end method
 
@@ -79,12 +76,6 @@
 .end method
 
 .method public abstract show()V
-.end method
-
-.method public abstract shrinkModePanel()V
-.end method
-
-.method public abstract spreadModePanel()V
 .end method
 
 .method public abstract unInit()V

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;)V
     .registers 2
 
-    .line 146
+    .line 144
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture$1;->this$0:Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreviewStarted()V
     .registers 3
 
-    .line 155
+    .line 153
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture$1;->this$0:Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->-$$Nest$fgetmRestored(Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;)Z
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 156
+    .line 154
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture$1;->this$0:Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->-$$Nest$fgetmIsModeSupportOriginal(Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;)Z
@@ -56,7 +56,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->-$$Nest$fputmIsModeSupport(Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;Z)V
 
-    .line 157
+    .line 155
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture$1;->this$0:Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->-$$Nest$msyncRemoteCaptureFragment(Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;)V

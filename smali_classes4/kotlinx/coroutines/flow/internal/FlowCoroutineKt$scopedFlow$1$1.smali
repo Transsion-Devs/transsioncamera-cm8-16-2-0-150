@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.internal.FlowCoroutineKt$scopedFlow$1$1"
     f = "FlowCoroutine.kt"
     l = {
-        0x33
+        0x2f
     }
     m = "invokeSuspend"
 .end annotation
@@ -164,7 +164,7 @@
 
     move-result-object v0
 
-    .line 51
+    .line 47
     iget v1, p0, Lkotlinx/coroutines/flow/internal/FlowCoroutineKt$scopedFlow$1$1;->label:I
 
     const/4 v2, 0x1

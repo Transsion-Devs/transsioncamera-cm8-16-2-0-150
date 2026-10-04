@@ -13,10 +13,9 @@
 
     const/4 v0, 0x0
 
-    .line 26
+    .line 14
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 14
     sput-object v0, Lkotlin/jvm/internal/CollectionToArray;->EMPTY:[Ljava/lang/Object;
 
     return-void
@@ -29,37 +28,37 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 57
+    .line 63
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
     move-result v0
 
     if-nez v0, :cond_e
 
-    .line 21
+    .line 24
     sget-object p0, Lkotlin/jvm/internal/CollectionToArray;->EMPTY:[Ljava/lang/Object;
 
     return-object p0
 
-    .line 59
+    .line 65
     :cond_e
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    .line 60
+    .line 66
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     if-nez v1, :cond_1b
 
-    .line 21
+    .line 24
     sget-object p0, Lkotlin/jvm/internal/CollectionToArray;->EMPTY:[Ljava/lang/Object;
 
     return-object p0
 
-    .line 22
+    .line 25
     :cond_1b
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -68,67 +67,67 @@
     :goto_1e
     add-int/lit8 v2, v1, 0x1
 
-    .line 65
+    .line 71
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
     aput-object v3, v0, v1
 
-    .line 66
+    .line 72
     array-length v1, v0
+
+    const-string v3, "copyOf(...)"
 
     if-lt v2, v1, :cond_4f
 
-    .line 67
+    .line 73
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_32
 
     return-object v0
 
-    :cond_30
+    :cond_32
     mul-int/lit8 v1, v2, 0x3
 
     add-int/lit8 v1, v1, 0x1
 
     ushr-int/lit8 v1, v1, 0x1
 
-    if-gt v1, v2, :cond_44
+    if-gt v1, v2, :cond_46
 
     const v1, 0x7ffffffd
 
-    if-ge v2, v1, :cond_3e
+    if-ge v2, v1, :cond_40
 
-    goto :goto_44
+    goto :goto_46
 
-    .line 73
-    :cond_3e
+    .line 79
+    :cond_40
     new-instance p0, Ljava/lang/OutOfMemoryError;
 
     invoke-direct {p0}, Ljava/lang/OutOfMemoryError;-><init>()V
 
     throw p0
 
-    .line 76
-    :cond_44
-    :goto_44
+    .line 82
+    :cond_46
+    :goto_46
     invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "copyOf(result, newSize)"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_4d
     move v1, v2
 
     goto :goto_1e
 
-    .line 78
+    .line 84
     :cond_4f
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -136,14 +135,12 @@
 
     if-nez v1, :cond_4d
 
-    .line 23
+    .line 26
     invoke-static {v0, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p0
 
-    const-string v0, "copyOf(result, size)"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method
@@ -155,10 +152,10 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 30
+    .line 36
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 57
+    .line 63
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
     move-result v0
@@ -169,7 +166,7 @@
 
     if-nez v0, :cond_16
 
-    .line 34
+    .line 40
     array-length p0, p1
 
     if-lez p0, :cond_25
@@ -178,20 +175,20 @@
 
     return-object p1
 
-    .line 59
+    .line 65
     :cond_16
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    .line 60
+    .line 66
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
     if-nez v3, :cond_26
 
-    .line 34
+    .line 40
     array-length p0, p1
 
     if-lez p0, :cond_25
@@ -201,7 +198,7 @@
     :cond_25
     return-object p1
 
-    .line 39
+    .line 45
     :cond_26
     array-length v3, p1
 
@@ -233,67 +230,67 @@
     :goto_3e
     add-int/lit8 v3, v2, 0x1
 
-    .line 65
+    .line 71
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     aput-object v4, v0, v2
 
-    .line 66
+    .line 72
     array-length v2, v0
+
+    const-string v4, "copyOf(...)"
 
     if-lt v3, v2, :cond_6f
 
-    .line 67
+    .line 73
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-nez v2, :cond_50
+    if-nez v2, :cond_52
 
     return-object v0
 
-    :cond_50
+    :cond_52
     mul-int/lit8 v2, v3, 0x3
 
     add-int/lit8 v2, v2, 0x1
 
     ushr-int/lit8 v2, v2, 0x1
 
-    if-gt v2, v3, :cond_64
+    if-gt v2, v3, :cond_66
 
     const v2, 0x7ffffffd
 
-    if-ge v3, v2, :cond_5e
+    if-ge v3, v2, :cond_60
 
-    goto :goto_64
+    goto :goto_66
 
-    .line 73
-    :cond_5e
+    .line 79
+    :cond_60
     new-instance p0, Ljava/lang/OutOfMemoryError;
 
     invoke-direct {p0}, Ljava/lang/OutOfMemoryError;-><init>()V
 
     throw p0
 
-    .line 76
-    :cond_64
-    :goto_64
+    .line 82
+    :cond_66
+    :goto_66
     invoke-static {v0, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v2, "copyOf(result, newSize)"
-
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_6d
     move v2, v3
 
     goto :goto_3e
 
-    .line 78
+    .line 84
     :cond_6f
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -303,20 +300,18 @@
 
     if-ne v0, p1, :cond_7a
 
-    .line 43
+    .line 49
     aput-object v1, p1, v3
 
     return-object p1
 
-    .line 46
+    .line 52
     :cond_7a
     invoke-static {v0, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p0
 
-    const-string p1, "copyOf(result, size)"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method

@@ -17,8 +17,6 @@
 # instance fields
 .field private final TAG:Ljava/lang/String;
 
-.field private callback:Lcom/opensource/svgaplayer/SVGACallback;
-
 .field private clearsAfterDetached:Z
 
 .field private clearsAfterStop:Z
@@ -572,9 +570,9 @@
 
     if-eq v0, v2, :cond_24
 
-    const/4 v2, 0x3
+    const/4 p0, 0x3
 
-    if-eq v0, v2, :cond_20
+    if-eq v0, p0, :cond_20
 
     goto :goto_2f
 
@@ -586,42 +584,34 @@
 
     .line 202
     :cond_24
-    iget v0, p0, Lcom/opensource/svgaplayer/SVGAImageView;->mEndFrame:I
+    iget p0, p0, Lcom/opensource/svgaplayer/SVGAImageView;->mEndFrame:I
 
-    invoke-virtual {p1, v0}, Lcom/opensource/svgaplayer/SVGADrawable;->setCurrentFrame$com_opensource_svgaplayer(I)V
+    invoke-virtual {p1, p0}, Lcom/opensource/svgaplayer/SVGADrawable;->setCurrentFrame$com_opensource_svgaplayer(I)V
 
     goto :goto_2f
 
     .line 199
     :cond_2a
-    iget v0, p0, Lcom/opensource/svgaplayer/SVGAImageView;->mStartFrame:I
+    iget p0, p0, Lcom/opensource/svgaplayer/SVGAImageView;->mStartFrame:I
 
-    invoke-virtual {p1, v0}, Lcom/opensource/svgaplayer/SVGADrawable;->setCurrentFrame$com_opensource_svgaplayer(I)V
+    invoke-virtual {p1, p0}, Lcom/opensource/svgaplayer/SVGADrawable;->setCurrentFrame$com_opensource_svgaplayer(I)V
 
-    .line 209
     :cond_2f
     :goto_2f
-    iget-object p0, p0, Lcom/opensource/svgaplayer/SVGAImageView;->callback:Lcom/opensource/svgaplayer/SVGACallback;
-
-    if-eqz p0, :cond_36
-
-    invoke-interface {p0}, Lcom/opensource/svgaplayer/SVGACallback;->onFinished()V
-
-    :cond_36
     return-void
 .end method
 
 .method private final onAnimatorUpdate(Landroid/animation/ValueAnimator;)V
-    .registers 7
+    .registers 2
 
     .line 186
     invoke-direct {p0}, Lcom/opensource/svgaplayer/SVGAImageView;->getSVGADrawable()Lcom/opensource/svgaplayer/SVGADrawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    if-nez v0, :cond_7
+    if-nez p0, :cond_7
 
-    goto :goto_36
+    return-void
 
     :cond_7
     if-eqz p1, :cond_e
@@ -637,7 +627,7 @@
     const/4 p1, 0x0
 
     :goto_f
-    if-eqz p1, :cond_37
+    if-eqz p1, :cond_25
 
     check-cast p1, Ljava/lang/Integer;
 
@@ -645,46 +635,21 @@
 
     move-result p1
 
-    invoke-virtual {v0, p1}, Lcom/opensource/svgaplayer/SVGADrawable;->setCurrentFrame$com_opensource_svgaplayer(I)V
+    invoke-virtual {p0, p1}, Lcom/opensource/svgaplayer/SVGADrawable;->setCurrentFrame$com_opensource_svgaplayer(I)V
 
     .line 188
-    invoke-virtual {v0}, Lcom/opensource/svgaplayer/SVGADrawable;->getCurrentFrame()I
+    invoke-virtual {p0}, Lcom/opensource/svgaplayer/SVGADrawable;->getCurrentFrame()I
 
-    move-result p1
+    invoke-virtual {p0}, Lcom/opensource/svgaplayer/SVGADrawable;->getVideoItem()Lcom/opensource/svgaplayer/SVGAVideoEntity;
 
-    add-int/lit8 p1, p1, 0x1
+    move-result-object p0
 
-    int-to-double v1, p1
+    invoke-virtual {p0}, Lcom/opensource/svgaplayer/SVGAVideoEntity;->getFrames()I
 
-    invoke-virtual {v0}, Lcom/opensource/svgaplayer/SVGADrawable;->getVideoItem()Lcom/opensource/svgaplayer/SVGAVideoEntity;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/opensource/svgaplayer/SVGAVideoEntity;->getFrames()I
-
-    move-result p1
-
-    int-to-double v3, p1
-
-    div-double/2addr v1, v3
-
-    .line 189
-    iget-object p0, p0, Lcom/opensource/svgaplayer/SVGAImageView;->callback:Lcom/opensource/svgaplayer/SVGACallback;
-
-    if-eqz p0, :cond_36
-
-    invoke-virtual {v0}, Lcom/opensource/svgaplayer/SVGADrawable;->getCurrentFrame()I
-
-    move-result p1
-
-    invoke-interface {p0, p1, v1, v2}, Lcom/opensource/svgaplayer/SVGACallback;->onStep(ID)V
-
-    :cond_36
-    :goto_36
     return-void
 
     .line 187
-    :cond_37
+    :cond_25
     new-instance p0, Ljava/lang/NullPointerException;
 
     const-string p1, "null cannot be cast to non-null type kotlin.Int"
@@ -1062,8 +1027,7 @@
 .method public final getCallback()Lcom/opensource/svgaplayer/SVGACallback;
     .registers 1
 
-    .line 48
-    iget-object p0, p0, Lcom/opensource/svgaplayer/SVGAImageView;->callback:Lcom/opensource/svgaplayer/SVGACallback;
+    const/4 p0, 0x0
 
     return-object p0
 .end method
@@ -1275,9 +1239,6 @@
 
 .method public final setCallback(Lcom/opensource/svgaplayer/SVGACallback;)V
     .registers 2
-
-    .line 48
-    iput-object p1, p0, Lcom/opensource/svgaplayer/SVGAImageView;->callback:Lcom/opensource/svgaplayer/SVGACallback;
 
     return-void
 .end method

@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static ic_live_result:I = 0x7f08056a
+.field public static ic_live_result:I = 0x7f080533
 
-.field public static live_result_off:I = 0x7f080855
+.field public static live_result_off:I = 0x7f0807e6
 
-.field public static live_result_on:I = 0x7f080856
+.field public static live_result_on:I = 0x7f0807e7
 
 
 # direct methods

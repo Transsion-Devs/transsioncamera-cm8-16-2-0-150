@@ -26,7 +26,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__LimitKt"
     f = "Limit.kt"
     l = {
-        0x88
+        0x85
     }
     m = "collectWhile"
 .end annotation

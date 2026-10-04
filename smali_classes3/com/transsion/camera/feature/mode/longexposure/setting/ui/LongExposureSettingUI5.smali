@@ -133,7 +133,7 @@
 .method private hidePopSettingTitle()V
     .registers 3
 
-    .line 235
+    .line 230
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -142,14 +142,14 @@
 
     if-nez v0, :cond_16
 
-    .line 236
+    .line 231
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 237
+    .line 232
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mUIHandler:Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5$UIHandler;
 
     const/16 v0, 0x64
@@ -211,7 +211,7 @@
 .method private synthetic lambda$updateCaptureTimeData$3(Ljava/lang/String;)V
     .registers 2
 
-    .line 275
+    .line 287
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->scrollToPosition(Ljava/lang/String;)V
@@ -222,7 +222,7 @@
 .method private synthetic lambda$updateSettingUILayout$1()V
     .registers 3
 
-    .line 157
+    .line 151
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCurrentScene:Ljava/lang/String;
@@ -239,7 +239,7 @@
 .method private synthetic lambda$updateSettingUILayout$2()V
     .registers 4
 
-    .line 146
+    .line 140
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/4 v1, 0x1
@@ -255,7 +255,7 @@
     :cond_9
     const/4 v0, 0x0
 
-    .line 147
+    .line 141
     :goto_a
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -267,7 +267,7 @@
 
     if-nez v1, :cond_21
 
-    .line 148
+    .line 142
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
     const/16 v1, 0x5a
@@ -288,13 +288,13 @@
     :cond_21
     move v2, v0
 
-    .line 155
+    .line 149
     :goto_22
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->rotateIndicator(I)V
 
-    .line 156
+    .line 150
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     new-instance v1, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5$$ExternalSyntheticLambda0;
@@ -309,7 +309,7 @@
 .method private showPop3sSettingTitle()V
     .registers 5
 
-    .line 221
+    .line 216
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mUIHandler:Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5$UIHandler;
 
     const/16 v1, 0x64
@@ -318,7 +318,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 222
+    .line 217
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x2
@@ -335,17 +335,17 @@
 
     const-wide/16 v1, 0xc8
 
-    .line 223
+    .line 218
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 224
+    .line 219
     new-instance v1, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5$1;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5$1;-><init>(Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 231
+    .line 226
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
     return-void
@@ -598,7 +598,7 @@
 .method protected getIconTypeForState(Z)I
     .registers 5
 
-    .line 302
+    .line 314
     new-instance p0, Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-static {}, Lcom/transsion/camera/app_info/AppInfo;->getContext()Landroid/content/Context;
@@ -617,7 +617,7 @@
 
     move-result-object p0
 
-    .line 304
+    .line 316
     const-string v0, "1:1"
 
     invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -628,12 +628,12 @@
 
     if-eqz p1, :cond_20
 
-    .line 305
+    .line 317
     sget p0, Lcom/transsion/camera/feature/longexposure/R$drawable;->ic_long_exposure_capture_bulb_on_dark:I
 
     return p0
 
-    .line 306
+    .line 318
     :cond_20
     sget p0, Lcom/transsion/camera/feature/longexposure/R$drawable;->ic_long_exposure_capture_bulb_off_dark:I
 
@@ -642,12 +642,12 @@
     :cond_23
     if-eqz p1, :cond_28
 
-    .line 308
+    .line 320
     sget p0, Lcom/transsion/camera/feature/longexposure/R$drawable;->ic_long_exposure_capture_bulb_on:I
 
     return p0
 
-    .line 309
+    .line 321
     :cond_28
     sget p0, Lcom/transsion/camera/feature/longexposure/R$drawable;->ic_long_exposure_capture_bulb_off:I
 
@@ -657,13 +657,13 @@
 .method protected hideSceneView(ZZ)V
     .registers 3
 
-    .line 193
+    .line 188
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->hideSceneView(ZZ)V
 
-    .line 194
+    .line 189
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->hidePopSettingTitle()V
 
-    .line 195
+    .line 190
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 p1, 0x1
@@ -676,10 +676,10 @@
 .method protected hideScrollerView()V
     .registers 2
 
-    .line 216
+    .line 211
     invoke-super {p0}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->hideScrollerView()V
 
-    .line 217
+    .line 212
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mTopUI:Landroid/widget/FrameLayout;
 
     const/16 v0, 0x8
@@ -692,7 +692,7 @@
 .method protected initScrollerView()V
     .registers 8
 
-    .line 243
+    .line 255
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     if-nez v0, :cond_5
@@ -702,24 +702,24 @@
     :cond_5
     const/4 v1, 0x1
 
-    .line 246
+    .line 258
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setEdgeFadeEnable(Z)V
 
-    .line 247
+    .line 259
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeChangeListener:Lcom/transsion/camera/app/ui/widget/IValueChangedListener;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setDurationChangedListener(Lcom/transsion/camera/app/ui/widget/IValueChangedListener;)V
 
-    .line 248
+    .line 260
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mMoveListener:Lcom/transsion/camera/app/ui/widget/CommonParamsControlView$OnTouchMoveListener;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setOnTouchMoveListener(Lcom/transsion/camera/app/ui/widget/CommonParamsControlView$OnTouchMoveListener;)V
 
-    .line 250
+    .line 262
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCurrentScene:Ljava/lang/String;
 
     const-string v2, "star"
@@ -730,28 +730,28 @@
 
     if-nez v0, :cond_4f
 
-    .line 251
+    .line 263
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCurrentScene:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->getTimeListForScene(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 252
+    .line 264
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCurrentScene:Ljava/lang/String;
 
     invoke-virtual {p0, v2}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->getTimeValueForScene(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 253
+    .line 265
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setIsDurationAuto(Z)V
 
-    .line 254
+    .line 266
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mDurationHelper:Lcom/transsion/camera/feature/mode/longexposure/helper/DurationHelper;
 
     iget-object v5, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCurrentScene:Ljava/lang/String;
@@ -760,22 +760,22 @@
 
     move-result-object v3
 
-    .line 255
+    .line 267
     iget-object v5, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     iget-object v6, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCurrentScene:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setScaleGapByKey(Ljava/lang/String;)V
 
-    .line 256
+    .line 268
     new-instance v5, Lcom/transsion/camera/app/ui/widget/ScrollerParamsInfo;
 
     invoke-direct {v5, v3, v4, v1, v1}, Lcom/transsion/camera/app/ui/widget/ScrollerParamsInfo;-><init>(Ljava/lang/String;ZZI)V
 
-    .line 258
+    .line 270
     invoke-virtual {v5, v2}, Lcom/transsion/camera/app/ui/widget/ScrollerParamsInfo;->setCurrentValue(Ljava/lang/String;)V
 
-    .line 259
+    .line 271
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {p0, v0, v5}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->updateScope(Ljava/util/List;Lcom/transsion/camera/app/ui/widget/ScrollerParamsInfo;)V
@@ -808,7 +808,7 @@
 .method public onOrientationChanged(I)V
     .registers 3
 
-    .line 200
+    .line 195
     invoke-super {p0, p1}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->onOrientationChanged(I)V
 
     const/16 v0, 0x5a
@@ -822,7 +822,7 @@
     :cond_b
     const/4 p1, 0x0
 
-    .line 204
+    .line 199
     :cond_c
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mPopSettingTitleTextView:Landroid/widget/TextView;
 
@@ -836,47 +836,52 @@
 .method public onSettingOptionToggle(Ljava/lang/String;)V
     .registers 3
 
-    .line 168
+    .line 162
     const-string v0, "key_long_exposure_option"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_28
 
-    .line 169
+    .line 163
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mLongExposureOptionSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_28
 
-    .line 170
+    .line 164
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->updatePopSettingTitleLayout()V
+
+    .line 165
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mLongExposureOptionSetting:Lcom/transsion/camera/app/common/setting/ISetting;
+
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 171
+    .line 166
     const-string v0, "off"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_28
 
     const/4 p1, 0x1
 
-    .line 172
+    .line 167
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->showSceneView(Z)V
 
-    .line 173
+    .line 168
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mLongExposureOptionSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     const-string p1, "on"
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    :cond_23
+    :cond_28
     return-void
 .end method
 
@@ -903,10 +908,10 @@
 .method protected showSceneView(Z)V
     .registers 3
 
-    .line 184
+    .line 179
     invoke-super {p0, p1}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->showSceneView(Z)V
 
-    .line 185
+    .line 180
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCurrentScene:Ljava/lang/String;
 
     const-string v0, "star"
@@ -917,10 +922,10 @@
 
     if-eqz p1, :cond_10
 
-    .line 186
+    .line 181
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->showPop3sSettingTitle()V
 
-    .line 188
+    .line 183
     :cond_10
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -936,13 +941,13 @@
 .method protected showScrollerView()V
     .registers 2
 
-    .line 209
+    .line 204
     invoke-super {p0}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->showScrollerView()V
 
-    .line 210
+    .line 205
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->hidePopSettingTitle()V
 
-    .line 211
+    .line 206
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mTopUI:Landroid/widget/FrameLayout;
 
     const/4 v0, 0x0
@@ -955,17 +960,17 @@
 .method protected updateCaptureTimeData(Ljava/lang/String;)V
     .registers 8
 
-    .line 265
+    .line 277
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->getTimeListForScene(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 266
+    .line 278
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->getTimeValueForScene(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 267
+    .line 279
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mDurationHelper:Lcom/transsion/camera/feature/mode/longexposure/helper/DurationHelper;
@@ -976,19 +981,19 @@
 
     invoke-virtual {v2, v3}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setIsDurationAuto(Z)V
 
-    .line 268
+    .line 280
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mDurationHelper:Lcom/transsion/camera/feature/mode/longexposure/helper/DurationHelper;
 
     invoke-virtual {v2, p1}, Lcom/transsion/camera/feature/mode/longexposure/helper/DurationHelper;->getDefaultValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 269
+    .line 281
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v3, p1}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setScaleGapByKey(Ljava/lang/String;)V
 
-    .line 270
+    .line 282
     new-instance v3, Lcom/transsion/camera/app/ui/widget/ScrollerParamsInfo;
 
     const/4 v4, 0x0
@@ -997,15 +1002,15 @@
 
     invoke-direct {v3, v2, v4, v5, v5}, Lcom/transsion/camera/app/ui/widget/ScrollerParamsInfo;-><init>(Ljava/lang/String;ZZI)V
 
-    .line 272
+    .line 284
     invoke-virtual {v3, v1}, Lcom/transsion/camera/app/ui/widget/ScrollerParamsInfo;->setCurrentValue(Ljava/lang/String;)V
 
-    .line 273
+    .line 285
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     invoke-virtual {v2, v0, v3}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->updateScope(Ljava/util/List;Lcom/transsion/camera/app/ui/widget/ScrollerParamsInfo;)V
 
-    .line 274
+    .line 286
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeScrollerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
 
     new-instance v2, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5$$ExternalSyntheticLambda1;
@@ -1014,7 +1019,7 @@
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setScrollerPointsCallback(Lcom/transsion/camera/app/ui/widget/ScrollerRulerView$ScrollerPointsCallback;)V
 
-    .line 277
+    .line 289
     sget-object p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1048,8 +1053,117 @@
     return-void
 .end method
 
+.method public updatePopSettingTitleLayout()V
+    .registers 5
+
+    .line 237
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mISetting:Lcom/transsion/camera/app/common/setting/ISetting;
+
+    invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
+
+    move-result-object v0
+
+    const-string v1, "4:3"
+
+    const-string v2, "_global_scope"
+
+    const-string v3, "key_picture_ratio"
+
+    invoke-virtual {v0, v3, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 239
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
+
+    const/4 v2, -0x2
+
+    .line 240
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    .line 241
+    const-string v2, "1:1"
+
+    invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3c
+
+    .line 242
+    iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
+
+    invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
+
+    move-result v0
+
+    iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mResources:Landroid/content/res/Resources;
+
+    sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->common_pop_setting_title_bottom_margin_1_1:I
+
+    .line 243
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+
+    move-result v2
+
+    add-int/2addr v0, v2
+
+    iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    .line 244
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mPopSettingTitleTextView:Landroid/widget/TextView;
+
+    sget v2, Lcom/transsion/camera/featurelibs/commonwidget/R$drawable;->pop_menu_name_background_black:I
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundResource(I)V
+
+    goto :goto_54
+
+    .line 246
+    :cond_3c
+    iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
+
+    invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
+
+    move-result v0
+
+    iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mResources:Landroid/content/res/Resources;
+
+    sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->common_pop_setting_title_bottom_margin:I
+
+    .line 247
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+
+    move-result v2
+
+    add-int/2addr v0, v2
+
+    iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    .line 248
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mPopSettingTitleTextView:Landroid/widget/TextView;
+
+    sget v2, Lcom/transsion/camera/featurelibs/commonwidget/R$drawable;->pop_menu_name_background:I
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundResource(I)V
+
+    .line 250
+    :goto_54
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    return-void
+.end method
+
 .method protected updateSettingUILayout(Z)V
-    .registers 8
+    .registers 7
 
     .line 103
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
@@ -1059,25 +1173,25 @@
     .line 104
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mLongExposureRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    if-eqz p1, :cond_10c
+    if-eqz p1, :cond_eb
 
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mBulbIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
-    if-eqz p1, :cond_10c
+    if-eqz p1, :cond_eb
 
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mLongExposureTimeRootLayout:Landroid/widget/RelativeLayout;
 
-    if-eqz p1, :cond_10c
+    if-eqz p1, :cond_eb
 
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeRootLayout:Landroid/widget/RelativeLayout;
 
-    if-eqz p1, :cond_10c
+    if-eqz p1, :cond_eb
 
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mLongExposureRootLayout:Landroid/view/ViewGroup;
 
     if-nez p1, :cond_1b
 
-    goto/16 :goto_10c
+    goto/16 :goto_eb
 
     .line 108
     :cond_1b
@@ -1139,64 +1253,25 @@
 
     check-cast v1, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 117
-    iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
-
-    .line 118
-    iget-object v3, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
-
-    invoke-interface {v3}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
-
-    move-result v3
-
-    iget-object v4, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mResources:Landroid/content/res/Resources;
-
-    sget v5, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->common_pop_setting_title_bottom_margin:I
-
-    .line 119
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
-
-    const/4 v3, -0x2
-
-    .line 120
-    iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
-
-    .line 121
-    iget-object v3, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v3, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
     const/4 v2, 0x0
 
-    .line 123
+    .line 117
     invoke-virtual {p1, v2, v2, v2, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 124
+    .line 118
     invoke-virtual {v1, v2, v2, v2, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 125
+    .line 119
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mBulbIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v3, v2, v2}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
-    .line 126
+    .line 120
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mLongExposureRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3, v2, v2}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 127
+    .line 121
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/feature/longexposure/R$dimen;->long_exposure_root_layout_height:I
@@ -1207,7 +1282,7 @@
 
     iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 128
+    .line 122
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/feature/longexposure/R$dimen;->capture_time_root_layout_margin_start:I
@@ -1218,7 +1293,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    .line 129
+    .line 123
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/feature/longexposure/R$dimen;->long_exposure_icon_margin_start:I
@@ -1229,7 +1304,7 @@
 
     invoke-virtual {p1, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    .line 130
+    .line 124
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/feature/longexposure/R$dimen;->long_exposure_icon_margin_bottom:I
@@ -1240,7 +1315,7 @@
 
     iput v2, p1, Landroid/widget/RelativeLayout$LayoutParams;->bottomMargin:I
 
-    .line 131
+    .line 125
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mBulbIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v2}, Landroid/view/View;->getId()I
@@ -1251,7 +1326,7 @@
 
     invoke-virtual {v1, v3, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 132
+    .line 126
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/feature/longexposure/R$dimen;->capture_time_root_layout_margin_end:I
@@ -1262,20 +1337,20 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
-    .line 133
+    .line 127
     invoke-virtual {p1, v3}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
     const/16 v2, 0x9
 
-    .line 134
+    .line 128
     invoke-virtual {p1, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     const/16 v2, 0xc
 
-    .line 135
+    .line 129
     invoke-virtual {p1, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 136
+    .line 130
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/feature/longexposure/R$dimen;->long_exposure_icon_margin_bottom:I
@@ -1286,41 +1361,41 @@
 
     iput v2, p1, Landroid/widget/RelativeLayout$LayoutParams;->bottomMargin:I
 
-    .line 138
+    .line 132
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v2
 
-    if-eqz v2, :cond_e8
+    if-eqz v2, :cond_c7
 
     iget v2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
-    if-nez v2, :cond_e8
+    if-nez v2, :cond_c7
 
-    .line 139
+    .line 133
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mBulbIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     iget v4, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
     invoke-virtual {v2, v4, v3}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
-    .line 142
-    :cond_e8
+    .line 136
+    :cond_c7
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mBulbIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v2, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 143
+    .line 137
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeRootLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 144
+    .line 138
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mLongExposureRootLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 145
+    .line 139
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureTimeRootLayout:Landroid/widget/RelativeLayout;
 
     new-instance v0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI5$$ExternalSyntheticLambda2;
@@ -1329,19 +1404,19 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 161
+    .line 155
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/LongExposureSettingUI;->mCaptureSceneAdapter:Lcom/transsion/camera/feature/mode/longexposure/setting/ui/scene/CaptureSceneAdapter;
 
-    if-eqz p1, :cond_10c
+    if-eqz p1, :cond_eb
 
-    .line 162
+    .line 156
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
     iget p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     invoke-virtual {p1, v0, p0}, Lcom/transsion/camera/feature/mode/longexposure/setting/ui/scene/CaptureSceneAdapter;->updateScreenFormType(II)V
 
-    :cond_10c
-    :goto_10c
+    :cond_eb
+    :goto_eb
     return-void
 .end method

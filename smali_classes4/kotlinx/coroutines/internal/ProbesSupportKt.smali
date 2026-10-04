@@ -18,7 +18,7 @@
         }
     .end annotation
 
-    .line 11
+    .line 8
     invoke-static {p0}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineCreated(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0

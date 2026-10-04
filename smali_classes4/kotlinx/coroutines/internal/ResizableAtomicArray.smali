@@ -29,10 +29,10 @@
 .method public constructor <init>(I)V
     .registers 3
 
-    .line 13
+    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
+    .line 11
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     invoke-direct {v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
@@ -47,7 +47,7 @@
 .method public final currentLength()I
     .registers 1
 
-    .line 18
+    .line 14
     iget-object p0, p0, Lkotlinx/coroutines/internal/ResizableAtomicArray;->array:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
@@ -65,10 +65,10 @@
         }
     .end annotation
 
-    .line 21
+    .line 17
     iget-object p0, p0, Lkotlinx/coroutines/internal/ResizableAtomicArray;->array:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    .line 22
+    .line 18
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
 
     move-result v0
@@ -95,22 +95,22 @@
         }
     .end annotation
 
-    .line 27
+    .line 23
     iget-object v0, p0, Lkotlinx/coroutines/internal/ResizableAtomicArray;->array:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    .line 28
+    .line 24
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
 
     move-result v1
 
     if-ge p1, v1, :cond_c
 
-    .line 30
+    .line 26
     invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
 
     return-void
 
-    .line 34
+    .line 30
     :cond_c
     new-instance v2, Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
@@ -129,7 +129,7 @@
     :goto_1a
     if-ge v3, v1, :cond_26
 
-    .line 35
+    .line 31
     invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -140,11 +140,11 @@
 
     goto :goto_1a
 
-    .line 36
+    .line 32
     :cond_26
     invoke-virtual {v2, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
 
-    .line 37
+    .line 33
     iput-object v2, p0, Lkotlinx/coroutines/internal/ResizableAtomicArray;->array:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     return-void

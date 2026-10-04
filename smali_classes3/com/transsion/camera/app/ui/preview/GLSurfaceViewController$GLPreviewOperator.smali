@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)V
     .registers 2
 
-    .line 66
+    .line 60
     iput-object p1, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/common/preview/PreviewOperator;-><init>()V
@@ -44,7 +44,7 @@
 .method public executeInGLThread(Ljava/lang/Runnable;)V
     .registers 3
 
-    .line 201
+    .line 195
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -53,7 +53,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 202
+    .line 196
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -69,7 +69,7 @@
 .method public forceRender()V
     .registers 2
 
-    .line 208
+    .line 202
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -78,7 +78,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 209
+    .line 203
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -96,7 +96,7 @@
 
     const/4 v0, 0x0
 
-    .line 70
+    .line 64
     invoke-virtual {p0, p1, p2, p3, v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->getBitmap(IIILandroid/graphics/Rect;)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -107,28 +107,28 @@
 .method public getBitmap(IIILandroid/graphics/Rect;)Landroid/graphics/Bitmap;
     .registers 10
 
-    .line 75
+    .line 69
     div-int/lit8 v0, p1, 0x10
 
-    .line 76
+    .line 70
     div-int/lit8 v1, p2, 0x10
 
     if-lez p3, :cond_a
 
-    .line 78
+    .line 72
     div-int v0, p1, p3
 
-    .line 79
+    .line 73
     div-int v1, p2, p3
 
-    .line 81
+    .line 75
     :cond_a
-    invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$smtranslateToMultiple2(I)I
+    invoke-static {v0}, Lcom/transsion/camera/utils/CameraUtil;->translateToMultiple2(I)I
 
     move-result p2
 
-    .line 82
-    invoke-static {v1}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$smtranslateToMultiple2(I)I
+    .line 76
+    invoke-static {v1}, Lcom/transsion/camera/utils/CameraUtil;->translateToMultiple2(I)I
 
     move-result p3
 
@@ -146,7 +146,7 @@
 
     div-float/2addr v1, p1
 
-    .line 86
+    .line 80
     new-instance p1, Landroid/graphics/Rect;
 
     iget v2, p4, Landroid/graphics/Rect;->left:I
@@ -157,7 +157,7 @@
 
     float-to-int v2, v2
 
-    invoke-static {v2}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$smtranslateToMultiple2(I)I
+    invoke-static {v2}, Lcom/transsion/camera/utils/CameraUtil;->translateToMultiple2(I)I
 
     move-result v2
 
@@ -169,8 +169,8 @@
 
     float-to-int v3, v3
 
-    .line 87
-    invoke-static {v3}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$smtranslateToMultiple2(I)I
+    .line 81
+    invoke-static {v3}, Lcom/transsion/camera/utils/CameraUtil;->translateToMultiple2(I)I
 
     move-result v3
 
@@ -182,8 +182,8 @@
 
     float-to-int v4, v4
 
-    .line 88
-    invoke-static {v4}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$smtranslateToMultiple2(I)I
+    .line 82
+    invoke-static {v4}, Lcom/transsion/camera/utils/CameraUtil;->translateToMultiple2(I)I
 
     move-result v4
 
@@ -195,8 +195,8 @@
 
     float-to-int p4, p4
 
-    .line 89
-    invoke-static {p4}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$smtranslateToMultiple2(I)I
+    .line 83
+    invoke-static {p4}, Lcom/transsion/camera/utils/CameraUtil;->translateToMultiple2(I)I
 
     move-result p4
 
@@ -207,7 +207,7 @@
     :cond_45
     move-object p1, v0
 
-    .line 91
+    .line 85
     :goto_46
     invoke-static {}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -235,7 +235,7 @@
 
     invoke-static {p4, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 92
+    .line 86
     iget-object p4, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p4}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -263,7 +263,7 @@
 .method public loadGLResource(ZI)V
     .registers 4
 
-    .line 173
+    .line 167
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -272,7 +272,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 174
+    .line 168
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -288,7 +288,7 @@
 .method public loadGLResources(Z[II)V
     .registers 5
 
-    .line 180
+    .line 174
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -297,7 +297,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 181
+    .line 175
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -313,7 +313,7 @@
 .method public modeInit(Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;)V
     .registers 3
 
-    .line 138
+    .line 132
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -322,7 +322,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 139
+    .line 133
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -338,7 +338,7 @@
 .method public modePause()V
     .registers 2
 
-    .line 159
+    .line 153
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -347,7 +347,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 160
+    .line 154
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -363,7 +363,7 @@
 .method public modeReload()V
     .registers 2
 
-    .line 166
+    .line 160
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -372,7 +372,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 167
+    .line 161
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -388,7 +388,7 @@
 .method public modeResume()V
     .registers 2
 
-    .line 152
+    .line 146
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -397,7 +397,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 153
+    .line 147
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -413,7 +413,7 @@
 .method public modeUninit()V
     .registers 2
 
-    .line 145
+    .line 139
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -422,7 +422,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 146
+    .line 140
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -438,7 +438,7 @@
 .method public onOfflineSwitchFinish()V
     .registers 2
 
-    .line 243
+    .line 237
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -447,7 +447,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 244
+    .line 238
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -463,7 +463,7 @@
 .method public onPause(Z)V
     .registers 4
 
-    .line 113
+    .line 107
     invoke-static {}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -472,7 +472,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 114
+    .line 108
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -481,7 +481,7 @@
 
     if-eqz v0, :cond_23
 
-    .line 115
+    .line 109
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -490,7 +490,7 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->onSurfaceDestroyCallback()V
 
-    .line 116
+    .line 110
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -499,7 +499,7 @@
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->onPause(Z)V
 
-    .line 118
+    .line 112
     :cond_23
     invoke-static {}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -515,7 +515,7 @@
 .method public onResume()V
     .registers 3
 
-    .line 105
+    .line 99
     invoke-static {}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -524,7 +524,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 106
+    .line 100
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -533,7 +533,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 107
+    .line 101
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -549,7 +549,7 @@
 .method public onStart()V
     .registers 3
 
-    .line 97
+    .line 91
     invoke-static {}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -558,7 +558,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 98
+    .line 92
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -567,7 +567,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 99
+    .line 93
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -583,7 +583,7 @@
 .method public onStop()V
     .registers 2
 
-    .line 123
+    .line 117
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -592,7 +592,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 125
+    .line 119
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -608,7 +608,7 @@
 .method public onTopChanged(Z)V
     .registers 3
 
-    .line 131
+    .line 125
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -617,7 +617,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 132
+    .line 126
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -633,7 +633,7 @@
 .method public requestRender()V
     .registers 2
 
-    .line 236
+    .line 230
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -642,7 +642,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 237
+    .line 231
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -658,7 +658,7 @@
 .method public shotScreen(Z)Landroid/graphics/Bitmap;
     .registers 3
 
-    .line 250
+    .line 244
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -667,7 +667,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 251
+    .line 245
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -689,7 +689,7 @@
 .method public startRenderRequest(Lcom/transsion/camera/app/common/preview/IPreviewRenderedCallbacker;Landroid/os/Handler;)V
     .registers 4
 
-    .line 194
+    .line 188
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -698,7 +698,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 195
+    .line 189
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -714,7 +714,7 @@
 .method public stopRenderRequest()V
     .registers 2
 
-    .line 187
+    .line 181
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -723,7 +723,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 188
+    .line 182
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -739,7 +739,7 @@
 .method public updateGLProgramType(Lcom/transsion/camera/app/ui/opengl/Texture2dProgram$ProgramType;)V
     .registers 3
 
-    .line 222
+    .line 216
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
@@ -748,7 +748,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 223
+    .line 217
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$GLPreviewOperator;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmGLPreviewView(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/ui/opengl/GLPreviewView;

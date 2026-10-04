@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 1991
+    .line 2013
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraDisconnectedImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onCameraDeviceDisconnected()V
     .registers 2
 
-    .line 1994
+    .line 2016
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraDisconnectedImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p0}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/BaseCameraActivity;)Landroid/os/Handler;

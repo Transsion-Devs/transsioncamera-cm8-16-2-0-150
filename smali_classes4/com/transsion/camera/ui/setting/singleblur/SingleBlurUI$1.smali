@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;)V
     .registers 2
 
-    .line 329
+    .line 333
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->this$0:Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 329
+    .line 333
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -49,7 +49,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 332
+    .line 336
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const-string v0, "key_camera_zoom"
@@ -70,7 +70,7 @@
 
     goto :goto_6c
 
-    .line 349
+    .line 353
     :cond_14
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->this$0:Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;
 
@@ -82,7 +82,7 @@
 
     iput-boolean p2, p1, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsIconSelected:Z
 
-    .line 350
+    .line 354
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->this$0:Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;
 
     iget-object p2, p1, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
@@ -91,7 +91,7 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setSelected(Z)V
 
-    .line 351
+    .line 355
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->this$0:Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsIconSelected:Z
@@ -100,7 +100,7 @@
 
     return-void
 
-    .line 334
+    .line 338
     :cond_2f
     invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -114,26 +114,26 @@
 
     if-ge p1, p2, :cond_4c
 
-    .line 335
+    .line 339
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->this$0:Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;
 
     const/4 p2, 0x1
 
     invoke-static {p1, p2}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->-$$Nest$fputmIsWideCamera(Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;Z)V
 
-    .line 336
+    .line 340
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->this$0:Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->hideIcon()V
 
-    .line 337
+    .line 341
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->this$0:Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->-$$Nest$mhideAlwaysHint(Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;)V
 
     return-void
 
-    .line 339
+    .line 343
     :cond_4c
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->this$0:Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;
 
@@ -141,7 +141,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->-$$Nest$fputmIsWideCamera(Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;Z)V
 
-    .line 340
+    .line 344
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->this$0:Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->-$$Nest$fgetmIsZoomWheelShowing(Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;)Z
@@ -150,12 +150,12 @@
 
     if-nez p1, :cond_6c
 
-    .line 341
+    .line 345
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->this$0:Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->showIcon()V
 
-    .line 342
+    .line 346
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI$1;->this$0:Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->mIsIconSelected:Z
@@ -166,7 +166,7 @@
 
     if-eqz p1, :cond_6c
 
-    .line 343
+    .line 347
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;->-$$Nest$mshowAlwaysHint(Lcom/transsion/camera/ui/setting/singleblur/SingleBlurUI;)V
 
     :cond_6c

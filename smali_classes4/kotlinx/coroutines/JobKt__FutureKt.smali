@@ -16,7 +16,7 @@
         }
     .end annotation
 
-    .line 33
+    .line 29
     new-instance v0, Lkotlinx/coroutines/CancelFutureOnCancel;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/CancelFutureOnCancel;-><init>(Ljava/util/concurrent/Future;)V
@@ -41,7 +41,7 @@
     .annotation build Lkotlinx/coroutines/InternalCoroutinesApi;
     .end annotation
 
-    .line 23
+    .line 19
     new-instance v0, Lkotlinx/coroutines/CancelFutureOnCompletion;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/CancelFutureOnCompletion;-><init>(Ljava/util/concurrent/Future;)V

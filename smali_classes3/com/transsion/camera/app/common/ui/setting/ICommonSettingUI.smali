@@ -18,6 +18,9 @@
 .method public abstract createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/interactive/CommonInteractive;)Landroid/view/View;
 .end method
 
+.method public abstract destroy()V
+.end method
+
 .method public abstract getEntryRootView()Landroid/view/ViewGroup;
 .end method
 
@@ -69,7 +72,7 @@
 .method public queryState(Ljava/lang/String;)Lcom/transsion/camera/app/common/IAppUI$UIState;
     .registers 2
 
-    .line 71
+    .line 72
     sget-object p0, Lcom/transsion/camera/app/common/IAppUI$UIState;->UNKNOWN:Lcom/transsion/camera/app/common/IAppUI$UIState;
 
     return-object p0

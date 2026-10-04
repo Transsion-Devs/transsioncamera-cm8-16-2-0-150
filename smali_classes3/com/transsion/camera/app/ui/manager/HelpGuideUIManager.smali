@@ -30,6 +30,8 @@
 
 .field protected mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
+.field private mIsDialogShow:Z
+
 .field private mIsVideoRecording:Z
 
 .field private mLayoutIds:Ljava/util/List;
@@ -73,6 +75,15 @@
 
     .line 0
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mFrontDualFlashUIShow:Z
+
+    return p0
+.end method
+
+.method static bridge synthetic -$$Nest$fgetmIsDialogShow(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;)Z
+    .registers 1
+
+    .line 0
+    iget-boolean p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mIsDialogShow:Z
 
     return p0
 .end method
@@ -187,7 +198,7 @@
 
     move-object v7, p6
 
-    .line 71
+    .line 72
     invoke-direct/range {v0 .. v7}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;-><init>(Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;Lcom/transsion/camera/utils/sound/IActionSound;Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 
     const/4 p0, 0x0
@@ -206,26 +217,29 @@
     .line 62
     iput-boolean p0, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mRTLDirection:Z
 
-    .line 417
+    .line 65
+    iput-boolean p0, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mIsDialogShow:Z
+
+    .line 428
     new-instance p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;-><init>(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;)V
 
     iput-object p0, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 72
+    .line 73
     iput-object v1, v0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
-    .line 73
+    .line 74
     iput p2, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mRootId:I
 
-    .line 74
+    .line 75
     iput-object p3, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mContext:Landroid/content/Context;
 
-    .line 75
+    .line 76
     iput-object p4, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mFragmentManager:Landroid/app/FragmentManager;
 
-    .line 76
+    .line 77
     invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -236,27 +250,27 @@
 
     move-result p0
 
-    if-nez p0, :cond_39
+    if-nez p0, :cond_3b
 
-    .line 78
+    .line 79
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->createHelpGuideUI(Lcom/transsion/camera/app/common/manager/IScreenManager;)Lcom/transsion/camera/app/ui/HelpGuideUI;
 
     move-result-object p0
 
     iput-object p0, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
-    .line 79
+    .line 80
     invoke-interface {p0, v5}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->setAppUIRect(Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;)V
 
-    .line 81
-    :cond_39
+    .line 82
+    :cond_3b
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p0, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mLayoutIds:Ljava/util/List;
 
-    .line 82
+    .line 83
     new-instance p0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -267,7 +281,7 @@
 
     iput-object p0, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHandler:Landroid/os/Handler;
 
-    .line 83
+    .line 84
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -338,7 +352,7 @@
 
     if-eqz p1, :cond_4a
 
-    .line 339
+    .line 347
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -351,7 +365,7 @@
 
     goto :goto_4a
 
-    .line 342
+    .line 350
     :cond_d
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -371,7 +385,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ui/setting/ISettingGuideItemUI;
 
-    .line 343
+    .line 351
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getSettingProvide()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
@@ -386,17 +400,17 @@
 
     move-result-object v1
 
-    .line 344
+    .line 352
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingGuideItemUI;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    .line 345
+    .line 353
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingGuideItemUI;->shouldShow()Z
 
     move-result v1
 
     if-eqz v1, :cond_11
 
-    .line 346
+    .line 354
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingGuideItemUI;->getStringArrayId()I
 
     move-result v0
@@ -407,14 +421,14 @@
 
     if-eqz v0, :cond_11
 
-    .line 347
+    .line 355
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
     if-nez v1, :cond_11
 
-    .line 348
+    .line 356
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mLayoutIds:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
@@ -429,7 +443,7 @@
 .method private facingFront()Z
     .registers 1
 
-    .line 403
+    .line 414
     iget-object p0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     if-nez p0, :cond_6
@@ -438,7 +452,7 @@
 
     return p0
 
-    .line 406
+    .line 417
     :cond_6
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
@@ -454,7 +468,7 @@
 .method private flashLevelLuminanceFacingSupport()Z
     .registers 3
 
-    .line 269
+    .line 277
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mLuminanceAdjustSupportForCamera:[I
 
     const/4 v1, 0x0
@@ -463,7 +477,7 @@
 
     return v1
 
-    .line 272
+    .line 280
     :cond_6
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->facingFront()Z
 
@@ -484,7 +498,7 @@
 .method private synthetic lambda$notifyCameraOperateActionToUI$0()V
     .registers 1
 
-    .line 201
+    .line 203
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->exitGuideFragment()V
 
     return-void
@@ -493,7 +507,7 @@
 .method private queryFlashValue()Ljava/lang/String;
     .registers 3
 
-    .line 410
+    .line 421
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_flash_facade"
@@ -502,7 +516,7 @@
 
     move-result-object v0
 
-    .line 411
+    .line 422
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -511,7 +525,7 @@
 
     return-object v0
 
-    .line 414
+    .line 425
     :cond_f
     iget-object p0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -527,19 +541,19 @@
 .method private stopPressedAnimation(I)V
     .registers 2
 
-    .line 388
+    .line 399
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->needStopPressedAnimation(I)Z
 
     move-result p1
 
     if-eqz p1, :cond_11
 
-    .line 389
+    .line 400
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     if-eqz p0, :cond_11
 
-    .line 390
+    .line 401
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->getEntryView()Landroid/view/View;
 
     move-result-object p0
@@ -555,7 +569,7 @@
 .method protected createGuidePagerRootFragment(Ljava/util/List;)Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
     .registers 2
 
-    .line 294
+    .line 302
     invoke-static {p1}, Lcom/transsion/camera/app/ui/GuidePagerRootFragment;->newInstance(Ljava/util/List;)Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
 
     move-result-object p0
@@ -566,7 +580,7 @@
 .method protected createHelpGuideUI(Lcom/transsion/camera/app/common/manager/IScreenManager;)Lcom/transsion/camera/app/ui/HelpGuideUI;
     .registers 2
 
-    .line 87
+    .line 88
     new-instance p0, Lcom/transsion/camera/app/ui/HelpGuideUI;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/HelpGuideUI;-><init>(Lcom/transsion/camera/app/common/manager/IScreenManager;)V
@@ -577,7 +591,7 @@
 .method public enterGuideFragment()V
     .registers 6
 
-    .line 276
+    .line 284
     sget-object v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -600,7 +614,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 277
+    .line 285
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->isEnable()Z
 
     move-result v0
@@ -609,7 +623,7 @@
 
     return-void
 
-    .line 280
+    .line 288
     :cond_21
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mFragmentManager:Landroid/app/FragmentManager;
 
@@ -617,7 +631,7 @@
 
     move-result-object v0
 
-    .line 281
+    .line 289
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mLayoutIds:Ljava/util/List;
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->createGuidePagerRootFragment(Ljava/util/List;)Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
@@ -626,19 +640,19 @@
 
     iput-object v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mGuideFragment:Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
 
-    .line 282
+    .line 290
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mStateListener:Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/ui/GuidePagerRootFragment;->setStateListener(Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;)V
 
-    .line 283
+    .line 291
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mGuideFragment:Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
 
     iget v2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mDefaultIndex:I
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/ui/GuidePagerRootFragment;->updateIndex(I)V
 
-    .line 284
+    .line 292
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mGuideFragment:Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
@@ -649,36 +663,36 @@
 
     invoke-virtual {v1, v2, v3, v4}, Lcom/transsion/camera/app/ui/GuidePagerRootFragment;->setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;II)V
 
-    .line 285
+    .line 293
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mGuideFragment:Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
 
     iget-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mRTLDirection:Z
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/ui/GuidePagerRootFragment;->setRTLDirection(Z)V
 
-    .line 286
+    .line 294
     iget v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mRootId:I
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mGuideFragment:Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
 
     invoke-virtual {v0, v1, v2}, Landroid/app/FragmentTransaction;->add(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
-    .line 287
+    .line 295
     const-string v1, "guide_pager_root"
 
     invoke-virtual {v0, v1}, Landroid/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
-    .line 288
+    .line 296
     invoke-virtual {v0}, Landroid/app/FragmentTransaction;->commit()I
 
-    .line 289
+    .line 297
     iget-object p0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 v0, 0x4d
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 290
+    .line 298
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -691,12 +705,12 @@
 .method public exitGuideFragment()V
     .registers 1
 
-    .line 298
+    .line 306
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mGuideFragment:Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
 
     if-eqz p0, :cond_7
 
-    .line 299
+    .line 307
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/GuidePagerRootFragment;->exit()V
 
     :cond_7
@@ -714,10 +728,10 @@
 .method public hide()V
     .registers 2
 
-    .line 220
+    .line 228
     invoke-super {p0}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->hide()V
 
-    .line 221
+    .line 229
     sget-object p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "hide: "
@@ -730,143 +744,163 @@
 .method public notifyCameraOperateActionToUI(I)V
     .registers 6
 
-    .line 149
+    .line 150
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->stopPressedAnimation(I)V
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_98
+    if-eq p1, v0, :cond_a8
 
     const/16 v0, 0x9
 
     const/4 v1, 0x0
 
-    if-eq p1, v0, :cond_95
+    if-eq p1, v0, :cond_a5
 
     const/16 v0, 0x1c
 
-    if-eq p1, v0, :cond_8b
+    if-eq p1, v0, :cond_99
 
     const/16 v0, 0x20
 
     const/4 v2, 0x1
 
-    if-eq p1, v0, :cond_83
+    if-eq p1, v0, :cond_91
 
     const/16 v0, 0x6d
 
-    if-eq p1, v0, :cond_95
+    if-eq p1, v0, :cond_a5
 
     const/16 v0, 0x126
 
-    if-eq p1, v0, :cond_76
+    if-eq p1, v0, :cond_84
 
     const/16 v0, 0xb
 
-    if-eq p1, v0, :cond_66
+    if-eq p1, v0, :cond_74
 
     const/16 v0, 0xc
 
-    if-eq p1, v0, :cond_83
+    if-eq p1, v0, :cond_91
 
     const/16 v0, 0x15
 
-    if-eq p1, v0, :cond_5e
+    if-eq p1, v0, :cond_6c
 
     const/16 v0, 0x16
 
-    if-eq p1, v0, :cond_5e
+    if-eq p1, v0, :cond_6c
 
     const/16 v0, 0x2e
 
-    if-eq p1, v0, :cond_5b
+    if-eq p1, v0, :cond_69
 
     const/16 v0, 0x2f
 
-    if-eq p1, v0, :cond_95
+    if-eq p1, v0, :cond_a5
 
     const/16 v0, 0x55
 
-    if-eq p1, v0, :cond_66
+    if-eq p1, v0, :cond_74
 
     const/16 v0, 0x56
 
-    if-eq p1, v0, :cond_83
+    if-eq p1, v0, :cond_91
+
+    const/16 v0, 0x87
+
+    if-eq p1, v0, :cond_66
+
+    const/16 v0, 0x88
+
+    if-eq p1, v0, :cond_63
 
     const/16 v0, 0x90
 
-    if-eq p1, v0, :cond_5b
+    if-eq p1, v0, :cond_69
 
     const/16 v0, 0x91
 
-    if-eq p1, v0, :cond_95
+    if-eq p1, v0, :cond_a5
 
     const/16 v0, 0x9c
 
-    if-eq p1, v0, :cond_50
+    if-eq p1, v0, :cond_58
 
     const/16 v0, 0x9d
 
-    if-eq p1, v0, :cond_50
+    if-eq p1, v0, :cond_58
 
-    packed-switch p1, :pswitch_data_a0
+    packed-switch p1, :pswitch_data_b0
 
-    goto :goto_9b
+    goto :goto_ab
 
-    .line 197
-    :cond_50
+    .line 199
+    :cond_58
     sget-object v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "shot2shot end action need enable help guide button."
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 198
+    .line 200
     invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->setEnable(Z)V
 
-    goto :goto_9b
+    goto :goto_ab
 
-    .line 154
-    :cond_5b
-    :pswitch_5b
+    .line 209
+    :cond_63
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mIsDialogShow:Z
+
+    goto :goto_ab
+
+    .line 206
+    :cond_66
+    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mIsDialogShow:Z
+
+    goto :goto_ab
+
+    .line 155
+    :cond_69
+    :pswitch_69
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mIsVideoRecording:Z
 
-    goto :goto_9b
+    goto :goto_ab
 
-    .line 188
-    :cond_5e
+    .line 190
+    :cond_6c
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
-    if-eqz v0, :cond_9b
+    if-eqz v0, :cond_ab
 
-    .line 189
+    .line 191
     invoke-interface {v0}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->refreshIconState()V
 
-    goto :goto_9b
-
-    .line 172
-    :cond_66
-    :pswitch_66
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
-
-    if-eqz v0, :cond_72
-
-    .line 173
-    invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IRootUI;->setEnable(Z)V
+    goto :goto_ab
 
     .line 174
+    :cond_74
+    :pswitch_74
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
+
+    if-eqz v0, :cond_80
+
+    .line 175
+    invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IRootUI;->setEnable(Z)V
+
+    .line 176
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->refreshIconState()V
 
-    .line 176
-    :cond_72
+    .line 178
+    :cond_80
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->exitGuideFragment()V
 
-    goto :goto_9b
+    goto :goto_ab
 
-    .line 201
-    :cond_76
+    .line 203
+    :cond_84
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$$ExternalSyntheticLambda0;
@@ -877,72 +911,75 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    goto :goto_9b
+    goto :goto_ab
 
-    .line 182
-    :cond_83
-    :pswitch_83
+    .line 184
+    :cond_91
+    :pswitch_91
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
-    if-eqz v0, :cond_9b
+    if-eqz v0, :cond_ab
 
-    .line 183
+    .line 185
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IRootUI;->setEnable(Z)V
 
-    goto :goto_9b
-
-    .line 164
-    :cond_8b
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mIsVideoRecording:Z
+    goto :goto_ab
 
     .line 165
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
-
-    if-eqz v0, :cond_9b
-
-    .line 166
-    invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IRootUI;->setEnable(Z)V
-
-    goto :goto_9b
-
-    .line 161
-    :cond_95
-    :pswitch_95
+    :cond_99
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mIsVideoRecording:Z
 
-    goto :goto_9b
+    .line 166
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mIsDialogShow:Z
 
-    .line 193
-    :cond_98
+    .line 167
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
+
+    if-eqz v0, :cond_ab
+
+    .line 168
+    invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IRootUI;->setEnable(Z)V
+
+    goto :goto_ab
+
+    .line 162
+    :cond_a5
+    :pswitch_a5
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mIsVideoRecording:Z
+
+    goto :goto_ab
+
+    .line 195
+    :cond_a8
     invoke-static {}, Lcom/transsion/camera/utils/MultiTouchManager;->resetState()V
 
-    .line 204
-    :cond_9b
-    :goto_9b
+    .line 212
+    :cond_ab
+    :goto_ab
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->notifyCameraOperateActionToUI(I)V
 
     return-void
 
     nop
 
-    :pswitch_data_a0
+    :pswitch_data_b0
     .packed-switch 0xf
-        :pswitch_5b
-        :pswitch_95
-        :pswitch_66
-        :pswitch_83
+        :pswitch_69
+        :pswitch_a5
+        :pswitch_74
+        :pswitch_91
     .end packed-switch
 .end method
 
 .method public onAbsolutePreviewRectChanged(Landroid/graphics/Rect;)V
     .registers 2
 
-    .line 142
+    .line 143
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     if-eqz p0, :cond_7
 
-    .line 143
+    .line 144
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->updatePreviewRect(Landroid/graphics/Rect;)V
 
     :cond_7
@@ -952,7 +989,7 @@
 .method protected onInflateLayout(Landroid/view/LayoutInflater;)Landroid/view/View;
     .registers 3
 
-    .line 92
+    .line 93
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     if-nez v0, :cond_6
@@ -961,7 +998,7 @@
 
     return-object p0
 
-    .line 95
+    .line 96
     :cond_6
     iget-object p0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
 
@@ -975,24 +1012,24 @@
 .method public onOrientationChanged(IZ)V
     .registers 4
 
-    .line 120
+    .line 121
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->onOrientationChanged(IZ)V
 
-    .line 121
+    .line 122
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     if-eqz v0, :cond_a
 
-    .line 122
+    .line 123
     invoke-interface {v0, p1, p2}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->onOrientationChanged(IZ)V
 
-    .line 124
+    .line 125
     :cond_a
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mGuideFragment:Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
 
     if-eqz p0, :cond_11
 
-    .line 125
+    .line 126
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/GuidePagerRootFragment;->onOrientationChanged(I)V
 
     :cond_11
@@ -1002,12 +1039,12 @@
 .method protected onSetupViews()V
     .registers 1
 
-    .line 108
+    .line 109
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     if-eqz p0, :cond_7
 
-    .line 109
+    .line 110
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->onSetupViews()V
 
     :cond_7
@@ -1017,15 +1054,15 @@
 .method public setEnable(Z)V
     .registers 3
 
-    .line 226
+    .line 234
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->setEnable(Z)V
 
-    .line 227
+    .line 235
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     if-eqz v0, :cond_13
 
-    .line 228
+    .line 236
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mIsVideoRecording:Z
 
     if-nez p0, :cond_f
@@ -1049,21 +1086,21 @@
 .method public setGuideItemList(Ljava/util/List;Ljava/util/List;)V
     .registers 7
 
-    .line 245
+    .line 253
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mLayoutIds:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
     if-eqz p1, :cond_12
 
-    .line 246
+    .line 254
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_12
 
-    .line 247
+    .line 255
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mLayoutIds:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
@@ -1071,17 +1108,17 @@
     :cond_12
     if-eqz p2, :cond_1d
 
-    .line 250
+    .line 258
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result p1
 
     if-lez p1, :cond_1d
 
-    .line 251
+    .line 259
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->addSettingLayoutId(Ljava/util/List;)V
 
-    .line 253
+    .line 261
     :cond_1d
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mLayoutIds:Ljava/util/List;
 
@@ -1105,7 +1142,7 @@
     :goto_2a
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mModeSupportGuideUI:Z
 
-    .line 255
+    .line 263
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->flashLevelLuminanceFacingSupport()Z
 
     move-result v1
@@ -1124,7 +1161,7 @@
 
     if-eqz v1, :cond_63
 
-    .line 256
+    .line 264
     iget-object p1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -1133,7 +1170,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 257
+    .line 265
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object v1
@@ -1142,7 +1179,7 @@
 
     move-result-object v1
 
-    .line 256
+    .line 264
     const-string v2, "dual_front_flash_state_key"
 
     const-string v3, "-1"
@@ -1155,7 +1192,7 @@
 
     move-result p1
 
-    .line 258
+    .line 266
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mModeSupportGuideUI:Z
 
     if-eqz v1, :cond_62
@@ -1167,16 +1204,16 @@
     :cond_62
     move p1, p2
 
-    .line 260
+    .line 268
     :cond_63
     iget-object p2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     if-eqz p2, :cond_94
 
-    .line 261
+    .line 269
     invoke-interface {p2, p1}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->updateVisibility(Z)V
 
-    .line 262
+    .line 270
     sget-object p1, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1197,7 +1234,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 263
+    .line 271
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     iget-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mModeSupportGuideUI:Z
@@ -1214,7 +1251,7 @@
 
     invoke-interface {p1, p2, v0}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->updateIcon(ZLandroid/view/View$OnClickListener;)V
 
-    .line 265
+    .line 273
     :cond_94
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->show()V
 
@@ -1224,7 +1261,7 @@
 .method public setRTLDirection(Z)V
     .registers 2
 
-    .line 309
+    .line 317
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mRTLDirection:Z
 
     return-void
@@ -1233,10 +1270,10 @@
 .method public setSettingController(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
     .registers 4
 
-    .line 100
+    .line 101
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->setSettingController(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
 
-    .line 101
+    .line 102
     iget-object p1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -1249,7 +1286,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 102
+    .line 103
     iget-object p1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -1268,7 +1305,7 @@
 .method public setStateListener(Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;)V
     .registers 3
 
-    .line 313
+    .line 321
     new-instance v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$1;
 
     invoke-direct {v0, p0, p1}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$1;-><init>(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;)V
@@ -1281,27 +1318,27 @@
 .method public show()V
     .registers 3
 
-    .line 209
+    .line 217
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mModeSupportGuideUI:Z
 
     if-eqz v0, :cond_15
 
-    .line 210
+    .line 218
     invoke-super {p0}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->show()V
 
-    .line 211
+    .line 219
     sget-object v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[show]"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 212
+    .line 220
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     if-eqz p0, :cond_15
 
-    .line 213
+    .line 221
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->refreshIconState()V
 
     :cond_15
@@ -1313,23 +1350,23 @@
 
     const/4 v0, 0x0
 
-    .line 234
+    .line 242
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mFrontDualFlashUIShow:Z
 
-    .line 235
+    .line 243
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mLayoutIds:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 236
+    .line 244
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     if-eqz v0, :cond_f
 
-    .line 237
+    .line 245
     invoke-interface {v0}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->unInit()V
 
-    .line 239
+    .line 247
     :cond_f
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHandler:Landroid/os/Handler;
 
@@ -1337,7 +1374,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 240
+    .line 248
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -1350,7 +1387,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 241
+    .line 249
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -1369,7 +1406,7 @@
 .method public updateGuideIndex(I)V
     .registers 5
 
-    .line 304
+    .line 312
     sget-object v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1388,7 +1425,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 305
+    .line 313
     iput p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mDefaultIndex:I
 
     return-void

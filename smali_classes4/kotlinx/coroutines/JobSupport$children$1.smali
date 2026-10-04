@@ -27,8 +27,8 @@
     c = "kotlinx.coroutines.JobSupport$children$1"
     f = "JobSupport.kt"
     l = {
-        0x3bc,
-        0x3be
+        0x3b9,
+        0x3bb
     }
     m = "invokeSuspend"
 .end annotation
@@ -148,7 +148,7 @@
 
     move-result-object v0
 
-    .line 954
+    .line 951
     iget v1, p0, Lkotlinx/coroutines/JobSupport$children$1;->label:I
 
     const/4 v2, 0x2
@@ -198,14 +198,14 @@
 
     check-cast p1, Lkotlin/sequences/SequenceScope;
 
-    .line 955
+    .line 952
     iget-object v1, p0, Lkotlinx/coroutines/JobSupport$children$1;->this$0:Lkotlinx/coroutines/JobSupport;
 
     invoke-virtual {v1}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 956
+    .line 953
     instance-of v4, v1, Lkotlinx/coroutines/ChildHandleNode;
 
     if-eqz v4, :cond_48
@@ -224,7 +224,7 @@
 
     goto :goto_80
 
-    .line 957
+    .line 954
     :cond_48
     instance-of v3, v1, Lkotlinx/coroutines/Incomplete;
 
@@ -238,7 +238,7 @@
 
     if-eqz v1, :cond_86
 
-    .line 341
+    .line 336
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNext()Ljava/lang/Object;
 
     move-result-object v3
@@ -257,7 +257,7 @@
 
     move-object v4, p1
 
-    .line 342
+    .line 337
     :goto_63
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -265,7 +265,7 @@
 
     if-nez p1, :cond_86
 
-    .line 343
+    .line 338
     instance-of p1, v1, Lkotlinx/coroutines/ChildHandleNode;
 
     if-eqz p1, :cond_81
@@ -274,7 +274,7 @@
 
     check-cast p1, Lkotlinx/coroutines/ChildHandleNode;
 
-    .line 958
+    .line 955
     iget-object p1, p1, Lkotlinx/coroutines/ChildHandleNode;->childJob:Lkotlinx/coroutines/ChildJob;
 
     iput-object v4, p0, Lkotlinx/coroutines/JobSupport$children$1;->L$0:Ljava/lang/Object;
@@ -294,7 +294,7 @@
     :goto_80
     return-object v0
 
-    .line 344
+    .line 339
     :cond_81
     :goto_81
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNextNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
@@ -303,7 +303,7 @@
 
     goto :goto_63
 
-    .line 961
+    .line 958
     :cond_86
     :goto_86
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

@@ -299,7 +299,7 @@
 
     move-result-object v3
 
-    .line 160
+    .line 350
     invoke-interface {v2, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 38
@@ -345,7 +345,7 @@
 
     invoke-direct {v3, v4, v5, p1, v6}, Lcom/ss/ugc/effectplatform/task/FetchModelListTask;-><init>(Lcom/ss/ugc/effectplatform/EffectConfig;Lcom/ss/ugc/effectplatform/algorithm/BuiltInResourceManager;ILcom/ss/ugc/effectplatform/task/FetchModelListTask$Callback;)V
 
-    .line 167
+    .line 350
     invoke-interface {p2, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 40
@@ -567,7 +567,7 @@
 
     invoke-direct/range {v5 .. v10}, Lcom/ss/ugc/effectplatform/task/algorithm/FetchModelInfoByNameTask;-><init>(Lcom/ss/ugc/effectplatform/EffectConfig;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 174
+    .line 350
     invoke-interface {v3, v2, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object v4, v5

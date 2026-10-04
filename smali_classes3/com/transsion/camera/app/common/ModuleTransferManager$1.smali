@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/ModuleTransferManager;)V
     .registers 2
 
-    .line 150
+    .line 152
     iput-object p1, p0, Lcom/transsion/camera/app/common/ModuleTransferManager$1;->this$0:Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 5
 
-    .line 153
+    .line 155
     iget-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager$1;->this$0:Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/ModuleTransferManager;->-$$Nest$fgetmDataStore(Lcom/transsion/camera/app/common/ModuleTransferManager;)Ljava/lang/ref/WeakReference;
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_41
 
-    .line 154
+    .line 156
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -68,7 +68,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 155
+    .line 157
     iget-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager$1;->this$0:Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/ModuleTransferManager;->-$$Nest$fgetmDataStore(Lcom/transsion/camera/app/common/ModuleTransferManager;)Ljava/lang/ref/WeakReference;

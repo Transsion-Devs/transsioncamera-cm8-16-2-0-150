@@ -44,10 +44,10 @@
         }
     .end annotation
 
-    .line 182
+    .line 178
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 183
+    .line 179
     iput-object p1, p0, Lkotlinx/coroutines/future/ContinuationHandler;->cont:Lkotlin/coroutines/Continuation;
 
     return-void
@@ -58,7 +58,7 @@
 .method public bridge synthetic apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 182
+    .line 178
     check-cast p2, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1, p2}, Lkotlinx/coroutines/future/ContinuationHandler;->apply(Ljava/lang/Object;Ljava/lang/Throwable;)V
@@ -78,7 +78,7 @@
         }
     .end annotation
 
-    .line 187
+    .line 183
     iget-object p0, p0, Lkotlinx/coroutines/future/ContinuationHandler;->cont:Lkotlin/coroutines/Continuation;
 
     if-nez p0, :cond_5
@@ -88,7 +88,7 @@
     :cond_5
     if-nez p2, :cond_f
 
-    .line 190
+    .line 186
     invoke-static {p1}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -97,7 +97,7 @@
 
     return-void
 
-    .line 193
+    .line 189
     :cond_f
     instance-of p1, p2, Ljava/util/concurrent/CompletionException;
 

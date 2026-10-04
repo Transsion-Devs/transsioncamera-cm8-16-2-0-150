@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy;->handleChildViewAnimationImpl(Landroid/view/View;IZIILandroid/animation/Animator$AnimatorListener;II)Landroid/animation/AnimatorSet;
+    value = Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy;->handleChildViewAnimationImpl(Landroid/view/View;ZIILandroid/animation/Animator$AnimatorListener;II)Landroid/animation/AnimatorSet;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy;Landroid/widget/FrameLayout;Landroid/animation/Animator$AnimatorListener;Landroid/view/View;Z)V
     .registers 6
 
-    .line 1893
+    .line 1609
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->this$1:Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy;
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->val$overlay:Landroid/widget/FrameLayout;
@@ -51,15 +51,15 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 1921
+    .line 1637
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    .line 1923
+    .line 1639
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->val$listener:Landroid/animation/Animator$AnimatorListener;
 
     if-eqz p0, :cond_a
 
-    .line 1924
+    .line 1640
     invoke-interface {p0, p1}, Landroid/animation/Animator$AnimatorListener;->onAnimationCancel(Landroid/animation/Animator;)V
 
     :cond_a
@@ -69,18 +69,18 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 1905
+    .line 1621
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1906
+    .line 1622
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->val$listener:Landroid/animation/Animator$AnimatorListener;
 
     if-eqz v0, :cond_a
 
-    .line 1907
+    .line 1623
     invoke-interface {v0, p1}, Landroid/animation/Animator$AnimatorListener;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1909
+    .line 1625
     :cond_a
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->this$1:Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy;
 
@@ -100,7 +100,7 @@
 
     if-eqz p1, :cond_49
 
-    .line 1910
+    .line 1626
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->this$1:Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy;->this$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
@@ -119,14 +119,14 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1911
+    .line 1627
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->val$overlay:Landroid/widget/FrameLayout;
 
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1912
+    .line 1628
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->val$childView:Landroid/view/View;
 
     if-eqz p1, :cond_49
@@ -141,7 +141,7 @@
 
     if-nez p1, :cond_49
 
-    .line 1913
+    .line 1629
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->val$childView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Landroid/view/View;->sendAccessibilityEvent(I)V
@@ -153,10 +153,10 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 1896
+    .line 1612
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    .line 1897
+    .line 1613
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->this$1:Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy;->this$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
@@ -175,7 +175,7 @@
 
     if-eqz p1, :cond_2d
 
-    .line 1898
+    .line 1614
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->this$1:Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy;->this$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
@@ -194,7 +194,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1899
+    .line 1615
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$MyAnimationStrategy$1;->val$overlay:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Landroid/view/View;->bringToFront()V

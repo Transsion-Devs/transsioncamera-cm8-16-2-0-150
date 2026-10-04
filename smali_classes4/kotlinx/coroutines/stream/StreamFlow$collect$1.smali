@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.stream.StreamFlow"
     f = "Stream.kt"
     l = {
-        0x1a
+        0x16
     }
     m = "collect"
 .end annotation

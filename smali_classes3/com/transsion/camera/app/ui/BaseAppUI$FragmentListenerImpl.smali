@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
     .registers 2
 
-    .line 4034
+    .line 4020
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,14 +47,14 @@
 .method public onArcFilterClicked()V
     .registers 2
 
-    .line 4101
+    .line 4087
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mInteractiveUIManager:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     if-eqz p0, :cond_b
 
-    .line 4102
+    .line 4088
     const-string v0, "key_filter"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->onSettingOptionClick(Ljava/lang/String;)V
@@ -66,14 +66,14 @@
 .method public onCelebrityClicked()V
     .registers 2
 
-    .line 4122
+    .line 4108
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mInteractiveUIManager:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     if-eqz p0, :cond_b
 
-    .line 4123
+    .line 4109
     const-string v0, "key_celebrity_scene"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->onSettingOptionClick(Ljava/lang/String;)V
@@ -85,14 +85,14 @@
 .method public onColorStyleClicked()V
     .registers 2
 
-    .line 4115
+    .line 4101
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mInteractiveUIManager:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     if-eqz p0, :cond_b
 
-    .line 4116
+    .line 4102
     const-string v0, "key_color_style"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->onSettingOptionClick(Ljava/lang/String;)V
@@ -104,14 +104,14 @@
 .method public onEditWaTerMarkClicked()V
     .registers 4
 
-    .line 4068
+    .line 4054
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v1, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mEditWaterMarkManager:Lcom/transsion/camera/app/ui/manager/EditWaterMarkManager;
 
     if-eqz v1, :cond_2b
 
-    .line 4069
+    .line 4055
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$fgetmTopLayerRoot(Lcom/transsion/camera/app/ui/BaseAppUI;)Landroid/view/ViewGroup;
 
     move-result-object v0
@@ -120,7 +120,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4071
+    .line 4057
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mRootView:Landroid/view/ViewGroup;
@@ -135,7 +135,7 @@
 
     move v1, v2
 
-    .line 4074
+    .line 4060
     :cond_1a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -143,7 +143,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/manager/EditWaterMarkManager;->setRTLDirection(Z)V
 
-    .line 4075
+    .line 4061
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mEditWaterMarkManager:Lcom/transsion/camera/app/ui/manager/EditWaterMarkManager;
@@ -161,14 +161,14 @@
 .method public onGoldWaterMarkClicked()V
     .registers 4
 
-    .line 4081
+    .line 4067
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v1, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mGoldWaterMarkManager:Lcom/transsion/camera/app/ui/manager/GoldWaterMarkManager;
 
     if-eqz v1, :cond_2b
 
-    .line 4082
+    .line 4068
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$fgetmTopLayerRoot(Lcom/transsion/camera/app/ui/BaseAppUI;)Landroid/view/ViewGroup;
 
     move-result-object v0
@@ -177,7 +177,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4084
+    .line 4070
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mRootView:Landroid/view/ViewGroup;
@@ -192,7 +192,7 @@
 
     move v1, v2
 
-    .line 4087
+    .line 4073
     :cond_1a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -200,7 +200,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/manager/GoldWaterMarkManager;->setRTLDirection(Z)V
 
-    .line 4088
+    .line 4074
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mGoldWaterMarkManager:Lcom/transsion/camera/app/ui/manager/GoldWaterMarkManager;
@@ -218,7 +218,7 @@
 .method public onHelpGuideClicked()V
     .registers 4
 
-    .line 4047
+    .line 4033
     invoke-static {}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -245,7 +245,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 4048
+    .line 4034
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -254,17 +254,17 @@
 
     if-eqz v0, :cond_37
 
-    .line 4049
+    .line 4035
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v1, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mImageryGuideManager:Lcom/transsion/camera/manager/BaseImageryGuideManager;
 
     if-nez v1, :cond_2f
 
-    .line 4050
+    .line 4036
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->createImageryGuideManager()V
 
-    .line 4052
+    .line 4038
     :cond_2f
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -274,7 +274,7 @@
 
     return-void
 
-    .line 4055
+    .line 4041
     :cond_37
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -282,7 +282,7 @@
 
     if-eqz v1, :cond_5f
 
-    .line 4056
+    .line 4042
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$fgetmTopLayerRoot(Lcom/transsion/camera/app/ui/BaseAppUI;)Landroid/view/ViewGroup;
 
     move-result-object v0
@@ -291,7 +291,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4058
+    .line 4044
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mRootView:Landroid/view/ViewGroup;
@@ -306,7 +306,7 @@
 
     move v1, v2
 
-    .line 4061
+    .line 4047
     :cond_51
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -314,7 +314,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->setRTLDirection(Z)V
 
-    .line 4062
+    .line 4048
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mHelpGuideUIManager:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
@@ -328,14 +328,14 @@
 .method public onImageStyleClicked()V
     .registers 2
 
-    .line 4094
+    .line 4080
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mInteractiveUIManager:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     if-eqz p0, :cond_b
 
-    .line 4095
+    .line 4081
     const-string v0, "key_image_style"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->onSettingOptionClick(Ljava/lang/String;)V
@@ -347,14 +347,14 @@
 .method public onProWaterMarkClicked()V
     .registers 4
 
-    .line 4129
+    .line 4115
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v1, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mProWatermarkManager:Lcom/transsion/camera/app/ui/manager/ProWatermarkManager;
 
     if-eqz v1, :cond_2b
 
-    .line 4130
+    .line 4116
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$fgetmTopLayerRoot(Lcom/transsion/camera/app/ui/BaseAppUI;)Landroid/view/ViewGroup;
 
     move-result-object v0
@@ -363,7 +363,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4133
+    .line 4119
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mRootView:Landroid/view/ViewGroup;
@@ -378,7 +378,7 @@
 
     move v1, v2
 
-    .line 4136
+    .line 4122
     :cond_1a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -386,7 +386,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/manager/ProWatermarkManager;->setRTLDirection(Z)V
 
-    .line 4137
+    .line 4123
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mProWatermarkManager:Lcom/transsion/camera/app/ui/manager/ProWatermarkManager;
@@ -404,21 +404,21 @@
 .method public onSettingClicked()V
     .registers 3
 
-    .line 4037
+    .line 4023
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v1, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mSettingFragmentManager:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     if-eqz v1, :cond_1b
 
-    .line 4038
+    .line 4024
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$fgetmTopLayerRoot(Lcom/transsion/camera/app/ui/BaseAppUI;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
     if-eqz v0, :cond_16
 
-    .line 4039
+    .line 4025
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$fgetmTopLayerRoot(Lcom/transsion/camera/app/ui/BaseAppUI;)Landroid/view/ViewGroup;
@@ -429,7 +429,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4041
+    .line 4027
     :cond_16
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -442,14 +442,14 @@
 .method public onSuperNightFilterClicked()V
     .registers 2
 
-    .line 4108
+    .line 4094
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$FragmentListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mInteractiveUIManager:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     if-eqz p0, :cond_b
 
-    .line 4109
+    .line 4095
     const-string v0, "key_supernight_filter"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->onSettingOptionClick(Ljava/lang/String;)V

@@ -88,6 +88,8 @@
 
 .field private mAsdVersion:I
 
+.field private mAutoFocusSwitch:Ljava/lang/String;
+
 .field private mAutoFpsModeForISP:I
 
 .field private mAutoMacroSwitch:Ljava/lang/String;
@@ -133,6 +135,10 @@
 .field private mCapturing:Z
 
 .field private mCelebritySceneMode:I
+
+.field private mClickDownZoomRatio:I
+
+.field private mClickUpZoomRatio:I
 
 .field private mColorLevel:Ljava/lang/String;
 
@@ -406,6 +412,8 @@
 
 .field private mPortraitModeEnhanceMode:Ljava/lang/String;
 
+.field mPostAlgoFpsRange:Landroid/util/Range;
+
 .field protected mPostAlgoFrameInfo:[I
 
 .field private mPostAlgoType:I
@@ -554,6 +562,8 @@
 
 .field private mTranssionTurboFusionMode:I
 
+.field private mUseAutoFocusSwitch:Z
+
 .field private mViUllEnable:I
 
 .field private mVideo360HDRAlgoScene:I
@@ -610,8 +620,6 @@
 
 .field private mZoomRatio:I
 
-.field postAlgoFpsRange:Landroid/util/Range;
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -636,7 +644,7 @@
     .line 58
     sput v0, Lcom/transsion/camera/adapter/CameraParameters;->MAX_THUMBNAIL_NUMBER:I
 
-    .line 148
+    .line 150
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -655,7 +663,7 @@
     :goto_1c
     sput v0, Lcom/transsion/camera/adapter/CameraParameters;->MIN_ZOOM_RATIO:I
 
-    .line 149
+    .line 151
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -678,7 +686,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 9
+    .registers 10
 
     .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -746,154 +754,160 @@
     .line 120
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionHDR:I
 
-    .line 150
+    .line 152
     sget v3, Lcom/transsion/camera/adapter/CameraParameters;->MIN_ZOOM_RATIO:I
 
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZoomRatio:I
 
-    .line 151
+    .line 153
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRealZoomRatio:I
 
-    .line 153
-    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFovWideCrop:Z
-
     .line 154
-    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMirrorEnable:Z
+    iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mClickUpZoomRatio:I
 
     .line 155
-    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBWPortraitEnable:Z
-
-    .line 156
-    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBWConvertEnable:Z
+    iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mClickDownZoomRatio:I
 
     .line 157
-    iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mQuickPreviewEnable:Z
+    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFovWideCrop:Z
 
     .line 158
-    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProfessionalModeEnable:Z
+    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMirrorEnable:Z
 
     .line 159
-    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mModeUltrazoomEnable:Z
+    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBWPortraitEnable:Z
 
     .line 160
-    iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionPluginEnable:I
+    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBWConvertEnable:Z
 
     .line 161
+    iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mQuickPreviewEnable:Z
+
+    .line 162
+    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProfessionalModeEnable:Z
+
+    .line 163
+    iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mModeUltrazoomEnable:Z
+
+    .line 164
+    iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionPluginEnable:I
+
+    .line 165
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoInterpolationEnable:I
 
-    .line 176
+    .line 180
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mWaterMarkParameterList:Ljava/util/List;
 
-    .line 181
+    .line 185
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMeteringAreas:Ljava/util/List;
 
-    .line 182
+    .line 186
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusAreas:Ljava/util/List;
 
-    .line 186
+    .line 190
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mISOValue:I
 
     const-wide/16 v3, -0x1
 
-    .line 187
+    .line 191
     iput-wide v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExposureTime:J
 
     const/4 v3, 0x0
 
-    .line 188
+    .line 192
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusDistance:F
 
-    .line 189
+    .line 193
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusLength:F
 
-    .line 190
+    .line 194
     const-string v4, "auto"
 
     iput-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMeteringMode:Ljava/lang/String;
 
-    .line 192
+    .line 196
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mJpegQuality:I
 
-    .line 195
+    .line 199
     iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZSLEnable:Z
 
-    .line 196
+    .line 200
     iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsWideCamera:Z
 
-    .line 197
+    .line 201
     iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsLongFocusCamera:Z
 
-    .line 199
+    .line 203
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPortraitMode:I
 
-    .line 204
+    .line 208
     const-string v4, "None"
 
     iput-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoType:Ljava/lang/String;
 
-    .line 205
+    .line 209
     iput-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoTypeToHal:Ljava/lang/String;
 
-    .line 207
+    .line 211
     iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRTDofEnable:Z
 
-    .line 211
+    .line 215
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mShot2ShotMode:I
 
-    .line 212
+    .line 216
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDistortionCorrectionMode:I
 
-    .line 216
+    .line 220
     iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAWBLockStatus:Z
 
-    .line 232
+    .line 236
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurMode:I
 
-    .line 233
+    .line 237
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurLevel:I
 
-    .line 238
+    .line 242
     iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBGServiceEnable:Z
 
-    .line 239
+    .line 243
     iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTZServiceEnable:Z
 
-    .line 240
+    .line 244
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBGImageReaderId:I
 
     const/4 v4, 0x0
 
-    .line 243
+    .line 247
     iput-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLocation:Landroid/location/Location;
 
-    .line 246
+    .line 250
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionCameraMode:I
 
-    .line 248
+    .line 252
     iput-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSMVRRequestParams:[I
 
-    .line 250
+    .line 254
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSessionType:I
 
-    .line 251
+    .line 255
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPortraitMode:I
 
-    .line 258
+    .line 262
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHeavyCapturingBV:I
 
-    .line 260
+    .line 264
     new-instance v5, Landroid/util/Range;
 
     const/4 v6, 0x5
@@ -902,7 +916,17 @@
 
     move-result-object v6
 
-    const/16 v7, 0x18
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v7
+
+    iget v7, v7, Lcom/transsion/camera/utils/CustomConfigUtil;->mIspHidlCaptureFPS:I
+
+    const/16 v8, 0x18
+
+    invoke-static {v8, v7}, Ljava/lang/Math;->max(II)I
+
+    move-result v7
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -910,146 +934,146 @@
 
     invoke-direct {v5, v6, v7}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
 
-    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->postAlgoFpsRange:Landroid/util/Range;
-
-    .line 263
-    iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoType:I
+    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoFpsRange:Landroid/util/Range;
 
     .line 267
-    new-array v5, v1, [I
-
-    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoFrameInfo:[I
-
-    .line 268
-    new-array v5, v1, [I
-
-    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHDRAeExpoInfo:[I
-
-    .line 269
-    new-array v5, v1, [I
-
-    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMFNRAeExpoInfo:[I
-
-    .line 270
-    new-array v5, v1, [I
-
-    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightAeExpoInfo:[I
+    iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoType:I
 
     .line 271
     new-array v5, v1, [I
 
-    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLlsInfo:[I
+    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoFrameInfo:[I
 
     .line 272
     new-array v5, v1, [I
 
+    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHDRAeExpoInfo:[I
+
+    .line 273
+    new-array v5, v1, [I
+
+    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMFNRAeExpoInfo:[I
+
+    .line 274
+    new-array v5, v1, [I
+
+    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightAeExpoInfo:[I
+
+    .line 275
+    new-array v5, v1, [I
+
+    iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLlsInfo:[I
+
+    .line 276
+    new-array v5, v1, [I
+
     iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEVList:[I
 
-    .line 289
+    .line 293
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHighLightMode:I
 
-    .line 326
+    .line 330
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSmoothZoomValue:I
 
-    .line 333
+    .line 337
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoFpsModeForISP:I
 
-    .line 337
+    .line 341
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocalLength:I
 
-    .line 339
+    .line 343
     iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewStreamEnable:Z
 
-    .line 344
+    .line 348
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBestMomentDetectMode:I
 
-    .line 345
+    .line 349
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBestMomentRawHDRMode:I
 
-    .line 346
+    .line 350
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashSnapAutoCaptureMode:I
 
-    .line 347
+    .line 351
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->bmLowLightMode:I
 
     const/4 v0, 0x3
 
-    .line 348
+    .line 352
     iput v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->bmMultiFrameNum:I
 
-    .line 349
+    .line 353
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBMCustomZslBufSize:I
 
-    .line 350
+    .line 354
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTAPSCaptureNeedYuvSize:I
 
-    .line 351
+    .line 355
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHALBMLowLightMode:I
 
-    .line 352
+    .line 356
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMotionCaptureMode:I
 
-    .line 353
+    .line 357
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMTKProcessRawEnable:I
 
-    .line 354
+    .line 358
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceProportion:F
 
-    .line 357
+    .line 361
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExtraCaptureCount:I
 
-    .line 358
+    .line 362
     iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsExtraCaptureEnableZSL:Z
 
-    .line 359
+    .line 363
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureTag:I
 
-    .line 360
+    .line 364
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGroupCaptureEnable:I
 
-    .line 361
+    .line 365
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlareCaptureEnable:I
 
-    .line 363
+    .line 367
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBmDebandingMode:I
 
-    .line 364
+    .line 368
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureISPTunning:I
 
-    .line 366
+    .line 370
     iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsCurrentAppModeRequiredOnContinuousShot:Z
 
-    .line 367
+    .line 371
     iput-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureZSLTimestamps:[J
 
-    .line 369
+    .line 373
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIncreaseFreqEnable:I
 
-    .line 370
+    .line 374
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCurrentFaces:I
 
-    .line 373
+    .line 377
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLivePhotoMode:I
 
-    .line 375
+    .line 379
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mInSensorZoomEnable:I
 
-    .line 376
+    .line 380
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mViUllEnable:I
 
-    .line 391
+    .line 395
     iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsBurstCapturing:Z
 
-    .line 392
+    .line 396
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIszScene:I
 
-    .line 393
+    .line 397
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHdr10PlusMode:I
 
-    .line 396
+    .line 400
     iput v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFeature2Mode:I
 
-    .line 397
+    .line 401
     iput-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEnableLowConfig:Z
 
     return-void
@@ -1060,7 +1084,7 @@
 .method public algorithmMigrate()Z
     .registers 1
 
-    .line 956
+    .line 978
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAlgorithmMigrate:Z
 
     return p0
@@ -1069,7 +1093,7 @@
 .method public aodMode()Z
     .registers 1
 
-    .line 2755
+    .line 2790
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAodMode:Z
 
     return p0
@@ -1078,7 +1102,7 @@
 .method public asdEffectColorCard()Z
     .registers 1
 
-    .line 1407
+    .line 1429
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDXOAsdEffectColorCard:Z
 
     return p0
@@ -1089,898 +1113,904 @@
 
     const/4 v0, 0x1
 
-    .line 400
+    .line 404
     iput v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDataFlowType:I
 
     const/4 v1, 0x0
 
-    .line 401
+    .line 405
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSlimBodyLevels:[I
 
     const/4 v2, 0x0
 
-    .line 402
+    .line 406
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSlimBodyMode:I
 
-    .line 403
+    .line 407
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSlimBodySkip:I
 
-    .line 404
+    .line 408
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpMode:I
 
-    .line 405
+    .line 409
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpIntensitys:[F
 
-    .line 406
+    .line 410
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpVideoMode:I
 
-    .line 407
+    .line 411
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpVideoIntensitys:[F
 
-    .line 408
+    .line 412
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExcludeVideoMakeupBeauty:I
 
-    .line 409
+    .line 413
     sput v0, Lcom/transsion/camera/adapter/CameraParameters;->MAX_IMAGE_NUMBER:I
 
-    .line 410
+    .line 414
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewSize:Landroid/util/Size;
 
-    .line 411
+    .line 415
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPictureSize:Landroid/util/Size;
 
-    .line 412
+    .line 416
     iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSupportRawSize:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
-    .line 413
+    .line 417
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostViewSize:Landroid/util/Size;
 
-    .line 414
+    .line 418
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mThumbnailSize:Landroid/util/Size;
 
-    .line 415
+    .line 419
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSize:Landroid/util/Size;
 
-    .line 416
+    .line 420
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashMode:Ljava/lang/String;
 
-    .line 417
+    .line 421
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMagicSkyMode:Ljava/lang/String;
 
-    .line 418
+    .line 422
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMagicSkyType:Ljava/lang/String;
 
-    .line 419
+    .line 423
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusMode:Ljava/lang/String;
 
-    .line 420
+    .line 424
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPhotoHDRMode:Ljava/lang/String;
 
-    .line 421
+    .line 425
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoHDRMode:Ljava/lang/String;
 
-    .line 422
+    .line 426
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->m360VideoHDRMode:I
 
-    .line 423
+    .line 427
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->m360VideoHDRInitMode:I
 
-    .line 424
+    .line 428
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyMode:Ljava/lang/String;
 
-    .line 425
+    .line 429
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMultiFaceBeautyMode:Ljava/lang/String;
 
-    .line 426
+    .line 430
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyLevel:Ljava/lang/String;
 
-    .line 427
+    .line 431
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyFeaturesLevel:[I
 
-    .line 428
+    .line 432
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLuminanceValue:I
 
-    .line 429
+    .line 433
     const-string v3, "4"
 
     iput-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVsdofLevel:Ljava/lang/String;
 
-    .line 430
+    .line 434
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAsdMode:I
 
-    .line 431
+    .line 435
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAsdVersion:I
 
-    .line 432
+    .line 436
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDxoSceneDetection:Ljava/lang/String;
 
-    .line 433
+    .line 437
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDXOAsdEffectColorCard:Z
 
-    .line 434
+    .line 438
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDXOHasValidFace:Z
 
-    .line 435
+    .line 439
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDXOTripodMode:Z
 
-    .line 436
+    .line 440
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSkipMultCapture:Z
 
     const/4 v3, -0x1
 
-    .line 437
+    .line 441
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionHDR:I
 
-    .line 438
+    .line 442
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDenoiseMode:I
 
-    .line 439
+    .line 443
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightMode:I
 
-    .line 440
+    .line 444
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLowLightMode:I
 
-    .line 441
+    .line 445
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMiddleNightMode:I
 
-    .line 442
+    .line 446
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNight3dnrAlgo:I
 
-    .line 443
+    .line 447
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightMorHdsScene:I
 
-    .line 444
+    .line 448
     sget v4, Lcom/transsion/camera/adapter/CameraParameters;->MIN_ZOOM_RATIO:I
 
     iput v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZoomRatio:I
 
-    .line 445
+    .line 449
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMirrorEnable:Z
 
-    .line 446
+    .line 450
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBWPortraitEnable:Z
 
-    .line 447
+    .line 451
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBWConvertEnable:Z
 
-    .line 448
+    .line 452
     iget-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMeteringAreas:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->clear()V
 
-    .line 449
+    .line 453
     iget-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusAreas:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->clear()V
 
-    .line 450
+    .line 454
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mJpegQuality:I
 
-    .line 451
+    .line 455
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mJpegOrientation:I
 
-    .line 452
+    .line 456
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZSLEnable:Z
 
-    .line 453
+    .line 457
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsWideCamera:Z
 
-    .line 454
+    .line 458
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsLongFocusCamera:Z
 
-    .line 455
+    .line 459
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExposureCompensation:I
 
-    .line 456
+    .line 460
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAeLock:Z
 
-    .line 457
+    .line 461
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewFPSRange:Landroid/util/Range;
 
-    .line 458
+    .line 462
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLimitFpsRange:Landroid/util/Range;
 
-    .line 459
+    .line 463
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSceneMode:Ljava/lang/String;
 
-    .line 460
+    .line 464
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mShot2ShotMode:I
 
-    .line 461
+    .line 465
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoWatermarkMode:Ljava/lang/String;
 
-    .line 462
+    .line 466
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEditWatermarkMode:Ljava/lang/String;
 
-    .line 463
+    .line 467
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEditWatermarkSupport:Z
 
-    .line 464
+    .line 468
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkMode:Ljava/lang/String;
 
-    .line 465
+    .line 469
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkSupport:Z
 
-    .line 466
+    .line 470
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkType:Ljava/lang/String;
 
-    .line 467
+    .line 471
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWaterMarkSize:[I
 
-    .line 468
+    .line 472
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewGoldWaterMarkSize:[I
 
-    .line 469
+    .line 473
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProWatermarkSupport:Z
 
-    .line 470
+    .line 474
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProWatermarkType:I
 
-    .line 471
+    .line 475
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPlainLocationText:Ljava/lang/String;
 
-    .line 472
+    .line 476
     iget-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mWaterMarkParameterList:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->clear()V
 
-    .line 473
+    .line 477
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAntiVideo:Ljava/lang/String;
 
-    .line 474
+    .line 478
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperAntiVideo:Ljava/lang/String;
 
-    .line 475
+    .line 479
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mScreenFlashMode:Ljava/lang/String;
 
-    .line 476
+    .line 480
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mYuvCaptureFlipMode:Ljava/lang/String;
 
-    .line 477
+    .line 481
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionPluginEnable:I
 
-    .line 478
+    .line 482
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRecordingHint:Z
 
-    .line 479
+    .line 483
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mArcFilterId:I
 
-    .line 480
+    .line 484
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionFilterId:I
 
-    .line 481
+    .line 485
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mStreetPhotoFilterId:I
 
-    .line 482
+    .line 486
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightFilterId:I
 
-    .line 483
+    .line 487
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionSuperNightFilterId:I
 
-    .line 484
+    .line 488
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightHdrCheckerModeEnable:I
 
-    .line 485
+    .line 489
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoFilterSkinType:I
 
-    .line 486
+    .line 490
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoFilterId:I
 
     const/16 v4, 0x64
 
-    .line 487
+    .line 491
     iput v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoFilterLevel:I
 
-    .line 488
+    .line 492
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoEffectId:I
 
-    .line 489
+    .line 493
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoFrameId:I
 
-    .line 490
+    .line 494
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mOverrideSensorRect:Landroid/graphics/Rect;
 
-    .line 491
+    .line 495
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPortraitMode:I
 
-    .line 492
+    .line 496
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHdMode:Ljava/lang/String;
 
-    .line 493
+    .line 497
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHighFpsMode:Ljava/lang/String;
 
-    .line 494
+    .line 498
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFusionMode:Ljava/lang/String;
 
-    .line 495
+    .line 499
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightMode:Ljava/lang/String;
 
-    .line 496
+    .line 500
     const-string v4, "None"
 
     iput-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoType:Ljava/lang/String;
 
-    .line 497
+    .line 501
     iput-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoTypeToHal:Ljava/lang/String;
 
-    .line 498
+    .line 502
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurMode:I
 
-    .line 499
+    .line 503
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurLevel:I
 
-    .line 500
+    .line 504
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurStrengths:[F
 
     const/4 v4, 0x0
 
-    .line 501
+    .line 505
     iput v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurLightStrength:F
 
-    .line 502
+    .line 506
     iput v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurReaRatio:F
 
-    .line 503
+    .line 507
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBGServiceEnable:Z
 
-    .line 504
+    .line 508
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTZServiceEnable:Z
 
-    .line 505
+    .line 509
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBGImageReaderId:I
 
-    .line 506
+    .line 510
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFakeDualLensMode:I
 
-    .line 507
+    .line 511
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLocation:Landroid/location/Location;
 
-    .line 508
+    .line 512
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDistortionCorrectionMode:I
 
-    .line 509
+    .line 513
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperDefinitionMode:I
 
-    .line 510
+    .line 514
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHighPixelMode:I
 
-    .line 511
+    .line 515
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperResolutionMode:I
 
-    .line 512
+    .line 516
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRawSuperResolutionMode:I
 
-    .line 513
+    .line 517
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mP2RawCropResizeEnable:I
 
-    .line 514
+    .line 518
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mP2CropRegionCustomize:[I
 
-    .line 515
+    .line 519
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mP2ResizerSizeCustomize:[I
 
-    .line 516
+    .line 520
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSupportedRawSR:Z
 
-    .line 517
+    .line 521
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRemosaicMode:Ljava/lang/String;
 
-    .line 518
+    .line 522
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightHawkMode:I
 
-    .line 519
+    .line 523
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMoonDetectionMode:I
 
-    .line 520
+    .line 524
     iput v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMoonDetectPitch:F
 
-    .line 521
+    .line 525
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAiMoonMode:I
 
-    .line 522
+    .line 526
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMoonDetectResult:I
 
-    .line 523
+    .line 527
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoInterpolationEnable:I
 
-    .line 524
+    .line 528
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEyeDetection:Ljava/lang/String;
 
-    .line 525
+    .line 529
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAnimalEyeDetection:Ljava/lang/String;
 
-    .line 526
-    iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoMacroSwitch:Ljava/lang/String;
-
-    .line 527
-    iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoMacroSwitchSetting:Ljava/lang/String;
-
-    .line 528
-    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHumanDetection:I
-
-    .line 529
-    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranFaceDetectMode:I
-
     .line 530
-    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionCameraMode:I
+    iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoFocusSwitch:Ljava/lang/String;
 
     .line 531
-    iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mQuickPreviewEnable:Z
+    iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mUseAutoFocusSwitch:Z
 
     .line 532
-    iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProfessionalModeEnable:Z
+    iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoMacroSwitch:Ljava/lang/String;
 
     .line 533
-    iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mModeUltrazoomEnable:Z
+    iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoMacroSwitchSetting:Ljava/lang/String;
 
     .line 534
-    iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSMVRRequestParams:[I
+    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHumanDetection:I
 
     .line 535
-    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPortraitMode:I
+    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranFaceDetectMode:I
 
     .line 536
-    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPortraitLevel:I
+    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionCameraMode:I
 
     .line 537
-    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSpotMode:I
+    iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mQuickPreviewEnable:Z
 
     .line 538
-    iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAlgorithmMigrate:Z
+    iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProfessionalModeEnable:Z
 
     .line 539
-    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMacroLampValue:I
+    iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mModeUltrazoomEnable:Z
 
     .line 540
+    iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSMVRRequestParams:[I
+
+    .line 541
+    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPortraitMode:I
+
+    .line 542
+    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPortraitLevel:I
+
+    .line 543
+    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSpotMode:I
+
+    .line 544
+    iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAlgorithmMigrate:Z
+
+    .line 545
+    iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMacroLampValue:I
+
+    .line 546
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mISOValue:I
 
     const-wide/16 v5, -0x1
 
-    .line 541
+    .line 547
     iput-wide v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExposureTime:J
 
-    .line 542
+    .line 548
     iput v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusDistance:F
 
-    .line 543
+    .line 549
     iput v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusLength:F
 
-    .line 544
+    .line 550
     const-string v5, "auto"
 
     iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMeteringMode:Ljava/lang/String;
 
-    .line 545
+    .line 551
     iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAWBMode:Ljava/lang/String;
 
-    .line 546
+    .line 552
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPortraitModeEnhanceMode:Ljava/lang/String;
 
-    .line 547
+    .line 553
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGenderAttributeValue:Ljava/lang/String;
 
-    .line 548
+    .line 554
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSkinColor:I
 
-    .line 549
+    .line 555
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRace:I
 
-    .line 550
+    .line 556
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAsdIsp:[I
 
-    .line 551
+    .line 557
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHumanEffectMode:Ljava/lang/String;
 
-    .line 552
+    .line 558
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNeedLockAe:Z
 
-    .line 553
+    .line 559
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNeedFocusModeAuto:Z
 
-    .line 554
+    .line 560
     iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceDetectionEnable:Z
 
-    .line 555
+    .line 561
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCapturing:Z
 
-    .line 556
+    .line 562
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceAttributeInfo:[I
 
-    .line 557
+    .line 563
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSatPictureSize:Landroid/util/Size;
 
-    .line 558
+    .line 564
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHighLightMode:I
 
-    .line 559
+    .line 565
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAppModeId:Ljava/lang/String;
 
-    .line 560
+    .line 566
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashFacade:Ljava/lang/String;
 
-    .line 561
+    .line 567
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperFlash:Ljava/lang/String;
 
-    .line 562
+    .line 568
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashStyle:Ljava/lang/String;
 
-    .line 563
+    .line 569
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRingScreenLight:Ljava/lang/String;
 
-    .line 564
+    .line 570
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mScreenTorchStatus:Ljava/lang/String;
 
-    .line 565
+    .line 571
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mScreenFlashStatus:Ljava/lang/String;
 
     const/4 v5, 0x3
 
-    .line 566
+    .line 572
     iput v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mContrastValue:I
 
-    .line 567
+    .line 573
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mActivityOrientation:I
 
-    .line 568
+    .line 574
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPipDeviceValue:Ljava/lang/String;
 
-    .line 569
+    .line 575
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureCustomTuning:Ljava/lang/String;
 
-    .line 570
+    .line 576
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightMode:I
 
-    .line 571
+    .line 577
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightResolution:I
 
-    .line 572
+    .line 578
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightAlgoScene:I
 
-    .line 573
+    .line 579
     const-string v5, "0"
 
     iput-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mStreamingCustomTuning:Ljava/lang/String;
 
-    .line 574
+    .line 580
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLiveResultMode:I
 
-    .line 575
+    .line 581
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEffect:I
 
-    .line 576
+    .line 582
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mColorLevel:Ljava/lang/String;
 
-    .line 577
+    .line 583
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongExposureScene:Ljava/lang/String;
 
-    .line 578
+    .line 584
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongExposureTripod:Ljava/lang/String;
 
-    .line 579
+    .line 585
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongExposureCaptureState:Ljava/lang/String;
 
-    .line 580
+    .line 586
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExifModeInfo:I
 
-    .line 581
+    .line 587
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRingFlashLightMode:I
 
-    .line 582
+    .line 588
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAisMode:I
 
-    .line 583
+    .line 589
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAisMorpho:I
 
-    .line 584
+    .line 590
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightYUVMode:I
 
-    .line 585
+    .line 591
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoNightTranYUVMode:I
 
-    .line 586
+    .line 592
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPhotoNightTranYUVMode:I
 
-    .line 587
+    .line 593
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAodMode:Z
 
-    .line 588
+    .line 594
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mStreamFlip:Z
 
-    .line 589
+    .line 595
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFrontDualFlashColorTemp:I
 
-    .line 590
+    .line 596
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFrontDualFlashStrengthMode:I
 
-    .line 591
+    .line 597
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPreIspMode:I
 
-    .line 592
+    .line 598
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExternalIspMode:I
 
-    .line 593
+    .line 599
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->m360HDRMode:I
 
-    .line 594
+    .line 600
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideo360HDRAlgoScene:I
 
-    .line 595
+    .line 601
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightEnable:Z
 
-    .line 596
+    .line 602
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoFpsModeForISP:I
 
-    .line 597
+    .line 603
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPMasterFlareMode:I
 
-    .line 598
+    .line 604
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocalLength:I
 
-    .line 599
+    .line 605
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSmoothZoomValue:I
 
-    .line 600
+    .line 606
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperResolutinSupportPortraitMode:Z
 
-    .line 601
+    .line 607
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSupportYUVPreviewDataWhenRecording:Z
 
-    .line 602
+    .line 608
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPMasterFlareLocation:[F
 
-    .line 603
+    .line 609
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mISPTuningEnable:I
 
-    .line 604
+    .line 610
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyPreviewInApp:Z
 
-    .line 605
+    .line 611
     iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewStreamEnable:Z
 
-    .line 606
+    .line 612
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->m2kSize:Landroid/util/Size;
 
-    .line 607
+    .line 613
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionTurboFusionMode:I
 
-    .line 608
+    .line 614
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperAIRaw:I
 
-    .line 609
+    .line 615
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTfPortraitMode:I
 
-    .line 610
+    .line 616
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAirawSN2SRMode:I
 
-    .line 611
+    .line 617
     iput v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAdrcGainValue:F
 
-    .line 612
+    .line 618
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZoomEisMode:I
 
-    .line 613
+    .line 619
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExtraCaptureCount:I
 
-    .line 614
+    .line 620
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsExtraCaptureEnableZSL:Z
 
-    .line 615
+    .line 621
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureTag:I
 
-    .line 616
+    .line 622
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGroupCaptureEnable:I
 
-    .line 617
+    .line 623
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsCurrentAppModeRequiredOnContinuousShot:Z
 
-    .line 618
+    .line 624
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBestMomentRawHDRMode:I
 
-    .line 619
+    .line 625
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashSnapAutoCaptureMode:I
 
-    .line 620
+    .line 626
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBestMomentDetectMode:I
 
-    .line 621
+    .line 627
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureZSLTimestamps:[J
 
-    .line 622
+    .line 628
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAbeHdrCheckMode:I
 
-    .line 623
+    .line 629
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBrightnessValue:I
 
-    .line 624
+    .line 630
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIncreaseFreqEnable:I
 
-    .line 625
+    .line 631
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCurrentFaces:I
 
-    .line 626
+    .line 632
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsAiRawLiteSupport:Z
 
-    .line 627
+    .line 633
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionAINRMode:I
 
-    .line 628
+    .line 634
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLivePhotoMode:I
 
-    .line 629
+    .line 635
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mInSensorZoomEnable:I
 
-    .line 630
+    .line 636
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEVList:[I
 
-    .line 631
+    .line 637
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAecSensitivity:[F
 
     const/high16 v5, -0x40800000    # -1.0f
 
-    .line 632
+    .line 638
     invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v6
 
     iput-object v6, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAecFrameControlLuxIndex:Ljava/lang/Float;
 
-    .line 633
+    .line 639
     iput-object v6, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAecFrameDarkBoostGain:Ljava/lang/Float;
 
-    .line 634
+    .line 640
     iput-object v6, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAecFrameAdrcGain:Ljava/lang/Float;
 
-    .line 635
+    .line 641
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->awbGains:[F
 
-    .line 636
+    .line 642
     iput v5, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAwbFrameControlCCT:F
 
-    .line 637
+    .line 643
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAwbDecisionAfterTC:[F
 
-    .line 638
+    .line 644
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoHDRFormat:Ljava/lang/String;
 
-    .line 639
+    .line 645
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsBurstCapturing:Z
 
-    .line 640
+    .line 646
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mOpenAutoFps:Z
 
-    .line 641
+    .line 647
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRegularFpsRange:Landroid/util/Range;
 
-    .line 642
+    .line 648
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHeavyCapturing:Z
 
-    .line 643
+    .line 649
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHeavyCapturingBV:I
 
-    .line 644
+    .line 650
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHumanBox:[I
 
-    .line 645
+    .line 651
     iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRTDofEnable:Z
 
-    .line 646
+    .line 652
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLastShotNotSkip:Z
 
-    .line 647
+    .line 653
     new-array v0, v2, [I
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoFrameInfo:[I
 
-    .line 648
+    .line 654
     new-array v0, v2, [I
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHDRAeExpoInfo:[I
 
-    .line 649
+    .line 655
     new-array v0, v2, [I
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMFNRAeExpoInfo:[I
 
-    .line 650
+    .line 656
     new-array v0, v2, [I
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightAeExpoInfo:[I
 
-    .line 651
+    .line 657
     new-array v0, v2, [I
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLlsInfo:[I
 
-    .line 652
+    .line 658
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSkinOptimizationValue:I
 
-    .line 653
+    .line 659
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mImageStyleId:I
 
-    .line 654
+    .line 660
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLensCorrectionMode:I
 
-    .line 655
+    .line 661
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTFEVCheckerEnable:I
 
-    .line 656
+    .line 662
     const-string v0, "off"
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDistortionCorrectionPreviewEnable:Ljava/lang/String;
 
-    .line 657
+    .line 663
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProWatermarkStyle:I
 
-    .line 658
+    .line 664
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIs24HourFormat:I
 
-    .line 659
+    .line 665
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAfFfMode:I
 
-    .line 660
+    .line 666
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mManualAWBValue:Ljava/lang/String;
 
-    .line 661
+    .line 667
     iput v4, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongFocusBaseZoomRatio:F
 
-    .line 662
+    .line 668
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMagicSkyResult:I
 
-    .line 663
+    .line 669
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAIRawMode:I
 
-    .line 664
+    .line 670
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAIRawLiteSupportPortraitEnhance:Z
 
-    .line 665
+    .line 671
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->bmLowLightMode:I
 
-    .line 666
+    .line 672
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBMCustomZslBufSize:I
 
-    .line 667
+    .line 673
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTAPSCaptureNeedYuvSize:I
 
-    .line 668
+    .line 674
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlareCaptureEnable:I
 
-    .line 669
+    .line 675
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBmDebandingMode:I
 
-    .line 670
+    .line 676
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureISPTunning:I
 
-    .line 671
+    .line 677
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHALBMLowLightMode:I
 
-    .line 672
+    .line 678
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mViUllEnable:I
 
-    .line 673
+    .line 679
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMotionCaptureMode:I
 
-    .line 674
+    .line 680
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMTKProcessRawEnable:I
 
-    .line 675
+    .line 681
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCelebritySceneMode:I
 
-    .line 676
+    .line 682
     iput v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIszScene:I
 
-    .line 677
+    .line 683
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHdr10PlusMode:I
 
-    .line 678
+    .line 684
     iput v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFeature2Mode:I
 
-    .line 679
+    .line 685
     iput-boolean v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEnableLowConfig:Z
 
     return-void
@@ -1989,7 +2019,7 @@
 .method public enableBGServiceMode(Z)V
     .registers 2
 
-    .line 2190
+    .line 2212
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBGServiceEnable:Z
 
     return-void
@@ -1998,7 +2028,7 @@
 .method public enableBWConvert(Z)V
     .registers 2
 
-    .line 1282
+    .line 1304
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBWConvertEnable:Z
 
     return-void
@@ -2007,7 +2037,7 @@
 .method public enableMirror(Z)V
     .registers 2
 
-    .line 1266
+    .line 1288
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMirrorEnable:Z
 
     return-void
@@ -2016,7 +2046,7 @@
 .method public enablePreviewStream(Z)V
     .registers 2
 
-    .line 2856
+    .line 2891
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewStreamEnable:Z
 
     return-void
@@ -2025,7 +2055,7 @@
 .method public enableTZServiceMode(Z)V
     .registers 2
 
-    .line 2198
+    .line 2220
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTZServiceEnable:Z
 
     return-void
@@ -2037,7 +2067,7 @@
 .method public get360VideoHDRInitMode()I
     .registers 1
 
-    .line 1353
+    .line 1375
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->m360VideoHDRInitMode:I
 
     return p0
@@ -2046,7 +2076,7 @@
 .method public get360VideoHDRMode()I
     .registers 1
 
-    .line 1344
+    .line 1366
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->m360VideoHDRMode:I
 
     return p0
@@ -2055,7 +2085,7 @@
 .method public get360VideoHDRScene()I
     .registers 1
 
-    .line 2378
+    .line 2413
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideo360HDRAlgoScene:I
 
     return p0
@@ -2064,7 +2094,7 @@
 .method public getAIRawLiteMotionDetection()I
     .registers 1
 
-    .line 1129
+    .line 1151
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAIRawLiteMotionDetection:I
 
     return p0
@@ -2073,7 +2103,7 @@
 .method public getAIRawLiteSupportPortraitEnhance()Z
     .registers 1
 
-    .line 2683
+    .line 2718
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAIRawLiteSupportPortraitEnhance:Z
 
     return p0
@@ -2082,7 +2112,7 @@
 .method public getAIRawMode()I
     .registers 1
 
-    .line 2675
+    .line 2710
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAIRawMode:I
 
     return p0
@@ -2091,7 +2121,7 @@
 .method public getAWBLockStatus()Z
     .registers 1
 
-    .line 2053
+    .line 2075
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAWBLockStatus:Z
 
     return p0
@@ -2100,7 +2130,7 @@
 .method public getAWBMode()Ljava/lang/String;
     .registers 1
 
-    .line 2029
+    .line 2051
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAWBMode:Ljava/lang/String;
 
     return-object p0
@@ -2109,7 +2139,7 @@
 .method public getAbeHdrCheckMode()I
     .registers 2
 
-    .line 2659
+    .line 2694
     iget v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAbeHdrCheckMode:I
 
     if-lez v0, :cond_11
@@ -2138,7 +2168,7 @@
 .method public getActivityOrientation()I
     .registers 1
 
-    .line 2615
+    .line 2650
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mActivityOrientation:I
 
     return p0
@@ -2147,7 +2177,7 @@
 .method public getAdrcgainValue()F
     .registers 1
 
-    .line 1775
+    .line 1797
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAdrcGainValue:F
 
     return p0
@@ -2156,7 +2186,7 @@
 .method public getAeLock()Z
     .registers 1
 
-    .line 896
+    .line 918
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAeLock:Z
 
     return p0
@@ -2165,7 +2195,7 @@
 .method public getAeState()I
     .registers 1
 
-    .line 1012
+    .line 1034
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAeStateValue:I
 
     return p0
@@ -2174,7 +2204,7 @@
 .method public getAecFrameAdrcGain()F
     .registers 1
 
-    .line 3091
+    .line 3126
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAecFrameAdrcGain:Ljava/lang/Float;
 
     invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F
@@ -2187,7 +2217,7 @@
 .method public getAecFrameControlLuxIndex()F
     .registers 1
 
-    .line 3083
+    .line 3118
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAecFrameControlLuxIndex:Ljava/lang/Float;
 
     invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F
@@ -2200,7 +2230,7 @@
 .method public getAecFrameDarkBoostGain()F
     .registers 1
 
-    .line 3087
+    .line 3122
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAecFrameDarkBoostGain:Ljava/lang/Float;
 
     invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F
@@ -2213,7 +2243,7 @@
 .method public getAecSensitivity()[F
     .registers 1
 
-    .line 3079
+    .line 3114
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAecSensitivity:[F
 
     return-object p0
@@ -2222,7 +2252,7 @@
 .method public getAfFfMode()I
     .registers 1
 
-    .line 1981
+    .line 2003
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAfFfMode:I
 
     return p0
@@ -2231,7 +2261,7 @@
 .method public getAiMoonMode()I
     .registers 1
 
-    .line 2426
+    .line 2461
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAiMoonMode:I
 
     return p0
@@ -2240,7 +2270,7 @@
 .method public getAiRawScene()I
     .registers 1
 
-    .line 1077
+    .line 1099
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAiRawScene:I
 
     return p0
@@ -2249,7 +2279,7 @@
 .method public getAirawSN2SRMode()I
     .registers 1
 
-    .line 1803
+    .line 1825
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAirawSN2SRMode:I
 
     return p0
@@ -2258,7 +2288,7 @@
 .method public getAisMode()I
     .registers 2
 
-    .line 2723
+    .line 2758
     iget v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAisMode:I
 
     if-lez v0, :cond_11
@@ -2287,7 +2317,7 @@
 .method public getAisMorpho()I
     .registers 2
 
-    .line 2731
+    .line 2766
     iget v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAisMorpho:I
 
     if-lez v0, :cond_11
@@ -2316,7 +2346,7 @@
 .method public getAntiVideoMode()Ljava/lang/String;
     .registers 1
 
-    .line 1965
+    .line 1987
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAntiVideo:Ljava/lang/String;
 
     return-object p0
@@ -2325,7 +2355,7 @@
 .method public getAppModeId()Ljava/lang/String;
     .registers 1
 
-    .line 2547
+    .line 2582
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAppModeId:Ljava/lang/String;
 
     return-object p0
@@ -2334,7 +2364,7 @@
 .method public getArcFilterId()I
     .registers 1
 
-    .line 1432
+    .line 1454
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mArcFilterId:I
 
     return p0
@@ -2343,7 +2373,7 @@
 .method public getAutoFpsModeForISP()I
     .registers 1
 
-    .line 2787
+    .line 2822
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoFpsModeForISP:I
 
     return p0
@@ -2352,7 +2382,7 @@
 .method public getAutoWatermarkMode()Ljava/lang/String;
     .registers 4
 
-    .line 1927
+    .line 1949
     sget-object v0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2421,19 +2451,19 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1934
+    .line 1956
     iget-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProWatermarkSupport:Z
 
     if-eqz v0, :cond_69
 
-    .line 1935
+    .line 1957
     iget v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProWatermarkType:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_60
 
-    .line 1936
+    .line 1958
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEditWatermarkMode:Ljava/lang/String;
 
     return-object p0
@@ -2443,40 +2473,40 @@
 
     if-ne v0, v1, :cond_66
 
-    .line 1938
+    .line 1960
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkMode:Ljava/lang/String;
 
     return-object p0
 
-    .line 1940
+    .line 1962
     :cond_66
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoWatermarkMode:Ljava/lang/String;
 
     return-object p0
 
-    .line 1943
+    .line 1965
     :cond_69
     iget-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkSupport:Z
 
     if-eqz v0, :cond_70
 
-    .line 1944
+    .line 1966
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkMode:Ljava/lang/String;
 
     return-object p0
 
-    .line 1945
+    .line 1967
     :cond_70
     iget-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEditWatermarkSupport:Z
 
     if-eqz v0, :cond_77
 
-    .line 1946
+    .line 1968
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEditWatermarkMode:Ljava/lang/String;
 
     return-object p0
 
-    .line 1948
+    .line 1970
     :cond_77
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoWatermarkMode:Ljava/lang/String;
 
@@ -2486,7 +2516,7 @@
 .method public getAwbDecisionAfterTC()[F
     .registers 1
 
-    .line 3103
+    .line 3138
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAwbDecisionAfterTC:[F
 
     return-object p0
@@ -2495,7 +2525,7 @@
 .method public getAwbFrameControlCCT()F
     .registers 1
 
-    .line 3099
+    .line 3134
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAwbFrameControlCCT:F
 
     return p0
@@ -2504,7 +2534,7 @@
 .method public getAwbGains()[F
     .registers 1
 
-    .line 3095
+    .line 3130
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->awbGains:[F
 
     return-object p0
@@ -2513,7 +2543,7 @@
 .method public getBGImageReaderId()I
     .registers 1
 
-    .line 2210
+    .line 2232
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBGImageReaderId:I
 
     return p0
@@ -2522,7 +2552,7 @@
 .method public getBMLowLightMode()I
     .registers 1
 
-    .line 2876
+    .line 2911
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->bmLowLightMode:I
 
     return p0
@@ -2531,7 +2561,7 @@
 .method public getBMMultiFrameNum()I
     .registers 1
 
-    .line 2884
+    .line 2919
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->bmMultiFrameNum:I
 
     return p0
@@ -2540,7 +2570,7 @@
 .method public getBestMomentDetectMode()I
     .registers 1
 
-    .line 2836
+    .line 2871
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBestMomentDetectMode:I
 
     return p0
@@ -2549,7 +2579,7 @@
 .method public getBestMomentRawHDRMode()I
     .registers 1
 
-    .line 2852
+    .line 2887
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBestMomentRawHDRMode:I
 
     return p0
@@ -2558,7 +2588,7 @@
 .method public getBodySlimMode()I
     .registers 1
 
-    .line 1540
+    .line 1562
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSlimBodyMode:I
 
     return p0
@@ -2567,7 +2597,7 @@
 .method public getBodySlimSkip()I
     .registers 1
 
-    .line 1544
+    .line 1566
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSlimBodySkip:I
 
     return p0
@@ -2576,7 +2606,7 @@
 .method public getBrightnessValue()I
     .registers 1
 
-    .line 1016
+    .line 1038
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBrightnessValue:I
 
     return p0
@@ -2585,7 +2615,7 @@
 .method public getCaptureCustomTuning()Ljava/lang/String;
     .registers 4
 
-    .line 2631
+    .line 2666
     sget-object v0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2622,14 +2652,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2633
+    .line 2668
     iget v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCelebritySceneMode:I
 
     const/4 v1, 0x2
 
     if-ne v1, v0, :cond_34
 
-    .line 2634
+    .line 2669
     const-string p0, "14"
 
     return-object p0
@@ -2639,7 +2669,7 @@
 
     if-ne v2, v0, :cond_3a
 
-    .line 2636
+    .line 2671
     const-string p0, "16"
 
     return-object p0
@@ -2649,12 +2679,12 @@
 
     if-ne v2, v0, :cond_40
 
-    .line 2638
+    .line 2673
     const-string p0, "17"
 
     return-object p0
 
-    .line 2639
+    .line 2674
     :cond_40
     iget v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEffect:I
 
@@ -2662,12 +2692,12 @@
 
     if-nez v0, :cond_49
 
-    .line 2640
+    .line 2675
     const-string p0, "18"
 
     return-object p0
 
-    .line 2642
+    .line 2677
     :cond_49
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureCustomTuning:Ljava/lang/String;
 
@@ -2677,7 +2707,7 @@
 .method public getCaptureISPTunning()I
     .registers 1
 
-    .line 2964
+    .line 2999
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureISPTunning:I
 
     return p0
@@ -2686,7 +2716,7 @@
 .method public getCaptureId()I
     .registers 1
 
-    .line 972
+    .line 994
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureId:I
 
     return p0
@@ -2695,7 +2725,7 @@
 .method public getCaptureTag()I
     .registers 1
 
-    .line 2931
+    .line 2966
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureTag:I
 
     return p0
@@ -2704,7 +2734,7 @@
 .method public getCaptureTime()J
     .registers 3
 
-    .line 3141
+    .line 3176
     iget-wide v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureTime:J
 
     return-wide v0
@@ -2713,7 +2743,7 @@
 .method public getCaptureZSLTimestamps()[J
     .registers 1
 
-    .line 2980
+    .line 3015
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureZSLTimestamps:[J
 
     return-object p0
@@ -2722,8 +2752,26 @@
 .method public getCelebritySceneMode()I
     .registers 1
 
-    .line 3044
+    .line 3079
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCelebritySceneMode:I
+
+    return p0
+.end method
+
+.method public getClickDownZoomRatio()I
+    .registers 1
+
+    .line 877
+    iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mClickDownZoomRatio:I
+
+    return p0
+.end method
+
+.method public getClickUpZoomRatio()I
+    .registers 1
+
+    .line 869
+    iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mClickUpZoomRatio:I
 
     return p0
 .end method
@@ -2731,7 +2779,7 @@
 .method public getColorLevel()Ljava/lang/String;
     .registers 1
 
-    .line 2667
+    .line 2702
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mColorLevel:Ljava/lang/String;
 
     return-object p0
@@ -2740,7 +2788,7 @@
 .method public getCurrentFaces()I
     .registers 1
 
-    .line 2996
+    .line 3031
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCurrentFaces:I
 
     return p0
@@ -2749,7 +2797,7 @@
 .method public getCustomZslBufSize()I
     .registers 1
 
-    .line 2891
+    .line 2926
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBMCustomZslBufSize:I
 
     return p0
@@ -2758,7 +2806,7 @@
 .method public getDataFlowType()I
     .registers 1
 
-    .line 747
+    .line 753
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDataFlowType:I
 
     return p0
@@ -2767,7 +2815,7 @@
 .method public getDeBandingMode()I
     .registers 1
 
-    .line 2956
+    .line 2991
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBmDebandingMode:I
 
     return p0
@@ -2779,7 +2827,7 @@
 .method public getDistortionCorrectionMode()I
     .registers 1
 
-    .line 1841
+    .line 1863
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDistortionCorrectionMode:I
 
     return p0
@@ -2788,7 +2836,7 @@
 .method public getDistortionCorrectionPreviewEnablet()Ljava/lang/String;
     .registers 1
 
-    .line 1849
+    .line 1871
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDistortionCorrectionPreviewEnable:Ljava/lang/String;
 
     return-object p0
@@ -2797,7 +2845,7 @@
 .method public getDxoSceneDetection()Ljava/lang/String;
     .registers 1
 
-    .line 1399
+    .line 1421
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDxoSceneDetection:Ljava/lang/String;
 
     return-object p0
@@ -2806,7 +2854,7 @@
 .method public getEVList()[I
     .registers 1
 
-    .line 1137
+    .line 1159
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEVList:[I
 
     return-object p0
@@ -2815,7 +2863,7 @@
 .method public getExcludeVideoMakeupBeauty()I
     .registers 1
 
-    .line 1592
+    .line 1614
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExcludeVideoMakeupBeauty:I
 
     return p0
@@ -2824,7 +2872,7 @@
 .method public getExifModeInfo()I
     .registers 1
 
-    .line 2715
+    .line 2750
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExifModeInfo:I
 
     return p0
@@ -2833,7 +2881,7 @@
 .method public getExposureCompensation()I
     .registers 1
 
-    .line 888
+    .line 910
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExposureCompensation:I
 
     return p0
@@ -2842,7 +2890,7 @@
 .method public getExposureTime()J
     .registers 3
 
-    .line 1175
+    .line 1197
     iget-wide v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExposureTime:J
 
     return-wide v0
@@ -2851,7 +2899,7 @@
 .method public getExternalIspMode()I
     .registers 1
 
-    .line 2747
+    .line 2782
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExternalIspMode:I
 
     return p0
@@ -2860,7 +2908,7 @@
 .method public getExtraCaptureCount()I
     .registers 1
 
-    .line 2915
+    .line 2950
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExtraCaptureCount:I
 
     return p0
@@ -2869,7 +2917,7 @@
 .method public getFaceAttributeInfo()[I
     .registers 1
 
-    .line 2495
+    .line 2530
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceAttributeInfo:[I
 
     return-object p0
@@ -2878,7 +2926,7 @@
 .method public getFaceBeautyFeaturesLevel()[I
     .registers 1
 
-    .line 1237
+    .line 1259
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyFeaturesLevel:[I
 
     return-object p0
@@ -2887,7 +2935,7 @@
 .method public getFaceBeautyLevel()Ljava/lang/String;
     .registers 1
 
-    .line 1229
+    .line 1251
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyLevel:Ljava/lang/String;
 
     return-object p0
@@ -2896,7 +2944,7 @@
 .method public getFaceBeautyMode()Ljava/lang/String;
     .registers 1
 
-    .line 1221
+    .line 1243
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyMode:Ljava/lang/String;
 
     return-object p0
@@ -2905,7 +2953,7 @@
 .method public getFaceProportion()F
     .registers 1
 
-    .line 3066
+    .line 3101
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceProportion:F
 
     return p0
@@ -2914,7 +2962,7 @@
 .method public getFakeDualLensMode()I
     .registers 1
 
-    .line 2218
+    .line 2240
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFakeDualLensMode:I
 
     return p0
@@ -2923,7 +2971,7 @@
 .method public getFeature2Mode()I
     .registers 1
 
-    .line 3145
+    .line 3180
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFeature2Mode:I
 
     return p0
@@ -2932,7 +2980,7 @@
 .method public getFlareCaptureEnable()I
     .registers 1
 
-    .line 2947
+    .line 2982
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlareCaptureEnable:I
 
     return p0
@@ -2941,7 +2989,7 @@
 .method public getFlareLocation()[F
     .registers 1
 
-    .line 2803
+    .line 2838
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPMasterFlareLocation:[F
 
     return-object p0
@@ -2950,7 +2998,7 @@
 .method public getFlashFacade()Ljava/lang/String;
     .registers 1
 
-    .line 2559
+    .line 2594
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashFacade:Ljava/lang/String;
 
     return-object p0
@@ -2959,7 +3007,7 @@
 .method public getFlashMode()Ljava/lang/String;
     .registers 1
 
-    .line 827
+    .line 833
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashMode:Ljava/lang/String;
 
     return-object p0
@@ -2968,7 +3016,7 @@
 .method public getFlashSnapAutoCaptureMode()I
     .registers 1
 
-    .line 2848
+    .line 2883
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashSnapAutoCaptureMode:I
 
     return p0
@@ -2977,7 +3025,7 @@
 .method public getFlashStyle()Ljava/lang/String;
     .registers 1
 
-    .line 2583
+    .line 2618
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashStyle:Ljava/lang/String;
 
     return-object p0
@@ -2986,7 +3034,7 @@
 .method public getFocalLength()I
     .registers 1
 
-    .line 2819
+    .line 2854
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocalLength:I
 
     return p0
@@ -2995,7 +3043,7 @@
 .method public getFocusAreas()Ljava/util/List;
     .registers 2
 
-    .line 807
+    .line 813
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusAreas:Ljava/util/List;
@@ -3008,7 +3056,7 @@
 .method public getFocusDistance()F
     .registers 1
 
-    .line 1187
+    .line 1209
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusDistance:F
 
     return p0
@@ -3017,7 +3065,7 @@
 .method public getFocusLength()F
     .registers 1
 
-    .line 1195
+    .line 1217
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusLength:F
 
     return p0
@@ -3026,7 +3074,7 @@
 .method public getFocusMode()Ljava/lang/String;
     .registers 1
 
-    .line 796
+    .line 802
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusMode:Ljava/lang/String;
 
     return-object p0
@@ -3035,7 +3083,7 @@
 .method public getFovWideCrop()Z
     .registers 1
 
-    .line 863
+    .line 885
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFovWideCrop:Z
 
     return p0
@@ -3044,7 +3092,7 @@
 .method public getFrameNumFromEVList()I
     .registers 4
 
-    .line 1150
+    .line 1172
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTFEVCheckerEnable()I
 
     move-result v0
@@ -3061,7 +3109,7 @@
 
     if-lez v0, :cond_15
 
-    .line 1151
+    .line 1173
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getEVList()[I
 
     move-result-object p0
@@ -3070,7 +3118,7 @@
 
     goto :goto_2c
 
-    .line 1152
+    .line 1174
     :cond_15
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMiddleNightMode()I
 
@@ -3078,7 +3126,7 @@
 
     if-lez v0, :cond_2b
 
-    .line 1153
+    .line 1175
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getEVList()[I
 
     move-result-object v0
@@ -3103,7 +3151,7 @@
     :goto_2c
     if-gtz p0, :cond_36
 
-    .line 1157
+    .line 1179
     sget-object p0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "getFrameNumFromEVList: error return 1"
@@ -3119,7 +3167,7 @@
 .method public getFrontDualFlashColorTemp()I
     .registers 1
 
-    .line 2021
+    .line 2043
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFrontDualFlashColorTemp:I
 
     return p0
@@ -3128,7 +3176,7 @@
 .method public getFrontDualFlashStrengthMode()I
     .registers 1
 
-    .line 2013
+    .line 2035
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFrontDualFlashStrengthMode:I
 
     return p0
@@ -3137,7 +3185,7 @@
 .method public getFusionMode()Ljava/lang/String;
     .registers 1
 
-    .line 2085
+    .line 2107
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFusionMode:Ljava/lang/String;
 
     return-object p0
@@ -3146,7 +3194,7 @@
 .method public getGenderAttributeValue()Ljava/lang/String;
     .registers 1
 
-    .line 2447
+    .line 2482
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGenderAttributeValue:Ljava/lang/String;
 
     return-object p0
@@ -3155,7 +3203,7 @@
 .method public getGoldWaterMarkSize()[I
     .registers 1
 
-    .line 1907
+    .line 1929
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWaterMarkSize:[I
 
     return-object p0
@@ -3164,7 +3212,7 @@
 .method public getGoldWatermarkType()Ljava/lang/String;
     .registers 1
 
-    .line 1899
+    .line 1921
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkType:Ljava/lang/String;
 
     return-object p0
@@ -3173,7 +3221,7 @@
 .method public getGroupCaptureEnable()I
     .registers 1
 
-    .line 2939
+    .line 2974
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGroupCaptureEnable:I
 
     return p0
@@ -3182,7 +3230,7 @@
 .method public getHALBMLowLightMode()I
     .registers 1
 
-    .line 3012
+    .line 3047
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHALBMLowLightMode:I
 
     return p0
@@ -3191,7 +3239,7 @@
 .method public getHDRAeExpoInfo()[I
     .registers 1
 
-    .line 1097
+    .line 1119
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHDRAeExpoInfo:[I
 
     return-object p0
@@ -3200,7 +3248,7 @@
 .method public getHdMode()Ljava/lang/String;
     .registers 1
 
-    .line 2069
+    .line 2091
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHdMode:Ljava/lang/String;
 
     return-object p0
@@ -3209,7 +3257,7 @@
 .method public getHdr10PlusMode()I
     .registers 1
 
-    .line 3133
+    .line 3168
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHdr10PlusMode:I
 
     return p0
@@ -3218,7 +3266,7 @@
 .method public getHeavyCapturingBV()I
     .registers 1
 
-    .line 1000
+    .line 1022
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHeavyCapturingBV:I
 
     return p0
@@ -3227,7 +3275,7 @@
 .method public getHighFpsMode()Ljava/lang/String;
     .registers 1
 
-    .line 2081
+    .line 2103
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHighFpsMode:Ljava/lang/String;
 
     return-object p0
@@ -3236,7 +3284,7 @@
 .method public getHighLightMode()I
     .registers 1
 
-    .line 2519
+    .line 2554
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHighLightMode:I
 
     return p0
@@ -3245,7 +3293,7 @@
 .method public getHumanBox()[I
     .registers 1
 
-    .line 3125
+    .line 3160
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHumanBox:[I
 
     return-object p0
@@ -3254,7 +3302,7 @@
 .method public getHumanEffectMode()Ljava/lang/String;
     .registers 1
 
-    .line 2471
+    .line 2506
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHumanEffectMode:Ljava/lang/String;
 
     return-object p0
@@ -3263,7 +3311,7 @@
 .method public getISOValue()I
     .registers 1
 
-    .line 1167
+    .line 1189
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mISOValue:I
 
     return p0
@@ -3272,7 +3320,7 @@
 .method public getISPTuningEnable()I
     .registers 1
 
-    .line 2775
+    .line 2810
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mISPTuningEnable:I
 
     return p0
@@ -3281,7 +3329,7 @@
 .method public getImageStyleId()I
     .registers 1
 
-    .line 1456
+    .line 1478
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mImageStyleId:I
 
     return p0
@@ -3290,7 +3338,7 @@
 .method public getInSensorZoomEnable()I
     .registers 1
 
-    .line 3028
+    .line 3063
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mInSensorZoomEnable:I
 
     return p0
@@ -3299,7 +3347,7 @@
 .method public getIncreaseFrequencyEnable()I
     .registers 1
 
-    .line 2988
+    .line 3023
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIncreaseFreqEnable:I
 
     return p0
@@ -3308,7 +3356,7 @@
 .method public getInsensorScene()I
     .registers 1
 
-    .line 1763
+    .line 1785
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIszScene:I
 
     return p0
@@ -3317,7 +3365,7 @@
 .method public getIs24HourFormat()I
     .registers 1
 
-    .line 1891
+    .line 1913
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIs24HourFormat:I
 
     return p0
@@ -3326,7 +3374,7 @@
 .method public getJpegGPSLocation()Landroid/location/Location;
     .registers 1
 
-    .line 787
+    .line 793
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLocation:Landroid/location/Location;
 
     return-object p0
@@ -3335,7 +3383,7 @@
 .method public getJpegOrientation()I
     .registers 1
 
-    .line 775
+    .line 781
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mJpegOrientation:I
 
     return p0
@@ -3344,7 +3392,7 @@
 .method public getJpegQuality()I
     .registers 1
 
-    .line 763
+    .line 769
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mJpegQuality:I
 
     return p0
@@ -3353,7 +3401,7 @@
 .method public getLensCorrectionMode()I
     .registers 1
 
-    .line 1564
+    .line 1586
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLensCorrectionMode:I
 
     return p0
@@ -3362,7 +3410,7 @@
 .method public getLimitFpsRange()Landroid/util/Range;
     .registers 1
 
-    .line 917
+    .line 939
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLimitFpsRange:Landroid/util/Range;
 
     return-object p0
@@ -3371,7 +3419,7 @@
 .method public getLivePhotoMode()I
     .registers 1
 
-    .line 3020
+    .line 3055
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLivePhotoMode:I
 
     return p0
@@ -3380,7 +3428,7 @@
 .method public getLiveResultMode()I
     .registers 1
 
-    .line 2647
+    .line 2682
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLiveResultMode:I
 
     return p0
@@ -3389,7 +3437,7 @@
 .method public getLongExposureCaptureState()Ljava/lang/String;
     .registers 1
 
-    .line 2707
+    .line 2742
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongExposureCaptureState:Ljava/lang/String;
 
     return-object p0
@@ -3398,7 +3446,7 @@
 .method public getLongExposureScene()Ljava/lang/String;
     .registers 1
 
-    .line 2691
+    .line 2726
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongExposureScene:Ljava/lang/String;
 
     return-object p0
@@ -3407,7 +3455,7 @@
 .method public getLongExposureTripod()Ljava/lang/String;
     .registers 1
 
-    .line 2699
+    .line 2734
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongExposureTripod:Ljava/lang/String;
 
     return-object p0
@@ -3416,7 +3464,7 @@
 .method public getLongFocusBaseZoomRatio()F
     .registers 1
 
-    .line 2109
+    .line 2131
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongFocusBaseZoomRatio:F
 
     return p0
@@ -3425,7 +3473,7 @@
 .method public getLuminanceValue()I
     .registers 1
 
-    .line 2005
+    .line 2027
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLuminanceValue:I
 
     return p0
@@ -3434,7 +3482,7 @@
 .method public getMFNRAeExpoInfo()[I
     .registers 1
 
-    .line 1105
+    .line 1127
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMFNRAeExpoInfo:[I
 
     return-object p0
@@ -3443,7 +3491,7 @@
 .method public getMTKProcessRawEnable()I
     .registers 1
 
-    .line 3060
+    .line 3095
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMTKProcessRawEnable:I
 
     return p0
@@ -3452,7 +3500,7 @@
 .method public getMacroLampValue()I
     .registers 1
 
-    .line 2394
+    .line 2429
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMacroLampValue:I
 
     return p0
@@ -3461,7 +3509,7 @@
 .method public getMagicSkyMode()Ljava/lang/String;
     .registers 1
 
-    .line 2527
+    .line 2562
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMagicSkyMode:Ljava/lang/String;
 
     return-object p0
@@ -3470,7 +3518,7 @@
 .method public getMagicSkyResult()I
     .registers 1
 
-    .line 2543
+    .line 2578
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMagicSkyResult:I
 
     return p0
@@ -3479,7 +3527,7 @@
 .method public getMagicSkyType()Ljava/lang/String;
     .registers 1
 
-    .line 2535
+    .line 2570
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMagicSkyType:Ljava/lang/String;
 
     return-object p0
@@ -3488,7 +3536,7 @@
 .method public getMakeUpIntensitys()[F
     .registers 1
 
-    .line 1568
+    .line 1590
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpIntensitys:[F
 
     return-object p0
@@ -3497,7 +3545,7 @@
 .method public getMakeUpMode()I
     .registers 1
 
-    .line 1556
+    .line 1578
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpMode:I
 
     return p0
@@ -3506,7 +3554,7 @@
 .method public getMakeUpVideoIntensitys()[F
     .registers 1
 
-    .line 1584
+    .line 1606
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpVideoIntensitys:[F
 
     return-object p0
@@ -3515,7 +3563,7 @@
 .method public getMakeUpVideoMode()I
     .registers 1
 
-    .line 1580
+    .line 1602
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpVideoMode:I
 
     return p0
@@ -3524,7 +3572,7 @@
 .method public getManualAWBValue()Ljava/lang/String;
     .registers 1
 
-    .line 2037
+    .line 2059
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mManualAWBValue:Ljava/lang/String;
 
     return-object p0
@@ -3533,7 +3581,7 @@
 .method public getMegSuperNight()I
     .registers 2
 
-    .line 2146
+    .line 2168
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoTypeToHal:Ljava/lang/String;
 
     const-string v0, "Night_Light"
@@ -3553,7 +3601,7 @@
 .method public getMeteringAreas()Ljava/util/List;
     .registers 2
 
-    .line 818
+    .line 824
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMeteringAreas:Ljava/util/List;
@@ -3566,7 +3614,7 @@
 .method public getMeteringMode()Ljava/lang/String;
     .registers 1
 
-    .line 1205
+    .line 1227
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMeteringMode:Ljava/lang/String;
 
     return-object p0
@@ -3575,7 +3623,7 @@
 .method public getMiddleNightMode()I
     .registers 1
 
-    .line 1624
+    .line 1646
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMiddleNightMode:I
 
     return p0
@@ -3584,7 +3632,7 @@
 .method public getMoonDetectPitch()F
     .registers 1
 
-    .line 2418
+    .line 2453
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMoonDetectPitch:F
 
     return p0
@@ -3593,7 +3641,7 @@
 .method public getMoonDetection()I
     .registers 1
 
-    .line 2410
+    .line 2445
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMoonDetectionMode:I
 
     return p0
@@ -3602,7 +3650,7 @@
 .method public getMotionCaptureMode()I
     .registers 1
 
-    .line 3052
+    .line 3087
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMotionCaptureMode:I
 
     return p0
@@ -3611,7 +3659,7 @@
 .method public getMultiFaceBeautyMode()Ljava/lang/String;
     .registers 1
 
-    .line 1225
+    .line 1247
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMultiFaceBeautyMode:Ljava/lang/String;
 
     return-object p0
@@ -3620,7 +3668,7 @@
 .method public getNight3dnrAlgo()I
     .registers 1
 
-    .line 1632
+    .line 1654
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNight3dnrAlgo:I
 
     return p0
@@ -3629,7 +3677,7 @@
 .method public getNightAeExpoInfo()[I
     .registers 1
 
-    .line 1113
+    .line 1135
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightAeExpoInfo:[I
 
     return-object p0
@@ -3638,7 +3686,7 @@
 .method public getNightHawkMode()I
     .registers 1
 
-    .line 2402
+    .line 2437
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightHawkMode:I
 
     return p0
@@ -3647,7 +3695,7 @@
 .method public getNightMorHdsScene()I
     .registers 1
 
-    .line 1640
+    .line 1662
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightMorHdsScene:I
 
     return p0
@@ -3656,7 +3704,7 @@
 .method public getNvsSuperNightFilterId()I
     .registers 1
 
-    .line 1464
+    .line 1486
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightFilterId:I
 
     return p0
@@ -3665,7 +3713,7 @@
 .method public getOpenAutoFps()Z
     .registers 1
 
-    .line 2779
+    .line 2814
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mOpenAutoFps:Z
 
     return p0
@@ -3674,7 +3722,7 @@
 .method public getOverrideSensorRect()Landroid/graphics/Rect;
     .registers 1
 
-    .line 952
+    .line 974
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mOverrideSensorRect:Landroid/graphics/Rect;
 
     return-object p0
@@ -3683,7 +3731,7 @@
 .method public getP2CropRegionCustomize()[I
     .registers 1
 
-    .line 1717
+    .line 1739
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mP2CropRegionCustomize:[I
 
     return-object p0
@@ -3692,7 +3740,7 @@
 .method public getP2RawCropResizeEnable()I
     .registers 1
 
-    .line 1709
+    .line 1731
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mP2RawCropResizeEnable:I
 
     return p0
@@ -3701,7 +3749,7 @@
 .method public getP2ResizerSizeCustomize()[I
     .registers 1
 
-    .line 1725
+    .line 1747
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mP2ResizerSizeCustomize:[I
 
     return-object p0
@@ -3710,7 +3758,7 @@
 .method public getPMasterFlareMode()I
     .registers 1
 
-    .line 2795
+    .line 2830
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPMasterFlareMode:I
 
     return p0
@@ -3719,7 +3767,7 @@
 .method public getPhotoHDRMode()Ljava/lang/String;
     .registers 1
 
-    .line 1331
+    .line 1353
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPhotoHDRMode:Ljava/lang/String;
 
     return-object p0
@@ -3728,7 +3776,7 @@
 .method public getPhotoNightTranYUVMode()I
     .registers 2
 
-    .line 2326
+    .line 2361
     iget v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPhotoNightTranYUVMode:I
 
     if-lez v0, :cond_d
@@ -3752,7 +3800,7 @@
 .method public getPictureSize()Landroid/util/Size;
     .registers 1
 
-    .line 715
+    .line 721
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPictureSize:Landroid/util/Size;
 
     return-object p0
@@ -3761,7 +3809,7 @@
 .method public getPipDeviceValue()Ljava/lang/String;
     .registers 1
 
-    .line 2623
+    .line 2658
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPipDeviceValue:Ljava/lang/String;
 
     return-object p0
@@ -3770,7 +3818,7 @@
 .method public getPlainLocationText()Ljava/lang/String;
     .registers 1
 
-    .line 1876
+    .line 1898
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPlainLocationText:Ljava/lang/String;
 
     return-object p0
@@ -3779,7 +3827,7 @@
 .method public getPortraitMode()I
     .registers 1
 
-    .line 2061
+    .line 2083
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPortraitMode:I
 
     return p0
@@ -3788,7 +3836,7 @@
 .method public getPortraitModeEnhanceMode()Ljava/lang/String;
     .registers 2
 
-    .line 2438
+    .line 2473
     iget v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperResolutionMode:I
 
     if-gtz v0, :cond_8
@@ -3802,7 +3850,7 @@
 
     if-nez v0, :cond_f
 
-    .line 2439
+    .line 2474
     const-string p0, "off"
 
     return-object p0
@@ -3816,7 +3864,7 @@
 .method public getPostAlgoFrameInfo()[I
     .registers 1
 
-    .line 1089
+    .line 1111
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoFrameInfo:[I
 
     return-object p0
@@ -3825,7 +3873,7 @@
 .method public getPostAlgoType()I
     .registers 1
 
-    .line 980
+    .line 1002
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoType:I
 
     return p0
@@ -3834,7 +3882,7 @@
 .method public getPostViewSize()Landroid/util/Size;
     .registers 1
 
-    .line 727
+    .line 733
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostViewSize:Landroid/util/Size;
 
     return-object p0
@@ -3845,19 +3893,19 @@
 
     const/4 v0, 0x6
 
-    .line 907
+    .line 929
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 904
+    .line 926
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->closeAllForFinalMonkeyTest()Z
 
     move-result v1
 
     if-eqz v1, :cond_1e
 
-    .line 905
+    .line 927
     new-instance v0, Landroid/util/Range;
 
     const/4 v1, 0x5
@@ -3878,20 +3926,20 @@
 
     goto :goto_29
 
-    .line 906
+    .line 928
     :cond_1e
     iget-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEnableLowConfig:Z
 
     if-eqz v1, :cond_29
 
-    .line 907
+    .line 929
     new-instance v1, Landroid/util/Range;
 
     invoke-direct {v1, v0, v0}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
 
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewFPSRange:Landroid/util/Range;
 
-    .line 909
+    .line 931
     :cond_29
     :goto_29
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewFPSRange:Landroid/util/Range;
@@ -3902,7 +3950,7 @@
 .method public getPreviewGoldWaterMarkSize()[I
     .registers 1
 
-    .line 1915
+    .line 1937
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewGoldWaterMarkSize:[I
 
     return-object p0
@@ -3911,7 +3959,7 @@
 .method public getPreviewSize()Landroid/util/Size;
     .registers 1
 
-    .line 699
+    .line 705
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewSize:Landroid/util/Size;
 
     return-object p0
@@ -3920,7 +3968,7 @@
 .method public getProWatermarkStyle()I
     .registers 1
 
-    .line 1883
+    .line 1905
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProWatermarkStyle:I
 
     return p0
@@ -3929,7 +3977,7 @@
 .method public getRace()I
     .registers 1
 
-    .line 2459
+    .line 2494
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRace:I
 
     return p0
@@ -3938,7 +3986,7 @@
 .method public getRawPictureSize()Ljava/util/List;
     .registers 1
 
-    .line 707
+    .line 713
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSupportRawSize:Ljava/util/List;
 
     return-object p0
@@ -3947,7 +3995,7 @@
 .method public getRawScene()I
     .registers 8
 
-    .line 1020
+    .line 1042
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isAIRawLiteClose()Z
 
     move-result v0
@@ -3958,33 +4006,33 @@
 
     return v1
 
-    .line 1023
+    .line 1045
     :cond_8
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionHDR()I
 
     move-result v0
 
-    .line 1024
+    .line 1046
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionLowLightMode()I
 
     move-result v2
 
-    .line 1025
+    .line 1047
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperNightAlgoType()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1026
+    .line 1048
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionNightMode()I
 
     move-result v4
 
-    .line 1027
+    .line 1049
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMiddleNightMode()I
 
     move-result p0
 
-    .line 1029
+    .line 1051
     const-string v5, "None_icon_close"
 
     const/4 v6, 0x1
@@ -4002,7 +4050,7 @@
 
     goto :goto_3d
 
-    .line 1043
+    .line 1065
     :cond_29
     const-string p0, "Night_Light"
 
@@ -4016,7 +4064,7 @@
 
     goto :goto_62
 
-    .line 1045
+    .line 1067
     :cond_33
     const-string p0, "Night"
 
@@ -4030,7 +4078,7 @@
 
     goto :goto_62
 
-    .line 1037
+    .line 1059
     :cond_3d
     :goto_3d
     invoke-static {v3, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -4039,7 +4087,7 @@
 
     if-eqz p0, :cond_4e
 
-    .line 1038
+    .line 1060
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -4057,7 +4105,7 @@
 
     goto :goto_62
 
-    .line 1030
+    .line 1052
     :cond_50
     :goto_50
     invoke-static {v3, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -4066,7 +4114,7 @@
 
     if-eqz p0, :cond_61
 
-    .line 1031
+    .line 1053
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -4082,7 +4130,7 @@
     :cond_61
     move v1, v6
 
-    .line 1048
+    .line 1070
     :cond_62
     :goto_62
     sget-object p0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -4109,7 +4157,7 @@
 .method public getRawSuperResolutionMode()I
     .registers 1
 
-    .line 1697
+    .line 1719
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRawSuperResolutionMode:I
 
     return p0
@@ -4118,7 +4166,7 @@
 .method public getRealZoomRatio()I
     .registers 1
 
-    .line 855
+    .line 861
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRealZoomRatio:I
 
     return p0
@@ -4127,7 +4175,7 @@
 .method public getRegularRange()Landroid/util/Range;
     .registers 1
 
-    .line 925
+    .line 947
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRegularFpsRange:Landroid/util/Range;
 
     return-object p0
@@ -4136,7 +4184,7 @@
 .method public getRemosaicMode()Ljava/lang/String;
     .registers 1
 
-    .line 1676
+    .line 1698
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRemosaicMode:Ljava/lang/String;
 
     return-object p0
@@ -4145,7 +4193,7 @@
 .method public getRingScreenLight()Ljava/lang/String;
     .registers 1
 
-    .line 2591
+    .line 2626
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRingScreenLight:Ljava/lang/String;
 
     return-object p0
@@ -4154,7 +4202,7 @@
 .method public getSMVRRequestParams()[I
     .registers 1
 
-    .line 2251
+    .line 2273
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSMVRRequestParams:[I
 
     return-object p0
@@ -4163,7 +4211,7 @@
 .method public getSTBlurLevel()I
     .registers 1
 
-    .line 2186
+    .line 2208
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurLevel:I
 
     return p0
@@ -4172,7 +4220,7 @@
 .method public getSTBlurLightStrength()F
     .registers 1
 
-    .line 2166
+    .line 2188
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurLightStrength:F
 
     return p0
@@ -4181,7 +4229,7 @@
 .method public getSTBlurMode()I
     .registers 1
 
-    .line 2154
+    .line 2176
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurMode:I
 
     return p0
@@ -4190,7 +4238,7 @@
 .method public getSTBlurReaRatio()F
     .registers 1
 
-    .line 2174
+    .line 2196
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurReaRatio:F
 
     return p0
@@ -4199,7 +4247,7 @@
 .method public getSTBlurStrengths()[F
     .registers 1
 
-    .line 2158
+    .line 2180
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurStrengths:[F
 
     return-object p0
@@ -4208,7 +4256,7 @@
 .method public getSatPictureSize()Landroid/util/Size;
     .registers 1
 
-    .line 723
+    .line 729
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSatPictureSize:Landroid/util/Size;
 
     return-object p0
@@ -4217,7 +4265,7 @@
 .method public getSceneMode()Ljava/lang/String;
     .registers 1
 
-    .line 933
+    .line 955
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSceneMode:Ljava/lang/String;
 
     return-object p0
@@ -4226,7 +4274,7 @@
 .method public getScreenFlashMode()Ljava/lang/String;
     .registers 1
 
-    .line 1989
+    .line 2011
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mScreenFlashMode:Ljava/lang/String;
 
     return-object p0
@@ -4235,7 +4283,7 @@
 .method public getScreenFlashStatus()Ljava/lang/String;
     .registers 1
 
-    .line 2607
+    .line 2642
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mScreenFlashStatus:Ljava/lang/String;
 
     return-object p0
@@ -4244,7 +4292,7 @@
 .method public getScreenTorchStatus()Ljava/lang/String;
     .registers 1
 
-    .line 2599
+    .line 2634
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mScreenTorchStatus:Ljava/lang/String;
 
     return-object p0
@@ -4253,7 +4301,7 @@
 .method public getShot2ShotMode()I
     .registers 1
 
-    .line 1833
+    .line 1855
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mShot2ShotMode:I
 
     return p0
@@ -4262,7 +4310,7 @@
 .method public getSkinColor()I
     .registers 1
 
-    .line 2451
+    .line 2486
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSkinColor:I
 
     return p0
@@ -4271,7 +4319,7 @@
 .method public getSkinOptimization()I
     .registers 1
 
-    .line 1302
+    .line 1324
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSkinOptimizationValue:I
 
     return p0
@@ -4280,7 +4328,7 @@
 .method public getSkipMultCapture()Z
     .registers 1
 
-    .line 1819
+    .line 1841
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSkipMultCapture:Z
 
     return p0
@@ -4289,7 +4337,7 @@
 .method public getSlimBodyLevels()[I
     .registers 1
 
-    .line 1536
+    .line 1558
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSlimBodyLevels:[I
 
     return-object p0
@@ -4298,7 +4346,7 @@
 .method public getSmoothZoomValue()I
     .registers 1
 
-    .line 2811
+    .line 2846
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSmoothZoomValue:I
 
     return p0
@@ -4307,7 +4355,7 @@
 .method public getStreamFlip()Z
     .registers 1
 
-    .line 2763
+    .line 2798
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mStreamFlip:Z
 
     return p0
@@ -4316,7 +4364,7 @@
 .method public getStreamingCustomTuning()I
     .registers 4
 
-    .line 2358
+    .line 2393
     sget-object v0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4353,14 +4401,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2360
+    .line 2395
     iget v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCelebritySceneMode:I
 
     const/4 v1, 0x2
 
     if-ne v1, v0, :cond_38
 
-    .line 2361
+    .line 2396
     const-string p0, "14"
 
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -4374,7 +4422,7 @@
 
     if-ne v2, v0, :cond_42
 
-    .line 2363
+    .line 2398
     const-string p0, "16"
 
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -4388,7 +4436,7 @@
 
     if-ne v2, v0, :cond_4c
 
-    .line 2365
+    .line 2400
     const-string p0, "17"
 
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -4397,7 +4445,7 @@
 
     return p0
 
-    .line 2366
+    .line 2401
     :cond_4c
     iget v2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEffect:I
 
@@ -4405,7 +4453,7 @@
 
     if-nez v0, :cond_59
 
-    .line 2367
+    .line 2402
     const-string p0, "18"
 
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -4414,7 +4462,7 @@
 
     return p0
 
-    .line 2369
+    .line 2404
     :cond_59
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mStreamingCustomTuning:Ljava/lang/String;
 
@@ -4428,7 +4476,7 @@
 .method public getStreetPhotoFilterId()I
     .registers 1
 
-    .line 1448
+    .line 1470
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mStreetPhotoFilterId:I
 
     return p0
@@ -4437,7 +4485,7 @@
 .method public getSuperAIRawMode()I
     .registers 1
 
-    .line 1767
+    .line 1789
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperAIRaw:I
 
     return p0
@@ -4446,7 +4494,7 @@
 .method public getSuperAntiVideoMode()Ljava/lang/String;
     .registers 1
 
-    .line 1973
+    .line 1995
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperAntiVideo:Ljava/lang/String;
 
     return-object p0
@@ -4455,7 +4503,7 @@
 .method public getSuperDefinitionMode()I
     .registers 1
 
-    .line 1656
+    .line 1678
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperDefinitionMode:I
 
     return p0
@@ -4464,7 +4512,7 @@
 .method public getSuperFlashValue()Ljava/lang/String;
     .registers 1
 
-    .line 2575
+    .line 2610
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperFlash:Ljava/lang/String;
 
     return-object p0
@@ -4473,7 +4521,7 @@
 .method public getSuperNightAlgoType()Ljava/lang/String;
     .registers 4
 
-    .line 2137
+    .line 2159
     sget-object v0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4494,7 +4542,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2138
+    .line 2160
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperFlash:Ljava/lang/String;
 
     const-string v1, "on"
@@ -4509,12 +4557,12 @@
 
     if-eqz v0, :cond_32
 
-    .line 2139
+    .line 2161
     const-string v0, "Night_Light"
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoType:Ljava/lang/String;
 
-    .line 2140
+    .line 2162
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v0
@@ -4523,7 +4571,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setSuperNightLightValue(I)V
 
-    .line 2142
+    .line 2164
     :cond_32
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoType:Ljava/lang/String;
 
@@ -4533,7 +4581,7 @@
 .method public getSuperNightMode()Ljava/lang/String;
     .registers 1
 
-    .line 2117
+    .line 2139
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightMode:Ljava/lang/String;
 
     return-object p0
@@ -4542,7 +4590,7 @@
 .method public getSuperResolutionMode()I
     .registers 1
 
-    .line 1701
+    .line 1723
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperResolutionMode:I
 
     return p0
@@ -4551,7 +4599,7 @@
 .method public getSystemUserID()I
     .registers 1
 
-    .line 3111
+    .line 3146
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSystemUserID:I
 
     return p0
@@ -4560,7 +4608,7 @@
 .method public getTAPSCaptureNeedYuvSize()I
     .registers 1
 
-    .line 2899
+    .line 2934
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTAPSCaptureNeedYuvSize:I
 
     return p0
@@ -4569,7 +4617,7 @@
 .method public getTFEVCheckerEnable()I
     .registers 1
 
-    .line 1811
+    .line 1833
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTFEVCheckerEnable:I
 
     return p0
@@ -4578,7 +4626,7 @@
 .method public getTfPortraitMode()I
     .registers 1
 
-    .line 1795
+    .line 1817
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTfPortraitMode:I
 
     return p0
@@ -4587,7 +4635,7 @@
 .method public getThumbnailSize()Landroid/util/Size;
     .registers 1
 
-    .line 731
+    .line 737
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mThumbnailSize:Landroid/util/Size;
 
     return-object p0
@@ -4596,7 +4644,7 @@
 .method public getTranFaceDetectMode()I
     .registers 2
 
-    .line 2234
+    .line 2256
     sget-boolean v0, Lcom/transsion/camera/utils/FeatureSupport;->sEnableFaceInfoDetect:Z
 
     if-nez v0, :cond_6
@@ -4605,7 +4653,7 @@
 
     return p0
 
-    .line 2235
+    .line 2257
     :cond_6
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranFaceDetectMode:I
 
@@ -4615,7 +4663,7 @@
 .method public getTranssionAINRMode()I
     .registers 1
 
-    .line 3004
+    .line 3039
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionAINRMode:I
 
     return p0
@@ -4624,7 +4672,7 @@
 .method public getTranssionAnimalEyeDetection()Ljava/lang/String;
     .registers 1
 
-    .line 2275
+    .line 2297
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAnimalEyeDetection:Ljava/lang/String;
 
     return-object p0
@@ -4633,7 +4681,7 @@
 .method public getTranssionAsdMode()I
     .registers 2
 
-    .line 1365
+    .line 1387
     iget v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAsdMode:I
 
     if-lez v0, :cond_11
@@ -4662,16 +4710,25 @@
 .method public getTranssionAsdVersion()I
     .registers 1
 
-    .line 1382
+    .line 1404
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAsdVersion:I
 
     return p0
 .end method
 
+.method public getTranssionAutoFocusSwitch()Ljava/lang/String;
+    .registers 1
+
+    .line 2306
+    iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoFocusSwitch:Ljava/lang/String;
+
+    return-object p0
+.end method
+
 .method public getTranssionAutoMacroSwitch()Ljava/lang/String;
     .registers 1
 
-    .line 2283
+    .line 2318
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoMacroSwitch:Ljava/lang/String;
 
     return-object p0
@@ -4680,7 +4737,7 @@
 .method public getTranssionAutoMacroSwitchSetting()Ljava/lang/String;
     .registers 1
 
-    .line 2290
+    .line 2325
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoMacroSwitchSetting:Ljava/lang/String;
 
     return-object p0
@@ -4689,7 +4746,7 @@
 .method public getTranssionCameraMode()I
     .registers 1
 
-    .line 2243
+    .line 2265
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionCameraMode:I
 
     return p0
@@ -4698,7 +4755,7 @@
 .method public getTranssionCusIspAsd()[I
     .registers 1
 
-    .line 1390
+    .line 1412
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAsdIsp:[I
 
     return-object p0
@@ -4707,7 +4764,7 @@
 .method public getTranssionEyeDetection()Ljava/lang/String;
     .registers 1
 
-    .line 2259
+    .line 2281
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEyeDetection:Ljava/lang/String;
 
     return-object p0
@@ -4716,7 +4773,7 @@
 .method public getTranssionFilterId()I
     .registers 1
 
-    .line 1440
+    .line 1462
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionFilterId:I
 
     return p0
@@ -4725,7 +4782,7 @@
 .method public getTranssionHDR()I
     .registers 1
 
-    .line 1751
+    .line 1773
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionHDR:I
 
     return p0
@@ -4734,7 +4791,7 @@
 .method public getTranssionHumanDetection()I
     .registers 1
 
-    .line 2267
+    .line 2289
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHumanDetection:I
 
     return p0
@@ -4743,7 +4800,7 @@
 .method public getTranssionLowLightMode()I
     .registers 1
 
-    .line 1612
+    .line 1634
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLowLightMode:I
 
     return p0
@@ -4752,7 +4809,7 @@
 .method public getTranssionNightMode()I
     .registers 1
 
-    .line 1604
+    .line 1626
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightMode:I
 
     return p0
@@ -4761,7 +4818,7 @@
 .method public getTranssionPluginEnable()I
     .registers 1
 
-    .line 1997
+    .line 2019
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionPluginEnable:I
 
     return p0
@@ -4770,7 +4827,7 @@
 .method public getTranssionSmartDenoise()I
     .registers 1
 
-    .line 1648
+    .line 1670
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDenoiseMode:I
 
     return p0
@@ -4779,7 +4836,7 @@
 .method public getTranssionSuperNightFilterId()I
     .registers 1
 
-    .line 1472
+    .line 1494
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionSuperNightFilterId:I
 
     return p0
@@ -4788,7 +4845,7 @@
 .method public getTranssionTurboFusionMode()I
     .registers 3
 
-    .line 1783
+    .line 1805
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getDebugTurboFusionMode()I
 
     move-result v0
@@ -4799,9 +4856,18 @@
 
     return v0
 
-    .line 1787
+    .line 1809
     :cond_8
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionTurboFusionMode:I
+
+    return p0
+.end method
+
+.method public getTranssionUseAutoFocusSwitch()Z
+    .registers 1
+
+    .line 2310
+    iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mUseAutoFocusSwitch:Z
 
     return p0
 .end method
@@ -4809,7 +4875,7 @@
 .method public getTranssionVideoEffectId()I
     .registers 1
 
-    .line 1512
+    .line 1534
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoEffectId:I
 
     return p0
@@ -4818,7 +4884,7 @@
 .method public getTranssionVideoFilterId()I
     .registers 1
 
-    .line 1488
+    .line 1510
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoFilterId:I
 
     return p0
@@ -4827,7 +4893,7 @@
 .method public getTranssionVideoFilterSkinType()I
     .registers 1
 
-    .line 1496
+    .line 1518
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoFilterSkinType:I
 
     return p0
@@ -4836,7 +4902,7 @@
 .method public getTranssionVideoFrameId()I
     .registers 1
 
-    .line 1520
+    .line 1542
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoFrameId:I
 
     return p0
@@ -4845,7 +4911,7 @@
 .method public getViUllEnable()I
     .registers 1
 
-    .line 3036
+    .line 3071
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mViUllEnable:I
 
     return p0
@@ -4854,7 +4920,7 @@
 .method public getVideo2kCapSize()Landroid/util/Size;
     .registers 1
 
-    .line 2868
+    .line 2903
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->m2kSize:Landroid/util/Size;
 
     return-object p0
@@ -4863,7 +4929,7 @@
 .method public getVideoFilterLevel()I
     .registers 1
 
-    .line 1504
+    .line 1526
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoFilterLevel:I
 
     return p0
@@ -4872,7 +4938,7 @@
 .method public getVideoHDRMode()Ljava/lang/String;
     .registers 1
 
-    .line 1340
+    .line 1362
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoHDRMode:Ljava/lang/String;
 
     return-object p0
@@ -4881,7 +4947,7 @@
 .method public getVideoHdrFormat()Ljava/lang/String;
     .registers 1
 
-    .line 3118
+    .line 3153
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoHDRFormat:Ljava/lang/String;
 
     return-object p0
@@ -4890,7 +4956,7 @@
 .method public getVideoInterpolationEnable()I
     .registers 1
 
-    .line 2226
+    .line 2248
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoInterpolationEnable:I
 
     return p0
@@ -4899,7 +4965,7 @@
 .method public getVideoNightTranYUVMode()I
     .registers 1
 
-    .line 2318
+    .line 2353
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoNightTranYUVMode:I
 
     return p0
@@ -4908,7 +4974,7 @@
 .method public getVideoOrientation()I
     .registers 1
 
-    .line 779
+    .line 785
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoOrientation:I
 
     return p0
@@ -4917,7 +4983,7 @@
 .method public getVideoPortraitLevel()I
     .registers 1
 
-    .line 1254
+    .line 1276
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPortraitLevel:I
 
     return p0
@@ -4926,7 +4992,7 @@
 .method public getVideoPortraitMode()I
     .registers 1
 
-    .line 2298
+    .line 2333
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPortraitMode:I
 
     return p0
@@ -4935,7 +5001,7 @@
 .method public getVideoPreIspMode()I
     .registers 1
 
-    .line 2739
+    .line 2774
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPreIspMode:I
 
     return p0
@@ -4944,7 +5010,7 @@
 .method public getVideoSpotLevel()I
     .registers 1
 
-    .line 1262
+    .line 1284
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSpotLevel:I
 
     return p0
@@ -4953,7 +5019,7 @@
 .method public getVideoSpotMode()I
     .registers 1
 
-    .line 2306
+    .line 2341
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSpotMode:I
 
     return p0
@@ -4962,7 +5028,7 @@
 .method public getVideoSuperNightMode()I
     .registers 1
 
-    .line 2314
+    .line 2349
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightMode:I
 
     return p0
@@ -4971,7 +5037,7 @@
 .method public getVideoSuperNightResolution()I
     .registers 1
 
-    .line 2338
+    .line 2373
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightResolution:I
 
     return p0
@@ -4980,7 +5046,7 @@
 .method public getVideoSuperNightScene()I
     .registers 1
 
-    .line 2386
+    .line 2421
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightAlgoScene:I
 
     return p0
@@ -4989,7 +5055,7 @@
 .method public getVideoSuperNightYUVMode()I
     .registers 1
 
-    .line 2346
+    .line 2381
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightYUVMode:I
 
     return p0
@@ -4998,7 +5064,7 @@
 .method public getVsdofLevel()Ljava/lang/String;
     .registers 1
 
-    .line 1246
+    .line 1268
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVsdofLevel:Ljava/lang/String;
 
     return-object p0
@@ -5007,7 +5073,7 @@
 .method public getYuvCaptureFlipMode()Ljava/lang/String;
     .registers 1
 
-    .line 1923
+    .line 1945
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mYuvCaptureFlipMode:Ljava/lang/String;
 
     return-object p0
@@ -5016,7 +5082,7 @@
 .method public getZoomEisMode()I
     .registers 1
 
-    .line 2907
+    .line 2942
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZoomEisMode:I
 
     return p0
@@ -5025,7 +5091,7 @@
 .method public getZoomRatio()I
     .registers 1
 
-    .line 851
+    .line 857
     iget p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZoomRatio:I
 
     return p0
@@ -5034,7 +5100,7 @@
 .method public hasValidFace(Z)V
     .registers 2
 
-    .line 1411
+    .line 1433
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDXOHasValidFace:Z
 
     return-void
@@ -5043,7 +5109,7 @@
 .method public hasValidFace()Z
     .registers 1
 
-    .line 1415
+    .line 1437
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDXOHasValidFace:Z
 
     return p0
@@ -5052,7 +5118,7 @@
 .method public isAIRawLiteClose()Z
     .registers 3
 
-    .line 1053
+    .line 1075
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAIRawMode()I
 
     move-result v0
@@ -5061,7 +5127,7 @@
 
     if-nez v0, :cond_f
 
-    .line 1054
+    .line 1076
     sget-object p0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "isAIRawLiteClose: aiRawScene getAIRawMode = 0"
@@ -5070,7 +5136,7 @@
 
     return v1
 
-    .line 1057
+    .line 1079
     :cond_f
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAisMode()I
 
@@ -5078,7 +5144,7 @@
 
     if-ne v0, v1, :cond_1d
 
-    .line 1058
+    .line 1080
     sget-object p0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "isAIRawLiteClose: return 0 for AisMode on"
@@ -5087,7 +5153,7 @@
 
     return v1
 
-    .line 1061
+    .line 1083
     :cond_1d
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLivePhotoMode()I
 
@@ -5095,7 +5161,7 @@
 
     if-ne v0, v1, :cond_2b
 
-    .line 1062
+    .line 1084
     sget-object p0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "isAIRawLiteClose: return 0 for LivePhoto on"
@@ -5104,7 +5170,7 @@
 
     return v1
 
-    .line 1065
+    .line 1087
     :cond_2b
     iget-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsDetectedMoon:Z
 
@@ -5116,7 +5182,7 @@
 
     if-ne p0, v1, :cond_3d
 
-    .line 1066
+    .line 1088
     sget-object p0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "isAIRawLiteClose: return 0 for AiMoon on"
@@ -5134,7 +5200,7 @@
 .method public isAiRawLiteSupport()Z
     .registers 1
 
-    .line 2125
+    .line 2147
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsAiRawLiteSupport:Z
 
     return p0
@@ -5143,7 +5209,7 @@
 .method public isBWConvertEnable()Z
     .registers 1
 
-    .line 1286
+    .line 1308
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBWConvertEnable:Z
 
     return p0
@@ -5152,7 +5218,7 @@
 .method public isBWPortraitEnable()Z
     .registers 1
 
-    .line 1278
+    .line 1300
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBWPortraitEnable:Z
 
     return p0
@@ -5161,7 +5227,7 @@
 .method public isBgServiceEnable()Z
     .registers 1
 
-    .line 2194
+    .line 2216
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBGServiceEnable:Z
 
     return p0
@@ -5170,7 +5236,7 @@
 .method public isCapturing()Z
     .registers 1
 
-    .line 2503
+    .line 2538
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCapturing:Z
 
     return p0
@@ -5179,7 +5245,7 @@
 .method public isCurrentAppModeRequiredOnContinuousShot()Z
     .registers 1
 
-    .line 2972
+    .line 3007
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsCurrentAppModeRequiredOnContinuousShot:Z
 
     return p0
@@ -5188,7 +5254,7 @@
 .method public isEVListValid()Z
     .registers 2
 
-    .line 1145
+    .line 1167
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getEVList()[I
 
     move-result-object v0
@@ -5222,7 +5288,7 @@
 .method public isExtraCaptureEnableZSL()Z
     .registers 1
 
-    .line 2923
+    .line 2958
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsExtraCaptureEnableZSL:Z
 
     return p0
@@ -5231,7 +5297,7 @@
 .method public isFaceDetectionEnable()Z
     .registers 1
 
-    .line 2483
+    .line 2518
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceDetectionEnable:Z
 
     return p0
@@ -5240,7 +5306,7 @@
 .method public isHeavyCapturing()Z
     .registers 1
 
-    .line 988
+    .line 1010
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHeavyCapturing:Z
 
     return p0
@@ -5249,7 +5315,7 @@
 .method public isLongFocusCamera()Z
     .registers 1
 
-    .line 2101
+    .line 2123
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsLongFocusCamera:Z
 
     return p0
@@ -5258,7 +5324,7 @@
 .method public isMirrorEnable()Z
     .registers 1
 
-    .line 1270
+    .line 1292
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMirrorEnable:Z
 
     return p0
@@ -5267,7 +5333,7 @@
 .method public isModeUltrazoomEnable()Z
     .registers 1
 
-    .line 1314
+    .line 1336
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mModeUltrazoomEnable:Z
 
     return p0
@@ -5276,7 +5342,7 @@
 .method public isPreviewStreamEnabled()Z
     .registers 1
 
-    .line 2860
+    .line 2895
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewStreamEnable:Z
 
     return p0
@@ -5285,7 +5351,7 @@
 .method public isProfessionModeEnable()Z
     .registers 1
 
-    .line 1306
+    .line 1328
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProfessionalModeEnable:Z
 
     return p0
@@ -5294,7 +5360,7 @@
 .method public isQuickPreviewEnable()Z
     .registers 1
 
-    .line 1290
+    .line 1312
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mQuickPreviewEnable:Z
 
     return p0
@@ -5303,7 +5369,7 @@
 .method public isRTDofEnable()Z
     .registers 1
 
-    .line 880
+    .line 902
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRTDofEnable:Z
 
     return p0
@@ -5312,7 +5378,7 @@
 .method public isRecordingHint()Z
     .registers 1
 
-    .line 944
+    .line 966
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRecordingHint:Z
 
     return p0
@@ -5321,7 +5387,7 @@
 .method public isSupportedRawSR()Z
     .registers 1
 
-    .line 1733
+    .line 1755
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSupportedRawSR:Z
 
     return p0
@@ -5330,7 +5396,7 @@
 .method public isTZServiceEnable()Z
     .registers 1
 
-    .line 2202
+    .line 2224
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTZServiceEnable:Z
 
     return p0
@@ -5339,7 +5405,7 @@
 .method public isWideCamera()Z
     .registers 1
 
-    .line 2093
+    .line 2115
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsWideCamera:Z
 
     return p0
@@ -5348,7 +5414,7 @@
 .method public isZSLEnable()Z
     .registers 1
 
-    .line 871
+    .line 893
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZSLEnable:Z
 
     return p0
@@ -5357,7 +5423,7 @@
 .method public needFocusModeAuto()Z
     .registers 1
 
-    .line 2479
+    .line 2514
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNeedFocusModeAuto:Z
 
     return p0
@@ -5366,7 +5432,7 @@
 .method public needLockAe(Z)V
     .registers 2
 
-    .line 2507
+    .line 2542
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNeedLockAe:Z
 
     return-void
@@ -5375,7 +5441,7 @@
 .method public needLockAe()Z
     .registers 1
 
-    .line 2511
+    .line 2546
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNeedLockAe:Z
 
     return p0
@@ -5384,7 +5450,7 @@
 .method public openYUVDataWhenRecording(Z)V
     .registers 2
 
-    .line 2823
+    .line 2858
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSupportYUVPreviewDataWhenRecording:Z
 
     return-void
@@ -5393,7 +5459,7 @@
 .method public overrideSensorRect(Landroid/graphics/Rect;)V
     .registers 2
 
-    .line 948
+    .line 970
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mOverrideSensorRect:Landroid/graphics/Rect;
 
     return-void
@@ -5402,7 +5468,7 @@
 .method public postAlgoOn()Z
     .registers 1
 
-    .line 964
+    .line 986
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsPostAlgoOn:Z
 
     return p0
@@ -5411,7 +5477,7 @@
 .method public set360VideoHDRInitMode(I)V
     .registers 2
 
-    .line 1357
+    .line 1379
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->m360VideoHDRInitMode:I
 
     return-void
@@ -5420,14 +5486,14 @@
 .method public set360VideoHDRMode(I)V
     .registers 3
 
-    .line 1348
+    .line 1370
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->m360VideoHDRMode:I
 
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_8
 
-    .line 1349
+    .line 1371
     const-string p1, "mtk_360hdr"
 
     goto :goto_a
@@ -5444,7 +5510,7 @@
 .method public set360VideoHDRScene(I)V
     .registers 2
 
-    .line 2382
+    .line 2417
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideo360HDRAlgoScene:I
 
     return-void
@@ -5453,7 +5519,7 @@
 .method public setAIRawLiteMotionDetection(I)V
     .registers 2
 
-    .line 1133
+    .line 1155
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAIRawLiteMotionDetection:I
 
     return-void
@@ -5462,7 +5528,7 @@
 .method public setAIRawLiteSupportPortraitEnhance(Z)V
     .registers 2
 
-    .line 2679
+    .line 2714
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAIRawLiteSupportPortraitEnhance:Z
 
     return-void
@@ -5471,7 +5537,7 @@
 .method public setAIRawMode(I)V
     .registers 2
 
-    .line 2671
+    .line 2706
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAIRawMode:I
 
     return-void
@@ -5480,7 +5546,7 @@
 .method public setAWBLockStatus(Z)V
     .registers 2
 
-    .line 2049
+    .line 2071
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAWBLockStatus:Z
 
     return-void
@@ -5489,7 +5555,7 @@
 .method public setAWBMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 2025
+    .line 2047
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAWBMode:Ljava/lang/String;
 
     return-void
@@ -5498,7 +5564,7 @@
 .method public setAbeHdrCheckMode(I)V
     .registers 2
 
-    .line 2655
+    .line 2690
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAbeHdrCheckMode:I
 
     return-void
@@ -5507,7 +5573,7 @@
 .method public setAdrcgainValue(F)V
     .registers 2
 
-    .line 1771
+    .line 1793
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAdrcGainValue:F
 
     return-void
@@ -5516,7 +5582,7 @@
 .method public setAeLock(Z)V
     .registers 2
 
-    .line 892
+    .line 914
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAeLock:Z
 
     return-void
@@ -5525,7 +5591,7 @@
 .method public setAeState(I)V
     .registers 2
 
-    .line 1008
+    .line 1030
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAeStateValue:I
 
     return-void
@@ -5534,7 +5600,7 @@
 .method public setAfFfMode(I)V
     .registers 2
 
-    .line 1977
+    .line 1999
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAfFfMode:I
 
     return-void
@@ -5543,7 +5609,7 @@
 .method public setAiMoonMode(I)V
     .registers 2
 
-    .line 2422
+    .line 2457
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAiMoonMode:I
 
     return-void
@@ -5552,7 +5618,7 @@
 .method public setAiRawLiteSupport(Z)V
     .registers 2
 
-    .line 2121
+    .line 2143
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsAiRawLiteSupport:Z
 
     return-void
@@ -5561,7 +5627,7 @@
 .method public setAiRawScene(I)V
     .registers 2
 
-    .line 1073
+    .line 1095
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAiRawScene:I
 
     return-void
@@ -5570,7 +5636,7 @@
 .method public setAirawSN2SRMode(I)V
     .registers 2
 
-    .line 1799
+    .line 1821
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAirawSN2SRMode:I
 
     return-void
@@ -5579,7 +5645,7 @@
 .method public setAisMode(I)V
     .registers 2
 
-    .line 2719
+    .line 2754
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAisMode:I
 
     return-void
@@ -5588,7 +5654,7 @@
 .method public setAisMorpho(I)V
     .registers 2
 
-    .line 2727
+    .line 2762
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAisMorpho:I
 
     return-void
@@ -5597,7 +5663,7 @@
 .method public setAntiVideoMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1961
+    .line 1983
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAntiVideo:Ljava/lang/String;
 
     return-void
@@ -5606,7 +5672,7 @@
 .method public setAppModeId(Ljava/lang/String;)V
     .registers 2
 
-    .line 2551
+    .line 2586
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAppModeId:Ljava/lang/String;
 
     return-void
@@ -5615,7 +5681,7 @@
 .method public setArcFilterId(I)V
     .registers 2
 
-    .line 1428
+    .line 1450
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mArcFilterId:I
 
     return-void
@@ -5624,7 +5690,7 @@
 .method public setAsdEffect(I)V
     .registers 2
 
-    .line 2350
+    .line 2385
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEffect:I
 
     return-void
@@ -5633,7 +5699,7 @@
 .method public setAutoFpsModeForISP(I)V
     .registers 2
 
-    .line 2783
+    .line 2818
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoFpsModeForISP:I
 
     return-void
@@ -5642,7 +5708,7 @@
 .method public setAutoWatermarkMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1853
+    .line 1875
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoWatermarkMode:Ljava/lang/String;
 
     return-void
@@ -5651,7 +5717,7 @@
 .method public setBGImageReaderId(I)V
     .registers 2
 
-    .line 2206
+    .line 2228
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBGImageReaderId:I
 
     return-void
@@ -5660,7 +5726,7 @@
 .method public setBMCustomZSLBufSize(I)V
     .registers 2
 
-    .line 2888
+    .line 2923
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBMCustomZslBufSize:I
 
     return-void
@@ -5669,7 +5735,7 @@
 .method public setBMLowLightMode(I)V
     .registers 2
 
-    .line 2872
+    .line 2907
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->bmLowLightMode:I
 
     return-void
@@ -5678,7 +5744,7 @@
 .method public setBMMultiFrameNum(I)V
     .registers 2
 
-    .line 2880
+    .line 2915
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->bmMultiFrameNum:I
 
     return-void
@@ -5687,7 +5753,7 @@
 .method public setBestMomentDetectMode(I)V
     .registers 2
 
-    .line 2832
+    .line 2867
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBestMomentDetectMode:I
 
     return-void
@@ -5696,7 +5762,7 @@
 .method public setBestMomentRawHDRMode(I)V
     .registers 2
 
-    .line 2840
+    .line 2875
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBestMomentRawHDRMode:I
 
     return-void
@@ -5705,7 +5771,7 @@
 .method public setBrightnessValue(I)V
     .registers 2
 
-    .line 1004
+    .line 1026
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBrightnessValue:I
 
     return-void
@@ -5714,7 +5780,7 @@
 .method public setCaptureCustomTuning(Ljava/lang/String;)V
     .registers 2
 
-    .line 2627
+    .line 2662
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureCustomTuning:Ljava/lang/String;
 
     return-void
@@ -5723,7 +5789,7 @@
 .method public setCaptureISPTunning(I)V
     .registers 2
 
-    .line 2960
+    .line 2995
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureISPTunning:I
 
     return-void
@@ -5732,7 +5798,7 @@
 .method public setCaptureId(I)V
     .registers 2
 
-    .line 976
+    .line 998
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureId:I
 
     return-void
@@ -5741,7 +5807,7 @@
 .method public setCaptureTag(I)V
     .registers 2
 
-    .line 2927
+    .line 2962
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureTag:I
 
     return-void
@@ -5750,7 +5816,7 @@
 .method public setCaptureTime(J)V
     .registers 3
 
-    .line 3137
+    .line 3172
     iput-wide p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureTime:J
 
     return-void
@@ -5759,7 +5825,7 @@
 .method public setCaptureZSLTimestamps([J)V
     .registers 2
 
-    .line 2976
+    .line 3011
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCaptureZSLTimestamps:[J
 
     return-void
@@ -5768,7 +5834,7 @@
 .method public setCapturing(Z)V
     .registers 2
 
-    .line 2499
+    .line 2534
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCapturing:Z
 
     return-void
@@ -5777,8 +5843,26 @@
 .method public setCelebritySceneMode(I)V
     .registers 2
 
-    .line 3040
+    .line 3075
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCelebritySceneMode:I
+
+    return-void
+.end method
+
+.method public setClickDownZoomRatio(I)V
+    .registers 2
+
+    .line 873
+    iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mClickDownZoomRatio:I
+
+    return-void
+.end method
+
+.method public setClickUpZoomRatio(I)V
+    .registers 2
+
+    .line 865
+    iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mClickUpZoomRatio:I
 
     return-void
 .end method
@@ -5786,7 +5870,7 @@
 .method public setColorLevel(Ljava/lang/String;)V
     .registers 2
 
-    .line 2663
+    .line 2698
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mColorLevel:Ljava/lang/String;
 
     return-void
@@ -5795,7 +5879,7 @@
 .method public setCurrentAppModeRequiredOnContinuousShot(Z)V
     .registers 2
 
-    .line 2968
+    .line 3003
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsCurrentAppModeRequiredOnContinuousShot:Z
 
     return-void
@@ -5804,7 +5888,7 @@
 .method public setCurrentFaces(I)V
     .registers 2
 
-    .line 2992
+    .line 3027
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mCurrentFaces:I
 
     return-void
@@ -5813,7 +5897,7 @@
 .method public setDataFlowType(I)V
     .registers 2
 
-    .line 743
+    .line 749
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDataFlowType:I
 
     return-void
@@ -5822,7 +5906,7 @@
 .method public setDeBandingMode(I)V
     .registers 2
 
-    .line 2952
+    .line 2987
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mBmDebandingMode:I
 
     return-void
@@ -5831,7 +5915,7 @@
 .method public setDistortionCorrectionMode(I)V
     .registers 2
 
-    .line 1837
+    .line 1859
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDistortionCorrectionMode:I
 
     return-void
@@ -5840,7 +5924,7 @@
 .method public setDistortionCorrectionPreviewEnable(Ljava/lang/String;)V
     .registers 2
 
-    .line 1845
+    .line 1867
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDistortionCorrectionPreviewEnable:Ljava/lang/String;
 
     return-void
@@ -5849,7 +5933,7 @@
 .method public setEVList([I)V
     .registers 2
 
-    .line 1141
+    .line 1163
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEVList:[I
 
     return-void
@@ -5858,10 +5942,10 @@
 .method public setEditWatermarkMode(ZLjava/lang/String;)V
     .registers 3
 
-    .line 1857
+    .line 1879
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEditWatermarkSupport:Z
 
-    .line 1858
+    .line 1880
     iput-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEditWatermarkMode:Ljava/lang/String;
 
     return-void
@@ -5870,7 +5954,7 @@
 .method public setExcludeVideoMakeupBeauty(I)V
     .registers 2
 
-    .line 1588
+    .line 1610
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExcludeVideoMakeupBeauty:I
 
     return-void
@@ -5879,7 +5963,7 @@
 .method public setExifModeInfo(I)V
     .registers 2
 
-    .line 2711
+    .line 2746
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExifModeInfo:I
 
     return-void
@@ -5888,7 +5972,7 @@
 .method public setExposureCompensation(I)V
     .registers 2
 
-    .line 884
+    .line 906
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExposureCompensation:I
 
     return-void
@@ -5897,7 +5981,7 @@
 .method public setExposureTime(J)V
     .registers 3
 
-    .line 1171
+    .line 1193
     iput-wide p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExposureTime:J
 
     return-void
@@ -5906,7 +5990,7 @@
 .method public setExternalIspMode(I)V
     .registers 2
 
-    .line 2743
+    .line 2778
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExternalIspMode:I
 
     return-void
@@ -5915,7 +5999,7 @@
 .method public setExtraCaptureCount(I)V
     .registers 2
 
-    .line 2911
+    .line 2946
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mExtraCaptureCount:I
 
     return-void
@@ -5924,7 +6008,7 @@
 .method public setExtraCaptureEnableZSL(Z)V
     .registers 2
 
-    .line 2919
+    .line 2954
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsExtraCaptureEnableZSL:Z
 
     return-void
@@ -5933,7 +6017,7 @@
 .method public setFaceAttributeInfo([I)V
     .registers 2
 
-    .line 2491
+    .line 2526
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceAttributeInfo:[I
 
     return-void
@@ -5942,7 +6026,7 @@
 .method public setFaceBeautyFeaturesLevel([I)V
     .registers 2
 
-    .line 1233
+    .line 1255
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyFeaturesLevel:[I
 
     return-void
@@ -5951,7 +6035,7 @@
 .method public setFaceBeautyLevel(Ljava/lang/String;)V
     .registers 2
 
-    .line 1217
+    .line 1239
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyLevel:Ljava/lang/String;
 
     return-void
@@ -5960,7 +6044,7 @@
 .method public setFaceBeautyMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1209
+    .line 1231
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyMode:Ljava/lang/String;
 
     return-void
@@ -5969,7 +6053,7 @@
 .method public setFaceDetectionEnable(Z)V
     .registers 2
 
-    .line 2487
+    .line 2522
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceDetectionEnable:Z
 
     return-void
@@ -5978,7 +6062,7 @@
 .method public setFaceProportion(F)V
     .registers 2
 
-    .line 3063
+    .line 3098
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceProportion:F
 
     return-void
@@ -5987,7 +6071,7 @@
 .method public setFakeDualLensMode(I)V
     .registers 2
 
-    .line 2214
+    .line 2236
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFakeDualLensMode:I
 
     return-void
@@ -5996,7 +6080,7 @@
 .method public setFlareCaptureEnable(I)V
     .registers 2
 
-    .line 2943
+    .line 2978
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlareCaptureEnable:I
 
     return-void
@@ -6005,7 +6089,7 @@
 .method public setFlareLocation([F)V
     .registers 2
 
-    .line 2799
+    .line 2834
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPMasterFlareLocation:[F
 
     return-void
@@ -6014,7 +6098,7 @@
 .method public setFlashFacade(Ljava/lang/String;)V
     .registers 2
 
-    .line 2555
+    .line 2590
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashFacade:Ljava/lang/String;
 
     return-void
@@ -6023,7 +6107,7 @@
 .method public setFlashMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 822
+    .line 828
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashMode:Ljava/lang/String;
 
     return-void
@@ -6032,7 +6116,7 @@
 .method public setFlashSnapAutoCaptureMode(I)V
     .registers 2
 
-    .line 2844
+    .line 2879
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashSnapAutoCaptureMode:I
 
     return-void
@@ -6041,7 +6125,7 @@
 .method public setFlashStyle(Ljava/lang/String;)V
     .registers 2
 
-    .line 2579
+    .line 2614
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFlashStyle:Ljava/lang/String;
 
     return-void
@@ -6050,7 +6134,7 @@
 .method public setFocalLength(I)V
     .registers 2
 
-    .line 2815
+    .line 2850
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocalLength:I
 
     return-void
@@ -6059,14 +6143,14 @@
 .method public setFocusAreas(Ljava/util/List;)V
     .registers 3
 
-    .line 800
+    .line 806
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusAreas:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
     if-eqz p1, :cond_c
 
-    .line 802
+    .line 808
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusAreas:Ljava/util/List;
 
     invoke-interface {p0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
@@ -6078,7 +6162,7 @@
 .method public setFocusDistance(F)V
     .registers 2
 
-    .line 1183
+    .line 1205
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusDistance:F
 
     return-void
@@ -6087,7 +6171,7 @@
 .method public setFocusLength(F)V
     .registers 2
 
-    .line 1191
+    .line 1213
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusLength:F
 
     return-void
@@ -6096,7 +6180,7 @@
 .method public setFocusMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 791
+    .line 797
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFocusMode:Ljava/lang/String;
 
     return-void
@@ -6105,7 +6189,7 @@
 .method public setFocusModeAuto(Z)V
     .registers 2
 
-    .line 2475
+    .line 2510
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNeedFocusModeAuto:Z
 
     return-void
@@ -6114,7 +6198,7 @@
 .method public setFovWideCrop(Z)V
     .registers 2
 
-    .line 859
+    .line 881
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFovWideCrop:Z
 
     return-void
@@ -6123,7 +6207,7 @@
 .method public setFrontDualFlashColorTemp(I)V
     .registers 2
 
-    .line 2009
+    .line 2031
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFrontDualFlashColorTemp:I
 
     return-void
@@ -6132,7 +6216,7 @@
 .method public setFrontDualFlashStrengthMode(I)V
     .registers 2
 
-    .line 2017
+    .line 2039
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFrontDualFlashStrengthMode:I
 
     return-void
@@ -6141,7 +6225,7 @@
 .method public setFusionMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 2077
+    .line 2099
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFusionMode:Ljava/lang/String;
 
     return-void
@@ -6150,7 +6234,7 @@
 .method public setGenderAttributeValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2443
+    .line 2478
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGenderAttributeValue:Ljava/lang/String;
 
     return-void
@@ -6159,7 +6243,7 @@
 .method public setGoldWaterMarkSize([I)V
     .registers 2
 
-    .line 1903
+    .line 1925
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWaterMarkSize:[I
 
     return-void
@@ -6168,10 +6252,10 @@
 .method public setGoldWatermarkMode(ZLjava/lang/String;)V
     .registers 3
 
-    .line 1862
+    .line 1884
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkSupport:Z
 
-    .line 1863
+    .line 1885
     iput-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkMode:Ljava/lang/String;
 
     return-void
@@ -6180,7 +6264,7 @@
 .method public setGoldWatermarkType(Ljava/lang/String;)V
     .registers 2
 
-    .line 1895
+    .line 1917
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkType:Ljava/lang/String;
 
     return-void
@@ -6189,7 +6273,7 @@
 .method public setGroupCaptureEnable(I)V
     .registers 2
 
-    .line 2935
+    .line 2970
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGroupCaptureEnable:I
 
     return-void
@@ -6198,7 +6282,7 @@
 .method public setHALBMLowLightMode(I)V
     .registers 2
 
-    .line 3008
+    .line 3043
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHALBMLowLightMode:I
 
     return-void
@@ -6207,7 +6291,7 @@
 .method public setHDRAeExpoInfo([I)V
     .registers 2
 
-    .line 1101
+    .line 1123
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHDRAeExpoInfo:[I
 
     return-void
@@ -6216,7 +6300,7 @@
 .method public setHdr10PlusMode(I)V
     .registers 5
 
-    .line 3128
+    .line 3163
     sget-object v0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6235,7 +6319,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3129
+    .line 3164
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHdr10PlusMode:I
 
     return-void
@@ -6244,7 +6328,7 @@
 .method public setHeavyCapturing(Z)V
     .registers 2
 
-    .line 992
+    .line 1014
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHeavyCapturing:Z
 
     return-void
@@ -6253,7 +6337,7 @@
 .method public setHeavyCapturingBV(I)V
     .registers 2
 
-    .line 996
+    .line 1018
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHeavyCapturingBV:I
 
     return-void
@@ -6262,7 +6346,7 @@
 .method public setHighFpsMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 2073
+    .line 2095
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHighFpsMode:Ljava/lang/String;
 
     return-void
@@ -6271,7 +6355,7 @@
 .method public setHighLightMode(I)V
     .registers 2
 
-    .line 2515
+    .line 2550
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHighLightMode:I
 
     return-void
@@ -6280,7 +6364,7 @@
 .method public setHighPixelMode(I)V
     .registers 2
 
-    .line 1660
+    .line 1682
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHighPixelMode:I
 
     return-void
@@ -6289,7 +6373,7 @@
 .method public setHumanBox([I)V
     .registers 2
 
-    .line 3122
+    .line 3157
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHumanBox:[I
 
     return-void
@@ -6298,7 +6382,7 @@
 .method public setISOValue(I)V
     .registers 2
 
-    .line 1163
+    .line 1185
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mISOValue:I
 
     return-void
@@ -6307,7 +6391,7 @@
 .method public setISPTuningEnable(I)V
     .registers 2
 
-    .line 2771
+    .line 2806
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mISPTuningEnable:I
 
     return-void
@@ -6316,7 +6400,7 @@
 .method public setImageStyleId(I)V
     .registers 2
 
-    .line 1452
+    .line 1474
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mImageStyleId:I
 
     return-void
@@ -6325,7 +6409,7 @@
 .method public setIncreaseFrequencyEnable(I)V
     .registers 2
 
-    .line 2984
+    .line 3019
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIncreaseFreqEnable:I
 
     return-void
@@ -6334,7 +6418,7 @@
 .method public setIs24HourFormat(I)V
     .registers 2
 
-    .line 1887
+    .line 1909
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIs24HourFormat:I
 
     return-void
@@ -6343,7 +6427,7 @@
 .method public setIsBurstCapturing(Z)V
     .registers 2
 
-    .line 1370
+    .line 1392
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsBurstCapturing:Z
 
     return-void
@@ -6352,7 +6436,7 @@
 .method public setJpegGPSLocation(Landroid/location/Location;)V
     .registers 2
 
-    .line 783
+    .line 789
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLocation:Landroid/location/Location;
 
     return-void
@@ -6361,7 +6445,7 @@
 .method public setJpegOrientation(I)V
     .registers 2
 
-    .line 767
+    .line 773
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mJpegOrientation:I
 
     return-void
@@ -6370,7 +6454,7 @@
 .method public setLastShotNotSkip(Z)V
     .registers 2
 
-    .line 1081
+    .line 1103
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLastShotNotSkip:Z
 
     return-void
@@ -6379,7 +6463,7 @@
 .method public setLensCorrectionMode(I)V
     .registers 2
 
-    .line 1560
+    .line 1582
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLensCorrectionMode:I
 
     return-void
@@ -6388,7 +6472,7 @@
 .method public setLimitFpsRange(Landroid/util/Range;)V
     .registers 2
 
-    .line 913
+    .line 935
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLimitFpsRange:Landroid/util/Range;
 
     return-void
@@ -6397,7 +6481,7 @@
 .method public setLivePhotoMode(I)V
     .registers 2
 
-    .line 3016
+    .line 3051
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLivePhotoMode:I
 
     return-void
@@ -6406,7 +6490,7 @@
 .method public setLiveResultMode(I)V
     .registers 2
 
-    .line 2651
+    .line 2686
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLiveResultMode:I
 
     return-void
@@ -6415,7 +6499,7 @@
 .method public setLlsInfo([I)V
     .registers 2
 
-    .line 1125
+    .line 1147
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLlsInfo:[I
 
     return-void
@@ -6424,7 +6508,7 @@
 .method public setLongExposureCaptureState(Ljava/lang/String;)V
     .registers 2
 
-    .line 2703
+    .line 2738
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongExposureCaptureState:Ljava/lang/String;
 
     return-void
@@ -6433,7 +6517,7 @@
 .method public setLongExposureScene(Ljava/lang/String;)V
     .registers 2
 
-    .line 2687
+    .line 2722
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongExposureScene:Ljava/lang/String;
 
     return-void
@@ -6442,7 +6526,7 @@
 .method public setLongExposureTripod(Ljava/lang/String;)V
     .registers 2
 
-    .line 2695
+    .line 2730
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongExposureTripod:Ljava/lang/String;
 
     return-void
@@ -6451,7 +6535,7 @@
 .method public setLongFocusBaseZoomRatio(F)V
     .registers 2
 
-    .line 2105
+    .line 2127
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLongFocusBaseZoomRatio:F
 
     return-void
@@ -6460,7 +6544,7 @@
 .method public setLongFocusCamera(Z)V
     .registers 2
 
-    .line 2097
+    .line 2119
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsLongFocusCamera:Z
 
     return-void
@@ -6469,7 +6553,7 @@
 .method public setLuminanceValue(I)V
     .registers 2
 
-    .line 2001
+    .line 2023
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLuminanceValue:I
 
     return-void
@@ -6478,7 +6562,7 @@
 .method public setMFNRAeExpoInfo([I)V
     .registers 2
 
-    .line 1109
+    .line 1131
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMFNRAeExpoInfo:[I
 
     return-void
@@ -6487,7 +6571,7 @@
 .method public setMTKProcessRawEnable(I)V
     .registers 2
 
-    .line 3056
+    .line 3091
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMTKProcessRawEnable:I
 
     return-void
@@ -6496,7 +6580,7 @@
 .method public setMagicSkyResult(I)V
     .registers 2
 
-    .line 2539
+    .line 2574
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMagicSkyResult:I
 
     return-void
@@ -6505,7 +6589,7 @@
 .method public setMagicSkyType(Ljava/lang/String;)V
     .registers 2
 
-    .line 2531
+    .line 2566
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMagicSkyType:Ljava/lang/String;
 
     return-void
@@ -6514,7 +6598,7 @@
 .method public setMakeUpIntensitys([F)V
     .registers 2
 
-    .line 1552
+    .line 1574
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpIntensitys:[F
 
     return-void
@@ -6523,7 +6607,7 @@
 .method public setMakeUpMode(I)V
     .registers 2
 
-    .line 1548
+    .line 1570
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpMode:I
 
     return-void
@@ -6532,7 +6616,7 @@
 .method public setMakeUpVideoIntensitys([F)V
     .registers 2
 
-    .line 1576
+    .line 1598
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpVideoIntensitys:[F
 
     return-void
@@ -6541,7 +6625,7 @@
 .method public setMakeUpVideoMode(I)V
     .registers 2
 
-    .line 1572
+    .line 1594
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMakeUpVideoMode:I
 
     return-void
@@ -6550,7 +6634,7 @@
 .method public setManualAWBValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2033
+    .line 2055
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mManualAWBValue:Ljava/lang/String;
 
     return-void
@@ -6559,14 +6643,14 @@
 .method public setMeteringAreas(Ljava/util/List;)V
     .registers 3
 
-    .line 811
+    .line 817
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMeteringAreas:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
     if-eqz p1, :cond_c
 
-    .line 813
+    .line 819
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMeteringAreas:Ljava/util/List;
 
     invoke-interface {p0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
@@ -6578,7 +6662,7 @@
 .method public setMeteringMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1200
+    .line 1222
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMeteringMode:Ljava/lang/String;
 
     return-void
@@ -6587,17 +6671,17 @@
 .method public setMiddleNightMode(I)V
     .registers 3
 
-    .line 1616
+    .line 1638
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMiddleNightMode:I
 
-    .line 1617
+    .line 1639
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->disableAlgoPolicy()Z
 
     move-result p1
 
     if-eqz p1, :cond_12
 
-    .line 1618
+    .line 1640
     sget-object p1, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "It\'s a project under 4G,close MiddleNight in Monkey scenarios."
@@ -6606,7 +6690,7 @@
 
     const/4 p1, 0x0
 
-    .line 1619
+    .line 1641
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMiddleNightMode:I
 
     :cond_12
@@ -6616,7 +6700,7 @@
 .method public setMoonDetectPitch(F)V
     .registers 2
 
-    .line 2414
+    .line 2449
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMoonDetectPitch:F
 
     return-void
@@ -6625,7 +6709,7 @@
 .method public setMoonDetectResult(I)V
     .registers 2
 
-    .line 1179
+    .line 1201
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMoonDetectResult:I
 
     return-void
@@ -6634,7 +6718,7 @@
 .method public setMoonDetection(I)V
     .registers 2
 
-    .line 2406
+    .line 2441
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMoonDetectionMode:I
 
     return-void
@@ -6643,7 +6727,7 @@
 .method public setMotionCaptureMode(I)V
     .registers 2
 
-    .line 3048
+    .line 3083
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMotionCaptureMode:I
 
     return-void
@@ -6652,7 +6736,7 @@
 .method public setMultiFaceBeautyMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1213
+    .line 1235
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMultiFaceBeautyMode:Ljava/lang/String;
 
     return-void
@@ -6661,7 +6745,7 @@
 .method public setNightAeExpoInfo([I)V
     .registers 2
 
-    .line 1117
+    .line 1139
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightAeExpoInfo:[I
 
     return-void
@@ -6670,7 +6754,7 @@
 .method public setNightHawkMode(I)V
     .registers 2
 
-    .line 2398
+    .line 2433
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightHawkMode:I
 
     return-void
@@ -6679,7 +6763,7 @@
 .method public setNvsSuperNightFilterId(I)V
     .registers 2
 
-    .line 1460
+    .line 1482
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightFilterId:I
 
     return-void
@@ -6688,7 +6772,7 @@
 .method public setOpenAutoFps(Z)V
     .registers 2
 
-    .line 2767
+    .line 2802
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mOpenAutoFps:Z
 
     return-void
@@ -6697,7 +6781,7 @@
 .method public setP2CropRegionCustomize([I)V
     .registers 2
 
-    .line 1713
+    .line 1735
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mP2CropRegionCustomize:[I
 
     return-void
@@ -6706,7 +6790,7 @@
 .method public setP2RawCropResizeEnable(I)V
     .registers 2
 
-    .line 1705
+    .line 1727
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mP2RawCropResizeEnable:I
 
     return-void
@@ -6715,7 +6799,7 @@
 .method public setP2ResizerSizeCustomize([I)V
     .registers 2
 
-    .line 1721
+    .line 1743
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mP2ResizerSizeCustomize:[I
 
     return-void
@@ -6724,7 +6808,7 @@
 .method public setPMasterFlareMode(I)V
     .registers 2
 
-    .line 2791
+    .line 2826
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPMasterFlareMode:I
 
     return-void
@@ -6733,7 +6817,7 @@
 .method public setPhotoHDRMode(Ljava/lang/String;)V
     .registers 5
 
-    .line 1322
+    .line 1344
     sget-object v0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6752,7 +6836,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1323
+    .line 1345
     const-string v0, "on"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -6761,12 +6845,12 @@
 
     if-eqz v0, :cond_23
 
-    .line 1324
+    .line 1346
     const-string v0, "hdr"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setSceneMode(Ljava/lang/String;)V
 
-    .line 1326
+    .line 1348
     :cond_23
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPhotoHDRMode:Ljava/lang/String;
 
@@ -6776,7 +6860,7 @@
 .method public setPhotoNightTranYUVMode(I)V
     .registers 2
 
-    .line 2330
+    .line 2365
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPhotoNightTranYUVMode:I
 
     return-void
@@ -6785,7 +6869,7 @@
 .method public setPictureSize(Landroid/util/Size;)V
     .registers 2
 
-    .line 711
+    .line 717
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPictureSize:Landroid/util/Size;
 
     return-void
@@ -6794,7 +6878,7 @@
 .method public setPipDeviceValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2619
+    .line 2654
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPipDeviceValue:Ljava/lang/String;
 
     return-void
@@ -6803,7 +6887,7 @@
 .method public setPlainLocationText(Ljava/lang/String;)V
     .registers 2
 
-    .line 1872
+    .line 1894
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPlainLocationText:Ljava/lang/String;
 
     return-void
@@ -6812,7 +6896,7 @@
 .method public setPortraitModeEnhanceMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 2430
+    .line 2465
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPortraitModeEnhanceMode:Ljava/lang/String;
 
     return-void
@@ -6821,7 +6905,7 @@
 .method public setPostAlgoFrameInfo([I)V
     .registers 2
 
-    .line 1093
+    .line 1115
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoFrameInfo:[I
 
     return-void
@@ -6830,7 +6914,7 @@
 .method public setPostAlgoOn(Z)V
     .registers 2
 
-    .line 968
+    .line 990
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsPostAlgoOn:Z
 
     return-void
@@ -6839,7 +6923,7 @@
 .method public setPostAlgoType(I)V
     .registers 2
 
-    .line 984
+    .line 1006
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoType:I
 
     return-void
@@ -6848,7 +6932,7 @@
 .method public setPostViewSize(Landroid/util/Size;)V
     .registers 2
 
-    .line 735
+    .line 741
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostViewSize:Landroid/util/Size;
 
     return-void
@@ -6857,7 +6941,7 @@
 .method public setPreviewFPSRange(Landroid/util/Range;)V
     .registers 2
 
-    .line 900
+    .line 922
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewFPSRange:Landroid/util/Range;
 
     return-void
@@ -6866,7 +6950,7 @@
 .method public setPreviewGoldWaterMarkSize([I)V
     .registers 2
 
-    .line 1911
+    .line 1933
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewGoldWaterMarkSize:[I
 
     return-void
@@ -6875,7 +6959,7 @@
 .method public setPreviewSize(Landroid/util/Size;)V
     .registers 2
 
-    .line 687
+    .line 693
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPreviewSize:Landroid/util/Size;
 
     return-void
@@ -6884,10 +6968,10 @@
 .method public setProWatermarMode(ZLjava/lang/String;)V
     .registers 3
 
-    .line 1867
+    .line 1889
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProWatermarkSupport:Z
 
-    .line 1868
+    .line 1890
     invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p1
@@ -6900,7 +6984,7 @@
 .method public setProWatermarkStyle(I)V
     .registers 2
 
-    .line 1880
+    .line 1902
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProWatermarkStyle:I
 
     return-void
@@ -6909,7 +6993,7 @@
 .method public setProfessionMode(Z)V
     .registers 2
 
-    .line 1310
+    .line 1332
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mProfessionalModeEnable:Z
 
     return-void
@@ -6918,7 +7002,7 @@
 .method public setQuickPreview(Z)V
     .registers 2
 
-    .line 1294
+    .line 1316
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mQuickPreviewEnable:Z
 
     return-void
@@ -6927,7 +7011,7 @@
 .method public setRTDofEnable(Z)V
     .registers 2
 
-    .line 876
+    .line 898
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRTDofEnable:Z
 
     return-void
@@ -6936,7 +7020,7 @@
 .method public setRace(I)V
     .registers 2
 
-    .line 2463
+    .line 2498
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRace:I
 
     return-void
@@ -6945,7 +7029,7 @@
 .method public setRawPictureSize(Ljava/util/List;)V
     .registers 2
 
-    .line 703
+    .line 709
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSupportRawSize:Ljava/util/List;
 
     return-void
@@ -6954,7 +7038,7 @@
 .method public setRealZoomRatio(I)V
     .registers 2
 
-    .line 847
+    .line 853
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRealZoomRatio:I
 
     return-void
@@ -6963,7 +7047,7 @@
 .method public setRecordingHint(Z)V
     .registers 2
 
-    .line 940
+    .line 962
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRecordingHint:Z
 
     return-void
@@ -6972,7 +7056,7 @@
 .method public setRegularRange(Landroid/util/Range;)V
     .registers 2
 
-    .line 921
+    .line 943
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRegularFpsRange:Landroid/util/Range;
 
     return-void
@@ -6981,17 +7065,17 @@
 .method public setRemosaicMode(Ljava/lang/String;)V
     .registers 3
 
-    .line 1668
+    .line 1690
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRemosaicMode:Ljava/lang/String;
 
-    .line 1669
+    .line 1691
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->specialMonkeySupported()Z
 
     move-result p1
 
     if-eqz p1, :cond_12
 
-    .line 1670
+    .line 1692
     sget-object p1, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "It\'s a project under 4G,close remosaicMode in Monkey scenarios."
@@ -7000,7 +7084,7 @@
 
     const/4 p1, 0x0
 
-    .line 1671
+    .line 1693
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRemosaicMode:Ljava/lang/String;
 
     :cond_12
@@ -7010,7 +7094,7 @@
 .method public setRingScreenLight(Ljava/lang/String;)V
     .registers 2
 
-    .line 2587
+    .line 2622
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRingScreenLight:Ljava/lang/String;
 
     return-void
@@ -7019,7 +7103,7 @@
 .method public setSMVRRequestParams([I)V
     .registers 2
 
-    .line 2247
+    .line 2269
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSMVRRequestParams:[I
 
     return-void
@@ -7028,7 +7112,7 @@
 .method public setSTBlurLightStrength(F)V
     .registers 2
 
-    .line 2170
+    .line 2192
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurLightStrength:F
 
     return-void
@@ -7037,7 +7121,7 @@
 .method public setSTBlurMode(I)V
     .registers 2
 
-    .line 2150
+    .line 2172
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurMode:I
 
     return-void
@@ -7046,7 +7130,7 @@
 .method public setSTBlurReaRatio(F)V
     .registers 2
 
-    .line 2178
+    .line 2200
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurReaRatio:F
 
     return-void
@@ -7055,7 +7139,7 @@
 .method public setSTBlurStrengths([F)V
     .registers 2
 
-    .line 2162
+    .line 2184
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurStrengths:[F
 
     return-void
@@ -7064,7 +7148,7 @@
 .method public setSatPictureSize(Landroid/util/Size;)V
     .registers 2
 
-    .line 719
+    .line 725
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSatPictureSize:Landroid/util/Size;
 
     return-void
@@ -7073,7 +7157,7 @@
 .method public setSceneMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 929
+    .line 951
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSceneMode:Ljava/lang/String;
 
     return-void
@@ -7082,7 +7166,7 @@
 .method public setScreenFlashMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1985
+    .line 2007
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mScreenFlashMode:Ljava/lang/String;
 
     return-void
@@ -7091,7 +7175,7 @@
 .method public setScreenFlashStatus(Ljava/lang/String;)V
     .registers 2
 
-    .line 2603
+    .line 2638
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mScreenFlashStatus:Ljava/lang/String;
 
     return-void
@@ -7100,7 +7184,7 @@
 .method public setScreenTorchStatus(Ljava/lang/String;)V
     .registers 2
 
-    .line 2595
+    .line 2630
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mScreenTorchStatus:Ljava/lang/String;
 
     return-void
@@ -7109,7 +7193,7 @@
 .method public setShot2ShotMode(I)V
     .registers 2
 
-    .line 1829
+    .line 1851
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mShot2ShotMode:I
 
     return-void
@@ -7118,7 +7202,7 @@
 .method public setSingleBlurLevel(I)V
     .registers 2
 
-    .line 2182
+    .line 2204
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSTBlurLevel:I
 
     return-void
@@ -7127,7 +7211,7 @@
 .method public setSkinColor(I)V
     .registers 2
 
-    .line 2455
+    .line 2490
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSkinColor:I
 
     return-void
@@ -7136,7 +7220,7 @@
 .method public setSkinOptimization(I)V
     .registers 2
 
-    .line 1298
+    .line 1320
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSkinOptimizationValue:I
 
     return-void
@@ -7145,7 +7229,7 @@
 .method public setSkipMultCapture(Z)V
     .registers 2
 
-    .line 1815
+    .line 1837
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSkipMultCapture:Z
 
     return-void
@@ -7154,7 +7238,7 @@
 .method public setSlimBodyLevels([I)V
     .registers 2
 
-    .line 1524
+    .line 1546
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSlimBodyLevels:[I
 
     return-void
@@ -7163,7 +7247,7 @@
 .method public setSlimBodyMode(I)V
     .registers 2
 
-    .line 1528
+    .line 1550
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSlimBodyMode:I
 
     return-void
@@ -7172,7 +7256,7 @@
 .method public setSlimBodySkip(I)V
     .registers 2
 
-    .line 1532
+    .line 1554
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSlimBodySkip:I
 
     return-void
@@ -7181,7 +7265,7 @@
 .method public setSmoothZoomValue(I)V
     .registers 2
 
-    .line 2807
+    .line 2842
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSmoothZoomValue:I
 
     return-void
@@ -7190,7 +7274,7 @@
 .method public setStreamingCustomTuning(Ljava/lang/String;)V
     .registers 2
 
-    .line 2354
+    .line 2389
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mStreamingCustomTuning:Ljava/lang/String;
 
     return-void
@@ -7199,7 +7283,7 @@
 .method public setStreetPhotoFilterId(I)V
     .registers 2
 
-    .line 1444
+    .line 1466
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mStreetPhotoFilterId:I
 
     return-void
@@ -7208,7 +7292,7 @@
 .method public setSuperAIRawMode(I)V
     .registers 2
 
-    .line 1755
+    .line 1777
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperAIRaw:I
 
     return-void
@@ -7217,7 +7301,7 @@
 .method public setSuperAntiVideoMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1969
+    .line 1991
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperAntiVideo:Ljava/lang/String;
 
     return-void
@@ -7226,7 +7310,7 @@
 .method public setSuperDefinitionMode(I)V
     .registers 2
 
-    .line 1652
+    .line 1674
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperDefinitionMode:I
 
     return-void
@@ -7235,7 +7319,7 @@
 .method public setSuperFlashValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2563
+    .line 2598
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperFlash:Ljava/lang/String;
 
     return-void
@@ -7244,24 +7328,24 @@
 .method public setSuperNightAlgoType(Ljava/lang/String;)V
     .registers 3
 
-    .line 2129
+    .line 2151
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoType:Ljava/lang/String;
 
-    .line 2130
+    .line 2152
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->disableAlgoPolicy()Z
 
     move-result p1
 
     if-eqz p1, :cond_13
 
-    .line 2131
+    .line 2153
     sget-object p1, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "It\'s a project under 4G,close superNight in Monkey scenarios."
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2132
+    .line 2154
     const-string p1, "None"
 
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoType:Ljava/lang/String;
@@ -7273,7 +7357,7 @@
 .method public setSuperNightHdrCheckerMode(I)V
     .registers 2
 
-    .line 1476
+    .line 1498
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightHdrCheckerModeEnable:I
 
     return-void
@@ -7282,7 +7366,7 @@
 .method public setSuperNightMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 2113
+    .line 2135
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightMode:Ljava/lang/String;
 
     return-void
@@ -7291,21 +7375,21 @@
 .method public setSuperResolutionMode(I)V
     .registers 3
 
-    .line 1684
+    .line 1706
     iget-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSupportedRawSR:Z
 
     if-eqz v0, :cond_7
 
-    .line 1685
+    .line 1707
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRawSuperResolutionMode:I
 
     goto :goto_9
 
-    .line 1687
+    .line 1709
     :cond_7
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperResolutionMode:I
 
-    .line 1689
+    .line 1711
     :goto_9
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->specialMonkeySupported()Z
 
@@ -7313,14 +7397,14 @@
 
     if-eqz p1, :cond_24
 
-    .line 1690
+    .line 1712
     sget-object p1, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "It\'s a project under 4G,close superResolution in Monkey scenarios."
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1691
+    .line 1713
     const-string p1, "0"
 
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -7329,7 +7413,7 @@
 
     iput v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mRawSuperResolutionMode:I
 
-    .line 1692
+    .line 1714
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p1
@@ -7343,7 +7427,7 @@
 .method public setSuperResolutionSupportPortraitMode(Z)V
     .registers 2
 
-    .line 2434
+    .line 2469
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperResolutinSupportPortraitMode:Z
 
     return-void
@@ -7352,7 +7436,7 @@
 .method public setSupportedRawSR(Z)V
     .registers 2
 
-    .line 1729
+    .line 1751
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSupportedRawSR:Z
 
     return-void
@@ -7361,7 +7445,7 @@
 .method public setSystemUserID(I)V
     .registers 2
 
-    .line 3107
+    .line 3142
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSystemUserID:I
 
     return-void
@@ -7370,7 +7454,7 @@
 .method public setTAPSCaptureNeedYuvSize(I)V
     .registers 2
 
-    .line 2895
+    .line 2930
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTAPSCaptureNeedYuvSize:I
 
     return-void
@@ -7379,7 +7463,7 @@
 .method public setTfPortraitMode(I)V
     .registers 2
 
-    .line 1791
+    .line 1813
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTfPortraitMode:I
 
     return-void
@@ -7388,7 +7472,7 @@
 .method public setThumbnailSize(Landroid/util/Size;)V
     .registers 2
 
-    .line 739
+    .line 745
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mThumbnailSize:Landroid/util/Size;
 
     return-void
@@ -7397,7 +7481,7 @@
 .method public setTranFaceDetectMode(I)V
     .registers 2
 
-    .line 2230
+    .line 2252
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranFaceDetectMode:I
 
     return-void
@@ -7406,7 +7490,7 @@
 .method public setTranssionAINRMode(I)V
     .registers 2
 
-    .line 3000
+    .line 3035
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionAINRMode:I
 
     return-void
@@ -7415,7 +7499,7 @@
 .method public setTranssionAnimalEyeDetection(Ljava/lang/String;)V
     .registers 2
 
-    .line 2271
+    .line 2293
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAnimalEyeDetection:Ljava/lang/String;
 
     return-void
@@ -7424,7 +7508,7 @@
 .method public setTranssionAsdMode(I)V
     .registers 2
 
-    .line 1361
+    .line 1383
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAsdMode:I
 
     return-void
@@ -7433,8 +7517,20 @@
 .method public setTranssionAsdVersion(I)V
     .registers 2
 
-    .line 1378
+    .line 1400
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAsdVersion:I
+
+    return-void
+.end method
+
+.method public setTranssionAutoFocusSwitch(Ljava/lang/String;Z)V
+    .registers 3
+
+    .line 2301
+    iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoFocusSwitch:Ljava/lang/String;
+
+    .line 2302
+    iput-boolean p2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mUseAutoFocusSwitch:Z
 
     return-void
 .end method
@@ -7442,7 +7538,7 @@
 .method public setTranssionAutoMacroSwitch(Ljava/lang/String;)V
     .registers 2
 
-    .line 2279
+    .line 2314
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoMacroSwitch:Ljava/lang/String;
 
     return-void
@@ -7451,7 +7547,7 @@
 .method public setTranssionAutoMacroSwitchSetting(Ljava/lang/String;)V
     .registers 2
 
-    .line 2286
+    .line 2321
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAutoMacroSwitchSetting:Ljava/lang/String;
 
     return-void
@@ -7460,7 +7556,7 @@
 .method public setTranssionCameraMode(I)V
     .registers 2
 
-    .line 2239
+    .line 2261
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionCameraMode:I
 
     return-void
@@ -7469,7 +7565,7 @@
 .method public setTranssionCusIspAsd([I)V
     .registers 2
 
-    .line 1386
+    .line 1408
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mAsdIsp:[I
 
     return-void
@@ -7478,7 +7574,7 @@
 .method public setTranssionEyeDetection(Ljava/lang/String;)V
     .registers 2
 
-    .line 2255
+    .line 2277
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mEyeDetection:Ljava/lang/String;
 
     return-void
@@ -7487,7 +7583,7 @@
 .method public setTranssionFilterId(I)V
     .registers 2
 
-    .line 1436
+    .line 1458
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionFilterId:I
 
     return-void
@@ -7496,7 +7592,7 @@
 .method public setTranssionHDR(I)V
     .registers 5
 
-    .line 1737
+    .line 1759
     sget-object v0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7515,7 +7611,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1738
+    .line 1760
     const-string v1, "1"
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -7528,38 +7624,38 @@
 
     if-eqz v1, :cond_28
 
-    .line 1739
+    .line 1761
     const-string v1, "hdr"
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setSceneMode(Ljava/lang/String;)V
 
     goto :goto_2d
 
-    .line 1741
+    .line 1763
     :cond_28
     const-string v1, "auto"
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setSceneMode(Ljava/lang/String;)V
 
-    .line 1743
+    .line 1765
     :goto_2d
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionHDR:I
 
-    .line 1744
+    .line 1766
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->disableAlgoPolicy()Z
 
     move-result p1
 
     if-eqz p1, :cond_3d
 
-    .line 1745
+    .line 1767
     const-string p1, "It\'s a project under 4G,close Hdr in Monkey scenarios."
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     const/4 p1, -0x1
 
-    .line 1746
+    .line 1768
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionHDR:I
 
     :cond_3d
@@ -7569,7 +7665,7 @@
 .method public setTranssionHumanDetection(I)V
     .registers 2
 
-    .line 2263
+    .line 2285
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mHumanDetection:I
 
     return-void
@@ -7578,7 +7674,7 @@
 .method public setTranssionLowLightMode(I)V
     .registers 2
 
-    .line 1608
+    .line 1630
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLowLightMode:I
 
     return-void
@@ -7587,17 +7683,17 @@
 .method public setTranssionNightMode(I)V
     .registers 3
 
-    .line 1596
+    .line 1618
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightMode:I
 
-    .line 1597
+    .line 1619
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->disableAlgoPolicy()Z
 
     move-result p1
 
     if-eqz p1, :cond_12
 
-    .line 1598
+    .line 1620
     sget-object p1, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "It\'s a project under 4G,close TranssionNightMode in Monkey scenarios."
@@ -7606,7 +7702,7 @@
 
     const/4 p1, 0x0
 
-    .line 1599
+    .line 1621
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mNightMode:I
 
     :cond_12
@@ -7616,7 +7712,7 @@
 .method public setTranssionPluginEnable(I)V
     .registers 2
 
-    .line 1993
+    .line 2015
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionPluginEnable:I
 
     return-void
@@ -7625,7 +7721,7 @@
 .method public setTranssionSmartDenoise(I)V
     .registers 2
 
-    .line 1644
+    .line 1666
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDenoiseMode:I
 
     return-void
@@ -7634,7 +7730,7 @@
 .method public setTranssionSuperNightFilterId(I)V
     .registers 2
 
-    .line 1468
+    .line 1490
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionSuperNightFilterId:I
 
     return-void
@@ -7643,7 +7739,7 @@
 .method public setTranssionTurboFusionMode(I)V
     .registers 2
 
-    .line 1779
+    .line 1801
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mTranssionTurboFusionMode:I
 
     return-void
@@ -7654,7 +7750,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 2864
+    .line 2899
     new-instance p1, Landroid/util/Size;
 
     const/16 v0, 0x5a0
@@ -7677,7 +7773,7 @@
 .method public setVideoHDRMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1335
+    .line 1357
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoHDRMode:Ljava/lang/String;
 
     return-void
@@ -7686,7 +7782,7 @@
 .method public setVideoHdrFormat(Ljava/lang/String;)V
     .registers 2
 
-    .line 3114
+    .line 3149
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoHDRFormat:Ljava/lang/String;
 
     return-void
@@ -7695,7 +7791,7 @@
 .method public setVideoNightTranYUVMode(I)V
     .registers 2
 
-    .line 2322
+    .line 2357
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoNightTranYUVMode:I
 
     return-void
@@ -7704,7 +7800,7 @@
 .method public setVideoOrientation(I)V
     .registers 2
 
-    .line 771
+    .line 777
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoOrientation:I
 
     return-void
@@ -7713,7 +7809,7 @@
 .method public setVideoPortraitLevel(I)V
     .registers 2
 
-    .line 1250
+    .line 1272
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPortraitLevel:I
 
     return-void
@@ -7722,7 +7818,7 @@
 .method public setVideoPortraitMode(I)V
     .registers 2
 
-    .line 2294
+    .line 2329
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPortraitMode:I
 
     return-void
@@ -7731,7 +7827,7 @@
 .method public setVideoPreIspMode(I)V
     .registers 2
 
-    .line 2735
+    .line 2770
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoPreIspMode:I
 
     return-void
@@ -7740,7 +7836,7 @@
 .method public setVideoSpotLevel(I)V
     .registers 2
 
-    .line 1258
+    .line 1280
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSpotLevel:I
 
     return-void
@@ -7749,7 +7845,7 @@
 .method public setVideoSpotMode(I)V
     .registers 2
 
-    .line 2302
+    .line 2337
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSpotMode:I
 
     return-void
@@ -7758,7 +7854,7 @@
 .method public setVideoSuperNightMode(I)V
     .registers 2
 
-    .line 2310
+    .line 2345
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightMode:I
 
     return-void
@@ -7767,7 +7863,7 @@
 .method public setVideoSuperNightResolution(I)V
     .registers 2
 
-    .line 2334
+    .line 2369
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightResolution:I
 
     return-void
@@ -7776,7 +7872,7 @@
 .method public setVideoSuperNightScene(I)V
     .registers 2
 
-    .line 2374
+    .line 2409
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightAlgoScene:I
 
     return-void
@@ -7785,7 +7881,7 @@
 .method public setVideoSuperNightYUVMode(I)V
     .registers 2
 
-    .line 2342
+    .line 2377
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVideoSuperNightYUVMode:I
 
     return-void
@@ -7794,7 +7890,7 @@
 .method public setVsdofModeLevel(Ljava/lang/String;)V
     .registers 5
 
-    .line 1241
+    .line 1263
     sget-object v0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7813,7 +7909,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1242
+    .line 1264
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mVsdofLevel:Ljava/lang/String;
 
     return-void
@@ -7822,7 +7918,7 @@
 .method public setWideCamera(Z)V
     .registers 2
 
-    .line 2089
+    .line 2111
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsWideCamera:Z
 
     return-void
@@ -7831,7 +7927,7 @@
 .method public setYuvCaptureFlipMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1919
+    .line 1941
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mYuvCaptureFlipMode:Ljava/lang/String;
 
     return-void
@@ -7840,7 +7936,7 @@
 .method public setZSLEnable(Z)V
     .registers 2
 
-    .line 867
+    .line 889
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZSLEnable:Z
 
     return-void
@@ -7849,7 +7945,7 @@
 .method public setZoomEisMode(I)V
     .registers 2
 
-    .line 2903
+    .line 2938
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZoomEisMode:I
 
     return-void
@@ -7858,7 +7954,7 @@
 .method public setZoomRatio(I)V
     .registers 2
 
-    .line 843
+    .line 849
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZoomRatio:I
 
     return-void
@@ -7867,14 +7963,14 @@
 .method public setZoomRatio(IZ)V
     .registers 4
 
-    .line 835
+    .line 841
     sget v0, Lcom/transsion/camera/adapter/CameraParameters;->MIN_ZOOM_RATIO:I
 
     if-ge p1, v0, :cond_1d
 
     if-nez p2, :cond_1d
 
-    .line 836
+    .line 842
     sget-object p0, Lcom/transsion/camera/adapter/CameraParameters;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -7895,7 +7991,7 @@
 
     return-void
 
-    .line 839
+    .line 845
     :cond_1d
     iput p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mZoomRatio:I
 
@@ -7905,7 +8001,7 @@
 .method public supportYUVDataWhenRecording()Z
     .registers 1
 
-    .line 2827
+    .line 2862
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSupportYUVPreviewDataWhenRecording:Z
 
     return p0
@@ -7914,7 +8010,7 @@
 .method public tripodMode(Z)V
     .registers 2
 
-    .line 1419
+    .line 1441
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDXOTripodMode:Z
 
     return-void
@@ -7923,7 +8019,7 @@
 .method public tripodMode()Z
     .registers 1
 
-    .line 1423
+    .line 1445
     iget-boolean p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mDXOTripodMode:Z
 
     return p0

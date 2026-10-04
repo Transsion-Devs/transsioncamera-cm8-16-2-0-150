@@ -26,8 +26,8 @@
     c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt"
     f = "Deprecated.kt"
     l = {
-        0x61,
-        0x64
+        0x7f,
+        0x82
     }
     m = "last"
 .end annotation

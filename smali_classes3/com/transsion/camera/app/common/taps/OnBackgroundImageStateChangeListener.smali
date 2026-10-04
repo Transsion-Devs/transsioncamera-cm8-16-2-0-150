@@ -10,6 +10,12 @@
     return-void
 .end method
 
+.method public onBackgroundImageSaveCancel(J)V
+    .registers 3
+
+    return-void
+.end method
+
 .method public varargs abstract onBackgroundImageSaveCompleted(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;I[Ljava/lang/Object;)V
 .end method
 

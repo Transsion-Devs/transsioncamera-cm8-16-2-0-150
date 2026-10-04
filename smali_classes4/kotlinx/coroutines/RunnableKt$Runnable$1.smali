@@ -50,7 +50,7 @@
 .method public final run()V
     .registers 1
 
-    .line 17
+    .line 13
     iget-object p0, p0, Lkotlinx/coroutines/RunnableKt$Runnable$1;->$block:Lkotlin/jvm/functions/Function0;
 
     invoke-interface {p0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;

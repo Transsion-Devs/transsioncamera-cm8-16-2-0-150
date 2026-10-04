@@ -14,15 +14,15 @@
 
 
 # static fields
-.field public static guide_text_color:I = 0x7f0600ec
+.field public static guide_text_color:I = 0x7f0600ed
 
-.field public static sky_item_name_color:I = 0x7f0605eb
+.field public static sky_item_name_color:I = 0x7f0605ec
 
-.field public static sky_item_name_color_selected:I = 0x7f0605ec
+.field public static sky_item_name_color_selected:I = 0x7f0605ed
 
-.field public static sky_item_selected_border_color:I = 0x7f0605ed
+.field public static sky_item_selected_border_color:I = 0x7f0605ee
 
-.field public static white:I = 0x7f060652
+.field public static white:I = 0x7f060654
 
 
 # direct methods

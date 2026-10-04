@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)V
     .registers 2
 
-    .line 357
+    .line 362
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onDataCallback(Ljava/lang/Object;I)V
     .registers 6
 
-    .line 361
+    .line 366
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$fgetTAG(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -90,7 +90,7 @@
 
     if-eqz p1, :cond_3d
 
-    .line 363
+    .line 368
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     check-cast p1, Ljava/lang/Boolean;
@@ -106,7 +106,7 @@
 
     if-ne p2, p1, :cond_63
 
-    .line 366
+    .line 371
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$fgetmNeedShowIcon(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Z
@@ -125,7 +125,7 @@
 
     goto :goto_57
 
-    .line 370
+    .line 375
     :cond_51
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
@@ -133,7 +133,7 @@
 
     return-void
 
-    .line 367
+    .line 372
     :cond_57
     :goto_57
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
@@ -151,7 +151,7 @@
     :cond_63
     if-nez p2, :cond_6b
 
-    .line 372
+    .line 377
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->hideIcon()V
@@ -163,7 +163,7 @@
 
     if-ne p2, p1, :cond_7f
 
-    .line 374
+    .line 379
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$fgetTAG(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -174,14 +174,14 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 375
+    .line 380
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$msetIconDefault(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)V
 
     return-void
 
-    .line 377
+    .line 382
     :cond_7f
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
@@ -205,7 +205,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 378
+    .line 383
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     invoke-static {p0, p2}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$mswitchIcon(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;I)V

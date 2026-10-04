@@ -11,7 +11,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 30
+    .line 31
     new-instance v0, Lkotlin/sequences/SequencesKt__SequencesKt$asSequence$$inlined$Sequence$1;
 
     invoke-direct {v0, p0}, Lkotlin/sequences/SequencesKt__SequencesKt$asSequence$$inlined$Sequence$1;-><init>(Ljava/util/Iterator;)V
@@ -30,7 +30,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 626
+    .line 677
     instance-of v0, p0, Lkotlin/sequences/ConstrainedOnceSequence;
 
     if-eqz v0, :cond_a
@@ -48,7 +48,7 @@
 .method public static emptySequence()Lkotlin/sequences/Sequence;
     .registers 1
 
-    .line 42
+    .line 75
     sget-object v0, Lkotlin/sequences/EmptySequence;->INSTANCE:Lkotlin/sequences/EmptySequence;
 
     return-object v0
@@ -65,7 +65,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 678
+    .line 729
     new-instance v0, Lkotlin/sequences/GeneratorSequence;
 
     invoke-direct {v0, p0, p1}, Lkotlin/sequences/GeneratorSequence;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)V

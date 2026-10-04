@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 860
+    .line 880
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$2;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onMediaScannerFinished()V
     .registers 3
 
-    .line 874
+    .line 894
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -47,7 +47,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 875
+    .line 895
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$2;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     const/4 v0, 0x0
@@ -60,21 +60,21 @@
 .method public onOperatorChanged(Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;I)V
     .registers 4
 
-    .line 863
+    .line 883
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$2;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object v0, v0, Lcom/transsion/camera/app/BaseCameraActivity;->mModeManager:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->updateStorageOperator(Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;I)V
 
-    .line 864
+    .line 884
     invoke-static {}, Lcom/transsion/camera/app/common/ai/AIGCManager;->getInstance()Lcom/transsion/camera/app/common/ai/AIGCManager;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/ai/AIGCManager;->setStorageOperator(Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;)V
 
-    .line 865
+    .line 885
     invoke-static {}, Lcom/transsion/camera/app/common/ai/AIArtManager;->getInstance()Lcom/transsion/camera/app/common/ai/AIArtManager;
 
     move-result-object v0
@@ -85,12 +85,12 @@
 
     if-ne p2, p1, :cond_23
 
-    .line 867
+    .line 887
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$2;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/BaseCameraActivity;->showExternalStorageUnmountedTip()V
 
-    .line 868
+    .line 888
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$2;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     const/4 p1, 0x0
@@ -104,7 +104,7 @@
 .method public onSDCardMounted()V
     .registers 1
 
-    .line 880
+    .line 900
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$2;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity;->mAppUI:Lcom/transsion/camera/app/ui/BaseAppUI;
@@ -117,7 +117,7 @@
 .method public onSDCardUnMounted()V
     .registers 1
 
-    .line 885
+    .line 905
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$2;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity;->mAppUI:Lcom/transsion/camera/app/ui/BaseAppUI;

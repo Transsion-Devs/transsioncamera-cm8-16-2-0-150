@@ -39,9 +39,6 @@
 .method public abstract setMappingInfo(JLjava/lang/String;Ljava/lang/String;)V
 .end method
 
-.method public abstract setSettingShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
-.end method
-
 .method public abstract setShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
 .end method
 

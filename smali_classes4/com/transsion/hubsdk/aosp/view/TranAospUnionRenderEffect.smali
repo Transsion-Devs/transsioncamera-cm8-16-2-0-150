@@ -531,3 +531,42 @@
 
     return-void
 .end method
+
+.method public setCustomBlender(Ljava/lang/Object;)V
+    .registers 2
+
+    .line 220
+    sget-object p0, Lcom/transsion/hubsdk/aosp/view/TranAospUnionRenderEffect;->TAG:Ljava/lang/String;
+
+    const-string p1, "setCustomBlender not support"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public setOffscreenRenderingOptimization(Z)V
+    .registers 2
+
+    .line 215
+    sget-object p0, Lcom/transsion/hubsdk/aosp/view/TranAospUnionRenderEffect;->TAG:Ljava/lang/String;
+
+    const-string p1, "setOffscreenRenderingOptimization not support"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public setRequestWindowType(I)V
+    .registers 2
+
+    .line 210
+    sget-object p0, Lcom/transsion/hubsdk/aosp/view/TranAospUnionRenderEffect;->TAG:Ljava/lang/String;
+
+    const-string p1, "setRequestWindowType not support"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method

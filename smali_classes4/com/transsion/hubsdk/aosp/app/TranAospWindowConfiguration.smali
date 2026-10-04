@@ -99,10 +99,190 @@
     return-object p0
 .end method
 
+.method public getMultiWindowingId(Landroid/content/res/Configuration;)I
+    .registers 5
+
+    .line 90
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    new-array v1, v0, [Ljava/lang/Class;
+
+    const-string v2, "getMultiWindowingId"
+
+    invoke-static {p0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object p0
+
+    if-nez p0, :cond_3b
+
+    .line 92
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    const-string v1, "windowConfiguration"
+
+    invoke-static {p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_3a
+
+    .line 94
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getFieldValue(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_3a
+
+    .line 96
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    new-array v1, v0, [Ljava/lang/Class;
+
+    invoke-static {p1, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3a
+
+    .line 98
+    new-array v0, v0, [Ljava/lang/Object;
+
+    invoke-static {p1, p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    .line 99
+    check-cast p0, Ljava/lang/Integer;
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
+
+    return p0
+
+    :cond_3a
+    return v0
+
+    .line 104
+    :cond_3b
+    new-array v0, v0, [Ljava/lang/Object;
+
+    invoke-static {p0, p1, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    .line 105
+    check-cast p0, Ljava/lang/Integer;
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public getMultiWindowingMode(Landroid/content/res/Configuration;)I
+    .registers 5
+
+    .line 67
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    new-array v1, v0, [Ljava/lang/Class;
+
+    const-string v2, "getMultiWindowingMode"
+
+    invoke-static {p0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object p0
+
+    if-nez p0, :cond_3b
+
+    .line 69
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    const-string v1, "windowConfiguration"
+
+    invoke-static {p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_3a
+
+    .line 71
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getFieldValue(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_3a
+
+    .line 73
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    new-array v1, v0, [Ljava/lang/Class;
+
+    invoke-static {p1, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3a
+
+    .line 75
+    new-array v0, v0, [Ljava/lang/Object;
+
+    invoke-static {p1, p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    .line 76
+    check-cast p0, Ljava/lang/Integer;
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
+
+    return p0
+
+    :cond_3a
+    return v0
+
+    .line 81
+    :cond_3b
+    new-array v0, v0, [Ljava/lang/Object;
+
+    invoke-static {p0, p1, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    .line 82
+    check-cast p0, Ljava/lang/Integer;
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public inMultiWindowMode(I)Z
     .registers 4
 
-    .line 66
+    .line 112
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospWindowConfiguration;->sClassName:Ljava/lang/Class;
 
     sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -117,7 +297,7 @@
 
     move-result-object p0
 
-    .line 67
+    .line 113
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -132,12 +312,12 @@
 
     move-result-object p0
 
-    .line 69
+    .line 115
     instance-of p1, p0, Ljava/lang/Boolean;
 
     if-eqz p1, :cond_26
 
-    .line 70
+    .line 116
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z

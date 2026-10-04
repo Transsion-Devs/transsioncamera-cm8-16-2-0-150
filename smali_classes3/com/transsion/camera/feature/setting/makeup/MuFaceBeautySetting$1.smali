@@ -125,7 +125,7 @@
 
     move-result-object v1
 
-    const-string v2, "threedimensional"
+    const-string/jumbo v2, "threedimensional"
 
     invoke-virtual {p0, v2, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

@@ -19,7 +19,7 @@
         }
     .end annotation
 
-    .line 30
+    .line 26
     sget-object v0, Lkotlinx/coroutines/flow/internal/NopCollector;->INSTANCE:Lkotlinx/coroutines/flow/internal/NopCollector;
 
     invoke-interface {p0, v0, p1}, Lkotlinx/coroutines/flow/Flow;->collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -58,7 +58,7 @@
         }
     .end annotation
 
-    .line 115
+    .line 111
     new-instance v0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3;-><init>(Lkotlin/jvm/functions/Function2;)V
@@ -99,7 +99,7 @@
         }
     .end annotation
 
-    .line 115
+    .line 111
     new-instance v0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3;-><init>(Lkotlin/jvm/functions/Function2;)V
@@ -137,7 +137,7 @@
         }
     .end annotation
 
-    .line 60
+    .line 56
     new-instance v0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collectIndexed$2;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collectIndexed$2;-><init>(Lkotlin/jvm/functions/Function3;)V
@@ -178,7 +178,7 @@
         }
     .end annotation
 
-    .line 60
+    .line 56
     new-instance v0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collectIndexed$2;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collectIndexed$2;-><init>(Lkotlin/jvm/functions/Function3;)V
@@ -216,7 +216,7 @@
         }
     .end annotation
 
-    .line 100
+    .line 96
     invoke-static {p0, p1}, Lkotlinx/coroutines/flow/FlowKt;->mapLatest(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p0
@@ -268,10 +268,10 @@
         }
     .end annotation
 
-    .line 108
+    .line 104
     invoke-static {p0}, Lkotlinx/coroutines/flow/FlowKt;->ensureActive(Lkotlinx/coroutines/flow/FlowCollector;)V
 
-    .line 109
+    .line 105
     invoke-interface {p1, p0, p2}, Lkotlinx/coroutines/flow/Flow;->collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -305,7 +305,7 @@
         }
     .end annotation
 
-    .line 49
+    .line 45
     new-instance v3, Lkotlinx/coroutines/flow/FlowKt__CollectKt$launchIn$1;
 
     const/4 v0, 0x0

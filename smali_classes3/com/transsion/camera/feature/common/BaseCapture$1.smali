@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
     .registers 2
 
-    .line 82
+    .line 81
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$1;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onStreamAvailable(III)V
     .registers 5
 
-    .line 85
+    .line 84
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$1;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCurrentState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
@@ -47,12 +47,12 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->onStreamAvailable()V
 
-    .line 86
+    .line 85
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$1;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/transsion/camera/feature/common/BaseCapture;->onStreamAvailable(III)V
 
-    .line 87
+    .line 86
     iget-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$1;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmStreamStatusListener(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/ICapture$IStreamStatusListener;
@@ -61,7 +61,7 @@
 
     if-eqz p1, :cond_1f
 
-    .line 88
+    .line 87
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$1;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmStreamStatusListener(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/ICapture$IStreamStatusListener;

@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.StartedLazily$command$1"
     f = "SharingStarted.kt"
     l = {
-        0x9b
+        0x97
     }
     m = "invokeSuspend"
 .end annotation
@@ -156,7 +156,7 @@
 
     move-result-object v0
 
-    .line 153
+    .line 149
     iget v1, p0, Lkotlinx/coroutines/flow/StartedLazily$command$1;->label:I
 
     const/4 v2, 0x1
@@ -185,12 +185,12 @@
 
     check-cast p1, Lkotlinx/coroutines/flow/FlowCollector;
 
-    .line 154
+    .line 150
     new-instance v1, Lkotlin/jvm/internal/Ref$BooleanRef;
 
     invoke-direct {v1}, Lkotlin/jvm/internal/Ref$BooleanRef;-><init>()V
 
-    .line 155
+    .line 151
     iget-object v3, p0, Lkotlinx/coroutines/flow/StartedLazily$command$1;->$subscriptionCount:Lkotlinx/coroutines/flow/StateFlow;
 
     new-instance v4, Lkotlinx/coroutines/flow/StartedLazily$command$1$1;

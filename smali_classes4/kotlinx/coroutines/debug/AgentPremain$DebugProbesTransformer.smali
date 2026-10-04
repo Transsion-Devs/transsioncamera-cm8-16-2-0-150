@@ -37,7 +37,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 38
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -61,7 +61,7 @@
 
     if-eqz p1, :cond_1c
 
-    .line 46
+    .line 42
     const-string p0, "kotlin/coroutines/jvm/internal/DebugProbesKt"
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -72,7 +72,7 @@
 
     goto :goto_1c
 
-    .line 56
+    .line 52
     :cond_b
     sget-object p0, Lkotlinx/coroutines/debug/internal/AgentInstallationType;->INSTANCE:Lkotlinx/coroutines/debug/internal/AgentInstallationType;
 
@@ -80,7 +80,7 @@
 
     invoke-virtual {p0, p2}, Lkotlinx/coroutines/debug/internal/AgentInstallationType;->setInstalledStatically$kotlinx_coroutines_core(Z)V
 
-    .line 57
+    .line 53
     const-string p0, "DebugProbesKt.bin"
 
     invoke-virtual {p1, p0}, Ljava/lang/ClassLoader;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;

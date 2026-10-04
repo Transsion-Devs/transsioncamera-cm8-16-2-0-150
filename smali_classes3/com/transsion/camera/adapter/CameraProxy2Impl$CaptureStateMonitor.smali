@@ -49,7 +49,7 @@
 .method private constructor <init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
     .registers 2
 
-    .line 465
+    .line 464
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,7 +69,7 @@
 .method private captureFinished()V
     .registers 2
 
-    .line 521
+    .line 520
     iget v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCaptureCount:I
 
     if-gtz v0, :cond_14
@@ -80,10 +80,10 @@
 
     const/4 v0, 0x0
 
-    .line 522
+    .line 521
     iput v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mNeedCallbackCount:I
 
-    .line 523
+    .line 522
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmParameters(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraParameters2Impl;
@@ -99,14 +99,14 @@
 .method private onNextReady()V
     .registers 2
 
-    .line 528
+    .line 527
     iget v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mNeedCallbackCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mNeedCallbackCount:I
 
-    .line 529
+    .line 528
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmParameters(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraParameters2Impl;
@@ -123,17 +123,17 @@
 .method private wrapCaptureCallback(Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;)V
     .registers 2
 
-    .line 473
+    .line 472
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCallback:Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;
 
-    .line 475
+    .line 474
     iget p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCaptureCount:I
 
     add-int/lit8 p1, p1, 0x1
 
     iput p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCaptureCount:I
 
-    .line 476
+    .line 475
     iget p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mNeedCallbackCount:I
 
     add-int/lit8 p1, p1, 0x1
@@ -148,22 +148,22 @@
 .method public onCaptureCompleted(Lcom/transsion/camera/adapter/CameraResults;Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
     .registers 5
 
-    .line 513
+    .line 512
     iget v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCaptureCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCaptureCount:I
 
-    .line 514
+    .line 513
     invoke-direct {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->captureFinished()V
 
-    .line 515
+    .line 514
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCallback:Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;
 
     if-eqz p0, :cond_10
 
-    .line 516
+    .line 515
     invoke-interface {p0, p1, p2, p3}, Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;->onCaptureCompleted(Lcom/transsion/camera/adapter/CameraResults;Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
 
     :cond_10
@@ -173,22 +173,22 @@
 .method public onCaptureFailed(JZ[J)V
     .registers 6
 
-    .line 504
+    .line 503
     iget v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCaptureCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCaptureCount:I
 
-    .line 505
+    .line 504
     invoke-direct {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->captureFinished()V
 
-    .line 506
+    .line 505
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCallback:Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;
 
     if-eqz p0, :cond_10
 
-    .line 507
+    .line 506
     invoke-interface {p0, p1, p2, p3, p4}, Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;->onCaptureFailed(JZ[J)V
 
     :cond_10
@@ -200,7 +200,7 @@
 
     const/4 v0, 0x0
 
-    .line 494
+    .line 493
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->onCaptureFailed(Z[J)V
 
     return-void
@@ -211,7 +211,7 @@
 
     const-wide/16 v0, -0x1
 
-    .line 499
+    .line 498
     invoke-virtual {p0, v0, v1, p1, p2}, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->onCaptureFailed(JZ[J)V
 
     return-void
@@ -220,12 +220,12 @@
 .method public onCaptureProgressed(Lcom/transsion/camera/adapter/CameraResults;Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
     .registers 3
 
-    .line 534
+    .line 533
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCallback:Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;
 
     if-eqz p0, :cond_7
 
-    .line 535
+    .line 534
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;->onCaptureProgressed(Lcom/transsion/camera/adapter/CameraResults;Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
 
     :cond_7
@@ -235,12 +235,12 @@
 .method public onCaptureStarted(JLcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
     .registers 4
 
-    .line 481
+    .line 480
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCallback:Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;
 
     if-eqz p0, :cond_7
 
-    .line 482
+    .line 481
     invoke-interface {p0, p1, p2, p3}, Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;->onCaptureStarted(JLcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
 
     :cond_7
@@ -250,12 +250,12 @@
 .method public onDoCapture()V
     .registers 1
 
-    .line 487
+    .line 486
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$CaptureStateMonitor;->mCallback:Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;
 
     if-eqz p0, :cond_7
 
-    .line 488
+    .line 487
     invoke-interface {p0}, Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;->onDoCapture()V
 
     :cond_7

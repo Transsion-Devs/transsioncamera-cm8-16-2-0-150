@@ -87,7 +87,7 @@
 .method private pocketScreenType()Z
     .registers 2
 
-    .line 189
+    .line 185
     iget-object p0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/manager/IScreenManager;->getScreenFormType()I
@@ -121,14 +121,14 @@
 
     if-eq p3, p0, :cond_c
 
-    .line 309
+    .line 305
     new-instance p0, Lcom/transsion/camera/app/ui/HintUI;
 
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/HintUI;-><init>(Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;)V
 
     return-object p0
 
-    .line 307
+    .line 303
     :cond_c
     new-instance p0, Lcom/transsion/camera/app/ui/HintUIItel;
 
@@ -136,7 +136,7 @@
 
     return-object p0
 
-    .line 305
+    .line 301
     :cond_12
     new-instance p0, Lcom/transsion/camera/app/ui/HintUIInfinix;
 
@@ -148,7 +148,7 @@
 .method public endHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
     .registers 2
 
-    .line 217
+    .line 213
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IHintUI;->endHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
@@ -159,7 +159,7 @@
 .method public getCurrentAsdHint()Lcom/transsion/camera/app/common/ui/HintInfo;
     .registers 1
 
-    .line 225
+    .line 221
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IHintUI;->getCurrentAsdHint()Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -172,12 +172,12 @@
 .method public getHintState()Z
     .registers 1
 
-    .line 264
+    .line 260
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     if-eqz p0, :cond_9
 
-    .line 265
+    .line 261
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IHintUI;->getHintState()Z
 
     move-result p0
@@ -193,19 +193,19 @@
 .method public getTwinkleGuideMode()Ljava/lang/String;
     .registers 1
 
-    .line 288
+    .line 284
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     if-eqz p0, :cond_9
 
-    .line 289
+    .line 285
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IHintUI;->getTwinkleGuideMode()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 291
+    .line 287
     :cond_9
     const-string p0, ""
 
@@ -215,7 +215,7 @@
 .method public hideAllHint()V
     .registers 1
 
-    .line 239
+    .line 235
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IHintUI;->hideAllHint()V
@@ -226,7 +226,7 @@
 .method public hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
     .registers 3
 
-    .line 210
+    .line 206
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/HintUIManager;->pocketScreenType()Z
 
     move-result v0
@@ -235,7 +235,7 @@
 
     return-void
 
-    .line 213
+    .line 209
     :cond_7
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
@@ -247,7 +247,7 @@
 .method public hideSavingDialog()V
     .registers 2
 
-    .line 235
+    .line 231
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mSavingHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -260,12 +260,12 @@
 .method public hideTwinkleGuide()V
     .registers 1
 
-    .line 277
+    .line 273
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     if-eqz p0, :cond_7
 
-    .line 278
+    .line 274
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IHintUI;->hideTwinkleGuide()V
 
     :cond_7
@@ -319,7 +319,7 @@
 
     if-eq v0, v3, :cond_27
 
-    goto :goto_85
+    goto :goto_81
 
     .line 112
     :cond_27
@@ -345,7 +345,7 @@
 
     if-eqz v0, :cond_3a
 
-    goto :goto_85
+    goto :goto_81
 
     .line 118
     :cond_3a
@@ -358,82 +358,78 @@
 
     :cond_41
     :goto_41
-    if-eqz p1, :cond_a4
+    if-eqz p1, :cond_9a
 
-    if-eq p1, v2, :cond_9e
+    if-eq p1, v2, :cond_94
 
     const/4 v0, 0x2
 
-    if-eq p1, v0, :cond_a4
+    if-eq p1, v0, :cond_9a
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_9e
+    if-eq p1, v0, :cond_94
 
     const/4 v0, 0x4
 
-    if-eq p1, v0, :cond_a4
+    if-eq p1, v0, :cond_9a
 
     const/16 v0, 0x9
 
-    if-eq p1, v0, :cond_9e
+    if-eq p1, v0, :cond_94
 
     const/16 v0, 0x1c
 
-    if-eq p1, v0, :cond_a4
+    if-eq p1, v0, :cond_9a
 
     const/16 v0, 0x27
 
-    if-eq p1, v0, :cond_a4
-
-    const/16 v0, 0x4c
-
-    if-eq p1, v0, :cond_98
+    if-eq p1, v0, :cond_9a
 
     const/16 v0, 0x5c
 
-    if-eq p1, v0, :cond_92
+    if-eq p1, v0, :cond_8e
 
     const/16 v0, 0x6e
 
-    if-eq p1, v0, :cond_a4
+    if-eq p1, v0, :cond_9a
 
     const/16 v0, 0xc0
 
-    if-eq p1, v0, :cond_a4
+    if-eq p1, v0, :cond_9a
 
     const/16 v0, 0xb
 
-    if-eq p1, v0, :cond_8c
+    if-eq p1, v0, :cond_88
 
     const/16 v0, 0xc
 
-    if-eq p1, v0, :cond_86
+    if-eq p1, v0, :cond_82
 
     const/16 v0, 0x17
 
-    if-eq p1, v0, :cond_8c
+    if-eq p1, v0, :cond_88
 
     const/16 v0, 0x18
 
-    if-eq p1, v0, :cond_86
+    if-eq p1, v0, :cond_82
 
     const/16 v0, 0x24
 
-    if-eq p1, v0, :cond_8c
+    if-eq p1, v0, :cond_88
 
     const/16 v0, 0x25
 
-    if-eq p1, v0, :cond_86
+    if-eq p1, v0, :cond_82
 
-    packed-switch p1, :pswitch_data_aa
+    packed-switch p1, :pswitch_data_a0
 
-    :goto_85
+    :goto_81
     return-void
 
     .line 152
-    :cond_86
-    :pswitch_86
+    :cond_82
+    :pswitch_82
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0, v2}, Lcom/transsion/camera/app/ui/IHintUI;->setTwinkleGuideAvailable(Z)V
@@ -441,8 +437,8 @@
     return-void
 
     .line 144
-    :cond_8c
-    :pswitch_8c
+    :cond_88
+    :pswitch_88
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0, v1}, Lcom/transsion/camera/app/ui/IHintUI;->setTwinkleGuideAvailable(Z)V
@@ -450,24 +446,16 @@
     return-void
 
     .line 156
-    :cond_92
+    :cond_8e
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0, v1}, Lcom/transsion/camera/app/ui/IHintUI;->setEnableHintUI(Z)V
 
     return-void
 
-    .line 160
-    :cond_98
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
-
-    invoke-interface {p0, v2}, Lcom/transsion/camera/app/ui/IHintUI;->setEnableHintUI(Z)V
-
-    return-void
-
     .line 127
-    :cond_9e
-    :pswitch_9e
+    :cond_94
+    :pswitch_94
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IHintUI;->resetEndHint()V
@@ -475,26 +463,26 @@
     return-void
 
     .line 137
-    :cond_a4
+    :cond_9a
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0, v2}, Lcom/transsion/camera/app/ui/IHintUI;->resetTwinkleGuide(Z)V
 
     return-void
 
-    :pswitch_data_aa
+    :pswitch_data_a0
     .packed-switch 0x11
-        :pswitch_8c
-        :pswitch_86
-        :pswitch_86
-        :pswitch_9e
+        :pswitch_88
+        :pswitch_82
+        :pswitch_82
+        :pswitch_94
     .end packed-switch
 .end method
 
 .method public onAbsolutePreviewRectChanged(Landroid/graphics/Rect;)V
     .registers 2
 
-    .line 167
+    .line 163
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IHintUI;->updatePreviewRect(Landroid/graphics/Rect;)V
@@ -520,15 +508,15 @@
 .method public onOrientationChanged(IZ)V
     .registers 4
 
-    .line 172
+    .line 168
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->onOrientationChanged(IZ)V
 
-    .line 173
+    .line 169
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {v0, p1, p2}, Lcom/transsion/camera/app/ui/IHintUI;->onOrientationChanged(IZ)V
 
-    .line 174
+    .line 170
     iput p1, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mCurrentOrientation:I
 
     return-void
@@ -537,10 +525,10 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 179
+    .line 175
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->onScreenFormChanged(IZ)V
 
-    .line 180
+    .line 176
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/common/IScreenFormControl;->onScreenFormChanged(IZ)V
@@ -562,15 +550,15 @@
 .method public onSingleTapUp(FF)Z
     .registers 4
 
-    .line 315
+    .line 311
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     if-eqz v0, :cond_7
 
-    .line 316
+    .line 312
     invoke-interface {v0, p1, p2}, Lcom/transsion/camera/app/common/IAppUIListener$IPreviewGestureListener;->onSingleTapUp(FF)Z
 
-    .line 318
+    .line 314
     :cond_7
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->onSingleTapUp(FF)Z
 
@@ -593,12 +581,12 @@
 .method public registerHintStateListener(Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;)V
     .registers 2
 
-    .line 252
+    .line 248
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     if-eqz p0, :cond_7
 
-    .line 253
+    .line 249
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IHintUI;->registerHintStateListener(Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;)V
 
     :cond_7
@@ -608,14 +596,14 @@
 .method public resetTwinkleGuide()V
     .registers 2
 
-    .line 271
+    .line 267
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     if-eqz p0, :cond_8
 
     const/4 v0, 0x0
 
-    .line 272
+    .line 268
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/ui/IHintUI;->resetTwinkleGuide(Z)V
 
     :cond_8
@@ -641,7 +629,7 @@
 .method public setEnableHintUI(Z)V
     .registers 2
 
-    .line 243
+    .line 239
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IHintUI;->setEnableHintUI(Z)V
@@ -652,7 +640,7 @@
 .method public setHintUITrans(II)V
     .registers 3
 
-    .line 221
+    .line 217
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/ui/IHintUI;->setHintUITrans(II)V
@@ -663,12 +651,12 @@
 .method public setRecorderOrientation(I)V
     .registers 2
 
-    .line 247
+    .line 243
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     if-eqz p0, :cond_7
 
-    .line 248
+    .line 244
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IHintUI;->setRecorderOrientation(I)V
 
     :cond_7
@@ -710,7 +698,7 @@
 .method public showHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
     .registers 3
 
-    .line 193
+    .line 189
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/HintUIManager;->pocketScreenType()Z
 
     move-result v0
@@ -719,7 +707,7 @@
 
     return-void
 
-    .line 196
+    .line 192
     :cond_7
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
@@ -731,7 +719,7 @@
 .method public showLowPowerHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
     .registers 3
 
-    .line 200
+    .line 196
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/HintUIManager;->pocketScreenType()Z
 
     move-result v0
@@ -740,20 +728,20 @@
 
     goto :goto_13
 
-    .line 203
+    .line 199
     :cond_7
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHasShowLowPowerHint:Z
 
     if-nez v0, :cond_13
 
-    .line 204
+    .line 200
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/ui/IHintUI;->showHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
     const/4 p1, 0x1
 
-    .line 205
+    .line 201
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHasShowLowPowerHint:Z
 
     :cond_13
@@ -764,17 +752,17 @@
 .method public showSavingDialog(Ljava/lang/String;I)V
     .registers 4
 
-    .line 229
+    .line 225
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mSavingHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 230
+    .line 226
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mSavingHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/ui/HintInfo;->setProgressType(I)V
 
-    .line 231
+    .line 227
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mSavingHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -803,12 +791,12 @@
 .method public unRegisterHintStateListener()V
     .registers 1
 
-    .line 258
+    .line 254
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     if-eqz p0, :cond_7
 
-    .line 259
+    .line 255
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/IHintUI;->unRegisterHintStateListener()V
 
     :cond_7
@@ -818,7 +806,7 @@
 .method public updateCurrentMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 185
+    .line 181
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mHintUI:Lcom/transsion/camera/app/ui/IHintUI;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/IHintUI;->updateCurrentMode(Ljava/lang/String;)V
@@ -829,7 +817,7 @@
 .method public updateFrontDualFlashUIState(Z)V
     .registers 2
 
-    .line 283
+    .line 279
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/HintUIManager;->mFrontDualFlashUIShow:Z
 
     return-void

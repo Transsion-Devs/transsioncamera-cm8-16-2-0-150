@@ -24,12 +24,12 @@
 
     if-lt p0, v0, :cond_16
 
-    .line 39
+    .line 11
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    .line 40
+    .line 12
     new-instance v1, Lkotlinx/coroutines/ThreadPoolDispatcherKt__ThreadPoolDispatcherKt$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0, p1, v0}, Lkotlinx/coroutines/ThreadPoolDispatcherKt__ThreadPoolDispatcherKt$$ExternalSyntheticLambda0;-><init>(ILjava/lang/String;Ljava/util/concurrent/atomic/AtomicInteger;)V
@@ -38,14 +38,14 @@
 
     move-result-object p0
 
-    .line 45
+    .line 17
     invoke-static {p0}, Lkotlinx/coroutines/ExecutorsKt;->from(Ljava/util/concurrent/ExecutorService;)Lkotlinx/coroutines/ExecutorCoroutineDispatcher;
 
     move-result-object p0
 
     return-object p0
 
-    .line 38
+    .line 10
     :cond_16
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -79,7 +79,7 @@
 .method private static final newFixedThreadPoolContext$lambda$1$ThreadPoolDispatcherKt__ThreadPoolDispatcherKt(ILjava/lang/String;Ljava/util/concurrent/atomic/AtomicInteger;Ljava/lang/Runnable;)Ljava/lang/Thread;
     .registers 6
 
-    .line 41
+    .line 13
     new-instance v0, Ljava/lang/Thread;
 
     const/4 v1, 0x1
@@ -112,7 +112,7 @@
     :goto_1e
     invoke-direct {v0, p3, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    .line 42
+    .line 14
     invoke-virtual {v0, v1}, Ljava/lang/Thread;->setDaemon(Z)V
 
     return-object v0

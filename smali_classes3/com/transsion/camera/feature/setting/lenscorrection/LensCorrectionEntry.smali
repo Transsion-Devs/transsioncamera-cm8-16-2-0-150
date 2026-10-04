@@ -50,7 +50,7 @@
 .method public getFeatureName()Ljava/lang/String;
     .registers 1
 
-    .line 54
+    .line 59
     const-class p0, Lcom/transsion/camera/feature/setting/lenscorrection/LensCorrectionEntry;
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -67,4 +67,19 @@
     const-class p0, Lcom/transsion/camera/app/common/setting/ICameraSetting;
 
     return-object p0
+.end method
+
+.method public isSupport()Z
+    .registers 2
+
+    .line 54
+    iget-object p0, p0, Lcom/transsion/camera/app/common/provider/FeatureEntryBase;->mResources:Landroid/content/res/Resources;
+
+    sget v0, Lcom/transsion/camera/app/common/R$bool;->lens_correction_support:I
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p0
+
+    return p0
 .end method

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/ImageProcessor;)V
     .registers 2
 
-    .line 515
+    .line 510
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor$4;->this$0:Lcom/transsion/camera/app/common/mode/ImageProcessor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPictureTaken(Lcom/transsion/camera/app/common/mode/PictureInfo;)V
     .registers 12
 
-    .line 518
+    .line 513
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor$4;->this$0:Lcom/transsion/camera/app/common/mode/ImageProcessor;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -47,7 +47,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 519
+    .line 514
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor$4;->this$0:Lcom/transsion/camera/app/common/mode/ImageProcessor;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getData()[B
@@ -70,12 +70,12 @@
 
     iget v7, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mCaptureOrientation:I
 
-    .line 520
+    .line 515
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getTimestamp()J
 
     move-result-wide v8
 
-    .line 519
+    .line 514
     invoke-virtual/range {v2 .. v9}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->onPostViewData([BIIIIJ)V
 
     return-void

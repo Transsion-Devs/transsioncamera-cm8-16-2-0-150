@@ -33,8 +33,8 @@
     c = "kotlinx.coroutines.channels.TickerChannelsKt$ticker$3"
     f = "TickerChannels.kt"
     l = {
-        0x48,
-        0x49
+        0x44,
+        0x45
     }
     m = "invokeSuspend"
 .end annotation
@@ -168,7 +168,7 @@
 
     move-result-object v0
 
-    .line 70
+    .line 66
     iget v1, p0, Lkotlinx/coroutines/channels/TickerChannelsKt$ticker$3;->label:I
 
     const/4 v2, 0x2
@@ -202,7 +202,7 @@
 
     check-cast p1, Lkotlinx/coroutines/channels/ProducerScope;
 
-    .line 71
+    .line 67
     iget-object v1, p0, Lkotlinx/coroutines/channels/TickerChannelsKt$ticker$3;->$mode:Lkotlinx/coroutines/channels/TickerMode;
 
     sget-object v4, Lkotlinx/coroutines/channels/TickerChannelsKt$ticker$3$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -219,7 +219,7 @@
 
     goto :goto_55
 
-    .line 73
+    .line 69
     :cond_30
     iget-wide v4, p0, Lkotlinx/coroutines/channels/TickerChannelsKt$ticker$3;->$delayMillis:J
 
@@ -245,7 +245,7 @@
     :cond_42
     move-object v6, p0
 
-    .line 72
+    .line 68
     iget-wide v1, v6, Lkotlinx/coroutines/channels/TickerChannelsKt$ticker$3;->$delayMillis:J
 
     move p0, v3
@@ -268,7 +268,7 @@
     :goto_54
     return-object v0
 
-    .line 75
+    .line 71
     :cond_55
     :goto_55
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

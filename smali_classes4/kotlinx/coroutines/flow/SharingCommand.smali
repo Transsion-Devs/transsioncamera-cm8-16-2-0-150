@@ -14,6 +14,8 @@
 
 
 # static fields
+.field private static final synthetic $ENTRIES:Lkotlin/enums/EnumEntries;
+
 .field private static final synthetic $VALUES:[Lkotlinx/coroutines/flow/SharingCommand;
 
 .field public static final enum START:Lkotlinx/coroutines/flow/SharingCommand;
@@ -43,7 +45,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 22
+    .line 18
     new-instance v0, Lkotlinx/coroutines/flow/SharingCommand;
 
     const-string v1, "START"
@@ -54,7 +56,7 @@
 
     sput-object v0, Lkotlinx/coroutines/flow/SharingCommand;->START:Lkotlinx/coroutines/flow/SharingCommand;
 
-    .line 27
+    .line 23
     new-instance v0, Lkotlinx/coroutines/flow/SharingCommand;
 
     const-string v1, "STOP"
@@ -65,7 +67,7 @@
 
     sput-object v0, Lkotlinx/coroutines/flow/SharingCommand;->STOP:Lkotlinx/coroutines/flow/SharingCommand;
 
-    .line 35
+    .line 31
     new-instance v0, Lkotlinx/coroutines/flow/SharingCommand;
 
     const-string v1, "STOP_AND_RESET_REPLAY_CACHE"
@@ -82,6 +84,12 @@
 
     sput-object v0, Lkotlinx/coroutines/flow/SharingCommand;->$VALUES:[Lkotlinx/coroutines/flow/SharingCommand;
 
+    invoke-static {v0}, Lkotlin/enums/EnumEntriesKt;->enumEntries([Ljava/lang/Enum;)Lkotlin/enums/EnumEntries;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlinx/coroutines/flow/SharingCommand;->$ENTRIES:Lkotlin/enums/EnumEntries;
+
     return-void
 .end method
 
@@ -93,10 +101,24 @@
         }
     .end annotation
 
-    .line 15
+    .line 11
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
+.end method
+
+.method public static getEntries()Lkotlin/enums/EnumEntries;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/enums/EnumEntries;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlinx/coroutines/flow/SharingCommand;->$ENTRIES:Lkotlin/enums/EnumEntries;
+
+    return-object v0
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lkotlinx/coroutines/flow/SharingCommand;

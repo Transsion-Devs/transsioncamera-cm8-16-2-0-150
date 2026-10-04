@@ -30,7 +30,7 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    .line 382
+    .line 401
     new-instance v0, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager$Singleton$1;
 
     invoke-direct {v0}, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager$Singleton$1;-><init>()V
@@ -43,7 +43,7 @@
 .method protected constructor <init>()V
     .registers 1
 
-    .line 370
+    .line 389
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,7 +54,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 378
+    .line 397
     sget-object v0, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager$Singleton;->SINGLETON:Lcom/transsion/hubsdk/api/util/TranSingletonUtils$Singleton;
 
     invoke-virtual {v0}, Lcom/transsion/hubsdk/api/util/TranSingletonUtils$Singleton;->clean()V
@@ -67,7 +67,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 373
+    .line 392
     sget-object v0, Lcom/transsion/hubsdk/api/tranusf/TranUsfManager$Singleton;->SINGLETON:Lcom/transsion/hubsdk/api/util/TranSingletonUtils$Singleton;
 
     invoke-virtual {v0}, Lcom/transsion/hubsdk/api/util/TranSingletonUtils$Singleton;->get()Ljava/lang/Object;

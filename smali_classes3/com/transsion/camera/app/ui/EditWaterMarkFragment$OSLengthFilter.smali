@@ -28,22 +28,22 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;Lcom/transsion/widgetslib/dialog/InputDialog;I)V
     .registers 4
 
-    .line 543
+    .line 557
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$OSLengthFilter;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
-    .line 544
+    .line 558
     invoke-direct {p0, p3}, Landroid/text/InputFilter$LengthFilter;-><init>(I)V
 
     if-eqz p2, :cond_10
 
-    .line 546
+    .line 560
     new-instance p1, Ljava/lang/ref/WeakReference;
 
     invoke-direct {p1, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$OSLengthFilter;->mInputDialogWeakReference:Ljava/lang/ref/WeakReference;
 
-    .line 547
+    .line 561
     iput p3, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$OSLengthFilter;->mTextNum:I
 
     :cond_10
@@ -55,22 +55,22 @@
 .method public filter(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;
     .registers 7
 
-    .line 553
+    .line 567
     invoke-super/range {p0 .. p6}, Landroid/text/InputFilter$LengthFilter;->filter(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;
 
     move-result-object p2
 
-    .line 554
+    .line 568
     invoke-interface {p4}, Ljava/lang/CharSequence;->length()I
 
     move-result p3
 
-    .line 555
+    .line 569
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
 
-    .line 556
+    .line 570
     iget-object p4, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$OSLengthFilter;->mInputDialogWeakReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p4}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -83,7 +83,7 @@
 
     add-int/2addr p1, p3
 
-    .line 557
+    .line 571
     iget p4, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$OSLengthFilter;->mTextNum:I
 
     if-le p1, p4, :cond_37
@@ -92,12 +92,12 @@
 
     if-eqz p2, :cond_37
 
-    .line 558
+    .line 572
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$OSLengthFilter;->mToast:Landroid/widget/Toast;
 
     if-nez p1, :cond_32
 
-    .line 559
+    .line 573
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$OSLengthFilter;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     invoke-virtual {p1}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
@@ -114,7 +114,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$OSLengthFilter;->mToast:Landroid/widget/Toast;
 
-    .line 561
+    .line 575
     :cond_32
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$OSLengthFilter;->mToast:Landroid/widget/Toast;
 

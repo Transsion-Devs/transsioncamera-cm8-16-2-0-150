@@ -52,7 +52,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)V
     .registers 2
 
-    .line 79
+    .line 83
     iput-object p1, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1;->this$0:Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 .method private synthetic lambda$updateFail$2(Ljava/lang/String;I)V
     .registers 3
 
-    .line 99
+    .line 103
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1;->this$0:Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->-$$Nest$fgetmGuideUIManager(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
@@ -78,7 +78,7 @@
 .method private synthetic lambda$updateSuccess$0(Ljava/lang/String;Ljava/lang/String;I)V
     .registers 4
 
-    .line 88
+    .line 92
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1;->this$0:Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->-$$Nest$fgetmGuideUIManager(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
@@ -93,7 +93,7 @@
 .method private synthetic lambda$updateSuccess$1(Ljava/lang/String;Ljava/lang/String;I)V
     .registers 4
 
-    .line 94
+    .line 98
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1;->this$0:Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->-$$Nest$fgetmGuideUIManager(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
@@ -110,7 +110,7 @@
 .method public updateFail(Lcom/transsion/camera/featurelibs/download/Request;IILjava/lang/String;I)V
     .registers 6
 
-    .line 99
+    .line 103
     new-instance p1, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0, p4, p5}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1;Ljava/lang/String;I)V
@@ -123,7 +123,7 @@
 .method public updateSuccess(Lcom/transsion/camera/featurelibs/download/Request;Ljava/lang/String;Ljava/lang/String;I)V
     .registers 5
 
-    .line 93
+    .line 97
     iget-object p1, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1;->this$0:Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->-$$Nest$fgetmCacheManager(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)Lcom/transsion/camera/feature/imageryguide/cache/CacheManager;
@@ -132,7 +132,7 @@
 
     invoke-virtual {p1, p2, p3, p4}, Lcom/transsion/camera/feature/imageryguide/cache/CacheManager;->updateImageryGuideJson(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 94
+    .line 98
     new-instance p1, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0, p2, p3, p4}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1;Ljava/lang/String;Ljava/lang/String;I)V
@@ -152,7 +152,7 @@
 .method public updateSuccess(Lcom/transsion/camera/featurelibs/download/Request;[BLjava/lang/String;Ljava/lang/String;I)V
     .registers 6
 
-    .line 87
+    .line 91
     iget-object p1, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1;->this$0:Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->-$$Nest$fgetmCacheManager(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)Lcom/transsion/camera/feature/imageryguide/cache/CacheManager;
@@ -161,7 +161,7 @@
 
     invoke-virtual {p1, p2, p3, p4, p5}, Lcom/transsion/camera/feature/imageryguide/cache/CacheManager;->cacheResource([BLjava/lang/String;Ljava/lang/String;I)V
 
-    .line 88
+    .line 92
     new-instance p1, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0, p3, p4, p5}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1;Ljava/lang/String;Ljava/lang/String;I)V

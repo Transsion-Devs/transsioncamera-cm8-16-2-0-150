@@ -26,7 +26,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__CountKt"
     f = "Count.kt"
     l = {
-        0x11
+        0xd
     }
     m = "count"
 .end annotation

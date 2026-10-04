@@ -70,12 +70,12 @@
 
     if-eqz p1, :cond_9e
 
-    .line 704
+    .line 51
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 777
+    .line 52
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1

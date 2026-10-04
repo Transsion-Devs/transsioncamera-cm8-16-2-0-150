@@ -28,10 +28,10 @@
 .method public constructor <init>([Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V
     .registers 6
 
-    .line 560
+    .line 634
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 561
+    .line 635
     array-length v0, p2
 
     const/4 v1, 0x0
@@ -50,7 +50,7 @@
     :goto_b
     invoke-static {v0}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
 
-    .line 562
+    .line 636
     array-length v0, p1
 
     if-ne v0, v2, :cond_13
@@ -65,22 +65,22 @@
     :goto_14
     invoke-static {v0}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
 
-    .line 564
+    .line 638
     array-length v0, p2
 
     if-ne v0, v2, :cond_3a
 
-    .line 565
+    .line 639
     aget-object v0, p2, v1
 
-    invoke-static {v0}, Lcom/google/gson/internal/$Gson$Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 566
+    .line 640
     aget-object v0, p2, v1
 
     invoke-static {v0}, Lcom/google/gson/internal/$Gson$Types;->checkNotPrimitive(Ljava/lang/reflect/Type;)V
 
-    .line 567
+    .line 641
     aget-object p1, p1, v1
 
     const-class v0, Ljava/lang/Object;
@@ -95,7 +95,7 @@
     :goto_2c
     invoke-static {v2}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
 
-    .line 568
+    .line 642
     aget-object p1, p2, v1
 
     invoke-static {p1}, Lcom/google/gson/internal/$Gson$Types;->canonicalize(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
@@ -104,28 +104,28 @@
 
     iput-object p1, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
-    .line 569
+    .line 643
     iput-object v0, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
 
     return-void
 
-    .line 572
+    .line 646
     :cond_3a
     aget-object p2, p1, v1
 
-    invoke-static {p2}, Lcom/google/gson/internal/$Gson$Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 573
+    .line 647
     aget-object p2, p1, v1
 
     invoke-static {p2}, Lcom/google/gson/internal/$Gson$Types;->checkNotPrimitive(Ljava/lang/reflect/Type;)V
 
     const/4 p2, 0x0
 
-    .line 574
+    .line 648
     iput-object p2, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
-    .line 575
+    .line 649
     aget-object p1, p1, v1
 
     invoke-static {p1}, Lcom/google/gson/internal/$Gson$Types;->canonicalize(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
@@ -142,14 +142,13 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 3
 
-    .line 588
+    .line 665
     instance-of v0, p1, Ljava/lang/reflect/WildcardType;
 
     if-eqz v0, :cond_e
 
     check-cast p1, Ljava/lang/reflect/WildcardType;
 
-    .line 589
     invoke-static {p0, p1}, Lcom/google/gson/internal/$Gson$Types;->equals(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)Z
 
     move-result p0
@@ -169,7 +168,7 @@
 .method public getLowerBounds()[Ljava/lang/reflect/Type;
     .registers 3
 
-    .line 584
+    .line 660
     iget-object p0, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
     if-eqz p0, :cond_b
@@ -193,7 +192,7 @@
 .method public getUpperBounds()[Ljava/lang/reflect/Type;
     .registers 3
 
-    .line 580
+    .line 655
     iget-object p0, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
 
     const/4 v0, 0x1
@@ -210,7 +209,7 @@
 .method public hashCode()I
     .registers 2
 
-    .line 594
+    .line 671
     iget-object v0, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
     if-eqz v0, :cond_b
@@ -229,7 +228,6 @@
     :goto_c
     iget-object p0, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
 
-    .line 595
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
@@ -244,12 +242,12 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 599
+    .line 676
     iget-object v0, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
     if-eqz v0, :cond_1c
 
-    .line 600
+    .line 677
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -272,7 +270,7 @@
 
     return-object p0
 
-    .line 601
+    .line 678
     :cond_1c
     iget-object v0, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
 
@@ -280,12 +278,12 @@
 
     if-ne v0, v1, :cond_25
 
-    .line 602
+    .line 679
     const-string p0, "?"
 
     return-object p0
 
-    .line 604
+    .line 681
     :cond_25
     new-instance v0, Ljava/lang/StringBuilder;
 

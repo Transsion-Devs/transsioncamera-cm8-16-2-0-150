@@ -3,40 +3,34 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/airbnb/lottie/LottieOnCompositionLoadedListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
-.field public final synthetic f$1:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;)V
-    .registers 3
+.method public synthetic constructor <init>(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)V
+    .registers 2
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda2;->f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
-    iput-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda2;->f$1:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCompositionLoaded(Lcom/airbnb/lottie/LottieComposition;)V
-    .registers 3
+.method public final onClick(Landroid/view/View;)V
+    .registers 2
 
     .line 0
-    iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda2;->f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
+    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda2;->f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
-    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda2;->f$1:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
-
-    invoke-static {v0, p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$FNdaooDJ_lupknyWz990BCnXlfc(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;Lcom/airbnb/lottie/LottieComposition;)V
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$ZbIWYzT3AZ9z9H1lJae1lAYJXYc(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Landroid/view/View;)V
 
     return-void
 .end method

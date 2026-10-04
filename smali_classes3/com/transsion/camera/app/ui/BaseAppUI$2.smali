@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
     .registers 2
 
-    .line 482
+    .line 478
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public scrollStarted()V
     .registers 4
 
-    .line 485
+    .line 481
     invoke-static {}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -47,17 +47,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 486
+    .line 482
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mHintUIManager:Lcom/transsion/camera/app/ui/manager/HintUIManager;
 
     if-eqz v0, :cond_12
 
-    .line 487
+    .line 483
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->hide()V
 
-    .line 489
+    .line 485
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -67,7 +67,7 @@
 
     if-eqz v1, :cond_28
 
-    .line 490
+    .line 486
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -76,14 +76,14 @@
 
     if-eq v2, v0, :cond_28
 
-    .line 491
+    .line 487
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mWideCameraUIManager:Lcom/transsion/camera/app/ui/manager/WideCameraUIManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/manager/WideCameraUIManager;->hide()V
 
-    .line 494
+    .line 490
     :cond_28
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -91,10 +91,10 @@
 
     if-eqz v0, :cond_42
 
-    .line 495
+    .line 491
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->restoreInteractiveView()V
 
-    .line 496
+    .line 492
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
@@ -105,14 +105,14 @@
 
     if-eq v2, v0, :cond_42
 
-    .line 497
+    .line 493
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mInteractiveUIManager:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->hide()V
 
-    .line 500
+    .line 496
     :cond_42
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -120,10 +120,10 @@
 
     if-eqz v0, :cond_4b
 
-    .line 501
+    .line 497
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IModeUIControl;->hideModeUI()V
 
-    .line 503
+    .line 499
     :cond_4b
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -137,7 +137,7 @@
 .method public scrollStopped(I)V
     .registers 5
 
-    .line 514
+    .line 510
     invoke-static {}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -168,14 +168,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 515
+    .line 511
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     const/16 v1, 0x36
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/BaseAppUI;->notifyRawActionToAppUI(I)V
 
-    .line 516
+    .line 512
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mCurrentModeName:Ljava/lang/String;
@@ -188,22 +188,22 @@
 
     if-nez v0, :cond_5f
 
-    .line 517
+    .line 513
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget v1, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mScrollModeIndex:I
 
     if-ne v1, p1, :cond_56
 
-    .line 518
+    .line 514
     iget-object p1, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mHintUIManager:Lcom/transsion/camera/app/ui/manager/HintUIManager;
 
     if-eqz p1, :cond_44
 
-    .line 519
+    .line 515
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->show()V
 
-    .line 521
+    .line 517
     :cond_44
     iget-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -211,10 +211,10 @@
 
     if-eqz p1, :cond_4d
 
-    .line 522
+    .line 518
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/manager/WideCameraUIManager;->show()V
 
-    .line 524
+    .line 520
     :cond_4d
     iget-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -222,10 +222,10 @@
 
     if-eqz p1, :cond_56
 
-    .line 525
+    .line 521
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUIControl$IModeUIControl;->showModeUI()V
 
-    .line 528
+    .line 524
     :cond_56
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -233,7 +233,7 @@
 
     if-eqz p0, :cond_5f
 
-    .line 529
+    .line 525
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->show()V
 
     :cond_5f
@@ -243,7 +243,7 @@
 .method public updateScrollIndex(I)V
     .registers 5
 
-    .line 508
+    .line 504
     invoke-static {}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -264,7 +264,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 509
+    .line 505
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$2;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iput p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mScrollModeIndex:I

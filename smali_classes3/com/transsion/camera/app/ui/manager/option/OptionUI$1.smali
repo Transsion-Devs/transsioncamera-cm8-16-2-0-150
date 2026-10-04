@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/option/OptionUI;)V
     .registers 2
 
-    .line 203
+    .line 215
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI$1;->this$0:Lcom/transsion/camera/app/ui/manager/option/OptionUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 206
+    .line 218
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    .line 207
+    .line 219
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI$1;->this$0:Lcom/transsion/camera/app/ui/manager/option/OptionUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;

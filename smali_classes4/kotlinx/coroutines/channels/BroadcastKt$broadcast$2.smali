@@ -27,8 +27,8 @@
     c = "kotlinx.coroutines.channels.BroadcastKt$broadcast$2"
     f = "Broadcast.kt"
     l = {
-        0x38,
-        0x39
+        0x34,
+        0x35
     }
     m = "invokeSuspend"
 .end annotation
@@ -155,7 +155,7 @@
 
     move-result-object v0
 
-    .line 55
+    .line 51
     iget v1, p0, Lkotlinx/coroutines/channels/BroadcastKt$broadcast$2;->label:I
 
     const/4 v2, 0x2
@@ -212,7 +212,7 @@
 
     check-cast p1, Lkotlinx/coroutines/channels/ProducerScope;
 
-    .line 56
+    .line 52
     iget-object v1, p0, Lkotlinx/coroutines/channels/BroadcastKt$broadcast$2;->$channel:Lkotlinx/coroutines/channels/ReceiveChannel;
 
     invoke-interface {v1}, Lkotlinx/coroutines/channels/ReceiveChannel;->iterator()Lkotlinx/coroutines/channels/ChannelIterator;
@@ -254,7 +254,7 @@
 
     move-result-object p1
 
-    .line 57
+    .line 53
     iput-object v4, p0, Lkotlinx/coroutines/channels/BroadcastKt$broadcast$2;->L$0:Ljava/lang/Object;
 
     iput-object v1, p0, Lkotlinx/coroutines/channels/BroadcastKt$broadcast$2;->L$1:Ljava/lang/Object;
@@ -270,7 +270,7 @@
     :goto_64
     return-object v0
 
-    .line 59
+    .line 55
     :cond_65
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

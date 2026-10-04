@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;)V
     .registers 2
 
-    .line 318
+    .line 327
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$3;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,7 +35,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 6
 
-    .line 321
+    .line 330
     iget p1, p1, Landroid/os/Message;->what:I
 
     const/4 v0, 0x1
@@ -48,7 +48,7 @@
 
     return-void
 
-    .line 329
+    .line 338
     :cond_9
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$3;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
@@ -60,7 +60,7 @@
 
     if-eqz p1, :cond_1b
 
-    .line 330
+    .line 339
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$3;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;->-$$Nest$fgetmFaceDetectionParameterConfigure(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;)Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;
@@ -69,7 +69,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;->stopFaceInfoDection(Z)V
 
-    .line 332
+    .line 341
     :cond_1b
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$3;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
@@ -77,7 +77,7 @@
 
     return-void
 
-    .line 323
+    .line 332
     :cond_21
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$3;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
@@ -87,7 +87,7 @@
 
     if-eqz p1, :cond_32
 
-    .line 324
+    .line 333
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$3;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;->-$$Nest$fgetmFaceDetectionParameterConfigure(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;)Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;
@@ -96,7 +96,7 @@
 
     invoke-virtual {p1}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;->startFaceInfoDection()V
 
-    .line 326
+    .line 335
     :cond_32
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$3;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 

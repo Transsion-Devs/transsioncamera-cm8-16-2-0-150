@@ -937,6 +937,21 @@
     return-object p0
 .end method
 
+.method public dontAnimate()Lcom/bumptech/glide/request/BaseRequestOptions;
+    .registers 3
+
+    .line 1083
+    sget-object v0, Lcom/bumptech/glide/load/resource/gif/GifOptions;->DISABLE_ANIMATION:Lcom/bumptech/glide/load/Option;
+
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-virtual {p0, v0, v1}, Lcom/bumptech/glide/request/BaseRequestOptions;->set(Lcom/bumptech/glide/load/Option;Ljava/lang/Object;)Lcom/bumptech/glide/request/BaseRequestOptions;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public downsample(Lcom/bumptech/glide/load/resource/bitmap/DownsampleStrategy;)Lcom/bumptech/glide/request/BaseRequestOptions;
     .registers 3
 
@@ -1191,6 +1206,28 @@
 
     .line 394
     invoke-direct {p0}, Lcom/bumptech/glide/request/BaseRequestOptions;->selfOrThrowIfLocked()Lcom/bumptech/glide/request/BaseRequestOptions;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public format(Lcom/bumptech/glide/load/DecodeFormat;)Lcom/bumptech/glide/request/BaseRequestOptions;
+    .registers 3
+
+    .line 639
+    invoke-static {p1}, Lcom/bumptech/glide/util/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 640
+    sget-object v0, Lcom/bumptech/glide/load/resource/bitmap/Downsampler;->DECODE_FORMAT:Lcom/bumptech/glide/load/Option;
+
+    invoke-virtual {p0, v0, p1}, Lcom/bumptech/glide/request/BaseRequestOptions;->set(Lcom/bumptech/glide/load/Option;Ljava/lang/Object;)Lcom/bumptech/glide/request/BaseRequestOptions;
+
+    move-result-object p0
+
+    sget-object v0, Lcom/bumptech/glide/load/resource/gif/GifOptions;->DECODE_FORMAT:Lcom/bumptech/glide/load/Option;
+
+    invoke-virtual {p0, v0, p1}, Lcom/bumptech/glide/request/BaseRequestOptions;->set(Lcom/bumptech/glide/load/Option;Ljava/lang/Object;)Lcom/bumptech/glide/request/BaseRequestOptions;
 
     move-result-object p0
 
@@ -1538,6 +1575,19 @@
     return p0
 .end method
 
+.method public final isDiskCacheStrategySet()Z
+    .registers 2
+
+    const/4 v0, 0x4
+
+    .line 1298
+    invoke-direct {p0, v0}, Lcom/bumptech/glide/request/BaseRequestOptions;->isSet(I)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public final isMemoryCacheable()Z
     .registers 1
 
@@ -1565,6 +1615,19 @@
 
     .line 1404
     iget-boolean p0, p0, Lcom/bumptech/glide/request/BaseRequestOptions;->isScaleOnlyOrNoTransform:Z
+
+    return p0
+.end method
+
+.method public final isSkipMemoryCacheSet()Z
+    .registers 2
+
+    const/16 v0, 0x100
+
+    .line 1302
+    invoke-direct {p0, v0}, Lcom/bumptech/glide/request/BaseRequestOptions;->isSet(I)Z
+
+    move-result p0
 
     return p0
 .end method

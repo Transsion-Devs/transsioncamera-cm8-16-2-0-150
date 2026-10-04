@@ -24,10 +24,10 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;Landroid/os/Looper;)V
     .registers 3
 
-    .line 418
+    .line 414
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
-    .line 419
+    .line 415
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -47,7 +47,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 7
 
-    .line 424
+    .line 420
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -58,7 +58,7 @@
 
     goto/16 :goto_15f
 
-    .line 493
+    .line 489
     :pswitch_9
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
@@ -66,7 +66,7 @@
 
     return-void
 
-    .line 469
+    .line 465
     :pswitch_f
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
@@ -80,7 +80,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$fputmIsTakePicture(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;Z)V
 
-    .line 470
+    .line 466
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
@@ -89,7 +89,7 @@
 
     if-eqz p1, :cond_53
 
-    .line 471
+    .line 467
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
@@ -112,7 +112,7 @@
 
     move-result-object v0
 
-    .line 472
+    .line 468
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$fgetmIsTakePicture(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)Z
@@ -140,10 +140,10 @@
 
     move-result v1
 
-    .line 471
+    .line 467
     invoke-interface {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;->onDataCallback(Ljava/lang/Object;I)V
 
-    .line 474
+    .line 470
     :cond_53
     sget-object p1, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -171,13 +171,13 @@
 
     return-void
 
-    .line 487
+    .line 483
     :pswitch_70
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     invoke-static {p1, v2}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$fputmResumed(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;Z)V
 
-    .line 488
+    .line 484
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$fgetmSmileAlgorithm(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)Lcom/transsion/camera/feature/setting/smiledetection/ISmileDetectAlgorithm;
@@ -186,7 +186,7 @@
 
     if-eqz p1, :cond_15f
 
-    .line 489
+    .line 485
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$fgetmSmileAlgorithm(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)Lcom/transsion/camera/feature/setting/smiledetection/ISmileDetectAlgorithm;
@@ -197,7 +197,7 @@
 
     return-void
 
-    .line 477
+    .line 473
     :pswitch_87
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
@@ -209,13 +209,13 @@
 
     goto/16 :goto_15f
 
-    .line 480
+    .line 476
     :cond_91
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$fputmResumed(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;Z)V
 
-    .line 481
+    .line 477
     sget-object p1, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -240,7 +240,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 482
+    .line 478
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$fgetmSmileAlgorithm(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)Lcom/transsion/camera/feature/setting/smiledetection/ISmileDetectAlgorithm;
@@ -249,7 +249,7 @@
 
     if-eqz p1, :cond_15f
 
-    .line 483
+    .line 479
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$fgetmSmileAlgorithm(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)Lcom/transsion/camera/feature/setting/smiledetection/ISmileDetectAlgorithm;
@@ -260,7 +260,7 @@
 
     return-void
 
-    .line 465
+    .line 461
     :pswitch_c4
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
@@ -274,7 +274,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$fputmSupportCapture(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;Z)V
 
-    .line 466
+    .line 462
     sget-object p1, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -301,7 +301,7 @@
 
     return-void
 
-    .line 447
+    .line 443
     :pswitch_ee
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
@@ -349,7 +349,7 @@
 
     if-nez v0, :cond_160
 
-    .line 448
+    .line 444
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -366,19 +366,19 @@
 
     goto :goto_160
 
-    .line 453
+    .line 449
     :cond_12a
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, [B
 
-    .line 454
+    .line 450
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    .line 455
+    .line 451
     iget p1, p1, Landroid/os/Message;->arg2:I
 
-    .line 456
+    .line 452
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     invoke-static {v3}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$fgetmSmileAlgorithm(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)Lcom/transsion/camera/feature/setting/smiledetection/ISmileDetectAlgorithm;
@@ -393,10 +393,10 @@
 
     const/16 p1, 0x66
 
-    .line 458
+    .line 454
     invoke-virtual {p0, p1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 459
+    .line 455
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -414,14 +414,14 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 460
+    .line 456
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->mPreviousCaptureTime:J
 
-    .line 461
+    .line 457
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
     invoke-static {p0, v2}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$fputmIgnoreFrame(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;I)V
@@ -430,7 +430,7 @@
     :goto_15f
     return-void
 
-    .line 449
+    .line 445
     :cond_160
     :goto_160
     sget-object p1, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -507,7 +507,7 @@
 
     return-void
 
-    .line 438
+    .line 434
     :pswitch_1b5
     invoke-static {}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$sfgetmInit()Z
 
@@ -515,7 +515,7 @@
 
     if-nez p1, :cond_1c3
 
-    .line 439
+    .line 435
     sget-object p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "already uninit, return"
@@ -524,7 +524,7 @@
 
     return-void
 
-    .line 442
+    .line 438
     :cond_1c3
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
@@ -534,10 +534,10 @@
 
     invoke-interface {p0}, Lcom/transsion/camera/feature/setting/smiledetection/ISmileDetectAlgorithm;->unInitSmile()V
 
-    .line 443
+    .line 439
     invoke-static {v2}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$sfputmInit(Z)V
 
-    .line 444
+    .line 440
     sget-object p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo p1, "unInitSmile"
@@ -546,7 +546,7 @@
 
     return-void
 
-    .line 426
+    .line 422
     :pswitch_1d8
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
@@ -556,7 +556,7 @@
 
     if-nez p1, :cond_1e8
 
-    .line 427
+    .line 423
     sget-object p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "mSmileAlgorithm == null"
@@ -565,7 +565,7 @@
 
     return-void
 
-    .line 430
+    .line 426
     :cond_1e8
     invoke-static {}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$sfgetmInit()Z
 
@@ -573,7 +573,7 @@
 
     if-eqz p1, :cond_1f6
 
-    .line 431
+    .line 427
     sget-object p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "already init, return"
@@ -582,7 +582,7 @@
 
     return-void
 
-    .line 434
+    .line 430
     :cond_1f6
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;
 
@@ -596,7 +596,7 @@
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->-$$Nest$sfputmInit(Z)V
 
-    .line 435
+    .line 431
     sget-object p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p1, Ljava/lang/StringBuilder;

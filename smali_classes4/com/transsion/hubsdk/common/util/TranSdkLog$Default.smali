@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 113
+    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public d(Ljava/lang/String;Ljava/lang/String;)I
     .registers 3
 
-    .line 150
+    .line 156
     invoke-static {p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result p0
@@ -43,7 +43,7 @@
 .method public d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .registers 4
 
-    .line 155
+    .line 161
     invoke-static {p1, p2, p3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     move-result p0
@@ -54,7 +54,7 @@
 .method public e(Ljava/lang/String;Ljava/lang/String;)I
     .registers 3
 
-    .line 168
+    .line 174
     invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result p0
@@ -65,7 +65,7 @@
 .method public e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .registers 4
 
-    .line 173
+    .line 179
     invoke-static {p1, p2, p3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     move-result p0
@@ -84,7 +84,7 @@
 .method public i(Ljava/lang/String;Ljava/lang/String;)I
     .registers 3
 
-    .line 132
+    .line 138
     invoke-static {p1, p2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result p0
@@ -95,7 +95,7 @@
 .method public i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .registers 4
 
-    .line 137
+    .line 143
     invoke-static {p1, p2, p3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     move-result p0
@@ -106,7 +106,7 @@
 .method public isLoggable(Ljava/lang/String;I)Z
     .registers 3
 
-    .line 127
+    .line 133
     invoke-static {p1, p2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result p0
@@ -117,7 +117,7 @@
 .method public printStackTrace(Ljava/lang/Throwable;)V
     .registers 2
 
-    .line 178
+    .line 184
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-void
@@ -134,7 +134,7 @@
 .method public v(Ljava/lang/String;Ljava/lang/String;)I
     .registers 3
 
-    .line 141
+    .line 147
     invoke-static {p1, p2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result p0
@@ -145,7 +145,7 @@
 .method public v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .registers 4
 
-    .line 146
+    .line 152
     invoke-static {p1, p2, p3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     move-result p0
@@ -156,7 +156,7 @@
 .method public w(Ljava/lang/String;Ljava/lang/String;)I
     .registers 3
 
-    .line 159
+    .line 165
     invoke-static {p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result p0
@@ -167,7 +167,7 @@
 .method public w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .registers 4
 
-    .line 164
+    .line 170
     invoke-static {p1, p2, p3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     move-result p0

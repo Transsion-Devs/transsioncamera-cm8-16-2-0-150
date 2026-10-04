@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;)V
     .registers 2
 
-    .line 41
+    .line 40
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView$1;->this$0:Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public doFrame(J)V
     .registers 4
 
-    .line 44
+    .line 43
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView$1;->this$0:Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 45
+    .line 44
     invoke-static {}, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -70,7 +70,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 46
+    .line 45
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView$1;->this$0:Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->-$$Nest$fgetmIsPlaying(Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;)Z
@@ -79,7 +79,7 @@
 
     if-eqz p1, :cond_39
 
-    .line 47
+    .line 46
     invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
     move-result-object p1
@@ -94,7 +94,7 @@
 
     return-void
 
-    .line 49
+    .line 48
     :cond_39
     invoke-static {}, Lcom/transsion/camera/thub/TranSchedManagerProxy;->getInstance()Lcom/transsion/camera/thub/TranSchedManagerProxy;
 
@@ -108,7 +108,7 @@
 
     const/4 p0, 0x0
 
-    .line 50
+    .line 49
     invoke-static {p0}, Landroid/os/Process;->setThreadPriority(I)V
 
     return-void

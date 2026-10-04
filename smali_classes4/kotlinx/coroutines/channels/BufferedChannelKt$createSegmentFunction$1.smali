@@ -66,7 +66,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 5
 
-    .line 2863
+    .line 2871
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
@@ -94,7 +94,7 @@
         }
     .end annotation
 
-    .line 2863
+    .line 2871
     # invokes: Lkotlinx/coroutines/channels/BufferedChannelKt;->createSegment(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;
     invoke-static {p1, p2, p3}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$createSegment(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;
 

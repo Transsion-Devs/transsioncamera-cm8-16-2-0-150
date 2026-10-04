@@ -202,6 +202,21 @@
     return-void
 .end method
 
+.method public disable2(I)V
+    .registers 3
+
+    .line 255
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/statusbar/TranStatusBarManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/statusbar/ITranStatusBarManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/statusbar/ITranStatusBarManagerAdapter;->disable2(I)V
+
+    return-void
+.end method
+
 .method public enableAction(Ljava/lang/String;Ljava/lang/String;Z)V
     .registers 5
 

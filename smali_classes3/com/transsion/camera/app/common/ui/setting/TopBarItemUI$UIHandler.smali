@@ -22,10 +22,10 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)V
     .registers 3
 
-    .line 203
+    .line 200
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 204
+    .line 201
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -49,7 +49,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 208
+    .line 205
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$UIHandler;->mUIReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -60,7 +60,7 @@
 
     if-nez p0, :cond_25
 
-    .line 210
+    .line 207
     invoke-static {}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -85,7 +85,7 @@
 
     return-void
 
-    .line 214
+    .line 211
     :cond_25
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -99,7 +99,7 @@
 
     goto :goto_43
 
-    .line 220
+    .line 217
     :cond_30
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -107,7 +107,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->stateValue:[I
 
-    .line 221
+    .line 218
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
     const-string v0, "on"
@@ -118,20 +118,20 @@
 
     if-eqz p1, :cond_43
 
-    .line 222
+    .line 219
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->doUpdateSettingEntryView()V
 
     :cond_43
     :goto_43
     return-void
 
-    .line 216
+    .line 213
     :cond_44
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/String;
 
-    .line 217
+    .line 214
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->doOnStatusChanged(Ljava/lang/String;)V
 
     return-void

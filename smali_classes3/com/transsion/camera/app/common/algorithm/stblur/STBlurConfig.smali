@@ -61,6 +61,24 @@
 
 
 # virtual methods
+.method public isFrontCamera()Z
+    .registers 1
+
+    .line 27
+    iget-boolean p0, p0, Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig;->mFrontCamera:Z
+
+    return p0
+.end method
+
+.method public isHasFace()Z
+    .registers 1
+
+    .line 31
+    iget-boolean p0, p0, Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig;->mHasFace:Z
+
+    return p0
+.end method
+
 .method public isSTBlurOn()Z
     .registers 1
 

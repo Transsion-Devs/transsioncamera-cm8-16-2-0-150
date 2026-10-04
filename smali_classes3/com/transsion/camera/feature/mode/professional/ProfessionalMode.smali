@@ -173,14 +173,14 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mPreviewRectListener:Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;
 
-    .line 831
+    .line 838
     new-instance p1, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode$2;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode$2;-><init>(Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;)V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mCaptureStopListener:Landroid/view/View$OnClickListener;
 
-    .line 840
+    .line 847
     new-instance p1, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;)V
@@ -211,7 +211,7 @@
 .method private cancelCapture()Z
     .registers 6
 
-    .line 803
+    .line 810
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -232,7 +232,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 804
+    .line 811
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->isNeedCancelCaptureFun()Z
 
     move-result v0
@@ -245,18 +245,18 @@
 
     if-eqz v0, :cond_83
 
-    .line 805
+    .line 812
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mCaptureProcessing:Z
 
-    .line 806
+    .line 813
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     if-eqz v0, :cond_2c
 
-    .line 807
+    .line 814
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->resetCapturingUI()V
 
-    .line 809
+    .line 816
     :cond_2c
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
@@ -272,41 +272,41 @@
 
     if-eqz v0, :cond_40
 
-    .line 812
+    .line 819
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->reConfigureSession()V
 
     goto :goto_4c
 
-    .line 814
+    .line 821
     :cond_40
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->cancelTakePicture()V
 
-    .line 815
+    .line 822
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v2, 0xe
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 817
+    .line 824
     :goto_4c
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->resetCaptureData()V
 
-    .line 818
+    .line 825
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->refreshShutterUI(Z)V
 
-    .line 819
+    .line 826
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v2, 0x5b
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 820
+    .line 827
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     const-string v2, "capture_state"
@@ -315,28 +315,28 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 821
+    .line 828
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->resetShot2ShotCount()V
 
-    .line 822
+    .line 829
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mModeStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     sget-object v2, Lcom/transsion/camera/app/common/IApp$State;->STATE_IDLE:Lcom/transsion/camera/app/common/IApp$State;
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;->onStatusChanged(Lcom/transsion/camera/app/common/IApp$State;)V
 
-    .line 823
+    .line 830
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v2, 0x21
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 824
+    .line 831
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v2, -0x1
@@ -347,7 +347,7 @@
 
     invoke-interface {v0, v4, v2, v3}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 825
+    .line 832
     invoke-direct {p0, v1, v4}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->notifyToProfessionUI(IZ)V
 
     return v4
@@ -359,12 +359,12 @@
 .method private confirmCapture(II)Z
     .registers 7
 
-    .line 784
+    .line 791
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onShutterClick(II)Z
 
     move-result p1
 
-    .line 785
+    .line 792
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -387,7 +387,7 @@
 
     if-eqz p1, :cond_55
 
-    .line 786
+    .line 793
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->isNeedCancelCaptureFun()Z
 
     move-result p2
@@ -400,20 +400,20 @@
 
     const/4 p2, 0x1
 
-    .line 787
+    .line 794
     iput-boolean p2, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mCaptureProcessing:Z
 
-    .line 788
+    .line 795
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v1, 0x5a
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 789
+    .line 796
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->refreshShutterUI(Z)V
 
-    .line 790
+    .line 797
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mModeStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     sget-object v1, Lcom/transsion/camera/app/common/IApp$State;->STATE_RUNNING:Lcom/transsion/camera/app/common/IApp$State;
@@ -422,10 +422,10 @@
 
     const/4 v0, 0x0
 
-    .line 791
+    .line 798
     invoke-direct {p0, p2, v0}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->notifyToProfessionUI(IZ)V
 
-    .line 792
+    .line 799
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v0, -0x1
@@ -436,19 +436,19 @@
 
     invoke-interface {p2, v2, v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 794
+    .line 801
     iget-wide v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mExposureTimeValue:J
 
     const-wide/32 v2, 0xf4240
 
     div-long/2addr v0, v2
 
-    .line 795
+    .line 802
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     if-eqz p0, :cond_55
 
-    .line 796
+    .line 803
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->startCapturingBeginAnim(J)V
 
     :cond_55
@@ -653,15 +653,15 @@
 
     const/4 v0, 0x0
 
-    .line 757
+    .line 764
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsPopSettingShow:Z
 
-    .line 758
+    .line 765
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->setPopSettingShow(Z)V
 
-    .line 759
+    .line 766
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mCaptureProcessing:Z
 
     const/4 v2, 0x1
@@ -678,12 +678,12 @@
 
     if-eq v1, v3, :cond_1b
 
-    .line 760
+    .line 767
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     invoke-virtual {v1, v0, v2}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->updateUIState(IZ)V
 
-    .line 762
+    .line 769
     :cond_1b
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
@@ -697,29 +697,29 @@
 
     const/4 v0, 0x1
 
-    .line 766
+    .line 773
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsPopSettingShow:Z
 
-    .line 767
+    .line 774
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->setPopSettingShow(Z)V
 
-    .line 768
+    .line 775
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->setSettingBarVisible(I)V
 
-    .line 769
+    .line 776
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->hideSeekBarIfNeed(Z)V
 
-    .line 770
+    .line 777
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->hide(Z)V
@@ -774,14 +774,14 @@
 .method private synthetic lambda$new$0(Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
     .registers 8
 
-    .line 842
+    .line 849
     iget p2, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mISOValue:I
 
     const/4 p3, -0x1
 
     if-ne p2, p3, :cond_11
 
-    .line 843
+    .line 850
     sget-object p2, Landroid/hardware/camera2/CaptureResult;->SENSOR_SENSITIVITY:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-virtual {p1, p2}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -794,7 +794,7 @@
 
     move-result p2
 
-    .line 849
+    .line 856
     :cond_11
     iget-wide v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mExposureTimeValue:J
 
@@ -804,7 +804,7 @@
 
     if-nez p3, :cond_25
 
-    .line 850
+    .line 857
     sget-object p3, Landroid/hardware/camera2/CaptureResult;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-virtual {p1, p3}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -817,7 +817,7 @@
 
     move-result-wide v0
 
-    .line 854
+    .line 861
     :cond_25
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mISOLimit:Z
 
@@ -841,21 +841,21 @@
     :cond_36
     const/4 p1, 0x0
 
-    .line 855
+    .line 862
     :goto_37
     iget-boolean p2, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mNeedSmartDenoise:Z
 
     if-eq p1, p2, :cond_77
 
-    .line 856
+    .line 863
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mNeedSmartDenoise:Z
 
-    .line 857
+    .line 864
     iget-boolean p2, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsCapturing:Z
 
     xor-int/lit8 p3, p2, 0x1
 
-    .line 858
+    .line 865
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -882,7 +882,7 @@
 
     if-nez p2, :cond_77
 
-    .line 861
+    .line 868
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     iget-boolean p2, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mNeedSmartDenoise:Z
@@ -893,7 +893,7 @@
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 862
+    .line 869
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     const-string p1, "key_setting_smart_denoise"
@@ -932,7 +932,7 @@
 
     monitor-enter p0
 
-    .line 873
+    .line 880
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -962,22 +962,22 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 874
+    .line 881
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsCapturing:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_55
 
-    .line 875
+    .line 882
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsCapturing:Z
 
-    .line 876
+    .line 883
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->setCaptureState(Z)V
 
-    .line 877
+    .line 884
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     iget-boolean v2, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mNeedSmartDenoise:Z
@@ -988,12 +988,12 @@
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 878
+    .line 885
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     if-eqz v0, :cond_4a
 
-    .line 879
+    .line 886
     const-string v2, "key_setting_smart_denoise"
 
     filled-new-array {v2}, [Ljava/lang/String;
@@ -1009,35 +1009,35 @@
 
     goto :goto_61
 
-    .line 881
+    .line 888
     :cond_4a
     :goto_4a
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mCaptureProcessing:Z
 
     if-eqz v0, :cond_55
 
-    .line 882
+    .line 889
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mModeStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     sget-object v2, Lcom/transsion/camera/app/common/IApp$State;->STATE_IDLE:Lcom/transsion/camera/app/common/IApp$State;
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;->onStatusChanged(Lcom/transsion/camera/app/common/IApp$State;)V
 
-    .line 885
+    .line 892
     :cond_55
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->refreshShutterUI(Z)V
 
-    .line 886
+    .line 893
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     if-eqz v0, :cond_5f
 
-    .line 887
+    .line 894
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->resetCapturingUI()V
     :try_end_5f
     .catchall {:try_start_1 .. :try_end_5f} :catchall_48
 
-    .line 889
+    .line 896
     :cond_5f
     monitor-exit p0
 
@@ -1059,18 +1059,18 @@
 
     const/4 v0, 0x1
 
-    .line 868
+    .line 875
     :try_start_2
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsCapturing:Z
 
-    .line 869
+    .line 876
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->setCaptureState(Z)V
     :try_end_9
     .catchall {:try_start_2 .. :try_end_9} :catchall_b
 
-    .line 870
+    .line 877
     monitor-exit p0
 
     return-void
@@ -1214,7 +1214,7 @@
 .method protected getBackMaxZoomRatio()I
     .registers 1
 
-    .line 909
+    .line 916
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -1223,7 +1223,7 @@
 
     if-eqz p0, :cond_f
 
-    .line 910
+    .line 917
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -1232,7 +1232,7 @@
 
     return p0
 
-    .line 912
+    .line 919
     :cond_f
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -1246,12 +1246,12 @@
 .method protected getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 8
 
-    .line 893
+    .line 900
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object v0
 
-    .line 894
+    .line 901
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mInstantZoomRatios:[Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ZoomConfig;->setInstantZoomRatios([Ljava/lang/String;)Lcom/transsion/camera/app/common/ZoomConfig;
@@ -1272,10 +1272,10 @@
 
     move-result-object v2
 
-    .line 895
+    .line 902
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/common/ZoomConfig;->setSupportedZoomTypes([I)Lcom/transsion/camera/app/common/ZoomConfig;
 
-    .line 899
+    .line 906
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getModeSettingUISpec()Lcom/transsion/camera/app/common/ModeSettingUISpec;
 
     move-result-object v1
@@ -1284,10 +1284,10 @@
 
     move-result v1
 
-    .line 898
+    .line 905
     invoke-virtual {v0, v4, v1}, Lcom/transsion/camera/app/common/ZoomConfig;->setMarginOffset(II)Lcom/transsion/camera/app/common/ZoomConfig;
 
-    .line 901
+    .line 908
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mPreviewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
@@ -1302,7 +1302,7 @@
 
     if-ne v1, v2, :cond_35
 
-    .line 902
+    .line 909
     iget p0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mProZoomTickRingMarginOffset1_1:I
 
     goto :goto_37
@@ -1310,7 +1310,7 @@
     :cond_35
     iget p0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mProZoomTickRingMarginOffset:I
 
-    .line 900
+    .line 907
     :goto_37
     invoke-virtual {v0, v5, p0}, Lcom/transsion/camera/app/common/ZoomConfig;->setMarginOffset(II)Lcom/transsion/camera/app/common/ZoomConfig;
 
@@ -1920,89 +1920,93 @@
 
     const/4 v0, 0x4
 
-    if-eq p1, v0, :cond_b7
+    if-eq p1, v0, :cond_c7
 
     const/16 v1, 0x11
 
-    if-eq p1, v1, :cond_af
+    if-eq p1, v1, :cond_bf
 
     const/16 v1, 0x20
 
     const/4 v2, 0x0
 
-    if-eq p1, v1, :cond_a9
+    if-eq p1, v1, :cond_b9
 
-    const/16 v1, 0x4a
-
-    if-eq p1, v1, :cond_a9
-
-    const/16 v1, 0xb
+    const/16 v1, 0x80
 
     const/4 v3, 0x1
 
-    if-eq p1, v1, :cond_a5
+    if-eq p1, v1, :cond_b3
+
+    const/16 v1, 0x15e
+
+    if-eq p1, v1, :cond_ad
+
+    const/16 v1, 0xb
+
+    if-eq p1, v1, :cond_a9
 
     const/16 v1, 0xc
 
-    if-eq p1, v1, :cond_99
+    if-eq p1, v1, :cond_9d
 
     const/16 v1, 0x58
 
-    if-eq p1, v1, :cond_86
+    if-eq p1, v1, :cond_8a
 
     const/16 v0, 0x59
 
-    if-eq p1, v0, :cond_71
+    if-eq p1, v0, :cond_75
 
     const/16 v0, 0xcf
 
-    if-eq p1, v0, :cond_6d
+    if-eq p1, v0, :cond_71
 
     const/16 v0, 0xd0
 
-    if-eq p1, v0, :cond_69
+    if-eq p1, v0, :cond_6d
 
-    packed-switch p1, :pswitch_data_ce
+    packed-switch p1, :pswitch_data_de
 
-    packed-switch p1, :pswitch_data_da
+    packed-switch p1, :pswitch_data_ea
 
-    goto/16 :goto_cc
+    goto/16 :goto_dc
 
-    .line 742
-    :pswitch_31
+    .line 749
+    :pswitch_35
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-eqz p1, :cond_cc
+    if-eqz p1, :cond_dc
 
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsPopSettingShow:Z
 
-    if-nez p1, :cond_cc
+    if-nez p1, :cond_dc
 
-    .line 743
+    .line 750
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->handleHideAction()V
 
     return-void
 
-    .line 734
-    :pswitch_3f
+    .line 741
+    :pswitch_43
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-eqz p1, :cond_cc
+    if-eqz p1, :cond_dc
 
-    .line 735
+    .line 742
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->handleShowAction()V
 
     return-void
 
     .line 676
-    :pswitch_49
+    :pswitch_4d
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
-    if-eqz p1, :cond_cc
+    if-eqz p1, :cond_dc
 
     .line 677
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsPopSettingShow:Z
@@ -2012,10 +2016,10 @@
     return-void
 
     .line 688
-    :pswitch_53
+    :pswitch_57
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
-    if-eqz p1, :cond_5c
+    if-eqz p1, :cond_60
 
     .line 689
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsPopSettingShow:Z
@@ -2023,136 +2027,154 @@
     invoke-virtual {p1, v0}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->onScaleEnd(Z)V
 
     .line 692
-    :cond_5c
-    :pswitch_5c
+    :cond_60
+    :pswitch_60
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsZoomScaling:Z
 
     return-void
 
     .line 681
-    :pswitch_5f
+    :pswitch_63
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
-    if-eqz p1, :cond_66
+    if-eqz p1, :cond_6a
 
     .line 682
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->onScaleBegin()V
 
     .line 685
-    :cond_66
-    :pswitch_66
+    :cond_6a
+    :pswitch_6a
     iput-boolean v3, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsZoomScaling:Z
 
     return-void
 
-    .line 739
-    :cond_69
+    .line 746
+    :cond_6d
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->handleHideAction()V
 
     return-void
 
-    .line 731
-    :cond_6d
+    .line 738
+    :cond_71
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->handleShowAction()V
 
     return-void
 
-    .line 713
-    :cond_71
+    .line 721
+    :cond_75
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsPopSettingShow:Z
 
-    if-nez p1, :cond_cc
+    if-nez p1, :cond_dc
 
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
-    if-eqz p1, :cond_80
+    if-eqz p1, :cond_84
 
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->isSeekBarShowing()Z
 
     move-result p1
 
-    if-eqz p1, :cond_80
+    if-eqz p1, :cond_84
 
-    goto :goto_cc
+    goto :goto_dc
 
-    .line 716
-    :cond_80
+    .line 724
+    :cond_84
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0, v3, v3}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerRootUI(ZZ)V
 
     return-void
 
-    .line 705
-    :cond_86
+    .line 713
+    :cond_8a
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-nez p1, :cond_cc
+    if-nez p1, :cond_dc
 
     iget p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mScreenFormType:I
 
-    if-eq p1, v0, :cond_cc
+    if-eq p1, v0, :cond_dc
 
     const/4 v0, 0x5
 
-    if-eq p1, v0, :cond_cc
+    if-eq p1, v0, :cond_dc
 
-    .line 708
+    .line 716
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0, v2, v3}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerRootUI(ZZ)V
 
     return-void
 
-    .line 699
-    :cond_99
+    .line 707
+    :cond_9d
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1, v3, v2}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerRootUI(ZZ)V
 
-    .line 700
+    .line 708
     invoke-direct {p0, v2, v3}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->notifyToProfessionUI(IZ)V
 
-    .line 701
+    .line 709
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->hideSeekBar()V
 
     return-void
 
-    .line 695
-    :cond_a5
+    .line 703
+    :cond_a9
     invoke-direct {p0, v3, v2}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->notifyToProfessionUI(IZ)V
 
     return-void
 
-    .line 727
-    :cond_a9
+    .line 695
+    :cond_ad
+    iput-boolean v3, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsZoomScaling:Z
+
+    .line 696
+    invoke-direct {p0, v3, v2}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->notifyToProfessionUI(IZ)V
+
+    return-void
+
+    .line 699
+    :cond_b3
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsZoomScaling:Z
 
-    .line 728
+    .line 700
+    invoke-direct {p0, v2, v3}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->notifyToProfessionUI(IZ)V
+
+    return-void
+
+    .line 734
+    :cond_b9
+    iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsZoomScaling:Z
+
+    .line 735
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->hideSeekBar()V
 
     return-void
 
-    .line 720
-    :cond_af
+    .line 728
+    :cond_bf
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
-    if-eqz p0, :cond_cc
+    if-eqz p0, :cond_dc
 
-    .line 721
+    .line 729
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->dismissPopup()Z
 
     return-void
 
-    .line 747
-    :cond_b7
+    .line 754
+    :cond_c7
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
-    if-eqz p1, :cond_cc
+    if-eqz p1, :cond_dc
 
-    .line 748
+    .line 755
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_picture_size"
@@ -2161,35 +2183,35 @@
 
     move-result-object p1
 
-    .line 749
+    .line 756
     invoke-static {p1}, Lcom/transsion/camera/utils/PictureSizeHelper;->getStandardAspectRatioOfString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 750
+    .line 757
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->notifyPictureChange(Ljava/lang/String;)V
 
-    :cond_cc
-    :goto_cc
+    :cond_dc
+    :goto_dc
     return-void
 
     nop
 
-    :pswitch_data_ce
+    :pswitch_data_de
     .packed-switch 0x17
-        :pswitch_5f
-        :pswitch_53
-        :pswitch_66
-        :pswitch_5c
+        :pswitch_63
+        :pswitch_57
+        :pswitch_6a
+        :pswitch_60
     .end packed-switch
 
-    :pswitch_data_da
+    :pswitch_data_ea
     .packed-switch 0x1c
-        :pswitch_49
-        :pswitch_3f
-        :pswitch_31
+        :pswitch_4d
+        :pswitch_43
+        :pswitch_35
     .end packed-switch
 .end method
 
@@ -2227,7 +2249,11 @@
 
     move-result p2
 
-    if-eqz p2, :cond_27
+    if-eqz p2, :cond_2b
+
+    iget-boolean p2, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mIsZoomScaling:Z
+
+    if-nez p2, :cond_2b
 
     .line 588
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -2243,7 +2269,7 @@
     .line 589
     invoke-direct {p0, p1, p5}, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->notifyToProfessionUI(IZ)V
 
-    :cond_27
+    :cond_2b
     return p1
 .end method
 
@@ -2554,29 +2580,29 @@
 .method public onProgressEnd()V
     .registers 3
 
-    .line 775
+    .line 782
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "capturing animator end."
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 776
+    .line 783
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     if-eqz v0, :cond_19
 
-    .line 777
+    .line 784
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->stopCapturingBeginAnim()V
 
-    .line 778
+    .line 785
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->setCaptureButtonEnable(Z)V
 
-    .line 779
+    .line 786
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/professional/ProfessionalMode;->mModeUIManager:Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalUIManager;->startCapturingEndAnim()V

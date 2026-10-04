@@ -18,7 +18,7 @@
 .method public static synthetic cancel(Lkotlinx/coroutines/CompletableDeferred;)V
     .registers 1
 
-    .line 25
+    .line 22
     invoke-static {p0}, Lkotlinx/coroutines/Deferred$DefaultImpls;->cancel(Lkotlinx/coroutines/Deferred;)V
 
     return-void
@@ -40,7 +40,7 @@
         }
     .end annotation
 
-    .line 25
+    .line 22
     invoke-static {p0, p1, p2}, Lkotlinx/coroutines/Deferred$DefaultImpls;->fold(Lkotlinx/coroutines/Deferred;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
 
     move-result-object p0
@@ -64,7 +64,7 @@
         }
     .end annotation
 
-    .line 25
+    .line 22
     invoke-static {p0, p1}, Lkotlinx/coroutines/Deferred$DefaultImpls;->get(Lkotlinx/coroutines/Deferred;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
 
     move-result-object p0
@@ -87,7 +87,7 @@
         }
     .end annotation
 
-    .line 25
+    .line 22
     invoke-static {p0, p1}, Lkotlinx/coroutines/Deferred$DefaultImpls;->minusKey(Lkotlinx/coroutines/Deferred;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -110,7 +110,7 @@
         }
     .end annotation
 
-    .line 25
+    .line 22
     invoke-static {p0, p1}, Lkotlinx/coroutines/Deferred$DefaultImpls;->plus(Lkotlinx/coroutines/Deferred;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -133,7 +133,7 @@
         }
     .end annotation
 
-    .line 25
+    .line 22
     invoke-static {p0, p1}, Lkotlinx/coroutines/Deferred$DefaultImpls;->plus(Lkotlinx/coroutines/Deferred;Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/Job;
 
     move-result-object p0

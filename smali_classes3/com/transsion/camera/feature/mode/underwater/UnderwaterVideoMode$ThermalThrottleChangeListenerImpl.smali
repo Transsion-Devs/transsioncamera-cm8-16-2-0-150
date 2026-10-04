@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;)V
     .registers 2
 
-    .line 746
+    .line 706
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,21 +47,21 @@
 .method public onThermalChanged(I)V
     .registers 3
 
-    .line 754
+    .line 714
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
-    invoke-static {v0}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;->access$1300(Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
+    invoke-static {v0}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;->access$600(Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     move-result-object v0
 
     if-eqz v0, :cond_11
 
-    .line 755
+    .line 715
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
-    invoke-static {p0}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;->access$1400(Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
+    invoke-static {p0}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;->access$700(Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     move-result-object p0
 
@@ -74,7 +74,7 @@
 .method public onThermalThrottleChanged(I)V
     .registers 4
 
-    .line 749
+    .line 709
     invoke-static {}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0

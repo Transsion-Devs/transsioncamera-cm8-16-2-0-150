@@ -26,7 +26,7 @@
     c = "kotlinx.coroutines.sync.MutexKt"
     f = "Mutex.kt"
     l = {
-        0x7d
+        0x78
     }
     m = "withLock"
 .end annotation

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)V
     .registers 2
 
-    .line 2016
+    .line 1958
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$2;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public IsCanRetryOpenCamera()Z
     .registers 2
 
-    .line 2040
+    .line 1982
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$2;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmReleased(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Z
@@ -72,7 +72,7 @@
 .method public getActionSoundInfo()Lcom/transsion/camera/utils/sound/IActionSound;
     .registers 1
 
-    .line 2020
+    .line 1962
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$2;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUI;
@@ -89,7 +89,7 @@
 .method public getOrientationInfo(Ljava/lang/String;)I
     .registers 3
 
-    .line 2025
+    .line 1967
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$2;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -110,7 +110,7 @@
 .method public getPreviewSurfaceType()I
     .registers 1
 
-    .line 2035
+    .line 1977
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$2;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUI;
@@ -127,7 +127,7 @@
 .method public getVideoOrientationInfo(Ljava/lang/String;)I
     .registers 3
 
-    .line 2030
+    .line 1972
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$2;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;

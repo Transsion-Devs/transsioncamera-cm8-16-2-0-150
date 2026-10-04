@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 413
+    .line 410
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "NO_ELEMENT"
@@ -52,14 +52,14 @@
 
     if-eq p0, v0, :cond_13
 
-    .line 79
+    .line 75
     new-instance v0, Lkotlinx/coroutines/channels/BroadcastChannelImpl;
 
     invoke-direct {v0, p0}, Lkotlinx/coroutines/channels/BroadcastChannelImpl;-><init>(I)V
 
     return-object v0
 
-    .line 76
+    .line 72
     :cond_13
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -69,7 +69,7 @@
 
     throw p0
 
-    .line 75
+    .line 71
     :cond_1b
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -79,7 +79,7 @@
 
     throw p0
 
-    .line 77
+    .line 73
     :cond_23
     new-instance p0, Lkotlinx/coroutines/channels/ConflatedBroadcastChannel;
 
@@ -87,7 +87,7 @@
 
     return-object p0
 
-    .line 78
+    .line 74
     :cond_29
     new-instance p0, Lkotlinx/coroutines/channels/BroadcastChannelImpl;
 

@@ -107,6 +107,21 @@
     return-object p1
 .end method
 
+.method public initSTBlurCapture()V
+    .registers 1
+
+    .line 37
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/STBlurImageProcessor;->mSTBlurCapture:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurCapture;
+
+    if-eqz p0, :cond_7
+
+    .line 38
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurCapture;->initSTBlur()V
+
+    :cond_7
+    return-void
+.end method
+
 .method protected releaseAlgorithm()V
     .registers 2
 
@@ -127,5 +142,42 @@
     invoke-interface {p0}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurCapture;->unInitSTBlur()V
 
     :cond_d
+    return-void
+.end method
+
+.method public setSTBlurCapture(Lcom/transsion/camera/app/common/algorithm/stblur/STBlurCapture;)V
+    .registers 2
+
+    .line 33
+    iput-object p1, p0, Lcom/transsion/camera/app/common/mode/STBlurImageProcessor;->mSTBlurCapture:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurCapture;
+
+    return-void
+.end method
+
+.method public updateSTBlurValue(Z)V
+    .registers 5
+
+    .line 43
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "updateSTBlurValue: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 44
+    iput-boolean p1, p0, Lcom/transsion/camera/app/common/mode/STBlurImageProcessor;->mSTBlur:Z
+
     return-void
 .end method

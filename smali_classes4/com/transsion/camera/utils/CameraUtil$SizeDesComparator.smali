@@ -21,7 +21,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 1291
+    .line 1301
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -61,7 +61,7 @@
 
     return p0
 
-    .line 1301
+    .line 1311
     :cond_c
     invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
 
@@ -91,7 +91,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .registers 3
 
-    .line 1291
+    .line 1301
     check-cast p1, Landroid/util/Size;
 
     check-cast p2, Landroid/util/Size;

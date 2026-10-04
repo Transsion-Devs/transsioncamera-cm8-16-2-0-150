@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)V
     .registers 2
 
-    .line 817
+    .line 820
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoMsgCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public notifySwitchScreenEnd()V
     .registers 3
 
-    .line 821
+    .line 824
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoMsgCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -59,7 +59,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 822
+    .line 825
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoMsgCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;

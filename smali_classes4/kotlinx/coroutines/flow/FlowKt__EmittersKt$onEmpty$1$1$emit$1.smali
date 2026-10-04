@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__EmittersKt$onEmpty$1$1"
     f = "Emitters.kt"
     l = {
-        0xb9
+        0xb5
     }
     m = "emit"
 .end annotation

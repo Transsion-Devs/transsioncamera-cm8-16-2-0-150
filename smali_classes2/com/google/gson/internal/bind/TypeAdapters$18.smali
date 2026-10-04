@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/bind/TypeAdapters$18;
+.class Lcom/google/gson/internal/bind/TypeAdapters$18;
 .super Lcom/google/gson/TypeAdapter;
 .source "SourceFile"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -24,7 +24,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 428
+    .line 527
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
     return-void
@@ -32,21 +32,10 @@
 
 
 # virtual methods
-.method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .registers 2
-
-    .line 428
-    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$18;->read(Lcom/google/gson/stream/JsonReader;)Ljava/math/BigInteger;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public read(Lcom/google/gson/stream/JsonReader;)Ljava/math/BigInteger;
+.method public read(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/internal/LazilyParsedNumber;
     .registers 3
 
-    .line 430
+    .line 533
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     move-result-object p0
@@ -55,55 +44,53 @@
 
     if-ne p0, v0, :cond_d
 
-    .line 431
+    .line 534
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
     const/4 p0, 0x0
 
     return-object p0
 
-    .line 435
+    .line 537
     :cond_d
-    :try_start_d
-    new-instance p0, Ljava/math/BigInteger;
+    new-instance p0, Lcom/google/gson/internal/LazilyParsedNumber;
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-direct {p0, p1}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
-    :try_end_16
-    .catch Ljava/lang/NumberFormatException; {:try_start_d .. :try_end_16} :catch_17
+    invoke-direct {p0, p1}, Lcom/google/gson/internal/LazilyParsedNumber;-><init>(Ljava/lang/String;)V
 
     return-object p0
+.end method
 
-    :catch_17
-    move-exception p0
+.method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    .registers 2
 
-    .line 437
-    new-instance p1, Lcom/google/gson/JsonSyntaxException;
+    .line 527
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$18;->read(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/internal/LazilyParsedNumber;
 
-    invoke-direct {p1, p0}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
+    move-result-object p0
 
-    throw p1
+    return-object p0
+.end method
+
+.method public write(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/internal/LazilyParsedNumber;)V
+    .registers 3
+
+    .line 542
+    invoke-virtual {p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
+
+    return-void
 .end method
 
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
 
-    .line 428
-    check-cast p2, Ljava/math/BigInteger;
+    .line 527
+    check-cast p2, Lcom/google/gson/internal/LazilyParsedNumber;
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$18;->write(Lcom/google/gson/stream/JsonWriter;Ljava/math/BigInteger;)V
-
-    return-void
-.end method
-
-.method public write(Lcom/google/gson/stream/JsonWriter;Ljava/math/BigInteger;)V
-    .registers 3
-
-    .line 442
-    invoke-virtual {p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
+    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$18;->write(Lcom/google/gson/stream/JsonWriter;Lcom/google/gson/internal/LazilyParsedNumber;)V
 
     return-void
 .end method

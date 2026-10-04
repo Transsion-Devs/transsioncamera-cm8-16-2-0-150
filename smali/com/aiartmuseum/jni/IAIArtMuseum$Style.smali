@@ -20,6 +20,8 @@
 
 .field public static final enum MALVEICH:Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
 
+.field public static final enum MONDRIAN:Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
+
 .field public static final enum MONET:Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
 
 .field public static final enum PICASSO:Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
@@ -35,7 +37,7 @@
 
 # direct methods
 .method private static synthetic $values()[Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
-    .registers 13
+    .registers 14
 
     .line 26
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Style;->GLASS:Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
@@ -64,7 +66,9 @@
 
     sget-object v12, Lcom/aiartmuseum/jni/IAIArtMuseum$Style;->TINGATINGA:Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
 
-    filled-new-array/range {v0 .. v12}, [Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
+    sget-object v13, Lcom/aiartmuseum/jni/IAIArtMuseum$Style;->MONDRIAN:Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
+
+    filled-new-array/range {v0 .. v13}, [Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
 
     move-result-object v0
 
@@ -216,6 +220,17 @@
     invoke-direct {v0, v1, v2}, Lcom/aiartmuseum/jni/IAIArtMuseum$Style;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Style;->TINGATINGA:Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
+
+    .line 40
+    new-instance v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
+
+    const-string v1, "MONDRIAN"
+
+    const/16 v2, 0xd
+
+    invoke-direct {v0, v1, v2}, Lcom/aiartmuseum/jni/IAIArtMuseum$Style;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Style;->MONDRIAN:Lcom/aiartmuseum/jni/IAIArtMuseum$Style;
 
     .line 26
     invoke-static {}, Lcom/aiartmuseum/jni/IAIArtMuseum$Style;->$values()[Lcom/aiartmuseum/jni/IAIArtMuseum$Style;

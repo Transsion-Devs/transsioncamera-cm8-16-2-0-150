@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)V
     .registers 2
 
-    .line 1095
+    .line 1092
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 1095
+    .line 1092
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$MySettingChangeListener;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -58,7 +58,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 1098
+    .line 1095
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mUIHandler:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$UIHandler;
@@ -67,7 +67,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1099
+    .line 1096
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mUIHandler:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$UIHandler;

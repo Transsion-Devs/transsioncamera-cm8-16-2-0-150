@@ -34,7 +34,7 @@
         }
     .end annotation
 
-    .line 131
+    .line 127
     invoke-interface {p0}, Lkotlinx/coroutines/CancellableContinuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v0
@@ -49,12 +49,12 @@
 
     if-eqz v0, :cond_12
 
-    .line 133
+    .line 129
     invoke-interface {p0, v0, p1}, Lkotlinx/coroutines/CancellableContinuation;->resumeUndispatched(Lkotlinx/coroutines/CoroutineDispatcher;Ljava/lang/Object;)V
 
     return-void
 
-    .line 135
+    .line 131
     :cond_12
     invoke-static {p1}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -77,7 +77,7 @@
         }
     .end annotation
 
-    .line 141
+    .line 137
     invoke-interface {p0}, Lkotlinx/coroutines/CancellableContinuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v0
@@ -92,12 +92,12 @@
 
     if-eqz v0, :cond_12
 
-    .line 143
+    .line 139
     invoke-interface {p0, v0, p1}, Lkotlinx/coroutines/CancellableContinuation;->resumeUndispatchedWithException(Lkotlinx/coroutines/CoroutineDispatcher;Ljava/lang/Throwable;)V
 
     return-void
 
-    .line 145
+    .line 141
     :cond_12
     sget-object v0, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
@@ -128,12 +128,12 @@
         }
     .end annotation
 
-    .line 106
+    .line 102
     new-instance v0, Lkotlinx/coroutines/selects/SelectBuilderImpl;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/selects/SelectBuilderImpl;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    .line 108
+    .line 104
     :try_start_5
     invoke-interface {p0, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_8
@@ -144,16 +144,16 @@
     :catchall_9
     move-exception p0
 
-    .line 110
+    .line 106
     invoke-virtual {v0, p0}, Lkotlinx/coroutines/selects/SelectBuilderImpl;->handleBuilderException(Ljava/lang/Throwable;)V
 
-    .line 112
+    .line 108
     :goto_d
     invoke-virtual {v0}, Lkotlinx/coroutines/selects/SelectBuilderImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 105
+    .line 101
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
@@ -182,15 +182,15 @@
 
     const/4 v0, 0x0
 
-    .line 105
+    .line 101
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
-    .line 106
+    .line 102
     new-instance v0, Lkotlinx/coroutines/selects/SelectBuilderImpl;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/selects/SelectBuilderImpl;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    .line 108
+    .line 104
     :try_start_9
     invoke-interface {p0, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_c
@@ -201,16 +201,16 @@
     :catchall_d
     move-exception p0
 
-    .line 110
+    .line 106
     invoke-virtual {v0, p0}, Lkotlinx/coroutines/selects/SelectBuilderImpl;->handleBuilderException(Ljava/lang/Throwable;)V
 
-    .line 112
+    .line 108
     :goto_11
     invoke-virtual {v0}, Lkotlinx/coroutines/selects/SelectBuilderImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 105
+    .line 101
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
@@ -241,12 +241,12 @@
         }
     .end annotation
 
-    .line 120
+    .line 116
     new-instance v0, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    .line 122
+    .line 118
     :try_start_5
     invoke-interface {p0, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_8
@@ -257,16 +257,16 @@
     :catchall_9
     move-exception p0
 
-    .line 124
+    .line 120
     invoke-virtual {v0, p0}, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl;->handleBuilderException(Ljava/lang/Throwable;)V
 
-    .line 126
+    .line 122
     :goto_d
     invoke-virtual {v0}, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl;->initSelectResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 119
+    .line 115
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
@@ -295,15 +295,15 @@
 
     const/4 v0, 0x0
 
-    .line 119
+    .line 115
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
-    .line 120
+    .line 116
     new-instance v0, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    .line 122
+    .line 118
     :try_start_9
     invoke-interface {p0, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_c
@@ -314,16 +314,16 @@
     :catchall_d
     move-exception p0
 
-    .line 124
+    .line 120
     invoke-virtual {v0, p0}, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl;->handleBuilderException(Ljava/lang/Throwable;)V
 
-    .line 126
+    .line 122
     :goto_11
     invoke-virtual {v0}, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl;->initSelectResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 119
+    .line 115
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0

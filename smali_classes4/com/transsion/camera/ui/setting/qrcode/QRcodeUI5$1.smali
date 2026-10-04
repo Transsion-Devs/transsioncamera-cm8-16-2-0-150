@@ -49,36 +49,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_61
+    if-nez v0, :cond_49
 
     .line 25
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5$1;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;
-
-    invoke-static {v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;)Landroid/graphics/Rect;
-
-    move-result-object v0
-
-    const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
-
-    invoke-static {v0, v1, v2}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(Landroid/graphics/Rect;D)Z
-
-    move-result v0
-
-    invoke-static {p1, v1, v2}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(Landroid/graphics/Rect;D)Z
-
-    move-result v1
-
-    if-ne v0, v1, :cond_24
-
-    .line 26
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5$1;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updateSettingUILayout(Z)V
-
-    .line 28
-    :cond_24
     invoke-static {}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -101,7 +74,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 29
+    .line 26
     invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
     move-result v2
@@ -122,10 +95,10 @@
 
     move-result-object v1
 
-    .line 28
+    .line 25
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 30
+    .line 27
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5$1;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;)Landroid/graphics/Rect;
@@ -134,7 +107,7 @@
 
     invoke-virtual {p0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    :cond_61
+    :cond_49
     return-void
 .end method
 

@@ -126,7 +126,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 36
+    .line 38
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "GroupCaptureManager"
@@ -137,10 +137,10 @@
 
     const/16 v0, 0x9
 
-    .line 39
+    .line 41
     sput v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->CAPTURE_ID_LENGTH:I
 
-    .line 42
+    .line 44
     const-string v0, "debug.camera.dump_group_photo"
 
     const/4 v1, 0x0
@@ -158,7 +158,7 @@
     :cond_18
     sput-boolean v1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->DUMP_ENABLED:Z
 
-    .line 43
+    .line 45
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -173,7 +173,7 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->ENABLE_ZSL:Ljava/lang/Boolean;
 
-    .line 48
+    .line 50
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -182,7 +182,7 @@
 
     move-result v0
 
-    .line 46
+    .line 48
     const-string v1, "debug.camera.group_capture_zsl_diff_mills"
 
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/SystemProperties;->getLong(Ljava/lang/String;I)J
@@ -191,7 +191,7 @@
 
     sput-wide v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->ZSL_DIFF_MILLS:J
 
-    .line 49
+    .line 51
     const-string v0, "debug.camera.group_capture_zsl_gap_mills"
 
     const/16 v1, 0x64
@@ -208,10 +208,10 @@
 .method public constructor <init>()V
     .registers 3
 
-    .line 35
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 54
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -220,31 +220,31 @@
 
     const/4 v0, 0x0
 
-    .line 55
+    .line 57
     iput v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mShutterStartCount:I
 
-    .line 64
+    .line 66
     new-instance v1, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 70
+    .line 72
     new-instance v1, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mTimeConsumingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 71
+    .line 73
     new-instance v1, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v1, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
     iput-object v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mTimeConsumingCountOfNoneGroupCapture:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 97
+    .line 99
     new-instance v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$1;-><init>(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;)V
@@ -257,7 +257,7 @@
 .method private appendPicture(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;)V
     .registers 8
 
-    .line 332
+    .line 334
     sget-object v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -288,34 +288,34 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 334
+    .line 336
     new-instance v0, Lcom/transsion/camera/utils/PictureDataMerger$PictureInfo;
 
     const/4 v1, 0x4
 
     invoke-direct {v0, v1}, Lcom/transsion/camera/utils/PictureDataMerger$PictureInfo;-><init>(I)V
 
-    .line 336
+    .line 338
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->updateExif(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;)[B
 
     move-result-object v1
 
-    .line 337
+    .line 339
     invoke-virtual {v0, v1}, Lcom/transsion/camera/utils/PictureDataMerger$PictureInfo;->setOriginalBytes([B)V
 
     const/4 v1, 0x3
 
-    .line 339
+    .line 341
     invoke-virtual {p1, v1}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->getJpegInfoByIndex(I)Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;
 
     move-result-object v1
 
-    .line 340
+    .line 342
     iget-object v2, p1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mJpegInfo:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 341
+    .line 343
     iget-object v2, p1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mJpegInfo:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -335,14 +335,14 @@
 
     check-cast v3, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;
 
-    .line 342
+    .line 344
     iget-object v3, v3, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;->mJpegData:[B
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/utils/PictureDataMerger$PictureInfo;->addAppendingBytes([B)Lcom/transsion/camera/utils/PictureDataMerger$PictureInfo;
 
     goto :goto_41
 
-    .line 345
+    .line 347
     :cond_53
     iget-object v2, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPictureDataMerger:Lcom/transsion/camera/utils/PictureDataMerger;
 
@@ -350,7 +350,7 @@
 
     move-result-object v2
 
-    .line 346
+    .line 348
     iget-object v3, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPictureCallback:Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$PictureCallback;
 
     iget-boolean v1, v1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;->mIsBGImage:Z
@@ -359,12 +359,12 @@
 
     invoke-interface {v3, v2, v1, v4, v5}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$PictureCallback;->onPictureReady([BZJ)V
 
-    .line 348
+    .line 350
     sget-boolean p1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->DUMP_ENABLED:Z
 
     if-eqz p1, :cond_69
 
-    .line 349
+    .line 351
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->saveDumpFile(Lcom/transsion/camera/utils/PictureDataMerger$PictureInfo;)V
 
     :cond_69
@@ -374,12 +374,12 @@
 .method private getCaptureIdInExif([B)I
     .registers 3
 
-    .line 315
+    .line 317
     invoke-static {p1}, Lcom/transsion/camera/utils/exif/Exif;->getExif([B)Lcom/transsion/camera/utils/exif/ExifInterface;
 
     move-result-object p0
 
-    .line 316
+    .line 318
     sget p1, Lcom/transsion/camera/utils/exif/ExifInterface;->TAG_USER_COMMENT:I
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/utils/exif/ExifInterface;->getTagStringValue(I)Ljava/lang/String;
@@ -390,7 +390,7 @@
 
     if-eqz p0, :cond_2d
 
-    .line 318
+    .line 320
     const-string v0, "captureId"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -401,20 +401,20 @@
 
     return p1
 
-    .line 322
+    .line 324
     :cond_16
     invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 323
+    .line 325
     const-string p1, ";"
 
     invoke-virtual {p0, p1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result p1
 
-    .line 324
+    .line 326
     sget v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->CAPTURE_ID_LENGTH:I
 
     add-int/lit8 v0, v0, 0x1
@@ -423,7 +423,7 @@
 
     move-result-object p0
 
-    .line 325
+    .line 327
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
@@ -437,7 +437,7 @@
 .method private isFaceBeautyOn()Z
     .registers 3
 
-    .line 171
+    .line 173
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getSettingProvide()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
@@ -452,7 +452,7 @@
 
     if-eqz v0, :cond_24
 
-    .line 173
+    .line 175
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->isModeSupport()Z
 
     move-result v0
@@ -461,7 +461,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 174
+    .line 176
     invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -487,7 +487,7 @@
 .method private isSettingOn()Z
     .registers 4
 
-    .line 224
+    .line 226
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_group_capture"
@@ -496,7 +496,7 @@
 
     move-result-object p0
 
-    .line 225
+    .line 227
     sget-object v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -515,7 +515,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 226
+    .line 228
     const-string v0, "on"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -528,7 +528,7 @@
 .method private saveDumpFile(Lcom/transsion/camera/utils/PictureDataMerger$PictureInfo;)V
     .registers 9
 
-    .line 367
+    .line 369
     new-instance p0, Ljava/text/SimpleDateFormat;
 
     const-string/jumbo v0, "yyyyMMdd_HHmmss_SSS"
@@ -539,7 +539,7 @@
 
     new-instance v0, Ljava/sql/Date;
 
-    .line 368
+    .line 370
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -550,21 +550,21 @@
 
     move-result-object p0
 
-    .line 369
+    .line 371
     new-instance v0, Ljava/io/File;
 
     const-string v1, "/sdcard/dump/group_photo"
 
     invoke-direct {v0, v1, p0}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 370
+    .line 372
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v1
 
     if-nez v1, :cond_28
 
-    .line 372
+    .line 374
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
     move-result v1
@@ -572,7 +572,7 @@
     :cond_28
     if-nez v1, :cond_41
 
-    .line 376
+    .line 378
     sget-object p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -593,7 +593,7 @@
 
     return-void
 
-    .line 380
+    .line 382
     :cond_41
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -615,7 +615,7 @@
 
     move-result-object p0
 
-    .line 381
+    .line 383
     sget-object v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -634,7 +634,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 383
+    .line 385
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -649,7 +649,7 @@
 
     move-result-object v0
 
-    .line 384
+    .line 386
     invoke-virtual {p1}, Lcom/transsion/camera/utils/PictureDataMerger$PictureInfo;->getOriginalBytes()[B
 
     move-result-object v1
@@ -658,7 +658,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/transsion/camera/utils/FileUtil;->saveByteArrayToFile(Ljava/lang/String;[BZ)Z
 
-    .line 386
+    .line 388
     invoke-virtual {p1}, Lcom/transsion/camera/utils/PictureDataMerger$PictureInfo;->getAppendingBytes()Ljava/util/List;
 
     move-result-object v0
@@ -672,7 +672,7 @@
     :goto_91
     if-ge v1, v0, :cond_d4
 
-    .line 388
+    .line 390
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -695,7 +695,7 @@
 
     move-result-object v3
 
-    .line 389
+    .line 391
     sget-object v4, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -714,7 +714,7 @@
 
     invoke-static {v4, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 390
+    .line 392
     invoke-virtual {p1}, Lcom/transsion/camera/utils/PictureDataMerger$PictureInfo;->getAppendingBytes()Ljava/util/List;
 
     move-result-object v4
@@ -738,7 +738,7 @@
 .method private setZSLTimestamps()V
     .registers 9
 
-    .line 151
+    .line 153
     sget-object v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->ENABLE_ZSL:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -749,7 +749,7 @@
 
     return-void
 
-    .line 154
+    .line 156
     :cond_9
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
@@ -763,7 +763,7 @@
 
     sub-long/2addr v0, v2
 
-    .line 155
+    .line 157
     sget-wide v2, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->ZSL_GAP_MILLS:J
 
     mul-long/2addr v2, v4
@@ -774,7 +774,7 @@
 
     const/4 v6, 0x3
 
-    .line 156
+    .line 158
     new-array v6, v6, [J
 
     const/4 v7, 0x0
@@ -789,12 +789,12 @@
 
     aput-wide v2, v6, v0
 
-    .line 157
+    .line 159
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {p0, v6}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->setCaptureZSLTimestamps([J)V
 
-    .line 158
+    .line 160
     sget-object p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -823,7 +823,7 @@
 .method private updateCaptureInfo(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;)V
     .registers 4
 
-    .line 162
+    .line 164
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getSettingProvide()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
@@ -838,26 +838,26 @@
 
     if-eqz v0, :cond_27
 
-    .line 163
+    .line 165
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->isModeSupport()Z
 
     move-result v0
 
     if-eqz v0, :cond_27
 
-    .line 164
+    .line 166
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 165
+    .line 167
     invoke-static {p0}, Lcom/transsion/camera/app/common/setting/makeup/MakeUpItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/MakeUpItemInfo;
 
     move-result-object p0
 
-    .line 166
+    .line 168
     iget p0, p0, Lcom/transsion/camera/app/common/setting/makeup/MakeUpItemInfo;->styleNumber:I
 
     if-eqz p0, :cond_24
@@ -881,22 +881,22 @@
 
     const/4 p0, 0x3
 
-    .line 354
+    .line 356
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->getJpegInfoByIndex(I)Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;
 
     move-result-object p0
 
-    .line 355
+    .line 357
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;->mJpegData:[B
 
-    .line 359
+    .line 361
     iget-boolean p1, p1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mIsMakeUpOn:Z
 
     const-string v0, "category:1"
 
     if-eqz p1, :cond_1e
 
-    .line 360
+    .line 362
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -911,7 +911,7 @@
 
     move-result-object v0
 
-    .line 362
+    .line 364
     :cond_1e
     sget p1, Lcom/transsion/camera/utils/exif/ExifInterface;->TAG_USER_COMMENT:I
 
@@ -927,7 +927,7 @@
 .method public hasPendingCapture()Z
     .registers 1
 
-    .line 201
+    .line 203
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {p0}, Ljava/util/concurrent/ConcurrentHashMap;->size()I
@@ -949,23 +949,23 @@
 .method public init(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$PictureCallback;)V
     .registers 4
 
-    .line 83
+    .line 85
     iput-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
-    .line 84
+    .line 86
     new-instance p1, Lcom/transsion/camera/utils/PictureDataMerger;
 
     invoke-direct {p1}, Lcom/transsion/camera/utils/PictureDataMerger;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPictureDataMerger:Lcom/transsion/camera/utils/PictureDataMerger;
 
-    .line 85
+    .line 87
     iput-object p3, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPictureCallback:Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$PictureCallback;
 
-    .line 86
+    .line 88
     iput-object p2, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 87
+    .line 89
     invoke-interface {p2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     move-result-object p1
@@ -974,10 +974,10 @@
 
     iget-object p3, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 88
+    .line 90
     invoke-virtual {p1, p2, p3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 89
+    .line 91
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -990,7 +990,7 @@
 
     if-eqz p1, :cond_31
 
-    .line 91
+    .line 93
     iget-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -1001,10 +1001,10 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 92
+    .line 94
     invoke-virtual {p1, p2, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 94
+    .line 96
     :cond_31
     sget-object p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1040,7 +1040,7 @@
 .method public isCaptureSoundNeeded()Z
     .registers 4
 
-    .line 230
+    .line 232
     sget-object v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1061,7 +1061,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 231
+    .line 233
     iget p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mShutterStartCount:I
 
     const/4 v0, 0x1
@@ -1079,7 +1079,7 @@
 .method public isCapturing()Z
     .registers 1
 
-    .line 178
+    .line 180
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mIsCapturing:Z
 
     return p0
@@ -1088,7 +1088,7 @@
 .method public isGroupScene()Z
     .registers 5
 
-    .line 205
+    .line 207
     invoke-direct {p0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->isSettingOn()Z
 
     move-result v0
@@ -1097,7 +1097,7 @@
 
     if-nez v0, :cond_f
 
-    .line 206
+    .line 208
     sget-object p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "isReadyToCapture, setting is off"
@@ -1106,13 +1106,13 @@
 
     return v1
 
-    .line 209
+    .line 211
     :cond_f
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mIsGroupScene:Z
 
     if-nez v0, :cond_1b
 
-    .line 210
+    .line 212
     sget-object p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "isReadyToCapture, not GroupScene"
@@ -1121,7 +1121,7 @@
 
     return v1
 
-    .line 213
+    .line 215
     :cond_1b
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -1129,22 +1129,22 @@
 
     move-result-object p0
 
-    .line 214
+    .line 216
     const-string v0, "on"
 
-    .line 215
+    .line 217
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 214
+    .line 216
     const-string v3, "key_group_capture_icon_state"
 
     invoke-virtual {p0, v3, v0, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 216
+    .line 218
     const-string v0, "off"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1153,7 +1153,7 @@
 
     if-eqz p0, :cond_3d
 
-    .line 217
+    .line 219
     sget-object p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "isReadyToCapture, icon is off"
@@ -1171,7 +1171,7 @@
 .method public needWaitingGroupCapture()Z
     .registers 5
 
-    .line 186
+    .line 188
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mNeedWaitingPreJpeg:Z
 
     const/4 v1, 0x0
@@ -1180,7 +1180,7 @@
 
     return v1
 
-    .line 190
+    .line 192
     :cond_6
     sget-object v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1214,7 +1214,7 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 192
+    .line 194
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mTimeConsumingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->size()I
@@ -1229,7 +1229,7 @@
 
     return v3
 
-    .line 196
+    .line 198
     :cond_37
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mTimeConsumingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -1241,7 +1241,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mTimeConsumingCountOfNoneGroupCapture:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 197
+    .line 199
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result p0
@@ -1257,12 +1257,12 @@
 .method public notifyPictureTaken([BJZI)I
     .registers 11
 
-    .line 277
+    .line 279
     iget-object p5, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSavingLock:Ljava/lang/Object;
 
     monitor-enter p5
 
-    .line 278
+    .line 280
     :try_start_3
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -1274,7 +1274,7 @@
 
     if-nez v0, :cond_11
 
-    .line 279
+    .line 281
     monitor-exit p5
 
     return v1
@@ -1284,13 +1284,13 @@
 
     goto/16 :goto_107
 
-    .line 281
+    .line 283
     :cond_11
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->getCaptureIdInExif([B)I
 
     move-result v0
 
-    .line 282
+    .line 284
     sget-object v2, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1323,7 +1323,7 @@
 
     invoke-static {v2, p2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 284
+    .line 286
     iget-object p2, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1340,7 +1340,7 @@
 
     if-nez p2, :cond_66
 
-    .line 286
+    .line 288
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1364,13 +1364,13 @@
     :cond_63
     move v1, p3
 
-    .line 287
+    .line 289
     :goto_64
     monitor-exit p5
 
     return v1
 
-    .line 290
+    .line 292
     :cond_66
     new-instance v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;
 
@@ -1378,14 +1378,14 @@
 
     invoke-virtual {p2, v0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->addJpegInfo(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;)V
 
-    .line 291
+    .line 293
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->isValid()Z
 
     move-result p1
 
     if-eqz p1, :cond_ba
 
-    .line 292
+    .line 294
     iget-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->-$$Nest$fgetmCaptureTag(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;)I
@@ -1398,7 +1398,7 @@
 
     invoke-virtual {p1, p4}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 293
+    .line 295
     iget-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mTimeConsumingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->-$$Nest$fgetmCaptureTag(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;)I
@@ -1417,7 +1417,7 @@
 
     if-eqz p1, :cond_b6
 
-    .line 294
+    .line 296
     iget-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mTimeConsumingCountOfNoneGroupCapture:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -1426,12 +1426,12 @@
 
     if-lez p1, :cond_b6
 
-    .line 295
+    .line 297
     iget-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mTimeConsumingCountOfNoneGroupCapture:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndDecrement()I
 
-    .line 296
+    .line 298
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1450,13 +1450,13 @@
 
     invoke-static {v2, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 300
+    .line 302
     :cond_b6
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->appendPicture(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;)V
 
     goto :goto_da
 
-    .line 301
+    .line 303
     :cond_ba
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->isAllJpegReceivedOnCaptureFailed()Z
 
@@ -1464,7 +1464,7 @@
 
     if-eqz p1, :cond_da
 
-    .line 302
+    .line 304
     iget-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->-$$Nest$fgetmCaptureTag(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;)I
@@ -1477,7 +1477,7 @@
 
     invoke-virtual {p1, p4}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 303
+    .line 305
     iget-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mTimeConsumingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->-$$Nest$fgetmCaptureTag(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;)I
@@ -1490,7 +1490,7 @@
 
     invoke-virtual {p1, p2}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 305
+    .line 307
     :cond_da
     :goto_da
     iget-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
@@ -1501,10 +1501,10 @@
 
     if-nez p1, :cond_e5
 
-    .line 306
+    .line 308
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->resetCapturingState()V
 
-    .line 308
+    .line 310
     :cond_e5
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -1532,12 +1532,12 @@
 
     invoke-static {v2, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 310
+    .line 312
     monitor-exit p5
 
     return p3
 
-    .line 311
+    .line 313
     :goto_107
     monitor-exit p5
     :try_end_108
@@ -1549,12 +1549,12 @@
 .method public onCaptureFailed()V
     .registers 5
 
-    .line 261
+    .line 263
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSavingLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 262
+    .line 264
     :try_start_3
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->isCapturing()Z
 
@@ -1578,7 +1578,7 @@
 
     if-eqz v1, :cond_45
 
-    .line 263
+    .line 265
     sget-object v1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1599,7 +1599,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 264
+    .line 266
     iget-object v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     iget v2, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCaptureTag:I
@@ -1623,7 +1623,7 @@
 
     goto :goto_7f
 
-    .line 266
+    .line 268
     :cond_45
     :goto_45
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
@@ -1636,7 +1636,7 @@
 
     if-eqz v1, :cond_7d
 
-    .line 267
+    .line 269
     iget-object v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     iget v2, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCaptureTag:I
@@ -1647,7 +1647,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 268
+    .line 270
     iget-object v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v1}, Ljava/util/concurrent/ConcurrentHashMap;->size()I
@@ -1656,10 +1656,10 @@
 
     if-nez v1, :cond_65
 
-    .line 269
+    .line 271
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->resetCapturingState()V
 
-    .line 271
+    .line 273
     :cond_65
     sget-object v1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1681,7 +1681,7 @@
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 273
+    .line 275
     :cond_7d
     monitor-exit v0
 
@@ -1698,7 +1698,7 @@
 .method public onModeCaptureStarted(J)V
     .registers 6
 
-    .line 240
+    .line 242
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     iget v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCaptureTag:I
@@ -1715,7 +1715,7 @@
 
     if-nez v0, :cond_18
 
-    .line 242
+    .line 244
     sget-object p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onModeCaptureStarted: captureInfo not found"
@@ -1724,7 +1724,7 @@
 
     return-void
 
-    .line 245
+    .line 247
     :cond_18
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
@@ -1736,7 +1736,7 @@
 
     if-eqz v1, :cond_5f
 
-    .line 246
+    .line 248
     iget-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     iget p2, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCaptureTag:I
@@ -1747,7 +1747,7 @@
 
     invoke-virtual {p1, p2}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 247
+    .line 249
     iget-object p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {p1}, Ljava/util/concurrent/ConcurrentHashMap;->size()I
@@ -1756,10 +1756,10 @@
 
     if-nez p1, :cond_38
 
-    .line 248
+    .line 250
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->resetCapturingState()V
 
-    .line 250
+    .line 252
     :cond_38
     sget-object p1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1781,7 +1781,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 251
+    .line 253
     invoke-virtual {p0}, Ljava/util/concurrent/ConcurrentHashMap;->size()I
 
     move-result p0
@@ -1792,16 +1792,16 @@
 
     move-result-object p0
 
-    .line 250
+    .line 252
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 255
+    .line 257
     :cond_5f
     iput-wide p1, v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mTimestamp:J
 
-    .line 256
+    .line 258
     sget-object v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1834,14 +1834,14 @@
 .method public onShutterStart()V
     .registers 4
 
-    .line 235
+    .line 237
     iget v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mShutterStartCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mShutterStartCount:I
 
-    .line 236
+    .line 238
     sget-object v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1870,7 +1870,7 @@
 
     const/4 v0, 0x0
 
-    .line 182
+    .line 184
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mIsCapturing:Z
 
     return-void
@@ -1881,10 +1881,10 @@
 
     const/4 v0, 0x1
 
-    .line 127
+    .line 129
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mIsCapturing:Z
 
-    .line 128
+    .line 130
     new-instance v1, Ljava/util/Random;
 
     invoke-direct {v1}, Ljava/util/Random;-><init>()V
@@ -1899,12 +1899,12 @@
 
     iput v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCaptureTag:I
 
-    .line 129
+    .line 131
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->setCaptureTag(I)V
 
-    .line 130
+    .line 132
     new-instance v0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;
 
     iget v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCaptureTag:I
@@ -1913,10 +1913,10 @@
 
     invoke-direct {v0, p0, v1, v2}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;-><init>(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;II)V
 
-    .line 131
+    .line 133
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->updateCaptureInfo(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;)V
 
-    .line 132
+    .line 134
     iget-object v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mPendingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     iget v2, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCaptureTag:I
@@ -1927,7 +1927,7 @@
 
     invoke-virtual {v1, v2, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 134
+    .line 136
     iget-boolean v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mNeedWaitingPreJpeg:Z
 
     if-eqz v1, :cond_5a
@@ -1938,7 +1938,7 @@
 
     if-eqz v1, :cond_5a
 
-    .line 135
+    .line 137
     iget-object v1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mTimeConsumingCaptureInfo:Ljava/util/concurrent/ConcurrentHashMap;
 
     iget v2, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCaptureTag:I
@@ -1949,7 +1949,7 @@
 
     invoke-virtual {v1, v2, v0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 136
+    .line 138
     sget-object v1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1970,11 +1970,11 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 138
+    .line 140
     :cond_5a
     invoke-direct {p0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->setZSLTimestamps()V
 
-    .line 139
+    .line 141
     sget-object v1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2005,10 +2005,10 @@
 
     const/4 v0, 0x0
 
-    .line 140
+    .line 142
     iput v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mShutterStartCount:I
 
-    .line 141
+    .line 143
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->takePicture()V
@@ -2019,7 +2019,7 @@
 .method public unInit()V
     .registers 4
 
-    .line 395
+    .line 397
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -2030,15 +2030,15 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 396
+    .line 398
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 397
+    .line 399
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mNeedWaitingPreJpeg:Z
 
     if-eqz v0, :cond_1e
 
-    .line 398
+    .line 400
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -2049,7 +2049,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 399
+    .line 401
     invoke-virtual {v0, v1, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
     :cond_1e
@@ -2059,7 +2059,7 @@
 .method public updateCaptureCount(Lcom/transsion/camera/app/common/mode/CaptureInfo;)V
     .registers 2
 
-    .line 145
+    .line 147
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->isGroupScene()Z
 
     move-result p0
@@ -2068,7 +2068,7 @@
 
     const/4 p0, 0x4
 
-    .line 146
+    .line 148
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/mode/CaptureInfo;->setCaptureCount(I)V
 
     :cond_a

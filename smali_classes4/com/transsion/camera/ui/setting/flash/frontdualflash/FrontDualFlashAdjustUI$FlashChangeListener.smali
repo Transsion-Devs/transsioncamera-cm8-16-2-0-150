@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)V
     .registers 2
 
-    .line 580
+    .line 622
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$FlashChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onDataCallback(Ljava/lang/Object;I)V
     .registers 5
 
-    .line 583
+    .line 625
     invoke-static {}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -56,7 +56,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 584
+    .line 626
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$FlashChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;
 
     # getter for: Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
@@ -73,15 +73,15 @@
 
     if-eqz p1, :cond_57
 
-    .line 588
+    .line 630
     instance-of v1, p1, Ljava/lang/String;
 
     if-eqz v1, :cond_57
 
-    .line 589
+    .line 631
     check-cast p1, Ljava/lang/String;
 
-    .line 590
+    .line 632
     const-string v1, "key_current_mode_nonsupport_dual_color"
 
     invoke-static {v1, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -90,7 +90,7 @@
 
     if-eqz p1, :cond_57
 
-    .line 591
+    .line 633
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$FlashChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;
 
     if-lez p2, :cond_28
@@ -103,7 +103,7 @@
     :goto_29
     invoke-static {p1, v0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->-$$Nest$fputmCurrentModeNonsupportDualColor(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Z)V
 
-    .line 592
+    .line 634
     invoke-static {}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -153,7 +153,7 @@
 
     goto :goto_64
 
-    .line 600
+    .line 642
     :cond_5c
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$FlashChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;
 
@@ -166,33 +166,33 @@
     :goto_64
     return-void
 
-    .line 603
+    .line 645
     :cond_65
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$FlashChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;
 
     # getter for: Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->access$1200(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)Landroid/os/Handler;
 
-    move-result-object p0
+    move-result-object p1
 
-    const/16 p1, 0xc
+    const/16 p2, 0xc
 
-    invoke-virtual {p0, p1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-static {p0, p1, p2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->-$$Nest$msendEmptyMessageIfSameThread(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Landroid/os/Handler;I)V
 
     return-void
 
-    .line 606
+    .line 648
     :cond_71
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$FlashChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;
 
     # getter for: Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->access$1300(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)Landroid/os/Handler;
 
-    move-result-object p0
+    move-result-object p1
 
-    const/16 p1, 0xa
+    const/16 p2, 0xa
 
-    invoke-virtual {p0, p1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-static {p0, p1, p2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->-$$Nest$msendEmptyMessageIfSameThread(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Landroid/os/Handler;I)V
 
     return-void
 .end method

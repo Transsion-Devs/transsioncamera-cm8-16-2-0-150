@@ -52,6 +52,8 @@
 
 .field public mSpecifyASDFrontWideSuperDefinition:Z
 
+.field public mSpecifyASDLivePhoto:Z
+
 .field public mSpecifyBokeh:Z
 
 .field public mSpecifyBokehOff:Z
@@ -132,7 +134,7 @@
 .method public constructor <init>(Landroid/content/Intent;Landroid/os/Bundle;Landroid/content/Context;Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/storage/DataStore;)V
     .registers 8
 
-    .line 120
+    .line 121
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 56
@@ -142,34 +144,34 @@
 
     const/4 v1, 0x0
 
-    .line 116
+    .line 117
     iput-boolean v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mAntiVideoDefaultOn:Z
 
-    .line 117
+    .line 118
     iput-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mDefaultCameraInCurrentFace:Ljava/lang/String;
 
-    .line 121
+    .line 122
     iput-object p3, p0, Lcom/transsion/camera/app/intent/IntentParser;->mContext:Landroid/content/Context;
 
-    .line 122
+    .line 123
     iput-object p4, p0, Lcom/transsion/camera/app/intent/IntentParser;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
-    .line 123
+    .line 124
     iput-object p5, p0, Lcom/transsion/camera/app/intent/IntentParser;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 124
+    .line 125
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isForceCloseSATSupport()Z
 
     move-result p4
 
     if-eqz p4, :cond_1b
 
-    .line 125
+    .line 126
     iput-boolean v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mProjectSupportSat:Z
 
     goto :goto_27
 
-    .line 127
+    .line 128
     :cond_1b
     invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -183,7 +185,7 @@
 
     iput-boolean p4, p0, Lcom/transsion/camera/app/intent/IntentParser;->mProjectSupportSat:Z
 
-    .line 129
+    .line 130
     :goto_27
     invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -197,10 +199,10 @@
 
     iput-boolean p3, p0, Lcom/transsion/camera/app/intent/IntentParser;->mAntiVideoDefaultOn:Z
 
-    .line 130
+    .line 131
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->parseIntent(Landroid/content/Intent;)V
 
-    .line 131
+    .line 132
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/intent/IntentParser;->parseMetaData(Landroid/os/Bundle;)V
 
     return-void
@@ -209,10 +211,10 @@
 .method public constructor <init>(Landroid/content/Intent;Landroid/os/Bundle;Landroid/content/Context;Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/storage/DataStore;Lcom/transsion/camera/manager/FlipScreenRelay;)V
     .registers 7
 
-    .line 136
+    .line 137
     invoke-direct/range {p0 .. p5}, Lcom/transsion/camera/app/intent/IntentParser;-><init>(Landroid/content/Intent;Landroid/os/Bundle;Landroid/content/Context;Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
-    .line 137
+    .line 138
     invoke-direct {p0, p5, p6}, Lcom/transsion/camera/app/intent/IntentParser;->handleFlipScreenRelay(Lcom/transsion/camera/app/common/storage/DataStore;Lcom/transsion/camera/manager/FlipScreenRelay;)V
 
     return-void
@@ -221,7 +223,7 @@
 .method private checkCameraId(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
 
-    .line 419
+    .line 420
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object p0
@@ -238,7 +240,7 @@
 
     return-object p1
 
-    .line 423
+    .line 424
     :cond_f
     const-string p0, "0"
 
@@ -250,7 +252,7 @@
 
     const-string p0, "1"
 
-    .line 424
+    .line 425
     :cond_19
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
@@ -277,7 +279,7 @@
 .method private getDelayTimeFromIntent(Landroid/content/Intent;)I
     .registers 4
 
-    .line 571
+    .line 573
     const-string p0, "com.google.assistant.extra.TIMER_DURATION_SECONDS"
 
     const/4 v0, 0x3
@@ -288,12 +290,12 @@
 
     const-string v1, "android.intent.extra.TIMER_DURATION_SECONDS"
 
-    .line 573
+    .line 575
     invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result p1
 
-    .line 570
+    .line 572
     invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p0
@@ -304,7 +306,7 @@
 .method public static getNFCSpecifyMode(Landroid/content/Intent;)Ljava/lang/String;
     .registers 4
 
-    .line 433
+    .line 434
     const-string v0, "android.nfc.extra.TAG"
 
     invoke-virtual {p0, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -317,42 +319,42 @@
 
     if-eqz p0, :cond_38
 
-    .line 435
+    .line 436
     invoke-static {p0}, Landroid/nfc/tech/Ndef;->get(Landroid/nfc/Tag;)Landroid/nfc/tech/Ndef;
 
     move-result-object p0
 
     if-eqz p0, :cond_38
 
-    .line 438
+    .line 439
     invoke-virtual {p0}, Landroid/nfc/tech/Ndef;->getCachedNdefMessage()Landroid/nfc/NdefMessage;
 
     move-result-object v1
 
     if-eqz v1, :cond_28
 
-    .line 440
+    .line 441
     invoke-virtual {v1}, Landroid/nfc/NdefMessage;->getRecords()[Landroid/nfc/NdefRecord;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 441
+    .line 442
     aget-object v0, v0, v1
 
     invoke-virtual {v0}, Landroid/nfc/NdefRecord;->getPayload()[B
 
     move-result-object v0
 
-    .line 442
+    .line 443
     new-instance v1, Ljava/lang/String;
 
     invoke-direct {v1, v0}, Ljava/lang/String;-><init>([B)V
 
     move-object v0, v1
 
-    .line 445
+    .line 446
     :cond_28
     :try_start_28
     invoke-virtual {p0}, Landroid/nfc/tech/Ndef;->close()V
@@ -364,7 +366,7 @@
     :catch_2c
     move-exception p0
 
-    .line 447
+    .line 448
     sget-object v1, Lcom/transsion/camera/app/intent/IntentParser;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v2, "ndef close error"
@@ -382,12 +384,12 @@
 .method public static getShortcutSpecifyMode(Landroid/content/Intent;)Ljava/lang/String;
     .registers 2
 
-    .line 457
+    .line 458
     invoke-virtual {p0}, Landroid/content/Intent;->getDataString()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 459
+    .line 460
     const-string/jumbo v0, "video_mode"
 
     invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -396,7 +398,7 @@
 
     if-eqz p0, :cond_10
 
-    .line 460
+    .line 461
     const-string p0, "VideoMode"
 
     return-object p0
@@ -410,7 +412,7 @@
 .method private getSpecifyPMasterBlurCameraId()Ljava/lang/String;
     .registers 3
 
-    .line 397
+    .line 398
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object p0
@@ -419,14 +421,14 @@
 
     move-result-object p0
 
-    .line 398
+    .line 399
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_17
 
-    .line 399
+    .line 400
     sget-object p0, Lcom/transsion/camera/app/intent/IntentParser;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "invalid param, boken is not support"
@@ -437,7 +439,7 @@
 
     return-object p0
 
-    .line 404
+    .line 405
     :cond_17
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -447,7 +449,7 @@
 
     move-result-object v0
 
-    .line 405
+    .line 406
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -479,7 +481,7 @@
 
     goto/16 :goto_94
 
-    .line 144
+    .line 145
     :cond_6
     invoke-virtual {p2}, Lcom/transsion/camera/manager/FlipScreenRelay;->flipToUnFlip()Z
 
@@ -487,14 +489,14 @@
 
     if-eqz v0, :cond_12
 
-    .line 145
+    .line 146
     const-string p1, "1"
 
     iput-object p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto/16 :goto_89
 
-    .line 146
+    .line 147
     :cond_12
     invoke-virtual {p2}, Lcom/transsion/camera/manager/FlipScreenRelay;->unFlipToFlip()Z
 
@@ -502,7 +504,7 @@
 
     if-eqz v0, :cond_89
 
-    .line 147
+    .line 148
     iget-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/DVUtils;->isRequestEnterDV(Landroid/content/Context;)Z
@@ -513,12 +515,12 @@
 
     if-eqz v0, :cond_25
 
-    .line 148
+    .line 149
     iput-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_89
 
-    .line 149
+    .line 150
     :cond_25
     const-string v0, "com.transsion.camera.feature.mode.pmaster.PMasterModeEntry"
 
@@ -532,14 +534,14 @@
 
     if-eqz v0, :cond_5f
 
-    .line 150
+    .line 151
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->pMasterStereoOn(Lcom/transsion/camera/app/common/storage/DataStore;)Z
 
     move-result p1
 
     if-eqz p1, :cond_5c
 
-    .line 151
+    .line 152
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object p1
@@ -554,7 +556,7 @@
 
     if-eqz p1, :cond_89
 
-    .line 153
+    .line 154
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v0
@@ -569,30 +571,30 @@
 
     if-eqz v0, :cond_56
 
-    .line 155
+    .line 156
     iput-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_58
 
-    .line 157
+    .line 158
     :cond_56
     iput-object p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     :goto_58
     const/4 p1, 0x1
 
-    .line 159
+    .line 160
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mFlipBokeh:Z
 
     goto :goto_89
 
-    .line 162
+    .line 163
     :cond_5c
     iput-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_89
 
-    .line 164
+    .line 165
     :cond_5f
     const-string p1, "com.transsion.camera.feature.mode.video.VideoModeEntry"
 
@@ -606,12 +608,12 @@
 
     if-eqz p1, :cond_6e
 
-    .line 165
+    .line 166
     iput-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_89
 
-    .line 166
+    .line 167
     :cond_6e
     invoke-virtual {p2}, Lcom/transsion/camera/manager/FlipScreenRelay;->getLastModeName()Ljava/lang/String;
 
@@ -625,12 +627,12 @@
 
     if-eqz p1, :cond_7d
 
-    .line 167
+    .line 168
     iput-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_89
 
-    .line 168
+    .line 169
     :cond_7d
     invoke-virtual {p2}, Lcom/transsion/camera/manager/FlipScreenRelay;->getLastModeName()Ljava/lang/String;
 
@@ -642,10 +644,10 @@
 
     if-eqz p1, :cond_89
 
-    .line 169
+    .line 170
     iput-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
-    .line 172
+    .line 173
     :cond_89
     :goto_89
     invoke-virtual {p2}, Lcom/transsion/camera/manager/FlipScreenRelay;->flipToUnFlip()Z
@@ -654,7 +656,7 @@
 
     if-eqz p1, :cond_94
 
-    .line 173
+    .line 174
     iget-object p0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mContext:Landroid/content/Context;
 
     invoke-static {p0}, Lcom/transsion/camera/utils/DVUtils;->markHasLaunchDVMode(Landroid/content/Context;)V
@@ -667,12 +669,12 @@
 .method private isEnterIntentMode(Landroid/content/Intent;)Z
     .registers 2
 
-    .line 543
+    .line 545
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 544
+    .line 546
     const-string p1, "android.media.action.IMAGE_CAPTURE"
 
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -683,7 +685,7 @@
 
     const-string p1, "android.media.action.IMAGE_CAPTURE_SECURE"
 
-    .line 545
+    .line 547
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -692,7 +694,7 @@
 
     const-string p1, "android.media.action.VIDEO_CAPTURE"
 
-    .line 546
+    .line 548
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -716,12 +718,12 @@
 .method private isFromIntent(Landroid/content/Intent;)Z
     .registers 2
 
-    .line 531
+    .line 533
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 532
+    .line 534
     const-string p1, "android.media.action.IMAGE_CAPTURE"
 
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -732,7 +734,7 @@
 
     const-string p1, "android.media.action.IMAGE_CAPTURE_SECURE"
 
-    .line 533
+    .line 535
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -741,7 +743,7 @@
 
     const-string p1, "android.media.action.VIDEO_CAPTURE"
 
-    .line 534
+    .line 536
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -750,7 +752,7 @@
 
     const-string p1, "android.media.action.FANS_IMAGE_CAPTURE"
 
-    .line 535
+    .line 537
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -774,7 +776,7 @@
 .method private isFromNegativeScreen(Landroid/content/Intent;)Z
     .registers 2
 
-    .line 539
+    .line 541
     const-string p0, "From"
 
     invoke-virtual {p1, p0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -793,10 +795,10 @@
 .method private isGoogleAssistantIntent(Landroid/content/Intent;)Z
     .registers 3
 
-    .line 550
+    .line 552
     const-string p0, "android.intent.extra.REFERRER_NAME"
 
-    .line 551
+    .line 553
     invoke-virtual {p1, p0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -813,7 +815,7 @@
 
     const/4 v0, 0x0
 
-    .line 552
+    .line 554
     invoke-virtual {p1, p0, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result p0
@@ -835,7 +837,7 @@
 .method private isOpenOnly(Landroid/content/Intent;)Z
     .registers 3
 
-    .line 578
+    .line 580
     const-string p0, "android.intent.extra.CAMERA_OPEN_ONLY"
 
     const/4 v0, 0x0
@@ -848,7 +850,7 @@
 
     const-string p0, "com.google.assistant.extra.CAMERA_OPEN_ONLY"
 
-    .line 579
+    .line 581
     invoke-virtual {p1, p0, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result p0
@@ -870,12 +872,12 @@
 .method private isPhotoIntent(Landroid/content/Intent;)Z
     .registers 2
 
-    .line 564
+    .line 566
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 565
+    .line 567
     const-string p1, "android.media.action.STILL_IMAGE_CAMERA"
 
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -886,7 +888,7 @@
 
     const-string p1, "android.media.action.STILL_IMAGE_CAMERA_SECURE"
 
-    .line 566
+    .line 568
     invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -910,12 +912,12 @@
 .method private isVideoIntent(Landroid/content/Intent;)Z
     .registers 3
 
-    .line 556
+    .line 558
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 557
+    .line 559
     const-string v0, "android.media.action.VIDEO_CAMERA"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -926,7 +928,7 @@
 
     const-string v0, "android.media.action.STILL_IMAGE_CAMERA_SECURE"
 
-    .line 559
+    .line 561
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -937,7 +939,7 @@
 
     const-string p0, "com.google.assistant.extra.OPEN_IN_VIDEO_MODE"
 
-    .line 560
+    .line 562
     invoke-virtual {p1, p0, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result p0
@@ -965,7 +967,7 @@
 
     return p0
 
-    .line 182
+    .line 183
     :cond_4
     invoke-static {}, Lcom/transsion/camera/app/common/portraitdefault/DefaultParam;->getStereoDefaultValue()Ljava/lang/String;
 
@@ -975,14 +977,14 @@
 
     move-result-object v1
 
-    .line 181
+    .line 182
     const-string v2, "key_mu_stereo"
 
     invoke-virtual {p1, v2, v0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 183
+    .line 184
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -1006,7 +1008,7 @@
 .method private parseCameraID(Landroid/content/Intent;)V
     .registers 13
 
-    .line 258
+    .line 259
     iget-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1019,17 +1021,17 @@
 
     move-result v0
 
-    .line 259
+    .line 260
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->useFrontCamera(Landroid/content/Intent;)Z
 
     move-result v1
 
-    .line 260
+    .line 261
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->useBackCamera(Landroid/content/Intent;)Z
 
     move-result v2
 
-    .line 261
+    .line 262
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v3
@@ -1042,7 +1044,7 @@
 
     move-result-object v3
 
-    .line 262
+    .line 263
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v4
@@ -1055,7 +1057,7 @@
 
     move-result-object v4
 
-    .line 263
+    .line 264
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v5
@@ -1068,7 +1070,7 @@
 
     move-result-object v5
 
-    .line 264
+    .line 265
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v6
@@ -1081,7 +1083,7 @@
 
     move-result-object v6
 
-    .line 266
+    .line 267
     sget-object v7, Lcom/transsion/camera/app/intent/IntentParser;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1100,7 +1102,7 @@
 
     invoke-static {v7, v8}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 267
+    .line 268
     const-string v8, "1"
 
     const/4 v9, 0x1
@@ -1109,27 +1111,27 @@
 
     if-eqz v1, :cond_c4
 
-    .line 268
+    .line 269
     iput-boolean v9, p0, Lcom/transsion/camera/app/intent/IntentParser;->mAppointCameraId:Z
 
-    .line 269
+    .line 270
     iput-object v8, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
-    .line 270
+    .line 271
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportColumnOrBoth()Z
 
     move-result v0
 
     if-eqz v0, :cond_b0
 
-    .line 271
+    .line 272
     iget-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/ScreenUtils;->getRealMetrics(Landroid/content/Context;)Landroid/util/DisplayMetrics;
 
     move-result-object v0
 
-    .line 272
+    .line 273
     iget v1, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
     iget v2, v0, Landroid/util/DisplayMetrics;->heightPixels:I
@@ -1140,7 +1142,7 @@
 
     int-to-float v1, v1
 
-    .line 273
+    .line 274
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
     div-float/2addr v1, v0
@@ -1151,7 +1153,7 @@
 
     if-gt v0, v1, :cond_a4
 
-    .line 275
+    .line 276
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v0
@@ -1164,7 +1166,7 @@
 
     move-result-object v0
 
-    .line 276
+    .line 277
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1181,10 +1183,10 @@
 
     invoke-static {v7, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 277
+    .line 278
     iput-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
-    .line 279
+    .line 280
     :cond_a4
     iget-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mContext:Landroid/content/Context;
 
@@ -1194,12 +1196,12 @@
 
     if-eqz v0, :cond_194
 
-    .line 280
+    .line 281
     iput-object v10, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto/16 :goto_194
 
-    .line 282
+    .line 283
     :cond_b0
     iget-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mContext:Landroid/content/Context;
 
@@ -1209,7 +1211,7 @@
 
     if-eqz v0, :cond_194
 
-    .line 283
+    .line 284
     iget-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/ScreenUtils;->screenFlip(Landroid/content/Context;)Z
@@ -1218,7 +1220,7 @@
 
     if-eqz v0, :cond_194
 
-    .line 284
+    .line 285
     iput-object v10, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto/16 :goto_194
@@ -1226,17 +1228,17 @@
     :cond_c4
     if-eqz v2, :cond_127
 
-    .line 288
+    .line 289
     iput-boolean v9, p0, Lcom/transsion/camera/app/intent/IntentParser;->mAppointCameraId:Z
 
     if-eqz v3, :cond_109
 
-    .line 289
+    .line 290
     iget-boolean v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mProjectSupportSat:Z
 
     if-eqz v1, :cond_109
 
-    .line 290
+    .line 291
     iget-boolean v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mVideoIntent:Z
 
     if-eqz v1, :cond_d6
@@ -1245,7 +1247,7 @@
 
     if-nez v1, :cond_106
 
-    .line 291
+    .line 292
     :cond_d6
     invoke-direct {p0}, Lcom/transsion/camera/app/intent/IntentParser;->screenPocket()Z
 
@@ -1279,7 +1281,7 @@
 
     if-eqz v0, :cond_fe
 
-    .line 296
+    .line 297
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -1297,24 +1299,24 @@
 
     goto :goto_106
 
-    .line 300
+    .line 301
     :cond_103
     iput-object v3, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_10b
 
-    .line 298
+    .line 299
     :cond_106
     :goto_106
     iput-object v10, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_10b
 
-    .line 303
+    .line 304
     :cond_109
     iput-object v10, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
-    .line 305
+    .line 306
     :goto_10b
     iget-boolean v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyPMaster:Z
 
@@ -1328,22 +1330,22 @@
 
     if-eqz v0, :cond_194
 
-    .line 306
+    .line 307
     invoke-direct {p0}, Lcom/transsion/camera/app/intent/IntentParser;->getSpecifyPMasterBlurCameraId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 307
+    .line 308
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_194
 
-    .line 308
+    .line 309
     iput-boolean v9, p0, Lcom/transsion/camera/app/intent/IntentParser;->mBokeh:Z
 
-    .line 309
+    .line 310
     iput-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto/16 :goto_194
@@ -1351,7 +1353,7 @@
     :cond_127
     if-eqz v3, :cond_16a
 
-    .line 313
+    .line 314
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->isEnterIntentMode(Landroid/content/Intent;)Z
 
     move-result v1
@@ -1362,12 +1364,12 @@
 
     if-eqz v1, :cond_16a
 
-    .line 314
+    .line 315
     iget-boolean v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mVideoIntent:Z
 
     if-nez v1, :cond_167
 
-    .line 315
+    .line 316
     invoke-direct {p0}, Lcom/transsion/camera/app/intent/IntentParser;->screenPocket()Z
 
     move-result v1
@@ -1400,7 +1402,7 @@
 
     if-eqz v0, :cond_15f
 
-    .line 320
+    .line 321
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -1418,46 +1420,46 @@
 
     goto :goto_167
 
-    .line 324
+    .line 325
     :cond_164
     iput-object v3, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_16c
 
-    .line 322
+    .line 323
     :cond_167
     :goto_167
     iput-object v10, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_16c
 
-    .line 327
+    .line 328
     :cond_16a
     iput-object v10, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
-    .line 329
+    .line 330
     :goto_16c
     iget-boolean v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyASDBackWideSuperDefinition:Z
 
     if-eqz v0, :cond_173
 
-    .line 330
+    .line 331
     iput-object v4, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_194
 
-    .line 331
+    .line 332
     :cond_173
     iget-boolean v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyASDFrontWideSuperDefinition:Z
 
     if-eqz v0, :cond_17a
 
-    .line 332
+    .line 333
     iput-object v5, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_194
 
-    .line 333
+    .line 334
     :cond_17a
     iget-boolean v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyPMaster:Z
 
@@ -1471,25 +1473,25 @@
 
     if-eqz v0, :cond_194
 
-    .line 334
+    .line 335
     invoke-direct {p0}, Lcom/transsion/camera/app/intent/IntentParser;->getSpecifyPMasterBlurCameraId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 335
+    .line 336
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_194
 
-    .line 336
+    .line 337
     iput-boolean v9, p0, Lcom/transsion/camera/app/intent/IntentParser;->mBokeh:Z
 
-    .line 337
+    .line 338
     iput-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
-    .line 341
+    .line 342
     :cond_194
     :goto_194
     iget-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
@@ -1500,7 +1502,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
-    .line 343
+    .line 344
     iget-boolean v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyBokeh:Z
 
     if-nez v0, :cond_1a6
@@ -1520,7 +1522,7 @@
 
     if-eqz v6, :cond_1be
 
-    .line 346
+    .line 347
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v0
@@ -1535,22 +1537,22 @@
 
     if-eqz v0, :cond_1bb
 
-    .line 348
+    .line 349
     iput-object v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_1c0
 
-    .line 350
+    .line 351
     :cond_1bb
     iput-object v6, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_1c0
 
-    .line 353
+    .line 354
     :cond_1be
     iput-object v8, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
-    .line 357
+    .line 358
     :cond_1c0
     :goto_1c0
     const-string v0, "com.android.systemui.camera_launch_source"
@@ -1565,7 +1567,7 @@
 
     if-ne v0, p1, :cond_242
 
-    .line 360
+    .line 361
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -1580,7 +1582,7 @@
 
     if-eqz p1, :cond_1ed
 
-    .line 361
+    .line 362
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -1589,7 +1591,7 @@
 
     if-eqz p1, :cond_1ed
 
-    .line 362
+    .line 363
     iget-object p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -1602,7 +1604,7 @@
 
     goto :goto_20f
 
-    .line 363
+    .line 364
     :cond_1ed
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -1614,22 +1616,22 @@
 
     if-eqz p1, :cond_202
 
-    .line 364
+    .line 365
     iget-object p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 365
+    .line 366
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 364
+    .line 365
     invoke-virtual {p1, v2, v0, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     goto :goto_20f
 
-    .line 367
+    .line 368
     :cond_202
     iget-object p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -1643,7 +1645,7 @@
 
     move-result-object p1
 
-    .line 369
+    .line 370
     :goto_20f
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1661,19 +1663,19 @@
 
     invoke-static {v7, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 370
+    .line 371
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_22c
 
-    .line 371
+    .line 372
     iput-object v10, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     goto :goto_242
 
-    .line 372
+    .line 373
     :cond_22c
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1681,12 +1683,12 @@
 
     if-eqz p1, :cond_242
 
-    .line 373
+    .line 374
     iput-object v10, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
     if-eqz v3, :cond_242
 
-    .line 374
+    .line 375
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -1697,17 +1699,17 @@
 
     if-eqz p1, :cond_242
 
-    .line 375
+    .line 376
     iput-object v3, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
-    .line 380
+    .line 381
     :cond_242
     :goto_242
     iget-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mBokeh:Z
 
     or-int/2addr p1, v9
 
-    .line 381
+    .line 382
     iget-boolean v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mFlipBokeh:Z
 
     or-int/2addr p1, v0
@@ -1718,7 +1720,7 @@
 
     goto :goto_24f
 
-    .line 382
+    .line 383
     :cond_24d
     iget-object v10, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
 
@@ -1731,7 +1733,7 @@
 .method private parseDeveloperModeStatus(Landroid/content/Intent;)V
     .registers 4
 
-    .line 386
+    .line 387
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isDeveloperMode()Z
 
     move-result v0
@@ -1740,20 +1742,20 @@
 
     goto :goto_16
 
-    .line 389
+    .line 390
     :cond_7
     const-string v0, "enable_developer_mode"
 
     const/4 v1, 0x0
 
-    .line 390
+    .line 391
     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result p1
 
     if-eqz p1, :cond_16
 
-    .line 392
+    .line 393
     iget-object p0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mContext:Landroid/content/Context;
 
     const/4 p1, 0x1
@@ -1768,14 +1770,14 @@
 .method private parseGoogleAssistantIntent(Landroid/content/Intent;)V
     .registers 5
 
-    .line 515
+    .line 517
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->isGoogleAssistantIntent(Landroid/content/Intent;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mGoogleAssistantIntent:Z
 
-    .line 516
+    .line 518
     sget-object v0, Lcom/transsion/camera/app/intent/IntentParser;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1796,26 +1798,26 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 517
+    .line 519
     iget-boolean v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mGoogleAssistantIntent:Z
 
     if-eqz v1, :cond_70
 
-    .line 518
+    .line 520
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->isOpenOnly(Landroid/content/Intent;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mOpenOnly:Z
 
-    .line 519
+    .line 521
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->getDelayTimeFromIntent(Landroid/content/Intent;)I
 
     move-result v1
 
     iput v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mDelayTime:I
 
-    .line 521
+    .line 523
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->isVideoIntent(Landroid/content/Intent;)Z
 
     move-result v1
@@ -1824,14 +1826,14 @@
 
     if-nez v1, :cond_3c
 
-    .line 523
+    .line 525
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->isPhotoIntent(Landroid/content/Intent;)Z
 
     move-result p1
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mPhotoIntent:Z
 
-    .line 525
+    .line 527
     :cond_3c
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -1884,7 +1886,7 @@
 
     if-nez p1, :cond_a
 
-    .line 200
+    .line 201
     sget-object p0, Lcom/transsion/camera/app/intent/IntentParser;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "parseIntent intent is null"
@@ -1893,7 +1895,7 @@
 
     return-void
 
-    .line 203
+    .line 204
     :cond_a
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->isFromIntent(Landroid/content/Intent;)Z
 
@@ -1901,19 +1903,19 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mFromIntent:Z
 
-    .line 205
+    .line 206
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->isFromNegativeScreen(Landroid/content/Intent;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mFromNegativeScreen:Z
 
-    .line 207
+    .line 208
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 208
+    .line 209
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x21
@@ -1926,7 +1928,7 @@
 
     const-string v1, "android.media.action.STILL_IMAGE_CAMERA"
 
-    .line 209
+    .line 210
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -1935,7 +1937,7 @@
 
     const-string v1, "android.media.action.STILL_IMAGE_CAMERA_SECURE"
 
-    .line 210
+    .line 211
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -1945,7 +1947,7 @@
     :cond_33
     const/4 v1, -0x1
 
-    .line 211
+    .line 212
     invoke-virtual {p1, v4, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
@@ -1956,12 +1958,12 @@
 
     if-ne v3, v2, :cond_4a
 
-    .line 213
+    .line 214
     const-string/jumbo v2, "volume_double_tap"
 
     iput-object v2, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 214
+    .line 215
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v2
@@ -1973,24 +1975,24 @@
     :cond_4a
     const/4 v6, 0x5
 
-    .line 215
+    .line 216
     const-string v7, "[parseIntent] lock_screen_type: "
 
     const-string v8, "lock_screen_type"
 
     if-ne v6, v2, :cond_82
 
-    .line 216
+    .line 217
     const-string/jumbo v2, "underwater_volume_double_tap"
 
     iput-object v2, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 217
+    .line 218
     invoke-virtual {p1, v8, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 218
+    .line 219
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v6
@@ -1999,7 +2001,7 @@
 
     invoke-virtual {v6, v8}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setCameraBootMethod(I)V
 
-    .line 219
+    .line 220
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v6
@@ -2010,7 +2012,7 @@
 
     invoke-virtual {v6, v8, v9}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(ILjava/lang/String;)V
 
-    .line 220
+    .line 221
     sget-object v6, Lcom/transsion/camera/app/intent/IntentParser;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -2034,17 +2036,17 @@
 
     if-ne v6, v2, :cond_ab
 
-    .line 222
+    .line 223
     const-string v2, "ai_key_double_tap"
 
     iput-object v2, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 223
+    .line 224
     invoke-virtual {p1, v8, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 224
+    .line 225
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v6
@@ -2053,7 +2055,7 @@
 
     invoke-virtual {v6, v8}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setCameraBootMethod(I)V
 
-    .line 225
+    .line 226
     sget-object v6, Lcom/transsion/camera/app/intent/IntentParser;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -2077,12 +2079,12 @@
 
     if-ne v6, v2, :cond_ba
 
-    .line 227
+    .line 228
     const-string v2, "lockscreen_affordance"
 
     iput-object v2, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 228
+    .line 229
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v2
@@ -2096,24 +2098,24 @@
 
     if-ne v6, v2, :cond_e1
 
-    .line 230
+    .line 231
     const-string v2, "shoulder_button_double_tap"
 
     iput-object v2, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 231
+    .line 232
     invoke-virtual {p1, v8, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 232
+    .line 233
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v6
 
     invoke-virtual {v6, v4}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setCameraBootMethod(I)V
 
-    .line 233
+    .line 234
     sget-object v6, Lcom/transsion/camera/app/intent/IntentParser;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -2130,7 +2132,7 @@
 
     invoke-static {v6, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 236
+    .line 237
     :cond_e1
     :goto_e1
     const-string v2, "isFromSmartButton"
@@ -2141,7 +2143,7 @@
 
     if-ne v5, v1, :cond_f7
 
-    .line 238
+    .line 239
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v1
@@ -2150,7 +2152,7 @@
 
     goto :goto_f7
 
-    .line 241
+    .line 242
     :cond_f1
     invoke-virtual {p1, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
@@ -2158,14 +2160,14 @@
 
     iput-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 244
+    .line 245
     :cond_f7
     :goto_f7
     iget-boolean v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mFromNegativeScreen:Z
 
     if-eqz v1, :cond_103
 
-    .line 245
+    .line 246
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v1
@@ -2174,7 +2176,7 @@
 
     goto :goto_113
 
-    .line 246
+    .line 247
     :cond_103
     const-string v1, "android.intent.action.MAIN"
 
@@ -2184,7 +2186,7 @@
 
     if-eqz v1, :cond_113
 
-    .line 247
+    .line 248
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v1
@@ -2193,7 +2195,7 @@
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setCameraBootMethod(I)V
 
-    .line 249
+    .line 250
     :cond_113
     :goto_113
     sget-object v1, Lcom/transsion/camera/app/intent/IntentParser;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -2222,16 +2224,16 @@
 
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 251
+    .line 252
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->parseSpecifyModeIntent(Landroid/content/Intent;)V
 
-    .line 252
+    .line 253
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->parseGoogleAssistantIntent(Landroid/content/Intent;)V
 
-    .line 253
+    .line 254
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->parseCameraID(Landroid/content/Intent;)V
 
-    .line 254
+    .line 255
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->parseDeveloperModeStatus(Landroid/content/Intent;)V
 
     return-void
@@ -2242,7 +2244,7 @@
 
     if-nez p1, :cond_a
 
-    .line 188
+    .line 189
     sget-object p0, Lcom/transsion/camera/app/intent/IntentParser;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "parseMetaData data is null"
@@ -2251,7 +2253,7 @@
 
     return-void
 
-    .line 191
+    .line 192
     :cond_a
     const-string v0, "ModeName"
 
@@ -2271,10 +2273,10 @@
 
     const/4 p1, 0x1
 
-    .line 193
+    .line 194
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mAppointCameraId:Z
 
-    .line 194
+    .line 195
     const-string p1, "0"
 
     iput-object p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mCameraId:Ljava/lang/String;
@@ -2286,7 +2288,7 @@
 .method private parseSpecifyModeIntent(Landroid/content/Intent;)V
     .registers 7
 
-    .line 467
+    .line 468
     const-string v0, "com.transsion.camera.action.START_SPECIFY_MODE"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -2329,14 +2331,14 @@
     :goto_1e
     iput-boolean v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyMode:Z
 
-    .line 469
+    .line 470
     const-string v0, "SpecifyMode"
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 470
+    .line 471
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v4
@@ -2347,12 +2349,12 @@
 
     if-eqz v2, :cond_34
 
-    .line 471
+    .line 472
     invoke-static {p1}, Lcom/transsion/camera/app/intent/IntentParser;->getNFCSpecifyMode(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 473
+    .line 474
     :cond_34
     sget-object p1, Lcom/transsion/camera/app/intent/IntentParser;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2372,7 +2374,7 @@
 
     invoke-static {p1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 474
+    .line 475
     iget-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyMode:Z
 
     if-nez p1, :cond_54
@@ -2389,12 +2391,12 @@
     :cond_55
     iput-boolean v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyMode:Z
 
-    if-eqz v1, :cond_15b
-
-    .line 477
-    iput-boolean v3, p0, Lcom/transsion/camera/app/intent/IntentParser;->mAppointCameraId:Z
+    if-eqz v1, :cond_163
 
     .line 478
+    iput-boolean v3, p0, Lcom/transsion/camera/app/intent/IntentParser;->mAppointCameraId:Z
+
+    .line 479
     const-string p1, "ASDMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2403,7 +2405,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyASD:Z
 
-    .line 479
+    .line 480
     const-string p1, "HDRMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2412,7 +2414,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyHDR:Z
 
-    .line 480
+    .line 481
     const-string p1, "HDROffMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2421,7 +2423,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyHDROff:Z
 
-    .line 481
+    .line 482
     const-string p1, "SuperDefinitionOffMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2430,7 +2432,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifySuperDefinitionOff:Z
 
-    .line 482
+    .line 483
     const-string p1, "SuperDefinitionOnMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2439,7 +2441,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifySuperDefinitionOn:Z
 
-    .line 483
+    .line 484
     const-string p1, "SuperDefinition"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2448,7 +2450,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifySuperDefinitionMode:Z
 
-    .line 484
+    .line 485
     const-string p1, "MacroMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2457,7 +2459,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyMacro:Z
 
-    .line 485
+    .line 486
     const-string p1, "WideAngleMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2466,7 +2468,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyWideAngle:Z
 
-    .line 486
+    .line 487
     const-string p1, "TeleMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2475,7 +2477,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyTele:Z
 
-    .line 487
+    .line 488
     const-string p1, "FaceBeautyMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2484,7 +2486,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyPMaster:Z
 
-    .line 488
+    .line 489
     const-string p1, "FaceBeauty"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2493,7 +2495,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyFaceBeauty:Z
 
-    .line 489
+    .line 490
     const-string p1, "SlimBody"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2502,7 +2504,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifySlimBody:Z
 
-    .line 490
+    .line 491
     const-string p1, "FunVideoMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2511,7 +2513,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyFunVideo:Z
 
-    .line 491
+    .line 492
     const-string p1, "FunVideoOffMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2520,7 +2522,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyFunVideoOff:Z
 
-    .line 492
+    .line 493
     const-string p1, "BokehMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2529,7 +2531,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyBokeh:Z
 
-    .line 493
+    .line 494
     const-string p1, "BokehOffMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2538,7 +2540,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyBokehOff:Z
 
-    .line 494
+    .line 495
     const-string p1, "FrontASDMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2547,7 +2549,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyFrontASD:Z
 
-    .line 495
+    .line 496
     const-string p1, "MultiFaceBeautyMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2556,7 +2558,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyMultiFacebeauty:Z
 
-    .line 496
+    .line 497
     const-string p1, "MultiFaceBeautyOffMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2565,7 +2567,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyMultiFacebeautyOff:Z
 
-    .line 497
+    .line 498
     const-string p1, "FrontFunVideoMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2574,7 +2576,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyFrontFunVideo:Z
 
-    .line 498
+    .line 499
     const-string p1, "FrontFunVideoOffMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2583,7 +2585,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyFrontFunVideoOff:Z
 
-    .line 499
+    .line 500
     const-string p1, "VideoModeWithPortrait"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2592,7 +2594,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifySettingVideoPortrait:Z
 
-    .line 501
+    .line 502
     const-string p1, "VideoEnhanceOnMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2601,7 +2603,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyVideoEnhanceBack4K:Z
 
-    .line 502
+    .line 503
     const-string p1, "VideoModeWithBack4KAnti"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2610,7 +2612,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyVideoBack4KAnti:Z
 
-    .line 503
+    .line 504
     const-string p1, "VideoModeWithBackHighFPSAnti"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2619,7 +2621,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyVideoBackHighFpsAnti:Z
 
-    .line 504
+    .line 505
     const-string p1, "ASDBackWideSuperDefinition"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2628,7 +2630,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyASDBackWideSuperDefinition:Z
 
-    .line 505
+    .line 506
     const-string p1, "ASDFrontWideSuperDefinition"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2637,7 +2639,16 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyASDFrontWideSuperDefinition:Z
 
-    .line 506
+    .line 507
+    const-string p1, "ASDLivePhoto"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyASDLivePhoto:Z
+
+    .line 508
     const-string p1, "VlogMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2646,7 +2657,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyVlog:Z
 
-    .line 507
+    .line 509
     const-string p1, "MotionCapture"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2655,7 +2666,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyFlashSnap:Z
 
-    .line 508
+    .line 510
     const-string p1, "SmartFocusOn"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2664,7 +2675,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyFrontSmartFocus:Z
 
-    .line 509
+    .line 511
     const-string p1, "AigcMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2673,7 +2684,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyAIGC:Z
 
-    .line 510
+    .line 512
     const-string p1, "PortraitMode"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2682,14 +2693,14 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyPortraitMode:Z
 
-    :cond_15b
+    :cond_163
     return-void
 .end method
 
 .method private screenPocket()Z
     .registers 2
 
-    .line 414
+    .line 415
     iget-object p0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/manager/IScreenManager;->getScreenFormType()I
@@ -2713,7 +2724,7 @@
 .method private useBackCamera(Landroid/content/Intent;)Z
     .registers 4
 
-    .line 600
+    .line 602
     const-string/jumbo v0, "volume_double_tap"
 
     iget-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
@@ -2728,7 +2739,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 601
+    .line 603
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2739,7 +2750,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 602
+    .line 604
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2750,7 +2761,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 603
+    .line 605
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2761,7 +2772,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 604
+    .line 606
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2772,7 +2783,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 605
+    .line 607
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2783,7 +2794,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 606
+    .line 608
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2794,7 +2805,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/intent/IntentParser;->mLaunchSource:Ljava/lang/String;
 
-    .line 607
+    .line 609
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2803,7 +2814,7 @@
 
     const-string/jumbo v0, "video_mode"
 
-    .line 608
+    .line 610
     invoke-virtual {p1}, Landroid/content/Intent;->getDataString()Ljava/lang/String;
 
     move-result-object v1
@@ -2814,7 +2825,7 @@
 
     if-nez v0, :cond_69
 
-    .line 609
+    .line 611
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/intent/IntentParser;->useBackCameraForTest(Landroid/content/Intent;)Z
 
     move-result p0
@@ -2838,7 +2849,7 @@
 .method private useBackCameraForTest(Landroid/content/Intent;)Z
     .registers 3
 
-    .line 617
+    .line 619
     const-string p0, "isVoiceQuery"
 
     const/4 v0, 0x0
@@ -2851,7 +2862,7 @@
 
     const-string p0, "NoUiQuery"
 
-    .line 618
+    .line 620
     invoke-virtual {p1, p0, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result p0
@@ -2869,7 +2880,7 @@
 .method private useFrontCamera(Landroid/content/Intent;)Z
     .registers 5
 
-    .line 583
+    .line 585
     iget-boolean v0, p0, Lcom/transsion/camera/app/intent/IntentParser;->mSpecifyPortraitMode:Z
 
     const/4 v1, 0x1
@@ -2913,7 +2924,7 @@
     :goto_21
     move p0, v1
 
-    .line 591
+    .line 593
     :goto_22
     const-string v0, "ModeFromAod"
 
@@ -2931,10 +2942,10 @@
 
     if-nez p0, :cond_4e
 
-    .line 593
+    .line 595
     const-string p0, "com.google.assistant.extra.USE_FRONT_CAMERA"
 
-    .line 594
+    .line 596
     invoke-virtual {p1, p0, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result p0
@@ -2943,7 +2954,7 @@
 
     const-string p0, "android.intent.extra.USE_FRONT_CAMERA"
 
-    .line 595
+    .line 597
     invoke-virtual {p1, p0, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result p0
@@ -2952,7 +2963,7 @@
 
     const-string p0, "selfie"
 
-    .line 596
+    .line 598
     invoke-virtual {p1}, Landroid/content/Intent;->getDataString()Ljava/lang/String;
 
     move-result-object p1

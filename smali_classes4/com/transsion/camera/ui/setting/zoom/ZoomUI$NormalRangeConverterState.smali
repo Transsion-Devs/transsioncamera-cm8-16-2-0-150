@@ -22,10 +22,10 @@
 .method protected constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;II)V
     .registers 4
 
-    .line 2067
+    .line 2054
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$NormalRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
-    .line 2068
+    .line 2055
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;II)V
 
     return-void
@@ -36,10 +36,10 @@
 .method protected onEnter(I)V
     .registers 2
 
-    .line 2083
+    .line 2070
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;->onEnter(I)V
 
-    .line 2084
+    .line 2071
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$NormalRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->onMainCameraSelected()V

@@ -1,5 +1,5 @@
 .class public final Lcom/google/gson/internal/bind/TreeTypeAdapter;
-.super Lcom/google/gson/TypeAdapter;
+.super Lcom/google/gson/internal/bind/SerializationDelegatingTypeAdapter;
 .source "SourceFile"
 
 
@@ -16,7 +16,8 @@
         "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Lcom/google/gson/TypeAdapter;"
+        "Lcom/google/gson/internal/bind/SerializationDelegatingTypeAdapter<",
+        "TT;>;"
     }
 .end annotation
 
@@ -24,25 +25,50 @@
 # instance fields
 .field private final context:Lcom/google/gson/internal/bind/TreeTypeAdapter$GsonContextImpl;
 
-.field private delegate:Lcom/google/gson/TypeAdapter;
+.field private volatile delegate:Lcom/google/gson/TypeAdapter;
 
 .field private final deserializer:Lcom/google/gson/JsonDeserializer;
 
 .field final gson:Lcom/google/gson/Gson;
 
-.field private final skipPast:Lcom/google/gson/TypeAdapterFactory;
+.field private final nullSafe:Z
+
+.field private final skipPastForGetDelegateAdapter:Lcom/google/gson/TypeAdapterFactory;
 
 .field private final typeToken:Lcom/google/gson/reflect/TypeToken;
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/gson/JsonSerializer;Lcom/google/gson/JsonDeserializer;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/TypeAdapterFactory;)V
-    .registers 7
+    .registers 13
+
+    const/4 v6, 0x1
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
+
+    .line 83
+    invoke-direct/range {v0 .. v6}, Lcom/google/gson/internal/bind/TreeTypeAdapter;-><init>(Lcom/google/gson/JsonSerializer;Lcom/google/gson/JsonDeserializer;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/TypeAdapterFactory;Z)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/gson/JsonSerializer;Lcom/google/gson/JsonDeserializer;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/TypeAdapterFactory;Z)V
+    .registers 8
+
+    .line 68
+    invoke-direct {p0}, Lcom/google/gson/internal/bind/SerializationDelegatingTypeAdapter;-><init>()V
 
     .line 53
-    invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
-
-    .line 47
     new-instance p1, Lcom/google/gson/internal/bind/TreeTypeAdapter$GsonContextImpl;
 
     const/4 v0, 0x0
@@ -51,17 +77,20 @@
 
     iput-object p1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->context:Lcom/google/gson/internal/bind/TreeTypeAdapter$GsonContextImpl;
 
-    .line 55
+    .line 70
     iput-object p2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->deserializer:Lcom/google/gson/JsonDeserializer;
 
-    .line 56
+    .line 71
     iput-object p3, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->gson:Lcom/google/gson/Gson;
 
-    .line 57
+    .line 72
     iput-object p4, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->typeToken:Lcom/google/gson/reflect/TypeToken;
 
-    .line 58
-    iput-object p5, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->skipPast:Lcom/google/gson/TypeAdapterFactory;
+    .line 73
+    iput-object p5, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->skipPastForGetDelegateAdapter:Lcom/google/gson/TypeAdapterFactory;
+
+    .line 74
+    iput-boolean p6, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->nullSafe:Z
 
     return-void
 .end method
@@ -69,22 +98,21 @@
 .method private delegate()Lcom/google/gson/TypeAdapter;
     .registers 4
 
-    .line 86
+    .line 115
     iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->delegate:Lcom/google/gson/TypeAdapter;
 
     if-eqz v0, :cond_5
 
     return-object v0
 
-    .line 87
+    .line 118
     :cond_5
     iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->gson:Lcom/google/gson/Gson;
 
-    iget-object v1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->skipPast:Lcom/google/gson/TypeAdapterFactory;
+    iget-object v1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->skipPastForGetDelegateAdapter:Lcom/google/gson/TypeAdapterFactory;
 
     iget-object v2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->typeToken:Lcom/google/gson/reflect/TypeToken;
 
-    .line 89
     invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->getDelegateAdapter(Lcom/google/gson/TypeAdapterFactory;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
 
     move-result-object v0
@@ -97,7 +125,7 @@
 .method public static newFactoryWithMatchRawType(Lcom/google/gson/reflect/TypeToken;Ljava/lang/Object;)Lcom/google/gson/TypeAdapterFactory;
     .registers 5
 
-    .line 106
+    .line 139
     invoke-virtual {p0}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
 
     move-result-object v0
@@ -115,7 +143,7 @@
     :cond_c
     const/4 v0, 0x0
 
-    .line 107
+    .line 140
     :goto_d
     new-instance v1, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;
 
@@ -128,15 +156,26 @@
 
 
 # virtual methods
+.method public getSerializationDelegate()Lcom/google/gson/TypeAdapter;
+    .registers 1
+
+    .line 127
+    invoke-direct {p0}, Lcom/google/gson/internal/bind/TreeTypeAdapter;->delegate()Lcom/google/gson/TypeAdapter;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .registers 4
 
-    .line 62
+    .line 88
     iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->deserializer:Lcom/google/gson/JsonDeserializer;
 
     if-nez v0, :cond_d
 
-    .line 63
+    .line 89
     invoke-direct {p0}, Lcom/google/gson/internal/bind/TreeTypeAdapter;->delegate()Lcom/google/gson/TypeAdapter;
 
     move-result-object p0
@@ -147,25 +186,29 @@
 
     return-object p0
 
-    .line 65
+    .line 91
     :cond_d
     invoke-static {p1}, Lcom/google/gson/internal/Streams;->parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
 
     move-result-object p1
 
-    .line 66
+    .line 92
+    iget-boolean v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->nullSafe:Z
+
+    if-eqz v0, :cond_1d
+
     invoke-virtual {p1}, Lcom/google/gson/JsonElement;->isJsonNull()Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1d
 
     const/4 p0, 0x0
 
     return-object p0
 
-    .line 69
-    :cond_19
+    .line 95
+    :cond_1d
     iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->deserializer:Lcom/google/gson/JsonDeserializer;
 
     iget-object v1, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter;->typeToken:Lcom/google/gson/reflect/TypeToken;
@@ -186,7 +229,7 @@
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
 
-    .line 74
+    .line 101
     invoke-direct {p0}, Lcom/google/gson/internal/bind/TreeTypeAdapter;->delegate()Lcom/google/gson/TypeAdapter;
 
     move-result-object p0

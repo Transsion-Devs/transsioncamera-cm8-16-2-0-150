@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/asd/AsdUI;)V
     .registers 2
 
-    .line 596
+    .line 603
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/asd/AsdUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 596
+    .line 603
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/ui/setting/asd/AsdUI$StatusChangeListener;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -58,7 +58,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 599
+    .line 606
     const-string v0, "key_fake_asd_camera_status"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -67,7 +67,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 600
+    .line 607
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/asd/AsdUI;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
@@ -82,7 +82,7 @@
 
     return-void
 
-    .line 601
+    .line 608
     :cond_16
     const-string v0, "key_macro_status"
 
@@ -92,7 +92,7 @@
 
     if-eqz p1, :cond_55
 
-    .line 602
+    .line 609
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const-string p1, "on"
@@ -113,7 +113,7 @@
 
     goto :goto_55
 
-    .line 609
+    .line 616
     :cond_32
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/asd/AsdUI;
 
@@ -123,7 +123,7 @@
 
     return-void
 
-    .line 604
+    .line 611
     :cond_39
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/asd/AsdUI;
 
@@ -131,7 +131,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/ui/setting/asd/AsdUI;->-$$Nest$fputmIsMacroEnable(Lcom/transsion/camera/ui/setting/asd/AsdUI;Z)V
 
-    .line 605
+    .line 612
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/asd/AsdUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/asd/AsdUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/ui/setting/asd/AsdUI;)Lcom/transsion/camera/ui/setting/asd/AsdUI$UIHandler;
@@ -142,7 +142,7 @@
 
     invoke-virtual {p1, p2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 606
+    .line 613
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/asd/AsdUI;
 
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;

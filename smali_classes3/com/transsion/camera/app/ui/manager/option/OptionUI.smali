@@ -22,9 +22,17 @@
 
 .field private mIMasterGuideUICommon:Lcom/transsion/camera/app/common/ui/setting/IMasterGuideUICommon;
 
+.field private mIconLowLightColor:I
+
+.field private mIconOffColor:I
+
+.field private mIconOnColor:I
+
 .field private mIsItelSupportVss:Z
 
 .field private mIsLiteFaceBeautyUIShow:Z
+
+.field private mIsSuperNightLiteAnimShowing:Z
 
 .field protected mOptionRootView:Landroid/widget/LinearLayout;
 
@@ -75,7 +83,7 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;Lcom/transsion/camera/app/ui/manager/option/IOptionVisibilityRespondent;)V
     .registers 10
 
-    .line 84
+    .line 89
     invoke-direct/range {p0 .. p9}, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;-><init>(Landroid/content/Context;Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;Lcom/transsion/camera/app/ui/manager/option/IOptionVisibilityRespondent;)V
 
     const/4 p2, 0x1
@@ -91,19 +99,49 @@
     .line 68
     iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsItelSupportVss:Z
 
-    .line 86
+    .line 74
+    iput-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsSuperNightLiteAnimShowing:Z
+
+    .line 91
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p1
+    move-result-object p2
 
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mResources:Landroid/content/res/Resources;
+    iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mResources:Landroid/content/res/Resources;
 
-    .line 87
+    .line 92
     invoke-interface {p3}, Lcom/transsion/camera/app/common/IAppUI;->getIMasterGuideUICommon()Lcom/transsion/camera/app/common/ui/setting/IMasterGuideUICommon;
 
-    move-result-object p1
+    move-result-object p2
 
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIMasterGuideUICommon:Lcom/transsion/camera/app/common/ui/setting/IMasterGuideUICommon;
+    iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIMasterGuideUICommon:Lcom/transsion/camera/app/common/ui/setting/IMasterGuideUICommon;
+
+    .line 93
+    sget p2, Lcom/transsion/camera/R$color;->top_bar_animation_icon_on:I
+
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getColor(I)I
+
+    move-result p2
+
+    iput p2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIconOnColor:I
+
+    .line 94
+    sget p2, Lcom/transsion/camera/R$color;->top_bar_animation_icon_off:I
+
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getColor(I)I
+
+    move-result p2
+
+    iput p2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIconOffColor:I
+
+    .line 95
+    sget p2, Lcom/transsion/camera/R$color;->top_bar_animation_icon_low_light:I
+
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getColor(I)I
+
+    move-result p1
+
+    iput p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIconLowLightColor:I
 
     return-void
 .end method
@@ -113,20 +151,21 @@
 
     if-nez p1, :cond_4
 
-    goto/16 :goto_90
+    goto/16 :goto_a2
 
-    .line 135
+    .line 143
     :cond_4
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
+    :cond_8
     :goto_8
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_90
+    if-eqz v0, :cond_a2
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -134,17 +173,26 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 136
+    .line 144
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->setSettingUI(Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;)V
 
-    .line 137
+    .line 145
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getOptionEntryView()Landroid/view/View;
 
     move-result-object v1
 
-    if-nez v1, :cond_2e
+    .line 146
+    iget v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIconOnColor:I
 
-    .line 139
+    iget v3, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIconOffColor:I
+
+    iget v4, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIconLowLightColor:I
+
+    invoke-interface {v0, v2, v3, v4}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->initIconColor(III)V
+
+    if-nez v1, :cond_37
+
+    .line 148
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mInflater:Landroid/view/LayoutInflater;
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
@@ -159,13 +207,13 @@
 
     const/4 v3, 0x0
 
-    .line 141
+    .line 150
     invoke-static {v1, v2, v3}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
-    :cond_2e
-    if-nez v1, :cond_4b
+    :cond_37
+    if-nez v1, :cond_54
 
-    .line 144
+    .line 153
     sget-object v1, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -190,11 +238,11 @@
 
     goto :goto_8
 
-    .line 147
-    :cond_4b
+    .line 156
+    :cond_54
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setupEntryView()V
 
-    .line 149
+    .line 158
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getSettingUISpec()Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     move-result-object v2
@@ -207,15 +255,15 @@
 
     const/4 v3, 0x1
 
-    if-le v2, v3, :cond_5b
+    if-le v2, v3, :cond_64
 
-    goto :goto_5c
+    goto :goto_65
 
-    :cond_5b
+    :cond_64
     const/4 v3, 0x0
 
-    .line 151
-    :goto_5c
+    .line 160
+    :goto_65
     sget-object v2, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -244,27 +292,37 @@
 
     invoke-static {v2, v4}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    if-nez v3, :cond_89
+    if-nez v3, :cond_92
 
-    .line 153
+    .line 162
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getOptionEntryView()Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v2
 
-    const/16 v2, 0x8
+    const/16 v3, 0x8
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 155
-    :cond_89
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
+    .line 164
+    :cond_92
+    iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 165
+    iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPopSettingShow:Z
+
+    if-eqz v1, :cond_8
+
+    const/16 v1, 0xcf
+
+    .line 166
+    invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->notifyCameraOperateAction(I)V
 
     goto/16 :goto_8
 
-    :cond_90
-    :goto_90
+    :cond_a2
+    :goto_a2
     return-void
 .end method
 
@@ -273,7 +331,7 @@
 
     const/4 v0, 0x0
 
-    .line 244
+    .line 256
     :goto_1
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
@@ -283,14 +341,14 @@
 
     if-ge v0, v1, :cond_15
 
-    .line 245
+    .line 257
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 246
+    .line 258
     invoke-virtual {v1, p1}, Landroid/view/View;->setEnabled(Z)V
 
     add-int/lit8 v0, v0, 0x1
@@ -304,19 +362,19 @@
 .method private stopPressedAnimation(I)V
     .registers 2
 
-    .line 281
+    .line 293
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->needStopPressedAnimation(I)Z
 
     move-result p1
 
     if-eqz p1, :cond_22
 
-    .line 282
+    .line 294
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mOptionSettingUIList:Ljava/util/List;
 
     if-eqz p0, :cond_22
 
-    .line 283
+    .line 295
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -334,7 +392,7 @@
 
     check-cast p1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 284
+    .line 296
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getOptionEntryView()Landroid/view/View;
 
     move-result-object p1
@@ -350,7 +408,7 @@
 .method private updateIconBubbleGuidePosition(Ljava/util/List;II)V
     .registers 7
 
-    .line 122
+    .line 130
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -369,7 +427,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 123
+    .line 131
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -382,7 +440,7 @@
 
     if-nez v1, :cond_28
 
-    .line 124
+    .line 132
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -402,7 +460,7 @@
 
     const/4 v2, 0x0
 
-    .line 126
+    .line 134
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v0
@@ -420,7 +478,7 @@
 .method protected getLayoutId()I
     .registers 1
 
-    .line 99
+    .line 107
     sget p0, Lcom/transsion/camera/R$layout;->interactive_option_layout:I
 
     return p0
@@ -429,7 +487,7 @@
 .method protected getOptionRootView()Landroid/widget/LinearLayout;
     .registers 1
 
-    .line 479
+    .line 499
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     return-object p0
@@ -438,10 +496,10 @@
 .method public hide()V
     .registers 2
 
-    .line 301
+    .line 313
     invoke-super {p0}, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->hide()V
 
-    .line 302
+    .line 314
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     const/16 v0, 0x8
@@ -454,10 +512,10 @@
 .method public init(Landroid/view/ViewGroup;)V
     .registers 5
 
-    .line 92
+    .line 100
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->init(Landroid/view/ViewGroup;)V
 
-    .line 93
+    .line 101
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mInflater:Landroid/view/LayoutInflater;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->getLayoutId()I
@@ -468,7 +526,7 @@
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    .line 94
+    .line 102
     sget v0, Lcom/transsion/camera/R$id;->interactive_option_icon_layout:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -479,7 +537,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
-    .line 95
+    .line 103
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -494,7 +552,7 @@
 .method public notifyCameraOperateActionToUI(I)V
     .registers 5
 
-    .line 306
+    .line 318
     sget-object v0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -513,7 +571,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 307
+    .line 319
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->stopPressedAnimation(I)V
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -522,347 +580,367 @@
 
     const/4 v2, 0x0
 
-    sparse-switch p1, :sswitch_data_168
+    sparse-switch p1, :sswitch_data_17a
 
-    goto/16 :goto_150
+    goto/16 :goto_162
 
-    .line 338
+    .line 350
     :sswitch_22
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIArtMuseumUIShowing:Z
 
-    .line 339
+    .line 351
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
 
     return-void
 
-    .line 335
+    .line 347
     :sswitch_28
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIArtMuseumUIShowing:Z
 
     return-void
 
-    .line 458
+    .line 475
     :sswitch_2b
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsLiteFaceBeautyUIShow:Z
 
-    goto :goto_6e
-
-    .line 453
-    :sswitch_2e
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsLiteFaceBeautyUIShow:Z
-
-    goto :goto_72
-
-    .line 314
-    :sswitch_31
-    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
-
-    return-void
-
-    .line 331
-    :sswitch_34
-    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIGCUIShowing:Z
-
-    .line 332
-    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
-
-    return-void
-
-    .line 328
-    :sswitch_3a
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIGCUIShowing:Z
-
-    return-void
-
-    .line 317
-    :sswitch_3d
-    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
-
-    .line 318
-    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
-
-    return-void
-
-    .line 311
-    :sswitch_43
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
-
-    return-void
-
-    .line 357
-    :sswitch_46
-    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPMasterBottomUIShowing:Z
-
-    .line 358
-    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
-
-    xor-int/2addr p1, v1
-
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
-
-    return-void
-
-    .line 444
-    :sswitch_4f
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPMasterBottomUIShowing:Z
-
-    return-void
-
-    .line 463
-    :sswitch_52
-    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
-
-    move-result-object p1
-
-    iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5:Z
-
-    if-eqz p1, :cond_150
-
-    .line 464
-    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
-
-    xor-int/2addr p1, v1
-
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
-
-    .line 465
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStreetPhotoStyleOptionShowing:Z
-
-    return-void
-
-    .line 469
-    :sswitch_63
-    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
-
-    move-result-object p1
-
-    iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5:Z
-
-    if-eqz p1, :cond_150
-
-    .line 470
-    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStreetPhotoStyleOptionShowing:Z
-
-    return-void
-
-    .line 460
-    :goto_6e
-    :sswitch_6e
+    .line 476
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->show()V
 
     return-void
 
-    .line 455
-    :goto_72
-    :sswitch_72
+    .line 467
+    :sswitch_31
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsLiteFaceBeautyUIShow:Z
+
+    .line 468
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->hide()V
 
     return-void
 
-    .line 423
-    :sswitch_76
+    .line 326
+    :sswitch_37
+    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
+
+    return-void
+
+    .line 343
+    :sswitch_3a
+    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIGCUIShowing:Z
+
+    .line 344
+    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
+
+    return-void
+
+    .line 340
+    :sswitch_40
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIGCUIShowing:Z
+
+    return-void
+
+    .line 329
+    :sswitch_43
+    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
+
+    .line 330
+    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
+
+    return-void
+
+    .line 323
+    :sswitch_49
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
+
+    return-void
+
+    .line 369
+    :sswitch_4c
+    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPMasterBottomUIShowing:Z
+
+    .line 370
+    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
+
+    xor-int/2addr p1, v1
+
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
+
+    return-void
+
+    .line 458
+    :sswitch_55
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPMasterBottomUIShowing:Z
+
+    return-void
+
+    .line 483
+    :sswitch_58
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object p1
+
+    iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5:Z
+
+    if-eqz p1, :cond_162
+
+    .line 484
+    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
+
+    xor-int/2addr p1, v1
+
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
+
+    .line 485
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStreetPhotoStyleOptionShowing:Z
+
+    return-void
+
+    .line 489
+    :sswitch_69
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object p1
+
+    iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5:Z
+
+    if-eqz p1, :cond_162
+
+    .line 490
+    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStreetPhotoStyleOptionShowing:Z
+
+    return-void
+
+    .line 479
+    :sswitch_74
+    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsSuperNightLiteAnimShowing:Z
+
+    .line 480
+    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->show()V
+
+    return-void
+
+    .line 471
+    :sswitch_7a
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsSuperNightLiteAnimShowing:Z
+
+    .line 472
+    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->hide()V
+
+    return-void
+
+    .line 437
+    :sswitch_80
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mCurrentIsZooming:Z
 
     return-void
 
-    .line 413
-    :sswitch_79
+    .line 427
+    :sswitch_83
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPopSettingShow:Z
 
-    .line 414
+    .line 428
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
 
-    if-nez p1, :cond_150
+    if-nez p1, :cond_162
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartSelfTimeCapture:Z
 
-    if-nez p1, :cond_150
+    if-nez p1, :cond_162
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
-    if-eqz p1, :cond_150
+    if-eqz p1, :cond_162
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mFilterUIShow:Z
 
-    if-nez p1, :cond_150
+    if-nez p1, :cond_162
 
-    .line 415
+    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsSuperNightLiteAnimShowing:Z
+
+    if-nez p1, :cond_162
+
+    .line 429
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
-    if-eqz p1, :cond_9a
+    if-eqz p1, :cond_a8
 
     invoke-virtual {p1}, Landroid/animation/Animator;->isStarted()Z
 
     move-result p1
 
-    if-eqz p1, :cond_9a
+    if-eqz p1, :cond_a8
 
-    .line 416
+    .line 430
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p1}, Landroid/animation/Animator;->cancel()V
 
-    .line 418
-    :cond_9a
+    .line 432
+    :cond_a8
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 419
+    .line 433
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    .line 385
-    :sswitch_a5
+    .line 399
+    :sswitch_b3
     invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
 
-    .line 386
+    .line 400
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPopSettingShow:Z
 
-    .line 387
+    .line 401
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPMasterBottomUIShowing:Z
 
-    .line 388
+    .line 402
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIGCUIShowing:Z
 
-    .line 389
+    .line 403
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIArtMuseumUIShowing:Z
 
-    .line 390
+    .line 404
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mFilterUIShow:Z
 
-    .line 391
+    .line 405
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5:Z
 
-    if-eqz p1, :cond_150
+    if-eqz p1, :cond_162
 
-    .line 392
+    .line 406
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStreetPhotoStyleOptionShowing:Z
 
     return-void
 
-    .line 447
-    :sswitch_bd
+    .line 461
+    :sswitch_cb
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mRecordingUIRespondImmediately:Z
 
-    if-eqz p1, :cond_150
+    if-eqz p1, :cond_162
 
-    .line 448
+    .line 462
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mNeedAnimation:Z
 
-    .line 449
+    .line 463
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
 
     return-void
 
-    .line 346
-    :sswitch_cb
+    .line 358
+    :sswitch_d9
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mFilterUIShow:Z
 
-    goto :goto_108
+    goto :goto_11a
 
-    .line 342
-    :sswitch_ce
+    .line 354
+    :sswitch_dc
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mFilterUIShow:Z
 
     return-void
 
-    .line 408
-    :sswitch_d1
+    .line 422
+    :sswitch_df
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-eqz p1, :cond_150
+    if-eqz p1, :cond_162
 
-    .line 409
+    .line 423
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPopWindowShow:Z
 
     return-void
 
-    .line 396
-    :sswitch_da
+    .line 410
+    :sswitch_e8
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-eqz p1, :cond_eb
+    if-eqz p1, :cond_f9
 
-    .line 397
+    .line 411
     invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
 
-    .line 398
+    .line 412
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPopWindowShow:Z
 
-    .line 399
+    .line 413
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPMasterBottomUIShowing:Z
 
-    .line 400
+    .line 414
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIGCUIShowing:Z
 
-    .line 401
+    .line 415
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIArtMuseumUIShowing:Z
 
-    .line 403
-    :cond_eb
+    .line 417
+    :cond_f9
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5:Z
 
-    if-eqz p1, :cond_150
+    if-eqz p1, :cond_162
 
-    .line 404
+    .line 418
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStreetPhotoStyleOptionShowing:Z
 
     return-void
 
-    .line 368
-    :sswitch_f6
+    .line 380
+    :sswitch_104
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
 
-    if-eqz p1, :cond_ff
+    if-eqz p1, :cond_10d
 
-    .line 369
+    .line 381
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
 
-    .line 370
+    .line 382
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
 
-    .line 372
-    :cond_ff
+    .line 384
+    :cond_10d
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsLiteFaceBeautyUIShow:Z
 
-    .line 373
+    .line 385
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartSelfTimeCapture:Z
 
-    .line 374
+    .line 386
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPopWindowShow:Z
 
-    .line 375
+    .line 387
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mFilterUIShow:Z
+
+    .line 388
+    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mCurrentIsZooming:Z
+
+    .line 389
+    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsSuperNightLiteAnimShowing:Z
 
     return-void
 
-    .line 348
-    :goto_108
-    :sswitch_108
+    .line 360
+    :goto_11a
+    :sswitch_11a
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mCurrentIsZooming:Z
 
-    .line 354
-    :sswitch_10a
+    .line 366
+    :sswitch_11c
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
 
     xor-int/2addr p1, v1
@@ -871,170 +949,170 @@
 
     return-void
 
-    .line 427
-    :sswitch_111
+    .line 441
+    :sswitch_123
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mCurrentIsZooming:Z
 
     return-void
 
-    .line 378
-    :sswitch_114
+    .line 392
+    :sswitch_126
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPopWindowShow:Z
 
-    .line 379
+    .line 393
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPopSettingShow:Z
 
-    .line 381
-    :sswitch_118
+    .line 395
+    :sswitch_12a
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
 
-    .line 382
+    .line 396
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
 
     return-void
 
-    .line 321
-    :sswitch_11e
+    .line 333
+    :sswitch_130
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
 
-    .line 322
+    .line 334
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsItelSupportVss:Z
 
-    if-eqz p1, :cond_126
+    if-eqz p1, :cond_138
 
-    .line 323
+    .line 335
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsLiteFaceBeautyUIShow:Z
 
-    .line 325
-    :cond_126
+    .line 337
+    :cond_138
     invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
 
     return-void
 
-    .line 433
-    :sswitch_12a
+    .line 447
+    :sswitch_13c
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartSelfTimeCapture:Z
 
-    .line 434
+    .line 448
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
 
-    if-nez p1, :cond_150
+    if-nez p1, :cond_162
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPMasterBottomUIShowing:Z
 
-    if-nez p1, :cond_150
+    if-nez p1, :cond_162
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIArtMuseumUIShowing:Z
 
-    if-nez p1, :cond_150
+    if-nez p1, :cond_162
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAIGCUIShowing:Z
 
-    if-nez p1, :cond_150
+    if-nez p1, :cond_162
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStreetPhotoStyleOptionShowing:Z
 
-    if-eqz p1, :cond_150
+    if-eqz p1, :cond_162
 
-    .line 435
+    .line 449
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPopWindowShow:Z
 
-    .line 436
+    .line 450
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mPopSettingShow:Z
 
-    .line 437
+    .line 451
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
-    if-eqz p1, :cond_150
+    if-eqz p1, :cond_162
 
-    .line 438
+    .line 452
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 439
+    .line 453
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    :cond_150
-    :goto_150
+    :cond_162
+    :goto_162
     return-void
 
-    .line 430
-    :sswitch_151
+    .line 444
+    :sswitch_163
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartSelfTimeCapture:Z
 
     return-void
 
-    .line 361
-    :sswitch_154
+    .line 373
+    :sswitch_166
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
 
-    .line 362
+    .line 374
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartSelfTimeCapture:Z
 
-    .line 364
-    :sswitch_158
+    .line 376
+    :sswitch_16a
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mNeedAnimation:Z
 
-    .line 365
+    .line 377
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mStartRecord:Z
 
-    if-nez p1, :cond_163
+    if-nez p1, :cond_175
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsLiteFaceBeautyUIShow:Z
 
-    if-nez p1, :cond_163
+    if-nez p1, :cond_175
 
-    goto :goto_164
+    goto :goto_176
 
-    :cond_163
+    :cond_175
     move v1, v2
 
-    :goto_164
+    :goto_176
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
 
     return-void
 
-    :sswitch_data_168
+    :sswitch_data_17a
     .sparse-switch
-        0x8 -> :sswitch_154
-        0xb -> :sswitch_151
-        0xc -> :sswitch_12a
-        0xf -> :sswitch_11e
-        0x10 -> :sswitch_114
-        0x19 -> :sswitch_111
-        0x1a -> :sswitch_108
-        0x1c -> :sswitch_f6
-        0x1d -> :sswitch_da
-        0x1e -> :sswitch_d1
-        0x30 -> :sswitch_ce
-        0x31 -> :sswitch_cb
-        0x7e -> :sswitch_10a
-        0x82 -> :sswitch_10a
-        0x84 -> :sswitch_158
-        0xb5 -> :sswitch_10a
-        0xb6 -> :sswitch_cb
-        0xc9 -> :sswitch_bd
-        0xcb -> :sswitch_118
-        0xcf -> :sswitch_a5
-        0xd0 -> :sswitch_79
-        0xde -> :sswitch_111
-        0xdf -> :sswitch_76
-        0xed -> :sswitch_72
-        0xee -> :sswitch_6e
-        0xf2 -> :sswitch_63
-        0xf3 -> :sswitch_52
-        0xf7 -> :sswitch_4f
-        0xf8 -> :sswitch_46
-        0x101 -> :sswitch_43
-        0x102 -> :sswitch_3d
-        0x103 -> :sswitch_3a
-        0x104 -> :sswitch_34
-        0x114 -> :sswitch_10a
-        0x133 -> :sswitch_10a
-        0x14b -> :sswitch_43
-        0x14c -> :sswitch_31
-        0x155 -> :sswitch_2e
+        0x8 -> :sswitch_166
+        0xb -> :sswitch_163
+        0xc -> :sswitch_13c
+        0xf -> :sswitch_130
+        0x10 -> :sswitch_126
+        0x19 -> :sswitch_123
+        0x1a -> :sswitch_11a
+        0x1c -> :sswitch_104
+        0x1d -> :sswitch_e8
+        0x1e -> :sswitch_df
+        0x30 -> :sswitch_dc
+        0x31 -> :sswitch_d9
+        0x7e -> :sswitch_11c
+        0x82 -> :sswitch_11c
+        0x84 -> :sswitch_16a
+        0xb5 -> :sswitch_11c
+        0xb6 -> :sswitch_d9
+        0xc9 -> :sswitch_cb
+        0xcb -> :sswitch_12a
+        0xcf -> :sswitch_b3
+        0xd0 -> :sswitch_83
+        0xde -> :sswitch_123
+        0xdf -> :sswitch_80
+        0xed -> :sswitch_7a
+        0xee -> :sswitch_74
+        0xf2 -> :sswitch_69
+        0xf3 -> :sswitch_58
+        0xf7 -> :sswitch_55
+        0xf8 -> :sswitch_4c
+        0x101 -> :sswitch_49
+        0x102 -> :sswitch_43
+        0x103 -> :sswitch_40
+        0x104 -> :sswitch_3a
+        0x114 -> :sswitch_11c
+        0x133 -> :sswitch_11c
+        0x14b -> :sswitch_49
+        0x14c -> :sswitch_37
+        0x155 -> :sswitch_31
         0x156 -> :sswitch_2b
         0x18e -> :sswitch_28
         0x18f -> :sswitch_22
@@ -1044,14 +1122,14 @@
 .method public onOrientationChanged(IZ)V
     .registers 3
 
-    .line 251
+    .line 263
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->onOrientationChanged(IZ)V
 
     const/4 p1, 0x1
 
     const/4 p2, 0x0
 
-    .line 252
+    .line 264
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateOrientation(ZZ)V
 
     return-void
@@ -1069,20 +1147,20 @@
         }
     .end annotation
 
-    .line 104
+    .line 112
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->setOptionSettingUIList(Ljava/util/List;)V
 
-    .line 105
+    .line 113
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mOptionSettingUIList:Ljava/util/List;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->loadOptionSettingUIs(Ljava/util/List;)V
 
     const/4 p1, 0x1
 
-    .line 106
+    .line 114
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateVisibility(Z)V
 
-    .line 107
+    .line 115
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mOptionSettingUIList:Ljava/util/List;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->updateOptionRootViewLayout(Ljava/util/List;)V
@@ -1093,20 +1171,20 @@
 .method public show()V
     .registers 3
 
-    .line 292
+    .line 304
     invoke-super {p0}, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->show()V
 
-    .line 293
+    .line 305
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     if-eqz v0, :cond_12
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 294
+    .line 306
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 295
+    .line 307
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     const/4 v0, 0x0
@@ -1120,15 +1198,15 @@
 .method public unInit()V
     .registers 1
 
-    .line 274
+    .line 286
     invoke-super {p0}, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->unInit()V
 
-    .line 275
+    .line 287
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     if-eqz p0, :cond_a
 
-    .line 276
+    .line 288
     invoke-virtual {p0}, Landroid/view/ViewGroup;->removeAllViews()V
 
     :cond_a
@@ -1146,17 +1224,17 @@
         }
     .end annotation
 
-    .line 111
+    .line 119
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
-    .line 112
+    .line 120
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 113
+    .line 121
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mIsItelSupportVss:Z
 
     if-eqz v1, :cond_23
@@ -1175,7 +1253,7 @@
 
     if-eqz v1, :cond_23
 
-    .line 114
+    .line 122
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mResources:Landroid/content/res/Resources;
 
     sget v2, Lcom/transsion/camera/R$dimen;->itel_interactive_option_margin_bottom:I
@@ -1186,7 +1264,7 @@
 
     goto :goto_2b
 
-    .line 115
+    .line 123
     :cond_23
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mResources:Landroid/content/res/Resources;
 
@@ -1196,7 +1274,7 @@
 
     move-result v1
 
-    .line 116
+    .line 124
     :goto_2b
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
@@ -1208,12 +1286,12 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 117
+    .line 125
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 118
+    .line 126
     iget v1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     iget v0, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
@@ -1226,14 +1304,14 @@
 .method protected updateOrientation(ZZ)V
     .registers 8
 
-    .line 256
+    .line 268
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     if-nez v0, :cond_5
 
     goto :goto_29
 
-    .line 260
+    .line 272
     :cond_5
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1246,28 +1324,28 @@
     :goto_b
     if-ge v2, v0, :cond_29
 
-    .line 262
+    .line 274
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 263
+    .line 275
     instance-of v4, v3, Lcom/transsion/camera/app/ui/widget/IRotatable;
 
     if-eqz v4, :cond_26
 
     if-eqz p2, :cond_1f
 
-    .line 265
+    .line 277
     check-cast v3, Lcom/transsion/camera/app/ui/widget/IRotatable;
 
     invoke-interface {v3, v1, v1}, Lcom/transsion/camera/app/ui/widget/IRotatable;->setOrientation(IZ)V
 
     goto :goto_26
 
-    .line 267
+    .line 279
     :cond_1f
     check-cast v3, Lcom/transsion/camera/app/ui/widget/IRotatable;
 
@@ -1289,10 +1367,10 @@
 .method public updateVisibility(Z)V
     .registers 11
 
-    .line 161
+    .line 173
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->updateVisibility(Z)V
 
-    .line 162
+    .line 174
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     if-eqz v0, :cond_137
@@ -1310,14 +1388,14 @@
     :cond_11
     if-eqz p1, :cond_18
 
-    .line 167
+    .line 179
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mCurrentIsZooming:Z
 
     if-eqz v0, :cond_18
 
     return-void
 
-    .line 171
+    .line 183
     :cond_18
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
@@ -1329,12 +1407,12 @@
 
     if-eqz v0, :cond_27
 
-    .line 172
+    .line 184
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 174
+    .line 186
     :cond_27
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
@@ -1358,7 +1436,7 @@
 
     return-void
 
-    .line 177
+    .line 189
     :cond_36
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -1372,7 +1450,7 @@
 
     if-eqz v0, :cond_82
 
-    .line 178
+    .line 190
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     if-nez v0, :cond_48
@@ -1386,7 +1464,7 @@
 
     move-result-object v0
 
-    .line 179
+    .line 191
     :goto_4c
     instance-of v4, v0, Landroid/animation/Animator;
 
@@ -1402,7 +1480,7 @@
 
     if-eqz p1, :cond_75
 
-    .line 180
+    .line 192
     iget-object v4, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getChildCount()I
@@ -1419,12 +1497,12 @@
 
     if-eqz v4, :cond_75
 
-    .line 181
+    .line 193
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 182
+    .line 194
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
@@ -1434,22 +1512,22 @@
     :cond_75
     if-nez p1, :cond_7f
 
-    .line 184
+    .line 196
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 185
+    .line 197
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 187
+    .line 199
     :cond_7f
     :goto_7f
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mNeedAnimation:Z
 
     return-void
 
-    .line 191
+    .line 203
     :cond_82
     sget-object v0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1477,7 +1555,7 @@
 
     invoke-static {v0, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 192
+    .line 204
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const/high16 v4, 0x3e800000    # 0.25f
@@ -1486,7 +1564,7 @@
 
     invoke-direct {v0, v4, v5, v5, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
-    .line 193
+    .line 205
     new-instance v4, Landroid/view/animation/PathInterpolator;
 
     const v6, 0x3ea8f5c3    # 0.33f
@@ -1499,7 +1577,7 @@
 
     const-wide/16 v6, 0x12c
 
-    .line 194
+    .line 206
     const-string v8, "alpha"
 
     if-eqz p1, :cond_106
@@ -1520,30 +1598,30 @@
 
     if-eqz p1, :cond_106
 
-    .line 195
+    .line 207
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mNeedAnimation:Z
 
     if-nez p1, :cond_dc
 
-    .line 196
+    .line 208
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 197
+    .line 209
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_134
 
-    .line 199
+    .line 211
     :cond_dc
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 200
+    .line 212
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     new-array v0, v5, [F
@@ -1556,15 +1634,15 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
-    .line 201
+    .line 213
     invoke-virtual {p1, v4}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 202
+    .line 214
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p1, v6, v7}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 203
+    .line 215
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
     new-instance v0, Lcom/transsion/camera/app/ui/manager/option/OptionUI$1;
@@ -1573,27 +1651,27 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 210
+    .line 222
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
 
     goto :goto_134
 
-    .line 213
+    .line 225
     :cond_106
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mNeedAnimation:Z
 
     if-nez p1, :cond_110
 
-    .line 214
+    .line 226
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_134
 
-    .line 216
+    .line 228
     :cond_110
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mOptionRootView:Landroid/widget/LinearLayout;
 
@@ -1607,15 +1685,15 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
-    .line 217
+    .line 229
     invoke-virtual {p1, v6, v7}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 218
+    .line 230
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 219
+    .line 231
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
     new-instance v0, Lcom/transsion/camera/app/ui/manager/option/OptionUI$2;
@@ -1624,18 +1702,18 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 237
+    .line 249
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->mAlphaAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 240
+    .line 252
     :goto_134
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/option/BaseOptionUI;->mNeedAnimation:Z
 
     return-void
 
-    .line 163
+    .line 175
     :cond_137
     :goto_137
     sget-object p1, Lcom/transsion/camera/app/ui/manager/option/OptionUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;

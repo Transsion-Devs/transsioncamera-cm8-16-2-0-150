@@ -758,6 +758,107 @@
     return-void
 .end method
 
+.method public disable2(I)V
+    .registers 5
+
+    .line 287
+    :try_start_0
+    iget-object v0, p0, Lcom/transsion/hubsdk/aosp/statusbar/TranAospStatusBarManager;->mInstanceObject:Ljava/lang/Object;
+
+    if-nez v0, :cond_1c
+
+    .line 288
+    sget-object v0, Lcom/transsion/hubsdk/aosp/statusbar/TranAospStatusBarManager;->sClassName:Ljava/lang/Class;
+
+    const-class v1, Landroid/content/Context;
+
+    filled-new-array {v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getConstructor(Ljava/lang/Class;[Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/transsion/hubsdk/aosp/statusbar/TranAospStatusBarManager;->mContext:Landroid/content/Context;
+
+    filled-new-array {v1}, [Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/transsion/hubsdk/aosp/statusbar/TranAospStatusBarManager;->mInstanceObject:Ljava/lang/Object;
+
+    .line 290
+    :cond_1c
+    iget-object v0, p0, Lcom/transsion/hubsdk/aosp/statusbar/TranAospStatusBarManager;->mInstanceObject:Ljava/lang/Object;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    const-string v1, "disable2"
+
+    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    filled-new-array {v2}, [Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-static {v0, v1, v2}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    .line 291
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+
+    .line 292
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/statusbar/TranAospStatusBarManager;->mInstanceObject:Ljava/lang/Object;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_3f
+    .catchall {:try_start_0 .. :try_end_3f} :catchall_40
+
+    return-void
+
+    :catchall_40
+    move-exception p0
+
+    .line 294
+    sget-object p1, Lcom/transsion/hubsdk/aosp/statusbar/TranAospStatusBarManager;->TAG:Ljava/lang/String;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "disable2 fail "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
 .method public enableAction(Ljava/lang/String;Ljava/lang/String;Z)V
     .registers 8
 
@@ -1259,7 +1360,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 288
+    .line 305
     iput-object p1, p0, Lcom/transsion/hubsdk/aosp/statusbar/TranAospStatusBarManager;->mInstanceObject:Ljava/lang/Object;
 
     return-void

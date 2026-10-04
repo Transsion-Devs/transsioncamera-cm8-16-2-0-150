@@ -3,6 +3,6 @@
 
 
 # static fields
-.field public static dialog_animation:I = 0x7f14051a
+.field public static dialog_animation:I = 0x7f140519
 
-.field public static setting_dialog_style:I = 0x7f140548
+.field public static setting_dialog_style:I = 0x7f140547

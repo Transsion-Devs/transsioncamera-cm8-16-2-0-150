@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)V
     .registers 2
 
-    .line 460
+    .line 486
     iput-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,63 +40,67 @@
 
     const/4 v1, 0x1
 
-    if-eq p1, v0, :cond_54
+    if-eq p1, v0, :cond_58
 
     const/16 v0, 0x4f
 
-    if-eq p1, v0, :cond_54
+    if-eq p1, v0, :cond_58
 
     const/16 v0, 0x55
 
-    if-eq p1, v0, :cond_54
+    if-eq p1, v0, :cond_58
 
     const/16 v0, 0x15e
 
-    if-eq p1, v0, :cond_54
+    if-eq p1, v0, :cond_58
 
     const/16 v0, 0x2d0
 
-    if-eq p1, v0, :cond_54
+    if-eq p1, v0, :cond_58
 
     const/16 v0, 0x2d2
 
-    if-eq p1, v0, :cond_54
+    if-eq p1, v0, :cond_58
 
     const/16 v0, 0x2d7
 
-    if-eq p1, v0, :cond_54
+    if-eq p1, v0, :cond_58
 
     const/16 v0, 0x2da
 
-    if-eq p1, v0, :cond_54
+    if-eq p1, v0, :cond_58
 
     const/16 v0, 0x2dc
 
-    if-eq p1, v0, :cond_54
+    if-eq p1, v0, :cond_58
 
     const/16 v0, 0x2e1
 
-    if-eq p1, v0, :cond_54
+    if-eq p1, v0, :cond_58
+
+    const/16 v0, 0x2e2
+
+    if-eq p1, v0, :cond_58
 
     const/4 v0, 0x0
 
-    packed-switch p1, :pswitch_data_56
+    packed-switch p1, :pswitch_data_5a
 
-    packed-switch p1, :pswitch_data_60
+    packed-switch p1, :pswitch_data_64
 
     return v0
 
-    .line 616
-    :pswitch_31
+    .line 674
+    :pswitch_35
     iget-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmSettingProvide(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
 
     move-result-object p1
 
-    if-eqz p1, :cond_54
+    if-eqz p1, :cond_58
 
-    .line 617
+    .line 675
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmSettingProvide(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
@@ -109,9 +113,9 @@
 
     move-result-object p0
 
-    if-eqz p0, :cond_54
+    if-eqz p0, :cond_58
 
-    .line 619
+    .line 677
     const-string p1, "Shutter"
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
@@ -122,33 +126,33 @@
 
     move-result p0
 
-    if-nez p0, :cond_54
+    if-nez p0, :cond_58
 
     return v0
 
-    :cond_54
-    :pswitch_54
+    :cond_58
+    :pswitch_58
     return v1
 
     nop
 
-    :pswitch_data_56
+    :pswitch_data_5a
     .packed-switch 0x17
-        :pswitch_54
-        :pswitch_31
-        :pswitch_31
+        :pswitch_58
+        :pswitch_35
+        :pswitch_35
     .end packed-switch
 
-    :pswitch_data_60
+    :pswitch_data_64
     .packed-switch 0x19b
-        :pswitch_54
-        :pswitch_54
-        :pswitch_54
+        :pswitch_58
+        :pswitch_58
+        :pswitch_58
     .end packed-switch
 .end method
 
 .method private isZoomEvent(I)Z
-    .registers 5
+    .registers 6
 
     const/16 v0, 0x18
 
@@ -175,7 +179,7 @@
     :cond_13
     move v2, v1
 
-    .line 655
+    .line 714
     :cond_14
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
@@ -185,60 +189,134 @@
 
     if-eqz v0, :cond_37
 
-    .line 656
-    iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+    .line 715
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
-    invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmSettingProvide(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
+    invoke-static {v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmSettingProvide(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
 
-    move-result-object p0
+    move-result-object v0
 
-    const-string v0, "key_volume_key"
+    const-string v3, "key_volume_key"
 
-    invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;->findISettingByKey(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/ISetting;
+    invoke-interface {v0, v3}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;->findISettingByKey(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/ISetting;
 
-    move-result-object p0
+    move-result-object v0
 
-    if-eqz p0, :cond_37
+    if-eqz v0, :cond_37
 
-    .line 658
-    const-string v0, "Zoom"
+    .line 717
+    const-string v3, "Zoom"
 
-    invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
+    invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v0
 
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result p0
+    move-result v0
 
-    if-eqz p0, :cond_37
+    if-eqz v0, :cond_37
 
     move v2, v1
 
-    .line 667
+    .line 726
     :cond_37
     :goto_37
-    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+    iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misFingerprintSlideKey(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;I)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_40
+
+    return v1
+
+    :cond_40
+    return v2
+.end method
+
+.method private setPhysicalKeyLongPressState(IZ)V
+    .registers 6
+
+    const/16 v0, 0x2e2
+
+    const/16 v1, 0x19c
+
+    const/16 v2, 0x19b
+
+    if-eqz p2, :cond_29
+
+    if-eq p1, v2, :cond_1e
+
+    if-eq p1, v1, :cond_1e
+
+    const/16 p2, 0x2d0
+
+    if-eq p1, p2, :cond_1e
+
+    const/16 p2, 0x2da
+
+    if-eq p1, p2, :cond_1e
+
+    const/16 p2, 0x2d2
+
+    if-eq p1, p2, :cond_1e
+
+    const/16 p2, 0x2dc
+
+    if-eq p1, p2, :cond_1e
+
+    if-ne p1, v0, :cond_38
+
+    .line 633
+    :cond_1e
+    iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+
+    invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
     move-result-object p0
 
-    iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mFingerprintSupportZoom:Z
+    const/4 p1, 0x1
 
-    if-eqz p0, :cond_48
+    invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->setShoulderKeyLongPressState(Z)V
 
-    const/16 p0, 0x166
+    return-void
 
-    if-eq p1, p0, :cond_47
+    :cond_29
+    if-eq p1, v2, :cond_39
 
-    const/16 p0, 0x167
+    if-eq p1, v1, :cond_39
 
-    if-ne p1, p0, :cond_48
+    const/16 p2, 0x2d7
 
-    :cond_47
-    return v1
+    if-eq p1, p2, :cond_39
 
-    :cond_48
-    return v2
+    const/16 p2, 0x2e1
+
+    if-eq p1, p2, :cond_39
+
+    if-ne p1, v0, :cond_38
+
+    goto :goto_39
+
+    :cond_38
+    return-void
+
+    .line 643
+    :cond_39
+    :goto_39
+    iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+
+    invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+
+    move-result-object p0
+
+    const/4 p1, 0x0
+
+    invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->setShoulderKeyLongPressState(Z)V
+
+    return-void
 .end method
 
 
@@ -246,12 +324,12 @@
 .method public onClick(I)V
     .registers 7
 
-    .line 463
+    .line 489
     invoke-static {}, Lcom/transsion/camera/utils/UnderwaterUtils;->isUnderwater()Z
 
     move-result v0
 
-    .line 464
+    .line 490
     iget-object v1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
@@ -262,7 +340,7 @@
 
     move-result v1
 
-    .line 465
+    .line 491
     invoke-static {}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v2
@@ -313,12 +391,12 @@
 
     if-eqz v1, :cond_b8
 
-    .line 471
+    .line 497
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 472
+    .line 498
     iget-object v2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {v2}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
@@ -333,7 +411,7 @@
 
     if-eqz v2, :cond_86
 
-    .line 473
+    .line 499
     invoke-static {}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -354,7 +432,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 474
+    .line 500
     iget-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
@@ -363,7 +441,7 @@
 
     invoke-virtual {p1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 475
+    .line 501
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
@@ -374,7 +452,7 @@
 
     return-void
 
-    .line 477
+    .line 503
     :cond_86
     iget-object v2, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
@@ -390,7 +468,7 @@
 
     move-result-object p1
 
-    .line 478
+    .line 504
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;
@@ -401,7 +479,7 @@
 
     invoke-virtual {p0, p1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 479
+    .line 505
     invoke-static {}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -424,7 +502,7 @@
 
     return-void
 
-    .line 482
+    .line 508
     :cond_b8
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->onClickImpl(I)V
 
@@ -434,7 +512,7 @@
 .method public onClickImpl(I)V
     .registers 10
 
-    .line 488
+    .line 514
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
@@ -449,7 +527,7 @@
 
     goto/16 :goto_c5
 
-    .line 491
+    .line 517
     :cond_e
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->isZoomEvent(I)Z
 
@@ -471,7 +549,7 @@
 
     if-ne p1, v2, :cond_2a
 
-    .line 493
+    .line 519
     :cond_20
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -481,7 +559,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(ILjava/lang/String;)V
 
-    .line 495
+    .line 521
     :cond_2a
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -491,14 +569,14 @@
 
     if-eqz v0, :cond_41
 
-    .line 496
+    .line 522
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
     move-result-object p0
 
-    const/16 v0, 0x166
+    const/16 v0, 0x167
 
     if-ne p1, v0, :cond_3d
 
@@ -509,7 +587,7 @@
 
     return-void
 
-    .line 498
+    .line 524
     :cond_41
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
@@ -531,7 +609,7 @@
 
     return-void
 
-    .line 500
+    .line 526
     :cond_52
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->isShutterEvent(I)Z
 
@@ -559,7 +637,7 @@
 
     if-ne p1, v0, :cond_86
 
-    .line 501
+    .line 527
     :cond_6c
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
@@ -569,7 +647,7 @@
 
     if-nez v0, :cond_86
 
-    .line 502
+    .line 528
     iget-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misShoulderButtonLongPressSwitchOn(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
@@ -578,7 +656,7 @@
 
     if-nez p1, :cond_c5
 
-    .line 503
+    .line 529
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
@@ -598,7 +676,7 @@
 
     if-ne p1, v0, :cond_a0
 
-    .line 508
+    .line 534
     :cond_8e
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
@@ -608,7 +686,7 @@
 
     if-nez v0, :cond_a0
 
-    .line 509
+    .line 535
     invoke-static {}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -624,7 +702,7 @@
 
     if-ne p1, v2, :cond_ad
 
-    .line 514
+    .line 540
     :cond_a4
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -634,16 +712,16 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(ILjava/lang/String;)V
 
-    .line 516
+    .line 542
     :cond_ad
     invoke-static {}, Lcom/transsion/camera/utils/MultiTouchManager;->resetState()V
 
-    .line 517
+    .line 543
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$mreportPhysicalKeyShutterEvent(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;I)V
 
-    .line 518
+    .line 544
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
@@ -652,7 +730,7 @@
 
     invoke-interface {p0, v3, p1}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterKeyEventCallback;->onShutterClick(II)V
 
-    .line 519
+    .line 545
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -667,7 +745,7 @@
 .method public onLongPress(I)V
     .registers 5
 
-    .line 564
+    .line 587
     invoke-static {}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -698,14 +776,26 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 566
+    .line 589
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->isZoomEvent(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_48
 
-    .line 567
+    .line 590
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+
+    invoke-static {v0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misFingerprintSlideKey(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_33
+
+    goto :goto_48
+
+    .line 593
+    :cond_33
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
@@ -714,34 +804,35 @@
 
     const/16 v0, 0x18
 
-    if-eq p1, v0, :cond_3b
+    if-eq p1, v0, :cond_44
 
     const/16 v0, 0xa8
 
-    if-ne p1, v0, :cond_39
+    if-ne p1, v0, :cond_42
 
-    goto :goto_3b
+    goto :goto_44
 
-    :cond_39
+    :cond_42
     const/4 p1, 0x0
 
-    goto :goto_3c
+    goto :goto_45
 
-    :cond_3b
-    :goto_3b
+    :cond_44
+    :goto_44
     const/4 p1, 0x1
 
-    :goto_3c
+    :goto_45
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;->onZoomScaling(Z)V
 
-    :cond_3f
+    :cond_48
+    :goto_48
     return-void
 .end method
 
 .method public onLongPressCancel(I)V
-    .registers 8
+    .registers 5
 
-    .line 573
+    .line 599
     invoke-static {}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -762,16 +853,28 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 575
+    .line 601
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->isZoomEvent(I)Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_3b
 
-    .line 576
+    .line 602
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+
+    invoke-static {v0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misFingerprintSlideKey(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_28
+
+    goto :goto_85
+
+    .line 605
+    :cond_28
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
@@ -780,85 +883,85 @@
 
     const/16 v0, 0x18
 
-    if-eq p1, v0, :cond_2d
+    if-eq p1, v0, :cond_36
 
     const/16 v0, 0xa8
 
-    if-ne p1, v0, :cond_2e
+    if-ne p1, v0, :cond_37
 
-    :cond_2d
+    :cond_36
     const/4 v1, 0x1
 
-    :cond_2e
+    :cond_37
     invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;->onZoomScaleEnd(Z)V
 
     return-void
 
-    .line 577
-    :cond_32
+    .line 606
+    :cond_3b
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->isShutterEvent(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_8a
+    if-eqz v0, :cond_85
 
     const/16 v0, 0x19d
 
-    if-ne p1, v0, :cond_45
+    if-ne p1, v0, :cond_4e
 
-    .line 578
+    .line 607
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misNeedAiKeyLongPress(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_4e
 
-    goto :goto_8a
+    goto :goto_85
 
-    :cond_45
+    :cond_4e
+    const/16 v0, 0x19b
+
+    if-eq p1, v0, :cond_56
+
     const/16 v0, 0x19c
 
-    const/16 v2, 0x19b
+    if-ne p1, v0, :cond_5f
 
-    if-eq p1, v2, :cond_4d
-
-    if-ne p1, v0, :cond_56
-
-    .line 581
-    :cond_4d
-    iget-object v3, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
-
-    invoke-static {v3}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misShoulderButtonLongPressSwitchOn(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_56
-
-    goto :goto_8a
-
+    .line 610
     :cond_56
-    const/16 v3, 0x2e1
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
-    const/16 v4, 0x2d7
+    invoke-static {v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misShoulderButtonLongPressSwitchOn(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
 
-    if-eq p1, v4, :cond_5e
+    move-result v0
 
-    if-ne p1, v3, :cond_70
+    if-nez v0, :cond_5f
 
-    .line 584
-    :cond_5e
-    iget-object v5, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+    goto :goto_85
 
-    .line 586
-    invoke-static {v5}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misShoulderButtonLongPressSwitchOn(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
+    :cond_5f
+    const/16 v0, 0x2d7
 
-    move-result v5
+    if-eq p1, v0, :cond_67
 
-    if-nez v5, :cond_70
+    const/16 v0, 0x2e1
 
-    .line 587
+    if-ne p1, v0, :cond_79
+
+    .line 613
+    :cond_67
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+
+    .line 615
+    invoke-static {v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misShoulderButtonLongPressSwitchOn(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_79
+
+    .line 616
     invoke-static {}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -869,27 +972,11 @@
 
     return-void
 
-    :cond_70
-    if-eq p1, v2, :cond_78
+    .line 619
+    :cond_79
+    invoke-direct {p0, p1, v1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->setPhysicalKeyLongPressState(IZ)V
 
-    if-eq p1, v0, :cond_78
-
-    if-eq p1, v4, :cond_78
-
-    if-ne p1, v3, :cond_81
-
-    .line 594
-    :cond_78
-    iget-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
-
-    invoke-static {p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
-
-    move-result-object p1
-
-    invoke-interface {p1, v1}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->setShoulderKeyLongPressState(Z)V
-
-    .line 596
-    :cond_81
+    .line 620
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
@@ -898,15 +985,15 @@
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterKeyEventCallback;->onShutterLongClickEnd()V
 
-    :cond_8a
-    :goto_8a
+    :cond_85
+    :goto_85
     return-void
 .end method
 
 .method public onLongPressStart(I)V
-    .registers 11
+    .registers 5
 
-    .line 525
+    .line 551
     invoke-static {}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -927,7 +1014,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 527
+    .line 553
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->isZoomEvent(I)Z
 
     move-result v0
@@ -936,9 +1023,37 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_4a
 
-    .line 528
+    .line 554
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+
+    invoke-static {v0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misFingerprintSlideKey(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_37
+
+    .line 555
+    iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+
+    invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+
+    move-result-object p0
+
+    const/16 v0, 0x167
+
+    if-ne p1, v0, :cond_33
+
+    move v1, v2
+
+    :cond_33
+    invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;->onZoomClick(Z)V
+
+    return-void
+
+    .line 558
+    :cond_37
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
@@ -947,72 +1062,72 @@
 
     const/16 v0, 0x18
 
-    if-eq p1, v0, :cond_2e
+    if-eq p1, v0, :cond_45
 
     const/16 v0, 0xa8
 
-    if-ne p1, v0, :cond_2f
+    if-ne p1, v0, :cond_46
 
-    :cond_2e
+    :cond_45
     move v1, v2
 
-    :cond_2f
+    :cond_46
     invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;->onZoomScaleStart(Z)V
 
     return-void
 
-    .line 529
-    :cond_33
+    .line 559
+    :cond_4a
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->isShutterEvent(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b5
+    if-eqz v0, :cond_b9
 
     const/16 v0, 0x19d
 
-    if-ne p1, v0, :cond_47
+    if-ne p1, v0, :cond_5d
 
-    .line 530
+    .line 560
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misNeedAiKeyLongPress(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
 
     move-result v0
 
-    if-nez v0, :cond_47
+    if-nez v0, :cond_5d
 
-    goto/16 :goto_b5
+    goto :goto_b9
 
-    :cond_47
+    :cond_5d
+    const/16 v0, 0x19b
+
+    if-eq p1, v0, :cond_65
+
     const/16 v0, 0x19c
 
-    const/16 v3, 0x19b
+    if-ne p1, v0, :cond_7f
 
-    if-eq p1, v3, :cond_4f
+    .line 563
+    :cond_65
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
-    if-ne p1, v0, :cond_69
+    invoke-static {v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misShoulderButtonLongPressSwitchOn(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
 
-    .line 533
-    :cond_4f
-    iget-object v4, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+    move-result v0
 
-    invoke-static {v4}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misShoulderButtonLongPressSwitchOn(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
+    if-nez v0, :cond_7f
 
-    move-result v4
-
-    if-nez v4, :cond_69
-
-    .line 534
+    .line 564
     iget-object p1, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misShoulderButtonClickSwitchOn(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
 
     move-result p1
 
-    if-nez p1, :cond_b5
+    if-nez p1, :cond_b9
 
-    .line 535
+    .line 565
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
@@ -1023,34 +1138,34 @@
 
     return-void
 
-    :cond_69
-    const/16 v4, 0x2dc
+    :cond_7f
+    const/16 v0, 0x2d0
 
-    const/16 v5, 0x2d2
+    if-eq p1, v0, :cond_8f
 
-    const/16 v6, 0x2da
+    const/16 v0, 0x2da
 
-    const/16 v7, 0x2d0
+    if-eq p1, v0, :cond_8f
 
-    if-eq p1, v7, :cond_79
+    const/16 v0, 0x2d2
 
-    if-eq p1, v6, :cond_79
+    if-eq p1, v0, :cond_8f
 
-    if-eq p1, v5, :cond_79
+    const/16 v0, 0x2dc
 
-    if-ne p1, v4, :cond_8b
+    if-ne p1, v0, :cond_a1
 
-    .line 543
-    :cond_79
-    iget-object v8, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+    .line 573
+    :cond_8f
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
-    invoke-static {v8}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misShoulderButtonLongPressSwitchOn(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
+    invoke-static {v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$misShoulderButtonLongPressSwitchOn(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Z
 
-    move-result v8
+    move-result v0
 
-    if-nez v8, :cond_8b
+    if-nez v0, :cond_a1
 
-    .line 544
+    .line 574
     invoke-static {}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -1061,36 +1176,16 @@
 
     return-void
 
-    :cond_8b
-    if-eq p1, v3, :cond_97
+    .line 578
+    :cond_a1
+    invoke-direct {p0, p1, v2}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->setPhysicalKeyLongPressState(IZ)V
 
-    if-eq p1, v0, :cond_97
-
-    if-eq p1, v7, :cond_97
-
-    if-eq p1, v6, :cond_97
-
-    if-eq p1, v5, :cond_97
-
-    if-ne p1, v4, :cond_a0
-
-    .line 554
-    :cond_97
-    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
-
-    invoke-static {v0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
-
-    move-result-object v0
-
-    invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;->setShoulderKeyLongPressState(Z)V
-
-    .line 556
-    :cond_a0
+    .line 579
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$mreportPhysicalKeyShutterEvent(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;I)V
 
-    .line 557
+    .line 580
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
@@ -1099,44 +1194,89 @@
 
     invoke-interface {p0, v1, p1}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterKeyEventCallback;->onShutterLongClickStart(II)V
 
-    .line 558
+    .line 581
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
 
     invoke-virtual {p0, v2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setVolumeShutter(I)V
 
-    :cond_b5
-    :goto_b5
+    :cond_b9
+    :goto_b9
     return-void
 .end method
 
-.method public onShoulderButtonSwipeEnd()V
+.method public onSwipeEnd()V
     .registers 1
 
-    .line 607
+    .line 665
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
     move-result-object p0
 
-    invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;->onShoulderButtonZoomSwipeEnd()V
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;->onZoomSwipeEnd()V
 
     return-void
 .end method
 
-.method public onShoulderButtonSwiping(ZI)V
-    .registers 3
+.method public onSwiping(II)V
+    .registers 7
 
-    .line 602
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    const/16 v2, 0x2df
+
+    if-eq p1, v2, :cond_20
+
+    const/16 v3, 0x2e0
+
+    if-eq p1, v3, :cond_20
+
+    const/16 p2, 0x2e3
+
+    const/16 v2, 0x2e4
+
+    if-eq p1, p2, :cond_13
+
+    if-eq p1, v2, :cond_13
+
+    return-void
+
+    .line 656
+    :cond_13
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 
     move-result-object p0
 
-    invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;->onShoulderButtonZoomSwiping(ZI)V
+    if-ne p1, v2, :cond_1c
+
+    move v0, v1
+
+    :cond_1c
+    invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;->onCriticalZoomSwitchSwiping(Z)V
+
+    return-void
+
+    .line 652
+    :cond_20
+    iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$1;->this$0:Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
+
+    invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
+
+    move-result-object p0
+
+    if-ne p1, v2, :cond_29
+
+    move v0, v1
+
+    :cond_29
+    invoke-interface {p0, v0, p2}, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;->onContinuousZoomSwiping(ZI)V
 
     return-void
 .end method

@@ -31,18 +31,18 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;Landroid/app/FragmentManager;ILjava/util/List;)V
     .registers 5
 
-    .line 359
+    .line 367
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 360
+    .line 368
     iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->fm:Landroid/app/FragmentManager;
 
-    .line 361
+    .line 369
     iput p3, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->layoutId:I
 
-    .line 362
+    .line 370
     iput-object p4, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->pagerIds:Ljava/util/List;
 
     return-void
@@ -53,7 +53,7 @@
 .method public onClick(Landroid/view/View;)V
     .registers 6
 
-    .line 367
+    .line 375
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -74,43 +74,67 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
+    const-string v2, ",mIsDialogShow:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
+
+    invoke-static {v2}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->-$$Nest$fgetmIsDialogShow(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;)Z
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 368
+    .line 376
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p1
 
-    if-nez p1, :cond_25
+    if-nez p1, :cond_33
 
-    goto :goto_2d
+    goto :goto_44
 
-    .line 371
-    :cond_25
+    .line 379
+    :cond_33
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->isEnable()Z
 
     move-result p1
 
-    if-nez p1, :cond_2e
+    if-nez p1, :cond_3c
 
-    :goto_2d
+    goto :goto_44
+
+    .line 382
+    :cond_3c
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
+
+    invoke-static {p1}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->-$$Nest$fgetmIsDialogShow(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_45
+
+    :goto_44
     return-void
 
-    .line 374
-    :cond_2e
+    .line 385
+    :cond_45
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->fm:Landroid/app/FragmentManager;
 
     invoke-virtual {p1}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
 
     move-result-object p1
 
-    .line 375
+    .line 386
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->pagerIds:Ljava/util/List;
@@ -121,7 +145,7 @@
 
     iput-object v1, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mGuideFragment:Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
 
-    .line 376
+    .line 387
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     iget-object v1, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mGuideFragment:Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
@@ -147,7 +171,7 @@
 
     invoke-virtual {v1, v0, v2, v3}, Lcom/transsion/camera/app/ui/GuidePagerRootFragment;->setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;II)V
 
-    .line 377
+    .line 388
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     iget-object v1, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mGuideFragment:Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
@@ -158,7 +182,7 @@
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/ui/GuidePagerRootFragment;->setStateListener(Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;)V
 
-    .line 378
+    .line 389
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     iget-object v1, v0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mGuideFragment:Lcom/transsion/camera/app/ui/GuidePagerRootFragment;
@@ -169,7 +193,7 @@
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/ui/GuidePagerRootFragment;->updateIndex(I)V
 
-    .line 379
+    .line 390
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->layoutId:I
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
@@ -178,15 +202,15 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/app/FragmentTransaction;->add(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
-    .line 380
+    .line 391
     const-string v0, "guide_pager_root"
 
     invoke-virtual {p1, v0}, Landroid/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
-    .line 381
+    .line 392
     invoke-virtual {p1}, Landroid/app/FragmentTransaction;->commit()I
 
-    .line 382
+    .line 393
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$GuideIconClickListener;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     # getter for: Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
@@ -198,7 +222,7 @@
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 383
+    .line 394
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0

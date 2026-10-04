@@ -76,7 +76,7 @@
 .method private getInitializeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .registers 6
 
-    .line 145
+    .line 153
     const-string v0, "on"
 
     invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -87,7 +87,7 @@
 
     const-string v0, "off"
 
-    .line 146
+    .line 154
     invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -99,7 +99,7 @@
     :cond_11
     move-object p1, p2
 
-    .line 150
+    .line 158
     :cond_12
     :goto_12
     const-string p2, "0"
@@ -112,7 +112,7 @@
 
     if-eqz p2, :cond_33
 
-    .line 151
+    .line 159
     sget-object p2, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -133,7 +133,7 @@
 
     move-object p1, v0
 
-    .line 155
+    .line 163
     :cond_33
     const-string p2, "com.transsion.camera.feature.mode.aigc.AIGCModeEntry"
 
@@ -150,25 +150,25 @@
     :cond_3e
     move-object v0, p1
 
-    .line 160
+    .line 168
     :goto_3f
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const/4 p1, 0x0
 
-    .line 161
+    .line 169
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 160
+    .line 168
     const-string v2, "key_pro_watermark_select_type"
 
     invoke-virtual {p0, v2, p1, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 162
+    .line 170
     sget-object p1, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -193,7 +193,7 @@
 
     if-nez p2, :cond_72
 
-    .line 163
+    .line 171
     const-string p1, "1"
 
     invoke-static {p0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -293,7 +293,7 @@
 .method public configParameters(Lcom/transsion/camera/adapter/CameraParameters;)I
     .registers 9
 
-    .line 272
+    .line 280
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mProWatermarkSupport:Z
 
     if-nez v0, :cond_6
@@ -302,7 +302,7 @@
 
     return p0
 
-    .line 276
+    .line 284
     :cond_6
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mAIArtMuseumMode:Z
 
@@ -312,7 +312,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 277
+    .line 285
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->isModeSupport()Z
 
     move-result v0
@@ -335,25 +335,25 @@
 
     return v2
 
-    .line 281
+    .line 289
     :cond_1e
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->getSettingValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 282
+    .line 290
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->getSelectWatermark()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 283
+    .line 291
     iget-boolean v4, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mTreasureBoxSupport:Z
 
     if-eqz v4, :cond_3b
 
     const-string v4, "off"
 
-    .line 284
+    .line 292
     invoke-static {v4, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v4
@@ -371,7 +371,7 @@
     :cond_3a
     move-object v0, v3
 
-    .line 287
+    .line 295
     :cond_3b
     sget-object v4, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -397,7 +397,7 @@
 
     invoke-static {v4, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 288
+    .line 296
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->isModeSupport()Z
 
     move-result v3
@@ -440,7 +440,7 @@
 .method public getDefaultWatermark()Ljava/lang/String;
     .registers 2
 
-    .line 214
+    .line 222
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mProWatermarkConfigItems:[Ljava/lang/String;
 
     if-eqz p0, :cond_b
@@ -451,12 +451,12 @@
 
     const/4 v0, 0x0
 
-    .line 215
+    .line 223
     aget-object p0, p0, v0
 
     return-object p0
 
-    .line 217
+    .line 225
     :cond_b
     sget-object p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -464,7 +464,7 @@
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 218
+    .line 226
     const-string p0, ""
 
     return-object p0
@@ -499,17 +499,17 @@
 .method public getSelectWatermark()Ljava/lang/String;
     .registers 5
 
-    .line 297
+    .line 305
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v1, "2"
 
-    .line 298
+    .line 306
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 297
+    .line 305
     const-string v3, "key_pro_watermark"
 
     invoke-virtual {v0, v3, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -535,28 +535,28 @@
 
     monitor-enter p0
 
-    .line 177
+    .line 185
     :try_start_1
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mTreasureBoxSupport:Z
 
     if-eqz v0, :cond_26
 
-    .line 178
+    .line 186
     const-string v0, "on"
 
-    .line 179
+    .line 187
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mWatermarkDefaultValueOn:Z
 
     if-nez v1, :cond_18
 
-    .line 180
+    .line 188
     sget-object v0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "updateGoldWaterMarkType: config gold watermark default value set OFF"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 181
+    .line 189
     const-string v0, "off"
 
     goto :goto_18
@@ -566,7 +566,7 @@
 
     goto :goto_2c
 
-    .line 183
+    .line 191
     :cond_18
     :goto_18
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -587,7 +587,7 @@
 
     return-object v0
 
-    .line 185
+    .line 193
     :cond_26
     :try_start_26
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingValue()Ljava/lang/String;
@@ -817,26 +817,82 @@
     invoke-static {v1, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     .line 139
-    invoke-direct {p0, p2, v0}, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->getInitializeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object p1
 
     .line 140
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->setValue(Ljava/lang/String;)V
+    invoke-direct {p0, p2, v0}, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->getInitializeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
 
     .line 141
-    iget-object p2, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "[initializeValue] mValue in Setting: "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, ", value after adjust: "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 142
+    invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->setValue(Ljava/lang/String;)V
+
+    .line 143
+    iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
 
+    move-result-object v1
+
+    const-string v2, "key_pro_watermark"
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v2, p2, v1, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    if-eqz p1, :cond_7c
+
+    .line 145
+    invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_7c
+
+    const/4 v3, 0x1
+
+    .line 146
+    :cond_7c
+    iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
+
+    if-eqz p0, :cond_89
+
+    if-nez v3, :cond_89
+
+    .line 147
+    invoke-virtual {p0, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
+
     move-result-object p0
 
-    const/4 v0, 0x0
+    .line 148
+    invoke-virtual {p0, v2, p2}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    const-string v1, "key_pro_watermark"
-
-    invoke-virtual {p2, v1, p1, p0, v0}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-
+    :cond_89
     return-void
 .end method
 
@@ -990,7 +1046,7 @@
 .method public postRestrictionAfterInitialized()V
     .registers 1
 
-    .line 210
+    .line 218
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->postRestrictionAfterInitialized()V
 
     return-void
@@ -999,10 +1055,10 @@
 .method public restoreToSupportedPlatformValue()V
     .registers 6
 
-    .line 190
+    .line 198
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->restoreToSupportedPlatformValue()V
 
-    .line 191
+    .line 199
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mTreasureBoxSupport:Z
 
     if-eqz v0, :cond_31
@@ -1011,28 +1067,28 @@
 
     if-eqz v0, :cond_31
 
-    .line 194
+    .line 202
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mWatermarkDefaultValueOn:Z
 
     if-nez v0, :cond_1a
 
-    .line 195
+    .line 203
     sget-object v0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "updateGoldWaterMarkType: config gold watermark default value set OFF"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 196
+    .line 204
     const-string v0, "off"
 
     goto :goto_1c
 
-    .line 194
+    .line 202
     :cond_1a
     const-string v0, "on"
 
-    .line 198
+    .line 206
     :goto_1c
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -1046,7 +1102,7 @@
 
     invoke-virtual {v1, v4, v0, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 199
+    .line 207
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->getKey()Ljava/lang/String;
@@ -1068,14 +1124,14 @@
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
     .registers 7
 
-    .line 228
+    .line 236
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mProWatermarkSupport:Z
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 232
+    .line 240
     :cond_5
     invoke-interface {p1}, Lcom/transsion/camera/adapter/ICameraCapabilities;->isGoldWaterMarkSupport()Z
 
@@ -1083,24 +1139,24 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mGoldWaterMarkSupport:Z
 
-    .line 233
+    .line 241
     invoke-interface {p1}, Lcom/transsion/camera/adapter/ICameraCapabilities;->isEditWaterMarkSupport()Z
 
     move-result p1
 
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mEditWaterMarkSupport:Z
 
-    .line 236
+    .line 244
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 237
+    .line 245
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->getDefaultWatermark()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 238
+    .line 246
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mGoldWaterMarkSupport:Z
 
     const-string v2, "0"
@@ -1124,7 +1180,7 @@
 
     goto :goto_47
 
-    .line 240
+    .line 248
     :cond_2e
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mEditWaterMarkSupport:Z
 
@@ -1143,7 +1199,7 @@
 
     goto :goto_47
 
-    .line 242
+    .line 250
     :cond_3c
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mGoldWaterMarkSupport:Z
 
@@ -1151,7 +1207,7 @@
 
     goto :goto_2c
 
-    .line 244
+    .line 252
     :cond_41
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mEditWaterMarkSupport:Z
 
@@ -1162,49 +1218,49 @@
     :cond_46
     move-object v0, v2
 
-    .line 250
+    .line 258
     :goto_47
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mGoldWaterMarkSupport:Z
 
     if-eqz v1, :cond_4e
 
-    .line 251
+    .line 259
     invoke-interface {p1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 254
+    .line 262
     :cond_4e
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mEditWaterMarkSupport:Z
 
     if-eqz v1, :cond_55
 
-    .line 255
+    .line 263
     invoke-interface {p1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 258
+    .line 266
     :cond_55
     invoke-interface {p1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 261
+    .line 269
     const-string v1, "off"
 
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 262
+    .line 270
     const-string v1, "on"
 
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 263
+    .line 271
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->mTreasureBoxSupport:Z
 
     if-eqz v1, :cond_6b
 
-    .line 264
+    .line 272
     const-string v1, "settings"
 
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 267
+    .line 275
     :cond_6b
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/prowatermark/ProWatermark;->initValueAndSupport(Ljava/util/List;Ljava/lang/String;)V
 
@@ -1232,7 +1288,7 @@
 .method public setValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 172
+    .line 180
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
     return-void

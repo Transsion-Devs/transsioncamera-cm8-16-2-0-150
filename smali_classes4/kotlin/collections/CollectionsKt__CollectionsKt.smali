@@ -5,13 +5,13 @@
 
 # direct methods
 .method public static varargs arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
-    .registers 4
+    .registers 3
 
     const-string v0, "elements"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 114
+    .line 128
     array-length v0, p0
 
     if-nez v0, :cond_e
@@ -25,32 +25,48 @@
     :cond_e
     new-instance v0, Ljava/util/ArrayList;
 
-    new-instance v1, Lkotlin/collections/ArrayAsCollection;
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    invoke-static {p0, v1}, Lkotlin/collections/CollectionsKt__CollectionsKt;->asCollection([Ljava/lang/Object;Z)Ljava/util/Collection;
 
-    invoke-direct {v1, p0, v2}, Lkotlin/collections/ArrayAsCollection;-><init>([Ljava/lang/Object;Z)V
+    move-result-object p0
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     return-object v0
 .end method
 
-.method public static final asCollection([Ljava/lang/Object;)Ljava/util/Collection;
+.method public static final asCollection([Ljava/lang/Object;Z)Ljava/util/Collection;
     .registers 3
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 55
+    .line 59
     new-instance v0, Lkotlin/collections/ArrayAsCollection;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lkotlin/collections/ArrayAsCollection;-><init>([Ljava/lang/Object;Z)V
+    invoke-direct {v0, p0, p1}, Lkotlin/collections/ArrayAsCollection;-><init>([Ljava/lang/Object;Z)V
 
     return-object v0
+.end method
+
+.method public static synthetic asCollection$default([Ljava/lang/Object;ZILjava/lang/Object;)Ljava/util/Collection;
+    .registers 4
+
+    and-int/lit8 p2, p2, 0x1
+
+    if-eqz p2, :cond_5
+
+    const/4 p1, 0x0
+
+    .line 59
+    :cond_5
+    invoke-static {p0, p1}, Lkotlin/collections/CollectionsKt__CollectionsKt;->asCollection([Ljava/lang/Object;Z)Ljava/util/Collection;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public static final binarySearch(Ljava/util/List;Ljava/lang/Comparable;II)I
@@ -60,7 +76,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 316
+    .line 332
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -76,14 +92,14 @@
 
     ushr-int/lit8 v0, v0, 0x1
 
-    .line 323
+    .line 339
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/Comparable;
 
-    .line 324
+    .line 340
     invoke-static {v1, p1}, Lkotlin/comparisons/ComparisonsKt;->compareValues(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 
     move-result v1
@@ -126,7 +142,7 @@
 
     if-eqz p4, :cond_d
 
-    .line 315
+    .line 331
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p3
@@ -142,7 +158,7 @@
 .method public static emptyList()Ljava/util/List;
     .registers 1
 
-    .line 71
+    .line 75
     sget-object v0, Lkotlin/collections/EmptyList;->INSTANCE:Lkotlin/collections/EmptyList;
 
     return-object v0
@@ -155,7 +171,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 217
+    .line 229
     new-instance v0, Lkotlin/ranges/IntRange;
 
     invoke-interface {p0}, Ljava/util/Collection;->size()I
@@ -178,7 +194,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 225
+    .line 237
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p0
@@ -195,7 +211,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 77
+    .line 81
     array-length v0, p0
 
     if-lez v0, :cond_d
@@ -221,7 +237,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 126
+    .line 140
     invoke-static {p0}, Lkotlin/collections/ArraysKt___ArraysKt;->filterNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
@@ -230,13 +246,13 @@
 .end method
 
 .method public static varargs mutableListOf([Ljava/lang/Object;)Ljava/util/List;
-    .registers 4
+    .registers 3
 
     const-string v0, "elements"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 107
+    .line 121
     array-length v0, p0
 
     if-nez v0, :cond_e
@@ -250,25 +266,25 @@
     :cond_e
     new-instance v0, Ljava/util/ArrayList;
 
-    new-instance v1, Lkotlin/collections/ArrayAsCollection;
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    invoke-static {p0, v1}, Lkotlin/collections/CollectionsKt__CollectionsKt;->asCollection([Ljava/lang/Object;Z)Ljava/util/Collection;
 
-    invoke-direct {v1, p0, v2}, Lkotlin/collections/ArrayAsCollection;-><init>([Ljava/lang/Object;Z)V
+    move-result-object p0
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     return-object v0
 .end method
 
-.method public static optimizeReadOnlyList(Ljava/util/List;)Ljava/util/List;
+.method public static final optimizeReadOnlyList(Ljava/util/List;)Ljava/util/List;
     .registers 3
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 293
+    .line 309
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -284,7 +300,7 @@
     :cond_f
     const/4 v0, 0x0
 
-    .line 295
+    .line 311
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -295,7 +311,7 @@
 
     return-object p0
 
-    .line 294
+    .line 310
     :cond_19
     invoke-static {}, Lkotlin/collections/CollectionsKt__CollectionsKt;->emptyList()Ljava/util/List;
 
@@ -307,7 +323,7 @@
 .method private static final rangeCheck$CollectionsKt__CollectionsKt(III)V
     .registers 6
 
-    .line 447
+    .line 463
     const-string v0, ")."
 
     const-string v1, "fromIndex ("
@@ -320,7 +336,7 @@
 
     return-void
 
-    .line 449
+    .line 465
     :cond_b
     new-instance p1, Ljava/lang/IndexOutOfBoundsException;
 
@@ -350,7 +366,7 @@
 
     throw p1
 
-    .line 448
+    .line 464
     :cond_2d
     new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -374,7 +390,7 @@
 
     throw p0
 
-    .line 447
+    .line 463
     :cond_47
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -406,7 +422,7 @@
 .method public static throwCountOverflow()V
     .registers 2
 
-    .line 469
+    .line 485
     new-instance v0, Ljava/lang/ArithmeticException;
 
     const-string v1, "Count overflow has happened."
@@ -419,7 +435,7 @@
 .method public static throwIndexOverflow()V
     .registers 2
 
-    .line 465
+    .line 481
     new-instance v0, Ljava/lang/ArithmeticException;
 
     const-string v1, "Index overflow has happened."

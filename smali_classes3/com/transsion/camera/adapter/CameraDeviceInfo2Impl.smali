@@ -1277,6 +1277,36 @@
     return-object p0
 .end method
 
+.method public getSupportedPreviewSizes(Ljava/lang/String;)Ljava/util/List;
+    .registers 3
+
+    .line 471
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/adapter/CameraDeviceInfo2Impl;->getCameraCapabilities(Ljava/lang/String;)Lcom/transsion/camera/adapter/CameraCapabilities2Impl;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_f
+
+    .line 472
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/adapter/CameraDeviceInfo2Impl;->getCameraCapabilities(Ljava/lang/String;)Lcom/transsion/camera/adapter/CameraCapabilities2Impl;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraCapabilities;->getSupportedPreviewSizes()Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 474
+    :cond_f
+    new-instance p0, Ljava/util/ArrayList;
+
+    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
+
+    return-object p0
+.end method
+
 .method public getSupportedRawPictureSizes(Ljava/lang/String;)Ljava/util/List;
     .registers 3
 

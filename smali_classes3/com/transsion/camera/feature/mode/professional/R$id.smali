@@ -14,53 +14,53 @@
 
 
 # static fields
-.field public static pro_auto_switch:I = 0x7f0b050f
+.field public static pro_auto_switch:I = 0x7f0b050b
 
-.field public static pro_capture_button:I = 0x7f0b0510
+.field public static pro_capture_button:I = 0x7f0b050c
 
-.field public static pro_capture_root:I = 0x7f0b0511
+.field public static pro_capture_root:I = 0x7f0b050d
 
-.field public static pro_capturing_progress:I = 0x7f0b0512
+.field public static pro_capturing_progress:I = 0x7f0b050e
 
-.field public static pro_capturing_rotate_framelayout:I = 0x7f0b0513
+.field public static pro_capturing_rotate_framelayout:I = 0x7f0b050f
 
-.field public static pro_graduation_ui_root:I = 0x7f0b0519
+.field public static pro_graduation_ui_root:I = 0x7f0b0515
 
-.field public static pro_graduation_view_container:I = 0x7f0b051a
+.field public static pro_graduation_view_container:I = 0x7f0b0516
 
-.field public static pro_graduation_view_ui:I = 0x7f0b051b
+.field public static pro_graduation_view_ui:I = 0x7f0b0517
 
-.field public static pro_item_drawable_high_value:I = 0x7f0b051c
+.field public static pro_item_drawable_high_value:I = 0x7f0b0518
 
-.field public static pro_popup_bar_container:I = 0x7f0b051d
+.field public static pro_popup_bar_container:I = 0x7f0b0519
 
-.field public static pro_popup_bar_item_id:I = 0x7f0b051e
+.field public static pro_popup_bar_item_id:I = 0x7f0b051a
 
-.field public static pro_popup_bar_item_layout_id:I = 0x7f0b051f
+.field public static pro_popup_bar_item_layout_id:I = 0x7f0b051b
 
-.field public static pro_popup_bar_item_root:I = 0x7f0b0520
+.field public static pro_popup_bar_item_root:I = 0x7f0b051c
 
-.field public static pro_popup_bar_root:I = 0x7f0b0521
+.field public static pro_popup_bar_root:I = 0x7f0b051d
 
-.field public static pro_popup_bar_rotate_root:I = 0x7f0b0522
+.field public static pro_popup_bar_rotate_root:I = 0x7f0b051e
 
-.field public static pro_popup_bar_ui_root:I = 0x7f0b0523
+.field public static pro_popup_bar_ui_root:I = 0x7f0b051f
 
-.field public static pro_scroller_view:I = 0x7f0b0524
+.field public static pro_scroller_view:I = 0x7f0b0520
 
-.field public static pro_scroller_view_container:I = 0x7f0b0525
+.field public static pro_scroller_view_container:I = 0x7f0b0521
 
-.field public static pro_setting_item_drawable_value:I = 0x7f0b0526
+.field public static pro_setting_item_drawable_value:I = 0x7f0b0522
 
-.field public static pro_setting_item_title:I = 0x7f0b0527
+.field public static pro_setting_item_title:I = 0x7f0b0523
 
-.field public static pro_setting_item_value:I = 0x7f0b0528
+.field public static pro_setting_item_value:I = 0x7f0b0524
 
-.field public static professional_root_group:I = 0x7f0b0542
+.field public static professional_root_group:I = 0x7f0b053e
 
-.field public static professional_setting_ui_root:I = 0x7f0b0543
+.field public static professional_setting_ui_root:I = 0x7f0b053f
 
-.field public static setting_items_layout:I = 0x7f0b05c4
+.field public static setting_items_layout:I = 0x7f0b05c0
 
 
 # direct methods

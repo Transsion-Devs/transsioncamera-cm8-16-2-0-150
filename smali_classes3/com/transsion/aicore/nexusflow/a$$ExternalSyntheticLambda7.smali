@@ -3,40 +3,34 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function1;
+.implements Lkotlin/jvm/functions/Function0;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/String;
+.field public final synthetic f$0:Lcom/transsion/aicore/nexusflow/a;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lcom/transsion/aicore/nexusflow/a;)V
     .registers 2
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/transsion/aicore/nexusflow/a$$ExternalSyntheticLambda7;->f$0:Ljava/lang/String;
+    iput-object p1, p0, Lcom/transsion/aicore/nexusflow/a$$ExternalSyntheticLambda7;->f$0:Lcom/transsion/aicore/nexusflow/a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+.method public final invoke()Ljava/lang/Object;
+    .registers 1
 
     .line 0
-    iget-object p0, p0, Lcom/transsion/aicore/nexusflow/a$$ExternalSyntheticLambda7;->f$0:Ljava/lang/String;
+    iget-object p0, p0, Lcom/transsion/aicore/nexusflow/a$$ExternalSyntheticLambda7;->f$0:Lcom/transsion/aicore/nexusflow/a;
 
-    check-cast p1, Lcom/transsion/aicore/nexusflow/e;
-
-    invoke-static {p0, p1}, Lcom/transsion/aicore/nexusflow/a;->a(Ljava/lang/String;Lcom/transsion/aicore/nexusflow/e;)Z
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {p0}, Lcom/transsion/aicore/nexusflow/a;->b(Lcom/transsion/aicore/nexusflow/a;)Lkotlin/Unit;
 
     move-result-object p0
 

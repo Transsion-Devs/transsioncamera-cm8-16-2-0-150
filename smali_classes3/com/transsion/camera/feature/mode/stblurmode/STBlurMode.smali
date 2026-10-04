@@ -120,6 +120,15 @@
     return-object p0
 .end method
 
+.method static bridge synthetic -$$Nest$fgetmIsFirstAlgoFrame(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Z
+    .registers 1
+
+    .line 0
+    iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mIsFirstAlgoFrame:Z
+
+    return p0
+.end method
+
 .method static bridge synthetic -$$Nest$fgetmIsPause(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Z
     .registers 1
 
@@ -142,9 +151,7 @@
     .registers 1
 
     .line 0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 p0, 0x0
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
 
     return-object p0
 .end method
@@ -172,6 +179,15 @@
 
     .line 0
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mFrameData:[B
+
+    return-void
+.end method
+
+.method static bridge synthetic -$$Nest$fputmIsFirstAlgoFrame(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;Z)V
+    .registers 2
+
+    .line 0
+    iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mIsFirstAlgoFrame:Z
 
     return-void
 .end method
@@ -348,7 +364,7 @@
     .line 123
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mIsPause:Z
 
-    .line 498
+    .line 499
     new-instance p1, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$1;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$1;-><init>(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)V
@@ -400,12 +416,12 @@
 .method private changeSTBlurConfig(ZZ)V
     .registers 4
 
-    .line 333
+    .line 334
     new-instance v0, Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig$Build;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig$Build;-><init>()V
 
-    .line 334
+    .line 335
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig$Build;->hasFace(Z)Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig$Build;
 
     move-result-object p1
@@ -418,7 +434,7 @@
 
     move-result-object p1
 
-    .line 335
+    .line 336
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientHandler:Landroid/os/Handler;
 
     const/4 p2, 0x6
@@ -427,7 +443,7 @@
 
     move-result-object p0
 
-    .line 336
+    .line 337
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     return-void
@@ -436,22 +452,22 @@
 .method private changeSTBlurLevel(I)V
     .registers 3
 
-    .line 321
+    .line 322
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientHandler:Landroid/os/Handler;
 
     const/16 v0, 0x8
 
-    .line 322
+    .line 323
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    .line 321
+    .line 322
     invoke-virtual {p0, v0, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
 
-    .line 322
+    .line 323
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     return-void
@@ -460,7 +476,7 @@
 .method private createFacelighting()V
     .registers 3
 
-    .line 853
+    .line 854
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mHumanEffectInited:Z
 
     if-nez v0, :cond_1f
@@ -471,17 +487,17 @@
 
     if-eqz v0, :cond_1f
 
-    .line 854
+    .line 855
     sget-object v0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "createFacelighting"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 855
+    .line 856
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/facelighting/FacelightingFactory;->getFacelightingClient()Lcom/transsion/camera/app/common/algorithm/facelighting/IFacelightingClient;
 
-    .line 859
+    .line 860
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mHumanEffectInited:Z
 
     if-eqz v0, :cond_1f
@@ -495,7 +511,7 @@
     :cond_1d
     const/4 p0, 0x0
 
-    .line 860
+    .line 861
     throw p0
 
     :cond_1f
@@ -510,14 +526,25 @@
 .end method
 
 .method private handleChangeConfig(Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig;)V
-    .registers 2
+    .registers 3
 
-    .line 901
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;
+    .line 899
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
 
-    if-eqz p0, :cond_d
+    if-eqz v0, :cond_9
+
+    .line 900
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;->changeConfigs(Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig;)V
 
     .line 902
+    :cond_9
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;
+
+    if-eqz p0, :cond_16
+
+    .line 903
     check-cast p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurImageProcessor;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig;->isSTBlurOn()Z
@@ -526,26 +553,48 @@
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurImageProcessor;->updateSTBlurValue(Z)V
 
-    :cond_d
+    :cond_16
     return-void
 .end method
 
 .method private handleChangeKernel(I)V
-    .registers 2
+    .registers 3
 
+    .line 914
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    if-eqz v0, :cond_9
+
+    .line 915
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview;->updateKernel(I)V
+
+    :cond_9
     return-void
 .end method
 
 .method private handleChangeLevel(I)V
-    .registers 2
+    .registers 3
 
+    .line 908
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    if-eqz v0, :cond_9
+
+    .line 909
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview;->updateBlurLevel(I)V
+
+    :cond_9
     return-void
 .end method
 
 .method private handleInitFacelighting()V
     .registers 3
 
-    .line 844
+    .line 845
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     new-instance v1, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$2;
@@ -558,20 +607,31 @@
 .end method
 
 .method private handleInitRender()V
-    .registers 1
+    .registers 2
 
+    .line 893
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    if-eqz v0, :cond_9
+
+    .line 894
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview;->initRender()V
+
+    :cond_9
     return-void
 .end method
 
 .method private handleInitSTBlur()V
-    .registers 3
+    .registers 4
 
-    .line 827
+    .line 828
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     if-nez v0, :cond_c
 
-    .line 828
+    .line 829
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "handleInitSTBlur mContext is null"
@@ -580,7 +640,7 @@
 
     return-void
 
-    .line 832
+    .line 833
     :cond_c
     new-instance v0, Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig$Build;
 
@@ -588,7 +648,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
-    .line 833
+    .line 834
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->isFrontCamera(Ljava/lang/String;)Z
 
     move-result v1
@@ -599,36 +659,94 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig$Build;->build()Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig;
 
-    .line 834
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
-
-    filled-new-array {p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    const-string v0, "com.transsion.algorithm.STBlurClientImpl"
-
-    invoke-static {v0, p0}, Lcom/transsion/camera/utils/ReflectionUtils;->instance(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Landroidx/appcompat/app/ToolbarActionBar$$ExternalSyntheticThrowCCEIfNotNull0;->m(Ljava/lang/Object;)V
-
-    const/4 p0, 0x0
+    move-result-object v0
 
     .line 835
-    throw p0
-.end method
+    iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
-.method private handlePauseSTBlur()V
-    .registers 1
+    filled-new-array {v1}, [Ljava/lang/Object;
+
+    move-result-object v1
+
+    const-string v2, "com.transsion.algorithm.STBlurClientImpl"
+
+    invoke-static {v2, v1}, Lcom/transsion/camera/utils/ReflectionUtils;->instance(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    iput-object v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    .line 836
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    invoke-interface {v1, v0}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;->configSTBlur(Lcom/transsion/camera/app/common/algorithm/stblur/STBlurConfig;)V
+
+    .line 837
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    invoke-interface {v0}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview;->initSTBlur()V
+
+    const/4 v0, 0x1
+
+    .line 838
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientValid:Z
+
+    .line 840
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;
+
+    check-cast v0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurImageProcessor;
+
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    invoke-interface {v1}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;->getSTBlurCapture()Lcom/transsion/camera/app/common/algorithm/stblur/STBlurCapture;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurImageProcessor;->setSTBlurCapture(Lcom/transsion/camera/app/common/algorithm/stblur/STBlurCapture;)V
+
+    .line 841
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;
+
+    check-cast p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurImageProcessor;
+
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurImageProcessor;->initSTBlurCapture()V
 
     return-void
 .end method
 
-.method private handleResumeSTBlur()V
-    .registers 1
+.method private handlePauseSTBlur()V
+    .registers 2
 
+    .line 880
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    if-eqz v0, :cond_9
+
+    .line 881
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview;->unInitSTBlur()V
+
+    :cond_9
+    return-void
+.end method
+
+.method private handleResumeSTBlur()V
+    .registers 2
+
+    .line 874
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    if-eqz v0, :cond_9
+
+    .line 875
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview;->initSTBlur()V
+
+    :cond_9
     return-void
 .end method
 
@@ -637,26 +755,37 @@
 
     const/4 v0, 0x0
 
-    .line 885
+    .line 886
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientValid:Z
 
+    .line 887
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    if-eqz v0, :cond_c
+
+    .line 888
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClient:Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview;->unInitSTBlur()V
+
+    :cond_c
     return-void
 .end method
 
 .method private initSTBlurThread()V
     .registers 4
 
-    .line 170
+    .line 171
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "stblur_work_thread"
 
     invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    .line 171
+    .line 172
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 172
+    .line 173
     new-instance v1, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurHandler;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -675,7 +804,7 @@
 .method private isFakeDualLens()Z
     .registers 3
 
-    .line 749
+    .line 750
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mBackFakeDualLensSupport:Z
 
     if-eqz v0, :cond_e
@@ -697,7 +826,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
-    .line 752
+    .line 753
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v1
@@ -710,7 +839,7 @@
 
     move-result-object v1
 
-    .line 751
+    .line 752
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -726,7 +855,7 @@
 
     const-string v0, "1"
 
-    .line 753
+    .line 754
     invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -747,7 +876,7 @@
 .method private isFrontCamera(Ljava/lang/String;)Z
     .registers 2
 
-    .line 203
+    .line 204
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object p0
@@ -756,7 +885,7 @@
 
     move-result-object p0
 
-    .line 204
+    .line 205
     invoke-interface {p0, p1}, Lcom/transsion/camera/adapter/ICameraDeviceInfo;->getCameraInfo(Ljava/lang/String;)Lcom/transsion/camera/adapter/ICameraInfo;
 
     move-result-object p0
@@ -780,7 +909,7 @@
 .method private isHumanEffectSupported()Z
     .registers 2
 
-    .line 919
+    .line 920
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/facelighting/FacelightingFactory;->isFacelightingSupport()Z
 
     move-result v0
@@ -808,7 +937,7 @@
 .method private isSupportFlash()Z
     .registers 4
 
-    .line 189
+    .line 190
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
@@ -819,7 +948,7 @@
 
     move-result v0
 
-    .line 191
+    .line 192
     iget p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSupportFlashType:I
 
     const/4 v1, 0x1
@@ -855,7 +984,7 @@
 .method private readFakeDualLensSupport(Landroid/content/res/Resources;)V
     .registers 4
 
-    .line 731
+    .line 732
     sget v0, Lcom/transsion/camera/feature/mode/stblurmode/R$integer;->stblur_fake_dual_lens_type:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getInteger(I)I
@@ -876,22 +1005,22 @@
 
     return-void
 
-    .line 740
+    .line 741
     :cond_10
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mFrontFakeDualLensSupport:Z
 
-    .line 741
+    .line 742
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mBackFakeDualLensSupport:Z
 
     return-void
 
-    .line 737
+    .line 738
     :cond_15
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mBackFakeDualLensSupport:Z
 
     return-void
 
-    .line 734
+    .line 735
     :cond_18
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mFrontFakeDualLensSupport:Z
 
@@ -903,7 +1032,7 @@
 .method public buildCaptureInfo()Lcom/transsion/camera/app/common/mode/CaptureInfo;
     .registers 4
 
-    .line 759
+    .line 760
     new-instance v0, Lcom/transsion/camera/app/common/mode/CaptureInfo;
 
     iget v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mCaptureOrientation:I
@@ -935,7 +1064,7 @@
 .method public createImageProcessor()Lcom/transsion/camera/feature/mode/stblurmode/STBlurImageProcessor;
     .registers 2
 
-    .line 764
+    .line 765
     new-instance v0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurImageProcessor;
 
     invoke-direct {v0, p0, p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurImageProcessor;-><init>(Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;Lcom/transsion/camera/app/common/ICameraControl$IContinuousShotCallback;)V
@@ -946,7 +1075,7 @@
 .method protected getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 2
 
-    .line 924
+    .line 925
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object p0
@@ -960,7 +1089,7 @@
     :cond_8
     const/4 v0, 0x2
 
-    .line 928
+    .line 929
     filled-new-array {v0}, [I
 
     move-result-object v0
@@ -975,7 +1104,7 @@
 .method public getDataFlowType()I
     .registers 2
 
-    .line 486
+    .line 487
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/stblur/STBlurCapture;->algorithmMigrate()Z
 
     move-result p0
@@ -986,14 +1115,14 @@
 
     const/4 p0, 0x2
 
-    .line 487
+    .line 488
     invoke-static {p0, v0}, Lcom/transsion/camera/adapter/DataFlowSpec;->makeDataFlowSpec(II)I
 
     move-result p0
 
     return p0
 
-    .line 490
+    .line 491
     :cond_d
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/watermark/Watermark;->algorithmMigrate()Z
 
@@ -1003,7 +1132,7 @@
 
     const/4 p0, 0x3
 
-    .line 491
+    .line 492
     invoke-static {p0, v0}, Lcom/transsion/camera/adapter/DataFlowSpec;->makeDataFlowSpec(II)I
 
     move-result p0
@@ -1013,7 +1142,7 @@
     :cond_19
     const/4 p0, 0x1
 
-    .line 494
+    .line 495
     invoke-static {p0, v0}, Lcom/transsion/camera/adapter/DataFlowSpec;->makeDataFlowSpec(II)I
 
     move-result p0
@@ -1032,17 +1161,17 @@
         }
     .end annotation
 
-    .line 362
+    .line 363
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->getFpsRange()Landroid/util/Range;
 
     move-result-object v0
 
-    .line 363
+    .line 364
     iget-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mFpsRangeReduce:Z
 
     if-eqz v1, :cond_21
 
-    .line 365
+    .line 366
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->supportPostAlgo()Z
 
     move-result p0
@@ -1056,7 +1185,7 @@
     :cond_11
     const/16 p0, 0x1a
 
-    .line 368
+    .line 369
     :goto_13
     new-instance v0, Landroid/util/Range;
 
@@ -1079,77 +1208,77 @@
 .method public getModeFeatures(Landroid/content/Context;)[Ljava/lang/String;
     .registers 5
 
-    .line 380
+    .line 381
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 381
+    .line 382
     const-string v0, "key_shutter_sound_optional"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 382
+    .line 383
     const-string v0, "key_st_blur"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 383
+    .line 384
     const-string v0, "key_mood_light"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 384
+    .line 385
     const-string v0, "key_tran_plugin"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 385
+    .line 386
     const-string v0, "key_smile_detection"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 386
+    .line 387
     const-string v0, "key_edit_watermark"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 387
+    .line 388
     const-string v0, "key_gold_watermark"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 388
+    .line 389
     const-string v0, "key_pro_watermark"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 389
+    .line 390
     const-string v0, "key_super_flash"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 390
+    .line 391
     const-string v0, "key_night_3dnr"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 391
+    .line 392
     const-string v1, "key_fingerprint_capture"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 392
+    .line 393
     const-string v1, "key_touch_capture"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 393
+    .line 394
     const-string v1, "key_activity_orientation"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 394
+    .line 395
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v1
@@ -1158,44 +1287,44 @@
 
     if-eqz v1, :cond_53
 
-    .line 395
+    .line 396
     const-string v1, "key_portraitmode_enhance"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 397
+    .line 398
     :cond_53
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mAsdSupport:Z
 
     if-eqz v1, :cond_65
 
-    .line 398
+    .line 399
     const-string v1, "key_asd"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 399
+    .line 400
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mHdrSupport:Z
 
     if-eqz v1, :cond_65
 
-    .line 400
+    .line 401
     const-string v1, "key_hdr"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 403
+    .line 404
     :cond_65
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mMFNRSupport:Z
 
     if-eqz v1, :cond_6e
 
-    .line 404
+    .line 405
     const-string v1, "key_setting_smart_denoise"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 406
+    .line 407
     :cond_6e
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->isFakeDualLens()Z
 
@@ -1203,12 +1332,12 @@
 
     if-eqz v1, :cond_79
 
-    .line 407
+    .line 408
     const-string v1, "key_is_stblur_fake"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 409
+    .line 410
     :cond_79
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/stblur/STBlurCapture;->algorithmMigrate()Z
 
@@ -1216,12 +1345,12 @@
 
     if-eqz v1, :cond_84
 
-    .line 410
+    .line 411
     const-string v1, "key_algorithm_migrate"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 412
+    .line 413
     :cond_84
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -1237,13 +1366,13 @@
 
     if-ne v1, v2, :cond_95
 
-    .line 414
+    .line 415
     :cond_90
     const-string v1, "key_mild_beauty"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 416
+    .line 417
     :cond_95
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->isHumanEffectSupported()Z
 
@@ -1251,36 +1380,36 @@
 
     if-eqz v1, :cond_a0
 
-    .line 417
+    .line 418
     const-string v1, "key_human_effect_index"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 419
+    .line 420
     :cond_a0
     const-string v1, "key_auto_color_level"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 420
+    .line 421
     const-string v1, "key_taint_detection"
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 421
+    .line 422
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mZoomSupport:Z
 
     if-eqz p0, :cond_b6
 
-    .line 422
+    .line 423
     const-string p0, "key_camera_click_zoom"
 
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 423
+    .line 424
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 426
+    .line 427
     :cond_b6
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -1288,7 +1417,7 @@
 
     new-array p0, p0, [Ljava/lang/String;
 
-    .line 427
+    .line 428
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p0
@@ -1301,7 +1430,7 @@
 .method public getModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
     .registers 8
 
-    .line 462
+    .line 463
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->isSupportFlash()Z
 
     move-result v0
@@ -1312,14 +1441,14 @@
 
     const/4 v1, 0x1
 
-    .line 463
+    .line 464
     const-string v2, "on"
 
     invoke-virtual {v0, v2, v1}, Lcom/transsion/camera/app/common/relation/RelationGroup;->getRelation(Ljava/lang/String;Z)Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object v0
 
-    .line 465
+    .line 466
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mZoomSupport:Z
 
     const-string v3, "key_volume_key"
@@ -1330,7 +1459,7 @@
 
     if-eqz v1, :cond_25
 
-    .line 467
+    .line 468
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
     invoke-static {v1, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1339,12 +1468,12 @@
 
     if-eqz v1, :cond_2f
 
-    .line 468
+    .line 469
     invoke-virtual {v0, v3, v5, v5}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_2f
 
-    .line 471
+    .line 472
     :cond_25
     const-string v1, "key_camera_zoom"
 
@@ -1352,27 +1481,27 @@
 
     invoke-virtual {v0, v1, v6, v6}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 472
+    .line 473
     invoke-virtual {v0, v3, v5, v5}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 475
+    .line 476
     :cond_2f
     :goto_2f
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mMFNRSupport:Z
 
     if-eqz p0, :cond_3d
 
-    .line 476
+    .line 477
     const-string p0, "key_setting_smart_denoise"
 
     invoke-virtual {v0, p0, v2, v2}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 477
+    .line 478
     const-string p0, "key_asd"
 
     invoke-virtual {v0, p0, v4, v4}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 480
+    .line 481
     :cond_3d
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurModeRestriction;->getCamModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
 
@@ -1386,7 +1515,7 @@
 .method protected getOpenCamerId(Ljava/lang/String;Landroid/content/Context;ZLcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Ljava/lang/String;IZ)Ljava/lang/String;
     .registers 8
 
-    .line 444
+    .line 445
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->isSupportFrontFakeDualLens()Z
 
     move-result p2
@@ -1401,7 +1530,7 @@
 
     if-eqz p2, :cond_17
 
-    .line 445
+    .line 446
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object p0
@@ -1412,7 +1541,7 @@
 
     return-object p0
 
-    .line 446
+    .line 447
     :cond_17
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->isSupportBackFakeDualLens()Z
 
@@ -1428,7 +1557,7 @@
 
     if-eqz p0, :cond_2e
 
-    .line 447
+    .line 448
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object p0
@@ -1455,7 +1584,7 @@
         }
     .end annotation
 
-    .line 257
+    .line 258
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->getTargetRatio()D
 
     move-result-wide v0
@@ -1472,7 +1601,7 @@
 .method public getSettingGroup()J
     .registers 5
 
-    .line 375
+    .line 376
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->getSettingGroup()J
 
     move-result-wide v0
@@ -1495,7 +1624,7 @@
 .method public getThumbnailSource()I
     .registers 2
 
-    .line 454
+    .line 455
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->isHumanEffectSupported()Z
 
     move-result v0
@@ -1506,7 +1635,7 @@
 
     return p0
 
-    .line 457
+    .line 458
     :cond_8
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getThumbnailSource()I
 
@@ -1528,17 +1657,30 @@
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->initSTBlurThread()V
 
     .line 141
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p2
+
+    sget p3, Lcom/transsion/camera/app/common/R$bool;->stblur_algo_support:I
+
+    invoke-virtual {p2, p3}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p2
+
+    const/4 p3, 0x1
+
+    if-eqz p2, :cond_39
+
     const-string p2, "com.transsion.algorithm.STBlurClientImpl"
 
+    .line 142
     invoke-static {p2}, Lcom/transsion/camera/utils/ReflectionUtils;->findClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object p2
 
-    const/4 p3, 0x1
+    if-eqz p2, :cond_39
 
-    if-eqz p2, :cond_2d
-
-    .line 143
+    .line 144
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientHandler:Landroid/os/Handler;
 
     invoke-virtual {p2, p3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
@@ -1547,7 +1689,7 @@
 
     invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
 
-    .line 144
+    .line 145
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p2}, Lcom/transsion/camera/app/common/IAppUI;->getPreviewOperator()Lcom/transsion/camera/app/common/preview/IPreviewOperator;
@@ -1556,9 +1698,9 @@
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
-    if-eqz p2, :cond_2d
+    if-eqz p2, :cond_39
 
-    .line 146
+    .line 147
     new-instance p4, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;
 
     const/4 p5, 0x0
@@ -1567,15 +1709,15 @@
 
     invoke-interface {p2, p4}, Lcom/transsion/camera/app/common/preview/IPreviewOperator;->modeInit(Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;)V
 
-    .line 149
-    :cond_2d
+    .line 150
+    :cond_39
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->isHumanEffectSupported()Z
 
     move-result p2
 
-    if-eqz p2, :cond_3b
+    if-eqz p2, :cond_47
 
-    .line 150
+    .line 151
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientHandler:Landroid/os/Handler;
 
     const/4 p4, 0x7
@@ -1584,47 +1726,47 @@
 
     invoke-virtual {p2, p4, p5, p6}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 153
-    :cond_3b
+    .line 154
+    :cond_47
     const-string p2, "key_has_valid_face"
 
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/mode/CameraMode;->registerKeyToMonitor(Ljava/lang/String;)V
 
-    .line 154
+    .line 155
     const-string p2, "key_st_blur"
 
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/mode/CameraMode;->registerKeyToMonitor(Ljava/lang/String;)V
 
-    .line 155
+    .line 156
     const-string p2, "key_lens_warning"
 
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/mode/CameraMode;->registerKeyToMonitor(Ljava/lang/String;)V
 
-    .line 156
+    .line 157
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->isHumanEffectSupported()Z
 
     move-result p2
 
-    if-eqz p2, :cond_6c
+    if-eqz p2, :cond_78
 
-    .line 157
+    .line 158
     const-string p2, "key_human_effect_index"
 
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/mode/CameraMode;->registerKeyToMonitor(Ljava/lang/String;)V
 
-    .line 158
+    .line 159
     const-string p4, "key_human_effect_face_checked"
 
     invoke-virtual {p0, p4}, Lcom/transsion/camera/app/common/mode/CameraMode;->registerKeyToMonitor(Ljava/lang/String;)V
 
-    .line 159
+    .line 160
     iget-object p4, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p4}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object p4
 
-    .line 160
+    .line 161
     const-string p5, "0"
 
     invoke-virtual {p4}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -1637,11 +1779,11 @@
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mHumanEffectIndex:Ljava/lang/String;
 
-    .line 162
-    :cond_6c
+    .line 163
+    :cond_78
     iput-boolean p3, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mModeInit:Z
 
-    .line 163
+    .line 164
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p2
@@ -1650,7 +1792,7 @@
 
     iput-boolean p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mAsdSupport:Z
 
-    .line 164
+    .line 165
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p2
@@ -1659,7 +1801,7 @@
 
     iput-boolean p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mHdrSupport:Z
 
-    .line 165
+    .line 166
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p2
@@ -1668,7 +1810,7 @@
 
     iput-boolean p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mMFNRSupport:Z
 
-    .line 166
+    .line 167
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -1687,7 +1829,7 @@
 .method public isSupportBackFakeDualLens()Z
     .registers 1
 
-    .line 437
+    .line 438
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mBackFakeDualLensSupport:Z
 
     return p0
@@ -1696,7 +1838,7 @@
 .method public isSupportFrontFakeDualLens()Z
     .registers 1
 
-    .line 432
+    .line 433
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mFrontFakeDualLensSupport:Z
 
     return p0
@@ -1705,24 +1847,24 @@
 .method public onFirstSteadyFrame()V
     .registers 3
 
-    .line 353
+    .line 354
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->onFirstSteadyFrame()V
 
-    .line 354
+    .line 355
     sget-object v0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onFirstSteadyFrame"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 355
+    .line 356
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_16
 
     const/4 v0, 0x5
 
-    .line 356
+    .line 357
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p0
@@ -1736,7 +1878,7 @@
 .method protected onSettingChanged(Ljava/lang/String;Ljava/lang/Boolean;)V
     .registers 4
 
-    .line 327
+    .line 328
     const-string v0, "key_human_effect_face_checked"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1745,7 +1887,7 @@
 
     if-eqz p1, :cond_e
 
-    .line 328
+    .line 329
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
@@ -1759,10 +1901,10 @@
 .method protected onSettingChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 7
 
-    .line 267
+    .line 268
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onSettingChanged(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 270
+    .line 271
     const-string v0, "key_has_valid_face"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1775,7 +1917,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 272
+    .line 273
     const-string v0, "face_valid"
 
     invoke-static {p2, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1784,12 +1926,12 @@
 
     if-eqz v0, :cond_18
 
-    .line 273
+    .line 274
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mHasFace:Z
 
     goto :goto_1a
 
-    .line 275
+    .line 276
     :cond_18
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mHasFace:Z
 
@@ -1801,7 +1943,7 @@
     :cond_1c
     move v0, v2
 
-    .line 279
+    .line 280
     :goto_1d
     const-string v3, "key_lens_warning"
 
@@ -1811,7 +1953,7 @@
 
     if-eqz v3, :cond_39
 
-    .line 281
+    .line 282
     invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1822,25 +1964,25 @@
 
     if-eqz v0, :cond_34
 
-    .line 282
+    .line 283
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOn:Z
 
-    .line 283
+    .line 284
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurLensCovered:Z
 
     goto :goto_38
 
-    .line 285
+    .line 286
     :cond_34
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOn:Z
 
-    .line 286
+    .line 287
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurLensCovered:Z
 
     :goto_38
     move v0, v1
 
-    .line 290
+    .line 291
     :cond_39
     const-string v3, "key_st_blur"
 
@@ -1850,7 +1992,7 @@
 
     if-eqz v3, :cond_67
 
-    .line 292
+    .line 293
     const-string v0, "f0.0"
 
     invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1859,17 +2001,17 @@
 
     if-nez v0, :cond_5e
 
-    .line 293
+    .line 294
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOn:Z
 
-    .line 294
+    .line 295
     sget-object v0, Lcom/transsion/camera/utils/SettingInfo;->BLUR_LEVEL_DATA:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 295
+    .line 296
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v3
@@ -1884,17 +2026,17 @@
 
     goto :goto_60
 
-    .line 297
+    .line 298
     :cond_5e
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOn:Z
 
-    .line 299
+    .line 300
     :goto_60
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurLensCovered:Z
 
     if-eqz v0, :cond_68
 
-    .line 300
+    .line 301
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOn:Z
 
     goto :goto_68
@@ -1906,14 +2048,14 @@
     :goto_68
     if-eqz v1, :cond_71
 
-    .line 305
+    .line 306
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mHasFace:Z
 
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOn:Z
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->changeSTBlurConfig(ZZ)V
 
-    .line 308
+    .line 309
     :cond_71
     const-string v0, "key_human_effect_index"
 
@@ -1925,7 +2067,7 @@
 
     return-void
 
-    .line 317
+    .line 318
     :cond_7a
     sget-object p1, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1975,10 +2117,10 @@
 .method public onSettingReady()V
     .registers 4
 
-    .line 341
+    .line 342
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onSettingReady()V
 
-    .line 343
+    .line 344
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_st_blur"
@@ -1987,7 +2129,7 @@
 
     move-result-object v0
 
-    .line 344
+    .line 345
     const-string v1, "f0.0"
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1998,7 +2140,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOn:Z
 
-    .line 345
+    .line 346
     sget-object v0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2019,7 +2161,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 346
+    .line 347
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v0, :cond_3a
@@ -2028,7 +2170,7 @@
 
     if-eqz v0, :cond_3a
 
-    .line 347
+    .line 348
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mYUVCallback:Lcom/transsion/camera/adapter/CameraProxy$CameraPreviewDataCallback;
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->addPreviewDataCallback(Lcom/transsion/camera/adapter/CameraProxy$CameraPreviewDataCallback;)V
@@ -2040,7 +2182,7 @@
 .method protected onShutterClickBefore(I)Z
     .registers 8
 
-    .line 177
+    .line 178
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -2049,12 +2191,12 @@
 
     if-eqz v0, :cond_20
 
-    .line 178
+    .line 179
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v0
 
-    .line 179
+    .line 180
     sget-object v2, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
 
     iget-wide v3, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mLastCaptureTime:J
@@ -2075,11 +2217,11 @@
 
     return p0
 
-    .line 183
+    .line 184
     :cond_1e
     iput-wide v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mLastCaptureTime:J
 
-    .line 185
+    .line 186
     :cond_20
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onShutterClickBefore(I)Z
 
@@ -2091,29 +2233,29 @@
 .method public pause()V
     .registers 3
 
-    .line 223
+    .line 224
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v0, :cond_7
 
-    .line 224
+    .line 225
     invoke-interface {v0}, Lcom/transsion/camera/app/common/preview/IPreviewOperator;->modePause()V
 
-    .line 226
+    .line 227
     :cond_7
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->pause()V
 
     const/4 v0, 0x1
 
-    .line 227
+    .line 228
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mIsPause:Z
 
     const-wide/16 v0, 0x0
 
-    .line 228
+    .line 229
     iput-wide v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mLastCaptureTime:J
 
-    .line 229
+    .line 230
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientHandler:Landroid/os/Handler;
 
     const/4 v1, 0x3
@@ -2124,14 +2266,14 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 230
+    .line 231
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p0, :cond_24
 
     const/16 v0, 0xd6
 
-    .line 231
+    .line 232
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     :cond_24
@@ -2152,28 +2294,28 @@
 .method public resume()V
     .registers 3
 
-    .line 209
+    .line 210
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->resume()V
 
     const-wide/16 v0, 0x0
 
-    .line 210
+    .line 211
     iput-wide v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mLastCaptureTime:J
 
     const/4 v0, 0x0
 
-    .line 211
+    .line 212
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mIsPause:Z
 
-    .line 212
+    .line 213
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v0, :cond_11
 
-    .line 213
+    .line 214
     invoke-interface {v0}, Lcom/transsion/camera/app/common/preview/IPreviewOperator;->modeResume()V
 
-    .line 215
+    .line 216
     :cond_11
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientHandler:Landroid/os/Handler;
 
@@ -2185,14 +2327,14 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 216
+    .line 217
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p0, :cond_24
 
     const/16 v0, 0x7b
 
-    .line 217
+    .line 218
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     :cond_24
@@ -2204,22 +2346,22 @@
 
     const/4 v0, 0x0
 
-    .line 237
+    .line 238
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mModeInit:Z
 
-    .line 238
+    .line 239
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz v1, :cond_a
 
-    .line 239
+    .line 240
     invoke-interface {v1}, Lcom/transsion/camera/app/common/preview/IPreviewOperator;->modeUninit()V
 
-    .line 241
+    .line 242
     :cond_a
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->unInit()V
 
-    .line 242
+    .line 243
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientHandler:Landroid/os/Handler;
 
     const/4 v2, 0x4
@@ -2230,7 +2372,7 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 243
+    .line 244
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mSTBlurClientHandler:Landroid/os/Handler;
 
     invoke-virtual {v1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -2239,42 +2381,42 @@
 
     invoke-virtual {v1}, Landroid/os/Looper;->quitSafely()V
 
-    .line 244
+    .line 245
     const-string v1, "key_has_valid_face"
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/mode/CameraMode;->unRegisterKeyToMonitor(Ljava/lang/String;)V
 
-    .line 245
+    .line 246
     const-string v1, "key_st_blur"
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/mode/CameraMode;->unRegisterKeyToMonitor(Ljava/lang/String;)V
 
-    .line 246
+    .line 247
     const-string v1, "key_lens_warning"
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/mode/CameraMode;->unRegisterKeyToMonitor(Ljava/lang/String;)V
 
-    .line 247
+    .line 248
     const-string v1, "key_human_effect_index"
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/mode/CameraMode;->unRegisterKeyToMonitor(Ljava/lang/String;)V
 
-    .line 248
+    .line 249
     const-string v1, "key_human_effect_face_checked"
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/mode/CameraMode;->unRegisterKeyToMonitor(Ljava/lang/String;)V
 
-    .line 249
+    .line 250
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     if-eqz v1, :cond_41
 
     const/4 v2, 0x0
 
-    .line 250
+    .line 251
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->addPreviewDataCallback(Lcom/transsion/camera/adapter/CameraProxy$CameraPreviewDataCallback;)V
 
-    .line 252
+    .line 253
     :cond_41
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->mHumanEffectFaceChecked:Z
 

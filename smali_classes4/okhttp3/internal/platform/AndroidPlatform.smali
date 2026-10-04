@@ -135,7 +135,7 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 165
+    .line 714
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -172,7 +172,7 @@
 
     goto :goto_49
 
-    .line 165
+    .line 714
     :cond_60
     iput-object v1, p0, Lokhttp3/internal/platform/AndroidPlatform;->socketAdapters:Ljava/util/List;
 

@@ -26,10 +26,10 @@
 .method constructor <init>()V
     .registers 9
 
-    .line 79
+    .line 85
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 82
+    .line 88
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -46,7 +46,7 @@
 
     goto :goto_16
 
-    .line 85
+    .line 91
     :cond_12
     sget v0, Lcom/transsion/camera/feature/makeup/R$layout;->feature_item:I
 
@@ -55,14 +55,14 @@
 
     goto :goto_19
 
-    .line 83
+    .line 89
     :cond_16
     :goto_16
     sget v0, Lcom/transsion/camera/feature/makeup/R$layout;->feature_item_ui4:I
 
     goto :goto_14
 
-    .line 87
+    .line 93
     :goto_19
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
@@ -78,7 +78,7 @@
 
     invoke-virtual {p0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 90
+    .line 96
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
     sget v4, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_preset_autoAi:I
@@ -93,19 +93,19 @@
 
     invoke-virtual {p0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 93
+    .line 99
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
     sget v4, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_custom_body_slim:I
 
-    .line 94
+    .line 100
     invoke-static {}, Lcom/transsion/camera/utils/AreaUtil;->isUseSouthAsiaIcoArea()Z
 
     move-result v0
 
     if-eqz v0, :cond_47
 
-    .line 95
+    .line 101
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_bodyslim_south_asia:I
 
     :goto_45
@@ -113,7 +113,7 @@
 
     goto :goto_4a
 
-    .line 96
+    .line 102
     :cond_47
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_bodyslim:I
 
@@ -126,22 +126,22 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;-><init>(IIIILjava/lang/String;)V
 
-    .line 93
+    .line 99
     invoke-virtual {p0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 98
+    .line 104
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
     sget v4, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_custom_head_shrink:I
 
-    .line 99
+    .line 105
     invoke-static {}, Lcom/transsion/camera/utils/AreaUtil;->isUseSouthAsiaIcoArea()Z
 
     move-result v0
 
     if-eqz v0, :cond_61
 
-    .line 100
+    .line 106
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_headshrink_south_asia:I
 
     :goto_5f
@@ -149,7 +149,7 @@
 
     goto :goto_64
 
-    .line 101
+    .line 107
     :cond_61
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_headshrink:I
 
@@ -162,22 +162,22 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;-><init>(IIIILjava/lang/String;)V
 
-    .line 98
+    .line 104
     invoke-virtual {p0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 103
+    .line 109
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
     sget v4, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_custom_shoulder_slim:I
 
-    .line 104
+    .line 110
     invoke-static {}, Lcom/transsion/camera/utils/AreaUtil;->isUseSouthAsiaIcoArea()Z
 
     move-result v0
 
     if-eqz v0, :cond_7b
 
-    .line 105
+    .line 111
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_shoulderslim_south_asia:I
 
     :goto_79
@@ -185,7 +185,7 @@
 
     goto :goto_7e
 
-    .line 106
+    .line 112
     :cond_7b
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_shoulderslim:I
 
@@ -198,22 +198,22 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;-><init>(IIIILjava/lang/String;)V
 
-    .line 103
+    .line 109
     invoke-virtual {p0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 108
+    .line 114
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
     sget v4, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_custom_waist_slim:I
 
-    .line 109
+    .line 115
     invoke-static {}, Lcom/transsion/camera/utils/AreaUtil;->isUseSouthAsiaIcoArea()Z
 
     move-result v0
 
     if-eqz v0, :cond_95
 
-    .line 110
+    .line 116
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_waistslim_south_asia:I
 
     :goto_93
@@ -221,7 +221,7 @@
 
     goto :goto_98
 
-    .line 111
+    .line 117
     :cond_95
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_waistslim:I
 
@@ -234,22 +234,22 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;-><init>(IIIILjava/lang/String;)V
 
-    .line 108
+    .line 114
     invoke-virtual {p0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 113
+    .line 119
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
     sget v4, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_custom_butt_plump:I
 
-    .line 114
+    .line 120
     invoke-static {}, Lcom/transsion/camera/utils/AreaUtil;->isUseSouthAsiaIcoArea()Z
 
     move-result v0
 
     if-eqz v0, :cond_af
 
-    .line 115
+    .line 121
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_buttplump_south_asia:I
 
     :goto_ad
@@ -257,7 +257,7 @@
 
     goto :goto_b2
 
-    .line 116
+    .line 122
     :cond_af
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_buttplump:I
 
@@ -270,22 +270,22 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;-><init>(IIIILjava/lang/String;)V
 
-    .line 113
+    .line 119
     invoke-virtual {p0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 118
+    .line 124
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
     sget v4, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_custom_leg_slim:I
 
-    .line 119
+    .line 125
     invoke-static {}, Lcom/transsion/camera/utils/AreaUtil;->isUseSouthAsiaIcoArea()Z
 
     move-result v0
 
     if-eqz v0, :cond_c9
 
-    .line 120
+    .line 126
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_legslim_south_asia:I
 
     :goto_c7
@@ -293,7 +293,7 @@
 
     goto :goto_cc
 
-    .line 121
+    .line 127
     :cond_c9
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_legslim:I
 
@@ -306,22 +306,22 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;-><init>(IIIILjava/lang/String;)V
 
-    .line 118
+    .line 124
     invoke-virtual {p0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 123
+    .line 129
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
     sget v4, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_custom_leg_lengthen:I
 
-    .line 124
+    .line 130
     invoke-static {}, Lcom/transsion/camera/utils/AreaUtil;->isUseSouthAsiaIcoArea()Z
 
     move-result v0
 
     if-eqz v0, :cond_e4
 
-    .line 125
+    .line 131
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_leglengthen_south_asia:I
 
     :goto_e2
@@ -329,7 +329,7 @@
 
     goto :goto_e7
 
-    .line 126
+    .line 132
     :cond_e4
     sget v0, Lcom/transsion/camera/featurelibs/slimbodyRes/R$drawable;->btn_slimbody_leglengthen:I
 
@@ -342,10 +342,10 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;-><init>(IIIILjava/lang/String;)V
 
-    .line 123
+    .line 129
     invoke-virtual {p0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 127
+    .line 133
     new-instance v2, Lcom/transsion/camera/feature/mode/makeup/data/SlimBodyInfo;
 
     sget v4, Lcom/transsion/camera/feature/makeup/R$layout;->restore_layout:I

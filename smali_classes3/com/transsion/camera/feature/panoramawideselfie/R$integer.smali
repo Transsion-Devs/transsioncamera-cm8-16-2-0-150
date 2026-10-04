@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static panorama_preview_max_width:I = 0x7f0c00b5
+.field public static panorama_preview_max_width:I = 0x7f0c00b9
 
-.field public static wide_selfie_ui_type:I = 0x7f0c0112
+.field public static wide_selfie_ui_type:I = 0x7f0c0116
 
 
 # direct methods

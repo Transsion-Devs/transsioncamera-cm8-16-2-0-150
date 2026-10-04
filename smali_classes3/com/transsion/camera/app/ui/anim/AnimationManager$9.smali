@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/transsion/camera/app/ui/view/SwitchAnimView$AnimEndCallback;
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/app/ui/anim/AnimationManager;->startWideAnim(Z)V
+    value = Lcom/transsion/camera/app/ui/anim/AnimationManager;->fadeOutPreviewCover()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/anim/AnimationManager;)V
     .registers 2
 
-    .line 930
+    .line 948
     iput-object p1, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$9;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,52 @@
 
 
 # virtual methods
-.method public onAnimationEnd()V
-    .registers 1
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .registers 3
 
-    .line 933
+    .line 956
+    invoke-static {}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    move-result-object p1
+
+    const-string v0, "fadeOutPreviewCover onAnimationEnd"
+
+    invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 957
     iget-object p0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$9;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$mhidePreviewCover(Lcom/transsion/camera/app/ui/anim/AnimationManager;)V
+
+    return-void
+.end method
+
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .registers 2
+
+    .line 962
+    invoke-static {}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    move-result-object p0
+
+    const-string p1, "fadeOutPreviewCover onAnimationRepeat"
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .registers 2
+
+    .line 951
+    invoke-static {}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    move-result-object p0
+
+    const-string p1, "fadeOutPreviewCover onAnimationStart"
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 .end method

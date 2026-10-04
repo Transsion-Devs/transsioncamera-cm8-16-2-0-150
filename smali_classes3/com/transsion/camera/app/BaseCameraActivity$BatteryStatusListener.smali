@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 2232
+    .line 2254
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$BatteryStatusListener;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onBatteryStatusChanged(ZII)V
     .registers 4
 
-    .line 2235
+    .line 2257
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$BatteryStatusListener;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p0, p1, p2, p3}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$mdoOnBatteryStatusChanged(Lcom/transsion/camera/app/BaseCameraActivity;ZII)V

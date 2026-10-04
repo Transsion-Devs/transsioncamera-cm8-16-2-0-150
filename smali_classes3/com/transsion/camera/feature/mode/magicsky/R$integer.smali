@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static setting_fragment_duration_enter:I = 0x7f0c00c8
+.field public static setting_fragment_duration_enter:I = 0x7f0c00cc
 
-.field public static setting_fragment_duration_exit:I = 0x7f0c00c9
+.field public static setting_fragment_duration_exit:I = 0x7f0c00cd
 
-.field public static setting_fragment_translate_diff_minus:I = 0x7f0c00cd
+.field public static setting_fragment_translate_diff_minus:I = 0x7f0c00d1
 
-.field public static sink_modepicker_duration:I = 0x7f0c00dd
+.field public static sink_modepicker_duration:I = 0x7f0c00e1
 
 
 # direct methods

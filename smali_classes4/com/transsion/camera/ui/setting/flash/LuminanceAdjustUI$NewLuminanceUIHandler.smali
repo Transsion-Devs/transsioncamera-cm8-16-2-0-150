@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;)V
     .registers 2
 
-    .line 503
+    .line 494
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -44,10 +44,10 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 5
 
-    .line 506
+    .line 497
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 507
+    .line 498
     iget p1, p1, Landroid/os/Message;->what:I
 
     const/4 v0, 0x0
@@ -58,7 +58,7 @@
 
     goto :goto_6e
 
-    .line 545
+    .line 536
     :pswitch_b
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
@@ -66,7 +66,7 @@
 
     return-void
 
-    .line 542
+    .line 533
     :pswitch_11
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
@@ -74,7 +74,7 @@
 
     return-void
 
-    .line 527
+    .line 518
     :pswitch_17
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
@@ -84,10 +84,10 @@
 
     const/16 v2, 0x8
 
-    .line 528
+    .line 519
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 531
+    .line 522
     :cond_22
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
@@ -98,7 +98,7 @@
 
     if-eqz p1, :cond_33
 
-    .line 532
+    .line 523
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
@@ -108,7 +108,7 @@
 
     invoke-interface {p1, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
 
-    .line 535
+    .line 526
     :cond_33
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
@@ -116,10 +116,10 @@
 
     if-eqz p1, :cond_3c
 
-    .line 536
+    .line 527
     invoke-virtual {p1, v0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;->setAllowedMove(Z)V
 
-    .line 539
+    .line 530
     :cond_3c
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
@@ -129,37 +129,37 @@
 
     return-void
 
-    .line 513
+    .line 504
     :pswitch_43
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     invoke-virtual {p1, v1}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateLuminanceUIState(I)V
 
-    .line 514
+    .line 505
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     iput-boolean v0, p1, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
-    .line 515
+    .line 506
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideSpreadUI()V
 
-    .line 516
+    .line 507
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     iget-boolean v0, p1, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintShown:Z
 
     if-nez v0, :cond_58
 
-    .line 517
+    .line 508
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showShrinkUI()V
 
-    .line 519
+    .line 510
     :cond_58
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->setShrinkUIProgress()V
 
-    .line 520
+    .line 511
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
@@ -169,7 +169,7 @@
 
     if-eqz p1, :cond_6e
 
-    .line 521
+    .line 512
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
@@ -183,13 +183,13 @@
     :goto_6e
     return-void
 
-    .line 509
+    .line 500
     :pswitch_6f
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
-    .line 510
+    .line 501
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->doHideAnimation()V
 
     return-void

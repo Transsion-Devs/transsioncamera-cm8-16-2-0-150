@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 351
+    .line 355
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method protected getActivityBrightness(Landroid/app/Activity;)F
     .registers 2
 
-    .line 362
+    .line 372
     invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object p0
@@ -47,7 +47,7 @@
 
     move-result-object p0
 
-    .line 363
+    .line 373
     iget p0, p0, Landroid/view/WindowManager$LayoutParams;->screenBrightness:F
 
     return p0
@@ -62,7 +62,7 @@
 .method protected setActivityBrightness(Landroid/app/Activity;F)V
     .registers 6
 
-    .line 353
+    .line 357
     invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object p0
@@ -71,7 +71,36 @@
 
     move-result-object p0
 
-    .line 354
+    const v0, 0x3d70f0f1
+
+    .line 358
+    invoke-static {v0, p2}, Ljava/lang/Float;->compare(FF)I
+
+    move-result v0
+
+    if-nez v0, :cond_22
+
+    .line 361
+    invoke-static {}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->-$$Nest$sfgetRANDOM()Ljava/util/Random;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/Random;->nextFloat()F
+
+    move-result v0
+
+    const v1, 0x3a81c2e4    # 9.900001E-4f
+
+    mul-float/2addr v0, v1
+
+    const v1, 0x3727c5ac    # 1.0E-5f
+
+    add-float/2addr v0, v1
+
+    add-float/2addr p2, v0
+
+    .line 364
+    :cond_22
     invoke-static {}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -100,26 +129,26 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 355
+    .line 365
     iget v0, p0, Landroid/view/WindowManager$LayoutParams;->screenBrightness:F
 
     invoke-static {v0, p2}, Ljava/lang/Float;->compare(FF)I
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_55
 
-    .line 356
+    .line 366
     iput p2, p0, Landroid/view/WindowManager$LayoutParams;->screenBrightness:F
 
-    .line 357
+    .line 367
     invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object p1
 
     invoke-virtual {p1, p0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    :cond_3b
+    :cond_55
     return-void
 .end method
 

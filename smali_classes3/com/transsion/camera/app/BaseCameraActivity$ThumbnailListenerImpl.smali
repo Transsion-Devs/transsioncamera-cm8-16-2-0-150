@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 1718
+    .line 1742
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ThumbnailListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,14 +47,14 @@
 .method public onThumbnailClicked(Landroid/view/View;)V
     .registers 10
 
-    .line 1721
+    .line 1745
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$ThumbnailListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object v0, v0, Lcom/transsion/camera/app/BaseCameraActivity;->mModeManager:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     if-eqz v0, :cond_1b
 
-    .line 1722
+    .line 1746
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->getModeType()Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
     move-result-object v0
@@ -63,7 +63,7 @@
 
     if-ne v0, v1, :cond_1b
 
-    .line 1723
+    .line 1747
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v0
@@ -76,7 +76,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setShot2ClickThumbnail(Z)V
 
-    .line 1726
+    .line 1750
     :cond_1b
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$ThumbnailListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -90,7 +90,7 @@
 
     move-result v7
 
-    .line 1727
+    .line 1751
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -99,7 +99,7 @@
 
     if-eqz v0, :cond_40
 
-    .line 1729
+    .line 1753
     iget-object v2, p0, Lcom/transsion/camera/app/BaseCameraActivity$ThumbnailListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object v3, v2, Lcom/transsion/camera/app/BaseCameraActivity;->mThumbnailUri:Landroid/net/Uri;
@@ -121,14 +121,14 @@
     :cond_40
     move-object v6, p1
 
-    .line 1731
+    .line 1755
     invoke-static {}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->getProcessStatus()Z
 
     move-result p1
 
     if-eqz p1, :cond_51
 
-    .line 1733
+    .line 1757
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -139,7 +139,7 @@
 
     return-void
 
-    .line 1736
+    .line 1760
     :cond_51
     iget-object v2, p0, Lcom/transsion/camera/app/BaseCameraActivity$ThumbnailListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -153,7 +153,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/transsion/camera/app/BaseCameraActivity;->gotoGallery(Landroid/net/Uri;Ljava/lang/String;ZLandroid/view/View;F)V
 
-    .line 1738
+    .line 1762
     :goto_5d
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->getInstance()Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;
 
@@ -167,7 +167,7 @@
 .method public onThumbnailUriUpdated(Landroid/net/Uri;ZZ)V
     .registers 4
 
-    .line 1743
+    .line 1767
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$ThumbnailListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/app/BaseCameraActivity;->notifyNewMedia(Landroid/net/Uri;ZZ)V

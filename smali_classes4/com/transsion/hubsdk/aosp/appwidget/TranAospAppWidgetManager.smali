@@ -14,15 +14,15 @@
 .method public constructor <init>()V
     .registers 3
 
-    .line 23
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 24
+    .line 27
     invoke-static {}, Lcom/transsion/hubsdk/common/init/TranHubSdkManager;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 25
+    .line 28
     const-string v1, "appwidget"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -49,7 +49,7 @@
         }
     .end annotation
 
-    .line 30
+    .line 33
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/appwidget/TranAospAppWidgetManager;->mAppWidgetManager:Landroid/appwidget/AppWidgetManager;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -68,7 +68,7 @@
 
     move-result-object v0
 
-    .line 31
+    .line 34
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/appwidget/TranAospAppWidgetManager;->mAppWidgetManager:Landroid/appwidget/AppWidgetManager;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -86,4 +86,66 @@
     check-cast p0, Ljava/util/List;
 
     return-object p0
+.end method
+
+.method public registerAppWidgetListener(Lcom/transsion/hubsdk/api/app/ITranAppWidget;I)V
+    .registers 4
+
+    .line 39
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "registerAppWidgetListener: callback = "
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p1, " userId = "
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string p1, "AppWidget"
+
+    invoke-static {p1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public unregisterAppWidgetListener(Lcom/transsion/hubsdk/api/app/ITranAppWidget;I)V
+    .registers 4
+
+    .line 44
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "unregisterAppWidgetListener: callback = "
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p1, " userId = "
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string p1, "AppWidget"
+
+    invoke-static {p1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
 .end method

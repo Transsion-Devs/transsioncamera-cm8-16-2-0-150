@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static limit_step_anim_min_time:I = 0x7f0c0070
+.field public static limit_step_anim_min_time:I = 0x7f0c0074
 
-.field public static shot_2_see_countdown_preview_cover_time:I = 0x7f0c00d5
+.field public static shot_2_see_countdown_preview_cover_time:I = 0x7f0c00d9
 
 
 # direct methods

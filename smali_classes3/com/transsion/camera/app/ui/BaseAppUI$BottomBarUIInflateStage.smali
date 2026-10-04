@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;)V
     .registers 3
 
-    .line 5782
+    .line 5648
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$BottomBarUIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
-    .line 5783
+    .line 5649
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;-><init>(Lcom/transsion/camera/app/ui/BaseAppUI;Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;)V
 
     return-void
@@ -36,12 +36,12 @@
 .method public process()V
     .registers 2
 
-    .line 5788
+    .line 5654
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$BottomBarUIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$mdoInflateBottomBar(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
-    .line 5789
+    .line 5655
     invoke-super {p0}, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->process()V
 
     return-void

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
     .registers 2
 
-    .line 71
+    .line 77
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$1;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,9 +36,9 @@
 
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .registers 3
+    .registers 4
 
-    .line 74
+    .line 80
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -49,16 +49,16 @@
 
     move-result p1
 
-    .line 75
+    .line 81
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$1;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     move-result-object v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_29
 
-    .line 76
+    .line 82
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$1;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
@@ -67,17 +67,22 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 77
+    .line 83
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$1;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, p1, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$misFloatEqual(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;FF)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_29
+
+    .line 84
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$1;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
-    invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
+    invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$mcomputeFilterRootVisibility(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
 
-    move-result-object p0
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_25
+    :cond_29
     return-void
 .end method

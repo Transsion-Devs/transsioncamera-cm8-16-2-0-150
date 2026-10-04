@@ -99,7 +99,7 @@
 .method public abstract initContext(Landroid/content/Context;)V
 .end method
 
-.method public abstract isBgCapturing()Z
+.method public abstract initSettingController(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
 .end method
 
 .method public abstract isBgOfflineCapturing()Z
@@ -237,16 +237,13 @@
 .method public queryState(Ljava/lang/String;)Lcom/transsion/camera/app/common/IAppUI$UIState;
     .registers 2
 
-    .line 176
+    .line 174
     sget-object p0, Lcom/transsion/camera/app/common/IAppUI$UIState;->UNKNOWN:Lcom/transsion/camera/app/common/IAppUI$UIState;
 
     return-object p0
 .end method
 
 .method public abstract recentAppsStart()V
-.end method
-
-.method public abstract removeCaptureInfo(Z)V
 .end method
 
 .method public abstract resetBgEnable()V
@@ -262,9 +259,6 @@
 .end method
 
 .method public abstract setInternalStorageOperator(Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;)V
-.end method
-
-.method public abstract setModeBgCaptureListener(Lcom/transsion/camera/app/common/IApp$ModeBgCaptureListener;)V
 .end method
 
 .method public abstract setModeChangeFlag(Z)V

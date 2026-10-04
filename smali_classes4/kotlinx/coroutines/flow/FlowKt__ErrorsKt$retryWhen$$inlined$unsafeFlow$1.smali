@@ -39,7 +39,7 @@
 
     iput-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1;->$predicate$inlined:Lkotlin/jvm/functions/Function4;
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    .line 106
+    .line 104
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1$1;->label:I
 
     const/4 v3, 0x2
@@ -170,7 +170,7 @@
 
     const-wide/16 v5, 0x0
 
-    .line 118
+    .line 116
     :cond_5e
     iget-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1;->$this_retryWhen$inlined:Lkotlinx/coroutines/flow/Flow;
 
@@ -207,13 +207,13 @@
 
     move-wide p0, v9
 
-    .line 106
+    .line 104
     :goto_79
     check-cast p2, Ljava/lang/Throwable;
 
     if-eqz p2, :cond_ab
 
-    .line 120
+    .line 118
     iget-object v2, v6, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$retryWhen$$inlined$unsafeFlow$1;->$predicate$inlined:Lkotlin/jvm/functions/Function4;
 
     invoke-static {p0, p1}, Lkotlin/coroutines/jvm/internal/Boxing;->boxLong(J)Ljava/lang/Long;
@@ -280,14 +280,14 @@
 
     goto :goto_b1
 
-    .line 124
+    .line 122
     :cond_b0
     throw v2
 
     :goto_b1
     if-nez v2, :cond_5e
 
-    .line 109
+    .line 107
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0

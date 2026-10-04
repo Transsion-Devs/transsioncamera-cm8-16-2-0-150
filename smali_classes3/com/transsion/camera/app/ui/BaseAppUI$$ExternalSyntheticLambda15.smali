@@ -30,7 +30,7 @@
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda15;->f$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$95tfOti77112OuUQpMKXLVhQ5lA(Lcom/transsion/camera/app/ui/BaseAppUI;)V
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$wtj9mosKbu2AuLIivjV5c4C3BX4(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
     return-void
 .end method

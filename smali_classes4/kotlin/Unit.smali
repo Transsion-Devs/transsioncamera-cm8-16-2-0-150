@@ -23,7 +23,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 22
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public toString()Ljava/lang/String;
     .registers 1
 
-    .line 23
+    .line 14
     const-string p0, "kotlin.Unit"
 
     return-object p0

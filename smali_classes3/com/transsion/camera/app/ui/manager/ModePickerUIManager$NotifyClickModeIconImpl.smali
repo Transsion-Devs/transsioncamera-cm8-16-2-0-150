@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)V
     .registers 2
 
-    .line 1503
+    .line 1366
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$NotifyClickModeIconImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public notifyClickModeIcon()V
     .registers 2
 
-    .line 1506
+    .line 1369
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$NotifyClickModeIconImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     const/4 v0, 0x1

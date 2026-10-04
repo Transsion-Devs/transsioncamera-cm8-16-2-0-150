@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)V
     .registers 2
 
-    .line 593
+    .line 613
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$5;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onLongPress(Landroid/view/MotionEvent;)V
     .registers 2
 
-    .line 611
+    .line 631
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$5;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmCurrentType(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$IType;
@@ -50,7 +50,7 @@
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .registers 5
 
-    .line 602
+    .line 622
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$5;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmIsScrolling(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)Z
@@ -73,7 +73,7 @@
 
     if-lez p1, :cond_23
 
-    .line 603
+    .line 623
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$5;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmCurrentType(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$IType;
@@ -82,7 +82,7 @@
 
     invoke-interface {p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$IType;->onLongPressed()Z
 
-    .line 604
+    .line 624
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$5;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {p0, p2}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fputmIsScrolling(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;Z)V
@@ -94,7 +94,7 @@
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
     .registers 2
 
-    .line 596
+    .line 616
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$5;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$mhandleSingleTapUp(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;Landroid/view/MotionEvent;)Z

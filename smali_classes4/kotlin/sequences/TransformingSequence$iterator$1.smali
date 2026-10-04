@@ -30,10 +30,10 @@
 
     iput-object p1, p0, Lkotlin/sequences/TransformingSequence$iterator$1;->this$0:Lkotlin/sequences/TransformingSequence;
 
-    .line 207
+    .line 240
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 208
+    .line 241
     # getter for: Lkotlin/sequences/TransformingSequence;->sequence:Lkotlin/sequences/Sequence;
     invoke-static {p1}, Lkotlin/sequences/TransformingSequence;->access$getSequence$p(Lkotlin/sequences/TransformingSequence;)Lkotlin/sequences/Sequence;
 
@@ -53,7 +53,7 @@
 .method public hasNext()Z
     .registers 1
 
-    .line 214
+    .line 247
     iget-object p0, p0, Lkotlin/sequences/TransformingSequence$iterator$1;->iterator:Ljava/util/Iterator;
 
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
@@ -66,7 +66,7 @@
 .method public next()Ljava/lang/Object;
     .registers 2
 
-    .line 210
+    .line 243
     iget-object v0, p0, Lkotlin/sequences/TransformingSequence$iterator$1;->this$0:Lkotlin/sequences/TransformingSequence;
 
     # getter for: Lkotlin/sequences/TransformingSequence;->transformer:Lkotlin/jvm/functions/Function1;

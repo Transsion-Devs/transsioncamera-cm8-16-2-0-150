@@ -22,10 +22,10 @@
 .method private constructor <init>(Landroid/view/View;)V
     .registers 3
 
-    .line 197
+    .line 196
     invoke-direct {p0, p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$BaseViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 198
+    .line 197
     sget v0, Lcom/transsion/camera/featurelibs/aicommon/R$id;->ai_fragment_list_item_header_view:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -53,14 +53,14 @@
 .method bindView(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/HeaderItem;)V
     .registers 4
 
-    .line 203
+    .line 202
     iget-object p0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$HeaderViewHolder;->mTextView:Landroid/widget/TextView;
 
     sget-object v0, Lcom/transsion/camera/app_info/AppInfo;->app:Landroid/app/Application;
 
     sget v1, Lcom/transsion/camera/featurelibs/aicommon/R$string;->ai_fragment_list_item_header:I
 
-    .line 205
+    .line 204
     invoke-virtual {p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/HeaderItem;->getLimited()I
 
     move-result p1
@@ -73,7 +73,7 @@
 
     move-result-object p1
 
-    .line 203
+    .line 202
     invoke-virtual {v0, v1, p1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1

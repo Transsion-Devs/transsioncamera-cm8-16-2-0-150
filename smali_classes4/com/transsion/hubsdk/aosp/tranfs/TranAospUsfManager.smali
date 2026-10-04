@@ -326,7 +326,7 @@
 .method public enableNightNetwork(Z)V
     .registers 5
 
-    .line 275
+    .line 286
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;->mActivityManager:Landroid/app/ActivityManager;
 
     if-eqz v0, :cond_29
@@ -335,7 +335,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 277
+    .line 288
     :try_start_8
     const-string v1, "enableNightNetwork"
 
@@ -349,7 +349,7 @@
 
     move-result-object v0
 
-    .line 278
+    .line 289
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;->mActivityManager:Landroid/app/ActivityManager;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -368,7 +368,7 @@
 
     return-void
 
-    .line 280
+    .line 291
     :catch_22
     const-string p0, "TranAospUsfManager"
 
@@ -380,10 +380,69 @@
     return-void
 .end method
 
+.method public enableThermalUx(Ljava/lang/String;J)V
+    .registers 8
+
+    .line 251
+    iget-object v0, p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;->mActivityManager:Landroid/app/ActivityManager;
+
+    if-eqz v0, :cond_2b
+
+    iget-object v0, p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;->mActivityClass:Ljava/lang/Class;
+
+    if-eqz v0, :cond_2b
+
+    .line 253
+    :try_start_8
+    const-string v1, "enableThermalUx"
+
+    const-class v2, Ljava/lang/String;
+
+    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+
+    filled-new-array {v2, v3}, [Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    .line 254
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;->mActivityManager:Landroid/app/ActivityManager;
+
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p2
+
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_23
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_8 .. :try_end_23} :catch_24
+    .catch Ljava/lang/IllegalAccessException; {:try_start_8 .. :try_end_23} :catch_24
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_8 .. :try_end_23} :catch_24
+
+    return-void
+
+    .line 256
+    :catch_24
+    const-string p0, "TranAospUsfManager"
+
+    const-string p1, "Method not found: enableThermalUx"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2b
+    return-void
+.end method
+
 .method public fastFreeze(Ljava/lang/String;)V
     .registers 5
 
-    .line 251
+    .line 262
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;->mActivityManager:Landroid/app/ActivityManager;
 
     if-eqz v0, :cond_25
@@ -392,7 +451,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 253
+    .line 264
     :try_start_8
     const-string v1, "fastFreeze"
 
@@ -406,7 +465,7 @@
 
     move-result-object v0
 
-    .line 254
+    .line 265
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;->mActivityManager:Landroid/app/ActivityManager;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -421,7 +480,7 @@
 
     return-void
 
-    .line 256
+    .line 267
     :catch_1e
     const-string p0, "TranAospUsfManager"
 
@@ -495,7 +554,7 @@
 .method public fastUnfreeze(Ljava/lang/String;)V
     .registers 5
 
-    .line 263
+    .line 274
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;->mActivityManager:Landroid/app/ActivityManager;
 
     if-eqz v0, :cond_25
@@ -504,7 +563,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 265
+    .line 276
     :try_start_8
     const-string v1, "fastUnfreeze"
 
@@ -518,7 +577,7 @@
 
     move-result-object v0
 
-    .line 266
+    .line 277
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;->mActivityManager:Landroid/app/ActivityManager;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -533,7 +592,7 @@
 
     return-void
 
-    .line 268
+    .line 279
     :catch_1e
     const-string p0, "TranAospUsfManager"
 
@@ -828,7 +887,7 @@
 .method public isEnableNightNetwork()Z
     .registers 4
 
-    .line 287
+    .line 298
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;->mActivityManager:Landroid/app/ActivityManager;
 
     if-eqz v0, :cond_25
@@ -837,7 +896,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 289
+    .line 300
     :try_start_8
     const-string v1, "isEnableNightNetwork"
 
@@ -847,7 +906,7 @@
 
     move-result-object v0
 
-    .line 290
+    .line 301
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/tranfs/TranAospUsfManager;->mActivityManager:Landroid/app/ActivityManager;
 
     invoke-virtual {v0, p0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -856,7 +915,7 @@
 
     if-eqz p0, :cond_25
 
-    .line 292
+    .line 303
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -869,7 +928,7 @@
 
     return p0
 
-    .line 295
+    .line 306
     :catch_1e
     const-string p0, "TranAospUsfManager"
 

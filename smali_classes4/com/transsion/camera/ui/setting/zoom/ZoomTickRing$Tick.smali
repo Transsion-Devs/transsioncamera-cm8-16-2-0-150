@@ -44,7 +44,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;)V
     .registers 2
 
-    .line 1520
+    .line 1557
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -64,7 +64,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 1537
+    .line 1574
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

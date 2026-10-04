@@ -26,15 +26,15 @@
 .method public constructor <init>(Lcom/transsion/hubsdk/core/app/TranThubActivityManager;Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranAppRecoveryCallback;Landroid/os/IBinder;)V
     .registers 4
 
-    .line 1497
+    .line 1538
     iput-object p1, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranAppRecoveryCallback;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/app/ITranAppRecoveryCallback$Stub;-><init>()V
 
-    .line 1498
+    .line 1539
     iput-object p2, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranAppRecoveryCallback;->mCallback:Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranAppRecoveryCallback;
 
-    .line 1499
+    .line 1540
     iput-object p3, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranAppRecoveryCallback;->mBinder:Landroid/os/IBinder;
 
     return-void
@@ -45,7 +45,7 @@
 .method public onSaveStateWhenError(Landroid/os/Bundle;)V
     .registers 8
 
-    .line 1504
+    .line 1545
     const-string v0, "setActivityState error: "
 
     iget-object v1, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranAppRecoveryCallback;->mCallback:Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranAppRecoveryCallback;
@@ -63,7 +63,7 @@
 
     goto/16 :goto_9b
 
-    .line 1508
+    .line 1549
     :cond_10
     :try_start_10
     new-instance v1, Landroid/os/Bundle;
@@ -73,7 +73,7 @@
     .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_15} :catch_40
     .catchall {:try_start_10 .. :try_end_15} :catchall_42
 
-    .line 1509
+    .line 1550
     :try_start_15
     iget-object p1, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranAppRecoveryCallback;->mCallback:Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranAppRecoveryCallback;
 
@@ -82,7 +82,7 @@
     .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_1a} :catch_40
     .catchall {:try_start_15 .. :try_end_1a} :catchall_3e
 
-    .line 1515
+    .line 1556
     :try_start_1a
     iget-object p1, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranAppRecoveryCallback;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityManager;
 
@@ -102,7 +102,7 @@
     :catch_26
     move-exception p0
 
-    .line 1517
+    .line 1558
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->access$000()Ljava/lang/String;
 
@@ -149,7 +149,7 @@
     :goto_47
     const/4 v1, 0x0
 
-    .line 1512
+    .line 1553
     :try_start_48
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->access$000()Ljava/lang/String;
@@ -174,7 +174,7 @@
     :try_end_60
     .catchall {:try_start_48 .. :try_end_60} :catchall_3e
 
-    .line 1515
+    .line 1556
     :try_start_60
     iget-object p1, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranAppRecoveryCallback;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityManager;
 
@@ -194,7 +194,7 @@
     :catch_6c
     move-exception p0
 
-    .line 1517
+    .line 1558
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->access$000()Ljava/lang/String;
 
@@ -206,7 +206,7 @@
 
     goto :goto_30
 
-    .line 1515
+    .line 1556
     :goto_77
     :try_start_77
     iget-object v2, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranAppRecoveryCallback;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityManager;
@@ -227,7 +227,7 @@
     :catch_83
     move-exception p0
 
-    .line 1517
+    .line 1558
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->TAG:Ljava/lang/String;
     invoke-static {}, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->access$000()Ljava/lang/String;
 
@@ -247,7 +247,7 @@
 
     invoke-static {v1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1519
+    .line 1560
     :goto_9a
     throw p1
 

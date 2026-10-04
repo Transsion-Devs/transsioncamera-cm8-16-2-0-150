@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)V
     .registers 2
 
-    .line 202
+    .line 213
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
     :cond_8
     if-eqz p1, :cond_121
 
-    .line 209
+    .line 220
     invoke-static {}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p2
@@ -91,7 +91,7 @@
 
     move-result-object v2
 
-    .line 210
+    .line 221
     invoke-interface {v2}, Lcom/transsion/camera/app/common/mode/IAeAfLock;->currentLockState()Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     move-result-object v2
@@ -102,10 +102,10 @@
 
     move-result-object v1
 
-    .line 209
+    .line 220
     invoke-static {p2, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 211
+    .line 222
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
@@ -116,7 +116,7 @@
 
     invoke-virtual {p2, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 212
+    .line 223
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fgetmAllowUpdateResult(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)Z
@@ -163,7 +163,7 @@
 
     move-result-object p2
 
-    .line 213
+    .line 224
     invoke-interface {p2}, Lcom/transsion/camera/app/common/mode/IAeAfLock;->currentLockState()Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     move-result-object p2
@@ -174,7 +174,7 @@
 
     goto/16 :goto_121
 
-    .line 216
+    .line 227
     :cond_7c
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -202,27 +202,27 @@
 
     if-eqz p2, :cond_b3
 
-    .line 217
+    .line 228
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$mhideToast(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)V
 
-    .line 218
+    .line 229
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$mhideBoxView(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)V
 
-    .line 219
+    .line 230
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$mresetBoxViewRect(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)V
 
-    .line 220
+    .line 231
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$mresetLastQrcodeInfo(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)V
 
-    .line 221
+    .line 232
     invoke-static {}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -233,13 +233,13 @@
 
     return-void
 
-    .line 224
+    .line 235
     :cond_b3
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p2, v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fputmIsInitialLocation(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Z)V
 
-    .line 225
+    .line 236
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
@@ -256,7 +256,7 @@
 
     return-void
 
-    .line 229
+    .line 240
     :cond_c8
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
@@ -266,7 +266,7 @@
 
     if-eqz p1, :cond_e8
 
-    .line 230
+    .line 241
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
@@ -277,7 +277,7 @@
 
     invoke-virtual {p1, p2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 231
+    .line 242
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
@@ -290,18 +290,18 @@
 
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 233
+    .line 244
     :cond_e8
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p1, v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fputmIsClickToast(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Z)V
 
-    .line 234
+    .line 245
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$mresetLastQrcodeInfo(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)V
 
-    .line 235
+    .line 246
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fgetmIsInitialLocation(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)Z
@@ -310,12 +310,12 @@
 
     if-nez p1, :cond_121
 
-    .line 236
+    .line 247
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p1, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fputmIsInitialLocation(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Z)V
 
-    .line 237
+    .line 248
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
@@ -326,7 +326,7 @@
 
     invoke-virtual {p1, p2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 238
+    .line 249
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fgetmPopupWindow(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)Landroid/widget/PopupWindow;
@@ -339,7 +339,7 @@
 
     if-nez p1, :cond_121
 
-    .line 239
+    .line 250
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;

@@ -48,7 +48,7 @@
 
     iput-object p1, p0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3;->$action:Lkotlin/jvm/functions/Function2;
 
-    .line 115
+    .line 111
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -69,7 +69,7 @@
         }
     .end annotation
 
-    .line 116
+    .line 112
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3;->$action:Lkotlin/jvm/functions/Function2;
 
     invoke-interface {p0, p1, p2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -115,7 +115,7 @@
 
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
-    .line 116
+    .line 112
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collect$3;->$action:Lkotlin/jvm/functions/Function2;
 
     invoke-interface {p0, p1, p2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)V
     .registers 2
 
-    .line 3490
+    .line 3506
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onLiveVideoSaveCancelled(Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;)V
     .registers 5
 
-    .line 3493
+    .line 3509
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -47,7 +47,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3494
+    .line 3510
     const-string v0, "empty"
 
     const-wide/16 v1, -0x1
@@ -60,7 +60,7 @@
 .method public onLiveVideoSaveCompleted(Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;Ljava/lang/String;J)V
     .registers 7
 
-    .line 3500
+    .line 3516
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -69,17 +69,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3501
+    .line 3517
     invoke-virtual {p1, p2, p3, p4}, Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;->fillVideoPath(Ljava/lang/String;J)V
 
-    .line 3503
+    .line 3519
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;
 
     if-eqz p0, :cond_17
 
-    .line 3504
+    .line 3520
     check-cast p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->onLiveVideoSaveCompleted(Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;)V
@@ -91,7 +91,7 @@
 .method public onLiveVideoSaveException(Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;Ljava/lang/Throwable;)V
     .registers 5
 
-    .line 3510
+    .line 3526
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p2, p2, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -100,7 +100,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3511
+    .line 3527
     const-string p2, "empty"
 
     const-wide/16 v0, -0x1

@@ -25,6 +25,7 @@
 
     move-result-object v0
 
+    .line 28
     invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     .line 29

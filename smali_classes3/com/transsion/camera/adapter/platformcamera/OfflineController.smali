@@ -7,10 +7,6 @@
 .field private static mInstance:Lcom/transsion/camera/adapter/platformcamera/OfflineController;
 
 
-# instance fields
-.field private mTranUsfManager:Lcom/transsion/hubsdk/api/tranusf/TranUsfManager;
-
-
 # direct methods
 .method static constructor <clinit>()V
     .registers 0
@@ -21,26 +17,21 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 19
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
-    .line 16
-    iput-object v0, p0, Lcom/transsion/camera/adapter/platformcamera/OfflineController;->mTranUsfManager:Lcom/transsion/hubsdk/api/tranusf/TranUsfManager;
-
-    .line 20
+    .line 18
     const-string p0, "com.transsion.camera.featurelibs.offline.OfflineProcessJniImpl"
 
     invoke-static {p0}, Lcom/transsion/camera/utils/ReflectionUtils;->findClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object p0
 
-    if-eqz p0, :cond_18
+    if-eqz p0, :cond_15
 
     const/4 v0, 0x0
 
-    .line 22
+    .line 20
     new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/ReflectionUtils;->instance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -49,30 +40,30 @@
 
     invoke-static {p0}, Landroidx/appcompat/app/ToolbarActionBar$$ExternalSyntheticThrowCCEIfNotNull0;->m(Ljava/lang/Object;)V
 
-    :cond_18
+    :cond_15
     return-void
 .end method
 
 .method public static createInstance()V
     .registers 2
 
-    .line 27
+    .line 25
     sget-object v0, Lcom/transsion/camera/adapter/platformcamera/OfflineController;->mInstance:Lcom/transsion/camera/adapter/platformcamera/OfflineController;
 
     if-nez v0, :cond_19
 
-    .line 28
+    .line 26
     const-class v0, Lcom/transsion/camera/adapter/platformcamera/OfflineController;
 
     monitor-enter v0
 
-    .line 29
+    .line 27
     :try_start_7
     sget-object v1, Lcom/transsion/camera/adapter/platformcamera/OfflineController;->mInstance:Lcom/transsion/camera/adapter/platformcamera/OfflineController;
 
     if-nez v1, :cond_15
 
-    .line 30
+    .line 28
     new-instance v1, Lcom/transsion/camera/adapter/platformcamera/OfflineController;
 
     invoke-direct {v1}, Lcom/transsion/camera/adapter/platformcamera/OfflineController;-><init>()V
@@ -86,7 +77,7 @@
 
     goto :goto_17
 
-    .line 32
+    .line 30
     :cond_15
     :goto_15
     monitor-exit v0
@@ -107,15 +98,15 @@
 .method public static getInstance()Lcom/transsion/camera/adapter/platformcamera/OfflineController;
     .registers 1
 
-    .line 37
+    .line 35
     sget-object v0, Lcom/transsion/camera/adapter/platformcamera/OfflineController;->mInstance:Lcom/transsion/camera/adapter/platformcamera/OfflineController;
 
     if-nez v0, :cond_7
 
-    .line 38
+    .line 36
     invoke-static {}, Lcom/transsion/camera/adapter/platformcamera/OfflineController;->createInstance()V
 
-    .line 40
+    .line 38
     :cond_7
     sget-object v0, Lcom/transsion/camera/adapter/platformcamera/OfflineController;->mInstance:Lcom/transsion/camera/adapter/platformcamera/OfflineController;
 
@@ -146,6 +137,14 @@
     const/4 p0, 0x0
 
     return-object p0
+.end method
+
+.method public getUnProcessLength()I
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public initOffline()V

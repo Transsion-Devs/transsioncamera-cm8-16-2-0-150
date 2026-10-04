@@ -25,6 +25,8 @@
 
 .field private mEnableCallback:Z
 
+.field private final mHandler:Landroid/os/Handler;
+
 .field private mIsModeFeatureSupport:Z
 
 .field private mLastAzimuth:I
@@ -43,11 +45,20 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$NkndxEK9kFQjS6us1NzGs2xt0tc(Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;Ljava/lang/String;Ljava/lang/Object;)V
+.method public static synthetic $r8$lambda$PG5osK--sEw8G_fG8hRtrchNtDk(Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;)V
+    .registers 1
+
+    .line 0
+    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->lambda$new$0()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$V1LeD8VH6_lFTd_GLu3_D42WK_c(Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
     .line 0
-    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->lambda$new$0(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->lambda$new$1(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -82,7 +93,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 36
+    .line 38
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "MoonDetection"
@@ -91,7 +102,7 @@
 
     sput-object v0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 38
+    .line 40
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -116,40 +127,51 @@
 .method public constructor <init>()V
     .registers 3
 
-    .line 35
+    .line 37
     invoke-direct {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 43
+    .line 45
     iput v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mSceneType:I
 
     const/4 v1, 0x0
 
-    .line 44
+    .line 46
     iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mEnableCallback:Z
 
-    .line 48
+    .line 50
     iput v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mLastSceneType:I
 
-    .line 49
+    .line 51
     iput v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mLastAzimuth:I
 
-    .line 146
-    new-instance v0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$$ExternalSyntheticLambda0;
+    .line 52
+    new-instance v0, Landroid/os/Handler;
 
-    invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;)V
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mHandler:Landroid/os/Handler;
+
+    .line 149
+    new-instance v0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$$ExternalSyntheticLambda1;
+
+    invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 204
+    .line 207
     new-instance v0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$1;-><init>(Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
 
-    .line 240
+    .line 243
     new-instance v0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$2;-><init>(Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;)V
@@ -162,7 +184,7 @@
 .method private initSensorMag()V
     .registers 3
 
-    .line 226
+    .line 229
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mMoonSensorManager:Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;
 
     if-eqz v0, :cond_1c
@@ -177,14 +199,14 @@
 
     if-eqz v0, :cond_1c
 
-    .line 227
+    .line 230
     sget-object v0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "MoonDetection, initSensorMag"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 228
+    .line 231
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mMoonSensorManager:Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mContext:Landroid/content/Context;
@@ -195,24 +217,12 @@
     return-void
 .end method
 
-.method private synthetic lambda$new$0(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+.method private synthetic lambda$new$0()V
+    .registers 2
 
-    .line 147
-    const-string p2, "key_camera_zoom"
+    .line 152
+    iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
-    invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_17
-
-    .line 148
-    iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
-
-    if-eqz p1, :cond_17
-
-    .line 149
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->getKey()Ljava/lang/String;
 
     move-result-object p0
@@ -221,9 +231,40 @@
 
     move-result-object p0
 
-    invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;->requestChangeSettingValueJustSelf([Ljava/lang/String;)V
+    invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;->requestChangeSettingValueJustSelf([Ljava/lang/String;)V
 
-    :cond_17
+    return-void
+.end method
+
+.method private synthetic lambda$new$1(Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 5
+
+    .line 150
+    const-string p2, "key_camera_zoom"
+
+    invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_18
+
+    .line 151
+    iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
+
+    if-eqz p1, :cond_18
+
+    .line 152
+    iget-object p1, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mHandler:Landroid/os/Handler;
+
+    new-instance p2, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$$ExternalSyntheticLambda0;
+
+    invoke-direct {p2, p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;)V
+
+    const-wide/16 v0, 0x5
+
+    invoke-virtual {p1, p2, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    :cond_18
     return-void
 .end method
 
@@ -236,7 +277,7 @@
 
     if-ne p1, v0, :cond_15
 
-    .line 234
+    .line 237
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-static {}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetectionRestriciton;->getRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
@@ -256,7 +297,7 @@
     :cond_15
     if-nez p1, :cond_26
 
-    .line 236
+    .line 239
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-static {}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetectionRestriciton;->getRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
@@ -280,7 +321,7 @@
 .method public configCommand(Lcom/transsion/camera/adapter/CameraProxy;)V
     .registers 4
 
-    .line 283
+    .line 286
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -291,21 +332,21 @@
 
     move-result v0
 
-    .line 284
+    .line 287
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mEnableCallback:Z
 
     if-eqz v1, :cond_16
 
     if-eqz v0, :cond_16
 
-    .line 285
+    .line 288
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mCallback:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
 
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraProxy;->registerFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
 
     return-void
 
-    .line 287
+    .line 290
     :cond_16
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mCallback:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
 
@@ -317,10 +358,10 @@
 .method public configParameters(Lcom/transsion/camera/adapter/CameraParameters;)I
     .registers 8
 
-    .line 265
+    .line 268
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mParameters:Lcom/transsion/camera/adapter/CameraParameters;
 
-    .line 267
+    .line 270
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mMoonSensorManager:Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;
 
     if-eqz v0, :cond_16
@@ -335,7 +376,7 @@
 
     if-gez v0, :cond_16
 
-    .line 268
+    .line 271
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mMoonSensorManager:Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;->getAzimuth()F
@@ -347,11 +388,11 @@
     :cond_16
     const/high16 v0, 0x43870000    # 270.0f
 
-    .line 270
+    .line 273
     :goto_18
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setMoonDetectPitch(F)V
 
-    .line 271
+    .line 274
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->isOpenMoonDetection()Z
 
     move-result v0
@@ -381,20 +422,20 @@
     :cond_31
     move v0, v3
 
-    .line 272
+    .line 275
     :goto_32
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setMoonDetection(I)V
 
     if-nez v0, :cond_48
 
-    .line 273
+    .line 276
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
     move-result-object v4
 
     if-eqz v4, :cond_48
 
-    .line 274
+    .line 277
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
     move-result-object v4
@@ -405,7 +446,7 @@
 
     invoke-interface {v4, v5, v2}, Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;->onDataCallback(Ljava/lang/Object;I)V
 
-    .line 276
+    .line 279
     :cond_48
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
@@ -417,7 +458,7 @@
 
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setAiMoonMode(I)V
 
-    .line 277
+    .line 280
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -438,10 +479,10 @@
 .method enableCallback(Z)V
     .registers 2
 
-    .line 292
+    .line 295
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mEnableCallback:Z
 
-    .line 293
+    .line 296
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->sendSettingChangeRequest()V
 
     return-void
@@ -468,7 +509,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 92
+    .line 95
     const-string p0, "key_moon_detection"
 
     return-object p0
@@ -483,7 +524,7 @@
 .method public getPreviewStateCallback()Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
     .registers 1
 
-    .line 117
+    .line 120
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
 
     return-object p0
@@ -503,7 +544,7 @@
 .method public getSettingType()Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
     .registers 1
 
-    .line 87
+    .line 90
     sget-object p0, Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;->PHOTO:Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
 
     return-object p0
@@ -520,7 +561,7 @@
         }
     .end annotation
 
-    .line 112
+    .line 115
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p0
@@ -542,20 +583,20 @@
 .method public init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
     .registers 4
 
-    .line 64
+    .line 67
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
-    .line 65
+    .line 68
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mContext:Landroid/content/Context;
 
-    .line 66
+    .line 69
     new-instance p1, Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;
 
     invoke-direct {p1}, Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mMoonSensorManager:Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;
 
-    .line 68
+    .line 71
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_moon_detection_result"
@@ -564,7 +605,7 @@
 
     invoke-virtual {p1, p2, p3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 69
+    .line 72
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_camera_zoom"
@@ -589,7 +630,7 @@
         }
     .end annotation
 
-    .line 74
+    .line 77
     sget-object v0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -614,24 +655,24 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 76
+    .line 79
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mIsModeFeatureSupport:Z
 
     if-eqz v0, :cond_33
 
-    .line 77
+    .line 80
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedPlatformValues(Ljava/util/List;)V
 
-    .line 78
+    .line 81
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedEntryValues(Ljava/util/List;)V
 
-    .line 79
+    .line 82
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setEntryValues(Ljava/util/List;)V
 
-    .line 80
+    .line 83
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/setting/SettingBase;->setDefaultValue(Ljava/lang/String;)V
 
-    .line 81
+    .line 84
     const-string p1, "on"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
@@ -643,7 +684,7 @@
 .method public isOpenMoonDetection()Z
     .registers 6
 
-    .line 136
+    .line 139
     const-string v0, "key_camera_zoom"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
@@ -654,21 +695,21 @@
 
     move-result v0
 
-    .line 137
+    .line 140
     sget v1, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->ZOOM_RATIO_UNIT:F
 
     float-to-int v1, v1
 
     mul-int/lit8 v1, v1, 0x14
 
-    .line 138
+    .line 141
     const-string v2, "key_celebrity_scene"
 
     invoke-virtual {p0, v2}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 139
+    .line 142
     sget-object v2, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -703,10 +744,10 @@
 
     if-eqz p0, :cond_48
 
-    .line 142
+    .line 145
     const-string/jumbo v0, "val_celebrity_scene_none"
 
-    .line 143
+    .line 146
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
@@ -729,7 +770,7 @@
 
     if-eqz p1, :cond_82
 
-    .line 171
+    .line 174
     array-length v0, p1
 
     const/4 v1, 0x4
@@ -741,10 +782,10 @@
     :cond_8
     const/4 v0, 0x3
 
-    .line 176
+    .line 179
     aget p1, p1, v0
 
-    .line 178
+    .line 181
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mMoonSensorManager:Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;
 
     if-eqz v0, :cond_1f
@@ -759,7 +800,7 @@
 
     if-gez v0, :cond_1f
 
-    .line 179
+    .line 182
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mMoonSensorManager:Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;->getAzimuth()F
@@ -771,7 +812,7 @@
     :cond_1f
     const/high16 v0, 0x43870000    # 270.0f
 
-    .line 181
+    .line 184
     :goto_21
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
@@ -793,7 +834,7 @@
 
     if-eqz v1, :cond_44
 
-    .line 182
+    .line 185
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->getKey()Ljava/lang/String;
 
     move-result-object v3
@@ -804,20 +845,20 @@
 
     invoke-interface {v1, v3}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;->requestChangeSettingValueJustSelf([Ljava/lang/String;)V
 
-    .line 183
+    .line 186
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mLastAzimuth:I
 
-    .line 185
+    .line 188
     :cond_44
     iget v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mLastSceneType:I
 
     if-eq v0, p1, :cond_60
 
-    .line 186
+    .line 189
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_moon_detection_result"
@@ -832,19 +873,19 @@
 
     invoke-virtual {v0, v1, v3}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 187
+    .line 190
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mParameters:Lcom/transsion/camera/adapter/CameraParameters;
 
     if-eqz v0, :cond_5e
 
-    .line 188
+    .line 191
     invoke-virtual {v0, p1}, Lcom/transsion/camera/adapter/CameraParameters;->setMoonDetectResult(I)V
 
-    .line 190
+    .line 193
     :cond_5e
     iput p1, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mLastSceneType:I
 
-    .line 193
+    .line 196
     :cond_60
     iget v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mSceneType:I
 
@@ -854,11 +895,11 @@
 
     if-eq v0, p1, :cond_69
 
-    .line 195
+    .line 198
     :cond_67
     iput p1, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mSceneType:I
 
-    .line 198
+    .line 201
     :cond_69
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
@@ -866,7 +907,7 @@
 
     if-eqz v0, :cond_81
 
-    .line 200
+    .line 203
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -888,7 +929,7 @@
     :cond_81
     return-void
 
-    .line 172
+    .line 175
     :cond_82
     :goto_82
     sget-object p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -905,21 +946,21 @@
 
     monitor-enter p0
 
-    .line 128
+    .line 131
     :try_start_1
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->onModeClosed(Ljava/lang/String;)V
 
     const/4 p1, 0x0
 
-    .line 129
+    .line 132
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mIsModeFeatureSupport:Z
 
-    .line 130
+    .line 133
     const-string v0, "off"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 132
+    .line 135
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v0
@@ -928,7 +969,7 @@
     :try_end_13
     .catchall {:try_start_1 .. :try_end_13} :catchall_15
 
-    .line 133
+    .line 136
     monitor-exit p0
 
     return-void
@@ -947,10 +988,10 @@
 .method public onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
     .registers 4
 
-    .line 122
+    .line 125
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
 
-    .line 123
+    .line 126
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->getKey()Ljava/lang/String;
 
     move-result-object p1
@@ -967,7 +1008,7 @@
 .method public onValueChanged(Ljava/lang/String;)V
     .registers 6
 
-    .line 97
+    .line 100
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -978,7 +1019,7 @@
 
     if-nez v0, :cond_3a
 
-    .line 98
+    .line 101
     sget-object v0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -997,10 +1038,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 99
+    .line 102
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 100
+    .line 103
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->getKey()Ljava/lang/String;
@@ -1015,7 +1056,7 @@
 
     invoke-virtual {v0, v1, p1, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 101
+    .line 104
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->getKey()Ljava/lang/String;
@@ -1040,7 +1081,7 @@
 .method public pause()V
     .registers 3
 
-    .line 164
+    .line 167
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mMoonSensorManager:Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;
 
     if-eqz v0, :cond_16
@@ -1051,14 +1092,14 @@
 
     if-eqz v0, :cond_16
 
-    .line 165
+    .line 168
     sget-object v0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "MoonDetection, PauseSensorManager"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 166
+    .line 169
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mMoonSensorManager:Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;->unInitSensorMag()V
@@ -1076,7 +1117,7 @@
 .method public sendSettingChangeRequest()V
     .registers 2
 
-    .line 252
+    .line 255
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->getKey()Ljava/lang/String;
@@ -1091,22 +1132,22 @@
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
     .registers 4
 
-    .line 257
+    .line 260
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 258
+    .line 261
     const-string v0, "off"
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 259
+    .line 262
     const-string v1, "on"
 
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 260
+    .line 263
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->initValueAndSupport(Ljava/util/List;Ljava/lang/String;)V
 
     return-void
@@ -1133,23 +1174,23 @@
 .method public unInit()V
     .registers 4
 
-    .line 53
+    .line 56
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->unInit()V
 
     const/4 v0, -0x1
 
-    .line 54
+    .line 57
     iput v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mSceneType:I
 
-    .line 55
+    .line 58
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->mMoonSensorManager:Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;
 
     if-eqz v0, :cond_d
 
-    .line 56
+    .line 59
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/moondetection/MoonSensorManager;->unInitSensorMag()V
 
-    .line 58
+    .line 61
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
@@ -1159,7 +1200,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_camera_zoom"

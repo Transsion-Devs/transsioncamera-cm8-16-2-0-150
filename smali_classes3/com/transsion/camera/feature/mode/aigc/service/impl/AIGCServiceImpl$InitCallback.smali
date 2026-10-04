@@ -38,10 +38,10 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;)V
     .registers 5
 
-    .line 340
+    .line 339
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 341
+    .line 340
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$fgetmLooper(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;)Landroid/os/Looper;
@@ -54,7 +54,7 @@
 
     const-wide/16 v1, 0x2ee0
 
-    .line 342
+    .line 341
     invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
@@ -74,7 +74,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 334
+    .line 333
     check-cast p1, Landroid/os/Bundle;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$InitCallback;->invoke(Landroid/os/Bundle;)Lkotlin/Unit;
@@ -87,12 +87,12 @@
 .method public final invoke(Landroid/os/Bundle;)Lkotlin/Unit;
     .registers 3
 
-    .line 352
+    .line 351
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$InitCallback;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 353
+    .line 352
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$InitCallback;->onResult(Landroid/os/Bundle;)V
 
     const/4 p0, 0x0
@@ -108,7 +108,7 @@
 
     const/4 v0, 0x0
 
-    .line 347
+    .line 346
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$InitCallback;->invoke(Landroid/os/Bundle;)Lkotlin/Unit;
 
     return-void

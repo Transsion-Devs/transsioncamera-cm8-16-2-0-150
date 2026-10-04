@@ -14,15 +14,15 @@
 
 
 # static fields
-.field public static bg_ai_art_dialog:I = 0x7f08029b
+.field public static bg_ai_art_dialog:I = 0x7f080272
 
-.field public static ic_ai_art_guide_indicator:I = 0x7f0803ab
+.field public static ic_ai_art_guide_indicator:I = 0x7f080382
 
-.field public static img_ai_art_guide_part:I = 0x7f080823
+.field public static img_ai_art_guide_part:I = 0x7f0807b4
 
-.field public static img_ai_art_guide_style:I = 0x7f080824
+.field public static img_ai_art_guide_style:I = 0x7f0807b5
 
-.field public static img_ai_art_guide_travel:I = 0x7f080825
+.field public static img_ai_art_guide_travel:I = 0x7f0807b6
 
 
 # direct methods

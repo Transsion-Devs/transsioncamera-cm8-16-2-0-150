@@ -55,6 +55,12 @@
 
 .field private final mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
+.field private mIconLowLightColor:I
+
+.field private mIconOffColor:I
+
+.field private mIconOnColor:I
+
 .field private mIsZooming:Z
 
 .field private final mModeAboveMainCtrlInflateRoot:Landroid/view/ViewGroup;
@@ -152,7 +158,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 58
+    .line 59
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "Vlog_TopBarUI"
@@ -167,100 +173,100 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/IAppUI;IILcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$OnTopItemClick;)V
     .registers 8
 
-    .line 112
+    .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 87
+    .line 88
     const-string v0, "off"
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mPreviewSwitchValue:Ljava/lang/String;
 
     const/4 v0, 0x0
 
-    .line 96
+    .line 97
     iput v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBatteryStatus:I
 
-    .line 97
+    .line 98
     iput v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTemperatureStatus:I
 
-    .line 98
+    .line 99
     iput v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCurrentPage:I
 
     const/4 v1, 0x1
 
-    .line 99
+    .line 100
     iput v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTemplateOrientation:I
 
-    .line 108
+    .line 109
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mFirstPreviewArrived:Z
 
-    .line 849
+    .line 858
     new-instance v0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$1;-><init>(Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBackClickListener:Landroid/view/View$OnClickListener;
 
-    .line 858
+    .line 867
     new-instance v0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$2;-><init>(Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeClickListener:Landroid/view/View$OnClickListener;
 
-    .line 867
+    .line 876
     new-instance v0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$3;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$3;-><init>(Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mDraftBoxClickListener:Landroid/view/View$OnClickListener;
 
-    .line 113
+    .line 118
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 114
+    .line 119
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mAppRect:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 115
+    .line 120
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
-    .line 116
+    .line 121
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
-    .line 117
+    .line 122
     iput-object p5, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopItemClickListener:Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$OnTopItemClick;
 
-    .line 119
+    .line 124
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getAboveMainCtrlInflateRoot()Landroid/view/ViewGroup;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mModeAboveMainCtrlInflateRoot:Landroid/view/ViewGroup;
 
-    .line 120
+    .line 125
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mContext:Landroid/content/Context;
 
-    .line 122
+    .line 127
     iput p3, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mOrientation:I
 
-    .line 123
+    .line 128
     iput p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
-    .line 124
+    .line 129
     iput-object p4, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 125
+    .line 130
     invoke-interface {p4}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    .line 126
+    .line 131
     const-string p2, "key_fold_switch_preview"
 
     invoke-interface {p4, p2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
@@ -269,7 +275,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mPreviewSwitchValue:Ljava/lang/String;
 
-    .line 127
+    .line 132
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
@@ -282,7 +288,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopBar:[Ljava/lang/String;
 
-    .line 128
+    .line 133
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
@@ -295,7 +301,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mFullTopBar:[Ljava/lang/String;
 
-    .line 129
+    .line 134
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
@@ -308,18 +314,45 @@
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeTopBar:[Ljava/lang/String;
 
-    .line 130
+    .line 135
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object p1
+    move-result-object p2
 
-    sget p2, Lcom/transsion/camera/feature/vlog/R$array;->vlog_top_bar_setting_ui_entries_expanded:I
+    sget p3, Lcom/transsion/camera/feature/vlog/R$array;->vlog_top_bar_setting_ui_entries_expanded:I
 
-    invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+    invoke-virtual {p2, p3}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p2
 
-    iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mExpandTopBar:[Ljava/lang/String;
+    iput-object p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mExpandTopBar:[Ljava/lang/String;
+
+    .line 136
+    const-string/jumbo p2, "top_bar_animation_icon_on"
+
+    invoke-static {p1, p2}, Lcom/transsion/camera/utils/CameraUtil;->getColor(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result p2
+
+    iput p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIconOnColor:I
+
+    .line 137
+    const-string/jumbo p2, "top_bar_animation_icon_off"
+
+    invoke-static {p1, p2}, Lcom/transsion/camera/utils/CameraUtil;->getColor(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result p2
+
+    iput p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIconOffColor:I
+
+    .line 138
+    const-string/jumbo p2, "top_bar_animation_icon_low_light"
+
+    invoke-static {p1, p2}, Lcom/transsion/camera/utils/CameraUtil;->getColor(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result p1
+
+    iput p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIconLowLightColor:I
 
     return-void
 .end method
@@ -342,7 +375,7 @@
 
     if-eqz p1, :cond_2f
 
-    .line 614
+    .line 623
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -351,7 +384,7 @@
 
     goto :goto_2f
 
-    .line 618
+    .line 627
     :cond_a
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -372,7 +405,7 @@
 
     if-eqz v0, :cond_e
 
-    .line 619
+    .line 628
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -401,7 +434,7 @@
 .method private hideRoot()V
     .registers 2
 
-    .line 814
+    .line 823
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mRootView:Landroid/view/ViewGroup;
 
     const/16 v0, 0x8
@@ -418,7 +451,7 @@
 
     goto :goto_52
 
-    .line 634
+    .line 643
     :cond_3
     const-string v0, "key_vlog_back"
 
@@ -432,12 +465,12 @@
 
     if-eqz v0, :cond_14
 
-    .line 635
+    .line 644
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBackClickListener:Landroid/view/View$OnClickListener;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 638
+    .line 647
     :cond_14
     const-string v0, "key_vlog_compose"
 
@@ -451,12 +484,12 @@
 
     if-eqz v0, :cond_25
 
-    .line 639
+    .line 648
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeClickListener:Landroid/view/View$OnClickListener;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 642
+    .line 651
     :cond_25
     const-string v0, "key_vlog_draft"
 
@@ -470,45 +503,45 @@
 
     if-eqz v0, :cond_36
 
-    .line 643
+    .line 652
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mDraftBoxClickListener:Landroid/view/View$OnClickListener;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 646
+    .line 655
     :cond_36
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_3d
 
-    .line 647
+    .line 656
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
-    .line 650
+    .line 659
     :cond_3d
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_44
 
-    .line 651
+    .line 660
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setHintControl(Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;)V
 
-    .line 654
+    .line 663
     :cond_44
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSettingOptionControl:Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;
 
     if-eqz v0, :cond_4b
 
-    .line 655
+    .line 664
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setSettingOptionControl(Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;)V
 
-    .line 658
+    .line 667
     :cond_4b
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz p0, :cond_52
 
-    .line 659
+    .line 668
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 
     :cond_52
@@ -521,7 +554,7 @@
 
     const/4 v0, 0x1
 
-    .line 686
+    .line 695
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
     return-void
@@ -530,7 +563,7 @@
 .method private synthetic lambda$onSettingReady$0()V
     .registers 3
 
-    .line 166
+    .line 174
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mNeedCompose:Z
 
     const/4 v1, 0x0
@@ -543,7 +576,7 @@
 .method private synthetic lambda$updateTopBarLayout$1(Landroid/view/View;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .registers 5
 
-    .line 566
+    .line 575
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result p3
@@ -560,20 +593,20 @@
 
     goto :goto_1a
 
-    .line 573
+    .line 582
     :cond_d
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->stopPressedAnimator(Landroid/view/View;)V
 
-    .line 574
+    .line 583
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->stopTouching(Landroid/view/View;)V
 
     goto :goto_1a
 
-    .line 568
+    .line 577
     :cond_14
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->startPressedAnimator(Landroid/view/View;)V
 
-    .line 569
+    .line 578
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->startTouching(Landroid/view/View;)V
 
     :goto_1a
@@ -585,14 +618,14 @@
 .method private showRoot()V
     .registers 3
 
-    .line 809
+    .line 818
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mRootView:Landroid/view/ViewGroup;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 810
+    .line 819
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mRootView:Landroid/view/ViewGroup;
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -605,14 +638,14 @@
 .method private startPressedAnimator(Landroid/view/View;)V
     .registers 4
 
-    .line 665
+    .line 674
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
     invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 666
+    .line 675
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
@@ -641,7 +674,7 @@
 .method private stopPressedAnimator(Landroid/view/View;)V
     .registers 4
 
-    .line 670
+    .line 679
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
@@ -670,7 +703,7 @@
 .method private unInitTopBarSettingUIs()V
     .registers 3
 
-    .line 674
+    .line 683
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopBarItemUIs:Ljava/util/List;
 
     if-eqz v0, :cond_25
@@ -681,7 +714,7 @@
 
     if-lez v0, :cond_25
 
-    .line 675
+    .line 684
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopBarItemUIs:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -701,12 +734,12 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 676
+    .line 685
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->unInit()V
 
     goto :goto_10
 
-    .line 678
+    .line 687
     :cond_20
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopBarItemUIs:Ljava/util/List;
 
@@ -719,10 +752,10 @@
 .method private updateLayout(Z)V
     .registers 3
 
-    .line 737
+    .line 746
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopContainerOrientation(Z)V
 
-    .line 738
+    .line 747
     iget p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
     const/4 v0, 0x1
@@ -731,14 +764,14 @@
 
     const/4 p1, 0x0
 
-    .line 739
+    .line 748
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarState(Z)V
 
-    .line 741
+    .line 750
     :cond_c
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateVlogToolBarLayout()V
 
-    .line 742
+    .line 751
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarLayout()V
 
     return-void
@@ -747,14 +780,14 @@
 .method private updateTopBarLayout()V
     .registers 13
 
-    .line 406
+    .line 414
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     if-nez v0, :cond_6
 
     goto/16 :goto_1cd
 
-    .line 409
+    .line 417
     :cond_6
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mContext:Landroid/content/Context;
 
@@ -762,28 +795,28 @@
 
     move-result-object v0
 
-    .line 411
+    .line 419
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mAppRect:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getToolBarOriginPaddingHeight()I
 
     move-result v1
 
-    .line 412
+    .line 420
     sget v2, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_horizontal_padding:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    .line 413
+    .line 421
     sget v3, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_horizontal_padding_tb_hover:I
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v3
 
-    .line 415
+    .line 423
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -794,18 +827,18 @@
 
     const/4 v5, 0x0
 
-    .line 416
+    .line 424
     invoke-virtual {v4, v5, v5, v5, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 418
+    .line 426
     iget-object v6, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     invoke-virtual {v6, v5, v5, v5, v5}, Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;->setPaddingByTopBarScroll(IIII)V
 
-    .line 420
+    .line 428
     iget v6, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCorrectOrientation:I
 
-    .line 421
+    .line 429
     iget-boolean v7, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mbSegmentDragging:Z
 
     const/4 v8, 0x1
@@ -816,10 +849,10 @@
 
     if-ne v7, v8, :cond_3c
 
-    .line 422
+    .line 430
     iget v6, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mFixedOrientation:I
 
-    .line 425
+    .line 433
     :cond_3c
     iget v7, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
@@ -839,10 +872,10 @@
 
     if-eq v6, v1, :cond_71
 
-    .line 453
+    .line 461
     iput v9, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 454
+    .line 462
     sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_expand_height:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -851,7 +884,7 @@
 
     iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 455
+    .line 463
     sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_expand_width:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -860,7 +893,7 @@
 
     iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 457
+    .line 465
     sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_root_margin_top_expand_0:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -869,7 +902,7 @@
 
     iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 458
+    .line 466
     sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_root_margin_left_expand_0:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -882,6 +915,94 @@
 
     :cond_71
     const/16 v1, 0x35
+
+    .line 444
+    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+
+    .line 445
+    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_expand_width:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    .line 446
+    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_expand_height:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
+
+    .line 448
+    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_root_margin_top_expand_90:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+
+    .line 449
+    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_root_margin_left_expand_90:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iput v0, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+
+    goto :goto_df
+
+    :cond_96
+    const/16 v1, 0x55
+
+    .line 452
+    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+
+    .line 453
+    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_expand_height:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    .line 454
+    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_expand_width:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
+
+    .line 456
+    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_root_margin_top_expand_0:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    .line 457
+    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_root_margin_left_expand_0:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    iput v0, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+
+    goto :goto_df
+
+    :cond_bb
+    const/16 v1, 0x53
 
     .line 436
     iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
@@ -911,7 +1032,7 @@
 
     move-result v1
 
-    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     .line 441
     sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_root_margin_left_expand_90:I
@@ -920,97 +1041,9 @@
 
     move-result v0
 
-    iput v0, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    goto :goto_df
-
-    :cond_96
-    const/16 v1, 0x55
-
-    .line 444
-    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
-    .line 445
-    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_expand_height:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
-
-    .line 446
-    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_expand_width:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
-
-    .line 448
-    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_root_margin_top_expand_0:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
-
-    .line 449
-    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_root_margin_left_expand_0:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v0
-
-    iput v0, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
-
-    goto :goto_df
-
-    :cond_bb
-    const/16 v1, 0x53
-
-    .line 428
-    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
-    .line 429
-    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_expand_width:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
-
-    .line 430
-    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_expand_height:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
-
-    .line 432
-    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_root_margin_top_expand_90:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
-
-    .line 433
-    sget v1, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_root_margin_left_expand_90:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v0
-
     iput v0, v4, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 461
+    .line 469
     :goto_df
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
@@ -1022,7 +1055,7 @@
 
     goto/16 :goto_172
 
-    .line 462
+    .line 470
     :cond_ea
     iget-object v7, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
@@ -1040,7 +1073,7 @@
 
     if-eqz v7, :cond_152
 
-    .line 463
+    .line 471
     invoke-static {}, Lcom/transsion/camera/utils/ScreenUtils;->getScreenSize()Landroid/util/Size;
 
     move-result-object v1
@@ -1053,27 +1086,27 @@
 
     sub-int/2addr v1, v3
 
-    .line 464
+    .line 472
     sget v2, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_height:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    .line 465
+    .line 473
     iput v11, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 466
+    .line 474
     iput v10, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 467
+    .line 475
     iget v7, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
     const/4 v10, 0x3
 
     if-ne v7, v10, :cond_13d
 
-    .line 468
+    .line 476
     iget-object v7, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mPreviewSwitchValue:Ljava/lang/String;
 
     const-string v9, "off"
@@ -1086,10 +1119,10 @@
 
     const/16 v7, 0x50
 
-    .line 469
+    .line 477
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 470
+    .line 478
     sget v7, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_height_margin_bottom_hover:I
 
     invoke-virtual {v0, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1103,10 +1136,10 @@
     :cond_128
     const/16 v7, 0x30
 
-    .line 472
+    .line 480
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 473
+    .line 481
     sget v7, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_height_margin_top_hover:I
 
     invoke-virtual {v0, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1115,7 +1148,7 @@
 
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 475
+    .line 483
     :goto_134
     sget v7, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_margin_bottom_hover:I
 
@@ -1127,11 +1160,11 @@
 
     goto :goto_147
 
-    .line 477
+    .line 485
     :cond_13d
     iput v9, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 478
+    .line 486
     sget v7, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_setting_top_bar_height_margin_top_normal:I
 
     invoke-virtual {v0, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1140,26 +1173,26 @@
 
     iput v0, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 480
+    .line 488
     :goto_147
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     invoke-virtual {v0, v3, v5, v3, v5}, Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;->setPaddingByTopBarScroll(IIII)V
 
-    .line 481
+    .line 489
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;->initWidthAndHeight(II)V
 
     goto :goto_172
 
-    .line 482
+    .line 490
     :cond_152
     iget v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
     if-nez v0, :cond_172
 
-    .line 483
+    .line 491
     invoke-static {}, Lcom/transsion/camera/utils/ScreenUtils;->getScreenSize()Landroid/util/Size;
 
     move-result-object v0
@@ -1172,35 +1205,35 @@
 
     sub-int/2addr v0, v2
 
-    .line 484
+    .line 492
     iput v9, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 485
+    .line 493
     iput v11, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 486
+    .line 494
     iput v10, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 487
+    .line 495
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     invoke-virtual {v3, v2, v1, v2, v5}, Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;->setPaddingByTopBarScroll(IIII)V
 
-    .line 488
+    .line 496
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     iget v2, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     invoke-virtual {v1, v0, v2}, Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;->initWidthAndHeight(II)V
 
-    .line 490
+    .line 498
     :cond_172
     :goto_172
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 491
+    .line 499
     sget-object v0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1237,7 +1270,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mContext:Landroid/content/Context;
 
-    .line 492
+    .line 500
     invoke-static {v2}, Lcom/transsion/camera/utils/ScreenUtils;->getRealScreenSize(Landroid/content/Context;)Landroid/util/Size;
 
     move-result-object v2
@@ -1248,15 +1281,15 @@
 
     move-result-object v1
 
-    .line 491
+    .line 499
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 493
+    .line 501
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     if-eqz v0, :cond_1cd
 
-    .line 494
+    .line 502
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -1264,19 +1297,19 @@
     :goto_1b9
     if-ge v5, v0, :cond_1cd
 
-    .line 496
+    .line 504
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 497
+    .line 505
     instance-of v2, v1, Lcom/transsion/camera/app/ui/widget/IRotatable;
 
     if-eqz v2, :cond_1ca
 
-    .line 498
+    .line 506
     check-cast v1, Lcom/transsion/camera/app/ui/widget/IRotatable;
 
     invoke-interface {v1, v6, v8}, Lcom/transsion/camera/app/ui/widget/IRotatable;->setOrientation(IZ)V
@@ -1307,14 +1340,14 @@
 
     if-eqz p1, :cond_28
 
-    .line 591
+    .line 600
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-lez v0, :cond_28
 
-    .line 592
+    .line 601
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1335,7 +1368,7 @@
 
     if-eqz v1, :cond_c
 
-    .line 593
+    .line 602
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v2
@@ -1346,7 +1379,7 @@
 
     if-nez v2, :cond_c
 
-    .line 594
+    .line 603
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->unInit()V
 
     goto :goto_c
@@ -1354,14 +1387,14 @@
     :cond_28
     if-eqz p2, :cond_6d
 
-    .line 599
+    .line 608
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-lez v0, :cond_6d
 
-    .line 600
+    .line 609
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -1382,7 +1415,7 @@
 
     if-eqz v0, :cond_4f
 
-    .line 601
+    .line 610
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -1393,10 +1426,10 @@
 
     if-nez v1, :cond_4f
 
-    .line 602
+    .line 611
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->initTopBarItemUI(Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;)V
 
-    .line 604
+    .line 613
     :cond_4f
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -1404,7 +1437,7 @@
 
     if-eqz v0, :cond_34
 
-    .line 605
+    .line 614
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getSettingProvide()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
 
     move-result-object v1
@@ -1417,10 +1450,10 @@
 
     move-result-object v1
 
-    .line 606
+    .line 615
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    .line 607
+    .line 616
     iget v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBatteryStatus:I
 
     iget v2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTemperatureStatus:I
@@ -1438,7 +1471,7 @@
 .method private updateTopBarState(Z)V
     .registers 6
 
-    .line 178
+    .line 186
     sget-object v0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1475,7 +1508,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 180
+    .line 188
     iget v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCurrentPage:I
 
     const/4 v1, 0x2
@@ -1491,22 +1524,22 @@
     :cond_36
     if-nez v0, :cond_85
 
-    .line 202
+    .line 210
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->hideTopBarRoot()V
 
-    .line 203
+    .line 211
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->hideVlogToolBarRoot()V
 
     return-void
 
-    .line 181
+    .line 189
     :cond_3f
     :goto_3f
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSegmentPlay:Z
 
     if-nez v0, :cond_85
 
-    .line 182
+    .line 190
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mNeedCompose:Z
@@ -1525,30 +1558,30 @@
     :goto_4e
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 183
+    .line 191
     iget v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
     if-eq v0, v2, :cond_72
 
-    .line 184
+    .line 192
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->hideVlogToolBarRoot()V
 
-    .line 185
+    .line 193
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->showTopBarRoot()V
 
-    .line 186
+    .line 194
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSegmentFull:Z
 
     if-eqz v0, :cond_65
 
-    .line 187
+    .line 195
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mFullTopBar:[Ljava/lang/String;
 
     invoke-virtual {p0, p1, v3}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarViews([Ljava/lang/String;Z)V
 
     return-void
 
-    .line 189
+    .line 197
     :cond_65
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mNeedCompose:Z
 
@@ -1566,25 +1599,25 @@
 
     return-void
 
-    .line 192
+    .line 200
     :cond_72
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->showVlogToolBarRoot()V
 
-    .line 193
+    .line 201
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSegmentFull:Z
 
     if-eqz p1, :cond_7d
 
-    .line 194
+    .line 202
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->hideTopBarRoot()V
 
     return-void
 
-    .line 196
+    .line 204
     :cond_7d
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->showTopBarRoot()V
 
-    .line 197
+    .line 205
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mExpandTopBar:[Ljava/lang/String;
 
     invoke-virtual {p0, p1, v3}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarViews([Ljava/lang/String;Z)V
@@ -1596,7 +1629,7 @@
 .method private updateVlogToolBarLayout()V
     .registers 14
 
-    .line 331
+    .line 339
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogToolBarRoot:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_e4
@@ -1609,7 +1642,7 @@
 
     goto/16 :goto_e4
 
-    .line 336
+    .line 344
     :cond_b
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mContext:Landroid/content/Context;
 
@@ -1617,7 +1650,7 @@
 
     move-result-object v0
 
-    .line 338
+    .line 346
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogToolBarRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1626,7 +1659,7 @@
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 339
+    .line 347
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBackButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1635,7 +1668,7 @@
 
     check-cast v3, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 340
+    .line 348
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1644,10 +1677,10 @@
 
     check-cast v4, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 342
+    .line 350
     iget v5, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCorrectOrientation:I
 
-    .line 343
+    .line 351
     iget-boolean v6, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mbSegmentDragging:Z
 
     if-eqz v6, :cond_35
@@ -1656,10 +1689,10 @@
 
     if-ne v6, v1, :cond_35
 
-    .line 344
+    .line 352
     iget v5, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mFixedOrientation:I
 
-    .line 347
+    .line 355
     :cond_35
     iget v6, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
@@ -1691,22 +1724,22 @@
 
     if-eq v5, v1, :cond_70
 
-    .line 387
+    .line 395
     iput v8, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 388
+    .line 396
     iput v11, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 389
+    .line 397
     iput v10, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 390
+    .line 398
     iput v7, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 391
+    .line 399
     iput v12, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 393
+    .line 401
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogToolBarRoot:Landroid/widget/FrameLayout;
 
     sget v5, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_expand:I
@@ -1717,85 +1750,85 @@
 
     sget v6, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_top_expand_0:I
 
-    .line 394
+    .line 402
     invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v6
 
     sget v7, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_expand:I
 
-    .line 395
+    .line 403
     invoke-virtual {v0, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
-    .line 393
+    .line 401
     invoke-virtual {v1, v5, v6, v0, v9}, Landroid/view/View;->setPadding(IIII)V
 
     goto :goto_d5
 
-    .line 374
+    .line 382
     :cond_70
     iput v12, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 375
+    .line 383
     iput v10, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 376
+    .line 384
     iput v11, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 377
+    .line 385
     iput v8, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 378
+    .line 386
     iput v6, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 380
+    .line 388
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogToolBarRoot:Landroid/widget/FrameLayout;
 
     sget v5, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_expand:I
 
-    .line 381
+    .line 389
     invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v5
 
     sget v6, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_top_expand_90:I
 
-    .line 382
+    .line 390
     invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v6
 
     sget v7, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_expand:I
 
-    .line 383
+    .line 391
     invoke-virtual {v0, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
-    .line 380
+    .line 388
     invoke-virtual {v1, v9, v5, v6, v0}, Landroid/view/View;->setPadding(IIII)V
 
     goto :goto_d5
 
-    .line 362
+    .line 370
     :cond_92
     iput v6, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 363
+    .line 371
     iput v11, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 364
+    .line 372
     iput v10, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 365
+    .line 373
     iput v12, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 366
+    .line 374
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 368
+    .line 376
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogToolBarRoot:Landroid/widget/FrameLayout;
 
     sget v5, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_expand:I
@@ -1806,40 +1839,40 @@
 
     sget v6, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_expand:I
 
-    .line 370
+    .line 378
     invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v6
 
     sget v7, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_top_expand_0:I
 
-    .line 371
+    .line 379
     invoke-virtual {v0, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
-    .line 368
+    .line 376
     invoke-virtual {v1, v5, v9, v6, v0}, Landroid/view/View;->setPadding(IIII)V
 
     goto :goto_d5
 
-    .line 350
+    .line 358
     :cond_b4
     iput v7, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 351
+    .line 359
     iput v10, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 352
+    .line 360
     iput v11, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 353
+    .line 361
     iput v6, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 354
+    .line 362
     iput v8, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 356
+    .line 364
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogToolBarRoot:Landroid/widget/FrameLayout;
 
     sget v5, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_top_expand_90:I
@@ -1850,34 +1883,34 @@
 
     sget v6, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_expand:I
 
-    .line 357
+    .line 365
     invoke-virtual {v0, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v6
 
     sget v7, Lcom/transsion/camera/feature/vlog/R$dimen;->vlog_cutsame_editor_topbar_padding_expand:I
 
-    .line 359
+    .line 367
     invoke-virtual {v0, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
-    .line 356
+    .line 364
     invoke-virtual {v1, v5, v6, v9, v0}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 400
+    .line 408
     :cond_d5
     :goto_d5
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogToolBarRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 401
+    .line 409
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBackButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 402
+    .line 410
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {p0, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -1908,25 +1941,25 @@
 
     if-eqz p1, :cond_6c
 
-    .line 517
+    .line 525
     array-length v0, p1
 
     if-nez v0, :cond_6
 
     goto :goto_6c
 
-    .line 520
+    .line 528
     :cond_6
     const-string v0, "SettingUIProvider getTopBarItemUIList"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/debug/TraceUtil;->begin(Ljava/lang/String;)V
 
-    .line 521
+    .line 529
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 522
+    .line 530
     array-length v1, p1
 
     const/4 v2, 0x0
@@ -1936,7 +1969,7 @@
 
     aget-object v3, p1, v2
 
-    .line 523
+    .line 531
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1955,28 +1988,28 @@
 
     if-eqz v4, :cond_4f
 
-    .line 524
+    .line 532
     invoke-interface {v4}, Lcom/transsion/camera/app/common/provider/ISettingUIEntry;->isSupported()Z
 
     move-result v5
 
     if-eqz v5, :cond_4f
 
-    .line 525
+    .line 533
     invoke-interface {v4}, Lcom/transsion/camera/app/common/provider/ISettingUIEntry;->getTopBarItemUI()Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
     move-result-object v5
 
     if-nez v5, :cond_49
 
-    .line 527
+    .line 535
     invoke-interface {v4}, Lcom/transsion/camera/app/common/provider/ISettingUIEntry;->createTopBarItemUI()Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
     move-result-object v5
 
     if-eqz p2, :cond_49
 
-    .line 528
+    .line 536
     invoke-interface {p2, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v3
@@ -1987,21 +2020,21 @@
 
     const/4 v3, 0x1
 
-    .line 529
+    .line 537
     invoke-interface {v5, v3}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setIsSellingPoint(Z)V
 
-    .line 530
+    .line 538
     invoke-interface {v5, p3}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setPointRes(Landroid/graphics/drawable/Drawable;)V
 
     :cond_49
     if-eqz v5, :cond_65
 
-    .line 534
+    .line 542
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_65
 
-    .line 537
+    .line 545
     :cond_4f
     sget-object v4, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2027,13 +2060,13 @@
 
     goto :goto_12
 
-    .line 540
+    .line 548
     :cond_68
     invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
 
     return-object v0
 
-    .line 518
+    .line 526
     :cond_6c
     :goto_6c
     new-instance p0, Ljava/util/ArrayList;
@@ -2046,7 +2079,7 @@
 .method public hideTopBarRoot()V
     .registers 3
 
-    .line 818
+    .line 827
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogSettingTopBarRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -2059,7 +2092,7 @@
 
     return-void
 
-    .line 821
+    .line 830
     :cond_b
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogSettingTopBarRoot:Landroid/widget/FrameLayout;
 
@@ -2071,7 +2104,7 @@
 .method public hideVlogToolBarRoot()V
     .registers 2
 
-    .line 836
+    .line 845
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogToolBarRoot:Landroid/widget/FrameLayout;
 
     const/16 v0, 0x8
@@ -2084,7 +2117,7 @@
 .method public init()V
     .registers 5
 
-    .line 143
+    .line 151
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -2099,7 +2132,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    .line 146
+    .line 154
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mModeAboveMainCtrlInflateRoot:Landroid/view/ViewGroup;
 
     sget v1, Lcom/transsion/camera/feature/vlog/R$id;->vlog_top_bar_root:I
@@ -2112,7 +2145,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mRootView:Landroid/view/ViewGroup;
 
-    .line 147
+    .line 155
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mModeAboveMainCtrlInflateRoot:Landroid/view/ViewGroup;
 
     sget v1, Lcom/transsion/camera/feature/vlog/R$id;->vlog_setting_top_bar_root:I
@@ -2125,7 +2158,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogSettingTopBarRoot:Landroid/widget/FrameLayout;
 
-    .line 148
+    .line 156
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mModeAboveMainCtrlInflateRoot:Landroid/view/ViewGroup;
 
     sget v1, Lcom/transsion/camera/feature/vlog/R$id;->vlog_top_tool_bar_layout:I
@@ -2138,7 +2171,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogToolBarRoot:Landroid/widget/FrameLayout;
 
-    .line 149
+    .line 157
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mModeAboveMainCtrlInflateRoot:Landroid/view/ViewGroup;
 
     sget v1, Lcom/transsion/camera/feature/vlog/R$id;->vlog_setting_top_bar_container:I
@@ -2151,7 +2184,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
-    .line 150
+    .line 158
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mModeAboveMainCtrlInflateRoot:Landroid/view/ViewGroup;
 
     sget v1, Lcom/transsion/camera/feature/vlog/R$id;->vlog_back:I
@@ -2164,7 +2197,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBackButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
-    .line 151
+    .line 159
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mModeAboveMainCtrlInflateRoot:Landroid/view/ViewGroup;
 
     sget v1, Lcom/transsion/camera/feature/vlog/R$id;->vlog_compose:I
@@ -2177,19 +2210,19 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
-    .line 152
+    .line 160
     iget v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
     const/16 v1, 0x8
 
     if-eq v0, v3, :cond_61
 
-    .line 153
+    .line 161
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogToolBarRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 155
+    .line 163
     :cond_61
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
@@ -2197,29 +2230,29 @@
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;->updateScreenFormType(I)V
 
-    .line 156
+    .line 164
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 157
+    .line 165
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBackButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBackClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 158
+    .line 166
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 160
+    .line 168
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateVlogToolBarLayout()V
 
-    .line 161
+    .line 169
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarLayout()V
 
     return-void
@@ -2296,74 +2329,74 @@
 
     goto/16 :goto_10f
 
-    .line 264
+    .line 272
     :pswitch_3f
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSegmentFull:Z
 
     return-void
 
-    .line 261
+    .line 269
     :pswitch_42
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSegmentFull:Z
 
     return-void
 
-    .line 255
+    .line 263
     :pswitch_45
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBar(ZZ)V
 
     return-void
 
-    .line 258
+    .line 266
     :pswitch_49
     invoke-virtual {p0, v1, v1}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBar(ZZ)V
 
     return-void
 
-    .line 272
+    .line 280
     :pswitch_4d
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSegmentPlay:Z
 
-    .line 273
+    .line 281
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
-    .line 274
+    .line 282
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->showRoot()V
 
-    .line 275
+    .line 283
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mNeedCompose:Z
 
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBar(ZZ)V
 
     return-void
 
-    .line 267
+    .line 275
     :pswitch_5b
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSegmentPlay:Z
 
-    .line 268
+    .line 276
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
-    .line 269
+    .line 277
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->hideRoot()V
 
     return-void
 
-    .line 238
+    .line 246
     :pswitch_64
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mbRecording:Z
 
-    .line 239
+    .line 247
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
     if-nez p1, :cond_6e
 
-    .line 240
+    .line 248
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIsZooming:Z
 
-    .line 242
+    .line 250
     :cond_6e
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -2373,10 +2406,10 @@
 
     if-nez p1, :cond_79
 
-    .line 243
+    .line 251
     invoke-static {}, Lcom/transsion/camera/utils/MultiTouchManager;->resetState()V
 
-    .line 245
+    .line 253
     :cond_79
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mFirstPreviewArrived:Z
 
@@ -2386,10 +2419,10 @@
 
     if-nez p1, :cond_84
 
-    .line 246
+    .line 254
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
-    .line 248
+    .line 256
     :cond_84
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -2397,118 +2430,118 @@
 
     if-nez p1, :cond_8e
 
-    .line 249
+    .line 257
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->showRoot()V
 
     return-void
 
-    .line 251
+    .line 259
     :cond_8e
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarState(Z)V
 
     return-void
 
-    .line 282
+    .line 290
     :pswitch_92
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mFirstPreviewArrived:Z
 
-    .line 283
+    .line 291
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
     return-void
 
-    .line 211
+    .line 219
     :pswitch_98
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mbRecording:Z
 
-    .line 212
+    .line 220
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
-    .line 213
+    .line 221
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
     if-nez p1, :cond_a7
 
-    .line 214
+    .line 222
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->hideRoot()V
 
     return-void
 
-    .line 216
+    .line 224
     :cond_a7
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->hideTopBarRoot()V
 
-    .line 217
+    .line 225
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->hideVlogToolBarRoot()V
 
     return-void
 
-    .line 230
+    .line 238
     :cond_ae
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mbSegmentDragging:Z
 
     if-eqz p1, :cond_b7
 
-    .line 231
+    .line 239
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mbSegmentDragging:Z
 
-    .line 232
+    .line 240
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateLayout(Z)V
 
-    .line 234
+    .line 242
     :cond_b7
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
     return-void
 
-    .line 221
+    .line 229
     :cond_bb
     iget p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
     if-ne p1, v1, :cond_c8
 
-    .line 222
+    .line 230
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mbSegmentDragging:Z
 
-    .line 223
+    .line 231
     iget p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCorrectOrientation:I
 
     iput p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mFixedOrientation:I
 
-    .line 224
+    .line 232
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateLayout(Z)V
 
-    .line 226
+    .line 234
     :cond_c8
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
     return-void
 
-    .line 295
+    .line 303
     :cond_cc
     const-string p1, "off"
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mPreviewSwitchValue:Ljava/lang/String;
 
-    .line 296
+    .line 304
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarLayout()V
 
     return-void
 
-    .line 291
+    .line 299
     :cond_d4
     const-string p1, "on"
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mPreviewSwitchValue:Ljava/lang/String;
 
-    .line 292
+    .line 300
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarLayout()V
 
     return-void
 
-    .line 323
+    .line 331
     :cond_dc
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mRootView:Landroid/view/ViewGroup;
 
@@ -2516,7 +2549,7 @@
 
     return-void
 
-    .line 320
+    .line 328
     :cond_e2
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mRootView:Landroid/view/ViewGroup;
 
@@ -2524,22 +2557,22 @@
 
     return-void
 
-    .line 310
+    .line 318
     :cond_e8
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIsZooming:Z
 
     goto :goto_104
 
-    .line 278
+    .line 286
     :cond_eb
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIsZooming:Z
 
-    .line 279
+    .line 287
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
     return-void
 
-    .line 299
+    .line 307
     :cond_f1
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -2549,23 +2582,23 @@
 
     goto :goto_10f
 
-    .line 304
+    .line 312
     :cond_f8
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIsZooming:Z
 
     if-eqz p1, :cond_10f
 
-    .line 305
+    .line 313
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIsZooming:Z
 
-    .line 306
+    .line 314
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mRootView:Landroid/view/ViewGroup;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/vlog/utils/AnimUtils;->show(Landroid/view/View;)V
 
     return-void
 
-    .line 315
+    .line 323
     :cond_104
     :goto_104
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIsZooming:Z
@@ -2576,14 +2609,14 @@
 
     if-eqz p1, :cond_10f
 
-    .line 316
+    .line 324
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
     :cond_10f
     :goto_10f
     return-void
 
-    .line 288
+    .line 296
     :cond_110
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
@@ -2607,13 +2640,13 @@
 .method public onBatteryStatusChanged(ZII)V
     .registers 5
 
-    .line 840
+    .line 849
     iput p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBatteryStatus:I
 
-    .line 841
+    .line 850
     iput p3, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTemperatureStatus:I
 
-    .line 842
+    .line 851
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopBarItemUIs:Ljava/util/List;
 
     if-eqz v0, :cond_24
@@ -2624,7 +2657,7 @@
 
     if-lez v0, :cond_24
 
-    .line 843
+    .line 852
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopBarItemUIs:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2644,7 +2677,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 844
+    .line 853
     invoke-interface {v0, p1, p2, p3}, Lcom/transsion/camera/app/common/battery/IBatteryListener;->onBatteryStatusChanged(ZII)V
 
     goto :goto_14
@@ -2656,7 +2689,7 @@
 .method public onFirstSteadyFrameArrive()V
     .registers 4
 
-    .line 683
+    .line 692
     sget-object v0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2687,10 +2720,10 @@
 
     const/4 v0, 0x1
 
-    .line 684
+    .line 693
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mFirstPreviewArrived:Z
 
-    .line 685
+    .line 694
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mbRecording:Z
 
     if-nez v0, :cond_3d
@@ -2703,7 +2736,7 @@
 
     if-nez v1, :cond_3d
 
-    .line 686
+    .line 695
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getMainHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -2721,21 +2754,21 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 747
+    .line 756
     iget p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
     if-eq p2, p1, :cond_6
 
-    .line 748
+    .line 757
     iput p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
-    .line 750
+    .line 759
     :cond_6
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     if-eqz p1, :cond_f
 
-    .line 751
+    .line 760
     iget p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mScreenFormType:I
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;->updateScreenFormType(I)V
@@ -2743,13 +2776,13 @@
     :cond_f
     const/4 p1, 0x0
 
-    .line 753
+    .line 762
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarState(Z)V
 
-    .line 754
+    .line 763
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateVlogToolBarLayout()V
 
-    .line 755
+    .line 764
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarLayout()V
 
     return-void
@@ -2760,10 +2793,10 @@
 
     const/4 v0, 0x1
 
-    .line 165
+    .line 173
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSettingReady:Z
 
-    .line 166
+    .line 174
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mRootView:Landroid/view/ViewGroup;
 
     new-instance v1, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$$ExternalSyntheticLambda0;
@@ -2780,7 +2813,7 @@
 
     const/4 v0, 0x0
 
-    .line 791
+    .line 800
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->setEnable(Z)V
 
     return-void
@@ -2795,7 +2828,7 @@
 .method public setEnable(Z)V
     .registers 4
 
-    .line 691
+    .line 700
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopBarItemUIs:Ljava/util/List;
 
     if-eqz v0, :cond_20
@@ -2806,7 +2839,7 @@
 
     if-lez v0, :cond_20
 
-    .line 692
+    .line 701
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopBarItemUIs:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2826,18 +2859,18 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 693
+    .line 702
     invoke-interface {v1, p1}, Lcom/transsion/camera/app/common/IRootUI;->setEnable(Z)V
 
     goto :goto_10
 
-    .line 696
+    .line 705
     :cond_20
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBackButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 697
+    .line 706
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
@@ -2848,7 +2881,7 @@
 .method public setTemplateOrientation(I)V
     .registers 4
 
-    .line 759
+    .line 768
     iput p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTemplateOrientation:I
 
     const/4 v0, 0x1
@@ -2859,16 +2892,16 @@
 
     const/16 p1, 0x10e
 
-    .line 761
+    .line 770
     iput p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCorrectOrientation:I
 
     goto :goto_d
 
-    .line 763
+    .line 772
     :cond_b
     iput v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCorrectOrientation:I
 
-    .line 765
+    .line 774
     :goto_d
     iget p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mOrientation:I
 
@@ -2880,7 +2913,7 @@
 .method public showTopBarRoot()V
     .registers 2
 
-    .line 825
+    .line 834
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogSettingTopBarRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -2891,7 +2924,7 @@
 
     return-void
 
-    .line 828
+    .line 837
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogSettingTopBarRoot:Landroid/widget/FrameLayout;
 
@@ -2905,7 +2938,7 @@
 .method public showVlogToolBarRoot()V
     .registers 2
 
-    .line 832
+    .line 841
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogToolBarRoot:Landroid/widget/FrameLayout;
 
     const/4 v0, 0x0
@@ -2918,15 +2951,15 @@
 .method public unInit()V
     .registers 2
 
-    .line 803
+    .line 812
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->unInitTopBarSettingUIs()V
 
     const/4 v0, 0x0
 
-    .line 804
+    .line 813
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSettingReady:Z
 
-    .line 805
+    .line 814
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mModeAboveMainCtrlInflateRoot:Landroid/view/ViewGroup;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mRootView:Landroid/view/ViewGroup;
@@ -2943,17 +2976,17 @@
         .end annotation
     .end param
 
-    .line 796
+    .line 805
     iput p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCurrentPage:I
 
-    .line 797
+    .line 806
     iget p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mOrientation:I
 
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateOrientation(IZ)V
 
-    .line 798
+    .line 807
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mNeedCompose:Z
 
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBar(ZZ)V
@@ -2964,10 +2997,10 @@
 .method public updateOrientation(IZ)V
     .registers 8
 
-    .line 701
+    .line 710
     iput p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mOrientation:I
 
-    .line 704
+    .line 713
     iget p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCurrentPage:I
 
     const/4 v0, 0x1
@@ -2976,7 +3009,7 @@
 
     goto :goto_2b
 
-    .line 707
+    .line 716
     :cond_8
     iget p2, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTemplateOrientation:I
 
@@ -3000,7 +3033,7 @@
 
     goto :goto_27
 
-    .line 711
+    .line 720
     :cond_1c
     iget p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCorrectOrientation:I
 
@@ -3020,16 +3053,16 @@
 
     goto :goto_2b
 
-    .line 726
+    .line 735
     :cond_29
     iget p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCorrectOrientation:I
 
-    .line 732
+    .line 741
     :cond_2b
     :goto_2b
     iput p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCorrectOrientation:I
 
-    .line 733
+    .line 742
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateLayout(Z)V
 
     return-void
@@ -3038,17 +3071,17 @@
 .method public updateTopBar(ZZ)V
     .registers 3
 
-    .line 170
+    .line 178
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mNeedCompose:Z
 
-    .line 171
+    .line 179
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mSettingReady:Z
 
     if-nez p1, :cond_7
 
     return-void
 
-    .line 174
+    .line 182
     :cond_7
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarState(Z)V
 
@@ -3066,12 +3099,12 @@
         }
     .end annotation
 
-    .line 545
+    .line 553
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     if-nez v0, :cond_c
 
-    .line 546
+    .line 554
     sget-object p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "mVlogTopBarLayout is null"
@@ -3081,17 +3114,17 @@
     return-void
 
     :cond_c
-    if-eqz v0, :cond_6b
+    if-eqz v0, :cond_74
 
-    .line 553
+    .line 561
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
-    .line 555
+    .line 563
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 556
+    .line 564
     new-instance v2, Ljava/util/LinkedHashMap;
 
     invoke-direct {v2, v1}, Ljava/util/LinkedHashMap;-><init>(I)V
@@ -3101,9 +3134,9 @@
     move v4, v3
 
     :goto_1b
-    if-ge v4, v1, :cond_60
+    if-ge v4, v1, :cond_69
 
-    .line 558
+    .line 566
     invoke-interface {p1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -3114,15 +3147,24 @@
 
     const/4 v5, 0x0
 
-    .line 559
+    .line 567
     invoke-interface {v6, v5}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setPopupOptionsControl(Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;)V
 
-    .line 561
+    .line 569
     invoke-interface {v6}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 562
+    .line 570
+    iget v7, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIconOnColor:I
+
+    iget v8, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIconOffColor:I
+
+    iget v9, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIconLowLightColor:I
+
+    invoke-interface {v6, v7, v8, v9}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->initIconColor(III)V
+
+    .line 571
     iget-object v7, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mContext:Landroid/content/Context;
 
     invoke-static {v7}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -3143,48 +3185,48 @@
 
     move-result-object v7
 
-    .line 564
+    .line 573
     invoke-virtual {v7, v3}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 565
+    .line 574
     new-instance v8, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$$ExternalSyntheticLambda2;
 
     invoke-direct {v8, p0, v7}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;Landroid/view/View;)V
 
     invoke-virtual {v7, v8}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 579
-    invoke-interface {v6, v3}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onScreenSupply(Z)V
+    .line 588
+    invoke-interface {v6, v3, v3}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onScreenSupply(ZZ)V
 
-    .line 580
+    .line 589
     invoke-interface {v6}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setupEntryView()V
 
-    .line 582
+    .line 591
     invoke-virtual {v7}, Landroid/view/View;->getVisibility()I
 
     move-result v8
 
-    if-nez v8, :cond_5d
+    if-nez v8, :cond_66
 
     invoke-interface {v6}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getIsShouldGone()Z
 
     move-result v6
 
-    if-nez v6, :cond_5d
+    if-nez v6, :cond_66
 
-    .line 583
+    .line 592
     invoke-interface {v2, v5, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_5d
+    :cond_66
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1b
 
-    .line 586
-    :cond_60
+    .line 595
+    :cond_69
     invoke-virtual {v0, v2, p2}, Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;->updateTopBar(Ljava/util/Map;Z)V
 
-    .line 587
+    .line 596
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mIsZooming:Z
 
     xor-int/lit8 p1, p1, 0x1
@@ -3193,8 +3235,8 @@
 
     return-void
 
-    .line 550
-    :cond_6b
+    .line 558
+    :cond_74
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "mVlogTopBarLayout should be instance of TopBarContainer!!!"
@@ -3207,7 +3249,7 @@
 .method public updateTopBarViews([Ljava/lang/String;Z)V
     .registers 6
 
-    .line 505
+    .line 513
     sget-object v0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3238,29 +3280,29 @@
 
     const/4 v0, 0x0
 
-    .line 506
+    .line 514
     invoke-virtual {p0, p1, v0, v0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->getTopBarItemUIList([Ljava/lang/String;Ljava/util/List;Landroid/graphics/drawable/Drawable;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 507
+    .line 515
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopBarItemUIs:Ljava/util/List;
 
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarSettingUIs(Ljava/util/List;Ljava/util/List;)V
 
-    .line 509
+    .line 517
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopBarItemUIs:Ljava/util/List;
 
     if-eqz v0, :cond_33
 
-    .line 510
+    .line 518
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 512
+    .line 520
     :cond_33
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mTopBarItemUIs:Ljava/util/List;
 
-    .line 513
+    .line 521
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->updateTopBarLayout(Ljava/util/List;Z)V
 
     return-void
@@ -3269,10 +3311,10 @@
 .method public updateTopContainerOrientation(Z)V
     .registers 5
 
-    .line 769
+    .line 778
     iget v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mCorrectOrientation:I
 
-    .line 770
+    .line 779
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mbSegmentDragging:Z
 
     if-eqz v1, :cond_d
@@ -3283,34 +3325,34 @@
 
     if-ne v1, v2, :cond_d
 
-    .line 771
+    .line 780
     iget v0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mFixedOrientation:I
 
-    .line 773
+    .line 782
     :cond_d
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mVlogTopBarContainer:Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;
 
     if-eqz v1, :cond_14
 
-    .line 774
+    .line 783
     invoke-virtual {v1, v0}, Lcom/transsion/camera/feature/mode/vlog/widget/VlogTopBarContainer;->updateOrientation(I)V
 
-    .line 776
+    .line 785
     :cond_14
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mBackButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     if-eqz v1, :cond_1b
 
-    .line 777
+    .line 786
     invoke-virtual {v1, v0, p1}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
-    .line 779
+    .line 788
     :cond_1b
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->mComposeButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     if-eqz p0, :cond_22
 
-    .line 780
+    .line 789
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
     :cond_22

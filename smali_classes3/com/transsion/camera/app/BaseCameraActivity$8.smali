@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 2566
+    .line 2599
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$8;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

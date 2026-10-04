@@ -314,7 +314,7 @@
     :goto_a2
     sput v1, Lcom/transsion/camera/utils/SettingInfo;->MAIN_THR_CROP_ZOOM_VALUE:I
 
-    .line 187
+    .line 186
     const-string v1, "IN"
 
     filled-new-array {v1}, [Ljava/lang/String;
@@ -323,7 +323,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->AREA_GOLD_WATERMARK_SUPPORT:[Ljava/lang/String;
 
-    .line 615
+    .line 614
     sget-object v1, Landroid/util/Rational;->ZERO:Landroid/util/Rational;
 
     invoke-virtual {v1}, Landroid/util/Rational;->toString()Ljava/lang/String;
@@ -332,7 +332,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->EXPOSURE_ZERO:Ljava/lang/String;
 
-    .line 699
+    .line 698
     const-string v15, "28s"
 
     const-string v16, "30s"
@@ -369,7 +369,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->LONG_EXPOSURE_PICTRACE_DATA:[Ljava/lang/String;
 
-    .line 700
+    .line 699
     const-string v1, "15min"
 
     const-string v2, "20min"
@@ -386,7 +386,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->LONG_EXPOSURE_STELLAR_DATA:[Ljava/lang/String;
 
-    .line 798
+    .line 797
     const-string v1, "five_senses"
 
     const-string v2, "muscle_care"
@@ -397,7 +397,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->ITDV2LIST:[Ljava/lang/String;
 
-    .line 843
+    .line 842
     const-string v1, "video_face"
 
     const-string v2, "video_whiten"
@@ -412,14 +412,14 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->sVideoFaceBeautyFeatureKeys:[Ljava/lang/String;
 
-    .line 850
+    .line 849
     new-instance v1, Lcom/transsion/camera/utils/SettingInfo$1;
 
     invoke-direct {v1}, Lcom/transsion/camera/utils/SettingInfo$1;-><init>()V
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->sVideoFaceBeautyKeyMap:Ljava/util/Map;
 
-    .line 1022
+    .line 1029
     const-string v6, "ringscreenlight"
 
     const-string v7, "screenflash"
@@ -442,7 +442,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->mFlashFacadeValues:Ljava/util/List;
 
-    .line 1352
+    .line 1360
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v1
@@ -461,7 +461,7 @@
     :goto_12a
     sput v1, Lcom/transsion/camera/utils/SettingInfo;->VALUE_SUPER_RESOLUTION_LIMIT_ZOOM:I
 
-    .line 1924
+    .line 1932
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v1
@@ -470,7 +470,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->AIRAW_SUPPORT_CAMERA_IDS:[I
 
-    .line 1927
+    .line 1935
     const-string v39, "SL"
 
     const-string v40, "GW"
@@ -555,7 +555,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->AREA_A_DARK:[Ljava/lang/String;
 
-    .line 1930
+    .line 1938
     const-string v12, "MY"
 
     const-string v13, "BN"
@@ -586,7 +586,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->AREA_C_LIGHT:[Ljava/lang/String;
 
-    .line 1933
+    .line 1941
     const-string v65, "ZM"
 
     const-string v66, "ZW"
@@ -723,7 +723,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->AREA_A_DARK_SELLING_POINT_GUIDE:[Ljava/lang/String;
 
-    .line 1938
+    .line 1946
     const-string v85, "XK"
 
     const-string v86, "YE"
@@ -900,7 +900,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->AREA_C_LIGHT_SELLING_POINT_GUIDE:[Ljava/lang/String;
 
-    .line 2262
+    .line 2271
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v1
@@ -919,7 +919,7 @@
     :goto_2eb
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->MACRO_ZOOM_SUPPORT_VALUE_RANGE_1:Ljava/lang/String;
 
-    .line 2263
+    .line 2272
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v1
@@ -938,42 +938,42 @@
     :goto_2fa
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->MACRO_ZOOM_SUPPORT_VALUE_RANGE_2:Ljava/lang/String;
 
-    .line 2496
+    .line 2510
     new-instance v1, Lcom/transsion/camera/utils/SettingInfo$2;
 
     invoke-direct {v1}, Lcom/transsion/camera/utils/SettingInfo$2;-><init>()V
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->BACK_VP_DEFAULT_VALUE:Ljava/util/HashMap;
 
-    .line 2504
+    .line 2518
     new-instance v1, Lcom/transsion/camera/utils/SettingInfo$3;
 
     invoke-direct {v1}, Lcom/transsion/camera/utils/SettingInfo$3;-><init>()V
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->FRONT_VP_DEFAULT_VALUE:Ljava/util/HashMap;
 
-    .line 2511
+    .line 2525
     new-instance v1, Lcom/transsion/camera/utils/SettingInfo$4;
 
     invoke-direct {v1}, Lcom/transsion/camera/utils/SettingInfo$4;-><init>()V
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->BACK_VP_LEVEL_GROUP:Ljava/util/HashMap;
 
-    .line 2519
+    .line 2533
     new-instance v1, Lcom/transsion/camera/utils/SettingInfo$5;
 
     invoke-direct {v1}, Lcom/transsion/camera/utils/SettingInfo$5;-><init>()V
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->FRONT_VP_LEVEL_GROUP:Ljava/util/HashMap;
 
-    .line 2779
+    .line 2793
     new-instance v1, Lcom/transsion/camera/utils/SettingInfo$6;
 
     invoke-direct {v1}, Lcom/transsion/camera/utils/SettingInfo$6;-><init>()V
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->CAM_MODE_SUPPORT_VALUES:Ljava/util/List;
 
-    .line 2938
+    .line 2953
     const-string v9, "f11"
 
     const-string v10, "f16"
@@ -998,7 +998,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->BLUR_LEVEL_DATA:[Ljava/lang/String;
 
-    .line 2939
+    .line 2954
     const-string v9, "20"
 
     const-string v10, "10"
@@ -1023,7 +1023,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->VIDEO_PORTRAIT_DATA:[Ljava/lang/String;
 
-    .line 2940
+    .line 2955
     const-string v9, "20"
 
     const-string v10, "10"
@@ -1048,7 +1048,7 @@
 
     sput-object v1, Lcom/transsion/camera/utils/SettingInfo;->VIDEO_SPOT_DATA:[Ljava/lang/String;
 
-    .line 3083
+    .line 3098
     sput v0, Lcom/transsion/camera/utils/SettingInfo;->AI_FRAME_MAX_ZOOM:I
 
     return-void

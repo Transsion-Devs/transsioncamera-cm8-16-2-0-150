@@ -24,12 +24,12 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/common/BaseCapture;Ljava/lang/String;)V
     .registers 3
 
-    .line 389
+    .line 387
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 390
+    .line 388
     iput-object p2, p0, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->mName:Ljava/lang/String;
 
     return-void
@@ -49,7 +49,7 @@
 .method protected captureFail()V
     .registers 4
 
-    .line 441
+    .line 439
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -78,7 +78,7 @@
 .method protected captureSuccess()V
     .registers 4
 
-    .line 449
+    .line 447
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -107,7 +107,7 @@
 .method protected createStream()V
     .registers 4
 
-    .line 416
+    .line 414
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -136,7 +136,7 @@
 .method protected destroyStream()V
     .registers 1
 
-    .line 453
+    .line 451
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmIdleState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
@@ -151,7 +151,7 @@
 .method final entry()V
     .registers 5
 
-    .line 394
+    .line 392
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmStateSwitchLock(Lcom/transsion/camera/feature/common/BaseCapture;)Ljava/lang/Object;
@@ -160,7 +160,7 @@
 
     monitor-enter v0
 
-    .line 395
+    .line 393
     :try_start_7
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -174,7 +174,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 396
+    .line 394
     iget-object v3, p0, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v3}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCurrentState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
@@ -216,10 +216,10 @@
 
     move-result-object v2
 
-    .line 395
+    .line 393
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 397
+    .line 395
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCurrentState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
@@ -228,7 +228,7 @@
 
     if-eq v1, p0, :cond_5f
 
-    .line 398
+    .line 396
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCurrentState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
@@ -237,7 +237,7 @@
 
     if-eqz v1, :cond_57
 
-    .line 399
+    .line 397
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCurrentState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
@@ -246,16 +246,16 @@
 
     invoke-virtual {v1}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->onLeave()V
 
-    .line 401
+    .line 399
     :cond_57
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v1, p0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fputmCurrentState(Lcom/transsion/camera/feature/common/BaseCapture;Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;)V
 
-    .line 402
+    .line 400
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->onEntry()V
 
-    .line 404
+    .line 402
     :cond_5f
     monitor-exit v0
 
@@ -290,7 +290,7 @@
 .method protected onStreamAvailable()V
     .registers 4
 
-    .line 420
+    .line 418
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -327,7 +327,7 @@
 .method protected shutterClick()V
     .registers 4
 
-    .line 424
+    .line 422
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -356,7 +356,7 @@
 .method protected startSaving()V
     .registers 4
 
-    .line 445
+    .line 443
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -385,7 +385,7 @@
 .method protected stopCapture()Z
     .registers 4
 
-    .line 436
+    .line 434
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0

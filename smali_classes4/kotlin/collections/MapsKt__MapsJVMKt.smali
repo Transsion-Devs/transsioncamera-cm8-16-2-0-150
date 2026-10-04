@@ -52,7 +52,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 26
     invoke-virtual {p0}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v0
@@ -65,7 +65,7 @@
 
     move-result-object p0
 
-    const-string v0, "singletonMap(pair.first, pair.second)"
+    const-string v0, "singletonMap(...)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -79,7 +79,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 140
+    .line 139
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p0
@@ -106,7 +106,7 @@
 
     move-result-object p0
 
-    const-string v0, "with(entries.iterator().\u2026ingletonMap(key, value) }"
+    const-string v0, "with(...)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

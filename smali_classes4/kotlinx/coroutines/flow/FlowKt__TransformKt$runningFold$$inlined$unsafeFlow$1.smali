@@ -43,7 +43,7 @@
 
     iput-object p3, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1;->$operation$inlined:Lkotlin/jvm/functions/Function3;
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -100,7 +100,7 @@
 
     move-result-object v1
 
-    .line 106
+    .line 104
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1$1;->label:I
 
     const/4 v3, 0x2
@@ -150,7 +150,7 @@
     :cond_46
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 114
+    .line 112
     new-instance p2, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {p2}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
@@ -159,7 +159,7 @@
 
     iput-object v2, p2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 115
+    .line 113
     iput-object p0, v0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1$1;->L$0:Ljava/lang/Object;
 
     iput-object p1, v0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1$1;->L$1:Ljava/lang/Object;
@@ -176,7 +176,7 @@
 
     goto :goto_79
 
-    .line 116
+    .line 114
     :cond_61
     :goto_61
     iget-object v2, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1;->$this_runningFold$inlined:Lkotlinx/coroutines/flow/Flow;
@@ -206,7 +206,7 @@
     :goto_79
     return-object v1
 
-    .line 109
+    .line 107
     :cond_7a
     :goto_7a
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

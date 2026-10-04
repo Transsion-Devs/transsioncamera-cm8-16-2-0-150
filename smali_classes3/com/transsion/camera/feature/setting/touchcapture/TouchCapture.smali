@@ -92,7 +92,7 @@
     .line 44
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->mIsModeSupportOriginal:Z
 
-    .line 169
+    .line 167
     new-instance v0, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture$1;-><init>(Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;)V
@@ -105,7 +105,7 @@
 .method private syncRemoteCaptureFragment()V
     .registers 5
 
-    .line 166
+    .line 164
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->mIsModeSupport:Z
@@ -185,7 +185,7 @@
 .method public getPreviewStateCallback()Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
     .registers 1
 
-    .line 162
+    .line 160
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
 
     return-object p0
@@ -222,7 +222,7 @@
         }
     .end annotation
 
-    .line 131
+    .line 129
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p0
@@ -439,7 +439,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 5
 
-    .line 142
+    .line 140
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const-string v0, "key_remote_capture"
@@ -452,7 +452,7 @@
 
     goto :goto_29
 
-    .line 144
+    .line 142
     :cond_c
     const-string p1, "remote_capture_state_touch"
 
@@ -464,7 +464,7 @@
 
     if-eqz p1, :cond_29
 
-    .line 145
+    .line 143
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->getKey()Ljava/lang/String;
@@ -481,7 +481,7 @@
 
     move-result-object p1
 
-    .line 146
+    .line 144
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->onValueChanged(Ljava/lang/String;)V
 
     :cond_29
@@ -535,18 +535,10 @@
 .end method
 
 .method public pause()V
-    .registers 2
+    .registers 1
 
     .line 124
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->pause()V
-
-    const/4 v0, 0x0
-
-    .line 125
-    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->mIsModeSupport:Z
-
-    .line 126
-    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->syncRemoteCaptureFragment()V
 
     return-void
 .end method
@@ -554,12 +546,12 @@
 .method public restoreToSupportedPlatformValue()V
     .registers 2
 
-    .line 156
+    .line 154
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->restoreToSupportedPlatformValue()V
 
     const/4 v0, 0x1
 
-    .line 157
+    .line 155
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->mRestored:Z
 
     return-void
@@ -591,24 +583,24 @@
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
     .registers 5
 
-    .line 192
+    .line 190
     new-instance p1, Ljava/util/ArrayList;
 
     const/4 v0, 0x2
 
     invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 193
+    .line 191
     const-string v0, "on"
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 194
+    .line 192
     const-string v1, "off"
 
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 196
+    .line 194
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isSupportTouchCaptureDefaultOn()Z
 
     move-result v2
@@ -626,7 +618,7 @@
     :cond_1d
     move-object v0, v1
 
-    .line 199
+    .line 197
     :cond_1e
     :goto_1e
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/touchcapture/TouchCapture;->initValueAndSupport(Ljava/util/List;Ljava/lang/String;)V

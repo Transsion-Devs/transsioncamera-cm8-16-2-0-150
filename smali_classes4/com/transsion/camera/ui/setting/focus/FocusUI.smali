@@ -499,7 +499,7 @@
 .method private aeAfLocked()Z
     .registers 2
 
-    .line 742
+    .line 744
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     if-eqz p0, :cond_a
@@ -521,7 +521,7 @@
 .method private autoFocusSupport()Z
     .registers 2
 
-    .line 500
+    .line 502
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsAutoFocusSupported:Z
 
     if-eqz v0, :cond_16
@@ -530,7 +530,7 @@
 
     const-string v0, "key_focus"
 
-    .line 501
+    .line 503
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -556,14 +556,14 @@
 .method private calculateFocusCoordinate(FF)Landroid/graphics/Point;
     .registers 10
 
-    .line 505
+    .line 507
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_d
 
-    .line 506
+    .line 508
     sget-object p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onSingleTapUp return, mAppUIRect is null."
@@ -572,7 +572,7 @@
 
     return-object v1
 
-    .line 511
+    .line 513
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
@@ -610,13 +610,13 @@
 
     goto/16 :goto_ec
 
-    .line 516
+    .line 518
     :cond_2d
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDisableUI:Z
 
     if-eqz v0, :cond_39
 
-    .line 517
+    .line 519
     sget-object p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onSingleTapUp return, disableUI"
@@ -625,7 +625,7 @@
 
     return-object v1
 
-    .line 522
+    .line 524
     :cond_39
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mPreviewRoot:Landroid/view/View;
 
@@ -643,12 +643,12 @@
 
     const/4 v0, 0x7
 
-    .line 523
+    .line 525
     iget v3, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     if-ne v0, v3, :cond_6e
 
-    .line 524
+    .line 526
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -684,7 +684,7 @@
 
     goto :goto_7f
 
-    .line 530
+    .line 532
     :cond_6e
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mCameraRootView:Landroid/view/ViewGroup;
 
@@ -692,7 +692,7 @@
 
     move-result v0
 
-    .line 531
+    .line 533
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
@@ -707,26 +707,26 @@
 
     div-float v2, v3, v0
 
-    .line 536
+    .line 538
     :cond_7f
     :goto_7f
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 537
+    .line 539
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
-    .line 538
+    .line 540
     iget-object v3, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getTopRegionHeight()I
 
     move-result v3
 
-    .line 539
+    .line 541
     iget-object v4, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v4}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
@@ -749,7 +749,7 @@
 
     goto :goto_ec
 
-    .line 544
+    .line 546
     :cond_9f
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
@@ -763,7 +763,7 @@
 
     add-float/2addr v4, v6
 
-    .line 545
+    .line 547
     iget v6, v1, Landroid/graphics/Rect;->right:I
 
     int-to-float v6, v6
@@ -772,7 +772,7 @@
 
     sub-float/2addr v6, v5
 
-    .line 546
+    .line 548
     iget v1, v1, Landroid/graphics/Rect;->top:I
 
     invoke-static {v1, v3}, Ljava/lang/Math;->max(II)I
@@ -787,7 +787,7 @@
 
     add-float/2addr v1, v3
 
-    .line 547
+    .line 549
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->bottom:I
@@ -840,7 +840,7 @@
     :goto_dc
     float-to-int p1, v6
 
-    .line 565
+    .line 567
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     iget p2, p0, Landroid/graphics/Rect;->left:I
@@ -849,12 +849,12 @@
 
     float-to-int p2, v1
 
-    .line 566
+    .line 568
     iget p0, p0, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr p2, p0
 
-    .line 567
+    .line 569
     new-instance p0, Landroid/graphics/Point;
 
     invoke-direct {p0, p1, p2}, Landroid/graphics/Point;-><init>(II)V
@@ -871,10 +871,10 @@
 
     const/4 p0, 0x4
 
-    .line 1173
+    .line 1179
     new-array p0, p0, [Ljava/lang/String;
 
-    .line 1175
+    .line 1181
     const-string v0, "%"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -896,7 +896,7 @@
 
     aget-object v5, p1, v2
 
-    .line 1176
+    .line 1182
     aput-object v5, p0, v3
 
     add-int/2addr v3, v4
@@ -905,7 +905,7 @@
 
     goto :goto_d
 
-    .line 1179
+    .line 1185
     :cond_18
     new-instance p1, Landroid/graphics/Rect;
 
@@ -925,7 +925,7 @@
 
     aget-object v2, p0, v2
 
-    .line 1180
+    .line 1186
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v2
@@ -946,7 +946,7 @@
 .method private doUpdateFocusView(Ljava/lang/String;)V
     .registers 8
 
-    .line 747
+    .line 749
     const-string v0, "ACTIVE_FOCUSED"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -959,29 +959,29 @@
 
     if-nez v1, :cond_11
 
-    .line 748
+    .line 750
     invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1c
 
-    .line 749
+    .line 751
     :cond_11
     iget-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mActiveResulted:Z
 
     if-nez v1, :cond_1c
 
-    .line 750
+    .line 752
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAutoFocused:Z
 
-    .line 751
+    .line 753
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mActiveResulted:Z
 
-    .line 752
+    .line 754
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->notifyFocused()V
 
-    .line 755
+    .line 757
     :cond_1c
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->aeAfLocked()Z
 
@@ -991,7 +991,7 @@
 
     goto/16 :goto_103
 
-    .line 758
+    .line 760
     :cond_24
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -1134,13 +1134,13 @@
 
     goto/16 :goto_103
 
-    .line 805
+    .line 807
     :pswitch_8a
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
     return-void
 
-    .line 766
+    .line 768
     :pswitch_8e
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
 
@@ -1156,7 +1156,7 @@
 
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mUIStateControl:Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;
 
-    .line 768
+    .line 770
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->isVideoRecording()Z
 
     move-result p1
@@ -1175,67 +1175,67 @@
 
     if-nez p1, :cond_103
 
-    .line 772
+    .line 774
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsLaserFocusViewSupport:Z
 
     if-eqz p1, :cond_c0
 
-    .line 773
+    .line 775
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLaserFocusView:Lcom/transsion/camera/ui/setting/focus/LaserFocusView;
 
     if-eqz p1, :cond_c3
 
-    .line 774
+    .line 776
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/focus/LaserFocusView;->needShowFocusView()Z
 
     move-result p1
 
     if-eqz p1, :cond_c3
 
-    .line 775
+    .line 777
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->showLaserFocusViewAtCenter()V
 
     goto :goto_c3
 
-    .line 778
+    .line 780
     :cond_c0
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->showFocusViewAtCenter()V
 
-    .line 780
+    .line 782
     :cond_c3
     :goto_c3
     iput-boolean v4, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsPassiveFocusViewNeedShow:Z
 
-    .line 781
+    .line 783
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsPassiveFocusViewShow:Z
 
     return-void
 
-    .line 761
+    .line 763
     :pswitch_c8
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
-    .line 762
+    .line 764
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideLaserFocusView()V
 
-    .line 763
+    .line 765
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsPassiveFocusViewNeedShow:Z
 
     return-void
 
-    .line 799
+    .line 801
     :pswitch_d1
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
     return-void
 
-    .line 802
+    .line 804
     :pswitch_d5
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsLaserFocusViewNeedShow:Z
 
     return-void
 
-    .line 785
+    .line 787
     :pswitch_d8
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
 
@@ -1261,7 +1261,7 @@
 
     if-nez p1, :cond_103
 
-    .line 790
+    .line 792
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsLaserFocusViewSupport:Z
 
     if-eqz p1, :cond_103
@@ -1270,17 +1270,17 @@
 
     if-eqz p1, :cond_103
 
-    .line 791
+    .line 793
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/focus/LaserFocusView;->needShowFocusView()Z
 
     move-result p1
 
     if-eqz p1, :cond_103
 
-    .line 792
+    .line 794
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->showLaserFocusViewAtCenter()V
 
-    .line 793
+    .line 795
     iput-boolean v4, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsLaserFocusViewNeedShow:Z
 
     :cond_103
@@ -1317,10 +1317,10 @@
 
     const/4 v0, 0x0
 
-    .line 475
+    .line 477
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->performAeAfLock(Lcom/transsion/camera/app/common/mode/IAeAfLock$State;Z)V
 
-    .line 476
+    .line 478
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_ae_af_lock_state"
@@ -1331,10 +1331,10 @@
 
     const-string v1, "off"
 
-    .line 477
+    .line 479
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 478
+    .line 480
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p1, "key_reset_exposure"
@@ -1345,7 +1345,7 @@
 
     const/4 v0, 0x0
 
-    .line 479
+    .line 481
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
@@ -1354,7 +1354,7 @@
 .method private hasBeenFocused()Z
     .registers 2
 
-    .line 948
+    .line 954
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusAnimateEnd:Z
 
     if-eqz v0, :cond_a
@@ -1376,7 +1376,7 @@
 .method private hasBeenLocked()Z
     .registers 4
 
-    .line 682
+    .line 684
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAeAfLock:Lcom/transsion/camera/app/common/mode/IAeAfLock;
 
     const/4 v1, 0x0
@@ -1385,7 +1385,7 @@
 
     return v1
 
-    .line 685
+    .line 687
     :cond_6
     invoke-interface {v0}, Lcom/transsion/camera/app/common/mode/IAeAfLock;->currentLockState()Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
@@ -1393,14 +1393,14 @@
 
     if-eqz v0, :cond_1b
 
-    .line 686
+    .line 688
     sget-object v2, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     if-ne v0, v2, :cond_11
 
     goto :goto_1b
 
-    .line 689
+    .line 691
     :cond_11
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLongPressing:Z
 
@@ -1422,7 +1422,7 @@
 .method private hideFocusView()V
     .registers 3
 
-    .line 1044
+    .line 1050
     sget-object v0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "hideFocusView"
@@ -1431,29 +1431,29 @@
 
     const/4 v0, 0x0
 
-    .line 1045
+    .line 1051
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAutoFocused:Z
 
-    .line 1046
+    .line 1052
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mActiveResulted:Z
 
-    .line 1047
+    .line 1053
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockAnimateEnd:Z
 
-    .line 1048
+    .line 1054
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusAnimateEnd:Z
 
-    .line 1049
+    .line 1055
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsPassiveFocusViewShow:Z
 
-    .line 1050
+    .line 1056
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1051
+    .line 1057
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusAnimator:Lcom/transsion/camera/ui/setting/focus/IFocusAnimator;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
@@ -1466,19 +1466,19 @@
 .method private hideLaserFocusView()V
     .registers 3
 
-    .line 1061
+    .line 1067
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLaserFocusView:Lcom/transsion/camera/ui/setting/focus/LaserFocusView;
 
     if-eqz v0, :cond_10
 
-    .line 1062
+    .line 1068
     sget-object v0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "hideLaserFocusView"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1063
+    .line 1069
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLaserFocusView:Lcom/transsion/camera/ui/setting/focus/LaserFocusView;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/focus/LaserFocusView;->hide()V
@@ -1490,7 +1490,7 @@
 .method private isExceedCurvedScreenArea(FF)Z
     .registers 7
 
-    .line 1184
+    .line 1190
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -1505,7 +1505,7 @@
 
     return v2
 
-    .line 1188
+    .line 1194
     :cond_b
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
@@ -1515,19 +1515,19 @@
 
     int-to-float v1, v1
 
-    .line 1189
+    .line 1195
     iget v3, p0, Landroid/graphics/Rect;->right:I
 
     sub-int/2addr v3, v0
 
     int-to-float v0, v3
 
-    .line 1190
+    .line 1196
     iget v3, p0, Landroid/graphics/Rect;->top:I
 
     int-to-float v3, v3
 
-    .line 1191
+    .line 1197
     iget p0, p0, Landroid/graphics/Rect;->bottom:I
 
     int-to-float p0, p0
@@ -1563,7 +1563,7 @@
 .method private loadDividerScreenInfo()V
     .registers 5
 
-    .line 1196
+    .line 1202
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -1572,7 +1572,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    .line 1197
+    .line 1203
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object v1
@@ -1581,7 +1581,7 @@
 
     move-result-object v1
 
-    .line 1196
+    .line 1202
     const-string v2, "divider_up_screen_height"
 
     const-string v3, "-1"
@@ -1590,14 +1590,14 @@
 
     move-result-object v0
 
-    .line 1198
+    .line 1204
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mUpScreenHeight:I
 
-    .line 1200
+    .line 1206
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -1606,7 +1606,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    .line 1201
+    .line 1207
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object v1
@@ -1615,21 +1615,21 @@
 
     move-result-object v1
 
-    .line 1200
+    .line 1206
     const-string v2, "divider_up_crop_offset"
 
     invoke-virtual {v0, v2, v3, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1202
+    .line 1208
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mUpCropOffset:I
 
-    .line 1204
+    .line 1210
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -1638,7 +1638,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    .line 1205
+    .line 1211
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object v1
@@ -1647,21 +1647,21 @@
 
     move-result-object v1
 
-    .line 1204
+    .line 1210
     const-string v2, "divider_down_crop_offset"
 
     invoke-virtual {v0, v2, v3, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1206
+    .line 1212
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDownCropOffset:I
 
-    .line 1208
+    .line 1214
     sget-object v0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1704,12 +1704,12 @@
 .method private notifyExposureChange(Z)V
     .registers 3
 
-    .line 1213
+    .line 1219
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p0, :cond_14
 
-    .line 1214
+    .line 1220
     const-string v0, "focus_ui_active"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
@@ -1735,7 +1735,7 @@
 .method private notifyFocused()V
     .registers 4
 
-    .line 952
+    .line 958
     sget-object v0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1780,20 +1780,20 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 956
+    .line 962
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mHideView:Z
 
     if-eqz v0, :cond_41
 
-    .line 957
+    .line 963
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
-    .line 958
+    .line 964
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideLaserFocusView()V
 
     return-void
 
-    .line 961
+    .line 967
     :cond_41
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hasBeenFocused()Z
 
@@ -1807,20 +1807,20 @@
 
     const/4 v0, 0x0
 
-    .line 962
+    .line 968
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAutoFocused:Z
 
-    .line 963
+    .line 969
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusAnimateEnd:Z
 
-    .line 965
+    .line 971
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     const/4 v1, 0x1
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->performAeAfLock(Lcom/transsion/camera/app/common/mode/IAeAfLock$State;Z)V
 
-    .line 967
+    .line 973
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->triggerLockFlow(Z)V
 
     :cond_59
@@ -1830,7 +1830,7 @@
 .method private notifyLocked()V
     .registers 4
 
-    .line 693
+    .line 695
     sget-object v0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1867,20 +1867,20 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 696
+    .line 698
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mHideView:Z
 
     if-eqz v0, :cond_37
 
-    .line 697
+    .line 699
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
-    .line 698
+    .line 700
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideLaserFocusView()V
 
     return-void
 
-    .line 701
+    .line 703
     :cond_37
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hasBeenLocked()Z
 
@@ -1890,10 +1890,10 @@
 
     const/4 v0, 0x0
 
-    .line 702
+    .line 704
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockAnimateEnd:Z
 
-    .line 703
+    .line 705
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_ae_af_lock_state"
@@ -1906,10 +1906,10 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 704
+    .line 706
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
-    .line 705
+    .line 707
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideLaserFocusView()V
 
     :cond_53
@@ -1957,22 +1957,22 @@
 .method private performAutoFocus(Landroid/graphics/Point;Z)V
     .registers 5
 
-    .line 571
+    .line 573
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mSplitScreen:Z
 
     if-eqz v0, :cond_19
 
-    .line 572
+    .line 574
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->loadDividerScreenInfo()V
 
-    .line 573
+    .line 575
     iget v0, p1, Landroid/graphics/Point;->y:I
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mUpScreenHeight:I
 
     if-ge v0, v1, :cond_13
 
-    .line 574
+    .line 576
     iget v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mUpCropOffset:I
 
     add-int/2addr v0, v1
@@ -1984,14 +1984,14 @@
     :cond_13
     sub-int/2addr v0, v1
 
-    .line 576
+    .line 578
     iget v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDownCropOffset:I
 
     add-int/2addr v0, v1
 
     iput v0, p1, Landroid/graphics/Point;->y:I
 
-    .line 580
+    .line 582
     :cond_19
     :goto_19
     iget v0, p1, Landroid/graphics/Point;->x:I
@@ -2004,7 +2004,7 @@
 
     move-result-object p1
 
-    .line 582
+    .line 584
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2029,7 +2029,7 @@
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 583
+    .line 585
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -2042,7 +2042,7 @@
 .method private pointToRect(IILandroid/graphics/Rect;)Landroid/graphics/Rect;
     .registers 7
 
-    .line 718
+    .line 720
     invoke-virtual {p3}, Landroid/graphics/Rect;->width()I
 
     move-result p0
@@ -2063,7 +2063,7 @@
 
     float-to-int p0, p0
 
-    .line 719
+    .line 721
     div-int/lit8 v0, p0, 0x2
 
     sub-int/2addr p1, v0
@@ -2082,7 +2082,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 720
+    .line 722
     invoke-virtual {p3}, Landroid/graphics/Rect;->height()I
 
     move-result v0
@@ -2097,12 +2097,12 @@
 
     add-int/2addr p0, p2
 
-    .line 724
+    .line 726
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1, p1, p2, v0, p0}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 725
+    .line 727
     invoke-virtual {p3}, Landroid/graphics/Rect;->width()I
 
     move-result p0
@@ -2121,12 +2121,12 @@
 .method private registerKeyToMonitor(Ljava/lang/String;)V
     .registers 3
 
-    .line 1068
+    .line 1074
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_9
 
-    .line 1069
+    .line 1075
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mStatusChangeListener:Lcom/transsion/camera/ui/setting/focus/FocusUI$StatusChangeListener;
 
     invoke-virtual {v0, p1, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
@@ -2165,7 +2165,7 @@
 .method private showFocusViewAt(II)V
     .registers 4
 
-    .line 940
+    .line 946
     sget-object v0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     invoke-direct {p0, p1, p2, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->showFocusViewAt(IILcom/transsion/camera/app/common/mode/IAeAfLock$State;)V
@@ -2176,7 +2176,7 @@
 .method private showFocusViewAt(IILcom/transsion/camera/app/common/mode/IAeAfLock$State;)V
     .registers 8
 
-    .line 973
+    .line 979
     sget-object v0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2215,14 +2215,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 975
+    .line 981
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mHideView:Z
 
     if-eqz v0, :cond_35
 
     goto :goto_6a
 
-    .line 979
+    .line 985
     :cond_35
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
 
@@ -2230,14 +2230,14 @@
 
     move-result v0
 
-    .line 980
+    .line 986
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
 
     invoke-virtual {v1}, Landroid/view/View;->getHeight()I
 
     move-result v1
 
-    .line 981
+    .line 987
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
 
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2248,7 +2248,7 @@
 
     const/4 v3, 0x2
 
-    .line 982
+    .line 988
     div-int/2addr v0, v3
 
     sub-int/2addr p1, v0
@@ -2261,12 +2261,12 @@
 
     invoke-virtual {v2, p1, p2, v0, v0}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 983
+    .line 989
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 985
+    .line 991
     sget-object p1, Lcom/transsion/camera/ui/setting/focus/FocusUI$3;->$SwitchMap$com$transsion$camera$app$common$mode$IAeAfLock$State:[I
 
     invoke-virtual {p3}, Ljava/lang/Enum;->ordinal()I
@@ -2292,13 +2292,13 @@
     :goto_6a
     return-void
 
-    .line 997
+    .line 1003
     :cond_6b
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->triggerFocusLockFlow()V
 
     return-void
 
-    .line 987
+    .line 993
     :cond_6f
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->autoFocusSupport()Z
 
@@ -2306,12 +2306,12 @@
 
     if-eqz p1, :cond_79
 
-    .line 988
+    .line 994
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->triggerFocusLockFlow()V
 
     return-void
 
-    .line 990
+    .line 996
     :cond_79
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->triggerLockFlow(Z)V
 
@@ -2321,7 +2321,7 @@
 .method private showFocusViewAt(Landroid/graphics/Point;)V
     .registers 3
 
-    .line 944
+    .line 950
     iget v0, p1, Landroid/graphics/Point;->x:I
 
     iget p1, p1, Landroid/graphics/Point;->y:I
@@ -2334,7 +2334,7 @@
 .method private showFocusViewAtCenter()V
     .registers 3
 
-    .line 1037
+    .line 1043
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
@@ -2343,7 +2343,7 @@
 
     div-int/lit8 v0, v0, 0x2
 
-    .line 1038
+    .line 1044
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
@@ -2352,7 +2352,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    .line 1039
+    .line 1045
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->showFocusViewAt(II)V
 
     return-void
@@ -2361,12 +2361,12 @@
 .method private showLaserFocusViewAtCenter()V
     .registers 1
 
-    .line 1055
+    .line 1061
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLaserFocusView:Lcom/transsion/camera/ui/setting/focus/LaserFocusView;
 
     if-eqz p0, :cond_7
 
-    .line 1056
+    .line 1062
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/focus/LaserFocusView;->show()V
 
     :cond_7
@@ -2376,7 +2376,7 @@
 .method private triggerAutoFocus(FF)V
     .registers 4
 
-    .line 483
+    .line 485
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->autoFocusSupport()Z
 
     move-result v0
@@ -2385,7 +2385,7 @@
 
     goto :goto_d
 
-    .line 487
+    .line 489
     :cond_7
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->calculateFocusCoordinate(FF)Landroid/graphics/Point;
 
@@ -2396,24 +2396,24 @@
     :goto_d
     return-void
 
-    .line 492
+    .line 494
     :cond_e
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->showFocusViewAt(Landroid/graphics/Point;)V
 
-    .line 493
+    .line 495
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz p2, :cond_1a
 
     const/16 v0, 0x99
 
-    .line 494
+    .line 496
     invoke-interface {p2, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     :cond_1a
     const/4 p2, 0x0
 
-    .line 496
+    .line 498
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->performAutoFocus(Landroid/graphics/Point;Z)V
 
     return-void
@@ -2422,20 +2422,20 @@
 .method private triggerFocusLock(FFLcom/transsion/camera/app/common/mode/IAeAfLock$State;)V
     .registers 6
 
-    .line 633
+    .line 635
     sget-object v0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "triggerFocusLock"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 636
+    .line 638
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
-    .line 637
+    .line 639
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideLaserFocusView()V
 
-    .line 639
+    .line 641
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->autoFocusSupport()Z
 
     move-result v0
@@ -2444,7 +2444,7 @@
 
     goto :goto_1a
 
-    .line 644
+    .line 646
     :cond_14
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->calculateFocusCoordinate(FF)Landroid/graphics/Point;
 
@@ -2455,7 +2455,7 @@
     :goto_1a
     return-void
 
-    .line 650
+    .line 652
     :cond_1b
     iget p2, p1, Landroid/graphics/Point;->x:I
 
@@ -2465,15 +2465,15 @@
 
     const/4 p2, 0x0
 
-    .line 652
+    .line 654
     iput-boolean p2, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAutoFocused:Z
 
-    .line 653
+    .line 655
     iput-boolean p2, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mActiveResulted:Z
 
     const/4 p2, 0x1
 
-    .line 656
+    .line 658
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->performAutoFocus(Landroid/graphics/Point;Z)V
 
     return-void
@@ -2484,22 +2484,22 @@
 
     const/4 v0, 0x0
 
-    .line 1022
+    .line 1028
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusAnimateEnd:Z
 
-    .line 1023
+    .line 1029
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1024
+    .line 1030
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
 
     sget v1, Lcom/transsion/camera/R$drawable;->ic_focus_lock:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 1025
+    .line 1031
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusAnimator:Lcom/transsion/camera/ui/setting/focus/IFocusAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
@@ -2516,20 +2516,20 @@
 .method private triggerLockDirectly(FFLcom/transsion/camera/app/common/mode/IAeAfLock$State;)V
     .registers 6
 
-    .line 666
+    .line 668
     sget-object v0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "triggerLockDirectly"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 668
+    .line 670
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
-    .line 669
+    .line 671
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideLaserFocusView()V
 
-    .line 671
+    .line 673
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->calculateFocusCoordinate(FF)Landroid/graphics/Point;
 
     move-result-object p1
@@ -2538,7 +2538,7 @@
 
     return-void
 
-    .line 676
+    .line 678
     :cond_14
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
@@ -2546,7 +2546,7 @@
 
     invoke-direct {p0, p2, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->performAeAfLock(Lcom/transsion/camera/app/common/mode/IAeAfLock$State;Z)V
 
-    .line 678
+    .line 680
     iget p2, p1, Landroid/graphics/Point;->x:I
 
     iget p1, p1, Landroid/graphics/Point;->y:I
@@ -2561,22 +2561,22 @@
 
     const/4 v0, 0x0
 
-    .line 1008
+    .line 1014
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockAnimateEnd:Z
 
-    .line 1009
+    .line 1015
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1010
+    .line 1016
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
 
     sget v1, Lcom/transsion/camera/R$drawable;->ic_focus_lock:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
-    .line 1011
+    .line 1017
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusAnimator:Lcom/transsion/camera/ui/setting/focus/IFocusAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mFocusView:Lcom/transsion/camera/app/ui/widget/DrawBackgroundView;
@@ -2591,67 +2591,79 @@
 .end method
 
 .method private unLockAeAf()V
-    .registers 4
+    .registers 5
 
     .line 460
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAeAfLock:Lcom/transsion/camera/app/common/mode/IAeAfLock;
 
     if-nez v0, :cond_5
 
-    goto :goto_22
+    goto :goto_2c
 
     .line 463
     :cond_5
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
-    if-eqz v0, :cond_22
+    if-eqz v1, :cond_2c
 
-    sget-object v1, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
+    sget-object v2, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
-    if-ne v1, v0, :cond_e
+    if-ne v2, v1, :cond_e
 
-    goto :goto_22
+    goto :goto_2c
 
     .line 466
     :cond_e
-    iget-boolean v2, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsTimeLapseRecording:Z
+    iget-boolean v3, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsTimeLapseRecording:Z
 
-    if-eqz v2, :cond_1d
+    if-eqz v3, :cond_27
 
-    sget-object v2, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AE_AF_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
+    sget-object v3, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AE_AF_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
-    if-ne v2, v0, :cond_1d
+    if-ne v3, v1, :cond_27
 
     .line 467
-    sget-object v0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AF_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
+    sget-object v1, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AF_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {p0, v0, v1}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->performAeAfLock(Lcom/transsion/camera/app/common/mode/IAeAfLock$State;Z)V
+    invoke-interface {v0, v1, v2}, Lcom/transsion/camera/app/common/mode/IAeAfLock;->performAeAfLock(Lcom/transsion/camera/app/common/mode/IAeAfLock$State;Z)V
+
+    .line 468
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAeAfLock:Lcom/transsion/camera/app/common/mode/IAeAfLock;
+
+    sget-object v2, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AE_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
+
+    const/4 v3, 0x0
+
+    invoke-interface {v0, v2, v3}, Lcom/transsion/camera/app/common/mode/IAeAfLock;->performAeAfLock(Lcom/transsion/camera/app/common/mode/IAeAfLock$State;Z)V
+
+    .line 469
+    iput-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-void
 
-    .line 470
-    :cond_1d
-    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->handleAeAfUnLock(Lcom/transsion/camera/app/common/mode/IAeAfLock$State;)V
+    .line 472
+    :cond_27
+    invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->handleAeAfUnLock(Lcom/transsion/camera/app/common/mode/IAeAfLock$State;)V
 
-    .line 471
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
+    .line 473
+    iput-object v2, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
-    :cond_22
-    :goto_22
+    :cond_2c
+    :goto_2c
     return-void
 .end method
 
 .method private unRegisterKeyToMonitor(Ljava/lang/String;)V
     .registers 3
 
-    .line 1074
+    .line 1080
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_9
 
-    .line 1075
+    .line 1081
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mStatusChangeListener:Lcom/transsion/camera/ui/setting/focus/FocusUI$StatusChangeListener;
 
     invoke-virtual {v0, p1, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
@@ -2661,47 +2673,65 @@
 .end method
 
 .method private updateEnableState(I)V
-    .registers 4
+    .registers 5
 
-    .line 820
+    .line 822
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->respondPreviewManagerEvent(I)I
 
     move-result v0
 
-    .line 821
+    .line 823
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/transsion/camera/utils/CustomConfigUtil;->isQcomCaptureFlow()Z
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_14
+
+    const/16 v1, 0x1f
+
+    if-ne p1, v1, :cond_14
+
+    move v0, v2
+
+    .line 827
+    :cond_14
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_20
 
-    .line 823
+    .line 829
     invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->getCurrentActionState()I
 
     move-result v1
 
-    .line 822
+    .line 828
     invoke-static {v1, p1, v0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->filterRespondByState(III)I
 
     move-result v0
 
-    :cond_10
+    :cond_20
     const/4 p1, 0x1
 
-    if-ne v0, p1, :cond_18
+    if-ne v0, p1, :cond_27
 
-    const/4 p1, 0x0
-
-    .line 826
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->setEnable(Z)V
+    .line 832
+    invoke-virtual {p0, v2}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->setEnable(Z)V
 
     return-void
 
-    :cond_18
-    if-nez v0, :cond_1d
+    :cond_27
+    if-nez v0, :cond_2c
 
-    .line 828
+    .line 834
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->setEnable(Z)V
 
-    :cond_1d
+    :cond_2c
     return-void
 .end method
 
@@ -2988,7 +3018,7 @@
 .method public notifyCameraOperateAction(I)V
     .registers 5
 
-    .line 834
+    .line 840
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->updateEnableState(I)V
 
     const/4 v0, 0x1
@@ -3087,43 +3117,43 @@
 
     goto :goto_91
 
-    .line 879
+    .line 885
     :pswitch_5d
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
     return-void
 
-    .line 876
+    .line 882
     :pswitch_61
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDisableUI:Z
 
     return-void
 
-    .line 873
+    .line 879
     :pswitch_64
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mDisableUI:Z
 
     return-void
 
-    .line 919
+    .line 925
     :sswitch_67
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->resetUI()V
 
     return-void
 
-    .line 915
+    .line 921
     :sswitch_6b
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsRecognizeQrCode:Z
 
     return-void
 
-    .line 912
+    .line 918
     :sswitch_6e
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsRecognizeQrCode:Z
 
     return-void
 
-    .line 928
+    .line 934
     :sswitch_71
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mPreviewRoot:Landroid/view/View;
 
@@ -3131,123 +3161,123 @@
 
     return-void
 
-    .line 864
+    .line 870
     :sswitch_77
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mHideView:Z
 
-    .line 865
+    .line 871
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAIGCCapturing:Z
 
     if-eqz p1, :cond_81
 
-    .line 866
+    .line 872
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAIGCCapturing:Z
 
-    .line 867
+    .line 873
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mActiveFocusEnable:Z
 
-    .line 869
+    .line 875
     :cond_81
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
-    .line 870
+    .line 876
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsTimeLapseRecording:Z
 
     return-void
 
-    .line 922
+    .line 928
     :sswitch_87
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsPassiveFocusViewShow:Z
 
     if-eqz p1, :cond_91
 
-    .line 923
+    .line 929
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
-    .line 924
+    .line 930
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideLaserFocusView()V
 
     :cond_91
     :goto_91
     return-void
 
-    .line 907
+    .line 913
     :cond_92
     :sswitch_92
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAIGCCapturing:Z
 
-    .line 908
+    .line 914
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mHideView:Z
 
-    .line 909
+    .line 915
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mActiveFocusEnable:Z
 
     return-void
 
-    .line 899
+    .line 905
     :cond_99
     :sswitch_99
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAIGCCapturing:Z
 
-    .line 900
+    .line 906
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mHideView:Z
 
-    .line 901
+    .line 907
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mActiveFocusEnable:Z
 
-    .line 902
+    .line 908
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
-    .line 903
+    .line 909
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideLaserFocusView()V
 
     return-void
 
-    .line 885
+    .line 891
     :cond_a6
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mSplitScreen:Z
 
     return-void
 
-    .line 882
+    .line 888
     :cond_a9
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mSplitScreen:Z
 
     return-void
 
-    .line 894
+    .line 900
     :cond_ac
     :sswitch_ac
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mActiveFocusEnable:Z
 
-    .line 895
+    .line 901
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->notifyExposureChange(Z)V
 
     return-void
 
-    .line 889
+    .line 895
     :cond_b2
     :sswitch_b2
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mActiveFocusEnable:Z
 
-    .line 890
+    .line 896
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->notifyExposureChange(Z)V
 
     return-void
 
-    .line 934
+    .line 940
     :cond_b8
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsTimeLapseRecording:Z
 
     return-void
 
-    .line 931
+    .line 937
     :cond_bb
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsTimeLapseRecording:Z
 
     return-void
 
-    .line 861
+    .line 867
     :cond_be
     :pswitch_be
     :sswitch_be
@@ -3255,16 +3285,16 @@
 
     return-void
 
-    .line 847
+    .line 853
     :cond_c1
     :pswitch_c1
     :sswitch_c1
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mHideView:Z
 
-    .line 848
+    .line 854
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideFocusView()V
 
-    .line 849
+    .line 855
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->hideLaserFocusView()V
 
     return-void
@@ -3445,7 +3475,7 @@
 .method public onLongPress(FF)Z
     .registers 6
 
-    .line 588
+    .line 590
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAeAfLock:Lcom/transsion/camera/app/common/mode/IAeAfLock;
 
     const/4 v1, 0x0
@@ -3458,7 +3488,7 @@
 
     goto :goto_41
 
-    .line 592
+    .line 594
     :cond_a
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->isExceedCurvedScreenArea(FF)Z
 
@@ -3466,7 +3496,7 @@
 
     if-eqz v0, :cond_18
 
-    .line 593
+    .line 595
     sget-object p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "LongPress point is out of Curved Screen Area!"
@@ -3475,7 +3505,7 @@
 
     return v1
 
-    .line 597
+    .line 599
     :cond_18
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mIsRecognizeQrCode:Z
 
@@ -3483,7 +3513,7 @@
 
     return v1
 
-    .line 601
+    .line 603
     :cond_1d
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mAeAfLock:Lcom/transsion/camera/app/common/mode/IAeAfLock;
 
@@ -3493,43 +3523,43 @@
 
     if-eqz v0, :cond_41
 
-    .line 602
+    .line 604
     sget-object v2, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     if-ne v2, v0, :cond_2a
 
     goto :goto_41
 
-    .line 606
+    .line 608
     :cond_2a
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mCancelLock:Z
 
-    .line 609
+    .line 611
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->handleAeAfUnLock(Lcom/transsion/camera/app/common/mode/IAeAfLock$State;)V
 
-    .line 611
+    .line 613
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
-    .line 613
+    .line 615
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->autoFocusSupport()Z
 
     move-result v2
 
     if-eqz v2, :cond_3b
 
-    .line 614
+    .line 616
     invoke-direct {p0, p1, p2, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->triggerFocusLock(FFLcom/transsion/camera/app/common/mode/IAeAfLock$State;)V
 
     goto :goto_3e
 
-    .line 616
+    .line 618
     :cond_3b
     invoke-direct {p0, p1, p2, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->triggerLockDirectly(FFLcom/transsion/camera/app/common/mode/IAeAfLock$State;)V
 
     :goto_3e
     const/4 p1, 0x1
 
-    .line 619
+    .line 621
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLongPressing:Z
 
     :cond_41
@@ -3699,20 +3729,20 @@
 .method public onUp(Landroid/view/MotionEvent;)Z
     .registers 3
 
-    .line 711
+    .line 713
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mPreviewRoot:Landroid/view/View;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/MultiTouchManager;->stopTouching(Landroid/view/View;)V
 
     const/4 v0, 0x0
 
-    .line 712
+    .line 714
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI;->mLongPressing:Z
 
-    .line 713
+    .line 715
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->notifyLocked()V
 
-    .line 714
+    .line 716
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onUp(Landroid/view/MotionEvent;)Z
 
     move-result p0

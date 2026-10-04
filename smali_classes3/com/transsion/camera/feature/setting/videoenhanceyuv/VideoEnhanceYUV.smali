@@ -55,7 +55,7 @@
 .method private isQualifiedToRecoverQuality()Z
     .registers 2
 
-    .line 294
+    .line 296
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getSettingProvide()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
@@ -72,14 +72,14 @@
 
     if-eqz p0, :cond_1e
 
-    .line 296
+    .line 298
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getDefaultValue()Ljava/lang/String;
 
     move-result-object p0
 
     const/4 v0, 0x6
 
-    .line 297
+    .line 299
     invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
@@ -99,7 +99,7 @@
 .method private isSupportWideCamera()Z
     .registers 2
 
-    .line 285
+    .line 287
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->mVideoSupportWide:Z
 
     if-eqz v0, :cond_16
@@ -130,130 +130,142 @@
     return p0
 .end method
 
-.method private mergeVideoQualityRelation(Lcom/transsion/camera/app/common/relation/Relation;Ljava/lang/String;Z)V
-    .registers 7
+.method private mergeVideoQualityRelation(Lcom/transsion/camera/app/common/relation/Relation;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 8
 
     .line 206
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->mEnhanceSupportVideoQuality:[Ljava/lang/String;
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_56
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+    iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    const-string v1, "key_video_quality"
+    const-string v2, "key_video_quality"
 
-    invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v1, v2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_56
+
+    if-eqz p1, :cond_56
+
+    .line 208
+    invoke-virtual {p1, v2}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
+
+    .line 209
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->getKey()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-interface {v0, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-static {p0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_4c
+    const-string p2, "key_super_anti_video"
 
-    if-eqz p1, :cond_4c
+    const-string v0, "key_anti_video"
 
-    .line 208
-    invoke-virtual {p1, v1}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
-
-    .line 209
-    const-string p0, "key_anti_video"
-
-    invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
+    if-nez p0, :cond_2f
 
     .line 210
-    const-string v0, "key_super_anti_video"
-
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
 
-    if-eqz p3, :cond_4c
+    .line 211
+    invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
 
-    .line 212
+    :cond_2f
+    if-eqz p4, :cond_56
+
+    .line 214
+    const-string p0, "on"
+
+    invoke-virtual {p0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    const-string p4, "null"
+
+    if-eqz p0, :cond_42
+
+    .line 215
+    const-string/jumbo p0, "value_change_on"
+
+    invoke-virtual {p1, v2, p0, p4}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+
+    .line 216
+    :cond_42
+    const-string p0, "off"
+
+    invoke-virtual {p0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_56
+
+    .line 217
+    const-string/jumbo p0, "value_change_off"
+
+    invoke-virtual {p1, v2, p0, p4}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 218
+    invoke-virtual {p1, v0, p0, p4}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 219
+    invoke-virtual {p1, p2, p0, p4}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_56
+    return-void
+.end method
+
+.method private postRelation(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 6
+
+    const/4 v0, 0x1
+
+    .line 196
+    invoke-static {p2, v0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUVRestriction;->getRestriction(Ljava/lang/String;Z)Lcom/transsion/camera/app/common/relation/Relation;
+
+    move-result-object v0
+
+    .line 197
+    invoke-virtual {p0, p3}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->unSupportVideoHDR(Ljava/lang/String;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_1d
+
     const-string p3, "on"
 
     invoke-virtual {p3, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
 
-    const-string v2, "null"
-
-    if-eqz p3, :cond_38
-
-    .line 213
-    const-string/jumbo p0, "value_change_on"
-
-    invoke-virtual {p1, v1, p0, v2}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    .line 214
-    :cond_38
-    const-string p3, "off"
-
-    invoke-virtual {p3, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_4c
-
-    .line 215
-    const-string/jumbo p2, "value_change_off"
-
-    invoke-virtual {p1, v1, p2, v2}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 216
-    invoke-virtual {p1, p0, p2, v2}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 217
-    invoke-virtual {p1, v0, p2, v2}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_4c
-    return-void
-.end method
-
-.method private postRelation(Ljava/lang/String;Ljava/lang/String;Z)V
-    .registers 5
-
-    const/4 v0, 0x1
-
-    .line 196
-    invoke-static {p1, v0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUVRestriction;->getRestriction(Ljava/lang/String;Z)Lcom/transsion/camera/app/common/relation/Relation;
-
-    move-result-object v0
-
-    .line 197
-    invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->unSupportVideoHDR(Ljava/lang/String;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_1d
-
-    const-string p2, "on"
-
-    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_1d
+    if-eqz p3, :cond_1d
 
     .line 198
-    const-string p2, "key_360_video_hdr"
+    const-string p3, "key_360_video_hdr"
 
-    invoke-virtual {v0, p2}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
+    invoke-virtual {v0, p3}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
 
     .line 199
-    const-string p2, "key_com_video_hdr"
+    const-string p3, "key_com_video_hdr"
 
-    invoke-virtual {v0, p2}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
+    invoke-virtual {v0, p3}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
 
     .line 201
     :cond_1d
-    invoke-direct {p0, v0, p1, p3}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->mergeVideoQualityRelation(Lcom/transsion/camera/app/common/relation/Relation;Ljava/lang/String;Z)V
+    invoke-direct {p0, v0, p1, p2, p4}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->mergeVideoQualityRelation(Lcom/transsion/camera/app/common/relation/Relation;Ljava/lang/String;Ljava/lang/String;Z)V
 
     .line 202
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -266,10 +278,10 @@
 .method private setCheckValues(Ljava/lang/String;)V
     .registers 3
 
-    .line 268
+    .line 270
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->mValue:Ljava/lang/String;
 
-    .line 269
+    .line 271
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->getSupport()Ljava/util/List;
 
     move-result-object v0
@@ -280,12 +292,12 @@
 
     if-nez p1, :cond_10
 
-    .line 270
+    .line 272
     const-string p1, "off"
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->mValue:Ljava/lang/String;
 
-    .line 272
+    .line 274
     :cond_10
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->mValue:Ljava/lang/String;
 
@@ -334,17 +346,17 @@
 .method public beforeUnInit()V
     .registers 6
 
-    .line 246
+    .line 248
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->beforeUnInit()V
 
-    .line 247
+    .line 249
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "null"
 
     if-eqz v0, :cond_2e
 
-    .line 248
+    .line 250
     new-instance v2, Lcom/transsion/camera/app/common/relation/Relation$Builder;
 
     const-string v3, "key_video_enhance"
@@ -355,7 +367,7 @@
 
     const-string v3, "key_video_quality"
 
-    .line 249
+    .line 251
     const-string/jumbo v4, "value_change_off"
 
     invoke-virtual {v2, v3, v4, v1}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
@@ -364,14 +376,14 @@
 
     const-string v3, "key_anti_video"
 
-    .line 250
+    .line 252
     invoke-virtual {v2, v3, v4, v1}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
 
     move-result-object v2
 
     const-string v3, "key_super_anti_video"
 
-    .line 251
+    .line 253
     invoke-virtual {v2, v3, v4, v1}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
 
     move-result-object v2
@@ -380,16 +392,16 @@
 
     move-result-object v2
 
-    .line 248
+    .line 250
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 253
+    .line 255
     :cond_2e
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_51
 
-    .line 254
+    .line 256
     const-string v2, "key_quality_recover_default"
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
@@ -398,7 +410,7 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 255
+    .line 257
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v2, "key_anti_video_recover_default"
@@ -409,7 +421,7 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 256
+    .line 258
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_super_anti_video_recover_default"
@@ -459,7 +471,7 @@
 .method public getCameraId()Ljava/lang/String;
     .registers 1
 
-    .line 231
+    .line 233
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
@@ -515,7 +527,7 @@
         }
     .end annotation
 
-    .line 236
+    .line 238
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p0
@@ -618,7 +630,7 @@
 .method public isModeSupport()Z
     .registers 1
 
-    .line 290
+    .line 292
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->mIsModeSupport:Z
 
     return p0
@@ -627,7 +639,7 @@
 .method isSupportCamera()Z
     .registers 4
 
-    .line 276
+    .line 278
     sget-object v0, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -654,7 +666,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 277
+    .line 279
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -671,7 +683,7 @@
 
     if-nez v0, :cond_68
 
-    .line 278
+    .line 280
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -688,7 +700,7 @@
 
     if-nez v0, :cond_68
 
-    .line 279
+    .line 281
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -705,7 +717,7 @@
 
     if-nez v0, :cond_68
 
-    .line 280
+    .line 282
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -722,7 +734,7 @@
 
     if-nez v0, :cond_68
 
-    .line 281
+    .line 283
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->isSupportWideCamera()Z
 
     move-result p0
@@ -796,7 +808,7 @@
 .end method
 
 .method public onValueChanged(Ljava/lang/String;)V
-    .registers 6
+    .registers 7
 
     .line 183
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -807,7 +819,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_59
+    if-nez v0, :cond_5d
 
     .line 184
     sget-object v0, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -845,33 +857,37 @@
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->setCheckValues(Ljava/lang/String;)V
 
     .line 187
-    iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
-
-    invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v1, 0x6
+    iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 188
-    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
+    const/4 v2, 0x6
+
+    .line 188
+    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "key_video_quality"
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
 
-    invoke-virtual {v0, v3, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v0
+    const-string v4, "key_video_quality"
 
-    const/4 v1, 0x1
+    invoke-virtual {v1, v4, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
 
     .line 187
-    invoke-direct {p0, p1, v0, v1}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->postRelation(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct {p0, v0, p1, v1, v2}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->postRelation(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     .line 189
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->sendSettingChangeRequest()V
@@ -882,15 +898,15 @@
     .line 191
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    const-string v2, "key_video_enhance_yuv"
+    const-string v1, "key_video_enhance_yuv"
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {v0, v2, p1, p0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-virtual {v0, v1, p1, p0, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    :cond_59
+    :cond_5d
     return-void
 .end method
 
@@ -1021,27 +1037,27 @@
     .line 142
     invoke-static {p2, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result p1
+    move-result v2
 
-    if-nez p1, :cond_11b
+    if-nez v2, :cond_11b
 
     if-nez p3, :cond_7d
 
     .line 144
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->unSupportVideoHDR(Ljava/lang/String;)Z
 
-    move-result p1
+    move-result p3
 
-    if-nez p1, :cond_11b
+    if-nez p3, :cond_11b
 
     .line 145
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p3
 
-    const/4 p3, 0x0
+    const/4 v0, 0x0
 
-    invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->postRelation(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct {p0, p1, p3, p2, v0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->postRelation(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
 
@@ -1266,15 +1282,15 @@
 .method public restoreToSupportedPlatformValue()V
     .registers 2
 
-    .line 262
+    .line 264
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->restoreToSupportedPlatformValue()V
 
-    .line 263
+    .line 265
     const-string v0, "off"
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->mValue:Ljava/lang/String;
 
-    .line 264
+    .line 266
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->setCheckValues(Ljava/lang/String;)V
 
     return-void
@@ -1283,7 +1299,7 @@
 .method public sendSettingChangeRequest()V
     .registers 2
 
-    .line 326
+    .line 328
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->getKey()Ljava/lang/String;
@@ -1298,38 +1314,38 @@
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
     .registers 4
 
-    .line 304
+    .line 306
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->isSupportCamera()Z
 
     move-result p1
 
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->mVideoEnhanceSupport:Z
 
-    .line 305
+    .line 307
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 306
+    .line 308
     const-string v0, "off"
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 307
+    .line 309
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->mVideoEnhanceSupport:Z
 
     if-eqz v1, :cond_19
 
-    .line 308
+    .line 310
     const-string v1, "on"
 
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 310
+    .line 312
     :cond_19
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->initValueAndSupport(Ljava/util/List;Ljava/lang/String;)V
 
-    .line 311
+    .line 313
     sget-object p1, Lcom/transsion/camera/feature/setting/videoenhanceyuv/VideoEnhanceYUV;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1374,7 +1390,7 @@
 .method public unInit()V
     .registers 1
 
-    .line 241
+    .line 243
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->unInit()V
 
     return-void
@@ -1385,7 +1401,7 @@
 
     const/4 p0, 0x6
 
-    .line 225
+    .line 227
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p0
@@ -1398,7 +1414,7 @@
 
     const/4 p0, 0x5
 
-    .line 226
+    .line 228
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p0
@@ -1411,7 +1427,7 @@
 
     const/4 p0, 0x4
 
-    .line 227
+    .line 229
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p0

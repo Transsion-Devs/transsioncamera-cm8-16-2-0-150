@@ -18,9 +18,3 @@
 
 .method public abstract put(Ljava/lang/Object;Ljava/lang/Object;)Z
 .end method
-
-.method public abstract size()I
-.end method
-
-.method public abstract values()Ljava/util/Collection;
-.end method

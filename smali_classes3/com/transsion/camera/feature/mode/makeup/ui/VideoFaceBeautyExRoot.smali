@@ -128,6 +128,8 @@
 
 .field private mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
+.field private mGoFragment:Z
+
 .field private mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
 .field private mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
@@ -499,7 +501,7 @@
 .method static constructor <clinit>()V
     .registers 4
 
-    .line 110
+    .line 112
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "VideoFaceBeautyExRoot"
@@ -510,14 +512,14 @@
 
     const/4 v0, 0x0
 
-    .line 131
+    .line 134
     filled-new-array {v0}, [I
 
     move-result-object v0
 
     sput-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->NORMAL_STATE_SET:[I
 
-    .line 132
+    .line 135
     sget-object v1, Landroid/widget/RelativeLayout;->SELECTED_STATE_SET:[I
 
     filled-new-array {v1, v0}, [[I
@@ -526,7 +528,7 @@
 
     sput-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->sStates:[[I
 
-    .line 149
+    .line 152
     const-string/jumbo v0, "warm"
 
     const-string v1, "brown"
@@ -541,21 +543,21 @@
 
     sput-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->CUSTOM_WHITEN_KEY_ARRAY:[Ljava/lang/String;
 
-    .line 156
+    .line 159
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$1;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$1;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->CUSTOM_DEFAULT_MAP:Ljava/util/HashMap;
 
-    .line 175
+    .line 178
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$2;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$2;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->FEATURE_ID_MAP:Ljava/util/HashMap;
 
-    .line 195
+    .line 198
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$3;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$3;-><init>()V
@@ -568,20 +570,23 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 16
 
-    .line 379
+    .line 395
     invoke-direct/range {p0 .. p2}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     const/4 v2, 0x1
 
-    .line 122
+    .line 124
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mItemViewEnabled:Z
 
     const/4 v7, 0x0
 
-    .line 129
+    .line 131
     iput v7, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mScreenFormType:I
 
-    .line 136
+    .line 132
+    iput-boolean v7, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mGoFragment:Z
+
+    .line 139
     new-instance v3, Lcom/transsion/camera/app/common/ui/HintInfo;
 
     const/16 v4, 0x67
@@ -590,15 +595,15 @@
 
     iput-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mAutoHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 142
+    .line 145
     const-string v2, ""
 
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mOriginValue:Ljava/lang/String;
 
-    .line 146
+    .line 149
     iput-boolean v7, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mNeedShowAIHint:Z
 
-    .line 147
+    .line 150
     new-instance v2, Landroid/view/animation/PathInterpolator;
 
     const v3, 0x3dcccccd    # 0.1f
@@ -613,7 +618,7 @@
 
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mInterpolator:Landroid/view/animation/PathInterpolator;
 
-    .line 638
+    .line 654
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
@@ -622,47 +627,47 @@
 
     const v2, 0xfa01
 
-    .line 1279
+    .line 1299
     iput v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->TYPE_GROUP:I
 
     const v2, 0xfa02
 
-    .line 1280
+    .line 1300
     iput v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->TYPE_CHILD:I
 
     const v2, 0xfa03
 
-    .line 1281
+    .line 1301
     iput v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->TYPE_CHILD_SECONDARY:I
 
     const v2, 0xfa04
 
-    .line 1282
+    .line 1302
     iput v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->TYPE_RESET:I
 
     const v2, 0xfa05
 
-    .line 1283
+    .line 1303
     iput v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->TYPE_FOOTER:I
 
-    .line 1760
+    .line 1780
     new-instance v2, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$9;
 
     invoke-direct {v2, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$9;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;)V
 
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorValueStore:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu$IValueStore;
 
-    .line 1777
+    .line 1797
     new-instance v2, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$10;
 
     invoke-direct {v2, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$10;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;)V
 
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorMenuListener:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu$ISkinColorMenuListener;
 
-    .line 380
+    .line 396
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mContext:Landroid/content/Context;
 
-    .line 381
+    .line 397
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
@@ -673,42 +678,42 @@
 
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mItdV2Support:Z
 
-    .line 382
+    .line 398
     new-instance v2, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$5;
 
     invoke-direct {v2, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$5;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;)V
 
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautyInfoList:Ljava/util/List;
 
-    .line 428
+    .line 444
     new-instance v3, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$6;
 
     invoke-direct {v3, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$6;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;)V
 
     iput-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mBlackIconMap:Ljava/util/Map;
 
-    .line 465
+    .line 481
     sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$color;->mu_item_selected_color:I
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getColor(I)I
 
     move-result v3
 
-    .line 466
+    .line 482
     sget v4, Lcom/transsion/camera/featurelibs/commonwidget/R$color;->mu_item_unselected_color:I
 
     invoke-virtual {p1, v4}, Landroid/content/Context;->getColor(I)I
 
     move-result v4
 
-    .line 467
+    .line 483
     sget v5, Lcom/transsion/camera/featurelibs/commonwidget/R$color;->mu_item_unselected_color_black:I
 
     invoke-virtual {p1, v5}, Landroid/content/Context;->getColor(I)I
 
     move-result v0
 
-    .line 468
+    .line 484
     new-instance v5, Landroid/content/res/ColorStateList;
 
     sget-object v6, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->sStates:[[I
@@ -721,7 +726,7 @@
 
     iput-object v5, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mStateList:Landroid/content/res/ColorStateList;
 
-    .line 469
+    .line 485
     new-instance v4, Landroid/content/res/ColorStateList;
 
     filled-new-array {v3, v0}, [I
@@ -732,24 +737,24 @@
 
     iput-object v4, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mStateListBlack:Landroid/content/res/ColorStateList;
 
-    .line 470
+    .line 486
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
-    .line 472
+    .line 488
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v8
 
     move v9, v7
 
-    :goto_a6
-    if-ge v9, v8, :cond_219
+    :goto_a8
+    if-ge v9, v8, :cond_21b
 
-    .line 474
+    .line 490
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautyInfoList:Ljava/util/List;
 
     invoke-interface {v0, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -760,16 +765,16 @@
 
     iget-object v2, v0, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->key:Ljava/lang/String;
 
-    .line 475
+    .line 491
     const-string/jumbo v10, "whiten"
 
     invoke-virtual {v10, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a2
+    if-eqz v0, :cond_1a4
 
-    .line 476
+    .line 492
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautyInfoList:Ljava/util/List;
@@ -786,7 +791,7 @@
 
     move-result-object v3
 
-    .line 477
+    .line 493
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautyInfoList:Ljava/util/List;
 
     invoke-interface {v0, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -797,14 +802,14 @@
 
     iget v4, v0, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->drawableId:I
 
-    .line 478
+    .line 494
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
-    if-nez v0, :cond_13f
+    if-nez v0, :cond_141
 
-    .line 479
+    .line 495
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;
 
     sget v5, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$drawable;->ic_multi_fb_skin_arrow:I
@@ -817,13 +822,13 @@
 
     move-object v10, v0
 
-    .line 482
+    .line 498
     iput v9, v10, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->id:I
 
-    .line 483
+    .line 499
     iput-boolean v7, v10, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->isExpand:Z
 
-    .line 484
+    .line 500
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->SKIN_COLOR_LIST:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -832,10 +837,10 @@
 
     move v12, v7
 
-    :goto_f1
-    if-ge v12, v11, :cond_12c
+    :goto_f3
+    if-ge v12, v11, :cond_12e
 
-    .line 486
+    .line 502
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->SKIN_COLOR_LIST:Ljava/util/List;
 
     invoke-interface {v0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -846,7 +851,7 @@
 
     iget v2, v2, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->featureId:I
 
-    .line 487
+    .line 503
     invoke-interface {v0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -855,7 +860,7 @@
 
     iget-object v3, v3, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->key:Ljava/lang/String;
 
-    .line 488
+    .line 504
     invoke-interface {v0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -864,7 +869,7 @@
 
     iget v4, v4, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->drawableId:I
 
-    .line 489
+    .line 505
     iget-object v5, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mContext:Landroid/content/Context;
 
     invoke-interface {v0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -879,7 +884,7 @@
 
     move-result-object v5
 
-    .line 490
+    .line 506
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Child;
 
     const/4 v6, 0x1
@@ -888,21 +893,21 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Child;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;ILjava/lang/String;ILjava/lang/String;Z)V
 
-    .line 491
+    .line 507
     iput v12, v0, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->position:I
 
-    .line 492
+    .line 508
     iput-object v10, v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Child;->group:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;
 
-    .line 493
+    .line 509
     invoke-virtual {v10, v0}, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->addSubItem(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
 
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_f1
+    goto :goto_f3
 
-    .line 495
-    :cond_12c
+    .line 511
+    :cond_12e
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Footer;
 
     sget v2, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$drawable;->ic_multi_fb_skin_footer:I
@@ -911,18 +916,18 @@
 
     invoke-direct {v0, p0, v2, v3}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Footer;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;II)V
 
-    .line 498
+    .line 514
     invoke-virtual {v10, v0}, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->addSubItem(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
 
-    .line 499
+    .line 515
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     invoke-virtual {v0, v10}, Lcom/transsion/camera/feature/mode/makeup/adapter/ItemAdapter;->addItem(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
 
-    goto/16 :goto_215
+    goto/16 :goto_217
 
-    .line 501
-    :cond_13f
+    .line 517
+    :cond_141
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;
 
     const/4 v5, -0x1
@@ -935,32 +940,32 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorGroup:Lcom/transsion/camera/feature/mode/makeup/adapter/Item;
 
-    .line 502
+    .line 518
     iput v9, v0, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->id:I
 
-    .line 503
+    .line 519
     iput-boolean v7, v0, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->isExpand:Z
 
-    .line 504
+    .line 520
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v0
 
     iget-boolean v0, v0, Lcom/transsion/camera/app/common/CommonConfigUtil;->mFaceBeautyV3:Z
 
-    if-eqz v0, :cond_15c
+    if-eqz v0, :cond_15e
 
-    .line 505
+    .line 521
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorGroup:Lcom/transsion/camera/feature/mode/makeup/adapter/Item;
 
     check-cast v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;
 
     iput-object v10, v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;->selectKey:Ljava/lang/String;
 
-    goto :goto_19a
+    goto :goto_19c
 
-    .line 507
-    :cond_15c
+    .line 523
+    :cond_15e
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->SKIN_COLOR_LIST:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -969,10 +974,10 @@
 
     move v2, v7
 
-    :goto_163
-    if-ge v2, v0, :cond_19a
+    :goto_165
+    if-ge v2, v0, :cond_19c
 
-    .line 509
+    .line 525
     sget-object v3, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->SKIN_COLOR_LIST:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -983,7 +988,7 @@
 
     iget v4, v4, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->featureId:I
 
-    .line 510
+    .line 526
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -992,7 +997,7 @@
 
     iget-object v5, v5, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->key:Ljava/lang/String;
 
-    .line 511
+    .line 527
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -1001,7 +1006,7 @@
 
     iget v6, v6, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->drawableId:I
 
-    .line 512
+    .line 528
     iget-object v10, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mContext:Landroid/content/Context;
 
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1016,52 +1021,52 @@
 
     move-result-object v3
 
-    .line 513
+    .line 529
     new-instance v10, Lcom/transsion/camera/feature/mode/makeup/adapter/VideoFaceSkinColorItem;
 
     invoke-direct {v10, v4, v5, v6, v3}, Lcom/transsion/camera/feature/mode/makeup/adapter/VideoFaceSkinColorItem;-><init>(ILjava/lang/String;ILjava/lang/String;)V
 
-    .line 514
+    .line 530
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorGroup:Lcom/transsion/camera/feature/mode/makeup/adapter/Item;
 
     invoke-virtual {v3, v10}, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->addSubItem(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_163
+    goto :goto_165
 
-    .line 517
-    :cond_19a
-    :goto_19a
+    .line 533
+    :cond_19c
+    :goto_19c
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorGroup:Lcom/transsion/camera/feature/mode/makeup/adapter/Item;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/feature/mode/makeup/adapter/ItemAdapter;->addItem(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
 
-    goto :goto_215
+    goto :goto_217
 
-    .line 519
-    :cond_1a2
+    .line 535
+    :cond_1a4
     const-string v0, "reset"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1d6
+    if-eqz v0, :cond_1d8
 
-    .line 520
+    .line 536
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Reset;
 
     const/4 v2, 0x0
 
     invoke-direct {v0, p0, v2}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Reset;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot-IA;)V
 
-    .line 521
+    .line 537
     iput v9, v0, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->id:I
 
-    .line 522
+    .line 538
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautyInfoList:Ljava/util/List;
@@ -1080,7 +1085,7 @@
 
     iput-object v2, v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Reset;->title:Ljava/lang/String;
 
-    .line 523
+    .line 539
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautyInfoList:Ljava/util/List;
 
     invoke-interface {v2, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1093,15 +1098,15 @@
 
     iput v2, v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Reset;->drawableId:I
 
-    .line 524
+    .line 540
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     invoke-virtual {v2, v0}, Lcom/transsion/camera/feature/mode/makeup/adapter/ItemAdapter;->addItem(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
 
-    goto :goto_215
+    goto :goto_217
 
-    .line 526
-    :cond_1d6
+    .line 542
+    :cond_1d8
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautyInfoList:Ljava/util/List;
 
     invoke-interface {v0, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1112,7 +1117,7 @@
 
     iget v2, v0, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->featureId:I
 
-    .line 527
+    .line 543
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautyInfoList:Ljava/util/List;
 
     invoke-interface {v0, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1123,7 +1128,7 @@
 
     iget-object v3, v0, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->key:Ljava/lang/String;
 
-    .line 528
+    .line 544
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautyInfoList:Ljava/util/List;
 
     invoke-interface {v0, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1134,7 +1139,7 @@
 
     iget v4, v0, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->drawableId:I
 
-    .line 529
+    .line 545
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mContext:Landroid/content/Context;
 
     iget-object v5, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautyInfoList:Ljava/util/List;
@@ -1151,7 +1156,7 @@
 
     move-result-object v5
 
-    .line 530
+    .line 546
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Child;
 
     const/4 v6, 0x0
@@ -1160,24 +1165,24 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Child;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;ILjava/lang/String;ILjava/lang/String;Z)V
 
-    .line 531
+    .line 547
     iput v9, v0, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->id:I
 
-    .line 532
+    .line 548
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     invoke-virtual {v2, v0}, Lcom/transsion/camera/feature/mode/makeup/adapter/ItemAdapter;->addItem(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
 
-    .line 533
+    .line 549
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
-    :goto_215
+    :goto_217
     add-int/lit8 v9, v9, 0x1
 
-    goto/16 :goto_a6
+    goto/16 :goto_a8
 
-    .line 543
-    :cond_219
+    .line 559
+    :cond_21b
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     new-instance v2, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$7;
@@ -1192,14 +1197,14 @@
 .method private getKeyFromWhitenValue(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
 
-    .line 630
+    .line 646
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
 
     div-int/lit8 p0, p0, 0x65
 
-    .line 631
+    .line 647
     sget-object p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->CUSTOM_WHITEN_KEY_ARRAY:[Ljava/lang/String;
 
     aget-object p0, p1, p0
@@ -1210,7 +1215,7 @@
 .method private getSkinColor()Ljava/lang/String;
     .registers 2
 
-    .line 635
+    .line 651
     const-string p0, "debug.vendor.sys.oobe.camera_skin"
 
     const-string/jumbo v0, "white"
@@ -1225,7 +1230,7 @@
 .method private handleSkinColorMenu()Z
     .registers 2
 
-    .line 741
+    .line 761
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorMenu:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;
 
     if-eqz v0, :cond_17
@@ -1236,15 +1241,15 @@
 
     if-eqz v0, :cond_17
 
-    .line 742
+    .line 762
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorMenu:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;->hideSkinColorMenu()V
 
-    .line 743
+    .line 763
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateRecyclerViewVisibility()V
 
-    .line 744
+    .line 764
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->notifyRecyclerViewAdapter()V
 
     const/4 p0, 0x1
@@ -1260,7 +1265,7 @@
 .method private handleSkinSecondMenu()Z
     .registers 4
 
-    .line 730
+    .line 750
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinSecondMenu:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;
 
     const/4 v1, 0x0
@@ -1273,22 +1278,22 @@
 
     if-eqz v0, :cond_1e
 
-    .line 731
+    .line 751
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
 
     const/4 v2, -0x1
 
     invoke-direct {p0, v0, v2, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateItemProgress(Ljava/lang/String;IZ)V
 
-    .line 732
+    .line 752
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinSecondMenu:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;->hideSkinSecondMenu()V
 
-    .line 733
+    .line 753
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateRecyclerViewVisibility()V
 
-    .line 734
+    .line 754
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->notifyRecyclerViewAdapter()V
 
     const/4 p0, 0x1
@@ -1302,7 +1307,7 @@
 .method private initDefaultMap(Ljava/lang/String;)V
     .registers 4
 
-    .line 641
+    .line 657
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->CUSTOM_DEFAULT_MAP:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -1313,7 +1318,7 @@
 
     invoke-direct {v1, p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;Ljava/lang/String;)V
 
-    .line 642
+    .line 658
     invoke-interface {v0, v1}, Ljava/lang/Iterable;->forEach(Ljava/util/function/Consumer;)V
 
     return-void
@@ -1322,7 +1327,7 @@
 .method private synthetic lambda$initDefaultMap$2(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 642
+    .line 658
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDefaultMap:Ljava/util/Map;
 
     invoke-direct {p0, p2, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->queryDefaultValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -1337,7 +1342,7 @@
 .method private synthetic lambda$updateDefaultValue$0(Ljava/lang/String;)V
     .registers 5
 
-    .line 615
+    .line 631
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mItdV2Support:Z
 
     if-nez v0, :cond_11
@@ -1356,7 +1361,7 @@
 
     return-void
 
-    .line 618
+    .line 634
     :cond_11
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -1378,7 +1383,7 @@
 .method private synthetic lambda$updateDefaultValue$1(Ljava/lang/String;)V
     .registers 5
 
-    .line 621
+    .line 637
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mItdV2Support:Z
 
     if-nez v0, :cond_11
@@ -1397,7 +1402,7 @@
 
     return-void
 
-    .line 624
+    .line 640
     :cond_11
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -1419,14 +1424,14 @@
 .method private synthetic lambda$updateExpandState$3(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
     .registers 7
 
-    .line 703
+    .line 723
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
     if-nez v0, :cond_5
 
     goto :goto_9
 
-    .line 706
+    .line 726
     :cond_5
     instance-of v1, p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;
 
@@ -1435,13 +1440,13 @@
     :goto_9
     return-void
 
-    .line 709
+    .line 729
     :cond_a
     move-object v1, p1
 
     check-cast v1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;
 
-    .line 710
+    .line 730
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object v0
@@ -1464,7 +1469,7 @@
 
     const/4 v2, 0x0
 
-    .line 711
+    .line 731
     invoke-static {v2}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
 
     move-result-object v3
@@ -1475,12 +1480,12 @@
 
     move-result-object v4
 
-    .line 710
+    .line 730
     invoke-virtual {v0, v1, v3, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 712
+    .line 732
     invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v0
@@ -1489,21 +1494,21 @@
 
     const/4 v0, 0x1
 
-    .line 713
+    .line 733
     iput-boolean v0, p1, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->isExpand:Z
 
-    .line 714
+    .line 734
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/adapter/ExpandableItemAdapter;->expand(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
 
     return-void
 
-    .line 716
+    .line 736
     :cond_42
     iput-boolean v2, p1, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->isExpand:Z
 
-    .line 717
+    .line 737
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/adapter/ExpandableItemAdapter;->collapse(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
@@ -1514,12 +1519,12 @@
 .method private notifyRecyclerViewAdapter()V
     .registers 1
 
-    .line 759
+    .line 779
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     if-eqz p0, :cond_7
 
-    .line 760
+    .line 780
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     :cond_7
@@ -1529,7 +1534,7 @@
 .method private static parseValue(Ljava/lang/String;)I
     .registers 6
 
-    .line 1173
+    .line 1193
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -1540,7 +1545,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 1174
+    .line 1194
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1559,7 +1564,7 @@
 
     return v1
 
-    .line 1179
+    .line 1199
     :cond_1e
     :try_start_1e
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1573,7 +1578,7 @@
     :catch_23
     move-exception v0
 
-    .line 1181
+    .line 1201
     sget-object v3, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1596,7 +1601,7 @@
 .method private queryDefaultValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .registers 5
 
-    .line 646
+    .line 662
     const-string/jumbo v0, "whiten"
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1607,7 +1612,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 647
+    .line 663
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
     const-string/jumbo p1, "video"
@@ -1618,14 +1623,14 @@
 
     move-result p0
 
-    .line 649
+    .line 665
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 651
+    .line 667
     :cond_1a
     invoke-static {p1, v1, p2}, Lcom/transsion/camera/app/common/portraitdefault/DefaultParam;->getVideoFaceBeautyDefaultValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1637,7 +1642,7 @@
 .method private showAutoHint(Ljava/lang/String;)V
     .registers 3
 
-    .line 213
+    .line 216
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_18
@@ -1646,17 +1651,17 @@
 
     if-eqz v0, :cond_18
 
-    .line 214
+    .line 217
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 215
+    .line 218
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mAutoHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setHighlight(Z)V
 
-    .line 216
+    .line 219
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mAutoHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -1670,7 +1675,7 @@
 .method private showDialog()V
     .registers 5
 
-    .line 227
+    .line 234
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     if-eqz v0, :cond_b
@@ -1681,33 +1686,73 @@
 
     if-eqz v0, :cond_b
 
-    goto :goto_1a
+    goto :goto_40
 
-    .line 230
+    .line 237
     :cond_b
     sget-boolean v0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->isPressBack:Z
 
     if-eqz v0, :cond_10
 
-    goto :goto_1a
+    goto :goto_40
 
-    .line 233
+    .line 240
     :cond_10
+    sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "showDialog,mGoFragment:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mGoFragment:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 241
+    iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mGoFragment:Z
+
+    if-eqz v0, :cond_2d
+
+    goto :goto_40
+
+    .line 244
+    :cond_2d
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
+
+    if-eqz v0, :cond_36
+
+    const/16 v1, 0x87
+
+    .line 245
+    invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
+
+    .line 247
+    :cond_36
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_41
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->isDialogShow()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_41
 
-    :goto_1a
+    :goto_40
     return-void
 
-    .line 234
-    :cond_1b
+    .line 248
+    :cond_41
     sget v0, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->multi_face_beauty_dailog_message:I
 
     sget v1, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->multi_face_beauty_dailog_Positive_title:I
@@ -1724,32 +1769,32 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
-    .line 259
+    .line 275
     iget v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mScreenFormType:I
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_5c
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_36
+    if-eq v1, v2, :cond_5c
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_39
+    if-ne v1, v2, :cond_5f
 
-    :cond_36
+    :cond_5c
     const/4 v1, 0x0
 
-    .line 262
+    .line 278
     iput v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mOrientation:I
 
-    :cond_39
+    :cond_5f
     const/4 v1, 0x1
 
-    .line 264
+    .line 280
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->setBeautyResetDialog(Z)V
 
-    .line 265
+    .line 281
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mScreenFormType:I
@@ -1758,7 +1803,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->updateDialogLayout(II)V
 
-    .line 266
+    .line 282
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mContext:Landroid/content/Context;
@@ -1783,7 +1828,7 @@
 
     return-void
 
-    .line 1883
+    .line 1903
     :cond_3
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mShowAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -1791,15 +1836,15 @@
 
     const/4 v0, 0x0
 
-    .line 1885
+    .line 1905
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
     const/4 v0, 0x0
 
-    .line 1886
+    .line 1906
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1888
+    .line 1908
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -1808,7 +1853,7 @@
 
     const/4 v0, 0x2
 
-    .line 1889
+    .line 1909
     new-array v0, v0, [F
 
     fill-array-data v0, :array_40
@@ -1819,19 +1864,19 @@
 
     move-result-object p1
 
-    .line 1890
+    .line 1910
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1891
+    .line 1911
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mShowAnimatorSet:Landroid/animation/AnimatorSet;
 
     const-wide/16 v1, 0x96
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
 
-    .line 1892
+    .line 1912
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mShowAnimatorSet:Landroid/animation/AnimatorSet;
 
     const-wide/16 v1, 0xfa
@@ -1842,7 +1887,7 @@
 
     invoke-virtual {v0, p1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 1893
+    .line 1913
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mShowAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
@@ -1878,7 +1923,7 @@
 .method private updateCustomItemProgress(Ljava/lang/String;)V
     .registers 5
 
-    .line 1150
+    .line 1170
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDefaultMap:Ljava/util/Map;
@@ -1903,7 +1948,7 @@
 
     move-result v0
 
-    .line 1151
+    .line 1171
     const-string v1, "five_senses"
 
     invoke-static {v1, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1912,10 +1957,10 @@
 
     if-eqz v1, :cond_22
 
-    .line 1152
+    .line 1172
     rem-int/lit8 v0, v0, 0x65
 
-    .line 1155
+    .line 1175
     :cond_22
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
@@ -1929,12 +1974,12 @@
 .method private updateDataStoreResetValue()V
     .registers 2
 
-    .line 328
+    .line 344
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateDefaultValue()V
 
     const/4 v0, 0x0
 
-    .line 329
+    .line 345
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateState(Z)V
 
     return-void
@@ -1943,7 +1988,7 @@
 .method private updateDefaultValue()V
     .registers 5
 
-    .line 614
+    .line 630
     sget-object v0, Lcom/transsion/camera/app/common/facebeauty/FaceBeautyConstant;->CUSTOM_KEY_ARRAY:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->stream([Ljava/lang/Object;)Ljava/util/stream/Stream;
@@ -1956,7 +2001,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/stream/Stream;->forEach(Ljava/util/function/Consumer;)V
 
-    .line 620
+    .line 636
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->CUSTOM_WHITEN_KEY_ARRAY:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->stream([Ljava/lang/Object;)Ljava/util/stream/Stream;
@@ -1969,7 +2014,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/stream/Stream;->forEach(Ljava/util/function/Consumer;)V
 
-    .line 626
+    .line 642
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
@@ -1992,7 +2037,7 @@
 .method private updateExpandState()V
     .registers 3
 
-    .line 698
+    .line 718
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -2001,7 +2046,7 @@
 
     return-void
 
-    .line 701
+    .line 721
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
@@ -2015,7 +2060,7 @@
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;)V
 
-    .line 702
+    .line 722
     invoke-interface {v0, v1}, Ljava/lang/Iterable;->forEach(Ljava/util/function/Consumer;)V
 
     return-void
@@ -2024,19 +2069,19 @@
 .method private updateFaceBeautyItemLayout(Landroid/view/View;Lcom/transsion/camera/app/ui/widget/RotateLinearLayout;)V
     .registers 9
 
-    .line 1231
+    .line 1251
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
-    .line 1232
+    .line 1252
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 1233
+    .line 1253
     iget v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mScreenFormType:I
 
     const/16 v3, 0x5a
@@ -2047,7 +2092,7 @@
 
     if-ne v2, v5, :cond_3a
 
-    .line 1234
+    .line 1254
     sget v2, Lcom/transsion/camera/featurelibs/makeupRes/R$dimen;->mu_feature_width_expand:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2056,7 +2101,7 @@
 
     iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
-    .line 1235
+    .line 1255
     sget v2, Lcom/transsion/camera/featurelibs/makeupRes/R$dimen;->mu_feature_height_expand:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2065,12 +2110,12 @@
 
     iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
-    .line 1236
+    .line 1256
     iget p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mScreenFormType:I
 
     if-ne p0, v5, :cond_2d
 
-    .line 1237
+    .line 1257
     sget p0, Lcom/transsion/camera/featurelibs/makeupRes/R$dimen;->mu_feature_margin_top_expand:I
 
     invoke-virtual {v1, p0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2079,7 +2124,7 @@
 
     goto :goto_33
 
-    .line 1238
+    .line 1258
     :cond_2d
     sget p0, Lcom/transsion/camera/featurelibs/makeupRes/R$dimen;->mu_feature_margin_top_hover:I
 
@@ -2087,11 +2132,11 @@
 
     move-result p0
 
-    .line 1236
+    .line 1256
     :goto_33
     invoke-virtual {v0, v4, v4, p0, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1239
+    .line 1259
     invoke-virtual {p2, v3, v4}, Lcom/transsion/camera/app/ui/widget/RotateLinearLayout;->setOrientation(IZ)V
 
     goto :goto_77
@@ -2101,7 +2146,7 @@
 
     if-ne v2, v5, :cond_51
 
-    .line 1241
+    .line 1261
     iget p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mOrientation:I
 
     const/16 v1, 0x10e
@@ -2110,24 +2155,24 @@
 
     if-eq p0, v1, :cond_49
 
-    .line 1251
+    .line 1271
     invoke-virtual {p2, v4, v4}, Lcom/transsion/camera/app/ui/widget/RotateLinearLayout;->setOrientation(IZ)V
 
     goto :goto_77
 
-    .line 1246
+    .line 1266
     :cond_49
     invoke-virtual {p2, v3, v4}, Lcom/transsion/camera/app/ui/widget/RotateLinearLayout;->setOrientation(IZ)V
 
     goto :goto_77
 
-    .line 1243
+    .line 1263
     :cond_4d
     invoke-virtual {p2, v1, v4}, Lcom/transsion/camera/app/ui/widget/RotateLinearLayout;->setOrientation(IZ)V
 
     goto :goto_77
 
-    .line 1255
+    .line 1275
     :cond_51
     sget v2, Lcom/transsion/camera/featurelibs/makeupRes/R$dimen;->vf_mu_feature_width:I
 
@@ -2137,7 +2182,7 @@
 
     iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
-    .line 1256
+    .line 1276
     sget v2, Lcom/transsion/camera/featurelibs/makeupRes/R$dimen;->vf_mu_feature_height:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2146,10 +2191,10 @@
 
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
-    .line 1257
+    .line 1277
     invoke-virtual {v0, v4, v4, v4, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1258
+    .line 1278
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v1
@@ -2160,18 +2205,18 @@
 
     if-nez v1, :cond_74
 
-    .line 1259
+    .line 1279
     iget p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mOrientation:I
 
     invoke-virtual {p2, p0, v4}, Lcom/transsion/camera/app/ui/widget/RotateLinearLayout;->setOrientation(IZ)V
 
     goto :goto_77
 
-    .line 1261
+    .line 1281
     :cond_74
     invoke-virtual {p2, v4, v4}, Lcom/transsion/camera/app/ui/widget/RotateLinearLayout;->setOrientation(IZ)V
 
-    .line 1264
+    .line 1284
     :goto_77
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -2181,7 +2226,7 @@
 .method private updateItemProgress(Ljava/lang/String;IZ)V
     .registers 5
 
-    .line 1128
+    .line 1148
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -2199,7 +2244,7 @@
 
     goto :goto_44
 
-    .line 1136
+    .line 1156
     :cond_d
     sget-object p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->CUSTOM_DEFAULT_MAP:Ljava/util/HashMap;
 
@@ -2224,7 +2269,7 @@
 
     check-cast p2, Ljava/lang/String;
 
-    .line 1137
+    .line 1157
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v0
@@ -2241,12 +2286,12 @@
 
     if-eqz v0, :cond_38
 
-    .line 1138
+    .line 1158
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateSkinColorCardItem()V
 
     goto :goto_17
 
-    .line 1140
+    .line 1160
     :cond_38
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateCustomItemProgress(Ljava/lang/String;)V
 
@@ -2255,7 +2300,7 @@
     :cond_3c
     if-eqz p3, :cond_43
 
-    .line 1145
+    .line 1165
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
@@ -2264,7 +2309,7 @@
     :goto_43
     return-void
 
-    .line 1132
+    .line 1152
     :cond_44
     :goto_44
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
@@ -2281,21 +2326,21 @@
 .method private updateRecyclerViewVisibility()V
     .registers 2
 
-    .line 751
+    .line 771
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
     if-eqz v0, :cond_c
 
-    .line 752
+    .line 772
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->showRecyclerViewAnim(Landroidx/recyclerview/widget/RecyclerView;)V
 
     return-void
 
-    .line 753
+    .line 773
     :cond_c
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -2303,7 +2348,7 @@
 
     const/4 v0, 0x0
 
-    .line 754
+    .line 774
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_14
@@ -2313,7 +2358,7 @@
 .method private updateRotation(IIZ)V
     .registers 7
 
-    .line 309
+    .line 325
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -2325,7 +2370,7 @@
     :cond_7
     const/4 v0, 0x0
 
-    .line 313
+    .line 329
     :goto_8
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -2335,14 +2380,14 @@
 
     if-ge v0, v1, :cond_2e
 
-    .line 314
+    .line 330
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 315
+    .line 331
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->findContainingViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
@@ -2355,7 +2400,7 @@
 
     goto :goto_2b
 
-    .line 319
+    .line 335
     :cond_21
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getBindingAdapterPosition()I
 
@@ -2365,7 +2410,7 @@
 
     goto :goto_2b
 
-    .line 323
+    .line 339
     :cond_28
     invoke-virtual {v1, p1, p2, p3}, Lcom/transsion/camera/feature/mode/makeup/adapter/ItemVH;->updateRotation(IIZ)V
 
@@ -2382,7 +2427,7 @@
 .method private updateSeekBarUI()V
     .registers 11
 
-    .line 1091
+    .line 1111
     const-string v0, "aiv2"
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
@@ -2395,22 +2440,22 @@
 
     if-eqz v0, :cond_24
 
-    .line 1092
+    .line 1112
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v2, 0xa9
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 1093
+    .line 1113
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mNeedShowAIHint:Z
 
     if-eqz v0, :cond_27
 
-    .line 1094
+    .line 1114
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mNeedShowAIHint:Z
 
-    .line 1095
+    .line 1115
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mContext:Landroid/content/Context;
 
     sget v2, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->multi_fb_hint_ai_enbale:I
@@ -2423,11 +2468,11 @@
 
     goto :goto_27
 
-    .line 1098
+    .line 1118
     :cond_24
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->hideAutoHint()V
 
-    .line 1100
+    .line 1120
     :cond_27
     :goto_27
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->CUSTOM_DEFAULT_MAP:Ljava/util/HashMap;
@@ -2442,7 +2487,7 @@
 
     if-eqz v0, :cond_aa
 
-    .line 1101
+    .line 1121
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v0
@@ -2461,17 +2506,17 @@
 
     if-eqz v0, :cond_4d
 
-    .line 1102
+    .line 1122
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     if-eqz p0, :cond_b1
 
-    .line 1103
+    .line 1123
     invoke-interface {p0, v2, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;->notifyState(IZ)V
 
     return-void
 
-    .line 1106
+    .line 1126
     :cond_4d
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDefaultMap:Ljava/util/Map;
 
@@ -2485,7 +2530,7 @@
 
     check-cast v9, Ljava/lang/String;
 
-    .line 1107
+    .line 1127
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
@@ -2504,7 +2549,7 @@
 
     move-result v0
 
-    .line 1108
+    .line 1128
     const-string v3, "five_senses"
 
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
@@ -2515,23 +2560,23 @@
 
     if-eqz v3, :cond_76
 
-    .line 1109
+    .line 1129
     rem-int/lit8 v0, v0, 0x65
 
     :cond_76
     move v8, v0
 
-    .line 1111
+    .line 1131
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     if-eqz v0, :cond_b1
 
     const/4 v3, 0x2
 
-    .line 1112
+    .line 1132
     invoke-interface {v0, v3, v1, v1, v2}, Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;->notifyState(IZZZ)V
 
-    .line 1113
+    .line 1133
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v0
@@ -2550,7 +2595,7 @@
 
     if-eqz v0, :cond_9e
 
-    .line 1114
+    .line 1134
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
@@ -2565,7 +2610,7 @@
 
     return-void
 
-    .line 1116
+    .line 1136
     :cond_9e
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
@@ -2581,13 +2626,13 @@
 
     return-void
 
-    .line 1121
+    .line 1141
     :cond_aa
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     if-eqz p0, :cond_b1
 
-    .line 1122
+    .line 1142
     invoke-interface {p0, v2, v1, v1, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;->notifyState(IZZZ)V
 
     :cond_b1
@@ -2597,7 +2642,7 @@
 .method private updateSelectedItemByKey()V
     .registers 1
 
-    .line 774
+    .line 794
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
@@ -2608,10 +2653,10 @@
 .method private updateSetting(Ljava/lang/String;I)V
     .registers 7
 
-    .line 1268
+    .line 1288
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateWhite(Ljava/lang/String;)V
 
-    .line 1269
+    .line 1289
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -2630,7 +2675,7 @@
 
     invoke-virtual {v0, v3, p2, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1270
+    .line 1290
     sget-object p2, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->CUSTOM_DEFAULT_MAP:Ljava/util/HashMap;
 
     invoke-virtual {p2, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -2639,7 +2684,7 @@
 
     if-eqz p2, :cond_25
 
-    .line 1271
+    .line 1291
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
     const-string p1, "custom"
@@ -2648,7 +2693,7 @@
 
     return-void
 
-    .line 1272
+    .line 1292
     :cond_25
     const-string p2, "aiv2"
 
@@ -2658,14 +2703,14 @@
 
     if-eqz p1, :cond_33
 
-    .line 1273
+    .line 1293
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
     invoke-interface {p0, p2}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
     return-void
 
-    .line 1275
+    .line 1295
     :cond_33
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
@@ -2679,7 +2724,7 @@
 .method private updateSkinColorCardItem()V
     .registers 6
 
-    .line 1159
+    .line 1179
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDefaultMap:Ljava/util/Map;
@@ -2704,20 +2749,20 @@
 
     move-result-object v0
 
-    .line 1160
+    .line 1180
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->parseValue(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 1161
+    .line 1181
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorMenu:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;
 
     if-eqz v1, :cond_24
 
-    .line 1162
+    .line 1182
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;->setSkinColor(I)V
 
-    .line 1164
+    .line 1184
     :cond_24
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->skinColorCardSelected(I)Z
 
@@ -2734,7 +2779,7 @@
     :cond_2e
     move v0, v1
 
-    .line 1165
+    .line 1185
     :goto_2f
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
@@ -2746,17 +2791,17 @@
 .method private updateSkinColorCardValue(I)V
     .registers 4
 
-    .line 1819
+    .line 1839
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateSkinColorSetting(I)V
 
-    .line 1820
+    .line 1840
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateSeekBarUI()V
 
     const/4 p1, 0x4
 
     const/4 v0, 0x1
 
-    .line 1821
+    .line 1841
     const-string/jumbo v1, "whiten"
 
     invoke-direct {p0, v1, p1, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateItemProgress(Ljava/lang/String;IZ)V
@@ -2767,7 +2812,7 @@
 .method private updateSkinColorItemProgress()V
     .registers 9
 
-    .line 1187
+    .line 1207
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorGroup:Lcom/transsion/camera/feature/mode/makeup/adapter/Item;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;->getSubItems()Ljava/util/ArrayList;
@@ -2778,7 +2823,7 @@
 
     goto :goto_65
 
-    .line 1191
+    .line 1211
     :cond_9
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2789,7 +2834,7 @@
     :goto_e
     if-ge v2, v1, :cond_65
 
-    .line 1193
+    .line 1213
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -2800,7 +2845,7 @@
 
     goto :goto_62
 
-    .line 1197
+    .line 1217
     :cond_19
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -2828,7 +2873,7 @@
 
     move-result v4
 
-    .line 1198
+    .line 1218
     const-string v5, "five_senses"
 
     iget-object v6, v3, Lcom/transsion/camera/feature/mode/makeup/adapter/VideoFaceSkinColorItem;->key:Ljava/lang/String;
@@ -2839,14 +2884,14 @@
 
     if-eqz v5, :cond_3f
 
-    .line 1199
+    .line 1219
     rem-int/lit8 v4, v4, 0x65
 
-    .line 1201
+    .line 1221
     :cond_3f
     iput v4, v3, Lcom/transsion/camera/feature/mode/makeup/adapter/VideoFaceSkinColorItem;->progress:I
 
-    .line 1202
+    .line 1222
     sget-object v5, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -2886,7 +2931,7 @@
 .method private updateSkinColorSetting(I)V
     .registers 6
 
-    .line 1825
+    .line 1845
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -2905,7 +2950,7 @@
 
     invoke-virtual {v0, v2, p1, v1, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1826
+    .line 1846
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const/4 v0, 0x4
@@ -2924,7 +2969,7 @@
 
     invoke-virtual {p1, v2, v0, v1, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1827
+    .line 1847
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
     const-string p1, "custom"
@@ -2939,7 +2984,7 @@
 
     const/4 v0, 0x0
 
-    .line 572
+    .line 588
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateState(Z)V
 
     return-void
@@ -2948,7 +2993,7 @@
 .method private updateState(Z)V
     .registers 6
 
-    .line 576
+    .line 592
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const/4 v1, 0x2
@@ -2969,12 +3014,12 @@
 
     move-result-object v0
 
-    .line 577
+    .line 593
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 579
+    .line 595
     sget-object v1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->FEATURE_ID_MAP:Ljava/util/HashMap;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2987,7 +3032,7 @@
 
     if-eqz v2, :cond_2e
 
-    .line 580
+    .line 596
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -3003,7 +3048,7 @@
     :cond_2e
     const/4 v1, 0x0
 
-    .line 582
+    .line 598
     :goto_2f
     invoke-direct {p0, v1, v0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateUIStateByKey(Ljava/lang/String;IZ)V
 
@@ -3021,25 +3066,25 @@
 
     if-ne p2, v2, :cond_20
 
-    .line 334
+    .line 350
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mNeedShowAIHint:Z
 
-    .line 335
+    .line 351
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v4, 0xa9
 
     invoke-interface {v3, v4}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 336
+    .line 352
     iget-boolean v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mNeedShowAIHint:Z
 
     if-eqz v3, :cond_23
 
-    .line 337
+    .line 353
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mNeedShowAIHint:Z
 
-    .line 338
+    .line 354
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mContext:Landroid/content/Context;
 
     sget v4, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->multi_fb_hint_ai_enbale:I
@@ -3052,11 +3097,11 @@
 
     goto :goto_23
 
-    .line 341
+    .line 357
     :cond_20
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->hideAutoHint()V
 
-    .line 343
+    .line 359
     :cond_23
     :goto_23
     sget-object v3, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->CUSTOM_DEFAULT_MAP:Ljava/util/HashMap;
@@ -3067,7 +3112,7 @@
 
     if-eqz v3, :cond_aa
 
-    .line 344
+    .line 360
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     if-eqz v3, :cond_d3
@@ -3076,7 +3121,7 @@
 
     if-nez v3, :cond_d3
 
-    .line 345
+    .line 361
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v3
@@ -3093,37 +3138,37 @@
 
     if-eqz v3, :cond_55
 
-    .line 346
+    .line 362
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     const/4 p3, 0x3
 
     invoke-interface {p1, p3, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;->notifyState(IZ)V
 
-    .line 347
+    .line 363
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     invoke-interface {p1, v1, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;->notifySelect(IZ)V
 
-    .line 349
+    .line 365
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
 
     invoke-direct {p0, p1, p2, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateItemProgress(Ljava/lang/String;IZ)V
 
     return-void
 
-    .line 351
+    .line 367
     :cond_55
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     invoke-interface {p2, v2, v1, p3, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;->notifyState(IZZZ)V
 
-    .line 352
+    .line 368
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     invoke-interface {p2, v1, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;->notifySelect(IZ)V
 
-    .line 353
+    .line 369
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDefaultMap:Ljava/util/Map;
 
     invoke-interface {p2, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3134,7 +3179,7 @@
 
     check-cast v6, Ljava/lang/String;
 
-    .line 354
+    .line 370
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object p3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
@@ -3151,7 +3196,7 @@
 
     move-result p2
 
-    .line 355
+    .line 371
     const-string p3, "five_senses"
 
     invoke-static {p3, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -3160,13 +3205,13 @@
 
     if-eqz p3, :cond_82
 
-    .line 356
+    .line 372
     rem-int/lit8 p2, p2, 0x65
 
     :cond_82
     move v5, p2
 
-    .line 358
+    .line 374
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object p2
@@ -3183,7 +3228,7 @@
 
     if-eqz p2, :cond_9f
 
-    .line 359
+    .line 375
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     const/16 v3, -0x64
@@ -3201,7 +3246,7 @@
     :cond_9f
     move-object v1, p1
 
-    .line 361
+    .line 377
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     const/4 v3, 0x0
@@ -3214,7 +3259,7 @@
 
     return-void
 
-    .line 365
+    .line 381
     :cond_aa
     const-string p2, "aiv2"
 
@@ -3224,7 +3269,7 @@
 
     if-eqz p1, :cond_c3
 
-    .line 366
+    .line 382
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     if-eqz p1, :cond_d3
@@ -3233,17 +3278,17 @@
 
     if-nez p2, :cond_d3
 
-    .line 367
+    .line 383
     invoke-interface {p1, v0, v1, p3, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;->notifyState(IZZZ)V
 
-    .line 368
+    .line 384
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     invoke-interface {p0, v1, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;->notifySelect(IZ)V
 
     return-void
 
-    .line 371
+    .line 387
     :cond_c3
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
@@ -3253,10 +3298,10 @@
 
     if-nez p2, :cond_d3
 
-    .line 372
+    .line 388
     invoke-interface {p1, v0, v1, p3, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;->notifyState(IZZZ)V
 
-    .line 373
+    .line 389
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     invoke-interface {p0, v1, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;->notifySelect(IZ)V
@@ -3272,7 +3317,7 @@
 
     goto :goto_3f
 
-    .line 1210
+    .line 1230
     :cond_3
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
@@ -3356,7 +3401,7 @@
     :goto_3f
     return-void
 
-    .line 1212
+    .line 1232
     :pswitch_40
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -3382,7 +3427,7 @@
 
     move-result v0
 
-    .line 1213
+    .line 1233
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -3399,7 +3444,7 @@
 
     return-void
 
-    .line 1224
+    .line 1244
     :pswitch_68
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -3425,7 +3470,7 @@
 
     move-result v0
 
-    .line 1225
+    .line 1245
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     add-int/lit16 v0, v0, 0x12f
@@ -3444,7 +3489,7 @@
 
     return-void
 
-    .line 1220
+    .line 1240
     :pswitch_92
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -3470,7 +3515,7 @@
 
     move-result v0
 
-    .line 1221
+    .line 1241
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     add-int/lit16 v0, v0, 0xca
@@ -3489,7 +3534,7 @@
 
     return-void
 
-    .line 1216
+    .line 1236
     :pswitch_bc
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -3515,7 +3560,7 @@
 
     move-result v0
 
-    .line 1217
+    .line 1237
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     add-int/lit8 v0, v0, 0x65
@@ -3556,12 +3601,12 @@
 .method public closeContrast(Z)V
     .registers 2
 
-    .line 831
+    .line 851
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
     if-eqz p1, :cond_9
 
-    .line 832
+    .line 852
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mOriginValue:Ljava/lang/String;
 
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
@@ -3573,7 +3618,7 @@
 .method public hideAutoHint()V
     .registers 3
 
-    .line 221
+    .line 224
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_f
@@ -3586,7 +3631,7 @@
 
     if-nez p0, :cond_f
 
-    .line 222
+    .line 225
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
     :cond_f
@@ -3596,7 +3641,7 @@
 .method public hideDialog()V
     .registers 2
 
-    .line 270
+    .line 286
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     if-eqz v0, :cond_f
@@ -3607,7 +3652,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 271
+    .line 287
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->dismiss()V
@@ -3619,7 +3664,7 @@
 .method public onBackPressed()Z
     .registers 2
 
-    .line 723
+    .line 743
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->handleSkinSecondMenu()Z
 
     move-result v0
@@ -3630,7 +3675,7 @@
 
     return p0
 
-    .line 726
+    .line 746
     :cond_8
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->handleSkinColorMenu()Z
 
@@ -3642,10 +3687,10 @@
 .method protected onFinishInflate()V
     .registers 5
 
-    .line 588
+    .line 604
     invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
-    .line 589
+    .line 605
     sget v0, Lcom/transsion/camera/feature/makeup/R$id;->fb_rv:I
 
     invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3656,7 +3701,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 590
+    .line 606
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getRecycledViewPool()Landroidx/recyclerview/widget/RecyclerView$RecycledViewPool;
 
     move-result-object v0
@@ -3665,15 +3710,15 @@
 
     const/4 v2, 0x1
 
-    .line 591
+    .line 607
     invoke-virtual {v0, v1, v2}, Landroidx/recyclerview/widget/RecyclerView$RecycledViewPool;->setMaxRecycledViews(II)V
 
     const v1, 0xfa04
 
-    .line 592
+    .line 608
     invoke-virtual {v0, v1, v2}, Landroidx/recyclerview/widget/RecyclerView$RecycledViewPool;->setMaxRecycledViews(II)V
 
-    .line 594
+    .line 610
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -3688,36 +3733,36 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 595
+    .line 611
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/animator/LocalItemAnimator;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/makeup/animator/LocalItemAnimator;-><init>()V
 
-    .line 596
+    .line 612
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 597
+    .line 613
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 598
+    .line 614
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->setMotionEventSplittingEnabled(Z)V
 
-    .line 600
+    .line 616
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
     if-eqz v0, :cond_85
 
-    .line 601
+    .line 617
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceItemDecoration;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -3728,12 +3773,12 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mItemDecoration:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceItemDecoration;
 
-    .line 602
+    .line 618
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 603
+    .line 619
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v0
@@ -3742,19 +3787,19 @@
 
     if-eqz v0, :cond_74
 
-    .line 604
+    .line 620
     invoke-static {p0}, Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;->inflate(Landroid/view/ViewGroup;)Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorMenu:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;
 
-    .line 605
+    .line 621
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorValueStore:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu$IValueStore;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;->setValueStore(Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu$IValueStore;)V
 
-    .line 606
+    .line 622
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorMenu:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorMenuListener:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu$ISkinColorMenuListener;
@@ -3763,7 +3808,7 @@
 
     return-void
 
-    .line 608
+    .line 624
     :cond_74
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;
 
@@ -3788,7 +3833,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .registers 3
 
-    .line 1078
+    .line 1098
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mItemViewEnabled:Z
 
     if-nez v0, :cond_6
@@ -3797,7 +3842,7 @@
 
     return p0
 
-    .line 1081
+    .line 1101
     :cond_6
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -3809,19 +3854,19 @@
 .method public openContrast()V
     .registers 2
 
-    .line 823
+    .line 843
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
     if-eqz v0, :cond_11
 
-    .line 824
+    .line 844
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingValue()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mOriginValue:Ljava/lang/String;
 
-    .line 825
+    .line 845
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
     const-string v0, "contrast_on"
@@ -3835,7 +3880,7 @@
 .method public progressChanged(I)V
     .registers 8
 
-    .line 785
+    .line 805
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->CUSTOM_DEFAULT_MAP:Ljava/util/HashMap;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
@@ -3848,7 +3893,7 @@
 
     goto/16 :goto_e4
 
-    .line 788
+    .line 808
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
 
@@ -3856,7 +3901,7 @@
 
     if-eqz v0, :cond_95
 
-    .line 789
+    .line 809
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -3938,7 +3983,7 @@
 
     goto :goto_95
 
-    .line 791
+    .line 811
     :pswitch_50
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -3956,7 +4001,7 @@
 
     goto :goto_95
 
-    .line 800
+    .line 820
     :pswitch_60
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -3976,7 +4021,7 @@
 
     goto :goto_95
 
-    .line 797
+    .line 817
     :pswitch_72
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -3996,7 +4041,7 @@
 
     goto :goto_95
 
-    .line 794
+    .line 814
     :pswitch_84
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -4014,7 +4059,7 @@
 
     invoke-virtual {v2, v0, v3, v4, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 804
+    .line 824
     :cond_95
     :goto_95
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -4033,33 +4078,33 @@
 
     invoke-virtual {v0, v2, v3, v4, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 805
+    .line 825
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
     const-string v2, "custom"
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 806
+    .line 826
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
     if-eqz v0, :cond_e4
 
-    .line 808
+    .line 828
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
 
     invoke-virtual {v0, v2, p1, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;->updateSelectItemProgress(Ljava/lang/String;IZ)V
 
-    .line 809
+    .line 829
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 810
+    .line 830
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v0
@@ -4068,7 +4113,7 @@
 
     if-nez v0, :cond_e4
 
-    .line 811
+    .line 831
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->CUSTOM_WHITEN_KEY_ARRAY:[Ljava/lang/String;
 
     array-length v2, v0
@@ -4080,7 +4125,7 @@
 
     aget-object v4, v0, v3
 
-    .line 812
+    .line 832
     iget-object v5, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -4093,7 +4138,7 @@
 
     if-eqz v4, :cond_e1
 
-    .line 813
+    .line 833
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
 
     invoke-virtual {v4, p0, p1, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;->updateCurItemProgress(Ljava/lang/String;IZ)V
@@ -4131,34 +4176,34 @@
 .method public registerSettingDevice(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 8
 
-    .line 656
+    .line 672
     move-object v0, p1
 
     check-cast v0, Lcom/transsion/camera/app/common/setting/SettingBase;
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
-    .line 657
+    .line 673
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 658
+    .line 674
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 659
+    .line 675
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraInfoUtil;->getFacing(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 660
+    .line 676
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->initDefaultMap(Ljava/lang/String;)V
 
-    .line 661
+    .line 677
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const/4 v3, 0x2
@@ -4179,7 +4224,7 @@
 
     move-result-object v2
 
-    .line 662
+    .line 678
     sget-object v3, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -4192,102 +4237,102 @@
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, ",facing:"
+    const-string v5, ",facing:"
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v0, ",id:"
+    const-string v1, ",id:"
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
-
-    invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 663
-    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    .line 664
-    sget-object v1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->FEATURE_ID_MAP:Ljava/util/HashMap;
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6b
-
-    .line 665
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
     move-result-object v1
 
-    check-cast v1, Ljava/lang/String;
+    invoke-static {v3, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
+    .line 679
+    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    .line 667
+    move-result v1
+
+    .line 680
+    sget-object v2, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->FEATURE_ID_MAP:Ljava/util/HashMap;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_6b
+
+    .line 681
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    iput-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
+
+    .line 683
     :cond_6b
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateExpandState()V
 
-    .line 668
+    .line 684
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateSelectedItemByKey()V
 
-    .line 669
-    new-instance v1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$8;
+    .line 685
+    new-instance v2, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$8;
 
-    invoke-direct {v1, p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$8;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;Lcom/transsion/camera/app/common/setting/ISetting;)V
+    invoke-direct {v2, p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$8;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    invoke-static {v1}, Lcom/transsion/camera/app/common/ui/helper/ScrollHelper;->of(Lcom/transsion/camera/app/common/ui/helper/ScrollHelper$IStoreStrategy;)Lcom/transsion/camera/app/common/ui/helper/ScrollHelper;
+    invoke-static {v2}, Lcom/transsion/camera/app/common/ui/helper/ScrollHelper;->of(Lcom/transsion/camera/app/common/ui/helper/ScrollHelper$IStoreStrategy;)Lcom/transsion/camera/app/common/ui/helper/ScrollHelper;
 
     move-result-object p1
 
-    iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
+    iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 674
-    invoke-virtual {p1, v1}, Lcom/transsion/camera/app/common/ui/helper/ScrollHelper;->attachToRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
+    .line 690
+    invoke-virtual {p1, v2}, Lcom/transsion/camera/app/common/ui/helper/ScrollHelper;->attachToRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
 
-    .line 676
+    .line 692
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-eqz p1, :cond_c8
+    if-eqz p1, :cond_e5
 
-    .line 677
+    .line 693
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/app/common/CommonConfigUtil;->mFaceBeautyV3:Z
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     if-eqz p1, :cond_94
 
-    .line 678
+    .line 694
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
 
-    invoke-direct {p0, p1, v0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateItemProgress(Ljava/lang/String;IZ)V
+    invoke-direct {p0, p1, v1, v2}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateItemProgress(Ljava/lang/String;IZ)V
 
-    goto :goto_c8
+    goto :goto_e5
 
-    .line 680
+    .line 696
     :cond_94
     sget-object p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->SKIN_COLOR_LIST:Ljava/util/List;
 
@@ -4295,31 +4340,31 @@
 
     move-result p1
 
-    move v2, v1
+    move v3, v2
 
     :goto_9b
-    if-ge v2, p1, :cond_b7
+    if-ge v3, p1, :cond_b7
 
-    .line 682
-    iget-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
+    .line 698
+    iget-object v4, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
 
-    sget-object v4, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->SKIN_COLOR_LIST:Ljava/util/List;
+    sget-object v5, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->SKIN_COLOR_LIST:Ljava/util/List;
 
-    invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v5, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v5
 
-    check-cast v4, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;
+    check-cast v5, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;
 
-    iget-object v4, v4, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->key:Ljava/lang/String;
+    iget-object v5, v5, Lcom/transsion/camera/feature/mode/makeup/data/FaceBeautyExItemInfo;->key:Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_b4
+    if-eqz v4, :cond_b4
 
-    .line 683
+    .line 699
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentSkinColorFeatureKey:Ljava/lang/String;
@@ -4327,57 +4372,89 @@
     goto :goto_b7
 
     :cond_b4
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_9b
 
-    .line 687
+    .line 703
     :cond_b7
     :goto_b7
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentSkinColorFeatureKey:Ljava/lang/String;
+
+    if-nez p1, :cond_d4
+
+    .line 704
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
+
+    const-string/jumbo v3, "whiten"
+
+    invoke-direct {p0, v3, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->queryDefaultValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v4, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
+
+    invoke-virtual {v4}, Lcom/transsion/camera/app/common/setting/SettingBase;->getStoreScope()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {p1, v3, v0, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 705
+    invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->getKeyFromWhitenValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentSkinColorFeatureKey:Ljava/lang/String;
+
+    .line 707
+    :cond_d4
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorGroup:Lcom/transsion/camera/feature/mode/makeup/adapter/Item;
 
     check-cast p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;
 
-    if-eqz p1, :cond_c3
+    if-eqz p1, :cond_e0
 
-    .line 688
-    iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentSkinColorFeatureKey:Ljava/lang/String;
+    .line 708
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentSkinColorFeatureKey:Ljava/lang/String;
 
-    if-eqz v2, :cond_c3
+    if-eqz v0, :cond_e0
 
-    .line 689
-    iput-object v2, p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;->selectKey:Ljava/lang/String;
+    .line 709
+    iput-object v0, p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$Group;->selectKey:Ljava/lang/String;
 
-    .line 691
-    :cond_c3
+    .line 711
+    :cond_e0
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
 
-    invoke-direct {p0, p1, v0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateItemProgress(Ljava/lang/String;IZ)V
+    invoke-direct {p0, p1, v1, v2}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateItemProgress(Ljava/lang/String;IZ)V
 
-    .line 694
-    :cond_c8
-    :goto_c8
+    .line 714
+    :cond_e5
+    :goto_e5
     sget-object p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "registerSettingDevice- featureId:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v0, ", mCurrentFeatureKey:"
+    const-string v1, ", mCurrentFeatureKey:"
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mCurrentFeatureKey:Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -4389,11 +4466,20 @@
 .method public setEnabled(Z)V
     .registers 2
 
-    .line 1086
+    .line 1106
     invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 1087
+    .line 1107
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mItemViewEnabled:Z
+
+    return-void
+.end method
+
+.method public setGoFragmentFlag(Z)V
+    .registers 2
+
+    .line 230
+    iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mGoFragment:Z
 
     return-void
 .end method
@@ -4401,10 +4487,10 @@
 .method public setOrientation(I)V
     .registers 5
 
-    .line 294
+    .line 310
     iput p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mOrientation:I
 
-    .line 295
+    .line 311
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -4413,17 +4499,17 @@
 
     if-nez v0, :cond_11
 
-    .line 296
+    .line 312
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     if-eqz v0, :cond_18
 
-    .line 297
+    .line 313
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     goto :goto_18
 
-    .line 300
+    .line 316
     :cond_11
     iget v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mScreenFormType:I
 
@@ -4431,14 +4517,14 @@
 
     invoke-direct {p0, v0, v2, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateRotation(IIZ)V
 
-    .line 303
+    .line 319
     :cond_18
     :goto_18
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinSecondMenu:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;
 
     if-eqz p0, :cond_1f
 
-    .line 304
+    .line 320
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;->setOrientation(IZ)V
 
     :cond_1f
@@ -4448,10 +4534,10 @@
 .method public setUIInterface(Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;)V
     .registers 3
 
-    .line 779
+    .line 799
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 780
+    .line 800
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
     return-void
@@ -4462,19 +4548,19 @@
 
     if-eqz p1, :cond_b
 
-    .line 277
+    .line 293
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     if-eqz p0, :cond_21
 
     const/4 p1, 0x0
 
-    .line 278
+    .line 294
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    .line 281
+    .line 297
     :cond_b
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -4482,25 +4568,25 @@
 
     const/4 v0, 0x4
 
-    .line 282
+    .line 298
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 284
+    .line 300
     :cond_13
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinSecondMenu:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;
 
     if-eqz p1, :cond_1a
 
-    .line 285
+    .line 301
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;->hideSkinSecondMenu()V
 
-    .line 287
+    .line 303
     :cond_1a
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorMenu:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;
 
     if-eqz p0, :cond_21
 
-    .line 288
+    .line 304
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;->hideSkinColorMenu()V
 
     :cond_21
@@ -4510,21 +4596,21 @@
 .method public unregisterSettingDevice(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 2
 
-    .line 766
+    .line 786
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->hideDialog()V
 
-    .line 767
+    .line 787
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->hideAutoHint()V
 
     const/4 p1, 0x0
 
-    .line 768
+    .line 788
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mITopUI:Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;
 
-    .line 769
+    .line 789
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 770
+    .line 790
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
     return-void
@@ -4535,12 +4621,12 @@
 
     if-eqz p1, :cond_a
 
-    .line 839
+    .line 859
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateState()V
 
     const/4 p1, 0x0
 
-    .line 840
+    .line 860
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -4548,24 +4634,24 @@
     :cond_a
     const/16 p1, 0x8
 
-    .line 842
+    .line 862
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 843
+    .line 863
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinSecondMenu:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;
 
     if-eqz p1, :cond_16
 
-    .line 844
+    .line 864
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;->hideSkinSecondMenu()V
 
-    .line 846
+    .line 866
     :cond_16
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorMenu:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;
 
     if-eqz p0, :cond_1d
 
-    .line 847
+    .line 867
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;->hideSkinColorMenu()V
 
     :cond_1d
@@ -4575,7 +4661,7 @@
 .method public updateFeatureUI(ZZ)V
     .registers 3
 
-    .line 854
+    .line 874
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateFeatureUI(Z)V
 
     return-void
@@ -4590,11 +4676,11 @@
 
     goto :goto_15
 
-    .line 875
+    .line 895
     :cond_4
     iput p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mScreenFormType:I
 
-    .line 876
+    .line 896
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     if-eqz v0, :cond_15
@@ -4605,7 +4691,7 @@
 
     if-eqz v0, :cond_15
 
-    .line 877
+    .line 897
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->updateDialogLayout(II)V
@@ -4618,30 +4704,30 @@
 .method updateLowLight(Z)V
     .registers 3
 
-    .line 1749
+    .line 1769
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     if-eqz v0, :cond_7
 
-    .line 1750
+    .line 1770
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/makeup/adapter/ExpandableItemAdapter;->updateLowLight(Z)V
 
-    .line 1752
+    .line 1772
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinSecondMenu:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;
 
     if-eqz v0, :cond_e
 
-    .line 1753
+    .line 1773
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceSkinSecondMenu;->updateLowLight(Z)V
 
-    .line 1755
+    .line 1775
     :cond_e
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mSkinColorMenu:Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;
 
     if-eqz p0, :cond_15
 
-    .line 1756
+    .line 1776
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/widget/skincolor/SkinColorMenu;->updateLowLight(Z)V
 
     :cond_15
@@ -4651,20 +4737,20 @@
 .method public updateScreenFormType(I)V
     .registers 3
 
-    .line 1360
+    .line 1380
     iget v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mScreenFormType:I
 
     if-eq v0, p1, :cond_d
 
-    .line 1361
+    .line 1381
     iput p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mScreenFormType:I
 
-    .line 1362
+    .line 1382
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->mRecyclerViewAdapter:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot$RecyclerViewAdapter;
 
     if-eqz p0, :cond_d
 
-    .line 1363
+    .line 1383
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     :cond_d
@@ -4682,12 +4768,12 @@
 
     if-eqz p1, :cond_a
 
-    .line 859
+    .line 879
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->updateState(Z)V
 
     const/4 p1, 0x0
 
-    .line 860
+    .line 880
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -4695,7 +4781,7 @@
     :cond_a
     const/16 p1, 0x8
 
-    .line 862
+    .line 882
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void

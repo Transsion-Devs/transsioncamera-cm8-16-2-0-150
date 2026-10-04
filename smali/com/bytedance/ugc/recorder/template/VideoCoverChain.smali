@@ -79,7 +79,7 @@
         }
     .end annotation
 
-    .line 315
+    .line 82
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
     invoke-static {p3}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -90,7 +90,7 @@
 
     invoke-direct {v0, v1, v2}, Lkotlinx/coroutines/CancellableContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;I)V
 
-    .line 321
+    .line 88
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
 
     const/4 v1, 0x0
@@ -107,12 +107,12 @@
 
     invoke-static {p1, v1, v2}, Lcom/ss/android/vesdk/VEUtils;->getVideoFrames(Ljava/lang/String;[ILcom/ss/android/vesdk/VEFrameAvailableListener;)I
 
-    .line 323
+    .line 90
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 314
+    .line 81
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p1
@@ -245,7 +245,7 @@
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 75
+    .line 855
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p2

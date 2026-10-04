@@ -38,7 +38,7 @@
 
     const-wide/16 v0, 0x0
 
-    .line 56
+    .line 55
     invoke-static {v0, v1}, Lkotlin/time/Duration;->constructor-impl(J)J
 
     move-result-wide v0
@@ -47,7 +47,7 @@
 
     const-wide v0, 0x3fffffffffffffffL    # 1.9999999999999998
 
-    .line 59
+    .line 58
     # invokes: Lkotlin/time/DurationKt;->durationOfMillis(J)J
     invoke-static {v0, v1}, Lkotlin/time/DurationKt;->access$durationOfMillis(J)J
 
@@ -57,7 +57,7 @@
 
     const-wide v0, -0x3fffffffffffffffL    # -2.0000000000000004
 
-    .line 60
+    .line 59
     # invokes: Lkotlin/time/DurationKt;->durationOfMillis(J)J
     invoke-static {v0, v1}, Lkotlin/time/DurationKt;->access$durationOfMillis(J)J
 
@@ -89,7 +89,7 @@
 .method private static final addValuesMixedRanges-UwyO8pc(JJJ)J
     .registers 12
 
-    .line 495
+    .line 311
     # invokes: Lkotlin/time/DurationKt;->nanosToMillis(J)J
     invoke-static {p4, p5}, Lkotlin/time/DurationKt;->access$nanosToMillis(J)J
 
@@ -97,22 +97,19 @@
 
     add-long v0, p2, p0
 
-    .line 497
-    new-instance p2, Lkotlin/ranges/LongRange;
+    const-wide p2, -0x431bde82d7aL
 
-    const-wide v2, -0x431bde82d7aL
+    cmp-long p2, p2, v0
 
-    const-wide v4, 0x431bde82d7aL
+    if-gtz p2, :cond_27
 
-    invoke-direct {p2, v2, v3, v4, v5}, Lkotlin/ranges/LongRange;-><init>(JJ)V
+    const-wide p2, 0x431bde82d7bL
 
-    invoke-virtual {p2, v0, v1}, Lkotlin/ranges/LongRange;->contains(J)Z
+    cmp-long p2, v0, p2
 
-    move-result p2
+    if-gez p2, :cond_27
 
-    if-eqz p2, :cond_2a
-
-    .line 498
+    .line 314
     # invokes: Lkotlin/time/DurationKt;->millisToNanos(J)J
     invoke-static {p0, p1}, Lkotlin/time/DurationKt;->access$millisToNanos(J)J
 
@@ -120,7 +117,7 @@
 
     sub-long/2addr p4, p0
 
-    .line 499
+    .line 315
     # invokes: Lkotlin/time/DurationKt;->millisToNanos(J)J
     invoke-static {v0, v1}, Lkotlin/time/DurationKt;->access$millisToNanos(J)J
 
@@ -135,12 +132,12 @@
 
     return-wide p0
 
-    :cond_2a
+    :cond_27
     const-wide v2, -0x3fffffffffffffffL    # -2.0000000000000004
 
     const-wide v4, 0x3fffffffffffffffL    # 1.9999999999999998
 
-    .line 501
+    .line 317
     invoke-static/range {v0 .. v5}, Lkotlin/ranges/RangesKt;->coerceIn(JJJ)J
 
     move-result-wide p0
@@ -156,17 +153,17 @@
 .method private static final appendFractional-impl(JLjava/lang/StringBuilder;IIILjava/lang/String;Z)V
     .registers 9
 
-    .line 1006
+    .line 765
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     if-eqz p4, :cond_45
 
     const/16 p0, 0x2e
 
-    .line 1008
+    .line 767
     invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1009
+    .line 768
     invoke-static {p4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p0
@@ -177,7 +174,7 @@
 
     move-result-object p0
 
-    .line 163
+    .line 170
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result p3
@@ -191,7 +188,7 @@
     :goto_1c
     add-int/lit8 p5, p3, -0x1
 
-    .line 164
+    .line 171
     invoke-interface {p0, p3}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v0
@@ -216,8 +213,8 @@
     :goto_2b
     add-int/lit8 p1, p4, 0x1
 
-    .line 1012
-    const-string p3, "this.append(value, startIndex, endIndex)"
+    .line 771
+    const-string p3, "append(...)"
 
     const/4 p5, 0x0
 
@@ -236,7 +233,7 @@
     :cond_3c
     add-int/2addr p4, v0
 
-    .line 1013
+    .line 772
     div-int/2addr p4, v0
 
     mul-int/2addr p4, v0
@@ -245,7 +242,7 @@
 
     invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1016
+    .line 775
     :cond_45
     :goto_45
     invoke-virtual {p2, p6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -283,7 +280,7 @@
 
     sub-int/2addr v0, p2
 
-    .line 652
+    .line 479
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isNegative-impl(J)Z
 
     move-result p0
@@ -297,7 +294,7 @@
     :cond_1d
     return v0
 
-    .line 649
+    .line 476
     :cond_1e
     :goto_1e
     invoke-static {p0, p1, p2, p3}, Lkotlin/jvm/internal/Intrinsics;->compare(JJ)I
@@ -308,44 +305,42 @@
 .end method
 
 .method public static constructor-impl(J)J
-    .registers 7
+    .registers 6
 
-    .line 44
+    .line 43
     invoke-static {}, Lkotlin/time/DurationJvmKt;->getDurationAssertionsEnabled()Z
 
     move-result v0
 
-    if-eqz v0, :cond_ab
+    if-eqz v0, :cond_9f
 
-    .line 45
+    .line 44
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInNanos-impl(J)Z
 
     move-result v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_3e
 
-    .line 46
-    new-instance v0, Lkotlin/ranges/LongRange;
-
-    const-wide v1, -0x3ffffffffffa14bfL    # -2.0000000001722644
-
-    const-wide v3, 0x3ffffffffffa14bfL    # 1.9999999999138678
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lkotlin/ranges/LongRange;-><init>(JJ)V
-
+    .line 45
     invoke-static {p0, p1}, Lkotlin/time/Duration;->getValue-impl(J)J
 
-    move-result-wide v1
+    move-result-wide v0
 
-    invoke-virtual {v0, v1, v2}, Lkotlin/ranges/LongRange;->contains(J)Z
+    const-wide v2, -0x3ffffffffffa14bfL    # -2.0000000001722644
 
-    move-result v0
+    cmp-long v2, v2, v0
 
-    if-eqz v0, :cond_27
+    if-gtz v2, :cond_23
 
-    goto/16 :goto_ab
+    const-wide v2, 0x3ffffffffffa14c0L    # 1.999999999913868
 
-    :cond_27
+    cmp-long v0, v0, v2
+
+    if-gez v0, :cond_23
+
+    return-wide p0
+
+    :cond_23
     new-instance v0, Ljava/lang/AssertionError;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -370,48 +365,44 @@
 
     throw v0
 
+    .line 47
+    :cond_3e
+    invoke-static {p0, p1}, Lkotlin/time/Duration;->getValue-impl(J)J
+
+    move-result-wide v0
+
+    const-wide v2, -0x3fffffffffffffffL    # -2.0000000000000004
+
+    cmp-long v2, v2, v0
+
+    if-gtz v2, :cond_84
+
+    const-wide/high16 v2, 0x4000000000000000L    # 2.0
+
+    cmp-long v0, v0, v2
+
+    if-gez v0, :cond_84
+
     .line 48
-    :cond_42
-    new-instance v0, Lkotlin/ranges/LongRange;
-
-    const-wide v1, -0x3fffffffffffffffL    # -2.0000000000000004
-
-    const-wide v3, 0x3fffffffffffffffL    # 1.9999999999999998
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lkotlin/ranges/LongRange;-><init>(JJ)V
-
     invoke-static {p0, p1}, Lkotlin/time/Duration;->getValue-impl(J)J
 
-    move-result-wide v1
+    move-result-wide v0
 
-    invoke-virtual {v0, v1, v2}, Lkotlin/ranges/LongRange;->contains(J)Z
+    const-wide v2, -0x431bde82d7aL
 
-    move-result v0
+    cmp-long v2, v2, v0
 
-    if-eqz v0, :cond_90
+    if-gtz v2, :cond_83
 
-    .line 49
-    new-instance v0, Lkotlin/ranges/LongRange;
+    const-wide v2, 0x431bde82d7bL
 
-    const-wide v1, -0x431bde82d7aL
+    cmp-long v0, v0, v2
 
-    const-wide v3, 0x431bde82d7aL
+    if-ltz v0, :cond_68
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lkotlin/ranges/LongRange;-><init>(JJ)V
+    return-wide p0
 
-    invoke-static {p0, p1}, Lkotlin/time/Duration;->getValue-impl(J)J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2}, Lkotlin/ranges/LongRange;->contains(J)Z
-
-    move-result v0
-
-    if-nez v0, :cond_75
-
-    goto :goto_ab
-
-    :cond_75
+    :cond_68
     new-instance v0, Ljava/lang/AssertionError;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -436,8 +427,11 @@
 
     throw v0
 
-    .line 48
-    :cond_90
+    :cond_83
+    return-wide p0
+
+    .line 47
+    :cond_84
     new-instance v0, Ljava/lang/AssertionError;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -462,8 +456,7 @@
 
     throw v0
 
-    :cond_ab
-    :goto_ab
+    :cond_9f
     return-wide p0
 .end method
 
@@ -487,7 +480,7 @@
 .method public static final getAbsoluteValue-UwyO8pc(J)J
     .registers 3
 
-    .line 644
+    .line 471
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isNegative-impl(J)Z
 
     move-result v0
@@ -505,7 +498,7 @@
 .method public static final getHoursComponent-impl(J)I
     .registers 4
 
-    .line 726
+    .line 553
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInfinite-impl(J)Z
 
     move-result v0
@@ -535,7 +528,7 @@
 .method public static final getInWholeDays-impl(J)J
     .registers 3
 
-    .line 843
+    .line 628
     sget-object v0, Lkotlin/time/DurationUnit;->DAYS:Lkotlin/time/DurationUnit;
 
     invoke-static {p0, p1, v0}, Lkotlin/time/Duration;->toLong-impl(JLkotlin/time/DurationUnit;)J
@@ -548,7 +541,7 @@
 .method public static final getInWholeHours-impl(J)J
     .registers 3
 
-    .line 851
+    .line 636
     sget-object v0, Lkotlin/time/DurationUnit;->HOURS:Lkotlin/time/DurationUnit;
 
     invoke-static {p0, p1, v0}, Lkotlin/time/Duration;->toLong-impl(JLkotlin/time/DurationUnit;)J
@@ -561,7 +554,7 @@
 .method public static final getInWholeMilliseconds-impl(J)J
     .registers 3
 
-    .line 876
+    .line 661
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInMillis-impl(J)Z
 
     move-result v0
@@ -593,7 +586,7 @@
 .method public static final getInWholeMinutes-impl(J)J
     .registers 3
 
-    .line 859
+    .line 644
     sget-object v0, Lkotlin/time/DurationUnit;->MINUTES:Lkotlin/time/DurationUnit;
 
     invoke-static {p0, p1, v0}, Lkotlin/time/Duration;->toLong-impl(JLkotlin/time/DurationUnit;)J
@@ -606,12 +599,12 @@
 .method public static final getInWholeNanoseconds-impl(J)J
     .registers 4
 
-    .line 902
+    .line 687
     invoke-static {p0, p1}, Lkotlin/time/Duration;->getValue-impl(J)J
 
     move-result-wide v0
 
-    .line 904
+    .line 689
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInNanos-impl(J)Z
 
     move-result p0
@@ -642,7 +635,7 @@
 
     return-wide p0
 
-    .line 907
+    .line 692
     :cond_26
     # invokes: Lkotlin/time/DurationKt;->millisToNanos(J)J
     invoke-static {v0, v1}, Lkotlin/time/DurationKt;->access$millisToNanos(J)J
@@ -655,7 +648,7 @@
 .method public static final getInWholeSeconds-impl(J)J
     .registers 3
 
-    .line 867
+    .line 652
     sget-object v0, Lkotlin/time/DurationUnit;->SECONDS:Lkotlin/time/DurationUnit;
 
     invoke-static {p0, p1, v0}, Lkotlin/time/Duration;->toLong-impl(JLkotlin/time/DurationUnit;)J
@@ -668,7 +661,7 @@
 .method public static final getMinutesComponent-impl(J)I
     .registers 4
 
-    .line 730
+    .line 557
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInfinite-impl(J)Z
 
     move-result v0
@@ -698,7 +691,7 @@
 .method public static final getNanosecondsComponent-impl(J)I
     .registers 4
 
-    .line 739
+    .line 566
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInfinite-impl(J)Z
 
     move-result v0
@@ -709,7 +702,7 @@
 
     return p0
 
-    .line 740
+    .line 567
     :cond_8
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInMillis-impl(J)Z
 
@@ -737,7 +730,7 @@
 
     return p0
 
-    .line 741
+    .line 568
     :cond_1c
     invoke-static {p0, p1}, Lkotlin/time/Duration;->getValue-impl(J)J
 
@@ -755,7 +748,7 @@
 .method public static final getSecondsComponent-impl(J)I
     .registers 4
 
-    .line 734
+    .line 561
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInfinite-impl(J)Z
 
     move-result v0
@@ -785,7 +778,7 @@
 .method private static final getStorageUnit-impl(J)Lkotlin/time/DurationUnit;
     .registers 2
 
-    .line 41
+    .line 40
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInNanos-impl(J)Z
 
     move-result p0
@@ -815,7 +808,7 @@
 .method public static final isFinite-impl(J)Z
     .registers 2
 
-    .line 641
+    .line 468
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInfinite-impl(J)Z
 
     move-result p0
@@ -866,7 +859,7 @@
 .method public static final isInfinite-impl(J)Z
     .registers 4
 
-    .line 638
+    .line 465
     sget-wide v0, Lkotlin/time/Duration;->INFINITE:J
 
     cmp-long v0, p0, v0
@@ -912,10 +905,29 @@
     return p0
 .end method
 
+.method public static final isPositive-impl(J)Z
+    .registers 4
+
+    const-wide/16 v0, 0x0
+
+    cmp-long p0, p0, v0
+
+    if-lez p0, :cond_8
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_8
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method public static final minus-LRDsOJo(JJ)J
     .registers 4
 
-    .line 511
+    .line 327
     invoke-static {p2, p3}, Lkotlin/time/Duration;->unaryMinus-UwyO8pc(J)J
 
     move-result-wide p2
@@ -930,14 +942,14 @@
 .method public static final plus-LRDsOJo(JJ)J
     .registers 11
 
-    .line 468
+    .line 284
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInfinite-impl(J)Z
 
     move-result v0
 
     if-eqz v0, :cond_1d
 
-    .line 469
+    .line 285
     invoke-static {p2, p3}, Lkotlin/time/Duration;->isFinite-impl(J)Z
 
     move-result v0
@@ -954,7 +966,7 @@
 
     goto :goto_1c
 
-    .line 472
+    .line 288
     :cond_14
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -968,7 +980,7 @@
     :goto_1c
     return-wide p0
 
-    .line 474
+    .line 290
     :cond_1d
     invoke-static {p2, p3}, Lkotlin/time/Duration;->isInfinite-impl(J)Z
 
@@ -989,7 +1001,7 @@
 
     if-ne v0, v1, :cond_45
 
-    .line 479
+    .line 295
     invoke-static {p0, p1}, Lkotlin/time/Duration;->getValue-impl(J)J
 
     move-result-wide v0
@@ -1000,14 +1012,14 @@
 
     add-long/2addr v0, p2
 
-    .line 481
+    .line 297
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInNanos-impl(J)Z
 
     move-result p0
 
     if-eqz p0, :cond_40
 
-    .line 482
+    .line 298
     # invokes: Lkotlin/time/DurationKt;->durationOfNanosNormalized(J)J
     invoke-static {v0, v1}, Lkotlin/time/DurationKt;->access$durationOfNanosNormalized(J)J
 
@@ -1015,7 +1027,7 @@
 
     return-wide p0
 
-    .line 484
+    .line 300
     :cond_40
     # invokes: Lkotlin/time/DurationKt;->durationOfMillisNormalized(J)J
     invoke-static {v0, v1}, Lkotlin/time/DurationKt;->access$durationOfMillisNormalized(J)J
@@ -1024,7 +1036,7 @@
 
     return-wide p0
 
-    .line 487
+    .line 303
     :cond_45
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isInMillis-impl(J)Z
 
@@ -1032,7 +1044,7 @@
 
     if-eqz v0, :cond_59
 
-    .line 488
+    .line 304
     invoke-static {p0, p1}, Lkotlin/time/Duration;->getValue-impl(J)J
 
     move-result-wide v3
@@ -1052,7 +1064,7 @@
     :cond_59
     move-wide v0, p0
 
-    .line 490
+    .line 306
     invoke-static {p2, p3}, Lkotlin/time/Duration;->getValue-impl(J)J
 
     move-result-wide v2
@@ -1075,7 +1087,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 756
+    .line 583
     sget-wide v0, Lkotlin/time/Duration;->INFINITE:J
 
     cmp-long v0, p0, v0
@@ -1086,7 +1098,7 @@
 
     return-wide p0
 
-    .line 757
+    .line 584
     :cond_e
     sget-wide v0, Lkotlin/time/Duration;->NEG_INFINITE:J
 
@@ -1098,7 +1110,7 @@
 
     return-wide p0
 
-    .line 760
+    .line 587
     :cond_17
     invoke-static {p0, p1}, Lkotlin/time/Duration;->getValue-impl(J)J
 
@@ -1124,7 +1136,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 776
+    .line 603
     sget-wide v0, Lkotlin/time/Duration;->INFINITE:J
 
     cmp-long v0, p0, v0
@@ -1135,7 +1147,7 @@
 
     return-wide p0
 
-    .line 777
+    .line 604
     :cond_11
     sget-wide v0, Lkotlin/time/Duration;->NEG_INFINITE:J
 
@@ -1147,7 +1159,7 @@
 
     return-wide p0
 
-    .line 778
+    .line 605
     :cond_1a
     invoke-static {p0, p1}, Lkotlin/time/Duration;->getValue-impl(J)J
 
@@ -1173,12 +1185,12 @@
 
     if-nez v2, :cond_9
 
-    .line 961
+    .line 720
     const-string p0, "0s"
 
     return-object p0
 
-    .line 962
+    .line 721
     :cond_9
     sget-wide v2, Lkotlin/time/Duration;->INFINITE:J
 
@@ -1190,7 +1202,7 @@
 
     return-object p0
 
-    .line 963
+    .line 722
     :cond_12
     sget-wide v2, Lkotlin/time/Duration;->NEG_INFINITE:J
 
@@ -1202,13 +1214,13 @@
 
     return-object p0
 
-    .line 965
+    .line 724
     :cond_1b
     invoke-static {p0, p1}, Lkotlin/time/Duration;->isNegative-impl(J)Z
 
     move-result v2
 
-    .line 966
+    .line 725
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1217,16 +1229,16 @@
 
     const/16 v3, 0x2d
 
-    .line 967
+    .line 726
     invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 968
+    .line 727
     :cond_2b
     invoke-static {p0, p1}, Lkotlin/time/Duration;->getAbsoluteValue-UwyO8pc(J)J
 
     move-result-wide v3
 
-    .line 673
+    .line 500
     invoke-static {v3, v4}, Lkotlin/time/Duration;->getInWholeDays-impl(J)J
 
     move-result-wide v6
@@ -1303,7 +1315,7 @@
     :goto_5f
     if-eqz v0, :cond_6a
 
-    .line 975
+    .line 734
     invoke-virtual {v5, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x64
@@ -1328,10 +1340,10 @@
 
     if-lez v1, :cond_7b
 
-    .line 979
+    .line 738
     invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 980
+    .line 739
     :cond_7b
     invoke-virtual {v5, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1355,10 +1367,10 @@
 
     if-lez v1, :cond_93
 
-    .line 983
+    .line 742
     invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 984
+    .line 743
     :cond_93
     invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1375,7 +1387,7 @@
 
     if-lez v1, :cond_a5
 
-    .line 987
+    .line 746
     invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     :cond_a5
@@ -1397,7 +1409,7 @@
 
     if-lt v7, v0, :cond_c0
 
-    .line 992
+    .line 751
     div-int v6, v7, v0
 
     rem-int/2addr v7, v0
@@ -1421,7 +1433,7 @@
 
     if-lt v7, p0, :cond_d0
 
-    .line 994
+    .line 753
     div-int/lit16 v6, v7, 0x3e8
 
     rem-int/2addr v7, p0
@@ -1436,7 +1448,7 @@
 
     goto :goto_e1
 
-    .line 996
+    .line 755
     :cond_d0
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1446,7 +1458,7 @@
 
     goto :goto_e1
 
-    .line 990
+    .line 749
     :goto_d9
     const-string v9, "s"
 
@@ -1466,7 +1478,7 @@
 
     const/16 p0, 0x28
 
-    .line 999
+    .line 758
     invoke-virtual {v5, v12, p0}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
 
     move-result-object p0
@@ -1475,15 +1487,11 @@
 
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 966
+    .line 725
     :cond_f1
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
-
-    const-string p1, "StringBuilder().apply(builderAction).toString()"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method
@@ -1491,7 +1499,7 @@
 .method public static final unaryMinus-UwyO8pc(J)J
     .registers 4
 
-    .line 458
+    .line 274
     invoke-static {p0, p1}, Lkotlin/time/Duration;->getValue-impl(J)J
 
     move-result-wide v0

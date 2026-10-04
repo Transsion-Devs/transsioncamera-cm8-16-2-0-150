@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)V
     .registers 2
 
-    .line 1464
+    .line 1453
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$SettingStateChangeListener;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 1464
+    .line 1453
     check-cast p2, [I
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$SettingStateChangeListener;->onStatusChanged(Ljava/lang/String;[I)V
@@ -58,7 +58,7 @@
 .method public onStatusChanged(Ljava/lang/String;[I)V
     .registers 4
 
-    .line 1467
+    .line 1456
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$SettingStateChangeListener;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mUIHandler:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$UIHandler;
@@ -67,7 +67,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1468
+    .line 1457
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$SettingStateChangeListener;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mUIHandler:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$UIHandler;

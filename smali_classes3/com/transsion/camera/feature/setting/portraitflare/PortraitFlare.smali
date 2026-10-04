@@ -139,7 +139,7 @@
 .method private closePortraitFlareForConflictOn(Ljava/lang/String;)V
     .registers 6
 
-    .line 270
+    .line 272
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -152,7 +152,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 271
+    .line 273
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
@@ -165,7 +165,7 @@
 
     invoke-virtual {v0, v3, p1, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 272
+    .line 274
     const-string p1, "off"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->onValueChanged(Ljava/lang/String;)V
@@ -177,7 +177,7 @@
 .method private isAllConflictFeatureClosed()Z
     .registers 5
 
-    .line 255
+    .line 257
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mFaceBeautyValue:Ljava/lang/String;
 
     const-string v1, "off"
@@ -186,7 +186,7 @@
 
     move-result v0
 
-    .line 256
+    .line 258
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCameraFacing()Ljava/lang/String;
 
     move-result-object v1
@@ -205,7 +205,7 @@
 
     if-eqz v1, :cond_28
 
-    .line 259
+    .line 261
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mSlimBodyValue:Ljava/lang/String;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
@@ -214,7 +214,7 @@
 
     if-eqz p0, :cond_24
 
-    .line 260
+    .line 262
     iget p0, p0, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->presetMode:I
 
     if-nez p0, :cond_27
@@ -227,7 +227,7 @@
     :cond_27
     return v2
 
-    .line 264
+    .line 266
     :cond_28
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mMakeupValue:Ljava/lang/String;
 
@@ -237,7 +237,7 @@
 
     if-eqz p0, :cond_34
 
-    .line 265
+    .line 267
     iget p0, p0, Lcom/transsion/camera/app/common/setting/makeup/MakeUpItemInfo;->styleNumber:I
 
     if-nez p0, :cond_37
@@ -320,7 +320,7 @@
 
     const/4 v7, -0x1
 
-    sparse-switch v1, :sswitch_data_174
+    sparse-switch v1, :sswitch_data_176
 
     goto :goto_6d
 
@@ -415,9 +415,9 @@
     :goto_6d
     const-string v1, "closed_reason_default_value"
 
-    packed-switch v7, :pswitch_data_18e
+    packed-switch v7, :pswitch_data_190
 
-    goto/16 :goto_134
+    goto/16 :goto_136
 
     .line 213
     :pswitch_74
@@ -442,7 +442,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_134
+    if-eqz p2, :cond_136
 
     .line 217
     iget-object p2, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -455,28 +455,30 @@
 
     move-result-object p2
 
-    .line 218
+    if-eqz p2, :cond_136
+
+    .line 219
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v2, "key_mu_face_beauty_closed_reason"
 
-    .line 219
+    .line 220
     invoke-interface {p2}, Lcom/transsion/camera/app/common/setting/ISetting;->getStoreScope()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 218
+    .line 219
     invoke-virtual {v0, v2, v1, p2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 220
+    .line 221
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->restorePortraitFlareForConflictOff(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 
     .line 202
-    :pswitch_a2
+    :pswitch_a4
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mMakeupValue:Ljava/lang/String;
 
     .line 203
@@ -498,7 +500,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_134
+    if-eqz p2, :cond_136
 
     .line 206
     iget-object p2, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -531,23 +533,23 @@
 
     return-void
 
-    .line 237
-    :pswitch_d0
+    .line 239
+    :pswitch_d2
     const-string/jumbo p1, "value_portrait_flare_interaction_off"
 
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_134
+    if-eqz p1, :cond_136
 
-    .line 238
+    .line 240
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mClosedBySuperNight:Z
 
     return-void
 
     .line 192
-    :pswitch_dc
+    :pswitch_de
     invoke-virtual {p0, v6}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -569,7 +571,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_134
+    if-eqz p2, :cond_136
 
     .line 196
     iget-object p2, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -595,8 +597,8 @@
 
     return-void
 
-    .line 224
-    :pswitch_104
+    .line 226
+    :pswitch_106
     const-string/jumbo p1, "value_super_night_lite_switch_on"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -607,9 +609,9 @@
 
     const-string v0, "on"
 
-    if-eqz p1, :cond_121
+    if-eqz p1, :cond_123
 
-    .line 225
+    .line 227
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object p1
@@ -618,21 +620,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_134
+    if-eqz p1, :cond_136
 
-    .line 226
+    .line 228
     iput-boolean v2, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mClosedBySuperNight:Z
 
-    .line 227
+    .line 229
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->onValueChanged(Ljava/lang/String;)V
 
     return-void
 
-    .line 230
-    :cond_121
+    .line 232
+    :cond_123
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mClosedBySuperNight:Z
 
-    if-eqz p1, :cond_134
+    if-eqz p1, :cond_136
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
@@ -642,20 +644,20 @@
 
     move-result p1
 
-    if-eqz p1, :cond_134
+    if-eqz p1, :cond_136
 
-    .line 231
+    .line 233
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mClosedBySuperNight:Z
 
-    .line 232
+    .line 234
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->onValueChanged(Ljava/lang/String;)V
 
-    :cond_134
-    :goto_134
+    :cond_136
+    :goto_136
     return-void
 
     .line 179
-    :pswitch_135
+    :pswitch_137
     const-string p1, "f0.0"
 
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -673,28 +675,28 @@
 
     const-string v1, "key_mu_monomer"
 
-    if-eqz p2, :cond_148
+    if-eqz p2, :cond_14a
 
-    goto :goto_153
+    goto :goto_155
 
     .line 181
-    :cond_148
+    :cond_14a
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p2
 
     iget-boolean p2, p2, Lcom/transsion/camera/utils/CustomConfigUtil;->mAlgoSupportForBackCamera:Z
 
-    if-eqz p2, :cond_151
+    if-eqz p2, :cond_153
 
-    goto :goto_153
+    goto :goto_155
 
     .line 182
-    :cond_151
+    :cond_153
     const-string v1, "key_mu_stereo"
 
     .line 183
-    :goto_153
+    :goto_155
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -711,7 +713,7 @@
 
     invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    if-nez p1, :cond_16f
+    if-nez p1, :cond_171
 
     .line 185
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->closePortraitFlareForConflictOn(Ljava/lang/String;)V
@@ -722,14 +724,14 @@
     return-void
 
     .line 188
-    :cond_16f
+    :cond_171
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->restorePortraitFlareForBlurOff(Ljava/lang/String;)V
 
     return-void
 
     nop
 
-    :sswitch_data_174
+    :sswitch_data_176
     .sparse-switch
         -0x260e0145 -> :sswitch_63
         -0x1ca38b54 -> :sswitch_58
@@ -739,13 +741,13 @@
         0x7e425a67 -> :sswitch_32
     .end sparse-switch
 
-    :pswitch_data_18e
+    :pswitch_data_190
     .packed-switch 0x0
-        :pswitch_135
-        :pswitch_104
-        :pswitch_dc
-        :pswitch_d0
-        :pswitch_a2
+        :pswitch_137
+        :pswitch_106
+        :pswitch_de
+        :pswitch_d2
+        :pswitch_a4
         :pswitch_74
     .end packed-switch
 .end method
@@ -822,7 +824,7 @@
 .method private restorePortraitFlareForBlurOff(Ljava/lang/String;)V
     .registers 7
 
-    .line 277
+    .line 279
     const-string v0, "key_mu_stereo"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -831,20 +833,20 @@
 
     if-eqz v0, :cond_b
 
-    .line 278
+    .line 280
     const-string v0, "key_mu_stereo_closed_reason"
 
     goto :goto_d
 
-    .line 279
+    .line 281
     :cond_b
     const-string v0, "key_mu_monomer_closed_reason"
 
-    .line 280
+    .line 282
     :goto_d
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 282
+    .line 284
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCameraFacing()Ljava/lang/String;
 
     move-result-object v2
@@ -853,29 +855,29 @@
 
     move-result-object v2
 
-    .line 280
+    .line 282
     const-string v3, "closed_reason_default_value"
 
     invoke-virtual {v1, v0, v3, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 283
+    .line 285
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v2, "key_flare_closed_reason"
 
-    .line 284
+    .line 286
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 283
+    .line 285
     invoke-virtual {v1, v2, v3, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 285
+    .line 287
     const-string v2, "closed_reason_user"
 
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -884,14 +886,14 @@
 
     if-eqz v0, :cond_3c
 
-    .line 286
+    .line 288
     invoke-static {v1, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_3c
 
-    .line 287
+    .line 289
     const-string p1, "on"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->onValueChanged(Ljava/lang/String;)V
@@ -903,24 +905,24 @@
 .method private restorePortraitFlareForConflictOff(Ljava/lang/String;Ljava/lang/String;)V
     .registers 7
 
-    .line 247
+    .line 249
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v1, "closed_reason_default_value"
 
-    .line 248
+    .line 250
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 247
+    .line 249
     const-string v3, "key_flare_closed_reason"
 
     invoke-virtual {v0, v3, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 249
+    .line 251
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -935,7 +937,7 @@
 
     if-eqz p1, :cond_21
 
-    .line 250
+    .line 252
     const-string p1, "on"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->onValueChanged(Ljava/lang/String;)V
@@ -1016,10 +1018,10 @@
 .method private updateFlareLocation([F)V
     .registers 2
 
-    .line 330
+    .line 332
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mFlareLocation:[F
 
-    .line 331
+    .line 333
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->getKey()Ljava/lang/String;
@@ -1040,7 +1042,7 @@
 .method public configCommand(Lcom/transsion/camera/adapter/CameraProxy;)V
     .registers 4
 
-    .line 322
+    .line 324
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->isSupportMode:Z
 
     if-eqz v0, :cond_16
@@ -1057,14 +1059,14 @@
 
     if-eqz v0, :cond_16
 
-    .line 323
+    .line 325
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mPreviewCallback:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
 
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraProxy;->registerFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
 
     return-void
 
-    .line 325
+    .line 327
     :cond_16
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mPreviewCallback:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
 
@@ -1076,12 +1078,12 @@
 .method public configParameters(Lcom/transsion/camera/adapter/CameraParameters;)I
     .registers 4
 
-    .line 307
+    .line 309
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 308
+    .line 310
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->isSupportMode:Z
 
     if-eqz v1, :cond_26
@@ -1094,14 +1096,14 @@
 
     if-eqz v0, :cond_26
 
-    .line 309
+    .line 311
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setPortraitFlareValue(Ljava/lang/String;)V
 
-    .line 310
+    .line 312
     const-string v0, "1"
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1110,14 +1112,14 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setPMasterFlareMode(I)V
 
-    .line 311
+    .line 313
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/portraitflare/PortraitFlare;->mFlareLocation:[F
 
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setFlareLocation([F)V
 
     goto :goto_3c
 
-    .line 313
+    .line 315
     :cond_26
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -1127,7 +1129,7 @@
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setPortraitFlareValue(Ljava/lang/String;)V
 
-    .line 314
+    .line 316
     const-string p0, "0"
 
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1138,7 +1140,7 @@
 
     const/4 p0, 0x0
 
-    .line 315
+    .line 317
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setFlareLocation([F)V
 
     :goto_3c
@@ -1503,24 +1505,24 @@
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
     .registers 4
 
-    .line 296
+    .line 298
     invoke-interface {p1}, Lcom/transsion/camera/adapter/ICameraCapabilities;->isPortraitFlareSupport()Z
 
     move-result p1
 
-    .line 297
+    .line 299
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 298
+    .line 300
     const-string v1, "off"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     if-eqz p1, :cond_15
 
-    .line 300
+    .line 302
     const-string p1, "on"
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1528,7 +1530,7 @@
     :cond_15
     const/4 p1, 0x0
 
-    .line 302
+    .line 304
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1

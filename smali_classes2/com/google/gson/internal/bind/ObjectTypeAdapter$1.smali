@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;
+.class Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -7,21 +7,27 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/gson/internal/bind/ObjectTypeAdapter;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/gson/internal/bind/ObjectTypeAdapter;->newFactory(Lcom/google/gson/ToNumberStrategy;)Lcom/google/gson/TypeAdapterFactory;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# direct methods
-.method constructor <init>()V
-    .registers 1
+# instance fields
+.field final synthetic val$toNumberStrategy:Lcom/google/gson/ToNumberStrategy;
 
-    .line 38
+
+# direct methods
+.method constructor <init>(Lcom/google/gson/ToNumberStrategy;)V
+    .registers 2
+
+    .line 53
+    iput-object p1, p0, Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;->val$toNumberStrategy:Lcom/google/gson/ToNumberStrategy;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,26 +36,28 @@
 
 # virtual methods
 .method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
-    .registers 3
+    .registers 5
 
-    .line 41
+    .line 57
     invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
 
-    move-result-object p0
+    move-result-object p2
 
-    const-class p2, Ljava/lang/Object;
+    const-class v0, Ljava/lang/Object;
 
-    if-ne p0, p2, :cond_e
+    const/4 v1, 0x0
 
-    .line 42
-    new-instance p0, Lcom/google/gson/internal/bind/ObjectTypeAdapter;
+    if-ne p2, v0, :cond_11
 
-    invoke-direct {p0, p1}, Lcom/google/gson/internal/bind/ObjectTypeAdapter;-><init>(Lcom/google/gson/Gson;)V
+    .line 58
+    new-instance p2, Lcom/google/gson/internal/bind/ObjectTypeAdapter;
 
-    return-object p0
+    iget-object p0, p0, Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;->val$toNumberStrategy:Lcom/google/gson/ToNumberStrategy;
 
-    :cond_e
-    const/4 p0, 0x0
+    invoke-direct {p2, p1, p0, v1}, Lcom/google/gson/internal/bind/ObjectTypeAdapter;-><init>(Lcom/google/gson/Gson;Lcom/google/gson/ToNumberStrategy;Lcom/google/gson/internal/bind/ObjectTypeAdapter$1;)V
 
-    return-object p0
+    return-object p2
+
+    :cond_11
+    return-object v1
 .end method

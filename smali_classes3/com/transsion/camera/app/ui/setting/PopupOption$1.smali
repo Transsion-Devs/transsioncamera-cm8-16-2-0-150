@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/setting/PopupOption;)V
     .registers 2
 
-    .line 164
+    .line 165
     iput-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$1;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onLayoutEnd()V
     .registers 10
 
-    .line 167
+    .line 168
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$1;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fgetmAnimationStrategy(Lcom/transsion/camera/app/ui/setting/PopupOption;)Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl$IAnimationStrategy;

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CommonVideoMode;)V
     .registers 2
 
-    .line 2177
+    .line 2187
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$2;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onCaptureCompleted(Lcom/transsion/camera/adapter/CameraResults;Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
     .registers 4
 
-    .line 2201
+    .line 2211
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$2;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;
@@ -53,7 +53,7 @@
 .method public onCaptureFailed(Z)V
     .registers 3
 
-    .line 2190
+    .line 2200
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$2;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -62,7 +62,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2191
+    .line 2201
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$2;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     const/4 p1, 0x0
@@ -75,7 +75,7 @@
 .method public onCaptureStarted(JLcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
     .registers 5
 
-    .line 2180
+    .line 2190
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$2;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;

@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 35
+    .line 32
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "NO_DECISION"

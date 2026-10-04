@@ -14,23 +14,23 @@
 
 
 # static fields
-.field public static pro_popup_bar_item:I = 0x7f0e01d8
+.field public static pro_popup_bar_item:I = 0x7f0e01d3
 
-.field public static pro_popup_bar_layout:I = 0x7f0e01d9
+.field public static pro_popup_bar_layout:I = 0x7f0e01d4
 
-.field public static professional_capture_layout:I = 0x7f0e01df
+.field public static professional_capture_layout:I = 0x7f0e01da
 
-.field public static professional_graduation_layout:I = 0x7f0e01e0
+.field public static professional_graduation_layout:I = 0x7f0e01db
 
-.field public static professional_grauation_view_layout:I = 0x7f0e01e1
+.field public static professional_grauation_view_layout:I = 0x7f0e01dc
 
-.field public static professional_mode_layout:I = 0x7f0e01e2
+.field public static professional_mode_layout:I = 0x7f0e01dd
 
-.field public static professional_scroller_view_layout_ui5:I = 0x7f0e01e3
+.field public static professional_scroller_view_layout_ui5:I = 0x7f0e01de
 
-.field public static professional_setting_item:I = 0x7f0e01e4
+.field public static professional_setting_item:I = 0x7f0e01df
 
-.field public static professional_settings_layout:I = 0x7f0e01e5
+.field public static professional_settings_layout:I = 0x7f0e01e0
 
 
 # direct methods

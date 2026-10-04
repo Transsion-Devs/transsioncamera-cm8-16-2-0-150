@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)V
     .registers 2
 
-    .line 1934
+    .line 1886
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onShutterStarted(Ljava/lang/String;ZJJ)V
     .registers 7
 
-    .line 1942
+    .line 1894
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -53,7 +53,7 @@
 .method public onThumbNailTypeConfirmed(I[IJ)V
     .registers 5
 
-    .line 1937
+    .line 1889
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$4;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;

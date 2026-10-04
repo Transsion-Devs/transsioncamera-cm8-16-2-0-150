@@ -29,7 +29,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 1289
+    .line 1286
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "COMPLETING_ALREADY"
@@ -38,7 +38,7 @@
 
     sput-object v0, Lkotlinx/coroutines/JobSupportKt;->COMPLETING_ALREADY:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 1291
+    .line 1288
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "COMPLETING_WAITING_CHILDREN"
@@ -47,7 +47,7 @@
 
     sput-object v0, Lkotlinx/coroutines/JobSupportKt;->COMPLETING_WAITING_CHILDREN:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 1292
+    .line 1289
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "COMPLETING_RETRY"
@@ -56,7 +56,7 @@
 
     sput-object v0, Lkotlinx/coroutines/JobSupportKt;->COMPLETING_RETRY:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 1293
+    .line 1290
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "TOO_LATE_TO_CANCEL"
@@ -65,7 +65,7 @@
 
     sput-object v0, Lkotlinx/coroutines/JobSupportKt;->TOO_LATE_TO_CANCEL:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 1299
+    .line 1296
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "SEALED"
@@ -74,7 +74,7 @@
 
     sput-object v0, Lkotlinx/coroutines/JobSupportKt;->SEALED:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 1300
+    .line 1297
     new-instance v0, Lkotlinx/coroutines/Empty;
 
     const/4 v1, 0x0
@@ -83,7 +83,7 @@
 
     sput-object v0, Lkotlinx/coroutines/JobSupportKt;->EMPTY_NEW:Lkotlinx/coroutines/Empty;
 
-    .line 1301
+    .line 1298
     new-instance v0, Lkotlinx/coroutines/Empty;
 
     const/4 v1, 0x1
@@ -152,7 +152,7 @@
 .method public static final boxIncomplete(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 1284
+    .line 1281
     instance-of v0, p0, Lkotlinx/coroutines/Incomplete;
 
     if-eqz v0, :cond_c
@@ -172,7 +172,7 @@
 .method public static final unboxState(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 1285
+    .line 1282
     instance-of v0, p0, Lkotlinx/coroutines/IncompleteStateBox;
 
     if-eqz v0, :cond_8

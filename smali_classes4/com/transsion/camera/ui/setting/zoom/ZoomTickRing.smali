@@ -211,6 +211,10 @@
 
 .field private mTouchDownTime:J
 
+.field private mTouchDownX:F
+
+.field private mTouchSlop:I
+
 .field private mVibrateTicks:Landroid/util/SparseArray;
 
 .field private mViewContentHeight:I
@@ -487,103 +491,114 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 3
 
-    .line 233
+    .line 235
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const/4 p1, 0x1
+    const/4 p2, 0x1
 
     .line 136
-    iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsVibrationEnable:Z
+    iput-boolean p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsVibrationEnable:Z
 
     .line 140
-    sget p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->DEFAULT_ZOOM_RATIO:I
+    sget p2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->DEFAULT_ZOOM_RATIO:I
 
-    iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mZoomRatio:I
+    iput p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mZoomRatio:I
 
-    const/4 p1, 0x0
+    const/4 p2, 0x0
 
     .line 149
-    iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollState:I
+    iput p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollState:I
 
-    const/4 p1, -0x1
+    const/4 p2, -0x1
 
-    .line 156
-    iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mInitialPointerId:I
+    .line 157
+    iput p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mInitialPointerId:I
 
-    const/high16 p1, -0x40800000    # -1.0f
-
-    .line 164
-    iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLastTouchX:F
-
-    const/high16 p1, 0x3f800000    # 1.0f
+    const/high16 p2, -0x40800000    # -1.0f
 
     .line 165
-    iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterToEndsStretchFactor:F
+    iput p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLastTouchX:F
 
-    const/high16 p1, 0x43960000    # 300.0f
+    const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 168
-    iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRingRadius:F
+    .line 167
+    iput p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterToEndsStretchFactor:F
 
-    const/high16 p1, 0x3f000000    # 0.5f
+    const/high16 p2, 0x43960000    # 300.0f
 
-    .line 178
-    iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mStickyInDegreeThreshold:F
+    .line 170
+    iput p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRingRadius:F
 
-    const/16 p1, 0x20
+    const/high16 p2, 0x3f000000    # 0.5f
 
     .line 180
-    iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickHeight:I
+    iput p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mStickyInDegreeThreshold:F
 
-    .line 215
-    new-instance p1, Landroid/util/SparseArray;
+    const/16 p2, 0x20
 
-    invoke-direct {p1}, Landroid/util/SparseArray;-><init>()V
-
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTicks:Landroid/util/SparseArray;
-
-    .line 216
-    new-instance p1, Landroid/util/SparseArray;
-
-    invoke-direct {p1}, Landroid/util/SparseArray;-><init>()V
-
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mVibrateTicks:Landroid/util/SparseArray;
+    .line 182
+    iput p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickHeight:I
 
     .line 217
-    new-instance p1, Landroid/util/SparseArray;
+    new-instance p2, Landroid/util/SparseArray;
 
-    invoke-direct {p1}, Landroid/util/SparseArray;-><init>()V
+    invoke-direct {p2}, Landroid/util/SparseArray;-><init>()V
 
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTicks:Landroid/util/SparseArray;
 
-    .line 225
-    new-instance p1, Landroid/graphics/Rect;
+    .line 218
+    new-instance p2, Landroid/util/SparseArray;
 
-    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {p2}, Landroid/util/SparseArray;-><init>()V
 
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTextBound:Landroid/graphics/Rect;
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mVibrateTicks:Landroid/util/SparseArray;
 
-    .line 226
-    new-instance p1, Landroid/graphics/Matrix;
+    .line 219
+    new-instance p2, Landroid/util/SparseArray;
 
-    invoke-direct {p1}, Landroid/graphics/Matrix;-><init>()V
+    invoke-direct {p2}, Landroid/util/SparseArray;-><init>()V
 
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mGradientMatrix:Landroid/graphics/Matrix;
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
 
-    .line 234
+    .line 227
+    new-instance p2, Landroid/graphics/Rect;
+
+    invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTextBound:Landroid/graphics/Rect;
+
+    .line 228
+    new-instance p2, Landroid/graphics/Matrix;
+
+    invoke-direct {p2}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mGradientMatrix:Landroid/graphics/Matrix;
+
+    .line 236
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->initResources()V
 
-    .line 235
+    .line 237
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->initAnimator()V
 
-    .line 237
+    .line 239
+    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
+
+    move-result p1
+
+    iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTouchSlop:I
+
+    .line 240
     new-instance p1, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-direct {p1}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
-    .line 238
+    .line 241
     new-instance p1, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-direct {p1}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;-><init>()V
@@ -596,12 +611,12 @@
 .method private calculateDegreeByRatio(IF)F
     .registers 7
 
-    .line 606
+    .line 618
     sget v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->LINEAR_DISTANCE_RATIO_THRESHOLD:I
 
     if-gt p1, v0, :cond_17
 
-    .line 607
+    .line 619
     iget-wide v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCoefficientK:D
 
     int-to-double p0, p1
@@ -628,7 +643,7 @@
 
     return p0
 
-    .line 611
+    .line 623
     :cond_17
     iget p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLinearDistanceDegreeThreshold:F
 
@@ -640,7 +655,7 @@
 
     mul-float/2addr p1, v1
 
-    .line 612
+    .line 624
     sget v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->PRESET_MAX_UI_RATIO:I
 
     sub-int/2addr v1, v0
@@ -663,12 +678,12 @@
 .method private calculateTargetScrollDegree(Landroid/view/MotionEvent;[I)F
     .registers 15
 
-    .line 629
+    .line 641
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result p1
 
-    .line 630
+    .line 642
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->findTapedCriticalTick(F)Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
     move-result-object v0
@@ -677,10 +692,10 @@
 
     if-eqz v0, :cond_4c
 
-    .line 633
+    .line 645
     iget p1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
-    .line 634
+    .line 646
     iget-boolean v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsZoomRangeLimited:Z
 
     if-eqz v2, :cond_14
@@ -695,7 +710,7 @@
     :goto_16
     if-eqz v2, :cond_1b
 
-    .line 635
+    .line 647
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxLimitedZoomRatio:I
 
     goto :goto_1d
@@ -703,7 +718,7 @@
     :cond_1b
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxZoomRatio:I
 
-    .line 633
+    .line 645
     :goto_1d
     invoke-static {p1, v3, v2}, Landroidx/core/math/MathUtils;->clamp(III)I
 
@@ -711,7 +726,7 @@
 
     aput p1, p2, v1
 
-    .line 636
+    .line 648
     sget-object p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -740,7 +755,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 638
+    .line 650
     iget p1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->getTargetScrollDegreeByRatio(I)F
@@ -749,7 +764,7 @@
 
     return p0
 
-    .line 643
+    .line 655
     :cond_4c
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterX:F
 
@@ -769,7 +784,7 @@
 
     float-to-double v2, v2
 
-    .line 644
+    .line 656
     invoke-static {v2, v3}, Ljava/lang/Math;->acos(D)D
 
     move-result-wide v2
@@ -788,7 +803,7 @@
 
     sub-float v3, v2, v3
 
-    .line 646
+    .line 658
     iget v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollDegree:F
 
     add-float/2addr v3, v4
@@ -803,14 +818,14 @@
 
     sub-float/2addr v2, v3
 
-    .line 648
+    .line 660
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->degreeToZoomRatio(F)I
 
     move-result v2
 
     aput v2, p2, v1
 
-    .line 649
+    .line 661
     sget-object v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -837,7 +852,7 @@
 
     invoke-static {v2, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 654
+    .line 666
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTicks:Landroid/util/SparseArray;
 
     aget v4, p2, v1
@@ -846,7 +861,7 @@
 
     move-result-object v2
 
-    .line 655
+    .line 667
     array-length v4, v2
 
     move v7, v1
@@ -856,7 +871,7 @@
 
     aget-object v8, v2, v7
 
-    .line 656
+    .line 668
     iget v9, v8, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickX:F
 
     sub-float/2addr v9, p1
@@ -888,10 +903,10 @@
     :goto_c1
     if-eqz v0, :cond_112
 
-    .line 662
+    .line 674
     iget v2, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
-    .line 663
+    .line 675
     iget-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsZoomRangeLimited:Z
 
     if-eqz v3, :cond_cc
@@ -906,7 +921,7 @@
     :goto_ce
     if-eqz v3, :cond_d3
 
-    .line 664
+    .line 676
     iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxLimitedZoomRatio:I
 
     goto :goto_d5
@@ -914,7 +929,7 @@
     :cond_d3
     iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxZoomRatio:I
 
-    .line 662
+    .line 674
     :goto_d5
     invoke-static {v2, v4, v3}, Landroidx/core/math/MathUtils;->clamp(III)I
 
@@ -922,7 +937,7 @@
 
     aput v2, p2, v1
 
-    .line 665
+    .line 677
     sget-object v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -961,7 +976,7 @@
 
     invoke-static {v2, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 669
+    .line 681
     iget p1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->getTargetScrollDegreeByRatio(I)F
@@ -977,14 +992,14 @@
 .method private checkVibrate(II)V
     .registers 6
 
-    .line 867
+    .line 887
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsVibrationEnable:Z
 
     if-nez v0, :cond_5
 
     goto :goto_56
 
-    .line 870
+    .line 890
     :cond_5
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
@@ -994,7 +1009,7 @@
 
     goto :goto_56
 
-    .line 873
+    .line 893
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
@@ -1014,7 +1029,7 @@
 
     goto :goto_56
 
-    .line 877
+    .line 897
     :cond_1d
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mVibrateTicks:Landroid/util/SparseArray;
 
@@ -1028,7 +1043,7 @@
 
     if-ne p1, p2, :cond_31
 
-    .line 880
+    .line 900
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "checkVibrate return for zoom ratio is not changed"
@@ -1037,7 +1052,7 @@
 
     return-void
 
-    .line 883
+    .line 903
     :cond_31
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->handleVibrate(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;)V
 
@@ -1046,7 +1061,7 @@
     :cond_35
     const/4 v0, 0x0
 
-    .line 888
+    .line 908
     :goto_36
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mVibrateTicks:Landroid/util/SparseArray;
 
@@ -1056,7 +1071,7 @@
 
     if-ge v0, v1, :cond_56
 
-    .line 889
+    .line 909
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mVibrateTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -1065,7 +1080,7 @@
 
     check-cast v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
-    .line 890
+    .line 910
     iget v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     if-ge p1, v2, :cond_4c
@@ -1077,7 +1092,7 @@
 
     if-le v2, p2, :cond_53
 
-    .line 892
+    .line 912
     :cond_50
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->handleVibrate(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;)V
 
@@ -1099,7 +1114,7 @@
     :goto_1
     if-ge v0, p1, :cond_a4
 
-    .line 512
+    .line 524
     new-instance v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
     const/4 v2, 0x0
@@ -1110,17 +1125,17 @@
 
     add-int/2addr v2, p2
 
-    .line 513
+    .line 525
     iput v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
-    .line 514
+    .line 526
     iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxZoomRatio:I
 
     if-le v2, v3, :cond_14
 
     goto/16 :goto_a4
 
-    .line 517
+    .line 529
     :cond_14
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->zoomRatioToDegree(I)F
 
@@ -1128,7 +1143,7 @@
 
     iput v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mDegree:F
 
-    .line 519
+    .line 531
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->isCriticalTick(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;)Z
 
     move-result v2
@@ -1137,20 +1152,20 @@
 
     const/4 v2, 0x1
 
-    .line 520
+    .line 532
     iput-boolean v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mIsCritical:Z
 
-    .line 521
+    .line 533
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateTickText(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;)V
 
-    .line 522
+    .line 534
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
 
     iget v3, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     invoke-virtual {v2, v3, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 524
+    .line 536
     :cond_2d
     iget-object v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickText:Ljava/lang/String;
 
@@ -1162,7 +1177,7 @@
 
     if-gt v2, v3, :cond_48
 
-    .line 525
+    .line 537
     invoke-static {v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUtils;->unscaledRatio(I)F
 
     move-result v2
@@ -1181,7 +1196,7 @@
 
     iput-object v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mFocalLength:Ljava/lang/String;
 
-    .line 527
+    .line 539
     :cond_48
     iget v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
@@ -1193,17 +1208,17 @@
 
     if-lt v2, v3, :cond_59
 
-    .line 528
+    .line 540
     iput v5, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickWidth:F
 
     const/16 v2, 0x33
 
-    .line 529
+    .line 541
     iput v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickAlpha:I
 
     goto :goto_83
 
-    .line 531
+    .line 543
     :cond_59
     sget v6, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->PRESET_MIN_UI_RATIO:I
 
@@ -1219,7 +1234,7 @@
 
     div-float/2addr v2, v3
 
-    .line 532
+    .line 544
     iget-boolean v3, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mIsCritical:Z
 
     const/high16 v5, 0x40800000    # 4.0f
@@ -1233,7 +1248,7 @@
 
     sub-float/2addr v5, v6
 
-    .line 533
+    .line 545
     :goto_6b
     iput v5, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickWidth:F
 
@@ -1262,11 +1277,11 @@
 
     float-to-int v2, v2
 
-    .line 535
+    .line 547
     :goto_81
     iput v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickAlpha:I
 
-    .line 537
+    .line 549
     :goto_83
     iget v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickWidth:F
 
@@ -1278,22 +1293,22 @@
 
     iput v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickWidth:F
 
-    .line 538
+    .line 550
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateVibrateType(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;)V
 
-    .line 539
+    .line 551
     iget v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mVibrateType:I
 
     if-eqz v2, :cond_99
 
-    .line 540
+    .line 552
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mVibrateTicks:Landroid/util/SparseArray;
 
     iget v3, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     invoke-virtual {v2, v3, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 542
+    .line 554
     :cond_99
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTicks:Landroid/util/SparseArray;
 
@@ -1321,7 +1336,7 @@
 
     return v0
 
-    .line 755
+    .line 775
     :cond_6
     invoke-static {p1}, Ljava/lang/Math;->signum(F)F
 
@@ -1329,7 +1344,7 @@
 
     neg-float v0, v0
 
-    .line 756
+    .line 776
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRingRadius:F
 
     mul-float/2addr v0, p0
@@ -1370,7 +1385,7 @@
 .method private degreeToZoomRatio(F)I
     .registers 6
 
-    .line 854
+    .line 874
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLinearDistanceDegreeThreshold:F
 
     cmpl-float v1, p1, v0
@@ -1379,7 +1394,7 @@
 
     if-lez v1, :cond_19
 
-    .line 856
+    .line 876
     sget v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->LINEAR_DISTANCE_RATIO_THRESHOLD:I
 
     int-to-float v3, v1
@@ -1408,7 +1423,7 @@
 
     return p0
 
-    .line 860
+    .line 880
     :cond_19
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mDegreeOffset:F
 
@@ -1428,14 +1443,14 @@
 
     int-to-double v0, v0
 
-    .line 861
+    .line 881
     invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
 
     move-result-wide v0
 
     add-double/2addr p0, v0
 
-    .line 862
+    .line 882
     invoke-static {p0, p1}, Ljava/lang/Math;->exp(D)D
 
     move-result-wide p0
@@ -1456,12 +1471,12 @@
 
     const-wide/high16 v2, 0x4000000000000000L    # 2.0
 
-    .line 730
+    .line 742
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v0
 
-    .line 731
+    .line 743
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRingRadius:F
 
     const/high16 v2, 0x40000000    # 2.0f
@@ -1478,7 +1493,7 @@
 
     sub-double/2addr v2, v0
 
-    .line 732
+    .line 744
     invoke-static {v2, v3}, Ljava/lang/Math;->acos(D)D
 
     move-result-wide v0
@@ -1508,7 +1523,7 @@
 .method private doInvalidate()V
     .registers 3
 
-    .line 480
+    .line 492
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -1519,16 +1534,16 @@
 
     if-ne v0, v1, :cond_e
 
-    .line 481
+    .line 493
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 
-    .line 483
+    .line 495
     :cond_e
     invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
-    .line 484
+    .line 496
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/Throwable;
@@ -1545,7 +1560,7 @@
 .method private drawBackground(Landroid/graphics/Canvas;)V
     .registers 10
 
-    .line 1185
+    .line 1221
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRingRadius:F
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawable:Landroid/graphics/drawable/Drawable;
@@ -1568,14 +1583,14 @@
 
     mul-float/2addr v0, v1
 
-    .line 1186
+    .line 1222
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterY:F
 
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBackgroundVerticalMargin:F
 
     sub-float/2addr v1, v2
 
-    .line 1187
+    .line 1223
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterX:F
@@ -1610,7 +1625,7 @@
 
     invoke-virtual {v2, v5, v7, v3, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1191
+    .line 1227
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -1621,7 +1636,7 @@
 .method private drawPointer(Landroid/graphics/Canvas;)V
     .registers 7
 
-    .line 1160
+    .line 1196
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterX:F
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mPointerWidth:I
@@ -1642,7 +1657,7 @@
 
     add-int/2addr v1, v0
 
-    .line 1162
+    .line 1198
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -1661,17 +1676,17 @@
 
     float-to-int v2, v3
 
-    .line 1163
+    .line 1199
     iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mPointerHeight:I
 
     sub-int v3, v2, v3
 
-    .line 1164
+    .line 1200
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mPointerDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4, v0, v3, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1165
+    .line 1201
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mPointerDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -1682,21 +1697,21 @@
 .method private drawSelectedZoomRatio(Landroid/graphics/Canvas;)V
     .registers 12
 
-    .line 1169
+    .line 1205
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mZoomRatio:I
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUtils;->getZoomRatioText(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1170
+    .line 1206
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
 
     move-result v1
 
-    .line 1171
+    .line 1207
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioSuffixPaint:Landroid/graphics/Paint;
 
     const-string v3, "X"
@@ -1705,7 +1720,7 @@
 
     move-result v2
 
-    .line 1172
+    .line 1208
     iget v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterX:F
 
     add-float/2addr v2, v1
@@ -1716,7 +1731,7 @@
 
     sub-float/2addr v4, v2
 
-    .line 1173
+    .line 1209
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -1731,7 +1746,7 @@
 
     sub-float/2addr v2, v6
 
-    .line 1174
+    .line 1210
     iget-object v6, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioSuffixPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -1744,10 +1759,10 @@
 
     invoke-virtual {v6, v0, v9, v7, v8}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    .line 1175
+    .line 1211
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1176
+    .line 1212
     iget-object v6, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRotateAnimator:Lcom/transsion/camera/ui/setting/zoom/RotateAnimator;
 
     iget v7, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterX:F
@@ -1766,29 +1781,29 @@
 
     invoke-virtual {v6, p1, v7, v5}, Lcom/transsion/camera/ui/setting/zoom/RotateAnimator;->rotate(Landroid/graphics/Canvas;FF)F
 
-    .line 1177
+    .line 1213
     iget-object v5, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v4, v2, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1178
+    .line 1214
     iget-object v5, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v4, v2, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     add-float/2addr v4, v1
 
-    .line 1179
+    .line 1215
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioSuffixStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v3, v4, v2, v0}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1180
+    .line 1216
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioSuffixPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v3, v4, v2, p0}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1181
+    .line 1217
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -1814,12 +1829,12 @@
     :cond_d
     float-to-double v0, p3
 
-    .line 1283
+    .line 1319
     invoke-static {v0, v1}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v0
 
-    .line 1284
+    .line 1320
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterX:F
 
     float-to-double v2, v2
@@ -1838,7 +1853,7 @@
 
     double-to-float v2, v2
 
-    .line 1285
+    .line 1321
     iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterY:F
 
     float-to-double v3, v3
@@ -1861,10 +1876,10 @@
 
     double-to-float v9, v3
 
-    .line 1286
+    .line 1322
     iput v2, p2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickX:F
 
-    .line 1287
+    .line 1323
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->getTickGradientAlphaFactor(F)F
 
     move-result v0
@@ -1877,7 +1892,7 @@
 
     goto :goto_6a
 
-    .line 1291
+    .line 1327
     :cond_3b
     iget-boolean v1, p2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mIsLimited:Z
 
@@ -1898,7 +1913,7 @@
     :goto_46
     if-eqz v1, :cond_4b
 
-    .line 1292
+    .line 1328
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTickAlpha:I
 
     goto :goto_4d
@@ -1917,15 +1932,15 @@
 
     float-to-int v0, v1
 
-    .line 1293
+    .line 1329
     invoke-virtual {v10, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1294
+    .line 1330
     iget v0, p2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickWidth:F
 
     invoke-virtual {v10, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 1295
+    .line 1331
     iget v6, p2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickX:F
 
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickHeight:I
@@ -1940,7 +1955,7 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 1296
+    .line 1332
     invoke-direct {p0, v5, p2, p3, p4}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->drawTickText(Landroid/graphics/Canvas;Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;FF)V
 
     :cond_6a
@@ -1959,13 +1974,13 @@
 
     move/from16 v3, p4
 
-    .line 1301
+    .line 1337
     iget-object v4, v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickText:Ljava/lang/String;
 
-    .line 1302
+    .line 1338
     iget v5, v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickX:F
 
-    .line 1304
+    .line 1340
     iget-boolean v6, v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mIsLimited:Z
 
     const/4 v7, 0x1
@@ -1992,10 +2007,10 @@
 
     if-eqz v4, :cond_82
 
-    .line 1306
+    .line 1342
     invoke-virtual {v1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1307
+    .line 1343
     iget-object v11, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v11, v4}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
@@ -2006,7 +2021,7 @@
 
     sub-float v11, v5, v11
 
-    .line 1309
+    .line 1345
     iget-object v12, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -2021,7 +2036,7 @@
 
     sub-float/2addr v12, v13
 
-    .line 1310
+    .line 1346
     iget-boolean v13, v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mIsLimited:Z
 
     if-eqz v13, :cond_3e
@@ -2033,7 +2048,7 @@
     :cond_3e
     iget-object v13, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
-    .line 1311
+    .line 1347
     :goto_40
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
@@ -2043,7 +2058,7 @@
 
     invoke-virtual {v13, v4, v9, v14, v15}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    .line 1312
+    .line 1348
     iget-object v14, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTextBound:Landroid/graphics/Rect;
 
     invoke-virtual {v14}, Landroid/graphics/Rect;->height()I
@@ -2058,10 +2073,10 @@
 
     if-eqz v6, :cond_59
 
-    .line 1314
+    .line 1350
     invoke-virtual {v1, v3, v8, v5, v12}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1316
+    .line 1352
     :cond_59
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRotateAnimator:Lcom/transsion/camera/ui/setting/zoom/RotateAnimator;
 
@@ -2071,7 +2086,7 @@
 
     move-result v3
 
-    .line 1317
+    .line 1353
     iget-object v6, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v6}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
@@ -2084,7 +2099,7 @@
 
     invoke-direct {v0, v6, v3, v8, v14}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->rotateShader(Landroid/graphics/Shader;FFF)V
 
-    .line 1318
+    .line 1354
     invoke-virtual {v13}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
 
     move-result-object v6
@@ -2093,15 +2108,15 @@
 
     invoke-direct {v0, v6, v3, v8, v14}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->rotateShader(Landroid/graphics/Shader;FFF)V
 
-    .line 1319
+    .line 1355
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v4, v11, v12, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1320
+    .line 1356
     invoke-virtual {v1, v4, v11, v12, v13}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1321
+    .line 1357
     invoke-virtual {v1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_83
@@ -2109,23 +2124,23 @@
     :cond_82
     const/4 v14, 0x0
 
-    .line 1325
+    .line 1361
     :goto_83
     iget-object v3, v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mFocalLength:Ljava/lang/String;
 
     if-eqz v3, :cond_11d
 
-    .line 1327
+    .line 1363
     invoke-virtual {v1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1328
+    .line 1364
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v4, v3}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
 
     move-result v4
 
-    .line 1329
+    .line 1365
     iget-object v6, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixPaint:Landroid/graphics/Paint;
 
     const-string v8, "mm"
@@ -2140,7 +2155,7 @@
 
     sub-float/2addr v5, v6
 
-    .line 1332
+    .line 1368
     iget-object v6, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v6}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
@@ -2159,7 +2174,7 @@
 
     sub-float v10, p3, v10
 
-    .line 1333
+    .line 1369
     invoke-static {v10}, Ljava/lang/Math;->abs(F)F
 
     move-result v10
@@ -2175,7 +2190,7 @@
     :cond_b6
     move v7, v9
 
-    .line 1334
+    .line 1370
     :goto_b7
     iget-object v9, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRotateAnimator:Lcom/transsion/camera/ui/setting/zoom/RotateAnimator;
 
@@ -2187,7 +2202,7 @@
 
     if-nez v7, :cond_e4
 
-    .line 1337
+    .line 1373
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v10}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
@@ -2200,12 +2215,12 @@
 
     invoke-direct {v0, v10, v11, v12, v14}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->rotateShader(Landroid/graphics/Shader;FFF)V
 
-    .line 1338
+    .line 1374
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3, v5, v6, v10}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1339
+    .line 1375
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v10}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
@@ -2218,12 +2233,12 @@
 
     add-float v10, v5, v4
 
-    .line 1340
+    .line 1376
     iget-object v11, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v8, v10, v6, v11}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1343
+    .line 1379
     :cond_e4
     iget-boolean v10, v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mIsLimited:Z
 
@@ -2236,7 +2251,7 @@
     :cond_eb
     if-eqz v7, :cond_f0
 
-    .line 1344
+    .line 1380
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSelectedPaint:Landroid/graphics/Paint;
 
     goto :goto_f2
@@ -2244,7 +2259,7 @@
     :cond_f0
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
 
-    .line 1345
+    .line 1381
     :goto_f2
     invoke-virtual {v10}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
 
@@ -2256,10 +2271,10 @@
 
     invoke-direct {v0, v11, v9, v12, v14}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->rotateShader(Landroid/graphics/Shader;FFF)V
 
-    .line 1346
+    .line 1382
     invoke-virtual {v1, v3, v5, v6, v10}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1347
+    .line 1383
     iget-boolean v3, v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mIsLimited:Z
 
     if-eqz v3, :cond_106
@@ -2271,7 +2286,7 @@
     :cond_106
     if-eqz v7, :cond_10b
 
-    .line 1348
+    .line 1384
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixSelectedPaint:Landroid/graphics/Paint;
 
     goto :goto_10d
@@ -2279,7 +2294,7 @@
     :cond_10b
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixPaint:Landroid/graphics/Paint;
 
-    .line 1349
+    .line 1385
     :goto_10d
     invoke-virtual {v3}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
 
@@ -2291,10 +2306,10 @@
 
     add-float/2addr v5, v4
 
-    .line 1350
+    .line 1386
     invoke-virtual {v1, v8, v5, v6, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 1351
+    .line 1387
     invoke-virtual {v1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_11d
@@ -2304,7 +2319,7 @@
 .method private drawTicks(Landroid/graphics/Canvas;)V
     .registers 11
 
-    .line 1203
+    .line 1239
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->isFinished()Z
@@ -2327,7 +2342,7 @@
 
     if-eqz v0, :cond_1f
 
-    .line 1205
+    .line 1241
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterToEndsStretchFactor:F
 
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
@@ -2343,7 +2358,7 @@
 
     goto :goto_3b
 
-    .line 1206
+    .line 1242
     :cond_1f
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
@@ -2361,7 +2376,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 1208
+    .line 1244
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterToEndsStretchFactor:F
 
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
@@ -2372,13 +2387,13 @@
 
     goto :goto_1c
 
-    .line 1210
+    .line 1246
     :cond_38
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterToEndsStretchFactor:F
 
     move v2, v3
 
-    .line 1212
+    .line 1248
     :goto_3b
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTicks:Landroid/util/SparseArray;
 
@@ -2386,7 +2401,7 @@
 
     move-result v1
 
-    .line 1213
+    .line 1249
     iget-boolean v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsZoomRangeLimited:Z
 
     if-eqz v4, :cond_4a
@@ -2397,21 +2412,21 @@
 
     goto :goto_4c
 
-    .line 1214
+    .line 1250
     :cond_4a
     iget v5, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinZoomRatio:I
 
     :goto_4c
     if-eqz v4, :cond_53
 
-    .line 1215
+    .line 1251
     iget v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxLimitedZoomRatio:I
 
     if-lez v4, :cond_53
 
     goto :goto_55
 
-    .line 1216
+    .line 1252
     :cond_53
     iget v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxZoomRatio:I
 
@@ -2421,7 +2436,7 @@
     :goto_56
     if-ge v6, v1, :cond_6f
 
-    .line 1219
+    .line 1255
     iget-object v7, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v7, v6}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2430,20 +2445,20 @@
 
     check-cast v7, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
-    .line 1220
+    .line 1256
     iget-boolean v8, v7, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mIsCritical:Z
 
     if-eqz v8, :cond_65
 
     goto :goto_6c
 
-    .line 1223
+    .line 1259
     :cond_65
     invoke-direct {p0, v7, v0, v5, v4}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->getDegreeOnDraw(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;FII)F
 
     move-result v8
 
-    .line 1224
+    .line 1260
     invoke-direct {p0, p1, v7, v8, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->drawTick(Landroid/graphics/Canvas;Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;FF)V
 
     :goto_6c
@@ -2451,7 +2466,7 @@
 
     goto :goto_56
 
-    .line 1227
+    .line 1263
     :cond_6f
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
 
@@ -2462,7 +2477,7 @@
     :goto_75
     if-ge v3, v1, :cond_89
 
-    .line 1229
+    .line 1265
     iget-object v6, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v6, v3}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2471,12 +2486,12 @@
 
     check-cast v6, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
-    .line 1230
+    .line 1266
     invoke-direct {p0, v6, v0, v5, v4}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->getDegreeOnDraw(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;FII)F
 
     move-result v7
 
-    .line 1231
+    .line 1267
     invoke-direct {p0, p1, v6, v7, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->drawTick(Landroid/graphics/Canvas;Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;FF)V
 
     add-int/lit8 v3, v3, 0x1
@@ -2486,7 +2501,7 @@
     :cond_89
     if-eqz v2, :cond_8e
 
-    .line 1234
+    .line 1270
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     :cond_8e
@@ -2496,7 +2511,7 @@
 .method private findNearestTicksByRatio(Landroid/util/SparseArray;I)[Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
     .registers 9
 
-    .line 702
+    .line 714
     invoke-virtual {p1}, Landroid/util/SparseArray;->size()I
 
     move-result p0
@@ -2505,14 +2520,14 @@
 
     const/4 v0, 0x0
 
-    .line 706
+    .line 718
     invoke-virtual {p1, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
-    .line 707
+    .line 719
     invoke-virtual {p1, p0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -2524,19 +2539,19 @@
 
     sub-int v3, p0, v0
 
-    .line 710
+    .line 722
     div-int/lit8 v3, v3, 0x2
 
     add-int/2addr v3, v0
 
-    .line 711
+    .line 723
     invoke-virtual {p1, v3}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
-    .line 713
+    .line 725
     iget v5, v4, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     if-ne v5, p2, :cond_27
@@ -2567,7 +2582,7 @@
 
     goto :goto_13
 
-    .line 726
+    .line 738
     :cond_33
     :goto_33
     filled-new-array {v1, v2}, [Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
@@ -2580,7 +2595,7 @@
 .method private findTapedCriticalTick(F)Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
     .registers 9
 
-    .line 685
+    .line 697
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
@@ -2596,12 +2611,12 @@
 
     sub-int v2, v0, v1
 
-    .line 687
+    .line 699
     div-int/lit8 v2, v2, 0x2
 
     add-int/2addr v2, v1
 
-    .line 688
+    .line 700
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2610,7 +2625,7 @@
 
     check-cast v3, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
-    .line 689
+    .line 701
     iget v4, v3, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickX:F
 
     sub-float v5, p1, v4
@@ -2652,7 +2667,7 @@
 .method private findTargetStickyTick(F)Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
     .registers 6
 
-    .line 811
+    .line 831
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
@@ -2670,7 +2685,7 @@
     :goto_c
     if-ge p1, v0, :cond_36
 
-    .line 815
+    .line 835
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2679,7 +2694,7 @@
 
     check-cast v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
-    .line 816
+    .line 836
     iget v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mZoomRatio:I
@@ -2699,7 +2714,7 @@
     :goto_22
     if-ltz v0, :cond_36
 
-    .line 822
+    .line 842
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
 
     invoke-virtual {p1, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2708,7 +2723,7 @@
 
     check-cast p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
-    .line 823
+    .line 843
     iget v1, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mZoomRatio:I
@@ -2731,14 +2746,14 @@
 .method private getDegreeOnDraw(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;FII)F
     .registers 8
 
-    .line 1239
+    .line 1275
     iget v0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mDegree:F
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollDegree:F
 
     add-float/2addr v0, v1
 
-    .line 1240
+    .line 1276
     iget v1, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinLimitedZoomRatio:I
@@ -2747,7 +2762,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
-    .line 1241
+    .line 1277
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->isFinished()Z
 
     move-result v1
@@ -2756,7 +2771,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
-    .line 1242
+    .line 1278
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->computerStretchOffset()Z
 
     move-result v1
@@ -2771,23 +2786,23 @@
 
     goto :goto_79
 
-    .line 1246
+    .line 1282
     :cond_22
     iget p4, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
-    .line 1247
+    .line 1283
     invoke-direct {p0, p3}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->zoomRatioToDegree(I)F
 
     move-result v0
 
-    .line 1246
+    .line 1282
     invoke-direct {p0, p4, p3, v0, p2}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->getStretchDegree(IIFF)F
 
     move-result p2
 
     iput p2, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mCurrentDegree:F
 
-    .line 1248
+    .line 1284
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollDegree:F
 
     :goto_30
@@ -2795,7 +2810,7 @@
 
     return p2
 
-    .line 1251
+    .line 1287
     :cond_32
     iget p3, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
@@ -2805,7 +2820,7 @@
 
     iget-object p3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
-    .line 1252
+    .line 1288
     invoke-virtual {p3}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->isFinished()Z
 
     move-result p3
@@ -2814,7 +2829,7 @@
 
     iget-object p3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
-    .line 1253
+    .line 1289
     invoke-virtual {p3}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->computerStretchOffset()Z
 
     move-result p3
@@ -2831,28 +2846,28 @@
 
     return p0
 
-    .line 1257
+    .line 1293
     :cond_50
     iget p3, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
-    .line 1258
+    .line 1294
     invoke-direct {p0, p4}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->zoomRatioToDegree(I)F
 
     move-result v0
 
-    .line 1257
+    .line 1293
     invoke-direct {p0, p3, p4, v0, p2}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->getStretchDegree(IIFF)F
 
     move-result p2
 
     iput p2, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mCurrentDegree:F
 
-    .line 1259
+    .line 1295
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollDegree:F
 
     goto :goto_30
 
-    .line 1262
+    .line 1298
     :cond_5f
     iget p3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterToEndsStretchFactor:F
 
@@ -2862,7 +2877,7 @@
 
     if-eqz p3, :cond_79
 
-    .line 1263
+    .line 1299
     iget p3, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     iget p4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mZoomRatio:I
@@ -2879,7 +2894,7 @@
 
     iput p2, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mCurrentDegree:F
 
-    .line 1265
+    .line 1301
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollDegree:F
 
     goto :goto_30
@@ -2894,7 +2909,7 @@
 
     float-to-double v0, p4
 
-    .line 1274
+    .line 1310
     iget-wide v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCoefficientK:D
 
     mul-double/2addr v0, v2
@@ -2927,7 +2942,7 @@
 .method private getTargetScrollDegreeByRatio(I)F
     .registers 3
 
-    .line 676
+    .line 688
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->zoomRatioToDegree(I)F
 
     move-result p1
@@ -2936,7 +2951,7 @@
 
     sub-float/2addr v0, p1
 
-    .line 677
+    .line 689
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinScrollDegree:F
 
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxScrollDegree:F
@@ -2951,14 +2966,14 @@
 .method private getTickGradientAlphaFactor(F)F
     .registers 7
 
-    .line 1365
+    .line 1401
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRingRadius:F
 
     const/high16 v1, 0x41700000    # 15.0f
 
     sub-float/2addr v0, v1
 
-    .line 1366
+    .line 1402
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -2975,7 +2990,7 @@
 
     if-ltz v3, :cond_4d
 
-    .line 1367
+    .line 1403
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterX:F
 
     add-float/2addr p0, v0
@@ -2993,7 +3008,7 @@
 
     div-float/2addr p1, v0
 
-    .line 1373
+    .line 1409
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TEXT_GRADIENT_POSITION:[F
 
     const/4 v0, 0x0
@@ -3002,12 +3017,12 @@
 
     const/4 v1, 0x1
 
-    .line 1374
+    .line 1410
     aget p0, p0, v1
 
     move v2, v1
 
-    .line 1375
+    .line 1411
     :goto_26
     sget-object v3, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TEXT_GRADIENT_POSITION:[F
 
@@ -3017,10 +3032,10 @@
 
     add-int/lit8 p0, v2, -0x1
 
-    .line 1376
+    .line 1412
     aget v0, v3, p0
 
-    .line 1377
+    .line 1413
     aget p0, v3, v2
 
     cmpg-float v3, v0, p1
@@ -3040,7 +3055,7 @@
 
     goto :goto_26
 
-    .line 1383
+    .line 1419
     :cond_3e
     :goto_3e
     sget-object v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->GRADIENT_ALPHA:[F
@@ -3049,7 +3064,7 @@
 
     aget v3, v2, v3
 
-    .line 1384
+    .line 1420
     aget v1, v2, v1
 
     sub-float/2addr p1, v0
@@ -3082,7 +3097,7 @@
 
     if-gez v1, :cond_1f
 
-    .line 1126
+    .line 1162
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->isFinished()Z
@@ -3091,12 +3106,12 @@
 
     if-nez v0, :cond_12
 
-    .line 1127
+    .line 1163
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->onRelease()V
 
-    .line 1129
+    .line 1165
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
@@ -3119,7 +3134,7 @@
 
     if-lez v0, :cond_3b
 
-    .line 1131
+    .line 1167
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->isFinished()Z
@@ -3128,12 +3143,12 @@
 
     if-nez v0, :cond_30
 
-    .line 1132
+    .line 1168
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->onRelease()V
 
-    .line 1134
+    .line 1170
     :cond_30
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
@@ -3147,7 +3162,7 @@
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->onPull(F)V
 
-    .line 1136
+    .line 1172
     :cond_3b
     :goto_3b
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
@@ -3158,7 +3173,7 @@
 .method private handleSingleTapUp(Landroid/view/MotionEvent;)Z
     .registers 7
 
-    .line 618
+    .line 630
     sget-object v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "handleSingleTapUp"
@@ -3167,27 +3182,27 @@
 
     const/4 v0, 0x1
 
-    .line 619
+    .line 631
     new-array v1, v0, [I
 
-    .line 620
+    .line 632
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->calculateTargetScrollDegree(Landroid/view/MotionEvent;[I)F
 
     move-result p1
 
     const/4 v2, 0x0
 
-    .line 621
+    .line 633
     aget v1, v1, v2
 
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->notifyZoomRatioChange(I)V
 
     const/4 v1, 0x2
 
-    .line 622
+    .line 634
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateScrollState(I)V
 
-    .line 623
+    .line 635
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollOnClickAnimator:Landroid/animation/ValueAnimator;
 
     iget v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollDegree:F
@@ -3200,7 +3215,7 @@
 
     invoke-virtual {v3, v1}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 624
+    .line 636
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollOnClickAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
@@ -3211,7 +3226,7 @@
 .method private handleVibrate(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;)V
     .registers 4
 
-    .line 898
+    .line 918
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3232,7 +3247,7 @@
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 899
+    .line 919
     iget p0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mVibrateType:I
 
     const/4 p1, 0x2
@@ -3245,7 +3260,7 @@
 
     return-void
 
-    .line 901
+    .line 921
     :cond_21
     invoke-static {}, Lcom/transsion/camera/app/common/vibrate/VibratorController;->getInstance()Lcom/transsion/camera/app/common/vibrate/VibratorController;
 
@@ -3257,7 +3272,7 @@
 
     return-void
 
-    .line 904
+    .line 924
     :cond_2b
     invoke-static {}, Lcom/transsion/camera/app/common/vibrate/VibratorController;->getInstance()Lcom/transsion/camera/app/common/vibrate/VibratorController;
 
@@ -3273,7 +3288,7 @@
 .method private initAnimator()V
     .registers 5
 
-    .line 355
+    .line 358
     new-instance v0, Landroid/animation/ValueAnimator;
 
     invoke-direct {v0}, Landroid/animation/ValueAnimator;-><init>()V
@@ -3282,17 +3297,17 @@
 
     const-wide/16 v1, 0x1f4
 
-    .line 356
+    .line 359
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 357
+    .line 360
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollOnClickAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->SCROLL_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 358
+    .line 361
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollOnClickAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$$ExternalSyntheticLambda0;
@@ -3301,7 +3316,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 362
+    .line 365
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollOnClickAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$1;
@@ -3310,14 +3325,14 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 376
+    .line 379
     new-instance v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$2;
 
     const-string v1, ""
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$2;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;Ljava/lang/String;)V
 
-    .line 389
+    .line 392
     new-instance v1, Landroidx/dynamicanimation/animation/SpringAnimation;
 
     const/4 v2, 0x0
@@ -3330,10 +3345,10 @@
 
     const v0, 0x3a83126f    # 0.001f
 
-    .line 390
+    .line 393
     invoke-virtual {v1, v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->setMinimumVisibleChange(F)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 391
+    .line 394
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTapFeedbackAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
@@ -3342,15 +3357,15 @@
 
     const/high16 v1, 0x43480000    # 200.0f
 
-    .line 392
+    .line 395
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 393
+    .line 396
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 395
+    .line 398
     new-instance v0, Lcom/transsion/camera/ui/setting/zoom/RotateAnimator;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/zoom/RotateAnimator;-><init>(Landroid/view/View;)V
@@ -3363,7 +3378,7 @@
 .method private initResources()V
     .registers 10
 
-    .line 243
+    .line 246
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -3374,10 +3389,10 @@
 
     const/4 v2, -0x1
 
-    .line 244
+    .line 247
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 245
+    .line 248
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickPaint:Landroid/graphics/Paint;
 
     new-instance v3, Landroid/graphics/PorterDuffXfermode;
@@ -3388,7 +3403,7 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 247
+    .line 250
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -3401,14 +3416,14 @@
 
     move-result v0
 
-    .line 248
+    .line 251
     invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v3
 
     iput v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTickAlpha:I
 
-    .line 249
+    .line 252
     new-instance v3, Landroid/graphics/Paint;
 
     iget-object v5, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickPaint:Landroid/graphics/Paint;
@@ -3417,34 +3432,34 @@
 
     iput-object v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTickPaint:Landroid/graphics/Paint;
 
-    .line 250
+    .line 253
     invoke-virtual {v3, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 252
+    .line 255
     sget-object v0, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-static {v0, v1}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;
 
     move-result-object v3
 
-    .line 253
+    .line 256
     new-instance v5, Landroid/graphics/Paint;
 
     invoke-direct {v5, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v5, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
-    .line 254
+    .line 257
     invoke-virtual {v5, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 255
+    .line 258
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
     const/16 v5, 0x81
 
     invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setFlags(I)V
 
-    .line 256
+    .line 259
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -3459,12 +3474,12 @@
 
     invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 257
+    .line 260
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 258
+    .line 261
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -3477,7 +3492,7 @@
 
     iput v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTextColor:I
 
-    .line 259
+    .line 262
     new-instance v2, Landroid/graphics/Paint;
 
     iget-object v5, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
@@ -3486,12 +3501,12 @@
 
     iput-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTickRatioPaint:Landroid/graphics/Paint;
 
-    .line 260
+    .line 263
     iget v5, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTextColor:I
 
     invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 262
+    .line 265
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -3504,7 +3519,7 @@
 
     iput v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mStrokeColor:I
 
-    .line 263
+    .line 266
     new-instance v2, Landroid/graphics/Paint;
 
     iget-object v5, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
@@ -3513,26 +3528,26 @@
 
     iput-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioStrokePaint:Landroid/graphics/Paint;
 
-    .line 264
+    .line 267
     sget-object v5, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 265
+    .line 268
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioStrokePaint:Landroid/graphics/Paint;
 
     const/high16 v6, 0x3f800000    # 1.0f
 
     invoke-virtual {v2, v6}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 266
+    .line 269
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioStrokePaint:Landroid/graphics/Paint;
 
     iget v7, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mStrokeColor:I
 
     invoke-virtual {v2, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 268
+    .line 271
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -3545,19 +3560,19 @@
 
     iput v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mSelectedColor:I
 
-    .line 269
+    .line 272
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioPaint:Landroid/graphics/Paint;
 
-    .line 270
+    .line 273
     iget v7, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mSelectedColor:I
 
     invoke-virtual {v2, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 271
+    .line 274
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -3572,19 +3587,19 @@
 
     invoke-virtual {v2, v7}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 272
+    .line 275
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 273
+    .line 276
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioPaint:Landroid/graphics/Paint;
 
     const-string v7, "tnum"
 
     invoke-virtual {v2, v7}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
 
-    .line 275
+    .line 278
     new-instance v2, Landroid/graphics/Paint;
 
     iget-object v7, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioPaint:Landroid/graphics/Paint;
@@ -3593,34 +3608,34 @@
 
     iput-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioStrokePaint:Landroid/graphics/Paint;
 
-    .line 276
+    .line 279
     invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 277
+    .line 280
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v6}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 278
+    .line 281
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioStrokePaint:Landroid/graphics/Paint;
 
     iget v7, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mStrokeColor:I
 
     invoke-virtual {v2, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 280
+    .line 283
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioSuffixPaint:Landroid/graphics/Paint;
 
-    .line 281
+    .line 284
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mSelectedColor:I
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 282
+    .line 285
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioSuffixPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -3635,12 +3650,12 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 283
+    .line 286
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioSuffixPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 285
+    .line 288
     new-instance v1, Landroid/graphics/Paint;
 
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioSuffixPaint:Landroid/graphics/Paint;
@@ -3649,22 +3664,22 @@
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioSuffixStrokePaint:Landroid/graphics/Paint;
 
-    .line 286
+    .line 289
     invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 287
+    .line 290
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioSuffixStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v6}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 288
+    .line 291
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterRatioSuffixStrokePaint:Landroid/graphics/Paint;
 
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mStrokeColor:I
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 290
+    .line 293
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -3677,7 +3692,7 @@
 
     iput v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthColor:I
 
-    .line 291
+    .line 294
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -3692,12 +3707,12 @@
 
     const/4 v1, 0x0
 
-    .line 293
+    .line 296
     invoke-static {v0, v1}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;
 
     move-result-object v0
 
-    .line 295
+    .line 298
     new-instance v1, Landroid/graphics/Paint;
 
     const/16 v2, 0xc1
@@ -3706,17 +3721,17 @@
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
 
-    .line 296
+    .line 299
     iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthColor:I
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 297
+    .line 300
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 298
+    .line 301
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -3731,7 +3746,7 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 299
+    .line 302
     new-instance v1, Landroid/graphics/Paint;
 
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
@@ -3740,22 +3755,8 @@
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSelectedPaint:Landroid/graphics/Paint;
 
-    .line 300
+    .line 303
     iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mSelectedColor:I
-
-    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 301
-    new-instance v1, Landroid/graphics/Paint;
-
-    iget-object v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
-
-    invoke-direct {v1, v3}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
-
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedFocalLengthPaint:Landroid/graphics/Paint;
-
-    .line 302
-    iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTextColor:I
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
 
@@ -3766,44 +3767,58 @@
 
     invoke-direct {v1, v3}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
 
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthStrokePaint:Landroid/graphics/Paint;
+    iput-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedFocalLengthPaint:Landroid/graphics/Paint;
 
     .line 305
+    iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTextColor:I
+
+    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 307
+    new-instance v1, Landroid/graphics/Paint;
+
+    iget-object v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
+
+    invoke-direct {v1, v3}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
+
+    iput-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthStrokePaint:Landroid/graphics/Paint;
+
+    .line 308
     invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 306
+    .line 309
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v6}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 307
+    .line 310
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthStrokePaint:Landroid/graphics/Paint;
 
     iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mStrokeColor:I
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 309
+    .line 312
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixPaint:Landroid/graphics/Paint;
 
-    .line 310
+    .line 313
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthColor:I
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 311
+    .line 314
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 312
+    .line 315
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixPaint:Landroid/graphics/Paint;
 
-    .line 313
+    .line 316
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -3814,10 +3829,10 @@
 
     move-result v1
 
-    .line 312
+    .line 315
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 314
+    .line 317
     new-instance v0, Landroid/graphics/Paint;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixPaint:Landroid/graphics/Paint;
@@ -3826,22 +3841,8 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixSelectedPaint:Landroid/graphics/Paint;
 
-    .line 315
+    .line 318
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mSelectedColor:I
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 316
-    new-instance v0, Landroid/graphics/Paint;
-
-    iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixPaint:Landroid/graphics/Paint;
-
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedFocalLengthSuffixPaint:Landroid/graphics/Paint;
-
-    .line 317
-    iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTextColor:I
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
@@ -3852,24 +3853,38 @@
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
 
-    iput-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixStrokePaint:Landroid/graphics/Paint;
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedFocalLengthSuffixPaint:Landroid/graphics/Paint;
 
     .line 320
+    iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTextColor:I
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 322
+    new-instance v0, Landroid/graphics/Paint;
+
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixPaint:Landroid/graphics/Paint;
+
+    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
+
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixStrokePaint:Landroid/graphics/Paint;
+
+    .line 323
     invoke-virtual {v0, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 321
+    .line 324
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v6}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 322
+    .line 325
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixStrokePaint:Landroid/graphics/Paint;
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mStrokeColor:I
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 324
+    .line 327
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -3882,7 +3897,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mDensity:F
 
-    .line 325
+    .line 328
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -3895,7 +3910,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawableNormal:Landroid/graphics/drawable/Drawable;
 
-    .line 326
+    .line 329
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -3908,12 +3923,12 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawableInverted:Landroid/graphics/drawable/Drawable;
 
-    .line 327
+    .line 330
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawableNormal:Landroid/graphics/drawable/Drawable;
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 328
+    .line 331
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -3926,7 +3941,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mPointerDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 329
+    .line 332
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
@@ -3945,7 +3960,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mPointerWidth:I
 
-    .line 330
+    .line 333
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mPointerDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
@@ -3964,7 +3979,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mPointerHeight:I
 
-    .line 332
+    .line 335
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -3977,7 +3992,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTopPadding:F
 
-    .line 333
+    .line 336
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -3990,7 +4005,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mPointerBottomMargin:F
 
-    .line 334
+    .line 337
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -4003,7 +4018,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRatioBottomMargin:F
 
-    .line 335
+    .line 338
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -4016,7 +4031,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthBottomMargin:F
 
-    .line 336
+    .line 339
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -4029,7 +4044,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mGradientMargin:F
 
-    .line 337
+    .line 340
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -4044,7 +4059,7 @@
 
     const/high16 v0, 0x42000000    # 32.0f
 
-    .line 339
+    .line 342
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mDensity:F
 
     mul-float/2addr v2, v0
@@ -4063,7 +4078,7 @@
 
     move-object/from16 v0, p0
 
-    .line 927
+    .line 947
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
@@ -4074,7 +4089,7 @@
 
     return-void
 
-    .line 930
+    .line 950
     :cond_b
     iget v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRingRadius:F
 
@@ -4082,14 +4097,14 @@
 
     sub-float/2addr v1, v2
 
-    .line 931
+    .line 951
     iget v2, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterX:F
 
     sub-float v4, v2, v1
 
     add-float v6, v2, v1
 
-    .line 934
+    .line 954
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/graphics/Paint;->getColor()I
@@ -4106,7 +4121,7 @@
 
     move-result v13
 
-    .line 935
+    .line 955
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/graphics/Paint;->getColor()I
@@ -4119,7 +4134,7 @@
 
     move-result v14
 
-    .line 936
+    .line 956
     new-instance v3, Landroid/graphics/LinearGradient;
 
     iget v5, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterY:F
@@ -4150,12 +4165,12 @@
 
     iput-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRatioTextHorizontalGradient:Landroid/graphics/LinearGradient;
 
-    .line 940
+    .line 960
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 942
+    .line 962
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/graphics/Paint;->getColor()I
@@ -4170,7 +4185,7 @@
 
     move v1, v3
 
-    .line 943
+    .line 963
     new-instance v3, Landroid/graphics/LinearGradient;
 
     iget v5, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterY:F
@@ -4191,21 +4206,21 @@
 
     iput-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRatioTextVerticalGradient:Landroid/graphics/LinearGradient;
 
-    .line 948
+    .line 968
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v3}, Landroid/graphics/Paint;->getColor()I
 
     move-result v13
 
-    .line 949
+    .line 969
     aget v3, v2, v11
 
     invoke-direct {v0, v13, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateColorAlpha(IF)I
 
     move-result v15
 
-    .line 950
+    .line 970
     new-instance v3, Landroid/graphics/LinearGradient;
 
     iget v5, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterY:F
@@ -4226,24 +4241,24 @@
 
     iput-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthHorizontalGradient:Landroid/graphics/LinearGradient;
 
-    .line 954
+    .line 974
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v5, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 955
+    .line 975
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixPaint:Landroid/graphics/Paint;
 
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthHorizontalGradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 957
+    .line 977
     invoke-direct {v0, v13, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateColorAlpha(IF)I
 
     move-result v16
 
-    .line 958
+    .line 978
     new-instance v3, Landroid/graphics/LinearGradient;
 
     iget v5, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterY:F
@@ -4274,7 +4289,7 @@
 
     iput-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthVerticalGradient:Landroid/graphics/LinearGradient;
 
-    .line 963
+    .line 983
     iget v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mSelectedColor:I
 
     aget v5, v2, v11
@@ -4283,14 +4298,14 @@
 
     move-result v15
 
-    .line 964
+    .line 984
     iget v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mSelectedColor:I
 
     invoke-direct {v0, v3, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateColorAlpha(IF)I
 
     move-result v16
 
-    .line 965
+    .line 985
     new-instance v3, Landroid/graphics/LinearGradient;
 
     iget v5, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterY:F
@@ -4309,7 +4324,7 @@
 
     iput-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mSelectedFocalLengthVerticalGradient:Landroid/graphics/LinearGradient;
 
-    .line 970
+    .line 990
     iget v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTextColor:I
 
     aget v3, v2, v11
@@ -4318,7 +4333,7 @@
 
     move-result v1
 
-    .line 971
+    .line 991
     new-instance v3, Landroid/graphics/LinearGradient;
 
     iget v5, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterY:F
@@ -4335,22 +4350,22 @@
 
     invoke-direct/range {v3 .. v10}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    .line 975
+    .line 995
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedTickRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 976
+    .line 996
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedFocalLengthPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 977
+    .line 997
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLimitedFocalLengthSuffixPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 979
+    .line 999
     iget v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mStrokeColor:I
 
     aget v2, v2, v11
@@ -4359,7 +4374,7 @@
 
     move-result v1
 
-    .line 980
+    .line 1000
     new-instance v3, Landroid/graphics/LinearGradient;
 
     iget v5, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterY:F
@@ -4374,22 +4389,22 @@
 
     invoke-direct/range {v3 .. v10}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    .line 984
+    .line 1004
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 985
+    .line 1005
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 986
+    .line 1006
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixStrokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 987
+    .line 1007
     iget v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mOrientation:I
 
     invoke-direct {v0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateShaderByOrientation(I)V
@@ -4400,22 +4415,22 @@
 .method private initTicks(II)V
     .registers 7
 
-    .line 489
+    .line 501
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 490
+    .line 502
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mVibrateTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 491
+    .line 503
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 492
+    .line 504
     sget v0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_RATIO_UNIT:I
 
     int-to-float v0, v0
@@ -4426,14 +4441,14 @@
 
     float-to-int v0, v0
 
-    .line 493
+    .line 505
     sget v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->DEFAULT_ZOOM_RATIO:I
 
     if-ge p1, v1, :cond_26
 
     sub-int v2, v1, p1
 
-    .line 494
+    .line 506
     div-int/2addr v2, v0
 
     int-to-float v2, v2
@@ -4444,7 +4459,7 @@
 
     float-to-int v2, v2
 
-    .line 495
+    .line 507
     invoke-direct {p0, v2, p1, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->createTicks(III)V
 
     :cond_26
@@ -4453,12 +4468,12 @@
 
     const/16 v2, 0xa
 
-    .line 500
+    .line 512
     invoke-direct {p0, v2, v1, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->createTicks(III)V
 
     int-to-float v1, v1
 
-    .line 501
+    .line 513
     sget v2, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_RATIO_UNIT:I
 
     int-to-float v2, v2
@@ -4476,10 +4491,10 @@
     :cond_37
     const/high16 v0, 0x43870000    # 270.0f
 
-    .line 503
+    .line 515
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxScrollDegree:F
 
-    .line 504
+    .line 516
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
@@ -4500,7 +4515,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinScrollDegree:F
 
-    .line 505
+    .line 517
     sget-object v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4547,7 +4562,7 @@
 .method private isCriticalTick(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;)Z
     .registers 8
 
-    .line 560
+    .line 572
     iget v0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxZoomRatio:I
@@ -4562,7 +4577,7 @@
 
     goto :goto_24
 
-    .line 564
+    .line 576
     :cond_c
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->CRITICAL_RATIOS:[F
 
@@ -4577,7 +4592,7 @@
 
     aget v4, p0, v3
 
-    .line 565
+    .line 577
     iget v5, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     invoke-static {v5}, Lcom/transsion/camera/ui/setting/zoom/ZoomUtils;->unscaledRatio(I)F
@@ -4606,7 +4621,7 @@
 .method private isInitialPointer(I)Z
     .registers 3
 
-    .line 1071
+    .line 1107
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mInitialPointerId:I
 
     const/4 v0, -0x1
@@ -4666,7 +4681,7 @@
 .method private synthetic lambda$initAnimator$0(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 359
+    .line 362
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -4677,7 +4692,7 @@
 
     move-result p1
 
-    .line 360
+    .line 363
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->scrollToDegree(F)V
 
     return-void
@@ -4688,17 +4703,17 @@
 
     const v0, 0x3f4ccccd    # 0.8f
 
-    .line 1425
+    .line 1462
     invoke-virtual {p0, v0}, Landroid/view/View;->setScaleX(F)V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1426
+    .line 1463
     invoke-virtual {p0, v0}, Landroid/view/View;->setScaleY(F)V
 
     const/4 v0, 0x0
 
-    .line 1427
+    .line 1464
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -4707,14 +4722,14 @@
 .method private notifyZoomRatioChange(I)V
     .registers 2
 
-    .line 848
+    .line 868
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mListener:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Listener;
 
     if-eqz p0, :cond_c
 
     int-to-float p1, p1
 
-    .line 849
+    .line 869
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
 
     move-result p1
@@ -4736,7 +4751,7 @@
 
     goto :goto_8
 
-    .line 1116
+    .line 1152
     :cond_6
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterToEndsStretchFactor:F
 
@@ -4745,18 +4760,18 @@
 
     const v0, 0x3f8ccccd    # 1.1f
 
-    .line 1118
+    .line 1154
     :cond_d
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTapFeedbackAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 1119
+    .line 1155
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTapFeedbackAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {p1, v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->setStartValue(F)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 1120
+    .line 1156
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTapFeedbackAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
@@ -4765,7 +4780,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 1121
+    .line 1157
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTapFeedbackAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {p0}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
@@ -4776,12 +4791,12 @@
 .method private releaseEdgeEffect()V
     .registers 2
 
-    .line 1140
+    .line 1176
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->onRelease()V
 
-    .line 1141
+    .line 1177
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->onRelease()V
@@ -4792,7 +4807,7 @@
 .method private releaseEdgeStretch(F)F
     .registers 7
 
-    .line 1083
+    .line 1119
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->getDistance()F
@@ -4813,7 +4828,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 1084
+    .line 1120
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     neg-float v3, p1
@@ -4834,7 +4849,7 @@
 
     neg-float v0, v0
 
-    .line 1085
+    .line 1121
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v2
@@ -4858,7 +4873,7 @@
     :cond_32
     move p1, v0
 
-    .line 1089
+    .line 1125
     :goto_33
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
@@ -4870,18 +4885,18 @@
 
     if-nez v0, :cond_42
 
-    .line 1090
+    .line 1126
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->onRelease()V
 
-    .line 1092
+    .line 1128
     :cond_42
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return p1
 
-    .line 1093
+    .line 1129
     :cond_46
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
@@ -4899,7 +4914,7 @@
 
     if-eqz v0, :cond_88
 
-    .line 1094
+    .line 1130
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
@@ -4916,7 +4931,7 @@
 
     move-result v0
 
-    .line 1095
+    .line 1131
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v2
@@ -4940,7 +4955,7 @@
     :cond_74
     move p1, v0
 
-    .line 1099
+    .line 1135
     :goto_75
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
@@ -4952,12 +4967,12 @@
 
     if-nez v0, :cond_84
 
-    .line 1100
+    .line 1136
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->onRelease()V
 
-    .line 1102
+    .line 1138
     :cond_84
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -4970,22 +4985,22 @@
 .method private reset()V
     .registers 2
 
-    .line 1075
+    .line 1111
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->releaseEdgeEffect()V
 
     const/4 v0, 0x0
 
-    .line 1076
+    .line 1112
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mDiscardRotateDegree:F
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 1077
+    .line 1113
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLastTouchX:F
 
     const/4 v0, -0x1
 
-    .line 1078
+    .line 1114
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mInitialPointerId:I
 
     return-void
@@ -4998,18 +5013,18 @@
 
     return-void
 
-    .line 1359
+    .line 1395
     :cond_3
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mGradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 1360
+    .line 1396
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mGradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, p2, p3, p4}, Landroid/graphics/Matrix;->setRotate(FFF)V
 
-    .line 1361
+    .line 1397
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mGradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p1, p0}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
@@ -5020,7 +5035,7 @@
 .method private scrollByDegree(F)F
     .registers 5
 
-    .line 765
+    .line 785
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinScrollDegree:F
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollDegree:F
@@ -5035,7 +5050,7 @@
 
     move-result v0
 
-    .line 766
+    .line 786
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateDegreeForSticky(F)F
 
     move-result p1
@@ -5048,7 +5063,7 @@
 
     return v0
 
-    .line 770
+    .line 790
     :cond_16
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollDegree:F
 
@@ -5062,7 +5077,7 @@
 .method private scrollToDegree(F)V
     .registers 5
 
-    .line 832
+    .line 852
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollDegree:F
 
     cmpl-float v0, p1, v0
@@ -5071,11 +5086,11 @@
 
     goto :goto_31
 
-    .line 835
+    .line 855
     :cond_7
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mZoomRatio:I
 
-    .line 836
+    .line 856
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinScrollDegree:F
 
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxScrollDegree:F
@@ -5090,35 +5105,35 @@
 
     sub-float/2addr v1, p1
 
-    .line 837
+    .line 857
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->degreeToZoomRatio(F)I
 
     move-result p1
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mZoomRatio:I
 
-    .line 838
+    .line 858
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollState:I
 
     const/4 v2, 0x2
 
     if-eq v1, v2, :cond_24
 
-    .line 839
+    .line 859
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->notifyZoomRatioChange(I)V
 
-    .line 841
+    .line 861
     :cond_24
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->doInvalidate()V
 
-    .line 842
+    .line 862
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollState:I
 
     const/4 v1, 0x1
 
     if-ne p1, v1, :cond_31
 
-    .line 843
+    .line 863
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mZoomRatio:I
 
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->checkVibrate(II)V
@@ -5131,19 +5146,19 @@
 .method private updateColorAlpha(IF)I
     .registers 4
 
-    .line 991
+    .line 1011
     invoke-static {p1}, Landroid/graphics/Color;->valueOf(I)Landroid/graphics/Color;
 
     move-result-object p0
 
-    .line 992
+    .line 1012
     invoke-virtual {p0}, Landroid/graphics/Color;->alpha()F
 
     move-result p1
 
     mul-float/2addr p1, p2
 
-    .line 993
+    .line 1013
     invoke-virtual {p0}, Landroid/graphics/Color;->red()F
 
     move-result p2
@@ -5166,7 +5181,7 @@
 .method private updateDegreeForSticky(F)F
     .registers 6
 
-    .line 783
+    .line 803
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mZoomRatio:I
@@ -5179,7 +5194,7 @@
 
     if-nez v0, :cond_2e
 
-    .line 786
+    .line 806
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->findTargetStickyTick(F)Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
     move-result-object v0
@@ -5188,7 +5203,7 @@
 
     goto :goto_2d
 
-    .line 790
+    .line 810
     :cond_13
     iget v0, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mDegree:F
 
@@ -5200,7 +5215,7 @@
 
     sub-float/2addr v1, v0
 
-    .line 791
+    .line 811
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -5211,7 +5226,7 @@
 
     if-gez p0, :cond_2d
 
-    .line 792
+    .line 812
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "updateDegreeForSticky, stickyIn"
@@ -5224,7 +5239,7 @@
     :goto_2d
     return p1
 
-    .line 798
+    .line 818
     :cond_2e
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mDiscardRotateDegree:F
 
@@ -5240,7 +5255,7 @@
 
     if-lez v0, :cond_56
 
-    .line 799
+    .line 819
     sget-object v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -5261,12 +5276,12 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 800
+    .line 820
     iput v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mDiscardRotateDegree:F
 
     return p1
 
-    .line 804
+    .line 824
     :cond_56
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mDiscardRotateDegree:F
 
@@ -5274,7 +5289,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mDiscardRotateDegree:F
 
-    .line 805
+    .line 825
     sget-object p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -5321,7 +5336,7 @@
 
     mul-float/2addr v1, p1
 
-    .line 471
+    .line 483
     :cond_e
     iput v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxRotatableDegree:F
 
@@ -5329,7 +5344,7 @@
 
     float-to-double v0, v1
 
-    .line 472
+    .line 484
     sget-wide v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->PRESET_UI_RATIO_LOG_OFFSET:D
 
     div-double/2addr v0, v2
@@ -5348,7 +5363,7 @@
 .method private updateShaderByOrientation(I)V
     .registers 4
 
-    .line 1491
+    .line 1528
     rem-int/lit16 p1, p1, 0xb4
 
     if-nez p1, :cond_6
@@ -5363,7 +5378,7 @@
     :goto_7
     if-eqz p1, :cond_c
 
-    .line 1492
+    .line 1529
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthHorizontalGradient:Landroid/graphics/LinearGradient;
 
     goto :goto_e
@@ -5371,20 +5386,20 @@
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthVerticalGradient:Landroid/graphics/LinearGradient;
 
-    .line 1493
+    .line 1530
     :goto_e
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 1494
+    .line 1531
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     if-eqz p1, :cond_1d
 
-    .line 1496
+    .line 1533
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRatioTextHorizontalGradient:Landroid/graphics/LinearGradient;
 
     goto :goto_1f
@@ -5392,7 +5407,7 @@
     :cond_1d
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRatioTextVerticalGradient:Landroid/graphics/LinearGradient;
 
-    .line 1497
+    .line 1534
     :goto_1f
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
@@ -5404,17 +5419,17 @@
 
     goto :goto_2a
 
-    .line 1499
+    .line 1536
     :cond_28
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mSelectedFocalLengthVerticalGradient:Landroid/graphics/LinearGradient;
 
-    .line 1500
+    .line 1537
     :goto_2a
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSelectedPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 1501
+    .line 1538
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixSelectedPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p0, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
@@ -5425,7 +5440,7 @@
 .method private updateTickText(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;)V
     .registers 5
 
-    .line 573
+    .line 585
     iget p0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUtils;->unscaledRatio(I)F
@@ -5436,14 +5451,14 @@
 
     move-result-object p0
 
-    .line 574
+    .line 586
     const-string v0, "[.]"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 575
+    .line 587
     iget v1, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
     sget v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->DEFAULT_ZOOM_RATIO:I
@@ -5460,7 +5475,7 @@
 
     aget-object v1, v0, v1
 
-    .line 577
+    .line 589
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v1
@@ -5469,14 +5484,14 @@
 
     const/4 p0, 0x0
 
-    .line 578
+    .line 590
     aget-object p0, v0, p0
 
     iput-object p0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickText:Ljava/lang/String;
 
     return-void
 
-    .line 580
+    .line 592
     :cond_29
     iput-object p0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mTickText:Ljava/lang/String;
 
@@ -5486,14 +5501,14 @@
 .method private updateVibrateType(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;)V
     .registers 3
 
-    .line 547
+    .line 559
     iget-boolean p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsVibrationSupported:Z
 
     if-nez p0, :cond_5
 
     goto :goto_1b
 
-    .line 550
+    .line 562
     :cond_5
     iget-boolean p0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mIsCritical:Z
 
@@ -5501,12 +5516,12 @@
 
     const/4 p0, 0x2
 
-    .line 551
+    .line 563
     iput p0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mVibrateType:I
 
     return-void
 
-    .line 554
+    .line 566
     :cond_d
     iget p0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
 
@@ -5522,7 +5537,7 @@
 
     const/4 p0, 0x3
 
-    .line 555
+    .line 567
     iput p0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mVibrateType:I
 
     :cond_1b
@@ -5533,7 +5548,7 @@
 .method private zoomRatioToDegree(I)F
     .registers 3
 
-    .line 602
+    .line 614
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mDegreeOffset:F
 
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->calculateDegreeByRatio(IF)F
@@ -5545,10 +5560,49 @@
 
 
 # virtual methods
+.method public getCriticalZoomRatio()[I
+    .registers 5
+
+    .line 473
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
+
+    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
+
+    move-result v0
+
+    .line 474
+    new-array v1, v0, [I
+
+    const/4 v2, 0x0
+
+    :goto_9
+    if-ge v2, v0, :cond_1a
+
+    .line 476
+    iget-object v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCriticalTicks:Landroid/util/SparseArray;
+
+    invoke-virtual {v3, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
+
+    iget v3, v3, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;->mValue:I
+
+    aput v3, v1, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_9
+
+    :cond_1a
+    return-object v1
+.end method
+
 .method public getScrollState()I
     .registers 1
 
-    .line 399
+    .line 402
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollState:I
 
     return p0
@@ -5557,7 +5611,7 @@
 .method public hide(Z)V
     .registers 4
 
-    .line 1447
+    .line 1484
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -5573,34 +5627,34 @@
 
     if-nez p1, :cond_1a
 
-    .line 1451
+    .line 1488
     invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1452
+    .line 1489
     invoke-virtual {p0, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1453
+    .line 1490
     invoke-virtual {p0, v1}, Landroid/view/View;->setScaleY(F)V
 
     const/16 p1, 0x8
 
-    .line 1454
+    .line 1491
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_1a
     const/4 p1, 0x1
 
-    .line 1457
+    .line 1494
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsFadingOut:Z
 
-    .line 1458
+    .line 1495
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1459
+    .line 1496
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -5619,14 +5673,14 @@
 
     sget-object v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->FADE_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
-    .line 1460
+    .line 1497
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
     const-wide/16 v0, 0xc8
 
-    .line 1461
+    .line 1498
     invoke-virtual {p1, v0, v1}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -5635,17 +5689,17 @@
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$4;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;)V
 
-    .line 1462
+    .line 1499
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 1477
+    .line 1514
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
     invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1478
+    .line 1515
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "hide"
@@ -5658,17 +5712,17 @@
 .method public invertColor(Z)V
     .registers 4
 
-    .line 1505
+    .line 1542
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsInverted:Z
 
     if-eq v0, p1, :cond_53
 
-    .line 1506
+    .line 1543
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsInverted:Z
 
     if-eqz p1, :cond_b
 
-    .line 1507
+    .line 1544
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mBgDrawableInverted:Landroid/graphics/drawable/Drawable;
 
     goto :goto_d
@@ -5688,25 +5742,25 @@
     :cond_14
     const/4 p1, -0x1
 
-    .line 1509
+    .line 1546
     :goto_15
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1510
+    .line 1547
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1511
+    .line 1548
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTickRatioPaint:Landroid/graphics/Paint;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 1512
+    .line 1549
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsInverted:Z
 
     if-eqz p1, :cond_2c
@@ -5718,21 +5772,21 @@
     :cond_2c
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthColor:I
 
-    .line 1513
+    .line 1550
     :goto_2e
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1514
+    .line 1551
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthSuffixPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1515
+    .line 1552
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 1516
+    .line 1553
     sget-object p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -5760,7 +5814,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .registers 3
 
-    .line 1146
+    .line 1182
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
@@ -5769,7 +5823,7 @@
 
     if-nez v0, :cond_10
 
-    .line 1147
+    .line 1183
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onDraw, ticks empty"
@@ -5778,17 +5832,17 @@
 
     return-void
 
-    .line 1153
+    .line 1189
     :cond_10
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->drawBackground(Landroid/graphics/Canvas;)V
 
-    .line 1154
+    .line 1190
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->drawTicks(Landroid/graphics/Canvas;)V
 
-    .line 1155
+    .line 1191
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->drawSelectedZoomRatio(Landroid/graphics/Canvas;)V
 
-    .line 1156
+    .line 1192
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->drawPointer(Landroid/graphics/Canvas;)V
 
     return-void
@@ -5797,12 +5851,12 @@
 .method protected onMeasure(II)V
     .registers 7
 
-    .line 911
+    .line 931
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 912
+    .line 932
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result p2
@@ -5819,7 +5873,7 @@
 
     float-to-double v0, p2
 
-    .line 913
+    .line 933
     sget-wide v2, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->COS_OF_ROTATED_X_DEGREE:D
 
     mul-double/2addr v0, v2
@@ -5830,17 +5884,17 @@
 
     int-to-float v0, v0
 
-    .line 914
+    .line 934
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTopPadding:F
 
     add-float/2addr v0, v1
 
     float-to-int v0, v0
 
-    .line 915
+    .line 935
     invoke-virtual {p0, p1, v0}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    .line 917
+    .line 937
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result p1
@@ -5853,7 +5907,7 @@
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterX:F
 
-    .line 918
+    .line 938
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result p1
@@ -5866,31 +5920,31 @@
 
     div-float p1, p2, v0
 
-    .line 919
+    .line 939
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRingRadius:F
 
-    .line 921
+    .line 941
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLeftEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     float-to-int p2, p2
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->setWidth(I)V
 
-    .line 922
+    .line 942
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRightEdgeEffect:Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/widget/EdgeStretchEffect;->setWidth(I)V
 
-    .line 923
+    .line 943
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->initShader()V
 
     return-void
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 8
+    .registers 10
 
-    .line 998
+    .line 1018
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
     move-result v0
@@ -5899,7 +5953,7 @@
 
     move-result v0
 
-    .line 999
+    .line 1019
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->isInitialPointer(I)Z
 
     move-result v1
@@ -5908,14 +5962,14 @@
 
     if-nez v1, :cond_36
 
-    .line 1000
+    .line 1020
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v1
 
     if-eqz v1, :cond_36
 
-    .line 1001
+    .line 1021
     sget-object p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5944,60 +5998,116 @@
 
     return v2
 
-    .line 1006
+    .line 1026
     :cond_36
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v1
 
     const/4 v3, 0x0
 
-    if-eqz v1, :cond_110
+    if-nez v1, :cond_5b
 
-    if-eq v1, v2, :cond_ce
+    .line 1027
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
+
+    move-result-wide v4
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getDownTime()J
+
+    move-result-wide v6
+
+    sub-long/2addr v4, v6
+
+    const-wide/16 v6, 0x0
+
+    cmp-long v1, v4, v6
+
+    if-nez v1, :cond_5b
+
+    .line 1028
+    new-array v1, v2, [I
+
+    .line 1029
+    invoke-direct {p0, p1, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->calculateTargetScrollDegree(Landroid/view/MotionEvent;[I)F
+
+    .line 1030
+    iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mListener:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Listener;
+
+    if-eqz v4, :cond_62
+
+    .line 1031
+    aget v1, v1, v3
+
+    invoke-interface {v4, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Listener;->onZoomTickRingTouchDown(I)V
+
+    goto :goto_62
+
+    .line 1034
+    :cond_5b
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mListener:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Listener;
+
+    if-eqz v1, :cond_62
+
+    .line 1035
+    invoke-interface {v1, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Listener;->onZoomTickRingTouchDown(I)V
+
+    .line 1039
+    :cond_62
+    :goto_62
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    move-result v1
+
+    if-eqz v1, :cond_14f
+
+    if-eq v1, v2, :cond_10d
 
     const/4 v0, 0x2
 
-    if-eq v1, v0, :cond_52
+    if-eq v1, v0, :cond_7d
 
     const/4 v0, 0x3
 
-    if-eq v1, v0, :cond_4a
+    if-eq v1, v0, :cond_75
 
     const/4 v0, 0x6
 
-    if-eq v1, v0, :cond_ce
+    if-eq v1, v0, :cond_10d
 
-    goto/16 :goto_14a
+    goto/16 :goto_18b
 
-    .line 1063
-    :cond_4a
+    .line 1099
+    :cond_75
     invoke-virtual {p0, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateScrollState(I)V
 
-    .line 1064
+    .line 1100
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->reset()V
 
-    goto/16 :goto_14a
+    goto/16 :goto_18b
 
-    .line 1021
-    :cond_52
+    .line 1055
+    :cond_7d
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLastTouchX:F
 
     const/high16 v1, -0x40800000    # -1.0f
 
     cmpl-float v0, v0, v1
 
-    if-nez v0, :cond_60
+    if-nez v0, :cond_8d
 
-    .line 1022
+    .line 1056
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLastTouchX:F
 
-    .line 1024
-    :cond_60
+    .line 1057
+    iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTouchDownX:F
+
+    .line 1059
+    :cond_8d
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLastTouchX:F
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -6006,7 +6116,7 @@
 
     sub-float/2addr v0, v1
 
-    .line 1025
+    .line 1060
     sget-object v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -6043,62 +6153,83 @@
 
     invoke-static {v1, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1027
+    .line 1062
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    move-result p1
+    move-result v3
 
-    iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLastTouchX:F
+    iput v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLastTouchX:F
 
-    .line 1028
-    iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsFadingOut:Z
+    .line 1063
+    iget-boolean v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsFadingOut:Z
 
-    if-eqz p1, :cond_a3
+    if-eqz v3, :cond_d0
 
-    .line 1029
+    .line 1064
     const-string p0, "onTouchEvent, return ACTION_MOVE for fading out"
 
     invoke-static {v1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return v2
 
-    .line 1032
-    :cond_a3
-    iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollState:I
+    .line 1067
+    :cond_d0
+    iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollState:I
 
-    if-nez p1, :cond_aa
+    if-nez v1, :cond_e9
 
-    .line 1033
+    .line 1068
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result p1
+
+    iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTouchDownX:F
+
+    sub-float/2addr p1, v1
+
+    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTouchSlop:I
+
+    int-to-float v1, v1
+
+    cmpl-float p1, p1, v1
+
+    if-ltz p1, :cond_e9
+
+    .line 1069
     invoke-virtual {p0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateScrollState(I)V
 
-    .line 1035
-    :cond_aa
+    .line 1071
+    :cond_e9
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollState:I
 
-    if-ne p1, v2, :cond_14a
+    if-ne p1, v2, :cond_18b
 
-    .line 1036
+    .line 1072
     invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14a
+    if-eqz p1, :cond_18b
 
-    .line 1037
+    .line 1073
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_14a
+    if-nez p1, :cond_18b
 
-    .line 1038
+    .line 1074
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->releaseEdgeStretch(F)F
 
     move-result p1
 
     sub-float/2addr v0, p1
 
-    .line 1040
+    .line 1076
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->scrollByDistance(F)F
 
     move-result p1
@@ -6109,33 +6240,33 @@
 
     cmpl-float p1, v0, p1
 
-    if-eqz p1, :cond_14a
+    if-eqz p1, :cond_18b
 
-    .line 1043
+    .line 1079
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->handleOverScroll(F)V
 
-    goto/16 :goto_14a
+    goto/16 :goto_18b
 
-    .line 1050
-    :cond_ce
+    .line 1086
+    :cond_10d
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mCenterToEndsStretchFactor:F
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_d9
+    if-ltz v0, :cond_118
 
-    .line 1051
+    .line 1087
     invoke-direct {p0, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->performTapFeedbackAnimation(Z)V
 
-    .line 1053
-    :cond_d9
+    .line 1089
+    :cond_118
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollState:I
 
-    if-nez v0, :cond_ef
+    if-nez v0, :cond_12e
 
-    .line 1054
+    .line 1090
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
 
     move-result-wide v0
@@ -6150,22 +6281,22 @@
 
     cmp-long v0, v0, v4
 
-    if-gez v0, :cond_ef
+    if-gez v0, :cond_12e
 
-    .line 1055
+    .line 1091
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->handleSingleTapUp(Landroid/view/MotionEvent;)Z
 
-    goto :goto_f2
+    goto :goto_131
 
-    .line 1057
-    :cond_ef
+    .line 1093
+    :cond_12e
     invoke-virtual {p0, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateScrollState(I)V
 
-    .line 1059
-    :goto_f2
+    .line 1095
+    :goto_131
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->reset()V
 
-    .line 1060
+    .line 1096
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -6188,15 +6319,15 @@
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    goto :goto_14a
+    goto :goto_18b
 
-    .line 1008
-    :cond_110
+    .line 1041
+    :cond_14f
     iget-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsFadingOut:Z
 
-    if-eqz v1, :cond_11c
+    if-eqz v1, :cond_15b
 
-    .line 1009
+    .line 1042
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onTouchEvent, return ACTION_DOWN for fading out"
@@ -6205,31 +6336,34 @@
 
     return v3
 
-    .line 1012
-    :cond_11c
+    .line 1045
+    :cond_15b
     invoke-virtual {p0, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateScrollState(I)V
 
-    .line 1013
+    .line 1046
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
 
     iput v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLastTouchX:F
 
-    .line 1014
+    .line 1047
+    iput v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTouchDownX:F
+
+    .line 1048
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getDownTime()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTouchDownTime:J
 
-    .line 1015
+    .line 1049
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mInitialPointerId:I
 
-    .line 1016
+    .line 1050
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->performTapFeedbackAnimation(Z)V
 
-    .line 1017
+    .line 1051
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -6252,8 +6386,8 @@
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    :cond_14a
-    :goto_14a
+    :cond_18b
+    :goto_18b
     return v2
 .end method
 
@@ -6262,7 +6396,7 @@
 
     const/high16 v0, 0x3f000000    # 0.5f
 
-    .line 779
+    .line 799
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mStickyInDegreeThreshold:F
 
     return-void
@@ -6279,13 +6413,13 @@
 
     return v0
 
-    .line 745
+    .line 757
     :cond_6
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->distanceToDegree(F)F
 
     move-result v0
 
-    .line 746
+    .line 758
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->scrollByDegree(F)F
 
     move-result v1
@@ -6296,7 +6430,7 @@
 
     return p1
 
-    .line 747
+    .line 759
     :cond_13
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->degreeToDistance(F)F
 
@@ -6305,10 +6439,55 @@
     return p0
 .end method
 
+.method public scrollToRatio(I)V
+    .registers 6
+
+    .line 764
+    invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->zoomRatioToDegree(I)F
+
+    move-result v0
+
+    .line 765
+    invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->notifyZoomRatioChange(I)V
+
+    const/4 p1, 0x2
+
+    .line 766
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateScrollState(I)V
+
+    .line 767
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollOnClickAnimator:Landroid/animation/ValueAnimator;
+
+    iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollDegree:F
+
+    const/high16 v3, 0x43870000    # 270.0f
+
+    sub-float/2addr v3, v0
+
+    new-array p1, p1, [F
+
+    const/4 v0, 0x0
+
+    aput v2, p1, v0
+
+    const/4 v0, 0x1
+
+    aput v3, p1, v0
+
+    invoke-virtual {v1, p1}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
+
+    .line 768
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollOnClickAnimator:Landroid/animation/ValueAnimator;
+
+    invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
+
+    return-void
+.end method
+
 .method public setFocalLengthBase(F)V
     .registers 2
 
-    .line 1391
+    .line 1427
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mFocalLengthBase:F
 
     return-void
@@ -6319,7 +6498,7 @@
 
     if-gez p1, :cond_4
 
-    .line 411
+    .line 414
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinZoomRatio:I
 
     :cond_4
@@ -6327,13 +6506,13 @@
 
     if-gez p2, :cond_a
 
-    .line 412
+    .line 415
     iget p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxZoomRatio:I
 
     :cond_a
     iput p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxLimitedZoomRatio:I
 
-    .line 413
+    .line 416
     sget-object p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -6368,7 +6547,7 @@
 .method public setListener(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Listener;)V
     .registers 2
 
-    .line 1400
+    .line 1437
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mListener:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Listener;
 
     return-void
@@ -6377,23 +6556,23 @@
 .method public setOrientation(I)V
     .registers 4
 
-    .line 1482
+    .line 1519
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mOrientation:I
 
     if-eq v0, p1, :cond_24
 
-    .line 1483
+    .line 1520
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mOrientation:I
 
-    .line 1484
+    .line 1521
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateShaderByOrientation(I)V
 
-    .line 1485
+    .line 1522
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mRotateAnimator:Lcom/transsion/camera/ui/setting/zoom/RotateAnimator;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/RotateAnimator;->setOrientation(I)V
 
-    .line 1486
+    .line 1523
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -6419,7 +6598,7 @@
 .method public setStickyInDegreeThreshold(F)V
     .registers 2
 
-    .line 775
+    .line 795
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mStickyInDegreeThreshold:F
 
     return-void
@@ -6428,7 +6607,7 @@
 .method public setVibrationEnable(Z)V
     .registers 2
 
-    .line 476
+    .line 488
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsVibrationEnable:Z
 
     return-void
@@ -6437,7 +6616,7 @@
 .method public setVibratorSupport(Z)V
     .registers 2
 
-    .line 1404
+    .line 1441
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsVibrationSupported:Z
 
     return-void
@@ -6446,12 +6625,12 @@
 .method public setZoomConfig(Lcom/transsion/camera/app/common/ZoomConfig;)V
     .registers 5
 
-    .line 451
+    .line 454
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ZoomConfig;->getZoomRange()Landroid/util/Range;
 
     move-result-object v0
 
-    .line 452
+    .line 455
     invoke-virtual {v0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
 
     move-result-object v1
@@ -6480,7 +6659,7 @@
 
     if-eq v1, v2, :cond_58
 
-    .line 453
+    .line 456
     :cond_20
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ZoomConfig;->getTickViewDegreeScaleFactor()F
 
@@ -6488,7 +6667,7 @@
 
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateRotationVariables(F)V
 
-    .line 454
+    .line 457
     invoke-virtual {v0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
 
     move-result-object v1
@@ -6501,7 +6680,7 @@
 
     iput v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxZoomRatio:I
 
-    .line 455
+    .line 458
     invoke-virtual {v0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
 
     move-result-object v0
@@ -6516,14 +6695,14 @@
 
     const/4 v1, 0x0
 
-    .line 456
+    .line 459
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->calculateDegreeByRatio(IF)F
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mDegreeOffset:F
 
-    .line 457
+    .line 460
     sget v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->LINEAR_DISTANCE_RATIO_THRESHOLD:I
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->zoomRatioToDegree(I)F
@@ -6532,17 +6711,17 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mLinearDistanceDegreeThreshold:F
 
-    .line 458
+    .line 461
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinZoomRatio:I
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxZoomRatio:I
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->initTicks(II)V
 
-    .line 459
+    .line 462
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->doInvalidate()V
 
-    .line 461
+    .line 464
     :cond_58
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ZoomConfig;->getDefaultZoomRatio()I
 
@@ -6552,12 +6731,12 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->setZoomRatio(IZ)V
 
-    .line 462
+    .line 465
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ZoomConfig;->getLimitedZoomRange()Landroid/util/Range;
 
     move-result-object v0
 
-    .line 463
+    .line 466
     invoke-virtual {v0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
 
     move-result-object v1
@@ -6580,14 +6759,14 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->setLimitedRange(II)V
 
-    .line 464
+    .line 467
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ZoomConfig;->isZoomRangeLimited()Z
 
     move-result p1
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->setZoomRangeLimited(Z)V
 
-    .line 465
+    .line 468
     sget-object p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -6630,14 +6809,14 @@
 .method public setZoomRangeLimited(Z)V
     .registers 6
 
-    .line 418
+    .line 421
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsZoomRangeLimited:Z
 
     if-ne v0, p1, :cond_5
 
     return-void
 
-    .line 422
+    .line 425
     :cond_5
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsZoomRangeLimited:Z
 
@@ -6645,7 +6824,7 @@
 
     if-eqz p1, :cond_18
 
-    .line 423
+    .line 426
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinLimitedZoomRatio:I
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinZoomRatio:I
@@ -6658,14 +6837,14 @@
 
     if-le p1, v1, :cond_18
 
-    .line 426
+    .line 429
     :cond_16
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsZoomRangeLimited:Z
 
     :cond_18
     move p1, v0
 
-    .line 429
+    .line 432
     :goto_19
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTicks:Landroid/util/SparseArray;
 
@@ -6675,7 +6854,7 @@
 
     if-ge p1, v1, :cond_3f
 
-    .line 430
+    .line 433
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mTicks:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -6684,7 +6863,7 @@
 
     check-cast v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Tick;
 
-    .line 431
+    .line 434
     iget-boolean v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsZoomRangeLimited:Z
 
     if-eqz v2, :cond_39
@@ -6714,7 +6893,7 @@
 
     goto :goto_19
 
-    .line 436
+    .line 439
     :cond_3f
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsZoomRangeLimited:Z
 
@@ -6733,7 +6912,7 @@
 
     goto :goto_55
 
-    .line 437
+    .line 440
     :cond_4e
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinZoomRatio:I
 
@@ -6746,7 +6925,7 @@
     :goto_55
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxScrollDegree:F
 
-    .line 438
+    .line 441
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mIsZoomRangeLimited:Z
 
     if-eqz p1, :cond_63
@@ -6762,7 +6941,7 @@
 
     goto :goto_6a
 
-    .line 439
+    .line 442
     :cond_63
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxZoomRatio:I
 
@@ -6775,7 +6954,7 @@
     :goto_6a
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinScrollDegree:F
 
-    .line 440
+    .line 443
     sget-object p1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -6844,7 +7023,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 447
+    .line 450
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->doInvalidate()V
 
     return-void
@@ -6853,12 +7032,12 @@
 .method public setZoomRatio(IZ)V
     .registers 8
 
-    .line 585
+    .line 597
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->zoomRatioToDegree(I)F
 
     move-result v0
 
-    .line 586
+    .line 598
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v1
@@ -6867,12 +7046,12 @@
 
     if-eqz v1, :cond_1a
 
-    .line 587
+    .line 599
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mZoomRatio:I
 
     sub-float/2addr v2, v0
 
-    .line 588
+    .line 600
     iget p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMinScrollDegree:F
 
     iget p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mMaxScrollDegree:F
@@ -6885,7 +7064,7 @@
 
     return-void
 
-    .line 591
+    .line 603
     :cond_1a
     sget-object v1, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -6915,10 +7094,10 @@
 
     const/4 p1, 0x2
 
-    .line 593
+    .line 605
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->updateScrollState(I)V
 
-    .line 594
+    .line 606
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollOnClickAnimator:Landroid/animation/ValueAnimator;
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollDegree:F
@@ -6937,7 +7116,7 @@
 
     invoke-virtual {p2, p1}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 595
+    .line 607
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollOnClickAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
@@ -6947,7 +7126,7 @@
     :cond_54
     sub-float/2addr v2, v0
 
-    .line 597
+    .line 609
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->scrollToDegree(F)V
 
     return-void
@@ -6956,7 +7135,7 @@
 .method public show(Z)V
     .registers 4
 
-    .line 1408
+    .line 1445
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -6970,23 +7149,23 @@
 
     if-nez p1, :cond_19
 
-    .line 1413
+    .line 1450
     invoke-virtual {p0, v0}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1414
+    .line 1451
     invoke-virtual {p0, v0}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1415
+    .line 1452
     invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
     const/4 p1, 0x0
 
-    .line 1416
+    .line 1453
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    .line 1420
+    .line 1457
     :cond_19
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -6994,7 +7173,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1421
+    .line 1458
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -7009,14 +7188,14 @@
 
     sget-object v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->FADE_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
-    .line 1422
+    .line 1459
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
     const-wide/16 v0, 0xc8
 
-    .line 1423
+    .line 1460
     invoke-virtual {p1, v0, v1}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -7025,7 +7204,7 @@
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;)V
 
-    .line 1424
+    .line 1461
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->withStartAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -7034,17 +7213,17 @@
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$3;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;)V
 
-    .line 1429
+    .line 1466
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 1442
+    .line 1479
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
     invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1443
+    .line 1480
     sget-object p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "show"
@@ -7057,7 +7236,7 @@
 .method public updateScrollState(I)V
     .registers 5
 
-    .line 403
+    .line 406
     sget-object v0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7084,15 +7263,15 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 404
+    .line 407
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mScrollState:I
 
-    .line 405
+    .line 408
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->mListener:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Listener;
 
     if-eqz p0, :cond_29
 
-    .line 406
+    .line 409
     invoke-interface {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$Listener;->onScrollStateChanged(I)V
 
     :cond_29

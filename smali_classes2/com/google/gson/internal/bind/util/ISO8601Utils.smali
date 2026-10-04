@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    .line 30
+    .line 53
     const-string v0, "UTC"
 
     invoke-static {v0}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
@@ -26,7 +26,7 @@
 .method private static checkOffset(Ljava/lang/String;IC)Z
     .registers 4
 
-    .line 288
+    .line 319
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -52,7 +52,7 @@
 .method private static indexOfNonDigit(Ljava/lang/String;I)I
     .registers 4
 
-    .line 345
+    .line 377
     :goto_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -60,7 +60,7 @@
 
     if-ge p1, v0, :cond_17
 
-    .line 346
+    .line 378
     invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
@@ -84,7 +84,7 @@
     :goto_16
     return p1
 
-    .line 349
+    .line 383
     :cond_17
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -100,7 +100,7 @@
 
     move-object/from16 v2, p1
 
-    .line 126
+    .line 149
     :try_start_4
     invoke-virtual {v2}, Ljava/text/ParsePosition;->getIndex()I
 
@@ -108,14 +108,14 @@
 
     add-int/lit8 v3, v0, 0x4
 
-    .line 129
+    .line 152
     invoke-static {v1, v0, v3}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->parseInt(Ljava/lang/String;II)I
 
     move-result v4
 
     const/16 v5, 0x2d
 
-    .line 130
+    .line 153
     invoke-static {v1, v3, v5}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->checkOffset(Ljava/lang/String;IC)Z
 
     move-result v6
@@ -129,12 +129,12 @@
     :cond_19
     add-int/lit8 v0, v3, 0x2
 
-    .line 135
+    .line 158
     invoke-static {v1, v3, v0}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->parseInt(Ljava/lang/String;II)I
 
     move-result v6
 
-    .line 136
+    .line 159
     invoke-static {v1, v0, v5}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->checkOffset(Ljava/lang/String;IC)Z
 
     move-result v8
@@ -146,205 +146,210 @@
     :cond_27
     add-int/lit8 v3, v0, 0x2
 
-    .line 141
+    .line 164
     invoke-static {v1, v0, v3}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->parseInt(Ljava/lang/String;II)I
 
     move-result v8
 
     const/16 v9, 0x54
 
-    .line 149
+    .line 175
     invoke-static {v1, v3, v9}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->checkOffset(Ljava/lang/String;IC)Z
 
     move-result v9
 
     const/4 v10, 0x1
 
-    if-nez v9, :cond_4d
+    const/4 v11, 0x0
 
-    .line 151
+    if-nez v9, :cond_51
+
+    .line 177
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    move-result v11
+    move-result v12
 
-    if-gt v11, v3, :cond_4d
+    if-gt v12, v3, :cond_51
 
-    .line 152
+    .line 178
     new-instance v0, Ljava/util/GregorianCalendar;
 
     sub-int/2addr v6, v10
 
     invoke-direct {v0, v4, v6, v8}, Ljava/util/GregorianCalendar;-><init>(III)V
 
-    .line 154
+    .line 179
+    invoke-virtual {v0, v11}, Ljava/util/Calendar;->setLenient(Z)V
+
+    .line 181
     invoke-virtual {v2, v3}, Ljava/text/ParsePosition;->setIndex(I)V
 
-    .line 155
+    .line 182
     invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
     move-result-object v0
 
     return-object v0
 
-    :catch_4a
+    :catch_4e
     move-exception v0
 
-    goto/16 :goto_1c4
+    goto/16 :goto_1c8
 
-    :cond_4d
-    const/16 v11, 0x2b
+    :cond_51
+    const/16 v12, 0x2b
 
-    const/16 v12, 0x5a
+    const/16 v13, 0x5a
 
     const/4 v14, 0x2
 
-    if-eqz v9, :cond_cf
+    if-eqz v9, :cond_d3
 
     add-int/lit8 v3, v0, 0x3
 
     add-int/lit8 v9, v0, 0x5
 
-    .line 161
+    .line 188
     invoke-static {v1, v3, v9}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->parseInt(Ljava/lang/String;II)I
 
     move-result v3
 
     const/16 v15, 0x3a
 
-    .line 162
+    .line 189
     invoke-static {v1, v9, v15}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->checkOffset(Ljava/lang/String;IC)Z
 
     move-result v16
 
-    if-eqz v16, :cond_66
+    if-eqz v16, :cond_6a
 
     add-int/lit8 v9, v0, 0x6
 
-    :cond_66
+    :cond_6a
     add-int/lit8 v0, v9, 0x2
 
-    .line 166
+    .line 193
     invoke-static {v1, v9, v0}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->parseInt(Ljava/lang/String;II)I
 
     move-result v16
 
-    .line 167
+    .line 194
     invoke-static {v1, v0, v15}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->checkOffset(Ljava/lang/String;IC)Z
 
     move-result v15
 
-    if-eqz v15, :cond_75
+    if-eqz v15, :cond_79
 
     add-int/lit8 v9, v9, 0x3
 
     move v0, v9
 
-    .line 171
-    :cond_75
+    .line 198
+    :cond_79
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v9
 
-    if-le v9, v0, :cond_c7
+    if-le v9, v0, :cond_cb
 
-    .line 172
+    .line 199
     invoke-virtual {v1, v0}, Ljava/lang/String;->charAt(I)C
 
     move-result v9
 
-    if-eq v9, v12, :cond_c7
+    if-eq v9, v13, :cond_cb
 
-    if-eq v9, v11, :cond_c7
+    if-eq v9, v12, :cond_cb
 
-    if-eq v9, v5, :cond_c7
+    if-eq v9, v5, :cond_cb
 
     add-int/lit8 v9, v0, 0x2
 
-    .line 174
+    .line 201
     invoke-static {v1, v0, v9}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->parseInt(Ljava/lang/String;II)I
 
     move-result v15
 
-    const/16 v13, 0x3b
+    const/16 v11, 0x3b
 
-    if-le v15, v13, :cond_95
+    if-le v15, v11, :cond_99
 
-    const/16 v13, 0x3f
+    const/16 v11, 0x3f
 
-    if-ge v15, v13, :cond_95
+    if-ge v15, v11, :cond_99
 
     const/16 v15, 0x3b
 
-    :cond_95
-    const/16 v13, 0x2e
+    :cond_99
+    const/16 v11, 0x2e
 
-    .line 177
-    invoke-static {v1, v9, v13}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->checkOffset(Ljava/lang/String;IC)Z
+    .line 206
+    invoke-static {v1, v9, v11}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->checkOffset(Ljava/lang/String;IC)Z
 
-    move-result v13
+    move-result v11
 
-    if-eqz v13, :cond_c1
+    if-eqz v11, :cond_c5
 
     add-int/lit8 v9, v0, 0x3
 
-    add-int/lit8 v13, v0, 0x4
+    add-int/lit8 v11, v0, 0x4
 
-    .line 179
-    invoke-static {v1, v13}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->indexOfNonDigit(Ljava/lang/String;I)I
+    .line 208
+    invoke-static {v1, v11}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->indexOfNonDigit(Ljava/lang/String;I)I
 
-    move-result v13
+    move-result v11
 
     add-int/lit8 v0, v0, 0x6
 
-    .line 180
-    invoke-static {v13, v0}, Ljava/lang/Math;->min(II)I
+    .line 209
+    invoke-static {v11, v0}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    .line 181
+    .line 210
     invoke-static {v1, v9, v0}, Lcom/google/gson/internal/bind/util/ISO8601Utils;->parseInt(Ljava/lang/String;II)I
 
     move-result v17
 
     sub-int/2addr v0, v9
 
-    if-eq v0, v10, :cond_b8
+    if-eq v0, v10, :cond_bc
 
-    if-eq v0, v14, :cond_b5
+    if-eq v0, v14, :cond_b9
 
-    goto :goto_ba
+    goto :goto_be
 
-    :cond_b5
+    :cond_b9
     mul-int/lit8 v17, v17, 0xa
 
-    goto :goto_ba
+    goto :goto_be
 
-    :cond_b8
+    :cond_bc
     mul-int/lit8 v17, v17, 0x64
 
-    :goto_ba
+    :goto_be
     move v0, v3
 
-    move v3, v13
+    move v3, v11
 
     move/from16 v9, v16
 
-    move/from16 v13, v17
+    move/from16 v11, v17
 
-    goto :goto_d2
+    goto :goto_d6
 
-    :cond_c1
+    :cond_c5
     move v0, v3
 
     move v3, v9
 
     move/from16 v9, v16
 
-    const/4 v13, 0x0
+    const/4 v11, 0x0
 
-    goto :goto_d2
+    goto :goto_d6
 
-    :cond_c7
+    :cond_cb
     move v9, v3
 
     move v3, v0
@@ -353,51 +358,51 @@
 
     move/from16 v9, v16
 
-    :goto_cc
-    const/4 v13, 0x0
+    :goto_d0
+    const/4 v11, 0x0
 
     const/4 v15, 0x0
 
-    goto :goto_d2
+    goto :goto_d6
 
-    :cond_cf
+    :cond_d3
     const/4 v0, 0x0
 
     const/4 v9, 0x0
 
-    goto :goto_cc
+    goto :goto_d0
 
-    .line 200
-    :goto_d2
+    .line 229
+    :goto_d6
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v14
 
-    if-le v14, v3, :cond_1bc
+    if-le v14, v3, :cond_1c0
 
-    .line 205
+    .line 234
     invoke-virtual {v1, v3}, Ljava/lang/String;->charAt(I)C
 
     move-result v14
 
-    if-ne v14, v12, :cond_e3
+    if-ne v14, v13, :cond_e7
 
-    .line 208
+    .line 237
     sget-object v5, Lcom/google/gson/internal/bind/util/ISO8601Utils;->TIMEZONE_UTC:Ljava/util/TimeZone;
 
     add-int/2addr v3, v10
 
-    goto/16 :goto_18b
+    goto/16 :goto_18f
 
-    :cond_e3
-    if-eq v14, v11, :cond_104
+    :cond_e7
+    if-eq v14, v12, :cond_108
 
-    if-ne v14, v5, :cond_e8
+    if-ne v14, v5, :cond_ec
 
-    goto :goto_104
+    goto :goto_108
 
-    .line 245
-    :cond_e8
+    .line 278
+    :cond_ec
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -422,117 +427,117 @@
 
     throw v0
 
-    .line 211
-    :cond_104
-    :goto_104
+    .line 240
+    :cond_108
+    :goto_108
     invoke-virtual {v1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 214
+    .line 244
     invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    move-result v11
+    move-result v12
 
-    if-lt v11, v7, :cond_10f
+    if-lt v12, v7, :cond_113
 
-    goto :goto_120
+    goto :goto_124
 
-    :cond_10f
-    new-instance v11, Ljava/lang/StringBuilder;
+    :cond_113
+    new-instance v12, Ljava/lang/StringBuilder;
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v11, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v5, "00"
 
-    invoke-virtual {v11, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 216
-    :goto_120
+    .line 246
+    :goto_124
     invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    move-result v11
+    move-result v12
 
-    add-int/2addr v3, v11
+    add-int/2addr v3, v12
 
-    .line 218
-    const-string v11, "+0000"
+    .line 248
+    const-string v12, "+0000"
 
-    invoke-virtual {v11, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v11
+    move-result v12
 
-    if-nez v11, :cond_189
+    if-nez v12, :cond_18d
 
-    const-string v11, "+00:00"
+    const-string v12, "+00:00"
 
-    invoke-virtual {v11, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v11
+    move-result v12
 
-    if-eqz v11, :cond_136
+    if-eqz v12, :cond_13a
 
-    goto :goto_189
+    goto :goto_18d
 
-    .line 225
-    :cond_136
-    new-instance v11, Ljava/lang/StringBuilder;
+    .line 255
+    :cond_13a
+    new-instance v12, Ljava/lang/StringBuilder;
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v12, "GMT"
+    const-string v13, "GMT"
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v12, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 228
+    .line 258
     invoke-static {v5}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
-
-    move-result-object v11
-
-    .line 230
-    invoke-virtual {v11}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 231
-    invoke-virtual {v12, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 260
+    invoke-virtual {v12}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
+
+    move-result-object v13
+
+    .line 261
+    invoke-virtual {v13, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v14
 
-    if-nez v14, :cond_187
+    if-nez v14, :cond_18b
 
-    .line 237
+    .line 267
     const-string v14, ":"
 
     const-string v7, ""
 
-    invoke-virtual {v12, v14, v7}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {v13, v14, v7}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 238
+    .line 268
     invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_164
+    if-eqz v7, :cond_168
 
-    goto :goto_187
+    goto :goto_18b
 
-    .line 239
-    :cond_164
+    .line 269
+    :cond_168
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -549,8 +554,8 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 240
-    invoke-virtual {v11}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
+    .line 273
+    invoke-virtual {v12}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
 
     move-result-object v4
 
@@ -564,75 +569,75 @@
 
     throw v0
 
-    :cond_187
-    :goto_187
-    move-object v5, v11
+    :cond_18b
+    :goto_18b
+    move-object v5, v12
 
-    goto :goto_18b
+    goto :goto_18f
 
-    .line 219
-    :cond_189
-    :goto_189
+    .line 249
+    :cond_18d
+    :goto_18d
     sget-object v5, Lcom/google/gson/internal/bind/util/ISO8601Utils;->TIMEZONE_UTC:Ljava/util/TimeZone;
 
-    .line 248
-    :goto_18b
+    .line 282
+    :goto_18f
     new-instance v7, Ljava/util/GregorianCalendar;
 
     invoke-direct {v7, v5}, Ljava/util/GregorianCalendar;-><init>(Ljava/util/TimeZone;)V
 
     const/4 v5, 0x0
 
-    .line 249
+    .line 283
     invoke-virtual {v7, v5}, Ljava/util/Calendar;->setLenient(Z)V
 
-    .line 250
+    .line 284
     invoke-virtual {v7, v10, v4}, Ljava/util/Calendar;->set(II)V
 
     sub-int/2addr v6, v10
 
     const/4 v4, 0x2
 
-    .line 251
+    .line 285
     invoke-virtual {v7, v4, v6}, Ljava/util/Calendar;->set(II)V
 
     const/4 v4, 0x5
 
-    .line 252
+    .line 286
     invoke-virtual {v7, v4, v8}, Ljava/util/Calendar;->set(II)V
 
     const/16 v4, 0xb
 
-    .line 253
+    .line 287
     invoke-virtual {v7, v4, v0}, Ljava/util/Calendar;->set(II)V
 
     const/16 v0, 0xc
 
-    .line 254
+    .line 288
     invoke-virtual {v7, v0, v9}, Ljava/util/Calendar;->set(II)V
 
     const/16 v0, 0xd
 
-    .line 255
+    .line 289
     invoke-virtual {v7, v0, v15}, Ljava/util/Calendar;->set(II)V
 
     const/16 v0, 0xe
 
-    .line 256
-    invoke-virtual {v7, v0, v13}, Ljava/util/Calendar;->set(II)V
+    .line 290
+    invoke-virtual {v7, v0, v11}, Ljava/util/Calendar;->set(II)V
 
-    .line 258
+    .line 292
     invoke-virtual {v2, v3}, Ljava/text/ParsePosition;->setIndex(I)V
 
-    .line 259
+    .line 293
     invoke-virtual {v7}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
     move-result-object v0
 
     return-object v0
 
-    .line 201
-    :cond_1bc
+    .line 230
+    :cond_1c0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "No time zone indicator"
@@ -640,20 +645,19 @@
     invoke-direct {v0, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-    :try_end_1c4
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_4 .. :try_end_1c4} :catch_4a
-    .catch Ljava/lang/NumberFormatException; {:try_start_4 .. :try_end_1c4} :catch_4a
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_1c4} :catch_4a
+    :try_end_1c8
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_4 .. :try_end_1c8} :catch_4e
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_1c8} :catch_4e
 
-    :goto_1c4
-    if-nez v1, :cond_1c8
+    :goto_1c8
+    if-nez v1, :cond_1cc
 
     const/4 v1, 0x0
 
-    goto :goto_1dc
+    goto :goto_1e0
 
-    .line 269
-    :cond_1c8
+    .line 299
+    :cond_1cc
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -670,23 +674,23 @@
 
     move-result-object v1
 
-    .line 270
-    :goto_1dc
+    .line 300
+    :goto_1e0
     invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v3
 
-    if-eqz v3, :cond_1e8
+    if-eqz v3, :cond_1ec
 
-    .line 271
+    .line 301
     invoke-virtual {v3}, Ljava/lang/String;->isEmpty()Z
 
     move-result v4
 
-    if-eqz v4, :cond_206
+    if-eqz v4, :cond_20a
 
-    .line 272
-    :cond_1e8
+    .line 302
+    :cond_1ec
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -713,8 +717,8 @@
 
     move-result-object v3
 
-    .line 274
-    :cond_206
+    .line 304
+    :cond_20a
     new-instance v4, Ljava/text/ParseException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -737,16 +741,17 @@
 
     move-result-object v1
 
+    .line 305
     invoke-virtual {v2}, Ljava/text/ParsePosition;->getIndex()I
 
     move-result v2
 
     invoke-direct {v4, v1, v2}, Ljava/text/ParseException;-><init>(Ljava/lang/String;I)V
 
-    .line 275
+    .line 306
     invoke-virtual {v4, v0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    .line 276
+    .line 307
     throw v4
 .end method
 
@@ -755,7 +760,7 @@
 
     if-ltz p1, :cond_67
 
-    .line 301
+    .line 333
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -764,7 +769,7 @@
 
     if-gt p1, p2, :cond_67
 
-    .line 308
+    .line 340
     const-string v0, "Invalid number: "
 
     const/16 v1, 0xa
@@ -773,7 +778,7 @@
 
     add-int/lit8 v2, p1, 0x1
 
-    .line 309
+    .line 341
     invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
@@ -788,7 +793,7 @@
 
     goto :goto_39
 
-    .line 311
+    .line 343
     :cond_1e
     new-instance v1, Ljava/lang/NumberFormatException;
 
@@ -822,7 +827,7 @@
 
     add-int/lit8 v4, v2, 0x1
 
-    .line 316
+    .line 348
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v2
@@ -841,7 +846,7 @@
 
     goto :goto_39
 
-    .line 318
+    .line 350
     :cond_4c
     new-instance v1, Ljava/lang/NumberFormatException;
 
@@ -870,7 +875,7 @@
 
     return p0
 
-    .line 302
+    .line 334
     :cond_67
     new-instance p1, Ljava/lang/NumberFormatException;
 

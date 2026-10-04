@@ -36,7 +36,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$$ExternalSyntheticLambda11;->f$1:Landroid/net/Uri;
 
-    invoke-static {v0, p0}, Lcom/transsion/camera/app/BaseCameraActivity;->$r8$lambda$ucA1t1pCshkD2OFL68vOchfb_3I(Lcom/transsion/camera/app/BaseCameraActivity;Landroid/net/Uri;)V
+    invoke-static {v0, p0}, Lcom/transsion/camera/app/BaseCameraActivity;->$r8$lambda$niTrYXLlSY3r5FhJN776rMSEr6E(Lcom/transsion/camera/app/BaseCameraActivity;Landroid/net/Uri;)V
 
     return-void
 .end method

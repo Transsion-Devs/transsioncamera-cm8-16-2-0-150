@@ -34,7 +34,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)V
     .registers 2
 
-    .line 393
+    .line 410
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$2;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .method private synthetic lambda$saveHighQualityJpegDone$0()V
     .registers 2
 
-    .line 417
+    .line 434
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$2;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -92,7 +92,7 @@
 .method public saveHighQualityJpegDone()V
     .registers 4
 
-    .line 411
+    .line 428
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$2;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -111,7 +111,7 @@
 
     if-eqz v0, :cond_3d
 
-    .line 412
+    .line 429
     invoke-static {}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -122,10 +122,10 @@
 
     const/4 v0, 0x1
 
-    .line 413
+    .line 430
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->-$$Nest$sfputmSaveHighQualityJpegDone(Z)V
 
-    .line 414
+    .line 431
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$2;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -137,7 +137,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 415
+    .line 432
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$2;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
@@ -151,7 +151,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 416
+    .line 433
     new-instance v0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$2$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$2$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$2;)V

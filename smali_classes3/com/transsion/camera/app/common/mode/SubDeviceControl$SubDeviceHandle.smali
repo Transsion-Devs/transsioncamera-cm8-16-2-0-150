@@ -22,10 +22,10 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/SubDeviceControl;Landroid/os/Looper;)V
     .registers 3
 
-    .line 879
+    .line 862
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$SubDeviceHandle;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
-    .line 880
+    .line 863
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -36,7 +36,7 @@
 
     packed-switch p1, :pswitch_data_24
 
-    .line 903
+    .line 886
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -57,19 +57,19 @@
 
     return-object p0
 
-    .line 901
+    .line 884
     :pswitch_1a
     const-string p0, "previewError"
 
     return-object p0
 
-    .line 899
+    .line 882
     :pswitch_1d
     const-string p0, "handleOnCameraError"
 
     return-object p0
 
-    .line 897
+    .line 880
     :pswitch_20
     const-string p0, "onCameraOpened"
 
@@ -88,12 +88,12 @@
 .method private processMessage(Landroid/os/Message;)V
     .registers 3
 
-    .line 908
+    .line 891
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_30
 
-    .line 922
+    .line 905
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$SubDeviceHandle;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetTAG(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -106,7 +106,7 @@
 
     return-void
 
-    .line 918
+    .line 901
     :pswitch_11
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$SubDeviceHandle;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -114,7 +114,7 @@
 
     return-void
 
-    .line 914
+    .line 897
     :pswitch_17
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$SubDeviceHandle;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -130,7 +130,7 @@
 
     return-void
 
-    .line 910
+    .line 893
     :pswitch_25
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$SubDeviceHandle;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -157,12 +157,12 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 8
 
-    .line 885
+    .line 868
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 886
+    .line 869
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$SubDeviceHandle;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetTAG(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -199,17 +199,17 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 888
+    .line 871
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl$SubDeviceHandle;->processMessage(Landroid/os/Message;)V
 
-    .line 889
+    .line 872
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
     sub-long/2addr v2, v0
 
-    .line 890
+    .line 873
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$SubDeviceHandle;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetTAG(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/utils/debug/Log$Tag;

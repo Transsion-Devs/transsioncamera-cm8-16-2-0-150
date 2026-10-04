@@ -22,12 +22,12 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/common/BaseCapture;Ljava/lang/String;)V
     .registers 4
 
-    .line 598
+    .line 596
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     const/4 v0, 0x0
 
-    .line 599
+    .line 597
     invoke-direct {p0, p1, p2, v0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;-><init>(Lcom/transsion/camera/feature/common/BaseCapture;Ljava/lang/String;Lcom/transsion/camera/feature/common/BaseCapture-IA;)V
 
     return-void
@@ -47,7 +47,7 @@
 .method protected captureFinished()V
     .registers 3
 
-    .line 618
+    .line 616
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmPendingDestroy(Lcom/transsion/camera/feature/common/BaseCapture;)Z
@@ -56,14 +56,14 @@
 
     if-eqz v0, :cond_2f
 
-    .line 619
+    .line 617
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fputmPendingDestroy(Lcom/transsion/camera/feature/common/BaseCapture;Z)V
 
-    .line 620
+    .line 618
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmPendingAvailable(Lcom/transsion/camera/feature/common/BaseCapture;)Z
@@ -72,12 +72,12 @@
 
     if-eqz v0, :cond_25
 
-    .line 621
+    .line 619
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fputmPendingAvailable(Lcom/transsion/camera/feature/common/BaseCapture;Z)V
 
-    .line 622
+    .line 620
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCaptureEnableState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
@@ -88,7 +88,7 @@
 
     return-void
 
-    .line 624
+    .line 622
     :cond_25
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
@@ -100,7 +100,7 @@
 
     return-void
 
-    .line 627
+    .line 625
     :cond_2f
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
@@ -116,7 +116,7 @@
 .method protected createStream()V
     .registers 2
 
-    .line 604
+    .line 602
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     const/4 v0, 0x1
@@ -129,7 +129,7 @@
 .method protected destroyStream()V
     .registers 2
 
-    .line 614
+    .line 612
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     const/4 v0, 0x1
@@ -142,7 +142,7 @@
 .method protected onStreamAvailable()V
     .registers 2
 
-    .line 609
+    .line 607
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     const/4 v0, 0x1

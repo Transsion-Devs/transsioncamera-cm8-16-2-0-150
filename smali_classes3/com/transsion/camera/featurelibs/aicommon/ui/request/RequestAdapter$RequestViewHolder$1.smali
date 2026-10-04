@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$RequestViewHolder;Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;)V
     .registers 3
 
-    .line 279
+    .line 278
     iput-object p2, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$RequestViewHolder$1;->val$this$0:Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -35,7 +35,7 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .registers 9
 
-    .line 282
+    .line 281
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v3
@@ -44,7 +44,7 @@
 
     move-result v4
 
-    .line 283
+    .line 282
     invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -63,7 +63,7 @@
 
     move-object v0, p2
 
-    .line 282
+    .line 281
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
 
     return-void

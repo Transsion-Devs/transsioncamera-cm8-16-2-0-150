@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;)V
     .registers 2
 
-    .line 256
+    .line 271
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto$1;->this$0:Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreviewStarted()V
     .registers 4
 
-    .line 272
+    .line 287
     invoke-static {}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -65,7 +65,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 273
+    .line 288
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto$1;->this$0:Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->-$$Nest$fgetmModeSupportLivePhoto(Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;)Z
@@ -76,7 +76,7 @@
 
     goto :goto_40
 
-    .line 276
+    .line 291
     :cond_27
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto$1;->this$0:Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;
 
@@ -87,7 +87,7 @@
 
     if-eqz v0, :cond_40
 
-    .line 277
+    .line 292
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto$1;->this$0:Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -103,7 +103,7 @@
 
     const-string v1, "start"
 
-    .line 278
+    .line 293
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_40
@@ -114,7 +114,7 @@
 .method public onPreviewStopped()V
     .registers 4
 
-    .line 260
+    .line 275
     invoke-static {}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -141,7 +141,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 261
+    .line 276
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto$1;->this$0:Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->-$$Nest$fgetmModeSupportLivePhoto(Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;)Z
@@ -152,7 +152,7 @@
 
     goto :goto_40
 
-    .line 264
+    .line 279
     :cond_27
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto$1;->this$0:Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;
 
@@ -163,7 +163,7 @@
 
     if-eqz v0, :cond_40
 
-    .line 265
+    .line 280
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto$1;->this$0:Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -179,7 +179,7 @@
 
     const-string v1, "stop"
 
-    .line 266
+    .line 281
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_40

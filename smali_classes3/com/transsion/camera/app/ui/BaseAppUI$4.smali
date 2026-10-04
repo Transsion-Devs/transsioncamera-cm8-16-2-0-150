@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
     .registers 2
 
-    .line 3903
+    .line 3889
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$4;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public onClick(Landroid/view/View;)V
     .registers 3
 
-    .line 3906
+    .line 3892
     new-instance p1, Landroid/content/Intent;
 
     const-string v0, "com.transsion.settings.action.flexbutton"
 
     invoke-direct {p1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3907
+    .line 3893
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$4;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mContext:Landroid/content/Context;

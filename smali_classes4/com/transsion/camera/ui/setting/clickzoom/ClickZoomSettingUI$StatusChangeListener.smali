@@ -34,7 +34,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;)V
     .registers 2
 
-    .line 765
+    .line 768
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 8
 
-    .line 768
+    .line 771
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -124,7 +124,7 @@
 
     goto/16 :goto_138
 
-    .line 770
+    .line 773
     :pswitch_33
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
@@ -134,12 +134,12 @@
 
     if-eqz p1, :cond_138
 
-    .line 771
+    .line 774
     instance-of p1, p2, [Lcom/transsion/camera/utils/SettingInfo$CameraFace;
 
     if-eqz p1, :cond_48
 
-    .line 772
+    .line 775
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     check-cast p2, [Lcom/transsion/camera/utils/SettingInfo$CameraFace;
@@ -150,7 +150,7 @@
 
     return-void
 
-    .line 774
+    .line 777
     :cond_48
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
@@ -158,11 +158,11 @@
 
     return-void
 
-    .line 782
+    .line 785
     :pswitch_4e
     check-cast p2, Ljava/lang/String;
 
-    .line 783
+    .line 786
     invoke-static {}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -183,7 +183,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 784
+    .line 787
     const-string p1, "value_aigc_effect_ui_on"
 
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -192,19 +192,19 @@
 
     if-eqz p1, :cond_7b
 
-    .line 785
+    .line 788
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p1, v1}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fputmAIGCUIOn(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;Z)V
 
-    .line 786
+    .line 789
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->hideEntryView()V
 
     return-void
 
-    .line 787
+    .line 790
     :cond_7b
     const-string p1, "value_aigc_effect_ui_off"
 
@@ -216,12 +216,12 @@
 
     if-eqz p1, :cond_a3
 
-    .line 788
+    .line 791
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p1, v2}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fputmAIGCUIOn(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;Z)V
 
-    .line 789
+    .line 792
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fgetmSupported(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;)Z
@@ -230,7 +230,7 @@
 
     if-eqz p1, :cond_138
 
-    .line 790
+    .line 793
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;)Landroid/os/Handler;
@@ -247,7 +247,7 @@
 
     return-void
 
-    .line 793
+    .line 796
     :cond_a3
     const-string p1, "value_ai_art_museum_ui_on"
 
@@ -257,19 +257,19 @@
 
     if-eqz p1, :cond_b6
 
-    .line 794
+    .line 797
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p1, v1}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fputmAIArtMuseumUIOn(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;Z)V
 
-    .line 795
+    .line 798
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->hideEntryView()V
 
     return-void
 
-    .line 796
+    .line 799
     :cond_b6
     const-string p1, "value_ai_art_museum_ui_off"
 
@@ -279,12 +279,12 @@
 
     if-eqz p1, :cond_dc
 
-    .line 797
+    .line 800
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p1, v2}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fputmAIArtMuseumUIOn(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;Z)V
 
-    .line 798
+    .line 801
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fgetmSupported(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;)Z
@@ -293,7 +293,7 @@
 
     if-eqz p1, :cond_138
 
-    .line 799
+    .line 802
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;)Landroid/os/Handler;
@@ -310,7 +310,7 @@
 
     return-void
 
-    .line 802
+    .line 805
     :cond_dc
     const-string p1, "value_facebeauty_ui_on"
 
@@ -322,7 +322,7 @@
 
     const-string p1, "value_dv_video_mode_bottom_ui_on"
 
-    .line 803
+    .line 806
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -331,7 +331,7 @@
 
     const-string p1, "value_filter_ui_on"
 
-    .line 804
+    .line 807
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -340,7 +340,7 @@
 
     const-string p1, "value_video_filter_ui_on"
 
-    .line 805
+    .line 808
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -349,7 +349,7 @@
 
     const-string p1, "value_timelapse_setting_ui_on"
 
-    .line 806
+    .line 809
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -358,7 +358,7 @@
 
     goto :goto_139
 
-    .line 809
+    .line 812
     :cond_105
     const-string p1, "value_zoomwheel_view_hide"
 
@@ -368,12 +368,12 @@
 
     if-nez p1, :cond_138
 
-    .line 810
+    .line 813
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p1, v2}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fputmIsConflictUIOn(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;Z)V
 
-    .line 811
+    .line 814
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fgetmSupported(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;)Z
@@ -382,14 +382,14 @@
 
     if-eqz p1, :cond_120
 
-    .line 812
+    .line 815
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$mshowEntryViewIfNeed(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;)V
 
     return-void
 
-    .line 814
+    .line 817
     :cond_120
     invoke-static {}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -415,21 +415,21 @@
     :goto_138
     return-void
 
-    .line 807
+    .line 810
     :cond_139
     :goto_139
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-static {p1, v1}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->-$$Nest$fputmIsConflictUIOn(Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;Z)V
 
-    .line 808
+    .line 811
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;->hideEntryView()V
 
     return-void
 
-    .line 779
+    .line 782
     :pswitch_144
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI$StatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/clickzoom/ClickZoomSettingUI;
 

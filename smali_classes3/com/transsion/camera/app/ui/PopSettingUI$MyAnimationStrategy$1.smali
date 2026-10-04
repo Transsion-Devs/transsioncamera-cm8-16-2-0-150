@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI$MyAnimationStrategy;Landroid/animation/Animator$AnimatorListener;Landroid/view/View;Z)V
     .registers 5
 
-    .line 1710
+    .line 1209
     iput-object p2, p0, Lcom/transsion/camera/app/ui/PopSettingUI$MyAnimationStrategy$1;->val$listener:Landroid/animation/Animator$AnimatorListener;
 
     iput-object p3, p0, Lcom/transsion/camera/app/ui/PopSettingUI$MyAnimationStrategy$1;->val$childView:Landroid/view/View;
@@ -43,15 +43,15 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 1724
+    .line 1223
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    .line 1726
+    .line 1225
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$MyAnimationStrategy$1;->val$listener:Landroid/animation/Animator$AnimatorListener;
 
     if-eqz p0, :cond_a
 
-    .line 1727
+    .line 1226
     invoke-interface {p0, p1}, Landroid/animation/Animator$AnimatorListener;->onAnimationCancel(Landroid/animation/Animator;)V
 
     :cond_a
@@ -61,18 +61,18 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 1713
+    .line 1212
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1714
+    .line 1213
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$MyAnimationStrategy$1;->val$listener:Landroid/animation/Animator$AnimatorListener;
 
     if-eqz v0, :cond_a
 
-    .line 1715
+    .line 1214
     invoke-interface {v0, p1}, Landroid/animation/Animator$AnimatorListener;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1717
+    .line 1216
     :cond_a
     iget-object p1, p0, Lcom/transsion/camera/app/ui/PopSettingUI$MyAnimationStrategy$1;->val$childView:Landroid/view/View;
 
@@ -86,7 +86,7 @@
 
     if-nez p1, :cond_1d
 
-    .line 1718
+    .line 1217
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$MyAnimationStrategy$1;->val$childView:Landroid/view/View;
 
     const/16 p1, 0x8

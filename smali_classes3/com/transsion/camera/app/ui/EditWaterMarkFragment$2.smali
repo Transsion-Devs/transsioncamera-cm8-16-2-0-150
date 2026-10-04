@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;)V
     .registers 2
 
-    .line 647
+    .line 661
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$2;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 4
 
-    .line 650
+    .line 664
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$2;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     invoke-virtual {v0}, Landroid/app/Fragment;->isResumed()Z
@@ -49,7 +49,7 @@
 
     return-void
 
-    .line 653
+    .line 667
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$2;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_28
 
-    .line 654
+    .line 668
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$2;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->-$$Nest$fgetmLocationManager(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;)Lcom/transsion/camera/app/common/location/LocationManager;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/location/LocationManager;->recordLocation(ZLjava/lang/String;)V
 
-    .line 655
+    .line 669
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$2;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->-$$Nest$fgetmLocationManager(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;)Lcom/transsion/camera/app/common/location/LocationManager;
@@ -85,7 +85,7 @@
 
     return-void
 
-    .line 657
+    .line 671
     :cond_28
     invoke-static {}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 

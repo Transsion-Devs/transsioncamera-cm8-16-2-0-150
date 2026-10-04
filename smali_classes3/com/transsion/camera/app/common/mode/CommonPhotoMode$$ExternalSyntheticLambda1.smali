@@ -22,7 +22,7 @@
     .registers 4
 
     .line 0
-    invoke-static {p1, p2, p3}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->$r8$lambda$kySGYJlypox_M900o61T-Hhx87c(Landroid/graphics/ImageDecoder;Landroid/graphics/ImageDecoder$ImageInfo;Landroid/graphics/ImageDecoder$Source;)V
+    invoke-static {p1, p2, p3}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->$r8$lambda$LGmDJG17FGaQlQa-wCH0NfzEdWA(Landroid/graphics/ImageDecoder;Landroid/graphics/ImageDecoder$ImageInfo;Landroid/graphics/ImageDecoder$Source;)V
 
     return-void
 .end method

@@ -30,10 +30,10 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;)V
     .registers 3
 
-    .line 176
+    .line 186
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 177
+    .line 187
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -48,7 +48,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 3
 
-    .line 182
+    .line 192
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$UIHandler;->mUIReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -61,7 +61,7 @@
 
     goto :goto_14
 
-    .line 186
+    .line 196
     :cond_b
     iget p1, p1, Landroid/os/Message;->what:I
 
@@ -69,7 +69,7 @@
 
     if-ne p1, v0, :cond_14
 
-    .line 187
+    .line 197
     invoke-static {p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->-$$Nest$mhidePopSettingTitle(Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;)V
 
     :cond_14

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;)V
     .registers 2
 
-    .line 2968
+    .line 2980
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$1;->this$1:Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onFileSaved(Landroid/net/Uri;)V
     .registers 2
 
-    .line 2971
+    .line 2983
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$1;->this$1:Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->onFileSavedImpl(Landroid/net/Uri;)V

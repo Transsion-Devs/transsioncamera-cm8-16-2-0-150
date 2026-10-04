@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;)V
     .registers 2
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;->this$0:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onDataCallback(Ljava/lang/Object;I)V
     .registers 5
 
-    .line 72
+    .line 73
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;->this$0:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;)Lcom/transsion/camera/app/common/IAppUI;
@@ -56,7 +56,7 @@
 
     if-nez v0, :cond_13
 
-    .line 73
+    .line 74
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;->this$0:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
@@ -81,7 +81,7 @@
 
     goto/16 :goto_9c
 
-    .line 96
+    .line 97
     :cond_1d
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;->this$0:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;
 
@@ -91,7 +91,7 @@
 
     return-void
 
-    .line 82
+    .line 83
     :cond_25
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;->this$0:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;
 
@@ -109,7 +109,7 @@
 
     if-eqz p2, :cond_75
 
-    .line 83
+    .line 84
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;->this$0:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;
 
     invoke-static {p2}, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->-$$Nest$fgetmIsSelfTimeShowing(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;)Z
@@ -144,7 +144,7 @@
 
     goto :goto_9c
 
-    .line 89
+    .line 90
     :cond_56
     sget-object p2, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -152,7 +152,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 90
+    .line 91
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;->this$0:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;
 
     invoke-static {p2}, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;)Lcom/transsion/camera/app/common/IAppUI;
@@ -167,7 +167,7 @@
 
     invoke-interface {p2, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->showHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 91
+    .line 92
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p2
@@ -176,7 +176,7 @@
 
     invoke-virtual {p2, v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(I)V
 
-    .line 93
+    .line 94
     :cond_75
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;->this$0:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;
 
@@ -186,7 +186,7 @@
 
     return-void
 
-    .line 77
+    .line 78
     :cond_7d
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;->this$0:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;
 
@@ -204,7 +204,7 @@
 
     if-eqz p1, :cond_9c
 
-    .line 78
+    .line 79
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;->this$0:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;)Lcom/transsion/camera/app/common/IAppUI;

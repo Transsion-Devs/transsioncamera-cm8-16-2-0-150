@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static vlog_mode_support_video_quality:I = 0x7f0c010f
+.field public static vlog_mode_support_video_quality:I = 0x7f0c0113
 
 
 # direct methods

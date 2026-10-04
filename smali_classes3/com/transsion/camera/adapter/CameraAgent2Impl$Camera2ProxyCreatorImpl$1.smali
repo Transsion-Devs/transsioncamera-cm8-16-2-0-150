@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;)V
     .registers 2
 
-    .line 341
+    .line 342
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-direct {p0}, Landroid/hardware/camera2/CameraDevice$StateCallback;-><init>()V
@@ -35,7 +35,7 @@
 .method public onClosed(Landroid/hardware/camera2/CameraDevice;)V
     .registers 5
 
-    .line 387
+    .line 389
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgent2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -60,7 +60,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 388
+    .line 390
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     iget-object v0, v0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->this$0:Lcom/transsion/camera/adapter/CameraAgent2Impl;
@@ -73,19 +73,32 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->writeHeadsetSetting(Landroid/content/Context;I)V
 
-    .line 389
+    .line 391
+    iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
+
+    iget-object v0, v0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->this$0:Lcom/transsion/camera/adapter/CameraAgent2Impl;
+
+    invoke-static {v0}, Lcom/transsion/camera/adapter/CameraAgent2Impl;->-$$Nest$fgetmContext(Lcom/transsion/camera/adapter/CameraAgent2Impl;)Landroid/content/Context;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->writeVibrationIntensitySetting(Landroid/content/Context;I)V
+
+    .line 392
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     iget-object v1, v0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->this$0:Lcom/transsion/camera/adapter/CameraAgent2Impl;
 
     iget-object v1, v1, Lcom/transsion/camera/adapter/CameraAgent;->mCurrentUser:Lcom/transsion/camera/adapter/CameraAgent$Customer;
 
-    .line 390
+    .line 393
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fgetmCameraDevice(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;)Landroid/hardware/camera2/CameraDevice;
 
     move-result-object v0
 
-    if-eqz v0, :cond_50
+    if-eqz v0, :cond_5c
 
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
@@ -93,38 +106,38 @@
 
     move-result-object v0
 
-    if-ne v0, p1, :cond_50
+    if-ne v0, p1, :cond_5c
 
-    if-eqz v1, :cond_45
+    if-eqz v1, :cond_51
 
-    .line 393
+    .line 396
     invoke-virtual {p1}, Landroid/hardware/camera2/CameraDevice;->getId()Ljava/lang/String;
 
     move-result-object p1
 
     invoke-interface {v1, p1}, Lcom/transsion/camera/adapter/CameraAgent$DeviceStateCallback;->onDeviceClosed(Ljava/lang/String;)V
 
-    .line 395
-    :cond_45
+    .line 398
+    :cond_51
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fputmCameraDevice(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;Landroid/hardware/camera2/CameraDevice;)V
 
-    .line 396
+    .line 399
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-static {p0, v0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fputmCameraProxy(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
 
-    :cond_50
+    :cond_5c
     return-void
 .end method
 
 .method public onDisconnected(Landroid/hardware/camera2/CameraDevice;)V
     .registers 4
 
-    .line 402
+    .line 405
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgent2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -133,14 +146,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 403
+    .line 406
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     iget-object v1, v0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->this$0:Lcom/transsion/camera/adapter/CameraAgent2Impl;
 
     iget-object v1, v1, Lcom/transsion/camera/adapter/CameraAgent;->mCurrentUser:Lcom/transsion/camera/adapter/CameraAgent$Customer;
 
-    .line 404
+    .line 407
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fgetmCameraDevice(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;)Landroid/hardware/camera2/CameraDevice;
 
     move-result-object v0
@@ -157,14 +170,14 @@
 
     if-eqz v1, :cond_26
 
-    .line 407
+    .line 410
     invoke-virtual {p1}, Landroid/hardware/camera2/CameraDevice;->getId()Ljava/lang/String;
 
     move-result-object p1
 
     invoke-interface {v1, p1}, Lcom/transsion/camera/adapter/CameraAgent$DeviceStateCallback;->onDeviceDisconnected(Ljava/lang/String;)V
 
-    .line 409
+    .line 412
     :cond_26
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
@@ -177,7 +190,7 @@
 .method public onError(Landroid/hardware/camera2/CameraDevice;I)V
     .registers 6
 
-    .line 415
+    .line 418
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgent2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -220,7 +233,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 416
+    .line 419
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fgetmStateWait(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;)Lcom/transsion/camera/utils/StateWait;
@@ -229,7 +242,7 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/utils/StateWait;->notifyState()V
 
-    .line 418
+    .line 421
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fgetmCameraUser(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;)Lcom/transsion/camera/adapter/CameraAgent$Customer;
@@ -238,7 +251,7 @@
 
     if-eqz v0, :cond_5d
 
-    .line 420
+    .line 423
     invoke-virtual {p1}, Landroid/hardware/camera2/CameraDevice;->getId()Ljava/lang/String;
 
     move-result-object p1
@@ -249,7 +262,7 @@
 
     invoke-interface {v0, p1, p2}, Lcom/transsion/camera/adapter/CameraAgent$DeviceStateCallback;->onDeviceError(Ljava/lang/String;I)V
 
-    .line 421
+    .line 424
     invoke-static {}, Lcom/transsion/camera/utils/dfx/mgr/ExManager;->get()Lcom/transsion/camera/utils/dfx/inter/IExDetection;
 
     move-result-object p1
@@ -258,20 +271,20 @@
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/utils/dfx/inter/ICamError;->onCamError(I)V
 
-    .line 422
+    .line 425
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p1
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->onCamError(I)V
 
-    .line 424
+    .line 427
     :cond_5d
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$mdoCloseCurrent(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;)V
 
-    .line 425
+    .line 428
     invoke-static {}, Lcom/transsion/camera/thub/TranSchedManagerProxy;->getInstance()Lcom/transsion/camera/thub/TranSchedManagerProxy;
 
     move-result-object p0
@@ -288,7 +301,7 @@
 .method public onOpened(Landroid/hardware/camera2/CameraDevice;)V
     .registers 12
 
-    .line 345
+    .line 346
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fgetmCameraDevice(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;)Landroid/hardware/camera2/CameraDevice;
@@ -299,7 +312,7 @@
 
     if-eq p1, v0, :cond_127
 
-    .line 346
+    .line 347
     invoke-static {}, Lcom/transsion/camera/thub/TranSchedManagerProxy;->getInstance()Lcom/transsion/camera/thub/TranSchedManagerProxy;
 
     move-result-object v0
@@ -310,12 +323,12 @@
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/thub/TranSchedManagerProxy;->setResponseTranSched(I)V
 
-    .line 347
+    .line 348
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fputmCameraDevice(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;Landroid/hardware/camera2/CameraDevice;)V
 
-    .line 348
+    .line 349
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
@@ -332,7 +345,7 @@
 
     if-eqz v2, :cond_3c
 
-    .line 349
+    .line 350
     new-instance v3, Lcom/transsion/camera/adapter/DXOCameraProxy2Impl;
 
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
@@ -356,7 +369,7 @@
     :cond_3c
     move-object v5, p1
 
-    .line 350
+    .line 351
     new-instance v4, Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
@@ -380,7 +393,7 @@
     :goto_50
     invoke-static {v0, v3}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fputmCameraProxy(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
 
-    .line 351
+    .line 352
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgent2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -417,7 +430,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 352
+    .line 353
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     iget-object p1, p1, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->this$0:Lcom/transsion/camera/adapter/CameraAgent2Impl;
@@ -428,7 +441,7 @@
 
     monitor-enter p1
 
-    .line 353
+    .line 354
     :try_start_86
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
@@ -442,7 +455,7 @@
 
     if-nez v0, :cond_bd
 
-    .line 355
+    .line 356
     :try_start_90
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
@@ -469,7 +482,7 @@
     :catch_a0
     move-exception v0
 
-    .line 357
+    .line 358
     :try_start_a1
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgent2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -495,7 +508,7 @@
 
     invoke-static {v2, v0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 360
+    .line 361
     :cond_bd
     :goto_bd
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
@@ -514,7 +527,7 @@
 
     move-result-object v0
 
-    .line 361
+    .line 362
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgent2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v2
@@ -535,7 +548,7 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 362
+    .line 363
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     iget-object v2, v2, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->this$0:Lcom/transsion/camera/adapter/CameraAgent2Impl;
@@ -552,7 +565,7 @@
 
     move-result-object v2
 
-    .line 363
+    .line 364
     iget-object v3, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     iget-object v3, v3, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->this$0:Lcom/transsion/camera/adapter/CameraAgent2Impl;
@@ -575,7 +588,7 @@
 
     if-eqz v3, :cond_115
 
-    .line 365
+    .line 366
     iget-object v4, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-static {v4}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fgetmCameraProxy(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;)Lcom/transsion/camera/adapter/CameraProxy2Impl;
@@ -586,7 +599,7 @@
 
     goto :goto_123
 
-    .line 367
+    .line 368
     :cond_115
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgent2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -596,12 +609,12 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 368
+    .line 369
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fputmDeviceInfoError(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;Z)V
 
-    .line 370
+    .line 371
     :goto_123
     monitor-exit p1
 
@@ -614,7 +627,7 @@
 
     throw p0
 
-    .line 372
+    .line 373
     :cond_127
     :goto_127
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
@@ -625,7 +638,7 @@
 
     invoke-virtual {p1}, Lcom/transsion/camera/utils/StateWait;->notifyState()V
 
-    .line 374
+    .line 375
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     iget-object p1, p1, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->this$0:Lcom/transsion/camera/adapter/CameraAgent2Impl;
@@ -637,16 +650,29 @@
     invoke-static {p1, v1}, Lcom/transsion/camera/utils/CameraUtil;->writeHeadsetSetting(Landroid/content/Context;I)V
 
     .line 376
-    :try_start_13b
+    iget-object p1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
+
+    iget-object p1, p1, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->this$0:Lcom/transsion/camera/adapter/CameraAgent2Impl;
+
+    invoke-static {p1}, Lcom/transsion/camera/adapter/CameraAgent2Impl;->-$$Nest$fgetmContext(Lcom/transsion/camera/adapter/CameraAgent2Impl;)Landroid/content/Context;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lcom/transsion/camera/utils/CameraUtil;->writeVibrationIntensitySetting(Landroid/content/Context;I)V
+
+    .line 378
+    :try_start_147
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fgetmCameraDevice(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;)Landroid/hardware/camera2/CameraDevice;
 
     move-result-object p1
 
-    if-eqz p1, :cond_152
+    if-eqz p1, :cond_15e
 
-    .line 377
+    .line 379
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl$1;->this$1:Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;->-$$Nest$fgetmCameraDevice(Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;)Landroid/hardware/camera2/CameraDevice;
@@ -654,24 +680,24 @@
     move-result-object p0
 
     invoke-virtual {p0, v1}, Landroid/hardware/camera2/CameraDevice;->setCameraAudioRestriction(I)V
-    :try_end_14c
-    .catch Ljava/lang/SecurityException; {:try_start_13b .. :try_end_14c} :catch_14d
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_13b .. :try_end_14c} :catch_14d
-    .catch Ljava/lang/IllegalStateException; {:try_start_13b .. :try_end_14c} :catch_14d
+    :try_end_158
+    .catch Ljava/lang/SecurityException; {:try_start_147 .. :try_end_158} :catch_159
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_147 .. :try_end_158} :catch_159
+    .catch Ljava/lang/IllegalStateException; {:try_start_147 .. :try_end_158} :catch_159
 
-    goto :goto_152
+    goto :goto_15e
 
-    :catch_14d
+    :catch_159
     move-exception v0
 
     move-object p0, v0
 
-    .line 380
+    .line 382
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 382
-    :cond_152
-    :goto_152
+    .line 384
+    :cond_15e
+    :goto_15e
     invoke-static {}, Lcom/transsion/camera/thub/TranSchedManagerProxy;->getInstance()Lcom/transsion/camera/thub/TranSchedManagerProxy;
 
     move-result-object p0

@@ -22,7 +22,7 @@
     .registers 1
 
     .line 0
-    invoke-static {}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->$r8$lambda$WJPiaPWiA25dynf41QjqvqnWTkE()V
+    invoke-static {}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->$r8$lambda$7CGqkfSS9uvRDSfaMf__5W8vWZY()V
 
     return-void
 .end method

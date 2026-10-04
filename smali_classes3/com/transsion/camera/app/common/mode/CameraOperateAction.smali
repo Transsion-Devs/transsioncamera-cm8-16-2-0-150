@@ -43,7 +43,7 @@
 
     const/4 v0, 0x0
 
-    .line 915
+    .line 905
     invoke-static {v0}, Lcom/transsion/camera/utils/manager/GlobalClickManager;->setModeResetStatus(Z)V
 
     return-void
@@ -61,42 +61,42 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 484
+    .line 479
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction$1;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction$1;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->ACTION_STATE_MAP:Landroid/util/SparseArray;
 
-    .line 500
+    .line 495
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction$2;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction$2;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->ACTION_STRING_MAP:Landroid/util/SparseArray;
 
-    .line 609
+    .line 599
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction$3;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction$3;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->ACTION_BOOLEAN_MAP:Landroid/util/SparseArray;
 
-    .line 688
+    .line 678
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction$4;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction$4;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->ACTION_BOOLEAN_PREVIEW_MAP:Landroid/util/SparseArray;
 
-    .line 739
+    .line 729
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction$5;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction$5;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->ACTION_HINT_MAP:Landroid/util/SparseArray;
 
-    .line 757
+    .line 747
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction$6;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction$6;-><init>()V
@@ -109,25 +109,25 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/mode/CameraOperateAction$RawActionHandleCallback;Lcom/transsion/camera/app/common/IAppUI;)V
     .registers 4
 
-    .line 886
+    .line 876
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 v0, -0x65
 
-    .line 459
+    .line 454
     iput v0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
-    .line 780
+    .line 770
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mFirstSteadyFrameComeStates:Ljava/util/Map;
 
-    .line 887
+    .line 877
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mRawActionCallback:Lcom/transsion/camera/app/common/mode/CameraOperateAction$RawActionHandleCallback;
 
-    .line 888
+    .line 878
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-void
@@ -136,7 +136,7 @@
 .method public static actionToString(I)Ljava/lang/String;
     .registers 3
 
-    .line 837
+    .line 827
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->ACTION_STRING_MAP:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p0}, Landroid/util/SparseArray;->contains(I)Z
@@ -145,7 +145,7 @@
 
     if-eqz v1, :cond_f
 
-    .line 838
+    .line 828
     invoke-virtual {v0, p0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -154,7 +154,7 @@
 
     return-object p0
 
-    .line 840
+    .line 830
     :cond_f
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -184,7 +184,7 @@
 
     if-ne p1, v0, :cond_4e
 
-    .line 877
+    .line 867
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mFirstSteadyFrameComeStates:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -213,7 +213,7 @@
 
     move-result v0
 
-    .line 878
+    .line 868
     sget-object v1, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -240,7 +240,7 @@
 
     if-eqz v0, :cond_4e
 
-    .line 880
+    .line 870
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mFirstSteadyFrameComeStates:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -251,7 +251,7 @@
 
     const/16 p1, 0x9
 
-    .line 881
+    .line 871
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
     :cond_4e
@@ -285,7 +285,7 @@
 .method private firstSteadyFrameNotify()V
     .registers 6
 
-    .line 910
+    .line 900
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -306,7 +306,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 912
+    .line 902
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v0
@@ -331,10 +331,10 @@
 
     if-eqz v0, :cond_32
 
-    .line 913
+    .line 903
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
-    .line 915
+    .line 905
     :cond_32
     sget-object v0, Lcom/transsion/camera/utils/UIUtils;->sMainHandler:Landroid/os/Handler;
 
@@ -346,7 +346,7 @@
 
     invoke-virtual {v0, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 916
+    .line 906
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
     const/16 v2, 0x9
@@ -363,17 +363,17 @@
 
     goto :goto_7e
 
-    .line 946
+    .line 936
     :pswitch_4e
     iput v3, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
     return-void
 
-    .line 942
+    .line 932
     :pswitch_51
     invoke-direct {p0, v2}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
-    .line 943
+    .line 933
     iput v3, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
     return-void
@@ -381,10 +381,10 @@
     :pswitch_57
     const/16 v0, 0x14
 
-    .line 938
+    .line 928
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
-    .line 939
+    .line 929
     iput v3, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
     return-void
@@ -392,13 +392,13 @@
     :pswitch_5f
     const/4 v0, 0x7
 
-    .line 930
+    .line 920
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
-    .line 931
+    .line 921
     iput v3, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
-    .line 933
+    .line 923
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object v0
@@ -421,7 +421,7 @@
 
     if-eqz v0, :cond_7e
 
-    .line 934
+    .line 924
     invoke-direct {p0, v2}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
     :cond_7e
@@ -431,10 +431,10 @@
     :pswitch_7f
     const/4 v0, 0x5
 
-    .line 926
+    .line 916
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
-    .line 927
+    .line 917
     iput v3, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
     return-void
@@ -442,33 +442,33 @@
     :pswitch_86
     const/4 v0, 0x3
 
-    .line 922
+    .line 912
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
-    .line 923
+    .line 913
     iput v3, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
     return-void
 
-    .line 918
+    .line 908
     :pswitch_8d
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
-    .line 919
+    .line 909
     iput v3, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
     return-void
 
-    .line 949
+    .line 939
     :cond_93
     iput v3, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
-    .line 950
+    .line 940
     invoke-direct {p0, v2}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
     return-void
 
-    .line 953
+    .line 943
     :cond_99
     invoke-direct {p0, v2}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
@@ -536,12 +536,12 @@
 .method private notifyOperateAction(I)V
     .registers 2
 
-    .line 892
+    .line 882
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mRawActionCallback:Lcom/transsion/camera/app/common/mode/CameraOperateAction$RawActionHandleCallback;
 
     if-eqz p0, :cond_7
 
-    .line 893
+    .line 883
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction$RawActionHandleCallback;->onAction(I)V
 
     :cond_7
@@ -551,7 +551,7 @@
 .method public static respondHintEvent(I)I
     .registers 2
 
-    .line 820
+    .line 810
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->ACTION_HINT_MAP:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -566,7 +566,7 @@
 
     return p0
 
-    .line 824
+    .line 814
     :cond_c
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
@@ -578,7 +578,7 @@
 .method public static respondPreviewManagerEvent(I)I
     .registers 2
 
-    .line 812
+    .line 802
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->ACTION_BOOLEAN_PREVIEW_MAP:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -593,7 +593,7 @@
 
     return p0
 
-    .line 816
+    .line 806
     :cond_c
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
@@ -605,7 +605,7 @@
 .method public static respondUIManagerEvent(II)I
     .registers 4
 
-    .line 792
+    .line 782
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->ACTION_BOOLEAN_MAP:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->contains(I)Z
@@ -616,7 +616,7 @@
 
     goto :goto_23
 
-    .line 796
+    .line 786
     :cond_9
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->TYPE_NO_NEED_TO_RESPOND_EVENT_ACTIONS_MAP:Landroid/util/SparseArray;
 
@@ -626,7 +626,7 @@
 
     if-eqz v1, :cond_18
 
-    .line 797
+    .line 787
     invoke-virtual {v0, p0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -643,13 +643,13 @@
 
     const/4 v0, 0x0
 
-    .line 800
+    .line 790
     :goto_1c
     array-length v1, p0
 
     if-ge v0, v1, :cond_28
 
-    .line 801
+    .line 791
     aget v1, p0, v0
 
     if-ne v1, p1, :cond_25
@@ -664,7 +664,7 @@
 
     goto :goto_1c
 
-    .line 807
+    .line 797
     :cond_28
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->ACTION_BOOLEAN_MAP:Landroid/util/SparseArray;
 
@@ -684,7 +684,7 @@
 .method private switchNeedToHandleActionBegin(II)V
     .registers 6
 
-    .line 898
+    .line 888
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -717,7 +717,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 899
+    .line 889
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
     const/16 v1, -0x65
@@ -730,7 +730,7 @@
 
     if-ne p2, v0, :cond_49
 
-    .line 900
+    .line 890
     :cond_34
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
@@ -738,7 +738,7 @@
 
     if-eq v0, v1, :cond_49
 
-    .line 901
+    .line 891
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
     const/16 v1, 0x64
@@ -749,11 +749,11 @@
 
     if-eq p2, v0, :cond_46
 
-    .line 902
+    .line 892
     :cond_44
     iput p1, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
-    .line 904
+    .line 894
     :cond_46
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
@@ -766,7 +766,7 @@
 .method public getCurrentActionState()I
     .registers 1
 
-    .line 481
+    .line 476
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
     return p0
@@ -775,7 +775,7 @@
 .method public rawActionHandle(I)V
     .registers 4
 
-    .line 846
+    .line 836
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->ACTION_STATE_MAP:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->contains(I)Z
@@ -784,7 +784,7 @@
 
     if-eqz v1, :cond_19
 
-    .line 847
+    .line 837
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -797,7 +797,7 @@
 
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->switchNeedToHandleActionBegin(II)V
 
-    .line 848
+    .line 838
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->checkFirstSteadyFrameState(I)V
 
     return-void
@@ -815,7 +815,7 @@
 
     if-eq p1, v0, :cond_37
 
-    .line 867
+    .line 857
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
     const/16 v1, 0x68
@@ -830,13 +830,13 @@
 
     if-ne p1, v0, :cond_40
 
-    .line 869
+    .line 859
     :cond_33
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
     return-void
 
-    .line 859
+    .line 849
     :cond_37
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
@@ -844,13 +844,13 @@
 
     if-eq v0, v1, :cond_40
 
-    .line 860
+    .line 850
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 
     :cond_40
     return-void
 
-    .line 853
+    .line 843
     :cond_41
     iget p1, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mCurrentState:I
 
@@ -858,7 +858,7 @@
 
     if-ne p1, v0, :cond_54
 
-    .line 854
+    .line 844
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->mFirstSteadyFrameComeStates:Ljava/util/Map;
 
     const/16 v0, 0x10
@@ -871,13 +871,13 @@
 
     invoke-interface {p1, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 856
+    .line 846
     :cond_54
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->firstSteadyFrameNotify()V
 
     return-void
 
-    .line 864
+    .line 854
     :cond_58
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->notifyOperateAction(I)V
 

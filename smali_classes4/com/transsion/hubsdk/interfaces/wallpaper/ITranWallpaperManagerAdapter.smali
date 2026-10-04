@@ -4,6 +4,9 @@
 
 
 # virtual methods
+.method public abstract animateWallpaperToDim(F)V
+.end method
+
 .method public abstract getBitmapAsUser(IZI)Landroid/graphics/Bitmap;
 .end method
 

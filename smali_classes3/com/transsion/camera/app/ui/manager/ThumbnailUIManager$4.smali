@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;)V
     .registers 2
 
-    .line 260
+    .line 259
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager$4;->this$0:Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/view/View;)V
     .registers 4
 
-    .line 263
+    .line 262
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -47,7 +47,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 264
+    .line 263
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager$4;->this$0:Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->-$$Nest$fgetmThumbnailListener(Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;)Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 265
+    .line 264
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager$4;->this$0:Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;->-$$Nest$fgetmThumbnailListener(Lcom/transsion/camera/app/ui/manager/ThumbnailUIManager;)Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;

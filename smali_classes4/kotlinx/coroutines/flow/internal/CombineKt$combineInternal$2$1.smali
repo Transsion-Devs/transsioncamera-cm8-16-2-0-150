@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2$1"
     f = "Combine.kt"
     l = {
-        0x1f
+        0x1c
     }
     m = "invokeSuspend"
 .end annotation
@@ -180,7 +180,7 @@
 
     move-result-object v0
 
-    .line 29
+    .line 26
     iget v1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1;->label:I
 
     const/4 v2, 0x0
@@ -215,7 +215,7 @@
     :cond_1a
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 31
+    .line 28
     :try_start_1d
     iget-object p1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1;->$flows:[Lkotlinx/coroutines/flow/Flow;
 
@@ -241,7 +241,7 @@
 
     return-object v0
 
-    .line 37
+    .line 34
     :cond_33
     :goto_33
     iget-object p1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1;->$nonClosed:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -252,18 +252,18 @@
 
     if-nez p1, :cond_40
 
-    .line 38
+    .line 35
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1;->$resultChannel:Lkotlinx/coroutines/channels/Channel;
 
     invoke-static {p0, v2, v3, v2}, Lkotlinx/coroutines/channels/SendChannel$DefaultImpls;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z
 
-    .line 41
+    .line 38
     :cond_40
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 37
+    .line 34
     :goto_43
     iget-object v0, p0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1;->$nonClosed:Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -273,7 +273,7 @@
 
     if-nez v0, :cond_50
 
-    .line 38
+    .line 35
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1;->$resultChannel:Lkotlinx/coroutines/channels/Channel;
 
     invoke-static {p0, v2, v3, v2}, Lkotlinx/coroutines/channels/SendChannel$DefaultImpls;->close$default(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Throwable;ILjava/lang/Object;)Z

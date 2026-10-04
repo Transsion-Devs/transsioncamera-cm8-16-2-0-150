@@ -14,6 +14,17 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$heU6HEF2AlutZz9XEZBRDrr2Lvw(Ljava/lang/String;Lkotlin/coroutines/CoroutineContext$Element;)Ljava/lang/String;
+    .registers 2
+
+    .line 0
+    invoke-static {p0, p1}, Lkotlin/coroutines/CombinedContext;->toString$lambda$0(Ljava/lang/String;Lkotlin/coroutines/CoroutineContext$Element;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public constructor <init>(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext$Element;)V
     .registers 4
 
@@ -25,13 +36,13 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 111
+    .line 113
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 113
+    .line 115
     iput-object p1, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
-    .line 114
+    .line 116
     iput-object p2, p0, Lkotlin/coroutines/CombinedContext;->element:Lkotlin/coroutines/CoroutineContext$Element;
 
     return-void
@@ -40,7 +51,7 @@
 .method private final contains(Lkotlin/coroutines/CoroutineContext$Element;)Z
     .registers 3
 
-    .line 153
+    .line 155
     invoke-interface {p1}, Lkotlin/coroutines/CoroutineContext$Element;->getKey()Lkotlin/coroutines/CoroutineContext$Key;
 
     move-result-object v0
@@ -59,7 +70,7 @@
 .method private final containsAll(Lkotlin/coroutines/CombinedContext;)Z
     .registers 3
 
-    .line 158
+    .line 160
     :goto_0
     iget-object v0, p1, Lkotlin/coroutines/CombinedContext;->element:Lkotlin/coroutines/CoroutineContext$Element;
 
@@ -73,21 +84,21 @@
 
     return p0
 
-    .line 159
+    .line 161
     :cond_a
     iget-object p1, p1, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
-    .line 160
+    .line 162
     instance-of v0, p1, Lkotlin/coroutines/CombinedContext;
 
     if-eqz v0, :cond_13
 
-    .line 161
+    .line 163
     check-cast p1, Lkotlin/coroutines/CombinedContext;
 
     goto :goto_0
 
-    .line 163
+    .line 165
     :cond_13
     const-string v0, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext.Element"
 
@@ -107,7 +118,7 @@
 
     const/4 v0, 0x2
 
-    .line 147
+    .line 149
     :goto_1
     iget-object p0, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
@@ -133,6 +144,50 @@
     goto :goto_1
 .end method
 
+.method private static final toString$lambda$0(Ljava/lang/String;Lkotlin/coroutines/CoroutineContext$Element;)Ljava/lang/String;
+    .registers 3
+
+    const-string v0, "acc"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "element"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 177
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_15
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_15
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ", "
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
@@ -140,7 +195,7 @@
 
     if-eq p0, p1, :cond_1b
 
-    .line 169
+    .line 171
     instance-of v0, p1, Lkotlin/coroutines/CombinedContext;
 
     if-eqz v0, :cond_19
@@ -184,7 +239,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
+    .line 133
     iget-object v0, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
     invoke-interface {v0, p1, p2}, Lkotlin/coroutines/CoroutineContext;->fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
@@ -207,7 +262,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 120
+    .line 122
     :goto_5
     iget-object v0, p0, Lkotlin/coroutines/CombinedContext;->element:Lkotlin/coroutines/CoroutineContext$Element;
 
@@ -219,21 +274,21 @@
 
     return-object v0
 
-    .line 121
+    .line 123
     :cond_e
     iget-object p0, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
-    .line 122
+    .line 124
     instance-of v0, p0, Lkotlin/coroutines/CombinedContext;
 
     if-eqz v0, :cond_17
 
-    .line 123
+    .line 125
     check-cast p0, Lkotlin/coroutines/CombinedContext;
 
     goto :goto_5
 
-    .line 125
+    .line 127
     :cond_17
     invoke-interface {p0, p1}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
 
@@ -245,7 +300,7 @@
 .method public hashCode()I
     .registers 2
 
-    .line 171
+    .line 173
     iget-object v0, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -266,7 +321,7 @@
 .method public minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
     .registers 3
 
-    .line 134
+    .line 136
     const-string v0, "key"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -283,7 +338,7 @@
 
     return-object p0
 
-    .line 135
+    .line 137
     :cond_10
     iget-object v0, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
@@ -291,14 +346,14 @@
 
     move-result-object p1
 
-    .line 137
+    .line 139
     iget-object v0, p0, Lkotlin/coroutines/CombinedContext;->left:Lkotlin/coroutines/CoroutineContext;
 
     if-ne p1, v0, :cond_1b
 
     return-object p0
 
-    .line 138
+    .line 140
     :cond_1b
     sget-object v0, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
@@ -308,7 +363,7 @@
 
     return-object p0
 
-    .line 139
+    .line 141
     :cond_22
     new-instance v0, Lkotlin/coroutines/CombinedContext;
 
@@ -319,10 +374,10 @@
     return-object v0
 .end method
 
-.method public plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
+.method public bridge plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
     .registers 2
 
-    .line 111
+    .line 113
     invoke-static {p0, p1}, Lkotlin/coroutines/CoroutineContext$DefaultImpls;->plus(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -333,7 +388,7 @@
 .method public toString()Ljava/lang/String;
     .registers 4
 
-    .line 174
+    .line 176
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -342,11 +397,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    const-string v1, ""
+    new-instance v1, Lkotlin/coroutines/CombinedContext$$ExternalSyntheticLambda0;
 
-    sget-object v2, Lkotlin/coroutines/CombinedContext$toString$1;->INSTANCE:Lkotlin/coroutines/CombinedContext$toString$1;
+    invoke-direct {v1}, Lkotlin/coroutines/CombinedContext$$ExternalSyntheticLambda0;-><init>()V
 
-    invoke-virtual {p0, v1, v2}, Lkotlin/coroutines/CombinedContext;->fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
+    const-string v2, ""
+
+    invoke-virtual {p0, v2, v1}, Lkotlin/coroutines/CombinedContext;->fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
 
     move-result-object p0
 

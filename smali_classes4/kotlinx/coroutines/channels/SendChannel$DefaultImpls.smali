@@ -26,7 +26,7 @@
 
     const/4 p1, 0x0
 
-    .line 98
+    .line 95
     :cond_7
     invoke-interface {p0, p1}, Lkotlinx/coroutines/channels/SendChannel;->close(Ljava/lang/Throwable;)Z
 
@@ -64,12 +64,12 @@
         }
     .end annotation
 
-    .line 177
+    .line 174
     invoke-interface {p0, p1}, Lkotlinx/coroutines/channels/SendChannel;->trySend-JP2dKIU(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 178
+    .line 175
     invoke-static {p0}, Lkotlinx/coroutines/channels/ChannelResult;->isSuccess-impl(Ljava/lang/Object;)Z
 
     move-result p1
@@ -80,7 +80,7 @@
 
     return p0
 
-    .line 179
+    .line 176
     :cond_c
     invoke-static {p0}, Lkotlinx/coroutines/channels/ChannelResult;->exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;
 

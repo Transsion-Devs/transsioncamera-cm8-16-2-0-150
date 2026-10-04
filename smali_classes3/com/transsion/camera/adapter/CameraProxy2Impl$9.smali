@@ -24,7 +24,7 @@
 .method constructor <init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;Lcom/transsion/camera/adapter/CameraProxy2Impl$IPreCaptureResultCallback;)V
     .registers 3
 
-    .line 3486
+    .line 3420
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$9;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     iput-object p2, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$9;->val$preCaptureResultCallback:Lcom/transsion/camera/adapter/CameraProxy2Impl$IPreCaptureResultCallback;
@@ -39,7 +39,7 @@
 .method public onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
     .registers 10
 
-    .line 3495
+    .line 3429
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -63,7 +63,7 @@
 
     goto :goto_22
 
-    .line 3497
+    .line 3431
     :cond_14
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$9;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
@@ -82,7 +82,7 @@
 
     goto :goto_12
 
-    .line 3498
+    .line 3432
     :goto_22
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -104,7 +104,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3500
+    .line 3434
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$9;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCaptureResultMonitor(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CaptureResultMonitor;
@@ -123,7 +123,7 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/adapter/CaptureResultMonitor;->triggerAEPreCapturing(Lcom/transsion/camera/adapter/CaptureResultMonitor$AEPreCaptureResultCallback;)V
 
-    .line 3502
+    .line 3436
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$9;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCaptureResultMonitor(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CaptureResultMonitor;
@@ -148,7 +148,7 @@
 .method public onCaptureFailed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V
     .registers 5
 
-    .line 3510
+    .line 3444
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -173,7 +173,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3511
+    .line 3445
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$9;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmCaptureResultMonitor(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CaptureResultMonitor;
@@ -186,12 +186,12 @@
 
     if-eqz p1, :cond_34
 
-    .line 3512
+    .line 3446
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$9;->val$preCaptureResultCallback:Lcom/transsion/camera/adapter/CameraProxy2Impl$IPreCaptureResultCallback;
 
     invoke-interface {p1}, Lcom/transsion/camera/adapter/CaptureResultMonitor$AEPreCaptureResultCallback;->onAEPreCaptureDone()V
 
-    .line 3513
+    .line 3447
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$9;->val$preCaptureResultCallback:Lcom/transsion/camera/adapter/CameraProxy2Impl$IPreCaptureResultCallback;
 
     const/4 p1, 0x0
@@ -200,7 +200,7 @@
 
     return-void
 
-    .line 3515
+    .line 3449
     :cond_34
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 

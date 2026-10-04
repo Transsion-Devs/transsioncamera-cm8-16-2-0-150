@@ -7,12 +7,12 @@
 .method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .registers 2
 
-    .line 83
+    .line 80
     invoke-direct {p0, p1}, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;)V
 
     if-eqz p1, :cond_16
 
-    .line 86
+    .line 87
     invoke-interface {p1}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -41,7 +41,7 @@
 .method public getContext()Lkotlin/coroutines/CoroutineContext;
     .registers 1
 
-    .line 93
+    .line 94
     sget-object p0, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     return-object p0

@@ -40,7 +40,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 641
+    .line 686
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,7 +51,7 @@
 .method public build()Lcom/transsion/camera/app/common/mode/CaptureSurface;
     .registers 11
 
-    .line 700
+    .line 745
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->getInstance()Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;
 
     move-result-object v0
@@ -60,14 +60,14 @@
 
     move-result-object v7
 
-    .line 702
+    .line 747
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsOfflineJniEnable:Z
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_1f
 
-    .line 703
+    .line 748
     new-instance v0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mName:Ljava/lang/String;
@@ -78,7 +78,7 @@
 
     invoke-direct {v0, v2, v3, v4}, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;-><init>(Ljava/lang/String;II)V
 
-    .line 704
+    .line 749
     iget-boolean v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsBGServiceImg:Z
 
     invoke-virtual {v0, v2, v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->setCustomEnable(ZZ)V
@@ -88,47 +88,47 @@
 
     goto :goto_7a
 
-    .line 705
+    .line 750
     :cond_1f
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsPostAlgoSurface:Z
 
     if-eqz v0, :cond_30
 
-    .line 706
+    .line 751
     new-instance v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLHelper;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mName:Ljava/lang/String;
 
     invoke-direct {v0, v2}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLHelper;-><init>(Ljava/lang/String;)V
 
-    .line 707
+    .line 752
     iget-boolean v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsBGServiceImg:Z
 
     invoke-virtual {v0, v2, v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->setCustomEnable(ZZ)V
 
     goto :goto_1d
 
-    .line 708
+    .line 753
     :cond_30
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsBGOfflineEnable:Z
 
     if-eqz v0, :cond_41
 
-    .line 709
+    .line 754
     new-instance v0, Lcom/transsion/camera/app/common/bgservice/BgOfflineHelper;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mName:Ljava/lang/String;
 
     invoke-direct {v0, v2}, Lcom/transsion/camera/app/common/bgservice/BgOfflineHelper;-><init>(Ljava/lang/String;)V
 
-    .line 710
+    .line 755
     iget-boolean v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsBGServiceImg:Z
 
     invoke-virtual {v0, v2, v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->setCustomEnable(ZZ)V
 
     goto :goto_1d
 
-    .line 711
+    .line 756
     :cond_41
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsTZServiceImg:Z
 
@@ -140,21 +140,21 @@
 
     if-ne v7, v0, :cond_57
 
-    .line 712
+    .line 757
     new-instance v0, Lcom/transsion/camera/app/common/tzservice/TzServiceHelper;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mName:Ljava/lang/String;
 
     invoke-direct {v0, v2}, Lcom/transsion/camera/app/common/tzservice/TzServiceHelper;-><init>(Ljava/lang/String;)V
 
-    .line 713
+    .line 758
     iget-boolean v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsTZServiceImg:Z
 
     invoke-virtual {v0, v2, v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->setCustomEnable(ZZ)V
 
     goto :goto_1d
 
-    .line 714
+    .line 759
     :cond_57
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsBGServiceImg:Z
 
@@ -166,7 +166,7 @@
 
     goto :goto_6d
 
-    .line 718
+    .line 763
     :cond_60
     new-instance v0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;
 
@@ -174,14 +174,14 @@
 
     invoke-direct {v0, v2}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;-><init>(Ljava/lang/String;)V
 
-    .line 719
+    .line 764
     iget-boolean v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsBGServiceImg:Z
 
     invoke-virtual {v0, v2, v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->setCustomEnable(ZZ)V
 
     goto :goto_1d
 
-    .line 715
+    .line 760
     :cond_6d
     :goto_6d
     new-instance v0, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper;
@@ -190,14 +190,14 @@
 
     invoke-direct {v0, v2}, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper;-><init>(Ljava/lang/String;)V
 
-    .line 716
+    .line 761
     iget-boolean v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsBGServiceImg:Z
 
     invoke-virtual {v0, v2, v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->setCustomEnable(ZZ)V
 
     goto :goto_1d
 
-    .line 721
+    .line 766
     :goto_7a
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -235,7 +235,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 722
+    .line 767
     new-instance v1, Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mName:Ljava/lang/String;
@@ -258,7 +258,7 @@
 .method public setBGOfflineEnable(Z)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
     .registers 2
 
-    .line 680
+    .line 725
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsBGOfflineEnable:Z
 
     return-object p0
@@ -267,7 +267,7 @@
 .method public setBGServiceImg(Z)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
     .registers 2
 
-    .line 670
+    .line 715
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsBGServiceImg:Z
 
     return-object p0
@@ -276,7 +276,7 @@
 .method public setFormat(I)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
     .registers 2
 
-    .line 665
+    .line 710
     iput p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mFormat:I
 
     return-object p0
@@ -285,7 +285,7 @@
 .method public setName(Ljava/lang/String;)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
     .registers 2
 
-    .line 654
+    .line 699
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mName:Ljava/lang/String;
 
     return-object p0
@@ -294,7 +294,7 @@
 .method public setOfflineJniEnable(Z)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
     .registers 2
 
-    .line 685
+    .line 730
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsOfflineJniEnable:Z
 
     return-object p0
@@ -303,7 +303,7 @@
 .method public setPostAlgoSurface(Z)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
     .registers 2
 
-    .line 690
+    .line 735
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsPostAlgoSurface:Z
 
     return-object p0
@@ -312,7 +312,7 @@
 .method public setPostViewSurface(Z)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
     .registers 2
 
-    .line 695
+    .line 740
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsPostViewSurface:Z
 
     return-object p0
@@ -321,10 +321,10 @@
 .method public setSize(II)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
     .registers 3
 
-    .line 659
+    .line 704
     iput p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mWidth:I
 
-    .line 660
+    .line 705
     iput p2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mHeight:I
 
     return-object p0
@@ -333,7 +333,7 @@
 .method public setTZServiceImg(Z)Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;
     .registers 2
 
-    .line 675
+    .line 720
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Builder;->mIsTZServiceImg:Z
 
     return-object p0

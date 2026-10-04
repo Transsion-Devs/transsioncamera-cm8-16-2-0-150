@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static motion_capture_help_layout:I = 0x7f0e013f
+.field public static motion_capture_help_layout:I = 0x7f0e013a
 
-.field public static motion_capture_help_layout_v1:I = 0x7f0e0140
+.field public static motion_capture_help_layout_v1:I = 0x7f0e013b
 
-.field public static motion_capture_help_layout_v2:I = 0x7f0e0141
+.field public static motion_capture_help_layout_v2:I = 0x7f0e013c
 
 
 # direct methods

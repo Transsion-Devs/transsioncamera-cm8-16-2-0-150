@@ -11,10 +11,10 @@
 .method public constructor <init>(Lkotlinx/coroutines/DisposableHandle;)V
     .registers 2
 
-    .line 1413
+    .line 1410
     invoke-direct {p0}, Lkotlinx/coroutines/JobNode;-><init>()V
 
-    .line 1412
+    .line 1409
     iput-object p1, p0, Lkotlinx/coroutines/DisposeOnCompletion;->handle:Lkotlinx/coroutines/DisposableHandle;
 
     return-void
@@ -25,7 +25,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 1411
+    .line 1408
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/DisposeOnCompletion;->invoke(Ljava/lang/Throwable;)V
@@ -38,7 +38,7 @@
 .method public invoke(Ljava/lang/Throwable;)V
     .registers 2
 
-    .line 1414
+    .line 1411
     iget-object p0, p0, Lkotlinx/coroutines/DisposeOnCompletion;->handle:Lkotlinx/coroutines/DisposableHandle;
 
     invoke-interface {p0}, Lkotlinx/coroutines/DisposableHandle;->dispose()V

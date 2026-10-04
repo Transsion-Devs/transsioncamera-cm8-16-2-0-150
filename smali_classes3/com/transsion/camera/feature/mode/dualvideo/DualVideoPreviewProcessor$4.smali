@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
     .registers 2
 
-    .line 1571
+    .line 1574
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$4;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 1574
+    .line 1577
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1575
+    .line 1578
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$4;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmMainSplitValue(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -64,7 +64,7 @@
     :cond_16
     return-void
 
-    .line 1577
+    .line 1580
     :cond_17
     :goto_17
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$4;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;

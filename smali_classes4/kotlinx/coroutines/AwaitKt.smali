@@ -23,7 +23,7 @@
         }
     .end annotation
 
-    .line 42
+    .line 36
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
@@ -50,7 +50,7 @@
 
     check-cast p0, [Lkotlinx/coroutines/Deferred;
 
-    .line 42
+    .line 36
     invoke-direct {v0, p0}, Lkotlinx/coroutines/AwaitAll;-><init>([Lkotlinx/coroutines/Deferred;)V
 
     invoke-virtual {v0, p1}, Lkotlinx/coroutines/AwaitAll;->await(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -77,7 +77,7 @@
         }
     .end annotation
 
-    .line 25
+    .line 20
     array-length v0, p0
 
     if-nez v0, :cond_8
@@ -151,7 +151,7 @@
 
     move-result-object v1
 
-    .line 66
+    .line 58
     iget v2, v0, Lkotlinx/coroutines/AwaitKt$joinAll$3;->label:I
 
     const/4 v3, 0x1
@@ -201,7 +201,7 @@
 
     check-cast p1, Lkotlinx/coroutines/Job;
 
-    .line 66
+    .line 58
     iput-object p0, v0, Lkotlinx/coroutines/AwaitKt$joinAll$3;->L$0:Ljava/lang/Object;
 
     iput v3, v0, Lkotlinx/coroutines/AwaitKt$joinAll$3;->label:I
@@ -269,7 +269,7 @@
 
     move-result-object v1
 
-    .line 54
+    .line 47
     iget v2, v0, Lkotlinx/coroutines/AwaitKt$joinAll$1;->label:I
 
     const/4 v3, 0x1
@@ -304,7 +304,7 @@
     :cond_3a
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 13579
+    .line 122
     array-length p1, p0
 
     const/4 v2, 0x0
@@ -320,7 +320,7 @@
 
     aget-object v4, p1, v2
 
-    .line 54
+    .line 47
     iput-object p1, v0, Lkotlinx/coroutines/AwaitKt$joinAll$1;->L$0:Ljava/lang/Object;
 
     iput v2, v0, Lkotlinx/coroutines/AwaitKt$joinAll$1;->I$0:I
@@ -343,7 +343,7 @@
 
     goto :goto_42
 
-    .line 13580
+    .line 123
     :cond_57
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

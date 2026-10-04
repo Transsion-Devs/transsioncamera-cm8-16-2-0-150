@@ -10,7 +10,7 @@
 
 
 # instance fields
-.field public SUPPORT_FLASH_SNAP_LITE:I
+.field public VALUE_FLASH_SNAP_LITE:I
 
 .field public mAIGCV30:Z
 
@@ -96,6 +96,8 @@
 
 .field public mBackWideSupport360Hdr:Z
 
+.field public mBackgroundShot2ShotResetTime:J
+
 .field public mBackgroundShot2shotCount:I
 
 .field public mBackgroundShot2shotExtraCount:I
@@ -108,6 +110,8 @@
 
 .field public mCameraExclusiveSatelliteSupport:Z
 
+.field public mCaptureVipThreadSupport:Z
+
 .field public mCapturingAddProcessing:Z
 
 .field public mClickZoomDefaultZoomOut:Z
@@ -117,6 +121,8 @@
 .field public mCloseAllForMonkeyTest:Z
 
 .field public mCloseBackCameraSkinOptimization:Z
+
+.field public mCloseRingVibration:Z
 
 .field public mCloseSB:Z
 
@@ -202,6 +208,10 @@
 
 .field public mEnableFaceDetectionV2:Z
 
+.field public mEnablePreRectChangeAnim:Z
+
+.field public mEnableShoulderButton:Z
+
 .field public mEnableStartBlur:Z
 
 .field public mEnableTimelapseVideoAntiOnCamMode:Z
@@ -218,6 +228,8 @@
 
 .field public mFansOnSalePropName:Ljava/lang/String;
 
+.field public mFastFreezeOnCaptureStarted:Z
+
 .field public mFilterSupportAsd:Z
 
 .field public mFilterSupportMfnr:Z
@@ -231,6 +243,10 @@
 .field public mFirebaseGenderSupport:Z
 
 .field public mFlashFacadeSupport:Z
+
+.field public mFlashSnapLiteV1ShowIconBvThreshold:I
+
+.field public mFlashSnapLiteV2ShowIconBvThreshold:I
 
 .field public mFocalDistance:I
 
@@ -320,6 +336,8 @@
 
 .field public mIsItelSupportVss:Z
 
+.field public mIsLensCorrectionLimitedByMemory:Z
+
 .field public mIsLimitVideoFps:Z
 
 .field public mIsLimitedZoom4XForSomeMode:Z
@@ -331,8 +349,6 @@
 .field public mIsLivePhotoNeedP3Switch:Z
 
 .field public mIsLivePhotoRequestSyncFrame:Z
-
-.field public mIsLowlightHintSupport:Z
 
 .field public mIsMacroSupportZoom:Z
 
@@ -349,6 +365,8 @@
 .field public mIsPersistent:Z
 
 .field public mIsPhotoFilterRestrictImageStyle:Z
+
+.field public mIsPictureRatioCustomizedIndia:Z
 
 .field public mIsPmasterGuideSupport:Z
 
@@ -392,6 +410,8 @@
 
 .field public mIsThumbnailPostView:Z
 
+.field public mIsTranLightingFwkV2Support:Z
+
 .field public mIsVideoPreIspDefaultOn:Z
 
 .field public mIsVideoPreIspSupport:Z
@@ -409,6 +429,8 @@
 .field public mIspHidlArcMFNRSupport:Z
 
 .field public mIspHidlCaptureEscapeBV:I
+
+.field public mIspHidlCaptureFPS:I
 
 .field public mIspHidlCaptureNightLimitBV:I
 
@@ -491,8 +513,6 @@
 .field public mMildBeautyType:I
 
 .field public mMirrorSettingDefaultOff:Z
-
-.field public mModeOrderEditorSupport:Z
 
 .field public mModePickerStyle:I
 
@@ -584,6 +604,8 @@
 
 .field public mProWatermarkSupport:Z
 
+.field public mProcessStatusNewStrategy:Z
+
 .field public mProductConfigHDRFormatSupport:Z
 
 .field public mProductConfigHLGSupport:Z
@@ -591,6 +613,8 @@
 .field public mProjectAuxSupported:Z
 
 .field public mProjectSlaveSupported:Z
+
+.field public mQcomAirawSN2SRSupport:Z
 
 .field public mQrCodeRecognizeInterval:I
 
@@ -745,6 +769,8 @@
 .field public mSupportAsdUI:Z
 
 .field public mSupportBackgroundShot2shot:Z
+
+.field public mSupportBackgroundShot2shotPMaster:Z
 
 .field public mSupportBackgroundShot2shotSkipPolicy:Z
 
@@ -958,8 +984,6 @@
 
 .field public mZoomAccuracyEnlarged:Z
 
-.field public mZoomEisSupportSuperDefinition:Z
-
 .field public mZoomLimit30xForSuperDefinition:Z
 
 .field public mZoomLimit60xForSuperDefinition:Z
@@ -994,13 +1018,13 @@
 .method private constructor <init>()V
     .registers 2
 
-    .line 687
+    .line 706
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x3
 
-    .line 606
-    iput v0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->SUPPORT_FLASH_SNAP_LITE:I
+    .line 614
+    iput v0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->VALUE_FLASH_SNAP_LITE:I
 
     return-void
 .end method
@@ -1008,18 +1032,18 @@
 .method public static createInstance()V
     .registers 2
 
-    .line 695
+    .line 714
     const-class v0, Lcom/transsion/camera/utils/CustomConfigUtil;
 
     monitor-enter v0
 
-    .line 696
+    .line 715
     :try_start_3
     sget-object v1, Lcom/transsion/camera/utils/CustomConfigUtil;->sCustomConfigUtil:Lcom/transsion/camera/utils/CustomConfigUtil;
 
     if-nez v1, :cond_11
 
-    .line 697
+    .line 716
     new-instance v1, Lcom/transsion/camera/utils/CustomConfigUtil;
 
     invoke-direct {v1}, Lcom/transsion/camera/utils/CustomConfigUtil;-><init>()V
@@ -1033,7 +1057,7 @@
 
     goto :goto_13
 
-    .line 699
+    .line 718
     :cond_11
     :goto_11
     monitor-exit v0
@@ -1051,7 +1075,7 @@
 .method public static getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
     .registers 1
 
-    .line 691
+    .line 710
     sget-object v0, Lcom/transsion/camera/utils/CustomConfigUtil;->sCustomConfigUtil:Lcom/transsion/camera/utils/CustomConfigUtil;
 
     return-object v0
@@ -1062,7 +1086,7 @@
 .method public getAsdConfigFaceAttribute()Z
     .registers 1
 
-    .line 789
+    .line 808
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mAsdConfigFaceAttribute:Z
 
     return p0
@@ -1071,7 +1095,7 @@
 .method public getDefaultShot2ShotPolicyPlatform()I
     .registers 2
 
-    .line 747
+    .line 766
     iget-boolean v0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mDXOTestSupport:Z
 
     if-eqz v0, :cond_c
@@ -1095,7 +1119,7 @@
 .method public getDisplayP3Support()Z
     .registers 1
 
-    .line 727
+    .line 746
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsDisplayP3Support:Z
 
     return p0
@@ -1104,8 +1128,26 @@
 .method public getFaceAttributeSupport()Z
     .registers 1
 
-    .line 785
+    .line 804
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mFaceAttributeSupport:Z
+
+    return p0
+.end method
+
+.method public getFlashSnapLiteV1ShowIconBvThreshold()I
+    .registers 1
+
+    .line 1035
+    iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mFlashSnapLiteV1ShowIconBvThreshold:I
+
+    return p0
+.end method
+
+.method public getFlashSnapLiteV2ShowIconBvThreshold()I
+    .registers 1
+
+    .line 1039
+    iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mFlashSnapLiteV2ShowIconBvThreshold:I
 
     return p0
 .end method
@@ -1113,7 +1155,7 @@
 .method public getGroupCaptureZslDiffMills()I
     .registers 1
 
-    .line 887
+    .line 911
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mGroupCaptureZslDiffMills:I
 
     return p0
@@ -1122,7 +1164,7 @@
 .method public getHdr10PlusSupport()Z
     .registers 1
 
-    .line 739
+    .line 758
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportHdr10Plus:Z
 
     return p0
@@ -1131,7 +1173,7 @@
 .method public getHeadsetCaptureSupport()Z
     .registers 1
 
-    .line 851
+    .line 875
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mHeadsetCaptureSupport:Z
 
     return p0
@@ -1140,7 +1182,7 @@
 .method public getItdV2Support()Z
     .registers 1
 
-    .line 836
+    .line 860
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mItdV2Support:Z
 
     return p0
@@ -1149,7 +1191,7 @@
 .method public getLivePhotoAlgorithmType()I
     .registers 1
 
-    .line 995
+    .line 1022
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mLivePhotoAlgorithmType:I
 
     return p0
@@ -1158,7 +1200,7 @@
 .method public getMakeUpCloseSBState()Z
     .registers 1
 
-    .line 751
+    .line 770
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMakeUpCloseSB:Z
 
     return p0
@@ -1167,7 +1209,7 @@
 .method public getMakeUpReducePreviewSizeHeight()I
     .registers 1
 
-    .line 801
+    .line 820
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMakeUpReducePreviewSizeHeight:I
 
     return p0
@@ -1176,7 +1218,7 @@
 .method public getMakeupSupport()Z
     .registers 1
 
-    .line 731
+    .line 750
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMakeupSupport:Z
 
     return p0
@@ -1185,7 +1227,7 @@
 .method public getMotionCaptureShot2ShotMaxCountForMFNR()I
     .registers 1
 
-    .line 1003
+    .line 1031
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMotionCaptureShot2ShotMaxCountForMFNR:I
 
     return p0
@@ -1194,7 +1236,7 @@
 .method public getMotionCaptureType()I
     .registers 1
 
-    .line 991
+    .line 1018
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMotionCaptureType:I
 
     return p0
@@ -1203,7 +1245,7 @@
 .method public getNonsupportDualColorModes()[Ljava/lang/String;
     .registers 1
 
-    .line 863
+    .line 887
     iget-object p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mNonsupportDualColorModes:[Ljava/lang/String;
 
     return-object p0
@@ -1212,7 +1254,7 @@
 .method public getPMasterSupportSuperNightLiteUI()Z
     .registers 1
 
-    .line 793
+    .line 812
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mPMasterSupportSuperNightLiteUI:Z
 
     return p0
@@ -1221,7 +1263,7 @@
 .method public getPortraitFlareSupport()Z
     .registers 1
 
-    .line 735
+    .line 754
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mPortraitFlareSupport:Z
 
     return p0
@@ -1230,7 +1272,7 @@
 .method public getShot2ShotPolicyPlatform()I
     .registers 1
 
-    .line 743
+    .line 762
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getShot2ShotPolicyPlatform()I
 
     move-result p0
@@ -1241,7 +1283,7 @@
 .method public getStereoAodDefaultValue()Ljava/lang/String;
     .registers 1
 
-    .line 776
+    .line 795
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mStereoAodDefaultOpen:Z
 
     if-eqz p0, :cond_7
@@ -1259,7 +1301,7 @@
 .method public getStereoDefaultOpen()Z
     .registers 1
 
-    .line 767
+    .line 786
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mStereoDefaultOpen:Z
 
     return p0
@@ -1268,7 +1310,7 @@
 .method public getStereoDefaultValue()Ljava/lang/String;
     .registers 1
 
-    .line 771
+    .line 790
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mStereoDefaultOpen:Z
 
     if-eqz p0, :cond_7
@@ -1286,7 +1328,7 @@
 .method public getSuperNightLiteNotSupportFor6G()Z
     .registers 1
 
-    .line 715
+    .line 734
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSuperNightLiteNotSupportFor6G:Z
 
     return p0
@@ -1295,7 +1337,7 @@
 .method public getTeleCamDefaultOpen()Z
     .registers 1
 
-    .line 759
+    .line 778
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mTeleDefaultOpen:Z
 
     return p0
@@ -1304,7 +1346,7 @@
 .method public getUseHapticVibrator()Z
     .registers 1
 
-    .line 855
+    .line 879
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mUseHapticVibrator:Z
 
     return p0
@@ -1313,24 +1355,24 @@
 .method public getWMOptionalResNames(Ljava/lang/String;)Ljava/util/List;
     .registers 9
 
-    .line 930
+    .line 954
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 931
+    .line 955
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 935
+    .line 959
     iget-boolean v1, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mWMResBindWithSysProp:Z
 
     const-string v2, ""
 
     const-string v3, "_"
 
-    if-eqz v1, :cond_47
+    if-eqz v1, :cond_51
 
-    .line 936
+    .line 960
     iget-object v1, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mWmResBingWithSysPropName:Ljava/lang/String;
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -1339,37 +1381,50 @@
 
     sget-object v4, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
+    .line 961
     invoke-virtual {v1, v4}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 937
+    .line 962
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v4, " "
+
+    .line 963
+    invoke-virtual {v1, v4, v3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 964
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
-    if-nez v4, :cond_47
+    if-nez v4, :cond_51
 
-    .line 938
+    .line 965
     iget-object v4, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mWatermarkCustomizePropValuesMap:Ljava/util/Map;
 
-    if-eqz v4, :cond_47
+    if-eqz v4, :cond_51
 
-    .line 939
+    .line 966
     invoke-interface {v4, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    .line 940
+    .line 967
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
-    if-nez v4, :cond_47
+    if-nez v4, :cond_51
 
-    .line 941
+    .line 968
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1384,16 +1439,16 @@
 
     move-result-object p1
 
-    .line 942
+    .line 969
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 947
-    :cond_47
+    .line 974
+    :cond_51
     iget-boolean v1, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mCustomizeByMarketPropName:Z
 
-    if-eqz v1, :cond_8c
+    if-eqz v1, :cond_96
 
-    .line 948
+    .line 975
     iget-object v1, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMarketPropName:Ljava/lang/String;
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -1406,45 +1461,45 @@
 
     move-result-object v1
 
-    .line 949
+    .line 976
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
-    if-nez v4, :cond_a9
+    if-nez v4, :cond_b3
 
-    .line 950
+    .line 977
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
 
     const/16 v4, 0x2d
 
-    .line 951
+    .line 978
     invoke-virtual {v1, v4}, Ljava/lang/String;->indexOf(I)I
 
     move-result v5
 
     const/4 v6, -0x1
 
-    if-eq v5, v6, :cond_70
+    if-eq v5, v6, :cond_7a
 
     add-int/lit8 v5, v5, 0x1
 
-    .line 953
+    .line 980
     invoke-virtual {v1, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v1
 
-    :cond_70
+    :cond_7a
     const/16 v5, 0x5f
 
-    .line 955
+    .line 982
     invoke-virtual {v1, v4, v5}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 956
+    .line 983
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1459,23 +1514,23 @@
 
     move-result-object p1
 
-    .line 957
+    .line 984
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_a9
+    goto :goto_b3
 
-    .line 959
-    :cond_8c
+    .line 986
+    :cond_96
     iget-boolean v1, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mCustomizeByMarket:Z
 
-    if-eqz v1, :cond_a9
+    if-eqz v1, :cond_b3
 
-    .line 960
+    .line 987
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getMarket()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 961
+    .line 988
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1490,17 +1545,17 @@
 
     move-result-object p1
 
-    .line 962
+    .line 989
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 965
-    :cond_a9
-    :goto_a9
+    .line 992
+    :cond_b3
+    :goto_b3
     iget-boolean v1, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mCustomizeByRegion:Z
 
-    if-eqz v1, :cond_e5
+    if-eqz v1, :cond_ef
 
-    .line 966
+    .line 993
     iget-object v1, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mPersistOobeName:Ljava/lang/String;
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -1513,33 +1568,33 @@
 
     move-result-object v1
 
-    .line 967
+    .line 994
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-nez v2, :cond_10a
+    if-nez v2, :cond_114
 
-    .line 968
+    .line 995
     iget-object v2, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mWatermarkCustomizeRegionsMap:Ljava/util/Map;
 
-    if-eqz v2, :cond_10a
+    if-eqz v2, :cond_114
 
-    .line 969
+    .line 996
     invoke-interface {v2, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    .line 970
+    .line 997
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-nez v2, :cond_10a
+    if-nez v2, :cond_114
 
-    .line 971
+    .line 998
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1554,18 +1609,18 @@
 
     move-result-object p1
 
-    .line 972
+    .line 999
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_10a
+    goto :goto_114
 
-    .line 976
-    :cond_e5
+    .line 1003
+    :cond_ef
     iget-boolean v1, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mCustomizeByCountry:Z
 
-    if-eqz v1, :cond_10a
+    if-eqz v1, :cond_114
 
-    .line 977
+    .line 1004
     iget-object v1, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mPersistOobeName:Ljava/lang/String;
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -1578,7 +1633,7 @@
 
     move-result-object v1
 
-    .line 978
+    .line 1005
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1593,22 +1648,22 @@
 
     move-result-object p1
 
-    .line 979
+    .line 1006
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 982
-    :cond_10a
-    :goto_10a
+    .line 1009
+    :cond_114
+    :goto_114
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mCustomizeByMemory:Z
 
-    if-eqz p0, :cond_127
+    if-eqz p0, :cond_131
 
-    .line 983
+    .line 1010
     invoke-static {}, Lcom/transsion/camera/utils/MemoryUtils;->getMemoryString()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 984
+    .line 1011
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1623,45 +1678,41 @@
 
     move-result-object p0
 
-    .line 985
+    .line 1012
     invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_127
+    :cond_131
     return-object v0
 .end method
 
 .method public getWatermarkCustomizedResId(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)I
-    .registers 9
+    .registers 7
 
-    if-eqz p1, :cond_59
+    if-eqz p1, :cond_42
 
-    .line 895
+    .line 927
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result p0
 
     if-eqz p0, :cond_9
 
-    goto :goto_59
+    goto :goto_42
 
     :cond_9
     const/4 p0, 0x0
 
     move v0, p0
 
-    .line 900
+    .line 932
     :goto_b
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    const-string v2, "raw"
-
-    const-string v3, "drawable"
-
     if-ge p0, v1, :cond_3a
 
-    .line 901
+    .line 933
     invoke-interface {p1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1674,25 +1725,29 @@
 
     if-eqz v1, :cond_37
 
-    const/4 v4, -0x1
+    const/4 v2, -0x1
 
-    if-eq v1, v4, :cond_37
+    if-eq v1, v2, :cond_37
 
-    .line 903
-    invoke-static {p3, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    .line 935
+    const-string v2, "drawable"
 
-    move-result v3
+    invoke-static {p3, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    if-nez v3, :cond_30
+    move-result v2
 
-    .line 904
+    if-nez v2, :cond_30
+
+    const-string v2, "raw"
+
+    .line 936
     invoke-static {p3, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_36
 
-    .line 905
+    .line 937
     :cond_30
     invoke-static {v1}, Lcom/transsion/camera/utils/CameraUtil;->canDecodeDrawableRes(I)Z
 
@@ -1711,49 +1766,19 @@
     :cond_3a
     if-nez v0, :cond_41
 
-    .line 915
+    .line 947
     invoke-static {p2, p3}, Lcom/transsion/camera/utils/CameraUtil;->getIdByResName(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result p0
 
     return p0
 
-    .line 918
     :cond_41
-    invoke-static {p3, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_4d
-
-    .line 919
-    invoke-static {p3, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_58
-
-    .line 921
-    :cond_4d
-    invoke-static {v0}, Lcom/transsion/camera/utils/CameraUtil;->canDecodeDrawableRes(I)Z
-
-    move-result p0
-
-    if-nez p0, :cond_58
-
-    .line 922
-    invoke-static {p2, p3}, Lcom/transsion/camera/utils/CameraUtil;->getIdByResName(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result p0
-
-    return p0
-
-    :cond_58
     return v0
 
-    .line 896
-    :cond_59
-    :goto_59
+    .line 928
+    :cond_42
+    :goto_42
     invoke-static {p2, p3}, Lcom/transsion/camera/utils/CameraUtil;->getIdByResName(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result p0
@@ -1764,7 +1789,7 @@
 .method public isAIFrameSupport()Z
     .registers 1
 
-    .line 1036
+    .line 1080
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsAIFrameSupport:Z
 
     return p0
@@ -1773,7 +1798,7 @@
 .method public isAIMakeupSupport()Z
     .registers 1
 
-    .line 809
+    .line 828
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMakeUpDefaultAI:Z
 
     return p0
@@ -1782,8 +1807,38 @@
 .method public isAIZoomSRSupport()Z
     .registers 1
 
-    .line 1040
+    .line 1084
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsAIZoomSRSupport:Z
+
+    return p0
+.end method
+
+.method public isCaptureVipThreadSupport()Z
+    .registers 4
+
+    .line 855
+    sget-object v0, Lcom/transsion/camera/utils/CustomConfigUtil;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "isCaptureVipThreadSupport : "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mCaptureVipThreadSupport:Z
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 856
+    iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mCaptureVipThreadSupport:Z
 
     return p0
 .end method
@@ -1791,8 +1846,17 @@
 .method public isCloseAllForMonkey()Z
     .registers 1
 
-    .line 867
+    .line 891
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mCloseAllForMonkeyTest:Z
+
+    return p0
+.end method
+
+.method public isCloseRingVibration()Z
+    .registers 1
+
+    .line 923
+    iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mCloseRingVibration:Z
 
     return p0
 .end method
@@ -1800,7 +1864,7 @@
 .method public isDualVideoSupportFrontAndWide()Z
     .registers 1
 
-    .line 707
+    .line 726
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mDualVideoSupportFrontAndWide:Z
 
     return p0
@@ -1809,8 +1873,28 @@
 .method public isFlareCaptureSupport()Z
     .registers 1
 
-    .line 871
+    .line 895
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsFlareCaptureSupport:Z
+
+    return p0
+.end method
+
+.method public isFlashSnapLiteV1()Z
+    .registers 2
+
+    .line 1052
+    iget v0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMotionCaptureType:I
+
+    iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->VALUE_FLASH_SNAP_LITE:I
+
+    if-ne v0, p0, :cond_8
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_8
+    const/4 p0, 0x0
 
     return p0
 .end method
@@ -1818,7 +1902,7 @@
 .method public isFlashSnapV2_24M()Z
     .registers 2
 
-    .line 1016
+    .line 1060
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMotionCaptureType:I
 
     const/4 v0, 0x5
@@ -1838,7 +1922,7 @@
 .method public isFlashSnapV2_G200()Z
     .registers 2
 
-    .line 1012
+    .line 1056
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMotionCaptureType:I
 
     const/4 v0, 0x4
@@ -1858,7 +1942,7 @@
 .method public isForceHideDeviceInfo()Z
     .registers 1
 
-    .line 703
+    .line 722
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mForceHideDeviceInfo:Z
 
     return p0
@@ -1867,7 +1951,7 @@
 .method public isGroupCaptureEnableZSL()Z
     .registers 1
 
-    .line 883
+    .line 907
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsGroupCaptureEnableZSL:Z
 
     return p0
@@ -1876,7 +1960,7 @@
 .method public isGroupCaptureSupport()Z
     .registers 1
 
-    .line 875
+    .line 899
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsGroupCaptureSupport:Z
 
     return p0
@@ -1885,8 +1969,17 @@
 .method public isGroupCaptureZoomLimited()Z
     .registers 1
 
-    .line 891
+    .line 915
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsGroupCaptureZoomLimited:Z
+
+    return p0
+.end method
+
+.method public isLensCorrectionLimitedByMemory()Z
+    .registers 1
+
+    .line 919
+    iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsLensCorrectionLimitedByMemory:Z
 
     return p0
 .end method
@@ -1894,7 +1987,7 @@
 .method public isLongFocusDefaultForMacro()Z
     .registers 1
 
-    .line 763
+    .line 782
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mLongFocusDefaultForMacro:Z
 
     return p0
@@ -1903,7 +1996,7 @@
 .method public isQcomCaptureFlow()Z
     .registers 1
 
-    .line 813
+    .line 832
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsQcomCaptureFlow:Z
 
     return p0
@@ -1912,8 +2005,30 @@
 .method public isShoulderKeySupport()Z
     .registers 1
 
-    .line 859
+    .line 883
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mShoulderKeySupport:Z
+
+    return p0
+.end method
+
+.method public isSupportFlashLiteV2()Z
+    .registers 2
+
+    .line 1048
+    invoke-virtual {p0}, Lcom/transsion/camera/utils/CustomConfigUtil;->getMotionCaptureType()I
+
+    move-result p0
+
+    const/4 v0, 0x6
+
+    if-ne p0, v0, :cond_9
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_9
+    const/4 p0, 0x0
 
     return p0
 .end method
@@ -1921,7 +2036,7 @@
 .method public isSupportFlashSnapProV1()Z
     .registers 2
 
-    .line 1032
+    .line 1076
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMotionCaptureType:I
 
     const/4 v0, 0x2
@@ -1941,7 +2056,7 @@
 .method public isSupportFlashSnapV1_G100()Z
     .registers 3
 
-    .line 1024
+    .line 1068
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMotionCaptureType:I
 
     const/4 v0, 0x1
@@ -1965,7 +2080,7 @@
 .method public isSupportFlashSnapV2()Z
     .registers 2
 
-    .line 1020
+    .line 1064
     invoke-virtual {p0}, Lcom/transsion/camera/utils/CustomConfigUtil;->isFlashSnapV2_G200()Z
 
     move-result v0
@@ -1995,7 +2110,7 @@
 .method public isSupportFlashSnapV2_G100_ForOSUpToW()Z
     .registers 3
 
-    .line 1028
+    .line 1072
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMotionCaptureType:I
 
     const/4 v0, 0x1
@@ -2019,7 +2134,7 @@
 .method public isSupportMagicSkyMultiFrame()Z
     .registers 1
 
-    .line 719
+    .line 738
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportMagicSkyMultiFrame:Z
 
     return p0
@@ -2028,7 +2143,7 @@
 .method public isThumbnailPostView()Z
     .registers 1
 
-    .line 825
+    .line 844
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsThumbnailPostView:Z
 
     return p0
@@ -2037,7 +2152,7 @@
 .method public isThumbnailTransitionSupport()Z
     .registers 1
 
-    .line 832
+    .line 851
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mThumbnailTransitionSupport:Z
 
     return p0
@@ -2046,7 +2161,7 @@
 .method public isVideoAutoFpsSupportFront()Z
     .registers 1
 
-    .line 1048
+    .line 1092
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mVideoAutoFpsSupportType:I
 
     if-nez p0, :cond_6
@@ -2064,7 +2179,7 @@
 .method public isVideoAutoFpsSupportOnlyBackMain()Z
     .registers 2
 
-    .line 1044
+    .line 1088
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mVideoAutoFpsSupportType:I
 
     const/4 v0, 0x2
@@ -2084,7 +2199,7 @@
 .method public makeupDefaultClose()Z
     .registers 1
 
-    .line 805
+    .line 824
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mMakeUpDefaultClose:Z
 
     return p0
@@ -2093,7 +2208,7 @@
 .method public needWaitingGroupCapturePreJpeg()Z
     .registers 1
 
-    .line 879
+    .line 903
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mGroupCaptureWaitingPreJpeg:Z
 
     return p0
@@ -2102,7 +2217,7 @@
 .method public reConfigOobeCountryCode()V
     .registers 4
 
-    .line 1007
+    .line 1043
     iget-object v0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mPersistOobeName:Ljava/lang/String;
 
     const-string v1, ""
@@ -2113,7 +2228,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mOobeCountryCode:Ljava/lang/String;
 
-    .line 1008
+    .line 1044
     sget-object v0, Lcom/transsion/camera/utils/CustomConfigUtil;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2140,7 +2255,7 @@
 .method public simpleThumbnailStrategy()Z
     .registers 1
 
-    .line 828
+    .line 847
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSimpleThumbnailStrategy:Z
 
     return p0
@@ -2149,7 +2264,7 @@
 .method public superNightStableDefaultOpen()Z
     .registers 1
 
-    .line 847
+    .line 871
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSuperNightStableDefaultOpen:Z
 
     return p0
@@ -2158,7 +2273,7 @@
 .method public superNightSupportAsd()Z
     .registers 2
 
-    .line 840
+    .line 864
     iget-boolean v0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mTurboFusionEnable:Z
 
     if-nez v0, :cond_c
@@ -2169,7 +2284,7 @@
 
     goto :goto_c
 
-    .line 843
+    .line 867
     :cond_9
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSuperNightAsdSupport:Z
 
@@ -2183,23 +2298,36 @@
 .end method
 
 .method public supportMotionCaptureInAICAM()Z
-    .registers 2
+    .registers 3
 
-    .line 999
+    .line 1026
     invoke-virtual {p0}, Lcom/transsion/camera/utils/CustomConfigUtil;->getMotionCaptureType()I
 
     move-result v0
 
-    iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->SUPPORT_FLASH_SNAP_LITE:I
+    iget v1, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->VALUE_FLASH_SNAP_LITE:I
 
-    if-ne v0, p0, :cond_a
+    if-eq v0, v1, :cond_12
 
-    const/4 p0, 0x1
+    .line 1027
+    invoke-virtual {p0}, Lcom/transsion/camera/utils/CustomConfigUtil;->getMotionCaptureType()I
+
+    move-result p0
+
+    const/4 v0, 0x6
+
+    if-ne p0, v0, :cond_10
+
+    goto :goto_12
+
+    :cond_10
+    const/4 p0, 0x0
 
     return p0
 
-    :cond_a
-    const/4 p0, 0x0
+    :cond_12
+    :goto_12
+    const/4 p0, 0x1
 
     return p0
 .end method
@@ -2207,7 +2335,7 @@
 .method public videoFaceBeautyMakeupCombineUI()Z
     .registers 1
 
-    .line 821
+    .line 840
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mVideoFaceBeautyMakeupCombineUI:Z
 
     return p0
@@ -2216,7 +2344,7 @@
 .method public videoMakeUpExcludeFaceBeauty()Z
     .registers 1
 
-    .line 817
+    .line 836
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mVideoMakeUpExcludeFaceBeauty:Z
 
     return p0

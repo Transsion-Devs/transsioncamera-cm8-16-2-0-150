@@ -127,7 +127,7 @@
 
     move-result-object v1
 
-    .line 1569
+    .line 373
     check-cast v1, Ljava/security/cert/Certificate;
 
     if-eqz v1, :cond_3a

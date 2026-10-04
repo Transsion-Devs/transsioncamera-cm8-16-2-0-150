@@ -28,7 +28,7 @@
 .method private static synthetic $values()[Lcom/transsion/camera/app/common/IAppUI$AnimationType;
     .registers 3
 
-    .line 304
+    .line 301
     sget-object v0, Lcom/transsion/camera/app/common/IAppUI$AnimationType;->ENTER_DV:Lcom/transsion/camera/app/common/IAppUI$AnimationType;
 
     sget-object v1, Lcom/transsion/camera/app/common/IAppUI$AnimationType;->EXIT_DV:Lcom/transsion/camera/app/common/IAppUI$AnimationType;
@@ -45,7 +45,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 305
+    .line 302
     new-instance v0, Lcom/transsion/camera/app/common/IAppUI$AnimationType;
 
     const-string v1, "ENTER_DV"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/IAppUI$AnimationType;->NORMAL:Lcom/transsion/camera/app/common/IAppUI$AnimationType;
 
-    .line 304
+    .line 301
     invoke-static {}, Lcom/transsion/camera/app/common/IAppUI$AnimationType;->$values()[Lcom/transsion/camera/app/common/IAppUI$AnimationType;
 
     move-result-object v0
@@ -89,7 +89,7 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
 
-    .line 304
+    .line 301
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -98,7 +98,7 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/transsion/camera/app/common/IAppUI$AnimationType;
     .registers 2
 
-    .line 304
+    .line 301
     const-class v0, Lcom/transsion/camera/app/common/IAppUI$AnimationType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -113,7 +113,7 @@
 .method public static values()[Lcom/transsion/camera/app/common/IAppUI$AnimationType;
     .registers 1
 
-    .line 304
+    .line 301
     sget-object v0, Lcom/transsion/camera/app/common/IAppUI$AnimationType;->$VALUES:[Lcom/transsion/camera/app/common/IAppUI$AnimationType;
 
     invoke-virtual {v0}, [Lcom/transsion/camera/app/common/IAppUI$AnimationType;->clone()Ljava/lang/Object;

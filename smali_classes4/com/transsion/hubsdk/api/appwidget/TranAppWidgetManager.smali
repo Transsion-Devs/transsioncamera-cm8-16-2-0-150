@@ -109,3 +109,33 @@
     :cond_2b
     return-object p1
 .end method
+
+.method public registerAppWidgetListener(Lcom/transsion/hubsdk/api/app/ITranAppWidget;I)V
+    .registers 4
+
+    .line 71
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/appwidget/TranAppWidgetManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/appwidget/ITranAppWidgetManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/appwidget/ITranAppWidgetManagerAdapter;->registerAppWidgetListener(Lcom/transsion/hubsdk/api/app/ITranAppWidget;I)V
+
+    return-void
+.end method
+
+.method public unregisterAppWidgetListener(Lcom/transsion/hubsdk/api/app/ITranAppWidget;I)V
+    .registers 4
+
+    .line 75
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33451:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/appwidget/TranAppWidgetManager;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/appwidget/ITranAppWidgetManagerAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/interfaces/appwidget/ITranAppWidgetManagerAdapter;->unregisterAppWidgetListener(Lcom/transsion/hubsdk/api/app/ITranAppWidget;I)V
+
+    return-void
+.end method

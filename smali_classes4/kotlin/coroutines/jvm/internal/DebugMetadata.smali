@@ -15,8 +15,9 @@
         l = {}
         m = ""
         n = {}
+        nl = {}
         s = {}
-        v = 0x1
+        v = 0x2
     .end subannotation
 .end annotation
 

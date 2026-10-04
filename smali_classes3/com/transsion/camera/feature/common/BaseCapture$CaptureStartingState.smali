@@ -33,17 +33,17 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
     .registers 4
 
-    .line 530
+    .line 528
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
-    .line 531
+    .line 529
     const-string v0, "StartingCaptureState"
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;-><init>(Lcom/transsion/camera/feature/common/BaseCapture;Ljava/lang/String;Lcom/transsion/camera/feature/common/BaseCapture-IA;)V
 
-    .line 532
+    .line 530
     new-instance p1, Landroid/os/Handler;
 
     invoke-direct {p1}, Landroid/os/Handler;-><init>()V
@@ -56,14 +56,14 @@
 .method private cancelCapture()V
     .registers 3
 
-    .line 581
+    .line 579
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$mlock3A(Lcom/transsion/camera/feature/common/BaseCapture;Z)V
 
-    .line 582
+    .line 580
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmDataStream(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/IDataStream;
@@ -72,10 +72,10 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/feature/common/IDataStream;->updateState(Z)V
 
-    .line 583
+    .line 581
     invoke-direct {p0}, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->triggerCaptureCanceled()V
 
-    .line 584
+    .line 582
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCaptureEnableState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
@@ -90,7 +90,7 @@
 .method private triggerCaptureCanceled()V
     .registers 3
 
-    .line 588
+    .line 586
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -99,14 +99,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 589
+    .line 587
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture;->mStatusListener:Lcom/transsion/camera/feature/common/ICapture$IStatusListener;
 
     if-eqz p0, :cond_12
 
-    .line 590
+    .line 588
     invoke-interface {p0}, Lcom/transsion/camera/feature/common/ICapture$IStatusListener;->onCaptureFailed()V
 
     :cond_12
@@ -118,10 +118,10 @@
 .method protected destroyStream()V
     .registers 1
 
-    .line 576
+    .line 574
     invoke-direct {p0}, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->cancelCapture()V
 
-    .line 577
+    .line 575
     invoke-super {p0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->destroyStream()V
 
     return-void
@@ -130,7 +130,7 @@
 .method protected onAeLocked()V
     .registers 3
 
-    .line 551
+    .line 549
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -139,7 +139,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 552
+    .line 550
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCapturingState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
@@ -154,19 +154,19 @@
 .method protected onEntry()V
     .registers 4
 
-    .line 537
+    .line 535
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$mlock3A(Lcom/transsion/camera/feature/common/BaseCapture;Z)V
 
-    .line 538
+    .line 536
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/common/BaseCapture;->doPreCapture()V
 
-    .line 539
+    .line 537
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmDataStream(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/IDataStream;
@@ -175,14 +175,14 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/feature/common/IDataStream;->updateState(Z)V
 
-    .line 540
+    .line 538
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->mStartLockTime:J
 
-    .line 541
+    .line 539
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x12c
@@ -195,7 +195,7 @@
 .method protected onLeave()V
     .registers 2
 
-    .line 546
+    .line 544
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
@@ -206,7 +206,7 @@
 .method public run()V
     .registers 7
 
-    .line 557
+    .line 555
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -215,12 +215,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 558
+    .line 556
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 559
+    .line 557
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v2
@@ -245,7 +245,7 @@
 
     invoke-static {v2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 560
+    .line 558
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCapturingState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;
@@ -260,7 +260,7 @@
 .method protected shutterClick()V
     .registers 1
 
-    .line 565
+    .line 563
     invoke-direct {p0}, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->cancelCapture()V
 
     return-void
@@ -269,7 +269,7 @@
 .method protected stopCapture()Z
     .registers 1
 
-    .line 570
+    .line 568
     invoke-direct {p0}, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStartingState;->cancelCapture()V
 
     const/4 p0, 0x1

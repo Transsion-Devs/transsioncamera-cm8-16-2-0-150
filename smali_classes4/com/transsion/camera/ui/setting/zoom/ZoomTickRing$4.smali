@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;)V
     .registers 2
 
-    .line 1462
+    .line 1499
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$4;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 1465
+    .line 1502
     invoke-static {}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -44,7 +44,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1466
+    .line 1503
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$4;->onAnimationEnd(Landroid/animation/Animator;)V
 
     return-void
@@ -53,7 +53,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 1471
+    .line 1508
     invoke-static {}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -62,17 +62,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1472
+    .line 1509
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1473
+    .line 1510
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$4;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;
 
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1474
+    .line 1511
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$4;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;
 
     const/4 p1, 0x0

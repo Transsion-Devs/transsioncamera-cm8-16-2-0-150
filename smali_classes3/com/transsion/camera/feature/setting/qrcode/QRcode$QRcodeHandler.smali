@@ -30,10 +30,10 @@
 .method private constructor <init>(Landroid/os/Looper;Lcom/transsion/camera/feature/setting/qrcode/QRcode;)V
     .registers 3
 
-    .line 370
+    .line 371
     invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 371
+    .line 372
     new-instance p1, Ljava/lang/ref/WeakReference;
 
     invoke-direct {p1, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -57,7 +57,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 5
 
-    .line 376
+    .line 377
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/qrcode/QRcode$QRcodeHandler;->mQRcode:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -70,11 +70,11 @@
 
     goto :goto_49
 
-    .line 380
+    .line 381
     :cond_b
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 381
+    .line 382
     iget p0, p1, Landroid/os/Message;->what:I
 
     const/16 v1, 0x64
@@ -146,7 +146,7 @@
     :goto_49
     return-void
 
-    .line 383
+    .line 384
     :cond_4a
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->isSupportCamera()Z
 
@@ -154,7 +154,7 @@
 
     if-nez p0, :cond_5a
 
-    .line 384
+    .line 385
     invoke-static {}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -165,7 +165,7 @@
 
     return-void
 
-    .line 387
+    .line 388
     :cond_5a
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$fgetmRecognizeAlgorithm(Lcom/transsion/camera/feature/setting/qrcode/QRcode;)Lcom/transsion/camera/feature/setting/qrcode/algorithm/IQRcodeRecognizeAlgorithmImpl;
 
@@ -173,7 +173,7 @@
 
     if-nez p0, :cond_6a
 
-    .line 388
+    .line 389
     invoke-static {}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -184,7 +184,7 @@
 
     return-void
 
-    .line 391
+    .line 392
     :cond_6a
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$fgetmInit(Lcom/transsion/camera/feature/setting/qrcode/QRcode;)Z
 
@@ -192,7 +192,7 @@
 
     if-eqz p0, :cond_7a
 
-    .line 392
+    .line 393
     invoke-static {}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -203,44 +203,9 @@
 
     return-void
 
-    .line 395
-    :cond_7a
-    invoke-static {v0}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$fgetmRecognizeAlgorithm(Lcom/transsion/camera/feature/setting/qrcode/QRcode;)Lcom/transsion/camera/feature/setting/qrcode/algorithm/IQRcodeRecognizeAlgorithmImpl;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/qrcode/algorithm/IQRcodeRecognizeAlgorithmImpl;->initAlgorithm()Z
-
-    move-result p0
-
-    invoke-static {v0, p0}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$fputmInit(Lcom/transsion/camera/feature/setting/qrcode/QRcode;Z)V
-
-    invoke-static {v0, p0}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$fputmAllowRecognizeQrcode(Lcom/transsion/camera/feature/setting/qrcode/QRcode;Z)V
-
     .line 396
-    invoke-static {}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Init RecognizeAlgorithm result: "
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v0}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$fgetmInit(Lcom/transsion/camera/feature/setting/qrcode/QRcode;)Z
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    :cond_7a
+    invoke-static {v0}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$minitAlgorithmWithTimeout(Lcom/transsion/camera/feature/setting/qrcode/QRcode;)V
 
     return-void
 .end method

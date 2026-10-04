@@ -30,10 +30,10 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)V
     .registers 3
 
-    .line 700
+    .line 723
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 701
+    .line 724
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -57,7 +57,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 706
+    .line 729
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$UIHandler;->mUIReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -68,7 +68,7 @@
 
     if-nez p0, :cond_25
 
-    .line 708
+    .line 731
     invoke-static {}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -93,7 +93,7 @@
 
     return-void
 
-    .line 711
+    .line 734
     :cond_25
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -101,20 +101,20 @@
 
     goto :goto_3d
 
-    .line 719
+    .line 742
     :pswitch_2b
     const-string p1, "key_portrait_flare"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->closeBlurByConflict(Ljava/lang/String;)V
 
-    .line 720
+    .line 743
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmHideBottomPanelListener(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/IFeature$IBottomPanelHideListener;
 
     move-result-object p1
 
     if-eqz p1, :cond_3d
 
-    .line 721
+    .line 744
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmHideBottomPanelListener(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/IFeature$IBottomPanelHideListener;
 
     move-result-object p0
@@ -125,7 +125,7 @@
     :goto_3d
     return-void
 
-    .line 716
+    .line 739
     :pswitch_3e
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -135,7 +135,7 @@
 
     return-void
 
-    .line 713
+    .line 736
     :pswitch_46
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 

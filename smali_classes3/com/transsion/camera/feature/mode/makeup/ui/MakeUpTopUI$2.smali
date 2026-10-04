@@ -24,7 +24,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;Landroid/view/View;)V
     .registers 3
 
-    .line 242
+    .line 246
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$2;->val$view:Landroid/view/View;
@@ -39,14 +39,14 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 251
+    .line 255
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$2;->val$view:Landroid/view/View;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 252
+    .line 256
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->-$$Nest$monSeekBarVisible(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;)V
@@ -57,14 +57,14 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 245
+    .line 249
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$2;->val$view:Landroid/view/View;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 246
+    .line 250
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->-$$Nest$monSeekBarVisible(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;)V

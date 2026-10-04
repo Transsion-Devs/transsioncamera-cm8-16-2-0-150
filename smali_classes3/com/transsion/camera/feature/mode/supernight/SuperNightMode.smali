@@ -625,7 +625,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 741
+    .line 743
     new-instance v0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$$ExternalSyntheticLambda3;-><init>(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)V
@@ -1096,7 +1096,7 @@
 
     if-eq p1, v0, :cond_c
 
-    .line 871
+    .line 873
     :try_start_7
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mNoAlgoCaptureFlow:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;
 
@@ -1107,17 +1107,17 @@
 
     goto :goto_53
 
-    .line 867
+    .line 869
     :cond_c
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mStableNightCaptureFlow:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;
 
     goto :goto_11
 
-    .line 864
+    .line 866
     :cond_f
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mNightCaptureFlow:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;
 
-    .line 874
+    .line 876
     :goto_11
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->supportPostAlgo()Z
 
@@ -1125,27 +1125,27 @@
 
     iput-boolean v0, p1, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->mIsPostAlgoOn:Z
 
-    .line 875
+    .line 877
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSuperAiRawSupport:Z
 
     iput-boolean v0, p1, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->mIsSuperAiRawOn:Z
 
-    .line 876
+    .line 878
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mTurboFusionSupport:Z
 
     iput-boolean v0, p1, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->mIsTurboFusionOn:Z
 
-    .line 877
+    .line 879
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mAiRawSprdSupport:Z
 
     iput-boolean v0, p1, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->mIsAiRawSprdOn:Z
 
-    .line 879
+    .line 881
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCaptureFlow:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;
 
     if-eq v0, p1, :cond_51
 
-    .line 880
+    .line 882
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1172,20 +1172,20 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 881
+    .line 883
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCaptureFlow:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->onExit()V
 
-    .line 882
+    .line 884
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCaptureFlow:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;
 
-    .line 883
+    .line 885
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->onEnter()V
     :try_end_51
     .catchall {:try_start_7 .. :try_end_51} :catchall_a
 
-    .line 885
+    .line 887
     :cond_51
     monitor-exit p0
 
@@ -1203,18 +1203,18 @@
 .method private doOnFrameResultCallback(Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
     .registers 8
 
-    .line 744
+    .line 746
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCurrentResult:Landroid/hardware/camera2/CaptureResult;
 
-    .line 745
+    .line 747
     iput-object p3, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const/4 p2, 0x0
 
-    .line 746
+    .line 748
     iput p2, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCurrentShutterValue:I
 
-    .line 748
+    .line 750
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mPostAlgoOn:Z
 
     if-nez v0, :cond_6a
@@ -1225,7 +1225,7 @@
 
     goto :goto_6a
 
-    .line 755
+    .line 757
     :cond_10
     invoke-direct {p0, p1, p3}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->isStableNight(Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)Z
 
@@ -1233,24 +1233,24 @@
 
     if-eqz v0, :cond_3e
 
-    .line 756
+    .line 758
     invoke-interface {p3, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->checkTripodSuperNightCountdown(Landroid/hardware/camera2/CaptureResult;)[I
 
     move-result-object v0
 
     if-eqz v0, :cond_23
 
-    .line 757
+    .line 759
     array-length v1, v0
 
     if-lez v1, :cond_23
 
-    .line 758
+    .line 760
     aget v1, v0, p2
 
     iput v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCurrentShutterValue:I
 
-    .line 760
+    .line 762
     :cond_23
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1276,30 +1276,30 @@
 
     goto :goto_84
 
-    .line 761
+    .line 763
     :cond_3e
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSuperNightSupportCountDown:Z
 
     if-eqz v0, :cond_84
 
-    .line 762
+    .line 764
     invoke-interface {p3, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->checkSuperNightLiteResult(Landroid/hardware/camera2/CaptureResult;)[I
 
     move-result-object v0
 
     if-eqz v0, :cond_4f
 
-    .line 763
+    .line 765
     array-length v1, v0
 
     if-lez v1, :cond_4f
 
-    .line 764
+    .line 766
     aget v1, v0, p2
 
     iput v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCurrentShutterValue:I
 
-    .line 766
+    .line 768
     :cond_4f
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1325,7 +1325,7 @@
 
     goto :goto_84
 
-    .line 749
+    .line 751
     :cond_6a
     :goto_6a
     invoke-interface {p3, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->checkAeeExpoInfoResult(Landroid/hardware/camera2/CaptureResult;)[I
@@ -1334,20 +1334,20 @@
 
     if-eqz v0, :cond_84
 
-    .line 750
+    .line 752
     array-length v1, v0
 
     if-lez v1, :cond_84
 
     move v1, p2
 
-    .line 751
+    .line 753
     :goto_74
     aget v2, v0, p2
 
     if-ge v1, v2, :cond_84
 
-    .line 752
+    .line 754
     iget v2, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCurrentShutterValue:I
 
     add-int/lit8 v1, v1, 0x1
@@ -1362,7 +1362,7 @@
 
     goto :goto_74
 
-    .line 770
+    .line 772
     :cond_84
     :goto_84
     invoke-interface {p3, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->checkSuperNightLiteResult(Landroid/hardware/camera2/CaptureResult;)[I
@@ -1371,7 +1371,7 @@
 
     if-nez v0, :cond_97
 
-    .line 771
+    .line 773
     invoke-interface {p3}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isSupportedAiRawLite()Z
 
     move-result v0
@@ -1382,18 +1382,18 @@
 
     if-nez v0, :cond_97
 
-    .line 773
+    .line 775
     iput-boolean p2, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSuperNightSupportCountDown:Z
 
     goto :goto_9b
 
-    .line 775
+    .line 777
     :cond_97
     iget-boolean p2, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSuperNightCountDownConfigSupport:Z
 
     iput-boolean p2, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSuperNightSupportCountDown:Z
 
-    .line 778
+    .line 780
     :goto_9b
     invoke-direct {p0, p1, p3}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->isNeedSuperNightAlgo(Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)Z
 
@@ -1401,20 +1401,20 @@
 
     if-eqz p1, :cond_a7
 
-    .line 780
+    .line 782
     const-string p2, "on"
 
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->setSuperNightLiteValue(Ljava/lang/String;)V
 
     goto :goto_ac
 
-    .line 782
+    .line 784
     :cond_a7
     const-string p2, "off"
 
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->setSuperNightLiteValue(Ljava/lang/String;)V
 
-    .line 784
+    .line 786
     :goto_ac
     iget-boolean p2, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mNeedSuperNightAlgo:Z
 
@@ -1424,10 +1424,10 @@
 
     if-eqz p2, :cond_e1
 
-    .line 785
+    .line 787
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mNeedSuperNightAlgo:Z
 
-    .line 786
+    .line 788
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1448,7 +1448,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 787
+    .line 789
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     iget-boolean p2, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mNeedSuperNightAlgo:Z
@@ -1459,14 +1459,14 @@
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 788
+    .line 790
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     const-string p2, "key_super_night"
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->requestChangeSettingValue(Ljava/lang/String;)V
 
-    .line 790
+    .line 792
     :cond_e1
     iget p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCurrentShutterValue:I
 
@@ -1518,7 +1518,7 @@
 .method private getString(I)Ljava/lang/String;
     .registers 2
 
-    .line 936
+    .line 938
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -1531,14 +1531,14 @@
 .method private initModeUI()V
     .registers 5
 
-    .line 687
+    .line 689
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getModeInflateRoot()Landroid/view/ViewGroup;
 
     move-result-object v0
 
-    .line 688
+    .line 690
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1557,7 +1557,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 689
+    .line 691
     new-instance v1, Lcom/transsion/camera/feature/mode/supernight/ui/ModeUI;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -1570,7 +1570,7 @@
 
     iput-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mModeUI:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
-    .line 690
+    .line 692
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-virtual {v1, p0}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->init(Lcom/transsion/camera/app/common/IAppUI;)V
@@ -1587,7 +1587,7 @@
 
     return v0
 
-    .line 799
+    .line 801
     :cond_4
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->specialMonkeySupported()Z
 
@@ -1595,7 +1595,7 @@
 
     if-eqz v1, :cond_12
 
-    .line 800
+    .line 802
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "It\'s a project under 4G,close superNightAlgo in Monkey scenarios."
@@ -1604,7 +1604,7 @@
 
     return v0
 
-    .line 803
+    .line 805
     :cond_12
     iget p0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mAlgoThreshold:I
 
@@ -1624,7 +1624,7 @@
 
     return v0
 
-    .line 810
+    .line 812
     :cond_4
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->specialMonkeySupported()Z
 
@@ -1632,7 +1632,7 @@
 
     if-eqz v1, :cond_12
 
-    .line 811
+    .line 813
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "It\'s a project under 4G,close superNightStableAlgo in Monkey scenarios."
@@ -1641,7 +1641,7 @@
 
     return v0
 
-    .line 814
+    .line 816
     :cond_12
     sget-object v1, Landroid/hardware/camera2/CaptureResult;->SENSOR_SENSITIVITY:Landroid/hardware/camera2/CaptureResult$Key;
 
@@ -1651,19 +1651,19 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 816
+    .line 818
     invoke-interface {p2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->checkBrightnessResult(Landroid/hardware/camera2/CaptureResult;)[I
 
     move-result-object p1
 
     if-eqz p1, :cond_26
 
-    .line 817
+    .line 819
     array-length p2, p1
 
     if-lez p2, :cond_26
 
-    .line 818
+    .line 820
     aget p1, p1, v0
 
     goto :goto_27
@@ -1671,7 +1671,7 @@
     :cond_26
     move p1, v0
 
-    .line 820
+    .line 822
     :goto_27
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1699,7 +1699,7 @@
 
     if-eqz v1, :cond_55
 
-    .line 821
+    .line 823
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
@@ -1727,17 +1727,17 @@
 .method private isStableNight(Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)Z
     .registers 8
 
-    .line 825
+    .line 827
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mShutterdownClicked:Z
 
     if-eqz v0, :cond_7
 
-    .line 826
+    .line 828
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mLastStableState:Z
 
     return p0
 
-    .line 828
+    .line 830
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mStableMode:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;
 
@@ -1760,7 +1760,7 @@
     :cond_15
     move v0, v1
 
-    .line 829
+    .line 831
     :goto_16
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -1770,14 +1770,14 @@
 
     move-result-object v3
 
-    .line 830
+    .line 832
     const-string v4, "on"
 
     invoke-static {v3, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    .line 832
+    .line 834
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->isNeedSuperNightStableAlgo(Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)Z
 
     move-result p1
@@ -1790,7 +1790,7 @@
 
     move v1, v2
 
-    .line 834
+    .line 836
     :cond_2f
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1814,14 +1814,14 @@
 
     goto :goto_4a
 
-    .line 835
+    .line 837
     :cond_48
     const-string v4, "off"
 
     :goto_4a
     invoke-direct {p0, v4}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->setTripodSuperNightLiteValue(Ljava/lang/String;)V
 
-    .line 836
+    .line 838
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mLastStableState:Z
 
     return v1
@@ -1830,12 +1830,12 @@
 .method private isThumbnailSourceJPEG()Z
     .registers 2
 
-    .line 584
+    .line 586
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mIsDefaultThumbSourceScreenShot:Z
 
     if-eqz v0, :cond_7
 
-    .line 585
+    .line 587
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mNeedSuperNightAlgo:Z
 
     return p0
@@ -1849,18 +1849,18 @@
 .method private synthetic lambda$loadActionSound$1(Lcom/transsion/camera/utils/sound/IActionSound;I)V
     .registers 5
 
-    .line 709
+    .line 711
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSoundLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 710
+    .line 712
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-nez v1, :cond_d
 
-    .line 711
+    .line 713
     invoke-interface {p1, p2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
 
     goto :goto_f
@@ -1870,11 +1870,11 @@
 
     goto :goto_11
 
-    .line 713
+    .line 715
     :cond_d
     iput p2, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mShutterClickSampleId:I
 
-    .line 715
+    .line 717
     :goto_f
     monitor-exit v0
 
@@ -1891,18 +1891,18 @@
 .method private synthetic lambda$loadActionSound$2(Lcom/transsion/camera/utils/sound/IActionSound;I)V
     .registers 5
 
-    .line 719
+    .line 721
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSoundLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 720
+    .line 722
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-nez v1, :cond_d
 
-    .line 721
+    .line 723
     invoke-interface {p1, p2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
 
     goto :goto_f
@@ -1912,11 +1912,11 @@
 
     goto :goto_11
 
-    .line 723
+    .line 725
     :cond_d
     iput p2, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mShutterClickSampleId:I
 
-    .line 725
+    .line 727
     :goto_f
     monitor-exit v0
 
@@ -1933,12 +1933,12 @@
 .method private loadActionSound(Ljava/lang/String;)V
     .registers 4
 
-    .line 700
+    .line 702
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-nez v0, :cond_c
 
-    .line 701
+    .line 703
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getActionSound()Lcom/transsion/camera/utils/sound/IActionSound;
@@ -1947,7 +1947,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
-    .line 703
+    .line 705
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
@@ -1959,7 +1959,7 @@
 
     goto :goto_38
 
-    .line 707
+    .line 709
     :cond_15
     const-string v0, "sound_effect_default"
 
@@ -1969,7 +1969,7 @@
 
     if-nez v0, :cond_28
 
-    .line 708
+    .line 710
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     new-instance v1, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$$ExternalSyntheticLambda1;
@@ -1980,7 +1980,7 @@
 
     goto :goto_34
 
-    .line 718
+    .line 720
     :cond_28
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
@@ -1995,12 +1995,12 @@
     :goto_34
     const/4 p1, 0x1
 
-    .line 728
+    .line 730
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSoundLoaded:Z
 
     return-void
 
-    .line 704
+    .line 706
     :cond_38
     :goto_38
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -2031,18 +2031,18 @@
 
     monitor-enter p0
 
-    .line 907
+    .line 909
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCaptureFlow:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->onCaptureDone()Z
 
-    .line 908
+    .line 910
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->resetCaptureFlow(Z)V
     :try_end_9
     .catchall {:try_start_1 .. :try_end_9} :catchall_b
 
-    .line 909
+    .line 911
     monitor-exit p0
 
     return-void
@@ -2063,7 +2063,7 @@
 
     monitor-enter p0
 
-    .line 903
+    .line 905
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCaptureFlow:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;
 
@@ -2071,7 +2071,7 @@
     :try_end_6
     .catchall {:try_start_1 .. :try_end_6} :catchall_8
 
-    .line 904
+    .line 906
     monitor-exit p0
 
     return-void
@@ -2090,12 +2090,12 @@
 .method private releaseActionSound()V
     .registers 4
 
-    .line 732
+    .line 734
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSoundLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 733
+    .line 735
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
@@ -2105,7 +2105,7 @@
 
     if-eqz v2, :cond_13
 
-    .line 734
+    .line 736
     iget v2, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mShutterClickSampleId:I
 
     invoke-interface {v1, v2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
@@ -2121,15 +2121,15 @@
     :goto_13
     const/4 v1, 0x0
 
-    .line 736
+    .line 738
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSoundLoaded:Z
 
     const/4 v1, 0x0
 
-    .line 737
+    .line 739
     iput-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
-    .line 738
+    .line 740
     monitor-exit v0
 
     return-void
@@ -2149,21 +2149,21 @@
 
     const/4 v0, 0x0
 
-    .line 888
+    .line 890
     :try_start_2
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mShutterdownClicked:Z
 
-    .line 889
+    .line 891
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->changeCaptureFlow(I)V
 
     if-nez p1, :cond_13
 
-    .line 891
+    .line 893
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mStableMode:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;
 
     if-eqz p1, :cond_13
 
-    .line 892
+    .line 894
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;->resume()V
     :try_end_10
     .catchall {:try_start_2 .. :try_end_10} :catchall_11
@@ -2175,7 +2175,7 @@
 
     goto :goto_15
 
-    .line 895
+    .line 897
     :cond_13
     :goto_13
     monitor-exit p0
@@ -2194,18 +2194,18 @@
 .method private selectCaptureFlow()V
     .registers 4
 
-    .line 841
+    .line 843
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCurrentResult:Landroid/hardware/camera2/CaptureResult;
 
-    .line 842
+    .line 844
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
-    .line 844
+    .line 846
     iget-boolean v2, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mIsStableModeSupport:Z
 
     if-eqz v2, :cond_10
 
-    .line 845
+    .line 847
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->isStableNight(Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)Z
 
     move-result v2
@@ -2222,7 +2222,7 @@
     :goto_11
     if-gez v2, :cond_1e
 
-    .line 850
+    .line 852
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->isNeedSuperNightAlgo(Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)Z
 
     move-result v0
@@ -2238,7 +2238,7 @@
     :cond_1d
     const/4 v2, 0x0
 
-    .line 857
+    .line 859
     :cond_1e
     :goto_1e
     invoke-direct {p0, v2}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->changeCaptureFlow(I)V
@@ -2309,7 +2309,7 @@
 .method private startCapturingAnim(IZ)V
     .registers 5
 
-    .line 912
+    .line 914
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSuperNightSupportCountDown:Z
 
     if-nez v0, :cond_3c
@@ -2332,16 +2332,16 @@
 
     goto :goto_3c
 
-    .line 916
+    .line 918
     :cond_15
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mModeUI:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     if-eqz v0, :cond_1c
 
-    .line 917
+    .line 919
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->showProcessingAnim(IZ)V
 
-    .line 919
+    .line 921
     :cond_1c
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -2349,7 +2349,7 @@
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 920
+    .line 922
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 p2, -0x1
@@ -2360,7 +2360,7 @@
 
     invoke-interface {p1, v1, p2, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 921
+    .line 923
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -2385,23 +2385,23 @@
 .method private stopCapturingAnim()V
     .registers 5
 
-    .line 925
+    .line 927
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSuperNightSupportCountDown:Z
 
     if-eqz v0, :cond_5
 
     return-void
 
-    .line 928
+    .line 930
     :cond_5
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mModeUI:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     if-eqz v0, :cond_c
 
-    .line 929
+    .line 931
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->hideProcessingAnim()V
 
-    .line 931
+    .line 933
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -2413,7 +2413,7 @@
 
     invoke-interface {v0, v3, v1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 932
+    .line 934
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -2436,12 +2436,12 @@
 .method private unInitModeUI()V
     .registers 1
 
-    .line 694
+    .line 696
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mModeUI:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     if-eqz p0, :cond_7
 
-    .line 695
+    .line 697
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->unInit()V
 
     :cond_7
@@ -2453,7 +2453,7 @@
 .method public buildCaptureInfo()Lcom/transsion/camera/app/common/mode/CaptureInfo;
     .registers 4
 
-    .line 941
+    .line 943
     new-instance v0, Lcom/transsion/camera/app/common/mode/CaptureInfo;
 
     iget v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mCaptureOrientation:I
@@ -2485,7 +2485,7 @@
 .method public createImageProcessor()Lcom/transsion/camera/feature/mode/supernight/SuperNightImageProcessor;
     .registers 3
 
-    .line 946
+    .line 948
     new-instance v0, Lcom/transsion/camera/feature/mode/supernight/SuperNightImageProcessor;
 
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSuperNightSupportCountDown:Z
@@ -2498,7 +2498,7 @@
 .method protected currentModeNeedNewCaptureAnimation()Z
     .registers 4
 
-    .line 1315
+    .line 1317
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mSupportNewCaptureAnimation:Z
 
     const/4 v1, 0x0
@@ -2513,7 +2513,7 @@
 
     goto :goto_1c
 
-    .line 1320
+    .line 1322
     :cond_c
     iget v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mCurrentShutterValue:I
 
@@ -2521,7 +2521,7 @@
 
     if-lt v0, v2, :cond_1a
 
-    .line 1321
+    .line 1323
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "capture count down, currentModeNeedNewCaptureAnimation : false"
@@ -2535,7 +2535,7 @@
 
     return p0
 
-    .line 1316
+    .line 1318
     :cond_1c
     :goto_1c
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -2550,29 +2550,29 @@
 .method public doOnFileSaved(Landroid/net/Uri;ZZ)V
     .registers 7
 
-    .line 569
+    .line 571
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->doOnFileSaved(Landroid/net/Uri;ZZ)V
 
-    .line 570
+    .line 572
     invoke-static {}, Lcom/transsion/camera/app/common/provider/ProcessMediaManager;->getProcessingMediaNumber()I
 
     move-result p1
 
-    .line 571
+    .line 573
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mCapturingNumber:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result p2
 
-    .line 572
+    .line 574
     iget-object p3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p3}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->getShutterTypeSelftimerOff()I
 
     move-result p3
 
-    .line 573
+    .line 575
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2605,7 +2605,7 @@
 
     if-nez p1, :cond_53
 
-    .line 575
+    .line 577
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p1, :cond_53
@@ -2616,7 +2616,7 @@
 
     if-ne p3, p2, :cond_53
 
-    .line 577
+    .line 579
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->getCurrentUIState()I
 
     move-result p1
@@ -2625,7 +2625,7 @@
 
     if-eq p1, p2, :cond_53
 
-    .line 578
+    .line 580
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 p1, -0x1
@@ -2641,7 +2641,7 @@
 .method protected getBackMaxZoomRatio()I
     .registers 1
 
-    .line 1337
+    .line 1339
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -2660,13 +2660,13 @@
 
     goto :goto_14
 
-    .line 1340
+    .line 1342
     :cond_11
     sget p0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_10X:I
 
     return p0
 
-    .line 1338
+    .line 1340
     :cond_14
     :goto_14
     sget p0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_4X:I
@@ -2677,7 +2677,7 @@
 .method protected getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 6
 
-    .line 1329
+    .line 1331
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object p0
@@ -2696,7 +2696,7 @@
 
     move-result-object v0
 
-    .line 1330
+    .line 1332
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/ZoomConfig;->setSupportedZoomTypes([I)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object p0
@@ -2853,112 +2853,112 @@
 .method public getModeFeatures(Landroid/content/Context;)[Ljava/lang/String;
     .registers 6
 
-    .line 617
+    .line 619
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 618
+    .line 620
     const-string v0, "key_mood_light"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 619
+    .line 621
     const-string v0, "key_shutter_sound_optional"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 620
+    .line 622
     const-string v0, "key_super_night"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 621
+    .line 623
     const-string v0, "key_tran_plugin"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 622
+    .line 624
     const-string v0, "key_distortion_correction"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 623
+    .line 625
     const-string v0, "key_edit_watermark"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 624
+    .line 626
     const-string v0, "key_gold_watermark"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 625
+    .line 627
     const-string v0, "key_pro_watermark"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 626
+    .line 628
     const-string v0, "key_camera_click_zoom"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 627
+    .line 629
     const-string v0, "key_lens_correction"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 628
+    .line 630
     const-string v0, "key_night_3dnr"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 629
+    .line 631
     const-string v0, "key_activity_orientation"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 630
+    .line 632
     const-string v0, "key_fingerprint_capture"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 631
+    .line 633
     const-string v0, "key_secondary_screen"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 632
+    .line 634
     const-string v0, "key_taint_detection"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 633
+    .line 635
     const-string v0, "key_setting_skin_optimization"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 634
+    .line 636
     const-string v0, "key_touch_capture"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 635
+    .line 637
     const-string v0, "key_face_detection_enhance"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 636
+    .line 638
     const-string v0, "key_night_hawk"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 637
+    .line 639
     const-string v0, "key_voice_detection"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 638
+    .line 640
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -2983,7 +2983,7 @@
 
     goto :goto_90
 
-    .line 645
+    .line 647
     :cond_80
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -2995,40 +2995,40 @@
 
     if-nez v0, :cond_9e
 
-    .line 646
+    .line 648
     const-string v0, "key_setting_smart_denoise"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_9e
 
-    .line 639
+    .line 641
     :cond_90
     :goto_90
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 640
+    .line 642
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 642
+    .line 644
     const-string v0, "key_super_night_light"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 643
+    .line 645
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 649
+    .line 651
     :cond_9e
     :goto_9e
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSuperNightSupportCountDown:Z
 
     if-eqz v0, :cond_a5
 
-    .line 650
+    .line 652
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 653
+    .line 655
     :cond_a5
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -3038,13 +3038,13 @@
 
     if-eqz v0, :cond_b3
 
-    .line 654
+    .line 656
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 655
+    .line 657
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 658
+    .line 660
     :cond_b3
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -3056,24 +3056,24 @@
 
     if-eqz v0, :cond_c3
 
-    .line 659
+    .line 661
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 660
+    .line 662
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 663
+    .line 665
     :cond_c3
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mUseFaceBeauty:Z
 
     if-eqz v0, :cond_cc
 
-    .line 664
+    .line 666
     const-string v0, "key_face_beauty"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 667
+    .line 669
     :cond_cc
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->supportPostAlgo()Z
 
@@ -3085,16 +3085,16 @@
 
     if-eqz v0, :cond_de
 
-    .line 668
+    .line 670
     :cond_d6
     const-string v0, "ai_raw_lite"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 669
+    .line 671
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 672
+    .line 674
     :cond_de
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mPortraitModeEnhanceSupport:Z
 
@@ -3104,24 +3104,24 @@
 
     if-eqz p0, :cond_eb
 
-    .line 673
+    .line 675
     :cond_e6
     const-string p0, "key_portraitmode_enhance"
 
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 675
+    .line 677
     :cond_eb
     const-string p0, "key_airaw_tf"
 
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 676
+    .line 678
     const-string p0, "key_in_sensor_zoom"
 
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 678
+    .line 680
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -3130,18 +3130,18 @@
 
     if-eqz p0, :cond_102
 
-    .line 679
+    .line 681
     const-string p0, "key_zoom_eis"
 
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 682
+    .line 684
     :cond_102
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result p0
 
-    .line 683
+    .line 685
     new-array p0, p0, [Ljava/lang/String;
 
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
@@ -3373,7 +3373,7 @@
 .method public getSettingGroup()J
     .registers 5
 
-    .line 612
+    .line 614
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->getSettingGroup()J
 
     move-result-wide v0
@@ -3769,10 +3769,10 @@
     :cond_9
     const/4 p1, 0x0
 
-    .line 956
+    .line 958
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mIsZooming:Z
 
-    .line 957
+    .line 959
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mStableMode:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$StableMode;
 
     if-eqz p1, :cond_2c
@@ -3787,19 +3787,19 @@
 
     if-nez p1, :cond_2c
 
-    .line 958
+    .line 960
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mStableModeEnteredInfoShowed:Z
 
     if-nez p1, :cond_25
 
-    .line 959
+    .line 961
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mStableModeEnteredInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->showHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 961
+    .line 963
     :cond_25
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -3814,7 +3814,7 @@
     :cond_2d
     const/4 p1, 0x1
 
-    .line 953
+    .line 955
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mIsZooming:Z
 
     return-void
@@ -3823,12 +3823,12 @@
 .method public notifyPictureTaken([BZIJ)I
     .registers 7
 
-    .line 549
+    .line 548
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->takePictureEnded()V
 
-    .line 550
+    .line 549
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->isValid()Z
 
     move-result p2
@@ -3843,25 +3843,34 @@
 
     if-eq p2, p4, :cond_15
 
-    .line 551
+    .line 550
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->updateThumbnailView([B)V
 
-    .line 553
+    .line 552
     :cond_15
+    iget-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mIsBGOffLineEnable:Z
+
+    if-eqz p1, :cond_1c
+
+    .line 553
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->checkOfflineCapturingNumber()V
+
+    .line 555
+    :cond_1c
     invoke-virtual {p0, p4}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->checkCaptureResult(Z)V
 
-    .line 554
+    .line 556
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mIsStableModeSupport:Z
 
     const/4 p2, 0x0
 
-    if-eqz p1, :cond_20
-
-    .line 555
-    invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->resetCaptureFlow(Z)V
+    if-eqz p1, :cond_27
 
     .line 557
-    :cond_20
+    invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->resetCaptureFlow(Z)V
+
+    .line 559
+    :cond_27
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p5, Ljava/lang/StringBuilder;
@@ -3888,12 +3897,12 @@
 
     invoke-static {p1, p3}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 560
+    .line 562
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSuperNightSupportCountDown:Z
 
-    if-nez p1, :cond_4e
+    if-nez p1, :cond_55
 
-    .line 561
+    .line 563
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 p3, -0x1
@@ -3902,17 +3911,17 @@
 
     invoke-interface {p1, p4, p3, p5}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 562
+    .line 564
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->onCaptureDone(Z)V
 
-    :cond_4e
+    :cond_55
     return p2
 .end method
 
 .method public onBackPressed()Z
     .registers 2
 
-    .line 899
+    .line 901
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->getCurrentUIState()I
@@ -3936,14 +3945,14 @@
 .method public onModeCaptureFailed(Z[J)V
     .registers 5
 
-    .line 593
+    .line 595
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->isValid()Z
 
     move-result v0
 
     if-nez v0, :cond_e
 
-    .line 594
+    .line 596
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onModeCaptureFailed, but current mode was unInit, so do nothing."
@@ -3952,16 +3961,16 @@
 
     return-void
 
-    .line 597
+    .line 599
     :cond_e
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onModeCaptureFailed(Z[J)V
 
     const/4 p1, 0x0
 
-    .line 598
+    .line 600
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->onCaptureDone(Z)V
 
-    .line 599
+    .line 601
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -3982,20 +3991,20 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 600
+    .line 602
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mSuperNightSupportCountDown:Z
 
     if-eqz p1, :cond_51
 
-    .line 601
+    .line 603
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->mModeUI:Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
 
     if-eqz p1, :cond_38
 
-    .line 602
+    .line 604
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->hideProcessingAnim()V
 
-    .line 604
+    .line 606
     :cond_38
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -4007,7 +4016,7 @@
 
     invoke-interface {p1, v1, p2, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 605
+    .line 607
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -4022,7 +4031,7 @@
 
     const-string p2, "idle"
 
-    .line 606
+    .line 608
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_51

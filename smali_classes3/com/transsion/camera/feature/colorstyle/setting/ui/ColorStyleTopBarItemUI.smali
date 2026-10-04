@@ -16,10 +16,10 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;)V
     .registers 2
 
-    .line 22
+    .line 23
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;-><init>(Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;)V
 
-    .line 23
+    .line 24
     new-instance p1, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleTopBarItemUI$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleTopBarItemUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleTopBarItemUI;)V
@@ -30,21 +30,32 @@
 .end method
 
 .method private onClick(Landroid/view/View;)V
-    .registers 2
-
-    .line 27
-    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mSettingOptionControl:Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;
-
-    if-eqz p1, :cond_b
+    .registers 3
 
     .line 28
+    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+
+    if-eqz p1, :cond_9
+
+    const/16 v0, 0xd1
+
+    .line 29
+    invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
+
+    .line 31
+    :cond_9
+    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mSettingOptionControl:Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;
+
+    if-eqz p1, :cond_14
+
+    .line 32
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->getKey()Ljava/lang/String;
 
     move-result-object p0
 
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->onSettingOptionClick(Ljava/lang/String;)V
 
-    :cond_b
+    :cond_14
     return-void
 .end method
 
@@ -64,7 +75,7 @@
 .method public getItemType()Ljava/lang/String;
     .registers 1
 
-    .line 34
+    .line 38
     const-string p0, "OPTION_BAR"
 
     return-object p0

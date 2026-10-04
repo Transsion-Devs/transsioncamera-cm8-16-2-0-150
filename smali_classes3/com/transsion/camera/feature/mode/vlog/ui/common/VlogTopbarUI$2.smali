@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;)V
     .registers 2
 
-    .line 858
+    .line 867
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$2;->this$0:Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;
 
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/vlog/widget/DebounceClickListener;-><init>()V
@@ -35,14 +35,14 @@
 .method public doClick(Landroid/view/View;)V
     .registers 2
 
-    .line 861
+    .line 870
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p1
 
     if-eqz p1, :cond_f
 
-    .line 862
+    .line 871
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$2;->this$0:Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;->-$$Nest$fgetmTopItemClickListener(Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI;)Lcom/transsion/camera/feature/mode/vlog/ui/common/VlogTopbarUI$OnTopItemClick;

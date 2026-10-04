@@ -10,7 +10,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/common/collect/AbstractMapBasedMultimap$AsMap;,
-        Lcom/google/common/collect/AbstractMapBasedMultimap$Itr;,
         Lcom/google/common/collect/AbstractMapBasedMultimap$KeySet;,
         Lcom/google/common/collect/AbstractMapBasedMultimap$RandomAccessWrappedList;,
         Lcom/google/common/collect/AbstractMapBasedMultimap$WrappedList;,
@@ -273,17 +272,6 @@
     return-object v0
 .end method
 
-.method createValues()Ljava/util/Collection;
-    .registers 2
-
-    .line 1219
-    new-instance v0, Lcom/google/common/collect/AbstractMultimap$Values;
-
-    invoke-direct {v0, p0}, Lcom/google/common/collect/AbstractMultimap$Values;-><init>(Lcom/google/common/collect/AbstractMultimap;)V
-
-    return-object v0
-.end method
-
 .method public get(Ljava/lang/Object;)Ljava/util/Collection;
     .registers 3
 
@@ -385,37 +373,6 @@
     const/4 p0, 0x0
 
     return p0
-.end method
-
-.method public size()I
-    .registers 1
-
-    .line 174
-    iget p0, p0, Lcom/google/common/collect/AbstractMapBasedMultimap;->totalSize:I
-
-    return p0
-.end method
-
-.method valueIterator()Ljava/util/Iterator;
-    .registers 2
-
-    .line 1224
-    new-instance v0, Lcom/google/common/collect/AbstractMapBasedMultimap$1;
-
-    invoke-direct {v0, p0}, Lcom/google/common/collect/AbstractMapBasedMultimap$1;-><init>(Lcom/google/common/collect/AbstractMapBasedMultimap;)V
-
-    return-object v0
-.end method
-
-.method public values()Ljava/util/Collection;
-    .registers 1
-
-    .line 1214
-    invoke-super {p0}, Lcom/google/common/collect/AbstractMultimap;->values()Ljava/util/Collection;
-
-    move-result-object p0
-
-    return-object p0
 .end method
 
 .method abstract wrapCollection(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;

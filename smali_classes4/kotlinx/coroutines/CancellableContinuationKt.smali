@@ -19,7 +19,7 @@
     .annotation build Lkotlinx/coroutines/InternalCoroutinesApi;
     .end annotation
 
-    .line 380
+    .line 376
     new-instance v0, Lkotlinx/coroutines/DisposeOnCancel;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/DisposeOnCancel;-><init>(Lkotlinx/coroutines/DisposableHandle;)V
@@ -43,12 +43,12 @@
         }
     .end annotation
 
-    .line 347
+    .line 343
     instance-of v0, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;
 
     if-nez v0, :cond_b
 
-    .line 348
+    .line 344
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
     const/4 v1, 0x1
@@ -57,7 +57,7 @@
 
     return-object v0
 
-    .line 364
+    .line 360
     :cond_b
     move-object v0, p0
 
@@ -88,7 +88,7 @@
     :cond_1f
     return-object v0
 
-    .line 365
+    .line 361
     :cond_20
     :goto_20
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
@@ -114,7 +114,7 @@
         }
     .end annotation
 
-    .line 315
+    .line 311
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
     invoke-static {p1}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -125,18 +125,18 @@
 
     invoke-direct {v0, v1, v2}, Lkotlinx/coroutines/CancellableContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;I)V
 
-    .line 321
+    .line 317
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
 
-    .line 322
+    .line 318
     invoke-interface {p0, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 323
+    .line 319
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 314
+    .line 310
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
@@ -165,10 +165,10 @@
 
     const/4 v0, 0x0
 
-    .line 314
+    .line 310
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
-    .line 315
+    .line 311
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
     invoke-static {p1}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -179,18 +179,18 @@
 
     invoke-direct {v0, v1, v2}, Lkotlinx/coroutines/CancellableContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;I)V
 
-    .line 321
+    .line 317
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
 
-    .line 322
+    .line 318
     invoke-interface {p0, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 323
+    .line 319
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 314
+    .line 310
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
@@ -219,7 +219,7 @@
         }
     .end annotation
 
-    .line 333
+    .line 329
     invoke-static {p1}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v0
@@ -228,18 +228,18 @@
 
     move-result-object v0
 
-    .line 335
+    .line 331
     :try_start_8
     invoke-interface {p0, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_b
     .catchall {:try_start_8 .. :try_end_b} :catchall_19
 
-    .line 342
+    .line 338
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 332
+    .line 328
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
@@ -254,10 +254,10 @@
     :catchall_19
     move-exception p0
 
-    .line 339
+    .line 335
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->releaseClaimedReusableContinuation$kotlinx_coroutines_core()V
 
-    .line 340
+    .line 336
     throw p0
 .end method
 
@@ -277,10 +277,10 @@
 
     const/4 v0, 0x0
 
-    .line 332
+    .line 328
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
-    .line 333
+    .line 329
     invoke-static {p1}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v0
@@ -289,18 +289,18 @@
 
     move-result-object v0
 
-    .line 335
+    .line 331
     :try_start_c
     invoke-interface {p0, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_f
     .catchall {:try_start_c .. :try_end_f} :catchall_21
 
-    .line 342
+    .line 338
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 332
+    .line 328
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
@@ -319,9 +319,9 @@
     :catchall_21
     move-exception p0
 
-    .line 339
+    .line 335
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->releaseClaimedReusableContinuation$kotlinx_coroutines_core()V
 
-    .line 340
+    .line 336
     throw p0
 .end method

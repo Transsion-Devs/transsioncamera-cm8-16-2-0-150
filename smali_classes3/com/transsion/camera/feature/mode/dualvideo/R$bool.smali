@@ -14,11 +14,13 @@
 
 
 # static fields
-.field public static dual_video_need_gl_finish:I = 0x7f05006f
+.field public static dual_video_need_gl_finish:I = 0x7f050071
 
-.field public static dual_video_support_720:I = 0x7f050070
+.field public static dual_video_support_720:I = 0x7f050072
 
-.field public static project_slave_surface_support:I = 0x7f05016d
+.field public static dual_video_support_720_not_support_1080:I = 0x7f050073
+
+.field public static project_slave_surface_support:I = 0x7f050177
 
 
 # direct methods

@@ -27,7 +27,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;Lcom/transsion/camera/app/ui/opengl/Texture2dProgram$ProgramType;)V
     .registers 3
 
-    .line 629
+    .line 651
     iput-object p1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$11;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$11;->val$programType:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram$ProgramType;
@@ -42,7 +42,7 @@
 .method public run()V
     .registers 3
 
-    .line 632
+    .line 654
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$11;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fgetmProgramType(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)Lcom/transsion/camera/app/ui/opengl/Texture2dProgram$ProgramType;
@@ -53,12 +53,12 @@
 
     if-eq v0, v1, :cond_1c
 
-    .line 633
+    .line 655
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$11;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fputmProgramType(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;Lcom/transsion/camera/app/ui/opengl/Texture2dProgram$ProgramType;)V
 
-    .line 634
+    .line 656
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$11;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fgetmSurfaceTexture(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)Landroid/graphics/SurfaceTexture;
@@ -67,7 +67,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 635
+    .line 657
     iget-object p0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$11;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$mcreateGLProgram(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)V

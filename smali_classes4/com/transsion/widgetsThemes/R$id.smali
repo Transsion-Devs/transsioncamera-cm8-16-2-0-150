@@ -3,8 +3,8 @@
 
 
 # static fields
-.field public static os_list_item_shadow_id:I = 0x7f0b0482
+.field public static os_list_item_shadow_id:I = 0x7f0b047f
 
-.field public static os_menu_btn:I = 0x7f0b0486
+.field public static os_menu_btn:I = 0x7f0b0483
 
-.field public static os_menu_center:I = 0x7f0b0487
+.field public static os_menu_center:I = 0x7f0b0484

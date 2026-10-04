@@ -89,7 +89,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 47
+    .line 48
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "WideSelfieUI"
@@ -104,22 +104,22 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/feature/wideselfie/WideSelfieUISpec;)V
     .registers 4
 
-    .line 61
+    .line 62
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/common/BaseUI;-><init>(Lcom/transsion/camera/app/common/IAppUI;)V
 
     const/4 p1, 0x0
 
-    .line 48
+    .line 49
     iput p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mDirection:I
 
-    .line 56
+    .line 57
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mPreviewRect:Landroid/graphics/Rect;
 
-    .line 57
+    .line 58
     new-instance p1, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;
 
     const/4 v0, 0x0
@@ -128,12 +128,12 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mAnimationPara:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;
 
-    .line 58
+    .line 59
     const-string p1, "off"
 
     iput-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mSwitchPreviewValue:Ljava/lang/String;
 
-    .line 62
+    .line 63
     iput-object p2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mUISpec:Lcom/transsion/camera/feature/wideselfie/WideSelfieUISpec;
 
     return-void
@@ -142,7 +142,7 @@
 .method static synthetic access$000(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/content/Context;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mContext:Landroid/content/Context;
 
     return-object p0
@@ -151,7 +151,7 @@
 .method static synthetic access$100(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -160,7 +160,7 @@
 .method static synthetic access$1000(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -169,7 +169,7 @@
 .method static synthetic access$1100(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -178,7 +178,7 @@
 .method static synthetic access$200(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -187,7 +187,7 @@
 .method static synthetic access$300(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -196,7 +196,7 @@
 .method static synthetic access$400(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -205,7 +205,7 @@
 .method static synthetic access$500(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -214,7 +214,7 @@
 .method static synthetic access$600(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -223,7 +223,7 @@
 .method static synthetic access$700(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -232,7 +232,7 @@
 .method static synthetic access$800(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -241,7 +241,7 @@
 .method static synthetic access$900(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 44
+    .line 45
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -273,7 +273,7 @@
 .method private synthetic lambda$readyUI$0()V
     .registers 2
 
-    .line 146
+    .line 162
     iget v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->updateLayoutParams(I)V
@@ -284,7 +284,7 @@
 .method private setNotifyViewsLayout(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;I)V
     .registers 6
 
-    .line 200
+    .line 216
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyImageView:Lcom/transsion/camera/app/ui/widget/AnimationRotationView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -293,7 +293,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 201
+    .line 217
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -302,29 +302,29 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 202
+    .line 218
     iget v2, p1, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstArrowWidth:I
 
     iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
-    .line 203
+    .line 219
     iget v2, p1, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstArrowHeight:I
 
     iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
-    .line 204
+    .line 220
     iget-object v2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyImageView:Lcom/transsion/camera/app/ui/widget/AnimationRotationView;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 206
+    .line 222
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
     if-eqz v0, :cond_30
 
-    .line 207
+    .line 223
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyText:Landroid/widget/TextView;
 
     const/16 v2, 0xb4
@@ -341,7 +341,7 @@
     :goto_2d
     invoke-virtual {v0, p2}, Landroid/view/View;->setRotation(F)V
 
-    .line 209
+    .line 225
     :cond_30
     iget-object p2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyText:Landroid/widget/TextView;
 
@@ -351,37 +351,37 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setMaxWidth(I)V
 
-    .line 210
+    .line 226
     iget-object p2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyText:Landroid/widget/TextView;
 
     invoke-virtual {p2}, Landroid/view/View;->requestLayout()V
 
-    .line 212
+    .line 228
     iget p2, p1, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstGravity:I
 
     iput p2, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 213
+    .line 229
     iget p2, p1, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginTop:I
 
     iput p2, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 214
+    .line 230
     iget p2, p1, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginLeft:I
 
     iput p2, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 215
+    .line 231
     iget p2, p1, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginRight:I
 
     iput p2, v1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 216
+    .line 232
     iget p1, p1, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginBottom:I
 
     iput p1, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 218
+    .line 234
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -394,7 +394,7 @@
 
     if-nez p1, :cond_a
 
-    .line 135
+    .line 151
     sget-object p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "stopIdleAnimation view is null"
@@ -403,7 +403,7 @@
 
     return-void
 
-    .line 138
+    .line 154
     :cond_a
     invoke-virtual {p1}, Lcom/opensource/svgaplayer/SVGAImageView;->isAnimating()Z
 
@@ -411,12 +411,12 @@
 
     if-eqz p0, :cond_18
 
-    .line 139
+    .line 155
     invoke-virtual {p1}, Lcom/opensource/svgaplayer/SVGAImageView;->stopAnimation()V
 
     const/16 p0, 0x8
 
-    .line 140
+    .line 156
     invoke-virtual {p1, p0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_18
@@ -426,7 +426,7 @@
 .method private updateLayoutParams(I)V
     .registers 4
 
-    .line 177
+    .line 193
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     if-eqz v0, :cond_24
@@ -441,7 +441,7 @@
 
     goto :goto_24
 
-    .line 181
+    .line 197
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -459,18 +459,18 @@
 
     if-ne v1, v0, :cond_20
 
-    .line 183
+    .line 199
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->updateLayoutParamsSmallThumbnail(I)V
 
     return-void
 
-    .line 185
+    .line 201
     :cond_20
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->updateLayoutParamsNormal(I)V
 
     return-void
 
-    .line 178
+    .line 194
     :cond_24
     :goto_24
     sget-object p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -485,12 +485,12 @@
 .method private updateLayoutParamsNormal(I)V
     .registers 4
 
-    .line 190
+    .line 206
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mAnimationPara:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;
 
     if-nez v0, :cond_c
 
-    .line 191
+    .line 207
     new-instance v0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;
 
     const/4 v1, 0x0
@@ -499,18 +499,18 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mAnimationPara:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;
 
-    .line 194
+    .line 210
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mAnimationPara:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->updateArrowWidthAndHeight(I)V
 
-    .line 195
+    .line 211
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mAnimationPara:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->updateRootLayoutMargin(I)V
 
-    .line 196
+    .line 212
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mAnimationPara:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;
 
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->setNotifyViewsLayout(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;I)V
@@ -521,27 +521,27 @@
 .method private updateLayoutParamsSmallThumbnail(I)V
     .registers 9
 
-    .line 222
+    .line 238
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
-    .line 223
+    .line 239
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 224
+    .line 240
     iget-object v1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyImageView:Lcom/transsion/camera/app/ui/widget/AnimationRotationView;
 
-    .line 225
+    .line 241
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 227
+    .line 243
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->isLand(I)Z
 
     move-result v2
@@ -550,7 +550,7 @@
 
     if-eqz v2, :cond_60
 
-    .line 228
+    .line 244
     iget-object v2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mUISpec:Lcom/transsion/camera/feature/wideselfie/WideSelfieUISpec;
 
     iget v4, v2, Lcom/transsion/camera/feature/common/BaseUISpec;->mTopBarHeight:I
@@ -573,10 +573,10 @@
 
     const/4 p1, 0x5
 
-    .line 231
+    .line 247
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 232
+    .line 248
     iget p1, v2, Lcom/transsion/camera/feature/wideselfie/BaseWideSelfieUISpec;->mArrowTopMarginLand:I
 
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
@@ -590,25 +590,25 @@
 
     const/4 p1, 0x3
 
-    .line 234
+    .line 250
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 235
+    .line 251
     iget p1, v2, Lcom/transsion/camera/feature/wideselfie/BaseWideSelfieUISpec;->mArrowTopMarginLand:I
 
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 238
+    .line 254
     :cond_3b
     :goto_3b
     iput v6, v1, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
-    .line 239
+    .line 255
     iget p1, v2, Lcom/transsion/camera/feature/wideselfie/BaseWideSelfieUISpec;->mArrowHeightLand:I
 
     iput p1, v1, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
-    .line 240
+    .line 256
     iget-object p1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/ScreenUtils;->getRealScreenSize(Landroid/content/Context;)Landroid/util/Size;
@@ -637,7 +637,7 @@
 
     mul-float/2addr v4, p1
 
-    .line 241
+    .line 257
     iget p1, v2, Lcom/transsion/camera/feature/wideselfie/BaseWideSelfieUISpec;->mArrowWidthLand:I
 
     int-to-float p1, p1
@@ -652,7 +652,7 @@
 
     goto :goto_8e
 
-    .line 243
+    .line 259
     :cond_60
     iget-object v2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mUISpec:Lcom/transsion/camera/feature/wideselfie/WideSelfieUISpec;
 
@@ -664,27 +664,27 @@
 
     iput v6, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 244
+    .line 260
     iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     const/4 v6, 0x0
 
-    .line 245
+    .line 261
     iput v6, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 246
+    .line 262
     iput v6, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     if-nez p1, :cond_7b
 
     or-int/lit8 p1, v3, 0x30
 
-    .line 249
+    .line 265
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     add-int/2addr v4, v5
 
-    .line 250
+    .line 266
     iput v4, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     goto :goto_86
@@ -696,33 +696,33 @@
 
     or-int/lit8 p1, v3, 0x50
 
-    .line 252
+    .line 268
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     add-int/2addr v4, v5
 
-    .line 253
+    .line 269
     iput v4, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 256
+    .line 272
     :cond_86
     :goto_86
     iget p1, v2, Lcom/transsion/camera/feature/wideselfie/BaseWideSelfieUISpec;->mArrowWidth:I
 
     iput p1, v1, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
-    .line 257
+    .line 273
     iget p1, v2, Lcom/transsion/camera/feature/wideselfie/BaseWideSelfieUISpec;->mArrowHeight:I
 
     iput p1, v1, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
-    .line 259
+    .line 275
     :goto_8e
     iget-object p1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 260
+    .line 276
     iget-object p0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyImageView:Lcom/transsion/camera/app/ui/widget/AnimationRotationView;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -735,7 +735,7 @@
 .method protected doCreateView()Landroid/view/View;
     .registers 5
 
-    .line 97
+    .line 98
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -748,14 +748,14 @@
 
     const/4 v3, 0x0
 
-    .line 98
+    .line 99
     invoke-virtual {v0, v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
-    .line 100
+    .line 101
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getScreenFormType()I
@@ -766,7 +766,7 @@
 
     if-eq v0, v1, :cond_2f
 
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mParentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -777,21 +777,21 @@
 
     const/4 v1, -0x1
 
-    .line 102
+    .line 103
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 103
+    .line 104
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 104
+    .line 105
     invoke-virtual {v0, v3, v3, v3, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 105
+    .line 106
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mParentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 107
+    .line 108
     :cond_2f
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
@@ -805,7 +805,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyText:Landroid/widget/TextView;
 
-    .line 108
+    .line 109
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/feature/panoramawideselfie/R$id;->wideselfie_notify_arrow:I
@@ -818,7 +818,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyImageView:Lcom/transsion/camera/app/ui/widget/AnimationRotationView;
 
-    .line 109
+    .line 110
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/feature/panoramawideselfie/R$id;->wideselfie_idle_arrow_vertical:I
@@ -831,7 +831,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimView:Lcom/opensource/svgaplayer/SVGAImageView;
 
-    .line 110
+    .line 111
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/feature/panoramawideselfie/R$id;->wideselfie_idle_arrow_horizontal:I
@@ -844,7 +844,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimViewLand:Lcom/opensource/svgaplayer/SVGAImageView;
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     return-object p0
@@ -853,10 +853,10 @@
 .method public initView()V
     .registers 3
 
-    .line 88
+    .line 89
     invoke-super {p0}, Lcom/transsion/camera/feature/common/BaseUI;->initView()V
 
-    .line 89
+    .line 90
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     if-eqz v0, :cond_15
@@ -867,10 +867,10 @@
 
     const/16 v1, 0x7b
 
-    .line 90
+    .line 91
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 91
+    .line 92
     iget v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->updateOrientation(I)V
@@ -882,10 +882,10 @@
 .method public onAbsolutePreviewRectChanged(Landroid/graphics/Rect;)V
     .registers 2
 
-    .line 172
+    .line 188
     iput-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mPreviewRect:Landroid/graphics/Rect;
 
-    .line 173
+    .line 189
     iget p1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->updateLayoutParams(I)V
@@ -896,12 +896,12 @@
 .method public onCaptureEnd()V
     .registers 2
 
-    .line 82
+    .line 83
     invoke-super {p0}, Lcom/transsion/camera/feature/common/BaseUI;->onCaptureEnd()V
 
     const/4 v0, 0x0
 
-    .line 83
+    .line 84
     iput v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mDirection:I
 
     return-void
@@ -910,12 +910,12 @@
 .method public onCaptureFailed()V
     .registers 2
 
-    .line 76
+    .line 77
     invoke-super {p0}, Lcom/transsion/camera/feature/common/BaseUI;->onCaptureFailed()V
 
     const/4 v0, 0x0
 
-    .line 77
+    .line 78
     iput v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mDirection:I
 
     return-void
@@ -924,7 +924,7 @@
 .method public onDirectionUpdate(I)V
     .registers 5
 
-    .line 67
+    .line 68
     iget-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mCapturing:Z
 
     if-eqz v0, :cond_23
@@ -933,7 +933,7 @@
 
     if-eq v0, p1, :cond_23
 
-    .line 68
+    .line 69
     sget-object v0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -952,27 +952,92 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 69
+    .line 70
     iput p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mDirection:I
 
-    .line 70
+    .line 71
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseUI;->triggerUpdate()V
 
     :cond_23
     return-void
 .end method
 
+.method public pause()V
+    .registers 3
+
+    .line 132
+    invoke-super {p0}, Lcom/transsion/camera/feature/common/BaseUI;->pause()V
+
+    .line 133
+    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyImageView:Lcom/transsion/camera/app/ui/widget/AnimationRotationView;
+
+    const/4 v1, 0x4
+
+    if-eqz v0, :cond_13
+
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_13
+
+    .line 134
+    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyImageView:Lcom/transsion/camera/app/ui/widget/AnimationRotationView;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 136
+    :cond_13
+    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimView:Lcom/opensource/svgaplayer/SVGAImageView;
+
+    if-eqz v0, :cond_22
+
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_22
+
+    .line 137
+    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimView:Lcom/opensource/svgaplayer/SVGAImageView;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 139
+    :cond_22
+    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimViewLand:Lcom/opensource/svgaplayer/SVGAImageView;
+
+    if-eqz v0, :cond_31
+
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_31
+
+    .line 140
+    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimViewLand:Lcom/opensource/svgaplayer/SVGAImageView;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 142
+    :cond_31
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseUI;->cancelPendingUpdates()V
+
+    return-void
+.end method
+
 .method public readyUI()V
     .registers 2
 
-    .line 146
+    .line 162
     new-instance v0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)V
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/common/BaseUI;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 147
+    .line 163
     invoke-super {p0}, Lcom/transsion/camera/feature/common/BaseUI;->readyUI()V
 
     return-void
@@ -981,40 +1046,40 @@
 .method public unInitView()V
     .registers 2
 
-    .line 117
-    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimView:Lcom/opensource/svgaplayer/SVGAImageView;
-
-    invoke-direct {p0, v0}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->stopIdleAnimation(Lcom/opensource/svgaplayer/SVGAImageView;)V
-
     .line 118
-    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimViewLand:Lcom/opensource/svgaplayer/SVGAImageView;
+    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimView:Lcom/opensource/svgaplayer/SVGAImageView;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->stopIdleAnimation(Lcom/opensource/svgaplayer/SVGAImageView;)V
 
     .line 119
+    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimViewLand:Lcom/opensource/svgaplayer/SVGAImageView;
+
+    invoke-direct {p0, v0}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->stopIdleAnimation(Lcom/opensource/svgaplayer/SVGAImageView;)V
+
+    .line 120
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimView:Lcom/opensource/svgaplayer/SVGAImageView;
 
     if-eqz v0, :cond_11
 
-    .line 120
+    .line 121
     invoke-virtual {v0}, Lcom/opensource/svgaplayer/SVGAImageView;->clear()V
 
-    .line 122
+    .line 123
     :cond_11
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimViewLand:Lcom/opensource/svgaplayer/SVGAImageView;
 
     if-eqz v0, :cond_18
 
-    .line 123
+    .line 124
     invoke-virtual {v0}, Lcom/opensource/svgaplayer/SVGAImageView;->clear()V
 
     :cond_18
     const/4 v0, 0x0
 
-    .line 125
+    .line 126
     iput v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mDirection:I
 
-    .line 126
+    .line 127
     invoke-super {p0}, Lcom/transsion/camera/feature/common/BaseUI;->unInitView()V
 
     return-void
@@ -1023,10 +1088,10 @@
 .method public updateOrientation(I)V
     .registers 5
 
-    .line 152
+    .line 168
     invoke-super {p0, p1}, Lcom/transsion/camera/feature/common/BaseUI;->updateOrientation(I)V
 
-    .line 153
+    .line 169
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getScreenFormType()I
@@ -1039,7 +1104,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 154
+    .line 170
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
 
     move-result-object v0
@@ -1054,7 +1119,7 @@
 
     if-eqz v0, :cond_57
 
-    .line 155
+    .line 171
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getModeInflateRoot()Landroid/view/ViewGroup;
@@ -1067,7 +1132,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 156
+    .line 172
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
@@ -1082,7 +1147,7 @@
 
     invoke-virtual {v0, v1, v2, v2, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 157
+    .line 173
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
@@ -1095,7 +1160,7 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 158
+    .line 174
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
@@ -1108,7 +1173,7 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 159
+    .line 175
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUI;->getModeInflateRoot()Landroid/view/ViewGroup;
@@ -1117,11 +1182,11 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 161
+    .line 177
     :cond_57
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->updateLayoutParams(I)V
 
-    .line 162
+    .line 178
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseUI;->triggerUpdate()V
 
     return-void
@@ -1130,7 +1195,7 @@
 .method public updateSwitchPreviewValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 130
+    .line 146
     iput-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mSwitchPreviewValue:Ljava/lang/String;
 
     return-void
@@ -1139,21 +1204,21 @@
 .method protected updateUI()V
     .registers 8
 
-    .line 268
+    .line 284
     iget-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mCapturing:Z
 
-    .line 269
+    .line 285
     iget v1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
-    .line 270
+    .line 286
     iget v2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mDirection:I
 
-    .line 272
+    .line 288
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->isLand(I)Z
 
     move-result v3
 
-    .line 274
+    .line 290
     sget-object v4, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1194,231 +1259,200 @@
 
     const/16 v4, 0x8
 
-    if-nez v0, :cond_66
+    if-nez v0, :cond_65
 
-    .line 279
+    .line 295
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_wideselfie_tap_shutter:I
 
-    .line 280
+    .line 296
     iget-object v2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyImageView:Lcom/transsion/camera/app/ui/widget/AnimationRotationView;
 
     if-eqz v2, :cond_48
 
     const/4 v5, 0x4
 
-    .line 281
+    .line 297
     invoke-virtual {v2, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 283
+    .line 299
     :cond_48
     iget-object v2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimView:Lcom/opensource/svgaplayer/SVGAImageView;
 
-    if-eqz v2, :cond_d6
+    if-eqz v2, :cond_cb
 
     iget-object v2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimViewLand:Lcom/opensource/svgaplayer/SVGAImageView;
 
-    if-eqz v2, :cond_d6
+    if-eqz v2, :cond_cb
 
     if-eqz v3, :cond_5c
 
-    .line 285
+    .line 301
     invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 286
+    .line 302
     iget-object v1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimView:Lcom/opensource/svgaplayer/SVGAImageView;
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    goto/16 :goto_d6
+    goto/16 :goto_cb
 
-    .line 288
+    .line 304
     :cond_5c
     invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 289
+    .line 305
     iget-object v2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimView:Lcom/opensource/svgaplayer/SVGAImageView;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    goto/16 :goto_d6
+    goto :goto_cb
 
-    .line 293
-    :cond_66
+    .line 309
+    :cond_65
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimView:Lcom/opensource/svgaplayer/SVGAImageView;
 
-    if-eqz v0, :cond_6d
+    if-eqz v0, :cond_6c
 
-    .line 294
+    .line 310
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
-
-    .line 296
-    :cond_6d
-    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimViewLand:Lcom/opensource/svgaplayer/SVGAImageView;
-
-    if-eqz v0, :cond_74
-
-    .line 297
-    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_74
-    const/4 v0, 0x1
-
-    if-eq v2, v0, :cond_af
-
-    const/4 v4, 0x2
-
-    if-eq v2, v4, :cond_96
-
-    .line 320
-    sget v2, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_wideselfie_rotaniton_left:I
-
-    if-nez v3, :cond_81
-
-    .line 321
-    sget v4, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_right_animation:I
-
-    goto :goto_83
-
-    .line 322
-    :cond_81
-    sget v4, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_land_right_animation:I
-
-    .line 323
-    :goto_83
-    iget-object v5, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    invoke-interface {v5}, Lcom/transsion/camera/app/common/IAppUI;->getScreenFormType()I
-
-    move-result v5
-
-    if-ne v5, v0, :cond_94
-
-    if-nez v3, :cond_91
-
-    .line 324
-    sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_fold_right_animation:I
-
-    :goto_8f
-    move v4, v0
-
-    goto :goto_94
-
-    .line 325
-    :cond_91
-    sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_land_fold_right_animation:I
-
-    goto :goto_8f
-
-    :cond_94
-    :goto_94
-    move v0, v2
-
-    goto :goto_c8
-
-    .line 311
-    :cond_96
-    sget v2, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_wideselfie_rotaniton_left:I
-
-    if-nez v3, :cond_9d
 
     .line 312
-    sget v4, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_right_animation:I
+    :cond_6c
+    iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mIdleAnimViewLand:Lcom/opensource/svgaplayer/SVGAImageView;
 
-    goto :goto_9f
+    if-eqz v0, :cond_73
 
     .line 313
-    :cond_9d
-    sget v4, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_land_right_animation:I
+    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 314
-    :goto_9f
-    iget-object v5, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+    :cond_73
+    const/4 v0, 0x1
 
-    invoke-interface {v5}, Lcom/transsion/camera/app/common/IAppUI;->getScreenFormType()I
-
-    move-result v5
-
-    if-ne v5, v0, :cond_94
-
-    if-nez v3, :cond_ac
-
-    .line 315
-    sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_fold_right_animation:I
-
-    goto :goto_8f
-
-    .line 316
-    :cond_ac
-    sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_land_fold_right_animation:I
-
-    goto :goto_8f
-
-    .line 302
-    :cond_af
-    sget v2, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_wideselfie_rotaniton_right:I
-
-    if-nez v3, :cond_b6
-
-    .line 303
-    sget v4, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_left_animation:I
-
-    goto :goto_b8
-
-    .line 304
-    :cond_b6
-    sget v4, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_land_left_animation:I
-
-    .line 305
-    :goto_b8
-    iget-object v5, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    invoke-interface {v5}, Lcom/transsion/camera/app/common/IAppUI;->getScreenFormType()I
-
-    move-result v5
-
-    if-ne v5, v0, :cond_94
-
-    if-nez v3, :cond_c5
-
-    .line 306
-    sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_fold_left_animation:I
-
-    goto :goto_8f
-
-    .line 307
-    :cond_c5
-    sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_land_fold_left_animation:I
-
-    goto :goto_8f
-
-    .line 330
-    :goto_c8
-    iget-object v2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyImageView:Lcom/transsion/camera/app/ui/widget/AnimationRotationView;
-
-    if-eqz v2, :cond_d6
-
-    if-eqz v4, :cond_d6
+    if-eq v2, v0, :cond_9a
 
     .line 331
-    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
+    sget v2, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_wideselfie_rotaniton_left:I
+
+    if-nez v3, :cond_7d
 
     .line 332
+    sget v4, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_right_animation:I
+
+    goto :goto_7f
+
+    .line 333
+    :cond_7d
+    sget v4, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_land_right_animation:I
+
+    .line 334
+    :goto_7f
+    iget-object v5, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+
+    invoke-interface {v5}, Lcom/transsion/camera/app/common/IAppUI;->getScreenFormType()I
+
+    move-result v5
+
+    if-ne v5, v0, :cond_90
+
+    if-eqz v3, :cond_92
+
+    .line 336
+    const-string/jumbo v0, "widelself_land_fold_right_animation"
+
+    invoke-static {v0}, Lcom/transsion/camera/utils/CameraUtil;->getDrawableId(Ljava/lang/String;)I
+
+    move-result v4
+
+    :cond_90
+    :goto_90
+    move v0, v2
+
+    goto :goto_bd
+
+    .line 338
+    :cond_92
+    const-string/jumbo v0, "widelself_fold_right_animation"
+
+    invoke-static {v0}, Lcom/transsion/camera/utils/CameraUtil;->getDrawableId(Ljava/lang/String;)I
+
+    move-result v4
+
+    goto :goto_90
+
+    .line 318
+    :cond_9a
+    sget v2, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_wideselfie_rotaniton_right:I
+
+    if-nez v3, :cond_a1
+
+    .line 319
+    sget v4, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_left_animation:I
+
+    goto :goto_a3
+
+    .line 320
+    :cond_a1
+    sget v4, Lcom/transsion/camera/feature/panoramawideselfie/R$drawable;->widelself_land_left_animation:I
+
+    .line 321
+    :goto_a3
+    iget-object v5, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+
+    invoke-interface {v5}, Lcom/transsion/camera/app/common/IAppUI;->getScreenFormType()I
+
+    move-result v5
+
+    if-ne v5, v0, :cond_90
+
+    if-eqz v3, :cond_b5
+
+    .line 323
+    const-string/jumbo v0, "widelself_land_fold_left_animation"
+
+    invoke-static {v0}, Lcom/transsion/camera/utils/CameraUtil;->getDrawableId(Ljava/lang/String;)I
+
+    move-result v4
+
+    goto :goto_90
+
+    .line 325
+    :cond_b5
+    const-string/jumbo v0, "widelself_fold_left_animation"
+
+    invoke-static {v0}, Lcom/transsion/camera/utils/CameraUtil;->getDrawableId(Ljava/lang/String;)I
+
+    move-result v4
+
+    goto :goto_90
+
+    .line 344
+    :goto_bd
+    iget-object v2, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyImageView:Lcom/transsion/camera/app/ui/widget/AnimationRotationView;
+
+    if-eqz v2, :cond_cb
+
+    if-eqz v4, :cond_cb
+
+    .line 345
+    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 346
     iget-object v1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyImageView:Lcom/transsion/camera/app/ui/widget/AnimationRotationView;
 
     invoke-virtual {v1, v4}, Lcom/transsion/camera/app/ui/widget/AnimationRotationView;->setImageResource(I)V
 
-    .line 336
-    :cond_d6
-    :goto_d6
+    .line 350
+    :cond_cb
+    :goto_cb
     iget-object p0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->mNotifyText:Landroid/widget/TextView;
 
-    if-eqz p0, :cond_df
+    if-eqz p0, :cond_d4
 
-    if-eqz v0, :cond_df
+    if-eqz v0, :cond_d4
 
-    .line 337
+    .line 351
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setText(I)V
 
-    :cond_df
+    :cond_d4
     return-void
 .end method

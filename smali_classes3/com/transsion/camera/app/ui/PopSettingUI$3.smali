@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI;)V
     .registers 2
 
-    .line 820
+    .line 596
     iput-object p1, p0, Lcom/transsion/camera/app/ui/PopSettingUI$3;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 823
+    .line 599
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    .line 824
+    .line 600
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$3;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/PopSettingUI;->-$$Nest$fgetmTreasureBoxScrollView(Lcom/transsion/camera/app/ui/PopSettingUI;)Lcom/transsion/camera/app/ui/widget/DampingHorizontalScrollView;

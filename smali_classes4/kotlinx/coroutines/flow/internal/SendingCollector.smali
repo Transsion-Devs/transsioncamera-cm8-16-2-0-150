@@ -44,10 +44,10 @@
         }
     .end annotation
 
-    .line 15
+    .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 17
+    .line 13
     iput-object p1, p0, Lkotlinx/coroutines/flow/internal/SendingCollector;->channel:Lkotlinx/coroutines/channels/SendChannel;
 
     return-void
@@ -68,7 +68,7 @@
         }
     .end annotation
 
-    .line 19
+    .line 15
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/SendingCollector;->channel:Lkotlinx/coroutines/channels/SendChannel;
 
     invoke-interface {p0, p1, p2}, Lkotlinx/coroutines/channels/SendChannel;->send(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;

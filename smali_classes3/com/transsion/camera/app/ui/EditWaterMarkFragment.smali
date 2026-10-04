@@ -298,15 +298,102 @@
     return-void
 .end method
 
+.method private applyPreviewTextStyle(Landroid/widget/TextView;Landroid/widget/TextView;)V
+    .registers 5
+
+    if-eqz p1, :cond_4a
+
+    if-nez p2, :cond_5
+
+    goto :goto_4a
+
+    :cond_5
+    const/4 p0, 0x0
+
+    .line 421
+    invoke-virtual {p2}, Landroid/widget/TextView;->getTextSize()F
+
+    move-result v0
+
+    invoke-virtual {p1, p0, v0}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    .line 422
+    invoke-virtual {p2}, Landroid/widget/TextView;->getCurrentTextColor()I
+
+    move-result p0
+
+    invoke-virtual {p1, p0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 423
+    invoke-virtual {p2}, Landroid/widget/TextView;->getGravity()I
+
+    move-result p0
+
+    invoke-virtual {p1, p0}, Landroid/widget/TextView;->setGravity(I)V
+
+    .line 424
+    invoke-virtual {p2}, Landroid/widget/TextView;->getLetterSpacing()F
+
+    move-result p0
+
+    invoke-virtual {p1, p0}, Landroid/widget/TextView;->setLetterSpacing(F)V
+
+    .line 425
+    invoke-virtual {p2}, Landroid/widget/TextView;->getIncludeFontPadding()Z
+
+    move-result p0
+
+    invoke-virtual {p1, p0}, Landroid/widget/TextView;->setIncludeFontPadding(Z)V
+
+    .line 426
+    invoke-virtual {p2}, Landroid/widget/TextView;->getTextScaleX()F
+
+    move-result p0
+
+    invoke-virtual {p1, p0}, Landroid/widget/TextView;->setTextScaleX(F)V
+
+    .line 427
+    invoke-virtual {p2}, Landroid/widget/TextView;->getEllipsize()Landroid/text/TextUtils$TruncateAt;
+
+    move-result-object p0
+
+    invoke-virtual {p1, p0}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+
+    .line 428
+    invoke-virtual {p2}, Landroid/view/View;->getPaddingLeft()I
+
+    move-result p0
+
+    invoke-virtual {p2}, Landroid/view/View;->getPaddingTop()I
+
+    move-result v0
+
+    .line 429
+    invoke-virtual {p2}, Landroid/view/View;->getPaddingRight()I
+
+    move-result v1
+
+    invoke-virtual {p2}, Landroid/view/View;->getPaddingBottom()I
+
+    move-result p2
+
+    .line 428
+    invoke-virtual {p1, p0, v0, v1, p2}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    :cond_4a
+    :goto_4a
+    return-void
+.end method
+
 .method private getBrandWatermark()I
     .registers 5
 
-    .line 990
+    .line 1005
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->getBrandWatermarkDrawableName()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 992
+    .line 1007
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -315,7 +402,7 @@
 
     if-eqz v0, :cond_38
 
-    .line 993
+    .line 1008
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -324,7 +411,7 @@
 
     move-result-object p0
 
-    .line 994
+    .line 1009
     sget-object v0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -343,7 +430,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 995
+    .line 1010
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -358,13 +445,13 @@
 
     return p0
 
-    .line 999
+    .line 1014
     :cond_38
     invoke-static {p0}, Lcom/transsion/camera/utils/CameraUtil;->getWatermarkDrawableId(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 1000
+    .line 1015
     sget-object v1, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -395,19 +482,19 @@
 .method private getBrandWatermarkDrawableName()Ljava/lang/String;
     .registers 4
 
-    .line 1007
+    .line 1022
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isDoodle()Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    .line 1008
+    .line 1023
     const-string p0, "edit_watermark_brand_special"
 
     return-object p0
 
-    .line 1009
+    .line 1024
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -419,12 +506,12 @@
 
     if-eqz p0, :cond_16
 
-    .line 1010
+    .line 1025
     const-string p0, "edit_watermark_brand_108m"
 
     return-object p0
 
-    .line 1012
+    .line 1027
     :cond_16
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -432,7 +519,7 @@
 
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mEditWatermarkBrandPreview:Z
 
-    .line 1013
+    .line 1028
     sget-object v0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -453,12 +540,12 @@
 
     if-eqz p0, :cond_37
 
-    .line 1015
+    .line 1030
     const-string p0, "edit_watermark_brand_preview"
 
     return-object p0
 
-    .line 1017
+    .line 1032
     :cond_37
     const-string p0, "edit_watermark_brand"
 
@@ -468,12 +555,12 @@
 .method private getLanguage()Ljava/lang/String;
     .registers 1
 
-    .line 421
+    .line 433
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object p0
 
-    .line 422
+    .line 434
     invoke-virtual {p0}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
     move-result-object p0
@@ -1113,7 +1200,7 @@
 .method private synthetic lambda$setSortWaterMarkEnable$6(Landroid/view/View;)V
     .registers 6
 
-    .line 436
+    .line 448
     invoke-virtual {p0}, Landroid/app/Fragment;->isResumed()Z
 
     move-result p1
@@ -1122,7 +1209,7 @@
 
     return-void
 
-    .line 439
+    .line 451
     :cond_7
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSortWaterMark:Landroid/widget/RelativeLayout;
 
@@ -1130,35 +1217,35 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 440
+    .line 452
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeWaterMark:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 441
+    .line 453
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityWaterMark:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 442
+    .line 454
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandWaterMark:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 443
+    .line 455
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMark:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 444
+    .line 456
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextSwitchButton:Landroid/widget/Switch;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setClickable(Z)V
 
-    .line 445
+    .line 457
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityInfo:Ljava/lang/String;
 
-    if-nez p1, :cond_65
+    if-nez p1, :cond_67
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCitySwitchButton:Landroid/widget/Switch;
 
@@ -1166,21 +1253,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_65
+    if-eqz p1, :cond_67
 
-    .line 446
+    .line 458
     sget-object p1, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[whileGettingLocation]: failed to get location, close city watermark"
 
     invoke-static {p1, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 447
+    .line 459
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCitySwitchButton:Landroid/widget/Switch;
 
     invoke-virtual {p1, v0}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 448
+    .line 460
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v1, "off"
@@ -1193,7 +1280,7 @@
 
     invoke-virtual {p1, v3, v1, v2, v0}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 449
+    .line 461
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mToastInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
@@ -1212,15 +1299,18 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 450
+    .line 462
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
+    if-eqz p1, :cond_67
+
+    .line 463
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mToastInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUI;->showToast(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 452
-    :cond_65
+    .line 466
+    :cond_67
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mIFragmentControl:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$IFragmentControl;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$IFragmentControl;->onEnterSortWaterMark()V
@@ -1231,7 +1321,7 @@
 .method private synthetic lambda$showCustomizeDialog$8(Landroid/content/DialogInterface;I)V
     .registers 7
 
-    .line 479
+    .line 493
     iget-object p2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
     invoke-virtual {p2}, Lcom/transsion/widgetslib/dialog/InputDialog;->getmEditText()Landroid/widget/EditText;
@@ -1248,22 +1338,22 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkInfo:Ljava/lang/String;
 
-    .line 480
+    .line 494
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkSummary:Landroid/widget/TextView;
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 481
+    .line 495
     iget-object p2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
 
     if-eqz p2, :cond_1e
 
-    .line 482
+    .line 496
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkInfo:Ljava/lang/String;
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 484
+    .line 498
     :cond_1e
     iget-object p2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextSwitchButton:Landroid/widget/Switch;
 
@@ -1273,14 +1363,14 @@
 
     if-eqz p2, :cond_2d
 
-    .line 485
+    .line 499
     iget-object p2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowTextWaterMark:Landroid/widget/TextView;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkInfo:Ljava/lang/String;
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 487
+    .line 501
     :cond_2d
     iget-object p2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -1296,22 +1386,22 @@
 
     invoke-virtual {p2, v2, v0, v1, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 488
+    .line 502
     iget-object p2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
     invoke-virtual {p2, p1}, Lcom/transsion/widgetslib/dialog/InputDialog;->dismissOprate(Landroid/content/DialogInterface;)V
 
-    .line 489
+    .line 503
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSettingStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     if-eqz p1, :cond_49
 
-    .line 490
+    .line 504
     sget-object p2, Lcom/transsion/camera/app/common/IApp$State;->STATE_IDLE:Lcom/transsion/camera/app/common/IApp$State;
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;->onStatusChanged(Lcom/transsion/camera/app/common/IApp$State;)V
 
-    .line 492
+    .line 506
     :cond_49
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -1331,17 +1421,17 @@
 .method private synthetic lambda$showCustomizeDialog$9(Landroid/content/DialogInterface;I)V
     .registers 3
 
-    .line 495
+    .line 509
     iget-object p2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
     invoke-virtual {p2, p1}, Lcom/transsion/widgetslib/dialog/InputDialog;->dismissOprate(Landroid/content/DialogInterface;)V
 
-    .line 496
+    .line 510
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSettingStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     if-eqz p0, :cond_e
 
-    .line 497
+    .line 511
     sget-object p1, Lcom/transsion/camera/app/common/IApp$State;->STATE_IDLE:Lcom/transsion/camera/app/common/IApp$State;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;->onStatusChanged(Lcom/transsion/camera/app/common/IApp$State;)V
@@ -1353,7 +1443,7 @@
 .method private removeTextView()V
     .registers 5
 
-    .line 568
+    .line 582
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -1367,7 +1457,7 @@
 
     if-le v0, v1, :cond_13
 
-    .line 569
+    .line 583
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->removeViewAt(I)V
@@ -1376,7 +1466,7 @@
 
     goto :goto_8
 
-    .line 571
+    .line 585
     :cond_13
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -1398,7 +1488,7 @@
 .method private setSortWaterMarkEnable()V
     .registers 4
 
-    .line 426
+    .line 438
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1409,7 +1499,7 @@
 
     if-gt v0, v1, :cond_29
 
-    .line 427
+    .line 439
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSortWaterMarkTitle:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
@@ -1428,12 +1518,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 428
+    .line 440
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSortWaterMark:Landroid/widget/RelativeLayout;
 
     if-eqz p0, :cond_48
 
-    .line 429
+    .line 441
     new-instance v0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$$ExternalSyntheticLambda0;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$$ExternalSyntheticLambda0;-><init>()V
@@ -1442,7 +1532,7 @@
 
     return-void
 
-    .line 433
+    .line 445
     :cond_29
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSortWaterMarkTitle:Landroid/widget/TextView;
 
@@ -1462,12 +1552,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 434
+    .line 446
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSortWaterMark:Landroid/widget/RelativeLayout;
 
     if-eqz v0, :cond_48
 
-    .line 435
+    .line 447
     new-instance v1, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;)V
@@ -1481,12 +1571,12 @@
 .method private setSortWaterMarkUnEnable()V
     .registers 2
 
-    .line 459
+    .line 473
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSortWaterMark:Landroid/widget/RelativeLayout;
 
     if-eqz p0, :cond_c
 
-    .line 460
+    .line 474
     new-instance v0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$$ExternalSyntheticLambda9;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$$ExternalSyntheticLambda9;-><init>()V
@@ -1500,7 +1590,7 @@
 .method private showCustomizeDialog()V
     .registers 7
 
-    .line 466
+    .line 480
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mPromptDialog:Lcom/transsion/widgetslib/dialog/PromptDialog;
 
     if-eqz v0, :cond_12
@@ -1511,7 +1601,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 467
+    .line 481
     sget-object p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "showCustomizeDialog: dialog is showing return"
@@ -1520,13 +1610,13 @@
 
     return-void
 
-    .line 470
+    .line 484
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     if-nez v0, :cond_1e
 
-    .line 471
+    .line 485
     sget-object p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "showCustomizeDialog: mDataStore is null return"
@@ -1535,7 +1625,7 @@
 
     return-void
 
-    .line 474
+    .line 488
     :cond_1e
     const-string v1, "DEFAULT_TEXT"
 
@@ -1555,7 +1645,7 @@
 
     move-result v0
 
-    .line 475
+    .line 489
     new-instance v1, Lcom/transsion/widgetslib/dialog/InputDialog;
 
     invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
@@ -1572,7 +1662,7 @@
 
     if-eqz v0, :cond_57
 
-    .line 476
+    .line 490
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkInfo:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1600,7 +1690,7 @@
     :goto_57
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mHintInfo:Ljava/lang/String;
 
-    .line 477
+    .line 491
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -1613,7 +1703,7 @@
 
     const/4 v4, 0x0
 
-    .line 476
+    .line 490
     invoke-virtual {v1, v3, v0, v2, v4}, Lcom/transsion/widgetslib/dialog/InputDialog;->setInputNum(Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILcom/transsion/widgetslib/dialog/InputDialog$OnInputNumListener;)Lcom/transsion/widgetslib/dialog/InputDialog;
 
     move-result-object v0
@@ -1624,7 +1714,7 @@
 
     invoke-direct {v2, p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$$ExternalSyntheticLambda7;-><init>(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;)V
 
-    .line 478
+    .line 492
     invoke-virtual {v0, v1, v2}, Lcom/transsion/widgetslib/dialog/InputDialog;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/transsion/widgetslib/dialog/InputDialog;
 
     move-result-object v0
@@ -1635,14 +1725,14 @@
 
     invoke-direct {v2, p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$$ExternalSyntheticLambda8;-><init>(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;)V
 
-    .line 494
+    .line 508
     invoke-virtual {v0, v1, v2}, Lcom/transsion/widgetslib/dialog/InputDialog;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Lcom/transsion/widgetslib/dialog/InputDialog;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
-    .line 500
+    .line 514
     invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1655,25 +1745,25 @@
 
     if-eqz v0, :cond_90
 
-    .line 501
+    .line 515
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
     invoke-virtual {v0, v1}, Lcom/transsion/widgetslib/dialog/InputDialog;->requireHungStatus(Z)Lcom/transsion/widgetslib/dialog/InputDialog;
 
-    .line 503
+    .line 517
     :cond_90
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
     invoke-virtual {v0, v1}, Lcom/transsion/widgetslib/dialog/InputDialog;->setCanceledOnTouchOutside(Z)Lcom/transsion/widgetslib/dialog/InputDialog;
 
-    .line 504
+    .line 518
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
     invoke-virtual {v0}, Lcom/transsion/widgetslib/dialog/InputDialog;->getmEditText()Landroid/widget/EditText;
 
     move-result-object v0
 
-    .line 505
+    .line 519
     new-instance v2, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$OSLengthFilter;
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
@@ -1698,10 +1788,10 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setFilters([Landroid/text/InputFilter;)V
 
-    .line 506
+    .line 520
     invoke-virtual {v0, v1}, Landroid/view/View;->setTextDirection(I)V
 
-    .line 507
+    .line 521
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v1
@@ -1712,7 +1802,7 @@
 
     if-eqz v1, :cond_cc
 
-    .line 509
+    .line 523
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
@@ -1723,7 +1813,7 @@
 
     invoke-static {v2, v1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 511
+    .line 525
     :cond_cc
     new-instance v1, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$1;
 
@@ -1731,7 +1821,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 531
+    .line 545
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
     invoke-virtual {v0}, Lcom/transsion/widgetslib/dialog/InputDialog;->show()Lcom/transsion/widgetslib/dialog/PromptDialog;
@@ -1740,7 +1830,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mPromptDialog:Lcom/transsion/widgetslib/dialog/PromptDialog;
 
-    .line 532
+    .line 546
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -1751,7 +1841,7 @@
 
     move-result-object v0
 
-    .line 533
+    .line 547
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
     const/4 v2, -0x1
@@ -1762,7 +1852,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
-    .line 534
+    .line 548
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
     const/4 v1, -0x2
@@ -1773,7 +1863,7 @@
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 535
+    .line 549
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
     invoke-virtual {p0}, Lcom/transsion/widgetslib/dialog/InputDialog;->getmEditText()Landroid/widget/EditText;
@@ -1788,14 +1878,14 @@
 .method private updateCityInfo(I)V
     .registers 7
 
-    .line 633
+    .line 647
     sget-object v0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "updateCityInfo"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 634
+    .line 648
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;
 
     const-wide/16 v2, 0x7d0
@@ -1804,7 +1894,7 @@
 
     invoke-virtual {v1, v4, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 635
+    .line 649
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityInfo:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1813,10 +1903,10 @@
 
     if-eqz v1, :cond_1b
 
-    .line 636
+    .line 650
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->setSortWaterMarkUnEnable()V
 
-    .line 638
+    .line 652
     :cond_1b
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mLocationManager:Lcom/transsion/camera/app/common/location/LocationManager;
 
@@ -1828,12 +1918,12 @@
 
     if-eqz v1, :cond_29
 
-    .line 640
+    .line 654
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->updateCityInfoFromLocation(Landroid/location/Location;)V
 
     return-void
 
-    .line 642
+    .line 656
     :cond_29
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mLocationManager:Lcom/transsion/camera/app/common/location/LocationManager;
 
@@ -1843,7 +1933,7 @@
 
     if-nez v1, :cond_93
 
-    .line 644
+    .line 658
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1862,12 +1952,12 @@
 
     if-lez p1, :cond_6d
 
-    .line 646
+    .line 660
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;
 
     invoke-virtual {v0, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 647
+    .line 661
     invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -1878,22 +1968,22 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 661
+    .line 675
     new-instance v0, Landroid/os/Message;
 
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
     const/16 v1, 0x65
 
-    .line 662
+    .line 676
     iput v1, v0, Landroid/os/Message;->what:I
 
     add-int/lit8 p1, p1, -0x1
 
-    .line 663
+    .line 677
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    .line 664
+    .line 678
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mLocationHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkLocationHandler;
 
     const-wide/16 v1, 0x3e8
@@ -1902,7 +1992,7 @@
 
     return-void
 
-    .line 666
+    .line 680
     :cond_6d
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mToastInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
@@ -1918,7 +2008,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 668
+    .line 682
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->mScreenFormType:I
 
     const/4 v0, 0x4
@@ -1941,7 +2031,7 @@
     :cond_8a
     const/4 p1, 0x0
 
-    .line 673
+    .line 687
     :goto_8b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -1951,7 +2041,7 @@
 
     return-void
 
-    .line 676
+    .line 690
     :cond_93
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -1969,7 +2059,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 677
+    .line 691
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->updateCityInfoFromLocation(Landroid/location/Location;)V
 
     return-void
@@ -1978,29 +2068,29 @@
 .method private updateCityInfoFromLocation(Landroid/location/Location;)V
     .registers 6
 
-    .line 683
+    .line 697
     invoke-static {p1}, Lcom/transsion/camera/utils/LocationUtil;->getLocation(Landroid/location/Location;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 684
+    .line 698
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_68
 
-    .line 685
+    .line 699
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityInfo:Ljava/lang/String;
 
-    .line 686
+    .line 700
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 687
+    .line 701
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;
 
     const-wide/16 v1, 0x1f4
@@ -2009,7 +2099,7 @@
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 691
+    .line 705
     invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2018,21 +2108,21 @@
 
     move-result-object p1
 
-    .line 692
+    .line 706
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_46
 
-    .line 693
+    .line 707
     sget-object p1, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "Location getAddress = null"
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 694
+    .line 708
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mToastInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
@@ -2047,7 +2137,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 695
+    .line 709
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mToastInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -2056,7 +2146,7 @@
 
     return-void
 
-    .line 697
+    .line 711
     :cond_46
     sget-object v0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2076,15 +2166,15 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 698
+    .line 712
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityInfo:Ljava/lang/String;
 
-    .line 699
+    .line 713
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;
 
     invoke-virtual {p1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 700
+    .line 714
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;
 
     invoke-virtual {p0, v3}, Landroid/os/Handler;->sendEmptyMessage(I)Z
@@ -2096,12 +2186,12 @@
 .method private updateEditWaterMarkItem()V
     .registers 8
 
-    .line 575
+    .line 589
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 576
+    .line 590
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -2117,7 +2207,7 @@
 
     if-le v0, v2, :cond_18
 
-    .line 577
+    .line 591
     iget-object v2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->removeViewAt(I)V
@@ -2126,7 +2216,7 @@
 
     goto :goto_d
 
-    .line 579
+    .line 593
     :cond_18
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -2152,7 +2242,7 @@
 
     if-eqz v0, :cond_44
 
-    .line 580
+    .line 594
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowTimeWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->getTimeInfo()Ljava/lang/String;
@@ -2161,19 +2251,19 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 581
+    .line 595
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowTimeWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 582
+    .line 596
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     iget-object v5, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeWaterMarkItem:Lcom/transsion/camera/app/ui/editwatermark/EditWaterMarkUIItem;
 
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 584
+    .line 598
     :cond_44
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -2193,7 +2283,7 @@
 
     if-eqz v0, :cond_72
 
-    .line 585
+    .line 599
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityInfo:Ljava/lang/String;
 
     const/4 v5, 0x0
@@ -2204,26 +2294,26 @@
 
     if-nez v0, :cond_72
 
-    .line 586
+    .line 600
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowCityWaterMark:Landroid/widget/TextView;
 
     iget-object v5, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityInfo:Ljava/lang/String;
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 587
+    .line 601
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowCityWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 588
+    .line 602
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     iget-object v5, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityWaterMarkItem:Lcom/transsion/camera/app/ui/editwatermark/EditWaterMarkUIItem;
 
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 591
+    .line 605
     :cond_72
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -2243,7 +2333,7 @@
 
     if-eqz v0, :cond_a2
 
-    .line 592
+    .line 606
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowTextWaterMark:Landroid/widget/TextView;
 
     iget-object v5, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkInfo:Ljava/lang/String;
@@ -2264,19 +2354,19 @@
     :goto_93
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 593
+    .line 607
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowTextWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 594
+    .line 608
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     iget-object v5, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkItem:Lcom/transsion/camera/app/ui/editwatermark/EditWaterMarkUIItem;
 
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 596
+    .line 610
     :cond_a2
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -2296,7 +2386,7 @@
 
     if-eqz v0, :cond_10e
 
-    .line 597
+    .line 611
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowBrandWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -2305,15 +2395,15 @@
 
     if-nez v0, :cond_102
 
-    .line 598
+    .line 612
     new-instance v0, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 599
+    .line 613
     iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 600
+    .line 614
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2324,7 +2414,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 601
+    .line 615
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2337,12 +2427,12 @@
 
     move-result-object v1
 
-    .line 602
+    .line 616
     iget-object v2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowBrandWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 603
+    .line 617
     iget v1, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     int-to-float v1, v1
@@ -2353,14 +2443,14 @@
 
     div-float/2addr v1, v0
 
-    .line 604
+    .line 618
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowBrandWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 605
+    .line 619
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -2379,28 +2469,28 @@
 
     float-to-int v1, v2
 
-    .line 606
+    .line 620
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 607
+    .line 621
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowBrandWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 609
+    .line 623
     :cond_102
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowBrandWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 610
+    .line 624
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandWaterMarkItem:Lcom/transsion/camera/app/ui/editwatermark/EditWaterMarkUIItem;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 612
+    .line 626
     :cond_10e
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->setSortWaterMarkEnable()V
 
@@ -2410,7 +2500,7 @@
 .method private updateEditWaterMarkRootLayout(II)V
     .registers 8
 
-    .line 953
+    .line 968
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkPreviewRoot:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_c5
@@ -2421,7 +2511,7 @@
 
     goto/16 :goto_c5
 
-    .line 956
+    .line 971
     :cond_a
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2431,10 +2521,10 @@
 
     const/4 v1, 0x0
 
-    .line 957
+    .line 972
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 958
+    .line 973
     iget-object v2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkListRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2443,7 +2533,7 @@
 
     check-cast v2, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 960
+    .line 975
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -2454,7 +2544,7 @@
 
     move-result v3
 
-    .line 959
+    .line 974
     invoke-virtual {v2, v1, v1, v1, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     if-eqz p2, :cond_a4
@@ -2463,7 +2553,7 @@
 
     if-eq p2, v1, :cond_a4
 
-    .line 962
+    .line 977
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
@@ -2484,7 +2574,7 @@
 
     if-eq p1, p2, :cond_73
 
-    .line 975
+    .line 990
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -2497,7 +2587,7 @@
 
     iput p1, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    .line 976
+    .line 991
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -2510,7 +2600,7 @@
 
     iput p1, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
-    .line 977
+    .line 992
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -2523,7 +2613,7 @@
 
     iput p1, v2, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    .line 978
+    .line 993
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -2538,7 +2628,7 @@
 
     goto :goto_bb
 
-    .line 966
+    .line 981
     :cond_73
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
@@ -2552,7 +2642,7 @@
 
     iput p1, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    .line 967
+    .line 982
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -2565,7 +2655,7 @@
 
     iput p1, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
-    .line 968
+    .line 983
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -2578,7 +2668,7 @@
 
     iput p1, v2, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    .line 969
+    .line 984
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -2593,7 +2683,7 @@
 
     goto :goto_bb
 
-    .line 982
+    .line 997
     :cond_a4
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
@@ -2605,7 +2695,7 @@
 
     move-result p1
 
-    .line 983
+    .line 998
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
@@ -2620,13 +2710,13 @@
 
     iput p1, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
-    .line 985
+    .line 1000
     :goto_bb
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkPreviewRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 986
+    .line 1001
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkListRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -2637,7 +2727,7 @@
 .end method
 
 .method private updateWaterMarkLayout()V
-    .registers 15
+    .registers 13
 
     .line 338
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -2657,7 +2747,7 @@
     .line 339
     const-string v1, "key_city_watermark_info"
 
-    if-eqz v0, :cond_1bf
+    if-eqz v0, :cond_1b3
 
     .line 340
     iget-object v2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
@@ -2731,32 +2821,28 @@
     array-length v7, v0
 
     :goto_4b
-    if-ge v6, v7, :cond_1bb
+    if-ge v6, v7, :cond_1af
 
     aget-char v8, v0, v6
 
     add-int/lit8 v8, v8, -0x30
 
-    const/high16 v9, 0x41200000    # 10.0f
+    const/4 v9, -0x2
 
-    const/4 v10, -0x2
+    if-eqz v8, :cond_166
 
-    const/4 v11, -0x1
+    if-eq v8, v4, :cond_118
 
-    if-eqz v8, :cond_16f
+    const/4 v10, 0x2
 
-    if-eq v8, v4, :cond_11e
+    if-eq v8, v10, :cond_c3
 
-    const/4 v12, 0x2
+    if-eq v8, v5, :cond_5d
 
-    if-eq v8, v12, :cond_bf
+    goto/16 :goto_1ab
 
-    if-eq v8, v5, :cond_60
-
-    goto/16 :goto_1b7
-
-    .line 397
-    :cond_60
+    .line 393
+    :cond_5d
     new-instance v8, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
@@ -2767,27 +2853,34 @@
 
     iput-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandTextView:Landroid/widget/TextView;
 
-    .line 398
+    .line 394
     iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v9, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 399
+    .line 395
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandTextView:Landroid/widget/TextView;
 
     invoke-virtual {v8}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v8
 
-    .line 400
+    .line 396
+    iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandTextView:Landroid/widget/TextView;
+
+    const/16 v10, 0x10
+
+    invoke-virtual {v9, v10}, Landroid/widget/TextView;->setGravity(I)V
+
+    .line 397
     new-instance v9, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v9}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 401
+    .line 398
     iput-boolean v4, v9, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 402
+    .line 399
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v10
@@ -2798,7 +2891,7 @@
 
     invoke-static {v10, v11, v9}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;ILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 403
+    .line 400
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v10
@@ -2811,12 +2904,12 @@
 
     move-result-object v10
 
-    .line 404
+    .line 401
     iget-object v11, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandTextView:Landroid/widget/TextView;
 
     invoke-virtual {v11, v10}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 405
+    .line 402
     iget v10, v9, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     int-to-float v10, v10
@@ -2827,7 +2920,7 @@
 
     div-float/2addr v10, v9
 
-    .line 406
+    .line 403
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
@@ -2846,96 +2939,86 @@
 
     float-to-int v9, v9
 
-    .line 407
+    .line 404
     iput v9, v8, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 408
+    .line 405
     iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandTextView:Landroid/widget/TextView;
 
     invoke-virtual {v9, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 409
+    .line 406
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandWaterMarkItem:Lcom/transsion/camera/app/ui/editwatermark/EditWaterMarkUIItem;
 
     invoke-interface {v8, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_1b7
+    goto/16 :goto_1ab
 
-    .line 382
-    :cond_bf
+    .line 380
+    :cond_c3
     new-instance v8, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
-    move-result-object v12
+    move-result-object v10
 
-    invoke-direct {v8, v12}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v8, v10}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
 
-    .line 383
-    iget-object v12, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
+    .line 381
+    iget-object v10, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v12, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v10, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 384
+    .line 382
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
 
     invoke-virtual {v8}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v8
 
-    .line 385
+    .line 383
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v12
+    move-result-object v10
 
-    sget v13, Lcom/transsion/camera/R$dimen;->default_edit_watermark_height:I
+    sget v11, Lcom/transsion/camera/R$dimen;->default_edit_watermark_height:I
 
-    invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v12
+    move-result v10
 
-    iput v12, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v10, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    .line 384
+    iput v9, v8, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    .line 385
+    iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v9, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 386
-    iput v10, v8, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    .line 387
-    iget-object v10, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v10, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 388
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v8, v4, v9}, Landroid/widget/TextView;->setTextSize(IF)V
+    iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowTextWaterMark:Landroid/widget/TextView;
 
-    .line 389
+    invoke-direct {p0, v8, v9}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->applyPreviewTextStyle(Landroid/widget/TextView;Landroid/widget/TextView;)V
+
+    .line 387
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
 
     invoke-virtual {v8, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 390
-    iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v8, v11}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 391
+    .line 388
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
 
     invoke-virtual {v8, v4}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 392
-    iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
-
-    sget-object v9, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
-
-    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
-
-    .line 393
+    .line 389
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
 
     iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkInfo:Ljava/lang/String;
@@ -2944,88 +3027,85 @@
 
     move-result v9
 
-    if-eqz v9, :cond_110
+    if-eqz v9, :cond_10a
 
     iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mHintInfo:Ljava/lang/String;
 
-    goto :goto_112
+    goto :goto_10c
 
-    :cond_110
+    :cond_10a
     iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkInfo:Ljava/lang/String;
 
-    :goto_112
+    :goto_10c
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 394
+    .line 390
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkItem:Lcom/transsion/camera/app/ui/editwatermark/EditWaterMarkUIItem;
 
     invoke-interface {v8, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_1b7
+    goto/16 :goto_1ab
 
-    .line 368
-    :cond_11e
+    .line 367
+    :cond_118
     new-instance v8, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
-    move-result-object v12
+    move-result-object v10
 
-    invoke-direct {v8, v12}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v8, v10}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityTextView:Landroid/widget/TextView;
 
+    .line 368
+    iget-object v10, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v10, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
     .line 369
-    iget-object v12, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v12, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    .line 370
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityTextView:Landroid/widget/TextView;
 
     invoke-virtual {v8}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v8
 
-    .line 371
+    .line 370
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v12
+    move-result-object v10
 
-    sget v13, Lcom/transsion/camera/R$dimen;->default_edit_watermark_height:I
+    sget v11, Lcom/transsion/camera/R$dimen;->default_edit_watermark_height:I
 
-    invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v12
+    move-result v10
 
-    iput v12, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v10, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    .line 371
+    iput v9, v8, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 372
-    iput v10, v8, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityTextView:Landroid/widget/TextView;
+
+    invoke-virtual {v9, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 373
-    iget-object v10, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityTextView:Landroid/widget/TextView;
+    iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v10, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowCityWaterMark:Landroid/widget/TextView;
+
+    invoke-direct {p0, v8, v9}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->applyPreviewTextStyle(Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     .line 374
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v8, v4, v9}, Landroid/widget/TextView;->setTextSize(IF)V
-
-    .line 375
-    iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityTextView:Landroid/widget/TextView;
-
     invoke-virtual {v8, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 376
-    iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v8, v11}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 377
+    .line 375
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {v8}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -3038,36 +3118,36 @@
 
     iput-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityInfo:Ljava/lang/String;
 
-    .line 378
+    .line 376
     iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityTextView:Landroid/widget/TextView;
 
     invoke-virtual {v9, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 379
+    .line 377
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityWaterMarkItem:Lcom/transsion/camera/app/ui/editwatermark/EditWaterMarkUIItem;
 
     invoke-interface {v8, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1b7
+    goto :goto_1ab
 
     .line 355
-    :cond_16f
+    :cond_166
     new-instance v8, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
-    move-result-object v12
+    move-result-object v10
 
-    invoke-direct {v8, v12}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v8, v10}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeTextView:Landroid/widget/TextView;
 
     .line 356
-    iget-object v12, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
+    iget-object v10, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v12, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v10, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 357
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeTextView:Landroid/widget/TextView;
@@ -3079,28 +3159,30 @@
     .line 358
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v12
+    move-result-object v10
 
-    sget v13, Lcom/transsion/camera/R$dimen;->default_edit_watermark_height:I
+    sget v11, Lcom/transsion/camera/R$dimen;->default_edit_watermark_height:I
 
-    invoke-virtual {v12, v13}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v12
+    move-result v10
 
-    iput v12, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iput v10, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 359
-    iput v10, v8, Landroid/view/ViewGroup$LayoutParams;->width:I
+    iput v9, v8, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 360
-    iget-object v10, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeTextView:Landroid/widget/TextView;
+    iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v10, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v9, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 361
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v8, v4, v9}, Landroid/widget/TextView;->setTextSize(IF)V
+    iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowTimeWaterMark:Landroid/widget/TextView;
+
+    invoke-direct {p0, v8, v9}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->applyPreviewTextStyle(Landroid/widget/TextView;Landroid/widget/TextView;)V
 
     .line 362
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeTextView:Landroid/widget/TextView;
@@ -3110,37 +3192,32 @@
     .line 363
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v8, v11}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 364
-    iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeTextView:Landroid/widget/TextView;
-
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->getTimeInfo()Ljava/lang/String;
 
     move-result-object v9
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 365
+    .line 364
     iget-object v8, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     iget-object v9, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeWaterMarkItem:Lcom/transsion/camera/app/ui/editwatermark/EditWaterMarkUIItem;
 
     invoke-interface {v8, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :goto_1b7
+    :goto_1ab
     add-int/lit8 v6, v6, 0x1
 
     goto/16 :goto_4b
 
-    .line 413
-    :cond_1bb
+    .line 410
+    :cond_1af
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->setSortWaterMarkEnable()V
 
     return-void
 
-    .line 415
-    :cond_1bf
+    .line 412
+    :cond_1b3
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -3153,7 +3230,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityInfo:Ljava/lang/String;
 
-    .line 416
+    .line 413
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->updateEditWaterMarkItem()V
 
     return-void
@@ -3185,7 +3262,7 @@
 .method public getEditWaterMarkUIItem()Ljava/util/List;
     .registers 1
 
-    .line 616
+    .line 630
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     return-object p0
@@ -3202,7 +3279,7 @@
 .method public getShowCityInfo()Ljava/lang/String;
     .registers 1
 
-    .line 709
+    .line 723
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityInfo:Ljava/lang/String;
 
     return-object p0
@@ -3211,7 +3288,7 @@
 .method public getShowTimeInfo()Ljava/lang/String;
     .registers 1
 
-    .line 705
+    .line 719
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeInfo:Ljava/lang/String;
 
     return-object p0
@@ -3220,29 +3297,29 @@
 .method public getSystemTime()Ljava/lang/String;
     .registers 5
 
-    .line 625
+    .line 639
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 626
+    .line 640
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object p0
 
-    .line 627
+    .line 641
     new-instance v2, Ljava/text/SimpleDateFormat;
 
     const-string/jumbo v3, "yyyy/MM/dd HH:mm"
 
     invoke-direct {v2, v3, p0}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    .line 628
+    .line 642
     new-instance p0, Ljava/util/Date;
 
     invoke-direct {p0, v0, v1}, Ljava/util/Date;-><init>(J)V
 
-    .line 629
+    .line 643
     invoke-virtual {v2, p0}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object p0
@@ -3253,7 +3330,7 @@
 .method public getTextInfo()Ljava/lang/String;
     .registers 2
 
-    .line 713
+    .line 727
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkInfo:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -3275,7 +3352,7 @@
 .method public getTimeInfo()Ljava/lang/String;
     .registers 2
 
-    .line 620
+    .line 634
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->getSystemTime()Ljava/lang/String;
 
     move-result-object v0
@@ -3288,7 +3365,7 @@
 .method protected getToolbar(Landroid/view/View;)Landroid/widget/Toolbar;
     .registers 2
 
-    .line 866
+    .line 881
     sget p0, Lcom/transsion/camera/R$id;->edit_watermark_fragment_toolbar:I
 
     invoke-virtual {p1, p0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3297,12 +3374,12 @@
 
     check-cast p0, Landroid/widget/Toolbar;
 
-    .line 867
+    .line 882
     sget p1, Lcom/transsion/camera/R$string;->edit_watermark_top_bar:I
 
     invoke-virtual {p0, p1}, Landroid/widget/Toolbar;->setTitle(I)V
 
-    .line 868
+    .line 883
     invoke-virtual {p0}, Landroid/widget/Toolbar;->hideOverflowMenu()Z
 
     return-object p0
@@ -3311,7 +3388,7 @@
 .method protected initViews(Landroid/view/View;)V
     .registers 3
 
-    .line 847
+    .line 862
     sget v0, Lcom/transsion/camera/R$id;->edit_watermark_fragment_root:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3322,10 +3399,10 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->mFragmentRoot:Landroid/widget/LinearLayout;
 
-    .line 848
+    .line 863
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->initViews(Landroid/view/View;)V
 
-    .line 849
+    .line 864
     sget v0, Lcom/transsion/camera/R$id;->edit_watermark_preview_root_layout:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3336,7 +3413,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkPreviewRoot:Landroid/widget/FrameLayout;
 
-    .line 850
+    .line 865
     sget v0, Lcom/transsion/camera/R$id;->edit_watermark_list_root_layout:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3347,7 +3424,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkListRoot:Landroid/widget/FrameLayout;
 
-    .line 851
+    .line 866
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->mOrientation:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->mScreenFormType:I
@@ -3360,7 +3437,7 @@
 .method public linkAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
     .registers 2
 
-    .line 842
+    .line 857
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-void
@@ -3369,10 +3446,10 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .registers 3
 
-    .line 889
+    .line 904
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 890
+    .line 905
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->mOrientation:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->mScreenFormType:I
@@ -3423,7 +3500,7 @@
 .method public onDestroy()V
     .registers 4
 
-    .line 816
+    .line 831
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityInfo:Ljava/lang/String;
 
     if-nez v0, :cond_3a
@@ -3438,12 +3515,12 @@
 
     if-eqz v0, :cond_3a
 
-    .line 817
+    .line 832
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityWaterMark:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->callOnClick()Z
 
-    .line 818
+    .line 833
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mToastInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p0}, Landroid/app/Fragment;->getResources()Landroid/content/res/Resources;
@@ -3458,7 +3535,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 820
+    .line 835
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->mScreenFormType:I
 
     const/4 v1, 0x4
@@ -3481,18 +3558,18 @@
     :cond_30
     const/4 v0, 0x0
 
-    .line 825
+    .line 840
     :goto_31
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v1, :cond_3a
 
-    .line 826
+    .line 841
     iget-object v2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mToastInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {v1, v2, v0}, Lcom/transsion/camera/app/common/IAppUI;->showToast(Lcom/transsion/camera/app/common/ui/HintInfo;I)V
 
-    .line 829
+    .line 844
     :cond_3a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
@@ -3508,7 +3585,7 @@
 
     if-eqz v0, :cond_50
 
-    .line 830
+    .line 845
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
@@ -3517,7 +3594,7 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 832
+    .line 847
     :cond_50
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
 
@@ -3525,25 +3602,25 @@
 
     const/4 v2, -0x2
 
-    .line 833
+    .line 848
     invoke-virtual {v0, v2}, Lcom/transsion/widgetslib/dialog/InputDialog;->getButton(I)Landroid/widget/Button;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/View;->callOnClick()Z
 
-    .line 835
+    .line 850
     :cond_5c
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkHandler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 836
+    .line 851
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mLocationHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkLocationHandler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 837
+    .line 852
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mLocationHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkLocationHandler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -3552,7 +3629,7 @@
 
     invoke-virtual {v0}, Landroid/os/Looper;->quitSafely()V
 
-    .line 838
+    .line 853
     invoke-super {p0}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->onDestroy()V
 
     return-void
@@ -3561,10 +3638,10 @@
 .method public onPause()V
     .registers 6
 
-    .line 800
+    .line 815
     invoke-super {p0}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->onPause()V
 
-    .line 802
+    .line 817
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -3586,7 +3663,7 @@
 
     check-cast v2, Lcom/transsion/camera/app/ui/editwatermark/EditWaterMarkUIItem;
 
-    .line 803
+    .line 818
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3605,7 +3682,7 @@
 
     goto :goto_b
 
-    .line 805
+    .line 820
     :cond_2b
     sget-object v0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3627,12 +3704,12 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 806
+    .line 821
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     if-eqz v0, :cond_7c
 
-    .line 807
+    .line 822
     const-string v2, "key_edit_watermark_item"
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -3643,7 +3720,7 @@
 
     invoke-virtual {v0, v2, v1, v3, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 808
+    .line 823
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityInfo:Ljava/lang/String;
@@ -3656,7 +3733,7 @@
 
     invoke-virtual {v0, v3, v1, v2, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 809
+    .line 824
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkInfo:Ljava/lang/String;
@@ -3669,7 +3746,7 @@
 
     invoke-virtual {v0, v3, v1, v2, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 810
+    .line 825
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->getLanguage()Ljava/lang/String;
@@ -3693,37 +3770,33 @@
 .method public onResume()V
     .registers 10
 
-    .line 746
+    .line 760
     invoke-super {p0}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->onResume()V
 
-    .line 747
+    .line 761
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_f
 
-    .line 748
-    new-instance v0, Lcom/transsion/camera/app/common/storage/DataStore;
+    .line 762
+    sget-object p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
+    const-string v0, "onResume returen, data unInit"
 
-    move-result-object v1
+    invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;-><init>(Landroid/content/Context;)V
+    return-void
 
-    iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
-
-    .line 750
-    :cond_12
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
-
+    .line 765
+    :cond_f
     const-string v1, "key_time_watermark"
 
-    .line 751
+    .line 766
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 750
+    .line 765
     const-string v3, "off"
 
     invoke-virtual {v0, v1, v3, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -3736,15 +3809,15 @@
 
     move-result v0
 
-    .line 752
+    .line 767
     iget-object v2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 753
+    .line 768
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 752
+    .line 767
     const-string v5, "key_city_watermark"
 
     invoke-virtual {v2, v5, v3, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -3755,17 +3828,17 @@
 
     move-result v2
 
-    .line 754
+    .line 769
     iget-object v4, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v6, "key_brand_watermark"
 
-    .line 755
+    .line 770
     invoke-virtual {v4}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 754
+    .line 769
     invoke-virtual {v4, v6, v3, v7}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -3774,17 +3847,17 @@
 
     move-result v4
 
-    .line 756
+    .line 771
     iget-object v6, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v7, "key_text_watermark"
 
-    .line 757
+    .line 772
     invoke-virtual {v6}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 756
+    .line 771
     invoke-virtual {v6, v7, v3, v8}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
@@ -3793,84 +3866,84 @@
 
     move-result v6
 
-    .line 759
+    .line 774
     iget-object v7, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeSwitchButton:Landroid/widget/Switch;
 
     invoke-virtual {v7, v0}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 760
+    .line 775
     iget-object v7, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCitySwitchButton:Landroid/widget/Switch;
 
     invoke-virtual {v7, v2}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 761
+    .line 776
     iget-object v7, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandSwitchButton:Landroid/widget/Switch;
 
     invoke-virtual {v7, v4}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 762
+    .line 777
     iget-object v7, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextSwitchButton:Landroid/widget/Switch;
 
     invoke-virtual {v7, v6}, Landroid/widget/Switch;->setChecked(Z)V
 
-    if-nez v0, :cond_8d
+    if-nez v0, :cond_88
 
-    if-nez v2, :cond_8d
+    if-nez v2, :cond_88
 
-    if-nez v6, :cond_8d
+    if-nez v6, :cond_88
 
-    if-nez v4, :cond_8d
+    if-nez v4, :cond_88
 
-    .line 765
+    .line 780
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowTimeWaterMark:Landroid/widget/TextView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 766
+    .line 781
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowCityWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 767
+    .line 782
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowTextWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 768
+    .line 783
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowBrandWaterMark:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 769
+    .line 784
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mEditWaterMarkUIItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 777
-    :cond_8d
+    .line 792
+    :cond_88
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mPermissionRequest:Z
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_e3
+    if-eqz v0, :cond_de
 
-    .line 778
+    .line 793
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mLocationPermission:Lcom/transsion/camera/app/common/permission/PermissionManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->checkCameraLocationPermissions()Z
 
     move-result v0
 
-    if-nez v0, :cond_a9
+    if-nez v0, :cond_a4
 
-    .line 779
+    .line 794
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCitySwitchButton:Landroid/widget/Switch;
 
     invoke-virtual {v0, v2}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 780
+    .line 795
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -3879,17 +3952,17 @@
 
     invoke-virtual {v0, v5, v3, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    goto :goto_e3
+    goto :goto_de
 
-    .line 782
-    :cond_a9
+    .line 797
+    :cond_a4
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCitySwitchButton:Landroid/widget/Switch;
 
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 783
+    .line 798
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -3898,7 +3971,7 @@
 
     invoke-virtual {v0, v5, v1, v3, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 784
+    .line 799
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mLocationManager:Lcom/transsion/camera/app/common/location/LocationManager;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCitySwitchButton:Landroid/widget/Switch;
@@ -3911,45 +3984,45 @@
 
     invoke-virtual {v0, v1, v3}, Lcom/transsion/camera/app/common/location/LocationManager;->recordLocation(ZLjava/lang/String;)V
 
-    .line 785
+    .line 800
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->removeTextView()V
 
-    .line 786
+    .line 801
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->updateEditWaterMarkItem()V
 
-    .line 787
+    .line 802
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mLocationHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkLocationHandler;
 
     const/16 v1, 0x65
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 788
+    .line 803
     new-instance v0, Landroid/os/Message;
 
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
-    .line 789
+    .line 804
     iput v1, v0, Landroid/os/Message;->what:I
 
     const/4 v1, 0x5
 
-    .line 790
+    .line 805
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 791
+    .line 806
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mLocationHandler:Lcom/transsion/camera/app/ui/EditWaterMarkFragment$EditWaterMarkLocationHandler;
 
     const-wide/16 v3, 0x3e8
 
     invoke-virtual {v1, v0, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 794
-    :cond_e3
-    :goto_e3
+    .line 809
+    :cond_de
+    :goto_de
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mPermissionRequest:Z
 
-    .line 795
+    .line 810
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->setSortWaterMarkEnable()V
 
     return-void
@@ -4541,7 +4614,7 @@
 .method public setSettingFragmentManager(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)V
     .registers 2
 
-    .line 741
+    .line 755
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->mSettingFragmentManger:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     return-void
@@ -4550,7 +4623,7 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 732
+    .line 746
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-void
@@ -4559,7 +4632,7 @@
 .method public setSettingStatusListener(Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;)V
     .registers 2
 
-    .line 736
+    .line 750
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSettingStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     return-void
@@ -4570,24 +4643,24 @@
 
     const/4 v0, 0x0
 
-    .line 1025
+    .line 1040
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 1026
+    .line 1041
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    .line 1027
+    .line 1042
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandSwitchButton:Landroid/widget/Switch;
 
-    .line 1028
+    .line 1043
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeSwitchButton:Landroid/widget/Switch;
 
-    .line 1029
+    .line 1044
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextSwitchButton:Landroid/widget/Switch;
 
     if-eqz v1, :cond_32
 
-    .line 1030
+    .line 1045
     sget-object v1, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -4612,115 +4685,115 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1031
+    .line 1046
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextSwitchButton:Landroid/widget/Switch;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1032
+    .line 1047
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextSwitchButton:Landroid/widget/Switch;
 
-    .line 1035
+    .line 1050
     :cond_32
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCitySwitchButton:Landroid/widget/Switch;
 
-    .line 1036
+    .line 1051
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandWaterMark:Landroid/widget/RelativeLayout;
 
     if-eqz v1, :cond_3d
 
-    .line 1037
+    .line 1052
     invoke-virtual {v1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1038
+    .line 1053
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandWaterMark:Landroid/widget/RelativeLayout;
 
-    .line 1040
+    .line 1055
     :cond_3d
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityWaterMark:Landroid/widget/RelativeLayout;
 
     if-eqz v1, :cond_46
 
-    .line 1041
+    .line 1056
     invoke-virtual {v1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1042
+    .line 1057
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityWaterMark:Landroid/widget/RelativeLayout;
 
-    .line 1044
+    .line 1059
     :cond_46
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeWaterMark:Landroid/widget/RelativeLayout;
 
     if-eqz v1, :cond_4f
 
-    .line 1045
+    .line 1060
     invoke-virtual {v1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1046
+    .line 1061
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeWaterMark:Landroid/widget/RelativeLayout;
 
-    .line 1048
+    .line 1063
     :cond_4f
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSortWaterMark:Landroid/widget/RelativeLayout;
 
     if-eqz v1, :cond_58
 
-    .line 1049
+    .line 1064
     invoke-virtual {v1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1050
+    .line 1065
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSortWaterMark:Landroid/widget/RelativeLayout;
 
-    .line 1052
+    .line 1067
     :cond_58
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMark:Landroid/widget/LinearLayout;
 
     if-eqz v1, :cond_61
 
-    .line 1053
+    .line 1068
     invoke-virtual {v1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1054
+    .line 1069
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMark:Landroid/widget/LinearLayout;
 
-    .line 1057
+    .line 1072
     :cond_61
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMarkSummary:Landroid/widget/TextView;
 
-    .line 1058
+    .line 1073
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowTextWaterMark:Landroid/widget/TextView;
 
-    .line 1059
+    .line 1074
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSortWaterMarkTitle:Landroid/widget/TextView;
 
-    .line 1060
+    .line 1075
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowBrandWaterMark:Landroid/widget/TextView;
 
-    .line 1061
+    .line 1076
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandTextView:Landroid/widget/TextView;
 
-    .line 1062
+    .line 1077
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowTimeWaterMark:Landroid/widget/TextView;
 
-    .line 1063
+    .line 1078
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextTextView:Landroid/widget/TextView;
 
-    .line 1064
+    .line 1079
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeTextView:Landroid/widget/TextView;
 
-    .line 1065
+    .line 1080
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
 
-    .line 1066
+    .line 1081
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowCityWaterMark:Landroid/widget/TextView;
 
-    .line 1067
+    .line 1082
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mLocationManager:Lcom/transsion/camera/app/common/location/LocationManager;
 
-    .line 1068
+    .line 1083
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 1069
+    .line 1084
     iput-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mLocationPermission:Lcom/transsion/camera/app/common/permission/PermissionManager;
 
     return-void
@@ -4735,39 +4808,39 @@
 .method public updateEditWaterMarkUIItemsSorted()V
     .registers 3
 
-    .line 717
+    .line 731
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mSortWaterMark:Landroid/widget/RelativeLayout;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 718
+    .line 732
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTimeWaterMark:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 719
+    .line 733
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mCityWaterMark:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 720
+    .line 734
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mBrandWaterMark:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 721
+    .line 735
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextWaterMark:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 722
+    .line 736
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mTextSwitchButton:Landroid/widget/Switch;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setClickable(Z)V
 
-    .line 723
+    .line 737
     iget-object v0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -4781,7 +4854,7 @@
 
     if-le v0, v1, :cond_31
 
-    .line 724
+    .line 738
     iget-object v1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mShowWaterMarkLinearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->removeViewAt(I)V
@@ -4790,7 +4863,7 @@
 
     goto :goto_26
 
-    .line 726
+    .line 740
     :cond_31
     invoke-virtual {p0}, Landroid/app/Fragment;->isResumed()Z
 
@@ -4798,7 +4871,7 @@
 
     if-eqz v0, :cond_3a
 
-    .line 727
+    .line 741
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->updateWaterMarkLayout()V
 
     :cond_3a

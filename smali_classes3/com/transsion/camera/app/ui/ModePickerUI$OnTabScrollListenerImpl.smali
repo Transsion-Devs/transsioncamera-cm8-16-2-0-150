@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
     .registers 2
 
-    .line 2007
+    .line 1891
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onScrolling()V
     .registers 3
 
-    .line 2043
+    .line 1927
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmStopScroll(Lcom/transsion/camera/app/ui/ModePickerUI;)Z
@@ -56,12 +56,12 @@
 
     if-eqz v0, :cond_26
 
-    .line 2044
+    .line 1928
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$mupdateMoreModeGuideLeftRootLocation(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
-    .line 2045
+    .line 1929
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
@@ -82,7 +82,7 @@
 
     if-nez v0, :cond_26
 
-    .line 2046
+    .line 1930
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$mupdateMoreCancelRootParams(Lcom/transsion/camera/app/ui/ModePickerUI;)V
@@ -94,7 +94,7 @@
 .method public onTabScroll(F)V
     .registers 6
 
-    .line 2010
+    .line 1894
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
@@ -103,7 +103,7 @@
 
     move-result p1
 
-    .line 2011
+    .line 1895
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
@@ -112,7 +112,7 @@
 
     move-result v0
 
-    .line 2012
+    .line 1896
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
@@ -135,7 +135,7 @@
 
     if-nez v1, :cond_43
 
-    .line 2013
+    .line 1897
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$mupdateMoreCancelRootParams(Lcom/transsion/camera/app/ui/ModePickerUI;)V
@@ -144,7 +144,7 @@
 
     if-eq p1, v1, :cond_3a
 
-    .line 2015
+    .line 1899
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmMoreModeCancelRoot(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/view/View;
@@ -157,7 +157,7 @@
 
     goto :goto_43
 
-    .line 2017
+    .line 1901
     :cond_3a
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
@@ -167,7 +167,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2020
+    .line 1904
     :cond_43
     :goto_43
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
@@ -186,7 +186,7 @@
 
     goto :goto_a4
 
-    .line 2023
+    .line 1907
     :cond_52
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
@@ -203,19 +203,19 @@
 
     if-eq p1, v0, :cond_6a
 
-    .line 2027
+    .line 1911
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {p1, v2}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fputmLeftGuideRootMoveFollowTab(Lcom/transsion/camera/app/ui/ModePickerUI;Z)V
 
-    .line 2028
+    .line 1912
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$mexitMoreModeGuideAnimation(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     return-void
 
-    .line 2031
+    .line 1915
     :cond_6a
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
@@ -229,10 +229,10 @@
 
     const/4 p1, 0x2
 
-    .line 2032
+    .line 1916
     new-array p1, p1, [I
 
-    .line 2033
+    .line 1917
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
@@ -243,7 +243,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 2034
+    .line 1918
     aget p1, p1, v2
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
@@ -254,7 +254,7 @@
 
     sub-int/2addr p1, v0
 
-    .line 2035
+    .line 1919
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmMoreModeGuideLeftRoot(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/view/View;
@@ -263,7 +263,7 @@
 
     if-eqz v0, :cond_a4
 
-    .line 2036
+    .line 1920
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmMoreModeGuideLeftRoot(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/view/View;

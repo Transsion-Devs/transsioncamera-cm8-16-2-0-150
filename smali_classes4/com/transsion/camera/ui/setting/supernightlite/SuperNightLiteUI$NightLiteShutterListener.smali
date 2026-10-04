@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)V
     .registers 2
 
-    .line 808
+    .line 802
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$NightLiteShutterListener;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,12 +53,12 @@
 .method public onShutterClick(II)Z
     .registers 4
 
-    .line 812
+    .line 806
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$NightLiteShutterListener;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$mnotifyNightSwitch(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)V
 
-    .line 813
+    .line 807
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$NightLiteShutterListener;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fgetmSelfTimerOn(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)Z
@@ -71,7 +71,7 @@
 
     return p2
 
-    .line 816
+    .line 810
     :cond_f
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$NightLiteShutterListener;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -89,7 +89,7 @@
 
     return v0
 
-    .line 819
+    .line 813
     :cond_1d
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$NightLiteShutterListener;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
@@ -105,7 +105,7 @@
 
     return v0
 
-    .line 824
+    .line 818
     :cond_2a
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$NightLiteShutterListener;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 

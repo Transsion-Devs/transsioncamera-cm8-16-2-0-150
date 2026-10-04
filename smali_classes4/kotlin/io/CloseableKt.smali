@@ -11,12 +11,12 @@
 
     if-nez p1, :cond_8
 
-    .line 56
+    .line 46
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
 
     return-void
 
-    .line 59
+    .line 49
     :cond_8
     :try_start_8
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
@@ -28,7 +28,7 @@
     :catchall_c
     move-exception p0
 
-    .line 61
+    .line 51
     invoke-static {p1, p0}, Lkotlin/ExceptionsKt;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     :cond_10

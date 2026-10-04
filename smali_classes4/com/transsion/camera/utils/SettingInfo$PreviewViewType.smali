@@ -26,7 +26,7 @@
 .method private static synthetic $values()[Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
     .registers 2
 
-    .line 3104
+    .line 3119
     sget-object v0, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->SURFACE_VIEW:Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
     sget-object v1, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->GL_SURFACE_VIEW:Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
@@ -41,7 +41,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 3105
+    .line 3120
     new-instance v0, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
     const-string v1, "SURFACE_VIEW"
@@ -52,7 +52,7 @@
 
     sput-object v0, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->SURFACE_VIEW:Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
-    .line 3106
+    .line 3121
     new-instance v0, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
     const-string v1, "GL_SURFACE_VIEW"
@@ -63,7 +63,7 @@
 
     sput-object v0, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->GL_SURFACE_VIEW:Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
-    .line 3104
+    .line 3119
     invoke-static {}, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->$values()[Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
     move-result-object v0
@@ -76,7 +76,7 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
 
-    .line 3104
+    .line 3119
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -85,7 +85,7 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
     .registers 2
 
-    .line 3104
+    .line 3119
     const-class v0, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -100,7 +100,7 @@
 .method public static values()[Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
     .registers 1
 
-    .line 3104
+    .line 3119
     sget-object v0, Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->$VALUES:[Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;
 
     invoke-virtual {v0}, [Lcom/transsion/camera/utils/SettingInfo$PreviewViewType;->clone()Ljava/lang/Object;

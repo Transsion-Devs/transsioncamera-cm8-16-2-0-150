@@ -38,7 +38,7 @@
 .method public flush()V
     .registers 4
 
-    .line 381
+    .line 382
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -47,7 +47,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 382
+    .line 383
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     const/4 v1, 0x1
@@ -56,7 +56,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onModeCaptureFailed(Z[J)V
 
-    .line 383
+    .line 384
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -78,7 +78,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_197
+    if-nez v0, :cond_198
 
     .line 290
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -110,7 +110,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_197
+    if-lez v0, :cond_198
 
     .line 292
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
@@ -120,6 +120,11 @@
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
 
     .line 296
+    const-string v0, "[TranMemoryFlow] available memory when onNextReady :"
+
+    invoke-static {v0}, Lcom/transsion/camera/utils/MemoryUtils;->logAvailMemoryAsync(Ljava/lang/String;)V
+
+    .line 297
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fgetmCaptureState(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)Ljava/util/concurrent/atomic/AtomicReference;
@@ -128,7 +133,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 297
+    .line 298
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mCapturingNumber:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -137,7 +142,7 @@
 
     move-result v0
 
-    .line 298
+    .line 299
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -194,7 +199,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->iTrace(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 300
+    .line 301
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fgetmShot2shotMaxCacheNumber(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)I
@@ -205,50 +210,50 @@
 
     const/4 v3, 0x1
 
-    if-gt v0, v1, :cond_90
+    if-gt v0, v1, :cond_95
 
-    if-gtz v0, :cond_9c
+    if-gtz v0, :cond_a1
 
-    :cond_90
-    if-nez v0, :cond_9e
+    :cond_95
+    if-nez v0, :cond_a3
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mShot2ShotLeftNumber:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 301
+    .line 302
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v1
 
-    if-nez v1, :cond_9e
+    if-nez v1, :cond_a3
 
-    :cond_9c
+    :cond_a1
     move v1, v3
 
-    goto :goto_9f
+    goto :goto_a4
 
-    :cond_9e
+    :cond_a3
     move v1, v2
 
-    .line 302
-    :goto_9f
+    .line 303
+    :goto_a4
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v4, v4, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz v4, :cond_123
+    if-eqz v4, :cond_128
 
-    if-eqz v1, :cond_123
+    if-eqz v1, :cond_128
 
-    .line 303
+    .line 304
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->specialMonkeySupported()Z
 
     move-result v1
 
-    if-eqz v1, :cond_b7
+    if-eqz v1, :cond_bc
 
-    .line 304
+    .line 305
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -259,24 +264,24 @@
 
     return-void
 
-    .line 307
-    :cond_b7
+    .line 308
+    :cond_bc
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->isTpPictureToVideoSupport()Z
 
     move-result v1
 
-    if-nez v1, :cond_123
+    if-nez v1, :cond_128
 
-    .line 308
+    .line 309
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$msuperNightLiteOff(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_d8
+    if-eqz v1, :cond_dd
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
@@ -284,9 +289,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_d8
+    if-eqz v1, :cond_dd
 
-    .line 309
+    .line 310
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -297,8 +302,8 @@
 
     invoke-interface {v1, v3, v4, v5}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 311
-    :cond_d8
+    .line 312
+    :cond_dd
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -307,7 +312,7 @@
 
     invoke-interface {v1, v4}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 312
+    .line 313
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
@@ -318,22 +323,22 @@
 
     invoke-virtual {v1, v4, v5}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 314
+    .line 315
     invoke-interface {p1}, Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;->isSupportLowQualityMode()Z
 
     move-result p1
 
-    if-nez p1, :cond_123
+    if-nez p1, :cond_128
 
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-boolean v1, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mPhotosSupportProcessingApi:Z
 
-    if-eqz v1, :cond_123
+    if-eqz v1, :cond_128
 
     iget-boolean p1, p1, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mIsTimeLongAlgoSceen:Z
 
-    if-eqz p1, :cond_123
+    if-eqz p1, :cond_128
 
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
@@ -341,18 +346,18 @@
 
     move-result p1
 
-    if-ne p1, v3, :cond_123
+    if-ne p1, v3, :cond_128
 
-    .line 316
+    .line 317
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fgetmIsProcessingUriCreated(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_116
+    if-eqz p1, :cond_11b
 
-    .line 317
+    .line 318
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -361,10 +366,10 @@
 
     invoke-interface {p1, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    goto :goto_123
+    goto :goto_128
 
-    .line 319
-    :cond_116
+    .line 320
+    :cond_11b
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -373,36 +378,36 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 320
+    .line 321
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iput-boolean v2, p1, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mIsTimeLongAlgoSceen:Z
 
-    .line 326
-    :cond_123
-    :goto_123
+    .line 327
+    :cond_128
+    :goto_128
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz v1, :cond_197
+    if-eqz v1, :cond_198
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fgetmShot2shotMaxNumberForEnableUI(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)I
 
     move-result p1
 
-    if-gt v0, p1, :cond_197
+    if-gt v0, p1, :cond_198
 
-    if-lez v0, :cond_197
+    if-lez v0, :cond_198
 
-    .line 327
+    .line 328
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->specialMonkeySupported()Z
 
     move-result p1
 
-    if-eqz p1, :cond_141
+    if-eqz p1, :cond_146
 
-    .line 328
+    .line 329
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -413,37 +418,33 @@
 
     return-void
 
-    .line 331
-    :cond_141
+    .line 332
+    :cond_146
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
-    invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fgetmIsBGOffLineEnable(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)Z
+    iget-boolean v0, p1, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mIsBGOffLineEnable:Z
 
-    move-result p1
-
-    if-eqz p1, :cond_182
-
-    iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
+    if-eqz v0, :cond_183
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
-    if-eqz p1, :cond_182
+    if-eqz p1, :cond_183
 
-    .line 332
+    .line 333
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->getOfflineSessionCount()I
 
     move-result p1
 
-    if-lt p1, v3, :cond_182
+    if-lt p1, v3, :cond_183
 
-    .line 333
+    .line 334
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object p1
 
     invoke-virtual {p1, v3}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->setOnNextReadyFlag(Z)V
 
-    .line 334
+    .line 335
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -478,21 +479,21 @@
 
     return-void
 
-    .line 338
-    :cond_182
+    .line 339
+    :cond_183
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-boolean v0, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mFirstSteadyFrameCome:Z
 
-    if-eqz v0, :cond_197
+    if-eqz v0, :cond_198
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->isTpPictureToVideoSupport()Z
 
     move-result p1
 
-    if-nez p1, :cond_197
+    if-nez p1, :cond_198
 
-    .line 339
+    .line 340
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -501,14 +502,14 @@
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    :cond_197
+    :cond_198
     return-void
 .end method
 
 .method public onShutterDone()V
     .registers 5
 
-    .line 348
+    .line 349
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mCapturingNumber:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -517,7 +518,7 @@
 
     move-result v0
 
-    .line 349
+    .line 350
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -574,16 +575,16 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->iTrace(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 351
+    .line 352
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-nez v1, :cond_52
 
-    goto/16 :goto_fd
+    goto/16 :goto_f9
 
-    .line 352
+    .line 353
     :cond_52
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->specialMonkeySupported()Z
 
@@ -591,7 +592,7 @@
 
     if-eqz v1, :cond_62
 
-    .line 353
+    .line 354
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -602,7 +603,7 @@
 
     return-void
 
-    .line 356
+    .line 357
     :cond_62
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
@@ -614,7 +615,7 @@
 
     if-nez v1, :cond_9d
 
-    .line 357
+    .line 358
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-boolean v3, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mPhotosSupportProcessingApi:Z
@@ -633,7 +634,7 @@
 
     if-ne v1, v2, :cond_9d
 
-    .line 358
+    .line 359
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fgetmIsProcessingUriCreated(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)Z
@@ -642,7 +643,7 @@
 
     if-eqz v1, :cond_8f
 
-    .line 359
+    .line 360
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -653,7 +654,7 @@
 
     goto :goto_9d
 
-    .line 361
+    .line 362
     :cond_8f
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -663,14 +664,14 @@
 
     invoke-static {v1, v3}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 362
+    .line 363
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     const/4 v3, 0x0
 
     iput-boolean v3, v1, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mIsTimeLongAlgoSceen:Z
 
-    .line 366
+    .line 367
     :cond_9d
     :goto_9d
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
@@ -679,39 +680,35 @@
 
     move-result v1
 
-    if-gt v0, v1, :cond_fd
+    if-gt v0, v1, :cond_f9
 
-    if-lez v0, :cond_fd
+    if-lez v0, :cond_f9
 
-    .line 367
+    .line 368
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
-    invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fgetmIsBGOffLineEnable(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)Z
+    iget-boolean v1, v0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mIsBGOffLineEnable:Z
 
-    move-result v0
-
-    if-eqz v0, :cond_e8
-
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
+    if-eqz v1, :cond_e4
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
-    if-eqz v0, :cond_e8
+    if-eqz v0, :cond_e4
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->getOfflineSessionCount()I
 
     move-result v0
 
-    if-lt v0, v2, :cond_e8
+    if-lt v0, v2, :cond_e4
 
-    .line 368
+    .line 369
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->setOnNextReadyFlag(Z)V
 
-    .line 369
+    .line 370
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -746,21 +743,21 @@
 
     return-void
 
-    .line 373
-    :cond_e8
+    .line 374
+    :cond_e4
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-boolean v1, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mFirstSteadyFrameCome:Z
 
-    if-eqz v1, :cond_fd
+    if-eqz v1, :cond_f9
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->isTpPictureToVideoSupport()Z
 
     move-result v0
 
-    if-nez v0, :cond_fd
+    if-nez v0, :cond_f9
 
-    .line 374
+    .line 375
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -769,15 +766,15 @@
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    :cond_fd
-    :goto_fd
+    :cond_f9
+    :goto_f9
     return-void
 .end method
 
 .method public processPreview()V
     .registers 3
 
-    .line 388
+    .line 389
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -786,7 +783,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 389
+    .line 390
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fgetmThumbnailBitmap(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)Landroid/graphics/Bitmap;
@@ -795,7 +792,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->updateThumbnailView(Landroid/graphics/Bitmap;)V
 
-    .line 390
+    .line 391
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     const/4 v0, 0x0
@@ -808,7 +805,7 @@
 .method public saveHighQualityJpegDone()V
     .registers 4
 
-    .line 395
+    .line 396
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -823,7 +820,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
-    .line 396
+    .line 397
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/mode/CameraMode;->supportPostAlgoDeferRequest()Z
 
     move-result v2
@@ -844,10 +841,10 @@
 
     move-result-object v1
 
-    .line 395
+    .line 396
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 397
+    .line 398
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CameraMode;->supportPostAlgoDeferRequest()Z
@@ -868,7 +865,7 @@
 
     if-nez v0, :cond_52
 
-    .line 398
+    .line 399
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -877,7 +874,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 399
+    .line 400
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;

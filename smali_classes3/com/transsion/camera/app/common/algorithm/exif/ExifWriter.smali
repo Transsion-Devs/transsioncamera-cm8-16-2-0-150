@@ -621,19 +621,19 @@
 .method private static setIfdThumbnail(Lcom/transsion/camera/utils/exif/ExifInterface;[B)V
     .registers 4
 
-    if-nez p1, :cond_a
+    if-nez p1, :cond_b
 
     .line 297
     sget-object p0, Lcom/transsion/camera/app/common/algorithm/exif/ExifWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    const-string p1, "thumbnail is null"
+    const-string/jumbo p1, "thumbnail is null"
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
     .line 300
-    :cond_a
+    :cond_b
     sget v0, Lcom/transsion/camera/utils/exif/ExifInterface;->TAG_JPEG_INTERCHANGE_FORMAT:I
 
     const/4 v1, 0x6

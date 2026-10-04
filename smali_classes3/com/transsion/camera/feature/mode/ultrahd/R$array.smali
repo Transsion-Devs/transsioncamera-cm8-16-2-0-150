@@ -14,19 +14,19 @@
 
 
 # static fields
-.field public static ultrahd_mode_interactive_setting_ui_entries:I = 0x7f0302ea
+.field public static ultrahd_mode_interactive_setting_ui_entries:I = 0x7f0302e7
 
-.field public static ultrahd_mode_left_top_bar_setting_ui_entries:I = 0x7f0302eb
+.field public static ultrahd_mode_left_top_bar_setting_ui_entries:I = 0x7f0302e8
 
-.field public static ultrahd_mode_pop_setting_ui_entries:I = 0x7f0302ec
+.field public static ultrahd_mode_pop_setting_ui_entries:I = 0x7f0302e9
 
-.field public static ultrahd_mode_preference_setting_ui_entries:I = 0x7f0302ed
+.field public static ultrahd_mode_preference_setting_ui_entries:I = 0x7f0302ea
 
-.field public static ultrahd_mode_right_top_bar_setting_ui_entries:I = 0x7f0302ee
+.field public static ultrahd_mode_right_top_bar_setting_ui_entries:I = 0x7f0302eb
 
-.field public static ultrahd_mode_setting_ui_entries:I = 0x7f0302ef
+.field public static ultrahd_mode_setting_ui_entries:I = 0x7f0302ec
 
-.field public static ultrahd_mode_top_bar_setting_ui_entries:I = 0x7f0302f0
+.field public static ultrahd_mode_top_bar_setting_ui_entries:I = 0x7f0302ed
 
 
 # direct methods

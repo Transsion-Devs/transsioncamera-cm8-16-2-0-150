@@ -7,12 +7,12 @@
 .method public static setOf(Ljava/lang/Object;)Ljava/util/Set;
     .registers 2
 
-    .line 18
+    .line 20
     invoke-static {p0}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object p0
 
-    const-string v0, "singleton(element)"
+    const-string v0, "singleton(...)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

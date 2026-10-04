@@ -42,21 +42,21 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    .line 57
+    .line 58
     new-instance v0, Lcom/transsion/camera/feature/mode/aiartmuseum/repo/AIArtMuseumRepo$1;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/repo/AIArtMuseumRepo$1;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/feature/mode/aiartmuseum/repo/AIArtMuseumRepo;->mWatermarkDescriptionMap:Ljava/util/Map;
 
-    .line 93
+    .line 95
     new-instance v0, Lcom/transsion/camera/feature/mode/aiartmuseum/repo/AIArtMuseumRepo$2;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/repo/AIArtMuseumRepo$2;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/feature/mode/aiartmuseum/repo/AIArtMuseumRepo;->mEffectTitleMap:Ljava/util/Map;
 
-    .line 101
+    .line 103
     new-instance v0, Lcom/transsion/camera/feature/mode/aiartmuseum/repo/AIArtMuseumRepo$3;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/repo/AIArtMuseumRepo$3;-><init>()V
@@ -69,7 +69,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 55
+    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -80,12 +80,12 @@
 
     const/4 v0, 0x0
 
-    .line 155
+    .line 158
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 151
+    .line 154
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -100,7 +100,7 @@
 
     goto :goto_65
 
-    .line 155
+    .line 158
     :cond_12
     sget-object v1, Lcom/transsion/camera/feature/mode/aiartmuseum/repo/AIArtMuseumRepo;->mEffectTitleMap:Ljava/util/Map;
 
@@ -110,7 +110,7 @@
 
     check-cast p0, Ljava/lang/Integer;
 
-    .line 156
+    .line 159
     sget-object v1, Lcom/transsion/camera/feature/mode/aiartmuseum/repo/AIArtMuseumRepo;->mEffectValueTitleMap:Ljava/util/Map;
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -121,7 +121,7 @@
 
     if-eqz p0, :cond_5c
 
-    .line 158
+    .line 161
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -138,7 +138,7 @@
 
     goto :goto_5c
 
-    .line 162
+    .line 165
     :cond_33
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -178,7 +178,7 @@
 
     return-object p0
 
-    .line 159
+    .line 162
     :cond_5c
     :goto_5c
     sget-object p0, Lcom/transsion/camera/app_info/AppInfo;->app:Landroid/app/Application;
@@ -191,7 +191,7 @@
 
     return-object p0
 
-    .line 152
+    .line 155
     :cond_65
     :goto_65
     sget-object p0, Lcom/transsion/camera/app_info/AppInfo;->app:Landroid/app/Application;
@@ -208,14 +208,14 @@
 .method public static getWatermarkDescription(Ljava/lang/String;)Ljava/lang/String;
     .registers 3
 
-    .line 138
+    .line 141
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 139
+    .line 142
     sget-object p0, Lcom/transsion/camera/app_info/AppInfo;->app:Landroid/app/Application;
 
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$string;->ai_art_museum_watermark:I
@@ -226,7 +226,7 @@
 
     return-object p0
 
-    .line 142
+    .line 145
     :cond_f
     sget-object v0, Lcom/transsion/camera/feature/mode/aiartmuseum/repo/AIArtMuseumRepo;->mWatermarkDescriptionMap:Ljava/util/Map;
 
@@ -244,16 +244,16 @@
 
     if-eqz p0, :cond_30
 
-    .line 143
+    .line 146
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    if-gez v0, :cond_25
+    if-gtz v0, :cond_25
 
     goto :goto_30
 
-    .line 147
+    .line 150
     :cond_25
     sget-object v0, Lcom/transsion/camera/app_info/AppInfo;->app:Landroid/app/Application;
 
@@ -267,7 +267,7 @@
 
     return-object p0
 
-    .line 144
+    .line 147
     :cond_30
     :goto_30
     sget-object p0, Lcom/transsion/camera/app_info/AppInfo;->app:Landroid/app/Application;

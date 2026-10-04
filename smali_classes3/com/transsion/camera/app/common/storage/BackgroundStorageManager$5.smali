@@ -32,7 +32,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;JLcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;Landroid/content/ContentValues;[BLcom/transsion/camera/app/common/livephoto/PhotoTaskData;)V
     .registers 8
 
-    .line 506
+    .line 513
     iput-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$5;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
     iput-wide p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$5;->val$timestamp:J
@@ -57,7 +57,7 @@
 
     if-nez p2, :cond_12
 
-    .line 510
+    .line 517
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$5;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
     new-instance v1, Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;
@@ -74,7 +74,7 @@
 
     return-void
 
-    .line 513
+    .line 520
     :cond_12
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -84,7 +84,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 514
+    .line 521
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$5;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->getStorageOperator()Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;

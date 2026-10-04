@@ -17,8 +17,8 @@
     c = "kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1"
     f = "Transform.kt"
     l = {
-        0x73,
-        0x74
+        0x71,
+        0x72
     }
     m = "collect"
 .end annotation

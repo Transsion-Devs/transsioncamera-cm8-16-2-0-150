@@ -28,7 +28,7 @@
 .method private static final artificialFrame(Ljava/lang/Throwable;Ljava/lang/String;)Ljava/lang/StackTraceElement;
     .registers 5
 
-    .line 65
+    .line 61
     invoke-virtual {p0}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
 
     move-result-object p0
@@ -75,7 +75,7 @@
 .method public static final getARTIFICIAL_FRAME_PACKAGE_NAME()Ljava/lang/String;
     .registers 1
 
-    .line 53
+    .line 49
     sget-object v0, L_COROUTINE/CoroutineDebuggingKt;->ARTIFICIAL_FRAME_PACKAGE_NAME:Ljava/lang/String;
 
     return-object v0

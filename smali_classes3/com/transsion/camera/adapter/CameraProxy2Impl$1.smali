@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
     .registers 2
 
-    .line 380
+    .line 379
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-direct {p0}, Landroid/hardware/camera2/CameraOfflineSession$CameraOfflineSessionCallback;-><init>()V
@@ -35,7 +35,7 @@
 .method public onClosed(Landroid/hardware/camera2/CameraOfflineSession;)V
     .registers 5
 
-    .line 438
+    .line 437
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -56,7 +56,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 439
+    .line 438
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmImageSurface(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/IBGSurface;
@@ -65,7 +65,7 @@
 
     if-eqz p1, :cond_33
 
-    .line 440
+    .line 439
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmImageSurface(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/IBGSurface;
@@ -76,7 +76,7 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/adapter/IBGSurface;->updateBGOfflineState(I)V
 
-    .line 441
+    .line 440
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmImageSurface(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/IBGSurface;
@@ -85,7 +85,7 @@
 
     invoke-interface {p1}, Lcom/transsion/camera/adapter/IBGSurface;->forceReleaseSurface()V
 
-    .line 443
+    .line 442
     :cond_33
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
@@ -101,7 +101,7 @@
 .method public onError(Landroid/hardware/camera2/CameraOfflineSession;I)V
     .registers 5
 
-    .line 423
+    .line 422
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -140,14 +140,14 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 424
+    .line 423
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 p2, 0x1
 
     invoke-static {p1, p2}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fputmIsOfflineSessionError(Lcom/transsion/camera/adapter/CameraProxy2Impl;Z)V
 
-    .line 426
+    .line 425
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmOfflineSessionListener(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy$CameraOfflineSessionListener;
@@ -156,7 +156,7 @@
 
     if-eqz p1, :cond_50
 
-    .line 427
+    .line 426
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmOfflineSessionListener(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy$CameraOfflineSessionListener;
@@ -179,7 +179,7 @@
 
     invoke-interface {p1, v0, p2}, Lcom/transsion/camera/adapter/CameraProxy$CameraOfflineSessionListener;->onError(IZ)V
 
-    .line 429
+    .line 428
     :cond_50
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
@@ -197,7 +197,7 @@
 
     if-eqz p1, :cond_75
 
-    .line 430
+    .line 429
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmOfflineSession(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Landroid/hardware/camera2/CameraOfflineSession;
@@ -206,14 +206,14 @@
 
     invoke-virtual {p1}, Landroid/hardware/camera2/CameraOfflineSession;->close()V
 
-    .line 431
+    .line 430
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p2}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fputmOfflineSession(Lcom/transsion/camera/adapter/CameraProxy2Impl;Landroid/hardware/camera2/CameraOfflineSession;)V
 
-    .line 432
+    .line 431
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 p1, 0x0
@@ -227,7 +227,7 @@
 .method public onIdle(Landroid/hardware/camera2/CameraOfflineSession;)V
     .registers 4
 
-    .line 410
+    .line 409
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -254,7 +254,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 411
+    .line 410
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmOfflineSessionListener(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy$CameraOfflineSessionListener;
@@ -263,7 +263,7 @@
 
     if-eqz p1, :cond_2f
 
-    .line 412
+    .line 411
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmOfflineSessionListener(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy$CameraOfflineSessionListener;
@@ -272,7 +272,7 @@
 
     invoke-interface {p1}, Lcom/transsion/camera/adapter/CameraProxy$CameraOfflineSessionListener;->onIdle()V
 
-    .line 414
+    .line 413
     :cond_2f
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
@@ -290,7 +290,7 @@
 
     if-eqz p1, :cond_54
 
-    .line 415
+    .line 414
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmOfflineSession(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Landroid/hardware/camera2/CameraOfflineSession;
@@ -299,14 +299,14 @@
 
     invoke-virtual {p1}, Landroid/hardware/camera2/CameraOfflineSession;->close()V
 
-    .line 416
+    .line 415
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fputmOfflineSession(Lcom/transsion/camera/adapter/CameraProxy2Impl;Landroid/hardware/camera2/CameraOfflineSession;)V
 
-    .line 417
+    .line 416
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 p1, 0x0
@@ -320,7 +320,7 @@
 .method public onReady(Landroid/hardware/camera2/CameraOfflineSession;)V
     .registers 4
 
-    .line 383
+    .line 382
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmImageSurface(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/IBGSurface;
@@ -329,7 +329,7 @@
 
     if-eqz p1, :cond_15
 
-    .line 384
+    .line 383
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmImageSurface(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/IBGSurface;
@@ -342,7 +342,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fputmPictureCount(Lcom/transsion/camera/adapter/CameraProxy2Impl;I)V
 
-    .line 386
+    .line 385
     :cond_15
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -382,7 +382,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 387
+    .line 386
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmOfflineSessionListener(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/CameraProxy$CameraOfflineSessionListener;
@@ -397,14 +397,14 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy$CameraOfflineSessionListener;->onReady(I)V
 
-    .line 388
+    .line 387
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fputmIsOffLineSessionReady(Lcom/transsion/camera/adapter/CameraProxy2Impl;Z)V
 
-    .line 390
+    .line 389
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmIsOfflineSessionError(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Z
@@ -430,7 +430,7 @@
 
     if-eqz p1, :cond_83
 
-    .line 391
+    .line 390
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmOfflineSession(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Landroid/hardware/camera2/CameraOfflineSession;
@@ -439,14 +439,14 @@
 
     invoke-virtual {p1}, Landroid/hardware/camera2/CameraOfflineSession;->close()V
 
-    .line 392
+    .line 391
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fputmOfflineSession(Lcom/transsion/camera/adapter/CameraProxy2Impl;Landroid/hardware/camera2/CameraOfflineSession;)V
 
-    .line 393
+    .line 392
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 p1, 0x0
@@ -460,7 +460,7 @@
 .method public onSwitchFailed(Landroid/hardware/camera2/CameraOfflineSession;)V
     .registers 3
 
-    .line 399
+    .line 398
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -469,7 +469,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 400
+    .line 399
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmImageSurface(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/IBGSurface;
@@ -478,7 +478,7 @@
 
     if-eqz p1, :cond_24
 
-    .line 401
+    .line 400
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmImageSurface(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/IBGSurface;
@@ -489,7 +489,7 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/adapter/IBGSurface;->updateBGOfflineState(I)V
 
-    .line 402
+    .line 401
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmImageSurface(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/adapter/IBGSurface;
@@ -498,7 +498,7 @@
 
     invoke-interface {p1}, Lcom/transsion/camera/adapter/IBGSurface;->forceReleaseSurface()V
 
-    .line 404
+    .line 403
     :cond_24
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
@@ -514,7 +514,7 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy$CameraOfflineSessionListener;->onSwitchFailed(I)V
 
-    .line 405
+    .line 404
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$1;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     const/4 p1, 0x0

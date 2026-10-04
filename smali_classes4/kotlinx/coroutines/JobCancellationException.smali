@@ -25,15 +25,15 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;Lkotlinx/coroutines/Job;)V
     .registers 4
 
-    .line 33
+    .line 28
     invoke-direct {p0, p1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
 
-    .line 32
+    .line 27
     iput-object p3, p0, Lkotlinx/coroutines/JobCancellationException;->job:Lkotlinx/coroutines/Job;
 
     if-eqz p2, :cond_a
 
-    .line 36
+    .line 31
     invoke-virtual {p0, p2}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     :cond_a
@@ -45,7 +45,7 @@
 .method public bridge synthetic createCopy()Ljava/lang/Throwable;
     .registers 1
 
-    .line 29
+    .line 24
     invoke-virtual {p0}, Lkotlinx/coroutines/JobCancellationException;->createCopy()Lkotlinx/coroutines/JobCancellationException;
 
     move-result-object p0
@@ -67,7 +67,7 @@
 
     if-eq p1, p0, :cond_31
 
-    .line 68
+    .line 63
     instance-of v0, p1, Lkotlinx/coroutines/JobCancellationException;
 
     if-eqz v0, :cond_2f
@@ -131,10 +131,10 @@
 
     const/4 v0, 0x0
 
-    .line 26
+    .line 68
     new-array v0, v0, [Ljava/lang/StackTraceElement;
 
-    .line 44
+    .line 39
     invoke-virtual {p0, v0}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
 
     return-object p0
@@ -143,7 +143,7 @@
 .method public hashCode()I
     .registers 3
 
-    .line 70
+    .line 65
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v0
@@ -190,7 +190,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 64
+    .line 59
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

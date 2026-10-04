@@ -31,10 +31,10 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;Landroid/view/View;)V
     .registers 3
 
-    .line 1063
+    .line 1099
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/makeup/adapter/ItemVH;-><init>(Landroid/view/View;)V
 
-    .line 1064
+    .line 1100
     sget p1, Lcom/transsion/camera/feature/makeup/R$id;->mu_item_icon:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -53,22 +53,22 @@
 .method public bindHolder(Ljava/lang/Object;Z)V
     .registers 4
 
-    .line 1074
+    .line 1110
     instance-of v0, p1, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Footer;
 
     if-eqz v0, :cond_19
 
-    .line 1075
+    .line 1111
     check-cast p1, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Footer;
 
-    .line 1076
+    .line 1112
     iget v0, p1, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Footer;->drawableId:I
 
     if-lez v0, :cond_19
 
     if-eqz p2, :cond_14
 
-    .line 1078
+    .line 1114
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$FooterVH;->mIconView:Landroid/widget/ImageView;
 
     iget p1, p1, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Footer;->blackDrawableId:I
@@ -77,7 +77,7 @@
 
     return-void
 
-    .line 1080
+    .line 1116
     :cond_14
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$FooterVH;->mIconView:Landroid/widget/ImageView;
 

@@ -164,7 +164,7 @@
 .method private getCurrentIconView()Lcom/airbnb/lottie/LottieAnimationView;
     .registers 2
 
-    .line 176
+    .line 178
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
     if-eqz v0, :cond_7
@@ -545,7 +545,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 179
+    .line 181
     iget v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIconOffColor:I
 
     goto :goto_7
@@ -556,7 +556,7 @@
     :goto_7
     if-eqz p2, :cond_c
 
-    .line 180
+    .line 182
     iget p2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIconOnColor:I
 
     goto :goto_e
@@ -573,7 +573,7 @@
 
     div-float/2addr p1, v1
 
-    .line 183
+    .line 185
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mArgbEvaluator:Landroid/animation/ArgbEvaluator;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -632,7 +632,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 219
+    .line 221
     const-string p0, "key_best_moment_detect"
 
     return-object p0
@@ -641,7 +641,7 @@
 .method protected getLayoutParams()Landroid/widget/FrameLayout$LayoutParams;
     .registers 6
 
-    .line 199
+    .line 201
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -654,7 +654,7 @@
 
     move-result v0
 
-    .line 200
+    .line 202
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -667,7 +667,7 @@
 
     move-result v1
 
-    .line 201
+    .line 203
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -680,7 +680,7 @@
 
     move-result v2
 
-    .line 203
+    .line 205
     iget-object v3, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
@@ -689,7 +689,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
-    .line 204
+    .line 206
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -708,19 +708,19 @@
 
     add-int/2addr v3, v0
 
-    .line 206
+    .line 208
     new-instance p0, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-direct {p0, v1, v1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
     const/16 v0, 0x53
 
-    .line 207
+    .line 209
     iput v0, p0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     const/4 v0, 0x0
 
-    .line 208
+    .line 210
     invoke-virtual {p0, v2, v0, v0, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     return-object p0
@@ -729,7 +729,7 @@
 .method public getValue()Ljava/lang/String;
     .registers 1
 
-    .line 224
+    .line 226
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p0, :cond_6
@@ -749,7 +749,7 @@
 .method protected hideHint()V
     .registers 2
 
-    .line 311
+    .line 313
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_11
@@ -760,7 +760,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 312
+    .line 314
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -774,7 +774,7 @@
 .method protected hideIcon()V
     .registers 2
 
-    .line 258
+    .line 260
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->getCurrentIconView()Lcom/airbnb/lottie/LottieAnimationView;
 
     move-result-object p0
@@ -783,7 +783,7 @@
 
     const/16 v0, 0x8
 
-    .line 260
+    .line 262
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_b
@@ -844,13 +844,13 @@
 
     goto :goto_6c
 
-    .line 280
+    .line 282
     :cond_26
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->hideIcon()V
 
     return-void
 
-    .line 295
+    .line 297
     :cond_2a
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
@@ -864,20 +864,20 @@
 
     if-nez p1, :cond_6c
 
-    .line 296
+    .line 298
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->onUserInteraction()V
 
     return-void
 
-    .line 300
+    .line 302
     :cond_3c
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
     if-nez p1, :cond_55
 
-    .line 301
+    .line 303
     new-instance v0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
@@ -898,7 +898,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
-    .line 303
+    .line 305
     :cond_55
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
@@ -906,44 +906,44 @@
 
     return-void
 
-    .line 284
+    .line 286
     :cond_5b
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
 
     if-nez p1, :cond_6c
 
-    .line 285
+    .line 287
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->showIcon()V
 
     return-void
 
-    .line 289
+    .line 291
     :cond_63
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
 
-    .line 290
+    .line 292
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
     if-eqz p0, :cond_6c
 
-    .line 291
+    .line 293
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->pause()V
 
     :cond_6c
     :goto_6c
     return-void
 
-    .line 277
+    .line 279
     :cond_6d
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->restoreDefaultState()V
 
     return-void
 
-    .line 273
+    .line 275
     :cond_71
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
 
-    .line 274
+    .line 276
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->showIcon()V
 
     return-void
@@ -951,13 +951,13 @@
     :cond_77
     const/4 p1, 0x1
 
-    .line 268
+    .line 270
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
 
-    .line 269
+    .line 271
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->hideIcon()V
 
-    .line 270
+    .line 272
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->hideHint()V
 
     return-void
@@ -966,7 +966,7 @@
 .method public onBackPressed(Z)Z
     .registers 2
 
-    .line 328
+    .line 330
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onBackPressed(Z)Z
 
     move-result p0
@@ -986,17 +986,17 @@
 .method public onOrientationChanged(I)V
     .registers 3
 
-    .line 191
+    .line 193
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onOrientationChanged(I)V
 
-    .line 192
+    .line 194
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mRootView:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-eqz p0, :cond_b
 
     const/4 v0, 0x1
 
-    .line 193
+    .line 195
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
     :cond_b
@@ -1017,7 +1017,7 @@
 .method public releaseResource()V
     .registers 1
 
-    .line 349
+    .line 351
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->restoreDefaultState()V
 
     return-void
@@ -1026,7 +1026,7 @@
 .method protected restoreDefaultState()V
     .registers 4
 
-    .line 317
+    .line 319
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1055,20 +1055,20 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 318
+    .line 320
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
     if-eq v0, v2, :cond_30
 
-    .line 319
+    .line 321
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    .line 320
+    .line 322
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_30
 
-    .line 321
+    .line 323
     const-string v0, "1"
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
@@ -1080,10 +1080,10 @@
 .method public setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
     .registers 2
 
-    .line 242
+    .line 244
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 
-    .line 243
+    .line 245
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     return-void
@@ -1092,24 +1092,24 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 6
 
-    .line 229
+    .line 231
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    if-eqz p1, :cond_3d
+    .line 232
+    if-eqz p1, :cm8guard_mdnull
 
-    .line 230
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 231
+    .line 233
     const-string v0, "1"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 233
+    .line 235
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1142,18 +1142,18 @@
 
     invoke-static {v1, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 234
+    .line 236
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    if-ne v0, p1, :cond_3b
+    if-ne v0, p1, :cond_39
 
     return-void
 
-    .line 237
-    :cond_3b
+    .line 239
+    :cond_39
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    :cond_3d
+    :cm8guard_mdnull
     return-void
 .end method
 
@@ -1217,7 +1217,7 @@
 .method protected showIcon()V
     .registers 2
 
-    .line 251
+    .line 253
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->getCurrentIconView()Lcom/airbnb/lottie/LottieAnimationView;
 
     move-result-object p0
@@ -1226,7 +1226,7 @@
 
     const/4 v0, 0x0
 
-    .line 253
+    .line 255
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_a
@@ -1236,7 +1236,7 @@
 .method protected switchIconColor(Lcom/airbnb/lottie/LottieAnimationView;)V
     .registers 3
 
-    .line 160
+    .line 162
     new-instance v0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI$1;
 
     invoke-direct {v0, p0, p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI$1;-><init>(Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;Lcom/airbnb/lottie/LottieAnimationView;)V
@@ -1249,47 +1249,47 @@
 .method public unInit()V
     .registers 3
 
-    .line 333
+    .line 335
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_10
 
-    .line 334
+    .line 336
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->endHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 335
+    .line 337
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 337
+    .line 339
     :cond_10
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
 
     if-eqz v0, :cond_17
 
-    .line 338
+    .line 340
     invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->removeAllLottieOnCompositionLoadedListener()V
 
-    .line 340
+    .line 342
     :cond_17
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
     if-eqz v0, :cond_21
 
-    .line 341
+    .line 343
     invoke-virtual {v0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->unInitGuide()V
 
     const/4 v0, 0x0
 
-    .line 342
+    .line 344
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
-    .line 344
+    .line 346
     :cond_21
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->unInit()V
 
@@ -1334,10 +1334,14 @@
     .line 156
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
+    if-eqz v0, :cond_23
+
+    .line 157
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->showHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
+    :cond_23
     return-void
 .end method
 

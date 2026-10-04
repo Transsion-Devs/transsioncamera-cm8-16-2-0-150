@@ -32,7 +32,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/asd/Asd;)V
     .registers 2
 
-    .line 413
+    .line 416
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 413
+    .line 416
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/Asd$1;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -56,7 +56,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 10
 
-    .line 417
+    .line 420
     invoke-static {}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -95,7 +95,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 418
+    .line 421
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -112,9 +112,9 @@
 
     if-nez v0, :cond_40
 
-    goto/16 :goto_29a
+    goto/16 :goto_2b6
 
-    .line 422
+    .line 425
     :cond_40
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -134,7 +134,7 @@
 
     const/4 v6, -0x1
 
-    sparse-switch v0, :sswitch_data_29c
+    sparse-switch v0, :sswitch_data_2b8
 
     goto/16 :goto_e2
 
@@ -329,11 +329,11 @@
     move v6, v4
 
     :goto_e2
-    packed-switch v6, :pswitch_data_2ce
+    packed-switch v6, :pswitch_data_2ea
 
-    goto/16 :goto_29a
+    goto/16 :goto_2b6
 
-    .line 493
+    .line 498
     :pswitch_e7
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -345,13 +345,13 @@
 
     return-void
 
-    .line 435
+    .line 438
     :pswitch_f1
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fputmFilterValue(Lcom/transsion/camera/feature/setting/asd/Asd;Ljava/lang/String;)V
 
-    .line 436
+    .line 439
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$misAsdSupport(Lcom/transsion/camera/feature/setting/asd/Asd;)Z
@@ -360,7 +360,7 @@
 
     if-eqz p1, :cond_108
 
-    .line 437
+    .line 440
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -371,7 +371,7 @@
 
     goto :goto_111
 
-    .line 439
+    .line 442
     :cond_108
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -381,7 +381,7 @@
 
     invoke-virtual {p1, v5}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->refreshAsdStateImmediately(I)V
 
-    .line 441
+    .line 444
     :goto_111
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -393,7 +393,7 @@
 
     return-void
 
-    .line 466
+    .line 467
     :pswitch_11b
     const-string p1, "key_quick_video_stop"
 
@@ -403,12 +403,12 @@
 
     if-eqz p1, :cond_132
 
-    .line 467
+    .line 468
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1, v4}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fputmIsQuickVideoStart(Lcom/transsion/camera/feature/setting/asd/Asd;Z)V
 
-    .line 468
+    .line 469
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -419,13 +419,13 @@
 
     goto :goto_140
 
-    .line 470
+    .line 471
     :cond_132
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1, v5}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fputmIsQuickVideoStart(Lcom/transsion/camera/feature/setting/asd/Asd;Z)V
 
-    .line 471
+    .line 472
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -434,7 +434,7 @@
 
     invoke-virtual {p1, v5}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->refreshAsdStateImmediately(I)V
 
-    .line 473
+    .line 474
     :goto_140
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -446,13 +446,13 @@
 
     return-void
 
-    .line 496
+    .line 501
     :pswitch_14a
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fputmLivePhotoValue(Lcom/transsion/camera/feature/setting/asd/Asd;Ljava/lang/String;)V
 
-    .line 497
+    .line 502
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$misAsdSupport(Lcom/transsion/camera/feature/setting/asd/Asd;)Z
@@ -461,7 +461,7 @@
 
     if-eqz p1, :cond_161
 
-    .line 498
+    .line 503
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -472,7 +472,7 @@
 
     goto :goto_16a
 
-    .line 500
+    .line 505
     :cond_161
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -482,7 +482,7 @@
 
     invoke-virtual {p1, v5}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->refreshAsdStateImmediately(I)V
 
-    .line 502
+    .line 507
     :goto_16a
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -494,7 +494,7 @@
 
     return-void
 
-    .line 444
+    .line 447
     :pswitch_174
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -506,9 +506,9 @@
 
     move-result p1
 
-    if-nez p1, :cond_29a
+    if-nez p1, :cond_2b6
 
-    .line 445
+    .line 448
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object p1
@@ -523,14 +523,14 @@
 
     move-result p1
 
-    if-nez p1, :cond_29a
+    if-nez p1, :cond_2b6
 
-    .line 446
+    .line 449
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fputmWideCameraValue(Lcom/transsion/camera/feature/setting/asd/Asd;Ljava/lang/String;)V
 
-    .line 447
+    .line 450
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -541,13 +541,13 @@
 
     return-void
 
-    .line 425
+    .line 428
     :pswitch_19f
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fputmFlashValue(Lcom/transsion/camera/feature/setting/asd/Asd;Ljava/lang/String;)V
 
-    .line 426
+    .line 429
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$misNightShotSupport(Lcom/transsion/camera/feature/setting/asd/Asd;)Z
@@ -556,7 +556,7 @@
 
     if-eqz p1, :cond_1bf
 
-    .line 427
+    .line 430
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -565,7 +565,7 @@
 
     invoke-virtual {p1, v3}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->refreshAsdStateImmediately(I)V
 
-    .line 428
+    .line 431
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdSettingFeatures(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
@@ -576,7 +576,7 @@
 
     return-void
 
-    .line 430
+    .line 433
     :cond_1bf
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -586,7 +586,7 @@
 
     invoke-virtual {p1, v2}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->refreshAsdStateImmediately(I)V
 
-    .line 431
+    .line 434
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdSettingFeatures(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
@@ -597,7 +597,7 @@
 
     return-void
 
-    .line 451
+    .line 454
     :pswitch_1d2
     invoke-static {}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -619,7 +619,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 452
+    .line 455
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdModeFeatures(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
@@ -630,7 +630,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29a
+    if-eqz p1, :cond_2b6
 
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -642,9 +642,9 @@
 
     move-result p1
 
-    if-nez p1, :cond_29a
+    if-nez p1, :cond_2b6
 
-    .line 453
+    .line 456
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -663,7 +663,7 @@
 
     return-void
 
-    .line 477
+    .line 478
     :pswitch_213
     const-string p1, "on"
 
@@ -671,9 +671,9 @@
 
     move-result p1
 
-    if-eqz p1, :cond_29a
+    if-eqz p1, :cond_2b6
 
-    .line 478
+    .line 479
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -684,46 +684,37 @@
 
     return-void
 
-    .line 457
+    .line 460
     :pswitch_225
     const-string/jumbo p1, "value_super_night_lite_switch_on"
 
-    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
-
-    if-eqz p1, :cond_237
-
-    .line 458
-    iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
-
-    invoke-static {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdSettingFeatures(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;->setNightLiteOpened(Z)V
-
-    .line 460
-    :cond_237
-    const-string/jumbo p1, "value_super_night_lite_switch_off"
-
-    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_249
 
     .line 461
-    iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
+    iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
-    invoke-static {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdSettingFeatures(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
+    invoke-static {p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdSettingFeatures(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-virtual {p1, v4}, Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;->setNightLiteOpened(Z)V
+    invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;->isNightLiteOpened()Z
+
+    move-result p2
+
+    if-eq p2, p1, :cond_2b6
+
+    .line 462
+    iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
+
+    invoke-static {p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdSettingFeatures(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
+
+    move-result-object p2
+
+    invoke-virtual {p2, p1}, Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;->setNightLiteOpened(Z)V
 
     .line 463
-    :cond_249
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -734,17 +725,38 @@
 
     return-void
 
-    .line 482
-    :pswitch_253
+    .line 483
+    :pswitch_24b
+    const-string p1, "capture_start"
+
+    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_25d
+
+    .line 484
+    iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
+
+    invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->onCaptureStart()V
+
+    return-void
+
+    .line 485
+    :cond_25d
     const-string p1, "capture_started"
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_265
+    if-eqz p1, :cond_26f
 
-    .line 483
+    .line 486
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -755,17 +767,17 @@
 
     return-void
 
-    .line 484
-    :cond_265
+    .line 487
+    :cond_26f
     const-string p1, "capture_end"
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_277
+    if-eqz p1, :cond_281
 
-    .line 485
+    .line 488
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -776,17 +788,17 @@
 
     return-void
 
-    .line 486
-    :cond_277
+    .line 489
+    :cond_281
     const-string p1, "shot2shot_end"
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_289
+    if-eqz p1, :cond_293
 
-    .line 487
+    .line 490
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -797,17 +809,17 @@
 
     return-void
 
-    .line 488
-    :cond_289
+    .line 491
+    :cond_293
     const-string p1, "capture_jpeg_end"
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_29a
+    if-eqz p1, :cond_2a5
 
-    .line 489
+    .line 492
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -816,13 +828,34 @@
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->onCaptureJpegEnd()V
 
-    :cond_29a
-    :goto_29a
+    return-void
+
+    .line 493
+    :cond_2a5
+    const-string p1, "capture_all_high_quality_end"
+
+    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2b6
+
+    .line 494
+    iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$1;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
+
+    invoke-static {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->onAllHighQualityJpegEnd()V
+
+    :cond_2b6
+    :goto_2b6
     return-void
 
     nop
 
-    :sswitch_data_29c
+    :sswitch_data_2b8
     .sparse-switch
         -0x76a61da8 -> :sswitch_d8
         -0x746c5766 -> :sswitch_cd
@@ -838,9 +871,9 @@
         0x31b41d50 -> :sswitch_52
     .end sparse-switch
 
-    :pswitch_data_2ce
+    :pswitch_data_2ea
     .packed-switch 0x0
-        :pswitch_253
+        :pswitch_24b
         :pswitch_225
         :pswitch_213
         :pswitch_1d2

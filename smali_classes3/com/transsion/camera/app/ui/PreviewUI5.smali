@@ -450,7 +450,7 @@
 .method private applyPauseNextScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;Ljava/lang/String;)Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
     .registers 6
 
-    .line 722
+    .line 723
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -479,7 +479,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 724
+    .line 725
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mIsNeedMoveDown:Z
 
     if-eqz v1, :cond_2b
@@ -490,13 +490,13 @@
 
     return-object p1
 
-    .line 727
+    .line 728
     :cond_2b
     iget-object v1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mPreviousPreviewMoveHolder:Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     if-nez v1, :cond_58
 
-    .line 728
+    .line 729
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     move-result-object v1
@@ -507,7 +507,7 @@
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->setPreviousPreviewMoveHolder(Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;)V
 
-    .line 729
+    .line 730
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -532,7 +532,7 @@
 
     invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 731
+    .line 732
     :cond_58
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -555,7 +555,7 @@
     :cond_3
     if-nez p1, :cond_d
 
-    .line 136
+    .line 137
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     move-result-object p1
@@ -564,7 +564,7 @@
 
     move-result-object p1
 
-    .line 137
+    .line 138
     :cond_d
     invoke-interface {p2}, Ljava/util/function/Supplier;->get()Ljava/lang/Object;
 
@@ -576,7 +576,7 @@
 
     goto :goto_73
 
-    .line 141
+    .line 142
     :cond_16
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -602,14 +602,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 142
+    .line 143
     invoke-virtual {p2, p1}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->compareTo(Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;)I
 
     move-result v0
 
     if-eqz v0, :cond_73
 
-    .line 143
+    .line 144
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mPreviewMoveAnimListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-direct {p0, p1, p2, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getMoveAnimatorInstance(Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
@@ -618,7 +618,7 @@
 
     if-eqz p1, :cond_73
 
-    .line 145
+    .line 146
     iget-object p2, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mValueAnimators:Ljava/util/List;
 
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -641,7 +641,7 @@
 
     if-eqz v0, :cond_48
 
-    .line 146
+    .line 147
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->isStarted()Z
 
     move-result v1
@@ -654,24 +654,24 @@
 
     if-eqz v1, :cond_48
 
-    .line 147
+    .line 148
     :cond_62
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     goto :goto_48
 
-    .line 150
+    .line 151
     :cond_66
     iget-object p2, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mValueAnimators:Ljava/util/List;
 
     invoke-interface {p2}, Ljava/util/List;->clear()V
 
-    .line 151
+    .line 152
     iget-object p2, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mValueAnimators:Ljava/util/List;
 
     invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 152
+    .line 153
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->startPreviewMoveAnimation(Landroid/animation/Animator;)V
 
     :cond_73
@@ -684,7 +684,7 @@
 
     const/4 v0, 0x0
 
-    .line 129
+    .line 130
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPreviewMoveAnimation(Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;Ljava/util/function/Supplier;)V
 
     return-void
@@ -712,7 +712,7 @@
 
     const/4 v0, 0x1
 
-    .line 1107
+    .line 1118
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateNoNeedMoveSceneFlag(IZ)V
 
     return-void
@@ -721,7 +721,7 @@
 .method private getMoveAnimatorInstance(IILandroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
     .registers 7
 
-    .line 179
+    .line 180
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -746,7 +746,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 180
+    .line 181
     filled-new-array {p1, p2}, [I
 
     move-result-object v0
@@ -757,10 +757,10 @@
 
     if-eqz p3, :cond_2b
 
-    .line 182
+    .line 183
     invoke-virtual {v0, p3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 184
+    .line 185
     :cond_2b
     new-instance p3, Lcom/transsion/camera/app/ui/PreviewUI5$1;
 
@@ -774,14 +774,14 @@
 .method private getMoveAnimatorInstance(Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
     .registers 5
 
-    .line 172
+    .line 173
     invoke-virtual {p2, p1}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->compareTo(Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;)I
 
     move-result v0
 
     if-eqz v0, :cond_15
 
-    .line 173
+    .line 174
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->getPreviewMoveDistance()I
 
     move-result p1
@@ -809,7 +809,7 @@
 .method private getNoNeedMoveSceneFlags()I
     .registers 1
 
-    .line 1119
+    .line 1130
     iget p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveSceneFlags:I
 
     return p0
@@ -818,12 +818,12 @@
 .method private getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 4
 
-    .line 799
+    .line 800
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mCurrentPreviewMoveHolder:Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     if-nez v0, :cond_1d
 
-    .line 800
+    .line 801
     new-instance v0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
@@ -834,12 +834,12 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mCurrentMode:Ljava/lang/String;
 
-    .line 801
+    .line 802
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->setCurrentMode(Ljava/lang/String;)Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     move-result-object v0
 
-    .line 802
+    .line 803
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v1
@@ -850,7 +850,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mCurrentPreviewMoveHolder:Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
-    .line 804
+    .line 805
     :cond_1d
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mCurrentPreviewMoveHolder:Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -860,7 +860,7 @@
 .method private getPreviousPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 1
 
-    .line 1115
+    .line 1126
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mPreviousPreviewMoveHolder:Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     return-object p0
@@ -869,7 +869,7 @@
 .method private getShowedFlag()I
     .registers 1
 
-    .line 1031
+    .line 1032
     iget p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mShowedFlags:I
 
     return p0
@@ -878,7 +878,7 @@
 .method private hasFlag(I)Z
     .registers 3
 
-    .line 1039
+    .line 1040
     iget v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mShowedFlags:I
 
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(II)Z
@@ -906,10 +906,32 @@
     return p0
 .end method
 
+.method private hasNoNeedMoveSceneFlag(I)Z
+    .registers 2
+
+    if-eqz p1, :cond_9
+
+    .line 1104
+    iget p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveSceneFlags:I
+
+    and-int/2addr p0, p1
+
+    if-ne p0, p1, :cond_9
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_9
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method private hasPopUIFlag()Z
     .registers 2
 
-    .line 1047
+    .line 1048
     iget v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mShowedFlags:I
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasPopUIFlag(I)Z
@@ -924,7 +946,7 @@
 
     const/4 v0, 0x4
 
-    .line 1051
+    .line 1052
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(II)Z
 
     move-result v0
@@ -956,7 +978,7 @@
 .method private initNoNeedMoveScene()V
     .registers 4
 
-    .line 1064
+    .line 1065
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/4 v1, 0x1
@@ -969,14 +991,14 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1065
+    .line 1066
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v2, 0x18
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1067
+    .line 1068
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/4 v1, 0x2
@@ -989,58 +1011,58 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1068
+    .line 1069
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v2, 0xc
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1070
+    .line 1071
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/4 v1, 0x4
 
-    .line 1071
+    .line 1072
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     const/16 v2, 0x178
 
-    .line 1070
+    .line 1071
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1072
+    .line 1073
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v2, 0xee
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1075
+    .line 1076
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v1, 0x8
 
-    .line 1076
+    .line 1077
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     const/16 v2, 0x179
 
-    .line 1075
+    .line 1076
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1077
+    .line 1078
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v2, 0x112
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1080
+    .line 1081
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v1, 0x10
@@ -1053,14 +1075,14 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1081
+    .line 1082
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v2, 0x102
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1083
+    .line 1084
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v1, 0x20
@@ -1073,14 +1095,14 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1084
+    .line 1085
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v2, 0x16
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1086
+    .line 1087
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v1, 0x40
@@ -1093,14 +1115,14 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1087
+    .line 1088
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v2, 0xea
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1089
+    .line 1090
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v1, 0x80
@@ -1113,7 +1135,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1090
+    .line 1091
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     const/16 v0, 0xd3
@@ -1126,7 +1148,7 @@
 .method private isFlagEmpty()Z
     .registers 1
 
-    .line 1018
+    .line 1019
     iget p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mShowedFlags:I
 
     if-nez p0, :cond_6
@@ -1144,7 +1166,7 @@
 .method private synthetic lambda$cameraOperateAction$5(Lcom/transsion/camera/app/ui/AbstractPreviewUI$UIHandler;)V
     .registers 4
 
-    .line 211
+    .line 212
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mMovePreviewLaterRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v0, 0x64
@@ -1157,7 +1179,7 @@
 .method private synthetic lambda$cameraOperateAction$6(Lcom/transsion/camera/app/ui/AbstractPreviewUI$UIHandler;)V
     .registers 2
 
-    .line 238
+    .line 239
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mMovePreviewLaterRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p1, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
@@ -1168,7 +1190,7 @@
 .method private synthetic lambda$cameraOperateAction$7(Lcom/transsion/camera/app/ui/AbstractPreviewUI$UIHandler;)V
     .registers 4
 
-    .line 251
+    .line 252
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mMovePreviewLaterRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v0, 0x64
@@ -1181,7 +1203,7 @@
 .method private synthetic lambda$cameraOperateAction$8()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 2
 
-    .line 315
+    .line 316
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     move-result-object p0
@@ -1198,7 +1220,7 @@
 .method private synthetic lambda$cameraOperateAction$9()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 2
 
-    .line 322
+    .line 323
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     move-result-object p0
@@ -1315,7 +1337,7 @@
 
     const/16 v0, 0x800
 
-    .line 620
+    .line 621
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
@@ -1324,12 +1346,12 @@
 
     if-eqz v0, :cond_c
 
-    .line 621
+    .line 622
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_4_3:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_21
 
-    .line 622
+    .line 623
     :cond_c
     iget v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
@@ -1343,7 +1365,7 @@
 
     if-nez v0, :cond_20
 
-    .line 623
+    .line 624
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     const-string v2, "onAIGCUIStateChange"
@@ -1362,7 +1384,7 @@
 
     return-object v1
 
-    .line 628
+    .line 629
     :cond_24
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -1380,7 +1402,7 @@
 
     const/16 v0, 0x200
 
-    .line 601
+    .line 602
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
@@ -1389,12 +1411,12 @@
 
     if-eqz v0, :cond_c
 
-    .line 602
+    .line 603
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_4_3:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_21
 
-    .line 603
+    .line 604
     :cond_c
     iget v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
@@ -1408,7 +1430,7 @@
 
     if-nez v0, :cond_20
 
-    .line 604
+    .line 605
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     const-string v2, "onAIGCUIStateChange"
@@ -1427,7 +1449,7 @@
 
     return-object v1
 
-    .line 609
+    .line 610
     :cond_24
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -1443,7 +1465,7 @@
 .method private synthetic lambda$onCelebrityUIStateChange$25()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 4
 
-    .line 697
+    .line 698
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1466,7 +1488,7 @@
 
     const/16 v0, 0x400
 
-    .line 698
+    .line 699
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
@@ -1475,12 +1497,12 @@
 
     if-eqz v0, :cond_24
 
-    .line 699
+    .line 700
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_4_3:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_44
 
-    .line 700
+    .line 701
     :cond_24
     iget v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
@@ -1500,14 +1522,14 @@
 
     if-eq v0, v2, :cond_43
 
-    .line 701
+    .line 702
     invoke-direct {p0, v2}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
 
     if-nez v0, :cond_43
 
-    .line 702
+    .line 703
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     const-string v2, "onPopSettingViewStateChange"
@@ -1526,7 +1548,7 @@
 
     return-object v1
 
-    .line 707
+    .line 708
     :cond_47
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -1544,7 +1566,7 @@
 
     const v0, 0x8000
 
-    .line 507
+    .line 508
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
@@ -1553,12 +1575,12 @@
 
     if-eqz v0, :cond_d
 
-    .line 508
+    .line 509
     sget-object p1, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_4_3:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_25
 
-    .line 509
+    .line 510
     :cond_d
     iget v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
@@ -1574,7 +1596,7 @@
 
     if-nez p1, :cond_21
 
-    .line 510
+    .line 511
     sget-object p1, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     invoke-direct {p0, p1, v3}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPauseNextScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;Ljava/lang/String;)Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
@@ -1583,7 +1605,7 @@
 
     goto :goto_25
 
-    .line 513
+    .line 514
     :cond_21
     invoke-direct {p0, v1, v3}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPauseNextScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;Ljava/lang/String;)Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
@@ -1594,7 +1616,7 @@
 
     return-object v1
 
-    .line 515
+    .line 516
     :cond_28
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -1612,19 +1634,19 @@
 
     const v0, 0x8000
 
-    .line 527
+    .line 528
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->onlyFlag(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_c
 
-    .line 528
+    .line 529
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_1_1:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_14
 
-    .line 530
+    .line 531
     :cond_c
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
@@ -1641,7 +1663,7 @@
 
     return-object p0
 
-    .line 533
+    .line 534
     :cond_18
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -1657,7 +1679,7 @@
 .method private synthetic lambda$onFilterUIStateChange$11()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 4
 
-    .line 363
+    .line 364
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1680,7 +1702,7 @@
 
     const/4 v0, 0x2
 
-    .line 364
+    .line 365
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
@@ -1689,12 +1711,12 @@
 
     if-eqz v0, :cond_23
 
-    .line 365
+    .line 366
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_4_3:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_45
 
-    .line 366
+    .line 367
     :cond_23
     iget v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
@@ -1716,14 +1738,14 @@
 
     const/16 v0, 0x400
 
-    .line 367
+    .line 368
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
 
     if-nez v0, :cond_44
 
-    .line 368
+    .line 369
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     const-string v2, "onFilterUIStateChange"
@@ -1742,7 +1764,7 @@
 
     return-object v1
 
-    .line 373
+    .line 374
     :cond_48
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -1758,7 +1780,7 @@
 .method private synthetic lambda$onImageStyleUIStateChange$12()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 4
 
-    .line 392
+    .line 393
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1781,7 +1803,7 @@
 
     const/16 v0, 0x2000
 
-    .line 393
+    .line 394
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
@@ -1790,12 +1812,12 @@
 
     if-eqz v0, :cond_24
 
-    .line 394
+    .line 395
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_4_3:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_47
 
-    .line 395
+    .line 396
     :cond_24
     iget v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
@@ -1819,14 +1841,14 @@
 
     const/16 v0, 0x400
 
-    .line 396
+    .line 397
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
 
     if-nez v0, :cond_46
 
-    .line 397
+    .line 398
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     const-string v2, "onImageStyleUIStateChange"
@@ -1845,7 +1867,7 @@
 
     return-object v1
 
-    .line 402
+    .line 403
     :cond_4a
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -1863,7 +1885,7 @@
 
     const/16 v0, 0x8
 
-    .line 660
+    .line 661
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
@@ -1872,12 +1894,12 @@
 
     if-eqz v0, :cond_c
 
-    .line 661
+    .line 662
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_4_3:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_16
 
-    .line 662
+    .line 663
     :cond_c
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasPopUIFlag()Z
 
@@ -1885,7 +1907,7 @@
 
     if-nez v0, :cond_15
 
-    .line 663
+    .line 664
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_16
@@ -1898,7 +1920,7 @@
 
     return-object v1
 
-    .line 667
+    .line 668
     :cond_19
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -1916,19 +1938,19 @@
 
     const/16 v0, 0x10
 
-    .line 676
+    .line 677
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 677
+    .line 678
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_SECOND_1_1:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_13
 
-    .line 679
+    .line 680
     :cond_b
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
@@ -1945,7 +1967,7 @@
 
     return-object p0
 
-    .line 682
+    .line 683
     :cond_17
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -1963,7 +1985,7 @@
 
     const/16 v0, 0x40
 
-    .line 552
+    .line 553
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
@@ -1972,12 +1994,12 @@
 
     if-eqz v0, :cond_c
 
-    .line 553
+    .line 554
     sget-object p1, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_4_3:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_24
 
-    .line 554
+    .line 555
     :cond_c
     iget v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
@@ -1993,7 +2015,7 @@
 
     if-nez p1, :cond_20
 
-    .line 555
+    .line 556
     sget-object p1, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     invoke-direct {p0, p1, v3}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPauseNextScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;Ljava/lang/String;)Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
@@ -2002,7 +2024,7 @@
 
     goto :goto_24
 
-    .line 558
+    .line 559
     :cond_20
     invoke-direct {p0, v1, v3}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPauseNextScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;Ljava/lang/String;)Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
@@ -2013,7 +2035,7 @@
 
     return-object v1
 
-    .line 560
+    .line 561
     :cond_27
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -2031,14 +2053,14 @@
 
     const/16 v0, 0x80
 
-    .line 575
+    .line 576
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 576
+    .line 577
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_1_1:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_2f
@@ -2046,14 +2068,14 @@
     :cond_b
     const/16 v0, 0x100
 
-    .line 577
+    .line 578
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_16
 
-    .line 578
+    .line 579
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_SECOND_1_1:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_2f
@@ -2061,14 +2083,14 @@
     :cond_16
     const/16 v0, 0x40
 
-    .line 579
+    .line 580
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->onlyFlag(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_27
 
-    .line 580
+    .line 581
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_1_1:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     const-string v1, "onPMasterUIStateChangeFirst"
@@ -2079,7 +2101,7 @@
 
     goto :goto_2f
 
-    .line 583
+    .line 584
     :cond_27
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
@@ -2096,7 +2118,7 @@
 
     return-object p0
 
-    .line 586
+    .line 587
     :cond_33
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -2112,7 +2134,7 @@
 .method private synthetic lambda$onPopSettingViewStateChange$13()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 4
 
-    .line 417
+    .line 418
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2141,7 +2163,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 418
+    .line 419
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasPopUIFlag()Z
 
     move-result v0
@@ -2150,12 +2172,12 @@
 
     if-eqz v0, :cond_2c
 
-    .line 419
+    .line 420
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_POP:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_4e
 
-    .line 420
+    .line 421
     :cond_2c
     iget v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
@@ -2177,14 +2199,14 @@
 
     const/16 v0, 0x400
 
-    .line 421
+    .line 422
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
 
     if-nez v0, :cond_4d
 
-    .line 422
+    .line 423
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     const-string v2, "onPopSettingViewStateChange"
@@ -2203,7 +2225,7 @@
 
     return-object v1
 
-    .line 427
+    .line 428
     :cond_51
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -2221,19 +2243,19 @@
 
     const/16 v0, 0x20
 
-    .line 639
+    .line 640
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 640
+    .line 641
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_SECOND_1_1:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_13
 
-    .line 642
+    .line 643
     :cond_b
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
@@ -2250,7 +2272,7 @@
 
     return-object p0
 
-    .line 645
+    .line 646
     :cond_17
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -2268,7 +2290,7 @@
 
     const/4 v0, 0x1
 
-    .line 345
+    .line 346
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v0
@@ -2277,12 +2299,12 @@
 
     if-eqz v0, :cond_b
 
-    .line 346
+    .line 347
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_4_3:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_15
 
-    .line 347
+    .line 348
     :cond_b
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasPopUIFlag()Z
 
@@ -2290,7 +2312,7 @@
 
     if-nez v0, :cond_14
 
-    .line 348
+    .line 349
     sget-object v0, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_15
@@ -2303,7 +2325,7 @@
 
     return-object v1
 
-    .line 352
+    .line 353
     :cond_18
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -2323,12 +2345,12 @@
 
     const/4 v1, 0x0
 
-    .line 454
+    .line 455
     const-string v2, "onStblurLevelUIStateChange"
 
     if-ne p1, v0, :cond_e
 
-    .line 455
+    .line 456
     sget-object p1, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     invoke-direct {p0, p1, v2}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPauseNextScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;Ljava/lang/String;)Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
@@ -2340,19 +2362,19 @@
     :cond_e
     const/16 p1, 0x4000
 
-    .line 458
+    .line 459
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result p1
 
     if-eqz p1, :cond_19
 
-    .line 459
+    .line 460
     sget-object p1, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_4_3:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_2f
 
-    .line 460
+    .line 461
     :cond_19
     iget p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
@@ -2366,7 +2388,7 @@
 
     if-nez p1, :cond_2b
 
-    .line 461
+    .line 462
     sget-object p1, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     invoke-direct {p0, p1, v2}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPauseNextScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;Ljava/lang/String;)Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
@@ -2375,7 +2397,7 @@
 
     goto :goto_2f
 
-    .line 464
+    .line 465
     :cond_2b
     invoke-direct {p0, v1, v2}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPauseNextScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;Ljava/lang/String;)Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
@@ -2386,7 +2408,7 @@
 
     return-object v1
 
-    .line 466
+    .line 467
     :cond_32
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -2404,12 +2426,12 @@
 
     const/16 v0, 0x149
 
-    .line 479
+    .line 480
     const-string v1, "onStblurLevelUIStateChange"
 
     if-ne p1, v0, :cond_d
 
-    .line 480
+    .line 481
     sget-object p1, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPauseNextScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;Ljava/lang/String;)Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
@@ -2421,19 +2443,19 @@
     :cond_d
     const/16 p1, 0x4000
 
-    .line 483
+    .line 484
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onlyFlag(I)Z
 
     move-result p1
 
     if-eqz p1, :cond_18
 
-    .line 484
+    .line 485
     sget-object p1, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_BY_MENU_FIRST_1_1:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     goto :goto_1e
 
-    .line 486
+    .line 487
     :cond_18
     sget-object p1, Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;->PREVIEW_MOVE_SCENE_INVALID:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
@@ -2448,7 +2470,7 @@
 
     return-object p0
 
-    .line 489
+    .line 490
     :cond_22
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -2464,7 +2486,7 @@
 .method private synthetic lambda$onSwitchMode$4()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 2
 
-    .line 124
+    .line 125
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     move-result-object v0
@@ -2537,7 +2559,7 @@
 .method private onAIArtMuseumUIStateChange(I)V
     .registers 6
 
-    .line 615
+    .line 616
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2556,10 +2578,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 616
+    .line 617
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
-    .line 617
+    .line 618
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v0
@@ -2572,7 +2594,7 @@
 
     if-eqz p1, :cond_30
 
-    .line 618
+    .line 619
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda17;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda17;-><init>(Lcom/transsion/camera/app/ui/PreviewUI5;)V
@@ -2586,7 +2608,7 @@
 .method private onAIGCUIStateChange(I)V
     .registers 6
 
-    .line 596
+    .line 597
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2605,10 +2627,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 597
+    .line 598
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
-    .line 598
+    .line 599
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v0
@@ -2621,7 +2643,7 @@
 
     if-eqz p1, :cond_30
 
-    .line 599
+    .line 600
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda26;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda26;-><init>(Lcom/transsion/camera/app/ui/PreviewUI5;)V
@@ -2635,15 +2657,15 @@
 .method private onFaceBeautyTopUIStateChange(I)V
     .registers 8
 
-    .line 499
+    .line 500
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getShowedFlag()I
 
     move-result v0
 
-    .line 500
+    .line 501
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
-    .line 501
+    .line 502
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v1
@@ -2666,7 +2688,7 @@
 
     goto :goto_41
 
-    .line 505
+    .line 506
     :cond_1f
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda18;
 
@@ -2676,7 +2698,7 @@
 
     return-void
 
-    .line 521
+    .line 522
     :cond_28
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
@@ -2696,7 +2718,7 @@
 
     goto :goto_41
 
-    .line 525
+    .line 526
     :cond_39
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda19;
 
@@ -2712,7 +2734,7 @@
 .method private onLongExposureSeekbarStateChange(I)V
     .registers 6
 
-    .line 651
+    .line 652
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2729,7 +2751,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 652
+    .line 653
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v2
@@ -2740,10 +2762,10 @@
 
     move-result-object v1
 
-    .line 651
+    .line 652
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 653
+    .line 654
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
     const/16 v0, 0x113
@@ -2764,7 +2786,7 @@
 
     goto :goto_62
 
-    .line 673
+    .line 674
     :cond_36
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
@@ -2778,7 +2800,7 @@
 
     if-eqz p1, :cond_62
 
-    .line 674
+    .line 675
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda14;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda14;-><init>(Lcom/transsion/camera/app/ui/PreviewUI5;)V
@@ -2787,7 +2809,7 @@
 
     return-void
 
-    .line 657
+    .line 658
     :cond_4b
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
@@ -2801,7 +2823,7 @@
 
     if-eqz p1, :cond_62
 
-    .line 658
+    .line 659
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda13;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda13;-><init>(Lcom/transsion/camera/app/ui/PreviewUI5;)V
@@ -2816,7 +2838,7 @@
 .method private onPMasterUIStateChange(I)V
     .registers 8
 
-    .line 543
+    .line 544
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2845,15 +2867,15 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 544
+    .line 545
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getShowedFlag()I
 
     move-result v0
 
-    .line 545
+    .line 546
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
-    .line 546
+    .line 547
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v1
@@ -2876,7 +2898,7 @@
 
     goto :goto_66
 
-    .line 550
+    .line 551
     :cond_41
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda23;
 
@@ -2886,7 +2908,7 @@
 
     return-void
 
-    .line 566
+    .line 567
     :cond_4a
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
@@ -2908,7 +2930,7 @@
 
     goto :goto_66
 
-    .line 573
+    .line 574
     :cond_5e
     :pswitch_5e
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda24;
@@ -2936,7 +2958,7 @@
 
     const/4 v0, 0x0
 
-    .line 738
+    .line 739
     invoke-direct {p0, p1, v0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->onPreviewViewTranslation(IZZ)V
 
     return-void
@@ -2945,7 +2967,7 @@
 .method private onPreviewViewTranslation(IZZ)V
     .registers 7
 
-    .line 745
+    .line 746
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewView()Landroid/view/View;
 
     move-result-object v0
@@ -2954,10 +2976,10 @@
 
     int-to-float v1, p1
 
-    .line 747
+    .line 748
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 749
+    .line 750
     :cond_a
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewController()Lcom/transsion/camera/app/ui/preview/IPreviewController;
 
@@ -2971,10 +2993,10 @@
 
     int-to-float v1, p1
 
-    .line 751
+    .line 752
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 753
+    .line 754
     :cond_18
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewController()Lcom/transsion/camera/app/ui/preview/IPreviewController;
 
@@ -2988,10 +3010,10 @@
 
     int-to-float v1, p1
 
-    .line 755
+    .line 756
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 757
+    .line 758
     :cond_26
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewController()Lcom/transsion/camera/app/ui/preview/IPreviewController;
 
@@ -3005,10 +3027,10 @@
 
     int-to-float v0, p1
 
-    .line 759
+    .line 760
     invoke-virtual {p0, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 764
+    .line 765
     :cond_34
     invoke-static {}, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;->getInstance()Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;
 
@@ -3022,7 +3044,7 @@
 
     const/4 v0, 0x0
 
-    .line 765
+    .line 766
     :goto_3f
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -3030,14 +3052,14 @@
 
     if-ge v0, v1, :cond_55
 
-    .line 766
+    .line 767
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;
 
-    .line 767
+    .line 768
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -3055,7 +3077,7 @@
 .method private onProfessionalSeekbarStateChange(I)V
     .registers 6
 
-    .line 634
+    .line 635
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3074,10 +3096,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 635
+    .line 636
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
-    .line 636
+    .line 637
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v0
@@ -3090,7 +3112,7 @@
 
     if-eqz p1, :cond_2d
 
-    .line 637
+    .line 638
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda16;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda16;-><init>(Lcom/transsion/camera/app/ui/PreviewUI5;)V
@@ -3140,178 +3162,178 @@
 
     goto/16 :goto_c7
 
-    .line 1009
+    .line 1010
     :sswitch_23
     invoke-direct {v0, v12, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 1006
+    .line 1007
     :sswitch_28
     invoke-direct {v0, v12, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 1003
+    .line 1004
     :sswitch_2d
     invoke-direct {v0, v11, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 1000
+    .line 1001
     :sswitch_32
     invoke-direct {v0, v11, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 991
+    .line 992
     :sswitch_37
     invoke-direct {v0, v10, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 988
+    .line 989
     :sswitch_3c
     invoke-direct {v0, v10, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 997
+    .line 998
     :sswitch_41
     invoke-direct {v0, v9, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 994
+    .line 995
     :sswitch_46
     invoke-direct {v0, v9, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 978
+    .line 979
     :sswitch_4b
     invoke-direct {v0, v15, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
-    .line 979
+    .line 980
     invoke-direct {v0, v14, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 970
+    .line 971
     :sswitch_53
     invoke-direct {v0, v15, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
-    .line 971
+    .line 972
     invoke-direct {v0, v14, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 974
+    .line 975
     :sswitch_5b
     invoke-direct {v0, v15, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
-    .line 975
+    .line 976
     invoke-direct {v0, v14, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 952
+    .line 953
     :sswitch_63
     invoke-direct {v0, v8, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 949
+    .line 950
     :sswitch_68
     invoke-direct {v0, v8, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto/16 :goto_c7
 
-    .line 913
+    .line 914
     :sswitch_6d
     invoke-direct {v0, v1, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 910
+    .line 911
     :sswitch_71
     invoke-direct {v0, v1, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 946
+    .line 947
     :sswitch_75
     invoke-direct {v0, v7, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 943
+    .line 944
     :sswitch_79
     invoke-direct {v0, v7, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 985
+    .line 986
     :sswitch_7d
     invoke-direct {v0, v6, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 982
+    .line 983
     :sswitch_81
     invoke-direct {v0, v6, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 928
+    .line 929
     :sswitch_85
     invoke-direct {v0, v5, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 965
+    .line 966
     :sswitch_89
     invoke-direct {v0, v4, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
-    .line 966
+    .line 967
     invoke-direct {v0, v15, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
-    .line 967
+    .line 968
     invoke-direct {v0, v14, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 962
+    .line 963
     :sswitch_93
     invoke-direct {v0, v4, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 925
+    .line 926
     :sswitch_97
     invoke-direct {v0, v3, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 922
+    .line 923
     :sswitch_9b
     invoke-direct {v0, v3, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 931
+    .line 932
     :sswitch_9f
     invoke-direct {v0, v5, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 959
+    .line 960
     :sswitch_a3
     invoke-direct {v0, v2, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
 
-    .line 955
+    .line 956
     :sswitch_a7
     invoke-direct {v0, v2, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
@@ -3320,7 +3342,7 @@
     :sswitch_ab
     const/4 v2, 0x2
 
-    .line 919
+    .line 920
     invoke-direct {v0, v2, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
@@ -3328,7 +3350,7 @@
     :sswitch_b0
     const/4 v2, 0x2
 
-    .line 916
+    .line 917
     invoke-direct {v0, v2, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     goto :goto_c7
@@ -3336,7 +3358,7 @@
     :sswitch_b5
     const/16 v2, 0x1000
 
-    .line 937
+    .line 938
     invoke-direct {v0, v2}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasFlag(I)Z
 
     move-result v3
@@ -3345,7 +3367,7 @@
 
     return v1
 
-    .line 940
+    .line 941
     :cond_be
     invoke-direct {v0, v2, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
@@ -3354,7 +3376,7 @@
     :sswitch_c2
     const/16 v2, 0x1000
 
-    .line 934
+    .line 935
     invoke-direct {v0, v2, v13}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateFlag(IZ)V
 
     :goto_c7
@@ -3400,15 +3422,15 @@
 .method private onStblurLevelUIStateChange(I)V
     .registers 9
 
-    .line 445
+    .line 446
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getShowedFlag()I
 
     move-result v0
 
-    .line 446
+    .line 447
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
-    .line 447
+    .line 448
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v1
@@ -3435,7 +3457,7 @@
 
     goto :goto_47
 
-    .line 452
+    .line 453
     :cond_23
     new-instance v1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda11;
 
@@ -3445,7 +3467,7 @@
 
     return-void
 
-    .line 472
+    .line 473
     :cond_2c
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
@@ -3467,7 +3489,7 @@
 
     goto :goto_47
 
-    .line 477
+    .line 478
     :cond_3f
     new-instance v0, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda12;
 
@@ -3483,7 +3505,7 @@
 .method private onlyFlag(I)Z
     .registers 2
 
-    .line 1035
+    .line 1036
     iget p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mShowedFlags:I
 
     if-ne p0, p1, :cond_6
@@ -3522,19 +3544,58 @@
     :goto_c
     const/4 p1, 0x0
 
-    .line 335
+    .line 336
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->setNextUIType(I)V
 
+    return-void
+.end method
+
+.method private resetNoNeedMoveSceneFlag()V
+    .registers 4
+
+    .line 1108
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/16 v2, 0x15
+
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->hasNoNeedMoveSceneFlag(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1e
+
+    const/16 v0, 0x16
+
+    .line 1109
+    invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->cameraOperateAction(I)V
+
+    :cond_1e
     return-void
 .end method
 
 .method private setNextUIType(I)V
     .registers 4
 
-    .line 903
+    .line 904
     iput p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
-    .line 904
+    .line 905
     sget-object p1, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3563,7 +3624,7 @@
 
     if-eqz p1, :cond_2c
 
-    .line 159
+    .line 160
     invoke-virtual {p1}, Landroid/animation/Animator;->isRunning()Z
 
     move-result v0
@@ -3572,7 +3633,7 @@
 
     goto :goto_2c
 
-    .line 162
+    .line 163
     :cond_9
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3592,17 +3653,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 163
+    .line 164
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mPathInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, p0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    const-wide/16 v0, 0x1c2
-
-    .line 164
-    invoke-virtual {p1, v0, v1}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+    const-wide/16 v0, 0x12c
 
     .line 165
+    invoke-virtual {p1, v0, v1}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+
+    .line 166
     invoke-virtual {p1}, Landroid/animation/Animator;->start()V
 
     :cond_2c
@@ -3615,7 +3676,7 @@
 
     if-eqz p2, :cond_9
 
-    .line 1023
+    .line 1024
     iget p2, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mShowedFlags:I
 
     not-int p1, p1
@@ -3626,7 +3687,7 @@
 
     goto :goto_e
 
-    .line 1025
+    .line 1026
     :cond_9
     iget p2, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mShowedFlags:I
 
@@ -3634,7 +3695,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mShowedFlags:I
 
-    .line 1027
+    .line 1028
     :goto_e
     sget-object p1, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3676,7 +3737,7 @@
 
     if-eqz p2, :cond_9
 
-    .line 1095
+    .line 1096
     iget p2, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveSceneFlags:I
 
     not-int p1, p1
@@ -3687,7 +3748,7 @@
 
     goto :goto_e
 
-    .line 1097
+    .line 1098
     :cond_9
     iget p2, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveSceneFlags:I
 
@@ -3695,7 +3756,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveSceneFlags:I
 
-    .line 1099
+    .line 1100
     :goto_e
     sget-object p1, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3731,15 +3792,15 @@
 
     const/4 v0, 0x0
 
-    .line 224
+    .line 225
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .line 207
+    .line 208
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->resetNextUITypeIfNeed(I)V
 
-    .line 208
+    .line 209
     const-string v2, "cameraOperateAction: action = "
 
     const/4 v3, 0x1
@@ -3748,19 +3809,19 @@
 
     goto/16 :goto_120
 
-    .line 300
+    .line 301
     :sswitch_10
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onFaceBeautyTopUIStateChange(I)V
 
     goto/16 :goto_120
 
-    .line 296
+    .line 297
     :sswitch_15
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onStblurLevelUIStateChange(I)V
 
     goto/16 :goto_120
 
-    .line 223
+    .line 224
     :sswitch_1a
     sget-object v2, Lcom/transsion/camera/app/ui/PreviewUI5;->SELFTIMER_CAPTURE_INTERRUPT_RESET_SCENES:[I
 
@@ -3771,7 +3832,7 @@
 
     aget v5, v2, v0
 
-    .line 224
+    .line 225
     iget-object v6, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     invoke-virtual {v6, v5, v1}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
@@ -3784,14 +3845,14 @@
 
     move-result v5
 
-    .line 225
+    .line 226
     invoke-direct {p0, v5, v3}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateNoNeedMoveSceneFlag(IZ)V
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1d
 
-    .line 312
+    .line 313
     :sswitch_33
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onAIArtMuseumUIStateChange(I)V
 
@@ -3800,12 +3861,12 @@
     :sswitch_38
     const/4 v0, 0x3
 
-    .line 220
+    .line 221
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->setNextUIType(I)V
 
     goto/16 :goto_120
 
-    .line 270
+    .line 271
     :sswitch_3e
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onCelebrityUIStateChange(I)V
 
@@ -3814,61 +3875,61 @@
     :sswitch_43
     const/4 v0, 0x2
 
-    .line 217
+    .line 218
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->setNextUIType(I)V
 
     goto/16 :goto_120
 
-    .line 214
+    .line 215
     :sswitch_49
     invoke-direct {p0, v3}, Lcom/transsion/camera/app/ui/PreviewUI5;->setNextUIType(I)V
 
     goto/16 :goto_120
 
-    .line 274
+    .line 275
     :sswitch_4e
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onSkyMenuUIStateChange(I)V
 
     goto/16 :goto_120
 
-    .line 303
+    .line 304
     :sswitch_53
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onStblurLevelUIStateChange(I)V
 
-    .line 304
+    .line 305
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onFaceBeautyTopUIStateChange(I)V
 
     goto/16 :goto_120
 
-    .line 280
+    .line 281
     :sswitch_5b
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onLongExposureSeekbarStateChange(I)V
 
     goto/16 :goto_120
 
-    .line 308
+    .line 309
     :sswitch_60
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onAIGCUIStateChange(I)V
 
     goto/16 :goto_120
 
-    .line 292
+    .line 293
     :sswitch_65
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onPMasterUIStateChange(I)V
 
     goto/16 :goto_120
 
-    .line 266
+    .line 267
     :sswitch_6a
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onImageStyleUIStateChange(I)V
 
     goto/16 :goto_120
 
-    .line 210
+    .line 211
     :sswitch_6f
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->calibrateNoNeedMoveScene(I)V
 
-    .line 211
+    .line 212
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractPreviewUI$UIHandler;
 
     invoke-static {v0}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -3883,19 +3944,19 @@
 
     goto/16 :goto_120
 
-    .line 285
+    .line 286
     :sswitch_82
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onProfessionalSeekbarStateChange(I)V
 
     goto/16 :goto_120
 
-    .line 262
+    .line 263
     :sswitch_87
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onFilterUIStateChange(I)V
 
     goto/16 :goto_120
 
-    .line 318
+    .line 319
     :sswitch_8c
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -3905,13 +3966,13 @@
 
     goto/16 :goto_120
 
-    .line 258
+    .line 259
     :sswitch_95
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onPopSettingViewStateChange(I)V
 
     goto/16 :goto_120
 
-    .line 321
+    .line 322
     :sswitch_9a
     new-instance v0, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda4;
 
@@ -3921,11 +3982,11 @@
 
     goto/16 :goto_120
 
-    .line 236
+    .line 237
     :sswitch_a4
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->calibrateNoNeedMoveScene(I)V
 
-    .line 237
+    .line 238
     iget-object v3, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
     invoke-virtual {v3, p1, v1}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
@@ -3940,7 +4001,7 @@
 
     invoke-direct {p0, v1, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateNoNeedMoveSceneFlag(IZ)V
 
-    .line 238
+    .line 239
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractPreviewUI$UIHandler;
 
     invoke-static {v1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -3953,10 +4014,10 @@
 
     invoke-virtual {v1, v3}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
-    .line 239
+    .line 240
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->setIsNeedMoveDown(Z)V
 
-    .line 240
+    .line 241
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3979,7 +4040,7 @@
 
     goto :goto_120
 
-    .line 315
+    .line 316
     :sswitch_e1
     new-instance v0, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda3;
 
@@ -3989,7 +4050,7 @@
 
     goto :goto_120
 
-    .line 250
+    .line 251
     :sswitch_ea
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveScene:Landroid/util/SparseArray;
 
@@ -4005,7 +4066,7 @@
 
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/PreviewUI5;->updateNoNeedMoveSceneFlag(IZ)V
 
-    .line 251
+    .line 252
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->mUIHandler:Lcom/transsion/camera/app/ui/AbstractPreviewUI$UIHandler;
 
     invoke-static {v0}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -4018,7 +4079,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
-    .line 252
+    .line 253
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4039,7 +4100,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 327
+    .line 328
     :cond_120
     :goto_120
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->cameraOperateAction(I)V
@@ -4111,7 +4172,7 @@
 .method protected createAnimationManager(Landroid/view/View;Lcom/transsion/camera/app/ui/ScreenManager;)Lcom/transsion/camera/app/ui/anim/AnimationManager;
     .registers 3
 
-    .line 794
+    .line 795
     new-instance p0, Lcom/transsion/camera/app/ui/anim/AnimationManager5;
 
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/anim/AnimationManager5;-><init>(Landroid/view/View;Lcom/transsion/camera/app/ui/ScreenManager;)V
@@ -4154,7 +4215,7 @@
 .method protected getPreviewMarginInfo(I)V
     .registers 2
 
-    .line 789
+    .line 790
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewMarginInfo(I)V
 
     return-void
@@ -4163,7 +4224,7 @@
 .method public onCelebrityUIStateChange(I)V
     .registers 6
 
-    .line 692
+    .line 693
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4182,10 +4243,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 693
+    .line 694
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
-    .line 694
+    .line 695
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v0
@@ -4198,7 +4259,7 @@
 
     if-eqz p1, :cond_31
 
-    .line 695
+    .line 696
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda20;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda20;-><init>(Lcom/transsion/camera/app/ui/PreviewUI5;)V
@@ -4207,7 +4268,7 @@
 
     goto :goto_4c
 
-    .line 710
+    .line 711
     :cond_31
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -4217,7 +4278,7 @@
 
     move-result-object p1
 
-    .line 711
+    .line 712
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->isFlagEmpty()Z
 
     move-result v0
@@ -4228,7 +4289,7 @@
 
     if-ne p1, v0, :cond_4c
 
-    .line 712
+    .line 713
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     move-result-object p1
@@ -4237,7 +4298,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->setCurrentScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;)Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
-    .line 715
+    .line 716
     :cond_4c
     :goto_4c
     iget p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
@@ -4248,7 +4309,7 @@
 
     const/4 p1, 0x0
 
-    .line 716
+    .line 717
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->setNextUIType(I)V
 
     :cond_55
@@ -4258,7 +4319,7 @@
 .method public onFilterUIStateChange(I)V
     .registers 6
 
-    .line 358
+    .line 359
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4277,10 +4338,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 359
+    .line 360
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
-    .line 360
+    .line 361
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v0
@@ -4293,7 +4354,7 @@
 
     if-eqz p1, :cond_31
 
-    .line 361
+    .line 362
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda15;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda15;-><init>(Lcom/transsion/camera/app/ui/PreviewUI5;)V
@@ -4302,7 +4363,7 @@
 
     goto :goto_4c
 
-    .line 376
+    .line 377
     :cond_31
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
@@ -4312,7 +4373,7 @@
 
     move-result-object p1
 
-    .line 377
+    .line 378
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->isFlagEmpty()Z
 
     move-result v0
@@ -4323,7 +4384,7 @@
 
     if-ne p1, v0, :cond_4c
 
-    .line 378
+    .line 379
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->getPreviewMoveHolder()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     move-result-object p1
@@ -4332,7 +4393,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->setCurrentScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;)Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
-    .line 381
+    .line 382
     :cond_4c
     :goto_4c
     iget p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
@@ -4343,7 +4404,7 @@
 
     const/4 p1, 0x0
 
-    .line 382
+    .line 383
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->setNextUIType(I)V
 
     :cond_55
@@ -4353,7 +4414,7 @@
 .method public onImageStyleUIStateChange(I)V
     .registers 6
 
-    .line 387
+    .line 388
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4372,10 +4433,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 388
+    .line 389
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
-    .line 389
+    .line 390
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v0
@@ -4388,14 +4449,14 @@
 
     if-eqz p1, :cond_30
 
-    .line 390
+    .line 391
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda21;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda21;-><init>(Lcom/transsion/camera/app/ui/PreviewUI5;)V
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPreviewMoveAnimation(Ljava/util/function/Supplier;)V
 
-    .line 405
+    .line 406
     :cond_30
     iget p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
@@ -4405,7 +4466,7 @@
 
     const/4 p1, 0x0
 
-    .line 406
+    .line 407
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->setNextUIType(I)V
 
     :cond_39
@@ -4417,21 +4478,21 @@
 
     const/4 v0, 0x0
 
-    .line 780
+    .line 781
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->setNextUIType(I)V
 
-    .line 781
+    .line 782
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5;->onPreviewViewTranslation(I)V
 
     const/4 v1, 0x1
 
-    .line 782
+    .line 783
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/PreviewUI5;->setIsNeedMoveDown(Z)V
 
-    .line 783
+    .line 784
     iput v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNoNeedMoveSceneFlags:I
 
-    .line 784
+    .line 785
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->onPause(Z)V
 
     return-void
@@ -4440,7 +4501,7 @@
 .method public onPopSettingViewStateChange(I)V
     .registers 6
 
-    .line 411
+    .line 412
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4459,7 +4520,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 412
+    .line 413
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
     move-result p1
@@ -4468,13 +4529,13 @@
 
     goto :goto_55
 
-    .line 415
+    .line 416
     :cond_1d
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda25;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda25;-><init>(Lcom/transsion/camera/app/ui/PreviewUI5;)V
 
-    .line 429
+    .line 430
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v0
@@ -4487,12 +4548,12 @@
 
     if-eqz v0, :cond_35
 
-    .line 430
+    .line 431
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPreviewMoveAnimation(Ljava/util/function/Supplier;)V
 
     goto :goto_4c
 
-    .line 431
+    .line 432
     :cond_35
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
@@ -4506,21 +4567,21 @@
 
     if-nez v0, :cond_45
 
-    .line 432
+    .line 433
     invoke-interface {p1}, Ljava/util/function/Supplier;->get()Ljava/lang/Object;
 
     goto :goto_4c
 
-    .line 435
+    .line 436
     :cond_45
     iget v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
 
     if-nez v0, :cond_4c
 
-    .line 436
+    .line 437
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPreviewMoveAnimation(Ljava/util/function/Supplier;)V
 
-    .line 439
+    .line 440
     :cond_4c
     :goto_4c
     iget p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mNextUIType:I
@@ -4531,7 +4592,7 @@
 
     const/4 p1, 0x0
 
-    .line 440
+    .line 441
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->setNextUIType(I)V
 
     :cond_55
@@ -4542,10 +4603,10 @@
 .method public onResume()V
     .registers 4
 
-    .line 773
+    .line 774
     invoke-super {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->onResume()V
 
-    .line 774
+    .line 775
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4592,7 +4653,7 @@
 .method public onSkyMenuUIStateChange(I)V
     .registers 6
 
-    .line 340
+    .line 341
     sget-object v0, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4611,10 +4672,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 341
+    .line 342
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->onShowedActionChange(I)Z
 
-    .line 342
+    .line 343
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractPreviewUI;->getPreviewLayoutRatio()D
 
     move-result-wide v0
@@ -4627,7 +4688,7 @@
 
     if-eqz p1, :cond_30
 
-    .line 343
+    .line 344
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda22;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda22;-><init>(Lcom/transsion/camera/app/ui/PreviewUI5;)V
@@ -4651,7 +4712,7 @@
 
     move-result p2
 
-    if-nez p2, :cond_2b
+    if-nez p2, :cond_2e
 
     .line 122
     sget-object p2, Lcom/transsion/camera/app/ui/PreviewUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -4676,20 +4737,23 @@
     iput-object p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mCurrentMode:Ljava/lang/String;
 
     .line 124
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/PreviewUI5;->resetNoNeedMoveSceneFlag()V
+
+    .line 125
     new-instance p1, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda9;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/PreviewUI5$$ExternalSyntheticLambda9;-><init>(Lcom/transsion/camera/app/ui/PreviewUI5;)V
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5;->applyPreviewMoveAnimation(Ljava/util/function/Supplier;)V
 
-    :cond_2b
+    :cond_2e
     return-void
 .end method
 
 .method public setIsNeedMoveDown(Z)V
     .registers 2
 
-    .line 1055
+    .line 1056
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mIsNeedMoveDown:Z
 
     return-void
@@ -4733,7 +4797,7 @@
 .method public setPreviousPreviewMoveHolder(Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;)V
     .registers 2
 
-    .line 1059
+    .line 1060
     iput-object p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5;->mPreviousPreviewMoveHolder:Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     return-void

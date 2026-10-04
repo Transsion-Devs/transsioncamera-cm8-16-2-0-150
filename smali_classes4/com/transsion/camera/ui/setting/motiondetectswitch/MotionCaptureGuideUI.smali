@@ -181,6 +181,39 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
     .line 124
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/transsion/camera/utils/UIUtils;->isDarkMode(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_37
+
+    .line 125
+    sget v1, Lcom/transsion/camera/R$drawable;->ic_flash_snap_dark:I
+
+    iput v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mIconInDescriptionId:I
+
+    .line 126
+    sget v1, Lcom/transsion/camera/R$color;->motion_capture_guide_description_text_color_dark:I
+
+    iput v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextColorId:I
+
+    goto :goto_3f
+
+    .line 128
+    :cond_37
+    sget v1, Lcom/transsion/camera/R$drawable;->ic_flash_snap_light:I
+
+    iput v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mIconInDescriptionId:I
+
+    .line 129
+    sget v1, Lcom/transsion/camera/R$color;->motion_capture_guide_description_text_color:I
+
+    iput v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextColorId:I
+
+    .line 131
+    :goto_3f
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescription:Landroid/widget/TextView;
 
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
@@ -193,7 +226,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 125
+    .line 132
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescription:Landroid/widget/TextView;
@@ -202,7 +235,7 @@
 
     invoke-static {v1, v2, v3}, Lcom/transsion/camera/utils/UIUtils;->replaceTextViewWithIcon(Landroid/content/Context;Landroid/widget/TextView;I)V
 
-    .line 126
+    .line 133
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
     iget v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimThumbnailId:I
@@ -213,7 +246,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 127
+    .line 134
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
@@ -230,7 +263,7 @@
 .method private createGuideViewV2()Landroid/view/View;
     .registers 9
 
-    .line 183
+    .line 190
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -241,12 +274,12 @@
 
     const/4 v2, 0x0
 
-    .line 184
+    .line 191
     invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 185
+    .line 192
     sget v1, Lcom/transsion/camera/R$id;->motion_capture_guide_description_1:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -255,7 +288,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 186
+    .line 193
     sget v2, Lcom/transsion/camera/R$id;->motion_capture_guide_description_2:I
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -264,7 +297,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 187
+    .line 194
     sget v3, Lcom/transsion/camera/R$id;->motion_capture_guide_description_3:I
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -273,7 +306,7 @@
 
     check-cast v3, Landroid/widget/TextView;
 
-    .line 188
+    .line 195
     sget v4, Lcom/transsion/camera/R$id;->motion_capture_guide_video_view:I
 
     invoke-virtual {v0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -282,13 +315,13 @@
 
     check-cast v4, Lcom/transsion/camera/app/ui/widget/AutoPlayVapView;
 
-    .line 189
+    .line 196
     sget v5, Lcom/transsion/camera/R$drawable;->thum_ai_cam_flash_snap_guide:I
 
-    .line 192
+    .line 199
     sget v6, Lcom/transsion/camera/R$drawable;->ic_flash_snap_light:I
 
-    .line 193
+    .line 200
     iget-object v7, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
     invoke-static {v7}, Lcom/transsion/camera/utils/UIUtils;->isDarkMode(Landroid/content/Context;)Z
@@ -297,7 +330,7 @@
 
     if-eqz v7, :cond_5c
 
-    .line 194
+    .line 201
     iget-object v6, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
     sget v7, Lcom/transsion/camera/R$color;->motion_capture_guide_description_text_color_dark:I
@@ -308,7 +341,7 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 195
+    .line 202
     iget-object v6, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
     sget v7, Lcom/transsion/camera/R$color;->motion_capture_guide_description_text_color_dark:I
@@ -319,7 +352,7 @@
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 196
+    .line 203
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
     sget v6, Lcom/transsion/camera/R$color;->motion_capture_guide_description_text_color_dark:I
@@ -330,16 +363,16 @@
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 197
+    .line 204
     sget v6, Lcom/transsion/camera/R$drawable;->ic_flash_snap_dark:I
 
-    .line 199
+    .line 206
     :cond_5c
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
     invoke-static {v2, v1, v6}, Lcom/transsion/camera/utils/UIUtils;->replaceTextViewWithIcon(Landroid/content/Context;Landroid/widget/TextView;I)V
 
-    .line 200
+    .line 207
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v5}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -348,7 +381,7 @@
 
     invoke-virtual {v4, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 201
+    .line 208
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
@@ -548,7 +581,7 @@
     :cond_5
     const/4 p1, 0x0
 
-    .line 133
+    .line 140
     :goto_6
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mContext:Landroid/content/Context;
 
@@ -576,44 +609,8 @@
 
     if-ne p1, v0, :cond_31
 
-    .line 135
-    sget p1, Lcom/transsion/camera/R$drawable;->ic_flash_snap_dark:I
-
-    iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mIconInDescriptionId:I
-
-    .line 136
-    sget p1, Lcom/transsion/camera/R$string;->flash_snap_lite_dialog_message:I
-
-    iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextId:I
-
-    .line 137
-    sget p1, Lcom/transsion/camera/R$color;->motion_capture_guide_description_text_color_dark:I
-
-    iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextColorId:I
-
-    .line 138
-    sget p1, Lcom/transsion/camera/R$drawable;->thum_ai_cam_flash_snap_guide:I
-
-    iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimThumbnailId:I
-
-    .line 139
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimResName:Ljava/lang/String;
-
-    goto/16 :goto_ad
-
-    .line 175
-    :cond_31
-    new-instance p0, Ljava/lang/RuntimeException;
-
-    const-string p1, "unreachable case"
-
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
     .line 142
-    :cond_39
-    sget p1, Lcom/transsion/camera/R$drawable;->ic_flash_snap_light:I
+    sget p1, Lcom/transsion/camera/R$drawable;->ic_flash_snap_dark:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mIconInDescriptionId:I
 
@@ -623,7 +620,7 @@
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextId:I
 
     .line 144
-    sget p1, Lcom/transsion/camera/R$color;->motion_capture_guide_description_text_color:I
+    sget p1, Lcom/transsion/camera/R$color;->motion_capture_guide_description_text_color_dark:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextColorId:I
 
@@ -635,33 +632,69 @@
     .line 146
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimResName:Ljava/lang/String;
 
-    goto :goto_ad
+    goto/16 :goto_ad
+
+    .line 182
+    :cond_31
+    new-instance p0, Ljava/lang/RuntimeException;
+
+    const-string p1, "unreachable case"
+
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     .line 149
+    :cond_39
+    sget p1, Lcom/transsion/camera/R$drawable;->ic_flash_snap_light:I
+
+    iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mIconInDescriptionId:I
+
+    .line 150
+    sget p1, Lcom/transsion/camera/R$string;->flash_snap_lite_dialog_message:I
+
+    iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextId:I
+
+    .line 151
+    sget p1, Lcom/transsion/camera/R$color;->motion_capture_guide_description_text_color:I
+
+    iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextColorId:I
+
+    .line 152
+    sget p1, Lcom/transsion/camera/R$drawable;->thum_ai_cam_flash_snap_guide:I
+
+    iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimThumbnailId:I
+
+    .line 153
+    iput-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimResName:Ljava/lang/String;
+
+    goto :goto_ad
+
+    .line 156
     :cond_4c
     sget p1, Lcom/transsion/camera/R$drawable;->ic_auto_capture_guide_dark:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mIconInDescriptionId:I
 
-    .line 150
+    .line 157
     sget p1, Lcom/transsion/camera/R$string;->motion_capture_dialog_message_new:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextId:I
 
-    .line 151
+    .line 158
     sget p1, Lcom/transsion/camera/R$color;->motion_capture_guide_description_text_color_dark:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextColorId:I
 
-    .line 152
+    .line 159
     sget p1, Lcom/transsion/camera/R$drawable;->thum_video_motion_capture_guide:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimThumbnailId:I
 
-    .line 153
+    .line 160
     iput-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimResName:Ljava/lang/String;
 
-    .line 154
+    .line 161
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -672,7 +705,7 @@
 
     if-nez p1, :cond_72
 
-    .line 155
+    .line 162
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -683,47 +716,47 @@
 
     if-eqz p1, :cond_ad
 
-    .line 156
+    .line 163
     :cond_72
     sget p1, Lcom/transsion/camera/R$drawable;->ic_flash_snap_dark:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mIconInDescriptionId:I
 
-    .line 157
+    .line 164
     sget p1, Lcom/transsion/camera/R$drawable;->thum_ai_cam_flash_snap_guide:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimThumbnailId:I
 
-    .line 158
+    .line 165
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimResName:Ljava/lang/String;
 
     goto :goto_ad
 
-    .line 162
+    .line 169
     :cond_7d
     sget p1, Lcom/transsion/camera/R$drawable;->ic_auto_capture_guide_light:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mIconInDescriptionId:I
 
-    .line 163
+    .line 170
     sget p1, Lcom/transsion/camera/R$string;->motion_capture_dialog_message_new:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextId:I
 
-    .line 164
+    .line 171
     sget p1, Lcom/transsion/camera/R$color;->motion_capture_guide_description_text_color:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextColorId:I
 
-    .line 165
+    .line 172
     sget p1, Lcom/transsion/camera/R$drawable;->thum_video_motion_capture_guide:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimThumbnailId:I
 
-    .line 166
+    .line 173
     iput-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimResName:Ljava/lang/String;
 
-    .line 167
+    .line 174
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -734,7 +767,7 @@
 
     if-nez p1, :cond_a3
 
-    .line 168
+    .line 175
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -745,28 +778,28 @@
 
     if-eqz p1, :cond_ad
 
-    .line 169
+    .line 176
     :cond_a3
     sget p1, Lcom/transsion/camera/R$drawable;->ic_flash_snap_light:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mIconInDescriptionId:I
 
-    .line 170
+    .line 177
     sget p1, Lcom/transsion/camera/R$drawable;->thum_ai_cam_flash_snap_guide:I
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimThumbnailId:I
 
-    .line 171
+    .line 178
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mAnimResName:Ljava/lang/String;
 
-    .line 177
+    .line 184
     :cond_ad
     :goto_ad
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mMasterGuideUICommon:Lcom/transsion/camera/app/common/ui/setting/IMasterGuideUICommon;
 
     if-eqz v2, :cond_be
 
-    .line 178
+    .line 185
     iget v3, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextId:I
 
     iget v4, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDescriptionTextColorId:I
@@ -786,12 +819,12 @@
 .method private showFlag()Z
     .registers 4
 
-    .line 226
+    .line 233
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const/4 v1, 0x1
 
-    .line 227
+    .line 234
     invoke-static {v1}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
 
     move-result-object v1
@@ -802,7 +835,7 @@
 
     move-result-object p0
 
-    .line 226
+    .line 233
     const-string v2, "key_motioncapture_guide_show_flag"
 
     invoke-virtual {v0, v2, v1, p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -813,7 +846,7 @@
 
     move-result p0
 
-    .line 228
+    .line 235
     sget-object v0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -875,7 +908,7 @@
 .method public isGuideShowing()Z
     .registers 1
 
-    .line 216
+    .line 223
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDialog:Lcom/transsion/widgetslib/dialog/PromptDialog;
 
     if-eqz p0, :cond_c
@@ -899,7 +932,7 @@
 .method public isNeedShowGuide()Z
     .registers 1
 
-    .line 221
+    .line 228
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->showFlag()Z
 
     move-result p0
@@ -910,7 +943,7 @@
 .method public onUserInteraction()V
     .registers 3
 
-    .line 207
+    .line 214
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -919,14 +952,14 @@
 
     if-nez v0, :cond_f
 
-    .line 208
+    .line 215
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mMainHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->showDialogRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 210
+    .line 217
     :cond_f
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->isGuideShowing()Z
 
@@ -934,7 +967,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 211
+    .line 218
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDialog:Lcom/transsion/widgetslib/dialog/PromptDialog;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->dismiss()V
@@ -1079,12 +1112,12 @@
 .method public updateFlag()V
     .registers 5
 
-    .line 233
+    .line 240
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const/4 v1, 0x0
 
-    .line 234
+    .line 241
     invoke-static {v1}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
 
     move-result-object v2
@@ -1095,7 +1128,7 @@
 
     move-result-object p0
 
-    .line 233
+    .line 240
     const-string v3, "key_motioncapture_guide_show_flag"
 
     invoke-virtual {v0, v3, v2, p0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V

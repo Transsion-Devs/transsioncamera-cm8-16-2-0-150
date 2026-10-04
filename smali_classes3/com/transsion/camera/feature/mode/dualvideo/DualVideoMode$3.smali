@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)V
     .registers 2
 
-    .line 608
+    .line 611
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/view/View;)V
     .registers 3
 
-    .line 610
+    .line 613
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result v0
@@ -47,13 +47,13 @@
 
     return-void
 
-    .line 613
+    .line 616
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->-$$Nest$mswitchToNextScreenValue(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)Ljava/lang/String;
 
-    .line 614
+    .line 617
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->startAnimation(Landroid/view/View;)V

@@ -15,22 +15,22 @@
 
 
 # static fields
-.field private static final _next$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic _next$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-.field private static final _prev$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic _prev$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
 
 # instance fields
-.field private volatile _next:Ljava/lang/Object;
+.field private volatile synthetic _next$volatile:Ljava/lang/Object;
 
-.field private volatile _prev:Ljava/lang/Object;
+.field private volatile synthetic _prev$volatile:Ljava/lang/Object;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 3
 
-    const-string v0, "_next"
+    const-string v0, "_next$volatile"
 
     const-class v1, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
@@ -40,15 +40,15 @@
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_next$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_next$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    const-string v0, "_prev"
+    const-string v0, "_prev$volatile"
 
     invoke-static {v1, v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_prev$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_prev$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     return-void
 .end method
@@ -61,11 +61,11 @@
         }
     .end annotation
 
-    .line 94
+    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
-    iput-object p1, p0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_prev:Ljava/lang/Object;
+    .line 94
+    iput-object p1, p0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_prev$volatile:Ljava/lang/Object;
 
     return-void
 .end method
@@ -73,7 +73,7 @@
 .method public static final synthetic access$getNextOrClosed(Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;)Ljava/lang/Object;
     .registers 1
 
-    .line 94
+    .line 90
     invoke-direct {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNextOrClosed()Ljava/lang/Object;
 
     move-result-object p0
@@ -89,24 +89,26 @@
         }
     .end annotation
 
-    .line 173
+    .line 169
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getPrev()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object p0
 
     :goto_4
-    if-eqz p0, :cond_15
+    if-eqz p0, :cond_17
 
-    .line 174
+    .line 170
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->isRemoved()Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_17
 
-    sget-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_prev$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->get_prev$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 175
+    move-result-object v0
+
+    .line 171
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -115,7 +117,7 @@
 
     goto :goto_4
 
-    :cond_15
+    :cond_17
     return-object p0
 .end method
 
@@ -127,14 +129,14 @@
         }
     .end annotation
 
-    .line 181
+    .line 177
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object p0
 
     invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    .line 182
+    .line 178
     :goto_7
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->isRemoved()Z
 
@@ -142,7 +144,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 183
+    .line 179
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object v0
@@ -164,9 +166,11 @@
 .method private final getNextOrClosed()Ljava/lang/Object;
     .registers 2
 
-    sget-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_next$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->get_next$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 100
+    move-result-object v0
+
+    .line 96
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -174,28 +178,76 @@
     return-object p0
 .end method
 
-.method private final update$atomicfu(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+.method private final synthetic get_next$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_next$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic get_next$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_next$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic get_prev$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_prev$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic get_prev$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_prev$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic set_next$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_next$volatile:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private final synthetic set_prev$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_prev$volatile:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private final synthetic update$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lkotlin/jvm/functions/Function1;)V
     .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
+            "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
             "Lkotlin/jvm/functions/Function1;",
-            "Ljava/lang/Object;",
             ")V"
         }
     .end annotation
 
     :cond_0
-    invoke-virtual {p1, p3}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {p1, p3, p0, v0}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p2, p1, p0, v0}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -209,12 +261,14 @@
 .method public final cleanPrev()V
     .registers 3
 
-    sget-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_prev$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->get_prev$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 132
-    invoke-virtual {v0, p0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->lazySet(Ljava/lang/Object;Ljava/lang/Object;)V
+    .line 128
+    invoke-virtual {v0, p0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -227,13 +281,13 @@
         }
     .end annotation
 
-    .line 107
+    .line 103
     # invokes: Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNextOrClosed()Ljava/lang/Object;
     invoke-static {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->access$getNextOrClosed(Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 108
+    .line 104
     # getter for: Lkotlinx/coroutines/internal/ConcurrentLinkedListKt;->CLOSED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/internal/ConcurrentLinkedListKt;->access$getCLOSED$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -245,7 +299,7 @@
 
     return-object p0
 
-    .line 111
+    .line 107
     :cond_c
     check-cast p0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
@@ -260,9 +314,11 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_prev$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->get_prev$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 127
+    move-result-object v0
+
+    .line 123
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -278,7 +334,7 @@
 .method public final isTail()Z
     .registers 1
 
-    .line 125
+    .line 121
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object p0
@@ -298,11 +354,13 @@
 .method public final markAsClosed()Z
     .registers 4
 
-    sget-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_next$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->get_next$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 137
+    .line 133
     # getter for: Lkotlinx/coroutines/internal/ConcurrentLinkedListKt;->CLOSED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/internal/ConcurrentLinkedListKt;->access$getCLOSED$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -325,13 +383,13 @@
         }
     .end annotation
 
-    .line 107
+    .line 103
     # invokes: Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNextOrClosed()Ljava/lang/Object;
     invoke-static {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->access$getNextOrClosed(Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 108
+    .line 104
     # getter for: Lkotlinx/coroutines/internal/ConcurrentLinkedListKt;->CLOSED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/internal/ConcurrentLinkedListKt;->access$getCLOSED$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -339,12 +397,12 @@
 
     if-eq p0, v0, :cond_d
 
-    .line 111
+    .line 107
     check-cast p0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     return-object p0
 
-    .line 109
+    .line 105
     :cond_d
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
@@ -358,29 +416,32 @@
 .method public final remove()V
     .registers 6
 
-    .line 156
+    .line 152
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->isTail()Z
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    goto :goto_3e
+    goto :goto_42
 
-    .line 159
+    .line 155
     :cond_7
     invoke-direct {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getAliveSegmentLeft()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object v0
 
-    .line 160
+    .line 156
     invoke-direct {p0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getAliveSegmentRight()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object v1
 
-    sget-object v2, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_prev$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 148
+    invoke-static {}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->get_prev$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    :cond_11
+    move-result-object v2
+
+    :cond_13
     invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
@@ -389,37 +450,39 @@
 
     check-cast v4, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
-    if-nez v4, :cond_1c
+    if-nez v4, :cond_1e
 
     const/4 v4, 0x0
 
-    goto :goto_1d
+    goto :goto_1f
 
-    :cond_1c
+    :cond_1e
     move-object v4, v0
 
-    .line 162
-    :goto_1d
+    .line 158
+    :goto_1f
     invoke-static {v2, v1, v3, v4}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_13
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2e
 
-    .line 163
-    sget-object v2, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_next$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 159
+    invoke-static {}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->get_next$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v2
 
     invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 165
-    :cond_2a
+    .line 161
+    :cond_2e
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->isRemoved()Z
 
     move-result v2
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_3a
 
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->isTail()Z
 
@@ -427,18 +490,18 @@
 
     if-eqz v1, :cond_7
 
-    :cond_36
-    if-eqz v0, :cond_3e
+    :cond_3a
+    if-eqz v0, :cond_42
 
-    .line 166
+    .line 162
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->isRemoved()Z
 
     move-result v0
 
     if-nez v0, :cond_7
 
-    :cond_3e
-    :goto_3e
+    :cond_42
+    :goto_42
     return-void
 .end method
 
@@ -450,11 +513,13 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->_next$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->get_next$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 120
+    .line 116
     invoke-static {v0, p0, v1, p1}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0

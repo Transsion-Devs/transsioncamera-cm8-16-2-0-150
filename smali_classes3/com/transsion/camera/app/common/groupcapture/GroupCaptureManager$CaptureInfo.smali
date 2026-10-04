@@ -41,29 +41,29 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;II)V
     .registers 6
 
-    .line 428
+    .line 430
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 421
+    .line 423
     iput p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mCaptureFailedCount:I
 
-    .line 422
+    .line 424
     iput p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mReceivedJpegCountOnCaptureFailed:I
 
     const-wide/16 v0, -0x1
 
-    .line 423
+    .line 425
     iput-wide v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mTimestamp:J
 
-    .line 426
+    .line 428
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mIsMakeUpOn:Z
 
-    .line 429
+    .line 431
     iput p2, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mCaptureTag:I
 
-    .line 430
+    .line 432
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1, p3}, Ljava/util/ArrayList;-><init>(I)V
@@ -78,14 +78,14 @@
 .method addCaptureFailedCount()V
     .registers 4
 
-    .line 447
+    .line 449
     iget v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mCaptureFailedCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mCaptureFailedCount:I
 
-    .line 448
+    .line 450
     invoke-static {}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -114,19 +114,19 @@
 .method addJpegInfo(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;)V
     .registers 4
 
-    .line 438
+    .line 440
     iget v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mCaptureFailedCount:I
 
     if-lez v0, :cond_25
 
-    .line 439
+    .line 441
     iget p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mReceivedJpegCountOnCaptureFailed:I
 
     add-int/lit8 p1, p1, 0x1
 
     iput p1, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mReceivedJpegCountOnCaptureFailed:I
 
-    .line 440
+    .line 442
     invoke-static {}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -151,7 +151,7 @@
 
     return-void
 
-    .line 443
+    .line 445
     :cond_25
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mJpegInfo:Ljava/util/List;
 
@@ -163,7 +163,7 @@
 .method getJpegInfoByIndex(I)Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;
     .registers 2
 
-    .line 434
+    .line 436
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mJpegInfo:Ljava/util/List;
 
     invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -178,14 +178,14 @@
 .method isAllJpegReceivedOnCaptureFailed()Z
     .registers 3
 
-    .line 466
+    .line 468
     iget v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mCaptureFailedCount:I
 
     const/4 v1, 0x0
 
     if-lez v0, :cond_d
 
-    .line 467
+    .line 469
     iget p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mReceivedJpegCountOnCaptureFailed:I
 
     add-int/2addr v0, p0
@@ -205,7 +205,7 @@
 .method isValid()Z
     .registers 5
 
-    .line 452
+    .line 454
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mJpegInfo:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -218,7 +218,7 @@
 
     if-ge v0, v1, :cond_31
 
-    .line 453
+    .line 455
     invoke-static {}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -253,7 +253,7 @@
 
     return v2
 
-    .line 456
+    .line 458
     :cond_31
     iget-object v0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$CaptureInfo;->mJpegInfo:Ljava/util/List;
 
@@ -274,14 +274,14 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;
 
-    .line 457
+    .line 459
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;->isValid()Z
 
     move-result v1
 
     if-nez v1, :cond_37
 
-    .line 458
+    .line 460
     invoke-static {}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -313,7 +313,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 474
+    .line 476
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

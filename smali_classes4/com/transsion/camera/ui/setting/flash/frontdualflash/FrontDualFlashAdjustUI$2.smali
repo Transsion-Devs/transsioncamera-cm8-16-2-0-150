@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)V
     .registers 2
 
-    .line 506
+    .line 548
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$2;->this$0:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .registers 2
 
-    .line 514
+    .line 556
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$2;->this$0:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;
 
     const/4 p1, 0x0
@@ -58,7 +58,7 @@
 .method public onAnimationStart(Landroid/view/animation/Animation;)V
     .registers 2
 
-    .line 509
+    .line 551
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$2;->this$0:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;
 
     const/4 p1, 0x1

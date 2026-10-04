@@ -1,4 +1,4 @@
-.class public Lcom/transsion/camera/ui/setting/liveresult/LiveResultSettingUIEntry;
+.class public final Lcom/transsion/camera/ui/setting/liveresult/LiveResultSettingUIEntry;
 .super Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;
 .source "SourceFile"
 
@@ -7,7 +7,7 @@
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .registers 2
 
-    .line 22
+    .line 9
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;-><init>(Landroid/content/res/Resources;)V
 
     return-void
@@ -18,21 +18,25 @@
 .method public createCommonUI()Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;
     .registers 2
 
-    .line 32
+    .line 15
     iget-object v0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mCommonSettingUI:Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;
 
     if-nez v0, :cond_b
 
-    .line 33
+    .line 16
     new-instance v0, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;
 
     invoke-direct {v0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mCommonSettingUI:Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;
 
-    .line 35
+    .line 18
     :cond_b
     iget-object p0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mCommonSettingUI:Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;
+
+    const-string v0, "mCommonSettingUI"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method
@@ -40,7 +44,7 @@
 .method public createPreferenceItemUI()Lcom/transsion/camera/app/common/ui/setting/IPreferenceItemUI;
     .registers 3
 
-    .line 27
+    .line 11
     new-instance v0, Lcom/transsion/camera/app/ui/widget/preference/PreferenceItemUI;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/liveresult/LiveResultSettingUISpec;

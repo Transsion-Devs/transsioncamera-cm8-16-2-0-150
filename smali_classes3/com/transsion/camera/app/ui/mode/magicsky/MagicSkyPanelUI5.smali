@@ -57,10 +57,10 @@
 .method public constructor <init>(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/IAppUI;Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
     .registers 6
 
-    .line 40
+    .line 44
     invoke-direct/range {p0 .. p5}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;-><init>(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/IAppUI;Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
 
-    .line 41
+    .line 45
     invoke-static {}, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;->getInstance()Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;
 
     move-result-object p1
@@ -69,7 +69,7 @@
 
     invoke-virtual {p1, p2, p0}, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;->registerAnimatorUpdateListener(Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;)V
 
-    .line 42
+    .line 46
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$UIHandler;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$UIHandler;-><init>(Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;)V
@@ -82,7 +82,7 @@
 .method private hidePopSettingTitle()V
     .registers 3
 
-    .line 137
+    .line 142
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -91,14 +91,14 @@
 
     if-nez v0, :cond_16
 
-    .line 138
+    .line 143
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 139
+    .line 144
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mUIHandler:Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$UIHandler;
 
     const/16 v0, 0x64
@@ -112,7 +112,7 @@
 .method private showPop3sSettingTitle()V
     .registers 5
 
-    .line 123
+    .line 128
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mUIHandler:Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$UIHandler;
 
     const/16 v1, 0x64
@@ -121,7 +121,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 124
+    .line 129
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x2
@@ -138,17 +138,17 @@
 
     const-wide/16 v1, 0xc8
 
-    .line 125
+    .line 130
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 126
+    .line 131
     new-instance v1, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$2;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$2;-><init>(Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 133
+    .line 138
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
     return-void
@@ -161,9 +161,9 @@
 .end method
 
 .method private updatePopSettingTitleLayout()V
-    .registers 5
+    .registers 6
 
-    .line 154
+    .line 158
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -172,7 +172,29 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 155
+    .line 159
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
+
+    const-string v2, "4:3"
+
+    const-string v3, "_global_scope"
+
+    const-string v4, "key_picture_ratio"
+
+    invoke-virtual {v1, v4, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 160
+    const-string v2, "1:1"
+
+    invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_39
+
+    .line 161
     iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
@@ -181,7 +203,41 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
 
-    .line 156
+    .line 162
+    invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->common_pop_setting_title_bottom_margin_1_1:I
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    .line 163
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleTextView:Landroid/widget/TextView;
+
+    sget v2, Lcom/transsion/camera/featurelibs/commonwidget/R$drawable;->pop_menu_name_background_black:I
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundResource(I)V
+
+    goto :goto_55
+
+    .line 165
+    :cond_39
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUI;
+
+    invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
+
+    .line 166
     invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -196,30 +252,26 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
+    .line 167
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleTextView:Landroid/widget/TextView;
+
+    sget v2, Lcom/transsion/camera/featurelibs/commonwidget/R$drawable;->pop_menu_name_background:I
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundResource(I)V
+
+    :goto_55
     const/16 v1, 0x51
 
-    .line 157
+    .line 169
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 158
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
+    const/4 v1, -0x2
 
-    invoke-virtual {v2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    .line 170
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 159
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
-
-    .line 160
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
-    .line 161
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleTextView:Landroid/widget/TextView;
+    .line 171
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -231,15 +283,15 @@
 .method protected hideSkySettingUI()V
     .registers 2
 
-    .line 108
+    .line 113
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkyRootAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 109
+    .line 114
     invoke-super {p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->hideSkySettingUI()V
 
-    .line 110
+    .line 115
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->hidePopSettingTitle()V
 
     return-void
@@ -248,7 +300,7 @@
 .method protected initMagicSkyUI()V
     .registers 4
 
-    .line 47
+    .line 51
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mChooseLayout:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/feature/mode/magicsky/R$id;->sky_choose_root:I
@@ -261,7 +313,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mChooseRoot:Landroid/widget/FrameLayout;
 
-    .line 48
+    .line 52
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mChooseLayout:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/feature/mode/magicsky/R$id;->sky_select_root:I
@@ -272,7 +324,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkySelectRoot:Landroid/view/View;
 
-    .line 49
+    .line 53
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mChooseLayout:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/feature/mode/magicsky/R$id;->sky_select_root_rotate:I
@@ -285,7 +337,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkySelectRootRotate:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    .line 51
+    .line 55
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mChooseLayout:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/feature/mode/magicsky/R$id;->sky_choose_bar:I
@@ -298,12 +350,12 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkyChooseBar:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
-    .line 52
+    .line 56
     iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mChooseBarListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 53
+    .line 57
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkyChooseBar:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     const v1, 0x3f4ccccd    # 0.8f
@@ -312,7 +364,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
-    .line 55
+    .line 59
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mChooseLayout:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/feature/mode/magicsky/R$id;->sky_select_view:I
@@ -327,17 +379,17 @@
 
     const/4 v1, 0x0
 
-    .line 56
+    .line 60
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setMotionEventSplittingEnabled(Z)V
 
-    .line 57
+    .line 61
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkySelectRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mScrollListener:Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->addOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 59
+    .line 63
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mChooseLayout:Landroid/view/View;
 
     sget v2, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->pop_menu_container:I
@@ -350,7 +402,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleContainer:Landroid/widget/FrameLayout;
 
-    .line 60
+    .line 64
     sget v2, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->pop_setting_title:I
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -361,29 +413,29 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleTextView:Landroid/widget/TextView;
 
-    .line 61
+    .line 65
     sget v2, Lcom/transsion/camera/feature/mode/magicsky/R$string;->magicsky_mode_title:I
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 63
+    .line 67
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 64
+    .line 68
     new-instance v2, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$1;
 
     invoke-direct {v2, p0, v0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$1;-><init>(Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;Landroid/content/res/Resources;)V
 
     iput-object v2, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkyItems:Ljava/util/List;
 
-    .line 80
+    .line 84
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->initAnim()V
 
-    .line 81
+    .line 85
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->updateSettingUILayout(Z)V
 
     return-void
@@ -394,7 +446,7 @@
 
     if-eqz p2, :cond_9
 
-    .line 93
+    .line 97
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkyChooseBar:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     const/4 p1, 0x0
@@ -406,7 +458,7 @@
     :cond_9
     if-eqz p3, :cond_11
 
-    .line 95
+    .line 99
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkyChooseBar:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     const/4 p1, 0x1
@@ -420,7 +472,7 @@
 .method public bridge synthetic onAnimationUpdate(Ljava/lang/Object;ZZ)V
     .registers 4
 
-    .line 32
+    .line 36
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->onAnimationUpdate(Ljava/lang/Integer;ZZ)V
@@ -431,7 +483,7 @@
 .method public onBackPressed()V
     .registers 3
 
-    .line 115
+    .line 120
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkyRootAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->isStarted()Z
@@ -440,17 +492,17 @@
 
     if-nez v0, :cond_11
 
-    .line 116
+    .line 121
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->hidePopSettingTitle()V
 
-    .line 117
+    .line 122
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v1, 0x1
 
     invoke-interface {v0, v1, v1}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerRootUI(ZZ)V
 
-    .line 119
+    .line 124
     :cond_11
     invoke-super {p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->onBackPressed()V
 
@@ -460,7 +512,7 @@
 .method public onOrientationChanged(IZ)V
     .registers 3
 
-    .line 166
+    .line 176
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->onOrientationChanged(IZ)V
 
     const/16 p2, 0x5a
@@ -474,7 +526,7 @@
     :cond_b
     const/4 p1, 0x0
 
-    .line 170
+    .line 180
     :cond_c
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->mPopSettingTitleTextView:Landroid/widget/TextView;
 
@@ -488,13 +540,16 @@
 .method protected showSkySettingUI()V
     .registers 3
 
-    .line 101
+    .line 105
     invoke-super {p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->showSkySettingUI()V
 
-    .line 102
+    .line 106
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->updatePopSettingTitleLayout()V
+
+    .line 107
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->showPop3sSettingTitle()V
 
-    .line 103
+    .line 108
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v0, 0x0
@@ -509,7 +564,7 @@
 .method public unInitMagicSkyUI()V
     .registers 3
 
-    .line 86
+    .line 90
     invoke-static {}, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;->getInstance()Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;
 
     move-result-object v0
@@ -518,7 +573,7 @@
 
     invoke-virtual {v0, v1, p0}, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;->unregisterAnimatorUpdateListener(Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;)V
 
-    .line 87
+    .line 91
     invoke-super {p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->unInitMagicSkyUI()V
 
     return-void
@@ -527,10 +582,10 @@
 .method protected updateSettingUILayout(Z)V
     .registers 5
 
-    .line 145
+    .line 150
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->updateSettingUILayout(Z)V
 
-    .line 146
+    .line 151
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkySelectRoot:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -539,7 +594,7 @@
 
     check-cast p1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 147
+    .line 152
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getBottomBarHeight()I
@@ -562,16 +617,13 @@
 
     const/4 v1, 0x0
 
-    .line 148
+    .line 153
     invoke-virtual {p1, v1, v1, v1, v0}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 149
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkySelectRoot:Landroid/view/View;
+    .line 154
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI;->mSkySelectRoot:Landroid/view/View;
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 150
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;->updatePopSettingTitleLayout()V
+    invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method

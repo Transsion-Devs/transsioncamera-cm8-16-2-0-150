@@ -11,12 +11,14 @@
 
 .field public final synthetic f$1:Ljava/lang/String;
 
-.field public final synthetic f$2:I
+.field public final synthetic f$2:Z
+
+.field public final synthetic f$3:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;Ljava/lang/String;I)V
-    .registers 4
+.method public synthetic constructor <init>(Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;Ljava/lang/String;ZI)V
+    .registers 5
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,7 +27,9 @@
 
     iput-object p2, p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;->f$1:Ljava/lang/String;
 
-    iput p3, p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;->f$2:I
+    iput-boolean p3, p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;->f$2:Z
+
+    iput p4, p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;->f$3:I
 
     return-void
 .end method
@@ -33,16 +37,18 @@
 
 # virtual methods
 .method public final run()Ljava/lang/Object;
-    .registers 3
+    .registers 4
 
     .line 0
     iget-object v0, p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;->f$0:Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;
 
     iget-object v1, p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;->f$1:Ljava/lang/String;
 
-    iget p0, p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;->f$2:I
+    iget-boolean v2, p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;->f$2:Z
 
-    invoke-static {v0, v1, p0}, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;->$r8$lambda$pTuTUyKS5S-fwH7xirg5TPChTPo(Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;Ljava/lang/String;I)Ljava/lang/Object;
+    iget p0, p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;->f$3:I
+
+    invoke-static {v0, v1, v2, p0}, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;->$r8$lambda$U6ymqgkz1XYKOZ0dNC2YoMMGvcw(Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;Ljava/lang/String;ZI)Ljava/lang/Object;
 
     move-result-object p0
 

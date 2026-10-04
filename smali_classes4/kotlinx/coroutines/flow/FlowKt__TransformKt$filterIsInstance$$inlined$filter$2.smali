@@ -40,7 +40,7 @@
 
     iput-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$filterIsInstance$$inlined$filter$2;->$klass$inlined:Lkotlin/reflect/KClass;
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,7 +51,7 @@
 .method public collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .registers 5
 
-    .line 114
+    .line 112
     iget-object v0, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$filterIsInstance$$inlined$filter$2;->$this_unsafeTransform$inlined:Lkotlinx/coroutines/flow/Flow;
 
     new-instance v1, Lkotlinx/coroutines/flow/FlowKt__TransformKt$filterIsInstance$$inlined$filter$2$2;
@@ -72,7 +72,7 @@
 
     return-object p0
 
-    .line 109
+    .line 107
     :cond_14
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

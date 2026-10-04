@@ -4,6 +4,17 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$wCPZljkMPwpH8U6QH2aomXPJX5Q(Lkotlin/jvm/functions/Function2;Ljava/io/File;Ljava/io/IOException;)Lkotlin/Unit;
+    .registers 3
+
+    .line 0
+    invoke-static {p0, p1, p2}, Lkotlin/io/FilesKt__UtilsKt;->copyRecursively$lambda$0$FilesKt__UtilsKt(Lkotlin/jvm/functions/Function2;Ljava/io/File;Ljava/io/IOException;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static copyRecursively(Ljava/io/File;Ljava/io/File;ZLkotlin/jvm/functions/Function2;)Z
     .registers 16
 
@@ -68,9 +79,9 @@
 
     move-result-object p0
 
-    new-instance v0, Lkotlin/io/FilesKt__UtilsKt$copyRecursively$2;
+    new-instance v0, Lkotlin/io/FilesKt__UtilsKt$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p3}, Lkotlin/io/FilesKt__UtilsKt$copyRecursively$2;-><init>(Lkotlin/jvm/functions/Function2;)V
+    invoke-direct {v0, p3}, Lkotlin/io/FilesKt__UtilsKt$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function2;)V
 
     invoke-virtual {p0, v0}, Lkotlin/io/FileTreeWalk;->onFail(Lkotlin/jvm/functions/Function2;)Lkotlin/io/FileTreeWalk;
 
@@ -282,6 +293,38 @@
 
     :catch_da
     return v2
+.end method
+
+.method private static final copyRecursively$lambda$0$FilesKt__UtilsKt(Lkotlin/jvm/functions/Function2;Ljava/io/File;Ljava/io/IOException;)Lkotlin/Unit;
+    .registers 4
+
+    const-string v0, "f"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "e"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 299
+    invoke-interface {p0, p1, p2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p2, Lkotlin/io/OnErrorAction;->TERMINATE:Lkotlin/io/OnErrorAction;
+
+    if-eq p0, p2, :cond_15
+
+    sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p0
+
+    :cond_15
+    new-instance p0, Lkotlin/io/TerminateException;
+
+    invoke-direct {p0, p1}, Lkotlin/io/TerminateException;-><init>(Ljava/io/File;)V
+
+    throw p0
 .end method
 
 .method public static final copyTo(Ljava/io/File;Ljava/io/File;ZI)Ljava/io/File;
@@ -513,7 +556,7 @@
 
     move-result-object p0
 
-    .line 1267
+    .line 1293
     invoke-interface {p0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -575,7 +618,7 @@
 
     move-result-object p0
 
-    const-string v0, "name"
+    const-string v0, "getName(...)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -607,13 +650,12 @@
 
     move-result-object p0
 
-    :cond_d
     :goto_d
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_5b
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -633,22 +675,27 @@
 
     move-result v3
 
-    if-nez v3, :cond_d
+    if-eqz v3, :cond_28
+
+    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    goto :goto_d
 
     .line 420
+    :cond_28
     const-string v3, ".."
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_51
+    if-eqz v2, :cond_57
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v2
 
-    if-nez v2, :cond_4d
+    if-nez v2, :cond_53
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->last(Ljava/util/List;)Ljava/lang/Object;
 
@@ -664,7 +711,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_4d
+    if-nez v2, :cond_53
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -674,20 +721,24 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Comparable;
+
     goto :goto_d
 
-    :cond_4d
+    :cond_53
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_d
 
     .line 421
-    :cond_51
+    :cond_57
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_d
 
-    :cond_55
+    :cond_5b
     return-object v0
 .end method
 

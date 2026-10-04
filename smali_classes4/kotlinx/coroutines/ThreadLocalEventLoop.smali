@@ -27,7 +27,7 @@
 
     sput-object v0, Lkotlinx/coroutines/ThreadLocalEventLoop;->INSTANCE:Lkotlinx/coroutines/ThreadLocalEventLoop;
 
-    .line 126
+    .line 123
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "ThreadLocalEventLoop"
@@ -46,7 +46,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 125
+    .line 122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -57,7 +57,7 @@
 .method public final currentOrNull$kotlinx_coroutines_core()Lkotlinx/coroutines/EventLoop;
     .registers 1
 
-    .line 132
+    .line 129
     sget-object p0, Lkotlinx/coroutines/ThreadLocalEventLoop;->ref:Ljava/lang/ThreadLocal;
 
     invoke-virtual {p0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -72,7 +72,7 @@
 .method public final getEventLoop$kotlinx_coroutines_core()Lkotlinx/coroutines/EventLoop;
     .registers 2
 
-    .line 129
+    .line 126
     sget-object p0, Lkotlinx/coroutines/ThreadLocalEventLoop;->ref:Ljava/lang/ThreadLocal;
 
     invoke-virtual {p0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -96,7 +96,7 @@
 .method public final resetEventLoop$kotlinx_coroutines_core()V
     .registers 2
 
-    .line 135
+    .line 132
     sget-object p0, Lkotlinx/coroutines/ThreadLocalEventLoop;->ref:Ljava/lang/ThreadLocal;
 
     const/4 v0, 0x0
@@ -109,7 +109,7 @@
 .method public final setEventLoop$kotlinx_coroutines_core(Lkotlinx/coroutines/EventLoop;)V
     .registers 2
 
-    .line 139
+    .line 136
     sget-object p0, Lkotlinx/coroutines/ThreadLocalEventLoop;->ref:Ljava/lang/ThreadLocal;
 
     invoke-virtual {p0, p1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V

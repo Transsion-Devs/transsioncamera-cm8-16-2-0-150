@@ -45,7 +45,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 46
+    .line 49
     const-string p0, "key_video_fps2"
 
     return-object p0
@@ -83,7 +83,7 @@
 .end method
 
 .method public getSupport()Ljava/util/List;
-    .registers 1
+    .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -97,6 +97,16 @@
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p0
+
+    .line 42
+    const-string v0, "30"
+
+    invoke-interface {p0, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 43
+    const-string v0, "60"
+
+    invoke-interface {p0, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     return-object p0
 .end method
@@ -176,7 +186,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 57
+    .line 60
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
     :cond_5

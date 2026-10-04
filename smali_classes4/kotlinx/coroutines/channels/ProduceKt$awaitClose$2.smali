@@ -56,7 +56,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 45
+    .line 42
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/ProduceKt$awaitClose$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

@@ -14,3 +14,9 @@
         }
     .end annotation
 .end method
+
+.method public abstract registerAppWidgetListener(Lcom/transsion/hubsdk/api/app/ITranAppWidget;I)V
+.end method
+
+.method public abstract unregisterAppWidgetListener(Lcom/transsion/hubsdk/api/app/ITranAppWidget;I)V
+.end method

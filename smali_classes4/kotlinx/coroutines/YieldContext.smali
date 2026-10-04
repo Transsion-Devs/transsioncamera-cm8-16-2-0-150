@@ -37,7 +37,7 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 42
+    .line 38
     sget-object v0, Lkotlinx/coroutines/YieldContext;->Key:Lkotlinx/coroutines/YieldContext$Key;
 
     invoke-direct {p0, v0}, Lkotlin/coroutines/AbstractCoroutineContextElement;-><init>(Lkotlin/coroutines/CoroutineContext$Key;)V

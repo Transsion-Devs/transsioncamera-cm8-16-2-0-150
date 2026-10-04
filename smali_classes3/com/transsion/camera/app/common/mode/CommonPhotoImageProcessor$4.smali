@@ -37,7 +37,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;[BIIIIJ)V
     .registers 9
 
-    .line 702
+    .line 715
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;->val$postView:[B
@@ -62,7 +62,7 @@
 .method public run()V
     .registers 15
 
-    .line 705
+    .line 718
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -71,12 +71,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 706
+    .line 719
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;->val$postView:[B
 
     if-nez v0, :cond_16
 
-    .line 707
+    .line 720
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -85,7 +85,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 709
+    .line 722
     :cond_16
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
@@ -103,7 +103,7 @@
 
     move-result-object v9
 
-    .line 712
+    .line 725
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->-$$Nest$fgetmThumbnailPairProducerLock(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;)Ljava/lang/Object;
@@ -112,7 +112,7 @@
 
     monitor-enter v1
 
-    .line 713
+    .line 726
     :try_start_2d
     iget-object v8, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
@@ -124,27 +124,27 @@
 
     iget v13, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;->val$orientation:I
 
-    .line 714
+    .line 727
     invoke-static/range {v8 .. v13}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->-$$Nest$mgenerateThumbnail(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;[BIIII)Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;
 
     move-result-object v0
 
-    .line 715
+    .line 728
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     invoke-static {v2, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->-$$Nest$monThumbnailGenerated(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;)V
 
-    .line 716
+    .line 729
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;->-$$Nest$fgetmThumbnail(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;)[B
 
     move-result-object v0
 
-    .line 717
+    .line 730
     monitor-exit v1
     :try_end_45
     .catchall {:try_start_2d .. :try_end_45} :catchall_4f
 
-    .line 719
+    .line 732
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$4;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mPictureCallback:Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;
@@ -160,7 +160,7 @@
 
     move-object p0, v0
 
-    .line 717
+    .line 730
     :try_start_51
     monitor-exit v1
     :try_end_52

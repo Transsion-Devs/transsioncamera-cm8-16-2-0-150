@@ -3,14 +3,6 @@
 .source "SourceFile"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/common/collect/Iterators$EmptyModifiableIterator;
-    }
-.end annotation
-
-
 # direct methods
 .method static clear(Ljava/util/Iterator;)V
     .registers 2
@@ -36,15 +28,6 @@
 
     :cond_10
     return-void
-.end method
-
-.method static emptyModifiableIterator()Ljava/util/Iterator;
-    .registers 1
-
-    .line 125
-    sget-object v0, Lcom/google/common/collect/Iterators$EmptyModifiableIterator;->INSTANCE:Lcom/google/common/collect/Iterators$EmptyModifiableIterator;
-
-    return-object v0
 .end method
 
 .method public static removeAll(Ljava/util/Iterator;Ljava/util/Collection;)Z

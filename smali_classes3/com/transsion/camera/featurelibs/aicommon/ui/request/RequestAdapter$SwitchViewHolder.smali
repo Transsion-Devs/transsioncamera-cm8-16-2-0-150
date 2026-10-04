@@ -35,13 +35,13 @@
 .method private constructor <init>(Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;Landroid/view/View;)V
     .registers 3
 
-    .line 387
+    .line 398
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$SwitchViewHolder;->this$0:Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;
 
-    .line 388
+    .line 399
     invoke-direct {p0, p2}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$BaseViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 389
+    .line 400
     sget p1, Lcom/transsion/camera/featurelibs/aicommon/R$id;->ai_fragment_list_item_switch_text:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -52,7 +52,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$SwitchViewHolder;->mSwitchText:Landroid/widget/TextView;
 
-    .line 390
+    .line 401
     sget p1, Lcom/transsion/camera/featurelibs/aicommon/R$id;->ai_fragment_list_item_switch_icon:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -67,7 +67,7 @@
 
     const/4 p1, 0x0
 
-    .line 392
+    .line 403
     invoke-static {p2, p0, p1}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
     return-void
@@ -85,7 +85,7 @@
 .method private synthetic lambda$bindView$0(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/SwitchItem;Landroid/view/View;)V
     .registers 4
 
-    .line 398
+    .line 409
     invoke-static {p2}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p2
@@ -94,7 +94,7 @@
 
     return-void
 
-    .line 402
+    .line 413
     :cond_7
     invoke-static {}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -104,7 +104,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 403
+    .line 414
     iget-object p2, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$SwitchViewHolder;->this$0:Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;
 
     invoke-static {p2}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;->-$$Nest$fgetmRequestOperator(Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;)Lcom/transsion/camera/featurelibs/aicommon/ui/request/IRequestOperator;
@@ -113,7 +113,7 @@
 
     invoke-interface {p2, p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/IRequestOperator;->oppositeSwitch(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/SwitchItem;)V
 
-    .line 405
+    .line 416
     invoke-direct {p0, p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$SwitchViewHolder;->updateSwitch(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/SwitchItem;)V
 
     return-void
@@ -122,21 +122,21 @@
 .method private updateSwitch(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/SwitchItem;)V
     .registers 3
 
-    .line 412
+    .line 423
     invoke-virtual {p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/SwitchItem;->switchExpand()Z
 
     move-result p1
 
     if-eqz p1, :cond_15
 
-    .line 413
+    .line 424
     iget-object p1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$SwitchViewHolder;->mSwitchText:Landroid/widget/TextView;
 
     sget v0, Lcom/transsion/camera/featurelibs/aicommon/R$string;->ai_fragment_list_item_collapse:I
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 414
+    .line 425
     iget-object p0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$SwitchViewHolder;->mSwitchIcon:Landroid/widget/ImageView;
 
     sget p1, Lcom/transsion/camera/featurelibs/aicommon/R$drawable;->ic_ai_fragment_list_item_switch_collapse:I
@@ -145,7 +145,7 @@
 
     return-void
 
-    .line 416
+    .line 427
     :cond_15
     iget-object p1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$SwitchViewHolder;->mSwitchText:Landroid/widget/TextView;
 
@@ -153,7 +153,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 417
+    .line 428
     iget-object p0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$SwitchViewHolder;->mSwitchIcon:Landroid/widget/ImageView;
 
     sget p1, Lcom/transsion/camera/featurelibs/aicommon/R$drawable;->ic_ai_fragment_list_item_switch_expand:I
@@ -168,7 +168,7 @@
 .method bindView(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/SwitchItem;)V
     .registers 4
 
-    .line 397
+    .line 408
     iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     new-instance v1, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$SwitchViewHolder$$ExternalSyntheticLambda0;
@@ -177,7 +177,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 408
+    .line 419
     invoke-direct {p0, p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$SwitchViewHolder;->updateSwitch(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/SwitchItem;)V
 
     return-void

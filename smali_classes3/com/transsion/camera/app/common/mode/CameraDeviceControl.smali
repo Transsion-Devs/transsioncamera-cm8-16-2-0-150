@@ -120,7 +120,7 @@
 
     if-eqz p0, :cond_5
 
-    .line 559
+    .line 532
     invoke-interface {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$ICommandCallback;->onExecuted()V
 
     :cond_5
@@ -132,7 +132,7 @@
 
     if-eqz p0, :cond_5
 
-    .line 577
+    .line 550
     invoke-interface {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$ICommandCallback;->onExecuted()V
 
     :cond_5
@@ -598,15 +598,6 @@
     return-void
 .end method
 
-.method static bridge synthetic -$$Nest$mhandleSnapShotForVideoHDR(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)V
-    .registers 1
-
-    .line 0
-    invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->handleSnapShotForVideoHDR()V
-
-    return-void
-.end method
-
 .method static bridge synthetic -$$Nest$mhandleStartContinuousShot(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;I)V
     .registers 2
 
@@ -902,7 +893,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 63
+    .line 62
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "CameraDeviceControl"
@@ -911,7 +902,7 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 119
+    .line 118
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$1;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$1;-><init>()V
@@ -924,83 +915,83 @@
 .method public constructor <init>()V
     .registers 5
 
-    .line 62
+    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 65
+    .line 64
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 66
+    .line 65
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
-    .line 67
+    .line 66
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mClosing:Z
 
-    .line 69
+    .line 68
     new-instance v2, Lcom/transsion/camera/utils/StateWait;
 
     invoke-direct {v2}, Lcom/transsion/camera/utils/StateWait;-><init>()V
 
     iput-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCaptureOfflineLock:Lcom/transsion/camera/utils/StateWait;
 
-    .line 70
+    .line 69
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mReleased:Z
 
     const/4 v2, 0x1
 
-    .line 74
+    .line 73
     iput v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mDeviceState:I
 
-    .line 76
+    .line 75
     iput v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mTotalDeviceCount:I
 
-    .line 77
+    .line 76
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
-    .line 78
+    .line 77
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
-    .line 80
+    .line 79
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mNeedOpenSlave:Z
 
-    .line 81
+    .line 80
     const-string v3, "device_main"
 
     iput-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
-    .line 82
+    .line 81
     iput-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mLastSetParameterDevice:Ljava/lang/String;
 
-    .line 83
+    .line 82
     iput-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurMainDevice:Ljava/lang/String;
 
-    .line 84
+    .line 83
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainPreviewStopped:Z
 
-    .line 85
+    .line 84
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlavePreviewStopped:Z
 
-    .line 89
+    .line 88
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
-    .line 91
+    .line 90
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mModeChanged:Z
 
-    .line 94
+    .line 93
     iput-boolean v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mIsModeSettingReady:Z
 
-    .line 97
+    .line 96
     new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mStateCB:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    .line 104
+    .line 103
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     const-string v2, "opened"
@@ -1009,7 +1000,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mOpenedState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
-    .line 105
+    .line 104
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     const-string v2, "closed"
@@ -1018,7 +1009,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mClosedState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
-    .line 106
+    .line 105
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     const-string v2, "startcreatsession"
@@ -1027,7 +1018,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mStartCreatSessionState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
-    .line 107
+    .line 106
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     const-string v2, "startpreviewing"
@@ -1036,7 +1027,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mStartPreviewingState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
-    .line 108
+    .line 107
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     const-string v2, "startpreviewed"
@@ -1045,7 +1036,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mStartPreviewedState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
-    .line 109
+    .line 108
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     const-string v2, "firstframe"
@@ -1054,14 +1045,14 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mFirstFrameState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
-    .line 110
+    .line 109
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mChangeParameterLock:Ljava/lang/Object;
 
-    .line 112
+    .line 111
     const-string v0, "key_camera_zoom"
 
     const-string v2, "key_asd"
@@ -1072,31 +1063,31 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->ASD_ZOOM_HANDLER_TOKEN:[Ljava/lang/String;
 
-    .line 113
+    .line 112
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mIsZooming:Z
 
-    .line 2016
+    .line 1958
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$2;-><init>(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainControlInfoCallback:Lcom/transsion/camera/app/common/mode/SubDeviceControl$MainControlInfoCallback;
 
-    .line 2044
+    .line 1986
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;-><init>(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mDeviceStateCallback:Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;
 
-    .line 2201
+    .line 2143
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$4;-><init>(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCameraOfflineSessionListener:Lcom/transsion/camera/adapter/CameraProxy$CameraOfflineSessionListener;
 
-    .line 2309
+    .line 2251
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)V
@@ -1109,7 +1100,7 @@
 .method private checkCameraId(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
 
-    .line 1382
+    .line 1342
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object p0
@@ -1126,7 +1117,7 @@
 
     return-object p1
 
-    .line 1386
+    .line 1346
     :cond_f
     const-string p0, "0"
 
@@ -1138,7 +1129,7 @@
 
     const-string p0, "1"
 
-    .line 1387
+    .line 1347
     :cond_19
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
@@ -1165,12 +1156,12 @@
 .method private doOnFrameResultCallback(Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
     .registers 4
 
-    .line 2311
+    .line 2253
     invoke-interface {p3, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->checkStreamIdResult(Landroid/hardware/camera2/CaptureResult;)[I
 
     move-result-object p1
 
-    .line 2312
+    .line 2254
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingManager;->updateStreamIds([I)V
@@ -1181,7 +1172,7 @@
 .method private getExceptKeyByPolicy()Ljava/lang/String;
     .registers 3
 
-    .line 2500
+    .line 2438
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mArrayId:[Ljava/lang/String;
 
     if-eqz v0, :cond_13
@@ -1198,7 +1189,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 2501
+    .line 2439
     :cond_e
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->getFlashKey()Ljava/lang/String;
 
@@ -1215,7 +1206,7 @@
 .method private getFlashKey()Ljava/lang/String;
     .registers 3
 
-    .line 2397
+    .line 2335
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingManager;->getSettingController()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -1228,7 +1219,7 @@
 
     return-object v1
 
-    .line 2401
+    .line 2339
     :cond_b
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
@@ -1261,7 +1252,7 @@
 
     goto :goto_21
 
-    .line 1850
+    .line 1792
     :cond_3
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectType()I
 
@@ -1271,21 +1262,21 @@
 
     if-ne v0, v1, :cond_21
 
-    .line 1851
+    .line 1793
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getDeviceType()I
 
     move-result v0
 
     if-nez v0, :cond_21
 
-    .line 1852
+    .line 1794
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObject()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1853
+    .line 1795
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectWidth()I
 
     move-result v1
@@ -1294,7 +1285,7 @@
 
     move-result p1
 
-    .line 1852
+    .line 1794
     invoke-virtual {p0, v0, v1, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateAuxPreviewSurface(Ljava/lang/Object;II)V
 
     :cond_21
@@ -1305,12 +1296,12 @@
 .method private handleAuxSurfaceModeSupported(Z)V
     .registers 2
 
-    .line 1840
+    .line 1782
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1841
+    .line 1783
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateAuxSurfaceModeSupported(Z)V
 
     :cond_7
@@ -1324,7 +1315,7 @@
 
     goto :goto_21
 
-    .line 1894
+    .line 1836
     :cond_3
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectType()I
 
@@ -1334,21 +1325,21 @@
 
     if-ne v0, v1, :cond_21
 
-    .line 1895
+    .line 1837
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getDeviceType()I
 
     move-result v0
 
     if-nez v0, :cond_21
 
-    .line 1896
+    .line 1838
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObject()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1897
+    .line 1839
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectWidth()I
 
     move-result v1
@@ -1357,7 +1348,7 @@
 
     move-result p1
 
-    .line 1896
+    .line 1838
     invoke-virtual {p0, v0, v1, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateBackgroundPreviewSurface(Ljava/lang/Object;II)V
 
     :cond_21
@@ -1368,12 +1359,12 @@
 .method private handleBackgroundSurfaceModeSupported(Z)V
     .registers 2
 
-    .line 1884
+    .line 1826
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1885
+    .line 1827
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateBackgroundSurfaceModeSupported(Z)V
 
     :cond_7
@@ -1383,12 +1374,12 @@
 .method private handleCancelTakePicture()V
     .registers 1
 
-    .line 1688
+    .line 1636
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1689
+    .line 1637
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->cancelTakePicture()V
 
     :cond_7
@@ -1398,7 +1389,7 @@
 .method private handleChangeDualVideoFPS(Landroid/util/Range;)V
     .registers 3
 
-    .line 2471
+    .line 2409
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_13
@@ -1409,7 +1400,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 2472
+    .line 2410
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraParameters()Lcom/transsion/camera/adapter/CameraParameters;
@@ -1425,7 +1416,7 @@
 .method private handleChangeParameter(Ljava/lang/String;)V
     .registers 6
 
-    .line 1711
+    .line 1659
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1452,7 +1443,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->v(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1712
+    .line 1660
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
     const-string v1, "device_main"
@@ -1463,17 +1454,17 @@
 
     if-eqz v0, :cond_32
 
-    .line 1713
+    .line 1661
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_85
 
-    .line 1714
+    .line 1662
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->changeParameter(Ljava/lang/String;)V
 
     return-void
 
-    .line 1716
+    .line 1664
     :cond_32
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
@@ -1485,17 +1476,17 @@
 
     if-eqz v0, :cond_44
 
-    .line 1717
+    .line 1665
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_85
 
-    .line 1718
+    .line 1666
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->changeParameter(Ljava/lang/String;)V
 
     return-void
 
-    .line 1720
+    .line 1668
     :cond_44
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
@@ -1507,33 +1498,33 @@
 
     if-eqz v0, :cond_85
 
-    .line 1721
+    .line 1669
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mLastSetParameterDevice:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
-    .line 1722
+    .line 1670
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_6b
 
-    .line 1723
+    .line 1671
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_5f
 
-    .line 1724
+    .line 1672
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->changeParameter(Ljava/lang/String;)V
 
-    .line 1726
+    .line 1674
     :cond_5f
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_85
 
-    .line 1727
+    .line 1675
     filled-new-array {p1}, [Ljava/lang/String;
 
     move-result-object p1
@@ -1542,7 +1533,7 @@
 
     return-void
 
-    .line 1729
+    .line 1677
     :cond_6b
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mLastSetParameterDevice:Ljava/lang/String;
 
@@ -1552,21 +1543,21 @@
 
     if-eqz v0, :cond_85
 
-    .line 1730
+    .line 1678
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_7a
 
-    .line 1731
+    .line 1679
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->changeParameter(Ljava/lang/String;)V
 
-    .line 1733
+    .line 1681
     :cond_7a
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_85
 
-    .line 1734
+    .line 1682
     filled-new-array {p1}, [Ljava/lang/String;
 
     move-result-object p1
@@ -1580,7 +1571,7 @@
 .method private varargs handleChangeParameterByKey([Ljava/lang/String;)V
     .registers 4
 
-    .line 1776
+    .line 1724
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
     const-string v1, "device_main"
@@ -1591,17 +1582,17 @@
 
     if-eqz v0, :cond_12
 
-    .line 1777
+    .line 1725
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_23
 
-    .line 1778
+    .line 1726
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->changeParameterByKey([Ljava/lang/String;)V
 
     return-void
 
-    .line 1780
+    .line 1728
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
@@ -1613,12 +1604,12 @@
 
     if-eqz v0, :cond_23
 
-    .line 1781
+    .line 1729
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_23
 
-    .line 1782
+    .line 1730
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->changeParameterByKey([Ljava/lang/String;)V
 
     :cond_23
@@ -1632,13 +1623,13 @@
 
     goto :goto_3d
 
-    .line 1991
+    .line 1933
     :cond_3
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_3d
 
-    .line 1992
+    .line 1934
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectType()I
 
     move-result v1
@@ -1647,7 +1638,7 @@
 
     move-result-object v2
 
-    .line 1993
+    .line 1935
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectWidth()I
 
     move-result v3
@@ -1656,12 +1647,12 @@
 
     move-result v4
 
-    .line 1992
+    .line 1934
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->checkSurfaceChanged(ILjava/lang/Object;II)Z
 
     move-result v0
 
-    .line 1994
+    .line 1936
     sget-object v1, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1682,16 +1673,16 @@
 
     if-eqz v0, :cond_37
 
-    .line 1996
+    .line 1938
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->handleSetSessionDisplay(Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;)V
 
     return-void
 
-    .line 1998
+    .line 1940
     :cond_37
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->handleStopPreview()V
 
-    .line 1999
+    .line 1941
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->handleStartPreview()V
 
     :cond_3d
@@ -1702,7 +1693,7 @@
 .method private handleCloseCamera()V
     .registers 4
 
-    .line 1449
+    .line 1409
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1729,116 +1720,99 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1458
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
+    .line 1410
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
+
+    if-eqz v0, :cond_33
+
+    .line 1411
+    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->reset()V
+
+    .line 1412
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
+
+    iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mFrameResultCallback:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
+
+    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->unRegisterFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
+
+    .line 1413
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
+
+    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->releaseCamera()V
+
+    .line 1416
+    :cond_33
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
+
+    if-eqz v0, :cond_3f
+
+    .line 1417
+    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->reset()V
+
+    .line 1418
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
+
+    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->releaseCamera()V
+
+    .line 1421
+    :cond_3f
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
+
+    if-eqz v0, :cond_46
+
+    .line 1422
+    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->closeCamera()V
+
+    .line 1424
+    :cond_46
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_50
 
-    invoke-interface {v0}, Lcom/transsion/camera/app/common/mode/ICameraMode;->isBgCapturing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_30
-
-    .line 1459
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
-
-    invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/mode/ICameraMode;->removeCaptureInfo(Z)V
-
-    .line 1462
-    :cond_30
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
-
-    if-eqz v0, :cond_43
-
-    .line 1463
-    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->reset()V
-
-    .line 1464
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
-
-    iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mFrameResultCallback:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
-
-    invoke-virtual {v0, v2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->unRegisterFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
-
-    .line 1465
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
-
-    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->releaseCamera()V
-
-    .line 1468
-    :cond_43
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
-
-    if-eqz v0, :cond_4f
-
-    .line 1469
-    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->reset()V
-
-    .line 1470
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
-
-    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->releaseCamera()V
-
-    .line 1473
-    :cond_4f
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
-
-    if-eqz v0, :cond_56
-
-    .line 1474
+    .line 1425
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->closeCamera()V
 
-    .line 1476
-    :cond_56
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
+    .line 1426
+    iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
-    const/4 v2, 0x0
-
-    if-eqz v0, :cond_60
-
-    .line 1477
-    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->closeCamera()V
-
-    .line 1478
-    iput-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
-
-    .line 1480
-    :cond_60
+    .line 1428
+    :cond_50
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
-    invoke-virtual {v0, v2}, Lcom/transsion/camera/app/common/setting/SettingManager;->updateStreamIds([I)V
+    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/setting/SettingManager;->updateStreamIds([I)V
 
-    .line 1481
-    iput-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mPreviewSize:Landroid/util/Size;
+    .line 1429
+    iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mPreviewSize:Landroid/util/Size;
 
-    .line 1482
+    .line 1430
     const-string v0, "device_main"
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
-    .line 1483
+    .line 1431
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mLastSetParameterDevice:Ljava/lang/String;
 
-    .line 1485
+    .line 1433
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mTotalDeviceCount:I
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    if-ne v0, v2, :cond_79
+    const/4 v2, 0x0
 
-    .line 1486
+    if-ne v0, v1, :cond_6a
+
+    .line 1434
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/transsion/camera/adapter/CameraAgent;->setOpenDoubleDevice(Z)V
+    invoke-virtual {v0, v2}, Lcom/transsion/camera/adapter/CameraAgent;->setOpenDoubleDevice(Z)V
 
-    .line 1488
-    :cond_79
-    iput v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mTotalDeviceCount:I
+    .line 1436
+    :cond_6a
+    iput v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mTotalDeviceCount:I
 
     return-void
 .end method
@@ -1846,7 +1820,7 @@
 .method private handleConfigCommand(Ljava/lang/String;)V
     .registers 5
 
-    .line 1741
+    .line 1689
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1873,7 +1847,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->v(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1742
+    .line 1690
     const-string v0, "key_face_detection"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1882,26 +1856,26 @@
 
     if-eqz v0, :cond_37
 
-    .line 1743
+    .line 1691
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_2f
 
-    .line 1744
+    .line 1692
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->configCommand(Ljava/lang/String;)V
 
-    .line 1746
+    .line 1694
     :cond_2f
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_5a
 
-    .line 1747
+    .line 1695
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->configCommand(Ljava/lang/String;)V
 
     return-void
 
-    .line 1751
+    .line 1699
     :cond_37
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
@@ -1913,17 +1887,17 @@
 
     if-eqz v0, :cond_49
 
-    .line 1752
+    .line 1700
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_5a
 
-    .line 1753
+    .line 1701
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->configCommand(Ljava/lang/String;)V
 
     return-void
 
-    .line 1755
+    .line 1703
     :cond_49
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
@@ -1935,12 +1909,12 @@
 
     if-eqz v0, :cond_5a
 
-    .line 1756
+    .line 1704
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_5a
 
-    .line 1757
+    .line 1705
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->configCommand(Ljava/lang/String;)V
 
     :cond_5a
@@ -1950,7 +1924,7 @@
 .method private handleContinuousDone()V
     .registers 2
 
-    .line 1982
+    .line 1924
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_14
@@ -1961,7 +1935,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 1983
+    .line 1925
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraParameters()Lcom/transsion/camera/adapter/CameraParameters;
@@ -1979,7 +1953,7 @@
 .method private handleEnablePreviewStream(Z)V
     .registers 3
 
-    .line 2465
+    .line 2403
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_13
@@ -1990,7 +1964,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 2466
+    .line 2404
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraParameters()Lcom/transsion/camera/adapter/CameraParameters;
@@ -2006,12 +1980,12 @@
 .method private handleEnableVideoAutoFlash(Z)V
     .registers 2
 
-    .line 1822
+    .line 1764
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1823
+    .line 1765
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->enableVideoAutoFlash(Z)V
 
     :cond_7
@@ -2025,7 +1999,7 @@
 
     goto/16 :goto_af
 
-    .line 1416
+    .line 1376
     :cond_4
     const-string v0, "_"
 
@@ -2035,7 +2009,7 @@
 
     if-nez v0, :cond_28
 
-    .line 1418
+    .line 1378
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2060,53 +2034,53 @@
 
     return-void
 
-    .line 1422
+    .line 1382
     :cond_28
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mArrayId:[Ljava/lang/String;
 
-    .line 1423
+    .line 1383
     array-length p1, v0
 
     iput p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mTotalDeviceCount:I
 
-    .line 1424
+    .line 1384
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mOpenedState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->reset()V
 
-    .line 1425
+    .line 1385
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mClosedState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->reset()V
 
-    .line 1426
+    .line 1386
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mStartCreatSessionState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->reset()V
 
-    .line 1427
+    .line 1387
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mStartPreviewingState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->reset()V
 
-    .line 1428
+    .line 1388
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mStartPreviewedState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->reset()V
 
-    .line 1429
+    .line 1389
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mFirstFrameState:Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->reset()V
 
-    .line 1430
+    .line 1390
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     const/4 v1, 0x0
 
     if-eqz p1, :cond_79
 
-    .line 1431
+    .line 1391
     sget-object p1, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2135,51 +2109,51 @@
 
     invoke-static {p1, v2}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1432
+    .line 1392
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     aget-object v2, v0, v1
 
     invoke-virtual {p1, v2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->openCamera(Ljava/lang/String;)V
 
-    .line 1435
+    .line 1395
     :cond_79
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mNeedOpenSlave:Z
 
-    .line 1436
+    .line 1396
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object p1
 
     invoke-virtual {p1, v1}, Lcom/transsion/camera/adapter/CameraAgent;->setOpenDoubleDevice(Z)V
 
-    .line 1437
+    .line 1397
     iget p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mTotalDeviceCount:I
 
     const/4 v1, 0x1
 
     if-le p1, v1, :cond_af
 
-    .line 1438
+    .line 1398
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object p1
 
     invoke-virtual {p1, v1}, Lcom/transsion/camera/adapter/CameraAgent;->setOpenDoubleDevice(Z)V
 
-    .line 1439
+    .line 1399
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-nez p1, :cond_ad
 
-    .line 1440
+    .line 1400
     new-instance p1, Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-direct {p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
-    .line 1441
+    .line 1401
     aget-object v0, v0, v1
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
@@ -2190,7 +2164,7 @@
 
     invoke-virtual {p1, v0, v2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->init(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
 
-    .line 1442
+    .line 1402
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mDeviceStateCallback:Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;
@@ -2199,7 +2173,7 @@
 
     invoke-virtual {p1, v0, v2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->setCallback(Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;Lcom/transsion/camera/app/common/mode/SubDeviceControl$MainControlInfoCallback;)V
 
-    .line 1444
+    .line 1404
     :cond_ad
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mNeedOpenSlave:Z
 
@@ -2211,12 +2185,12 @@
 .method private handleReConfigureSession()V
     .registers 1
 
-    .line 1527
+    .line 1475
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1528
+    .line 1476
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->reConfigureSession()V
 
     :cond_7
@@ -2226,12 +2200,12 @@
 .method private handleRegisterFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
     .registers 2
 
-    .line 1964
+    .line 1906
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1965
+    .line 1907
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->registerFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
 
     :cond_7
@@ -2241,24 +2215,24 @@
 .method private handleRestoreParameters(Z)V
     .registers 3
 
-    .line 1947
+    .line 1889
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_7
 
-    .line 1948
+    .line 1890
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->restoreParameters(Z)V
 
-    .line 1950
+    .line 1892
     :cond_7
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p1, :cond_13
 
-    .line 1951
+    .line 1893
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->releaseCamera()V
 
-    .line 1952
+    .line 1894
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->closeCamera()V
@@ -2266,7 +2240,7 @@
     :cond_13
     const/4 p1, 0x1
 
-    .line 1954
+    .line 1896
     iput p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mTotalDeviceCount:I
 
     return-void
@@ -2275,7 +2249,7 @@
 .method private handleSetCaptureTag(I)V
     .registers 3
 
-    .line 1976
+    .line 1918
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_13
@@ -2286,7 +2260,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 1977
+    .line 1919
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraParameters()Lcom/transsion/camera/adapter/CameraParameters;
@@ -2302,7 +2276,7 @@
 .method private handleSetCaptureZSLTimestamps([J)V
     .registers 3
 
-    .line 2005
+    .line 1947
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_13
@@ -2313,7 +2287,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 2006
+    .line 1948
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraParameters()Lcom/transsion/camera/adapter/CameraParameters;
@@ -2329,12 +2303,12 @@
 .method private handleSetFaceDetectionListener(Lcom/transsion/camera/adapter/CameraProxy$IFaceDetectionListener;)V
     .registers 2
 
-    .line 1903
+    .line 1845
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1904
+    .line 1846
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->setFaceDetectionListener(Lcom/transsion/camera/adapter/CameraProxy$IFaceDetectionListener;)V
 
     :cond_7
@@ -2348,7 +2322,7 @@
 
     goto/16 :goto_11c
 
-    .line 1549
+    .line 1497
     :cond_4
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2390,7 +2364,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1550
+    .line 1498
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectType()I
 
     move-result v1
@@ -2399,7 +2373,7 @@
 
     if-ne v1, v2, :cond_f9
 
-    .line 1552
+    .line 1500
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     const/4 v3, 0x0
@@ -2417,7 +2391,7 @@
     :cond_46
     move v1, v3
 
-    .line 1554
+    .line 1502
     :goto_47
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getDeviceType()I
 
@@ -2427,36 +2401,36 @@
 
     if-nez v4, :cond_71
 
-    .line 1555
+    .line 1503
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v4, :cond_a2
 
     if-eqz v1, :cond_60
 
-    .line 1556
+    .line 1504
     iget v6, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mDeviceState:I
 
     if-ne v6, v5, :cond_60
 
-    .line 1557
+    .line 1505
     invoke-virtual {v4}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->stopPreview()V
 
-    .line 1558
+    .line 1506
     iput-boolean v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainPreviewStopped:Z
 
-    .line 1559
+    .line 1507
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainControlInfo:Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
 
     goto :goto_a2
 
-    .line 1561
+    .line 1509
     :cond_60
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObject()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 1562
+    .line 1510
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectWidth()I
 
     move-result v6
@@ -2465,14 +2439,14 @@
 
     move-result p1
 
-    .line 1561
+    .line 1509
     invoke-virtual {v4, v2, v6, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updatePreviewSurface(Ljava/lang/Object;II)Z
 
     move-result p1
 
     goto :goto_a3
 
-    .line 1566
+    .line 1514
     :cond_71
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getDeviceType()I
 
@@ -2480,7 +2454,7 @@
 
     if-ne v4, v2, :cond_a2
 
-    .line 1567
+    .line 1515
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v4, :cond_a2
@@ -2493,25 +2467,25 @@
 
     if-eqz v1, :cond_91
 
-    .line 1568
+    .line 1516
     iget v4, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mDeviceState:I
 
     if-ne v4, v5, :cond_91
 
-    .line 1569
+    .line 1517
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {v4}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->stopPreview()V
 
-    .line 1570
+    .line 1518
     iput-boolean v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlavePreviewStopped:Z
 
-    .line 1571
+    .line 1519
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveControlInfo:Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
 
     goto :goto_a2
 
-    .line 1573
+    .line 1521
     :cond_91
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -2519,7 +2493,7 @@
 
     move-result-object v4
 
-    .line 1574
+    .line 1522
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectWidth()I
 
     move-result v6
@@ -2528,7 +2502,7 @@
 
     move-result p1
 
-    .line 1573
+    .line 1521
     invoke-virtual {v2, v4, v6, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updatePreviewSurface(Ljava/lang/Object;II)Z
 
     :cond_a2
@@ -2538,7 +2512,7 @@
     :goto_a3
     if-eqz v1, :cond_ee
 
-    .line 1579
+    .line 1527
     iget-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainPreviewStopped:Z
 
     if-eqz v1, :cond_ee
@@ -2551,7 +2525,7 @@
 
     if-ne v1, v5, :cond_ee
 
-    .line 1580
+    .line 1528
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainControlInfo:Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
@@ -2562,7 +2536,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainControlInfo:Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
 
-    .line 1581
+    .line 1529
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectWidth()I
 
     move-result v2
@@ -2573,12 +2547,12 @@
 
     move-result v4
 
-    .line 1580
+    .line 1528
     invoke-virtual {p1, v1, v2, v4}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updatePreviewSurface(Ljava/lang/Object;II)Z
 
     move-result p1
 
-    .line 1582
+    .line 1530
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v1, :cond_ea
@@ -2589,7 +2563,7 @@
 
     if-nez v1, :cond_ea
 
-    .line 1583
+    .line 1531
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveControlInfo:Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
@@ -2600,7 +2574,7 @@
 
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveControlInfo:Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
 
-    .line 1584
+    .line 1532
     invoke-virtual {v4}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectWidth()I
 
     move-result v4
@@ -2611,30 +2585,30 @@
 
     move-result v5
 
-    .line 1583
+    .line 1531
     invoke-virtual {v1, v2, v4, v5}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updatePreviewSurface(Ljava/lang/Object;II)Z
 
-    .line 1586
+    .line 1534
     :cond_ea
     iput-boolean v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainPreviewStopped:Z
 
-    .line 1587
+    .line 1535
     iput-boolean v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlavePreviewStopped:Z
 
     :cond_ee
     if-eqz p1, :cond_11c
 
-    .line 1591
+    .line 1539
     const-string p1, "GLPreview Create done and Inflate other UI."
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1592
+    .line 1540
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->onModeSettingReady()V
 
     return-void
 
-    .line 1594
+    .line 1542
     :cond_f9
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectType()I
 
@@ -2644,7 +2618,7 @@
 
     if-ne v0, v1, :cond_11c
 
-    .line 1595
+    .line 1543
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObject()Ljava/lang/Object;
@@ -2659,7 +2633,7 @@
 
     move-result v4
 
-    .line 1596
+    .line 1544
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectWidth()I
 
     move-result v5
@@ -2672,7 +2646,7 @@
 
     move-result v7
 
-    .line 1595
+    .line 1543
     invoke-virtual/range {v2 .. v7}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateVideoSurface(Landroid/view/Surface;IIIZ)V
 
     :cond_11c
@@ -2683,7 +2657,7 @@
 .method private handleShutterSoundPlay(ILcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;)V
     .registers 5
 
-    .line 1921
+    .line 1863
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurMainDevice:Ljava/lang/String;
 
     const-string v1, "device_main"
@@ -2694,23 +2668,23 @@
 
     if-eqz v0, :cond_12
 
-    .line 1922
+    .line 1864
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_19
 
-    .line 1923
+    .line 1865
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->shutterSoundPlay(ILcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;)V
 
     return-void
 
-    .line 1926
+    .line 1868
     :cond_12
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_19
 
-    .line 1927
+    .line 1869
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->shutterSoundPlay(ILcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;)V
 
     :cond_19
@@ -2720,7 +2694,7 @@
 .method private handleShutterSoundPlay(Ljava/lang/String;)V
     .registers 4
 
-    .line 1909
+    .line 1851
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurMainDevice:Ljava/lang/String;
 
     const-string v1, "device_main"
@@ -2731,23 +2705,23 @@
 
     if-eqz v0, :cond_12
 
-    .line 1910
+    .line 1852
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_19
 
-    .line 1911
+    .line 1853
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->shutterSoundPlay(Ljava/lang/String;)V
 
     return-void
 
-    .line 1914
+    .line 1856
     :cond_12
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_19
 
-    .line 1915
+    .line 1857
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->shutterSoundPlay(Ljava/lang/String;)V
 
     :cond_19
@@ -2761,7 +2735,7 @@
 
     goto :goto_21
 
-    .line 1869
+    .line 1811
     :cond_3
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectType()I
 
@@ -2771,21 +2745,21 @@
 
     if-ne v0, v1, :cond_21
 
-    .line 1870
+    .line 1812
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getDeviceType()I
 
     move-result v0
 
     if-nez v0, :cond_21
 
-    .line 1871
+    .line 1813
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObject()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1872
+    .line 1814
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->getObjectWidth()I
 
     move-result v1
@@ -2794,7 +2768,7 @@
 
     move-result p1
 
-    .line 1871
+    .line 1813
     invoke-virtual {p0, v0, v1, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateSlavePreviewSurface(Ljava/lang/Object;II)V
 
     :cond_21
@@ -2805,12 +2779,12 @@
 .method private handleSlaveSurfaceModeSupported(Z)V
     .registers 2
 
-    .line 1859
+    .line 1801
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1860
+    .line 1802
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateSlaveSurfaceModeSupported(Z)V
 
     :cond_7
@@ -2820,28 +2794,13 @@
 .method private handleSnapShot(Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;)V
     .registers 2
 
-    .line 1810
+    .line 1758
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1811
+    .line 1759
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->videoSnapShot(Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;)V
-
-    :cond_7
-    return-void
-.end method
-
-.method private handleSnapShotForVideoHDR()V
-    .registers 1
-
-    .line 1816
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
-
-    if-eqz p0, :cond_7
-
-    .line 1817
-    invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->snapShotForVideoHDR()V
 
     :cond_7
     return-void
@@ -2850,12 +2809,12 @@
 .method private handleStartContinuousShot(I)V
     .registers 3
 
-    .line 1694
+    .line 1642
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_9
 
-    .line 1695
+    .line 1643
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->startContinuousShot(Landroid/content/Context;I)V
@@ -2867,12 +2826,12 @@
 .method private handleStartPreview()V
     .registers 1
 
-    .line 1509
+    .line 1457
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1510
+    .line 1458
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->startPreview()V
 
     :cond_7
@@ -2882,17 +2841,17 @@
 .method private handleStartRecording(Lcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;Z)V
     .registers 4
 
-    .line 1796
+    .line 1744
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_c
 
-    .line 1797
+    .line 1745
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->startRecording(Lcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;Z)V
 
     const/16 p1, 0x65
 
-    .line 1798
+    .line 1746
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->hookDisturbStatus(I)V
 
     :cond_c
@@ -2902,12 +2861,12 @@
 .method private handleStopContinuousShot()V
     .registers 1
 
-    .line 1700
+    .line 1648
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1701
+    .line 1649
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->stopContinuousShot()V
 
     :cond_7
@@ -2917,12 +2876,12 @@
 .method private handleStopContinuousShotCount()V
     .registers 1
 
-    .line 1705
+    .line 1653
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1706
+    .line 1654
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->stopContinuousShotCount()V
 
     :cond_7
@@ -2932,7 +2891,7 @@
 .method private handleStopFaceDetection()V
     .registers 2
 
-    .line 1539
+    .line 1487
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_14
@@ -2943,7 +2902,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 1540
+    .line 1488
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraParameters()Lcom/transsion/camera/adapter/CameraParameters;
@@ -2961,12 +2920,12 @@
 .method private handleStopPreview()V
     .registers 1
 
-    .line 1515
+    .line 1463
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1516
+    .line 1464
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->stopPreview()V
 
     :cond_7
@@ -2976,17 +2935,17 @@
 .method private handleStopRecording()V
     .registers 2
 
-    .line 1803
+    .line 1751
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_c
 
-    .line 1804
+    .line 1752
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->stopRecording()V
 
     const/16 v0, 0x68
 
-    .line 1805
+    .line 1753
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->hookDisturbStatus(I)V
 
     :cond_c
@@ -2996,12 +2955,12 @@
 .method private handleStopRepeating()V
     .registers 1
 
-    .line 1521
+    .line 1469
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1522
+    .line 1470
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->stopRepeating()V
 
     :cond_7
@@ -3013,18 +2972,18 @@
 
     const/4 v0, 0x1
 
-    .line 1601
+    .line 1549
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mModeChanged:Z
 
     const/4 v0, 0x0
 
-    .line 1602
+    .line 1550
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mIsZooming:Z
 
-    .line 1603
+    .line 1551
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mNextMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
-    .line 1605
+    .line 1553
     sget-object p1, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3045,7 +3004,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1606
+    .line 1554
     iget p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mDeviceState:I
 
     const/4 v0, 0x3
@@ -3056,21 +3015,21 @@
 
     if-ne p1, v0, :cond_35
 
-    .line 1608
+    .line 1556
     :cond_28
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
-    .line 1609
+    .line 1557
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mNextMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
-    .line 1610
+    .line 1558
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->switchMode()Z
 
     move-result v1
 
     if-eqz v1, :cond_35
 
-    .line 1612
+    .line 1560
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->startWithMode(Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;)V
 
     :cond_35
@@ -3080,12 +3039,12 @@
 .method private handleSwitchOfflineSession(I)V
     .registers 2
 
-    .line 1533
+    .line 1481
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1534
+    .line 1482
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->switchToOfflineSession(I)V
 
     :cond_7
@@ -3095,7 +3054,7 @@
 .method private handleSwitchParameters(Ljava/lang/String;)V
     .registers 5
 
-    .line 1939
+    .line 1881
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3114,7 +3073,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1940
+    .line 1882
     const-string v0, "device_both"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -3123,12 +3082,12 @@
 
     if-eqz v0, :cond_22
 
-    .line 1941
+    .line 1883
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mLastSetParameterDevice:Ljava/lang/String;
 
-    .line 1943
+    .line 1885
     :cond_22
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
@@ -3138,12 +3097,12 @@
 .method private handleTakePicture()V
     .registers 1
 
-    .line 1682
+    .line 1630
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1683
+    .line 1631
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->takePicture()V
 
     :cond_7
@@ -3153,12 +3112,12 @@
 .method private handleTakePictureForRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
     .registers 2
 
-    .line 1958
+    .line 1900
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1959
+    .line 1901
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->takePictureForRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
     :cond_7
@@ -3168,7 +3127,7 @@
 .method private handleTripodModeChanged(Z)V
     .registers 5
 
-    .line 2477
+    .line 2415
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3187,7 +3146,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2478
+    .line 2416
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_29
@@ -3198,7 +3157,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 2479
+    .line 2417
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraParameters()Lcom/transsion/camera/adapter/CameraParameters;
@@ -3214,31 +3173,31 @@
 .method private handleUnInit()V
     .registers 3
 
-    .line 1499
+    .line 1447
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "handleUnInit mHandler = null"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1500
+    .line 1448
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_f
 
-    .line 1501
+    .line 1449
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 1503
+    .line 1451
     :cond_f
     iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
-    .line 1504
+    .line 1452
     iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
-    .line 1505
+    .line 1453
     iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     return-void
@@ -3247,12 +3206,12 @@
 .method private handleUnRegisterFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
     .registers 2
 
-    .line 1970
+    .line 1912
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1971
+    .line 1913
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->unRegisterFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
 
     :cond_7
@@ -3262,12 +3221,12 @@
 .method private handleUpdateAuxSurfaceStatus(Z)V
     .registers 2
 
-    .line 1834
+    .line 1776
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1835
+    .line 1777
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateAuxSurfaceStatus(Z)V
 
     :cond_7
@@ -3277,12 +3236,12 @@
 .method private handleUpdateBackgroundSurfaceStatus(Z)V
     .registers 2
 
-    .line 1878
+    .line 1820
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1879
+    .line 1821
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateBackgroundSurfaceStatus(Z)V
 
     :cond_7
@@ -3292,12 +3251,12 @@
 .method private handleUpdateFocusMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1828
+    .line 1770
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1829
+    .line 1771
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateFocusMode(Ljava/lang/String;)V
 
     :cond_7
@@ -3307,7 +3266,7 @@
 .method private handleUpdateSessionSize(Lcom/transsion/camera/app/common/mode/ICameraMode;)V
     .registers 8
 
-    .line 1618
+    .line 1566
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
     if-eqz v0, :cond_127
@@ -3316,7 +3275,7 @@
 
     goto/16 :goto_127
 
-    .line 1624
+    .line 1572
     :cond_8
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -3328,7 +3287,7 @@
 
     if-eqz p1, :cond_1a
 
-    .line 1625
+    .line 1573
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "handleUpdateSessionSize mMainDevice.isClosed"
@@ -3337,13 +3296,13 @@
 
     return-void
 
-    .line 1630
+    .line 1578
     :cond_1a
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p1, :cond_23
 
-    .line 1631
+    .line 1579
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraCapabilities()Lcom/transsion/camera/adapter/ICameraCapabilities;
 
     move-result-object p1
@@ -3353,25 +3312,25 @@
     :cond_23
     const/4 p1, 0x0
 
-    .line 1633
+    .line 1581
     :goto_24
     invoke-interface {p1}, Lcom/transsion/camera/adapter/ICameraCapabilities;->isSatModeSupport()Z
 
     move-result v0
 
-    .line 1634
+    .line 1582
     invoke-interface {p1}, Lcom/transsion/camera/adapter/ICameraCapabilities;->getSupportedPreviewSizes()Ljava/util/List;
 
     move-result-object p1
 
-    .line 1635
+    .line 1583
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
     invoke-interface {v1, p1}, Lcom/transsion/camera/app/common/mode/ICameraMode;->getPreviewSize(Ljava/util/List;)Landroid/util/Size;
 
     move-result-object v1
 
-    .line 1636
+    .line 1584
     sget-object v2, Lcom/transsion/camera/utils/FeatureSupport;->sDbgPrevSizeStr:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/transsion/camera/utils/FeatureSupport;->getDbgSize(Ljava/lang/String;)Landroid/util/Size;
@@ -3382,7 +3341,7 @@
 
     move-object v1, v2
 
-    .line 1640
+    .line 1588
     :cond_3b
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
@@ -3392,21 +3351,21 @@
 
     iput-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAuxPreviewSize:Landroid/util/Size;
 
-    .line 1641
+    .line 1589
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/mode/ICameraMode;->getFpsRange()Landroid/util/Range;
 
     move-result-object v2
 
-    .line 1642
+    .line 1590
     sget v3, Lcom/transsion/camera/utils/FeatureSupport;->sDbgPrevFpsMax:I
 
     const/4 v4, 0x5
 
     if-le v3, v4, :cond_5b
 
-    .line 1643
+    .line 1591
     new-instance v2, Landroid/util/Range;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3419,13 +3378,13 @@
 
     invoke-direct {v2, v4, v3}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
 
-    .line 1645
+    .line 1593
     :cond_5b
     invoke-static {v1, p1}, Lcom/transsion/camera/utils/CameraUtil;->getMinSizeForSupport(Landroid/util/Size;Ljava/util/List;)Landroid/util/Size;
 
     move-result-object p1
 
-    .line 1646
+    .line 1594
     sget-object v3, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3468,7 +3427,7 @@
 
     if-eqz v1, :cond_f1
 
-    .line 1648
+    .line 1596
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mPreviewSize:Landroid/util/Size;
 
     invoke-virtual {v1, v3}, Landroid/util/Size;->equals(Ljava/lang/Object;)Z
@@ -3477,17 +3436,17 @@
 
     if-nez v3, :cond_f1
 
-    .line 1649
+    .line 1597
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v3, :cond_a4
 
-    .line 1650
+    .line 1598
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAuxPreviewSize:Landroid/util/Size;
 
     invoke-virtual {v3, v1, v4, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updatePreviewSize(Landroid/util/Size;Landroid/util/Size;Landroid/util/Size;)V
 
-    .line 1652
+    .line 1600
     :cond_a4
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -3499,14 +3458,14 @@
 
     if-nez v3, :cond_b5
 
-    .line 1653
+    .line 1601
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAuxPreviewSize:Landroid/util/Size;
 
     invoke-virtual {v3, v1, v4, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updatePreviewSize(Landroid/util/Size;Landroid/util/Size;Landroid/util/Size;)V
 
-    .line 1655
+    .line 1603
     :cond_b5
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -3520,12 +3479,12 @@
 
     invoke-interface {v3, v4, v5}, Lcom/transsion/camera/app/common/IAppUI;->setPreviewSize(II)V
 
-    .line 1656
+    .line 1604
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAuxPreviewSize:Landroid/util/Size;
 
     if-eqz v3, :cond_e2
 
-    .line 1657
+    .line 1605
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
@@ -3536,7 +3495,7 @@
 
     invoke-interface {v3, v0, v4}, Lcom/transsion/camera/app/common/IAppUI;->setAuxPreviewLensSupport(ZLjava/lang/String;)V
 
-    .line 1658
+    .line 1606
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAuxPreviewSize:Landroid/util/Size;
@@ -3556,7 +3515,7 @@
     :cond_e2
     if-eqz p1, :cond_f1
 
-    .line 1661
+    .line 1609
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
@@ -3569,7 +3528,7 @@
 
     invoke-interface {v0, v3, v4}, Lcom/transsion/camera/app/common/IAppUI;->setBackgroundPreviewSize(II)V
 
-    .line 1664
+    .line 1612
     :cond_f1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
@@ -3577,31 +3536,31 @@
 
     invoke-interface {v0, v3, v1}, Lcom/transsion/camera/app/common/mode/ICameraMode;->updatePreviewSize(Landroid/util/Size;Landroid/util/Size;)V
 
-    .line 1665
+    .line 1613
     iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mPreviewSize:Landroid/util/Size;
 
-    .line 1666
+    .line 1614
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mBackgroundPreviewSize:Landroid/util/Size;
 
-    .line 1668
+    .line 1616
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p1, :cond_10d
 
-    .line 1669
+    .line 1617
     invoke-virtual {p1, v2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateFpsRange(Landroid/util/Range;)V
 
-    .line 1670
+    .line 1618
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updatePictureSurface()V
 
-    .line 1671
+    .line 1619
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updatePostViewSurface()V
 
-    .line 1674
+    .line 1622
     :cond_10d
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -3613,17 +3572,17 @@
 
     if-nez p1, :cond_126
 
-    .line 1675
+    .line 1623
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p1, v2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateFpsRange(Landroid/util/Range;)V
 
-    .line 1676
+    .line 1624
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updatePictureSurface()V
 
-    .line 1677
+    .line 1625
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updatePostViewSurface()V
@@ -3631,7 +3590,7 @@
     :cond_126
     return-void
 
-    .line 1619
+    .line 1567
     :cond_127
     :goto_127
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -3666,7 +3625,7 @@
 .method private handleZoomValueChanged(Ljava/lang/String;)V
     .registers 4
 
-    .line 1763
+    .line 1711
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
     const-string v1, "device_main"
@@ -3677,17 +3636,17 @@
 
     if-eqz v0, :cond_12
 
-    .line 1764
+    .line 1712
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_23
 
-    .line 1765
+    .line 1713
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->onZoomValueChanged(Ljava/lang/String;)V
 
     return-void
 
-    .line 1767
+    .line 1715
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
@@ -3699,12 +3658,12 @@
 
     if-eqz v0, :cond_23
 
-    .line 1768
+    .line 1716
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_23
 
-    .line 1769
+    .line 1717
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->onZoomValueChanged(Ljava/lang/String;)V
 
     :cond_23
@@ -3714,12 +3673,12 @@
 .method private handlerPostRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
     .registers 2
 
-    .line 1933
+    .line 1875
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 1934
+    .line 1876
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
     :cond_7
@@ -3729,7 +3688,7 @@
 .method private isDifferentSideCombination()Z
     .registers 3
 
-    .line 2496
+    .line 2434
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mArrayId:[Ljava/lang/String;
 
     if-eqz p0, :cond_11
@@ -3759,7 +3718,7 @@
 .method private isNotifyComplete(Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;Ljava/lang/String;)Z
     .registers 6
 
-    .line 2329
+    .line 2271
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_11
@@ -3774,10 +3733,10 @@
 
     if-eqz v0, :cond_11
 
-    .line 2330
+    .line 2272
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->enter()V
 
-    .line 2333
+    .line 2275
     :cond_11
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -3793,10 +3752,10 @@
 
     if-eqz v0, :cond_22
 
-    .line 2334
+    .line 2276
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->enter()V
 
-    .line 2337
+    .line 2279
     :cond_22
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->getCount()I
 
@@ -3806,7 +3765,7 @@
 
     if-ge v0, v1, :cond_64
 
-    .line 2338
+    .line 2280
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3833,7 +3792,7 @@
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2339
+    .line 2281
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->getCount()I
 
     move-result p1
@@ -3852,14 +3811,14 @@
 
     move-result-object p0
 
-    .line 2338
+    .line 2280
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     const/4 p0, 0x0
 
     return p0
 
-    .line 2343
+    .line 2285
     :cond_64
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->reset()V
 
@@ -3871,12 +3830,12 @@
 .method private notifyCameraError(I)V
     .registers 2
 
-    .line 2323
+    .line 2265
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCameraErrorListener:Lcom/transsion/camera/app/common/IApp$ICameraErrorListener;
 
     if-eqz p0, :cond_7
 
-    .line 2324
+    .line 2266
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IApp$ICameraErrorListener;->onCameraError(I)V
 
     :cond_7
@@ -3886,10 +3845,10 @@
 .method private notifyCameraState(I)V
     .registers 3
 
-    .line 2316
+    .line 2258
     iput p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mDeviceState:I
 
-    .line 2317
+    .line 2259
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mStateCB:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -3909,7 +3868,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ICameraControl$ICameraStateCallback;
 
-    .line 2318
+    .line 2260
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/ICameraControl$ICameraStateCallback;->onCameraStateChanged(I)V
 
     goto :goto_8
@@ -3923,7 +3882,7 @@
 
     if-nez p1, :cond_7
 
-    .line 2197
+    .line 2139
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCaptureOfflineLock:Lcom/transsion/camera/utils/StateWait;
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/StateWait;->notifyState()V
@@ -3937,7 +3896,7 @@
 
     monitor-enter p0
 
-    .line 2349
+    .line 2291
     :try_start_1
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mIsModeSettingReady:Z
 
@@ -3945,10 +3904,10 @@
 
     const/4 v0, 0x1
 
-    .line 2350
+    .line 2292
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mIsModeSettingReady:Z
 
-    .line 2351
+    .line 2293
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->onModeSettingReady()V
@@ -3962,7 +3921,7 @@
 
     goto :goto_12
 
-    .line 2353
+    .line 2295
     :cond_10
     :goto_10
     monitor-exit p0
@@ -3981,14 +3940,14 @@
 .method private processAnalyticsCameraId(Ljava/lang/String;)V
     .registers 3
 
-    .line 2364
+    .line 2306
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setCameraId(Ljava/lang/String;)V
 
-    .line 2365
+    .line 2307
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -3999,37 +3958,10 @@
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/CameraRepository;->getCameraName(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setCameraNameValue(Ljava/lang/String;)V
-
-    .line 2366
-    invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraAgent;->getCameraDeviceInfo()Lcom/transsion/camera/adapter/ICameraDeviceInfo;
-
-    move-result-object p0
-
-    invoke-interface {p0, p1}, Lcom/transsion/camera/adapter/ICameraDeviceInfo;->getCameraInfo(Ljava/lang/String;)Lcom/transsion/camera/adapter/ICameraInfo;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_2f
-
-    .line 2368
-    invoke-static {}, Lcom/transsion/camera/utils/smartmodeorder/SmartModeOrderUtils;->getInstance()Lcom/transsion/camera/utils/smartmodeorder/SmartModeOrderUtils;
-
     move-result-object p1
 
-    invoke-interface {p0}, Lcom/transsion/camera/adapter/ICameraInfo;->getFacing()I
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setCameraNameValue(Ljava/lang/String;)V
 
-    move-result p0
-
-    invoke-virtual {p1, p0}, Lcom/transsion/camera/utils/smartmodeorder/SmartModeOrderUtils;->setFacing(I)V
-
-    :cond_2f
     return-void
 .end method
 
@@ -4040,13 +3972,13 @@
 
     const/4 v0, 0x0
 
-    .line 2357
+    .line 2299
     :try_start_2
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mIsModeSettingReady:Z
     :try_end_4
     .catchall {:try_start_2 .. :try_end_4} :catchall_6
 
-    .line 2358
+    .line 2300
     monitor-exit p0
 
     return-void
@@ -4065,12 +3997,12 @@
 .method private setLowConfigReduceLoading(Z)V
     .registers 2
 
-    .line 2011
+    .line 1953
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 2012
+    .line 1954
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->setLowConfigReduceLoading(Z)V
 
     :cond_7
@@ -4080,7 +4012,7 @@
 .method private startWithMode(Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;)V
     .registers 10
 
-    .line 2259
+    .line 2201
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4125,14 +4057,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2260
+    .line 2202
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->getInstance()Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->updateTranssionCameraMode(Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;)V
 
-    .line 2261
+    .line 2203
     invoke-static {}, Lcom/transsion/camera/thub/TranSchedManagerProxy;->getInstance()Lcom/transsion/camera/thub/TranSchedManagerProxy;
 
     move-result-object v0
@@ -4143,7 +4075,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/thub/TranSchedManagerProxy;->setCamTranSched(I)V
 
-    .line 2262
+    .line 2204
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v0
@@ -4156,29 +4088,29 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/VideoQualityUtils;->setCameraFacing(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2263
+    .line 2205
     const-string v0, "startWithMode"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/debug/TraceUtil;->begin(Ljava/lang/String;)V
 
-    .line 2264
+    .line 2206
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_61
 
-    .line 2265
+    .line 2207
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateCurrentModeAndType(Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;)V
 
-    .line 2267
+    .line 2209
     :cond_61
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_68
 
-    .line 2268
+    .line 2210
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateCurrentModeAndType(Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;)V
 
-    .line 2271
+    .line 2213
     :cond_68
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurSetParameterDevice:Ljava/lang/String;
 
@@ -4206,7 +4138,7 @@
 
     goto :goto_a5
 
-    .line 2283
+    .line 2225
     :cond_7d
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
@@ -4220,20 +4152,20 @@
 
     invoke-virtual {v0, v1, v5}, Lcom/transsion/camera/app/common/setting/SettingManager;->updateMode(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode;)V
 
-    .line 2284
+    .line 2226
     const-string v0, "device_slave"
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurMainDevice:Ljava/lang/String;
 
-    .line 2285
+    .line 2227
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_95
 
-    .line 2286
+    .line 2228
     invoke-virtual {v0, p1, p2, v4, v3}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateModeSetting(Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;ZLjava/lang/String;)V
 
-    .line 2289
+    .line 2231
     :cond_95
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -4245,14 +4177,14 @@
 
     if-nez v0, :cond_ce
 
-    .line 2290
+    .line 2232
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {v0, p1, p2, v2, v3}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateModeSetting(Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;ZLjava/lang/String;)V
 
     goto :goto_ce
 
-    .line 2273
+    .line 2215
     :cond_a5
     :goto_a5
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
@@ -4267,18 +4199,18 @@
 
     invoke-virtual {v0, v5, v6}, Lcom/transsion/camera/app/common/setting/SettingManager;->updateMode(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode;)V
 
-    .line 2274
+    .line 2216
     iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurMainDevice:Ljava/lang/String;
 
-    .line 2275
+    .line 2217
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_bb
 
-    .line 2276
+    .line 2218
     invoke-virtual {v0, p1, p2, v4, v3}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateModeSetting(Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;ZLjava/lang/String;)V
 
-    .line 2279
+    .line 2221
     :cond_bb
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -4290,7 +4222,7 @@
 
     if-nez v0, :cond_ce
 
-    .line 2280
+    .line 2222
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->getExceptKeyByPolicy()Ljava/lang/String;
@@ -4299,41 +4231,41 @@
 
     invoke-virtual {v0, p1, p2, v2, v1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateModeSetting(Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;ZLjava/lang/String;)V
 
-    .line 2294
+    .line 2236
     :cond_ce
     :goto_ce
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_d7
 
-    .line 2295
+    .line 2237
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mFrameResultCallback:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->registerFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
 
-    .line 2299
+    .line 2241
     :cond_d7
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ICameraControl$IModeConfig;->onSettingReady()V
 
-    .line 2300
+    .line 2242
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->resetModeSettingReady()V
 
     const/4 v0, 0x4
 
-    .line 2301
+    .line 2243
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->notifyCameraState(I)V
 
-    .line 2302
+    .line 2244
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_ea
 
-    .line 2303
+    .line 2245
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->createOutputChannel(Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;)V
 
-    .line 2305
+    .line 2247
     :cond_ea
     invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
 
@@ -4343,14 +4275,14 @@
 .method private switchMode()Z
     .registers 8
 
-    .line 1396
+    .line 1356
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mModeChanged:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_58
 
-    .line 1397
+    .line 1357
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
     const/4 v2, 0x0
@@ -4366,7 +4298,7 @@
     :cond_f
     move-object v0, v2
 
-    .line 1398
+    .line 1358
     :goto_10
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mNextMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
@@ -4381,7 +4313,7 @@
     :cond_19
     move-object v3, v2
 
-    .line 1399
+    .line 1359
     :goto_1a
     sget-object v4, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -4407,18 +4339,18 @@
 
     invoke-static {v4, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1400
+    .line 1360
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mNextMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
     iput-object v4, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
-    .line 1401
+    .line 1361
     iput-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mNextMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
-    .line 1402
+    .line 1362
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mModeChanged:Z
 
-    .line 1403
+    .line 1363
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mStateCB:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -4438,7 +4370,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ICameraControl$ICameraStateCallback;
 
-    .line 1404
+    .line 1364
     invoke-interface {v1, v0, v3}, Lcom/transsion/camera/app/common/ICameraControl$ICameraStateCallback;->onModeChanged(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_46
@@ -4455,20 +4387,20 @@
 .method private waitDone()V
     .registers 4
 
-    .line 2374
+    .line 2312
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    .line 2375
+    .line 2313
     new-instance v1, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$5;
 
     invoke-direct {v1, p0, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$5;-><init>(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Ljava/lang/Object;)V
 
-    .line 2384
+    .line 2322
     monitor-enter v0
 
-    .line 2385
+    .line 2323
     :try_start_b
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
@@ -4482,7 +4414,7 @@
 
     const-wide/16 v1, 0x1f4
 
-    .line 2388
+    .line 2326
     :try_start_15
     invoke-virtual {v0, v1, v2}, Ljava/lang/Object;->wait(J)V
     :try_end_18
@@ -4496,7 +4428,7 @@
 
     goto :goto_25
 
-    .line 2390
+    .line 2328
     :catch_1b
     :try_start_1b
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -4505,7 +4437,7 @@
 
     invoke-static {p0, v1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2393
+    .line 2331
     :cond_23
     :goto_23
     monitor-exit v0
@@ -4525,12 +4457,12 @@
 .method public addPreviewDataCallback(Lcom/transsion/camera/adapter/CameraProxy$CameraPreviewDataCallback;)V
     .registers 2
 
-    .line 754
+    .line 721
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 755
+    .line 722
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->addPreviewDataCallback(Lcom/transsion/camera/adapter/CameraProxy$CameraPreviewDataCallback;)V
 
     :cond_7
@@ -4540,21 +4472,21 @@
 .method public cancelTakePicture()V
     .registers 3
 
-    .line 566
+    .line 539
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_10
 
     const/16 v1, 0xb
 
-    .line 567
+    .line 540
     invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 568
+    .line 541
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->waitDone()V
 
     :cond_10
@@ -4564,14 +4496,14 @@
 .method public cancelTakePicture(Lcom/transsion/camera/app/common/mode/CameraDeviceControl$ICommandCallback;)V
     .registers 4
 
-    .line 573
+    .line 546
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0xa
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 574
+    .line 547
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0xb
@@ -4582,7 +4514,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 575
+    .line 548
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$$ExternalSyntheticLambda2;
@@ -4597,12 +4529,12 @@
 .method public checkDisplayChanged(ILandroid/view/Surface;IIIZ)V
     .registers 13
 
-    .line 432
+    .line 403
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p1, :cond_1f
 
-    .line 433
+    .line 404
     new-instance v0, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
 
     const/4 v4, 0x2
@@ -4617,16 +4549,16 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;-><init>(Ljava/lang/Object;IIII)V
 
-    .line 434
+    .line 405
     invoke-virtual {v0, p5}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->setVideoFrameRate(I)V
 
-    .line 435
+    .line 406
     invoke-virtual {v0, p6}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->setPrepareSuccess(Z)V
 
-    .line 436
+    .line 407
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
-    const/16 p1, 0x33
+    const/16 p1, 0x32
 
     invoke-virtual {p0, p1, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -4641,19 +4573,19 @@
 .method public checkNotifyBgOfflineErr()V
     .registers 3
 
-    .line 1492
+    .line 1440
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "checkNotifyBgOfflineErr"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1493
+    .line 1441
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
     if-eqz p0, :cond_e
 
-    .line 1494
+    .line 1442
     invoke-interface {p0}, Lcom/transsion/camera/app/common/mode/ICameraMode;->checkNotifyBgOfflineErr()V
 
     :cond_e
@@ -4663,28 +4595,28 @@
 .method public closeCamera()V
     .registers 3
 
-    .line 327
+    .line 307
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "closeCamera"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 328
+    .line 308
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->isSwitchingOffline()Z
 
     move-result v1
 
     if-eqz v1, :cond_13
 
-    .line 329
+    .line 309
     const-string p0, "closeCamera return because isSwitchingOffline"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 333
+    .line 313
     :cond_13
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
@@ -4692,10 +4624,10 @@
 
     const/4 v1, 0x3
 
-    .line 334
+    .line 314
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 335
+    .line 315
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
@@ -4704,7 +4636,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 336
+    .line 316
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->waitDone()V
 
     :cond_27
@@ -4712,137 +4644,87 @@
 .end method
 
 .method public closeCameraAsync()V
-    .registers 5
+    .registers 3
 
-    .line 358
+    .line 338
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "closeCameraAsync"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 359
+    .line 339
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->isSwitchingOffline()Z
 
     move-result v1
 
     if-eqz v1, :cond_13
 
-    .line 360
+    .line 340
     const-string p0, "closeCameraAsync return because isSwitchingOffline"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 364
+    .line 344
     :cond_13
     iget-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mReleased:Z
 
     if-eqz v1, :cond_1d
 
-    .line 365
+    .line 345
     const-string p0, "closeCameraAsync return because has mReleased"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 368
+    .line 348
     :cond_1d
-    iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
-
-    .line 369
-    iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
-
-    const/4 v3, 0x3
-
-    if-eqz v2, :cond_4d
-
-    invoke-interface {v2}, Lcom/transsion/camera/app/common/mode/ICameraMode;->isBgCapturing()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4d
-
-    .line 370
-    const-string v2, "closeCameraAsync delay 8s because of BgCapturing"
-
-    invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 371
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
-
-    if-eqz v0, :cond_36
-
-    .line 372
-    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->enterPreviewStopped()V
-
-    :cond_36
-    if-eqz v1, :cond_59
-
-    const/16 v0, 0x9
-
-    .line 375
-    invoke-virtual {v1, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
-
-    .line 376
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
-    invoke-virtual {p0, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+    if-eqz p0, :cond_2c
 
-    move-result-object p0
+    const/4 v0, 0x3
 
-    const-wide/16 v2, 0x1f40
+    .line 350
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-virtual {v1, p0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    return-void
-
-    :cond_4d
-    if-eqz v1, :cond_59
-
-    .line 379
-    invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 380
-    invoke-virtual {v1, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+    .line 351
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p0
 
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
-    :cond_59
+    :cond_2c
     return-void
 .end method
 
 .method public closeCameraAsyncWhenDestroy()V
     .registers 4
 
-    .line 341
+    .line 321
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "closeCameraAsyncWhenDestroy+"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 342
+    .line 322
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->isSwitchingOffline()Z
 
     move-result v0
 
     if-eqz v0, :cond_1e
 
-    .line 343
+    .line 323
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCaptureOfflineLock:Lcom/transsion/camera/utils/StateWait;
 
     invoke-virtual {v0}, Lcom/transsion/camera/utils/StateWait;->resetState()V
 
-    .line 345
+    .line 325
     :try_start_12
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCaptureOfflineLock:Lcom/transsion/camera/utils/StateWait;
 
@@ -4857,10 +4739,10 @@
     :catch_1a
     move-exception v0
 
-    .line 347
+    .line 327
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 350
+    .line 330
     :cond_1e
     :goto_1e
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
@@ -4869,10 +4751,10 @@
 
     const/4 v1, 0x3
 
-    .line 351
+    .line 331
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 352
+    .line 332
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
@@ -4881,7 +4763,7 @@
 
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 354
+    .line 334
     :cond_2f
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -4895,12 +4777,12 @@
 .method public destroyTask()V
     .registers 1
 
-    .line 321
+    .line 301
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 322
+    .line 302
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->destroyTask()V
 
     :cond_7
@@ -4910,7 +4792,7 @@
 .method public doPictureSizeUpdate(Lcom/transsion/camera/app/common/mode/ICameraMode;)V
     .registers 5
 
-    .line 441
+    .line 412
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4947,7 +4829,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 442
+    .line 413
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -4964,17 +4846,17 @@
 
     if-nez v0, :cond_4c
 
-    .line 443
+    .line 414
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_4b
 
     const/4 v1, 0x5
 
-    .line 444
+    .line 415
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 445
+    .line 416
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -4986,7 +4868,7 @@
     :cond_4b
     return-void
 
-    .line 448
+    .line 419
     :cond_4c
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->handleUpdateSessionSize(Lcom/transsion/camera/app/common/mode/ICameraMode;)V
 
@@ -4996,14 +4878,14 @@
 .method public dualVideoFPSChange(Landroid/util/Range;)V
     .registers 3
 
-    .line 2452
+    .line 2390
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_d
 
-    const/16 v0, 0x2c
+    const/16 v0, 0x2b
 
-    .line 2453
+    .line 2391
     invoke-static {p0, v0, p1}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
@@ -5017,14 +4899,14 @@
 .method public enablePreviewStream(Z)V
     .registers 3
 
-    .line 2446
+    .line 2384
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_11
 
-    const/16 v0, 0x2a
+    const/16 v0, 0x29
 
-    .line 2447
+    .line 2385
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -5042,14 +4924,14 @@
 .method public enableVideoAutoFlash(Z)V
     .registers 3
 
-    .line 665
+    .line 632
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_11
 
     const/16 v0, 0x19
 
-    .line 666
+    .line 633
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -5064,30 +4946,15 @@
     return-void
 .end method
 
-.method public enterCloseState()V
-    .registers 1
-
-    .line 265
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
-
-    if-eqz p0, :cond_7
-
-    .line 266
-    invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->enterCloseState()V
-
-    :cond_7
-    return-void
-.end method
-
 .method public getCurrentCameraId()Ljava/lang/String;
     .registers 1
 
-    .line 766
+    .line 733
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_9
 
-    .line 767
+    .line 734
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object p0
@@ -5103,12 +4970,12 @@
 .method public getJpegMaxSize()I
     .registers 1
 
-    .line 2517
+    .line 2455
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_9
 
-    .line 2518
+    .line 2456
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getJpegMaxSize()I
 
     move-result p0
@@ -5126,7 +4993,7 @@
 
     if-nez p1, :cond_d
 
-    .line 842
+    .line 809
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[getAvailableFocalLengths] cameraId == null"
@@ -5135,12 +5002,12 @@
 
     const/4 p0, 0x0
 
-    .line 843
+    .line 810
     new-array p0, p0, [F
 
     return-object p0
 
-    .line 845
+    .line 812
     :cond_d
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
@@ -5160,7 +5027,7 @@
 .method public getOfflineSessionCount()I
     .registers 1
 
-    .line 253
+    .line 239
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object p0
@@ -5177,7 +5044,7 @@
 
     const/4 v0, 0x0
 
-    .line 857
+    .line 824
     invoke-virtual {p0, p1, p2, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->getOrientation(ILjava/lang/String;Z)I
 
     move-result p0
@@ -5192,7 +5059,7 @@
 
     if-nez p2, :cond_b
 
-    .line 862
+    .line 829
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[getOrientation] mCurrentCameraId == null, so return 0"
@@ -5201,7 +5068,7 @@
 
     return v0
 
-    .line 865
+    .line 832
     :cond_b
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
@@ -5215,12 +5082,12 @@
 
     move-result-object p2
 
-    .line 866
+    .line 833
     invoke-interface {p2}, Lcom/transsion/camera/adapter/ICameraInfo;->getSensorOrientation()I
 
     move-result v1
 
-    .line 867
+    .line 834
     invoke-interface {p2}, Lcom/transsion/camera/adapter/ICameraInfo;->getFacing()I
 
     move-result p2
@@ -5239,7 +5106,7 @@
     :goto_25
     if-nez p2, :cond_41
 
-    .line 869
+    .line 836
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/setting/SettingManager;->screenPocket()Z
@@ -5275,7 +5142,7 @@
 
     xor-int/lit8 p2, p2, 0x1
 
-    .line 875
+    .line 842
     :cond_45
     invoke-static {p1, v1, p2}, Lcom/transsion/camera/utils/CameraUtil;->getRotation(IIZ)I
 
@@ -5287,7 +5154,7 @@
 .method public getPreviewSize()Landroid/util/Size;
     .registers 4
 
-    .line 453
+    .line 424
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5308,7 +5175,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 454
+    .line 425
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mPreviewSize:Landroid/util/Size;
 
     return-object p0
@@ -5319,7 +5186,7 @@
 
     if-nez p1, :cond_b
 
-    .line 850
+    .line 817
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[getAvailableFocalLengths] cameraId == null"
@@ -5330,7 +5197,7 @@
 
     return-object p0
 
-    .line 853
+    .line 820
     :cond_b
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
@@ -5350,7 +5217,7 @@
 .method public getSettingManager()Lcom/transsion/camera/app/common/setting/SettingManager;
     .registers 1
 
-    .line 213
+    .line 199
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     return-object p0
@@ -5359,21 +5226,21 @@
 .method public getSupportedHighFpsResolutions()Ljava/util/List;
     .registers 2
 
-    .line 824
+    .line 791
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     const/4 v0, 0x0
 
     if-eqz p0, :cond_10
 
-    .line 825
+    .line 792
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraCapabilities()Lcom/transsion/camera/adapter/ICameraCapabilities;
 
     move-result-object p0
 
     if-eqz p0, :cond_10
 
-    .line 826
+    .line 793
     invoke-interface {p0}, Lcom/transsion/camera/adapter/ICameraCapabilities;->getSupportedHighFpsResolutions()Ljava/util/List;
 
     move-result-object p0
@@ -5387,21 +5254,21 @@
 .method public getSupportedHighSpeedFpsRanges()Ljava/util/List;
     .registers 2
 
-    .line 815
+    .line 782
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     const/4 v0, 0x0
 
     if-eqz p0, :cond_10
 
-    .line 816
+    .line 783
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraCapabilities()Lcom/transsion/camera/adapter/ICameraCapabilities;
 
     move-result-object p0
 
     if-eqz p0, :cond_10
 
-    .line 817
+    .line 784
     invoke-interface {p0}, Lcom/transsion/camera/adapter/ICameraCapabilities;->getSupportedHighSpeedFpsRanges()Ljava/util/List;
 
     move-result-object p0
@@ -5415,21 +5282,21 @@
 .method public getSupportedHighSpeedSizesAndFPS()Ljava/util/List;
     .registers 2
 
-    .line 806
+    .line 773
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     const/4 v0, 0x0
 
     if-eqz p0, :cond_10
 
-    .line 807
+    .line 774
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraCapabilities()Lcom/transsion/camera/adapter/ICameraCapabilities;
 
     move-result-object p0
 
     if-eqz p0, :cond_10
 
-    .line 808
+    .line 775
     invoke-interface {p0}, Lcom/transsion/camera/adapter/ICameraCapabilities;->getSupportedHighSpeedSizesAndFPS()Ljava/util/List;
 
     move-result-object p0
@@ -5447,7 +5314,7 @@
 
     if-nez p2, :cond_b
 
-    .line 880
+    .line 847
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[getVideoHintOrientation] mCurrentCameraId == null, so return 0"
@@ -5456,7 +5323,7 @@
 
     return v0
 
-    .line 883
+    .line 850
     :cond_b
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
@@ -5470,12 +5337,12 @@
 
     move-result-object p2
 
-    .line 884
+    .line 851
     invoke-interface {p2}, Lcom/transsion/camera/adapter/ICameraInfo;->getSensorOrientation()I
 
     move-result v1
 
-    .line 886
+    .line 853
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/setting/SettingManager;->isVipMode()Z
@@ -5486,7 +5353,7 @@
 
     if-eqz v2, :cond_2c
 
-    .line 887
+    .line 854
     invoke-interface {p2}, Lcom/transsion/camera/adapter/ICameraInfo;->getFacing()I
 
     move-result p2
@@ -5498,7 +5365,7 @@
 
     goto :goto_33
 
-    .line 889
+    .line 856
     :cond_2c
     invoke-interface {p2}, Lcom/transsion/camera/adapter/ICameraInfo;->getFacing()I
 
@@ -5508,7 +5375,7 @@
 
     goto :goto_2a
 
-    .line 892
+    .line 859
     :cond_33
     :goto_33
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->needFlipForVideoMirror()Z
@@ -5517,7 +5384,7 @@
 
     if-eqz p0, :cond_3e
 
-    .line 893
+    .line 860
     invoke-static {p1, v1, v0}, Lcom/transsion/camera/utils/CameraUtil;->getRotation(IIZ)I
 
     move-result p0
@@ -5529,7 +5396,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 900
+    .line 867
     :cond_42
     invoke-static {p1, v1, v0}, Lcom/transsion/camera/utils/CameraUtil;->getRotation(IIZ)I
 
@@ -5541,7 +5408,7 @@
 .method public hookDisturbStatus(I)V
     .registers 4
 
-    .line 1788
+    .line 1736
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     const-string v1, "key_mood_light"
@@ -5552,14 +5419,14 @@
 
     if-eqz v0, :cond_27
 
-    .line 1789
+    .line 1737
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->isModeSupport()Z
 
     move-result v0
 
     if-eqz v0, :cond_27
 
-    .line 1790
+    .line 1738
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingManager;->getSettingController()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -5578,7 +5445,7 @@
 
     if-eqz v0, :cond_27
 
-    .line 1791
+    .line 1739
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mContext:Landroid/content/Context;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/CameraUtil;->hookDisturbStatus(Landroid/content/Context;I)V
@@ -5590,13 +5457,13 @@
 .method public init(Ljava/lang/String;Landroid/content/Context;Lcom/transsion/camera/app/common/setting/SettingManager;)V
     .registers 4
 
-    .line 140
+    .line 139
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mContext:Landroid/content/Context;
 
-    .line 141
+    .line 140
     iput-object p3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
-    .line 142
+    .line 141
     new-instance p2, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$CameraDeviceHandle;
 
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
@@ -5615,14 +5482,14 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
-    .line 143
+    .line 142
     new-instance p2, Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-direct {p2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;-><init>()V
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
-    .line 144
+    .line 143
     iget-object p3, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     invoke-virtual {p3}, Lcom/transsion/camera/app/common/setting/SettingManager;->getSettingController()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -5631,7 +5498,7 @@
 
     invoke-virtual {p2, p1, p3}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->init(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
 
-    .line 145
+    .line 144
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mDeviceStateCallback:Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;
@@ -5646,7 +5513,7 @@
 .method public isBgOfflineCapturing()Z
     .registers 2
 
-    .line 257
+    .line 243
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
 
     if-eqz v0, :cond_14
@@ -5678,21 +5545,21 @@
 .method public isHighSpeedVideoSupport()Z
     .registers 3
 
-    .line 796
+    .line 763
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     const/4 v0, 0x0
 
     if-eqz p0, :cond_11
 
-    .line 797
+    .line 764
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraCapabilities()Lcom/transsion/camera/adapter/ICameraCapabilities;
 
     move-result-object p0
 
     if-eqz p0, :cond_10
 
-    .line 798
+    .line 765
     invoke-interface {p0}, Lcom/transsion/camera/adapter/ICameraCapabilities;->isHighSpeedVideoSupport()Z
 
     move-result p0
@@ -5702,7 +5569,7 @@
     :cond_10
     return v0
 
-    .line 800
+    .line 767
     :cond_11
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5716,7 +5583,7 @@
 .method public isOffLineSessionSupport()Z
     .registers 1
 
-    .line 261
+    .line 247
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object p0
@@ -5731,19 +5598,19 @@
 .method public isSuperDefinitionSupport()Z
     .registers 1
 
-    .line 935
+    .line 902
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_f
 
-    .line 936
+    .line 903
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraCapabilities()Lcom/transsion/camera/adapter/ICameraCapabilities;
 
     move-result-object p0
 
     if-eqz p0, :cond_f
 
-    .line 938
+    .line 905
     invoke-interface {p0}, Lcom/transsion/camera/adapter/ICameraCapabilities;->isSupportedSuperDefinition()Z
 
     move-result p0
@@ -5759,7 +5626,7 @@
 .method public isSwitchingOffline()Z
     .registers 1
 
-    .line 271
+    .line 251
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object p0
@@ -5774,19 +5641,19 @@
 .method public isVideoSuperNightSupport()Z
     .registers 1
 
-    .line 925
+    .line 892
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_f
 
-    .line 926
+    .line 893
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraCapabilities()Lcom/transsion/camera/adapter/ICameraCapabilities;
 
     move-result-object p0
 
     if-eqz p0, :cond_f
 
-    .line 928
+    .line 895
     invoke-interface {p0}, Lcom/transsion/camera/adapter/ICameraCapabilities;->isVideoSuperNightSupport()Z
 
     move-result p0
@@ -5802,12 +5669,12 @@
 .method public isVssSupported()Z
     .registers 1
 
-    .line 914
+    .line 881
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_9
 
-    .line 915
+    .line 882
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->isVssSupported()Z
 
     move-result p0
@@ -5823,19 +5690,19 @@
 .method public needFlipForVideoMirror()Z
     .registers 1
 
-    .line 904
+    .line 871
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_f
 
-    .line 905
+    .line 872
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->getCameraCapabilities()Lcom/transsion/camera/adapter/ICameraCapabilities;
 
     move-result-object p0
 
     if-eqz p0, :cond_f
 
-    .line 907
+    .line 874
     invoke-interface {p0}, Lcom/transsion/camera/adapter/ICameraCapabilities;->needFlipForVideoMirror()Z
 
     move-result p0
@@ -5851,14 +5718,14 @@
 .method public onContinuousShotDone()V
     .registers 2
 
-    .line 602
+    .line 575
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_d
 
-    const/16 v0, 0x32
+    const/16 v0, 0x31
 
-    .line 603
+    .line 576
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p0
@@ -5872,14 +5739,14 @@
 .method public onTemperatureChanged(I)V
     .registers 2
 
-    .line 206
+    .line 192
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-nez p0, :cond_5
 
     return-void
 
-    .line 209
+    .line 195
     :cond_5
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->onTemperatureChanged(I)V
 
@@ -5893,7 +5760,7 @@
 
     goto/16 :goto_7c
 
-    .line 284
+    .line 264
     :cond_4
     const-string v0, "_"
 
@@ -5901,14 +5768,14 @@
 
     move-result-object v0
 
-    .line 285
+    .line 265
     array-length v1, v0
 
     const-string v2, "openCamera cameraId:"
 
     if-nez v1, :cond_29
 
-    .line 286
+    .line 266
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -5931,7 +5798,7 @@
 
     return-void
 
-    .line 290
+    .line 270
     :cond_29
     sget-object v1, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5949,12 +5816,12 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 291
+    .line 271
     const-string v1, "[TranMemoryFlow] available memory when openCamera :"
 
     invoke-static {v1}, Lcom/transsion/camera/utils/MemoryUtils;->logAvailMemoryAsync(Ljava/lang/String;)V
 
-    .line 292
+    .line 272
     array-length v1, v0
 
     const/4 v2, 0x0
@@ -5966,14 +5833,14 @@
 
     aget-object v4, v0, v3
 
-    .line 293
+    .line 273
     invoke-direct {p0, v4}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->checkCameraId(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
     if-nez v4, :cond_57
 
-    .line 294
+    .line 274
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "openCamera has no camera, return."
@@ -5987,7 +5854,7 @@
 
     goto :goto_45
 
-    .line 299
+    .line 279
     :cond_5a
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->isSwitchingOffline()Z
 
@@ -5995,7 +5862,7 @@
 
     if-eqz v1, :cond_68
 
-    .line 300
+    .line 280
     sget-object p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "openCamera return because isSwitchingOffline"
@@ -6004,7 +5871,7 @@
 
     return-void
 
-    .line 307
+    .line 287
     :cond_68
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
@@ -6012,14 +5879,14 @@
 
     if-eqz v1, :cond_74
 
-    .line 309
+    .line 289
     invoke-virtual {v1, v3, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 314
+    .line 294
     :cond_74
     array-length p1, v0
 
@@ -6037,7 +5904,7 @@
     :goto_7c
     return-void
 
-    .line 315
+    .line 295
     :cond_7d
     :goto_7d
     aget-object p1, v0, v2
@@ -6050,14 +5917,14 @@
 .method public pause()V
     .registers 3
 
-    .line 172
+    .line 158
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "pause"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 173
+    .line 159
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v0
@@ -6068,42 +5935,42 @@
 
     const/4 v0, 0x0
 
-    .line 174
+    .line 160
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mIsZooming:Z
 
-    .line 175
+    .line 161
     const-string v0, "[TranMemoryFlow] available memory when pause:"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/MemoryUtils;->logAvailMemoryAsync(Ljava/lang/String;)V
 
-    .line 176
+    .line 162
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_23
 
-    .line 177
+    .line 163
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->pause()V
 
-    .line 178
+    .line 164
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->resetCameraOutputSurface()V
 
-    .line 180
+    .line 166
     :cond_23
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_2f
 
-    .line 181
+    .line 167
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->pause()V
 
-    .line 182
+    .line 168
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->resetCameraOutputSurface()V
 
-    .line 184
+    .line 170
     :cond_2f
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
@@ -6111,7 +5978,7 @@
 
     const/4 v0, 0x2
 
-    .line 185
+    .line 171
     invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
     :cond_37
@@ -6121,16 +5988,16 @@
 .method public reConfigureSession()V
     .registers 2
 
-    .line 2484
+    .line 2422
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_f
 
     if-eqz p0, :cond_f
 
-    const/16 v0, 0x2b
+    const/16 v0, 0x2a
 
-    .line 2486
+    .line 2424
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p0
@@ -6144,14 +6011,14 @@
 .method public registerFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
     .registers 3
 
-    .line 677
+    .line 644
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_d
 
     const/16 v0, 0x1a
 
-    .line 678
+    .line 645
     invoke-virtual {p0, v0, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
@@ -6165,7 +6032,7 @@
 .method public registerStateCallback(Lcom/transsion/camera/app/common/ICameraControl$ICameraStateCallback;)V
     .registers 2
 
-    .line 229
+    .line 215
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mStateCB:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
@@ -6176,19 +6043,19 @@
 .method public removePendingCommand()V
     .registers 4
 
-    .line 779
+    .line 746
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_12
 
-    .line 780
+    .line 747
     const-string v1, "key_face_detection"
 
     const/16 v2, 0xf
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 781
+    .line 748
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     const-string v0, "key_focus"
@@ -6202,17 +6069,17 @@
 .method public requestChangeCommand(Ljava/lang/String;)V
     .registers 4
 
-    .line 477
+    .line 448
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_12
 
     const/16 v1, 0xf
 
-    .line 478
+    .line 449
     invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 479
+    .line 450
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -6228,7 +6095,7 @@
 .method public requestChangeSettingValue(Ljava/lang/String;)V
     .registers 5
 
-    .line 459
+    .line 430
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6247,7 +6114,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 460
+    .line 431
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_36
@@ -6264,21 +6131,21 @@
 
     if-nez v0, :cond_36
 
-    .line 461
+    .line 432
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0xe
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 462
+    .line 433
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
 
-    .line 463
+    .line 434
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     :cond_36
@@ -6288,14 +6155,14 @@
 .method public varargs requestChangeSettingValueJustSelf([Ljava/lang/String;)V
     .registers 5
 
-    .line 495
+    .line 468
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mIsZooming:Z
 
     if-eqz v0, :cond_5
 
     goto :goto_4e
 
-    .line 498
+    .line 471
     :cond_5
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -6319,12 +6186,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->v(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 499
+    .line 472
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_4e
 
-    .line 501
+    .line 474
     const-string v1, "key_camera_zoom"
 
     invoke-static {p1, v1}, Lcom/transsion/camera/utils/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -6343,12 +6210,12 @@
 
     if-eqz v1, :cond_44
 
-    .line 502
+    .line 475
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->ASD_ZOOM_HANDLER_TOKEN:[Ljava/lang/String;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 503
+    .line 476
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->ASD_ZOOM_HANDLER_TOKEN:[Ljava/lang/String;
 
     invoke-virtual {v0, v2, p0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -6359,11 +6226,11 @@
 
     return-void
 
-    .line 505
+    .line 478
     :cond_44
     invoke-virtual {v0, v2, p1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
-    .line 506
+    .line 479
     invoke-virtual {v0, v2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
@@ -6378,7 +6245,7 @@
 .method public requestChangeSettingValueSync(Ljava/lang/String;)V
     .registers 5
 
-    .line 469
+    .line 440
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6397,16 +6264,16 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 470
+    .line 441
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mChangeParameterLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 471
+    .line 442
     :try_start_19
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->handleChangeParameter(Ljava/lang/String;)V
 
-    .line 472
+    .line 443
     monitor-exit v0
 
     return-void
@@ -6422,34 +6289,39 @@
 .end method
 
 .method public requestZoomValueChanged(Ljava/lang/String;Z)V
-    .registers 3
+    .registers 4
 
-    .line 485
+    .line 456
     iput-boolean p2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mIsZooming:Z
 
-    .line 486
+    .line 457
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
-    if-eqz p0, :cond_f
+    if-eqz p0, :cond_14
 
-    const/16 p2, 0x31
+    const/16 v0, 0x30
 
-    .line 488
-    invoke-virtual {p0, p2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    if-nez p2, :cond_d
+
+    .line 460
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 462
+    :cond_d
+    invoke-virtual {p0, v0, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
 
-    .line 489
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
-    :cond_f
+    :cond_14
     return-void
 .end method
 
 .method public restoreParameters(Z)V
     .registers 5
 
-    .line 746
+    .line 713
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6476,17 +6348,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 747
+    .line 714
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_34
 
     const/16 v1, 0x15
 
-    .line 748
+    .line 715
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 749
+    .line 716
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -6504,9 +6376,9 @@
 .end method
 
 .method public resume()V
-    .registers 4
+    .registers 3
 
-    .line 149
+    .line 148
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v0
@@ -6515,100 +6387,31 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/adapter/CameraAgent;->setPause(Z)V
 
-    .line 151
-    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSprdPlatform()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_47
-
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
-
-    if-eqz v0, :cond_47
-
-    invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->isOffLineSessionSupport()Z
-
-    move-result v0
-
-    if-nez v0, :cond_47
-
-    .line 152
-    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mPhotosSupportProcessingApi:Z
-
-    if-eqz v0, :cond_25
-
-    .line 153
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
-
-    invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/mode/ICameraMode;->removeCaptureInfo(Z)V
-
-    .line 155
-    :cond_25
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCurrentMode:Lcom/transsion/camera/app/common/mode/ICameraMode;
-
-    invoke-interface {v0}, Lcom/transsion/camera/app/common/mode/ICameraMode;->isBgCapturing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_47
-
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
-
-    if-eqz v0, :cond_47
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->hasMessages(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_47
-
-    .line 156
-    sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    const-string v2, "Activity resume should remove msg_close_camera!"
-
-    invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 158
-    invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->enterCloseState()V
-
-    .line 159
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 163
-    :cond_47
+    .line 149
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_f
 
-    .line 164
+    .line 150
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->resume()V
 
-    .line 166
-    :cond_4e
+    .line 152
+    :cond_f
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
-    if-eqz p0, :cond_55
+    if-eqz p0, :cond_16
 
-    .line 167
+    .line 153
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->resume()V
 
-    :cond_55
+    :cond_16
     return-void
 .end method
 
 .method public setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
     .registers 2
 
-    .line 202
+    .line 188
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-void
@@ -6617,14 +6420,14 @@
 .method public setBGOfflineSwitchCallback(Lcom/transsion/camera/app/common/IAppUIListener$IBGOfflineSwitchCallback;)V
     .registers 4
 
-    .line 275
+    .line 255
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "setBGOfflineSwitchCallback"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 276
+    .line 256
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mOfflineSwitchCallback:Lcom/transsion/camera/app/common/IAppUIListener$IBGOfflineSwitchCallback;
 
     return-void
@@ -6633,7 +6436,7 @@
 .method public setCameraDisconnectedListerner(Lcom/transsion/camera/app/common/IApp$ICameraDisconnectedListener;)V
     .registers 2
 
-    .line 221
+    .line 207
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCameraDisconnectedListerner:Lcom/transsion/camera/app/common/IApp$ICameraDisconnectedListener;
 
     return-void
@@ -6642,7 +6445,7 @@
 .method public setCameraErrorListener(Lcom/transsion/camera/app/common/IApp$ICameraErrorListener;)V
     .registers 2
 
-    .line 217
+    .line 203
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCameraErrorListener:Lcom/transsion/camera/app/common/IApp$ICameraErrorListener;
 
     return-void
@@ -6651,7 +6454,7 @@
 .method public setCameraOfflineSessionListener()V
     .registers 2
 
-    .line 249
+    .line 235
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mCameraOfflineSessionListener:Lcom/transsion/camera/adapter/CameraProxy$CameraOfflineSessionListener;
@@ -6664,14 +6467,14 @@
 .method public setCaptureTag(I)V
     .registers 3
 
-    .line 945
+    .line 912
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_11
 
-    const/16 v0, 0x2f
+    const/16 v0, 0x2e
 
-    .line 946
+    .line 913
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -6689,14 +6492,14 @@
 .method public setCaptureZSLTimestamps([J)V
     .registers 3
 
-    .line 951
+    .line 918
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_d
 
-    const/16 v0, 0x30
+    const/16 v0, 0x2f
 
-    .line 952
+    .line 919
     invoke-virtual {p0, v0, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
@@ -6710,14 +6513,14 @@
 .method public setFaceDetectionListener(Lcom/transsion/camera/adapter/CameraProxy$IFaceDetectionListener;)V
     .registers 3
 
-    .line 760
+    .line 727
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_d
 
-    const/16 v0, 0x26
+    const/16 v0, 0x25
 
-    .line 761
+    .line 728
     invoke-virtual {p0, v0, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
@@ -6731,7 +6534,7 @@
 .method public setFirstFrameCallback(Lcom/transsion/camera/adapter/CameraProxy$CameraPreviewFrameCallback;)V
     .registers 2
 
-    .line 225
+    .line 211
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mFirstFrameCallback:Lcom/transsion/camera/adapter/CameraProxy$CameraPreviewFrameCallback;
 
     return-void
@@ -6740,14 +6543,14 @@
 .method public setLowConfigParameter(Z)V
     .registers 3
 
-    .line 539
+    .line 512
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_11
 
-    const/16 v0, 0x34
+    const/16 v0, 0x33
 
-    .line 540
+    .line 513
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -6765,7 +6568,7 @@
 .method public setMainPreviewDisplay(Ljava/lang/Object;II)V
     .registers 10
 
-    .line 401
+    .line 372
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6790,12 +6593,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 402
+    .line 373
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_34
 
-    .line 403
+    .line 374
     new-instance v0, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
 
     const/4 v4, 0x1
@@ -6816,7 +6619,7 @@
 
     move-result-object p0
 
-    .line 404
+    .line 375
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     :cond_34
@@ -6826,7 +6629,7 @@
 .method public setMediaRecordDisplay(Landroid/view/Surface;IIIZ)V
     .registers 13
 
-    .line 418
+    .line 389
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6863,12 +6666,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 419
+    .line 390
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_5c
 
-    .line 420
+    .line 391
     new-instance v1, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
 
     const/4 v5, 0x2
@@ -6883,13 +6686,13 @@
 
     invoke-direct/range {v1 .. v6}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;-><init>(Ljava/lang/Object;IIII)V
 
-    .line 421
+    .line 392
     invoke-virtual {v1, p2}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->setVideoFrameRate(I)V
 
-    .line 422
+    .line 393
     invoke-virtual {v1, p5}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;->setPrepareSuccess(Z)V
 
-    .line 423
+    .line 394
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object p1
@@ -6902,7 +6705,7 @@
 
     if-eq p1, p2, :cond_59
 
-    .line 424
+    .line 395
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     const/4 p1, 0x6
@@ -6915,7 +6718,7 @@
 
     return-void
 
-    .line 426
+    .line 397
     :cond_59
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->handleSetSessionDisplay(Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;)V
 
@@ -6926,17 +6729,17 @@
 .method public setModeSupportAuxPreview(Z)V
     .registers 4
 
-    .line 689
+    .line 656
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_16
 
     const/16 v1, 0x1e
 
-    .line 690
+    .line 657
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 691
+    .line 658
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -6956,17 +6759,17 @@
 .method public setModeSupportBackgroundPreview(Z)V
     .registers 4
 
-    .line 726
+    .line 693
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_16
 
-    const/16 v1, 0x24
+    const/16 v1, 0x23
 
-    .line 727
+    .line 694
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 728
+    .line 695
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -6986,12 +6789,12 @@
 .method public setModeSupportSlavePreview(Z)V
     .registers 2
 
-    .line 709
+    .line 676
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 710
+    .line 677
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateSlaveSurfaceModeSupported(Z)V
 
     :cond_7
@@ -7001,12 +6804,12 @@
 .method public setShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
     .registers 2
 
-    .line 237
+    .line 223
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 238
+    .line 224
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->setShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
 
     :cond_7
@@ -7016,7 +6819,7 @@
 .method public setSlavePreviewDisplay(Ljava/lang/Object;II)V
     .registers 10
 
-    .line 409
+    .line 380
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7041,12 +6844,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 410
+    .line 381
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_34
 
-    .line 411
+    .line 382
     new-instance v0, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
 
     const/4 v4, 0x1
@@ -7067,7 +6870,7 @@
 
     move-result-object p0
 
-    .line 412
+    .line 383
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     :cond_34
@@ -7077,7 +6880,7 @@
 .method public shutterSoundPlay(ILcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;)V
     .registers 3
 
-    .line 649
+    .line 616
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->handleShutterSoundPlay(ILcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;)V
 
     return-void
@@ -7086,7 +6889,7 @@
 .method public shutterSoundPlay(Ljava/lang/String;)V
     .registers 2
 
-    .line 645
+    .line 612
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->handleShutterSoundPlay(Ljava/lang/String;)V
 
     return-void
@@ -7095,17 +6898,17 @@
 .method public startContinuousShot(I)V
     .registers 3
 
-    .line 589
+    .line 562
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_18
 
-    .line 590
+    .line 563
     const-string v0, "[TranMemoryFlow] available memory when startContinuousShot:"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/MemoryUtils;->logAvailMemoryAsync(Ljava/lang/String;)V
 
-    .line 591
+    .line 564
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     const/16 v0, 0xc
@@ -7127,14 +6930,14 @@
 .method public startPreview()V
     .registers 2
 
-    .line 519
+    .line 492
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_c
 
     const/4 v0, 0x7
 
-    .line 520
+    .line 493
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p0
@@ -7150,7 +6953,7 @@
 
     const/4 v0, 0x1
 
-    .line 626
+    .line 593
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->startRecording(Lcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;Z)V
 
     return-void
@@ -7159,19 +6962,19 @@
 .method public startRecording(Lcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;Z)V
     .registers 4
 
-    .line 630
+    .line 597
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_18
 
-    .line 631
+    .line 598
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->startVideo()V
 
-    .line 632
+    .line 599
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     const/16 v0, 0x11
@@ -7180,10 +6983,10 @@
 
     move-result-object p0
 
-    .line 633
+    .line 600
     iput p2, p0, Landroid/os/Message;->arg1:I
 
-    .line 634
+    .line 601
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     :cond_18
@@ -7193,14 +6996,14 @@
 .method public stopContinuousShot()V
     .registers 2
 
-    .line 596
+    .line 569
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_d
 
     const/16 v0, 0xd
 
-    .line 597
+    .line 570
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p0
@@ -7214,14 +7017,14 @@
 .method public stopContinuousShotCount()V
     .registers 2
 
-    .line 608
+    .line 581
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_d
 
-    const/16 v0, 0x21
+    const/16 v0, 0x20
 
-    .line 609
+    .line 582
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p0
@@ -7235,21 +7038,21 @@
 .method public stopFaceDetection()V
     .registers 3
 
-    .line 532
+    .line 505
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "stopFaceDetection"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 533
+    .line 506
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_14
 
-    const/16 v0, 0x22
+    const/16 v0, 0x21
 
-    .line 534
+    .line 507
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p0
@@ -7263,21 +7066,21 @@
 .method public stopPreview()V
     .registers 3
 
-    .line 525
+    .line 498
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "stopPreview"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 526
+    .line 499
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_14
 
     const/16 v0, 0x8
 
-    .line 527
+    .line 500
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p0
@@ -7291,14 +7094,14 @@
 .method public stopRecording()V
     .registers 2
 
-    .line 639
+    .line 606
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_d
 
     const/16 v0, 0x12
 
-    .line 640
+    .line 607
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p0
@@ -7312,14 +7115,14 @@
 .method public stopRepeatingRequest()V
     .registers 2
 
-    .line 583
+    .line 556
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_d
 
     const/16 v0, 0x9
 
-    .line 584
+    .line 557
     invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object p0
@@ -7333,17 +7136,17 @@
 .method public switchDeviceParameters(Ljava/lang/String;)V
     .registers 4
 
-    .line 512
+    .line 485
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_11
 
     const/4 v1, 0x1
 
-    .line 513
+    .line 486
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 514
+    .line 487
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -7359,7 +7162,7 @@
 .method public switchMode(Lcom/transsion/camera/app/common/mode/ICameraMode;)V
     .registers 5
 
-    .line 393
+    .line 364
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7382,17 +7185,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 394
+    .line 365
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_2b
 
     const/4 v1, 0x4
 
-    .line 395
+    .line 366
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 396
+    .line 367
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
@@ -7408,7 +7211,7 @@
 .method public switchToOffline(I)V
     .registers 5
 
-    .line 385
+    .line 356
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7427,12 +7230,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 386
+    .line 357
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_31
 
-    .line 387
+    .line 358
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
@@ -7441,10 +7244,10 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->setSwitchingOffline(Z)V
 
-    .line 388
+    .line 359
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
-    const/16 v0, 0x2d
+    const/16 v0, 0x2c
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -7463,24 +7266,24 @@
 .method public takePicture()V
     .registers 3
 
-    .line 545
+    .line 518
     sget-object v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "takePicture"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->iTrace(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 546
+    .line 519
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_1b
 
-    .line 547
+    .line 520
     const-string v0, "[TranMemoryFlow] available memory when takePicture:"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/MemoryUtils;->logAvailMemoryAsync(Ljava/lang/String;)V
 
-    .line 548
+    .line 521
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     const/16 v0, 0xa
@@ -7498,24 +7301,24 @@
 .method public takePicture(Lcom/transsion/camera/app/common/mode/CameraDeviceControl$ICommandCallback;)V
     .registers 4
 
-    .line 553
+    .line 526
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_23
 
-    .line 554
+    .line 527
     const-string v0, "[TranMemoryFlow] available memory when takePicture:"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/MemoryUtils;->logAvailMemoryAsync(Ljava/lang/String;)V
 
-    .line 555
+    .line 528
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0xa
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 556
+    .line 529
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
@@ -7524,7 +7327,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 557
+    .line 530
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     new-instance v0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$$ExternalSyntheticLambda1;
@@ -7540,12 +7343,12 @@
 .method public takePictureEnded()V
     .registers 1
 
-    .line 773
+    .line 740
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_7
 
-    .line 774
+    .line 741
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->takePictureEnded()V
 
     :cond_7
@@ -7555,14 +7358,14 @@
 .method public tripodModeChanged(Z)V
     .registers 3
 
-    .line 2459
+    .line 2397
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_11
 
-    const/16 v0, 0x2e
+    const/16 v0, 0x2d
 
-    .line 2460
+    .line 2398
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -7582,42 +7385,42 @@
 
     const/4 v0, 0x1
 
-    .line 190
+    .line 176
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mReleased:Z
 
-    .line 191
+    .line 177
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_10
 
     const/16 v1, 0x14
 
-    .line 192
+    .line 178
     invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 195
+    .line 181
     :cond_10
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingManager;->beforeUnInit()V
 
-    .line 196
+    .line 182
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingManager;->unInit()V
 
-    .line 197
+    .line 183
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/setting/SettingManager;->setDispatchListener(Lcom/transsion/camera/app/common/setting/ISettingManager$DispatchListener;)V
 
-    .line 198
+    .line 184
     iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mContext:Landroid/content/Context;
 
     return-void
@@ -7626,14 +7429,14 @@
 .method public unRegisterFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
     .registers 3
 
-    .line 683
+    .line 650
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_d
 
     const/16 v0, 0x1b
 
-    .line 684
+    .line 651
     invoke-virtual {p0, v0, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
@@ -7647,7 +7450,7 @@
 .method public unRegisterStateCallback(Lcom/transsion/camera/app/common/ICameraControl$ICameraStateCallback;)V
     .registers 2
 
-    .line 233
+    .line 219
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mStateCB:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
@@ -7658,12 +7461,12 @@
 .method public updateAuxPreviewSurface(Ljava/lang/Object;II)V
     .registers 10
 
-    .line 696
+    .line 663
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_17
 
-    .line 697
+    .line 664
     new-instance v0, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
 
     const/4 v4, 0x1
@@ -7684,7 +7487,7 @@
 
     move-result-object p0
 
-    .line 698
+    .line 665
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     :cond_17
@@ -7694,14 +7497,14 @@
 .method public updateAuxPreviewSurfaceStatus(Z)V
     .registers 3
 
-    .line 703
+    .line 670
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_11
 
     const/16 v0, 0x1d
 
-    .line 704
+    .line 671
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -7719,12 +7522,12 @@
 .method public updateBackgroundPreviewSurface(Ljava/lang/Object;II)V
     .registers 10
 
-    .line 733
+    .line 700
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_17
 
-    .line 734
+    .line 701
     new-instance v0, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
 
     const/4 v4, 0x2
@@ -7739,13 +7542,13 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;-><init>(Ljava/lang/Object;IIII)V
 
-    const/16 p1, 0x25
+    const/16 p1, 0x24
 
     invoke-virtual {p0, p1, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
 
-    .line 735
+    .line 702
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     :cond_17
@@ -7755,14 +7558,14 @@
 .method public updateBackgroundPreviewSurfaceStatus(Z)V
     .registers 3
 
-    .line 740
+    .line 707
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_11
 
-    const/16 v0, 0x23
+    const/16 v0, 0x22
 
-    .line 741
+    .line 708
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -7780,21 +7583,21 @@
 .method public updateRecordingHint(Z)V
     .registers 3
 
-    .line 2507
+    .line 2445
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mMainDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz v0, :cond_7
 
-    .line 2508
+    .line 2446
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateRecordingHint(Z)V
 
-    .line 2510
+    .line 2448
     :cond_7
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSlaveDevice:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     if-eqz p0, :cond_e
 
-    .line 2511
+    .line 2449
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->updateRecordingHint(Z)V
 
     :cond_e
@@ -7804,7 +7607,7 @@
 .method public updateScreenFromeType(I)V
     .registers 2
 
-    .line 921
+    .line 888
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mSettingManager:Lcom/transsion/camera/app/common/setting/SettingManager;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingManager;->updateScreenFormType(I)V
@@ -7815,12 +7618,12 @@
 .method public updateSlavePreviewSurface(Ljava/lang/Object;II)V
     .registers 10
 
-    .line 719
+    .line 686
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_17
 
-    .line 720
+    .line 687
     new-instance v0, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;
 
     const/4 v4, 0x1
@@ -7835,51 +7638,30 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/app/common/mode/SurfaceControlInfo;-><init>(Ljava/lang/Object;IIII)V
 
-    const/16 p1, 0x28
+    const/16 p1, 0x27
 
     invoke-virtual {p0, p1, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0
 
-    .line 721
+    .line 688
     invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     :cond_17
     return-void
 .end method
 
-.method public videoHDRSnapShot()V
-    .registers 2
-
-    .line 620
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
-
-    if-eqz p0, :cond_d
-
-    const/16 v0, 0x20
-
-    .line 621
-    invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
-
-    :cond_d
-    return-void
-.end method
-
 .method public videoSnapShot(Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;)V
     .registers 3
 
-    .line 614
+    .line 587
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->mHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_d
 
     const/16 v0, 0x13
 
-    .line 615
+    .line 588
     invoke-virtual {p0, v0, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p0

@@ -49,7 +49,7 @@
     .line 102
     check-cast p1, Lkotlinx/coroutines/debug/internal/DebugProbesImpl$CoroutineOwner;
 
-    .line 287
+    .line 283
     iget-object p0, p1, Lkotlinx/coroutines/debug/internal/DebugProbesImpl$CoroutineOwner;->info:Lkotlinx/coroutines/debug/internal/DebugCoroutineInfoImpl;
 
     iget-wide p0, p0, Lkotlinx/coroutines/debug/internal/DebugCoroutineInfoImpl;->sequenceNumber:J
@@ -61,7 +61,7 @@
     .line 102
     check-cast p2, Lkotlinx/coroutines/debug/internal/DebugProbesImpl$CoroutineOwner;
 
-    .line 287
+    .line 283
     iget-object p1, p2, Lkotlinx/coroutines/debug/internal/DebugProbesImpl$CoroutineOwner;->info:Lkotlinx/coroutines/debug/internal/DebugCoroutineInfoImpl;
 
     iget-wide p1, p1, Lkotlinx/coroutines/debug/internal/DebugCoroutineInfoImpl;->sequenceNumber:J

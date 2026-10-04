@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
@@ -24,13 +24,13 @@
 
 
 # virtual methods
-.method public final run()V
-    .registers 1
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .registers 2
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda9;->f$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->$r8$lambda$bLtayHaa2sLtAoFxJCPfmQfWQ-E(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->$r8$lambda$cKceh6GPfp7YueIlB7-SMXPhs1o(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

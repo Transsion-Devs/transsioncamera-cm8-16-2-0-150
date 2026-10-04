@@ -32,20 +32,20 @@
 .method public constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;Landroid/os/Handler;)V
     .registers 3
 
-    .line 1933
+    .line 2085
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
-    .line 1934
+    .line 2086
     invoke-direct {p0, p2}, Lcom/transsion/camera/ui/setting/BaseRunnableController;-><init>(Landroid/os/Handler;)V
 
     const/4 p1, -0x1
 
-    .line 1930
+    .line 2082
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->mValueOffset:I
 
     const/4 p1, 0x0
 
-    .line 1931
+    .line 2083
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->mIsValueIncreasing:Z
 
     return-void
@@ -56,7 +56,7 @@
 .method protected applyNewValue(Ljava/lang/Integer;)V
     .registers 5
 
-    .line 1985
+    .line 2137
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmViewState(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)I
@@ -65,16 +65,18 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1b
+    const/4 v2, 0x0
+
+    if-eq v0, v1, :cond_1c
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_d
+    if-eq v0, v1, :cond_e
 
     goto :goto_29
 
-    .line 1990
-    :cond_d
+    .line 2142
+    :cond_e
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmFocalLengthBar(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)Lcom/transsion/camera/ui/setting/zoom/FocalLengthZoomBar;
@@ -89,8 +91,8 @@
 
     goto :goto_29
 
-    .line 1987
-    :cond_1b
+    .line 2139
+    :cond_1c
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmZoomPointBar(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
@@ -101,11 +103,9 @@
 
     move-result v1
 
-    const/4 v2, 0x0
-
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->updateZoomRatio(IZ)V
 
-    .line 1994
+    .line 2146
     :goto_29
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
@@ -113,7 +113,7 @@
 
     move-result p1
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$mdoOnZoomRatioChanged(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;I)V
+    invoke-static {p0, p1, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$mdoOnZoomRatioChanged(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;II)V
 
     return-void
 .end method
@@ -121,7 +121,7 @@
 .method protected bridge synthetic applyNewValue(Ljava/lang/Object;)V
     .registers 2
 
-    .line 1929
+    .line 2081
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->applyNewValue(Ljava/lang/Integer;)V
@@ -132,7 +132,7 @@
 .method protected calculateStepParameters(I)V
     .registers 4
 
-    .line 1965
+    .line 2117
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->originalValue:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Integer;
@@ -155,7 +155,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->mValueOffset:I
 
-    .line 1966
+    .line 2118
     iget p1, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->expectedValue:I
 
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->originalValue:Ljava/lang/Object;
@@ -184,7 +184,7 @@
 .method protected getCurrentValue()Ljava/lang/Integer;
     .registers 1
 
-    .line 1980
+    .line 2132
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmCurrentRatio(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)I
@@ -201,7 +201,7 @@
 .method protected bridge synthetic getCurrentValue()Ljava/lang/Object;
     .registers 1
 
-    .line 1929
+    .line 2081
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->getCurrentValue()Ljava/lang/Integer;
 
     move-result-object p0
@@ -212,7 +212,7 @@
 .method protected getNewValue(Ljava/lang/Integer;)Ljava/lang/Integer;
     .registers 3
 
-    .line 1939
+    .line 2091
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmZoomConfig(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)Lcom/transsion/camera/app/common/ZoomConfig;
@@ -221,7 +221,7 @@
 
     if-nez v0, :cond_18
 
-    .line 1940
+    .line 2092
     invoke-static {}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -230,7 +230,7 @@
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1941
+    .line 2093
     sget p0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -239,7 +239,7 @@
 
     return-object p0
 
-    .line 1944
+    .line 2096
     :cond_18
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
@@ -253,7 +253,7 @@
 
     if-nez v0, :cond_2b
 
-    .line 1945
+    .line 2097
     iget p0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->expectedValue:I
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -262,13 +262,13 @@
 
     return-object p0
 
-    .line 1949
+    .line 2101
     :cond_2b
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->mIsValueIncreasing:Z
 
     if-eqz v0, :cond_3c
 
-    .line 1950
+    .line 2102
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -277,7 +277,7 @@
 
     add-int/2addr p1, v0
 
-    .line 1951
+    .line 2103
     iget p0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->expectedValue:I
 
     if-le p1, p0, :cond_48
@@ -287,7 +287,7 @@
 
     goto :goto_48
 
-    .line 1955
+    .line 2107
     :cond_3c
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -297,14 +297,14 @@
 
     sub-int/2addr p1, v0
 
-    .line 1956
+    .line 2108
     iget p0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->expectedValue:I
 
     if-ge p1, p0, :cond_48
 
     goto :goto_3a
 
-    .line 1960
+    .line 2112
     :cond_48
     :goto_48
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -317,7 +317,7 @@
 .method protected bridge synthetic getNewValue(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 1929
+    .line 2081
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->getNewValue(Ljava/lang/Integer;)Ljava/lang/Integer;
@@ -330,7 +330,7 @@
 .method protected shouldContinue()Z
     .registers 3
 
-    .line 1971
+    .line 2123
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;->-$$Nest$fgetmZoomConfig(Lcom/transsion/camera/ui/setting/zoom/ZoomUI5;)Lcom/transsion/camera/app/common/ZoomConfig;
@@ -355,7 +355,7 @@
 
     goto :goto_2d
 
-    .line 1975
+    .line 2127
     :cond_16
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->isRunning:Z
 

@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)V
     .registers 2
 
-    .line 1414
+    .line 1403
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 .method public onDismiss(Z)V
     .registers 3
 
-    .line 1434
+    .line 1423
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     iget-object v0, p1, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -80,7 +80,7 @@
 
     if-nez p1, :cond_1d
 
-    .line 1435
+    .line 1424
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -89,20 +89,20 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IPopSettingViewControl;->setTreasureBoxBackViewVisible(I)V
 
-    .line 1437
+    .line 1426
     :cond_1d
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->updateHighLightShow()V
 
-    .line 1438
+    .line 1427
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     const/4 p1, 0x0
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mPopupWindowShow:Z
 
-    .line 1439
+    .line 1428
     invoke-static {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$fputmChangePopWindowHide(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Z)V
 
     return-void
@@ -111,7 +111,7 @@
 .method public onOptionIndexChanged(I)V
     .registers 3
 
-    .line 1417
+    .line 1406
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$minterceptClickByLowPower(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)Z
@@ -122,7 +122,7 @@
 
     return-void
 
-    .line 1420
+    .line 1409
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 

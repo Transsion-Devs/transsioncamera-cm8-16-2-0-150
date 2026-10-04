@@ -47,6 +47,12 @@
 .method public abstract hintInfo()V
 .end method
 
+.method public abstract initIconColor(III)V
+.end method
+
+.method public abstract isSellingPointAndShow()Z
+.end method
+
 .method public abstract needItemAnimation()Z
 .end method
 
@@ -56,7 +62,7 @@
 .method public abstract onOrientationChanged(IZ)V
 .end method
 
-.method public abstract onScreenSupply(Z)V
+.method public abstract onScreenSupply(ZZ)V
 .end method
 
 .method public abstract overrideClickListener(Landroid/view/View$OnClickListener;)V

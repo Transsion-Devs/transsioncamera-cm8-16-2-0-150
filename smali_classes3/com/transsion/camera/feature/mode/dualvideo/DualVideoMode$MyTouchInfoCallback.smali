@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)V
     .registers 2
 
-    .line 882
+    .line 885
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyTouchInfoCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public isExitPreviewPopwinow()Z
     .registers 1
 
-    .line 910
+    .line 913
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyTouchInfoCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -65,7 +65,7 @@
 .method public sendScaleArea()V
     .registers 4
 
-    .line 898
+    .line 901
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyTouchInfoCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->-$$Nest$fgetmArrayDualDevice(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)[Ljava/lang/String;
@@ -98,7 +98,7 @@
 
     move-result-object v2
 
-    .line 899
+    .line 902
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -115,7 +115,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyTouchInfoCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
-    .line 900
+    .line 903
     invoke-static {v2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->-$$Nest$mgetWideCameraID(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)Ljava/lang/String;
 
     move-result-object v2
@@ -136,7 +136,7 @@
 
     const-string v2, "0"
 
-    .line 901
+    .line 904
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -145,7 +145,7 @@
 
     goto :goto_6a
 
-    .line 903
+    .line 906
     :cond_4a
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyTouchInfoCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
@@ -167,7 +167,7 @@
 
     if-eqz v0, :cond_69
 
-    .line 904
+    .line 907
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyTouchInfoCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -182,7 +182,7 @@
     :cond_69
     return-void
 
-    .line 902
+    .line 905
     :cond_6a
     :goto_6a
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyTouchInfoCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
@@ -202,7 +202,7 @@
 .method public sendSingleUpAreaName(Ljava/lang/String;)V
     .registers 5
 
-    .line 886
+    .line 889
     const-string v0, "device_slave"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -223,7 +223,7 @@
 
     const-string v2, "1"
 
-    .line 887
+    .line 890
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -244,14 +244,14 @@
 
     move-result-object v1
 
-    .line 888
+    .line 891
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_39
 
-    .line 889
+    .line 892
     :cond_2d
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyTouchInfoCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
@@ -266,7 +266,7 @@
 
     return-void
 
-    .line 893
+    .line 896
     :cond_39
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyTouchInfoCallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 

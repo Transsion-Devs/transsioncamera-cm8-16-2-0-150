@@ -44,10 +44,10 @@
 
     const/4 v0, 0x0
 
-    .line 152
+    .line 148
     invoke-direct {p0, p1, p2, v0}, Lkotlinx/coroutines/channels/ActorCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/channels/Channel;Z)V
 
-    .line 154
+    .line 150
     invoke-static {p3, p0, p0}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->createCoroutineUnintercepted(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p1
@@ -60,7 +60,7 @@
 .method public static final synthetic access$onSendRegFunction(Lkotlinx/coroutines/channels/LazyActorCoroutine;Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
     .registers 3
 
-    .line 148
+    .line 144
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/channels/LazyActorCoroutine;->onSendRegFunction(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
 
     return-void
@@ -84,10 +84,10 @@
         }
     .end annotation
 
-    .line 197
+    .line 194
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/LazyActorCoroutine;->onStart()V
 
-    .line 198
+    .line 195
     invoke-super {p0}, Lkotlinx/coroutines/channels/ChannelCoroutine;->getOnSend()Lkotlinx/coroutines/selects/SelectClause2;
 
     move-result-object v0
@@ -106,12 +106,12 @@
 .method public close(Ljava/lang/Throwable;)Z
     .registers 2
 
-    .line 183
+    .line 180
     invoke-super {p0, p1}, Lkotlinx/coroutines/channels/ChannelCoroutine;->close(Ljava/lang/Throwable;)Z
 
     move-result p1
 
-    .line 185
+    .line 182
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->start()Z
 
     return p1
@@ -129,10 +129,10 @@
         }
     .end annotation
 
-    .line 190
+    .line 187
     new-instance v0, Lkotlinx/coroutines/selects/SelectClause2Impl;
 
-    .line 192
+    .line 189
     sget-object v1, Lkotlinx/coroutines/channels/LazyActorCoroutine$onSend$1;->INSTANCE:Lkotlinx/coroutines/channels/LazyActorCoroutine$onSend$1;
 
     const-string v2, "null cannot be cast to non-null type kotlin.Function3<@[ParameterName(name = \'clauseObject\')] kotlin.Any, @[ParameterName(name = \'select\')] kotlinx.coroutines.selects.SelectInstance<*>, @[ParameterName(name = \'param\')] kotlin.Any?, kotlin.Unit>{ kotlinx.coroutines.selects.SelectKt.RegistrationFunction }"
@@ -149,7 +149,7 @@
 
     check-cast v2, Lkotlin/jvm/functions/Function3;
 
-    .line 193
+    .line 190
     invoke-super {p0}, Lkotlinx/coroutines/channels/ChannelCoroutine;->getOnSend()Lkotlinx/coroutines/selects/SelectClause2;
 
     move-result-object v1
@@ -166,7 +166,7 @@
 
     move-object v1, p0
 
-    .line 190
+    .line 187
     invoke-direct/range {v0 .. v6}, Lkotlinx/coroutines/selects/SelectClause2Impl;-><init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-object v0
@@ -180,10 +180,10 @@
         }
     .end annotation
 
-    .line 172
+    .line 168
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->start()Z
 
-    .line 173
+    .line 169
     invoke-super {p0, p1}, Lkotlinx/coroutines/channels/ChannelCoroutine;->offer(Ljava/lang/Object;)Z
 
     move-result p0
@@ -194,7 +194,7 @@
 .method protected onStart()V
     .registers 2
 
-    .line 157
+    .line 153
     iget-object v0, p0, Lkotlinx/coroutines/channels/LazyActorCoroutine;->continuation:Lkotlin/coroutines/Continuation;
 
     invoke-static {v0, p0}, Lkotlinx/coroutines/intrinsics/CancellableKt;->startCoroutineCancellable(Lkotlin/coroutines/Continuation;Lkotlin/coroutines/Continuation;)V
@@ -215,10 +215,10 @@
         }
     .end annotation
 
-    .line 161
+    .line 157
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->start()Z
 
-    .line 162
+    .line 158
     invoke-super {p0, p1, p2}, Lkotlinx/coroutines/channels/ChannelCoroutine;->send(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -246,10 +246,10 @@
         }
     .end annotation
 
-    .line 177
+    .line 173
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->start()Z
 
-    .line 178
+    .line 174
     invoke-super {p0, p1}, Lkotlinx/coroutines/channels/ChannelCoroutine;->trySend-JP2dKIU(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0

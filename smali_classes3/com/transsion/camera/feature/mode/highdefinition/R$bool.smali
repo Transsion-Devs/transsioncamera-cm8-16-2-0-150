@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static highdefinition_mode_support_aux_preview:I = 0x7f0500c4
+.field public static highdefinition_mode_support_aux_preview:I = 0x7f0500cb
 
-.field public static highdefinition_mode_support_sat:I = 0x7f0500c5
+.field public static highdefinition_mode_support_sat:I = 0x7f0500cc
 
-.field public static highdefinition_mode_support_tele_camera:I = 0x7f0500c6
+.field public static highdefinition_mode_support_tele_camera:I = 0x7f0500cd
 
-.field public static highdefinition_mode_support_wide_camera:I = 0x7f0500c7
+.field public static highdefinition_mode_support_wide_camera:I = 0x7f0500ce
 
 
 # direct methods

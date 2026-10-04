@@ -887,14 +887,14 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1b0
+    if-eqz v1, :cond_1b1
 
     .line 354
     iget v2, v0, Lcom/transsion/camera/feature/setting/supernightlite/SuperNightLite;->mLatestShutterValue:I
 
     iget v3, v0, Lcom/transsion/camera/feature/setting/supernightlite/SuperNightLite;->mCurrentShutterValue:I
 
-    if-eq v2, v3, :cond_1ac
+    if-eq v2, v3, :cond_1ad
 
     .line 355
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -912,7 +912,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "the shutter value is: "
+    const-string/jumbo v3, "the shutter value is: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -927,12 +927,12 @@
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     .line 358
-    :cond_1ac
+    :cond_1ad
     iget v1, v0, Lcom/transsion/camera/feature/setting/supernightlite/SuperNightLite;->mCurrentShutterValue:I
 
     iput v1, v0, Lcom/transsion/camera/feature/setting/supernightlite/SuperNightLite;->mLatestShutterValue:I
 
-    :cond_1b0
+    :cond_1b1
     return-void
 .end method
 
@@ -961,7 +961,7 @@
     .line 275
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/supernightlite/SuperNightLite;->mIsPostAlgoOn:Z
 
-    if-eqz p1, :cond_34
+    if-eqz p1, :cond_35
 
     .line 276
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
@@ -970,7 +970,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/supernightlite/SuperNightLite;->mShotCallback:Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;
 
-    invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->setSettingShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
+    invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->registerShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
 
     return-void
 
@@ -986,20 +986,20 @@
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraProxy;->unregisterShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
 
     .line 281
-    iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/supernightlite/SuperNightLite;->mIsPostAlgoOn:Z
+    iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/supernightlite/SuperNightLite;->mIsPostAlgoOn:Z
 
-    if-eqz p0, :cond_34
+    if-eqz p1, :cond_35
 
     .line 282
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
-    move-result-object p0
+    move-result-object p1
 
-    const/4 p1, 0x0
+    iget-object p0, p0, Lcom/transsion/camera/feature/setting/supernightlite/SuperNightLite;->mShotCallback:Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;
 
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->setSettingShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
+    invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->unRegisterShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
 
-    :cond_34
+    :cond_35
     return-void
 .end method
 

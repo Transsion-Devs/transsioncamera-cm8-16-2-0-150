@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/RequestItem;)V
     .registers 2
 
-    .line 230
+    .line 229
     invoke-direct {p0}, Lcom/bumptech/glide/load/resource/bitmap/BitmapTransformation;-><init>()V
 
-    .line 231
+    .line 230
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$CropTransformation;->mRequestItem:Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/RequestItem;
 
     return-void
@@ -36,7 +36,7 @@
 .method protected transform(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
     .registers 5
 
-    .line 236
+    .line 235
     iget-object p0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$CropTransformation;->mRequestItem:Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/RequestItem;
 
     invoke-virtual {p0}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/RequestItem;->request()Lcom/transsion/camera/app/common/ai/AIRequest;
@@ -57,13 +57,13 @@
 
     return-object p2
 
-    .line 240
+    .line 239
     :cond_13
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result p0
 
-    .line 241
+    .line 240
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result p1
@@ -97,7 +97,7 @@
     :goto_2c
     const/4 p3, 0x0
 
-    .line 248
+    .line 247
     invoke-static {p2, p3, p3, p0, p1}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -108,7 +108,7 @@
 .method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
     .registers 2
 
-    .line 253
+    .line 252
     const-string p0, "CropTransformation"
 
     invoke-virtual {p0}, Ljava/lang/String;->getBytes()[B

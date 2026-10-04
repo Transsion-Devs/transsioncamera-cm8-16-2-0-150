@@ -63,7 +63,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 63
+    .line 59
     check-cast p1, Lkotlin/coroutines/CoroutineContext;
 
     check-cast p2, Lkotlin/coroutines/CoroutineContext$Element;
@@ -78,7 +78,7 @@
 .method public final invoke(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext$Element;)Lkotlin/coroutines/CoroutineContext;
     .registers 6
 
-    .line 64
+    .line 60
     instance-of v0, p2, Lkotlinx/coroutines/CopyableThreadContextElement;
 
     if-nez v0, :cond_9
@@ -89,7 +89,7 @@
 
     return-object p0
 
-    .line 66
+    .line 62
     :cond_9
     iget-object v0, p0, Lkotlinx/coroutines/CoroutineContextKt$foldCopies$folded$1;->$leftoverContext:Lkotlin/jvm/internal/Ref$ObjectRef;
 
@@ -107,7 +107,7 @@
 
     if-nez v0, :cond_2c
 
-    .line 70
+    .line 66
     iget-boolean p0, p0, Lkotlinx/coroutines/CoroutineContextKt$foldCopies$folded$1;->$isNewCoroutine:Z
 
     if-eqz p0, :cond_24
@@ -132,7 +132,7 @@
 
     return-object p0
 
-    .line 73
+    .line 69
     :cond_2c
     iget-object p0, p0, Lkotlinx/coroutines/CoroutineContextKt$foldCopies$folded$1;->$leftoverContext:Lkotlin/jvm/internal/Ref$ObjectRef;
 
@@ -150,7 +150,7 @@
 
     iput-object v1, p0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 76
+    .line 72
     check-cast p2, Lkotlinx/coroutines/CopyableThreadContextElement;
 
     invoke-interface {p2, v0}, Lkotlinx/coroutines/CopyableThreadContextElement;->mergeForChild(Lkotlin/coroutines/CoroutineContext$Element;)Lkotlin/coroutines/CoroutineContext;

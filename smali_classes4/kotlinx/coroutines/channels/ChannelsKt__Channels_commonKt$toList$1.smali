@@ -26,7 +26,7 @@
     c = "kotlinx.coroutines.channels.ChannelsKt__Channels_commonKt"
     f = "Channels.common.kt"
     l = {
-        0x95
+        0x70
     }
     m = "toList"
 .end annotation

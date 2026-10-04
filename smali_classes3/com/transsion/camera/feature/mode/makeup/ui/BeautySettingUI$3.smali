@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$BarClickListener;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
     .registers 2
 
-    .line 93
+    .line 122
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$3;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,30 +35,38 @@
 
 
 # virtual methods
-.method public barOnClick(I)V
-    .registers 4
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .registers 3
 
-    const-wide/16 v0, 0xc8
+    .line 125
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    .line 96
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isFastDoubleClick(J)Z
+    move-result-object p1
 
-    move-result v0
+    check-cast p1, Ljava/lang/Float;
 
-    if-eqz v0, :cond_9
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
-    return-void
+    move-result p1
 
-    :cond_9
-    const/4 v0, 0x0
+    .line 126
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$3;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
-    .line 99
-    sput-boolean v0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->isPressBack:Z
+    invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
-    .line 100
+    move-result-object v0
+
+    if-eqz v0, :cond_1b
+
+    .line 128
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$3;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$msettingUIAnimShowOrHide(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;I)Z
+    invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
+    move-result-object p0
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setTranslationY(F)V
+
+    :cond_1b
     return-void
 .end method

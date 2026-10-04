@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)V
     .registers 2
 
-    .line 105
+    .line 104
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$5;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public closeContrast(Z)V
     .registers 3
 
-    .line 115
+    .line 114
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$5;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$fgetmakeUpBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpBottomUI;
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 116
+    .line 115
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$5;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$fgetmakeUpBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpBottomUI;
@@ -63,7 +63,7 @@
 .method public openContrast()V
     .registers 2
 
-    .line 108
+    .line 107
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$5;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$fgetmakeUpBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpBottomUI;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 109
+    .line 108
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$5;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$fgetmakeUpBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpBottomUI;

@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)V
     .registers 2
 
-    .line 593
+    .line 577
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 596
+    .line 580
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    .line 597
+    .line 581
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;
@@ -51,7 +51,7 @@
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
-    .line 598
+    .line 582
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
 
     move-result-object p1
@@ -64,7 +64,7 @@
 
     if-eqz p1, :cond_24
 
-    .line 599
+    .line 583
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;
@@ -80,10 +80,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 605
+    .line 589
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 606
+    .line 590
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;
@@ -96,7 +96,7 @@
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
-    .line 607
+    .line 591
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
 
     move-result-object p1
@@ -109,7 +109,7 @@
 
     if-eqz p1, :cond_24
 
-    .line 608
+    .line 592
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;
@@ -125,17 +125,17 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 614
+    .line 598
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    .line 615
+    .line 599
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     const/4 v0, 0x0
 
     iput-boolean v0, p1, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mLivePhotoIconClicked:Z
 
-    .line 616
+    .line 600
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;
 
     move-result-object p1
@@ -146,7 +146,7 @@
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
-    .line 617
+    .line 601
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
 
     move-result-object p1
@@ -159,7 +159,7 @@
 
     if-eqz p1, :cond_27
 
-    .line 618
+    .line 602
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;

@@ -27,10 +27,10 @@
 .method constructor <init>()V
     .registers 3
 
-    .line 59
+    .line 60
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 61
+    .line 62
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Feature;->STYLE:Lcom/aiartmuseum/jni/IAIArtMuseum$Feature;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -45,7 +45,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 62
+    .line 63
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Feature;->TRAVEL:Lcom/aiartmuseum/jni/IAIArtMuseum$Feature;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -60,7 +60,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 63
+    .line 64
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Feature;->PARTIAL:Lcom/aiartmuseum/jni/IAIArtMuseum$Feature;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I

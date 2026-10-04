@@ -275,6 +275,24 @@
     return-void
 .end method
 
+.method public keySwiping(II)V
+    .registers 5
+
+    .line 177
+    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->mHandler:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$KeyEventHandler;
+
+    const/4 v1, 0x3
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 178
+    iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->mCallback:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$IKeyEventCallback;
+
+    invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$IKeyEventCallback;->onSwiping(II)V
+
+    return-void
+.end method
+
 .method public keyUp(ILandroid/view/KeyEvent;)V
     .registers 5
 
@@ -394,26 +412,8 @@
     return-void
 .end method
 
-.method public shoulderButtonKeySwiping(ZI)V
+.method public swipeUp(I)V
     .registers 5
-
-    .line 173
-    iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->mHandler:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$KeyEventHandler;
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 174
-    iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->mCallback:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$IKeyEventCallback;
-
-    invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$IKeyEventCallback;->onShoulderButtonSwiping(ZI)V
-
-    return-void
-.end method
-
-.method public shoulderButtonSwipeUp(I)V
-    .registers 4
 
     .line 168
     iget-object v0, p0, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->mHandler:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$KeyEventHandler;
@@ -422,18 +422,46 @@
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p1
+    move-result-object v2
 
-    invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
     .line 169
-    iput-boolean p1, p0, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->mIsKeyDown:Z
+    iput-boolean v0, p0, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->mIsKeyDown:Z
 
+    .line 170
+    iget-boolean v0, p0, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->mInLongPress:Z
+
+    if-eqz v0, :cond_2a
+
+    .line 171
+    sget-object v0, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string v1, "[swipeUp] mInLongPress is true, cancel long press"
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 172
+    iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector;->mHandler:Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$KeyEventHandler;
+
+    const/4 v0, 0x2
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, v0, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
+
+    :cond_2a
     return-void
 .end method

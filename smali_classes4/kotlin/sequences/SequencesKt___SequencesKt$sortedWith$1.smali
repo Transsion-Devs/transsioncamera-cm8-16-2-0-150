@@ -31,7 +31,7 @@
 
     iput-object p2, p0, Lkotlin/sequences/SequencesKt___SequencesKt$sortedWith$1;->$comparator:Ljava/util/Comparator;
 
-    .line 636
+    .line 644
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,19 +42,19 @@
 .method public iterator()Ljava/util/Iterator;
     .registers 2
 
-    .line 638
+    .line 646
     iget-object v0, p0, Lkotlin/sequences/SequencesKt___SequencesKt$sortedWith$1;->$this_sortedWith:Lkotlin/sequences/Sequence;
 
     invoke-static {v0}, Lkotlin/sequences/SequencesKt___SequencesKt;->toMutableList(Lkotlin/sequences/Sequence;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 639
+    .line 647
     iget-object p0, p0, Lkotlin/sequences/SequencesKt___SequencesKt$sortedWith$1;->$comparator:Ljava/util/Comparator;
 
     invoke-static {v0, p0}, Lkotlin/collections/CollectionsKt;->sortWith(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 640
+    .line 648
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0

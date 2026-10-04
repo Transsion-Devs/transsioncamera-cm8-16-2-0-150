@@ -372,7 +372,7 @@
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    .line 143
+    .line 13557
     array-length v1, p1
 
     const/4 v2, 0x0

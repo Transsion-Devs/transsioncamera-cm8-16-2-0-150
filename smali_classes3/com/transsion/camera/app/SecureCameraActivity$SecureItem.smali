@@ -59,7 +59,7 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    .line 144
+    .line 142
     new-instance v0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem$1;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem$1;-><init>()V
@@ -72,13 +72,13 @@
 .method constructor <init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
     .registers 5
 
-    .line 79
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 80
+    .line 78
     iput-object p2, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mUri:Landroid/net/Uri;
 
-    .line 81
+    .line 79
     invoke-virtual {p2}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
 
     move-result-object v0
@@ -89,14 +89,14 @@
 
     iput-wide v0, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mId:J
 
-    .line 82
+    .line 80
     invoke-virtual {p1, p2}, Landroid/content/ContentResolver;->getType(Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object p1
 
     if-eqz p1, :cond_32
 
-    .line 85
+    .line 83
     const-string/jumbo p2, "video/"
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -105,7 +105,7 @@
 
     if-eqz p1, :cond_32
 
-    .line 86
+    .line 84
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -124,7 +124,7 @@
 
     return-void
 
-    .line 88
+    .line 86
     :cond_32
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -148,24 +148,24 @@
 .method protected constructor <init>(Landroid/os/Parcel;)V
     .registers 4
 
-    .line 92
+    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 93
+    .line 91
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mId:J
 
-    .line 94
+    .line 92
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mSecureAlbum:Ljava/lang/String;
 
-    .line 95
+    .line 93
     const-class v0, Landroid/net/Uri;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -205,7 +205,7 @@
     :cond_4
     if-eqz p1, :cond_1c
 
-    .line 115
+    .line 113
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -218,7 +218,7 @@
 
     goto :goto_1c
 
-    .line 118
+    .line 116
     :cond_11
     iget-object p0, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mUri:Landroid/net/Uri;
 
@@ -242,7 +242,7 @@
 .method getAlbum()Ljava/lang/String;
     .registers 1
 
-    .line 103
+    .line 101
     iget-object p0, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mSecureAlbum:Ljava/lang/String;
 
     return-object p0
@@ -251,7 +251,7 @@
 .method getId()J
     .registers 3
 
-    .line 107
+    .line 105
     iget-wide v0, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mId:J
 
     return-wide v0
@@ -260,7 +260,7 @@
 .method getUri()Landroid/net/Uri;
     .registers 1
 
-    .line 99
+    .line 97
     iget-object p0, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mUri:Landroid/net/Uri;
 
     return-object p0
@@ -269,7 +269,7 @@
 .method public hashCode()I
     .registers 1
 
-    .line 123
+    .line 121
     iget-object p0, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mUri:Landroid/net/Uri;
 
     filled-new-array {p0}, [Ljava/lang/Object;
@@ -286,7 +286,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 129
+    .line 127
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -313,17 +313,17 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 5
 
-    .line 139
+    .line 137
     iget-wide v0, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mId:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    .line 140
+    .line 138
     iget-object v0, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mSecureAlbum:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 141
+    .line 139
     iget-object p0, p0, Lcom/transsion/camera/app/SecureCameraActivity$SecureItem;->mUri:Landroid/net/Uri;
 
     invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V

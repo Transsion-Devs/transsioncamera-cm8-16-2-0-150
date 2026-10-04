@@ -1,14 +1,11 @@
 .class Lcom/transsion/camera/app/ui/anim/AnimationManager$8;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/app/ui/anim/AnimationManager;->fadeOutPreviewCover()V
+    value = Lcom/transsion/camera/app/ui/anim/AnimationManager;->startFlipHideCoverAnim()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,60 +22,74 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/anim/AnimationManager;)V
     .registers 2
 
-    .line 898
+    .line 743
     iput-object p1, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$8;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 3
-
-    .line 906
-    invoke-static {}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    move-result-object p1
-
-    const-string v0, "fadeOutPreviewCover onAnimationEnd"
-
-    invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 907
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$8;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
-
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$mhidePreviewCover(Lcom/transsion/camera/app/ui/anim/AnimationManager;)V
-
-    return-void
-.end method
-
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+.method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 912
+    .line 752
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
+
+    .line 753
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$8;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
+
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$manimationHidePreviewCover(Lcom/transsion/camera/app/ui/anim/AnimationManager;)V
+
+    .line 754
     invoke-static {}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
 
-    const-string p1, "fadeOutPreviewCover onAnimationRepeat"
+    const-string p1, "FlipHideCoverAnim Cancel"
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 901
+    .line 759
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    .line 760
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$8;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
+
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$manimationHidePreviewCover(Lcom/transsion/camera/app/ui/anim/AnimationManager;)V
+
+    .line 761
     invoke-static {}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
 
-    const-string p1, "fadeOutPreviewCover onAnimationStart"
+    const-string p1, "FlipHideCoverAnim onAnimationEnd"
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .registers 2
+
+    .line 746
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
+
+    .line 747
+    invoke-static {}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    move-result-object p0
+
+    const-string p1, "FlipHideCoverAnim Start"
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 

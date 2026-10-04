@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static doc_mode_support_tele_camera:I = 0x7f050065
+.field public static doc_mode_support_tele_camera:I = 0x7f050067
 
-.field public static doc_mode_support_wide_camera:I = 0x7f050066
+.field public static doc_mode_support_wide_camera:I = 0x7f050068
 
-.field public static document_mode_support_aux_preview:I = 0x7f050068
+.field public static document_mode_support_aux_preview:I = 0x7f05006a
 
-.field public static document_mode_support_main_crop:I = 0x7f050069
+.field public static document_mode_support_main_crop:I = 0x7f05006b
 
 
 # direct methods

@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 57
+    .line 53
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/internal/ExceptionsConstructorKt$createConstructor$1$3;->invoke(Ljava/lang/Throwable;)Ljava/lang/Throwable;
@@ -73,7 +73,7 @@
 .method public final invoke(Ljava/lang/Throwable;)Ljava/lang/Throwable;
     .registers 2
 
-    .line 57
+    .line 53
     iget-object p0, p0, Lkotlinx/coroutines/internal/ExceptionsConstructorKt$createConstructor$1$3;->$constructor:Ljava/lang/reflect/Constructor;
 
     filled-new-array {p1}, [Ljava/lang/Object;

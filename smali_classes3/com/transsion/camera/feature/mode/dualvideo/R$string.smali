@@ -14,17 +14,17 @@
 
 
 # static fields
-.field public static dual_device_group_front_main:I = 0x7f130289
+.field public static dual_device_group_front_main:I = 0x7f130284
 
-.field public static dual_device_group_front_wide:I = 0x7f13028a
+.field public static dual_device_group_front_wide:I = 0x7f130285
 
-.field public static dual_device_group_main_Tele:I = 0x7f13028b
+.field public static dual_device_group_main_Tele:I = 0x7f130286
 
-.field public static dual_device_group_wide_Tele:I = 0x7f13028c
+.field public static dual_device_group_wide_Tele:I = 0x7f130287
 
-.field public static dual_video_mode_description:I = 0x7f13028e
+.field public static dual_video_mode_description:I = 0x7f130289
 
-.field public static dual_video_mode_title:I = 0x7f13028f
+.field public static dual_video_mode_title:I = 0x7f13028a
 
 
 # direct methods

@@ -55,9 +55,6 @@
 .method public abstract enterGoldWaterMarkFragment()V
 .end method
 
-.method public abstract enterModeEditorFragment()V
-.end method
-
 .method public abstract enterProWaterMarkFragment()V
 .end method
 
@@ -95,9 +92,6 @@
 .end method
 
 .method public abstract getFloatingShutterRoot()Landroid/view/ViewGroup;
-.end method
-
-.method public abstract getGoogleLensUIButtonVisible()I
 .end method
 
 .method public abstract getGpuAlgorithmManager()Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
@@ -394,6 +388,9 @@
 .method public abstract setSwitchWideCameraListener(Lcom/transsion/camera/app/common/IAppUIListener$ISwitchWideCameraListener;)V
 .end method
 
+.method public abstract setThumbnail(Landroid/graphics/Bitmap;)V
+.end method
+
 .method public abstract setThumbnailClickable(Z)V
 .end method
 
@@ -505,9 +502,6 @@
 .end method
 
 .method public abstract updateCurrentModes(Ljava/util/List;)V
-.end method
-
-.method public abstract updateCurrentModes(Ljava/util/List;ILjava/lang/String;)V
 .end method
 
 .method public abstract updateHelpGuide()V

@@ -16,6 +16,9 @@
 .method public abstract forceRenderSdrUnderHdr(Landroid/view/View;Z)Z
 .end method
 
+.method public abstract getRecordingFrameCount(Landroid/view/View;)J
+.end method
+
 .method public abstract getUnionRenderEffect(Landroid/view/View;)Lcom/transsion/hubsdk/api/view/TranUnionRenderEffectProxy;
 .end method
 

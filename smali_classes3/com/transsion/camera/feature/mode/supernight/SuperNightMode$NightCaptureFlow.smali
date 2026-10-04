@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)V
     .registers 2
 
-    .line 1194
+    .line 1196
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;-><init>(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)V
@@ -43,14 +43,14 @@
 .method onCaptureDone()Z
     .registers 2
 
-    .line 1233
+    .line 1235
     invoke-super {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->onCaptureDone()Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 1235
+    .line 1237
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$mstopCapturingAnim(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)V
@@ -68,10 +68,10 @@
 .method onCaptureStart()V
     .registers 6
 
-    .line 1220
+    .line 1222
     invoke-super {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->onCaptureStart()V
 
-    .line 1221
+    .line 1223
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->mIsCapturing:Z
 
     const/4 v1, 0x0
@@ -86,7 +86,7 @@
 
     if-eqz v0, :cond_4b
 
-    .line 1222
+    .line 1224
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$fgetmCurrentShutterValue(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)I
@@ -97,7 +97,7 @@
 
     if-lt v0, v2, :cond_4b
 
-    .line 1223
+    .line 1225
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$fgetmCurrentShutterValue(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)I
@@ -124,7 +124,7 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$fputmCurrentShutterValue(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;I)V
 
-    .line 1224
+    .line 1226
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;->-$$Nest$fgetmModeUI(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;
@@ -152,7 +152,7 @@
 
     invoke-virtual {v0, v2, v3, v4}, Lcom/transsion/camera/feature/mode/supernight/ui/AbstractModeUI;->startProcessStepAnim(Landroid/util/Size;ILjava/lang/String;)V
 
-    .line 1227
+    .line 1229
     :cond_4b
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -162,7 +162,7 @@
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->superNightAlgorithm(I)V
 
-    .line 1228
+    .line 1230
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->getType()I
@@ -177,15 +177,15 @@
 .method onEnter()V
     .registers 3
 
-    .line 1202
+    .line 1204
     invoke-super {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->onEnter()V
 
-    .line 1203
+    .line 1205
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->mIsPostAlgoOn:Z
 
     if-nez v0, :cond_20
 
-    .line 1204
+    .line 1206
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -201,7 +201,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 1205
+    .line 1207
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -220,15 +220,15 @@
 .method onExit()V
     .registers 3
 
-    .line 1211
+    .line 1213
     invoke-super {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->onExit()V
 
-    .line 1212
+    .line 1214
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->mIsPostAlgoOn:Z
 
     if-nez v0, :cond_20
 
-    .line 1213
+    .line 1215
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -244,7 +244,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 1214
+    .line 1216
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -263,10 +263,10 @@
 .method onShutterStart()V
     .registers 4
 
-    .line 1244
+    .line 1246
     invoke-super {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->onShutterStart()V
 
-    .line 1245
+    .line 1247
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NightCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;

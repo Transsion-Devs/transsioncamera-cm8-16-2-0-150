@@ -72,7 +72,7 @@
 .method public getItemType()Ljava/lang/String;
     .registers 1
 
-    .line 24
+    .line 30
     const-string p0, "OPTION_BAR"
 
     return-object p0
@@ -92,6 +92,20 @@
 
     .line 0
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setExtraDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
+
+    return-void
+.end method
+
+.method public setupEntryView()V
+    .registers 2
+
+    .line 24
+    invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->setupEntryView()V
+
+    const/4 v0, 0x1
+
+    .line 25
+    invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->setEnable(Z)V
 
     return-void
 .end method

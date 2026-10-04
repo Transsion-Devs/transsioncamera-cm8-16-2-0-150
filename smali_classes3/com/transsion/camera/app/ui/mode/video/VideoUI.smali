@@ -159,12 +159,12 @@
 .method private synthetic lambda$onHideRecordingUI$0()V
     .registers 2
 
-    .line 164
+    .line 166
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->mVideoSnapShotButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 165
+    .line 167
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->mVideoSnapShotButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     const/4 v0, 0x4
@@ -647,13 +647,13 @@
     .line 151
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->mPauseResumeButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_4f
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->mVideoSnapShotButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     if-nez v0, :cond_c
 
-    goto :goto_4a
+    goto :goto_4f
 
     .line 154
     :cond_c
@@ -684,16 +684,21 @@
     :cond_21
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->mVideoSnapShotBtnRecordingAnimator:Landroid/animation/Animator;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_30
 
     invoke-virtual {v0}, Landroid/animation/Animator;->isRunning()Z
 
     move-result v0
 
-    if-nez v0, :cond_4a
+    if-eqz v0, :cond_30
 
     .line 159
-    :cond_2b
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->mVideoSnapShotBtnRecordingAnimator:Landroid/animation/Animator;
+
+    invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
+
+    .line 161
+    :cond_30
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -702,22 +707,22 @@
 
     move-result-object v2
 
-    if-ne v0, v2, :cond_40
+    if-ne v0, v2, :cond_45
 
-    .line 160
+    .line 162
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->mVideoSnapShotButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 161
+    .line 163
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->mVideoSnapShotButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    .line 163
-    :cond_40
+    .line 165
+    :cond_45
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->mVideoSnapShotButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     new-instance v1, Lcom/transsion/camera/app/ui/mode/video/VideoUI$$ExternalSyntheticLambda0;
@@ -726,8 +731,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    :cond_4a
-    :goto_4a
+    :cond_4f
+    :goto_4f
     return-void
 .end method
 

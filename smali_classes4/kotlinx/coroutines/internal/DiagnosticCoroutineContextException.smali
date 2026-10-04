@@ -11,7 +11,7 @@
 .method public constructor <init>(Lkotlin/coroutines/CoroutineContext;)V
     .registers 2
 
-    .line 39
+    .line 35
     invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
 
     iput-object p1, p0, Lkotlinx/coroutines/internal/DiagnosticCoroutineContextException;->context:Lkotlin/coroutines/CoroutineContext;
@@ -26,10 +26,10 @@
 
     const/4 v0, 0x0
 
-    .line 26
+    .line 47
     new-array v0, v0, [Ljava/lang/StackTraceElement;
 
-    .line 46
+    .line 42
     invoke-virtual {p0, v0}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
 
     return-object p0
@@ -38,7 +38,7 @@
 .method public getLocalizedMessage()Ljava/lang/String;
     .registers 1
 
-    .line 41
+    .line 37
     iget-object p0, p0, Lkotlinx/coroutines/internal/DiagnosticCoroutineContextException;->context:Lkotlin/coroutines/CoroutineContext;
 
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;

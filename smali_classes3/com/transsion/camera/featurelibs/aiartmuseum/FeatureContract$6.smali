@@ -29,10 +29,10 @@
 .method constructor <init>()V
     .registers 3
 
-    .line 117
+    .line 119
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 119
+    .line 121
     const-string v0, "key_ai_art_museum_style"
 
     invoke-static {}, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->-$$Nest$sfgetsStyleValueMap()Ljava/util/Map;
@@ -41,7 +41,7 @@
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 120
+    .line 122
     const-string v0, "key_ai_art_museum_travel"
 
     invoke-static {}, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->-$$Nest$sfgetsTravelValueMap()Ljava/util/Map;
@@ -50,7 +50,7 @@
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 121
+    .line 123
     const-string v0, "key_ai_art_museum_partial"
 
     invoke-static {}, Lcom/transsion/camera/featurelibs/aiartmuseum/FeatureContract;->-$$Nest$sfgetsPartialValueMap()Ljava/util/Map;

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/asd/Asd;)V
     .registers 2
 
-    .line 532
+    .line 537
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/asd/Asd$2;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreviewStarted()V
     .registers 3
 
-    .line 545
+    .line 550
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$2;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 546
+    .line 551
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$2;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -58,7 +58,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->updatePreviewState(Z)V
 
-    .line 547
+    .line 552
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$2;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
@@ -78,7 +78,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;->requestChangeSettingValueJustSelf([Ljava/lang/String;)V
 
-    .line 549
+    .line 554
     :cond_25
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$2;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -101,7 +101,7 @@
 .method public onPreviewStopped()V
     .registers 3
 
-    .line 536
+    .line 541
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$2;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -110,7 +110,7 @@
 
     if-eqz v0, :cond_1b
 
-    .line 537
+    .line 542
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$2;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -121,7 +121,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->updatePreviewState(Z)V
 
-    .line 538
+    .line 543
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$2;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/asd/Asd;->-$$Nest$fgetmAsdParameterConfig(Lcom/transsion/camera/feature/setting/asd/Asd;)Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;
@@ -130,7 +130,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/setting/asd/AsdParameterConfig;->refreshAsdStateImmediately(I)V
 
-    .line 540
+    .line 545
     :cond_1b
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/Asd$2;->this$0:Lcom/transsion/camera/feature/setting/asd/Asd;
 

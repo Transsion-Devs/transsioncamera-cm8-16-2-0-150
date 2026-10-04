@@ -2167,7 +2167,7 @@
     invoke-direct {v0, p2, p3, p4, p1}, Lcom/transsion/camera/app/common/mode/SurfaceInfo;-><init>(IIILandroid/view/Surface;)V
 
     .line 276
-    const-string p1, "thumbnail"
+    const-string/jumbo p1, "thumbnail"
 
     iget-object p4, p0, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mThumbnailSurfaceInfo:Lcom/transsion/camera/app/common/mode/SurfaceInfo;
 
@@ -2175,7 +2175,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_3a
+    if-eqz p1, :cond_3b
 
     .line 277
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraOutputSurface;->mThumbnailSurfaceInfo:Lcom/transsion/camera/app/common/mode/SurfaceInfo;
@@ -2214,28 +2214,28 @@
     move-result-object p2
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-    :try_end_37
-    .catchall {:try_start_1 .. :try_end_37} :catchall_38
+    :try_end_38
+    .catchall {:try_start_1 .. :try_end_38} :catchall_39
 
-    goto :goto_3a
+    goto :goto_3b
 
-    :catchall_38
+    :catchall_39
     move-exception p1
 
-    goto :goto_3c
+    goto :goto_3d
 
     .line 282
-    :cond_3a
-    :goto_3a
+    :cond_3b
+    :goto_3b
     monitor-exit p0
 
     return-void
 
-    :goto_3c
-    :try_start_3c
+    :goto_3d
+    :try_start_3d
     monitor-exit p0
-    :try_end_3d
-    .catchall {:try_start_3c .. :try_end_3d} :catchall_38
+    :try_end_3e
+    .catchall {:try_start_3d .. :try_end_3e} :catchall_39
 
     throw p1
 .end method

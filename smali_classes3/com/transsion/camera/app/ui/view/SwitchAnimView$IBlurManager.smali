@@ -20,7 +20,7 @@
 
     const/4 v0, 0x0
 
-    .line 719
+    .line 725
     invoke-interface {p0, p1, p2, v0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;->blur(Landroid/graphics/Bitmap;IZ)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -46,7 +46,7 @@
 .method public getPreferFactor()I
     .registers 4
 
-    .line 728
+    .line 734
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -59,7 +59,7 @@
 
     move-result p0
 
-    .line 729
+    .line 735
     invoke-static {}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0

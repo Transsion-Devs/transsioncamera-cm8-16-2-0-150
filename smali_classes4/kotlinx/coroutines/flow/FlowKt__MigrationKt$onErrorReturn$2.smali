@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__MigrationKt$onErrorReturn$2"
     f = "Migration.kt"
     l = {
-        0x132
+        0x12e
     }
     m = "invokeSuspend"
 .end annotation
@@ -147,7 +147,7 @@
 
     move-result-object v0
 
-    .line 303
+    .line 299
     iget v1, p0, Lkotlinx/coroutines/flow/FlowKt__MigrationKt$onErrorReturn$2;->label:I
 
     const/4 v2, 0x1
@@ -180,7 +180,7 @@
 
     check-cast v1, Ljava/lang/Throwable;
 
-    .line 305
+    .line 301
     iget-object v3, p0, Lkotlinx/coroutines/flow/FlowKt__MigrationKt$onErrorReturn$2;->$predicate:Lkotlin/jvm/functions/Function1;
 
     invoke-interface {v3, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -195,7 +195,7 @@
 
     if-eqz v3, :cond_41
 
-    .line 306
+    .line 302
     iget-object v1, p0, Lkotlinx/coroutines/flow/FlowKt__MigrationKt$onErrorReturn$2;->$fallback:Ljava/lang/Object;
 
     const/4 v3, 0x0
@@ -212,14 +212,14 @@
 
     return-object v0
 
-    .line 307
+    .line 303
     :cond_3e
     :goto_3e
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 305
+    .line 301
     :cond_41
     throw v1
 .end method

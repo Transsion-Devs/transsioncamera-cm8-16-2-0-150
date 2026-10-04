@@ -21,6 +21,9 @@
 .method public abstract synthetic createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/interactive/CommonInteractive;)Landroid/view/View;
 .end method
 
+.method public abstract synthetic destroy()V
+.end method
+
 .method public abstract exitEditMode()Z
 .end method
 

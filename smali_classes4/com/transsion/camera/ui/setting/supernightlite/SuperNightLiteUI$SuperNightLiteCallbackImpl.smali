@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)V
     .registers 2
 
-    .line 1103
+    .line 1097
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$SuperNightLiteCallbackImpl;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onDataCallback(Ljava/lang/Object;I)V
     .registers 4
 
-    .line 1107
+    .line 1101
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$SuperNightLiteCallbackImpl;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     check-cast p1, Ljava/lang/Integer;
@@ -58,7 +58,7 @@
 
     invoke-static {p2, p1}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmShutterTime(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;I)V
 
-    .line 1108
+    .line 1102
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$SuperNightLiteCallbackImpl;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fgetmShutterTime(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)I
@@ -73,7 +73,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->-$$Nest$fputmShutterTime(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;I)V
 
-    .line 1109
+    .line 1103
     sget-object p1, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;

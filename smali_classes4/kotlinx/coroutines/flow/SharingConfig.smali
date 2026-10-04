@@ -45,19 +45,19 @@
         }
     .end annotation
 
-    .line 151
+    .line 147
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 152
+    .line 148
     iput-object p1, p0, Lkotlinx/coroutines/flow/SharingConfig;->upstream:Lkotlinx/coroutines/flow/Flow;
 
-    .line 153
+    .line 149
     iput p2, p0, Lkotlinx/coroutines/flow/SharingConfig;->extraBufferCapacity:I
 
-    .line 154
+    .line 150
     iput-object p3, p0, Lkotlinx/coroutines/flow/SharingConfig;->onBufferOverflow:Lkotlinx/coroutines/channels/BufferOverflow;
 
-    .line 155
+    .line 151
     iput-object p4, p0, Lkotlinx/coroutines/flow/SharingConfig;->context:Lkotlin/coroutines/CoroutineContext;
 
     return-void

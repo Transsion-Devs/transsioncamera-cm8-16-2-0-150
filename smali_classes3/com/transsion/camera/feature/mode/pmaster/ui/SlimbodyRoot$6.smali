@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;Lcom/transsion/camera/app/common/setting/ISetting;Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 4
 
-    .line 690
+    .line 695
     iput-object p3, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$6;->val$iSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/common/ui/helper/ScrollHelper$SimpleStoreStrategy;-><init>(Lcom/transsion/camera/app/common/setting/ISetting;)V
@@ -35,7 +35,7 @@
 .method protected getStoreScope()Ljava/lang/String;
     .registers 1
 
-    .line 693
+    .line 698
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$6;->val$iSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;

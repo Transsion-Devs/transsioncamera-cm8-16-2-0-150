@@ -10,9 +10,6 @@
 .method public abstract hideWideCamera()V
 .end method
 
-.method public abstract onModePanelDistanceChanged(FZ)V
-.end method
-
 .method public abstract showWideCamera()V
 .end method
 

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;)V
     .registers 2
 
-    .line 1670
+    .line 1668
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$3;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationEnd()V
     .registers 2
 
-    .line 1687
+    .line 1685
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$3;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 1688
+    .line 1686
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$3;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;
@@ -63,7 +63,7 @@
 .method public onAnimationStart()V
     .registers 2
 
-    .line 1673
+    .line 1671
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$3;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 1674
+    .line 1672
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$3;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;
@@ -88,7 +88,7 @@
 .method public onAnimationUpdate(F)V
     .registers 3
 
-    .line 1680
+    .line 1678
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$3;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;
@@ -97,7 +97,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 1681
+    .line 1679
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$3;->this$0:Lcom/transsion/camera/app/ui/manager/TopBarUIManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->-$$Nest$fgetmLottieAnimationListener(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;)Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;

@@ -27,14 +27,14 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/level/LevelUI;)V
     .registers 4
 
-    .line 129
+    .line 133
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;->this$0:Lcom/transsion/camera/ui/setting/level/LevelUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v0, 0x0
 
-    .line 130
+    .line 134
     iput-wide v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;->lastUpdate:J
 
     return-void
@@ -51,12 +51,12 @@
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
     .registers 8
 
-    .line 135
+    .line 139
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 136
+    .line 140
     iget-wide v2, p0, Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;->lastUpdate:J
 
     sub-long v2, v0, v2
@@ -67,13 +67,13 @@
 
     if-lez v2, :cond_2b
 
-    .line 137
+    .line 141
     iput-wide v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;->lastUpdate:J
 
-    .line 139
+    .line 143
     iget-object p1, p1, Landroid/hardware/SensorEvent;->values:[F
 
-    .line 140
+    .line 144
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;->this$0:Lcom/transsion/camera/ui/setting/level/LevelUI;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->-$$Nest$fgetmLevelView(Lcom/transsion/camera/ui/setting/level/LevelUI;)Lcom/transsion/camera/ui/setting/level/Gradienter;
@@ -90,7 +90,7 @@
 
     if-eqz v0, :cond_2b
 
-    .line 141
+    .line 145
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;->this$0:Lcom/transsion/camera/ui/setting/level/LevelUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->-$$Nest$fgetmLevelView(Lcom/transsion/camera/ui/setting/level/LevelUI;)Lcom/transsion/camera/ui/setting/level/Gradienter;

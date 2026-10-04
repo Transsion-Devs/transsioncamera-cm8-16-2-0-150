@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
     .registers 4
 
-    .line 673
+    .line 671
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStoppingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
-    .line 674
+    .line 672
     const-string v0, "StoppingCaptureState"
 
     const/4 v1, 0x0
@@ -40,7 +40,7 @@
 .method protected captureFail()V
     .registers 4
 
-    .line 679
+    .line 677
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -67,7 +67,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 680
+    .line 678
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->captureFinished()V
 
     return-void
@@ -76,7 +76,7 @@
 .method protected startSaving()V
     .registers 1
 
-    .line 685
+    .line 683
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureStoppingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCaptureSavingState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;

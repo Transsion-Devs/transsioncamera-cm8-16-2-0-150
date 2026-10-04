@@ -713,7 +713,7 @@
 
     if-eqz p1, :cond_2f
 
-    .line 1600
+    .line 1598
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -722,7 +722,7 @@
 
     goto :goto_2f
 
-    .line 1604
+    .line 1602
     :cond_a
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -743,7 +743,7 @@
 
     if-eqz v0, :cond_e
 
-    .line 1605
+    .line 1603
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -866,7 +866,7 @@
 .method private getCurrentModeSettingUISpec()Lcom/transsion/camera/app/common/ModeSettingUISpec;
     .registers 1
 
-    .line 1443
+    .line 1441
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-nez p0, :cond_6
@@ -875,7 +875,7 @@
 
     return-object p0
 
-    .line 1444
+    .line 1442
     :cond_6
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUI;->getCurrentModeSettingUISpec()Lcom/transsion/camera/app/common/ModeSettingUISpec;
 
@@ -891,7 +891,7 @@
 
     return-void
 
-    .line 1625
+    .line 1623
     :cond_3
     const-string v0, "key_settings_entry"
 
@@ -907,14 +907,14 @@
 
     if-eqz v0, :cond_18
 
-    .line 1626
+    .line 1624
     new-instance v0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$SettingFragmentListenerImpl;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$SettingFragmentListenerImpl;-><init>(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;Lcom/transsion/camera/app/ui/manager/TopBarUIManager-IA;)V
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1629
+    .line 1627
     :cond_18
     const-string/jumbo v0, "wide_camera"
 
@@ -928,14 +928,14 @@
 
     if-eqz v0, :cond_2d
 
-    .line 1630
+    .line 1628
     new-instance v0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$WideCameraListenerImpl;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$WideCameraListenerImpl;-><init>(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;Lcom/transsion/camera/app/ui/manager/TopBarUIManager-IA;)V
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1633
+    .line 1631
     :cond_2d
     const-string v0, "key_tele_camera"
 
@@ -949,14 +949,14 @@
 
     if-eqz v0, :cond_41
 
-    .line 1634
+    .line 1632
     new-instance v0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$TeleCameraListenerImpl;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$TeleCameraListenerImpl;-><init>(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;Lcom/transsion/camera/app/ui/manager/TopBarUIManager-IA;)V
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1637
+    .line 1635
     :cond_41
     const-string v0, "key_bw_portrait"
 
@@ -970,14 +970,14 @@
 
     if-eqz v0, :cond_55
 
-    .line 1638
+    .line 1636
     new-instance v0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$BlurCameraListenerImpl;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$BlurCameraListenerImpl;-><init>(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;Lcom/transsion/camera/app/ui/manager/TopBarUIManager-IA;)V
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1641
+    .line 1639
     :cond_55
     const-string v0, "key_dual_cam_bw"
 
@@ -991,14 +991,14 @@
 
     if-eqz v0, :cond_69
 
-    .line 1642
+    .line 1640
     new-instance v0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$DualCamBWCameraListenerImpl;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$DualCamBWCameraListenerImpl;-><init>(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;Lcom/transsion/camera/app/ui/manager/TopBarUIManager-IA;)V
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1645
+    .line 1643
     :cond_69
     const-string v0, "key_periscope_camera"
 
@@ -1012,59 +1012,59 @@
 
     if-eqz v0, :cond_7d
 
-    .line 1646
+    .line 1644
     new-instance v0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$PeriscopeCameraListenerImpl;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$PeriscopeCameraListenerImpl;-><init>(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;Lcom/transsion/camera/app/ui/manager/TopBarUIManager-IA;)V
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1649
+    .line 1647
     :cond_7d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_84
 
-    .line 1650
+    .line 1648
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
-    .line 1653
+    .line 1651
     :cond_84
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_8b
 
-    .line 1654
+    .line 1652
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setHintControl(Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;)V
 
-    .line 1657
+    .line 1655
     :cond_8b
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingOptionControl:Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;
 
     if-eqz v0, :cond_92
 
-    .line 1658
+    .line 1656
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setSettingOptionControl(Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;)V
 
-    .line 1661
+    .line 1659
     :cond_92
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopOptionSettingControl:Lcom/transsion/camera/app/common/IAppUIControl$IPopupOptionControl;
 
     if-eqz v0, :cond_99
 
-    .line 1662
+    .line 1660
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setPopOptionSettingControl(Lcom/transsion/camera/app/common/IAppUIControl$IPopupOptionControl;)V
 
-    .line 1665
+    .line 1663
     :cond_99
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz v0, :cond_a0
 
-    .line 1666
+    .line 1664
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 
-    .line 1669
+    .line 1667
     :cond_a0
     new-instance v0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$$ExternalSyntheticLambda1;
 
@@ -1072,17 +1072,12 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setItemSelectHook(Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ItemSelectHook;)V
 
-    .line 1670
+    .line 1668
     new-instance v0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$3;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$3;-><init>(Lcom/transsion/camera/app/ui/manager/TopBarUIManager;)V
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setLottieAnimationListener(Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ILottieAnimationListener;)V
-
-    .line 1692
-    iget-object p0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
-
-    invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 
     return-void
 .end method
@@ -1090,14 +1085,14 @@
 .method private isModeIntentVideo()Z
     .registers 2
 
-    .line 1749
+    .line 1746
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->getCurrentModeSettingUISpec()Lcom/transsion/camera/app/common/ModeSettingUISpec;
 
     move-result-object p0
 
     if-eqz p0, :cond_11
 
-    .line 1751
+    .line 1748
     const-string v0, "com.transsion.camera.feature.mode.video.IntentVideoModeEntry"
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ModeSettingUISpec;->getName()Ljava/lang/String;
@@ -1204,12 +1199,12 @@
 .method private onItemSelected()V
     .registers 1
 
-    .line 1615
+    .line 1613
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mItemSelectHook:Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ItemSelectHook;
 
     if-eqz p0, :cond_7
 
-    .line 1616
+    .line 1614
     invoke-interface {p0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI$ItemSelectHook;->onItemSelected()V
 
     :cond_7
@@ -1219,20 +1214,20 @@
 .method private playAnimation(I)V
     .registers 5
 
-    .line 1696
+    .line 1693
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
     if-eqz p1, :cond_5
 
     goto :goto_52
 
-    .line 1699
+    .line 1696
     :cond_5
     iget-object p1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
 
     if-eqz p1, :cond_52
 
-    .line 1700
+    .line 1697
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarIn:Landroid/animation/ObjectAnimator;
 
     if-eqz p1, :cond_18
@@ -1243,12 +1238,12 @@
 
     if-eqz p1, :cond_18
 
-    .line 1701
+    .line 1698
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarIn:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p1}, Landroid/animation/Animator;->cancel()V
 
-    .line 1703
+    .line 1700
     :cond_18
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarOut:Landroid/animation/ObjectAnimator;
 
@@ -1260,12 +1255,12 @@
 
     if-eqz p1, :cond_27
 
-    .line 1704
+    .line 1701
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p1}, Landroid/animation/Animator;->cancel()V
 
-    .line 1707
+    .line 1704
     :cond_27
     iget-object p1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
 
@@ -1293,12 +1288,12 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarOut:Landroid/animation/ObjectAnimator;
 
-    .line 1708
+    .line 1705
     sget-object v0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->ANIMATOR_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1709
+    .line 1706
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarOut:Landroid/animation/ObjectAnimator;
 
     new-instance v0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager$4;
@@ -1307,7 +1302,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1720
+    .line 1717
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
@@ -1659,7 +1654,7 @@
 .method private setItemClickDisableByKey(ZLjava/lang/String;)V
     .registers 6
 
-    .line 1384
+    .line 1382
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSettingUIList:Ljava/util/List;
 
     if-eqz v0, :cond_29
@@ -1670,7 +1665,7 @@
 
     if-lez v0, :cond_29
 
-    .line 1385
+    .line 1383
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSettingUIList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1690,7 +1685,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1386
+    .line 1384
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v2
@@ -1701,10 +1696,10 @@
 
     if-eqz v2, :cond_10
 
-    .line 1387
+    .line 1385
     invoke-interface {v1, p1}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setItemClickDisable(Z)V
 
-    .line 1392
+    .line 1390
     :cond_29
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mLeftSettingUIList:Ljava/util/List;
 
@@ -1716,7 +1711,7 @@
 
     if-lez v0, :cond_52
 
-    .line 1393
+    .line 1391
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mLeftSettingUIList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1736,7 +1731,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1394
+    .line 1392
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v2
@@ -1747,10 +1742,10 @@
 
     if-eqz v2, :cond_39
 
-    .line 1395
+    .line 1393
     invoke-interface {v1, p1}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setItemClickDisable(Z)V
 
-    .line 1400
+    .line 1398
     :cond_52
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRightSettingUIList:Ljava/util/List;
 
@@ -1762,7 +1757,7 @@
 
     if-lez v0, :cond_7b
 
-    .line 1401
+    .line 1399
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRightSettingUIList:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1782,7 +1777,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1402
+    .line 1400
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -1793,7 +1788,7 @@
 
     if-eqz v1, :cond_62
 
-    .line 1403
+    .line 1401
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setItemClickDisable(Z)V
 
     :cond_7b
@@ -1803,14 +1798,14 @@
 .method private shouldShowTopBarContainer()V
     .registers 3
 
-    .line 1429
+    .line 1427
     iget v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_a
 
-    .line 1430
+    .line 1428
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->showTopBarContainer()V
@@ -1824,7 +1819,7 @@
 
     const/4 v0, 0x0
 
-    .line 1435
+    .line 1433
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
     return-void
@@ -1835,7 +1830,7 @@
 
     const/4 v0, 0x0
 
-    .line 1459
+    .line 1457
     invoke-direct {p0, v0, p1, p2}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(ZIZ)V
 
     return-void
@@ -1846,7 +1841,7 @@
 
     const/4 v0, 0x0
 
-    .line 1439
+    .line 1437
     invoke-direct {p0, p1, p2, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(ZIZ)V
 
     return-void
@@ -1855,7 +1850,7 @@
 .method private showOrHideTopBar(ZIZ)V
     .registers 7
 
-    .line 1463
+    .line 1461
     sget-object v0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1888,7 +1883,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1465
+    .line 1463
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportFoldUI(Landroid/content/Context;)Z
@@ -1905,7 +1900,7 @@
 
     if-nez v0, :cond_98
 
-    .line 1466
+    .line 1464
     iget v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
     const/4 v1, 0x1
@@ -1920,7 +1915,7 @@
 
     goto :goto_54
 
-    .line 1479
+    .line 1477
     :cond_44
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
@@ -1934,7 +1929,7 @@
 
     if-nez p1, :cond_98
 
-    .line 1480
+    .line 1478
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->show()V
 
     return-void
@@ -1943,7 +1938,7 @@
     :goto_54
     if-nez p2, :cond_76
 
-    .line 1467
+    .line 1465
     iget-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
     if-nez p2, :cond_76
@@ -1972,18 +1967,18 @@
 
     if-nez p2, :cond_76
 
-    .line 1469
+    .line 1467
     invoke-virtual {p0, p3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->show(Z)V
 
     return-void
 
-    .line 1471
+    .line 1469
     :cond_76
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->getCurrentModeSettingUISpec()Lcom/transsion/camera/app/common/ModeSettingUISpec;
 
     move-result-object p2
 
-    .line 1472
+    .line 1470
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
     if-eqz v0, :cond_94
@@ -2000,7 +1995,7 @@
 
     if-eqz p2, :cond_94
 
-    .line 1473
+    .line 1471
     const-string p2, "key_flash_facade"
 
     invoke-static {p2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
@@ -2014,7 +2009,7 @@
     :cond_94
     const/4 p1, 0x0
 
-    .line 1475
+    .line 1473
     invoke-virtual {p0, p3, p1}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->hide(ZZ)V
 
     :cond_98
@@ -2024,19 +2019,19 @@
 .method private stopPressedAnimation(I)V
     .registers 4
 
-    .line 1725
+    .line 1722
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->needStopPressedAnimation(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_22
 
-    .line 1726
+    .line 1723
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSettingUIList:Ljava/util/List;
 
     if-eqz v0, :cond_22
 
-    .line 1727
+    .line 1724
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2054,7 +2049,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1728
+    .line 1725
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getEntryView()Landroid/view/View;
 
     move-result-object v1
@@ -2063,7 +2058,7 @@
 
     goto :goto_e
 
-    .line 1732
+    .line 1729
     :cond_22
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->needStopPressedAnimation(I)Z
 
@@ -2071,12 +2066,12 @@
 
     if-eqz v0, :cond_44
 
-    .line 1733
+    .line 1730
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mLeftSettingUIList:Ljava/util/List;
 
     if-eqz v0, :cond_44
 
-    .line 1734
+    .line 1731
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2094,7 +2089,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1735
+    .line 1732
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getEntryView()Landroid/view/View;
 
     move-result-object v1
@@ -2103,7 +2098,7 @@
 
     goto :goto_30
 
-    .line 1739
+    .line 1736
     :cond_44
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraOperateAction;->needStopPressedAnimation(I)Z
 
@@ -2111,12 +2106,12 @@
 
     if-eqz p1, :cond_66
 
-    .line 1740
+    .line 1737
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRightSettingUIList:Ljava/util/List;
 
     if-eqz p0, :cond_66
 
-    .line 1741
+    .line 1738
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -2134,7 +2129,7 @@
 
     check-cast p1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1742
+    .line 1739
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getEntryView()Landroid/view/View;
 
     move-result-object p1
@@ -2150,7 +2145,7 @@
 .method private timelapseLrShouldShowOrHideTopBar()Z
     .registers 4
 
-    .line 1448
+    .line 1446
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->getCurrentModeSettingUISpec()Lcom/transsion/camera/app/common/ModeSettingUISpec;
 
     move-result-object v0
@@ -2159,7 +2154,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 1450
+    .line 1448
     const-string v2, "com.transsion.camera.feature.mode.timelapsemode.TimelapsePhotoModeEntry"
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ModeSettingUISpec;->getName()Ljava/lang/String;
@@ -2194,7 +2189,7 @@
 .method private unInitTopBarSettingUIs()V
     .registers 3
 
-    .line 1487
+    .line 1485
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSettingUIList:Ljava/util/List;
 
     if-eqz v0, :cond_25
@@ -2205,7 +2200,7 @@
 
     if-lez v0, :cond_25
 
-    .line 1488
+    .line 1486
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSettingUIList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2225,18 +2220,18 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1489
+    .line 1487
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->unInit()V
 
     goto :goto_10
 
-    .line 1491
+    .line 1489
     :cond_20
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSettingUIList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 1493
+    .line 1491
     :cond_25
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mLeftSettingUIList:Ljava/util/List;
 
@@ -2248,7 +2243,7 @@
 
     if-lez v0, :cond_4a
 
-    .line 1494
+    .line 1492
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mLeftSettingUIList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2268,18 +2263,18 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1495
+    .line 1493
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->unInit()V
 
     goto :goto_35
 
-    .line 1497
+    .line 1495
     :cond_45
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mLeftSettingUIList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 1499
+    .line 1497
     :cond_4a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRightSettingUIList:Ljava/util/List;
 
@@ -2291,7 +2286,7 @@
 
     if-lez v0, :cond_6f
 
-    .line 1500
+    .line 1498
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRightSettingUIList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2311,12 +2306,12 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1501
+    .line 1499
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->unInit()V
 
     goto :goto_5a
 
-    .line 1503
+    .line 1501
     :cond_6a
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRightSettingUIList:Ljava/util/List;
 
@@ -2329,7 +2324,7 @@
 .method private updateCurrentModeSupportNewVideoSize()V
     .registers 4
 
-    .line 1411
+    .line 1409
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSettingUIList:Ljava/util/List;
 
     if-eqz v0, :cond_24
@@ -2340,7 +2335,7 @@
 
     if-lez v0, :cond_24
 
-    .line 1412
+    .line 1410
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSettingUIList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2360,7 +2355,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1413
+    .line 1411
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->currentModeSupportVideoSizePoint()Z
 
     move-result v2
@@ -2369,7 +2364,7 @@
 
     goto :goto_10
 
-    .line 1416
+    .line 1414
     :cond_24
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mLeftSettingUIList:Ljava/util/List;
 
@@ -2381,7 +2376,7 @@
 
     if-lez v0, :cond_48
 
-    .line 1417
+    .line 1415
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mLeftSettingUIList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2401,7 +2396,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1418
+    .line 1416
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->currentModeSupportVideoSizePoint()Z
 
     move-result v2
@@ -2410,7 +2405,7 @@
 
     goto :goto_34
 
-    .line 1421
+    .line 1419
     :cond_48
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRightSettingUIList:Ljava/util/List;
 
@@ -2422,7 +2417,7 @@
 
     if-lez v0, :cond_6c
 
-    .line 1422
+    .line 1420
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRightSettingUIList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2442,7 +2437,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 1423
+    .line 1421
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->currentModeSupportVideoSizePoint()Z
 
     move-result v2
@@ -2458,24 +2453,24 @@
 .method private updateTopBarLayoutParams(II)V
     .registers 8
 
-    .line 1508
+    .line 1506
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->onOrientationChanged(I)V
 
-    .line 1509
+    .line 1507
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 1510
+    .line 1508
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
 
     if-nez v1, :cond_17
 
-    .line 1511
+    .line 1509
     sget-object p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "ParentLayout is Null !!!"
@@ -2484,7 +2479,7 @@
 
     return-void
 
-    .line 1514
+    .line 1512
     :cond_17
     sget-object v1, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2504,7 +2499,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1515
+    .line 1513
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2515,7 +2510,7 @@
 
     const/4 v3, 0x0
 
-    .line 1516
+    .line 1514
     invoke-virtual {v2, v3, v3, v3, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     const/4 v3, 0x1
@@ -2536,12 +2531,12 @@
 
     if-eq p1, p2, :cond_74
 
-    .line 1546
+    .line 1544
     iget-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingSupport:Z
 
     if-eqz p2, :cond_56
 
-    .line 1547
+    .line 1545
     sget p2, Lcom/transsion/camera/R$dimen;->pop_setting_top_bar_common_expand_height_margin:I
 
     invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2552,7 +2547,7 @@
 
     goto :goto_5e
 
-    .line 1549
+    .line 1547
     :cond_56
     sget p2, Lcom/transsion/camera/R$dimen;->top_bar_common_expand_height_margin:I
 
@@ -2562,7 +2557,7 @@
 
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1551
+    .line 1549
     :goto_5e
     sget p2, Lcom/transsion/camera/R$dimen;->top_bar_common_expand_left_margin:I
 
@@ -2574,10 +2569,10 @@
 
     const/4 p2, 0x3
 
-    .line 1552
+    .line 1550
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1553
+    .line 1551
     sget p2, Lcom/transsion/camera/R$dimen;->top_bar_common_height:I
 
     invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2586,18 +2581,18 @@
 
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1554
+    .line 1552
     iput v4, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     goto :goto_e6
 
-    .line 1534
+    .line 1532
     :cond_74
     iget-boolean p2, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingSupport:Z
 
     if-eqz p2, :cond_81
 
-    .line 1535
+    .line 1533
     sget p2, Lcom/transsion/camera/R$dimen;->pop_setting_top_bar_common_expand_width_margin_x:I
 
     invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2608,7 +2603,7 @@
 
     goto :goto_89
 
-    .line 1537
+    .line 1535
     :cond_81
     sget p2, Lcom/transsion/camera/R$dimen;->top_bar_common_expand_width_margin_x:I
 
@@ -2618,7 +2613,7 @@
 
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1539
+    .line 1537
     :goto_89
     sget p2, Lcom/transsion/camera/R$dimen;->top_bar_common_expand_left_margin:I
 
@@ -2630,13 +2625,13 @@
 
     const/16 p2, 0x30
 
-    .line 1540
+    .line 1538
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1541
+    .line 1539
     iput v4, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1542
+    .line 1540
     sget p2, Lcom/transsion/camera/R$dimen;->top_bar_common_height:I
 
     invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2647,7 +2642,7 @@
 
     goto :goto_e6
 
-    .line 1527
+    .line 1525
     :cond_a0
     sget p2, Lcom/transsion/camera/R$dimen;->top_bar_common_expand_left_margin:I
 
@@ -2657,7 +2652,7 @@
 
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1528
+    .line 1526
     sget p2, Lcom/transsion/camera/R$dimen;->top_bar_common_expand_height_margin_x:I
 
     invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2668,10 +2663,10 @@
 
     const/4 p2, 0x5
 
-    .line 1529
+    .line 1527
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1530
+    .line 1528
     sget p2, Lcom/transsion/camera/R$dimen;->top_bar_common_height:I
 
     invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2680,12 +2675,12 @@
 
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1531
+    .line 1529
     iput v4, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     goto :goto_e6
 
-    .line 1520
+    .line 1518
     :cond_be
     sget p2, Lcom/transsion/camera/R$dimen;->pop_setting_top_bar_common_expand_width_margin:I
 
@@ -2695,7 +2690,7 @@
 
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1521
+    .line 1519
     sget p2, Lcom/transsion/camera/R$dimen;->top_bar_common_expand_left_margin:I
 
     invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2706,13 +2701,13 @@
 
     const/16 p2, 0x50
 
-    .line 1522
+    .line 1520
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1523
+    .line 1521
     iput v4, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1524
+    .line 1522
     sget p2, Lcom/transsion/camera/R$dimen;->top_bar_common_height:I
 
     invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -2723,27 +2718,27 @@
 
     goto :goto_e6
 
-    .line 1558
+    .line 1556
     :cond_dd
     iput v4, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     const/4 p2, -0x1
 
-    .line 1559
+    .line 1557
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
     const/16 p2, 0x31
 
-    .line 1560
+    .line 1558
     iput p2, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1562
+    .line 1560
     :goto_e6
     iget-object p2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mParentLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {p2, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1563
+    .line 1561
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2784,7 +2779,7 @@
 
     invoke-static {v1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1564
+    .line 1562
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2831,14 +2826,14 @@
 
     if-eqz p1, :cond_28
 
-    .line 1568
+    .line 1566
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-lez v0, :cond_28
 
-    .line 1569
+    .line 1567
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2859,7 +2854,7 @@
 
     if-eqz v1, :cond_c
 
-    .line 1570
+    .line 1568
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v2
@@ -2870,7 +2865,7 @@
 
     if-nez v2, :cond_c
 
-    .line 1572
+    .line 1570
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->unInit()V
 
     goto :goto_c
@@ -2878,14 +2873,14 @@
     :cond_28
     if-eqz p2, :cond_95
 
-    .line 1576
+    .line 1574
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-lez v0, :cond_95
 
-    .line 1577
+    .line 1575
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -2906,7 +2901,7 @@
 
     if-eqz v0, :cond_4f
 
-    .line 1578
+    .line 1576
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -2917,10 +2912,10 @@
 
     if-nez v1, :cond_4f
 
-    .line 1579
+    .line 1577
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->initTopBarItemUI(Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;)V
 
-    .line 1581
+    .line 1579
     :cond_4f
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -2928,7 +2923,7 @@
 
     if-eqz v0, :cond_34
 
-    .line 1583
+    .line 1581
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -2955,7 +2950,7 @@
 
     goto :goto_7d
 
-    .line 1586
+    .line 1584
     :cond_6e
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -2973,7 +2968,7 @@
 
     goto :goto_89
 
-    .line 1584
+    .line 1582
     :cond_7d
     :goto_7d
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -2988,11 +2983,11 @@
 
     move-result-object v1
 
-    .line 1588
+    .line 1586
     :goto_89
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    .line 1589
+    .line 1587
     iget v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mBatteryStatus:I
 
     iget v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mTemperatureStatus:I
@@ -3012,7 +3007,7 @@
 .method protected createUI(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/ui/PopupOptionManager;Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;)Lcom/transsion/camera/app/ui/AbstractTopBarUI;
     .registers 5
 
-    .line 1759
+    .line 1756
     new-instance p0, Lcom/transsion/camera/app/ui/TopBarUI;
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/ui/TopBarUI;-><init>(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/ui/PopupOptionManager;Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;)V
@@ -3110,7 +3105,7 @@
 .method public getAppUI()Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 1772
+    .line 1769
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -3253,7 +3248,7 @@
 .method protected isInVideoMode(Landroid/graphics/Rect;)Z
     .registers 2
 
-    .line 1767
+    .line 1764
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPreviewRect:Landroid/graphics/Rect;
 
     iget p0, p0, Landroid/graphics/Rect;->bottom:I
@@ -3348,48 +3343,48 @@
 
     const/4 v4, 0x0
 
-    if-eqz p1, :cond_676
+    if-eqz p1, :cond_66c
 
-    if-eq p1, v3, :cond_663
+    if-eq p1, v3, :cond_659
 
-    if-eq p1, v2, :cond_655
+    if-eq p1, v2, :cond_64b
 
     const/4 v5, 0x3
 
     .line 778
     const-string v6, "key_picture_size"
 
-    if-eq p1, v5, :cond_628
+    if-eq p1, v5, :cond_61e
 
     const/4 v5, 0x4
 
-    if-eq p1, v5, :cond_60f
+    if-eq p1, v5, :cond_605
 
-    if-eq p1, v1, :cond_5fa
+    if-eq p1, v1, :cond_5f0
 
     const/16 v7, 0xc
 
-    if-eq p1, v7, :cond_5e4
+    if-eq p1, v7, :cond_5da
 
     const/16 v7, 0x4d
 
-    if-eq p1, v7, :cond_5da
+    if-eq p1, v7, :cond_5d0
 
     const/16 v7, 0x4e
 
-    if-eq p1, v7, :cond_5e8
+    if-eq p1, v7, :cond_5de
 
     const/16 v7, 0x5a
 
-    if-eq p1, v7, :cond_5d1
+    if-eq p1, v7, :cond_5c7
 
     const/16 v7, 0x5b
 
-    if-eq p1, v7, :cond_5cd
+    if-eq p1, v7, :cond_5c3
 
     const/16 v7, 0x5d
 
-    if-eq p1, v7, :cond_5b5
+    if-eq p1, v7, :cond_5ab
 
     const/16 v7, 0x5e
 
@@ -3397,25 +3392,25 @@
 
     const/4 v9, -0x1
 
-    if-eq p1, v7, :cond_536
+    if-eq p1, v7, :cond_531
 
     const/16 v10, 0x8
 
     const-string v11, "key_flash_facade"
 
-    sparse-switch p1, :sswitch_data_720
+    sparse-switch p1, :sswitch_data_716
+
+    packed-switch p1, :pswitch_data_818
 
     packed-switch p1, :pswitch_data_822
 
     packed-switch p1, :pswitch_data_82c
 
-    packed-switch p1, :pswitch_data_836
+    packed-switch p1, :pswitch_data_838
 
-    packed-switch p1, :pswitch_data_842
+    goto/16 :goto_6a6
 
-    goto/16 :goto_6b0
-
-    .line 1193
+    .line 1191
     :pswitch_71
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
@@ -3423,12 +3418,12 @@
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1194
+    .line 1192
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1189
+    .line 1187
     :pswitch_7c
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
@@ -3436,658 +3431,653 @@
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1190
+    .line 1188
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 990
+    .line 988
     :pswitch_87
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_320
+    if-eqz v0, :cond_31b
 
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-nez v5, :cond_320
+    if-nez v5, :cond_31b
 
-    .line 991
+    .line 989
     invoke-virtual {v0, v4, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playHidePopSettingAnimation(ZI)V
 
-    goto/16 :goto_320
+    goto/16 :goto_31b
 
-    .line 941
+    .line 939
     :pswitch_94
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsFilterUIShow:Z
 
-    .line 942
+    .line 940
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     or-int/2addr v0, v3
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 943
+    .line 941
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
-    .line 944
+    .line 942
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->shouldShowTopBarContainer()V
 
-    .line 945
+    .line 943
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 946
+    .line 944
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isFilterUIShow(Z)V
 
-    .line 947
+    .line 945
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mInVideoMode:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 948
+    .line 946
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->cancelPopSettingShowViewAnimation()V
 
-    .line 949
+    .line 947
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playShowPopSettingAnimation(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 862
+    .line 861
     :pswitch_c2
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    .line 863
+    .line 862
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingVisibleEnable(Z)V
 
-    .line 864
+    .line 863
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    .line 865
+    .line 864
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updateVideoRecordingState(Z)V
 
-    .line 866
+    .line 865
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mVideoFlashlightSupportWhenRecording:Z
 
     if-eqz v0, :cond_da
 
-    .line 867
+    .line 866
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->restoreNormalShow()V
 
-    .line 869
+    .line 868
     :cond_da
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    .line 870
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
-
-    invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewAnimation(Z)V
-
-    .line 871
+    .line 869
     iput v9, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRecordingOrientation:I
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1251
-    :pswitch_e8
+    .line 1249
+    :pswitch_e3
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    .line 1252
+    .line 1250
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 1253
+    .line 1251
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setNeedHidePopSettingView(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1246
-    :pswitch_f3
+    .line 1244
+    :pswitch_ee
     iput v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1247
+    .line 1245
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isImageStyleShow(Z)V
 
-    .line 1248
+    .line 1246
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1118
-    :pswitch_fe
+    .line 1116
+    :pswitch_f9
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    .line 1119
+    .line 1117
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updateVideoRecordingState(Z)V
 
-    .line 1120
+    .line 1118
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    .line 1121
+    .line 1119
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsStateProcessing:Z
 
-    .line 1122
+    .line 1120
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSelfTimerOn:Z
 
-    .line 1123
+    .line 1121
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mProExposureCaptureOn:Z
 
-    .line 1124
+    .line 1122
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsZoomScrolling:Z
 
-    .line 1125
+    .line 1123
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsFilterUIShow:Z
 
-    .line 1126
+    .line 1124
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsCelebrityUIShow:Z
 
-    .line 1127
+    .line 1125
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsCameraSwitching:Z
 
-    .line 1128
+    .line 1126
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopupWithoutAnimation()Z
 
-    .line 1129
+    .line 1127
     iput v9, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRecordingOrientation:I
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1161
-    :pswitch_11f
+    .line 1159
+    :pswitch_11a
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsStateProcessing:Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 934
-    :sswitch_123
+    .line 932
+    :sswitch_11e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingVisibleEnable(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 931
-    :sswitch_12a
+    .line 929
+    :sswitch_125
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1104
-    :sswitch_131
+    .line 1102
+    :sswitch_12c
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     or-int/lit16 v0, v0, 0x100
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1105
+    .line 1103
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 964
-    :sswitch_13c
+    .line 962
+    :sswitch_137
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsCelebrityUIShow:Z
 
-    .line 965
+    .line 963
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isCelebritySceneShow(Z)V
 
-    .line 966
+    .line 964
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-nez v5, :cond_6b0
+    if-nez v5, :cond_6a6
 
-    .line 967
+    .line 965
     invoke-virtual {v0, v4, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playHidePopSettingAnimation(ZI)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 954
-    :sswitch_150
+    .line 952
+    :sswitch_14b
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsCelebrityUIShow:Z
 
-    .line 955
+    .line 953
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 956
+    .line 954
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isCelebritySceneShow(Z)V
 
-    .line 957
+    .line 955
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 958
+    .line 956
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->cancelPopSettingShowViewAnimation()V
 
-    .line 959
+    .line 957
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playShowPopSettingAnimation()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1318
-    :sswitch_16f
+    .line 1316
+    :sswitch_16a
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsFilterUIShow:Z
 
-    if-nez v0, :cond_179
+    if-nez v0, :cond_174
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsCelebrityUIShow:Z
 
-    if-nez v0, :cond_179
+    if-nez v0, :cond_174
 
     move v0, v3
 
-    goto :goto_17a
+    goto :goto_175
 
-    :cond_179
+    :cond_174
     move v0, v4
 
-    :goto_17a
+    :goto_175
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mNeedPlayShowViewAnimation:Z
 
-    .line 1319
+    .line 1317
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopupWithoutAnimation()Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1303
-    :sswitch_181
+    .line 1301
+    :sswitch_17c
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopup()Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1096
-    :sswitch_186
+    .line 1094
+    :sswitch_181
     iput v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1097
+    .line 1095
     invoke-direct {p0, v4}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1100
-    :sswitch_18d
+    .line 1098
+    :sswitch_188
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     or-int/lit16 v0, v0, 0x80
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1101
+    .line 1099
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1140
-    :sswitch_198
+    .line 1138
+    :sswitch_193
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
 
     iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mAIGCV30:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
-    .line 1141
+    .line 1139
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsStateProcessing:Z
 
-    .line 1142
+    .line 1140
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    .line 1143
+    .line 1141
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mDisableTopbar:Z
 
-    .line 1144
+    .line 1142
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
-    .line 1145
+    .line 1143
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->showTopBarContainer()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1088
-    :sswitch_1b4
+    .line 1086
+    :sswitch_1af
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
 
     iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mAIGCV30:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
-    .line 1089
+    .line 1087
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playHidePopSettingAnimation(Z)V
 
-    .line 1090
+    .line 1088
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    .line 1091
+    .line 1089
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopupWithoutAnimation()Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1007
-    :sswitch_1cb
+    .line 1005
+    :sswitch_1c6
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPMasterBottomUIShow:Z
 
-    .line 1008
+    .line 1006
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1009
+    .line 1007
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->shouldShowTopBarContainer()V
 
-    .line 1010
+    .line 1008
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
-    .line 1011
+    .line 1009
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
     iget v6, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
-    if-eq v6, v5, :cond_1e6
+    if-eq v6, v5, :cond_1e1
 
     const/4 v5, 0x5
 
-    if-ne v6, v5, :cond_6b0
+    if-ne v6, v5, :cond_6a6
 
-    .line 1013
-    :cond_1e6
+    .line 1011
+    :cond_1e1
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    .line 1014
+    .line 1012
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isPMasterBottomUIShow(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 971
-    :sswitch_1f0
+    .line 969
+    :sswitch_1eb
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPMasterBottomUIShow:Z
 
-    .line 972
+    .line 970
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_1f9
+    if-eqz v0, :cond_1f4
 
-    .line 973
+    .line 971
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isPMasterBottomUIShow(Z)V
 
-    .line 975
-    :cond_1f9
+    .line 973
+    :cond_1f4
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
-    .line 976
+    .line 974
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->shouldShowTopBarContainer()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1291
-    :sswitch_203
+    .line 1289
+    :sswitch_1fe
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1292
+    .line 1290
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->shouldShowTopBarContainer()V
 
-    .line 1293
+    .line 1291
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsImageStyleShow:Z
 
-    .line 1294
+    .line 1292
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isImageStyleShow(Z)V
 
-    .line 1295
+    .line 1293
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
-    .line 1296
+    .line 1294
     iget v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
-    if-ne v0, v3, :cond_6b0
+    if-ne v0, v3, :cond_6a6
 
-    .line 1297
+    .line 1295
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 1298
+    .line 1296
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1280
-    :sswitch_225
+    .line 1278
+    :sswitch_220
     iget v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
-    if-ne v0, v3, :cond_22c
+    if-ne v0, v3, :cond_227
 
-    .line 1281
+    .line 1279
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->hide()V
 
-    .line 1283
-    :cond_22c
+    .line 1281
+    :cond_227
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isImageStyleShow(Z)V
 
-    .line 1284
+    .line 1282
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsImageStyleShow:Z
 
-    .line 1285
+    .line 1283
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsFilterUIShow:Z
 
-    .line 1286
+    .line 1284
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 1287
+    .line 1285
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isFilterUIShow(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1333
-    :sswitch_23e
+    .line 1331
+    :sswitch_239
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 1334
+    .line 1332
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isDualDeviceItemUIShow(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1328
-    :sswitch_247
+    .line 1326
+    :sswitch_242
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 1329
+    .line 1327
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isDualDeviceItemUIShow(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1108
-    :sswitch_250
+    .line 1106
+    :sswitch_24b
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
-    .line 1109
+    .line 1107
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1224
-    :sswitch_265
+    .line 1222
+    :sswitch_260
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    .line 1225
+    .line 1223
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mNeedPlayShowViewAnimation:Z
 
-    .line 1226
+    .line 1224
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isPopSettingShow(Z)V
 
-    .line 1227
+    .line 1225
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playHidePopSettingAnimation(ZI)V
 
-    .line 1228
+    .line 1226
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 1229
+    .line 1227
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopup()Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1233
-    :sswitch_27e
+    .line 1231
+    :sswitch_279
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    .line 1234
+    .line 1232
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mNeedPlayShowViewAnimation:Z
 
-    if-eqz v0, :cond_28e
+    if-eqz v0, :cond_289
 
-    .line 1235
+    .line 1233
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->cancelPopSettingShowViewAnimation()V
 
-    .line 1236
+    .line 1234
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playShowPopSettingAnimation(I)V
 
-    .line 1238
-    :cond_28e
+    .line 1236
+    :cond_289
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isPopSettingShow(Z)V
 
-    .line 1239
+    .line 1237
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
-    if-nez v0, :cond_29e
+    if-nez v0, :cond_299
 
-    .line 1240
+    .line 1238
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopupOptionManager:Lcom/transsion/camera/app/ui/PopupOptionManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/PopupOptionManager;->dismissAllPopupOption()Z
 
-    .line 1242
-    :cond_29e
+    .line 1240
+    :cond_299
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1243
+    .line 1241
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
     .line 780
-    :sswitch_2a9
+    :sswitch_2a4
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -4117,255 +4107,255 @@
 
     move-result v0
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     .line 782
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->showTopBarContainer()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
     .line 812
-    :sswitch_2d2
+    :sswitch_2cd
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->currentModeSupportVideoSizePoint()Z
 
     move-result v0
 
-    if-eqz v0, :cond_536
+    if-eqz v0, :cond_531
 
     .line 813
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->startVideoSizePointAnimation(Z)V
 
-    goto/16 :goto_536
+    goto/16 :goto_531
 
-    .line 1312
-    :sswitch_2df
+    .line 1310
+    :sswitch_2da
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_2e6
+    if-eqz v0, :cond_2e1
 
-    .line 1313
+    .line 1311
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isPreviewDown(Z)V
 
-    .line 1315
-    :cond_2e6
+    .line 1313
+    :cond_2e1
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPreviewDown:Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1306
-    :sswitch_2ea
+    .line 1304
+    :sswitch_2e5
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_2f1
+    if-eqz v0, :cond_2ec
 
-    .line 1307
+    .line 1305
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isPreviewDown(Z)V
 
-    .line 1309
-    :cond_2f1
+    .line 1307
+    :cond_2ec
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPreviewDown:Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1049
-    :sswitch_2f5
+    .line 1047
+    :sswitch_2f0
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1050
+    .line 1048
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->shouldShowTopBarContainer()V
 
-    .line 1051
+    .line 1049
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
-    .line 1052
+    .line 1050
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
-    .line 1053
+    .line 1051
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 994
-    :cond_320
-    :goto_320
-    :sswitch_320
+    .line 992
+    :cond_31b
+    :goto_31b
+    :sswitch_31b
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 995
+    .line 993
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->shouldShowTopBarContainer()V
 
-    .line 996
+    .line 994
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsFilterUIShow:Z
 
-    .line 997
+    .line 995
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_332
+    if-eqz v0, :cond_32d
 
-    .line 998
+    .line 996
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isFilterUIShow(Z)V
 
-    .line 1000
-    :cond_332
+    .line 998
+    :cond_32d
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
-    .line 1001
+    .line 999
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
-    .line 1002
+    .line 1000
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
-    .line 1003
+    .line 1001
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1032
-    :sswitch_354
+    .line 1030
+    :sswitch_34f
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1033
+    .line 1031
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->shouldShowTopBarContainer()V
 
-    .line 1034
+    .line 1032
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
-    .line 1035
+    .line 1033
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 1036
+    .line 1034
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1040
-    :sswitch_36b
+    .line 1038
+    :sswitch_366
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1041
+    .line 1039
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->shouldShowTopBarContainer()V
 
-    .line 1042
+    .line 1040
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(I)V
 
-    .line 1043
+    .line 1041
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-eqz v5, :cond_6b0
+    if-eqz v5, :cond_6a6
 
     iget v5, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
-    if-ne v5, v3, :cond_6b0
+    if-ne v5, v3, :cond_6a6
 
-    .line 1044
+    .line 1042
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    .line 1045
+    .line 1043
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playShowPopSettingAnimation()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 985
-    :sswitch_38f
+    .line 983
+    :sswitch_38a
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     or-int/2addr v0, v8
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 986
+    .line 984
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
-    .line 987
+    .line 985
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->shouldShowTopBarContainer()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 902
-    :sswitch_39c
+    .line 900
+    :sswitch_397
     const-string v5, "shot2shot end action need enable top bar ui"
 
     invoke-static {v0, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 903
+    .line 901
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
@@ -4374,71 +4364,71 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3b0
+    if-eqz v0, :cond_3ab
 
-    .line 904
+    .line 902
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->setEnableInBGOfflineCase()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 906
-    :cond_3b0
+    .line 904
+    :cond_3ab
     invoke-virtual {p0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->setEnable(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1183
-    :sswitch_3b5
+    .line 1181
+    :sswitch_3b0
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mDisableTopbar:Z
 
-    .line 1184
+    .line 1182
     iput v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1185
+    .line 1183
     invoke-direct {p0, v4, v11}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->setItemClickDisableByKey(ZLjava/lang/String;)V
 
-    .line 1186
+    .line 1184
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->show()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1178
-    :sswitch_3c1
+    .line 1176
+    :sswitch_3bc
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mDisableTopbar:Z
 
-    .line 1179
+    .line 1177
     invoke-direct {p0, v3, v11}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->setItemClickDisableByKey(ZLjava/lang/String;)V
 
-    .line 1180
+    .line 1178
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->hide()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1113
-    :sswitch_3cb
+    .line 1111
+    :sswitch_3c6
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
-    .line 1114
+    .line 1112
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
     .line 787
-    :pswitch_3da
-    :sswitch_3da
+    :pswitch_3d5
+    :sswitch_3d5
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->currentModeSupportVideoSizePoint()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3e5
+    if-eqz v0, :cond_3e0
 
     .line 788
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
@@ -4446,9 +4436,9 @@
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->startVideoSizePointAnimation(Z)V
 
     .line 792
-    :cond_3e5
-    :pswitch_3e5
-    :sswitch_3e5
+    :cond_3e0
+    :pswitch_3e0
+    :sswitch_3e0
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v10}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setTopBarControllerVisible(I)V
@@ -4477,297 +4467,297 @@
     .line 798
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRecordingOrientation:I
 
-    if-ne v0, v9, :cond_6b0
+    if-ne v0, v9, :cond_6a6
 
     .line 799
     iget v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mOrientation:I
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRecordingOrientation:I
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1203
-    :sswitch_408
+    .line 1201
+    :sswitch_403
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     and-int/lit8 v0, v0, -0x41
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1204
+    .line 1202
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1198
-    :sswitch_413
+    .line 1196
+    :sswitch_40e
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     or-int/lit8 v0, v0, 0x40
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1199
+    .line 1197
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(I)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1023
-    :sswitch_41e
+    .line 1021
+    :sswitch_419
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1024
+    .line 1022
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->shouldShowTopBarContainer()V
 
-    .line 1025
+    .line 1023
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(I)V
 
-    .line 1026
+    .line 1024
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-eqz v5, :cond_6b0
+    if-eqz v5, :cond_6a6
 
     iget v5, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
-    if-ne v5, v3, :cond_6b0
+    if-ne v5, v3, :cond_6a6
 
-    .line 1027
+    .line 1025
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    .line 1028
+    .line 1026
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playShowPopSettingAnimation()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 980
-    :sswitch_442
+    .line 978
+    :sswitch_43d
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     or-int/2addr v0, v10
 
     iput v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 981
+    .line 979
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
-    .line 982
+    .line 980
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->shouldShowTopBarContainer()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1277
-    :sswitch_44f
+    .line 1275
+    :sswitch_44a
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsStateProcessing:Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1272
-    :sswitch_453
+    .line 1270
+    :sswitch_44e
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsStateProcessing:Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 874
-    :sswitch_457
+    .line 872
+    :sswitch_452
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingVisibleEnable(Z)V
 
-    .line 875
+    .line 873
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mVideoFlashlightSupportWhenRecording:Z
 
-    if-eqz v0, :cond_467
+    if-eqz v0, :cond_462
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    if-nez v0, :cond_467
+    if-nez v0, :cond_462
 
-    .line 876
+    .line 874
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->restoreNormalShow()V
 
-    .line 879
-    :cond_467
-    :pswitch_467
+    .line 877
+    :cond_462
+    :pswitch_462
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsStateProcessing:Z
 
-    .line 880
+    .line 878
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsZoomScrolling:Z
 
-    if-nez v0, :cond_476
+    if-nez v0, :cond_471
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingRestore:Z
 
-    if-nez v0, :cond_476
+    if-nez v0, :cond_471
 
-    .line 881
+    .line 879
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    :cond_476
+    :cond_471
     const/16 v0, 0x63
 
-    if-ne p1, v0, :cond_483
+    if-ne p1, v0, :cond_47e
 
-    .line 883
+    .line 881
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-nez v0, :cond_483
+    if-nez v0, :cond_47e
 
-    .line 884
+    .line 882
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->showTopBarContainer()V
 
-    .line 886
-    :cond_483
+    .line 884
+    :cond_47e
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-nez v0, :cond_515
+    if-nez v0, :cond_510
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-nez v0, :cond_515
+    if-nez v0, :cond_510
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsFilterUIShow:Z
 
-    if-nez v0, :cond_515
+    if-nez v0, :cond_510
 
-    .line 887
+    .line 885
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    goto/16 :goto_515
+    goto/16 :goto_510
 
-    .line 920
-    :sswitch_496
+    .line 918
+    :sswitch_491
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsZoomScrolling:Z
 
-    .line 921
+    .line 919
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isZoomBegin(Z)V
 
-    .line 922
+    .line 920
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsCameraSwitching:Z
 
-    if-nez v0, :cond_4a6
+    if-nez v0, :cond_4a1
 
-    .line 923
+    .line 921
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    .line 925
-    :cond_4a6
+    .line 923
+    :cond_4a1
     invoke-virtual {p0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->setEnable(Z)V
 
-    .line 926
+    .line 924
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 927
+    .line 925
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(IZ)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 910
-    :sswitch_4b6
+    .line 908
+    :sswitch_4b1
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsZoomScrolling:Z
 
-    .line 911
+    .line 909
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->isZoomBegin(Z)V
 
-    .line 912
+    .line 910
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->dismissPopup()Z
 
-    .line 913
+    .line 911
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    if-nez v0, :cond_4cf
+    if-nez v0, :cond_4ca
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-nez v0, :cond_4cf
+    if-nez v0, :cond_4ca
 
-    .line 914
+    .line 912
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    .line 916
-    :cond_4cf
+    .line 914
+    :cond_4ca
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    .line 917
+    .line 915
     invoke-virtual {p0, v4}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->setEnable(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1269
-    :sswitch_4d9
+    .line 1267
+    :sswitch_4d4
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1265
-    :sswitch_4e0
+    .line 1263
+    :sswitch_4db
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1213
-    :sswitch_4e7
+    .line 1211
+    :sswitch_4e2
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingRestore:Z
 
-    .line 1214
+    .line 1212
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingVisibleEnable(Z)V
 
-    .line 1215
+    .line 1213
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 1216
+    .line 1214
     invoke-interface {v0, v6}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1217
+    .line 1215
     iget-object v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     iget-object v6, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -4778,114 +4768,114 @@
 
     invoke-virtual {v5, v6, v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updatePopSettingViewBG(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1207
-    :sswitch_507
+    .line 1205
+    :sswitch_502
     iput v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mHideReasonWhenExpanded:I
 
-    .line 1208
+    .line 1206
     invoke-direct {p0, v4}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->showOrHideTopBar(I)V
 
-    .line 1209
+    .line 1207
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingVisibleEnable(Z)V
 
-    .line 1210
+    .line 1208
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingRestore:Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 891
-    :cond_515
-    :goto_515
-    :sswitch_515
+    .line 889
+    :cond_510
+    :goto_510
+    :sswitch_510
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsStateProcessing:Z
 
-    .line 892
+    .line 890
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSelfTimerOn:Z
 
-    .line 893
+    .line 891
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mProExposureCaptureOn:Z
 
-    .line 894
+    .line 892
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    if-eqz v0, :cond_526
+    if-eqz v0, :cond_521
 
     const/16 v0, 0x9
 
-    if-ne p1, v0, :cond_526
+    if-ne p1, v0, :cond_521
 
-    .line 895
+    .line 893
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->show()V
 
-    .line 897
-    :cond_526
+    .line 895
+    :cond_521
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    .line 898
+    .line 896
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updateVideoRecordingState(Z)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1221
-    :sswitch_52f
+    .line 1219
+    :sswitch_52a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->recover()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    :cond_536
-    :goto_536
-    :pswitch_536
-    :sswitch_536
+    :cond_531
+    :goto_531
+    :pswitch_531
+    :sswitch_531
     const/16 v0, 0xc9
 
-    if-ne p1, v0, :cond_54b
+    if-ne p1, v0, :cond_546
 
     .line 820
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mVideoFlashlightSupportWhenRecording:Z
 
-    if-eqz v5, :cond_541
+    if-eqz v5, :cond_53c
 
     .line 821
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopupWithoutAnimation()Z
 
     .line 823
-    :cond_541
+    :cond_53c
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v5
 
     iget-boolean v5, v5, Lcom/transsion/camera/utils/CustomConfigUtil;->mRecordingUIRespondImmediately:Z
 
-    if-nez v5, :cond_54b
+    if-nez v5, :cond_546
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
     .line 827
-    :cond_54b
+    :cond_546
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v5
 
     iget-boolean v5, v5, Lcom/transsion/camera/utils/CustomConfigUtil;->mRecordingUIRespondImmediately:Z
 
-    if-eqz v5, :cond_559
+    if-eqz v5, :cond_554
 
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    if-nez v5, :cond_559
+    if-nez v5, :cond_554
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    :cond_559
-    if-ne p1, v8, :cond_560
+    :cond_554
+    if-ne p1, v8, :cond_55b
 
     .line 831
     iget-object v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
@@ -4893,7 +4883,7 @@
     invoke-virtual {v5}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->dismissPopup()Z
 
     .line 833
-    :cond_560
+    :cond_55b
     iget-object v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v5, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
@@ -4910,22 +4900,22 @@
 
     iget-boolean v5, v5, Lcom/transsion/camera/utils/CustomConfigUtil;->mRecordingUIRespondImmediately:Z
 
-    if-eqz v5, :cond_577
+    if-eqz v5, :cond_572
 
-    if-eq p1, v0, :cond_579
+    if-eq p1, v0, :cond_574
 
     .line 838
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
-    goto :goto_579
+    goto :goto_574
 
     .line 841
-    :cond_577
+    :cond_572
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsVideoRecording:Z
 
     .line 844
-    :cond_579
-    :goto_579
+    :cond_574
+    :goto_574
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsStateProcessing:Z
 
     .line 845
@@ -4937,13 +4927,13 @@
     .line 847
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mVideoFlashlightSupportWhenRecording:Z
 
-    if-eqz v5, :cond_587
+    if-eqz v5, :cond_582
 
     .line 848
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->restoreNormalShow()V
 
     .line 850
-    :cond_587
+    :cond_582
     iget-object v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v5}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->showTopBarContainer()V
@@ -4956,45 +4946,40 @@
     .line 852
     iget-object v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    invoke-virtual {v5, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewAnimation(Z)V
-
-    .line 853
-    iget-object v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
-
     invoke-virtual {v5, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updateVideoRecordingState(Z)V
 
-    .line 854
+    .line 853
     iget v5, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mOrientation:I
 
     iget v6, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
     invoke-direct {p0, v5, v6}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->updateTopBarLayoutParams(II)V
 
-    .line 855
+    .line 854
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->isModeIntentVideo()Z
 
     move-result v5
 
-    if-nez v5, :cond_5b1
+    if-nez v5, :cond_5a7
 
-    if-eq p1, v7, :cond_5ae
+    if-eq p1, v7, :cond_5a4
 
-    if-eq p1, v8, :cond_5ae
+    if-eq p1, v8, :cond_5a4
 
-    if-ne p1, v0, :cond_5b1
+    if-ne p1, v0, :cond_5a7
 
-    .line 857
-    :cond_5ae
+    .line 856
+    :cond_5a4
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->show()V
 
-    .line 859
-    :cond_5b1
+    .line 858
+    :cond_5a7
     iput v9, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRecordingOrientation:I
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
     .line 803
-    :cond_5b5
+    :cond_5ab
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
@@ -5013,111 +4998,111 @@
     .line 807
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mVideoFlashlightSupportWhenRecording:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
     .line 808
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->hide()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1261
-    :cond_5cd
+    .line 1259
+    :cond_5c3
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mProExposureCaptureOn:Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1257
-    :cond_5d1
+    .line 1255
+    :cond_5c7
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mProExposureCaptureOn:Z
 
-    .line 1258
+    .line 1256
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->cancelPopSettingShowViewAnimation()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 937
-    :cond_5da
+    .line 935
+    :cond_5d0
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->shrinkTopBar()V
 
-    .line 938
+    .line 936
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopupWithoutAnimation()Z
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1150
-    :cond_5e4
+    .line 1148
+    :cond_5da
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSelfTimerOn:Z
 
-    .line 1151
+    .line 1149
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsStateProcessing:Z
 
-    .line 1154
-    :cond_5e8
-    :sswitch_5e8
+    .line 1152
+    :cond_5de
+    :sswitch_5de
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    .line 1155
+    .line 1153
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mDisableTopbar:Z
 
-    .line 1156
+    .line 1154
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-nez v0, :cond_6b0
+    if-nez v0, :cond_6a6
 
-    .line 1157
+    .line 1155
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->showTopBarContainer()V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1057
-    :cond_5fa
+    .line 1055
+    :cond_5f0
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSelfTimerOn:Z
 
-    .line 1058
+    .line 1056
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsFilterUIShow:Z
 
-    if-nez v0, :cond_676
+    if-nez v0, :cond_66c
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsCelebrityUIShow:Z
 
-    if-nez v0, :cond_676
+    if-nez v0, :cond_66c
 
-    .line 1059
+    .line 1057
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingShowViewVisible(I)V
 
-    .line 1060
+    .line 1058
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playHidePopSettingAnimation(Z)V
 
-    goto :goto_676
+    goto :goto_66c
 
-    .line 1322
-    :cond_60f
+    .line 1320
+    :cond_605
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 1323
+    .line 1321
     invoke-interface {v0, v6}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1324
+    .line 1322
     iget-object v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     iget-object v6, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -5128,46 +5113,46 @@
 
     invoke-virtual {v5, v6, v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updatePopSettingViewBG(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_6b0
+    goto/16 :goto_6a6
 
-    .line 1164
-    :cond_628
+    .line 1162
+    :cond_61e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v0, :cond_652
+    if-eqz v0, :cond_648
 
-    .line 1165
+    .line 1163
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-nez v5, :cond_633
+    if-nez v5, :cond_629
 
-    .line 1166
+    .line 1164
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->showTopBarContainer()V
 
-    .line 1168
-    :cond_633
+    .line 1166
+    :cond_629
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->updateCurrentModeSupportNewVideoSize()V
 
-    .line 1169
+    .line 1167
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    .line 1170
+    .line 1168
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz v0, :cond_652
+    if-eqz v0, :cond_648
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    if-eqz v0, :cond_652
+    if-eqz v0, :cond_648
 
-    .line 1171
+    .line 1169
     invoke-interface {v0, v6}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1172
+    .line 1170
     iget-object v5, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     iget-object v6, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -5178,349 +5163,349 @@
 
     invoke-virtual {v5, v6, v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updatePopSettingViewBG(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1175
-    :cond_652
+    .line 1173
+    :cond_648
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mDisableTopbar:Z
 
-    goto :goto_6b0
+    goto :goto_6a6
 
-    .line 1083
-    :cond_655
+    .line 1081
+    :cond_64b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playHidePopSettingAnimation(Z)V
 
-    .line 1084
+    .line 1082
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    .line 1085
+    .line 1083
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopupWithoutAnimation()Z
 
-    goto :goto_6b0
+    goto :goto_6a6
 
-    .line 1132
-    :cond_663
+    .line 1130
+    :cond_659
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsZoomScrolling:Z
 
-    if-nez v0, :cond_66c
+    if-nez v0, :cond_662
 
-    .line 1133
+    .line 1131
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    .line 1135
-    :cond_66c
+    .line 1133
+    :cond_662
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mDisableTopbar:Z
 
-    .line 1136
+    .line 1134
     iput-boolean v4, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsCameraSwitching:Z
 
-    .line 1137
+    .line 1135
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->showTopBarContainer()V
 
-    goto :goto_6b0
+    goto :goto_6a6
 
-    :cond_676
-    :goto_676
-    if-nez p1, :cond_67a
+    :cond_66c
+    :goto_66c
+    if-nez p1, :cond_670
 
-    .line 1064
+    .line 1062
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsCameraSwitching:Z
 
-    .line 1066
-    :cond_67a
+    .line 1064
+    :cond_670
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-nez v0, :cond_687
+    if-nez v0, :cond_67d
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-nez v0, :cond_687
+    if-nez v0, :cond_67d
 
-    .line 1067
+    .line 1065
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->playHidePopSettingAnimation(Z)V
 
-    .line 1069
-    :cond_687
+    .line 1067
+    :cond_67d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->setPopSettingControlViewEnable(Z)V
 
-    .line 1070
+    .line 1068
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mPopWindowShow:Z
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    if-nez p1, :cond_6b0
+    if-nez p1, :cond_6a6
 
-    .line 1072
+    .line 1070
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6a4
+    if-eqz v0, :cond_69a
 
-    .line 1073
+    .line 1071
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopup()Z
 
-    goto :goto_6a7
+    goto :goto_69d
 
-    .line 1075
-    :cond_6a4
+    .line 1073
+    :cond_69a
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopupWithoutAnimation()Z
 
-    .line 1077
-    :goto_6a7
+    .line 1075
+    :goto_69d
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mIsPopSettingShow:Z
 
-    if-eqz v0, :cond_6b0
+    if-eqz v0, :cond_6a6
 
-    .line 1078
+    .line 1076
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0, v4, v3}, Lcom/transsion/camera/app/common/IAppUIControl$IPopSettingViewControl;->startPopSettingAnimation(ZZ)V
 
-    :cond_6b0
-    :goto_6b0
+    :cond_6a6
+    :goto_6a6
     const/16 v0, 0x2e
 
-    if-ne p1, v0, :cond_6b8
+    if-ne p1, v0, :cond_6ae
 
-    .line 1340
+    .line 1338
     invoke-virtual {p0, v4}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->setEnable(Z)V
 
-    goto :goto_6bf
+    goto :goto_6b5
 
-    :cond_6b8
+    :cond_6ae
     const/16 v4, 0x2f
 
-    if-ne p1, v4, :cond_6bf
+    if-ne p1, v4, :cond_6b5
 
-    .line 1342
+    .line 1340
     invoke-virtual {p0, v3}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->setEnable(Z)V
 
-    .line 1345
-    :cond_6bf
-    :goto_6bf
+    .line 1343
+    :cond_6b5
+    :goto_6b5
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->notifyCameraOperateActionToUI(I)V
 
-    .line 1346
+    .line 1344
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    if-eqz v3, :cond_6c9
+    if-eqz v3, :cond_6bf
 
-    .line 1347
+    .line 1345
     invoke-virtual {v3, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->notifyCameraOperateAction(I)V
 
-    :cond_6c9
+    :cond_6bf
     const/16 v3, 0xa3
 
-    if-eq p1, v1, :cond_6f1
+    if-eq p1, v1, :cond_6e7
 
     const/16 v1, 0xf
 
-    if-eq p1, v1, :cond_6f1
+    if-eq p1, v1, :cond_6e7
 
-    if-eq p1, v0, :cond_6f1
+    if-eq p1, v0, :cond_6e7
 
     const/16 v0, 0x90
 
-    if-eq p1, v0, :cond_6f1
+    if-eq p1, v0, :cond_6e7
 
     const/16 v0, 0xd
 
-    if-eq p1, v0, :cond_6f1
+    if-eq p1, v0, :cond_6e7
 
     const/16 v0, 0x101
 
-    if-eq p1, v0, :cond_6f1
+    if-eq p1, v0, :cond_6e7
 
     const/16 v0, 0x18b
 
-    if-eq p1, v0, :cond_6f1
+    if-eq p1, v0, :cond_6e7
 
     const/16 v0, 0x17
 
-    if-eq p1, v0, :cond_6f1
+    if-eq p1, v0, :cond_6e7
 
-    if-eqz p1, :cond_6f1
+    if-eqz p1, :cond_6e7
 
-    if-eq p1, v2, :cond_6f1
+    if-eq p1, v2, :cond_6e7
 
     const/16 v0, 0x15
 
-    if-eq p1, v0, :cond_6f1
+    if-eq p1, v0, :cond_6e7
 
-    if-ne p1, v3, :cond_71f
+    if-ne p1, v3, :cond_715
 
-    :cond_6f1
-    if-eqz p1, :cond_6f7
+    :cond_6e7
+    if-eqz p1, :cond_6ed
 
-    if-eq p1, v2, :cond_6f7
+    if-eq p1, v2, :cond_6ed
 
-    if-ne p1, v3, :cond_701
+    if-ne p1, v3, :cond_6f7
 
-    .line 1366
-    :cond_6f7
+    .line 1364
+    :cond_6ed
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-nez p1, :cond_701
+    if-nez p1, :cond_6f7
 
-    .line 1367
+    .line 1365
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopupWithoutAnimation()Z
 
-    goto :goto_704
+    goto :goto_6fa
 
-    .line 1369
-    :cond_701
+    .line 1367
+    :cond_6f7
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->dismissPopup()Z
 
-    .line 1371
-    :goto_704
+    .line 1369
+    :goto_6fa
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mSettingUIList:Ljava/util/List;
 
-    if-eqz p1, :cond_70d
+    if-eqz p1, :cond_703
+
+    .line 1370
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+
+    invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->hintInfo(Ljava/util/List;)V
 
     .line 1372
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
-
-    invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->hintInfo(Ljava/util/List;)V
-
-    .line 1374
-    :cond_70d
+    :cond_703
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mLeftSettingUIList:Ljava/util/List;
 
-    if-eqz p1, :cond_716
+    if-eqz p1, :cond_70c
 
-    .line 1375
+    .line 1373
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->hintInfo(Ljava/util/List;)V
 
-    .line 1377
-    :cond_716
+    .line 1375
+    :cond_70c
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mRightSettingUIList:Ljava/util/List;
 
-    if-eqz p1, :cond_71f
+    if-eqz p1, :cond_715
 
-    .line 1378
+    .line 1376
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mTopBarUI:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->hintInfo(Ljava/util/List;)V
 
-    :cond_71f
+    :cond_715
     return-void
 
-    :sswitch_data_720
+    :sswitch_data_716
     .sparse-switch
-        0x7 -> :sswitch_52f
-        0x9 -> :sswitch_515
-        0x12 -> :sswitch_5e8
-        0x13 -> :sswitch_507
-        0x14 -> :sswitch_4e7
-        0x15 -> :sswitch_4e0
-        0x16 -> :sswitch_4d9
-        0x17 -> :sswitch_4b6
-        0x18 -> :sswitch_496
-        0x6d -> :sswitch_457
-        0x7f -> :sswitch_453
-        0x80 -> :sswitch_44f
-        0x81 -> :sswitch_442
-        0x82 -> :sswitch_41e
-        0x8e -> :sswitch_413
-        0x8f -> :sswitch_408
-        0x90 -> :sswitch_3da
-        0x91 -> :sswitch_536
-        0x92 -> :sswitch_3cb
-        0x93 -> :sswitch_3c1
-        0x94 -> :sswitch_3b5
-        0x9c -> :sswitch_39c
-        0x9d -> :sswitch_39c
-        0xa7 -> :sswitch_515
-        0xb3 -> :sswitch_38f
-        0xb4 -> :sswitch_36b
-        0xb5 -> :sswitch_354
-        0xb6 -> :sswitch_320
-        0xb7 -> :sswitch_2f5
-        0xc2 -> :sswitch_2ea
-        0xc3 -> :sswitch_2df
-        0xc9 -> :sswitch_2d2
-        0xca -> :sswitch_442
-        0xcb -> :sswitch_41e
-        0xcc -> :sswitch_2a9
-        0xcf -> :sswitch_27e
-        0xd0 -> :sswitch_265
-        0xd1 -> :sswitch_250
-        0xd2 -> :sswitch_4e0
-        0xd3 -> :sswitch_4d9
-        0xd7 -> :sswitch_247
-        0xd8 -> :sswitch_23e
-        0xf2 -> :sswitch_225
-        0xf3 -> :sswitch_203
-        0xf7 -> :sswitch_1f0
-        0xf8 -> :sswitch_1cb
-        0xfe -> :sswitch_44f
-        0xff -> :sswitch_44f
-        0x101 -> :sswitch_1b4
-        0x102 -> :sswitch_198
-        0x103 -> :sswitch_18d
-        0x104 -> :sswitch_186
-        0x111 -> :sswitch_3e5
-        0x112 -> :sswitch_536
-        0x113 -> :sswitch_413
-        0x114 -> :sswitch_408
-        0x137 -> :sswitch_181
-        0x14a -> :sswitch_16f
-        0x183 -> :sswitch_150
-        0x184 -> :sswitch_13c
-        0x18e -> :sswitch_131
-        0x18f -> :sswitch_186
-        0x195 -> :sswitch_12a
-        0x196 -> :sswitch_123
+        0x7 -> :sswitch_52a
+        0x9 -> :sswitch_510
+        0x12 -> :sswitch_5de
+        0x13 -> :sswitch_502
+        0x14 -> :sswitch_4e2
+        0x15 -> :sswitch_4db
+        0x16 -> :sswitch_4d4
+        0x17 -> :sswitch_4b1
+        0x18 -> :sswitch_491
+        0x6d -> :sswitch_452
+        0x7f -> :sswitch_44e
+        0x80 -> :sswitch_44a
+        0x81 -> :sswitch_43d
+        0x82 -> :sswitch_419
+        0x8e -> :sswitch_40e
+        0x8f -> :sswitch_403
+        0x90 -> :sswitch_3d5
+        0x91 -> :sswitch_531
+        0x92 -> :sswitch_3c6
+        0x93 -> :sswitch_3bc
+        0x94 -> :sswitch_3b0
+        0x9c -> :sswitch_397
+        0x9d -> :sswitch_397
+        0xa7 -> :sswitch_510
+        0xb3 -> :sswitch_38a
+        0xb4 -> :sswitch_366
+        0xb5 -> :sswitch_34f
+        0xb6 -> :sswitch_31b
+        0xb7 -> :sswitch_2f0
+        0xc2 -> :sswitch_2e5
+        0xc3 -> :sswitch_2da
+        0xc9 -> :sswitch_2cd
+        0xca -> :sswitch_43d
+        0xcb -> :sswitch_419
+        0xcc -> :sswitch_2a4
+        0xcf -> :sswitch_279
+        0xd0 -> :sswitch_260
+        0xd1 -> :sswitch_24b
+        0xd2 -> :sswitch_4db
+        0xd3 -> :sswitch_4d4
+        0xd7 -> :sswitch_242
+        0xd8 -> :sswitch_239
+        0xf2 -> :sswitch_220
+        0xf3 -> :sswitch_1fe
+        0xf7 -> :sswitch_1eb
+        0xf8 -> :sswitch_1c6
+        0xfe -> :sswitch_44a
+        0xff -> :sswitch_44a
+        0x101 -> :sswitch_1af
+        0x102 -> :sswitch_193
+        0x103 -> :sswitch_188
+        0x104 -> :sswitch_181
+        0x111 -> :sswitch_3e0
+        0x112 -> :sswitch_531
+        0x113 -> :sswitch_40e
+        0x114 -> :sswitch_403
+        0x137 -> :sswitch_17c
+        0x14a -> :sswitch_16a
+        0x183 -> :sswitch_14b
+        0x184 -> :sswitch_137
+        0x18e -> :sswitch_12c
+        0x18f -> :sswitch_181
+        0x195 -> :sswitch_125
+        0x196 -> :sswitch_11e
     .end sparse-switch
 
-    :pswitch_data_822
+    :pswitch_data_818
     .packed-switch 0xe
-        :pswitch_11f
-        :pswitch_3da
-        :pswitch_536
+        :pswitch_11a
+        :pswitch_3d5
+        :pswitch_531
+    .end packed-switch
+
+    :pswitch_data_822
+    .packed-switch 0x1c
+        :pswitch_f9
+        :pswitch_ee
+        :pswitch_e3
     .end packed-switch
 
     :pswitch_data_82c
-    .packed-switch 0x1c
-        :pswitch_fe
-        :pswitch_f3
-        :pswitch_e8
-    .end packed-switch
-
-    :pswitch_data_836
     .packed-switch 0x2e
-        :pswitch_3e5
+        :pswitch_3e0
         :pswitch_c2
         :pswitch_94
         :pswitch_87
     .end packed-switch
 
-    :pswitch_data_842
+    :pswitch_data_838
     .packed-switch 0x63
-        :pswitch_467
+        :pswitch_462
         :pswitch_7c
         :pswitch_71
     .end packed-switch
@@ -7108,7 +7093,7 @@
 .method public updateCurrentMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1596
+    .line 1594
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->mCurrentModeName:Ljava/lang/String;
 
     return-void
@@ -7117,7 +7102,7 @@
 .method protected updateInVideoMode(Landroid/graphics/Rect;)V
     .registers 2
 
-    .line 1763
+    .line 1760
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/manager/TopBarUIManager;->isInVideoMode(Landroid/graphics/Rect;)Z
 
     move-result p1

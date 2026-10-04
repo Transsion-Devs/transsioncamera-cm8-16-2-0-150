@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4008
+    accessFlags = 0x4010
     name = null
 .end annotation
 
@@ -31,14 +31,14 @@
 .method public translateName(Ljava/lang/reflect/Field;)Ljava/lang/String;
     .registers 2
 
-    .line 74
+    .line 75
     invoke-virtual {p1}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string p1, " "
+    const/16 p1, 0x20
 
-    invoke-static {p0, p1}, Lcom/google/gson/FieldNamingPolicy;->separateCamelCase(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/google/gson/FieldNamingPolicy;->separateCamelCase(Ljava/lang/String;C)Ljava/lang/String;
 
     move-result-object p0
 

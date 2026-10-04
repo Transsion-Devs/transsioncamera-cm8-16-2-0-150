@@ -11,10 +11,12 @@
 
 .field public final synthetic f$1:I
 
+.field public final synthetic f$2:Ljava/lang/String;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager;I)V
-    .registers 3
+.method public synthetic constructor <init>(Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager;ILjava/lang/String;)V
+    .registers 4
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,20 +25,24 @@
 
     iput p2, p0, Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager$$ExternalSyntheticLambda5;->f$1:I
 
+    iput-object p3, p0, Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager$$ExternalSyntheticLambda5;->f$2:Ljava/lang/String;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()Ljava/lang/Object;
-    .registers 2
+    .registers 3
 
     .line 0
     iget-object v0, p0, Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager$$ExternalSyntheticLambda5;->f$0:Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager;
 
-    iget p0, p0, Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager$$ExternalSyntheticLambda5;->f$1:I
+    iget v1, p0, Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager$$ExternalSyntheticLambda5;->f$1:I
 
-    invoke-static {v0, p0}, Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager;->$r8$lambda$PD9GhK2vyeUY0eJrEWTW464VCYM(Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager;I)Ljava/lang/Object;
+    iget-object p0, p0, Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager$$ExternalSyntheticLambda5;->f$2:Ljava/lang/String;
+
+    invoke-static {v0, v1, p0}, Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager;->$r8$lambda$_DL19KgsBV7KSAXyRyh0npAwcjo(Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object p0
 

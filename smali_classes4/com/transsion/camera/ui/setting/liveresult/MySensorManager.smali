@@ -1,4 +1,4 @@
-.class public Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;
+.class public final Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -14,101 +14,96 @@
 
 .field private final mLock:Ljava/lang/Object;
 
+.field private mMagnetValues:[F
+
 .field private mOrientationVector:[F
 
 .field private final mSensorEventListener:Landroid/hardware/SensorEventListener;
 
-.field private magnetValues:[F
-
 
 # direct methods
-.method static bridge synthetic -$$Nest$fgetmLock(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;)Ljava/lang/Object;
-    .registers 1
-
-    .line 0
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mLock:Ljava/lang/Object;
-
-    return-object p0
-.end method
-
-.method static bridge synthetic -$$Nest$fputmAccelerometerValues(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;[F)V
-    .registers 2
-
-    .line 0
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mAccelerometerValues:[F
-
-    return-void
-.end method
-
-.method static bridge synthetic -$$Nest$fputmGyroValues(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;[F)V
-    .registers 2
-
-    .line 0
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mGyroValues:[F
-
-    return-void
-.end method
-
-.method static bridge synthetic -$$Nest$fputmOrientationVector(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;[F)V
-    .registers 2
-
-    .line 0
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mOrientationVector:[F
-
-    return-void
-.end method
-
-.method static bridge synthetic -$$Nest$fputmagnetValues(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;[F)V
-    .registers 2
-
-    .line 0
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->magnetValues:[F
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .registers 2
 
-    .line 12
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
+    .line 16
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mLock:Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    .line 181
+    new-instance v0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager$mSensorEventListener$1;
 
-    .line 171
-    iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mIsSensorListenerRegistered:Z
-
-    .line 172
-    new-instance v0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager$1;
-
-    invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager$1;-><init>(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;)V
+    invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager$mSensorEventListener$1;-><init>(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;)V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mSensorEventListener:Landroid/hardware/SensorEventListener;
 
     return-void
 .end method
 
+.method public static final synthetic access$getMLock$p(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;)Ljava/lang/Object;
+    .registers 1
+
+    .line 14
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mLock:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$setMAccelerometerValues$p(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;[F)V
+    .registers 2
+
+    .line 14
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mAccelerometerValues:[F
+
+    return-void
+.end method
+
+.method public static final synthetic access$setMGyroValues$p(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;[F)V
+    .registers 2
+
+    .line 14
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mGyroValues:[F
+
+    return-void
+.end method
+
+.method public static final synthetic access$setMMagnetValues$p(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;[F)V
+    .registers 2
+
+    .line 14
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mMagnetValues:[F
+
+    return-void
+.end method
+
+.method public static final synthetic access$setMOrientationVector$p(Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;[F)V
+    .registers 2
+
+    .line 14
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mOrientationVector:[F
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public declared-synchronized setContext(Landroid/content/Context;)V
+.method public final declared-synchronized setContext(Landroid/content/Context;)V
     .registers 2
 
     monitor-enter p0
 
-    .line 22
+    .line 25
     :try_start_1
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mContext:Landroid/content/Context;
     :try_end_3
     .catchall {:try_start_1 .. :try_end_3} :catchall_5
 
-    .line 23
+    .line 26
     monitor-exit p0
 
     return-void
@@ -124,105 +119,108 @@
     throw p1
 .end method
 
-.method public unInit()V
+.method public final unInit()V
     .registers 1
 
-    .line 164
+    .line 173
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->unRegisterSensorListeners()V
 
     return-void
 .end method
 
-.method public declared-synchronized unRegisterSensorListeners()V
+.method public final declared-synchronized unRegisterSensorListeners()V
     .registers 3
 
     monitor-enter p0
 
-    .line 56
+    .line 70
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mContext:Landroid/content/Context;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_21
 
-    .line 57
+    .line 71
     iget-boolean v1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mIsSensorListenerRegistered:Z
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_21
 
-    .line 58
+    .line 72
     const-string v1, "sensor"
 
-    .line 59
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
+    const-string v1, "null cannot be cast to non-null type android.hardware.SensorManager"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
     check-cast v0, Landroid/hardware/SensorManager;
 
-    if-eqz v0, :cond_1b
-
-    .line 61
+    .line 73
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mSensorEventListener:Landroid/hardware/SensorEventListener;
 
     invoke-virtual {v0, v1}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
 
-    goto :goto_1b
-
-    :catchall_19
-    move-exception v0
-
-    goto :goto_2c
-
-    :cond_1b
-    :goto_1b
     const/4 v0, 0x0
 
-    .line 63
+    .line 74
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mIsSensorListenerRegistered:Z
 
-    .line 67
-    :cond_1e
+    goto :goto_21
+
+    :catchall_1f
+    move-exception v0
+
+    goto :goto_31
+
+    .line 78
+    :cond_21
+    :goto_21
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
-    :try_end_21
-    .catchall {:try_start_1 .. :try_end_21} :catchall_19
+    :try_end_24
+    .catchall {:try_start_1 .. :try_end_24} :catchall_1f
 
     const/4 v1, 0x0
 
-    .line 68
-    :try_start_22
+    .line 79
+    :try_start_25
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mAccelerometerValues:[F
 
-    .line 69
+    .line 80
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/liveresult/MySensorManager;->mGyroValues:[F
 
-    .line 70
-    monitor-exit v0
-    :try_end_27
-    .catchall {:try_start_22 .. :try_end_27} :catchall_29
+    .line 81
+    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    :try_end_2b
+    .catchall {:try_start_25 .. :try_end_2b} :catchall_2e
 
-    .line 71
+    .line 78
+    :try_start_2b
+    monitor-exit v0
+    :try_end_2c
+    .catchall {:try_start_2b .. :try_end_2c} :catchall_1f
+
+    .line 82
     monitor-exit p0
 
     return-void
 
-    :catchall_29
+    :catchall_2e
     move-exception v1
 
-    .line 70
-    :try_start_2a
+    .line 78
+    :try_start_2f
     monitor-exit v0
-    :try_end_2b
-    .catchall {:try_start_2a .. :try_end_2b} :catchall_29
 
-    :try_start_2b
     throw v1
 
-    :goto_2c
+    :goto_31
     monitor-exit p0
-    :try_end_2d
-    .catchall {:try_start_2b .. :try_end_2d} :catchall_19
+    :try_end_32
+    .catchall {:try_start_2f .. :try_end_32} :catchall_1f
 
     throw v0
 .end method

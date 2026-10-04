@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)V
     .registers 2
 
-    .line 1052
+    .line 1049
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .method public onCustomOptionIndexChanged()V
     .registers 2
 
-    .line 1063
+    .line 1060
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$minterceptClickByLowPower(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)Z
@@ -64,7 +64,7 @@
 
     goto :goto_1a
 
-    .line 1066
+    .line 1063
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
@@ -74,7 +74,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 1067
+    .line 1064
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$fgetmItemSelectHook(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)Lcom/transsion/camera/app/common/ui/setting/IPopSettingItemUI$ItemSelectHook;
@@ -91,7 +91,7 @@
 .method public onDismiss(Z)V
     .registers 4
 
-    .line 1077
+    .line 1074
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$fgetmEntryLayout(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)Landroid/view/View;
@@ -100,7 +100,7 @@
 
     if-eqz p1, :cond_1b
 
-    .line 1078
+    .line 1075
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$fgetmEntryLayout(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)Landroid/view/View;
@@ -119,13 +119,13 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setSelected(Z)V
 
-    .line 1080
+    .line 1077
     :cond_1b
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$maddOnPreDrawListener(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)V
 
-    .line 1081
+    .line 1078
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
@@ -142,7 +142,7 @@
 
     if-eqz p1, :cond_36
 
-    .line 1082
+    .line 1079
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     const/4 p1, -0x1
@@ -156,7 +156,7 @@
 .method public onOptionIndexChanged(I)V
     .registers 3
 
-    .line 1055
+    .line 1052
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$minterceptClickByLowPower(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)Z
@@ -167,7 +167,7 @@
 
     return-void
 
-    .line 1058
+    .line 1055
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 

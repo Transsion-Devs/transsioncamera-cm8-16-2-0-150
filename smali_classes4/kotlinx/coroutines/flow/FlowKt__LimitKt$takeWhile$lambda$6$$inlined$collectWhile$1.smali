@@ -39,7 +39,7 @@
 
     iput-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
-    .line 126
+    .line 123
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -137,7 +137,7 @@
     :cond_42
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 142
+    .line 139
     iget-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1;->$predicate$inlined:Lkotlin/jvm/functions/Function2;
 
     iput-object p0, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1$1;->L$0:Ljava/lang/Object;
@@ -172,7 +172,7 @@
 
     if-eqz p2, :cond_74
 
-    .line 143
+    .line 140
     iget-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1;->$this_unsafeFlow$inlined:Lkotlinx/coroutines/flow/FlowCollector;
 
     iput-object p0, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$takeWhile$lambda$6$$inlined$collectWhile$1$1;->L$0:Ljava/lang/Object;
@@ -199,16 +199,16 @@
     :goto_75
     if-eqz v4, :cond_7a
 
-    .line 133
+    .line 130
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 131
+    .line 128
     :cond_7a
     new-instance p1, Lkotlinx/coroutines/flow/internal/AbortFlowException;
 
-    invoke-direct {p1, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Lkotlinx/coroutines/flow/FlowCollector;)V
+    invoke-direct {p1, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Ljava/lang/Object;)V
 
     throw p1
 .end method

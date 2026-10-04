@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)V
     .registers 2
 
-    .line 470
+    .line 475
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$4;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,14 +35,14 @@
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .registers 3
 
-    .line 473
+    .line 478
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
 
     const/4 p1, 0x1
 
     if-ne p2, p1, :cond_12
 
-    .line 475
+    .line 480
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$4;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->-$$Nest$fgetmIAppUI(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)Lcom/transsion/camera/app/common/IAppUI;
@@ -58,7 +58,7 @@
     :cond_12
     if-nez p2, :cond_1f
 
-    .line 477
+    .line 482
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$4;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->-$$Nest$fgetmIAppUI(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)Lcom/transsion/camera/app/common/IAppUI;

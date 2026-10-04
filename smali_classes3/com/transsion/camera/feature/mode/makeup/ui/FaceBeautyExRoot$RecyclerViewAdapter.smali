@@ -49,7 +49,7 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;)V
     .registers 2
 
-    .line 678
+    .line 714
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
 
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/adapter/ExpandableItemAdapter;-><init>()V
@@ -60,7 +60,7 @@
 .method private synthetic lambda$onBindViewHolder$0(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Group;Landroid/view/View;)V
     .registers 3
 
-    .line 740
+    .line 776
     invoke-static {p2}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p2
@@ -69,7 +69,7 @@
 
     return-void
 
-    .line 743
+    .line 779
     :cond_7
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/adapter/ExpandableItemAdapter;->toggle(Lcom/transsion/camera/feature/mode/makeup/adapter/Item;)V
 
@@ -79,7 +79,7 @@
 .method private synthetic lambda$onBindViewHolder$1(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Child;Landroid/view/View;)V
     .registers 4
 
-    .line 755
+    .line 791
     invoke-static {p2}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p2
@@ -88,7 +88,7 @@
 
     return-void
 
-    .line 758
+    .line 794
     :cond_7
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
 
@@ -98,12 +98,12 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->-$$Nest$fputmCurrentFeatureKey(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;Ljava/lang/String;)V
 
-    .line 760
+    .line 796
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
 
     invoke-static {p2, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->-$$Nest$mupdateSetting(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Child;)V
 
-    .line 761
+    .line 797
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->-$$Nest$mupdateSeekBarUI(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;)V
@@ -114,7 +114,7 @@
 .method private synthetic lambda$onBindViewHolder$2(Landroid/view/View;)V
     .registers 2
 
-    .line 772
+    .line 808
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p1
@@ -123,7 +123,7 @@
 
     return-void
 
-    .line 775
+    .line 811
     :cond_7
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
 
@@ -137,7 +137,7 @@
 .method public bridge synthetic onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .registers 3
 
-    .line 678
+    .line 714
     check-cast p1, Lcom/transsion/camera/feature/mode/makeup/adapter/ItemVH;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->onBindViewHolder(Lcom/transsion/camera/feature/mode/makeup/adapter/ItemVH;I)V
@@ -148,7 +148,7 @@
 .method public onBindViewHolder(Lcom/transsion/camera/feature/mode/makeup/adapter/ItemVH;I)V
     .registers 8
 
-    .line 723
+    .line 759
     invoke-static {}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -169,17 +169,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 724
+    .line 760
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/mode/makeup/adapter/ItemAdapter;->getItem(I)Lcom/transsion/camera/feature/mode/makeup/adapter/Item;
 
     move-result-object v0
 
-    .line 725
+    .line 761
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter$1;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter$1;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;)V
 
-    .line 732
+    .line 768
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/mode/makeup/adapter/ItemAdapter;->getItemViewType(I)I
 
     move-result p2
@@ -190,14 +190,14 @@
 
     return-void
 
-    .line 780
+    .line 816
     :pswitch_2c
     check-cast v0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Footer;
 
-    .line 781
+    .line 817
     check-cast p1, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$FooterVH;
 
-    .line 782
+    .line 818
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$FooterVH;->-$$Nest$fgetmIconView(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$FooterVH;)Landroid/widget/ImageView;
 
     move-result-object p2
@@ -206,23 +206,23 @@
 
     invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 783
+    .line 819
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/makeup/adapter/ExpandableItemAdapter;->mLowLight:Z
 
     invoke-virtual {p1, v0, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$FooterVH;->bindHolder(Ljava/lang/Object;Z)V
 
     return-void
 
-    .line 766
+    .line 802
     :pswitch_3f
     check-cast v0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Reset;
 
-    .line 767
+    .line 803
     move-object p2, p1
 
     check-cast p2, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;
 
-    .line 768
+    .line 804
     invoke-static {p2}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->-$$Nest$fgetmIconView(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;)Landroid/widget/ImageView;
 
     move-result-object v3
@@ -231,7 +231,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 769
+    .line 805
     invoke-static {p2}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->-$$Nest$fgetmTitleView(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;)Landroid/widget/TextView;
 
     move-result-object v3
@@ -240,12 +240,12 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 770
+    .line 806
     iget-boolean v3, p0, Lcom/transsion/camera/feature/mode/makeup/adapter/ExpandableItemAdapter;->mLowLight:Z
 
     invoke-virtual {p2, v0, v3}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->bindHolder(Ljava/lang/Object;Z)V
 
-    .line 771
+    .line 807
     iget-object p2, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     new-instance v0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter$$ExternalSyntheticLambda2;
@@ -254,23 +254,23 @@
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 777
+    .line 813
     iget-object p0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-static {p0, v2, v1}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
     return-void
 
-    .line 749
+    .line 785
     :pswitch_6b
     check-cast v0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Child;
 
-    .line 750
+    .line 786
     move-object p2, p1
 
     check-cast p2, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ChildVH;
 
-    .line 751
+    .line 787
     invoke-static {p2}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ChildVH;->-$$Nest$fgetmIconView(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ChildVH;)Landroid/widget/ImageView;
 
     move-result-object v3
@@ -281,7 +281,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 752
+    .line 788
     invoke-static {p2}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ChildVH;->-$$Nest$fgetmTitleView(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ChildVH;)Landroid/widget/TextView;
 
     move-result-object v3
@@ -292,12 +292,12 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 753
+    .line 789
     iget-boolean v3, p0, Lcom/transsion/camera/feature/mode/makeup/adapter/ExpandableItemAdapter;->mLowLight:Z
 
     invoke-virtual {p2, v0, v3}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ChildVH;->bindHolder(Ljava/lang/Object;Z)V
 
-    .line 754
+    .line 790
     iget-object p2, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     new-instance v3, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter$$ExternalSyntheticLambda1;
@@ -306,23 +306,23 @@
 
     invoke-virtual {p2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 763
+    .line 799
     iget-object p0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-static {p0, v2, v1}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
     return-void
 
-    .line 734
+    .line 770
     :pswitch_9b
     check-cast v0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Group;
 
-    .line 735
+    .line 771
     move-object p2, p1
 
     check-cast p2, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$GroupVH;
 
-    .line 736
+    .line 772
     invoke-static {p2}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$GroupVH;->-$$Nest$fgetmIconView(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$GroupVH;)Landroid/widget/ImageView;
 
     move-result-object v3
@@ -331,7 +331,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 737
+    .line 773
     invoke-static {p2}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$GroupVH;->-$$Nest$fgetmTitleView(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$GroupVH;)Landroid/widget/TextView;
 
     move-result-object v3
@@ -340,12 +340,12 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 738
+    .line 774
     iget-boolean v3, p0, Lcom/transsion/camera/feature/mode/makeup/adapter/ExpandableItemAdapter;->mLowLight:Z
 
     invoke-virtual {p2, v0, v3}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$GroupVH;->bindHolder(Ljava/lang/Object;Z)V
 
-    .line 739
+    .line 775
     iget-object p2, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     new-instance v3, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter$$ExternalSyntheticLambda0;
@@ -354,7 +354,7 @@
 
     invoke-virtual {p2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 745
+    .line 781
     iget-object p0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-static {p0, v2, v1}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
@@ -376,7 +376,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .registers 3
 
-    .line 678
+    .line 714
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/transsion/camera/feature/mode/makeup/adapter/ItemVH;
 
     move-result-object p0
@@ -387,7 +387,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/transsion/camera/feature/mode/makeup/adapter/ItemVH;
     .registers 6
 
-    .line 681
+    .line 717
     invoke-static {}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -408,7 +408,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 685
+    .line 721
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -425,13 +425,13 @@
 
     goto :goto_2a
 
-    .line 688
+    .line 724
     :cond_27
     sget v0, Lcom/transsion/camera/feature/makeup/R$layout;->feature_item:I
 
     goto :goto_2c
 
-    .line 686
+    .line 722
     :cond_2a
     :goto_2a
     sget v0, Lcom/transsion/camera/feature/makeup/R$layout;->feature_item_ui4:I
@@ -445,7 +445,7 @@
 
     return-object p0
 
-    .line 709
+    .line 745
     :pswitch_32
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -463,18 +463,18 @@
 
     goto :goto_44
 
-    .line 712
+    .line 748
     :cond_41
     sget p2, Lcom/transsion/camera/feature/makeup/R$layout;->footer_layout:I
 
     goto :goto_46
 
-    .line 710
+    .line 746
     :cond_44
     :goto_44
     sget p2, Lcom/transsion/camera/feature/makeup/R$layout;->footer_layout_ui4:I
 
-    .line 714
+    .line 750
     :goto_46
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -488,7 +488,7 @@
 
     move-result-object p1
 
-    .line 715
+    .line 751
     new-instance p2, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$FooterVH;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
@@ -497,7 +497,7 @@
 
     return-object p2
 
-    .line 704
+    .line 740
     :pswitch_5a
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -513,7 +513,7 @@
 
     move-result-object p1
 
-    .line 705
+    .line 741
     new-instance p2, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
@@ -522,7 +522,7 @@
 
     return-object p2
 
-    .line 700
+    .line 736
     :pswitch_70
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -538,7 +538,7 @@
 
     move-result-object p1
 
-    .line 701
+    .line 737
     new-instance p2, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ChildVH;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
@@ -547,7 +547,7 @@
 
     return-object p2
 
-    .line 696
+    .line 732
     :pswitch_86
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -561,7 +561,7 @@
 
     move-result-object p1
 
-    .line 697
+    .line 733
     new-instance p2, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ChildVH;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
@@ -570,7 +570,7 @@
 
     return-object p2
 
-    .line 692
+    .line 728
     :pswitch_9a
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -584,7 +584,7 @@
 
     move-result-object p1
 
-    .line 693
+    .line 729
     new-instance p2, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$GroupVH;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$RecyclerViewAdapter;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;

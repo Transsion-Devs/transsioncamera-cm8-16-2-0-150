@@ -18,7 +18,7 @@
 
 .field public static arc_filter_root:I = 0x7f0b00ae
 
-.field public static setting_ui_item_arc_filter:I = 0x7f0b05cc
+.field public static setting_ui_item_arc_filter:I = 0x7f0b05c8
 
 
 # direct methods

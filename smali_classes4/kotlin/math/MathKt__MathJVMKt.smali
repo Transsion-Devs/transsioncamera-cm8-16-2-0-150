@@ -7,7 +7,7 @@
 .method public static roundToInt(F)I
     .registers 2
 
-    .line 1165
+    .line 1192
     invoke-static {p0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0

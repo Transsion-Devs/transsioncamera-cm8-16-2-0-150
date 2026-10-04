@@ -524,7 +524,7 @@
 
     const/16 p0, 0xde1
 
-    .line 473
+    .line 474
     invoke-static {p0, p1}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
     const/16 v7, 0x1401
@@ -545,46 +545,46 @@
 
     move v4, p4
 
-    .line 474
+    .line 475
     invoke-static/range {v0 .. v8}, Landroid/opengl/GLES20;->glTexImage2D(IIIIIIIILjava/nio/Buffer;)V
 
     const/16 p3, 0x2800
 
     const p4, 0x46180400    # 9729.0f
 
-    .line 476
+    .line 477
     invoke-static {p0, p3, p4}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
 
     const/16 p3, 0x2801
 
-    .line 478
+    .line 479
     invoke-static {p0, p3, p4}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
 
     const/16 p3, 0x2802
 
     const p4, 0x47012f00    # 33071.0f
 
-    .line 480
+    .line 481
     invoke-static {p0, p3, p4}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
 
     const/16 p3, 0x2803
 
-    .line 482
+    .line 483
     invoke-static {p0, p3, p4}, Landroid/opengl/GLES20;->glTexParameterf(IIF)V
 
     const p3, 0x8d40
 
-    .line 485
+    .line 486
     invoke-static {p3, p2}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
 
     const p2, 0x8ce0
 
     const/4 p4, 0x0
 
-    .line 486
+    .line 487
     invoke-static {p3, p2, p0, p1, p4}, Landroid/opengl/GLES20;->glFramebufferTexture2D(IIIII)V
 
-    .line 489
+    .line 490
     invoke-static {p3}, Landroid/opengl/GLES20;->glCheckFramebufferStatus(I)I
 
     move-result p1
@@ -593,15 +593,15 @@
 
     if-ne p2, p1, :cond_4c
 
-    .line 494
+    .line 495
     invoke-static {p0, p4}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    .line 495
+    .line 496
     invoke-static {p3, p4}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
 
     return-void
 
-    .line 491
+    .line 492
     :cond_4c
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -655,7 +655,7 @@
 .method private destroyFrameBuffers()V
     .registers 7
 
-    .line 499
+    .line 500
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBufferTextures:[I
 
     const/4 v1, 0x0
@@ -666,10 +666,10 @@
 
     if-eqz v0, :cond_2b
 
-    .line 500
+    .line 501
     invoke-static {}, Lcom/transsion/camera/feature/setting/videohdr/utils/HDRConfig;->bufferCountRemove()V
 
-    .line 501
+    .line 502
     sget-object v0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -692,33 +692,33 @@
 
     invoke-static {v0, v4}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 502
+    .line 503
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBufferTextures:[I
 
     invoke-static {v3, v0, v2}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
 
-    .line 503
+    .line 504
     iput-object v1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBufferTextures:[I
 
-    .line 505
+    .line 506
     :cond_2b
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBuffers:[I
 
     if-eqz v0, :cond_34
 
-    .line 506
+    .line 507
     invoke-static {v3, v0, v2}, Landroid/opengl/GLES20;->glDeleteFramebuffers(I[II)V
 
-    .line 507
+    .line 508
     iput-object v1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBuffers:[I
 
     :cond_34
     const/4 v0, -0x1
 
-    .line 509
+    .line 510
     iput v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameWidth:I
 
-    .line 510
+    .line 511
     iput v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameHeight:I
 
     return-void
@@ -729,17 +729,17 @@
 
     const/4 v0, 0x2
 
-    .line 401
+    .line 402
     new-array v0, v0, [[B
 
-    .line 402
+    .line 403
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->IS_DEBUG:Z
 
     const/16 v1, 0x64
 
     if-eqz p0, :cond_34
 
-    .line 404
+    .line 405
     sget-object p0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {p2, p3, p0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -748,7 +748,7 @@
 
     const/4 v2, 0x0
 
-    .line 405
+    .line 406
     aget-object v3, p1, v2
 
     invoke-static {v3}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
@@ -757,28 +757,28 @@
 
     invoke-virtual {p0, v3}, Landroid/graphics/Bitmap;->copyPixelsFromBuffer(Ljava/nio/Buffer;)V
 
-    .line 407
+    .line 408
     new-instance v3, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v3}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 408
+    .line 409
     sget-object v4, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     invoke-virtual {p0, v4, v1, v3}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 409
+    .line 410
     invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v4
 
     aput-object v4, v0, v2
 
-    .line 411
+    .line 412
     :try_start_29
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 412
+    .line 413
     invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_2f
     .catch Ljava/io/IOException; {:try_start_29 .. :try_end_2f} :catch_30
@@ -788,10 +788,10 @@
     :catch_30
     move-exception p0
 
-    .line 414
+    .line 415
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 419
+    .line 420
     :cond_34
     :goto_34
     sget-object p0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -802,7 +802,7 @@
 
     const/4 p2, 0x1
 
-    .line 420
+    .line 421
     aget-object p1, p1, p2
 
     invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
@@ -811,28 +811,28 @@
 
     invoke-virtual {p0, p1}, Landroid/graphics/Bitmap;->copyPixelsFromBuffer(Ljava/nio/Buffer;)V
 
-    .line 422
+    .line 423
     new-instance p1, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {p1}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 423
+    .line 424
     sget-object p3, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     invoke-virtual {p0, p3, v1, p1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 424
+    .line 425
     invoke-virtual {p1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p3
 
     aput-object p3, v0, p2
 
-    .line 426
+    .line 427
     :try_start_54
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 427
+    .line 428
     invoke-virtual {p1}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_5a
     .catch Ljava/io/IOException; {:try_start_54 .. :try_end_5a} :catch_5b
@@ -842,7 +842,7 @@
     :catch_5b
     move-exception p0
 
-    .line 429
+    .line 430
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     :goto_5f
@@ -854,10 +854,10 @@
 
     const/16 v0, 0x10
 
-    .line 376
+    .line 377
     new-array v5, v0, [F
 
-    .line 377
+    .line 378
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mTransformMatrix:[F
 
     const/4 v11, 0x0
@@ -868,7 +868,7 @@
 
     const/4 v7, 0x0
 
-    .line 378
+    .line 379
     invoke-static {v5, v11, v0, v0, v7}, Landroid/opengl/Matrix;->translateM([FIFFF)V
 
     move-object v1, v5
@@ -883,40 +883,40 @@
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 379
+    .line 380
     invoke-static/range {v1 .. v6}, Landroid/opengl/Matrix;->rotateM([FIFFFF)V
 
     const/high16 v0, -0x41000000    # -0.5f
 
-    .line 380
+    .line 381
     invoke-static {v1, v11, v0, v0, v7}, Landroid/opengl/Matrix;->translateM([FIFFF)V
 
     const/4 v0, 0x2
 
-    .line 382
+    .line 383
     new-array v0, v0, [[B
 
     mul-int v2, p4, p3
 
     mul-int/lit8 v2, v2, 0x4
 
-    .line 383
+    .line 384
     new-array v12, v2, [B
 
-    .line 384
+    .line 385
     aput-object v12, v0, v11
 
-    .line 385
+    .line 386
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->IS_DEBUG:Z
 
     if-eqz p0, :cond_46
 
-    .line 387
+    .line 388
     new-array v8, v2, [B
 
     move-object v5, v1
 
-    .line 388
+    .line 389
     invoke-static {}, Lcom/aiworks/android/livehdr/JniInterface;->getInstance()Lcom/aiworks/android/livehdr/JniInterface;
 
     move-result-object v1
@@ -939,7 +939,7 @@
 
     move-object v1, v5
 
-    .line 390
+    .line 391
     aput-object v8, v0, v11
 
     goto :goto_47
@@ -947,7 +947,7 @@
     :cond_46
     move-object v5, v1
 
-    .line 394
+    .line 395
     :goto_47
     invoke-static {}, Lcom/aiworks/android/livehdr/JniInterface;->getInstance()Lcom/aiworks/android/livehdr/JniInterface;
 
@@ -973,7 +973,7 @@
 
     const/4 p0, 0x1
 
-    .line 396
+    .line 397
     aput-object v8, v0, p0
 
     return-object v0
@@ -982,7 +982,7 @@
 .method private initCameraFrameBuffer(II)V
     .registers 6
 
-    .line 451
+    .line 452
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBuffers:[I
 
     if-eqz v0, :cond_f
@@ -995,45 +995,45 @@
 
     if-eq v0, p2, :cond_f
 
-    .line 452
+    .line 453
     :cond_c
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->destroyFrameBuffers()V
 
-    .line 454
+    .line 455
     :cond_f
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBuffers:[I
 
     if-nez v0, :cond_69
 
-    .line 455
+    .line 456
     iput p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameWidth:I
 
-    .line 456
+    .line 457
     iput p2, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameHeight:I
 
     const/4 v0, 0x3
 
-    .line 457
+    .line 458
     new-array v1, v0, [I
 
     iput-object v1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBuffers:[I
 
-    .line 458
+    .line 459
     new-array v2, v0, [I
 
     iput-object v2, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBufferTextures:[I
 
     const/4 v2, 0x0
 
-    .line 460
+    .line 461
     invoke-static {v0, v1, v2}, Landroid/opengl/GLES20;->glGenFramebuffers(I[II)V
 
-    .line 461
+    .line 462
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBufferTextures:[I
 
     invoke-static {v0, v1, v2}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    .line 463
+    .line 464
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBufferTextures:[I
 
     aget v0, v0, v2
@@ -1044,7 +1044,7 @@
 
     invoke-direct {p0, v0, v1, p1, p2}, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->bindFrameBuffer(IIII)V
 
-    .line 464
+    .line 465
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBufferTextures:[I
 
     const/4 v1, 0x1
@@ -1057,7 +1057,7 @@
 
     invoke-direct {p0, v0, v1, p1, p2}, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->bindFrameBuffer(IIII)V
 
-    .line 465
+    .line 466
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mFrameBufferTextures:[I
 
     const/4 v1, 0x2
@@ -1070,10 +1070,10 @@
 
     invoke-direct {p0, v0, v1, p2, p1}, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->bindFrameBuffer(IIII)V
 
-    .line 467
+    .line 468
     invoke-static {}, Lcom/transsion/camera/feature/setting/videohdr/utils/HDRConfig;->bufferCountAdd()V
 
-    .line 468
+    .line 469
     sget-object p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -1142,7 +1142,7 @@
 .method private isCurrentCameraFacingBack()Z
     .registers 1
 
-    .line 515
+    .line 516
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     if-eqz p0, :cond_10
@@ -1170,7 +1170,7 @@
 .method private isIn360VideoHDRState()Z
     .registers 4
 
-    .line 519
+    .line 520
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -1189,7 +1189,7 @@
 
     if-nez v0, :cond_3f
 
-    .line 520
+    .line 521
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -1206,7 +1206,7 @@
 
     if-nez v0, :cond_3f
 
-    .line 521
+    .line 522
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -1225,7 +1225,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 522
+    .line 523
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
     move-result-object v0
@@ -1241,7 +1241,7 @@
     :cond_3e
     return v1
 
-    .line 523
+    .line 524
     :cond_3f
     :goto_3f
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -1306,7 +1306,7 @@
 .method private isWideOrLongFocusSupport(Ljava/lang/String;)Z
     .registers 5
 
-    .line 529
+    .line 530
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mIsVideoSuperNightSupport:Z
 
     const/4 v1, 0x0
@@ -1337,7 +1337,7 @@
     :cond_16
     move v0, v1
 
-    .line 530
+    .line 531
     :goto_17
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mIsVideoSuperNightSupport:Z
 
@@ -1420,12 +1420,12 @@
 .method private showFps()V
     .registers 7
 
-    .line 438
+    .line 439
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 439
+    .line 440
     iget-wide v2, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mTime:J
 
     sub-long v2, v0, v2
@@ -1436,7 +1436,7 @@
 
     if-ltz v2, :cond_2c
 
-    .line 440
+    .line 441
     sget-object v2, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1457,17 +1457,17 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->v(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 441
+    .line 442
     iput-wide v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mTime:J
 
     const/4 v0, 0x0
 
-    .line 442
+    .line 443
     iput v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mCount:I
 
     return-void
 
-    .line 444
+    .line 445
     :cond_2c
     iget v0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mCount:I
 
@@ -1481,7 +1481,7 @@
 .method private updateTexTransformMatrix(Ljava/lang/String;)V
     .registers 4
 
-    .line 555
+    .line 556
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->isCurrentCameraFacingBack()Z
 
     move-result v0
@@ -1498,7 +1498,7 @@
 
     if-eqz p1, :cond_29
 
-    .line 556
+    .line 557
     iget p0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mOrientation:I
 
     const/16 p1, 0x5a
@@ -1513,30 +1513,30 @@
 
     goto :goto_22
 
-    .line 560
+    .line 561
     :cond_1b
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/videohdr/utils/HDRConfig;->setTransformMatrixHorizontalMirror(Z)V
 
-    .line 561
+    .line 562
     invoke-static {v1}, Lcom/transsion/camera/feature/setting/videohdr/utils/HDRConfig;->setTransformMatrixVerticalMirror(Z)V
 
     return-void
 
-    .line 557
+    .line 558
     :cond_22
     :goto_22
     invoke-static {v1}, Lcom/transsion/camera/feature/setting/videohdr/utils/HDRConfig;->setTransformMatrixHorizontalMirror(Z)V
 
-    .line 558
+    .line 559
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/videohdr/utils/HDRConfig;->setTransformMatrixVerticalMirror(Z)V
 
     return-void
 
-    .line 564
+    .line 565
     :cond_29
     invoke-static {v1}, Lcom/transsion/camera/feature/setting/videohdr/utils/HDRConfig;->setTransformMatrixHorizontalMirror(Z)V
 
-    .line 565
+    .line 566
     invoke-static {v1}, Lcom/transsion/camera/feature/setting/videohdr/utils/HDRConfig;->setTransformMatrixVerticalMirror(Z)V
 
     return-void
@@ -1660,7 +1660,14 @@
     .line 293
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
+    const/4 p2, -0x1
+
+    if-ne p3, p2, :cond_2c
+
+    const/4 p3, 0x0
+
     .line 294
+    :cond_2c
     iput p3, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mOrientation:I
 
     .line 295
@@ -1697,10 +1704,17 @@
 .method public onOrientationChanged(IZ)V
     .registers 9
 
-    .line 351
-    iput p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mOrientation:I
+    const/4 v0, -0x1
+
+    if-ne p1, v0, :cond_4
+
+    const/4 p1, 0x0
 
     .line 352
+    :cond_4
+    iput p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mOrientation:I
+
+    .line 353
     sget-object p1, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1739,39 +1753,39 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 353
+    .line 354
     invoke-static {}, Lcom/transsion/camera/feature/setting/videohdr/utils/HDRConfig;->isWaterMarkOn()Z
 
     move-result p1
 
-    if-eqz p1, :cond_52
+    if-eqz p1, :cond_56
 
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mIsVideoRecording:Z
 
-    if-nez p1, :cond_52
+    if-nez p1, :cond_56
 
-    .line 354
+    .line 355
     iget v1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mSurfaceHeight:I
 
     iget v2, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mSurfaceWidth:I
 
     iget v3, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mOrientation:I
 
-    if-eqz p2, :cond_46
+    if-eqz p2, :cond_4a
 
     const/16 p1, 0x5a
 
-    :goto_44
+    :goto_48
     move v4, p1
 
-    goto :goto_49
+    goto :goto_4d
 
-    :cond_46
+    :cond_4a
     const/16 p1, 0x10e
 
-    goto :goto_44
+    goto :goto_48
 
-    :goto_49
+    :goto_4d
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->isCurrentCameraFacingBack()Z
 
     move-result v5
@@ -1780,28 +1794,28 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->updateWaterMarkPosition(IIIIZ)V
 
-    goto :goto_53
+    goto :goto_57
 
-    :cond_52
+    :cond_56
     move-object v0, p0
 
-    .line 357
-    :goto_53
+    .line 358
+    :goto_57
     iget-object p0, v0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    if-eqz p0, :cond_60
+    if-eqz p0, :cond_64
 
-    .line 358
+    .line 359
     const-string p1, "key_mirror"
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 359
+    .line 360
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->updateTexTransformMatrix(Ljava/lang/String;)V
 
-    :cond_60
+    :cond_64
     return-void
 .end method
 
@@ -1835,12 +1849,12 @@
 .method public reset()V
     .registers 1
 
-    .line 365
+    .line 366
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mRenderDrawer:Lcom/transsion/camera/feature/setting/videohdr/glrender/GLRenderDrawer;
 
     if-eqz p0, :cond_7
 
-    .line 366
+    .line 367
     invoke-interface {p0}, Lcom/transsion/camera/feature/setting/videohdr/glrender/GLRenderDrawer;->reset()V
 
     :cond_7
@@ -1954,7 +1968,7 @@
 .method public setVideoBackWideSupport360Hdr(Z)V
     .registers 2
 
-    .line 551
+    .line 552
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mIsVideoBackWideSupport360Hdr:Z
 
     return-void
@@ -1963,10 +1977,10 @@
 .method public setVideoHDRState(Z)V
     .registers 4
 
-    .line 540
+    .line 541
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mIsVideoHDRState:Z
 
-    .line 541
+    .line 542
     sget-object p1, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1993,7 +2007,7 @@
 .method public setVideoSuperNightSupport(Z)V
     .registers 2
 
-    .line 546
+    .line 547
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mIsVideoSuperNightSupport:Z
 
     return-void
@@ -2046,28 +2060,31 @@
     .line 339
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mIsVideoRecording:Z
 
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_4e
 
     .line 340
     iget p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mOrientation:I
 
     const/4 v0, -0x1
 
-    if-ne p1, v0, :cond_2f
+    if-ne p1, v0, :cond_31
 
     const/4 p1, 0x0
 
     .line 341
     iput p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mTempOrientation:I
 
-    goto :goto_31
+    .line 342
+    iput p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mOrientation:I
 
-    .line 343
-    :cond_2f
+    goto :goto_33
+
+    .line 344
+    :cond_31
     iput p1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mTempOrientation:I
 
-    .line 345
-    :goto_31
+    .line 346
+    :goto_33
     iget v1, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mSurfaceHeight:I
 
     iget v2, p0, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->mSurfaceWidth:I
@@ -2078,21 +2095,21 @@
 
     move-result p1
 
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_43
 
     const/16 p1, 0x5a
 
-    :goto_3f
+    :goto_41
     move v4, p1
 
-    goto :goto_44
+    goto :goto_46
 
-    :cond_41
+    :cond_43
     const/16 p1, 0x10e
 
-    goto :goto_3f
+    goto :goto_41
 
-    :goto_44
+    :goto_46
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->isCurrentCameraFacingBack()Z
 
     move-result v5
@@ -2101,7 +2118,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/feature/setting/videohdr/preview/VideoHDRPreview;->updateWaterMarkPosition(IIIIZ)V
 
-    :cond_4c
+    :cond_4e
     return-void
 .end method
 

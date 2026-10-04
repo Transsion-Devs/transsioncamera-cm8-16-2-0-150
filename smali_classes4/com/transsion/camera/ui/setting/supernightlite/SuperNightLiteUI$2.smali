@@ -47,7 +47,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;)V
     .registers 2
 
-    .line 367
+    .line 372
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$2;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .method private synthetic lambda$onCompositionLoaded$0(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
     .registers 2
 
-    .line 382
+    .line 387
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$2;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     iget-object p1, p1, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->mNightLiteSwitch:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
@@ -110,7 +110,7 @@
 .method private synthetic lambda$onCompositionLoaded$1(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
     .registers 2
 
-    .line 385
+    .line 390
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$2;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     iget-object p1, p1, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->mNightLiteSwitch:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
@@ -164,14 +164,14 @@
 .method public onCompositionLoaded(Lcom/airbnb/lottie/LottieComposition;)V
     .registers 8
 
-    .line 371
+    .line 376
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$2;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     iget-object v0, v0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->mNightLiteSwitch:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-nez v0, :cond_e
 
-    .line 372
+    .line 377
     sget-object p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "mNightLiteSwitch is null,exit ahead of time."
@@ -180,7 +180,7 @@
 
     return-void
 
-    .line 376
+    .line 381
     :cond_e
     new-instance v1, Lcom/airbnb/lottie/model/KeyPath;
 
@@ -196,7 +196,7 @@
 
     move-result-object v0
 
-    .line 377
+    .line 382
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -214,12 +214,12 @@
 
     check-cast v1, Lcom/airbnb/lottie/model/KeyPath;
 
-    .line 378
+    .line 383
     invoke-virtual {v1}, Lcom/airbnb/lottie/model/KeyPath;->keysToString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 379
+    .line 384
     sget-object v3, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -260,7 +260,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 380
+    .line 385
     const-string v3, "icon"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -269,7 +269,7 @@
 
     if-eqz v2, :cond_78
 
-    .line 381
+    .line 386
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$2;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 
     iget-object v2, v2, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->mNightLiteSwitch:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
@@ -284,7 +284,7 @@
 
     goto :goto_21
 
-    .line 384
+    .line 389
     :cond_78
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI$2;->this$0:Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;
 

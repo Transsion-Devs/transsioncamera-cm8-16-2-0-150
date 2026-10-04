@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)V
     .registers 2
 
-    .line 1516
+    .line 1379
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onSwitchMode(Ljava/lang/String;)V
     .registers 8
 
-    .line 1519
+    .line 1382
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -76,7 +76,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 1521
+    .line 1384
     const-string v0, "com.transsion.camera.feature.mode.more.MoreModeEntry"
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -89,7 +89,7 @@
 
     if-eqz v1, :cond_6a
 
-    .line 1522
+    .line 1385
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v1
@@ -116,7 +116,7 @@
 
     invoke-static {v1, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1523
+    .line 1386
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmClickGuideIconEnterMoreMode(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Z
@@ -125,12 +125,12 @@
 
     if-eqz v1, :cond_62
 
-    .line 1524
+    .line 1387
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v1, v3}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fputmClickGuideIconEnterMoreMode(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;Z)V
 
-    .line 1525
+    .line 1388
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v1
@@ -141,7 +141,7 @@
 
     goto :goto_c3
 
-    .line 1527
+    .line 1390
     :cond_62
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -151,7 +151,7 @@
 
     goto :goto_c3
 
-    .line 1529
+    .line 1392
     :cond_6a
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
@@ -177,12 +177,12 @@
 
     if-nez v1, :cond_c3
 
-    .line 1530
+    .line 1393
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v1, p1}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fputmChangedModeName(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;Ljava/lang/String;)V
 
-    .line 1531
+    .line 1394
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v1
@@ -209,7 +209,7 @@
 
     invoke-static {v1, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1532
+    .line 1395
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmClickModeIcon(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Z
@@ -218,12 +218,12 @@
 
     if-eqz v1, :cond_bc
 
-    .line 1533
+    .line 1396
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v1, v3}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fputmClickModeIcon(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;Z)V
 
-    .line 1534
+    .line 1397
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v1
@@ -234,7 +234,7 @@
 
     goto :goto_c3
 
-    .line 1536
+    .line 1399
     :cond_bc
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -242,7 +242,7 @@
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->recordExitMoreModeOperation(Ljava/lang/String;)V
 
-    .line 1539
+    .line 1402
     :cond_c3
     :goto_c3
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportColumnOrBoth()Z
@@ -264,7 +264,7 @@
 
     goto :goto_d9
 
-    .line 1542
+    .line 1405
     :cond_d3
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
@@ -272,14 +272,14 @@
 
     goto :goto_de
 
-    .line 1540
+    .line 1403
     :cond_d9
     :goto_d9
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$mregisterScrollListener(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)V
 
-    .line 1544
+    .line 1407
     :goto_de
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
@@ -293,14 +293,14 @@
 
     if-eqz v1, :cond_196
 
-    .line 1545
+    .line 1408
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_14a
 
-    .line 1546
+    .line 1409
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmCurrentModeName(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Ljava/lang/String;
@@ -313,7 +313,7 @@
 
     if-nez v0, :cond_10b
 
-    .line 1547
+    .line 1410
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePanelUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/IModePanelUI;
@@ -328,7 +328,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/ui/IModePanelUI;->setModeNameBeforeSwitchMoreMode(Ljava/lang/String;)V
 
-    .line 1549
+    .line 1412
     :cond_10b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
@@ -340,7 +340,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 1550
+    .line 1413
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -349,7 +349,7 @@
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IWideCameraControl;->hideWideCamera()V
 
-    .line 1551
+    .line 1414
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -358,7 +358,7 @@
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->hideInteractiveUI()V
 
-    .line 1552
+    .line 1415
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -367,7 +367,7 @@
 
     invoke-interface {v0, v3}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideHintLayout(Z)V
 
-    .line 1553
+    .line 1416
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -376,7 +376,7 @@
 
     invoke-interface {v0, v3}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideTopAndBottomView(Z)V
 
-    .line 1554
+    .line 1417
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePanelUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/IModePanelUI;
@@ -385,7 +385,7 @@
 
     invoke-interface {v0}, Lcom/transsion/camera/app/ui/IModePanelUI;->show()V
 
-    .line 1555
+    .line 1418
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     const/4 v1, 0x0
@@ -394,7 +394,7 @@
 
     goto :goto_196
 
-    .line 1557
+    .line 1420
     :cond_14a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
@@ -406,7 +406,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 1559
+    .line 1422
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -431,14 +431,14 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideHintLayout(Z)V
 
-    .line 1560
+    .line 1423
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
     if-eqz v0, :cond_184
 
-    .line 1561
+    .line 1424
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmIsZoomScaling(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Z
@@ -447,7 +447,7 @@
 
     if-nez v0, :cond_18d
 
-    .line 1562
+    .line 1425
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -458,7 +458,7 @@
 
     goto :goto_18d
 
-    .line 1565
+    .line 1428
     :cond_184
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
@@ -468,7 +468,7 @@
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideTopAndBottomView(Z)V
 
-    .line 1567
+    .line 1430
     :cond_18d
     :goto_18d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
@@ -479,7 +479,7 @@
 
     invoke-interface {v0}, Lcom/transsion/camera/app/ui/IModePanelUI;->hide()V
 
-    .line 1571
+    .line 1434
     :cond_196
     :goto_196
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
@@ -488,21 +488,21 @@
 
     if-eqz v1, :cond_1cb
 
-    .line 1572
+    .line 1435
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmIsCameraSwitching(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Z
 
     move-result v0
 
     if-nez v0, :cond_1cb
 
-    .line 1573
+    .line 1436
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/manager/AbstractModePickerUIManager;->mModeChangedListener:Lcom/transsion/camera/app/common/IAppUIListener$IModeChangedListener;
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IModeChangedListener;->onSwitchMode(Ljava/lang/String;)V
 
-    .line 1574
+    .line 1437
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmContext(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Landroid/content/Context;
@@ -511,7 +511,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/ui/mode/ModeUIItem;->setVal(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 1575
+    .line 1438
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePickerUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/ModePickerUI;
@@ -520,7 +520,7 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateTabSellingPointState()V
 
-    .line 1576
+    .line 1439
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePickerUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/ModePickerUI;
@@ -529,14 +529,14 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateTabFeatureName()V
 
-    .line 1577
+    .line 1440
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/manager/AbstractModePickerUIManager;->mModeScrollUI:Lcom/transsion/camera/app/ui/IModeScrollUI;
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/ui/IModeScrollUI;->showMode(Ljava/lang/String;)V
 
-    .line 1580
+    .line 1443
     :cond_1cb
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$ModeChangedListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 

@@ -42,6 +42,8 @@
 
 .field private static final SELF_TIMER_ORIENTATION_UPDATE:I = 0x4
 
+.field private static final SELF_TIMER_STOP_LIGHT:I = 0x6
+
 .field private static final SELF_TIMER_UPDATE_SHUTTER_ICON:I = 0x5
 
 .field private static final SELF_TIMER_VIEW_HIDE:I = 0x2
@@ -101,6 +103,8 @@
 .field private mIsPause:Z
 
 .field private mIsSuperNightLiteStart:Z
+
+.field private mLastScene:I
 
 .field private mLongExposureCapturing:Z
 
@@ -210,6 +214,15 @@
     return-void
 .end method
 
+.method static bridge synthetic -$$Nest$fputmLastScene(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;I)V
+    .registers 2
+
+    .line 0
+    iput p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mLastScene:I
+
+    return-void
+.end method
+
 .method static bridge synthetic -$$Nest$fputmSelfTimerState(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;Ljava/lang/String;)V
     .registers 2
 
@@ -285,7 +298,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 56
+    .line 57
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "SelfTimerUI"
@@ -294,32 +307,32 @@
 
     sput-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 82
+    .line 84
     sget v0, Lcom/transsion/camera/R$raw;->beep_once:I
 
     sput v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->BEEP_ONCE_ID:I
 
-    .line 83
+    .line 85
     sget v0, Lcom/transsion/camera/R$raw;->beep_twice:I
 
     sput v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->BEEP_TWICE_ID:I
 
-    .line 85
+    .line 87
     sget v0, Lcom/transsion/camera/R$raw;->countdown_eight_beeps:I
 
     sput v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->COUNTDOWN_EIGHT_BEEPS_ID:I
 
-    .line 86
+    .line 88
     sget v0, Lcom/transsion/camera/R$raw;->countdown_four_beeps:I
 
     sput v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->COUNTDOWN_FOUR_BEEPS_ID:I
 
-    .line 87
+    .line 89
     sget v0, Lcom/transsion/camera/R$raw;->countdown_twice_beeps:I
 
     sput v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->COUNTDOWN_TWICE_BEEPS_ID:I
 
-    .line 88
+    .line 90
     sget v0, Lcom/transsion/camera/R$raw;->countdown_once_beep:I
 
     sput v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->COUNTDOWN_ONCE_BEEPS_ID:I
@@ -330,84 +343,84 @@
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .registers 5
 
-    .line 126
+    .line 129
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 94
+    .line 96
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerSoundLoaded:Z
 
-    .line 95
+    .line 97
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mHasStartLoadSound:Z
 
-    .line 96
+    .line 98
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mActionSoundLock:Ljava/lang/Object;
 
-    .line 97
+    .line 99
     new-instance v1, Lcom/transsion/camera/utils/StateWait;
 
     invoke-direct {v1}, Lcom/transsion/camera/utils/StateWait;-><init>()V
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSoundLoadStateWait:Lcom/transsion/camera/utils/StateWait;
 
-    .line 106
+    .line 108
     const-string v1, "self_timer_idle"
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerState:Ljava/lang/String;
 
-    .line 107
+    .line 109
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
-    .line 113
+    .line 115
     iput v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerNumBeforeDelay:I
 
-    .line 115
+    .line 117
     const-string v1, "0"
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurrentCameraId:Ljava/lang/String;
 
-    .line 117
+    .line 119
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsFunVideoRecordingStart:Z
 
-    .line 118
+    .line 120
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsSuperNightLiteStart:Z
 
-    .line 119
+    .line 121
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mLongExposureCapturing:Z
 
-    .line 693
+    .line 759
     new-instance v1, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$1;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$1;-><init>(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;)V
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 127
+    .line 130
     sget-object v1, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v2, "init"
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 128
+    .line 131
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsPause:Z
 
-    .line 129
+    .line 132
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerSoundLoaded:Z
 
-    .line 130
+    .line 133
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mResources:Landroid/content/res/Resources;
 
-    .line 131
+    .line 134
     new-instance v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     const/4 v1, 0x0
@@ -416,7 +429,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
-    .line 132
+    .line 135
     sget v0, Lcom/transsion/camera/R$integer;->self_timer_sound_effect_type:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getInteger(I)I
@@ -425,7 +438,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerType:I
 
-    .line 133
+    .line 136
     invoke-static {}, Lcom/transsion/camera/app_info/AppInfo;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -436,7 +449,7 @@
 
     if-eqz v0, :cond_71
 
-    .line 134
+    .line 137
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -445,7 +458,7 @@
 
     if-eqz v0, :cond_71
 
-    .line 135
+    .line 138
     const-string v0, "com.transsion.camera.ui.setting.selftimer.FlipFunnyShot"
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -467,14 +480,14 @@
 .method private hideSelfTimerTextView()V
     .registers 2
 
-    .line 688
+    .line 754
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
     if-eqz p0, :cond_8
 
     const/4 v0, 0x4
 
-    .line 689
+    .line 755
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_8
@@ -484,7 +497,7 @@
 .method private hideSelfTimerView(ZZ)V
     .registers 6
 
-    .line 612
+    .line 619
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -503,33 +516,33 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 613
+    .line 620
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerSoundLoaded:Z
 
     if-eqz v0, :cond_36
 
-    .line 614
+    .line 621
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepOnceSampleId:I
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/utils/sound/IActionSound;->stop(I)V
 
-    .line 615
+    .line 622
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepTwiceSampleId:I
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/utils/sound/IActionSound;->stop(I)V
 
-    .line 616
+    .line 623
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepFourSampleId:I
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/utils/sound/IActionSound;->stop(I)V
 
-    .line 617
+    .line 624
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepEightSampleId:I
@@ -537,43 +550,42 @@
     invoke-interface {v0, v1}, Lcom/transsion/camera/utils/sound/IActionSound;->stop(I)V
 
     :cond_36
-    if-eqz p1, :cond_3f
+    const/4 v0, 0x0
 
-    .line 621
-    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
+    .line 627
+    iput v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStartSelfTimerNum:I
 
-    const/16 v0, 0x6c
+    if-eqz p1, :cond_3e
 
-    invoke-static {p1, v0}, Lcom/transsion/camera/utils/CameraUtil;->hookDisturbStatus(Landroid/content/Context;I)V
+    .line 629
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->hookTranLed()V
 
-    .line 623
-    :cond_3f
+    .line 631
+    :cond_3e
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
     invoke-virtual {p1}, Landroid/view/View;->clearAnimation()V
 
-    const/4 p1, 0x0
+    .line 632
+    iput v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurSelfTimerNum:I
 
-    .line 624
-    iput p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurSelfTimerNum:I
-
-    .line 625
+    .line 633
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mFlipFunnyShot:Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;
 
-    if-eqz p1, :cond_4e
+    if-eqz p1, :cond_4c
 
-    .line 626
+    .line 634
     invoke-interface {p1}, Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;->hide()V
 
-    .line 628
-    :cond_4e
+    .line 636
+    :cond_4c
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     const/4 v0, 0x3
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 629
+    .line 637
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIStateControl:Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;
 
     const/4 v0, -0x1
@@ -584,22 +596,22 @@
 
     invoke-interface {p1, v2, v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    if-eqz p2, :cond_6a
+    if-eqz p2, :cond_68
 
-    .line 631
+    .line 639
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCameraOperateActionControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 p2, 0xc
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 632
+    .line 640
     const-string p1, "status_self_timer_end"
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->sendStatusChanged(Ljava/lang/String;)V
 
-    .line 634
-    :cond_6a
+    .line 642
+    :cond_68
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     const/4 p1, 0x2
@@ -610,9 +622,9 @@
 .end method
 
 .method private hookTranLed()V
-    .registers 6
+    .registers 9
 
-    .line 648
+    .line 656
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     const-string v1, "key_mood_light"
@@ -629,9 +641,9 @@
 
     if-nez v0, :cond_11
 
-    return-void
+    goto :goto_52
 
-    .line 652
+    .line 660
     :cond_11
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -643,50 +655,142 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_38
+    const-string v3, "10"
 
-    .line 653
+    const-string v4, "3"
+
+    const-string v5, "5"
+
+    if-eqz v0, :cond_70
+
+    .line 661
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsTranLightingFwkV2Support:Z
+
+    if-eqz v0, :cond_53
+
+    .line 663
     iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurSelfTimerNum:I
 
-    if-eq v0, v2, :cond_30
+    invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    if-eq v0, v1, :cond_2d
+    move-result v1
+
+    const-string v2, "off"
+
+    if-le v0, v1, :cond_34
+
+    goto :goto_45
+
+    .line 665
+    :cond_34
+    iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurSelfTimerNum:I
+
+    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    if-le v0, v1, :cond_3e
+
+    move-object v3, v5
+
+    goto :goto_45
+
+    .line 667
+    :cond_3e
+    iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurSelfTimerNum:I
+
+    if-lez v0, :cond_44
+
+    move-object v3, v4
+
+    goto :goto_45
+
+    :cond_44
+    move-object v3, v2
+
+    .line 670
+    :goto_45
+    invoke-static {v3, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_52
+
+    .line 671
+    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->hookTranLightV2(I)V
+
+    :cond_52
+    :goto_52
+    return-void
+
+    .line 675
+    :cond_53
+    iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurSelfTimerNum:I
+
+    if-eq v0, v2, :cond_68
+
+    if-eq v0, v1, :cond_65
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_2a
+    if-eq v0, v1, :cond_62
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_2a
+    if-eq v0, v1, :cond_62
 
     const/16 v0, 0x6f
 
-    goto :goto_32
+    goto :goto_6a
 
-    :cond_2a
+    :cond_62
     const/16 v0, 0x70
 
-    goto :goto_32
+    goto :goto_6a
 
-    :cond_2d
+    :cond_65
     const/16 v0, 0x71
 
-    goto :goto_32
+    goto :goto_6a
 
-    :cond_30
+    :cond_68
     const/16 v0, 0x72
 
-    .line 668
-    :goto_32
+    .line 690
+    :goto_6a
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/CameraUtil;->hookDisturbStatus(Landroid/content/Context;I)V
 
     return-void
 
-    .line 670
-    :cond_38
+    .line 692
+    :cond_70
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsTranLightingFwkV2Support:Z
+
+    if-eqz v0, :cond_7e
+
+    .line 693
+    iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStartSelfTimerNum:I
+
+    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->hookTranLightV2(I)V
+
+    return-void
+
+    .line 695
+    :cond_7e
     iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStartSelfTimerNum:I
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -697,81 +801,75 @@
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    move-result v3
+    move-result v6
 
-    const/4 v4, -0x1
+    const/4 v7, -0x1
 
-    sparse-switch v3, :sswitch_data_7e
+    sparse-switch v6, :sswitch_data_be
 
-    :goto_49
-    move v1, v4
+    :goto_8f
+    move v1, v7
 
-    goto :goto_69
+    goto :goto_a9
 
-    :sswitch_4b
-    const-string v2, "10"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :sswitch_91
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_69
+    if-nez v0, :cond_a9
 
-    goto :goto_49
+    goto :goto_8f
 
-    :sswitch_54
-    const-string v1, "5"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :sswitch_98
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_5d
+    if-nez v0, :cond_9f
 
-    goto :goto_49
+    goto :goto_8f
 
-    :cond_5d
+    :cond_9f
     move v1, v2
 
-    goto :goto_69
+    goto :goto_a9
 
-    :sswitch_5f
-    const-string v1, "3"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :sswitch_a1
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_68
+    if-nez v0, :cond_a8
 
-    goto :goto_49
+    goto :goto_8f
 
-    :cond_68
+    :cond_a8
     const/4 v1, 0x0
 
-    :cond_69
-    :goto_69
-    packed-switch v1, :pswitch_data_8c
+    :cond_a9
+    :goto_a9
+    packed-switch v1, :pswitch_data_cc
 
     const/16 v0, 0x6c
 
-    goto :goto_77
+    goto :goto_b7
 
-    :pswitch_6f
+    :pswitch_af
     const/16 v0, 0x6b
 
-    goto :goto_77
+    goto :goto_b7
 
-    :pswitch_72
+    :pswitch_b2
     const/16 v0, 0x6a
 
-    goto :goto_77
+    goto :goto_b7
 
-    :pswitch_75
+    :pswitch_b5
     const/16 v0, 0x69
 
-    .line 683
-    :goto_77
+    .line 708
+    :goto_b7
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/CameraUtil;->hookDisturbStatus(Landroid/content/Context;I)V
@@ -780,63 +878,253 @@
 
     nop
 
-    :sswitch_data_7e
+    :sswitch_data_be
     .sparse-switch
-        0x33 -> :sswitch_5f
-        0x35 -> :sswitch_54
-        0x61f -> :sswitch_4b
+        0x33 -> :sswitch_a1
+        0x35 -> :sswitch_98
+        0x61f -> :sswitch_91
     .end sparse-switch
 
-    :pswitch_data_8c
+    :pswitch_data_cc
     .packed-switch 0x0
-        :pswitch_75
-        :pswitch_72
-        :pswitch_6f
+        :pswitch_b5
+        :pswitch_b2
+        :pswitch_af
+    .end packed-switch
+.end method
+
+.method private hookTranLightV2(I)V
+    .registers 6
+
+    .line 715
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, -0x1
+
+    sparse-switch v0, :sswitch_data_80
+
+    :goto_10
+    move p1, v2
+
+    goto :goto_32
+
+    :sswitch_12
+    const-string v0, "10"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1b
+
+    goto :goto_10
+
+    :cond_1b
+    const/4 p1, 0x2
+
+    goto :goto_32
+
+    :sswitch_1d
+    const-string v0, "5"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_26
+
+    goto :goto_10
+
+    :cond_26
+    const/4 p1, 0x1
+
+    goto :goto_32
+
+    :sswitch_28
+    const-string v0, "3"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_31
+
+    goto :goto_10
+
+    :cond_31
+    move p1, v1
+
+    :goto_32
+    const/16 v0, 0x6c
+
+    packed-switch p1, :pswitch_data_8e
+
+    move p1, v0
+
+    goto :goto_41
+
+    :pswitch_39
+    const/16 p1, 0x32d
+
+    goto :goto_41
+
+    :pswitch_3c
+    const/16 p1, 0x32c
+
+    goto :goto_41
+
+    :pswitch_3f
+    const/16 p1, 0x32b
+
+    .line 728
+    :goto_41
+    iget v3, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mLastScene:I
+
+    if-ne p1, v3, :cond_46
+
+    goto :goto_70
+
+    :cond_46
+    const/4 v3, 0x6
+
+    if-eq p1, v0, :cond_71
+
+    .line 732
+    invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->getTranLightScenePlayTime(I)I
+
+    move-result v0
+
+    if-eq v0, v2, :cond_70
+
+    .line 734
+    invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->startTranLightScene(I)V
+
+    .line 735
+    iget v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mLastScene:I
+
+    if-eqz v1, :cond_59
+
+    .line 736
+    invoke-static {v1}, Lcom/transsion/camera/utils/CameraUtil;->stopTranLightScene(I)V
+
+    .line 738
+    :cond_59
+    iput p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mLastScene:I
+
+    .line 740
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
+
+    invoke-virtual {v1, v3}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 741
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {v1, v3, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object p1
+
+    .line 742
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
+
+    int-to-long v0, v0
+
+    invoke-virtual {p0, p1, v0, v1}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+
+    :cond_70
+    :goto_70
+    return-void
+
+    .line 745
+    :cond_71
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
+
+    invoke-virtual {p1, v3}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 746
+    iget p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mLastScene:I
+
+    if-eqz p1, :cond_7d
+
+    .line 747
+    invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->stopTranLightScene(I)V
+
+    .line 749
+    :cond_7d
+    iput v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mLastScene:I
+
+    return-void
+
+    :sswitch_data_80
+    .sparse-switch
+        0x33 -> :sswitch_28
+        0x35 -> :sswitch_1d
+        0x61f -> :sswitch_12
+    .end sparse-switch
+
+    :pswitch_data_8e
+    .packed-switch 0x0
+        :pswitch_3f
+        :pswitch_3c
+        :pswitch_39
     .end packed-switch
 .end method
 
 .method private interruptTimer()V
     .registers 3
 
-    .line 496
+    .line 499
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "interruptTimer"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 497
+    .line 500
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 498
+    .line 501
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 499
+    .line 502
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 500
+    .line 503
     const-string v0, "status_self_timer_cancel"
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->sendStatusChanged(Ljava/lang/String;)V
 
-    .line 501
+    .line 504
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCameraOperateActionControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz p0, :cond_26
 
     const/16 v0, 0x191
 
-    .line 502
+    .line 505
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     :cond_26
@@ -846,38 +1134,38 @@
 .method private interruptTimerDirectly(Z)V
     .registers 4
 
-    .line 487
+    .line 490
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "interruptTimerDirectly"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 488
+    .line 491
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 489
+    .line 492
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 490
+    .line 493
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 491
+    .line 494
     invoke-direct {p0, v1, p1}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->hideSelfTimerView(ZZ)V
 
-    .line 492
+    .line 495
     const-string p1, "self_timer_idle"
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerState:Ljava/lang/String;
@@ -888,7 +1176,7 @@
 .method private isMainThread()Z
     .registers 2
 
-    .line 483
+    .line 486
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object p0
@@ -912,18 +1200,18 @@
 .method private synthetic lambda$loadSelfTimerSound$1(Lcom/transsion/camera/utils/sound/IActionSound;I)V
     .registers 5
 
-    .line 791
+    .line 857
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mActionSoundLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 792
+    .line 858
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-nez v1, :cond_d
 
-    .line 793
+    .line 859
     invoke-interface {p1, p2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
 
     goto :goto_f
@@ -933,11 +1221,11 @@
 
     goto :goto_11
 
-    .line 795
+    .line 861
     :cond_d
     iput p2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepOnceSampleId:I
 
-    .line 797
+    .line 863
     :goto_f
     monitor-exit v0
 
@@ -954,18 +1242,18 @@
 .method private synthetic lambda$loadSelfTimerSound$2(Lcom/transsion/camera/utils/sound/IActionSound;I)V
     .registers 5
 
-    .line 800
+    .line 866
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mActionSoundLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 801
+    .line 867
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-nez v1, :cond_d
 
-    .line 802
+    .line 868
     invoke-interface {p1, p2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
 
     goto :goto_f
@@ -975,11 +1263,11 @@
 
     goto :goto_11
 
-    .line 804
+    .line 870
     :cond_d
     iput p2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepTwiceSampleId:I
 
-    .line 806
+    .line 872
     :goto_f
     monitor-exit v0
 
@@ -996,18 +1284,18 @@
 .method private synthetic lambda$loadSelfTimerSound$3(Lcom/transsion/camera/utils/sound/IActionSound;I)V
     .registers 5
 
-    .line 809
+    .line 875
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mActionSoundLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 810
+    .line 876
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-nez v1, :cond_d
 
-    .line 811
+    .line 877
     invoke-interface {p1, p2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
 
     goto :goto_f
@@ -1017,11 +1305,11 @@
 
     goto :goto_11
 
-    .line 813
+    .line 879
     :cond_d
     iput p2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepFourSampleId:I
 
-    .line 815
+    .line 881
     :goto_f
     monitor-exit v0
 
@@ -1038,18 +1326,18 @@
 .method private synthetic lambda$loadSelfTimerSound$4(Lcom/transsion/camera/utils/sound/IActionSound;I)V
     .registers 5
 
-    .line 818
+    .line 884
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mActionSoundLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 819
+    .line 885
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-nez v1, :cond_d
 
-    .line 820
+    .line 886
     invoke-interface {p1, p2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
 
     goto :goto_f
@@ -1059,11 +1347,11 @@
 
     goto :goto_11
 
-    .line 822
+    .line 888
     :cond_d
     iput p2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepEightSampleId:I
 
-    .line 824
+    .line 890
     :goto_f
     monitor-exit v0
 
@@ -1080,7 +1368,7 @@
 .method private synthetic lambda$loadSelfTimerSound$5(Ljava/lang/Runnable;)V
     .registers 5
 
-    .line 826
+    .line 892
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1101,17 +1389,17 @@
 
     const/4 v0, 0x1
 
-    .line 827
+    .line 893
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerSoundLoaded:Z
 
-    .line 828
+    .line 894
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSoundLoadStateWait:Lcom/transsion/camera/utils/StateWait;
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/StateWait;->notifyState()V
 
     if-eqz p1, :cond_23
 
-    .line 830
+    .line 896
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_23
@@ -1121,12 +1409,12 @@
 .method private synthetic lambda$startSelfTimerImmediately$0(I)V
     .registers 3
 
-    .line 749
+    .line 815
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsPause:Z
 
     if-nez v0, :cond_7
 
-    .line 750
+    .line 816
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->startSelfTimer(I)V
 
     :cond_7
@@ -1136,7 +1424,7 @@
 .method private loadSelfTimerSound(Ljava/lang/Runnable;)V
     .registers 6
 
-    .line 774
+    .line 840
     iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStartSelfTimerNum:I
 
     if-eqz v0, :cond_88
@@ -1147,7 +1435,7 @@
 
     goto/16 :goto_88
 
-    .line 782
+    .line 848
     :cond_a
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1175,14 +1463,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 783
+    .line 849
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mHasStartLoadSound:Z
 
     if-eqz v0, :cond_2f
 
     goto :goto_8d
 
-    .line 787
+    .line 853
     :cond_2f
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
@@ -1194,10 +1482,10 @@
 
     const/4 v1, 0x1
 
-    .line 788
+    .line 854
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mHasStartLoadSound:Z
 
-    .line 789
+    .line 855
     iget v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerType:I
 
     if-ne v2, v1, :cond_3f
@@ -1210,7 +1498,7 @@
     :goto_40
     if-eqz v1, :cond_45
 
-    .line 790
+    .line 856
     sget v2, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->COUNTDOWN_ONCE_BEEPS_ID:I
 
     goto :goto_47
@@ -1225,7 +1513,7 @@
 
     invoke-interface {v0, v2, v3}, Lcom/transsion/camera/utils/sound/IActionSound;->load(ILcom/transsion/camera/utils/sound/IActionSound$SoundCallback;)V
 
-    .line 799
+    .line 865
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-eqz v1, :cond_56
@@ -1244,7 +1532,7 @@
 
     invoke-interface {v0, v2, v3}, Lcom/transsion/camera/utils/sound/IActionSound;->load(ILcom/transsion/camera/utils/sound/IActionSound$SoundCallback;)V
 
-    .line 808
+    .line 874
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-eqz v1, :cond_67
@@ -1263,7 +1551,7 @@
 
     invoke-interface {v0, v2, v3}, Lcom/transsion/camera/utils/sound/IActionSound;->load(ILcom/transsion/camera/utils/sound/IActionSound$SoundCallback;)V
 
-    .line 817
+    .line 883
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-eqz v1, :cond_78
@@ -1292,7 +1580,7 @@
     :goto_88
     if-eqz p1, :cond_8d
 
-    .line 778
+    .line 844
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_8d
@@ -1305,7 +1593,7 @@
 
     const/4 v0, 0x0
 
-    .line 770
+    .line 836
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->loadSelfTimerSound(Ljava/lang/Runnable;)V
 
     return-void
@@ -1314,7 +1602,7 @@
 .method private onSelfTimerStatusChanged(Ljava/lang/String;)V
     .registers 4
 
-    .line 758
+    .line 824
     const-string v0, "off"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -1327,14 +1615,14 @@
 
     if-eqz p1, :cond_28
 
-    .line 759
+    .line 825
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p1
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStartSelfTimerNum:I
 
-    .line 760
+    .line 826
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mShutterControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
@@ -1353,12 +1641,12 @@
 
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 763
+    .line 829
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->loadSelfTimerSoundIfNeed()V
 
     return-void
 
-    .line 765
+    .line 831
     :cond_28
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
@@ -1384,12 +1672,12 @@
 .method private querySettingValue(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
 
-    .line 850
+    .line 916
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_9
 
-    .line 851
+    .line 917
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISetting;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -1405,40 +1693,40 @@
 .method private realCapture()V
     .registers 3
 
-    .line 442
+    .line 445
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[realCapture]: "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 443
+    .line 446
     iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerNumBeforeDelay:I
 
     if-eqz v0, :cond_10
 
-    .line 444
+    .line 447
     iput v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStartSelfTimerNum:I
 
     const/4 v0, 0x0
 
-    .line 445
+    .line 448
     iput v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerNumBeforeDelay:I
 
-    .line 447
+    .line 450
     :cond_10
     const-string v0, "self_timer_capture"
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerState:Ljava/lang/String;
 
-    .line 448
+    .line 451
     iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurrentPriority:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_21
 
-    .line 449
+    .line 452
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCameraOperateActionControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 v1, 0x4f
@@ -1452,14 +1740,14 @@
 
     if-ne v0, v1, :cond_2b
 
-    .line 451
+    .line 454
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCameraOperateActionControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 v1, 0x8c
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 453
+    .line 456
     :cond_2b
     :goto_2b
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mShutterControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
@@ -1468,14 +1756,14 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->updateTriggerSelfTimerPriority(I)V
 
-    .line 454
+    .line 457
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mShutterControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
 
     const/16 v1, 0xa
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->triggerShutterClick(I)V
 
-    .line 456
+    .line 459
     const-string v0, "self_timer_idle"
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerState:Ljava/lang/String;
@@ -1486,7 +1774,7 @@
 .method private sendStatusChanged(Ljava/lang/String;)V
     .registers 3
 
-    .line 507
+    .line 510
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_self_timer_status"
@@ -1497,7 +1785,7 @@
 
     if-eqz p0, :cond_d
 
-    .line 509
+    .line 512
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_d
@@ -1507,34 +1795,34 @@
 .method private showSelfTimerView()V
     .registers 3
 
-    .line 638
+    .line 646
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "showSelfTimerView"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 639
+    .line 647
     iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStartSelfTimerNum:I
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurSelfTimerNum:I
 
-    .line 640
+    .line 648
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 641
+    .line 649
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mFlipFunnyShot:Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;
 
     if-eqz v0, :cond_18
 
-    .line 642
+    .line 650
     invoke-interface {v0}, Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;->startFunnyShot()V
 
-    .line 644
+    .line 652
     :cond_18
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->hookTranLed()V
 
@@ -1544,14 +1832,14 @@
 .method private startSelfTimer(I)V
     .registers 4
 
-    .line 460
+    .line 463
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
     move-result-object v0
 
     if-nez v0, :cond_e
 
-    .line 461
+    .line 464
     sget-object p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "startSelfTimer mEntryRootLayout is null"
@@ -1560,7 +1848,7 @@
 
     return-void
 
-    .line 464
+    .line 467
     :cond_e
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1572,7 +1860,7 @@
 
     if-ne p1, v0, :cond_20
 
-    .line 466
+    .line 469
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mShutterControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
 
     const/16 v1, 0x12
@@ -1581,7 +1869,7 @@
 
     goto :goto_29
 
-    .line 468
+    .line 471
     :cond_20
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mShutterControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
 
@@ -1591,47 +1879,47 @@
 
     invoke-interface {p1, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->updateShutterType(I)V
 
-    .line 470
+    .line 473
     :goto_29
     const-string p1, "self_timer_start"
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerState:Ljava/lang/String;
 
-    .line 471
+    .line 474
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIStateControl:Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;
 
     const/4 v1, 0x0
 
     invoke-interface {p1, v0, v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 472
+    .line 475
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCameraOperateActionControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 v0, 0xb
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 473
+    .line 476
     invoke-static {}, Lcom/transsion/camera/utils/MultiTouchManager;->resetState()V
 
-    .line 474
+    .line 477
     const-string p1, "status_self_timer_begin"
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->sendStatusChanged(Ljava/lang/String;)V
 
-    .line 475
+    .line 478
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->isMainThread()Z
 
     move-result p1
 
     if-eqz p1, :cond_4c
 
-    .line 476
+    .line 479
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->showSelfTimerView()V
 
     return-void
 
-    .line 478
+    .line 481
     :cond_4c
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
@@ -1645,7 +1933,7 @@
 .method private startSelfTimerImmediately(Ljava/lang/String;I)V
     .registers 6
 
-    .line 723
+    .line 789
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1678,7 +1966,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 724
+    .line 790
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p1
@@ -1699,61 +1987,61 @@
 
     goto :goto_2f
 
-    .line 730
+    .line 796
     :cond_36
     :goto_36
     iget v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStartSelfTimerNum:I
 
     iput v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerNumBeforeDelay:I
 
-    .line 731
+    .line 797
     iput p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStartSelfTimerNum:I
 
-    .line 732
+    .line 798
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerSoundLoaded:Z
 
     if-eqz p1, :cond_44
 
-    .line 733
+    .line 799
     invoke-direct {p0, p2}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->startSelfTimer(I)V
 
     return-void
 
-    .line 735
+    .line 801
     :cond_44
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mHasStartLoadSound:Z
 
     if-eqz p1, :cond_6b
 
-    .line 736
+    .line 802
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSoundLoadStateWait:Lcom/transsion/camera/utils/StateWait;
 
     invoke-virtual {p1}, Lcom/transsion/camera/utils/StateWait;->resetState()V
 
-    .line 738
+    .line 804
     :try_start_4d
     const-string p1, "startSelfTimerImmediately wait for sound load"
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 739
+    .line 805
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSoundLoadStateWait:Lcom/transsion/camera/utils/StateWait;
 
     const-wide/16 v1, 0x7d0
 
     invoke-virtual {p1, v1, v2}, Lcom/transsion/camera/utils/StateWait;->waitState(J)V
 
-    .line 740
+    .line 806
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsPause:Z
 
     if-nez p1, :cond_65
 
-    .line 741
+    .line 807
     const-string p1, "startSelfTimerImmediately wait for sound load finish"
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 742
+    .line 808
     invoke-direct {p0, p2}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->startSelfTimer(I)V
     :try_end_65
     .catch Ljava/lang/InterruptedException; {:try_start_4d .. :try_end_65} :catch_66
@@ -1764,12 +2052,12 @@
     :catch_66
     move-exception p0
 
-    .line 745
+    .line 811
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-void
 
-    .line 748
+    .line 814
     :cond_6b
     new-instance p1, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$$ExternalSyntheticLambda0;
 
@@ -1783,12 +2071,12 @@
 .method private unloadSelfTimerSound()V
     .registers 4
 
-    .line 837
+    .line 903
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mActionSoundLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 838
+    .line 904
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
@@ -1798,26 +2086,26 @@
 
     if-eqz v2, :cond_28
 
-    .line 839
+    .line 905
     iget v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepOnceSampleId:I
 
     invoke-interface {v1, v2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
 
-    .line 840
+    .line 906
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     iget v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepTwiceSampleId:I
 
     invoke-interface {v1, v2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
 
-    .line 841
+    .line 907
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     iget v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepFourSampleId:I
 
     invoke-interface {v1, v2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
 
-    .line 842
+    .line 908
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     iget v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepEightSampleId:I
@@ -1835,15 +2123,15 @@
     :goto_28
     const/4 v1, 0x0
 
-    .line 844
+    .line 910
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mHasStartLoadSound:Z
 
     const/4 v1, 0x0
 
-    .line 845
+    .line 911
     iput-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
-    .line 846
+    .line 912
     monitor-exit v0
 
     return-void
@@ -1859,7 +2147,7 @@
 .method private updateRootLayoutRect()V
     .registers 6
 
-    .line 857
+    .line 923
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
     move-result-object v0
@@ -1868,7 +2156,7 @@
 
     return-void
 
-    .line 861
+    .line 927
     :cond_7
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -1876,7 +2164,7 @@
 
     check-cast v1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 862
+    .line 928
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     iget v3, v2, Landroid/graphics/Rect;->left:I
@@ -1887,7 +2175,7 @@
 
     invoke-virtual {v1, v3, v2, v4, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 863
+    .line 929
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
@@ -1896,7 +2184,7 @@
 
     iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
-    .line 864
+    .line 930
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
@@ -1905,7 +2193,7 @@
 
     iput p0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
-    .line 865
+    .line 931
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
@@ -1914,7 +2202,7 @@
 .method private updateSelfTimerLayout()V
     .registers 12
 
-    .line 182
+    .line 185
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1925,52 +2213,52 @@
 
     const/4 v1, 0x0
 
-    .line 183
+    .line 186
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     const/16 v2, 0x9
 
-    .line 184
+    .line 187
     invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
     const/16 v3, 0xa
 
-    .line 185
+    .line 188
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
     const/16 v4, 0xb
 
-    .line 186
+    .line 189
     invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
     const/16 v5, 0xc
 
-    .line 187
+    .line 190
     invoke-virtual {v0, v5}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
     const/16 v6, 0xf
 
-    .line 188
+    .line 191
     invoke-virtual {v0, v6}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
     const/16 v7, 0xe
 
-    .line 189
+    .line 192
     invoke-virtual {v0, v7}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
     const/16 v8, 0xd
 
-    .line 190
+    .line 193
     invoke-virtual {v0, v8}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
-    .line 191
+    .line 194
     iget v9, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/4 v10, 0x6
 
     if-ne v9, v10, :cond_94
 
-    .line 192
+    .line 195
     iget v8, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
     const/16 v9, 0x5a
@@ -1985,13 +2273,13 @@
 
     if-eq v8, v2, :cond_53
 
-    .line 211
+    .line 214
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 212
+    .line 215
     invoke-virtual {v0, v7}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 213
+    .line 216
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/R$dimen;->aod_self_timer_view_margin_top:I
@@ -2004,14 +2292,14 @@
 
     goto :goto_85
 
-    .line 204
+    .line 207
     :cond_53
     invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 205
+    .line 208
     invoke-virtual {v0, v6}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 206
+    .line 209
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/R$dimen;->aod_self_timer_view_margin_top:I
@@ -2024,14 +2312,14 @@
 
     goto :goto_85
 
-    .line 199
+    .line 202
     :cond_64
     invoke-virtual {v0, v5}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 200
+    .line 203
     invoke-virtual {v0, v7}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 201
+    .line 204
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/R$dimen;->aod_self_timer_view_margin_top:I
@@ -2044,14 +2332,14 @@
 
     goto :goto_85
 
-    .line 194
+    .line 197
     :cond_75
     invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 195
+    .line 198
     invoke-virtual {v0, v6}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 196
+    .line 199
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/R$dimen;->aod_self_timer_view_margin_top:I
@@ -2062,7 +2350,7 @@
 
     iput v2, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
-    .line 215
+    .line 218
     :goto_85
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
@@ -2070,40 +2358,40 @@
 
     sget v4, Lcom/transsion/camera/R$dimen;->aod_self_timer_text_size:I
 
-    .line 216
+    .line 219
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v3
 
     int-to-float v3, v3
 
-    .line 215
+    .line 218
     invoke-virtual {v2, v1, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
     goto :goto_a5
 
-    .line 218
+    .line 221
     :cond_94
     invoke-virtual {v0, v8}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 219
+    .line 222
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->self_timer_text_size:I
 
-    .line 220
+    .line 223
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v3
 
     int-to-float v3, v3
 
-    .line 219
+    .line 222
     invoke-virtual {v2, v1, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 222
+    .line 225
     :goto_a5
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
@@ -2115,14 +2403,14 @@
 .method private updateSelfTimerNum()V
     .registers 7
 
-    .line 547
+    .line 554
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
     move-result-object v0
 
     if-nez v0, :cond_e
 
-    .line 548
+    .line 555
     sget-object p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "updateSelfTimerNum mEntryRootLayout is null"
@@ -2131,7 +2419,7 @@
 
     return-void
 
-    .line 551
+    .line 558
     :cond_e
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2161,7 +2449,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 552
+    .line 559
     iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurSelfTimerNum:I
 
     const/4 v1, 0x0
@@ -2170,7 +2458,7 @@
 
     if-lez v0, :cond_12c
 
-    .line 553
+    .line 560
     sget-object v3, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     const-string v4, "%d"
@@ -2187,12 +2475,12 @@
 
     move-result-object v0
 
-    .line 554
+    .line 561
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
     invoke-virtual {v3, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 555
+    .line 562
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
     move-result-object v0
@@ -2219,7 +2507,7 @@
 
     if-nez v0, :cond_83
 
-    .line 559
+    .line 566
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
@@ -2236,7 +2524,7 @@
 
     if-ne v0, v3, :cond_83
 
-    .line 560
+    .line 567
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
     move-result-object v0
@@ -2256,7 +2544,7 @@
 
     goto :goto_92
 
-    .line 562
+    .line 569
     :cond_83
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
@@ -2274,7 +2562,7 @@
 
     goto :goto_81
 
-    .line 564
+    .line 571
     :goto_92
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
@@ -2284,37 +2572,37 @@
 
     invoke-virtual {v3, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 566
+    .line 573
     :cond_9a
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCountDownAnim:Landroid/view/animation/Animation;
 
     if-eqz v0, :cond_ad
 
-    .line 567
+    .line 574
     invoke-virtual {v0}, Landroid/view/animation/Animation;->reset()V
 
-    .line 568
+    .line 575
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 569
+    .line 576
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCountDownAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 571
+    .line 578
     :cond_ad
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mFlipFunnyShot:Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;
 
     if-eqz v0, :cond_b4
 
-    .line 572
+    .line 579
     invoke-interface {v0}, Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;->startAnim()V
 
-    .line 574
+    .line 581
     :cond_b4
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -2328,7 +2616,7 @@
 
     const-string v3, "com.transsion.camera.feature.mode.autoscenedetection.ASDModeEntry"
 
-    .line 575
+    .line 582
     invoke-static {v0, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -2339,7 +2627,7 @@
 
     const-string v3, "key_live_photo"
 
-    .line 576
+    .line 583
     invoke-direct {p0, v3}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->querySettingValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -2352,7 +2640,7 @@
 
     move v1, v2
 
-    .line 577
+    .line 584
     :cond_d5
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSoundEnable:Z
 
@@ -2366,12 +2654,12 @@
 
     if-nez v1, :cond_114
 
-    .line 578
+    .line 585
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mActionSoundLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 579
+    .line 586
     :try_start_e3
     iget v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurSelfTimerNum:I
 
@@ -2387,7 +2675,7 @@
 
     if-eq v1, v4, :cond_f9
 
-    .line 591
+    .line 598
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     iget v4, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mBeepOnceSampleId:I
@@ -2401,7 +2689,7 @@
 
     goto :goto_112
 
-    .line 588
+    .line 595
     :cond_f9
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
@@ -2411,7 +2699,7 @@
 
     goto :goto_110
 
-    .line 584
+    .line 591
     :cond_101
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
@@ -2421,7 +2709,7 @@
 
     goto :goto_110
 
-    .line 581
+    .line 588
     :cond_109
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
@@ -2429,7 +2717,7 @@
 
     invoke-interface {v1, v4}, Lcom/transsion/camera/utils/sound/IActionSound;->play(I)V
 
-    .line 594
+    .line 601
     :goto_110
     monitor-exit v0
 
@@ -2442,7 +2730,7 @@
 
     throw p0
 
-    .line 596
+    .line 603
     :cond_114
     :goto_114
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
@@ -2453,10 +2741,10 @@
 
     if-eqz v0, :cond_11f
 
-    .line 597
+    .line 604
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->hookTranLed()V
 
-    .line 599
+    .line 606
     :cond_11f
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
@@ -2464,7 +2752,7 @@
 
     invoke-virtual {v0, v3, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 600
+    .line 607
     iget v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurSelfTimerNum:I
 
     sub-int/2addr v0, v2
@@ -2473,7 +2761,7 @@
 
     return-void
 
-    .line 603
+    .line 610
     :cond_12c
     const-string v0, "on"
 
@@ -2505,11 +2793,11 @@
 
     move v1, v2
 
-    .line 606
+    .line 613
     :cond_149
     invoke-direct {p0, v1, v2}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->hideSelfTimerView(ZZ)V
 
-    .line 607
+    .line 614
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->realCapture()V
 
     return-void
@@ -2520,7 +2808,7 @@
 .method protected doCreateEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
     .registers 6
 
-    .line 158
+    .line 161
     sget v0, Lcom/transsion/camera/R$layout;->self_timer_view:I
 
     const/4 v1, 0x0
@@ -2529,7 +2817,7 @@
 
     move-result-object p2
 
-    .line 159
+    .line 162
     sget v0, Lcom/transsion/camera/R$id;->self_timer:I
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -2540,7 +2828,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerRoot:Landroid/view/ViewGroup;
 
-    .line 160
+    .line 163
     sget v0, Lcom/transsion/camera/R$id;->self_timer_num:I
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -2551,7 +2839,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
-    .line 161
+    .line 164
     invoke-virtual {p2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -2564,14 +2852,14 @@
 
     if-eqz v0, :cond_35
 
-    .line 162
+    .line 165
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "use LAYER_TYPE_SOFTWARE"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 163
+    .line 166
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
     const/4 v1, 0x1
@@ -2580,11 +2868,11 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 165
+    .line 168
     :cond_35
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->hideSelfTimerTextView()V
 
-    .line 166
+    .line 169
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2597,12 +2885,12 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCountDownAnim:Landroid/view/animation/Animation;
 
-    .line 168
+    .line 171
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mFlipFunnyShot:Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;
 
     if-eqz v0, :cond_4d
 
-    .line 169
+    .line 172
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mCameraRootView:Landroid/view/ViewGroup;
 
     invoke-interface {v0, p1, p0}, Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;->createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)V
@@ -2625,7 +2913,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 298
+    .line 301
     const-string p0, "key_self_timer"
 
     return-object p0
@@ -2634,7 +2922,7 @@
 .method protected getSelfTimerRoot()Landroid/view/ViewGroup;
     .registers 1
 
-    .line 514
+    .line 517
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerRoot:Landroid/view/ViewGroup;
 
     return-object p0
@@ -2643,7 +2931,7 @@
 .method public getValue()Ljava/lang/String;
     .registers 1
 
-    .line 289
+    .line 292
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p0, :cond_6
@@ -2652,7 +2940,7 @@
 
     return-object p0
 
-    .line 292
+    .line 295
     :cond_6
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
@@ -2664,15 +2952,15 @@
 .method public initSettingUI(IILandroid/content/Context;)V
     .registers 4
 
-    .line 142
+    .line 145
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->initSettingUI(IILandroid/content/Context;)V
 
-    .line 143
+    .line 146
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mFlipFunnyShot:Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;
 
     if-eqz p0, :cond_a
 
-    .line 144
+    .line 147
     invoke-interface {p0, p1}, Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;->init(I)V
 
     :cond_a
@@ -2757,70 +3045,70 @@
 
     goto :goto_6a
 
-    .line 383
+    .line 386
     :cond_3c
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mLongExposureCapturing:Z
 
     return-void
 
-    .line 380
+    .line 383
     :cond_3f
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mLongExposureCapturing:Z
 
     return-void
 
-    .line 369
+    .line 372
     :cond_42
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsSuperNightLiteStart:Z
 
     return-void
 
-    .line 366
+    .line 369
     :cond_45
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsFunVideoRecordingStart:Z
 
     return-void
 
-    .line 363
+    .line 366
     :cond_48
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsFunVideoRecordingStart:Z
 
     return-void
 
-    .line 377
+    .line 380
     :cond_4b
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsSuperNightLiteStart:Z
 
     return-void
 
-    .line 346
+    .line 349
     :cond_4e
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsPause:Z
 
     return-void
 
-    .line 349
+    .line 352
     :cond_51
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsPause:Z
 
-    .line 350
+    .line 353
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsFunVideoRecordingStart:Z
 
-    .line 351
+    .line 354
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsSuperNightLiteStart:Z
 
-    .line 352
+    .line 355
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mLongExposureCapturing:Z
 
     goto :goto_5d
 
-    .line 373
+    .line 376
     :cond_5a
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsSuperNightLiteStart:Z
 
     return-void
 
-    .line 358
+    .line 361
     :cond_5d
     :goto_5d
     const-string p1, "self_timer_start"
@@ -2833,7 +3121,7 @@
 
     if-eqz p1, :cond_6a
 
-    .line 359
+    .line 362
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->interruptTimerDirectly(Z)V
 
     :cond_6a
@@ -2844,7 +3132,7 @@
 .method public onBackPressed(Z)Z
     .registers 5
 
-    .line 431
+    .line 434
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2865,7 +3153,7 @@
 
     if-eqz p1, :cond_27
 
-    .line 433
+    .line 436
     const-string p1, "self_timer_start"
 
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerState:Ljava/lang/String;
@@ -2876,7 +3164,7 @@
 
     if-eqz p1, :cond_27
 
-    .line 434
+    .line 437
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->interruptTimer()V
 
     const/4 p0, 0x1
@@ -2892,17 +3180,17 @@
 .method public onConfigurationChanged()V
     .registers 3
 
-    .line 316
+    .line 319
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onConfigurationChanged()V
 
-    .line 317
+    .line 320
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onConfigurationChanged"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 318
+    .line 321
     const-string v0, "self_timer_start"
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerState:Ljava/lang/String;
@@ -2915,7 +3203,7 @@
 
     const/4 v0, 0x1
 
-    .line 319
+    .line 322
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->interruptTimerDirectly(Z)V
 
     :cond_18
@@ -2934,12 +3222,12 @@
 .method public onOrientationChanged(I)V
     .registers 4
 
-    .line 303
+    .line 306
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onOrientationChanged(I)V
 
     const/4 v0, 0x6
 
-    .line 304
+    .line 307
     iget v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     if-ne v0, v1, :cond_11
@@ -2954,16 +3242,16 @@
 
     goto :goto_1e
 
-    .line 308
+    .line 311
     :cond_11
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
     if-eqz v0, :cond_1e
 
-    .line 309
+    .line 312
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->updateSelfTimerLayout()V
 
-    .line 310
+    .line 313
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerTextView:Lcom/transsion/camera/app/ui/widget/RotateTextView;
 
     const/4 v0, 0x1
@@ -2978,15 +3266,15 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 150
+    .line 153
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onScreenFormChanged(IZ)V
 
-    .line 151
+    .line 154
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mFlipFunnyShot:Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;
 
     if-eqz p0, :cond_a
 
-    .line 152
+    .line 155
     invoke-interface {p0, p1}, Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;->onScreenFormChanged(I)V
 
     :cond_a
@@ -2996,10 +3284,10 @@
 .method public onShutterClick(II)Z
     .registers 5
 
-    .line 391
+    .line 394
     iput p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurrentPriority:I
 
-    .line 392
+    .line 395
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsFunVideoRecordingStart:Z
 
     const/4 p2, 0x0
@@ -3008,7 +3296,7 @@
 
     return p2
 
-    .line 395
+    .line 398
     :cond_8
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mLongExposureCapturing:Z
 
@@ -3016,7 +3304,7 @@
 
     return p2
 
-    .line 399
+    .line 402
     :cond_d
     sget-object p1, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3038,7 +3326,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 400
+    .line 403
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mIsSuperNightLiteStart:Z
 
     const/4 v0, 0x1
@@ -3047,7 +3335,7 @@
 
     return v0
 
-    .line 404
+    .line 407
     :cond_2b
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerState:Ljava/lang/String;
 
@@ -3061,7 +3349,7 @@
 
     return v0
 
-    .line 407
+    .line 410
     :cond_36
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerState:Ljava/lang/String;
 
@@ -3073,12 +3361,12 @@
 
     if-eqz p1, :cond_44
 
-    .line 408
+    .line 411
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->interruptTimer()V
 
     return v0
 
-    .line 411
+    .line 414
     :cond_44
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->getValue()Ljava/lang/String;
 
@@ -3092,7 +3380,7 @@
 
     if-eqz p1, :cond_58
 
-    .line 412
+    .line 415
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mShutterControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
 
     iget p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCurrentPriority:I
@@ -3101,11 +3389,11 @@
 
     return p2
 
-    .line 415
+    .line 418
     :cond_58
-    iget p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStartSelfTimerNum:I
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object p1
 
@@ -3117,14 +3405,14 @@
 .method public onShutterLongClick(II)Z
     .registers 6
 
-    .line 421
+    .line 424
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onShutterLongClick"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 422
+    .line 425
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSelfTimerState:Ljava/lang/String;
 
     const-string v2, "self_timer_idle"
@@ -3135,7 +3423,7 @@
 
     if-nez v1, :cond_18
 
-    .line 423
+    .line 426
     const-string p0, "intercept long click event when self timer start"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
@@ -3144,7 +3432,7 @@
 
     return p0
 
-    .line 426
+    .line 429
     :cond_18
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onShutterLongClick(II)Z
 
@@ -3167,7 +3455,7 @@
 .method public setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
     .registers 2
 
-    .line 339
+    .line 342
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCameraOperateActionControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     return-void
@@ -3176,24 +3464,24 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 3
 
-    .line 227
+    .line 230
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    .line 228
+    .line 231
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mFlipFunnyShot:Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;
 
     if-eqz v0, :cond_9
 
-    .line 229
+    .line 232
     invoke-interface {v0, p1}, Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    .line 231
+    .line 234
     :cond_9
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p1, :cond_15
 
-    .line 232
+    .line 235
     sget-object p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "mDeviceSetting is null!"
@@ -3202,7 +3490,7 @@
 
     return-void
 
-    .line 235
+    .line 238
     :cond_15
     const-string p1, "key_shutter_sound"
 
@@ -3218,7 +3506,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mSoundEnable:Z
 
-    .line 236
+    .line 239
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
@@ -3227,7 +3515,7 @@
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->onSelfTimerStatusChanged(Ljava/lang/String;)V
 
-    .line 237
+    .line 240
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
@@ -3257,12 +3545,12 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 4
 
-    .line 253
+    .line 256
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-nez p1, :cond_c
 
-    .line 255
+    .line 258
     sget-object p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "mStatusMonitor is null!"
@@ -3271,7 +3559,7 @@
 
     return-void
 
-    .line 258
+    .line 261
     :cond_c
     sget-object p1, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3279,7 +3567,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 259
+    .line 262
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_shutter_sound"
@@ -3288,7 +3576,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 260
+    .line 263
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_self_timer"
@@ -3297,7 +3585,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 261
+    .line 264
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_start_self_timer"
@@ -3306,7 +3594,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 262
+    .line 265
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_start_gesture_self_timer"
@@ -3321,14 +3609,14 @@
 .method public setShutterControl(Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;)V
     .registers 3
 
-    .line 330
+    .line 333
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mShutterControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
 
     if-eqz p1, :cond_9
 
     const/16 v0, 0xa
 
-    .line 332
+    .line 335
     invoke-interface {p1, p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->registerShutterListener(Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;I)V
 
     :cond_9
@@ -3338,7 +3626,7 @@
 .method public setUIStateControl(Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;)V
     .registers 2
 
-    .line 325
+    .line 328
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIStateControl:Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;
 
     return-void
@@ -3347,10 +3635,10 @@
 .method public setupEntryView()V
     .registers 1
 
-    .line 177
+    .line 180
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->updateSelfTimerLayout()V
 
-    .line 178
+    .line 181
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->loadSelfTimerSoundIfNeed()V
 
     return-void
@@ -3359,36 +3647,36 @@
 .method public unInit()V
     .registers 5
 
-    .line 267
+    .line 270
     sget-object v0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "unInit"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 268
+    .line 271
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mUIHandler:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 269
+    .line 272
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->unInit()V
 
-    .line 270
+    .line 273
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_36
 
-    .line 271
+    .line 274
     const-string v2, "key_shutter_sound"
 
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {v0, v2, v3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 272
+    .line 275
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v2, "key_self_timer"
@@ -3397,7 +3685,7 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 273
+    .line 276
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v2, "key_start_self_timer"
@@ -3406,7 +3694,7 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 274
+    .line 277
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v2, "key_start_gesture_self_timer"
@@ -3415,33 +3703,33 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 276
+    .line 279
     :cond_36
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->unloadSelfTimerSound()V
 
-    .line 277
+    .line 280
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mShutterControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
 
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->unRegisterShutterListener(Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;)V
 
-    .line 278
+    .line 281
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCountDownAnim:Landroid/view/animation/Animation;
 
     if-eqz v0, :cond_47
 
-    .line 279
+    .line 282
     invoke-virtual {v0}, Landroid/view/animation/Animation;->reset()V
 
-    .line 280
+    .line 283
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mCountDownAnim:Landroid/view/animation/Animation;
 
-    .line 282
+    .line 285
     :cond_47
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mFlipFunnyShot:Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;
 
     if-eqz p0, :cond_4e
 
-    .line 283
+    .line 286
     invoke-interface {p0}, Lcom/transsion/camera/ui/setting/selftimer/IFlipFunnyShot;->unInit()V
 
     :cond_4e
@@ -3451,12 +3739,12 @@
 .method public updatePreviewRect(Landroid/graphics/Rect;)V
     .registers 3
 
-    .line 242
+    .line 245
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 243
+    .line 246
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->updateRootLayoutRect()V
 
     return-void

@@ -286,87 +286,98 @@
 
     check-cast p1, Ljava/lang/Integer;
 
-    if-nez p1, :cond_e
+    const/4 v1, 0x0
 
-    const/4 p1, 0x0
+    if-nez p1, :cond_f
 
-    goto :goto_12
+    move p1, v1
+
+    goto :goto_13
 
     .line 104
-    :cond_e
+    :cond_f
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    :goto_12
+    :goto_13
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 105
-    sget-object v2, Lcom/transsion/camera/app/common/facebeauty/util/FaceBeautyCustomConfigUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    sget-object v3, Lcom/transsion/camera/app/common/facebeauty/util/FaceBeautyCustomConfigUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "[getValueByKey] getValueByKey = "
+    const-string v5, "[getValueByKey] getValueByKey = "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v4, ", key = "
+    const-string v5, ", key = "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     .line 106
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getModeKey()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
     .line 109
-    const-string v4, "five_senses"
+    const-string v5, "five_senses"
 
-    invoke-static {p2, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {p2, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v5
 
-    const-string v5, "Warning: getValueByKey NumberFormatException !!!"
+    const-string v6, "Warning: getValueByKey NumberFormatException !!!"
 
-    const-string v6, ", valueStr: "
+    const-string v7, ", valueStr: "
 
-    const-string v7, ", defaultValue: "
+    const-string v8, ", defaultValue: "
 
-    const-string v8, "getValueByKey, key: "
+    const-string v9, "getValueByKey, key: "
 
-    const-string v9, "_"
+    const-string v10, "_"
 
-    if-eqz v4, :cond_9b
+    if-eqz v5, :cond_a5
 
     .line 110
-    rem-int/lit8 v4, p1, 0x65
+    invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
-    sub-int v10, p1, v4
+    move-result-object v5
 
-    .line 112
-    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    iget-boolean v5, v5, Lcom/transsion/camera/app/common/CommonConfigUtil;->mEnableTrueToneV2:Z
 
-    move-result-object v4
+    if-eqz v5, :cond_a4
+
+    .line 111
+    rem-int/lit8 v1, p1, 0x65
+
+    sub-int v5, p1, v1
+
+    .line 113
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v1
 
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 113
+    .line 114
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCameraFacing()Ljava/lang/String;
 
     move-result-object p0
@@ -377,33 +388,33 @@
 
     invoke-virtual {v11, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v11, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 112
-    invoke-virtual {v0, p2, v4, p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 113
+    invoke-virtual {v0, p2, v1, p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 114
+    .line 115
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -411,60 +422,63 @@
 
     move-result-object p2
 
-    invoke-static {v2, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {v3, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 117
-    :try_start_8e
+    .line 118
+    :try_start_97
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
-    :try_end_92
-    .catch Ljava/lang/Exception; {:try_start_8e .. :try_end_92} :catch_95
+    :try_end_9b
+    .catch Ljava/lang/Exception; {:try_start_97 .. :try_end_9b} :catch_9e
 
-    add-int p1, v10, p0
+    add-int p1, v5, p0
 
-    goto :goto_f8
+    goto :goto_102
 
-    .line 121
-    :catch_95
+    .line 122
+    :catch_9e
     sget-object p0, Lcom/transsion/camera/app/common/facebeauty/util/FaceBeautyCustomConfigUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    invoke-static {p0, v5}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {p0, v6}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    goto :goto_f8
+    goto :goto_102
 
-    .line 124
-    :cond_9b
-    invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
-
-    move-result-object v4
-
-    iget-boolean v4, v4, Lcom/transsion/camera/app/common/CommonConfigUtil;->mFaceBeautyV3:Z
-
-    if-eqz v4, :cond_ae
-
-    const-string/jumbo v4, "whiten"
-
-    invoke-static {p2, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_ae
-
-    .line 125
-    const-string p2, "face_beauty_whiten_skin_card"
-
-    .line 127
-    :cond_ae
-    invoke-virtual {v1}, Ljava/lang/Integer;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    :cond_a4
+    return v1
 
     .line 128
+    :cond_a5
+    invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
+
+    move-result-object v1
+
+    iget-boolean v1, v1, Lcom/transsion/camera/app/common/CommonConfigUtil;->mFaceBeautyV3:Z
+
+    if-eqz v1, :cond_b8
+
+    const-string/jumbo v1, "whiten"
+
+    invoke-static {p2, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_b8
+
+    .line 129
+    const-string p2, "face_beauty_whiten_skin_card"
+
+    .line 131
+    :cond_b8
+    invoke-virtual {v2}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 132
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCameraFacing()Ljava/lang/String;
 
     move-result-object p0
@@ -473,35 +487,35 @@
 
     move-result-object p0
 
-    invoke-virtual {v10, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 127
-    invoke-virtual {v0, p2, v4, p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 129
+    .line 131
+    invoke-virtual {v0, p2, v1, p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 133
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -509,24 +523,24 @@
 
     move-result-object p2
 
-    invoke-static {v2, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {v3, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 132
-    :try_start_ee
+    .line 136
+    :try_start_f8
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
-    :try_end_f2
-    .catch Ljava/lang/Exception; {:try_start_ee .. :try_end_f2} :catch_f3
+    :try_end_fc
+    .catch Ljava/lang/Exception; {:try_start_f8 .. :try_end_fc} :catch_fd
 
     return p0
 
-    .line 135
-    :catch_f3
+    .line 139
+    :catch_fd
     sget-object p0, Lcom/transsion/camera/app/common/facebeauty/util/FaceBeautyCustomConfigUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    invoke-static {p0, v5}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {p0, v6}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    :goto_f8
+    :goto_102
     return p1
 .end method

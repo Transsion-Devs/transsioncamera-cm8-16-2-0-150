@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.channels.BroadcastChannelImpl"
     f = "BroadcastChannel.kt"
     l = {
-        0xe6
+        0xe3
     }
     m = "send"
 .end annotation

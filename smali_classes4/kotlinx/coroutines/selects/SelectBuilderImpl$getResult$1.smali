@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.selects.SelectBuilderImpl$getResult$1"
     f = "SelectOld.kt"
     l = {
-        0x2b
+        0x27
     }
     m = "invokeSuspend"
 .end annotation
@@ -147,7 +147,7 @@
 
     move-result-object v0
 
-    .line 41
+    .line 37
     iget v1, p0, Lkotlinx/coroutines/selects/SelectBuilderImpl$getResult$1;->label:I
 
     const/4 v2, 0x1
@@ -180,7 +180,7 @@
     :cond_19
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 43
+    .line 39
     :try_start_1c
     iget-object p1, p0, Lkotlinx/coroutines/selects/SelectBuilderImpl$getResult$1;->this$0:Lkotlinx/coroutines/selects/SelectBuilderImpl;
 
@@ -196,7 +196,7 @@
 
     return-object v0
 
-    .line 48
+    .line 44
     :cond_27
     :goto_27
     iget-object p0, p0, Lkotlinx/coroutines/selects/SelectBuilderImpl$getResult$1;->this$0:Lkotlinx/coroutines/selects/SelectBuilderImpl;
@@ -209,12 +209,12 @@
     # invokes: Lkotlinx/coroutines/selects/SelectOldKt;->resumeUndispatched(Lkotlinx/coroutines/CancellableContinuation;Ljava/lang/Object;)V
     invoke-static {p0, p1}, Lkotlinx/coroutines/selects/SelectOldKt;->access$resumeUndispatched(Lkotlinx/coroutines/CancellableContinuation;Ljava/lang/Object;)V
 
-    .line 49
+    .line 45
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 45
+    .line 41
     :goto_33
     iget-object p0, p0, Lkotlinx/coroutines/selects/SelectBuilderImpl$getResult$1;->this$0:Lkotlinx/coroutines/selects/SelectBuilderImpl;
 
@@ -226,7 +226,7 @@
     # invokes: Lkotlinx/coroutines/selects/SelectOldKt;->resumeUndispatchedWithException(Lkotlinx/coroutines/CancellableContinuation;Ljava/lang/Throwable;)V
     invoke-static {p0, p1}, Lkotlinx/coroutines/selects/SelectOldKt;->access$resumeUndispatchedWithException(Lkotlinx/coroutines/CancellableContinuation;Ljava/lang/Throwable;)V
 
-    .line 46
+    .line 42
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0

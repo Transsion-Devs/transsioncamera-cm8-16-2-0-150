@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)V
     .registers 2
 
-    .line 264
+    .line 259
     iput-object p1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$7;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 2
 
-    .line 267
+    .line 262
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$7;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->-$$Nest$fgetmGpuProcessers(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -62,7 +62,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
 
-    .line 268
+    .line 263
     invoke-interface {v0}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->onSurfaceCreated()V
 
     goto :goto_a

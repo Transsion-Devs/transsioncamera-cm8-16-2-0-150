@@ -24,12 +24,12 @@
 .method public constructor <init>(Lcom/transsion/hubsdk/core/app/TranThubActivityManager;Lcom/transsion/hubsdk/api/app/TranActivityManager$TranActivityStartObserver;)V
     .registers 3
 
-    .line 1542
+    .line 1629
     iput-object p1, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubActivityStartObserver;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/app/ITranActivityStartObserver$Stub;-><init>()V
 
-    .line 1543
+    .line 1630
     iput-object p2, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubActivityStartObserver;->mObserver:Lcom/transsion/hubsdk/api/app/TranActivityManager$TranActivityStartObserver;
 
     return-void
@@ -40,12 +40,12 @@
 .method public onRealStartActivity(Ljava/lang/String;Ljava/lang/String;I)V
     .registers 4
 
-    .line 1548
+    .line 1635
     iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubActivityStartObserver;->mObserver:Lcom/transsion/hubsdk/api/app/TranActivityManager$TranActivityStartObserver;
 
     if-eqz p0, :cond_7
 
-    .line 1549
+    .line 1636
     invoke-interface {p0, p1, p2, p3}, Lcom/transsion/hubsdk/api/app/TranActivityManager$TranActivityStartObserver;->onRealStartActivity(Ljava/lang/String;Ljava/lang/String;I)V
 
     :cond_7

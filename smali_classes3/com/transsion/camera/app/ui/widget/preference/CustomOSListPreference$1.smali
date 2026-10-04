@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;)V
     .registers 2
 
-    .line 97
+    .line 100
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference$1;->this$0:Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/content/DialogInterface;IZ)V
     .registers 4
 
-    .line 100
+    .line 103
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference$1;->this$0:Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->-$$Nest$fgetmOnExtraChangeListener(Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;)Landroid/preference/Preference$OnPreferenceChangeListener;
@@ -47,7 +47,7 @@
 
     if-eqz p1, :cond_23
 
-    .line 101
+    .line 104
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference$1;->this$0:Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->-$$Nest$fgetmOnExtraChangeListener(Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;)Landroid/preference/Preference$OnPreferenceChangeListener;

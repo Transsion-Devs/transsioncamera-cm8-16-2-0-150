@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/mode/ModeManager;)V
     .registers 2
 
-    .line 518
+    .line 517
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$CameraFirstFrameCallback;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 .method public onFirstSteadyFrame(Ljava/lang/String;)V
     .registers 4
 
-    .line 521
+    .line 520
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$CameraFirstFrameCallback;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmModeChangeHandler(Lcom/transsion/camera/app/common/mode/ModeManager;)Landroid/os/Handler;
@@ -72,7 +72,7 @@
 
     if-eqz p1, :cond_13
 
-    .line 522
+    .line 521
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$CameraFirstFrameCallback;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmModeChangeHandler(Lcom/transsion/camera/app/common/mode/ModeManager;)Landroid/os/Handler;
@@ -83,7 +83,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 524
+    .line 523
     :cond_13
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$CameraFirstFrameCallback;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -93,7 +93,7 @@
 
     monitor-enter p1
 
-    .line 525
+    .line 524
     :try_start_1a
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -103,7 +103,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 526
+    .line 525
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$CameraFirstFrameCallback;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmModeChangeLock(Lcom/transsion/camera/app/common/mode/ModeManager;)Ljava/lang/Object;
@@ -112,7 +112,7 @@
 
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 527
+    .line 526
     monitor-exit p1
 
     return-void

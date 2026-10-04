@@ -22,14 +22,14 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;)V
     .registers 3
 
-    .line 351
+    .line 362
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 352
+    .line 363
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -53,7 +53,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 5
 
-    .line 357
+    .line 368
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;->mUIReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -66,7 +66,7 @@
 
     goto :goto_3e
 
-    .line 361
+    .line 372
     :cond_b
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -76,7 +76,7 @@
 
     goto :goto_3e
 
-    .line 363
+    .line 374
     :cond_12
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->-$$Nest$fgetmTaintInfoTextView(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;)Landroid/widget/TextView;
 
@@ -84,7 +84,7 @@
 
     if-eqz v0, :cond_3e
 
-    .line 364
+    .line 375
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->-$$Nest$fgetmTaintInfoTextView(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;)Landroid/widget/TextView;
 
     move-result-object v0
@@ -113,7 +113,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 365
+    .line 376
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->-$$Nest$fgetmTaintInfoTextView(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;)Landroid/widget/TextView;
 
     move-result-object p0

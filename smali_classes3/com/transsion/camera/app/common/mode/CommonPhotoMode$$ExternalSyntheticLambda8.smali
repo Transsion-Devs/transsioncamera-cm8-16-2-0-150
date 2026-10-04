@@ -3,34 +3,40 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/transsion/camera/utils/sound/IActionSound$SoundCallback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
+.field public final synthetic f$1:Z
+
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)V
-    .registers 2
+.method public synthetic constructor <init>(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;Z)V
+    .registers 3
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$$ExternalSyntheticLambda8;->f$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
+    iput-boolean p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$$ExternalSyntheticLambda8;->f$1:Z
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLoadDone(Lcom/transsion/camera/utils/sound/IActionSound;I)V
-    .registers 3
+.method public final run()V
+    .registers 2
 
     .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$$ExternalSyntheticLambda8;->f$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$$ExternalSyntheticLambda8;->f$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
-    invoke-static {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->$r8$lambda$Q663HnjY1-W7moMHMY8OKo7iYy8(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;Lcom/transsion/camera/utils/sound/IActionSound;I)V
+    iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$$ExternalSyntheticLambda8;->f$1:Z
+
+    invoke-static {v0, p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->$r8$lambda$m-5kX1uk2BirbZMqeT-OGTQnz1c(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;Z)V
 
     return-void
 .end method

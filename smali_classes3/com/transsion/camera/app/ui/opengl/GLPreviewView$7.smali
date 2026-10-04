@@ -27,7 +27,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;)V
     .registers 3
 
-    .line 515
+    .line 537
     iput-object p1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$7;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$7;->val$callbacker:Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;
@@ -42,7 +42,7 @@
 .method public run()V
     .registers 4
 
-    .line 518
+    .line 540
     invoke-static {}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -89,7 +89,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 521
+    .line 543
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$7;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fgetmSurfaceTexture(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)Landroid/graphics/SurfaceTexture;
@@ -100,7 +100,7 @@
 
     goto :goto_4c
 
-    .line 524
+    .line 546
     :cond_3f
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$7;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
@@ -112,7 +112,7 @@
 
     if-eq v0, p0, :cond_4c
 
-    .line 525
+    .line 547
     invoke-interface {p0}, Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;->modeUninitCallback()V
 
     :cond_4c

@@ -21,7 +21,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/videoenhanceyuv/VideoEnhanceYUVTopBarItemUI;)V
     .registers 2
 
-    .line 36
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

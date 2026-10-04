@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/function/Consumer;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -24,15 +24,13 @@
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .registers 2
+.method public final run()V
+    .registers 1
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda2;->f$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    check-cast p1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
-
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->$r8$lambda$48ce_gNv14-xUJ05tm6JP1Dztgs(Lcom/transsion/camera/app/ui/AbstractTopBarUI;Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;)V
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->$r8$lambda$Hs4EgNPqNz7EVdkgPYVtkoPNrHc(Lcom/transsion/camera/app/ui/AbstractTopBarUI;)V
 
     return-void
 .end method

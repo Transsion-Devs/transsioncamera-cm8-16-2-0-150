@@ -92,20 +92,20 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
 
-    .line 100
+    .line 99
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraMode;-><init>(Ljava/lang/String;)V
 
     const/4 p1, 0x0
 
-    .line 78
+    .line 77
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mPaused:Z
 
-    .line 79
+    .line 78
     const-string v0, "-1"
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoQuality:Ljava/lang/String;
 
-    .line 80
+    .line 79
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -114,51 +114,51 @@
 
     const/16 v0, 0x780
 
-    .line 81
+    .line 80
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoFrameWidth:I
 
     const/16 v0, 0x438
 
-    .line 82
+    .line 81
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoFrameHeight:I
 
-    .line 83
+    .line 82
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mShutterLongClick:Z
 
-    .line 84
+    .line 83
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mIsSaving:Z
 
     const-wide/16 v0, 0x0
 
-    .line 89
+    .line 88
     iput-wide v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mDuration:J
 
-    .line 93
+    .line 92
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mRestartPreview:Z
 
     const/4 v0, 0x1
 
-    .line 94
+    .line 93
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mState:I
 
-    .line 96
+    .line 95
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mSupportPowerDownMode:Z
 
-    .line 97
+    .line 96
     new-instance p1, Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-direct {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;-><init>(I)V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mStorageHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 101
+    .line 100
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
 
-    .line 102
+    .line 101
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
     return-void
@@ -167,7 +167,7 @@
 .method static synthetic access$000(Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
     .registers 1
 
-    .line 65
+    .line 64
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     return-object p0
@@ -176,7 +176,7 @@
 .method static synthetic access$100(Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;)Landroid/content/Context;
     .registers 1
 
-    .line 65
+    .line 64
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     return-object p0
@@ -185,7 +185,7 @@
 .method static synthetic access$200(Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
     .registers 1
 
-    .line 65
+    .line 64
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     return-object p0
@@ -268,21 +268,21 @@
 .method private getAppUIForUpdateThumbnail()Lcom/transsion/camera/app/common/IAppUI;
     .registers 2
 
-    .line 359
+    .line 358
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->isValid()Z
 
     move-result v0
 
     if-nez v0, :cond_b
 
-    .line 360
+    .line 359
     invoke-static {}, Lcom/transsion/camera/app/common/mode/AppUICache;->getAppUI()Lcom/transsion/camera/app/common/IAppUI;
 
     move-result-object p0
 
     return-object p0
 
-    .line 362
+    .line 361
     :cond_b
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -387,7 +387,7 @@
 .method private showLowStorageHint()V
     .registers 3
 
-    .line 795
+    .line 794
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     sget v1, Lcom/transsion/camera/app/common/R$string;->storage_full:I
@@ -396,12 +396,12 @@
 
     move-result-object v0
 
-    .line 796
+    .line 795
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mStorageHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 797
+    .line 796
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mStorageHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -414,7 +414,7 @@
 .method private showStorageUnAvailableHint()V
     .registers 3
 
-    .line 801
+    .line 800
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     sget v1, Lcom/transsion/camera/app/common/R$string;->can_not_use_storage:I
@@ -423,12 +423,12 @@
 
     move-result-object v0
 
-    .line 802
+    .line 801
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mStorageHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 803
+    .line 802
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mStorageHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -458,34 +458,34 @@
 .method private updateThumbnail(Landroid/net/Uri;Ljava/lang/Object;)V
     .registers 4
 
-    .line 390
+    .line 389
     instance-of v0, p2, Ljava/io/FileDescriptor;
 
     if-eqz v0, :cond_a
 
-    .line 391
+    .line 390
     check-cast p2, Ljava/io/FileDescriptor;
 
-    .line 392
+    .line 391
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->onVideoFileSaved(Landroid/net/Uri;Ljava/io/FileDescriptor;)V
 
     return-void
 
-    .line 393
+    .line 392
     :cond_a
     instance-of v0, p2, Ljava/lang/String;
 
     if-eqz v0, :cond_14
 
-    .line 394
+    .line 393
     check-cast p2, Ljava/lang/String;
 
-    .line 395
+    .line 394
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->onVideoFileSaved(Landroid/net/Uri;Ljava/lang/String;)V
 
     return-void
 
-    .line 397
+    .line 396
     :cond_14
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -504,11 +504,11 @@
     .line 667
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
-    if-eqz p1, :cond_72
+    if-eqz p1, :cond_6b
 
     if-nez v0, :cond_7
 
-    goto :goto_72
+    goto :goto_6b
 
     .line 674
     :cond_7
@@ -582,50 +582,43 @@
 
     invoke-virtual {p3, p4, v2, v3, v4}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->video(Ljava/lang/String;Ljava/lang/String;J)V
 
-    .line 685
+    .line 686
     :goto_45
-    invoke-static {}, Lcom/transsion/camera/utils/smartmodeorder/SmartModeOrderUtils;->getInstance()Lcom/transsion/camera/utils/smartmodeorder/SmartModeOrderUtils;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Lcom/transsion/camera/utils/smartmodeorder/SmartModeOrderUtils;->updateModeUsedCount()V
-
-    .line 687
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo;->getTargetUri()Landroid/net/Uri;
 
     move-result-object p3
 
-    if-eqz p3, :cond_5f
+    if-eqz p3, :cond_58
 
-    .line 689
+    .line 688
     new-instance p4, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;
 
-    .line 690
+    .line 689
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     move-result-object p1
 
     invoke-direct {p4, p0, p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;Ljava/lang/Object;I)V
 
-    .line 689
+    .line 688
     invoke-interface {v0, v1, p3, p4}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->addVideoSaveRequest(Landroid/content/ContentValues;Landroid/net/Uri;Lcom/transsion/camera/app/common/storage/MediaSaver$MediaSaverListener;)V
 
     return-void
 
-    .line 692
-    :cond_5f
+    .line 691
+    :cond_58
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo;->getFileTempPath()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 693
+    .line 692
     const-string p3, "_data"
 
     invoke-virtual {v1, p3}, Landroid/content/ContentValues;->getAsString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p3
 
-    .line 694
+    .line 693
     new-instance p4, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;
 
     invoke-direct {p4, p0, p3, p2}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;Ljava/lang/Object;I)V
@@ -635,8 +628,8 @@
     return-void
 
     .line 669
-    :cond_72
-    :goto_72
+    :cond_6b
+    :goto_6b
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p2, "addVideoToDataBase mVideoFileInfo or mStorageOperator is null,we have not information to save"
@@ -868,7 +861,7 @@
 .method public createFileSpec()Lcom/transsion/camera/app/common/recorder/data/VideoFileSpec;
     .registers 5
 
-    .line 434
+    .line 433
     new-instance v0, Lcom/transsion/camera/app/common/recorder/data/VideoFileSpec;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
@@ -883,7 +876,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/transsion/camera/app/common/recorder/data/VideoFileSpec;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 435
+    .line 434
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->createTempVideoFile(Lcom/transsion/camera/app/common/recorder/data/VideoFileSpec;)Z
@@ -903,7 +896,7 @@
 .method public createImageProcessor()Lcom/transsion/camera/app/common/mode/CommonVideoImageProcessor;
     .registers 2
 
-    .line 791
+    .line 790
     new-instance v0, Lcom/transsion/camera/app/common/mode/CommonVideoImageProcessor;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/mode/CommonVideoImageProcessor;-><init>(Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;)V
@@ -914,7 +907,7 @@
 .method public bridge synthetic createImageProcessor()Lcom/transsion/camera/app/common/mode/IImageProcessor;
     .registers 1
 
-    .line 65
+    .line 64
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->createImageProcessor()Lcom/transsion/camera/app/common/mode/CommonVideoImageProcessor;
 
     move-result-object p0
@@ -929,7 +922,7 @@
 
     if-nez p1, :cond_b
 
-    .line 412
+    .line 411
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "CamcorderProfile is null,can not create Video File Info"
@@ -938,23 +931,23 @@
 
     return-object v0
 
-    .line 415
+    .line 414
     :cond_b
     new-instance v1, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;
 
     invoke-direct {v1, p1}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;-><init>(Landroid/media/CamcorderProfile;)V
 
-    .line 416
+    .line 415
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->setMediaInfo(Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;)V
 
     if-eqz p2, :cond_31
 
-    .line 418
+    .line 417
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     if-nez p1, :cond_21
 
-    .line 420
+    .line 419
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "mStorageOperator is null,can not create Video File Info"
@@ -963,24 +956,24 @@
 
     return-object v0
 
-    .line 423
+    .line 422
     :cond_21
     invoke-interface {p1}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->makeCameraDirectory()Z
 
-    .line 424
+    .line 423
     invoke-interface {p1}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->getCameraDirectory()Ljava/lang/String;
 
     move-result-object p2
 
     invoke-virtual {v1, p2}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;->setFileFolder(Ljava/lang/String;)Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;
 
-    .line 425
+    .line 424
     invoke-interface {p1, v1}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->createTempVideoFile(Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;)Z
 
-    .line 426
+    .line 425
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->onVideoMediaRecorderInfoConstruct(Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;)V
 
-    .line 428
+    .line 427
     :cond_31
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;->build()Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo;
 
@@ -1036,12 +1029,12 @@
 
     if-eqz p1, :cond_e
 
-    .line 779
+    .line 778
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p2, p1}, Lcom/transsion/camera/app/common/IAppUI;->updateThumbnailUri(Landroid/net/Uri;)V
 
-    .line 780
+    .line 779
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUI;->updateBrowserData(Landroid/net/Uri;)V
@@ -1053,7 +1046,7 @@
 .method protected getAnalyticsVideoDurationKey()Ljava/lang/String;
     .registers 1
 
-    .line 125
+    .line 124
     const-string p0, "key_video_duration"
 
     return-object p0
@@ -1065,7 +1058,7 @@
 .method public final getModeType()Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
     .registers 1
 
-    .line 149
+    .line 148
     sget-object p0, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;->VIDEO:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
     return-object p0
@@ -1091,7 +1084,7 @@
         }
     .end annotation
 
-    .line 343
+    .line 342
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1120,7 +1113,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 344
+    .line 343
     new-instance v5, Landroid/util/Size;
 
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoFrameWidth:I
@@ -1129,7 +1122,7 @@
 
     invoke-direct {v5, v0, v1}, Landroid/util/Size;-><init>(II)V
 
-    .line 345
+    .line 344
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoFrameWidth:I
 
     int-to-float v0, v0
@@ -1156,7 +1149,7 @@
 
     move-object v2, p1
 
-    .line 346
+    .line 345
     invoke-static/range {v2 .. v10}, Lcom/transsion/camera/utils/CameraUtil;->findBestMatchSize(Ljava/util/List;DLandroid/util/Size;DZIZ)Landroid/util/Size;
 
     move-result-object p0
@@ -1175,7 +1168,7 @@
 .method public getSettingGroup()J
     .registers 5
 
-    .line 154
+    .line 153
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getSettingGroup()J
 
     move-result-wide v0
@@ -1290,7 +1283,7 @@
 .method protected getVideoSavingMessage()Ljava/lang/String;
     .registers 2
 
-    .line 404
+    .line 403
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     sget v0, Lcom/transsion/camera/app/common/R$string;->saving_dialog_string:I
@@ -1305,10 +1298,10 @@
 .method public init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Ljava/lang/String;Lcom/transsion/camera/app/common/IApp$IIntentAction;I)V
     .registers 8
 
-    .line 109
+    .line 108
     invoke-super/range {p0 .. p7}, Lcom/transsion/camera/app/common/mode/CameraMode;->init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Ljava/lang/String;Lcom/transsion/camera/app/common/IApp$IIntentAction;I)V
 
-    .line 110
+    .line 109
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->getShutterTypeSelftimerOff()I
@@ -1317,31 +1310,31 @@
 
     invoke-interface {p1, p3}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->updateShutterType(I)V
 
-    .line 111
+    .line 110
     new-instance p1, Lcom/transsion/camera/app/common/mode/CommonVideoHelper;
 
     invoke-direct {p1}, Lcom/transsion/camera/app/common/mode/CommonVideoHelper;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoHelper:Lcom/transsion/camera/app/common/mode/CommonVideoHelper;
 
-    .line 112
+    .line 111
     invoke-interface {p2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 113
+    .line 112
     const-string p1, "key_video_quality"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraMode;->registerKeyToMonitor(Ljava/lang/String;)V
 
     const/4 p1, 0x0
 
-    .line 114
+    .line 113
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mPaused:Z
 
-    .line 115
+    .line 114
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -1395,7 +1388,7 @@
 .method public isSupportPowerSavingMode()Z
     .registers 1
 
-    .line 242
+    .line 241
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mSupportPowerDownMode:Z
 
     return p0
@@ -1439,12 +1432,12 @@
 .method protected notifyRawActionToUI(I)V
     .registers 4
 
-    .line 739
+    .line 738
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-nez v0, :cond_20
 
-    .line 741
+    .line 740
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1469,7 +1462,7 @@
 
     return-void
 
-    .line 745
+    .line 744
     :cond_20
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
@@ -1479,12 +1472,12 @@
 .method protected notifyToAppUI(IILjava/lang/String;)V
     .registers 5
 
-    .line 749
+    .line 748
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-nez v0, :cond_20
 
-    .line 751
+    .line 750
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1509,7 +1502,7 @@
 
     return-void
 
-    .line 755
+    .line 754
     :cond_20
     invoke-interface {v0, p1, p2, p3}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
@@ -1521,7 +1514,7 @@
 
     const/16 v0, 0x3b
 
-    .line 732
+    .line 731
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->notifyRawActionToUI(I)V
 
     const/4 v0, -0x1
@@ -1530,17 +1523,17 @@
 
     const/4 v2, 0x1
 
-    .line 733
+    .line 732
     invoke-virtual {p0, v2, v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->notifyToAppUI(IILjava/lang/String;)V
 
-    .line 734
+    .line 733
     sget-object v0, Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;->STATE_PREVIEW:Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->notifyToVideoUI(Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;)V
 
     const/4 v0, 0x0
 
-    .line 735
+    .line 734
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mIsSaving:Z
 
     return-void
@@ -1549,7 +1542,7 @@
 .method protected notifyToVideoUI(Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;)V
     .registers 4
 
-    .line 759
+    .line 758
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$1;->$SwitchMap$com$transsion$camera$app$common$ui$IVideoUI$VideoUIState:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -1566,7 +1559,7 @@
 
     if-eq v0, v1, :cond_25
 
-    .line 771
+    .line 770
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1587,26 +1580,26 @@
 
     return-void
 
-    .line 766
+    .line 765
     :cond_25
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mModeStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     if-eqz p0, :cond_38
 
-    .line 767
+    .line 766
     sget-object p1, Lcom/transsion/camera/app/common/IApp$State;->STATE_RUNNING:Lcom/transsion/camera/app/common/IApp$State;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;->onStatusChanged(Lcom/transsion/camera/app/common/IApp$State;)V
 
     return-void
 
-    .line 761
+    .line 760
     :cond_2f
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mModeStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     if-eqz p0, :cond_38
 
-    .line 762
+    .line 761
     sget-object p1, Lcom/transsion/camera/app/common/IApp$State;->STATE_IDLE:Lcom/transsion/camera/app/common/IApp$State;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;->onStatusChanged(Lcom/transsion/camera/app/common/IApp$State;)V
@@ -1626,7 +1619,7 @@
 .method public onCameraStateChanged(I)V
     .registers 2
 
-    .line 338
+    .line 337
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mState:I
 
     return-void
@@ -1644,7 +1637,7 @@
 .method protected onCreateQuality()Ljava/lang/String;
     .registers 2
 
-    .line 333
+    .line 332
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_video_quality"
@@ -1807,7 +1800,7 @@
 .method public onSettingChangeDone(Ljava/lang/String;)V
     .registers 4
 
-    .line 269
+    .line 268
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1828,29 +1821,29 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 270
+    .line 269
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mRestartPreview:Z
 
     if-eqz p1, :cond_2d
 
-    .line 271
+    .line 270
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v0, 0x6
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 272
+    .line 271
     const-string p1, "-1"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->updateQuality(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 273
+    .line 272
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->prepareVideoData()I
 
     const/4 p1, 0x0
 
-    .line 274
+    .line 273
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mRestartPreview:Z
 
     :cond_2d
@@ -1866,10 +1859,10 @@
 .method protected onSettingChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
 
-    .line 257
+    .line 256
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CameraMode;->onSettingChanged(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 258
+    .line 257
     const-string p2, "key_video_quality"
 
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1880,7 +1873,7 @@
 
     const/4 p1, 0x1
 
-    .line 259
+    .line 258
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mRestartPreview:Z
 
     :cond_e
@@ -1890,7 +1883,7 @@
 .method public onSettingReady()V
     .registers 4
 
-    .line 227
+    .line 226
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1911,15 +1904,15 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 229
+    .line 228
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mPaused:Z
 
     if-nez v0, :cond_1f
 
-    .line 230
+    .line 229
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->prepareVideoData()I
 
-    .line 232
+    .line 231
     :cond_1f
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->onSettingReady()V
 
@@ -1929,7 +1922,7 @@
 .method public onShutterClick(II)Z
     .registers 7
 
-    .line 169
+    .line 168
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1952,7 +1945,7 @@
 
     const-wide/16 p1, 0x3e8
 
-    .line 170
+    .line 169
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/CameraUtil;->isFastDoubleClick(J)Z
 
     move-result p1
@@ -1969,7 +1962,7 @@
 
     goto :goto_68
 
-    .line 175
+    .line 174
     :cond_27
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -1979,7 +1972,7 @@
 
     if-eqz p1, :cond_37
 
-    .line 176
+    .line 175
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "isModeTabScrolling return"
@@ -1988,7 +1981,7 @@
 
     return p2
 
-    .line 179
+    .line 178
     :cond_37
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
@@ -2004,14 +1997,14 @@
 
     if-nez p1, :cond_50
 
-    .line 181
+    .line 180
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "onShutterClick space in not enough, can not record photo."
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 182
+    .line 181
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->showLowStorageHint()V
 
     return p2
@@ -2023,14 +2016,14 @@
 
     if-nez p1, :cond_61
 
-    .line 185
+    .line 184
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "StorageVolume is removed."
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 186
+    .line 185
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->showStorageUnAvailableHint()V
 
     return p2
@@ -2038,7 +2031,7 @@
     :cond_61
     const/16 p1, 0xf
 
-    .line 190
+    .line 189
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->notifyRawActionToUI(I)V
 
     const/4 p0, 0x1
@@ -2053,7 +2046,7 @@
 .method public onShutterLongClick(II)Z
     .registers 4
 
-    .line 196
+    .line 195
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -2074,7 +2067,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 197
+    .line 196
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mState:I
 
     const/4 p2, 0x6
@@ -2085,11 +2078,11 @@
 
     return v0
 
-    .line 201
+    .line 200
     :cond_1f
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mShutterLongClick:Z
 
-    .line 202
+    .line 201
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 p1, 0x15
@@ -2102,7 +2095,7 @@
 .method public onShutterUp(I)V
     .registers 4
 
-    .line 208
+    .line 207
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2131,7 +2124,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 209
+    .line 208
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mState:I
 
     const/4 v0, 0x6
@@ -2140,7 +2133,7 @@
 
     goto :goto_3b
 
-    .line 213
+    .line 212
     :cond_28
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mShutterLongClick:Z
 
@@ -2148,17 +2141,17 @@
 
     const/4 p1, 0x0
 
-    .line 214
+    .line 213
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mShutterLongClick:Z
 
-    .line 215
+    .line 214
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v1, 0x16
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 216
+    .line 215
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->triggerShutterClick(I)V
@@ -2171,7 +2164,7 @@
 .method protected onVideoFileSaved(Landroid/net/Uri;Ljava/io/FileDescriptor;)V
     .registers 3
 
-    .line 379
+    .line 378
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->getAppUIForUpdateThumbnail()Lcom/transsion/camera/app/common/IAppUI;
 
     move-result-object p0
@@ -2180,21 +2173,21 @@
 
     return-void
 
-    .line 383
+    .line 382
     :cond_7
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUI;->updateThumbnailUri(Landroid/net/Uri;)V
 
-    .line 384
+    .line 383
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUI;->updateBrowserData(Landroid/net/Uri;)V
 
     const/16 p1, 0x200
 
-    .line 385
+    .line 384
     invoke-static {p2, p1}, Lcom/transsion/camera/utils/BitmapUtils;->createBitmapFromVideo(Ljava/io/FileDescriptor;I)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    .line 386
+    .line 385
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUI;->updateThumbnail(Landroid/graphics/Bitmap;)V
 
     return-void
@@ -2203,7 +2196,7 @@
 .method protected onVideoFileSaved(Landroid/net/Uri;Ljava/lang/String;)V
     .registers 3
 
-    .line 368
+    .line 367
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->getAppUIForUpdateThumbnail()Lcom/transsion/camera/app/common/IAppUI;
 
     move-result-object p0
@@ -2212,21 +2205,21 @@
 
     return-void
 
-    .line 372
+    .line 371
     :cond_7
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUI;->updateThumbnailUri(Landroid/net/Uri;)V
 
-    .line 373
+    .line 372
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUI;->updateBrowserData(Landroid/net/Uri;)V
 
     const/16 p1, 0x200
 
-    .line 374
+    .line 373
     invoke-static {p2, p1}, Lcom/transsion/camera/utils/BitmapUtils;->createBitmapFromVideo(Ljava/lang/String;I)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    .line 375
+    .line 374
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUI;->updateThumbnail(Landroid/graphics/Bitmap;)V
 
     return-void
@@ -2235,7 +2228,7 @@
 .method protected onVideoMediaRecorderInfoConstruct(Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;)V
     .registers 4
 
-    .line 350
+    .line 349
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -2252,7 +2245,7 @@
 .method public pause()V
     .registers 3
 
-    .line 137
+    .line 136
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getLocationManager()Lcom/transsion/camera/app/common/location/LocationManager;
@@ -2267,33 +2260,33 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mTempLocation:Landroid/location/Location;
 
-    .line 138
+    .line 137
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mQualityLock:Ljava/lang/Object;
 
     monitor-enter v0
 
     const/4 v1, 0x1
 
-    .line 139
+    .line 138
     :try_start_12
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mPaused:Z
 
-    .line 140
+    .line 139
     const-string v1, "-1"
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->updateQuality(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 141
+    .line 140
     monitor-exit v0
     :try_end_1a
     .catchall {:try_start_12 .. :try_end_1a} :catchall_21
 
     const/4 v0, 0x0
 
-    .line 143
+    .line 142
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mShutterLongClick:Z
 
-    .line 144
+    .line 143
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->pause()V
 
     return-void
@@ -2301,7 +2294,7 @@
     :catchall_21
     move-exception p0
 
-    .line 141
+    .line 140
     :try_start_22
     monitor-exit v0
     :try_end_23
@@ -2313,23 +2306,23 @@
 .method protected prepareVideoData()I
     .registers 6
 
-    .line 279
+    .line 278
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->onCreateQuality()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 280
+    .line 279
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mQualityLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 281
+    .line 280
     :try_start_7
     iget-boolean v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mPaused:Z
 
     if-nez v2, :cond_12
 
-    .line 282
+    .line 281
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->updateQuality(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -2341,11 +2334,11 @@
 
     goto :goto_87
 
-    .line 284
+    .line 283
     :cond_12
     const-string v0, "-1"
 
-    .line 286
+    .line 285
     :goto_14
     monitor-exit v1
     :try_end_15
@@ -2357,7 +2350,7 @@
 
     return v1
 
-    .line 292
+    .line 291
     :cond_19
     const-string v2, "_"
 
@@ -2365,21 +2358,21 @@
 
     move-result v2
 
-    .line 293
+    .line 292
     invoke-static {v2}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->qualityValid(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_86
 
-    .line 294
+    .line 293
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 295
+    .line 294
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v4
@@ -2392,7 +2385,7 @@
 
     return v1
 
-    .line 299
+    .line 298
     :cond_36
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -2402,17 +2395,17 @@
 
     move-result-object v1
 
-    .line 300
+    .line 299
     iget v3, v1, Landroid/media/CamcorderProfile;->videoFrameWidth:I
 
     iput v3, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoFrameWidth:I
 
-    .line 301
+    .line 300
     iget v3, v1, Landroid/media/CamcorderProfile;->videoFrameHeight:I
 
     iput v3, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoFrameHeight:I
 
-    .line 303
+    .line 302
     const-string v3, "6_60"
 
     invoke-static {v0, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -2429,7 +2422,7 @@
 
     if-eqz v0, :cond_66
 
-    .line 304
+    .line 303
     :cond_56
     iget v0, v1, Landroid/media/CamcorderProfile;->videoFrameRate:I
 
@@ -2437,7 +2430,7 @@
 
     if-ne v0, v3, :cond_66
 
-    .line 305
+    .line 304
     iget v3, v1, Landroid/media/CamcorderProfile;->videoBitRate:I
 
     mul-int/lit8 v3, v3, 0x2
@@ -2446,10 +2439,10 @@
 
     mul-int/lit8 v0, v0, 0x2
 
-    .line 306
+    .line 305
     iput v0, v1, Landroid/media/CamcorderProfile;->videoFrameRate:I
 
-    .line 309
+    .line 308
     :cond_66
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2469,10 +2462,10 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 310
+    .line 309
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->configProfile(Landroid/media/CamcorderProfile;)V
 
-    .line 311
+    .line 310
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->doPictureSizeUpdate(Lcom/transsion/camera/app/common/mode/ICameraMode;)V
@@ -2484,7 +2477,7 @@
     :cond_86
     return v1
 
-    .line 286
+    .line 285
     :goto_87
     :try_start_87
     monitor-exit v1
@@ -2508,17 +2501,17 @@
 .method public resume()V
     .registers 2
 
-    .line 130
+    .line 129
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->resume()V
 
     const/4 v0, 0x0
 
-    .line 131
+    .line 130
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mTempLocation:Landroid/location/Location;
 
     const/4 v0, 0x0
 
-    .line 132
+    .line 131
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mPaused:Z
 
     return-void
@@ -2530,7 +2523,16 @@
 .method protected setMediaInfo(Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;)V
     .registers 3
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_19
+
+    .line 443
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->getVideoOrientation()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;->setOrientation(I)Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;
+
+    move-result-object p1
 
     .line 444
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->getVideoOrientation()I
@@ -2548,7 +2550,7 @@
 
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;->setAudioFlag(Z)Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;
 
-    :cond_11
+    :cond_19
     return-void
 .end method
 
@@ -2654,10 +2656,10 @@
 .method public unInit()V
     .registers 2
 
-    .line 120
+    .line 119
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->unInit()V
 
-    .line 121
+    .line 120
     const-string v0, "key_video_quality"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CameraMode;->unRegisterKeyToMonitor(Ljava/lang/String;)V
@@ -2668,7 +2670,7 @@
 .method protected updateQuality(Ljava/lang/String;)Ljava/lang/String;
     .registers 5
 
-    .line 321
+    .line 320
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2695,17 +2697,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 322
+    .line 321
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoQuality:Ljava/lang/String;
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    .line 323
+    .line 322
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoQuality:Ljava/lang/String;
 
-    .line 324
+    .line 323
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->getPreviewSize()Landroid/util/Size;
@@ -2721,7 +2723,7 @@
     :cond_34
     if-nez v0, :cond_39
 
-    .line 325
+    .line 324
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoQuality:Ljava/lang/String;
 
     return-object p0

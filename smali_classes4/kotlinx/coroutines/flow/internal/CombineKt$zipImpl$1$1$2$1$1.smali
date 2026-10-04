@@ -27,15 +27,17 @@
     c = "kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1$2$1$1"
     f = "Combine.kt"
     l = {
+        0x7e,
         0x81,
-        0x84,
-        0x84
+        0x81
     }
     m = "invokeSuspend"
 .end annotation
 
 
 # instance fields
+.field final synthetic $collectJob:Lkotlinx/coroutines/CompletableJob;
+
 .field final synthetic $second:Lkotlinx/coroutines/channels/ReceiveChannel;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -77,8 +79,8 @@
 
 
 # direct methods
-.method constructor <init>(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/jvm/functions/Function3;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
-    .registers 6
+.method constructor <init>(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/jvm/functions/Function3;Ljava/lang/Object;Lkotlinx/coroutines/CompletableJob;Lkotlin/coroutines/Continuation;)V
+    .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -90,6 +92,7 @@
             "-TR;>;",
             "Lkotlin/jvm/functions/Function3;",
             "TT1;",
+            "Lkotlinx/coroutines/CompletableJob;",
             "Lkotlin/coroutines/Continuation<",
             "-",
             "Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;",
@@ -105,9 +108,11 @@
 
     iput-object p4, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->$value:Ljava/lang/Object;
 
+    iput-object p5, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->$collectJob:Lkotlinx/coroutines/CompletableJob;
+
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p5}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p6}, Lkotlin/coroutines/jvm/internal/SuspendLambda;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -115,7 +120,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 9
+    .registers 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -138,9 +143,11 @@
 
     iget-object v4, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->$value:Ljava/lang/Object;
 
-    move-object v5, p2
+    iget-object v5, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->$collectJob:Lkotlinx/coroutines/CompletableJob;
 
-    invoke-direct/range {v0 .. v5}, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;-><init>(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/jvm/functions/Function3;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
+    move-object v6, p2
+
+    invoke-direct/range {v0 .. v6}, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;-><init>(Lkotlinx/coroutines/channels/ReceiveChannel;Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/jvm/functions/Function3;Ljava/lang/Object;Lkotlinx/coroutines/CompletableJob;Lkotlin/coroutines/Continuation;)V
 
     return-object v0
 .end method
@@ -197,7 +204,7 @@
 
     move-result-object v0
 
-    .line 128
+    .line 125
     iget v1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->label:I
 
     const/4 v2, 0x0
@@ -218,7 +225,7 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_6f
+    goto :goto_71
 
     :cond_16
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -236,7 +243,7 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_64
+    goto :goto_66
 
     :cond_26
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
@@ -252,7 +259,7 @@
     :cond_30
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 129
+    .line 126
     iget-object p1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->$second:Lkotlinx/coroutines/channels/ReceiveChannel;
 
     iput v5, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->label:I
@@ -263,13 +270,13 @@
 
     if-ne p1, v0, :cond_3e
 
-    goto :goto_6e
+    goto :goto_70
 
     :cond_3e
     :goto_3e
-    iget-object v1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->$this_unsafeFlow:Lkotlinx/coroutines/flow/FlowCollector;
+    iget-object v1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->$collectJob:Lkotlinx/coroutines/CompletableJob;
 
-    .line 505
+    .line 513
     instance-of v5, p1, Lkotlinx/coroutines/channels/ChannelResult$Failed;
 
     if-eqz v5, :cond_50
@@ -280,27 +287,29 @@
 
     if-nez p0, :cond_4f
 
-    .line 130
+    .line 127
     new-instance p0, Lkotlinx/coroutines/flow/internal/AbortFlowException;
 
-    invoke-direct {p0, v1}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Lkotlinx/coroutines/flow/FlowCollector;)V
+    invoke-direct {p0, v1}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Ljava/lang/Object;)V
 
     :cond_4f
     throw p0
 
-    .line 132
+    .line 129
     :cond_50
+    iget-object v1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->$this_unsafeFlow:Lkotlinx/coroutines/flow/FlowCollector;
+
     iget-object v5, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->$transform:Lkotlin/jvm/functions/Function3;
 
     iget-object v6, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->$value:Ljava/lang/Object;
 
     sget-object v7, Lkotlinx/coroutines/flow/internal/NullSurrogateKt;->NULL:Lkotlinx/coroutines/internal/Symbol;
 
-    if-ne p1, v7, :cond_59
+    if-ne p1, v7, :cond_5b
 
     move-object p1, v2
 
-    :cond_59
+    :cond_5b
     iput-object v1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->L$0:Ljava/lang/Object;
 
     iput v4, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->label:I
@@ -309,12 +318,12 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_64
+    if-ne p1, v0, :cond_66
 
-    goto :goto_6e
+    goto :goto_70
 
-    :cond_64
-    :goto_64
+    :cond_66
+    :goto_66
     iput-object v2, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->L$0:Ljava/lang/Object;
 
     iput v3, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$2$1$1;->label:I
@@ -323,14 +332,14 @@
 
     move-result-object p0
 
-    if-ne p0, v0, :cond_6f
+    if-ne p0, v0, :cond_71
 
-    :goto_6e
+    :goto_70
     return-object v0
 
-    .line 133
-    :cond_6f
-    :goto_6f
+    .line 130
+    :cond_71
+    :goto_71
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0

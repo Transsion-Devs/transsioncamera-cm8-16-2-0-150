@@ -58,7 +58,7 @@
 
     if-nez p1, :cond_c
 
-    goto :goto_58
+    goto :goto_66
 
     .line 75
     :cond_c
@@ -76,7 +76,7 @@
 
     const/4 v2, -0x1
 
-    sparse-switch p1, :sswitch_data_5a
+    sparse-switch p1, :sswitch_data_68
 
     goto :goto_3c
 
@@ -127,9 +127,9 @@
     move v2, v1
 
     :goto_3c
-    packed-switch v2, :pswitch_data_68
+    packed-switch v2, :pswitch_data_76
 
-    goto :goto_58
+    goto :goto_66
 
     .line 85
     :pswitch_40
@@ -152,27 +152,41 @@
 
     move-result p1
 
-    if-eqz p1, :cond_58
+    if-eqz p1, :cond_66
+
+    iget-object p1, p0, Lcom/transsion/camera/feature/setting/flarecapture/FlareCapture$StatusListener;->this$0:Lcom/transsion/camera/feature/setting/flarecapture/FlareCapture;
+
+    invoke-virtual {p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string p2, "on"
+
+    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_66
 
     .line 79
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/flarecapture/FlareCapture$StatusListener;->this$0:Lcom/transsion/camera/feature/setting/flarecapture/FlareCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/flarecapture/FlareCapture;->-$$Nest$mupdateFlareCaptureScene(Lcom/transsion/camera/feature/setting/flarecapture/FlareCapture;)V
 
-    :cond_58
-    :goto_58
+    :cond_66
+    :goto_66
     return-void
 
     nop
 
-    :sswitch_data_5a
+    :sswitch_data_68
     .sparse-switch
         -0x76a61dd7 -> :sswitch_32
         0x9bb6c62 -> :sswitch_27
         0x667e128e -> :sswitch_1c
     .end sparse-switch
 
-    :pswitch_data_68
+    :pswitch_data_76
     .packed-switch 0x0
         :pswitch_46
         :pswitch_40

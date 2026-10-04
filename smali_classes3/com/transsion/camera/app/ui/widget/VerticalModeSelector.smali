@@ -490,15 +490,6 @@
 
 
 # virtual methods
-.method public isOutSideShown()Z
-    .registers 1
-
-    .line 197
-    iget-boolean p0, p0, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->mIsOutSideShown:Z
-
-    return p0
-.end method
-
 .method public isScrolling()Z
     .registers 2
 

@@ -14,10 +14,10 @@
 .method public constructor <init>(ILkotlin/coroutines/Continuation;)V
     .registers 3
 
-    .line 159
+    .line 155
     invoke-direct {p0, p2}, Lkotlin/coroutines/jvm/internal/ContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    .line 157
+    .line 158
     iput p1, p0, Lkotlin/coroutines/jvm/internal/SuspendLambda;->arity:I
 
     return-void
@@ -28,7 +28,7 @@
 .method public getArity()I
     .registers 1
 
-    .line 157
+    .line 158
     iget p0, p0, Lkotlin/coroutines/jvm/internal/SuspendLambda;->arity:I
 
     return p0
@@ -37,25 +37,25 @@
 .method public toString()Ljava/lang/String;
     .registers 2
 
-    .line 163
+    .line 164
     invoke-virtual {p0}, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->getCompletion()Lkotlin/coroutines/Continuation;
 
     move-result-object v0
 
     if-nez v0, :cond_10
 
-    .line 164
+    .line 165
     invoke-static {p0}, Lkotlin/jvm/internal/Reflection;->renderLambdaToString(Lkotlin/jvm/internal/FunctionBase;)Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v0, "renderLambdaToString(this)"
+    const-string v0, "renderLambdaToString(...)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 
-    .line 166
+    .line 167
     :cond_10
     invoke-super {p0}, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->toString()Ljava/lang/String;
 

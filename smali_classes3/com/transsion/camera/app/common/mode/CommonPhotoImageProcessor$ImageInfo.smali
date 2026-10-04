@@ -86,25 +86,25 @@
 .method constructor <init>([BIIIIZ)V
     .registers 7
 
-    .line 959
+    .line 987
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 960
+    .line 988
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;->mData:[B
 
-    .line 961
+    .line 989
     iput p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;->mFormat:I
 
-    .line 962
+    .line 990
     iput p3, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;->mWidth:I
 
-    .line 963
+    .line 991
     iput p4, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;->mHeight:I
 
-    .line 964
+    .line 992
     iput p5, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;->mOrientation:I
 
-    .line 965
+    .line 993
     iput-boolean p6, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ImageInfo;->mBGImage:Z
 
     return-void

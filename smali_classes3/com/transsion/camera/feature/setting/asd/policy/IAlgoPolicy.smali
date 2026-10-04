@@ -10,6 +10,9 @@
 .method public abstract setCaptureEndFlag(Z)V
 .end method
 
+.method public abstract setCapturingFlag(Z)V
+.end method
+
 .method public abstract setHwFeatures(Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;)V
 .end method
 

@@ -14,15 +14,15 @@
 
 
 # static fields
-.field public static sky_choose_layout:I = 0x7f0e0205
+.field public static sky_choose_layout:I = 0x7f0e0200
 
-.field public static sky_guide_layout:I = 0x7f0e0206
+.field public static sky_guide_layout:I = 0x7f0e0201
 
-.field public static sky_thumbnail_item:I = 0x7f0e0208
+.field public static sky_thumbnail_item:I = 0x7f0e0203
 
-.field public static sky_thumbnail_item_fold:I = 0x7f0e0209
+.field public static sky_thumbnail_item_fold:I = 0x7f0e0204
 
-.field public static sky_thumbnail_item_ui4:I = 0x7f0e020a
+.field public static sky_thumbnail_item_ui4:I = 0x7f0e0205
 
 
 # direct methods

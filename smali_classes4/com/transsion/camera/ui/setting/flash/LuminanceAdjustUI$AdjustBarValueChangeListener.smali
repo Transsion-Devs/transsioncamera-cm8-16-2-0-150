@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;)V
     .registers 2
 
-    .line 398
+    .line 389
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$AdjustBarValueChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onActionDown()V
     .registers 1
 
-    .line 402
+    .line 393
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$AdjustBarValueChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->-$$Nest$mremoveSpreadBarSwitchDelay(Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;)V
@@ -58,7 +58,7 @@
 .method public onActionUp()V
     .registers 1
 
-    .line 414
+    .line 405
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$AdjustBarValueChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateSpreadBarDelay()V
@@ -69,17 +69,17 @@
 .method public onProgressValueChange(I)V
     .registers 3
 
-    .line 407
+    .line 398
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$AdjustBarValueChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateLuminanceValue(I)V
 
-    .line 408
+    .line 399
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$AdjustBarValueChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateVibrate(I)V
 
-    .line 409
+    .line 400
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$AdjustBarValueChangeListener;->this$0:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->-$$Nest$mupdateLevelIcon(Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;I)V

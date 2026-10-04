@@ -24,7 +24,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;Landroid/view/View;Z)V
     .registers 4
 
-    .line 100
+    .line 106
     iput-object p2, p0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$2;->val$rootView:Landroid/view/View;
 
     iput-boolean p3, p0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$2;->val$hide:Z
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 103
+    .line 109
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$2;->val$rootView:Landroid/view/View;
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$2;->val$hide:Z
@@ -58,7 +58,7 @@
     :goto_b
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 104
+    .line 110
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$2;->val$rootView:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setTranslationX(F)V
@@ -69,7 +69,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 109
+    .line 115
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$2;->val$rootView:Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/view/View;->clearAnimation()V

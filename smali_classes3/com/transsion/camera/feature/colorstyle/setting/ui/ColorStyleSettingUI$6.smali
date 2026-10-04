@@ -24,7 +24,7 @@
 
     const/4 v0, 0x1
 
-    .line 1093
+    .line 1090
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;->setLayoutCompleted(Z)V
 
     return-void
@@ -33,7 +33,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;Landroid/content/Context;IIZ)V
     .registers 6
 
-    .line 1088
+    .line 1085
     iput-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$6;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroidx/recyclerview/widget/GridLayoutManager;-><init>(Landroid/content/Context;IIZ)V
@@ -46,10 +46,10 @@
 .method public onLayoutCompleted(Landroidx/recyclerview/widget/RecyclerView$State;)V
     .registers 4
 
-    .line 1091
+    .line 1088
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/GridLayoutManager;->onLayoutCompleted(Landroidx/recyclerview/widget/RecyclerView$State;)V
 
-    .line 1092
+    .line 1089
     invoke-static {}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -74,7 +74,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1093
+    .line 1090
     iget-object p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$6;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->-$$Nest$fgetmColorStyleRecyclerAdapter(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;

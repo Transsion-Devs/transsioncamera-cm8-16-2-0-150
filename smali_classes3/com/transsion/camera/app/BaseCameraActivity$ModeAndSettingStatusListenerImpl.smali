@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 2117
+    .line 2139
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onStatusChanged(Lcom/transsion/camera/app/common/IApp$State;)V
     .registers 8
 
-    .line 2120
+    .line 2142
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {v0}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmState(Lcom/transsion/camera/app/BaseCameraActivity;)Lcom/transsion/camera/app/common/IApp$State;
@@ -78,18 +78,18 @@
 
     if-eqz v0, :cond_22
 
-    .line 2121
+    .line 2143
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fputmAvoidReduceBrightness(Lcom/transsion/camera/app/BaseCameraActivity;Z)V
 
-    .line 2124
+    .line 2146
     :cond_22
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fputmState(Lcom/transsion/camera/app/BaseCameraActivity;Lcom/transsion/camera/app/common/IApp$State;)V
 
-    .line 2125
+    .line 2147
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -126,7 +126,7 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2126
+    .line 2148
     sget-object v0, Lcom/transsion/camera/app/BaseCameraActivity$9;->$SwitchMap$com$transsion$camera$app$common$IApp$State:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -151,7 +151,7 @@
 
     if-eq p1, v0, :cond_84
 
-    .line 2170
+    .line 2192
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -180,7 +180,7 @@
 
     return-void
 
-    .line 2167
+    .line 2189
     :cond_84
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -188,7 +188,7 @@
 
     return-void
 
-    .line 2146
+    .line 2168
     :cond_8a
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -196,10 +196,10 @@
 
     if-eqz v4, :cond_e9
 
-    .line 2147
+    .line 2169
     invoke-static {p1, v1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$mdoEnableWaitPage(Lcom/transsion/camera/app/BaseCameraActivity;Z)V
 
-    .line 2148
+    .line 2170
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmScreenBrightnessManager(Lcom/transsion/camera/app/BaseCameraActivity;)Lcom/transsion/camera/manager/ScreenBrightnessManager;
@@ -212,7 +212,7 @@
 
     int-to-float p1, p1
 
-    .line 2149
+    .line 2171
     iget-object v1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {v1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmScreenBrightnessManager(Lcom/transsion/camera/app/BaseCameraActivity;)Lcom/transsion/camera/manager/ScreenBrightnessManager;
@@ -225,7 +225,7 @@
 
     int-to-float v1, v1
 
-    .line 2150
+    .line 2172
     invoke-static {v1, p1}, Ljava/lang/Float;->compare(FF)I
 
     move-result p1
@@ -242,14 +242,14 @@
 
     iget-object p1, p1, Lcom/transsion/camera/app/BaseCameraActivity;->mModeManager:Lcom/transsion/camera/app/common/mode/ModeManager;
 
-    .line 2152
+    .line 2174
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/ModeManager;->modeSupportPowerSavingMode()Z
 
     move-result p1
 
     if-eqz p1, :cond_c7
 
-    .line 2153
+    .line 2175
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmScreenBrightnessManager(Lcom/transsion/camera/app/BaseCameraActivity;)Lcom/transsion/camera/manager/ScreenBrightnessManager;
@@ -258,7 +258,7 @@
 
     invoke-virtual {p1}, Lcom/transsion/camera/manager/ScreenBrightnessManager;->exitVideoSavePowerMode()V
 
-    .line 2155
+    .line 2177
     :cond_c7
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -268,7 +268,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 2156
+    .line 2178
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/BaseCameraActivity;)Landroid/os/Handler;
@@ -279,7 +279,7 @@
 
     invoke-virtual {p1, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 2157
+    .line 2179
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/BaseCameraActivity;)Landroid/os/Handler;
@@ -290,18 +290,18 @@
 
     invoke-virtual {p1, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 2158
+    .line 2180
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p1, v3}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fputmIsBrightnessReduced(Lcom/transsion/camera/app/BaseCameraActivity;Z)V
 
-    .line 2160
+    .line 2182
     :cond_e9
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p1, v3}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$msetNotLoadLatestThumbnail(Lcom/transsion/camera/app/BaseCameraActivity;Z)V
 
-    .line 2161
+    .line 2183
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/BaseCameraActivity;)Landroid/os/Handler;
@@ -310,14 +310,14 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 2162
+    .line 2184
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/BaseCameraActivity;->mIsVideoPowerSavingUIShowing:Z
 
     if-eqz p1, :cond_14d
 
-    .line 2163
+    .line 2185
     invoke-static {p0}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/BaseCameraActivity;)Landroid/os/Handler;
 
     move-result-object p0
@@ -328,7 +328,7 @@
 
     return-void
 
-    .line 2128
+    .line 2150
     :cond_107
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -336,10 +336,10 @@
 
     if-eqz v1, :cond_14d
 
-    .line 2129
+    .line 2151
     invoke-static {p1, v3}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$mdoEnableWaitPage(Lcom/transsion/camera/app/BaseCameraActivity;Z)V
 
-    .line 2130
+    .line 2152
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object p1, p1, Lcom/transsion/camera/app/BaseCameraActivity;->mModeManager:Lcom/transsion/camera/app/common/mode/ModeManager;
@@ -356,14 +356,14 @@
 
     if-eqz v1, :cond_14d
 
-    .line 2132
+    .line 2154
     invoke-static {p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmAvoidReduceBrightness(Lcom/transsion/camera/app/BaseCameraActivity;)Z
 
     move-result p1
 
     if-nez p1, :cond_136
 
-    .line 2133
+    .line 2155
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/BaseCameraActivity;)Landroid/os/Handler;
@@ -380,20 +380,20 @@
 
     invoke-virtual {p1, v2, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 2136
+    .line 2158
     :cond_136
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p1, v3}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fputmAvoidReduceBrightness(Lcom/transsion/camera/app/BaseCameraActivity;Z)V
 
-    .line 2137
+    .line 2159
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$ModeAndSettingStatusListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/BaseCameraActivity;->mIsVideoPowerSavingUISupport:Z
 
     if-eqz p1, :cond_14d
 
-    .line 2138
+    .line 2160
     invoke-static {p0}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/BaseCameraActivity;)Landroid/os/Handler;
 
     move-result-object p0

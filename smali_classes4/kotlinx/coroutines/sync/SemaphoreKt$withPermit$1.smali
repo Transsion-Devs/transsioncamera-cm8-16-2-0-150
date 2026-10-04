@@ -26,7 +26,7 @@
     c = "kotlinx.coroutines.sync.SemaphoreKt"
     f = "Semaphore.kt"
     l = {
-        0x56
+        0x51
     }
     m = "withPermit"
 .end annotation

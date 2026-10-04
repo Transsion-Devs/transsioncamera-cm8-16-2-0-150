@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
     .registers 2
 
-    .line 4191
+    .line 4163
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$10;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onImageAvailable(Landroid/media/ImageReader;)V
     .registers 9
 
-    .line 4194
+    .line 4166
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$10;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmPreviewYUVReaderLock(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Ljava/util/concurrent/locks/ReentrantLock;
@@ -51,13 +51,13 @@
 
     if-eqz v0, :cond_d2
 
-    .line 4196
+    .line 4168
     :try_start_c
     invoke-virtual {p1}, Landroid/media/ImageReader;->acquireNextImage()Landroid/media/Image;
 
     move-result-object v0
 
-    .line 4197
+    .line 4169
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->isUserAMonkey()Z
 
     move-result v1
@@ -72,7 +72,7 @@
 
     if-eqz v1, :cond_3a
 
-    .line 4198
+    .line 4170
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_30
 
-    .line 4200
+    .line 4172
     invoke-virtual {v0}, Landroid/media/Image;->close()V
     :try_end_2c
     .catchall {:try_start_c .. :try_end_2c} :catchall_2d
@@ -95,7 +95,7 @@
 
     goto/16 :goto_c8
 
-    .line 4229
+    .line 4201
     :cond_30
     :goto_30
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$10;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
@@ -108,7 +108,7 @@
 
     return-void
 
-    .line 4205
+    .line 4177
     :cond_3a
     :try_start_3a
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$10;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
@@ -136,7 +136,7 @@
 
     if-nez v1, :cond_90
 
-    .line 4206
+    .line 4178
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$10;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmSettingPreviewDataCallBacks(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -162,7 +162,7 @@
 
     if-eqz v0, :cond_81
 
-    .line 4207
+    .line 4179
     iget-object v4, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$10;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v4, v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$misImageClosed(Lcom/transsion/camera/adapter/CameraProxy2Impl;Landroid/media/Image;)Z
@@ -173,7 +173,7 @@
 
     goto :goto_81
 
-    .line 4212
+    .line 4184
     :cond_71
     invoke-virtual {p1}, Landroid/media/ImageReader;->getWidth()I
 
@@ -187,12 +187,12 @@
 
     move-result v6
 
-    .line 4211
+    .line 4183
     invoke-interface {v3, v0, v4, v5, v6}, Lcom/transsion/camera/adapter/CameraProxy$CameraSettingPreviewDataCallback;->onPreviewFrame(Landroid/media/Image;III)V
 
     goto :goto_5a
 
-    .line 4208
+    .line 4180
     :cond_81
     :goto_81
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -203,7 +203,7 @@
 
     goto :goto_30
 
-    .line 4214
+    .line 4186
     :cond_89
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$10;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
@@ -213,7 +213,7 @@
 
     goto :goto_96
 
-    .line 4216
+    .line 4188
     :cond_90
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$10;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
@@ -224,7 +224,7 @@
     :goto_96
     if-eqz v0, :cond_bf
 
-    .line 4218
+    .line 4190
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$10;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v1, v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$misImageClosed(Lcom/transsion/camera/adapter/CameraProxy2Impl;Landroid/media/Image;)Z
@@ -235,7 +235,7 @@
 
     goto :goto_bf
 
-    .line 4223
+    .line 4195
     :cond_a1
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$10;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
@@ -251,7 +251,7 @@
 
     if-eqz v1, :cond_ba
 
-    .line 4225
+    .line 4197
     invoke-virtual {p1}, Landroid/media/ImageReader;->getWidth()I
 
     move-result v2
@@ -262,13 +262,13 @@
 
     invoke-interface {v1, v0, v2, p1}, Lcom/transsion/camera/adapter/CameraProxy$CameraPreviewDataCallback;->onPreviewFrame(Landroid/media/Image;II)V
 
-    .line 4227
+    .line 4199
     :cond_ba
     invoke-virtual {v0}, Landroid/media/Image;->close()V
 
     goto/16 :goto_30
 
-    .line 4219
+    .line 4191
     :cond_bf
     :goto_bf
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -281,7 +281,7 @@
 
     goto/16 :goto_30
 
-    .line 4229
+    .line 4201
     :goto_c8
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$10;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
@@ -291,7 +291,7 @@
 
     invoke-virtual {p0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 4230
+    .line 4202
     throw p1
 
     :cond_d2

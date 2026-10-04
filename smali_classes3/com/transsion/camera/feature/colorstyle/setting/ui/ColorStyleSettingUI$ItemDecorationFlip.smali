@@ -70,7 +70,7 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
     .registers 2
 
-    .line 1144
+    .line 1141
     iput-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationFlip;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;-><init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
@@ -81,7 +81,7 @@
 .method private synthetic lambda$getFirstItemRect$0(II)Landroid/graphics/Rect;
     .registers 5
 
-    .line 1157
+    .line 1154
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -96,7 +96,7 @@
 .method private synthetic lambda$getFirstItemRect$1(II)Landroid/graphics/Rect;
     .registers 5
 
-    .line 1163
+    .line 1160
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
@@ -111,7 +111,7 @@
 .method private synthetic lambda$getLastItemRect$2(I)Landroid/graphics/Rect;
     .registers 5
 
-    .line 1177
+    .line 1174
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationFlip;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->-$$Nest$fgetmResources(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)Landroid/content/res/Resources;
@@ -124,7 +124,7 @@
 
     move-result v0
 
-    .line 1178
+    .line 1175
     new-instance v1, Landroid/graphics/Rect;
 
     const/4 v2, 0x0
@@ -139,7 +139,7 @@
 .method private synthetic lambda$getLastItemRect$3(I)Landroid/graphics/Rect;
     .registers 5
 
-    .line 1184
+    .line 1181
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationFlip;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->-$$Nest$fgetmResources(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)Landroid/content/res/Resources;
@@ -152,7 +152,7 @@
 
     move-result v0
 
-    .line 1185
+    .line 1182
     new-instance v1, Landroid/graphics/Rect;
 
     const/4 v2, 0x0
@@ -169,7 +169,7 @@
 .method protected getFirstItemRect(I)Landroid/graphics/Rect;
     .registers 5
 
-    .line 1150
+    .line 1147
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationFlip;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->-$$Nest$fgetmResources(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)Landroid/content/res/Resources;
@@ -182,7 +182,7 @@
 
     move-result v0
 
-    .line 1151
+    .line 1148
     invoke-virtual {p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationFlip;->getItemPadding()I
 
     move-result v1
@@ -199,7 +199,7 @@
 
     if-eq p1, v2, :cond_2e
 
-    .line 1162
+    .line 1159
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mFirstItemRect:Landroid/graphics/Rect;
 
     invoke-static {p1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -218,7 +218,7 @@
 
     return-object p0
 
-    .line 1156
+    .line 1153
     :cond_2e
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationFlip;->mFirstItemRectFlip:Landroid/graphics/Rect;
 
@@ -242,14 +242,14 @@
 .method public getItemPadding()I
     .registers 3
 
-    .line 1193
+    .line 1190
     iget v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mItemPadding:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_13
 
-    .line 1194
+    .line 1191
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationFlip;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->-$$Nest$fgetmResources(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)Landroid/content/res/Resources;
@@ -264,7 +264,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mItemPadding:I
 
-    .line 1196
+    .line 1193
     :cond_13
     iget p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mItemPadding:I
 
@@ -274,7 +274,7 @@
 .method protected getLastItemRect(I)Landroid/graphics/Rect;
     .registers 4
 
-    .line 1171
+    .line 1168
     invoke-virtual {p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationFlip;->getItemPadding()I
 
     move-result v0
@@ -291,7 +291,7 @@
 
     if-eq p1, v1, :cond_22
 
-    .line 1183
+    .line 1180
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mLastItemRect:Landroid/graphics/Rect;
 
     invoke-static {p1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -310,7 +310,7 @@
 
     return-object p0
 
-    .line 1176
+    .line 1173
     :cond_22
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationFlip;->mLastItemRectFlip:Landroid/graphics/Rect;
 

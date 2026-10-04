@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
     .registers 2
 
-    .line 771
+    .line 766
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$OnShutterMotionEventListener;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onTransmitMotionEvent(Landroid/view/MotionEvent;)V
     .registers 4
 
-    .line 775
+    .line 770
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$OnShutterMotionEventListener;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$mshutterUINewStyleSupport(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Z
@@ -58,7 +58,7 @@
 
     goto :goto_32
 
-    .line 778
+    .line 773
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$OnShutterMotionEventListener;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
@@ -80,7 +80,7 @@
 
     move-result-object v0
 
-    .line 779
+    .line 774
     const-string v1, "com.transsion.camera.feature.mode.motioncapture.MotionCaptureModeEntry"
 
     invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -91,7 +91,7 @@
 
     goto :goto_32
 
-    .line 782
+    .line 777
     :cond_26
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$OnShutterMotionEventListener;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
@@ -108,7 +108,7 @@
     :goto_32
     return-void
 
-    .line 785
+    .line 780
     :cond_33
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$OnShutterMotionEventListener;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 

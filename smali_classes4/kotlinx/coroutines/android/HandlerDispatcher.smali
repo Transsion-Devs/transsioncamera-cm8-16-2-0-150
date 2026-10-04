@@ -10,7 +10,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 22
+    .line 18
     invoke-direct {p0}, Lkotlinx/coroutines/MainCoroutineDispatcher;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
         }
     .end annotation
 
-    .line 22
+    .line 18
     invoke-static {p0, p1, p2, p3}, Lkotlinx/coroutines/Delay$DefaultImpls;->delay(Lkotlinx/coroutines/Delay;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -54,7 +54,7 @@
 .method public invokeOnTimeout(JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
     .registers 5
 
-    .line 22
+    .line 18
     invoke-static {p0, p1, p2, p3, p4}, Lkotlinx/coroutines/Delay$DefaultImpls;->invokeOnTimeout(Lkotlinx/coroutines/Delay;JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
 
     move-result-object p0

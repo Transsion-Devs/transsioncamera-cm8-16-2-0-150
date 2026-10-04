@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 1565
+    .line 1589
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .method public onThermalThrottleChanged(I)V
     .registers 2
 
-    .line 1568
+    .line 1592
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/BaseCameraActivity;->doOnThermalThrottleChanged(I)V

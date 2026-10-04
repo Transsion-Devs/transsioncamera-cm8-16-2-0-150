@@ -10,7 +10,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 146
+    .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
         }
     .end annotation
 
-    .line 148
+    .line 144
     sget-object p0, Lkotlinx/coroutines/flow/SharingCommand;->START:Lkotlinx/coroutines/flow/SharingCommand;
 
     invoke-static {p0}, Lkotlinx/coroutines/flow/FlowKt;->flowOf(Ljava/lang/Object;)Lkotlinx/coroutines/flow/Flow;
@@ -45,7 +45,7 @@
 .method public toString()Ljava/lang/String;
     .registers 1
 
-    .line 149
+    .line 145
     const-string p0, "SharingStarted.Eagerly"
 
     return-object p0

@@ -64,6 +64,8 @@
 
 .field protected mCaptureEndFlag:Z
 
+.field protected mCapturingFlag:Z
+
 .field protected mCurrentIlluminationType:I
 
 .field protected mEffect:I
@@ -91,24 +93,24 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/setting/asd/Asd;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
     .registers 8
 
-    .line 111
+    .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 84
+    .line 86
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmBackMap:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 85
+    .line 87
     new-instance v1, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
     iput-object v1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmFrontMap:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 86
+    .line 88
     new-instance v2, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v2}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
@@ -117,45 +119,48 @@
 
     const/4 v3, 0x7
 
-    .line 95
+    .line 97
     new-array v3, v3, [I
 
-    fill-array-data v3, :array_66
+    fill-array-data v3, :array_68
 
     iput-object v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
     const/4 v3, -0x1
 
-    .line 96
+    .line 98
     iput v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mEffect:I
 
-    .line 97
+    .line 99
     iput v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mHalIlluminationType:I
 
-    .line 98
+    .line 100
     iput v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mCurrentIlluminationType:I
 
     const/4 v4, 0x0
 
-    .line 100
+    .line 102
     iput v4, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mBrightnessValue:I
 
-    .line 101
+    .line 103
     iput v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mStreamId:I
 
-    .line 103
+    .line 105
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSuperResolutionEnable:Z
 
-    .line 104
+    .line 106
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSoftMFNREnable:Z
 
-    .line 105
+    .line 107
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mLowLightEnable:Z
 
-    .line 107
+    .line 109
+    iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mCapturingFlag:Z
+
+    .line 110
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mIsInSensorZoomMode:Z
 
-    .line 112
+    .line 115
     new-instance v3, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -170,49 +175,49 @@
 
     iput-object v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 113
+    .line 116
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
-    .line 114
+    .line 117
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 115
+    .line 118
     invoke-virtual {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->getGlobalFeatures()Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
-    .line 116
+    .line 119
     invoke-virtual {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->getModeFeatures()Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
 
     move-result-object p2
 
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdModeFeatures:Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
 
-    .line 117
+    .line 120
     invoke-virtual {p1}, Lcom/transsion/camera/feature/setting/asd/Asd;->getSettingFeatures()Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingFeatures:Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
 
-    .line 118
+    .line 121
     new-instance p1, Lcom/transsion/camera/feature/setting/asd/AsdConfig;
 
     invoke-direct {p1, v0, v1, v2}, Lcom/transsion/camera/feature/setting/asd/AsdConfig;-><init>(Ljava/util/concurrent/ConcurrentHashMap;Ljava/util/concurrent/ConcurrentHashMap;Ljava/util/concurrent/ConcurrentHashMap;)V
 
-    .line 119
+    .line 122
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->addAsdConfigIfNeed()V
 
-    .line 120
+    .line 123
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->updateSkinType()V
 
     return-void
 
     nop
 
-    :array_66
+    :array_68
     .array-data 4
         0x0
         0x0
@@ -227,14 +232,14 @@
 .method private addAsdConfigIfNeed()V
     .registers 9
 
-    .line 566
+    .line 592
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
 
     iget-object v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mAsdConfigSupportBack:[[I
 
-    .line 567
+    .line 593
     array-length v1, v0
 
     const/4 v2, 0x0
@@ -248,12 +253,12 @@
 
     aget-object v5, v0, v3
 
-    .line 568
+    .line 594
     array-length v6, v5
 
     if-le v6, v4, :cond_22
 
-    .line 569
+    .line 595
     iget-object v6, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmBackMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     aget v7, v5, v2
@@ -275,7 +280,7 @@
 
     goto :goto_9
 
-    .line 572
+    .line 598
     :cond_25
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -283,7 +288,7 @@
 
     iget-object v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mAsdConfigSupportFront:[[I
 
-    .line 573
+    .line 599
     array-length v1, v0
 
     move v3, v2
@@ -293,12 +298,12 @@
 
     aget-object v5, v0, v3
 
-    .line 574
+    .line 600
     array-length v6, v5
 
     if-le v6, v4, :cond_45
 
-    .line 575
+    .line 601
     iget-object v6, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmFrontMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     aget v7, v5, v2
@@ -320,7 +325,7 @@
 
     goto :goto_2d
 
-    .line 578
+    .line 604
     :cond_48
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -328,7 +333,7 @@
 
     iget-object v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mAsdConfigSupportWide:[[I
 
-    .line 579
+    .line 605
     array-length v1, v0
 
     move v3, v2
@@ -338,12 +343,12 @@
 
     aget-object v5, v0, v3
 
-    .line 580
+    .line 606
     array-length v6, v5
 
     if-le v6, v4, :cond_68
 
-    .line 581
+    .line 607
     iget-object v6, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmWideMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     aget v7, v5, v2
@@ -372,7 +377,7 @@
 .method private getSkinColor()Ljava/lang/String;
     .registers 2
 
-    .line 536
+    .line 548
     const-string p0, "debug.vendor.sys.oobe.camera_skin"
 
     const-string/jumbo v0, "white"
@@ -387,7 +392,7 @@
 .method private isFilterOn()Z
     .registers 3
 
-    .line 486
+    .line 493
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_filter"
@@ -396,7 +401,7 @@
 
     move-result-object v0
 
-    .line 487
+    .line 494
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->isAsdMode()Z
@@ -407,7 +412,7 @@
 
     const-string p0, "0"
 
-    .line 488
+    .line 495
     invoke-static {v0, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -416,7 +421,7 @@
 
     const-string p0, "-1"
 
-    .line 489
+    .line 496
     invoke-static {v0, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -433,10 +438,73 @@
     return p0
 .end method
 
+.method private isFlashSnapLiteEnable()Z
+    .registers 6
+
+    .line 669
+    iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+
+    const-string v1, "key_best_moment_detect"
+
+    invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "1"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    .line 670
+    iget-object v2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+
+    invoke-interface {v2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
+
+    move-result-object v2
+
+    iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+
+    .line 671
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v3, "key_bm_detect_icon_visible"
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v3, v4, p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 670
+    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz v0, :cond_2f
+
+    if-eqz p0, :cond_2f
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_2f
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method private isTranssionAINRAvailable(Lcom/transsion/camera/adapter/CameraParameters;I)Z
     .registers 11
 
-    .line 417
+    .line 424
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->isTranssionAINRSupport()Z
@@ -447,7 +515,7 @@
 
     if-nez v0, :cond_11
 
-    .line 418
+    .line 425
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "isTranssionAINRAvailable, AINR is not supported , so return!"
@@ -456,20 +524,20 @@
 
     return v1
 
-    .line 422
+    .line 429
     :cond_11
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getZoomValue()I
 
     move-result v0
 
-    .line 424
+    .line 431
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
     invoke-virtual {v2}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getAINRZoomRangeList()[I
 
     move-result-object v2
 
-    .line 425
+    .line 432
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdHwFeatures:Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;
 
     invoke-virtual {v3}, Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;->isHwSupportFastSuperNight()Z
@@ -482,7 +550,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
-    .line 426
+    .line 433
     invoke-virtual {v3}, Lcom/transsion/camera/feature/setting/asd/Asd;->isLightSuperNightSupport()Z
 
     move-result v3
@@ -491,14 +559,14 @@
 
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingFeatures:Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
 
-    .line 427
+    .line 434
     invoke-virtual {v3}, Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;->isNightLiteOpened()Z
 
     move-result v3
 
     if-eqz v3, :cond_3c
 
-    .line 428
+    .line 435
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isNightScene()Z
 
     move-result v3
@@ -512,7 +580,7 @@
     :cond_3c
     move v3, v1
 
-    .line 430
+    .line 437
     :goto_3d
     iget-object v5, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -552,7 +620,7 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 433
+    .line 440
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getAisMode()I
 
     move-result v7
@@ -579,7 +647,7 @@
 
     iget-object v7, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingFeatures:Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
 
-    .line 436
+    .line 443
     invoke-virtual {v7}, Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;->isSuperResolutionOpend()Z
 
     move-result v7
@@ -590,14 +658,14 @@
 
     move-result-object v6
 
-    .line 430
+    .line 437
     invoke-static {v5, v6}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     if-eqz v3, :cond_9e
 
     return v1
 
-    .line 442
+    .line 449
     :cond_9e
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -607,7 +675,7 @@
 
     if-eqz v3, :cond_b9
 
-    .line 443
+    .line 450
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isHDRScene(I)Z
 
     move-result p1
@@ -616,7 +684,7 @@
 
     return v1
 
-    .line 447
+    .line 454
     :cond_ad
     iget p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mISO:I
 
@@ -633,7 +701,7 @@
     :cond_b8
     return v1
 
-    .line 450
+    .line 457
     :cond_b9
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -645,7 +713,7 @@
 
     return v1
 
-    .line 454
+    .line 461
     :cond_c2
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getAisMode()I
 
@@ -653,7 +721,7 @@
 
     if-ne p1, v4, :cond_d4
 
-    .line 455
+    .line 462
     iget p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mISO:I
 
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
@@ -669,7 +737,7 @@
     :cond_d3
     return v1
 
-    .line 458
+    .line 465
     :cond_d4
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isHDRScene(I)Z
 
@@ -679,7 +747,7 @@
 
     return v1
 
-    .line 462
+    .line 469
     :cond_db
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingFeatures:Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
 
@@ -689,7 +757,7 @@
 
     if-eqz p1, :cond_ef
 
-    .line 463
+    .line 470
     iget p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mISO:I
 
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
@@ -705,7 +773,7 @@
     :cond_ee
     return v1
 
-    .line 466
+    .line 473
     :cond_ef
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isFilterOn()Z
 
@@ -713,7 +781,7 @@
 
     if-eqz p1, :cond_101
 
-    .line 467
+    .line 474
     iget p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mISO:I
 
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
@@ -729,7 +797,7 @@
     :cond_100
     return v1
 
-    .line 470
+    .line 477
     :cond_101
     aget p1, v2, v1
 
@@ -753,7 +821,7 @@
 
     return v4
 
-    .line 474
+    .line 481
     :cond_115
     aget p1, v2, p2
 
@@ -777,7 +845,7 @@
 
     return v4
 
-    .line 478
+    .line 485
     :cond_129
     iget p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mISO:I
 
@@ -793,6 +861,53 @@
 
     :cond_134
     return v1
+.end method
+
+.method private parseIntSafely(Ljava/lang/String;)I
+    .registers 3
+
+    .line 552
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    .line 553
+    iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string p1, "parseIntSafely: value is empty, use ZOOM_1X"
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 554
+    sget p0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
+
+    return p0
+
+    .line 558
+    :cond_10
+    :try_start_10
+    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result p0
+    :try_end_14
+    .catch Ljava/lang/NumberFormatException; {:try_start_10 .. :try_end_14} :catch_15
+
+    return p0
+
+    .line 560
+    :catch_15
+    iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string p1, "parseIntSafely failed, use ZOOM_1X"
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 561
+    sget p0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
+
+    return p0
 .end method
 
 .method private setParameters(Lcom/transsion/camera/adapter/CameraParameters;I)V
@@ -818,19 +933,19 @@
 
     const/4 p2, -0x1
 
-    .line 302
+    .line 309
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionHDR(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 303
+    .line 310
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 304
+    .line 311
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setMiddleNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 305
+    .line 312
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionSmartDenoise(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 306
+    .line 313
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdModeFeatures:Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
 
     invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->isModeSupportHighResolution()Z
@@ -839,7 +954,7 @@
 
     if-nez p2, :cond_36
 
-    .line 307
+    .line 314
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSprdPlatform()Z
 
     move-result p2
@@ -854,174 +969,174 @@
 
     if-nez p2, :cond_36
 
-    .line 308
+    .line 315
     :cond_33
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 310
+    .line 317
     :cond_36
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionLowLightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     return-void
 
-    .line 279
+    .line 286
     :pswitch_3a
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionHDR(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 280
+    .line 287
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionSmartDenoise(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 281
+    .line 288
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 282
+    .line 289
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setMiddleNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 283
+    .line 290
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionLowLightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 284
+    .line 291
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionAINRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 285
+    .line 292
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 286
+    .line 293
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionHDRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     return-void
 
-    .line 259
+    .line 266
     :pswitch_53
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionHDR(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 260
+    .line 267
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionSmartDenoise(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 261
+    .line 268
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 262
+    .line 269
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setMiddleNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 263
+    .line 270
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionAINRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 264
+    .line 271
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionLowLightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 265
+    .line 272
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 266
+    .line 273
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionHDRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     return-void
 
-    .line 290
+    .line 297
     :pswitch_6c
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionHDR(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 291
+    .line 298
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionSmartDenoise(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 292
+    .line 299
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 293
+    .line 300
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setMiddleNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 294
+    .line 301
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionLowLightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 295
+    .line 302
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionAINRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 296
+    .line 303
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 297
+    .line 304
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionHDRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     const/16 p2, 0xa
 
-    .line 298
+    .line 305
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setAlgorithmOff(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     return-void
 
-    .line 243
+    .line 250
     :pswitch_8a
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionHDR(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 244
+    .line 251
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionSmartDenoise(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 245
+    .line 252
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 246
+    .line 253
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isTranssionAINRAvailable(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result p2
 
     if-eqz p2, :cond_a0
 
-    .line 247
+    .line 254
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionAINRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 248
+    .line 255
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setMiddleNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     goto :goto_a6
 
-    .line 250
+    .line 257
     :cond_a0
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setMiddleNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 251
+    .line 258
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionAINRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 253
+    .line 260
     :goto_a6
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionLowLightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 254
+    .line 261
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 255
+    .line 262
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionHDRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     return-void
 
-    .line 269
+    .line 276
     :cond_b0
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionHDR(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 270
+    .line 277
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionSmartDenoise(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 271
+    .line 278
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 272
+    .line 279
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setMiddleNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 273
+    .line 280
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionLowLightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 274
+    .line 281
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionAINRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 275
+    .line 282
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionHDRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 276
+    .line 283
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     return-void
 
-    .line 227
+    .line 234
     :cond_c9
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingValue:Ljava/lang/String;
 
@@ -1035,7 +1150,7 @@
 
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
-    .line 228
+    .line 235
     invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getAsdDefaultValue()Ljava/lang/String;
 
     move-result-object p2
@@ -1048,56 +1163,56 @@
 
     if-eqz p2, :cond_e5
 
-    .line 229
+    .line 236
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionHDR(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     goto :goto_e8
 
-    .line 231
+    .line 238
     :cond_e5
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionHDR(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 233
+    .line 240
     :goto_e8
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionAINRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 234
+    .line 241
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionSmartDenoise(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 235
+    .line 242
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 236
+    .line 243
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setMiddleNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 237
+    .line 244
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionLowLightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 238
+    .line 245
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 239
+    .line 246
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionHDRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     return-void
 
-    .line 206
+    .line 213
     :cond_fe
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionHDR(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 207
+    .line 214
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionSmartDenoise(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 208
+    .line 215
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setMiddleNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 209
+    .line 216
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 210
+    .line 217
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionHDRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 211
+    .line 218
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingFeatures:Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
 
     invoke-virtual {v2}, Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;->isNightShotOpened()Z
@@ -1106,35 +1221,35 @@
 
     if-eqz v2, :cond_12c
 
-    .line 212
+    .line 219
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isTranssionAINRAvailable(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
     move-result p2
 
     if-eqz p2, :cond_122
 
-    .line 213
+    .line 220
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 214
+    .line 221
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionAINRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     goto :goto_128
 
-    .line 216
+    .line 223
     :cond_122
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 217
+    .line 224
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionAINRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 219
+    .line 226
     :goto_128
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionLowLightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     return-void
 
-    .line 221
+    .line 228
     :cond_12c
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isTranssionAINRAvailable(Lcom/transsion/camera/adapter/CameraParameters;I)Z
 
@@ -1142,37 +1257,37 @@
 
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionAINRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 222
+    .line 229
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 223
+    .line 230
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionLowLightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     return-void
 
-    .line 196
+    .line 203
     :cond_13a
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionHDR(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 197
+    .line 204
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionSmartDenoise(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 198
+    .line 205
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 199
+    .line 206
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setMiddleNightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 200
+    .line 207
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionLowLightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 201
+    .line 208
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionAINRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 202
+    .line 209
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 203
+    .line 210
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setSuperResolutionHDRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     return-void
@@ -1196,7 +1311,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 638
+    .line 664
     invoke-virtual {p1, p2}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionAINRMode(I)V
 
     :cond_5
@@ -1208,7 +1323,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 632
+    .line 658
     invoke-virtual {p1, p2}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionCusIspAsd([I)V
 
     :cond_5
@@ -1220,7 +1335,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 626
+    .line 652
     invoke-virtual {p1, p2}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionSmartDenoise(I)V
 
     :cond_5
@@ -1230,7 +1345,7 @@
 .method private updateExtraValues(Lcom/transsion/camera/adapter/CameraParameters;II)V
     .registers 11
 
-    .line 316
+    .line 323
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
     const/4 v1, 0x0
@@ -1239,17 +1354,17 @@
 
     aput v2, v0, v1
 
-    .line 317
+    .line 324
     aput p3, v0, v2
 
     const/4 v3, 0x2
 
     const/16 v4, 0x64
 
-    .line 318
+    .line 325
     aput v4, v0, v3
 
-    .line 319
+    .line 326
     iget v5, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mHalIlluminationType:I
 
     if-ne v5, v2, :cond_13
@@ -1266,7 +1381,7 @@
 
     aput v5, v0, v6
 
-    .line 321
+    .line 328
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdModeFeatures:Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->isModeSupportASDEnhance()Z
@@ -1279,7 +1394,7 @@
 
     const-string v5, "key_asd_enhance"
 
-    .line 322
+    .line 329
     invoke-virtual {v0, v5}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1296,7 +1411,7 @@
 
     const-string v5, "key_super_definition"
 
-    .line 323
+    .line 330
     invoke-virtual {v0, v5}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1317,7 +1432,7 @@
 
     if-eqz v0, :cond_9b
 
-    .line 324
+    .line 331
     :cond_47
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
@@ -1327,7 +1442,7 @@
 
     if-eqz v0, :cond_89
 
-    .line 325
+    .line 332
     iget v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mHalIlluminationType:I
 
     if-eq v0, v2, :cond_85
@@ -1349,7 +1464,7 @@
     :cond_5f
     if-ne p3, v2, :cond_73
 
-    .line 332
+    .line 339
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
     iget-object v4, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
@@ -1367,13 +1482,13 @@
     :cond_6e
     const/16 v4, 0x23
 
-    .line 333
+    .line 340
     :goto_70
     aput v4, v0, v3
 
     goto :goto_89
 
-    .line 335
+    .line 342
     :cond_73
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
@@ -1392,20 +1507,20 @@
     :cond_80
     const/16 v4, 0x50
 
-    .line 336
+    .line 343
     :goto_82
     aput v4, v0, v3
 
     goto :goto_89
 
-    .line 330
+    .line 337
     :cond_85
     :goto_85
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
     aput v1, v0, v1
 
-    .line 339
+    .line 346
     :cond_89
     :goto_89
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -1422,18 +1537,18 @@
 
     iget-object v5, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
-    .line 340
+    .line 347
     invoke-virtual {v0, v4, v5}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_9f
 
-    .line 342
+    .line 349
     :cond_9b
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
     aput v1, v0, v1
 
-    .line 345
+    .line 352
     :goto_9f
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -1447,14 +1562,14 @@
 
     move-result-object v0
 
-    .line 346
+    .line 353
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object p2
 
     invoke-virtual {v0, v4, p2}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 347
+    .line 354
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -1471,10 +1586,10 @@
 
     move-result-object p3
 
-    .line 348
+    .line 355
     invoke-virtual {p2, v0, p3}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 350
+    .line 357
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string p3, "key_image_style"
@@ -1493,7 +1608,7 @@
 
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 351
+    .line 358
     invoke-interface {p2, p3}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -1515,12 +1630,12 @@
 
     if-eqz p2, :cond_ef
 
-    .line 352
+    .line 359
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
     aput v2, p2, v1
 
-    .line 355
+    .line 362
     :cond_ef
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getSkinColor()Ljava/lang/String;
 
@@ -1536,14 +1651,14 @@
 
     if-eqz p2, :cond_102
 
-    .line 356
+    .line 363
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
     aput v3, p2, p3
 
     goto :goto_117
 
-    .line 357
+    .line 364
     :cond_102
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getSkinColor()Ljava/lang/String;
 
@@ -1557,24 +1672,24 @@
 
     if-eqz p2, :cond_113
 
-    .line 358
+    .line 365
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
     aput v2, p2, p3
 
     goto :goto_117
 
-    .line 360
+    .line 367
     :cond_113
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
     aput v1, p2, p3
 
-    .line 362
+    .line 369
     :goto_117
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->updateSkinType()V
 
-    .line 363
+    .line 370
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionCusIspAsd(Lcom/transsion/camera/adapter/CameraParameters;[I)V
@@ -1585,23 +1700,23 @@
 .method private updateSkinType()V
     .registers 5
 
-    .line 367
+    .line 374
     sget-object v0, Lcom/transsion/camera/utils/AreaUtil;->COUNTRY_CODE:Ljava/lang/String;
 
     if-eqz v0, :cond_a
 
-    .line 368
+    .line 375
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
     if-eqz v1, :cond_c
 
-    .line 369
+    .line 376
     :cond_a
     const-string v0, "NG"
 
-    .line 372
+    .line 379
     :cond_c
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1631,7 +1746,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 375
+    .line 382
     sget-object v1, Lcom/transsion/camera/utils/SettingInfo;->AREA_A_DARK:[Ljava/lang/String;
 
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -1644,7 +1759,7 @@
 
     goto :goto_44
 
-    .line 377
+    .line 384
     :cond_39
     sget-object v1, Lcom/transsion/camera/utils/SettingInfo;->AREA_C_LIGHT:[Ljava/lang/String;
 
@@ -1661,7 +1776,7 @@
     :cond_43
     const/4 v0, 0x1
 
-    .line 382
+    .line 389
     :goto_44
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
@@ -1675,17 +1790,17 @@
 .method private updateSomeValuesWhenAsdOff(Lcom/transsion/camera/adapter/CameraParameters;)V
     .registers 4
 
-    .line 184
+    .line 191
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
     const/4 v1, 0x0
 
     aput v1, v0, v1
 
-    .line 185
+    .line 192
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setTranssionCusIspAsd(Lcom/transsion/camera/adapter/CameraParameters;[I)V
 
-    .line 187
+    .line 194
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_image_style"
@@ -1702,7 +1817,7 @@
 
     if-eqz p1, :cond_29
 
-    .line 188
+    .line 195
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -1717,7 +1832,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdEnhanceValues:[I
 
-    .line 189
+    .line 196
     invoke-virtual {p1, v0, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_29
@@ -1729,14 +1844,14 @@
 .method protected applyLivePhotoLowPolicy()Z
     .registers 3
 
-    .line 525
+    .line 532
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getLivePhotoAlgorithmType()I
 
     move-result v0
 
-    .line 526
+    .line 533
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdModeFeatures:Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
 
     invoke-virtual {v1}, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->isModeSupportLivePhoto()Z
@@ -1764,70 +1879,60 @@
 .end method
 
 .method protected getDeviceZoomRatio()I
-    .registers 4
+    .registers 3
 
-    .line 540
-    iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdHwFeatures:Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;
-
-    invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;->isHwSupportSat()Z
-
-    move-result v0
+    .line 566
+    iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     const-string v1, "key_camera_zoom"
 
-    if-eqz v0, :cond_2d
-
-    invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
+    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget v2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mStreamId:I
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lcom/transsion/camera/app/common/CameraRepository;->isBackLongFocusCamera(Ljava/lang/String;)Z
+    invoke-direct {p0, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->parseIntSafely(Ljava/lang/String;)I
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    .line 567
+    iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdHwFeatures:Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;
 
-    .line 541
+    invoke-virtual {v1}, Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;->isHwSupportSat()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2d
+
+    .line 568
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
+    iget p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mStreamId:I
 
-    .line 542
-    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-virtual {v1, p0}, Lcom/transsion/camera/app/common/CameraRepository;->isBackLongFocusCamera(Ljava/lang/String;)Z
 
     move-result p0
 
-    invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/CameraRepository;->getBackLongFocusCameraDeviceZoom(I)I
+    if-eqz p0, :cond_2d
+
+    .line 569
+    invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/CameraRepository;->getBackLongFocusCameraDeviceZoom(I)I
 
     move-result p0
 
     return p0
 
-    .line 545
     :cond_2d
-    iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
-
-    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result p0
-
-    return p0
+    return v0
 .end method
 
 .method public getReplacedIlluminationType(I)I
@@ -1839,7 +1944,7 @@
 
     const/4 p1, 0x5
 
-    .line 592
+    .line 618
     :cond_4
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -1857,7 +1962,7 @@
 
     if-nez v0, :cond_10c
 
-    .line 593
+    .line 619
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -1876,7 +1981,7 @@
 
     goto/16 :goto_10c
 
-    .line 598
+    .line 624
     :cond_26
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -1894,7 +1999,7 @@
 
     if-nez v0, :cond_e7
 
-    .line 599
+    .line 625
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -1913,7 +2018,7 @@
 
     goto/16 :goto_e7
 
-    .line 604
+    .line 630
     :cond_48
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -1931,7 +2036,7 @@
 
     if-eqz v0, :cond_7d
 
-    .line 605
+    .line 631
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmWideMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1944,14 +2049,14 @@
 
     if-eqz v0, :cond_131
 
-    .line 606
+    .line 632
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "updateIllumination type wide"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 607
+    .line 633
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmWideMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1970,7 +2075,7 @@
 
     return p0
 
-    .line 609
+    .line 635
     :cond_7d
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -1988,7 +2093,7 @@
 
     if-eqz v0, :cond_b2
 
-    .line 610
+    .line 636
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmWideMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2001,14 +2106,14 @@
 
     if-eqz v0, :cond_131
 
-    .line 611
+    .line 637
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "updateIllumination type front wide"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 612
+    .line 638
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmWideMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2027,7 +2132,7 @@
 
     return p0
 
-    .line 614
+    .line 640
     :cond_b2
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -2045,7 +2150,7 @@
 
     if-eqz v0, :cond_131
 
-    .line 615
+    .line 641
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmWideMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2058,14 +2163,14 @@
 
     if-eqz v0, :cond_131
 
-    .line 616
+    .line 642
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "updateIllumination type LongFocus"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 617
+    .line 643
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmWideMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2084,7 +2189,7 @@
 
     return p0
 
-    .line 600
+    .line 626
     :cond_e7
     :goto_e7
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmFrontMap:Ljava/util/concurrent/ConcurrentHashMap;
@@ -2099,14 +2204,14 @@
 
     if-eqz v0, :cond_131
 
-    .line 601
+    .line 627
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "updateIllumination type front"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 602
+    .line 628
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmFrontMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2125,7 +2230,7 @@
 
     return p0
 
-    .line 594
+    .line 620
     :cond_10c
     :goto_10c
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmBackMap:Ljava/util/concurrent/ConcurrentHashMap;
@@ -2140,14 +2245,14 @@
 
     if-eqz v0, :cond_131
 
-    .line 595
+    .line 621
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "updateIllumination type Back"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 596
+    .line 622
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAlgorithmBackMap:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2173,7 +2278,7 @@
 .method protected getZoomValue()I
     .registers 4
 
-    .line 549
+    .line 575
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getSettingProvide()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
@@ -2186,27 +2291,35 @@
 
     move-result-object v0
 
-    .line 550
+    if-eqz v0, :cond_13
+
+    .line 576
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 551
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    goto :goto_14
+
+    :cond_13
+    const/4 v0, 0x0
+
+    .line 577
+    :goto_14
+    invoke-direct {p0, v0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->parseIntSafely(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 552
+    .line 578
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_1f
 
-    goto :goto_56
+    goto :goto_5a
 
-    .line 556
-    :cond_1b
+    .line 582
+    :cond_1f
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v1
@@ -2221,9 +2334,9 @@
 
     move-result v1
 
-    if-nez v1, :cond_3d
+    if-nez v1, :cond_41
 
-    .line 557
+    .line 583
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v1
@@ -2238,16 +2351,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_40
 
-    goto :goto_3d
+    goto :goto_41
 
-    :cond_3c
+    :cond_40
     return v0
 
-    .line 558
-    :cond_3d
-    :goto_3d
+    .line 584
+    :cond_41
+    :goto_41
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v1
@@ -2262,9 +2375,9 @@
 
     move-result p0
 
-    if-nez p0, :cond_56
+    if-nez p0, :cond_5a
 
-    .line 559
+    .line 585
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object p0
@@ -2275,8 +2388,8 @@
 
     return p0
 
-    :cond_56
-    :goto_56
+    :cond_5a
+    :goto_5a
     return v0
 .end method
 
@@ -2312,7 +2425,7 @@
 .method protected isHDRSettingOff()Z
     .registers 2
 
-    .line 392
+    .line 399
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     const-string v0, "key_hdr"
@@ -2333,7 +2446,7 @@
 .method protected isHDRSettingOn()Z
     .registers 2
 
-    .line 396
+    .line 403
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     const-string v0, "key_hdr"
@@ -2354,7 +2467,7 @@
 .method isLivePhotoOn()Z
     .registers 2
 
-    .line 493
+    .line 500
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdModeFeatures:Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->isModeSupportLivePhoto()Z
@@ -2367,7 +2480,7 @@
 
     const-string v0, "key_live_photo"
 
-    .line 494
+    .line 501
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -2393,7 +2506,7 @@
 .method isLivePhotoSupportHDR()Z
     .registers 2
 
-    .line 504
+    .line 511
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getLivePhotoAlgorithmType()I
@@ -2417,7 +2530,7 @@
 .method protected isNightScene()Z
     .registers 3
 
-    .line 386
+    .line 393
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mHalIlluminationType:I
 
     const/4 v0, 0x1
@@ -2474,7 +2587,7 @@
 .method protected isWideCamera()Z
     .registers 3
 
-    .line 412
+    .line 419
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -2491,7 +2604,7 @@
 
     if-nez v0, :cond_23
 
-    .line 413
+    .line 420
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -2528,8 +2641,17 @@
 .method public setCaptureEndFlag(Z)V
     .registers 2
 
-    .line 532
+    .line 539
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mCaptureEndFlag:Z
+
+    return-void
+.end method
+
+.method public setCapturingFlag(Z)V
+    .registers 2
+
+    .line 544
+    iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mCapturingFlag:Z
 
     return-void
 .end method
@@ -2537,7 +2659,7 @@
 .method public setHwFeatures(Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;)V
     .registers 2
 
-    .line 125
+    .line 128
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdHwFeatures:Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;
 
     return-void
@@ -2552,7 +2674,7 @@
 .method public setStreamId(I)V
     .registers 2
 
-    .line 153
+    .line 156
     iput p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mStreamId:I
 
     return-void
@@ -2573,7 +2695,7 @@
 .method shouldApplyLivePhotoRestrictions()Z
     .registers 3
 
-    .line 498
+    .line 505
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdModeFeatures:Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/ModeFeatures;->isModeSupportLivePhoto()Z
@@ -2584,7 +2706,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
-    .line 499
+    .line 506
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getLivePhotoAlgorithmType()I
 
     move-result v0
@@ -2597,7 +2719,7 @@
 
     const-string v0, "key_live_photo"
 
-    .line 500
+    .line 507
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -2623,7 +2745,7 @@
 .method public updateAsdLogicData(Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)Z
     .registers 5
 
-    .line 139
+    .line 142
     invoke-interface {p2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->checkInSensorZoomMode(Landroid/hardware/camera2/CaptureResult;)[I
 
     move-result-object p1
@@ -2632,12 +2754,12 @@
 
     if-eqz p1, :cond_19
 
-    .line 140
+    .line 143
     array-length v0, p1
 
     if-lez v0, :cond_19
 
-    .line 141
+    .line 144
     aget p1, p1, p2
 
     const/4 v0, 0x1
@@ -2651,13 +2773,13 @@
     :cond_11
     move p1, p2
 
-    .line 142
+    .line 145
     :goto_12
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mIsInSensorZoomMode:Z
 
     if-eq v1, p1, :cond_19
 
-    .line 143
+    .line 146
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mIsInSensorZoomMode:Z
 
     return v0
@@ -2669,12 +2791,12 @@
 .method public updateBrightnessAndISOParameters([II)Z
     .registers 3
 
-    .line 130
+    .line 133
     iput p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mISO:I
 
     const/4 p2, 0x0
 
-    .line 131
+    .line 134
     aget p1, p1, p2
 
     iput p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mBrightnessValue:I
@@ -2690,7 +2812,7 @@
 .method public updateParameters(Lcom/transsion/camera/adapter/CameraParameters;Ljava/lang/String;II)V
     .registers 8
 
-    .line 159
+    .line 162
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2721,21 +2843,21 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 163
+    .line 166
     iput p3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mHalIlluminationType:I
 
-    .line 164
+    .line 167
     iput p4, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mEffect:I
 
-    .line 165
+    .line 168
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingValue:Ljava/lang/String;
 
-    .line 167
+    .line 170
     iget-boolean p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mCaptureEndFlag:Z
 
     if-eqz p2, :cond_49
 
-    .line 168
+    .line 171
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
     move-result-object p2
@@ -2757,13 +2879,13 @@
     :cond_43
     const/4 p2, 0x0
 
-    .line 169
+    .line 172
     invoke-virtual {p1, p2}, Lcom/transsion/camera/adapter/CameraParameters;->setHeavyCapturing(Z)V
 
-    .line 170
+    .line 173
     iput-boolean p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mCaptureEndFlag:Z
 
-    .line 173
+    .line 176
     :cond_49
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingValue:Ljava/lang/String;
 
@@ -2773,20 +2895,16 @@
 
     move-result p2
 
-    if-eqz p2, :cond_5b
-
-    const/4 p2, -0x1
-
-    .line 174
-    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setParameters(Lcom/transsion/camera/adapter/CameraParameters;I)V
-
-    .line 175
-    invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->updateSomeValuesWhenAsdOff(Lcom/transsion/camera/adapter/CameraParameters;)V
-
-    return-void
+    if-eqz p2, :cond_72
 
     .line 177
-    :cond_5b
+    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isFlashSnapLiteEnable()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_6a
+
+    .line 178
     iget p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mHalIlluminationType:I
 
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getReplacedIlluminationType(I)I
@@ -2799,10 +2917,40 @@
 
     iput p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mCurrentIlluminationType:I
 
-    .line 178
+    .line 179
+    iget p3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mEffect:I
+
+    invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->updateExtraValues(Lcom/transsion/camera/adapter/CameraParameters;II)V
+
+    :cond_6a
+    const/4 p2, -0x1
+
+    .line 181
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setParameters(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 179
+    .line 182
+    invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->updateSomeValuesWhenAsdOff(Lcom/transsion/camera/adapter/CameraParameters;)V
+
+    return-void
+
+    .line 184
+    :cond_72
+    iget p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mHalIlluminationType:I
+
+    invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getReplacedIlluminationType(I)I
+
+    move-result p2
+
+    invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->updateIllumination(Lcom/transsion/camera/adapter/CameraParameters;I)I
+
+    move-result p2
+
+    iput p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mCurrentIlluminationType:I
+
+    .line 185
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->setParameters(Lcom/transsion/camera/adapter/CameraParameters;I)V
+
+    .line 186
     iget p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mCurrentIlluminationType:I
 
     iget p3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mEffect:I
@@ -2815,7 +2963,7 @@
 .method protected updateSuperNightLiteValue()V
     .registers 4
 
-    .line 508
+    .line 515
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2840,7 +2988,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdHwFeatures:Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;
 
-    .line 509
+    .line 516
     invoke-virtual {v2}, Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;->isHwSupportFastSuperNight()Z
 
     move-result v2
@@ -2851,7 +2999,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 510
+    .line 517
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isNightScene()Z
 
     move-result v2
@@ -2864,7 +3012,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingFeatures:Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
 
-    .line 511
+    .line 518
     invoke-virtual {v2}, Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;->isNightShotOpened()Z
 
     move-result v2
@@ -2883,10 +3031,10 @@
 
     move-result-object v1
 
-    .line 508
+    .line 515
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 513
+    .line 520
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/Asd;->isLightSuperNightSupport()Z
@@ -2905,7 +3053,7 @@
 
     if-eqz v0, :cond_7a
 
-    .line 514
+    .line 521
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isNightScene()Z
 
     move-result v0
@@ -2920,7 +3068,7 @@
 
     if-eqz v0, :cond_74
 
-    .line 515
+    .line 522
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     const/4 v0, 0x1
@@ -2929,7 +3077,7 @@
 
     return-void
 
-    .line 517
+    .line 524
     :cond_74
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -2937,7 +3085,7 @@
 
     return-void
 
-    .line 520
+    .line 527
     :cond_7a
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 

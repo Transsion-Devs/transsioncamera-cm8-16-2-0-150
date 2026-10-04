@@ -27,7 +27,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)V
     .registers 2
 
-    .line 683
+    .line 706
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$WarningDataCallbackImpl;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .method public onDataCallback(Ljava/lang/Object;I)V
     .registers 7
 
-    .line 687
+    .line 710
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$WarningDataCallbackImpl;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmBlurSetting(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/app/common/setting/ISetting;
@@ -60,7 +60,7 @@
 
     move-result-object p1
 
-    .line 688
+    .line 711
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$WarningDataCallbackImpl;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmDataStore(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/app/common/storage/DataStore;
@@ -85,7 +85,7 @@
 
     move-result-object v0
 
-    .line 689
+    .line 712
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$WarningDataCallbackImpl;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmWarningType(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)I
@@ -113,17 +113,17 @@
     :cond_39
     const-string/jumbo v1, "value_super_night_capture_begin"
 
-    .line 690
+    .line 713
     invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_57
 
-    .line 691
+    .line 714
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$WarningDataCallbackImpl;->mCameraId:Ljava/lang/String;
 
-    .line 692
+    .line 715
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$WarningDataCallbackImpl;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$UIHandler;

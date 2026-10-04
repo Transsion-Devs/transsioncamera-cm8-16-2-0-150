@@ -30,7 +30,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 3348
+    .line 3367
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,10 +41,10 @@
 .method public toRequestParams()[I
     .registers 2
 
-    .line 3358
+    .line 3377
     iget v0, p0, Lcom/transsion/camera/utils/SettingInfo$SMVRMetaData;->fpsMax:I
 
-    .line 3359
+    .line 3378
     iget p0, p0, Lcom/transsion/camera/utils/SettingInfo$SMVRMetaData;->cusP2BatchSize:I
 
     filled-new-array {v0, p0}, [I
@@ -57,7 +57,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 3365
+    .line 3384
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

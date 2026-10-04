@@ -2774,7 +2774,7 @@
 
     move-result-object v0
 
-    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportBackgroundShot2shot:Z
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportBackgroundShot2shotPMaster:Z
 
     if-eqz v0, :cond_10
 

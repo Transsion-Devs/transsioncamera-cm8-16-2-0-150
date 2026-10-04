@@ -58,7 +58,7 @@
 
     check-cast v5, Lcom/airbnb/lottie/LottieComposition;
 
-    invoke-static/range {v0 .. v5}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$f5LNku60ejsV9-sw0LNhTwbRR4w(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;ZIZZLcom/airbnb/lottie/LottieComposition;)V
+    invoke-static/range {v0 .. v5}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$VTlMBbuX_cdEP5fA5eyTnSt5x6Y(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;ZIZZLcom/airbnb/lottie/LottieComposition;)V
 
     return-void
 .end method

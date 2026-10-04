@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;)V
     .registers 2
 
-    .line 512
+    .line 511
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onLocationReceived(Landroid/location/Location;)V
     .registers 5
 
-    .line 515
+    .line 514
     invoke-static {}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -63,7 +63,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 516
+    .line 515
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->-$$Nest$mshouldShowLocationText(Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;)Z
@@ -77,36 +77,36 @@
     :cond_26
     if-eqz p1, :cond_49
 
-    .line 520
+    .line 519
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->-$$Nest$msaveLocationGson(Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;Landroid/location/Location;)V
 
-    .line 521
+    .line 520
     invoke-static {p1}, Lcom/transsion/camera/utils/LocationUtil;->getAccurateLocation(Landroid/location/Location;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 522
+    .line 521
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_43
 
-    .line 523
+    .line 522
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
     invoke-static {v1, v0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->-$$Nest$fputmLocationInfoStr(Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;Ljava/lang/String;)V
 
-    .line 524
+    .line 523
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
     const/16 v1, 0x1f4
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->-$$Nest$msendLocationShowDelay(Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;I)V
 
-    .line 526
+    .line 525
     :cond_43
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
@@ -114,7 +114,7 @@
 
     return-void
 
-    .line 528
+    .line 527
     :cond_49
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
@@ -124,7 +124,7 @@
 
     if-eqz p1, :cond_86
 
-    .line 529
+    .line 528
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->-$$Nest$fgetmLocationInfoStr(Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;)Ljava/lang/String;
@@ -137,7 +137,7 @@
 
     if-nez p1, :cond_81
 
-    .line 530
+    .line 529
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->-$$Nest$fgetmCityInfoStr(Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;)Ljava/lang/String;
@@ -158,14 +158,14 @@
 
     const-string v0, "null"
 
-    .line 531
+    .line 530
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-nez p1, :cond_86
 
-    .line 532
+    .line 531
     :cond_77
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
@@ -177,7 +177,7 @@
 
     return-void
 
-    .line 535
+    .line 534
     :cond_81
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 

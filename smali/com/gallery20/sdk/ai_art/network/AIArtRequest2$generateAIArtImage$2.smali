@@ -1008,7 +1008,7 @@
 
     iget-object v5, v0, Lcom/gallery20/sdk/ai_art/network/AIArtRequest2$generateAIArtImage$2;->this$0:Lcom/gallery20/sdk/ai_art/network/AIArtRequest2;
 
-    .line 350
+    .line 774
     new-instance v11, Ljava/util/ArrayList;
 
     invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V

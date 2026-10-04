@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
     .registers 2
 
-    .line 4305
+    .line 4291
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$OnTouchListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,14 +47,14 @@
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .registers 3
 
-    .line 4308
+    .line 4294
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$OnTouchListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI;->mPreviewGestureManager:Lcom/transsion/camera/app/ui/gesture/PreviewGestureManager;
 
     if-eqz p0, :cond_9
 
-    .line 4309
+    .line 4295
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/gesture/PreviewGestureManager;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     :cond_9

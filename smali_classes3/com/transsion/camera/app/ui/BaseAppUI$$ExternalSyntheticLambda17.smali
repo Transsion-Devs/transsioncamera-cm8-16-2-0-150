@@ -3,28 +3,34 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/function/Supplier;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
 
 # direct methods
-.method public synthetic constructor <init>()V
-    .registers 1
+.method public synthetic constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
+    .registers 2
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda17;->f$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
+.method public final run()V
     .registers 1
 
     .line 0
-    new-instance p0, Lcom/transsion/camera/app/ui/manager/factory/HintUIManagerFactory;
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda17;->f$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/factory/HintUIManagerFactory;-><init>()V
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$n8udKe8z4-PmjbcbnyPJlaSrxa8(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
-    return-object p0
+    return-void
 .end method

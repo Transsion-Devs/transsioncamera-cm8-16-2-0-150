@@ -44,10 +44,10 @@
         }
     .end annotation
 
-    .line 15
+    .line 11
     invoke-direct {p0, p1, p3, p4}, Lkotlinx/coroutines/AbstractCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;ZZ)V
 
-    .line 12
+    .line 8
     iput-object p2, p0, Lkotlinx/coroutines/channels/ChannelCoroutine;->_channel:Lkotlinx/coroutines/channels/Channel;
 
     return-void
@@ -58,7 +58,7 @@
 .method public synthetic cancel()V
     .registers 4
 
-    .line 707
+    .line 704
     new-instance v0, Lkotlinx/coroutines/JobCancellationException;
 
     # invokes: Lkotlinx/coroutines/JobSupport;->cancellationExceptionMessage()Ljava/lang/String;
@@ -70,7 +70,7 @@
 
     invoke-direct {v0, v1, v2, p0}, Lkotlinx/coroutines/JobCancellationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Lkotlinx/coroutines/Job;)V
 
-    .line 21
+    .line 17
     invoke-virtual {p0, v0}, Lkotlinx/coroutines/channels/ChannelCoroutine;->cancelInternal(Ljava/lang/Throwable;)V
 
     return-void
@@ -79,7 +79,7 @@
 .method public final cancel(Ljava/util/concurrent/CancellationException;)V
     .registers 4
 
-    .line 31
+    .line 29
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->isCancelled()Z
 
     move-result v0
@@ -91,7 +91,7 @@
     :cond_7
     if-nez p1, :cond_13
 
-    .line 707
+    .line 704
     new-instance p1, Lkotlinx/coroutines/JobCancellationException;
 
     # invokes: Lkotlinx/coroutines/JobSupport;->cancellationExceptionMessage()Ljava/lang/String;
@@ -103,7 +103,7 @@
 
     invoke-direct {p1, v0, v1, p0}, Lkotlinx/coroutines/JobCancellationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Lkotlinx/coroutines/Job;)V
 
-    .line 32
+    .line 30
     :cond_13
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/ChannelCoroutine;->cancelInternal(Ljava/lang/Throwable;)V
 
@@ -113,7 +113,7 @@
 .method public final synthetic cancel(Ljava/lang/Throwable;)Z
     .registers 4
 
-    .line 707
+    .line 704
     new-instance p1, Lkotlinx/coroutines/JobCancellationException;
 
     # invokes: Lkotlinx/coroutines/JobSupport;->cancellationExceptionMessage()Ljava/lang/String;
@@ -125,7 +125,7 @@
 
     invoke-direct {p1, v0, v1, p0}, Lkotlinx/coroutines/JobCancellationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Lkotlinx/coroutines/Job;)V
 
-    .line 26
+    .line 23
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/ChannelCoroutine;->cancelInternal(Ljava/lang/Throwable;)V
 
     const/4 p0, 0x1
@@ -140,17 +140,17 @@
 
     const/4 v1, 0x1
 
-    .line 36
+    .line 34
     invoke-static {p0, p1, v0, v1, v0}, Lkotlinx/coroutines/JobSupport;->toCancellationException$default(Lkotlinx/coroutines/JobSupport;Ljava/lang/Throwable;Ljava/lang/String;ILjava/lang/Object;)Ljava/util/concurrent/CancellationException;
 
     move-result-object p1
 
-    .line 37
+    .line 35
     iget-object v0, p0, Lkotlinx/coroutines/channels/ChannelCoroutine;->_channel:Lkotlinx/coroutines/channels/Channel;
 
     invoke-interface {v0, p1}, Lkotlinx/coroutines/channels/ReceiveChannel;->cancel(Ljava/util/concurrent/CancellationException;)V
 
-    .line 38
+    .line 36
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->cancelCoroutine(Ljava/lang/Throwable;)Z
 
     return-void
@@ -270,7 +270,7 @@
         }
     .end annotation
 
-    .line 12
+    .line 8
     iget-object p0, p0, Lkotlinx/coroutines/channels/ChannelCoroutine;->_channel:Lkotlinx/coroutines/channels/Channel;
 
     return-object p0

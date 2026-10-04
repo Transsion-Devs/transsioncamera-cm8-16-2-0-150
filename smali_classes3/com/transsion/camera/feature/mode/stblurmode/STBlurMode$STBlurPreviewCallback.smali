@@ -34,22 +34,22 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)V
     .registers 2
 
-    .line 575
+    .line 576
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/common/preview/PreviewCallbacker;-><init>()V
 
     const/4 p1, -0x1
 
-    .line 577
+    .line 578
     iput p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->m2DTextureId:I
 
     const/4 p1, 0x0
 
-    .line 580
+    .line 581
     iput p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mSurfaceWidth:I
 
-    .line 581
+    .line 582
     iput p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mSurfaceHeight:I
 
     return-void
@@ -67,7 +67,7 @@
 .method private create2DProgram()V
     .registers 3
 
-    .line 602
+    .line 603
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mGLProgram2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
     if-nez v0, :cond_15
@@ -80,7 +80,7 @@
 
     if-eqz v0, :cond_15
 
-    .line 603
+    .line 604
     new-instance v0, Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
     sget-object v1, Lcom/transsion/camera/app/ui/opengl/Texture2dProgram$ProgramType;->TEXTURE_2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram$ProgramType;
@@ -96,7 +96,7 @@
 .method private create2DTexture(II)V
     .registers 6
 
-    .line 584
+    .line 585
     iget v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->m2DTextureId:I
 
     const/4 v1, -0x1
@@ -111,20 +111,20 @@
 
     if-eqz v0, :cond_3f
 
-    .line 585
+    .line 586
     iput p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mSurfaceWidth:I
 
-    .line 586
+    .line 587
     iput p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mSurfaceHeight:I
 
-    .line 587
+    .line 588
     invoke-static {p2, p1}, Lcom/transsion/camera/app/ui/opengl/GLUtils;->initTextureId(II)I
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->m2DTextureId:I
 
-    .line 588
+    .line 589
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -164,17 +164,17 @@
 .method private destory2DProgram()V
     .registers 2
 
-    .line 608
+    .line 609
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mGLProgram2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
     if-eqz v0, :cond_a
 
-    .line 609
+    .line 610
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;->release()V
 
     const/4 v0, 0x0
 
-    .line 610
+    .line 611
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mGLProgram2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
     :cond_a
@@ -184,7 +184,7 @@
 .method private destroy2DTexture()V
     .registers 5
 
-    .line 593
+    .line 594
     iget v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->m2DTextureId:I
 
     const/4 v1, -0x1
@@ -193,7 +193,7 @@
 
     const/4 v2, 0x1
 
-    .line 594
+    .line 595
     filled-new-array {v0}, [I
 
     move-result-object v0
@@ -202,13 +202,13 @@
 
     invoke-static {v2, v0, v3}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
 
-    .line 595
+    .line 596
     iput v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->m2DTextureId:I
 
-    .line 596
+    .line 597
     iput v3, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mSurfaceWidth:I
 
-    .line 597
+    .line 598
     iput v3, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mSurfaceHeight:I
 
     :cond_14
@@ -218,52 +218,153 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/SurfaceTexture;III)Z
-    .registers 5
+    .registers 13
 
-    .line 665
+    .line 666
     invoke-direct {p0, p3, p4}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->create2DTexture(II)V
 
-    .line 667
-    iget-object p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+    .line 668
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
-    invoke-static {p1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmFacelightingClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/facelighting/IFacelightingClient;
+    invoke-static {v0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmFacelightingClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/facelighting/IFacelightingClient;
 
-    .line 673
-    iget-object p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+    .line 674
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
-    const/4 p2, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {p1, p2}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fputmAlgoProcessed(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;Z)V
-
-    .line 676
-    iget-object p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
-
-    invoke-static {p1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+    invoke-static {v0, v4}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fputmAlgoProcessed(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;Z)V
 
     .line 677
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+
+    invoke-static {v0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    move-result-object v0
+
+    const/4 v7, 0x0
+
+    if-eqz v0, :cond_65
+
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+
+    invoke-static {v0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClientValid(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_20
+
+    goto :goto_65
+
+    .line 681
+    :cond_20
+    iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mInitState:Z
+
+    if-nez v0, :cond_34
+
+    iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mModeResumed:Z
+
+    if-eqz v0, :cond_34
+
+    const/4 v0, 0x1
+
+    .line 682
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mInitState:Z
+
+    .line 683
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+
+    invoke-static {v0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview$GLPreviewController;->initPreviewBlurGLThread()V
+
+    .line 686
+    :cond_34
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+
+    invoke-static {v0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    move-result-object v1
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move v5, p3
+
+    move v6, p4
+
+    invoke-interface/range {v1 .. v6}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview$GLPreviewController;->drawPreviewBlurGLThread(Landroid/graphics/SurfaceTexture;IIII)Z
+
+    move-result p1
+
+    .line 687
+    iget-object p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+
+    invoke-static {p2}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmIsFirstAlgoFrame(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_64
+
+    if-eqz p1, :cond_64
+
+    .line 688
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
 
-    new-instance p3, Ljava/lang/StringBuilder;
+    const-string p2, "This is the first time to draw BlurPreview"
 
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    const-string p4, "draw mSTBlurClient: "
+    .line 689
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
 
-    iget-object p4, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+    move-result-object v1
 
-    invoke-static {p4}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+    invoke-interface/range {v1 .. v6}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview$GLPreviewController;->drawPreviewBlurGLThread(Landroid/graphics/SurfaceTexture;IIII)Z
 
-    const/4 p4, 0x0
+    move-result p1
 
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    .line 690
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
-    const-string p4, ", mSTBlurClientValid: "
+    invoke-static {p0, v7}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fputmIsFirstAlgoFrame(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;Z)V
 
-    invoke-virtual {p3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_64
+    return p1
+
+    .line 678
+    :cond_65
+    :goto_65
+    invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    move-result-object p1
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string p3, "draw mSTBlurClient: "
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p3, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+
+    invoke-static {p3}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    move-result-object p3
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p3, ", mSTBlurClientValid: "
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
@@ -271,15 +372,15 @@
 
     move-result p0
 
-    invoke-virtual {p3, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    return p2
+    return v7
 .end method
 
 .method public drawOffScreen(Landroid/graphics/SurfaceTexture;IIII)Z
@@ -287,7 +388,7 @@
 
     if-eqz p1, :cond_25
 
-    .line 655
+    .line 656
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mGLProgram2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
     if-eqz p2, :cond_25
@@ -316,7 +417,7 @@
 
     goto :goto_25
 
-    .line 658
+    .line 659
     :cond_1c
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mGLProgram2D:Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
 
@@ -338,7 +439,7 @@
 .method public modeInitCallback()V
     .registers 3
 
-    .line 616
+    .line 617
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -347,7 +448,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 617
+    .line 618
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->create2DProgram()V
 
     return-void
@@ -356,7 +457,7 @@
 .method public modePauseCallback()V
     .registers 4
 
-    .line 717
+    .line 718
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -381,15 +482,19 @@
 
     const/4 v0, 0x0
 
-    .line 718
+    .line 719
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mModeResumed:Z
 
-    .line 719
-    iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
-
-    invoke-static {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
-
     .line 720
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+
+    invoke-static {v1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    move-result-object v1
+
+    if-nez v1, :cond_2f
+
+    .line 721
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -399,12 +504,33 @@
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
+
+    .line 724
+    :cond_2f
+    iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mInitState:Z
+
+    if-eqz v1, :cond_3e
+
+    .line 725
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mInitState:Z
+
+    .line 726
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+
+    invoke-static {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview$GLPreviewController;->unInitPreviewBlurGLThread()V
+
+    :cond_3e
+    return-void
 .end method
 
 .method public modeResumeCallback()V
     .registers 4
 
-    .line 702
+    .line 703
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -429,15 +555,52 @@
 
     const/4 v0, 0x1
 
-    .line 703
+    .line 704
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mModeResumed:Z
 
-    .line 704
-    iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
-
-    invoke-static {v0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
-
     .line 705
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+
+    invoke-static {v1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3e
+
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+
+    invoke-static {v1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClientValid(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2e
+
+    goto :goto_3e
+
+    .line 710
+    :cond_2e
+    iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mInitState:Z
+
+    if-nez v1, :cond_3d
+
+    .line 711
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mInitState:Z
+
+    .line 712
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
+
+    invoke-static {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurPreview$GLPreviewController;->initPreviewBlurGLThread()V
+
+    :cond_3d
+    return-void
+
+    .line 706
+    :cond_3e
+    :goto_3e
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -454,7 +617,7 @@
 
     invoke-static {v2}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$fgetmSTBlurClient(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)Lcom/transsion/camera/app/common/algorithm/stblur/ISTBlurClient;
 
-    const/4 v2, 0x0
+    move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -482,7 +645,7 @@
 .method public modeUninitCallback()V
     .registers 4
 
-    .line 622
+    .line 623
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -505,15 +668,15 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 623
+    .line 624
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->destory2DProgram()V
 
-    .line 624
+    .line 625
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$mdestroyFacelighting(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)V
 
-    .line 625
+    .line 626
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->destroy2DTexture()V
 
     return-void
@@ -522,7 +685,7 @@
 .method public surfaceChangedCallback(Landroid/graphics/SurfaceTexture;II)V
     .registers 6
 
-    .line 637
+    .line 638
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -555,7 +718,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 638
+    .line 639
     iget p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->m2DTextureId:I
 
     const/4 v0, -0x1
@@ -570,14 +733,14 @@
 
     if-eq v0, p3, :cond_3c
 
-    .line 639
+    .line 640
     :cond_35
     iput p2, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mSurfaceWidth:I
 
-    .line 640
+    .line 641
     iput p3, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->mSurfaceHeight:I
 
-    .line 641
+    .line 642
     invoke-static {p1, p3, p2}, Lcom/transsion/camera/app/ui/opengl/GLUtils;->updateTextureId(III)I
 
     :cond_3c
@@ -587,7 +750,7 @@
 .method public surfaceCreatedCallback(Landroid/graphics/SurfaceTexture;)V
     .registers 4
 
-    .line 630
+    .line 631
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -610,10 +773,10 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 631
+    .line 632
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->create2DProgram()V
 
-    .line 632
+    .line 633
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$mcreateFacelighting(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)V
@@ -624,7 +787,7 @@
 .method public surfaceDestroyCallback(Landroid/graphics/SurfaceTexture;)V
     .registers 4
 
-    .line 647
+    .line 648
     invoke-static {}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -647,15 +810,15 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 648
+    .line 649
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->destory2DProgram()V
 
-    .line 649
+    .line 650
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$mdestroyFacelighting(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)V
 
-    .line 650
+    .line 651
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$STBlurPreviewCallback;->destroy2DTexture()V
 
     return-void

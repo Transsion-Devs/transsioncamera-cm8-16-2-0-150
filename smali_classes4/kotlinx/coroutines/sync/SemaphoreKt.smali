@@ -25,7 +25,7 @@
 
     const/4 v5, 0x0
 
-    .line 391
+    .line 386
     const-string v0, "kotlinx.coroutines.semaphore.maxSpinCycles"
 
     const/16 v1, 0x64
@@ -40,7 +40,7 @@
 
     sput v0, Lkotlinx/coroutines/sync/SemaphoreKt;->MAX_SPIN_CYCLES:I
 
-    .line 392
+    .line 387
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "PERMIT"
@@ -49,7 +49,7 @@
 
     sput-object v0, Lkotlinx/coroutines/sync/SemaphoreKt;->PERMIT:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 393
+    .line 388
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "TAKEN"
@@ -58,7 +58,7 @@
 
     sput-object v0, Lkotlinx/coroutines/sync/SemaphoreKt;->TAKEN:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 394
+    .line 389
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "BROKEN"
@@ -67,7 +67,7 @@
 
     sput-object v0, Lkotlinx/coroutines/sync/SemaphoreKt;->BROKEN:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 395
+    .line 390
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "CANCELLED"
@@ -80,7 +80,7 @@
 
     const/4 v7, 0x0
 
-    .line 396
+    .line 391
     const-string v2, "kotlinx.coroutines.semaphore.segmentSize"
 
     const/16 v3, 0x10
@@ -101,7 +101,7 @@
 .method public static final Semaphore(II)Lkotlinx/coroutines/sync/Semaphore;
     .registers 3
 
-    .line 72
+    .line 68
     new-instance v0, Lkotlinx/coroutines/sync/SemaphoreImpl;
 
     invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/sync/SemaphoreImpl;-><init>(II)V
@@ -118,7 +118,7 @@
 
     const/4 p1, 0x0
 
-    .line 72
+    .line 68
     :cond_5
     invoke-static {p0, p1}, Lkotlinx/coroutines/sync/SemaphoreKt;->Semaphore(II)Lkotlinx/coroutines/sync/Semaphore;
 
@@ -195,7 +195,7 @@
 .method private static final createSegment(JLkotlinx/coroutines/sync/SemaphoreSegment;)Lkotlinx/coroutines/sync/SemaphoreSegment;
     .registers 5
 
-    .line 360
+    .line 355
     new-instance v0, Lkotlinx/coroutines/sync/SemaphoreSegment;
 
     const/4 v1, 0x0
@@ -254,7 +254,7 @@
 
     move-result-object v1
 
-    .line 81
+    .line 77
     iget v2, v0, Lkotlinx/coroutines/sync/SemaphoreKt$withPermit$1;->label:I
 
     const/4 v3, 0x1
@@ -289,7 +289,7 @@
     :cond_3a
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 86
+    .line 81
     iput-object p0, v0, Lkotlinx/coroutines/sync/SemaphoreKt$withPermit$1;->L$0:Ljava/lang/Object;
 
     iput-object p1, v0, Lkotlinx/coroutines/sync/SemaphoreKt$withPermit$1;->L$1:Ljava/lang/Object;
@@ -304,7 +304,7 @@
 
     return-object v1
 
-    .line 88
+    .line 83
     :cond_4a
     :goto_4a
     :try_start_4a
@@ -316,7 +316,7 @@
 
     invoke-static {v3}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 90
+    .line 85
     invoke-interface {p0}, Lkotlinx/coroutines/sync/Semaphore;->release()V
 
     invoke-static {v3}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
@@ -352,7 +352,7 @@
 
     const/4 v0, 0x0
 
-    .line 86
+    .line 81
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
     invoke-interface {p0, p2}, Lkotlinx/coroutines/sync/Semaphore;->acquire(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -361,7 +361,7 @@
 
     invoke-static {p2}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
-    .line 88
+    .line 83
     :try_start_b
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
@@ -371,7 +371,7 @@
 
     invoke-static {p2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 90
+    .line 85
     invoke-interface {p0}, Lkotlinx/coroutines/sync/Semaphore;->release()V
 
     invoke-static {p2}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V

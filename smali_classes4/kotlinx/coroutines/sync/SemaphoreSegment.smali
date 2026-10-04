@@ -14,19 +14,19 @@
 
 
 # instance fields
-.field private final acquirers:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+.field private final synthetic acquirers:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
 
 # direct methods
 .method public constructor <init>(JLkotlinx/coroutines/sync/SemaphoreSegment;I)V
     .registers 5
 
-    .line 362
+    .line 357
     invoke-direct {p0, p1, p2, p3, p4}, Lkotlinx/coroutines/internal/Segment;-><init>(JLkotlinx/coroutines/internal/Segment;I)V
 
     new-instance p1, Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    .line 363
+    .line 358
     # getter for: Lkotlinx/coroutines/sync/SemaphoreKt;->SEGMENT_SIZE:I
     invoke-static {}, Lkotlinx/coroutines/sync/SemaphoreKt;->access$getSEGMENT_SIZE$p()I
 
@@ -44,7 +44,7 @@
 .method public final cas(ILjava/lang/Object;Ljava/lang/Object;)Z
     .registers 4
 
-    .line 375
+    .line 370
     invoke-virtual {p0}, Lkotlinx/coroutines/sync/SemaphoreSegment;->getAcquirers()Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     move-result-object p0
@@ -59,7 +59,7 @@
 .method public final get(I)Ljava/lang/Object;
     .registers 2
 
-    .line 367
+    .line 362
     invoke-virtual {p0}, Lkotlinx/coroutines/sync/SemaphoreSegment;->getAcquirers()Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     move-result-object p0
@@ -71,7 +71,7 @@
     return-object p0
 .end method
 
-.method public final getAcquirers()Ljava/util/concurrent/atomic/AtomicReferenceArray;
+.method public final synthetic getAcquirers()Ljava/util/concurrent/atomic/AtomicReferenceArray;
     .registers 1
 
     iget-object p0, p0, Lkotlinx/coroutines/sync/SemaphoreSegment;->acquirers:Ljava/util/concurrent/atomic/AtomicReferenceArray;
@@ -82,7 +82,7 @@
 .method public final getAndSet(ILjava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 378
+    .line 373
     invoke-virtual {p0}, Lkotlinx/coroutines/sync/SemaphoreSegment;->getAcquirers()Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     move-result-object p0
@@ -97,7 +97,7 @@
 .method public getNumberOfSlots()I
     .registers 1
 
-    .line 364
+    .line 359
     # getter for: Lkotlinx/coroutines/sync/SemaphoreKt;->SEGMENT_SIZE:I
     invoke-static {}, Lkotlinx/coroutines/sync/SemaphoreKt;->access$getSEGMENT_SIZE$p()I
 
@@ -109,20 +109,20 @@
 .method public onCancellation(ILjava/lang/Throwable;Lkotlin/coroutines/CoroutineContext;)V
     .registers 4
 
-    .line 384
+    .line 379
     # getter for: Lkotlinx/coroutines/sync/SemaphoreKt;->CANCELLED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/sync/SemaphoreKt;->access$getCANCELLED$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object p2
 
-    .line 371
+    .line 366
     invoke-virtual {p0}, Lkotlinx/coroutines/sync/SemaphoreSegment;->getAcquirers()Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     move-result-object p3
 
     invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
 
-    .line 386
+    .line 381
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
 
     return-void
@@ -131,7 +131,7 @@
 .method public final set(ILjava/lang/Object;)V
     .registers 3
 
-    .line 371
+    .line 366
     invoke-virtual {p0}, Lkotlinx/coroutines/sync/SemaphoreSegment;->getAcquirers()Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     move-result-object p0
@@ -144,7 +144,7 @@
 .method public toString()Ljava/lang/String;
     .registers 4
 
-    .line 389
+    .line 384
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

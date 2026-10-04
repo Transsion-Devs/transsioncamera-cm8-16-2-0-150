@@ -24,13 +24,13 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;II)V
     .registers 4
 
-    .line 923
+    .line 959
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/adapter/Item;-><init>()V
 
-    .line 924
+    .line 960
     iput p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Footer;->drawableId:I
 
-    .line 925
+    .line 961
     iput p3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Footer;->blackDrawableId:I
 
     return-void

@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static TransparentStatusBarDialog:I = 0x7f1403af
+.field public static TransparentStatusBarDialog:I = 0x7f1403ae
 
 
 # direct methods

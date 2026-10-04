@@ -44,7 +44,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 33
+    .line 39
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "HandLandmarkerHelper"
@@ -59,10 +59,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 2
 
-    .line 45
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 52
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
@@ -75,7 +75,7 @@
 .method private returnLivestreamError(Ljava/lang/RuntimeException;)V
     .registers 2
 
-    .line 134
+    .line 148
     sget-object p0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     if-eqz p1, :cond_9
@@ -98,47 +98,47 @@
 .method private returnLivestreamResult(Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarkerResult;Lcom/google/mediapipe/framework/image/MPImage;)V
     .registers 13
 
-    .line 117
+    .line 131
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->mLandmarkerListener:Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/IHandLandmarker$ILandmarkerListener;
 
     if-nez p0, :cond_5
 
     return-void
 
-    .line 122
+    .line 136
     :cond_5
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 123
+    .line 137
     invoke-virtual {p1}, Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarkerResult;->timestampMs()J
 
     move-result-wide v2
 
     sub-long v6, v0, v2
 
-    .line 125
+    .line 139
     new-instance v4, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerResultBundle;
 
-    .line 127
+    .line 141
     invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v5
 
-    .line 129
+    .line 143
     invoke-virtual {p2}, Lcom/google/mediapipe/framework/image/MPImage;->getWidth()I
 
     move-result v8
 
-    .line 130
+    .line 144
     invoke-virtual {p2}, Lcom/google/mediapipe/framework/image/MPImage;->getHeight()I
 
     move-result v9
 
     invoke-direct/range {v4 .. v9}, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerResultBundle;-><init>(Ljava/util/List;JII)V
 
-    .line 125
+    .line 139
     invoke-interface {p0, v4}, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/IHandLandmarker$ILandmarkerListener;->onResults(Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerResultBundle;)V
 
     return-void
@@ -149,7 +149,7 @@
 .method public detect(Landroid/graphics/Bitmap;)V
     .registers 5
 
-    .line 99
+    .line 113
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->mHandLandmarkerParam:Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerParam;
 
     if-eqz v0, :cond_25
@@ -160,13 +160,13 @@
 
     goto :goto_25
 
-    .line 105
+    .line 119
     :cond_9
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 107
+    .line 121
     new-instance v2, Lcom/google/mediapipe/framework/image/BitmapImageBuilder;
 
     invoke-direct {v2, p1}, Lcom/google/mediapipe/framework/image/BitmapImageBuilder;-><init>(Landroid/graphics/Bitmap;)V
@@ -175,7 +175,7 @@
 
     move-result-object p1
 
-    .line 110
+    .line 124
     :try_start_16
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->mHandLandmarker:Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker;
 
@@ -188,7 +188,7 @@
     :catch_1c
     move-exception p0
 
-    .line 112
+    .line 126
     sget-object p1, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "detect exception"
@@ -197,7 +197,7 @@
 
     return-void
 
-    .line 100
+    .line 114
     :cond_25
     :goto_25
     sget-object p1, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -232,14 +232,14 @@
 .end method
 
 .method public init(Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerParam;)V
-    .registers 7
+    .registers 8
 
-    .line 55
+    .line 61
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 56
+    .line 62
     sget-object v2, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -258,59 +258,99 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 58
+    .line 64
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->mHandLandmarkerParam:Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerParam;
 
-    .line 60
+    .line 66
     invoke-static {}, Lcom/google/mediapipe/tasks/core/BaseOptions;->builder()Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;
 
-    move-result-object v2
+    move-result-object v3
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    .line 62
+    .line 68
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerParam;->currentDelegate()I
 
-    move-result v4
+    move-result v5
 
-    if-ne v3, v4, :cond_2d
+    if-ne v4, v5, :cond_2d
 
-    .line 63
-    sget-object v3, Lcom/google/mediapipe/tasks/core/Delegate;->GPU:Lcom/google/mediapipe/tasks/core/Delegate;
+    .line 69
+    sget-object v4, Lcom/google/mediapipe/tasks/core/Delegate;->GPU:Lcom/google/mediapipe/tasks/core/Delegate;
 
-    invoke-virtual {v2, v3}, Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;->setDelegate(Lcom/google/mediapipe/tasks/core/Delegate;)Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;
+    invoke-virtual {v3, v4}, Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;->setDelegate(Lcom/google/mediapipe/tasks/core/Delegate;)Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;
 
     goto :goto_32
 
-    .line 65
-    :cond_2d
-    sget-object v3, Lcom/google/mediapipe/tasks/core/Delegate;->CPU:Lcom/google/mediapipe/tasks/core/Delegate;
-
-    invoke-virtual {v2, v3}, Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;->setDelegate(Lcom/google/mediapipe/tasks/core/Delegate;)Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;
-
-    .line 68
-    :goto_32
-    const-string v3, "aiartmuseum/mediapipe/hand_landmarker.task"
-
-    invoke-virtual {v2, v3}, Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;->setModelAssetPath(Ljava/lang/String;)Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;
-
     .line 71
-    :try_start_37
-    invoke-virtual {v2}, Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;->build()Lcom/google/mediapipe/tasks/core/BaseOptions;
+    :cond_2d
+    sget-object v4, Lcom/google/mediapipe/tasks/core/Delegate;->CPU:Lcom/google/mediapipe/tasks/core/Delegate;
+
+    invoke-virtual {v3, v4}, Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;->setDelegate(Lcom/google/mediapipe/tasks/core/Delegate;)Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;
+
+    .line 73
+    :goto_32
+    invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
+
+    move-result-object v4
+
+    iget-boolean v4, v4, Lcom/transsion/camera/app/common/CommonConfigUtil;->mTonesAssetSupport:Z
+
+    const-string v5, "aiartmuseum/mediapipe/hand_landmarker.task"
+
+    if-eqz v4, :cond_54
+
+    .line 74
+    invoke-static {}, Lcom/transsion/camera/utils/manager/CamAssetManager;->getInstance()Lcom/transsion/camera/utils/manager/CamAssetManager;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v5}, Lcom/transsion/camera/utils/manager/CamAssetManager;->getAssetPath(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v4
+
+    if-nez v4, :cond_4c
+
+    .line 76
+    const-string p0, "init failed, task is null!"
+
+    invoke-static {v2, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    return-void
+
+    .line 79
+    :cond_4c
+    invoke-static {v4}, Lcom/transsion/camera/utils/FileUtil;->loadMappedByteBufferFromFile(Ljava/io/File;)Ljava/nio/MappedByteBuffer;
 
     move-result-object v2
 
-    .line 74
+    .line 80
+    invoke-virtual {v3, v2}, Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;->setModelAssetBuffer(Ljava/nio/ByteBuffer;)Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;
+
+    goto :goto_57
+
+    .line 82
+    :cond_54
+    invoke-virtual {v3, v5}, Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;->setModelAssetPath(Ljava/lang/String;)Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;
+
+    .line 85
+    :goto_57
+    :try_start_57
+    invoke-virtual {v3}, Lcom/google/mediapipe/tasks/core/BaseOptions$Builder;->build()Lcom/google/mediapipe/tasks/core/BaseOptions;
+
+    move-result-object v2
+
+    .line 88
     invoke-static {}, Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions;->builder()Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions$Builder;
 
     move-result-object v3
 
-    .line 75
+    .line 89
     invoke-virtual {v3, v2}, Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions$Builder;->setBaseOptions(Lcom/google/mediapipe/tasks/core/BaseOptions;)Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions$Builder;
 
     move-result-object v2
 
-    .line 76
+    .line 90
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerParam;->minHandDetectionConfidence()F
 
     move-result v3
@@ -323,7 +363,7 @@
 
     move-result-object v2
 
-    .line 77
+    .line 91
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerParam;->minHandTrackingConfidence()F
 
     move-result v3
@@ -336,7 +376,7 @@
 
     move-result-object v2
 
-    .line 78
+    .line 92
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerParam;->minHandPresenceConfidence()F
 
     move-result v3
@@ -349,7 +389,7 @@
 
     move-result-object v2
 
-    .line 79
+    .line 93
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerParam;->maxNumHands()I
 
     move-result p1
@@ -364,17 +404,17 @@
 
     sget-object v2, Lcom/google/mediapipe/tasks/vision/core/RunningMode;->LIVE_STREAM:Lcom/google/mediapipe/tasks/vision/core/RunningMode;
 
-    .line 80
+    .line 94
     invoke-virtual {p1, v2}, Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions$Builder;->setRunningMode(Lcom/google/mediapipe/tasks/vision/core/RunningMode;)Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions$Builder;
 
     move-result-object p1
 
-    .line 82
+    .line 96
     new-instance v2, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0}, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;)V
 
-    .line 83
+    .line 97
     invoke-virtual {p1, v2}, Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions$Builder;->setResultListener(Lcom/google/mediapipe/tasks/core/OutputHandler$ResultListener;)Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions$Builder;
 
     move-result-object v2
@@ -383,15 +423,15 @@
 
     invoke-direct {v3, p0}, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;)V
 
-    .line 84
+    .line 98
     invoke-virtual {v2, v3}, Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions$Builder;->setErrorListener(Lcom/google/mediapipe/tasks/core/ErrorListener;)Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions$Builder;
 
-    .line 86
+    .line 100
     invoke-virtual {p1}, Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions$Builder;->build()Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions;
 
     move-result-object p1
 
-    .line 87
+    .line 101
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->mContext:Landroid/content/Context;
 
     invoke-static {v2, p1}, Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker;->createFromOptions(Landroid/content/Context;Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker$HandLandmarkerOptions;)Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker;
@@ -399,24 +439,24 @@
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->mHandLandmarker:Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker;
-    :try_end_96
-    .catch Ljava/lang/IllegalStateException; {:try_start_37 .. :try_end_96} :catch_99
-    .catch Ljava/lang/RuntimeException; {:try_start_37 .. :try_end_96} :catch_97
+    :try_end_b6
+    .catch Ljava/lang/IllegalStateException; {:try_start_57 .. :try_end_b6} :catch_b9
+    .catch Ljava/lang/RuntimeException; {:try_start_57 .. :try_end_b6} :catch_b7
 
-    goto :goto_d0
+    goto :goto_f0
 
-    :catch_97
+    :catch_b7
     move-exception p0
 
-    goto :goto_9b
+    goto :goto_bb
 
-    :catch_99
+    :catch_b9
     move-exception p0
 
-    goto :goto_b6
+    goto :goto_d6
 
-    .line 91
-    :goto_9b
+    .line 105
+    :goto_bb
     sget-object p1, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -439,10 +479,10 @@
 
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    goto :goto_d0
+    goto :goto_f0
 
-    .line 89
-    :goto_b6
+    .line 103
+    :goto_d6
     sget-object p1, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -465,8 +505,8 @@
 
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 94
-    :goto_d0
+    .line 108
+    :goto_f0
     sget-object p0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -497,7 +537,7 @@
 .method public setLandmarkerListener(Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/IHandLandmarker$ILandmarkerListener;)V
     .registers 2
 
-    .line 51
+    .line 57
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->mLandmarkerListener:Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/IHandLandmarker$ILandmarkerListener;
 
     return-void
@@ -506,24 +546,24 @@
 .method public unInit()V
     .registers 3
 
-    .line 138
+    .line 152
     sget-object v0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "unInit"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 139
+    .line 153
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->mHandLandmarker:Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker;
 
     if-eqz v0, :cond_12
 
-    .line 140
+    .line 154
     invoke-virtual {v0}, Lcom/google/mediapipe/tasks/vision/core/BaseVisionTaskApi;->close()V
 
     const/4 v0, 0x0
 
-    .line 141
+    .line 155
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/aiartmuseum/mediapipe/HandLandmarkerHelper;->mHandLandmarker:Lcom/google/mediapipe/tasks/vision/handlandmarker/HandLandmarker;
 
     :cond_12

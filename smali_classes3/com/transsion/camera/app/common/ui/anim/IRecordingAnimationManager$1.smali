@@ -40,6 +40,18 @@
 
 
 # virtual methods
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .registers 2
+
+    .line 59
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
+
+    .line 60
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$1;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    return-void
+.end method
+
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 4
 
@@ -88,7 +100,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 6
 
-    .line 59
+    .line 65
     sget-object v0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->DTAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -109,7 +121,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 60
+    .line 66
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$1;->this$0:Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$1;->val$rootView:Landroid/view/View;
@@ -120,7 +132,7 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->updateRecordingAnimationState(Landroid/view/View;ZZ)V
 
-    .line 61
+    .line 67
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager$1;->val$rootView:Landroid/view/View;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V

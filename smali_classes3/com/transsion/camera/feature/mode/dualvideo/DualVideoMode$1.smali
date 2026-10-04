@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)V
     .registers 2
 
-    .line 586
+    .line 589
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$1;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/view/View;)V
     .registers 6
 
-    .line 588
+    .line 591
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$1;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -50,7 +50,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 589
+    .line 592
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$1;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->-$$Nest$fgetmVideoUI(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)Lcom/transsion/camera/feature/mode/dualvideo/DualVideoUI;
@@ -81,7 +81,7 @@
 
     goto :goto_39
 
-    .line 592
+    .line 595
     :cond_28
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$1;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
@@ -91,7 +91,7 @@
 
     if-eqz p1, :cond_39
 
-    .line 593
+    .line 596
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$1;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;->-$$Nest$fgetmDualVideoRecorder(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)Lcom/transsion/camera/feature/mode/dualvideo/DualVideoRecorder;

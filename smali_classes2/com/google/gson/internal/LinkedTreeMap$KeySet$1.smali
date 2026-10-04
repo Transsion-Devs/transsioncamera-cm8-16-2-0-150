@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/google/gson/internal/LinkedTreeMap$KeySet;)V
     .registers 2
 
-    .line 601
+    .line 642
     iput-object p1, p0, Lcom/google/gson/internal/LinkedTreeMap$KeySet$1;->this$1:Lcom/google/gson/internal/LinkedTreeMap$KeySet;
 
     iget-object p1, p1, Lcom/google/gson/internal/LinkedTreeMap$KeySet;->this$0:Lcom/google/gson/internal/LinkedTreeMap;
@@ -37,7 +37,7 @@
 .method public next()Ljava/lang/Object;
     .registers 1
 
-    .line 603
+    .line 645
     invoke-virtual {p0}, Lcom/google/gson/internal/LinkedTreeMap$LinkedTreeMapIterator;->nextNode()Lcom/google/gson/internal/LinkedTreeMap$Node;
 
     move-result-object p0

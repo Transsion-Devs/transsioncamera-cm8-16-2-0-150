@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static setting_ui_item_supernight_filter:I = 0x7f0b05ed
+.field public static setting_ui_item_supernight_filter:I = 0x7f0b05e9
 
-.field public static supernight_filter_recycler_view:I = 0x7f0b067c
+.field public static supernight_filter_recycler_view:I = 0x7f0b0678
 
-.field public static supernight_filter_root:I = 0x7f0b067d
+.field public static supernight_filter_root:I = 0x7f0b0679
 
 
 # direct methods

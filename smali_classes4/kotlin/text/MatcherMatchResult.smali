@@ -26,14 +26,14 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 351
+    .line 357
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/text/MatcherMatchResult;->matcher:Ljava/util/regex/Matcher;
 
     iput-object p2, p0, Lkotlin/text/MatcherMatchResult;->input:Ljava/lang/CharSequence;
 
-    .line 358
+    .line 364
     new-instance p1, Lkotlin/text/MatcherMatchResult$groups$1;
 
     invoke-direct {p1, p0}, Lkotlin/text/MatcherMatchResult$groups$1;-><init>(Lkotlin/text/MatcherMatchResult;)V
@@ -46,7 +46,7 @@
 .method public static final synthetic access$getMatchResult(Lkotlin/text/MatcherMatchResult;)Ljava/util/regex/MatchResult;
     .registers 1
 
-    .line 351
+    .line 357
     invoke-direct {p0}, Lkotlin/text/MatcherMatchResult;->getMatchResult()Ljava/util/regex/MatchResult;
 
     move-result-object p0
@@ -57,7 +57,7 @@
 .method private final getMatchResult()Ljava/util/regex/MatchResult;
     .registers 1
 
-    .line 352
+    .line 358
     iget-object p0, p0, Lkotlin/text/MatcherMatchResult;->matcher:Ljava/util/regex/Matcher;
 
     return-object p0
@@ -68,7 +68,7 @@
 .method public getRange()Lkotlin/ranges/IntRange;
     .registers 1
 
-    .line 354
+    .line 360
     invoke-direct {p0}, Lkotlin/text/MatcherMatchResult;->getMatchResult()Ljava/util/regex/MatchResult;
 
     move-result-object p0
@@ -84,7 +84,7 @@
 .method public next()Lkotlin/text/MatchResult;
     .registers 4
 
-    .line 390
+    .line 396
     invoke-direct {p0}, Lkotlin/text/MatcherMatchResult;->getMatchResult()Ljava/util/regex/MatchResult;
 
     move-result-object v0
@@ -121,7 +121,7 @@
     :goto_1d
     add-int/2addr v0, v1
 
-    .line 391
+    .line 397
     iget-object v1, p0, Lkotlin/text/MatcherMatchResult;->input:Ljava/lang/CharSequence;
 
     invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
@@ -142,7 +142,7 @@
 
     move-result-object v1
 
-    const-string v2, "matcher.pattern().matcher(input)"
+    const-string v2, "matcher(...)"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

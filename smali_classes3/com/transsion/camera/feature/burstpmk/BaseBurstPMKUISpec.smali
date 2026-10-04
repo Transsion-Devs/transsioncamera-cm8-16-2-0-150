@@ -21,7 +21,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 33
+    .line 34
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "BaseBurstPMKUISpec"
@@ -36,10 +36,10 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/IAppUI;)V
     .registers 3
 
-    .line 43
+    .line 44
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/common/BaseUISpec;-><init>(Lcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 44
+    .line 45
     iget-object p1, p0, Lcom/transsion/camera/feature/common/BaseUISpec;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$bool;->panorama_support_landscape:I
@@ -50,7 +50,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mSupportLandscape:Z
 
-    .line 45
+    .line 46
     iget-object p1, p0, Lcom/transsion/camera/feature/common/BaseUISpec;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->arrow_width:I
@@ -61,7 +61,7 @@
 
     iput p1, p0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowWidth:I
 
-    .line 46
+    .line 47
     iget-object p1, p0, Lcom/transsion/camera/feature/common/BaseUISpec;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->arrow_height:I
@@ -84,7 +84,7 @@
 
     if-nez p1, :cond_c
 
-    .line 55
+    .line 56
     sget-object v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "calculateThumbnailSize previewSize is null!"
@@ -93,23 +93,23 @@
 
     return-void
 
-    .line 59
+    .line 60
     :cond_c
     invoke-virtual/range {p2 .. p2}, Landroid/util/Size;->getWidth()I
 
     move-result v1
 
-    .line 60
+    .line 61
     invoke-virtual/range {p2 .. p2}, Landroid/util/Size;->getHeight()I
 
     move-result v2
 
-    .line 61
+    .line 62
     invoke-virtual/range {p1 .. p1}, Landroid/util/Size;->getWidth()I
 
     move-result v3
 
-    .line 62
+    .line 63
     invoke-virtual/range {p1 .. p1}, Landroid/util/Size;->getHeight()I
 
     move-result v4
@@ -142,7 +142,7 @@
 
     div-float/2addr v1, v8
 
-    .line 67
+    .line 68
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mVRatio:F
 
     int-to-float v1, v2
@@ -153,23 +153,23 @@
 
     div-float/2addr v1, v2
 
-    .line 68
+    .line 69
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mHRatio:F
 
-    .line 70
+    .line 71
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceWidth:I
 
-    .line 71
+    .line 72
     iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceHeight:I
 
-    .line 74
+    .line 75
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 76
+    .line 77
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/IAppUI;->getScreenFormType()I
@@ -190,138 +190,151 @@
 
     const/high16 v16, 0x40000000    # 2.0f
 
-    if-eq v2, v11, :cond_309
+    if-eq v2, v11, :cond_315
 
     move/from16 p1, v7
 
     const/4 v7, 0x0
 
-    if-eq v2, v13, :cond_2a8
+    if-eq v2, v13, :cond_2b4
 
     const/high16 p2, 0x40b40000    # 5.625f
 
     const/4 v8, 0x3
 
-    if-eq v2, v8, :cond_1b2
+    if-eq v2, v8, :cond_1be
 
     move/from16 v17, v8
 
     const/4 v8, 0x4
 
-    if-eq v2, v8, :cond_131
+    if-eq v2, v8, :cond_13d
 
     const/4 v8, 0x5
 
-    if-eq v2, v8, :cond_131
+    if-eq v2, v8, :cond_13d
 
-    .line 229
-    iget v1, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOrientation:I
-
-    invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->isLandscape(I)Z
+    .line 230
+    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
 
     move-result v1
 
-    if-eqz v1, :cond_bc
-
-    .line 230
-    iget v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceWidth:I
-
-    int-to-float v2, v1
-
-    div-float v2, v2, p2
-
-    float-to-int v2, v2
-
-    iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
-
     .line 231
-    iget v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceHeight:I
+    iget v2, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOrientation:I
 
-    mul-int v4, v2, v3
+    invoke-virtual {v0, v2}, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->isLandscape(I)Z
 
-    div-int/2addr v4, v1
+    move-result v2
 
-    iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
+    if-eqz v2, :cond_c6
 
     .line 232
-    iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgWidth:I
+    iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceWidth:I
 
-    mul-int/lit8 v4, v4, 0x3
+    int-to-float v3, v2
 
-    .line 233
-    iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
-
-    int-to-float v4, v2
-
-    const v5, 0x400a0c4a    # 2.157f
-
-    div-float/2addr v4, v5
-
-    float-to-int v4, v4
-
-    .line 236
-    iget v5, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowWidth:I
-
-    mul-int/2addr v5, v4
-
-    iget v6, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowHeight:I
-
-    div-int/2addr v5, v6
-
-    iput v5, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowHeight:I
-
-    .line 237
-    iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowWidth:I
-
-    .line 239
-    iget v4, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOrientation:I
-
-    if-ne v4, v12, :cond_9d
-
-    .line 240
-    iget-object v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
-
-    shr-int/2addr v1, v11
-
-    iput v1, v4, Landroid/graphics/Point;->x:I
-
-    goto :goto_a3
-
-    .line 242
-    :cond_9d
-    iget-object v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
-
-    shr-int/2addr v1, v11
-
-    sub-int/2addr v1, v2
-
-    iput v1, v4, Landroid/graphics/Point;->x:I
-
-    .line 244
-    :goto_a3
-    iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
-
-    int-to-float v3, v3
-
-    const/high16 v4, 0x3e000000    # 0.125f
-
-    mul-float/2addr v3, v4
+    div-float v3, v3, p2
 
     float-to-int v3, v3
 
-    iput v3, v1, Landroid/graphics/Point;->y:I
+    iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
+
+    .line 233
+    iget v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceHeight:I
+
+    mul-int v5, v3, v4
+
+    div-int/2addr v5, v2
+
+    iput v5, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
+
+    .line 234
+    iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgWidth:I
+
+    mul-int/lit8 v5, v5, 0x3
+
+    .line 235
+    iput v5, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
+
+    int-to-float v5, v3
+
+    const v6, 0x400a0c4a    # 2.157f
+
+    div-float/2addr v5, v6
+
+    float-to-int v5, v5
+
+    .line 238
+    iget v6, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowWidth:I
+
+    mul-int/2addr v6, v5
+
+    iget v7, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowHeight:I
+
+    div-int/2addr v6, v7
+
+    iput v6, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowHeight:I
+
+    .line 239
+    iput v5, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowWidth:I
+
+    .line 241
+    iget v5, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOrientation:I
+
+    if-ne v5, v12, :cond_a1
+
+    .line 242
+    iget-object v5, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
+
+    shr-int/2addr v2, v11
+
+    iput v2, v5, Landroid/graphics/Point;->x:I
+
+    goto :goto_a7
+
+    .line 244
+    :cond_a1
+    iget-object v5, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
+
+    shr-int/2addr v2, v11
+
+    sub-int/2addr v2, v3
+
+    iput v2, v5, Landroid/graphics/Point;->x:I
 
     .line 246
+    :goto_a7
+    iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
+
+    int-to-float v4, v4
+
+    if-eqz v1, :cond_b0
+
+    const v1, 0x3e666666    # 0.225f
+
+    goto :goto_b2
+
+    :cond_b0
+    const/high16 v1, 0x3e000000    # 0.125f
+
+    :goto_b2
+    mul-float/2addr v4, v1
+
+    float-to-int v1, v4
+
+    iput v1, v2, Landroid/graphics/Point;->y:I
+
+    .line 248
     iget-object v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbnailStartPoint:Landroid/graphics/Point;
 
-    iget v1, v1, Landroid/graphics/Point;->x:I
+    iget v2, v2, Landroid/graphics/Point;->x:I
 
-    iput v1, v4, Landroid/graphics/Point;->x:I
+    iput v2, v4, Landroid/graphics/Point;->x:I
 
-    .line 247
-    iput v3, v4, Landroid/graphics/Point;->y:I
+    .line 249
+    iput v1, v4, Landroid/graphics/Point;->y:I
 
-    int-to-float v1, v2
+    int-to-float v1, v3
 
     mul-float/2addr v1, v15
 
@@ -329,72 +342,74 @@
 
     float-to-int v1, v1
 
-    .line 249
+    .line 251
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mWarningOffset:I
 
-    goto/16 :goto_453
+    goto/16 :goto_45f
 
-    .line 251
-    :cond_bc
-    iget v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceHeight:I
+    .line 253
+    :cond_c6
+    iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceHeight:I
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    mul-float v1, v1, p1
+    mul-float v2, v2, p1
 
-    const/high16 v2, 0x41000000    # 8.0f
+    const/high16 v8, 0x41000000    # 8.0f
 
-    div-float/2addr v1, v2
+    div-float/2addr v2, v8
 
-    float-to-int v1, v1
+    float-to-int v2, v2
 
-    iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
+    iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
 
-    mul-int/2addr v4, v1
+    mul-int/2addr v4, v2
 
-    .line 252
+    .line 254
     div-int/2addr v4, v3
 
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
 
-    .line 253
-    iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
+    .line 255
+    iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
 
-    .line 254
-    iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceWidth:I
+    .line 256
+    iget v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceWidth:I
 
-    iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgWidth:I
+    iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgWidth:I
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    const v2, 0x4049999a    # 3.15f
+    const v3, 0x4049999a    # 3.15f
 
-    div-float/2addr v1, v2
+    div-float/2addr v2, v3
 
-    float-to-int v1, v1
+    float-to-int v2, v2
 
-    .line 257
-    iget v2, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowWidth:I
+    .line 259
+    iget v3, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowWidth:I
 
-    mul-int/2addr v2, v1
+    mul-int/2addr v3, v2
 
-    iget v3, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowHeight:I
+    iget v4, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowHeight:I
 
-    div-int/2addr v2, v3
+    div-int/2addr v3, v4
 
-    iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowWidth:I
-
-    .line 258
-    iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowHeight:I
+    iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowWidth:I
 
     .line 260
-    iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
+    iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowHeight:I
 
-    iput v7, v1, Landroid/graphics/Point;->x:I
+    .line 262
+    iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
+
+    iput v7, v2, Landroid/graphics/Point;->x:I
+
+    if-nez v1, :cond_111
 
     sub-double/2addr v5, v9
 
-    .line 261
+    .line 263
     invoke-static {v5, v6}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide v1
@@ -403,9 +418,9 @@
 
     cmpl-double v1, v1, v3
 
-    if-lez v1, :cond_105
+    if-lez v1, :cond_111
 
-    .line 262
+    .line 264
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mTopBarHeight:I
@@ -428,10 +443,10 @@
 
     iput v2, v1, Landroid/graphics/Point;->y:I
 
-    goto :goto_11b
+    goto :goto_127
 
-    .line 265
-    :cond_105
+    .line 267
+    :cond_111
     iget v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
 
     int-to-float v1, v1
@@ -440,7 +455,7 @@
 
     mul-float/2addr v1, v2
 
-    .line 266
+    .line 268
     iget-object v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iget v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mTopBarHeight:I
@@ -463,8 +478,8 @@
 
     iput v1, v3, Landroid/graphics/Point;->y:I
 
-    .line 270
-    :goto_11b
+    .line 272
+    :goto_127
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbnailStartPoint:Landroid/graphics/Point;
 
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
@@ -473,12 +488,12 @@
 
     iput v3, v1, Landroid/graphics/Point;->x:I
 
-    .line 271
+    .line 273
     iget v2, v2, Landroid/graphics/Point;->y:I
 
     iput v2, v1, Landroid/graphics/Point;->y:I
 
-    .line 273
+    .line 275
     iget v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
 
     int-to-float v1, v1
@@ -491,24 +506,24 @@
 
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mWarningOffset:I
 
-    goto/16 :goto_453
+    goto/16 :goto_45f
 
-    .line 148
-    :cond_131
+    .line 149
+    :cond_13d
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mVRatio:F
 
     div-float v2, v2, v16
 
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mVRatio:F
 
-    .line 149
+    .line 150
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mHRatio:F
 
     div-float v2, v2, v16
 
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mHRatio:F
 
-    .line 151
+    .line 152
     sget v2, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_column_land_thumb_height:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -525,7 +540,7 @@
 
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
 
-    .line 152
+    .line 153
     iget v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceHeight:I
 
     mul-int v4, v2, v3
@@ -536,12 +551,12 @@
 
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
 
-    .line 153
+    .line 154
     iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
 
     int-to-float v2, v2
 
-    .line 154
+    .line 155
     sget v3, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_margin:I
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -562,7 +577,7 @@
 
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgWidth:I
 
-    .line 156
+    .line 157
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
 
     int-to-float v3, v2
@@ -573,7 +588,7 @@
 
     float-to-int v3, v3
 
-    .line 157
+    .line 158
     iget v4, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowWidth:I
 
     mul-int/2addr v4, v3
@@ -584,17 +599,17 @@
 
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowHeight:I
 
-    .line 158
+    .line 159
     iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowWidth:I
 
-    .line 160
+    .line 161
     iget v3, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOrientation:I
 
     const v4, 0x4016a7f0    # 2.354f
 
-    if-ne v3, v12, :cond_18e
+    if-ne v3, v12, :cond_19a
 
-    .line 161
+    .line 162
     iget-object v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iget v5, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceWidth:I
@@ -617,10 +632,10 @@
 
     iput v4, v3, Landroid/graphics/Point;->x:I
 
-    goto :goto_197
+    goto :goto_1a3
 
-    .line 163
-    :cond_18e
+    .line 164
+    :cond_19a
     iget-object v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iget v5, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
@@ -633,13 +648,13 @@
 
     iput v4, v3, Landroid/graphics/Point;->x:I
 
-    .line 165
-    :goto_197
+    .line 166
+    :goto_1a3
     iget-object v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iput v7, v3, Landroid/graphics/Point;->y:I
 
-    .line 167
+    .line 168
     iget-object v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbnailStartPoint:Landroid/graphics/Point;
 
     iget v3, v3, Landroid/graphics/Point;->x:I
@@ -658,7 +673,7 @@
 
     iput v1, v4, Landroid/graphics/Point;->x:I
 
-    .line 168
+    .line 169
     iput v7, v4, Landroid/graphics/Point;->y:I
 
     int-to-float v1, v2
@@ -669,27 +684,27 @@
 
     float-to-int v1, v1
 
-    .line 170
+    .line 171
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mWarningOffset:I
 
-    goto/16 :goto_453
+    goto/16 :goto_45f
 
-    .line 174
-    :cond_1b2
+    .line 175
+    :cond_1be
     iget v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mVRatio:F
 
     div-float v1, v1, v16
 
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mVRatio:F
 
-    .line 175
+    .line 176
     iget v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mHRatio:F
 
     div-float v1, v1, v16
 
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mHRatio:F
 
-    .line 177
+    .line 178
     iget v1, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOrientation:I
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->isLandscape(I)Z
@@ -698,9 +713,9 @@
 
     const-string v2, "on"
 
-    if-eqz v1, :cond_249
+    if-eqz v1, :cond_255
 
-    .line 178
+    .line 179
     iget v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceWidth:I
 
     int-to-float v3, v1
@@ -711,7 +726,7 @@
 
     iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
 
-    .line 179
+    .line 180
     iget v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceHeight:I
 
     mul-int/2addr v4, v3
@@ -728,7 +743,7 @@
 
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
 
-    .line 180
+    .line 181
     iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgWidth:I
 
     int-to-float v4, v4
@@ -739,7 +754,7 @@
 
     float-to-int v4, v4
 
-    .line 181
+    .line 182
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
 
     int-to-float v4, v3
@@ -750,10 +765,10 @@
 
     float-to-int v4, v4
 
-    .line 184
+    .line 185
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowWidth:I
 
-    .line 185
+    .line 186
     iget v5, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowWidth:I
 
     mul-int/2addr v4, v5
@@ -772,14 +787,14 @@
 
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowHeight:I
 
-    .line 187
+    .line 188
     iget v4, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOrientation:I
 
     const/high16 v5, 0x40520000    # 3.28125f
 
-    if-ne v4, v12, :cond_207
+    if-ne v4, v12, :cond_213
 
-    .line 188
+    .line 189
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     int-to-float v3, v3
@@ -790,10 +805,10 @@
 
     iput v3, v1, Landroid/graphics/Point;->x:I
 
-    goto :goto_212
+    goto :goto_21e
 
-    .line 190
-    :cond_207
+    .line 191
+    :cond_213
     iget-object v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     int-to-float v1, v1
@@ -812,17 +827,17 @@
 
     iput v1, v4, Landroid/graphics/Point;->x:I
 
-    .line 193
-    :goto_212
+    .line 194
+    :goto_21e
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSwitchPreviewValue:Ljava/lang/String;
 
     invoke-static {v2, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_227
+    if-eqz v1, :cond_233
 
-    .line 194
+    .line 195
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
@@ -837,10 +852,10 @@
 
     iput v2, v1, Landroid/graphics/Point;->y:I
 
-    goto :goto_233
+    goto :goto_23f
 
-    .line 196
-    :cond_227
+    .line 197
+    :cond_233
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
@@ -855,8 +870,8 @@
 
     iput v2, v1, Landroid/graphics/Point;->y:I
 
-    .line 199
-    :goto_233
+    .line 200
+    :goto_23f
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbnailStartPoint:Landroid/graphics/Point;
 
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
@@ -865,12 +880,12 @@
 
     iput v3, v1, Landroid/graphics/Point;->x:I
 
-    .line 200
+    .line 201
     iget v2, v2, Landroid/graphics/Point;->y:I
 
     iput v2, v1, Landroid/graphics/Point;->y:I
 
-    .line 202
+    .line 203
     iget v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
 
     int-to-float v1, v1
@@ -883,10 +898,10 @@
 
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mWarningOffset:I
 
-    goto/16 :goto_453
+    goto/16 :goto_45f
 
-    .line 204
-    :cond_249
+    .line 205
+    :cond_255
     iget v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceHeight:I
 
     int-to-float v1, v1
@@ -901,15 +916,15 @@
 
     mul-int/2addr v4, v1
 
-    .line 205
+    .line 206
     div-int/2addr v4, v3
 
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
 
-    .line 206
+    .line 207
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
 
-    .line 207
+    .line 208
     iget v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceWidth:I
 
     iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgWidth:I
@@ -922,7 +937,7 @@
 
     float-to-int v1, v1
 
-    .line 210
+    .line 211
     iget v3, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowWidth:I
 
     mul-int/2addr v3, v1
@@ -933,24 +948,24 @@
 
     iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowWidth:I
 
-    .line 211
+    .line 212
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowHeight:I
 
-    .line 213
+    .line 214
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iput v7, v1, Landroid/graphics/Point;->x:I
 
-    .line 214
+    .line 215
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSwitchPreviewValue:Ljava/lang/String;
 
     invoke-static {v2, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_286
+    if-eqz v1, :cond_292
 
-    .line 215
+    .line 216
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
@@ -965,10 +980,10 @@
 
     iput v2, v1, Landroid/graphics/Point;->y:I
 
-    goto :goto_292
+    goto :goto_29e
 
-    .line 217
-    :cond_286
+    .line 218
+    :cond_292
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
@@ -983,8 +998,8 @@
 
     iput v2, v1, Landroid/graphics/Point;->y:I
 
-    .line 220
-    :goto_292
+    .line 221
+    :goto_29e
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbnailStartPoint:Landroid/graphics/Point;
 
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
@@ -993,12 +1008,12 @@
 
     iput v3, v1, Landroid/graphics/Point;->x:I
 
-    .line 221
+    .line 222
     iget v2, v2, Landroid/graphics/Point;->y:I
 
     iput v2, v1, Landroid/graphics/Point;->y:I
 
-    .line 223
+    .line 224
     iget v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
 
     int-to-float v1, v1
@@ -1011,10 +1026,10 @@
 
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mWarningOffset:I
 
-    goto/16 :goto_453
+    goto/16 :goto_45f
 
-    .line 125
-    :cond_2a8
+    .line 126
+    :cond_2b4
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mVRatio:F
 
     const v5, 0x3ff9fbe7    # 1.953f
@@ -1023,14 +1038,14 @@
 
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mVRatio:F
 
-    .line 126
+    .line 127
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mHRatio:F
 
     div-float/2addr v2, v5
 
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mHRatio:F
 
-    .line 128
+    .line 129
     sget v2, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_column_thumb_height:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1049,14 +1064,14 @@
 
     mul-int/2addr v4, v2
 
-    .line 129
+    .line 130
     div-int/2addr v4, v3
 
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
 
     int-to-float v2, v2
 
-    .line 130
+    .line 131
     sget v3, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_margin:I
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1077,12 +1092,12 @@
 
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
 
-    .line 131
+    .line 132
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceWidth:I
 
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgWidth:I
 
-    .line 133
+    .line 134
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
 
     int-to-float v3, v2
@@ -1091,7 +1106,7 @@
 
     float-to-int v3, v3
 
-    .line 134
+    .line 135
     iget v4, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowWidth:I
 
     mul-int/2addr v4, v3
@@ -1102,10 +1117,10 @@
 
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowWidth:I
 
-    .line 135
+    .line 136
     iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowHeight:I
 
-    .line 137
+    .line 138
     iget-object v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iput v7, v3, Landroid/graphics/Point;->x:I
@@ -1118,10 +1133,10 @@
 
     float-to-int v4, v4
 
-    .line 138
+    .line 139
     iput v4, v3, Landroid/graphics/Point;->y:I
 
-    .line 140
+    .line 141
     iget-object v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbnailStartPoint:Landroid/graphics/Point;
 
     iput v7, v3, Landroid/graphics/Point;->x:I
@@ -1138,7 +1153,7 @@
 
     float-to-int v1, v4
 
-    .line 141
+    .line 142
     iput v1, v3, Landroid/graphics/Point;->y:I
 
     int-to-float v1, v2
@@ -1149,22 +1164,22 @@
 
     float-to-int v1, v1
 
-    .line 143
+    .line 144
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mWarningOffset:I
 
-    goto/16 :goto_453
+    goto/16 :goto_45f
 
-    .line 78
-    :cond_309
+    .line 79
+    :cond_315
     iget v2, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOrientation:I
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->isLandscape(I)Z
 
     move-result v2
 
-    if-eqz v2, :cond_3bd
+    if-eqz v2, :cond_3c9
 
-    .line 79
+    .line 80
     sget v2, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_width_land:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1181,7 +1196,7 @@
 
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
 
-    .line 80
+    .line 81
     iget v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceHeight:I
 
     mul-int/2addr v3, v2
@@ -1194,7 +1209,7 @@
 
     int-to-float v2, v2
 
-    .line 81
+    .line 82
     sget v3, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_margin:I
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1215,7 +1230,7 @@
 
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgWidth:I
 
-    .line 82
+    .line 83
     sget v2, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_bg_height_land:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1232,7 +1247,7 @@
 
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
 
-    .line 84
+    .line 85
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
 
     int-to-float v2, v2
@@ -1243,7 +1258,7 @@
 
     float-to-int v2, v2
 
-    .line 85
+    .line 86
     iget v3, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowWidth:I
 
     mul-int/2addr v3, v2
@@ -1254,15 +1269,15 @@
 
     iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowHeight:I
 
-    .line 86
+    .line 87
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowWidth:I
 
-    .line 88
+    .line 89
     iget v2, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOrientation:I
 
-    if-ne v2, v12, :cond_378
+    if-ne v2, v12, :cond_384
 
-    .line 89
+    .line 90
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     sget v3, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_bg_margin_start_270:I
@@ -1281,7 +1296,7 @@
 
     iput v3, v2, Landroid/graphics/Point;->x:I
 
-    .line 90
+    .line 91
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     sget v3, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_bg_margin_land:I
@@ -1300,10 +1315,10 @@
 
     iput v1, v2, Landroid/graphics/Point;->y:I
 
-    goto :goto_39e
+    goto :goto_3aa
 
-    .line 92
-    :cond_378
+    .line 93
+    :cond_384
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     sget v3, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_bg_margin_start_90:I
@@ -1322,7 +1337,7 @@
 
     iput v3, v2, Landroid/graphics/Point;->x:I
 
-    .line 93
+    .line 94
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iget v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceHeight:I
@@ -1353,8 +1368,8 @@
 
     iput v1, v2, Landroid/graphics/Point;->y:I
 
-    .line 96
-    :goto_39e
+    .line 97
+    :goto_3aa
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbnailStartPoint:Landroid/graphics/Point;
 
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
@@ -1379,7 +1394,7 @@
 
     iput v3, v1, Landroid/graphics/Point;->x:I
 
-    .line 97
+    .line 98
     iget v2, v2, Landroid/graphics/Point;->y:I
 
     iput v2, v1, Landroid/graphics/Point;->y:I
@@ -1392,13 +1407,13 @@
 
     float-to-int v1, v1
 
-    .line 99
+    .line 100
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mWarningOffset:I
 
-    goto/16 :goto_453
+    goto/16 :goto_45f
 
-    .line 101
-    :cond_3bd
+    .line 102
+    :cond_3c9
     sget v2, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_height:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1417,14 +1432,14 @@
 
     mul-int/2addr v4, v2
 
-    .line 102
+    .line 103
     div-int/2addr v4, v3
 
     iput v4, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbWidth:I
 
     int-to-float v2, v2
 
-    .line 103
+    .line 104
     sget v3, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_margin:I
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1445,7 +1460,7 @@
 
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
 
-    .line 104
+    .line 105
     sget v2, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_bg_width:I
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1462,7 +1477,7 @@
 
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgWidth:I
 
-    .line 106
+    .line 107
     iget v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbHeight:I
 
     int-to-float v2, v2
@@ -1471,7 +1486,7 @@
 
     float-to-int v2, v2
 
-    .line 107
+    .line 108
     iget v3, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOriginalArrowWidth:I
 
     mul-int/2addr v3, v2
@@ -1482,17 +1497,17 @@
 
     iput v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowWidth:I
 
-    .line 108
+    .line 109
     iput v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mArrowHeight:I
 
-    .line 110
+    .line 111
     iget v2, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOrientation:I
 
     const/16 v3, 0xb4
 
-    if-ne v2, v3, :cond_418
+    if-ne v2, v3, :cond_424
 
-    .line 111
+    .line 112
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     iget v3, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceWidth:I
@@ -1523,10 +1538,10 @@
 
     iput v3, v2, Landroid/graphics/Point;->x:I
 
-    goto :goto_427
+    goto :goto_433
 
-    .line 113
-    :cond_418
+    .line 114
+    :cond_424
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     sget v3, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_bg_margin_start:I
@@ -1545,8 +1560,8 @@
 
     iput v3, v2, Landroid/graphics/Point;->x:I
 
-    .line 115
-    :goto_427
+    .line 116
+    :goto_433
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
 
     sget v3, Lcom/transsion/camera/feature/panoramawideselfie/R$dimen;->panorama_fold_thumb_bg_margin_top:I
@@ -1565,7 +1580,7 @@
 
     iput v1, v2, Landroid/graphics/Point;->y:I
 
-    .line 117
+    .line 118
     iget-object v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbnailStartPoint:Landroid/graphics/Point;
 
     iget-object v2, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
@@ -1574,7 +1589,7 @@
 
     iput v3, v1, Landroid/graphics/Point;->x:I
 
-    .line 118
+    .line 119
     iget v2, v2, Landroid/graphics/Point;->y:I
 
     int-to-float v2, v2
@@ -1603,11 +1618,11 @@
 
     float-to-int v1, v1
 
-    .line 120
+    .line 121
     iput v1, v0, Lcom/transsion/camera/feature/common/BaseUISpec;->mWarningOffset:I
 
-    .line 278
-    :goto_453
+    .line 280
+    :goto_45f
     sget-object v1, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1710,7 +1725,7 @@
 .method protected isLandscape(I)Z
     .registers 2
 
-    .line 287
+    .line 289
     iget-boolean p0, p0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mSupportLandscape:Z
 
     if-eqz p0, :cond_f
@@ -1738,7 +1753,7 @@
 .method public onOrientationChanged(I)V
     .registers 2
 
-    .line 50
+    .line 51
     iput p1, p0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mOrientation:I
 
     return-void

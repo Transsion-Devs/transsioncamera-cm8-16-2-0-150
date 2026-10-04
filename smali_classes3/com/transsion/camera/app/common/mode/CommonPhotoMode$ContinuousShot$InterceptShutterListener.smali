@@ -27,12 +27,12 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;)V
     .registers 3
 
-    .line 3081
+    .line 3097
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$InterceptShutterListener;->this$1:Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3082
+    .line 3098
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$InterceptShutterListener;->mContinuousShot:Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;
 
     return-void
@@ -49,7 +49,7 @@
 .method public onShutterClick(II)Z
     .registers 3
 
-    .line 3087
+    .line 3103
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$InterceptShutterListener;->mContinuousShot:Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->isShotting()Z
@@ -58,7 +58,7 @@
 
     if-eqz p1, :cond_1a
 
-    .line 3088
+    .line 3104
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$InterceptShutterListener;->this$1:Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->-$$Nest$fgetTAG(Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -69,7 +69,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3089
+    .line 3105
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$InterceptShutterListener;->mContinuousShot:Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->stopContinuousShot()V
@@ -93,7 +93,7 @@
 .method public onShutterLongClick(II)Z
     .registers 3
 
-    .line 3097
+    .line 3113
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$InterceptShutterListener;->mContinuousShot:Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->isShotting()Z
@@ -102,7 +102,7 @@
 
     if-eqz p1, :cond_15
 
-    .line 3098
+    .line 3114
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$InterceptShutterListener;->this$1:Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->-$$Nest$fgetTAG(Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;)Lcom/transsion/camera/utils/debug/Log$Tag;

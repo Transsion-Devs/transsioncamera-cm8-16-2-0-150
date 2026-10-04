@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.internal.ChannelFlowTransformLatest$flowCollect$3$1$2"
     f = "Merge.kt"
     l = {
-        0x22
+        0x1e
     }
     m = "invokeSuspend"
 .end annotation
@@ -174,7 +174,7 @@
 
     move-result-object v0
 
-    .line 33
+    .line 29
     iget v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowTransformLatest$flowCollect$3$1$2;->label:I
 
     const/4 v2, 0x1
@@ -199,7 +199,7 @@
     :cond_17
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 34
+    .line 30
     iget-object p1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowTransformLatest$flowCollect$3$1$2;->this$0:Lkotlinx/coroutines/flow/internal/ChannelFlowTransformLatest;
 
     # getter for: Lkotlinx/coroutines/flow/internal/ChannelFlowTransformLatest;->transform:Lkotlin/jvm/functions/Function3;
@@ -221,7 +221,7 @@
 
     return-object v0
 
-    .line 35
+    .line 31
     :cond_2d
     :goto_2d
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

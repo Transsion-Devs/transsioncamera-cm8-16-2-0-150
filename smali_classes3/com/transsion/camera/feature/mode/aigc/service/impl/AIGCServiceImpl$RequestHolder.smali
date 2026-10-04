@@ -84,21 +84,17 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/ai/AIRequest;Lcom/transsion/camera/feature/mode/aigc/service/impl/CallBackWrapper;)V
     .registers 5
 
-    .line 111
+    .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 112
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/UUID;->toString()Ljava/lang/String;
+    .line 111
+    invoke-static {}, Lcom/transsion/camera/feature/mode/aigc/util/RequestIdGenerator;->generateRequestId()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;->mRequestId:Ljava/lang/String;
 
-    .line 113
+    .line 112
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -107,13 +103,13 @@
 
     const/4 v0, 0x0
 
-    .line 114
+    .line 113
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;->mCanceled:Z
 
-    .line 115
+    .line 114
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;->mRequest:Lcom/transsion/camera/app/common/ai/AIRequest;
 
-    .line 116
+    .line 115
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;->mCallBackWrapper:Lcom/transsion/camera/feature/mode/aigc/service/impl/CallBackWrapper;
 
     return-void
@@ -133,10 +129,10 @@
 
     const/4 v0, 0x1
 
-    .line 120
+    .line 119
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;->mCanceled:Z
 
-    .line 121
+    .line 120
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;->mCallBackWrapper:Lcom/transsion/camera/feature/mode/aigc/service/impl/CallBackWrapper;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;->mRequest:Lcom/transsion/camera/app/common/ai/AIRequest;

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;)V
     .registers 2
 
-    .line 154
+    .line 157
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$2;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onExecuted()V
     .registers 3
 
-    .line 157
+    .line 160
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$2;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -47,12 +47,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 158
+    .line 161
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$2;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     invoke-static {v0, p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->-$$Nest$mremoveExecuteListenerLocked(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$IExecuteListener;)V
 
-    .line 159
+    .line 162
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$2;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->-$$Nest$mcheckExecuteCompleted(Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;)V

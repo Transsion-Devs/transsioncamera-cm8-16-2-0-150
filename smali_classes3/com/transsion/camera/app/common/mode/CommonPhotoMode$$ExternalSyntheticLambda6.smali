@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$PictureCallback;
 
 
 # instance fields
@@ -24,13 +24,13 @@
 
 
 # virtual methods
-.method public final run()V
-    .registers 1
+.method public final onPictureReady([BZJ)V
+    .registers 5
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$$ExternalSyntheticLambda6;->f$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
-    invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->$r8$lambda$ImjSEFa2nVISj3K7ilBRFjHrj0I(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->$r8$lambda$zTO17-E6cJgF96qF5F5ejkpJJiM(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;[BZJ)V
 
     return-void
 .end method

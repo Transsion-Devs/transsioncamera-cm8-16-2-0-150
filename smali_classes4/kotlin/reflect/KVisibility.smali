@@ -4,6 +4,8 @@
 
 
 # static fields
+.field private static final synthetic $ENTRIES:Lkotlin/enums/EnumEntries;
+
 .field private static final synthetic $VALUES:[Lkotlin/reflect/KVisibility;
 
 .field public static final enum INTERNAL:Lkotlin/reflect/KVisibility;
@@ -87,6 +89,12 @@
 
     sput-object v0, Lkotlin/reflect/KVisibility;->$VALUES:[Lkotlin/reflect/KVisibility;
 
+    invoke-static {v0}, Lkotlin/enums/EnumEntriesKt;->enumEntries([Ljava/lang/Enum;)Lkotlin/enums/EnumEntries;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlin/reflect/KVisibility;->$ENTRIES:Lkotlin/enums/EnumEntries;
+
     return-void
 .end method
 
@@ -118,7 +126,7 @@
 
     sget-object v0, Lkotlin/reflect/KVisibility;->$VALUES:[Lkotlin/reflect/KVisibility;
 
-    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

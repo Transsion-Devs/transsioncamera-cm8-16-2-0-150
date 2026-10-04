@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 153
+    .line 157
     iput-object p3, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$3;->val$version:Ljava/lang/String;
 
     invoke-direct {p0, p2}, Lcom/transsion/camera/utils/threads/WorkTask;-><init>(Ljava/lang/String;)V
@@ -35,17 +35,17 @@
 .method public doProcess()V
     .registers 2
 
-    .line 156
+    .line 160
     sget-object v0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideConstant;->IMAGERY_GUIDE_FILE_ROOT:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/imageryguide/utils/FileUtils;->deleteFile(Ljava/lang/String;)Z
 
-    .line 157
+    .line 161
     sget-object v0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideConstant;->IMAGERY_GUIDE_FILE_ROOT:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/imageryguide/utils/FileUtils;->mkDir(Ljava/lang/String;)Z
 
-    .line 158
+    .line 162
     sget-object v0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideConstant;->IMAGERY_GUIDE_FILE_ROOT:Ljava/lang/String;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$3;->val$version:Ljava/lang/String;

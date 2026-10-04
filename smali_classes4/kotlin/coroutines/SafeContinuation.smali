@@ -39,10 +39,9 @@
 
     sput-object v0, Lkotlin/coroutines/SafeContinuation;->Companion:Lkotlin/coroutines/SafeContinuation$Companion;
 
-    .line 30
+    .line 31
     const-class v0, Ljava/lang/Object;
 
-    .line 31
     const-string v1, "result"
 
     .line 30

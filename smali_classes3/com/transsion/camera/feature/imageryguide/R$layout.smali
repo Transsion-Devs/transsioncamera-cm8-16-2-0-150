@@ -34,23 +34,23 @@
 
 .field public static detail_pager_item_img_layout:I = 0x7f0e0084
 
-.field public static function_item_view:I = 0x7f0e00c3
+.field public static function_item_view:I = 0x7f0e00c4
 
-.field public static function_view_holder:I = 0x7f0e00c4
+.field public static function_view_holder:I = 0x7f0e00c5
 
-.field public static imagery_guide_layout:I = 0x7f0e00f7
+.field public static imagery_guide_layout:I = 0x7f0e00f3
 
-.field public static imagery_guide_toast_layout:I = 0x7f0e00f8
+.field public static imagery_guide_toast_layout:I = 0x7f0e00f4
 
-.field public static imagery_top_bar:I = 0x7f0e00f9
+.field public static imagery_top_bar:I = 0x7f0e00f5
 
-.field public static mode_item_view:I = 0x7f0e0127
+.field public static mode_item_view:I = 0x7f0e0123
 
-.field public static mode_name_layout:I = 0x7f0e0128
+.field public static mode_name_layout:I = 0x7f0e0124
 
-.field public static mode_view_holder:I = 0x7f0e0132
+.field public static mode_view_holder:I = 0x7f0e012d
 
-.field public static sale_view_holder:I = 0x7f0e01f3
+.field public static sale_view_holder:I = 0x7f0e01ee
 
 
 # direct methods

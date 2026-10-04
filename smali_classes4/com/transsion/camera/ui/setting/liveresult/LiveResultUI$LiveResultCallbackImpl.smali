@@ -1,4 +1,4 @@
-.class Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI$LiveResultCallbackImpl;
+.class final Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI$LiveResultCallbackImpl;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0x12
     name = "LiveResultCallbackImpl"
 .end annotation
 
@@ -22,22 +22,13 @@
 
 
 # direct methods
-.method private constructor <init>(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
+.method public constructor <init>(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
     .registers 2
 
-    .line 163
+    .line 129
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI$LiveResultCallbackImpl;->this$0:Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI-IA;)V
-    .registers 3
-
-    .line 0
-    invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI$LiveResultCallbackImpl;-><init>(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
 
     return-void
 .end method
@@ -47,17 +38,22 @@
 .method public onDataCallback(Ljava/lang/Object;I)V
     .registers 3
 
-    .line 166
+    const-string p2, "data"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 131
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI$LiveResultCallbackImpl;->this$0:Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;
 
     check-cast p1, Lcom/transsion/camera/feature/setting/liveresult/Result;
 
-    invoke-static {p2, p1}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->-$$Nest$fputmCameraResult(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;Lcom/transsion/camera/feature/setting/liveresult/Result;)V
+    invoke-static {p2, p1}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->access$setMCameraResult$p(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;Lcom/transsion/camera/feature/setting/liveresult/Result;)V
 
-    .line 167
+    .line 132
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI$LiveResultCallbackImpl;->this$0:Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;
 
-    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->-$$Nest$mupdateAllValue(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
+    # invokes: Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->updateAllValue()V
+    invoke-static {p0}, Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;->access$updateAllValue(Lcom/transsion/camera/ui/setting/liveresult/LiveResultUI;)V
 
     return-void
 .end method

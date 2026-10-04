@@ -18,11 +18,11 @@
 
 .field public static accessibility_filter_on:I = 0x7f13001c
 
-.field public static color_style_mode_title:I = 0x7f1301ca
+.field public static color_style_mode_title:I = 0x7f1301c5
 
-.field public static color_style_name_off:I = 0x7f1301cb
+.field public static color_style_name_off:I = 0x7f1301c6
 
-.field public static color_style_name_on:I = 0x7f1301cc
+.field public static color_style_name_on:I = 0x7f1301c7
 
 
 # direct methods

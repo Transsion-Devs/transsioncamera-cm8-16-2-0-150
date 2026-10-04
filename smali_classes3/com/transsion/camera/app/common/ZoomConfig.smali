@@ -55,7 +55,7 @@
 .method public static synthetic $r8$lambda$FEs6eLOrnUVjDiAcru4ITssclPI(ILcom/transsion/camera/app/common/ZoomConfig$LensInfo;)Z
     .registers 2
 
-    .line 263
+    .line 264
     invoke-static {p1}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->-$$Nest$fgetmLensType(Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;)I
 
     move-result p1
@@ -78,37 +78,37 @@
     .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 57
+    .line 58
     sget v0, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
 
     iput v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mDefaultZoomRatio:I
 
     const/4 v0, 0x2
 
-    .line 58
+    .line 59
     iput v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mCurrentLensType:I
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 61
+    .line 62
     iput v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mTickViewDegreeScaleFactor:F
 
     const/4 v0, 0x1
 
-    .line 67
+    .line 68
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mNeedTranslatePointBarOnRecording:Z
 
     const/4 v0, 0x0
 
-    .line 68
+    .line 69
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mIsOrientationFixed:Z
 
-    .line 72
+    .line 73
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mSupportedZoomTypes:[I
 
-    .line 73
+    .line 74
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -121,14 +121,14 @@
 .method private updateCurrentFocalLengthByRatio(I)V
     .registers 5
 
-    .line 104
+    .line 105
     iget-object v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mLensInfoList:Ljava/util/List;
 
     if-nez v0, :cond_5
 
     goto :goto_2f
 
-    .line 108
+    .line 109
     :cond_5
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -148,7 +148,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
-    .line 109
+    .line 110
     invoke-static {v1}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->-$$Nest$fgetmFocalLength(Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;)[Ljava/lang/String;
 
     move-result-object v2
@@ -161,7 +161,7 @@
 
     goto :goto_9
 
-    .line 112
+    .line 113
     :cond_20
     invoke-virtual {v1, p1}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->containsRatio(I)Z
 
@@ -169,7 +169,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 113
+    .line 114
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->getFocalLengths()[Ljava/lang/String;
 
     move-result-object p1
@@ -190,12 +190,12 @@
 .method public addLensInfo(Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 4
 
-    .line 240
+    .line 241
     iget-object v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mLensInfoList:Ljava/util/List;
 
     if-nez v0, :cond_c
 
-    .line 241
+    .line 242
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x3
@@ -204,7 +204,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mLensInfoList:Ljava/util/List;
 
-    .line 243
+    .line 244
     :cond_c
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->getCurrentRatio()I
 
@@ -212,14 +212,14 @@
 
     if-gtz v0, :cond_19
 
-    .line 244
+    .line 245
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->getStartRatio()I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setCurrentRatio(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
-    .line 246
+    .line 247
     :cond_19
     iget-object v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mLensInfoList:Ljava/util/List;
 
@@ -231,7 +231,7 @@
 .method public getCurrentFocalLength()Ljava/lang/String;
     .registers 1
 
-    .line 161
+    .line 162
     iget-object p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mCurrentFocalLength:Ljava/lang/String;
 
     return-object p0
@@ -240,7 +240,7 @@
 .method public getCurrentLensInfo()Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
     .registers 2
 
-    .line 255
+    .line 256
     iget v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mCurrentLensType:I
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/ZoomConfig;->getLensInfoByType(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
@@ -253,7 +253,7 @@
 .method public getCurrentLensType()I
     .registers 1
 
-    .line 142
+    .line 143
     iget p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mCurrentLensType:I
 
     return p0
@@ -262,7 +262,7 @@
 .method public getDefaultZoomRatio()I
     .registers 1
 
-    .line 120
+    .line 121
     iget p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mDefaultZoomRatio:I
 
     return p0
@@ -271,7 +271,7 @@
 .method public getInstantZoomRatios()[Ljava/lang/String;
     .registers 1
 
-    .line 236
+    .line 237
     iget-object p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mInstantZoomRatios:[Ljava/lang/String;
 
     return-object p0
@@ -280,7 +280,7 @@
 .method public getLensInfo()Ljava/util/List;
     .registers 1
 
-    .line 251
+    .line 252
     iget-object p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mLensInfoList:Ljava/util/List;
 
     return-object p0
@@ -289,7 +289,7 @@
 .method public getLensInfoByType(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
     .registers 4
 
-    .line 259
+    .line 260
     iget-object p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mLensInfoList:Ljava/util/List;
 
     const/4 v0, 0x0
@@ -298,7 +298,7 @@
 
     return-object v0
 
-    .line 262
+    .line 263
     :cond_6
     invoke-interface {p0}, Ljava/util/Collection;->stream()Ljava/util/stream/Stream;
 
@@ -308,17 +308,17 @@
 
     invoke-direct {v1, p1}, Lcom/transsion/camera/app/common/ZoomConfig$$ExternalSyntheticLambda0;-><init>(I)V
 
-    .line 263
+    .line 264
     invoke-interface {p0, v1}, Ljava/util/stream/Stream;->filter(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
 
     move-result-object p0
 
-    .line 264
+    .line 265
     invoke-interface {p0}, Ljava/util/stream/Stream;->findFirst()Ljava/util/Optional;
 
     move-result-object p0
 
-    .line 265
+    .line 266
     invoke-virtual {p0, v0}, Ljava/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -331,7 +331,7 @@
 .method public getLimitedZoomRange()Landroid/util/Range;
     .registers 3
 
-    .line 93
+    .line 94
     new-instance v0, Landroid/util/Range;
 
     iget v1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mMinLimitedZoomRatio:I
@@ -354,7 +354,7 @@
 .method public getMarginOffset(I)I
     .registers 3
 
-    .line 170
+    .line 171
     iget-object p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mMarginOffsets:Landroid/util/SparseArray;
 
     const/4 v0, 0x0
@@ -379,7 +379,7 @@
 .method public getTickViewDegreeScaleFactor()F
     .registers 1
 
-    .line 278
+    .line 279
     iget p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mTickViewDegreeScaleFactor:F
 
     return p0
@@ -388,7 +388,7 @@
 .method public getZoomRange()Landroid/util/Range;
     .registers 3
 
-    .line 83
+    .line 84
     new-instance v0, Landroid/util/Range;
 
     iget v1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mMinZoomRatio:I
@@ -411,7 +411,7 @@
 .method public isContinuousZoomSupported()Z
     .registers 1
 
-    .line 209
+    .line 210
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mIsContinuousZoomSupported:Z
 
     return p0
@@ -420,7 +420,7 @@
 .method public isDefaultRatioSet()Z
     .registers 1
 
-    .line 124
+    .line 125
     iget p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mDefaultZoomRatio:I
 
     if-eqz p0, :cond_6
@@ -438,7 +438,7 @@
 .method public isFocalLengthCustom()Z
     .registers 1
 
-    .line 269
+    .line 270
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mIsFocalLengthCustom:Z
 
     return p0
@@ -447,7 +447,7 @@
 .method public isOrientationFixed()Z
     .registers 1
 
-    .line 222
+    .line 223
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mIsOrientationFixed:Z
 
     return p0
@@ -456,7 +456,7 @@
 .method public isSATSupported()Z
     .registers 1
 
-    .line 188
+    .line 189
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mIsSATSupported:Z
 
     return p0
@@ -465,7 +465,7 @@
 .method public isZoomRangeLimited()Z
     .registers 1
 
-    .line 179
+    .line 180
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mIsZoomRangeLimited:Z
 
     return p0
@@ -474,7 +474,7 @@
 .method public isZoomTypeSupported(I)Z
     .registers 2
 
-    .line 205
+    .line 206
     iget p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mSupportedZoomTypeFlag:I
 
     and-int/2addr p0, p1
@@ -494,7 +494,7 @@
 .method public needTranslateZoomUIOnRecording()Z
     .registers 1
 
-    .line 213
+    .line 214
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mNeedTranslatePointBarOnRecording:Z
 
     return p0
@@ -503,17 +503,17 @@
 .method public setCurrentFocalLength(Ljava/lang/String;)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 5
 
-    .line 146
+    .line 147
     iput-object p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mCurrentFocalLength:Ljava/lang/String;
 
-    .line 147
+    .line 148
     iget-object p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mLensInfoList:Ljava/util/List;
 
     if-nez p1, :cond_7
 
     goto :goto_29
 
-    .line 151
+    .line 152
     :cond_7
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -532,7 +532,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
-    .line 152
+    .line 153
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->getFocalLengths()[Ljava/lang/String;
 
     move-result-object v1
@@ -545,7 +545,7 @@
 
     if-eqz v1, :cond_b
 
-    .line 153
+    .line 154
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->getCurrentRatio()I
 
     move-result p1
@@ -560,14 +560,14 @@
 .method public setCurrentLensTypeByCameraId(Ljava/lang/String;)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 5
 
-    .line 128
+    .line 129
     iget-object v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mLensInfoList:Ljava/util/List;
 
     if-nez v0, :cond_5
 
     goto :goto_25
 
-    .line 132
+    .line 133
     :cond_5
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -586,7 +586,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
-    .line 133
+    .line 134
     invoke-static {v1}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->-$$Nest$fgetmCameraId(Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;)Ljava/lang/String;
 
     move-result-object v2
@@ -597,7 +597,7 @@
 
     if-eqz v2, :cond_9
 
-    .line 134
+    .line 135
     invoke-static {v1}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->-$$Nest$fgetmLensType(Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;)I
 
     move-result p1
@@ -612,10 +612,10 @@
 .method public setDefaultZoomRatio(I)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 2
 
-    .line 97
+    .line 98
     iput p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mDefaultZoomRatio:I
 
-    .line 98
+    .line 99
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/ZoomConfig;->updateCurrentFocalLengthByRatio(I)V
 
     return-object p0
@@ -624,7 +624,7 @@
 .method public setFocalLengthCustom(Z)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 2
 
-    .line 273
+    .line 274
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mIsFocalLengthCustom:Z
 
     return-object p0
@@ -633,7 +633,7 @@
 .method public varargs setInstantZoomRatios([Ljava/lang/String;)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 2
 
-    .line 231
+    .line 232
     iput-object p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mInstantZoomRatios:[Ljava/lang/String;
 
     return-object p0
@@ -642,10 +642,10 @@
 .method public setLimitedZoomRange(II)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 3
 
-    .line 87
+    .line 88
     iput p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mMinLimitedZoomRatio:I
 
-    .line 88
+    .line 89
     iput p2, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mMaxLimitedZoomRatio:I
 
     return-object p0
@@ -654,7 +654,7 @@
 .method public setMarginOffset(II)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 4
 
-    .line 165
+    .line 166
     iget-object v0, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mMarginOffsets:Landroid/util/SparseArray;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -669,7 +669,7 @@
 .method public setOrientationFixed(Z)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 2
 
-    .line 226
+    .line 227
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mIsOrientationFixed:Z
 
     return-object p0
@@ -678,7 +678,7 @@
 .method public setSATSupported(Z)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 2
 
-    .line 183
+    .line 184
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mIsSATSupported:Z
 
     return-object p0
@@ -687,10 +687,10 @@
 .method public varargs setSupportedZoomTypes([I)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 6
 
-    .line 192
+    .line 193
     iput-object p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mSupportedZoomTypes:[I
 
-    .line 193
+    .line 194
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -700,7 +700,7 @@
 
     aget v2, p1, v1
 
-    .line 194
+    .line 195
     iget v3, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mSupportedZoomTypeFlag:I
 
     or-int/2addr v2, v3
@@ -714,7 +714,7 @@
     :cond_10
     const/4 p1, 0x4
 
-    .line 196
+    .line 197
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/ZoomConfig;->isZoomTypeSupported(I)Z
 
     move-result p1
@@ -727,7 +727,7 @@
 .method public setTickViewDegreeScaleFactor(F)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 2
 
-    .line 282
+    .line 283
     iput p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mTickViewDegreeScaleFactor:F
 
     return-object p0
@@ -736,7 +736,7 @@
 .method public setTranslateZoomUIOnRecording(Z)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 2
 
-    .line 217
+    .line 218
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mNeedTranslatePointBarOnRecording:Z
 
     return-object p0
@@ -745,10 +745,10 @@
 .method public setZoomRange(II)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 3
 
-    .line 77
+    .line 78
     iput p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mMinZoomRatio:I
 
-    .line 78
+    .line 79
     iput p2, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mMaxZoomRatio:I
 
     return-object p0
@@ -757,7 +757,7 @@
 .method public setZoomRangeLimited(Z)Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 2
 
-    .line 174
+    .line 175
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/ZoomConfig;->mIsZoomRangeLimited:Z
 
     return-object p0

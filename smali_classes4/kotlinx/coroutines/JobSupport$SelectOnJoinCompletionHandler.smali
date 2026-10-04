@@ -38,13 +38,13 @@
         }
     .end annotation
 
-    .line 581
+    .line 578
     iput-object p1, p0, Lkotlinx/coroutines/JobSupport$SelectOnJoinCompletionHandler;->this$0:Lkotlinx/coroutines/JobSupport;
 
-    .line 583
+    .line 580
     invoke-direct {p0}, Lkotlinx/coroutines/JobNode;-><init>()V
 
-    .line 582
+    .line 579
     iput-object p2, p0, Lkotlinx/coroutines/JobSupport$SelectOnJoinCompletionHandler;->select:Lkotlinx/coroutines/selects/SelectInstance;
 
     return-void
@@ -55,7 +55,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 581
+    .line 578
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport$SelectOnJoinCompletionHandler;->invoke(Ljava/lang/Throwable;)V
@@ -68,7 +68,7 @@
 .method public invoke(Ljava/lang/Throwable;)V
     .registers 3
 
-    .line 585
+    .line 582
     iget-object p1, p0, Lkotlinx/coroutines/JobSupport$SelectOnJoinCompletionHandler;->select:Lkotlinx/coroutines/selects/SelectInstance;
 
     iget-object p0, p0, Lkotlinx/coroutines/JobSupport$SelectOnJoinCompletionHandler;->this$0:Lkotlinx/coroutines/JobSupport;

@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;Ljava/util/List;)V
     .registers 3
 
-    .line 1094
+    .line 1115
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
-    .line 1095
+    .line 1116
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AbstractType;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;Ljava/util/List;)V
 
     return-void
@@ -34,7 +34,7 @@
 .method private drawItem(Landroid/graphics/Canvas;Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;F)V
     .registers 10
 
-    .line 1150
+    .line 1171
     invoke-virtual {p0, p2}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AbstractType;->getItemAlpha(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;)I
 
     move-result v0
@@ -43,7 +43,7 @@
 
     goto/16 :goto_b5
 
-    .line 1154
+    .line 1175
     :cond_8
     invoke-virtual {p0, p2}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AbstractType;->getItemScaleFactor(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;)F
 
@@ -55,10 +55,10 @@
 
     if-gez v3, :cond_1e
 
-    .line 1156
+    .line 1177
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1157
+    .line 1178
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v4}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmCenterY(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)F
@@ -67,7 +67,7 @@
 
     invoke-virtual {p1, v1, v1, p3, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1160
+    .line 1181
     :cond_1e
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
@@ -83,7 +83,7 @@
 
     goto :goto_37
 
-    .line 1161
+    .line 1182
     :cond_2b
     iget v1, p2, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mSwitchFromType:I
 
@@ -102,7 +102,7 @@
 
     if-lt v0, v1, :cond_42
 
-    .line 1163
+    .line 1184
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmCircleColorAlpha(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)I
@@ -120,7 +120,7 @@
 
     div-float/2addr v1, v2
 
-    .line 1164
+    .line 1185
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmCircleColorAlpha(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)I
@@ -133,7 +133,7 @@
 
     float-to-int v1, v1
 
-    .line 1165
+    .line 1186
     :goto_50
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
@@ -143,7 +143,7 @@
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1166
+    .line 1187
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmCenterY(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)F
@@ -164,7 +164,7 @@
 
     invoke-virtual {p1, p3, v1, v2, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1169
+    .line 1190
     :cond_6e
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
@@ -172,10 +172,10 @@
 
     move-result-object v1
 
-    .line 1170
+    .line 1191
     iput-object v1, p2, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mText:Ljava/lang/String;
 
-    .line 1171
+    .line 1192
     iget-boolean p2, p2, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mIsSelected:Z
 
     if-eqz p2, :cond_81
@@ -195,7 +195,7 @@
 
     move-result-object p2
 
-    .line 1172
+    .line 1193
     :goto_87
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -211,10 +211,10 @@
 
     invoke-virtual {p2, v1, v5, v2, v4}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    .line 1173
+    .line 1194
     invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1174
+    .line 1195
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmCenterY(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)F
@@ -243,7 +243,7 @@
 
     if-gez v3, :cond_b5
 
-    .line 1176
+    .line 1197
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_b5
@@ -256,7 +256,7 @@
 .method public getContentWidth()F
     .registers 3
 
-    .line 1118
+    .line 1139
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AbstractType;->mItemNum:I
 
     int-to-float v0, v0
@@ -299,7 +299,7 @@
 .method public onCurrentItemSelected()V
     .registers 1
 
-    .line 1182
+    .line 1203
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$mplayItemClickFeedbackAnimation(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)V
@@ -310,7 +310,7 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .registers 7
 
-    .line 1123
+    .line 1144
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AbstractType;->mInnerZoomItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -321,7 +321,7 @@
 
     goto/16 :goto_9a
 
-    .line 1127
+    .line 1148
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AbstractType;->mInnerZoomItems:Ljava/util/List;
 
@@ -341,10 +341,10 @@
 
     if-nez v0, :cond_1d
 
-    .line 1128
+    .line 1149
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->updateItemPosition()V
 
-    .line 1132
+    .line 1153
     :cond_1d
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
@@ -360,7 +360,7 @@
 
     mul-float/2addr v0, v1
 
-    .line 1133
+    .line 1154
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmSelectCirclePaint(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)Landroid/graphics/Paint;
@@ -375,12 +375,12 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1134
+    .line 1155
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AbstractType;->getCurrentSelectedItem()Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;
 
     move-result-object v1
 
-    .line 1135
+    .line 1156
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmTypeSwitchFraction(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)F
@@ -391,7 +391,7 @@
 
     move-result v1
 
-    .line 1136
+    .line 1157
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmCenterY(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)F
@@ -406,7 +406,7 @@
 
     invoke-virtual {p1, v1, v2, v0, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1139
+    .line 1160
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmIsTypeSwitching(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)Z
@@ -426,7 +426,7 @@
     :cond_65
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AbstractType;->mInnerZoomItems:Ljava/util/List;
 
-    .line 1140
+    .line 1161
     :goto_67
     invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -445,10 +445,10 @@
 
     check-cast v1, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;
 
-    .line 1141
+    .line 1162
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1142
+    .line 1163
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmTypeSwitchFraction(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)F
@@ -459,7 +459,7 @@
 
     move-result v2
 
-    .line 1143
+    .line 1164
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmRotateAnimator(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)Lcom/transsion/camera/ui/setting/zoom/RotateAnimator;
@@ -474,10 +474,10 @@
 
     invoke-virtual {v3, p1, v2, v4}, Lcom/transsion/camera/ui/setting/zoom/RotateAnimator;->rotate(Landroid/graphics/Canvas;FF)F
 
-    .line 1144
+    .line 1165
     invoke-direct {p0, p1, v1, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->drawItem(Landroid/graphics/Canvas;Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;F)V
 
-    .line 1145
+    .line 1166
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_6b
@@ -490,7 +490,7 @@
 .method public updateItemPosition()V
     .registers 10
 
-    .line 1105
+    .line 1126
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
@@ -511,13 +511,13 @@
 
     const/4 v1, 0x0
 
-    .line 1106
+    .line 1127
     :goto_10
     iget v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AbstractType;->mItemNum:I
 
     if-ge v1, v2, :cond_6c
 
-    .line 1107
+    .line 1128
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AbstractType;->mInnerZoomItems:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -528,7 +528,7 @@
 
     int-to-float v3, v1
 
-    .line 1108
+    .line 1129
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$PointType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;
 
     invoke-static {v4}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->-$$Nest$fgetmZoomItemWidth(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)F
@@ -559,7 +559,7 @@
 
     iput v4, v2, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mCenterX:F
 
-    .line 1109
+    .line 1130
     new-instance v3, Landroid/graphics/RectF;
 
     iget v4, v2, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mCenterX:F

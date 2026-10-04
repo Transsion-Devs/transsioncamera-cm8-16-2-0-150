@@ -32,7 +32,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/picturesize/PictureSize;)V
     .registers 2
 
-    .line 415
+    .line 432
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize$2;->this$0:Lcom/transsion/camera/feature/setting/picturesize/PictureSize;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 415
+    .line 432
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize$2;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -56,7 +56,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 418
+    .line 435
     const-string v0, "key_restore_settings_notify_ui"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -65,7 +65,7 @@
 
     if-eqz p1, :cond_16
 
-    .line 419
+    .line 436
     const-string p1, "begin"
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -74,7 +74,7 @@
 
     if-eqz p1, :cond_16
 
-    .line 420
+    .line 437
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize$2;->this$0:Lcom/transsion/camera/feature/setting/picturesize/PictureSize;
 
     const/4 p1, 0x1

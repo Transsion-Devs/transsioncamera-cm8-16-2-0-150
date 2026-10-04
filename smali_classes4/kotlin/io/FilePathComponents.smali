@@ -24,7 +24,7 @@
     .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 95
+    .line 96
     iput-object p1, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
     iput-object p2, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
@@ -87,7 +87,7 @@
 .method public final getRoot()Ljava/io/File;
     .registers 1
 
-    .line 95
+    .line 96
     iget-object p0, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
     return-object p0
@@ -96,7 +96,7 @@
 .method public final getSegments()Ljava/util/List;
     .registers 1
 
-    .line 95
+    .line 96
     iget-object p0, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
 
     return-object p0
@@ -105,7 +105,7 @@
 .method public final getSize()I
     .registers 1
 
-    .line 110
+    .line 111
     iget-object p0, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->size()I

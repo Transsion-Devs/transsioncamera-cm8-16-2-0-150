@@ -49,7 +49,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;Lcom/airbnb/lottie/LottieAnimationView;)V
     .registers 3
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$1;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$1;->val$view:Lcom/airbnb/lottie/LottieAnimationView;
@@ -62,7 +62,7 @@
 .method private synthetic lambda$onCompositionLoaded$0(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
     .registers 3
 
-    .line 80
+    .line 81
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$1;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/value/LottieFrameInfo;->getOverallProgress()F
@@ -87,7 +87,7 @@
 .method private synthetic lambda$onCompositionLoaded$1(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
     .registers 3
 
-    .line 83
+    .line 84
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$1;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/value/LottieFrameInfo;->getOverallProgress()F
@@ -114,16 +114,16 @@
 .method public onCompositionLoaded(Lcom/airbnb/lottie/LottieComposition;)V
     .registers 6
 
-    .line 71
+    .line 72
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$1;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
-    invoke-static {p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$fgetmIconView(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Lcom/airbnb/lottie/LottieAnimationView;
+    invoke-static {p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$fgetmIconView(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     move-result-object p1
 
     if-nez p1, :cond_14
 
-    .line 72
+    .line 73
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$1;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$fgetTAG(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -136,7 +136,7 @@
 
     return-void
 
-    .line 75
+    .line 76
     :cond_14
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$1;->val$view:Lcom/airbnb/lottie/LottieAnimationView;
 
@@ -154,7 +154,7 @@
 
     move-result-object p1
 
-    .line 76
+    .line 77
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -172,12 +172,12 @@
 
     check-cast v0, Lcom/airbnb/lottie/model/KeyPath;
 
-    .line 77
+    .line 78
     invoke-virtual {v0}, Lcom/airbnb/lottie/model/KeyPath;->keysToString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 78
+    .line 79
     const-string v2, "Ellipse"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -194,11 +194,11 @@
 
     if-eqz v1, :cond_59
 
-    .line 79
+    .line 80
     :cond_49
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$1;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
-    invoke-static {v1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$fgetmIconView(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Lcom/airbnb/lottie/LottieAnimationView;
+    invoke-static {v1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$fgetmIconView(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     move-result-object v1
 
@@ -210,11 +210,11 @@
 
     invoke-virtual {v1, v0, v2, v3}, Lcom/airbnb/lottie/LottieAnimationView;->addValueCallback(Lcom/airbnb/lottie/model/KeyPath;Ljava/lang/Object;Lcom/airbnb/lottie/value/SimpleLottieValueCallback;)V
 
-    .line 82
+    .line 83
     :cond_59
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$1;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;
 
-    invoke-static {v1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$fgetmIconView(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Lcom/airbnb/lottie/LottieAnimationView;
+    invoke-static {v1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->-$$Nest$fgetmIconView(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     move-result-object v1
 

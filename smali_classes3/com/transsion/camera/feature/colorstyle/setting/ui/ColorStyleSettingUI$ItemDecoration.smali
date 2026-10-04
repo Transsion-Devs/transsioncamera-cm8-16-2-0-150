@@ -76,14 +76,14 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
     .registers 2
 
-    .line 1335
+    .line 1332
     iput-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     const/4 p1, -0x1
 
-    .line 1336
+    .line 1333
     iput p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mItemPadding:I
 
     return-void
@@ -92,7 +92,7 @@
 .method private synthetic lambda$getFirstItemRect$1()Landroid/graphics/Rect;
     .registers 5
 
-    .line 1375
+    .line 1372
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -105,7 +105,7 @@
 
     goto :goto_15
 
-    .line 1376
+    .line 1373
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
@@ -119,13 +119,13 @@
 
     move-result v0
 
-    .line 1377
+    .line 1374
     :goto_15
     invoke-virtual {p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->getItemPadding()I
 
     move-result v2
 
-    .line 1378
+    .line 1375
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3, v0, v1, v2, v1}, Landroid/graphics/Rect;-><init>(IIII)V
@@ -138,14 +138,14 @@
 .method private synthetic lambda$getLastItemRect$2()Landroid/graphics/Rect;
     .registers 5
 
-    .line 1385
+    .line 1382
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
     if-eqz v0, :cond_13
 
-    .line 1386
+    .line 1383
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->-$$Nest$fgetmResources(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)Landroid/content/res/Resources;
@@ -160,7 +160,7 @@
 
     goto :goto_1f
 
-    .line 1387
+    .line 1384
     :cond_13
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
@@ -174,13 +174,13 @@
 
     move-result v0
 
-    .line 1388
+    .line 1385
     :goto_1f
     invoke-virtual {p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->getItemPadding()I
 
     move-result v1
 
-    .line 1389
+    .line 1386
     new-instance v2, Landroid/graphics/Rect;
 
     const/4 v3, 0x0
@@ -195,12 +195,12 @@
 .method private synthetic lambda$getOtherItemRect$3()Landroid/graphics/Rect;
     .registers 4
 
-    .line 1396
+    .line 1393
     invoke-virtual {p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->getItemPadding()I
 
     move-result v0
 
-    .line 1397
+    .line 1394
     new-instance v1, Landroid/graphics/Rect;
 
     const/4 v2, 0x0
@@ -215,12 +215,12 @@
 .method private synthetic lambda$getSplitItemRect$0()Landroid/graphics/Rect;
     .registers 4
 
-    .line 1367
+    .line 1364
     invoke-virtual {p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->getItemPadding()I
 
     move-result v0
 
-    .line 1368
+    .line 1365
     new-instance v1, Landroid/graphics/Rect;
 
     neg-int v0, v0
@@ -239,7 +239,7 @@
 .method protected getFirstItemRect(I)Landroid/graphics/Rect;
     .registers 3
 
-    .line 1374
+    .line 1371
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mFirstItemRect:Landroid/graphics/Rect;
 
     invoke-static {p1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -262,10 +262,10 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .registers 5
 
-    .line 1344
+    .line 1341
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;->getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
 
-    .line 1345
+    .line 1342
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->onGetItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
 
     return-void
@@ -274,14 +274,14 @@
 .method public getItemPadding()I
     .registers 3
 
-    .line 1403
+    .line 1400
     iget v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mItemPadding:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_13
 
-    .line 1404
+    .line 1401
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->-$$Nest$fgetmResources(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)Landroid/content/res/Resources;
@@ -296,7 +296,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mItemPadding:I
 
-    .line 1406
+    .line 1403
     :cond_13
     iget p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mItemPadding:I
 
@@ -306,7 +306,7 @@
 .method protected getLastItemRect(I)Landroid/graphics/Rect;
     .registers 3
 
-    .line 1384
+    .line 1381
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mLastItemRect:Landroid/graphics/Rect;
 
     invoke-static {p1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -329,7 +329,7 @@
 .method protected getOtherItemRect(I)Landroid/graphics/Rect;
     .registers 3
 
-    .line 1395
+    .line 1392
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mOtherItemRect:Landroid/graphics/Rect;
 
     invoke-static {p1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -352,7 +352,7 @@
 .method protected getSplitItemRect(I)Landroid/graphics/Rect;
     .registers 3
 
-    .line 1366
+    .line 1363
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->mSplitItemRect:Landroid/graphics/Rect;
 
     invoke-static {p1}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -375,19 +375,19 @@
 .method protected onGetItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .registers 5
 
-    .line 1349
+    .line 1346
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result p4
 
-    .line 1350
+    .line 1347
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object p3
 
     if-eqz p3, :cond_f
 
-    .line 1351
+    .line 1348
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemCount()I
 
     move-result p3
@@ -397,13 +397,13 @@
     :cond_f
     const/4 p3, 0x0
 
-    .line 1353
+    .line 1350
     :goto_10
     instance-of p2, p2, Lcom/transsion/camera/feature/colorstyle/setting/widget/SplitItemView;
 
     if-eqz p2, :cond_1f
 
-    .line 1354
+    .line 1351
     iget-object p2, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
@@ -420,7 +420,7 @@
     :cond_1f
     if-nez p4, :cond_2c
 
-    .line 1356
+    .line 1353
     iget-object p2, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
@@ -439,7 +439,7 @@
 
     if-ne p4, p3, :cond_3b
 
-    .line 1358
+    .line 1355
     iget-object p2, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
@@ -453,7 +453,7 @@
 
     goto :goto_45
 
-    .line 1360
+    .line 1357
     :cond_3b
     iget-object p2, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;->this$0:Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;
 
@@ -466,7 +466,7 @@
 
     move-result-object p0
 
-    .line 1362
+    .line 1359
     :goto_45
     invoke-virtual {p1, p0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 

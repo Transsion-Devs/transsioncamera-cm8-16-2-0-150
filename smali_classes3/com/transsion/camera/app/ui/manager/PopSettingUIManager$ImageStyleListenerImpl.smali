@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;)V
     .registers 2
 
-    .line 502
+    .line 498
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager$ImageStyleListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onClick(Landroid/view/View;)V
     .registers 2
 
-    .line 505
+    .line 501
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager$ImageStyleListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;->-$$Nest$fgetmFragmentListener(Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;)Lcom/transsion/camera/app/common/IAppUIListener$IFragmentListener;
@@ -56,7 +56,7 @@
 
     if-eqz p1, :cond_11
 
-    .line 506
+    .line 502
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager$ImageStyleListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;->-$$Nest$fgetmFragmentListener(Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;)Lcom/transsion/camera/app/common/IAppUIListener$IFragmentListener;
@@ -65,7 +65,7 @@
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUIListener$IFragmentListener;->onImageStyleClicked()V
 
-    .line 508
+    .line 504
     :cond_11
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/PopSettingUIManager$ImageStyleListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;
 

@@ -411,21 +411,21 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mIModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
 
-    .line 1098
+    .line 1095
     new-instance v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecoration;-><init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mItemDecoration:Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;
 
-    .line 1099
+    .line 1096
     new-instance v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationExpandOrLR;-><init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mItemDecorationExpandOrLR:Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;
 
-    .line 1100
+    .line 1097
     new-instance v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationFlip;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$ItemDecorationFlip;-><init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
@@ -685,7 +685,7 @@
 .method private createLayoutManager(Landroid/content/Context;IIZ)Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
     .registers 11
 
-    .line 1088
+    .line 1085
     new-instance v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$6;
 
     move-object v1, p0
@@ -739,14 +739,14 @@
 .method private getColorStyleItemTextMargins()Landroid/graphics/Rect;
     .registers 3
 
-    .line 1133
+    .line 1130
     new-instance v0, Landroid/graphics/Rect;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_item_text_margin_bottom:I
 
-    .line 1135
+    .line 1132
     invoke-virtual {p0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result p0
@@ -763,12 +763,12 @@
 
     const/4 v0, 0x7
 
-    .line 1121
+    .line 1118
     iget v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     if-ne v0, v1, :cond_e
 
-    .line 1122
+    .line 1119
     iget-object p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->flip_filter_normal_text_size:I
@@ -779,7 +779,7 @@
 
     return p0
 
-    .line 1125
+    .line 1122
     :cond_e
     iget-object p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
@@ -795,7 +795,7 @@
 .method private getOrientationItem()I
     .registers 3
 
-    .line 1034
+    .line 1031
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/4 v1, 0x1
@@ -814,7 +814,7 @@
 
     if-eq v0, v1, :cond_1b
 
-    .line 1038
+    .line 1035
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -832,12 +832,12 @@
 
     return p0
 
-    .line 1039
+    .line 1036
     :cond_1b
     :goto_1b
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
-    .line 1040
+    .line 1037
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v1
@@ -857,7 +857,7 @@
     :cond_2d
     add-int/lit16 p0, p0, 0xb4
 
-    .line 1041
+    .line 1038
     rem-int/lit16 p0, p0, 0x168
 
     return p0
@@ -1289,19 +1289,19 @@
 .method private synthetic lambda$notifyColorStyleDataSetChanged$5()V
     .registers 3
 
-    .line 1055
+    .line 1052
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     if-eqz v0, :cond_10
 
-    .line 1056
+    .line 1053
     sget-object v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "notifyColorStyleDataSetChanged: "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1057
+    .line 1054
     iget-object p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
@@ -1313,19 +1313,19 @@
 .method private synthetic lambda$notifyColorStyleItemChanged$6()V
     .registers 3
 
-    .line 1072
+    .line 1069
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     if-eqz v0, :cond_10
 
-    .line 1073
+    .line 1070
     sget-object v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "notifyColorStyleItemChanged: "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1074
+    .line 1071
     iget-object p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;->notifyDataChanged()V
@@ -1337,20 +1337,20 @@
 .method private synthetic lambda$updateOrientation$7(I)V
     .registers 4
 
-    .line 1110
+    .line 1107
     iget v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mLastOrientation:I
 
     if-eq v0, p1, :cond_24
 
-    .line 1111
+    .line 1108
     iput p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mLastOrientation:I
 
-    .line 1112
+    .line 1109
     iget-object p1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 1113
+    .line 1110
     sget-object p1, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1378,7 +1378,7 @@
 .method private synthetic lambda$updateSettingUILayout$2(Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
     .registers 3
 
-    .line 985
+    .line 982
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -1391,7 +1391,7 @@
 
     iput p2, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 986
+    .line 983
     iget-object p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRootView:Landroid/view/View;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -1402,7 +1402,7 @@
 .method private synthetic lambda$updateSettingUILayout$3(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)Z
     .registers 2
 
-    .line 1021
+    .line 1018
     iget p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mLastPosition:I
 
     if-ltz p0, :cond_a
@@ -1424,7 +1424,7 @@
 .method private synthetic lambda$updateSettingUILayout$4(Landroidx/recyclerview/widget/GridLayoutManager;)V
     .registers 5
 
-    .line 1024
+    .line 1021
     sget-object v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1453,7 +1453,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1026
+    .line 1023
     iget-object v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getScrollState()I
@@ -1462,7 +1462,7 @@
 
     if-nez v0, :cond_32
 
-    .line 1027
+    .line 1024
     iget v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mLastPosition:I
 
     iget p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mLastOffset:I
@@ -1838,7 +1838,7 @@
 
     const/4 v0, 0x0
 
-    .line 1103
+    .line 1100
     :goto_1
     iget-object v1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
@@ -1848,21 +1848,21 @@
 
     if-ge v0, v1, :cond_2d
 
-    .line 1104
+    .line 1101
     iget-object v1, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1105
+    .line 1102
     iget-object v2, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->findContainingViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object v1
 
-    .line 1106
+    .line 1103
     instance-of v2, v1, Lcom/transsion/camera/app/ui/widget/recyclerview/IChildViewHolder;
 
     if-eqz v2, :cond_2a
@@ -1875,7 +1875,7 @@
 
     goto :goto_2a
 
-    .line 1109
+    .line 1106
     :cond_20
     check-cast v1, Lcom/transsion/camera/app/ui/widget/recyclerview/IChildViewHolder;
 
@@ -2100,7 +2100,7 @@
         }
     .end annotation
 
-    .line 1049
+    .line 1046
     iget-object p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     return-object p0
@@ -2187,7 +2187,7 @@
 .method protected isSettingUIClick()Z
     .registers 2
 
-    .line 1141
+    .line 1138
     iget-boolean v0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mIsSettingUIClick:Z
 
     if-nez v0, :cond_d
@@ -2609,12 +2609,12 @@
 .method public notifyColorStyleDataSetChanged()V
     .registers 4
 
-    .line 1054
+    .line 1051
     new-instance v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$$ExternalSyntheticLambda6;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$$ExternalSyntheticLambda6;-><init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
 
-    .line 1060
+    .line 1057
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v1
@@ -2629,18 +2629,18 @@
 
     if-ne v1, v2, :cond_17
 
-    .line 1061
+    .line 1058
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     return-void
 
-    .line 1063
+    .line 1060
     :cond_17
     iget-object p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mEntryRootView:Landroid/view/ViewGroup;
 
     if-eqz p0, :cond_1e
 
-    .line 1064
+    .line 1061
     invoke-virtual {p0, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
     :cond_1e
@@ -2650,12 +2650,12 @@
 .method public notifyColorStyleItemChanged()V
     .registers 4
 
-    .line 1071
+    .line 1068
     new-instance v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
 
-    .line 1077
+    .line 1074
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v1
@@ -2670,18 +2670,18 @@
 
     if-ne v1, v2, :cond_17
 
-    .line 1078
+    .line 1075
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     return-void
 
-    .line 1080
+    .line 1077
     :cond_17
     iget-object p0, p0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mEntryRootView:Landroid/view/ViewGroup;
 
     if-eqz p0, :cond_1e
 
-    .line 1081
+    .line 1078
     invoke-virtual {p0, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
     :cond_1e
@@ -3868,7 +3868,7 @@
     :cond_151
     if-ne v3, v7, :cond_16b
 
-    .line 919
+    .line 916
     iget-object v3, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getBottomBarHeight()I
@@ -3885,22 +3885,22 @@
 
     add-int/2addr v3, v8
 
-    .line 920
+    .line 917
     iget-object v8, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     iget-object v9, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mItemDecoration:Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;
 
     invoke-virtual {v8, v9}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    goto/16 :goto_377
+    goto/16 :goto_36b
 
     :cond_16b
     if-ne v3, v6, :cond_1d6
 
-    .line 922
+    .line 919
     invoke-virtual {v1, v4, v4, v4, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 923
+    .line 920
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v9, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_width_expand_90:I
@@ -3911,7 +3911,7 @@
 
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 924
+    .line 921
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v9, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_width_expand_0:I
@@ -3922,10 +3922,10 @@
 
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 925
+    .line 922
     iput v8, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 926
+    .line 923
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_bottom_lr_hover_margin_left:I
@@ -3936,7 +3936,7 @@
 
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 927
+    .line 924
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_bottom_lr_hover_margin_bottom:I
@@ -3947,12 +3947,12 @@
 
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 928
+    .line 925
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     if-eqz v3, :cond_1b7
 
-    .line 929
+    .line 926
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_switcher_height_expand:I
@@ -3961,14 +3961,14 @@
 
     move-result v3
 
-    .line 930
+    .line 927
     iget-object v8, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     invoke-virtual {v8, v3, v3}, Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;->updateItemStyle(II)Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     move-result-object v3
 
-    .line 931
+    .line 928
     invoke-direct {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->getColorStyleItemTextSize()I
 
     move-result v8
@@ -3979,7 +3979,7 @@
 
     invoke-virtual {v3, v8, v9}, Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;->updateItemStyle(ILandroid/graphics/Rect;)Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
-    .line 933
+    .line 930
     :cond_1b7
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -3993,17 +3993,17 @@
 
     if-nez v3, :cond_1cd
 
-    .line 934
+    .line 931
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v3, v4, v4}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerRootUI(ZZ)V
 
-    .line 935
+    .line 932
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v3, v4}, Lcom/transsion/camera/app/common/IAppUI;->setModePickerSink(Z)V
 
-    .line 937
+    .line 934
     :cond_1cd
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
@@ -4016,10 +4016,10 @@
     :cond_1d6
     if-ne v3, v5, :cond_240
 
-    .line 939
+    .line 936
     invoke-virtual {v1, v4, v4, v4, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 940
+    .line 937
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_width_expand_90:I
@@ -4030,7 +4030,7 @@
 
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 941
+    .line 938
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_width_expand_0:I
@@ -4041,10 +4041,10 @@
 
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 942
+    .line 939
     iput v11, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 943
+    .line 940
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_bottom_lr_hover_margin_left:I
@@ -4055,7 +4055,7 @@
 
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 944
+    .line 941
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_bottom_lr_hover_margin_bottom:I
@@ -4066,12 +4066,12 @@
 
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 945
+    .line 942
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     if-eqz v3, :cond_222
 
-    .line 946
+    .line 943
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_switcher_height_expand:I
@@ -4080,14 +4080,14 @@
 
     move-result v3
 
-    .line 947
+    .line 944
     iget-object v8, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     invoke-virtual {v8, v3, v3}, Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;->updateItemStyle(II)Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     move-result-object v3
 
-    .line 948
+    .line 945
     invoke-direct {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->getColorStyleItemTextSize()I
 
     move-result v8
@@ -4098,7 +4098,7 @@
 
     invoke-virtual {v3, v8, v9}, Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;->updateItemStyle(ILandroid/graphics/Rect;)Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
-    .line 950
+    .line 947
     :cond_222
     iget-object v3, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mSettingOptionControl:Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;
 
@@ -4112,17 +4112,17 @@
 
     if-nez v3, :cond_238
 
-    .line 951
+    .line 948
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v3, v4, v4}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerRootUI(ZZ)V
 
-    .line 952
+    .line 949
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v3, v4}, Lcom/transsion/camera/app/common/IAppUI;->setModePickerSink(Z)V
 
-    .line 954
+    .line 951
     :cond_238
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
@@ -4137,13 +4137,13 @@
 
     if-ne v3, v8, :cond_297
 
-    .line 956
+    .line 953
     invoke-virtual {v1, v4, v4, v4, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 957
+    .line 954
     iput v15, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 958
+    .line 955
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->flip_color_style_switcher_height:I
@@ -4154,7 +4154,7 @@
 
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 959
+    .line 956
     iget v3, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
     if-eq v3, v10, :cond_267
@@ -4163,10 +4163,10 @@
 
     if-eq v3, v13, :cond_267
 
-    .line 968
+    .line 965
     iput v9, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 969
+    .line 966
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->flip_color_style_bottom_margin:I
@@ -4179,11 +4179,11 @@
 
     goto :goto_273
 
-    .line 963
+    .line 960
     :cond_267
     iput v11, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 964
+    .line 961
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->flip_color_style_top_margin:I
@@ -4194,13 +4194,13 @@
 
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 972
+    .line 969
     :goto_273
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     if-eqz v3, :cond_290
 
-    .line 973
+    .line 970
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/feature/colorstyle/R$dimen;->flip_color_style_switcher_height:I
@@ -4209,14 +4209,14 @@
 
     move-result v3
 
-    .line 974
+    .line 971
     iget-object v8, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     invoke-virtual {v8, v3, v3}, Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;->updateItemStyle(II)Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     move-result-object v3
 
-    .line 975
+    .line 972
     invoke-direct {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->getColorStyleItemTextSize()I
 
     move-result v8
@@ -4227,7 +4227,7 @@
 
     invoke-virtual {v3, v8, v9}, Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;->updateItemStyle(ILandroid/graphics/Rect;)Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
-    .line 977
+    .line 974
     :cond_290
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
@@ -4239,7 +4239,7 @@
     :goto_297
     move v3, v4
 
-    goto/16 :goto_377
+    goto/16 :goto_36b
 
     .line 875
     :cond_29a
@@ -4373,28 +4373,13 @@
     iput v8, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     .line 893
-    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_310
-
-    .line 894
-    iget v9, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
-
-    add-int/lit8 v9, v9, 0x24
-
-    iput v9, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
-
-    .line 896
-    :cond_310
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v9
 
-    if-eqz v9, :cond_325
+    if-eqz v9, :cond_319
 
-    .line 897
+    .line 894
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v9, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_switcher_left_margin:I
@@ -4407,60 +4392,60 @@
 
     const/16 v3, 0x50
 
-    .line 898
+    .line 895
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    goto :goto_327
+    goto :goto_31b
+
+    .line 897
+    :cond_319
+    iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     .line 900
-    :cond_325
-    iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
-    .line 903
-    :goto_327
+    :goto_31b
     iget-boolean v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleUIShown:Z
 
-    if-eqz v3, :cond_343
+    if-eqz v3, :cond_337
 
-    .line 904
+    .line 901
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRootView:Landroid/view/View;
 
     const/4 v9, 0x0
 
     invoke-virtual {v3, v9}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 905
+    .line 902
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRootView:Landroid/view/View;
 
     invoke-virtual {v3, v9}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 906
+    .line 903
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz v3, :cond_343
+    if-eqz v3, :cond_337
 
     const/4 v9, 0x1
 
-    .line 907
+    .line 904
     invoke-interface {v3, v4, v9}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerRootUI(ZZ)V
 
-    .line 908
+    .line 905
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v3, v9}, Lcom/transsion/camera/app/common/IAppUI;->setModePickerSink(Z)V
 
-    .line 911
-    :cond_343
+    .line 908
+    :cond_337
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
-    if-eqz v3, :cond_36f
+    if-eqz v3, :cond_363
 
-    .line 912
+    .line 909
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v3
 
-    if-eqz v3, :cond_356
+    if-eqz v3, :cond_34a
 
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
@@ -4470,10 +4455,10 @@
 
     move-result v3
 
-    goto :goto_35e
+    goto :goto_352
 
-    .line 913
-    :cond_356
+    .line 910
+    :cond_34a
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mResources:Landroid/content/res/Resources;
 
     sget v9, Lcom/transsion/camera/feature/colorstyle/R$dimen;->color_style_switcher_height_old:I
@@ -4482,15 +4467,15 @@
 
     move-result v3
 
-    .line 914
-    :goto_35e
+    .line 911
+    :goto_352
     iget-object v9, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerAdapter:Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     invoke-virtual {v9, v3, v3}, Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;->updateItemStyle(II)Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
     move-result-object v3
 
-    .line 915
+    .line 912
     invoke-direct {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->getColorStyleItemTextSize()I
 
     move-result v9
@@ -4501,8 +4486,8 @@
 
     invoke-virtual {v3, v9, v10}, Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;->updateItemStyle(ILandroid/graphics/Rect;)Lcom/transsion/camera/feature/colorstyle/setting/widget/ColorStyleItemAdapter;
 
-    .line 917
-    :cond_36f
+    .line 914
+    :cond_363
     iget-object v3, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     iget-object v9, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mItemDecoration:Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;
@@ -4511,8 +4496,8 @@
 
     move v3, v8
 
-    .line 980
-    :goto_377
+    .line 977
+    :goto_36b
     iget-object v8, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRootView:Landroid/view/View;
 
     invoke-virtual {v8}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -4523,11 +4508,11 @@
 
     move-result v8
 
-    if-eqz v8, :cond_3ab
+    if-eqz v8, :cond_39f
 
-    if-eqz p1, :cond_3ab
+    if-eqz p1, :cond_39f
 
-    .line 981
+    .line 978
     filled-new-array {v2, v3}, [I
 
     move-result-object v2
@@ -4540,17 +4525,17 @@
 
     const-wide/16 v7, 0x190
 
-    .line 982
+    .line 979
     invoke-virtual {v2, v7, v8}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 983
+    .line 980
     iget-object v2, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v3, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 984
+    .line 981
     iget-object v2, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v3, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$$ExternalSyntheticLambda2;
@@ -4559,30 +4544,30 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 988
+    .line 985
     iget-object v1, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
-    goto :goto_3b6
+    goto :goto_3aa
 
-    .line 990
-    :cond_3ab
+    .line 987
+    :cond_39f
     iget v2, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
-    if-ne v2, v7, :cond_3b1
+    if-ne v2, v7, :cond_3a5
 
-    .line 991
+    .line 988
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 993
-    :cond_3b1
+    .line 990
+    :cond_3a5
     iget-object v2, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRootView:Landroid/view/View;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 996
-    :goto_3b6
+    .line 993
+    :goto_3aa
     invoke-direct {v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->getOrientationItem()I
 
     move-result v1
@@ -4591,67 +4576,37 @@
 
     invoke-direct {v0, v1, v9}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->updateOrientation(IZ)V
 
-    .line 998
+    .line 995
     iget v1, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
-    if-ne v1, v9, :cond_3f6
+    if-ne v1, v9, :cond_3ea
 
-    .line 999
+    .line 996
     iget v1, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
-    if-eqz v1, :cond_3e0
+    if-eqz v1, :cond_3d4
 
-    if-ne v1, v14, :cond_3c9
+    if-ne v1, v14, :cond_3bd
 
-    goto :goto_3e0
-
-    .line 1003
-    :cond_3c9
-    iget-object v2, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
-
-    iget-object v3, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
-
-    if-ne v1, v13, :cond_3d1
-
-    move v1, v9
-
-    goto :goto_3d2
-
-    :cond_3d1
-    move v1, v4
-
-    :goto_3d2
-    invoke-direct {v0, v3, v9, v4, v1}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->createLayoutManager(Landroid/content/Context;IIZ)Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
-
-    move-result-object v1
-
-    invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
-
-    .line 1004
-    iget-object v1, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
-
-    invoke-static {v1, v9}, Lcom/transsion/effectengine/bounceeffect/OverScrollDecorHelper;->setUpOverScroll(Landroidx/recyclerview/widget/RecyclerView;I)Lcom/transsion/effectengine/bounceeffect/IOverScrollDecor;
-
-    goto/16 :goto_448
+    goto :goto_3d4
 
     .line 1000
-    :cond_3e0
-    :goto_3e0
+    :cond_3bd
     iget-object v2, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     iget-object v3, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
-    if-ne v1, v14, :cond_3e8
+    if-ne v1, v13, :cond_3c5
 
     move v1, v9
 
-    goto :goto_3e9
+    goto :goto_3c6
 
-    :cond_3e8
+    :cond_3c5
     move v1, v4
 
-    :goto_3e9
-    invoke-direct {v0, v3, v9, v9, v1}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->createLayoutManager(Landroid/content/Context;IIZ)Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
+    :goto_3c6
+    invoke-direct {v0, v3, v9, v4, v1}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->createLayoutManager(Landroid/content/Context;IIZ)Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     move-result-object v1
 
@@ -4660,71 +4615,101 @@
     .line 1001
     iget-object v1, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
+    invoke-static {v1, v9}, Lcom/transsion/effectengine/bounceeffect/OverScrollDecorHelper;->setUpOverScroll(Landroidx/recyclerview/widget/RecyclerView;I)Lcom/transsion/effectengine/bounceeffect/IOverScrollDecor;
+
+    goto/16 :goto_43c
+
+    .line 997
+    :cond_3d4
+    :goto_3d4
+    iget-object v2, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
+
+    iget-object v3, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
+
+    if-ne v1, v14, :cond_3dc
+
+    move v1, v9
+
+    goto :goto_3dd
+
+    :cond_3dc
+    move v1, v4
+
+    :goto_3dd
+    invoke-direct {v0, v3, v9, v9, v1}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->createLayoutManager(Landroid/content/Context;IIZ)Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+
+    .line 998
+    iget-object v1, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
+
     invoke-static {v1, v4}, Lcom/transsion/effectengine/bounceeffect/OverScrollDecorHelper;->setUpOverScroll(Landroidx/recyclerview/widget/RecyclerView;I)Lcom/transsion/effectengine/bounceeffect/IOverScrollDecor;
 
-    goto :goto_448
+    goto :goto_43c
 
-    :cond_3f6
-    if-eq v1, v6, :cond_3fa
+    :cond_3ea
+    if-eq v1, v6, :cond_3ee
 
-    if-ne v1, v5, :cond_3fc
+    if-ne v1, v5, :cond_3f0
 
-    :cond_3fa
+    :cond_3ee
     const/4 v3, 0x1
 
-    goto :goto_431
+    goto :goto_425
 
-    :cond_3fc
+    :cond_3f0
     const/4 v8, 0x7
 
-    if-ne v1, v8, :cond_419
+    if-ne v1, v8, :cond_40d
 
-    .line 1011
+    .line 1008
     iget-object v1, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     iget-object v2, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     iget v3, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
-    if-eqz v3, :cond_40a
+    if-eqz v3, :cond_3fe
 
     const/4 v9, 0x1
 
-    :goto_408
+    :goto_3fc
     const/4 v3, 0x1
 
-    goto :goto_40c
+    goto :goto_400
 
-    :cond_40a
+    :cond_3fe
     move v9, v4
 
-    goto :goto_408
+    goto :goto_3fc
 
-    :goto_40c
+    :goto_400
     invoke-direct {v0, v2, v3, v4, v9}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->createLayoutManager(Landroid/content/Context;IIZ)Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 1012
+    .line 1009
     iget-object v1, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     invoke-static {v1, v3}, Lcom/transsion/effectengine/bounceeffect/OverScrollDecorHelper;->setUpOverScroll(Landroidx/recyclerview/widget/RecyclerView;I)Lcom/transsion/effectengine/bounceeffect/IOverScrollDecor;
 
-    goto :goto_448
+    goto :goto_43c
 
-    :cond_419
+    :cond_40d
     const/4 v3, 0x1
 
-    .line 1014
+    .line 1011
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v1
 
-    if-nez v1, :cond_448
+    if-nez v1, :cond_43c
 
-    .line 1015
+    .line 1012
     iget-object v1, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     iget-object v2, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
@@ -4735,45 +4720,45 @@
 
     invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 1016
+    .line 1013
     iget-object v1, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     invoke-static {v1, v3}, Lcom/transsion/effectengine/bounceeffect/OverScrollDecorHelper;->setUpOverScroll(Landroidx/recyclerview/widget/RecyclerView;I)Lcom/transsion/effectengine/bounceeffect/IOverScrollDecor;
 
-    goto :goto_448
+    goto :goto_43c
 
-    .line 1008
-    :goto_431
+    .line 1005
+    :goto_425
     iget-object v1, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     iget-object v2, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     iget v5, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
-    if-eq v5, v13, :cond_43b
+    if-eq v5, v13, :cond_42f
 
     move v9, v3
 
-    goto :goto_43c
+    goto :goto_430
 
-    :cond_43b
+    :cond_42f
     move v9, v4
 
-    :goto_43c
+    :goto_430
     invoke-direct {v0, v2, v3, v3, v9}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->createLayoutManager(Landroid/content/Context;IIZ)Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 1009
+    .line 1006
     iget-object v1, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     invoke-static {v1, v4}, Lcom/transsion/effectengine/bounceeffect/OverScrollDecorHelper;->setUpOverScroll(Landroidx/recyclerview/widget/RecyclerView;I)Lcom/transsion/effectengine/bounceeffect/IOverScrollDecor;
 
-    .line 1020
-    :cond_448
-    :goto_448
+    .line 1017
+    :cond_43c
+    :goto_43c
     iget-object v1, v0, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;->mColorStyleRecyclerView:Lcom/transsion/camera/app/ui/widget/GridRecyclerView;
 
     invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
@@ -4788,12 +4773,12 @@
 
     invoke-direct {v2, v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$$ExternalSyntheticLambda3;-><init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
 
-    .line 1021
+    .line 1018
     invoke-virtual {v1, v2}, Ljava/util/Optional;->filter(Ljava/util/function/Predicate;)Ljava/util/Optional;
 
     move-result-object v1
 
-    .line 1022
+    .line 1019
     new-instance v2, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$$ExternalSyntheticLambda4;
 
     const-class v3, Landroidx/recyclerview/widget/GridLayoutManager;
@@ -4808,7 +4793,7 @@
 
     invoke-direct {v2, v0}, Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI$$ExternalSyntheticLambda5;-><init>(Lcom/transsion/camera/feature/colorstyle/setting/ui/ColorStyleSettingUI;)V
 
-    .line 1023
+    .line 1020
     invoke-virtual {v1, v2}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
     return-void

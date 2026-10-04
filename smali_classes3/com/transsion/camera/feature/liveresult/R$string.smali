@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static live_result_title:I = 0x7f13036f
+.field public static live_result_title:I = 0x7f13036a
 
 
 # direct methods

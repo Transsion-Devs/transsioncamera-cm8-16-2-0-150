@@ -48,21 +48,21 @@
 
 .field public static ai_art_mode_title:I = 0x7f13003c
 
-.field public static ai_art_reach_limit:I = 0x7f130089
+.field public static ai_art_reach_limit:I = 0x7f13008a
 
-.field public static ai_art_recognize_image:I = 0x7f13008a
+.field public static ai_art_recognize_image:I = 0x7f13008b
 
-.field public static ai_art_recognize_people:I = 0x7f13008b
+.field public static ai_art_recognize_people:I = 0x7f13008c
 
-.field public static ai_art_replace_background:I = 0x7f13008c
+.field public static ai_art_replace_background:I = 0x7f13008d
 
-.field public static ai_art_title_part:I = 0x7f13008d
+.field public static ai_art_title_part:I = 0x7f13008e
 
-.field public static ai_art_title_style:I = 0x7f13008e
+.field public static ai_art_title_style:I = 0x7f13008f
 
-.field public static ai_art_title_travel:I = 0x7f13008f
+.field public static ai_art_title_travel:I = 0x7f130090
 
-.field public static i_know:I = 0x7f130330
+.field public static i_know:I = 0x7f13032b
 
 
 # direct methods

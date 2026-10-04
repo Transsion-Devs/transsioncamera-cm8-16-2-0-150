@@ -179,7 +179,7 @@
 .method private getCustomValues()[I
     .registers 5
 
-    .line 485
+    .line 480
     sget-object v0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->sFeatureKeys:[Ljava/lang/String;
 
     array-length v0, v0
@@ -188,7 +188,7 @@
 
     const/4 v1, 0x0
 
-    .line 486
+    .line 481
     :goto_6
     sget-object v2, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->sFeatureKeys:[Ljava/lang/String;
 
@@ -196,7 +196,7 @@
 
     if-ge v1, v3, :cond_16
 
-    .line 487
+    .line 482
     aget-object v2, v2, v1
 
     invoke-direct {p0, v2}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->getValueByKey(Ljava/lang/String;)I
@@ -216,47 +216,47 @@
 .method private getFaceBeautyValueByDefault(Ljava/lang/String;I)I
     .registers 6
 
-    .line 365
+    .line 360
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 366
+    .line 361
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getInitGender()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 368
+    .line 363
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->isVideoMode()Z
 
     move-result v2
 
     if-eqz v2, :cond_17
 
-    .line 370
+    .line 365
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 369
+    .line 364
     invoke-static {p1, p0, v0}, Lcom/transsion/camera/app/common/portraitdefault/DefaultParam;->getVideoFaceBeautyDefaultValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     goto :goto_1f
 
-    .line 373
+    .line 368
     :cond_17
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 372
+    .line 367
     invoke-static {p0, p1, v2, v0, v1}, Lcom/transsion/camera/app/common/portraitdefault/DefaultParam;->getFaceBeautyDefaultValue(Lcom/transsion/camera/app/common/setting/SettingBase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 377
+    .line 372
     :goto_1f
     :try_start_1f
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -270,7 +270,7 @@
     :catch_24
     move-exception p0
 
-    .line 379
+    .line 374
     sget-object p1, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -295,17 +295,17 @@
 .method private getSkinDefaultValue(I)I
     .registers 5
 
-    .line 358
+    .line 353
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 359
+    .line 354
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getInitGender()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 360
+    .line 355
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->isVideoMode()Z
 
     move-result v2
@@ -319,7 +319,7 @@
     :cond_12
     const-string v2, "portrait"
 
-    .line 361
+    .line 356
     :goto_14
     invoke-static {p0, v2, p1, v1, v0}, Lcom/transsion/camera/app/common/portraitdefault/DefaultParam;->getFaceBeautySkinDefaultValue(Lcom/transsion/camera/app/common/setting/SettingBase;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)I
 
@@ -331,12 +331,12 @@
 .method private getValueByKey(Ljava/lang/String;)I
     .registers 9
 
-    .line 493
+    .line 488
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object v0
 
-    .line 494
+    .line 489
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mDefaultCacheMap:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -351,7 +351,7 @@
 
     goto :goto_14
 
-    .line 495
+    .line 490
     :cond_10
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -362,7 +362,7 @@
 
     move-result-object v2
 
-    .line 496
+    .line 491
     sget-object v3, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -387,12 +387,12 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 497
+    .line 492
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getModeKey()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 498
+    .line 493
     invoke-virtual {v2}, Ljava/lang/Integer;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -401,7 +401,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 499
+    .line 494
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCameraFacing()Ljava/lang/String;
 
     move-result-object p0
@@ -422,12 +422,12 @@
 
     move-result-object p0
 
-    .line 498
+    .line 493
     invoke-virtual {v0, p1, v5, p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 501
+    .line 496
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -456,7 +456,7 @@
 
     invoke-static {v3, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 504
+    .line 499
     :try_start_82
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -466,7 +466,7 @@
 
     return p0
 
-    .line 506
+    .line 501
     :catch_87
     sget-object p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -480,7 +480,7 @@
 .method private synthetic lambda$initDefaultMap$0(Ljava/lang/String;)V
     .registers 5
 
-    .line 348
+    .line 343
     sget-object v0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->sDefaultDefaultMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -489,7 +489,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 349
+    .line 344
     const-string/jumbo v1, "whiten"
 
     invoke-static {v1, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -500,7 +500,7 @@
 
     if-eqz v1, :cond_27
 
-    .line 350
+    .line 345
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mDefaultCacheMap:Ljava/util/Map;
 
     if-nez v0, :cond_17
@@ -525,7 +525,7 @@
 
     return-void
 
-    .line 352
+    .line 347
     :cond_27
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mDefaultCacheMap:Ljava/util/Map;
 
@@ -555,7 +555,7 @@
 .method private makeUpOptionOn()Z
     .registers 2
 
-    .line 385
+    .line 380
     const-string v0, "key_video_makeup"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
@@ -574,21 +574,21 @@
 .method private videoMakeUpContrast()Z
     .registers 2
 
-    .line 389
+    .line 384
     const-string v0, "key_video_makeup_style"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 390
+    .line 385
     invoke-static {p0}, Lcom/transsion/camera/app/common/setting/makeup/MakeUpItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/MakeUpItemInfo;
 
     move-result-object p0
 
     if-nez p0, :cond_16
 
-    .line 392
+    .line 387
     sget-object p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v0, "videoMakeUpContrast videoMakeupStyleInfo is null"
@@ -599,7 +599,7 @@
 
     return p0
 
-    .line 395
+    .line 390
     :cond_16
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/setting/makeup/MakeUpItemInfo;->isContrast:Z
 
@@ -617,17 +617,17 @@
 .method public configParameters(Lcom/transsion/camera/adapter/CameraParameters;)I
     .registers 11
 
-    .line 400
+    .line 395
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->videoMakeupSupport()Z
 
     move-result v0
 
-    .line 401
+    .line 396
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->videoMakeUpCombineVideoFaceBeauty()Z
 
     move-result v1
 
-    .line 402
+    .line 397
     sget-object v2, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -652,7 +652,7 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 404
+    .line 399
     const-string v3, "off"
 
     const-string v4, "aiv2"
@@ -663,17 +663,17 @@
 
     if-eqz v1, :cond_5f
 
-    .line 405
+    .line 400
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->makeUpOptionOn()Z
 
     move-result v0
 
-    .line 406
+    .line 401
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->videoMakeUpContrast()Z
 
     move-result p0
 
-    .line 407
+    .line 402
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -700,37 +700,37 @@
 
     if-nez p0, :cond_5b
 
-    .line 410
+    .line 405
     invoke-virtual {p1, v4}, Lcom/transsion/camera/adapter/CameraParameters;->setMultiFaceBeautyMode(Ljava/lang/String;)V
 
     goto :goto_5e
 
-    .line 412
+    .line 407
     :cond_5b
     invoke-virtual {p1, v3}, Lcom/transsion/camera/adapter/CameraParameters;->setMultiFaceBeautyMode(Ljava/lang/String;)V
 
     :goto_5e
     return v5
 
-    .line 417
+    .line 412
     :cond_5f
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 418
+    .line 413
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->isModeSupport()Z
 
     move-result v1
 
-    .line 419
+    .line 414
     const-string v6, "key_video_facebeauty"
 
     invoke-virtual {p0, v6}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 420
+    .line 415
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -761,7 +761,7 @@
 
     if-eqz v1, :cond_182
 
-    .line 424
+    .line 419
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -770,7 +770,7 @@
 
     move-object v0, v4
 
-    .line 428
+    .line 423
     :cond_9a
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->isVideoMode()Z
 
@@ -778,7 +778,7 @@
 
     if-eqz v1, :cond_aa
 
-    .line 429
+    .line 424
     const-string/jumbo v1, "video_facebeauty_off"
 
     invoke-static {v6, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -789,7 +789,7 @@
 
     move-object v0, v3
 
-    .line 433
+    .line 428
     :cond_aa
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -799,7 +799,7 @@
 
     move-result-object v1
 
-    .line 434
+    .line 429
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->isVideoMode()Z
 
     move-result v2
@@ -816,7 +816,7 @@
 
     return v5
 
-    .line 437
+    .line 432
     :cond_c1
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -826,7 +826,7 @@
 
     move-result-object v1
 
-    .line 438
+    .line 433
     invoke-static {v6, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -841,7 +841,7 @@
 
     return v5
 
-    .line 441
+    .line 436
     :cond_d6
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -920,7 +920,7 @@
 
     goto :goto_163
 
-    .line 449
+    .line 444
     :pswitch_10e
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mSupportModes:Ljava/util/List;
 
@@ -930,10 +930,10 @@
 
     if-eqz v1, :cond_163
 
-    .line 450
+    .line 445
     invoke-virtual {p1, v4}, Lcom/transsion/camera/adapter/CameraParameters;->setMultiFaceBeautyMode(Ljava/lang/String;)V
 
-    .line 451
+    .line 446
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v1
@@ -946,7 +946,7 @@
 
     goto :goto_163
 
-    .line 443
+    .line 438
     :pswitch_125
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mSupportModes:Ljava/util/List;
 
@@ -956,10 +956,10 @@
 
     if-eqz v1, :cond_163
 
-    .line 444
+    .line 439
     invoke-virtual {p1, v3}, Lcom/transsion/camera/adapter/CameraParameters;->setMultiFaceBeautyMode(Ljava/lang/String;)V
 
-    .line 445
+    .line 440
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v1
@@ -974,13 +974,13 @@
 
     goto :goto_163
 
-    .line 456
+    .line 451
     :pswitch_13e
     invoke-static {p0}, Lcom/transsion/camera/app/common/facebeauty/util/FaceBeautyCustomConfigUtils;->getCustomValues(Lcom/transsion/camera/app/common/setting/SettingBase;)[I
 
     move-result-object v1
 
-    .line 457
+    .line 452
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mSupportModes:Ljava/util/List;
 
     invoke-interface {v2, v6}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -989,14 +989,14 @@
 
     if-eqz v2, :cond_14d
 
-    .line 458
+    .line 453
     invoke-virtual {p1, v6}, Lcom/transsion/camera/adapter/CameraParameters;->setMultiFaceBeautyMode(Ljava/lang/String;)V
 
-    .line 460
+    .line 455
     :cond_14d
     invoke-virtual {p1, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setFaceBeautyFeaturesLevel([I)V
 
-    .line 461
+    .line 456
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v2
@@ -1005,7 +1005,7 @@
 
     goto :goto_163
 
-    .line 464
+    .line 459
     :pswitch_158
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mSupportModes:Ljava/util/List;
 
@@ -1015,10 +1015,10 @@
 
     if-eqz v1, :cond_163
 
-    .line 465
+    .line 460
     invoke-virtual {p1, v2}, Lcom/transsion/camera/adapter/CameraParameters;->setMultiFaceBeautyMode(Ljava/lang/String;)V
 
-    .line 471
+    .line 466
     :cond_163
     :goto_163
     const-string v1, "com.transsion.camera.feature.mode.pmaster.PMasterModeEntry"
@@ -1033,7 +1033,7 @@
 
     if-eqz p0, :cond_178
 
-    .line 472
+    .line 467
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
     move-result-object p0
@@ -1050,7 +1050,7 @@
     :goto_179
     iput-boolean v7, p1, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyPreviewInApp:Z
 
-    .line 473
+    .line 468
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -1100,7 +1100,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 193
+    .line 191
     const-string p0, "key_mu_face_beauty"
 
     return-object p0
@@ -1126,7 +1126,7 @@
 .method public getSettingType()Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
     .registers 1
 
-    .line 188
+    .line 186
     sget-object p0, Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;->PHOTO_AND_VIDEO:Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
 
     return-object p0
@@ -1156,45 +1156,58 @@
     .line 170
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mIsPMasterMode:Z
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_2d
 
-    if-eqz v0, :cond_18
+    if-nez v0, :cond_2a
 
-    .line 172
-    const-string v0, "aiv2"
+    .line 171
+    invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
-    goto :goto_26
+    move-result-object v0
 
-    :catchall_16
-    move-exception v0
+    iget-boolean v0, v0, Lcom/transsion/camera/app/common/CommonConfigUtil;->mFaceBeautyV3:Z
 
-    goto :goto_36
+    if-eqz v0, :cond_1c
+
+    goto :goto_2a
 
     .line 174
-    :cond_18
+    :cond_1c
     iget v0, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mPlatformConfigType:I
 
     const/16 v1, 0x1e
 
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_27
 
     .line 175
     const-string v0, "aiv2"
 
-    goto :goto_26
+    goto :goto_2f
 
-    .line 177
-    :cond_21
+    :catchall_25
+    move-exception v0
+
+    goto :goto_3f
+
+    .line 176
+    :cond_27
     const-string v0, "off"
 
-    goto :goto_26
+    goto :goto_2f
 
-    .line 181
-    :cond_24
+    .line 172
+    :cond_2a
+    :goto_2a
     const-string v0, "aiv2"
 
-    .line 183
-    :goto_26
+    goto :goto_2f
+
+    .line 179
+    :cond_2d
+    const-string v0, "aiv2"
+
+    .line 181
+    :goto_2f
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->getKey()Ljava/lang/String;
@@ -1208,18 +1221,18 @@
     invoke-virtual {v1, v2, v0, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
-    :try_end_34
-    .catchall {:try_start_1 .. :try_end_34} :catchall_16
+    :try_end_3d
+    .catchall {:try_start_1 .. :try_end_3d} :catchall_25
 
     monitor-exit p0
 
     return-object v0
 
-    :goto_36
-    :try_start_36
+    :goto_3f
+    :try_start_3f
     monitor-exit p0
-    :try_end_37
-    .catchall {:try_start_36 .. :try_end_37} :catchall_16
+    :try_end_40
+    .catchall {:try_start_3f .. :try_end_40} :catchall_25
 
     throw v0
 .end method
@@ -1227,7 +1240,7 @@
 .method public getStoreScope()Ljava/lang/String;
     .registers 4
 
-    .line 234
+    .line 232
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1270,7 +1283,7 @@
         }
     .end annotation
 
-    .line 239
+    .line 237
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p0
@@ -1323,7 +1336,7 @@
 .method public initDefaultMap()V
     .registers 3
 
-    .line 347
+    .line 342
     sget-object v0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->sFeatureKeys:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->stream([Ljava/lang/Object;)Ljava/util/stream/Stream;
@@ -1518,7 +1531,7 @@
 .method public isModeSupport()Z
     .registers 1
 
-    .line 259
+    .line 257
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mIsModeSupport:Z
 
     return p0
@@ -1529,21 +1542,21 @@
 
     monitor-enter p0
 
-    .line 252
+    .line 250
     :try_start_1
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->onModeClosed(Ljava/lang/String;)V
 
     const/4 p1, 0x0
 
-    .line 253
+    .line 251
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mIsModeSupport:Z
 
-    .line 254
+    .line 252
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mVideoMakeupSupport:Z
     :try_end_9
     .catchall {:try_start_1 .. :try_end_9} :catchall_b
 
-    .line 255
+    .line 253
     monitor-exit p0
 
     return-void
@@ -1562,10 +1575,10 @@
 .method public onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
     .registers 4
 
-    .line 244
+    .line 242
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
 
-    .line 245
+    .line 243
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->getKey()Ljava/lang/String;
 
     move-result-object p2
@@ -1576,7 +1589,7 @@
 
     iput-boolean p2, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mIsModeSupport:Z
 
-    .line 246
+    .line 244
     const-string p2, "key_video_makeup"
 
     invoke-static {p3, p2}, Lcom/transsion/camera/utils/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -1585,7 +1598,7 @@
 
     iput-boolean p2, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mVideoMakeupSupport:Z
 
-    .line 247
+    .line 245
     const-string p2, "com.transsion.camera.feature.mode.pmaster.PMasterModeEntry"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1600,7 +1613,7 @@
 .method public onValueChanged(Ljava/lang/String;)V
     .registers 7
 
-    .line 217
+    .line 215
     sget-object v0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1629,7 +1642,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 218
+    .line 216
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -1648,11 +1661,11 @@
 
     if-eqz v0, :cond_61
 
-    .line 219
+    .line 217
     :cond_34
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 220
+    .line 218
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->getKey()Ljava/lang/String;
@@ -1661,7 +1674,7 @@
 
     invoke-virtual {v0, v2, p1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 221
+    .line 219
     const-string v0, "contrast_on"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1678,7 +1691,7 @@
 
     if-nez v0, :cond_5e
 
-    .line 222
+    .line 220
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->getKey()Ljava/lang/String;
@@ -1693,11 +1706,11 @@
 
     invoke-virtual {v0, v2, p1, v3, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 224
+    .line 222
     :cond_5e
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->sendSettingChangeRequest()V
 
-    .line 226
+    .line 224
     :cond_61
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -1705,7 +1718,7 @@
 
     if-eqz p1, :cond_74
 
-    .line 227
+    .line 225
     invoke-static {}, Lcom/transsion/camera/app_info/AppInfo;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -1716,7 +1729,7 @@
 
     if-eqz p1, :cond_74
 
-    .line 228
+    .line 226
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->initDefaultMap()V
 
     :cond_74
@@ -1745,7 +1758,7 @@
         }
     .end annotation
 
-    .line 280
+    .line 278
     sget-object v0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1770,12 +1783,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 283
+    .line 281
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 284
+    .line 282
     const-string v1, "key_video_portrait"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1786,7 +1799,7 @@
 
     const-string v1, "key_anti_video"
 
-    .line 285
+    .line 283
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -1795,7 +1808,7 @@
 
     const-string v1, "key_video_quality"
 
-    .line 286
+    .line 284
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -1804,7 +1817,7 @@
 
     const-string v1, "key_360_video_hdr"
 
-    .line 287
+    .line 285
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -1813,7 +1826,7 @@
 
     const-string v1, "key_dol_video_hdr"
 
-    .line 288
+    .line 286
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -1822,7 +1835,7 @@
 
     const-string v1, "key_transsion_filter"
 
-    .line 289
+    .line 287
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -1831,7 +1844,7 @@
 
     const-string v1, "key_video_facebeauty"
 
-    .line 290
+    .line 288
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -1840,7 +1853,7 @@
 
     const-string v1, "key_video_super_night"
 
-    .line 291
+    .line 289
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -1849,7 +1862,7 @@
 
     const-string v1, "key_video_enhance"
 
-    .line 292
+    .line 290
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -1858,14 +1871,14 @@
 
     const-string v1, "key_video_preisp"
 
-    .line 293
+    .line 291
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_96
 
-    .line 294
+    .line 292
     :cond_72
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1873,7 +1886,7 @@
 
     if-nez v1, :cond_96
 
-    .line 295
+    .line 293
     invoke-static {p2, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -1886,10 +1899,10 @@
 
     if-eqz p1, :cond_95
 
-    .line 296
+    .line 294
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 297
+    .line 295
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->getKey()Ljava/lang/String;
@@ -1907,7 +1920,7 @@
     :cond_95
     return-void
 
-    .line 300
+    .line 298
     :cond_96
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->overrideValues(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
 
@@ -1917,10 +1930,10 @@
 .method public restoreToSupportedPlatformValue()V
     .registers 5
 
-    .line 272
+    .line 270
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->restoreToSupportedPlatformValue()V
 
-    .line 273
+    .line 271
     sget-object v0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1961,14 +1974,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 274
+    .line 272
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
     move-result-object v0
 
     if-eqz v0, :cond_4d
 
-    .line 275
+    .line 273
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
     move-result-object v0
@@ -1996,7 +2009,7 @@
 .method public sendSettingChangeRequest()V
     .registers 2
 
-    .line 306
+    .line 304
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->getKey()Ljava/lang/String;
@@ -2009,14 +2022,14 @@
 .end method
 
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
-    .registers 6
+    .registers 7
 
-    .line 311
+    .line 309
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->isModeSupport()Z
 
     move-result v0
 
-    .line 312
+    .line 310
     sget-object v1, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2039,94 +2052,99 @@
 
     return-void
 
-    .line 317
+    .line 315
     :cond_1d
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->initDefaultMap()V
 
-    .line 318
+    .line 316
     invoke-interface {p1}, Lcom/transsion/camera/adapter/ICameraCapabilities;->getSupportedFaceBeautyModes()Ljava/util/List;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mSupportModes:Ljava/util/List;
 
-    .line 319
+    .line 317
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 320
+    .line 318
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraInfoUtil;->getFacing(Ljava/lang/String;)I
 
     move-result p1
 
-    .line 321
+    .line 319
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraInfoUtil;->isCameraFacingFront(I)Z
 
     move-result p1
 
-    .line 323
-    iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mIsPMasterMode:Z
+    .line 321
+    iget-object v0, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mSupportModes:Ljava/util/List;
 
     const-string v2, "aiv2"
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_40
 
-    if-eqz p1, :cond_43
+    .line 322
+    invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    .line 325
-    iget-object p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mSupportModes:Ljava/util/List;
+    move-result v0
 
-    invoke-interface {p1, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    if-eqz v0, :cond_40
 
-    move-result p1
+    const/4 v0, 0x1
 
-    if-eqz p1, :cond_5e
+    goto :goto_41
 
-    goto :goto_5f
+    :cond_40
+    const/4 v0, 0x0
+
+    .line 323
+    :goto_41
+    iget-boolean v3, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mIsPMasterMode:Z
+
+    const-string v4, "off"
+
+    if-eqz v3, :cond_5d
+
+    if-nez p1, :cond_51
+
+    .line 324
+    invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
+
+    move-result-object p1
+
+    iget-boolean p1, p1, Lcom/transsion/camera/app/common/CommonConfigUtil;->mFaceBeautyV3:Z
+
+    if-eqz p1, :cond_54
+
+    :cond_51
+    if-eqz v0, :cond_54
+
+    goto :goto_61
 
     .line 329
-    :cond_43
+    :cond_54
     iget p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mPlatformConfigType:I
 
-    const/16 v0, 0x1e
+    const/16 v3, 0x1e
 
-    if-ne p1, v0, :cond_52
+    if-ne p1, v3, :cond_60
 
-    .line 330
-    iget-object p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mSupportModes:Ljava/util/List;
+    if-eqz v0, :cond_60
 
-    invoke-interface {p1, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    goto :goto_61
 
-    move-result p1
+    :cond_5d
+    if-eqz v0, :cond_60
 
-    if-eqz p1, :cond_5e
+    goto :goto_61
 
-    goto :goto_5f
+    :cond_60
+    move-object v2, v4
 
-    .line 334
-    :cond_52
-    const-string v2, "off"
-
-    goto :goto_5f
-
-    .line 338
-    :cond_55
-    iget-object p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mSupportModes:Ljava/util/List;
-
-    invoke-interface {p1, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_5e
-
-    goto :goto_5f
-
-    :cond_5e
-    const/4 v2, 0x0
-
-    .line 342
-    :goto_5f
+    .line 337
+    :goto_61
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2143,7 +2161,7 @@
 
     invoke-static {v1, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 343
+    .line 338
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mSupportModes:Ljava/util/List;
 
     invoke-virtual {p0, p1, v2}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->initValueAndSupport(Ljava/util/List;Ljava/lang/String;)V
@@ -2203,7 +2221,7 @@
 .method videoMakeUpCombineVideoFaceBeauty()Z
     .registers 1
 
-    .line 267
+    .line 265
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->screenFlip()Z
 
     move-result p0
@@ -2214,7 +2232,7 @@
 .method videoMakeupSupport()Z
     .registers 1
 
-    .line 263
+    .line 261
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->mVideoMakeupSupport:Z
 
     return p0

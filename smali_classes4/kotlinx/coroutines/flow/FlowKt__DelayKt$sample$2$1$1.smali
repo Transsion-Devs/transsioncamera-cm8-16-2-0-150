@@ -168,7 +168,7 @@
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
-    .line 285
+    .line 279
     iget v0, p0, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2$1$1;->label:I
 
     if-nez v0, :cond_35
@@ -183,56 +183,56 @@
 
     move-result-object p1
 
-    .line 287
+    .line 281
     iget-object v0, p0, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2$1$1;->$lastValue:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    .line 518
+    .line 526
     instance-of v1, p1, Lkotlinx/coroutines/channels/ChannelResult$Failed;
 
     if-nez v1, :cond_1a
 
-    .line 287
+    .line 281
     iput-object p1, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 288
+    .line 282
     :cond_1a
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2$1$1;->$ticker:Lkotlinx/coroutines/channels/ReceiveChannel;
 
     if-eqz v1, :cond_32
 
-    .line 533
+    .line 541
     invoke-static {p1}, Lkotlinx/coroutines/channels/ChannelResult;->exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object p1
 
     if-nez p1, :cond_31
 
-    .line 290
+    .line 284
     new-instance p1, Lkotlinx/coroutines/flow/internal/ChildCancelledException;
 
     invoke-direct {p1}, Lkotlinx/coroutines/flow/internal/ChildCancelledException;-><init>()V
 
     invoke-interface {p0, p1}, Lkotlinx/coroutines/channels/ReceiveChannel;->cancel(Ljava/util/concurrent/CancellationException;)V
 
-    .line 291
+    .line 285
     sget-object p0, Lkotlinx/coroutines/flow/internal/NullSurrogateKt;->DONE:Lkotlinx/coroutines/internal/Symbol;
 
     iput-object p0, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     goto :goto_32
 
-    .line 289
+    .line 283
     :cond_31
     throw p1
 
-    .line 293
+    .line 287
     :cond_32
     :goto_32
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 285
+    .line 279
     :cond_35
     new-instance p0, Ljava/lang/IllegalStateException;
 

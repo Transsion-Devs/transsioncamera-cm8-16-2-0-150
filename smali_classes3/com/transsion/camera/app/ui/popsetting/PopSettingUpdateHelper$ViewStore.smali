@@ -24,17 +24,17 @@
 .method constructor <init>()V
     .registers 2
 
-    .line 315
+    .line 174
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 316
+    .line 175
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mViewMap:Ljava/util/Map;
 
-    .line 317
+    .line 176
     new-instance v0, Lcom/transsion/camera/utils/MultiValueHashMap;
 
     invoke-direct {v0}, Lcom/transsion/camera/utils/MultiValueHashMap;-><init>()V
@@ -49,12 +49,12 @@
 .method cacheView(Ljava/lang/String;Landroid/view/View;)V
     .registers 4
 
-    .line 390
+    .line 249
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    .line 391
+    .line 250
     iget-object p0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mViewMap:Ljava/util/Map;
 
     invoke-interface {p0, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -65,7 +65,7 @@
 .method getValue(Ljava/lang/String;I)I
     .registers 3
 
-    .line 386
+    .line 245
     iget-object p0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/utils/MultiValueMap;->getValue(Ljava/lang/Object;I)Ljava/lang/Object;
@@ -84,7 +84,7 @@
 .method getView(Ljava/lang/String;)Landroid/view/View;
     .registers 5
 
-    .line 395
+    .line 254
     iget-object v0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mViewMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -95,7 +95,7 @@
 
     if-nez v0, :cond_22
 
-    .line 396
+    .line 255
     invoke-static {}, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -118,7 +118,7 @@
 
     return-object v1
 
-    .line 399
+    .line 258
     :cond_22
     iget-object p0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mViewMap:Ljava/util/Map;
 
@@ -130,7 +130,7 @@
 
     if-nez p0, :cond_36
 
-    .line 401
+    .line 260
     invoke-static {}, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -141,7 +141,7 @@
 
     return-object v1
 
-    .line 404
+    .line 263
     :cond_36
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
@@ -155,7 +155,7 @@
 .method removeView(Ljava/lang/String;)V
     .registers 4
 
-    .line 408
+    .line 267
     iget-object v0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mViewMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -164,7 +164,7 @@
 
     if-nez v0, :cond_21
 
-    .line 409
+    .line 268
     invoke-static {}, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -187,7 +187,7 @@
 
     return-void
 
-    .line 412
+    .line 271
     :cond_21
     iget-object p0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mViewMap:Ljava/util/Map;
 
@@ -199,7 +199,7 @@
 .method update(Ljava/lang/String;III)V
     .registers 9
 
-    .line 337
+    .line 196
     iget-object v0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/utils/MultiValueMap;->containsKey(Ljava/lang/Object;)Z
@@ -208,7 +208,7 @@
 
     if-eqz v0, :cond_23
 
-    .line 338
+    .line 197
     iget-object v0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     const/4 v1, 0x1
@@ -223,7 +223,7 @@
 
     move-result v0
 
-    .line 339
+    .line 198
     iget-object v1, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     const/4 v2, 0x3
@@ -245,7 +245,7 @@
 
     const/4 v1, 0x2
 
-    .line 345
+    .line 204
     :goto_25
     new-instance v2, Ljava/util/ArrayList;
 
@@ -253,42 +253,42 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 346
+    .line 205
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 347
+    .line 206
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
     invoke-interface {v2, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 348
+    .line 207
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
     invoke-interface {v2, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 349
+    .line 208
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
     invoke-interface {v2, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 350
+    .line 209
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
     invoke-interface {v2, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 351
+    .line 210
     iget-object p0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     invoke-interface {p0, p1, v2}, Lcom/transsion/camera/utils/MultiValueMap;->set(Ljava/lang/Object;Ljava/util/List;)V
@@ -299,12 +299,12 @@
 .method updateEnd()Ljava/util/List;
     .registers 9
 
-    .line 360
+    .line 219
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 362
+    .line 221
     iget-object v1, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     invoke-interface {v1}, Lcom/transsion/camera/utils/MultiValueMap;->isEmpty()Z
@@ -313,7 +313,7 @@
 
     if-eqz v1, :cond_17
 
-    .line 363
+    .line 222
     invoke-static {}, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -324,7 +324,7 @@
 
     return-object v0
 
-    .line 366
+    .line 225
     :cond_17
     iget-object v1, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
@@ -350,7 +350,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 367
+    .line 226
     iget-object v3, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     const/4 v4, 0x4
@@ -369,7 +369,7 @@
 
     if-ne v3, v4, :cond_21
 
-    .line 368
+    .line 227
     iget-object v3, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     const/4 v5, 0x1
@@ -384,7 +384,7 @@
 
     invoke-interface {v3, v2, v7, v6}, Lcom/transsion/camera/utils/MultiValueMap;->set(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    .line 369
+    .line 228
     iget-object v3, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -393,7 +393,7 @@
 
     invoke-interface {v3, v2, v5, v6}, Lcom/transsion/camera/utils/MultiValueMap;->set(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    .line 370
+    .line 229
     iget-object v3, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     invoke-interface {v3, v2, v4}, Lcom/transsion/camera/utils/MultiValueMap;->getValue(Ljava/lang/Object;I)Ljava/lang/Object;
@@ -406,7 +406,7 @@
 
     invoke-interface {v3, v2, v6, v5}, Lcom/transsion/camera/utils/MultiValueMap;->set(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    .line 371
+    .line 230
     iget-object v3, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -415,14 +415,14 @@
 
     invoke-interface {v3, v2, v4, v5}, Lcom/transsion/camera/utils/MultiValueMap;->set(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    .line 373
+    .line 232
     invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->getView(Ljava/lang/String;)Landroid/view/View;
 
     move-result-object v3
 
     if-nez v3, :cond_78
 
-    .line 375
+    .line 234
     invoke-static {}, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v2
@@ -433,11 +433,11 @@
 
     goto :goto_21
 
-    .line 378
+    .line 237
     :cond_78
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 379
+    .line 238
     invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->removeView(Ljava/lang/String;)V
 
     goto :goto_21
@@ -449,7 +449,7 @@
 .method updateStart()V
     .registers 6
 
-    .line 324
+    .line 183
     iget-object v0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     invoke-interface {v0}, Lcom/transsion/camera/utils/MultiValueMap;->isEmpty()Z
@@ -458,7 +458,7 @@
 
     if-nez v0, :cond_2a
 
-    .line 325
+    .line 184
     iget-object v0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     invoke-interface {v0}, Lcom/transsion/camera/utils/MultiValueMap;->keySet()Ljava/util/Set;
@@ -482,7 +482,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 326
+    .line 185
     iget-object v2, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingUpdateHelper$ViewStore;->mStateMap:Lcom/transsion/camera/utils/MultiValueMap;
 
     const/4 v3, 0x3

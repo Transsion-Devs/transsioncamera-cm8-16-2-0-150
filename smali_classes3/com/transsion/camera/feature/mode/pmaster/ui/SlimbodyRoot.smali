@@ -245,7 +245,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 5
 
-    .line 451
+    .line 456
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 107
@@ -277,24 +277,24 @@
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCurrentRace:Ljava/lang/String;
 
-    .line 331
+    .line 336
     new-instance p2, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$3;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$3;-><init>(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)V
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureRvListener:Lcom/transsion/camera/feature/mode/pmaster/listener/RvListener;
 
-    .line 1084
+    .line 1089
     new-instance p2, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$7;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$7;-><init>(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)V
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mItemDecorationFlip:Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;
 
-    .line 452
+    .line 457
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mContext:Landroid/content/Context;
 
-    .line 453
+    .line 458
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -500,7 +500,7 @@
 .method private closeSlimBodyForConflictOn(Ljava/lang/String;)V
     .registers 8
 
-    .line 970
+    .line 975
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->isSlimBodyClosed()Z
 
     move-result v0
@@ -509,29 +509,29 @@
 
     const/4 v0, 0x1
 
-    .line 971
+    .line 976
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mShouldHideBottomPanel:Z
 
-    .line 972
+    .line 977
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 973
+    .line 978
     const-string v1, "key_slimbody_remember"
 
     invoke-virtual {p0, v1, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->rememberValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 974
+    .line 979
     const-string/jumbo v0, "{\"bodySlim\":100,\"buttPlump\":100,\"chestPlump\":100,\"waistUpper\":100,\"headShrink\":100,\"legLengthen\":100,\"legSlim\":100,\"bellySlim\":100,\"armSlim\":100,\"presetMode\":0,\"shoulderSlim\":100,\"waistSlim\":100}"
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     move-result-object v1
 
-    .line 975
+    .line 980
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mLensFacing:Ljava/lang/String;
@@ -546,30 +546,30 @@
 
     invoke-virtual {v2, v5, p1, v3, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 976
+    .line 981
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 977
+    .line 982
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->isMainThread()Z
 
     move-result p1
 
     if-eqz p1, :cond_38
 
-    .line 978
+    .line 983
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateSelectUI(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
 
     return-void
 
-    .line 980
+    .line 985
     :cond_38
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p1, :cond_48
 
-    .line 981
+    .line 986
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getMainHandler()Landroid/os/Handler;
 
     move-result-object p1
@@ -587,14 +587,14 @@
 .method private doOnClickSelectedItem(Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;)V
     .registers 4
 
-    .line 352
+    .line 357
     iget p1, p1, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;->featureId:I
 
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_f
 
-    .line 353
+    .line 358
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     iget p1, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
@@ -605,7 +605,7 @@
 
     return-void
 
-    .line 355
+    .line 360
     :cond_f
     iput p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCurSelectFeatureId:I
 
@@ -620,12 +620,12 @@
     :cond_17
     const/4 v0, 0x0
 
-    .line 356
+    .line 361
     :cond_18
     :goto_18
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mIsCloseOrAi:Z
 
-    .line 357
+    .line 362
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateUIByFeatureId(I)V
 
     return-void
@@ -634,7 +634,7 @@
 .method private doOnItemSelected(Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;)V
     .registers 5
 
-    .line 362
+    .line 367
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -647,7 +647,7 @@
 
     if-ne v0, v1, :cond_16
 
-    .line 363
+    .line 368
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mContext:Landroid/content/Context;
 
     sget v1, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_preset_autoAi:I
@@ -658,7 +658,7 @@
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->showAutoHint(Ljava/lang/String;)V
 
-    .line 365
+    .line 370
     :cond_16
     iget v0, p1, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;->featureId:I
 
@@ -666,7 +666,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateValueByFeatureId(ILjava/lang/String;)V
 
-    .line 366
+    .line 371
     iget v0, p1, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;->featureId:I
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
@@ -675,15 +675,15 @@
 
     invoke-direct {p0, v0, v1, v2}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateItemProgress(ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;Z)V
 
-    .line 367
+    .line 372
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->handleAnalytics(Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;)V
 
-    .line 368
+    .line 373
     iget p1, p1, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;->featureId:I
 
     if-eqz p1, :cond_35
 
-    .line 369
+    .line 374
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getKey()Ljava/lang/String;
@@ -699,14 +699,14 @@
 .method private getDefaultSlimBodySetting()Ljava/lang/String;
     .registers 5
 
-    .line 375
+    .line 380
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFaceAttributeSupport:Z
 
     const-string v1, "0"
 
     if-eqz v0, :cond_12
 
-    .line 376
+    .line 381
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v2, "key_gender_attribute_value"
@@ -719,7 +719,7 @@
 
     move-result-object v1
 
-    .line 379
+    .line 384
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -729,7 +729,7 @@
 
     move-result-object v0
 
-    .line 380
+    .line 385
     invoke-static {v0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     move-result-object v1
@@ -748,67 +748,67 @@
 
     return p0
 
-    .line 438
+    .line 443
     :pswitch_6
     iget p0, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->waistUpper:I
 
     return p0
 
-    .line 435
+    .line 440
     :pswitch_9
     iget p0, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->armSlim:I
 
     return p0
 
-    .line 432
+    .line 437
     :pswitch_c
     iget p0, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->bellySlim:I
 
     return p0
 
-    .line 429
+    .line 434
     :pswitch_f
     iget p0, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->chestPlump:I
 
     return p0
 
-    .line 426
+    .line 431
     :pswitch_12
     iget p0, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->legLengthen:I
 
     return p0
 
-    .line 423
+    .line 428
     :pswitch_15
     iget p0, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->legSlim:I
 
     return p0
 
-    .line 420
+    .line 425
     :pswitch_18
     iget p0, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->buttPlump:I
 
     return p0
 
-    .line 417
+    .line 422
     :pswitch_1b
     iget p0, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->waistSlim:I
 
     return p0
 
-    .line 414
+    .line 419
     :pswitch_1e
     iget p0, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->shoulderSlim:I
 
     return p0
 
-    .line 411
+    .line 416
     :pswitch_21
     iget p0, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->headShrink:I
 
     return p0
 
-    .line 408
+    .line 413
     :pswitch_24
     iget p0, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->bodySlim:I
 
@@ -835,12 +835,12 @@
 .method private getSettingValue(Lcom/transsion/camera/app/common/setting/ISetting;)Ljava/lang/String;
     .registers 9
 
-    .line 579
+    .line 584
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 580
+    .line 585
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -859,14 +859,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 581
+    .line 586
     invoke-static {p1}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     move-result-object v0
 
     if-eqz v0, :cond_162
 
-    .line 582
+    .line 587
     iget v1, v0, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->presetMode:I
 
     const/4 v2, 0x5
@@ -879,7 +879,7 @@
 
     if-le v1, v3, :cond_162
 
-    .line 583
+    .line 588
     sget-object p1, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->DEFAULT_CHANGE_FLAG_MAP:Ljava/util/Map;
 
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -904,7 +904,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 584
+    .line 589
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -925,7 +925,7 @@
 
     invoke-static {v4, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 585
+    .line 590
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -940,7 +940,7 @@
 
     if-eqz v4, :cond_34
 
-    .line 586
+    .line 591
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -1138,7 +1138,7 @@
 
     goto/16 :goto_34
 
-    .line 588
+    .line 593
     :pswitch_ff
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDefaultDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
@@ -1148,7 +1148,7 @@
 
     goto/16 :goto_34
 
-    .line 606
+    .line 611
     :pswitch_107
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDefaultDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
@@ -1158,7 +1158,7 @@
 
     goto/16 :goto_34
 
-    .line 600
+    .line 605
     :pswitch_10f
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDefaultDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
@@ -1168,7 +1168,7 @@
 
     goto/16 :goto_34
 
-    .line 597
+    .line 602
     :pswitch_117
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDefaultDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
@@ -1178,7 +1178,7 @@
 
     goto/16 :goto_34
 
-    .line 618
+    .line 623
     :pswitch_11f
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDefaultDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
@@ -1188,7 +1188,7 @@
 
     goto/16 :goto_34
 
-    .line 603
+    .line 608
     :pswitch_127
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDefaultDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
@@ -1198,7 +1198,7 @@
 
     goto/16 :goto_34
 
-    .line 609
+    .line 614
     :pswitch_12f
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDefaultDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
@@ -1208,7 +1208,7 @@
 
     goto/16 :goto_34
 
-    .line 591
+    .line 596
     :pswitch_137
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDefaultDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
@@ -1218,7 +1218,7 @@
 
     goto/16 :goto_34
 
-    .line 612
+    .line 617
     :pswitch_13f
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDefaultDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
@@ -1228,7 +1228,7 @@
 
     goto/16 :goto_34
 
-    .line 615
+    .line 620
     :pswitch_147
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDefaultDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
@@ -1238,7 +1238,7 @@
 
     goto/16 :goto_34
 
-    .line 594
+    .line 599
     :pswitch_14f
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDefaultDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
@@ -1248,16 +1248,16 @@
 
     goto/16 :goto_34
 
-    .line 623
+    .line 628
     :cond_157
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
-    .line 624
+    .line 629
     invoke-static {v0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toJson(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 625
+    .line 630
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
@@ -1303,14 +1303,14 @@
 
     if-eqz p1, :cond_52
 
-    .line 313
+    .line 318
     iget p0, p1, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;->featureId:I
 
     const/4 p1, 0x3
 
     if-ne p1, p0, :cond_f
 
-    .line 314
+    .line 319
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -1324,7 +1324,7 @@
 
     if-ne p1, p0, :cond_1a
 
-    .line 316
+    .line 321
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -1338,7 +1338,7 @@
 
     if-ne p1, p0, :cond_25
 
-    .line 318
+    .line 323
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -1352,7 +1352,7 @@
 
     if-ne p1, p0, :cond_30
 
-    .line 320
+    .line 325
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -1366,7 +1366,7 @@
 
     if-ne p1, p0, :cond_3b
 
-    .line 322
+    .line 327
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -1380,7 +1380,7 @@
 
     if-ne p1, p0, :cond_47
 
-    .line 324
+    .line 329
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -1394,7 +1394,7 @@
 
     if-ne p1, p0, :cond_52
 
-    .line 326
+    .line 331
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -1408,24 +1408,24 @@
 .method private isSlimBodyClosed()Z
     .registers 3
 
-    .line 988
+    .line 993
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->getCurrentItem()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 989
+    .line 994
     instance-of v0, p0, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_13
 
-    .line 990
+    .line 995
     check-cast p0, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;
 
-    .line 991
+    .line 996
     iget p0, p0, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;->featureId:I
 
     if-nez p0, :cond_13
@@ -1441,7 +1441,7 @@
 .method private synthetic lambda$closeSlimBodyForConflictOn$2(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
     .registers 2
 
-    .line 981
+    .line 986
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateSelectUI(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
 
     return-void
@@ -1450,12 +1450,12 @@
 .method private synthetic lambda$onConflictSettingChanged$1()V
     .registers 1
 
-    .line 943
+    .line 948
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mHideBottomPanelListener:Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/IFeature$IBottomPanelHideListener;
 
     if-eqz p0, :cond_7
 
-    .line 944
+    .line 949
     invoke-interface {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/IFeature$IBottomPanelHideListener;->hideBottomPanelByConflict()V
 
     :cond_7
@@ -1465,7 +1465,7 @@
 .method private synthetic lambda$updateSelectUIinMainThread$0(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
     .registers 2
 
-    .line 218
+    .line 220
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateSelectUI(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
 
     return-void
@@ -1474,7 +1474,7 @@
 .method private notifyState(IZ)V
     .registers 4
 
-    .line 210
+    .line 212
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mITopUI:Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/ITopUI;
 
     const/4 v0, 0x1
@@ -1487,14 +1487,14 @@
 .method private resetDefaultFlag()V
     .registers 7
 
-    .line 631
+    .line 636
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "resetDefaultFlag"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 632
+    .line 637
     sget-object v0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->DEFAULT_CHANGE_FLAG_MAP:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -1518,26 +1518,26 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 633
+    .line 638
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mLensFacing:Ljava/lang/String;
 
-    .line 634
+    .line 639
     invoke-virtual {v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->getCameraFacingScope(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     const/4 v4, 0x0
 
-    .line 633
+    .line 638
     const-string v5, "0"
 
     invoke-virtual {v2, v1, v5, v3, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     goto :goto_11
 
-    .line 636
+    .line 641
     :cond_2c
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateDefaultFlag()V
 
@@ -1547,7 +1547,7 @@
 .method private restoreSlimBodyForConflictOff()V
     .registers 5
 
-    .line 956
+    .line 961
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
@@ -1556,7 +1556,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 957
+    .line 962
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
@@ -1573,7 +1573,7 @@
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->updateFacingValue(Ljava/lang/String;)V
 
-    .line 959
+    .line 964
     :cond_19
     const-string v0, "key_slimbody_remember"
 
@@ -1585,25 +1585,25 @@
 
     const/4 v2, 0x1
 
-    .line 961
+    .line 966
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mShouldHideBottomPanel:Z
 
-    .line 962
+    .line 967
     invoke-static {v1}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     move-result-object v2
 
-    .line 963
+    .line 968
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v3, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
     const/4 v1, 0x0
 
-    .line 964
+    .line 969
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->rememberValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 965
+    .line 970
     invoke-direct {p0, v2}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateSelectUIinMainThread(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
 
     :cond_34
@@ -1613,7 +1613,7 @@
 .method private showAutoHint(Ljava/lang/String;)V
     .registers 3
 
-    .line 485
+    .line 490
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_18
@@ -1622,17 +1622,17 @@
 
     if-eqz v0, :cond_18
 
-    .line 486
+    .line 491
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 487
+    .line 492
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mAutoHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setHighlight(Z)V
 
-    .line 488
+    .line 493
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mAutoHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -1646,14 +1646,14 @@
 .method private showResetDialog(IZ)V
     .registers 7
 
-    .line 512
+    .line 517
     sget-boolean v0, Lcom/transsion/camera/feature/mode/pmaster/ui/PMasterTopUI;->isPressBack:Z
 
     if-eqz v0, :cond_5
 
     return-void
 
-    .line 515
+    .line 520
     :cond_5
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
@@ -1665,7 +1665,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 516
+    .line 521
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "duplicate dialog, return"
@@ -1674,7 +1674,7 @@
 
     return-void
 
-    .line 519
+    .line 524
     :cond_17
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -1682,7 +1682,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 520
+    .line 525
     sget v0, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_preset_showDialog:I
 
     sget v1, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_preset_sure:I
@@ -1699,7 +1699,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
-    .line 554
+    .line 559
     iget p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mScreenFormType:I
 
     if-eqz p2, :cond_39
@@ -1715,16 +1715,16 @@
     :cond_39
     const/4 p2, 0x0
 
-    .line 557
+    .line 562
     iput p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mOrientation:I
 
     :cond_3c
     const/4 p2, 0x1
 
-    .line 559
+    .line 564
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->setBeautyResetDialog(Z)V
 
-    .line 560
+    .line 565
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     iget p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mScreenFormType:I
@@ -1733,7 +1733,7 @@
 
     invoke-virtual {p1, p2, v0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->updateDialogLayout(II)V
 
-    .line 561
+    .line 566
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mContext:Landroid/content/Context;
@@ -1754,7 +1754,7 @@
 .method private updateDefaultFlag()V
     .registers 6
 
-    .line 640
+    .line 645
     sget-object v0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->DEFAULT_CHANGE_FLAG_MAP:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -1778,31 +1778,31 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 641
+    .line 646
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mLensFacing:Ljava/lang/String;
 
-    .line 642
+    .line 647
     invoke-virtual {v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->getCameraFacingScope(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 641
+    .line 646
     const-string v4, "0"
 
     invoke-virtual {v2, v1, v4, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 643
+    .line 648
     sget-object v3, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->DEFAULT_CHANGE_FLAG_MAP:Ljava/util/Map;
 
     invoke-interface {v3, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_a
 
-    .line 645
+    .line 650
     :cond_2a
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1834,20 +1834,20 @@
 .method private updateItemDecoration(I)V
     .registers 4
 
-    .line 1058
+    .line 1063
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 1061
+    .line 1066
     :cond_5
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mItemDecoration:Lcom/transsion/camera/feature/mode/pmaster/ui/PMaterItemDecoration;
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->removeItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 1062
+    .line 1067
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mItemDecorationFlip:Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;
@@ -1858,7 +1858,7 @@
 
     if-ne p1, v0, :cond_1c
 
-    .line 1064
+    .line 1069
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mItemDecorationFlip:Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;
@@ -1867,7 +1867,7 @@
 
     return-void
 
-    .line 1066
+    .line 1071
     :cond_1c
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -1881,10 +1881,10 @@
 .method private updateItemProgress(ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;Z)V
     .registers 7
 
-    .line 245
+    .line 247
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_38
 
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -1892,7 +1892,7 @@
 
     if-nez v0, :cond_b
 
-    goto :goto_31
+    goto :goto_38
 
     :cond_b
     const/4 v0, 0x2
@@ -1913,12 +1913,12 @@
 
     if-gt p1, v0, :cond_23
 
-    .line 255
+    .line 260
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->getProcessOrDefaultByFeatureId(ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)I
 
     move-result v0
 
-    .line 256
+    .line 261
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     invoke-virtual {v2, p1, v0, v1}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->updateSelectItemProgress(IIZ)V
@@ -1928,33 +1928,40 @@
     goto :goto_13
 
     :cond_23
-    if-eqz p3, :cond_31
+    if-eqz p3, :cond_38
 
-    .line 260
+    .line 265
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
 
-    .line 250
+    .line 252
     :cond_2b
     :goto_2b
+    iget-object p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p2, p1, v1, v0}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->updateSelectItemProgress(IIZ)V
+
+    if-eqz p3, :cond_38
+
+    .line 254
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
-    const/4 p2, 0x1
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    invoke-virtual {p0, p1, v1, p2}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->updateSelectItemProgress(IIZ)V
-
-    :cond_31
-    :goto_31
+    :cond_38
+    :goto_38
     return-void
 .end method
 
 .method private updateOneSelecProgress(ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
     .registers 5
 
-    .line 265
+    .line 270
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     if-eqz v0, :cond_1a
@@ -1967,20 +1974,20 @@
 
     goto :goto_1a
 
-    .line 269
+    .line 274
     :cond_b
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->getProcessOrDefaultByFeatureId(ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)I
 
     move-result p2
 
-    .line 271
+    .line 276
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, p2, v1}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->updateSelectItemProgress(IIZ)V
 
-    .line 272
+    .line 277
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
@@ -1993,7 +2000,7 @@
 .method private updateProcessToDataInfo(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;I)V
     .registers 5
 
-    .line 716
+    .line 721
     iget v0, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
 
     const-string v1, "key_mu_slimbody_body_slim_flag"
@@ -2002,7 +2009,7 @@
 
     goto :goto_3c
 
-    .line 759
+    .line 764
     :pswitch_8
     iput p2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->waistUpper:I
 
@@ -2010,92 +2017,92 @@
 
     goto :goto_3c
 
-    .line 755
+    .line 760
     :pswitch_d
     iput p2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->armSlim:I
 
-    .line 756
+    .line 761
     const-string v1, "key_mu_slimbody_arm_slim_flag"
 
     goto :goto_3c
 
-    .line 751
+    .line 756
     :pswitch_12
     iput p2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->bellySlim:I
 
-    .line 752
+    .line 757
     const-string v1, "key_mu_slimbody_belly_slim_flag"
 
     goto :goto_3c
 
-    .line 747
+    .line 752
     :pswitch_17
     iput p2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->chestPlump:I
 
-    .line 748
+    .line 753
     const-string v1, "key_mu_slimbody_chest_plump_flag"
 
     goto :goto_3c
 
-    .line 743
+    .line 748
     :pswitch_1c
     iput p2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->legLengthen:I
 
-    .line 744
+    .line 749
     const-string v1, "key_mu_slimbody_leg_lengthen_flag"
 
     goto :goto_3c
 
-    .line 739
+    .line 744
     :pswitch_21
     iput p2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->legSlim:I
 
-    .line 740
+    .line 745
     const-string v1, "key_mu_slimbody_leg_slim_flag"
 
     goto :goto_3c
 
-    .line 735
+    .line 740
     :pswitch_26
     iput p2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->buttPlump:I
 
-    .line 736
+    .line 741
     const-string v1, "key_mu_slimbody_butt_plump_flag"
 
     goto :goto_3c
 
-    .line 731
+    .line 736
     :pswitch_2b
     iput p2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->waistSlim:I
 
-    .line 732
+    .line 737
     const-string v1, "key_mu_slimbody_waist_slim_flag"
 
     goto :goto_3c
 
-    .line 727
+    .line 732
     :pswitch_30
     iput p2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->shoulderSlim:I
 
-    .line 728
+    .line 733
     const-string v1, "key_mu_slimbody_shoulder_slim_flag"
 
     goto :goto_3c
 
-    .line 723
+    .line 728
     :pswitch_35
     iput p2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->headShrink:I
 
-    .line 724
+    .line 729
     const-string v1, "key_mu_slimbody_head_shrink_flag"
 
     goto :goto_3c
 
-    .line 719
+    .line 724
     :pswitch_3a
     iput p2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->bodySlim:I
 
-    .line 762
+    .line 767
     :goto_3c
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -2134,32 +2141,32 @@
 .method private updateProgressBar(I)V
     .registers 10
 
-    .line 385
+    .line 390
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     if-eqz v0, :cond_4d
 
-    .line 386
+    .line 391
     iput p1, v0, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
 
-    .line 387
+    .line 392
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->getProcessOrDefaultByFeatureId(ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)I
 
     move-result v6
 
-    .line 388
+    .line 393
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mITopUI:Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/ITopUI;
 
     if-eqz v0, :cond_4d
 
-    .line 389
+    .line 394
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/pmaster/data/BiDiBarFeatureData;->getSeekBarFeatureDataByFeatureId(I)Lcom/transsion/camera/feature/mode/pmaster/data/BiDiBarFeatureData;
 
     move-result-object v0
 
     if-eqz v0, :cond_4d
 
-    .line 391
+    .line 396
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2184,7 +2191,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 392
+    .line 397
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->getDefaultSlimBodySetting()Ljava/lang/String;
 
     move-result-object v1
@@ -2193,12 +2200,12 @@
 
     move-result-object v1
 
-    .line 393
+    .line 398
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->getProcessOrDefaultByFeatureId(ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)I
 
     move-result p1
 
-    .line 394
+    .line 399
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mITopUI:Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/ITopUI;
 
     iget v3, v0, Lcom/transsion/camera/feature/mode/pmaster/data/BiDiBarFeatureData;->mSeekBarMax:I
@@ -2222,17 +2229,17 @@
 .method private updateRaceData(Ljava/lang/String;)V
     .registers 7
 
-    .line 811
+    .line 816
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mLensFacing:Ljava/lang/String;
 
-    .line 812
+    .line 817
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->getCameraFacingScope(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 811
+    .line 816
     const-string v2, "key_mu_slimbody_value_change"
 
     const-string v3, "false"
@@ -2241,7 +2248,7 @@
 
     move-result-object v0
 
-    .line 813
+    .line 818
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportPortraitArchitecture(Landroid/content/Context;)Z
@@ -2262,7 +2269,7 @@
 
     if-nez v0, :cond_69
 
-    .line 814
+    .line 819
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCurrentRace:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -2344,23 +2351,23 @@
 
     goto :goto_69
 
-    .line 826
+    .line 831
     :pswitch_61
     const-string v3, "key_mu_slimbody_custom_b_southasia"
 
     goto :goto_69
 
-    .line 823
+    .line 828
     :pswitch_64
     const-string v3, "key_mu_slimbody_custom_c"
 
     goto :goto_69
 
-    .line 820
+    .line 825
     :pswitch_67
     const-string v3, "key_mu_slimbody_custom_b"
 
-    .line 831
+    .line 836
     :cond_69
     :goto_69
     :pswitch_69
@@ -2384,7 +2391,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 832
+    .line 837
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mLensFacing:Ljava/lang/String;
@@ -2419,7 +2426,7 @@
 .method private updateRotation(IIZ)V
     .registers 7
 
-    .line 1044
+    .line 1049
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -2432,7 +2439,7 @@
 
     goto :goto_22
 
-    .line 1048
+    .line 1053
     :cond_b
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->getItemCount()I
 
@@ -2443,7 +2450,7 @@
     :goto_10
     if-ge v1, v0, :cond_22
 
-    .line 1050
+    .line 1055
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->findViewHolderForAdapterPosition(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
@@ -2454,7 +2461,7 @@
 
     if-eqz v2, :cond_1f
 
-    .line 1052
+    .line 1057
     invoke-virtual {v2, p1, p2, p3}, Lcom/transsion/camera/feature/mode/pmaster/holder/RvHolder;->updateRotation(IIZ)V
 
     :cond_1f
@@ -2472,7 +2479,7 @@
 
     if-eqz p1, :cond_24
 
-    .line 225
+    .line 227
     iget v0, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->presetMode:I
 
     const/4 v1, 0x0
@@ -2487,17 +2494,17 @@
 
     goto :goto_11
 
-    .line 231
+    .line 233
     :cond_c
     iput v2, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
 
     goto :goto_11
 
-    .line 227
+    .line 229
     :cond_f
     iput v1, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
 
-    .line 238
+    .line 240
     :goto_11
     iget p1, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
 
@@ -2511,12 +2518,12 @@
     :cond_18
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mIsCloseOrAi:Z
 
-    .line 239
+    .line 241
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->updateSelectedItemById(I)V
 
-    .line 240
+    .line 242
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
@@ -2528,25 +2535,25 @@
 .method private updateSelectUIinMainThread(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
     .registers 4
 
-    .line 214
+    .line 216
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->isMainThread()Z
 
     move-result v0
 
     if-eqz v0, :cond_a
 
-    .line 215
+    .line 217
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateSelectUI(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
 
     return-void
 
-    .line 217
+    .line 219
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_1a
 
-    .line 218
+    .line 220
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getMainHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -2574,7 +2581,7 @@
     .line 193
     instance-of v1, v0, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_41
 
     .line 194
     check-cast v0, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;
@@ -2586,7 +2593,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v1, :cond_22
+    if-ne v2, v1, :cond_27
 
     const/4 v0, 0x3
 
@@ -2604,32 +2611,44 @@
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->showAutoHint(Ljava/lang/String;)V
 
+    .line 198
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
+
+    invoke-direct {p0, v2, v0, v3}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateItemProgress(ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;Z)V
+
     return-void
 
-    :cond_22
-    if-nez v1, :cond_2b
-
-    .line 199
-    invoke-direct {p0, v3, v3}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->notifyState(IZ)V
+    :cond_27
+    if-nez v1, :cond_36
 
     .line 200
+    invoke-direct {p0, v3, v3}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->notifyState(IZ)V
+
+    .line 201
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->hideAutoHint()V
+
+    const/4 v0, 0x0
+
+    .line 202
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
+
+    invoke-direct {p0, v0, v1, v3}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateItemProgress(ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;Z)V
 
     return-void
 
-    .line 202
-    :cond_2b
+    .line 204
+    :cond_36
     invoke-direct {p0, v2, v3}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->notifyState(IZ)V
 
-    .line 203
+    .line 205
     iget v0, v0, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;->featureId:I
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateProgressBar(I)V
 
-    .line 204
+    .line 206
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->hideAutoHint()V
 
-    :cond_36
+    :cond_41
     return-void
 .end method
 
@@ -2642,10 +2661,10 @@
 
     const/4 p1, 0x1
 
-    .line 295
+    .line 300
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->notifyState(IZ)V
 
-    .line 296
+    .line 301
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->hideAutoHint()V
 
     return-void
@@ -2657,10 +2676,10 @@
 
     const/4 p1, 0x3
 
-    .line 299
+    .line 304
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->notifyState(IZ)V
 
-    .line 300
+    .line 305
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mContext:Landroid/content/Context;
 
     sget v0, Lcom/transsion/camera/featurelibs/ITDFaceBeautyRes/R$string;->slimbody_preset_autoAi:I
@@ -2673,14 +2692,14 @@
 
     return-void
 
-    .line 303
+    .line 308
     :cond_1e
     invoke-direct {p0, v1, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->notifyState(IZ)V
 
-    .line 304
+    .line 309
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->hideAutoHint()V
 
-    .line 305
+    .line 310
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateProgressBar(I)V
 
     return-void
@@ -2689,14 +2708,14 @@
 .method private updateUIByRace()V
     .registers 6
 
-    .line 836
+    .line 841
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[updateUIByRace]"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 837
+    .line 842
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/facebeauty/util/FaceBeautyConfigUtils;->getCurrentConfigType(Lcom/transsion/camera/app/common/storage/DataStore;)Lcom/transsion/camera/app/common/facebeauty/FaceBeautyConstant$ConfigType;
@@ -2709,7 +2728,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCurrentRace:Ljava/lang/String;
 
-    .line 838
+    .line 843
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2730,17 +2749,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 839
+    .line 844
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mLensFacing:Ljava/lang/String;
 
-    .line 840
+    .line 845
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->getCameraFacingScope(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 839
+    .line 844
     const-string v2, "key_mu_slimbody_value_change"
 
     const-string v3, "false"
@@ -2749,7 +2768,7 @@
 
     move-result-object v0
 
-    .line 842
+    .line 847
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportPortraitArchitecture(Landroid/content/Context;)Z
@@ -2768,7 +2787,7 @@
 
     if-nez v0, :cond_93
 
-    .line 843
+    .line 848
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCurrentRace:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -2850,29 +2869,29 @@
 
     goto :goto_93
 
-    .line 855
+    .line 860
     :pswitch_8b
     const-string v2, "key_mu_slimbody_custom_b_southasia"
 
     goto :goto_93
 
-    .line 852
+    .line 857
     :pswitch_8e
     const-string v2, "key_mu_slimbody_custom_c"
 
     goto :goto_93
 
-    .line 849
+    .line 854
     :pswitch_91
     const-string v2, "key_mu_slimbody_custom_b"
 
-    .line 860
+    .line 865
     :cond_93
     :goto_93
     :pswitch_93
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 861
+    .line 866
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->getDefaultSlimBodySetting()Ljava/lang/String;
 
     move-result-object v1
@@ -2885,29 +2904,29 @@
 
     move-result-object v3
 
-    .line 860
+    .line 865
     invoke-virtual {v0, v2, v1, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 862
+    .line 867
     invoke-static {v0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
-    .line 863
+    .line 868
     invoke-static {v0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toJson(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 864
+    .line 869
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mIsCloseOrAi:Z
 
     if-nez v1, :cond_b8
 
-    .line 865
+    .line 870
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
@@ -2937,35 +2956,35 @@
 .method private updateValue()V
     .registers 6
 
-    .line 882
+    .line 887
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->getCurrentItem()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 883
+    .line 888
     instance-of v1, v0, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;
 
     if-nez v1, :cond_b
 
     goto :goto_6d
 
-    .line 886
+    .line 891
     :cond_b
     check-cast v0, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;
 
-    .line 887
+    .line 892
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mLensFacing:Ljava/lang/String;
 
-    .line 889
+    .line 894
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getCameraFacingScope(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 887
+    .line 892
     const-string v3, "key_mu_slimbody_closed_reason"
 
     const-string v4, "closed_reason_default_value"
@@ -2974,7 +2993,7 @@
 
     move-result-object v1
 
-    .line 890
+    .line 895
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2993,21 +3012,21 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 891
+    .line 896
     iget v0, v0, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;->featureId:I
 
     if-nez v0, :cond_6d
 
     const-string v0, "closed_reason_user"
 
-    .line 892
+    .line 897
     invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_6d
 
-    .line 893
+    .line 898
     const-string v0, "key_slimbody_remember"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->getRememberedValue(Ljava/lang/String;)Ljava/lang/String;
@@ -3016,7 +3035,7 @@
 
     if-nez v0, :cond_58
 
-    .line 895
+    .line 900
     sget-object v0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->FEATURE_INFO_LIST:Ljava/util/List;
 
     const/4 v1, 0x1
@@ -3035,17 +3054,17 @@
 
     goto :goto_5c
 
-    .line 896
+    .line 901
     :cond_58
     invoke-static {v0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     move-result-object v0
 
-    .line 898
+    .line 903
     :goto_5c
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateSelectUI(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
 
-    .line 899
+    .line 904
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->getCurrentItem()Ljava/lang/Object;
@@ -3054,10 +3073,10 @@
 
     check-cast v0, Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;
 
-    .line 900
+    .line 905
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->doOnItemSelected(Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;)V
 
-    .line 901
+    .line 906
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->doOnClickSelectedItem(Lcom/transsion/camera/feature/mode/pmaster/data/SlimBodyInfo;)V
 
     :cond_6d
@@ -3068,27 +3087,27 @@
 .method private updateValueByFeatureId(ILjava/lang/String;)V
     .registers 4
 
-    .line 276
+    .line 281
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_c
 
-    .line 277
+    .line 282
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
     goto :goto_26
 
-    .line 279
+    .line 284
     :cond_c
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     if-nez p2, :cond_18
 
-    .line 280
+    .line 285
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "resetProgressBarAndSetValue mCustomDataInfo is null"
@@ -3097,24 +3116,24 @@
 
     return-void
 
-    .line 283
+    .line 288
     :cond_18
     iput p1, p2, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
 
-    .line 284
+    .line 289
     invoke-static {p2}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toJson(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 285
+    .line 290
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p2, p1}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 286
+    .line 291
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateRaceData(Ljava/lang/String;)V
 
-    .line 289
+    .line 294
     :goto_26
     const-string p1, "key_slimbody_remember"
 
@@ -3130,7 +3149,7 @@
 .method public activityPause()V
     .registers 4
 
-    .line 565
+    .line 570
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3151,12 +3170,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 566
+    .line 571
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     if-eqz p0, :cond_1f
 
-    .line 567
+    .line 572
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->onActivityPause()V
 
     :cond_1f
@@ -3166,36 +3185,36 @@
 .method public closeContrast(Z)V
     .registers 3
 
-    .line 797
+    .line 802
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p1, :cond_21
 
-    .line 798
+    .line 803
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 799
+    .line 804
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_21
 
-    .line 800
+    .line 805
     invoke-static {p1}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     move-result-object p1
 
     if-eqz p1, :cond_21
 
-    .line 802
+    .line 807
     const-string v0, "0"
 
     iput-object v0, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->contrastState:Ljava/lang/String;
 
-    .line 803
+    .line 808
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toJson(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)Ljava/lang/String;
@@ -3211,7 +3230,7 @@
 .method public getDefaultSkin()Ljava/lang/String;
     .registers 2
 
-    .line 401
+    .line 406
     const-string p0, "debug.vendor.sys.oobe.camera_skin"
 
     const-string/jumbo v0, "white"
@@ -3226,7 +3245,7 @@
 .method public hideAutoHint()V
     .registers 2
 
-    .line 506
+    .line 511
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_b
@@ -3235,7 +3254,7 @@
 
     if-eqz p0, :cond_b
 
-    .line 507
+    .line 512
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
     :cond_b
@@ -3245,7 +3264,7 @@
 .method public hideDialog()V
     .registers 2
 
-    .line 572
+    .line 577
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     if-eqz v0, :cond_14
@@ -3256,12 +3275,12 @@
 
     if-eqz v0, :cond_14
 
-    .line 573
+    .line 578
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->clearDialogList()V
 
-    .line 574
+    .line 579
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->dismiss()V
@@ -3273,14 +3292,14 @@
 .method public onConflictSettingChanged(Ljava/lang/String;Z)V
     .registers 8
 
-    .line 911
+    .line 916
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 912
+    .line 917
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3309,7 +3328,7 @@
 
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 913
+    .line 918
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -3375,20 +3394,20 @@
 
     goto :goto_cc
 
-    .line 924
+    .line 929
     :pswitch_5b
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mShouldHideBottomPanel:Z
 
     if-eqz p2, :cond_7c
 
-    .line 926
+    .line 931
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->isSlimBodyClosed()Z
 
     move-result p2
 
     if-nez p2, :cond_78
 
-    .line 927
+    .line 932
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
@@ -3407,19 +3426,19 @@
 
     invoke-virtual {p2, v3, v0, v2, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 929
+    .line 934
     :cond_78
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->closeSlimBodyForConflictOn(Ljava/lang/String;)V
 
     goto :goto_b8
 
-    .line 931
+    .line 936
     :cond_7c
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->getBlurValue()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 932
+    .line 937
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mLensFacing:Ljava/lang/String;
@@ -3436,14 +3455,14 @@
 
     move-result-object v0
 
-    .line 933
+    .line 938
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-nez p1, :cond_ad
 
-    .line 934
+    .line 939
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -3464,7 +3483,7 @@
 
     return-void
 
-    .line 937
+    .line 942
     :cond_ad
     const-string p1, "f0.0"
 
@@ -3474,10 +3493,10 @@
 
     if-eqz p1, :cond_b8
 
-    .line 938
+    .line 943
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->restoreSlimBodyForConflictOff()V
 
-    .line 941
+    .line 946
     :cond_b8
     :goto_b8
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
@@ -3490,32 +3509,32 @@
 
     if-eqz p1, :cond_cc
 
-    .line 942
+    .line 947
     new-instance p1, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)V
 
     invoke-static {p1}, Lcom/transsion/camera/utils/UIUtils;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 947
+    .line 952
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mShouldHideBottomPanel:Z
 
     :cond_cc
     :goto_cc
     return-void
 
-    .line 916
+    .line 921
     :pswitch_cd
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mShouldHideBottomPanel:Z
 
     if-eqz p2, :cond_d5
 
-    .line 918
+    .line 923
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->closeSlimBodyForConflictOn(Ljava/lang/String;)V
 
     return-void
 
-    .line 920
+    .line 925
     :cond_d5
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->restoreSlimBodyForConflictOff()V
 
@@ -3541,10 +3560,10 @@
 .method protected onFinishInflate()V
     .registers 6
 
-    .line 458
+    .line 463
     invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
-    .line 459
+    .line 464
     sget v0, Lcom/transsion/camera/feature/pmaster/R$id;->slimbody_rv:I
 
     invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3555,7 +3574,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 460
+    .line 465
     new-instance v0, Lcom/transsion/camera/feature/mode/pmaster/ui/PMaterItemDecoration;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -3566,14 +3585,14 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mItemDecoration:Lcom/transsion/camera/feature/mode/pmaster/ui/PMaterItemDecoration;
 
-    .line 461
+    .line 466
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getRecycledViewPool()Landroidx/recyclerview/widget/RecyclerView$RecycledViewPool;
 
     move-result-object v0
 
-    .line 462
+    .line 467
     sget v1, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->ITEM_LAYOUT_ID:I
 
     sget-object v2, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->FEATURE_INFO_LIST:Ljava/util/List;
@@ -3588,12 +3607,12 @@
 
     invoke-virtual {v0, v1, v3}, Landroidx/recyclerview/widget/RecyclerView$RecycledViewPool;->setMaxRecycledViews(II)V
 
-    .line 463
+    .line 468
     sget v1, Lcom/transsion/camera/feature/pmaster/R$layout;->pmaster_restore_layout:I
 
     invoke-virtual {v0, v1, v4}, Landroidx/recyclerview/widget/RecyclerView$RecycledViewPool;->setMaxRecycledViews(II)V
 
-    .line 464
+    .line 469
     new-instance v0, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -3604,12 +3623,12 @@
 
     invoke-direct {v0, v1, v3, v3}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
 
-    .line 465
+    .line 470
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 466
+    .line 471
     new-instance v0, Lcom/transsion/camera/feature/mode/pmaster/adapter/FeatureAdapter;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -3622,24 +3641,24 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
-    .line 467
+    .line 472
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 468
+    .line 473
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->setMotionEventSplittingEnabled(Z)V
 
-    .line 469
+    .line 474
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mItemDecoration:Lcom/transsion/camera/feature/mode/pmaster/ui/PMaterItemDecoration;
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 470
+    .line 475
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
     new-instance v1, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$4;
@@ -3654,36 +3673,36 @@
 .method public openContrast()V
     .registers 3
 
-    .line 783
+    .line 788
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v0, :cond_21
 
-    .line 784
+    .line 789
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 785
+    .line 790
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_21
 
-    .line 786
+    .line 791
     invoke-static {v0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     move-result-object v0
 
     if-eqz v0, :cond_21
 
-    .line 788
+    .line 793
     const-string v1, "1"
 
     iput-object v1, v0, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->contrastState:Ljava/lang/String;
 
-    .line 789
+    .line 794
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toJson(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)Ljava/lang/String;
@@ -3699,12 +3718,12 @@
 .method public previewRatioChange()V
     .registers 1
 
-    .line 1002
+    .line 1007
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     if-eqz p0, :cond_7
 
-    .line 1003
+    .line 1008
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->viewRatioChange()V
 
     :cond_7
@@ -3714,7 +3733,7 @@
 .method public progressChanged(I)V
     .registers 7
 
-    .line 767
+    .line 772
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     if-eqz v0, :cond_37
@@ -3723,36 +3742,36 @@
 
     if-eqz v1, :cond_37
 
-    .line 768
+    .line 773
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateProcessToDataInfo(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;I)V
 
-    .line 769
+    .line 774
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toJson(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 770
+    .line 775
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 771
+    .line 776
     const-string v0, "key_slimbody_remember"
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->rememberValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 774
+    .line 779
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     iget v1, v0, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
 
     invoke-direct {p0, v1, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateOneSelecProgress(ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
 
-    .line 775
+    .line 780
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mLensFacing:Ljava/lang/String;
@@ -3769,7 +3788,7 @@
 
     invoke-virtual {v0, v3, v4, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 776
+    .line 781
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateRaceData(Ljava/lang/String;)V
 
     :cond_37
@@ -3779,16 +3798,16 @@
 .method public registerSettingDevice(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 9
 
-    .line 650
+    .line 655
     invoke-super {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->registerSettingDevice(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    .line 651
+    .line 656
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateDefaultFlag()V
 
-    .line 652
+    .line 657
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 653
+    .line 658
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->getDefaultSlimBodySetting()Ljava/lang/String;
 
     move-result-object v1
@@ -3801,26 +3820,26 @@
 
     move-result-object v2
 
-    .line 652
+    .line 657
     const-string v3, "key_mu_slimbody_custom"
 
     invoke-virtual {v0, v3, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 654
+    .line 659
     invoke-static {v0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
-    .line 655
+    .line 660
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->getSettingValue(Lcom/transsion/camera/app/common/setting/ISetting;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 658
+    .line 663
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->isPortraitBlurConflictWithMakeUp:Z
 
     const-string v2, "f0.0"
@@ -3831,21 +3850,21 @@
 
     if-eqz v1, :cond_67
 
-    .line 659
+    .line 664
     const-string v1, "key_slimbody_remember"
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->getRememberedValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 660
+    .line 665
     iget-boolean v3, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mAlgoSupportForBackCamera:Z
 
     const-string v4, "key_mu_monomer"
 
     if-eqz v3, :cond_47
 
-    .line 661
+    .line 666
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v5, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mLensFacing:Ljava/lang/String;
@@ -3860,7 +3879,7 @@
 
     goto :goto_69
 
-    .line 663
+    .line 668
     :cond_47
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mLensFacing:Ljava/lang/String;
 
@@ -3870,7 +3889,7 @@
 
     if-eqz v3, :cond_5c
 
-    .line 664
+    .line 669
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v4, "key_mu_stereo"
@@ -3885,7 +3904,7 @@
 
     goto :goto_69
 
-    .line 666
+    .line 671
     :cond_5c
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -3904,13 +3923,13 @@
 
     move-object v3, v2
 
-    .line 670
+    .line 675
     :goto_69
     const-string v4, "key_portrait_flare"
 
     if-eqz v1, :cond_85
 
-    .line 671
+    .line 676
     invoke-interface {p1, v4}, Lcom/transsion/camera/app/common/setting/ISetting;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
@@ -3923,21 +3942,21 @@
 
     if-eqz v5, :cond_85
 
-    .line 672
+    .line 677
     invoke-static {v3, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_85
 
-    .line 673
+    .line 678
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
     move-object v0, v1
 
-    .line 676
+    .line 681
     :cond_85
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -3945,14 +3964,14 @@
 
     if-nez v1, :cond_c0
 
-    .line 677
+    .line 682
     invoke-static {v0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     move-result-object v0
 
     if-eqz v0, :cond_a4
 
-    .line 679
+    .line 684
     iget v1, v0, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->presetMode:I
 
     const/4 v2, 0x5
@@ -3965,7 +3984,7 @@
 
     if-ge v1, v2, :cond_a4
 
-    .line 680
+    .line 685
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     iget v1, v1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
@@ -3974,15 +3993,15 @@
 
     move v2, v1
 
-    .line 681
+    .line 686
     :cond_a2
     iput v2, v0, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
 
-    .line 684
+    .line 689
     :cond_a4
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateSelectUI(Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
 
-    .line 685
+    .line 690
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0, v4}, Lcom/transsion/camera/app/common/setting/ISetting;->queryValue(Ljava/lang/String;)Ljava/lang/String;
@@ -4005,10 +4024,10 @@
 
     if-eqz v0, :cond_c0
 
-    .line 687
+    .line 692
     invoke-direct {p0, v4}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->closeSlimBodyForConflictOn(Ljava/lang/String;)V
 
-    .line 690
+    .line 695
     :cond_c0
     new-instance v0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$6;
 
@@ -4020,10 +4039,10 @@
 
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
-    .line 695
+    .line 700
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/helper/ScrollHelper;->attachToRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
 
-    .line 696
+    .line 701
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mCustomDataInfo:Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
 
     iget v0, p1, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
@@ -4032,10 +4051,10 @@
 
     const/4 v1, 0x0
 
-    .line 697
+    .line 702
     invoke-direct {p0, v0, p1, v1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateItemProgress(ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;Z)V
 
-    .line 698
+    .line 703
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -4076,14 +4095,14 @@
 .method public setItemEnable(Z)V
     .registers 5
 
-    .line 493
+    .line 498
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     if-nez v0, :cond_5
 
     goto :goto_1c
 
-    .line 496
+    .line 501
     :cond_5
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->getItemCount()I
 
@@ -4094,7 +4113,7 @@
     :goto_a
     if-ge v1, v0, :cond_1c
 
-    .line 498
+    .line 503
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mSlimbodyRV:Landroidx/recyclerview/widget/RecyclerView;
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->findViewHolderForAdapterPosition(I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
@@ -4103,7 +4122,7 @@
 
     if-eqz v2, :cond_19
 
-    .line 500
+    .line 505
     iget-object v2, v2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v2, p1}, Landroid/view/View;->setEnabled(Z)V
@@ -4121,10 +4140,10 @@
 .method public setUIInterface(Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/ITopUI;)V
     .registers 3
 
-    .line 710
+    .line 715
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 711
+    .line 716
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mITopUI:Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/ITopUI;
 
     return-void
@@ -4133,7 +4152,7 @@
 .method public unInit()V
     .registers 1
 
-    .line 447
+    .line 452
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->hideAutoHint()V
 
     return-void
@@ -4142,13 +4161,13 @@
 .method public unregisterSettingDevice(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 2
 
-    .line 703
+    .line 708
     invoke-super {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->unregisterSettingDevice(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    .line 704
+    .line 709
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->hideDialog()V
 
-    .line 705
+    .line 710
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->hideAutoHint()V
 
     return-void
@@ -4159,29 +4178,29 @@
 
     if-eqz p1, :cond_10
 
-    .line 871
+    .line 876
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateUIByRace()V
 
-    .line 872
+    .line 877
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateValue()V
 
-    .line 873
+    .line 878
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateState()V
 
     const/4 p1, 0x0
 
-    .line 874
+    .line 879
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    .line 876
+    .line 881
     :cond_10
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->hideAutoHint()V
 
     const/16 p1, 0x8
 
-    .line 877
+    .line 882
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -4190,12 +4209,12 @@
 .method public updateLayout(II)V
     .registers 6
 
-    .line 1013
+    .line 1018
     iget v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mScreenFormType:I
 
     if-eq v0, p1, :cond_15
 
-    .line 1017
+    .line 1022
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mIsVipMode:Z
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mContext:Landroid/content/Context;
@@ -4210,10 +4229,10 @@
 
     if-eqz v0, :cond_15
 
-    .line 1018
+    .line 1023
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/ui/helper/ScrollHelper;->onScreenFormChanged(I)V
 
-    .line 1022
+    .line 1027
     :cond_15
     iput p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mScreenFormType:I
 
@@ -4229,7 +4248,7 @@
 
     goto :goto_23
 
-    .line 1028
+    .line 1033
     :cond_20
     iput p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mOrientation:I
 
@@ -4239,14 +4258,14 @@
     :goto_23
     const/4 v0, 0x0
 
-    .line 1026
+    .line 1031
     iput v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mOrientation:I
 
-    .line 1031
+    .line 1036
     :goto_26
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->updateItemDecoration(I)V
 
-    .line 1032
+    .line 1037
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     if-eqz v0, :cond_3c
@@ -4257,7 +4276,7 @@
 
     if-eqz v0, :cond_3c
 
-    .line 1033
+    .line 1038
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mDialog:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mScreenFormType:I
@@ -4266,21 +4285,21 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->updateDialogLayout(II)V
 
-    .line 1036
+    .line 1041
     :cond_3c
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     if-eqz v0, :cond_4e
 
-    .line 1037
+    .line 1042
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->updateScreenFormType(I)V
 
-    .line 1038
+    .line 1043
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->mFeatureAdapter:Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/feature/mode/pmaster/adapter/RvAdapter;->updateOrientation(I)V
 
-    .line 1039
+    .line 1044
     iget p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mScreenFormType:I
 
     const/4 v0, 0x1

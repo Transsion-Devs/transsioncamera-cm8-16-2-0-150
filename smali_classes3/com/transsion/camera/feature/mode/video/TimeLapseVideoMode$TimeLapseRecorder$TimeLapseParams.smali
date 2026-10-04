@@ -24,10 +24,10 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;Ljava/lang/String;Ljava/io/FileDescriptor;I)V
     .registers 5
 
-    .line 1089
+    .line 1094
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
-    .line 1090
+    .line 1095
     invoke-direct {p0, p2, p3, p4}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoEncoder$EncoderParams;-><init>(Ljava/lang/String;Ljava/io/FileDescriptor;I)V
 
     return-void
@@ -36,10 +36,10 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;Ljava/lang/String;Ljava/io/FileDescriptor;ILandroidx/documentfile/provider/DocumentFile;)V
     .registers 6
 
-    .line 1094
+    .line 1099
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;-><init>(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;Ljava/lang/String;Ljava/io/FileDescriptor;I)V
 
-    .line 1095
+    .line 1100
     iput-object p5, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->mDocumentFile:Landroidx/documentfile/provider/DocumentFile;
 
     return-void
@@ -48,22 +48,22 @@
 .method private removeFile()V
     .registers 7
 
-    .line 1120
+    .line 1125
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->mDocumentFile:Landroidx/documentfile/provider/DocumentFile;
 
     if-eqz v0, :cond_33
 
-    .line 1121
+    .line 1126
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 1122
+    .line 1127
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->mDocumentFile:Landroidx/documentfile/provider/DocumentFile;
 
     invoke-virtual {v2}, Landroidx/documentfile/provider/DocumentFile;->delete()Z
 
-    .line 1123
+    .line 1128
     invoke-static {}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v2
@@ -96,24 +96,24 @@
 
     const/4 v0, 0x0
 
-    .line 1124
+    .line 1129
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->mDocumentFile:Landroidx/documentfile/provider/DocumentFile;
 
     return-void
 
-    .line 1127
+    .line 1132
     :cond_33
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoEncoder$EncoderParams;->mFD:Ljava/io/FileDescriptor;
 
     if-eqz v0, :cond_55
 
-    .line 1128
+    .line 1133
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     iget-object v0, v0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->this$0:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
-    invoke-static {v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->access$5200(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
+    invoke-static {v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->access$5400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     move-result-object v0
 
@@ -135,20 +135,20 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->deleteTempVideoFile(Ljava/lang/String;)Z
 
-    .line 1130
+    .line 1135
     :cond_55
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoEncoder$EncoderParams;->mPath:Ljava/lang/String;
 
     if-eqz v0, :cond_69
 
-    .line 1131
+    .line 1136
     new-instance v0, Ljava/io/File;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoEncoder$EncoderParams;->mPath:Ljava/lang/String;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 1132
+    .line 1137
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result p0
@@ -164,14 +164,14 @@
 .method private resetState()V
     .registers 3
 
-    .line 1115
+    .line 1120
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$fputmRecordingFlag(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;Z)V
 
-    .line 1116
+    .line 1121
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-static {p0, v1}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$fputmPreparingFlag(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;Z)V
@@ -184,7 +184,7 @@
 .method public onDurationOutLimit()V
     .registers 1
 
-    .line 1111
+    .line 1116
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->removeFile()V
 
     return-void
@@ -193,7 +193,7 @@
 .method public onPrepared()V
     .registers 1
 
-    .line 1100
+    .line 1105
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$mdoStartEncoder(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)V
@@ -210,13 +210,13 @@
 .method public onStopped(I)V
     .registers 5
 
-    .line 1138
+    .line 1143
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     iget-object v0, v0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->this$0:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
-    invoke-static {v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->access$5300(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
+    invoke-static {v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->access$5500(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     move-result-object v0
 
@@ -224,7 +224,7 @@
 
     if-ne v0, v1, :cond_14
 
-    .line 1139
+    .line 1144
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     iget-object v0, v0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->this$0:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;
@@ -232,16 +232,16 @@
     const/4 v1, 0x0
 
     # invokes: Lcom/transsion/camera/app/common/mode/CameraMode;->lockAf(Z)V
-    invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->access$5400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;Z)V
+    invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->access$5600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;Z)V
 
-    .line 1141
+    .line 1146
     :cond_14
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     iget-object v0, v0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->this$0:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
-    invoke-static {v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->access$5500(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
+    invoke-static {v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->access$5700(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
 
@@ -277,7 +277,7 @@
 
     if-eq v0, p1, :cond_66
 
-    .line 1142
+    .line 1147
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$fgetmRecordingFlag(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)Z
@@ -288,7 +288,7 @@
 
     goto :goto_66
 
-    .line 1152
+    .line 1157
     :cond_4a
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
@@ -298,7 +298,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->notifyToVideoUI(Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;)V
 
-    .line 1153
+    .line 1158
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     iget v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoEncoder$EncoderParams;->mTimeLapse:I
@@ -309,22 +309,22 @@
 
     invoke-static {p1, v0, v1, v2}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$msaveVideo(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;ILjava/lang/String;Landroidx/documentfile/provider/DocumentFile;)V
 
-    .line 1154
+    .line 1159
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->this$0:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;
 
     # invokes: Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToIdle()V
-    invoke-static {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->access$5600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)V
+    invoke-static {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->access$5800(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)V
 
     return-void
 
-    .line 1143
+    .line 1148
     :cond_66
     :goto_66
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->removeFile()V
 
-    .line 1144
+    .line 1149
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     iget-object p1, p1, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->this$0:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;
@@ -335,17 +335,17 @@
 
     invoke-virtual {p1, v1, v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->onMediaRecorderStopped(IZ)V
 
-    .line 1145
+    .line 1150
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     iget-object p1, p1, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->this$0:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onVideoRestartPreviewed()V
 
-    .line 1146
+    .line 1151
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->resetState()V
 
-    .line 1147
+    .line 1152
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder$TimeLapseParams;->this$1:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$fgetmVideoFileSpecs(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)Ljava/util/HashMap;
@@ -354,7 +354,7 @@
 
     invoke-virtual {p0}, Ljava/util/HashMap;->clear()V
 
-    .line 1148
+    .line 1153
     invoke-static {}, Lcom/transsion/camera/utils/dfx/mgr/ExManager;->get()Lcom/transsion/camera/utils/dfx/inter/IExDetection;
 
     move-result-object p0

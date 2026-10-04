@@ -21,7 +21,7 @@
     .annotation build Lkotlinx/coroutines/ExperimentalCoroutinesApi;
     .end annotation
 
-    .line 21
+    .line 17
     new-instance v0, Lkotlinx/coroutines/selects/OnTimeout;
 
     invoke-direct {v0, p1, p2}, Lkotlinx/coroutines/selects/OnTimeout;-><init>(J)V
@@ -52,7 +52,7 @@
     .annotation build Lkotlinx/coroutines/ExperimentalCoroutinesApi;
     .end annotation
 
-    .line 31
+    .line 27
     invoke-static {p1, p2}, Lkotlinx/coroutines/DelayKt;->toDelayMillis-LRDsOJo(J)J
 
     move-result-wide p1

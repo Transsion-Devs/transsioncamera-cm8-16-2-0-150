@@ -36,7 +36,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)V
     .registers 2
 
-    .line 341
+    .line 355
     iput-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .method public updateArrowWidthAndHeight(I)V
     .registers 3
 
-    .line 351
+    .line 365
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$misLand(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;I)Z
@@ -67,7 +67,7 @@
 
     if-eqz p1, :cond_25
 
-    .line 352
+    .line 366
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmUISpec(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/feature/wideselfie/WideSelfieUISpec;
@@ -78,7 +78,7 @@
 
     iput p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstArrowWidth:I
 
-    .line 353
+    .line 367
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;
@@ -101,7 +101,7 @@
 
     return-void
 
-    .line 355
+    .line 369
     :cond_25
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
@@ -113,7 +113,7 @@
 
     iput p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstArrowWidth:I
 
-    .line 356
+    .line 370
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;
@@ -140,7 +140,7 @@
 .method public updateRootLayoutMargin(I)V
     .registers 13
 
-    .line 361
+    .line 375
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     # getter for: Lcom/transsion/camera/feature/common/BaseUI;->mContext:Landroid/content/Context;
@@ -152,7 +152,7 @@
 
     move-result-object v0
 
-    .line 362
+    .line 376
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
 
     move-result v1
@@ -165,7 +165,7 @@
 
     move-result v0
 
-    .line 363
+    .line 377
     iget-object v1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {v1, p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$misLand(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;I)Z
@@ -194,10 +194,10 @@
 
     if-ne p1, v7, :cond_7c
 
-    .line 365
+    .line 379
     iput v9, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstGravity:I
 
-    .line 366
+    .line 380
     iget-object v10, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {v10}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;
@@ -216,7 +216,7 @@
 
     iput v6, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginRight:I
 
-    .line 367
+    .line 381
     iget-object v6, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     # getter for: Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -232,7 +232,7 @@
 
     iget-object v6, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
-    .line 368
+    .line 382
     # getter for: Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
     invoke-static {v6}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->access$200(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
 
@@ -246,7 +246,7 @@
 
     goto :goto_6c
 
-    .line 371
+    .line 385
     :cond_59
     iget v1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginRight:I
 
@@ -270,7 +270,7 @@
 
     goto :goto_cc
 
-    .line 369
+    .line 383
     :cond_6c
     :goto_6c
     iget-object v6, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
@@ -298,10 +298,10 @@
 
     if-ne p1, v10, :cond_cc
 
-    .line 374
+    .line 388
     iput v4, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstGravity:I
 
-    .line 375
+    .line 389
     iget-object v10, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {v10}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;
@@ -320,7 +320,7 @@
 
     iput v6, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginLeft:I
 
-    .line 376
+    .line 390
     iget-object v6, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     # getter for: Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -336,7 +336,7 @@
 
     iget-object v6, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
-    .line 377
+    .line 391
     # getter for: Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
     invoke-static {v6}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->access$400(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Lcom/transsion/camera/app/common/IAppUI;
 
@@ -350,7 +350,7 @@
 
     goto :goto_bd
 
-    .line 380
+    .line 394
     :cond_aa
     iget v1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginLeft:I
 
@@ -374,7 +374,7 @@
 
     goto :goto_cc
 
-    .line 378
+    .line 392
     :cond_bd
     :goto_bd
     iget-object v6, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
@@ -395,7 +395,7 @@
 
     iput v1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginLeft:I
 
-    .line 383
+    .line 397
     :cond_cc
     :goto_cc
     iget-object v1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
@@ -426,7 +426,7 @@
 
     iput v1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginTop:I
 
-    .line 384
+    .line 398
     iget-object v1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     # getter for: Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -444,7 +444,7 @@
 
     if-ne p1, v7, :cond_110
 
-    .line 386
+    .line 400
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;
@@ -477,7 +477,7 @@
 
     goto :goto_129
 
-    .line 388
+    .line 402
     :cond_110
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
@@ -509,7 +509,7 @@
 
     iput p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginLeft:I
 
-    .line 391
+    .line 405
     :cond_129
     :goto_129
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
@@ -524,7 +524,7 @@
 
     if-eqz p1, :cond_274
 
-    .line 392
+    .line 406
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     # getter for: Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -538,7 +538,7 @@
 
     if-ne p1, v8, :cond_148
 
-    .line 393
+    .line 407
     iget p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginLeft:I
 
     div-int/2addr v0, v5
@@ -549,7 +549,7 @@
 
     return-void
 
-    .line 394
+    .line 408
     :cond_148
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
@@ -564,7 +564,7 @@
 
     if-ne p1, v9, :cond_15b
 
-    .line 395
+    .line 409
     iget p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginRight:I
 
     div-int/2addr v0, v5
@@ -575,7 +575,7 @@
 
     return-void
 
-    .line 396
+    .line 410
     :cond_15b
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
@@ -590,7 +590,7 @@
 
     if-ne p1, v4, :cond_274
 
-    .line 397
+    .line 411
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;
@@ -631,11 +631,11 @@
 
     return-void
 
-    .line 401
+    .line 415
     :cond_18a
     iput v3, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstGravity:I
 
-    .line 402
+    .line 416
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;
@@ -670,16 +670,16 @@
 
     const/4 v0, 0x0
 
-    .line 403
+    .line 417
     iput v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginLeft:I
 
-    .line 404
+    .line 418
     iput v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginRight:I
 
-    .line 405
+    .line 419
     iput v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginBottom:I
 
-    .line 406
+    .line 420
     iget-object v1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     # getter for: Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -697,14 +697,14 @@
 
     if-nez p1, :cond_1e0
 
-    .line 408
+    .line 422
     iget p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstGravity:I
 
     or-int/lit8 p1, p1, 0x30
 
     iput p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstGravity:I
 
-    .line 409
+    .line 423
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;
@@ -742,17 +742,17 @@
 
     if-ne p1, v1, :cond_274
 
-    .line 411
+    .line 425
     iget p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstGravity:I
 
     or-int/lit8 p1, p1, 0x50
 
     iput p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstGravity:I
 
-    .line 412
+    .line 426
     iput v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginTop:I
 
-    .line 413
+    .line 427
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;
@@ -773,7 +773,7 @@
 
     return-void
 
-    .line 415
+    .line 429
     :cond_1fc
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
@@ -788,7 +788,7 @@
 
     if-ne p1, v5, :cond_222
 
-    .line 416
+    .line 430
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;
@@ -821,7 +821,7 @@
 
     return-void
 
-    .line 417
+    .line 431
     :cond_222
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
@@ -836,7 +836,7 @@
 
     if-ne p1, v4, :cond_274
 
-    .line 418
+    .line 432
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;
@@ -869,7 +869,7 @@
 
     iput p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->dstMarginTop:I
 
-    .line 419
+    .line 433
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmSwitchPreviewValue(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Ljava/lang/String;
@@ -882,7 +882,7 @@
 
     if-eqz p1, :cond_274
 
-    .line 420
+    .line 434
     iget-object p1, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI$AnimationPara;->this$0:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->-$$Nest$fgetmPreviewRect(Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;)Landroid/graphics/Rect;

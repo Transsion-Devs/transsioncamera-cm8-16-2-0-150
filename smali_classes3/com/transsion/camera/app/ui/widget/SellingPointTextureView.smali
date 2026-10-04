@@ -58,6 +58,15 @@
     return-void
 .end method
 
+.method static bridge synthetic -$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
+    .registers 1
+
+    .line 0
+    sget-object v0, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    return-object v0
+.end method
+
 .method static constructor <clinit>()V
     .registers 2
 
@@ -243,7 +252,7 @@
 
     invoke-virtual {p1, v0}, Landroid/media/MediaPlayer;->setOnPreparedListener(Landroid/media/MediaPlayer$OnPreparedListener;)V
 
-    .line 123
+    .line 127
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->prepareAsync()V
@@ -265,7 +274,7 @@
 
     move-object p1, v0
 
-    .line 125
+    .line 129
     :try_start_4c
     sget-object v0, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -289,10 +298,10 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 126
+    .line 130
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->releaseMediaPlayer()V
 
-    .line 128
+    .line 132
     :goto_69
     monitor-exit v1
 
@@ -309,14 +318,14 @@
 .method private releaseMediaPlayer()V
     .registers 2
 
-    .line 133
+    .line 137
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 137
+    .line 141
     :cond_5
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->isPlaying()Z
 
@@ -324,12 +333,12 @@
 
     if-eqz v0, :cond_10
 
-    .line 138
+    .line 142
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->stop()V
 
-    .line 140
+    .line 144
     :cond_10
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
@@ -337,7 +346,7 @@
 
     const/4 v0, 0x0
 
-    .line 141
+    .line 145
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->mMediaPlayer:Landroid/media/MediaPlayer;
 
     return-void
@@ -346,7 +355,7 @@
 .method private releaseVideoSurface()V
     .registers 2
 
-    .line 151
+    .line 155
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->mVideoSurface:Landroid/view/Surface;
 
     if-eqz v0, :cond_12
@@ -357,14 +366,14 @@
 
     if-eqz v0, :cond_12
 
-    .line 152
+    .line 156
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->mVideoSurface:Landroid/view/Surface;
 
     invoke-virtual {v0}, Landroid/view/Surface;->release()V
 
     const/4 v0, 0x0
 
-    .line 153
+    .line 157
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->mVideoSurface:Landroid/view/Surface;
 
     :cond_12
@@ -433,16 +442,16 @@
 .method public releaseMediaPlayerLocked()V
     .registers 2
 
-    .line 145
+    .line 149
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->mMediaPlayerLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 146
+    .line 150
     :try_start_3
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/SellingPointTextureView;->releaseMediaPlayer()V
 
-    .line 147
+    .line 151
     monitor-exit v0
 
     return-void

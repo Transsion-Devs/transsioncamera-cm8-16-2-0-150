@@ -1816,19 +1816,13 @@
 
     .line 257
     :cond_59
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->notifyNonsupportDualColor(Ljava/lang/String;)V
-
-    .line 258
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->updateLuminanceUi(Ljava/lang/String;)V
-
-    .line 259
     iget-object v4, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->getKey()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 260
+    .line 258
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->getStoreScope()Ljava/lang/String;
 
     move-result-object v7
@@ -1839,10 +1833,10 @@
 
     move-object v6, p1
 
-    .line 259
+    .line 257
     invoke-virtual/range {v4 .. v9}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V
 
-    .line 261
+    .line 259
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object p1
@@ -1851,9 +1845,9 @@
 
     move-result p1
 
-    if-nez p1, :cond_b0
+    if-nez p1, :cond_aa
 
-    .line 262
+    .line 260
     sget-object p1, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1882,30 +1876,36 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 263
+    .line 261
     invoke-virtual {p0, v6}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 264
+    .line 262
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->mFlashManager:Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;
 
     invoke-virtual {p1, v6}, Lcom/transsion/camera/feature/setting/flashfacade/FlashManager;->updateFacadeValue(Ljava/lang/String;)V
 
-    .line 265
-    iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+    .line 263
+    iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 266
+    .line 264
     invoke-static {}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacadeRestriction;->getFlashRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {p1, v6, v3}, Lcom/transsion/camera/app/common/relation/RelationGroup;->getRelation(Ljava/lang/String;Z)Lcom/transsion/camera/app/common/relation/Relation;
+    invoke-virtual {v0, v6, v3}, Lcom/transsion/camera/app/common/relation/RelationGroup;->getRelation(Ljava/lang/String;Z)Lcom/transsion/camera/app/common/relation/Relation;
 
-    move-result-object p1
+    move-result-object v0
 
-    .line 265
-    invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
+    .line 263
+    invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    :cond_b0
+    .line 266
+    :cond_aa
+    invoke-virtual {p0, v6}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->notifyNonsupportDualColor(Ljava/lang/String;)V
+
+    .line 267
+    invoke-virtual {p0, v6}, Lcom/transsion/camera/feature/setting/flashfacade/FlashFacade;->updateLuminanceUi(Ljava/lang/String;)V
+
     return-void
 .end method
 

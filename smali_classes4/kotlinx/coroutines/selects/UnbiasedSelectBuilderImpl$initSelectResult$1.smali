@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.selects.UnbiasedSelectBuilderImpl$initSelectResult$1"
     f = "SelectOld.kt"
     l = {
-        0x47
+        0x43
     }
     m = "invokeSuspend"
 .end annotation
@@ -147,7 +147,7 @@
 
     move-result-object v0
 
-    .line 69
+    .line 65
     iget v1, p0, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl$initSelectResult$1;->label:I
 
     const/4 v2, 0x1
@@ -180,7 +180,7 @@
     :cond_19
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 71
+    .line 67
     :try_start_1c
     iget-object p1, p0, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl$initSelectResult$1;->this$0:Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl;
 
@@ -196,7 +196,7 @@
 
     return-object v0
 
-    .line 76
+    .line 72
     :cond_27
     :goto_27
     iget-object p0, p0, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl$initSelectResult$1;->this$0:Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl;
@@ -209,12 +209,12 @@
     # invokes: Lkotlinx/coroutines/selects/SelectOldKt;->resumeUndispatched(Lkotlinx/coroutines/CancellableContinuation;Ljava/lang/Object;)V
     invoke-static {p0, p1}, Lkotlinx/coroutines/selects/SelectOldKt;->access$resumeUndispatched(Lkotlinx/coroutines/CancellableContinuation;Ljava/lang/Object;)V
 
-    .line 77
+    .line 73
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 73
+    .line 69
     :goto_33
     iget-object p0, p0, Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl$initSelectResult$1;->this$0:Lkotlinx/coroutines/selects/UnbiasedSelectBuilderImpl;
 
@@ -226,7 +226,7 @@
     # invokes: Lkotlinx/coroutines/selects/SelectOldKt;->resumeUndispatchedWithException(Lkotlinx/coroutines/CancellableContinuation;Ljava/lang/Throwable;)V
     invoke-static {p0, p1}, Lkotlinx/coroutines/selects/SelectOldKt;->access$resumeUndispatchedWithException(Lkotlinx/coroutines/CancellableContinuation;Ljava/lang/Throwable;)V
 
-    .line 74
+    .line 70
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0

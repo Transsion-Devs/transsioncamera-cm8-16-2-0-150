@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/CameraApplication;)V
     .registers 2
 
-    .line 520
+    .line 526
     iput-object p1, p0, Lcom/transsion/camera/app/CameraApplication$2;->this$0:Lcom/transsion/camera/app/CameraApplication;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,7 +35,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .registers 5
 
-    .line 523
+    .line 529
     const-string v0, "android.intent.extra.UID"
 
     const/4 v1, -0x1
@@ -46,7 +46,7 @@
 
     if-eq p2, v1, :cond_2a
 
-    .line 525
+    .line 531
     iget-object v0, p0, Lcom/transsion/camera/app/CameraApplication$2;->this$0:Lcom/transsion/camera/app/CameraApplication;
 
     invoke-static {v0}, Lcom/transsion/camera/app/CameraApplication;->-$$Nest$smgetUid(Landroid/content/Context;)I
@@ -55,7 +55,7 @@
 
     if-ne p2, v0, :cond_2a
 
-    .line 526
+    .line 532
     invoke-static {}, Lcom/transsion/camera/app/CameraApplication;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p2
@@ -66,15 +66,15 @@
 
     const/4 p2, 0x0
 
-    .line 527
+    .line 533
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/FeatureSupport;->updateDeveloperMode(Landroid/content/Context;Z)V
 
-    .line 528
+    .line 534
     iget-object p0, p0, Lcom/transsion/camera/app/CameraApplication$2;->this$0:Lcom/transsion/camera/app/CameraApplication;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/app/CameraApplication;->-$$Nest$mclearDataStore(Lcom/transsion/camera/app/CameraApplication;Landroid/content/Context;)V
 
-    .line 529
+    .line 535
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object p0

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$BarType;)V
     .registers 2
 
-    .line 1067
+    .line 1088
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$BarType$1;->this$1:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$BarType;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 3
 
-    .line 1070
+    .line 1091
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$BarType$1;->this$1:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$BarType;
 
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AbstractType;->mInnerZoomItems:Ljava/util/List;
@@ -57,10 +57,10 @@
 
     const/4 v1, 0x0
 
-    .line 1071
+    .line 1092
     iput v1, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mItemType:I
 
-    .line 1072
+    .line 1093
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$BarType$1;->this$1:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$BarType;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$BarType;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;

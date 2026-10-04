@@ -1,11 +1,14 @@
 .class Lcom/transsion/camera/app/ui/PopSettingUI$4;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/app/ui/PopSettingUI;->animateTranslation(FF)V
+    value = Lcom/transsion/camera/app/ui/PopSettingUI;->showPopSettingView(ZZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,39 +18,58 @@
 
 
 # instance fields
-.field final synthetic this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
+.field final synthetic val$entryText:Landroid/widget/TextView;
 
 
 # direct methods
-.method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI;)V
-    .registers 2
+.method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI;Landroid/widget/TextView;)V
+    .registers 3
 
-    .line 827
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/PopSettingUI$4;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
+    .line 656
+    iput-object p2, p0, Lcom/transsion/camera/app/ui/PopSettingUI$4;->val$entryText:Landroid/widget/TextView;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .registers 2
+.method public onPreDraw()Z
+    .registers 4
 
-    .line 830
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
+    .line 659
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$4;->val$entryText:Landroid/widget/TextView;
 
-    .line 831
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$4;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/PopSettingUI;->-$$Nest$fgetmPopOptionSelectedBackground(Lcom/transsion/camera/app/ui/PopSettingUI;)Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;
+    move-result-object v0
 
-    move-result-object p0
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    const/4 p1, 0x0
+    .line 660
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$4;->val$entryText:Landroid/widget/TextView;
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setTranslationY(F)V
+    invoke-virtual {v0}, Landroid/widget/TextView;->getLineCount()I
 
-    return-void
+    move-result v0
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x1
+
+    if-le v0, v1, :cond_1d
+
+    .line 662
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$4;->val$entryText:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setSelected(Z)V
+
+    .line 663
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$4;->val$entryText:Landroid/widget/TextView;
+
+    invoke-virtual {p0, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
+
+    :cond_1d
+    return v2
 .end method

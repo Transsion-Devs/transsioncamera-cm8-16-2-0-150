@@ -28,7 +28,7 @@
 .method private constructor <init>()V
     .registers 2
 
-    .line 28
+    .line 25
     sget-object v0, Lkotlinx/coroutines/Job;->Key:Lkotlinx/coroutines/Job$Key;
 
     invoke-direct {p0, v0}, Lkotlin/coroutines/AbstractCoroutineContextElement;-><init>(Lkotlin/coroutines/CoroutineContext$Key;)V
@@ -77,7 +77,7 @@
 .method public attachChild(Lkotlinx/coroutines/ChildJob;)Lkotlinx/coroutines/ChildHandle;
     .registers 2
 
-    .line 135
+    .line 132
     sget-object p0, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
     return-object p0
@@ -86,7 +86,7 @@
 .method public synthetic cancel()V
     .registers 1
 
-    .line 27
+    .line 24
     invoke-static {p0}, Lkotlinx/coroutines/Job$DefaultImpls;->cancel(Lkotlinx/coroutines/Job;)V
 
     return-void
@@ -111,7 +111,7 @@
 .method public getCancellationException()Ljava/util/concurrent/CancellationException;
     .registers 2
 
-    .line 91
+    .line 88
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string v0, "This job is always active"
@@ -130,7 +130,7 @@
         }
     .end annotation
 
-    .line 128
+    .line 125
     invoke-static {}, Lkotlin/sequences/SequencesKt;->emptySequence()Lkotlin/sequences/Sequence;
 
     move-result-object p0
@@ -141,7 +141,7 @@
 .method public getOnJoin()Lkotlinx/coroutines/selects/SelectClause0;
     .registers 2
 
-    .line 84
+    .line 81
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string v0, "This job is always active"
@@ -170,7 +170,7 @@
         }
     .end annotation
 
-    .line 98
+    .line 95
     sget-object p0, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
     return-object p0
@@ -187,7 +187,7 @@
         }
     .end annotation
 
-    .line 106
+    .line 103
     sget-object p0, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
     return-object p0
@@ -230,7 +230,7 @@
         }
     .end annotation
 
-    .line 75
+    .line 72
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string p1, "This job is always active"
@@ -243,7 +243,7 @@
 .method public plus(Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/Job;
     .registers 2
 
-    .line 27
+    .line 24
     invoke-static {p0, p1}, Lkotlinx/coroutines/Job$DefaultImpls;->plus(Lkotlinx/coroutines/Job;Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/Job;
 
     move-result-object p0
@@ -262,7 +262,7 @@
 .method public toString()Ljava/lang/String;
     .registers 1
 
-    .line 139
+    .line 136
     const-string p0, "NonCancellable"
 
     return-object p0

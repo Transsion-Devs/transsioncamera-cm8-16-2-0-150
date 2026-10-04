@@ -114,7 +114,7 @@
 .method private getHintUI()Lcom/transsion/camera/app/ui/AbstractHintUI;
     .registers 1
 
-    .line 324
+    .line 329
     iget-object p0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     return-object p0
@@ -123,7 +123,7 @@
 .method private getTwinkleGuildSettingKey(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
 
-    .line 236
+    .line 241
     const-string p0, "com.transsion.camera.feature.mode.supernight.SuperNightModeEntry"
 
     invoke-static {p1, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -134,7 +134,7 @@
 
     const-string p0, "com.transsion.camera.feature.supernightfilter.mode.SuperNightFilterModeEntry"
 
-    .line 237
+    .line 242
     invoke-static {p1, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -143,7 +143,7 @@
 
     goto :goto_58
 
-    .line 239
+    .line 244
     :cond_11
     const-string p0, "com.transsion.camera.feature.mode.magicsky.MagicSkyModeEntry"
 
@@ -153,12 +153,12 @@
 
     if-eqz p0, :cond_1c
 
-    .line 240
+    .line 245
     const-string p0, "key_twinkle_guild_magic_sky_mode"
 
     return-object p0
 
-    .line 241
+    .line 246
     :cond_1c
     const-string p0, "com.transsion.camera.feature.mode.pmaster.PMasterModeEntry"
 
@@ -168,12 +168,12 @@
 
     if-eqz p0, :cond_27
 
-    .line 242
+    .line 247
     const-string p0, "key_twinkle_guild_pmaster_mode"
 
     return-object p0
 
-    .line 243
+    .line 248
     :cond_27
     const-string p0, "com.transsion.camera.feature.mode.doc.DocumentEntry"
 
@@ -183,12 +183,12 @@
 
     if-eqz p0, :cond_32
 
-    .line 244
+    .line 249
     const-string p0, "key_twinkle_guild_document_mode"
 
     return-object p0
 
-    .line 245
+    .line 250
     :cond_32
     const-string p0, "com.transsion.camera.ui.setting.flarecapture.FlareCaptureSettingUIEntry"
 
@@ -198,12 +198,12 @@
 
     if-eqz p0, :cond_3d
 
-    .line 246
+    .line 251
     const-string p0, "key_twinkle_flare_capture_guide"
 
     return-object p0
 
-    .line 247
+    .line 252
     :cond_3d
     const-string/jumbo p0, "val_celebrity_scene_food"
 
@@ -213,12 +213,12 @@
 
     if-eqz p0, :cond_49
 
-    .line 248
+    .line 253
     const-string p0, "key_twinkle_guild_celebrity_food"
 
     return-object p0
 
-    .line 249
+    .line 254
     :cond_49
     const-string/jumbo p0, "val_celebrity_scene_sunset"
 
@@ -228,18 +228,18 @@
 
     if-eqz p0, :cond_55
 
-    .line 250
+    .line 255
     const-string p0, "key_twinkle_guild_celebrity_sunset"
 
     return-object p0
 
-    .line 252
+    .line 257
     :cond_55
     const-string p0, ""
 
     return-object p0
 
-    .line 238
+    .line 243
     :cond_58
     :goto_58
     const-string p0, "key_twinkle_guild_super_night_mode"
@@ -302,10 +302,10 @@
 .method private setIsQrcodeToastShow(Z)V
     .registers 4
 
-    .line 333
+    .line 338
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mIsQrcodeToastShow:Z
 
-    .line 334
+    .line 339
     sget-object p1, Lcom/transsion/camera/app/ui/HintUIHolder;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -332,10 +332,10 @@
 .method private setIsZooming(Z)V
     .registers 4
 
-    .line 328
+    .line 333
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mIsZooming:Z
 
-    .line 329
+    .line 334
     sget-object p1, Lcom/transsion/camera/app/ui/HintUIHolder;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -364,12 +364,12 @@
 .method public getAnimatorUpdateListener(Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;)Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;
     .registers 3
 
-    .line 132
+    .line 137
     sget-object v0, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;->UI5_ANIM_PREVIEW_TRANSLATION:Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;
 
     if-ne p1, v0, :cond_7
 
-    .line 133
+    .line 138
     iget-object p0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mPreviewTranslationListener:Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;
 
     return-object p0
@@ -391,7 +391,7 @@
 .method public getPreviewRect()Landroid/graphics/Rect;
     .registers 1
 
-    .line 316
+    .line 321
     iget-object p0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mPreviewRect:Landroid/graphics/Rect;
 
     return-object p0
@@ -417,14 +417,14 @@
 .method public isTwinkleGuildShowed(Lcom/transsion/camera/app/common/storage/DataStore;Ljava/lang/String;)Z
     .registers 8
 
-    .line 163
+    .line 168
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mIsZooming:Z
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_d
 
-    .line 164
+    .line 169
     sget-object p0, Lcom/transsion/camera/app/ui/HintUIHolder;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "isTwinkleGuildShowed: zooming not show"
@@ -433,13 +433,13 @@
 
     return v1
 
-    .line 167
+    .line 172
     :cond_d
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mIsQrcodeToastShow:Z
 
     if-eqz v0, :cond_19
 
-    .line 168
+    .line 173
     sget-object p0, Lcom/transsion/camera/app/ui/HintUIHolder;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "isTwinkleGuildShowed: qrcode toast show not show"
@@ -448,16 +448,16 @@
 
     return v1
 
-    .line 171
+    .line 176
     :cond_19
     const-string/jumbo v0, "value_none_guide"
 
-    .line 172
+    .line 177
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 171
+    .line 176
     const-string v3, "key_selling_point_guide_status"
 
     invoke-virtual {p1, v3, v0, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -472,7 +472,7 @@
 
     if-eqz v0, :cond_37
 
-    .line 173
+    .line 178
     sget-object p0, Lcom/transsion/camera/app/ui/HintUIHolder;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "isTwinkleGuildShowed: selling overlay guide show not show"
@@ -481,13 +481,13 @@
 
     return v1
 
-    .line 177
+    .line 182
     :cond_37
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/ui/HintUIHolder;->getTwinkleGuildSettingKey(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 178
+    .line 183
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p2
@@ -498,16 +498,16 @@
 
     goto :goto_53
 
-    .line 181
+    .line 186
     :cond_43
     const-string p2, "off"
 
-    .line 182
+    .line 187
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 181
+    .line 186
     invoke-virtual {p1, p0, p2, v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -518,7 +518,7 @@
 
     move-result p2
 
-    .line 184
+    .line 189
     :goto_53
     const-string v0, "key_twinkle_guild_pmaster_mode"
 
@@ -536,15 +536,15 @@
 
     if-nez p2, :cond_74
 
-    .line 185
+    .line 190
     const-string p2, "key_twinkle_guild_pmaster_mode_max"
 
-    .line 186
+    .line 191
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 185
+    .line 190
     invoke-virtual {p1, p2, v4, v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -566,7 +566,7 @@
     :goto_74
     move p2, v1
 
-    .line 188
+    .line 193
     :cond_75
     :goto_75
     const-string v0, "key_twinkle_flare_capture_guide"
@@ -579,15 +579,15 @@
 
     if-nez p2, :cond_92
 
-    .line 189
+    .line 194
     const-string p2, "key_twinkle_flare_capture_guide_max"
 
-    .line 190
+    .line 195
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 189
+    .line 194
     invoke-virtual {p1, p2, v4, v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -609,7 +609,7 @@
     :goto_92
     move p2, v1
 
-    .line 192
+    .line 197
     :cond_93
     :goto_93
     const-string v0, "key_twinkle_guild_celebrity_food"
@@ -622,15 +622,15 @@
 
     if-nez p2, :cond_b0
 
-    .line 193
+    .line 198
     const-string p2, "key_twinkle_guild_celebrity_food_max"
 
-    .line 194
+    .line 199
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 193
+    .line 198
     invoke-virtual {p1, p2, v4, v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -652,7 +652,7 @@
     :goto_b0
     move p2, v1
 
-    .line 196
+    .line 201
     :cond_b1
     :goto_b1
     const-string v0, "key_twinkle_guild_celebrity_sunset"
@@ -665,15 +665,15 @@
 
     if-nez p2, :cond_cd
 
-    .line 197
+    .line 202
     const-string p0, "key_twinkle_guild_celebrity_sunset_max"
 
-    .line 198
+    .line 203
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 197
+    .line 202
     invoke-virtual {p1, p0, v4, p2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -753,23 +753,23 @@
     :cond_2f
     if-ne p1, v2, :cond_3a
 
-    .line 304
+    .line 309
     iget-object p1, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-virtual {p1, v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->resetTwinkleGuide(Z)V
 
-    .line 305
+    .line 310
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/ui/HintUIHolder;->setIsQrcodeToastShow(Z)V
 
     return-void
 
-    .line 307
+    .line 312
     :cond_3a
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/HintUIHolder;->setIsQrcodeToastShow(Z)V
 
     return-void
 
-    .line 290
+    .line 295
     :cond_3e
     iget-object p0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
@@ -780,17 +780,17 @@
     :cond_44
     if-ne p1, v2, :cond_4f
 
-    .line 295
+    .line 300
     iget-object p1, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-virtual {p1, v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->resetTwinkleGuide(Z)V
 
-    .line 296
+    .line 301
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/ui/HintUIHolder;->setIsZooming(Z)V
 
     return-void
 
-    .line 298
+    .line 303
     :cond_4f
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/HintUIHolder;->setIsZooming(Z)V
 
@@ -800,12 +800,12 @@
 .method public setTwinkleGuildState(Lcom/transsion/camera/app/common/storage/DataStore;Ljava/lang/String;)V
     .registers 7
 
-    .line 204
+    .line 209
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/ui/HintUIHolder;->getTwinkleGuildSettingKey(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 205
+    .line 210
     const-string p2, "key_twinkle_guild_pmaster_mode"
 
     invoke-static {p0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -818,12 +818,12 @@
 
     if-eqz p2, :cond_2a
 
-    .line 207
+    .line 212
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 206
+    .line 211
     const-string v2, "key_twinkle_guild_pmaster_mode_max"
 
     invoke-virtual {p1, v2, v0, p2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -836,20 +836,20 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    .line 208
+    .line 213
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 209
+    .line 214
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 208
+    .line 213
     invoke-virtual {p1, v2, p2, v3, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 211
+    .line 216
     :cond_2a
     const-string p2, "key_twinkle_flare_capture_guide"
 
@@ -859,12 +859,12 @@
 
     if-eqz p2, :cond_4d
 
-    .line 213
+    .line 218
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 212
+    .line 217
     const-string v2, "key_twinkle_flare_capture_guide_max"
 
     invoke-virtual {p1, v2, v0, p2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -877,20 +877,20 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    .line 214
+    .line 219
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 215
+    .line 220
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 214
+    .line 219
     invoke-virtual {p1, v2, p2, v3, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 217
+    .line 222
     :cond_4d
     const-string p2, "key_twinkle_guild_celebrity_food"
 
@@ -900,12 +900,12 @@
 
     if-eqz p2, :cond_70
 
-    .line 219
+    .line 224
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 218
+    .line 223
     const-string v2, "key_twinkle_guild_celebrity_food_max"
 
     invoke-virtual {p1, v2, v0, p2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -918,20 +918,20 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    .line 220
+    .line 225
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 221
+    .line 226
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 220
+    .line 225
     invoke-virtual {p1, v2, p2, v3, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 223
+    .line 228
     :cond_70
     const-string p2, "key_twinkle_guild_celebrity_sunset"
 
@@ -941,12 +941,12 @@
 
     if-eqz p2, :cond_93
 
-    .line 225
+    .line 230
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 224
+    .line 229
     const-string v2, "key_twinkle_guild_celebrity_sunset_max"
 
     invoke-virtual {p1, v2, v0, p2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -959,20 +959,20 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    .line 226
+    .line 231
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 227
+    .line 232
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 226
+    .line 231
     invoke-virtual {p1, v2, p2, v0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 229
+    .line 234
     :cond_93
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -980,7 +980,7 @@
 
     if-nez p2, :cond_a2
 
-    .line 230
+    .line 235
     const-string p2, "on"
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -1013,7 +1013,7 @@
 .method public updateAnalytics(ZZLjava/util/function/BiConsumer;)V
     .registers 5
 
-    .line 258
+    .line 263
     iget-object p0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getTwinkleGuideMode()Ljava/lang/String;
@@ -1028,7 +1028,7 @@
 
     goto :goto_f
 
-    .line 261
+    .line 266
     :cond_c
     const-string p0, ""
 
@@ -1038,7 +1038,7 @@
     :goto_f
     if-eqz p1, :cond_14
 
-    .line 262
+    .line 267
     const-string p1, "1"
 
     goto :goto_16
@@ -1046,7 +1046,7 @@
     :cond_14
     const-string p1, "0"
 
-    .line 263
+    .line 268
     :goto_16
     const-string p2, "com.transsion.camera.feature.mode.supernight.SuperNightModeEntry"
 
@@ -1058,7 +1058,7 @@
 
     const-string p2, "com.transsion.camera.feature.supernightfilter.mode.SuperNightFilterModeEntry"
 
-    .line 264
+    .line 269
     invoke-static {p0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p2
@@ -1067,7 +1067,7 @@
 
     goto :goto_54
 
-    .line 266
+    .line 271
     :cond_27
     const-string p2, "com.transsion.camera.feature.mode.magicsky.MagicSkyModeEntry"
 
@@ -1085,7 +1085,7 @@
 
     goto :goto_57
 
-    .line 268
+    .line 273
     :cond_33
     const-string p2, "com.transsion.camera.feature.mode.pmaster.PMasterModeEntry"
 
@@ -1099,7 +1099,7 @@
 
     goto :goto_31
 
-    .line 270
+    .line 275
     :cond_3e
     const-string p2, "com.transsion.camera.feature.mode.doc.DocumentEntry"
 
@@ -1113,7 +1113,7 @@
 
     goto :goto_31
 
-    .line 272
+    .line 277
     :cond_49
     const-string p2, "com.transsion.camera.ui.setting.flarecapture.FlareCaptureSettingUIEntry"
 
@@ -1136,7 +1136,7 @@
     :goto_57
     if-eqz p3, :cond_60
 
-    .line 277
+    .line 282
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1164,7 +1164,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_59
+    if-nez v0, :cond_71
 
     .line 117
     iget-object v0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mPreviewRect:Landroid/graphics/Rect;
@@ -1197,6 +1197,38 @@
 
     .line 122
     :goto_23
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
+
+    .line 123
+    invoke-virtual {v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getCurrentOrientation()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    .line 122
+    invoke-virtual {v1, v3, v2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->shouldApplyBurstPMKAeAfLockMargin(II)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3b
+
+    .line 124
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
+
+    invoke-virtual {v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getBurstPMKAeAfLockMarginTop()I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    .line 125
+    invoke-static {v3, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    .line 127
+    :cond_3b
     sget-object v1, Lcom/transsion/camera/app/ui/HintUIHolder;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1223,10 +1255,10 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 123
+    .line 128
     iput v0, p1, Landroid/graphics/Rect;->top:I
 
-    .line 124
+    .line 129
     iget-object p0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
@@ -1247,7 +1279,7 @@
 
     iput p0, p1, Landroid/graphics/Rect;->bottom:I
 
-    :cond_59
+    :cond_71
     return-object p1
 .end method
 
@@ -1311,7 +1343,7 @@
 .method public updateTwinkleGuideInfo(Ljava/lang/String;)Z
     .registers 5
 
-    .line 140
+    .line 145
     iget-object v0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getTwinkleGuideRoot()Landroid/view/View;
@@ -1322,7 +1354,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 141
+    .line 146
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -1331,7 +1363,7 @@
 
     return v1
 
-    .line 144
+    .line 149
     :cond_10
     iget-object v0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
@@ -1339,7 +1371,7 @@
 
     move-result-object v0
 
-    .line 145
+    .line 150
     const-string v2, "com.transsion.camera.feature.mode.doc.DocumentEntry"
 
     invoke-static {p1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1348,7 +1380,7 @@
 
     if-eqz v2, :cond_32
 
-    .line 146
+    .line 151
     iget-object p0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getRootView()Landroid/view/View;
@@ -1369,7 +1401,7 @@
 
     return v1
 
-    .line 148
+    .line 153
     :cond_32
     const-string v2, "com.transsion.camera.feature.mode.pmaster.PMasterModeEntry"
 
@@ -1379,7 +1411,7 @@
 
     if-eqz v2, :cond_4e
 
-    .line 149
+    .line 154
     iget-object p0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getRootView()Landroid/view/View;
@@ -1400,7 +1432,7 @@
 
     return v1
 
-    .line 151
+    .line 156
     :cond_4e
     const-string/jumbo v2, "val_celebrity_scene_food"
 
@@ -1410,7 +1442,7 @@
 
     if-eqz v2, :cond_6b
 
-    .line 152
+    .line 157
     iget-object p0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getRootView()Landroid/view/View;
@@ -1431,7 +1463,7 @@
 
     return v1
 
-    .line 154
+    .line 159
     :cond_6b
     const-string/jumbo v2, "val_celebrity_scene_sunset"
 
@@ -1441,7 +1473,7 @@
 
     if-eqz p1, :cond_88
 
-    .line 155
+    .line 160
     iget-object p0, p0, Lcom/transsion/camera/app/ui/HintUIHolder;->mHintUI:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->getRootView()Landroid/view/View;

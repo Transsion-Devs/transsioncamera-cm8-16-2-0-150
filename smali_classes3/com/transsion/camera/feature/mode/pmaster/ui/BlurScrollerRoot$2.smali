@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)V
     .registers 2
 
-    .line 1190
+    .line 1213
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onValueChanged(Ljava/lang/String;)V
     .registers 6
 
-    .line 1193
+    .line 1216
     invoke-static {}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -59,16 +59,16 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1194
+    .line 1217
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmBlurSetting(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/app/common/setting/ISetting;
 
     move-result-object v0
 
-    if-eqz v0, :cond_10d
+    if-eqz v0, :cond_116
 
-    .line 1195
+    .line 1218
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmBlurIcon(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Landroid/widget/ImageView;
@@ -79,7 +79,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 1196
+    .line 1219
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmScrollerRulerView(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
@@ -88,7 +88,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->setIsDurationAuto(Z)V
 
-    .line 1197
+    .line 1220
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmBlurSetting(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/app/common/setting/ISetting;
@@ -99,7 +99,7 @@
 
     move-result-object v0
 
-    .line 1198
+    .line 1221
     const-string v2, "f0.0"
 
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -108,18 +108,18 @@
 
     if-eqz v0, :cond_4a
 
-    .line 1199
+    .line 1222
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->openBlurBySeekBar(Ljava/lang/String;)V
 
-    .line 1201
+    .line 1224
     :cond_4a
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fputmCurrentBlurValue(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;Ljava/lang/String;)V
 
-    .line 1202
+    .line 1225
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmBlurSetting(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/app/common/setting/ISetting;
@@ -128,7 +128,7 @@
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 1203
+    .line 1226
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmStatusMonitor(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -137,7 +137,7 @@
 
     if-eqz v0, :cond_6f
 
-    .line 1204
+    .line 1227
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmStatusMonitor(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -152,7 +152,7 @@
 
     invoke-virtual {v0, v2, p1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 1206
+    .line 1229
     :cond_6f
     invoke-static {}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -178,20 +178,20 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1207
+    .line 1230
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmCustomizedFocalLengthSupport(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_10d
+    if-eqz p1, :cond_116
 
     invoke-static {}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$sfgetsChangeZoomCount()I
 
     move-result p1
 
-    if-nez p1, :cond_10d
+    if-nez p1, :cond_116
 
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
@@ -199,7 +199,7 @@
 
     move-result-object v0
 
-    .line 1208
+    .line 1231
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v0
@@ -208,9 +208,9 @@
 
     move-result p1
 
-    if-eqz p1, :cond_10d
+    if-eqz p1, :cond_116
 
-    .line 1209
+    .line 1232
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmBlurSetting(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Lcom/transsion/camera/app/common/setting/ISetting;
@@ -253,7 +253,7 @@
 
     move-result-object p1
 
-    .line 1210
+    .line 1233
     invoke-static {}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -286,30 +286,40 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1211
-    iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
+    .line 1234
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
 
-    invoke-static {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmCurrentBlurValue(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$fgetmCurrentBlurValue(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;)Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v0
 
-    invoke-static {p0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result p0
+    move-result p1
 
-    if-eqz p0, :cond_109
+    if-eqz p1, :cond_109
 
-    .line 1212
+    .line 1235
     invoke-static {v1}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$sfputsBlurHasChanged(Z)V
 
-    return-void
+    goto :goto_10d
 
     :cond_109
-    const/4 p0, 0x1
+    const/4 p1, 0x1
 
-    .line 1214
-    invoke-static {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$sfputsBlurHasChanged(Z)V
+    .line 1237
+    invoke-static {p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$sfputsBlurHasChanged(Z)V
 
-    :cond_10d
+    .line 1239
+    :goto_10d
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot$2;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;
+
+    invoke-static {}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$sfgetsBlurHasChanged()Z
+
+    move-result p1
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;->-$$Nest$msetBlurHasChanged(Lcom/transsion/camera/feature/mode/pmaster/ui/BlurScrollerRoot;Z)V
+
+    :cond_116
     return-void
 .end method

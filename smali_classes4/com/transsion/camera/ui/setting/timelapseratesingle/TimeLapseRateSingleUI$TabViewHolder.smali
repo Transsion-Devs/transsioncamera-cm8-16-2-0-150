@@ -22,10 +22,10 @@
 .method public constructor <init>(Landroid/view/View;)V
     .registers 3
 
-    .line 680
+    .line 679
     invoke-direct {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 681
+    .line 680
     sget v0, Lcom/transsion/camera/R$id;->tab_text:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -36,7 +36,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;->mTextView:Landroid/widget/TextView;
 
-    .line 682
+    .line 681
     invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -57,7 +57,7 @@
 .method public updateRotation(II)V
     .registers 4
 
-    .line 686
+    .line 685
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -66,7 +66,7 @@
 
     if-nez p2, :cond_e
 
-    .line 687
+    .line 686
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;->mTextView:Landroid/widget/TextView;
 
     int-to-float p1, p1

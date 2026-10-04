@@ -27,10 +27,10 @@
 .method constructor <init>()V
     .registers 3
 
-    .line 78
+    .line 81
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 80
+    .line 83
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_glass_art_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -41,7 +41,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 81
+    .line 84
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_graffiti_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -52,7 +52,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 82
+    .line 85
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_geom_abstract_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -63,7 +63,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 83
+    .line 86
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_embroidery_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -74,7 +74,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 84
+    .line 87
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_monet_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -85,7 +85,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 85
+    .line 88
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_van_gogh_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -96,7 +96,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 86
+    .line 89
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_anime_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -107,7 +107,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 87
+    .line 90
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_picasso_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -118,7 +118,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 88
+    .line 91
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_pebble_mosaic_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -129,7 +129,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 89
+    .line 92
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_woodcraft_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -140,7 +140,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 90
+    .line 93
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_tinga_tinga_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -151,7 +151,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 91
+    .line 94
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_babylon_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -162,7 +162,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 92
+    .line 95
     sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_frida_kahlo_preview_16_9:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -170,6 +170,17 @@
     move-result-object v0
 
     const-string v1, "style_frida_kahlo"
+
+    invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 96
+    sget v0, Lcom/transsion/camera/feature/aiartmuseum/R$drawable;->ai_art_museum_style_mondrian_preview_16_9:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    const-string v1, "style_mondrian"
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

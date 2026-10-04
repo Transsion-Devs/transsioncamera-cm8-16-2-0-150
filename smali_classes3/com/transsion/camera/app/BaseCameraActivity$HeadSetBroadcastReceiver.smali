@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 2634
+    .line 2667
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$HeadSetBroadcastReceiver;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -44,7 +44,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .registers 5
 
-    .line 2637
+    .line 2670
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -69,7 +69,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2638
+    .line 2671
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object p1
@@ -82,14 +82,14 @@
 
     if-eqz p1, :cond_2e
 
-    .line 2639
+    .line 2672
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$HeadSetBroadcastReceiver;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p0, p2}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$mdoHeadsetCapture(Lcom/transsion/camera/app/BaseCameraActivity;Landroid/content/Intent;)V
 
     return-void
 
-    .line 2640
+    .line 2673
     :cond_2e
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -109,7 +109,7 @@
 
     if-eqz p0, :cond_5d
 
-    .line 2642
+    .line 2675
     :try_start_40
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->exitSettingFragment()V
     :try_end_43
@@ -121,7 +121,7 @@
     :catch_44
     move-exception p0
 
-    .line 2644
+    .line 2677
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1

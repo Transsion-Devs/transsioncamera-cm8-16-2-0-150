@@ -44,10 +44,10 @@
         }
     .end annotation
 
-    .line 85
+    .line 81
     invoke-direct {p0, p2, p3, p4}, Lkotlinx/coroutines/flow/internal/ChannelFlow;-><init>(Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)V
 
-    .line 81
+    .line 77
     iput-object p1, p0, Lkotlinx/coroutines/flow/internal/ChannelLimitedFlowMerge;->flows:Ljava/lang/Iterable;
 
     return-void
@@ -60,7 +60,7 @@
 
     if-eqz p6, :cond_6
 
-    .line 82
+    .line 78
     sget-object p2, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     :cond_6
@@ -75,10 +75,10 @@
 
     if-eqz p5, :cond_11
 
-    .line 84
+    .line 80
     sget-object p4, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
 
-    .line 80
+    .line 76
     :cond_11
     invoke-direct {p0, p1, p2, p3, p4}, Lkotlinx/coroutines/flow/internal/ChannelLimitedFlowMerge;-><init>(Ljava/lang/Iterable;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)V
 
@@ -102,12 +102,12 @@
         }
     .end annotation
 
-    .line 94
+    .line 90
     new-instance p2, Lkotlinx/coroutines/flow/internal/SendingCollector;
 
     invoke-direct {p2, p1}, Lkotlinx/coroutines/flow/internal/SendingCollector;-><init>(Lkotlinx/coroutines/channels/SendChannel;)V
 
-    .line 95
+    .line 91
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/ChannelLimitedFlowMerge;->flows:Ljava/lang/Iterable;
 
     .line 1855
@@ -128,7 +128,7 @@
 
     check-cast v0, Lkotlinx/coroutines/flow/Flow;
 
-    .line 96
+    .line 92
     new-instance v4, Lkotlinx/coroutines/flow/internal/ChannelLimitedFlowMerge$collectTo$2$1;
 
     const/4 v1, 0x0
@@ -149,7 +149,7 @@
 
     goto :goto_b
 
-    .line 98
+    .line 94
     :cond_26
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -170,7 +170,7 @@
         }
     .end annotation
 
-    .line 87
+    .line 83
     new-instance v0, Lkotlinx/coroutines/flow/internal/ChannelLimitedFlowMerge;
 
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/ChannelLimitedFlowMerge;->flows:Ljava/lang/Iterable;
@@ -192,7 +192,7 @@
         }
     .end annotation
 
-    .line 90
+    .line 86
     iget-object v0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->context:Lkotlin/coroutines/CoroutineContext;
 
     iget v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->capacity:I

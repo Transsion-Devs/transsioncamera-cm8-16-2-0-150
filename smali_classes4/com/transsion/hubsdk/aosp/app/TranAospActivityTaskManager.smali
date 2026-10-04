@@ -110,7 +110,7 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    .line 43
+    .line 45
     const-string v0, "android.app.ActivityTaskManager"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -119,7 +119,7 @@
 
     sput-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClassName:Ljava/lang/Class;
 
-    .line 44
+    .line 46
     const-string v0, "android.app.IActivityTaskManager"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -128,7 +128,7 @@
 
     sput-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
-    .line 45
+    .line 47
     const-string v0, "android.app.ActivityManager"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -137,7 +137,7 @@
 
     sput-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sActivityManagerClass:Ljava/lang/Class;
 
-    .line 46
+    .line 48
     const-string v0, "android.os.ServiceManager"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -146,7 +146,7 @@
 
     sput-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sManagerClassName:Ljava/lang/Class;
 
-    .line 47
+    .line 49
     const-string v0, "android.app.IActivityTaskManager$Stub"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -155,7 +155,7 @@
 
     sput-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClassNameStub:Ljava/lang/Class;
 
-    .line 48
+    .line 50
     const-string v0, "android.window.TaskSnapshot"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -166,7 +166,7 @@
 
     const/4 v0, -0x1
 
-    .line 68
+    .line 70
     sput v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sMaxRecentTasks:I
 
     return-void
@@ -175,10 +175,10 @@
 .method public constructor <init>()V
     .registers 5
 
-    .line 72
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 73
+    .line 75
     invoke-static {}, Lcom/transsion/hubsdk/common/init/TranHubSdkManager;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -189,14 +189,14 @@
 
     iput-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mContext:Landroid/content/Context;
 
-    .line 74
+    .line 76
     new-instance v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManagerExt;
 
     invoke-direct {v1, v0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManagerExt;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mActivityTaskExt:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManagerExt;
 
-    .line 75
+    .line 77
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClassName:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -211,7 +211,7 @@
 
     const/4 v2, 0x0
 
-    .line 76
+    .line 78
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -226,7 +226,7 @@
 .method static synthetic access$000(Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;)Lcom/transsion/hubsdk/api/app/ITranActivityController;
     .registers 1
 
-    .line 40
+    .line 42
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
 
     return-object p0
@@ -243,7 +243,7 @@
         }
     .end annotation
 
-    .line 826
+    .line 828
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mContext:Landroid/content/Context;
 
     const-string v0, "activity"
@@ -254,7 +254,7 @@
 
     check-cast p0, Landroid/app/ActivityManager;
 
-    .line 827
+    .line 829
     const-string v0, "android.app.IActivityManager"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -263,7 +263,7 @@
 
     const/4 v1, 0x0
 
-    .line 828
+    .line 830
     new-array v2, v1, [Ljava/lang/Class;
 
     const-class v3, Landroid/app/ActivityManager;
@@ -274,14 +274,14 @@
 
     move-result-object v2
 
-    .line 829
+    .line 831
     new-array v3, v1, [Ljava/lang/Object;
 
     invoke-static {v2, p0, v3}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 832
+    .line 834
     const-string v2, "getAllRootTaskInfos"
 
     new-array v3, v1, [Ljava/lang/Class;
@@ -290,24 +290,24 @@
 
     move-result-object v0
 
-    .line 836
+    .line 838
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {v0, p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 837
+    .line 839
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 838
+    .line 840
     instance-of v1, p0, Ljava/util/List;
 
     if-eqz v1, :cond_3d
 
-    .line 839
+    .line 841
     check-cast p0, Ljava/util/List;
 
     invoke-interface {v0, p0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
@@ -319,7 +319,7 @@
 .method private getChildTaskNamesField(Ljava/lang/Object;)Ljava/lang/reflect/Field;
     .registers 2
 
-    .line 865
+    .line 867
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
@@ -336,7 +336,7 @@
 .method private getConfiguration(Ljava/lang/Object;)Landroid/content/res/Configuration;
     .registers 3
 
-    .line 681
+    .line 683
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
@@ -347,17 +347,17 @@
 
     move-result-object p0
 
-    .line 683
+    .line 685
     invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getFieldValue(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 684
+    .line 686
     instance-of p1, p0, Landroid/content/res/Configuration;
 
     if-eqz p1, :cond_15
 
-    .line 685
+    .line 687
     check-cast p0, Landroid/content/res/Configuration;
 
     return-object p0
@@ -371,7 +371,7 @@
 .method private getRealClassMode(Ljava/lang/Object;Ljava/lang/String;)Z
     .registers 4
 
-    .line 788
+    .line 790
     invoke-direct {p0, p1, p2}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getStackInfoClsName(Ljava/lang/Object;Ljava/lang/String;)Z
 
     move-result v0
@@ -408,7 +408,7 @@
         }
     .end annotation
 
-    .line 851
+    .line 853
     const-string p0, "android.app.TaskInfo"
 
     invoke-static {p0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -421,7 +421,7 @@
 .method private getRunningTaskInfoConfiguration(Ljava/lang/Object;)Landroid/content/res/Configuration;
     .registers 4
 
-    .line 796
+    .line 798
     :try_start_0
     const-string p0, "android.app.ActivityManager$RunningTaskInfo"
 
@@ -429,14 +429,14 @@
 
     move-result-object p0
 
-    .line 797
+    .line 799
     const-string v0, "configuration"
 
     invoke-static {p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object p0
 
-    .line 798
+    .line 800
     invoke-virtual {p0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -450,7 +450,7 @@
     :catch_13
     move-exception p0
 
-    .line 800
+    .line 802
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -479,7 +479,7 @@
 
     const/4 v0, 0x0
 
-    .line 749
+    .line 751
     :try_start_1
     invoke-direct {p0, p1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getChildTaskNamesField(Ljava/lang/Object;)Ljava/lang/reflect/Field;
 
@@ -491,17 +491,17 @@
 
     check-cast p0, [Ljava/lang/String;
 
-    .line 750
+    .line 752
     const-string p1, ""
 
     if-eqz p0, :cond_47
 
-    .line 751
+    .line 753
     array-length v1, p0
 
     if-lez v1, :cond_47
 
-    .line 752
+    .line 754
     array-length v1, p0
 
     move v2, v0
@@ -511,21 +511,21 @@
 
     aget-object v3, p0, v2
 
-    .line 753
+    .line 755
     const-string v4, "/"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v3
 
-    .line 754
+    .line 756
     array-length v4, v3
 
     const/4 v5, 0x1
 
     if-le v4, v5, :cond_27
 
-    .line 755
+    .line 757
     aget-object p1, v3, v5
 
     goto :goto_27
@@ -535,7 +535,7 @@
 
     goto :goto_31
 
-    .line 757
+    .line 759
     :cond_27
     :goto_27
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -553,7 +553,7 @@
 
     goto :goto_14
 
-    .line 763
+    .line 765
     :goto_31
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -580,7 +580,7 @@
 .method private getStackInfoPackageName(Ljava/lang/Object;)Ljava/lang/String;
     .registers 6
 
-    .line 732
+    .line 734
     :try_start_0
     invoke-direct {p0, p1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getChildTaskNamesField(Ljava/lang/Object;)Ljava/lang/reflect/Field;
 
@@ -592,10 +592,10 @@
 
     check-cast p0, [Ljava/lang/String;
 
-    .line 733
+    .line 735
     const-string p1, ""
 
-    .line 734
+    .line 736
     array-length v0, p0
     :try_end_d
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_d} :catch_30
@@ -606,7 +606,7 @@
 
     if-lez v0, :cond_1a
 
-    .line 735
+    .line 737
     :try_start_12
     aget-object p1, p0, v2
 
@@ -616,7 +616,7 @@
 
     aget-object p1, p1, v2
 
-    .line 737
+    .line 739
     :cond_1a
     const-string v0, "com.transsion.splitscreen"
 
@@ -632,7 +632,7 @@
 
     if-le v0, v3, :cond_2f
 
-    .line 738
+    .line 740
     aget-object p0, p0, v3
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -651,7 +651,7 @@
     :catch_30
     move-exception p0
 
-    .line 742
+    .line 744
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -678,7 +678,7 @@
 .method private getStackInfoTopPackageName(Ljava/lang/Object;)Ljava/lang/String;
     .registers 3
 
-    .line 722
+    .line 724
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
@@ -689,7 +689,7 @@
 
     move-result-object p0
 
-    .line 723
+    .line 725
     invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getFieldValue(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -698,14 +698,14 @@
 
     if-eqz p0, :cond_17
 
-    .line 725
+    .line 727
     invoke-virtual {p0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 727
+    .line 729
     :cond_17
     const-string p0, ""
 
@@ -715,21 +715,21 @@
 .method private getTaskId(Ljava/lang/Object;)I
     .registers 3
 
-    .line 649
+    .line 651
     const-string p0, "android.app.ActivityTaskManager$RootTaskInfo"
 
     invoke-static {p0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object p0
 
-    .line 650
+    .line 652
     const-string v0, "childTaskIds"
 
     invoke-static {p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object p0
 
-    .line 655
+    .line 657
     invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getFieldValue(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -738,7 +738,7 @@
 
     const/4 p1, 0x0
 
-    .line 656
+    .line 658
     aget p0, p0, p1
 
     return p0
@@ -747,29 +747,29 @@
 .method private getTaskInfoDisplayId(Ljava/lang/Object;)I
     .registers 3
 
-    .line 691
+    .line 693
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getRootTaskInfoClass()Ljava/lang/Class;
 
     move-result-object p0
 
-    .line 692
+    .line 694
     const-string v0, "displayId"
 
     invoke-static {p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object p0
 
-    .line 693
+    .line 695
     invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getFieldValue(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 695
+    .line 697
     instance-of p1, p0, Ljava/lang/Integer;
 
     if-eqz p1, :cond_19
 
-    .line 696
+    .line 698
     check-cast p0, Ljava/lang/Integer;
 
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
@@ -787,7 +787,7 @@
 .method private static getWindowConfiguration(Landroid/content/res/Configuration;)Ljava/lang/Object;
     .registers 4
 
-    .line 672
+    .line 674
     :try_start_0
     const-class v0, Landroid/content/res/Configuration;
 
@@ -797,7 +797,7 @@
 
     move-result-object v0
 
-    .line 673
+    .line 675
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -809,7 +809,7 @@
     :catch_d
     move-exception p0
 
-    .line 675
+    .line 677
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -836,7 +836,7 @@
 .method private static getWindowingMode(Ljava/lang/Object;)I
     .registers 5
 
-    .line 660
+    .line 662
     const-string v0, "android.app.WindowConfiguration"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -845,7 +845,7 @@
 
     const/4 v1, 0x0
 
-    .line 661
+    .line 663
     new-array v2, v1, [Ljava/lang/Class;
 
     const-string v3, "getWindowingMode"
@@ -854,19 +854,19 @@
 
     move-result-object v0
 
-    .line 662
+    .line 664
     new-array v2, v1, [Ljava/lang/Object;
 
     invoke-static {v0, p0, v2}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 664
+    .line 666
     instance-of v0, p0, Ljava/lang/Integer;
 
     if-eqz v0, :cond_20
 
-    .line 665
+    .line 667
     check-cast p0, Ljava/lang/Integer;
 
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
@@ -884,13 +884,13 @@
 
     const/4 v0, 0x0
 
-    .line 770
+    .line 772
     :try_start_1
     invoke-direct {p0, p1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getChildTaskNamesField(Ljava/lang/Object;)Ljava/lang/reflect/Field;
 
     move-result-object p0
 
-    .line 771
+    .line 773
     invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getFieldValue(Ljava/lang/reflect/Field;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -899,12 +899,12 @@
 
     if-eqz p0, :cond_40
 
-    .line 773
+    .line 775
     array-length p1, p0
 
     if-lez p1, :cond_40
 
-    .line 774
+    .line 776
     array-length p1, p0
 
     move v1, v0
@@ -914,7 +914,7 @@
 
     aget-object v2, p0, v1
 
-    .line 775
+    .line 777
     const-string v3, "/"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -923,7 +923,7 @@
 
     aget-object v2, v2, v0
 
-    .line 776
+    .line 778
     invoke-virtual {p2, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -944,7 +944,7 @@
     :catch_29
     move-exception p0
 
-    .line 782
+    .line 784
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -970,20 +970,20 @@
 .method private isStackInfoTopClassName(Ljava/lang/Object;Ljava/lang/String;)Z
     .registers 5
 
-    .line 703
+    .line 705
     :try_start_0
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getRootTaskInfoClass()Ljava/lang/Class;
 
     move-result-object p0
 
-    .line 704
+    .line 706
     const-string v0, "topActivity"
 
     invoke-static {p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v0
 
-    .line 705
+    .line 707
     invoke-virtual {v0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -994,7 +994,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 706
+    .line 708
     invoke-virtual {v0}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
     move-result-object v0
@@ -1007,7 +1007,7 @@
 
     return v1
 
-    .line 710
+    .line 712
     :cond_1e
     const-string v0, "realActivity"
 
@@ -1015,7 +1015,7 @@
 
     move-result-object p0
 
-    .line 711
+    .line 713
     invoke-virtual {p0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -1024,7 +1024,7 @@
 
     if-eqz p0, :cond_52
 
-    .line 712
+    .line 714
     invoke-virtual {p0}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
     move-result-object p0
@@ -1042,7 +1042,7 @@
     :catch_37
     move-exception p0
 
-    .line 716
+    .line 718
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1076,7 +1076,7 @@
 .method public activityInMultiWindow(Ljava/lang/String;)Z
     .registers 5
 
-    .line 190
+    .line 192
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -1091,7 +1091,7 @@
 
     move-result-object v0
 
-    .line 191
+    .line 193
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -1102,12 +1102,12 @@
 
     move-result-object p0
 
-    .line 193
+    .line 195
     instance-of p1, p0, Ljava/lang/Boolean;
 
     if-eqz p1, :cond_23
 
-    .line 194
+    .line 196
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -1125,7 +1125,7 @@
 .method public addAnimationIconLayer(Landroid/view/SurfaceControl;)V
     .registers 5
 
-    .line 1090
+    .line 1092
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Landroid/view/SurfaceControl;
@@ -1140,7 +1140,7 @@
 
     move-result-object v0
 
-    .line 1091
+    .line 1093
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -1152,10 +1152,48 @@
     return-void
 .end method
 
+.method public addMultiExchangeListener(Ljava/lang/String;Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;)V
+    .registers 6
+
+    .line 1583
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    const-class v1, Ljava/lang/String;
+
+    const-class v2, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;
+
+    filled-new-array {v1, v2}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "addMultiExchangeListener"
+
+    invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1d
+
+    .line 1584
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    if-eqz p0, :cond_1d
+
+    .line 1585
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v0, p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1d
+    return-void
+.end method
+
 .method public boostEndInLauncher(I)V
     .registers 5
 
-    .line 1380
+    .line 1409
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -1172,12 +1210,12 @@
 
     if-eqz v0, :cond_1f
 
-    .line 1381
+    .line 1410
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1f
 
-    .line 1382
+    .line 1411
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1192,10 +1230,49 @@
     return-void
 .end method
 
+.method public boostIMEEnd(Ljava/lang/String;)V
+    .registers 2
+
+    .line 1363
+    sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
+
+    const-string p1, "boostIMEEnd has been deleted from AOSP"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public boostIMEStart(ILjava/lang/String;)V
+    .registers 3
+
+    .line 1358
+    sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
+
+    const-string p1, "boostIMEStart has been deleted from AOSP"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public boostInFling(IZI)V
+    .registers 4
+
+    .line 1378
+    sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
+
+    const-string p1, "boostInFling has been deleted from AOSP"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
 .method public boostSceneEnd(I)V
     .registers 5
 
-    .line 1134
+    .line 1136
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -1210,7 +1287,7 @@
 
     move-result-object v0
 
-    .line 1135
+    .line 1137
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1229,7 +1306,7 @@
 .method public boostSceneStart(I)V
     .registers 5
 
-    .line 913
+    .line 915
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -1244,7 +1321,7 @@
 
     move-result-object v0
 
-    .line 914
+    .line 916
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1263,7 +1340,7 @@
 .method public boostStartInLauncher(I)V
     .registers 5
 
-    .line 1372
+    .line 1401
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -1280,12 +1357,12 @@
 
     if-eqz v0, :cond_1f
 
-    .line 1373
+    .line 1402
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1f
 
-    .line 1374
+    .line 1403
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1303,7 +1380,7 @@
 .method public checkAndUpdateEventStateForMulti(Ljava/lang/String;ZZJ)Z
     .registers 10
 
-    .line 1298
+    .line 1300
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -1324,12 +1401,12 @@
 
     if-eqz v0, :cond_33
 
-    .line 1299
+    .line 1301
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_33
 
-    .line 1300
+    .line 1302
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1367,7 +1444,7 @@
 .method public checkTaskCanEnterMultiWin(I)Z
     .registers 5
 
-    .line 1520
+    .line 1549
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -1382,12 +1459,12 @@
 
     if-eqz v0, :cond_24
 
-    .line 1521
+    .line 1550
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_24
 
-    .line 1522
+    .line 1551
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1417,7 +1494,7 @@
 .method public clearFinishFixedRotationWithTransaction()V
     .registers 5
 
-    .line 919
+    .line 921
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -1430,7 +1507,7 @@
 
     move-result-object v0
 
-    .line 920
+    .line 922
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -1443,7 +1520,7 @@
 .method public clearMultiWindowExtendSize(I)V
     .registers 5
 
-    .line 1440
+    .line 1469
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -1460,12 +1537,12 @@
 
     if-eqz v0, :cond_1f
 
-    .line 1441
+    .line 1470
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1f
 
-    .line 1442
+    .line 1471
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -1491,7 +1568,7 @@
         }
     .end annotation
 
-    .line 1529
+    .line 1558
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -1506,12 +1583,12 @@
 
     if-eqz v0, :cond_1a
 
-    .line 1530
+    .line 1559
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1a
 
-    .line 1531
+    .line 1560
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {v0, p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -1522,7 +1599,7 @@
 
     return-object p0
 
-    .line 1533
+    .line 1562
     :cond_1a
     new-instance p0, Ljava/util/ArrayList;
 
@@ -1542,7 +1619,7 @@
         }
     .end annotation
 
-    .line 1289
+    .line 1291
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -1557,7 +1634,7 @@
 
     if-eqz v0, :cond_18
 
-    .line 1291
+    .line 1293
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -1587,14 +1664,14 @@
         }
     .end annotation
 
-    .line 1205
+    .line 1207
     const-string v0, "android.app.ActivityTaskManager$RootTaskInfo"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 1206
+    .line 1208
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -1609,7 +1686,7 @@
 
     move-result-object v1
 
-    .line 1207
+    .line 1209
     iget-object v2, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1624,17 +1701,17 @@
 
     move-result-object p1
 
-    .line 1208
+    .line 1210
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1209
+    .line 1211
     instance-of v2, p1, Ljava/util/List;
 
     if-eqz v2, :cond_4d
 
-    .line 1210
+    .line 1212
     check-cast p1, Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1653,7 +1730,7 @@
 
     move-result-object v2
 
-    .line 1211
+    .line 1213
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
@@ -1664,7 +1741,7 @@
 
     if-eqz v3, :cond_31
 
-    .line 1212
+    .line 1214
     invoke-virtual {v0, v2}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -1673,13 +1750,13 @@
 
     goto :goto_31
 
-    .line 1217
+    .line 1219
     :cond_4d
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1218
+    .line 1220
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -1695,28 +1772,28 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    .line 1219
+    .line 1221
     invoke-virtual {v0, v4}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-eqz v5, :cond_6c
 
-    .line 1220
+    .line 1222
     sget-object v5, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
     const-string v6, "RootTaskInfo"
 
     invoke-static {v5, v6}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1223
+    .line 1225
     :cond_6c
     :try_start_6c
     new-instance v5, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;
 
     invoke-direct {v5}, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;-><init>()V
 
-    .line 1225
+    .line 1227
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getRootTaskInfoClass()Ljava/lang/Class;
 
     move-result-object v6
@@ -1727,24 +1804,24 @@
 
     move-result-object v6
 
-    .line 1226
+    .line 1228
     invoke-virtual {v6, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/content/ComponentName;
 
-    .line 1227
+    .line 1229
     invoke-virtual {v5, v6}, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;->setTopActivity(Landroid/content/ComponentName;)V
 
-    .line 1229
+    .line 1231
     const-string v6, "bounds"
 
     invoke-static {v0, v6}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v6
 
-    .line 1230
+    .line 1232
     invoke-virtual {v6, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
@@ -1753,14 +1830,14 @@
 
     invoke-virtual {v5, v6}, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 1232
+    .line 1234
     const-string v6, "childTaskIds"
 
     invoke-static {v0, v6}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v6
 
-    .line 1233
+    .line 1235
     invoke-virtual {v6, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
@@ -1769,14 +1846,14 @@
 
     invoke-virtual {v5, v6}, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;->setChildTaskIds([I)V
 
-    .line 1235
+    .line 1237
     const-string v6, "childTaskNames"
 
     invoke-static {v0, v6}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v6
 
-    .line 1236
+    .line 1238
     invoke-virtual {v6, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
@@ -1785,14 +1862,14 @@
 
     invoke-virtual {v5, v6}, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;->setChildTaskNames([Ljava/lang/String;)V
 
-    .line 1238
+    .line 1240
     const-string v6, "childTaskBounds"
 
     invoke-static {v0, v6}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v6
 
-    .line 1239
+    .line 1241
     invoke-virtual {v6, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
@@ -1801,14 +1878,14 @@
 
     invoke-virtual {v5, v6}, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;->setChildTaskBounds([Landroid/graphics/Rect;)V
 
-    .line 1241
+    .line 1243
     const-string v6, "childTaskUserIds"
 
     invoke-static {v0, v6}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v6
 
-    .line 1242
+    .line 1244
     invoke-virtual {v6, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
@@ -1817,35 +1894,35 @@
 
     invoke-virtual {v5, v6}, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;->setChildTaskUserIds([I)V
 
-    .line 1244
+    .line 1246
     const-string v6, "visible"
 
     invoke-static {v0, v6}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v6
 
-    .line 1245
+    .line 1247
     invoke-virtual {v6, v4}, Ljava/lang/reflect/Field;->getBoolean(Ljava/lang/Object;)Z
 
     move-result v6
 
     invoke-virtual {v5, v6}, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;->setVisible(Z)V
 
-    .line 1247
+    .line 1249
     const-string v6, "position"
 
     invoke-static {v0, v6}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v6
 
-    .line 1248
+    .line 1250
     invoke-virtual {v6, v4}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;->setPosition(I)V
 
-    .line 1250
+    .line 1252
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getRootTaskInfoClass()Ljava/lang/Class;
 
     move-result-object v6
@@ -1856,27 +1933,27 @@
 
     move-result-object v6
 
-    .line 1251
+    .line 1253
     invoke-virtual {v6, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/content/res/Configuration;
 
-    .line 1252
+    .line 1254
     invoke-static {v6}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getWindowConfiguration(Landroid/content/res/Configuration;)Ljava/lang/Object;
 
     move-result-object v6
 
-    .line 1253
+    .line 1255
     invoke-static {v6}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getWindowingMode(Ljava/lang/Object;)I
 
     move-result v6
 
-    .line 1254
+    .line 1256
     invoke-virtual {v5, v6}, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;->setWindowingMode(I)V
 
-    .line 1256
+    .line 1258
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getRootTaskInfoClass()Ljava/lang/Class;
 
     move-result-object v6
@@ -1887,21 +1964,21 @@
 
     move-result-object v6
 
-    .line 1257
+    .line 1259
     invoke-virtual {v6, v4}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;->setTaskId(I)V
 
-    .line 1259
+    .line 1261
     invoke-interface {p1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_118
     .catch Ljava/lang/Exception; {:try_start_6c .. :try_end_118} :catch_11a
 
     goto/16 :goto_57
 
-    .line 1261
+    .line 1263
     :catch_11a
     sget-object v5, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -1930,7 +2007,7 @@
 .method public getDefaultRootLeash()Landroid/view/SurfaceControl;
     .registers 5
 
-    .line 925
+    .line 927
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -1943,7 +2020,7 @@
 
     move-result-object v0
 
-    .line 926
+    .line 928
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -1952,12 +2029,12 @@
 
     move-result-object p0
 
-    .line 928
+    .line 930
     instance-of v0, p0, Landroid/view/SurfaceControl;
 
     if-eqz v0, :cond_1a
 
-    .line 929
+    .line 931
     check-cast p0, Landroid/view/SurfaceControl;
 
     return-object p0
@@ -1971,7 +2048,7 @@
 .method public getDragAndZoomBgLeash(IIIIZ)Landroid/view/SurfaceControl;
     .registers 9
 
-    .line 936
+    .line 938
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -1988,7 +2065,7 @@
 
     move-result-object v0
 
-    .line 937
+    .line 939
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2019,12 +2096,12 @@
 
     move-result-object p0
 
-    .line 939
+    .line 941
     instance-of p1, p0, Landroid/view/SurfaceControl;
 
     if-eqz p1, :cond_35
 
-    .line 940
+    .line 942
     check-cast p0, Landroid/view/SurfaceControl;
 
     return-object p0
@@ -2038,7 +2115,7 @@
 .method public getFocusedWinPkgName()Ljava/lang/String;
     .registers 5
 
-    .line 120
+    .line 122
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -2051,7 +2128,7 @@
 
     move-result-object v0
 
-    .line 121
+    .line 123
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -2060,12 +2137,12 @@
 
     move-result-object p0
 
-    .line 123
+    .line 125
     instance-of v0, p0, Ljava/lang/String;
 
     if-eqz v0, :cond_1a
 
-    .line 124
+    .line 126
     check-cast p0, Ljava/lang/String;
 
     return-object p0
@@ -2081,13 +2158,13 @@
 
     const/4 v0, -0x2
 
-    .line 431
+    .line 433
     :try_start_1
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getAllRootTaskInfosList()Ljava/util/List;
 
     move-result-object v1
 
-    .line 432
+    .line 434
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -2103,7 +2180,7 @@
 
     move-result-object v2
 
-    .line 433
+    .line 435
     invoke-direct {p0, v2, p1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->isGivenStackInfoPackageName(Ljava/lang/Object;Ljava/lang/String;)Z
 
     move-result v3
@@ -2127,7 +2204,7 @@
 
     goto :goto_4d
 
-    .line 434
+    .line 436
     :cond_26
     :goto_26
     invoke-direct {p0, v2}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getConfiguration(Ljava/lang/Object;)Landroid/content/res/Configuration;
@@ -2136,19 +2213,19 @@
 
     if-eqz p0, :cond_4c
 
-    .line 436
+    .line 438
     invoke-static {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getWindowConfiguration(Landroid/content/res/Configuration;)Ljava/lang/Object;
 
     move-result-object p0
 
     if-eqz p0, :cond_4c
 
-    .line 438
+    .line 440
     invoke-static {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getWindowingMode(Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 439
+    .line 441
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -2172,7 +2249,7 @@
     :cond_4c
     return v0
 
-    .line 446
+    .line 448
     :goto_4d
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -2200,13 +2277,13 @@
 
     const/4 v0, -0x2
 
-    .line 461
+    .line 463
     :try_start_1
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getAllRootTaskInfosList()Ljava/util/List;
 
     move-result-object v1
 
-    .line 462
+    .line 464
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -2222,7 +2299,7 @@
 
     move-result-object v2
 
-    .line 463
+    .line 465
     invoke-direct {p0, v2, p1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->isGivenStackInfoPackageName(Ljava/lang/Object;Ljava/lang/String;)Z
 
     move-result v3
@@ -2246,7 +2323,7 @@
 
     goto :goto_5b
 
-    .line 464
+    .line 466
     :cond_26
     :goto_26
     invoke-direct {p0, v2, p2}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getRealClassMode(Ljava/lang/Object;Ljava/lang/String;)Z
@@ -2255,26 +2332,26 @@
 
     if-eqz v3, :cond_9
 
-    .line 465
+    .line 467
     invoke-direct {p0, v2}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getConfiguration(Ljava/lang/Object;)Landroid/content/res/Configuration;
 
     move-result-object p0
 
     if-eqz p0, :cond_5a
 
-    .line 467
+    .line 469
     invoke-static {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getWindowConfiguration(Landroid/content/res/Configuration;)Ljava/lang/Object;
 
     move-result-object p0
 
     if-eqz p0, :cond_5a
 
-    .line 469
+    .line 471
     invoke-static {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getWindowingMode(Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 470
+    .line 472
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -2304,7 +2381,7 @@
     :cond_5a
     return v0
 
-    .line 477
+    .line 479
     :goto_5b
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -2330,7 +2407,7 @@
 .method public getHardwareBuffer(IZ)Landroid/hardware/HardwareBuffer;
     .registers 5
 
-    .line 588
+    .line 590
     sget-object p2, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -2347,7 +2424,7 @@
 
     move-result-object p2
 
-    .line 589
+    .line 591
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2364,7 +2441,7 @@
 
     move-result-object p0
 
-    .line 593
+    .line 595
     const-string p1, "android.window.TaskSnapshot"
 
     invoke-static {p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -2373,7 +2450,7 @@
 
     const/4 p2, 0x0
 
-    .line 594
+    .line 596
     new-array v0, p2, [Ljava/lang/Class;
 
     const-string v1, "getHardwareBuffer"
@@ -2382,19 +2459,19 @@
 
     move-result-object p1
 
-    .line 595
+    .line 597
     new-array p2, p2, [Ljava/lang/Object;
 
     invoke-static {p1, p0, p2}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 596
+    .line 598
     instance-of p1, p0, Landroid/hardware/HardwareBuffer;
 
     if-eqz p1, :cond_3c
 
-    .line 597
+    .line 599
     check-cast p0, Landroid/hardware/HardwareBuffer;
 
     return-object p0
@@ -2408,12 +2485,12 @@
 .method public getMaxRecentTasksStatic()I
     .registers 4
 
-    .line 307
+    .line 309
     sget p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sMaxRecentTasks:I
 
     if-gez p0, :cond_2a
 
-    .line 308
+    .line 310
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sActivityManagerClass:Ljava/lang/Class;
 
     const-string v0, "isLowRamDeviceStatic"
@@ -2426,7 +2503,7 @@
 
     move-result-object p0
 
-    .line 310
+    .line 312
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sActivityManagerClass:Ljava/lang/Class;
 
     new-array v2, v1, [Ljava/lang/Object;
@@ -2435,12 +2512,12 @@
 
     move-result-object p0
 
-    .line 311
+    .line 313
     instance-of v0, p0, Ljava/lang/Boolean;
 
     if-eqz v0, :cond_21
 
-    .line 312
+    .line 314
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -2457,21 +2534,73 @@
     :cond_26
     const/16 p0, 0x30
 
-    .line 314
+    .line 316
     :goto_28
     sput p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sMaxRecentTasks:I
 
-    .line 316
+    .line 318
     :cond_2a
     sget p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sMaxRecentTasks:I
 
     return p0
 .end method
 
+.method public getMultiDisplayAreaAppInfo(II)Landroid/os/Bundle;
+    .registers 6
+
+    .line 1591
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    filled-new-array {v1, v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "getMultiDisplayAreaAppInfo"
+
+    invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_27
+
+    .line 1592
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    if-eqz p0, :cond_27
+
+    .line 1593
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v0, p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/os/Bundle;
+
+    return-object p0
+
+    :cond_27
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
 .method public getMultiDisplayAreaTopPackageV4(II)Ljava/lang/String;
     .registers 6
 
-    .line 947
+    .line 949
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -2486,7 +2615,7 @@
 
     move-result-object v0
 
-    .line 948
+    .line 950
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2505,12 +2634,12 @@
 
     move-result-object p0
 
-    .line 950
+    .line 952
     instance-of p1, p0, Ljava/lang/String;
 
     if-eqz p1, :cond_27
 
-    .line 951
+    .line 953
     check-cast p0, Ljava/lang/String;
 
     return-object p0
@@ -2524,7 +2653,7 @@
 .method public getMultiWinTopTask(II)Landroid/app/ActivityManager$RunningTaskInfo;
     .registers 6
 
-    .line 958
+    .line 960
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -2539,7 +2668,7 @@
 
     move-result-object v0
 
-    .line 959
+    .line 961
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2558,12 +2687,12 @@
 
     move-result-object p0
 
-    .line 961
+    .line 963
     instance-of p1, p0, Landroid/app/ActivityManager$RunningTaskInfo;
 
     if-eqz p1, :cond_27
 
-    .line 962
+    .line 964
     check-cast p0, Landroid/app/ActivityManager$RunningTaskInfo;
 
     return-object p0
@@ -2585,7 +2714,7 @@
         }
     .end annotation
 
-    .line 223
+    .line 225
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -2598,7 +2727,7 @@
 
     move-result-object v0
 
-    .line 224
+    .line 226
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -2607,17 +2736,17 @@
 
     move-result-object p0
 
-    .line 225
+    .line 227
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 226
+    .line 228
     instance-of v1, p0, Ljava/util/List;
 
     if-eqz v1, :cond_38
 
-    .line 227
+    .line 229
     check-cast p0, Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2635,7 +2764,7 @@
 
     move-result-object v1
 
-    .line 228
+    .line 230
     const-class v2, Ljava/lang/String;
 
     invoke-virtual {v2, v1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2655,7 +2784,7 @@
 .method public getMultiWindowDefaultRect()Landroid/graphics/Rect;
     .registers 5
 
-    .line 1355
+    .line 1384
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -2670,12 +2799,12 @@
 
     if-eqz v0, :cond_1a
 
-    .line 1356
+    .line 1385
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1a
 
-    .line 1357
+    .line 1386
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {v0, p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -2695,7 +2824,7 @@
 .method public getMultiWindowParams(Ljava/lang/String;)Landroid/os/Bundle;
     .registers 5
 
-    .line 634
+    .line 636
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -2710,7 +2839,7 @@
 
     move-result-object v0
 
-    .line 635
+    .line 637
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -2721,12 +2850,12 @@
 
     move-result-object p0
 
-    .line 637
+    .line 639
     instance-of p1, p0, Landroid/os/Bundle;
 
     if-eqz p1, :cond_1f
 
-    .line 638
+    .line 640
     check-cast p0, Landroid/os/Bundle;
 
     return-object p0
@@ -2740,7 +2869,7 @@
 .method public getMultiWindowVersion()Ljava/lang/String;
     .registers 5
 
-    .line 212
+    .line 214
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -2753,7 +2882,7 @@
 
     move-result-object v0
 
-    .line 213
+    .line 215
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -2762,12 +2891,12 @@
 
     move-result-object p0
 
-    .line 215
+    .line 217
     instance-of v0, p0, Ljava/lang/String;
 
     if-eqz v0, :cond_1a
 
-    .line 216
+    .line 218
     check-cast p0, Ljava/lang/String;
 
     return-object p0
@@ -2781,7 +2910,7 @@
 .method public getMuteStateV4(I)Z
     .registers 5
 
-    .line 969
+    .line 971
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -2796,7 +2925,7 @@
 
     move-result-object v0
 
-    .line 970
+    .line 972
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2811,12 +2940,12 @@
 
     move-result-object p0
 
-    .line 972
+    .line 974
     instance-of p1, p0, Ljava/lang/Boolean;
 
     if-eqz p1, :cond_27
 
-    .line 973
+    .line 975
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -2836,13 +2965,13 @@
 
     const/4 v0, 0x0
 
-    .line 518
+    .line 520
     :try_start_1
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getAllRootTaskInfosList()Ljava/util/List;
 
     move-result-object v1
 
-    .line 519
+    .line 521
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -2858,7 +2987,7 @@
 
     move-result-object v2
 
-    .line 520
+    .line 522
     invoke-direct {p0, v2}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getStackInfoPackageName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
@@ -2871,7 +3000,7 @@
 
     const-string v3, "com.transsion.applock"
 
-    .line 521
+    .line 523
     invoke-direct {p0, v2}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getStackInfoTopPackageName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
@@ -2896,7 +3025,7 @@
     :cond_2d
     return v0
 
-    .line 527
+    .line 529
     :goto_2e
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -2930,7 +3059,7 @@
         }
     .end annotation
 
-    .line 1511
+    .line 1540
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -2945,12 +3074,12 @@
 
     if-eqz v0, :cond_1a
 
-    .line 1512
+    .line 1541
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1a
 
-    .line 1513
+    .line 1542
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {v0, p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -2972,13 +3101,13 @@
 
     const/4 v0, 0x0
 
-    .line 567
+    .line 569
     :try_start_1
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getAllRootTaskInfosList()Ljava/util/List;
 
     move-result-object v1
 
-    .line 568
+    .line 570
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -2994,7 +3123,7 @@
 
     move-result-object v2
 
-    .line 569
+    .line 571
     invoke-direct {p0, v2}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getStackInfoPackageName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
@@ -3005,7 +3134,7 @@
 
     if-eqz v3, :cond_9
 
-    .line 570
+    .line 572
     invoke-virtual {p0, v2}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getUserId(Ljava/lang/Object;)I
 
     move-result p0
@@ -3022,7 +3151,7 @@
     :cond_24
     return v0
 
-    .line 575
+    .line 577
     :goto_25
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -3056,7 +3185,7 @@
         }
     .end annotation
 
-    .line 80
+    .line 82
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -3071,7 +3200,7 @@
 
     move-result-object v0
 
-    .line 81
+    .line 83
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3094,7 +3223,7 @@
 
     move-result-object p0
 
-    .line 82
+    .line 84
     const-string p1, "android.content.pm.ParceledListSlice"
 
     invoke-static {p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -3103,7 +3232,7 @@
 
     const/4 p2, 0x0
 
-    .line 83
+    .line 85
     new-array p3, p2, [Ljava/lang/Class;
 
     const-string v0, "getList"
@@ -3112,24 +3241,24 @@
 
     move-result-object p1
 
-    .line 84
+    .line 86
     new-array p2, p2, [Ljava/lang/Object;
 
     invoke-static {p1, p0, p2}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 85
+    .line 87
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 86
+    .line 88
     instance-of p2, p0, Ljava/util/List;
 
     if-eqz p2, :cond_5e
 
-    .line 87
+    .line 89
     check-cast p0, Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -3147,7 +3276,7 @@
 
     move-result-object p2
 
-    .line 88
+    .line 90
     const-class p3, Landroid/app/ActivityManager$RecentTaskInfo;
 
     invoke-virtual {p3, p2}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3169,7 +3298,7 @@
 
     const/4 v0, 0x0
 
-    .line 878
+    .line 880
     :try_start_1
     sget-object v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
@@ -3181,12 +3310,12 @@
 
     move-result-object v3
 
-    .line 879
+    .line 881
     invoke-static {v1, v2, v3}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v1
 
-    .line 880
+    .line 882
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3209,14 +3338,14 @@
 
     move-result-object p0
 
-    .line 881
+    .line 883
     const-string p1, "android.app.ActivityTaskManager$RootTaskInfo"
 
     invoke-static {p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object p1
 
-    .line 882
+    .line 884
     const-string p2, "topActivity"
 
     invoke-static {p1, p2}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
@@ -3225,7 +3354,7 @@
 
     if-eqz p1, :cond_3c
 
-    .line 885
+    .line 887
     invoke-virtual {p1, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -3242,7 +3371,7 @@
     :cond_3c
     move-object p0, v0
 
-    .line 887
+    .line 889
     :goto_3d
     new-instance p1, Lcom/transsion/hubsdk/api/app/TranRootTaskInfo;
 
@@ -3250,7 +3379,7 @@
 
     if-eqz p0, :cond_49
 
-    .line 888
+    .line 890
     invoke-virtual {p0}, Landroid/content/ComponentName;->flattenToString()Ljava/lang/String;
 
     move-result-object p0
@@ -3267,7 +3396,7 @@
 
     return-object p1
 
-    .line 891
+    .line 893
     :goto_4e
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -3293,12 +3422,12 @@
 .method public getStackInfoTaskId(Ljava/lang/String;)I
     .registers 6
 
-    .line 360
+    .line 362
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getAllRootTaskInfosList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 361
+    .line 363
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -3316,7 +3445,7 @@
 
     move-result-object v1
 
-    .line 363
+    .line 365
     invoke-direct {p0, v1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getStackInfoPackageName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
@@ -3327,21 +3456,21 @@
 
     if-eqz v3, :cond_8
 
-    .line 365
+    .line 367
     invoke-direct {p0, v1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getConfiguration(Ljava/lang/Object;)Landroid/content/res/Configuration;
 
     move-result-object p1
 
     if-eqz p1, :cond_2e
 
-    .line 368
+    .line 370
     invoke-static {p1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getWindowConfiguration(Landroid/content/res/Configuration;)Ljava/lang/Object;
 
     move-result-object p1
 
     if-eqz p1, :cond_2e
 
-    .line 371
+    .line 373
     invoke-static {p1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getWindowingMode(Ljava/lang/Object;)I
 
     move-result p1
@@ -3356,12 +3485,12 @@
 
     if-ne p1, v0, :cond_4d
 
-    .line 376
+    .line 378
     invoke-direct {p0, v1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getTaskId(Ljava/lang/Object;)I
 
     move-result p0
 
-    .line 377
+    .line 379
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3389,7 +3518,7 @@
 .method public getTaskBounds(I)Landroid/graphics/Rect;
     .registers 5
 
-    .line 1123
+    .line 1125
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -3404,7 +3533,7 @@
 
     move-result-object v0
 
-    .line 1124
+    .line 1126
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3419,12 +3548,12 @@
 
     move-result-object p0
 
-    .line 1126
+    .line 1128
     instance-of p1, p0, Landroid/graphics/Rect;
 
     if-eqz p1, :cond_23
 
-    .line 1127
+    .line 1129
     check-cast p0, Landroid/graphics/Rect;
 
     return-object p0
@@ -3438,7 +3567,7 @@
 .method public getTaskIdByPkg(Ljava/lang/String;)I
     .registers 7
 
-    .line 541
+    .line 543
     const-string v0, "_twin_app"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -3457,13 +3586,13 @@
     :goto_c
     const/4 v1, -0x1
 
-    .line 545
+    .line 547
     :try_start_d
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getAllRootTaskInfosList()Ljava/util/List;
 
     move-result-object v2
 
-    .line 546
+    .line 548
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -3479,7 +3608,7 @@
 
     move-result-object v3
 
-    .line 547
+    .line 549
     invoke-direct {p0, v3}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getStackInfoPackageName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
@@ -3496,7 +3625,7 @@
 
     if-ne v4, v0, :cond_15
 
-    .line 548
+    .line 550
     invoke-direct {p0, v3}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getTaskId(Ljava/lang/Object;)I
 
     move-result p0
@@ -3513,7 +3642,7 @@
     :cond_36
     return v1
 
-    .line 553
+    .line 555
     :goto_37
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -3539,7 +3668,7 @@
 .method public getTaskIdByPkgName(Ljava/lang/String;I)I
     .registers 6
 
-    .line 1464
+    .line 1493
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -3558,12 +3687,12 @@
 
     if-eqz v0, :cond_2d
 
-    .line 1466
+    .line 1495
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_2d
 
-    .line 1467
+    .line 1496
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -3576,12 +3705,12 @@
 
     move-result-object p0
 
-    .line 1468
+    .line 1497
     instance-of p1, p0, Ljava/lang/Integer;
 
     if-eqz p1, :cond_2d
 
-    .line 1469
+    .line 1498
     check-cast p0, Ljava/lang/Integer;
 
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
@@ -3599,7 +3728,7 @@
 .method public getTaskOrientation(I)I
     .registers 5
 
-    .line 980
+    .line 982
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -3614,7 +3743,7 @@
 
     move-result-object v0
 
-    .line 981
+    .line 983
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3629,12 +3758,12 @@
 
     move-result-object p0
 
-    .line 983
+    .line 985
     instance-of p1, p0, Ljava/lang/Integer;
 
     if-eqz p1, :cond_27
 
-    .line 984
+    .line 986
     check-cast p0, Ljava/lang/Integer;
 
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
@@ -3660,7 +3789,7 @@
         }
     .end annotation
 
-    .line 1098
+    .line 1100
     invoke-static {}, Lcom/transsion/hubsdk/common/version/TranThubVersionUtil;->isRecentAndroidT()Z
 
     move-result v0
@@ -3673,7 +3802,7 @@
 
     if-eqz v0, :cond_32
 
-    .line 1099
+    .line 1101
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     filled-new-array {v2, v1, v1, v2}, [Ljava/lang/Class;
@@ -3684,7 +3813,7 @@
 
     move-result-object v0
 
-    .line 1100
+    .line 1102
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3715,7 +3844,7 @@
 
     goto :goto_52
 
-    .line 1102
+    .line 1104
     :cond_32
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
@@ -3727,7 +3856,7 @@
 
     move-result-object v0
 
-    .line 1103
+    .line 1105
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3750,18 +3879,18 @@
 
     move-result-object p0
 
-    .line 1105
+    .line 1107
     :goto_52
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1106
+    .line 1108
     instance-of p2, p0, Ljava/util/List;
 
     if-eqz p2, :cond_77
 
-    .line 1107
+    .line 1109
     check-cast p0, Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -3779,7 +3908,7 @@
 
     move-result-object p2
 
-    .line 1108
+    .line 1110
     const-class p3, Landroid/app/ActivityManager$RunningTaskInfo;
 
     invoke-virtual {p3, p2}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3799,7 +3928,7 @@
 .method public getTopActivityComponent()Landroid/content/ComponentName;
     .registers 5
 
-    .line 97
+    .line 99
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -3812,7 +3941,7 @@
 
     move-result-object v0
 
-    .line 98
+    .line 100
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -3821,12 +3950,12 @@
 
     move-result-object p0
 
-    .line 100
+    .line 102
     instance-of v0, p0, Landroid/content/ComponentName;
 
     if-eqz v0, :cond_1a
 
-    .line 101
+    .line 103
     check-cast p0, Landroid/content/ComponentName;
 
     return-object p0
@@ -3840,7 +3969,7 @@
 .method public getTopAppWindowInfo()Landroid/os/Bundle;
     .registers 5
 
-    .line 1421
+    .line 1450
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -3855,12 +3984,12 @@
 
     if-eqz v0, :cond_1a
 
-    .line 1422
+    .line 1451
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1a
 
-    .line 1423
+    .line 1452
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {v0, p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -3871,7 +4000,7 @@
 
     return-object p0
 
-    .line 1425
+    .line 1454
     :cond_1a
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -3887,7 +4016,7 @@
 .method public getTopTask(I)Landroid/app/ActivityManager$RunningTaskInfo;
     .registers 5
 
-    .line 991
+    .line 993
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -3902,7 +4031,7 @@
 
     move-result-object v0
 
-    .line 992
+    .line 994
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3917,12 +4046,12 @@
 
     move-result-object p0
 
-    .line 994
+    .line 996
     instance-of p1, p0, Landroid/app/ActivityManager$RunningTaskInfo;
 
     if-eqz p1, :cond_23
 
-    .line 995
+    .line 997
     check-cast p0, Landroid/app/ActivityManager$RunningTaskInfo;
 
     return-object p0
@@ -3938,30 +4067,30 @@
 
     const/4 v0, 0x0
 
-    .line 807
+    .line 809
     :try_start_1
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getRootTaskInfoClass()Ljava/lang/Class;
 
     move-result-object p0
 
-    .line 808
+    .line 810
     const-string v1, "userId"
 
     invoke-static {p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object p0
 
-    .line 809
+    .line 811
     invoke-virtual {p0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 811
+    .line 813
     instance-of p1, p0, Ljava/lang/Integer;
 
     if-eqz p1, :cond_1c
 
-    .line 812
+    .line 814
     check-cast p0, Ljava/lang/Integer;
 
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
@@ -3980,7 +4109,7 @@
     :cond_1c
     return v0
 
-    .line 816
+    .line 818
     :goto_1d
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -4006,7 +4135,7 @@
 .method public getVideoNotFullscreen(Ljava/lang/String;)Z
     .registers 6
 
-    .line 489
+    .line 491
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mContext:Landroid/content/Context;
 
     const-string v1, "activity"
@@ -4019,12 +4148,12 @@
 
     const/4 v1, 0x2
 
-    .line 490
+    .line 492
     invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getRunningTasks(I)Ljava/util/List;
 
     move-result-object v0
 
-    .line 491
+    .line 493
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -4046,7 +4175,7 @@
 
     if-eqz v1, :cond_13
 
-    .line 492
+    .line 494
     iget-object v3, v1, Landroid/app/ActivityManager$RunningTaskInfo;->topActivity:Landroid/content/ComponentName;
 
     if-eqz v3, :cond_13
@@ -4061,26 +4190,26 @@
 
     if-eqz v3, :cond_13
 
-    .line 494
+    .line 496
     invoke-direct {p0, v1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getRunningTaskInfoConfiguration(Ljava/lang/Object;)Landroid/content/res/Configuration;
 
     move-result-object v1
 
     if-eqz v1, :cond_13
 
-    .line 496
+    .line 498
     invoke-static {v1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getWindowConfiguration(Landroid/content/res/Configuration;)Ljava/lang/Object;
 
     move-result-object v1
 
     if-eqz v1, :cond_13
 
-    .line 498
+    .line 500
     invoke-static {v1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getWindowingMode(Ljava/lang/Object;)I
 
     move-result p0
 
-    .line 499
+    .line 501
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -4115,7 +4244,7 @@
 .method public hasMultiWindow()Z
     .registers 5
 
-    .line 616
+    .line 618
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sManagerClassName:Ljava/lang/Class;
 
     const-class v0, Ljava/lang/String;
@@ -4130,7 +4259,7 @@
 
     move-result-object p0
 
-    .line 617
+    .line 619
     const-string v0, "activity_task"
 
     filled-new-array {v0}, [Ljava/lang/Object;
@@ -4143,7 +4272,7 @@
 
     move-result-object p0
 
-    .line 618
+    .line 620
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClassNameStub:Ljava/lang/Class;
 
     const-class v2, Landroid/os/IBinder;
@@ -4158,7 +4287,7 @@
 
     move-result-object v0
 
-    .line 619
+    .line 621
     filled-new-array {p0}, [Ljava/lang/Object;
 
     move-result-object p0
@@ -4171,7 +4300,7 @@
 
     if-eqz p0, :cond_44
 
-    .line 622
+    .line 624
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -4184,20 +4313,20 @@
 
     move-result-object v1
 
-    .line 623
+    .line 625
     new-array v2, v0, [Ljava/lang/Object;
 
     invoke-static {v1, p0, v2}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 626
+    .line 628
     :cond_44
     instance-of p0, v1, Ljava/lang/Boolean;
 
     if-eqz p0, :cond_4f
 
-    .line 627
+    .line 629
     check-cast v1, Ljava/lang/Boolean;
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -4213,7 +4342,7 @@
 .method public hookGetMultiWindowDefaultRect(I)Landroid/graphics/Rect;
     .registers 5
 
-    .line 153
+    .line 155
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -4228,7 +4357,7 @@
 
     move-result-object v0
 
-    .line 154
+    .line 156
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4243,12 +4372,12 @@
 
     move-result-object p0
 
-    .line 156
+    .line 158
     instance-of p1, p0, Landroid/graphics/Rect;
 
     if-eqz p1, :cond_23
 
-    .line 157
+    .line 159
     check-cast p0, Landroid/graphics/Rect;
 
     return-object p0
@@ -4259,10 +4388,54 @@
     return-object p0
 .end method
 
+.method public hookMultiWindowToClose(II)V
+    .registers 6
+
+    .line 1678
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    filled-new-array {v1, v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "hookMultiWindowToClose"
+
+    invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_23
+
+    .line 1679
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    if-eqz p0, :cond_23
+
+    .line 1680
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v0, p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_23
+    return-void
+.end method
+
 .method public hookMultiWindowToExchange(II)V
     .registers 6
 
-    .line 1456
+    .line 1485
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -4279,12 +4452,12 @@
 
     if-eqz v0, :cond_23
 
-    .line 1457
+    .line 1486
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_23
 
-    .line 1458
+    .line 1487
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -4306,7 +4479,7 @@
 .method public hookMultiWindowVisible()V
     .registers 5
 
-    .line 1364
+    .line 1393
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -4321,12 +4494,12 @@
 
     if-eqz v0, :cond_16
 
-    .line 1365
+    .line 1394
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_16
 
-    .line 1366
+    .line 1395
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {v0, p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -4335,10 +4508,46 @@
     return-void
 .end method
 
+.method public hookMultiWindowVisibleWithCallback(Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;)V
+    .registers 5
+
+    .line 1575
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    const-class v1, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;
+
+    filled-new-array {v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "hookMultiWindowVisibleWithCallback"
+
+    invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1b
+
+    .line 1576
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    if-eqz p0, :cond_1b
+
+    .line 1577
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v0, p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1b
+    return-void
+.end method
+
 .method public hookReparentToDefaultDisplay(II)V
     .registers 6
 
-    .line 1002
+    .line 1004
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -4353,7 +4562,7 @@
 
     move-result-object v0
 
-    .line 1003
+    .line 1005
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4376,7 +4585,7 @@
 .method public hookSetMultiWindowDefaultRectResult(Landroid/graphics/Rect;)V
     .registers 5
 
-    .line 1008
+    .line 1010
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Landroid/graphics/Rect;
@@ -4391,7 +4600,7 @@
 
     move-result-object v0
 
-    .line 1009
+    .line 1011
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -4406,7 +4615,7 @@
 .method public hookShowBlurLayer(Landroid/view/SurfaceControl;Ljava/lang/String;)V
     .registers 6
 
-    .line 1388
+    .line 1417
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Landroid/view/SurfaceControl;
@@ -4425,12 +4634,12 @@
 
     if-eqz v0, :cond_1d
 
-    .line 1389
+    .line 1418
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1d
 
-    .line 1390
+    .line 1419
     filled-new-array {p1, p2}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -4444,7 +4653,7 @@
 .method public hookShowBlurLayerFinish()V
     .registers 5
 
-    .line 1014
+    .line 1016
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -4457,7 +4666,7 @@
 
     move-result-object v0
 
-    .line 1015
+    .line 1017
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -4470,7 +4679,7 @@
 .method public hookStartActivityResult(ILandroid/graphics/Rect;)V
     .registers 6
 
-    .line 1020
+    .line 1022
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -4487,7 +4696,7 @@
 
     move-result-object v0
 
-    .line 1021
+    .line 1023
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4508,7 +4717,7 @@
 
     if-eqz p3, :cond_d
 
-    .line 165
+    .line 167
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mActivityTaskExt:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManagerExt;
 
     new-instance v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$$ExternalSyntheticLambda0;
@@ -4519,7 +4728,7 @@
 
     return-void
 
-    .line 167
+    .line 169
     :cond_d
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mActivityTaskExt:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManagerExt;
 
@@ -4535,7 +4744,7 @@
 
     if-eqz p5, :cond_e
 
-    .line 1152
+    .line 1154
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mActivityTaskExt:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManagerExt;
 
     move-object v0, p5
@@ -4548,7 +4757,7 @@
 
     goto :goto_18
 
-    .line 1154
+    .line 1156
     :cond_e
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mActivityTaskExt:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManagerExt;
 
@@ -4564,7 +4773,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManagerExt;->hookStartMultiWindowAndMakeOwnAnimation(IIILandroid/graphics/Rect;Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManagerExt$TranWindowContainerTransactionCallback;)V
 
-    .line 1156
+    .line 1158
     :goto_18
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -4578,7 +4787,7 @@
 .method public hookToMultiWindow(Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
     .registers 6
 
-    .line 1502
+    .line 1531
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -4597,12 +4806,12 @@
 
     if-eqz v0, :cond_21
 
-    .line 1503
+    .line 1532
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_21
 
-    .line 1504
+    .line 1533
     filled-new-array {p1, p2}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -4624,7 +4833,7 @@
 .method public inMultiWindowMode()Z
     .registers 5
 
-    .line 142
+    .line 144
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -4637,7 +4846,7 @@
 
     move-result-object v0
 
-    .line 143
+    .line 145
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v2, v1, [Ljava/lang/Object;
@@ -4646,12 +4855,103 @@
 
     move-result-object p0
 
-    .line 145
+    .line 147
     instance-of v0, p0, Ljava/lang/Boolean;
 
     if-eqz v0, :cond_1e
 
-    .line 146
+    .line 148
+    check-cast p0, Ljava/lang/Boolean;
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    return p0
+
+    :cond_1e
+    return v1
+.end method
+
+.method public isCanEnterMultiWin(Landroid/content/ComponentName;)Z
+    .registers 5
+
+    .line 1600
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    const-class v1, Landroid/content/ComponentName;
+
+    filled-new-array {v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "isCanEnterMultiWin"
+
+    invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_23
+
+    .line 1601
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    if-eqz p0, :cond_23
+
+    .line 1602
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v0, p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Boolean;
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    return p0
+
+    :cond_23
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public isHasMultiWindow()Z
+    .registers 5
+
+    .line 1653
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    const/4 v1, 0x0
+
+    new-array v2, v1, [Ljava/lang/Class;
+
+    const-string v3, "isHasMultiWindow"
+
+    invoke-static {v0, v3, v2}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    .line 1654
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    new-array v2, v1, [Ljava/lang/Object;
+
+    invoke-static {v0, p0, v2}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    .line 1656
+    instance-of v0, p0, Ljava/lang/Boolean;
+
+    if-eqz v0, :cond_1e
+
+    .line 1657
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -4667,7 +4967,7 @@
 .method public isIMEShowing()Z
     .registers 5
 
-    .line 131
+    .line 133
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -4680,7 +4980,7 @@
 
     move-result-object v0
 
-    .line 132
+    .line 134
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v2, v1, [Ljava/lang/Object;
@@ -4689,12 +4989,12 @@
 
     move-result-object p0
 
-    .line 134
+    .line 136
     instance-of v0, p0, Ljava/lang/Boolean;
 
     if-eqz v0, :cond_1e
 
-    .line 135
+    .line 137
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -4710,7 +5010,7 @@
 .method public isKeyguardLocking()Z
     .registers 5
 
-    .line 1026
+    .line 1028
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -4723,7 +5023,7 @@
 
     move-result-object v0
 
-    .line 1027
+    .line 1029
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v2, v1, [Ljava/lang/Object;
@@ -4732,12 +5032,12 @@
 
     move-result-object p0
 
-    .line 1029
+    .line 1031
     instance-of v0, p0, Ljava/lang/Boolean;
 
     if-eqz v0, :cond_1e
 
-    .line 1030
+    .line 1032
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -4750,10 +5050,62 @@
     return v1
 .end method
 
+.method public isPCSourceDisplay(I)Z
+    .registers 5
+
+    .line 1622
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    filled-new-array {v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "isPCSourceDisplay"
+
+    invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_27
+
+    .line 1623
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    if-eqz p0, :cond_27
+
+    .line 1624
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v0, p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Boolean;
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    return p0
+
+    :cond_27
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method public isPinnedMode()Z
     .registers 5
 
-    .line 1037
+    .line 1039
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -4766,7 +5118,7 @@
 
     move-result-object v0
 
-    .line 1038
+    .line 1040
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v2, v1, [Ljava/lang/Object;
@@ -4775,12 +5127,54 @@
 
     move-result-object p0
 
-    .line 1040
+    .line 1042
     instance-of v0, p0, Ljava/lang/Boolean;
 
     if-eqz v0, :cond_1e
 
-    .line 1041
+    .line 1043
+    check-cast p0, Ljava/lang/Boolean;
+
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    return p0
+
+    :cond_1e
+    return v1
+.end method
+
+.method public isResizableActivity()Z
+    .registers 5
+
+    .line 1630
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    const/4 v1, 0x0
+
+    new-array v2, v1, [Ljava/lang/Class;
+
+    const-string v3, "isResizableActivity"
+
+    invoke-static {v0, v3, v2}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1e
+
+    .line 1631
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    if-eqz p0, :cond_1e
+
+    .line 1632
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-static {v0, p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -4796,7 +5190,7 @@
 .method public isSecureWindow()Z
     .registers 5
 
-    .line 1140
+    .line 1142
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -4809,7 +5203,7 @@
 
     move-result-object v0
 
-    .line 1141
+    .line 1143
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v2, v1, [Ljava/lang/Object;
@@ -4818,12 +5212,12 @@
 
     move-result-object p0
 
-    .line 1143
+    .line 1145
     instance-of v0, p0, Ljava/lang/Boolean;
 
     if-eqz v0, :cond_1e
 
-    .line 1144
+    .line 1146
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -4839,14 +5233,14 @@
 .method public isSplitScreen()Z
     .registers 5
 
-    .line 330
+    .line 332
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_24
 
-    .line 331
+    .line 333
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -4859,7 +5253,7 @@
 
     move-result-object v0
 
-    .line 332
+    .line 334
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v2, v1, [Ljava/lang/Object;
@@ -4868,12 +5262,12 @@
 
     move-result-object p0
 
-    .line 333
+    .line 335
     instance-of v0, p0, Ljava/lang/Boolean;
 
     if-eqz v0, :cond_24
 
-    .line 334
+    .line 336
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -4889,7 +5283,7 @@
 .method public isSupportMultiWindow()Z
     .registers 5
 
-    .line 173
+    .line 175
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -4902,7 +5296,7 @@
 
     move-result-object v0
 
-    .line 174
+    .line 176
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-array v2, v1, [Ljava/lang/Object;
@@ -4911,12 +5305,12 @@
 
     move-result-object p0
 
-    .line 176
+    .line 178
     instance-of v0, p0, Ljava/lang/Boolean;
 
     if-eqz v0, :cond_1e
 
-    .line 177
+    .line 179
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -4932,7 +5326,7 @@
 .method public isTheMainScreen(Ljava/lang/String;Ljava/lang/String;)Z
     .registers 9
 
-    .line 393
+    .line 395
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -4946,13 +5340,13 @@
     :cond_8
     const/4 v0, 0x0
 
-    .line 398
+    .line 400
     :try_start_9
     invoke-direct {p0}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getAllRootTaskInfosList()Ljava/util/List;
 
     move-result-object v2
 
-    .line 400
+    .line 402
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -4968,7 +5362,7 @@
 
     move-result-object v4
 
-    .line 401
+    .line 403
     invoke-direct {p0, v4, p1}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->isStackInfoTopClassName(Ljava/lang/Object;Ljava/lang/String;)Z
 
     move-result v5
@@ -4990,7 +5384,7 @@
 
     goto :goto_61
 
-    .line 402
+    .line 404
     :cond_2b
     :goto_2b
     invoke-direct {p0, v4}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getTaskInfoDisplayId(Ljava/lang/Object;)I
@@ -5011,7 +5405,7 @@
     :goto_33
     if-nez v3, :cond_77
 
-    .line 408
+    .line 410
     :try_start_35
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -5028,7 +5422,7 @@
 
     move-result-object v3
 
-    .line 409
+    .line 411
     invoke-direct {p0, v3}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getStackInfoPackageName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
@@ -5047,7 +5441,7 @@
 
     if-nez v4, :cond_5c
 
-    .line 410
+    .line 412
     invoke-direct {p0, v3}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getTaskInfoDisplayId(Ljava/lang/Object;)I
 
     move-result p1
@@ -5059,7 +5453,7 @@
 
     goto :goto_61
 
-    .line 413
+    .line 415
     :cond_5c
     invoke-direct {p0, v3}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->getTaskInfoDisplayId(Ljava/lang/Object;)I
 
@@ -5069,7 +5463,7 @@
 
     goto :goto_39
 
-    .line 417
+    .line 419
     :goto_61
     sget-object p2, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -5105,7 +5499,7 @@
 .method public notAllowKeyguardGoingAwayQuickly(Z)V
     .registers 5
 
-    .line 1281
+    .line 1283
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -5122,7 +5516,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 1283
+    .line 1285
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -5142,7 +5536,7 @@
 .method public notifyAuthenticateSucceed(Z)V
     .registers 5
 
-    .line 1402
+    .line 1431
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -5159,12 +5553,12 @@
 
     if-eqz v0, :cond_1f
 
-    .line 1403
+    .line 1432
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1f
 
-    .line 1404
+    .line 1433
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -5182,7 +5576,7 @@
 .method public notifyKeyguardGoingAwayQuickly(Z)V
     .registers 5
 
-    .line 1395
+    .line 1424
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -5199,12 +5593,12 @@
 
     if-eqz v0, :cond_1f
 
-    .line 1396
+    .line 1425
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1f
 
-    .line 1397
+    .line 1426
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -5222,7 +5616,7 @@
 .method public notifyLauncherPageTurning(Z)V
     .registers 5
 
-    .line 1307
+    .line 1309
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -5239,12 +5633,12 @@
 
     if-eqz v0, :cond_1f
 
-    .line 1308
+    .line 1310
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1f
 
-    .line 1309
+    .line 1311
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -5259,10 +5653,25 @@
     return-void
 .end method
 
+.method public registerActivityStarterExecutedObserver(Lcom/transsion/hubsdk/api/app/TranActivityStarterExecutedObserver;Landroid/content/IntentFilter;)Z
+    .registers 3
+
+    .line 1665
+    sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
+
+    const-string p1, "registerActivityStarterExecutedObserver is not support in this version through AOSP"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method public registerMultiWindowWmShellListener(Landroid/os/IBinder;)V
     .registers 5
 
-    .line 1494
+    .line 1523
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Landroid/os/IBinder;
@@ -5279,12 +5688,12 @@
 
     if-eqz v0, :cond_1b
 
-    .line 1495
+    .line 1524
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1b
 
-    .line 1496
+    .line 1525
     filled-new-array {p1}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -5298,7 +5707,7 @@
 .method public removeAnimationIconLayer(Landroid/view/SurfaceControl;)V
     .registers 5
 
-    .line 1116
+    .line 1118
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Landroid/view/SurfaceControl;
@@ -5313,7 +5722,7 @@
 
     move-result-object v0
 
-    .line 1117
+    .line 1119
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -5328,12 +5737,12 @@
 .method public removeRootTasksInWindowingModes([I)V
     .registers 5
 
-    .line 295
+    .line 297
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz v0, :cond_1d
 
-    .line 296
+    .line 298
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -5350,7 +5759,7 @@
 
     move-result-object v0
 
-    .line 297
+    .line 299
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -5366,7 +5775,7 @@
 .method public removeTask(I)Z
     .registers 5
 
-    .line 109
+    .line 111
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -5381,7 +5790,7 @@
 
     move-result-object v0
 
-    .line 110
+    .line 112
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5396,12 +5805,12 @@
 
     move-result-object p0
 
-    .line 112
+    .line 114
     instance-of p1, p0, Ljava/lang/Boolean;
 
     if-eqz p1, :cond_27
 
-    .line 113
+    .line 115
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -5416,15 +5825,59 @@
     return p0
 .end method
 
+.method public removeTaskPC(II)V
+    .registers 6
+
+    .line 1615
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    filled-new-array {v1, v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "removeTaskPC"
+
+    invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_23
+
+    .line 1616
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    if-eqz p0, :cond_23
+
+    .line 1617
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v0, p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_23
+    return-void
+.end method
+
 .method public reparentActivity(IIZ)V
     .registers 7
 
-    .line 321
+    .line 323
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz v0, :cond_2b
 
-    .line 322
+    .line 324
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -5443,7 +5896,7 @@
 
     move-result-object v0
 
-    .line 323
+    .line 325
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5471,7 +5924,7 @@
 .method public reparentTaskToDefaultTDA()V
     .registers 5
 
-    .line 1478
+    .line 1507
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -5486,12 +5939,76 @@
 
     if-eqz v0, :cond_16
 
-    .line 1479
+    .line 1508
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_16
 
-    .line 1480
+    .line 1509
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-static {v0, p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_16
+    return-void
+.end method
+
+.method public requestHideDock()V
+    .registers 5
+
+    .line 1645
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    const/4 v1, 0x0
+
+    new-array v2, v1, [Ljava/lang/Class;
+
+    const-string v3, "requestHideDock"
+
+    invoke-static {v0, v3, v2}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_16
+
+    .line 1646
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    if-eqz p0, :cond_16
+
+    .line 1647
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-static {v0, p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_16
+    return-void
+.end method
+
+.method public requestShowDock()V
+    .registers 5
+
+    .line 1638
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    const/4 v1, 0x0
+
+    new-array v2, v1, [Ljava/lang/Class;
+
+    const-string v3, "requestShowDock"
+
+    invoke-static {v0, v3, v2}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_16
+
+    .line 1639
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    if-eqz p0, :cond_16
+
+    .line 1640
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {v0, p0, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -5503,10 +6020,10 @@
 .method public setActivityController(Lcom/transsion/hubsdk/api/app/ITranActivityController;Z)V
     .registers 5
 
-    .line 236
+    .line 238
     iput-object p1, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
 
-    .line 237
+    .line 239
     sget-object p1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v0, Ljava/lang/Object;
@@ -5523,7 +6040,7 @@
 
     move-result-object p1
 
-    .line 238
+    .line 240
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     new-instance v1, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;
@@ -5546,7 +6063,7 @@
 .method public setBoostSceneState(ILjava/lang/String;Z)V
     .registers 8
 
-    .line 1335
+    .line 1337
     const-string p0, "com.transsion.hubsdk.TranServiceManager"
 
     invoke-static {p0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -5555,7 +6072,7 @@
 
     if-eqz p0, :cond_64
 
-    .line 1337
+    .line 1339
     const-string v0, "getServiceIBinder"
 
     const-class v1, Ljava/lang/String;
@@ -5570,7 +6087,7 @@
 
     if-eqz p0, :cond_64
 
-    .line 1339
+    .line 1341
     const-string v0, "activity_task"
 
     filled-new-array {v0}, [Ljava/lang/Object;
@@ -5585,7 +6102,7 @@
 
     check-cast p0, Landroid/os/IBinder;
 
-    .line 1340
+    .line 1342
     const-string v0, "com.transsion.hubsdk.app.ITranActivityTaskManager$Stub"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -5596,7 +6113,7 @@
 
     if-eqz v0, :cond_64
 
-    .line 1342
+    .line 1344
     const-class v2, Landroid/os/IBinder;
 
     filled-new-array {v2}, [Ljava/lang/Class;
@@ -5609,7 +6126,7 @@
 
     move-result-object v2
 
-    .line 1343
+    .line 1345
     filled-new-array {p0}, [Ljava/lang/Object;
 
     move-result-object p0
@@ -5620,7 +6137,7 @@
 
     if-eqz p0, :cond_64
 
-    .line 1345
+    .line 1347
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -5639,7 +6156,7 @@
 
     move-result-object v0
 
-    .line 1346
+    .line 1348
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -5669,12 +6186,12 @@
         }
     .end annotation
 
-    .line 342
+    .line 344
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz v0, :cond_1d
 
-    .line 343
+    .line 345
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -5691,7 +6208,7 @@
 
     move-result-object v0
 
-    .line 344
+    .line 346
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -5707,7 +6224,7 @@
 .method public setFinishFixedRotationWithTransaction(Landroid/view/SurfaceControl;[F[FI)V
     .registers 9
 
-    .line 1048
+    .line 1050
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, [F
@@ -5726,7 +6243,7 @@
 
     move-result-object v0
 
-    .line 1049
+    .line 1051
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5742,10 +6259,23 @@
     return-void
 .end method
 
+.method public setFlingState(Z)V
+    .registers 2
+
+    .line 1373
+    sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
+
+    const-string p1, "setFlingState has been deleted from AOSP"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
 .method public setJankScenarioState(ILjava/lang/String;Z)V
     .registers 8
 
-    .line 1315
+    .line 1317
     const-string p0, "com.transsion.hubsdk.TranServiceManager"
 
     invoke-static {p0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -5754,7 +6284,7 @@
 
     if-eqz p0, :cond_64
 
-    .line 1317
+    .line 1319
     const-string v0, "getServiceIBinder"
 
     const-class v1, Ljava/lang/String;
@@ -5769,7 +6299,7 @@
 
     if-eqz p0, :cond_64
 
-    .line 1319
+    .line 1321
     const-string v0, "activity_task"
 
     filled-new-array {v0}, [Ljava/lang/Object;
@@ -5784,7 +6314,7 @@
 
     check-cast p0, Landroid/os/IBinder;
 
-    .line 1320
+    .line 1322
     const-string v0, "com.transsion.hubsdk.app.ITranActivityTaskManager$Stub"
 
     invoke-static {v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getClass(Ljava/lang/String;)Ljava/lang/Class;
@@ -5795,7 +6325,7 @@
 
     if-eqz v0, :cond_64
 
-    .line 1322
+    .line 1324
     const-class v2, Landroid/os/IBinder;
 
     filled-new-array {v2}, [Ljava/lang/Class;
@@ -5808,7 +6338,7 @@
 
     move-result-object v2
 
-    .line 1323
+    .line 1325
     filled-new-array {p0}, [Ljava/lang/Object;
 
     move-result-object p0
@@ -5819,7 +6349,7 @@
 
     if-eqz p0, :cond_64
 
-    .line 1325
+    .line 1327
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -5838,7 +6368,7 @@
 
     move-result-object v0
 
-    .line 1326
+    .line 1328
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -5860,7 +6390,7 @@
 .method public setMultiEnableStateForOOBE(ZLandroid/os/Bundle;)V
     .registers 6
 
-    .line 1486
+    .line 1515
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -5879,12 +6409,12 @@
 
     if-eqz v0, :cond_21
 
-    .line 1487
+    .line 1516
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_21
 
-    .line 1488
+    .line 1517
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -5902,7 +6432,7 @@
 .method public setMultiWindowAcquireFocus(IZ)V
     .registers 6
 
-    .line 1054
+    .line 1056
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -5919,7 +6449,7 @@
 
     move-result-object v0
 
-    .line 1055
+    .line 1057
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5950,7 +6480,7 @@
         }
     .end annotation
 
-    .line 1060
+    .line 1062
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Ljava/util/List;
@@ -5965,7 +6495,7 @@
 
     move-result-object v0
 
-    .line 1061
+    .line 1063
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -5989,7 +6519,7 @@
         }
     .end annotation
 
-    .line 1066
+    .line 1068
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -6006,7 +6536,7 @@
 
     move-result-object v0
 
-    .line 1067
+    .line 1069
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1, p2}, [Ljava/lang/Object;
@@ -6021,7 +6551,7 @@
 .method public setMultiWindowExtendSize(II)V
     .registers 6
 
-    .line 1432
+    .line 1461
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -6038,12 +6568,12 @@
 
     if-eqz v0, :cond_23
 
-    .line 1433
+    .line 1462
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_23
 
-    .line 1434
+    .line 1463
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -6065,7 +6595,7 @@
 .method public setMultiWindowParams(Landroid/os/Bundle;)V
     .registers 5
 
-    .line 1167
+    .line 1169
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Landroid/os/Bundle;
@@ -6080,7 +6610,7 @@
 
     move-result-object v0
 
-    .line 1168
+    .line 1170
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -6103,7 +6633,7 @@
         }
     .end annotation
 
-    .line 1072
+    .line 1074
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Ljava/util/List;
@@ -6118,7 +6648,7 @@
 
     move-result-object v0
 
-    .line 1073
+    .line 1075
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -6133,7 +6663,7 @@
 .method public setMuteStateV4(ZI)V
     .registers 6
 
-    .line 1078
+    .line 1080
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -6150,7 +6680,7 @@
 
     move-result-object v0
 
-    .line 1079
+    .line 1081
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -6173,7 +6703,7 @@
 .method public setStartInMultiWindow(Ljava/lang/String;III)V
     .registers 8
 
-    .line 898
+    .line 900
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -6190,7 +6720,7 @@
 
     move-result-object v0
 
-    .line 900
+    .line 902
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6217,7 +6747,7 @@
 .method public setStartInMultiWindowAsUser(Ljava/lang/String;IIII)V
     .registers 9
 
-    .line 905
+    .line 907
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -6234,7 +6764,7 @@
 
     move-result-object v0
 
-    .line 907
+    .line 909
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6265,7 +6795,7 @@
 .method public setStartInMultiWindowWithBundle(Landroid/os/Bundle;IIII)V
     .registers 9
 
-    .line 1538
+    .line 1567
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Landroid/os/Bundle;
@@ -6284,12 +6814,12 @@
 
     if-eqz v0, :cond_2d
 
-    .line 1539
+    .line 1568
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_2d
 
-    .line 1540
+    .line 1569
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
@@ -6319,7 +6849,7 @@
 .method public setTbSpecialLayerState(ZI)V
     .registers 6
 
-    .line 1161
+    .line 1163
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -6336,7 +6866,7 @@
 
     move-result-object v0
 
-    .line 1162
+    .line 1164
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -6359,7 +6889,7 @@
 .method public setThunderbackAnimating(Z)V
     .registers 5
 
-    .line 1448
+    .line 1477
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -6376,12 +6906,12 @@
 
     if-eqz v0, :cond_1f
 
-    .line 1449
+    .line 1478
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_1f
 
-    .line 1450
+    .line 1479
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -6399,7 +6929,7 @@
 .method public startCurrentAppInMultiWindow(ZI)V
     .registers 6
 
-    .line 184
+    .line 186
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -6416,7 +6946,7 @@
 
     move-result-object v0
 
-    .line 185
+    .line 187
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -6436,10 +6966,67 @@
     return-void
 .end method
 
+.method public startLauncherAction(Landroid/content/Intent;I)V
+    .registers 3
+
+    .line 1368
+    sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
+
+    const-string p1, "startLauncherAction has been deleted from AOSP"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public stopTaskPC(II)V
+    .registers 6
+
+    .line 1607
+    sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
+
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    filled-new-array {v1, v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "stopTaskPC"
+
+    invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_23
+
+    .line 1608
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
+
+    if-eqz p0, :cond_23
+
+    .line 1609
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v0, p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_23
+    return-void
+.end method
+
 .method public takeTaskSnapshot(IZ)Lcom/transsion/hubsdk/api/window/TranTaskSnapshot;
     .registers 7
 
-    .line 1175
+    .line 1177
     invoke-static {}, Lcom/transsion/hubsdk/common/version/TranThubVersionUtil;->isAndroidT()Z
 
     move-result v0
@@ -6450,7 +7037,7 @@
 
     if-eqz v0, :cond_23
 
-    .line 1176
+    .line 1178
     sget-object p2, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     filled-new-array {v1}, [Ljava/lang/Class;
@@ -6461,7 +7048,7 @@
 
     move-result-object p2
 
-    .line 1177
+    .line 1179
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6478,7 +7065,7 @@
 
     goto :goto_49
 
-    .line 1178
+    .line 1180
     :cond_23
     invoke-static {}, Lcom/transsion/hubsdk/common/version/TranThubVersionUtil;->isRecentAndroidT()Z
 
@@ -6486,7 +7073,7 @@
 
     if-eqz v0, :cond_48
 
-    .line 1179
+    .line 1181
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v3, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
@@ -6499,7 +7086,7 @@
 
     move-result-object v0
 
-    .line 1180
+    .line 1182
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6523,7 +7110,7 @@
     :cond_48
     const/4 p0, 0x0
 
-    .line 1183
+    .line 1185
     :goto_49
     new-instance p1, Lcom/transsion/hubsdk/api/window/TranTaskSnapshot;
 
@@ -6531,7 +7118,7 @@
 
     if-nez p0, :cond_58
 
-    .line 1185
+    .line 1187
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
     const-string p2, "TranTaskSnapshot is null"
@@ -6540,7 +7127,7 @@
 
     return-object p1
 
-    .line 1188
+    .line 1190
     :cond_58
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -6554,7 +7141,7 @@
 
     if-eqz p2, :cond_99
 
-    .line 1189
+    .line 1191
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p2
@@ -6569,24 +7156,24 @@
 
     move-result-object p2
 
-    .line 1190
+    .line 1192
     new-array v0, v1, [Ljava/lang/Object;
 
     invoke-static {p2, p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
 
-    .line 1191
+    .line 1193
     instance-of v0, p2, Landroid/hardware/HardwareBuffer;
 
     if-eqz v0, :cond_7f
 
-    .line 1192
+    .line 1194
     check-cast p2, Landroid/hardware/HardwareBuffer;
 
     iput-object p2, p1, Lcom/transsion/hubsdk/api/window/TranTaskSnapshot;->mSnapshot:Landroid/hardware/HardwareBuffer;
 
-    .line 1194
+    .line 1196
     :cond_7f
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -6600,19 +7187,19 @@
 
     move-result-object p2
 
-    .line 1195
+    .line 1197
     new-array v0, v1, [Ljava/lang/Object;
 
     invoke-static {p2, p0, v0}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 1196
+    .line 1198
     instance-of p2, p0, Landroid/graphics/ColorSpace;
 
     if-eqz p2, :cond_99
 
-    .line 1197
+    .line 1199
     check-cast p0, Landroid/graphics/ColorSpace;
 
     iput-object p0, p1, Lcom/transsion/hubsdk/api/window/TranTaskSnapshot;->mColorSpace:Landroid/graphics/ColorSpace;
@@ -6624,7 +7211,7 @@
 .method public taskInMultiWindowById(I)Z
     .registers 5
 
-    .line 201
+    .line 203
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -6639,7 +7226,7 @@
 
     move-result-object v0
 
-    .line 202
+    .line 204
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6654,12 +7241,12 @@
 
     move-result-object p0
 
-    .line 204
+    .line 206
     instance-of p1, p0, Ljava/lang/Boolean;
 
     if-eqz p1, :cond_27
 
-    .line 205
+    .line 207
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -6674,10 +7261,25 @@
     return p0
 .end method
 
+.method public unRegisterActivityStarterExecutedObserver(Lcom/transsion/hubsdk/api/app/TranActivityStarterExecutedObserver;)Z
+    .registers 2
+
+    .line 1671
+    sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
+
+    const-string p1, "unRegisterActivityStarterExecutedObserver is not support in this version through AOSP"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method public updateConfiguration(Landroid/content/res/Configuration;)Z
     .registers 5
 
-    .line 1269
+    .line 1271
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Landroid/content/res/Configuration;
@@ -6692,7 +7294,7 @@
 
     move-result-object v0
 
-    .line 1270
+    .line 1272
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -6703,12 +7305,12 @@
 
     move-result-object p0
 
-    .line 1272
+    .line 1274
     instance-of p1, p0, Ljava/lang/Boolean;
 
     if-eqz p1, :cond_23
 
-    .line 1273
+    .line 1275
     check-cast p0, Ljava/lang/Boolean;
 
     invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
@@ -6726,7 +7328,7 @@
 .method public updateMediaMapForDynamicIsland(Ljava/lang/String;Z)V
     .registers 6
 
-    .line 1410
+    .line 1439
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     const-class v1, Ljava/lang/String;
@@ -6745,12 +7347,12 @@
 
     if-eqz v0, :cond_22
 
-    .line 1411
+    .line 1440
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     if-eqz p0, :cond_22
 
-    .line 1412
+    .line 1441
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p2
@@ -6763,7 +7365,7 @@
 
     return-void
 
-    .line 1414
+    .line 1443
     :cond_22
     sget-object p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->TAG:Ljava/lang/String;
 
@@ -6777,7 +7379,7 @@
 .method public updateZBoostTaskIdWhenToSplit(I)V
     .registers 5
 
-    .line 1084
+    .line 1086
     sget-object v0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->sClass:Ljava/lang/Class;
 
     sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
@@ -6792,7 +7394,7 @@
 
     move-result-object v0
 
-    .line 1085
+    .line 1087
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mObject:Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;

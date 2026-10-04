@@ -7,7 +7,7 @@
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .registers 2
 
-    .line 21
+    .line 22
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;-><init>(Landroid/content/res/Resources;)V
 
     return-void
@@ -18,7 +18,7 @@
 .method public createPopSettingItemUI()Lcom/transsion/camera/app/common/ui/setting/IPopSettingItemUI;
     .registers 4
 
-    .line 32
+    .line 33
     new-instance v0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoPopSettingItemUI;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mResources:Landroid/content/res/Resources;
@@ -37,7 +37,7 @@
 .method public createTopBarItemUI()Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
     .registers 4
 
-    .line 26
+    .line 27
     new-instance v0, Lcom/transsion/camera/ui/setting/livephoto/LivePhotoTopBarItemUI;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mResources:Landroid/content/res/Resources;
@@ -51,4 +51,17 @@
     iput-object v0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mITopBarItemUI:Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
     return-object v0
+.end method
+
+.method public isSupported()Z
+    .registers 1
+
+    .line 39
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object p0
+
+    iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mLivePhotoSupport:Z
+
+    return p0
 .end method

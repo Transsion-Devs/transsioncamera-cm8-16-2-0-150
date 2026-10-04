@@ -23,7 +23,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 39
+    .line 35
     invoke-direct {p0}, Lkotlinx/coroutines/CoroutineDispatcher;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public dispatch(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
     .registers 4
 
-    .line 47
+    .line 43
     sget-object p0, Lkotlinx/coroutines/scheduling/DefaultScheduler;->INSTANCE:Lkotlinx/coroutines/scheduling/DefaultScheduler;
 
     sget-object p1, Lkotlinx/coroutines/scheduling/TasksKt;->BlockingContext:Lkotlinx/coroutines/scheduling/TaskContext;
@@ -51,7 +51,7 @@
     .annotation build Lkotlinx/coroutines/InternalCoroutinesApi;
     .end annotation
 
-    .line 43
+    .line 39
     sget-object p0, Lkotlinx/coroutines/scheduling/DefaultScheduler;->INSTANCE:Lkotlinx/coroutines/scheduling/DefaultScheduler;
 
     sget-object p1, Lkotlinx/coroutines/scheduling/TasksKt;->BlockingContext:Lkotlinx/coroutines/scheduling/TaskContext;
@@ -68,17 +68,17 @@
     .annotation build Lkotlinx/coroutines/ExperimentalCoroutinesApi;
     .end annotation
 
-    .line 52
+    .line 48
     invoke-static {p1}, Lkotlinx/coroutines/internal/LimitedDispatcherKt;->checkParallelism(I)V
 
-    .line 53
+    .line 49
     sget v0, Lkotlinx/coroutines/scheduling/TasksKt;->MAX_POOL_SIZE:I
 
     if-lt p1, v0, :cond_8
 
     return-object p0
 
-    .line 54
+    .line 50
     :cond_8
     invoke-super {p0, p1}, Lkotlinx/coroutines/CoroutineDispatcher;->limitedParallelism(I)Lkotlinx/coroutines/CoroutineDispatcher;
 

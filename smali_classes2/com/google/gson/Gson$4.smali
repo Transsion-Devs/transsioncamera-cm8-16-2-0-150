@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/Gson$4;
+.class Lcom/google/gson/Gson$4;
 .super Lcom/google/gson/TypeAdapter;
 .source "SourceFile"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -28,7 +28,7 @@
 .method constructor <init>(Lcom/google/gson/TypeAdapter;)V
     .registers 2
 
-    .line 388
+    .line 542
     iput-object p1, p0, Lcom/google/gson/Gson$4;->val$longAdapter:Lcom/google/gson/TypeAdapter;
 
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
@@ -41,7 +41,7 @@
 .method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .registers 2
 
-    .line 388
+    .line 542
     invoke-virtual {p0, p1}, Lcom/google/gson/Gson$4;->read(Lcom/google/gson/stream/JsonReader;)Ljava/util/concurrent/atomic/AtomicLong;
 
     move-result-object p0
@@ -52,7 +52,7 @@
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/util/concurrent/atomic/AtomicLong;
     .registers 4
 
-    .line 393
+    .line 550
     iget-object p0, p0, Lcom/google/gson/Gson$4;->val$longAdapter:Lcom/google/gson/TypeAdapter;
 
     invoke-virtual {p0, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
@@ -61,7 +61,7 @@
 
     check-cast p0, Ljava/lang/Number;
 
-    .line 394
+    .line 551
     new-instance p1, Ljava/util/concurrent/atomic/AtomicLong;
 
     invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
@@ -76,7 +76,7 @@
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
 
-    .line 388
+    .line 542
     check-cast p2, Ljava/util/concurrent/atomic/AtomicLong;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/gson/Gson$4;->write(Lcom/google/gson/stream/JsonWriter;Ljava/util/concurrent/atomic/AtomicLong;)V
@@ -87,7 +87,7 @@
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/util/concurrent/atomic/AtomicLong;)V
     .registers 5
 
-    .line 390
+    .line 545
     iget-object p0, p0, Lcom/google/gson/Gson$4;->val$longAdapter:Lcom/google/gson/TypeAdapter;
 
     invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicLong;->get()J

@@ -16,7 +16,7 @@
 # static fields
 .field public static high_platform:I = 0x7f03010b
 
-.field public static wide_selfie_mode_setting_ui_entries:I = 0x7f030382
+.field public static wide_selfie_mode_setting_ui_entries:I = 0x7f03037f
 
 
 # direct methods

@@ -41,7 +41,7 @@
         }
     .end annotation
 
-    .line 361
+    .line 358
     iput-object p1, p0, Lkotlinx/coroutines/channels/BroadcastChannelImpl$SubscriberBuffered;->this$0:Lkotlinx/coroutines/channels/BroadcastChannelImpl;
 
     invoke-virtual {p1}, Lkotlinx/coroutines/channels/BroadcastChannelImpl;->getCapacity()I
@@ -62,7 +62,7 @@
 .method public cancelImpl(Ljava/lang/Throwable;)Z
     .registers 4
 
-    .line 362
+    .line 359
     iget-object v0, p0, Lkotlinx/coroutines/channels/BroadcastChannelImpl$SubscriberBuffered;->this$0:Lkotlinx/coroutines/channels/BroadcastChannelImpl;
 
     # getter for: Lkotlinx/coroutines/channels/BroadcastChannelImpl;->lock:Ljava/util/concurrent/locks/ReentrantLock;
@@ -72,22 +72,22 @@
 
     iget-object v1, p0, Lkotlinx/coroutines/channels/BroadcastChannelImpl$SubscriberBuffered;->this$0:Lkotlinx/coroutines/channels/BroadcastChannelImpl;
 
-    .line 15
+    .line 11
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 364
+    .line 361
     :try_start_b
     # invokes: Lkotlinx/coroutines/channels/BroadcastChannelImpl;->removeSubscriber(Lkotlinx/coroutines/channels/ReceiveChannel;)V
     invoke-static {v1, p0}, Lkotlinx/coroutines/channels/BroadcastChannelImpl;->access$removeSubscriber(Lkotlinx/coroutines/channels/BroadcastChannelImpl;Lkotlinx/coroutines/channels/ReceiveChannel;)V
 
-    .line 365
+    .line 362
     invoke-super {p0, p1}, Lkotlinx/coroutines/channels/BufferedChannel;->cancelImpl$kotlinx_coroutines_core(Ljava/lang/Throwable;)Z
 
     move-result p0
     :try_end_12
     .catchall {:try_start_b .. :try_end_12} :catchall_16
 
-    .line 15
+    .line 11
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     return p0
@@ -103,7 +103,7 @@
 .method public bridge synthetic cancelImpl$kotlinx_coroutines_core(Ljava/lang/Throwable;)Z
     .registers 2
 
-    .line 361
+    .line 358
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/BroadcastChannelImpl$SubscriberBuffered;->cancelImpl(Ljava/lang/Throwable;)Z
 
     move-result p0

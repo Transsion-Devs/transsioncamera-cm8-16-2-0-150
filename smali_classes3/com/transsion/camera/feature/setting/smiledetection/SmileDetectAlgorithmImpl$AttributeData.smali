@@ -28,19 +28,19 @@
 .method public constructor <init>(Lcom/stmobile/facebasejni/common/FaceInfo;[BII)V
     .registers 5
 
-    .line 291
+    .line 301
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 292
+    .line 302
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$AttributeData;->faceInfo:Lcom/stmobile/facebasejni/common/FaceInfo;
 
-    .line 293
+    .line 303
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$AttributeData;->nv21:[B
 
-    .line 294
+    .line 304
     iput p3, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$AttributeData;->width:I
 
-    .line 295
+    .line 305
     iput p4, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl$AttributeData;->height:I
 
     return-void

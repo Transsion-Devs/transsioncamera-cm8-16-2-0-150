@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/os/MessageQueue$IdleHandler;
 
 
 # instance fields
@@ -24,13 +24,15 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final queueIdle()Z
     .registers 1
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda13;->f$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$wtj9mosKbu2AuLIivjV5c4C3BX4(Lcom/transsion/camera/app/ui/BaseAppUI;)V
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$1bCca0cUI_AFIDt50HsP2XhC6BM(Lcom/transsion/camera/app/ui/BaseAppUI;)Z
 
-    return-void
+    move-result p0
+
+    return p0
 .end method

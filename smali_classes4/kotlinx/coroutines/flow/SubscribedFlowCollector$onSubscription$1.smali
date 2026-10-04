@@ -17,8 +17,8 @@
     c = "kotlinx.coroutines.flow.SubscribedFlowCollector"
     f = "Share.kt"
     l = {
-        0x1a3,
-        0x1a7
+        0x19f,
+        0x1a3
     }
     m = "onSubscription"
 .end annotation

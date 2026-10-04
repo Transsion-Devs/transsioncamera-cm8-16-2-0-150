@@ -106,7 +106,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 38
+    .line 39
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "BitmapRenderSpec"
@@ -115,35 +115,35 @@
 
     sput-object v0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 42
+    .line 43
     new-instance v0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec$1;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec$1;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->sRatioSpecMap1_1:Ljava/util/Map;
 
-    .line 60
+    .line 62
     new-instance v0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec$2;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec$2;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->sRatioSpecMap4_3:Ljava/util/Map;
 
-    .line 78
+    .line 81
     new-instance v0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec$3;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec$3;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->sRatioSpecMap16_9:Ljava/util/Map;
 
-    .line 96
+    .line 100
     new-instance v0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec$4;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec$4;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->sRatioSpecMapFull:Ljava/util/Map;
 
-    .line 114
+    .line 119
     new-instance v0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec$5;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec$5;-><init>()V
@@ -156,7 +156,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 36
+    .line 37
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BaseRenderSpec;-><init>()V
 
     return-void
@@ -165,7 +165,7 @@
 .method public static getBackground(IILjava/lang/String;)I
     .registers 8
 
-    .line 124
+    .line 129
     const-string v0, ", height: "
 
     const/4 v1, -0x1
@@ -182,13 +182,13 @@
 
     goto :goto_5d
 
-    .line 130
+    .line 135
     :cond_e
     invoke-static {p0, p1}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BaseRenderSpec;->getRatioSpec(II)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 132
+    .line 137
     sget-object v3, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->sRatioSpecMap:Ljava/util/Map;
 
     invoke-interface {v3, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -199,7 +199,7 @@
 
     if-nez v2, :cond_39
 
-    .line 134
+    .line 139
     sget-object p2, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -224,7 +224,7 @@
 
     return v1
 
-    .line 138
+    .line 143
     :cond_39
     invoke-interface {v2, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -234,7 +234,7 @@
 
     if-nez p0, :cond_58
 
-    .line 140
+    .line 145
     sget-object p0, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -255,7 +255,7 @@
 
     return v1
 
-    .line 144
+    .line 149
     :cond_58
     invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
@@ -263,7 +263,7 @@
 
     return p0
 
-    .line 125
+    .line 130
     :cond_5d
     :goto_5d
     sget-object v2, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;

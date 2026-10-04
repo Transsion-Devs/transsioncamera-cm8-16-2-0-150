@@ -33,14 +33,14 @@
 
     sput-object v0, Lkotlinx/coroutines/internal/WeakMapCtorCache;->INSTANCE:Lkotlinx/coroutines/internal/WeakMapCtorCache;
 
-    .line 93
+    .line 89
     new-instance v0, Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;-><init>()V
 
     sput-object v0, Lkotlinx/coroutines/internal/WeakMapCtorCache;->cacheLock:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
-    .line 94
+    .line 90
     new-instance v0, Ljava/util/WeakHashMap;
 
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
@@ -53,7 +53,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 92
+    .line 88
     invoke-direct {p0}, Lkotlinx/coroutines/internal/CtorCache;-><init>()V
 
     return-void
@@ -74,7 +74,7 @@
         }
     .end annotation
 
-    .line 97
+    .line 93
     sget-object p0, Lkotlinx/coroutines/internal/WeakMapCtorCache;->cacheLock:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
     invoke-virtual {p0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->readLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
@@ -100,7 +100,7 @@
 
     return-object v1
 
-    .line 98
+    .line 94
     :cond_17
     invoke-virtual {p0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->readLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
 
@@ -142,7 +142,7 @@
 
     invoke-virtual {p0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;->lock()V
 
-    .line 99
+    .line 95
     :try_start_38
     sget-object v3, Lkotlinx/coroutines/internal/WeakMapCtorCache;->exceptionCtors:Ljava/util/WeakHashMap;
 
@@ -170,7 +170,7 @@
 
     return-object v4
 
-    .line 100
+    .line 96
     :cond_4e
     :try_start_4e
     # invokes: Lkotlinx/coroutines/internal/ExceptionsConstructorKt;->createConstructor(Ljava/lang/Class;)Lkotlin/jvm/functions/Function1;
@@ -216,7 +216,7 @@
     :catchall_6e
     move-exception p0
 
-    .line 97
+    .line 93
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->unlock()V
 
     throw p0

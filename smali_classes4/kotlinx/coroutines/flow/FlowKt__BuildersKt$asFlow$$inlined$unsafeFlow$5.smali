@@ -35,7 +35,7 @@
 
     iput-object p1, p0, Lkotlinx/coroutines/flow/FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$5;->$this_asFlow$inlined:Lkotlin/sequences/Sequence;
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -92,7 +92,7 @@
 
     move-result-object v1
 
-    .line 106
+    .line 104
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$5$1;->label:I
 
     const/4 v3, 0x1
@@ -125,10 +125,10 @@
     :cond_39
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 114
+    .line 112
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$5;->$this_asFlow$inlined:Lkotlin/sequences/Sequence;
 
-    .line 1295
+    .line 113
     invoke-interface {p0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -145,7 +145,7 @@
 
     move-result-object p2
 
-    .line 116
+    .line 114
     iput-object p1, v0, Lkotlinx/coroutines/flow/FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$5$1;->L$0:Ljava/lang/Object;
 
     iput-object p0, v0, Lkotlinx/coroutines/flow/FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$5$1;->L$1:Ljava/lang/Object;
@@ -160,7 +160,7 @@
 
     return-object v1
 
-    .line 109
+    .line 107
     :cond_59
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

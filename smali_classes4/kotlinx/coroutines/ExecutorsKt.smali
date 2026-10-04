@@ -15,7 +15,7 @@
 .method public static final asExecutor(Lkotlinx/coroutines/CoroutineDispatcher;)Ljava/util/concurrent/Executor;
     .registers 2
 
-    .line 108
+    .line 104
     instance-of v0, p0, Lkotlinx/coroutines/ExecutorCoroutineDispatcher;
 
     if-eqz v0, :cond_8
@@ -55,7 +55,7 @@
 .method public static final from(Ljava/util/concurrent/Executor;)Lkotlinx/coroutines/CoroutineDispatcher;
     .registers 2
 
-    .line 100
+    .line 96
     instance-of v0, p0, Lkotlinx/coroutines/DispatcherExecutor;
 
     if-eqz v0, :cond_8
@@ -93,7 +93,7 @@
 .method public static final from(Ljava/util/concurrent/ExecutorService;)Lkotlinx/coroutines/ExecutorCoroutineDispatcher;
     .registers 2
 
-    .line 70
+    .line 66
     new-instance v0, Lkotlinx/coroutines/ExecutorCoroutineDispatcherImpl;
 
     invoke-direct {v0, p0}, Lkotlinx/coroutines/ExecutorCoroutineDispatcherImpl;-><init>(Ljava/util/concurrent/Executor;)V

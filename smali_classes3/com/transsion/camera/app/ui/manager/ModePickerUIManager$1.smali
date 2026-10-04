@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)V
     .registers 2
 
-    .line 827
+    .line 734
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$1;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 830
+    .line 737
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$1;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->hide()V

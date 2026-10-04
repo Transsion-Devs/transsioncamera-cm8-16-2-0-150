@@ -39,7 +39,7 @@
 
     iput-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$runningReduce$$inlined$unsafeFlow$1;->$operation$inlined:Lkotlin/jvm/functions/Function3;
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -62,7 +62,7 @@
         }
     .end annotation
 
-    .line 114
+    .line 112
     new-instance v0, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v0}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
@@ -71,7 +71,7 @@
 
     iput-object v1, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 115
+    .line 113
     iget-object v1, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$runningReduce$$inlined$unsafeFlow$1;->$this_runningReduce$inlined:Lkotlinx/coroutines/flow/Flow;
 
     new-instance v2, Lkotlinx/coroutines/flow/FlowKt__TransformKt$runningReduce$1$1;
@@ -92,7 +92,7 @@
 
     return-object p0
 
-    .line 109
+    .line 107
     :cond_1d
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

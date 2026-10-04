@@ -22,10 +22,10 @@
 .method public constructor <init>(JLjava/lang/Runnable;)V
     .registers 4
 
-    .line 500
+    .line 497
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;-><init>(J)V
 
-    .line 499
+    .line 496
     iput-object p3, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedRunnableTask;->block:Ljava/lang/Runnable;
 
     return-void
@@ -36,7 +36,7 @@
 .method public run()V
     .registers 1
 
-    .line 501
+    .line 498
     iget-object p0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedRunnableTask;->block:Ljava/lang/Runnable;
 
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
@@ -47,7 +47,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 502
+    .line 499
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -14,39 +14,39 @@
 
 
 # static fields
-.field public static ic_transsionfilter_classic:I = 0x7f080768
+.field public static ic_transsionfilter_classic:I = 0x7f0806f8
 
-.field public static ic_transsionfilter_cream:I = 0x7f080769
+.field public static ic_transsionfilter_cream:I = 0x7f0806f9
 
-.field public static ic_transsionfilter_delhi:I = 0x7f08076a
+.field public static ic_transsionfilter_delhi:I = 0x7f0806fa
 
-.field public static image_style_camon:I = 0x7f080815
+.field public static image_style_camon:I = 0x7f0807a6
 
-.field public static image_style_camon_colorstyle:I = 0x7f080816
+.field public static image_style_camon_colorstyle:I = 0x7f0807a7
 
-.field public static image_style_common:I = 0x7f080817
+.field public static image_style_common:I = 0x7f0807a8
 
-.field public static image_style_common_colorstyle:I = 0x7f080818
+.field public static image_style_common_colorstyle:I = 0x7f0807a9
 
-.field public static image_style_distinct:I = 0x7f080819
+.field public static image_style_distinct:I = 0x7f0807aa
 
-.field public static image_style_distinct_colorstyle:I = 0x7f08081a
+.field public static image_style_distinct_colorstyle:I = 0x7f0807ab
 
-.field public static image_style_item_cover:I = 0x7f08081b
+.field public static image_style_item_cover:I = 0x7f0807ac
 
-.field public static image_style_low_light:I = 0x7f08081c
+.field public static image_style_low_light:I = 0x7f0807ad
 
-.field public static image_style_off:I = 0x7f08081d
+.field public static image_style_off:I = 0x7f0807ae
 
-.field public static image_style_on:I = 0x7f08081e
+.field public static image_style_on:I = 0x7f0807af
 
-.field public static lc_image_style_item_cover_ring_screen_light:I = 0x7f080834
+.field public static lc_image_style_item_cover_ring_screen_light:I = 0x7f0807c5
 
-.field public static lc_image_style_item_cover_selected:I = 0x7f080835
+.field public static lc_image_style_item_cover_selected:I = 0x7f0807c6
 
-.field public static lc_image_style_item_cover_transparent:I = 0x7f080836
+.field public static lc_image_style_item_cover_transparent:I = 0x7f0807c7
 
-.field public static tran_image_style_title_color:I = 0x7f080b24
+.field public static tran_image_style_title_color:I = 0x7f080a92
 
 
 # direct methods

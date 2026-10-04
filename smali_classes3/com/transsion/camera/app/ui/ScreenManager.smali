@@ -329,43 +329,31 @@
     .line 79
     iput p2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mDisplayActivityType:I
 
-    const/4 p2, 0x0
+    const/4 p2, 0x1
 
-    const/4 v0, 0x1
+    .line 81
+    invoke-static {p1, p2}, Lcom/transsion/camera/utils/ScreenUtils;->getNavigationBarHeight(Landroid/content/Context;Z)I
 
-    .line 80
-    invoke-virtual {p0, p1, p2, v0}, Lcom/transsion/camera/app/ui/ScreenManager;->updateScreenFormType(Landroid/content/Context;IZ)Z
+    move-result v0
+
+    iput v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mNavigationHeight:I
+
+    const/4 v0, 0x0
 
     .line 82
-    invoke-static {p1, v0}, Lcom/transsion/camera/utils/ScreenUtils;->getNavigationBarHeight(Landroid/content/Context;Z)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mNavigationHeight:I
+    invoke-virtual {p0, p1, v0, p2}, Lcom/transsion/camera/app/ui/ScreenManager;->updateScreenFormType(Landroid/content/Context;IZ)Z
 
     return-void
 .end method
 
 .method private static additionalToolBarHeight(I)I
-    .registers 2
+    .registers 1
 
-    .line 454
-    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    const/16 p0, 0x1e
-
-    return p0
-
-    :cond_9
     mul-int/lit8 p0, p0, 0x3
 
     add-int/lit8 p0, p0, 0x5
 
-    .line 460
+    .line 459
     div-int/lit8 p0, p0, 0xa
 
     return p0
@@ -378,7 +366,7 @@
 
     int-to-double p1, p2
 
-    .line 450
+    .line 452
     invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->max(DD)D
 
     move-result-wide v2
@@ -432,7 +420,7 @@
 .method public getBottomHeight()I
     .registers 3
 
-    .line 323
+    .line 328
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -441,7 +429,7 @@
 
     if-eq v0, v1, :cond_2b
 
-    .line 324
+    .line 329
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -450,7 +438,7 @@
 
     if-eq v0, v1, :cond_2b
 
-    .line 325
+    .line 330
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -461,7 +449,7 @@
 
     goto :goto_2b
 
-    .line 327
+    .line 332
     :cond_16
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
@@ -471,7 +459,7 @@
 
     if-ne v0, v1, :cond_26
 
-    .line 328
+    .line 333
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mBottomHeight:I
 
     iget v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mModePickerMainLayoutHeight:I
@@ -485,7 +473,7 @@
 
     return v0
 
-    .line 330
+    .line 335
     :cond_26
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mBottomHeight:I
 
@@ -493,7 +481,7 @@
 
     goto :goto_24
 
-    .line 326
+    .line 331
     :cond_2b
     :goto_2b
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mNavigationHeight:I
@@ -504,7 +492,7 @@
 .method public getColumnPreviewStartMargin()I
     .registers 2
 
-    .line 407
+    .line 409
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalWidth:I
 
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
@@ -517,7 +505,7 @@
 .method public getCurrentScreenDefaultForm()I
     .registers 1
 
-    .line 234
+    .line 239
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenDefaultFormType:I
 
     return p0
@@ -526,7 +514,7 @@
 .method public getCutoutHeight()I
     .registers 1
 
-    .line 290
+    .line 295
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mCutoutHeight:I
 
     return p0
@@ -535,7 +523,7 @@
 .method public getDisplayActivityType()I
     .registers 1
 
-    .line 229
+    .line 234
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mDisplayActivityType:I
 
     return p0
@@ -544,7 +532,7 @@
 .method public getModePickerMainLayoutHeight()I
     .registers 1
 
-    .line 384
+    .line 386
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mModePickerMainLayoutHeight:I
 
     return p0
@@ -553,7 +541,7 @@
 .method public getModePickerScollExtra()I
     .registers 1
 
-    .line 402
+    .line 404
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mModePickerScollExtra:I
 
     return p0
@@ -562,7 +550,7 @@
 .method public getModePlusBottomBarHeight()I
     .registers 3
 
-    .line 340
+    .line 345
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -571,7 +559,7 @@
 
     if-eq v0, v1, :cond_26
 
-    .line 341
+    .line 346
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -580,7 +568,7 @@
 
     if-eq v0, v1, :cond_26
 
-    .line 342
+    .line 347
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -591,7 +579,7 @@
 
     goto :goto_26
 
-    .line 344
+    .line 349
     :cond_16
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
@@ -601,7 +589,7 @@
 
     if-ne v0, v1, :cond_23
 
-    .line 345
+    .line 350
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mBottomHeight:I
 
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mHoverBottomHeightReduce:I
@@ -610,13 +598,13 @@
 
     return v0
 
-    .line 347
+    .line 352
     :cond_23
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mBottomHeight:I
 
     return p0
 
-    .line 343
+    .line 348
     :cond_26
     :goto_26
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mNavigationHeight:I
@@ -627,7 +615,7 @@
 .method public getNavigationHeight()I
     .registers 1
 
-    .line 295
+    .line 300
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mNavigationHeight:I
 
     return p0
@@ -636,7 +624,7 @@
 .method public getOriginBottomHeight()I
     .registers 2
 
-    .line 357
+    .line 362
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mBottomHeight:I
 
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mModePickerMainLayoutHeight:I
@@ -649,7 +637,7 @@
 .method public getOriginModePlusBottomBarHeight()I
     .registers 1
 
-    .line 362
+    .line 367
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mBottomHeight:I
 
     return p0
@@ -658,7 +646,7 @@
 .method public getOriginScreenFormType()I
     .registers 1
 
-    .line 245
+    .line 250
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenFormType:I
 
     return p0
@@ -667,7 +655,7 @@
 .method public getOriginTopBarHeight()I
     .registers 2
 
-    .line 352
+    .line 357
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mCutoutHeight:I
 
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarHeight:I
@@ -680,7 +668,7 @@
 .method public getPopSettingBackUIMarginBottom(I)I
     .registers 2
 
-    .line 270
+    .line 275
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getModePlusBottomBarHeight()I
 
     move-result p0
@@ -699,7 +687,7 @@
 .method public getPopSettingUIMarginBottom(I)I
     .registers 2
 
-    .line 265
+    .line 270
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getModePlusBottomBarHeight()I
 
     move-result p0
@@ -730,7 +718,7 @@
 .method public getPreviewRatio()D
     .registers 5
 
-    .line 215
+    .line 220
     iget-wide v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mPreviewRatio:D
 
     const-wide/16 v2, 0x0
@@ -741,12 +729,12 @@
 
     if-nez v0, :cond_d
 
-    .line 218
+    .line 223
     iget-wide v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mPreviewRatio:D
 
     return-wide v0
 
-    .line 216
+    .line 221
     :cond_d
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -760,7 +748,7 @@
 .method public getScreenFormType()I
     .registers 2
 
-    .line 239
+    .line 244
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mForceScreenFormType:Z
 
     if-eqz v0, :cond_7
@@ -769,7 +757,7 @@
 
     return p0
 
-    .line 240
+    .line 245
     :cond_7
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenFormType:I
 
@@ -779,7 +767,7 @@
 .method public getScreenHeight()I
     .registers 1
 
-    .line 275
+    .line 280
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
 
     return p0
@@ -788,7 +776,7 @@
 .method public getScreenRatio()D
     .registers 3
 
-    .line 285
+    .line 290
     iget-wide v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenRatio:D
 
     return-wide v0
@@ -797,7 +785,7 @@
 .method public getScreenWidth()I
     .registers 1
 
-    .line 280
+    .line 285
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
 
     return p0
@@ -806,7 +794,7 @@
 .method public getShutterButtonHeight()I
     .registers 1
 
-    .line 389
+    .line 391
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mShutterButtonHeight:I
 
     return p0
@@ -823,7 +811,7 @@
 .method public getShutterPanelBasePaddingHeight()I
     .registers 3
 
-    .line 412
+    .line 414
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -832,12 +820,12 @@
 
     if-ne v0, v1, :cond_a
 
-    .line 413
+    .line 415
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mShutterPanelBasePaddingHeightHover:I
 
     return p0
 
-    .line 415
+    .line 417
     :cond_a
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mShutterPanelBasePaddingHeight:I
 
@@ -847,12 +835,12 @@
 .method public getSlaveSurfaceDisplaySize()Landroid/util/Size;
     .registers 4
 
-    .line 438
+    .line 440
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mSlaveSurfaceDisplaySize:Landroid/util/Size;
 
     if-nez v0, :cond_d
 
-    .line 439
+    .line 441
     sget-object p0, Lcom/transsion/camera/app/ui/ScreenManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "getSlaveSurfaceDisplaySize: mSlaveSurfaceDisplaySize is null"
@@ -863,13 +851,13 @@
 
     return-object p0
 
-    .line 442
+    .line 444
     :cond_d
     new-instance v0, Landroid/util/Size;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mSlaveSurfaceDisplaySize:Landroid/util/Size;
 
-    .line 443
+    .line 445
     invoke-virtual {v1}, Landroid/util/Size;->getWidth()I
 
     move-result v1
@@ -884,7 +872,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mSlaveSurfaceDisplaySize:Landroid/util/Size;
 
-    .line 444
+    .line 446
     invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
 
     move-result v2
@@ -905,28 +893,16 @@
 .method public getToolBarHeight()I
     .registers 1
 
-    .line 302
+    .line 307
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarHeight:I
 
     return p0
 .end method
 
 .method public getToolBarOriginPaddingHeight()I
-    .registers 2
+    .registers 1
 
-    .line 373
-    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    const/4 p0, 0x0
-
-    return p0
-
-    .line 376
-    :cond_8
+    .line 378
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarOriginPaddingHeight:I
 
     return p0
@@ -935,7 +911,7 @@
 .method public getTopBarHeight()I
     .registers 3
 
-    .line 307
+    .line 312
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -944,7 +920,7 @@
 
     if-eq v0, v1, :cond_20
 
-    .line 308
+    .line 313
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -953,7 +929,7 @@
 
     if-eq v0, v1, :cond_20
 
-    .line 309
+    .line 314
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -962,7 +938,7 @@
 
     if-eq v0, v1, :cond_20
 
-    .line 310
+    .line 315
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -973,7 +949,7 @@
 
     goto :goto_20
 
-    .line 313
+    .line 318
     :cond_1d
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
 
@@ -989,7 +965,7 @@
 .method public getTopBarHeight(D)I
     .registers 3
 
-    .line 318
+    .line 323
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getTopBarHeight()I
 
     move-result p0
@@ -1000,10 +976,10 @@
 .method public isLongScreen()Z
     .registers 3
 
-    .line 420
+    .line 422
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
 
-    .line 421
+    .line 423
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
 
     const/16 v1, 0x438
@@ -1012,7 +988,7 @@
 
     mul-int/lit16 v0, v0, 0x438
 
-    .line 422
+    .line 424
     div-int/2addr v0, p0
 
     :cond_b
@@ -1033,7 +1009,7 @@
 .method public optimizeSlaveSurfaceDisplaySize(F)V
     .registers 5
 
-    .line 428
+    .line 430
     sget-object v0, Lcom/transsion/camera/app/ui/ScreenManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1068,7 +1044,7 @@
 
     return-void
 
-    .line 433
+    .line 435
     :cond_27
     iput p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mOptimizeSlaveSurfaceRatio:F
 
@@ -1078,7 +1054,7 @@
 .method public updatePreviewSize(II)V
     .registers 7
 
-    .line 210
+    .line 215
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
 
     move-result v0
@@ -1099,7 +1075,7 @@
 
     iput-wide v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mPreviewRatio:D
 
-    .line 211
+    .line 216
     sget-object p1, Lcom/transsion/camera/app/ui/ScreenManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1124,7 +1100,7 @@
 .end method
 
 .method public updateScreenFormType(I)Z
-    .registers 11
+    .registers 12
 
     .line 140
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
@@ -1134,397 +1110,442 @@
     invoke-virtual {v0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->updateCurrentScreenType(I)V
 
     .line 141
-    iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenFormType:I
+    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
 
-    const/4 v1, 0x0
+    move-result v0
 
-    if-ne v0, p1, :cond_d
+    .line 142
+    iget v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenFormType:I
 
-    return v1
+    const/4 v2, 0x0
 
-    .line 144
-    :cond_d
+    if-ne v1, p1, :cond_11
+
+    return v2
+
+    .line 145
+    :cond_11
     iput p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenFormType:I
 
-    .line 146
-    iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalWidth:I
-
-    iput v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
-
     .line 147
-    iget v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalHeight:I
+    iget v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalWidth:I
 
-    iput v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
+    iput v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
 
-    const/4 v3, 0x2
+    .line 148
+    iget v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalHeight:I
 
-    if-ne p1, v3, :cond_20
+    iput v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
 
-    .line 149
-    div-int/2addr v0, v3
+    const/4 v4, 0x2
 
-    iget v4, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mMiddlePadding:I
+    if-ne p1, v4, :cond_24
 
-    add-int/2addr v0, v4
+    .line 150
+    div-int/2addr v1, v4
 
-    iput v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
+    iget v5, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mMiddlePadding:I
 
-    :cond_20
-    const/4 v0, 0x6
+    add-int/2addr v1, v5
 
-    .line 151
-    const-string v4, ", height:"
+    iput v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
 
-    if-eq p1, v0, :cond_144
+    :cond_24
+    const/4 v1, 0x6
 
-    const/4 v0, 0x7
+    .line 152
+    const-string v5, ", height:"
 
-    if-ne p1, v0, :cond_2a
+    if-eq p1, v1, :cond_16c
 
-    goto/16 :goto_144
+    const/4 v1, 0x7
 
-    .line 163
-    :cond_2a
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->isLongScreen()Z
+    if-ne p1, v1, :cond_2e
 
-    move-result v0
-
-    if-eqz v0, :cond_33
-
-    iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mFullScreenBaseLineHeightHigher:I
-
-    goto :goto_35
+    goto/16 :goto_16c
 
     .line 164
-    :cond_33
-    iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mFullScreenBaseLineHeightNormal:I
+    :cond_2e
+    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->isLongScreen()Z
 
-    :goto_35
-    sub-int/2addr v2, v0
+    move-result v1
 
-    .line 163
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+    if-eqz v1, :cond_37
 
-    move-result v0
+    iget v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mFullScreenBaseLineHeightHigher:I
+
+    goto :goto_39
 
     .line 165
-    invoke-static {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->additionalToolBarHeight(I)I
+    :cond_37
+    iget v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mFullScreenBaseLineHeightNormal:I
+
+    :goto_39
+    sub-int/2addr v3, v1
+
+    .line 164
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
     .line 166
-    iget v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarBaselineHeight:I
-
-    add-int/2addr v2, v1
-
-    mul-int/2addr v2, v3
-
-    iput v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
-
-    .line 167
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->isLongScreen()Z
+    invoke-static {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->additionalToolBarHeight(I)I
 
     move-result v2
 
-    if-nez v2, :cond_52
+    .line 167
+    iget v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarBaselineHeight:I
+
+    add-int/2addr v3, v2
+
+    mul-int/2addr v3, v4
+
+    iput v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
 
     .line 168
-    iget v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
+    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->isLongScreen()Z
 
-    iget v5, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarBaselineHeight:I
+    move-result v3
 
-    if-gt v2, v5, :cond_52
+    if-nez v3, :cond_56
 
     .line 169
-    iput v5, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
+    iget v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
 
-    .line 172
-    :cond_52
-    iget v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mCutoutBaseLineHeight:I
+    iget v6, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarBaselineHeight:I
 
-    add-int/2addr v2, v1
+    if-gt v3, v6, :cond_56
 
-    iput v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mCutoutHeight:I
+    .line 170
+    iput v6, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
 
     .line 173
-    iget v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarBaselineHeight:I
+    :cond_56
+    iget v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mCutoutBaseLineHeight:I
 
-    add-int/2addr v2, v1
+    add-int/2addr v3, v2
 
-    iput v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarHeight:I
+    iput v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mCutoutHeight:I
 
     .line 174
-    iget v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
+    iget v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarBaselineHeight:I
 
-    mul-int/lit8 v2, v2, 0x3
+    add-int/2addr v3, v2
 
-    div-int/lit8 v2, v2, 0x4
+    iput v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarHeight:I
+
+    .line 175
+    iget v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
+
+    mul-int/lit8 v3, v3, 0x3
+
+    div-int/lit8 v3, v3, 0x4
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->isLongScreen()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_6b
+    if-eqz v6, :cond_6f
 
-    iget v5, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarBaselinePaddingTopHigher:I
+    iget v6, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarBaselinePaddingTopHigher:I
 
-    goto :goto_6d
+    goto :goto_71
 
-    .line 175
-    :cond_6b
-    iget v5, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarBaselinePaddingTopNormal:I
+    .line 176
+    :cond_6f
+    iget v6, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarBaselinePaddingTopNormal:I
 
-    :goto_6d
-    sub-int/2addr v2, v5
+    :goto_71
+    sub-int/2addr v3, v6
 
-    iput v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarOriginPaddingHeight:I
+    iput v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarOriginPaddingHeight:I
 
-    if-ne p1, v3, :cond_76
+    if-ne p1, v4, :cond_7a
 
-    .line 177
-    iget v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mColumnTopBarBaseHeight:I
+    .line 178
+    iget v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mColumnTopBarBaseHeight:I
 
-    iput v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarOriginPaddingHeight:I
+    iput v3, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarOriginPaddingHeight:I
 
-    .line 179
-    :cond_76
-    sget-object v2, Lcom/transsion/camera/app/ui/ScreenManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    .line 180
+    :cond_7a
+    sget-object v3, Lcom/transsion/camera/app/ui/ScreenManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "updateScreenFormType, mCutoutHeight:"
+    const-string/jumbo v6, "updateScreenFormType, mCutoutHeight:"
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v5, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mCutoutHeight:I
+    iget v6, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mCutoutHeight:I
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v5, " ,mToolBarHeight: "
+    const-string v6, " , mTopBarHeight\uff1a"
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v5, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarHeight:I
+    iget v6, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v5, ", mToolBarOriginPaddingHeight: "
+    const-string v6, " ,mToolBarHeight: "
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v5, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarOriginPaddingHeight:I
+    iget v6, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarHeight:I
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v5, " ,toolBarOriginPaddingHeight:"
+    const-string v6, ", mToolBarOriginPaddingHeight: "
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget v6, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarOriginPaddingHeight:I
 
-    const-string v1, " addFullHeight:"
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v6, " ,toolBarOriginPaddingHeight:"
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, " type:"
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, " addFullHeight:"
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, " type:"
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string p1, " ,isLongScreen:"
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 182
+    .line 183
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->isLongScreen()Z
 
     move-result p1
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     const-string p1, " mFullScreenBaseLineHeightHigher:"
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mFullScreenBaseLineHeightHigher:I
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string p1, " mFullScreenBaseLineHeightNormal:"
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mFullScreenBaseLineHeightNormal:I
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string p1, ", tabletDevice: "
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 179
-    invoke-static {v2, p1}, Lcom/transsion/camera/utils/debug/Log;->v(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    .line 180
+    invoke-static {v3, p1}, Lcom/transsion/camera/utils/debug/Log;->v(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 184
+    if-eqz v0, :cond_fe
+
+    .line 186
+    iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mModePickerMainLayoutHeight:I
+
+    iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mShutterButtonHeight:I
+
+    add-int/2addr p1, v0
+
+    iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mNavigationHeight:I
+
+    add-int/2addr p1, v0
+
+    iput p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mBottomHeight:I
+
+    goto :goto_10c
+
+    .line 188
+    :cond_fe
     iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
 
-    sub-int v0, p1, v0
+    sub-int/2addr p1, v0
 
-    iget v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
+    iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
 
-    mul-int/lit8 v3, v1, 0x4
+    mul-int/lit8 v0, v0, 0x4
 
-    div-int/lit8 v3, v3, 0x3
+    div-int/lit8 v0, v0, 0x3
 
-    sub-int/2addr v0, v3
+    sub-int/2addr p1, v0
 
-    iput v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mBottomHeight:I
+    iput p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mBottomHeight:I
 
-    .line 185
-    iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mDisplayActivityType:I
+    .line 190
+    :goto_10c
+    iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mDisplayActivityType:I
 
-    if-nez v0, :cond_107
+    if-nez p1, :cond_12d
 
-    .line 186
-    invoke-static {v1, p1}, Lcom/transsion/camera/utils/ScreenUtils;->setScreenSize(II)V
+    .line 191
+    iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
 
-    .line 187
+    iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
+
+    invoke-static {p1, v0}, Lcom/transsion/camera/utils/ScreenUtils;->setScreenSize(II)V
+
+    .line 192
     iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalWidth:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalHeight:I
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/ScreenUtils;->setScreenRatio(II)V
 
-    .line 188
+    .line 193
     iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/ScreenUtils;->setRealScreenSize(II)V
 
-    .line 189
+    .line 194
     iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalWidth:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalHeight:I
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/ScreenUtils;->setMainScreenSize(II)V
 
-    goto :goto_13c
+    goto :goto_164
 
-    :cond_107
-    int-to-double v5, v1
+    .line 196
+    :cond_12d
+    iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
 
-    .line 192
-    invoke-static {}, Lcom/transsion/camera/utils/ScreenUtils;->getScreenRatio()D
-
-    move-result-wide v7
-
-    mul-double/2addr v5, v7
-
-    double-to-int p1, v5
-
-    .line 193
-    iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
-
-    if-le p1, v0, :cond_11a
-
-    int-to-double v5, v0
-
-    .line 195
-    invoke-static {}, Lcom/transsion/camera/utils/ScreenUtils;->getScreenRatio()D
-
-    move-result-wide v7
-
-    div-double/2addr v5, v7
-
-    double-to-int v1, v5
-
-    move p1, v0
+    int-to-double v0, p1
 
     .line 197
-    :cond_11a
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-static {}, Lcom/transsion/camera/utils/ScreenUtils;->getScreenRatio()D
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-wide v6
 
-    const-string/jumbo v3, "updateScreenFormType, slave surface display width:"
+    mul-double/2addr v0, v6
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v2, v0}, Lcom/transsion/camera/utils/debug/Log;->v(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    double-to-int v0, v0
 
     .line 198
-    new-instance v0, Landroid/util/Size;
+    iget v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
 
-    invoke-direct {v0, v1, p1}, Landroid/util/Size;-><init>(II)V
+    if-le v0, v1, :cond_142
 
-    iput-object v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mSlaveSurfaceDisplaySize:Landroid/util/Size;
+    int-to-double v6, v1
 
     .line 200
-    :goto_13c
+    invoke-static {}, Lcom/transsion/camera/utils/ScreenUtils;->getScreenRatio()D
+
+    move-result-wide v8
+
+    div-double/2addr v6, v8
+
+    double-to-int p1, v6
+
+    move v0, v1
+
+    .line 202
+    :cond_142
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "updateScreenFormType, slave surface display width:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v3, v1}, Lcom/transsion/camera/utils/debug/Log;->v(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 203
+    new-instance v1, Landroid/util/Size;
+
+    invoke-direct {v1, p1, v0}, Landroid/util/Size;-><init>(II)V
+
+    iput-object v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mSlaveSurfaceDisplaySize:Landroid/util/Size;
+
+    .line 205
+    :goto_164
     iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalWidth:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalHeight:I
 
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/ui/ScreenManager;->setScreenRatio(II)V
 
-    goto :goto_161
-
-    .line 153
-    :cond_144
-    :goto_144
-    iput v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mCutoutHeight:I
+    goto :goto_189
 
     .line 154
-    iput v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarHeight:I
+    :cond_16c
+    :goto_16c
+    iput v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mCutoutHeight:I
 
     .line 155
-    iput v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
+    iput v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarHeight:I
 
     .line 156
-    iput v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mBottomHeight:I
+    iput v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mTopBarHeight:I
 
     .line 157
-    iput v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarOriginPaddingHeight:I
+    iput v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mBottomHeight:I
 
     .line 158
-    iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
-
-    invoke-static {p1, v2}, Lcom/transsion/camera/utils/ScreenUtils;->setScreenSize(II)V
+    iput v2, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mToolBarOriginPaddingHeight:I
 
     .line 159
+    iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
+
+    invoke-static {p1, v3}, Lcom/transsion/camera/utils/ScreenUtils;->setScreenSize(II)V
+
+    .line 160
     iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalWidth:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalHeight:I
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/ScreenUtils;->setScreenRatio(II)V
 
-    .line 160
+    .line 161
     iget p1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/ScreenUtils;->setRealScreenSize(II)V
 
-    .line 203
-    :goto_161
+    .line 208
+    :goto_189
     sget-object p1, Lcom/transsion/camera/app/ui/ScreenManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1539,7 +1560,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
 
@@ -1778,21 +1799,21 @@
 .method public updateScreenSize()V
     .registers 3
 
-    .line 222
+    .line 227
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
 
     iget v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/ScreenUtils;->setScreenSize(II)V
 
-    .line 223
+    .line 228
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalWidth:I
 
     iget v1, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenOriginalHeight:I
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/ScreenUtils;->setScreenRatio(II)V
 
-    .line 224
+    .line 229
     iget v0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenWidth:I
 
     iget p0, p0, Lcom/transsion/camera/app/ui/ScreenManager;->mScreenHeight:I

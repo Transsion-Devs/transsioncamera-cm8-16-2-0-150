@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)V
     .registers 2
 
-    .line 92
+    .line 91
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 
     goto :goto_60
 
-    .line 110
+    .line 109
     :cond_d
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
@@ -72,7 +72,7 @@
 
     if-eqz p1, :cond_60
 
-    .line 111
+    .line 110
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->-$$Nest$fgetmCaptureHandler(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
@@ -83,7 +83,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 112
+    .line 111
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->-$$Nest$fgetmCaptureHandler(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
@@ -94,20 +94,20 @@
 
     return-void
 
-    .line 100
+    .line 99
     :cond_31
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->getUltraHDTips()V
 
-    .line 101
+    .line 100
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->-$$Nest$mshowTip(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)V
 
     return-void
 
-    .line 104
+    .line 103
     :cond_3c
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
@@ -135,12 +135,12 @@
 
     if-nez p1, :cond_60
 
-    .line 105
+    .line 104
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->getUltraHDTips()V
 
-    .line 106
+    .line 105
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->-$$Nest$mshowTip(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)V
@@ -149,7 +149,7 @@
     :goto_60
     return-void
 
-    .line 97
+    .line 96
     :cond_61
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;->this$0:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;
 

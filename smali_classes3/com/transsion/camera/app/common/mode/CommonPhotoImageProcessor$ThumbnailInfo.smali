@@ -53,16 +53,16 @@
 .method constructor <init>([BII)V
     .registers 4
 
-    .line 994
+    .line 1022
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 995
+    .line 1023
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;->mThumbnail:[B
 
-    .line 996
+    .line 1024
     iput p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;->mWidth:I
 
-    .line 997
+    .line 1025
     iput p3, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$ThumbnailInfo;->mHeight:I
 
     return-void

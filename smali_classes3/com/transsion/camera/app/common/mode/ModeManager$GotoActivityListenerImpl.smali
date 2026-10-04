@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/ModeManager;)V
     .registers 2
 
-    .line 1383
+    .line 1391
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onGotoActivity(Landroid/content/Intent;I)V
     .registers 5
 
-    .line 1387
+    .line 1395
     invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v0
@@ -55,7 +55,7 @@
 
     if-eqz v0, :cond_33
 
-    .line 1388
+    .line 1396
     invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v0
@@ -64,7 +64,7 @@
 
     move-result-object v0
 
-    .line 1389
+    .line 1397
     const-string v1, "com.transsion.camera.app.ReviewCameraActivity"
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -73,7 +73,7 @@
 
     if-eqz v0, :cond_33
 
-    .line 1390
+    .line 1398
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmSettingManager(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/setting/SettingManager;
@@ -84,17 +84,17 @@
 
     move-result-object v0
 
-    .line 1391
+    .line 1399
     const-string v1, "action_movie_review_activity_start"
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     move-result-object v0
 
-    .line 1392
+    .line 1400
     invoke-virtual {v0, v1, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 1396
+    .line 1404
     :cond_33
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -104,7 +104,7 @@
 
     if-eqz v0, :cond_44
 
-    .line 1397
+    .line 1405
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmGotoActivityListener(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUIListener$IGotoActivityListener;
@@ -120,7 +120,7 @@
 .method public onGotoActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
     .registers 4
 
-    .line 1403
+    .line 1411
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmGotoActivityListener(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUIListener$IGotoActivityListener;
@@ -129,7 +129,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 1404
+    .line 1412
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$GotoActivityListenerImpl;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmGotoActivityListener(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUIListener$IGotoActivityListener;

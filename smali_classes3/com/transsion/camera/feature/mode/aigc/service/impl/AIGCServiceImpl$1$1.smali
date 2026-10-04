@@ -30,7 +30,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$1;Ljava/lang/String;Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;Ljava/lang/String;Ljava/lang/String;Lcom/transsion/aicore/cv/ipc/data/GenerateData;)V
     .registers 7
 
-    .line 200
+    .line 199
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$1$1;->this$1:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$1;
 
     iput-object p3, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$1$1;->val$requestHolder:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;
@@ -51,7 +51,7 @@
 .method public doProcess()V
     .registers 9
 
-    .line 203
+    .line 202
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$1$1;->val$requestHolder:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;->-$$Nest$fgetmCanceled(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;)Z
@@ -62,7 +62,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 204
+    .line 203
     invoke-static {}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -71,7 +71,7 @@
 
     return-void
 
-    .line 208
+    .line 207
     :cond_12
     invoke-static {}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -81,12 +81,12 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 209
+    .line 208
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 210
+    .line 209
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$1$1;->this$1:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$1;
 
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$1$1;->val$url:Ljava/lang/String;
@@ -95,7 +95,7 @@
 
     move-result-object v0
 
-    .line 211
+    .line 210
     invoke-static {}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v4
@@ -122,7 +122,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 212
+    .line 211
     array-length v2, v0
 
     goto :goto_47
@@ -137,10 +137,10 @@
 
     move-result-object v2
 
-    .line 211
+    .line 210
     invoke-static {v4, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 214
+    .line 213
     invoke-static {}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v2
@@ -161,7 +161,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 215
+    .line 214
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -180,10 +180,10 @@
 
     move-result-object v3
 
-    .line 214
-    invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    .line 213
+    invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 217
+    .line 216
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$1$1;->val$requestHolder:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;
 
     invoke-static {v2}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;->-$$Nest$fgetmCanceled(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;)Z
@@ -192,7 +192,7 @@
 
     if-eqz v2, :cond_8e
 
-    .line 218
+    .line 217
     invoke-static {}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -201,7 +201,7 @@
 
     return-void
 
-    .line 222
+    .line 221
     :cond_8e
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$1$1;->val$requestHolder:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$RequestHolder;
 
@@ -219,7 +219,7 @@
 
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$1$1;->val$generateData:Lcom/transsion/aicore/cv/ipc/data/GenerateData;
 
-    .line 223
+    .line 222
     invoke-virtual {v4}, Lcom/transsion/aicore/cv/ipc/data/GenerateData;->getCode()I
 
     move-result v4
@@ -232,7 +232,7 @@
 
     invoke-direct {v3, v4, p0, v0}, Lcom/transsion/camera/app/common/ai/AIResponse;-><init>(ILjava/lang/String;[B)V
 
-    .line 222
+    .line 221
     invoke-virtual {v1, v2, v3}, Lcom/transsion/camera/feature/mode/aigc/service/impl/CallBackWrapper;->onResponse(Lcom/transsion/camera/app/common/ai/AIRequest;Lcom/transsion/camera/app/common/ai/AIResponse;)V
 
     return-void

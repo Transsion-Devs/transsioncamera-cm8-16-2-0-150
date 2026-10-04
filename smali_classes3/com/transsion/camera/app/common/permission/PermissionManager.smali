@@ -6,6 +6,8 @@
 # static fields
 .field private static final TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
+.field private static sCameraLocationPermissionRequesting:Z
+
 
 # instance fields
 .field private mARDrawlinePermissionList:Ljava/util/List;
@@ -42,73 +44,78 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/permission/PermissionManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
+    const/4 v0, 0x0
+
+    .line 43
+    sput-boolean v0, Lcom/transsion/camera/app/common/permission/PermissionManager;->sCameraLocationPermissionRequesting:Z
+
     return-void
 .end method
 
 .method public constructor <init>(Landroid/app/Activity;)V
     .registers 5
 
-    .line 58
+    .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 43
-    iput-boolean v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mExternalStoragePermissionGranted:Z
-
-    .line 45
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mAllPermissionList:Ljava/util/List;
-
-    .line 46
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLaunchPermissionList:Ljava/util/List;
-
-    .line 47
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLocationPermissionList:Ljava/util/List;
-
     .line 48
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mARDrawlinePermissionList:Ljava/util/List;
-
-    .line 49
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyPermissionList:Ljava/util/List;
+    iput-boolean v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mExternalStoragePermissionGranted:Z
 
     .line 50
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyLocationPermissionList:Ljava/util/List;
+    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mAllPermissionList:Ljava/util/List;
 
     .line 51
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLaunchPermissionList:Ljava/util/List;
+
+    .line 52
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLocationPermissionList:Ljava/util/List;
+
+    .line 53
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mARDrawlinePermissionList:Ljava/util/List;
+
+    .line 54
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyPermissionList:Ljava/util/List;
+
+    .line 55
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyLocationPermissionList:Ljava/util/List;
+
+    .line 56
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
     iput-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyARDrawlinePermissionList:Ljava/util/List;
 
-    .line 59
+    .line 64
     iput-object p1, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mActivity:Landroid/app/Activity;
 
-    .line 60
+    .line 65
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object p1
@@ -117,7 +124,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mTargetSdkVersion:I
 
-    .line 61
+    .line 66
     sget-object v0, Lcom/transsion/camera/app/common/permission/PermissionManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -136,13 +143,13 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 62
+    .line 67
     invoke-direct {p0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->initCameraAllPermissionList()V
 
-    .line 63
+    .line 68
     invoke-direct {p0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->initCameraLaunchPermissionList()V
 
-    .line 64
+    .line 69
     invoke-direct {p0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->initCameraLocationPermissionList()V
 
     return-void
@@ -151,7 +158,7 @@
 .method private checkExternalStorageManager(Ljava/util/List;)V
     .registers 3
 
-    .line 337
+    .line 366
     invoke-direct {p0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->externalStorageManagerPermissionGranted()Z
 
     move-result p0
@@ -160,12 +167,12 @@
 
     if-eqz p0, :cond_c
 
-    .line 338
+    .line 367
     invoke-interface {p1, v0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
     return-void
 
-    .line 339
+    .line 368
     :cond_c
     invoke-interface {p1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -173,31 +180,42 @@
 
     if-nez p0, :cond_15
 
-    .line 340
+    .line 369
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_15
     return-void
 .end method
 
+.method public static clearCameraLocationPermissionRequesting()V
+    .registers 1
+
+    const/4 v0, 0x0
+
+    .line 214
+    sput-boolean v0, Lcom/transsion/camera/app/common/permission/PermissionManager;->sCameraLocationPermissionRequesting:Z
+
+    return-void
+.end method
+
 .method private externalStorageManagerPermissionGranted()Z
     .registers 4
 
-    .line 251
+    .line 280
     const-string v0, "externalStorageManagerPermissionGranted"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/debug/TraceUtil;->begin(Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
-    .line 252
+    .line 281
     invoke-static {v0}, Landroid/os/Environment;->isExternalStorageManager(Ljava/io/File;)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mExternalStoragePermissionGranted:Z
 
-    .line 253
+    .line 282
     sget-object v0, Lcom/transsion/camera/app/common/permission/PermissionManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -218,10 +236,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 254
+    .line 283
     invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
 
-    .line 255
+    .line 284
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mExternalStoragePermissionGranted:Z
 
     return p0
@@ -230,7 +248,7 @@
 .method private getNeedCheckPermissionList(Ljava/util/List;)Ljava/util/List;
     .registers 6
 
-    .line 308
+    .line 337
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -239,7 +257,7 @@
 
     return-object p1
 
-    .line 311
+    .line 340
     :cond_7
     sget-object v0, Lcom/transsion/camera/app/common/permission/PermissionManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -247,12 +265,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 312
+    .line 341
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 313
+    .line 342
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -271,7 +289,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 314
+    .line 343
     iget-object v3, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v3, v2}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
@@ -280,12 +298,12 @@
 
     if-eqz v3, :cond_17
 
-    .line 315
+    .line 344
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_17
 
-    .line 318
+    .line 347
     :cond_2f
     const-string v1, "android.permission.MANAGE_EXTERNAL_STORAGE"
 
@@ -295,10 +313,10 @@
 
     if-eqz p1, :cond_3a
 
-    .line 319
+    .line 348
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->checkExternalStorageManager(Ljava/util/List;)V
 
-    .line 321
+    .line 350
     :cond_3a
     sget-object p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -324,35 +342,35 @@
 .method private initCameraAllPermissionList()V
     .registers 3
 
-    .line 281
+    .line 310
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mAllPermissionList:Ljava/util/List;
 
     const-string v1, "android.permission.CAMERA"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 282
+    .line 311
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mAllPermissionList:Ljava/util/List;
 
     const-string v1, "android.permission.RECORD_AUDIO"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 283
+    .line 312
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mAllPermissionList:Ljava/util/List;
 
     const-string v1, "android.permission.ACCESS_COARSE_LOCATION"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 284
+    .line 313
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mAllPermissionList:Ljava/util/List;
 
     const-string v1, "android.permission.ACCESS_FINE_LOCATION"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 285
+    .line 314
     iget-object p0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mAllPermissionList:Ljava/util/List;
 
     const-string v0, "android.permission.MANAGE_EXTERNAL_STORAGE"
@@ -365,21 +383,21 @@
 .method private initCameraLaunchPermissionList()V
     .registers 3
 
-    .line 289
+    .line 318
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLaunchPermissionList:Ljava/util/List;
 
     const-string v1, "android.permission.CAMERA"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 290
+    .line 319
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLaunchPermissionList:Ljava/util/List;
 
     const-string v1, "android.permission.RECORD_AUDIO"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 291
+    .line 320
     iget-object p0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLaunchPermissionList:Ljava/util/List;
 
     const-string v0, "android.permission.MANAGE_EXTERNAL_STORAGE"
@@ -392,14 +410,14 @@
 .method private initCameraLocationPermissionList()V
     .registers 3
 
-    .line 295
+    .line 324
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLocationPermissionList:Ljava/util/List;
 
     const-string v1, "android.permission.ACCESS_COARSE_LOCATION"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 296
+    .line 325
     iget-object p0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLocationPermissionList:Ljava/util/List;
 
     const-string v0, "android.permission.ACCESS_FINE_LOCATION"
@@ -409,26 +427,35 @@
     return-void
 .end method
 
+.method public static isCameraLocationPermissionRequesting()Z
+    .registers 1
+
+    .line 207
+    sget-boolean v0, Lcom/transsion/camera/app/common/permission/PermissionManager;->sCameraLocationPermissionRequesting:Z
+
+    return v0
+.end method
+
 
 # virtual methods
 .method public checkCameraLaunchPermissions()Z
     .registers 4
 
-    .line 91
+    .line 96
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLaunchPermissionList:Ljava/util/List;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->getNeedCheckPermissionList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p0
 
-    .line 92
+    .line 97
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-lez v0, :cond_24
 
-    .line 93
+    .line 98
     sget-object v0, Lcom/transsion/camera/app/common/permission/PermissionManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -460,21 +487,21 @@
 .method public checkCameraLocationPermissions()Z
     .registers 4
 
-    .line 105
+    .line 110
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLocationPermissionList:Ljava/util/List;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->getNeedCheckPermissionList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p0
 
-    .line 106
+    .line 111
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-lez v0, :cond_24
 
-    .line 107
+    .line 112
     sget-object v0, Lcom/transsion/camera/app/common/permission/PermissionManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -522,12 +549,12 @@
 .method public getDenyLocationPermissions()Ljava/util/List;
     .registers 4
 
-    .line 345
+    .line 374
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyLocationPermissionList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 346
+    .line 375
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLocationPermissionList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -548,7 +575,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 347
+    .line 376
     iget-object v2, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v2, v1}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
@@ -557,14 +584,14 @@
 
     if-eqz v2, :cond_b
 
-    .line 348
+    .line 377
     iget-object v2, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyLocationPermissionList:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_b
 
-    .line 351
+    .line 380
     :cond_25
     iget-object p0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyLocationPermissionList:Ljava/util/List;
 
@@ -574,12 +601,12 @@
 .method public getDenyPermissions()Ljava/util/List;
     .registers 4
 
-    .line 326
+    .line 355
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyPermissionList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 327
+    .line 356
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLaunchPermissionList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -600,7 +627,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 328
+    .line 357
     iget-object v2, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v2, v1}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
@@ -609,20 +636,20 @@
 
     if-eqz v2, :cond_b
 
-    .line 329
+    .line 358
     iget-object v2, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyPermissionList:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_b
 
-    .line 332
+    .line 361
     :cond_25
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyPermissionList:Ljava/util/List;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->checkExternalStorageManager(Ljava/util/List;)V
 
-    .line 333
+    .line 362
     iget-object p0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mDenyPermissionList:Ljava/util/List;
 
     return-object p0
@@ -631,14 +658,14 @@
 .method public isCameraLaunchPermissionsResultReady([Ljava/lang/String;[I)Z
     .registers 12
 
-    .line 230
+    .line 259
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 231
+    .line 260
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -647,30 +674,30 @@
 
     invoke-interface {v0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 232
+    .line 261
     const-string v4, "android.permission.RECORD_AUDIO"
 
     invoke-interface {v0, v4, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 233
+    .line 262
     const-string v5, "android.permission.WRITE_EXTERNAL_STORAGE"
 
     invoke-interface {v0, v5, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 234
+    .line 263
     const-string v6, "android.permission.READ_EXTERNAL_STORAGE"
 
     invoke-interface {v0, v6, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move v2, v1
 
-    .line 235
+    .line 264
     :goto_1f
     array-length v7, p1
 
     if-ge v2, v7, :cond_30
 
-    .line 236
+    .line 265
     aget-object v7, p1, v2
 
     aget v8, p2, v2
@@ -685,13 +712,13 @@
 
     goto :goto_1f
 
-    .line 238
+    .line 267
     :cond_30
     invoke-direct {p0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->externalStorageManagerPermissionGranted()Z
 
     move-result p0
 
-    .line 239
+    .line 268
     invoke-interface {v0, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -704,7 +731,7 @@
 
     if-nez p1, :cond_68
 
-    .line 241
+    .line 270
     invoke-interface {v0, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -717,7 +744,7 @@
 
     if-nez p1, :cond_68
 
-    .line 243
+    .line 272
     invoke-interface {v0, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -730,7 +757,7 @@
 
     if-nez p1, :cond_68
 
-    .line 245
+    .line 274
     invoke-interface {v0, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -756,14 +783,14 @@
 .method public requestCameraLaunchPermissions()Z
     .registers 5
 
-    .line 148
+    .line 153
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLaunchPermissionList:Ljava/util/List;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->getNeedCheckPermissionList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 149
+    .line 154
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
@@ -772,7 +799,7 @@
 
     const/4 v1, 0x0
 
-    .line 152
+    .line 157
     :try_start_d
     sget-object v2, Lcom/transsion/camera/app/common/permission/PermissionManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -780,10 +807,10 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 153
+    .line 158
     iget-object p0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mActivity:Landroid/app/Activity;
 
-    .line 154
+    .line 159
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v2
@@ -798,7 +825,7 @@
 
     const/16 v2, 0x64
 
-    .line 153
+    .line 158
     invoke-virtual {p0, v0, v2}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
     :try_end_27
     .catch Ljava/lang/SecurityException; {:try_start_d .. :try_end_27} :catch_28
@@ -808,12 +835,12 @@
     :catch_28
     move-exception p0
 
-    .line 158
+    .line 163
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return v1
 
-    .line 162
+    .line 167
     :cond_2d
     sget-object p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -827,33 +854,41 @@
 .end method
 
 .method public requestCameraLocationPermissions()Z
-    .registers 4
+    .registers 6
 
-    .line 175
+    .line 180
     iget-object v0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mLocationPermissionList:Ljava/util/List;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->getNeedCheckPermissionList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 176
+    .line 181
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-lez v1, :cond_28
+    const/4 v2, 0x1
 
-    .line 178
+    const/4 v3, 0x0
+
+    if-lez v1, :cond_2e
+
+    .line 184
+    :try_start_e
     sget-object v1, Lcom/transsion/camera/app/common/permission/PermissionManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    const-string v2, "requestCameraLocationPermissions(), user check"
+    const-string v4, "requestCameraLocationPermissions(), user check"
 
-    invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 179
+    .line 185
+    sput-boolean v2, Lcom/transsion/camera/app/common/permission/PermissionManager;->sCameraLocationPermissionRequesting:Z
+
+    .line 186
     iget-object p0, p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->mActivity:Landroid/app/Activity;
 
-    .line 180
+    .line 187
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
@@ -868,22 +903,29 @@
 
     const/16 v1, 0x65
 
-    .line 179
+    .line 186
     invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
+    :try_end_2a
+    .catch Ljava/lang/SecurityException; {:try_start_e .. :try_end_2a} :catch_2b
 
-    const/4 p0, 0x0
+    return v3
 
-    return p0
+    .line 191
+    :catch_2b
+    sput-boolean v3, Lcom/transsion/camera/app/common/permission/PermissionManager;->sCameraLocationPermissionRequesting:Z
 
-    .line 184
-    :cond_28
+    return v3
+
+    .line 195
+    :cond_2e
+    sput-boolean v3, Lcom/transsion/camera/app/common/permission/PermissionManager;->sCameraLocationPermissionRequesting:Z
+
+    .line 196
     sget-object p0, Lcom/transsion/camera/app/common/permission/PermissionManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "requestCameraLocationPermissions(), all on"
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    const/4 p0, 0x1
-
-    return p0
+    return v2
 .end method

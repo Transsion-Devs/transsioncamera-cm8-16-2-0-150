@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static dual_device_switcher_background_color:I = 0x7f0600ce
+.field public static dual_device_switcher_background_color:I = 0x7f0600cf
 
-.field public static dual_record_time_background_color:I = 0x7f0600cf
+.field public static dual_record_time_background_color:I = 0x7f0600d0
 
 
 # direct methods

@@ -52,7 +52,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;)V
     .registers 2
 
-    .line 735
+    .line 738
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 .method private executeDoSetOptionSettingUIList()V
     .registers 2
 
-    .line 774
+    .line 777
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->-$$Nest$fgetmCameraId(Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;)Ljava/lang/String;
@@ -81,7 +81,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 775
+    .line 778
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     new-instance v0, Ljava/util/ArrayList;
@@ -97,7 +97,7 @@
 .method private hideCommonSettingUIsForSuperAntiVideo()V
     .registers 2
 
-    .line 758
+    .line 761
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->-$$Nest$fgetmCameraId(Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;)Ljava/lang/String;
@@ -112,7 +112,7 @@
 
     if-eqz p0, :cond_24
 
-    .line 759
+    .line 762
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -133,7 +133,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 761
+    .line 764
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->hideEntryView()V
 
     goto :goto_12
@@ -147,7 +147,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 735
+    .line 738
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -158,7 +158,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 738
+    .line 741
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->-$$Nest$fgetmSupportSuperAntiVideoV2(Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;)Z
@@ -169,7 +169,7 @@
 
     goto :goto_6b
 
-    .line 741
+    .line 744
     :cond_9
     const-string v0, "key_super_anti_video"
 
@@ -187,14 +187,14 @@
 
     const-string v0, "com.transsion.camera.feature.mode.video.VideoModeEntry"
 
-    .line 742
+    .line 745
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_6b
 
-    .line 743
+    .line 746
     const-string p1, "super"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -203,14 +203,14 @@
 
     if-eqz v0, :cond_42
 
-    .line 744
+    .line 747
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->-$$Nest$fputmPendingRestoreInteractiveUIAfterPopup(Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;Z)V
 
-    .line 745
+    .line 748
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     new-instance v0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener$$ExternalSyntheticLambda0;
@@ -219,7 +219,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 746
+    .line 749
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     new-instance v0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener$$ExternalSyntheticLambda1;
@@ -230,7 +230,7 @@
 
     goto :goto_66
 
-    .line 747
+    .line 750
     :cond_42
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
@@ -244,14 +244,14 @@
 
     if-eqz v0, :cond_66
 
-    .line 748
+    .line 751
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-nez p1, :cond_66
 
-    .line 749
+    .line 752
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->-$$Nest$fgetmResetUi(Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;)Z
@@ -260,7 +260,7 @@
 
     if-eqz p1, :cond_66
 
-    .line 750
+    .line 753
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;
 
     new-instance v0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener$$ExternalSyntheticLambda2;
@@ -269,7 +269,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 753
+    .line 756
     :cond_66
     :goto_66
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$MySettingChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;

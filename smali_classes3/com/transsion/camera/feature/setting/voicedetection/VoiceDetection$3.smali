@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)V
     .registers 2
 
-    .line 528
+    .line 524
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$3;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onError(I)V
     .registers 4
 
-    .line 536
+    .line 532
     sget-object p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -63,7 +63,7 @@
 .method public onExit()V
     .registers 2
 
-    .line 560
+    .line 556
     sget-object p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "onExit"
@@ -76,7 +76,7 @@
 .method public onReady(Ljava/lang/String;)V
     .registers 4
 
-    .line 531
+    .line 527
     sget-object p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -101,7 +101,7 @@
 .method public onResult(Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
 
-    .line 541
+    .line 537
     sget-object v0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -126,7 +126,7 @@
 
     invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 542
+    .line 538
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$3;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-static {p2}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmIsModeSupport(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Z
@@ -177,7 +177,7 @@
 
     goto :goto_94
 
-    .line 548
+    .line 544
     :cond_4f
     const-string p2, "capture"
 
@@ -187,7 +187,7 @@
 
     if-eqz p2, :cond_60
 
-    .line 549
+    .line 545
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p1
@@ -198,7 +198,7 @@
 
     goto :goto_81
 
-    .line 550
+    .line 546
     :cond_60
     const-string p2, "shoot"
 
@@ -208,7 +208,7 @@
 
     if-eqz p2, :cond_71
 
-    .line 551
+    .line 547
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p1
@@ -219,7 +219,7 @@
 
     goto :goto_81
 
-    .line 552
+    .line 548
     :cond_71
     const-string p2, "cheese"
 
@@ -229,7 +229,7 @@
 
     if-eqz p1, :cond_81
 
-    .line 553
+    .line 549
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p1
@@ -238,7 +238,7 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setCaptureType(I)V
 
-    .line 555
+    .line 551
     :cond_81
     :goto_81
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$3;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
@@ -260,7 +260,7 @@
 
     return-void
 
-    .line 543
+    .line 539
     :cond_94
     :goto_94
     new-instance p1, Ljava/lang/StringBuilder;

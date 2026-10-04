@@ -61,19 +61,19 @@
         }
     .end annotation
 
-    .line 185
+    .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 186
+    .line 182
     iput-object p1, p0, Lkotlinx/coroutines/selects/SelectClause1Impl;->clauseObject:Ljava/lang/Object;
 
-    .line 187
+    .line 183
     iput-object p2, p0, Lkotlinx/coroutines/selects/SelectClause1Impl;->regFunc:Lkotlin/jvm/functions/Function3;
 
-    .line 188
+    .line 184
     iput-object p3, p0, Lkotlinx/coroutines/selects/SelectClause1Impl;->processResFunc:Lkotlin/jvm/functions/Function3;
 
-    .line 189
+    .line 185
     iput-object p4, p0, Lkotlinx/coroutines/selects/SelectClause1Impl;->onCancellationConstructor:Lkotlin/jvm/functions/Function3;
 
     return-void
@@ -88,7 +88,7 @@
 
     const/4 p4, 0x0
 
-    .line 185
+    .line 181
     :cond_5
     invoke-direct {p0, p1, p2, p3, p4}, Lkotlinx/coroutines/selects/SelectClause1Impl;-><init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;)V
 
@@ -100,7 +100,7 @@
 .method public getClauseObject()Ljava/lang/Object;
     .registers 1
 
-    .line 186
+    .line 182
     iget-object p0, p0, Lkotlinx/coroutines/selects/SelectClause1Impl;->clauseObject:Ljava/lang/Object;
 
     return-object p0
@@ -115,7 +115,7 @@
         }
     .end annotation
 
-    .line 189
+    .line 185
     iget-object p0, p0, Lkotlinx/coroutines/selects/SelectClause1Impl;->onCancellationConstructor:Lkotlin/jvm/functions/Function3;
 
     return-object p0
@@ -130,7 +130,7 @@
         }
     .end annotation
 
-    .line 188
+    .line 184
     iget-object p0, p0, Lkotlinx/coroutines/selects/SelectClause1Impl;->processResFunc:Lkotlin/jvm/functions/Function3;
 
     return-object p0
@@ -145,7 +145,7 @@
         }
     .end annotation
 
-    .line 187
+    .line 183
     iget-object p0, p0, Lkotlinx/coroutines/selects/SelectClause1Impl;->regFunc:Lkotlin/jvm/functions/Function3;
 
     return-object p0

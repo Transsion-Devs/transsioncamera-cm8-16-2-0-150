@@ -27,7 +27,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;)V
     .registers 3
 
-    .line 484
+    .line 506
     iput-object p1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$6;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$6;->val$callbacker:Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;
@@ -42,7 +42,7 @@
 .method public run()V
     .registers 4
 
-    .line 489
+    .line 511
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$6;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fgetmSurfaceTexture(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)Landroid/graphics/SurfaceTexture;
@@ -53,7 +53,7 @@
 
     return-void
 
-    .line 492
+    .line 514
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$6;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
@@ -63,10 +63,10 @@
 
     if-eqz v0, :cond_1b
 
-    .line 494
+    .line 516
     invoke-interface {v0}, Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;->modeInitCallback()V
 
-    .line 495
+    .line 517
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$6;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     const/4 v1, 0x0
@@ -75,7 +75,7 @@
 
     goto :goto_22
 
-    .line 502
+    .line 524
     :cond_1b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$6;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
@@ -83,7 +83,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fputmTmpCallback(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;)V
 
-    .line 504
+    .line 526
     :goto_22
     invoke-static {}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 

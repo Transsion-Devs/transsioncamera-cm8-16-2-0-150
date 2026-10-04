@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/anim/AnimationManager;)V
     .registers 2
 
-    .line 309
+    .line 314
     iput-object p1, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$5;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 5
 
-    .line 312
+    .line 317
     iget-object v0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$5;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$fgetmRootView(Lcom/transsion/camera/app/ui/anim/AnimationManager;)Landroid/view/View;
@@ -55,10 +55,10 @@
 
     if-eqz v0, :cond_13
 
-    .line 314
+    .line 319
     invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    .line 316
+    .line 321
     :cond_13
     iget-object v0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$5;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
 
@@ -76,7 +76,7 @@
 
     iput-object v1, v0, Lcom/transsion/camera/app/ui/anim/AnimationManager;->mSwitchAnimView:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
-    .line 317
+    .line 322
     iget-object v0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$5;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$fgetmRootView(Lcom/transsion/camera/app/ui/anim/AnimationManager;)Landroid/view/View;
@@ -93,7 +93,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$fputmViewSwitcherRoot(Lcom/transsion/camera/app/ui/anim/AnimationManager;Lcom/transsion/camera/app/ui/view/ViewSwitcher;)V
 
-    .line 318
+    .line 323
     iget-object v0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$5;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
 
     iget-object v1, v0, Lcom/transsion/camera/app/ui/anim/AnimationManager;->mPreviewRect:Landroid/graphics/Rect;
@@ -104,7 +104,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->updateTargetRect(Landroid/graphics/Rect;ZZ)V
 
-    .line 319
+    .line 324
     iget-object p0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$5;->this$0:Lcom/transsion/camera/app/ui/anim/AnimationManager;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager;->mSwitchAnimView:Lcom/transsion/camera/app/ui/view/SwitchAnimView;

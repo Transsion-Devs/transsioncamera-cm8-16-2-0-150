@@ -4,6 +4,8 @@
 
 
 # static fields
+.field private static final ALPHAS:[I
+
 .field private static final TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
 
@@ -14,13 +16,11 @@
 
 .field public final mBaseRectf:Landroid/graphics/RectF;
 
-.field private mBgColor:Ljava/lang/String;
+.field private final mBgColors:[I
 
 .field private mBitmap:Landroid/graphics/Bitmap;
 
 .field private mFrameCallback:Landroid/view/Choreographer$FrameCallback;
-
-.field private mIsDebug:Ljava/lang/Boolean;
 
 .field private mIsFirst:Z
 
@@ -70,7 +70,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 25
+    .line 24
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "ThumbnailTranView"
@@ -79,13 +79,33 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
+    const/4 v0, 0x7
+
+    .line 32
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_12
+
+    sput-object v0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->ALPHAS:[I
+
     return-void
+
+    :array_12
+    .array-data 4
+        0x0
+        0x33
+        0x66
+        0x99
+        0xcc
+        0xee
+        0xff
+    .end array-data
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 3
+    .registers 5
 
-    .line 56
+    .line 55
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     const/4 p1, 0x0
@@ -94,280 +114,167 @@
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsPlaying:Z
 
     .line 36
+    sget-object p2, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->ALPHAS:[I
+
+    array-length p2, p2
+
+    new-array p2, p2, [I
+
+    iput-object p2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBgColors:[I
+
+    .line 37
+    iput-boolean p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsPause:Z
+
+    .line 38
+    iput-boolean p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mNeedStart:Z
+
+    .line 40
+    new-instance p2, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView$1;
+
+    invoke-direct {p2, p0}, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView$1;-><init>(Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;)V
+
+    iput-object p2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mFrameCallback:Landroid/view/Choreographer$FrameCallback;
+
+    .line 56
+    new-instance p2, Landroid/graphics/RectF;
+
+    invoke-direct {p2}, Landroid/graphics/RectF;-><init>()V
+
+    iput-object p2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mTargetRectf:Landroid/graphics/RectF;
+
+    .line 57
+    new-instance p2, Landroid/graphics/RectF;
+
+    invoke-direct {p2}, Landroid/graphics/RectF;-><init>()V
+
+    iput-object p2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBaseRectf:Landroid/graphics/RectF;
+
+    .line 58
+    new-instance p2, Landroid/graphics/Rect;
+
+    invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mPricessRect:Landroid/graphics/Rect;
+
+    .line 59
     const-string p2, "debug.camera.transition_debug"
 
     invoke-static {p2, p1}, Lcom/transsion/camera/utils/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result p2
 
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    if-eqz p2, :cond_38
 
-    move-result-object p2
+    const/high16 p2, 0xff0000
 
-    iput-object p2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsDebug:Ljava/lang/Boolean;
+    goto :goto_39
 
-    .line 37
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+    :cond_38
+    move p2, p1
 
-    move-result p2
+    .line 61
+    :goto_39
+    sget-object v0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->ALPHAS:[I
 
-    if-eqz p2, :cond_1b
+    array-length v1, v0
 
-    const-string p2, "FF0000"
+    if-ge p1, v1, :cond_4a
 
-    goto :goto_1d
+    .line 62
+    iget-object v1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBgColors:[I
 
-    :cond_1b
-    const-string p2, "000000"
+    aget v0, v0, p1
 
-    :goto_1d
-    iput-object p2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBgColor:Ljava/lang/String;
+    shl-int/lit8 v0, v0, 0x18
 
-    .line 38
-    iput-boolean p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsPause:Z
+    or-int/2addr v0, p2
 
-    .line 39
-    iput-boolean p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mNeedStart:Z
+    aput v0, v1, p1
 
-    .line 41
-    new-instance p1, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView$1;
+    add-int/lit8 p1, p1, 0x1
 
-    invoke-direct {p1, p0}, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView$1;-><init>(Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;)V
+    goto :goto_39
 
-    iput-object p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mFrameCallback:Landroid/view/Choreographer$FrameCallback;
-
-    .line 57
-    new-instance p1, Landroid/graphics/RectF;
-
-    invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
-
-    iput-object p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mTargetRectf:Landroid/graphics/RectF;
-
-    .line 58
-    new-instance p1, Landroid/graphics/RectF;
-
-    invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
-
-    iput-object p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBaseRectf:Landroid/graphics/RectF;
-
-    .line 59
-    new-instance p1, Landroid/graphics/Rect;
-
-    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mPricessRect:Landroid/graphics/Rect;
-
+    :cond_4a
     return-void
 .end method
 
 .method private setBackGroundColor(Landroid/graphics/Canvas;F)V
-    .registers 7
+    .registers 4
 
-    float-to-double v0, p2
+    const v0, 0x3f4ccccd    # 0.8f
 
-    const-wide v2, 0x3fe999999999999aL    # 0.8
+    cmpl-float v0, p2, v0
 
-    cmpl-double v2, v0, v2
+    if-lez v0, :cond_9
 
-    if-lez v2, :cond_1f
+    const/4 p2, 0x6
 
-    .line 150
-    new-instance v0, Ljava/lang/StringBuilder;
+    goto :goto_37
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    :cond_9
+    const v0, 0x3f333333    # 0.7f
 
-    const-string v1, "#FF"
+    cmpl-float v0, p2, v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-lez v0, :cond_12
 
-    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBgColor:Ljava/lang/String;
+    const/4 p2, 0x5
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_37
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_12
+    const v0, 0x3f19999a    # 0.6f
 
-    move-result-object p0
+    cmpl-float v0, p2, v0
 
-    goto/16 :goto_c4
+    if-lez v0, :cond_1b
 
-    :cond_1f
-    const-wide v2, 0x3fe6666666666666L    # 0.7
+    const/4 p2, 0x4
 
-    cmpl-double v2, v0, v2
+    goto :goto_37
 
-    if-lez v2, :cond_3d
+    :cond_1b
+    const v0, 0x3ee66666    # 0.45f
 
-    .line 152
-    new-instance v0, Ljava/lang/StringBuilder;
+    cmpl-float v0, p2, v0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    if-lez v0, :cond_24
 
-    const-string v1, "#EE"
+    const/4 p2, 0x3
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_37
 
-    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBgColor:Ljava/lang/String;
+    :cond_24
+    const v0, 0x3e99999a    # 0.3f
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    cmpl-float v0, p2, v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-lez v0, :cond_2d
 
-    move-result-object p0
+    const/4 p2, 0x2
 
-    goto/16 :goto_c4
+    goto :goto_37
 
-    :cond_3d
-    const-wide v2, 0x3fe3333333333333L    # 0.6
+    :cond_2d
+    const v0, 0x3e4ccccd    # 0.2f
 
-    cmpl-double v2, v0, v2
+    cmpl-float p2, p2, v0
 
-    if-lez v2, :cond_5a
+    if-lez p2, :cond_36
 
-    .line 154
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 p2, 0x1
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    goto :goto_37
 
-    const-string v1, "#CC"
+    :cond_36
+    const/4 p2, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 149
+    :goto_37
+    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBgColors:[I
 
-    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBgColor:Ljava/lang/String;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_c4
-
-    :cond_5a
-    const-wide v2, 0x3fdccccccccccccdL    # 0.45
-
-    cmpl-double v2, v0, v2
-
-    if-lez v2, :cond_77
-
-    .line 156
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "#99"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBgColor:Ljava/lang/String;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_c4
-
-    :cond_77
-    const-wide v2, 0x3fd3333333333333L    # 0.3
-
-    cmpl-double v2, v0, v2
-
-    if-lez v2, :cond_94
-
-    .line 158
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "#66"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBgColor:Ljava/lang/String;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_c4
-
-    :cond_94
-    const-wide v2, 0x3fc999999999999aL    # 0.2
-
-    cmpl-double v0, v0, v2
-
-    if-lez v0, :cond_b1
-
-    .line 160
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "#33"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBgColor:Ljava/lang/String;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_c4
-
-    .line 162
-    :cond_b1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "#00"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBgColor:Ljava/lang/String;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 164
-    :goto_c4
-    sget-object v0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "setBcakGroundColor color = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, " f = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 165
-    invoke-static {p0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result p0
+    aget p0, p0, p2
 
     invoke-virtual {p1, p0}, Landroid/graphics/Canvas;->drawColor(I)V
 
@@ -377,7 +284,7 @@
 .method private startAnim()V
     .registers 4
 
-    .line 74
+    .line 78
     sget-object v0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -400,10 +307,10 @@
 
     const/16 v0, -0x14
 
-    .line 75
+    .line 79
     invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 76
+    .line 80
     invoke-static {}, Lcom/transsion/camera/thub/TranSchedManagerProxy;->getInstance()Lcom/transsion/camera/thub/TranSchedManagerProxy;
 
     move-result-object v0
@@ -414,17 +321,17 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/thub/TranSchedManagerProxy;->setVipPauseTranSched(I)V
 
-    .line 77
+    .line 81
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsPause:Z
 
     if-eqz v0, :cond_3a
 
     const/4 v0, 0x0
 
-    .line 78
+    .line 82
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 79
+    .line 83
     invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
     move-result-object v0
@@ -438,7 +345,7 @@
     :cond_3a
     const/4 v0, 0x1
 
-    .line 81
+    .line 85
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mNeedStart:Z
 
     return-void
@@ -449,33 +356,28 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .registers 12
 
-    .line 91
+    .line 95
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsFirst:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_d
 
-    .line 92
+    .line 96
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mStartTime:J
 
-    .line 93
+    .line 97
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsFirst:Z
 
-    .line 96
+    .line 100
     :cond_d
-    const-string v0, "ThumbnailTransitionView onDraw"
-
-    invoke-static {v0}, Lcom/transsion/camera/utils/debug/TraceUtil;->begin(Ljava/lang/String;)V
-
-    .line 97
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 101
+    .line 104
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
@@ -486,33 +388,33 @@
 
     long-to-float v0, v2
 
-    .line 102
+    .line 105
     iget-wide v2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mAnimDuration:J
 
     long-to-float v2, v2
 
     cmpg-float v3, v0, v2
 
-    if-gez v3, :cond_2f
+    if-gez v3, :cond_2a
 
     div-float/2addr v0, v2
 
-    .line 105
+    .line 108
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mTimeInterpolator:Landroid/animation/TimeInterpolator;
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_28
 
-    .line 107
+    .line 110
     invoke-interface {v2, v0}, Landroid/animation/TimeInterpolator;->getInterpolation(F)F
 
     move-result v0
 
-    :cond_2d
+    :cond_28
     move v2, v1
 
-    goto :goto_35
+    goto :goto_30
 
-    :cond_2f
+    :cond_2a
     const/4 v0, 0x1
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -523,43 +425,24 @@
 
     move v0, v9
 
-    .line 114
-    :goto_35
+    .line 117
+    :goto_30
     iget-object v3, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBitmap:Landroid/graphics/Bitmap;
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_92
-
-    .line 115
-    sget-object v3, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "onDraw  f = "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v3, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 116
-    iget-object v3, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBaseRectf:Landroid/graphics/RectF;
-
-    .line 117
-    iget v5, v3, Landroid/graphics/RectF;->left:F
+    if-eqz v3, :cond_77
 
     .line 118
-    iget-object v6, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mTargetRectf:Landroid/graphics/RectF;
+    iget-object v3, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBaseRectf:Landroid/graphics/RectF;
 
     .line 119
+    iget v5, v3, Landroid/graphics/RectF;->left:F
+
+    .line 120
+    iget-object v6, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mTargetRectf:Landroid/graphics/RectF;
+
+    .line 121
     iget v7, v6, Landroid/graphics/RectF;->left:F
 
     sub-float/2addr v7, v5
@@ -572,16 +455,16 @@
 
     move-result v5
 
-    .line 120
+    .line 122
     iget-object v7, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mPricessRect:Landroid/graphics/Rect;
 
-    .line 121
+    .line 123
     iput v5, v7, Landroid/graphics/Rect;->left:I
 
-    .line 122
+    .line 124
     iget v5, v3, Landroid/graphics/RectF;->top:F
 
-    .line 123
+    .line 125
     iget v8, v6, Landroid/graphics/RectF;->top:F
 
     sub-float/2addr v8, v5
@@ -596,10 +479,10 @@
 
     iput v5, v7, Landroid/graphics/Rect;->top:I
 
-    .line 124
+    .line 126
     iget v5, v3, Landroid/graphics/RectF;->right:F
 
-    .line 125
+    .line 127
     iget v8, v6, Landroid/graphics/RectF;->right:F
 
     sub-float/2addr v8, v5
@@ -614,10 +497,10 @@
 
     iput v5, v7, Landroid/graphics/Rect;->right:I
 
-    .line 126
+    .line 128
     iget v3, v3, Landroid/graphics/RectF;->bottom:F
 
-    .line 127
+    .line 129
     iget v5, v6, Landroid/graphics/RectF;->bottom:F
 
     sub-float/2addr v5, v3
@@ -632,46 +515,43 @@
 
     iput v3, v7, Landroid/graphics/Rect;->bottom:I
 
-    .line 128
+    .line 130
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->setBackGroundColor(Landroid/graphics/Canvas;F)V
 
-    .line 129
+    .line 131
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {p1, v0, v4, v7, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    :cond_92
-    if-eqz v2, :cond_a7
+    :cond_77
+    if-eqz v2, :cond_8c
 
-    .line 133
+    .line 135
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsPlaying:Z
 
     const-wide/16 v0, 0x0
 
-    .line 134
+    .line 136
     iput-wide v0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mStartTime:J
 
-    .line 135
+    .line 137
     iput-wide v0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mAnimDuration:J
 
-    .line 136
+    .line 138
     iput-object v4, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mTimeInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 137
+    .line 139
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mAnimEndRunnable:Ljava/lang/Runnable;
 
-    if-eqz p1, :cond_a7
+    if-eqz p1, :cond_8c
 
-    .line 139
+    .line 141
     iput-object v4, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mAnimEndRunnable:Ljava/lang/Runnable;
 
-    .line 140
+    .line 142
     invoke-virtual {p0, p1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 143
-    :cond_a7
-    invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
-
+    :cond_8c
     return-void
 .end method
 
@@ -680,10 +560,10 @@
 
     const/4 v0, 0x1
 
-    .line 169
+    .line 153
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsPause:Z
 
-    .line 170
+    .line 154
     sget-object v0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -704,17 +584,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 171
+    .line 155
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mNeedStart:Z
 
     if-eqz v0, :cond_2e
 
     const/4 v0, 0x0
 
-    .line 172
+    .line 156
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 173
+    .line 157
     invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
     move-result-object v1
@@ -723,7 +603,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
-    .line 174
+    .line 158
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mNeedStart:Z
 
     :cond_2e
@@ -735,7 +615,7 @@
 
     const/4 v0, 0x0
 
-    .line 179
+    .line 163
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsPause:Z
 
     return-void
@@ -746,35 +626,35 @@
 
     const/4 p2, 0x1
 
-    .line 62
+    .line 66
     iput-boolean p2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsPlaying:Z
 
-    .line 63
+    .line 67
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 64
+    .line 68
     iput-wide p5, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mAnimDuration:J
 
-    .line 65
+    .line 69
     iput-object p7, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mTimeInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 66
+    .line 70
     iget-object p5, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mBaseRectf:Landroid/graphics/RectF;
 
     invoke-virtual {p5, p3}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 67
+    .line 71
     iget-object p3, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mTargetRectf:Landroid/graphics/RectF;
 
     invoke-virtual {p3, p4}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 68
+    .line 72
     iput-object p8, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mAnimEndRunnable:Ljava/lang/Runnable;
 
-    .line 69
+    .line 73
     iput-boolean p2, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsFirst:Z
 
-    .line 70
+    .line 74
     sget-object p2, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -793,8 +673,19 @@
 
     invoke-static {p2, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 71
+    .line 75
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->startAnim()V
+
+    return-void
+.end method
+
+.method public stop()V
+    .registers 2
+
+    const/4 v0, 0x0
+
+    .line 167
+    iput-boolean v0, p0, Lcom/transsion/camera/app/common/ui/view/ThumbnailTransitionView;->mIsPlaying:Z
 
     return-void
 .end method

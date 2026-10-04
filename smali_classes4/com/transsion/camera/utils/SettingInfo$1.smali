@@ -18,31 +18,31 @@
 .method constructor <init>()V
     .registers 3
 
-    .line 850
+    .line 849
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 852
+    .line 851
     const-string v0, "video_soften"
 
     const-string v1, "soften"
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 853
+    .line 852
     const-string v0, "video_whiten"
 
     const-string v1, "warm"
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 854
+    .line 853
     const-string v0, "video_face"
 
     const-string v1, "face"
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 855
+    .line 854
     const-string v0, "video_eye"
 
     const-string v1, "eye"

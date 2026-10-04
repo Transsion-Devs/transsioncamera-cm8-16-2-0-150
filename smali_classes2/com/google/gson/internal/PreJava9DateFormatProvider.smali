@@ -21,12 +21,12 @@
 
     if-ne p0, v0, :cond_e
 
-    .line 61
+    .line 39
     const-string p0, "M/d/yy"
 
     return-object p0
 
-    .line 69
+    .line 47
     :cond_e
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -48,19 +48,19 @@
 
     throw v0
 
-    .line 63
+    .line 41
     :cond_25
     const-string p0, "MMM d, yyyy"
 
     return-object p0
 
-    .line 65
+    .line 43
     :cond_28
     const-string p0, "MMMM d, yyyy"
 
     return-object p0
 
-    .line 67
+    .line 45
     :cond_2b
     const-string p0, "EEEE, MMMM d, yyyy"
 
@@ -84,12 +84,12 @@
 
     if-ne p0, v0, :cond_e
 
-    .line 76
+    .line 54
     const-string p0, "h:mm a"
 
     return-object p0
 
-    .line 83
+    .line 61
     :cond_e
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -111,27 +111,28 @@
 
     throw v0
 
-    .line 78
+    .line 56
     :cond_25
     const-string p0, "h:mm:ss a"
 
     return-object p0
 
-    .line 81
+    .line 59
     :cond_28
     const-string p0, "h:mm:ss a z"
 
     return-object p0
 .end method
 
-.method public static getUSDateTimeFormat(II)Ljava/text/DateFormat;
+.method public static getUsDateTimeFormat(II)Ljava/text/DateFormat;
     .registers 3
 
-    .line 39
+    .line 31
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
+    .line 32
     invoke-static {p0}, Lcom/google/gson/internal/PreJava9DateFormatProvider;->getDatePartOfDateTimePattern(I)Ljava/lang/String;
 
     move-result-object p0
@@ -152,7 +153,7 @@
 
     move-result-object p0
 
-    .line 40
+    .line 33
     new-instance p1, Ljava/text/SimpleDateFormat;
 
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;

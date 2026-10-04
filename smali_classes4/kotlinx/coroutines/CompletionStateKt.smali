@@ -18,12 +18,12 @@
         }
     .end annotation
 
-    .line 26
+    .line 22
     instance-of p1, p0, Lkotlinx/coroutines/CompletedExceptionally;
 
     if-eqz p1, :cond_13
 
-    .line 27
+    .line 23
     sget-object p1, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
     check-cast p0, Lkotlinx/coroutines/CompletedExceptionally;
@@ -40,7 +40,7 @@
 
     return-object p0
 
-    .line 29
+    .line 25
     :cond_13
     invoke-static {p0}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -63,7 +63,7 @@
         }
     .end annotation
 
-    .line 14
+    .line 10
     invoke-static {p0}, Lkotlin/Result;->exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object v0
@@ -72,7 +72,7 @@
 
     if-eqz p1, :cond_e
 
-    .line 15
+    .line 11
     new-instance v0, Lkotlinx/coroutines/CompletedWithCancellation;
 
     invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/CompletedWithCancellation;-><init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
@@ -82,7 +82,7 @@
     :cond_e
     return-object p0
 
-    .line 16
+    .line 12
     :cond_f
     new-instance p0, Lkotlinx/coroutines/CompletedExceptionally;
 
@@ -111,7 +111,7 @@
         }
     .end annotation
 
-    .line 19
+    .line 15
     invoke-static {p0}, Lkotlin/Result;->exceptionOrNull-impl(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object p1
@@ -120,7 +120,7 @@
 
     return-object p0
 
-    .line 21
+    .line 17
     :cond_7
     new-instance p0, Lkotlinx/coroutines/CompletedExceptionally;
 
@@ -144,7 +144,7 @@
 
     const/4 p1, 0x0
 
-    .line 12
+    .line 8
     :cond_5
     invoke-static {p0, p1}, Lkotlinx/coroutines/CompletionStateKt;->toState(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
 

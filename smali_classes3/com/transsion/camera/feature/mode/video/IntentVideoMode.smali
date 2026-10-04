@@ -720,9 +720,19 @@
 
     move-result-object v6
 
+    .line 498
+    iget-boolean v7, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mIsMainZoom3XSupported:Z
+
+    if-eqz v7, :cond_48
+
+    sget v7, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_3X:I
+
+    goto :goto_4a
+
+    :cond_48
     sget v7, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_2X:I
 
-    .line 498
+    :goto_4a
     invoke-virtual {v6, v7, v1, v4}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setRatioRange(IIZ)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object v4

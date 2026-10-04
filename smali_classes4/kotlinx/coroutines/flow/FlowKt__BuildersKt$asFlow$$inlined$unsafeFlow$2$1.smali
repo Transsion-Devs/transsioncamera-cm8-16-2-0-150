@@ -17,8 +17,8 @@
     c = "kotlinx.coroutines.flow.FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$2"
     f = "Builders.kt"
     l = {
-        0x72,
-        0x72
+        0x70,
+        0x70
     }
     m = "collect"
 .end annotation

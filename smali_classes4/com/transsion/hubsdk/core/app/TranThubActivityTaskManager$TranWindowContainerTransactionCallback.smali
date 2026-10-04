@@ -24,12 +24,12 @@
 .method public constructor <init>(Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;)V
     .registers 3
 
-    .line 477
+    .line 491
     iput-object p1, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranWindowContainerTransactionCallback;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/window/ITranWindowContainerTransactionCallback$Stub;-><init>()V
 
-    .line 478
+    .line 492
     iput-object p2, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranWindowContainerTransactionCallback;->mWindowCallback:Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;
 
     return-void
@@ -40,12 +40,12 @@
 .method public onTransactionReady(ILandroid/view/SurfaceControl$Transaction;)V
     .registers 3
 
-    .line 482
+    .line 496
     iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranWindowContainerTransactionCallback;->mWindowCallback:Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;
 
     if-eqz p0, :cond_7
 
-    .line 483
+    .line 497
     invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;->onTransactionReady(ILandroid/view/SurfaceControl$Transaction;)V
 
     :cond_7

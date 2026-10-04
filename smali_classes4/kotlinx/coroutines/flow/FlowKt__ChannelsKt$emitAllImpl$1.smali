@@ -26,8 +26,8 @@
     c = "kotlinx.coroutines.flow.FlowKt__ChannelsKt"
     f = "Channels.kt"
     l = {
-        0x24,
-        0x25
+        0x20,
+        0x21
     }
     m = "emitAllImpl$FlowKt__ChannelsKt"
 .end annotation

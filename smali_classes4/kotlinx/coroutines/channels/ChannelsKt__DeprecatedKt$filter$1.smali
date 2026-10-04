@@ -27,9 +27,9 @@
     c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$filter$1"
     f = "Deprecated.kt"
     l = {
-        0xc6,
-        0xc7,
-        0xc7
+        0xe4,
+        0xe5,
+        0xe5
     }
     m = "invokeSuspend"
 .end annotation
@@ -171,7 +171,7 @@
 
     move-result-object v0
 
-    .line 197
+    .line 227
     iget v1, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$filter$1;->label:I
 
     const/4 v2, 0x0
@@ -252,7 +252,7 @@
 
     check-cast p1, Lkotlinx/coroutines/channels/ProducerScope;
 
-    .line 198
+    .line 228
     iget-object v1, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$filter$1;->$this_filter:Lkotlinx/coroutines/channels/ReceiveChannel;
 
     invoke-interface {v1}, Lkotlinx/coroutines/channels/ReceiveChannel;->iterator()Lkotlinx/coroutines/channels/ChannelIterator;
@@ -292,7 +292,7 @@
 
     move-result-object p1
 
-    .line 199
+    .line 229
     iget-object v7, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$filter$1;->$predicate:Lkotlin/jvm/functions/Function2;
 
     iput-object v6, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$filter$1;->L$0:Ljava/lang/Object;
@@ -351,7 +351,7 @@
 
     goto :goto_51
 
-    .line 201
+    .line 231
     :cond_9a
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

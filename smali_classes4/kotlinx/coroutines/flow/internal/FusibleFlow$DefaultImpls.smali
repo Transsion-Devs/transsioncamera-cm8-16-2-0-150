@@ -24,7 +24,7 @@
 
     if-eqz p5, :cond_8
 
-    .line 31
+    .line 27
     sget-object p1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     :cond_8
@@ -39,10 +39,10 @@
 
     if-eqz p4, :cond_13
 
-    .line 33
+    .line 29
     sget-object p3, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
 
-    .line 30
+    .line 26
     :cond_13
     invoke-interface {p0, p1, p2, p3}, Lkotlinx/coroutines/flow/internal/FusibleFlow;->fuse(Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)Lkotlinx/coroutines/flow/Flow;
 

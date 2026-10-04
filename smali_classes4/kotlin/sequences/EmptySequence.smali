@@ -27,7 +27,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 44
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method public drop(I)Lkotlin/sequences/EmptySequence;
     .registers 2
 
-    .line 46
+    .line 79
     sget-object p0, Lkotlin/sequences/EmptySequence;->INSTANCE:Lkotlin/sequences/EmptySequence;
 
     return-object p0
@@ -47,7 +47,7 @@
 .method public bridge synthetic drop(I)Lkotlin/sequences/Sequence;
     .registers 2
 
-    .line 44
+    .line 77
     invoke-virtual {p0, p1}, Lkotlin/sequences/EmptySequence;->drop(I)Lkotlin/sequences/EmptySequence;
 
     move-result-object p0
@@ -58,7 +58,7 @@
 .method public iterator()Ljava/util/Iterator;
     .registers 1
 
-    .line 45
+    .line 78
     sget-object p0, Lkotlin/collections/EmptyIterator;->INSTANCE:Lkotlin/collections/EmptyIterator;
 
     return-object p0

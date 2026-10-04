@@ -75,22 +75,22 @@
 .method constructor <init>(Lcom/transsion/camera/adapter/CameraResults;[BIIZ)V
     .registers 6
 
-    .line 978
+    .line 1006
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 979
+    .line 1007
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;->mResults:Lcom/transsion/camera/adapter/CameraResults;
 
-    .line 980
+    .line 1008
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;->mJpeg:[B
 
-    .line 981
+    .line 1009
     iput p3, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;->mWidth:I
 
-    .line 982
+    .line 1010
     iput p4, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;->mHeight:I
 
-    .line 983
+    .line 1011
     iput-boolean p5, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor$JpegInfo;->mBGImage:Z
 
     return-void

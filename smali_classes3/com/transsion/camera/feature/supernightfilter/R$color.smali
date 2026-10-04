@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static still_supernight_filter_indicator_background:I = 0x7f0605f1
+.field public static still_supernight_filter_indicator_background:I = 0x7f0605f2
 
-.field public static supernight_filter_indicator_color:I = 0x7f0605f8
+.field public static supernight_filter_indicator_color:I = 0x7f0605f9
 
-.field public static supernight_filter_theme_color:I = 0x7f0605f9
+.field public static supernight_filter_theme_color:I = 0x7f0605fa
 
 
 # direct methods

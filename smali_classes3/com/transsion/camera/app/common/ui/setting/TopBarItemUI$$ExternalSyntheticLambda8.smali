@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/airbnb/lottie/value/SimpleLottieValueCallback;
 
 
 # instance fields
@@ -24,13 +24,15 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final getValue(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Object;
     .registers 2
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda8;->f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$zb54v5uT4bY1lEBxkS-xF5CQiZo(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$geG8OGrb08viwtQKlHsvd2iuAZ0(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
 
-    return-void
+    move-result-object p0
+
+    return-object p0
 .end method

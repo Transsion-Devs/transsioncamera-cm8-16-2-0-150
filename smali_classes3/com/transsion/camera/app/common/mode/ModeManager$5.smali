@@ -22,7 +22,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 2781
+    .line 2776
     invoke-static {}, Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;->values()[Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;
 
     move-result-object v0

@@ -32,7 +32,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;)V
     .registers 2
 
-    .line 382
+    .line 385
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 382
+    .line 385
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -65,7 +65,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 10
 
-    .line 386
+    .line 389
     invoke-static {}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -92,7 +92,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 388
+    .line 391
     const-string v0, "key_super_flash"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -115,7 +115,7 @@
 
     if-nez v1, :cond_49
 
-    .line 389
+    .line 392
     invoke-virtual {v4, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -128,7 +128,7 @@
 
     if-nez v1, :cond_49
 
-    .line 390
+    .line 393
     invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -137,7 +137,7 @@
 
     goto :goto_86
 
-    .line 394
+    .line 397
     :cond_49
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -227,7 +227,7 @@
     :goto_86
     return-void
 
-    .line 428
+    .line 431
     :pswitch_87
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
@@ -237,7 +237,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$fputcurrentAsdAlgorithm(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;I)V
 
-    .line 429
+    .line 432
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$fgetcurrentAsdAlgorithm(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;)I
@@ -256,14 +256,14 @@
 
     if-eqz p1, :cond_a8
 
-    .line 430
+    .line 433
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$mexclusivelyCloseAis(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;)V
 
     return-void
 
-    .line 433
+    .line 436
     :cond_a8
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSprdPlatform()Z
 
@@ -271,7 +271,7 @@
 
     if-eqz p1, :cond_c2
 
-    .line 434
+    .line 437
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$fgetmCurrentZoomValue(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;)I
@@ -294,7 +294,7 @@
 
     return-void
 
-    .line 440
+    .line 443
     :cond_c2
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
@@ -302,13 +302,13 @@
 
     return-void
 
-    .line 403
+    .line 406
     :pswitch_c8
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$fputmSatStreamId(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;Ljava/lang/String;)V
 
-    .line 404
+    .line 407
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$mifNeedCloseAisByTeleZoom(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;)Z
@@ -334,7 +334,7 @@
 
     if-eqz p1, :cond_eb
 
-    .line 405
+    .line 408
     :cond_e5
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
@@ -342,7 +342,7 @@
 
     return-void
 
-    .line 407
+    .line 410
     :cond_eb
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
@@ -350,7 +350,7 @@
 
     return-void
 
-    .line 396
+    .line 399
     :pswitch_f1
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -358,14 +358,14 @@
 
     if-eqz p1, :cond_fd
 
-    .line 397
+    .line 400
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$mexclusivelyCloseAis(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;)V
 
     return-void
 
-    .line 399
+    .line 402
     :cond_fd
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
@@ -373,7 +373,7 @@
 
     return-void
 
-    .line 411
+    .line 414
     :pswitch_103
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
@@ -383,7 +383,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$fputmCurrentZoomValue(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;I)V
 
-    .line 412
+    .line 415
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$mifNeedCloseAisByTeleZoom(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;)Z
@@ -423,7 +423,7 @@
 
     goto :goto_137
 
-    .line 415
+    .line 418
     :cond_131
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
@@ -431,7 +431,7 @@
 
     return-void
 
-    .line 413
+    .line 416
     :cond_137
     :goto_137
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
@@ -440,7 +440,7 @@
 
     return-void
 
-    .line 419
+    .line 422
     :pswitch_13d
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
@@ -458,14 +458,14 @@
 
     const-string p1, "billion"
 
-    .line 420
+    .line 423
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_159
 
-    .line 421
+    .line 424
     :cond_153
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
@@ -473,7 +473,7 @@
 
     return-void
 
-    .line 423
+    .line 426
     :cond_159
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 

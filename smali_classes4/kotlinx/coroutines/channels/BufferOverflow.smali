@@ -14,6 +14,8 @@
 
 
 # static fields
+.field private static final synthetic $ENTRIES:Lkotlin/enums/EnumEntries;
+
 .field private static final synthetic $VALUES:[Lkotlinx/coroutines/channels/BufferOverflow;
 
 .field public static final enum DROP_LATEST:Lkotlinx/coroutines/channels/BufferOverflow;
@@ -43,7 +45,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 21
+    .line 17
     new-instance v0, Lkotlinx/coroutines/channels/BufferOverflow;
 
     const-string v1, "SUSPEND"
@@ -54,7 +56,7 @@
 
     sput-object v0, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
 
-    .line 26
+    .line 22
     new-instance v0, Lkotlinx/coroutines/channels/BufferOverflow;
 
     const-string v1, "DROP_OLDEST"
@@ -65,7 +67,7 @@
 
     sput-object v0, Lkotlinx/coroutines/channels/BufferOverflow;->DROP_OLDEST:Lkotlinx/coroutines/channels/BufferOverflow;
 
-    .line 32
+    .line 28
     new-instance v0, Lkotlinx/coroutines/channels/BufferOverflow;
 
     const-string v1, "DROP_LATEST"
@@ -82,6 +84,12 @@
 
     sput-object v0, Lkotlinx/coroutines/channels/BufferOverflow;->$VALUES:[Lkotlinx/coroutines/channels/BufferOverflow;
 
+    invoke-static {v0}, Lkotlin/enums/EnumEntriesKt;->enumEntries([Ljava/lang/Enum;)Lkotlin/enums/EnumEntries;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlinx/coroutines/channels/BufferOverflow;->$ENTRIES:Lkotlin/enums/EnumEntries;
+
     return-void
 .end method
 
@@ -93,10 +101,24 @@
         }
     .end annotation
 
-    .line 17
+    .line 13
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
+.end method
+
+.method public static getEntries()Lkotlin/enums/EnumEntries;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/enums/EnumEntries;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlinx/coroutines/channels/BufferOverflow;->$ENTRIES:Lkotlin/enums/EnumEntries;
+
+    return-object v0
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lkotlinx/coroutines/channels/BufferOverflow;

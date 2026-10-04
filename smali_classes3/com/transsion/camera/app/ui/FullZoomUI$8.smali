@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/FullZoomUI;)V
     .registers 2
 
-    .line 1731
+    .line 1734
     iput-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI$8;->this$0:Lcom/transsion/camera/app/ui/FullZoomUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 3
 
-    .line 1734
+    .line 1737
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI$8;->this$0:Lcom/transsion/camera/app/ui/FullZoomUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->-$$Nest$fgetmIsCapturing(Lcom/transsion/camera/app/ui/FullZoomUI;)Z
@@ -65,21 +65,21 @@
 
     if-eq v0, v1, :cond_2a
 
-    .line 1735
+    .line 1738
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI$8;->this$0:Lcom/transsion/camera/app/ui/FullZoomUI;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/ui/FullZoomUI;->-$$Nest$fputmIsNeedAnimate(Lcom/transsion/camera/app/ui/FullZoomUI;Z)V
 
-    .line 1736
+    .line 1739
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI$8;->this$0:Lcom/transsion/camera/app/ui/FullZoomUI;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/FullZoomUI;->show(Z)V
 
-    .line 1737
+    .line 1740
     iget-object p0, p0, Lcom/transsion/camera/app/ui/FullZoomUI$8;->this$0:Lcom/transsion/camera/app/ui/FullZoomUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V

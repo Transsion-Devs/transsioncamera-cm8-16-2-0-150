@@ -36,7 +36,7 @@
         }
     .end annotation
 
-    .line 740
+    .line 772
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->val$tempPath:Ljava/lang/String;
@@ -55,7 +55,7 @@
 .method public onCompileDone()V
     .registers 5
 
-    .line 751
+    .line 783
     invoke-static {}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -94,14 +94,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 752
+    .line 784
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     const/4 v1, 0x7
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$mupdateCurrentState(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;I)V
 
-    .line 758
+    .line 790
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$fgetmEditorListener(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;)Lcom/transsion/camera/feature/mode/vlog/engine/ITemplateEditor$IEditorListener;
@@ -112,7 +112,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/feature/mode/vlog/engine/ITemplateEditor$IEditorListener;->onExportProgress(F)V
 
-    .line 759
+    .line 791
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$mcheckSdkState(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;)Z
@@ -121,12 +121,12 @@
 
     if-eqz v0, :cond_6a
 
-    .line 760
+    .line 792
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$mupdateVlogAnalytics(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;)V
 
-    .line 761
+    .line 793
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$fgetmCutSamePlayer(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;)Lcom/cutsame/solution/player/CutSamePlayer;
@@ -135,19 +135,19 @@
 
     invoke-virtual {v0}, Lcom/cutsame/solution/player/CutSamePlayer;->releaseCompile()V
 
-    .line 762
+    .line 794
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->val$draft:Lcom/cutsame/solution/draft/ICutSameDraft;
 
     invoke-interface {v0}, Lcom/cutsame/solution/draft/ICutSameDraft;->release()V
 
-    .line 763
+    .line 795
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     const/4 v1, 0x5
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$mupdateCurrentState(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;I)V
 
-    .line 764
+    .line 796
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$fgetmEditorListener(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;)Lcom/transsion/camera/feature/mode/vlog/engine/ITemplateEditor$IEditorListener;
@@ -165,7 +165,7 @@
 .method public onCompileError(IIFLjava/lang/String;)V
     .registers 8
 
-    .line 744
+    .line 776
     invoke-static {}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -186,7 +186,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 745
+    .line 777
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$fgetmEditorListener(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;)Lcom/transsion/camera/feature/mode/vlog/engine/ITemplateEditor$IEditorListener;
@@ -201,7 +201,7 @@
 .method public onCompileProgress(F)V
     .registers 4
 
-    .line 775
+    .line 807
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$fgetmPaused(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;)Z
@@ -210,19 +210,19 @@
 
     if-eqz v0, :cond_13
 
-    .line 776
+    .line 808
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     const/4 v1, 0x6
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$mupdateCurrentState(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;I)V
 
-    .line 777
+    .line 809
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->cancelExport()V
 
-    .line 780
+    .line 812
     :cond_13
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$3;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 

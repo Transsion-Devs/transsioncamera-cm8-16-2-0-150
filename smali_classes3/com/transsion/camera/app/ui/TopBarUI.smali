@@ -12,6 +12,12 @@
 
 .field private mCurrentScreenFormType:I
 
+.field private mIconLowLightColor:I
+
+.field private mIconOffColor:I
+
+.field private mIconOnColor:I
+
 .field private mLeftSettingUIs:Ljava/util/List;
 
 .field private mMasterGuideUIManager:Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;
@@ -27,7 +33,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 36
+    .line 34
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "TopBarUI"
@@ -42,10 +48,10 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/ui/PopupOptionManager;Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;)V
     .registers 5
 
-    .line 52
+    .line 54
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;-><init>(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/ui/PopupOptionManager;)V
 
-    .line 53
+    .line 55
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p2
@@ -54,11 +60,38 @@
 
     iput-boolean p2, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mPopSettingSupport:Z
 
-    .line 54
+    .line 56
     iput-object p1, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
 
-    .line 55
+    .line 57
     iput-object p4, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mMasterGuideUIManager:Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;
+
+    .line 58
+    sget p2, Lcom/transsion/camera/R$color;->top_bar_animation_icon_on:I
+
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getColor(I)I
+
+    move-result p2
+
+    iput p2, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconOnColor:I
+
+    .line 59
+    sget p2, Lcom/transsion/camera/R$color;->top_bar_animation_icon_off:I
+
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getColor(I)I
+
+    move-result p2
+
+    iput p2, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconOffColor:I
+
+    .line 60
+    sget p2, Lcom/transsion/camera/R$color;->top_bar_animation_icon_low_light:I
+
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getColor(I)I
+
+    move-result p1
+
+    iput p1, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconLowLightColor:I
 
     return-void
 .end method
@@ -66,7 +99,7 @@
 .method private needUpdateTopBarLayout(I)Z
     .registers 7
 
-    .line 364
+    .line 372
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -105,7 +138,7 @@
 
     goto :goto_44
 
-    .line 372
+    .line 380
     :cond_1f
     iget p1, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mCurrentScreenFormType:I
 
@@ -116,7 +149,7 @@
     :cond_25
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 373
+    .line 381
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p1
@@ -126,7 +159,7 @@
     :cond_2d
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 374
+    .line 382
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p1
@@ -135,7 +168,7 @@
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 375
+    .line 383
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p1
@@ -164,7 +197,7 @@
 .method protected getPopupAnimationStrategy()Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl$IAnimationStrategy;
     .registers 1
 
-    .line 60
+    .line 65
     invoke-super {p0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->getPopupAnimationStrategy()Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl$IAnimationStrategy;
 
     move-result-object p0
@@ -175,42 +208,42 @@
 .method public onOrientationChanged(I)V
     .registers 5
 
-    .line 325
+    .line 333
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->onOrientationChanged(I)V
 
-    .line 326
+    .line 334
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
     if-eqz v0, :cond_c
 
-    .line 327
+    .line 335
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/topbar/TopBarContainer;->onOrientationChanged(I)V
 
-    .line 329
+    .line 337
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mLeftTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
     if-eqz v0, :cond_15
 
-    .line 330
+    .line 338
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mLeftTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/topbar/TopBarContainer;->onOrientationChanged(I)V
 
-    .line 332
+    .line 340
     :cond_15
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mRightTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
     if-eqz v0, :cond_1e
 
-    .line 333
+    .line 341
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mRightTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/topbar/TopBarContainer;->onOrientationChanged(I)V
 
-    .line 335
+    .line 343
     :cond_1e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
 
@@ -236,34 +269,34 @@
 
     if-eqz v0, :cond_4b
 
-    .line 336
+    .line 344
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-lez v0, :cond_4b
 
-    .line 337
+    .line 345
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/TopBarUI;->needUpdateTopBarLayout(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_46
 
-    .line 338
+    .line 346
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mTopBarItemUIs:Ljava/util/List;
 
     invoke-virtual {p0, v0, v2}, Lcom/transsion/camera/app/ui/TopBarUI;->updateTopBarLayout(Ljava/util/List;Z)V
 
     goto :goto_4b
 
-    .line 340
+    .line 348
     :cond_46
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mTopBarItemUIs:Ljava/util/List;
 
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/ui/TopBarUI;->updateTopBarLayout(Ljava/util/List;Z)V
 
-    .line 343
+    .line 351
     :cond_4b
     :goto_4b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
@@ -286,34 +319,34 @@
 
     if-eqz v0, :cond_76
 
-    .line 344
+    .line 352
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-lez v0, :cond_76
 
-    .line 345
+    .line 353
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/TopBarUI;->needUpdateTopBarLayout(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_71
 
-    .line 346
+    .line 354
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mLeftTopBarItemUIs:Ljava/util/List;
 
     invoke-virtual {p0, v0, v2}, Lcom/transsion/camera/app/ui/TopBarUI;->updateLeftTopBarLayout(Ljava/util/List;Z)V
 
     goto :goto_76
 
-    .line 348
+    .line 356
     :cond_71
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mLeftTopBarItemUIs:Ljava/util/List;
 
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/ui/TopBarUI;->updateLeftTopBarLayout(Ljava/util/List;Z)V
 
-    .line 351
+    .line 359
     :cond_76
     :goto_76
     iget-object v0, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
@@ -336,34 +369,34 @@
 
     if-eqz v0, :cond_a1
 
-    .line 352
+    .line 360
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-lez v0, :cond_a1
 
-    .line 353
+    .line 361
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/TopBarUI;->needUpdateTopBarLayout(I)Z
 
     move-result p1
 
     if-eqz p1, :cond_9c
 
-    .line 354
+    .line 362
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mRightTopBarItemUIs:Ljava/util/List;
 
     invoke-virtual {p0, p1, v2}, Lcom/transsion/camera/app/ui/TopBarUI;->updateRightTopBarLayout(Ljava/util/List;Z)V
 
     goto :goto_a1
 
-    .line 356
+    .line 364
     :cond_9c
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mRightTopBarItemUIs:Ljava/util/List;
 
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/app/ui/TopBarUI;->updateRightTopBarLayout(Ljava/util/List;Z)V
 
-    .line 359
+    .line 367
     :cond_a1
     :goto_a1
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
@@ -380,10 +413,10 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 308
+    .line 316
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->onScreenFormChanged(IZ)V
 
-    .line 309
+    .line 317
     iget-object p1, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportFoldUI(Landroid/content/Context;)Z
@@ -406,19 +439,19 @@
 
     if-eqz p1, :cond_23
 
-    .line 310
+    .line 318
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
 
     if-lez p1, :cond_23
 
-    .line 311
+    .line 319
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mTopBarItemUIs:Ljava/util/List;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/TopBarUI;->updateTopBarLayout(Ljava/util/List;Z)V
 
-    .line 313
+    .line 321
     :cond_23
     iget-object p1, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
 
@@ -440,19 +473,19 @@
 
     if-eqz p1, :cond_42
 
-    .line 314
+    .line 322
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
 
     if-lez p1, :cond_42
 
-    .line 315
+    .line 323
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mLeftTopBarItemUIs:Ljava/util/List;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/TopBarUI;->updateLeftTopBarLayout(Ljava/util/List;Z)V
 
-    .line 317
+    .line 325
     :cond_42
     iget-object p1, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
 
@@ -474,14 +507,14 @@
 
     if-eqz p1, :cond_61
 
-    .line 318
+    .line 326
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
 
     if-lez p1, :cond_61
 
-    .line 319
+    .line 327
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mRightTopBarItemUIs:Ljava/util/List;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/TopBarUI;->updateRightTopBarLayout(Ljava/util/List;Z)V
@@ -493,7 +526,7 @@
 .method public pause()V
     .registers 1
 
-    .line 303
+    .line 311
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/TopBarUI;->recover()V
 
     return-void
@@ -502,7 +535,7 @@
 .method public playLivePhotoLottieAnimation(I)V
     .registers 6
 
-    .line 429
+    .line 437
     iget-object v0, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mLeftSettingUIs:Ljava/util/List;
 
     const-string v1, "key_live_photo"
@@ -515,7 +548,7 @@
 
     if-nez v0, :cond_2c
 
-    .line 430
+    .line 438
     iget-object v0, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mLeftSettingUIs:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -535,7 +568,7 @@
 
     check-cast v2, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 431
+    .line 439
     invoke-interface {v2}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v3
@@ -546,12 +579,12 @@
 
     if-eqz v3, :cond_12
 
-    .line 432
+    .line 440
     invoke-interface {v2, p1}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setAnimation(I)V
 
     return-void
 
-    .line 437
+    .line 445
     :cond_2c
     iget-object v0, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mRightSettingUIs:Ljava/util/List;
 
@@ -563,7 +596,7 @@
 
     if-nez v0, :cond_56
 
-    .line 438
+    .line 446
     iget-object v0, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mRightSettingUIs:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -583,7 +616,7 @@
 
     check-cast v2, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 439
+    .line 447
     invoke-interface {v2}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v3
@@ -594,12 +627,12 @@
 
     if-eqz v3, :cond_3c
 
-    .line 440
+    .line 448
     invoke-interface {v2, p1}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setAnimation(I)V
 
     return-void
 
-    .line 446
+    .line 454
     :cond_56
     iget-object v0, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mSettingUIs:Ljava/util/List;
 
@@ -611,7 +644,7 @@
 
     if-nez v0, :cond_7f
 
-    .line 447
+    .line 455
     iget-object p0, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mSettingUIs:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -631,7 +664,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 448
+    .line 456
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v2
@@ -642,7 +675,7 @@
 
     if-eqz v2, :cond_66
 
-    .line 449
+    .line 457
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setAnimation(I)V
 
     :cond_7f
@@ -652,7 +685,7 @@
 .method public recover()V
     .registers 5
 
-    .line 391
+    .line 399
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mTopBarItemUIs:Ljava/util/List;
 
     if-nez v0, :cond_6
@@ -664,7 +697,7 @@
 
     move v1, v0
 
-    .line 394
+    .line 402
     :goto_8
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mTopBarItemUIs:Ljava/util/List;
 
@@ -676,7 +709,7 @@
 
     if-ge v1, v2, :cond_2a
 
-    .line 395
+    .line 403
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mTopBarItemUIs:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -693,11 +726,11 @@
 
     goto :goto_27
 
-    .line 397
+    .line 405
     :cond_21
     invoke-virtual {v2, v3}, Landroid/view/View;->setScaleX(F)V
 
-    .line 398
+    .line 406
     invoke-virtual {v2, v3}, Landroid/view/View;->setScaleY(F)V
 
     :goto_27
@@ -705,7 +738,7 @@
 
     goto :goto_8
 
-    .line 400
+    .line 408
     :cond_2a
     iget-object v1, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mSettingUIs:Ljava/util/List;
 
@@ -713,7 +746,7 @@
 
     move v1, v0
 
-    .line 401
+    .line 409
     :goto_2f
     iget-object v2, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mSettingUIs:Ljava/util/List;
 
@@ -723,7 +756,7 @@
 
     if-ge v1, v2, :cond_4e
 
-    .line 402
+    .line 410
     iget-object v2, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mSettingUIs:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -738,10 +771,10 @@
 
     if-eqz v2, :cond_4b
 
-    .line 404
+    .line 412
     invoke-virtual {v2, v3}, Landroid/view/View;->setScaleX(F)V
 
-    .line 405
+    .line 413
     invoke-virtual {v2, v3}, Landroid/view/View;->setScaleY(F)V
 
     :cond_4b
@@ -749,7 +782,7 @@
 
     goto :goto_2f
 
-    .line 409
+    .line 417
     :cond_4e
     iget-object v1, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mLeftSettingUIs:Ljava/util/List;
 
@@ -757,7 +790,7 @@
 
     move v1, v0
 
-    .line 410
+    .line 418
     :goto_53
     iget-object v2, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mLeftSettingUIs:Ljava/util/List;
 
@@ -767,7 +800,7 @@
 
     if-ge v1, v2, :cond_73
 
-    .line 411
+    .line 419
     iget-object v2, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mLeftSettingUIs:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -784,11 +817,11 @@
 
     goto :goto_70
 
-    .line 413
+    .line 421
     :cond_6a
     invoke-virtual {v2, v3}, Landroid/view/View;->setScaleX(F)V
 
-    .line 414
+    .line 422
     invoke-virtual {v2, v3}, Landroid/view/View;->setScaleY(F)V
 
     :goto_70
@@ -796,13 +829,13 @@
 
     goto :goto_53
 
-    .line 417
+    .line 425
     :cond_73
     iget-object v1, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mRightSettingUIs:Ljava/util/List;
 
     if-eqz v1, :cond_97
 
-    .line 418
+    .line 426
     :goto_77
     iget-object v1, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mRightSettingUIs:Ljava/util/List;
 
@@ -812,7 +845,7 @@
 
     if-ge v0, v1, :cond_97
 
-    .line 419
+    .line 427
     iget-object v1, p0, Lcom/transsion/camera/app/ui/TopBarUI;->mRightSettingUIs:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -829,11 +862,11 @@
 
     goto :goto_94
 
-    .line 421
+    .line 429
     :cond_8e
     invoke-virtual {v1, v3}, Landroid/view/View;->setScaleX(F)V
 
-    .line 422
+    .line 430
     invoke-virtual {v1, v3}, Landroid/view/View;->setScaleY(F)V
 
     :goto_94
@@ -849,10 +882,10 @@
 .method public resume()V
     .registers 1
 
-    .line 298
+    .line 306
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->showTopBarContainer()V
 
-    .line 299
+    .line 307
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/TopBarUI;->recover()V
 
     return-void
@@ -865,18 +898,18 @@
 
     move-object/from16 v1, p1
 
-    .line 143
+    .line 149
     invoke-super/range {p0 .. p2}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updateLeftTopBarLayout(Ljava/util/List;Z)V
 
-    .line 144
+    .line 150
     iput-object v1, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mLeftSettingUIs:Ljava/util/List;
 
-    .line 145
+    .line 151
     iget-object v2, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mLeftTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
     if-nez v2, :cond_15
 
-    .line 146
+    .line 152
     sget-object v0, Lcom/transsion/camera/app/ui/TopBarUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "mLeftTopBarContainer is null"
@@ -886,9 +919,9 @@
     return-void
 
     :cond_15
-    if-eqz v2, :cond_f1
+    if-eqz v2, :cond_103
 
-    .line 153
+    .line 159
     iget-object v2, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v2}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -903,7 +936,7 @@
 
     if-ne v2, v5, :cond_30
 
-    .line 155
+    .line 161
     iget v2, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mOrientation:I
 
     const/16 v6, 0x5a
@@ -939,13 +972,13 @@
     :cond_37
     move v2, v4
 
-    .line 170
+    .line 176
     :goto_38
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v6
 
-    .line 171
+    .line 177
     new-instance v7, Ljava/util/LinkedHashMap;
 
     invoke-direct {v7, v6}, Ljava/util/LinkedHashMap;-><init>(I)V
@@ -953,9 +986,9 @@
     move v8, v4
 
     :goto_42
-    if-ge v8, v6, :cond_eb
+    if-ge v8, v6, :cond_fd
 
-    .line 173
+    .line 179
     invoke-interface {v1, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v9
@@ -964,12 +997,12 @@
 
     check-cast v10, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 174
+    .line 180
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v9, :cond_52
 
-    .line 175
+    .line 181
     invoke-interface {v10, v9}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setIAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
 
     :cond_52
@@ -981,7 +1014,7 @@
 
     goto :goto_6a
 
-    .line 185
+    .line 191
     :cond_59
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionV:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
@@ -989,7 +1022,7 @@
 
     goto :goto_6a
 
-    .line 182
+    .line 188
     :cond_5f
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionH:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
@@ -997,90 +1030,113 @@
 
     goto :goto_6a
 
-    .line 179
+    .line 185
     :cond_65
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOption:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-interface {v10, v9}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setPopupOptionsControl(Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;)V
 
-    .line 190
+    .line 196
     :goto_6a
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 191
+    .line 197
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getEntryView()Landroid/view/View;
 
     move-result-object v11
 
-    if-nez v11, :cond_84
+    .line 198
+    iget v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconOnColor:I
 
-    .line 193
+    iget v13, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconOffColor:I
+
+    iget v14, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconLowLightColor:I
+
+    invoke-interface {v10, v12, v13, v14}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->initIconColor(III)V
+
+    if-nez v11, :cond_96
+
+    .line 200
     iget-object v11, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mInflater:Landroid/view/LayoutInflater;
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mLeftTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
+    .line 201
+    invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->isSellingPointAndShow()Z
+
+    move-result v13
+
+    if-eqz v13, :cond_8a
+
+    sget v13, Lcom/transsion/camera/R$layout;->top_bar_setting_selling_point_layout:I
+
+    goto :goto_8c
+
+    :cond_8a
     sget v13, Lcom/transsion/camera/R$layout;->top_bar_setting_item:I
 
+    :goto_8c
     sget v14, Lcom/transsion/camera/R$id;->top_setting_item_img:I
 
     sget v15, Lcom/transsion/camera/R$id;->top_setting_img_selling_point:I
 
-    sget v16, Lcom/transsion/camera/R$id;->top_setting_selling_point_layer:I
+    const/16 v16, -0x1
 
+    .line 200
     invoke-interface/range {v10 .. v16}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;IIII)Landroid/view/View;
 
     move-result-object v11
 
-    .line 199
-    :cond_84
+    .line 206
+    :cond_96
     iget-object v12, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mOldValue:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v12}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v12
 
-    invoke-interface {v10, v12}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onScreenSupply(Z)V
+    invoke-interface {v10, v12, v4}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onScreenSupply(ZZ)V
 
-    .line 200
+    .line 207
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setupEntryView()V
 
-    .line 201
+    .line 208
     iget-object v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mMasterGuideUIManager:Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;
 
     invoke-interface {v10, v12}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setMasterGuideUIManager(Lcom/transsion/camera/app/common/ui/setting/IMasterGuideUICommon;)V
 
-    .line 202
+    .line 209
     invoke-virtual {v11}, Landroid/view/View;->getVisibility()I
 
     move-result v12
 
-    if-nez v12, :cond_a1
+    if-nez v12, :cond_b3
 
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getIsShouldGone()Z
 
     move-result v12
 
-    if-eqz v12, :cond_a7
+    if-eqz v12, :cond_b9
 
-    :cond_a1
+    :cond_b3
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->needItemAnimation()Z
 
     move-result v12
 
-    if-eqz v12, :cond_b9
+    if-eqz v12, :cond_cb
 
-    .line 203
-    :cond_a7
+    .line 210
+    :cond_b9
     invoke-interface {v7, v9, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 204
+    .line 211
     iget-boolean v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mPopSettingSupport:Z
 
-    if-eqz v12, :cond_b6
+    if-eqz v12, :cond_c8
 
-    .line 205
+    .line 212
     invoke-interface {v7}, Ljava/util/Map;->size()I
 
     move-result v12
@@ -1089,19 +1145,19 @@
 
     invoke-interface {v10, v12}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setPositionInTopBar(I)V
 
-    .line 207
-    :cond_b6
+    .line 214
+    :cond_c8
     invoke-interface {v10, v5}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setDirection(I)V
 
-    .line 209
-    :cond_b9
+    .line 216
+    :cond_cb
     iget-object v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
 
     invoke-static {v12}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportFoldUI(Landroid/content/Context;)Z
 
     move-result v12
 
-    if-eqz v12, :cond_e7
+    if-eqz v12, :cond_f9
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
 
@@ -1109,11 +1165,11 @@
 
     move-result v12
 
-    if-nez v12, :cond_e7
+    if-nez v12, :cond_f9
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionManager:Lcom/transsion/camera/app/ui/PopupOptionManager;
 
-    .line 210
+    .line 217
     invoke-virtual {v12}, Lcom/transsion/camera/app/ui/PopupOptionManager;->getCurrentShowView()Ljava/lang/String;
 
     move-result-object v12
@@ -1122,7 +1178,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_e7
+    if-eqz v9, :cond_f9
 
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionManager:Lcom/transsion/camera/app/ui/PopupOptionManager;
 
@@ -1130,34 +1186,34 @@
 
     move-result v9
 
-    if-eqz v9, :cond_e7
+    if-eqz v9, :cond_f9
 
-    if-eqz p2, :cond_e7
+    if-eqz p2, :cond_f9
 
-    .line 211
+    .line 218
     invoke-interface {v10, v11, v5}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onEntryViewClick(Landroid/view/View;Z)Z
 
-    .line 212
+    .line 219
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionManager:Lcom/transsion/camera/app/ui/PopupOptionManager;
 
     invoke-virtual {v9, v4}, Lcom/transsion/camera/app/ui/PopupOptionManager;->setNeedShowPopUpOption(Z)V
 
-    :cond_e7
+    :cond_f9
     add-int/lit8 v8, v8, 0x1
 
     goto/16 :goto_42
 
-    .line 215
-    :cond_eb
+    .line 222
+    :cond_fd
     iget-object v0, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mLeftTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
-    .line 216
+    .line 223
     invoke-virtual {v0, v7, v5}, Lcom/transsion/camera/app/ui/topbar/TopBarContainer;->updateTopBar(Ljava/util/Map;I)V
 
     return-void
 
-    .line 150
-    :cond_f1
+    .line 156
+    :cond_103
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "mLeftTopBarContainer should be instance of TopBarContainer!!!"
@@ -1174,18 +1230,18 @@
 
     move-object/from16 v1, p1
 
-    .line 221
+    .line 228
     invoke-super/range {p0 .. p2}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updateRightTopBarLayout(Ljava/util/List;Z)V
 
-    .line 222
+    .line 229
     iput-object v1, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mRightSettingUIs:Ljava/util/List;
 
-    .line 223
+    .line 230
     iget-object v2, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mRightTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
     if-nez v2, :cond_15
 
-    .line 224
+    .line 231
     sget-object v0, Lcom/transsion/camera/app/ui/TopBarUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "mTopBarContainer is null"
@@ -1195,9 +1251,9 @@
     return-void
 
     :cond_15
-    if-eqz v2, :cond_f1
+    if-eqz v2, :cond_103
 
-    .line 231
+    .line 238
     iget-object v2, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v2}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -1212,7 +1268,7 @@
 
     if-ne v2, v5, :cond_30
 
-    .line 233
+    .line 240
     iget v2, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mOrientation:I
 
     const/16 v6, 0x5a
@@ -1248,13 +1304,13 @@
     :cond_37
     move v2, v3
 
-    .line 248
+    .line 255
     :goto_38
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v6
 
-    .line 249
+    .line 256
     new-instance v7, Ljava/util/LinkedHashMap;
 
     invoke-direct {v7, v6}, Ljava/util/LinkedHashMap;-><init>(I)V
@@ -1262,9 +1318,9 @@
     move v8, v3
 
     :goto_42
-    if-ge v8, v6, :cond_eb
+    if-ge v8, v6, :cond_fd
 
-    .line 251
+    .line 258
     invoke-interface {v1, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v9
@@ -1273,12 +1329,12 @@
 
     check-cast v10, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 252
+    .line 259
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v9, :cond_52
 
-    .line 253
+    .line 260
     invoke-interface {v10, v9}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setIAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
 
     :cond_52
@@ -1290,7 +1346,7 @@
 
     goto :goto_6a
 
-    .line 263
+    .line 270
     :cond_59
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionV:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
@@ -1298,7 +1354,7 @@
 
     goto :goto_6a
 
-    .line 260
+    .line 267
     :cond_5f
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionH:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
@@ -1306,90 +1362,113 @@
 
     goto :goto_6a
 
-    .line 257
+    .line 264
     :cond_65
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOption:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-interface {v10, v9}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setPopupOptionsControl(Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;)V
 
-    .line 268
+    .line 275
     :goto_6a
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 269
+    .line 276
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getEntryView()Landroid/view/View;
 
     move-result-object v11
 
-    if-nez v11, :cond_84
+    .line 277
+    iget v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconOnColor:I
 
-    .line 271
+    iget v13, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconOffColor:I
+
+    iget v14, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconLowLightColor:I
+
+    invoke-interface {v10, v12, v13, v14}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->initIconColor(III)V
+
+    if-nez v11, :cond_96
+
+    .line 279
     iget-object v11, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mInflater:Landroid/view/LayoutInflater;
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mRightTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
+    .line 280
+    invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->isSellingPointAndShow()Z
+
+    move-result v13
+
+    if-eqz v13, :cond_8a
+
+    sget v13, Lcom/transsion/camera/R$layout;->top_bar_setting_selling_point_layout:I
+
+    goto :goto_8c
+
+    :cond_8a
     sget v13, Lcom/transsion/camera/R$layout;->top_bar_setting_item:I
 
+    :goto_8c
     sget v14, Lcom/transsion/camera/R$id;->top_setting_item_img:I
 
     sget v15, Lcom/transsion/camera/R$id;->top_setting_img_selling_point:I
 
-    sget v16, Lcom/transsion/camera/R$id;->top_setting_selling_point_layer:I
+    const/16 v16, -0x1
 
+    .line 279
     invoke-interface/range {v10 .. v16}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;IIII)Landroid/view/View;
 
     move-result-object v11
 
-    .line 277
-    :cond_84
+    .line 285
+    :cond_96
     iget-object v12, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mOldValue:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v12}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v12
 
-    invoke-interface {v10, v12}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onScreenSupply(Z)V
+    invoke-interface {v10, v12, v3}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onScreenSupply(ZZ)V
 
-    .line 278
+    .line 286
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setupEntryView()V
 
-    .line 279
+    .line 287
     iget-object v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mMasterGuideUIManager:Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;
 
     invoke-interface {v10, v12}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setMasterGuideUIManager(Lcom/transsion/camera/app/common/ui/setting/IMasterGuideUICommon;)V
 
-    .line 280
+    .line 288
     invoke-virtual {v11}, Landroid/view/View;->getVisibility()I
 
     move-result v12
 
-    if-nez v12, :cond_a1
+    if-nez v12, :cond_b3
 
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getIsShouldGone()Z
 
     move-result v12
 
-    if-eqz v12, :cond_a7
+    if-eqz v12, :cond_b9
 
-    :cond_a1
+    :cond_b3
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->needItemAnimation()Z
 
     move-result v12
 
-    if-eqz v12, :cond_b9
+    if-eqz v12, :cond_cb
 
-    .line 281
-    :cond_a7
+    .line 289
+    :cond_b9
     invoke-interface {v7, v9, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 282
+    .line 290
     iget-boolean v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mPopSettingSupport:Z
 
-    if-eqz v12, :cond_b6
+    if-eqz v12, :cond_c8
 
-    .line 283
+    .line 291
     invoke-interface {v7}, Ljava/util/Map;->size()I
 
     move-result v12
@@ -1398,19 +1477,19 @@
 
     invoke-interface {v10, v12}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setPositionInTopBar(I)V
 
-    .line 285
-    :cond_b6
+    .line 293
+    :cond_c8
     invoke-interface {v10, v4}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setDirection(I)V
 
-    .line 287
-    :cond_b9
+    .line 295
+    :cond_cb
     iget-object v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
 
     invoke-static {v12}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportFoldUI(Landroid/content/Context;)Z
 
     move-result v12
 
-    if-eqz v12, :cond_e7
+    if-eqz v12, :cond_f9
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
 
@@ -1418,11 +1497,11 @@
 
     move-result v12
 
-    if-nez v12, :cond_e7
+    if-nez v12, :cond_f9
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionManager:Lcom/transsion/camera/app/ui/PopupOptionManager;
 
-    .line 288
+    .line 296
     invoke-virtual {v12}, Lcom/transsion/camera/app/ui/PopupOptionManager;->getCurrentShowView()Ljava/lang/String;
 
     move-result-object v12
@@ -1431,7 +1510,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_e7
+    if-eqz v9, :cond_f9
 
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionManager:Lcom/transsion/camera/app/ui/PopupOptionManager;
 
@@ -1439,34 +1518,34 @@
 
     move-result v9
 
-    if-eqz v9, :cond_e7
+    if-eqz v9, :cond_f9
 
-    if-eqz p2, :cond_e7
+    if-eqz p2, :cond_f9
 
-    .line 289
+    .line 297
     invoke-interface {v10, v11, v5}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onEntryViewClick(Landroid/view/View;Z)Z
 
-    .line 290
+    .line 298
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionManager:Lcom/transsion/camera/app/ui/PopupOptionManager;
 
     invoke-virtual {v9, v3}, Lcom/transsion/camera/app/ui/PopupOptionManager;->setNeedShowPopUpOption(Z)V
 
-    :cond_e7
+    :cond_f9
     add-int/lit8 v8, v8, 0x1
 
     goto/16 :goto_42
 
-    .line 293
-    :cond_eb
+    .line 301
+    :cond_fd
     iget-object v0, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mRightTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
-    .line 294
+    .line 302
     invoke-virtual {v0, v7, v4}, Lcom/transsion/camera/app/ui/topbar/TopBarContainer;->updateTopBar(Ljava/util/Map;I)V
 
     return-void
 
-    .line 228
-    :cond_f1
+    .line 235
+    :cond_103
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "mRightTopBarContainer should be instance of TopBarContainer!!!"
@@ -1483,18 +1562,18 @@
 
     move-object/from16 v1, p1
 
-    .line 65
+    .line 70
     invoke-super/range {p0 .. p2}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->updateTopBarLayout(Ljava/util/List;Z)V
 
-    .line 66
+    .line 71
     iput-object v1, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mSettingUIs:Ljava/util/List;
 
-    .line 67
+    .line 72
     iget-object v2, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
     if-nez v2, :cond_15
 
-    .line 68
+    .line 73
     sget-object v0, Lcom/transsion/camera/app/ui/TopBarUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "mTopBarContainer is null"
@@ -1504,9 +1583,9 @@
     return-void
 
     :cond_15
-    if-eqz v2, :cond_106
+    if-eqz v2, :cond_118
 
-    .line 76
+    .line 81
     iget-object v2, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v2}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -1521,7 +1600,7 @@
 
     if-ne v2, v5, :cond_30
 
-    .line 78
+    .line 83
     iget v2, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mOrientation:I
 
     const/16 v6, 0x5a
@@ -1557,7 +1636,7 @@
     :cond_37
     move v2, v4
 
-    .line 92
+    .line 97
     :goto_38
     sget-object v6, Lcom/transsion/camera/app/ui/TopBarUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1579,12 +1658,12 @@
 
     invoke-static {v6, v7}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 93
+    .line 98
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v6
 
-    .line 94
+    .line 99
     new-instance v7, Ljava/util/LinkedHashMap;
 
     invoke-direct {v7, v6}, Ljava/util/LinkedHashMap;-><init>(I)V
@@ -1592,9 +1671,9 @@
     move v8, v4
 
     :goto_5a
-    if-ge v8, v6, :cond_100
+    if-ge v8, v6, :cond_112
 
-    .line 96
+    .line 101
     invoke-interface {v1, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v9
@@ -1603,12 +1682,12 @@
 
     check-cast v10, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 97
+    .line 102
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v9, :cond_6a
 
-    .line 98
+    .line 103
     invoke-interface {v10, v9}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setIAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
 
     :cond_6a
@@ -1620,7 +1699,7 @@
 
     goto :goto_82
 
-    .line 108
+    .line 113
     :cond_71
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionV:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
@@ -1628,7 +1707,7 @@
 
     goto :goto_82
 
-    .line 105
+    .line 110
     :cond_77
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionH:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
@@ -1636,90 +1715,113 @@
 
     goto :goto_82
 
-    .line 102
+    .line 107
     :cond_7d
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOption:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-interface {v10, v9}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setPopupOptionsControl(Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;)V
 
-    .line 113
+    .line 118
     :goto_82
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 114
+    .line 119
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getEntryView()Landroid/view/View;
 
     move-result-object v11
 
-    if-nez v11, :cond_9c
+    .line 120
+    iget v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconOnColor:I
 
-    .line 116
+    iget v13, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconOffColor:I
+
+    iget v14, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mIconLowLightColor:I
+
+    invoke-interface {v10, v12, v13, v14}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->initIconColor(III)V
+
+    if-nez v11, :cond_ae
+
+    .line 122
     iget-object v11, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mInflater:Landroid/view/LayoutInflater;
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
+    .line 123
+    invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->isSellingPointAndShow()Z
+
+    move-result v13
+
+    if-eqz v13, :cond_a2
+
+    sget v13, Lcom/transsion/camera/R$layout;->top_bar_setting_selling_point_layout:I
+
+    goto :goto_a4
+
+    :cond_a2
     sget v13, Lcom/transsion/camera/R$layout;->top_bar_setting_item:I
 
+    :goto_a4
     sget v14, Lcom/transsion/camera/R$id;->top_setting_item_img:I
 
     sget v15, Lcom/transsion/camera/R$id;->top_setting_img_selling_point:I
 
-    sget v16, Lcom/transsion/camera/R$id;->top_setting_selling_point_layer:I
+    const/16 v16, -0x1
 
+    .line 122
     invoke-interface/range {v10 .. v16}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;IIII)Landroid/view/View;
 
     move-result-object v11
 
-    .line 122
-    :cond_9c
+    .line 128
+    :cond_ae
     iget-object v12, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mOldValue:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v12}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v12
 
-    invoke-interface {v10, v12}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onScreenSupply(Z)V
+    invoke-interface {v10, v12, v4}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onScreenSupply(ZZ)V
 
-    .line 123
+    .line 129
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setupEntryView()V
 
-    .line 124
+    .line 130
     iget-object v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mMasterGuideUIManager:Lcom/transsion/camera/app/ui/manager/MasterGuideUIManager;
 
     invoke-interface {v10, v12}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setMasterGuideUIManager(Lcom/transsion/camera/app/common/ui/setting/IMasterGuideUICommon;)V
 
-    .line 125
+    .line 131
     invoke-virtual {v11}, Landroid/view/View;->getVisibility()I
 
     move-result v12
 
-    if-nez v12, :cond_b9
+    if-nez v12, :cond_cb
 
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->getIsShouldGone()Z
 
     move-result v12
 
-    if-eqz v12, :cond_bf
+    if-eqz v12, :cond_d1
 
-    :cond_b9
+    :cond_cb
     invoke-interface {v10}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->needItemAnimation()Z
 
     move-result v12
 
-    if-eqz v12, :cond_ce
+    if-eqz v12, :cond_e0
 
-    .line 126
-    :cond_bf
+    .line 132
+    :cond_d1
     invoke-interface {v7, v9, v11}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 127
+    .line 133
     iget-boolean v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mPopSettingSupport:Z
 
-    if-nez v12, :cond_ce
+    if-nez v12, :cond_e0
 
-    .line 128
+    .line 134
     invoke-interface {v7}, Ljava/util/Map;->size()I
 
     move-result v12
@@ -1728,15 +1830,15 @@
 
     invoke-interface {v10, v12}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->setPositionInTopBar(I)V
 
-    .line 131
-    :cond_ce
+    .line 137
+    :cond_e0
     iget-object v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
 
     invoke-static {v12}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportFoldUI(Landroid/content/Context;)Z
 
     move-result v12
 
-    if-eqz v12, :cond_fc
+    if-eqz v12, :cond_10e
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/TopBarUI;->mContext:Landroid/content/Context;
 
@@ -1744,11 +1846,11 @@
 
     move-result v12
 
-    if-nez v12, :cond_fc
+    if-nez v12, :cond_10e
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionManager:Lcom/transsion/camera/app/ui/PopupOptionManager;
 
-    .line 132
+    .line 138
     invoke-virtual {v12}, Lcom/transsion/camera/app/ui/PopupOptionManager;->getCurrentShowView()Ljava/lang/String;
 
     move-result-object v12
@@ -1757,7 +1859,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_fc
+    if-eqz v9, :cond_10e
 
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionManager:Lcom/transsion/camera/app/ui/PopupOptionManager;
 
@@ -1765,34 +1867,34 @@
 
     move-result v9
 
-    if-eqz v9, :cond_fc
+    if-eqz v9, :cond_10e
 
-    if-eqz p2, :cond_fc
+    if-eqz p2, :cond_10e
 
-    .line 133
+    .line 139
     invoke-interface {v10, v11, v5}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onEntryViewClick(Landroid/view/View;Z)Z
 
-    .line 134
+    .line 140
     iget-object v9, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mPopupOptionManager:Lcom/transsion/camera/app/ui/PopupOptionManager;
 
     invoke-virtual {v9, v4}, Lcom/transsion/camera/app/ui/PopupOptionManager;->setNeedShowPopUpOption(Z)V
 
-    :cond_fc
+    :cond_10e
     add-int/lit8 v8, v8, 0x1
 
     goto/16 :goto_5a
 
-    .line 137
-    :cond_100
+    .line 143
+    :cond_112
     iget-object v0, v0, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->mTopBarContainer:Lcom/transsion/camera/app/ui/topbar/TopBarContainer;
 
-    .line 138
+    .line 144
     invoke-virtual {v0, v7, v4}, Lcom/transsion/camera/app/ui/topbar/TopBarContainer;->updateTopBar(Ljava/util/Map;I)V
 
     return-void
 
-    .line 72
-    :cond_106
+    .line 77
+    :cond_118
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "mTopBarContainer should be instance of TopBarContainer!!!"

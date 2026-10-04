@@ -44,15 +44,15 @@
 .method public constructor <init>(J)V
     .registers 3
 
-    .line 413
+    .line 410
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 412
+    .line 409
     iput-wide p1, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->nanoTime:J
 
     const/4 p1, -0x1
 
-    .line 424
+    .line 421
     iput p1, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->index:I
 
     return-void
@@ -63,7 +63,7 @@
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .registers 2
 
-    .line 407
+    .line 404
     check-cast p1, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->compareTo(Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;)I
@@ -76,7 +76,7 @@
 .method public compareTo(Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;)I
     .registers 4
 
-    .line 427
+    .line 424
     iget-wide v0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->nanoTime:J
 
     iget-wide p0, p1, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->nanoTime:J
@@ -109,14 +109,14 @@
 .method public final dispose()V
     .registers 3
 
-    .line 20
+    .line 16
     monitor-enter p0
 
-    .line 480
+    .line 477
     :try_start_1
     iget-object v0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->_heap:Ljava/lang/Object;
 
-    .line 481
+    .line 478
     # getter for: Lkotlinx/coroutines/EventLoop_commonKt;->DISPOSED_TASK:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/EventLoop_commonKt;->access$getDISPOSED_TASK$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -130,7 +130,7 @@
 
     return-void
 
-    .line 482
+    .line 479
     :cond_b
     :try_start_b
     instance-of v1, v0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTaskQueue;
@@ -154,7 +154,7 @@
 
     invoke-virtual {v0, p0}, Lkotlinx/coroutines/internal/ThreadSafeHeap;->remove(Lkotlinx/coroutines/internal/ThreadSafeHeapNode;)Z
 
-    .line 483
+    .line 480
     :cond_1a
     # getter for: Lkotlinx/coroutines/EventLoop_commonKt;->DISPOSED_TASK:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/EventLoop_commonKt;->access$getDISPOSED_TASK$p()Lkotlinx/coroutines/internal/Symbol;
@@ -163,12 +163,12 @@
 
     iput-object v0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->_heap:Ljava/lang/Object;
 
-    .line 484
+    .line 481
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_22
     .catchall {:try_start_b .. :try_end_22} :catchall_12
 
-    .line 20
+    .line 16
     monitor-exit p0
 
     return-void
@@ -189,7 +189,7 @@
         }
     .end annotation
 
-    .line 418
+    .line 415
     iget-object p0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->_heap:Ljava/lang/Object;
 
     instance-of v0, p0, Lkotlinx/coroutines/internal/ThreadSafeHeap;
@@ -209,7 +209,7 @@
 .method public getIndex()I
     .registers 1
 
-    .line 424
+    .line 421
     iget p0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->index:I
 
     return p0
@@ -218,10 +218,10 @@
 .method public final scheduleTask(JLkotlinx/coroutines/EventLoopImplBase$DelayedTaskQueue;Lkotlinx/coroutines/EventLoopImplBase;)I
     .registers 12
 
-    .line 20
+    .line 16
     monitor-enter p0
 
-    .line 438
+    .line 435
     :try_start_1
     iget-object v0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->_heap:Ljava/lang/Object;
 
@@ -240,14 +240,14 @@
 
     return p0
 
-    .line 20
+    .line 16
     :cond_c
     :try_start_c
     monitor-enter p3
     :try_end_d
     .catchall {:try_start_c .. :try_end_d} :catchall_1d
 
-    .line 73
+    .line 64
     :try_start_d
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/ThreadSafeHeap;->firstImpl()Lkotlinx/coroutines/internal/ThreadSafeHeapNode;
 
@@ -255,7 +255,7 @@
 
     check-cast v0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;
 
-    .line 440
+    .line 437
     # invokes: Lkotlinx/coroutines/EventLoopImplBase;->isCompleted()Z
     invoke-static {p4}, Lkotlinx/coroutines/EventLoopImplBase;->access$isCompleted(Lkotlinx/coroutines/EventLoopImplBase;)Z
 
@@ -286,7 +286,7 @@
 
     if-nez v0, :cond_28
 
-    .line 453
+    .line 450
     :try_start_23
     iput-wide p1, p3, Lkotlinx/coroutines/EventLoopImplBase$DelayedTaskQueue;->timeNow:J
 
@@ -297,7 +297,7 @@
 
     goto :goto_4e
 
-    .line 460
+    .line 457
     :cond_28
     iget-wide v3, v0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->nanoTime:J
 
@@ -312,7 +312,7 @@
     :cond_31
     move-wide p1, v3
 
-    .line 464
+    .line 461
     :goto_32
     iget-wide v3, p3, Lkotlinx/coroutines/EventLoopImplBase$DelayedTaskQueue;->timeNow:J
 
@@ -324,7 +324,7 @@
 
     iput-wide p1, p3, Lkotlinx/coroutines/EventLoopImplBase$DelayedTaskQueue;->timeNow:J
 
-    .line 473
+    .line 470
     :cond_3c
     :goto_3c
     iget-wide p1, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->nanoTime:J
@@ -339,26 +339,26 @@
 
     iput-wide v3, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->nanoTime:J
 
-    .line 74
+    .line 65
     :cond_47
     invoke-virtual {p3, p0}, Lkotlinx/coroutines/internal/ThreadSafeHeap;->addImpl(Lkotlinx/coroutines/internal/ThreadSafeHeapNode;)V
     :try_end_4a
     .catchall {:try_start_23 .. :try_end_4a} :catchall_26
 
-    .line 20
+    .line 16
     :try_start_4a
     monitor-exit p3
     :try_end_4b
     .catchall {:try_start_4a .. :try_end_4b} :catchall_1d
 
-    .line 476
+    .line 473
     monitor-exit p0
 
     const/4 p0, 0x0
 
     return p0
 
-    .line 20
+    .line 16
     :goto_4e
     :try_start_4e
     monitor-exit p3
@@ -367,7 +367,7 @@
     :try_end_50
     .catchall {:try_start_4e .. :try_end_50} :catchall_1d
 
-    .line 476
+    .line 473
     :goto_50
     monitor-exit p0
 
@@ -384,7 +384,7 @@
         }
     .end annotation
 
-    .line 420
+    .line 417
     iget-object v0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->_heap:Ljava/lang/Object;
 
     # getter for: Lkotlinx/coroutines/EventLoop_commonKt;->DISPOSED_TASK:Lkotlinx/coroutines/internal/Symbol;
@@ -394,12 +394,12 @@
 
     if-eq v0, v1, :cond_b
 
-    .line 421
+    .line 418
     iput-object p1, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->_heap:Ljava/lang/Object;
 
     return-void
 
-    .line 420
+    .line 417
     :cond_b
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -413,7 +413,7 @@
 .method public setIndex(I)V
     .registers 2
 
-    .line 424
+    .line 421
     iput p1, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->index:I
 
     return-void
@@ -422,7 +422,7 @@
 .method public final timeToExecute(J)Z
     .registers 5
 
-    .line 435
+    .line 432
     iget-wide v0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;->nanoTime:J
 
     sub-long/2addr p1, v0
@@ -446,7 +446,7 @@
 .method public toString()Ljava/lang/String;
     .registers 4
 
-    .line 486
+    .line 483
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -148,7 +148,7 @@
 
     const/4 v2, 0x0
 
-    if-lt p2, v0, :cond_2c
+    if-le p2, v0, :cond_2c
 
     move p2, v1
 
@@ -793,7 +793,7 @@
 
     sget v0, Lcom/transsion/camera/utils/SettingInfo;->AI_FRAME_MAX_ZOOM:I
 
-    if-lt p1, v0, :cond_38
+    if-le p1, v0, :cond_38
 
     const/4 p1, 0x1
 

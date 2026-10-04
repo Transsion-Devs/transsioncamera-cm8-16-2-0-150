@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/focus/FocusUI;)V
     .registers 2
 
-    .line 728
+    .line 730
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI$FocusResultCallbackImpl;->this$0:Lcom/transsion/camera/ui/setting/focus/FocusUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onDataCallback(Ljava/lang/Object;I)V
     .registers 6
 
-    .line 731
+    .line 733
     invoke-static {}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -68,7 +68,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 732
+    .line 734
     const-string v0, "focus_ui_active"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -77,7 +77,7 @@
 
     if-eqz v0, :cond_34
 
-    .line 733
+    .line 735
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI$FocusResultCallbackImpl;->this$0:Lcom/transsion/camera/ui/setting/focus/FocusUI;
 
     const/4 v0, 0x1
@@ -92,7 +92,7 @@
     :goto_27
     invoke-static {p1, v0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->-$$Nest$fputmActiveFocusEnable(Lcom/transsion/camera/ui/setting/focus/FocusUI;Z)V
 
-    .line 734
+    .line 736
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI$FocusResultCallbackImpl;->this$0:Lcom/transsion/camera/ui/setting/focus/FocusUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/focus/FocusUI;->-$$Nest$fgetmActiveFocusEnable(Lcom/transsion/camera/ui/setting/focus/FocusUI;)Z
@@ -103,7 +103,7 @@
 
     return-void
 
-    .line 737
+    .line 739
     :cond_34
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/focus/FocusUI$FocusResultCallbackImpl;->this$0:Lcom/transsion/camera/ui/setting/focus/FocusUI;
 

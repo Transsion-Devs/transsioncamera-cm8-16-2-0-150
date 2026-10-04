@@ -77,6 +77,8 @@
 
 .field private mIsVideoRecording:Z
 
+.field private mLastInSmoothZoom:Z
+
 .field private mLastOrientation:I
 
 .field private mLongPressed:Z
@@ -98,8 +100,6 @@
 .field private mQuickVideoGuideView:Landroid/widget/ImageView;
 
 .field private mRecordingOrientation:I
-
-.field private mRegularToSmallDrawable:Landroid/graphics/drawable/Drawable;
 
 .field private mScreenFormType:I
 
@@ -130,12 +130,6 @@
 .field private mShutterUIProcessingOrientation:I
 
 .field private mSimulateDownEvent:Z
-
-.field private mSizeState:I
-
-.field private mSmallToRegularDrawable:Landroid/graphics/drawable/Drawable;
-
-.field private mSmallToSmileDrawable:Landroid/graphics/drawable/Drawable;
 
 .field private mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
@@ -278,6 +272,15 @@
 
     .line 0
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsVideoRecording:Z
+
+    return p0
+.end method
+
+.method static bridge synthetic -$$Nest$fgetmLastInSmoothZoom(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Z
+    .registers 1
+
+    .line 0
+    iget-boolean p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLastInSmoothZoom:Z
 
     return p0
 .end method
@@ -431,6 +434,15 @@
 
     .line 0
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsSwipeEnd:Z
+
+    return-void
+.end method
+
+.method static bridge synthetic -$$Nest$fputmLastInSmoothZoom(Lcom/transsion/camera/app/ui/AbstractShutterUI;Z)V
+    .registers 2
+
+    .line 0
+    iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLastInSmoothZoom:Z
 
     return-void
 .end method
@@ -660,7 +672,7 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/common/IAppUI;)V
     .registers 7
 
-    .line 177
+    .line 172
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 95
@@ -673,95 +685,95 @@
     .line 120
     iput v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
 
-    .line 123
-    iput v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
-
     const/4 v1, -0x1
 
-    .line 129
+    .line 126
     iput v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterType:I
 
-    .line 130
+    .line 127
     iput v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterTypeSelftimerOff:I
 
-    .line 131
+    .line 128
     iput v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterTypeSelftimerOn:I
 
-    .line 140
+    .line 134
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsPreviewStarted:Z
 
     const/4 v2, 0x1
 
-    .line 145
+    .line 139
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsSwipeEnd:Z
 
-    .line 146
+    .line 140
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsVideoRecording:Z
 
-    .line 147
+    .line 141
     iput v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mRecordingOrientation:I
 
-    .line 153
+    .line 147
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSimulateDownEvent:Z
 
-    .line 167
+    .line 161
     iput v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterUIProcessingOrientation:I
 
-    .line 175
+    .line 169
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLastInSmoothZoom:Z
+
+    .line 170
     iput v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFocalLengthZoomSate:I
 
-    .line 273
+    .line 269
     new-instance v0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mICShotButtonOperationControl:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView$ICShotButtonOperationControl;
 
-    .line 353
+    .line 349
     new-instance v0, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIQVButtonOperationControl:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView$IQVButtonOperationControl;
 
-    .line 1502
-    new-instance v0, Lcom/transsion/camera/app/ui/AbstractShutterUI$9;
+    .line 1391
+    new-instance v0, Lcom/transsion/camera/app/ui/AbstractShutterUI$7;
 
-    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$9;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
+    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$7;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
 
-    .line 1700
-    new-instance v0, Lcom/transsion/camera/app/ui/AbstractShutterUI$10;
+    .line 1589
+    new-instance v0, Lcom/transsion/camera/app/ui/AbstractShutterUI$8;
 
-    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$10;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
+    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$8;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 178
+    .line 173
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
-    .line 179
+    .line 174
     iput-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 180
+    .line 175
     invoke-virtual {p2}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p1
 
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenFormType:I
 
-    .line 181
+    .line 176
     iput-object p3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 182
+    .line 177
     new-instance p1, Lcom/transsion/camera/app/ui/AbstractShutterUI$MainHandler;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$MainHandler;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mMainHandler:Landroid/os/Handler;
 
-    .line 183
+    .line 178
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -782,7 +794,7 @@
 .method private cancelFlipTranslateAnimator()V
     .registers 2
 
-    .line 1689
+    .line 1578
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFlipTranslateAnimator:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_f
@@ -793,7 +805,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 1690
+    .line 1579
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFlipTranslateAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/animation/Animator;->cancel()V
@@ -805,7 +817,7 @@
 .method private getDrawable()Landroid/graphics/drawable/Drawable;
     .registers 1
 
-    .line 1129
+    .line 1124
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -818,14 +830,14 @@
 .method private initLottieView(Lcom/airbnb/lottie/LottieAnimationView;)V
     .registers 2
 
-    .line 269
+    .line 265
     const-string p0, "shutter_panel_guide_anim.json"
 
     invoke-virtual {p1, p0}, Lcom/airbnb/lottie/LottieAnimationView;->setAnimation(Ljava/lang/String;)V
 
     const/4 p0, -0x1
 
-    .line 270
+    .line 266
     invoke-virtual {p1, p0}, Lcom/airbnb/lottie/LottieAnimationView;->setRepeatCount(I)V
 
     return-void
@@ -834,7 +846,7 @@
 .method private synthetic lambda$ringScreenLightUpdateUI$2()V
     .registers 5
 
-    .line 1514
+    .line 1403
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOldValue:Z
 
     const/4 v1, 0x0
@@ -843,7 +855,7 @@
 
     if-eqz v0, :cond_39
 
-    .line 1515
+    .line 1404
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterType:I
 
     if-ge v0, v2, :cond_1d
@@ -860,49 +872,49 @@
 
     if-eqz v0, :cond_1d
 
-    .line 1516
+    .line 1405
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterType:I
 
     add-int/2addr v0, v2
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateShutterTypeImpl(IZ)V
 
-    .line 1518
+    .line 1407
     :cond_1d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCShotGuideView:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_26
 
-    .line 1519
+    .line 1408
     sget v1, Lcom/transsion/camera/R$drawable;->ic_continuous_shot_guide_view_black:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1521
+    .line 1410
     :cond_26
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoGuideView:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_2f
 
-    .line 1522
+    .line 1411
     sget v1, Lcom/transsion/camera/R$drawable;->ic_quick_video_guide_view_black:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1524
+    .line 1413
     :cond_2f
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLottieAnimationView:Lcom/airbnb/lottie/LottieAnimationView;
 
     if-eqz v0, :cond_6b
 
-    .line 1525
+    .line 1414
     const-string v1, "shutter_panel_guide_black_anim.json"
 
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieAnimationView;->setAnimation(Ljava/lang/String;)V
 
     goto :goto_6b
 
-    .line 1528
+    .line 1417
     :cond_39
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterType:I
 
@@ -922,65 +934,65 @@
 
     if-eqz v0, :cond_50
 
-    .line 1529
+    .line 1418
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterType:I
 
     sub-int/2addr v0, v2
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateShutterTypeImpl(IZ)V
 
-    .line 1531
+    .line 1420
     :cond_50
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCShotGuideView:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_59
 
-    .line 1532
+    .line 1421
     sget v1, Lcom/transsion/camera/R$drawable;->ic_continuous_shot_guide_view:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1534
+    .line 1423
     :cond_59
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoGuideView:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_62
 
-    .line 1535
+    .line 1424
     sget v1, Lcom/transsion/camera/R$drawable;->ic_quick_video_guide_view:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1537
+    .line 1426
     :cond_62
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLottieAnimationView:Lcom/airbnb/lottie/LottieAnimationView;
 
     if-eqz v0, :cond_6b
 
-    .line 1538
+    .line 1427
     const-string v1, "shutter_panel_guide_anim.json"
 
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieAnimationView;->setAnimation(Ljava/lang/String;)V
 
-    .line 1541
+    .line 1430
     :cond_6b
     :goto_6b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     if-eqz v0, :cond_74
 
-    .line 1542
+    .line 1431
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOldValue:Z
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->ringScreenLightUpdateUI(Z)V
 
-    .line 1544
+    .line 1433
     :cond_74
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-eqz v0, :cond_7d
 
-    .line 1545
+    .line 1434
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOldValue:Z
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->ringScreenLightUpdateUI(Z)V
@@ -994,18 +1006,18 @@
 
     const/4 v0, 0x2
 
-    .line 224
+    .line 220
     :try_start_1
     new-array v0, v0, [I
 
-    .line 225
+    .line 221
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
 
     const/4 v1, 0x1
 
-    .line 226
+    .line 222
     aget v0, v0, v1
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
@@ -1016,7 +1028,7 @@
 
     add-int/2addr v0, v1
 
-    .line 228
+    .line 224
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1025,15 +1037,15 @@
 
     if-eqz v1, :cond_26
 
-    .line 230
+    .line 226
     iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 231
+    .line 227
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 232
+    .line 228
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
@@ -1046,7 +1058,7 @@
     :catch_27
     move-exception p0
 
-    .line 235
+    .line 231
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1075,34 +1087,34 @@
 .method private synthetic lambda$transitionToVoice$1()V
     .registers 4
 
-    .line 1324
+    .line 1241
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
-    .line 1325
+    .line 1242
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
-    .line 1326
+    .line 1243
     invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1327
+    .line 1244
     invoke-virtual {p0, v0}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
-    .line 1328
+    .line 1245
     invoke-virtual {p0, v0}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
     const-wide/16 v0, 0x28
 
-    .line 1329
+    .line 1246
     invoke-virtual {p0, v0, v1}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
@@ -1115,7 +1127,7 @@
 
     invoke-direct {v0, v1, v2, v1, v2}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
-    .line 1330
+    .line 1247
     invoke-virtual {p0, v0}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     return-void
@@ -1126,7 +1138,7 @@
 
     const/4 v0, 0x0
 
-    .line 1368
+    .line 1281
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->loadAnimatorDrawables(Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;)V
@@ -1137,24 +1149,24 @@
 .method private loadAnimatorDrawables(Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;)V
     .registers 7
 
-    if-eqz p2, :cond_97
+    if-eqz p2, :cond_57
 
-    .line 1372
+    .line 1285
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
-    if-eqz v0, :cond_97
+    if-eqz v0, :cond_57
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsPreviewStarted:Z
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_b
 
-    goto/16 :goto_97
+    goto :goto_57
 
-    .line 1377
-    :cond_c
+    .line 1290
+    :cond_b
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->stopAllAnimations()V
 
-    .line 1378
+    .line 1291
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -1163,195 +1175,105 @@
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_1e
+    if-eqz p1, :cond_1d
 
-    .line 1380
+    .line 1293
     iget v2, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleToProcessingDrawableId:I
 
     iget v3, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleToProcessingDrawableId:I
 
-    if-eq v2, v3, :cond_2b
+    if-eq v2, v3, :cond_2a
 
-    .line 1381
-    :cond_1e
+    .line 1294
+    :cond_1d
     iget v2, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleToProcessingDrawableId:I
 
-    if-lez v2, :cond_29
+    if-lez v2, :cond_28
 
-    .line 1382
+    .line 1295
     invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToProcessingDrawable:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_2b
+    goto :goto_2a
 
-    .line 1384
-    :cond_29
+    .line 1297
+    :cond_28
     iput-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToProcessingDrawable:Landroid/graphics/drawable/Drawable;
 
-    :cond_2b
-    :goto_2b
-    if-eqz p1, :cond_33
+    :cond_2a
+    :goto_2a
+    if-eqz p1, :cond_32
 
-    .line 1388
+    .line 1301
     iget v2, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->processingToIdleDrawableId:I
 
     iget v3, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->processingToIdleDrawableId:I
 
-    if-eq v2, v3, :cond_40
+    if-eq v2, v3, :cond_3f
 
-    .line 1389
-    :cond_33
+    .line 1302
+    :cond_32
     iget v2, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->processingToIdleDrawableId:I
 
-    if-lez v2, :cond_3e
+    if-lez v2, :cond_3d
 
-    .line 1390
+    .line 1303
     invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mProcessingToIdleDrawable:Landroid/graphics/drawable/Drawable;
 
-    goto :goto_40
+    goto :goto_3f
 
-    .line 1392
-    :cond_3e
+    .line 1305
+    :cond_3d
     iput-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mProcessingToIdleDrawable:Landroid/graphics/drawable/Drawable;
 
-    :cond_40
-    :goto_40
-    if-eqz p1, :cond_48
+    :cond_3f
+    :goto_3f
+    if-eqz p1, :cond_49
 
-    .line 1396
-    iget v2, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->regularToSmallDrawableId:I
+    .line 1309
+    iget p1, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleToSmileDrawableId:I
 
-    iget v3, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->regularToSmallDrawableId:I
-
-    if-eq v2, v3, :cond_55
-
-    .line 1397
-    :cond_48
-    iget v2, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->regularToSmallDrawableId:I
-
-    if-lez v2, :cond_53
-
-    .line 1398
-    invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mRegularToSmallDrawable:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_55
-
-    .line 1400
-    :cond_53
-    iput-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mRegularToSmallDrawable:Landroid/graphics/drawable/Drawable;
-
-    :cond_55
-    :goto_55
-    if-eqz p1, :cond_5d
-
-    .line 1404
-    iget v2, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->smallToRegularDrawableId:I
-
-    iget v3, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->smallToRegularDrawableId:I
-
-    if-eq v2, v3, :cond_6a
-
-    .line 1405
-    :cond_5d
-    iget v2, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->smallToRegularDrawableId:I
-
-    if-lez v2, :cond_68
-
-    .line 1406
-    invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSmallToRegularDrawable:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_6a
-
-    .line 1408
-    :cond_68
-    iput-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSmallToRegularDrawable:Landroid/graphics/drawable/Drawable;
-
-    :cond_6a
-    :goto_6a
-    if-eqz p1, :cond_72
-
-    .line 1412
-    iget v2, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleToSmileDrawableId:I
-
-    iget v3, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleToSmileDrawableId:I
-
-    if-eq v2, v3, :cond_7f
-
-    .line 1413
-    :cond_72
     iget v2, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleToSmileDrawableId:I
 
-    if-lez v2, :cond_7d
+    if-eq p1, v2, :cond_48
 
-    .line 1414
-    invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    goto :goto_49
 
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToSmileDrawable:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_7f
-
-    .line 1416
-    :cond_7d
-    iput-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToSmileDrawable:Landroid/graphics/drawable/Drawable;
-
-    :cond_7f
-    :goto_7f
-    if-eqz p1, :cond_89
-
-    .line 1420
-    iget p1, p1, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->smallToSmileDrawableId:I
-
-    iget v2, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->smallToSmileDrawableId:I
-
-    if-eq p1, v2, :cond_88
-
-    goto :goto_89
-
-    :cond_88
+    :cond_48
     return-void
 
-    .line 1421
-    :cond_89
-    :goto_89
-    iget p1, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->smallToSmileDrawableId:I
+    .line 1310
+    :cond_49
+    :goto_49
+    iget p1, p2, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleToSmileDrawableId:I
 
-    if-lez p1, :cond_94
+    if-lez p1, :cond_54
 
-    .line 1422
+    .line 1311
     invoke-virtual {v0, p1, v1}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSmallToSmileDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToSmileDrawable:Landroid/graphics/drawable/Drawable;
 
     return-void
 
-    .line 1424
-    :cond_94
-    iput-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSmallToSmileDrawable:Landroid/graphics/drawable/Drawable;
+    .line 1313
+    :cond_54
+    iput-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToSmileDrawable:Landroid/graphics/drawable/Drawable;
 
     return-void
 
-    .line 1373
-    :cond_97
-    :goto_97
+    .line 1286
+    :cond_57
+    :goto_57
     sget-object p1, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1366,16 +1288,16 @@
 
     const/4 v2, 0x1
 
-    if-nez p2, :cond_a9
+    if-nez p2, :cond_69
 
     move p2, v2
 
-    goto :goto_aa
+    goto :goto_6a
 
-    :cond_a9
+    :cond_69
     move p2, v1
 
-    :goto_aa
+    :goto_6a
     invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     const-string p2, ", mShutterButtonView: "
@@ -1384,11 +1306,11 @@
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
-    if-nez p2, :cond_b7
+    if-nez p2, :cond_77
 
     move v1, v2
 
-    :cond_b7
+    :cond_77
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     const-string p2, ", mIsPreviewStarted: "
@@ -1411,7 +1333,7 @@
 .method private loadSpecToView()V
     .registers 2
 
-    .line 1430
+    .line 1319
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
     if-eqz v0, :cond_b
@@ -1420,7 +1342,7 @@
 
     if-eqz v0, :cond_b
 
-    .line 1431
+    .line 1320
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateImageResourceByState()V
 
     :cond_b
@@ -1430,7 +1352,7 @@
 .method private ringScreenLightUpdateUI()V
     .registers 3
 
-    .line 1513
+    .line 1402
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     new-instance v1, Lcom/transsion/camera/app/ui/AbstractShutterUI$$ExternalSyntheticLambda2;
@@ -1445,7 +1367,7 @@
 .method private setImageDrawable(Landroid/graphics/drawable/Drawable;)V
     .registers 2
 
-    .line 1360
+    .line 1273
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
@@ -1456,7 +1378,7 @@
 .method private setImageResource(I)V
     .registers 2
 
-    .line 1364
+    .line 1277
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -1467,7 +1389,7 @@
 .method private showShutterGuideLayout()V
     .registers 8
 
-    .line 1029
+    .line 1024
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsSwipeEnd:Z
 
     if-eqz v0, :cond_c3
@@ -1490,7 +1412,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 1034
+    .line 1029
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->isFromIntent()Z
 
     move-result v0
@@ -1503,17 +1425,17 @@
 
     const/4 v0, 0x1
 
-    .line 1035
+    .line 1030
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLongPressed:Z
 
-    .line 1036
+    .line 1031
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v1, 0xd2
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 1037
+    .line 1032
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_shutter_guide_layout_action"
@@ -1524,24 +1446,24 @@
 
     const-string v2, "shutter_guide_layout_show"
 
-    .line 1038
+    .line 1033
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 1039
+    .line 1034
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSwipeOperationListener:Lcom/transsion/camera/app/common/IAppUIListener$ISwipeOperationListener;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_3f
 
-    .line 1040
+    .line 1035
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIListener$ISwipeOperationListener;->onNotifyUIStateChange(Z)V
 
-    .line 1042
+    .line 1037
     :cond_3f
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoGuideView:Landroid/widget/ImageView;
 
-    .line 1043
+    .line 1038
     const-string v2, "com.transsion.camera.feature.mode.motioncapture.MotionCaptureModeEntry"
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCurrentModeName:Ljava/lang/String;
@@ -1559,11 +1481,11 @@
     :cond_4e
     move v2, v1
 
-    .line 1042
+    .line 1037
     :goto_4f
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1044
+    .line 1039
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -1572,40 +1494,40 @@
 
     if-eqz v0, :cond_8d
 
-    .line 1045
+    .line 1040
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1046
+    .line 1041
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1047
+    .line 1042
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 1048
+    .line 1043
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 1049
+    .line 1044
     invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     const-wide/16 v4, 0x96
 
-    .line 1050
+    .line 1045
     invoke-virtual {v0, v4, v5}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -1618,15 +1540,15 @@
 
     invoke-direct {v4, v5, v2, v6, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
-    .line 1051
+    .line 1046
     invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 1052
+    .line 1047
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1054
+    .line 1049
     :cond_8d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoGuideView:Landroid/widget/ImageView;
 
@@ -1636,7 +1558,7 @@
 
     if-eqz v0, :cond_b8
 
-    .line 1055
+    .line 1050
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLottieAnimationView:Lcom/airbnb/lottie/LottieAnimationView;
 
     new-instance v2, Landroid/graphics/Rect;
@@ -1671,7 +1593,7 @@
 
     goto :goto_be
 
-    .line 1057
+    .line 1052
     :cond_b8
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLottieAnimationView:Lcom/airbnb/lottie/LottieAnimationView;
 
@@ -1679,7 +1601,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setClipBounds(Landroid/graphics/Rect;)V
 
-    .line 1059
+    .line 1054
     :goto_be
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLottieAnimationView:Lcom/airbnb/lottie/LottieAnimationView;
 
@@ -1692,14 +1614,14 @@
 .method private shutterUINewStyleSupport()Z
     .registers 3
 
-    .line 187
+    .line 182
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterUINewStyleSupport:Z
 
     if-eqz v0, :cond_18
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 188
+    .line 183
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -1710,7 +1632,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 189
+    .line 184
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p0
@@ -1730,22 +1652,16 @@
 .end method
 
 .method private stopAllAnimations()V
-    .registers 7
+    .registers 4
 
-    .line 564
+    .line 561
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToProcessingDrawable:Landroid/graphics/drawable/Drawable;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mProcessingToIdleDrawable:Landroid/graphics/drawable/Drawable;
 
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mRegularToSmallDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToSmileDrawable:Landroid/graphics/drawable/Drawable;
 
-    iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSmallToRegularDrawable:Landroid/graphics/drawable/Drawable;
-
-    iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToSmileDrawable:Landroid/graphics/drawable/Drawable;
-
-    iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSmallToSmileDrawable:Landroid/graphics/drawable/Drawable;
-
-    filled-new-array/range {v0 .. v5}, [Landroid/graphics/drawable/Drawable;
+    filled-new-array {v0, v1, v2}, [Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -1757,7 +1673,7 @@
 .method private varargs stopAnimations([Landroid/graphics/drawable/Drawable;)V
     .registers 4
 
-    .line 1495
+    .line 1384
     array-length p0, p1
 
     const/4 v0, 0x0
@@ -1769,7 +1685,7 @@
 
     if-eqz v1, :cond_b
 
-    .line 1497
+    .line 1386
     invoke-static {v1}, Lcom/transsion/camera/utils/AnimationUtils;->stopVectorAnimation(Landroid/graphics/drawable/Drawable;)Z
 
     :cond_b
@@ -1784,7 +1700,7 @@
 .method private syncShutterGuideHeightWithButton()V
     .registers 3
 
-    .line 219
+    .line 215
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
     if-eqz v0, :cond_11
@@ -1795,7 +1711,7 @@
 
     goto :goto_11
 
-    .line 222
+    .line 218
     :cond_9
     new-instance v1, Lcom/transsion/camera/app/ui/AbstractShutterUI$$ExternalSyntheticLambda1;
 
@@ -1811,10 +1727,10 @@
 .method private translateShutter(ZZ)V
     .registers 9
 
-    .line 1654
+    .line 1543
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->cancelFlipTranslateAnimator()V
 
-    .line 1656
+    .line 1545
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1823,7 +1739,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1657
+    .line 1546
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1836,12 +1752,12 @@
 
     move-result v1
 
-    .line 1659
+    .line 1548
     iget v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOrientation:I
 
     if-nez v2, :cond_2b
 
-    .line 1660
+    .line 1549
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -1856,12 +1772,12 @@
 
     neg-int v2, v2
 
-    .line 1661
+    .line 1550
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     goto :goto_39
 
-    .line 1663
+    .line 1552
     :cond_2b
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
@@ -1875,7 +1791,7 @@
 
     move-result v2
 
-    .line 1664
+    .line 1553
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     :goto_39
@@ -1889,12 +1805,12 @@
 
     const/4 v4, 0x2
 
-    .line 1668
+    .line 1557
     const-string/jumbo v5, "translationY"
 
     if-eqz p1, :cond_54
 
-    .line 1669
+    .line 1558
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     int-to-float v0, v2
@@ -1905,7 +1821,7 @@
 
     aput v0, v2, p2
 
-    .line 1670
+    .line 1559
     invoke-static {p1, v5, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
@@ -1914,13 +1830,13 @@
 
     goto :goto_68
 
-    .line 1672
+    .line 1561
     :cond_54
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1673
+    .line 1562
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     int-to-float v0, v2
@@ -1931,14 +1847,14 @@
 
     aput v1, v2, p2
 
-    .line 1674
+    .line 1563
     invoke-static {p1, v5, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFlipTranslateAnimator:Landroid/animation/ObjectAnimator;
 
-    .line 1676
+    .line 1565
     :goto_68
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFlipTranslateAnimator:Landroid/animation/ObjectAnimator;
 
@@ -1946,14 +1862,14 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 1677
+    .line 1566
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFlipTranslateAnimator:Landroid/animation/ObjectAnimator;
 
     sget-object p2, Lcom/transsion/camera/app/ui/AbstractShutterUI;->ANIMATOR_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1678
+    .line 1567
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFlipTranslateAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
@@ -1963,7 +1879,7 @@
     :cond_7c
     if-eqz p1, :cond_85
 
-    .line 1681
+    .line 1570
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     int-to-float p1, v2
@@ -1972,7 +1888,7 @@
 
     return-void
 
-    .line 1683
+    .line 1572
     :cond_85
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
@@ -1984,7 +1900,7 @@
 .method private transmitMotionEvent(Landroid/view/MotionEvent;)V
     .registers 6
 
-    .line 795
+    .line 790
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-eqz v0, :cond_79
@@ -1995,7 +1911,7 @@
 
     goto :goto_79
 
-    .line 798
+    .line 793
     :cond_9
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -2017,108 +1933,108 @@
 
     goto :goto_79
 
-    .line 800
+    .line 795
     :cond_18
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSimulateDownEvent:Z
 
     if-eqz v0, :cond_4e
 
-    .line 801
+    .line 796
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSimulateDownEvent:Z
 
-    .line 802
+    .line 797
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object p1
 
-    .line 803
+    .line 798
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->setAction(I)V
 
-    .line 804
+    .line 799
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->setFakeMotionEvent(Z)V
 
-    .line 805
+    .line 800
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 806
+    .line 801
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->setFakeMotionEvent(Z)V
 
-    .line 807
+    .line 802
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->setFakeMotionEvent(Z)V
 
-    .line 808
+    .line 803
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 809
+    .line 804
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->setFakeMotionEvent(Z)V
 
-    .line 810
+    .line 805
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v0, 0x17e
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 811
+    .line 806
     invoke-virtual {p1}, Landroid/view/MotionEvent;->recycle()V
 
     return-void
 
-    .line 813
+    .line 808
     :cond_4e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 814
+    .line 809
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     return-void
 
-    .line 819
+    .line 814
     :cond_59
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSimulateDownEvent:Z
 
-    .line 820
+    .line 815
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->setFakeMotionEvent(Z)V
 
-    .line 821
+    .line 816
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 822
+    .line 817
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->setFakeMotionEvent(Z)V
 
-    .line 823
+    .line 818
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->setFakeMotionEvent(Z)V
 
-    .line 824
+    .line 819
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 825
+    .line 820
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->setFakeMotionEvent(Z)V
@@ -2131,14 +2047,14 @@
 .method private updateFlipLayout(IZ)V
     .registers 5
 
-    .line 618
+    .line 613
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 621
+    .line 616
     :cond_5
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsVideoRecording:Z
 
@@ -2161,20 +2077,20 @@
 
     if-nez p1, :cond_2f
 
-    .line 624
+    .line 619
     :cond_19
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFadeAnim:Lcom/transsion/camera/app/common/ui/anim/FadeAnim;
 
     if-nez p1, :cond_24
 
-    .line 625
+    .line 620
     new-instance p1, Lcom/transsion/camera/app/common/ui/anim/FadeAnim;
 
     invoke-direct {p1}, Lcom/transsion/camera/app/common/ui/anim/FadeAnim;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFadeAnim:Lcom/transsion/camera/app/common/ui/anim/FadeAnim;
 
-    .line 627
+    .line 622
     :cond_24
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFadeAnim:Lcom/transsion/camera/app/common/ui/anim/FadeAnim;
 
@@ -2189,15 +2105,15 @@
     :cond_2f
     if-eqz v0, :cond_41
 
-    .line 645
+    .line 640
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFadeAnim:Lcom/transsion/camera/app/common/ui/anim/FadeAnim;
 
     if-eqz p2, :cond_38
 
-    .line 646
+    .line 641
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/ui/anim/FadeAnim;->cancelAnim()V
 
-    .line 648
+    .line 643
     :cond_38
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
@@ -2205,13 +2121,13 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 649
+    .line 644
     invoke-virtual {p2, v0}, Landroid/view/View;->setAlpha(F)V
 
     :cond_41
     const/4 p2, 0x0
 
-    .line 652
+    .line 647
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateLayout(IZ)V
 
     return-void
@@ -2220,14 +2136,14 @@
 .method private updateImageResourceByState()V
     .registers 4
 
-    .line 1343
+    .line 1260
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_d
 
-    .line 1344
+    .line 1261
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
     iget v0, v0, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->processingDrawableId:I
@@ -2236,25 +2152,8 @@
 
     return-void
 
-    .line 1346
+    .line 1263
     :cond_d
-    iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
-
-    if-ne v0, v1, :cond_1b
-
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
-
-    iget v0, v0, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleSmallDrawableId:I
-
-    if-lez v0, :cond_1b
-
-    .line 1347
-    invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setImageResource(I)V
-
-    return-void
-
-    .line 1349
-    :cond_1b
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2279,39 +2178,39 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1350
+    .line 1264
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v0}, Landroid/view/View;->isPressed()Z
 
     move-result v0
 
-    if-nez v0, :cond_46
+    if-nez v0, :cond_38
 
-    .line 1351
+    .line 1265
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
     iget v0, v0, Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;->idleDrawableId:I
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setImageResource(I)V
 
-    :cond_46
+    :cond_38
     return-void
 .end method
 
 .method private updateLayout(IZ)V
     .registers 5
 
-    .line 530
+    .line 526
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateShutterButtonLayout(IZ)V
 
-    .line 531
+    .line 527
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateShutterGuideLayout(IZ)V
 
-    .line 532
+    .line 528
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->syncShutterGuideHeightWithButton()V
 
-    .line 533
+    .line 529
     sget-object p2, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2360,18 +2259,18 @@
 .method private updateShutterButtonLayout(IZ)V
     .registers 10
 
-    .line 403
+    .line 399
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-nez v0, :cond_6
 
     goto/16 :goto_142
 
-    .line 406
+    .line 402
     :cond_6
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
-    .line 407
+    .line 403
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -2386,7 +2285,7 @@
 
     check-cast p2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 409
+    .line 405
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenFormType:I
 
     const/4 v1, 0x6
@@ -2401,7 +2300,7 @@
 
     if-ne v0, v1, :cond_a9
 
-    .line 410
+    .line 406
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2410,7 +2309,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 411
+    .line 407
     invoke-virtual {v0, v5, v5, v5, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     if-eq p1, v4, :cond_73
@@ -2421,13 +2320,13 @@
 
     const/16 p1, 0x51
 
-    .line 431
+    .line 427
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 432
+    .line 428
     iput p1, p2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 433
+    .line 429
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2447,13 +2346,13 @@
     :cond_49
     const/16 p1, 0x13
 
-    .line 424
+    .line 420
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 425
+    .line 421
     iput p1, p2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 426
+    .line 422
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2473,13 +2372,13 @@
     :cond_5e
     const/16 p1, 0x31
 
-    .line 419
+    .line 415
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 420
+    .line 416
     iput p1, p2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 421
+    .line 417
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2499,13 +2398,13 @@
     :cond_73
     const/16 p1, 0x15
 
-    .line 414
+    .line 410
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 415
+    .line 411
     iput p1, p2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 416
+    .line 412
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2520,7 +2419,7 @@
 
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 435
+    .line 431
     :goto_87
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
@@ -2536,7 +2435,7 @@
 
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 436
+    .line 432
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2551,7 +2450,7 @@
 
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 437
+    .line 433
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -2563,7 +2462,7 @@
 
     if-ne v0, p2, :cond_142
 
-    .line 439
+    .line 435
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2572,10 +2471,10 @@
 
     check-cast p2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 440
+    .line 436
     invoke-virtual {p2, v5, v5, v5, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 441
+    .line 437
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2588,7 +2487,7 @@
 
     move-result v0
 
-    .line 442
+    .line 438
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2601,15 +2500,15 @@
 
     move-result v1
 
-    .line 443
+    .line 439
     iget-boolean v6, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsVideoRecording:Z
 
     if-eqz v6, :cond_e2
 
-    .line 444
+    .line 440
     iput-boolean v5, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFlipSecondaryMenuShow:Z
 
-    .line 445
+    .line 441
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2624,7 +2523,7 @@
 
     goto :goto_101
 
-    .line 446
+    .line 442
     :cond_e2
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFlipSecondaryMenuShow:Z
 
@@ -2632,7 +2531,7 @@
 
     if-nez p1, :cond_f5
 
-    .line 448
+    .line 444
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2647,7 +2546,7 @@
 
     goto :goto_101
 
-    .line 450
+    .line 446
     :cond_f5
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
@@ -2661,12 +2560,12 @@
 
     move-result v1
 
-    .line 454
+    .line 450
     :cond_101
     :goto_101
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->cancelFlipTranslateAnimator()V
 
-    .line 455
+    .line 451
     iget-object v5, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     const/4 v6, 0x0
@@ -2681,13 +2580,13 @@
 
     const/16 p1, 0x55
 
-    .line 467
+    .line 463
     iput p1, p2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 468
+    .line 464
     iput v0, p2, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 469
+    .line 465
     iput v1, p2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     goto :goto_121
@@ -2695,16 +2594,16 @@
     :cond_119
     const/16 p1, 0x35
 
-    .line 461
+    .line 457
     iput p1, p2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 462
+    .line 458
     iput v0, p2, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 463
+    .line 459
     iput v1, p2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 471
+    .line 467
     :goto_121
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
@@ -2720,7 +2619,7 @@
 
     iput p1, p2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 472
+    .line 468
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2735,7 +2634,7 @@
 
     iput p1, p2, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 473
+    .line 469
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p0, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -2748,14 +2647,14 @@
 .method private updateShutterGuideLayout(IZ)V
     .registers 12
 
-    .line 478
+    .line 474
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 482
+    .line 478
     :cond_5
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoGuideView:Landroid/widget/ImageView;
 
@@ -2763,12 +2662,12 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setRotation(F)V
 
-    .line 483
+    .line 479
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCShotGuideView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setRotation(F)V
 
-    .line 484
+    .line 480
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCShotGuideView:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2777,7 +2676,7 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 485
+    .line 481
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoGuideView:Landroid/widget/ImageView;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2786,7 +2685,7 @@
 
     check-cast v1, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 486
+    .line 482
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLottieAnimationView:Lcom/airbnb/lottie/LottieAnimationView;
 
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2795,7 +2694,7 @@
 
     check-cast v2, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 487
+    .line 483
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2810,7 +2709,7 @@
 
     iput v3, v2, Landroid/widget/RelativeLayout$LayoutParams;->width:I
 
-    .line 489
+    .line 485
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2823,7 +2722,7 @@
 
     move-result v3
 
-    .line 490
+    .line 486
     iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2836,19 +2735,19 @@
 
     move-result v4
 
-    .line 491
+    .line 487
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    .line 492
+    .line 488
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
-    .line 493
+    .line 489
     invoke-virtual {v1, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    .line 494
+    .line 490
     invoke-virtual {v1, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
-    .line 496
+    .line 492
     iget v4, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenFormType:I
 
     const/4 v5, 0x1
@@ -2861,17 +2760,17 @@
 
     if-ne v4, v5, :cond_87
 
-    .line 497
+    .line 493
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoGuideView:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v7}, Landroid/view/View;->setRotation(F)V
 
-    .line 498
+    .line 494
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCShotGuideView:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v7}, Landroid/view/View;->setRotation(F)V
 
-    .line 499
+    .line 495
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     add-int/lit8 p1, p1, 0x5a
@@ -2885,16 +2784,16 @@
     :cond_77
     invoke-virtual {v3, p1, p2}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 500
+    .line 496
     invoke-virtual {v1, v8}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
-    .line 501
+    .line 497
     invoke-virtual {v0, v8}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    .line 503
+    .line 499
     invoke-virtual {v0, v6}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 504
+    .line 500
     invoke-virtual {v1, v6}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     goto :goto_e3
@@ -2913,12 +2812,12 @@
 
     if-ne v4, p1, :cond_b4
 
-    .line 512
+    .line 508
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p1, v8, p2}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 513
+    .line 509
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2933,7 +2832,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    .line 514
+    .line 510
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2959,27 +2858,27 @@
 
     if-ne v4, v5, :cond_e3
 
-    .line 517
+    .line 513
     :cond_ba
     invoke-virtual {v0, v8}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    .line 518
+    .line 514
     invoke-virtual {v1, v8}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
-    .line 519
+    .line 515
     iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoGuideView:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v7}, Landroid/view/View;->setRotation(F)V
 
-    .line 520
+    .line 516
     iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCShotGuideView:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v7}, Landroid/view/View;->setRotation(F)V
 
-    .line 521
+    .line 517
     iput v3, v2, Landroid/widget/RelativeLayout$LayoutParams;->width:I
 
-    .line 522
+    .line 518
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     iget v4, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenFormType:I
@@ -2993,32 +2892,32 @@
 
     goto :goto_e3
 
-    .line 508
+    .line 504
     :cond_d8
     :goto_d8
     invoke-virtual {v0, v6}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 509
+    .line 505
     invoke-virtual {v1, v6}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 510
+    .line 506
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p1, v8, p2}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 524
+    .line 520
     :cond_e3
     :goto_e3
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCShotGuideView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 525
+    .line 521
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoGuideView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 526
+    .line 522
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLottieAnimationView:Lcom/airbnb/lottie/LottieAnimationView;
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -3029,7 +2928,7 @@
 .method private updateShutterTypeImpl(IZ)V
     .registers 6
 
-    .line 1086
+    .line 1081
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3056,45 +2955,45 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1087
+    .line 1082
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterType:I
 
     if-eq v0, p1, :cond_41
 
-    .line 1088
+    .line 1083
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterType:I
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_2c
 
-    .line 1091
+    .line 1086
     iput v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
 
-    .line 1093
+    .line 1088
     :cond_2c
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz p2, :cond_33
 
-    .line 1094
+    .line 1089
     invoke-virtual {p2, v0}, Landroid/view/View;->setPressed(Z)V
 
-    .line 1096
+    .line 1091
     :cond_33
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
-    .line 1097
+    .line 1092
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->getUISpecFromType(I)Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
-    .line 1098
+    .line 1093
     invoke-direct {p0, p2, p1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->loadAnimatorDrawables(Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;)V
 
-    .line 1099
+    .line 1094
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->loadSpecToView()V
 
     :cond_41
@@ -3106,7 +3005,7 @@
 .method public getCShotButtonViewVisible()I
     .registers 1
 
-    .line 757
+    .line 752
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-nez p0, :cond_7
@@ -3115,7 +3014,7 @@
 
     return p0
 
-    .line 760
+    .line 755
     :cond_7
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
@@ -3127,7 +3026,7 @@
 .method public getIsCapturing()Z
     .registers 1
 
-    .line 1445
+    .line 1334
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsCapturing:Z
 
     return p0
@@ -3136,7 +3035,7 @@
 .method public getQVideoButtonViewVisible()I
     .registers 1
 
-    .line 765
+    .line 760
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     if-nez p0, :cond_7
@@ -3145,7 +3044,7 @@
 
     return p0
 
-    .line 768
+    .line 763
     :cond_7
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
@@ -3157,7 +3056,7 @@
 .method public getShutterType()I
     .registers 1
 
-    .line 1105
+    .line 1100
     iget p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterType:I
 
     return p0
@@ -3166,7 +3065,7 @@
 .method public getShutterTypeSelftimerOff()I
     .registers 1
 
-    .line 1115
+    .line 1110
     iget p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterTypeSelftimerOff:I
 
     return p0
@@ -3175,7 +3074,7 @@
 .method public getShutterTypeSelftimerOn()I
     .registers 1
 
-    .line 1125
+    .line 1120
     iget p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterTypeSelftimerOn:I
 
     return p0
@@ -3187,12 +3086,12 @@
 .method public hideCShotNumber()V
     .registers 1
 
-    .line 1023
+    .line 1018
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-eqz p0, :cond_7
 
-    .line 1024
+    .line 1019
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->hideCShotNumber()V
 
     :cond_7
@@ -3202,14 +3101,14 @@
 .method public hideShutterButton()V
     .registers 2
 
-    .line 1478
+    .line 1367
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz p0, :cond_9
 
     const/16 v0, 0x8
 
-    .line 1479
+    .line 1368
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_9
@@ -3219,7 +3118,7 @@
 .method public inflateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
     .registers 5
 
-    .line 194
+    .line 189
     sget v0, Lcom/transsion/camera/R$layout;->shutter_panel_shutter:I
 
     const/4 v1, 0x1
@@ -3228,7 +3127,7 @@
 
     move-result-object p1
 
-    .line 195
+    .line 190
     sget v0, Lcom/transsion/camera/R$id;->shutter_button:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -3239,17 +3138,17 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
-    .line 196
+    .line 191
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealWithoutAnimation(Landroid/view/View;)V
 
-    .line 197
+    .line 192
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 198
+    .line 193
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
@@ -3260,14 +3159,14 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setScreenFormType(I)V
 
-    .line 199
+    .line 194
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCurrentModeName:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->updateCurrentMode(Ljava/lang/String;)V
 
-    .line 200
+    .line 195
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->isTalkBackEnabled(Landroid/content/Context;)Z
@@ -3276,12 +3175,12 @@
 
     if-eqz p1, :cond_3a
 
-    .line 201
+    .line 196
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 203
+    .line 198
     :cond_3a
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
@@ -3289,7 +3188,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->updateOrientation(I)V
 
-    .line 205
+    .line 200
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getAsyncInflater()Landroidx/asynclayoutinflater/view/AsyncLayoutInflater;
@@ -3306,23 +3205,32 @@
 
     const/4 p1, 0x0
 
-    .line 212
+    .line 207
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOldValue:Z
 
-    .line 213
+    .line 208
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    if-eqz p1, :cond_5f
+    if-eqz p1, :cond_68
 
-    .line 214
+    .line 209
+    const-string p2, "key_smooth_zoom_ui5"
+
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
+
+    invoke-virtual {p1, p2, v0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
+
+    .line 210
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
+
     const-string p2, "key_focal_length_zoom_state"
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {p1, p2, v0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 216
-    :cond_5f
+    .line 212
+    :cond_68
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     return-object p0
@@ -3331,7 +3239,7 @@
 .method public isPressed()Z
     .registers 1
 
-    .line 1491
+    .line 1380
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz p0, :cond_9
@@ -3351,7 +3259,7 @@
 .method public isRecordingAndOrientation(ZI)V
     .registers 6
 
-    .line 658
+    .line 653
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3376,7 +3284,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 660
+    .line 655
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -3389,7 +3297,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 661
+    .line 656
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v0
@@ -3403,7 +3311,7 @@
     :cond_31
     if-eqz p1, :cond_36
 
-    .line 665
+    .line 660
     iput p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mRecordingOrientation:I
 
     goto :goto_39
@@ -3411,14 +3319,14 @@
     :cond_36
     const/4 p2, -0x1
 
-    .line 667
+    .line 662
     iput p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mRecordingOrientation:I
 
-    .line 669
+    .line 664
     :goto_39
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsVideoRecording:Z
 
-    .line 670
+    .line 665
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOrientation:I
 
     const/4 p2, 0x0
@@ -3431,14 +3339,14 @@
 .method public isUIProcessingAndOrientation(ZI)V
     .registers 6
 
-    .line 675
+    .line 670
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenFormType:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_2d
 
-    .line 676
+    .line 671
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3463,13 +3371,13 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 678
+    .line 673
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterUIProcessing:Z
 
-    .line 679
+    .line 674
     iput p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterUIProcessingOrientation:I
 
-    .line 680
+    .line 675
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOrientation:I
 
     const/4 p2, 0x0
@@ -3483,7 +3391,7 @@
 .method public loadAfterPreviewStarted()V
     .registers 3
 
-    .line 540
+    .line 536
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "loadAfterPreviewStarted."
@@ -3492,10 +3400,10 @@
 
     const/4 v0, 0x1
 
-    .line 541
+    .line 537
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsPreviewStarted:Z
 
-    .line 542
+    .line 538
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->loadAnimatorDrawables()V
 
     return-void
@@ -3504,12 +3412,12 @@
 .method public notifyCSNotSupport()V
     .registers 1
 
-    .line 1003
+    .line 998
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-eqz p0, :cond_7
 
-    .line 1004
+    .line 999
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->notifyCSNotSupport()V
 
     :cond_7
@@ -3519,24 +3427,24 @@
 .method public notifyContinuousShotStop()V
     .registers 3
 
-    .line 1065
+    .line 1060
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-eqz v0, :cond_f
 
-    .line 1066
+    .line 1061
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
     if-nez v0, :cond_f
 
-    .line 1067
+    .line 1062
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->notifyContinuousShotStop()V
 
-    .line 1069
+    .line 1064
     :cond_f
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
@@ -3552,7 +3460,7 @@
 
     const/4 p0, 0x0
 
-    .line 1070
+    .line 1065
     invoke-virtual {v0, p0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_1f
@@ -3562,14 +3470,14 @@
 .method public notifyLoseFocus()V
     .registers 2
 
-    .line 1599
+    .line 1488
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-eqz p0, :cond_8
 
     const/4 v0, 0x1
 
-    .line 1600
+    .line 1489
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->resetUIState(Z)V
 
     :cond_8
@@ -3579,7 +3487,7 @@
 .method public onContinuousShotProgress(II)V
     .registers 4
 
-    .line 1589
+    .line 1478
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mMainHandler:Landroid/os/Handler;
 
     const/4 v0, 0x1
@@ -3596,7 +3504,7 @@
 .method public onContinuousShotStop()V
     .registers 2
 
-    .line 1594
+    .line 1483
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mMainHandler:Landroid/os/Handler;
 
     const/4 v0, 0x2
@@ -3613,7 +3521,7 @@
 .method public onOrientationChanged(IZ)V
     .registers 5
 
-    .line 571
+    .line 566
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -3634,16 +3542,16 @@
 
     goto :goto_47
 
-    .line 575
+    .line 570
     :cond_12
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOrientation:I
 
     iput v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLastOrientation:I
 
-    .line 576
+    .line 571
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOrientation:I
 
-    .line 577
+    .line 572
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterUIProcessing:Z
 
     if-eqz v0, :cond_1e
@@ -3653,17 +3561,17 @@
     :cond_1e
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateOrientation(IZ)V
 
-    .line 578
+    .line 573
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->syncShutterGuideHeightWithButton()V
 
-    .line 579
+    .line 574
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenFormType:I
 
     const/4 p2, 0x1
 
     if-ne p1, p2, :cond_47
 
-    .line 580
+    .line 575
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->getQVideoButtonViewVisible()I
 
     move-result p1
@@ -3674,12 +3582,12 @@
 
     if-nez p1, :cond_38
 
-    .line 581
+    .line 576
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->resetUIState()V
 
-    .line 583
+    .line 578
     :cond_38
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->getCShotButtonViewVisible()I
 
@@ -3691,7 +3599,7 @@
 
     if-nez p1, :cond_47
 
-    .line 584
+    .line 579
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->resetUIState(Z)V
@@ -3704,7 +3612,7 @@
 .method public onPause()V
     .registers 5
 
-    .line 700
+    .line 695
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     const/4 v1, 0x1
@@ -3713,7 +3621,7 @@
 
     if-eqz v0, :cond_3e
 
-    .line 701
+    .line 696
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
     if-eqz v0, :cond_15
@@ -3722,14 +3630,14 @@
 
     if-ne v0, v1, :cond_15
 
-    .line 702
+    .line 697
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/transsion/camera/utils/AnimationUtils;->stopVectorAnimation(Landroid/graphics/drawable/Drawable;)Z
 
-    .line 704
+    .line 699
     :cond_15
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3737,103 +3645,103 @@
 
     invoke-static {v0, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 705
+    .line 700
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setPressed(Z)V
 
-    .line 706
+    .line 701
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setIsCapturing(Z)V
 
-    .line 707
+    .line 702
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setIsQuickRecording(Z)V
 
-    .line 708
+    .line 703
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setSelfTimerBegin(Z)V
 
-    .line 709
+    .line 704
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setPanoramaCaptureBegin(Z)V
 
-    .line 710
+    .line 705
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->cancelFlipTranslateAnimator()V
 
-    .line 711
+    .line 706
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 713
+    .line 708
     :cond_3e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-eqz v0, :cond_45
 
-    .line 714
+    .line 709
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->pause()V
 
-    .line 716
+    .line 711
     :cond_45
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsVideoRecording:Z
 
     if-eqz v0, :cond_55
 
-    .line 717
+    .line 712
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsVideoRecording:Z
 
     const/4 v0, 0x7
 
-    .line 718
+    .line 713
     iget v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenFormType:I
 
     if-ne v0, v3, :cond_55
 
-    .line 719
+    .line 714
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOrientation:I
 
     invoke-direct {p0, v0, v2}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateLayout(IZ)V
 
-    .line 722
+    .line 717
     :cond_55
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsResumed:Z
 
-    .line 723
+    .line 718
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsCapturing:Z
 
-    .line 724
+    .line 719
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsQuickRecording:Z
 
-    .line 725
+    .line 720
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mPanoramaCaptureBegin:Z
 
-    .line 726
+    .line 721
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSelfTimerBegin:Z
 
-    .line 727
+    .line 722
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLongPressed:Z
 
-    .line 728
+    .line 723
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsSwipeEnd:Z
 
-    .line 729
+    .line 724
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSimulateDownEvent:Z
 
-    .line 730
+    .line 725
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCsViewAnimationStart:Z
 
-    .line 731
+    .line 726
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsContinuousShooting:Z
 
-    .line 732
+    .line 727
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsSuperNightLiteCapture:Z
 
     return-void
@@ -3844,18 +3752,18 @@
 
     const/4 v0, 0x1
 
-    .line 686
+    .line 681
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsResumed:Z
 
-    .line 687
+    .line 682
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-eqz v1, :cond_a
 
-    .line 688
+    .line 683
     invoke-virtual {v1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 691
+    .line 686
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
@@ -3873,7 +3781,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCurrentModeName:Ljava/lang/String;
 
-    .line 692
+    .line 687
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -3884,14 +3792,14 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCurrentModeName:Ljava/lang/String;
 
-    .line 693
+    .line 688
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2f
 
-    .line 694
+    .line 689
     :cond_2a
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
@@ -3904,36 +3812,36 @@
 .method public onScreenFormChanged(IZ)V
     .registers 4
 
-    .line 1628
+    .line 1517
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenFormType:I
 
-    .line 1629
+    .line 1518
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-eqz v0, :cond_9
 
-    .line 1630
+    .line 1519
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->onScreenFormChanged(I)V
 
-    .line 1632
+    .line 1521
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     if-eqz v0, :cond_10
 
-    .line 1633
+    .line 1522
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->onScreenFormChanged(I)V
 
-    .line 1635
+    .line 1524
     :cond_10
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz v0, :cond_17
 
-    .line 1636
+    .line 1525
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->onScreenFormChanged(IZ)V
 
-    .line 1638
+    .line 1527
     :cond_17
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOrientation:I
 
@@ -3945,7 +3853,7 @@
 .method protected playShutterUIAnimation()V
     .registers 2
 
-    .line 1307
+    .line 1224
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -3954,15 +3862,15 @@
 
     check-cast p0, Landroid/graphics/drawable/AnimationDrawable;
 
-    .line 1308
+    .line 1225
     invoke-virtual {p0}, Landroid/graphics/drawable/AnimationDrawable;->stop()V
 
     const/4 v0, 0x1
 
-    .line 1309
+    .line 1226
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/AnimationDrawable;->setOneShot(Z)V
 
-    .line 1310
+    .line 1227
     invoke-virtual {p0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
 
     return-void
@@ -3971,7 +3879,7 @@
 .method public setContinuousShotEnd(Z)V
     .registers 3
 
-    .line 1695
+    .line 1584
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -3980,7 +3888,7 @@
 
     if-eqz v0, :cond_d
 
-    .line 1696
+    .line 1585
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setEnabled(Z)V
@@ -3992,7 +3900,7 @@
 .method public setEnable(Z)V
     .registers 5
 
-    .line 1467
+    .line 1356
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4013,27 +3921,27 @@
 
     if-eqz p1, :cond_23
 
-    .line 1468
+    .line 1357
     iget v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFocalLengthZoomSate:I
 
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_23
 
-    .line 1469
+    .line 1358
     const-string p0, "Shutter setEnable return for focal length zoom dragging"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1472
+    .line 1361
     :cond_23
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz p0, :cond_2a
 
-    .line 1473
+    .line 1362
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setEnabled(Z)V
 
     :cond_2a
@@ -4043,7 +3951,7 @@
 .method public setIsCameraSwitching(Z)V
     .registers 2
 
-    .line 345
+    .line 341
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsCameraSwitching:Z
 
     return-void
@@ -4052,15 +3960,15 @@
 .method public setIsCapturing(Z)V
     .registers 2
 
-    .line 1437
+    .line 1326
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsCapturing:Z
 
-    .line 1438
+    .line 1327
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz p0, :cond_9
 
-    .line 1439
+    .line 1328
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setIsCapturing(Z)V
 
     :cond_9
@@ -4070,7 +3978,7 @@
 .method public setIsContinuousShooting(Z)V
     .registers 2
 
-    .line 1450
+    .line 1339
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsContinuousShooting:Z
 
     return-void
@@ -4079,7 +3987,7 @@
 .method public setIsPhotoSizeChanging(Z)V
     .registers 2
 
-    .line 350
+    .line 346
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsPhotoSizeChanging:Z
 
     return-void
@@ -4088,32 +3996,32 @@
 .method public setIsQuickVideoRecording(Z)V
     .registers 3
 
-    .line 1606
+    .line 1495
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsQuickRecording:Z
 
     if-eqz p1, :cond_7
 
     const/4 v0, 0x1
 
-    .line 1608
+    .line 1497
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsSwipeEnd:Z
 
-    .line 1610
+    .line 1499
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     if-eqz v0, :cond_e
 
-    .line 1611
+    .line 1500
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->setIsQuickRecording(Z)V
 
-    .line 1613
+    .line 1502
     :cond_e
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz p0, :cond_15
 
-    .line 1614
+    .line 1503
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setIsQuickRecording(Z)V
 
     :cond_15
@@ -4123,7 +4031,7 @@
 .method public setOnShutterListener(Lcom/transsion/camera/app/common/IAppUIListener$IShutterListener;)V
     .registers 2
 
-    .line 737
+    .line 732
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterListener:Lcom/transsion/camera/app/common/IAppUIListener$IShutterListener;
 
     return-void
@@ -4132,15 +4040,15 @@
 .method public setPanoramaCaptureBegin(Z)V
     .registers 2
 
-    .line 1620
+    .line 1509
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mPanoramaCaptureBegin:Z
 
-    .line 1621
+    .line 1510
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz p0, :cond_9
 
-    .line 1622
+    .line 1511
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setPanoramaCaptureBegin(Z)V
 
     :cond_9
@@ -4150,15 +4058,15 @@
 .method public setSelfTimerBegin(Z)V
     .registers 2
 
-    .line 1460
+    .line 1349
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSelfTimerBegin:Z
 
-    .line 1461
+    .line 1350
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz p0, :cond_9
 
-    .line 1462
+    .line 1351
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setSelfTimerBegin(Z)V
 
     :cond_9
@@ -4168,7 +4076,7 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 791
+    .line 786
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-void
@@ -4177,7 +4085,7 @@
 .method public setShutterTypeSelftimerOff(I)V
     .registers 2
 
-    .line 1110
+    .line 1105
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterTypeSelftimerOff:I
 
     return-void
@@ -4186,7 +4094,7 @@
 .method public setShutterTypeSelftimerOn(I)V
     .registers 2
 
-    .line 1120
+    .line 1115
     iput p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterTypeSelftimerOn:I
 
     return-void
@@ -4195,7 +4103,7 @@
 .method public setSuperNightLiteCaptureState(Z)V
     .registers 2
 
-    .line 1455
+    .line 1344
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsSuperNightLiteCapture:Z
 
     return-void
@@ -4204,7 +4112,7 @@
 .method public setSwipeOperationListener(Lcom/transsion/camera/app/common/IAppUIListener$ISwipeOperationListener;)V
     .registers 2
 
-    .line 742
+    .line 737
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSwipeOperationListener:Lcom/transsion/camera/app/common/IAppUIListener$ISwipeOperationListener;
 
     return-void
@@ -4215,10 +4123,10 @@
 
     const/4 v0, 0x1
 
-    .line 395
+    .line 391
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSimulateDownEvent:Z
 
-    .line 396
+    .line 392
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     new-instance v1, Lcom/transsion/camera/app/ui/AbstractShutterUI$OnShutterButtonListenerImpl;
@@ -4229,7 +4137,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setOnShutterListener(Lcom/transsion/camera/app/ui/view/ShutterButtonView$OnShutterButtonListener;)V
 
-    .line 397
+    .line 393
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     new-instance v1, Lcom/transsion/camera/app/ui/AbstractShutterUI$OnShutterMotionEventListener;
@@ -4238,10 +4146,10 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->setMotionEventListener(Lcom/transsion/camera/app/ui/view/ShutterButtonView$IMotionEventListener;)V
 
-    .line 398
+    .line 394
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->loadSpecToView()V
 
-    .line 399
+    .line 395
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOrientation:I
 
     const/4 v1, 0x0
@@ -4254,23 +4162,23 @@
 .method public showCShotNumber()V
     .registers 3
 
-    .line 1010
+    .line 1005
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz v0, :cond_9
 
     const/16 v1, 0x8
 
-    .line 1011
+    .line 1006
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1013
+    .line 1008
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-eqz p0, :cond_10
 
-    .line 1014
+    .line 1009
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->showCShotNumber()V
 
     :cond_10
@@ -4280,14 +4188,14 @@
 .method public showShutterButton()V
     .registers 2
 
-    .line 1484
+    .line 1373
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz p0, :cond_8
 
     const/4 v0, 0x0
 
-    .line 1485
+    .line 1374
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_8
@@ -4297,7 +4205,7 @@
 .method public stopQuickVideo()V
     .registers 4
 
-    .line 747
+    .line 742
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz v0, :cond_d
@@ -4310,16 +4218,16 @@
 
     const/4 v1, 0x0
 
-    .line 748
+    .line 743
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 750
+    .line 745
     :cond_d
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     if-eqz p0, :cond_14
 
-    .line 751
+    .line 746
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->stopQuickVideo()V
 
     :cond_14
@@ -4329,7 +4237,7 @@
 .method public transitionToIdle()V
     .registers 7
 
-    .line 1241
+    .line 1169
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
 
     const/4 v1, 0x1
@@ -4345,7 +4253,7 @@
     :cond_8
     move v0, v2
 
-    .line 1242
+    .line 1170
     :goto_9
     sget-object v3, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -4373,19 +4281,19 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1243
+    .line 1171
     iget v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_32
 
-    .line 1245
+    .line 1173
     iput v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
 
     return-void
 
-    .line 1249
+    .line 1177
     :cond_32
     iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mProcessingToIdleDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -4403,13 +4311,13 @@
 
     if-eqz v3, :cond_59
 
-    .line 1251
+    .line 1179
     iput v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
 
-    .line 1252
+    .line 1180
     invoke-direct {p0, v4}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1253
+    .line 1181
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -4418,85 +4326,74 @@
 
     check-cast p0, Landroid/graphics/drawable/AnimationDrawable;
 
-    .line 1254
+    .line 1182
     invoke-virtual {p0}, Landroid/graphics/drawable/AnimationDrawable;->stop()V
 
-    .line 1255
+    .line 1183
     invoke-virtual {p0, v1}, Landroid/graphics/drawable/AnimationDrawable;->setOneShot(Z)V
 
-    .line 1256
+    .line 1184
     invoke-virtual {p0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
 
     return-void
 
-    .line 1259
+    .line 1187
     :cond_59
     iput v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
 
-    .line 1260
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
+    .line 1188
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
-    if-eqz v2, :cond_8a
+    if-eqz v1, :cond_82
 
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
-    if-nez v2, :cond_64
+    if-nez v1, :cond_64
 
-    goto :goto_8a
+    goto :goto_82
 
-    .line 1264
+    .line 1192
     :cond_64
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->getDrawable()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lcom/transsion/camera/utils/AnimationUtils;->stopVectorAnimation(Landroid/graphics/drawable/Drawable;)Z
+    invoke-static {v1}, Lcom/transsion/camera/utils/AnimationUtils;->stopVectorAnimation(Landroid/graphics/drawable/Drawable;)Z
 
-    .line 1266
-    iget v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
+    if-eqz v0, :cond_7f
 
-    if-ne v2, v1, :cond_73
-
-    .line 1267
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateImageResourceByState()V
-
-    return-void
-
-    :cond_73
-    if-eqz v0, :cond_87
-
-    .line 1271
+    .line 1194
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mProcessingToIdleDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v0, :cond_87
+    if-eqz v0, :cond_7f
 
-    .line 1272
+    .line 1195
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1273
+    .line 1196
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mProcessingToIdleDrawable:Landroid/graphics/drawable/Drawable;
 
-    new-instance v1, Lcom/transsion/camera/app/ui/AbstractShutterUI$8;
+    new-instance v1, Lcom/transsion/camera/app/ui/AbstractShutterUI$6;
 
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$8;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$6;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/AnimationUtils;->startVectorAnimation(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Animatable2$AnimationCallback;)Z
 
     return-void
 
-    .line 1283
-    :cond_87
+    .line 1206
+    :cond_7f
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateImageResourceByState()V
 
-    :cond_8a
-    :goto_8a
+    :cond_82
+    :goto_82
     return-void
 .end method
 
 .method public transitionToPressed(Z)V
     .registers 3
 
-    .line 1335
+    .line 1252
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
     if-eqz v0, :cond_11
@@ -4507,11 +4404,11 @@
 
     goto :goto_11
 
-    .line 1338
+    .line 1255
     :cond_9
     invoke-virtual {v0, p1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 1339
+    .line 1256
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->drawableStateChanged()V
@@ -4524,7 +4421,7 @@
 .method public transitionToProcessing()V
     .registers 6
 
-    .line 1201
+    .line 1129
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
 
     const/4 v1, 0x1
@@ -4538,7 +4435,7 @@
     :cond_7
     const/4 v0, 0x0
 
-    .line 1202
+    .line 1130
     :goto_8
     sget-object v2, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -4566,10 +4463,10 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1203
+    .line 1131
     iput v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
 
-    .line 1204
+    .line 1132
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
     if-eqz v3, :cond_8c
@@ -4580,7 +4477,7 @@
 
     goto :goto_8c
 
-    .line 1207
+    .line 1135
     :cond_34
     invoke-virtual {v3}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -4588,29 +4485,29 @@
 
     invoke-virtual {v3}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1208
+    .line 1136
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1209
+    .line 1137
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1211
+    .line 1139
     iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToProcessingDrawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v4, v3, Landroid/graphics/drawable/AnimationDrawable;
 
     if-eqz v4, :cond_62
 
-    .line 1212
+    .line 1140
     invoke-direct {p0, v3}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1213
+    .line 1141
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -4619,18 +4516,18 @@
 
     check-cast p0, Landroid/graphics/drawable/AnimationDrawable;
 
-    .line 1214
+    .line 1142
     invoke-virtual {p0}, Landroid/graphics/drawable/AnimationDrawable;->stop()V
 
-    .line 1215
+    .line 1143
     invoke-virtual {p0, v1}, Landroid/graphics/drawable/AnimationDrawable;->setOneShot(Z)V
 
-    .line 1216
+    .line 1144
     invoke-virtual {p0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
 
     return-void
 
-    .line 1220
+    .line 1148
     :cond_62
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->getDrawable()Landroid/graphics/drawable/Drawable;
 
@@ -4642,249 +4539,27 @@
 
     if-eqz v3, :cond_75
 
-    .line 1222
+    .line 1150
     const-string/jumbo v3, "transitionToProcessing, cancel Animation"
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1223
+    .line 1151
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setEnable(Z)V
 
     :cond_75
     if-eqz v0, :cond_89
 
-    .line 1226
+    .line 1154
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToProcessingDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_89
 
-    .line 1227
+    .line 1155
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1228
+    .line 1156
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToProcessingDrawable:Landroid/graphics/drawable/Drawable;
-
-    new-instance v1, Lcom/transsion/camera/app/ui/AbstractShutterUI$7;
-
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$7;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
-
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/AnimationUtils;->startVectorAnimation(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Animatable2$AnimationCallback;)Z
-
-    return-void
-
-    .line 1235
-    :cond_89
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateImageResourceByState()V
-
-    :cond_8c
-    :goto_8c
-    return-void
-.end method
-
-.method public transitionToRegular()V
-    .registers 7
-
-    .line 1173
-    iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    if-eqz v0, :cond_8
-
-    move v0, v1
-
-    goto :goto_9
-
-    :cond_8
-    move v0, v2
-
-    .line 1174
-    :goto_9
-    sget-object v3, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v5, "transitionToRegular, state: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v5, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v5, " --> "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 1175
-    iput v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
-
-    .line 1176
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
-
-    if-eqz v2, :cond_5f
-
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
-
-    if-nez v2, :cond_35
-
-    goto :goto_5f
-
-    .line 1180
-    :cond_35
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/transsion/camera/utils/AnimationUtils;->stopVectorAnimation(Landroid/graphics/drawable/Drawable;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_48
-
-    .line 1182
-    const-string/jumbo v2, "transitionToRegular, cancel Animation"
-
-    invoke-static {v3, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 1183
-    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setEnable(Z)V
-
-    :cond_48
-    if-eqz v0, :cond_5c
-
-    .line 1186
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSmallToRegularDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_5c
-
-    .line 1187
-    invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 1188
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSmallToRegularDrawable:Landroid/graphics/drawable/Drawable;
-
-    new-instance v1, Lcom/transsion/camera/app/ui/AbstractShutterUI$6;
-
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$6;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
-
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/AnimationUtils;->startVectorAnimation(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Animatable2$AnimationCallback;)Z
-
-    return-void
-
-    .line 1195
-    :cond_5c
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateImageResourceByState()V
-
-    :cond_5f
-    :goto_5f
-    return-void
-.end method
-
-.method public transitionToSmall()V
-    .registers 6
-
-    .line 1134
-    iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_7
-
-    move v0, v1
-
-    goto :goto_8
-
-    :cond_7
-    const/4 v0, 0x0
-
-    .line 1135
-    :goto_8
-    sget-object v2, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "transitionToSmall, state: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v4, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v4, " --> "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 1136
-    iput v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
-
-    .line 1137
-    iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
-
-    if-eqz v3, :cond_5e
-
-    iget-object v3, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
-
-    if-nez v3, :cond_34
-
-    goto :goto_5e
-
-    .line 1141
-    :cond_34
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/transsion/camera/utils/AnimationUtils;->stopVectorAnimation(Landroid/graphics/drawable/Drawable;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_47
-
-    .line 1143
-    const-string/jumbo v3, "transitionToSmall, cancel Animation"
-
-    invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 1144
-    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setEnable(Z)V
-
-    :cond_47
-    if-eqz v0, :cond_5b
-
-    .line 1147
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mRegularToSmallDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_5b
-
-    .line 1148
-    invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 1149
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mRegularToSmallDrawable:Landroid/graphics/drawable/Drawable;
 
     new-instance v1, Lcom/transsion/camera/app/ui/AbstractShutterUI$5;
 
@@ -4894,19 +4569,19 @@
 
     return-void
 
-    .line 1167
-    :cond_5b
+    .line 1163
+    :cond_89
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateImageResourceByState()V
 
-    :cond_5e
-    :goto_5e
+    :cond_8c
+    :goto_8c
     return-void
 .end method
 
 .method public transitionToSmile()V
     .registers 4
 
-    .line 1289
+    .line 1212
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4921,85 +4596,51 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v2, " mSizeState = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1290
+    .line 1213
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_31
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_22
 
-    goto :goto_4f
+    goto :goto_31
 
-    .line 1293
-    :cond_2c
-    iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x2
-
-    if-ne v0, v1, :cond_41
-
-    .line 1294
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSmallToSmileDrawable:Landroid/graphics/drawable/Drawable;
-
-    instance-of v1, v0, Landroid/graphics/drawable/AnimationDrawable;
-
-    if-eqz v1, :cond_4f
-
-    .line 1295
-    iput v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
-
-    .line 1296
-    invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 1297
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->playShutterUIAnimation()V
-
-    return-void
-
-    .line 1299
-    :cond_41
+    .line 1216
+    :cond_22
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIdleToSmileDrawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v1, v0, Landroid/graphics/drawable/AnimationDrawable;
 
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_31
 
-    .line 1300
-    iput v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
+    const/4 v1, 0x2
 
-    .line 1301
+    .line 1217
+    iput v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mDrawableState:I
+
+    .line 1218
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1302
+    .line 1219
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->playShutterUIAnimation()V
 
-    :cond_4f
-    :goto_4f
+    :cond_31
+    :goto_31
     return-void
 .end method
 
 .method public transitionToVoice()V
     .registers 5
 
-    .line 1315
+    .line 1232
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5014,33 +4655,25 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v2, " mSizeState = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSizeState:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1316
+    .line 1233
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mUISpec:Lcom/transsion/camera/app/ui/IShutterUI$ShutterUISpec;
 
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_55
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_22
 
-    goto :goto_5f
+    goto :goto_55
 
-    .line 1319
-    :cond_2c
+    .line 1236
+    :cond_22
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -5051,19 +4684,19 @@
 
     const v1, 0x3f666666    # 0.9f
 
-    .line 1320
+    .line 1237
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 1321
+    .line 1238
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     const-wide/16 v1, 0x50
 
-    .line 1322
+    .line 1239
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -5076,7 +4709,7 @@
 
     invoke-direct {v1, v2, v3, v2, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
-    .line 1323
+    .line 1240
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -5085,36 +4718,36 @@
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
 
-    .line 1324
+    .line 1241
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
-    .line 1330
+    .line 1247
     invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    :cond_5f
-    :goto_5f
+    :cond_55
+    :goto_55
     return-void
 .end method
 
 .method public unInit()V
-    .registers 3
+    .registers 4
 
     const/4 v0, 0x1
 
-    .line 547
+    .line 543
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mSimulateDownEvent:Z
 
-    .line 548
+    .line 544
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFadeAnim:Lcom/transsion/camera/app/common/ui/anim/FadeAnim;
 
     if-eqz v0, :cond_a
 
-    .line 549
+    .line 545
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/anim/FadeAnim;->cancelAnim()V
 
-    .line 551
+    .line 547
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mMainHandler:Landroid/os/Handler;
 
@@ -5122,14 +4755,14 @@
 
     const/4 v1, 0x0
 
-    .line 552
+    .line 548
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 554
+    .line 550
     :cond_12
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->stopAllAnimations()V
 
-    .line 555
+    .line 551
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -5140,7 +4773,7 @@
 
     if-eq v1, v0, :cond_27
 
-    .line 556
+    .line 552
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object v0
@@ -5149,35 +4782,44 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ModuleTransferManager;->unregisterTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
 
-    .line 558
+    .line 554
     :cond_27
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_3b
 
-    .line 559
+    .line 555
+    const-string v1, "key_smooth_zoom_ui5"
+
+    iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
+
+    invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
+
+    .line 556
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
+
     const-string v1, "key_focal_length_zoom_state"
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {v0, v1, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    :cond_32
+    :cond_3b
     return-void
 .end method
 
 .method public updateCurrentMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 387
+    .line 383
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCurrentModeName:Ljava/lang/String;
 
-    .line 388
+    .line 384
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz p0, :cond_9
 
-    .line 389
+    .line 385
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->updateCurrentMode(Ljava/lang/String;)V
 
     :cond_9
@@ -5187,7 +4829,7 @@
 .method public updateFlipSecondaryMenuState(ZZ)V
     .registers 6
 
-    .line 1643
+    .line 1532
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5228,18 +4870,18 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1646
+    .line 1535
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFlipSecondaryMenuShow:Z
 
     if-ne v0, p1, :cond_38
 
     const/4 p2, 0x0
 
-    .line 1649
+    .line 1538
     :cond_38
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mFlipSecondaryMenuShow:Z
 
-    .line 1650
+    .line 1539
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->translateShutter(ZZ)V
 
     return-void
@@ -5248,7 +4890,7 @@
 .method protected updateLayoutParams(Landroid/view/View;ILandroid/view/ViewGroup;)V
     .registers 4
 
-    .line 241
+    .line 237
     sget p2, Lcom/transsion/camera/R$id;->shutter_panel_root:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -5259,7 +4901,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelRoot:Landroid/view/ViewGroup;
 
-    .line 242
+    .line 238
     sget p2, Lcom/transsion/camera/R$id;->continuous_shutter_button:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -5270,7 +4912,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
-    .line 243
+    .line 239
     sget p2, Lcom/transsion/camera/R$id;->quick_video_shutter_button:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -5281,7 +4923,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
-    .line 244
+    .line 240
     sget p2, Lcom/transsion/camera/R$id;->shutter_panel_guide_container:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -5292,7 +4934,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    .line 246
+    .line 242
     sget p2, Lcom/transsion/camera/R$id;->shutter_panel_guide_layout:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -5303,7 +4945,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
-    .line 247
+    .line 243
     sget p3, Lcom/transsion/camera/R$id;->continuous_shot_guide_view:I
 
     invoke-virtual {p2, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -5314,7 +4956,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mCShotGuideView:Landroid/widget/ImageView;
 
-    .line 248
+    .line 244
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterPanelGuideLayout:Landroid/widget/RelativeLayout;
 
     sget p3, Lcom/transsion/camera/R$id;->quick_video_guide_view:I
@@ -5327,7 +4969,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoGuideView:Landroid/widget/ImageView;
 
-    .line 249
+    .line 245
     sget p2, Lcom/transsion/camera/R$id;->shutter_panel_guide_anim:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -5338,38 +4980,38 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mLottieAnimationView:Lcom/airbnb/lottie/LottieAnimationView;
 
-    .line 250
+    .line 246
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->initLottieView(Lcom/airbnb/lottie/LottieAnimationView;)V
 
-    .line 252
+    .line 248
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mICShotButtonOperationControl:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView$ICShotButtonOperationControl;
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->setCShotButtonOperationControl(Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView$ICShotButtonOperationControl;)V
 
-    .line 253
+    .line 249
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->setScreenManager(Lcom/transsion/camera/app/ui/ScreenManager;)V
 
-    .line 254
+    .line 250
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->setScreenManager(Lcom/transsion/camera/app/ui/ScreenManager;)V
 
-    .line 255
+    .line 251
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIQVButtonOperationControl:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView$IQVButtonOperationControl;
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->setQVButtonOperationControl(Lcom/transsion/camera/app/ui/view/QuickVideoButtonView$IQVButtonOperationControl;)V
 
-    .line 256
+    .line 252
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -5380,7 +5022,7 @@
 
     if-eq p2, p1, :cond_83
 
-    .line 257
+    .line 253
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object p1
@@ -5389,7 +5031,7 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/ModuleTransferManager;->registerTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
 
-    .line 260
+    .line 256
     :cond_83
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
@@ -5399,7 +5041,7 @@
 
     invoke-virtual {p1, p2, p3}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->updateLayoutParams(II)V
 
-    .line 261
+    .line 257
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     iget p2, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOrientation:I
@@ -5408,17 +5050,17 @@
 
     invoke-virtual {p1, p2, p3}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->updateLayoutParams(II)V
 
-    .line 263
+    .line 259
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->ringScreenLightUpdateUI()V
 
-    .line 264
+    .line 260
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOrientation:I
 
     const/4 p2, 0x0
 
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateShutterGuideLayout(IZ)V
 
-    .line 265
+    .line 261
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->syncShutterGuideHeightWithButton()V
 
     return-void
@@ -5427,12 +5069,12 @@
 .method public updateOrientation(IZ)V
     .registers 6
 
-    .line 591
+    .line 586
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsVideoRecording:Z
 
     if-eqz v0, :cond_7
 
-    .line 592
+    .line 587
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mRecordingOrientation:I
 
     goto :goto_8
@@ -5440,34 +5082,34 @@
     :cond_7
     move v0, p1
 
-    .line 596
+    .line 591
     :goto_8
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mShutterButtonView:Lcom/transsion/camera/app/ui/view/ShutterButtonView;
 
     if-eqz v1, :cond_f
 
-    .line 597
+    .line 592
     invoke-virtual {v1, p1}, Lcom/transsion/camera/app/ui/view/ShutterButtonView;->updateOrientation(I)V
 
-    .line 599
+    .line 594
     :cond_f
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mContinuousShutterButtonView:Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     if-eqz v1, :cond_16
 
-    .line 600
+    .line 595
     invoke-virtual {v1, p1}, Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;->updateOrientation(I)V
 
-    .line 602
+    .line 597
     :cond_16
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mQuickVideoButtonView:Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;
 
     if-eqz v1, :cond_1d
 
-    .line 603
+    .line 598
     invoke-virtual {v1, p1}, Lcom/transsion/camera/app/ui/view/QuickVideoButtonView;->updateOrientation(I)V
 
-    .line 605
+    .line 600
     :cond_1d
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
@@ -5479,7 +5121,7 @@
 
     if-ne v2, v1, :cond_3a
 
-    .line 606
+    .line 601
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mIsVideoRecording:Z
 
     if-eqz p1, :cond_35
@@ -5500,12 +5142,12 @@
     :cond_35
     const/4 p1, 0x0
 
-    .line 609
+    .line 604
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateLayout(IZ)V
 
     return-void
 
-    .line 610
+    .line 605
     :cond_3a
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
@@ -5517,12 +5159,12 @@
 
     if-ne v2, v1, :cond_47
 
-    .line 611
+    .line 606
     invoke-direct {p0, v0, p2}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateFlipLayout(IZ)V
 
     return-void
 
-    .line 613
+    .line 608
     :cond_47
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateLayout(IZ)V
 
@@ -5532,7 +5174,7 @@
 .method public updateShutterType(IZ)V
     .registers 6
 
-    .line 1076
+    .line 1071
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5559,12 +5201,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1077
+    .line 1072
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->mOldValue:Z
 
     if-eqz v0, :cond_33
 
-    .line 1078
+    .line 1073
     sget-object v0, Lcom/transsion/camera/app/ui/AbstractShutterUI;->sBlackSupport:Ljava/util/List;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5579,7 +5221,7 @@
 
     add-int/lit16 p1, p1, 0x2710
 
-    .line 1082
+    .line 1077
     :cond_33
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateShutterTypeImpl(IZ)V
 

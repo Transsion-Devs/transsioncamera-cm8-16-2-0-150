@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/SubDeviceControl;J)V
     .registers 4
 
-    .line 843
+    .line 826
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$1;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-direct {p0, p2, p3}, Lcom/transsion/camera/adapter/CameraAgent$Customer;-><init>(J)V
@@ -41,7 +41,7 @@
 .method public onDeviceDisconnected(Ljava/lang/String;)V
     .registers 3
 
-    .line 858
+    .line 841
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$1;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmNotifyCallback(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;
@@ -50,7 +50,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 859
+    .line 842
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$1;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmNotifyCallback(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;
@@ -66,7 +66,7 @@
 .method public onDeviceError(Ljava/lang/String;I)V
     .registers 4
 
-    .line 865
+    .line 848
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$1;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmHandler(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Landroid/os/Handler;
@@ -75,24 +75,24 @@
 
     if-eqz p1, :cond_20
 
-    .line 866
+    .line 849
     new-instance p1, Landroid/os/Message;
 
     invoke-direct {p1}, Landroid/os/Message;-><init>()V
 
     const/16 v0, 0x65
 
-    .line 867
+    .line 850
     iput v0, p1, Landroid/os/Message;->what:I
 
-    .line 868
+    .line 851
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
     iput-object p2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 869
+    .line 852
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$1;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmHandler(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Landroid/os/Handler;
@@ -108,7 +108,7 @@
 .method public onDeviceOpened(Lcom/transsion/camera/adapter/CameraProxy;Ljava/lang/String;)V
     .registers 3
 
-    .line 846
+    .line 829
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$1;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmHandler(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Landroid/os/Handler;
@@ -117,7 +117,7 @@
 
     if-eqz p2, :cond_17
 
-    .line 847
+    .line 830
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$1;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmHandler(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Landroid/os/Handler;

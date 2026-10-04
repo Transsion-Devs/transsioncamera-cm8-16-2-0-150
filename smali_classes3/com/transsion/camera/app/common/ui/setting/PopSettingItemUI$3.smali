@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)V
     .registers 2
 
-    .line 992
+    .line 989
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$3;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreDraw()Z
     .registers 4
 
-    .line 995
+    .line 992
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$3;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
@@ -49,7 +49,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 996
+    .line 993
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$3;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
@@ -64,14 +64,14 @@
 
     if-le v0, v1, :cond_25
 
-    .line 998
+    .line 995
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$3;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setSelected(Z)V
 
-    .line 999
+    .line 996
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$3;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;

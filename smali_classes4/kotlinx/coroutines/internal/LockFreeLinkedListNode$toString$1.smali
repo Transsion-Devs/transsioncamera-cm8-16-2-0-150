@@ -40,7 +40,7 @@
 .method public get()Ljava/lang/Object;
     .registers 1
 
-    .line 319
+    .line 317
     iget-object p0, p0, Lkotlin/jvm/internal/CallableReference;->receiver:Ljava/lang/Object;
 
     invoke-static {p0}, Lkotlinx/coroutines/DebugStringsKt;->getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;

@@ -26,17 +26,17 @@
 .method public constructor <init>()V
     .registers 3
 
-    .line 28
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
+    .line 30
     invoke-static {}, Lcom/transsion/hubsdk/common/init/TranHubSdkManager;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/hubsdk/aosp/wallpaper/TranAospWallpaperManager;->mContext:Landroid/content/Context;
 
-    .line 30
+    .line 31
     const-string v1, "wallpaper"
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -52,10 +52,51 @@
 
 
 # virtual methods
+.method public animateWallpaperToDim(F)V
+    .registers 5
+
+    .line 65
+    iget-object v0, p0, Lcom/transsion/hubsdk/aosp/wallpaper/TranAospWallpaperManager;->mWallpaperManager:Landroid/app/WallpaperManager;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    sget-object v1, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+
+    filled-new-array {v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v2, "animateWallpaperToDim"
+
+    invoke-static {v0, v2, v1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->getMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_21
+
+    .line 67
+    iget-object p0, p0, Lcom/transsion/hubsdk/aosp/wallpaper/TranAospWallpaperManager;->mWallpaperManager:Landroid/app/WallpaperManager;
+
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v0, p0, p1}, Lcom/transsion/hubsdk/common/reflect/TranDoorMan;->invokeMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_21
+    return-void
+.end method
+
 .method public getBitmapAsUser(IZI)Landroid/graphics/Bitmap;
     .registers 7
 
-    .line 55
+    .line 56
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/wallpaper/TranAospWallpaperManager;->mWallpaperManager:Landroid/app/WallpaperManager;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -78,7 +119,7 @@
 
     if-eqz v0, :cond_2f
 
-    .line 57
+    .line 58
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/wallpaper/TranAospWallpaperManager;->mWallpaperManager:Landroid/app/WallpaperManager;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -114,7 +155,7 @@
 .method public getWallpaperInfo(I)Landroid/app/WallpaperInfo;
     .registers 5
 
-    .line 44
+    .line 45
     :try_start_0
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/wallpaper/TranAospWallpaperManager;->mWallpaperManager:Landroid/app/WallpaperManager;
 
@@ -134,7 +175,7 @@
 
     move-result-object v0
 
-    .line 45
+    .line 46
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/wallpaper/TranAospWallpaperManager;->mWallpaperManager:Landroid/app/WallpaperManager;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -158,7 +199,7 @@
     :catch_23
     move-exception p0
 
-    .line 47
+    .line 48
     sget-object p1, Lcom/transsion/hubsdk/aosp/wallpaper/TranAospWallpaperManager;->TAG:Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -185,7 +226,7 @@
 .method public setWallpaperComponent(Landroid/content/ComponentName;)V
     .registers 5
 
-    .line 35
+    .line 36
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/wallpaper/TranAospWallpaperManager;->mWallpaperManager:Landroid/app/WallpaperManager;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -204,7 +245,7 @@
 
     move-result-object v0
 
-    .line 36
+    .line 37
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/wallpaper/TranAospWallpaperManager;->mWallpaperManager:Landroid/app/WallpaperManager;
 
     filled-new-array {p1}, [Ljava/lang/Object;

@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 14
+    .line 10
     invoke-static {p0, p1}, Lkotlinx/coroutines/channels/SendChannel$DefaultImpls;->offer(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Object;)Z
 
     move-result p0

@@ -30,7 +30,7 @@
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$$ExternalSyntheticLambda0;->f$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
-    invoke-static {p0, p1, p2, p3}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->$r8$lambda$z2O5Rz-Z_QT-zYKbIGGJqPsb3Bs(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->$r8$lambda$3FFDgg0yWiGcOSvnanOl3MeCKhA(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
 
     return-void
 .end method

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)V
     .registers 2
 
-    .line 916
+    .line 923
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$2;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreviewFrame(Landroid/media/Image;II)V
     .registers 12
 
-    .line 919
+    .line 926
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$2;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CameraMode;->supportPostAlgoDeferRequest()Z
@@ -47,12 +47,12 @@
 
     if-eqz v0, :cond_2e
 
-    .line 920
+    .line 927
     invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->getNV21Buffer(Landroid/media/Image;)[B
 
     move-result-object v2
 
-    .line 921
+    .line 928
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
     move-result-object v1

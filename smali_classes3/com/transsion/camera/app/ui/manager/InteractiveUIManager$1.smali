@@ -24,7 +24,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/InteractiveUIManager;Landroid/view/View;Z)V
     .registers 4
 
-    .line 834
+    .line 837
     iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$1;->val$optionRootView:Landroid/view/View;
 
     iput-boolean p3, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$1;->val$isRecordBegin:Z
@@ -39,14 +39,14 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 844
+    .line 847
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$1;->val$optionRootView:Landroid/view/View;
 
     if-eqz p0, :cond_8
 
     const/4 p1, 0x0
 
-    .line 845
+    .line 848
     invoke-virtual {p0, p1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     :cond_8
@@ -56,14 +56,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 837
+    .line 840
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$1;->val$optionRootView:Landroid/view/View;
 
     if-eqz p0, :cond_8
 
     const/4 p1, 0x0
 
-    .line 838
+    .line 841
     invoke-virtual {p0, p1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     :cond_8
@@ -73,29 +73,29 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 851
+    .line 854
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$1;->val$optionRootView:Landroid/view/View;
 
     if-eqz v0, :cond_18
 
-    .line 852
+    .line 855
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$1;->val$isRecordBegin:Z
 
     if-nez v1, :cond_13
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 853
+    .line 856
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 854
+    .line 857
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$1;->val$optionRootView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 856
+    .line 859
     :cond_13
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/InteractiveUIManager$1;->val$optionRootView:Landroid/view/View;
 

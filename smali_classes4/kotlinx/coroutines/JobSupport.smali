@@ -21,22 +21,22 @@
 
 
 # static fields
-.field private static final _parentHandle$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic _parentHandle$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-.field private static final _state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic _state$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
 
 # instance fields
-.field private volatile _parentHandle:Ljava/lang/Object;
+.field private volatile synthetic _parentHandle$volatile:Ljava/lang/Object;
 
-.field private volatile _state:Ljava/lang/Object;
+.field private volatile synthetic _state$volatile:Ljava/lang/Object;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 3
 
-    const-string v0, "_state"
+    const-string v0, "_state$volatile"
 
     const-class v1, Lkotlinx/coroutines/JobSupport;
 
@@ -46,15 +46,15 @@
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/JobSupport;->_state$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    const-string v0, "_parentHandle"
+    const-string v0, "_parentHandle$volatile"
 
     invoke-static {v1, v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/JobSupport;->_parentHandle$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/JobSupport;->_parentHandle$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     return-void
 .end method
@@ -62,12 +62,12 @@
 .method public constructor <init>(Z)V
     .registers 2
 
-    .line 25
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     if-eqz p1, :cond_a
 
-    .line 128
+    .line 125
     # getter for: Lkotlinx/coroutines/JobSupportKt;->EMPTY_ACTIVE:Lkotlinx/coroutines/Empty;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getEMPTY_ACTIVE$p()Lkotlinx/coroutines/Empty;
 
@@ -82,7 +82,7 @@
     move-result-object p1
 
     :goto_e
-    iput-object p1, p0, Lkotlinx/coroutines/JobSupport;->_state:Ljava/lang/Object;
+    iput-object p1, p0, Lkotlinx/coroutines/JobSupport;->_state$volatile:Ljava/lang/Object;
 
     return-void
 .end method
@@ -90,7 +90,7 @@
 .method public static final synthetic access$awaitSuspend(Lkotlinx/coroutines/JobSupport;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .registers 2
 
-    .line 25
+    .line 22
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->awaitSuspend(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -101,7 +101,7 @@
 .method public static final synthetic access$cancellationExceptionMessage(Lkotlinx/coroutines/JobSupport;)Ljava/lang/String;
     .registers 1
 
-    .line 25
+    .line 22
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->cancellationExceptionMessage()Ljava/lang/String;
 
     move-result-object p0
@@ -112,7 +112,7 @@
 .method public static final synthetic access$continueCompleting(Lkotlinx/coroutines/JobSupport;Lkotlinx/coroutines/JobSupport$Finishing;Lkotlinx/coroutines/ChildHandleNode;Ljava/lang/Object;)V
     .registers 4
 
-    .line 25
+    .line 22
     invoke-direct {p0, p1, p2, p3}, Lkotlinx/coroutines/JobSupport;->continueCompleting(Lkotlinx/coroutines/JobSupport$Finishing;Lkotlinx/coroutines/ChildHandleNode;Ljava/lang/Object;)V
 
     return-void
@@ -121,7 +121,7 @@
 .method public static final synthetic access$joinSuspend(Lkotlinx/coroutines/JobSupport;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .registers 2
 
-    .line 25
+    .line 22
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->joinSuspend(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -132,7 +132,7 @@
 .method public static final synthetic access$onAwaitInternalProcessResFunc(Lkotlinx/coroutines/JobSupport;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 25
+    .line 22
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/JobSupport;->onAwaitInternalProcessResFunc(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -143,7 +143,7 @@
 .method public static final synthetic access$onAwaitInternalRegFunc(Lkotlinx/coroutines/JobSupport;Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
     .registers 3
 
-    .line 25
+    .line 22
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/JobSupport;->onAwaitInternalRegFunc(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
 
     return-void
@@ -152,7 +152,7 @@
 .method public static final synthetic access$registerSelectForOnJoin(Lkotlinx/coroutines/JobSupport;Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
     .registers 3
 
-    .line 25
+    .line 22
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/JobSupport;->registerSelectForOnJoin(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
 
     return-void
@@ -161,18 +161,18 @@
 .method private final addLastAtomic(Ljava/lang/Object;Lkotlinx/coroutines/NodeList;Lkotlinx/coroutines/JobNode;)Z
     .registers 5
 
-    .line 73
+    .line 70
     new-instance v0, Lkotlinx/coroutines/JobSupport$addLastAtomic$$inlined$addLastIf$1;
 
     invoke-direct {v0, p3, p0, p1}, Lkotlinx/coroutines/JobSupport$addLastAtomic$$inlined$addLastIf$1;-><init>(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;Lkotlinx/coroutines/JobSupport;Ljava/lang/Object;)V
 
-    .line 136
+    .line 134
     :goto_5
     invoke-virtual {p2}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getPrevNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
     move-result-object p0
 
-    .line 137
+    .line 135
     invoke-virtual {p0, p3, p2, v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->tryCondAddNext(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;Lkotlinx/coroutines/internal/LockFreeLinkedListNode;Lkotlinx/coroutines/internal/LockFreeLinkedListNode$CondAddOp;)I
 
     move-result p0
@@ -209,7 +209,7 @@
         }
     .end annotation
 
-    .line 272
+    .line 269
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result p0
@@ -220,13 +220,13 @@
 
     goto :goto_37
 
-    .line 273
+    .line 270
     :cond_8
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result p0
 
-    .line 19
+    .line 15
     new-instance v0, Ljava/util/IdentityHashMap;
 
     invoke-direct {v0, p0}, Ljava/util/IdentityHashMap;-><init>(I)V
@@ -235,7 +235,7 @@
 
     move-result-object p0
 
-    .line 280
+    .line 277
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -258,7 +258,7 @@
 
     if-eq v0, p1, :cond_19
 
-    .line 283
+    .line 280
     instance-of v1, v0, Ljava/util/concurrent/CancellationException;
 
     if-nez v1, :cond_19
@@ -269,7 +269,7 @@
 
     if-eqz v1, :cond_19
 
-    .line 75
+    .line 281
     invoke-static {p1, v0}, Lkotlin/ExceptionsKt;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     goto :goto_19
@@ -291,7 +291,7 @@
         }
     .end annotation
 
-    .line 1234
+    .line 1231
     new-instance v0, Lkotlinx/coroutines/JobSupport$AwaitContinuation;
 
     invoke-static {p1}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -300,10 +300,10 @@
 
     invoke-direct {v0, v1, p0}, Lkotlinx/coroutines/JobSupport$AwaitContinuation;-><init>(Lkotlin/coroutines/Continuation;Lkotlinx/coroutines/JobSupport;)V
 
-    .line 1236
+    .line 1233
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
 
-    .line 1237
+    .line 1234
     new-instance v1, Lkotlinx/coroutines/ResumeAwaitOnCompletion;
 
     invoke-direct {v1, v0}, Lkotlinx/coroutines/ResumeAwaitOnCompletion;-><init>(Lkotlinx/coroutines/CancellableContinuationImpl;)V
@@ -314,12 +314,12 @@
 
     invoke-static {v0, p0}, Lkotlinx/coroutines/CancellableContinuationKt;->disposeOnCancellation(Lkotlinx/coroutines/CancellableContinuation;Lkotlinx/coroutines/DisposableHandle;)V
 
-    .line 1238
+    .line 1235
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 1228
+    .line 1225
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
@@ -335,13 +335,13 @@
 .method private final cancelMakeCompleting(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 8
 
-    .line 179
+    .line 176
     :cond_0
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 695
+    .line 692
     instance-of v1, v0, Lkotlinx/coroutines/Incomplete;
 
     if-eqz v1, :cond_2d
@@ -362,7 +362,7 @@
 
     goto :goto_2d
 
-    .line 699
+    .line 696
     :cond_16
     new-instance v1, Lkotlinx/coroutines/CompletedExceptionally;
 
@@ -378,12 +378,12 @@
 
     invoke-direct {v1, v2, v5, v3, v4}, Lkotlinx/coroutines/CompletedExceptionally;-><init>(Ljava/lang/Throwable;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 700
+    .line 697
     invoke-direct {p0, v0, v1}, Lkotlinx/coroutines/JobSupport;->tryMakeCompleting(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 701
+    .line 698
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_RETRY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_RETRY$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -393,7 +393,7 @@
 
     return-object v0
 
-    .line 697
+    .line 694
     :cond_2d
     :goto_2d
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_ALREADY:Lkotlinx/coroutines/internal/Symbol;
@@ -407,7 +407,7 @@
 .method private final cancelParent(Ljava/lang/Throwable;)Z
     .registers 5
 
-    .line 346
+    .line 343
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->isScopedCoroutine()Z
 
     move-result v0
@@ -418,25 +418,25 @@
 
     return v1
 
-    .line 352
+    .line 349
     :cond_8
     instance-of v0, p1, Ljava/util/concurrent/CancellationException;
 
-    .line 353
+    .line 350
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getParentHandle$kotlinx_coroutines_core()Lkotlinx/coroutines/ChildHandle;
 
     move-result-object p0
 
     if-eqz p0, :cond_21
 
-    .line 355
+    .line 352
     sget-object v2, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
     if-ne p0, v2, :cond_15
 
     goto :goto_21
 
-    .line 360
+    .line 357
     :cond_15
     invoke-interface {p0, p1}, Lkotlinx/coroutines/ChildHandle;->childCancelled(Ljava/lang/Throwable;)Z
 
@@ -465,22 +465,22 @@
 .method private final completeStateFinalization(Lkotlinx/coroutines/Incomplete;Ljava/lang/Object;)V
     .registers 6
 
-    .line 309
+    .line 306
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getParentHandle$kotlinx_coroutines_core()Lkotlinx/coroutines/ChildHandle;
 
     move-result-object v0
 
     if-eqz v0, :cond_e
 
-    .line 310
+    .line 307
     invoke-interface {v0}, Lkotlinx/coroutines/DisposableHandle;->dispose()V
 
-    .line 311
+    .line 308
     sget-object v0, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
     invoke-virtual {p0, v0}, Lkotlinx/coroutines/JobSupport;->setParentHandle$kotlinx_coroutines_core(Lkotlinx/coroutines/ChildHandle;)V
 
-    .line 313
+    .line 310
     :cond_e
     instance-of v0, p2, Lkotlinx/coroutines/CompletedExceptionally;
 
@@ -500,13 +500,13 @@
 
     iget-object v1, p2, Lkotlinx/coroutines/CompletedExceptionally;->cause:Ljava/lang/Throwable;
 
-    .line 318
+    .line 315
     :cond_1b
     instance-of p2, p1, Lkotlinx/coroutines/JobNode;
 
     if-eqz p2, :cond_49
 
-    .line 320
+    .line 317
     :try_start_1f
     move-object p2, p1
 
@@ -521,7 +521,7 @@
     :catchall_26
     move-exception p2
 
-    .line 322
+    .line 319
     new-instance v0, Lkotlinx/coroutines/CompletionHandlerException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -550,7 +550,7 @@
 
     return-void
 
-    .line 325
+    .line 322
     :cond_49
     invoke-interface {p1}, Lkotlinx/coroutines/Incomplete;->getList()Lkotlinx/coroutines/NodeList;
 
@@ -567,14 +567,14 @@
 .method private final continueCompleting(Lkotlinx/coroutines/JobSupport$Finishing;Lkotlinx/coroutines/ChildHandleNode;Ljava/lang/Object;)V
     .registers 4
 
-    .line 935
+    .line 932
     invoke-direct {p0, p2}, Lkotlinx/coroutines/JobSupport;->nextChild(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Lkotlinx/coroutines/ChildHandleNode;
 
     move-result-object p2
 
     if-eqz p2, :cond_d
 
-    .line 937
+    .line 934
     invoke-direct {p0, p1, p2, p3}, Lkotlinx/coroutines/JobSupport;->tryWaitForChild(Lkotlinx/coroutines/JobSupport$Finishing;Lkotlinx/coroutines/ChildHandleNode;Ljava/lang/Object;)Z
 
     move-result p2
@@ -583,13 +583,13 @@
 
     return-void
 
-    .line 939
+    .line 936
     :cond_d
     invoke-direct {p0, p1, p3}, Lkotlinx/coroutines/JobSupport;->finalizeFinishingState(Lkotlinx/coroutines/JobSupport$Finishing;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 940
+    .line 937
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->afterCompletion(Ljava/lang/Object;)V
 
     return-void
@@ -604,7 +604,7 @@
 
     goto :goto_6
 
-    .line 723
+    .line 720
     :cond_4
     instance-of v0, p1, Ljava/lang/Throwable;
 
@@ -615,7 +615,7 @@
 
     if-nez p1, :cond_16
 
-    .line 707
+    .line 704
     new-instance p1, Lkotlinx/coroutines/JobCancellationException;
 
     # invokes: Lkotlinx/coroutines/JobSupport;->cancellationExceptionMessage()Ljava/lang/String;
@@ -630,7 +630,7 @@
     :cond_16
     return-object p1
 
-    .line 724
+    .line 721
     :cond_17
     const-string p0, "null cannot be cast to non-null type kotlinx.coroutines.ParentJob"
 
@@ -665,7 +665,7 @@
 
     move-object p2, v0
 
-    .line 707
+    .line 704
     :cond_d
     new-instance p3, Lkotlinx/coroutines/JobCancellationException;
 
@@ -681,7 +681,7 @@
 
     return-object p3
 
-    .line 706
+    .line 703
     :cond_19
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
@@ -695,7 +695,7 @@
 .method private final finalizeFinishingState(Lkotlinx/coroutines/JobSupport$Finishing;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 8
 
-    .line 210
+    .line 207
     instance-of v0, p2, Lkotlinx/coroutines/CompletedExceptionally;
 
     const/4 v1, 0x0
@@ -721,29 +721,29 @@
     :cond_f
     move-object v0, v1
 
-    .line 20
+    .line 16
     :goto_10
     monitor-enter p1
 
-    .line 214
+    .line 211
     :try_start_11
     invoke-virtual {p1}, Lkotlinx/coroutines/JobSupport$Finishing;->isCancelling()Z
 
     move-result v2
 
-    .line 215
+    .line 212
     invoke-virtual {p1, v0}, Lkotlinx/coroutines/JobSupport$Finishing;->sealLocked(Ljava/lang/Throwable;)Ljava/util/List;
 
     move-result-object v3
 
-    .line 216
+    .line 213
     invoke-direct {p0, p1, v3}, Lkotlinx/coroutines/JobSupport;->getFinalRootCause(Lkotlinx/coroutines/JobSupport$Finishing;Ljava/util/List;)Ljava/lang/Throwable;
 
     move-result-object v4
 
     if-eqz v4, :cond_25
 
-    .line 217
+    .line 214
     invoke-direct {p0, v4, v3}, Lkotlinx/coroutines/JobSupport;->addSuppressedExceptions(Ljava/lang/Throwable;Ljava/util/List;)V
     :try_end_22
     .catchall {:try_start_11 .. :try_end_22} :catchall_23
@@ -753,9 +753,9 @@
     :catchall_23
     move-exception p0
 
-    goto :goto_61
+    goto :goto_63
 
-    .line 20
+    .line 16
     :cond_25
     :goto_25
     monitor-exit p1
@@ -769,7 +769,7 @@
 
     goto :goto_33
 
-    .line 227
+    .line 224
     :cond_2c
     new-instance p2, Lkotlinx/coroutines/CompletedExceptionally;
 
@@ -782,7 +782,7 @@
     :goto_33
     if-eqz v4, :cond_4c
 
-    .line 231
+    .line 228
     invoke-direct {p0, v4}, Lkotlinx/coroutines/JobSupport;->cancelParent(Ljava/lang/Throwable;)Z
 
     move-result v0
@@ -795,7 +795,7 @@
 
     if-eqz v0, :cond_4c
 
-    .line 232
+    .line 229
     :cond_41
     const-string v0, "null cannot be cast to non-null type kotlinx.coroutines.CompletedExceptionally"
 
@@ -810,29 +810,31 @@
     :cond_4c
     if-nez v2, :cond_51
 
-    .line 236
+    .line 233
     invoke-virtual {p0, v4}, Lkotlinx/coroutines/JobSupport;->onCancelling(Ljava/lang/Throwable;)V
 
-    .line 237
+    .line 234
     :cond_51
     invoke-virtual {p0, p2}, Lkotlinx/coroutines/JobSupport;->onCompletionInternal(Ljava/lang/Object;)V
 
-    sget-object v0, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 239
+    move-result-object v0
+
+    .line 236
     invoke-static {p2}, Lkotlinx/coroutines/JobSupportKt;->boxIncomplete(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     invoke-static {v0, p0, p1, v1}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 242
+    .line 239
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/JobSupport;->completeStateFinalization(Lkotlinx/coroutines/Incomplete;Ljava/lang/Object;)V
 
     return-object p2
 
-    .line 20
-    :goto_61
+    .line 16
+    :goto_63
     monitor-exit p1
 
     throw p0
@@ -841,7 +843,7 @@
 .method private final firstChild(Lkotlinx/coroutines/Incomplete;)Lkotlinx/coroutines/ChildHandleNode;
     .registers 4
 
-    .line 917
+    .line 914
     instance-of v0, p1, Lkotlinx/coroutines/ChildHandleNode;
 
     const/4 v1, 0x0
@@ -882,7 +884,7 @@
 .method private final getExceptionOrNull(Ljava/lang/Object;)Ljava/lang/Throwable;
     .registers 3
 
-    .line 914
+    .line 911
     instance-of p0, p1, Lkotlinx/coroutines/CompletedExceptionally;
 
     const/4 v0, 0x0
@@ -921,7 +923,7 @@
         }
     .end annotation
 
-    .line 248
+    .line 245
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -930,14 +932,14 @@
 
     if-eqz v0, :cond_18
 
-    .line 250
+    .line 247
     invoke-virtual {p1}, Lkotlinx/coroutines/JobSupport$Finishing;->isCancelling()Z
 
     move-result p1
 
     if-eqz p1, :cond_17
 
-    .line 707
+    .line 704
     new-instance p1, Lkotlinx/coroutines/JobCancellationException;
 
     # invokes: Lkotlinx/coroutines/JobSupport;->cancellationExceptionMessage()Ljava/lang/String;
@@ -952,7 +954,7 @@
     :cond_17
     return-object v1
 
-    .line 261
+    .line 258
     :cond_18
     move-object p0, p2
 
@@ -978,7 +980,7 @@
 
     check-cast v2, Ljava/lang/Throwable;
 
-    .line 261
+    .line 258
     instance-of v2, v2, Ljava/util/concurrent/CancellationException;
 
     if-nez v2, :cond_1f
@@ -998,14 +1000,14 @@
     :cond_37
     const/4 p1, 0x0
 
-    .line 263
+    .line 260
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/lang/Throwable;
 
-    .line 264
+    .line 261
     instance-of p2, p1, Lkotlinx/coroutines/TimeoutCancellationException;
 
     if-eqz p2, :cond_5f
@@ -1032,7 +1034,7 @@
 
     if-eq v0, p1, :cond_46
 
-    .line 265
+    .line 262
     instance-of v0, v0, Lkotlinx/coroutines/TimeoutCancellationException;
 
     if-eqz v0, :cond_46
@@ -1065,14 +1067,14 @@
 .method private final getOrPromoteCancellingList(Lkotlinx/coroutines/Incomplete;)Lkotlinx/coroutines/NodeList;
     .registers 4
 
-    .line 777
+    .line 774
     invoke-interface {p1}, Lkotlinx/coroutines/Incomplete;->getList()Lkotlinx/coroutines/NodeList;
 
     move-result-object v0
 
     if-nez v0, :cond_36
 
-    .line 779
+    .line 776
     instance-of v0, p1, Lkotlinx/coroutines/Empty;
 
     if-eqz v0, :cond_10
@@ -1083,13 +1085,13 @@
 
     return-object p0
 
-    .line 780
+    .line 777
     :cond_10
     instance-of v0, p1, Lkotlinx/coroutines/JobNode;
 
     if-eqz v0, :cond_1b
 
-    .line 783
+    .line 780
     check-cast p1, Lkotlinx/coroutines/JobNode;
 
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->promoteSingleToNodeList(Lkotlinx/coroutines/JobNode;)V
@@ -1098,11 +1100,11 @@
 
     return-object p0
 
-    .line 784
+    .line 781
     :cond_1b
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 786
+    .line 783
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1129,10 +1131,42 @@
     return-object v0
 .end method
 
+.method private final synthetic get_parentHandle$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/JobSupport;->_parentHandle$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic get_parentHandle$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/JobSupport;->_parentHandle$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic get_state$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/JobSupport;->_state$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/JobSupport;->_state$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
 .method private final isCancelling(Lkotlinx/coroutines/Incomplete;)Z
     .registers 2
 
-    .line 1149
+    .line 1146
     instance-of p0, p1, Lkotlinx/coroutines/JobSupport$Finishing;
 
     if-eqz p0, :cond_e
@@ -1158,13 +1192,13 @@
 .method private final joinInternal()Z
     .registers 3
 
-    .line 179
+    .line 176
     :cond_0
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 554
+    .line 551
     instance-of v1, v0, Lkotlinx/coroutines/Incomplete;
 
     if-nez v1, :cond_a
@@ -1173,7 +1207,7 @@
 
     return p0
 
-    .line 555
+    .line 552
     :cond_a
     invoke-direct {p0, v0}, Lkotlinx/coroutines/JobSupport;->startInternal(Ljava/lang/Object;)I
 
@@ -1199,7 +1233,7 @@
         }
     .end annotation
 
-    .line 315
+    .line 311
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
     invoke-static {p1}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -1210,10 +1244,10 @@
 
     invoke-direct {v0, v1, v2}, Lkotlinx/coroutines/CancellableContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;I)V
 
-    .line 321
+    .line 317
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
 
-    .line 561
+    .line 558
     new-instance v1, Lkotlinx/coroutines/ResumeOnCompletion;
 
     invoke-direct {v1, v0}, Lkotlinx/coroutines/ResumeOnCompletion;-><init>(Lkotlin/coroutines/Continuation;)V
@@ -1224,12 +1258,12 @@
 
     invoke-static {v0, p0}, Lkotlinx/coroutines/CancellableContinuationKt;->disposeOnCancellation(Lkotlinx/coroutines/CancellableContinuation;Lkotlinx/coroutines/DisposableHandle;)V
 
-    .line 323
+    .line 319
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 314
+    .line 310
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
@@ -1247,31 +1281,31 @@
 
     return-object p0
 
-    .line 324
+    .line 320
     :cond_2d
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 .end method
 
-.method private final loop$atomicfu(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lkotlin/jvm/functions/Function1;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
+            "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
             "Lkotlin/jvm/functions/Function1;",
-            "Ljava/lang/Object;",
             ")V"
         }
     .end annotation
 
     :goto_0
-    invoke-virtual {p1, p3}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
@@ -1287,7 +1321,7 @@
         }
     .end annotation
 
-    .line 179
+    .line 176
     :goto_0
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
@@ -1305,21 +1339,21 @@
 
     move-object v1, v0
 
-    .line 179
+    .line 176
     :cond_2
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 738
+    .line 735
     instance-of v3, v2, Lkotlinx/coroutines/JobSupport$Finishing;
 
     if-eqz v3, :cond_50
 
-    .line 20
+    .line 16
     monitor-enter v2
 
-    .line 740
+    .line 737
     :try_start_b
     move-object v3, v2
 
@@ -1347,7 +1381,7 @@
 
     goto :goto_4e
 
-    .line 742
+    .line 739
     :cond_1c
     :try_start_1c
     move-object v3, v2
@@ -1365,12 +1399,12 @@
     :cond_27
     if-nez v1, :cond_2d
 
-    .line 745
+    .line 742
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->createCauseException(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object v1
 
-    .line 746
+    .line 743
     :cond_2d
     move-object p1, v2
 
@@ -1378,7 +1412,7 @@
 
     invoke-virtual {p1, v1}, Lkotlinx/coroutines/JobSupport$Finishing;->addExceptionLocked(Ljava/lang/Throwable;)V
 
-    .line 749
+    .line 746
     :cond_33
     move-object p1, v2
 
@@ -1394,13 +1428,13 @@
 
     move-object v0, p1
 
-    .line 20
+    .line 16
     :cond_3d
     monitor-exit v2
 
     if-eqz v0, :cond_49
 
-    .line 751
+    .line 748
     check-cast v2, Lkotlinx/coroutines/JobSupport$Finishing;
 
     invoke-virtual {v2}, Lkotlinx/coroutines/JobSupport$Finishing;->getList()Lkotlinx/coroutines/NodeList;
@@ -1409,7 +1443,7 @@
 
     invoke-direct {p0, p1, v0}, Lkotlinx/coroutines/JobSupport;->notifyCancelling(Lkotlinx/coroutines/NodeList;Ljava/lang/Throwable;)V
 
-    .line 752
+    .line 749
     :cond_49
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_ALREADY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_ALREADY$p()Lkotlinx/coroutines/internal/Symbol;
@@ -1418,13 +1452,13 @@
 
     return-object p0
 
-    .line 20
+    .line 16
     :goto_4e
     monitor-exit v2
 
     throw p0
 
-    .line 754
+    .line 751
     :cond_50
     instance-of v3, v2, Lkotlinx/coroutines/Incomplete;
 
@@ -1432,12 +1466,12 @@
 
     if-nez v1, :cond_5a
 
-    .line 756
+    .line 753
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->createCauseException(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object v1
 
-    .line 757
+    .line 754
     :cond_5a
     move-object v3, v2
 
@@ -1449,7 +1483,7 @@
 
     if-eqz v4, :cond_6e
 
-    .line 759
+    .line 756
     invoke-direct {p0, v3, v1}, Lkotlinx/coroutines/JobSupport;->tryMakeCancelling(Lkotlinx/coroutines/Incomplete;Ljava/lang/Throwable;)Z
 
     move-result v2
@@ -1463,7 +1497,7 @@
 
     return-object p0
 
-    .line 762
+    .line 759
     :cond_6e
     new-instance v3, Lkotlinx/coroutines/CompletedExceptionally;
 
@@ -1477,7 +1511,7 @@
 
     move-result-object v3
 
-    .line 764
+    .line 761
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_ALREADY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_ALREADY$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -1485,7 +1519,7 @@
 
     if-eq v3, v4, :cond_86
 
-    .line 765
+    .line 762
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_RETRY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_RETRY$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -1495,7 +1529,7 @@
 
     return-object v3
 
-    .line 764
+    .line 761
     :cond_86
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -1521,7 +1555,7 @@
 
     throw p0
 
-    .line 770
+    .line 767
     :cond_a1
     # getter for: Lkotlinx/coroutines/JobSupportKt;->TOO_LATE_TO_CANCEL:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getTOO_LATE_TO_CANCEL$p()Lkotlinx/coroutines/internal/Symbol;
@@ -1546,7 +1580,7 @@
 
     if-eqz p2, :cond_12
 
-    .line 514
+    .line 511
     instance-of p2, p1, Lkotlinx/coroutines/JobCancellingNode;
 
     if-eqz p2, :cond_a
@@ -1558,14 +1592,14 @@
     :cond_a
     if-nez v0, :cond_21
 
-    .line 515
+    .line 512
     new-instance v0, Lkotlinx/coroutines/InvokeOnCancelling;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/InvokeOnCancelling;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     goto :goto_21
 
-    .line 517
+    .line 514
     :cond_12
     instance-of p2, p1, Lkotlinx/coroutines/JobNode;
 
@@ -1580,13 +1614,13 @@
 
     goto :goto_21
 
-    .line 519
+    .line 516
     :cond_1c
     new-instance v0, Lkotlinx/coroutines/InvokeOnCompletion;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/InvokeOnCompletion;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 521
+    .line 518
     :cond_21
     :goto_21
     invoke-virtual {v0, p0}, Lkotlinx/coroutines/JobNode;->setJob(Lkotlinx/coroutines/JobSupport;)V
@@ -1597,7 +1631,7 @@
 .method private final nextChild(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Lkotlinx/coroutines/ChildHandleNode;
     .registers 2
 
-    .line 945
+    .line 942
     :goto_0
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->isRemoved()Z
 
@@ -1611,20 +1645,20 @@
 
     goto :goto_0
 
-    .line 947
+    .line 944
     :cond_b
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNextNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
     move-result-object p1
 
-    .line 948
+    .line 945
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->isRemoved()Z
 
     move-result p0
 
     if-nez p0, :cond_b
 
-    .line 949
+    .line 946
     instance-of p0, p1, Lkotlinx/coroutines/ChildHandleNode;
 
     if-eqz p0, :cond_1c
@@ -1633,7 +1667,7 @@
 
     return-object p1
 
-    .line 950
+    .line 947
     :cond_1c
     instance-of p0, p1, Lkotlinx/coroutines/NodeList;
 
@@ -1647,10 +1681,10 @@
 .method private final notifyCancelling(Lkotlinx/coroutines/NodeList;Ljava/lang/Throwable;)V
     .registers 9
 
-    .line 331
+    .line 328
     invoke-virtual {p0, p2}, Lkotlinx/coroutines/JobSupport;->onCancelling(Ljava/lang/Throwable;)V
 
-    .line 341
+    .line 336
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNext()Ljava/lang/Object;
 
     move-result-object v0
@@ -1663,7 +1697,7 @@
 
     const/4 v1, 0x0
 
-    .line 342
+    .line 337
     :goto_f
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1671,7 +1705,7 @@
 
     if-nez v2, :cond_4c
 
-    .line 343
+    .line 338
     instance-of v2, v0, Lkotlinx/coroutines/JobCancellingNode;
 
     if-eqz v2, :cond_47
@@ -1680,7 +1714,7 @@
 
     check-cast v2, Lkotlinx/coroutines/JobNode;
 
-    .line 370
+    .line 367
     :try_start_1c
     invoke-virtual {v2, p2}, Lkotlinx/coroutines/CompletionHandlerBase;->invoke(Ljava/lang/Throwable;)V
     :try_end_1f
@@ -1693,12 +1727,12 @@
 
     if-eqz v1, :cond_27
 
-    .line 75
+    .line 369
     invoke-static {v1, v3}, Lkotlin/ExceptionsKt;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     goto :goto_47
 
-    .line 373
+    .line 370
     :cond_27
     new-instance v1, Lkotlinx/coroutines/CompletionHandlerException;
 
@@ -1724,10 +1758,10 @@
 
     invoke-direct {v1, v2, v3}, Lkotlinx/coroutines/CompletionHandlerException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 372
+    .line 369
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    .line 344
+    .line 339
     :cond_47
     :goto_47
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNextNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
@@ -1739,10 +1773,10 @@
     :cond_4c
     if-eqz v1, :cond_51
 
-    .line 377
+    .line 374
     invoke-virtual {p0, v1}, Lkotlinx/coroutines/JobSupport;->handleOnCompletionException$kotlinx_coroutines_core(Ljava/lang/Throwable;)V
 
-    .line 334
+    .line 331
     :cond_51
     invoke-direct {p0, p2}, Lkotlinx/coroutines/JobSupport;->cancelParent(Ljava/lang/Throwable;)Z
 
@@ -1752,7 +1786,7 @@
 .method private final notifyCompletion(Lkotlinx/coroutines/NodeList;Ljava/lang/Throwable;)V
     .registers 9
 
-    .line 341
+    .line 336
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNext()Ljava/lang/Object;
 
     move-result-object v0
@@ -1765,7 +1799,7 @@
 
     const/4 v1, 0x0
 
-    .line 342
+    .line 337
     :goto_c
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1773,7 +1807,7 @@
 
     if-nez v2, :cond_49
 
-    .line 343
+    .line 338
     instance-of v2, v0, Lkotlinx/coroutines/JobNode;
 
     if-eqz v2, :cond_44
@@ -1782,7 +1816,7 @@
 
     check-cast v2, Lkotlinx/coroutines/JobNode;
 
-    .line 370
+    .line 367
     :try_start_19
     invoke-virtual {v2, p2}, Lkotlinx/coroutines/CompletionHandlerBase;->invoke(Ljava/lang/Throwable;)V
     :try_end_1c
@@ -1795,12 +1829,12 @@
 
     if-eqz v1, :cond_24
 
-    .line 75
+    .line 369
     invoke-static {v1, v3}, Lkotlin/ExceptionsKt;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     goto :goto_44
 
-    .line 373
+    .line 370
     :cond_24
     new-instance v1, Lkotlinx/coroutines/CompletionHandlerException;
 
@@ -1826,10 +1860,10 @@
 
     invoke-direct {v1, v2, v3}, Lkotlinx/coroutines/CompletionHandlerException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 372
+    .line 369
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    .line 344
+    .line 339
     :cond_44
     :goto_44
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNextNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
@@ -1841,7 +1875,7 @@
     :cond_49
     if-eqz v1, :cond_4e
 
-    .line 377
+    .line 374
     invoke-virtual {p0, v1}, Lkotlinx/coroutines/JobSupport;->handleOnCompletionException$kotlinx_coroutines_core(Ljava/lang/Throwable;)V
 
     :cond_4e
@@ -1861,7 +1895,7 @@
         }
     .end annotation
 
-    .line 341
+    .line 336
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNext()Ljava/lang/Object;
 
     move-result-object v0
@@ -1874,7 +1908,7 @@
 
     const/4 v1, 0x0
 
-    .line 342
+    .line 337
     :goto_c
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1884,7 +1918,7 @@
 
     const/4 v2, 0x3
 
-    .line 343
+    .line 338
     const-string v3, "T"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->reifiedOperationMarker(ILjava/lang/String;)V
@@ -1895,7 +1929,7 @@
 
     check-cast v2, Lkotlinx/coroutines/JobNode;
 
-    .line 370
+    .line 367
     :try_start_1d
     invoke-virtual {v2, p2}, Lkotlinx/coroutines/CompletionHandlerBase;->invoke(Ljava/lang/Throwable;)V
     :try_end_20
@@ -1908,12 +1942,12 @@
 
     if-eqz v1, :cond_28
 
-    .line 75
+    .line 369
     invoke-static {v1, v3}, Lkotlin/ExceptionsKt;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     goto :goto_48
 
-    .line 373
+    .line 370
     :cond_28
     new-instance v1, Lkotlinx/coroutines/CompletionHandlerException;
 
@@ -1939,10 +1973,10 @@
 
     invoke-direct {v1, v2, v3}, Lkotlinx/coroutines/CompletionHandlerException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 372
+    .line 369
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    .line 344
+    .line 339
     :cond_48
     :goto_48
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNextNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
@@ -1954,7 +1988,7 @@
     :cond_4d
     if-eqz v1, :cond_52
 
-    .line 377
+    .line 374
     invoke-virtual {p0, v1}, Lkotlinx/coroutines/JobSupport;->handleOnCompletionException$kotlinx_coroutines_core(Ljava/lang/Throwable;)V
 
     :cond_52
@@ -1964,7 +1998,7 @@
 .method private final onAwaitInternalProcessResFunc(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 1265
+    .line 1262
     instance-of p0, p2, Lkotlinx/coroutines/CompletedExceptionally;
 
     if-nez p0, :cond_5
@@ -1991,18 +2025,18 @@
         }
     .end annotation
 
-    .line 1251
+    .line 1248
     :cond_0
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object p2
 
-    .line 1252
+    .line 1249
     instance-of v0, p2, Lkotlinx/coroutines/Incomplete;
 
     if-nez v0, :cond_15
 
-    .line 1253
+    .line 1250
     instance-of p0, p2, Lkotlinx/coroutines/CompletedExceptionally;
 
     if-eqz p0, :cond_d
@@ -2014,13 +2048,13 @@
 
     move-result-object p2
 
-    .line 1254
+    .line 1251
     :goto_11
     invoke-interface {p1, p2}, Lkotlinx/coroutines/selects/SelectInstance;->selectInRegistrationPhase(Ljava/lang/Object;)V
 
     return-void
 
-    .line 1257
+    .line 1254
     :cond_15
     invoke-direct {p0, p2}, Lkotlinx/coroutines/JobSupport;->startInternal(Ljava/lang/Object;)I
 
@@ -2028,7 +2062,7 @@
 
     if-ltz p2, :cond_0
 
-    .line 1259
+    .line 1256
     new-instance p2, Lkotlinx/coroutines/JobSupport$SelectOnAwaitCompletionHandler;
 
     invoke-direct {p2, p0, p1}, Lkotlinx/coroutines/JobSupport$SelectOnAwaitCompletionHandler;-><init>(Lkotlinx/coroutines/JobSupport;Lkotlinx/coroutines/selects/SelectInstance;)V
@@ -2037,7 +2071,7 @@
 
     move-result-object p0
 
-    .line 1260
+    .line 1257
     invoke-interface {p1, p0}, Lkotlinx/coroutines/selects/SelectInstance;->disposeOnCompletion(Lkotlinx/coroutines/DisposableHandle;)V
 
     return-void
@@ -2046,12 +2080,12 @@
 .method private final promoteEmptyToNodeList(Lkotlinx/coroutines/Empty;)V
     .registers 4
 
-    .line 530
+    .line 527
     new-instance v0, Lkotlinx/coroutines/NodeList;
 
     invoke-direct {v0}, Lkotlinx/coroutines/NodeList;-><init>()V
 
-    .line 531
+    .line 528
     invoke-virtual {p1}, Lkotlinx/coroutines/Empty;->isActive()Z
 
     move-result v1
@@ -2068,9 +2102,11 @@
     move-object v0, v1
 
     :goto_12
-    sget-object v1, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 532
+    move-result-object v1
+
+    .line 529
     invoke-static {v1, p0, p1, v0}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     return-void
@@ -2079,21 +2115,23 @@
 .method private final promoteSingleToNodeList(Lkotlinx/coroutines/JobNode;)V
     .registers 4
 
-    .line 537
+    .line 534
     new-instance v0, Lkotlinx/coroutines/NodeList;
 
     invoke-direct {v0}, Lkotlinx/coroutines/NodeList;-><init>()V
 
     invoke-virtual {p1, v0}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->addOneIfEmpty(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Z
 
-    .line 539
+    .line 536
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->getNextNode()Lkotlinx/coroutines/internal/LockFreeLinkedListNode;
 
     move-result-object v0
 
-    sget-object v1, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 541
+    move-result-object v1
+
+    .line 538
     invoke-static {v1, p0, p1, v0}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     return-void
@@ -2111,21 +2149,21 @@
         }
     .end annotation
 
-    .line 573
+    .line 570
     invoke-direct {p0}, Lkotlinx/coroutines/JobSupport;->joinInternal()Z
 
     move-result p2
 
     if-nez p2, :cond_c
 
-    .line 574
+    .line 571
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     invoke-interface {p1, p0}, Lkotlinx/coroutines/selects/SelectInstance;->selectInRegistrationPhase(Ljava/lang/Object;)V
 
     return-void
 
-    .line 577
+    .line 574
     :cond_c
     new-instance p2, Lkotlinx/coroutines/JobSupport$SelectOnJoinCompletionHandler;
 
@@ -2135,8 +2173,24 @@
 
     move-result-object p0
 
-    .line 578
+    .line 575
     invoke-interface {p1, p0}, Lkotlinx/coroutines/selects/SelectInstance;->disposeOnCompletion(Lkotlinx/coroutines/DisposableHandle;)V
+
+    return-void
+.end method
+
+.method private final synthetic set_parentHandle$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/JobSupport;->_parentHandle$volatile:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private final synthetic set_state$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/JobSupport;->_state$volatile:Ljava/lang/Object;
 
     return-void
 .end method
@@ -2144,7 +2198,7 @@
 .method private final startInternal(Ljava/lang/Object;)I
     .registers 6
 
-    .line 395
+    .line 392
     instance-of v0, p1, Lkotlinx/coroutines/Empty;
 
     const/4 v1, 0x1
@@ -2153,9 +2207,9 @@
 
     const/4 v3, 0x0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_24
 
-    .line 396
+    .line 393
     move-object v0, p1
 
     check-cast v0, Lkotlinx/coroutines/Empty;
@@ -2168,9 +2222,11 @@
 
     return v3
 
-    .line 397
+    .line 394
     :cond_11
-    sget-object v0, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     # getter for: Lkotlinx/coroutines/JobSupportKt;->EMPTY_ACTIVE:Lkotlinx/coroutines/Empty;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getEMPTY_ACTIVE$p()Lkotlinx/coroutines/Empty;
@@ -2181,24 +2237,26 @@
 
     move-result p1
 
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_20
 
     return v2
 
-    .line 398
-    :cond_1e
+    .line 395
+    :cond_20
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->onStart()V
 
     return v1
 
-    .line 401
-    :cond_22
+    .line 398
+    :cond_24
     instance-of v0, p1, Lkotlinx/coroutines/InactiveNodeList;
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_3e
 
-    .line 402
-    sget-object v0, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 399
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     move-object v3, p1
 
@@ -2212,31 +2270,31 @@
 
     move-result p1
 
-    if-nez p1, :cond_36
+    if-nez p1, :cond_3a
 
     return v2
 
-    .line 403
-    :cond_36
+    .line 400
+    :cond_3a
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->onStart()V
 
     return v1
 
-    :cond_3a
+    :cond_3e
     return v3
 .end method
 
 .method private final stateString(Ljava/lang/Object;)Ljava/lang/String;
     .registers 3
 
-    .line 1065
+    .line 1062
     instance-of p0, p1, Lkotlinx/coroutines/JobSupport$Finishing;
 
     const-string v0, "Active"
 
     if-eqz p0, :cond_1b
 
-    .line 1066
+    .line 1063
     check-cast p1, Lkotlinx/coroutines/JobSupport$Finishing;
 
     invoke-virtual {p1}, Lkotlinx/coroutines/JobSupport$Finishing;->isCancelling()Z
@@ -2249,7 +2307,7 @@
 
     return-object p0
 
-    .line 1067
+    .line 1064
     :cond_11
     invoke-virtual {p1}, Lkotlinx/coroutines/JobSupport$Finishing;->isCompleting()Z
 
@@ -2264,7 +2322,7 @@
     :cond_1a
     return-object v0
 
-    .line 1070
+    .line 1067
     :cond_1b
     instance-of p0, p1, Lkotlinx/coroutines/Incomplete;
 
@@ -2285,7 +2343,7 @@
 
     return-object p0
 
-    .line 1071
+    .line 1068
     :cond_2b
     instance-of p0, p1, Lkotlinx/coroutines/CompletedExceptionally;
 
@@ -2295,7 +2353,7 @@
 
     return-object p0
 
-    .line 1072
+    .line 1069
     :cond_32
     const-string p0, "Completed"
 
@@ -2313,7 +2371,7 @@
 
     const/4 p2, 0x0
 
-    .line 425
+    .line 422
     :cond_7
     invoke-virtual {p0, p1, p2}, Lkotlinx/coroutines/JobSupport;->toCancellationException(Ljava/lang/Throwable;Ljava/lang/String;)Ljava/util/concurrent/CancellationException;
 
@@ -2334,8 +2392,10 @@
 .method private final tryFinalizeSimpleState(Lkotlinx/coroutines/Incomplete;Ljava/lang/Object;)Z
     .registers 5
 
-    .line 294
-    sget-object v0, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 291
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     invoke-static {p2}, Lkotlinx/coroutines/JobSupportKt;->boxIncomplete(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2345,22 +2405,22 @@
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_10
 
     const/4 p0, 0x0
 
     return p0
 
-    :cond_e
+    :cond_10
     const/4 v0, 0x0
 
-    .line 295
+    .line 292
     invoke-virtual {p0, v0}, Lkotlinx/coroutines/JobSupport;->onCancelling(Ljava/lang/Throwable;)V
 
-    .line 296
+    .line 293
     invoke-virtual {p0, p2}, Lkotlinx/coroutines/JobSupport;->onCompletionInternal(Ljava/lang/Object;)V
 
-    .line 297
+    .line 294
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/JobSupport;->completeStateFinalization(Lkotlinx/coroutines/Incomplete;Ljava/lang/Object;)V
 
     const/4 p0, 0x1
@@ -2371,7 +2431,7 @@
 .method private final tryMakeCancelling(Lkotlinx/coroutines/Incomplete;Ljava/lang/Throwable;)Z
     .registers 7
 
-    .line 794
+    .line 791
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->getOrPromoteCancellingList(Lkotlinx/coroutines/Incomplete;)Lkotlinx/coroutines/NodeList;
 
     move-result-object v0
@@ -2382,25 +2442,27 @@
 
     return v1
 
-    .line 796
+    .line 793
     :cond_8
     new-instance v2, Lkotlinx/coroutines/JobSupport$Finishing;
 
     invoke-direct {v2, v0, v1, p2}, Lkotlinx/coroutines/JobSupport$Finishing;-><init>(Lkotlinx/coroutines/NodeList;ZLjava/lang/Throwable;)V
 
-    .line 797
-    sget-object v3, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 794
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v3
 
     invoke-static {v3, p0, p1, v2}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_16
+    if-nez p1, :cond_18
 
     return v1
 
-    .line 799
-    :cond_16
+    .line 796
+    :cond_18
     invoke-direct {p0, v0, p2}, Lkotlinx/coroutines/JobSupport;->notifyCancelling(Lkotlinx/coroutines/NodeList;Ljava/lang/Throwable;)V
 
     const/4 p0, 0x1
@@ -2411,12 +2473,12 @@
 .method private final tryMakeCompleting(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    .line 851
+    .line 848
     instance-of v0, p1, Lkotlinx/coroutines/Incomplete;
 
     if-nez v0, :cond_9
 
-    .line 852
+    .line 849
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_ALREADY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_ALREADY$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -2424,7 +2486,7 @@
 
     return-object p0
 
-    .line 859
+    .line 856
     :cond_9
     instance-of v0, p1, Lkotlinx/coroutines/Empty;
 
@@ -2443,7 +2505,7 @@
 
     if-nez v0, :cond_27
 
-    .line 860
+    .line 857
     check-cast p1, Lkotlinx/coroutines/Incomplete;
 
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/JobSupport;->tryFinalizeSimpleState(Lkotlinx/coroutines/Incomplete;Ljava/lang/Object;)Z
@@ -2454,7 +2516,7 @@
 
     return-object p2
 
-    .line 864
+    .line 861
     :cond_22
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_RETRY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_RETRY$p()Lkotlinx/coroutines/internal/Symbol;
@@ -2463,7 +2525,7 @@
 
     return-object p0
 
-    .line 867
+    .line 864
     :cond_27
     check-cast p1, Lkotlinx/coroutines/Incomplete;
 
@@ -2477,7 +2539,7 @@
 .method private final tryMakeCompletingSlowPath(Lkotlinx/coroutines/Incomplete;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 9
 
-    .line 877
+    .line 874
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->getOrPromoteCancellingList(Lkotlinx/coroutines/Incomplete;)Lkotlinx/coroutines/NodeList;
 
     move-result-object v0
@@ -2491,7 +2553,7 @@
 
     return-object p0
 
-    .line 881
+    .line 878
     :cond_b
     instance-of v1, p1, Lkotlinx/coroutines/JobSupport$Finishing;
 
@@ -2517,16 +2579,16 @@
 
     invoke-direct {v1, v0, v3, v2}, Lkotlinx/coroutines/JobSupport$Finishing;-><init>(Lkotlinx/coroutines/NodeList;ZLjava/lang/Throwable;)V
 
-    .line 883
+    .line 880
     :cond_1d
     new-instance v3, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v3}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    .line 20
+    .line 16
     monitor-enter v1
 
-    .line 886
+    .line 883
     :try_start_23
     invoke-virtual {v1}, Lkotlinx/coroutines/JobSupport$Finishing;->isCompleting()Z
 
@@ -2548,121 +2610,123 @@
     :catchall_2f
     move-exception p0
 
-    goto :goto_7e
+    goto :goto_80
 
     :cond_31
     const/4 v4, 0x1
 
-    .line 888
+    .line 885
     :try_start_32
     invoke-virtual {v1, v4}, Lkotlinx/coroutines/JobSupport$Finishing;->setCompleting(Z)V
 
-    if-eq v1, p1, :cond_45
+    if-eq v1, p1, :cond_47
 
-    .line 893
-    sget-object v4, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 890
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v4
 
     invoke-static {v4, p0, p1, v1}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-nez v4, :cond_45
+    if-nez v4, :cond_47
 
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_RETRY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_RETRY$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object p0
-    :try_end_43
-    .catchall {:try_start_32 .. :try_end_43} :catchall_2f
+    :try_end_45
+    .catchall {:try_start_32 .. :try_end_45} :catchall_2f
 
     monitor-exit v1
 
     return-object p0
 
-    .line 898
-    :cond_45
-    :try_start_45
+    .line 895
+    :cond_47
+    :try_start_47
     invoke-virtual {v1}, Lkotlinx/coroutines/JobSupport$Finishing;->isCancelling()Z
 
     move-result v4
 
-    .line 899
+    .line 896
     instance-of v5, p2, Lkotlinx/coroutines/CompletedExceptionally;
 
-    if-eqz v5, :cond_51
+    if-eqz v5, :cond_53
 
     move-object v5, p2
 
     check-cast v5, Lkotlinx/coroutines/CompletedExceptionally;
 
-    goto :goto_52
+    goto :goto_54
 
-    :cond_51
+    :cond_53
     move-object v5, v2
 
-    :goto_52
-    if-eqz v5, :cond_59
+    :goto_54
+    if-eqz v5, :cond_5b
 
     iget-object v5, v5, Lkotlinx/coroutines/CompletedExceptionally;->cause:Ljava/lang/Throwable;
 
     invoke-virtual {v1, v5}, Lkotlinx/coroutines/JobSupport$Finishing;->addExceptionLocked(Ljava/lang/Throwable;)V
 
-    .line 901
-    :cond_59
+    .line 898
+    :cond_5b
     invoke-virtual {v1}, Lkotlinx/coroutines/JobSupport$Finishing;->getRootCause()Ljava/lang/Throwable;
 
     move-result-object v5
 
-    if-nez v4, :cond_60
+    if-nez v4, :cond_62
 
     move-object v2, v5
 
-    :cond_60
+    :cond_62
     iput-object v2, v3, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 902
+    .line 899
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_64
-    .catchall {:try_start_45 .. :try_end_64} :catchall_2f
+    :try_end_66
+    .catchall {:try_start_47 .. :try_end_66} :catchall_2f
 
-    .line 20
+    .line 16
     monitor-exit v1
 
-    if-eqz v2, :cond_6a
+    if-eqz v2, :cond_6c
 
-    .line 904
+    .line 901
     invoke-direct {p0, v0, v2}, Lkotlinx/coroutines/JobSupport;->notifyCancelling(Lkotlinx/coroutines/NodeList;Ljava/lang/Throwable;)V
 
-    .line 906
-    :cond_6a
+    .line 903
+    :cond_6c
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->firstChild(Lkotlinx/coroutines/Incomplete;)Lkotlinx/coroutines/ChildHandleNode;
 
     move-result-object p1
 
-    if-eqz p1, :cond_79
+    if-eqz p1, :cond_7b
 
-    .line 907
+    .line 904
     invoke-direct {p0, v1, p1, p2}, Lkotlinx/coroutines/JobSupport;->tryWaitForChild(Lkotlinx/coroutines/JobSupport$Finishing;Lkotlinx/coroutines/ChildHandleNode;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_79
+    if-eqz p1, :cond_7b
 
-    .line 908
+    .line 905
     sget-object p0, Lkotlinx/coroutines/JobSupportKt;->COMPLETING_WAITING_CHILDREN:Lkotlinx/coroutines/internal/Symbol;
 
     return-object p0
 
-    .line 910
-    :cond_79
+    .line 907
+    :cond_7b
     invoke-direct {p0, v1, p2}, Lkotlinx/coroutines/JobSupport;->finalizeFinishingState(Lkotlinx/coroutines/JobSupport$Finishing;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 
-    .line 20
-    :goto_7e
+    .line 16
+    :goto_80
     monitor-exit v1
 
     throw p0
@@ -2671,11 +2735,11 @@
 .method private final tryWaitForChild(Lkotlinx/coroutines/JobSupport$Finishing;Lkotlinx/coroutines/ChildHandleNode;Ljava/lang/Object;)Z
     .registers 10
 
-    .line 922
+    .line 919
     :cond_0
     iget-object v0, p2, Lkotlinx/coroutines/ChildHandleNode;->childJob:Lkotlinx/coroutines/ChildJob;
 
-    .line 924
+    .line 921
     new-instance v3, Lkotlinx/coroutines/JobSupport$ChildCompletion;
 
     invoke-direct {v3, p0, p1, p2, p3}, Lkotlinx/coroutines/JobSupport$ChildCompletion;-><init>(Lkotlinx/coroutines/JobSupport;Lkotlinx/coroutines/JobSupport$Finishing;Lkotlinx/coroutines/ChildHandleNode;Ljava/lang/Object;)V
@@ -2688,12 +2752,12 @@
 
     const/4 v2, 0x0
 
-    .line 922
+    .line 919
     invoke-static/range {v0 .. v5}, Lkotlinx/coroutines/Job$DefaultImpls;->invokeOnCompletion$default(Lkotlinx/coroutines/Job;ZZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lkotlinx/coroutines/DisposableHandle;
 
     move-result-object v0
 
-    .line 926
+    .line 923
     sget-object v1, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
     if-eq v0, v1, :cond_15
@@ -2702,7 +2766,7 @@
 
     return p0
 
-    .line 927
+    .line 924
     :cond_15
     invoke-direct {p0, p2}, Lkotlinx/coroutines/JobSupport;->nextChild(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Lkotlinx/coroutines/ChildHandleNode;
 
@@ -2726,7 +2790,7 @@
 .method public final attachChild(Lkotlinx/coroutines/ChildJob;)Lkotlinx/coroutines/ChildHandle;
     .registers 8
 
-    .line 974
+    .line 971
     new-instance v3, Lkotlinx/coroutines/ChildHandleNode;
 
     invoke-direct {v3, p1}, Lkotlinx/coroutines/ChildHandleNode;-><init>(Lkotlinx/coroutines/ChildJob;)V
@@ -2766,39 +2830,39 @@
         }
     .end annotation
 
-    .line 1214
+    .line 1211
     :cond_0
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1215
+    .line 1212
     instance-of v1, v0, Lkotlinx/coroutines/Incomplete;
 
     if-nez v1, :cond_16
 
-    .line 1217
+    .line 1214
     instance-of p0, v0, Lkotlinx/coroutines/CompletedExceptionally;
 
     if-nez p0, :cond_11
 
-    .line 1220
+    .line 1217
     invoke-static {v0}, Lkotlinx/coroutines/JobSupportKt;->unboxState(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 
-    .line 1218
+    .line 1215
     :cond_11
     check-cast v0, Lkotlinx/coroutines/CompletedExceptionally;
 
     iget-object p0, v0, Lkotlinx/coroutines/CompletedExceptionally;->cause:Ljava/lang/Throwable;
 
-    .line 153
+    .line 149
     throw p0
 
-    .line 1223
+    .line 1220
     :cond_16
     invoke-direct {p0, v0}, Lkotlinx/coroutines/JobSupport;->startInternal(Ljava/lang/Object;)I
 
@@ -2806,7 +2870,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 1225
+    .line 1222
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->awaitSuspend(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -2817,7 +2881,7 @@
 .method public synthetic cancel()V
     .registers 1
 
-    .line 25
+    .line 22
     invoke-static {p0}, Lkotlinx/coroutines/Job$DefaultImpls;->cancel(Lkotlinx/coroutines/Job;)V
 
     return-void
@@ -2828,7 +2892,7 @@
 
     if-nez p1, :cond_c
 
-    .line 707
+    .line 704
     new-instance p1, Lkotlinx/coroutines/JobCancellationException;
 
     # invokes: Lkotlinx/coroutines/JobSupport;->cancellationExceptionMessage()Ljava/lang/String;
@@ -2840,7 +2904,7 @@
 
     invoke-direct {p1, v0, v1, p0}, Lkotlinx/coroutines/JobCancellationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Lkotlinx/coroutines/Job;)V
 
-    .line 621
+    .line 618
     :cond_c
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->cancelInternal(Ljava/lang/Throwable;)V
 
@@ -2856,14 +2920,14 @@
 
     if-eqz p1, :cond_a
 
-    .line 630
+    .line 627
     invoke-static {p0, p1, v1, v0, v1}, Lkotlinx/coroutines/JobSupport;->toCancellationException$default(Lkotlinx/coroutines/JobSupport;Ljava/lang/Throwable;Ljava/lang/String;ILjava/lang/Object;)Ljava/util/concurrent/CancellationException;
 
     move-result-object p1
 
     if-nez p1, :cond_13
 
-    .line 707
+    .line 704
     :cond_a
     new-instance p1, Lkotlinx/coroutines/JobCancellationException;
 
@@ -2874,7 +2938,7 @@
 
     invoke-direct {p1, v2, v1, p0}, Lkotlinx/coroutines/JobCancellationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Lkotlinx/coroutines/Job;)V
 
-    .line 630
+    .line 627
     :cond_13
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->cancelInternal(Ljava/lang/Throwable;)V
 
@@ -2884,7 +2948,7 @@
 .method public final cancelCoroutine(Ljava/lang/Throwable;)Z
     .registers 2
 
-    .line 662
+    .line 659
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->cancelImpl$kotlinx_coroutines_core(Ljava/lang/Object;)Z
 
     move-result p0
@@ -2895,13 +2959,13 @@
 .method public final cancelImpl$kotlinx_coroutines_core(Ljava/lang/Object;)Z
     .registers 5
 
-    .line 667
+    .line 664
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_ALREADY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_ALREADY$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v0
 
-    .line 668
+    .line 665
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getOnCancelComplete$kotlinx_coroutines_core()Z
 
     move-result v1
@@ -2910,19 +2974,19 @@
 
     if-eqz v1, :cond_14
 
-    .line 671
+    .line 668
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->cancelMakeCompleting(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 672
+    .line 669
     sget-object v1, Lkotlinx/coroutines/JobSupportKt;->COMPLETING_WAITING_CHILDREN:Lkotlinx/coroutines/internal/Symbol;
 
     if-ne v0, v1, :cond_14
 
     return v2
 
-    .line 674
+    .line 671
     :cond_14
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_ALREADY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_ALREADY$p()Lkotlinx/coroutines/internal/Symbol;
@@ -2931,12 +2995,12 @@
 
     if-ne v0, v1, :cond_1e
 
-    .line 675
+    .line 672
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->makeCancelling(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 678
+    .line 675
     :cond_1e
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_ALREADY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_ALREADY$p()Lkotlinx/coroutines/internal/Symbol;
@@ -2947,7 +3011,7 @@
 
     return v2
 
-    .line 679
+    .line 676
     :cond_25
     sget-object p1, Lkotlinx/coroutines/JobSupportKt;->COMPLETING_WAITING_CHILDREN:Lkotlinx/coroutines/internal/Symbol;
 
@@ -2955,7 +3019,7 @@
 
     return v2
 
-    .line 680
+    .line 677
     :cond_2a
     # getter for: Lkotlinx/coroutines/JobSupportKt;->TOO_LATE_TO_CANCEL:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getTOO_LATE_TO_CANCEL$p()Lkotlinx/coroutines/internal/Symbol;
@@ -2968,7 +3032,7 @@
 
     return p0
 
-    .line 682
+    .line 679
     :cond_32
     invoke-virtual {p0, v0}, Lkotlinx/coroutines/JobSupport;->afterCompletion(Ljava/lang/Object;)V
 
@@ -2978,7 +3042,7 @@
 .method public cancelInternal(Ljava/lang/Throwable;)V
     .registers 2
 
-    .line 636
+    .line 633
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->cancelImpl$kotlinx_coroutines_core(Ljava/lang/Object;)Z
 
     return-void
@@ -2987,7 +3051,7 @@
 .method protected cancellationExceptionMessage()Ljava/lang/String;
     .registers 1
 
-    .line 624
+    .line 621
     const-string p0, "Job was cancelled"
 
     return-object p0
@@ -2996,7 +3060,7 @@
 .method public childCancelled(Ljava/lang/Throwable;)Z
     .registers 4
 
-    .line 654
+    .line 651
     instance-of v0, p1, Ljava/util/concurrent/CancellationException;
 
     const/4 v1, 0x1
@@ -3005,7 +3069,7 @@
 
     return v1
 
-    .line 655
+    .line 652
     :cond_6
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->cancelImpl$kotlinx_coroutines_core(Ljava/lang/Object;)Z
 
@@ -3030,7 +3094,7 @@
 .method public final defaultCancellationException$kotlinx_coroutines_core(Ljava/lang/String;Ljava/lang/Throwable;)Lkotlinx/coroutines/JobCancellationException;
     .registers 4
 
-    .line 707
+    .line 704
     new-instance v0, Lkotlinx/coroutines/JobCancellationException;
 
     if-nez p1, :cond_8
@@ -3058,7 +3122,7 @@
         }
     .end annotation
 
-    .line 25
+    .line 22
     invoke-static {p0, p1, p2}, Lkotlinx/coroutines/Job$DefaultImpls;->fold(Lkotlinx/coroutines/Job;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
 
     move-result-object p0
@@ -3078,7 +3142,7 @@
         }
     .end annotation
 
-    .line 25
+    .line 22
     invoke-static {p0, p1}, Lkotlinx/coroutines/Job$DefaultImpls;->get(Lkotlinx/coroutines/Job;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
 
     move-result-object p0
@@ -3089,12 +3153,12 @@
 .method public final getCancellationException()Ljava/util/concurrent/CancellationException;
     .registers 5
 
-    .line 417
+    .line 414
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 418
+    .line 415
     instance-of v1, v0, Lkotlinx/coroutines/JobSupport$Finishing;
 
     const-string v2, "Job is still new or active: "
@@ -3138,7 +3202,7 @@
     :cond_2e
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 419
+    .line 416
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3159,13 +3223,13 @@
 
     throw v0
 
-    .line 420
+    .line 417
     :cond_47
     instance-of v1, v0, Lkotlinx/coroutines/Incomplete;
 
     if-nez v1, :cond_75
 
-    .line 421
+    .line 418
     instance-of v1, v0, Lkotlinx/coroutines/CompletedExceptionally;
 
     const/4 v2, 0x0
@@ -3184,7 +3248,7 @@
 
     return-object p0
 
-    .line 422
+    .line 419
     :cond_5a
     new-instance v0, Lkotlinx/coroutines/JobCancellationException;
 
@@ -3210,7 +3274,7 @@
 
     return-object v0
 
-    .line 420
+    .line 417
     :cond_75
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -3238,12 +3302,12 @@
 .method public getChildJobCancellationCause()Ljava/util/concurrent/CancellationException;
     .registers 6
 
-    .line 711
+    .line 708
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 713
+    .line 710
     instance-of v1, v0, Lkotlinx/coroutines/JobSupport$Finishing;
 
     const/4 v2, 0x0
@@ -3260,7 +3324,7 @@
 
     goto :goto_20
 
-    .line 714
+    .line 711
     :cond_11
     instance-of v1, v0, Lkotlinx/coroutines/CompletedExceptionally;
 
@@ -3274,7 +3338,7 @@
 
     goto :goto_20
 
-    .line 715
+    .line 712
     :cond_1b
     instance-of v1, v0, Lkotlinx/coroutines/Incomplete;
 
@@ -3282,7 +3346,7 @@
 
     move-object v1, v2
 
-    .line 718
+    .line 715
     :goto_20
     instance-of v3, v1, Ljava/util/concurrent/CancellationException;
 
@@ -3320,7 +3384,7 @@
     :cond_43
     return-object v2
 
-    .line 715
+    .line 712
     :cond_44
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -3356,7 +3420,7 @@
         }
     .end annotation
 
-    .line 954
+    .line 951
     new-instance v0, Lkotlinx/coroutines/JobSupport$children$1;
 
     const/4 v1, 0x0
@@ -3373,29 +3437,29 @@
 .method public final getCompletedInternal$kotlinx_coroutines_core()Ljava/lang/Object;
     .registers 2
 
-    .line 1202
+    .line 1199
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 1203
+    .line 1200
     instance-of v0, p0, Lkotlinx/coroutines/Incomplete;
 
     if-nez v0, :cond_16
 
-    .line 1204
+    .line 1201
     instance-of v0, p0, Lkotlinx/coroutines/CompletedExceptionally;
 
     if-nez v0, :cond_11
 
-    .line 1205
+    .line 1202
     invoke-static {p0}, Lkotlinx/coroutines/JobSupportKt;->unboxState(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 
-    .line 1204
+    .line 1201
     :cond_11
     check-cast p0, Lkotlinx/coroutines/CompletedExceptionally;
 
@@ -3403,7 +3467,7 @@
 
     throw p0
 
-    .line 1203
+    .line 1200
     :cond_16
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -3417,12 +3481,12 @@
 .method protected final getCompletionCause()Ljava/lang/Throwable;
     .registers 4
 
-    .line 435
+    .line 432
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 436
+    .line 433
     instance-of v1, v0, Lkotlinx/coroutines/JobSupport$Finishing;
 
     const-string v2, "Job is still new or active: "
@@ -3442,7 +3506,7 @@
     :cond_13
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 437
+    .line 434
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3463,13 +3527,13 @@
 
     throw v0
 
-    .line 438
+    .line 435
     :cond_2c
     instance-of v1, v0, Lkotlinx/coroutines/Incomplete;
 
     if-nez v1, :cond_3b
 
-    .line 439
+    .line 436
     instance-of p0, v0, Lkotlinx/coroutines/CompletedExceptionally;
 
     if-eqz p0, :cond_39
@@ -3485,7 +3549,7 @@
 
     return-object p0
 
-    .line 438
+    .line 435
     :cond_3b
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -3513,7 +3577,7 @@
 .method protected final getCompletionCauseHandled()Z
     .registers 2
 
-    .line 447
+    .line 444
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object p0
@@ -3543,24 +3607,24 @@
 .method public final getCompletionExceptionOrNull()Ljava/lang/Throwable;
     .registers 3
 
-    .line 1193
+    .line 1190
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1194
+    .line 1191
     instance-of v1, v0, Lkotlinx/coroutines/Incomplete;
 
     if-nez v1, :cond_d
 
-    .line 1195
+    .line 1192
     invoke-direct {p0, v0}, Lkotlinx/coroutines/JobSupport;->getExceptionOrNull(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object p0
 
     return-object p0
 
-    .line 1194
+    .line 1191
     :cond_d
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -3588,7 +3652,7 @@
         }
     .end annotation
 
-    .line 27
+    .line 24
     sget-object p0, Lkotlinx/coroutines/Job;->Key:Lkotlinx/coroutines/Job$Key;
 
     return-object p0
@@ -3604,10 +3668,10 @@
         }
     .end annotation
 
-    .line 1242
+    .line 1239
     new-instance v0, Lkotlinx/coroutines/selects/SelectClause1Impl;
 
-    .line 1244
+    .line 1241
     sget-object v1, Lkotlinx/coroutines/JobSupport$onAwaitInternal$1;->INSTANCE:Lkotlinx/coroutines/JobSupport$onAwaitInternal$1;
 
     const-string v2, "null cannot be cast to non-null type kotlin.Function3<@[ParameterName(name = \'clauseObject\')] kotlin.Any, @[ParameterName(name = \'select\')] kotlinx.coroutines.selects.SelectInstance<*>, @[ParameterName(name = \'param\')] kotlin.Any?, kotlin.Unit>{ kotlinx.coroutines.selects.SelectKt.RegistrationFunction }"
@@ -3622,7 +3686,7 @@
 
     check-cast v1, Lkotlin/jvm/functions/Function3;
 
-    .line 1245
+    .line 1242
     sget-object v3, Lkotlinx/coroutines/JobSupport$onAwaitInternal$2;->INSTANCE:Lkotlinx/coroutines/JobSupport$onAwaitInternal$2;
 
     const-string v4, "null cannot be cast to non-null type kotlin.Function3<@[ParameterName(name = \'clauseObject\')] kotlin.Any, @[ParameterName(name = \'param\')] kotlin.Any?, @[ParameterName(name = \'clauseResult\')] kotlin.Any?, kotlin.Any?>{ kotlinx.coroutines.selects.SelectKt.ProcessResultFunction }"
@@ -3647,7 +3711,7 @@
 
     move-object v1, p0
 
-    .line 1242
+    .line 1239
     invoke-direct/range {v0 .. v6}, Lkotlinx/coroutines/selects/SelectClause1Impl;-><init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-object v0
@@ -3664,10 +3728,10 @@
 .method public final getOnJoin()Lkotlinx/coroutines/selects/SelectClause0;
     .registers 7
 
-    .line 566
+    .line 563
     new-instance v0, Lkotlinx/coroutines/selects/SelectClause0Impl;
 
-    .line 568
+    .line 565
     sget-object v1, Lkotlinx/coroutines/JobSupport$onJoin$1;->INSTANCE:Lkotlinx/coroutines/JobSupport$onJoin$1;
 
     const-string v2, "null cannot be cast to non-null type kotlin.Function3<@[ParameterName(name = \'clauseObject\')] kotlin.Any, @[ParameterName(name = \'select\')] kotlinx.coroutines.selects.SelectInstance<*>, @[ParameterName(name = \'param\')] kotlin.Any?, kotlin.Unit>{ kotlinx.coroutines.selects.SelectKt.RegistrationFunction }"
@@ -3692,7 +3756,7 @@
 
     move-object v1, p0
 
-    .line 566
+    .line 563
     invoke-direct/range {v0 .. v5}, Lkotlinx/coroutines/selects/SelectClause0Impl;-><init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-object v0
@@ -3701,7 +3765,7 @@
 .method public getParent()Lkotlinx/coroutines/Job;
     .registers 1
 
-    .line 136
+    .line 133
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getParentHandle$kotlinx_coroutines_core()Lkotlinx/coroutines/ChildHandle;
 
     move-result-object p0
@@ -3723,9 +3787,11 @@
 .method public final getParentHandle$kotlinx_coroutines_core()Lkotlinx/coroutines/ChildHandle;
     .registers 2
 
-    sget-object v0, Lkotlinx/coroutines/JobSupport;->_parentHandle$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_parentHandle$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 132
+    move-result-object v0
+
+    .line 129
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -3738,27 +3804,30 @@
 .method public final getState$kotlinx_coroutines_core()Ljava/lang/Object;
     .registers 4
 
-    sget-object v0, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 164
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    :goto_2
+    move-result-object v0
+
+    :goto_4
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 169
+    .line 166
     instance-of v2, v1, Lkotlinx/coroutines/internal/OpDescriptor;
 
-    if-nez v2, :cond_b
+    if-nez v2, :cond_d
 
     return-object v1
 
-    .line 170
-    :cond_b
+    .line 167
+    :cond_d
     check-cast v1, Lkotlinx/coroutines/internal/OpDescriptor;
 
     invoke-virtual {v1, p0}, Lkotlinx/coroutines/internal/OpDescriptor;->perform(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_2
+    goto :goto_4
 .end method
 
 .method protected handleJobException(Ljava/lang/Throwable;)Z
@@ -3772,7 +3841,7 @@
 .method public handleOnCompletionException$kotlinx_coroutines_core(Ljava/lang/Throwable;)V
     .registers 2
 
-    .line 984
+    .line 981
     throw p1
 .end method
 
@@ -3781,36 +3850,36 @@
 
     if-nez p1, :cond_8
 
-    .line 147
+    .line 144
     sget-object p1, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->setParentHandle$kotlinx_coroutines_core(Lkotlinx/coroutines/ChildHandle;)V
 
     return-void
 
-    .line 150
+    .line 147
     :cond_8
     invoke-interface {p1}, Lkotlinx/coroutines/Job;->start()Z
 
-    .line 152
+    .line 149
     invoke-interface {p1, p0}, Lkotlinx/coroutines/Job;->attachChild(Lkotlinx/coroutines/ChildJob;)Lkotlinx/coroutines/ChildHandle;
 
     move-result-object p1
 
-    .line 153
+    .line 150
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->setParentHandle$kotlinx_coroutines_core(Lkotlinx/coroutines/ChildHandle;)V
 
-    .line 155
+    .line 152
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->isCompleted()Z
 
     move-result v0
 
     if-eqz v0, :cond_20
 
-    .line 156
+    .line 153
     invoke-interface {p1}, Lkotlinx/coroutines/DisposableHandle;->dispose()V
 
-    .line 157
+    .line 154
     sget-object p1, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->setParentHandle$kotlinx_coroutines_core(Lkotlinx/coroutines/ChildHandle;)V
@@ -3834,7 +3903,7 @@
 
     const/4 v1, 0x1
 
-    .line 451
+    .line 448
     invoke-virtual {p0, v0, v1, p1}, Lkotlinx/coroutines/JobSupport;->invokeOnCompletion(ZZLkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/DisposableHandle;
 
     move-result-object p0
@@ -3853,24 +3922,24 @@
         }
     .end annotation
 
-    .line 460
+    .line 457
     invoke-direct {p0, p3, p1}, Lkotlinx/coroutines/JobSupport;->makeNode(Lkotlin/jvm/functions/Function1;Z)Lkotlinx/coroutines/JobNode;
 
     move-result-object v0
 
-    .line 179
+    .line 176
     :cond_4
     :goto_4
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 463
+    .line 460
     instance-of v2, v1, Lkotlinx/coroutines/Empty;
 
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_24
 
-    .line 464
+    .line 461
     move-object v2, v1
 
     check-cast v2, Lkotlinx/coroutines/Empty;
@@ -3879,10 +3948,12 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_20
 
-    .line 466
-    sget-object v2, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 463
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v2
 
     invoke-static {v2, p0, v1, v0}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -3890,23 +3961,23 @@
 
     if-eqz v1, :cond_4
 
-    goto :goto_7e
+    goto :goto_80
 
-    .line 468
-    :cond_1e
+    .line 465
+    :cond_20
     invoke-direct {p0, v2}, Lkotlinx/coroutines/JobSupport;->promoteEmptyToNodeList(Lkotlinx/coroutines/Empty;)V
 
     goto :goto_4
 
-    .line 470
-    :cond_22
+    .line 467
+    :cond_24
     instance-of v2, v1, Lkotlinx/coroutines/Incomplete;
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_7f
+    if-eqz v2, :cond_81
 
-    .line 471
+    .line 468
     move-object v2, v1
 
     check-cast v2, Lkotlinx/coroutines/Incomplete;
@@ -3915,9 +3986,9 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_3b
+    if-nez v2, :cond_3d
 
-    .line 473
+    .line 470
     const-string v2, "null cannot be cast to non-null type kotlinx.coroutines.JobNode"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -3928,22 +3999,22 @@
 
     goto :goto_4
 
-    .line 476
-    :cond_3b
+    .line 473
+    :cond_3d
     sget-object v4, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
-    if-eqz p1, :cond_70
+    if-eqz p1, :cond_72
 
-    .line 477
+    .line 474
     instance-of v5, v1, Lkotlinx/coroutines/JobSupport$Finishing;
 
-    if-eqz v5, :cond_70
+    if-eqz v5, :cond_72
 
-    .line 20
+    .line 16
     monitor-enter v1
 
-    .line 480
-    :try_start_44
+    .line 477
+    :try_start_46
     move-object v3, v1
 
     check-cast v3, Lkotlinx/coroutines/JobSupport$Finishing;
@@ -3952,14 +4023,14 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_5d
+    if-eqz v3, :cond_5f
 
-    .line 47
+    .line 43
     instance-of v5, p3, Lkotlinx/coroutines/ChildHandleNode;
 
-    if-eqz v5, :cond_6a
+    if-eqz v5, :cond_6c
 
-    .line 483
+    .line 480
     move-object v5, v1
 
     check-cast v5, Lkotlinx/coroutines/JobSupport$Finishing;
@@ -3968,107 +4039,107 @@
 
     move-result v5
 
-    if-nez v5, :cond_6a
+    if-nez v5, :cond_6c
 
-    goto :goto_5d
+    goto :goto_5f
 
-    :catchall_5b
+    :catchall_5d
     move-exception p0
 
-    goto :goto_6e
+    goto :goto_70
 
-    .line 485
-    :cond_5d
-    :goto_5d
+    .line 482
+    :cond_5f
+    :goto_5f
     invoke-direct {p0, v1, v2, v0}, Lkotlinx/coroutines/JobSupport;->addLastAtomic(Ljava/lang/Object;Lkotlinx/coroutines/NodeList;Lkotlinx/coroutines/JobNode;)Z
 
     move-result v4
-    :try_end_61
-    .catchall {:try_start_44 .. :try_end_61} :catchall_5b
+    :try_end_63
+    .catchall {:try_start_46 .. :try_end_63} :catchall_5d
 
-    if-nez v4, :cond_65
+    if-nez v4, :cond_67
 
     monitor-exit v1
 
     goto :goto_4
 
-    :cond_65
-    if-nez v3, :cond_69
+    :cond_67
+    if-nez v3, :cond_6b
 
-    .line 487
+    .line 484
     monitor-exit v1
 
     return-object v0
 
-    :cond_69
+    :cond_6b
     move-object v4, v0
 
-    .line 491
-    :cond_6a
-    :try_start_6a
+    .line 488
+    :cond_6c
+    :try_start_6c
     sget-object v5, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_6c
-    .catchall {:try_start_6a .. :try_end_6c} :catchall_5b
+    :try_end_6e
+    .catchall {:try_start_6c .. :try_end_6e} :catchall_5d
 
-    .line 20
+    .line 16
     monitor-exit v1
 
-    goto :goto_70
+    goto :goto_72
 
-    :goto_6e
+    :goto_70
     monitor-exit v1
 
     throw p0
 
-    :cond_70
-    :goto_70
-    if-eqz v3, :cond_78
+    :cond_72
+    :goto_72
+    if-eqz v3, :cond_7a
 
-    if-eqz p2, :cond_77
+    if-eqz p2, :cond_79
 
-    .line 22
+    .line 18
     invoke-interface {p3, v3}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_77
+    :cond_79
     return-object v4
 
-    .line 498
-    :cond_78
+    .line 495
+    :cond_7a
     invoke-direct {p0, v1, v2, v0}, Lkotlinx/coroutines/JobSupport;->addLastAtomic(Ljava/lang/Object;Lkotlinx/coroutines/NodeList;Lkotlinx/coroutines/JobNode;)Z
 
     move-result v1
 
     if-eqz v1, :cond_4
 
-    :goto_7e
+    :goto_80
     return-object v0
 
-    :cond_7f
-    if-eqz p2, :cond_90
+    :cond_81
+    if-eqz p2, :cond_92
 
-    .line 505
+    .line 502
     instance-of p0, v1, Lkotlinx/coroutines/CompletedExceptionally;
 
-    if-eqz p0, :cond_88
+    if-eqz p0, :cond_8a
 
     check-cast v1, Lkotlinx/coroutines/CompletedExceptionally;
 
-    goto :goto_89
+    goto :goto_8b
 
-    :cond_88
+    :cond_8a
     move-object v1, v3
 
-    :goto_89
-    if-eqz v1, :cond_8d
+    :goto_8b
+    if-eqz v1, :cond_8f
 
     iget-object v3, v1, Lkotlinx/coroutines/CompletedExceptionally;->cause:Ljava/lang/Throwable;
 
-    .line 22
-    :cond_8d
+    .line 18
+    :cond_8f
     invoke-interface {p3, v3}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 506
-    :cond_90
+    .line 503
+    :cond_92
     sget-object p0, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
     return-object p0
@@ -4077,12 +4148,12 @@
 .method public isActive()Z
     .registers 2
 
-    .line 184
+    .line 181
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 185
+    .line 182
     instance-of v0, p0, Lkotlinx/coroutines/Incomplete;
 
     if-eqz v0, :cond_12
@@ -4108,12 +4179,12 @@
 .method public final isCancelled()Z
     .registers 2
 
-    .line 191
+    .line 188
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 192
+    .line 189
     instance-of v0, p0, Lkotlinx/coroutines/CompletedExceptionally;
 
     if-nez v0, :cond_17
@@ -4147,7 +4218,7 @@
 .method public final isCompleted()Z
     .registers 1
 
-    .line 188
+    .line 185
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object p0
@@ -4162,7 +4233,7 @@
 .method public final isCompletedExceptionally()Z
     .registers 1
 
-    .line 1190
+    .line 1187
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object p0
@@ -4193,26 +4264,26 @@
         }
     .end annotation
 
-    .line 545
+    .line 542
     invoke-direct {p0}, Lkotlinx/coroutines/JobSupport;->joinInternal()Z
 
     move-result v0
 
     if-nez v0, :cond_10
 
-    .line 546
+    .line 543
     invoke-interface {p1}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
 
     invoke-static {p0}, Lkotlinx/coroutines/JobKt;->ensureActive(Lkotlin/coroutines/CoroutineContext;)V
 
-    .line 547
+    .line 544
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 549
+    .line 546
     :cond_10
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->joinSuspend(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -4235,18 +4306,18 @@
 .method public final makeCompleting$kotlinx_coroutines_core(Ljava/lang/Object;)Z
     .registers 5
 
-    .line 179
+    .line 176
     :cond_0
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 810
+    .line 807
     invoke-direct {p0, v0, p1}, Lkotlinx/coroutines/JobSupport;->tryMakeCompleting(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 812
+    .line 809
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_ALREADY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_ALREADY$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -4258,7 +4329,7 @@
 
     return p0
 
-    .line 813
+    .line 810
     :cond_10
     sget-object v1, Lkotlinx/coroutines/JobSupportKt;->COMPLETING_WAITING_CHILDREN:Lkotlinx/coroutines/internal/Symbol;
 
@@ -4268,7 +4339,7 @@
 
     return v2
 
-    .line 814
+    .line 811
     :cond_16
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_RETRY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_RETRY$p()Lkotlinx/coroutines/internal/Symbol;
@@ -4277,7 +4348,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 816
+    .line 813
     invoke-virtual {p0, v0}, Lkotlinx/coroutines/JobSupport;->afterCompletion(Ljava/lang/Object;)V
 
     return v2
@@ -4286,18 +4357,18 @@
 .method public final makeCompletingOnce$kotlinx_coroutines_core(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 5
 
-    .line 179
+    .line 176
     :cond_0
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 832
+    .line 829
     invoke-direct {p0, v0, p1}, Lkotlinx/coroutines/JobSupport;->tryMakeCompleting(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 834
+    .line 831
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_ALREADY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_ALREADY$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -4305,7 +4376,7 @@
 
     if-eq v0, v1, :cond_15
 
-    .line 839
+    .line 836
     # getter for: Lkotlinx/coroutines/JobSupportKt;->COMPLETING_RETRY:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getCOMPLETING_RETRY$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -4315,11 +4386,11 @@
 
     return-object v0
 
-    .line 835
+    .line 832
     :cond_15
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 836
+    .line 833
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4340,12 +4411,12 @@
 
     move-result-object v1
 
-    .line 837
+    .line 834
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobSupport;->getExceptionOrNull(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object p0
 
-    .line 835
+    .line 832
     invoke-direct {v0, v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     throw v0
@@ -4362,7 +4433,7 @@
         }
     .end annotation
 
-    .line 25
+    .line 22
     invoke-static {p0, p1}, Lkotlinx/coroutines/Job$DefaultImpls;->minusKey(Lkotlinx/coroutines/Job;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -4373,7 +4444,7 @@
 .method public nameString$kotlinx_coroutines_core()Ljava/lang/String;
     .registers 1
 
-    .line 1062
+    .line 1059
     invoke-static {p0}, Lkotlinx/coroutines/DebugStringsKt;->getClassSimpleName(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -4402,7 +4473,7 @@
 .method public final parentCancelled(Lkotlinx/coroutines/ParentJob;)V
     .registers 2
 
-    .line 641
+    .line 638
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->cancelImpl$kotlinx_coroutines_core(Ljava/lang/Object;)Z
 
     return-void
@@ -4411,7 +4482,7 @@
 .method public plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
     .registers 2
 
-    .line 25
+    .line 22
     invoke-static {p0, p1}, Lkotlinx/coroutines/Job$DefaultImpls;->plus(Lkotlinx/coroutines/Job;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -4422,7 +4493,7 @@
 .method public plus(Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/Job;
     .registers 2
 
-    .line 25
+    .line 22
     invoke-static {p0, p1}, Lkotlinx/coroutines/Job$DefaultImpls;->plus(Lkotlinx/coroutines/Job;Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/Job;
 
     move-result-object p0
@@ -4433,24 +4504,26 @@
 .method public final removeNode$kotlinx_coroutines_core(Lkotlinx/coroutines/JobNode;)V
     .registers 5
 
-    .line 179
+    .line 176
     :cond_0
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 596
+    .line 593
     instance-of v1, v0, Lkotlinx/coroutines/JobNode;
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1a
 
     if-eq v0, p1, :cond_b
 
-    goto :goto_27
+    goto :goto_29
 
-    .line 599
+    .line 596
     :cond_b
-    sget-object v1, Lkotlinx/coroutines/JobSupport;->_state$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_state$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v1
 
     # getter for: Lkotlinx/coroutines/JobSupportKt;->EMPTY_ACTIVE:Lkotlinx/coroutines/Empty;
     invoke-static {}, Lkotlinx/coroutines/JobSupportKt;->access$getEMPTY_ACTIVE$p()Lkotlinx/coroutines/Empty;
@@ -4463,36 +4536,38 @@
 
     if-eqz v0, :cond_0
 
-    goto :goto_27
+    goto :goto_29
 
-    .line 601
-    :cond_18
+    .line 598
+    :cond_1a
     instance-of p0, v0, Lkotlinx/coroutines/Incomplete;
 
-    if-eqz p0, :cond_27
+    if-eqz p0, :cond_29
 
-    .line 603
+    .line 600
     check-cast v0, Lkotlinx/coroutines/Incomplete;
 
     invoke-interface {v0}, Lkotlinx/coroutines/Incomplete;->getList()Lkotlinx/coroutines/NodeList;
 
     move-result-object p0
 
-    if-eqz p0, :cond_27
+    if-eqz p0, :cond_29
 
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/LockFreeLinkedListNode;->remove()Z
 
-    :cond_27
-    :goto_27
+    :cond_29
+    :goto_29
     return-void
 .end method
 
 .method public final setParentHandle$kotlinx_coroutines_core(Lkotlinx/coroutines/ChildHandle;)V
     .registers 3
 
-    sget-object v0, Lkotlinx/coroutines/JobSupport;->_parentHandle$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/JobSupport;->get_parentHandle$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 133
+    move-result-object v0
+
+    .line 130
     invoke-virtual {v0, p0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
@@ -4501,13 +4576,13 @@
 .method public final start()Z
     .registers 3
 
-    .line 179
+    .line 176
     :goto_0
     invoke-virtual {p0}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 382
+    .line 379
     invoke-direct {p0, v0}, Lkotlinx/coroutines/JobSupport;->startInternal(Ljava/lang/Object;)I
 
     move-result v0
@@ -4532,7 +4607,7 @@
 .method protected final toCancellationException(Ljava/lang/Throwable;Ljava/lang/String;)Ljava/util/concurrent/CancellationException;
     .registers 4
 
-    .line 426
+    .line 423
     instance-of v0, p1, Ljava/util/concurrent/CancellationException;
 
     if-eqz v0, :cond_8
@@ -4549,7 +4624,7 @@
     :goto_9
     if-nez v0, :cond_16
 
-    .line 707
+    .line 704
     new-instance v0, Lkotlinx/coroutines/JobCancellationException;
 
     if-nez p2, :cond_13
@@ -4571,7 +4646,7 @@
     .annotation build Lkotlinx/coroutines/InternalCoroutinesApi;
     .end annotation
 
-    .line 1057
+    .line 1054
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4610,7 +4685,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 1054
+    .line 1051
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

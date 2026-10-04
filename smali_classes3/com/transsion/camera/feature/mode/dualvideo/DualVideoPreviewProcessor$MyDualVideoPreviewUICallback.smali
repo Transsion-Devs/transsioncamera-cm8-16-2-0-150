@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
     .registers 2
 
-    .line 1247
+    .line 1250
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public OnDividerChanging(F)Z
     .registers 5
 
-    .line 1330
+    .line 1333
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmPreviewViewHeight(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -66,7 +66,7 @@
 
     goto/16 :goto_fd
 
-    .line 1334
+    .line 1337
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -82,7 +82,7 @@
 
     int-to-float v0, p1
 
-    .line 1335
+    .line 1338
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmDividerDisplayY(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)F
@@ -103,7 +103,7 @@
 
     if-gtz v1, :cond_3c
 
-    .line 1336
+    .line 1339
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmDividerUpEdgeOffset(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -116,7 +116,7 @@
 
     goto :goto_67
 
-    .line 1337
+    .line 1340
     :cond_3c
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -138,7 +138,7 @@
 
     if-ltz v0, :cond_59
 
-    .line 1338
+    .line 1341
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmDividerDownEdgeOffset(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -151,7 +151,7 @@
 
     goto :goto_67
 
-    .line 1340
+    .line 1343
     :cond_59
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -161,7 +161,7 @@
 
     float-to-int v0, v0
 
-    .line 1341
+    .line 1344
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     add-int/2addr p1, v0
@@ -170,7 +170,7 @@
 
     invoke-static {v1, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmDividerDisplayY(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;F)V
 
-    .line 1344
+    .line 1347
     :goto_67
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -182,7 +182,7 @@
 
     if-ne p1, v0, :cond_a4
 
-    .line 1345
+    .line 1348
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmDividerDisplayY(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)F
@@ -213,7 +213,7 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmSlaveViewPortX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1346
+    .line 1349
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmSurfaceWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -230,7 +230,7 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmSlaveViewPortWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1347
+    .line 1350
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmSlaveViewPortX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -241,7 +241,7 @@
 
     goto :goto_d7
 
-    .line 1349
+    .line 1352
     :cond_a4
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -273,7 +273,7 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmMainViewPortX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1350
+    .line 1353
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmSurfaceWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -290,7 +290,7 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmMainViewPortWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1351
+    .line 1354
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmMainViewPortX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -299,7 +299,7 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmSlaveViewPortWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1353
+    .line 1356
     :goto_d7
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -309,7 +309,7 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmDividerLineRealHeight(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1354
+    .line 1357
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmDividerDragHandleMaxWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -318,7 +318,7 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmDividerDragHandleRealWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1355
+    .line 1358
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmDividerDragHandleMaxHeight(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -327,19 +327,19 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmDividerDragHandleRealHeight(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1356
+    .line 1359
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$mupdateTouchArea(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
-    .line 1357
+    .line 1360
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$mspeedUpRefreshRate(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     return v0
 
-    .line 1331
+    .line 1334
     :cond_fd
     :goto_fd
     invoke-static {}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -358,7 +358,7 @@
 .method public OnDividerToMiddle()V
     .registers 4
 
-    .line 1379
+    .line 1382
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmPreviewViewHeight(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -377,7 +377,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmDividerDisplayY(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;F)V
 
-    .line 1380
+    .line 1383
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmMainSplitValue(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -388,7 +388,7 @@
 
     if-ne v0, v1, :cond_4d
 
-    .line 1381
+    .line 1384
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmDividerDisplayY(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)F
@@ -419,7 +419,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmSlaveViewPortX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1382
+    .line 1385
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmSurfaceWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -436,7 +436,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmSlaveViewPortWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1383
+    .line 1386
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmSlaveViewPortX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -447,7 +447,7 @@
 
     goto :goto_80
 
-    .line 1385
+    .line 1388
     :cond_4d
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -479,7 +479,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmMainViewPortX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1386
+    .line 1389
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmSurfaceWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -496,7 +496,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmMainViewPortWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1387
+    .line 1390
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmMainViewPortX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -505,7 +505,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmSlaveViewPortWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1389
+    .line 1392
     :goto_80
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -517,7 +517,7 @@
 .method public OnPIPRectChanging(IIII)V
     .registers 8
 
-    .line 1274
+    .line 1277
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmPreviewViewWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -536,7 +536,7 @@
 
     goto/16 :goto_1b6
 
-    .line 1278
+    .line 1281
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -548,7 +548,7 @@
 
     goto/16 :goto_1b5
 
-    .line 1281
+    .line 1284
     :cond_1c
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -576,7 +576,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmRectPortX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1282
+    .line 1285
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmSurfaceHeight(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -603,7 +603,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmRectPortY(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1283
+    .line 1286
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     sub-int/2addr p3, p1
@@ -638,7 +638,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmRectWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1284
+    .line 1287
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     sub-int/2addr p4, p2
@@ -673,21 +673,21 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmRectHeight(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1286
+    .line 1289
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     int-to-float p1, p1
 
     invoke-static {v0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmPipDisplayX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;F)V
 
-    .line 1287
+    .line 1290
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     int-to-float p2, p2
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmPipDisplayY(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;F)V
 
-    .line 1288
+    .line 1291
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p3}, Ljava/lang/Math;->abs(I)I
@@ -698,7 +698,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmPipDisplayWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;F)V
 
-    .line 1289
+    .line 1292
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p4}, Ljava/lang/Math;->abs(I)I
@@ -709,7 +709,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmPipDisplayHeight(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;F)V
 
-    .line 1290
+    .line 1293
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmMainSplitValue(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)I
@@ -720,7 +720,7 @@
 
     if-ne p1, p2, :cond_12c
 
-    .line 1291
+    .line 1294
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmPipDisplayY(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)F
@@ -757,7 +757,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmSlaveViewPortX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1292
+    .line 1295
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmPipDisplayX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)F
@@ -794,7 +794,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmSlaveViewPortY(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1293
+    .line 1296
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmPipDisplayHeight(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)F
@@ -831,7 +831,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmSlaveViewPortWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1294
+    .line 1297
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmPipDisplayWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)F
@@ -870,7 +870,7 @@
 
     goto :goto_1a8
 
-    .line 1298
+    .line 1301
     :cond_12c
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -908,7 +908,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmMainViewPortX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1299
+    .line 1302
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmPipDisplayX(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)F
@@ -945,7 +945,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmMainViewPortY(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1300
+    .line 1303
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmPipDisplayHeight(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)F
@@ -982,7 +982,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmMainViewPortWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1301
+    .line 1304
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmPipDisplayWidth(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)F
@@ -1019,7 +1019,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmMainViewPortHeight(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;I)V
 
-    .line 1305
+    .line 1308
     :goto_1a8
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -1029,7 +1029,7 @@
 
     if-eqz p1, :cond_1b5
 
-    .line 1306
+    .line 1309
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$mspeedUpRefreshRate(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
@@ -1038,7 +1038,7 @@
     :goto_1b5
     return-void
 
-    .line 1275
+    .line 1278
     :cond_1b6
     :goto_1b6
     invoke-static {}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1055,7 +1055,7 @@
 .method public OnPIPRectClicked(Z)V
     .registers 6
 
-    .line 1252
+    .line 1255
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmTouchInfoCallback(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$TouchInfoCallback;
@@ -1066,7 +1066,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 1253
+    .line 1256
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmTouchInfoCallback(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$TouchInfoCallback;
@@ -1090,14 +1090,14 @@
     :cond_18
     if-eqz p1, :cond_20
 
-    .line 1259
+    .line 1262
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     const/4 v2, 0x1
 
     invoke-static {v0, v2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$mprocessHandleDrawAuxView(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;Z)V
 
-    .line 1261
+    .line 1264
     :cond_20
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -1121,7 +1121,7 @@
 .method public onDividerChangeBegin()V
     .registers 10
 
-    .line 1319
+    .line 1322
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmRecordingFlag(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)Z
@@ -1130,7 +1130,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 1320
+    .line 1323
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)Landroid/os/Handler;
@@ -1141,7 +1141,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1322
+    .line 1325
     :cond_13
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -1181,7 +1181,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->runDividerAnimator(IIIIII)V
 
-    .line 1325
+    .line 1328
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     const/4 v0, 0x1
@@ -1194,7 +1194,7 @@
 .method public onDividerChangeEnd()Z
     .registers 13
 
-    .line 1363
+    .line 1366
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmIsDividerChanging(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)Z
@@ -1205,7 +1205,7 @@
 
     if-nez v0, :cond_13
 
-    .line 1364
+    .line 1367
     invoke-static {}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -1216,7 +1216,7 @@
 
     return v1
 
-    .line 1367
+    .line 1370
     :cond_13
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -1226,7 +1226,7 @@
 
     if-eqz v0, :cond_24
 
-    .line 1368
+    .line 1371
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     const/16 v2, 0x3e8
@@ -1235,7 +1235,7 @@
 
     invoke-static {v0, v2, v1, v3, v4}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$msendHandlerMessage(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;IIJ)V
 
-    .line 1370
+    .line 1373
     :cond_24
     iget-object v5, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
@@ -1275,7 +1275,7 @@
 
     invoke-virtual/range {v5 .. v11}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->runDividerAnimator(IIIIII)V
 
-    .line 1373
+    .line 1376
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fputmIsDividerChanging(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;Z)V
@@ -1288,7 +1288,7 @@
 .method public onPIPRectChangeBegin()V
     .registers 3
 
-    .line 1266
+    .line 1269
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)Landroid/os/Handler;
@@ -1299,7 +1299,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1267
+    .line 1270
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     const/4 v0, 0x1
@@ -1312,7 +1312,7 @@
 .method public onPIPRectChangeEnd()V
     .registers 5
 
-    .line 1312
+    .line 1315
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmDualVideoPreviewUI(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
@@ -1325,7 +1325,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 1313
+    .line 1316
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$MyDualVideoPreviewUICallback;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     const/4 v0, 0x0

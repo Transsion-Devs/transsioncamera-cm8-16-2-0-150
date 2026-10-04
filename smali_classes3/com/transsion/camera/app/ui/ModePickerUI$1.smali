@@ -1,11 +1,11 @@
 .class Lcom/transsion/camera/app/ui/ModePickerUI$1;
-.super Lcom/transsion/camera/utils/threads/WorkTask;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/app/ui/ModePickerUI;->inflateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
+    value = Lcom/transsion/camera/app/ui/ModePickerUI;->startModePickerUIAnimation(IZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,133 +17,148 @@
 # instance fields
 .field final synthetic this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
+.field final synthetic val$orientation:I
+
 
 # direct methods
-.method constructor <init>(Lcom/transsion/camera/app/ui/ModePickerUI;Ljava/lang/String;)V
+.method constructor <init>(Lcom/transsion/camera/app/ui/ModePickerUI;I)V
     .registers 3
 
-    .line 340
+    .line 582
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
-    invoke-direct {p0, p2}, Lcom/transsion/camera/utils/threads/WorkTask;-><init>(Ljava/lang/String;)V
+    iput p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->val$orientation:I
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public doProcess()V
-    .registers 6
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .registers 2
 
-    .line 343
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
+    .line 604
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmUpdateArrowStateLock(Lcom/transsion/camera/app/ui/ModePickerUI;)Ljava/lang/Object;
+    .line 605
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
-    move-result-object v0
+    invoke-static {p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmModePickerRoot(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/view/ViewGroup;
 
-    monitor-enter v0
+    move-result-object p1
 
-    .line 344
-    :try_start_7
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
+    if-eqz p1, :cond_16
 
-    new-instance v2, Lcom/opensource/svgaplayer/SVGAParser;
-
-    iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
-
-    invoke-static {v3}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmContext(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Lcom/opensource/svgaplayer/SVGAParser;-><init>(Landroid/content/Context;)V
-
-    invoke-static {v1, v2}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fputmSVGAParser(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/opensource/svgaplayer/SVGAParser;)V
-
-    .line 345
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
-
-    invoke-static {v1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmUpdateArrowState(Lcom/transsion/camera/app/ui/ModePickerUI;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_58
-
-    const/4 v1, 0x0
-
-    .line 346
-    :goto_24
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
-
-    invoke-static {v2}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmUpdateArrowState(Lcom/transsion/camera/app/ui/ModePickerUI;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    if-ge v1, v2, :cond_4f
-
-    .line 347
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
-
-    invoke-static {v2}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmUpdateArrowState(Lcom/transsion/camera/app/ui/ModePickerUI;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/transsion/camera/app/ui/ModePickerUI$UpdateArrowState;
-
-    .line 348
-    iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
-
-    invoke-static {v3}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/os/Handler;
-
-    move-result-object v3
-
-    new-instance v4, Lcom/transsion/camera/app/ui/ModePickerUI$1$1;
-
-    invoke-direct {v4, p0, v2}, Lcom/transsion/camera/app/ui/ModePickerUI$1$1;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI$1;Lcom/transsion/camera/app/ui/ModePickerUI$UpdateArrowState;)V
-
-    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_24
-
-    :catchall_4d
-    move-exception p0
-
-    goto :goto_5a
-
-    .line 355
-    :cond_4f
+    .line 606
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmUpdateArrowState(Lcom/transsion/camera/app/ui/ModePickerUI;)Ljava/util/List;
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmModePickerRoot(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/view/ViewGroup;
 
     move-result-object p0
 
-    invoke-interface {p0}, Ljava/util/List;->clear()V
+    const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 357
-    :cond_58
-    monitor-exit v0
+    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
+
+    :cond_16
+    return-void
+.end method
+
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .registers 7
+
+    .line 585
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    .line 586
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
+
+    iget v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->val$orientation:I
+
+    invoke-static {p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmScreenFormType(Lcom/transsion/camera/app/ui/ModePickerUI;)I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    invoke-static {p1, v0, v1, v2}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$mupdateLayoutParams(Lcom/transsion/camera/app/ui/ModePickerUI;IIZ)V
+
+    .line 587
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
+
+    invoke-static {p1, v2}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$mchooseModeUIToShow(Lcom/transsion/camera/app/ui/ModePickerUI;Z)V
+
+    .line 588
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
+
+    invoke-static {p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmModePickerRoot(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/view/ViewGroup;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [F
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    aput v3, v1, v2
+
+    const-string v2, "alpha"
+
+    invoke-static {v0, v2, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    const-wide/16 v1, 0x15e
+
+    invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fputmModePickerIn(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/animation/ObjectAnimator;)V
+
+    .line 589
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
+
+    invoke-static {p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmModePickerIn(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/animation/ObjectAnimator;
+
+    move-result-object p1
+
+    new-instance v0, Landroid/view/animation/PathInterpolator;
+
+    const/4 v1, 0x0
+
+    const v2, 0x3f28f5c3    # 0.66f
+
+    const v4, 0x3ea8f5c3    # 0.33f
+
+    invoke-direct {v0, v4, v1, v2, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
+
+    invoke-virtual {p1, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 590
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
+
+    invoke-static {p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmModePickerIn(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/animation/ObjectAnimator;
+
+    move-result-object p1
+
+    new-instance v0, Lcom/transsion/camera/app/ui/ModePickerUI$1$1;
+
+    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$1$1;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI$1;)V
+
+    invoke-virtual {p1, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 599
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$1;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
+
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmModePickerIn(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/animation/ObjectAnimator;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
 
     return-void
-
-    :goto_5a
-    monitor-exit v0
-    :try_end_5b
-    .catchall {:try_start_7 .. :try_end_5b} :catchall_4d
-
-    throw p0
 .end method

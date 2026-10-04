@@ -129,7 +129,7 @@
 
     move-result-object v1
 
-    .line 72
+    .line 68
     iget v2, v0, Lkotlinx/coroutines/flow/DistinctFlowImpl$collect$2$emit$1;->label:I
 
     const/4 v3, 0x1
@@ -154,7 +154,7 @@
     :cond_31
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 73
+    .line 69
     iget-object p2, p0, Lkotlinx/coroutines/flow/DistinctFlowImpl$collect$2;->this$0:Lkotlinx/coroutines/flow/DistinctFlowImpl;
 
     iget-object p2, p2, Lkotlinx/coroutines/flow/DistinctFlowImpl;->keySelector:Lkotlin/jvm/functions/Function1;
@@ -163,7 +163,7 @@
 
     move-result-object p2
 
-    .line 75
+    .line 71
     iget-object v2, p0, Lkotlinx/coroutines/flow/DistinctFlowImpl$collect$2;->$previousKey:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v2, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
@@ -190,20 +190,20 @@
 
     goto :goto_58
 
-    .line 79
+    .line 75
     :cond_55
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 76
+    .line 72
     :cond_58
     :goto_58
     iget-object v2, p0, Lkotlinx/coroutines/flow/DistinctFlowImpl$collect$2;->$previousKey:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iput-object p2, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 77
+    .line 73
     iget-object p0, p0, Lkotlinx/coroutines/flow/DistinctFlowImpl$collect$2;->$collector:Lkotlinx/coroutines/flow/FlowCollector;
 
     iput v3, v0, Lkotlinx/coroutines/flow/DistinctFlowImpl$collect$2$emit$1;->label:I
@@ -216,7 +216,7 @@
 
     return-object v1
 
-    .line 79
+    .line 75
     :cond_67
     :goto_67
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

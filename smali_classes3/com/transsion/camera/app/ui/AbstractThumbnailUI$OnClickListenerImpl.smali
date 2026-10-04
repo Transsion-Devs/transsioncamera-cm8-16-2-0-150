@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/AbstractThumbnailUI;)V
     .registers 2
 
-    .line 335
+    .line 338
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$OnClickListenerImpl;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,35 +47,35 @@
 .method public onClick(Landroid/view/View;)V
     .registers 5
 
-    .line 338
+    .line 341
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$OnClickListenerImpl;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    const-string v1, "thumbnail click"
+    const-string/jumbo v1, "thumbnail click"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 339
+    .line 342
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_11
 
-    goto :goto_56
+    goto :goto_58
 
-    .line 342
-    :cond_10
+    .line 345
+    :cond_11
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
 
     iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mPendingThumbnailClick:Z
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_47
 
-    .line 343
+    .line 346
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$OnClickListenerImpl;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -84,7 +84,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "thumbnail click mEnabled = "
+    const-string/jumbo v2, "thumbnail click mEnabled = "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -102,16 +102,16 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 344
+    .line 347
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$OnClickListenerImpl;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->-$$Nest$fgetmEnabled(Lcom/transsion/camera/app/ui/AbstractThumbnailUI;)Z
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_47
 
-    .line 345
+    .line 348
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$OnClickListenerImpl;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     const/4 p1, 0x1
@@ -120,17 +120,17 @@
 
     return-void
 
-    .line 349
-    :cond_45
+    .line 352
+    :cond_47
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$OnClickListenerImpl;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->-$$Nest$fgetmOnThumbnailClickListener(Lcom/transsion/camera/app/ui/AbstractThumbnailUI;)Landroid/view/View$OnClickListener;
 
     move-result-object v0
 
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_58
 
-    .line 350
+    .line 353
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$OnClickListenerImpl;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->-$$Nest$fgetmOnThumbnailClickListener(Lcom/transsion/camera/app/ui/AbstractThumbnailUI;)Landroid/view/View$OnClickListener;
@@ -139,7 +139,7 @@
 
     invoke-interface {p0, p1}, Landroid/view/View$OnClickListener;->onClick(Landroid/view/View;)V
 
-    :cond_56
-    :goto_56
+    :cond_58
+    :goto_58
     return-void
 .end method

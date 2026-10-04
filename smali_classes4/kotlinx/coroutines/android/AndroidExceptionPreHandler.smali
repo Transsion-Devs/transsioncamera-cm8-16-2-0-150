@@ -14,12 +14,12 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 13
+    .line 9
     sget-object v0, Lkotlinx/coroutines/CoroutineExceptionHandler;->Key:Lkotlinx/coroutines/CoroutineExceptionHandler$Key;
 
     invoke-direct {p0, v0}, Lkotlin/coroutines/AbstractCoroutineContextElement;-><init>(Lkotlin/coroutines/CoroutineContext$Key;)V
 
-    .line 16
+    .line 12
     iput-object p0, p0, Lkotlinx/coroutines/android/AndroidExceptionPreHandler;->_preHandler:Ljava/lang/Object;
 
     return-void
@@ -28,12 +28,12 @@
 .method private final preHandler()Ljava/lang/reflect/Method;
     .registers 4
 
-    .line 20
+    .line 16
     iget-object v0, p0, Lkotlinx/coroutines/android/AndroidExceptionPreHandler;->_preHandler:Ljava/lang/Object;
 
     if-eq v0, p0, :cond_7
 
-    .line 21
+    .line 17
     check-cast v0, Ljava/lang/reflect/Method;
 
     return-object v0
@@ -41,18 +41,18 @@
     :cond_7
     const/4 v0, 0x0
 
-    .line 22
+    .line 18
     :try_start_8
     const-class v1, Ljava/lang/Thread;
 
-    .line 23
+    .line 19
     const-string v2, "getUncaughtExceptionPreHandler"
 
     invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v1
 
-    .line 24
+    .line 20
     invoke-virtual {v1}, Ljava/lang/reflect/Method;->getModifiers()I
 
     move-result v2
@@ -77,7 +77,7 @@
 
     move-object v0, v1
 
-    .line 29
+    .line 25
     :catchall_25
     :cond_25
     iput-object v0, p0, Lkotlinx/coroutines/android/AndroidExceptionPreHandler;->_preHandler:Ljava/lang/Object;

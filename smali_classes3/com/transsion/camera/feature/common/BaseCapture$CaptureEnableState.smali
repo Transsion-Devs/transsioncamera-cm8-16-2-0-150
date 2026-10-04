@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
     .registers 4
 
-    .line 511
+    .line 509
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureEnableState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
-    .line 512
+    .line 510
     const-string v0, "CaptureAvailableState"
 
     const/4 v1, 0x0
@@ -40,7 +40,7 @@
 .method protected shutterClick()V
     .registers 1
 
-    .line 517
+    .line 515
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureEnableState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmCaptureStartingState(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;

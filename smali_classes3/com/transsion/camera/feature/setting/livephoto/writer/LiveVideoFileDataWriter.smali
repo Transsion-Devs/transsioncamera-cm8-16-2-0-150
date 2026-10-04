@@ -119,7 +119,7 @@
 
     if-eqz p1, :cond_8e
 
-    .line 161
+    .line 169
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -128,13 +128,13 @@
 
     goto/16 :goto_8e
 
-    .line 164
+    .line 172
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mVideoCaptureShot:Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;
 
     iget-wide v0, v0, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;->time:J
 
-    .line 167
+    .line 175
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -159,14 +159,14 @@
 
     if-eqz v5, :cond_18
 
-    .line 168
+    .line 176
     iget-object v6, v5, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$Sample;->mPhotoTaskData:Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;
 
     if-nez v6, :cond_2b
 
     goto :goto_18
 
-    .line 171
+    .line 179
     :cond_2b
     iget-object v6, v5, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$Sample;->mInfo:Landroid/media/MediaCodec$BufferInfo;
 
@@ -191,14 +191,14 @@
     :cond_3b
     if-eqz v2, :cond_73
 
-    .line 178
+    .line 186
     iget-object p0, v2, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$Sample;->mPhotoTaskData:Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/livephoto/PhotoTaskData;->getTimestamp()J
 
     move-result-wide p0
 
-    .line 179
+    .line 187
     sget-object v3, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -239,7 +239,7 @@
 
     return-wide p0
 
-    .line 184
+    .line 192
     :cond_73
     sget-object p1, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -261,12 +261,12 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 185
+    .line 193
     iget-wide p0, p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mCapturePreviewTimeStamp:J
 
     return-wide p0
 
-    .line 162
+    .line 170
     :cond_8e
     :goto_8e
     iget-wide p0, p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mCapturePreviewTimeStamp:J
@@ -285,7 +285,7 @@
         }
     .end annotation
 
-    .line 190
+    .line 198
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mBstAIFrameSlFilter:Lcom/bst/aiframesl/BstAIFrameSlFilter;
 
     const/4 v1, 0x0
@@ -301,7 +301,7 @@
     :cond_b
     if-eqz p1, :cond_bb
 
-    .line 194
+    .line 202
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -310,7 +310,7 @@
 
     goto/16 :goto_bb
 
-    .line 198
+    .line 206
     :cond_15
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mVideoCaptureShot:Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;
 
@@ -322,7 +322,7 @@
 
     move-result v8
 
-    .line 199
+    .line 207
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mVideoCaptureShot:Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;
 
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;->format:Landroid/media/MediaFormat;
@@ -339,7 +339,7 @@
 
     goto/16 :goto_b3
 
-    .line 204
+    .line 212
     :cond_30
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mFrameInfoTxtWriter:Lcom/transsion/camera/feature/setting/livephoto/writer/LiveFrameInfoTxtWriter;
 
@@ -347,7 +347,7 @@
 
     move-result-object v4
 
-    .line 205
+    .line 213
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mFrameInfoTxtWriter:Lcom/transsion/camera/feature/setting/livephoto/writer/LiveFrameInfoTxtWriter;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveFrameInfoTxtWriter;->getGyroFilePath()Ljava/lang/String;
@@ -360,13 +360,13 @@
 
     goto :goto_ab
 
-    .line 210
+    .line 218
     :cond_41
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mBstAIFrameSlFilterGuard:Ljava/lang/Object;
 
     if-nez v2, :cond_4d
 
-    .line 211
+    .line 219
     sget-object p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "processBstAiFrameSelect: guard is null"
@@ -375,11 +375,11 @@
 
     return-object v1
 
-    .line 214
+    .line 222
     :cond_4d
     monitor-enter v2
 
-    .line 215
+    .line 223
     :try_start_4e
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mBstAIFrameSlFilterReleased:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -391,14 +391,14 @@
 
     if-eqz v0, :cond_64
 
-    .line 216
+    .line 224
     sget-object p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "processBstAiFrameSelect: filter already released, skip bstAiframeSelectProcess"
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 217
+    .line 225
     monitor-exit v2
 
     return-object v1
@@ -413,10 +413,10 @@
     :cond_64
     const/4 v0, 0x4
 
-    .line 219
+    .line 227
     new-array v11, v0, [J
 
-    .line 220
+    .line 228
     sget-object v3, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -447,17 +447,17 @@
 
     invoke-static {v3, v6}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 222
+    .line 230
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mBstAIFrameSlFilter:Lcom/bst/aiframesl/BstAIFrameSlFilter;
 
-    .line 223
+    .line 231
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v10
 
     move-wide v6, p2
 
-    .line 222
+    .line 230
     invoke-virtual/range {v3 .. v11}, Lcom/bst/aiframesl/BstAIFrameSlFilter;->bstAiframeSelectProcess(Ljava/lang/String;Ljava/lang/String;JIII[J)I
 
     const/4 p0, 0x0
@@ -465,7 +465,7 @@
     :goto_98
     if-ge p0, v0, :cond_a7
 
-    .line 224
+    .line 232
     aget-wide p1, v11, p0
 
     const-wide/16 v3, -0x1
@@ -474,7 +474,7 @@
 
     if-nez p1, :cond_a4
 
-    .line 226
+    .line 234
     monitor-exit v2
 
     return-object v1
@@ -484,13 +484,13 @@
 
     goto :goto_98
 
-    .line 229
+    .line 237
     :cond_a7
     monitor-exit v2
 
     return-object v11
 
-    .line 230
+    .line 238
     :goto_a9
     monitor-exit v2
     :try_end_aa
@@ -498,7 +498,7 @@
 
     throw p0
 
-    .line 207
+    .line 215
     :cond_ab
     :goto_ab
     sget-object p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -509,7 +509,7 @@
 
     return-object v1
 
-    .line 201
+    .line 209
     :cond_b3
     :goto_b3
     sget-object p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -520,7 +520,7 @@
 
     return-object v1
 
-    .line 195
+    .line 203
     :cond_bb
     :goto_bb
     sget-object p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -531,7 +531,7 @@
 
     return-object v1
 
-    .line 191
+    .line 199
     :cond_c3
     :goto_c3
     sget-object p0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -690,7 +690,7 @@
 
     const/4 v13, 0x1
 
-    if-eqz v9, :cond_dd
+    if-eqz v9, :cond_121
 
     .line 90
     iget-object v9, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mFrameInfoTxtWriter:Lcom/transsion/camera/feature/setting/livephoto/writer/LiveFrameInfoTxtWriter;
@@ -706,7 +706,7 @@
 
     move-result-object v7
 
-    if-eqz v7, :cond_dd
+    if-eqz v7, :cond_121
 
     .line 95
     aget-wide v8, v7, v12
@@ -716,52 +716,81 @@
     .line 96
     aget-wide v14, v7, v13
 
-    long-to-int v7, v14
+    long-to-int v9, v14
 
     .line 97
-    sget-object v9, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    array-length v14, v7
 
-    new-instance v14, Ljava/lang/StringBuilder;
+    const/4 v15, 0x3
 
-    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
+    if-lt v14, v15, :cond_91
 
-    const-string/jumbo v15, "writeSample, headIndex: "
+    const/4 v14, 0x2
 
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aget-wide v16, v7, v14
 
-    invoke-virtual {v14, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v15, ", tailIndex: "
-
-    invoke-virtual {v14, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v14
-
-    invoke-static {v9, v14}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    if-ltz v8, :cond_d7
+    move-wide/from16 v10, v16
 
     .line 98
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    :cond_91
+    array-length v14, v7
 
-    move-result v14
+    if-lt v14, v6, :cond_97
 
-    if-ge v8, v14, :cond_d7
+    aget-wide v14, v7, v15
 
-    if-ltz v7, :cond_d7
+    goto :goto_99
+
+    :cond_97
+    const-wide/16 v14, -0x1
 
     .line 99
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    :goto_99
+    sget-object v7, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    move-result v14
+    new-instance v12, Ljava/lang/StringBuilder;
 
-    if-ge v7, v14, :cond_d7
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    move/from16 v19, v13
+
+    const-string/jumbo v13, "writeSample, headIndex: "
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v13, ", tailIndex: "
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v7, v12}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    if-ltz v8, :cond_11a
 
     .line 100
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v12
+
+    if-ge v8, v12, :cond_11a
+
+    if-ltz v9, :cond_11a
+
+    .line 101
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v12
+
+    if-ge v9, v12, :cond_11a
+
+    .line 102
     invoke-interface {v1, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -772,8 +801,8 @@
 
     iget-wide v2, v2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    .line 101
-    invoke-interface {v1, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    .line 103
+    invoke-interface {v1, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -783,31 +812,79 @@
 
     iget-wide v4, v4, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    .line 102
+    .line 104
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v8
 
-    sub-int/2addr v8, v13
+    add-int/lit8 v8, v8, -0x1
 
-    if-ne v7, v8, :cond_dd
+    if-ne v9, v8, :cond_ea
 
-    .line 103
+    .line 105
     iget-object v4, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mVideoCaptureShot:Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;
 
     iget-wide v4, v4, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;->tail:J
 
-    goto :goto_dd
+    .line 107
+    :cond_ea
+    iget-object v8, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mFrameInfoTxtWriter:Lcom/transsion/camera/feature/setting/livephoto/writer/LiveFrameInfoTxtWriter;
 
-    .line 106
-    :cond_d7
-    const-string/jumbo v7, "writeSample: invalid indices returned"
+    if-eqz v8, :cond_123
 
-    invoke-static {v9, v7}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    .line 108
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v8
+
+    iget-boolean v8, v8, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsLivePhotoMovementLocusSupport:Z
+
+    if-eqz v8, :cond_123
+
+    .line 109
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v9, "writeSample: rewrite frame info by stable range: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string/jumbo v9, "~"
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v14, v15}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     .line 111
-    :cond_dd
-    :goto_dd
+    iget-object v7, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mFrameInfoTxtWriter:Lcom/transsion/camera/feature/setting/livephoto/writer/LiveFrameInfoTxtWriter;
+
+    invoke-virtual {v7, v10, v11, v14, v15}, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveFrameInfoTxtWriter;->rewriteByStableTimestampRange(JJ)V
+
+    goto :goto_123
+
+    .line 114
+    :cond_11a
+    const-string/jumbo v8, "writeSample: invalid indices returned"
+
+    invoke-static {v7, v8}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    goto :goto_123
+
+    :cond_121
+    move/from16 v19, v13
+
+    .line 119
+    :cond_123
+    :goto_123
     sget-object v7, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -832,279 +909,262 @@
 
     invoke-static {v7, v8}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 116
+    .line 124
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
-    move v14, v12
+    const-wide/16 v10, -0x1
 
-    const-wide/16 v15, 0x0
+    const/4 v12, 0x0
 
-    :goto_103
-    if-ge v14, v7, :cond_1db
+    const/4 v13, 0x0
 
-    invoke-virtual {v1, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    const-wide/16 v14, 0x0
 
-    move-result-object v17
+    :goto_14c
+    if-ge v13, v7, :cond_213
 
-    add-int/lit8 v14, v14, 0x1
+    invoke-virtual {v1, v13}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-object/from16 v13, v17
+    move-result-object v16
 
-    check-cast v13, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$Sample;
+    add-int/lit8 v13, v13, 0x1
 
-    const-wide/16 v18, 0x0
+    const-wide/16 v17, 0x0
 
-    .line 117
-    iget-object v8, v13, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$Sample;->mData:Ljava/nio/ByteBuffer;
+    move-object/from16 v8, v16
 
-    .line 118
-    iget-object v9, v13, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$Sample;->mInfo:Landroid/media/MediaCodec$BufferInfo;
-
-    .line 120
-    invoke-virtual {v8}, Ljava/nio/Buffer;->limit()I
-
-    move-result v13
-
-    if-eqz v13, :cond_1d2
-
-    iget v13, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    and-int/lit8 v17, v13, 0x4
-
-    if-eqz v17, :cond_123
-
-    goto/16 :goto_1d2
-
-    :cond_123
-    move/from16 v20, v7
+    check-cast v8, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$Sample;
 
     .line 125
-    iget-wide v6, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    iget-object v9, v8, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$Sample;->mData:Ljava/nio/ByteBuffer;
 
-    cmp-long v21, v6, v2
+    .line 126
+    iget-object v8, v8, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$Sample;->mInfo:Landroid/media/MediaCodec$BufferInfo;
 
-    if-ltz v21, :cond_12f
+    .line 128
+    invoke-virtual {v9}, Ljava/nio/Buffer;->limit()I
 
-    cmp-long v21, v6, v4
+    move-result v16
 
-    if-lez v21, :cond_136
+    if-eqz v16, :cond_20a
 
-    :cond_12f
-    move-object/from16 v22, v1
+    iget v6, v8, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
-    move-wide/from16 v23, v2
+    and-int/lit8 v20, v6, 0x4
 
-    const/4 v1, 0x4
+    if-eqz v20, :cond_16c
 
-    goto/16 :goto_1ba
+    goto/16 :goto_20a
 
-    :cond_136
-    sub-long v22, v6, v15
+    :cond_16c
+    move-object/from16 v20, v1
 
-    cmp-long v22, v10, v22
-
-    if-gez v22, :cond_1ab
-
-    and-int/lit8 v13, v13, 0x1
-
-    if-nez v13, :cond_15a
-
-    if-nez v12, :cond_15a
+    move-wide/from16 v21, v2
 
     .line 133
-    sget-object v8, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    iget-wide v1, v8, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    cmp-long v3, v1, v21
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    if-ltz v3, :cond_17a
 
-    const-string/jumbo v13, "writeSample: drop non-key frame before first key frame, timestamp: "
+    cmp-long v3, v1, v4
 
-    invoke-virtual {v9, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-lez v3, :cond_17d
 
-    invoke-virtual {v9, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    :cond_17a
+    const/4 v3, 0x4
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    goto/16 :goto_1f2
+
+    :cond_17d
+    sub-long v23, v1, v14
+
+    cmp-long v23, v10, v23
+
+    if-gez v23, :cond_1ea
+
+    and-int/lit8 v6, v6, 0x1
+
+    if-nez v6, :cond_1a1
+
+    if-nez v12, :cond_1a1
+
+    .line 141
+    sget-object v3, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "writeSample: drop non-key frame before first key frame, timestamp: "
+
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v3, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    goto :goto_1ea
+
+    :cond_1a1
+    if-nez v12, :cond_1cb
+
+    .line 145
+    iget-object v6, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mVideoCaptureShot:Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;
+
+    iget-wide v10, v6, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;->head:J
+
+    sub-long v10, v1, v10
+
+    iput-wide v10, v6, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;->offset:J
+
+    .line 146
+    iget-object v12, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mVideoFirstKeyFrameArrivedNotifier:Lcom/transsion/camera/feature/setting/livephoto/writer/LiveFileDataWriter$StatusNotifier;
+
+    if-eqz v12, :cond_1c8
+
+    .line 148
+    iget-wide v14, v6, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;->tail:J
+
+    sub-long/2addr v14, v4
+
+    .line 149
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v6
 
-    invoke-static {v8, v6}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    cmp-long v10, v14, v17
 
-    goto :goto_1ab
+    if-lez v10, :cond_1bb
 
-    :cond_15a
-    if-nez v12, :cond_188
+    goto :goto_1bd
 
-    .line 137
-    iget-object v10, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mVideoCaptureShot:Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;
+    :cond_1bb
+    move-wide/from16 v14, v17
 
-    iget-wide v11, v10, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;->head:J
+    :goto_1bd
+    invoke-static {v14, v15}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    sub-long v11, v6, v11
+    move-result-object v10
 
-    iput-wide v11, v10, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;->offset:J
+    filled-new-array {v6, v10}, [Ljava/lang/Long;
 
-    .line 138
-    iget-object v13, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mVideoFirstKeyFrameArrivedNotifier:Lcom/transsion/camera/feature/setting/livephoto/writer/LiveFileDataWriter$StatusNotifier;
+    move-result-object v6
 
-    move-object/from16 v22, v1
+    invoke-virtual {v12, v6}, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveFileDataWriter$StatusNotifier;->notify([Ljava/lang/Object;)V
 
-    move-wide/from16 v23, v2
+    :cond_1c8
+    move-wide v14, v1
 
-    if-eqz v13, :cond_185
+    move/from16 v12, v19
 
-    .line 140
-    iget-wide v1, v10, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;->tail:J
+    :cond_1cb
+    if-ltz v3, :cond_1d9
 
-    sub-long/2addr v1, v4
-
-    .line 141
-    invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    cmp-long v10, v1, v18
-
-    if-lez v10, :cond_178
-
-    goto :goto_17a
-
-    :cond_178
-    move-wide/from16 v1, v18
-
-    :goto_17a
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    filled-new-array {v3, v1}, [Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v13, v1}, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveFileDataWriter$StatusNotifier;->notify([Ljava/lang/Object;)V
-
-    :cond_185
-    move-wide v15, v6
-
-    const/4 v12, 0x1
-
-    goto :goto_18c
-
-    :cond_188
-    move-object/from16 v22, v1
-
-    move-wide/from16 v23, v2
-
-    :goto_18c
-    if-ltz v21, :cond_19a
-
-    .line 147
+    .line 155
     sget-object v1, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v2, "writeSample: stop writing as reaching the ending timestamp"
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    const/4 v1, 0x4
+    const/4 v3, 0x4
 
-    .line 148
-    iput v1, v9, Landroid/media/MediaCodec$BufferInfo;->flags:I
+    .line 156
+    iput v3, v8, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
-    goto :goto_19b
+    goto :goto_1da
 
-    :cond_19a
-    const/4 v1, 0x4
+    :cond_1d9
+    const/4 v3, 0x4
 
-    .line 150
-    :goto_19b
-    iget-wide v2, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    .line 158
+    :goto_1da
+    iget-wide v1, v8, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    sub-long/2addr v2, v15
+    sub-long/2addr v1, v14
 
-    iput-wide v2, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    iput-wide v1, v8, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    .line 151
-    iget-object v2, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mMediaMuxer:Landroid/media/MediaMuxer;
+    .line 159
+    iget-object v1, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mMediaMuxer:Landroid/media/MediaMuxer;
 
-    iget v3, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mVideoTrackId:I
+    iget v2, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mVideoTrackId:I
 
-    invoke-virtual {v2, v3, v8, v9}, Landroid/media/MediaMuxer;->writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    invoke-virtual {v1, v2, v9, v8}, Landroid/media/MediaMuxer;->writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
 
-    .line 152
-    iget-wide v2, v9, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    .line 160
+    iget-wide v1, v8, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    move-wide v10, v2
+    move-wide v10, v1
 
-    goto :goto_1b0
+    goto :goto_1eb
 
-    :cond_1ab
-    :goto_1ab
-    move-object/from16 v22, v1
+    :cond_1ea
+    :goto_1ea
+    const/4 v3, 0x4
 
-    move-wide/from16 v23, v2
+    :goto_1eb
+    move v6, v3
 
-    const/4 v1, 0x4
+    move-object/from16 v1, v20
 
-    :goto_1b0
-    move v6, v1
+    move-wide/from16 v2, v21
 
-    move/from16 v7, v20
+    goto/16 :goto_14c
 
-    move-object/from16 v1, v22
+    .line 136
+    :goto_1f2
+    sget-object v6, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    move-wide/from16 v2, v23
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    const/4 v13, 0x1
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    goto/16 :goto_103
+    const-string/jumbo v9, "writeSample: skip frame outside stable interval, timestamp: "
 
-    .line 128
-    :goto_1ba
-    sget-object v2, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string/jumbo v8, "writeSample: skip frame outside stable interval, timestamp: "
+    move-result-object v1
 
-    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v6, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    invoke-virtual {v3, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    goto :goto_1eb
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    goto :goto_1b0
-
-    .line 121
-    :cond_1d2
-    :goto_1d2
+    .line 129
+    :cond_20a
+    :goto_20a
     sget-object v1, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v2, "writeSample: end of stream"
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    goto :goto_1dd
+    goto :goto_215
 
-    :cond_1db
-    const-wide/16 v18, 0x0
+    :cond_213
+    const-wide/16 v17, 0x0
 
-    .line 155
-    :goto_1dd
+    .line 163
+    :goto_215
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->mVideoCaptureShot:Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;
 
     iget-wide v1, v0, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;->time:J
 
-    sub-long/2addr v1, v15
+    sub-long/2addr v1, v14
 
-    move-wide/from16 v3, v18
+    move-wide/from16 v3, v17
 
     invoke-static {v3, v4, v1, v2}, Ljava/lang/Math;->max(JJ)J
 
@@ -1112,7 +1172,7 @@
 
     iput-wide v1, v0, Lcom/transsion/camera/feature/setting/livephoto/encoder/LiveMediaEncoder$CaptureShot;->time:J
 
-    .line 156
+    .line 164
     sget-object v0, Lcom/transsion/camera/feature/setting/livephoto/writer/LiveVideoFileDataWriter;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;

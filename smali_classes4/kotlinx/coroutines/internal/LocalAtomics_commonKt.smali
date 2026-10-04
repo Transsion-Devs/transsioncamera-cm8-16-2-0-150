@@ -7,7 +7,7 @@
 .method public static final getValue(Ljava/util/concurrent/atomic/AtomicInteger;)I
     .registers 1
 
-    .line 20
+    .line 16
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result p0
@@ -18,7 +18,7 @@
 .method public static final setValue(Ljava/util/concurrent/atomic/AtomicInteger;I)V
     .registers 2
 
-    .line 21
+    .line 17
     invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
     return-void

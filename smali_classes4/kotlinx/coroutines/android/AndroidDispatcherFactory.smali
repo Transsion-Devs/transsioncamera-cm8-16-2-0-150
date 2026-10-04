@@ -10,7 +10,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 52
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,14 +31,14 @@
         }
     .end annotation
 
-    .line 55
+    .line 51
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object p0
 
     if-eqz p0, :cond_13
 
-    .line 56
+    .line 52
     new-instance p1, Lkotlinx/coroutines/android/HandlerContext;
 
     const/4 v0, 0x1
@@ -55,7 +55,7 @@
 
     return-object p1
 
-    .line 55
+    .line 51
     :cond_13
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -77,7 +77,7 @@
 .method public hintOnError()Ljava/lang/String;
     .registers 1
 
-    .line 59
+    .line 55
     const-string p0, "For tests Dispatchers.setMain from kotlinx-coroutines-test module can be used"
 
     return-object p0

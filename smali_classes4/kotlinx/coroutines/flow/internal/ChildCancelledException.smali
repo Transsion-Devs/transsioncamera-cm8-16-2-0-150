@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 22
+    .line 18
     const-string v0, "Child of the scoped flow was cancelled"
 
     invoke-direct {p0, v0}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
@@ -22,10 +22,10 @@
 
     const/4 v0, 0x0
 
-    .line 26
+    .line 27
     new-array v0, v0, [Ljava/lang/StackTraceElement;
 
-    .line 26
+    .line 22
     invoke-virtual {p0, v0}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
 
     return-object p0

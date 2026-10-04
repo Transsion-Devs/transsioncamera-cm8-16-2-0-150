@@ -107,7 +107,7 @@
     :cond_e
     return-wide p0
 
-    .line 1455
+    .line 1490
     :cond_f
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -157,7 +157,7 @@
     :cond_8
     return p0
 
-    .line 1413
+    .line 1448
     :cond_9
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -213,7 +213,7 @@
     :cond_e
     return-wide p0
 
-    .line 1427
+    .line 1462
     :cond_f
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -249,7 +249,7 @@
 .method public static downTo(II)Lkotlin/ranges/IntProgression;
     .registers 4
 
-    .line 828
+    .line 835
     sget-object v0, Lkotlin/ranges/IntProgression;->Companion:Lkotlin/ranges/IntProgression$Companion;
 
     const/4 v1, -0x1
@@ -277,7 +277,7 @@
     :cond_9
     const/4 v0, 0x0
 
-    .line 966
+    .line 997
     :goto_a
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -285,7 +285,7 @@
 
     invoke-static {v0, v1}, Lkotlin/ranges/RangesKt__RangesKt;->checkStepIsPositive(ZLjava/lang/Number;)V
 
-    .line 967
+    .line 998
     sget-object v0, Lkotlin/ranges/IntProgression;->Companion:Lkotlin/ranges/IntProgression$Companion;
 
     invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->getFirst()I
@@ -322,7 +322,7 @@
 
     if-gt p1, v0, :cond_b
 
-    .line 1094
+    .line 1129
     sget-object p0, Lkotlin/ranges/IntRange;->Companion:Lkotlin/ranges/IntRange$Companion;
 
     invoke-virtual {p0}, Lkotlin/ranges/IntRange$Companion;->getEMPTY()Lkotlin/ranges/IntRange;
@@ -331,7 +331,7 @@
 
     return-object p0
 
-    .line 1095
+    .line 1130
     :cond_b
     new-instance v0, Lkotlin/ranges/IntRange;
 

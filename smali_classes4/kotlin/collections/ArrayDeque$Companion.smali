@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 561
+    .line 649
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,37 +31,4 @@
     invoke-direct {p0}, Lkotlin/collections/ArrayDeque$Companion;-><init>()V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final newCapacity$kotlin_stdlib(II)I
-    .registers 4
-
-    shr-int/lit8 p0, p1, 0x1
-
-    add-int/2addr p1, p0
-
-    sub-int p0, p1, p2
-
-    if-gez p0, :cond_8
-
-    move p1, p2
-
-    :cond_8
-    const p0, 0x7ffffff7
-
-    sub-int v0, p1, p0
-
-    if-lez v0, :cond_15
-
-    if-le p2, p0, :cond_14
-
-    const p0, 0x7fffffff
-
-    :cond_14
-    return p0
-
-    :cond_15
-    return p1
 .end method

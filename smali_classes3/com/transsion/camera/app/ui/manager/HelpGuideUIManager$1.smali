@@ -27,7 +27,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;)V
     .registers 3
 
-    .line 313
+    .line 321
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$1;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$1;->val$fragmentStateListener:Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;
@@ -42,15 +42,15 @@
 .method public onFragmentDestroy()V
     .registers 2
 
-    .line 323
+    .line 331
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$1;->val$fragmentStateListener:Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;
 
     if-eqz v0, :cond_7
 
-    .line 324
+    .line 332
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;->onFragmentDestroy()V
 
-    .line 326
+    .line 334
     :cond_7
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$1;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
@@ -64,12 +64,12 @@
 .method public onFragmentExitView()V
     .registers 1
 
-    .line 331
+    .line 339
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$1;->val$fragmentStateListener:Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;
 
     if-eqz p0, :cond_7
 
-    .line 332
+    .line 340
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;->onFragmentExitView()V
 
     :cond_7
@@ -79,12 +79,12 @@
 .method public onFragmentResume()V
     .registers 1
 
-    .line 316
+    .line 324
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$1;->val$fragmentStateListener:Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;
 
     if-eqz p0, :cond_7
 
-    .line 317
+    .line 325
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;->onFragmentResume()V
 
     :cond_7

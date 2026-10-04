@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static supernight_filter_option:I = 0x7f0e0214
+.field public static supernight_filter_option:I = 0x7f0e020f
 
 
 # direct methods

@@ -32,13 +32,19 @@
 .method public abstract getSettingUISpec()Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 .end method
 
+.method public abstract initColor(III)V
+.end method
+
+.method public abstract initColorId(II)V
+.end method
+
 .method public abstract onEntryViewClick(Landroid/view/View;)V
 .end method
 
 .method public abstract onOrientationChanged(I)V
 .end method
 
-.method public abstract onScreenSupply(Z)V
+.method public abstract onScreenSupply(ZZ)V
 .end method
 
 .method public abstract overrideClickListener(Landroid/view/View$OnClickListener;)V

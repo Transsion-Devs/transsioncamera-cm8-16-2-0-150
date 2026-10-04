@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__LimitKt$collectWhile$collector$1"
     f = "Limit.kt"
     l = {
-        0x82
+        0x7f
     }
     m = "emit"
 .end annotation

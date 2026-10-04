@@ -92,7 +92,7 @@
     .line 34
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->mIsModeSupportOriginal:Z
 
-    .line 146
+    .line 144
     new-instance v0, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture$1;-><init>(Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;)V
@@ -105,7 +105,7 @@
 .method private syncRemoteCaptureFragment()V
     .registers 5
 
-    .line 163
+    .line 161
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->mIsModeSupport:Z
@@ -170,7 +170,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 99
+    .line 97
     const-string p0, "key_fingerprint_capture"
 
     return-object p0
@@ -185,7 +185,7 @@
 .method public getPreviewStateCallback()Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
     .registers 1
 
-    .line 143
+    .line 141
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
 
     return-object p0
@@ -205,7 +205,7 @@
 .method public getSettingType()Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
     .registers 1
 
-    .line 94
+    .line 92
     sget-object p0, Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;->PHOTO_AND_VIDEO:Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
 
     return-object p0
@@ -222,7 +222,7 @@
         }
     .end annotation
 
-    .line 118
+    .line 116
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p0
@@ -371,7 +371,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 5
 
-    .line 123
+    .line 121
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const-string v0, "key_remote_capture"
@@ -384,7 +384,7 @@
 
     goto :goto_29
 
-    .line 125
+    .line 123
     :cond_c
     const-string p1, "remote_capture_state_fingerprint"
 
@@ -396,7 +396,7 @@
 
     if-eqz p1, :cond_29
 
-    .line 126
+    .line 124
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->getKey()Ljava/lang/String;
@@ -413,7 +413,7 @@
 
     move-result-object p1
 
-    .line 127
+    .line 125
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->onValueChanged(Ljava/lang/String;)V
 
     :cond_29
@@ -424,7 +424,7 @@
 .method public onValueChanged(Ljava/lang/String;)V
     .registers 5
 
-    .line 109
+    .line 107
     sget-object v0, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -443,7 +443,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 110
+    .line 108
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -454,10 +454,10 @@
 
     if-nez v0, :cond_31
 
-    .line 111
+    .line 109
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 112
+    .line 110
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->getKey()Ljava/lang/String;
@@ -486,18 +486,10 @@
 .end method
 
 .method public pause()V
-    .registers 2
+    .registers 1
 
     .line 87
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->pause()V
-
-    const/4 v0, 0x0
-
-    .line 88
-    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->mIsModeSupport:Z
-
-    .line 89
-    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->syncRemoteCaptureFragment()V
 
     return-void
 .end method
@@ -505,12 +497,12 @@
 .method public restoreToSupportedPlatformValue()V
     .registers 2
 
-    .line 137
+    .line 135
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->restoreToSupportedPlatformValue()V
 
     const/4 v0, 0x1
 
-    .line 138
+    .line 136
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/fingerprintcapture/FingerprintCapture;->mRestored:Z
 
     return-void
@@ -542,24 +534,24 @@
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
     .registers 5
 
-    .line 173
+    .line 171
     new-instance p1, Ljava/util/ArrayList;
 
     const/4 v0, 0x2
 
     invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 174
+    .line 172
     const-string v0, "on"
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 175
+    .line 173
     const-string v1, "off"
 
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 176
+    .line 174
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2

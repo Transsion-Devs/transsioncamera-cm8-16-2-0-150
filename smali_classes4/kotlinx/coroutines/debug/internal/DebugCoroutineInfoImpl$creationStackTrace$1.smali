@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.debug.internal.DebugCoroutineInfoImpl$creationStackTrace$1"
     f = "DebugCoroutineInfoImpl.kt"
     l = {
-        0xa6
+        0xa2
     }
     m = "invokeSuspend"
 .end annotation
@@ -150,7 +150,7 @@
 
     move-result-object v0
 
-    .line 166
+    .line 162
     iget v1, p0, Lkotlinx/coroutines/debug/internal/DebugCoroutineInfoImpl$creationStackTrace$1;->label:I
 
     const/4 v2, 0x1

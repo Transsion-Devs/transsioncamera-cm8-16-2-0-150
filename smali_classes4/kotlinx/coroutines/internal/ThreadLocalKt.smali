@@ -24,7 +24,7 @@
         }
     .end annotation
 
-    .line 12
+    .line 8
     new-instance p0, Ljava/lang/ThreadLocal;
 
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V

@@ -1344,7 +1344,7 @@
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKMode;->mBurstPMKUI:Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;
 
-    invoke-virtual {v0}, Lcom/transsion/camera/feature/common/BaseUI;->pause()V
+    invoke-virtual {v0}, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->pause()V
 
     .line 333
     iget-object v0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKMode;->mBurstPMKPreview:Lcom/transsion/camera/feature/burstpmk/BurstPMKPreview;

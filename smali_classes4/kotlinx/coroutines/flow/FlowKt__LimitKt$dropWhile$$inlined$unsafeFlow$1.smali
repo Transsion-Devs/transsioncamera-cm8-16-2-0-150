@@ -39,7 +39,7 @@
 
     iput-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$dropWhile$$inlined$unsafeFlow$1;->$predicate$inlined:Lkotlin/jvm/functions/Function2;
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -62,12 +62,12 @@
         }
     .end annotation
 
-    .line 114
+    .line 112
     new-instance v0, Lkotlin/jvm/internal/Ref$BooleanRef;
 
     invoke-direct {v0}, Lkotlin/jvm/internal/Ref$BooleanRef;-><init>()V
 
-    .line 115
+    .line 113
     iget-object v1, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$dropWhile$$inlined$unsafeFlow$1;->$this_dropWhile$inlined:Lkotlinx/coroutines/flow/Flow;
 
     new-instance v2, Lkotlinx/coroutines/flow/FlowKt__LimitKt$dropWhile$1$1;
@@ -88,7 +88,7 @@
 
     return-object p0
 
-    .line 109
+    .line 107
     :cond_19
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/bind/JsonTreeWriter$1;
+.class Lcom/google/gson/internal/bind/JsonTreeWriter$1;
 .super Ljava/io/Writer;
 .source "SourceFile"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 34
+    .line 35
     invoke-direct {p0}, Ljava/io/Writer;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public close()V
     .registers 1
 
-    .line 42
+    .line 48
     new-instance p0, Ljava/lang/AssertionError;
 
     invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V
@@ -40,7 +40,7 @@
 .method public flush()V
     .registers 1
 
-    .line 39
+    .line 43
     new-instance p0, Ljava/lang/AssertionError;
 
     invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V
@@ -51,7 +51,7 @@
 .method public write([CII)V
     .registers 4
 
-    .line 36
+    .line 38
     new-instance p0, Ljava/lang/AssertionError;
 
     invoke-direct {p0}, Ljava/lang/AssertionError;-><init>()V

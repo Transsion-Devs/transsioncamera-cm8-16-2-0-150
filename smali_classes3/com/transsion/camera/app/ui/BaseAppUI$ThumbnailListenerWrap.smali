@@ -27,12 +27,12 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;)V
     .registers 3
 
-    .line 958
+    .line 951
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ThumbnailListenerWrap;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 959
+    .line 952
     iput-object p2, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ThumbnailListenerWrap;->mSource:Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;
 
     return-void
@@ -43,14 +43,14 @@
 .method public onThumbnailClicked(Landroid/view/View;)V
     .registers 3
 
-    .line 964
+    .line 957
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ThumbnailListenerWrap;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/BaseAppUI;->mScrollConsumer:Lcom/transsion/camera/app/ui/ScrollConsumer;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScrollConsumer;->shrinkTopBar()V
 
-    .line 965
+    .line 958
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ThumbnailListenerWrap;->mSource:Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;->onThumbnailClicked(Landroid/view/View;)V
@@ -61,7 +61,7 @@
 .method public onThumbnailUriUpdated(Landroid/net/Uri;ZZ)V
     .registers 4
 
-    .line 970
+    .line 963
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$ThumbnailListenerWrap;->mSource:Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;
 
     invoke-interface {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/IAppUIListener$IThumbnailListener;->onThumbnailUriUpdated(Landroid/net/Uri;ZZ)V

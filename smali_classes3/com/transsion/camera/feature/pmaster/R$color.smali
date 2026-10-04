@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static pmu_item_circle_color:I = 0x7f060594
+.field public static pmu_item_circle_color:I = 0x7f060595
 
 
 # direct methods

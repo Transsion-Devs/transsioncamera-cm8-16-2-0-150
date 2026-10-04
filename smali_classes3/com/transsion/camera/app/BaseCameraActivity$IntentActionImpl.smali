@@ -27,12 +27,12 @@
 .method public constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;Landroid/content/Intent;)V
     .registers 3
 
-    .line 2002
+    .line 2024
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$IntentActionImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2003
+    .line 2025
     iput-object p2, p0, Lcom/transsion/camera/app/BaseCameraActivity$IntentActionImpl;->mIntent:Landroid/content/Intent;
 
     return-void
@@ -43,7 +43,7 @@
 .method public getSourceIntent()Landroid/content/Intent;
     .registers 1
 
-    .line 2007
+    .line 2029
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$IntentActionImpl;->mIntent:Landroid/content/Intent;
 
     return-object p0
@@ -54,7 +54,7 @@
 
     if-eqz p2, :cond_8
 
-    .line 2013
+    .line 2035
     :try_start_2
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$IntentActionImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -62,13 +62,13 @@
 
     goto :goto_d
 
-    .line 2015
+    .line 2037
     :cond_8
     iget-object p2, p0, Lcom/transsion/camera/app/BaseCameraActivity$IntentActionImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-virtual {p2, p1}, Landroid/app/Activity;->setResult(I)V
 
-    .line 2017
+    .line 2039
     :goto_d
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$IntentActionImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -81,7 +81,7 @@
     :catch_13
     move-exception p0
 
-    .line 2019
+    .line 2041
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -96,7 +96,7 @@
 .method public transferIntent(Landroid/content/Intent;I)V
     .registers 3
 
-    .line 2026
+    .line 2048
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$IntentActionImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-virtual {p0, p1, p2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V

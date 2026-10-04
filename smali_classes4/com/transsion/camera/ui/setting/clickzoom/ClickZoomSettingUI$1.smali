@@ -35,14 +35,14 @@
 
 
 # virtual methods
-.method public onShoulderButtonZoomSwipeEnd()V
-    .registers 1
+.method public onContinuousZoomSwiping(ZI)V
+    .registers 3
 
     return-void
 .end method
 
-.method public onShoulderButtonZoomSwiping(ZI)V
-    .registers 3
+.method public onCriticalZoomSwitchSwiping(Z)V
+    .registers 2
 
     return-void
 .end method
@@ -77,6 +77,12 @@
 
 .method public onZoomScaling(Z)V
     .registers 2
+
+    return-void
+.end method
+
+.method public onZoomSwipeEnd()V
+    .registers 1
 
     return-void
 .end method

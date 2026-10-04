@@ -688,17 +688,6 @@
     return-void
 .end method
 
-.method public hideModePanel()V
-    .registers 1
-
-    .line 64
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ScrollConsumer;->mCurrentState:Lcom/transsion/camera/app/ui/ScrollConsumer$State;
-
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScrollConsumer$State;->reset()Z
-
-    return-void
-.end method
-
 .method public isEnable()Z
     .registers 4
 
@@ -900,20 +889,6 @@
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ScrollConsumer;->mCurrentState:Lcom/transsion/camera/app/ui/ScrollConsumer$State;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScrollConsumer$State;->reset()Z
-
-    return-void
-.end method
-
-.method public spreadModePanel()V
-    .registers 1
-
-    .line 68
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ScrollConsumer;->syncOrientationAndScrForm()V
-
-    .line 69
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ScrollConsumer;->mCurrentState:Lcom/transsion/camera/app/ui/ScrollConsumer$State;
-
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScrollConsumer$State;->spreadMode()V
 
     return-void
 .end method

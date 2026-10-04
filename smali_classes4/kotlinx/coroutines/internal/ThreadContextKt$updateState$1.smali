@@ -56,7 +56,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 52
+    .line 48
     check-cast p1, Lkotlinx/coroutines/internal/ThreadState;
 
     check-cast p2, Lkotlin/coroutines/CoroutineContext$Element;
@@ -71,12 +71,12 @@
 .method public final invoke(Lkotlinx/coroutines/internal/ThreadState;Lkotlin/coroutines/CoroutineContext$Element;)Lkotlinx/coroutines/internal/ThreadState;
     .registers 3
 
-    .line 53
+    .line 49
     instance-of p0, p2, Lkotlinx/coroutines/ThreadContextElement;
 
     if-eqz p0, :cond_f
 
-    .line 54
+    .line 50
     check-cast p2, Lkotlinx/coroutines/ThreadContextElement;
 
     iget-object p0, p1, Lkotlinx/coroutines/internal/ThreadState;->context:Lkotlin/coroutines/CoroutineContext;

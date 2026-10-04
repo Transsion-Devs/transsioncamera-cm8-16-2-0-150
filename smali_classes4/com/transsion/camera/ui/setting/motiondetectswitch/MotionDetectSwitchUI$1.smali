@@ -38,7 +38,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;Lcom/airbnb/lottie/LottieAnimationView;)V
     .registers 3
 
-    .line 160
+    .line 162
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI$1;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI$1;->val$view:Lcom/airbnb/lottie/LottieAnimationView;
@@ -51,7 +51,7 @@
 .method private synthetic lambda$onCompositionLoaded$0(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
     .registers 2
 
-    .line 169
+    .line 171
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI$1;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
@@ -78,7 +78,7 @@
 .method public onCompositionLoaded(Lcom/airbnb/lottie/LottieComposition;)V
     .registers 8
 
-    .line 163
+    .line 165
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI$1;->val$view:Lcom/airbnb/lottie/LottieAnimationView;
 
     new-instance v1, Lcom/airbnb/lottie/model/KeyPath;
@@ -95,7 +95,7 @@
 
     move-result-object v0
 
-    .line 164
+    .line 166
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -114,12 +114,12 @@
 
     check-cast v1, Lcom/airbnb/lottie/model/KeyPath;
 
-    .line 165
+    .line 167
     invoke-virtual {v1}, Lcom/airbnb/lottie/model/KeyPath;->keysToString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 166
+    .line 168
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI$1;->this$0:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;
 
     invoke-static {v3}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->-$$Nest$fgetTAG(Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -152,7 +152,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 167
+    .line 169
     const-string v3, "icon"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -161,7 +161,7 @@
 
     if-eqz v2, :cond_15
 
-    .line 168
+    .line 170
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI$1;->val$view:Lcom/airbnb/lottie/LottieAnimationView;
 
     sget-object v3, Lcom/airbnb/lottie/LottieProperty;->COLOR:Ljava/lang/Integer;

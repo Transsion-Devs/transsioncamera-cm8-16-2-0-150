@@ -30,7 +30,7 @@
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda7;->f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$0WrTD678Z1C7xlnw9gROLsQENPU(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$eSoMxsxY7rXlEyUGcaETbSNthII(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
 
     move-result-object p0
 

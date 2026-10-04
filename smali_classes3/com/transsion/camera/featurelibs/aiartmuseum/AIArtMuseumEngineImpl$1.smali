@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;Ljava/lang/String;Ljava/lang/String;Lcom/tencent/mmkv/MMKV;)V
     .registers 5
 
-    .line 102
+    .line 106
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl$1;->this$0:Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;
 
     iput-object p3, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl$1;->val$modelRootPath:Ljava/lang/String;
@@ -43,7 +43,7 @@
 .method public doProcess()V
     .registers 4
 
-    .line 105
+    .line 109
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl$1;->val$modelRootPath:Ljava/lang/String;
@@ -54,7 +54,7 @@
 
     invoke-static {v0}, Lcom/transsion/camera/utils/FileUtil;->deleteFile(Ljava/io/File;)Z
 
-    .line 106
+    .line 110
     sget-object v0, Lcom/transsion/camera/app_info/AppInfo;->app:Landroid/app/Application;
 
     invoke-virtual {v0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
@@ -65,7 +65,7 @@
 
     invoke-static {v0, v2, v1}, Lcom/transsion/camera/utils/FileUtil;->copyAssets(Landroid/content/res/AssetManager;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 108
+    .line 112
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl$1;->val$mmkv:Lcom/tencent/mmkv/MMKV;
 
     const-string v1, "AIArtMuseum_fingerprint"
@@ -74,7 +74,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/tencent/mmkv/MMKV;->encode(Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 110
+    .line 114
     iget-object p0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl$1;->this$0:Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;
 
     invoke-static {p0}, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->-$$Nest$fgetmModelReady(Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;)Ljava/util/concurrent/atomic/AtomicBoolean;

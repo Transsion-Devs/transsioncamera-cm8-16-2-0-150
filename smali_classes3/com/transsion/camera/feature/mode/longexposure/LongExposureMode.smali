@@ -278,7 +278,7 @@
 .end method
 
 .method protected getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
-    .registers 2
+    .registers 3
 
     .line 436
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
@@ -287,7 +287,9 @@
 
     const/4 v0, 0x2
 
-    filled-new-array {v0}, [I
+    const/16 v1, 0x80
+
+    filled-new-array {v0, v1}, [I
 
     move-result-object v0
 

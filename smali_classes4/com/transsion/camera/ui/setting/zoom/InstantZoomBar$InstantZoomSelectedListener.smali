@@ -15,5 +15,8 @@
 
 
 # virtual methods
+.method public abstract onInstantZoomBarTouchDown(I)V
+.end method
+
 .method public abstract onInstantZoomSelected(I)V
 .end method

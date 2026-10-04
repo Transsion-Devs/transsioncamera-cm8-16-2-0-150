@@ -20,6 +20,8 @@
 
 .field private mIsForce4_3:Z
 
+.field private mIsPictureRatioCustomizedIndia:Z
+
 .field private mIsSTBlurMode:Z
 
 .field private mIsSupportFullSize:Z
@@ -119,14 +121,17 @@
     .line 59
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mISRestoring:Z
 
-    .line 387
+    .line 61
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsPictureRatioCustomizedIndia:Z
+
+    .line 401
     new-instance v0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize$1;-><init>(Lcom/transsion/camera/feature/setting/picturesize/PictureSize;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
 
-    .line 415
+    .line 432
     new-instance v0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize$2;-><init>(Lcom/transsion/camera/feature/setting/picturesize/PictureSize;)V
@@ -159,7 +164,7 @@
 
     if-eqz p1, :cond_38
 
-    .line 348
+    .line 362
     const-string p1, "4:3"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -172,7 +177,7 @@
 
     const-string p1, "1:1"
 
-    .line 349
+    .line 363
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -181,7 +186,7 @@
 
     const-string p1, "16:9"
 
-    .line 350
+    .line 364
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -190,7 +195,7 @@
 
     goto :goto_27
 
-    .line 353
+    .line 367
     :cond_1c
     invoke-static {}, Lcom/transsion/camera/feature/setting/picturesize/PictureSizeRestriction;->getRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
 
@@ -204,7 +209,7 @@
 
     goto :goto_31
 
-    .line 351
+    .line 365
     :cond_27
     :goto_27
     invoke-static {}, Lcom/transsion/camera/feature/setting/picturesize/PictureSizeRestriction;->getRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
@@ -220,7 +225,7 @@
     :goto_31
     if-eqz p1, :cond_38
 
-    .line 356
+    .line 370
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
@@ -232,7 +237,7 @@
 .method private isWideCameraOn()Z
     .registers 3
 
-    .line 362
+    .line 376
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v0
@@ -247,7 +252,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 363
+    .line 377
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v1
@@ -260,7 +265,7 @@
 
     const-string/jumbo v0, "wide_camera"
 
-    .line 364
+    .line 378
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -296,10 +301,10 @@
         }
     .end annotation
 
-    .line 133
+    .line 139
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedPlatformValues(Ljava/util/List;)V
 
-    .line 134
+    .line 140
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v0
@@ -314,7 +319,7 @@
 
     const/4 v1, 0x0
 
-    .line 135
+    .line 141
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -329,7 +334,7 @@
 
     const/4 v0, 0x0
 
-    .line 138
+    .line 144
     :cond_1d
     iget-boolean v2, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsTimelapseForce16_9:Z
 
@@ -337,12 +342,12 @@
 
     if-eqz v2, :cond_ab
 
-    .line 139
+    .line 145
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 140
+    .line 146
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -360,12 +365,12 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 141
+    .line 147
     invoke-static {v5}, Landroid/util/Size;->parseSize(Ljava/lang/String;)Landroid/util/Size;
 
     move-result-object v6
 
-    .line 142
+    .line 148
     invoke-virtual {v6}, Landroid/util/Size;->getWidth()I
 
     move-result v7
@@ -384,7 +389,7 @@
 
     sub-double/2addr v7, v9
 
-    .line 143
+    .line 149
     invoke-static {v7, v8}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide v6
@@ -393,7 +398,7 @@
 
     if-gtz v6, :cond_2f
 
-    .line 144
+    .line 150
     sget-object v6, Lcom/transsion/camera/utils/CameraConstant;->TP_PICTURE_SIZE_SUPPORT_LIST:[Ljava/lang/String;
 
     array-length v7, v6
@@ -405,14 +410,14 @@
 
     aget-object v9, v6, v8
 
-    .line 145
+    .line 151
     invoke-static {v9, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v9
 
     if-eqz v9, :cond_69
 
-    .line 146
+    .line 152
     invoke-interface {v0, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_69
@@ -420,7 +425,7 @@
 
     goto :goto_5c
 
-    .line 152
+    .line 158
     :cond_6c
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
@@ -428,7 +433,7 @@
 
     if-nez v2, :cond_a7
 
-    .line 153
+    .line 159
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -437,7 +442,7 @@
 
     const/4 v5, 0x1
 
-    .line 154
+    .line 160
     :goto_79
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -445,14 +450,14 @@
 
     if-ge v5, v6, :cond_a7
 
-    .line 155
+    .line 161
     const-string/jumbo v6, "x"
 
     invoke-virtual {v2, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v7
 
-    .line 156
+    .line 162
     invoke-interface {v0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -463,7 +468,7 @@
 
     move-result-object v6
 
-    .line 157
+    .line 163
     aget-object v7, v7, v1
 
     invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -478,7 +483,7 @@
 
     if-ge v7, v6, :cond_a4
 
-    .line 158
+    .line 164
     invoke-interface {v0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -490,13 +495,13 @@
 
     goto :goto_79
 
-    .line 162
+    .line 168
     :cond_a7
     invoke-interface {p1}, Ljava/util/List;->clear()V
 
     goto :goto_b7
 
-    .line 165
+    .line 171
     :cond_ab
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mSettingChangeRequester:Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;
 
@@ -510,18 +515,18 @@
 
     move-result-object v0
 
-    .line 167
+    .line 173
     :goto_b7
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsForce4_3:Z
 
     if-eqz p1, :cond_f2
 
-    .line 168
+    .line 174
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 169
+    .line 175
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -540,12 +545,12 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 170
+    .line 176
     invoke-static {v2}, Landroid/util/Size;->parseSize(Ljava/lang/String;)Landroid/util/Size;
 
     move-result-object v5
 
-    .line 171
+    .line 177
     invoke-virtual {v5}, Landroid/util/Size;->getWidth()I
 
     move-result v6
@@ -564,7 +569,7 @@
 
     sub-double/2addr v6, v8
 
-    .line 172
+    .line 178
     invoke-static {v6, v7}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide v5
@@ -573,7 +578,7 @@
 
     if-gtz v5, :cond_c4
 
-    .line 173
+    .line 179
     invoke-interface {p1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_c4
@@ -581,7 +586,7 @@
     :cond_f1
     move-object v0, p1
 
-    .line 178
+    .line 184
     :cond_f2
     sget-object p1, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -607,27 +612,27 @@
 
     invoke-static {p1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 180
+    .line 186
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedEntryValues(Ljava/util/List;)V
 
-    .line 181
+    .line 187
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->setEntryValues(Ljava/util/List;)V
 
-    .line 182
+    .line 188
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result p1
 
-    if-nez p1, :cond_14b
+    if-nez p1, :cond_153
 
-    .line 183
+    .line 189
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/lang/String;
 
-    .line 184
+    .line 190
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->screenFlip()Z
 
     move-result v2
@@ -641,18 +646,29 @@
     :cond_12b
     const-string v2, "4:3"
 
-    .line 185
+    .line 191
     :goto_12d
+    iget-boolean v3, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsPictureRatioCustomizedIndia:Z
+
+    if-eqz v3, :cond_135
+
+    .line 192
+    invoke-static {}, Lcom/transsion/camera/utils/PictureSizeHelper;->getPictureRatioCustomizedIndia()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 194
+    :cond_135
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    :cond_131
+    :cond_139
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_148
+    if-eqz v4, :cond_150
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -660,7 +676,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 186
+    .line 195
     invoke-static {v4}, Lcom/transsion/camera/utils/PictureSizeHelper;->getStandardAspectRatioOfString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
@@ -669,52 +685,52 @@
 
     move-result v5
 
-    if-eqz v5, :cond_131
+    if-eqz v5, :cond_139
 
     move-object p1, v4
 
-    .line 191
-    :cond_148
+    .line 200
+    :cond_150
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setDefaultValue(Ljava/lang/String;)V
 
-    .line 194
-    :cond_14b
+    .line 203
+    :cond_153
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsTimelapseForce16_9:Z
 
-    if-eqz p1, :cond_186
+    if-eqz p1, :cond_18e
 
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mCameraIds:[Ljava/lang/String;
 
-    if-eqz p1, :cond_186
+    if-eqz p1, :cond_18e
 
-    .line 196
+    .line 205
     sget-object p1, Lcom/transsion/camera/utils/CameraConstant;->TP_PICTURE_SIZE_SUPPORT_LIST:[Ljava/lang/String;
 
     array-length v2, p1
 
     move v3, v1
 
-    :goto_157
-    if-ge v3, v2, :cond_165
+    :goto_15f
+    if-ge v3, v2, :cond_16d
 
     aget-object v4, p1, v3
 
-    .line 197
+    .line 206
     invoke-virtual {p2, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_162
+    if-eqz v4, :cond_16a
 
-    goto :goto_16c
+    goto :goto_174
 
-    :cond_162
+    :cond_16a
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_157
+    goto :goto_15f
 
-    .line 203
-    :cond_165
+    .line 212
+    :cond_16d
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -723,28 +739,28 @@
 
     check-cast p2, Ljava/lang/String;
 
-    .line 205
-    :goto_16c
+    .line 214
+    :goto_174
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mCameraIds:[Ljava/lang/String;
 
-    .line 206
+    .line 215
     array-length v0, p1
 
     move v2, v1
 
-    :goto_170
-    if-ge v2, v0, :cond_186
+    :goto_178
+    if-ge v2, v0, :cond_18e
 
     aget-object v3, p1, v2
 
-    .line 207
+    .line 216
     iget-object v4, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {v4, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->getCameraScope(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 208
+    .line 217
     iget-object v4, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->getKey()Ljava/lang/String;
@@ -755,13 +771,13 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_170
+    goto :goto_178
 
-    .line 211
-    :cond_186
+    .line 220
+    :cond_18e
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 212
+    .line 221
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mSettingChangeRequester:Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;
 
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;->updateThumbnailSize(Ljava/lang/String;)V
@@ -792,7 +808,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 275
+    .line 287
     const-string p0, "key_picture_size"
 
     return-object p0
@@ -801,12 +817,12 @@
 .method public getParametersConfigure()Lcom/transsion/camera/app/common/setting/ICameraSetting$IParametersConfigure;
     .registers 4
 
-    .line 280
+    .line 292
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mSettingChangeRequester:Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;
 
     if-nez v0, :cond_f
 
-    .line 281
+    .line 293
     new-instance v0, Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -817,7 +833,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mSettingChangeRequester:Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;
 
-    .line 283
+    .line 295
     :cond_f
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mSettingChangeRequester:Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;
 
@@ -827,7 +843,7 @@
 .method public getPreviewStateCallback()Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
     .registers 1
 
-    .line 384
+    .line 398
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
 
     return-object p0
@@ -836,7 +852,7 @@
 .method public getRatioInStore()Ljava/lang/String;
     .registers 4
 
-    .line 404
+    .line 418
     sget-object v0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -865,7 +881,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 405
+    .line 419
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsForce4_3:Z
 
     const-string v1, "4:3"
@@ -874,18 +890,18 @@
 
     return-object v1
 
-    .line 407
+    .line 421
     :cond_29
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsTimelapseForce16_9:Z
 
     if-eqz v0, :cond_30
 
-    .line 408
+    .line 422
     const-string p0, "16:9"
 
     return-object p0
 
-    .line 410
+    .line 424
     :cond_30
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->screenFlip()Z
 
@@ -895,8 +911,19 @@
 
     const-string v1, "1:1"
 
-    .line 411
+    .line 425
     :cond_38
+    iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsPictureRatioCustomizedIndia:Z
+
+    if-eqz v0, :cond_40
+
+    .line 426
+    invoke-static {}, Lcom/transsion/camera/utils/PictureSizeHelper;->getPictureRatioCustomizedIndia()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 428
+    :cond_40
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v2, "key_picture_ratio"
@@ -926,7 +953,7 @@
 .method public getSettingType()Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
     .registers 1
 
-    .line 270
+    .line 282
     sget-object p0, Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;->PHOTO:Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
 
     return-object p0
@@ -935,7 +962,7 @@
 .method public getSuperDefinitionValueInDataStore()Ljava/lang/String;
     .registers 2
 
-    .line 125
+    .line 131
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_super_definition"
@@ -958,7 +985,7 @@
         }
     .end annotation
 
-    .line 342
+    .line 356
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p0
@@ -980,10 +1007,10 @@
 .method public init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
     .registers 4
 
-    .line 63
+    .line 65
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
-    .line 64
+    .line 66
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -992,7 +1019,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsDistortionNeedShow:Z
 
-    .line 65
+    .line 67
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -1001,7 +1028,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mBillionPixelSupport:Z
 
-    .line 66
+    .line 68
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -1010,7 +1037,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mHighDefinitionModeSupport:Z
 
-    .line 67
+    .line 69
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -1019,7 +1046,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsSupportFullSize:Z
 
-    .line 68
+    .line 70
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -1028,7 +1055,16 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsSupport_16_9:Z
 
-    .line 69
+    .line 71
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object p1
+
+    iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsPictureRatioCustomizedIndia:Z
+
+    iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsPictureRatioCustomizedIndia:Z
+
+    .line 72
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object p1
@@ -1037,14 +1073,14 @@
 
     move-result-object p1
 
-    .line 70
+    .line 73
     invoke-interface {p1}, Lcom/transsion/camera/adapter/ICameraDeviceInfo;->getCameraIdList()[Ljava/lang/String;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mCameraIds:[Ljava/lang/String;
 
-    .line 71
+    .line 74
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_restore_settings_notify_ui"
@@ -1069,7 +1105,7 @@
         }
     .end annotation
 
-    .line 81
+    .line 84
     sget-object p2, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1088,12 +1124,12 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 83
+    .line 86
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->getRatioInStore()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 84
+    .line 87
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1110,7 +1146,7 @@
 
     invoke-static {p2, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 85
+    .line 88
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsTimelapseForce16_9:Z
 
     const-string v2, "16:9"
@@ -1122,9 +1158,9 @@
     :goto_35
     move-object v0, v2
 
-    goto :goto_95
+    goto :goto_9e
 
-    .line 88
+    .line 91
     :cond_37
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mSettingChangeRequester:Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;
 
@@ -1136,7 +1172,7 @@
 
     move-result v1
 
-    .line 89
+    .line 92
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1153,47 +1189,61 @@
 
     invoke-static {p2, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 90
+    .line 93
     const-string v4, "4:3"
 
     const-string v5, "key_picture_ratio"
 
-    if-nez v1, :cond_70
+    if-nez v1, :cond_79
 
     iget-boolean v6, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsSupport_16_9:Z
 
-    if-nez v6, :cond_70
+    if-nez v6, :cond_79
 
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_70
+    if-eqz v6, :cond_79
 
-    .line 92
-    iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
+    .line 95
+    iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsPictureRatioCustomizedIndia:Z
+
+    if-eqz v0, :cond_6e
+
+    .line 96
+    invoke-static {}, Lcom/transsion/camera/utils/PictureSizeHelper;->getPictureRatioCustomizedIndia()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_6f
+
+    :cond_6e
+    move-object v0, v4
+
+    .line 98
+    :goto_6f
+    iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v5, v4, v1, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-virtual {v1, v5, v0, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    move-object v0, v4
+    goto :goto_9e
 
-    goto :goto_95
+    :cond_79
+    if-eqz v1, :cond_8b
 
-    :cond_70
-    if-eqz v1, :cond_82
-
-    .line 93
+    .line 99
     invoke-static {v0, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_82
+    if-eqz v1, :cond_8b
 
-    .line 95
+    .line 101
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
@@ -1204,20 +1254,20 @@
 
     goto :goto_35
 
-    .line 96
-    :cond_82
+    .line 102
+    :cond_8b
     invoke-static {v0}, Lcom/transsion/camera/utils/PictureSizeHelper;->isFullScreenRatioChanged(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_95
+    if-eqz v1, :cond_9e
 
-    .line 97
+    .line 103
     invoke-static {}, Lcom/transsion/camera/utils/PictureSizeHelper;->getFullScreenRatio()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 98
+    .line 104
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
@@ -1226,9 +1276,9 @@
 
     invoke-virtual {v1, v5, v0, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 101
-    :cond_95
-    :goto_95
+    .line 107
+    :cond_9e
+    :goto_9e
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1245,7 +1295,7 @@
 
     invoke-static {p2, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 104
+    .line 110
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->getKey()Ljava/lang/String;
@@ -1262,17 +1312,17 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_c0
+    if-eqz v1, :cond_c9
 
-    .line 105
+    .line 111
     invoke-interface {p1, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_e1
+    if-nez v2, :cond_ea
 
-    .line 106
-    :cond_c0
+    .line 112
+    :cond_c9
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1293,7 +1343,7 @@
 
     invoke-static {p2, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 107
+    .line 113
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p2
@@ -1302,10 +1352,10 @@
 
     check-cast v1, Ljava/lang/String;
 
-    if-eqz v1, :cond_115
+    if-eqz v1, :cond_11e
 
-    .line 112
-    :cond_e1
+    .line 118
+    :cond_ea
     invoke-static {v1}, Lcom/transsion/camera/utils/PictureSizeHelper;->getStandardAspectRatioOfString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -1314,19 +1364,19 @@
 
     move-result p2
 
-    if-nez p2, :cond_106
+    if-nez p2, :cond_10f
 
-    .line 113
+    .line 119
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
 
-    :cond_ef
+    :cond_f8
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_106
+    if-eqz v2, :cond_10f
 
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1334,7 +1384,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 114
+    .line 120
     invoke-static {v2}, Lcom/transsion/camera/utils/PictureSizeHelper;->getStandardAspectRatioOfString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -1343,15 +1393,15 @@
 
     move-result v4
 
-    if-eqz v4, :cond_ef
+    if-eqz v4, :cond_f8
 
     move-object v1, v2
 
-    .line 120
-    :cond_106
+    .line 126
+    :cond_10f
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->setValueInStore(Ljava/util/List;Ljava/lang/String;)V
 
-    .line 121
+    .line 127
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string p2, "key_tp_picture_ratio"
@@ -1364,8 +1414,8 @@
 
     return-void
 
-    .line 109
-    :cond_115
+    .line 115
+    :cond_11e
     new-instance p0, Ljava/lang/NullPointerException;
 
     const-string p1, "can\'t find a proper preview size."
@@ -1378,7 +1428,7 @@
 .method public isBillionPixelSupport()Z
     .registers 1
 
-    .line 373
+    .line 387
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mBillionPixelSupport:Z
 
     return p0
@@ -1387,12 +1437,12 @@
 .method public isCameraFacingBack()Z
     .registers 1
 
-    .line 368
+    .line 382
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 369
+    .line 383
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraInfoUtil;->isCameraFacingBack(Ljava/lang/String;)Z
 
     move-result p0
@@ -1403,7 +1453,7 @@
 .method public isDocForce4_3()Z
     .registers 2
 
-    .line 435
+    .line 452
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsForce4_3:Z
 
     if-eqz v0, :cond_a
@@ -1425,7 +1475,7 @@
 .method public isHighDefinitionModeSupport()Z
     .registers 1
 
-    .line 377
+    .line 391
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mHighDefinitionModeSupport:Z
 
     return p0
@@ -1434,7 +1484,7 @@
 .method public isRestoring()Z
     .registers 1
 
-    .line 380
+    .line 394
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mISRestoring:Z
 
     return p0
@@ -1443,7 +1493,7 @@
 .method public isSTBlurMode()Z
     .registers 1
 
-    .line 332
+    .line 346
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsSTBlurMode:Z
 
     return p0
@@ -1452,7 +1502,7 @@
 .method public isSupportFullSize()Z
     .registers 2
 
-    .line 427
+    .line 444
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->screenPocket()Z
 
     move-result v0
@@ -1482,7 +1532,7 @@
 .method public isSupportSuperDefinition()Z
     .registers 1
 
-    .line 129
+    .line 135
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsSupportSuperDefinition:Z
 
     return p0
@@ -1491,10 +1541,10 @@
 .method public onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
     .registers 4
 
-    .line 323
+    .line 335
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
 
-    .line 324
+    .line 336
     const-string p2, "key_super_definition"
 
     invoke-static {p3, p2}, Lcom/transsion/camera/utils/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -1503,7 +1553,7 @@
 
     iput-boolean p2, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsSupportSuperDefinition:Z
 
-    .line 325
+    .line 337
     const-string p2, "key_st_blur"
 
     invoke-static {p3, p2}, Lcom/transsion/camera/utils/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -1512,7 +1562,7 @@
 
     iput-boolean p2, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsSTBlurMode:Z
 
-    .line 326
+    .line 338
     const-string p2, "com.transsion.camera.feature.mode.ultrahd.UltraHDModeEntry"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1521,34 +1571,43 @@
 
     iput-boolean p2, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsUltraHD:Z
 
-    .line 327
+    .line 339
     const-string p2, "com.transsion.camera.feature.mode.doc.DocumentEntry"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p2
 
-    if-nez p2, :cond_2a
+    if-nez p2, :cond_32
+
+    const-string p2, "com.transsion.camera.feature.mode.aigc.AIGCModeEntry"
+
+    .line 340
+    invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_32
 
     iget-boolean p2, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsUltraHD:Z
 
-    if-eqz p2, :cond_28
+    if-eqz p2, :cond_30
 
-    goto :goto_2a
+    goto :goto_32
 
-    :cond_28
+    :cond_30
     const/4 p2, 0x0
 
-    goto :goto_2b
+    goto :goto_33
 
-    :cond_2a
-    :goto_2a
+    :cond_32
+    :goto_32
     const/4 p2, 0x1
 
-    :goto_2b
+    :goto_33
     iput-boolean p2, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsForce4_3:Z
 
-    .line 328
+    .line 342
     const-string p2, "com.transsion.camera.feature.mode.timelapsemode.TimelapsePhotoModeEntry"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1563,7 +1622,7 @@
 .method public onValueChanged(Ljava/lang/String;)V
     .registers 9
 
-    .line 288
+    .line 300
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -1574,22 +1633,22 @@
 
     if-nez v0, :cond_84
 
-    .line 289
+    .line 301
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->pause()V
 
-    .line 290
+    .line 302
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 291
+    .line 303
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mSettingChangeRequester:Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;->updateThumbnailSize(Ljava/lang/String;)V
 
-    .line 293
+    .line 305
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsTimelapseForce16_9:Z
 
     const/4 v1, 0x0
@@ -1600,7 +1659,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 295
+    .line 307
     array-length v2, v0
 
     move v3, v1
@@ -1610,14 +1669,14 @@
 
     aget-object v4, v0, v3
 
-    .line 296
+    .line 308
     iget-object v5, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {v5, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->getCameraScope(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 297
+    .line 309
     iget-object v5, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->getKey()Ljava/lang/String;
@@ -1630,7 +1689,7 @@
 
     goto :goto_24
 
-    .line 299
+    .line 311
     :cond_3a
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -1644,7 +1703,7 @@
 
     goto :goto_53
 
-    .line 301
+    .line 313
     :cond_46
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -1658,25 +1717,25 @@
 
     invoke-virtual {v0, v2, p1, v3, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 304
+    .line 316
     :goto_53
     invoke-static {p1}, Lcom/transsion/camera/utils/PictureSizeHelper;->getStandardAspectRatioOfString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 305
+    .line 317
     iget-boolean v2, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsDistortionNeedShow:Z
 
     if-nez v2, :cond_62
 
-    .line 306
+    .line 318
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->isWideCameraOn()Z
 
     move-result v2
 
     invoke-direct {p0, v2, v0}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->handlerRestriction(ZLjava/lang/String;)V
 
-    .line 308
+    .line 320
     :cond_62
     iget-boolean v2, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsTimelapseForce16_9:Z
 
@@ -1684,7 +1743,7 @@
 
     goto :goto_72
 
-    .line 311
+    .line 323
     :cond_67
     iget-object v2, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -1696,18 +1755,18 @@
 
     invoke-virtual {v2, v3, v0, v4, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 313
+    .line 325
     :goto_72
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mSettingChangeRequester:Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;->sendSettingChangeRequest()V
 
-    .line 315
+    .line 327
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p0, :cond_84
 
-    .line 316
+    .line 328
     const-string v0, "key_picture_size_state"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
@@ -1742,7 +1801,7 @@
         }
     .end annotation
 
-    .line 239
+    .line 251
     sget-object v0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1767,7 +1826,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 240
+    .line 252
     const-string v1, "key_restore_settings"
 
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1776,12 +1835,12 @@
 
     if-eqz v1, :cond_3a
 
-    .line 241
+    .line 253
     const-string p2, "need to override default value"
 
     invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 243
+    .line 255
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p2
@@ -1794,23 +1853,23 @@
 
     check-cast p2, Ljava/lang/String;
 
-    .line 244
+    .line 256
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p3
 
-    .line 246
+    .line 258
     :cond_3a
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->overrideValues(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
 
-    .line 247
+    .line 259
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object p1
 
     if-eqz p1, :cond_4c
 
-    .line 248
+    .line 260
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mSettingChangeRequester:Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -1819,7 +1878,7 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;->updateThumbnailSize(Ljava/lang/String;)V
 
-    .line 250
+    .line 262
     :cond_4c
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -1857,7 +1916,7 @@
 .method public pause()V
     .registers 1
 
-    .line 337
+    .line 351
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->pause()V
 
     return-void
@@ -1866,14 +1925,14 @@
 .method public postRestrictionAfterInitialized()V
     .registers 3
 
-    .line 255
+    .line 267
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsDistortionNeedShow:Z
 
     if-eqz v0, :cond_5
 
     return-void
 
-    .line 258
+    .line 270
     :cond_5
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
@@ -1883,7 +1942,7 @@
 
     move-result-object v0
 
-    .line 259
+    .line 271
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->isWideCameraOn()Z
 
     move-result v1
@@ -1906,7 +1965,7 @@
         }
     .end annotation
 
-    .line 431
+    .line 448
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryEntryValues(Ljava/lang/String;)Ljava/util/List;
@@ -1927,7 +1986,7 @@
         }
     .end annotation
 
-    .line 217
+    .line 226
     sget-object v0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1946,7 +2005,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 219
+    .line 228
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->screenFlip()Z
 
     move-result v1
@@ -1962,8 +2021,19 @@
     :cond_21
     move-object v1, v2
 
-    .line 220
+    .line 229
     :goto_22
+    iget-boolean v3, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsPictureRatioCustomizedIndia:Z
+
+    if-eqz v3, :cond_2a
+
+    .line 230
+    invoke-static {}, Lcom/transsion/camera/utils/PictureSizeHelper;->getPictureRatioCustomizedIndia()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 232
+    :cond_2a
     iget-object v3, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v4, "key_picture_ratio"
@@ -1976,29 +2046,29 @@
 
     move-result-object v1
 
-    .line 221
+    .line 233
     iget-boolean v3, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsForce4_3:Z
 
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_3b
 
-    goto :goto_3b
+    goto :goto_43
 
-    .line 223
-    :cond_33
+    .line 235
+    :cond_3b
     iget-boolean v2, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mIsTimelapseForce16_9:Z
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_42
 
-    .line 224
+    .line 236
     const-string v2, "16:9"
 
-    goto :goto_3b
+    goto :goto_43
 
-    :cond_3a
+    :cond_42
     move-object v2, v1
 
-    .line 226
-    :goto_3b
+    .line 238
+    :goto_43
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2017,24 +2087,24 @@
 
     const/4 v0, 0x0
 
-    .line 227
+    .line 239
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
 
-    .line 228
+    .line 240
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    :cond_5a
+    :cond_62
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_71
+    if-eqz v3, :cond_79
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2042,7 +2112,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 229
+    .line 241
     invoke-static {v3}, Lcom/transsion/camera/utils/PictureSizeHelper;->getStandardAspectRatioOfString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -2051,12 +2121,12 @@
 
     move-result v4
 
-    if-eqz v4, :cond_5a
+    if-eqz v4, :cond_62
 
     move-object v0, v3
 
-    .line 234
-    :cond_71
+    .line 246
+    :cond_79
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->setValueInStore(Ljava/util/List;Ljava/lang/String;)V
 
     return-void
@@ -2065,10 +2135,10 @@
 .method public restoreToSupportedPlatformValue()V
     .registers 2
 
-    .line 264
+    .line 276
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->restoreToSupportedPlatformValue()V
 
-    .line 265
+    .line 277
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/picturesize/PictureSize;->mSettingChangeRequester:Lcom/transsion/camera/feature/setting/picturesize/PictureSizeParametersConfig;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -2101,7 +2171,7 @@
 .method public unInit()V
     .registers 3
 
-    .line 76
+    .line 79
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_restore_settings_notify_ui"

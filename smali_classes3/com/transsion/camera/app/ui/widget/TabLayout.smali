@@ -751,7 +751,7 @@
 .method private getDefaultHeight()I
     .registers 5
 
-    .line 1556
+    .line 1569
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -763,7 +763,7 @@
     :goto_7
     if-ge v1, v0, :cond_29
 
-    .line 1557
+    .line 1570
     iget-object v2, p0, Lcom/transsion/camera/app/ui/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -774,7 +774,7 @@
 
     if-eqz v2, :cond_26
 
-    .line 1558
+    .line 1571
     invoke-virtual {v2}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->getIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -1907,7 +1907,7 @@
 .method public generateLayoutParams(Landroid/util/AttributeSet;)Landroid/widget/FrameLayout$LayoutParams;
     .registers 2
 
-    .line 1572
+    .line 1585
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->generateDefaultLayoutParams()Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p0
@@ -2314,7 +2314,7 @@
 .method public getTabLayoutWidth()I
     .registers 1
 
-    .line 1580
+    .line 1593
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result p0
@@ -2325,7 +2325,7 @@
 .method getTabMaxWidth()I
     .registers 1
 
-    .line 1576
+    .line 1589
     iget p0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout;->mTabMaxWidth:I
 
     return p0

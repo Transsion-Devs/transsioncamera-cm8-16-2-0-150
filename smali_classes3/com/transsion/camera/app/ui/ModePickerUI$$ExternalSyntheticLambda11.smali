@@ -3,30 +3,34 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/function/Function;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
 
 # direct methods
-.method public synthetic constructor <init>()V
-    .registers 1
+.method public synthetic constructor <init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    .registers 2
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda11;->f$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .registers 2
 
     .line 0
-    check-cast p1, Lcom/transsion/camera/app/common/FeatureResource;
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda11;->f$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
-    invoke-virtual {p1}, Lcom/transsion/camera/app/common/FeatureResource;->getFeatureTitle()Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->$r8$lambda$Syiv0l8djzZuGyO_JBWX2zV_000(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/animation/ValueAnimator;)V
 
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

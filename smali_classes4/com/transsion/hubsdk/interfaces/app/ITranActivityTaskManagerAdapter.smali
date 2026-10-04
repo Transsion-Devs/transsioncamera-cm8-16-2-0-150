@@ -10,7 +10,19 @@
 .method public abstract addAnimationIconLayer(Landroid/view/SurfaceControl;)V
 .end method
 
+.method public abstract addMultiExchangeListener(Ljava/lang/String;Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;)V
+.end method
+
 .method public abstract boostEndInLauncher(I)V
+.end method
+
+.method public abstract boostIMEEnd(Ljava/lang/String;)V
+.end method
+
+.method public abstract boostIMEStart(ILjava/lang/String;)V
+.end method
+
+.method public abstract boostInFling(IZI)V
 .end method
 
 .method public abstract boostSceneEnd(I)V
@@ -86,6 +98,9 @@
 .end method
 
 .method public abstract getMaxRecentTasksStatic()I
+.end method
+
+.method public abstract getMultiDisplayAreaAppInfo(II)Landroid/os/Bundle;
 .end method
 
 .method public abstract getMultiDisplayAreaTopPackageV4(II)Ljava/lang/String;
@@ -192,10 +207,16 @@
 .method public abstract hookGetMultiWindowDefaultRect(I)Landroid/graphics/Rect;
 .end method
 
+.method public abstract hookMultiWindowToClose(II)V
+.end method
+
 .method public abstract hookMultiWindowToExchange(II)V
 .end method
 
 .method public abstract hookMultiWindowVisible()V
+.end method
+
+.method public abstract hookMultiWindowVisibleWithCallback(Lcom/transsion/hubsdk/api/app/TranActivityTaskManager$TranWindowContainerTransactionCallback;)V
 .end method
 
 .method public abstract hookReparentToDefaultDisplay(II)V
@@ -225,13 +246,25 @@
 .method public abstract inMultiWindowMode()Z
 .end method
 
+.method public abstract isCanEnterMultiWin(Landroid/content/ComponentName;)Z
+.end method
+
+.method public abstract isHasMultiWindow()Z
+.end method
+
 .method public abstract isIMEShowing()Z
 .end method
 
 .method public abstract isKeyguardLocking()Z
 .end method
 
+.method public abstract isPCSourceDisplay(I)Z
+.end method
+
 .method public abstract isPinnedMode()Z
+.end method
+
+.method public abstract isResizableActivity()Z
 .end method
 
 .method public abstract isSecureWindow()Z
@@ -258,6 +291,9 @@
 .method public abstract notifyLauncherPageTurning(Z)V
 .end method
 
+.method public abstract registerActivityStarterExecutedObserver(Lcom/transsion/hubsdk/api/app/TranActivityStarterExecutedObserver;Landroid/content/IntentFilter;)Z
+.end method
+
 .method public abstract registerMultiWindowWmShellListener(Landroid/os/IBinder;)V
 .end method
 
@@ -270,10 +306,19 @@
 .method public abstract removeTask(I)Z
 .end method
 
+.method public abstract removeTaskPC(II)V
+.end method
+
 .method public abstract reparentActivity(IIZ)V
 .end method
 
 .method public abstract reparentTaskToDefaultTDA()V
+.end method
+
+.method public abstract requestHideDock()V
+.end method
+
+.method public abstract requestShowDock()V
 .end method
 
 .method public abstract setActivityController(Lcom/transsion/hubsdk/api/app/ITranActivityController;Z)V
@@ -294,6 +339,9 @@
 .end method
 
 .method public abstract setFinishFixedRotationWithTransaction(Landroid/view/SurfaceControl;[F[FI)V
+.end method
+
+.method public abstract setFlingState(Z)V
 .end method
 
 .method public abstract setJankScenarioState(ILjava/lang/String;Z)V
@@ -366,10 +414,19 @@
 .method public abstract startCurrentAppInMultiWindow(ZI)V
 .end method
 
+.method public abstract startLauncherAction(Landroid/content/Intent;I)V
+.end method
+
+.method public abstract stopTaskPC(II)V
+.end method
+
 .method public abstract takeTaskSnapshot(IZ)Lcom/transsion/hubsdk/api/window/TranTaskSnapshot;
 .end method
 
 .method public abstract taskInMultiWindowById(I)Z
+.end method
+
+.method public abstract unRegisterActivityStarterExecutedObserver(Lcom/transsion/hubsdk/api/app/TranActivityStarterExecutedObserver;)Z
 .end method
 
 .method public abstract updateConfiguration(Landroid/content/res/Configuration;)Z

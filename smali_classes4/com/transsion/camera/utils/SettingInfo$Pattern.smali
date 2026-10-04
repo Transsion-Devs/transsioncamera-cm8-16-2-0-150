@@ -28,7 +28,7 @@
 .method private static synthetic $values()[Lcom/transsion/camera/utils/SettingInfo$Pattern;
     .registers 3
 
-    .line 3342
+    .line 3361
     sget-object v0, Lcom/transsion/camera/utils/SettingInfo$Pattern;->NORMAL:Lcom/transsion/camera/utils/SettingInfo$Pattern;
 
     sget-object v1, Lcom/transsion/camera/utils/SettingInfo$Pattern;->BURST:Lcom/transsion/camera/utils/SettingInfo$Pattern;
@@ -45,7 +45,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 3343
+    .line 3362
     new-instance v0, Lcom/transsion/camera/utils/SettingInfo$Pattern;
 
     const-string v1, "NORMAL"
@@ -56,7 +56,7 @@
 
     sput-object v0, Lcom/transsion/camera/utils/SettingInfo$Pattern;->NORMAL:Lcom/transsion/camera/utils/SettingInfo$Pattern;
 
-    .line 3344
+    .line 3363
     new-instance v0, Lcom/transsion/camera/utils/SettingInfo$Pattern;
 
     const-string v1, "BURST"
@@ -67,7 +67,7 @@
 
     sput-object v0, Lcom/transsion/camera/utils/SettingInfo$Pattern;->BURST:Lcom/transsion/camera/utils/SettingInfo$Pattern;
 
-    .line 3345
+    .line 3364
     new-instance v0, Lcom/transsion/camera/utils/SettingInfo$Pattern;
 
     const-string v1, "CONTINUOUS"
@@ -78,7 +78,7 @@
 
     sput-object v0, Lcom/transsion/camera/utils/SettingInfo$Pattern;->CONTINUOUS:Lcom/transsion/camera/utils/SettingInfo$Pattern;
 
-    .line 3342
+    .line 3361
     invoke-static {}, Lcom/transsion/camera/utils/SettingInfo$Pattern;->$values()[Lcom/transsion/camera/utils/SettingInfo$Pattern;
 
     move-result-object v0
@@ -91,7 +91,7 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
 
-    .line 3342
+    .line 3361
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -100,7 +100,7 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/transsion/camera/utils/SettingInfo$Pattern;
     .registers 2
 
-    .line 3342
+    .line 3361
     const-class v0, Lcom/transsion/camera/utils/SettingInfo$Pattern;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -115,7 +115,7 @@
 .method public static values()[Lcom/transsion/camera/utils/SettingInfo$Pattern;
     .registers 1
 
-    .line 3342
+    .line 3361
     sget-object v0, Lcom/transsion/camera/utils/SettingInfo$Pattern;->$VALUES:[Lcom/transsion/camera/utils/SettingInfo$Pattern;
 
     invoke-virtual {v0}, [Lcom/transsion/camera/utils/SettingInfo$Pattern;->clone()Ljava/lang/Object;

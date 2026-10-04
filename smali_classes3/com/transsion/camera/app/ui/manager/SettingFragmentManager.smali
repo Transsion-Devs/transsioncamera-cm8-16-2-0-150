@@ -35,8 +35,6 @@
 
 .field mIShutterSoundOptionalFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterSoundOptionalFragmentControl;
 
-.field mOrderEditorFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IOrderEditorFragmentControl;
-
 .field mProWatermarkFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IProWatermarkFragmentControl;
 
 .field private mRTLDirection:Z
@@ -110,10 +108,10 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/app/FragmentManager;ILcom/transsion/camera/app/common/IAppUIControl$IOrderEditorFragmentControl;Lcom/transsion/camera/app/common/IAppUIControl$IEditWaterMarkFragmentControl;Lcom/transsion/camera/app/common/IAppUIControl$IRemoteCaptureFragmentControl;Lcom/transsion/camera/app/common/IAppUIControl$IGoldWaterMarkFragmentControl;Lcom/transsion/camera/app/common/IAppUIControl$IProWatermarkFragmentControl;Lcom/transsion/camera/app/common/IAppUIControl$IShutterSoundOptionalFragmentControl;Lcom/transsion/camera/app/common/IAppUIControl$ITuningFeatureFragmentControl;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
-    .registers 13
+.method public constructor <init>(Landroid/app/FragmentManager;ILcom/transsion/camera/app/common/IAppUIControl$IEditWaterMarkFragmentControl;Lcom/transsion/camera/app/common/IAppUIControl$IRemoteCaptureFragmentControl;Lcom/transsion/camera/app/common/IAppUIControl$IGoldWaterMarkFragmentControl;Lcom/transsion/camera/app/common/IAppUIControl$IProWatermarkFragmentControl;Lcom/transsion/camera/app/common/IAppUIControl$IShutterSoundOptionalFragmentControl;Lcom/transsion/camera/app/common/IAppUIControl$ITuningFeatureFragmentControl;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
+    .registers 12
 
-    .line 80
+    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 56
@@ -125,41 +123,38 @@
 
     const/4 v0, 0x0
 
-    .line 68
+    .line 67
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mRTLDirection:Z
 
-    .line 81
-    iput-object p10, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+    .line 79
+    iput-object p9, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 82
+    .line 80
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mFragmentManager:Landroid/app/FragmentManager;
 
-    .line 83
+    .line 81
     iput p2, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mRootLayoutId:I
 
+    .line 82
+    iput-object p3, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mEditWaterMarkFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IEditWaterMarkFragmentControl;
+
+    .line 83
+    iput-object p4, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mIRemoteCaptureFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IRemoteCaptureFragmentControl;
+
     .line 84
-    iput-object p3, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mOrderEditorFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IOrderEditorFragmentControl;
+    iput-object p5, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mIGoldWaterMarkFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IGoldWaterMarkFragmentControl;
 
     .line 85
-    iput-object p4, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mEditWaterMarkFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IEditWaterMarkFragmentControl;
+    iput-object p6, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mProWatermarkFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IProWatermarkFragmentControl;
 
     .line 86
-    iput-object p5, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mIRemoteCaptureFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IRemoteCaptureFragmentControl;
+    iput-object p7, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mIShutterSoundOptionalFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterSoundOptionalFragmentControl;
 
     .line 87
-    iput-object p6, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mIGoldWaterMarkFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IGoldWaterMarkFragmentControl;
+    iput-object p8, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mTuningFeatureFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$ITuningFeatureFragmentControl;
 
     .line 88
-    iput-object p7, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mProWatermarkFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IProWatermarkFragmentControl;
-
-    .line 89
-    iput-object p8, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mIShutterSoundOptionalFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterSoundOptionalFragmentControl;
-
-    .line 90
-    iput-object p9, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mTuningFeatureFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$ITuningFeatureFragmentControl;
-
-    .line 91
-    iput-object p11, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+    iput-object p10, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     return-void
 .end method
@@ -171,7 +166,7 @@
 
     goto :goto_35
 
-    .line 300
+    .line 290
     :cond_3
     :goto_3
     invoke-interface {p4}, Ljava/util/Iterator;->hasNext()Z
@@ -180,7 +175,7 @@
 
     if-eqz p0, :cond_35
 
-    .line 302
+    .line 292
     invoke-interface {p4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p0
@@ -189,19 +184,19 @@
 
     move-result p0
 
-    .line 301
+    .line 291
     invoke-interface {p1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Lcom/transsion/camera/app/common/ui/setting/IPreferenceItemUI;
 
-    .line 302
+    .line 292
     invoke-interface {p0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 303
+    .line 293
     const-string p2, "key_storage"
 
     invoke-virtual {p2, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -210,12 +205,12 @@
 
     if-eqz p2, :cond_27
 
-    .line 304
+    .line 294
     invoke-interface {p4}, Ljava/util/Iterator;->remove()V
 
     goto :goto_3
 
-    .line 307
+    .line 297
     :cond_27
     const-string p2, "key_location"
 
@@ -227,7 +222,7 @@
 
     if-nez p3, :cond_3
 
-    .line 308
+    .line 298
     invoke-interface {p4}, Ljava/util/Iterator;->remove()V
 
     goto :goto_3
@@ -240,16 +235,16 @@
 .method private filterForSecureCamera(Ljava/util/List;ZLjava/util/Iterator;)V
     .registers 5
 
-    .line 267
+    .line 261
     :cond_0
     :goto_0
     invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p0
 
-    if-eqz p0, :cond_56
+    if-eqz p0, :cond_4a
 
-    .line 269
+    .line 263
     invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p0
@@ -258,19 +253,19 @@
 
     move-result p0
 
-    .line 268
+    .line 262
     invoke-interface {p1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Lcom/transsion/camera/app/common/ui/setting/IPreferenceItemUI;
 
-    .line 269
+    .line 263
     invoke-interface {p0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 270
+    .line 264
     const-string v0, "key_storage"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -279,12 +274,12 @@
 
     if-eqz v0, :cond_24
 
-    .line 271
+    .line 265
     invoke-interface {p3}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 274
+    .line 268
     :cond_24
     const-string v0, "key_location"
 
@@ -296,12 +291,12 @@
 
     if-nez p2, :cond_32
 
-    .line 275
+    .line 269
     invoke-interface {p3}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 278
+    .line 272
     :cond_32
     const-string v0, "key_restore_settings"
 
@@ -311,28 +306,13 @@
 
     if-eqz v0, :cond_3e
 
-    .line 279
+    .line 273
     invoke-interface {p3}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 282
+    .line 276
     :cond_3e
-    const-string v0, "key_order_editor"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4a
-
-    .line 283
-    invoke-interface {p3}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_0
-
-    .line 286
-    :cond_4a
     const-string v0, "key_secondary_screen"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -341,19 +321,19 @@
 
     if-eqz p0, :cond_0
 
-    .line 287
+    .line 277
     invoke-interface {p3}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    :cond_56
+    :cond_4a
     return-void
 .end method
 
 .method private initSettingUIList(Ljava/util/List;)V
     .registers 5
 
-    .line 329
+    .line 319
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -372,10 +352,10 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ui/setting/IPreferenceItemUI;
 
-    .line 330
+    .line 320
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/ui/setting/IPreferenceItemUI;->setSettingFragmentControl(Lcom/transsion/camera/app/common/IAppUIControl$ISettingFragmentControl;)V
 
-    .line 331
+    .line 321
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v1, :cond_1b
@@ -384,7 +364,7 @@
 
     if-nez v1, :cond_2d
 
-    .line 332
+    .line 322
     :cond_1b
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -394,7 +374,7 @@
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->setSettingProvide(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;)V
 
-    .line 333
+    .line 323
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -403,22 +383,22 @@
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
-    .line 335
+    .line 325
     :cond_2d
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v1, :cond_34
 
-    .line 336
+    .line 326
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
-    .line 339
+    .line 329
     :cond_34
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingProvide:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
 
     if-eqz v1, :cond_43
 
-    .line 340
+    .line 330
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v2
@@ -427,42 +407,42 @@
 
     move-result-object v1
 
-    .line 341
+    .line 331
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    .line 344
+    .line 334
     :cond_43
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mStorageSettingProvider:Lcom/transsion/camera/app/common/storage/IStorage$IStorageSettingProvider;
 
     if-eqz v1, :cond_4
 
-    .line 345
+    .line 335
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mStorageSettingProvider:Lcom/transsion/camera/app/common/storage/IStorage$IStorageSettingProvider;
 
-    .line 346
+    .line 336
     invoke-interface {v2}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageSettingProvider;->getStorageSettingKey()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 345
+    .line 335
     invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_4
 
-    .line 347
+    .line 337
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mStorageSettingProvider:Lcom/transsion/camera/app/common/storage/IStorage$IStorageSettingProvider;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageSettingProvider;->getStorageSetting()Lcom/transsion/camera/app/common/setting/ISetting;
 
     move-result-object v1
 
-    .line 348
+    .line 338
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
     goto :goto_4
@@ -474,12 +454,12 @@
 .method private setSettingFragmentManager(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)V
     .registers 2
 
-    .line 260
+    .line 254
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-eqz p0, :cond_7
 
-    .line 261
+    .line 255
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/SettingFragment;->setSettingFragmentManager(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)V
 
     :cond_7
@@ -489,7 +469,7 @@
 .method private updateFragmentExitAnim()V
     .registers 5
 
-    .line 427
+    .line 417
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mFragmentManager:Landroid/app/FragmentManager;
 
     invoke-virtual {v0}, Landroid/app/FragmentManager;->getFragments()Ljava/util/List;
@@ -500,7 +480,7 @@
 
     move-result v0
 
-    .line 428
+    .line 418
     sget-object v1, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -521,7 +501,7 @@
 
     if-eqz v0, :cond_5a
 
-    .line 429
+    .line 419
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-eqz v0, :cond_5a
@@ -534,7 +514,7 @@
 
     goto :goto_5a
 
-    .line 434
+    .line 424
     :cond_2d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mFragmentManager:Landroid/app/FragmentManager;
 
@@ -544,14 +524,14 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/app/FragmentManager;->popBackStack(Ljava/lang/String;I)V
 
-    .line 438
+    .line 428
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mFragmentManager:Landroid/app/FragmentManager;
 
     invoke-virtual {v0}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
 
     move-result-object v0
 
-    .line 439
+    .line 429
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mContext:Landroid/content/Context;
@@ -566,14 +546,14 @@
 
     const/4 v3, 0x0
 
-    .line 441
+    .line 431
     invoke-virtual {v0, v3, v1, v3, v1}, Landroid/app/FragmentTransaction;->setCustomAnimations(IIII)Landroid/app/FragmentTransaction;
 
-    .line 443
+    .line 433
     :cond_4a
     invoke-virtual {v0, v2}, Landroid/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
-    .line 444
+    .line 434
     iget v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mRootLayoutId:I
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
@@ -594,12 +574,12 @@
 .method private updateScreenFormType(I)V
     .registers 2
 
-    .line 254
+    .line 248
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-eqz p0, :cond_7
 
-    .line 255
+    .line 249
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/SettingFragment;->updateScreenFormType(I)V
 
     :cond_7
@@ -611,31 +591,31 @@
 .method public enterSettingFragment(Landroid/content/Context;)V
     .registers 7
 
-    .line 130
+    .line 127
     sget-object v0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[enterSettingFragment] "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 131
+    .line 128
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mContext:Landroid/content/Context;
 
-    .line 132
+    .line 129
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mFragmentManager:Landroid/app/FragmentManager;
 
     invoke-virtual {v1}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
 
     move-result-object v1
 
-    .line 134
+    .line 131
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     invoke-virtual {v2, p1}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->getEnterAnimation(Landroid/content/Context;)I
 
     move-result v2
 
-    .line 135
+    .line 132
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     invoke-virtual {v3, p1}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->getExitAnimation(Landroid/content/Context;)I
@@ -648,10 +628,10 @@
 
     if-eq p1, v3, :cond_23
 
-    .line 137
+    .line 134
     invoke-virtual {v1, v2, p1, v2, p1}, Landroid/app/FragmentTransaction;->setCustomAnimations(IIII)Landroid/app/FragmentTransaction;
 
-    .line 139
+    .line 136
     :cond_23
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mFragmentManager:Landroid/app/FragmentManager;
 
@@ -663,12 +643,12 @@
 
     move-result p1
 
-    .line 140
+    .line 137
     const-string v2, "setting_fragment"
 
     if-lez p1, :cond_4b
 
-    .line 141
+    .line 138
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -685,18 +665,18 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 142
+    .line 139
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mFragmentManager:Landroid/app/FragmentManager;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v2, v0}, Landroid/app/FragmentManager;->popBackStackImmediate(Ljava/lang/String;I)Z
 
-    .line 145
+    .line 142
     :cond_4b
     invoke-virtual {v1, v2}, Landroid/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroid/app/FragmentTransaction;
 
-    .line 146
+    .line 143
     iget p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mRootLayoutId:I
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
@@ -715,14 +695,14 @@
 .method public enterSettingFragmentBottom()V
     .registers 2
 
-    .line 124
+    .line 121
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-eqz p0, :cond_8
 
     const/4 v0, 0x1
 
-    .line 125
+    .line 122
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/SettingFragment;->setShowingSettingBottom(Z)V
 
     :cond_8
@@ -732,12 +712,12 @@
 .method public exitFromOtherFragment()V
     .registers 1
 
-    .line 198
+    .line 192
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-eqz p0, :cond_7
 
-    .line 199
+    .line 193
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->exitFromOtherFragment()V
 
     :cond_7
@@ -747,7 +727,7 @@
 .method public exitSettingFragment(Ljava/lang/String;)V
     .registers 7
 
-    .line 151
+    .line 148
     sget-object v0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -766,39 +746,39 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 152
+    .line 149
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-nez v1, :cond_20
 
-    .line 153
+    .line 150
     const-string p0, "[exitSettingFragment] mSettingFragment == null return"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 157
+    .line 154
     :cond_20
     invoke-virtual {v1, p1}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->enterOtherFragment(Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 158
+    .line 155
     const-string v2, "setting_fragment"
 
-    if-eqz p1, :cond_ee
+    if-eqz p1, :cond_d9
 
-    .line 159
+    .line 156
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v3
 
     const/4 v4, -0x1
 
-    sparse-switch v3, :sswitch_data_f4
+    sparse-switch v3, :sswitch_data_e0
 
-    goto :goto_7d
+    goto :goto_72
 
     :sswitch_31
     const-string v3, "key_edit_watermark"
@@ -809,12 +789,12 @@
 
     if-nez p1, :cond_3a
 
-    goto :goto_7d
+    goto :goto_72
 
     :cond_3a
-    const/4 v4, 0x6
+    const/4 v4, 0x5
 
-    goto :goto_7d
+    goto :goto_72
 
     :sswitch_3c
     const-string v3, "key_remote_capture"
@@ -825,12 +805,12 @@
 
     if-nez p1, :cond_45
 
-    goto :goto_7d
+    goto :goto_72
 
     :cond_45
-    const/4 v4, 0x5
+    const/4 v4, 0x4
 
-    goto :goto_7d
+    goto :goto_72
 
     :sswitch_47
     const-string v3, "key_tuning_feature_entrance"
@@ -841,12 +821,12 @@
 
     if-nez p1, :cond_50
 
-    goto :goto_7d
+    goto :goto_72
 
     :cond_50
-    const/4 v4, 0x4
+    const/4 v4, 0x3
 
-    goto :goto_7d
+    goto :goto_72
 
     :sswitch_52
     const-string v3, "key_gold_watermark"
@@ -857,15 +837,15 @@
 
     if-nez p1, :cond_5b
 
-    goto :goto_7d
+    goto :goto_72
 
     :cond_5b
-    const/4 v4, 0x3
+    const/4 v4, 0x2
 
-    goto :goto_7d
+    goto :goto_72
 
     :sswitch_5d
-    const-string v3, "key_order_editor"
+    const-string v3, "key_pro_watermark"
 
     invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -873,15 +853,15 @@
 
     if-nez p1, :cond_66
 
-    goto :goto_7d
+    goto :goto_72
 
     :cond_66
-    const/4 v4, 0x2
+    move v4, v1
 
-    goto :goto_7d
+    goto :goto_72
 
     :sswitch_68
-    const-string v3, "key_pro_watermark"
+    const-string v3, "key_shutter_sound_optional"
 
     invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -889,39 +869,23 @@
 
     if-nez p1, :cond_71
 
-    goto :goto_7d
+    goto :goto_72
 
     :cond_71
-    move v4, v1
-
-    goto :goto_7d
-
-    :sswitch_73
-    const-string v3, "key_shutter_sound_optional"
-
-    invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_7c
-
-    goto :goto_7d
-
-    :cond_7c
     const/4 v4, 0x0
 
-    :goto_7d
-    packed-switch v4, :pswitch_data_112
+    :goto_72
+    packed-switch v4, :pswitch_data_fa
 
-    .line 189
+    .line 183
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mFragmentManager:Landroid/app/FragmentManager;
 
     invoke-virtual {p0, v2, v1}, Landroid/app/FragmentManager;->popBackStackImmediate(Ljava/lang/String;I)Z
 
     return-void
 
-    .line 164
-    :pswitch_86
+    .line 158
+    :pswitch_7b
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mEditWaterMarkFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IEditWaterMarkFragmentControl;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
@@ -932,15 +896,15 @@
 
     return-void
 
-    .line 167
-    :pswitch_90
+    .line 161
+    :pswitch_85
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mIRemoteCaptureFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IRemoteCaptureFragmentControl;
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mRTLDirection:Z
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IRemoteCaptureFragmentControl;->setRTLDirection(Z)V
 
-    .line 168
+    .line 162
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mIRemoteCaptureFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IRemoteCaptureFragmentControl;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
@@ -951,13 +915,13 @@
 
     return-void
 
-    .line 180
-    :pswitch_a1
+    .line 174
+    :pswitch_96
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mTuningFeatureFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$ITuningFeatureFragmentControl;
 
-    if-nez p1, :cond_be
+    if-nez p1, :cond_b3
 
-    .line 181
+    .line 175
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -966,7 +930,7 @@
 
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 183
+    .line 177
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isLaunchWithDeveloperMode()Z
 
     move-result p1
@@ -977,13 +941,13 @@
 
     move-result-object p0
 
-    .line 181
+    .line 175
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 185
-    :cond_be
+    .line 179
+    :cond_b3
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mContext:Landroid/content/Context;
@@ -992,8 +956,8 @@
 
     return-void
 
-    .line 171
-    :pswitch_c6
+    .line 165
+    :pswitch_bb
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mIGoldWaterMarkFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IGoldWaterMarkFragmentControl;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
@@ -1004,20 +968,8 @@
 
     return-void
 
-    .line 161
-    :pswitch_d0
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mOrderEditorFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IOrderEditorFragmentControl;
-
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
-
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mContext:Landroid/content/Context;
-
-    invoke-interface {p1, v0, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IOrderEditorFragmentControl;->enterEditorFragment(Landroid/app/Fragment;Landroid/content/Context;)V
-
-    return-void
-
-    .line 177
-    :pswitch_da
+    .line 171
+    :pswitch_c5
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mProWatermarkFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IProWatermarkFragmentControl;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
@@ -1028,8 +980,8 @@
 
     return-void
 
-    .line 174
-    :pswitch_e4
+    .line 168
+    :pswitch_cf
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mIShutterSoundOptionalFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterSoundOptionalFragmentControl;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
@@ -1040,46 +992,46 @@
 
     return-void
 
-    .line 193
-    :cond_ee
+    .line 187
+    :cond_d9
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mFragmentManager:Landroid/app/FragmentManager;
 
     invoke-virtual {p0, v2, v1}, Landroid/app/FragmentManager;->popBackStackImmediate(Ljava/lang/String;I)Z
 
     return-void
 
-    :sswitch_data_f4
+    nop
+
+    :sswitch_data_e0
     .sparse-switch
-        -0x55cee6fe -> :sswitch_73
-        -0x1050408e -> :sswitch_68
-        0x254cc15e -> :sswitch_5d
+        -0x55cee6fe -> :sswitch_68
+        -0x1050408e -> :sswitch_5d
         0x40385125 -> :sswitch_52
         0x5054f049 -> :sswitch_47
         0x5465262d -> :sswitch_3c
         0x7411b24f -> :sswitch_31
     .end sparse-switch
 
-    :pswitch_data_112
+    :pswitch_data_fa
     .packed-switch 0x0
-        :pswitch_e4
-        :pswitch_da
-        :pswitch_d0
-        :pswitch_c6
-        :pswitch_a1
-        :pswitch_90
-        :pswitch_86
+        :pswitch_cf
+        :pswitch_c5
+        :pswitch_bb
+        :pswitch_96
+        :pswitch_85
+        :pswitch_7b
     .end packed-switch
 .end method
 
 .method public hidePreference(Landroid/preference/Preference;)V
     .registers 2
 
-    .line 205
+    .line 199
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-eqz p0, :cond_7
 
-    .line 206
+    .line 200
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/SettingFragment;->hidePreference(Landroid/preference/Preference;)V
 
     :cond_7
@@ -1089,14 +1041,14 @@
 .method public initSettingFragment()V
     .registers 4
 
-    .line 95
+    .line 92
     new-instance v0, Lcom/transsion/camera/app/ui/SettingFragment;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/SettingFragment;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
-    .line 96
+    .line 93
     sget-object v0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1117,24 +1069,24 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 97
+    .line 94
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/ui/SettingFragment;->setOrientationAnimationListener(Lcom/transsion/camera/app/ui/AbstractSettingFragment$OrientationAnimationListener;)V
 
-    .line 98
+    .line 95
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_54
 
-    .line 99
+    .line 96
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     iget v2, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mRootLayoutId:I
 
     invoke-virtual {v1, v0, v2}, Lcom/transsion/camera/app/ui/SettingFragment;->setAppUiRootViewId(Lcom/transsion/camera/app/common/IAppUI;I)V
 
-    .line 100
+    .line 97
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getScreenFormType()I
@@ -1143,7 +1095,7 @@
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->updateScreenFormType(I)V
 
-    .line 101
+    .line 98
     new-instance v0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
@@ -1154,7 +1106,7 @@
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->setStateListener(Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;)V
 
-    .line 102
+    .line 99
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportFoldUI(Landroid/content/Context;)Z
@@ -1163,7 +1115,7 @@
 
     if-eqz v0, :cond_54
 
-    .line 103
+    .line 100
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getOrientation()I
@@ -1172,11 +1124,11 @@
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->onOrientationChanged(I)V
 
-    .line 106
+    .line 103
     :cond_54
     invoke-direct {p0, p0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->setSettingFragmentManager(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)V
 
-    .line 107
+    .line 104
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getSettingProvide()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
@@ -1185,7 +1137,7 @@
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->setSettingProvide(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;)V
 
-    .line 108
+    .line 105
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStatusMonitor()Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -1200,7 +1152,7 @@
 .method public notifyCameraOperateActionToUI(I)V
     .registers 3
 
-    .line 112
+    .line 109
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingUIList:Ljava/util/List;
 
     if-eqz v0, :cond_24
@@ -1213,7 +1165,7 @@
 
     goto :goto_24
 
-    .line 116
+    .line 113
     :cond_b
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingUIList:Ljava/util/List;
 
@@ -1237,7 +1189,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 118
+    .line 115
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->notifyCameraOperateAction(I)V
 
     goto :goto_11
@@ -1245,7 +1197,7 @@
     :cond_23
     return-void
 
-    .line 113
+    .line 110
     :cond_24
     :goto_24
     sget-object p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1260,7 +1212,7 @@
 .method public onAnimationEnd()V
     .registers 1
 
-    .line 423
+    .line 413
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->updateFragmentExitAnim()V
 
     return-void
@@ -1269,12 +1221,12 @@
 .method public onOrientationChanged(I)V
     .registers 2
 
-    .line 409
+    .line 399
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-eqz p0, :cond_7
 
-    .line 410
+    .line 400
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->onOrientationChanged(I)V
 
     :cond_7
@@ -1284,15 +1236,15 @@
 .method public setRTLDirection(Z)V
     .registers 2
 
-    .line 230
+    .line 224
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mRTLDirection:Z
 
-    .line 231
+    .line 225
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-eqz p0, :cond_9
 
-    .line 232
+    .line 226
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->setRTLDirection(Z)V
 
     :cond_9
@@ -1302,7 +1254,7 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 226
+    .line 220
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-void
@@ -1311,7 +1263,7 @@
 .method public setSettingProvide(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;)V
     .registers 2
 
-    .line 218
+    .line 212
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingProvide:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
 
     return-void
@@ -1320,38 +1272,38 @@
 .method public setSettingUIList(Ljava/util/List;Ljava/lang/String;ZZZI)V
     .registers 8
 
-    .line 240
+    .line 234
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->unInitSettingUIs()V
 
-    .line 241
+    .line 235
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
     if-eqz p3, :cond_d
 
-    .line 243
+    .line 237
     invoke-direct {p0, p1, p5, v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->filterForSecureCamera(Ljava/util/List;ZLjava/util/Iterator;)V
 
     goto :goto_10
 
-    .line 245
+    .line 239
     :cond_d
     invoke-direct {p0, p1, p4, p5, v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->filterForNormalCamera(Ljava/util/List;ZZLjava/util/Iterator;)V
 
-    .line 247
+    .line 241
     :goto_10
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->initSettingUIList(Ljava/util/List;)V
 
-    .line 248
+    .line 242
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingUIList:Ljava/util/List;
 
-    .line 249
+    .line 243
     iget-object p3, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     invoke-virtual {p3, p1, p2}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->setSettingUIList(Ljava/util/List;Ljava/lang/String;)V
 
-    .line 250
+    .line 244
     invoke-direct {p0, p6}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->updateScreenFormType(I)V
 
     return-void
@@ -1360,12 +1312,12 @@
 .method public setStateListener(Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;)V
     .registers 2
 
-    .line 403
+    .line 393
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-eqz p0, :cond_7
 
-    .line 404
+    .line 394
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->setStateListener(Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;)V
 
     :cond_7
@@ -1375,7 +1327,7 @@
 .method public setStorageSettingProvider(Lcom/transsion/camera/app/common/storage/IStorage$IStorageSettingProvider;)V
     .registers 2
 
-    .line 222
+    .line 216
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mStorageSettingProvider:Lcom/transsion/camera/app/common/storage/IStorage$IStorageSettingProvider;
 
     return-void
@@ -1384,12 +1336,12 @@
 .method public showPreference(Landroid/preference/Preference;)V
     .registers 2
 
-    .line 212
+    .line 206
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-eqz p0, :cond_7
 
-    .line 213
+    .line 207
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/SettingFragment;->showPreference(Landroid/preference/Preference;)V
 
     :cond_7
@@ -1399,17 +1351,17 @@
 .method public unInit()V
     .registers 3
 
-    .line 323
+    .line 313
     sget-object v0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "settingFragment unInit start"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 324
+    .line 314
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->unInitSettingUIs()V
 
-    .line 325
+    .line 315
     const-string p0, "settingFragment unInit end"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
@@ -1420,7 +1372,7 @@
 .method public unInitSettingUIs()V
     .registers 3
 
-    .line 314
+    .line 304
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingUIList:Ljava/util/List;
 
     if-eqz v0, :cond_25
@@ -1431,7 +1383,7 @@
 
     if-lez v0, :cond_25
 
-    .line 315
+    .line 305
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingUIList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1451,12 +1403,12 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/IPreferenceItemUI;
 
-    .line 316
+    .line 306
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->unInit()V
 
     goto :goto_10
 
-    .line 318
+    .line 308
     :cond_20
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->mSettingUIList:Ljava/util/List;
 

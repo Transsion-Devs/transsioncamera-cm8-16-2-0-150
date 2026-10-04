@@ -106,6 +106,9 @@
 .method public abstract getSupportedPictureSizes(Ljava/lang/String;)Ljava/util/List;
 .end method
 
+.method public abstract getSupportedPreviewSizes(Ljava/lang/String;)Ljava/util/List;
+.end method
+
 .method public abstract getSupportedRawPictureSizes(Ljava/lang/String;)Ljava/util/List;
 .end method
 

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/zoom/Zoom5;)V
     .registers 2
 
-    .line 452
+    .line 458
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/zoom/Zoom5$1;->this$0:Lcom/transsion/camera/feature/setting/zoom/Zoom5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreviewStarted()V
     .registers 3
 
-    .line 460
+    .line 466
     invoke-static {}, Lcom/transsion/camera/feature/setting/zoom/Zoom5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -47,7 +47,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 461
+    .line 467
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/zoom/Zoom5$1;->this$0:Lcom/transsion/camera/feature/setting/zoom/Zoom5;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/zoom/Zoom5;->-$$Nest$fgetmIsWaitingCameraSwitch(Lcom/transsion/camera/feature/setting/zoom/Zoom5;)Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -58,20 +58,41 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 462
+    .line 468
+    iget-object v0, p0, Lcom/transsion/camera/feature/setting/zoom/Zoom5$1;->this$0:Lcom/transsion/camera/feature/setting/zoom/Zoom5;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/zoom/Zoom5;->-$$Nest$mnotifyPreviewState(Lcom/transsion/camera/feature/setting/zoom/Zoom5;Z)V
+
+    .line 471
+    iget-object v0, p0, Lcom/transsion/camera/feature/setting/zoom/Zoom5$1;->this$0:Lcom/transsion/camera/feature/setting/zoom/Zoom5;
+
+    invoke-static {v0}, Lcom/transsion/camera/feature/setting/zoom/Zoom5;->-$$Nest$fgetmRatioParameter(Lcom/transsion/camera/feature/setting/zoom/Zoom5;)I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/transsion/camera/feature/setting/zoom/Zoom5$1;->this$0:Lcom/transsion/camera/feature/setting/zoom/Zoom5;
+
+    invoke-static {v1}, Lcom/transsion/camera/feature/setting/zoom/Zoom5;->-$$Nest$fgetmPreRatioParameter(Lcom/transsion/camera/feature/setting/zoom/Zoom5;)I
+
+    move-result v1
+
+    if-eq v0, v1, :cond_2c
+
+    .line 472
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/zoom/Zoom5$1;->this$0:Lcom/transsion/camera/feature/setting/zoom/Zoom5;
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/zoom/Zoom5;->sendSettingChangeRequest()V
 
-    invoke-static {p0, v0}, Lcom/transsion/camera/feature/setting/zoom/Zoom5;->-$$Nest$mnotifyPreviewState(Lcom/transsion/camera/feature/setting/zoom/Zoom5;Z)V
-
+    :cond_2c
     return-void
 .end method
 
 .method public onPreviewStopped()V
     .registers 2
 
-    .line 455
+    .line 461
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/zoom/Zoom5$1;->this$0:Lcom/transsion/camera/feature/setting/zoom/Zoom5;
 
     const/4 v0, 0x0

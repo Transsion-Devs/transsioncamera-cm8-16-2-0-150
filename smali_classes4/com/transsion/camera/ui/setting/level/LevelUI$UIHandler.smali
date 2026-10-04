@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/ui/setting/level/LevelUI;)V
     .registers 3
 
-    .line 242
+    .line 249
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 243
+    .line 250
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -40,7 +40,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 248
+    .line 255
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI$UIHandler;->mUIReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -51,7 +51,7 @@
 
     if-nez p0, :cond_25
 
-    .line 250
+    .line 257
     invoke-static {}, Lcom/transsion/camera/ui/setting/level/LevelUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -76,7 +76,7 @@
 
     return-void
 
-    .line 254
+    .line 261
     :cond_25
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -86,7 +86,7 @@
 
     return-void
 
-    .line 256
+    .line 263
     :cond_2c
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -96,7 +96,7 @@
 
     move-result p1
 
-    .line 257
+    .line 264
     invoke-static {p0, p1}, Lcom/transsion/camera/ui/setting/level/LevelUI;->-$$Nest$mdoUpdateLevelView(Lcom/transsion/camera/ui/setting/level/LevelUI;I)V
 
     return-void

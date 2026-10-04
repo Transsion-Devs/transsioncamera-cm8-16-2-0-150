@@ -150,10 +150,10 @@
     return-void
 .end method
 
-.method public static getRelation(ZLjava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation;
-    .registers 7
+.method public static getRelation(ZZLjava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation;
+    .registers 8
 
-    .line 61
+    .line 62
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoModeRestriction;->sRelation:Lcom/transsion/camera/app/common/relation/RelationGroup;
 
     const/4 v1, 0x1
@@ -164,72 +164,92 @@
 
     move-result-object v0
 
-    .line 62
+    .line 63
     const-string v1, "key_flash"
 
     const-string v3, "off,torch"
 
-    invoke-virtual {v0, v1, p1, v3}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, p2, v3}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 64
+    .line 65
     const-string v1, "key_flash_facade"
 
     const-string v3, "off,torch,ringscreenlight"
 
-    invoke-virtual {v0, v1, p1, v3}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 66
-    const-string p1, "key_video_quality"
-
-    if-eqz p0, :cond_21
+    invoke-virtual {v0, v1, p2, v3}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 67
-    const-string p0, "5,6"
+    const-string p2, "key_video_quality"
 
-    invoke-virtual {v0, p1, p2, p0}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    if-eqz p0, :cond_30
 
-    goto :goto_2d
+    if-eqz p1, :cond_2a
 
-    :cond_21
-    const/4 p0, 0x6
+    const/4 p0, 0x5
 
-    .line 70
+    .line 69
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p1
 
-    .line 71
+    .line 70
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 70
-    invoke-virtual {v0, p1, p2, p0}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .line 69
+    invoke-virtual {v0, p2, p1, p0}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 73
-    :goto_2d
+    goto :goto_3c
+
+    .line 72
+    :cond_2a
+    const-string p0, "5,6"
+
+    invoke-virtual {v0, p2, p3, p0}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_3c
+
+    :cond_30
+    const/4 p0, 0x6
+
+    .line 76
+    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 77
+    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 76
+    invoke-virtual {v0, p2, p1, p0}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 79
+    :goto_3c
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
 
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mDualVideoSupportAntiVideo:Z
 
-    if-eqz p0, :cond_43
+    if-eqz p0, :cond_52
 
-    .line 74
+    .line 80
     const-string p0, "key_anti_video"
 
     const-string p1, "off,on,ai"
 
     invoke-virtual {v0, p0, v2, p1}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 75
+    .line 81
     const-string p0, "key_super_anti_video"
 
     const-string p1, "off,on,super,ai"
 
     invoke-virtual {v0, p0, v2, p1}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_43
+    :cond_52
     return-object v0
 .end method

@@ -3,4 +3,4 @@
 
 
 # static fields
-.field public static player_background:I = 0x7f06058e
+.field public static player_background:I = 0x7f06058f

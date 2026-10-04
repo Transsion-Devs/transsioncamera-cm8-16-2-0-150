@@ -34,7 +34,7 @@
         }
     .end annotation
 
-    .line 524
+    .line 529
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     iput p2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->val$featureId:I
@@ -66,7 +66,7 @@
 .method public onConfirm()V
     .registers 6
 
-    .line 527
+    .line 532
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     # getter for: Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -78,19 +78,19 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 528
+    .line 533
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->getDefaultSkin()Ljava/lang/String;
 
-    .line 529
+    .line 534
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->-$$Nest$mgetDefaultSlimBodySetting(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 530
+    .line 535
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->toObject(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
@@ -99,7 +99,7 @@
 
     invoke-static {v1, v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->-$$Nest$fputmCustomDataInfo(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;)V
 
-    .line 531
+    .line 536
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->-$$Nest$fgetmCustomDataInfo(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
@@ -110,12 +110,12 @@
 
     iput v1, v0, Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;->featureId:I
 
-    .line 532
+    .line 537
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->-$$Nest$mupdateProgressBar(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;I)V
 
-    .line 533
+    .line 538
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->-$$Nest$fgetmCurSelectFeatureId(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)I
@@ -132,7 +132,7 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->-$$Nest$mupdateItemProgress(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;ILcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;Z)V
 
-    .line 534
+    .line 539
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->-$$Nest$fgetmCustomDataInfo(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)Lcom/transsion/camera/app/common/setting/makeup/SlimBodyItemInfo;
@@ -143,12 +143,12 @@
 
     move-result-object v0
 
-    .line 535
+    .line 540
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->val$isCloseOrAi:Z
 
     if-nez v1, :cond_55
 
-    .line 536
+    .line 541
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     # getter for: Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mSetting:Lcom/transsion/camera/app/common/setting/ISetting;
@@ -158,7 +158,7 @@
 
     invoke-interface {v1, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 538
+    .line 543
     :cond_55
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
@@ -193,7 +193,7 @@
 
     invoke-virtual {v0, v2, v3, v1, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 539
+    .line 544
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     # getter for: Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -223,7 +223,7 @@
 
     invoke-virtual {v0, v2, v3, v1, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 540
+    .line 545
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     # getter for: Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -253,7 +253,7 @@
 
     invoke-virtual {v0, v2, v3, v1, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 541
+    .line 546
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     # getter for: Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -283,7 +283,7 @@
 
     invoke-virtual {v0, v2, v3, v1, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 542
+    .line 547
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     # getter for: Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -319,7 +319,7 @@
 .method public onDismiss()V
     .registers 2
 
-    .line 551
+    .line 556
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$5;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;->-$$Nest$fgetmIAppUI(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)Lcom/transsion/camera/app/common/IAppUI;

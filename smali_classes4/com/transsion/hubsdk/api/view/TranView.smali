@@ -160,6 +160,35 @@
     throw p0
 .end method
 
+.method public getRecordingFrameCount(Landroid/view/View;)J
+    .registers 3
+
+    if-eqz p1, :cond_d
+
+    .line 252
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/view/TranView;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/view/ITranViewAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/view/ITranViewAdapter;->getRecordingFrameCount(Landroid/view/View;)J
+
+    move-result-wide p0
+
+    return-wide p0
+
+    .line 250
+    :cond_d
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "view cannot be null"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
 .method protected getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/view/ITranViewAdapter;
     .registers 3
 

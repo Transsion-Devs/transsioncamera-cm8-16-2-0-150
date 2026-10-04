@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/bind/TypeAdapters$9;
+.class Lcom/google/gson/internal/bind/TypeAdapters$9;
 .super Lcom/google/gson/TypeAdapter;
 .source "SourceFile"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -24,7 +24,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 254
+    .line 313
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 .method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .registers 2
 
-    .line 254
+    .line 313
     invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$9;->read(Lcom/google/gson/stream/JsonReader;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
     move-result-object p0
@@ -46,7 +46,7 @@
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/util/concurrent/atomic/AtomicBoolean;
     .registers 2
 
-    .line 256
+    .line 316
     new-instance p0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextBoolean()Z
@@ -61,7 +61,7 @@
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
 
-    .line 254
+    .line 313
     check-cast p2, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$9;->write(Lcom/google/gson/stream/JsonWriter;Ljava/util/concurrent/atomic/AtomicBoolean;)V
@@ -72,7 +72,7 @@
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/util/concurrent/atomic/AtomicBoolean;)V
     .registers 3
 
-    .line 259
+    .line 321
     invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result p0

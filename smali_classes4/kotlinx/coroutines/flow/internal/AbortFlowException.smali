@@ -4,34 +4,20 @@
 
 
 # instance fields
-.field public final transient owner:Lkotlinx/coroutines/flow/FlowCollector;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlinx/coroutines/flow/FlowCollector<",
-            "*>;"
-        }
-    .end annotation
-.end field
+.field public final transient owner:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lkotlinx/coroutines/flow/FlowCollector;)V
+.method public constructor <init>(Ljava/lang/Object;)V
     .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlinx/coroutines/flow/FlowCollector<",
-            "*>;)V"
-        }
-    .end annotation
 
-    .line 12
+    .line 8
     const-string v0, "Flow was aborted, no more elements needed"
 
     invoke-direct {p0, v0}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
 
-    .line 11
-    iput-object p1, p0, Lkotlinx/coroutines/flow/internal/AbortFlowException;->owner:Lkotlinx/coroutines/flow/FlowCollector;
+    .line 7
+    iput-object p1, p0, Lkotlinx/coroutines/flow/internal/AbortFlowException;->owner:Ljava/lang/Object;
 
     return-void
 .end method
@@ -43,10 +29,10 @@
 
     const/4 v0, 0x0
 
-    .line 26
+    .line 27
     new-array v0, v0, [Ljava/lang/StackTraceElement;
 
-    .line 17
+    .line 13
     invoke-virtual {p0, v0}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
 
     return-object p0

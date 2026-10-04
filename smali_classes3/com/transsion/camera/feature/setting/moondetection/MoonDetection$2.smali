@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;)V
     .registers 2
 
-    .line 240
+    .line 243
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$2;->this$0:Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public onFrameResult(Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
     .registers 4
 
-    .line 243
+    .line 246
     invoke-interface {p3, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->checkMoonDetectionResult(Landroid/hardware/camera2/CaptureResult;)[I
 
     move-result-object p1
 
     if-eqz p1, :cond_b
 
-    .line 245
+    .line 248
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection$2;->this$0:Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/moondetection/MoonDetection;->onDetected([I)V

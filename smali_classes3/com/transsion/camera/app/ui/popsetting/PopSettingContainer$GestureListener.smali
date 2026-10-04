@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;)V
     .registers 2
 
-    .line 154
+    .line 152
     iput-object p1, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer$GestureListener;->this$0:Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .registers 8
 
-    .line 159
+    .line 157
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result p3
@@ -79,7 +79,7 @@
 
     goto :goto_4f
 
-    .line 162
+    .line 160
     :cond_f
     iget-object p3, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer$GestureListener;->this$0:Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;
 
@@ -93,7 +93,7 @@
 
     move-result p3
 
-    .line 163
+    .line 161
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
@@ -104,7 +104,7 @@
 
     sub-float/2addr v1, v2
 
-    .line 164
+    .line 162
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
     move-result p2
@@ -115,7 +115,7 @@
 
     sub-float/2addr p2, p1
 
-    .line 165
+    .line 163
     invoke-static {p2}, Ljava/lang/Math;->abs(F)F
 
     move-result p1
@@ -132,7 +132,7 @@
 
     if-lez p1, :cond_4f
 
-    .line 166
+    .line 164
     iget-object p1, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer$GestureListener;->this$0:Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->-$$Nest$fgetmPopSettingUIManager(Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;)Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;
@@ -141,7 +141,7 @@
 
     if-eqz p1, :cond_4e
 
-    .line 167
+    .line 165
     iget-object p0, p0, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer$GestureListener;->this$0:Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;->-$$Nest$fgetmPopSettingUIManager(Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;)Lcom/transsion/camera/app/ui/manager/PopSettingUIManager;

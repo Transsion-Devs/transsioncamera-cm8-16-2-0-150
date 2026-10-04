@@ -110,21 +110,28 @@
 .method private hideContinuousShotView()V
     .registers 3
 
-    .line 124
+    .line 125
+    sget-object v0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string v1, "hideContinuousShotView"
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 126
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->mShotProgress:Landroid/widget/TextView;
 
     const-string v1, ""
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 125
+    .line 127
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->mProgressContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 127
+    .line 129
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->mProgressContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->onContinuousShotProgressHide(Landroid/view/View;)V
@@ -219,7 +226,7 @@
 .method protected onContinuousShotProgressHide(Landroid/view/View;)V
     .registers 2
 
-    .line 135
+    .line 137
     sget-object p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onContinuousShotProgressHide"
@@ -232,7 +239,7 @@
 .method protected onContinuousShotProgressShow(Landroid/view/View;)V
     .registers 2
 
-    .line 131
+    .line 133
     sget-object p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onContinuousShotProgressShow"
@@ -243,16 +250,18 @@
 .end method
 
 .method public onContinuousShotStop()V
-    .registers 4
+    .registers 2
 
-    .line 110
+    .line 111
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->mMainHandler:Landroid/os/Handler;
 
     const/4 v0, 0x2
 
-    const-wide/16 v1, 0x64
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
-    invoke-virtual {p0, v0, v1, v2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
     return-void
 .end method
@@ -363,12 +372,12 @@
 
     if-ne v0, p1, :cond_8
 
-    .line 115
+    .line 116
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->mProgressContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->onContinuousShotProgressShow(Landroid/view/View;)V
 
-    .line 118
+    .line 119
     :cond_8
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->mProgressContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -376,7 +385,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 119
+    .line 120
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->mProgressNumberFormat:Ljava/lang/String;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -395,7 +404,7 @@
 
     move-result-object p1
 
-    .line 120
+    .line 121
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->mShotProgress:Landroid/widget/TextView;
 
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -421,14 +430,14 @@
 .method protected updateCSContainerLayoutParams(Z)V
     .registers 5
 
-    .line 174
+    .line 176
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->mProgressContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-nez p1, :cond_5
 
     return-void
 
-    .line 177
+    .line 179
     :cond_5
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -438,10 +447,10 @@
 
     const/16 v0, 0x51
 
-    .line 178
+    .line 180
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 179
+    .line 181
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/manager/IScreenManager;->getModePlusBottomBarHeight()I
@@ -452,7 +461,7 @@
 
     sget v2, Lcom/transsion/camera/R$dimen;->continuous_shot_root_bottom_margin:I
 
-    .line 180
+    .line 182
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v1
@@ -461,7 +470,7 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 181
+    .line 183
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->mProgressContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V

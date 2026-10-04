@@ -1043,9 +1043,19 @@
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .registers 7
+    .registers 6
 
     .line 272
+    invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    goto :goto_6c
+
+    .line 275
+    :cond_7
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
@@ -1054,16 +1064,16 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_39
+    if-ne v0, v1, :cond_40
 
-    .line 273
+    .line 276
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/stblurlevel/StblurLevelUI;->mScrollerRulerViewRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
 
     move-result p1
 
-    .line 274
+    .line 277
     sget-object v0, Lcom/transsion/camera/ui/setting/stblurlevel/StblurLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1086,14 +1096,14 @@
 
     cmpl-float v0, p1, v0
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_35
 
-    .line 276
+    .line 279
     invoke-virtual {p0, v2}, Lcom/transsion/camera/ui/setting/stblurlevel/StblurLevelUI;->showOrHideSTblurLevel(Z)V
 
     return-void
 
-    :cond_2e
+    :cond_35
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float p1, p1, v0
@@ -1102,63 +1112,53 @@
 
     const/4 p1, 0x0
 
-    .line 278
+    .line 281
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/stblurlevel/StblurLevelUI;->showOrHideSTblurLevel(Z)V
 
     return-void
 
-    .line 281
-    :cond_39
+    .line 284
+    :cond_40
     invoke-virtual {p1}, Landroid/view/View;->getId()I
+
+    move-result p1
+
+    sget v0, Lcom/transsion/camera/R$id;->blur_bottom_switch_root:I
+
+    if-ne p1, v0, :cond_6c
+
+    .line 285
+    sget-object p1, Lcom/transsion/camera/ui/setting/stblurlevel/StblurLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string v0, "[onClick] blur_bottom_switch_root"
+
+    invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 286
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/stblurlevel/StblurLevelUI;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
+
+    invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->getIsDown()Z
 
     move-result v0
 
-    sget v1, Lcom/transsion/camera/R$id;->blur_bottom_switch_root:I
-
-    if-ne v0, v1, :cond_6c
-
-    .line 282
-    sget-object v0, Lcom/transsion/camera/ui/setting/stblurlevel/StblurLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    const-string v1, "[onClick] blur_bottom_switch_root"
-
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 283
-    invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_4f
-
-    goto :goto_6c
-
-    .line 286
-    :cond_4f
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/stblurlevel/StblurLevelUI;->mScrollerRulerView:Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;
-
-    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/widget/ScrollerRulerView;->getIsDown()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_58
+    if-eqz v0, :cond_58
 
     goto :goto_6c
 
     :cond_58
-    const-wide/16 v3, 0xfa
+    const-wide/16 v0, 0xfa
 
     .line 290
-    invoke-static {v3, v4}, Lcom/transsion/camera/utils/CameraUtil;->isFastDoubleClick(J)Z
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isFastDoubleClick(J)Z
 
-    move-result p1
+    move-result v0
 
-    if-eqz p1, :cond_66
+    if-eqz v0, :cond_66
 
     .line 291
     const-string p0, "fast click, return !"
 
-    invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 

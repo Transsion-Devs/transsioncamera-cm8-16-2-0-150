@@ -16,6 +16,9 @@
 .method public abstract enableNightNetwork(Z)V
 .end method
 
+.method public abstract enableThermalUx(Ljava/lang/String;J)V
+.end method
+
 .method public abstract fastFreeze(Ljava/lang/String;)V
 .end method
 

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation runtime Lcom/transsion/camera/app/common/provider/SettingClassCategory;
-    group = 0x1040c0010L
+    group = 0x40c2010L
 .end annotation
 
 

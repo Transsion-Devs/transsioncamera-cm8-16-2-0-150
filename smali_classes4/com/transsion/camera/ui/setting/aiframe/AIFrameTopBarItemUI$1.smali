@@ -38,7 +38,17 @@
 .method public run()V
     .registers 5
 
-    .line 129
+    .line 130
+    :try_start_0
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI$1;->this$0:Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;
+
+    invoke-static {v0}, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->-$$Nest$fgetmRecommendPopupTipsView(Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;)Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_31
+
+    .line 131
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI$1;->this$0:Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->-$$Nest$fgetmRecommendPopupTipsView(Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;)Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
@@ -66,8 +76,26 @@
     const v3, 0x800055
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;->show(Landroid/view/View;Ljava/lang/String;I)V
+    :try_end_26
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_26} :catch_27
 
-    .line 130
+    goto :goto_31
+
+    :catch_27
+    move-exception v0
+
+    .line 134
+    invoke-static {}, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    move-result-object v1
+
+    const-string v2, "showPopupTips error: "
+
+    invoke-static {v1, v2, v0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 136
+    :cond_31
+    :goto_31
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI$1;->this$0:Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;
 
     # getter for: Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;

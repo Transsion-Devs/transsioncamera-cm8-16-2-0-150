@@ -31,10 +31,10 @@
 .method public constructor <init>(Lkotlin/coroutines/CoroutineContext;)V
     .registers 2
 
-    .line 40
+    .line 37
     invoke-direct {p0, p1}, Lkotlinx/coroutines/selects/SelectImplementation;-><init>(Lkotlin/coroutines/CoroutineContext;)V
 
-    .line 41
+    .line 38
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -59,10 +59,10 @@
         }
     .end annotation
 
-    .line 57
+    .line 54
     invoke-direct {p0}, Lkotlinx/coroutines/selects/UnbiasedSelectImplementation;->shuffleAndRegisterClauses()V
 
-    .line 58
+    .line 55
     invoke-super {p0, p1}, Lkotlinx/coroutines/selects/SelectImplementation;->doSelect(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -73,13 +73,13 @@
 .method private final shuffleAndRegisterClauses()V
     .registers 6
 
-    .line 62
+    .line 59
     :try_start_0
     iget-object v0, p0, Lkotlinx/coroutines/selects/UnbiasedSelectImplementation;->clausesToRegister:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->shuffle(Ljava/util/List;)V
 
-    .line 63
+    .line 60
     iget-object v0, p0, Lkotlinx/coroutines/selects/UnbiasedSelectImplementation;->clausesToRegister:Ljava/util/List;
 
     check-cast v0, Ljava/lang/Iterable;
@@ -108,7 +108,7 @@
 
     const/4 v4, 0x0
 
-    .line 63
+    .line 60
     invoke-static {p0, v1, v4, v2, v3}, Lkotlinx/coroutines/selects/SelectImplementation;->register$default(Lkotlinx/coroutines/selects/SelectImplementation;Lkotlinx/coroutines/selects/SelectImplementation$ClauseData;ZILjava/lang/Object;)V
     :try_end_1f
     .catchall {:try_start_0 .. :try_end_1f} :catchall_20
@@ -120,7 +120,7 @@
 
     goto :goto_28
 
-    .line 65
+    .line 62
     :cond_22
     iget-object p0, p0, Lkotlinx/coroutines/selects/UnbiasedSelectImplementation;->clausesToRegister:Ljava/util/List;
 
@@ -167,7 +167,7 @@
         }
     .end annotation
 
-    .line 44
+    .line 41
     iget-object v0, p0, Lkotlinx/coroutines/selects/UnbiasedSelectImplementation;->clausesToRegister:Ljava/util/List;
 
     check-cast v0, Ljava/util/Collection;
@@ -219,7 +219,7 @@
         }
     .end annotation
 
-    .line 48
+    .line 45
     iget-object v0, p0, Lkotlinx/coroutines/selects/UnbiasedSelectImplementation;->clausesToRegister:Ljava/util/List;
 
     check-cast v0, Ljava/util/Collection;
@@ -271,7 +271,7 @@
         }
     .end annotation
 
-    .line 52
+    .line 49
     iget-object v0, p0, Lkotlinx/coroutines/selects/UnbiasedSelectImplementation;->clausesToRegister:Ljava/util/List;
 
     check-cast v0, Ljava/util/Collection;

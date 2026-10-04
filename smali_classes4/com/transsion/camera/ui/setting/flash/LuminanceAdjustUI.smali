@@ -118,7 +118,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 39
+    .line 38
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "LuminanceAdjustUI"
@@ -133,15 +133,15 @@
 .method public constructor <init>(Landroid/content/res/Resources;Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;)V
     .registers 3
 
-    .line 97
+    .line 96
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;-><init>(Landroid/content/res/Resources;Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;)V
 
     const/4 p1, -0x1
 
-    .line 49
+    .line 48
     iput p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mCurrentState:I
 
-    .line 573
+    .line 564
     new-instance p1, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;)V
@@ -154,7 +154,7 @@
 .method static synthetic access$000(Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;)Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
     .registers 1
 
-    .line 37
+    .line 36
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     return-object p0
@@ -163,7 +163,7 @@
 .method static synthetic access$100(Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;)Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
     .registers 1
 
-    .line 37
+    .line 36
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     return-object p0
@@ -172,7 +172,7 @@
 .method static synthetic access$200(Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;)Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
     .registers 1
 
-    .line 37
+    .line 36
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     return-object p0
@@ -181,7 +181,7 @@
 .method static synthetic access$300(Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;)Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
     .registers 1
 
-    .line 37
+    .line 36
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     return-object p0
@@ -190,7 +190,7 @@
 .method private facingFront()Z
     .registers 1
 
-    .line 601
+    .line 592
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p0, :cond_6
@@ -199,7 +199,7 @@
 
     return p0
 
-    .line 604
+    .line 595
     :cond_6
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
 
@@ -215,7 +215,7 @@
 .method private isVerticalDirection()Z
     .registers 2
 
-    .line 659
+    .line 650
     iget p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mOrientation:I
 
     if-eqz p0, :cond_b
@@ -241,25 +241,25 @@
 .method private synthetic lambda$new$0(Z)V
     .registers 5
 
-    .line 575
+    .line 566
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez v0, :cond_5
 
     goto :goto_38
 
-    .line 579
+    .line 570
     :cond_5
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintShown:Z
 
-    .line 581
+    .line 572
     iget-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mNotAllowedDisplay:Z
 
     if-eqz v1, :cond_c
 
     goto :goto_38
 
-    .line 585
+    .line 576
     :cond_c
     iget-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mTopBarPopupShown:Z
 
@@ -267,7 +267,7 @@
 
     goto :goto_38
 
-    .line 588
+    .line 579
     :cond_11
     iget v1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mCurrentState:I
 
@@ -275,7 +275,7 @@
 
     if-ne v1, v2, :cond_38
 
-    .line 589
+    .line 580
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object v0
@@ -300,18 +300,18 @@
 
     if-eqz p1, :cond_31
 
-    .line 591
+    .line 582
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideShrinkUI()V
 
     return-void
 
-    .line 593
+    .line 584
     :cond_31
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mTopBarPopupShown:Z
 
     if-nez p1, :cond_38
 
-    .line 594
+    .line 585
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showShrinkUI()V
 
     :cond_38
@@ -322,14 +322,14 @@
 .method private removeSpreadBarSwitchDelay()V
     .registers 2
 
-    .line 618
+    .line 609
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_9
 
     const/16 v0, 0x8
 
-    .line 619
+    .line 610
     invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
     :cond_9
@@ -339,17 +339,17 @@
 .method private updateLevelIcon(I)V
     .registers 6
 
-    .line 640
+    .line 631
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBar:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;
 
     if-eqz v0, :cond_41
 
-    .line 641
+    .line 632
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
-    .line 642
+    .line 633
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBar:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;
 
     invoke-virtual {v1}, Landroid/view/View;->getHeight()I
@@ -372,12 +372,12 @@
 
     sub-int v2, v0, v2
 
-    .line 644
+    .line 635
     div-int/lit8 v2, v2, 0x2
 
     if-lt p1, v2, :cond_26
 
-    .line 645
+    .line 636
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mMediumRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     sget v3, Lcom/transsion/camera/R$drawable;->ic_luminance_medium_selected:I
@@ -386,7 +386,7 @@
 
     goto :goto_2d
 
-    .line 647
+    .line 638
     :cond_26
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mMediumRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
@@ -401,7 +401,7 @@
 
     if-lt p1, v0, :cond_3a
 
-    .line 651
+    .line 642
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHighRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     sget p1, Lcom/transsion/camera/R$drawable;->ic_luminance_high_selected:I
@@ -410,7 +410,7 @@
 
     return-void
 
-    .line 653
+    .line 644
     :cond_3a
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHighRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
@@ -427,7 +427,7 @@
 .method protected doHideAnimation()V
     .registers 2
 
-    .line 332
+    .line 323
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBarLayout:Landroid/widget/RelativeLayout;
 
     if-eqz v0, :cond_11
@@ -438,7 +438,7 @@
 
     if-nez v0, :cond_11
 
-    .line 333
+    .line 324
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBarLayout:Landroid/widget/RelativeLayout;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustViewHideAnim:Landroid/view/animation/Animation;
@@ -458,12 +458,12 @@
 .method protected doShowAnimation()V
     .registers 2
 
-    .line 338
+    .line 329
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBarLayout:Landroid/widget/RelativeLayout;
 
     if-eqz v0, :cond_9
 
-    .line 339
+    .line 330
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustViewShowAnim:Landroid/view/animation/Animation;
 
     invoke-virtual {v0, p0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
@@ -475,7 +475,7 @@
 .method public getEntryView()Landroid/view/View;
     .registers 1
 
-    .line 118
+    .line 117
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustView:Landroid/view/View;
 
     return-object p0
@@ -495,12 +495,12 @@
 .method protected getLuminanceValue()I
     .registers 3
 
-    .line 196
+    .line 195
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->getLuminanceValue()I
 
     move-result v0
 
-    .line 197
+    .line 196
     iget v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mMaxLuminanceValue:I
 
     iget p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mAvailableAdjustScope:I
@@ -527,7 +527,7 @@
 .method protected handlerMsgExt(Landroid/os/Message;)V
     .registers 5
 
-    .line 123
+    .line 122
     iget p1, p1, Landroid/os/Message;->what:I
 
     const/4 v0, 0x6
@@ -536,7 +536,7 @@
 
     return-void
 
-    .line 125
+    .line 124
     :cond_6
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
@@ -544,7 +544,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 126
+    .line 125
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v1, 0xbb8
@@ -557,10 +557,10 @@
 .method protected hideAdjustUI()V
     .registers 1
 
-    .line 478
+    .line 469
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideAdjustUI()V
 
-    .line 479
+    .line 470
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->removeSpreadBarSwitchDelay()V
 
     return-void
@@ -569,10 +569,10 @@
 .method public hideEntryView()V
     .registers 3
 
-    .line 471
+    .line 462
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideEntryView()V
 
-    .line 472
+    .line 463
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x8
@@ -581,7 +581,7 @@
 
     const/4 v0, 0x0
 
-    .line 473
+    .line 464
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
     return-void
@@ -590,14 +590,14 @@
 .method protected hideShrinkUI()V
     .registers 2
 
-    .line 436
+    .line 427
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mShrinkProgressBar:Landroid/widget/ProgressBar;
 
     if-eqz p0, :cond_9
 
     const/16 v0, 0x8
 
-    .line 437
+    .line 428
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_9
@@ -607,24 +607,24 @@
 .method protected hideSpreadUI()V
     .registers 3
 
-    .line 442
+    .line 433
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBarLayout:Landroid/widget/RelativeLayout;
 
     if-eqz v0, :cond_f
 
     const/16 v1, 0x8
 
-    .line 443
+    .line 434
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 444
+    .line 435
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBar:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;->setAllowedMove(Z)V
 
-    .line 446
+    .line 437
     :cond_f
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
@@ -636,7 +636,7 @@
 
     const-string v1, "luminance_spread_ui_hide"
 
-    .line 447
+    .line 438
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
@@ -645,7 +645,7 @@
 .method protected initHandler()V
     .registers 3
 
-    .line 500
+    .line 491
     new-instance v0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$NewLuminanceUIHandler;
 
     const/4 v1, 0x0
@@ -671,7 +671,7 @@
 .method protected loadAdjustUI(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
     .registers 5
 
-    .line 103
+    .line 102
     sget v0, Lcom/transsion/camera/R$layout;->flash_luminance_flash_view_new_interaction:I
 
     const/4 v1, 0x0
@@ -680,7 +680,7 @@
 
     move-result-object p1
 
-    .line 104
+    .line 103
     sget p2, Lcom/transsion/camera/R$id;->flash_luminance_adjust_view_layout:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -691,7 +691,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBarLayout:Landroid/widget/RelativeLayout;
 
-    .line 105
+    .line 104
     sget p2, Lcom/transsion/camera/R$id;->flash_luminance_adjust_view:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -702,7 +702,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBar:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;
 
-    .line 106
+    .line 105
     new-instance v0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$AdjustBarValueChangeListener;
 
     const/4 v1, 0x0
@@ -711,7 +711,7 @@
 
     invoke-virtual {p2, v0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;->addProgressChangeListener(Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar$AdjustProgressBarChangeListener;)V
 
-    .line 107
+    .line 106
     sget p2, Lcom/transsion/camera/R$id;->adjust_progress_bar_shrink:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -722,7 +722,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mShrinkProgressBar:Landroid/widget/ProgressBar;
 
-    .line 108
+    .line 107
     sget p2, Lcom/transsion/camera/R$id;->adjust_shrink_bar_layout:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -733,7 +733,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mAdjustShrinkBarLayout:Landroid/widget/FrameLayout;
 
-    .line 109
+    .line 108
     sget p2, Lcom/transsion/camera/R$id;->low_rotation_icon:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -744,7 +744,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLowRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
-    .line 110
+    .line 109
     sget p2, Lcom/transsion/camera/R$id;->medium_rotation_icon:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -755,7 +755,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mMediumRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
-    .line 111
+    .line 110
     sget p2, Lcom/transsion/camera/R$id;->high_rotation_icon:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -766,7 +766,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHighRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
-    .line 112
+    .line 111
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mAdjustShrinkBarLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p2, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
@@ -779,10 +779,10 @@
 
     const/4 v0, 0x0
 
-    .line 147
+    .line 146
     iput v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mVerticalAdjustViewMarginLeft:I
 
-    .line 148
+    .line 147
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     if-eqz v0, :cond_1e
@@ -793,7 +793,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 149
+    .line 148
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->flash_new_luminance_adjust_view_margin_top:I
@@ -819,443 +819,415 @@
 .method public notifyCameraOperateAction(I)V
     .registers 5
 
-    .line 202
+    .line 201
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->notifyCameraOperateAction(I)V
 
-    const/4 v0, 0x0
+    const/16 v0, 0x8
 
-    const/16 v1, 0x8
+    const/4 v1, 0x0
 
-    if-eq p1, v1, :cond_116
+    if-eq p1, v0, :cond_fb
 
-    const/16 v2, 0x12
+    const/16 v0, 0x12
 
-    if-eq p1, v2, :cond_fd
+    if-eq p1, v0, :cond_e2
 
-    const/16 v2, 0x4b
-
-    if-eq p1, v2, :cond_e7
-
-    const/16 v1, 0x24
+    const/16 v0, 0x24
 
     const/4 v2, 0x1
 
-    if-eq p1, v1, :cond_c8
+    if-eq p1, v0, :cond_c4
 
-    const/16 v1, 0x25
+    const/16 v0, 0x25
 
-    if-eq p1, v1, :cond_bc
+    if-eq p1, v0, :cond_b8
 
-    const/16 v1, 0x2e
+    const/16 v0, 0x2e
 
-    if-eq p1, v1, :cond_9b
+    if-eq p1, v0, :cond_97
 
-    const/16 v1, 0x2f
+    const/16 v0, 0x2f
 
-    if-eq p1, v1, :cond_8d
+    if-eq p1, v0, :cond_89
 
-    const/16 v1, 0x90
+    const/16 v0, 0x90
 
-    if-eq p1, v1, :cond_9b
+    if-eq p1, v0, :cond_97
 
-    const/16 v1, 0x91
+    const/16 v0, 0x91
 
-    if-eq p1, v1, :cond_8d
+    if-eq p1, v0, :cond_89
 
-    const/16 v1, 0x99
+    const/16 v0, 0x99
 
-    if-eq p1, v1, :cond_c8
+    if-eq p1, v0, :cond_c4
 
-    const/16 v1, 0x9a
+    const/16 v0, 0x9a
 
-    if-eq p1, v1, :cond_bc
+    if-eq p1, v0, :cond_b8
 
-    const/16 v1, 0x136
+    const/16 v0, 0x136
 
-    if-eq p1, v1, :cond_8d
+    if-eq p1, v0, :cond_89
 
-    const/16 v1, 0x137
+    const/16 v0, 0x137
 
-    if-eq p1, v1, :cond_9b
+    if-eq p1, v0, :cond_97
+
+    packed-switch p1, :pswitch_data_136
+
+    packed-switch p1, :pswitch_data_146
 
     packed-switch p1, :pswitch_data_150
 
-    packed-switch p1, :pswitch_data_160
+    goto/16 :goto_134
 
-    packed-switch p1, :pswitch_data_16a
-
-    goto/16 :goto_14f
-
-    .line 274
-    :pswitch_44
+    .line 273
+    :pswitch_40
     sget-object p1, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    const-string v1, "All ui manager loaded."
+    const-string v0, "All ui manager loaded."
 
-    invoke-static {p1, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 276
+    .line 275
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
-    if-eqz p1, :cond_5c
+    if-eqz p1, :cond_58
 
-    .line 277
+    .line 276
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->getHintState()Z
 
     move-result p1
 
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintShown:Z
 
-    .line 278
+    .line 277
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
-    iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintStateChangeListener:Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintStateChangeListener:Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;
 
-    invoke-interface {p1, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->registerHintStateListener(Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;)V
+    invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->registerHintStateListener(Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;)V
 
-    .line 282
-    :cond_5c
+    .line 281
+    :cond_58
     iget p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mCurrentState:I
 
-    if-nez p1, :cond_14f
+    if-nez p1, :cond_134
 
-    .line 283
+    .line 282
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
-    invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
+    invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
 
     return-void
 
-    .line 230
-    :pswitch_66
+    .line 229
+    :pswitch_62
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mTopBarPopupShown:Z
 
-    .line 231
+    .line 230
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14f
+    if-eqz p1, :cond_134
 
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->facingFront()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14f
+    if-eqz p1, :cond_134
 
-    .line 232
+    .line 231
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showShrinkUI()V
 
-    .line 233
+    .line 232
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideSpreadUI()V
 
-    .line 234
+    .line 233
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideAdjustUI()V
 
-    .line 235
+    .line 234
     invoke-virtual {p0, v2}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateLuminanceUIState(I)V
 
-    .line 236
+    .line 235
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
-    if-eqz p0, :cond_14f
+    if-eqz p0, :cond_134
 
-    .line 237
+    .line 236
     invoke-interface {p0, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
 
     return-void
 
+    .line 242
+    :pswitch_84
+    iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mTopBarPopupShown:Z
+
     .line 243
-    :pswitch_88
-    iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mTopBarPopupShown:Z
-
-    .line 244
-    iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mNotAllowedDisplay:Z
+    iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mNotAllowedDisplay:Z
 
     return-void
-
-    .line 316
-    :cond_8d
-    :pswitch_8d
-    iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mNotAllowedDisplay:Z
-
-    .line 317
-    iget p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mCurrentState:I
-
-    if-ne p1, v2, :cond_14f
-
-    iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintShown:Z
-
-    if-nez p1, :cond_14f
-
-    .line 318
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showShrinkUI()V
-
-    return-void
-
-    .line 299
-    :cond_9b
-    :pswitch_9b
-    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mNotAllowedDisplay:Z
-
-    .line 300
-    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
-
-    if-eqz p1, :cond_a4
-
-    .line 301
-    invoke-interface {p1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
-
-    .line 304
-    :cond_a4
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_14f
-
-    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->facingFront()Z
-
-    move-result p1
-
-    if-nez p1, :cond_b2
-
-    goto/16 :goto_14f
 
     .line 307
-    :cond_b2
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideSpreadUI()V
+    :cond_89
+    :pswitch_89
+    iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mNotAllowedDisplay:Z
 
     .line 308
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideShrinkUI()V
-
-    .line 309
-    invoke-virtual {p0, v2}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateLuminanceUIState(I)V
-
-    return-void
-
-    .line 224
-    :cond_bc
-    :pswitch_bc
     iget p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mCurrentState:I
 
-    if-ne p1, v2, :cond_14f
+    if-ne p1, v2, :cond_134
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintShown:Z
 
-    if-nez p1, :cond_14f
+    if-nez p1, :cond_134
 
-    .line 225
+    .line 309
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showShrinkUI()V
 
     return-void
 
-    .line 208
-    :cond_c8
-    :pswitch_c8
+    .line 290
+    :cond_97
+    :pswitch_97
+    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mNotAllowedDisplay:Z
+
+    .line 291
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
-    if-eqz p1, :cond_cf
+    if-eqz p1, :cond_a0
 
-    .line 209
+    .line 292
     invoke-interface {p1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
 
-    .line 212
-    :cond_cf
+    .line 295
+    :cond_a0
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14f
+    if-eqz p1, :cond_134
 
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->facingFront()Z
 
     move-result p1
 
-    if-nez p1, :cond_dd
+    if-nez p1, :cond_ae
 
-    goto/16 :goto_14f
+    goto/16 :goto_134
 
-    .line 216
-    :cond_dd
+    .line 298
+    :cond_ae
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideSpreadUI()V
 
-    .line 217
+    .line 299
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideShrinkUI()V
 
-    .line 218
+    .line 300
     invoke-virtual {p0, v2}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateLuminanceUIState(I)V
 
     return-void
 
-    .line 288
-    :cond_e7
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_14f
-
-    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->facingFront()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_14f
-
-    .line 289
+    .line 223
+    :cond_b8
+    :pswitch_b8
     iget p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mCurrentState:I
 
-    if-nez p1, :cond_14f
+    if-ne p1, v2, :cond_134
 
-    .line 290
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
+    iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintShown:Z
 
-    invoke-virtual {p0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    if-nez p1, :cond_134
+
+    .line 224
+    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showShrinkUI()V
 
     return-void
 
-    .line 248
-    :cond_fd
-    :pswitch_fd
-    iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mTopBarPopupShown:Z
+    .line 207
+    :cond_c4
+    :pswitch_c4
+    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
-    .line 249
+    if-eqz p1, :cond_cb
+
+    .line 208
+    invoke-interface {p1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
+
+    .line 211
+    :cond_cb
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14f
+    if-eqz p1, :cond_134
 
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->facingFront()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14f
+    if-nez p1, :cond_d8
 
-    .line 250
+    goto :goto_134
+
+    .line 215
+    :cond_d8
+    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideSpreadUI()V
+
+    .line 216
+    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideShrinkUI()V
+
+    .line 217
+    invoke-virtual {p0, v2}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateLuminanceUIState(I)V
+
+    return-void
+
+    .line 247
+    :cond_e2
+    :pswitch_e2
+    iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mTopBarPopupShown:Z
+
+    .line 248
+    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_134
+
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->facingFront()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_134
+
+    .line 249
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showAdjustUI()V
 
-    .line 251
+    .line 250
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintShown:Z
 
-    if-eqz p1, :cond_14f
+    if-eqz p1, :cond_134
 
-    .line 252
+    .line 251
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideShrinkUI()V
 
     return-void
 
-    .line 257
-    :cond_116
+    .line 256
+    :cond_fb
     sget-object p1, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    const-string v1, "Preview started."
+    const-string v0, "Preview started."
 
-    invoke-static {p1, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 257
+    iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
     .line 258
-    iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
-
-    .line 259
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
 
     move-result p1
 
-    if-eqz p1, :cond_135
+    if-eqz p1, :cond_11a
 
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->facingFront()Z
 
     move-result p1
 
-    if-eqz p1, :cond_135
+    if-eqz p1, :cond_11a
 
-    .line 260
+    .line 259
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
-    if-eqz p1, :cond_13e
+    if-eqz p1, :cond_123
 
     const/16 v0, 0xb
 
-    .line 261
+    .line 260
     invoke-virtual {p1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    goto :goto_13e
+    goto :goto_123
 
-    .line 264
-    :cond_135
+    .line 263
+    :cond_11a
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
-    if-eqz p1, :cond_13e
+    if-eqz p1, :cond_123
 
     const/16 v0, 0xa
 
-    .line 265
+    .line 264
     invoke-virtual {p1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 268
-    :cond_13e
-    :goto_13e
+    .line 267
+    :cond_123
+    :goto_123
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
-    if-eqz p1, :cond_14f
+    if-eqz p1, :cond_134
 
-    .line 269
+    .line 268
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->getHintState()Z
 
     move-result p1
 
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintShown:Z
 
-    .line 270
+    .line 269
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintStateChangeListener:Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;
 
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->registerHintStateListener(Lcom/transsion/camera/app/common/IAppUIControl$HintStateChangeListener;)V
 
-    :cond_14f
-    :goto_14f
+    :cond_134
+    :goto_134
     return-void
 
-    :pswitch_data_150
+    nop
+
+    :pswitch_data_136
     .packed-switch 0xb
-        :pswitch_9b
-        :pswitch_8d
-        :pswitch_c8
-        :pswitch_bc
-        :pswitch_9b
-        :pswitch_8d
+        :pswitch_97
+        :pswitch_89
+        :pswitch_c4
+        :pswitch_b8
+        :pswitch_97
+        :pswitch_89
     .end packed-switch
 
-    :pswitch_data_160
+    :pswitch_data_146
     .packed-switch 0x1c
-        :pswitch_88
-        :pswitch_66
-        :pswitch_fd
+        :pswitch_84
+        :pswitch_62
+        :pswitch_e2
     .end packed-switch
 
-    :pswitch_data_16a
+    :pswitch_data_150
     .packed-switch 0x6d
-        :pswitch_44
-        :pswitch_c8
-        :pswitch_bc
+        :pswitch_40
+        :pswitch_c4
+        :pswitch_b8
     .end packed-switch
 .end method
 
 .method public onBackPressed()Z
     .registers 2
 
-    .line 354
+    .line 345
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mCurrentState:I
 
     if-nez v0, :cond_11
 
-    .line 355
+    .line 346
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
     if-nez v0, :cond_f
 
-    .line 356
+    .line 347
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     const/16 v0, 0x8
@@ -1267,7 +1239,7 @@
 
     return p0
 
-    .line 360
+    .line 351
     :cond_11
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onBackPressed()Z
 
@@ -1279,7 +1251,7 @@
 .method public onClick(Landroid/view/View;)V
     .registers 2
 
-    .line 466
+    .line 457
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->processLuminanceFlashClick()V
 
     return-void
@@ -1297,17 +1269,17 @@
 .method public onLongPress(FF)Z
     .registers 5
 
-    .line 492
+    .line 483
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_8
 
     const/4 v1, 0x1
 
-    .line 493
+    .line 484
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
 
-    .line 495
+    .line 486
     :cond_8
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onLongPress(FF)Z
 
@@ -1319,13 +1291,13 @@
 .method public onOrientationChanged(I)V
     .registers 4
 
-    .line 161
+    .line 160
     iput p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mOrientation:I
 
-    .line 162
+    .line 161
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateOrientation()V
 
-    .line 163
+    .line 162
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLowRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     if-eqz v0, :cond_1f
@@ -1340,15 +1312,15 @@
 
     const/4 v1, 0x1
 
-    .line 164
+    .line 163
     invoke-virtual {v0, p1, v1}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
-    .line 165
+    .line 164
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mMediumRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v0, p1, v1}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
-    .line 166
+    .line 165
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHighRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {p0, p1, v1}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
@@ -1368,17 +1340,17 @@
 .method public onSingleTapUp(FF)Z
     .registers 5
 
-    .line 484
+    .line 475
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_9
 
     const/16 v1, 0x8
 
-    .line 485
+    .line 476
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 487
+    .line 478
     :cond_9
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onSingleTapUp(FF)Z
 
@@ -1390,14 +1362,14 @@
 .method protected processAnimationComplete()V
     .registers 2
 
-    .line 326
+    .line 317
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_9
 
     const/16 v0, 0x9
 
-    .line 327
+    .line 318
     invoke-virtual {p0, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_9
@@ -1407,35 +1379,35 @@
 .method protected processLuminanceFlashClick()V
     .registers 3
 
-    .line 386
+    .line 377
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showAdjustUI()V
 
-    .line 387
+    .line 378
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideShrinkUI()V
 
-    .line 388
+    .line 379
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showSpreadUI()V
 
-    .line 389
+    .line 380
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->setHintRevealBlocked()V
 
-    .line 390
+    .line 381
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->doShowAnimation()V
 
     const/4 v0, 0x0
 
-    .line 391
+    .line 382
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateLuminanceUIState(I)V
 
-    .line 392
+    .line 383
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mLuminanceValue:I
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateLevelIcon(I)V
 
-    .line 393
+    .line 384
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateSpreadBarDelay()V
 
-    .line 394
+    .line 385
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_adjust_ui_show_and_hide_ae_lock"
@@ -1454,59 +1426,59 @@
 .method protected processLuminancePreviewStart()V
     .registers 3
 
-    .line 365
+    .line 356
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showAdjustUI()V
 
-    .line 366
+    .line 357
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mCurrentState:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_1a
 
-    .line 367
+    .line 358
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintShown:Z
 
     if-eqz v0, :cond_13
 
-    .line 368
+    .line 359
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideSpreadUI()V
 
-    .line 369
+    .line 360
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideShrinkUI()V
 
     return-void
 
-    .line 371
+    .line 362
     :cond_13
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showShrinkUI()V
 
-    .line 372
+    .line 363
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideSpreadUI()V
 
     return-void
 
-    .line 376
+    .line 367
     :cond_1a
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideShrinkUI()V
 
-    .line 377
+    .line 368
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showSpreadUI()V
 
-    .line 379
+    .line 370
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->setHintRevealBlocked()V
 
     const/4 v0, 0x0
 
-    .line 380
+    .line 371
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateLuminanceUIState(I)V
 
-    .line 381
+    .line 372
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mLuminanceValue:I
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateLevelIcon(I)V
 
-    .line 382
+    .line 373
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateSpreadBarDelay()V
 
     return-void
@@ -1526,7 +1498,7 @@
 .method protected refreshAdjustUI(I)V
     .registers 4
 
-    .line 180
+    .line 179
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustView:Landroid/view/View;
 
     if-nez v0, :cond_5
@@ -1536,10 +1508,10 @@
     :cond_5
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 183
+    .line 182
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 184
+    .line 183
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBar:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;
 
     int-to-float p1, p1
@@ -1550,14 +1522,14 @@
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;->setPercentage(F)V
 
-    .line 185
+    .line 184
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     const/4 v0, 0x6
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 186
+    .line 185
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     const/4 p1, 0x3
@@ -1570,10 +1542,10 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 5
 
-    .line 345
+    .line 336
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    .line 346
+    .line 337
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     new-instance v0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI$FlashChangeListener;
@@ -1584,7 +1556,7 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
 
-    .line 347
+    .line 338
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -1593,7 +1565,7 @@
 
     if-eqz p1, :cond_34
 
-    .line 348
+    .line 339
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -1640,15 +1612,15 @@
 .method protected setHintRevealBlocked()V
     .registers 2
 
-    .line 624
+    .line 615
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_d
 
-    .line 625
+    .line 616
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideAllHints()V
 
-    .line 626
+    .line 617
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     const/4 v0, 0x0
@@ -1662,7 +1634,7 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 155
+    .line 154
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
     return-void
@@ -1671,7 +1643,7 @@
 .method protected setShrinkUIProgress()V
     .registers 2
 
-    .line 460
+    .line 451
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mShrinkProgressBar:Landroid/widget/ProgressBar;
 
     iget p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mLuminanceValue:I
@@ -1684,43 +1656,43 @@
 .method protected showAdjustUI()V
     .registers 3
 
-    .line 133
+    .line 132
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->showAdjustUI()V
 
-    .line 134
+    .line 133
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->getLuminanceValue()I
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mLuminanceValue:I
 
-    .line 135
+    .line 134
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->refreshAdjustUI(I)V
 
     const/4 v0, 0x0
 
-    .line 136
+    .line 135
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->setAdjustUIOrientation(I)V
 
-    .line 137
+    .line 136
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustView:Landroid/view/View;
 
     if-eqz v1, :cond_1f
 
-    .line 138
+    .line 137
     invoke-virtual {v1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 139
+    .line 138
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBar:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;
 
     if-eqz v0, :cond_1f
 
     const/4 v1, 0x1
 
-    .line 140
+    .line 139
     invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;->setAllowedMove(Z)V
 
-    .line 143
+    .line 142
     :cond_1f
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->updateSpreadBarDelay()V
 
@@ -1730,26 +1702,26 @@
 .method protected showShrinkUI()V
     .registers 3
 
-    .line 419
+    .line 410
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_8
 
-    .line 420
+    .line 411
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 423
+    .line 414
     :cond_8
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mShrinkProgressBar:Landroid/widget/ProgressBar;
 
     if-eqz v0, :cond_16
 
-    .line 424
+    .line 415
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 425
+    .line 416
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mShrinkProgressBar:Landroid/widget/ProgressBar;
 
     iget p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mLuminanceValue:I
@@ -1763,24 +1735,24 @@
 .method protected showSpreadUI()V
     .registers 3
 
-    .line 451
+    .line 442
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBarLayout:Landroid/widget/RelativeLayout;
 
     if-eqz v0, :cond_e
 
     const/4 v1, 0x0
 
-    .line 452
+    .line 443
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 453
+    .line 444
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLuminanceSpreadProgressBar:Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustProgressBar;->setAllowedMove(Z)V
 
-    .line 455
+    .line 446
     :cond_e
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
@@ -1792,7 +1764,7 @@
 
     const-string v1, "luminance_spread_ui_show"
 
-    .line 456
+    .line 447
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
@@ -1801,15 +1773,15 @@
 .method public unInit()V
     .registers 1
 
-    .line 172
+    .line 171
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->unInit()V
 
-    .line 173
+    .line 172
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz p0, :cond_a
 
-    .line 174
+    .line 173
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->unRegisterHintStateListener()V
 
     :cond_a
@@ -1819,10 +1791,10 @@
 .method protected updateLuminanceUIState(I)V
     .registers 5
 
-    .line 680
+    .line 671
     iput p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mCurrentState:I
 
-    .line 681
+    .line 672
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p1, :cond_35
@@ -1833,7 +1805,7 @@
 
     if-eqz p1, :cond_35
 
-    .line 682
+    .line 673
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -1879,15 +1851,15 @@
 .method protected updateLuminanceValue(I)V
     .registers 5
 
-    .line 687
+    .line 678
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v0, :cond_26
 
-    .line 688
+    .line 679
     iput p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mLuminanceValue:I
 
-    .line 689
+    .line 680
     iget v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mAvailableAdjustScope:I
 
     mul-int/2addr p1, v1
@@ -1906,7 +1878,7 @@
 
     add-int/2addr p1, p0
 
-    .line 690
+    .line 681
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1930,14 +1902,14 @@
 .method protected updateOrientation()V
     .registers 3
 
-    .line 664
+    .line 655
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mNotAllowedDisplay:Z
 
     if-eqz v0, :cond_5
 
     goto :goto_19
 
-    .line 668
+    .line 659
     :cond_5
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mCurrentState:I
 
@@ -1945,23 +1917,23 @@
 
     if-ne v0, v1, :cond_19
 
-    .line 669
+    .line 660
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mHintShown:Z
 
     if-eqz v0, :cond_12
 
-    .line 670
+    .line 661
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->hideShrinkUI()V
 
     return-void
 
-    .line 672
+    .line 663
     :cond_12
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mTopBarPopupShown:Z
 
     if-nez v0, :cond_19
 
-    .line 673
+    .line 664
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->showShrinkUI()V
 
     :cond_19
@@ -1972,17 +1944,17 @@
 .method protected updateSpreadBarDelay()V
     .registers 5
 
-    .line 611
+    .line 602
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_10
 
     const/16 v1, 0x8
 
-    .line 612
+    .line 603
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 613
+    .line 604
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0xbb8
@@ -1998,7 +1970,7 @@
 
     if-nez p1, :cond_6
 
-    .line 631
+    .line 622
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLastProgressValue:I
 
     if-nez v0, :cond_16
@@ -2021,7 +1993,7 @@
 
     if-eq v1, v0, :cond_23
 
-    .line 634
+    .line 625
     :cond_16
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mVibrator:Landroid/os/Vibrator;
 
@@ -2035,7 +2007,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Vibrator;->vibrate(Landroid/os/VibrationEffect;)V
 
-    .line 636
+    .line 627
     :cond_23
     iput p1, p0, Lcom/transsion/camera/ui/setting/flash/LuminanceAdjustUI;->mLastProgressValue:I
 

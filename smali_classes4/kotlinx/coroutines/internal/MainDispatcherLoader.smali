@@ -21,14 +21,14 @@
 
     sput-object v0, Lkotlinx/coroutines/internal/MainDispatcherLoader;->INSTANCE:Lkotlinx/coroutines/internal/MainDispatcherLoader;
 
-    .line 19
+    .line 15
     const-string v1, "kotlinx.coroutines.fast.service.loader"
 
     const/4 v2, 0x1
 
     invoke-static {v1, v2}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp(Ljava/lang/String;Z)Z
 
-    .line 22
+    .line 18
     invoke-direct {v0}, Lkotlinx/coroutines/internal/MainDispatcherLoader;->loadMainDispatcher()Lkotlinx/coroutines/MainCoroutineDispatcher;
 
     move-result-object v0
@@ -41,7 +41,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 17
+    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,23 +50,23 @@
 .method private final loadMainDispatcher()Lkotlinx/coroutines/MainCoroutineDispatcher;
     .registers 7
 
-    .line 25
+    .line 21
     const-class p0, Lkotlinx/coroutines/internal/MainDispatcherFactory;
 
     const/4 v0, 0x0
 
-    .line 34
+    .line 30
     :try_start_3
     invoke-virtual {p0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
 
-    .line 32
+    .line 28
     invoke-static {p0, v1}, Ljava/util/ServiceLoader;->load(Ljava/lang/Class;Ljava/lang/ClassLoader;)Ljava/util/ServiceLoader;
 
     move-result-object p0
 
-    .line 35
+    .line 31
     invoke-virtual {p0}, Ljava/util/ServiceLoader;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -79,17 +79,17 @@
 
     move-result-object p0
 
-    .line 38
+    .line 34
     move-object v1, p0
 
     check-cast v1, Ljava/lang/Iterable;
 
-    .line 1963
+    .line 131
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 1964
+    .line 132
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
@@ -100,13 +100,13 @@
 
     goto :goto_4d
 
-    .line 1965
+    .line 133
     :cond_26
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 1966
+    .line 134
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
@@ -115,13 +115,13 @@
 
     goto :goto_4d
 
-    .line 1967
+    .line 135
     :cond_31
     move-object v3, v2
 
     check-cast v3, Lkotlinx/coroutines/internal/MainDispatcherFactory;
 
-    .line 38
+    .line 34
     invoke-interface {v3}, Lkotlinx/coroutines/internal/MainDispatcherFactory;->getLoadPriority()I
 
     move-result v3
@@ -137,7 +137,7 @@
 
     check-cast v5, Lkotlinx/coroutines/internal/MainDispatcherFactory;
 
-    .line 38
+    .line 34
     invoke-interface {v5}, Lkotlinx/coroutines/internal/MainDispatcherFactory;->getLoadPriority()I
 
     move-result v5
@@ -156,7 +156,7 @@
 
     if-nez v4, :cond_38
 
-    .line 38
+    .line 34
     :goto_4d
     check-cast v2, Lkotlinx/coroutines/internal/MainDispatcherFactory;
 
@@ -182,7 +182,7 @@
     :goto_5b
     const/4 p0, 0x3
 
-    .line 39
+    .line 35
     invoke-static {v0, v0, p0, v0}, Lkotlinx/coroutines/internal/MainDispatchersKt;->createMissingDispatcher$default(Ljava/lang/Throwable;Ljava/lang/String;ILjava/lang/Object;)Lkotlinx/coroutines/internal/MissingMainCoroutineDispatcher;
 
     move-result-object p0
@@ -194,7 +194,7 @@
     :goto_61
     const/4 v1, 0x2
 
-    .line 42
+    .line 38
     invoke-static {p0, v0, v1, v0}, Lkotlinx/coroutines/internal/MainDispatchersKt;->createMissingDispatcher$default(Ljava/lang/Throwable;Ljava/lang/String;ILjava/lang/Object;)Lkotlinx/coroutines/internal/MissingMainCoroutineDispatcher;
 
     move-result-object p0

@@ -44,18 +44,18 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;Landroid/view/View;)V
     .registers 5
 
-    .line 1091
+    .line 1127
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
 
-    .line 1092
+    .line 1128
     invoke-direct {p0, p2}, Lcom/transsion/camera/feature/mode/makeup/adapter/ItemVH;-><init>(Landroid/view/View;)V
 
-    .line 1093
+    .line 1129
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    .line 1094
+    .line 1130
     sget v0, Lcom/transsion/camera/feature/makeup/R$id;->mu_item_icon:I
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -66,7 +66,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->mIconView:Landroid/widget/ImageView;
 
-    .line 1095
+    .line 1131
     sget v0, Lcom/transsion/camera/feature/makeup/R$id;->mu_item_title:I
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -77,10 +77,10 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->mTitleView:Landroid/widget/TextView;
 
-    .line 1096
+    .line 1132
     sget p0, Lcom/transsion/camera/featurelibs/commonwidget/R$color;->mu_item_shadow_color:I
 
-    .line 1097
+    .line 1133
     invoke-virtual {p1, p0}, Landroid/content/Context;->getColor(I)I
 
     move-result p0
@@ -89,10 +89,10 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 1096
+    .line 1132
     invoke-virtual {v0, p1, v1, v1, p0}, Landroid/widget/TextView;->setShadowLayer(FFFI)V
 
-    .line 1098
+    .line 1134
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -107,7 +107,7 @@
 
     if-eqz p0, :cond_45
 
-    .line 1099
+    .line 1135
     :cond_38
     sget p0, Lcom/transsion/camera/feature/makeup/R$id;->mu_item_icon_background:I
 
@@ -117,7 +117,7 @@
 
     if-eqz p0, :cond_45
 
-    .line 1101
+    .line 1137
     sget p1, Lcom/transsion/camera/featurelibs/commonwidget/R$drawable;->ic_mu_item_background:I
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundResource(I)V
@@ -131,17 +131,17 @@
 .method public bindHolder(Ljava/lang/Object;Z)V
     .registers 5
 
-    .line 1113
+    .line 1149
     instance-of v0, p1, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Reset;
 
     if-eqz v0, :cond_50
 
-    .line 1114
+    .line 1150
     check-cast p1, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Reset;
 
     if-eqz p2, :cond_12
 
-    .line 1116
+    .line 1152
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->mTitleView:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
@@ -152,7 +152,7 @@
 
     goto :goto_1b
 
-    .line 1118
+    .line 1154
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->mTitleView:Landroid/widget/TextView;
 
@@ -162,7 +162,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
-    .line 1120
+    .line 1156
     :goto_1b
     iget v0, p1, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$Reset;->drawableId:I
 
@@ -170,7 +170,7 @@
 
     if-eqz p2, :cond_4b
 
-    .line 1122
+    .line 1158
     invoke-static {}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->-$$Nest$sfgetsBlackIconMap()Ljava/util/Map;
 
     move-result-object p2
@@ -189,14 +189,14 @@
 
     if-eqz p2, :cond_43
 
-    .line 1123
+    .line 1159
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
     if-lez v0, :cond_43
 
-    .line 1124
+    .line 1160
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->mIconView:Landroid/widget/ImageView;
 
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -207,7 +207,7 @@
 
     return-void
 
-    .line 1126
+    .line 1162
     :cond_43
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->mIconView:Landroid/widget/ImageView;
 
@@ -217,7 +217,7 @@
 
     return-void
 
-    .line 1129
+    .line 1165
     :cond_4b
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot$ResetVH;->mIconView:Landroid/widget/ImageView;
 

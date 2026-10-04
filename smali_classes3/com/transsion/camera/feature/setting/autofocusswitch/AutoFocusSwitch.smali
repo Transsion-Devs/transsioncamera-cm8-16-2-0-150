@@ -15,7 +15,11 @@
 # instance fields
 .field private mDefaultAutoFocusType:I
 
+.field private mIntentPhotoMode:Z
+
 .field private mIntentVideoMode:Z
+
+.field private mIsModeSupport:Z
 
 .field mModeType:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
@@ -26,7 +30,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 43
+    .line 44
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "AutoFocusSwitch"
@@ -39,10 +43,15 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .registers 2
 
-    .line 42
+    .line 43
     invoke-direct {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 51
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mIsModeSupport:Z
 
     return-void
 .end method
@@ -50,12 +59,12 @@
 .method private afLockSupport()Z
     .registers 8
 
-    .line 222
+    .line 229
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 223
+    .line 230
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v1
@@ -64,7 +73,7 @@
 
     move-result-object v1
 
-    .line 224
+    .line 231
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v2
@@ -73,7 +82,7 @@
 
     move-result-object v2
 
-    .line 225
+    .line 232
     iget-object v3, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v4, "key_camera_zoom"
@@ -82,7 +91,7 @@
 
     move-result-object v3
 
-    .line 226
+    .line 233
     sget-object v4, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -127,7 +136,7 @@
 
     invoke-static {v4, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 228
+    .line 235
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -140,7 +149,7 @@
 
     iget v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSatNewStreamId:I
 
-    .line 229
+    .line 236
     invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v1
@@ -151,7 +160,7 @@
 
     if-nez v1, :cond_7a
 
-    .line 230
+    .line 237
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -170,7 +179,7 @@
 
     if-ge v1, v3, :cond_8a
 
-    .line 231
+    .line 238
     :cond_7a
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -191,7 +200,7 @@
 
     return p0
 
-    .line 233
+    .line 240
     :cond_8a
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -216,7 +225,7 @@
 .method private handleRestriction(Ljava/lang/String;)V
     .registers 4
 
-    .line 127
+    .line 134
     invoke-static {}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitchRestriction;->getRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
 
     move-result-object v0
@@ -229,7 +238,7 @@
 
     if-eqz p1, :cond_10
 
-    .line 129
+    .line 136
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
@@ -241,7 +250,7 @@
 .method private isTempClose()Z
     .registers 2
 
-    .line 167
+    .line 174
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mTempClose:Z
 
     if-eqz v0, :cond_14
@@ -279,11 +288,128 @@
 .end method
 
 .method public configParameters(Lcom/transsion/camera/adapter/CameraParameters;)I
-    .registers 2
+    .registers 10
 
-    const/4 p0, 0x0
+    .line 245
+    const-string v0, "key_eye_detection"
 
-    return p0
+    invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 246
+    const-string v1, "key_animal_eye_detection"
+
+    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 247
+    const-string v2, "key_human_detection"
+
+    invoke-virtual {p0, v2}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 248
+    iget-boolean v3, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mIntentPhotoMode:Z
+
+    const/4 v4, 0x0
+
+    if-nez v3, :cond_1d
+
+    iget-boolean v3, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mIntentVideoMode:Z
+
+    if-nez v3, :cond_1d
+
+    const/4 v3, 0x1
+
+    goto :goto_1e
+
+    :cond_1d
+    move v3, v4
+
+    .line 249
+    :goto_1e
+    sget-object v5, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "[configParameters] eyeDetection:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, " animalEyeDetection:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, " humanDetection:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, " isUseAutoFocusSwitch:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 251
+    iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mIsModeSupport:Z
+
+    if-eqz p0, :cond_6a
+
+    .line 252
+    const-string p0, "on"
+
+    invoke-static {v0, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6a
+
+    .line 253
+    invoke-static {v1, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6a
+
+    .line 254
+    invoke-static {v2, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_6a
+
+    .line 255
+    const-string p0, "1"
+
+    invoke-virtual {p1, p0, v3}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionAutoFocusSwitch(Ljava/lang/String;Z)V
+
+    goto :goto_6f
+
+    .line 257
+    :cond_6a
+    const-string p0, "0"
+
+    invoke-virtual {p1, p0, v3}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionAutoFocusSwitch(Ljava/lang/String;Z)V
+
+    :goto_6f
+    return v4
 .end method
 
 .method public bridge synthetic forceApplyValue(Ljava/lang/String;)V
@@ -307,7 +433,7 @@
 .method protected getDefaultAutoFocusType()I
     .registers 1
 
-    .line 159
+    .line 166
     iget p0, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mDefaultAutoFocusType:I
 
     return p0
@@ -316,7 +442,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 112
+    .line 118
     const-string p0, "key_auto_focus_switch"
 
     return-object p0
@@ -342,7 +468,7 @@
 .method public getSettingType()Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
     .registers 1
 
-    .line 107
+    .line 113
     sget-object p0, Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;->PHOTO_AND_VIDEO:Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
 
     return-object p0
@@ -359,7 +485,7 @@
         }
     .end annotation
 
-    .line 155
+    .line 162
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p0
@@ -381,10 +507,10 @@
 .method public init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
     .registers 4
 
-    .line 53
+    .line 56
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
-    .line 54
+    .line 57
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -409,7 +535,7 @@
         }
     .end annotation
 
-    .line 81
+    .line 87
     sget-object v0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -438,19 +564,19 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 82
+    .line 88
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedPlatformValues(Ljava/util/List;)V
 
-    .line 83
+    .line 89
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedEntryValues(Ljava/util/List;)V
 
-    .line 84
+    .line 90
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setEntryValues(Ljava/util/List;)V
 
-    .line 85
+    .line 91
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/setting/SettingBase;->setDefaultValue(Ljava/lang/String;)V
 
-    .line 86
+    .line 92
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
@@ -459,7 +585,7 @@
 
     if-le p1, v0, :cond_43
 
-    .line 87
+    .line 93
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->getKey()Ljava/lang/String;
@@ -474,7 +600,7 @@
 
     move-result-object p2
 
-    .line 89
+    .line 95
     :cond_43
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
@@ -484,7 +610,7 @@
 .method protected isPhotoType()Z
     .registers 2
 
-    .line 163
+    .line 170
     sget-object v0, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;->PHOTO:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mModeType:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
@@ -506,50 +632,75 @@
 
     monitor-enter p0
 
-    .line 66
+    .line 71
     :try_start_1
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->onModeClosed(Ljava/lang/String;)V
 
+    const/4 p1, 0x0
+
+    .line 72
+    iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mIsModeSupport:Z
+
     const/4 p1, -0x1
 
-    .line 67
+    .line 73
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->onSatCameraChanged(I)V
-    :try_end_8
-    .catchall {:try_start_1 .. :try_end_8} :catchall_a
+    :try_end_b
+    .catchall {:try_start_1 .. :try_end_b} :catchall_d
 
-    .line 68
+    .line 74
     monitor-exit p0
 
     return-void
 
-    :catchall_a
+    :catchall_d
     move-exception p1
 
-    :try_start_b
+    :try_start_e
     monitor-exit p0
-    :try_end_c
-    .catchall {:try_start_b .. :try_end_c} :catchall_a
+    :try_end_f
+    .catchall {:try_start_e .. :try_end_f} :catchall_d
 
     throw p1
 .end method
 
 .method public onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
-    .registers 4
+    .registers 5
 
-    .line 59
+    .line 62
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
 
-    .line 60
+    .line 63
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->getKey()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p3, v0}, Lcom/transsion/camera/utils/ArrayUtils;->contains([Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p3
+
+    iput-boolean p3, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mIsModeSupport:Z
+
+    .line 64
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mModeType:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
-    .line 61
+    .line 65
     const-string p2, "com.transsion.camera.feature.mode.video.IntentVideoModeEntry"
+
+    invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p2
+
+    iput-boolean p2, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mIntentVideoMode:Z
+
+    .line 66
+    const-string p2, "com.transsion.camera.feature.mode.photo.IntentPhotoModeEntry"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mIntentVideoMode:Z
+    iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mIntentPhotoMode:Z
 
     return-void
 .end method
@@ -557,10 +708,10 @@
 .method public onSatCameraChanged(I)V
     .registers 5
 
-    .line 177
+    .line 184
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->onSatCameraChanged(I)V
 
-    .line 178
+    .line 185
     sget-object v0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -587,19 +738,19 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 179
+    .line 186
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSupportedPlatformValues()Ljava/util/List;
 
     move-result-object p1
 
     if-nez p1, :cond_2e
 
-    .line 181
+    .line 188
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 183
+    .line 190
     :cond_2e
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->afLockSupport()Z
 
@@ -609,19 +760,19 @@
 
     if-eqz v1, :cond_40
 
-    .line 184
+    .line 191
     invoke-interface {p1, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-nez v1, :cond_49
 
-    .line 185
+    .line 192
     invoke-interface {p1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_49
 
-    .line 188
+    .line 195
     :cond_40
     invoke-interface {p1, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -629,10 +780,10 @@
 
     if-eqz v1, :cond_49
 
-    .line 189
+    .line 196
     invoke-interface {p1, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 193
+    .line 200
     :cond_49
     :goto_49
     new-instance v1, Ljava/lang/StringBuilder;
@@ -651,10 +802,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 194
+    .line 201
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedEntryValues(Ljava/util/List;)V
 
-    .line 195
+    .line 202
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setEntryValues(Ljava/util/List;)V
 
     return-void
@@ -663,7 +814,7 @@
 .method public onValueChanged(Ljava/lang/String;)V
     .registers 6
 
-    .line 117
+    .line 123
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -672,9 +823,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_47
+    if-nez v0, :cond_54
 
-    .line 118
+    .line 124
     sget-object v0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -693,10 +844,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 119
+    .line 125
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 120
+    .line 126
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->getKey()Ljava/lang/String;
@@ -711,7 +862,7 @@
 
     invoke-virtual {v0, v1, p1, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 121
+    .line 127
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_auto_focus_value_change_notify"
@@ -722,7 +873,7 @@
 
     invoke-virtual {v0, v1, p1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 122
+    .line 128
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->isTempClose()Z
 
     move-result v0
@@ -734,7 +885,20 @@
     :cond_44
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->handleRestriction(Ljava/lang/String;)V
 
-    :cond_47
+    .line 129
+    iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
+
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->getKey()Ljava/lang/String;
+
+    move-result-object p0
+
+    filled-new-array {p0}, [Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;->requestChangeSettingValueJustSelf([Ljava/lang/String;)V
+
+    :cond_54
     return-void
 .end method
 
@@ -760,7 +924,7 @@
         }
     .end annotation
 
-    .line 135
+    .line 142
     const-string v0, "key_video_quality"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -771,7 +935,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 136
+    .line 143
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -780,7 +944,7 @@
 
     goto :goto_1d
 
-    .line 137
+    .line 144
     :cond_11
     const-string v0, "key_ae_af_lock_state"
 
@@ -792,11 +956,11 @@
 
     goto :goto_1d
 
-    .line 140
+    .line 147
     :cond_1a
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->overrideValues(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
 
-    .line 142
+    .line 149
     :goto_1d
     sget-object v0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -828,7 +992,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 144
+    .line 151
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->isTempClose()Z
 
     move-result p1
@@ -857,7 +1021,7 @@
 .method public postRestrictionAfterInitialized()V
     .registers 4
 
-    .line 94
+    .line 100
     invoke-static {}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitchRestriction;->getRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
 
     move-result-object v0
@@ -886,7 +1050,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 96
+    .line 102
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
@@ -898,12 +1062,12 @@
 .method public restoreToSupportedPlatformValue()V
     .registers 2
 
-    .line 149
+    .line 156
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->restoreToSupportedPlatformValue()V
 
     const/4 v0, 0x0
 
-    .line 150
+    .line 157
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->mTempClose:Z
 
     return-void
@@ -918,14 +1082,14 @@
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
     .registers 6
 
-    .line 202
+    .line 209
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x2
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 203
+    .line 210
     sget-object v1, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -946,7 +1110,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 204
+    .line 211
     invoke-interface {p1}, Lcom/transsion/camera/adapter/ICameraCapabilities;->getSupportedEyeDetection()Ljava/util/List;
 
     move-result-object v3
@@ -957,7 +1121,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 205
+    .line 212
     invoke-interface {p1}, Lcom/transsion/camera/adapter/ICameraCapabilities;->isHumanDetectionSupport()Z
 
     move-result v3
@@ -968,17 +1132,17 @@
 
     move-result-object v2
 
-    .line 203
+    .line 210
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 206
+    .line 213
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->afLockSupport()Z
 
     move-result v2
 
     if-eqz v2, :cond_50
 
-    .line 207
+    .line 214
     invoke-interface {p1}, Lcom/transsion/camera/adapter/ICameraCapabilities;->getSupportedEyeDetection()Ljava/util/List;
 
     move-result-object v2
@@ -1002,7 +1166,7 @@
     :cond_50
     const/4 v3, 0x0
 
-    .line 209
+    .line 216
     :cond_51
     :goto_51
     new-instance p1, Ljava/lang/StringBuilder;
@@ -1021,15 +1185,15 @@
 
     invoke-static {v1, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 210
+    .line 217
     const-string p1, "on"
 
     if-eqz v3, :cond_6c
 
-    .line 211
+    .line 218
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 213
+    .line 220
     :cond_6c
     const-string v1, "off"
 
@@ -1042,7 +1206,7 @@
     :cond_74
     move-object p1, v1
 
-    .line 215
+    .line 222
     :goto_75
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->getDefaultAutoFocusType()I
 
@@ -1061,7 +1225,7 @@
     :cond_82
     move-object v1, p1
 
-    .line 218
+    .line 225
     :goto_83
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/feature/setting/autofocusswitch/AutoFocusSwitch;->initValueAndSupport(Ljava/util/List;Ljava/lang/String;)V
 
@@ -1089,7 +1253,7 @@
 .method public unInit()V
     .registers 1
 
-    .line 76
+    .line 82
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->unInit()V
 
     return-void

@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static dialog_color:I = 0x7f0600c8
+.field public static dialog_color:I = 0x7f0600c9
 
 
 # direct methods

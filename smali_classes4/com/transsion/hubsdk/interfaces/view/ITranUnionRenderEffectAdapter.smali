@@ -114,3 +114,12 @@
 
 .method public abstract setBlurAlgorithm(I)V
 .end method
+
+.method public abstract setCustomBlender(Ljava/lang/Object;)V
+.end method
+
+.method public abstract setOffscreenRenderingOptimization(Z)V
+.end method
+
+.method public abstract setRequestWindowType(I)V
+.end method

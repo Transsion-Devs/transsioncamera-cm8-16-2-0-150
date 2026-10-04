@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
     .registers 4
 
-    .line 692
+    .line 690
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$CaptureSavingState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
-    .line 693
+    .line 691
     const-string v0, "SavingState"
 
     const/4 v1, 0x0
@@ -40,7 +40,7 @@
 .method protected captureFail()V
     .registers 4
 
-    .line 698
+    .line 696
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -67,7 +67,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 699
+    .line 697
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->captureFinished()V
 
     return-void
@@ -76,7 +76,7 @@
 .method protected captureSuccess()V
     .registers 4
 
-    .line 704
+    .line 702
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -103,7 +103,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 705
+    .line 703
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture$PendingState;->captureFinished()V
 
     return-void

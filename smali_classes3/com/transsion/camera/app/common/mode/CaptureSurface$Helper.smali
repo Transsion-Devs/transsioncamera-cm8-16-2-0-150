@@ -24,6 +24,8 @@
 
 .field private mImageCallback:Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;
 
+.field private volatile mIsContinuousShot:Z
+
 .field protected mIsReleased:Z
 
 .field private final mListener:Landroid/media/ImageReader$OnImageAvailableListener;
@@ -47,13 +49,22 @@
     return-object p0
 .end method
 
+.method static bridge synthetic -$$Nest$fgetmIsContinuousShot(Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;)Z
+    .registers 1
+
+    .line 0
+    iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mIsContinuousShot:Z
+
+    return p0
+.end method
+
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 5
 
-    .line 361
+    .line 379
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 339
+    .line 348
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
@@ -62,34 +73,37 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mPictureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 340
+    .line 349
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCaptureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 341
+    .line 350
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mReleaseLock:Ljava/lang/Object;
 
-    .line 344
+    .line 353
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mIsReleased:Z
 
-    .line 345
+    .line 354
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCanReleaseCaptureSurface:Z
 
-    .line 349
+    .line 355
+    iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mIsContinuousShot:Z
+
+    .line 359
     new-instance v0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper$1;-><init>(Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mListener:Landroid/media/ImageReader$OnImageAvailableListener;
 
-    .line 362
+    .line 380
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -118,7 +132,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 363
+    .line 381
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mName:Ljava/lang/String;
 
     return-void
@@ -127,14 +141,14 @@
 .method private acquireImage(Ljava/util/function/Supplier;Ljava/util/function/LongConsumer;)V
     .registers 12
 
-    .line 510
+    .line 555
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mReleaseLock:Ljava/lang/Object;
 
     monitor-enter v1
 
     const/4 v0, 0x0
 
-    .line 511
+    .line 556
     :try_start_4
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->getImage(Ljava/util/function/Supplier;Ljava/util/function/Consumer;)Landroid/media/Image;
 
@@ -142,7 +156,7 @@
 
     if-nez p1, :cond_f
 
-    .line 513
+    .line 558
     monitor-exit v1
 
     return-void
@@ -154,7 +168,7 @@
 
     goto :goto_3e
 
-    .line 515
+    .line 560
     :cond_f
     invoke-virtual {p1}, Landroid/media/Image;->getTimestamp()J
 
@@ -162,10 +176,10 @@
 
     if-eqz p2, :cond_18
 
-    .line 517
+    .line 562
     invoke-interface {p2, v7, v8}, Ljava/util/function/LongConsumer;->accept(J)V
 
-    .line 519
+    .line 564
     :cond_18
     invoke-virtual {p1}, Landroid/media/Image;->getFormat()I
 
@@ -182,7 +196,7 @@
 
     goto :goto_29
 
-    .line 520
+    .line 565
     :cond_24
     invoke-virtual {p1}, Landroid/media/Image;->getFormat()I
 
@@ -190,38 +204,38 @@
 
     goto :goto_22
 
-    .line 521
+    .line 566
     :goto_29
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->-$$Nest$smgetBufferFromImage(Landroid/media/Image;)[B
 
     move-result-object v3
 
-    .line 522
+    .line 567
     invoke-virtual {p1}, Landroid/media/Image;->getWidth()I
 
     move-result v5
 
-    .line 523
+    .line 568
     invoke-virtual {p1}, Landroid/media/Image;->getHeight()I
 
     move-result v6
 
-    .line 524
+    .line 569
     invoke-virtual {p1}, Landroid/media/Image;->close()V
 
-    .line 525
+    .line 570
     monitor-exit v1
     :try_end_39
     .catchall {:try_start_4 .. :try_end_39} :catchall_c
 
     move-object v2, p0
 
-    .line 526
+    .line 571
     invoke-virtual/range {v2 .. v8}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->processImage([BIIIJ)V
 
     return-void
 
-    .line 525
+    .line 570
     :goto_3e
     :try_start_3e
     monitor-exit v1
@@ -236,7 +250,7 @@
 .method protected acquireImage(Landroid/media/Image;)V
     .registers 3
 
-    .line 501
+    .line 546
     new-instance v0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper$$ExternalSyntheticLambda0;-><init>(Landroid/media/Image;)V
@@ -253,7 +267,7 @@
 
     const/4 v0, 0x0
 
-    .line 493
+    .line 538
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->acquireImage(Landroid/media/ImageReader;Ljava/util/function/LongConsumer;)V
 
     return-void
@@ -262,7 +276,7 @@
 .method protected acquireImage(Landroid/media/ImageReader;Ljava/util/function/LongConsumer;)V
     .registers 4
 
-    .line 497
+    .line 542
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v0, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper$$ExternalSyntheticLambda0;
@@ -289,7 +303,7 @@
 .method protected decreaseCaptureCount()V
     .registers 5
 
-    .line 558
+    .line 603
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->isUnnecessaryChangeCaptureCount()Z
 
     move-result v0
@@ -306,7 +320,7 @@
 
     if-gtz v0, :cond_35
 
-    .line 559
+    .line 604
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -331,7 +345,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 561
+    .line 606
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCaptureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v0, 0x0
@@ -340,13 +354,13 @@
 
     return-void
 
-    .line 564
+    .line 609
     :cond_35
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCaptureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
 
-    .line 565
+    .line 610
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -379,7 +393,7 @@
 
     const-wide/16 v0, -0x1
 
-    .line 582
+    .line 627
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->decreasePicCount(J)V
 
     return-void
@@ -388,7 +402,7 @@
 .method protected decreasePicCount(J)V
     .registers 4
 
-    .line 586
+    .line 631
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->isUnnecessaryChangePictureCount()Z
 
     move-result p1
@@ -403,7 +417,7 @@
 
     if-gtz p1, :cond_35
 
-    .line 587
+    .line 632
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -430,7 +444,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 589
+    .line 634
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mPictureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 p1, 0x0
@@ -439,13 +453,13 @@
 
     return-void
 
-    .line 592
+    .line 637
     :cond_35
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mPictureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
 
-    .line 593
+    .line 638
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -464,7 +478,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mPictureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 594
+    .line 639
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v0
@@ -475,10 +489,10 @@
 
     move-result-object p2
 
-    .line 593
+    .line 638
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 595
+    .line 640
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->releaseAfterCheckNum()V
 
     return-void
@@ -493,7 +507,7 @@
 .method public getCaptureCount()I
     .registers 1
 
-    .line 405
+    .line 431
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCaptureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -514,12 +528,12 @@
 .method protected getImage(Ljava/util/function/Supplier;Ljava/util/function/Consumer;)Landroid/media/Image;
     .registers 6
 
-    .line 531
+    .line 576
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mReleaseLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 532
+    .line 577
     :try_start_3
     iget-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mIsReleased:Z
 
@@ -527,14 +541,14 @@
 
     if-eqz v1, :cond_13
 
-    .line 533
+    .line 578
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "ImageReader is release, return"
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 534
+    .line 579
     monitor-exit v0
 
     return-object v2
@@ -544,7 +558,7 @@
 
     goto :goto_2b
 
-    .line 536
+    .line 581
     :cond_13
     invoke-interface {p1}, Ljava/util/function/Supplier;->get()Ljava/lang/Object;
 
@@ -554,14 +568,14 @@
 
     if-nez p1, :cond_24
 
-    .line 538
+    .line 583
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "getImage image is null"
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 539
+    .line 584
     monitor-exit v0
 
     return-object v2
@@ -569,10 +583,10 @@
     :cond_24
     if-eqz p2, :cond_29
 
-    .line 542
+    .line 587
     invoke-interface {p2, p1}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
-    .line 544
+    .line 589
     :cond_29
     monitor-exit v0
 
@@ -589,7 +603,7 @@
 .method protected getImageAvailableListener(Ljava/lang/String;)Landroid/media/ImageReader$OnImageAvailableListener;
     .registers 2
 
-    .line 627
+    .line 672
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mListener:Landroid/media/ImageReader$OnImageAvailableListener;
 
     return-object p0
@@ -598,7 +612,7 @@
 .method public getImageCallback()Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;
     .registers 1
 
-    .line 401
+    .line 427
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mImageCallback:Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;
 
     return-object p0
@@ -607,7 +621,7 @@
 .method public getPictureCount()I
     .registers 1
 
-    .line 409
+    .line 435
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mPictureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -620,7 +634,7 @@
 .method public getReleaseLock()Ljava/lang/Object;
     .registers 1
 
-    .line 393
+    .line 411
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mReleaseLock:Ljava/lang/Object;
 
     return-object p0
@@ -629,14 +643,14 @@
 .method protected increaseCaptureCount()V
     .registers 4
 
-    .line 549
+    .line 594
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->isUnnecessaryChangeCaptureCount()Z
 
     move-result v0
 
     if-eqz v0, :cond_1d
 
-    .line 550
+    .line 595
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -657,13 +671,13 @@
 
     return-void
 
-    .line 553
+    .line 598
     :cond_1d
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCaptureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
-    .line 554
+    .line 599
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -696,14 +710,14 @@
 .method protected increasePicCount(J)V
     .registers 4
 
-    .line 573
+    .line 618
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->isUnnecessaryChangePictureCount()Z
 
     move-result p1
 
     if-eqz p1, :cond_1d
 
-    .line 574
+    .line 619
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -724,13 +738,13 @@
 
     return-void
 
-    .line 577
+    .line 622
     :cond_1d
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mPictureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
-    .line 578
+    .line 623
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -783,7 +797,7 @@
 .method protected isPictureCountRemaining()Z
     .registers 1
 
-    .line 489
+    .line 534
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCaptureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -805,7 +819,7 @@
 .method public isReleased()Z
     .registers 1
 
-    .line 413
+    .line 439
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mIsReleased:Z
 
     return p0
@@ -844,12 +858,12 @@
 .method protected onBGServiceDied()V
     .registers 3
 
-    .line 440
+    .line 466
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mReleaseLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 441
+    .line 467
     :try_start_3
     iget-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCanReleaseCaptureSurface:Z
 
@@ -861,7 +875,7 @@
 
     const/4 v1, 0x0
 
-    .line 442
+    .line 468
     invoke-interface {p0, v1}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
     goto :goto_12
@@ -871,7 +885,7 @@
 
     goto :goto_14
 
-    .line 444
+    .line 470
     :cond_12
     :goto_12
     monitor-exit v0
@@ -889,7 +903,7 @@
 .method public onImageAvailable(Landroid/media/ImageReader;)V
     .registers 5
 
-    .line 608
+    .line 653
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -908,7 +922,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 609
+    .line 654
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->acquireImage(Landroid/media/ImageReader;)V
 
     return-void
@@ -925,7 +939,7 @@
 
     const/4 p1, 0x1
 
-    .line 452
+    .line 478
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mIsReleased:Z
 
     return-void
@@ -934,10 +948,10 @@
 .method protected processImage([BIIIJ)V
     .registers 11
 
-    .line 463
+    .line 508
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mImageCallback:Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;
 
-    .line 464
+    .line 509
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -964,14 +978,14 @@
 
     if-eqz v0, :cond_6e
 
-    .line 467
+    .line 512
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->isPictureCountRemaining()Z
 
     move-result v1
 
     if-eqz v1, :cond_31
 
-    .line 468
+    .line 513
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCaptureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -985,50 +999,50 @@
     :cond_31
     const/4 v1, 0x0
 
-    .line 470
+    .line 515
     :goto_32
     new-instance v2, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;
 
     invoke-direct {v2}, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;-><init>()V
 
-    .line 471
+    .line 516
     invoke-virtual {v2, p1}, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;->setData([B)Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;
 
     move-result-object p1
 
-    .line 472
+    .line 517
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;->setFormat(I)Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;
 
     move-result-object p1
 
-    .line 473
+    .line 518
     invoke-virtual {p1, p3}, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;->setWidth(I)Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;
 
     move-result-object p1
 
-    .line 474
+    .line 519
     invoke-virtual {p1, p4}, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;->setHeight(I)Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;
 
     move-result-object p1
 
     iget-boolean p2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCanReleaseCaptureSurface:Z
 
-    .line 475
+    .line 520
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;->setIsBGImage(Z)Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;
 
     move-result-object p1
 
-    .line 476
+    .line 521
     invoke-virtual {p1, v1}, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;->setPicCountRemaining(I)Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;
 
     move-result-object p1
 
-    .line 477
+    .line 522
     invoke-virtual {p1, p5, p6}, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;->setTimestamp(J)Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;
 
     move-result-object p1
 
-    .line 478
+    .line 523
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;->getInstance()Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;
 
     move-result-object p2
@@ -1041,21 +1055,21 @@
 
     move-result-object p1
 
-    .line 479
+    .line 524
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;->build()Lcom/transsion/camera/app/common/mode/PictureInfo;
 
     move-result-object p1
 
-    .line 480
+    .line 525
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;->onPictureTaken(Lcom/transsion/camera/app/common/mode/PictureInfo;)V
 
-    .line 481
+    .line 526
     invoke-virtual {p0, p5, p6}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->decreasePicCount(J)V
 
-    .line 482
+    .line 527
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->decreaseCaptureCount()V
 
-    .line 484
+    .line 529
     :cond_6e
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->checkNotifyBgErr()V
 
@@ -1065,7 +1079,7 @@
 .method protected releaseAfterCheckNum()V
     .registers 4
 
-    .line 613
+    .line 658
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -1088,7 +1102,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mPictureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 614
+    .line 659
     invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v2
@@ -1109,15 +1123,15 @@
 
     move-result-object v1
 
-    .line 613
+    .line 658
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 615
+    .line 660
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mReleaseLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 616
+    .line 661
     :try_start_37
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->isNeedReleaseAfterCheckNum()Z
 
@@ -1137,7 +1151,7 @@
 
     if-eqz v1, :cond_52
 
-    .line 617
+    .line 662
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mRealReleaseSurface:Ljava/util/function/Consumer;
 
     const/4 v1, 0x0
@@ -1151,7 +1165,7 @@
 
     goto :goto_54
 
-    .line 619
+    .line 664
     :cond_52
     :goto_52
     monitor-exit v0
@@ -1175,8 +1189,17 @@
 .method public setCanReleaseCaptureSurface(Z)V
     .registers 2
 
-    .line 389
+    .line 407
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCanReleaseCaptureSurface:Z
+
+    return-void
+.end method
+
+.method public setContinuousShot(Z)V
+    .registers 2
+
+    .line 419
+    iput-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mIsContinuousShot:Z
 
     return-void
 .end method
@@ -1190,7 +1213,7 @@
 .method public setImageCallback(Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;)V
     .registers 2
 
-    .line 397
+    .line 415
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mImageCallback:Lcom/transsion/camera/app/common/mode/CaptureSurface$ImageCallback;
 
     return-void
@@ -1199,7 +1222,7 @@
 .method public setRealReleaseSurface(Ljava/util/function/Consumer;)V
     .registers 2
 
-    .line 385
+    .line 403
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mRealReleaseSurface:Ljava/util/function/Consumer;
 
     return-void
@@ -1208,7 +1231,7 @@
 .method public setThreadPriority(I)V
     .registers 2
 
-    .line 635
+    .line 680
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -1217,7 +1240,7 @@
 
     if-eqz p0, :cond_b
 
-    .line 636
+    .line 681
     invoke-static {p1}, Landroid/os/Process;->setThreadPriority(I)V
 
     :cond_b
@@ -1235,7 +1258,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 369
+    .line 387
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1264,7 +1287,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mPictureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 371
+    .line 389
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v1
@@ -1277,7 +1300,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mCaptureCount:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 372
+    .line 390
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v1

@@ -46,13 +46,13 @@
         }
     .end annotation
 
-    .line 47
+    .line 43
     invoke-direct {p0, p3, p4, p5}, Lkotlinx/coroutines/flow/internal/ChannelFlow;-><init>(Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)V
 
-    .line 42
+    .line 38
     iput-object p1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge;->flow:Lkotlinx/coroutines/flow/Flow;
 
-    .line 43
+    .line 39
     iput p2, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge;->concurrency:I
 
     return-void
@@ -65,7 +65,7 @@
 
     if-eqz p7, :cond_6
 
-    .line 44
+    .line 40
     sget-object p3, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     :cond_6
@@ -84,7 +84,7 @@
 
     if-eqz p3, :cond_13
 
-    .line 46
+    .line 42
     sget-object p5, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
 
     :cond_13
@@ -96,7 +96,7 @@
 
     move-object v5, p5
 
-    .line 41
+    .line 37
     invoke-direct/range {v0 .. v5}, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge;-><init>(Lkotlinx/coroutines/flow/Flow;ILkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)V
 
     return-void
@@ -107,7 +107,7 @@
 .method protected additionalToStringProps()Ljava/lang/String;
     .registers 3
 
-    .line 77
+    .line 73
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -142,7 +142,7 @@
         }
     .end annotation
 
-    .line 56
+    .line 52
     iget v0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge;->concurrency:I
 
     const/4 v1, 0x2
@@ -155,12 +155,12 @@
 
     move-result-object v0
 
-    .line 57
+    .line 53
     new-instance v1, Lkotlinx/coroutines/flow/internal/SendingCollector;
 
     invoke-direct {v1, p1}, Lkotlinx/coroutines/flow/internal/SendingCollector;-><init>(Lkotlinx/coroutines/channels/SendChannel;)V
 
-    .line 58
+    .line 54
     invoke-interface {p2}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v2
@@ -173,7 +173,7 @@
 
     check-cast v2, Lkotlinx/coroutines/Job;
 
-    .line 59
+    .line 55
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge;->flow:Lkotlinx/coroutines/flow/Flow;
 
     new-instance v3, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge$collectTo$2;
@@ -212,7 +212,7 @@
         }
     .end annotation
 
-    .line 49
+    .line 45
     new-instance v0, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge;
 
     iget-object v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowMerge;->flow:Lkotlinx/coroutines/flow/Flow;
@@ -242,7 +242,7 @@
         }
     .end annotation
 
-    .line 52
+    .line 48
     iget-object v0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->context:Lkotlin/coroutines/CoroutineContext;
 
     iget v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->capacity:I

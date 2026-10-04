@@ -47,10 +47,10 @@
         }
     .end annotation
 
-    .line 232
+    .line 228
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 233
+    .line 229
     iput-object p1, p0, Lkotlinx/coroutines/flow/internal/StackFrameContinuation;->uCont:Lkotlin/coroutines/Continuation;
 
     iput-object p2, p0, Lkotlinx/coroutines/flow/internal/StackFrameContinuation;->context:Lkotlin/coroutines/CoroutineContext;
@@ -63,7 +63,7 @@
 .method public getCallerFrame()Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
     .registers 2
 
-    .line 237
+    .line 233
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/StackFrameContinuation;->uCont:Lkotlin/coroutines/Continuation;
 
     instance-of v0, p0, Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
@@ -83,7 +83,7 @@
 .method public getContext()Lkotlin/coroutines/CoroutineContext;
     .registers 1
 
-    .line 233
+    .line 229
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/StackFrameContinuation;->context:Lkotlin/coroutines/CoroutineContext;
 
     return-object p0
@@ -100,7 +100,7 @@
 .method public resumeWith(Ljava/lang/Object;)V
     .registers 2
 
-    .line 240
+    .line 236
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/StackFrameContinuation;->uCont:Lkotlin/coroutines/Continuation;
 
     invoke-interface {p0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V

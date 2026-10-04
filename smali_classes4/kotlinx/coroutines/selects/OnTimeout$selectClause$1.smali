@@ -66,7 +66,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    .line 45
+    .line 41
     check-cast p1, Lkotlinx/coroutines/selects/OnTimeout;
 
     check-cast p2, Lkotlinx/coroutines/selects/SelectInstance;
@@ -91,7 +91,7 @@
         }
     .end annotation
 
-    .line 45
+    .line 41
     # invokes: Lkotlinx/coroutines/selects/OnTimeout;->register(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
     invoke-static {p1, p2, p3}, Lkotlinx/coroutines/selects/OnTimeout;->access$register(Lkotlinx/coroutines/selects/OnTimeout;Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
 

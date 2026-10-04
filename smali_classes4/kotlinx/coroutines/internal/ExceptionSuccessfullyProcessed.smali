@@ -23,7 +23,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 72
+    .line 68
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
     return-void

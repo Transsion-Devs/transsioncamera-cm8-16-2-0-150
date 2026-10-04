@@ -203,7 +203,7 @@
     :catchall_50
     move-exception p1
 
-    goto :goto_a0
+    goto :goto_a1
 
     :catch_52
     move-exception v2
@@ -245,7 +245,7 @@
 
     const/4 v3, 0x3
 
-    if-ge v2, v3, :cond_9a
+    if-ge v2, v3, :cond_9b
 
     add-int/lit8 v2, v2, 0x1
 
@@ -274,7 +274,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v3, "th retry"
+    const-string/jumbo v3, "th retry"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -288,8 +288,8 @@
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/storage/InternalStorageOperator$PhotoSaveRequest;->writeJpegFile(Ljava/lang/String;[BLandroid/graphics/Bitmap;)Z
 
     move-result p1
-    :try_end_94
-    .catchall {:try_start_5d .. :try_end_94} :catchall_50
+    :try_end_95
+    .catchall {:try_start_5d .. :try_end_95} :catchall_50
 
     .line 378
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/InternalStorageOperator$BaseSaveRequest;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -298,14 +298,14 @@
 
     return p1
 
-    :cond_9a
+    :cond_9b
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/InternalStorageOperator$BaseSaveRequest;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return v1
 
-    :goto_a0
+    :goto_a1
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/InternalStorageOperator$BaseSaveRequest;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V

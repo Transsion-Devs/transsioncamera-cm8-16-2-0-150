@@ -27,7 +27,7 @@
     .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
+    .line 19
     iput-object p1, p0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->completion:Lkotlin/coroutines/Continuation;
 
     return-void
@@ -53,7 +53,7 @@
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 64
+    .line 65
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string p1, "create(Any?;Continuation) has not been overridden"
@@ -80,7 +80,7 @@
 
     invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 60
+    .line 61
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string p1, "create(Continuation) has not been overridden"
@@ -93,7 +93,7 @@
 .method public getCallerFrame()Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
     .registers 2
 
-    .line 73
+    .line 74
     iget-object p0, p0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->completion:Lkotlin/coroutines/Continuation;
 
     instance-of v0, p0, Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
@@ -121,7 +121,7 @@
         }
     .end annotation
 
-    .line 18
+    .line 19
     iget-object p0, p0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->completion:Lkotlin/coroutines/Continuation;
 
     return-object p0
@@ -130,7 +130,7 @@
 .method public getStackTraceElement()Ljava/lang/StackTraceElement;
     .registers 1
 
-    .line 76
+    .line 77
     invoke-static {p0}, Lkotlin/coroutines/jvm/internal/DebugMetadataKt;->getStackTraceElement(Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;)Ljava/lang/StackTraceElement;
 
     move-result-object p0
@@ -150,25 +150,25 @@
 .method public final resumeWith(Ljava/lang/Object;)V
     .registers 4
 
-    .line 28
+    .line 29
     :goto_0
     invoke-static {p0}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineResumed(Lkotlin/coroutines/Continuation;)V
 
-    .line 29
+    .line 30
     check-cast p0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;
 
-    .line 30
+    .line 31
     iget-object v0, p0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->completion:Lkotlin/coroutines/Continuation;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    .line 33
+    .line 34
     :try_start_a
     invoke-virtual {p0, p1}, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 34
+    .line 35
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v1
@@ -177,7 +177,7 @@
 
     return-void
 
-    .line 35
+    .line 36
     :cond_15
     invoke-static {p1}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -190,7 +190,7 @@
     :catchall_1a
     move-exception p1
 
-    .line 37
+    .line 38
     sget-object v1, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
     invoke-static {p1}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
@@ -201,11 +201,11 @@
 
     move-result-object p1
 
-    .line 39
+    .line 40
     :goto_25
     invoke-virtual {p0}, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->releaseIntercepted()V
 
-    .line 40
+    .line 41
     instance-of p0, v0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;
 
     if-eqz p0, :cond_2e
@@ -214,7 +214,7 @@
 
     goto :goto_0
 
-    .line 46
+    .line 47
     :cond_2e
     invoke-interface {v0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
@@ -224,7 +224,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 68
+    .line 69
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -237,11 +237,8 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_11
+    if-nez v1, :cond_18
 
-    goto :goto_19
-
-    :cond_11
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
@@ -250,7 +247,7 @@
 
     move-result-object v1
 
-    :goto_19
+    :cond_18
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

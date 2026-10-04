@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 2477
+    .line 2510
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$BGImageSavedListener;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public doOnBGImageSaved(Landroid/net/Uri;[B)V
     .registers 5
 
-    .line 2480
+    .line 2513
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -56,14 +56,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2481
+    .line 2514
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$BGImageSavedListener;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity;->mAppUI:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     if-eqz p0, :cond_12
 
-    .line 2482
+    .line 2515
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/BaseAppUI;->doOnBGImageSaved(Landroid/net/Uri;[B)V
 
     :cond_12

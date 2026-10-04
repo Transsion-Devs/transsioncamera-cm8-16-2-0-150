@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.internal.ChannelFlow$collectToFun$1"
     f = "ChannelFlow.kt"
     l = {
-        0x3c
+        0x38
     }
     m = "invokeSuspend"
 .end annotation
@@ -152,7 +152,7 @@
 
     move-result-object v0
 
-    .line 60
+    .line 56
     iget v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow$collectToFun$1;->label:I
 
     const/4 v2, 0x1

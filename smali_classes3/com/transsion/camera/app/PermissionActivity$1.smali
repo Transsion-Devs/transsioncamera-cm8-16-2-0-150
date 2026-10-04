@@ -21,7 +21,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/PermissionActivity;)V
     .registers 2
 
-    .line 111
+    .line 117
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .registers 3
 
-    .line 114
+    .line 120
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void

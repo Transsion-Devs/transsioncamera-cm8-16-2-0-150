@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)V
     .registers 2
 
-    .line 1425
+    .line 1312
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public onMoreTabChanged(Ljava/lang/String;)V
     .registers 8
 
-    .line 1428
+    .line 1315
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fputmCurrentModeName(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;Ljava/lang/String;)V
 
-    .line 1429
+    .line 1316
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmCamera(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Ljava/lang/String;
@@ -54,7 +54,7 @@
 
     move-result v0
 
-    .line 1430
+    .line 1317
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v1
@@ -81,7 +81,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1431
+    .line 1318
     const-string v1, "com.transsion.camera.feature.mode.underwater.UnderwaterModeEntry"
 
     invoke-static {v1, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_42
 
-    .line 1432
+    .line 1319
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v1
@@ -101,7 +101,7 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(ILjava/lang/String;)V
 
-    .line 1434
+    .line 1321
     :cond_42
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
@@ -119,7 +119,7 @@
 
     move-result-object v1
 
-    .line 1435
+    .line 1322
     iget-object v2, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v2}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmContext(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Landroid/content/Context;
@@ -136,7 +136,7 @@
 
     move-result-object v2
 
-    .line 1436
+    .line 1323
     iget-object v3, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v3}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePickerUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/ModePickerUI;
@@ -175,7 +175,7 @@
 
     invoke-virtual {v3, v4, v5, v1, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModes(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1438
+    .line 1325
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePickerUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/ModePickerUI;

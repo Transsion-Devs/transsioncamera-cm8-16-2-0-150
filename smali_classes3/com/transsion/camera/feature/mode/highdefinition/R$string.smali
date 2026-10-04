@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static highdefinition_mode_description:I = 0x7f13032d
+.field public static highdefinition_mode_description:I = 0x7f130328
 
-.field public static highdefinition_mode_title:I = 0x7f13032e
+.field public static highdefinition_mode_title:I = 0x7f130329
 
 
 # direct methods

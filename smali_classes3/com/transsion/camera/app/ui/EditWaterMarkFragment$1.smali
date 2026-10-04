@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;)V
     .registers 2
 
-    .line 511
+    .line 525
     iput-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$1;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .registers 3
 
-    .line 527
+    .line 541
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -47,7 +47,7 @@
 
     move-result-object p1
 
-    .line 528
+    .line 542
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$1;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->mDialog:Lcom/transsion/widgetslib/dialog/InputDialog;
@@ -78,7 +78,7 @@
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .registers 5
 
-    .line 519
+    .line 533
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$1;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->-$$Nest$fgetmSettingStatusListener(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;)Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
@@ -87,7 +87,7 @@
 
     if-eqz p1, :cond_1e
 
-    .line 520
+    .line 534
     iget-object p1, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$1;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->-$$Nest$fgetmSettingStatusListener(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;)Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
@@ -98,7 +98,7 @@
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;->onStatusChanged(Lcom/transsion/camera/app/common/IApp$State;)V
 
-    .line 521
+    .line 535
     iget-object p0, p0, Lcom/transsion/camera/app/ui/EditWaterMarkFragment$1;->this$0:Lcom/transsion/camera/app/ui/EditWaterMarkFragment;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/EditWaterMarkFragment;->-$$Nest$fgetmSettingStatusListener(Lcom/transsion/camera/app/ui/EditWaterMarkFragment;)Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;

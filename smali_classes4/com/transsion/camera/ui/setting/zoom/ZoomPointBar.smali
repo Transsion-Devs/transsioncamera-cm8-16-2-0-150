@@ -728,7 +728,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mLimitedZoomRange:Landroid/util/Range;
 
-    .line 592
+    .line 612
     new-instance p2, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$5;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$5;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)V
@@ -852,7 +852,7 @@
 .method private handleItemSelected(I)V
     .registers 5
 
-    .line 636
+    .line 656
     sget-object v0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -871,7 +871,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 637
+    .line 657
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomItems:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -880,7 +880,7 @@
 
     check-cast v0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;
 
-    .line 638
+    .line 658
     iget-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mIsZoomRangeLimited:Z
 
     if-eqz v1, :cond_36
@@ -899,27 +899,27 @@
 
     if-nez v0, :cond_36
 
-    .line 639
+    .line 659
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mCurrentType:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$IType;
 
     invoke-interface {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$IType;->onLongPressed()Z
 
     return-void
 
-    .line 642
+    .line 662
     :cond_36
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mSelectedIndex:I
 
     if-ne p1, v0, :cond_40
 
-    .line 643
+    .line 663
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mCurrentType:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$IType;
 
     invoke-interface {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$IType;->onCurrentItemSelected()V
 
     return-void
 
-    .line 646
+    .line 666
     :cond_40
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->onItemSelected(I)V
 
@@ -929,7 +929,7 @@
 .method private handleSingleTapUp(Landroid/view/MotionEvent;)Z
     .registers 9
 
-    .line 616
+    .line 636
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->getZoomPointNum()I
 
     move-result v0
@@ -955,7 +955,7 @@
 
     move v2, v1
 
-    .line 620
+    .line 640
     :goto_13
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomItems:Ljava/util/List;
 
@@ -965,7 +965,7 @@
 
     if-ge v2, v4, :cond_37
 
-    .line 621
+    .line 641
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomItems:Ljava/util/List;
 
     invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -997,7 +997,7 @@
 
     goto :goto_13
 
-    .line 625
+    .line 645
     :cond_37
     sget-object p1, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1029,7 +1029,7 @@
 
     return v1
 
-    .line 631
+    .line 651
     :cond_5a
     invoke-direct {p0, v3}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->handleItemSelected(I)V
 
@@ -1798,12 +1798,12 @@
 .method private notifyZoomRatio(I)V
     .registers 2
 
-    .line 663
+    .line 683
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomListener:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$Listener;
 
     if-eqz p0, :cond_7
 
-    .line 664
+    .line 684
     invoke-interface {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$Listener;->onZoomRatioChanged(I)V
 
     :cond_7
@@ -1813,14 +1813,14 @@
 .method private onItemSelected(I)V
     .registers 6
 
-    .line 650
+    .line 670
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mSelectedIndex:I
 
     const/4 p1, 0x0
 
     move v0, p1
 
-    .line 651
+    .line 671
     :goto_4
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomItems:Ljava/util/List;
 
@@ -1832,7 +1832,7 @@
 
     if-ge v0, v1, :cond_23
 
-    .line 652
+    .line 672
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomItems:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1841,7 +1841,7 @@
 
     check-cast v1, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;
 
-    .line 653
+    .line 673
     iget v3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mSelectedIndex:I
 
     if-ne v3, v0, :cond_1a
@@ -1854,18 +1854,18 @@
     :goto_1b
     iput-boolean v2, v1, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mIsSelected:Z
 
-    .line 654
+    .line 674
     invoke-virtual {v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->reset()V
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_4
 
-    .line 656
+    .line 676
     :cond_23
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->playItemSwitchAnimator()V
 
-    .line 657
+    .line 677
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomItems:Ljava/util/List;
 
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mSelectedIndex:I
@@ -1878,10 +1878,10 @@
 
     iget p1, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mDefaultRatio:I
 
-    .line 658
+    .line 678
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->notifyZoomRatio(I)V
 
-    .line 659
+    .line 679
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mAccessHelper:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$AccessHelper;
 
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mSelectedIndex:I
@@ -1894,12 +1894,12 @@
 .method private playItemClickFeedbackAnimation()V
     .registers 2
 
-    .line 674
+    .line 694
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mItemClickFeedbackAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 675
+    .line 695
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mItemClickFeedbackAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
@@ -1910,12 +1910,12 @@
 .method private playItemSwitchAnimator()V
     .registers 2
 
-    .line 669
+    .line 689
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mItemSwitchAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 670
+    .line 690
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mItemSwitchAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
@@ -2442,7 +2442,7 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 6
+    .registers 9
 
     .line 562
     invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
@@ -2572,29 +2572,119 @@
 
     invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 585
+    .line 586
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-nez v0, :cond_b8
+
+    const/4 v0, -0x1
+
+    move v3, v0
+
+    move v2, v1
+
+    .line 588
+    :goto_80
+    iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomItems:Ljava/util/List;
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-ge v2, v4, :cond_a4
+
+    .line 589
+    iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomItems:Ljava/util/List;
+
+    invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;
+
+    iget-object v4, v4, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mBounds:Landroid/graphics/RectF;
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v5
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v6
+
+    invoke-virtual {v4, v5, v6}, Landroid/graphics/RectF;->contains(FF)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_a1
+
+    move v3, v2
+
+    :cond_a1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_80
+
+    :cond_a4
+    if-eq v3, v0, :cond_bf
+
+    .line 594
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomItems:Ljava/util/List;
+
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;
+
+    iget v0, v0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mDefaultRatio:I
+
+    .line 595
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomListener:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$Listener;
+
+    if-eqz v2, :cond_bf
+
+    .line 596
+    invoke-interface {v2, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$Listener;->onZoomPointBarTouchDown(I)V
+
+    goto :goto_bf
+
+    .line 600
+    :cond_b8
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomListener:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$Listener;
+
+    if-eqz v0, :cond_bf
+
+    .line 601
+    invoke-interface {v0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$Listener;->onZoomPointBarTouchDown(I)V
+
+    .line 605
+    :cond_bf
+    :goto_bf
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     const/4 v2, 0x1
 
-    if-eq v0, v2, :cond_85
+    if-eq v0, v2, :cond_cd
 
-    .line 586
+    .line 606
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
 
     const/4 v0, 0x3
 
-    if-ne p1, v0, :cond_87
+    if-ne p1, v0, :cond_cf
 
-    .line 587
-    :cond_85
+    .line 607
+    :cond_cd
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mIsScrolling:Z
 
-    :cond_87
+    :cond_cf
     return v2
 .end method
 
@@ -2956,7 +3046,7 @@
 .method public setFocalLengthBase(F)V
     .registers 2
 
-    .line 683
+    .line 703
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mFocalLengthBase:F
 
     return-void
@@ -2965,7 +3055,7 @@
 .method public setListener(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$Listener;)V
     .registers 2
 
-    .line 679
+    .line 699
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;->mZoomListener:Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$Listener;
 
     return-void

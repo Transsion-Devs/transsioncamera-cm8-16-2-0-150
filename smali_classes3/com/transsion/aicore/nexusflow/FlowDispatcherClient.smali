@@ -214,21 +214,21 @@
 
     iput-object p1, p0, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;->serviceCallbackExecutor:Ljava/util/concurrent/ExecutorService;
 
-    .line 259
+    .line 262
     new-instance p1, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient$b;
 
     invoke-direct {p1, p0}, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient$b;-><init>(Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;)V
 
     iput-object p1, p0, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;->conn:Lcom/transsion/aicore/nexusflow/FlowDispatcherClient$b;
 
-    .line 316
+    .line 319
     new-instance p1, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0}, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;)V
 
     iput-object p1, p0, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;->deathRecipient:Landroid/os/IBinder$DeathRecipient;
 
-    .line 321
+    .line 324
     new-instance p1, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient$d;
 
     invoke-direct {p1, p0}, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient$d;-><init>(Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;)V
@@ -245,7 +245,7 @@
 
     if-eqz p6, :cond_6
 
-    .line 322
+    .line 325
     const-string p2, "FlowDispatcherClient"
 
     :cond_6
@@ -264,7 +264,7 @@
 
     move-object p4, v0
 
-    .line 323
+    .line 326
     :cond_11
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;-><init>(Landroid/content/Context;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
 
@@ -474,8 +474,10 @@
     .line 10
     sget-object v2, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
 
+    .line 11
     iget-object p0, p0, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;->TAG:Ljava/lang/String;
 
+    .line 12
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -500,9 +502,10 @@
 
     move-result-object v0
 
+    .line 13
     invoke-virtual {v2, p0, v0}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 11
+    .line 17
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
@@ -1940,7 +1943,7 @@
     .line 20
     iget-object v3, p0, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;->TAG:Ljava/lang/String;
 
-    const-string v4, "2.0.0-202601161428-RELEASE"
+    const-string v4, "2.0.0-202601192240-RELEASE"
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1961,7 +1964,7 @@
     .line 21
     iget-object v3, p0, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;->TAG:Ljava/lang/String;
 
-    const-string v4, "2026-01-16T14:28:47Z"
+    const-string v4, "2026-01-19T22:43:24Z"
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -2422,7 +2425,7 @@
 
     if-eqz p1, :cond_63
 
-    .line 30
+    .line 33
     invoke-static {}, Lkotlinx/coroutines/Dispatchers;->getIO()Lkotlinx/coroutines/CoroutineDispatcher;
 
     move-result-object p1
@@ -2445,7 +2448,7 @@
 
     invoke-static/range {v7 .. v12}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
-    .line 33
+    .line 36
     iget-object p1, p0, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;->TAG:Ljava/lang/String;
 
     const-string v1, "Destroy task submitted to background thread."
@@ -2454,7 +2457,7 @@
 
     goto :goto_70
 
-    .line 36
+    .line 39
     :cond_63
     iget-object v1, p0, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;->TAG:Ljava/lang/String;
 
@@ -2468,10 +2471,10 @@
 
     invoke-static/range {v0 .. v5}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->w$default(Lcom/transsion/aicore/nexusflow/utils/NFLog;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
 
-    .line 37
+    .line 40
     invoke-interface {v6}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    .line 40
+    .line 43
     :goto_70
     iget-object p0, p0, Lcom/transsion/aicore/nexusflow/FlowDispatcherClient;->TAG:Ljava/lang/String;
 
@@ -2486,7 +2489,7 @@
 
     move-object p0, v0
 
-    .line 41
+    .line 44
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     throw p0

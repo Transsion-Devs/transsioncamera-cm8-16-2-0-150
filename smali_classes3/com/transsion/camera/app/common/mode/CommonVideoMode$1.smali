@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CommonVideoMode;)V
     .registers 2
 
-    .line 2155
+    .line 2165
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onSnapShot(Z)V
     .registers 5
 
-    .line 2158
+    .line 2168
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -69,7 +69,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2159
+    .line 2169
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iget-boolean v0, v0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mInTakingPicture:Z
@@ -81,14 +81,14 @@
     :cond_2b
     if-eqz p1, :cond_6f
 
-    .line 2163
+    .line 2173
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iget-object v0, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     if-nez v0, :cond_3b
 
-    .line 2165
+    .line 2175
     iget-object p0, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[onSnapShot] mCameraDeviceControl is null"
@@ -97,7 +97,7 @@
 
     return-void
 
-    .line 2168
+    .line 2178
     :cond_3b
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraMode;->getOrientation()I
 
@@ -113,7 +113,7 @@
 
     iput v1, p1, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mCaptureOrientation:I
 
-    .line 2169
+    .line 2179
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iget-object v1, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;
@@ -126,7 +126,7 @@
 
     invoke-virtual {v1, p1}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->onTakePicture(Lcom/transsion/camera/app/common/mode/CaptureInfo;)V
 
-    .line 2170
+    .line 2180
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mHandle:Landroid/os/Handler;
@@ -139,7 +139,7 @@
 
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2171
+    .line 2181
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->-$$Nest$fgetmPictureCallback(Lcom/transsion/camera/app/common/mode/CommonVideoMode;)Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;
@@ -148,7 +148,7 @@
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->videoSnapShot(Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;)V
 
-    .line 2172
+    .line 2182
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$1;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mInTakingPicture:Z

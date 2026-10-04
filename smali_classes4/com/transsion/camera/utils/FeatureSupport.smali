@@ -481,7 +481,7 @@
 
     sput-object v0, Lcom/transsion/camera/utils/FeatureSupport;->PLATFORM:Ljava/lang/String;
 
-    .line 176
+    .line 177
     const-string v0, "ro.build.characteristics"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -490,13 +490,13 @@
 
     sput-object v0, Lcom/transsion/camera/utils/FeatureSupport;->SYSTEM_CHARACTERISTICS:Ljava/lang/String;
 
-    .line 393
+    .line 394
     sput-boolean v3, Lcom/transsion/camera/utils/FeatureSupport;->sIsDeveloperMode:Z
 
-    .line 757
+    .line 758
     sput v2, Lcom/transsion/camera/utils/FeatureSupport;->sLongPressAiKeyAwakeAssistant:I
 
-    .line 795
+    .line 796
     sput-boolean v3, Lcom/transsion/camera/utils/FeatureSupport;->sIsDeveloperModeAtLaunch:Z
 
     return-void
@@ -505,7 +505,7 @@
 .method public static aiArtMuseumAIStylePreviewSkip()I
     .registers 2
 
-    .line 720
+    .line 721
     const-string v0, "debug.camera.ai_art_museum_preview_skip"
 
     const/4 v1, 0x2
@@ -520,7 +520,7 @@
 .method public static aiArtMuseumDumpPreviewShot()Z
     .registers 3
 
-    .line 724
+    .line 725
     const-string v0, "debug.camera.ai_art_museum_dump_preview_shot"
 
     const-string v1, "0"
@@ -529,7 +529,7 @@
 
     move-result-object v0
 
-    .line 725
+    .line 726
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -555,7 +555,7 @@
 .method public static aiArtMuseumPreviewDisable()Z
     .registers 3
 
-    .line 710
+    .line 711
     const-string v0, "debug.camera.ai_art_museum_preview_disable"
 
     const-string v1, "0"
@@ -564,7 +564,7 @@
 
     move-result-object v0
 
-    .line 711
+    .line 712
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -590,7 +590,7 @@
 .method public static aiArtMuseumStubPreview()Z
     .registers 3
 
-    .line 715
+    .line 716
     const-string v0, "debug.camera.ai_art_museum_stub_preview"
 
     const-string v1, "0"
@@ -599,7 +599,7 @@
 
     move-result-object v0
 
-    .line 716
+    .line 717
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -625,7 +625,7 @@
 .method public static aiForceSaveRequest()Z
     .registers 3
 
-    .line 697
+    .line 698
     const-string v0, "debug.camera.ai_force_save_request"
 
     const-string v1, "0"
@@ -634,7 +634,7 @@
 
     move-result-object v0
 
-    .line 698
+    .line 699
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -660,7 +660,7 @@
 .method public static aigcLimitEnable()Z
     .registers 2
 
-    .line 702
+    .line 703
     const-string v0, "debug.camera.aigc_limit_enable"
 
     const/4 v1, 0x1
@@ -675,7 +675,7 @@
 .method public static aigcStubService()Z
     .registers 2
 
-    .line 706
+    .line 707
     const-string v0, "debug.camera.aigc_stub_service"
 
     const/4 v1, 0x0
@@ -690,7 +690,7 @@
 .method public static checkDeveloperModeAtLaunch()V
     .registers 1
 
-    .line 801
+    .line 802
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isDeveloperMode()Z
 
     move-result v0
@@ -703,7 +703,7 @@
 .method public static deviceIsOnSale()Z
     .registers 4
 
-    .line 226
+    .line 227
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -722,7 +722,7 @@
 
     move-result v0
 
-    .line 227
+    .line 228
     sget-object v1, Lcom/transsion/camera/utils/FeatureSupport;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -747,7 +747,7 @@
 .method public static getAiRAwLiteBvDebug(I)I
     .registers 2
 
-    .line 250
+    .line 251
     const-string v0, "debug.camera.airaw_lite_bv_debug"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -760,7 +760,7 @@
 .method public static getAwbLockDebug(I)I
     .registers 2
 
-    .line 693
+    .line 694
     const-string v0, "debug.camera.awb_lock"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -773,7 +773,7 @@
 .method public static getBestMomentDetectResult()I
     .registers 4
 
-    .line 825
+    .line 826
     const-string v0, "debug.camera.bestMomentDetectResult"
 
     const/4 v1, -0x1
@@ -782,7 +782,7 @@
 
     move-result v0
 
-    .line 826
+    .line 827
     sget-object v1, Lcom/transsion/camera/utils/FeatureSupport;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -807,7 +807,7 @@
 .method public static getDbgSize(Ljava/lang/String;)Landroid/util/Size;
     .registers 5
 
-    .line 666
+    .line 667
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -818,7 +818,7 @@
 
     return-object v1
 
-    .line 670
+    .line 671
     :cond_8
     const-string v0, "x"
 
@@ -826,7 +826,7 @@
 
     move-result-object p0
 
-    .line 671
+    .line 672
     array-length v0, p0
 
     const/4 v2, 0x2
@@ -835,7 +835,7 @@
 
     const/4 v0, 0x0
 
-    .line 672
+    .line 673
     aget-object v0, p0, v0
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -844,14 +844,14 @@
 
     const/4 v1, 0x1
 
-    .line 673
+    .line 674
     aget-object p0, p0, v1
 
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
 
-    .line 674
+    .line 675
     sget-object v1, Lcom/transsion/camera/utils/FeatureSupport;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -876,14 +876,14 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 675
+    .line 676
     new-instance v1, Landroid/util/Size;
 
     invoke-direct {v1, v0, p0}, Landroid/util/Size;-><init>(II)V
 
     return-object v1
 
-    .line 677
+    .line 678
     :cond_44
     sget-object p0, Lcom/transsion/camera/utils/FeatureSupport;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -897,7 +897,7 @@
 .method public static getDebugTurboFusionMode()I
     .registers 2
 
-    .line 242
+    .line 243
     const-string v0, "debug.camera.turbo_fusion_mode"
 
     const/4 v1, -0x1
@@ -912,7 +912,7 @@
 .method private static getDefaultDataName(Landroid/content/Context;)Ljava/lang/String;
     .registers 2
 
-    .line 418
+    .line 419
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -937,7 +937,7 @@
 .method public static getDeferOnNextCapAfterJpeg(I)I
     .registers 2
 
-    .line 768
+    .line 769
     const-string v0, "debug.camera.deferOnNextcapAfterJpeg"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -950,7 +950,7 @@
 .method public static getDocModeDebugIntensity()Ljava/lang/String;
     .registers 2
 
-    .line 254
+    .line 255
     const-string v0, "debug.camera.doc_mode_intensity"
 
     const/4 v1, 0x0
@@ -965,7 +965,7 @@
 .method public static getEnableDumpFirstFrame(I)I
     .registers 2
 
-    .line 772
+    .line 773
     const-string v0, "debug.camera.enableDumpFirstFrame"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -978,7 +978,7 @@
 .method public static getFlashLimitDebug(I)I
     .registers 2
 
-    .line 266
+    .line 267
     const-string v0, "debug.camera.flash_limit_debug_value"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -991,7 +991,7 @@
 .method public static getFlashSnapBandingDebugValue()I
     .registers 2
 
-    .line 821
+    .line 822
     const-string v0, "debug.camera.flash_snap_banidng_value"
 
     const/4 v1, -0x1
@@ -1006,14 +1006,14 @@
 .method public static getFusionModeBVLimit()I
     .registers 2
 
-    .line 304
+    .line 305
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
 
     iget v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mFusionModeBvLimitValue:I
 
-    .line 305
+    .line 306
     const-string v1, "debug.camera.fusion_mode_bv_limit"
 
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -1026,14 +1026,14 @@
 .method public static getGroupCaptureFaceRatioThreshold(Ljava/lang/String;)F
     .registers 2
 
-    .line 743
+    .line 744
     const-string v0, "debug.camera.group_capture_face_ratio_threshold"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 744
+    .line 745
     invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result p0
@@ -1044,14 +1044,14 @@
 .method public static getGroupCaptureFaceYawThreshold(Ljava/lang/String;)F
     .registers 2
 
-    .line 748
+    .line 749
     const-string v0, "debug.camera.group_capture_face_yaw_threshold"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 749
+    .line 750
     invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result p0
@@ -1062,14 +1062,14 @@
 .method public static getGroupCaptureLargeFaceRatioThreshold(Ljava/lang/String;)F
     .registers 2
 
-    .line 733
+    .line 734
     const-string v0, "debug.camera.group_capture_large_face_ratio_threshold"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 734
+    .line 735
     invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result p0
@@ -1080,14 +1080,14 @@
 .method public static getGroupCaptureLargeFaceYawThreshold(Ljava/lang/String;)F
     .registers 2
 
-    .line 738
+    .line 739
     const-string v0, "debug.camera.group_capture_large_face_yaw_threshold"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 739
+    .line 740
     invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result p0
@@ -1098,7 +1098,7 @@
 .method public static getGroupCaptureSteadyFaceResultThreshold(I)I
     .registers 2
 
-    .line 753
+    .line 754
     const-string v0, "debug.camera.group_capture_steady_face_result_threshold"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -1111,7 +1111,7 @@
 .method public static getMarket()Ljava/lang/String;
     .registers 3
 
-    .line 515
+    .line 516
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x24
@@ -1120,7 +1120,7 @@
 
     if-lt v0, v1, :cond_f
 
-    .line 516
+    .line 517
     const-string v0, "ro.tr_build.sw_market"
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -1129,7 +1129,7 @@
 
     return-object v0
 
-    .line 518
+    .line 519
     :cond_f
     const-string v0, "ro.tran.sw.market"
 
@@ -1143,7 +1143,7 @@
 .method public static getMaxGroupCaptureCount(I)I
     .registers 2
 
-    .line 729
+    .line 730
     const-string v0, "debug.camera.max_group_capture_count"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -1156,7 +1156,7 @@
 .method public static getMotionCaptureBVThreshold()I
     .registers 2
 
-    .line 788
+    .line 789
     const-string v0, "debug.camera.motion_capture_bv"
 
     const/16 v1, -0x64
@@ -1171,7 +1171,7 @@
 .method public static getOfflineBurstCaptureNumber()I
     .registers 2
 
-    .line 792
+    .line 793
     const-string v0, "debug.camera.burst_capture_number"
 
     const/4 v1, 0x1
@@ -1186,7 +1186,7 @@
 .method public static getPostALgoBvDebug(I)I
     .registers 2
 
-    .line 246
+    .line 247
     const-string v0, "debug.camera.post_algo_bv"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -1199,14 +1199,14 @@
 .method public static getScreenShotThumbCropSize(Landroid/content/Context;)I
     .registers 2
 
-    .line 299
+    .line 300
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
 
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mScreenShotThumbnailCropSize:I
 
-    .line 300
+    .line 301
     const-string v0, "debug.camera.screen_shot_thumb_crop"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -1219,7 +1219,7 @@
 .method public static getShot2ShotPolicyPlatform()I
     .registers 2
 
-    .line 651
+    .line 652
     const-string v0, "ro.camera.photoscape.disable"
 
     const/4 v1, 0x0
@@ -1230,7 +1230,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 652
+    .line 653
     sget-object v0, Lcom/transsion/camera/utils/FeatureSupport;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "getShot2ShotPolicyPlatform: disable skip policy by ro.camera.photoscape.disable=1"
@@ -1241,7 +1241,7 @@
 
     return v0
 
-    .line 656
+    .line 657
     :cond_12
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -1251,7 +1251,7 @@
 
     move-result v0
 
-    .line 655
+    .line 656
     const-string v1, "debug.camera.Shot2Shot_Policy_Platform"
 
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -1264,7 +1264,7 @@
 .method public static getSuperResolutionDebug(I)I
     .registers 2
 
-    .line 262
+    .line 263
     const-string v0, "debug.camera.super_resolution_value"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -1277,7 +1277,7 @@
 .method public static getSupportFoldUIType()I
     .registers 1
 
-    .line 503
+    .line 504
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -1290,7 +1290,7 @@
 .method public static getSupportFoldUIType(Landroid/content/Context;)I
     .registers 1
 
-    .line 499
+    .line 500
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -1303,7 +1303,7 @@
 .method public static getTaps2Mode()I
     .registers 5
 
-    .line 854
+    .line 855
     const-string v0, "debug.camera.tzservice.mode"
 
     const/4 v1, -0x1
@@ -1312,14 +1312,14 @@
 
     move-result v0
 
-    .line 855
+    .line 856
     const-string v2, "ro.tr_camera.tzservice.mode"
 
     invoke-static {v2, v1}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
-    .line 856
+    .line 857
     sget-object v2, Lcom/transsion/camera/utils/FeatureSupport;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1359,7 +1359,7 @@
 .method public static getVideoSuperNightBvDebug(I)I
     .registers 2
 
-    .line 258
+    .line 259
     const-string v0, "debug.camera.video_super_night_bv"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -1372,7 +1372,7 @@
 .method public static initDeveloperMode(Landroid/content/Context;)V
     .registers 3
 
-    .line 395
+    .line 396
     invoke-static {p0}, Lcom/transsion/camera/utils/FeatureSupport;->getDefaultDataName(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object p0
@@ -1381,7 +1381,7 @@
 
     move-result-object p0
 
-    .line 396
+    .line 397
     const-string v0, "key_developer_mode"
 
     const-string v1, "off"
@@ -1390,7 +1390,7 @@
 
     move-result-object p0
 
-    .line 397
+    .line 398
     const-string v0, "on"
 
     invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1405,7 +1405,7 @@
 .method public static isAiKeySupportBurst()Z
     .registers 3
 
-    .line 759
+    .line 760
     sget v0, Lcom/transsion/camera/utils/FeatureSupport;->sLongPressAiKeyAwakeAssistant:I
 
     const/4 v1, -0x1
@@ -1414,17 +1414,17 @@
 
     if-ne v0, v1, :cond_e
 
-    .line 761
+    .line 762
     const-string v0, "ro.product.smart_button_awake_assistant_in_camera.support"
 
-    .line 762
+    .line 763
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
     sput v0, Lcom/transsion/camera/utils/FeatureSupport;->sLongPressAiKeyAwakeAssistant:I
 
-    .line 764
+    .line 765
     :cond_e
     sget v0, Lcom/transsion/camera/utils/FeatureSupport;->sLongPressAiKeyAwakeAssistant:I
 
@@ -1441,7 +1441,7 @@
 .method public static isAsdHitShow()Z
     .registers 2
 
-    .line 319
+    .line 320
     const-string v0, "debug.asd.hint.show"
 
     const-string v1, "0"
@@ -1450,7 +1450,7 @@
 
     move-result-object v0
 
-    .line 320
+    .line 321
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1463,7 +1463,7 @@
 .method public static isAutoMacroSwitchLogSupport()Z
     .registers 2
 
-    .line 567
+    .line 568
     const-string v0, "debug.camera.auto_macro_switch_log"
 
     const-string v1, "0"
@@ -1472,7 +1472,7 @@
 
     move-result-object v0
 
-    .line 568
+    .line 569
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1485,7 +1485,7 @@
 .method public static isContinuousShotSupport(Landroid/content/Context;)Z
     .registers 9
 
-    .line 187
+    .line 188
     const-string p0, "ro.tran_cam_cs_support"
 
     const/4 v0, 0x0
@@ -1494,19 +1494,19 @@
 
     move-result p0
 
-    .line 188
+    .line 189
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v1
 
     iget-boolean v1, v1, Lcom/transsion/camera/utils/CustomConfigUtil;->mContinuousShotSupport:Z
 
-    .line 190
+    .line 191
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 191
+    .line 192
     const-string v3, "prop: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1525,7 +1525,7 @@
 
     if-ne p0, v3, :cond_53
 
-    .line 193
+    .line 194
     :cond_27
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -1533,7 +1533,7 @@
 
     iget p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mContinuousShotSupportDependRam:I
 
-    .line 194
+    .line 195
     const-string v1, ", configDependRam: "
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1551,13 +1551,13 @@
 
     goto :goto_53
 
-    .line 198
+    .line 199
     :cond_3e
     invoke-static {}, Lcom/transsion/camera/utils/MemoryUtils;->getTotalMemory()J
 
     move-result-wide v4
 
-    .line 199
+    .line 200
     const-string v6, ", maxMemory: "
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1574,7 +1574,7 @@
 
     goto :goto_3c
 
-    .line 203
+    .line 204
     :cond_53
     :goto_53
     sget-object p0, Lcom/transsion/camera/utils/FeatureSupport;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1607,7 +1607,7 @@
 .method public static isDeveloperMode()Z
     .registers 1
 
-    .line 414
+    .line 415
     sget-boolean v0, Lcom/transsion/camera/utils/FeatureSupport;->sIsDeveloperMode:Z
 
     return v0
@@ -1616,7 +1616,7 @@
 .method public static isDocModeDebugSupport()Z
     .registers 2
 
-    .line 237
+    .line 238
     const-string v0, "debug.camera.doc_mode"
 
     const-string v1, "0"
@@ -1625,7 +1625,7 @@
 
     move-result-object v0
 
-    .line 238
+    .line 239
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1638,7 +1638,7 @@
 .method public static isDoodle()Z
     .registers 2
 
-    .line 511
+    .line 512
     const-string v0, "sys.transsion.nvcolor"
 
     const-string v1, ""
@@ -1659,7 +1659,7 @@
 .method public static isDumpToleranceSupport()Z
     .registers 3
 
-    .line 342
+    .line 343
     const-string v0, "cam.icap_dump_raw"
 
     const/4 v1, 0x0
@@ -1681,7 +1681,7 @@
 .method public static isDumpVoiceSupport()Z
     .registers 2
 
-    .line 309
+    .line 310
     const-string v0, "debug.camera.dump_voice"
 
     const-string v1, "0"
@@ -1690,7 +1690,7 @@
 
     move-result-object v0
 
-    .line 310
+    .line 311
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1703,7 +1703,7 @@
 .method public static isEnhanceScreenBrightnessSupport()Z
     .registers 2
 
-    .line 232
+    .line 233
     const-string v0, "debug.camera.enhance_screen_brightness"
 
     const-string v1, "1"
@@ -1712,7 +1712,7 @@
 
     move-result-object v0
 
-    .line 233
+    .line 234
     const-string v1, "0"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1727,7 +1727,7 @@
 .method public static isExposureTouchLineSupport()Z
     .registers 2
 
-    .line 646
+    .line 647
     const-string v0, "debug.camera.exposure_touch_line_support"
 
     const-string v1, "0"
@@ -1736,7 +1736,7 @@
 
     move-result-object v0
 
-    .line 647
+    .line 648
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1749,7 +1749,7 @@
 .method public static isFansSupport()Z
     .registers 4
 
-    .line 213
+    .line 214
     const-string v0, "persist.sys.fans.support"
 
     const-string v1, "0"
@@ -1764,7 +1764,7 @@
 
     move-result v0
 
-    .line 214
+    .line 215
     sget-object v1, Lcom/transsion/camera/utils/FeatureSupport;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1786,10 +1786,32 @@
     return v0
 .end method
 
+.method public static isFlashCalibrationOn()Z
+    .registers 3
+
+    .line 866
+    const-string v0, "vendor.flash_calibration"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_b
+
+    return v2
+
+    :cond_b
+    return v1
+.end method
+
 .method public static isFlashSnapBirdCaptureTimeLimited()Z
     .registers 2
 
-    .line 849
+    .line 850
     const-string v0, "persist.camera.debug_flash_snap_bird_time_limit_enable"
 
     const-string v1, "false"
@@ -1798,7 +1820,7 @@
 
     move-result-object v0
 
-    .line 850
+    .line 851
     const-string v1, "true"
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1811,7 +1833,7 @@
 .method public static isForceCloseAIMoonDetectSupport()Z
     .registers 2
 
-    .line 683
+    .line 684
     const-string v0, "debug.camera.close_ai_moon_detect"
 
     const-string v1, "0"
@@ -1820,7 +1842,7 @@
 
     move-result-object v0
 
-    .line 684
+    .line 685
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1833,7 +1855,7 @@
 .method public static isForceCloseAIRawLiteZSL()Z
     .registers 2
 
-    .line 688
+    .line 689
     const-string v0, "debug.camera.close_ai_raw_lite_zsl"
 
     const-string v1, "0"
@@ -1842,7 +1864,7 @@
 
     move-result-object v0
 
-    .line 689
+    .line 690
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1855,7 +1877,7 @@
 .method public static isForceCloseASDDetectSupport()Z
     .registers 2
 
-    .line 602
+    .line 603
     const-string v0, "debug.camera.close_asd_detect"
 
     const-string v1, "0"
@@ -1864,7 +1886,7 @@
 
     move-result-object v0
 
-    .line 603
+    .line 604
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1877,7 +1899,7 @@
 .method public static isForceCloseOfflineJNISupport()Z
     .registers 2
 
-    .line 626
+    .line 627
     const-string v0, "debug.camera.force_close_offlinejni"
 
     const-string v1, "0"
@@ -1886,7 +1908,7 @@
 
     move-result-object v0
 
-    .line 627
+    .line 628
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1899,7 +1921,7 @@
 .method public static isForceCloseP3Support()Z
     .registers 2
 
-    .line 636
+    .line 637
     const-string v0, "debug.camera.force_close_display_p3"
 
     const-string v1, "0"
@@ -1908,7 +1930,7 @@
 
     move-result-object v0
 
-    .line 637
+    .line 638
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1921,7 +1943,7 @@
 .method public static isForceCloseSATSupport()Z
     .registers 2
 
-    .line 620
+    .line 621
     const-string v0, "debug.camera.force_close_sat"
 
     const-string v1, "0"
@@ -1930,7 +1952,7 @@
 
     move-result-object v0
 
-    .line 621
+    .line 622
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1943,7 +1965,7 @@
 .method public static isForceCloseSkinOptimizationSupport()Z
     .registers 2
 
-    .line 607
+    .line 608
     const-string v0, "debug.camera.skin_optimization_debug_value"
 
     const-string v1, "0"
@@ -1952,7 +1974,7 @@
 
     move-result-object v0
 
-    .line 608
+    .line 609
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1965,7 +1987,7 @@
 .method public static isForceTaintDetectRemove()Z
     .registers 2
 
-    .line 562
+    .line 563
     const-string v0, "debug.camera.taint_detection_remove_surface"
 
     const-string v1, "0"
@@ -1974,7 +1996,7 @@
 
     move-result-object v0
 
-    .line 563
+    .line 564
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1987,7 +2009,7 @@
 .method public static isForceTaintDetectSupport()Z
     .registers 2
 
-    .line 552
+    .line 553
     const-string v0, "debug.camera.taint_detection"
 
     const-string v1, "0"
@@ -1996,7 +2018,7 @@
 
     move-result-object v0
 
-    .line 553
+    .line 554
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2009,12 +2031,12 @@
 .method public static isForceZoom10XForVideo()Z
     .registers 2
 
-    .line 381
+    .line 382
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
     if-eqz v0, :cond_b
 
-    .line 383
+    .line 384
     const-string v1, "TECNO-CN"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -2032,10 +2054,10 @@
 .method public static isFovCropSupport()Z
     .registers 5
 
-    .line 351
+    .line 352
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    .line 352
+    .line 353
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -2270,7 +2292,7 @@
 .method public static isGestureDetectDebugSupport()Z
     .registers 2
 
-    .line 547
+    .line 548
     const-string v0, "debug.camera.gesture_detect"
 
     const-string v1, "0"
@@ -2279,7 +2301,7 @@
 
     move-result-object v0
 
-    .line 548
+    .line 549
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2292,7 +2314,7 @@
 .method public static isIcapDumpSupport()Z
     .registers 3
 
-    .line 346
+    .line 347
     const-string v0, "persist.sys.cam.icap.shot2sho2.disable"
 
     const/4 v1, 0x0
@@ -2314,7 +2336,7 @@
 .method public static isInRuMarket()Z
     .registers 2
 
-    .line 531
+    .line 528
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getMarket()Ljava/lang/String;
 
     move-result-object v0
@@ -2331,7 +2353,7 @@
 .method public static isInTrOrRuMarket()Z
     .registers 2
 
-    .line 526
+    .line 523
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getMarket()Ljava/lang/String;
 
     move-result-object v0
@@ -2344,7 +2366,7 @@
 
     if-nez v0, :cond_1b
 
-    .line 527
+    .line 524
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getMarket()Ljava/lang/String;
 
     move-result-object v0
@@ -2374,7 +2396,7 @@
 .method public static isLaunchWithDeveloperMode()Z
     .registers 1
 
-    .line 805
+    .line 806
     sget-boolean v0, Lcom/transsion/camera/utils/FeatureSupport;->sIsDeveloperModeAtLaunch:Z
 
     return v0
@@ -2383,7 +2405,7 @@
 .method public static isLinearMotorVibrate()Z
     .registers 2
 
-    .line 592
+    .line 593
     const-string v0, "ro.tr_vibrate.vibrate10.feature.support"
 
     const/4 v1, 0x0
@@ -2398,10 +2420,10 @@
 .method public static isLowPlatform()Z
     .registers 2
 
-    .line 371
+    .line 372
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    .line 372
+    .line 373
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const-string v1, "itel-A632WM"
@@ -2425,7 +2447,7 @@
 .method public static isMtkPlatform()Z
     .registers 2
 
-    .line 539
+    .line 536
     sget-object v0, Lcom/transsion/camera/utils/FeatureSupport;->PLATFORM:Ljava/lang/String;
 
     const-string v1, "mt"
@@ -2440,8 +2462,16 @@
 .method public static isNeedSendBroadcastToNfc()Z
     .registers 2
 
-    .line 522
+    .line 544
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v1, "TECNO CN6c"
+
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_15
 
     const-string v1, "TECNO KO5"
 
@@ -2449,13 +2479,26 @@
 
     move-result v0
 
+    if-eqz v0, :cond_13
+
+    goto :goto_15
+
+    :cond_13
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_15
+    :goto_15
+    const/4 v0, 0x1
+
     return v0
 .end method
 
 .method public static isOnlySupportTBHoverUI()Z
     .registers 2
 
-    .line 489
+    .line 490
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getSupportFoldUIType()I
 
     move-result v0
@@ -2477,7 +2520,7 @@
 .method public static isOnlySupportTBHoverUI(Landroid/content/Context;)Z
     .registers 1
 
-    .line 485
+    .line 486
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI()Z
 
     move-result p0
@@ -2488,7 +2531,7 @@
 .method public static isOpenTaintDumpSupport()Z
     .registers 2
 
-    .line 572
+    .line 573
     const-string v0, "debug.camera.taint_dump"
 
     const-string v1, "0"
@@ -2497,7 +2540,7 @@
 
     move-result-object v0
 
-    .line 573
+    .line 574
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2510,7 +2553,7 @@
 .method public static isQrCodeDebugSupport()Z
     .registers 2
 
-    .line 641
+    .line 642
     const-string v0, "debug.camera.qrcode_recognize"
 
     const-string v1, "0"
@@ -2519,7 +2562,7 @@
 
     move-result-object v0
 
-    .line 642
+    .line 643
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2532,7 +2575,7 @@
 .method public static isQuickCaptureSupport()Z
     .registers 2
 
-    .line 294
+    .line 295
     const-string v0, "debug.camera.quick_capture_support"
 
     const-string v1, "1"
@@ -2541,7 +2584,7 @@
 
     move-result-object v0
 
-    .line 295
+    .line 296
     const-string v1, "0"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2556,7 +2599,7 @@
 .method public static isRaw10OfflineJNISupport()Z
     .registers 2
 
-    .line 631
+    .line 632
     const-string v0, "debug.camera.raw10_offlinejni"
 
     const-string v1, "1"
@@ -2565,7 +2608,7 @@
 
     move-result-object v0
 
-    .line 632
+    .line 633
     const-string v1, "0"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2580,7 +2623,7 @@
 .method public static isScreenShotThumbSupport()Z
     .registers 2
 
-    .line 284
+    .line 285
     const-string v0, "debug.camera.screen_shot_thumb_support"
 
     const-string v1, "1"
@@ -2589,7 +2632,7 @@
 
     move-result-object v0
 
-    .line 285
+    .line 286
     const-string v1, "0"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2604,7 +2647,7 @@
 .method public static isSellingPointSupport()Z
     .registers 2
 
-    .line 274
+    .line 275
     const-string v0, "debug.camera.selling_point_support"
 
     const-string v1, "1"
@@ -2613,7 +2656,7 @@
 
     move-result-object v0
 
-    .line 275
+    .line 276
     const-string v1, "0"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2628,7 +2671,7 @@
 .method public static isSleepActivitySupport()Z
     .registers 2
 
-    .line 270
+    .line 271
     const-string v0, "debug.camera.sleep_activity_support"
 
     const-string v1, "1"
@@ -2637,7 +2680,7 @@
 
     move-result-object v0
 
-    .line 271
+    .line 272
     const-string v1, "0"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2652,7 +2695,7 @@
 .method public static isSmartFocusDebugSupport()Z
     .registers 2
 
-    .line 597
+    .line 598
     const-string v0, "debug.camera.smart_focus_detection"
 
     const-string v1, "0"
@@ -2661,7 +2704,7 @@
 
     move-result-object v0
 
-    .line 598
+    .line 599
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2674,7 +2717,7 @@
 .method public static isSprdDumpRawSupport()Z
     .registers 3
 
-    .line 338
+    .line 339
     const-string v0, "sprd_dump_raw_support"
 
     const/4 v1, 0x0
@@ -2696,7 +2739,7 @@
 .method public static isSprdPlatform()Z
     .registers 2
 
-    .line 535
+    .line 532
     sget-object v0, Lcom/transsion/camera/utils/FeatureSupport;->PLATFORM:Ljava/lang/String;
 
     const-string v1, "ums"
@@ -2732,7 +2775,7 @@
 .method public static isSupportColumnOrBoth()Z
     .registers 3
 
-    .line 493
+    .line 494
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getSupportFoldUIType()I
 
     move-result v0
@@ -2741,7 +2784,7 @@
 
     if-eq v0, v1, :cond_11
 
-    .line 494
+    .line 495
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getSupportFoldUIType()I
 
     move-result v0
@@ -2765,7 +2808,7 @@
 .method public static isSupportFoldUI()Z
     .registers 1
 
-    .line 471
+    .line 472
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getSupportFoldUIType()I
 
     move-result v0
@@ -2785,7 +2828,7 @@
 .method public static isSupportFoldUI(Landroid/content/Context;)Z
     .registers 1
 
-    .line 467
+    .line 468
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportFoldUI()Z
 
     move-result p0
@@ -2796,7 +2839,7 @@
 .method public static isSupportGenderDetection()Z
     .registers 2
 
-    .line 557
+    .line 558
     const-string v0, "debug.camera.force_show_gender_faceinfo"
 
     const-string v1, "0"
@@ -2805,7 +2848,7 @@
 
     move-result-object v0
 
-    .line 558
+    .line 559
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -2818,7 +2861,7 @@
 .method public static isSupportImageryGuideDebugEnable()Z
     .registers 3
 
-    .line 831
+    .line 832
     const-string v0, "debug.camera.imagery_guide_debug_url_enable"
 
     const-string v1, "0"
@@ -2827,7 +2870,7 @@
 
     move-result-object v0
 
-    .line 832
+    .line 833
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -2853,7 +2896,7 @@
 .method public static isSupportPortraitArchitecture(Landroid/content/Context;)Z
     .registers 1
 
-    .line 430
+    .line 431
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -2866,14 +2909,14 @@
 .method public static isSupportProcessRaw()Z
     .registers 4
 
-    .line 814
+    .line 815
     new-instance v0, Ljava/io/File;
 
     const-string v1, "/sdcard/cameradebug/motioncapture_support_process_raw"
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 815
+    .line 816
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v1
@@ -2893,7 +2936,7 @@
     :cond_15
     const/4 v0, 0x0
 
-    .line 816
+    .line 817
     :goto_16
     sget-object v1, Lcom/transsion/camera/utils/FeatureSupport;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2919,7 +2962,7 @@
 .method public static isSupportRecordingEffect()Z
     .registers 1
 
-    .line 434
+    .line 435
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -2932,7 +2975,7 @@
 .method public static isSupportSysKOMEnable()Z
     .registers 2
 
-    .line 836
+    .line 837
     const-string v0, "sys.telephony.kom.enable"
 
     const-string v1, "0"
@@ -2941,7 +2984,7 @@
 
     move-result-object v0
 
-    .line 837
+    .line 838
     const-string v1, "1"
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -2954,7 +2997,7 @@
 .method public static isSupportTranVibrate()Z
     .registers 2
 
-    .line 587
+    .line 588
     const-string v0, "ro.tr_vibrate.vibrate20.feature.support"
 
     const/4 v1, 0x0
@@ -2969,7 +3012,7 @@
 .method public static isSupportVibrate(Landroid/content/Context;)Z
     .registers 3
 
-    .line 577
+    .line 578
     const-string v0, "is_open_vib3"
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -2980,7 +3023,7 @@
 
     move-result p0
 
-    .line 578
+    .line 579
     const-string v0, "ro.tr_vibrate.vibrate30.feature.support"
 
     const/4 v1, 0x0
@@ -3004,7 +3047,7 @@
 .method public static isSystemBacklightV2()Z
     .registers 3
 
-    .line 614
+    .line 615
     const-string v0, "ro.transsion.backlight.opt.v2.override.support"
 
     const/4 v1, 0x0
@@ -3017,7 +3060,7 @@
 
     if-eq v0, v2, :cond_14
 
-    .line 615
+    .line 616
     const-string v0, "ro.tr_light.multi.scene.backlight.feature.support"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
@@ -3039,7 +3082,7 @@
 .method public static isTabletDevice()Z
     .registers 2
 
-    .line 845
+    .line 846
     sget-object v0, Lcom/transsion/camera/utils/FeatureSupport;->SYSTEM_CHARACTERISTICS:Ljava/lang/String;
 
     const-string v1, "tablet"
@@ -3054,7 +3097,7 @@
 .method public static isUserVersion()Z
     .registers 3
 
-    .line 333
+    .line 334
     sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
     const-string v1, "user"
@@ -3069,7 +3112,7 @@
 
     const-string v0, "ro.vendor.tran.userroot"
 
-    .line 334
+    .line 335
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/SystemProperties;->getInt(Ljava/lang/String;I)I
 
     move-result v0
@@ -3095,7 +3138,7 @@
 .method public static isVibrateWhenCloseTouch(Landroid/content/Context;)Z
     .registers 3
 
-    .line 583
+    .line 584
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p0
@@ -3121,7 +3164,7 @@
 .method public static isVideoHDRDebugSupport()Z
     .registers 3
 
-    .line 329
+    .line 330
     const-string v0, "camera.livehdr.debug"
 
     const/4 v1, 0x0
@@ -3143,7 +3186,7 @@
 .method public static isVlogSupportHardwareDecode()Z
     .registers 2
 
-    .line 661
+    .line 662
     const-string v0, "debug.vlog_support_hardware_decode"
 
     const-string v1, "1"
@@ -3152,7 +3195,7 @@
 
     move-result-object v0
 
-    .line 662
+    .line 663
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -3163,7 +3206,7 @@
 .method public static setDumpFirstFrame(Ljava/lang/String;)V
     .registers 2
 
-    .line 781
+    .line 782
     :try_start_0
     const-string v0, "vendor.debug.camera.dumpFirstFrame"
 
@@ -3180,7 +3223,7 @@
 
     if-eqz p0, :cond_5
 
-    .line 841
+    .line 842
     const-string p0, "1"
 
     goto :goto_7
@@ -3199,7 +3242,7 @@
 .method public static shot2ShotMaxCountForHDR()I
     .registers 2
 
-    .line 442
+    .line 443
     const-string v0, "debug.camera.shot2ShotMaxCountForHDR"
 
     const/4 v1, -0x1
@@ -3214,7 +3257,7 @@
 .method public static shot2ShotMaxCountForLLHDR()I
     .registers 2
 
-    .line 446
+    .line 447
     const-string v0, "debug.camera.shot2ShotMaxCountForLLHDR"
 
     const/4 v1, -0x1
@@ -3229,7 +3272,7 @@
 .method public static shot2ShotMaxCountForMiddleNight()I
     .registers 2
 
-    .line 458
+    .line 459
     const-string v0, "debug.camera.shot2ShotMaxCountForMiddleNight"
 
     const/4 v1, -0x1
@@ -3244,7 +3287,7 @@
 .method public static shot2ShotMaxCountForNightLight()I
     .registers 2
 
-    .line 450
+    .line 451
     const-string v0, "debug.camera.shot2ShotMaxCountForNightLight"
 
     const/4 v1, -0x1
@@ -3259,7 +3302,7 @@
 .method public static shot2ShotMaxCountForSuperResolution()I
     .registers 2
 
-    .line 462
+    .line 463
     const-string v0, "debug.camera.shot2ShotMaxCountForSuperResolution"
 
     const/4 v1, -0x1
@@ -3274,7 +3317,7 @@
 .method public static shot2ShotMaxCountForTranNight()I
     .registers 2
 
-    .line 454
+    .line 455
     const-string v0, "debug.camera.shot2ShotMaxCountForTranNight"
 
     const/4 v1, -0x1
@@ -3289,7 +3332,7 @@
 .method public static shot2ShotPolicy()I
     .registers 2
 
-    .line 438
+    .line 439
     const-string v0, "debug.camera.shot2ShotPolicy"
 
     const/4 v1, -0x1
@@ -3304,7 +3347,7 @@
 .method public static shouldForceConvertNV21()Z
     .registers 3
 
-    .line 389
+    .line 390
     sget-object v0, Lcom/transsion/camera/utils/FeatureSupport;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3325,7 +3368,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 390
+    .line 391
     const-string v0, "mt6580"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -3338,7 +3381,7 @@
 .method public static shouldHideDeviceInfo()Z
     .registers 2
 
-    .line 219
+    .line 220
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -3353,7 +3396,7 @@
 
     return v1
 
-    .line 222
+    .line 223
     :cond_c
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isFansSupport()Z
 
@@ -3378,18 +3421,18 @@
 .method public static updateDeveloperMode(Landroid/content/Context;Z)V
     .registers 3
 
-    .line 401
+    .line 402
     sget-boolean v0, Lcom/transsion/camera/utils/FeatureSupport;->sIsDeveloperMode:Z
 
     if-ne v0, p1, :cond_5
 
     return-void
 
-    .line 404
+    .line 405
     :cond_5
     sput-boolean p1, Lcom/transsion/camera/utils/FeatureSupport;->sIsDeveloperMode:Z
 
-    .line 405
+    .line 406
     invoke-static {p0}, Lcom/transsion/camera/utils/FeatureSupport;->getDefaultDataName(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object p0
@@ -3398,19 +3441,19 @@
 
     move-result-object p0
 
-    .line 406
+    .line 407
     const-string v0, "key_developer_mode"
 
     if-eqz p1, :cond_19
 
-    .line 407
+    .line 408
     const-string p1, "on"
 
     invoke-virtual {p0, v0, p1}, Lcom/tencent/mmkv/MMKV;->encode(Ljava/lang/String;Ljava/lang/String;)Z
 
     return-void
 
-    .line 409
+    .line 410
     :cond_19
     invoke-virtual {p0, v0}, Lcom/tencent/mmkv/MMKV;->removeValueForKey(Ljava/lang/String;)V
 
@@ -3420,7 +3463,7 @@
 .method public static useHorizontalPopupStyle()Z
     .registers 1
 
-    .line 422
+    .line 423
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0

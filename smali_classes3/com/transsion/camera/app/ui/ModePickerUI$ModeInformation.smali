@@ -219,15 +219,6 @@
     return-void
 .end method
 
-.method static bridge synthetic -$$Nest$mupdateModeListAndDefaultMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 5
-
-    .line 0
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->updateModeListAndDefaultMode(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;I)V
-
-    return-void
-.end method
-
 .method static bridge synthetic -$$Nest$mvalidModeList(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Z
     .registers 1
 
@@ -242,12 +233,12 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/ModePickerUI;I)V
     .registers 3
 
-    .line 2714
+    .line 2504
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2715
+    .line 2505
     iput p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->MAX_MODES_NUMBER_IN_TAB:I
 
     return-void
@@ -256,7 +247,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/transsion/camera/app/mode/ModeOrderProvider;)V
     .registers 4
 
-    .line 2719
+    .line 2509
     invoke-virtual {p2}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getConfig()Lcom/transsion/camera/app/mode/ModePickerConfig;
 
     move-result-object v0
@@ -267,7 +258,7 @@
 
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;I)V
 
-    .line 2720
+    .line 2510
     invoke-virtual {p2}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getConfig()Lcom/transsion/camera/app/mode/ModePickerConfig;
 
     move-result-object p1
@@ -284,7 +275,7 @@
 .method private currentIsTabLayoutMode(I)V
     .registers 5
 
-    .line 2813
+    .line 2603
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmModeOrderProvider(Lcom/transsion/camera/app/ui/ModePickerUI;)Lcom/transsion/camera/app/mode/ModeOrderProvider;
@@ -305,7 +296,7 @@
 
     if-eqz v0, :cond_26
 
-    .line 2814
+    .line 2604
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmModeOrderProvider(Lcom/transsion/camera/app/ui/ModePickerUI;)Lcom/transsion/camera/app/mode/ModeOrderProvider;
@@ -329,7 +320,7 @@
 
     return-void
 
-    .line 2816
+    .line 2606
     :cond_26
     iget v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->MAX_MODES_NUMBER_IN_TAB:I
 
@@ -346,7 +337,7 @@
 .method private currentIsTabLayoutMode()Z
     .registers 1
 
-    .line 2821
+    .line 2611
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mCurrentIsTabLayoutMode:Z
 
     return p0
@@ -355,7 +346,7 @@
 .method private currentModeFeatureName()Ljava/lang/String;
     .registers 1
 
-    .line 2852
+    .line 2642
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mCurrentModeItem:Lcom/transsion/camera/app/common/FeatureResource;
 
     if-nez p0, :cond_6
@@ -364,7 +355,7 @@
 
     return-object p0
 
-    .line 2855
+    .line 2645
     :cond_6
     iget-object p0, p0, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
@@ -374,7 +365,7 @@
 .method private currentModeIndexInTabLayout()I
     .registers 1
 
-    .line 2825
+    .line 2615
     iget p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mCurrentModeIndexInTabLayout:I
 
     return p0
@@ -383,7 +374,7 @@
 .method private currentModeShowName()Ljava/lang/String;
     .registers 1
 
-    .line 2844
+    .line 2634
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mCurrentModeItem:Lcom/transsion/camera/app/common/FeatureResource;
 
     if-nez p0, :cond_6
@@ -392,7 +383,7 @@
 
     return-object p0
 
-    .line 2847
+    .line 2637
     :cond_6
     iget-object p0, p0, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureTitle:Ljava/lang/String;
 
@@ -402,7 +393,7 @@
 .method private defaultSelectedMode(Lcom/transsion/camera/app/common/FeatureResource;Z)Z
     .registers 3
 
-    .line 2753
+    .line 2543
     iget-object p1, p1, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
     if-eqz p2, :cond_7
@@ -425,7 +416,7 @@
 .method private getAllMode()Ljava/util/List;
     .registers 1
 
-    .line 2840
+    .line 2630
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mModeItems:Ljava/util/List;
 
     return-object p0
@@ -434,12 +425,12 @@
 .method private getDefaultModeTitle()Ljava/lang/String;
     .registers 5
 
-    .line 2784
+    .line 2574
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mModeItems:Ljava/util/List;
 
     if-eqz v0, :cond_21
 
-    .line 2785
+    .line 2575
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -457,7 +448,7 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/FeatureResource;
 
-    .line 2786
+    .line 2576
     iget-object v2, v1, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mDefaultModeFeatureName:Ljava/lang/String;
@@ -468,7 +459,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 2787
+    .line 2577
     iget-object p0, v1, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureTitle:Ljava/lang/String;
 
     return-object p0
@@ -482,7 +473,7 @@
 .method private getTabLayoutMode(I)Lcom/transsion/camera/app/common/FeatureResource;
     .registers 2
 
-    .line 2757
+    .line 2547
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mTabLayoutModeItems:Ljava/util/List;
 
     invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -497,7 +488,7 @@
 .method private getTabLayoutMode()Ljava/util/List;
     .registers 1
 
-    .line 2749
+    .line 2539
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mTabLayoutModeItems:Ljava/util/List;
 
     return-object p0
@@ -506,12 +497,12 @@
 .method private isTabLayoutMode(Ljava/lang/String;)Z
     .registers 3
 
-    .line 2829
+    .line 2619
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mTabLayoutModeItems:Ljava/util/List;
 
     if-eqz p0, :cond_1e
 
-    .line 2830
+    .line 2620
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -529,7 +520,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/FeatureResource;
 
-    .line 2831
+    .line 2621
     iget-object v0, v0, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -551,21 +542,21 @@
 .method private updateCurrentMode()V
     .registers 2
 
-    .line 2765
+    .line 2555
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->currentIsDVMode()Z
 
     move-result v0
 
     if-eqz v0, :cond_c
 
-    .line 2766
+    .line 2556
     const-string v0, "com.transsion.camera.feature.mode.video.VideoModeEntry"
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->updateCurrentMode(Ljava/lang/String;)V
 
     return-void
 
-    .line 2768
+    .line 2558
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mDefaultModeFeatureName:Ljava/lang/String;
 
@@ -577,7 +568,7 @@
 .method private updateCurrentMode(I)V
     .registers 5
 
-    .line 2773
+    .line 2563
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mTabLayoutModeItems:Ljava/util/List;
 
     if-eqz v0, :cond_21
@@ -592,7 +583,7 @@
 
     goto :goto_21
 
-    .line 2777
+    .line 2567
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mTabLayoutModeItems:Ljava/util/List;
 
@@ -606,20 +597,20 @@
 
     const/4 v1, 0x1
 
-    .line 2778
+    .line 2568
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mCurrentIsTabLayoutMode:Z
 
-    .line 2779
+    .line 2569
     iput p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mCurrentModeIndexInTabLayout:I
 
-    .line 2780
+    .line 2570
     iget-object p1, v0, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mDefaultSelectedMode:Ljava/lang/String;
 
     return-void
 
-    .line 2774
+    .line 2564
     :cond_21
     :goto_21
     invoke-static {}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -656,12 +647,12 @@
 .method private updateCurrentMode(Ljava/lang/String;)V
     .registers 5
 
-    .line 2795
+    .line 2585
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mModeItems:Ljava/util/List;
 
     if-eqz v0, :cond_57
 
-    .line 2796
+    .line 2586
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -671,7 +662,7 @@
     :goto_9
     if-ge v1, v0, :cond_57
 
-    .line 2798
+    .line 2588
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mModeItems:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -688,7 +679,7 @@
 
     if-eqz v2, :cond_54
 
-    .line 2799
+    .line 2589
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mModeItems:Ljava/util/List;
 
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -699,10 +690,10 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mCurrentModeItem:Lcom/transsion/camera/app/common/FeatureResource;
 
-    .line 2800
+    .line 2590
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->currentIsTabLayoutMode(I)V
 
-    .line 2801
+    .line 2591
     invoke-static {}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -725,7 +716,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2802
+    .line 2592
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mCurrentIsTabLayoutMode:Z
 
     if-eqz p1, :cond_48
@@ -740,7 +731,7 @@
 
     if-eqz p1, :cond_57
 
-    .line 2804
+    .line 2594
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mCurrentModeItem:Lcom/transsion/camera/app/common/FeatureResource;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
@@ -761,23 +752,23 @@
 .method private updateModeListAndDefaultMode(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
 
-    .line 2724
+    .line 2514
     iput-object p3, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mDefaultModeFeatureName:Ljava/lang/String;
 
-    .line 2725
+    .line 2515
     iput-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mDefaultSelectedMode:Ljava/lang/String;
 
-    .line 2726
+    .line 2516
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mModeItems:Ljava/util/List;
 
-    .line 2727
+    .line 2517
     iget-boolean p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mIsSupportMoreMode:Z
 
     const/4 p3, 0x0
 
     if-eqz p2, :cond_37
 
-    .line 2728
+    .line 2518
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$fgetmContext(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/content/Context;
@@ -790,7 +781,7 @@
 
     if-eqz p1, :cond_2a
 
-    .line 2729
+    .line 2519
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mModeItems:Ljava/util/List;
 
     iget p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->MAX_MODES_NUMBER_IN_TAB:I
@@ -811,7 +802,7 @@
 
     goto :goto_47
 
-    .line 2731
+    .line 2521
     :cond_2a
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->this$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
@@ -827,7 +818,7 @@
 
     goto :goto_47
 
-    .line 2734
+    .line 2524
     :cond_37
     iget p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->MAX_MODES_NUMBER_IN_TAB:I
 
@@ -845,7 +836,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mTabLayoutModeItems:Ljava/util/List;
 
-    .line 2736
+    .line 2526
     :goto_47
     invoke-static {}, Lcom/transsion/camera/app/ui/ModePickerUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -872,22 +863,10 @@
     return-void
 .end method
 
-.method private updateModeListAndDefaultMode(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 5
-
-    .line 2740
-    iput p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->MAX_MODES_NUMBER_IN_TAB:I
-
-    .line 2741
-    invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->updateModeListAndDefaultMode(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
 .method private validModeList()Z
     .registers 1
 
-    .line 2745
+    .line 2535
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->mModeItems:Ljava/util/List;
 
     if-eqz p0, :cond_c
@@ -913,7 +892,7 @@
 .method public currentIsDVMode()Z
     .registers 2
 
-    .line 2761
+    .line 2551
     const-string v0, "com.transsion.camera.feature.mode.video.DVVideoModeEntry"
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->currentModeFeatureName()Ljava/lang/String;

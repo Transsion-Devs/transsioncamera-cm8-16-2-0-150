@@ -15,7 +15,8 @@
         Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranPackageDataObserver;,
         Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranAppRecoveryCallback;,
         Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubBloodOxygenLedStateCallback;,
-        Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubActivityStartObserver;
+        Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubActivityStartObserver;,
+        Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubNecessityServiceCallback;
     }
 .end annotation
 
@@ -1308,6 +1309,52 @@
 
 
 # virtual methods
+.method public applyToAppLockAsUser(ILandroid/os/Bundle;I)Landroid/os/Bundle;
+    .registers 4
+
+    .line 1483
+    iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->mService:Lcom/transsion/hubsdk/app/ITranActivityManager;
+
+    if-eqz p0, :cond_20
+
+    .line 1485
+    :try_start_4
+    invoke-interface {p0, p1, p2, p3}, Lcom/transsion/hubsdk/app/ITranActivityManager;->applyToAppLockAsUser(ILandroid/os/Bundle;I)Landroid/os/Bundle;
+
+    move-result-object p0
+    :try_end_8
+    .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_8} :catch_9
+
+    return-object p0
+
+    :catch_9
+    move-exception p0
+
+    .line 1487
+    sget-object p1, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->TAG:Ljava/lang/String;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string p3, "applyToAppLockAsUser error: "
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_20
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
 .method public backgroundAllowlistUid(I)V
     .registers 4
 
@@ -1513,6 +1560,54 @@
     invoke-static {p1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
+.end method
+
+.method public doClean(ZZZZ[I[Ljava/lang/String;Landroid/os/Bundle;)Z
+    .registers 9
+
+    .line 1468
+    iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->mService:Lcom/transsion/hubsdk/app/ITranActivityManager;
+
+    if-eqz p0, :cond_21
+
+    .line 1470
+    :try_start_4
+    invoke-interface/range {p0 .. p7}, Lcom/transsion/hubsdk/app/ITranActivityManager;->doOneKeyClean(ZZZZ[I[Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    move-result p0
+    :try_end_8
+    .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_8} :catch_9
+
+    return p0
+
+    :catch_9
+    move-exception v0
+
+    move-object p0, v0
+
+    .line 1473
+    sget-object p1, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->TAG:Ljava/lang/String;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string p3, "doClean error: "
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_21
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public enableHiber(Z)V
@@ -3831,6 +3926,57 @@
     return-void
 .end method
 
+.method public registerTranNecessityServices(Lcom/transsion/hubsdk/api/app/ITranNecessityWindowService;)V
+    .registers 4
+
+    .line 1596
+    iget-object v0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->mService:Lcom/transsion/hubsdk/app/ITranActivityManager;
+
+    if-eqz v0, :cond_28
+
+    if-eqz p1, :cond_28
+
+    .line 1599
+    :try_start_6
+    new-instance v0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubNecessityServiceCallback;
+
+    invoke-direct {v0, p0, p1}, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubNecessityServiceCallback;-><init>(Lcom/transsion/hubsdk/core/app/TranThubActivityManager;Lcom/transsion/hubsdk/api/app/ITranNecessityWindowService;)V
+
+    .line 1601
+    iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->mService:Lcom/transsion/hubsdk/app/ITranActivityManager;
+
+    invoke-interface {p0, v0}, Lcom/transsion/hubsdk/app/ITranActivityManager;->registerTranNecessityServices(Lcom/transsion/hubsdk/internal/app/ITranNecessityWindowService;)V
+    :try_end_10
+    .catch Landroid/os/RemoteException; {:try_start_6 .. :try_end_10} :catch_11
+
+    return-void
+
+    :catch_11
+    move-exception p0
+
+    .line 1604
+    sget-object p1, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->TAG:Ljava/lang/String;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "registerTranNecessityServices e:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_28
+    return-void
+.end method
+
 .method public registerUserSwitchObserver(Lcom/transsion/hubsdk/api/app/TranUserSwitchObserver;Ljava/lang/String;)V
     .registers 6
 
@@ -5084,6 +5230,52 @@
 
     :cond_1f
     return-void
+.end method
+
+.method public swipeUpClean(Ljava/lang/String;I)Z
+    .registers 4
+
+    .line 1456
+    iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->mService:Lcom/transsion/hubsdk/app/ITranActivityManager;
+
+    if-eqz p0, :cond_20
+
+    .line 1458
+    :try_start_4
+    invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/app/ITranActivityManager;->swipeUpClean(Ljava/lang/String;I)Z
+
+    move-result p0
+    :try_end_8
+    .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_8} :catch_9
+
+    return p0
+
+    :catch_9
+    move-exception p0
+
+    .line 1460
+    sget-object p1, Lcom/transsion/hubsdk/core/app/TranThubActivityManager;->TAG:Ljava/lang/String;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "swipeUpClean error: "
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_20
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public switchMemFusion(Z)V

@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.flow.internal.ChannelFlowMerge$collectTo$2"
     f = "Merge.kt"
     l = {
-        0x42
+        0x3e
     }
     m = "emit"
 .end annotation

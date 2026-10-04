@@ -38,7 +38,7 @@
 
     check-cast p1, Lcom/transsion/camera/app/thumbnail/ThumbnailReloadManager;
 
-    invoke-static {v0, p0, p1}, Lcom/transsion/camera/app/BaseCameraActivity;->$r8$lambda$EQ5EkqpwC3b0MCgo0hmaXZg35QU(Lcom/transsion/camera/app/BaseCameraActivity;Landroid/net/Uri;Lcom/transsion/camera/app/thumbnail/ThumbnailReloadManager;)V
+    invoke-static {v0, p0, p1}, Lcom/transsion/camera/app/BaseCameraActivity;->$r8$lambda$cwYD2uP4-noqskfb5iHowQcYTZU(Lcom/transsion/camera/app/BaseCameraActivity;Landroid/net/Uri;Lcom/transsion/camera/app/thumbnail/ThumbnailReloadManager;)V
 
     return-void
 .end method

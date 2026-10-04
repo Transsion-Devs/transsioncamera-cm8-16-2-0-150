@@ -32,14 +32,14 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;Landroid/content/res/Resources;)V
     .registers 6
 
-    .line 64
+    .line 68
     iput-object p1, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$1;->this$0:Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5;
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/mode/magicsky/MagicSkyPanelUI5$1;->val$resources:Landroid/content/res/Resources;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 66
+    .line 70
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_sunny:I
@@ -56,7 +56,7 @@
 
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 67
+    .line 71
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_rainbow:I
@@ -73,7 +73,7 @@
 
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 68
+    .line 72
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_sunny2:I
@@ -90,7 +90,7 @@
 
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 69
+    .line 73
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_dusk:I
@@ -107,7 +107,7 @@
 
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 70
+    .line 74
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_sunset:I
@@ -124,7 +124,7 @@
 
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 71
+    .line 75
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_sunset2:I
@@ -141,7 +141,7 @@
 
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 72
+    .line 76
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_starry:I
@@ -158,7 +158,7 @@
 
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 73
+    .line 77
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_star_river:I
@@ -175,7 +175,7 @@
 
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 74
+    .line 78
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_meteor:I
@@ -192,7 +192,7 @@
 
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 75
+    .line 79
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_orbit:I
@@ -209,7 +209,7 @@
 
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 76
+    .line 80
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_aurora:I
@@ -226,7 +226,7 @@
 
     invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    .line 77
+    .line 81
     new-instance p1, Lcom/transsion/camera/app/ui/mode/magicsky/widget/SkyItem;
 
     sget v0, Lcom/transsion/camera/feature/mode/magicsky/R$drawable;->ic_moon:I

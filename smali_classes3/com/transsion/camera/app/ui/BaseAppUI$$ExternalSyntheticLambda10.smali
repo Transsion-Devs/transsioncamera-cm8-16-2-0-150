@@ -32,7 +32,7 @@
 
     check-cast p1, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$SiZkRBNQGeTaZ65ZVbKAPrAqAdA(ZLcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;)V
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$GjjGCr5J6AlocyAhX7hO_IBPRXk(ZLcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;)V
 
     return-void
 .end method

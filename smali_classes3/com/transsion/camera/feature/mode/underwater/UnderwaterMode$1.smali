@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;)V
     .registers 2
 
-    .line 150
+    .line 155
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$1;->this$0:Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method public onCountDownFinished()V
     .registers 3
 
-    .line 164
+    .line 169
     invoke-static {}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -53,7 +53,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 165
+    .line 170
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$1;->this$0:Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;
 
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;

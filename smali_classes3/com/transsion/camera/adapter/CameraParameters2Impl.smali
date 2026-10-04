@@ -365,7 +365,7 @@
 
     goto/16 :goto_d5
 
-    .line 833
+    .line 839
     :pswitch_9
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mLlsInfo:[I
 
@@ -379,14 +379,14 @@
 
     if-le p1, v1, :cond_19
 
-    .line 834
+    .line 840
     new-array p1, p1, [I
 
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mExposureValue:[I
 
     return-void
 
-    .line 836
+    .line 842
     :cond_19
     filled-new-array {v2, v2, v2, v2}, [I
 
@@ -396,7 +396,7 @@
 
     return-void
 
-    .line 784
+    .line 790
     :pswitch_20
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMFNRAeExpoInfo:[I
 
@@ -406,17 +406,17 @@
 
     if-lez p2, :cond_d5
 
-    .line 785
+    .line 791
     aget p2, p1, v2
 
     new-array v0, p2, [I
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIsoGainValue:[I
 
-    .line 786
+    .line 792
     invoke-static {p1, v1, v0, v2, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 787
+    .line 793
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMFNRAeExpoInfo:[I
 
     aget p2, p1, v2
@@ -425,10 +425,10 @@
 
     add-int/lit8 v3, p2, 0x1
 
-    .line 788
+    .line 794
     invoke-static {p1, v3, v0, v2, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 789
+    .line 795
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMFNRAeExpoInfo:[I
 
     aget p2, p1, v2
@@ -439,17 +439,17 @@
 
     add-int/2addr v4, v1
 
-    .line 790
+    .line 796
     invoke-static {p1, v4, v3, v2, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 791
+    .line 797
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->combineTo64Bit([I[I)[J
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mShutterGainValue:[J
 
-    .line 792
+    .line 798
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMFNRAeExpoInfo:[I
 
     aget p2, p1, v2
@@ -460,10 +460,10 @@
 
     add-int/2addr v3, v1
 
-    .line 793
+    .line 799
     invoke-static {p1, v3, v0, v2, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 794
+    .line 800
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMFNRAeExpoInfo:[I
 
     aget p2, p1, v2
@@ -474,17 +474,17 @@
 
     add-int/2addr v4, v1
 
-    .line 795
+    .line 801
     invoke-static {p1, v4, v3, v2, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 796
+    .line 802
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->combineTo64Bit([I[I)[J
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIspTuningIndex:[J
 
-    .line 797
+    .line 803
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMFNRAeExpoInfo:[I
 
     aget p2, p1, v2
@@ -497,12 +497,12 @@
 
     add-int/2addr p0, v1
 
-    .line 798
+    .line 804
     invoke-static {p1, p0, v0, v2, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-void
 
-    .line 830
+    .line 836
     :pswitch_7a
     new-array p1, v0, [I
 
@@ -512,19 +512,19 @@
 
     return-void
 
-    .line 775
+    .line 781
     :pswitch_82
     new-array p1, p2, [I
 
-    .line 776
+    .line 782
     invoke-static {p1, v2}, Ljava/util/Arrays;->fill([II)V
 
-    .line 777
+    .line 783
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mExposureValue:[I
 
     return-void
 
-    .line 812
+    .line 818
     :pswitch_8a
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoFrameInfo:[I
 
@@ -534,31 +534,31 @@
 
     if-lez p2, :cond_d6
 
-    .line 813
+    .line 819
     aget p1, p1, v2
 
     new-array p2, p1, [I
 
     iput-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIspGainValue:[I
 
-    .line 814
+    .line 820
     new-array p2, p1, [I
 
     iput-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mArdcGainValue:[I
 
-    .line 815
+    .line 821
     new-array p2, p1, [I
 
     iput-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIsoGainValue:[I
 
-    .line 816
+    .line 822
     new-array p1, p1, [J
 
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mShutterGainValue:[J
 
     move p1, v2
 
-    .line 817
+    .line 823
     :goto_a4
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoFrameInfo:[I
 
@@ -566,7 +566,7 @@
 
     if-ge p1, v0, :cond_d5
 
-    .line 818
+    .line 824
     iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mShutterGainValue:[J
 
     add-int/lit8 v4, p1, 0x1
@@ -577,7 +577,7 @@
 
     aput-wide v5, v3, p1
 
-    .line 819
+    .line 825
     iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mArdcGainValue:[I
 
     add-int/2addr v0, p1
@@ -588,7 +588,7 @@
 
     aput v0, v3, p1
 
-    .line 820
+    .line 826
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIspGainValue:[I
 
     aget v3, p2, v2
@@ -603,7 +603,7 @@
 
     aput v3, v0, p1
 
-    .line 821
+    .line 827
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIsoGainValue:[I
 
     aget v3, p2, v2
@@ -626,7 +626,7 @@
     :goto_d5
     return-void
 
-    .line 824
+    .line 830
     :cond_d6
     new-array p1, v0, [I
 
@@ -636,7 +636,7 @@
 
     return-void
 
-    .line 809
+    .line 815
     :pswitch_de
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPostAlgoFrameInfo()[I
 
@@ -646,7 +646,7 @@
 
     return-void
 
-    .line 806
+    .line 812
     :pswitch_e6
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getNightAeExpoInfo()[I
 
@@ -656,7 +656,7 @@
 
     return-void
 
-    .line 802
+    .line 808
     :pswitch_ee
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHDRAeExpoInfo()[I
 
@@ -666,7 +666,7 @@
 
     return-void
 
-    .line 781
+    .line 787
     :pswitch_f6
     filled-new-array {v2}, [I
 
@@ -722,7 +722,7 @@
 .method private closetFusionMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1911
+    .line 1922
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isFusionSupport()Z
@@ -731,7 +731,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 1913
+    .line 1924
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const-string v0, "off"
@@ -745,17 +745,17 @@
 .method private combineTo64Bit([I[I)[J
     .registers 11
 
-    .line 864
+    .line 870
     array-length p0, p1
 
     array-length v0, p2
 
     if-ne p0, v0, :cond_20
 
-    .line 868
+    .line 874
     array-length p0, p1
 
-    .line 869
+    .line 875
     new-array v0, p0, [J
 
     const/4 v1, 0x0
@@ -763,7 +763,7 @@
     :goto_8
     if-ge v1, p0, :cond_1f
 
-    .line 873
+    .line 879
     aget v2, p2, v1
 
     int-to-long v2, v2
@@ -791,7 +791,7 @@
     :cond_1f
     return-object v0
 
-    .line 865
+    .line 871
     :cond_20
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -811,7 +811,7 @@
 
     return p0
 
-    .line 2781
+    .line 2806
     :cond_4
     const-string/jumbo v0, "traffic"
 
@@ -823,7 +823,7 @@
 
     const-string v0, "flowingwater"
 
-    .line 2782
+    .line 2807
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -832,7 +832,7 @@
 
     const-string v0, "lightpainting"
 
-    .line 2783
+    .line 2808
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -871,7 +871,7 @@
 .method private projectSupportISZ()Z
     .registers 3
 
-    .line 1183
+    .line 1194
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVsdofLevel()Ljava/lang/String;
 
     move-result-object v0
@@ -912,10 +912,10 @@
 .method private static rectsToSensorRects(Ljava/util/List;IILandroid/util/Size;Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
     .registers 15
 
-    .line 2337
+    .line 2348
     sget-object v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->ZERO_WEIGHT_3A_REGION:[Landroid/hardware/camera2/params/MeteringRectangle;
 
-    .line 2338
+    .line 2349
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
@@ -924,7 +924,7 @@
 
     if-eqz p3, :cond_1c
 
-    .line 2341
+    .line 2352
     invoke-virtual {p3}, Landroid/util/Size;->getWidth()I
 
     move-result v0
@@ -943,12 +943,12 @@
 
     div-float/2addr v0, p3
 
-    .line 2342
+    .line 2353
     invoke-static {p4, v0}, Lcom/transsion/camera/utils/CoordinatesUtil;->getPreviewRectFromSensorRect(Landroid/graphics/Rect;F)Landroid/graphics/Rect;
 
     move-result-object p4
 
-    .line 2347
+    .line 2358
     :cond_1c
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -967,7 +967,7 @@
     :cond_27
     move p1, v0
 
-    .line 2349
+    .line 2360
     :goto_28
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -975,7 +975,7 @@
 
     if-ge v0, v1, :cond_58
 
-    .line 2350
+    .line 2361
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -988,7 +988,7 @@
 
     goto :goto_49
 
-    .line 2354
+    .line 2365
     :cond_39
     iget-object v1, v1, Lcom/transsion/camera/utils/SettingInfo$Area;->rect:Landroid/graphics/Rect;
 
@@ -996,7 +996,7 @@
 
     move-result-object v1
 
-    .line 2356
+    .line 2367
     new-instance v2, Landroid/hardware/camera2/params/MeteringRectangle;
 
     sget v3, Lcom/transsion/camera/adapter/CameraParameters2Impl;->REGION_WEIGHT:I
@@ -1007,7 +1007,7 @@
 
     goto :goto_55
 
-    .line 2352
+    .line 2363
     :cond_49
     :goto_49
     new-instance v4, Landroid/hardware/camera2/params/MeteringRectangle;
@@ -1041,7 +1041,7 @@
 .method private updateAIRawLiteMotionDetectionValue(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2928
+    .line 2953
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAIRawLiteMotionDetection()I
@@ -1056,7 +1056,7 @@
 .method private updateAbeHdrCheckMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2621
+    .line 2646
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAbeHdrCheckMode()I
@@ -1075,7 +1075,7 @@
 
     if-ne p3, v0, :cond_16
 
-    .line 2604
+    .line 2629
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->postAlgoOn()Z
 
     move-result p3
@@ -1090,7 +1090,7 @@
 
     if-eq p3, v0, :cond_16
 
-    .line 2605
+    .line 2630
     :cond_10
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSprdPlatform()Z
 
@@ -1098,7 +1098,7 @@
 
     if-eqz p3, :cond_1d
 
-    .line 2606
+    .line 2631
     :cond_16
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAIRawMode()I
 
@@ -1111,7 +1111,7 @@
     :cond_1d
     const/4 p2, 0x0
 
-    .line 2609
+    .line 2634
     :cond_1e
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -1123,7 +1123,7 @@
 .method private updateActivityOrientation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2522
+    .line 2547
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getActivityOrientation()I
@@ -1142,7 +1142,7 @@
 
     if-ne p2, v0, :cond_c
 
-    .line 2168
+    .line 2179
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAdrcgainValue()F
@@ -1158,7 +1158,7 @@
 .method private updateAfFf2In1Mode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2289
+    .line 2300
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAfFfMode()I
@@ -1173,7 +1173,7 @@
 .method private updateAiMoonMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2449
+    .line 2474
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     iget-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsDetectedMoon:Z
@@ -1198,7 +1198,7 @@
 .method private updateAiShutter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2674
+    .line 2699
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -1207,7 +1207,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 2675
+    .line 2700
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMiddleNightMode()I
 
     move-result v0
@@ -1216,7 +1216,7 @@
 
     if-ne v0, v1, :cond_31
 
-    .line 2676
+    .line 2701
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isQcomCaptureFlow()Z
@@ -1233,21 +1233,21 @@
 
     if-ne v0, v1, :cond_2a
 
-    .line 2677
+    .line 2702
     const-string v0, "2"
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 2678
+    .line 2703
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAiShutterMode(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
     return-void
 
-    .line 2680
+    .line 2705
     :cond_2a
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -1257,7 +1257,7 @@
 
     return-void
 
-    .line 2683
+    .line 2708
     :cond_31
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -1273,7 +1273,7 @@
 .method private updateAiShutterMorpho(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2688
+    .line 2713
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAisMorpho()I
@@ -1288,7 +1288,7 @@
 .method private updateAntiVideoMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2269
+    .line 2280
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isAntiVideoSupport()Z
@@ -1297,7 +1297,7 @@
 
     if-nez v0, :cond_10
 
-    .line 2271
+    .line 2282
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "anti video is not support"
@@ -1306,13 +1306,13 @@
 
     return-void
 
-    .line 2274
+    .line 2285
     :cond_10
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAntiVideoMode()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2275
+    .line 2286
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAntiVideoMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -1323,7 +1323,7 @@
 .method private updateAppMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2471
+    .line 2496
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAppMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -1334,7 +1334,7 @@
 .method private updateBMDebandingMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2860
+    .line 2885
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getDeBandingMode()I
@@ -1353,7 +1353,7 @@
 
     if-ne p1, v0, :cond_c
 
-    .line 2812
+    .line 2837
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getBMLowLightMode()I
@@ -1369,7 +1369,7 @@
 .method private updateBMZSLBufSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2817
+    .line 2842
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getCustomZslBufSize()I
@@ -1384,7 +1384,7 @@
 .method private updateBestMomentDetectMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2799
+    .line 2824
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getBestMomentDetectMode()I
@@ -1399,7 +1399,7 @@
 .method private updateBestMomentRawHDRMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2807
+    .line 2832
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getBestMomentRawHDRMode()I
@@ -1414,7 +1414,7 @@
 .method private updateCaptureBurstNumber(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
     .registers 3
 
-    .line 2599
+    .line 2624
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, p2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setCaptureBurstNumber(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -1425,7 +1425,7 @@
 .method private updateCaptureCustomTuning(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 8
 
-    .line 2534
+    .line 2559
     new-instance v4, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2$DXOScene;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->asdEffectColorCard()Z
@@ -1442,14 +1442,14 @@
 
     invoke-direct {v4, v0, v1, v2}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2$DXOScene;-><init>(ZZZ)V
 
-    .line 2535
+    .line 2560
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getCaptureCustomTuning()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2536
+    .line 2561
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLongExposureScene()Ljava/lang/String;
 
     move-result-object v2
@@ -1460,7 +1460,7 @@
 
     move-object v5, p1
 
-    .line 2535
+    .line 2560
     invoke-interface/range {v0 .. v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setCaptureCustomTuning(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2$DXOScene;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     return-void
@@ -1469,7 +1469,7 @@
 .method private updateCaptureISPTunning(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2864
+    .line 2889
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionCameraMode()I
 
     move-result v0
@@ -1478,7 +1478,7 @@
 
     if-ne v0, v1, :cond_11
 
-    .line 2865
+    .line 2890
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getCaptureISPTunning()I
@@ -1494,7 +1494,7 @@
 .method private updateCaptureTag(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2849
+    .line 2874
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getCaptureTag()I
@@ -1509,7 +1509,7 @@
 .method private updateCaptureZSLTimestamp(Landroid/hardware/camera2/CaptureRequest$Builder;IZI)V
     .registers 6
 
-    .line 1069
+    .line 1075
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isZSLEnable()Z
 
     move-result v0
@@ -1526,7 +1526,7 @@
 
     goto :goto_28
 
-    .line 1073
+    .line 1079
     :cond_f
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getCaptureZSLTimestamps()[J
 
@@ -1534,14 +1534,14 @@
 
     if-eqz p2, :cond_28
 
-    .line 1074
+    .line 1080
     array-length p3, p2
 
     if-nez p3, :cond_19
 
     goto :goto_28
 
-    .line 1077
+    .line 1083
     :cond_19
     array-length p3, p2
 
@@ -1553,7 +1553,7 @@
 
     move-result p3
 
-    .line 1078
+    .line 1084
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     aget-wide p2, p2, p3
@@ -1568,7 +1568,7 @@
 .method private updateCelebritySceneMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2890
+    .line 2915
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getCelebritySceneMode()I
@@ -1583,14 +1583,14 @@
 .method private updateControlMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 6
 
-    .line 1454
+    .line 1465
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSceneMode()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_10
 
-    .line 1457
+    .line 1468
     const-string v1, "hdr"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1606,7 +1606,7 @@
     :cond_10
     const/4 v1, 0x1
 
-    .line 1461
+    .line 1472
     :goto_11
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1632,7 +1632,7 @@
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1462
+    .line 1473
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1647,12 +1647,12 @@
 .method private updateControlSceneMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 10
 
-    .line 1466
+    .line 1477
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSceneMode()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1468
+    .line 1479
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1671,7 +1671,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1469
+    .line 1480
     const-string v1, "dsp_super_night"
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperNightMode()Ljava/lang/String;
@@ -1688,7 +1688,7 @@
 
     const-string v1, "meg_super_night"
 
-    .line 1470
+    .line 1481
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperNightMode()Ljava/lang/String;
 
     move-result-object v3
@@ -1699,7 +1699,7 @@
 
     if-eqz v1, :cond_3e
 
-    .line 1471
+    .line 1482
     :cond_35
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -1711,7 +1711,7 @@
 
     move-object v0, v2
 
-    .line 1480
+    .line 1491
     :cond_3e
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionLowLightMode()I
 
@@ -1731,7 +1731,7 @@
 
     move-object v0, v2
 
-    .line 1484
+    .line 1495
     :cond_4f
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperNightAlgoType()Ljava/lang/String;
 
@@ -1747,7 +1747,7 @@
 
     move-object v0, v2
 
-    .line 1487
+    .line 1498
     :cond_5c
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->postAlgoOn()Z
 
@@ -1763,7 +1763,7 @@
 
     if-eq v1, v3, :cond_77
 
-    .line 1488
+    .line 1499
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPostAlgoType()I
 
     move-result v1
@@ -1772,7 +1772,7 @@
 
     if-eq v1, v4, :cond_77
 
-    .line 1489
+    .line 1500
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPostAlgoType()I
 
     move-result v1
@@ -1784,7 +1784,7 @@
     :cond_77
     move-object v0, v2
 
-    .line 1494
+    .line 1505
     :cond_78
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMagicSkyType()Ljava/lang/String;
 
@@ -1802,7 +1802,7 @@
 
     if-lez v1, :cond_a0
 
-    .line 1495
+    .line 1506
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -1813,7 +1813,7 @@
 
     if-eqz v0, :cond_9f
 
-    .line 1496
+    .line 1507
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -1824,7 +1824,7 @@
 
     if-eqz v0, :cond_9f
 
-    .line 1497
+    .line 1508
     const-string v0, "auto"
 
     goto :goto_a0
@@ -1832,7 +1832,7 @@
     :cond_9f
     move-object v0, v2
 
-    .line 1502
+    .line 1513
     :cond_a0
     :goto_a0
     const-string v1, "on"
@@ -1849,7 +1849,7 @@
 
     move-object v0, v2
 
-    .line 1505
+    .line 1516
     :cond_ad
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPipDeviceValue()Ljava/lang/String;
 
@@ -1861,7 +1861,7 @@
 
     move-object v0, v4
 
-    .line 1509
+    .line 1520
     :cond_b6
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -1873,7 +1873,7 @@
 
     if-eqz v1, :cond_e4
 
-    .line 1510
+    .line 1521
     const-string/jumbo v1, "val_sdof"
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAppModeId()Ljava/lang/String;
@@ -1888,7 +1888,7 @@
 
     move-object v0, v5
 
-    .line 1514
+    .line 1525
     :cond_ce
     const-string/jumbo v1, "val_stb_blur"
 
@@ -1912,7 +1912,7 @@
 
     move-object v0, v5
 
-    .line 1519
+    .line 1530
     :cond_e4
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -1922,13 +1922,13 @@
 
     if-eqz v1, :cond_ee
 
-    .line 1520
+    .line 1531
     const-string v0, "off"
 
     :cond_ee
     if-eqz v0, :cond_185
 
-    .line 1525
+    .line 1536
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v1
@@ -1990,7 +1990,7 @@
 
     if-eqz v1, :cond_12c
 
-    .line 1530
+    .line 1541
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v1
@@ -2010,7 +2010,7 @@
     :cond_12e
     const/16 v3, 0x8
 
-    .line 1548
+    .line 1559
     :goto_130
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -2018,7 +2018,7 @@
 
     move-result v1
 
-    .line 1549
+    .line 1560
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2045,7 +2045,7 @@
 
     if-ne v1, v6, :cond_163
 
-    .line 1550
+    .line 1561
     const-string/jumbo v0, "val_magic_sky"
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAppModeId()Ljava/lang/String;
@@ -2061,7 +2061,7 @@
     :cond_163
     const-string/jumbo v0, "val_hdr"
 
-    .line 1551
+    .line 1562
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAppModeId()Ljava/lang/String;
 
     move-result-object v2
@@ -2072,7 +2072,7 @@
 
     if-eqz v0, :cond_177
 
-    .line 1552
+    .line 1563
     :cond_170
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -2082,13 +2082,13 @@
 
     goto :goto_17c
 
-    .line 1554
+    .line 1565
     :cond_177
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v7, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setYUVHdrCaptureMode(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1556
+    .line 1567
     :goto_17c
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_SCENE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -2114,10 +2114,10 @@
 .method private updateDxoCountry(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2885
+    .line 2910
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
-    .line 2886
+    .line 2911
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -2139,7 +2139,7 @@
     :cond_12
     const/4 v0, 0x0
 
-    .line 2885
+    .line 2910
     :goto_13
     invoke-interface {p0, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setDxoCountry(ZLandroid/hardware/camera2/CaptureRequest$Builder;)V
 
@@ -2149,7 +2149,7 @@
 .method private updateExifModeInfo(Landroid/hardware/camera2/CaptureRequest$Builder;ZI)V
     .registers 7
 
-    .line 2662
+    .line 2687
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2180,7 +2180,7 @@
 
     goto :goto_27
 
-    .line 2663
+    .line 2688
     :cond_23
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getExifModeInfo()I
 
@@ -2191,7 +2191,7 @@
 
     if-eq p3, v0, :cond_2f
 
-    .line 2665
+    .line 2690
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, p2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setExifModeInfo(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -2203,7 +2203,7 @@
 .method private updateExternalIspMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2766
+    .line 2791
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getExternalIspMode()I
@@ -2222,7 +2222,7 @@
 
     if-ne p1, v0, :cond_c
 
-    .line 2966
+    .line 2991
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFaceProportion()F
@@ -2238,7 +2238,7 @@
 .method private updateFakeDualLensMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2364
+    .line 2375
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFakeDualLensMode()I
@@ -2253,7 +2253,7 @@
 .method private updateFlareCaptureEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2845
+    .line 2870
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFlareCaptureEnable()I
@@ -2268,7 +2268,7 @@
 .method private updateFlashSnapAutoCaptureMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2803
+    .line 2828
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFlashSnapAutoCaptureMode()I
@@ -2283,7 +2283,7 @@
 .method private updateFlashStyle(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2514
+    .line 2539
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFlashStyle()Ljava/lang/String;
@@ -2298,7 +2298,7 @@
 .method private updateFocusRectangles(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 6
 
-    .line 1216
+    .line 1227
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isMTKCaptureFlow()Z
@@ -2314,7 +2314,7 @@
     :cond_b
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
 
-    .line 1217
+    .line 1228
     :goto_d
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFocusAreas()Ljava/util/List;
 
@@ -2324,17 +2324,17 @@
 
     iget v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mSensorOrientation:I
 
-    .line 1218
+    .line 1229
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPreviewSize()Landroid/util/Size;
 
     move-result-object p0
 
-    .line 1217
+    .line 1228
     invoke-static {v1, v2, v3, p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->rectsToSensorRects(Ljava/util/List;IILandroid/util/Size;Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
 
     move-result-object p0
 
-    .line 1219
+    .line 1230
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_REGIONS:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p1, v0, p0}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
@@ -2345,7 +2345,7 @@
 .method private updateFrontDualFlashColorTemp(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2305
+    .line 2316
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFrontDualFlashColorTemp()I
@@ -2360,7 +2360,7 @@
 .method private updateFrontDualFlashStrengthMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2309
+    .line 2320
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFrontDualFlashStrengthMode()I
@@ -2375,7 +2375,7 @@
 .method private updateGenderAttributeValue(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 5
 
-    .line 2457
+    .line 2482
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isGenderAttributeValueSupport()Z
@@ -2384,7 +2384,7 @@
 
     if-nez v0, :cond_10
 
-    .line 2459
+    .line 2484
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "gender attribute value is not support"
@@ -2393,20 +2393,20 @@
 
     return-void
 
-    .line 2462
+    .line 2487
     :cond_10
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getGenderAttributeValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2463
+    .line 2488
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_22
 
-    .line 2464
+    .line 2489
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "getAttributeValue is empty"
@@ -2415,7 +2415,7 @@
 
     return-void
 
-    .line 2467
+    .line 2492
     :cond_22
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -2451,7 +2451,7 @@
 .method private updateGoldWaterMarkModeType(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2700
+    .line 2725
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getGoldWatermarkType()Ljava/lang/String;
@@ -2466,12 +2466,12 @@
 .method private updateGoldWaterMarkSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 8
 
-    .line 2704
+    .line 2729
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getGoldWaterMarkSize()[I
 
     move-result-object v0
 
-    .line 2705
+    .line 2730
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2494,7 +2494,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2706
+    .line 2731
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isQcomCaptureFlow()Z
@@ -2505,19 +2505,19 @@
 
     const/4 v1, 0x4
 
-    .line 2707
+    .line 2732
     new-array v2, v1, [I
 
     if-eqz v0, :cond_81
 
-    .line 2708
+    .line 2733
     array-length v3, v0
 
     const/16 v4, 0x8
 
     if-ne v3, v4, :cond_81
 
-    .line 2709
+    .line 2734
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getJpegOrientation()I
 
     move-result v2
@@ -2536,7 +2536,7 @@
 
     goto :goto_47
 
-    .line 2712
+    .line 2737
     :cond_41
     invoke-static {v0, v3, v1}, Ljava/util/Arrays;->copyOfRange([III)[I
 
@@ -2547,7 +2547,7 @@
 
     goto :goto_4c
 
-    .line 2710
+    .line 2735
     :cond_47
     :goto_47
     invoke-static {v0, v1, v4}, Ljava/util/Arrays;->copyOfRange([III)[I
@@ -2556,7 +2556,7 @@
 
     goto :goto_45
 
-    .line 2714
+    .line 2739
     :goto_4c
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2604,7 +2604,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2717
+    .line 2742
     :cond_81
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -2612,7 +2612,7 @@
 
     return-void
 
-    .line 2719
+    .line 2744
     :cond_87
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -2624,7 +2624,7 @@
 .method private updateGroupCaptureEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2853
+    .line 2878
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getGroupCaptureEnable()I
@@ -2643,7 +2643,7 @@
 
     if-ne p1, v0, :cond_c
 
-    .line 2936
+    .line 2961
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHALBMLowLightMode()I
@@ -2659,7 +2659,7 @@
 .method private updateHdr10PlusMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2971
+    .line 2996
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHdr10PlusMode()I
@@ -2674,7 +2674,7 @@
 .method private updateHeavyCapturing()V
     .registers 2
 
-    .line 2613
+    .line 2638
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isHeavyCapturing()Z
@@ -2689,7 +2689,7 @@
 .method private updateHeavyCapturingBV()V
     .registers 2
 
-    .line 2617
+    .line 2642
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHeavyCapturingBV()I
@@ -2704,12 +2704,12 @@
 .method private updateHighLightMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2491
+    .line 2516
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     if-eqz v0, :cond_b
 
-    .line 2492
+    .line 2517
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHighLightMode()I
 
     move-result p0
@@ -2727,7 +2727,7 @@
 
     if-ne p1, v0, :cond_c
 
-    .line 2990
+    .line 3015
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHumanBox()[I
@@ -2743,7 +2743,7 @@
 .method private updateInSensorZoomEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2941
+    .line 2966
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getInSensorZoomEnable()I
@@ -2758,7 +2758,7 @@
 .method private updateIncreaseFreq(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 6
 
-    .line 2870
+    .line 2895
     const-string/jumbo v0, "val_ai_art_museum"
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAppModeId()Ljava/lang/String;
@@ -2773,20 +2773,20 @@
 
     if-eqz v0, :cond_14
 
-    .line 2871
+    .line 2896
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v1, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setIncreaseFrequency(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
     return-void
 
-    .line 2873
+    .line 2898
     :cond_14
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getIncreaseFrequencyEnable()I
 
     move-result v0
 
-    .line 2874
+    .line 2899
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getCurrentFaces()I
 
     move-result v2
@@ -2802,7 +2802,7 @@
     :cond_22
     const/4 v3, 0x0
 
-    .line 2876
+    .line 2901
     :goto_23
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -2814,7 +2814,7 @@
 .method private updateInsensorScene(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2945
+    .line 2970
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getInsensorScene()I
@@ -2829,12 +2829,12 @@
 .method private updateIs24HourFormat(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2750
+    .line 2775
     iget-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkSupport:Z
 
     if-eqz v0, :cond_d
 
-    .line 2751
+    .line 2776
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getIs24HourFormat()I
@@ -2850,7 +2850,7 @@
 .method private updateLensCorrectionMode(Landroid/hardware/camera2/CaptureRequest$Builder;Z)V
     .registers 7
 
-    .line 2020
+    .line 2031
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -2861,12 +2861,12 @@
 
     if-eqz v0, :cond_36
 
-    .line 2021
+    .line 2032
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLensCorrectionMode()I
 
     move-result v0
 
-    .line 2022
+    .line 2033
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2895,7 +2895,7 @@
 
     const/4 v0, 0x0
 
-    .line 2026
+    .line 2037
     :cond_30
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -2903,7 +2903,7 @@
 
     return-void
 
-    .line 2028
+    .line 2039
     :cond_36
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -2919,7 +2919,7 @@
 .method private updateLivePhotoMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2995
+    .line 3020
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLivePhotoMode()I
@@ -2934,7 +2934,7 @@
 .method private updateLiveResultMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2582
+    .line 2607
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLiveResultMode()I
@@ -2949,7 +2949,7 @@
 .method private updateLongPressBurst(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
     .registers 3
 
-    .line 1918
+    .line 1929
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, p2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setLongPressBurst(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -2960,7 +2960,7 @@
 .method private updateMacroLampValue(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2429
+    .line 2454
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMacroLampValue()I
@@ -2975,7 +2975,7 @@
 .method private updateMagicSkyMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2497
+    .line 2522
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMagicSkyMode()Ljava/lang/String;
@@ -2984,7 +2984,7 @@
 
     invoke-interface {v0, v1, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setMagicSkyMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 2498
+    .line 2523
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMagicSkyType()Ljava/lang/String;
@@ -2999,7 +2999,7 @@
 .method private updateMagicSkyResult(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2502
+    .line 2527
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMagicSkyResult()I
@@ -3014,7 +3014,7 @@
 .method private updateMeteringRectangles(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 7
 
-    .line 1203
+    .line 1214
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isMTKCaptureFlow()Z
@@ -3030,7 +3030,7 @@
     :cond_b
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
 
-    .line 1204
+    .line 1215
     :goto_d
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMeteringAreas()Ljava/util/List;
 
@@ -3040,27 +3040,27 @@
 
     iget v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mSensorOrientation:I
 
-    .line 1205
+    .line 1216
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPreviewSize()Landroid/util/Size;
 
     move-result-object v4
 
-    .line 1204
+    .line 1215
     invoke-static {v1, v2, v3, v4, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->rectsToSensorRects(Ljava/util/List;IILandroid/util/Size;Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
 
     move-result-object v0
 
-    .line 1206
+    .line 1217
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_REGIONS:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p1, v1, v0}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1209
+    .line 1220
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMeteringMode()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1210
+    .line 1221
     const-string v1, "auto"
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -3069,7 +3069,7 @@
 
     if-nez v1, :cond_33
 
-    .line 1211
+    .line 1222
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setMeteringMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -3081,7 +3081,7 @@
 .method private updateMoonDetectPitch(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2445
+    .line 2470
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMoonDetectPitch()F
@@ -3096,7 +3096,7 @@
 .method private updateMoonDetection(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2441
+    .line 2466
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMoonDetection()I
@@ -3111,7 +3111,7 @@
 .method private updateNightHawk(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2437
+    .line 2462
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getNightHawkMode()I
@@ -3126,14 +3126,14 @@
 .method private updateOISMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 6
 
-    .line 1441
+    .line 1452
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isOISSupport()Z
 
     move-result v0
 
-    .line 1442
+    .line 1453
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3154,14 +3154,14 @@
 
     if-eqz v0, :cond_30
 
-    .line 1444
+    .line 1455
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const-string v0, "on"
 
     invoke-interface {p0, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->updateOISMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1445
+    .line 1456
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->LENS_OPTICAL_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v0, 0x1
@@ -3179,7 +3179,7 @@
 .method private updateP2CropRegionCustomize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2092
+    .line 2103
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getP2CropRegionCustomize()[I
@@ -3194,7 +3194,7 @@
 .method private updateP2RawCropResizeEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2088
+    .line 2099
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getP2RawCropResizeEnable()I
@@ -3209,7 +3209,7 @@
 .method private updateP2ResizerSizeCustomize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2096
+    .line 2107
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getP2ResizerSizeCustomize()[I
@@ -3224,7 +3224,7 @@
 .method private updatePMasterFlareLocation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2787
+    .line 2812
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFlareLocation()[F
@@ -3239,7 +3239,7 @@
 .method private updatePMasterFlareMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2774
+    .line 2799
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPMasterFlareMode()I
@@ -3254,7 +3254,7 @@
 .method private updatePMasterFlarePreviewSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2791
+    .line 2816
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPreviewSize()Landroid/util/Size;
@@ -3277,7 +3277,7 @@
 .method private updatePipDeviceValue(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2530
+    .line 2555
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPipDeviceValue()Ljava/lang/String;
@@ -3292,12 +3292,12 @@
 .method private updatePlainLocationText(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2744
+    .line 2769
     iget-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkSupport:Z
 
     if-eqz v0, :cond_d
 
-    .line 2745
+    .line 2770
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPlainLocationText()Ljava/lang/String;
@@ -3313,7 +3313,7 @@
 .method private updatePortraitModeEnhanceMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2453
+    .line 2478
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPortraitModeEnhanceMode()Ljava/lang/String;
@@ -3330,49 +3330,49 @@
 
     if-eqz p1, :cond_5d
 
-    .line 845
+    .line 851
     array-length v0, p1
 
     if-lez v0, :cond_5d
 
     const/4 v0, 0x0
 
-    .line 846
+    .line 852
     aget v1, p1, v0
 
     new-array v2, v1, [I
 
     iput-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIspGainValue:[I
 
-    .line 847
+    .line 853
     new-array v2, v1, [I
 
     iput-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mArdcGainValue:[I
 
-    .line 848
+    .line 854
     new-array v2, v1, [I
 
     iput-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIsoGainValue:[I
 
-    .line 849
+    .line 855
     new-array v2, v1, [J
 
     iput-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mShutterGainValue:[J
 
-    .line 850
+    .line 856
     new-array v1, v1, [I
 
     iput-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mExposureValue:[I
 
     move v1, v0
 
-    .line 851
+    .line 857
     :goto_1d
     aget v2, p1, v0
 
     if-ge v1, v2, :cond_5c
 
-    .line 852
+    .line 858
     iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mShutterGainValue:[J
 
     add-int/lit8 v4, v1, 0x1
@@ -3383,7 +3383,7 @@
 
     aput-wide v5, v3, v1
 
-    .line 853
+    .line 859
     iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mArdcGainValue:[I
 
     add-int/2addr v2, v1
@@ -3394,7 +3394,7 @@
 
     aput v2, v3, v1
 
-    .line 854
+    .line 860
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIspGainValue:[I
 
     aget v3, p1, v0
@@ -3409,7 +3409,7 @@
 
     aput v3, v2, v1
 
-    .line 855
+    .line 861
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIsoGainValue:[I
 
     aget v3, p1, v0
@@ -3424,7 +3424,7 @@
 
     aput v3, v2, v1
 
-    .line 856
+    .line 862
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mExposureValue:[I
 
     aget v3, p1, v0
@@ -3449,7 +3449,7 @@
     :cond_5d
     const/16 p1, 0xa
 
-    .line 859
+    .line 865
     new-array p1, p1, [I
 
     fill-array-data p1, :array_68
@@ -3478,12 +3478,12 @@
 .method private updatePreviewGoldWaterMarkSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 8
 
-    .line 2724
+    .line 2749
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPreviewGoldWaterMarkSize()[I
 
     move-result-object v0
 
-    .line 2725
+    .line 2750
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3508,19 +3508,19 @@
 
     const/4 v1, 0x4
 
-    .line 2726
+    .line 2751
     new-array v2, v1, [I
 
     if-eqz v0, :cond_79
 
-    .line 2727
+    .line 2752
     array-length v3, v0
 
     const/16 v4, 0x8
 
     if-ne v3, v4, :cond_79
 
-    .line 2728
+    .line 2753
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getJpegOrientation()I
 
     move-result v2
@@ -3539,7 +3539,7 @@
 
     goto :goto_3f
 
-    .line 2731
+    .line 2756
     :cond_39
     invoke-static {v0, v3, v1}, Ljava/util/Arrays;->copyOfRange([III)[I
 
@@ -3550,7 +3550,7 @@
 
     goto :goto_44
 
-    .line 2729
+    .line 2754
     :cond_3f
     :goto_3f
     invoke-static {v0, v1, v4}, Ljava/util/Arrays;->copyOfRange([III)[I
@@ -3559,7 +3559,7 @@
 
     goto :goto_3d
 
-    .line 2733
+    .line 2758
     :goto_44
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3607,7 +3607,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2736
+    .line 2761
     :cond_79
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -3619,22 +3619,22 @@
 .method private updatePreviewRange(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 6
 
-    .line 1432
+    .line 1443
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPreviewFPSRange()Landroid/util/Range;
 
     move-result-object v0
 
-    .line 1433
+    .line 1444
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isHeavyCapturing()Z
 
     move-result v1
 
     if-eqz v1, :cond_25
 
-    .line 1434
-    iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->postAlgoFpsRange:Landroid/util/Range;
+    .line 1445
+    iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoFpsRange:Landroid/util/Range;
 
-    .line 1435
+    .line 1446
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3645,7 +3645,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->postAlgoFpsRange:Landroid/util/Range;
+    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters;->mPostAlgoFpsRange:Landroid/util/Range;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -3655,7 +3655,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1437
+    .line 1448
     :cond_25
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -3667,12 +3667,12 @@
 .method private updateProWatermarkStyle(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2756
+    .line 2781
     iget-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mGoldWatermarkSupport:Z
 
     if-eqz v0, :cond_d
 
-    .line 2757
+    .line 2782
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getProWatermarkStyle()I
@@ -3688,7 +3688,7 @@
 .method private updateProcessRawMode(Landroid/hardware/camera2/CaptureRequest$Builder;ZII)V
     .registers 8
 
-    .line 2586
+    .line 2611
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -3701,7 +3701,7 @@
 
     if-ne p4, v0, :cond_33
 
-    .line 2587
+    .line 2612
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->postAlgoOn()Z
 
     move-result p4
@@ -3739,7 +3739,7 @@
     :cond_25
     move p3, v0
 
-    .line 2591
+    .line 2616
     :goto_26
     iget p4, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mDumpFirstFrameValue:I
 
@@ -3752,7 +3752,7 @@
     :cond_2d
     move v0, p3
 
-    .line 2594
+    .line 2619
     :cond_2e
     :goto_2e
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
@@ -3766,7 +3766,7 @@
 .method private updateQcomWarmStart(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
     .registers 4
 
-    .line 1686
+    .line 1697
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAecSensitivity()[F
@@ -3775,7 +3775,7 @@
 
     invoke-interface {p2, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAecSensitivity([FLandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1687
+    .line 1698
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAecFrameControlLuxIndex()F
@@ -3784,7 +3784,7 @@
 
     invoke-interface {p2, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAecFrameControlLuxIndex(FLandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1688
+    .line 1699
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAecFrameDarkBoostGain()F
@@ -3793,7 +3793,7 @@
 
     invoke-interface {p2, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAecFrameDarkBoostGain(FLandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1689
+    .line 1700
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAecFrameAdrcGain()F
@@ -3802,7 +3802,7 @@
 
     invoke-interface {p2, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAecFrameAdrcGain(FLandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1690
+    .line 1701
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
@@ -3821,7 +3821,7 @@
 
     invoke-interface {p2, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAecCameraId(Ljava/lang/Integer;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1691
+    .line 1702
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAwbGains()[F
@@ -3830,7 +3830,7 @@
 
     invoke-interface {p2, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAwbWarmstartGain([FLandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1692
+    .line 1703
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAwbFrameControlCCT()F
@@ -3839,7 +3839,7 @@
 
     invoke-interface {p2, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setStartAwbWarmstartCCT(FLandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1693
+    .line 1704
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAwbDecisionAfterTC()[F
@@ -3854,18 +3854,14 @@
 .method private updateQuadSwitchValue(Landroid/hardware/camera2/CaptureRequest$Builder;ILandroid/view/Surface;)V
     .registers 13
 
-    const/4 v0, 0x6
+    const/4 v0, 0x4
 
-    if-eq p2, v0, :cond_a8
+    if-eq p2, v0, :cond_4
 
-    const/4 v0, 0x7
+    return-void
 
-    if-ne p2, v0, :cond_8
-
-    goto/16 :goto_a8
-
-    .line 2898
-    :cond_8
+    .line 2923
+    :cond_4
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getZoomRatio()I
 
     move-result p2
@@ -3876,17 +3872,17 @@
 
     div-float/2addr p2, v0
 
-    .line 2899
+    .line 2924
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHeavyCapturingBV()I
 
     move-result v0
 
-    .line 2900
+    .line 2925
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAiRawScene()I
 
     move-result v1
 
-    .line 2902
+    .line 2927
     sget-object v2, Lcom/transsion/camera/utils/SettingInfo;->AIRAW_SUPPORT_CAMERA_IDS:[I
 
     array-length v2, v2
@@ -3899,23 +3895,23 @@
 
     const/4 v6, 0x0
 
-    if-le v2, v3, :cond_47
+    if-le v2, v3, :cond_43
 
-    .line 2903
+    .line 2928
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCapabilities:Lcom/transsion/camera/adapter/CameraCapabilities2Impl;
 
     invoke-virtual {v2}, Lcom/transsion/camera/adapter/CameraCapabilities;->isSatModeSupport()Z
 
     move-result v2
 
-    if-nez v2, :cond_35
+    if-nez v2, :cond_31
 
-    .line 2904
+    .line 2929
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isLongFocusCamera()Z
 
     move-result v2
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_31
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLongFocusBaseZoomRatio()F
 
@@ -3923,10 +3919,10 @@
 
     mul-float/2addr p2, v2
 
-    :cond_35
+    :cond_31
     cmpl-float v2, p2, v4
 
-    if-ltz v2, :cond_45
+    if-ltz v2, :cond_41
 
     float-to-double v2, p2
 
@@ -3934,33 +3930,33 @@
 
     cmpg-double v2, v2, v7
 
-    if-gez v2, :cond_45
+    if-gez v2, :cond_41
 
-    :goto_43
+    :goto_3f
     move v2, v5
 
-    goto :goto_52
+    goto :goto_4e
 
-    :cond_45
+    :cond_41
     move v2, v6
 
-    goto :goto_52
+    goto :goto_4e
 
-    :cond_47
+    :cond_43
     cmpl-float v2, p2, v4
 
-    if-ltz v2, :cond_45
+    if-ltz v2, :cond_41
 
     const/high16 v2, 0x40a00000    # 5.0f
 
     cmpg-float v2, p2, v2
 
-    if-gez v2, :cond_45
+    if-gez v2, :cond_41
 
-    goto :goto_43
+    goto :goto_3f
 
-    .line 2910
-    :goto_52
+    .line 2935
+    :goto_4e
     iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -3989,7 +3985,7 @@
 
     invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2913
+    .line 2938
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p2
@@ -4002,55 +3998,53 @@
 
     move-result-object p2
 
-    .line 2910
+    .line 2935
     invoke-static {v3, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2914
+    .line 2939
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p2
 
     iget-boolean p2, p2, Lcom/transsion/camera/utils/CustomConfigUtil;->mPostAlgoQuadSupport:Z
 
-    if-eqz p2, :cond_a3
+    if-eqz p2, :cond_9f
 
-    if-eqz v2, :cond_a3
+    if-eqz v2, :cond_9f
 
     const/16 p2, 0x1e
 
-    if-le v0, p2, :cond_a3
+    if-le v0, p2, :cond_9f
 
-    .line 2917
+    .line 2942
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p2, v5, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setQuadSwitchValue(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    if-eqz p3, :cond_9f
+    if-eqz p3, :cond_9b
 
-    .line 2919
+    .line 2944
     invoke-virtual {p1, p3}, Landroid/hardware/camera2/CaptureRequest$Builder;->removeTarget(Landroid/view/Surface;)V
 
-    .line 2921
-    :cond_9f
+    .line 2946
+    :cond_9b
     invoke-virtual {p0, v6}, Lcom/transsion/camera/adapter/CameraParameters;->setZSLEnable(Z)V
 
     return-void
 
-    .line 2923
-    :cond_a3
+    .line 2948
+    :cond_9f
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v6, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setQuadSwitchValue(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    :cond_a8
-    :goto_a8
     return-void
 .end method
 
 .method private updateQualcommFeature2Mode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1697
+    .line 1708
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFeature2Mode()I
@@ -4065,7 +4059,7 @@
 .method private updateRTDofMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1405
+    .line 1416
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isRTDofEnable()Z
@@ -4080,7 +4074,7 @@
 .method private updateRaw10ConvertFMT(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2740
+    .line 2765
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const/4 v0, 0x1
@@ -4093,7 +4087,7 @@
 .method private updateRawSuperResolutionMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2080
+    .line 2091
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getRawSuperResolutionMode()I
@@ -4108,14 +4102,14 @@
 .method private updateRecordingOrientation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1994
+    .line 2005
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isRecordingHint()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 1995
+    .line 2006
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoOrientation()I
@@ -4131,7 +4125,7 @@
 .method private updateRemosaicMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2053
+    .line 2064
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getRemosaicMode()Ljava/lang/String;
@@ -4146,7 +4140,7 @@
 .method private updateRequest360VideoHDRInitMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1729
+    .line 1740
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->get360VideoHDRInitMode()I
@@ -4161,7 +4155,7 @@
 .method private updateRequest360VideoHDRMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1725
+    .line 1736
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->get360VideoHDRMode()I
@@ -4176,14 +4170,14 @@
 .method private updateRequestAWBMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 15
 
-    .line 1562
+    .line 1573
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAWBMode()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_ff
 
-    .line 1564
+    .line 1575
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v1
@@ -4377,7 +4371,7 @@
 
     goto :goto_c9
 
-    .line 1581
+    .line 1592
     :pswitch_94
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4385,7 +4379,7 @@
 
     goto :goto_c9
 
-    .line 1575
+    .line 1586
     :pswitch_99
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4393,7 +4387,7 @@
 
     goto :goto_c9
 
-    .line 1587
+    .line 1598
     :pswitch_9e
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4401,7 +4395,7 @@
 
     goto :goto_c9
 
-    .line 1578
+    .line 1589
     :pswitch_a3
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4409,7 +4403,7 @@
 
     goto :goto_c9
 
-    .line 1584
+    .line 1595
     :pswitch_a8
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4417,7 +4411,7 @@
 
     goto :goto_c9
 
-    .line 1590
+    .line 1601
     :pswitch_ad
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4425,7 +4419,7 @@
 
     goto :goto_c9
 
-    .line 1569
+    .line 1580
     :pswitch_b2
     invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4433,7 +4427,7 @@
 
     goto :goto_c9
 
-    .line 1566
+    .line 1577
     :pswitch_b7
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -4441,7 +4435,7 @@
 
     goto :goto_c9
 
-    .line 1593
+    .line 1604
     :pswitch_bc
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -4453,13 +4447,13 @@
 
     goto :goto_c9
 
-    .line 1572
+    .line 1583
     :pswitch_c5
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .line 1598
+    .line 1609
     :goto_c9
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -4479,24 +4473,24 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1599
+    .line 1610
     sget-object v2, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AWB_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p1, v2, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1601
+    .line 1612
     invoke-virtual {v9, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_fa
 
-    .line 1602
+    .line 1613
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0, v11, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setManualAWBMode(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1603
+    .line 1614
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getManualAWBValue()Ljava/lang/String;
@@ -4507,7 +4501,7 @@
 
     return-void
 
-    .line 1605
+    .line 1616
     :cond_fa
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -4548,7 +4542,7 @@
 .method private updateRequestAeeExpoInfoResult(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2625
+    .line 2650
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPostAlgoFrameInfo()[I
@@ -4563,7 +4557,7 @@
 .method private updateRequestAirawSN2SRMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2159
+    .line 2170
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAirawSN2SRMode()I
@@ -4578,7 +4572,26 @@
 .method private updateRequestAnimalEyeDetection(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2401
+    .line 2422
+    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionUseAutoFocusSwitch()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    .line 2423
+    iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
+
+    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionAutoFocusSwitch()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-interface {v0, p0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAnimalEyeDetection(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    return-void
+
+    .line 2425
+    :cond_10
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionAnimalEyeDetection()Ljava/lang/String;
@@ -4593,7 +4606,7 @@
 .method private updateRequestAodMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2696
+    .line 2721
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->aodMode()Z
@@ -4608,7 +4621,7 @@
 .method private updateRequestArcFilter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1733
+    .line 1744
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getArcFilterId()I
@@ -4623,7 +4636,7 @@
 .method private updateRequestAsd(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2012
+    .line 2023
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionAsdMode()I
@@ -4638,7 +4651,7 @@
 .method private updateRequestAsdVersion(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2016
+    .line 2027
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionAsdVersion()I
@@ -4653,7 +4666,7 @@
 .method private updateRequestAutoMacroSwitch(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2405
+    .line 2430
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionAutoMacroSwitch()Ljava/lang/String;
@@ -4668,7 +4681,7 @@
 .method private updateRequestAutoMacroSwitchSetting(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2409
+    .line 2434
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionAutoMacroSwitchSetting()Ljava/lang/String;
@@ -4683,7 +4696,7 @@
 .method private updateRequestAutoWatermark(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
     .registers 4
 
-    .line 2250
+    .line 2261
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p2}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isAutoWaterMarkSupport()Z
@@ -4692,7 +4705,7 @@
 
     if-nez p2, :cond_10
 
-    .line 2252
+    .line 2263
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "auto watermark is not support"
@@ -4701,20 +4714,20 @@
 
     return-void
 
-    .line 2255
+    .line 2266
     :cond_10
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAutoWatermarkMode()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 2256
+    .line 2267
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_22
 
-    .line 2257
+    .line 2268
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "autoWatermarkMode is empty"
@@ -4723,7 +4736,7 @@
 
     return-void
 
-    .line 2261
+    .line 2272
     :cond_22
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isRecordingHint()Z
 
@@ -4731,7 +4744,7 @@
 
     if-eqz v0, :cond_32
 
-    .line 2262
+    .line 2273
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoOrientation()I
@@ -4742,7 +4755,7 @@
 
     return-void
 
-    .line 2264
+    .line 2275
     :cond_32
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -4756,7 +4769,7 @@
 .method private updateRequestBWConvert(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2297
+    .line 2308
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isBWConvertEnable()Z
@@ -4771,7 +4784,7 @@
 .method private updateRequestBWPortraitMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2293
+    .line 2304
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isBWPortraitEnable()Z
@@ -4786,7 +4799,7 @@
 .method private updateRequestBgImageReaderId(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1879
+    .line 1890
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isBgServiceEnable()Z
 
     move-result v0
@@ -4804,7 +4817,7 @@
     :cond_d
     return-void
 
-    .line 1880
+    .line 1891
     :cond_e
     :goto_e
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
@@ -4821,14 +4834,14 @@
 .method private updateRequestBgServiceMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1873
+    .line 1884
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isBgServiceEnable()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 1874
+    .line 1885
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isBgServiceEnable()Z
@@ -4848,14 +4861,14 @@
 
     if-ne p2, v0, :cond_13
 
-    .line 2136
+    .line 2147
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setCaptureTime(J)V
 
-    .line 2137
+    .line 2148
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getCaptureTime()J
@@ -4871,7 +4884,7 @@
 .method private updateRequestColorLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2647
+    .line 2672
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getColorLevel()Ljava/lang/String;
@@ -4886,7 +4899,7 @@
 .method private updateRequestContinuousShot(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 2
 
-    .line 2242
+    .line 2253
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->enableContinuousShot(Landroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -4897,7 +4910,7 @@
 .method private updateRequestCusIspAsd(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2037
+    .line 2048
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionCusIspAsd()[I
@@ -4912,7 +4925,7 @@
 .method private updateRequestDenoise(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2045
+    .line 2056
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionSmartDenoise()I
@@ -4927,7 +4940,7 @@
 .method private updateRequestDistortionCorrection(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 5
 
-    .line 2237
+    .line 2248
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4950,7 +4963,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2238
+    .line 2249
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getDistortionCorrectionMode()I
@@ -4965,7 +4978,7 @@
 .method private updateRequestDistortionCorrectionPreview(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 5
 
-    .line 2232
+    .line 2243
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4988,7 +5001,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2233
+    .line 2244
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getDistortionCorrectionPreviewEnablet()Ljava/lang/String;
@@ -5003,7 +5016,7 @@
 .method private updateRequestDxoSceneDetection(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2033
+    .line 2044
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getDxoSceneDetection()Ljava/lang/String;
@@ -5022,7 +5035,7 @@
 
     if-ne p2, v0, :cond_c
 
-    .line 2642
+    .line 2667
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getEVList()[I
@@ -5038,7 +5051,7 @@
 .method private updateRequestExcludeVideoMakeUpBeauty(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1805
+    .line 1816
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getExcludeVideoMakeupBeauty()I
@@ -5053,7 +5066,7 @@
 .method private updateRequestExposureCompensation(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
     .registers 8
 
-    .line 1409
+    .line 1420
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getExposureCompensation()I
 
     move-result v0
@@ -5064,7 +5077,7 @@
 
     if-nez v0, :cond_5b
 
-    .line 1411
+    .line 1422
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getISOValue()I
 
     move-result p2
@@ -5073,7 +5086,7 @@
 
     if-ne p2, v1, :cond_5b
 
-    .line 1412
+    .line 1423
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getExposureTime()J
 
     move-result-wide v1
@@ -5084,7 +5097,7 @@
 
     if-lez p2, :cond_5b
 
-    .line 1413
+    .line 1424
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCapabilities:Lcom/transsion/camera/adapter/CameraCapabilities2Impl;
 
     invoke-virtual {p2}, Lcom/transsion/camera/adapter/CameraCapabilities;->getExposureCompensationStep()Landroid/util/Rational;
@@ -5107,7 +5120,7 @@
 
     div-int/2addr p2, v0
 
-    .line 1414
+    .line 1425
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCapabilities:Lcom/transsion/camera/adapter/CameraCapabilities2Impl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraCapabilities;->getMaxExposureCompensation()I
@@ -5116,7 +5129,7 @@
 
     div-int/2addr v0, p2
 
-    .line 1415
+    .line 1426
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getExposureTime()J
 
     move-result-wide v1
@@ -5149,7 +5162,7 @@
 
     double-to-int p2, v1
 
-    .line 1416
+    .line 1427
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCapabilities:Lcom/transsion/camera/adapter/CameraCapabilities2Impl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraCapabilities;->getMaxExposureCompensation()I
@@ -5160,7 +5173,7 @@
 
     move-result v0
 
-    .line 1418
+    .line 1429
     :cond_5b
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5190,7 +5203,7 @@
 
     invoke-static {p2, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1419
+    .line 1430
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_EXPOSURE_COMPENSATION:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5205,12 +5218,12 @@
 .method private updateRequestExposureTime(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
     .registers 9
 
-    .line 1701
+    .line 1712
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getExposureTime()J
 
     move-result-wide v0
 
-    .line 1702
+    .line 1713
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v2}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isNeedRestrictExposureTime()Z
@@ -5225,12 +5238,12 @@
 
     const-wide/32 v2, 0x7735940
 
-    .line 1703
+    .line 1714
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v0
 
-    .line 1706
+    .line 1717
     :cond_16
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5276,7 +5289,7 @@
 
     goto :goto_53
 
-    .line 1710
+    .line 1721
     :cond_4a
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -5286,7 +5299,7 @@
 
     invoke-virtual {p1, p0, p2}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1712
+    .line 1723
     :goto_53
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -5302,7 +5315,26 @@
 .method private updateRequestEyeDetection(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2393
+    .line 2404
+    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionUseAutoFocusSwitch()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    .line 2405
+    iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
+
+    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionAutoFocusSwitch()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-interface {v0, p0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setEyeDetection(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    return-void
+
+    .line 2407
+    :cond_10
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionEyeDetection()Ljava/lang/String;
@@ -5317,14 +5349,14 @@
 .method private updateRequestFaceAttributeInfo(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1843
+    .line 1854
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isCapturing()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 1844
+    .line 1855
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFaceAttributeInfo()[I
@@ -5340,7 +5372,7 @@
 .method private updateRequestFaceBeauty(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 1813
+    .line 1824
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFaceBeautyMode()Ljava/lang/String;
@@ -5349,7 +5381,7 @@
 
     invoke-interface {v0, v1, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setFaceBeautyMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1814
+    .line 1825
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFaceBeautyLevel()Ljava/lang/String;
@@ -5364,7 +5396,7 @@
 .method private updateRequestFaceDetectionMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 5
 
-    .line 1365
+    .line 1376
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5387,14 +5419,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1366
+    .line 1377
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isFaceDetectionEnable()Z
 
     move-result v0
 
     if-eqz v0, :cond_58
 
-    .line 1369
+    .line 1380
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mAvailableFaceDetectModes:[I
 
     const/4 v1, 0x2
@@ -5407,7 +5439,7 @@
 
     if-eqz v0, :cond_39
 
-    .line 1370
+    .line 1381
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_FACE_DETECT_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5416,14 +5448,14 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1371
+    .line 1382
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->enableFace3A(ZLandroid/hardware/camera2/CaptureRequest$Builder;)V
 
     return-void
 
-    .line 1372
+    .line 1383
     :cond_39
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mAvailableFaceDetectModes:[I
 
@@ -5433,7 +5465,7 @@
 
     if-eqz v0, :cond_50
 
-    .line 1373
+    .line 1384
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_FACE_DETECT_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5442,14 +5474,14 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1374
+    .line 1385
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->enableFace3A(ZLandroid/hardware/camera2/CaptureRequest$Builder;)V
 
     return-void
 
-    .line 1376
+    .line 1387
     :cond_50
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5459,21 +5491,21 @@
 
     return-void
 
-    .line 1379
+    .line 1390
     :cond_58
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_FACE_DETECT_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v1, 0x0
 
-    .line 1380
+    .line 1391
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    .line 1379
+    .line 1390
     invoke-virtual {p1, v0, v2}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1381
+    .line 1392
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v1, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->enableFace3A(ZLandroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -5486,22 +5518,22 @@
 
     const/4 v0, 0x1
 
-    .line 1324
+    .line 1335
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    .line 1320
+    .line 1331
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFocusMode()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1321
+    .line 1332
     const-string v3, "fixed"
 
     if-eqz v2, :cond_78
 
-    .line 1322
+    .line 1333
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v4
@@ -5618,7 +5650,7 @@
 
     goto :goto_78
 
-    .line 1327
+    .line 1338
     :pswitch_5d
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -5626,7 +5658,7 @@
 
     goto :goto_79
 
-    .line 1339
+    .line 1350
     :pswitch_62
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -5634,7 +5666,7 @@
 
     goto :goto_79
 
-    .line 1336
+    .line 1347
     :pswitch_67
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -5642,7 +5674,7 @@
 
     goto :goto_79
 
-    .line 1333
+    .line 1344
     :pswitch_6c
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -5655,7 +5687,7 @@
 
     goto :goto_79
 
-    .line 1330
+    .line 1341
     :pswitch_73
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -5667,7 +5699,7 @@
     :goto_78
     const/4 v0, 0x0
 
-    .line 1345
+    .line 1356
     :goto_79
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->needFocusModeAuto()Z
 
@@ -5696,7 +5728,7 @@
     :cond_90
     move-object v1, v0
 
-    .line 1349
+    .line 1360
     :cond_91
     :goto_91
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -5731,7 +5763,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1350
+    .line 1361
     invoke-virtual {p0, p2}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->isLongExposureCapture(I)Z
 
     move-result p2
@@ -5756,22 +5788,22 @@
 
     move-result-object p2
 
-    .line 1349
+    .line 1360
     invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1351
+    .line 1362
     sget-object p2, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p1, p2, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1353
+    .line 1364
     invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p2
 
     if-eqz p2, :cond_101
 
-    .line 1355
+    .line 1366
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFocusLength()F
 
     move-result p2
@@ -5786,20 +5818,20 @@
 
     if-lez p2, :cond_f4
 
-    .line 1356
+    .line 1367
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFocusLength()F
 
     move-result p0
 
     goto :goto_f8
 
-    .line 1358
+    .line 1369
     :cond_f4
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFocusDistance()F
 
     move-result p0
 
-    .line 1360
+    .line 1371
     :goto_f8
     sget-object p2, Landroid/hardware/camera2/CaptureRequest;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -5838,47 +5870,47 @@
 
     move-object/from16 v0, p0
 
-    .line 1922
+    .line 1933
     iget-object v1, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isFusionSupport()Z
 
     move-result v1
 
-    .line 1923
+    .line 1934
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getFusionMode()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1924
+    .line 1935
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionHDR()I
 
     move-result v3
 
-    .line 1925
+    .line 1936
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionTurboFusionMode()I
 
     move-result v4
 
-    .line 1926
+    .line 1937
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperAIRawMode()I
 
     move-result v5
 
-    .line 1927
+    .line 1938
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionLowLightMode()I
 
     move-result v6
 
-    .line 1928
+    .line 1939
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionAINRMode()I
 
     move-result v7
 
-    .line 1929
+    .line 1940
     invoke-direct {v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSuperNightAlgoTypeToHal()V
 
-    .line 1930
+    .line 1941
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v8
@@ -5887,7 +5919,7 @@
 
     if-eqz v8, :cond_34
 
-    .line 1933
+    .line 1944
     iget-object v8, v0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoTypeToHal:Ljava/lang/String;
 
     const-string v10, "Night_Light"
@@ -5901,7 +5933,7 @@
     :cond_34
     const/4 v8, 0x0
 
-    .line 1935
+    .line 1946
     :goto_35
     iget-object v10, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5969,7 +6001,7 @@
     :goto_69
     move v5, v11
 
-    .line 1942
+    .line 1953
     :goto_6a
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getZoomRatio()I
 
@@ -5981,7 +6013,7 @@
 
     div-float/2addr v12, v13
 
-    .line 1943
+    .line 1954
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getBrightnessValue()I
 
     move-result v13
@@ -5999,7 +6031,7 @@
     :cond_7e
     const/4 v13, 0x0
 
-    .line 1944
+    .line 1955
     :goto_7f
     iget-object v14, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -6053,7 +6085,7 @@
 
     invoke-virtual {v15, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1949
+    .line 1960
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getBrightnessValue()I
 
     move-result v4
@@ -6064,7 +6096,7 @@
 
     invoke-virtual {v15, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1950
+    .line 1961
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getFusionModeBVLimit()I
 
     move-result v4
@@ -6081,7 +6113,7 @@
 
     move-result-object v4
 
-    .line 1944
+    .line 1955
     invoke-static {v14, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     if-eqz v1, :cond_140
@@ -6105,7 +6137,7 @@
     :cond_f6
     const/4 v1, 0x0
 
-    .line 1954
+    .line 1965
     :goto_f7
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -6115,7 +6147,7 @@
 
     if-nez v4, :cond_10d
 
-    .line 1955
+    .line 1966
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v4
@@ -6135,20 +6167,20 @@
     :cond_10d
     const/4 v3, 0x0
 
-    .line 1959
+    .line 1970
     :goto_10e
     const-string v4, "on"
 
     if-eqz v1, :cond_132
 
-    .line 1960
+    .line 1971
     invoke-virtual {v4, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_132
 
-    .line 1961
+    .line 1972
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->isWideCamera()Z
 
     move-result v1
@@ -6161,7 +6193,7 @@
 
     if-eq v7, v11, :cond_132
 
-    .line 1965
+    .line 1976
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getBestMomentRawHDRMode()I
 
     move-result v1
@@ -6182,7 +6214,7 @@
     :cond_132
     const/4 v9, 0x0
 
-    .line 1968
+    .line 1979
     :goto_133
     iget-object v0, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -6209,7 +6241,7 @@
 .method private updateRequestHDRAeExpoInfoResult(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2629
+    .line 2654
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHDRAeExpoInfo()[I
@@ -6224,7 +6256,7 @@
 .method private updateRequestHdMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1903
+    .line 1914
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHdMode()Ljava/lang/String;
@@ -6239,7 +6271,7 @@
 .method private updateRequestHighFpsMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1907
+    .line 1918
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHighFpsMode()Ljava/lang/String;
@@ -6254,7 +6286,38 @@
 .method private updateRequestHumanDetection(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2397
+    .line 2412
+    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionUseAutoFocusSwitch()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1a
+
+    .line 2413
+    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionAutoFocusSwitch()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_19
+
+    .line 2414
+    iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
+
+    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionAutoFocusSwitch()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result p0
+
+    invoke-interface {v0, p0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setHumanDetection(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    :cond_19
+    return-void
+
+    .line 2417
+    :cond_1a
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionHumanDetection()I
@@ -6269,19 +6332,19 @@
 .method private updateRequestHumanEffect(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2475
+    .line 2500
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHumanEffectMode()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2476
+    .line 2501
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_f
 
-    .line 2477
+    .line 2502
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setHumanEffectMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -6293,12 +6356,12 @@
 .method private updateRequestISOValue(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
     .registers 6
 
-    .line 1655
+    .line 1666
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getISOValue()I
 
     move-result p2
 
-    .line 1660
+    .line 1671
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6333,13 +6396,13 @@
 
     const/4 p2, 0x0
 
-    .line 1664
+    .line 1675
     :cond_2b
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, p2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setISOParameter(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1665
+    .line 1676
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->SENSOR_SENSITIVITY:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6354,7 +6417,7 @@
 .method private updateRequestISPTuningEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2246
+    .line 2257
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getISPTuningEnable()I
@@ -6369,7 +6432,7 @@
 .method private updateRequestImageStyle(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1745
+    .line 1756
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getImageStyleId()I
@@ -6384,17 +6447,17 @@
 .method private updateRequestIsoAndExposureTime(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
     .registers 13
 
-    .line 1669
+    .line 1680
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getISOValue()I
 
     move-result v0
 
-    .line 1670
+    .line 1681
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getExposureTime()J
 
     move-result-wide v1
 
-    .line 1671
+    .line 1682
     iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v3}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isNeedRestrictExposureTime()Z
@@ -6409,7 +6472,7 @@
 
     const-wide/32 v5, 0x7735940
 
-    .line 1672
+    .line 1683
     invoke-static {v1, v2, v5, v6}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v1
@@ -6429,7 +6492,7 @@
 
     if-nez v9, :cond_2c
 
-    .line 1675
+    .line 1686
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v5, v6, p2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setIsoAndExposureTime(JILandroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -6443,7 +6506,7 @@
 
     if-nez v9, :cond_39
 
-    .line 1677
+    .line 1688
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     int-to-long v0, v0
@@ -6459,7 +6522,7 @@
 
     if-eqz v9, :cond_45
 
-    .line 1679
+    .line 1690
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v1, v2, v4, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setIsoAndExposureTime(JILandroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -6473,7 +6536,7 @@
 
     if-eqz v0, :cond_50
 
-    .line 1681
+    .line 1692
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v5, v6, p2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setIsoAndExposureTime(JILandroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -6485,12 +6548,12 @@
 .method private updateRequestJpegGPSLocation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 5
 
-    .line 1236
+    .line 1247
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getJpegGPSLocation()Landroid/location/Location;
 
     move-result-object v0
 
-    .line 1237
+    .line 1248
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6515,7 +6578,7 @@
 
     if-eqz v0, :cond_26
 
-    .line 1239
+    .line 1250
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->JPEG_GPS_LOCATION:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p1, p0, v0}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
@@ -6527,7 +6590,7 @@
 .method private updateRequestJpegOrientation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1232
+    .line 1243
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->JPEG_ORIENTATION:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getJpegOrientation()I
@@ -6546,7 +6609,7 @@
 .method private updateRequestJpegQuality(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 1223
+    .line 1234
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getJpegQuality()I
 
     move-result p0
@@ -6555,7 +6618,7 @@
 
     int-to-byte p0, p0
 
-    .line 1226
+    .line 1237
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->JPEG_QUALITY:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {p0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
@@ -6564,7 +6627,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1227
+    .line 1238
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->JPEG_THUMBNAIL_QUALITY:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {p0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
@@ -6580,19 +6643,19 @@
 .method private updateRequestLongExposure(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 5
 
-    .line 2651
+    .line 2676
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLongExposureScene()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2652
+    .line 2677
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_17
 
-    .line 2653
+    .line 2678
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLongExposureScene()Ljava/lang/String;
@@ -6605,20 +6668,20 @@
 
     invoke-interface {v0, v1, v2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setLongExposureScene(Ljava/lang/String;Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 2655
+    .line 2680
     :cond_17
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLongExposureCaptureState()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2656
+    .line 2681
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_2a
 
-    .line 2657
+    .line 2682
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLongExposureCaptureState()Ljava/lang/String;
@@ -6634,7 +6697,7 @@
 .method private updateRequestLowLight(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2116
+    .line 2127
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionLowLightMode()I
@@ -6649,7 +6712,7 @@
 .method private updateRequestLuminance(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2301
+    .line 2312
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLuminanceValue()I
@@ -6664,7 +6727,7 @@
 .method private updateRequestMFNRAeExpoInfoResult(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2633
+    .line 2658
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMFNRAeExpoInfo()[I
@@ -6679,7 +6742,7 @@
 .method private updateRequestMakeUpIntensitys(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1793
+    .line 1804
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMakeUpIntensitys()[F
@@ -6694,7 +6757,7 @@
 .method private updateRequestMakeUpMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1789
+    .line 1800
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMakeUpMode()I
@@ -6709,7 +6772,7 @@
 .method private updateRequestMakeUpVideoIntensitys(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1801
+    .line 1812
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMakeUpVideoIntensitys()[F
@@ -6724,7 +6787,7 @@
 .method private updateRequestMakeUpVideoMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1797
+    .line 1808
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMakeUpVideoMode()I
@@ -6739,7 +6802,7 @@
 .method private updateRequestMiddleNight(Landroid/hardware/camera2/CaptureRequest$Builder;Z)V
     .registers 6
 
-    .line 2120
+    .line 2131
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6760,7 +6823,7 @@
 
     if-eqz p2, :cond_28
 
-    .line 2122
+    .line 2133
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p2}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isQcomCaptureFlow()Z
@@ -6769,7 +6832,7 @@
 
     if-eqz p2, :cond_27
 
-    .line 2123
+    .line 2134
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const/4 p2, 0x1
@@ -6779,7 +6842,7 @@
     :cond_27
     return-void
 
-    .line 2126
+    .line 2137
     :cond_28
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -6789,7 +6852,7 @@
 
     if-eqz p2, :cond_37
 
-    .line 2127
+    .line 2138
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const/4 p2, 0x2
@@ -6798,7 +6861,7 @@
 
     return-void
 
-    .line 2129
+    .line 2140
     :cond_37
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -6824,14 +6887,14 @@
 .method private updateRequestMirrorMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 1987
+    .line 1998
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isRecordingHint()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 1988
+    .line 1999
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isMirrorEnable()Z
@@ -6840,7 +6903,7 @@
 
     invoke-interface {v0, v1, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->enableVideoMirror(ZLandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1990
+    .line 2001
     :cond_f
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -6856,7 +6919,7 @@
 .method private updateRequestModeUltrazoom(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2004
+    .line 2015
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isModeUltrazoomEnable()Z
@@ -6871,14 +6934,14 @@
 .method private updateRequestMultiFaceBeauty(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
     .registers 7
 
-    .line 1818
+    .line 1829
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMultiFaceBeautyMode()Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_84
 
-    .line 1819
+    .line 1830
     const-string/jumbo v1, "value_facebeauty_video_asd"
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -6897,7 +6960,7 @@
 
     goto/16 :goto_84
 
-    .line 1823
+    .line 1834
     :cond_1a
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -6921,12 +6984,12 @@
 
     if-ne p2, v1, :cond_3f
 
-    .line 1824
+    .line 1835
     iget-boolean p2, p0, Lcom/transsion/camera/adapter/CameraParameters;->mFaceBeautyPreviewInApp:Z
 
     if-eqz p2, :cond_3f
 
-    .line 1825
+    .line 1836
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const-string v2, "off"
@@ -6935,13 +6998,13 @@
 
     goto :goto_44
 
-    .line 1827
+    .line 1838
     :cond_3f
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p2, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setFaceBeautyMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1829
+    .line 1840
     :goto_44
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -7003,7 +7066,7 @@
 
     return-void
 
-    .line 1831
+    .line 1842
     :pswitch_70
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -7015,7 +7078,7 @@
 
     return-void
 
-    .line 1835
+    .line 1846
     :pswitch_7a
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -7027,7 +7090,7 @@
 
     return-void
 
-    .line 1820
+    .line 1831
     :cond_84
     :goto_84
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -7056,7 +7119,7 @@
 .method private updateRequestNight(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 5
 
-    .line 2100
+    .line 2111
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7079,7 +7142,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2101
+    .line 2112
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoTypeToHal:Ljava/lang/String;
 
     const-string v1, "Night_Light"
@@ -7096,7 +7159,7 @@
 
     if-nez v0, :cond_36
 
-    .line 2102
+    .line 2113
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const-string v0, "0"
@@ -7109,7 +7172,7 @@
 
     return-void
 
-    .line 2104
+    .line 2115
     :cond_36
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->replaceSuperNightToSWMFNR()Z
 
@@ -7126,7 +7189,7 @@
 
     move-result v0
 
-    .line 2105
+    .line 2116
     :goto_42
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -7138,7 +7201,7 @@
 .method private updateRequestNight3dnrAlgo(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2173
+    .line 2184
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getNight3dnrAlgo()I
@@ -7153,7 +7216,7 @@
 .method private updateRequestNightAeExpoInfoResult(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2637
+    .line 2662
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getNightAeExpoInfo()[I
@@ -7168,7 +7231,7 @@
 .method private updateRequestNightMorHdsScene(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2177
+    .line 2188
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getNightMorHdsScene()I
@@ -7183,7 +7246,7 @@
 .method private updateRequestPDAF(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 2
 
-    .line 2008
+    .line 2019
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setPDAF(Landroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -7194,7 +7257,7 @@
 .method private updateRequestPhotoHDRMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1717
+    .line 1728
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPhotoHDRMode()Ljava/lang/String;
@@ -7209,7 +7272,7 @@
 .method private updateRequestPortraitMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1849
+    .line 1860
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPortraitMode()I
@@ -7224,14 +7287,14 @@
 .method private updateRequestPostViewSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2189
+    .line 2200
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPostViewSize()Landroid/util/Size;
 
     move-result-object v0
 
     if-eqz v0, :cond_17
 
-    .line 2191
+    .line 2202
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
@@ -7255,7 +7318,7 @@
 .method private updateRequestQuickPreview(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2000
+    .line 2011
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isQuickPreviewEnable()Z
@@ -7270,7 +7333,7 @@
 .method private updateRequestSTBlurLightStrength(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1861
+    .line 1872
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSTBlurLightStrength()F
@@ -7285,7 +7348,7 @@
 .method private updateRequestSTBlurMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1853
+    .line 1864
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSTBlurMode()I
@@ -7300,7 +7363,7 @@
 .method private updateRequestSTBlurReaRatio(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1865
+    .line 1876
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSTBlurReaRatio()F
@@ -7315,7 +7378,7 @@
 .method private updateRequestSTBlurStrengths(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1857
+    .line 1868
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSTBlurStrengths()[F
@@ -7330,19 +7393,19 @@
 .method private updateRequestScreenFlash(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 6
 
-    .line 2313
+    .line 2324
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getScreenFlashMode()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2314
+    .line 2325
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_12
 
-    .line 2315
+    .line 2326
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "screenFlashMode is empty"
@@ -7351,7 +7414,7 @@
 
     return-void
 
-    .line 2318
+    .line 2329
     :cond_12
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -7371,7 +7434,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2319
+    .line 2330
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setScreenFlashMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -7382,19 +7445,19 @@
 .method private updateRequestScreenFlashStatus(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2323
+    .line 2334
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getScreenFlashStatus()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2324
+    .line 2335
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_12
 
-    .line 2325
+    .line 2336
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "screenFalshStatus is empty"
@@ -7403,7 +7466,7 @@
 
     return-void
 
-    .line 2328
+    .line 2339
     :cond_12
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -7415,7 +7478,7 @@
 .method private updateRequestSdofPhotoMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 1885
+    .line 1896
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCapabilities:Lcom/transsion/camera/adapter/CameraCapabilities2Impl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraCapabilities;->isSatModeSupport()Z
@@ -7424,7 +7487,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 1887
+    .line 1898
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->getSupportLogicalCameraMode()[I
@@ -7433,7 +7496,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 1889
+    .line 1900
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const/4 v1, 0x0
@@ -7449,7 +7512,7 @@
     :cond_1c
     return-void
 
-    .line 1892
+    .line 1903
     :cond_1d
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCapabilities:Lcom/transsion/camera/adapter/CameraCapabilities2Impl;
 
@@ -7467,7 +7530,7 @@
 
     goto :goto_34
 
-    .line 1895
+    .line 1906
     :cond_2c
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -7477,7 +7540,7 @@
 
     goto :goto_3b
 
-    .line 1893
+    .line 1904
     :cond_34
     :goto_34
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
@@ -7486,7 +7549,7 @@
 
     invoke-interface {v0, v1, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setSdofPhotoMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1897
+    .line 1908
     :goto_3b
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -7496,7 +7559,7 @@
 
     invoke-interface {v0, v1, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setSdofPhotoLevel(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1898
+    .line 1909
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPreviewSize()Landroid/util/Size;
@@ -7511,7 +7574,7 @@
 .method private updateRequestShot2shot(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
     .registers 6
 
-    .line 2225
+    .line 2236
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getShot2ShotMode()I
@@ -7528,7 +7591,7 @@
 
     if-eq p2, v0, :cond_18
 
-    .line 2226
+    .line 2237
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSprdPlatform()Z
 
     move-result p2
@@ -7540,7 +7603,7 @@
     :cond_17
     return-void
 
-    .line 2227
+    .line 2238
     :cond_18
     :goto_18
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
@@ -7557,7 +7620,7 @@
 .method private updateRequestSingleBlurLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1869
+    .line 1880
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSTBlurLevel()I
@@ -7572,7 +7635,7 @@
 .method private updateRequestSkinOptimization(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2433
+    .line 2458
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSkinOptimization()I
@@ -7587,7 +7650,7 @@
 .method private updateRequestSlimBodyLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1809
+    .line 1820
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSlimBodyLevels()[I
@@ -7602,7 +7665,7 @@
 .method private updateRequestSlimBodyMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1781
+    .line 1792
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getBodySlimMode()I
@@ -7617,7 +7680,7 @@
 .method private updateRequestSlimBodySkip(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1785
+    .line 1796
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getBodySlimSkip()I
@@ -7632,7 +7695,7 @@
 .method private updateRequestStreamFlip(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2692
+    .line 2717
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getStreamFlip()Z
@@ -7647,7 +7710,7 @@
 .method private updateRequestStreetPhotoFilter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1741
+    .line 1752
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getStreetPhotoFilterId()I
@@ -7662,7 +7725,7 @@
 .method private updateRequestSuperAIRaw(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2163
+    .line 2174
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     iget-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsDetectedMoon:Z
@@ -7687,7 +7750,7 @@
 .method private updateRequestSuperNightFilter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1749
+    .line 1760
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getNvsSuperNightFilterId()I
@@ -7702,10 +7765,10 @@
 .method private updateRequestSuperNightMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 1977
+    .line 1988
     invoke-direct {p0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSuperNightAlgoTypeToHal()V
 
-    .line 1978
+    .line 1989
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperNightMode()Ljava/lang/String;
@@ -7722,7 +7785,7 @@
 .method private updateRequestTfPortraitMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2155
+    .line 2166
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTfPortraitMode()I
@@ -7737,14 +7800,14 @@
 .method private updateRequestThumbnailSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1648
+    .line 1659
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getThumbnailSize()Landroid/util/Size;
 
     move-result-object p0
 
     if-eqz p0, :cond_b
 
-    .line 1650
+    .line 1661
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->JPEG_THUMBNAIL_SIZE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p1, v0, p0}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
@@ -7756,7 +7819,7 @@
 .method private updateRequestTranssionFilter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1737
+    .line 1748
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionFilterId()I
@@ -7771,7 +7834,7 @@
 .method private updateRequestTranssionHDR(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2041
+    .line 2052
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionHDR()I
@@ -7786,7 +7849,7 @@
 .method private updateRequestTranssionPlugin(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2181
+    .line 2192
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionPluginEnable()I
@@ -7801,7 +7864,7 @@
 .method private updateRequestTranssionSuperNightFilter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1753
+    .line 1764
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionSuperNightFilterId()I
@@ -7816,10 +7879,10 @@
 .method private updateRequestTripodSuperNightEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1982
+    .line 1993
     invoke-direct {p0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSuperNightAlgoTypeToHal()V
 
-    .line 1983
+    .line 1994
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mSuperNightAlgoTypeToHal:Ljava/lang/String;
@@ -7832,7 +7895,7 @@
 .method private updateRequestTuningChn(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 5
 
-    .line 1450
+    .line 1461
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAppModeId()Ljava/lang/String;
@@ -7855,7 +7918,7 @@
 .method private updateRequestVideoEffect(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1773
+    .line 1784
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionVideoEffectId()I
@@ -7870,7 +7933,7 @@
 .method private updateRequestVideoFilter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1761
+    .line 1772
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionVideoFilterId()I
@@ -7885,7 +7948,7 @@
 .method private updateRequestVideoFilterLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1769
+    .line 1780
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoFilterLevel()I
@@ -7900,7 +7963,7 @@
 .method private updateRequestVideoFilterSkinType(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1765
+    .line 1776
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionVideoFilterSkinType()I
@@ -7915,7 +7978,7 @@
 .method private updateRequestVideoFrame(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1777
+    .line 1788
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionVideoFrameId()I
@@ -7930,7 +7993,7 @@
 .method private updateRequestVideoHDRMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 1721
+    .line 1732
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoHDRMode()Ljava/lang/String;
@@ -7945,7 +8008,7 @@
 .method private updateRequestVideoInterpolation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2185
+    .line 2196
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoInterpolationEnable()I
@@ -7962,7 +8025,7 @@
 
     if-nez p3, :cond_2d
 
-    .line 1386
+    .line 1397
     invoke-static {p2}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->isStillCaptureTemplate(I)Z
 
     move-result p2
@@ -7971,7 +8034,7 @@
 
     const-string p2, "stellartrack"
 
-    .line 1387
+    .line 1398
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLongExposureScene()Ljava/lang/String;
 
     move-result-object p3
@@ -7984,7 +8047,7 @@
 
     const-string p2, "star"
 
-    .line 1388
+    .line 1399
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLongExposureScene()Ljava/lang/String;
 
     move-result-object p3
@@ -7995,7 +8058,7 @@
 
     if-nez p2, :cond_2d
 
-    .line 1389
+    .line 1400
     sget-object p2, Landroid/hardware/camera2/CaptureRequest;->CONTROL_ENABLE_ZSL:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isZSLEnable()Z
@@ -8008,7 +8071,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1391
+    .line 1402
     :cond_2d
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -8024,7 +8087,7 @@
 .method private updateRingFlashLight(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2670
+    .line 2695
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getRingScreenLight()Ljava/lang/String;
@@ -8039,7 +8102,7 @@
 .method private updateSMVRMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2389
+    .line 2400
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSMVRRequestParams()[I
@@ -8054,7 +8117,7 @@
 .method private updateSTBlurCaptureSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2975
+    .line 3000
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSTBlurMode()I
@@ -8073,24 +8136,24 @@
 .method private updateSatPictureSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2482
+    .line 2507
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSatPictureSize()Landroid/util/Size;
 
     move-result-object v0
 
     if-eqz v0, :cond_17
 
-    .line 2484
+    .line 2509
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
 
     move-result v1
 
-    .line 2485
+    .line 2510
     invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
 
     move-result v0
 
-    .line 2486
+    .line 2511
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     filled-new-array {v1, v0}, [I
@@ -8106,7 +8169,7 @@
 .method private updateScreenTorchStatus(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2518
+    .line 2543
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getScreenTorchStatus()Ljava/lang/String;
@@ -8121,7 +8184,7 @@
 .method private updateSensorHighSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2084
+    .line 2095
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperDefinitionMode()I
@@ -8140,7 +8203,7 @@
 .method private updateSmoothZoom(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2857
+    .line 2882
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSmoothZoomValue()I
@@ -8155,7 +8218,7 @@
 .method private updateStreamingCustomTuning(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 6
 
-    .line 2573
+    .line 2598
     new-instance v0, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2$DXOScene;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->asdEffectColorCard()Z
@@ -8172,7 +8235,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2$DXOScene;-><init>(ZZZ)V
 
-    .line 2574
+    .line 2599
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getStreamingCustomTuning()I
@@ -8187,7 +8250,7 @@
 .method private updateSuperAntiVideoMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2279
+    .line 2290
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isSuperAntiVideoSupport()Z
@@ -8196,7 +8259,7 @@
 
     if-nez v0, :cond_10
 
-    .line 2281
+    .line 2292
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "super anti video is not support"
@@ -8205,13 +8268,13 @@
 
     return-void
 
-    .line 2284
+    .line 2295
     :cond_10
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperAntiVideoMode()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2285
+    .line 2296
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setSuperAntiVideoMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -8222,7 +8285,7 @@
 .method private updateSuperDefinitionMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2049
+    .line 2060
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperDefinitionMode()I
@@ -8237,7 +8300,7 @@
 .method private updateSuperFlashValue(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2506
+    .line 2531
     const-string v0, "Night_Light"
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperNightAlgoType()Ljava/lang/String;
@@ -8250,7 +8313,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 2507
+    .line 2532
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const-string v0, "off"
@@ -8259,7 +8322,7 @@
 
     return-void
 
-    .line 2509
+    .line 2534
     :cond_14
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -8275,7 +8338,7 @@
 .method private updateSuperNightAlgoTypeToHal()V
     .registers 2
 
-    .line 1973
+    .line 1984
     iget-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsDetectedMoon:Z
 
     if-eqz v0, :cond_7
@@ -8298,7 +8361,7 @@
 .method private updateSuperResolutionMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2076
+    .line 2087
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     iget-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsDetectedMoon:Z
@@ -8327,7 +8390,7 @@
 
     if-ne p1, v0, :cond_c
 
-    .line 2980
+    .line 3005
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSystemUserID()I
@@ -8347,14 +8410,14 @@
 
     if-ne p1, v0, :cond_f
 
-    .line 2826
+    .line 2851
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSkipMultCapture()Z
 
     move-result p1
 
     if-eqz p1, :cond_f
 
-    .line 2827
+    .line 2852
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const/4 p1, 0x1
@@ -8372,14 +8435,14 @@
 
     if-ne p1, v0, :cond_f
 
-    .line 2834
+    .line 2859
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSkipMultCapture()Z
 
     move-result p1
 
     if-eqz p1, :cond_f
 
-    .line 2835
+    .line 2860
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     const/4 p1, 0x1
@@ -8393,7 +8456,7 @@
 .method private updateTAPSCaptureNeedYuvSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2821
+    .line 2846
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTAPSCaptureNeedYuvSize()I
@@ -8408,7 +8471,7 @@
 .method private updateTranFaceDetectMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2381
+    .line 2392
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranFaceDetectMode()I
@@ -8423,7 +8486,7 @@
 .method private updateTranssionAINRMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2881
+    .line 2906
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionAINRMode()I
@@ -8438,7 +8501,7 @@
 .method private updateTranssionCameraMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2385
+    .line 2396
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionCameraMode()I
@@ -8453,7 +8516,7 @@
 .method private updateViUllEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2949
+    .line 2974
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getViUllEnable()I
@@ -8468,7 +8531,7 @@
 .method private updateVideo2kCapSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2795
+    .line 2820
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideo2kCapSize()Landroid/util/Size;
@@ -8483,7 +8546,7 @@
 .method private updateVideo360HdrAlgoScene(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2548
+    .line 2573
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->get360VideoHDRScene()I
@@ -8498,7 +8561,7 @@
 .method private updateVideoAutoFpsModeForISP(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2770
+    .line 2795
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAutoFpsModeForISP()I
@@ -8513,7 +8576,7 @@
 .method private updateVideoHDRFormat(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2985
+    .line 3010
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoHdrFormat()Ljava/lang/String;
@@ -8528,7 +8591,7 @@
 .method private updateVideoPortraitLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2417
+    .line 2442
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoPortraitLevel()I
@@ -8543,7 +8606,7 @@
 .method private updateVideoPortraitMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2413
+    .line 2438
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoPortraitMode()I
@@ -8558,7 +8621,7 @@
 .method private updateVideoPreIspMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2762
+    .line 2787
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoPreIspMode()I
@@ -8573,7 +8636,7 @@
 .method private updateVideoRecordStatus(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2526
+    .line 2551
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isRecordingHint()Z
@@ -8588,7 +8651,7 @@
 .method private updateVideoSpotLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2421
+    .line 2446
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoSpotLevel()I
@@ -8603,7 +8666,7 @@
 .method private updateVideoSpotMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2425
+    .line 2450
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoSpotMode()I
@@ -8618,7 +8681,7 @@
 .method private updateVideoSuperNightAlgoScene(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2544
+    .line 2569
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoSuperNightScene()I
@@ -8633,7 +8696,7 @@
 .method private updateVideoSuperNightMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2540
+    .line 2565
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoSuperNightMode()I
@@ -8648,7 +8711,7 @@
 .method private updateVideoSuperNightResolution(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2552
+    .line 2577
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoSuperNightResolution()I
@@ -8663,7 +8726,7 @@
 .method private updateVideoSuperNightYUVMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 6
 
-    .line 2556
+    .line 2581
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -8704,14 +8767,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2557
+    .line 2582
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoSuperNightYUVMode()I
 
     move-result v0
 
     if-lez v0, :cond_40
 
-    .line 2558
+    .line 2583
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoSuperNightYUVMode()I
@@ -8722,7 +8785,7 @@
 
     return-void
 
-    .line 2561
+    .line 2586
     :cond_40
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoNightTranYUVMode()I
 
@@ -8730,7 +8793,7 @@
 
     if-lez v0, :cond_50
 
-    .line 2562
+    .line 2587
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getVideoNightTranYUVMode()I
@@ -8741,7 +8804,7 @@
 
     return-void
 
-    .line 2565
+    .line 2590
     :cond_50
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPhotoNightTranYUVMode()I
 
@@ -8749,7 +8812,7 @@
 
     if-lez v0, :cond_60
 
-    .line 2566
+    .line 2591
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPhotoNightTranYUVMode()I
@@ -8760,7 +8823,7 @@
 
     return-void
 
-    .line 2569
+    .line 2594
     :cond_60
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -8774,7 +8837,7 @@
 .method private updateYuvCaptureFlipMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2578
+    .line 2603
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getYuvCaptureFlipMode()Ljava/lang/String;
@@ -8789,7 +8852,7 @@
 .method private updateZoom2xRemosaicMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 8
 
-    .line 2057
+    .line 2068
     const-string/jumbo v0, "val_asd"
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAppModeId()Ljava/lang/String;
@@ -8806,7 +8869,7 @@
 
     const-string/jumbo v0, "val_super_definition"
 
-    .line 2058
+    .line 2069
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAppModeId()Ljava/lang/String;
 
     move-result-object v2
@@ -8819,7 +8882,7 @@
 
     const-string/jumbo v0, "val_ultrahd"
 
-    .line 2059
+    .line 2070
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAppModeId()Ljava/lang/String;
 
     move-result-object v2
@@ -8832,7 +8895,7 @@
 
     goto :goto_2f
 
-    .line 2067
+    .line 2078
     :cond_29
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -8840,7 +8903,7 @@
 
     return-void
 
-    .line 2060
+    .line 2071
     :cond_2f
     :goto_2f
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionFilterId()I
@@ -8858,7 +8921,7 @@
     :cond_38
     move v0, v1
 
-    .line 2061
+    .line 2072
     :goto_39
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getImageStyleId()I
 
@@ -8873,13 +8936,13 @@
     :cond_41
     move v3, v1
 
-    .line 2062
+    .line 2073
     :goto_42
     sget v4, Lcom/transsion/camera/utils/SettingInfo;->ZOOM_1X:I
 
     mul-int/lit8 v4, v4, 0x2
 
-    .line 2063
+    .line 2074
     iget v5, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mSensorFacing:I
 
     if-ne v5, v2, :cond_55
@@ -8896,7 +8959,7 @@
 
     move v1, v2
 
-    .line 2065
+    .line 2076
     :cond_55
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -8908,7 +8971,7 @@
 .method private updateZoomEisMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 4
 
-    .line 2841
+    .line 2866
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     iget-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsDetectedMoon:Z
@@ -8931,14 +8994,14 @@
 .end method
 
 .method private updateZoomRatio(Landroid/hardware/camera2/CaptureRequest$Builder;)V
-    .registers 14
+    .registers 16
 
-    .line 1082
+    .line 1088
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getOverrideSensorRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 1083
+    .line 1089
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getZoomRatio()I
 
     move-result v1
@@ -8949,56 +9012,74 @@
 
     div-float/2addr v1, v2
 
-    .line 1084
+    .line 1090
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getRealZoomRatio()I
 
-    move-result v2
-
-    if-eqz v0, :cond_25
-
-    .line 1086
-    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
-
     move-result v3
 
-    if-lez v3, :cond_25
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
-
-    move-result v3
-
-    if-lez v3, :cond_25
-
-    .line 1087
-    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
-
-    invoke-virtual {v3, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    goto/16 :goto_149
-
-    .line 1089
-    :cond_25
-    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPreviewSize()Landroid/util/Size;
-
-    move-result-object v0
-
-    const/high16 v3, 0x3f800000    # 1.0f
-
-    if-nez v0, :cond_31
-
-    const v0, 0x3faaaaab
-
-    goto :goto_3e
-
-    .line 1094
-    :cond_31
-    invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
+    .line 1091
+    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getClickUpZoomRatio()I
 
     move-result v4
 
     int-to-float v4, v4
 
-    mul-float/2addr v4, v3
+    div-float/2addr v4, v2
+
+    .line 1092
+    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getClickDownZoomRatio()I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    div-float/2addr v5, v2
+
+    if-eqz v0, :cond_31
+
+    .line 1094
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v2
+
+    if-lez v2, :cond_31
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+
+    move-result v2
+
+    if-lez v2, :cond_31
+
+    .line 1095
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
+
+    invoke-virtual {v2, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    goto/16 :goto_155
+
+    .line 1097
+    :cond_31
+    invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getPreviewSize()Landroid/util/Size;
+
+    move-result-object v0
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    if-nez v0, :cond_3d
+
+    const v0, 0x3faaaaab
+
+    goto :goto_4a
+
+    .line 1102
+    :cond_3d
+    invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    mul-float/2addr v6, v2
 
     invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
 
@@ -9006,299 +9087,299 @@
 
     int-to-float v0, v0
 
-    div-float v0, v4, v0
+    div-float v0, v6, v0
 
-    .line 1097
-    :goto_3e
-    iget-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
+    .line 1105
+    :goto_4a
+    iget-object v6, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
+    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
 
-    move-result v4
+    move-result v6
 
-    .line 1098
-    iget-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
+    .line 1106
+    iget-object v7, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v5}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v7}, Landroid/graphics/Rect;->height()I
 
-    move-result v5
+    move-result v7
 
-    int-to-float v6, v4
+    int-to-float v8, v6
 
-    mul-float/2addr v3, v6
+    mul-float/2addr v2, v8
 
-    int-to-float v7, v5
+    int-to-float v9, v7
 
-    div-float v8, v3, v7
+    div-float v10, v2, v9
 
-    .line 1101
-    iget-object v9, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mFovCropRectangle:Landroid/graphics/Rect;
+    .line 1109
+    iget-object v11, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mFovCropRectangle:Landroid/graphics/Rect;
 
-    if-eqz v9, :cond_6d
+    if-eqz v11, :cond_79
 
-    .line 1102
-    invoke-virtual {v9}, Landroid/graphics/Rect;->width()I
+    .line 1110
+    invoke-virtual {v11}, Landroid/graphics/Rect;->width()I
 
-    move-result v9
+    move-result v11
 
-    .line 1103
-    iget-object v10, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mFovCropRectangle:Landroid/graphics/Rect;
+    .line 1111
+    iget-object v12, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mFovCropRectangle:Landroid/graphics/Rect;
 
-    invoke-virtual {v10}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v12}, Landroid/graphics/Rect;->height()I
 
-    move-result v10
+    move-result v12
 
-    if-lez v9, :cond_6d
+    if-lez v11, :cond_79
 
-    if-ge v9, v4, :cond_6d
+    if-ge v11, v6, :cond_79
 
-    if-lez v10, :cond_6d
+    if-lez v12, :cond_79
 
-    if-ge v10, v5, :cond_6d
+    if-ge v12, v7, :cond_79
 
-    int-to-float v9, v9
+    int-to-float v11, v11
 
-    div-float v9, v3, v9
+    div-float v11, v2, v11
 
-    cmpg-float v10, v1, v9
+    cmpg-float v12, v1, v11
 
-    if-gez v10, :cond_6d
+    if-gez v12, :cond_79
 
-    move v1, v9
+    move v1, v11
 
-    .line 1113
-    :cond_6d
+    .line 1121
+    :cond_79
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFovWideCrop()Z
 
-    move-result v9
+    move-result v11
 
-    if-eqz v9, :cond_9d
+    if-eqz v11, :cond_a9
 
-    .line 1115
-    const-string v9, "1"
+    .line 1123
+    const-string v11, "1"
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getHighFpsMode()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v12
 
-    invoke-static {v9, v10}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {v11, v12}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result v9
+    move-result v11
 
-    if-eqz v9, :cond_82
+    if-eqz v11, :cond_8e
 
-    .line 1116
-    iget-object v9, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mFovWideCropRectangle60fps:Landroid/graphics/Rect;
+    .line 1124
+    iget-object v11, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mFovWideCropRectangle60fps:Landroid/graphics/Rect;
 
-    goto :goto_84
+    goto :goto_90
 
-    .line 1118
-    :cond_82
-    iget-object v9, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mFovWideCropRectangle:Landroid/graphics/Rect;
+    .line 1126
+    :cond_8e
+    iget-object v11, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mFovWideCropRectangle:Landroid/graphics/Rect;
 
-    :goto_84
-    if-eqz v9, :cond_9d
+    :goto_90
+    if-eqz v11, :cond_a9
 
-    .line 1121
-    invoke-virtual {v9}, Landroid/graphics/Rect;->width()I
+    .line 1129
+    invoke-virtual {v11}, Landroid/graphics/Rect;->width()I
 
-    move-result v10
+    move-result v12
 
-    .line 1122
-    invoke-virtual {v9}, Landroid/graphics/Rect;->height()I
+    .line 1130
+    invoke-virtual {v11}, Landroid/graphics/Rect;->height()I
 
-    move-result v9
+    move-result v11
 
-    if-lez v10, :cond_9d
+    if-lez v12, :cond_a9
 
-    if-ge v10, v4, :cond_9d
+    if-ge v12, v6, :cond_a9
 
-    if-lez v9, :cond_9d
+    if-lez v11, :cond_a9
 
-    if-ge v9, v5, :cond_9d
+    if-ge v11, v7, :cond_a9
 
-    int-to-float v9, v10
+    int-to-float v11, v12
 
-    div-float/2addr v3, v9
+    div-float/2addr v2, v11
 
-    cmpg-float v9, v1, v3
+    cmpg-float v11, v1, v2
 
-    if-gez v9, :cond_9d
+    if-gez v11, :cond_a9
 
-    move v1, v3
-
-    .line 1133
-    :cond_9d
-    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
-
-    invoke-interface {v3}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->supportZoomRatioKey()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_118
-
-    const v3, 0x3b03126f    # 0.002f
-
-    add-float v9, v8, v3
-
-    cmpl-float v9, v0, v9
-
-    const/high16 v10, 0x40000000    # 2.0f
-
-    const/4 v11, 0x0
-
-    if-lez v9, :cond_cf
-
-    div-float v0, v6, v0
-
-    sub-float/2addr v7, v0
-
-    div-float/2addr v7, v10
-
-    float-to-int v0, v7
-
-    .line 1136
-    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
-
-    div-float/2addr v6, v1
-
-    float-to-int v6, v6
-
-    .line 1137
-    invoke-static {v6, v11, v4}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
-
-    move-result v6
-
-    mul-int/lit8 v7, v0, 0x2
-
-    sub-int v7, v5, v7
-
-    int-to-float v7, v7
-
-    div-float/2addr v7, v1
-
-    int-to-float v8, v0
-
-    add-float/2addr v7, v8
-
-    float-to-int v7, v7
-
-    .line 1138
-    invoke-static {v7, v11, v5}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
-
-    move-result v7
-
-    .line 1136
-    invoke-virtual {v3, v11, v0, v6, v7}, Landroid/graphics/Rect;->set(IIII)V
-
-    goto :goto_102
-
-    :cond_cf
-    sub-float/2addr v8, v3
-
-    cmpg-float v3, v0, v8
-
-    if-gez v3, :cond_f1
-
-    mul-float/2addr v0, v7
-
-    sub-float/2addr v6, v0
-
-    div-float/2addr v6, v10
-
-    float-to-int v0, v6
+    move v1, v2
 
     .line 1141
-    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
+    :cond_a9
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
-    mul-int/lit8 v6, v0, 0x2
+    invoke-interface {v2}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->supportZoomRatioKey()Z
 
-    sub-int v6, v4, v6
+    move-result v2
 
-    int-to-float v6, v6
+    if-eqz v2, :cond_124
 
-    div-float/2addr v6, v1
+    const v2, 0x3b03126f    # 0.002f
 
-    int-to-float v8, v0
+    add-float v11, v10, v2
 
-    add-float/2addr v6, v8
+    cmpl-float v11, v0, v11
 
-    float-to-int v6, v6
+    const/high16 v12, 0x40000000    # 2.0f
 
-    .line 1142
-    invoke-static {v6, v11, v4}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
+    const/4 v13, 0x0
 
-    move-result v6
+    if-lez v11, :cond_db
 
-    div-float/2addr v7, v1
+    div-float v0, v8, v0
 
-    float-to-int v7, v7
+    sub-float/2addr v9, v0
 
-    .line 1143
-    invoke-static {v7, v11, v5}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
+    div-float/2addr v9, v12
 
-    move-result v7
+    float-to-int v0, v9
 
-    .line 1141
-    invoke-virtual {v3, v0, v11, v6, v7}, Landroid/graphics/Rect;->set(IIII)V
+    .line 1144
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
 
-    goto :goto_102
+    div-float/2addr v8, v1
+
+    float-to-int v8, v8
 
     .line 1145
-    :cond_f1
-    iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
+    invoke-static {v8, v13, v6}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
 
-    div-float/2addr v6, v1
+    move-result v8
 
-    float-to-int v3, v6
+    mul-int/lit8 v9, v0, 0x2
+
+    sub-int v9, v7, v9
+
+    int-to-float v9, v9
+
+    div-float/2addr v9, v1
+
+    int-to-float v10, v0
+
+    add-float/2addr v9, v10
+
+    float-to-int v9, v9
 
     .line 1146
-    invoke-static {v3, v11, v4}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
+    invoke-static {v9, v13, v7}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
 
-    move-result v3
+    move-result v9
 
-    div-float/2addr v7, v1
+    .line 1144
+    invoke-virtual {v2, v13, v0, v8, v9}, Landroid/graphics/Rect;->set(IIII)V
 
-    float-to-int v6, v7
+    goto :goto_10e
 
-    .line 1147
-    invoke-static {v6, v11, v5}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
+    :cond_db
+    sub-float/2addr v10, v2
 
-    move-result v6
+    cmpg-float v2, v0, v10
 
-    .line 1145
-    invoke-virtual {v0, v11, v11, v3, v6}, Landroid/graphics/Rect;->set(IIII)V
+    if-gez v2, :cond_fd
+
+    mul-float/2addr v0, v9
+
+    sub-float/2addr v8, v0
+
+    div-float/2addr v8, v12
+
+    float-to-int v0, v8
 
     .line 1149
-    :goto_102
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
+
+    mul-int/lit8 v8, v0, 0x2
+
+    sub-int v8, v6, v8
+
+    int-to-float v8, v8
+
+    div-float/2addr v8, v1
+
+    int-to-float v10, v0
+
+    add-float/2addr v8, v10
+
+    float-to-int v8, v8
+
+    .line 1150
+    invoke-static {v8, v13, v6}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
+
+    move-result v8
+
+    div-float/2addr v9, v1
+
+    float-to-int v9, v9
+
+    .line 1151
+    invoke-static {v9, v13, v7}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
+
+    move-result v9
+
+    .line 1149
+    invoke-virtual {v2, v0, v13, v8, v9}, Landroid/graphics/Rect;->set(IIII)V
+
+    goto :goto_10e
+
+    .line 1153
+    :cond_fd
+    iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
+
+    div-float/2addr v8, v1
+
+    float-to-int v2, v8
+
+    .line 1154
+    invoke-static {v2, v13, v6}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
+
+    move-result v2
+
+    div-float/2addr v9, v1
+
+    float-to-int v8, v9
+
+    .line 1155
+    invoke-static {v8, v13, v7}, Lcom/transsion/camera/utils/CameraUtil;->clamp(III)I
+
+    move-result v8
+
+    .line 1153
+    invoke-virtual {v0, v13, v13, v2, v8}, Landroid/graphics/Rect;->set(IIII)V
+
+    .line 1157
+    :goto_10e
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
-    move-result v3
+    move-result v2
 
-    sub-int/2addr v4, v3
+    sub-int/2addr v6, v2
 
-    div-int/lit8 v4, v4, 0x2
+    div-int/lit8 v6, v6, 0x2
 
-    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
 
-    .line 1150
-    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
+    .line 1158
+    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
 
-    move-result v3
+    move-result v2
 
-    sub-int/2addr v5, v3
+    sub-int/2addr v7, v2
 
-    div-int/lit8 v5, v5, 0x2
+    div-int/lit8 v7, v7, 0x2
 
-    .line 1149
-    invoke-virtual {v0, v4, v5}, Landroid/graphics/Rect;->offsetTo(II)V
+    .line 1157
+    invoke-virtual {v0, v6, v7}, Landroid/graphics/Rect;->offsetTo(II)V
 
-    goto :goto_149
+    goto :goto_155
 
-    .line 1152
-    :cond_118
+    .line 1160
+    :cond_124
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
@@ -9307,146 +9388,168 @@
 
     div-int/lit8 v0, v0, 0x2
 
-    .line 1153
-    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
+    .line 1161
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
 
-    move-result v3
+    move-result v2
 
-    div-int/lit8 v3, v3, 0x2
+    div-int/lit8 v2, v2, 0x2
 
-    .line 1154
-    iget-object v4, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    const/high16 v5, 0x3f000000    # 0.5f
-
-    mul-float/2addr v4, v5
-
-    div-float/2addr v4, v1
-
-    float-to-int v4, v4
-
-    .line 1155
+    .line 1162
     iget-object v6, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
 
     move-result v6
 
     int-to-float v6, v6
 
-    mul-float/2addr v6, v5
+    const/high16 v7, 0x3f000000    # 0.5f
+
+    mul-float/2addr v6, v7
 
     div-float/2addr v6, v1
 
-    float-to-int v5, v6
+    float-to-int v6, v6
 
-    .line 1156
-    iget-object v6, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
+    .line 1163
+    iget-object v8, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
 
-    sub-int v7, v0, v4
+    invoke-virtual {v8}, Landroid/graphics/Rect;->height()I
 
-    sub-int v8, v3, v5
+    move-result v8
 
-    add-int/2addr v0, v4
+    int-to-float v8, v8
 
-    add-int/2addr v3, v5
+    mul-float/2addr v8, v7
 
-    invoke-virtual {v6, v7, v8, v0, v3}, Landroid/graphics/Rect;->set(IIII)V
+    div-float/2addr v8, v1
 
-    .line 1159
-    :goto_149
+    float-to-int v7, v8
+
+    .line 1164
+    iget-object v8, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
+
+    sub-int v9, v0, v6
+
+    sub-int v10, v2, v7
+
+    add-int/2addr v0, v6
+
+    add-int/2addr v2, v7
+
+    invoke-virtual {v8, v9, v10, v0, v2}, Landroid/graphics/Rect;->set(IIII)V
+
+    .line 1167
+    :goto_155
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCapabilities:Lcom/transsion/camera/adapter/CameraCapabilities2Impl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraCapabilities;->isSatModeSupport()Z
 
     move-result v0
 
-    .line 1160
-    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    .line 1168
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "mCropRectangle:"
+    const-string v7, "mCropRectangle:"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
+    iget-object v7, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v5, " isSatSupport:"
+    const-string v7, " isSatSupport:"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v5, " zoomRatio:"
+    const-string v7, " zoomRatio:"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    const-string v5, " realZoomRatio:"
+    const-string v7, " realZoomRatio:"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v5, " mMulitiCropRegionZoomRatio:"
+    const-string v7, " mMulitiCropRegionZoomRatio:"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v5, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mMulitiCropRegionZoomRatio:F
+    iget v7, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mMulitiCropRegionZoomRatio:F
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v7, " clickUpZoomRatio:"
 
-    move-result-object v4
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 1162
-    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
+    const-string v7, " clickDownZoomRatio:"
 
-    invoke-interface {v3}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->supportZoomRatioKey()Z
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v3
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    if-eqz v3, :cond_1ce
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 1163
-    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mZoomRatioKey:Landroid/hardware/camera2/CaptureRequest$Key;
+    move-result-object v6
+
+    invoke-static {v2, v6}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 1171
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
+
+    invoke-interface {v2}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->supportZoomRatioKey()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1f4
+
+    .line 1172
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mZoomRatioKey:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v4
+    move-result-object v6
 
-    invoke-virtual {p1, v3, v4}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {p1, v2, v6}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1164
-    iget-object v3, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
+    .line 1173
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
-    invoke-interface {v3, v2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setRealZoomRatio(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-interface {v2, v3, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setRealZoomRatio(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1165
+    .line 1174
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
+
+    invoke-interface {v2, v4, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setClickUpZoomRatio(FLandroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    .line 1175
+    iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
+
+    invoke-interface {v2, v5, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setClickDownZoomRatio(FLandroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    .line 1176
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFocalLength()I
 
     move-result v2
 
-    if-lez v2, :cond_1ae
+    if-lez v2, :cond_1d4
 
-    .line 1166
+    .line 1177
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFocalLength()I
@@ -9455,22 +9558,22 @@
 
     invoke-interface {v2, v3, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setFocalLength(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    :cond_1ae
-    if-eqz v0, :cond_1c4
+    :cond_1d4
+    if-eqz v0, :cond_1ea
 
-    .line 1169
+    .line 1180
     invoke-virtual {p0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateMultiCropRegion(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1170
+    .line 1181
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isMTKCaptureFlow()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1c4
+    if-eqz v0, :cond_1ea
 
-    .line 1171
+    .line 1182
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mMultiZoomKey:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -9479,22 +9582,22 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1174
-    :cond_1c4
+    .line 1185
+    :cond_1ea
     invoke-direct {p0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->projectSupportISZ()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1cd
+    if-eqz v0, :cond_1f3
 
-    .line 1175
+    .line 1186
     invoke-virtual {p0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateMultiCropRegion(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    :cond_1cd
+    :cond_1f3
     return-void
 
-    .line 1178
-    :cond_1ce
+    .line 1189
+    :cond_1f4
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->SCALER_CROP_REGION:Landroid/hardware/camera2/CaptureRequest$Key;
 
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCropRectangle:Landroid/graphics/Rect;
@@ -9543,7 +9646,7 @@
 .method checkShot2ShotResult(Landroid/hardware/camera2/CaptureResult;)[I
     .registers 2
 
-    .line 2203
+    .line 2214
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->checkShot2ShotResult(Landroid/hardware/camera2/CaptureResult;)[I
@@ -9556,7 +9659,7 @@
 .method checkShutterDone(Landroid/hardware/camera2/CaptureResult;)Z
     .registers 2
 
-    .line 2213
+    .line 2224
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->checkShutterDone(Landroid/hardware/camera2/CaptureResult;)Z
@@ -9591,7 +9694,7 @@
 .method public clone()Lcom/transsion/camera/adapter/CameraParameters2Impl;
     .registers 2
 
-    .line 2372
+    .line 2383
     :try_start_0
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
@@ -9603,7 +9706,7 @@
 
     goto :goto_f
 
-    .line 2374
+    .line 2385
     :catch_7
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -9705,7 +9808,7 @@
 .method public varargs createBurstRequest(IIZ[Landroid/view/Surface;)Ljava/util/ArrayList;
     .registers 11
 
-    .line 1002
+    .line 1008
     iget v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mMoonDetectResult:I
 
     const/16 v1, 0x34
@@ -9726,14 +9829,14 @@
     :goto_b
     iput-boolean v0, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsDetectedMoon:Z
 
-    .line 1003
+    .line 1009
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     invoke-virtual {v0, p1}, Landroid/hardware/camera2/CameraDevice;->createCaptureRequest(I)Landroid/hardware/camera2/CaptureRequest$Builder;
 
     move-result-object v0
 
-    .line 1004
+    .line 1010
     array-length v1, p4
 
     move v4, v2
@@ -9745,14 +9848,14 @@
 
     if-eqz v5, :cond_21
 
-    .line 1008
+    .line 1014
     invoke-virtual {v0, v5}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
 
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_15
 
-    .line 1006
+    .line 1012
     :cond_21
     new-instance p0, Ljava/lang/NullPointerException;
 
@@ -9762,57 +9865,57 @@
 
     throw p0
 
-    .line 1010
+    .line 1016
     :cond_29
     invoke-virtual {p0, v0, p1, p3}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSessionKey(Landroid/hardware/camera2/CaptureRequest$Builder;IZ)V
 
-    .line 1011
+    .line 1017
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateCommonKey(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 1014
+    .line 1020
     invoke-virtual {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestAeLock(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1015
+    .line 1021
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestFocusMode(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 1016
+    .line 1022
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateFocusRectangles(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1017
+    .line 1023
     invoke-virtual {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestFlashMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1018
+    .line 1024
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestJpegQuality(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1019
+    .line 1025
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestJpegOrientation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1020
+    .line 1026
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestJpegGPSLocation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1021
+    .line 1027
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestExposureCompensation(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 1022
+    .line 1028
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestThumbnailSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1023
+    .line 1029
     invoke-direct {p0, v0, p3}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMiddleNight(Landroid/hardware/camera2/CaptureRequest$Builder;Z)V
 
-    .line 1026
+    .line 1032
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMirrorMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1027
+    .line 1033
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestContinuousShot(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1028
+    .line 1034
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isCurrentAppModeRequiredOnContinuousShot()Z
 
     move-result p4
 
     if-eqz p4, :cond_5e
 
-    .line 1029
+    .line 1035
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAppModeId()Ljava/lang/String;
 
     move-result-object p4
@@ -9822,17 +9925,17 @@
     :cond_5e
     const-string/jumbo p4, "val_couti"
 
-    .line 1028
+    .line 1034
     :goto_61
     invoke-direct {p0, p4, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateAppMode(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1030
+    .line 1036
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestNight3dnrAlgo(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1031
+    .line 1037
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestNightMorHdsScene(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1032
+    .line 1038
     iget-object p4, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCapabilities:Lcom/transsion/camera/adapter/CameraCapabilities2Impl;
 
     invoke-virtual {p4}, Lcom/transsion/camera/adapter/CameraCapabilities;->isSatModeSupport()Z
@@ -9841,10 +9944,10 @@
 
     if-eqz p4, :cond_75
 
-    .line 1033
+    .line 1039
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSatPictureSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1036
+    .line 1042
     :cond_75
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAutoWatermarkMode()Ljava/lang/String;
 
@@ -9858,24 +9961,24 @@
 
     if-nez p4, :cond_8c
 
-    .line 1037
+    .line 1043
     iget-object p4, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "goldWatermarkMode is not support burst: "
 
     invoke-static {p4, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1038
+    .line 1044
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestAutoWatermark(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 1040
+    .line 1046
     :cond_8c
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestBWConvert(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1041
+    .line 1047
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateVideoSuperNightYUVMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1042
+    .line 1048
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestCaptureTime(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
     if-le p2, v3, :cond_99
@@ -9887,20 +9990,20 @@
     :cond_99
     move p4, v2
 
-    .line 1043
+    .line 1049
     :goto_9a
     invoke-direct {p0, v0, p4, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateExifModeInfo(Landroid/hardware/camera2/CaptureRequest$Builder;ZI)V
 
-    .line 1044
+    .line 1050
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateFlareCaptureEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1045
+    .line 1051
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateCaptureTag(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1046
+    .line 1052
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateGroupCaptureEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1047
+    .line 1053
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p4
@@ -9911,12 +10014,12 @@
 
     if-eqz p4, :cond_b4
 
-    .line 1048
+    .line 1054
     invoke-direct {p0, v0, p3}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateLensCorrectionMode(Landroid/hardware/camera2/CaptureRequest$Builder;Z)V
 
     goto :goto_bd
 
-    .line 1050
+    .line 1056
     :cond_b4
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isWideCamera()Z
 
@@ -9924,10 +10027,10 @@
 
     if-eqz p4, :cond_bd
 
-    .line 1051
+    .line 1057
     invoke-direct {p0, v0, p3}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateLensCorrectionMode(Landroid/hardware/camera2/CaptureRequest$Builder;Z)V
 
-    .line 1054
+    .line 1060
     :cond_bd
     :goto_bd
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
@@ -9940,20 +10043,20 @@
 
     if-eqz p4, :cond_cd
 
-    .line 1055
+    .line 1061
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->closetFusionMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1056
+    .line 1062
     invoke-direct {p0, v0, v3}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateLongPressBurst(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 1058
+    .line 1064
     :cond_cd
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateDxoCountry(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 1059
+    .line 1065
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSpecialKey(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 1060
+    .line 1066
     new-instance p4, Ljava/util/ArrayList;
 
     invoke-direct {p4}, Ljava/util/ArrayList;-><init>()V
@@ -9961,10 +10064,10 @@
     :goto_d8
     if-ge v2, p2, :cond_e7
 
-    .line 1062
+    .line 1068
     invoke-direct {p0, v0, p1, p3, v2}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateCaptureZSLTimestamp(Landroid/hardware/camera2/CaptureRequest$Builder;IZI)V
 
-    .line 1063
+    .line 1069
     invoke-virtual {v0}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
 
     move-result-object v1
@@ -10246,99 +10349,108 @@
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updatePortraitModeEnhanceMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     :cond_c2
+    if-eq v4, v10, :cond_c7
+
+    .line 626
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestColorLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    :cond_c7
     const/16 v11, 0xa
 
     const/16 v12, 0x9
 
     const/4 v13, 0x1
 
-    if-eq v4, v13, :cond_cd
+    if-eq v4, v13, :cond_d2
 
-    if-eq v4, v12, :cond_cd
+    if-eq v4, v12, :cond_d2
 
-    if-ne v4, v11, :cond_f1
-
-    .line 628
-    :cond_cd
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestColorLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
-
-    .line 629
-    invoke-direct {v0, v5, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMultiFaceBeauty(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
-
-    .line 630
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSTBlurMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    if-ne v4, v11, :cond_f9
 
     .line 631
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSingleBlurLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    :cond_d2
+    invoke-direct {v0, v5, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMultiFaceBeauty(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
     .line 632
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestFaceBeauty(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSTBlurMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 633
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updatePMasterFlareMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSingleBlurLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 634
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updatePMasterFlareLocation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestFaceBeauty(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 635
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updatePMasterFlarePreviewSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updatePMasterFlareMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 636
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSkinOptimization(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updatePMasterFlareLocation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 637
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSlimBodyMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updatePMasterFlarePreviewSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 638
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSlimBodyLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSkinOptimization(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 639
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestPortraitMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSlimBodyMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    .line 640
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSlimBodyLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 641
-    :cond_f1
-    invoke-virtual {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestAsdInfo(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestPortraitMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 642
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateFlareCaptureEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMakeUpMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 643
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateCaptureTag(Landroid/hardware/camera2/CaptureRequest$Builder;)V
-
-    .line 644
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateGroupCaptureEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMakeUpIntensitys(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 645
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateDxoCountry(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    :cond_f9
+    invoke-virtual {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestAsdInfo(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 646
-    invoke-virtual {v0, v5, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSpecialKey(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateFlareCaptureEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 647
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateP2RawCropResizeEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateCaptureTag(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 648
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateP2CropRegionCustomize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateGroupCaptureEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 649
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateP2ResizerSizeCustomize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateDxoCountry(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 650
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRawSuperResolutionMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-virtual {v0, v5, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSpecialKey(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
     .line 651
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSuperResolutionMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateP2RawCropResizeEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 652
-    invoke-direct {v0, v1, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateFaceProportion(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateP2CropRegionCustomize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 653
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateAiShutter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateP2ResizerSizeCustomize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 654
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateAiShutterMorpho(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRawSuperResolutionMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     .line 655
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSuperResolutionMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    .line 656
+    invoke-direct {v0, v1, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateFaceProportion(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    .line 657
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateAiShutter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    .line 658
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateAiShutterMorpho(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    .line 659
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v14
@@ -10347,44 +10459,44 @@
 
     move-result v14
 
-    if-eqz v14, :cond_12d
+    if-eqz v14, :cond_135
 
-    if-ne v4, v8, :cond_12d
+    if-ne v4, v8, :cond_135
 
-    .line 657
+    .line 661
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSTBlurMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 658
+    .line 662
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSingleBlurLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 660
-    :cond_12d
+    .line 664
+    :cond_135
     invoke-direct {v0, v1, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateHumanBox(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    if-ne v4, v13, :cond_13b
+    if-ne v4, v13, :cond_143
 
-    .line 662
+    .line 666
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestHDRAeExpoInfoResult(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 663
+    .line 667
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestTranssionHDR(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 664
+    .line 668
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestLowLight(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    :cond_13b
-    if-ne v4, v12, :cond_143
-
-    .line 667
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMFNRAeExpoInfoResult(Landroid/hardware/camera2/CaptureRequest$Builder;)V
-
-    .line 668
-    invoke-direct {v0, v5, v9}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMiddleNight(Landroid/hardware/camera2/CaptureRequest$Builder;Z)V
-
     :cond_143
-    if-ne v4, v11, :cond_14e
+    if-ne v4, v12, :cond_14b
 
     .line 671
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMFNRAeExpoInfoResult(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    .line 672
+    invoke-direct {v0, v5, v9}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMiddleNight(Landroid/hardware/camera2/CaptureRequest$Builder;Z)V
+
+    :cond_14b
+    if-ne v4, v11, :cond_156
+
+    .line 675
     iget-object v14, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionNightMode()I
@@ -10393,25 +10505,25 @@
 
     invoke-interface {v14, v15, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setNightMode(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    :cond_14e
+    :cond_156
     const/16 v14, 0x8
 
     const/4 v15, 0x3
 
-    if-eq v4, v15, :cond_155
+    if-eq v4, v15, :cond_15d
 
-    if-ne v4, v14, :cond_158
+    if-ne v4, v14, :cond_160
 
-    .line 674
-    :cond_155
+    .line 678
+    :cond_15d
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestNightAeExpoInfoResult(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    :cond_158
-    if-eq v4, v15, :cond_167
+    :cond_160
+    if-eq v4, v15, :cond_16f
 
-    if-eq v4, v14, :cond_167
+    if-eq v4, v14, :cond_16f
 
-    .line 677
+    .line 681
     iget-object v14, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperNightMode()Ljava/lang/String;
@@ -10422,8 +10534,8 @@
 
     invoke-interface {v14, v10, v15, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setSuperNightMode(Ljava/lang/String;Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 679
-    :cond_167
+    .line 683
+    :cond_16f
     iget-object v10, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -10444,10 +10556,10 @@
 
     move v10, v9
 
-    :goto_17e
-    if-ge v10, v7, :cond_393
+    :goto_186
+    if-ge v10, v7, :cond_3a2
 
-    .line 681
+    .line 685
     iget-object v14, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -10466,26 +10578,26 @@
 
     invoke-static {v14, v11}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    if-ne v4, v8, :cond_21c
+    if-ne v4, v8, :cond_224
 
-    .line 685
+    .line 689
     invoke-virtual/range {p4 .. p4}, Lcom/transsion/camera/adapter/CameraParameters;->getDeBandingMode()I
 
     move-result v8
 
-    if-ne v8, v13, :cond_1a0
+    if-ne v8, v13, :cond_1a8
 
     move v8, v13
 
-    goto :goto_1a1
+    goto :goto_1a9
 
-    :cond_1a0
+    :cond_1a8
     move v8, v9
 
-    :goto_1a1
+    :goto_1a9
     xor-int/lit8 v18, v8, 0x1
 
-    .line 687
+    .line 691
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v19
@@ -10494,28 +10606,28 @@
 
     move-result v19
 
-    if-eqz v19, :cond_1b7
+    if-eqz v19, :cond_1bf
 
-    if-eqz v8, :cond_1b5
+    if-eqz v8, :cond_1bd
 
-    if-nez v10, :cond_1b2
+    if-nez v10, :cond_1ba
 
-    goto :goto_1b5
+    goto :goto_1bd
 
-    :cond_1b2
+    :cond_1ba
     move/from16 v18, v9
 
-    goto :goto_1b7
+    goto :goto_1bf
 
-    :cond_1b5
-    :goto_1b5
+    :cond_1bd
+    :goto_1bd
     move/from16 v18, v13
 
-    :cond_1b7
-    :goto_1b7
+    :cond_1bf
+    :goto_1bf
     move/from16 v11, v18
 
-    .line 690
+    .line 694
     iget-object v14, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v15, Ljava/lang/StringBuilder;
@@ -10540,7 +10652,7 @@
 
     invoke-static {v14, v12}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 691
+    .line 695
     iget-object v12, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getDeBandingMode()I
@@ -10549,33 +10661,33 @@
 
     invoke-interface {v12, v14, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setBMDebandingMode(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    if-eqz v8, :cond_1ee
+    if-eqz v8, :cond_1f6
 
-    .line 693
+    .line 697
     iget-object v8, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
-    if-nez v10, :cond_1e9
+    if-nez v10, :cond_1f1
 
     const/16 v12, 0x138d
 
-    goto :goto_1ea
+    goto :goto_1f2
 
-    :cond_1e9
+    :cond_1f1
     move v12, v9
 
-    :goto_1ea
+    :goto_1f2
     invoke-interface {v8, v12, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setCaptureISPTunning(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    goto :goto_1f3
+    goto :goto_1fb
 
-    .line 695
-    :cond_1ee
+    .line 699
+    :cond_1f6
     iget-object v8, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v8, v9, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setCaptureISPTunning(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 697
-    :goto_1f3
+    .line 701
+    :goto_1fb
     iget-object v8, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getBMLowLightMode()I
@@ -10584,19 +10696,19 @@
 
     invoke-interface {v8, v12, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setBMLowLightMode(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 698
+    .line 702
     iget-object v8, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v8, v7, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setTAPSCaptureInputCount(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 699
+    .line 703
     iget-object v8, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     add-int/lit8 v12, v10, 0x1
 
     invoke-interface {v8, v12, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setTAPSCaptureInputFrameIndex(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 700
+    .line 704
     iget-object v8, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getMotionCaptureMode()I
@@ -10605,7 +10717,7 @@
 
     invoke-interface {v8, v12, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setMotionCaptureMode(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 701
+    .line 705
     iget-object v8, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getMTKProcessRawEnable()I
@@ -10614,163 +10726,170 @@
 
     invoke-interface {v8, v12, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setMTKProcessRawEnable(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    :cond_21a
-    :goto_21a
-    move v8, v9
+    :cond_222
+    :goto_222
+    move v8, v13
 
-    goto :goto_261
+    goto :goto_270
 
-    .line 702
-    :cond_21c
+    .line 706
+    :cond_224
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getAiRawScene()I
 
     move-result v8
 
-    if-eq v8, v13, :cond_24f
+    if-eq v8, v13, :cond_260
 
     const/16 v8, 0x9
 
-    if-eq v4, v8, :cond_24f
+    if-eq v4, v8, :cond_260
 
     const/16 v8, 0xa
 
-    if-eq v4, v8, :cond_24f
+    if-eq v4, v8, :cond_260
 
     const/4 v8, 0x7
 
-    if-eq v4, v8, :cond_24f
+    if-eq v4, v8, :cond_260
 
     const/16 v8, 0xb
 
-    if-ne v4, v8, :cond_232
+    if-ne v4, v8, :cond_23a
 
-    goto :goto_24f
+    goto :goto_260
 
-    .line 710
-    :cond_232
+    .line 714
+    :cond_23a
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getAiRawScene()I
 
     move-result v8
 
     const/4 v11, 0x2
 
-    if-eq v8, v11, :cond_241
+    if-eq v8, v11, :cond_249
 
-    .line 711
+    .line 715
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getAiRawScene()I
 
     move-result v8
 
     const/16 v11, 0x14
 
-    if-ne v8, v11, :cond_25f
+    if-ne v8, v11, :cond_26e
 
-    :cond_241
+    :cond_249
     const/4 v8, 0x3
 
-    if-ge v10, v8, :cond_246
+    if-ge v10, v8, :cond_24e
 
     move v11, v13
 
-    goto :goto_247
+    goto :goto_24f
 
-    :cond_246
+    :cond_24e
     move v11, v9
 
-    .line 715
-    :goto_247
+    .line 719
+    :goto_24f
+    invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getHeavyCapturingBV()I
+
+    move-result v8
+
+    const/16 v12, -0xf
+
+    if-le v8, v12, :cond_222
+
+    .line 720
     iget-object v8, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mExposureValue:[I
 
     aget v8, v8, v10
 
-    if-ltz v8, :cond_21a
+    if-ltz v8, :cond_25e
 
-    move v8, v13
+    goto :goto_222
 
-    goto :goto_261
+    :cond_25e
+    move v8, v9
 
-    .line 707
-    :cond_24f
-    :goto_24f
+    goto :goto_270
+
+    .line 711
+    :cond_260
+    :goto_260
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isForceCloseAIRawLiteZSL()Z
 
     move-result v8
 
-    if-nez v8, :cond_25f
+    if-nez v8, :cond_26e
 
-    .line 708
+    .line 712
     iget-object v8, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mExposureValue:[I
 
     aget v8, v8, v10
 
-    if-nez v8, :cond_25d
+    if-nez v8, :cond_26e
 
     move v11, v13
 
-    goto :goto_21a
+    goto :goto_222
 
-    :cond_25d
+    :cond_26e
     move v11, v9
 
-    goto :goto_21a
+    goto :goto_222
 
-    :cond_25f
-    move v8, v9
+    :goto_270
+    if-eqz v2, :cond_291
 
-    move v11, v8
-
-    :goto_261
-    if-eqz v2, :cond_282
-
-    .line 717
+    .line 723
     iget-object v12, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mExposureValue:[I
 
     aget v12, v12, v10
 
-    if-nez v12, :cond_282
+    if-nez v12, :cond_291
 
-    .line 718
+    .line 724
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getAiRawScene()I
 
     move-result v12
 
     const/4 v14, 0x3
 
-    if-eq v12, v14, :cond_27e
+    if-eq v12, v14, :cond_28d
 
-    .line 719
+    .line 725
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getAiRawScene()I
 
     move-result v12
 
     const/4 v14, 0x4
 
-    if-eq v12, v14, :cond_27e
+    if-eq v12, v14, :cond_28d
 
-    .line 720
+    .line 726
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getAiRawScene()I
 
     move-result v12
 
     const/4 v14, 0x2
 
-    if-ne v12, v14, :cond_282
+    if-ne v12, v14, :cond_291
 
-    .line 721
-    :cond_27e
+    .line 727
+    :cond_28d
     invoke-virtual {v5, v2}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
 
-    goto :goto_287
+    goto :goto_296
 
-    :cond_282
-    if-eqz v2, :cond_287
+    :cond_291
+    if-eqz v2, :cond_296
 
-    .line 723
+    .line 729
     invoke-virtual {v5, v2}, Landroid/hardware/camera2/CaptureRequest$Builder;->removeTarget(Landroid/view/Surface;)V
 
-    .line 725
-    :cond_287
-    :goto_287
+    .line 731
+    :cond_296
+    :goto_296
     iget-object v12, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -10803,40 +10922,40 @@
 
     invoke-static {v12, v14}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 726
+    .line 732
     invoke-virtual {v0, v11}, Lcom/transsion/camera/adapter/CameraParameters;->setZSLEnable(Z)V
 
     const/4 v12, 0x7
 
-    if-eq v4, v12, :cond_2bb
+    if-eq v4, v12, :cond_2ca
 
     const/16 v12, 0xb
 
-    if-eq v4, v12, :cond_2bb
+    if-eq v4, v12, :cond_2ca
 
     const/16 v12, 0xa
 
-    if-ne v4, v12, :cond_2bf
+    if-ne v4, v12, :cond_2ce
 
-    :cond_2bb
-    :goto_2bb
+    :cond_2ca
+    :goto_2ca
     const/4 v14, 0x4
 
     const/4 v15, 0x3
 
-    goto/16 :goto_346
+    goto/16 :goto_355
 
-    :cond_2bf
+    :cond_2ce
     const/16 v14, 0x9
 
-    if-ne v4, v14, :cond_2f6
+    if-ne v4, v14, :cond_305
 
-    .line 732
+    .line 738
     iget-object v11, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v11, v13, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setCaptureISPTunning(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 733
+    .line 739
     iget-object v11, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     iget-object v15, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIspTuningIndex:[J
@@ -10845,7 +10964,7 @@
 
     invoke-interface {v11, v14, v15, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setCaptureISPTuningIndex(JLandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 734
+    .line 740
     sget-object v11, Landroid/hardware/camera2/CaptureRequest;->SENSOR_SENSITIVITY:Landroid/hardware/camera2/CaptureRequest$Key;
 
     iget-object v14, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIsoGainValue:[I
@@ -10858,7 +10977,7 @@
 
     invoke-virtual {v5, v11, v14}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 735
+    .line 741
     sget-object v11, Landroid/hardware/camera2/CaptureRequest;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureRequest$Key;
 
     iget-object v14, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mShutterGainValue:[J
@@ -10871,43 +10990,43 @@
 
     invoke-virtual {v5, v11, v14}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 736
+    .line 742
     iget-object v11, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v11, v7, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setCaptureISPFrameCount(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 737
+    .line 743
     iget-object v11, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v11, v10, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setCaptureISPFrameIndex(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    goto :goto_2bb
+    goto :goto_2ca
 
-    :cond_2f6
+    :cond_305
     const/4 v14, 0x4
 
-    if-eq v4, v14, :cond_319
+    if-eq v4, v14, :cond_328
 
-    if-eq v4, v13, :cond_319
+    if-eq v4, v13, :cond_328
 
     const/4 v15, 0x3
 
-    if-eq v4, v15, :cond_31a
+    if-eq v4, v15, :cond_329
 
     const/16 v12, 0x8
 
-    if-ne v4, v12, :cond_303
+    if-ne v4, v12, :cond_312
 
-    goto :goto_31a
+    goto :goto_329
 
-    :cond_303
-    if-nez v11, :cond_346
+    :cond_312
+    if-nez v11, :cond_355
 
     const/4 v11, 0x6
 
-    if-eq v4, v11, :cond_346
+    if-eq v4, v11, :cond_355
 
-    .line 747
+    .line 753
     sget-object v11, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_EXPOSURE_COMPENSATION:Landroid/hardware/camera2/CaptureRequest$Key;
 
     iget-object v12, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mExposureValue:[I
@@ -10920,17 +11039,17 @@
 
     invoke-virtual {v5, v11, v12}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 748
+    .line 754
     invoke-virtual {v0, v13}, Lcom/transsion/camera/adapter/CameraParameters;->needLockAe(Z)V
 
-    goto :goto_346
+    goto :goto_355
 
-    :cond_319
+    :cond_328
     const/4 v15, 0x3
 
-    .line 742
-    :cond_31a
-    :goto_31a
+    .line 748
+    :cond_329
+    :goto_329
     sget-object v11, Landroid/hardware/camera2/CaptureRequest;->SENSOR_SENSITIVITY:Landroid/hardware/camera2/CaptureRequest$Key;
 
     iget-object v12, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIsoGainValue:[I
@@ -10943,7 +11062,7 @@
 
     invoke-virtual {v5, v11, v12}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 743
+    .line 749
     sget-object v11, Landroid/hardware/camera2/CaptureRequest;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureRequest$Key;
 
     iget-object v12, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mShutterGainValue:[J
@@ -10956,7 +11075,7 @@
 
     invoke-virtual {v5, v11, v12}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 744
+    .line 750
     iget-object v11, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     iget-object v12, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIspGainValue:[I
@@ -10965,7 +11084,7 @@
 
     invoke-interface {v11, v12, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAeIspGain(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 745
+    .line 751
     iget-object v11, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     iget-object v12, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mArdcGainValue:[I
@@ -10974,9 +11093,9 @@
 
     invoke-interface {v11, v12, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setArdcGain(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 750
-    :cond_346
-    :goto_346
+    .line 756
+    :cond_355
+    :goto_355
     iget-object v11, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getCaptureId()I
@@ -10989,58 +11108,58 @@
 
     invoke-interface {v11, v12, v5}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setCaptureTaskInfo([ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 751
+    .line 757
     invoke-virtual {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestAeLock(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 752
+    .line 758
     invoke-direct {v0, v5, v4, v2}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateQuadSwitchValue(Landroid/hardware/camera2/CaptureRequest$Builder;ILandroid/view/Surface;)V
 
-    .line 753
+    .line 759
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateCelebritySceneMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 754
+    .line 760
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateMoonDetection(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 755
+    .line 761
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateMoonDetectPitch(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 756
+    .line 762
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateAiMoonMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 757
+    .line 763
     invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateAIRawLiteMotionDetectionValue(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 758
+    .line 764
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getAiRawScene()I
 
     move-result v11
 
     invoke-direct {v0, v5, v8, v11, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateProcessRawMode(Landroid/hardware/camera2/CaptureRequest$Builder;ZII)V
 
-    .line 759
+    .line 765
     invoke-direct {v0, v5, v1, v9}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestZSLMode(Landroid/hardware/camera2/CaptureRequest$Builder;IZ)V
 
-    if-eqz v3, :cond_37a
+    if-eqz v3, :cond_389
 
-    if-nez v10, :cond_37a
-
-    .line 761
-    invoke-virtual {v5, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
-
-    goto :goto_37d
-
-    .line 763
-    :cond_37a
-    invoke-virtual {v5, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->removeTarget(Landroid/view/Surface;)V
-
-    .line 765
-    :goto_37d
-    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateDxoCountry(Landroid/hardware/camera2/CaptureRequest$Builder;)V
-
-    .line 766
-    invoke-virtual {v0, v5, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSpecialKey(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
+    if-nez v10, :cond_389
 
     .line 767
+    invoke-virtual {v5, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
+
+    goto :goto_38c
+
+    .line 769
+    :cond_389
+    invoke-virtual {v5, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->removeTarget(Landroid/view/Surface;)V
+
+    .line 771
+    :goto_38c
+    invoke-direct {v0, v5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateDxoCountry(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    .line 772
+    invoke-virtual {v0, v5, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSpecialKey(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
+
+    .line 773
     invoke-virtual {v5}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
 
     move-result-object v8
@@ -11055,16 +11174,16 @@
 
     const/16 v12, 0x9
 
-    goto/16 :goto_17e
+    goto/16 :goto_186
 
-    :cond_393
+    :cond_3a2
     return-object v6
 .end method
 
 .method public varargs createMultiFrameRequestQcom(IZZLandroid/view/Surface;Landroid/view/Surface;Landroid/view/Surface;[Landroid/view/Surface;)Ljava/util/ArrayList;
     .registers 16
 
-    .line 883
+    .line 889
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mCameraDevice:Landroid/hardware/camera2/CameraDevice;
 
     invoke-virtual {v0, p1}, Landroid/hardware/camera2/CameraDevice;->createCaptureRequest(I)Landroid/hardware/camera2/CaptureRequest$Builder;
@@ -11073,7 +11192,7 @@
 
     if-eqz p2, :cond_10
 
-    .line 885
+    .line 891
     filled-new-array {p4}, [Landroid/view/Surface;
 
     move-result-object v1
@@ -11082,123 +11201,123 @@
 
     goto :goto_13
 
-    .line 887
+    .line 893
     :cond_10
     invoke-virtual {p0, v0, p7}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->addSurfaceToBuilder(Landroid/hardware/camera2/CaptureRequest$Builder;[Landroid/view/Surface;)V
 
     :goto_13
     const/4 v1, 0x0
 
-    .line 890
+    .line 896
     invoke-virtual {p0, v0, p1, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSessionKey(Landroid/hardware/camera2/CaptureRequest$Builder;IZ)V
 
-    .line 891
+    .line 897
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateCommonKey(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 892
+    .line 898
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestJpegOrientation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 893
+    .line 899
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestJpegGPSLocation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 894
+    .line 900
     invoke-virtual {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestAeLock(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 895
+    .line 901
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updatePreviewRange(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 896
+    .line 902
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestFusionMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 897
+    .line 903
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAiRawScene()I
 
     move-result v2
 
     invoke-direct {p0, v0, v2, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateAbeHdrMode(Landroid/hardware/camera2/CaptureRequest$Builder;II)V
 
-    .line 898
+    .line 904
     invoke-direct {p0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateHeavyCapturing()V
 
-    .line 899
+    .line 905
     invoke-direct {p0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateHeavyCapturingBV()V
 
-    .line 900
+    .line 906
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestArcFilter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 901
+    .line 907
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestTranssionFilter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 902
+    .line 908
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestTranssionSuperNightFilter(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 903
+    .line 909
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestAsd(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 904
+    .line 910
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestAsdVersion(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 905
+    .line 911
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestCusIspAsd(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 906
+    .line 912
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateActivityOrientation(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 907
+    .line 913
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestFocusMode(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 908
+    .line 914
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateFocusRectangles(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 909
+    .line 915
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateMeteringRectangles(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 910
+    .line 916
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestCaptureTime(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 911
+    .line 917
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateProWatermarkStyle(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 912
+    .line 918
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateIs24HourFormat(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 913
+    .line 919
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updatePlainLocationText(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 914
+    .line 920
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateGoldWaterMarkModeType(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 915
+    .line 921
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateGoldWaterMarkSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 916
+    .line 922
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestAutoWatermark(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 917
+    .line 923
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRingFlashLight(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 918
+    .line 924
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestThumbnailSize(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 919
+    .line 925
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateLensCorrectionMode(Landroid/hardware/camera2/CaptureRequest$Builder;Z)V
 
-    .line 920
+    .line 926
     invoke-direct {p0, v0, v1, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateExifModeInfo(Landroid/hardware/camera2/CaptureRequest$Builder;ZI)V
 
-    .line 921
+    .line 927
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateCaptureTag(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 922
+    .line 928
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateGroupCaptureEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 923
+    .line 929
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateDxoCountry(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 924
+    .line 930
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateSpecialKey(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 925
+    .line 931
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAiRawScene()I
 
     move-result v2
@@ -11207,51 +11326,51 @@
 
     invoke-direct {p0, v0, v3, v2, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateProcessRawMode(Landroid/hardware/camera2/CaptureRequest$Builder;ZII)V
 
-    .line 926
+    .line 932
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updatePortraitModeEnhanceMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 927
+    .line 933
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestEVListResult(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 928
+    .line 934
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSTBlurMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 929
+    .line 935
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSingleBlurLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 930
+    .line 936
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMultiFaceBeauty(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 931
+    .line 937
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSlimBodyMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 932
+    .line 938
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestSlimBodyLevel(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 933
+    .line 939
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMakeUpMode(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 934
+    .line 940
     invoke-direct {p0, v0}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMakeUpIntensitys(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    .line 937
+    .line 943
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getOfflineBurstCaptureNumber()I
 
     move-result v2
 
-    .line 938
+    .line 944
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isEVListValid()Z
 
     move-result v4
 
     if-eqz v4, :cond_e2
 
-    .line 939
+    .line 945
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFrameNumFromEVList()I
 
     move-result v2
 
-    .line 940
+    .line 946
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTFEVCheckerEnable()I
 
     move-result v4
@@ -11266,7 +11385,7 @@
 
     if-le v2, v3, :cond_d0
 
-    .line 942
+    .line 948
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionTurboFusionMode()I
 
     move-result v4
@@ -11275,7 +11394,7 @@
 
     if-ne v4, v5, :cond_ce
 
-    .line 943
+    .line 949
     filled-new-array {p5}, [Landroid/view/Surface;
 
     move-result-object p5
@@ -11287,7 +11406,7 @@
 
     goto :goto_e3
 
-    .line 945
+    .line 951
     :cond_d0
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMiddleNightMode()I
 
@@ -11297,10 +11416,10 @@
 
     if-le v2, v3, :cond_e2
 
-    .line 946
+    .line 952
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestMiddleNight(Landroid/hardware/camera2/CaptureRequest$Builder;Z)V
 
-    .line 947
+    .line 953
     filled-new-array {p5}, [Landroid/view/Surface;
 
     move-result-object p5
@@ -11310,17 +11429,17 @@
     :cond_e2
     move p5, v3
 
-    .line 950
+    .line 956
     :goto_e3
     invoke-virtual {p0, v0, p5}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestTranssionTurboFusionMode(Landroid/hardware/camera2/CaptureRequest$Builder;Z)V
 
-    .line 951
+    .line 957
     invoke-direct {p0, v0, v2}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateCaptureBurstNumber(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 952
+    .line 958
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateLongPressBurst(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
 
-    .line 953
+    .line 959
     new-instance p5, Ljava/util/ArrayList;
 
     invoke-direct {p5}, Ljava/util/ArrayList;-><init>()V
@@ -11334,13 +11453,13 @@
 
     if-eqz p6, :cond_fb
 
-    .line 957
+    .line 963
     invoke-virtual {v0, p6}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
 
     :cond_fb
     if-eqz p2, :cond_101
 
-    .line 960
+    .line 966
     invoke-virtual {p0, v0, p7}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->addSurfaceToBuilder(Landroid/hardware/camera2/CaptureRequest$Builder;[Landroid/view/Surface;)V
 
     goto :goto_123
@@ -11348,7 +11467,7 @@
     :cond_101
     if-eqz p4, :cond_123
 
-    .line 962
+    .line 968
     invoke-virtual {v0, p4}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
 
     goto :goto_123
@@ -11356,13 +11475,13 @@
     :cond_107
     if-eqz p6, :cond_10c
 
-    .line 966
+    .line 972
     invoke-virtual {v0, p6}, Landroid/hardware/camera2/CaptureRequest$Builder;->removeTarget(Landroid/view/Surface;)V
 
     :cond_10c
     if-eqz p2, :cond_112
 
-    .line 969
+    .line 975
     invoke-virtual {p0, v0, p7}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->removeSurfaceFromBuilder(Landroid/hardware/camera2/CaptureRequest$Builder;[Landroid/view/Surface;)V
 
     goto :goto_123
@@ -11372,23 +11491,23 @@
 
     if-eqz p3, :cond_120
 
-    .line 971
+    .line 977
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionTurboFusionMode()I
 
     move-result v5
 
     if-lez v5, :cond_120
 
-    .line 972
+    .line 978
     invoke-virtual {v0, p4}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
 
     goto :goto_123
 
-    .line 974
+    .line 980
     :cond_120
     invoke-virtual {v0, p4}, Landroid/hardware/camera2/CaptureRequest$Builder;->removeTarget(Landroid/view/Surface;)V
 
-    .line 978
+    .line 984
     :cond_123
     :goto_123
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isEVListValid()Z
@@ -11409,7 +11528,7 @@
 
     if-lez v5, :cond_157
 
-    .line 979
+    .line 985
     sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_EXPOSURE_COMPENSATION:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getEVList()[I
@@ -11426,7 +11545,7 @@
 
     invoke-virtual {v0, v5, v6}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 980
+    .line 986
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getEVList()[I
 
     move-result-object v5
@@ -11449,11 +11568,11 @@
     :goto_154
     invoke-virtual {p0, v5}, Lcom/transsion/camera/adapter/CameraParameters;->setZSLEnable(Z)V
 
-    .line 982
+    .line 988
     :cond_157
     invoke-direct {p0, v0, p1, v1}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->updateRequestZSLMode(Landroid/hardware/camera2/CaptureRequest$Builder;IZ)V
 
-    .line 983
+    .line 989
     invoke-virtual {v0}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
 
     move-result-object v5
@@ -11464,7 +11583,7 @@
 
     goto :goto_f2
 
-    .line 985
+    .line 991
     :cond_164
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -12172,7 +12291,7 @@
 .method public get2XRemosaicMode()Z
     .registers 1
 
-    .line 2072
+    .line 2083
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->getZoom2xRemosaicEnabled()Z
@@ -12185,7 +12304,7 @@
 .method getCusDeferRequestMode(Landroid/hardware/camera2/CaptureResult;)[I
     .registers 2
 
-    .line 2208
+    .line 2219
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->getCusDeferRequestMode(Landroid/hardware/camera2/CaptureResult;)[I
@@ -12219,7 +12338,7 @@
 .method public isFlashOn()Z
     .registers 2
 
-    .line 1625
+    .line 1636
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {v0}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->isFlashFacadeOn()Z
@@ -12230,7 +12349,7 @@
 
     const-string/jumbo v0, "torch"
 
-    .line 1626
+    .line 1637
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getFlashFacade()Ljava/lang/String;
 
     move-result-object p0
@@ -12262,7 +12381,7 @@
 
     if-ne p1, v0, :cond_21
 
-    .line 1630
+    .line 1641
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionHDR()I
 
     move-result p1
@@ -12281,7 +12400,7 @@
 
     const-string p1, "on"
 
-    .line 1631
+    .line 1642
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getSuperFlashValue()Ljava/lang/String;
 
     move-result-object p0
@@ -12305,7 +12424,7 @@
 .method isLongExposureCapture(I)Z
     .registers 5
 
-    .line 1639
+    .line 1650
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -12334,7 +12453,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1640
+    .line 1651
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLongExposureCaptureState()Ljava/lang/String;
 
     move-result-object v0
@@ -12354,7 +12473,7 @@
 
     if-ne p1, v2, :cond_41
 
-    .line 1644
+    .line 1655
     :cond_30
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getLongExposureCaptureState()Ljava/lang/String;
 
@@ -12381,7 +12500,7 @@
 .method isRawSRCapture(I)Z
     .registers 3
 
-    .line 1635
+    .line 1646
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isSupportedRawSR()Z
 
     move-result v0
@@ -12445,7 +12564,7 @@
 .method public replaceSuperNightToSWMFNR()Z
     .registers 3
 
-    .line 2110
+    .line 2121
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->isAiRawLiteSupport()Z
 
     move-result v0
@@ -12464,7 +12583,7 @@
 
     const-string v1, "Night_Light"
 
-    .line 2111
+    .line 2122
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -12475,7 +12594,7 @@
 
     const-string v0, "Night"
 
-    .line 2112
+    .line 2123
     invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -12496,7 +12615,7 @@
 .method setFlashRequiredInAutoMode(Z)V
     .registers 2
 
-    .line 1244
+    .line 1255
     iput-boolean p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIsFlashRequiredInAutoMode:Z
 
     return-void
@@ -12550,7 +12669,7 @@
 .method upadetMultiCropZoomRatio()V
     .registers 3
 
-    .line 1199
+    .line 1210
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getZoomRatio()I
 
     move-result v0
@@ -12624,7 +12743,7 @@
 
     if-ne p1, v0, :cond_c
 
-    .line 2960
+    .line 2985
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMTKProcessRawEnable()I
@@ -12644,7 +12763,7 @@
 
     if-ne p1, v0, :cond_c
 
-    .line 2954
+    .line 2979
     iget-object p1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getMotionCaptureMode()I
@@ -12660,14 +12779,14 @@
 .method updateMultiCropRegion(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 10
 
-    .line 1187
+    .line 1198
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v0
 
-    .line 1188
+    .line 1199
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mActiveArrayRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
@@ -12676,7 +12795,7 @@
 
     int-to-float v0, v0
 
-    .line 1189
+    .line 1200
     iget v2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mMulitiCropRegionZoomRatio:F
 
     div-float v3, v0, v2
@@ -12707,12 +12826,12 @@
 
     float-to-int v1, v1
 
-    .line 1193
+    .line 1204
     filled-new-array {v3, v4, v0, v1}, [I
 
     move-result-object v2
 
-    .line 1194
+    .line 1205
     iget-object v5, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -12749,7 +12868,7 @@
 
     invoke-static {v5, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1195
+    .line 1206
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, v2, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setMultiCropRegion([ILandroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -12760,7 +12879,7 @@
 .method updateRequestAWBLockStatus(Landroid/hardware/camera2/CaptureRequest$Builder;I)V
     .registers 6
 
-    .line 1611
+    .line 1622
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAWBLockStatus()Z
 
     move-result v0
@@ -12771,7 +12890,7 @@
 
     if-nez v0, :cond_29
 
-    .line 1612
+    .line 1623
     invoke-virtual {p0, p2}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->isHDRCapture(I)Z
 
     move-result v0
@@ -12790,7 +12909,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 1613
+    .line 1624
     :cond_1a
     invoke-virtual {p0, p2}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->isLongExposureCapture(I)Z
 
@@ -12798,7 +12917,7 @@
 
     if-nez v0, :cond_29
 
-    .line 1614
+    .line 1625
     invoke-virtual {p0, p2}, Lcom/transsion/camera/adapter/CameraParameters2Impl;->isRawSRCapture(I)Z
 
     move-result p2
@@ -12816,7 +12935,7 @@
     :goto_29
     move p2, v2
 
-    .line 1615
+    .line 1626
     :goto_2a
     iget v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mAwbLockDebug:I
 
@@ -12834,7 +12953,7 @@
     :cond_33
     move v1, p2
 
-    .line 1620
+    .line 1631
     :goto_34
     iget-object p2, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -12862,7 +12981,7 @@
 
     invoke-static {p2, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1621
+    .line 1632
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AWB_LOCK:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -12877,12 +12996,12 @@
 .method updateRequestAeLock(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 5
 
-    .line 1423
+    .line 1434
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getAeLock()Z
 
     move-result v0
 
-    .line 1424
+    .line 1435
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->needLockAe()Z
 
     move-result v1
@@ -12891,7 +13010,7 @@
 
     const/4 v0, 0x1
 
-    .line 1427
+    .line 1438
     :cond_b
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -12911,7 +13030,7 @@
 
     invoke-static {p0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1428
+    .line 1439
     sget-object p0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_LOCK:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -12926,7 +13045,7 @@
 .method public updateRequestAsdInfo(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 2
 
-    .line 2151
+    .line 2162
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setAsdInfo(Landroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -12943,26 +13062,26 @@
 
     const/4 v2, 0x2
 
-    .line 1280
+    .line 1291
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     const/4 v4, 0x1
 
-    .line 1279
+    .line 1290
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     const/4 v6, 0x0
 
-    .line 1263
+    .line 1274
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
-    .line 1251
+    .line 1262
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getFlashMode()Ljava/lang/String;
 
     move-result-object v8
@@ -12973,7 +13092,7 @@
 
     if-eqz v8, :cond_83
 
-    .line 1253
+    .line 1264
     invoke-virtual {v8}, Ljava/lang/String;->hashCode()I
 
     move-result v11
@@ -13064,7 +13183,7 @@
 
     goto :goto_85
 
-    .line 1255
+    .line 1266
     :pswitch_5b
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->isRecordingHint()Z
 
@@ -13072,7 +13191,7 @@
 
     if-eqz v8, :cond_7a
 
-    .line 1259
+    .line 1270
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getRingScreenLight()Ljava/lang/String;
 
     move-result-object v8
@@ -13081,7 +13200,7 @@
 
     move-result v8
 
-    .line 1260
+    .line 1271
     iget-boolean v11, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mIsFlashRequiredInAutoMode:Z
 
     if-nez v11, :cond_6f
@@ -13115,7 +13234,7 @@
 
     goto :goto_7a
 
-    .line 1275
+    .line 1286
     :pswitch_7e
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -13129,7 +13248,7 @@
 
     move-object v5, v3
 
-    .line 1290
+    .line 1301
     :goto_85
     iget-object v8, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -13141,7 +13260,7 @@
 
     if-eqz v8, :cond_9e
 
-    .line 1291
+    .line 1302
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getISOValue()I
 
     move-result v8
@@ -13158,7 +13277,7 @@
 
     goto :goto_b0
 
-    .line 1293
+    .line 1304
     :cond_9e
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getISOValue()I
 
@@ -13166,7 +13285,7 @@
 
     if-ne v8, v9, :cond_b0
 
-    .line 1294
+    .line 1305
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getExposureTime()J
 
     move-result-wide v8
@@ -13182,7 +13301,7 @@
 
     goto :goto_ba
 
-    .line 1298
+    .line 1309
     :cond_b0
     :goto_b0
     iget-object v3, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -13193,7 +13312,7 @@
 
     move-object/from16 v18, v7
 
-    .line 1301
+    .line 1312
     :goto_ba
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraParameters;->getExposureTime()J
 
@@ -13203,7 +13322,7 @@
 
     if-eqz v3, :cond_cd
 
-    .line 1303
+    .line 1314
     iget-object v3, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v5, "updateRequestFlashMode to FLASH_MODE_OFF"
@@ -13217,7 +13336,7 @@
     :cond_cd
     move-object/from16 v19, v5
 
-    .line 1307
+    .line 1318
     :goto_cf
     iget-object v13, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
@@ -13245,13 +13364,13 @@
 
     move-result-object v3
 
-    .line 1308
+    .line 1319
     aget-object v5, v3, v6
 
-    .line 1309
+    .line 1320
     aget-object v3, v3, v4
 
-    .line 1311
+    .line 1322
     iget-object v0, v0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -13278,7 +13397,7 @@
 
     if-eqz v3, :cond_116
 
-    .line 1312
+    .line 1323
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -13295,12 +13414,12 @@
     :goto_118
     invoke-static {v10, v0}, Lcom/transsion/camera/utils/CameraUtil;->hookDisturbStatus(Landroid/content/Context;I)V
 
-    .line 1314
+    .line 1325
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {v1, v0, v5}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    .line 1315
+    .line 1326
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->FLASH_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {v1, v0, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
@@ -13619,7 +13738,7 @@
 .method public updateRequestTFEVCheckerEnable(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .registers 3
 
-    .line 2147
+    .line 2158
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTFEVCheckerEnable()I
@@ -13634,7 +13753,7 @@
 .method public updateRequestTranssionTurboFusionMode(Landroid/hardware/camera2/CaptureRequest$Builder;Z)V
     .registers 5
 
-    .line 2142
+    .line 2153
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraParameters2Impl;->mPlatformCamera:Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;
 
     iget-boolean v1, p0, Lcom/transsion/camera/adapter/CameraParameters;->mIsDetectedMoon:Z
@@ -13651,7 +13770,7 @@
 
     goto :goto_14
 
-    .line 2143
+    .line 2154
     :cond_f
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionTurboFusionMode()I
 
@@ -13663,7 +13782,7 @@
     :goto_14
     const/4 p0, 0x0
 
-    .line 2142
+    .line 2153
     :goto_15
     invoke-interface {v0, p0, p1}, Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;->setTranssionTurboFusionMode(ILandroid/hardware/camera2/CaptureRequest$Builder;)V
 

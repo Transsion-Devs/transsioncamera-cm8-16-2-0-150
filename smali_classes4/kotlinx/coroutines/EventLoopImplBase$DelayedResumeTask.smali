@@ -41,13 +41,13 @@
         }
     .end annotation
 
-    .line 489
+    .line 486
     iput-object p1, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedResumeTask;->this$0:Lkotlinx/coroutines/EventLoopImplBase;
 
-    .line 492
+    .line 489
     invoke-direct {p0, p2, p3}, Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;-><init>(J)V
 
-    .line 491
+    .line 488
     iput-object p4, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedResumeTask;->cont:Lkotlinx/coroutines/CancellableContinuation;
 
     return-void
@@ -58,7 +58,7 @@
 .method public run()V
     .registers 3
 
-    .line 493
+    .line 490
     iget-object v0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedResumeTask;->cont:Lkotlinx/coroutines/CancellableContinuation;
 
     iget-object p0, p0, Lkotlinx/coroutines/EventLoopImplBase$DelayedResumeTask;->this$0:Lkotlinx/coroutines/EventLoopImplBase;
@@ -73,7 +73,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 494
+    .line 491
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

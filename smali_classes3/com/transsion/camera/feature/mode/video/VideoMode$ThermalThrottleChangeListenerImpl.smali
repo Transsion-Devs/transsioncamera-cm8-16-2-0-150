@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/video/VideoMode;)V
     .registers 2
 
-    .line 1596
+    .line 1595
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onThermalChanged(I)V
     .registers 3
 
-    .line 1604
+    .line 1603
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -57,7 +57,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 1605
+    .line 1604
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -74,7 +74,7 @@
 .method public onThermalThrottleChanged(I)V
     .registers 4
 
-    .line 1599
+    .line 1598
     invoke-static {}, Lcom/transsion/camera/feature/mode/video/VideoMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0

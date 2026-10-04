@@ -26,7 +26,7 @@
 
     const/4 v0, 0x1
 
-    .line 3141
+    .line 3160
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/utils/SettingInfo$Area;-><init>(Landroid/graphics/Rect;I)V
 
     return-void
@@ -35,13 +35,13 @@
 .method public constructor <init>(Landroid/graphics/Rect;I)V
     .registers 3
 
-    .line 3144
+    .line 3163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3145
+    .line 3164
     iput-object p1, p0, Lcom/transsion/camera/utils/SettingInfo$Area;->rect:Landroid/graphics/Rect;
 
-    .line 3146
+    .line 3165
     iput p2, p0, Lcom/transsion/camera/utils/SettingInfo$Area;->weight:I
 
     return-void
@@ -52,7 +52,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 5
 
-    .line 3151
+    .line 3170
     instance-of v0, p1, Lcom/transsion/camera/utils/SettingInfo$Area;
 
     const/4 v1, 0x0
@@ -61,23 +61,23 @@
 
     return v1
 
-    .line 3154
+    .line 3173
     :cond_6
     check-cast p1, Lcom/transsion/camera/utils/SettingInfo$Area;
 
-    .line 3155
+    .line 3174
     iget-object v0, p0, Lcom/transsion/camera/utils/SettingInfo$Area;->rect:Landroid/graphics/Rect;
 
     if-nez v0, :cond_11
 
-    .line 3156
+    .line 3175
     iget-object v0, p1, Lcom/transsion/camera/utils/SettingInfo$Area;->rect:Landroid/graphics/Rect;
 
     if-eqz v0, :cond_1a
 
     return v1
 
-    .line 3160
+    .line 3179
     :cond_11
     iget-object v2, p1, Lcom/transsion/camera/utils/SettingInfo$Area;->rect:Landroid/graphics/Rect;
 
@@ -89,7 +89,7 @@
 
     return v1
 
-    .line 3164
+    .line 3183
     :cond_1a
     iget p0, p0, Lcom/transsion/camera/utils/SettingInfo$Area;->weight:I
 
@@ -108,7 +108,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 3169
+    .line 3188
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -19,12 +19,6 @@
 .method public abstract setShutterTypeSelftimerOn(I)V
 .end method
 
-.method public abstract transitionShutterToRegular()V
-.end method
-
-.method public abstract transitionShutterToSmall()V
-.end method
-
 .method public abstract triggerShutterClick(I)V
 .end method
 

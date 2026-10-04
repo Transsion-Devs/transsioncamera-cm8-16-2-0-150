@@ -22,6 +22,15 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$35F2NnQ6JQ5Bqx93a07I5JGwLiQ(Lcom/transsion/camera/app/ui/AbstractHintUI$5;)V
+    .registers 1
+
+    .line 0
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->lambda$onStatusChanged$1()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$aXxRGmRbNkwAoLc1D_AscMJY1dc(Lcom/transsion/camera/app/ui/AbstractHintUI$5;)V
     .registers 1
 
@@ -34,7 +43,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractHintUI;)V
     .registers 2
 
-    .line 2073
+    .line 2081
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +54,7 @@
 .method private synthetic lambda$onStatusChanged$0()V
     .registers 4
 
-    .line 2093
+    .line 2101
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmScreenFormType(Lcom/transsion/camera/app/ui/AbstractHintUI;)I
@@ -66,13 +75,13 @@
 
     if-ne v0, v1, :cond_17
 
-    .line 2095
+    .line 2103
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$mrunHintRootAnimator(Lcom/transsion/camera/app/ui/AbstractHintUI;)V
 
-    .line 2097
+    .line 2105
     :cond_17
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
@@ -84,7 +93,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Lcom/transsion/camera/app/common/ui/HintInfo;Z)V
 
-    .line 2098
+    .line 2106
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmScreenFormType(Lcom/transsion/camera/app/ui/AbstractHintUI;)I
@@ -102,12 +111,23 @@
     return-void
 .end method
 
+.method private synthetic lambda$onStatusChanged$1()V
+    .registers 1
+
+    .line 2127
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
+
+    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->hideTwinkleGuide()V
+
+    return-void
+.end method
+
 
 # virtual methods
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 2073
+    .line 2081
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -118,7 +138,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 7
 
-    .line 2077
+    .line 2085
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -131,7 +151,7 @@
 
     const/4 v3, -0x1
 
-    sparse-switch v0, :sswitch_data_13e
+    sparse-switch v0, :sswitch_data_146
 
     goto :goto_2e
 
@@ -182,9 +202,9 @@
     move v3, v2
 
     :goto_2e
-    packed-switch v3, :pswitch_data_14c
+    packed-switch v3, :pswitch_data_154
 
-    .line 2123
+    .line 2132
     sget-object p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, " ignore the unneeded Key directly"
@@ -193,7 +213,7 @@
 
     return-void
 
-    .line 2117
+    .line 2125
     :pswitch_39
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
@@ -205,15 +225,22 @@
 
     move-result v0
 
-    if-eq p1, v0, :cond_4a
+    if-eq p1, v0, :cond_52
 
-    .line 2118
+    .line 2126
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1, v2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$mremoveTwinkleGuideMessages(Lcom/transsion/camera/app/ui/AbstractHintUI;Z)V
 
-    .line 2120
-    :cond_4a
+    .line 2127
+    new-instance p1, Lcom/transsion/camera/app/ui/AbstractHintUI$5$$ExternalSyntheticLambda1;
+
+    invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/AbstractHintUI$5$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/app/ui/AbstractHintUI$5;)V
+
+    invoke-static {p1}, Lcom/transsion/camera/utils/UIUtils;->runOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 2129
+    :cond_52
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -224,8 +251,8 @@
 
     return-void
 
-    .line 2079
-    :pswitch_54
+    .line 2087
+    :pswitch_5c
     sget-object p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -256,12 +283,12 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2080
+    .line 2088
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fputmSwitchPreviewValue(Lcom/transsion/camera/app/ui/AbstractHintUI;Ljava/lang/String;)V
 
-    .line 2081
+    .line 2089
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmScreenFormType(Lcom/transsion/camera/app/ui/AbstractHintUI;)I
@@ -272,7 +299,7 @@
 
     const/4 v0, 0x4
 
-    if-eq p1, v0, :cond_98
+    if-eq p1, v0, :cond_a0
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
@@ -280,7 +307,7 @@
 
     move-result p1
 
-    if-eq p1, p2, :cond_98
+    if-eq p1, p2, :cond_a0
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
@@ -290,10 +317,10 @@
 
     const/4 v2, 0x3
 
-    if-ne p1, v2, :cond_13d
+    if-ne p1, v2, :cond_145
 
-    .line 2084
-    :cond_98
+    .line 2092
+    :cond_a0
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object p1
@@ -302,16 +329,16 @@
 
     move-result-object v2
 
-    if-ne p1, v2, :cond_d0
+    if-ne p1, v2, :cond_d8
 
-    .line 2085
+    .line 2093
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmScreenFormType(Lcom/transsion/camera/app/ui/AbstractHintUI;)I
 
     move-result p1
 
-    if-eq p1, v0, :cond_b2
+    if-eq p1, v0, :cond_ba
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
@@ -319,16 +346,16 @@
 
     move-result p1
 
-    if-ne p1, p2, :cond_b7
+    if-ne p1, p2, :cond_bf
 
-    .line 2087
-    :cond_b2
+    .line 2095
+    :cond_ba
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$mrunHintRootAnimator(Lcom/transsion/camera/app/ui/AbstractHintUI;)V
 
-    .line 2089
-    :cond_b7
+    .line 2097
+    :cond_bf
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmCurrentAutoHideInfo(Lcom/transsion/camera/app/ui/AbstractHintUI;)Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -337,7 +364,7 @@
 
     invoke-virtual {p1, p2, v1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateLayout(Lcom/transsion/camera/app/common/ui/HintInfo;Z)V
 
-    .line 2090
+    .line 2098
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmScreenFormType(Lcom/transsion/camera/app/ui/AbstractHintUI;)I
@@ -354,8 +381,8 @@
 
     return-void
 
-    .line 2092
-    :cond_d0
+    .line 2100
+    :cond_d8
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/app/ui/AbstractHintUI;)Lcom/transsion/camera/app/ui/AbstractHintUI$UIHandler;
@@ -370,8 +397,8 @@
 
     return-void
 
-    .line 2105
-    :pswitch_df
+    .line 2113
+    :pswitch_e7
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -380,7 +407,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fputmZoomValue(Lcom/transsion/camera/app/ui/AbstractHintUI;I)V
 
-    .line 2106
+    .line 2114
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/AbstractHintUI;)Lcom/transsion/camera/app/common/IAppUI;
@@ -391,9 +418,9 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_105
+    if-eqz p1, :cond_10d
 
-    .line 2107
+    .line 2115
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/AbstractHintUI;)Lcom/transsion/camera/app/common/IAppUI;
@@ -410,8 +437,8 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fputmCurrentCameraId(Lcom/transsion/camera/app/ui/AbstractHintUI;Ljava/lang/String;)V
 
-    .line 2109
-    :cond_105
+    .line 2117
+    :cond_10d
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmCurrentCameraId(Lcom/transsion/camera/app/ui/AbstractHintUI;)Ljava/lang/String;
@@ -430,9 +457,9 @@
 
     move-result p1
 
-    if-eqz p1, :cond_12c
+    if-eqz p1, :cond_134
 
-    .line 2110
+    .line 2118
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
@@ -451,8 +478,8 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fputmZoomValue(Lcom/transsion/camera/app/ui/AbstractHintUI;I)V
 
-    .line 2112
-    :cond_12c
+    .line 2120
+    :cond_134
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmZoomValue(Lcom/transsion/camera/app/ui/AbstractHintUI;)I
@@ -463,27 +490,27 @@
 
     move-result p2
 
-    if-lt p1, p2, :cond_13d
+    if-lt p1, p2, :cond_145
 
-    .line 2113
+    .line 2121
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$5;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p0, v2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$mremoveTwinkleGuideMessages(Lcom/transsion/camera/app/ui/AbstractHintUI;Z)V
 
-    :cond_13d
+    :cond_145
     return-void
 
-    :sswitch_data_13e
+    :sswitch_data_146
     .sparse-switch
         -0x43305133 -> :sswitch_24
         -0x341f2c25 -> :sswitch_19
         0x1accdf41 -> :sswitch_e
     .end sparse-switch
 
-    :pswitch_data_14c
+    :pswitch_data_154
     .packed-switch 0x0
-        :pswitch_df
-        :pswitch_54
+        :pswitch_e7
+        :pswitch_5c
         :pswitch_39
     .end packed-switch
 .end method

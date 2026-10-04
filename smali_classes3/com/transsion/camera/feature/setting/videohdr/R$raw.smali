@@ -14,13 +14,17 @@
 
 
 # static fields
-.field public static ic_video_watermark_source_1080:I = 0x7f12000f
+.field public static ic_video_watermark_source_1080:I = 0x7f12000d
 
-.field public static ic_video_watermark_source_1080_in_m1:I = 0x7f120010
+.field public static ic_video_watermark_source_1080_customize:I = 0x7f12000e
 
-.field public static ic_video_watermark_source_1080_special:I = 0x7f120011
+.field public static ic_video_watermark_source_1080_in_m1:I = 0x7f12000f
 
-.field public static ic_video_watermark_source_720:I = 0x7f120012
+.field public static ic_video_watermark_source_1080_special:I = 0x7f120010
+
+.field public static ic_video_watermark_source_720:I = 0x7f120011
+
+.field public static ic_video_watermark_source_720_customize:I = 0x7f120012
 
 .field public static ic_video_watermark_source_720_in_m1:I = 0x7f120013
 

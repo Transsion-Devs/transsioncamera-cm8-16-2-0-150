@@ -32,7 +32,7 @@
     move-result-object v0
 
     .line 30
-    invoke-static {v0}, Lcom/google/gson/internal/JavaVersion;->getMajorJavaVersion(Ljava/lang/String;)I
+    invoke-static {v0}, Lcom/google/gson/internal/JavaVersion;->parseMajorJavaVersion(Ljava/lang/String;)I
 
     move-result v0
 
@@ -97,16 +97,78 @@
     return p0
 .end method
 
-.method public static getMajorJavaVersion()I
-    .registers 1
+.method public static isJava9OrLater()Z
+    .registers 2
 
-    .line 81
+    .line 93
     sget v0, Lcom/google/gson/internal/JavaVersion;->majorJavaVersion:I
+
+    const/16 v1, 0x9
+
+    if-lt v0, v1, :cond_8
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_8
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method static getMajorJavaVersion(Ljava/lang/String;)I
+.method private static parseDotted(Ljava/lang/String;)I
+    .registers 4
+
+    .line 48
+    :try_start_0
+    const-string v0, "[._]"
+
+    const/4 v1, 0x3
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    .line 49
+    aget-object v0, p0, v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_1b
+
+    .line 50
+    array-length v2, p0
+
+    if-le v2, v1, :cond_1b
+
+    .line 51
+    aget-object p0, p0, v1
+
+    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result p0
+    :try_end_1a
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_1a} :catch_1c
+
+    return p0
+
+    :cond_1b
+    return v0
+
+    :catch_1c
+    const/4 p0, -0x1
+
+    return p0
+.end method
+
+.method static parseMajorJavaVersion(Ljava/lang/String;)I
     .registers 3
 
     .line 35
@@ -132,73 +194,4 @@
 
     :cond_f
     return v0
-.end method
-
-.method public static isJava9OrLater()Z
-    .registers 2
-
-    .line 88
-    sget v0, Lcom/google/gson/internal/JavaVersion;->majorJavaVersion:I
-
-    const/16 v1, 0x9
-
-    if-lt v0, v1, :cond_8
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_8
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method private static parseDotted(Ljava/lang/String;)I
-    .registers 4
-
-    .line 48
-    :try_start_0
-    const-string v0, "[._]"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object p0
-
-    const/4 v0, 0x0
-
-    .line 49
-    aget-object v0, p0, v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_1a
-
-    .line 50
-    array-length v2, p0
-
-    if-le v2, v1, :cond_1a
-
-    .line 51
-    aget-object p0, p0, v1
-
-    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result p0
-    :try_end_19
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_19} :catch_1b
-
-    return p0
-
-    :cond_1a
-    return v0
-
-    :catch_1b
-    const/4 p0, -0x1
-
-    return p0
 .end method

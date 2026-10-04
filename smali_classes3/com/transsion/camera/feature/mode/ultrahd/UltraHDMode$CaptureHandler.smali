@@ -30,10 +30,10 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/IAppUI;)V
     .registers 3
 
-    .line 426
+    .line 443
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 427
+    .line 444
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -57,10 +57,10 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 432
+    .line 449
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 433
+    .line 450
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;->mAppUIRef:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -71,7 +71,7 @@
 
     if-nez p0, :cond_17
 
-    .line 435
+    .line 452
     invoke-static {}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -82,7 +82,7 @@
 
     return-void
 
-    .line 438
+    .line 455
     :cond_17
     iget p1, p1, Landroid/os/Message;->what:I
 
@@ -101,15 +101,15 @@
 
     const/4 v1, 0x0
 
-    .line 441
+    .line 458
     invoke-interface {p0, v0, p1, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
     const/16 p1, 0x9c
 
-    .line 442
+    .line 459
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 443
+    .line 460
     invoke-static {}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->-$$Nest$sfgetmSaveHighQualityJpegDone()Z
 
     move-result p1
@@ -118,7 +118,7 @@
 
     const/4 p1, 0x0
 
-    .line 444
+    .line 461
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUI;->setShutterEnabled(Z)V
 
     :cond_34

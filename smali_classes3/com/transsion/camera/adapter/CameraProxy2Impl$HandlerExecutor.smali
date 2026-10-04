@@ -25,10 +25,10 @@
 .method constructor <init>(Landroid/os/Handler;)V
     .registers 2
 
-    .line 4435
+    .line 4407
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4436
+    .line 4408
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$HandlerExecutor;->mHandler:Landroid/os/Handler;
 
     return-void
@@ -39,7 +39,7 @@
 .method public execute(Ljava/lang/Runnable;)V
     .registers 2
 
-    .line 4441
+    .line 4413
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$HandlerExecutor;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z

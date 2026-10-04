@@ -26,7 +26,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 410
+    .line 411
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "CaptureHandler"
@@ -41,10 +41,10 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/IAppUI;)V
     .registers 3
 
-    .line 414
+    .line 415
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 415
+    .line 416
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -68,10 +68,10 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 6
 
-    .line 420
+    .line 421
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 421
+    .line 422
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$CaptureHandler;->mAppUIRef:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -82,7 +82,7 @@
 
     if-nez v0, :cond_15
 
-    .line 423
+    .line 424
     sget-object p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$CaptureHandler;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "appUI is null"
@@ -91,7 +91,7 @@
 
     return-void
 
-    .line 426
+    .line 427
     :cond_15
     iget p1, p1, Landroid/os/Message;->what:I
 
@@ -116,30 +116,30 @@
 
     const/4 p1, 0x0
 
-    .line 436
+    .line 437
     invoke-interface {v0, v3, p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 437
+    .line 438
     invoke-interface {v0, v3}, Lcom/transsion/camera/app/common/IAppUI;->setShutterEnabled(Z)V
 
     return-void
 
-    .line 433
+    .line 434
     :cond_2c
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     return-void
 
-    .line 428
+    .line 429
     :cond_30
     invoke-virtual {p0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 429
+    .line 430
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     const/4 p0, 0x0
 
-    .line 430
+    .line 431
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->triggerShutterClick(I)V
 
     return-void

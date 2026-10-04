@@ -353,14 +353,14 @@
 
     iput-object v4, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mUICallbackImpl:Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
-    .line 623
+    .line 626
     new-instance v4, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI$$ExternalSyntheticLambda6;
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI$$ExternalSyntheticLambda6;-><init>(Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;)V
 
     iput-object v4, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 653
+    .line 656
     new-instance v4, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI$5;
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI$5;-><init>(Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;)V
@@ -613,7 +613,7 @@
 .method private getAnimatorDuration()I
     .registers 1
 
-    .line 650
+    .line 653
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -650,7 +650,7 @@
 .method private getVssTranslateDistance()F
     .registers 2
 
-    .line 664
+    .line 667
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -661,7 +661,7 @@
 
     return p0
 
-    .line 667
+    .line 670
     :cond_8
     iget p0, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mTranslateDistance:F
 
@@ -935,7 +935,7 @@
 .method private isAnimatorRunning()Z
     .registers 4
 
-    .line 671
+    .line 674
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mUI5AlphaAnimator:Landroid/animation/ValueAnimator;
 
     const/4 v1, 0x0
@@ -948,7 +948,7 @@
 
     goto :goto_1c
 
-    .line 674
+    .line 677
     :cond_a
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->isRunning()Z
 
@@ -1038,7 +1038,7 @@
 
     const/4 v0, 0x1
 
-    .line 632
+    .line 635
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->hideSettingUI(Z)V
 
     return-void
@@ -1047,7 +1047,7 @@
 .method private synthetic lambda$new$4(Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
 
-    .line 624
+    .line 627
     sget-object v0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1072,7 +1072,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 625
+    .line 628
     const-string v0, "key_super_definition"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1091,7 +1091,7 @@
 
     goto :goto_50
 
-    .line 628
+    .line 631
     :cond_2f
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->isCameraFacingBack()Z
 
@@ -1099,7 +1099,7 @@
 
     if-eqz p1, :cond_50
 
-    .line 629
+    .line 632
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object p1
@@ -1112,18 +1112,18 @@
 
     const/4 p1, 0x1
 
-    .line 630
+    .line 633
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->hideSettingUI(Z)V
 
     return-void
 
-    .line 631
+    .line 634
     :cond_44
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mEntryView:Landroid/view/View;
 
     if-eqz p1, :cond_50
 
-    .line 632
+    .line 635
     new-instance p2, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;)V
@@ -1363,12 +1363,12 @@
 .method private registerKeyToMonitor()V
     .registers 3
 
-    .line 614
+    .line 617
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_b
 
-    .line 615
+    .line 618
     const-string v1, "key_super_definition"
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
@@ -1975,12 +1975,12 @@
 .method private unRegisterKeyToMonitor()V
     .registers 3
 
-    .line 619
+    .line 622
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_b
 
-    .line 620
+    .line 623
     const-string v1, "key_super_definition"
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
@@ -2422,23 +2422,23 @@
 .method public isCameraFacingBack()Z
     .registers 1
 
-    .line 638
+    .line 641
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mStreetPhotoStyleSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_9
 
-    .line 639
+    .line 642
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object p0
 
     goto :goto_b
 
-    .line 638
+    .line 641
     :cond_9
     const-string p0, "0"
 
-    .line 641
+    .line 644
     :goto_b
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraInfoUtil;->isCameraFacingBack(Ljava/lang/String;)Z
 
@@ -2481,72 +2481,76 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_76
+    if-eqz p1, :cond_7e
 
     const/4 v1, 0x2
 
     const/4 v2, 0x1
 
-    if-eq p1, v1, :cond_6f
+    if-eq p1, v1, :cond_77
 
     const/16 v3, 0x13
 
-    if-eq p1, v3, :cond_5d
+    if-eq p1, v3, :cond_65
 
     const/16 v1, 0x1a
 
-    if-eq p1, v1, :cond_56
+    if-eq p1, v1, :cond_5e
 
     const/16 v1, 0x1c
 
-    if-eq p1, v1, :cond_76
+    if-eq p1, v1, :cond_7e
+
+    const/16 v1, 0x4d
+
+    if-eq p1, v1, :cond_77
+
+    const/16 v1, 0x169
+
+    if-eq p1, v1, :cond_5a
+
+    const/16 v1, 0xf
+
+    if-eq p1, v1, :cond_77
+
+    const/16 v1, 0x10
+
+    if-eq p1, v1, :cond_5e
+
+    const/16 v1, 0x1f
+
+    if-eq p1, v1, :cond_56
 
     const/16 v1, 0x20
 
     if-eq p1, v1, :cond_4d
 
-    const/16 v1, 0x4d
-
-    if-eq p1, v1, :cond_6f
-
-    const/16 v1, 0x169
+    const/16 v1, 0x7f
 
     if-eq p1, v1, :cond_49
 
-    const/16 v1, 0xf
-
-    if-eq p1, v1, :cond_6f
-
-    const/16 v1, 0x10
-
-    if-eq p1, v1, :cond_56
-
-    const/16 v1, 0x7f
+    const/16 v1, 0x80
 
     if-eq p1, v1, :cond_45
 
-    const/16 v1, 0x80
-
-    if-eq p1, v1, :cond_41
-
     const/16 v1, 0xcf
 
-    if-eq p1, v1, :cond_3b
+    if-eq p1, v1, :cond_3f
 
     const/16 v1, 0xd0
 
-    if-eq p1, v1, :cond_38
+    if-eq p1, v1, :cond_3c
 
     return-void
 
     .line 598
-    :cond_38
+    :cond_3c
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mIsPopSettingShow:Z
 
     return-void
 
     .line 594
-    :cond_3b
+    :cond_3f
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mIsPopSettingShow:Z
 
     .line 595
@@ -2555,20 +2559,14 @@
     return-void
 
     .line 607
-    :cond_41
+    :cond_45
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->showEntryRootView()V
 
     return-void
 
     .line 604
-    :cond_45
-    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->hideEntryRootView()V
-
-    return-void
-
-    .line 601
     :cond_49
-    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->hideSettingUI(Z)V
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->hideEntryRootView()V
 
     return-void
 
@@ -2584,8 +2582,20 @@
 
     return-void
 
-    .line 574
+    .line 610
     :cond_56
+    invoke-virtual {p0, v2}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->setEnable(Z)V
+
+    return-void
+
+    .line 601
+    :cond_5a
+    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->hideSettingUI(Z)V
+
+    return-void
+
+    .line 574
+    :cond_5e
     invoke-virtual {p0, v2}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->setEnable(Z)V
 
     .line 575
@@ -2594,7 +2604,7 @@
     return-void
 
     .line 584
-    :cond_5d
+    :cond_65
     const-string p1, "2"
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->mCurrentValue:Ljava/lang/String;
@@ -2615,7 +2625,7 @@
     return-void
 
     .line 580
-    :cond_6f
+    :cond_77
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->setEnable(Z)V
 
     .line 581
@@ -2624,7 +2634,7 @@
     return-void
 
     .line 591
-    :cond_76
+    :cond_7e
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->hideSettingUI(Z)V
 
     return-void
@@ -2674,12 +2684,12 @@
 .method public onConfigurationChanged()V
     .registers 2
 
-    .line 645
+    .line 648
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onConfigurationChanged()V
 
     const/4 v0, 0x0
 
-    .line 646
+    .line 649
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/streetphotostyle/StreetPhotoStyleSettingUI;->hideSettingUI(Z)V
 
     return-void

@@ -42,7 +42,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)V
     .registers 2
 
-    .line 1707
+    .line 1694
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,24 +62,24 @@
 .method private releaseConverterStates()V
     .registers 3
 
-    .line 1716
+    .line 1703
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmSatRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
 
-    .line 1717
+    .line 1704
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmWideRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
 
-    .line 1718
+    .line 1705
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmNormalRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
 
-    .line 1719
+    .line 1706
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmTeleRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
@@ -90,7 +90,7 @@
 .method private satSupport()Z
     .registers 4
 
-    .line 1793
+    .line 1780
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
@@ -101,7 +101,7 @@
 
     iput-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mCurrentCameraId:Ljava/lang/String;
 
-    .line 1794
+    .line 1781
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mSatCameraId:Ljava/lang/String;
@@ -120,7 +120,7 @@
 
     goto :goto_2b
 
-    .line 1797
+    .line 1784
     :cond_1a
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -130,7 +130,7 @@
 
     return v2
 
-    .line 1800
+    .line 1787
     :cond_21
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mModeFeatureSupport:Lcom/transsion/camera/app/common/mode/IModeFeatureSupport;
 
@@ -138,7 +138,7 @@
 
     return v2
 
-    .line 1803
+    .line 1790
     :cond_26
     invoke-interface {p0}, Lcom/transsion/camera/app/common/mode/IModeFeatureSupport;->supportSat()Z
 
@@ -154,15 +154,15 @@
 .method private setupConverterState()V
     .registers 8
 
-    .line 1733
+    .line 1720
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->releaseConverterStates()V
 
-    .line 1734
+    .line 1721
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->satSupport()Z
 
     move-result v0
 
-    .line 1735
+    .line 1722
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget-boolean v2, v1, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mModeSupportWide:Z
@@ -184,7 +184,7 @@
     :cond_15
     move v2, v3
 
-    .line 1737
+    .line 1724
     :goto_16
     iget-boolean v5, v1, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mModeSupportTele:Z
 
@@ -196,7 +196,7 @@
 
     move v3, v4
 
-    .line 1739
+    .line 1726
     :cond_1f
     iget-boolean v4, v1, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mIsInSuperMoonMode:Z
 
@@ -204,7 +204,7 @@
 
     if-eqz v4, :cond_3b
 
-    .line 1742
+    .line 1729
     new-instance v0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$TeleRangeConverterState;
 
     const v2, 0xc350
@@ -213,7 +213,7 @@
 
     invoke-static {v1, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmTeleRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
 
-    .line 1744
+    .line 1731
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmTeleRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
@@ -229,19 +229,19 @@
 
     if-eqz v0, :cond_55
 
-    .line 1748
+    .line 1735
     iget-boolean v6, v1, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mSatSupportWide:Z
 
     if-eqz v6, :cond_55
 
-    .line 1749
+    .line 1736
     new-instance v0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$SatSupportWideConverterState;
 
     invoke-direct {v0, v1, v4, v5}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$SatSupportWideConverterState;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;II)V
 
     invoke-static {v1, v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmSatRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
 
-    .line 1751
+    .line 1738
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmSatRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
@@ -257,7 +257,7 @@
 
     if-eqz v2, :cond_61
 
-    .line 1756
+    .line 1743
     new-instance v2, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;
 
     invoke-direct {v2, v1, v4, v6}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;II)V
@@ -267,21 +267,21 @@
     :cond_61
     if-eqz v0, :cond_8d
 
-    .line 1760
+    .line 1747
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget-boolean v1, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mSatSupportWide:Z
 
     if-nez v1, :cond_8d
 
-    .line 1761
+    .line 1748
     new-instance v1, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$SatSupportWideConverterState;
 
     invoke-direct {v1, v0, v6, v5}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$SatSupportWideConverterState;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;II)V
 
     invoke-static {v0, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmSatRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
 
-    .line 1763
+    .line 1750
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->currentCameraIsSat()Z
@@ -290,7 +290,7 @@
 
     if-eqz v0, :cond_83
 
-    .line 1764
+    .line 1751
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmSatRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
@@ -301,7 +301,7 @@
 
     return-void
 
-    .line 1766
+    .line 1753
     :cond_83
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -316,7 +316,7 @@
     :cond_8d
     if-eqz v3, :cond_a8
 
-    .line 1774
+    .line 1761
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget-object v0, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
@@ -325,14 +325,14 @@
 
     move-result v0
 
-    .line 1775
+    .line 1762
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-virtual {v1}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->getUpperTeleZoom()I
 
     move-result v1
 
-    .line 1776
+    .line 1763
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     new-instance v3, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$TeleRangeConverterState;
@@ -343,7 +343,7 @@
 
     goto :goto_ae
 
-    .line 1779
+    .line 1766
     :cond_a8
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -351,7 +351,7 @@
 
     move-result v0
 
-    .line 1781
+    .line 1768
     :goto_ae
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -361,7 +361,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmNormalRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
 
-    .line 1783
+    .line 1770
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->currentCameraIsWide()Z
@@ -370,7 +370,7 @@
 
     if-eqz v0, :cond_ca
 
-    .line 1784
+    .line 1771
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
@@ -381,7 +381,7 @@
 
     return-void
 
-    .line 1785
+    .line 1772
     :cond_ca
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -391,7 +391,7 @@
 
     if-eqz v0, :cond_dc
 
-    .line 1786
+    .line 1773
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmTeleRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
@@ -402,7 +402,7 @@
 
     return-void
 
-    .line 1788
+    .line 1775
     :cond_dc
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -418,7 +418,7 @@
 .method private updateConverterState(I)Z
     .registers 5
 
-    .line 1807
+    .line 1794
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->currentCameraIsSat()Z
@@ -429,7 +429,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 1808
+    .line 1795
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmSatRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
@@ -440,7 +440,7 @@
 
     return v1
 
-    .line 1811
+    .line 1798
     :cond_13
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -454,7 +454,7 @@
 
     if-eqz v0, :cond_4d
 
-    .line 1812
+    .line 1799
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mCurrentCameraId:Ljava/lang/String;
@@ -465,7 +465,113 @@
 
     if-eqz v0, :cond_3d
 
+    .line 1800
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmNormalRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmCurrentConverterState(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
+
+    .line 1801
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    iget-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
+
+    invoke-virtual {v2}, Lcom/transsion/camera/app/common/CameraRepository;->getMainBackCamera()Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mNextSwitchCamera:Ljava/lang/String;
+
+    goto :goto_98
+
+    .line 1803
+    :cond_3d
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmCurrentConverterState(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
+
+    .line 1804
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    iget-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mWideCameraId:Ljava/lang/String;
+
+    iput-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mNextSwitchCamera:Ljava/lang/String;
+
+    goto :goto_98
+
+    .line 1806
+    :cond_4d
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmTeleRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
+
+    move-result-object v2
+
+    invoke-static {v0, v2, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$minThisRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_69
+
+    .line 1807
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmTeleRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmCurrentConverterState(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
+
+    .line 1808
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    iget-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mTeleCameraId:Ljava/lang/String;
+
+    iput-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mNextSwitchCamera:Ljava/lang/String;
+
+    goto :goto_98
+
+    .line 1809
+    :cond_69
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmSatRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
+
+    move-result-object v2
+
+    invoke-static {v0, v2, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$minThisRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_85
+
+    .line 1810
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmSatRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmCurrentConverterState(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
+
+    .line 1811
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    iget-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mSatCameraId:Ljava/lang/String;
+
+    iput-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mNextSwitchCamera:Ljava/lang/String;
+
+    goto :goto_98
+
     .line 1813
+    :cond_85
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmNormalRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
@@ -485,113 +591,7 @@
 
     iput-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mNextSwitchCamera:Ljava/lang/String;
 
-    goto :goto_98
-
     .line 1816
-    :cond_3d
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
-
-    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmCurrentConverterState(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
-
-    .line 1817
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
-
-    iget-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mWideCameraId:Ljava/lang/String;
-
-    iput-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mNextSwitchCamera:Ljava/lang/String;
-
-    goto :goto_98
-
-    .line 1819
-    :cond_4d
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
-
-    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmTeleRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
-
-    move-result-object v2
-
-    invoke-static {v0, v2, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$minThisRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_69
-
-    .line 1820
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
-
-    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmTeleRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmCurrentConverterState(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
-
-    .line 1821
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
-
-    iget-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mTeleCameraId:Ljava/lang/String;
-
-    iput-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mNextSwitchCamera:Ljava/lang/String;
-
-    goto :goto_98
-
-    .line 1822
-    :cond_69
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
-
-    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmSatRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
-
-    move-result-object v2
-
-    invoke-static {v0, v2, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$minThisRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_85
-
-    .line 1823
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
-
-    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmSatRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmCurrentConverterState(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
-
-    .line 1824
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
-
-    iget-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mSatCameraId:Ljava/lang/String;
-
-    iput-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mNextSwitchCamera:Ljava/lang/String;
-
-    goto :goto_98
-
-    .line 1826
-    :cond_85
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
-
-    invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmNormalRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmCurrentConverterState(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
-
-    .line 1827
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
-
-    iget-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
-
-    invoke-virtual {v2}, Lcom/transsion/camera/app/common/CameraRepository;->getMainBackCamera()Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mNextSwitchCamera:Ljava/lang/String;
-
-    .line 1829
     :goto_98
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -626,7 +626,7 @@
 
     if-eqz p1, :cond_22
 
-    .line 1723
+    .line 1710
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->currentCameraIsWide()Z
@@ -635,7 +635,7 @@
 
     if-eqz p1, :cond_22
 
-    .line 1724
+    .line 1711
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;
@@ -646,7 +646,7 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmWideRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
 
-    .line 1725
+    .line 1712
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;
@@ -657,7 +657,7 @@
 
     return-void
 
-    .line 1726
+    .line 1713
     :cond_22
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -667,7 +667,7 @@
 
     if-eqz p1, :cond_3f
 
-    .line 1727
+    .line 1714
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;
@@ -678,7 +678,7 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fputmWideRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;)V
 
-    .line 1728
+    .line 1715
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ProgressValueConverter;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRange(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;

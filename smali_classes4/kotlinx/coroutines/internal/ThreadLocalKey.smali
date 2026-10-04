@@ -37,10 +37,10 @@
         }
     .end annotation
 
-    .line 100
+    .line 96
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 101
+    .line 97
     iput-object p1, p0, Lkotlinx/coroutines/internal/ThreadLocalKey;->threadLocal:Ljava/lang/ThreadLocal;
 
     return-void

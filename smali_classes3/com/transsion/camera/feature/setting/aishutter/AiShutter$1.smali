@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;)V
     .registers 2
 
-    .line 330
+    .line 333
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$1;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,26 +38,26 @@
 .method public onPreviewStarted()V
     .registers 3
 
-    .line 341
+    .line 344
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$1;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$fputmPreviewStarted(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;Z)V
 
-    .line 342
+    .line 345
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$1;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$fputmAisValue(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;I)V
 
-    .line 343
+    .line 346
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$1;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$fputmInSensorZoomValue(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;I)V
 
-    .line 344
+    .line 347
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$1;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
@@ -79,24 +79,24 @@
 .method public onPreviewStopped()V
     .registers 3
 
-    .line 333
+    .line 336
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$1;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$fputmPreviewStarted(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;Z)V
 
-    .line 334
+    .line 337
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$1;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$fputmAisValue(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;I)V
 
-    .line 335
+    .line 338
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$1;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/aishutter/AiShutter;->-$$Nest$fputmInSensorZoomValue(Lcom/transsion/camera/feature/setting/aishutter/AiShutter;I)V
 
-    .line 336
+    .line 339
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/aishutter/AiShutter$1;->this$0:Lcom/transsion/camera/feature/setting/aishutter/AiShutter;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;

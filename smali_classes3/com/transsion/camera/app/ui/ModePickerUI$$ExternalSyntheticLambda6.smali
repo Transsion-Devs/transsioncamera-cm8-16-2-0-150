@@ -30,7 +30,7 @@
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda6;->f$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->$r8$lambda$jBLuCKthnkYGSY74ciLm4c5oYas(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->$r8$lambda$bhm4AJEQdIoC60A8zIb-36B_DVI(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     return-void
 .end method

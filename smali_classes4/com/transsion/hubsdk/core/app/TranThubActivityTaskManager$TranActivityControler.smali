@@ -22,7 +22,7 @@
 .method public constructor <init>(Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;)V
     .registers 2
 
-    .line 428
+    .line 442
     iput-object p1, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/app/ITranActivityController$Stub;-><init>()V
@@ -35,7 +35,7 @@
 .method public activityResuming(Ljava/lang/String;)Z
     .registers 3
 
-    .line 438
+    .line 452
     iget-object v0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -45,7 +45,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 439
+    .line 453
     iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -68,7 +68,7 @@
 .method public activityStarting(Landroid/content/Intent;Ljava/lang/String;)Z
     .registers 4
 
-    .line 431
+    .line 445
     iget-object v0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -78,7 +78,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 432
+    .line 446
     iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -101,7 +101,7 @@
 .method public appCrashed(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;JLjava/lang/String;)Z
     .registers 16
 
-    .line 446
+    .line 460
     iget-object v0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -111,7 +111,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 447
+    .line 461
     iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -146,7 +146,7 @@
 .method public appEarlyNotResponding(Ljava/lang/String;ILjava/lang/String;)I
     .registers 5
 
-    .line 454
+    .line 468
     iget-object v0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -156,7 +156,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 455
+    .line 469
     iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -179,7 +179,7 @@
 .method public appNotResponding(Ljava/lang/String;ILjava/lang/String;)I
     .registers 5
 
-    .line 462
+    .line 476
     iget-object v0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -189,7 +189,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 463
+    .line 477
     iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -212,7 +212,7 @@
 .method public systemNotResponding(Ljava/lang/String;)I
     .registers 3
 
-    .line 469
+    .line 483
     iget-object v0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -222,7 +222,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 470
+    .line 484
     iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager$TranActivityControler;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/core/app/TranThubActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;

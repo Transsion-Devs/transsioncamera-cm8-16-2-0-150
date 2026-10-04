@@ -40,7 +40,7 @@
 .method private static final findNext(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Lkotlin/text/MatchResult;
     .registers 3
 
-    .line 344
+    .line 350
     invoke-virtual {p0, p1}, Ljava/util/regex/Matcher;->find(I)Z
 
     move-result p1
@@ -62,7 +62,7 @@
 .method private static final range(Ljava/util/regex/MatchResult;)Lkotlin/ranges/IntRange;
     .registers 2
 
-    .line 396
+    .line 402
     invoke-interface {p0}, Ljava/util/regex/MatchResult;->start()I
 
     move-result v0
@@ -81,7 +81,7 @@
 .method private static final range(Ljava/util/regex/MatchResult;I)Lkotlin/ranges/IntRange;
     .registers 3
 
-    .line 397
+    .line 403
     invoke-interface {p0, p1}, Ljava/util/regex/MatchResult;->start(I)I
 
     move-result v0

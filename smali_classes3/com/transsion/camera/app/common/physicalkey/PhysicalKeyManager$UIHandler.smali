@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)V
     .registers 3
 
-    .line 701
+    .line 765
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 702
+    .line 766
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -40,7 +40,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 5
 
-    .line 707
+    .line 771
     iget-object p0, p0, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager$UIHandler;->mReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -51,7 +51,7 @@
 
     if-nez p0, :cond_25
 
-    .line 709
+    .line 773
     invoke-static {}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -76,7 +76,7 @@
 
     return-void
 
-    .line 713
+    .line 777
     :cond_25
     invoke-static {}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -100,7 +100,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 714
+    .line 778
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
@@ -121,7 +121,7 @@
 
     return-void
 
-    .line 725
+    .line 789
     :cond_4e
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -131,7 +131,7 @@
 
     return-void
 
-    .line 722
+    .line 786
     :cond_56
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -141,7 +141,7 @@
 
     return-void
 
-    .line 719
+    .line 783
     :cond_5e
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmKeyEventCallBack(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$IKeyEventCallback;
 
@@ -159,7 +159,7 @@
 
     return-void
 
-    .line 716
+    .line 780
     :cond_6e
     invoke-static {p0}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->-$$Nest$fgetmPhysicalKeyEventCallback(Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;)Lcom/transsion/camera/app/common/IAppUIControl$PhysicalKeyEventCallback;
 

@@ -51,13 +51,13 @@
         }
     .end annotation
 
-    .line 379
+    .line 375
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 381
+    .line 377
     iput-object p2, p0, Lkotlinx/coroutines/flow/ReadonlyStateFlow;->job:Lkotlinx/coroutines/Job;
 
-    .line 383
+    .line 379
     iput-object p1, p0, Lkotlinx/coroutines/flow/ReadonlyStateFlow;->$$delegate_0:Lkotlinx/coroutines/flow/StateFlow;
 
     return-void
@@ -101,7 +101,7 @@
         }
     .end annotation
 
-    .line 385
+    .line 381
     invoke-static {p0, p1, p2, p3}, Lkotlinx/coroutines/flow/StateFlowKt;->fuseStateFlow(Lkotlinx/coroutines/flow/StateFlow;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)Lkotlinx/coroutines/flow/Flow;
 
     move-result-object p0

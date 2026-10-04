@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static color_style_recycler_view:I = 0x7f0b0132
+.field public static color_style_recycler_view:I = 0x7f0b0134
 
-.field public static color_style_root:I = 0x7f0b0133
+.field public static color_style_root:I = 0x7f0b0135
 
-.field public static setting_ui_item_color_style:I = 0x7f0b05cd
+.field public static setting_ui_item_color_style:I = 0x7f0b05c9
 
-.field public static split:I = 0x7f0b0650
+.field public static split:I = 0x7f0b064c
 
 
 # direct methods

@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.selects.SelectImplementation"
     f = "Select.kt"
     l = {
-        0x2c2
+        0x2c8
     }
     m = "processResultAndInvokeBlockRecoveringException"
 .end annotation

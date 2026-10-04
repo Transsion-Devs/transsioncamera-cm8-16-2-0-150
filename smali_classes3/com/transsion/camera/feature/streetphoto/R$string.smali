@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static street_photo_description:I = 0x7f13051b
+.field public static street_photo_description:I = 0x7f130514
 
-.field public static street_photo_name:I = 0x7f13051c
+.field public static street_photo_name:I = 0x7f130515
 
 
 # direct methods

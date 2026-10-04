@@ -20,7 +20,7 @@
 
     const/4 v0, 0x0
 
-    .line 372
+    .line 382
     invoke-direct {p0, v0}, Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;-><init>(Lcom/transsion/camera/manager/ScreenBrightnessManager-IA;)V
 
     return-void
@@ -40,7 +40,7 @@
 .method public getCurrent(Landroid/app/Activity;)F
     .registers 2
 
-    .line 400
+    .line 410
     invoke-virtual {p0, p1}, Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;->getActivityBrightness(Landroid/app/Activity;)F
 
     move-result p0
@@ -60,7 +60,7 @@
 
     const/4 p3, 0x0
 
-    .line 394
+    .line 404
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/manager/ScreenBrightnessManager$ActivityWindowAPI;->setBrightness(Landroid/app/Activity;IZ)V
 
     return-void
@@ -86,7 +86,7 @@
 
     div-float/2addr p2, p3
 
-    .line 386
+    .line 396
     :goto_c
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/manager/ScreenBrightnessManager$SetBrightnessAPI;->setActivityBrightness(Landroid/app/Activity;F)V
 
@@ -96,7 +96,7 @@
 .method public toString()Ljava/lang/String;
     .registers 1
 
-    .line 375
+    .line 385
     const-string p0, "ActivityWindowAPI"
 
     return-object p0

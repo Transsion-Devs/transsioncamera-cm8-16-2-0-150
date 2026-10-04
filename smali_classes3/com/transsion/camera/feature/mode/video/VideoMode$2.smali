@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/video/VideoMode;)V
     .registers 2
 
-    .line 880
+    .line 879
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$2;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,28 +38,28 @@
 .method public onRecordingLimited()V
     .registers 3
 
-    .line 892
+    .line 891
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$2;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     iget-boolean v0, v0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
     if-eqz v0, :cond_12
 
-    .line 893
+    .line 892
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$2;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     const/4 v1, 0x6
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/video/VideoMode;->showInfo(I)V
 
-    .line 894
+    .line 893
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$2;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->stopRecordingByForce()V
 
     return-void
 
-    .line 896
+    .line 895
     :cond_12
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$2;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
@@ -73,7 +73,7 @@
 .method public onRecordingTimeFull()V
     .registers 4
 
-    .line 883
+    .line 882
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$2;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -101,21 +101,21 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 884
+    .line 883
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$2;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     iget-boolean v0, v0, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
     if-eqz v0, :cond_2f
 
-    .line 885
+    .line 884
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$2;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     const/4 v1, 0x6
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/video/VideoMode;->showInfo(I)V
 
-    .line 886
+    .line 885
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$2;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->stopRecordingByForce()V

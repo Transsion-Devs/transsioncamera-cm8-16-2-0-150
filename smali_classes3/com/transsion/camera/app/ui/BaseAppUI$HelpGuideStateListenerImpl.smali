@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;)V
     .registers 2
 
-    .line 4315
+    .line 4301
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$HelpGuideStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .method public onFragmentExitView()V
     .registers 2
 
-    .line 4328
+    .line 4314
     iget-object p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$HelpGuideStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     const/16 v0, 0xfd

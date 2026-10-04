@@ -6,6 +6,11 @@
 .implements Landroid/os/Parcelable;
 
 
+# annotations
+.annotation build Lkotlinx/android/parcel/Parcelize;
+.end annotation
+
+
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -47,6 +52,19 @@
     return-void
 .end method
 
+.method public constructor <init>()V
+    .registers 3
+
+    .line 0
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v0, v1, v0}, Lcom/cutsame/solution/source/effect/EffectList;-><init>(Ljava/util/ArrayList;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/util/ArrayList;)V
     .registers 3
 
@@ -59,6 +77,25 @@
 
     .line 3
     iput-object p1, p0, Lcom/cutsame/solution/source/effect/EffectList;->a:Ljava/util/ArrayList;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/util/ArrayList;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .registers 4
+
+    and-int/lit8 p2, p2, 0x1
+
+    if-eqz p2, :cond_9
+
+    .line 4
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 5
+    :cond_9
+    invoke-direct {p0, p1}, Lcom/cutsame/solution/source/effect/EffectList;-><init>(Ljava/util/ArrayList;)V
 
     return-void
 .end method

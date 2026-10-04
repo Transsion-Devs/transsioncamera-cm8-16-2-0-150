@@ -22,10 +22,10 @@
 .method constructor <init>(Lcom/transsion/camera/app/CameraApplication;Landroid/os/Looper;)V
     .registers 3
 
-    .line 682
+    .line 690
     iput-object p1, p0, Lcom/transsion/camera/app/CameraApplication$MainHandler;->this$0:Lcom/transsion/camera/app/CameraApplication;
 
-    .line 683
+    .line 691
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -36,10 +36,10 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 688
+    .line 696
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 689
+    .line 697
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-eqz v0, :cond_32
@@ -54,11 +54,11 @@
 
     goto :goto_23
 
-    .line 698
+    .line 706
     :cond_e
     iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 699
+    .line 707
     check-cast p0, Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -69,27 +69,27 @@
 
     if-eqz p0, :cond_23
 
-    .line 700
+    .line 708
     invoke-virtual {p0}, Landroid/app/Activity;->isFinishing()Z
 
     move-result p1
 
     if-nez p1, :cond_23
 
-    .line 701
+    .line 709
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     :cond_23
     :goto_23
     return-void
 
-    .line 694
+    .line 702
     :cond_24
     iget-object p0, p0, Lcom/transsion/camera/app/CameraApplication$MainHandler;->this$0:Lcom/transsion/camera/app/CameraApplication;
 
     iput-boolean v1, p0, Lcom/transsion/camera/app_info/BaseApplication;->mNeedResetFlashSnapLiteStatus:Z
 
-    .line 695
+    .line 703
     invoke-static {}, Lcom/transsion/camera/app/CameraApplication;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -100,7 +100,7 @@
 
     return-void
 
-    .line 691
+    .line 699
     :cond_32
     iget-object p0, p0, Lcom/transsion/camera/app/CameraApplication$MainHandler;->this$0:Lcom/transsion/camera/app/CameraApplication;
 

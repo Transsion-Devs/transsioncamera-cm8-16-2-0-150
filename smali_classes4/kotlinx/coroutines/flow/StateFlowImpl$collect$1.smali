@@ -17,9 +17,9 @@
     c = "kotlinx.coroutines.flow.StateFlowImpl"
     f = "StateFlow.kt"
     l = {
-        0x180,
-        0x18c,
-        0x191
+        0x17c,
+        0x188,
+        0x18d
     }
     m = "collect"
 .end annotation

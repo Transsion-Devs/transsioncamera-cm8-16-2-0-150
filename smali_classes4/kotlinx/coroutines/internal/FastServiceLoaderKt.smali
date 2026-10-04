@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 17
+    .line 13
     :try_start_0
     sget-object v0, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 

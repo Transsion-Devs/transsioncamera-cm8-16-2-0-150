@@ -165,33 +165,11 @@
     return p0
 .end method
 
-.method public bridge synthetic size()I
-    .registers 1
-
-    .line 62
-    invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap;->size()I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public bridge synthetic toString()Ljava/lang/String;
     .registers 1
 
     .line 62
     invoke-super {p0}, Lcom/google/common/collect/AbstractMultimap;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public bridge synthetic values()Ljava/util/Collection;
-    .registers 1
-
-    .line 62
-    invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap;->values()Ljava/util/Collection;
 
     move-result-object p0
 

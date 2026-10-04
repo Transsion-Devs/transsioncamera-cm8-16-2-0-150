@@ -27,12 +27,12 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;Lcom/transsion/camera/app/ui/SettingFragment;)V
     .registers 3
 
-    .line 358
+    .line 348
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 359
+    .line 349
     iput-object p2, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->oldSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     return-void
@@ -52,7 +52,7 @@
 .method public onFragmentDestroy()V
     .registers 5
 
-    .line 375
+    .line 365
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -61,7 +61,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 376
+    .line 366
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -72,13 +72,13 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 379
+    .line 369
     :cond_13
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->oldSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     if-eqz v0, :cond_7a
 
-    .line 380
+    .line 370
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -101,29 +101,29 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 381
+    .line 371
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->oldSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/SettingFragment;->setSettingFragmentManager(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)V
 
-    .line 382
+    .line 372
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->oldSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/AbstractSettingFragment;->setStateListener(Lcom/transsion/camera/app/common/IAppUIListener$IFragmentStateListener;)V
 
-    .line 383
+    .line 373
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->oldSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/SettingFragment;->setOrientationAnimationListener(Lcom/transsion/camera/app/ui/AbstractSettingFragment$OrientationAnimationListener;)V
 
-    .line 384
+    .line 374
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->oldSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/SettingFragment;->unInit()V
 
-    .line 385
+    .line 375
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->-$$Nest$fgetmSettingFragment(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)Lcom/transsion/camera/app/ui/SettingFragment;
@@ -134,12 +134,12 @@
 
     if-ne v0, v2, :cond_78
 
-    .line 386
+    .line 376
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->unInitSettingUIs()V
 
-    .line 387
+    .line 377
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -166,12 +166,12 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 388
+    .line 378
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->-$$Nest$fputmSettingFragment(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;Lcom/transsion/camera/app/ui/SettingFragment;)V
 
-    .line 390
+    .line 380
     :cond_78
     iput-object v1, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->oldSettingFragment:Lcom/transsion/camera/app/ui/SettingFragment;
 
@@ -182,7 +182,7 @@
 .method public onFragmentExitView()V
     .registers 2
 
-    .line 396
+    .line 386
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -191,7 +191,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 397
+    .line 387
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -209,7 +209,7 @@
 .method public onFragmentResume()V
     .registers 2
 
-    .line 364
+    .line 354
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -218,7 +218,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 365
+    .line 355
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager$OnFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/SettingFragmentManager;)Lcom/transsion/camera/app/common/IAppUI;

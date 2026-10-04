@@ -24,7 +24,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/view/SwitchAnimView;Landroid/graphics/Rect;)V
     .registers 3
 
-    .line 346
+    .line 352
     iput-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->val$previewRect:Landroid/graphics/Rect;
@@ -39,14 +39,14 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 355
+    .line 361
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->val$previewRect:Landroid/graphics/Rect;
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$mupdateTargetRect(Lcom/transsion/camera/app/ui/view/SwitchAnimView;Landroid/graphics/Rect;)V
 
-    .line 356
+    .line 362
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$fgetmRectAnimProgressListener(Lcom/transsion/camera/app/ui/view/SwitchAnimView;)Lcom/transsion/camera/app/ui/IAnimProgressListener;
@@ -55,7 +55,7 @@
 
     if-eqz p1, :cond_20
 
-    .line 357
+    .line 363
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$fgetmRectAnimProgressListener(Lcom/transsion/camera/app/ui/view/SwitchAnimView;)Lcom/transsion/camera/app/ui/IAnimProgressListener;
@@ -66,7 +66,7 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/ui/IAnimProgressListener;->onAnimProgress(F)V
 
-    .line 358
+    .line 364
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     const/4 p1, 0x0
@@ -80,21 +80,21 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 364
+    .line 370
     const-string p1, "animator:preview_rect_update"
 
     const/4 v0, 0x2
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/AnimationTrace;->endASync(Ljava/lang/String;I)V
 
-    .line 365
+    .line 371
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->val$previewRect:Landroid/graphics/Rect;
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$mupdateTargetRect(Lcom/transsion/camera/app/ui/view/SwitchAnimView;Landroid/graphics/Rect;)V
 
-    .line 366
+    .line 372
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$fgetmRectAnimProgressListener(Lcom/transsion/camera/app/ui/view/SwitchAnimView;)Lcom/transsion/camera/app/ui/IAnimProgressListener;
@@ -103,7 +103,7 @@
 
     if-eqz p1, :cond_26
 
-    .line 367
+    .line 373
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$fgetmRectAnimProgressListener(Lcom/transsion/camera/app/ui/view/SwitchAnimView;)Lcom/transsion/camera/app/ui/IAnimProgressListener;
@@ -114,7 +114,7 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/ui/IAnimProgressListener;->onAnimProgress(F)V
 
-    .line 368
+    .line 374
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$3;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     const/4 p1, 0x0
@@ -128,10 +128,10 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 349
+    .line 355
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    .line 350
+    .line 356
     const-string p0, "animator:preview_rect_update"
 
     const/4 p1, 0x2

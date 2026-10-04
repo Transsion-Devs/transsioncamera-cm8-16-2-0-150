@@ -18,7 +18,7 @@
         }
     .end annotation
 
-    .line 17
+    .line 13
     new-instance v0, Lkotlinx/coroutines/stream/StreamFlow;
 
     invoke-direct {v0, p0}, Lkotlinx/coroutines/stream/StreamFlow;-><init>(Ljava/util/stream/Stream;)V

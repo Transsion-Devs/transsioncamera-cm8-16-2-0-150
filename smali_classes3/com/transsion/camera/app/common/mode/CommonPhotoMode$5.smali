@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)V
     .registers 2
 
-    .line 3548
+    .line 3564
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$5;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreviewCover()V
     .registers 2
 
-    .line 3551
+    .line 3567
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$5;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->currentModeNeedNewCaptureAnimation()Z
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 3552
+    .line 3568
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$5;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;

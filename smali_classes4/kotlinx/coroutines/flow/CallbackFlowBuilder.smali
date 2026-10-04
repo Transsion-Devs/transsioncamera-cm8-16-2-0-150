@@ -39,10 +39,10 @@
         }
     .end annotation
 
-    .line 331
+    .line 327
     invoke-direct {p0, p1, p2, p3, p4}, Lkotlinx/coroutines/flow/ChannelFlowBuilder;-><init>(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)V
 
-    .line 327
+    .line 323
     iput-object p1, p0, Lkotlinx/coroutines/flow/CallbackFlowBuilder;->block:Lkotlin/jvm/functions/Function2;
 
     return-void
@@ -55,7 +55,7 @@
 
     if-eqz p6, :cond_6
 
-    .line 328
+    .line 324
     sget-object p2, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     :cond_6
@@ -70,10 +70,10 @@
 
     if-eqz p5, :cond_11
 
-    .line 330
+    .line 326
     sget-object p4, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
 
-    .line 326
+    .line 322
     :cond_11
     invoke-direct {p0, p1, p2, p3, p4}, Lkotlinx/coroutines/flow/CallbackFlowBuilder;-><init>(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)V
 
@@ -131,7 +131,7 @@
 
     move-result-object v1
 
-    .line 333
+    .line 329
     iget v2, v0, Lkotlinx/coroutines/flow/CallbackFlowBuilder$collectTo$1;->label:I
 
     const/4 v3, 0x1
@@ -162,7 +162,7 @@
     :cond_36
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 334
+    .line 330
     iput-object p1, v0, Lkotlinx/coroutines/flow/CallbackFlowBuilder$collectTo$1;->L$0:Ljava/lang/Object;
 
     iput v3, v0, Lkotlinx/coroutines/flow/CallbackFlowBuilder$collectTo$1;->label:I
@@ -175,7 +175,7 @@
 
     return-object v1
 
-    .line 340
+    .line 336
     :cond_44
     :goto_44
     invoke-interface {p1}, Lkotlinx/coroutines/channels/SendChannel;->isClosedForSend()Z
@@ -184,19 +184,19 @@
 
     if-eqz p0, :cond_4d
 
-    .line 349
+    .line 345
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 341
+    .line 337
     :cond_4d
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 346
+    .line 342
     const-string p1, "\'awaitClose { yourCallbackOrListener.cancel() }\' should be used in the end of callbackFlow block.\nOtherwise, a callback/listener may leak in case of external cancellation.\nSee callbackFlow API documentation for the details."
 
-    .line 341
+    .line 337
     invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
@@ -216,7 +216,7 @@
         }
     .end annotation
 
-    .line 352
+    .line 348
     new-instance v0, Lkotlinx/coroutines/flow/CallbackFlowBuilder;
 
     iget-object p0, p0, Lkotlinx/coroutines/flow/CallbackFlowBuilder;->block:Lkotlin/jvm/functions/Function2;

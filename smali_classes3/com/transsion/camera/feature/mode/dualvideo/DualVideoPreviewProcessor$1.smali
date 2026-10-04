@@ -36,7 +36,7 @@
         }
     .end annotation
 
-    .line 1050
+    .line 1053
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$1;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$1;->val$bitmapSource:[I
@@ -55,12 +55,12 @@
 .method public run()V
     .registers 7
 
-    .line 1053
+    .line 1056
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 1054
+    .line 1057
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$1;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$1;->val$bitmapSource:[I
@@ -71,12 +71,12 @@
 
     invoke-static {v2, v3, v4, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$mrgbToJpeg(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;[III)V
 
-    .line 1055
+    .line 1058
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 1056
+    .line 1059
     invoke-static {}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0

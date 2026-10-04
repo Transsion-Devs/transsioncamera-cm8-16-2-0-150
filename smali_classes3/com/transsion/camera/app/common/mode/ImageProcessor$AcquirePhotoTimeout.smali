@@ -29,7 +29,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 1054
+    .line 1049
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "AcquirePhotoTimeout"
@@ -44,10 +44,10 @@
 .method public constructor <init>()V
     .registers 4
 
-    .line 1063
+    .line 1058
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1064
+    .line 1059
     invoke-static {}, Lcom/transsion/camera/utils/dfx/mgr/ExManager;->get()Lcom/transsion/camera/utils/dfx/inter/IExDetection;
 
     move-result-object v0
@@ -58,7 +58,7 @@
 
     if-eqz v0, :cond_21
 
-    .line 1065
+    .line 1060
     invoke-static {}, Lcom/transsion/camera/utils/dfx/mgr/ExManager;->get()Lcom/transsion/camera/utils/dfx/inter/IExDetection;
 
     move-result-object v0
@@ -86,10 +86,10 @@
 .method public constructor <init>(J)V
     .registers 3
 
-    .line 1059
+    .line 1054
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/ImageProcessor$AcquirePhotoTimeout;-><init>()V
 
-    .line 1060
+    .line 1055
     iput-wide p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor$AcquirePhotoTimeout;->mPhotoTimestamp:J
 
     return-void
@@ -100,7 +100,7 @@
 .method public getPhotoTimestamp()J
     .registers 3
 
-    .line 1083
+    .line 1078
     iget-wide v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor$AcquirePhotoTimeout;->mPhotoTimestamp:J
 
     return-wide v0
@@ -109,7 +109,7 @@
 .method public removeTimeoutCallbacks()V
     .registers 2
 
-    .line 1077
+    .line 1072
     invoke-static {}, Lcom/transsion/camera/utils/dfx/mgr/ExManager;->get()Lcom/transsion/camera/utils/dfx/inter/IExDetection;
 
     move-result-object v0
@@ -120,7 +120,7 @@
 
     if-eqz v0, :cond_15
 
-    .line 1078
+    .line 1073
     invoke-static {}, Lcom/transsion/camera/utils/dfx/mgr/ExManager;->get()Lcom/transsion/camera/utils/dfx/inter/IExDetection;
 
     move-result-object v0
@@ -138,7 +138,7 @@
 .method public run()V
     .registers 5
 
-    .line 1071
+    .line 1066
     sget-object v0, Lcom/transsion/camera/app/common/mode/ImageProcessor$AcquirePhotoTimeout;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -159,7 +159,7 @@
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1072
+    .line 1067
     invoke-static {}, Lcom/transsion/camera/utils/dfx/mgr/ExManager;->get()Lcom/transsion/camera/utils/dfx/inter/IExDetection;
 
     move-result-object p0
@@ -168,7 +168,7 @@
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/utils/dfx/inter/ICamError;->onCamError(I)V
 
-    .line 1073
+    .line 1068
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0

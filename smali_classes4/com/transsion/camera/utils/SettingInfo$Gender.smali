@@ -26,7 +26,7 @@
 .method private static synthetic $values()[Lcom/transsion/camera/utils/SettingInfo$Gender;
     .registers 2
 
-    .line 2629
+    .line 2643
     sget-object v0, Lcom/transsion/camera/utils/SettingInfo$Gender;->MALE:Lcom/transsion/camera/utils/SettingInfo$Gender;
 
     sget-object v1, Lcom/transsion/camera/utils/SettingInfo$Gender;->FEMALE:Lcom/transsion/camera/utils/SettingInfo$Gender;
@@ -41,7 +41,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 2630
+    .line 2644
     new-instance v0, Lcom/transsion/camera/utils/SettingInfo$Gender;
 
     const-string v1, "MALE"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/transsion/camera/utils/SettingInfo$Gender;->FEMALE:Lcom/transsion/camera/utils/SettingInfo$Gender;
 
-    .line 2629
+    .line 2643
     invoke-static {}, Lcom/transsion/camera/utils/SettingInfo$Gender;->$values()[Lcom/transsion/camera/utils/SettingInfo$Gender;
 
     move-result-object v0
@@ -75,7 +75,7 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
 
-    .line 2629
+    .line 2643
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -84,7 +84,7 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/transsion/camera/utils/SettingInfo$Gender;
     .registers 2
 
-    .line 2629
+    .line 2643
     const-class v0, Lcom/transsion/camera/utils/SettingInfo$Gender;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -99,7 +99,7 @@
 .method public static values()[Lcom/transsion/camera/utils/SettingInfo$Gender;
     .registers 1
 
-    .line 2629
+    .line 2643
     sget-object v0, Lcom/transsion/camera/utils/SettingInfo$Gender;->$VALUES:[Lcom/transsion/camera/utils/SettingInfo$Gender;
 
     invoke-virtual {v0}, [Lcom/transsion/camera/utils/SettingInfo$Gender;->clone()Ljava/lang/Object;

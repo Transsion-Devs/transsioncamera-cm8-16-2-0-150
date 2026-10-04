@@ -16,7 +16,7 @@
 # static fields
 .field public static dialog_ai_art_guide:I = 0x7f0e0085
 
-.field public static item_ai_art_guide:I = 0x7f0e0100
+.field public static item_ai_art_guide:I = 0x7f0e00fc
 
 
 # direct methods

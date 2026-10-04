@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;)V
     .registers 2
 
-    .line 220
+    .line 227
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite$1;->this$0:Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreviewStarted()V
     .registers 2
 
-    .line 231
+    .line 238
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite$1;->this$0:Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
@@ -48,7 +48,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 232
+    .line 239
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite$1;->this$0:Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
@@ -71,16 +71,16 @@
 .method public onPreviewStopped()V
     .registers 3
 
-    .line 223
+    .line 230
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite$1;->this$0:Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;->-$$Nest$fgetmCameraProxy(Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;)Lcom/transsion/camera/adapter/CameraProxy;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1b
 
-    .line 224
+    .line 231
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite$1;->this$0:Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;->-$$Nest$fgetmCameraProxy(Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;)Lcom/transsion/camera/adapter/CameraProxy;
@@ -89,19 +89,17 @@
 
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite$1;->this$0:Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;
 
-    invoke-static {v1}, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;->-$$Nest$fgetmResultCallBack(Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;)Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
-
-    move-result-object v1
+    iget-object v1, v1, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;->mResultCallBack:Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/adapter/CameraProxy;->unRegisterFrameResultCallback(Lcom/transsion/camera/adapter/CameraProxy$FrameResultCallback;)V
 
-    .line 225
+    .line 232
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite$1;->this$0:Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;
 
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;->-$$Nest$fputmCameraProxy(Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;Lcom/transsion/camera/adapter/CameraProxy;)V
 
-    :cond_1d
+    :cond_1b
     return-void
 .end method

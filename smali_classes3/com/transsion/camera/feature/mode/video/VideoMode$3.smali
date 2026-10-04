@@ -34,7 +34,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/video/VideoMode;)V
     .registers 2
 
-    .line 915
+    .line 914
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 
     goto :goto_b
 
-    .line 923
+    .line 922
     :cond_3
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
@@ -63,15 +63,15 @@
     :goto_b
     return-void
 
-    .line 927
+    .line 926
     :cond_c
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isVideoHDRDebugSupport()Z
 
     move-result p1
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1c
 
-    .line 928
+    .line 927
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -79,26 +79,28 @@
 
     move-result-object p1
 
-    .line 929
-    invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->videoHDRSnapShot()V
+    const/4 v0, 0x0
 
-    .line 931
-    :cond_1b
+    .line 928
+    invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->videoSnapShot(Lcom/transsion/camera/adapter/CameraProxy$CameraCaptureCallback;)V
+
+    .line 930
+    :cond_1c
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     iget-object v0, p1, Lcom/transsion/camera/feature/mode/video/VideoMode;->mVideoPreviewCallback:Lcom/transsion/camera/app/common/mode/IVideoModeCallback;
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_29
 
-    .line 932
+    .line 931
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/CameraMode;->getOrientation()I
 
     move-result p1
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/mode/IVideoModeCallback;->snapshot(I)V
 
-    .line 934
-    :cond_28
+    .line 933
+    :cond_29
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mHandle:Landroid/os/Handler;
@@ -114,7 +116,7 @@
 
     invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 935
+    .line 934
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     # setter for: Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mInTakingPicture:Z
@@ -128,14 +130,14 @@
 .method public onClick(Landroid/view/View;)V
     .registers 3
 
-    .line 917
+    .line 916
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     iget-boolean p1, p1, Lcom/transsion/camera/feature/mode/video/VideoMode;->mIsGLRecording:Z
 
     if-eqz p1, :cond_15
 
-    .line 918
+    .line 917
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mTextureRecorder:Lcom/transsion/camera/app/common/recorder/RecorderManager;
@@ -151,14 +153,14 @@
 
     goto :goto_1a
 
-    .line 938
+    .line 937
     :cond_15
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/VideoMode$3;->this$0:Lcom/transsion/camera/feature/mode/video/VideoMode;
 
     # invokes: Lcom/transsion/camera/app/common/mode/CommonVideoMode;->videoSnapShot()V
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/video/VideoMode;->access$200(Lcom/transsion/camera/feature/mode/video/VideoMode;)V
 
-    .line 940
+    .line 939
     :goto_1a
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 

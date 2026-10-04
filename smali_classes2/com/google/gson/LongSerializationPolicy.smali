@@ -26,7 +26,7 @@
 
     sput-object v0, Lcom/google/gson/LongSerializationPolicy;->DEFAULT:Lcom/google/gson/LongSerializationPolicy;
 
-    .line 45
+    .line 50
     new-instance v1, Lcom/google/gson/LongSerializationPolicy$2;
 
     const-string v3, "STRING"
@@ -39,7 +39,7 @@
 
     const/4 v3, 0x2
 
-    .line 27
+    .line 26
     new-array v3, v3, [Lcom/google/gson/LongSerializationPolicy;
 
     aput-object v0, v3, v2
@@ -54,7 +54,7 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
 
-    .line 27
+    .line 26
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -63,7 +63,7 @@
 .method synthetic constructor <init>(Ljava/lang/String;ILcom/google/gson/LongSerializationPolicy$1;)V
     .registers 4
 
-    .line 27
+    .line 26
     invoke-direct {p0, p1, p2}, Lcom/google/gson/LongSerializationPolicy;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -72,7 +72,7 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/google/gson/LongSerializationPolicy;
     .registers 2
 
-    .line 27
+    .line 26
     const-class v0, Lcom/google/gson/LongSerializationPolicy;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -87,7 +87,7 @@
 .method public static values()[Lcom/google/gson/LongSerializationPolicy;
     .registers 1
 
-    .line 27
+    .line 26
     sget-object v0, Lcom/google/gson/LongSerializationPolicy;->$VALUES:[Lcom/google/gson/LongSerializationPolicy;
 
     invoke-virtual {v0}, [Lcom/google/gson/LongSerializationPolicy;->clone()Ljava/lang/Object;

@@ -40,7 +40,7 @@
 .method public constructor <init>(Landroid/graphics/Rect;Landroid/graphics/Rect;IILandroid/graphics/Point;Landroid/graphics/Point;Landroid/graphics/Point;)V
     .registers 9
 
-    .line 3227
+    .line 3246
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
@@ -59,7 +59,7 @@
 
     goto :goto_18
 
-    .line 3231
+    .line 3250
     :cond_10
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -69,27 +69,27 @@
 
     throw p0
 
-    .line 3234
+    .line 3253
     :cond_18
     :goto_18
     iput-object p1, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mBounds:Landroid/graphics/Rect;
 
-    .line 3235
+    .line 3254
     iput-object p2, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mOriginalBounds:Landroid/graphics/Rect;
 
-    .line 3236
+    .line 3255
     iput p3, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mScore:I
 
-    .line 3237
+    .line 3256
     iput-object p5, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mLeftEye:Landroid/graphics/Point;
 
-    .line 3238
+    .line 3257
     iput-object p6, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mRightEye:Landroid/graphics/Point;
 
-    .line 3239
+    .line 3258
     iput-object p7, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mMouth:Landroid/graphics/Point;
 
-    .line 3240
+    .line 3259
     new-instance p1, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;
 
     invoke-direct {p1, p4}, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;-><init>(I)V
@@ -98,7 +98,7 @@
 
     return-void
 
-    .line 3229
+    .line 3248
     :cond_2c
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -114,7 +114,7 @@
 .method public getAge()I
     .registers 1
 
-    .line 3301
+    .line 3320
     iget-object p0, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mFaceAttarInfo:Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;
 
     invoke-static {p0}, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;->-$$Nest$fgetmAge(Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;)I
@@ -127,7 +127,7 @@
 .method public getBounds()Landroid/graphics/Rect;
     .registers 1
 
-    .line 3269
+    .line 3288
     iget-object p0, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mBounds:Landroid/graphics/Rect;
 
     return-object p0
@@ -136,7 +136,7 @@
 .method public getGender()I
     .registers 1
 
-    .line 3289
+    .line 3308
     iget-object p0, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mFaceAttarInfo:Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;
 
     iget p0, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;->mGender:I
@@ -147,7 +147,7 @@
 .method public getId()I
     .registers 1
 
-    .line 3285
+    .line 3304
     iget-object p0, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mFaceAttarInfo:Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;
 
     iget p0, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;->mId:I
@@ -158,7 +158,7 @@
 .method public getOriginalBounds()Landroid/graphics/Rect;
     .registers 1
 
-    .line 3273
+    .line 3292
     iget-object p0, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mOriginalBounds:Landroid/graphics/Rect;
 
     return-object p0
@@ -167,7 +167,7 @@
 .method public getRace()I
     .registers 1
 
-    .line 3297
+    .line 3316
     iget-object p0, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mFaceAttarInfo:Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;
 
     iget p0, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;->mRace:I
@@ -178,7 +178,7 @@
 .method public getSkinColor()I
     .registers 1
 
-    .line 3293
+    .line 3312
     iget-object p0, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mFaceAttarInfo:Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;
 
     iget p0, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;->mSkinColor:I
@@ -189,7 +189,7 @@
 .method public setBounds(Landroid/graphics/Rect;)V
     .registers 2
 
-    .line 3277
+    .line 3296
     iput-object p1, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mBounds:Landroid/graphics/Rect;
 
     return-void
@@ -198,14 +198,14 @@
 .method public toString()Ljava/lang/String;
     .registers 14
 
-    .line 3331
+    .line 3350
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     iget-object v1, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mBounds:Landroid/graphics/Rect;
 
     iget v2, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mScore:I
 
-    .line 3335
+    .line 3354
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -242,7 +242,7 @@
 
     move-result v6
 
-    .line 3336
+    .line 3355
     invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v6
@@ -257,7 +257,7 @@
 
     move-result-object v7
 
-    .line 3337
+    .line 3356
     invoke-virtual {p0}, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->getRace()I
 
     move-result v8
@@ -284,7 +284,7 @@
 
     move-result-object p0
 
-    .line 3331
+    .line 3350
     const-string v1, "{bounds: %s, score: %s, Face Attar info id: %d, gender: %d, age: %d, dx: %f,  dy: %f, race: %d, skinColor: %d, leftEyePosition: %s, rightEyePosition: %s, mouthPosition: %s }"
 
     invoke-static {v0, v1, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -297,7 +297,7 @@
 .method public updateAttarFaceAttarInfo(Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;)V
     .registers 2
 
-    .line 3325
+    .line 3344
     iput-object p1, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace;->mFaceAttarInfo:Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;
 
     return-void

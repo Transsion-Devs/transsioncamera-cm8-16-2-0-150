@@ -140,7 +140,7 @@
 .method public static synthetic $r8$lambda$c6Xi5hFFl9d--u3CPkjev8l4rdc(Landroid/widget/FrameLayout$LayoutParams;Landroid/view/View;Landroid/animation/ValueAnimator;)V
     .registers 3
 
-    .line 990
+    .line 991
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -153,7 +153,7 @@
 
     iput p2, p0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 991
+    .line 992
     invoke-virtual {p1, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
@@ -326,28 +326,28 @@
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDisappearAnimatorEndListener:Landroid/animation/AnimatorListenerAdapter;
 
-    .line 364
+    .line 365
     new-instance v1, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$4;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$4;-><init>(Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;)V
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 395
+    .line 396
     new-instance v1, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$5;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$5;-><init>(Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;)V
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 803
+    .line 804
     new-instance v1, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;)V
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSwitchDataCallbackImpl:Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
-    .line 870
+    .line 871
     new-instance v1, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$$ExternalSyntheticLambda3;-><init>(Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;)V
@@ -481,23 +481,23 @@
 .method private addAnimatorListener0()V
     .registers 3
 
-    .line 355
+    .line 356
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_9
 
-    .line 356
+    .line 357
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 358
+    .line 359
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_12
 
-    .line 359
+    .line 360
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, p0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
@@ -509,12 +509,12 @@
 .method private alphaAnim()V
     .registers 8
 
-    .line 464
+    .line 465
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-nez v0, :cond_c
 
-    .line 465
+    .line 466
     sget-object p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[alphaAnim] mLevelContainer is null!"
@@ -523,7 +523,7 @@
 
     return-void
 
-    .line 468
+    .line 469
     :cond_c
     invoke-virtual {v0}, Landroid/view/View;->getAlpha()F
 
@@ -546,7 +546,7 @@
     :cond_19
     move v2, v3
 
-    .line 469
+    .line 470
     :goto_1a
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAnimShow:Z
 
@@ -554,7 +554,7 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 471
+    .line 472
     :cond_20
     sget-object v2, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -588,7 +588,7 @@
 
     invoke-static {v2, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 472
+    .line 473
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     const/4 v5, 0x2
@@ -601,12 +601,12 @@
 
     invoke-virtual {v2, v5}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 473
+    .line 474
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAnimShow:Z
 
     if-eqz v0, :cond_60
 
-    .line 474
+    .line 475
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaPathInterpolator:Landroid/view/animation/PathInterpolator;
@@ -615,7 +615,7 @@
 
     goto :goto_67
 
-    .line 476
+    .line 477
     :cond_60
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
@@ -623,7 +623,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 478
+    .line 479
     :goto_67
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
@@ -682,7 +682,7 @@
 .method private doOnVideoPortraitSwitchChanged(Ljava/lang/String;)V
     .registers 5
 
-    .line 862
+    .line 863
     sget-object v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -701,7 +701,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 863
+    .line 864
     const-string v0, "on"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -712,7 +712,7 @@
 
     const/4 p1, 0x1
 
-    .line 864
+    .line 865
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsVideoPortraitOn:Z
 
     return-void
@@ -720,7 +720,7 @@
     :cond_22
     const/4 p1, 0x0
 
-    .line 866
+    .line 867
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsVideoPortraitOn:Z
 
     return-void
@@ -777,7 +777,7 @@
 .method private getPortraitTranslateDistance()F
     .registers 3
 
-    .line 439
+    .line 440
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -794,7 +794,7 @@
 
     goto :goto_28
 
-    .line 442
+    .line 443
     :cond_f
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->isExpandedOrLRHoverState()Z
 
@@ -802,7 +802,7 @@
 
     if-nez v0, :cond_19
 
-    .line 443
+    .line 444
     iget p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateDistance:F
 
     :goto_17
@@ -810,7 +810,7 @@
 
     return p0
 
-    .line 446
+    .line 447
     :cond_19
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
@@ -822,13 +822,13 @@
 
     goto :goto_25
 
-    .line 449
+    .line 450
     :cond_22
     iget p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mExpandTranslateDistance:F
 
     return p0
 
-    .line 447
+    .line 448
     :cond_25
     :goto_25
     iget p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mExpandTranslateDistance:F
@@ -847,10 +847,10 @@
 
     const/4 v0, 0x0
 
-    .line 757
+    .line 758
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsLevelBarShowing:Z
 
-    .line 758
+    .line 759
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-eqz v0, :cond_20
@@ -861,14 +861,14 @@
 
     if-nez v0, :cond_20
 
-    .line 759
+    .line 760
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mUIHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$$ExternalSyntheticLambda4;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$$ExternalSyntheticLambda4;-><init>(Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;)V
 
-    .line 767
+    .line 768
     iget-boolean p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAnimShow:Z
 
     if-eqz p0, :cond_1b
@@ -880,7 +880,7 @@
     :cond_1b
     const-wide/16 v2, 0x0
 
-    .line 759
+    .line 760
     :goto_1d
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
@@ -891,12 +891,12 @@
 .method private hideAllView()V
     .registers 4
 
-    .line 817
+    .line 818
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsVideoPortraitOn:Z
 
     if-eqz v0, :cond_18
 
-    .line 818
+    .line 819
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_conflict_ui_state"
@@ -909,12 +909,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 819
+    .line 820
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsLevelBarShowing:Z
 
     if-eqz v0, :cond_18
 
-    .line 820
+    .line 821
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hideLevelBar()V
 
     :cond_18
@@ -924,31 +924,31 @@
 .method private hideAllViewSuddenly()V
     .registers 4
 
-    .line 826
+    .line 827
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelBarRootView:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitBarView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 827
+    .line 828
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsVideoPortraitOn:Z
 
     if-eqz v0, :cond_22
 
-    .line 829
+    .line 830
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsLevelBarShowing:Z
 
     if-eqz v0, :cond_22
 
-    .line 830
+    .line 831
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelBarRootView:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitBarView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 831
+    .line 832
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_conflict_ui_state"
@@ -964,7 +964,7 @@
     :cond_22
     const/4 v0, 0x0
 
-    .line 834
+    .line 835
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsLevelBarShowing:Z
 
     return-void
@@ -973,26 +973,26 @@
 .method private hideEntryRootView()V
     .registers 3
 
-    .line 772
+    .line 773
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mEntryView:Landroid/view/View;
 
     if-eqz v0, :cond_10
 
-    .line 773
+    .line 774
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
     if-nez v0, :cond_10
 
-    .line 775
+    .line 776
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mEntryView:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 778
+    .line 779
     :cond_10
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
@@ -1000,7 +1000,7 @@
 
     const/4 v0, 0x0
 
-    .line 779
+    .line 780
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->updateFeatureUI(Z)V
 
     :cond_18
@@ -1012,7 +1012,7 @@
 
     const/4 v0, 0x0
 
-    .line 813
+    .line 814
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hidePortraitLevel(Z)Z
 
     return-void
@@ -1021,7 +1021,7 @@
 .method private hidePortraitLevel(Z)Z
     .registers 6
 
-    .line 645
+    .line 646
     sget-object v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[hidePortraitLevel]"
@@ -1030,22 +1030,22 @@
 
     const/4 v1, 0x0
 
-    .line 646
+    .line 647
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsLevelBarShowing:Z
 
-    .line 647
+    .line 648
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-nez v2, :cond_14
 
-    .line 648
+    .line 649
     const-string p0, "hidePortraitLevel mLevelContainer is null!"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return v1
 
-    .line 652
+    .line 653
     :cond_14
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mEntryView:Landroid/view/View;
 
@@ -1057,7 +1057,7 @@
 
     if-eqz v2, :cond_39
 
-    .line 653
+    .line 654
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1082,7 +1082,7 @@
 
     return v1
 
-    .line 657
+    .line 658
     :cond_39
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -1094,7 +1094,7 @@
 
     if-eqz v2, :cond_61
 
-    .line 658
+    .line 659
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1117,12 +1117,12 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 659
+    .line 660
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->resetBottomViews()V
 
     return v1
 
-    .line 663
+    .line 664
     :cond_61
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
@@ -1148,40 +1148,40 @@
 
     if-eqz v2, :cond_b1
 
-    .line 664
+    .line 665
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->cancelAnimation()V
 
-    .line 665
+    .line 666
     iput v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mCurrentUIState:I
 
-    .line 666
+    .line 667
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->alphaAnim()V
 
-    .line 667
+    .line 668
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->translateAnim()V
 
     if-nez p1, :cond_8a
 
-    .line 669
+    .line 670
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->updateFeatureUI(Z)V
 
-    .line 671
+    .line 672
     :cond_8a
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->shutterControlAnim()V
 
-    .line 672
+    .line 673
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 673
+    .line 674
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hidePopSettingTitle()V
 
-    .line 674
+    .line 675
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_conflict_ui_state"
@@ -1194,7 +1194,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 675
+    .line 676
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mCameraOperate:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz p1, :cond_aa
@@ -1213,7 +1213,7 @@
 
     return p0
 
-    .line 679
+    .line 680
     :cond_b1
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
@@ -1225,12 +1225,12 @@
 
     if-eqz p1, :cond_c3
 
-    .line 680
+    .line 681
     const-string p1, "hidePortraitLevel mAlphaAnimator.isRunning(), need cancel and reset"
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 681
+    .line 682
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->resetBottomViews()V
 
     :cond_c3
@@ -1385,7 +1385,7 @@
 .method private isExpandedOrLRHoverState()Z
     .registers 3
 
-    .line 458
+    .line 459
     iget p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/4 v0, 0x1
@@ -1415,7 +1415,7 @@
 .method private isExpandedState()Z
     .registers 2
 
-    .line 454
+    .line 455
     iget p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/4 v0, 0x1
@@ -1433,26 +1433,26 @@
 .method private synthetic lambda$hide$0()V
     .registers 4
 
-    .line 760
+    .line 761
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->cancelAnimation()V
 
     const/4 v0, 0x0
 
-    .line 761
+    .line 762
     iput v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mCurrentUIState:I
 
-    .line 762
+    .line 763
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->alphaAnim()V
 
-    .line 763
+    .line 764
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->translateAnim()V
 
-    .line 764
+    .line 765
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->updateFeatureUI(Z)V
 
-    .line 765
+    .line 766
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_conflict_ui_state"
@@ -1465,7 +1465,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 766
+    .line 767
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mCameraOperate:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 v0, 0x82
@@ -1482,14 +1482,14 @@
 
     if-ne p1, p2, :cond_10
 
-    .line 805
+    .line 806
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mUIHandler:Landroid/os/Handler;
 
     const/16 p2, 0x1f5
 
     invoke-virtual {p1, p2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 806
+    .line 807
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mUIHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, p2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
@@ -1501,7 +1501,7 @@
 .method private synthetic lambda$new$2(Z)V
     .registers 2
 
-    .line 870
+    .line 871
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->updateRingScreenLight(Z)V
 
     return-void
@@ -1510,14 +1510,14 @@
 .method private synthetic lambda$updateSettingUILayout$4()V
     .registers 3
 
-    .line 1042
+    .line 1043
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
     iget v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->setOrientation(I)V
 
-    .line 1043
+    .line 1044
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
     iget p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
@@ -1530,20 +1530,20 @@
 .method private reOpenToSavedValue()V
     .registers 5
 
-    .line 342
+    .line 343
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v0, :cond_2d
 
-    .line 343
+    .line 344
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
     move-result-object v0
 
-    .line 344
+    .line 345
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    .line 345
+    .line 346
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISetting;->getDefaultValue()Ljava/lang/String;
 
     move-result-object v1
@@ -1554,14 +1554,14 @@
 
     move-result-object v2
 
-    .line 344
+    .line 345
     const-string v3, "key_video_portrait_level"
 
     invoke-virtual {v0, v3, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 346
+    .line 347
     const-string v1, "0"
 
     invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1570,14 +1570,14 @@
 
     if-eqz v1, :cond_28
 
-    .line 347
+    .line 348
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getDefaultValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 349
+    .line 350
     :cond_28
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
@@ -1590,14 +1590,14 @@
 .method private removeAnimatorListener()V
     .registers 3
 
-    .line 540
+    .line 541
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->removeUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 541
+    .line 542
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
@@ -1610,39 +1610,39 @@
 .method private resetBottomViews()V
     .registers 4
 
-    .line 838
+    .line 839
     sget-object v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[resetBottomViews]"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 839
+    .line 840
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->cancelAnimation()V
 
     const/4 v0, 0x0
 
-    .line 840
+    .line 841
     iput v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mCurrentUIState:I
 
-    .line 842
+    .line 843
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-eqz v1, :cond_23
 
     const/4 v2, 0x0
 
-    .line 843
+    .line 844
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 844
+    .line 845
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     const/4 v2, 0x4
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 845
+    .line 846
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     iget v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateDistance:F
@@ -1651,34 +1651,34 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 848
+    .line 849
     :cond_23
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
     if-eqz v1, :cond_2a
 
-    .line 849
+    .line 850
     invoke-virtual {v1, v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->updateFeatureUI(Z)V
 
     :cond_2a
     const/4 v1, 0x7
 
-    .line 852
+    .line 853
     iget v2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     if-ne v1, v2, :cond_38
 
-    .line 853
+    .line 854
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mCameraOperate:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz v1, :cond_38
 
     const/16 v2, 0x82
 
-    .line 854
+    .line 855
     invoke-interface {v1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 858
+    .line 859
     :cond_38
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->expandModePickerUI(Z)V
 
@@ -1688,17 +1688,17 @@
 .method private showEntryRootView()V
     .registers 3
 
-    .line 784
+    .line 785
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mEntryView:Landroid/view/View;
 
     if-eqz v0, :cond_8
 
     const/4 v1, 0x0
 
-    .line 785
+    .line 786
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 787
+    .line 788
     :cond_8
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
@@ -1706,7 +1706,7 @@
 
     const/4 v0, 0x1
 
-    .line 788
+    .line 789
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->updateFeatureUI(Z)V
 
     :cond_10
@@ -1716,7 +1716,7 @@
 .method private showPortraitLevel()V
     .registers 4
 
-    .line 408
+    .line 409
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->isRunning()Z
@@ -1735,7 +1735,7 @@
 
     goto :goto_49
 
-    .line 411
+    .line 412
     :cond_11
     sget-object v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1743,23 +1743,23 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 412
+    .line 413
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->showEntryRootView()V
 
-    .line 413
+    .line 414
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->updateFeatureUI(Z)V
 
-    .line 414
+    .line 415
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->updateSettingUILayout(Z)V
 
-    .line 415
+    .line 416
     iput v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mCurrentUIState:I
 
-    .line 416
+    .line 417
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_conflict_ui_state"
@@ -1772,27 +1772,27 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 417
+    .line 418
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mCameraOperate:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 v1, 0x81
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 418
+    .line 419
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 419
+    .line 420
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->alphaAnim()V
 
-    .line 420
+    .line 421
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->translateAnim()V
 
-    .line 421
+    .line 422
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->shutterControlAnim()V
 
     :cond_49
@@ -1803,7 +1803,7 @@
 .method private shutterControlAnim()V
     .registers 4
 
-    .line 425
+    .line 426
     sget-object v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1824,7 +1824,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 427
+    .line 428
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_33
@@ -1835,7 +1835,7 @@
 
     if-nez v0, :cond_33
 
-    .line 428
+    .line 429
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAnimShow:Z
 
     const/4 v1, 0x0
@@ -1844,14 +1844,14 @@
 
     if-eqz v0, :cond_2e
 
-    .line 429
+    .line 430
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0, v2, v1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->sinkUI(ZIZ)V
 
     return-void
 
-    .line 432
+    .line 433
     :cond_2e
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -1864,7 +1864,7 @@
 .method private translateAnim()V
     .registers 6
 
-    .line 483
+    .line 484
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAnimShow:Z
 
     const/4 v1, 0x0
@@ -1880,7 +1880,7 @@
     :cond_a
     move v0, v1
 
-    .line 484
+    .line 485
     :goto_b
     iget-boolean v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAnimShow:Z
 
@@ -1893,7 +1893,7 @@
 
     move-result v1
 
-    .line 485
+    .line 486
     :goto_14
     sget-object v2, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1927,15 +1927,15 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 487
+    .line 488
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-eqz v2, :cond_43
 
-    .line 488
+    .line 489
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->updateTranslation(F)V
 
-    .line 491
+    .line 492
     :cond_43
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -1953,26 +1953,26 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 492
+    .line 493
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDisappearAnimatorEndListener:Landroid/animation/AnimatorListenerAdapter;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 493
+    .line 494
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAnimShow:Z
 
     if-eqz v0, :cond_6b
 
-    .line 494
+    .line 495
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x64
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 495
+    .line 496
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mPathInterpolator:Landroid/view/animation/PathInterpolator;
@@ -1981,7 +1981,7 @@
 
     goto :goto_80
 
-    .line 497
+    .line 498
     :cond_6b
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -1989,21 +1989,21 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 498
+    .line 499
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 499
+    .line 500
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mFadeOutPathInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 501
+    .line 502
     :goto_80
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -2015,21 +2015,21 @@
 .method private updateTranslation(F)V
     .registers 4
 
-    .line 375
+    .line 376
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->isExpandedOrLRHoverState()Z
 
     move-result v0
 
     if-nez v0, :cond_c
 
-    .line 376
+    .line 377
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setTranslationY(F)V
 
     return-void
 
-    .line 379
+    .line 380
     :cond_c
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
@@ -2049,7 +2049,7 @@
 
     return-void
 
-    .line 388
+    .line 389
     :cond_1d
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -2057,7 +2057,7 @@
 
     return-void
 
-    .line 383
+    .line 384
     :cond_23
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -2221,9 +2221,6 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
-    .line 217
-    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->addAnimatorListener0()V
-
     .line 218
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
@@ -2257,7 +2254,7 @@
 .method public getEntryRootView()Landroid/view/ViewGroup;
     .registers 1
 
-    .line 298
+    .line 299
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mEntryRootView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -2266,7 +2263,7 @@
 .method public getEntryView()Landroid/view/View;
     .registers 1
 
-    .line 293
+    .line 294
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mEntryView:Landroid/view/View;
 
     return-object p0
@@ -2286,7 +2283,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 558
+    .line 559
     const-string p0, "key_video_portrait_level"
 
     return-object p0
@@ -2303,12 +2300,12 @@
         }
     .end annotation
 
-    .line 563
+    .line 564
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 564
+    .line 565
     const-string v0, "key_video_portrait"
 
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -2319,7 +2316,7 @@
 .method public getValue()Ljava/lang/String;
     .registers 3
 
-    .line 570
+    .line 571
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v0, :cond_2b
@@ -2332,7 +2329,7 @@
 
     goto :goto_2b
 
-    .line 574
+    .line 575
     :cond_b
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
@@ -2342,7 +2339,7 @@
 
     if-eqz v0, :cond_21
 
-    .line 575
+    .line 576
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -2351,7 +2348,7 @@
 
     goto :goto_21
 
-    .line 579
+    .line 580
     :cond_1a
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
@@ -2361,7 +2358,7 @@
 
     return-object p0
 
-    .line 576
+    .line 577
     :cond_21
     :goto_21
     sget-object v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -2370,12 +2367,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 577
+    .line 578
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->DEFAULT_VALUE:Ljava/lang/String;
 
     return-object p0
 
-    .line 571
+    .line 572
     :cond_2b
     :goto_2b
     sget-object v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -2384,7 +2381,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 572
+    .line 573
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->DEFAULT_VALUE:Ljava/lang/String;
 
     return-object p0
@@ -2393,26 +2390,26 @@
 .method public hideEntryView()V
     .registers 3
 
-    .line 506
+    .line 507
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v0, :cond_8
 
     const/4 v1, 0x0
 
-    .line 507
+    .line 508
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
 
-    .line 509
+    .line 510
     :cond_8
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hideSettingUI()V
 
     const/4 v0, 0x0
 
-    .line 510
+    .line 511
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->expandModePickerUI(Z)V
 
-    .line 511
+    .line 512
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->unregisterSettingDevice()V
@@ -2440,7 +2437,7 @@
 .method public needShowOptionBar()Z
     .registers 1
 
-    .line 794
+    .line 795
     iget p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mCurrentUIState:I
 
     if-nez p0, :cond_6
@@ -2516,19 +2513,19 @@
 
     goto :goto_91
 
-    .line 735
+    .line 736
     :cond_37
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsPopSettingShow:Z
 
-    .line 736
+    .line 737
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hide()V
 
-    .line 737
+    .line 738
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hidePopSettingTitle()V
 
     return-void
 
-    .line 724
+    .line 725
     :cond_40
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsLevelBarShowing:Z
 
@@ -2544,53 +2541,53 @@
 
     if-nez p1, :cond_91
 
-    .line 725
+    .line 726
     :cond_4e
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hideLevelBar()V
 
     return-void
 
-    .line 746
+    .line 747
     :cond_52
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hidePopSettingTitle()V
 
-    .line 747
+    .line 748
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsLevelBarShowing:Z
 
     if-eqz p1, :cond_91
 
-    .line 748
+    .line 749
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hideLevelBar()V
 
     return-void
 
-    .line 709
+    .line 710
     :cond_5d
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsVideoRecording:Z
 
-    .line 710
+    .line 711
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->resetBottomViews()V
 
-    .line 711
+    .line 712
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mCameraOperate:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz p0, :cond_91
 
     const/16 p1, 0x82
 
-    .line 712
+    .line 713
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     return-void
 
-    .line 704
+    .line 705
     :cond_6c
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsVideoRecording:Z
 
-    .line 705
+    .line 706
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hideEntryRootView()V
 
-    .line 706
+    .line 707
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p1, "key_conflict_ui_state"
@@ -2605,39 +2602,39 @@
 
     return-void
 
-    .line 729
+    .line 730
     :cond_7f
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsVideoRecording:Z
 
-    .line 730
+    .line 731
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsPopSettingShow:Z
 
-    .line 731
+    .line 732
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hide()V
 
-    .line 732
+    .line 733
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hidePopSettingTitle()V
 
     return-void
 
-    .line 718
+    .line 719
     :cond_8a
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsLevelBarShowing:Z
 
     if-eqz p1, :cond_91
 
-    .line 719
+    .line 720
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hideLevelBar()V
 
     :cond_91
     :goto_91
     return-void
 
-    .line 741
+    .line 742
     :cond_92
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hidePopSettingTitle()V
 
-    .line 743
+    .line 744
     :cond_95
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsPopSettingShow:Z
 
@@ -2647,7 +2644,7 @@
 .method public onBackPressed()Z
     .registers 3
 
-    .line 639
+    .line 640
     sget-object v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[onBackPressed]"
@@ -2656,7 +2653,7 @@
 
     const/4 v0, 0x1
 
-    .line 641
+    .line 642
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hidePortraitLevel(Z)Z
 
     move-result p0
@@ -2676,10 +2673,10 @@
 .method public onOrientationChanged(I)V
     .registers 3
 
-    .line 623
+    .line 624
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onOrientationChanged(I)V
 
-    .line 625
+    .line 626
     iget p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/4 v0, 0x1
@@ -2690,7 +2687,7 @@
 
     if-eq p1, v0, :cond_17
 
-    .line 627
+    .line 628
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
@@ -2710,7 +2707,7 @@
     :goto_17
     const/4 p1, 0x0
 
-    .line 628
+    .line 629
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->updateSettingUILayout(Z)V
 
     return-void
@@ -2719,12 +2716,12 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 884
+    .line 885
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onScreenFormChanged(IZ)V
 
     const/4 p1, 0x1
 
-    .line 885
+    .line 886
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->updateSettingUILayout(Z)V
 
     return-void
@@ -2733,17 +2730,17 @@
 .method public onSettingOptionToggle(Ljava/lang/String;)V
     .registers 4
 
-    .line 303
+    .line 304
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onSettingOptionToggle(Ljava/lang/String;)V
 
-    .line 305
+    .line 306
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsPopSettingShow:Z
 
     if-eqz v0, :cond_9
 
     goto/16 :goto_84
 
-    .line 309
+    .line 310
     :cond_9
     const-string v0, "key_video_portrait"
 
@@ -2753,7 +2750,7 @@
 
     if-eqz p1, :cond_7d
 
-    .line 310
+    .line 311
     sget-object p1, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2774,7 +2771,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 311
+    .line 312
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_39
@@ -2785,14 +2782,14 @@
 
     if-eqz v0, :cond_39
 
-    .line 312
+    .line 313
     const-string p0, "onSettingOptionToggle return because animation is running."
 
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 315
+    .line 316
     :cond_39
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -2808,43 +2805,43 @@
 
     if-nez v0, :cond_4d
 
-    .line 316
+    .line 317
     const-string p0, "onSettingOptionToggle mLevelContainer alpha is 1, don\'t show mLevelContainer!"
 
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 319
+    .line 320
     :cond_4d
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->showPortraitLevel()V
 
-    .line 320
+    .line 321
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->showPopSettingTitle()V
 
     const/4 p1, 0x1
 
-    .line 321
+    .line 322
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsLevelBarShowing:Z
 
-    .line 322
+    .line 323
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitSwitchSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p1, :cond_84
 
-    .line 323
+    .line 324
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 324
+    .line 325
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 325
+    .line 326
     const-string v1, "on"
 
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -2861,24 +2858,24 @@
 
     if-nez p1, :cond_84
 
-    .line 326
+    .line 327
     :cond_74
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitSwitchSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p1, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 327
+    .line 328
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->reOpenToSavedValue()V
 
     return-void
 
-    .line 331
+    .line 332
     :cond_7d
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsLevelBarShowing:Z
 
     if-eqz p1, :cond_84
 
-    .line 332
+    .line 333
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hideLevelBar()V
 
     :cond_84
@@ -2889,7 +2886,7 @@
 .method public onSingleTapUp(FF)Z
     .registers 6
 
-    .line 688
+    .line 689
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     iget v1, v0, Landroid/graphics/Rect;->left:I
@@ -2928,7 +2925,7 @@
 
     goto :goto_3f
 
-    .line 692
+    .line 693
     :cond_20
     sget-object p1, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2950,12 +2947,12 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 693
+    .line 694
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsLevelBarShowing:Z
 
     if-eqz p1, :cond_3f
 
-    .line 694
+    .line 695
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hideLevelBar()V
 
     :cond_3f
@@ -2977,12 +2974,12 @@
 .method public restoreInteractiveView()V
     .registers 2
 
-    .line 516
+    .line 517
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hideSettingUI()V
 
     const/4 v0, 0x0
 
-    .line 517
+    .line 518
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->expandModePickerUI(Z)V
 
     return-void
@@ -2991,10 +2988,10 @@
 .method public setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
     .registers 2
 
-    .line 799
+    .line 800
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 
-    .line 800
+    .line 801
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mCameraOperate:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     return-void
@@ -3003,12 +3000,12 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 4
 
-    .line 584
+    .line 585
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p1, :cond_c
 
-    .line 586
+    .line 587
     sget-object p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "mDeviceSetting is null!"
@@ -3017,7 +3014,7 @@
 
     return-void
 
-    .line 590
+    .line 591
     :cond_c
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSupport()Ljava/util/List;
 
@@ -3025,7 +3022,7 @@
 
     if-nez p1, :cond_1a
 
-    .line 592
+    .line 593
     sget-object p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "mDeviceSetting\'s support is null!"
@@ -3034,25 +3031,25 @@
 
     return-void
 
-    .line 595
+    .line 596
     :cond_1a
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->createSupportedEntries(Ljava/util/List;)V
 
-    .line 596
+    .line 597
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p1, :cond_33
 
-    .line 597
+    .line 598
     const-string v0, "key_video_portrait_ui"
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 598
+    .line 599
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_video_portrait_level"
@@ -3061,13 +3058,13 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 601
+    .line 602
     :cond_33
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitSwitchSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p1, :cond_3c
 
-    .line 602
+    .line 603
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSwitchDataCallbackImpl:Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
@@ -3087,12 +3084,12 @@
         }
     .end annotation
 
-    .line 608
+    .line 609
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setDeviceSettingData(Ljava/util/List;)V
 
     if-nez p1, :cond_20
 
-    .line 610
+    .line 611
     sget-object p1, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -3117,7 +3114,7 @@
 
     return-void
 
-    .line 613
+    .line 614
     :cond_20
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -3137,7 +3134,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ui/setting/ISettingUI$ISettingData;
 
-    .line 614
+    .line 615
     sget-object v1, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3166,7 +3163,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 615
+    .line 616
     iget-object v1, v0, Lcom/transsion/camera/app/common/ui/setting/ISettingUI$ISettingData;->key:Ljava/lang/String;
 
     const-string v2, "key_video_portrait"
@@ -3177,7 +3174,7 @@
 
     if-eqz v1, :cond_24
 
-    .line 616
+    .line 617
     iget-object v0, v0, Lcom/transsion/camera/app/common/ui/setting/ISettingUI$ISettingData;->iSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitSwitchSetting:Lcom/transsion/camera/app/common/setting/ISetting;
@@ -3191,12 +3188,12 @@
 .method public setEnable(Z)V
     .registers 2
 
-    .line 551
+    .line 552
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
     if-eqz p0, :cond_7
 
-    .line 552
+    .line 553
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->enableUIStatus(Z)V
 
     :cond_7
@@ -3215,7 +3212,7 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 634
+    .line 635
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-void
@@ -3235,14 +3232,17 @@
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setupEntryView()V
 
     .line 286
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->addAnimatorListener0()V
+
+    .line 287
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hideSettingUI()V
 
     const/4 v0, 0x0
 
-    .line 287
+    .line 288
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->expandModePickerUI(Z)V
 
-    .line 288
+    .line 289
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->registerSettingDevice()V
@@ -3257,75 +3257,69 @@
 .end method
 
 .method public unInit()V
-    .registers 5
+    .registers 4
 
-    .line 522
+    .line 523
     sget-object v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "unInit"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 523
+    .line 524
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->hideLevelBar()V
 
-    .line 524
+    .line 525
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitSwitchSetting:Lcom/transsion/camera/app/common/setting/ISetting;
-
-    const/4 v1, 0x0
 
     if-eqz v0, :cond_12
 
-    .line 525
+    const/4 v1, 0x0
+
+    .line 526
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
 
-    .line 527
+    .line 528
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_26
 
-    .line 528
-    const-string v2, "key_video_portrait_ui"
-
-    iget-object v3, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
-
-    invoke-virtual {v0, v2, v3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
-
     .line 529
+    const-string v1, "key_video_portrait_ui"
+
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
+
+    invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
+
+    .line 530
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    const-string v2, "key_video_portrait_level"
+    const-string v1, "key_video_portrait_level"
 
-    iget-object v3, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mSettingChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    invoke-virtual {v0, v2, v3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
+    invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 531
+    .line 532
     :cond_26
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
 
-    invoke-virtual {v0, v2}, Lcom/transsion/camera/app/common/ModuleTransferManager;->unregisterTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
-
-    .line 532
-    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->removeAnimatorListener()V
+    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ModuleTransferManager;->unregisterTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
 
     .line 533
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mEntryView:Landroid/view/View;
-
-    .line 534
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->removeAnimatorListener()V
 
     const/4 v0, 0x0
 
-    .line 535
+    .line 536
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIsPopSettingShow:Z
 
-    .line 536
+    .line 537
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->unInit()V
 
     return-void
@@ -3334,7 +3328,7 @@
 .method public updatePreviewRect(Landroid/graphics/Rect;)V
     .registers 2
 
-    .line 546
+    .line 547
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
@@ -3345,18 +3339,18 @@
 .method protected updateRingScreenLight(Z)V
     .registers 3
 
-    .line 873
+    .line 874
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLowLight:Z
 
-    .line 874
+    .line 875
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mVideoPortraitRoot:Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;
 
     if-eqz v0, :cond_9
 
-    .line 875
+    .line 876
     invoke-virtual {v0, p1}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitScrollerLayout;->updateLowLight(Z)V
 
-    .line 877
+    .line 878
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mBottomTitle:Landroid/widget/TextView;
 
@@ -3364,7 +3358,7 @@
 
     if-eqz p1, :cond_16
 
-    .line 878
+    .line 879
     const-string p1, "#FF242424"
 
     invoke-static {p1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -3388,15 +3382,15 @@
 
     move-object/from16 v0, p0
 
-    .line 890
+    .line 891
     iget v1, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
-    .line 891
+    .line 892
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     invoke-static {v2}, Lcom/transsion/camera/utils/AnimationUtils;->stopAnimator(Landroid/animation/Animator;)V
 
-    .line 892
+    .line 893
     invoke-virtual {v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->getEntryView()Landroid/view/View;
 
     move-result-object v2
@@ -3405,7 +3399,7 @@
 
     goto/16 :goto_281
 
-    .line 896
+    .line 897
     :cond_11
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -3413,36 +3407,36 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 897
+    .line 898
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 899
+    .line 900
     iget-object v3, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getBottomBarHeight()I
 
     move-result v3
 
-    .line 900
+    .line 901
     iget-object v4, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v4}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
 
     move-result v4
 
-    .line 901
+    .line 902
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
 
     check-cast v5, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 902
+    .line 903
     iget v6, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 904
+    .line 905
     iget v7, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/4 v8, 0x3
@@ -3451,7 +3445,7 @@
 
     if-ne v7, v8, :cond_40
 
-    .line 905
+    .line 906
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v7, Lcom/transsion/camera/R$dimen;->level_hover_bottom_margin:I
@@ -3467,7 +3461,7 @@
     :cond_40
     if-ne v7, v9, :cond_4d
 
-    .line 908
+    .line 909
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v7, Lcom/transsion/camera/R$dimen;->level_column_root_bottom_padding:I
@@ -3481,7 +3475,7 @@
 
     goto :goto_69
 
-    .line 910
+    .line 911
     :cond_4d
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -3489,12 +3483,12 @@
 
     if-nez v3, :cond_60
 
-    .line 911
+    .line 912
     iget v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mBottomUIDefaultHeight:I
 
     sub-int v3, v4, v3
 
-    .line 912
+    .line 913
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
 
     move-result v4
@@ -3505,7 +3499,7 @@
 
     goto :goto_69
 
-    .line 916
+    .line 917
     :cond_60
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
@@ -3517,7 +3511,7 @@
 
     goto :goto_4a
 
-    .line 919
+    .line 920
     :cond_69
     :goto_69
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
@@ -3530,10 +3524,10 @@
 
     const/4 v7, 0x0
 
-    .line 920
+    .line 921
     invoke-virtual {v4, v7, v7, v7, v7}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 921
+    .line 922
     invoke-direct {v0}, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->isExpandedState()Z
 
     move-result v8
@@ -3560,10 +3554,10 @@
 
     const/16 v3, 0x53
 
-    .line 944
+    .line 945
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 945
+    .line 946
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_root_width:I
@@ -3574,7 +3568,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 946
+    .line 947
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_0_left_margin:I
@@ -3585,7 +3579,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 947
+    .line 948
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_0_bottom_margin:I
@@ -3598,11 +3592,11 @@
 
     goto :goto_112
 
-    .line 936
+    .line 937
     :cond_b0
     iput v12, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 937
+    .line 938
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_root_width:I
@@ -3613,7 +3607,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 938
+    .line 939
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_90_right_margin:I
@@ -3624,7 +3618,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 939
+    .line 940
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_90_bottom_margin:I
@@ -3637,11 +3631,11 @@
 
     goto :goto_112
 
-    .line 930
+    .line 931
     :cond_d1
     iput v11, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 931
+    .line 932
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_root_width:I
@@ -3652,7 +3646,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 932
+    .line 933
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_0_left_margin:I
@@ -3663,7 +3657,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 933
+    .line 934
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_0_bottom_margin:I
@@ -3676,11 +3670,11 @@
 
     goto :goto_112
 
-    .line 924
+    .line 925
     :cond_f2
     iput v10, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 925
+    .line 926
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_root_width:I
@@ -3691,7 +3685,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 926
+    .line 927
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_90_right_margin:I
@@ -3702,7 +3696,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 927
+    .line 928
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->level_expand_90_bottom_margin:I
@@ -3716,15 +3710,15 @@
     :goto_112
     add-int/lit16 v1, v1, 0x10e
 
-    .line 950
+    .line 951
     rem-int/lit16 v1, v1, 0x168
 
-    .line 951
+    .line 952
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3, v1, v7}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 952
+    .line 953
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
@@ -3733,24 +3727,24 @@
 
     if-nez v3, :cond_12a
 
-    .line 953
+    .line 954
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v3, :cond_12a
 
-    .line 954
+    .line 955
     invoke-interface {v3, v7, v7, v7}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->sinkUI(ZIZ)V
 
-    .line 957
+    .line 958
     :cond_12a
     iput v7, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 958
+    .line 959
     invoke-virtual {v2, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto/16 :goto_260
 
-    .line 959
+    .line 960
     :cond_131
     invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -3764,7 +3758,7 @@
 
     const/4 v8, 0x7
 
-    .line 960
+    .line 961
     iget v9, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     if-ne v8, v9, :cond_185
@@ -3775,18 +3769,18 @@
 
     if-eq v1, v14, :cond_15b
 
-    .line 978
+    .line 979
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v2, v7, v7}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 979
+    .line 980
     iput v12, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 980
+    .line 981
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 981
+    .line 982
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/featurelibs/makeupRes/R$dimen;->makeup_bottom_0_flip_top_margin:I
@@ -3799,19 +3793,19 @@
 
     goto/16 :goto_260
 
-    .line 970
+    .line 971
     :cond_15b
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v2, v15, v7}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 971
+    .line 972
     iput v11, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 972
+    .line 973
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 973
+    .line 974
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/R$dimen;->flip_level_expand_270_top_margin:I
@@ -3824,19 +3818,19 @@
 
     goto/16 :goto_260
 
-    .line 964
+    .line 965
     :cond_170
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v2, v15, v7}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 965
+    .line 966
     iput v11, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 966
+    .line 967
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 967
+    .line 968
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/R$dimen;->flip_level_expand_180_top_margin:I
@@ -3852,7 +3846,7 @@
     :cond_185
     if-eqz p1, :cond_1ae
 
-    .line 986
+    .line 987
     filled-new-array {v6, v3}, [I
 
     move-result-object v3
@@ -3865,17 +3859,17 @@
 
     const-wide/16 v8, 0x190
 
-    .line 987
+    .line 988
     invoke-virtual {v3, v8, v9}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 988
+    .line 989
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v6, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v3, v6}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 989
+    .line 990
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v6, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$$ExternalSyntheticLambda0;
@@ -3884,23 +3878,23 @@
 
     invoke-virtual {v3, v6}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 993
+    .line 994
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->start()V
 
     goto/16 :goto_260
 
-    .line 995
+    .line 996
     :cond_1ae
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 996
+    .line 997
     invoke-virtual {v2, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto/16 :goto_260
 
-    .line 999
+    .line 1000
     :cond_1b5
     iget v6, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
@@ -3917,13 +3911,13 @@
 
     if-ne v6, v3, :cond_1fd
 
-    .line 1012
+    .line 1013
     iput v10, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1013
+    .line 1014
     iput v8, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1014
+    .line 1015
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->video_portrait_scroller_margin_left_hover:I
@@ -3934,7 +3928,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1015
+    .line 1016
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->video_portrait_scroller_margin_top_hover:I
@@ -3945,7 +3939,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 1016
+    .line 1017
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->video_portrait_scroller_margin_right_hover:I
@@ -3956,12 +3950,12 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1017
+    .line 1018
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3, v7, v7}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 1018
+    .line 1019
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
@@ -3970,19 +3964,19 @@
 
     if-nez v3, :cond_1f7
 
-    .line 1019
+    .line 1020
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v3, :cond_1f7
 
-    .line 1020
+    .line 1021
     invoke-interface {v3, v7, v7, v7}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->sinkUI(ZIZ)V
 
-    .line 1023
+    .line 1024
     :cond_1f7
     iput v7, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 1024
+    .line 1025
     invoke-virtual {v2, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_260
@@ -3992,13 +3986,13 @@
 
     if-ne v6, v3, :cond_260
 
-    .line 1026
+    .line 1027
     iput v12, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1027
+    .line 1028
     iput v8, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1028
+    .line 1029
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->video_portrait_scroller_margin_left_hover:I
@@ -4009,7 +4003,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1029
+    .line 1030
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->video_portrait_scroller_margin_top_hover:I
@@ -4020,7 +4014,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1030
+    .line 1031
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$dimen;->video_portrait_scroller_margin_right_hover:I
@@ -4031,12 +4025,12 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1031
+    .line 1032
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3, v15, v7}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 1032
+    .line 1033
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
@@ -4045,19 +4039,19 @@
 
     if-nez v3, :cond_236
 
-    .line 1033
+    .line 1034
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v3, :cond_236
 
-    .line 1034
+    .line 1035
     invoke-interface {v3, v7, v7, v7}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->sinkUI(ZIZ)V
 
-    .line 1037
+    .line 1038
     :cond_236
     iput v7, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 1038
+    .line 1039
     invoke-virtual {v2, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_260
@@ -4066,24 +4060,24 @@
     :goto_23c
     const/16 v6, 0x51
 
-    .line 1001
+    .line 1002
     iput v6, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1002
+    .line 1003
     iput v8, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1003
+    .line 1004
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 1004
+    .line 1005
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3, v7, v7}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 1005
+    .line 1006
     invoke-virtual {v2, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1006
+    .line 1007
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
@@ -4096,24 +4090,24 @@
 
     if-nez v2, :cond_260
 
-    .line 1007
+    .line 1008
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v2, :cond_260
 
     const/4 v3, 0x1
 
-    .line 1008
+    .line 1009
     invoke-interface {v2, v3, v7, v3}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->sinkUI(ZIZ)V
 
-    .line 1040
+    .line 1041
     :cond_260
     :goto_260
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1041
+    .line 1042
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mLevelContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     new-instance v3, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI$$ExternalSyntheticLambda1;
@@ -4122,7 +4116,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 1046
+    .line 1047
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/videoportraitlevel/VideoPortraitLevelUI;->mBottomTitle:Landroid/widget/TextView;
 
     if-eqz v2, :cond_281
@@ -4144,7 +4138,7 @@
     :goto_27d
     int-to-float v0, v7
 
-    .line 1050
+    .line 1051
     invoke-virtual {v2, v0}, Landroid/view/View;->setRotation(F)V
 
     :cond_281

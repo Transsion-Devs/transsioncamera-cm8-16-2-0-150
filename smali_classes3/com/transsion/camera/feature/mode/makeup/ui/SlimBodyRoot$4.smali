@@ -1,11 +1,14 @@
 .class Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$4;
-.super Lcom/transsion/camera/app/common/ui/helper/ScrollHelper$SimpleStoreStrategy;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->registerSettingDevice(Lcom/transsion/camera/app/common/setting/ISetting;)V
+    value = Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->showResetDialog(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,36 +18,46 @@
 
 
 # instance fields
-.field final synthetic val$iSetting:Lcom/transsion/camera/app/common/setting/ISetting;
+.field final synthetic this$0:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
 
 # direct methods
-.method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;Lcom/transsion/camera/app/common/setting/ISetting;Lcom/transsion/camera/app/common/setting/ISetting;)V
-    .registers 4
+.method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;)V
+    .registers 2
 
-    .line 368
-    iput-object p3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$4;->val$iSetting:Lcom/transsion/camera/app/common/setting/ISetting;
+    .line 351
+    iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$4;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
-    invoke-direct {p0, p2}, Lcom/transsion/camera/app/common/ui/helper/ScrollHelper$SimpleStoreStrategy;-><init>(Lcom/transsion/camera/app/common/setting/ISetting;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected getStoreScope()Ljava/lang/String;
-    .registers 1
+.method public onDismiss(Landroid/content/DialogInterface;)V
+    .registers 2
 
-    .line 371
-    iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$4;->val$iSetting:Lcom/transsion/camera/app/common/setting/ISetting;
+    .line 354
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$4;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
-    invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
+    invoke-static {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->-$$Nest$fgetmIAppUI(Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;)Lcom/transsion/camera/app/common/IAppUI;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_13
+
+    .line 355
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot$4;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
+
+    invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->-$$Nest$fgetmIAppUI(Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;)Lcom/transsion/camera/app/common/IAppUI;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
+    const/16 p1, 0x88
 
-    move-result-object p0
+    invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    return-object p0
+    :cond_13
+    return-void
 .end method

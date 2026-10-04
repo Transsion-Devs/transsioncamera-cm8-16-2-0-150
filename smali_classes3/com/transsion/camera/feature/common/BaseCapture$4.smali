@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
     .registers 2
 
-    .line 349
+    .line 347
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$4;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onFileSaved(Landroid/net/Uri;)V
     .registers 5
 
-    .line 352
+    .line 350
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 353
+    .line 351
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$4;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmThumbnailOperator(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/ICapture$IThumbnailOperator;
@@ -68,7 +68,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 354
+    .line 352
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$4;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmThumbnailOperator(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/ICapture$IThumbnailOperator;
@@ -77,20 +77,20 @@
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/feature/common/ICapture$IThumbnailOperator;->updateUri(Landroid/net/Uri;)V
 
-    .line 356
+    .line 354
     :cond_29
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$4;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$mtriggerCaptureEnd(Lcom/transsion/camera/feature/common/BaseCapture;)V
 
-    .line 357
+    .line 355
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->captureDone()V
 
-    .line 358
+    .line 356
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0

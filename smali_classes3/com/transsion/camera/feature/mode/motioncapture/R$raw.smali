@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static camera_continuous_shutter:I = 0x7f120005
+.field public static camera_continuous_shutter:I = 0x7f120003
 
 
 # direct methods

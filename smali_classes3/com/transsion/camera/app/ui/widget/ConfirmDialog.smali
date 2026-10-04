@@ -148,7 +148,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 60
+    .line 62
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "ConfirmDialog"
@@ -157,7 +157,7 @@
 
     sput-object v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 61
+    .line 63
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -170,25 +170,25 @@
 .method public constructor <init>()V
     .registers 3
 
-    .line 58
+    .line 60
     invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 85
+    .line 87
     iput v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mScreenFormType:I
 
-    .line 89
+    .line 91
     sget-object v1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$DIALOG_TYPE;->TYPE_NORMAL:Lcom/transsion/camera/app/ui/widget/ConfirmDialog$DIALOG_TYPE;
 
     iput-object v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mDialogType:Lcom/transsion/camera/app/ui/widget/ConfirmDialog$DIALOG_TYPE;
 
-    .line 90
+    .line 92
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mIsBeautyResetDialog:Z
 
     const/4 v0, -0x1
 
-    .line 92
+    .line 94
     iput v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mLastDialogWindowPosition:I
 
     return-void
@@ -197,7 +197,7 @@
 .method private findView(Landroid/view/View;)V
     .registers 3
 
-    .line 260
+    .line 262
     sget v0, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->rootPanel:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -208,7 +208,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    .line 261
+    .line 263
     sget v0, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->title:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -219,7 +219,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mTitle:Landroid/widget/TextView;
 
-    .line 262
+    .line 264
     sget v0, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->message:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -230,7 +230,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mMessage:Landroid/widget/TextView;
 
-    .line 263
+    .line 265
     sget v0, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->button1:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -241,7 +241,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mConfirm:Landroid/widget/Button;
 
-    .line 264
+    .line 266
     sget v0, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->button2:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -252,7 +252,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCancel:Landroid/widget/Button;
 
-    .line 265
+    .line 267
     sget v0, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->check_box:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -269,12 +269,12 @@
 .method private getRotationForDisplayShare(Ljava/lang/Object;)I
     .registers 6
 
-    .line 351
+    .line 353
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 352
+    .line 354
     const-string p1, "rotation="
 
     invoke-virtual {p0, p1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -287,7 +287,7 @@
 
     if-ne p1, v0, :cond_25
 
-    .line 354
+    .line 356
     sget-object p1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -313,7 +313,7 @@
 
     add-int/lit8 p1, p1, 0xa
 
-    .line 358
+    .line 360
     :try_start_29
     invoke-virtual {p0, v0, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -330,7 +330,7 @@
     :catch_32
     move-exception p1
 
-    .line 360
+    .line 362
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -347,7 +347,7 @@
 
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 361
+    .line 363
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object p0
@@ -358,7 +358,7 @@
 
     move-result-object p0
 
-    .line 360
+    .line 362
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return v1
@@ -367,14 +367,14 @@
 .method private initFlipDialog()V
     .registers 3
 
-    .line 234
+    .line 236
     invoke-virtual {p0}, Landroid/app/DialogFragment;->getDialog()Landroid/app/Dialog;
 
     move-result-object v0
 
     if-nez v0, :cond_e
 
-    .line 236
+    .line 238
     sget-object p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "initFlipDialog dialog is null"
@@ -383,7 +383,7 @@
 
     return-void
 
-    .line 239
+    .line 241
     :cond_e
     invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
@@ -391,7 +391,7 @@
 
     if-nez v0, :cond_1c
 
-    .line 241
+    .line 243
     sget-object p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "initFlipDialog window is null"
@@ -400,7 +400,7 @@
 
     return-void
 
-    .line 245
+    .line 247
     :cond_1c
     sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$style;->dialog_animation:I
 
@@ -408,10 +408,10 @@
 
     const/16 v1, 0x200
 
-    .line 246
+    .line 248
     invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
 
-    .line 248
+    .line 250
     invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
     move-result-object v0
@@ -428,7 +428,7 @@
 .method private initView()V
     .registers 5
 
-    .line 269
+    .line 271
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     iget v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mOrientation:I
@@ -437,35 +437,35 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 271
+    .line 273
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mTitle:Landroid/widget/TextView;
 
     iget v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mTitleId:I
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->setText(Landroid/widget/TextView;I)V
 
-    .line 272
+    .line 274
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mMessage:Landroid/widget/TextView;
 
     iget v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mMsgId:I
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->setText(Landroid/widget/TextView;I)V
 
-    .line 273
+    .line 275
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mConfirm:Landroid/widget/Button;
 
     iget v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mPositiveTextId:I
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->setText(Landroid/widget/TextView;I)V
 
-    .line 274
+    .line 276
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCancel:Landroid/widget/Button;
 
     iget v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mNegativeTextId:I
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->setText(Landroid/widget/TextView;I)V
 
-    .line 276
+    .line 278
     invoke-static {}, Lcom/transsion/camera/app_info/AppInfo;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -480,7 +480,7 @@
 
     move-result v0
 
-    .line 277
+    .line 279
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mConfirm:Landroid/widget/Button;
 
     new-instance v3, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$$ExternalSyntheticLambda0;
@@ -489,7 +489,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 285
+    .line 287
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCancel:Landroid/widget/Button;
 
     new-instance v1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$$ExternalSyntheticLambda1;
@@ -498,7 +498,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 286
+    .line 288
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mConfirm:Landroid/widget/Button;
 
     new-instance v1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$$ExternalSyntheticLambda2;
@@ -507,27 +507,27 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 288
+    .line 290
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCheckBox:Landroid/widget/CheckBox;
 
     if-eqz v0, :cond_78
 
-    .line 289
+    .line 291
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mNeedCheckBox:Z
 
     if-eqz v1, :cond_6d
 
-    .line 290
+    .line 292
     iget v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCheckBoxTextId:I
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 291
+    .line 293
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCheckBox:Landroid/widget/CheckBox;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 292
+    .line 294
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCheckBox:Landroid/widget/CheckBox;
 
     new-instance v1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$$ExternalSyntheticLambda3;
@@ -541,10 +541,10 @@
     :cond_6d
     const/4 v1, 0x0
 
-    .line 298
+    .line 300
     invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 299
+    .line 301
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCheckBox:Landroid/widget/CheckBox;
 
     const/16 v0, 0x8
@@ -558,7 +558,7 @@
 .method private synthetic lambda$initView$0(I)V
     .registers 7
 
-    .line 278
+    .line 280
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mConfirm:Landroid/widget/Button;
 
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
@@ -567,7 +567,7 @@
 
     if-ge v0, p1, :cond_3d
 
-    .line 279
+    .line 281
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mConfirm:Landroid/widget/Button;
 
     invoke-virtual {v0}, Landroid/view/View;->getPaddingStart()I
@@ -594,7 +594,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mConfirm:Landroid/widget/Button;
 
-    .line 280
+    .line 282
     invoke-virtual {v3}, Landroid/view/View;->getPaddingEnd()I
 
     move-result v3
@@ -617,10 +617,10 @@
 
     add-int/2addr p1, v4
 
-    .line 279
+    .line 281
     invoke-virtual {v0, v1, v2, v3, p1}, Landroid/view/View;->setPaddingRelative(IIII)V
 
-    .line 281
+    .line 283
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mConfirm:Landroid/widget/Button;
 
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
@@ -632,12 +632,12 @@
 .method private synthetic lambda$initView$1(Landroid/widget/CompoundButton;Z)V
     .registers 3
 
-    .line 293
+    .line 295
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCallBack:Lcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;
 
     if-eqz p0, :cond_7
 
-    .line 294
+    .line 296
     invoke-interface {p0, p2}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;->onCheckedChanged(Z)V
 
     :cond_7
@@ -651,7 +651,7 @@
 
     if-nez p1, :cond_7
 
-    .line 194
+    .line 196
     iget v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mScreenFormType:I
 
     if-eq v1, v0, :cond_e
@@ -680,30 +680,30 @@
 .method public static newInstance(IIIIZILcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;)Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
     .registers 8
 
-    .line 139
+    .line 141
     new-instance v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;-><init>()V
 
-    .line 140
+    .line 142
     iput p0, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mTitleId:I
 
-    .line 141
+    .line 143
     iput p1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mMsgId:I
 
-    .line 142
+    .line 144
     iput p2, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mPositiveTextId:I
 
-    .line 143
+    .line 145
     iput p3, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mNegativeTextId:I
 
-    .line 144
+    .line 146
     iput-boolean p4, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mNeedCheckBox:Z
 
-    .line 145
+    .line 147
     iput p5, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCheckBoxTextId:I
 
-    .line 146
+    .line 148
     iput-object p6, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCallBack:Lcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;
 
     return-object v0
@@ -712,26 +712,26 @@
 .method public static newInstance(IIILcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;)Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
     .registers 5
 
-    .line 123
+    .line 125
     new-instance v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;-><init>()V
 
-    .line 124
+    .line 126
     iput p0, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mMsgId:I
 
-    .line 125
+    .line 127
     iput p1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mPositiveTextId:I
 
-    .line 126
+    .line 128
     iput p2, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mNegativeTextId:I
 
     const/4 p0, 0x0
 
-    .line 127
+    .line 129
     iput-boolean p0, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mNeedCheckBox:Z
 
-    .line 128
+    .line 130
     iput-object p3, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCallBack:Lcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;
 
     return-object v0
@@ -740,7 +740,7 @@
 .method private onBackPressed()Z
     .registers 1
 
-    .line 543
+    .line 548
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->dismissAllowingStateLoss()V
 
     const/4 p0, 0x1
@@ -751,15 +751,15 @@
 .method private onCancel(Landroid/view/View;)V
     .registers 2
 
-    .line 385
+    .line 387
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCallBack:Lcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;
 
     if-eqz p1, :cond_7
 
-    .line 386
+    .line 388
     invoke-interface {p1}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;->onCancel()V
 
-    .line 388
+    .line 390
     :cond_7
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->dismissAllowingStateLoss()V
 
@@ -769,15 +769,15 @@
 .method private onConfirm(Landroid/view/View;)V
     .registers 2
 
-    .line 378
+    .line 380
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCallBack:Lcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;
 
     if-eqz p1, :cond_7
 
-    .line 379
+    .line 381
     invoke-interface {p1}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;->onConfirm()V
 
-    .line 381
+    .line 383
     :cond_7
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->dismissAllowingStateLoss()V
 
@@ -787,28 +787,28 @@
 .method private onCutoutPositionChanged(Landroid/view/WindowInsets;)V
     .registers 7
 
-    .line 305
+    .line 307
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onCutoutPositionChanged"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 307
+    .line 309
     invoke-virtual {p0}, Landroid/app/Fragment;->getView()Landroid/view/View;
 
     move-result-object v1
 
     if-nez v1, :cond_13
 
-    .line 309
+    .line 311
     const-string p0, "onCutoutPositionChanged view is null"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 313
+    .line 315
     :cond_13
     invoke-virtual {v1}, Landroid/view/View;->getDisplay()Landroid/view/Display;
 
@@ -816,14 +816,14 @@
 
     if-nez v1, :cond_1f
 
-    .line 315
+    .line 317
     const-string p0, "onCutoutPositionChanged display is null"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 321
+    .line 323
     :cond_1f
     :try_start_1f
     const-class v2, Landroid/view/WindowInsets;
@@ -841,7 +841,7 @@
 
     const/4 v3, 0x0
 
-    .line 327
+    .line 329
     new-array v4, v3, [Ljava/lang/Object;
 
     invoke-static {v2, p1, v4}, Lcom/transsion/camera/utils/ReflectionUtils;->doMethod(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -850,37 +850,37 @@
 
     if-nez p1, :cond_37
 
-    .line 329
+    .line 331
     const-string p0, "onCutoutPositionChanged displayShape is null"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 333
+    .line 335
     :cond_37
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->getRotationForDisplayShare(Ljava/lang/Object;)I
 
     move-result p1
 
-    .line 334
+    .line 336
     new-instance v2, Lcom/transsion/camera/app/ui/helper/DisplayCutoutInsetsHelper;
 
     invoke-direct {v2, v1}, Lcom/transsion/camera/app/ui/helper/DisplayCutoutInsetsHelper;-><init>(Landroid/view/Display;)V
 
-    .line 335
+    .line 337
     invoke-virtual {v2, p1}, Lcom/transsion/camera/app/ui/helper/DisplayCutoutInsetsHelper;->getSafeInsetLeft(I)I
 
     move-result v1
 
     if-lez v1, :cond_49
 
-    .line 336
+    .line 338
     iput v3, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mDialogWindowPosition:I
 
     goto :goto_52
 
-    .line 337
+    .line 339
     :cond_49
     invoke-virtual {v2, p1}, Lcom/transsion/camera/app/ui/helper/DisplayCutoutInsetsHelper;->getSafeInsetRight(I)I
 
@@ -890,10 +890,10 @@
 
     const/4 p1, 0x1
 
-    .line 338
+    .line 340
     iput p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mDialogWindowPosition:I
 
-    .line 341
+    .line 343
     :cond_52
     :goto_52
     new-instance p1, Ljava/lang/StringBuilder;
@@ -922,7 +922,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 344
+    .line 346
     iget p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mLastDialogWindowPosition:I
 
     const/4 v0, -0x1
@@ -938,14 +938,14 @@
     :cond_7c
     return-void
 
-    .line 345
+    .line 347
     :cond_7d
     :goto_7d
     iget p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mDialogWindowPosition:I
 
     iput p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mLastDialogWindowPosition:I
 
-    .line 346
+    .line 348
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->updateWindow()V
 
     return-void
@@ -953,7 +953,7 @@
     :catch_85
     move-exception p0
 
-    .line 323
+    .line 325
     sget-object p1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -987,12 +987,12 @@
 
     const/16 p0, 0x8
 
-    .line 371
+    .line 373
     invoke-virtual {p1, p0}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    .line 374
+    .line 376
     :cond_b
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(I)V
 
@@ -1004,7 +1004,7 @@
 
     move-object/from16 v0, p0
 
-    .line 412
+    .line 414
     sget-object v1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1033,7 +1033,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 413
+    .line 415
     invoke-virtual {v0}, Landroid/app/DialogFragment;->getDialog()Landroid/app/Dialog;
 
     move-result-object v2
@@ -1045,10 +1045,10 @@
     :cond_2c
     const/4 v3, 0x1
 
-    .line 417
+    .line 419
     invoke-virtual {v2, v3}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 418
+    .line 420
     invoke-virtual {v2}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v4
@@ -1057,7 +1057,7 @@
 
     goto :goto_3d
 
-    .line 422
+    .line 424
     :cond_37
     invoke-virtual {v0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
 
@@ -1068,28 +1068,28 @@
     :goto_3d
     return-void
 
-    .line 426
+    .line 428
     :cond_3e
     invoke-virtual {v2, v0}, Landroid/app/Dialog;->setOnKeyListener(Landroid/content/DialogInterface$OnKeyListener;)V
 
-    .line 428
-    new-instance v2, Landroid/util/DisplayMetrics;
+    .line 430
+    new-instance v6, Landroid/util/DisplayMetrics;
 
-    invoke-direct {v2}, Landroid/util/DisplayMetrics;-><init>()V
+    invoke-direct {v6}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 429
+    .line 431
     invoke-virtual {v5}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
 
     move-result-object v5
 
-    .line 430
+    .line 432
     invoke-interface {v5}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v5
 
-    invoke-virtual {v5, v2}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+    invoke-virtual {v5, v6}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 432
+    .line 434
     invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v5
@@ -1098,132 +1098,153 @@
 
     move-result-object v5
 
-    sget v6, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_margin:I
+    sget v7, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_margin:I
 
-    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimension(I)F
+    invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result v5
 
-    .line 433
-    iget v6, v2, Landroid/util/DisplayMetrics;->heightPixels:I
+    .line 435
+    iget v7, v6, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    int-to-float v6, v6
+    int-to-float v7, v7
 
-    div-float v6, v5, v6
+    div-float v7, v5, v7
 
-    iput v6, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
+    iput v7, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
 
-    .line 434
-    iget v6, v2, Landroid/util/DisplayMetrics;->widthPixels:I
+    .line 436
+    iget v7, v6, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    int-to-float v6, v6
+    int-to-float v7, v7
 
-    div-float/2addr v5, v6
+    div-float/2addr v5, v7
 
     iput v5, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->horizontalMarginRatio:F
 
-    .line 436
+    .line 438
     invoke-virtual {v4}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v5
 
-    .line 437
+    .line 439
     iput v3, v5, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
-
-    const/4 v6, 0x0
-
-    .line 438
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->y:I
 
     const/4 v7, 0x0
 
-    .line 439
-    iput v7, v5, Landroid/view/WindowManager$LayoutParams;->verticalMargin:F
-
     .line 440
-    iput v7, v5, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
+    iput v7, v5, Landroid/view/WindowManager$LayoutParams;->y:I
+
+    const/4 v8, 0x0
 
     .line 441
-    iget v7, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mScreenFormType:I
+    iput v8, v5, Landroid/view/WindowManager$LayoutParams;->verticalMargin:F
 
-    const/16 v8, 0xb4
+    .line 442
+    iput v8, v5, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
 
-    const/16 v9, 0x10e
+    .line 443
+    iget v8, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mScreenFormType:I
 
-    const/16 v10, 0x5a
+    const/16 v9, 0x11
 
-    const/4 v11, -0x2
+    const/16 v10, 0xb4
 
-    if-eq v7, v3, :cond_236
+    const/16 v11, 0x10e
 
-    const/4 v12, 0x4
+    const/16 v12, 0x5a
 
-    if-eq v7, v12, :cond_236
+    const/4 v13, -0x2
 
-    const/4 v12, 0x5
+    if-eq v8, v3, :cond_247
 
-    if-ne v7, v12, :cond_8d
+    const/4 v14, 0x4
 
-    goto/16 :goto_236
+    if-eq v8, v14, :cond_247
 
-    :cond_8d
-    const v12, 0x3eae147b    # 0.34f
+    const/4 v14, 0x5
 
-    const/16 v14, 0x15
+    if-ne v8, v14, :cond_8f
+
+    goto/16 :goto_247
+
+    .line 454
+    :cond_8f
+    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_9c
+
+    .line 455
+    iput v9, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
+
+    .line 456
+    invoke-static {v2}, Lcom/transsion/widgetslib/util/Utils;->setDialogWidth(Landroid/app/Dialog;)V
+
+    goto/16 :goto_279
+
+    .line 457
+    :cond_9c
+    iget v2, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mScreenFormType:I
+
+    const v8, 0x3eae147b    # 0.34f
+
+    const/16 v9, 0x15
 
     const-wide v15, 0x3feccccccccccccdL    # 0.9
 
     const-wide/high16 v17, 0x3fe0000000000000L    # 0.5
 
-    if-eqz v7, :cond_1c9
+    if-eqz v2, :cond_1da
 
-    const/4 v13, 0x3
+    const/4 v14, 0x3
 
-    if-ne v7, v13, :cond_a0
+    if-ne v2, v14, :cond_b1
 
-    goto/16 :goto_1c9
+    goto/16 :goto_1da
 
-    :cond_a0
-    const/4 v6, 0x2
+    :cond_b1
+    const/4 v7, 0x2
 
-    if-ne v7, v6, :cond_ea
+    if-ne v2, v7, :cond_fb
 
-    .line 478
+    .line 483
     iget v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mOrientation:I
 
-    if-eq v1, v10, :cond_d8
+    if-eq v1, v12, :cond_e9
 
-    if-ne v1, v9, :cond_aa
+    if-ne v1, v11, :cond_bb
 
-    goto :goto_d8
+    goto :goto_e9
 
-    :cond_aa
-    if-eqz v1, :cond_ae
+    :cond_bb
+    if-eqz v1, :cond_bf
 
-    if-ne v1, v8, :cond_26a
+    if-ne v1, v10, :cond_279
 
-    :cond_ae
+    :cond_bf
     const/16 v1, 0x55
 
-    .line 484
+    .line 489
     iput v1, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 485
+    .line 490
     iget v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
 
     iput v1, v5, Landroid/view/WindowManager$LayoutParams;->verticalMargin:F
 
     const v1, 0x3ccccccd    # 0.025f
 
-    .line 486
+    .line 491
     iput v1, v5, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
 
     const/16 v1, 0x399
 
-    .line 487
-    invoke-virtual {v4, v1, v11}, Landroid/view/Window;->setLayout(II)V
+    .line 492
+    invoke-virtual {v4, v1, v13}, Landroid/view/Window;->setLayout(II)V
 
-    .line 489
+    .line 494
     invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1234,9 +1255,9 @@
 
     move-result v1
 
-    if-nez v1, :cond_26a
+    if-nez v1, :cond_279
 
-    .line 490
+    .line 495
     invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1247,20 +1268,20 @@
 
     iput v0, v5, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    goto/16 :goto_26a
+    goto/16 :goto_279
 
-    .line 479
-    :cond_d8
-    :goto_d8
-    iput v14, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    .line 484
+    :cond_e9
+    :goto_e9
+    iput v9, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
     const v0, 0x3e1eb852    # 0.155f
 
-    .line 480
+    .line 485
     iput v0, v5, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
 
-    .line 481
-    iget v0, v2, Landroid/util/DisplayMetrics;->heightPixels:I
+    .line 486
+    iget v0, v6, Landroid/util/DisplayMetrics;->heightPixels:I
 
     int-to-double v0, v0
 
@@ -1268,163 +1289,65 @@
 
     double-to-int v0, v0
 
-    invoke-virtual {v4, v11, v0}, Landroid/view/Window;->setLayout(II)V
+    invoke-virtual {v4, v13, v0}, Landroid/view/Window;->setLayout(II)V
 
-    goto/16 :goto_26a
+    goto/16 :goto_279
 
-    :cond_ea
-    const/4 v6, 0x7
+    :cond_fb
+    const/4 v7, 0x7
 
-    if-ne v7, v6, :cond_26a
+    if-ne v2, v7, :cond_279
 
-    .line 494
-    new-instance v6, Ljava/lang/StringBuilder;
+    .line 499
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v7, "[updateWindow] mDialogWindowPosition = "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v7, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mDialogWindowPosition:I
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-static {v1, v6}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 495
+    .line 500
     iget-boolean v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mIsBeautyResetDialog:Z
 
-    if-eqz v1, :cond_10c
+    if-eqz v1, :cond_11d
 
     const v1, 0x3d89374c    # 0.067f
 
-    .line 496
+    .line 501
     iput v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
 
-    .line 498
-    :cond_10c
+    .line 503
+    :cond_11d
     iget v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mOrientation:I
 
-    const v6, 0x800013
+    const v2, 0x800013
 
-    if-eq v1, v10, :cond_18d
+    if-eq v1, v12, :cond_19e
 
-    if-ne v1, v9, :cond_117
+    if-ne v1, v11, :cond_128
 
-    goto/16 :goto_18d
+    goto/16 :goto_19e
 
-    :cond_117
-    if-nez v1, :cond_152
-
-    .line 509
-    iget v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mDialogWindowPosition:I
-
-    if-nez v1, :cond_12f
-
-    .line 510
-    invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_filp_x_0:I
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    iput v1, v5, Landroid/view/WindowManager$LayoutParams;->x:I
-
-    goto :goto_142
-
-    :cond_12f
-    if-ne v3, v1, :cond_142
-
-    .line 512
-    invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_filp_x_180:I
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    iput v1, v5, Landroid/view/WindowManager$LayoutParams;->x:I
+    :cond_128
+    if-nez v1, :cond_163
 
     .line 514
-    :cond_142
-    :goto_142
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
-
-    .line 515
-    iget v0, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
-
-    iput v0, v5, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
-
-    .line 516
-    iget v0, v2, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    int-to-double v0, v0
-
-    mul-double/2addr v0, v15
-
-    double-to-int v0, v0
-
-    invoke-virtual {v4, v0, v11}, Landroid/view/Window;->setLayout(II)V
-
-    goto/16 :goto_26a
-
-    :cond_152
-    if-ne v1, v8, :cond_26a
-
-    .line 519
     iget v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mDialogWindowPosition:I
 
-    if-ne v3, v1, :cond_16a
+    if-nez v1, :cond_140
 
-    .line 520
-    invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_filp_x_180:I
-
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    iput v1, v5, Landroid/view/WindowManager$LayoutParams;->x:I
-
-    goto :goto_17d
-
-    :cond_16a
-    if-nez v1, :cond_17d
-
-    .line 522
+    .line 515
     invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1443,18 +1366,42 @@
 
     iput v1, v5, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    .line 524
-    :cond_17d
-    :goto_17d
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    goto :goto_153
 
-    .line 525
+    :cond_140
+    if-ne v3, v1, :cond_153
+
+    .line 517
+    invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_filp_x_180:I
+
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    iput v1, v5, Landroid/view/WindowManager$LayoutParams;->x:I
+
+    .line 519
+    :cond_153
+    :goto_153
+    iput v2, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
+
+    .line 520
     iget v0, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
 
     iput v0, v5, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
 
-    .line 526
-    iget v0, v2, Landroid/util/DisplayMetrics;->widthPixels:I
+    .line 521
+    iget v0, v6, Landroid/util/DisplayMetrics;->widthPixels:I
 
     int-to-double v0, v0
 
@@ -1462,18 +1409,92 @@
 
     double-to-int v0, v0
 
-    invoke-virtual {v4, v0, v11}, Landroid/view/Window;->setLayout(II)V
+    invoke-virtual {v4, v0, v13}, Landroid/view/Window;->setLayout(II)V
 
-    goto/16 :goto_26a
+    goto/16 :goto_279
 
-    .line 499
-    :cond_18d
-    :goto_18d
+    :cond_163
+    if-ne v1, v10, :cond_279
+
+    .line 524
     iget v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mDialogWindowPosition:I
 
-    if-nez v1, :cond_1a3
+    if-ne v3, v1, :cond_17b
 
-    .line 500
+    .line 525
+    invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_filp_x_180:I
+
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    iput v1, v5, Landroid/view/WindowManager$LayoutParams;->x:I
+
+    goto :goto_18e
+
+    :cond_17b
+    if-nez v1, :cond_18e
+
+    .line 527
+    invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    sget v3, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_filp_x_0:I
+
+    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    iput v1, v5, Landroid/view/WindowManager$LayoutParams;->x:I
+
+    .line 529
+    :cond_18e
+    :goto_18e
+    iput v2, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
+
+    .line 530
+    iget v0, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
+
+    iput v0, v5, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
+
+    .line 531
+    iget v0, v6, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    int-to-double v0, v0
+
+    mul-double/2addr v0, v15
+
+    double-to-int v0, v0
+
+    invoke-virtual {v4, v0, v13}, Landroid/view/Window;->setLayout(II)V
+
+    goto/16 :goto_279
+
+    .line 504
+    :cond_19e
+    :goto_19e
+    iget v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mDialogWindowPosition:I
+
+    if-nez v1, :cond_1b4
+
+    .line 505
     invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1492,12 +1513,12 @@
 
     iput v0, v5, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    goto :goto_1b6
+    goto :goto_1c7
 
-    :cond_1a3
-    if-ne v1, v3, :cond_1b6
+    :cond_1b4
+    if-ne v1, v3, :cond_1c7
 
-    .line 502
+    .line 507
     invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1516,16 +1537,16 @@
 
     iput v0, v5, Landroid/view/WindowManager$LayoutParams;->x:I
 
-    .line 504
-    :cond_1b6
-    :goto_1b6
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    .line 509
+    :cond_1c7
+    :goto_1c7
+    iput v2, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 505
-    iput v12, v5, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
+    .line 510
+    iput v8, v5, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
 
-    .line 506
-    iget v0, v2, Landroid/util/DisplayMetrics;->heightPixels:I
+    .line 511
+    iget v0, v6, Landroid/util/DisplayMetrics;->heightPixels:I
 
     int-to-double v0, v0
 
@@ -1535,69 +1556,69 @@
 
     double-to-int v0, v0
 
-    invoke-virtual {v4, v11, v0}, Landroid/view/Window;->setLayout(II)V
+    invoke-virtual {v4, v13, v0}, Landroid/view/Window;->setLayout(II)V
 
-    goto/16 :goto_26a
+    goto/16 :goto_279
 
-    .line 455
-    :cond_1c9
-    :goto_1c9
-    iget-boolean v7, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mIsBeautyResetDialog:Z
+    .line 460
+    :cond_1da
+    :goto_1da
+    iget-boolean v2, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mIsBeautyResetDialog:Z
 
-    if-eqz v7, :cond_1d2
+    if-eqz v2, :cond_1e3
 
-    const v7, 0x3cb43958    # 0.022f
+    const v2, 0x3cb43958    # 0.022f
 
-    .line 456
-    iput v7, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
+    .line 461
+    iput v2, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
 
-    .line 458
-    :cond_1d2
-    new-instance v7, Ljava/lang/StringBuilder;
+    .line 463
+    :cond_1e3
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v13, "updateWindow, verticalMarginRatio: "
+    const-string/jumbo v14, "updateWindow, verticalMarginRatio: "
 
-    invoke-virtual {v7, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v13, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
+    iget v14, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
 
-    invoke-virtual {v7, v13}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v14}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-static {v1, v7}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 459
+    .line 464
     iget v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mOrientation:I
 
-    if-eq v1, v10, :cond_228
+    if-eq v1, v12, :cond_239
 
-    if-ne v1, v9, :cond_1f0
+    if-ne v1, v11, :cond_201
 
-    goto :goto_228
+    goto :goto_239
 
-    :cond_1f0
-    if-eqz v1, :cond_1f4
+    :cond_201
+    if-eqz v1, :cond_205
 
-    if-ne v1, v8, :cond_26a
+    if-ne v1, v10, :cond_279
 
-    :cond_1f4
+    :cond_205
     const/16 v1, 0x51
 
-    .line 465
+    .line 470
     iput v1, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 466
+    .line 471
     iget v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->verticalMarginRatio:F
 
     iput v1, v5, Landroid/view/WindowManager$LayoutParams;->verticalMargin:F
 
-    .line 467
-    iget v1, v2, Landroid/util/DisplayMetrics;->widthPixels:I
+    .line 472
+    iget v1, v6, Landroid/util/DisplayMetrics;->widthPixels:I
 
     int-to-double v1, v1
 
@@ -1605,9 +1626,9 @@
 
     double-to-int v1, v1
 
-    invoke-virtual {v4, v1, v11}, Landroid/view/Window;->setLayout(II)V
+    invoke-virtual {v4, v1, v13}, Landroid/view/Window;->setLayout(II)V
 
-    .line 469
+    .line 474
     invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1618,26 +1639,26 @@
 
     move-result v1
 
-    if-nez v1, :cond_26a
+    if-nez v1, :cond_279
 
-    .line 470
+    .line 475
     iget-boolean v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mIsBeautyResetDialog:Z
 
-    if-eqz v1, :cond_21d
+    if-eqz v1, :cond_22e
 
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x24
 
-    if-lt v1, v2, :cond_21d
+    if-lt v1, v2, :cond_22e
 
-    .line 471
-    iput v6, v5, Landroid/view/WindowManager$LayoutParams;->y:I
+    .line 476
+    iput v7, v5, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    goto :goto_26a
+    goto :goto_279
 
-    .line 473
-    :cond_21d
+    .line 478
+    :cond_22e
     invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1648,18 +1669,18 @@
 
     iput v0, v5, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    goto :goto_26a
+    goto :goto_279
 
-    .line 460
-    :cond_228
-    :goto_228
-    iput v14, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    .line 465
+    :cond_239
+    :goto_239
+    iput v9, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 461
-    iput v12, v5, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
+    .line 466
+    iput v8, v5, Landroid/view/WindowManager$LayoutParams;->horizontalMargin:F
 
-    .line 462
-    iget v0, v2, Landroid/util/DisplayMetrics;->heightPixels:I
+    .line 467
+    iget v0, v6, Landroid/util/DisplayMetrics;->heightPixels:I
 
     int-to-double v0, v0
 
@@ -1667,78 +1688,76 @@
 
     double-to-int v0, v0
 
-    invoke-virtual {v4, v11, v0}, Landroid/view/Window;->setLayout(II)V
+    invoke-virtual {v4, v13, v0}, Landroid/view/Window;->setLayout(II)V
 
-    goto :goto_26a
-
-    :cond_236
-    :goto_236
-    const/16 v1, 0x11
-
-    .line 444
-    iput v1, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
-
-    .line 445
-    iget v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mOrientation:I
-
-    if-eq v1, v10, :cond_258
-
-    if-ne v1, v9, :cond_241
-
-    goto :goto_258
-
-    :cond_241
-    if-eqz v1, :cond_245
-
-    if-ne v1, v8, :cond_26a
-
-    .line 449
-    :cond_245
-    invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_w_expend:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    invoke-virtual {v4, v0, v11}, Landroid/view/Window;->setLayout(II)V
-
-    goto :goto_26a
-
-    .line 447
-    :cond_258
-    :goto_258
-    invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_w_expend:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v0
-
-    float-to-int v0, v0
+    goto :goto_279
 
     .line 446
-    invoke-virtual {v4, v11, v0}, Landroid/view/Window;->setLayout(II)V
+    :cond_247
+    :goto_247
+    iput v9, v5, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 531
-    :cond_26a
-    :goto_26a
+    .line 447
+    iget v1, v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mOrientation:I
+
+    if-eq v1, v12, :cond_267
+
+    if-ne v1, v11, :cond_250
+
+    goto :goto_267
+
+    :cond_250
+    if-eqz v1, :cond_254
+
+    if-ne v1, v10, :cond_279
+
+    .line 451
+    :cond_254
+    invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_w_expend:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    invoke-virtual {v4, v0, v13}, Landroid/view/Window;->setLayout(II)V
+
+    goto :goto_279
+
+    .line 449
+    :cond_267
+    :goto_267
+    invoke-virtual {v0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$dimen;->confirm_dialog_w_expend:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    .line 448
+    invoke-virtual {v4, v13, v0}, Landroid/view/Window;->setLayout(II)V
+
+    .line 536
+    :cond_279
+    :goto_279
     invoke-virtual {v4, v5}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
     return-void
@@ -1749,7 +1768,7 @@
 .method public clearDialogList()V
     .registers 1
 
-    .line 590
+    .line 595
     sget-object p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mShowDialogs:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->clear()V
@@ -1760,7 +1779,7 @@
 .method public dismiss()V
     .registers 4
 
-    .line 568
+    .line 573
     :try_start_0
     invoke-super {p0}, Landroid/app/DialogFragment;->dismiss()V
     :try_end_3
@@ -1771,7 +1790,7 @@
     :catch_4
     move-exception p0
 
-    .line 570
+    .line 575
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1800,7 +1819,7 @@
 .method public dismissAllowingStateLoss()V
     .registers 4
 
-    .line 577
+    .line 582
     :try_start_0
     invoke-super {p0}, Landroid/app/DialogFragment;->dismissAllowingStateLoss()V
     :try_end_3
@@ -1811,7 +1830,7 @@
     :catch_4
     move-exception p0
 
-    .line 579
+    .line 584
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1840,7 +1859,7 @@
 .method public hasNavigationBar(Landroid/app/Activity;)Z
     .registers 6
 
-    .line 594
+    .line 599
     invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object p0
@@ -1857,7 +1876,7 @@
 
     move v1, v0
 
-    .line 596
+    .line 601
     :goto_e
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1865,7 +1884,7 @@
 
     if-ge v1, v2, :cond_47
 
-    .line 597
+    .line 602
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -1876,7 +1895,7 @@
 
     invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    .line 598
+    .line 603
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -1889,7 +1908,7 @@
 
     if-eq v2, v3, :cond_44
 
-    .line 599
+    .line 604
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -1930,14 +1949,14 @@
 .method public isDialogShow()Z
     .registers 4
 
-    .line 584
+    .line 589
     sget-object p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mShowDialogs:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p0
 
-    .line 585
+    .line 590
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1971,17 +1990,17 @@
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .registers 3
 
-    .line 393
+    .line 395
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    .line 394
+    .line 396
     sget-object p1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "onActivityCreated"
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 395
+    .line 397
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->updateWindow()V
 
     return-void
@@ -1990,21 +2009,21 @@
 .method public onActivityPause()V
     .registers 3
 
-    .line 399
+    .line 401
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onActivityPause"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 400
+    .line 402
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->handler:Lcom/transsion/camera/app/ui/widget/ConfirmDialog$UIHandler;
 
     if-eqz p0, :cond_f
 
     const/4 v0, 0x1
 
-    .line 401
+    .line 403
     invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
     :cond_f
@@ -2014,10 +2033,10 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .registers 2
 
-    .line 152
+    .line 154
     invoke-super {p0, p1}, Landroid/app/Fragment;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 153
+    .line 155
     sget-object p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onConfigurationChanged"
@@ -2030,7 +2049,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .registers 6
 
-    .line 203
+    .line 205
     iget p3, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mScreenFormType:I
 
     const/4 v0, 0x0
@@ -2039,7 +2058,7 @@
 
     if-ne v1, p3, :cond_d
 
-    .line 204
+    .line 206
     sget p3, Lcom/transsion/camera/featurelibs/commonwidget/R$layout;->confirm_dialog_filp_layout:I
 
     invoke-virtual {p1, p3, p2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
@@ -2048,7 +2067,7 @@
 
     goto :goto_13
 
-    .line 207
+    .line 209
     :cond_d
     sget p3, Lcom/transsion/camera/featurelibs/commonwidget/R$layout;->confirm_dialog_layout:I
 
@@ -2056,7 +2075,7 @@
 
     move-result-object p1
 
-    .line 211
+    .line 213
     :goto_13
     new-instance p2, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$UIHandler;
 
@@ -2066,24 +2085,24 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->handler:Lcom/transsion/camera/app/ui/widget/ConfirmDialog$UIHandler;
 
-    .line 213
+    .line 215
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->findView(Landroid/view/View;)V
 
-    .line 215
+    .line 217
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->initView()V
 
-    .line 217
+    .line 219
     invoke-virtual {p0, v0}, Landroid/app/DialogFragment;->setCancelable(Z)V
 
-    .line 219
+    .line 221
     iget p2, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mScreenFormType:I
 
     if-ne v1, p2, :cond_2b
 
-    .line 220
+    .line 222
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->initFlipDialog()V
 
-    .line 223
+    .line 225
     :cond_2b
     invoke-virtual {p0}, Landroid/app/Fragment;->getContext()Landroid/content/Context;
 
@@ -2095,7 +2114,7 @@
 
     if-eqz p2, :cond_43
 
-    .line 224
+    .line 226
     invoke-virtual {p0}, Landroid/app/DialogFragment;->getDialog()Landroid/app/Dialog;
 
     move-result-object p2
@@ -2110,7 +2129,7 @@
 
     goto :goto_50
 
-    .line 226
+    .line 228
     :cond_43
     invoke-virtual {p0}, Landroid/app/DialogFragment;->getDialog()Landroid/app/Dialog;
 
@@ -2124,7 +2143,7 @@
 
     invoke-virtual {p2, p3}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
 
-    .line 228
+    .line 230
     :goto_50
     invoke-virtual {p0}, Landroid/app/DialogFragment;->getDialog()Landroid/app/Dialog;
 
@@ -2148,10 +2167,10 @@
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .registers 4
 
-    .line 158
+    .line 160
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onDismiss(Landroid/content/DialogInterface;)V
 
-    .line 159
+    .line 161
     sget-object p1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2170,17 +2189,17 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 160
+    .line 162
     sget-object p1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mShowDialogs:Ljava/util/List;
 
     invoke-interface {p1, p0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 161
+    .line 163
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mCallBack:Lcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;
 
     if-eqz p0, :cond_25
 
-    .line 162
+    .line 164
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$ICallBack;->onDismiss()V
 
     :cond_25
@@ -2194,7 +2213,7 @@
 
     if-ne p1, p2, :cond_8
 
-    .line 537
+    .line 542
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->onBackPressed()Z
 
     move-result p0
@@ -2210,10 +2229,10 @@
 .method public onPause()V
     .registers 1
 
-    .line 407
+    .line 409
     invoke-super {p0}, Landroid/app/Fragment;->onPause()V
 
-    .line 408
+    .line 410
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->dismissAllowingStateLoss()V
 
     return-void
@@ -2222,7 +2241,7 @@
 .method public setBeautyResetDialog(Z)V
     .registers 2
 
-    .line 612
+    .line 617
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mIsBeautyResetDialog:Z
 
     return-void
@@ -2231,7 +2250,7 @@
 .method public show(Landroid/app/FragmentManager;Ljava/lang/String;)V
     .registers 6
 
-    .line 549
+    .line 554
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2250,13 +2269,13 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 550
+    .line 555
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mFragmentManager:Landroid/app/FragmentManager;
 
-    .line 551
+    .line 556
     iput-object p2, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mTag:Ljava/lang/String;
 
-    .line 553
+    .line 558
     :try_start_1a
     invoke-virtual {p1, p2}, Landroid/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroid/app/Fragment;
 
@@ -2264,30 +2283,30 @@
 
     if-eqz v0, :cond_31
 
-    .line 554
+    .line 559
     invoke-virtual {v0}, Landroid/app/Fragment;->isAdded()Z
 
     move-result v1
 
     if-eqz v1, :cond_31
 
-    .line 555
+    .line 560
     invoke-virtual {p1}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
 
     move-result-object v1
 
-    .line 556
+    .line 561
     invoke-virtual {v1, v0}, Landroid/app/FragmentTransaction;->remove(Landroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/FragmentTransaction;->commitAllowingStateLoss()I
 
-    .line 558
+    .line 563
     :cond_31
     invoke-super {p0, p1, p2}, Landroid/app/DialogFragment;->show(Landroid/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 559
+    .line 564
     sget-object p1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mShowDialogs:Ljava/util/List;
 
     invoke-interface {p1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -2299,7 +2318,7 @@
     :catch_3a
     move-exception p0
 
-    .line 561
+    .line 566
     sget-object p1, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -2328,7 +2347,7 @@
 .method public updateDialogLayout(II)V
     .registers 10
 
-    .line 167
+    .line 169
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2353,7 +2372,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 168
+    .line 170
     invoke-virtual {p0}, Landroid/app/Fragment;->isVisible()Z
 
     move-result v1
@@ -2368,7 +2387,7 @@
 
     if-eq v1, p2, :cond_60
 
-    .line 169
+    .line 171
     :cond_2d
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->needHideDialog(I)Z
 
@@ -2376,10 +2395,10 @@
 
     if-eqz v1, :cond_36
 
-    .line 170
+    .line 172
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->dismissAllowingStateLoss()V
 
-    .line 172
+    .line 174
     :cond_36
     iget v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mScreenFormType:I
 
@@ -2414,7 +2433,7 @@
 
     if-ne p1, v2, :cond_60
 
-    .line 182
+    .line 184
     :cond_51
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->handler:Lcom/transsion/camera/app/ui/widget/ConfirmDialog$UIHandler;
 
@@ -2424,26 +2443,26 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 183
+    .line 185
     const-string/jumbo v1, "updateDialogLayout send MSG_SHOW_DIALOG"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 186
+    .line 188
     :cond_60
     iput p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mScreenFormType:I
 
-    .line 187
+    .line 189
     iput p2, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mOrientation:I
 
-    .line 188
+    .line 190
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->mContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-eqz p0, :cond_6c
 
     const/4 p1, 0x0
 
-    .line 189
+    .line 191
     invoke-virtual {p0, p2, p1}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
     :cond_6c

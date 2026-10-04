@@ -102,7 +102,7 @@
 .method public static e(Ljava/lang/String;Ljava/lang/String;)I
     .registers 3
 
-    .line 102
+    .line 108
     sget-object v0, Lcom/transsion/hubsdk/common/util/TranSdkLog;->sLogger:Lcom/transsion/hubsdk/common/util/ITranLogger;
 
     invoke-interface {v0, p0, p1}, Lcom/transsion/hubsdk/common/util/ITranLogger;->e(Ljava/lang/String;Ljava/lang/String;)I
@@ -115,7 +115,7 @@
 .method public static e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .registers 4
 
-    .line 106
+    .line 112
     sget-object v0, Lcom/transsion/hubsdk/common/util/TranSdkLog;->sLogger:Lcom/transsion/hubsdk/common/util/ITranLogger;
 
     invoke-interface {v0, p0, p1, p2}, Lcom/transsion/hubsdk/common/util/ITranLogger;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
@@ -200,7 +200,7 @@
 .method public static printStackTrace(Ljava/lang/Throwable;)V
     .registers 2
 
-    .line 110
+    .line 116
     sget-object v0, Lcom/transsion/hubsdk/common/util/TranSdkLog;->sLogger:Lcom/transsion/hubsdk/common/util/ITranLogger;
 
     invoke-interface {v0, p0}, Lcom/transsion/hubsdk/common/util/ITranLogger;->printStackTrace(Ljava/lang/Throwable;)V
@@ -292,6 +292,11 @@
     .registers 3
 
     .line 93
+    sget-boolean v0, Lcom/transsion/hubsdk/common/util/TranSdkLog;->DEBUG:Z
+
+    if-eqz v0, :cond_b
+
+    .line 94
     sget-object v0, Lcom/transsion/hubsdk/common/util/TranSdkLog;->sLogger:Lcom/transsion/hubsdk/common/util/ITranLogger;
 
     invoke-interface {v0, p0, p1}, Lcom/transsion/hubsdk/common/util/ITranLogger;->w(Ljava/lang/String;Ljava/lang/String;)I
@@ -299,17 +304,32 @@
     move-result p0
 
     return p0
+
+    :cond_b
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .registers 4
 
-    .line 98
+    .line 101
+    sget-boolean v0, Lcom/transsion/hubsdk/common/util/TranSdkLog;->DEBUG:Z
+
+    if-eqz v0, :cond_b
+
+    .line 102
     sget-object v0, Lcom/transsion/hubsdk/common/util/TranSdkLog;->sLogger:Lcom/transsion/hubsdk/common/util/ITranLogger;
 
     invoke-interface {v0, p0, p1, p2}, Lcom/transsion/hubsdk/common/util/ITranLogger;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     move-result p0
+
+    return p0
+
+    :cond_b
+    const/4 p0, 0x0
 
     return p0
 .end method

@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static ultrahd_mode_description:I = 0x7f1305bc
+.field public static ultrahd_mode_description:I = 0x7f1305b5
 
-.field public static ultrahd_mode_tips:I = 0x7f1305bd
+.field public static ultrahd_mode_tips:I = 0x7f1305b6
 
-.field public static ultrahd_mode_title:I = 0x7f1305be
+.field public static ultrahd_mode_title:I = 0x7f1305b7
 
 
 # direct methods

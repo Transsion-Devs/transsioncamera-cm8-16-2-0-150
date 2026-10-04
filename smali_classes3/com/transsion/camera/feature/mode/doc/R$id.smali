@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static doc_bg:I = 0x7f0b01b1
+.field public static doc_bg:I = 0x7f0b01b3
 
-.field public static doc_image:I = 0x7f0b01b2
+.field public static doc_image:I = 0x7f0b01b4
 
-.field public static doc_layout:I = 0x7f0b01b3
+.field public static doc_layout:I = 0x7f0b01b5
 
-.field public static doc_root:I = 0x7f0b01b4
+.field public static doc_root:I = 0x7f0b01b6
 
 
 # direct methods

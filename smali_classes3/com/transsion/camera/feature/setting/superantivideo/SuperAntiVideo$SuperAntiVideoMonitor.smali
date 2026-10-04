@@ -73,19 +73,19 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;)V
     .registers 2
 
-    .line 647
+    .line 646
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->this$0:Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 648
+    .line 647
     new-instance p1, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {p1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    .line 649
+    .line 648
     new-instance p1, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {p1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
@@ -107,7 +107,7 @@
 .method private addAvoidKey(Ljava/lang/String;)V
     .registers 2
 
-    .line 716
+    .line 715
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mAvoidSettingKeys:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
@@ -118,7 +118,7 @@
 .method private clearAll()V
     .registers 1
 
-    .line 689
+    .line 688
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->clear()V
@@ -129,7 +129,7 @@
 .method private get(I)Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;
     .registers 2
 
-    .line 693
+    .line 692
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->get(I)Ljava/lang/Object;
@@ -144,7 +144,7 @@
 .method private getFirst()Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;
     .registers 2
 
-    .line 701
+    .line 700
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->size()I
@@ -157,7 +157,7 @@
 
     return-object p0
 
-    .line 704
+    .line 703
     :cond_a
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -177,7 +177,7 @@
 
     const/4 v0, 0x0
 
-    .line 679
+    .line 678
     :goto_1
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -187,7 +187,7 @@
 
     if-ge v0, v1, :cond_1d
 
-    .line 680
+    .line 679
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->get(I)Ljava/lang/Object;
@@ -196,7 +196,7 @@
 
     check-cast v1, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;
 
-    .line 681
+    .line 680
     iget-object v1, v1, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;->headerKey:Ljava/lang/String;
 
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -221,7 +221,7 @@
 .method private isContainAvoidKey(Ljava/lang/String;)Z
     .registers 5
 
-    .line 724
+    .line 723
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mAvoidSettingKeys:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->size()I
@@ -237,7 +237,7 @@
     :cond_a
     move v0, v1
 
-    .line 727
+    .line 726
     :goto_b
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mAvoidSettingKeys:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -247,7 +247,7 @@
 
     if-ge v0, v2, :cond_26
 
-    .line 728
+    .line 727
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mAvoidSettingKeys:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->get(I)Ljava/lang/Object;
@@ -256,7 +256,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 729
+    .line 728
     invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -279,7 +279,7 @@
 .method private remove(Ljava/lang/String;)I
     .registers 3
 
-    .line 708
+    .line 707
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->indexOf(Ljava/lang/String;)I
 
     move-result p1
@@ -288,7 +288,7 @@
 
     if-eq p1, v0, :cond_c
 
-    .line 710
+    .line 709
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(I)Ljava/lang/Object;
@@ -300,7 +300,7 @@
 .method private size()I
     .registers 1
 
-    .line 697
+    .line 696
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->size()I
@@ -313,7 +313,7 @@
 .method private sizeOfAvoidKeys()I
     .registers 1
 
-    .line 720
+    .line 719
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mAvoidSettingKeys:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->size()I
@@ -328,7 +328,7 @@
 .method public add(Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;)V
     .registers 6
 
-    .line 652
+    .line 651
     iget-object v0, p1, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;->headerKey:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->indexOf(Ljava/lang/String;)I
@@ -337,14 +337,14 @@
 
     const/4 v1, -0x1
 
-    .line 653
+    .line 652
     const-string v2, "override_values_off"
 
     const-string/jumbo v3, "value_change_off"
 
     if-eq v0, v1, :cond_24
 
-    .line 654
+    .line 653
     iget-object v1, p1, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;->currentValue:Ljava/lang/String;
 
     invoke-static {v1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -355,14 +355,14 @@
 
     iget-object p1, p1, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;->currentValue:Ljava/lang/String;
 
-    .line 655
+    .line 654
     invoke-static {p1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_5a
 
-    .line 656
+    .line 655
     :cond_1e
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -370,7 +370,7 @@
 
     return-void
 
-    .line 659
+    .line 658
     :cond_24
     iget-object v0, p1, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;->currentValue:Ljava/lang/String;
 
@@ -382,14 +382,14 @@
 
     iget-object v0, p1, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;->currentValue:Ljava/lang/String;
 
-    .line 660
+    .line 659
     invoke-static {v0, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_5a
 
-    .line 661
+    .line 660
     iget-object v0, p1, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;->headerKey:Ljava/lang/String;
 
     const-string v1, "key_video_quality"
@@ -424,7 +424,7 @@
 
     goto :goto_5a
 
-    .line 664
+    .line 663
     :cond_55
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -438,22 +438,22 @@
 .method public addVideoKey(Ljava/lang/String;)V
     .registers 4
 
-    .line 671
+    .line 670
     new-instance v0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->this$0:Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;
 
     invoke-direct {v0, v1}, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;-><init>(Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;)V
 
-    .line 672
+    .line 671
     const-string v1, "key_video_quality"
 
     iput-object v1, v0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;->headerKey:Ljava/lang/String;
 
-    .line 673
+    .line 672
     iput-object p1, v0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;->currentValue:Ljava/lang/String;
 
-    .line 674
+    .line 673
     const-string p1, "null"
 
     invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
@@ -462,7 +462,7 @@
 
     iput-object p1, v0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SettingValue;->supportValues:Ljava/util/List;
 
-    .line 675
+    .line 674
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->this$0:Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;->-$$Nest$fgetmSuperAntiVideoMonitor(Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;)Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;
@@ -477,7 +477,7 @@
 .method public print()V
     .registers 5
 
-    .line 737
+    .line 736
     invoke-static {}, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -506,7 +506,7 @@
 
     const/4 v0, 0x0
 
-    .line 738
+    .line 737
     :goto_1f
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -516,7 +516,7 @@
 
     if-ge v0, v1, :cond_5e
 
-    .line 739
+    .line 738
     invoke-static {}, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v1
@@ -547,7 +547,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/superantivideo/SuperAntiVideo$SuperAntiVideoMonitor;->mSettingValueList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    .line 740
+    .line 739
     invoke-virtual {v3, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -562,7 +562,7 @@
 
     move-result-object v2
 
-    .line 739
+    .line 738
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     add-int/lit8 v0, v0, 0x1

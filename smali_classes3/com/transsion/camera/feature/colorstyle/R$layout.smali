@@ -16,7 +16,7 @@
 # static fields
 .field public static color_style_option:I = 0x7f0e005b
 
-.field public static split_item:I = 0x7f0e020c
+.field public static split_item:I = 0x7f0e0207
 
 
 # direct methods

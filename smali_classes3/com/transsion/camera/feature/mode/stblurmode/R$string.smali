@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static back_stblur_mode_title:I = 0x7f130180
+.field public static back_stblur_mode_title:I = 0x7f13017a
 
-.field public static front_stblur_mode_title:I = 0x7f1302d8
+.field public static front_stblur_mode_title:I = 0x7f1302d3
 
 
 # direct methods

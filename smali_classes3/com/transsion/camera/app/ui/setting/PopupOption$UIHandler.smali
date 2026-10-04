@@ -22,14 +22,14 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/setting/PopupOption;)V
     .registers 3
 
-    .line 260
+    .line 261
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 261
+    .line 262
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -53,7 +53,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 266
+    .line 267
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$UIHandler;->mUIReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -64,7 +64,7 @@
 
     if-nez p0, :cond_25
 
-    .line 268
+    .line 269
     invoke-static {}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -89,7 +89,7 @@
 
     return-void
 
-    .line 272
+    .line 273
     :cond_25
     iget p1, p1, Landroid/os/Message;->what:I
 
@@ -99,7 +99,7 @@
 
     return-void
 
-    .line 274
+    .line 275
     :cond_2c
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->dismissPopup()V
 

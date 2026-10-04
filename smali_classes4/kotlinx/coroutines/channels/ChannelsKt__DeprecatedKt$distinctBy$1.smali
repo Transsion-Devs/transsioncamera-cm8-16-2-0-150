@@ -27,9 +27,9 @@
     c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$distinctBy$1"
     f = "Deprecated.kt"
     l = {
-        0x183,
-        0x184,
-        0x186
+        0x1a1,
+        0x1a2,
+        0x1a4
     }
     m = "invokeSuspend"
 .end annotation
@@ -173,7 +173,7 @@
 
     move-result-object v0
 
-    .line 385
+    .line 415
     iget v1, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$distinctBy$1;->label:I
 
     const/4 v2, 0x3
@@ -266,12 +266,12 @@
 
     check-cast p1, Lkotlinx/coroutines/channels/ProducerScope;
 
-    .line 386
+    .line 416
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    .line 387
+    .line 417
     iget-object v5, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$distinctBy$1;->$this_distinctBy:Lkotlinx/coroutines/channels/ReceiveChannel;
 
     invoke-interface {v5}, Lkotlinx/coroutines/channels/ReceiveChannel;->iterator()Lkotlinx/coroutines/channels/ChannelIterator;
@@ -321,7 +321,7 @@
 
     move-result-object p1
 
-    .line 388
+    .line 418
     iget-object v7, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$distinctBy$1;->$selector:Lkotlin/jvm/functions/Function2;
 
     iput-object v6, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$distinctBy$1;->L$0:Ljava/lang/Object;
@@ -353,7 +353,7 @@
 
     move-object v6, v9
 
-    .line 389
+    .line 419
     :goto_9d
     invoke-virtual {v6, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
@@ -361,7 +361,7 @@
 
     if-nez v8, :cond_ba
 
-    .line 390
+    .line 420
     iput-object v7, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$distinctBy$1;->L$0:Ljava/lang/Object;
 
     iput-object v6, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$distinctBy$1;->L$1:Ljava/lang/Object;
@@ -386,7 +386,7 @@
 
     move-object v1, p1
 
-    .line 391
+    .line 421
     :goto_b6
     invoke-interface {v6, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
@@ -399,7 +399,7 @@
 
     goto :goto_67
 
-    .line 394
+    .line 424
     :cond_bd
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

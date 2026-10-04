@@ -26,7 +26,7 @@
 
     const/4 p1, 0x0
 
-    .line 48
+    .line 44
     :cond_7
     invoke-interface {p0, p1}, Lkotlinx/coroutines/channels/BroadcastChannel;->cancel(Ljava/util/concurrent/CancellationException;)V
 
@@ -53,7 +53,7 @@
 
     const/4 p1, 0x0
 
-    .line 54
+    .line 50
     :cond_7
     invoke-interface {p0, p1}, Lkotlinx/coroutines/channels/BroadcastChannel;->cancel(Ljava/lang/Throwable;)Z
 
@@ -83,7 +83,7 @@
         }
     .end annotation
 
-    .line 32
+    .line 28
     invoke-static {p0, p1}, Lkotlinx/coroutines/channels/SendChannel$DefaultImpls;->offer(Lkotlinx/coroutines/channels/SendChannel;Ljava/lang/Object;)Z
 
     move-result p0

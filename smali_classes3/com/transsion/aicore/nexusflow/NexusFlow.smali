@@ -44,6 +44,17 @@
     return-object p0
 .end method
 
+.method public static synthetic $r8$lambda$1J0k1wj_rBrp36dWAr5wUAc5XEw(Lcom/transsion/aicore/nexusflow/NexusFlow;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 2
+
+    .line 0
+    invoke-static {p0, p1}, Lcom/transsion/aicore/nexusflow/NexusFlow;->deInit$lambda$14$lambda$13(Lcom/transsion/aicore/nexusflow/NexusFlow;Landroid/os/Bundle;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static synthetic $r8$lambda$SkRY6NBjTsMb74exZiBeJ-ujT_8(Landroid/os/Bundle;)Lkotlin/Unit;
     .registers 1
 
@@ -389,6 +400,98 @@
     return-object p0
 .end method
 
+.method private static final deInit$lambda$14$lambda$13(Lcom/transsion/aicore/nexusflow/NexusFlow;Landroid/os/Bundle;)Lkotlin/Unit;
+    .registers 9
+
+    const-string v0, "result"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1
+    const-string v0, "success"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_29
+
+    .line 3
+    sget-object p1, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
+
+    iget-object p0, p0, Lcom/transsion/aicore/nexusflow/NexusFlow;->instanceId:Ljava/lang/String;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Server acknowledged deInit for "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "NexusFlow"
+
+    invoke-virtual {p1, v0, p0}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_54
+
+    .line 5
+    :cond_29
+    sget-object v1, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
+
+    iget-object p0, p0, Lcom/transsion/aicore/nexusflow/NexusFlow;->instanceId:Ljava/lang/String;
+
+    const-string v0, "error"
+
+    invoke-virtual {p1, v0}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Server failed to deInit for "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ": "
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v5, 0x4
+
+    const/4 v6, 0x0
+
+    const-string v2, "NexusFlow"
+
+    const/4 v4, 0x0
+
+    invoke-static/range {v1 .. v6}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->w$default(Lcom/transsion/aicore/nexusflow/utils/NFLog;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
+
+    .line 7
+    :goto_54
+    sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p0
+.end method
+
 .method private final dispatchLocalIfNeed(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Landroid/os/Bundle;Lkotlin/jvm/functions/Function1;)Z
     .registers 13
     .annotation system Ldalvik/annotation/Signature;
@@ -539,7 +642,7 @@
     .line 23
     const-string p2, "capabilities"
 
-    .line 372
+    .line 380
     new-array v3, v3, [Ljava/lang/String;
 
     invoke-interface {p3, v3}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
@@ -548,7 +651,7 @@
 
     check-cast p3, [Ljava/lang/String;
 
-    .line 373
+    .line 381
     invoke-virtual {v0, p2, p3}, Landroid/os/BaseBundle;->putStringArray(Ljava/lang/String;[Ljava/lang/String;)V
 
     goto :goto_89
@@ -577,14 +680,14 @@
     :goto_89
     if-eqz p4, :cond_8e
 
-    .line 376
+    .line 384
     invoke-virtual {v0, p4}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    .line 379
+    .line 387
     :cond_8e
     invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 383
+    .line 391
     sget-object p2, Lcom/transsion/aicore/nexusflow/d;->a:Lcom/transsion/aicore/nexusflow/d;
 
     iget-object p3, p0, Lcom/transsion/aicore/nexusflow/NexusFlow;->context:Landroid/content/Context;
@@ -593,17 +696,17 @@
 
     move-result-object p2
 
-    .line 386
+    .line 394
     new-instance p3, Lcom/transsion/aicore/nexusflow/NexusFlow$b;
 
     invoke-direct {p3, p1, p0, p5}, Lcom/transsion/aicore/nexusflow/NexusFlow$b;-><init>(Ljava/lang/String;Lcom/transsion/aicore/nexusflow/NexusFlow;Lkotlin/jvm/functions/Function1;)V
 
-    .line 411
+    .line 419
     iget-object p0, p0, Lcom/transsion/aicore/nexusflow/NexusFlow;->context:Landroid/content/Context;
 
     invoke-virtual {p2, p0, v0, p3}, Lcom/example/dispatcher_client/FlowPreDispatcher;->submitFlow(Landroid/content/Context;Landroid/os/Bundle;Lcom/example/dispatcher_client/ClientProcessCallBack;)V
 
-    .line 412
+    .line 420
     :cond_a3
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_a5
@@ -614,7 +717,7 @@
 
     goto :goto_111
 
-    .line 413
+    .line 421
     :goto_a6
     sget-object p1, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
 
@@ -640,7 +743,7 @@
 
     goto :goto_111
 
-    .line 414
+    .line 422
     :goto_c1
     sget-object p1, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
 
@@ -666,7 +769,7 @@
 
     goto :goto_111
 
-    .line 415
+    .line 423
     :goto_dc
     sget-object p1, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
 
@@ -692,7 +795,7 @@
 
     goto :goto_111
 
-    .line 416
+    .line 424
     :goto_f7
     sget-object p1, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
 
@@ -817,13 +920,13 @@
     .line 9
     sget-object v0, Lcom/transsion/aicore/nexusflow/callback/CallbackFactory;->INSTANCE:Lcom/transsion/aicore/nexusflow/callback/CallbackFactory;
 
-    new-instance v6, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda2;
+    new-instance v6, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda3;
 
-    invoke-direct {v6, v8}, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda2;-><init>(Ljava/lang/String;)V
+    invoke-direct {v6, v8}, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda3;-><init>(Ljava/lang/String;)V
 
-    new-instance v7, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda3;
+    new-instance v7, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda4;
 
-    invoke-direct {v7, v8}, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda3;-><init>(Ljava/lang/String;)V
+    invoke-direct {v7, v8}, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda4;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, v8, v6, v7}, Lcom/transsion/aicore/nexusflow/callback/CallbackFactory;->createSyncInternalCallback(Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lcom/transsion/aicore/nexusflow/FlowCallback;
 
@@ -1796,7 +1899,7 @@
 
     if-eqz p0, :cond_3d
 
-    goto/16 :goto_f4
+    goto/16 :goto_123
 
     .line 15
     :cond_3d
@@ -1806,9 +1909,7 @@
     :try_start_3f
     iget-object p0, v1, Lcom/transsion/aicore/nexusflow/NexusFlow;->context:Landroid/content/Context;
 
-    const/4 v2, 0x0
-
-    if-nez p0, :cond_61
+    if-nez p0, :cond_62
 
     .line 17
     const-string v5, "NexusFlow"
@@ -1828,39 +1929,39 @@
     const/4 p0, 0x0
 
     .line 18
-    invoke-static {v2, v2, p0}, Lcom/transsion/aicore/nexusflow/d;->a(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {p0}, Lcom/transsion/aicore/nexusflow/d;->a(Z)V
 
-    goto :goto_86
+    goto :goto_b5
 
-    :catchall_54
+    :catchall_53
     move-exception v0
 
     move-object p0, v0
 
-    goto :goto_89
+    goto :goto_b8
 
-    :catch_57
+    :catch_56
     move-exception v0
 
     move-object p0, v0
 
-    goto :goto_a4
+    goto/16 :goto_d3
 
     :catch_5a
     move-exception v0
 
     move-object p0, v0
 
-    goto :goto_bf
+    goto/16 :goto_ee
 
-    :catch_5d
+    :catch_5e
     move-exception v0
 
     move-object p0, v0
 
-    goto/16 :goto_da
+    goto/16 :goto_109
 
-    :cond_61
+    :cond_62
     move-object v4, v0
 
     .line 19
@@ -1869,53 +1970,109 @@
     invoke-virtual {v0, p0}, Lcom/transsion/aicore/nexusflow/d;->a(Landroid/content/Context;)Lcom/transsion/aicore/nexusflow/a;
 
     move-result-object p0
+    :try_end_69
+    .catch Landroid/os/DeadObjectException; {:try_start_3f .. :try_end_69} :catch_5e
+    .catch Ljava/lang/Exception; {:try_start_3f .. :try_end_69} :catch_5a
+    .catch Ljava/lang/Error; {:try_start_3f .. :try_end_69} :catch_56
+    .catchall {:try_start_3f .. :try_end_69} :catchall_53
+
+    .line 21
+    :try_start_69
+    iget-object v0, v1, Lcom/transsion/aicore/nexusflow/NexusFlow;->instanceId:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Sending deInit request to server for instance: "
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v4, v10, v0}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 22
     iget-object v0, v1, Lcom/transsion/aicore/nexusflow/NexusFlow;->instanceId:Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Lcom/transsion/aicore/nexusflow/a;->b(Ljava/lang/String;)V
+    new-instance v2, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda2;
 
-    .line 23
-    const-string v0, "FlowManager"
+    invoke-direct {v2, v1}, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/aicore/nexusflow/NexusFlow;)V
 
-    const-string v3, "setConnectionCallbacks called"
+    invoke-virtual {p0, v3, v0, v2}, Lcom/transsion/aicore/nexusflow/a;->a(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
+    :try_end_89
+    .catch Ljava/lang/Exception; {:try_start_69 .. :try_end_89} :catch_8a
+    .catch Ljava/lang/Error; {:try_start_69 .. :try_end_89} :catch_56
+    .catchall {:try_start_69 .. :try_end_89} :catchall_53
 
-    invoke-virtual {v4, v0, v3}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->d(Ljava/lang/String;Ljava/lang/String;)V
+    goto :goto_92
 
-    .line 24
-    iput-object v2, p0, Lcom/transsion/aicore/nexusflow/a;->n:Lkotlin/jvm/functions/Function0;
-
-    .line 25
-    iput-object v2, p0, Lcom/transsion/aicore/nexusflow/a;->o:Lkotlin/jvm/functions/Function1;
-
-    .line 26
-    invoke-static {}, Lcom/transsion/aicore/nexusflow/FlowBuilder$a;->a()Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 27
-    iget-object v0, v1, Lcom/transsion/aicore/nexusflow/NexusFlow;->instanceId:Ljava/lang/String;
-
-    invoke-static {v0, p0, p1}, Lcom/transsion/aicore/nexusflow/d;->a(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    .line 29
-    const-string p0, "Instance deInit completed."
-
-    invoke-virtual {v4, v10, p0}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 30
-    :goto_86
-    sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_88
-    .catch Landroid/os/DeadObjectException; {:try_start_3f .. :try_end_88} :catch_5d
-    .catch Ljava/lang/Exception; {:try_start_3f .. :try_end_88} :catch_5a
-    .catch Ljava/lang/Error; {:try_start_3f .. :try_end_88} :catch_57
-    .catchall {:try_start_3f .. :try_end_88} :catchall_54
-
-    return-void
+    :catch_8a
+    move-exception v0
 
     .line 31
-    :goto_89
+    :try_start_8b
+    sget-object v2, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
+
+    const-string v3, "Failed to send deInit request"
+
+    invoke-virtual {v2, v10, v3, v0}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 34
+    :goto_92
+    iget-object v0, v1, Lcom/transsion/aicore/nexusflow/NexusFlow;->instanceId:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/aicore/nexusflow/a;->b(Ljava/lang/String;)V
+
+    .line 35
+    sget-object v0, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
+
+    const-string v1, "FlowManager"
+
+    const-string v2, "setConnectionCallbacks called"
+
+    invoke-virtual {v0, v1, v2}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 v1, 0x0
+
+    .line 36
+    iput-object v1, p0, Lcom/transsion/aicore/nexusflow/a;->o:Lkotlin/jvm/functions/Function0;
+
+    .line 37
+    iput-object v1, p0, Lcom/transsion/aicore/nexusflow/a;->p:Lkotlin/jvm/functions/Function1;
+
+    .line 38
+    sget-object p0, Lcom/transsion/aicore/nexusflow/FlowBuilder;->Companion:Lcom/transsion/aicore/nexusflow/FlowBuilder$a;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {}, Lcom/transsion/aicore/nexusflow/FlowBuilder$a;->a()Ljava/lang/String;
+
+    .line 39
+    invoke-static {p1}, Lcom/transsion/aicore/nexusflow/d;->a(Z)V
+
+    .line 41
+    const-string p0, "Instance deInit completed."
+
+    invoke-virtual {v0, v10, p0}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 42
+    :goto_b5
+    sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    :try_end_b7
+    .catch Landroid/os/DeadObjectException; {:try_start_8b .. :try_end_b7} :catch_5e
+    .catch Ljava/lang/Exception; {:try_start_8b .. :try_end_b7} :catch_5a
+    .catch Ljava/lang/Error; {:try_start_8b .. :try_end_b7} :catch_56
+    .catchall {:try_start_8b .. :try_end_b7} :catchall_53
+
+    goto :goto_123
+
+    .line 43
+    :goto_b8
     sget-object p1, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -1938,10 +2095,10 @@
 
     invoke-virtual {p1, v10, v0, p0}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_f4
+    goto :goto_123
 
-    .line 32
-    :goto_a4
+    .line 44
+    :goto_d3
     sget-object p1, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -1964,10 +2121,10 @@
 
     invoke-virtual {p1, v10, v0, p0}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_f4
+    goto :goto_123
 
-    .line 33
-    :goto_bf
+    .line 45
+    :goto_ee
     sget-object p1, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -1990,10 +2147,10 @@
 
     invoke-virtual {p1, v10, v0, p0}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    goto :goto_f4
+    goto :goto_123
 
-    .line 34
-    :goto_da
+    .line 46
+    :goto_109
     sget-object p1, Lcom/transsion/aicore/nexusflow/utils/NFLog;->INSTANCE:Lcom/transsion/aicore/nexusflow/utils/NFLog;
 
     invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -2016,7 +2173,7 @@
 
     invoke-virtual {p1, v10, v0, p0}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :goto_f4
+    :goto_123
     return-void
 .end method
 
@@ -3118,10 +3275,10 @@
     invoke-virtual {v0, v1, v2}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 10
-    iput-object p1, p0, Lcom/transsion/aicore/nexusflow/a;->n:Lkotlin/jvm/functions/Function0;
+    iput-object p1, p0, Lcom/transsion/aicore/nexusflow/a;->o:Lkotlin/jvm/functions/Function0;
 
     .line 11
-    iput-object p2, p0, Lcom/transsion/aicore/nexusflow/a;->o:Lkotlin/jvm/functions/Function1;
+    iput-object p2, p0, Lcom/transsion/aicore/nexusflow/a;->p:Lkotlin/jvm/functions/Function1;
 
     .line 12
     const-string p0, "Connection callbacks set successfully"
@@ -3307,40 +3464,37 @@
 
     sget-object v3, Lcom/transsion/aicore/nexusflow/ExecutionMode;->ASYNC:Lcom/transsion/aicore/nexusflow/ExecutionMode;
 
-    if-ne v0, v3, :cond_c3
+    if-ne v0, v3, :cond_c0
 
-    invoke-virtual {p1}, Lcom/transsion/aicore/nexusflow/FlowConfig;->getParams()Landroid/os/Bundle;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_c3
-
-    const/4 v3, 0x0
-
-    .line 9
-    const-string v4, "streaming"
-
-    invoke-virtual {v0, v4, v3}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {p1}, Lcom/transsion/aicore/nexusflow/FlowConfig;->getStreaming()Z
 
     move-result v0
 
-    const/4 v3, 0x1
+    if-nez v0, :cond_41
 
-    if-ne v0, v3, :cond_c3
+    goto/16 :goto_c0
 
-    .line 18
+    .line 13
+    :cond_41
     invoke-virtual {p1}, Lcom/transsion/aicore/nexusflow/FlowConfig;->getParams()Landroid/os/Bundle;
 
     move-result-object v0
 
-    invoke-virtual {v0, v4, v3}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+    if-eqz v0, :cond_4d
 
-    .line 20
+    const-string v3, "streaming"
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v0, v3, v4}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+
+    .line 15
+    :cond_4d
     invoke-virtual {p1}, Lcom/transsion/aicore/nexusflow/FlowConfig;->getFlowId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 21
+    .line 16
     sget-object v3, Lcom/transsion/aicore/nexusflow/d;->a:Lcom/transsion/aicore/nexusflow/d;
 
     iget-object p0, p0, Lcom/transsion/aicore/nexusflow/NexusFlow;->context:Landroid/content/Context;
@@ -3349,7 +3503,7 @@
 
     move-result-object p0
 
-    .line 24
+    .line 19
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3366,12 +3520,12 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 25
+    .line 20
     new-instance v3, Lcom/transsion/aicore/nexusflow/utils/Streamer;
 
     invoke-direct {v3, v0, p0}, Lcom/transsion/aicore/nexusflow/utils/Streamer;-><init>(Ljava/lang/String;Lcom/transsion/aicore/nexusflow/a;)V
 
-    .line 28
+    .line 23
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3388,22 +3542,22 @@
 
     invoke-virtual {v1, v2, v4}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 31
+    .line 26
     invoke-virtual {p1}, Lcom/transsion/aicore/nexusflow/FlowConfig;->getCallback()Lcom/transsion/aicore/nexusflow/FlowCallback;
 
     move-result-object v4
 
-    if-nez v4, :cond_94
+    if-nez v4, :cond_91
 
     new-instance v4, Lcom/transsion/aicore/nexusflow/NexusFlow$c;
 
     invoke-direct {v4}, Lcom/transsion/aicore/nexusflow/NexusFlow$c;-><init>()V
 
-    .line 32
-    :cond_94
+    .line 27
+    :cond_91
     invoke-virtual {p0, p1, v4}, Lcom/transsion/aicore/nexusflow/a;->a(Lcom/transsion/aicore/nexusflow/FlowConfig;Lcom/transsion/aicore/nexusflow/FlowCallback;)Ljava/lang/String;
 
-    .line 71
+    .line 66
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3420,10 +3574,10 @@
 
     invoke-virtual {v1, v2, p0}, Lcom/transsion/aicore/nexusflow/utils/NFLog;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 72
+    .line 67
     invoke-virtual {v3}, Lcom/transsion/aicore/nexusflow/utils/Streamer;->transportPipeToServer$ipc_business_v2Release()V
 
-    .line 75
+    .line 70
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3442,12 +3596,13 @@
 
     return-object v3
 
-    :cond_c3
+    :cond_c0
+    :goto_c0
     const/4 v5, 0x4
 
     const/4 v6, 0x0
 
-    .line 76
+    .line 71
     const-string v2, "NexusFlow"
 
     const-string v3, "startStreaming can only be used with async, streaming configs."

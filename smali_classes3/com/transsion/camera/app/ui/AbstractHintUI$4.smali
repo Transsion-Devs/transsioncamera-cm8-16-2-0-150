@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractHintUI;)V
     .registers 2
 
-    .line 1857
+    .line 1865
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$4;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 1865
+    .line 1873
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    .line 1866
+    .line 1874
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$4;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
@@ -53,10 +53,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 1860
+    .line 1868
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1861
+    .line 1869
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$4;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;

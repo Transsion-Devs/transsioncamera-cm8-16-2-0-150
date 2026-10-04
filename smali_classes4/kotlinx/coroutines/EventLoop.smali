@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 22
+    .line 19
     invoke-direct {p0}, Lkotlinx/coroutines/CoroutineDispatcher;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 
     const/4 p1, 0x0
 
-    .line 107
+    .line 104
     :cond_7
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/EventLoop;->decrementUseCount(Z)V
 
@@ -80,7 +80,7 @@
 
     const/4 p1, 0x0
 
-    .line 102
+    .line 99
     :cond_7
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/EventLoop;->incrementUseCount(Z)V
 
@@ -101,7 +101,7 @@
 .method public final decrementUseCount(Z)V
     .registers 6
 
-    .line 108
+    .line 105
     iget-wide v0, p0, Lkotlinx/coroutines/EventLoop;->useCount:J
 
     invoke-direct {p0, p1}, Lkotlinx/coroutines/EventLoop;->delta(Z)J
@@ -120,13 +120,13 @@
 
     goto :goto_17
 
-    .line 111
+    .line 108
     :cond_10
     iget-boolean p1, p0, Lkotlinx/coroutines/EventLoop;->shared:Z
 
     if-eqz p1, :cond_17
 
-    .line 113
+    .line 110
     invoke-virtual {p0}, Lkotlinx/coroutines/EventLoop;->shutdown()V
 
     :cond_17
@@ -144,19 +144,19 @@
         }
     .end annotation
 
-    .line 84
+    .line 81
     iget-object v0, p0, Lkotlinx/coroutines/EventLoop;->unconfinedQueue:Lkotlin/collections/ArrayDeque;
 
     if-nez v0, :cond_b
 
-    .line 85
+    .line 82
     new-instance v0, Lkotlin/collections/ArrayDeque;
 
     invoke-direct {v0}, Lkotlin/collections/ArrayDeque;-><init>()V
 
     iput-object v0, p0, Lkotlinx/coroutines/EventLoop;->unconfinedQueue:Lkotlin/collections/ArrayDeque;
 
-    .line 86
+    .line 83
     :cond_b
     invoke-virtual {v0, p1}, Lkotlin/collections/ArrayDeque;->addLast(Ljava/lang/Object;)V
 
@@ -166,7 +166,7 @@
 .method protected getNextTime()J
     .registers 3
 
-    .line 61
+    .line 58
     iget-object p0, p0, Lkotlinx/coroutines/EventLoop;->unconfinedQueue:Lkotlin/collections/ArrayDeque;
 
     const-wide v0, 0x7fffffffffffffffL
@@ -175,7 +175,7 @@
 
     return-wide v0
 
-    .line 62
+    .line 59
     :cond_a
     invoke-virtual {p0}, Lkotlin/collections/ArrayDeque;->isEmpty()Z
 
@@ -194,7 +194,7 @@
 .method public final incrementUseCount(Z)V
     .registers 6
 
-    .line 103
+    .line 100
     iget-wide v0, p0, Lkotlinx/coroutines/EventLoop;->useCount:J
 
     invoke-direct {p0, p1}, Lkotlinx/coroutines/EventLoop;->delta(Z)J
@@ -209,7 +209,7 @@
 
     const/4 p1, 0x1
 
-    .line 104
+    .line 101
     iput-boolean p1, p0, Lkotlinx/coroutines/EventLoop;->shared:Z
 
     :cond_e
@@ -219,7 +219,7 @@
 .method public final isActive()Z
     .registers 5
 
-    .line 90
+    .line 87
     iget-wide v0, p0, Lkotlinx/coroutines/EventLoop;->useCount:J
 
     const-wide/16 v2, 0x0
@@ -241,7 +241,7 @@
 .method protected isEmpty()Z
     .registers 1
 
-    .line 57
+    .line 54
     invoke-virtual {p0}, Lkotlinx/coroutines/EventLoop;->isUnconfinedQueueEmpty()Z
 
     move-result p0
@@ -252,7 +252,7 @@
 .method public final isUnconfinedLoopActive()Z
     .registers 6
 
-    .line 93
+    .line 90
     iget-wide v0, p0, Lkotlinx/coroutines/EventLoop;->useCount:J
 
     const/4 v2, 0x1
@@ -276,7 +276,7 @@
 .method public final isUnconfinedQueueEmpty()Z
     .registers 1
 
-    .line 97
+    .line 94
     iget-object p0, p0, Lkotlinx/coroutines/EventLoop;->unconfinedQueue:Lkotlin/collections/ArrayDeque;
 
     if-eqz p0, :cond_9
@@ -296,7 +296,7 @@
 .method public final limitedParallelism(I)Lkotlinx/coroutines/CoroutineDispatcher;
     .registers 2
 
-    .line 118
+    .line 115
     invoke-static {p1}, Lkotlinx/coroutines/internal/LimitedDispatcherKt;->checkParallelism(I)V
 
     return-object p0
@@ -305,7 +305,7 @@
 .method public processNextEvent()J
     .registers 3
 
-    .line 53
+    .line 50
     invoke-virtual {p0}, Lkotlinx/coroutines/EventLoop;->processUnconfinedEvent()Z
 
     move-result p0
@@ -325,7 +325,7 @@
 .method public final processUnconfinedEvent()Z
     .registers 2
 
-    .line 66
+    .line 63
     iget-object p0, p0, Lkotlinx/coroutines/EventLoop;->unconfinedQueue:Lkotlin/collections/ArrayDeque;
 
     const/4 v0, 0x0
@@ -334,7 +334,7 @@
 
     return v0
 
-    .line 67
+    .line 64
     :cond_6
     invoke-virtual {p0}, Lkotlin/collections/ArrayDeque;->removeFirstOrNull()Ljava/lang/Object;
 
@@ -346,7 +346,7 @@
 
     return v0
 
-    .line 68
+    .line 65
     :cond_f
     invoke-virtual {p0}, Lkotlinx/coroutines/DispatchedTask;->run()V
 

@@ -28,7 +28,7 @@
 
     sput-object v0, Lcom/google/gson/internal/bind/JsonTreeWriter;->UNWRITABLE_WRITER:Ljava/io/Writer;
 
-    .line 46
+    .line 53
     new-instance v0, Lcom/google/gson/JsonPrimitive;
 
     const-string v1, "closed"
@@ -43,19 +43,19 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 58
+    .line 65
     sget-object v0, Lcom/google/gson/internal/bind/JsonTreeWriter;->UNWRITABLE_WRITER:Ljava/io/Writer;
 
     invoke-direct {p0, v0}, Lcom/google/gson/stream/JsonWriter;-><init>(Ljava/io/Writer;)V
 
-    .line 49
+    .line 56
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
-    .line 55
+    .line 62
     sget-object v0, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
 
     iput-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->product:Lcom/google/gson/JsonElement;
@@ -66,7 +66,7 @@
 .method private peek()Lcom/google/gson/JsonElement;
     .registers 2
 
-    .line 72
+    .line 77
     iget-object p0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -87,12 +87,12 @@
 .method private put(Lcom/google/gson/JsonElement;)V
     .registers 4
 
-    .line 76
+    .line 81
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->pendingName:Ljava/lang/String;
 
     if-eqz v0, :cond_1f
 
-    .line 77
+    .line 82
     invoke-virtual {p1}, Lcom/google/gson/JsonElement;->isJsonNull()Z
 
     move-result v0
@@ -105,7 +105,7 @@
 
     if-eqz v0, :cond_1b
 
-    .line 78
+    .line 83
     :cond_10
     invoke-direct {p0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->peek()Lcom/google/gson/JsonElement;
 
@@ -113,7 +113,7 @@
 
     check-cast v0, Lcom/google/gson/JsonObject;
 
-    .line 79
+    .line 84
     iget-object v1, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->pendingName:Ljava/lang/String;
 
     invoke-virtual {v0, v1, p1}, Lcom/google/gson/JsonObject;->add(Ljava/lang/String;Lcom/google/gson/JsonElement;)V
@@ -121,12 +121,12 @@
     :cond_1b
     const/4 p1, 0x0
 
-    .line 81
+    .line 86
     iput-object p1, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->pendingName:Ljava/lang/String;
 
     return-void
 
-    .line 82
+    .line 87
     :cond_1f
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
@@ -136,30 +136,30 @@
 
     if-eqz v0, :cond_2a
 
-    .line 83
+    .line 88
     iput-object p1, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->product:Lcom/google/gson/JsonElement;
 
     return-void
 
-    .line 85
+    .line 90
     :cond_2a
     invoke-direct {p0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->peek()Lcom/google/gson/JsonElement;
 
     move-result-object p0
 
-    .line 86
+    .line 91
     instance-of v0, p0, Lcom/google/gson/JsonArray;
 
     if-eqz v0, :cond_38
 
-    .line 87
+    .line 92
     check-cast p0, Lcom/google/gson/JsonArray;
 
     invoke-virtual {p0, p1}, Lcom/google/gson/JsonArray;->add(Lcom/google/gson/JsonElement;)V
 
     return-void
 
-    .line 89
+    .line 94
     :cond_38
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -173,15 +173,15 @@
 .method public beginArray()Lcom/google/gson/stream/JsonWriter;
     .registers 3
 
-    .line 95
+    .line 102
     new-instance v0, Lcom/google/gson/JsonArray;
 
     invoke-direct {v0}, Lcom/google/gson/JsonArray;-><init>()V
 
-    .line 96
+    .line 103
     invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->put(Lcom/google/gson/JsonElement;)V
 
-    .line 97
+    .line 104
     iget-object v1, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -192,15 +192,15 @@
 .method public beginObject()Lcom/google/gson/stream/JsonWriter;
     .registers 3
 
-    .line 114
+    .line 125
     new-instance v0, Lcom/google/gson/JsonObject;
 
     invoke-direct {v0}, Lcom/google/gson/JsonObject;-><init>()V
 
-    .line 115
+    .line 126
     invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->put(Lcom/google/gson/JsonElement;)V
 
-    .line 116
+    .line 127
     iget-object v1, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -211,7 +211,7 @@
 .method public close()V
     .registers 2
 
-    .line 203
+    .line 249
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -220,7 +220,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 206
+    .line 252
     iget-object p0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
     sget-object v0, Lcom/google/gson/internal/bind/JsonTreeWriter;->SENTINEL_CLOSED:Lcom/google/gson/JsonPrimitive;
@@ -229,7 +229,7 @@
 
     return-void
 
-    .line 204
+    .line 250
     :cond_10
     new-instance p0, Ljava/io/IOException;
 
@@ -243,7 +243,7 @@
 .method public endArray()Lcom/google/gson/stream/JsonWriter;
     .registers 3
 
-    .line 102
+    .line 111
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -256,17 +256,17 @@
 
     if-nez v0, :cond_26
 
-    .line 105
+    .line 114
     invoke-direct {p0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->peek()Lcom/google/gson/JsonElement;
 
     move-result-object v0
 
-    .line 106
+    .line 115
     instance-of v0, v0, Lcom/google/gson/JsonArray;
 
     if-eqz v0, :cond_20
 
-    .line 107
+    .line 116
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -279,7 +279,7 @@
 
     return-object p0
 
-    .line 110
+    .line 119
     :cond_20
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -287,7 +287,7 @@
 
     throw p0
 
-    .line 103
+    .line 112
     :cond_26
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -299,7 +299,7 @@
 .method public endObject()Lcom/google/gson/stream/JsonWriter;
     .registers 3
 
-    .line 121
+    .line 134
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -312,17 +312,17 @@
 
     if-nez v0, :cond_26
 
-    .line 124
+    .line 137
     invoke-direct {p0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->peek()Lcom/google/gson/JsonElement;
 
     move-result-object v0
 
-    .line 125
+    .line 138
     instance-of v0, v0, Lcom/google/gson/JsonObject;
 
     if-eqz v0, :cond_20
 
-    .line 126
+    .line 139
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -335,7 +335,7 @@
 
     return-object p0
 
-    .line 129
+    .line 142
     :cond_20
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -343,7 +343,7 @@
 
     throw p0
 
-    .line 122
+    .line 135
     :cond_26
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -361,7 +361,7 @@
 .method public get()Lcom/google/gson/JsonElement;
     .registers 4
 
-    .line 65
+    .line 70
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -370,12 +370,12 @@
 
     if-eqz v0, :cond_b
 
-    .line 68
+    .line 73
     iget-object p0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->product:Lcom/google/gson/JsonElement;
 
     return-object p0
 
-    .line 66
+    .line 71
     :cond_b
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -403,47 +403,56 @@
 .method public name(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;
     .registers 3
 
-    .line 133
+    .line 148
+    const-string v0, "name == null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 149
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->stack:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_24
 
     iget-object v0, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->pendingName:Ljava/lang/String;
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_24
 
-    .line 136
+    .line 152
     invoke-direct {p0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->peek()Lcom/google/gson/JsonElement;
 
     move-result-object v0
 
-    .line 137
+    .line 153
     instance-of v0, v0, Lcom/google/gson/JsonObject;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1c
 
-    .line 138
+    .line 154
     iput-object p1, p0, Lcom/google/gson/internal/bind/JsonTreeWriter;->pendingName:Ljava/lang/String;
 
     return-object p0
 
-    .line 141
-    :cond_17
+    .line 157
+    :cond_1c
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+    const-string p1, "Please begin an object before writing a name."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
-    .line 134
-    :cond_1d
+    .line 150
+    :cond_24
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+    const-string p1, "Did not expect a name"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
@@ -451,8 +460,70 @@
 .method public nullValue()Lcom/google/gson/stream/JsonWriter;
     .registers 2
 
-    .line 153
+    .line 235
     sget-object v0, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+
+    invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->put(Lcom/google/gson/JsonElement;)V
+
+    return-object p0
+.end method
+
+.method public value(D)Lcom/google/gson/stream/JsonWriter;
+    .registers 5
+
+    .line 200
+    invoke-virtual {p0}, Lcom/google/gson/stream/JsonWriter;->isLenient()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2a
+
+    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
+
+    move-result v0
+
+    if-nez v0, :cond_13
+
+    invoke-static {p1, p2}, Ljava/lang/Double;->isInfinite(D)Z
+
+    move-result v0
+
+    if-nez v0, :cond_13
+
+    goto :goto_2a
+
+    .line 201
+    :cond_13
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "JSON forbids NaN and infinities: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    .line 203
+    :cond_2a
+    :goto_2a
+    new-instance v0, Lcom/google/gson/JsonPrimitive;
+
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Lcom/google/gson/JsonPrimitive;-><init>(Ljava/lang/Number;)V
 
     invoke-direct {p0, v0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->put(Lcom/google/gson/JsonElement;)V
 
@@ -462,7 +533,7 @@
 .method public value(J)Lcom/google/gson/stream/JsonWriter;
     .registers 4
 
-    .line 179
+    .line 210
     new-instance v0, Lcom/google/gson/JsonPrimitive;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -481,14 +552,14 @@
 
     if-nez p1, :cond_7
 
-    .line 164
+    .line 181
     invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->nullValue()Lcom/google/gson/stream/JsonWriter;
 
     move-result-object p0
 
     return-object p0
 
-    .line 166
+    .line 183
     :cond_7
     new-instance v0, Lcom/google/gson/JsonPrimitive;
 
@@ -504,14 +575,14 @@
 
     if-nez p1, :cond_7
 
-    .line 185
+    .line 218
     invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->nullValue()Lcom/google/gson/stream/JsonWriter;
 
     move-result-object p0
 
     return-object p0
 
-    .line 188
+    .line 221
     :cond_7
     invoke-virtual {p0}, Lcom/google/gson/stream/JsonWriter;->isLenient()Z
 
@@ -519,12 +590,12 @@
 
     if-nez v0, :cond_35
 
-    .line 189
+    .line 222
     invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D
 
     move-result-wide v0
 
-    .line 190
+    .line 223
     invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
 
     move-result v2
@@ -539,7 +610,7 @@
 
     goto :goto_35
 
-    .line 191
+    .line 224
     :cond_1e
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -561,7 +632,7 @@
 
     throw p0
 
-    .line 195
+    .line 228
     :cond_35
     :goto_35
     new-instance v0, Lcom/google/gson/JsonPrimitive;
@@ -578,14 +649,14 @@
 
     if-nez p1, :cond_7
 
-    .line 146
+    .line 164
     invoke-virtual {p0}, Lcom/google/gson/internal/bind/JsonTreeWriter;->nullValue()Lcom/google/gson/stream/JsonWriter;
 
     move-result-object p0
 
     return-object p0
 
-    .line 148
+    .line 166
     :cond_7
     new-instance v0, Lcom/google/gson/JsonPrimitive;
 
@@ -599,7 +670,7 @@
 .method public value(Z)Lcom/google/gson/stream/JsonWriter;
     .registers 3
 
-    .line 158
+    .line 173
     new-instance v0, Lcom/google/gson/JsonPrimitive;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;

@@ -30,7 +30,7 @@
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda0;->f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$qDK7It8y9W-HLbzBMv-moufU4BQ(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$a-G5vwyM0zDVjBStCCw98-1PZJ4(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Landroid/view/View;)V
 
     return-void
 .end method

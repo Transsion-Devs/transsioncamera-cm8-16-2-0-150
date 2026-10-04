@@ -65,12 +65,12 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 286
+    .line 287
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 295
+    .line 296
     new-array v0, v0, [Ljava/lang/String;
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mFocalLength:[Ljava/lang/String;
@@ -83,7 +83,7 @@
 .method public containsRatio(I)Z
     .registers 6
 
-    .line 367
+    .line 368
     iget v0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mStartRatio:I
 
     iget v1, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mEndRatio:I
@@ -101,7 +101,7 @@
     :cond_b
     return v2
 
-    .line 371
+    .line 372
     :cond_c
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mIsEndRatioIncluding:Z
 
@@ -130,7 +130,7 @@
 .method public getBaseRatio()I
     .registers 1
 
-    .line 312
+    .line 313
     iget p0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mBaseRatio:I
 
     return p0
@@ -139,7 +139,7 @@
 .method public getCameraId()Ljava/lang/String;
     .registers 1
 
-    .line 354
+    .line 355
     iget-object p0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mCameraId:Ljava/lang/String;
 
     return-object p0
@@ -148,7 +148,7 @@
 .method public getCurrentRatio()I
     .registers 1
 
-    .line 336
+    .line 337
     iget p0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mCurrentRatio:I
 
     return p0
@@ -157,7 +157,7 @@
 .method public getFixedRatio()I
     .registers 1
 
-    .line 345
+    .line 346
     iget p0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mFixedRatio:I
 
     return p0
@@ -166,7 +166,7 @@
 .method public getFocalLengths()[Ljava/lang/String;
     .registers 1
 
-    .line 363
+    .line 364
     iget-object p0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mFocalLength:[Ljava/lang/String;
 
     return-object p0
@@ -175,7 +175,7 @@
 .method public getLensType()I
     .registers 1
 
-    .line 303
+    .line 304
     iget p0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mLensType:I
 
     return p0
@@ -184,7 +184,7 @@
 .method public getStartRatio()I
     .registers 1
 
-    .line 327
+    .line 328
     iget p0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mStartRatio:I
 
     return p0
@@ -193,7 +193,7 @@
 .method public setBaseRatio(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
     .registers 2
 
-    .line 307
+    .line 308
     iput p1, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mBaseRatio:I
 
     return-object p0
@@ -202,7 +202,7 @@
 .method public setCameraId(Ljava/lang/String;)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
     .registers 2
 
-    .line 349
+    .line 350
     iput-object p1, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mCameraId:Ljava/lang/String;
 
     return-object p0
@@ -211,7 +211,7 @@
 .method public setCurrentRatio(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
     .registers 2
 
-    .line 331
+    .line 332
     iput p1, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mCurrentRatio:I
 
     return-object p0
@@ -220,7 +220,7 @@
 .method public setFixedRatio(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
     .registers 2
 
-    .line 340
+    .line 341
     iput p1, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mFixedRatio:I
 
     return-object p0
@@ -229,7 +229,7 @@
 .method public varargs setFocalLength([Ljava/lang/String;)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
     .registers 2
 
-    .line 358
+    .line 359
     iput-object p1, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mFocalLength:[Ljava/lang/String;
 
     return-object p0
@@ -238,7 +238,7 @@
 .method public setLensType(I)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
     .registers 2
 
-    .line 298
+    .line 299
     iput p1, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mLensType:I
 
     return-object p0
@@ -249,7 +249,7 @@
 
     const/4 v0, 0x0
 
-    .line 316
+    .line 317
     invoke-virtual {p0, p1, p2, v0}, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->setRatioRange(IIZ)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
 
     move-result-object p0
@@ -260,13 +260,13 @@
 .method public setRatioRange(IIZ)Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;
     .registers 4
 
-    .line 320
+    .line 321
     iput p1, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mStartRatio:I
 
-    .line 321
+    .line 322
     iput p2, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mEndRatio:I
 
-    .line 322
+    .line 323
     iput-boolean p3, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mIsEndRatioIncluding:Z
 
     return-object p0
@@ -275,7 +275,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 379
+    .line 380
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -308,9 +308,17 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget p0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mCurrentRatio:I
+    iget v1, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mCurrentRatio:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", mCameraId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lcom/transsion/camera/app/common/ZoomConfig$LensInfo;->mCameraId:Ljava/lang/String;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const/16 p0, 0x7d
 

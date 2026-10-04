@@ -16,8 +16,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$BottomUpDirectoryState;,
-        Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;,
         Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$SingleFileState;,
+        Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$TopDownDirectoryState;,
         Lkotlin/io/FileTreeWalk$FileTreeWalkIterator$WhenMappings;
     }
 .end annotation
@@ -137,6 +137,7 @@
 
     return-object v0
 
+    .line 89
     :cond_1a
     new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 

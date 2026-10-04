@@ -79,7 +79,7 @@
 
     move-result-object p0
 
-    invoke-interface {p0}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$IKeyEventCallback;->onShoulderButtonSwipeEnd()V
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/physicalkey/KeyEventDetector$IKeyEventCallback;->onSwipeEnd()V
 
     return-void
 

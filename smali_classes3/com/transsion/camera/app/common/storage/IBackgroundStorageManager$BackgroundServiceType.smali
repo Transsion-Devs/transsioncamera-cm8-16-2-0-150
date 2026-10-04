@@ -26,7 +26,7 @@
 .method private static synthetic $values()[Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
     .registers 2
 
-    .line 130
+    .line 132
     sget-object v0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;->BG_SERVICE:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
 
     sget-object v1, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;->TZ_SERVICE:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
@@ -41,7 +41,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 131
+    .line 133
     new-instance v0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
 
     const-string v1, "BG_SERVICE"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;->TZ_SERVICE:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
 
-    .line 130
+    .line 132
     invoke-static {}, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;->$values()[Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
 
     move-result-object v0
@@ -75,7 +75,7 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
 
-    .line 130
+    .line 132
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -84,7 +84,7 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
     .registers 2
 
-    .line 130
+    .line 132
     const-class v0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -99,7 +99,7 @@
 .method public static values()[Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
     .registers 1
 
-    .line 130
+    .line 132
     sget-object v0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;->$VALUES:[Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
 
     invoke-virtual {v0}, [Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;->clone()Ljava/lang/Object;

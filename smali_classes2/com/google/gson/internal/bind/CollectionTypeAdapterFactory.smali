@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/google/gson/internal/ConstructorConstructor;)V
     .registers 2
 
-    .line 39
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 38
     iput-object p1, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;->constructorConstructor:Lcom/google/gson/internal/ConstructorConstructor;
 
     return-void
@@ -36,17 +36,17 @@
 .method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
     .registers 6
 
-    .line 45
+    .line 43
     invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getType()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    .line 47
+    .line 45
     invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
 
     move-result-object v1
 
-    .line 48
+    .line 46
     const-class v2, Ljava/util/Collection;
 
     invoke-virtual {v2, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -59,13 +59,13 @@
 
     return-object p0
 
-    .line 52
+    .line 50
     :cond_12
     invoke-static {v0, v1}, Lcom/google/gson/internal/$Gson$Types;->getCollectionElementType(Ljava/lang/reflect/Type;Ljava/lang/Class;)Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    .line 53
+    .line 51
     invoke-static {v0}, Lcom/google/gson/reflect/TypeToken;->get(Ljava/lang/reflect/Type;)Lcom/google/gson/reflect/TypeToken;
 
     move-result-object v1
@@ -74,14 +74,14 @@
 
     move-result-object v1
 
-    .line 54
+    .line 52
     iget-object p0, p0, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory;->constructorConstructor:Lcom/google/gson/internal/ConstructorConstructor;
 
     invoke-virtual {p0, p2}, Lcom/google/gson/internal/ConstructorConstructor;->get(Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/internal/ObjectConstructor;
 
     move-result-object p0
 
-    .line 57
+    .line 55
     new-instance p2, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$Adapter;
 
     invoke-direct {p2, p1, v0, v1, p0}, Lcom/google/gson/internal/bind/CollectionTypeAdapterFactory$Adapter;-><init>(Lcom/google/gson/Gson;Ljava/lang/reflect/Type;Lcom/google/gson/TypeAdapter;Lcom/google/gson/internal/ObjectConstructor;)V

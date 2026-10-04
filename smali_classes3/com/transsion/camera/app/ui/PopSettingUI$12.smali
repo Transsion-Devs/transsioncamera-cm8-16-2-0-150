@@ -1,11 +1,14 @@
 .class Lcom/transsion/camera/app/ui/PopSettingUI$12;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/app/ui/PopSettingUI;->setPopWindowBackViewVisible(I)V
+    value = Lcom/transsion/camera/app/ui/PopSettingUI;->scrollPopSettingItemToCenter(Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,83 +20,53 @@
 # instance fields
 .field final synthetic this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
 
+.field final synthetic val$translateX:I
+
 
 # direct methods
-.method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI;)V
-    .registers 2
+.method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI;I)V
+    .registers 3
 
-    .line 2160
+    .line 1768
     iput-object p1, p0, Lcom/transsion/camera/app/ui/PopSettingUI$12;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput p2, p0, Lcom/transsion/camera/app/ui/PopSettingUI$12;->val$translateX:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .registers 2
+.method public onGlobalLayout()V
+    .registers 3
 
-    .line 2163
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
+    .line 1771
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$12;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
 
-    .line 2164
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$12;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
+    invoke-static {v0}, Lcom/transsion/camera/app/ui/PopSettingUI;->-$$Nest$fgetmTreasureBoxScrollView(Lcom/transsion/camera/app/ui/PopSettingUI;)Lcom/transsion/camera/app/ui/widget/DampingHorizontalScrollView;
 
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI;->mPopBackView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
+    move-result-object v0
 
-    if-eqz p0, :cond_d
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
-    const/4 p1, 0x1
+    move-result-object v0
 
-    .line 2165
-    invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    :cond_d
-    return-void
-.end method
+    .line 1772
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$12;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
 
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .registers 2
+    invoke-static {v0}, Lcom/transsion/camera/app/ui/PopSettingUI;->-$$Nest$fgetmTreasureBoxScrollView(Lcom/transsion/camera/app/ui/PopSettingUI;)Lcom/transsion/camera/app/ui/widget/DampingHorizontalScrollView;
 
-    .line 2171
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+    move-result-object v0
 
-    .line 2172
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$12;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
+    iget p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$12;->val$translateX:I
 
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI;->mPopBackView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
+    const/4 v1, 0x0
 
-    if-eqz p0, :cond_d
+    invoke-virtual {v0, p0, v1}, Landroid/view/View;->scrollTo(II)V
 
-    const/4 p1, 0x1
-
-    .line 2173
-    invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
-
-    :cond_d
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .registers 2
-
-    .line 2179
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
-
-    .line 2180
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$12;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
-
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI;->mPopBackView:Lcom/transsion/camera/app/ui/widget/RotateImageView;
-
-    if-eqz p0, :cond_d
-
-    const/4 p1, 0x0
-
-    .line 2181
-    invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
-
-    :cond_d
     return-void
 .end method

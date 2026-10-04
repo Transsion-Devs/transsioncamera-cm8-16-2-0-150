@@ -544,7 +544,7 @@
 
     sget p2, Lcom/transsion/camera/utils/SettingInfo;->AI_FRAME_MAX_ZOOM:I
 
-    if-lt p1, p2, :cond_30
+    if-le p1, p2, :cond_30
 
     const/4 p1, 0x1
 

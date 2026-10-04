@@ -64,7 +64,7 @@
 .method private isHDRScene()Z
     .registers 2
 
-    .line 207
+    .line 211
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isHDRSettingOff()Z
 
     move-result v0
@@ -92,7 +92,7 @@
 .method private isSupportSR()Z
     .registers 7
 
-    .line 189
+    .line 193
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->isQcomCaptureFlowSupport()Z
@@ -108,7 +108,7 @@
     :cond_b
     const/16 v0, 0xf
 
-    .line 191
+    .line 195
     :goto_d
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
@@ -122,7 +122,7 @@
 
     if-nez v1, :cond_27
 
-    .line 192
+    .line 196
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isNightScene()Z
 
     move-result v1
@@ -145,7 +145,7 @@
     :cond_27
     move v1, v2
 
-    .line 193
+    .line 197
     :goto_28
     iget-boolean v4, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mInUpperLevel:Z
 
@@ -160,7 +160,7 @@
     :cond_30
     move v4, v2
 
-    .line 196
+    .line 200
     :goto_31
     iget-object v5, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
@@ -170,7 +170,7 @@
 
     if-eqz v5, :cond_43
 
-    .line 197
+    .line 201
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mInMiddleLevel:Z
 
     if-eqz p0, :cond_41
@@ -188,7 +188,7 @@
 
     goto :goto_68
 
-    .line 199
+    .line 203
     :cond_43
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mInMiddleLevel:Z
 
@@ -196,14 +196,14 @@
 
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
-    .line 200
+    .line 204
     invoke-virtual {v1}, Lcom/transsion/camera/feature/setting/asd/Asd;->isPMasterMode()Z
 
     move-result v1
 
     if-nez v1, :cond_41
 
-    .line 201
+    .line 205
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isNightScene()Z
 
     move-result v1
@@ -251,7 +251,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 320
+    .line 333
     invoke-virtual {p1, p2}, Lcom/transsion/camera/adapter/CameraParameters;->setAirawSN2SRMode(I)V
 
     :cond_5
@@ -261,14 +261,14 @@
 .method private updateZoomRange()V
     .registers 12
 
-    .line 325
+    .line 338
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getZoomRangeList()[I
 
     move-result-object v0
 
-    .line 327
+    .line 340
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v1
@@ -289,7 +289,7 @@
 
     if-nez v1, :cond_2b
 
-    .line 328
+    .line 341
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v1
@@ -317,7 +317,7 @@
     :goto_2b
     move v1, v3
 
-    .line 329
+    .line 342
     :goto_2c
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -335,7 +335,7 @@
 
     if-nez v4, :cond_4f
 
-    .line 330
+    .line 343
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v4
@@ -366,7 +366,7 @@
     :goto_50
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mIsLongFocusCamera:Z
 
-    .line 331
+    .line 344
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isWideCamera()Z
 
     move-result v4
@@ -389,7 +389,7 @@
 
     if-nez v4, :cond_7b
 
-    .line 332
+    .line 345
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v4
@@ -420,7 +420,7 @@
     :goto_7c
     if-nez v1, :cond_8d
 
-    .line 334
+    .line 347
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
@@ -447,12 +447,12 @@
     :goto_8e
     if-eqz v0, :cond_126
 
-    .line 335
+    .line 348
     array-length v5, v0
 
     if-le v5, v3, :cond_126
 
-    .line 336
+    .line 349
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getZoomValue()I
 
     move-result v5
@@ -471,7 +471,7 @@
     :goto_9e
     if-eqz v1, :cond_b2
 
-    .line 337
+    .line 350
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getZoomValue()I
 
     move-result v6
@@ -480,7 +480,7 @@
 
     if-lt v6, v7, :cond_b2
 
-    .line 338
+    .line 351
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getZoomValue()I
 
     move-result v6
@@ -499,7 +499,7 @@
     :goto_b3
     if-eqz v1, :cond_c8
 
-    .line 339
+    .line 352
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getZoomValue()I
 
     move-result v1
@@ -508,7 +508,7 @@
 
     if-lt v1, v7, :cond_c8
 
-    .line 340
+    .line 353
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getZoomValue()I
 
     move-result v1
@@ -526,7 +526,7 @@
     :cond_c8
     move v1, v2
 
-    .line 341
+    .line 354
     :goto_c9
     iget-boolean v7, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mIsLongFocusCamera:Z
 
@@ -544,7 +544,7 @@
 
     if-lt v7, v9, :cond_e1
 
-    .line 342
+    .line 355
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getZoomValue()I
 
     move-result v7
@@ -560,7 +560,7 @@
     :cond_e1
     move v7, v2
 
-    .line 343
+    .line 356
     :goto_e2
     iget-boolean v9, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mIsLongFocusCamera:Z
 
@@ -576,7 +576,7 @@
 
     if-lt v9, v8, :cond_f9
 
-    .line 344
+    .line 357
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getZoomValue()I
 
     move-result v8
@@ -592,7 +592,7 @@
     :cond_f9
     move v8, v2
 
-    .line 345
+    .line 358
     :goto_fa
     iget-boolean v9, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mIsLongFocusCamera:Z
 
@@ -631,7 +631,7 @@
     :goto_112
     move v4, v3
 
-    .line 346
+    .line 359
     :goto_113
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mInLowLevel:Z
 
@@ -650,7 +650,7 @@
     :goto_11c
     move v4, v3
 
-    .line 347
+    .line 360
     :goto_11d
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mInMiddleLevel:Z
 
@@ -661,7 +661,7 @@
     :cond_123
     move v2, v3
 
-    .line 348
+    .line 361
     :cond_124
     iput-boolean v2, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mInUpperLevel:Z
 
@@ -682,7 +682,7 @@
 
     const/4 p0, 0x0
 
-    .line 227
+    .line 239
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     :cond_a
@@ -700,7 +700,7 @@
 
     goto :goto_1b
 
-    .line 252
+    .line 264
     :cond_6
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->shouldApplyLivePhotoRestrictions()Z
 
@@ -710,21 +710,21 @@
 
     if-eqz p0, :cond_14
 
-    .line 253
+    .line 265
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setMiddleNightMode(I)V
 
-    .line 254
+    .line 266
     invoke-virtual {p1, p2}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     return-void
 
-    .line 256
+    .line 268
     :cond_14
     invoke-virtual {p1, p2}, Lcom/transsion/camera/adapter/CameraParameters;->setMiddleNightMode(I)V
 
     const/4 p0, 0x4
 
-    .line 257
+    .line 269
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     :cond_1b
@@ -742,12 +742,12 @@
     :cond_3
     if-nez p2, :cond_9
 
-    .line 284
+    .line 297
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->setAirawSN2SRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
     return-void
 
-    .line 288
+    .line 301
     :cond_9
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->shouldApplyLivePhotoRestrictions()Z
 
@@ -759,7 +759,7 @@
 
     if-eqz v0, :cond_27
 
-    .line 289
+    .line 302
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->isPlatformMfnrSupport()Z
@@ -768,25 +768,25 @@
 
     if-eqz v0, :cond_1d
 
-    .line 290
+    .line 303
     invoke-virtual {p1, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setMiddleNightMode(I)V
 
     goto :goto_20
 
-    .line 292
+    .line 305
     :cond_1d
     invoke-virtual {p1, p2}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionNightMode(I)V
 
-    .line 294
+    .line 307
     :goto_20
     invoke-direct {p0, p1, v2}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->setAirawSN2SRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 295
+    .line 308
     invoke-virtual {p1, v2}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     return-void
 
-    .line 297
+    .line 310
     :cond_27
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
@@ -794,9 +794,11 @@
 
     move-result p2
 
+    const/4 v0, 0x5
+
     if-eqz p2, :cond_51
 
-    .line 298
+    .line 311
     invoke-static {}, Lcom/transsion/camera/utils/AreaUtil;->isUseDXOArea()Z
 
     move-result p2
@@ -805,7 +807,7 @@
 
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
-    .line 299
+    .line 312
     invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->isAsdMode()Z
 
     move-result p2
@@ -818,51 +820,80 @@
 
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
-    .line 301
+    .line 314
     invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->isPMasterMode()Z
 
     move-result p2
 
     if-nez p2, :cond_51
 
-    .line 302
+    .line 315
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->setAirawSN2SRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    const/4 p0, 0x5
+    .line 316
+    invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
-    .line 303
-    invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
+    goto :goto_7d
 
-    goto :goto_62
-
-    .line 310
+    .line 317
     :cond_51
+    iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
+
+    invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->isQcomAirawSN2SRSupport()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_6c
+
+    iget-boolean p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mInUpperLevel:Z
+
+    if-eqz p2, :cond_6c
+
+    iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
+
+    .line 319
+    invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->isPMasterMode()Z
+
+    move-result p2
+
+    if-nez p2, :cond_6c
+
+    .line 320
+    invoke-direct {p0, p1, v1}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->setAirawSN2SRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
+
+    .line 321
+    invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
+
+    goto :goto_7d
+
+    .line 323
+    :cond_6c
     invoke-direct {p0, p1, v2}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->setAirawSN2SRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
 
-    .line 311
+    .line 324
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->isSuperNightMode()Z
 
     move-result p0
 
-    if-eqz p0, :cond_5e
+    if-eqz p0, :cond_79
 
     const/4 p0, 0x2
 
-    goto :goto_5f
+    goto :goto_7a
 
-    :cond_5e
+    :cond_79
     const/4 p0, 0x6
 
-    :goto_5f
+    :goto_7a
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
-    .line 313
-    :goto_62
+    .line 326
+    :goto_7d
     invoke-virtual {p1, v2}, Lcom/transsion/camera/adapter/CameraParameters;->setMiddleNightMode(I)V
 
-    .line 314
+    .line 327
     invoke-virtual {p1, v2}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionNightMode(I)V
 
     return-void
@@ -879,7 +910,7 @@
 
     const/4 p0, 0x5
 
-    .line 220
+    .line 232
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     :cond_9
@@ -887,20 +918,46 @@
 .end method
 
 .method protected setSuperResolutionMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
-    .registers 3
+    .registers 5
 
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_1e
 
-    const/4 p0, 0x1
+    const/4 v0, 0x1
 
-    if-ne p2, p0, :cond_9
+    const/4 v1, 0x3
 
-    const/4 p0, 0x3
+    if-ne p2, v0, :cond_a
 
-    .line 213
+    .line 218
+    invoke-virtual {p1, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
+
+    return-void
+
+    .line 220
+    :cond_a
+    iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingValue:Ljava/lang/String;
+
+    const-string p2, "0"
+
+    invoke-static {p0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1e
+
+    .line 221
+    invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getTranssionTurboFusionMode()I
+
+    move-result p0
+
+    if-ne p0, v1, :cond_1e
+
+    const/4 p0, 0x0
+
+    .line 222
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
-    :cond_9
+    :cond_1e
     return-void
 .end method
 
@@ -911,7 +968,7 @@
 
     goto :goto_1b
 
-    .line 237
+    .line 249
     :cond_3
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdHwFeatures:Lcom/transsion/camera/feature/setting/asd/features/HardwareFeatures;
 
@@ -929,7 +986,7 @@
 
     const/4 p0, 0x0
 
-    .line 238
+    .line 250
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionHDR(I)V
 
     :cond_15
@@ -937,7 +994,7 @@
 
     if-ne p2, p0, :cond_1b
 
-    .line 242
+    .line 254
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
     :cond_1b
@@ -948,43 +1005,81 @@
 .method protected setTranssionLowLightMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
     .registers 4
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_34
 
     const/4 v0, 0x1
 
     if-eq p2, v0, :cond_6
 
-    goto :goto_14
+    goto :goto_34
 
-    .line 273
+    .line 279
     :cond_6
+    iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
+
+    invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->isQcomAirawSN2SRSupport()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_22
+
+    iget-boolean p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mInUpperLevel:Z
+
+    if-eqz p2, :cond_22
+
+    iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
+
+    .line 281
+    invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->isPMasterMode()Z
+
+    move-result p2
+
+    if-nez p2, :cond_22
+
+    .line 282
+    invoke-direct {p0, p1, v0}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->setAirawSN2SRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
+
+    const/4 p0, 0x5
+
+    .line 283
+    invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
+
+    return-void
+
+    :cond_22
+    const/4 p2, 0x0
+
+    .line 285
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->setAirawSN2SRMode(Lcom/transsion/camera/adapter/CameraParameters;I)V
+
+    .line 286
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/Asd;->isSuperNightMode()Z
 
     move-result p0
 
-    if-eqz p0, :cond_10
+    if-eqz p0, :cond_30
 
     const/4 p0, 0x2
 
-    goto :goto_11
+    goto :goto_31
 
-    :cond_10
+    :cond_30
     const/4 p0, 0x6
 
-    :goto_11
+    :goto_31
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setTranssionTurboFusionMode(I)V
 
-    :cond_14
-    :goto_14
+    :cond_34
+    :goto_34
     return-void
 .end method
 
 .method public updateAsdLogicData(Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)Z
     .registers 3
 
-    .line 95
+    .line 99
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->updateAsdLogicData(Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)Z
 
     move-result p0
@@ -995,10 +1090,10 @@
 .method public updateBrightnessAndISOParameters([II)Z
     .registers 5
 
-    .line 78
+    .line 82
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->updateBrightnessAndISOParameters([II)Z
 
-    .line 81
+    .line 85
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
     invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->isQcomCaptureFlowSupport()Z
@@ -1017,7 +1112,7 @@
     :goto_10
     const/4 v0, 0x0
 
-    .line 84
+    .line 88
     aget p1, p1, v0
 
     const/4 v1, 0x1
@@ -1031,13 +1126,13 @@
     :cond_18
     move p1, v0
 
-    .line 85
+    .line 89
     :goto_19
     iget-boolean p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mIsNeedUpdateParameter:Z
 
     if-eq p2, p1, :cond_20
 
-    .line 86
+    .line 90
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->mIsNeedUpdateParameter:Z
 
     return v1
@@ -1049,24 +1144,24 @@
 .method protected updateIllumination(Lcom/transsion/camera/adapter/CameraParameters;I)I
     .registers 13
 
-    .line 100
+    .line 104
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isNightScene()Z
 
     move-result v0
 
-    .line 101
+    .line 105
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->isHDRScene()Z
 
     move-result v1
 
-    .line 103
+    .line 107
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->updateZoomRange()V
 
     const/16 v2, 0x65
 
     if-ne p2, v2, :cond_19
 
-    .line 106
+    .line 110
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingFeatures:Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
 
     invoke-virtual {v3}, Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;->isSuperResolutionOpend()Z
@@ -1075,10 +1170,10 @@
 
     if-nez v3, :cond_19
 
-    .line 107
+    .line 111
     iget p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mHalIlluminationType:I
 
-    .line 110
+    .line 114
     :cond_19
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isHDRSettingOff()Z
 
@@ -1116,7 +1211,7 @@
 
     goto :goto_3d
 
-    .line 112
+    .line 116
     :cond_34
     :goto_34
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
@@ -1129,7 +1224,7 @@
 
     move p2, v5
 
-    .line 118
+    .line 122
     :cond_3d
     :goto_3d
     iget-object v3, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
@@ -1144,7 +1239,7 @@
 
     const-string v7, "key_super_definition"
 
-    .line 119
+    .line 123
     invoke-virtual {v3, v7}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -1161,7 +1256,7 @@
 
     iget-object v7, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
-    .line 120
+    .line 124
     invoke-virtual {v7}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getAiRawRemosaicLimitISO()I
 
     move-result v7
@@ -1181,7 +1276,7 @@
 
     if-eqz v0, :cond_90
 
-    .line 128
+    .line 132
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdSettingFeatures:Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;
 
     invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/features/SettingFeatures;->isNightLiteOpened()Z
@@ -1200,7 +1295,7 @@
 
     goto :goto_8e
 
-    .line 131
+    .line 135
     :cond_7c
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->isSupportSR()Z
 
@@ -1231,17 +1326,17 @@
 
     goto :goto_90
 
-    .line 129
+    .line 133
     :cond_8e
     :goto_8e
     iget p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mHalIlluminationType:I
 
-    .line 137
+    .line 141
     :cond_90
     :goto_90
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->updateSuperNightLiteValue()V
 
-    .line 139
+    .line 143
     iget-object v7, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-virtual {v7}, Lcom/transsion/camera/feature/setting/asd/Asd;->isSuperNightMode()Z
@@ -1268,7 +1363,7 @@
     :cond_a7
     const/4 v0, 0x0
 
-    .line 143
+    .line 147
     :goto_a8
     sget-object v7, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1286,7 +1381,7 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 144
+    .line 148
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->isSupportSR()Z
 
     move-result v9
@@ -1311,12 +1406,12 @@
 
     move-result-object v8
 
-    .line 143
+    .line 147
     invoke-static {v7, v8}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     if-nez v0, :cond_e5
 
-    .line 148
+    .line 152
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->isSupportSR()Z
 
     move-result v0
@@ -1331,7 +1426,7 @@
     :cond_e8
     move p2, v2
 
-    .line 152
+    .line 156
     :cond_e9
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
@@ -1367,11 +1462,11 @@
 
     if-ne p2, v0, :cond_10c
 
-    .line 156
+    .line 160
     :cond_10a
     iget p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mHalIlluminationType:I
 
-    .line 161
+    .line 165
     :cond_10c
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraParameters;->getAisMode()I
 
@@ -1393,7 +1488,7 @@
 
     goto :goto_12c
 
-    .line 165
+    .line 169
     :cond_11f
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
@@ -1415,7 +1510,7 @@
     :cond_12b
     move v4, p2
 
-    .line 171
+    .line 175
     :goto_12c
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->isLivePhotoOn()Z
 
@@ -1429,7 +1524,7 @@
 
     if-nez p1, :cond_143
 
-    .line 172
+    .line 176
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsdGlobalFeatures:Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;
 
     invoke-virtual {p1}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->isPlatformMfnrSupport()Z
@@ -1446,7 +1541,7 @@
     :goto_142
     move v4, v5
 
-    .line 176
+    .line 180
     :cond_143
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -1470,7 +1565,7 @@
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 178
+    .line 182
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getDeviceZoomRatio()I
 
     move-result p2
@@ -1485,7 +1580,7 @@
 
     const-string v0, "key_hdr"
 
-    .line 179
+    .line 183
     invoke-interface {p2, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -1520,7 +1615,7 @@
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 183
+    .line 187
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->getZoomValue()I
 
     move-result p0
@@ -1531,7 +1626,7 @@
 
     move-result-object p0
 
-    .line 176
+    .line 180
     invoke-static {v7, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return v4
@@ -1541,9 +1636,24 @@
     .registers 6
 
     .line 61
+    iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mCapturingFlag:Z
+
+    if-eqz v0, :cond_d
+
+    .line 62
+    sget-object p0, Lcom/transsion/camera/feature/setting/asd/policy/TurboFusionPolicy;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string/jumbo p1, "updateParameters return because capturing...."
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    return-void
+
+    .line 65
+    :cond_d
     invoke-super {p0, p1, p2, p3, p4}, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->updateParameters(Lcom/transsion/camera/adapter/CameraParameters;Ljava/lang/String;II)V
 
-    .line 63
+    .line 67
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->isAsdMode()Z
@@ -1552,9 +1662,9 @@
 
     const/4 p3, 0x1
 
-    if-eqz p2, :cond_1e
+    if-eqz p2, :cond_2b
 
-    .line 64
+    .line 68
     new-instance p2, Landroid/util/Range;
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1571,15 +1681,15 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/adapter/CameraParameters;->setLimitFpsRange(Landroid/util/Range;)V
 
-    .line 67
-    :cond_1e
+    .line 71
+    :cond_2b
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mAsd:Lcom/transsion/camera/feature/setting/asd/Asd;
 
     invoke-virtual {p2}, Lcom/transsion/camera/feature/setting/asd/Asd;->isPMasterMode()Z
 
     move-result p2
 
-    if-eqz p2, :cond_4a
+    if-eqz p2, :cond_57
 
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -1591,9 +1701,9 @@
 
     move-result p2
 
-    if-eqz p2, :cond_4a
+    if-eqz p2, :cond_57
 
-    .line 68
+    .line 72
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/policy/AbstractAlgoPolicy;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string p2, "key_mu_stereo"
@@ -1608,19 +1718,19 @@
 
     move-result p0
 
-    if-nez p0, :cond_46
+    if-nez p0, :cond_53
 
-    .line 69
+    .line 73
     invoke-virtual {p1, p3}, Lcom/transsion/camera/adapter/CameraParameters;->setTfPortraitMode(I)V
 
     return-void
 
-    :cond_46
+    :cond_53
     const/4 p0, 0x0
 
-    .line 71
+    .line 75
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraParameters;->setTfPortraitMode(I)V
 
-    :cond_4a
+    :cond_57
     return-void
 .end method

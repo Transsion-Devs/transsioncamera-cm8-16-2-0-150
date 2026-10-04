@@ -27,9 +27,9 @@
     c = "kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2"
     f = "Combine.kt"
     l = {
-        0x36,
-        0x4c,
-        0x4f
+        0x33,
+        0x49,
+        0x4c
     }
     m = "invokeSuspend"
 .end annotation
@@ -207,7 +207,7 @@
 
     move-result-object v1
 
-    .line 19
+    .line 16
     iget v2, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2;->label:I
 
     const/4 v3, 0x3
@@ -295,23 +295,23 @@
 
     check-cast v6, Lkotlinx/coroutines/CoroutineScope;
 
-    .line 20
+    .line 17
     iget-object v2, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2;->$flows:[Lkotlinx/coroutines/flow/Flow;
 
     array-length v2, v2
 
     if-nez v2, :cond_5e
 
-    .line 21
+    .line 18
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 
-    .line 22
+    .line 19
     :cond_5e
     new-array v7, v2, [Ljava/lang/Object;
 
-    .line 23
+    .line 20
     sget-object v8, Lkotlinx/coroutines/flow/internal/NullSurrogateKt;->UNINITIALIZED:Lkotlinx/coroutines/internal/Symbol;
 
     const/4 v11, 0x6
@@ -330,12 +330,12 @@
 
     const/4 v8, 0x0
 
-    .line 24
+    .line 21
     invoke-static {v2, v8, v8, v7, v8}, Lkotlinx/coroutines/channels/ChannelKt;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lkotlinx/coroutines/channels/Channel;
 
     move-result-object v17
 
-    .line 25
+    .line 22
     new-instance v7, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v7, v2}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
@@ -347,7 +347,7 @@
     :goto_79
     if-ge v15, v2, :cond_93
 
-    .line 29
+    .line 26
     new-instance v9, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2$1;
 
     iget-object v14, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2;->$flows:[Lkotlinx/coroutines/flow/Flow;
@@ -376,7 +376,7 @@
 
     goto :goto_79
 
-    .line 48
+    .line 45
     :cond_93
     new-array v6, v2, [B
 
@@ -389,7 +389,7 @@
 
     int-to-byte v9, v9
 
-    .line 54
+    .line 51
     iput-object v7, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2;->L$0:Ljava/lang/Object;
 
     iput-object v8, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2;->L$1:Ljava/lang/Object;
@@ -430,35 +430,35 @@
 
     if-nez v10, :cond_c1
 
-    .line 83
+    .line 80
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 
-    .line 56
+    .line 53
     :cond_c1
     invoke-virtual {v10}, Lkotlin/collections/IndexedValue;->getIndex()I
 
     move-result v11
 
-    .line 58
+    .line 55
     aget-object v12, v9, v11
 
-    .line 59
+    .line 56
     invoke-virtual {v10}, Lkotlin/collections/IndexedValue;->getValue()Ljava/lang/Object;
 
     move-result-object v10
 
     aput-object v10, v9, v11
 
-    .line 60
+    .line 57
     sget-object v10, Lkotlinx/coroutines/flow/internal/NullSurrogateKt;->UNINITIALIZED:Lkotlinx/coroutines/internal/Symbol;
 
     if-ne v12, v10, :cond_d3
 
     add-int/lit8 v6, v6, -0x1
 
-    .line 63
+    .line 60
     :cond_d3
     aget-byte v10, v7, v11
 
@@ -466,10 +466,10 @@
 
     int-to-byte v10, v2
 
-    .line 64
+    .line 61
     aput-byte v10, v7, v11
 
-    .line 65
+    .line 62
     invoke-interface {v8}, Lkotlinx/coroutines/channels/ReceiveChannel;->tryReceive-PtdJZtk()Ljava/lang/Object;
 
     move-result-object v10
@@ -485,7 +485,7 @@
     :cond_e6
     if-nez v6, :cond_129
 
-    .line 74
+    .line 71
     iget-object v10, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2;->$arrayFactory:Lkotlin/jvm/functions/Function0;
 
     invoke-interface {v10}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
@@ -496,7 +496,7 @@
 
     if-nez v10, :cond_109
 
-    .line 76
+    .line 73
     iget-object v10, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2;->$transform:Lkotlin/jvm/functions/Function3;
 
     iget-object v11, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2;->$this_combineInternal:Lkotlinx/coroutines/flow/FlowCollector;
@@ -532,10 +532,10 @@
 
     const/4 v13, 0x0
 
-    .line 78
+    .line 75
     invoke-static/range {v9 .. v15}, Lkotlin/collections/ArraysKt;->copyInto$default([Ljava/lang/Object;[Ljava/lang/Object;IIIILjava/lang/Object;)[Ljava/lang/Object;
 
-    .line 79
+    .line 76
     iget-object v11, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2;->$transform:Lkotlin/jvm/functions/Function3;
 
     iget-object v12, v0, Lkotlinx/coroutines/flow/internal/CombineKt$combineInternal$2;->$this_combineInternal:Lkotlinx/coroutines/flow/FlowCollector;

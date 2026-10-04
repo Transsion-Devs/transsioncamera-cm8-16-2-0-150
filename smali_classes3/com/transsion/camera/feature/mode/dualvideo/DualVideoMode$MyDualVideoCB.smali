@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)V
     .registers 2
 
-    .line 826
+    .line 829
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoCB;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public playRecorderSound(Z)V
     .registers 4
 
-    .line 829
+    .line 832
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoCB;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -64,7 +64,7 @@
 
     if-eqz p1, :cond_22
 
-    .line 834
+    .line 837
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoCB;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     iget-object v1, p1, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoHelper:Lcom/transsion/camera/app/common/mode/CommonVideoHelper;
@@ -76,7 +76,7 @@
 
     invoke-virtual {v1, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoHelper;->pauseAudioPlayBack(Landroid/content/Context;)Z
 
-    .line 835
+    .line 838
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoCB;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -90,7 +90,7 @@
 
     return-void
 
-    .line 837
+    .line 840
     :cond_22
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoCB;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
@@ -103,7 +103,7 @@
 
     invoke-virtual {p1, v1, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->shutterSoundPlay(ILcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;)V
 
-    .line 838
+    .line 841
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MyDualVideoCB;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mVideoHelper:Lcom/transsion/camera/app/common/mode/CommonVideoHelper;

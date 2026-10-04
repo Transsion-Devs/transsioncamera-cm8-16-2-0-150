@@ -73,7 +73,7 @@
 
     if-eqz p0, :cond_11
 
-    .line 186
+    .line 1741
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v1
@@ -82,7 +82,7 @@
 
     goto :goto_28
 
-    .line 187
+    .line 1742
     :cond_11
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 

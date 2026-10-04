@@ -88,6 +88,12 @@
     return-object p0
 .end method
 
+.method public destroy()V
+    .registers 1
+
+    return-void
+.end method
+
 .method protected abstract doCreateEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
 .end method
 
@@ -251,7 +257,7 @@
 .method public isSupportPrivacyMode()Z
     .registers 1
 
-    .line 397
+    .line 402
     invoke-super {p0}, Lcom/transsion/camera/app/common/IPrivacyCallback;->isSupportPrivacyMode()Z
 
     move-result p0
@@ -355,7 +361,7 @@
 .method public onOrientationChanged(I)V
     .registers 2
 
-    .line 243
+    .line 248
     iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
 
     return-void
@@ -364,7 +370,7 @@
 .method public onPreviewClick()Z
     .registers 1
 
-    .line 319
+    .line 324
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onBackPressed()Z
 
     move-result p0
@@ -375,7 +381,7 @@
 .method public onPrivacyModeChange(ZF)V
     .registers 3
 
-    .line 376
+    .line 381
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->isSupportPrivacyMode()Z
 
     move-result p2
@@ -384,7 +390,7 @@
 
     goto :goto_2b
 
-    .line 379
+    .line 384
     :cond_7
     iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mEntryRootLayout:Landroid/view/View;
 
@@ -392,12 +398,12 @@
 
     if-eqz p1, :cond_21
 
-    .line 382
+    .line 387
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mEntryRootLayoutState:Lcom/transsion/camera/app/common/ui/helper/ViewState;
 
     if-nez p1, :cond_1c
 
-    .line 383
+    .line 388
     new-instance p1, Lcom/transsion/camera/app/common/ui/helper/ViewState$Builder;
 
     invoke-direct {p1, p2}, Lcom/transsion/camera/app/common/ui/helper/ViewState$Builder;-><init>(Landroid/view/View;)V
@@ -411,23 +417,23 @@
     :cond_1c
     const/4 p0, 0x4
 
-    .line 385
+    .line 390
     invoke-virtual {p2, p0}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    .line 387
+    .line 392
     :cond_21
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mEntryRootLayoutState:Lcom/transsion/camera/app/common/ui/helper/ViewState;
 
     if-eqz p1, :cond_2b
 
-    .line 388
+    .line 393
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/ui/helper/ViewState;->restore(Landroid/view/View;)V
 
     const/4 p1, 0x0
 
-    .line 389
+    .line 394
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mEntryRootLayoutState:Lcom/transsion/camera/app/common/ui/helper/ViewState;
 
     :cond_2b
@@ -462,10 +468,10 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 249
+    .line 254
     iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
-    .line 250
+    .line 255
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->updateSettingUILayout(Z)V
 
     return-void
@@ -677,12 +683,12 @@
 .method protected setEntryRootLayoutVisibility(I)V
     .registers 4
 
-    .line 401
+    .line 406
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mEntryRootLayoutState:Lcom/transsion/camera/app/common/ui/helper/ViewState;
 
     if-eqz v0, :cond_17
 
-    .line 402
+    .line 407
     new-instance v1, Lcom/transsion/camera/app/common/ui/helper/ViewState$Builder;
 
     invoke-direct {v1, v0}, Lcom/transsion/camera/app/common/ui/helper/ViewState$Builder;-><init>(Lcom/transsion/camera/app/common/ui/helper/ViewState;)V
@@ -691,12 +697,12 @@
 
     new-array v0, v0, [Ljava/lang/Runnable;
 
-    .line 403
+    .line 408
     invoke-virtual {v1, p1, v0}, Lcom/transsion/camera/app/common/ui/helper/ViewState$Builder;->setVisibility(I[Ljava/lang/Runnable;)Lcom/transsion/camera/app/common/ui/helper/ViewState$Builder;
 
     move-result-object p1
 
-    .line 404
+    .line 409
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/helper/ViewState$Builder;->build()Lcom/transsion/camera/app/common/ui/helper/ViewState;
 
     move-result-object p1
@@ -705,7 +711,7 @@
 
     return-void
 
-    .line 407
+    .line 412
     :cond_17
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mEntryRootLayout:Landroid/view/View;
 
@@ -756,7 +762,7 @@
 .method public setSettingOptionControl(Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;)V
     .registers 2
 
-    .line 275
+    .line 280
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mSettingOptionControl:Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;
 
     return-void
@@ -845,7 +851,7 @@
 .method public updateCurrentMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 366
+    .line 371
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mCurrentModeName:Ljava/lang/String;
 
     return-void

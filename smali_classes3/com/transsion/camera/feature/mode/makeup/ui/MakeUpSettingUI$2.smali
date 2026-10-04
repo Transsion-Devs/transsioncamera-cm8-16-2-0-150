@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)V
     .registers 2
 
-    .line 77
+    .line 76
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .registers 3
 
-    .line 80
+    .line 79
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -49,7 +49,7 @@
 
     move-result p1
 
-    .line 81
+    .line 80
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$fgetmakeUpBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpBottomUI;
@@ -58,7 +58,7 @@
 
     if-eqz v0, :cond_1b
 
-    .line 83
+    .line 82
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$2;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$fgetmakeUpBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpBottomUI;

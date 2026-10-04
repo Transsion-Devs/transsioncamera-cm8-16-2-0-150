@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/setting/PopupOption;)V
     .registers 2
 
-    .line 790
+    .line 808
     iput-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .registers 8
 
-    .line 793
+    .line 811
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
     move-result p1
 
-    .line 794
+    .line 812
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fgetmPopupWindow(Lcom/transsion/camera/app/ui/setting/PopupOption;)Landroid/widget/PopupWindow;
@@ -56,7 +56,7 @@
 
     int-to-float v0, v0
 
-    .line 795
+    .line 813
     invoke-static {}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v1
@@ -95,7 +95,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 796
+    .line 814
     iget-object v1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {v1}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fgetmScreenFormType(Lcom/transsion/camera/app/ui/setting/PopupOption;)I
@@ -106,7 +106,7 @@
 
     if-ne v1, v2, :cond_4d
 
-    .line 797
+    .line 815
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {p0, p2}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$mdispatchTouchEvent(Lcom/transsion/camera/app/ui/setting/PopupOption;Landroid/view/MotionEvent;)V
@@ -120,7 +120,7 @@
 
     if-gez v3, :cond_8d
 
-    .line 800
+    .line 818
     iget-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fgetmIsDismissing(Lcom/transsion/camera/app/ui/setting/PopupOption;)Z
@@ -145,7 +145,7 @@
 
     if-nez p1, :cond_77
 
-    .line 801
+    .line 819
     iget-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/app/ui/setting/PopupOption;)Lcom/transsion/camera/app/ui/setting/PopupOption$UIHandler;
@@ -158,7 +158,7 @@
 
     invoke-virtual {p1, v0, v3, v4}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 803
+    .line 821
     :cond_77
     iget-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
@@ -176,7 +176,7 @@
 
     if-eqz p1, :cond_ce
 
-    .line 804
+    .line 822
     iget-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$mdispatchTouchEvent(Lcom/transsion/camera/app/ui/setting/PopupOption;Landroid/view/MotionEvent;)V
@@ -196,13 +196,13 @@
 
     if-gez v1, :cond_b2
 
-    .line 807
+    .line 825
     :cond_99
     iget-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$mdispatchTouchEvent(Lcom/transsion/camera/app/ui/setting/PopupOption;Landroid/view/MotionEvent;)V
 
-    .line 808
+    .line 826
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
@@ -217,14 +217,14 @@
 
     if-eqz p1, :cond_ce
 
-    .line 809
+    .line 827
     iget-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {p1, v2}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fputmDownEventInBounds(Lcom/transsion/camera/app/ui/setting/PopupOption;Z)V
 
     goto :goto_ce
 
-    .line 812
+    .line 830
     :cond_b2
     iget-object v1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
@@ -234,7 +234,7 @@
 
     if-lez p1, :cond_ce
 
-    .line 814
+    .line 832
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
@@ -249,12 +249,12 @@
 
     if-eqz p1, :cond_ce
 
-    .line 816
+    .line 834
     iget-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$mdispatchTouchEvent(Lcom/transsion/camera/app/ui/setting/PopupOption;Landroid/view/MotionEvent;)V
 
-    .line 819
+    .line 837
     :cond_ce
     :goto_ce
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
@@ -263,7 +263,7 @@
 
     if-ne p1, v2, :cond_da
 
-    .line 820
+    .line 838
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$6;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     const/4 p1, 0x0

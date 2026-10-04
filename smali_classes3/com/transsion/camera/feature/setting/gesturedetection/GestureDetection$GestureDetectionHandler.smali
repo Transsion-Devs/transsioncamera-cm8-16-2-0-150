@@ -22,10 +22,10 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;Landroid/os/Looper;)V
     .registers 3
 
-    .line 396
+    .line 397
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
-    .line 397
+    .line 398
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -45,7 +45,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 6
 
-    .line 402
+    .line 403
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x0
@@ -54,7 +54,7 @@
 
     goto/16 :goto_14f
 
-    .line 450
+    .line 451
     :pswitch_8
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
@@ -62,7 +62,7 @@
 
     return-void
 
-    .line 427
+    .line 428
     :pswitch_e
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
@@ -76,7 +76,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fputmIsTakePicture(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;Z)V
 
-    .line 428
+    .line 429
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
@@ -85,7 +85,7 @@
 
     if-eqz p1, :cond_4c
 
-    .line 430
+    .line 431
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->getKey()Ljava/lang/String;
@@ -102,7 +102,7 @@
 
     move-result-object v0
 
-    .line 431
+    .line 432
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fgetmIsTakePicture(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;)Z
@@ -130,10 +130,10 @@
 
     move-result v1
 
-    .line 430
+    .line 431
     invoke-interface {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;->onDataCallback(Ljava/lang/Object;I)V
 
-    .line 433
+    .line 434
     :cond_4c
     invoke-static {}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -166,12 +166,12 @@
     :pswitch_6b
     const/16 p1, 0x65
 
-    .line 447
+    .line 448
     invoke-virtual {p0, p1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 
-    .line 436
+    .line 437
     :pswitch_71
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
@@ -181,7 +181,7 @@
 
     if-eqz p1, :cond_8e
 
-    .line 438
+    .line 439
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->getKey()Ljava/lang/String;
@@ -202,7 +202,7 @@
 
     invoke-interface {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;->onDataCallback(Ljava/lang/Object;I)V
 
-    .line 440
+    .line 441
     :cond_8e
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
@@ -214,7 +214,7 @@
 
     goto/16 :goto_14f
 
-    .line 443
+    .line 444
     :cond_98
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
@@ -224,12 +224,12 @@
 
     const/16 p1, 0x64
 
-    .line 444
+    .line 445
     invoke-virtual {p0, p1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 
-    .line 422
+    .line 423
     :pswitch_a4
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
@@ -243,7 +243,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fputmAllowedCapture(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;Z)V
 
-    .line 423
+    .line 424
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fgetmGestureAlgorithm(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;)Lcom/transsion/camera/feature/setting/gesturedetection/IGestureDetectAlgorithm;
@@ -258,7 +258,7 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/feature/setting/gesturedetection/IGestureDetectAlgorithm;->setDetAllowed(Z)V
 
-    .line 424
+    .line 425
     invoke-static {}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -287,19 +287,19 @@
 
     return-void
 
-    .line 416
+    .line 417
     :pswitch_df
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, [B
 
-    .line 417
+    .line 418
     iget v1, p1, Landroid/os/Message;->arg1:I
 
-    .line 418
+    .line 419
     iget p1, p1, Landroid/os/Message;->arg2:I
 
-    .line 419
+    .line 420
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fgetmGestureAlgorithm(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;)Lcom/transsion/camera/feature/setting/gesturedetection/IGestureDetectAlgorithm;
@@ -310,7 +310,7 @@
 
     return-void
 
-    .line 410
+    .line 411
     :pswitch_f1
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
@@ -320,7 +320,7 @@
 
     if-eqz p1, :cond_14f
 
-    .line 411
+    .line 412
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fgetmGestureAlgorithm(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;)Lcom/transsion/camera/feature/setting/gesturedetection/IGestureDetectAlgorithm;
@@ -329,14 +329,14 @@
 
     invoke-interface {p1}, Lcom/transsion/camera/feature/setting/gesturedetection/IGestureDetectAlgorithm;->unInitGesture()V
 
-    .line 412
+    .line 413
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-static {p0, v1}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fputmInit(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;Z)V
 
     return-void
 
-    .line 404
+    .line 405
     :pswitch_108
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
@@ -354,7 +354,7 @@
 
     if-nez p1, :cond_14f
 
-    .line 405
+    .line 406
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$GestureDetectionHandler;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fgetmGestureAlgorithm(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;)Lcom/transsion/camera/feature/setting/gesturedetection/IGestureDetectAlgorithm;
@@ -379,7 +379,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fputmInit(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;Z)V
 
-    .line 406
+    .line 407
     invoke-static {}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1

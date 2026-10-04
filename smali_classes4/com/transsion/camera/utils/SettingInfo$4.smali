@@ -18,24 +18,24 @@
 .method constructor <init>()V
     .registers 3
 
-    .line 2511
+    .line 2525
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 2513
+    .line 2527
     const-string v0, "0"
 
     const-string v1, "100"
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2514
+    .line 2528
     const-string v0, "5"
 
     const-string v1, "40"
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2515
+    .line 2529
     const-string v0, "6"
 
     const-string v1, "50"

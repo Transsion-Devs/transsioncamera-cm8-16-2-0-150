@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;)V
     .registers 2
 
-    .line 1084
+    .line 1089
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$7;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
@@ -35,15 +35,15 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .registers 9
 
-    .line 1087
+    .line 1092
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;->getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
 
-    .line 1089
+    .line 1094
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result p2
 
-    .line 1091
+    .line 1096
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object p3
@@ -52,7 +52,7 @@
 
     if-eqz p3, :cond_13
 
-    .line 1093
+    .line 1098
     invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemCount()I
 
     move-result p3
@@ -62,7 +62,7 @@
     :cond_13
     move p3, p4
 
-    .line 1095
+    .line 1100
     :goto_14
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$7;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
@@ -76,7 +76,7 @@
 
     move-result v0
 
-    .line 1096
+    .line 1101
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$7;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -89,7 +89,7 @@
 
     move-result v1
 
-    .line 1097
+    .line 1102
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$7;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -102,7 +102,7 @@
 
     move-result v2
 
-    .line 1098
+    .line 1103
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot$7;->this$0:Lcom/transsion/camera/feature/mode/pmaster/ui/SlimbodyRoot;
 
     # getter for: Lcom/transsion/camera/feature/mode/pmaster/ui/interactive/AbstractRoot;->mOrientation:I
@@ -124,7 +124,7 @@
 
     if-nez p2, :cond_50
 
-    .line 1113
+    .line 1118
     invoke-virtual {p1, v0, p4, v2, p4}, Landroid/graphics/Rect;->set(IIII)V
 
     return-void
@@ -134,12 +134,12 @@
 
     if-ne p2, p3, :cond_58
 
-    .line 1115
+    .line 1120
     invoke-virtual {p1, v2, p4, v0, p4}, Landroid/graphics/Rect;->set(IIII)V
 
     return-void
 
-    .line 1117
+    .line 1122
     :cond_58
     invoke-virtual {p1, v2, p4, v2, p4}, Landroid/graphics/Rect;->set(IIII)V
 
@@ -148,7 +148,7 @@
     :cond_5c
     if-nez p2, :cond_62
 
-    .line 1103
+    .line 1108
     invoke-virtual {p1, v0, p4, v2, p4}, Landroid/graphics/Rect;->set(IIII)V
 
     return-void
@@ -158,12 +158,12 @@
 
     if-ne p2, p3, :cond_6a
 
-    .line 1105
+    .line 1110
     invoke-virtual {p1, v2, p4, v1, p4}, Landroid/graphics/Rect;->set(IIII)V
 
     return-void
 
-    .line 1107
+    .line 1112
     :cond_6a
     invoke-virtual {p1, v2, p4, v2, p4}, Landroid/graphics/Rect;->set(IIII)V
 

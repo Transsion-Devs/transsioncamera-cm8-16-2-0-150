@@ -127,7 +127,7 @@
 .method private updateVisibility()Z
     .registers 4
 
-    .line 212
+    .line 214
     sget-object v0, Lcom/transsion/camera/feature/common/BaseUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -164,7 +164,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 215
+    .line 217
     iget-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mUIReady:Z
 
     if-eqz v0, :cond_3b
@@ -189,6 +189,19 @@
 
 
 # virtual methods
+.method public cancelPendingUpdates()V
+    .registers 2
+
+    .line 124
+    iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mMainHandler:Landroid/os/Handler;
+
+    iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mUpdateRunnable:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
 .method protected abstract doCreateView()Landroid/view/View;
 .end method
 
@@ -236,10 +249,10 @@
     :cond_9
     const/4 p1, 0x0
 
-    .line 153
+    .line 155
     iput-boolean p1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mModeSwitchAnimating:Z
 
-    .line 154
+    .line 156
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseUI;->triggerUpdate()V
 
     return-void
@@ -247,10 +260,10 @@
     :cond_10
     const/4 p1, 0x1
 
-    .line 148
+    .line 150
     iput-boolean p1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mModeSwitchAnimating:Z
 
-    .line 149
+    .line 151
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseUI;->triggerUpdate()V
 
     return-void
@@ -259,7 +272,7 @@
 .method public onCaptureEnd()V
     .registers 5
 
-    .line 201
+    .line 203
     sget-object v0, Lcom/transsion/camera/feature/common/BaseUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onCaptureEnd"
@@ -268,16 +281,16 @@
 
     const/4 v0, 0x0
 
-    .line 202
+    .line 204
     iput-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mCapturing:Z
 
-    .line 203
+    .line 205
     iput-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mIsSaving:Z
 
-    .line 204
+    .line 206
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseUI;->triggerUpdate()V
 
-    .line 205
+    .line 207
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v1, -0x1
@@ -288,7 +301,7 @@
 
     invoke-interface {v0, v3, v1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 207
+    .line 209
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v0, 0x23
@@ -301,7 +314,7 @@
 .method public onCaptureFailed()V
     .registers 5
 
-    .line 189
+    .line 191
     sget-object v0, Lcom/transsion/camera/feature/common/BaseUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onCaptureFailed"
@@ -310,16 +323,16 @@
 
     const/4 v0, 0x0
 
-    .line 190
+    .line 192
     iput-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mCapturing:Z
 
-    .line 191
+    .line 193
     iput-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mIsSaving:Z
 
-    .line 192
+    .line 194
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseUI;->triggerUpdate()V
 
-    .line 193
+    .line 195
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v1, -0x1
@@ -330,7 +343,7 @@
 
     invoke-interface {v0, v3, v1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 195
+    .line 197
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v0, 0x23
@@ -343,7 +356,7 @@
 .method public onCaptureStart()V
     .registers 5
 
-    .line 164
+    .line 166
     sget-object v0, Lcom/transsion/camera/feature/common/BaseUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onCaptureStart"
@@ -352,13 +365,13 @@
 
     const/4 v0, 0x1
 
-    .line 165
+    .line 167
     iput-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mCapturing:Z
 
-    .line 166
+    .line 168
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseUI;->triggerUpdate()V
 
-    .line 167
+    .line 169
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v1, -0x1
@@ -369,7 +382,7 @@
 
     invoke-interface {v0, v3, v1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 169
+    .line 171
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v0, 0x22
@@ -382,7 +395,7 @@
 .method public onCaptureStop()V
     .registers 6
 
-    .line 175
+    .line 177
     sget-object v0, Lcom/transsion/camera/feature/common/BaseUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -403,7 +416,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 176
+    .line 178
     iget-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mResumed:Z
 
     const/4 v1, 0x1
@@ -412,7 +425,7 @@
 
     if-eqz v0, :cond_2c
 
-    .line 177
+    .line 179
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v3, 0x3
@@ -421,15 +434,15 @@
 
     invoke-interface {v0, v3, v4, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 179
+    .line 181
     iput-boolean v1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mIsSaving:Z
 
-    .line 180
+    .line 182
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseUI;->triggerUpdate()V
 
     return-void
 
-    .line 182
+    .line 184
     :cond_2c
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -492,20 +505,6 @@
 
     .line 120
     iput-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mModeSwitchAnimating:Z
-
-    .line 121
-    iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
-
-    const/4 v1, 0x4
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 122
-    iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mMainHandler:Landroid/os/Handler;
-
-    iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mUpdateRunnable:Ljava/lang/Runnable;
-
-    invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
     return-void
 .end method
@@ -585,10 +584,10 @@
 .method public setModeChangeFlag(Z)V
     .registers 2
 
-    .line 141
+    .line 143
     iput-boolean p1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mModeChangeFlag:Z
 
-    .line 142
+    .line 144
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseUI;->triggerUpdate()V
 
     return-void
@@ -610,31 +609,31 @@
 .method public unInitView()V
     .registers 4
 
-    .line 126
+    .line 128
     sget-object v0, Lcom/transsion/camera/feature/common/BaseUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "unInitView"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 127
+    .line 129
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mMainHandler:Landroid/os/Handler;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 128
+    .line 130
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     if-eqz v0, :cond_19
 
-    .line 129
+    .line 131
     iget-object v2, p0, Lcom/transsion/camera/feature/common/BaseUI;->mParentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 130
+    .line 132
     iput-object v1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     :cond_19
@@ -644,7 +643,7 @@
 .method public updateOrientation(I)V
     .registers 5
 
-    .line 135
+    .line 137
     sget-object v0, Lcom/transsion/camera/feature/common/BaseUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -663,10 +662,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 136
+    .line 138
     iput p1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
-    .line 137
+    .line 139
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z

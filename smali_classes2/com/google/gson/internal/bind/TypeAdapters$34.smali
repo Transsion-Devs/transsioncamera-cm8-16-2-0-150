@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/bind/TypeAdapters$34;
+.class Lcom/google/gson/internal/bind/TypeAdapters$34;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -8,33 +8,29 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/gson/internal/bind/TypeAdapters;->newFactoryForMultipleTypes(Ljava/lang/Class;Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
+    value = Lcom/google/gson/internal/bind/TypeAdapters;->newTypeHierarchyFactory(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic val$base:Ljava/lang/Class;
-
-.field final synthetic val$sub:Ljava/lang/Class;
+.field final synthetic val$clazz:Ljava/lang/Class;
 
 .field final synthetic val$typeAdapter:Lcom/google/gson/TypeAdapter;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Class;Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
-    .registers 4
+.method constructor <init>(Ljava/lang/Class;Lcom/google/gson/TypeAdapter;)V
+    .registers 3
 
-    .line 862
-    iput-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$base:Ljava/lang/Class;
+    .line 1127
+    iput-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$clazz:Ljava/lang/Class;
 
-    iput-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$sub:Ljava/lang/Class;
-
-    iput-object p3, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
+    iput-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,61 +42,47 @@
 .method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
     .registers 3
 
-    .line 865
+    .line 1131
     invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
 
     move-result-object p1
 
-    .line 866
-    iget-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$base:Ljava/lang/Class;
+    .line 1132
+    iget-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$clazz:Ljava/lang/Class;
 
-    if-eq p1, p2, :cond_f
+    invoke-virtual {p2, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    iget-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$sub:Ljava/lang/Class;
+    move-result p2
 
-    if-ne p1, p2, :cond_d
+    if-nez p2, :cond_e
 
-    goto :goto_f
-
-    :cond_d
     const/4 p0, 0x0
 
     return-object p0
 
-    :cond_f
-    :goto_f
-    iget-object p0, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
+    .line 1135
+    :cond_e
+    new-instance p2, Lcom/google/gson/internal/bind/TypeAdapters$34$1;
 
-    return-object p0
+    invoke-direct {p2, p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$34$1;-><init>(Lcom/google/gson/internal/bind/TypeAdapters$34;Ljava/lang/Class;)V
+
+    return-object p2
 .end method
 
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 869
+    .line 1161
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "Factory[type="
+    const-string v1, "Factory[typeHierarchy="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$base:Ljava/lang/Class;
+    iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$clazz:Ljava/lang/Class;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "+"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$34;->val$sub:Ljava/lang/Class;
-
-    .line 870
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v1

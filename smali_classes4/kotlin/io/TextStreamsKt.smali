@@ -4,6 +4,17 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$3AhJ2UCBpcTyB1jZJdphp_uKhXo(Ljava/util/ArrayList;Ljava/lang/String;)Lkotlin/Unit;
+    .registers 2
+
+    .line 0
+    invoke-static {p0, p1}, Lkotlin/io/TextStreamsKt;->readLines$lambda$0(Ljava/util/ArrayList;Ljava/lang/String;)Lkotlin/Unit;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static final copyTo(Ljava/io/Reader;Ljava/io/Writer;I)J
     .registers 8
 
@@ -15,10 +26,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 121
+    .line 127
     new-array p2, p2, [C
 
-    .line 122
+    .line 128
     invoke-virtual {p0, p2}, Ljava/io/Reader;->read([C)I
 
     move-result v0
@@ -30,14 +41,14 @@
 
     const/4 v3, 0x0
 
-    .line 124
+    .line 130
     invoke-virtual {p1, p2, v3, v0}, Ljava/io/Writer;->write([CII)V
 
     int-to-long v3, v0
 
     add-long/2addr v1, v3
 
-    .line 126
+    .line 132
     invoke-virtual {p0, p2}, Ljava/io/Reader;->read([C)I
 
     move-result v0
@@ -57,7 +68,7 @@
 
     const/16 p2, 0x2000
 
-    .line 119
+    .line 125
     :cond_6
     invoke-static {p0, p1, p2}, Lkotlin/io/TextStreamsKt;->copyTo(Ljava/io/Reader;Ljava/io/Writer;I)J
 
@@ -77,7 +88,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 52
+    .line 57
     instance-of v0, p0, Ljava/io/BufferedReader;
 
     if-eqz v0, :cond_11
@@ -101,7 +112,7 @@
 
     move-result-object v0
 
-    .line 1295
+    .line 1321
     invoke-interface {v0}, Lkotlin/sequences/Sequence;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -126,7 +137,7 @@
 
     goto :goto_38
 
-    .line 33
+    .line 35
     :cond_31
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
     :try_end_33
@@ -134,7 +145,7 @@
 
     const/4 p1, 0x0
 
-    .line 52
+    .line 57
     invoke-static {p0, p1}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
     return-void
@@ -160,7 +171,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 69
+    .line 75
     new-instance v0, Lkotlin/io/LinesSequence;
 
     invoke-direct {v0, p0}, Lkotlin/io/LinesSequence;-><init>(Ljava/io/BufferedReader;)V
@@ -179,21 +190,19 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 149
+    .line 155
     invoke-virtual {p0}, Ljava/net/URL;->openStream()Ljava/io/InputStream;
 
     move-result-object p0
 
     :try_start_9
-    const-string v0, "it"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-static {p0}, Lkotlin/io/ByteStreamsKt;->readBytes(Ljava/io/InputStream;)[B
 
     move-result-object v0
-    :try_end_12
-    .catchall {:try_start_9 .. :try_end_12} :catchall_17
+    :try_end_10
+    .catchall {:try_start_9 .. :try_end_10} :catchall_15
 
     const/4 v1, 0x0
 
@@ -201,15 +210,15 @@
 
     return-object v0
 
-    :catchall_17
+    :catchall_15
     move-exception v0
 
-    :try_start_18
+    :try_start_16
     throw v0
-    :try_end_19
-    .catchall {:try_start_18 .. :try_end_19} :catchall_19
+    :try_end_17
+    .catchall {:try_start_16 .. :try_end_17} :catchall_17
 
-    :catchall_19
+    :catchall_17
     move-exception v1
 
     invoke-static {p0, v0}, Lkotlin/io/CloseableKt;->closeFinally(Ljava/io/Closeable;Ljava/lang/Throwable;)V
@@ -224,19 +233,34 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 41
+    .line 43
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 42
-    new-instance v1, Lkotlin/io/TextStreamsKt$readLines$1;
+    .line 44
+    new-instance v1, Lkotlin/io/TextStreamsKt$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, v0}, Lkotlin/io/TextStreamsKt$readLines$1;-><init>(Ljava/util/ArrayList;)V
+    invoke-direct {v1, v0}, Lkotlin/io/TextStreamsKt$$ExternalSyntheticLambda0;-><init>(Ljava/util/ArrayList;)V
 
     invoke-static {p0, v1}, Lkotlin/io/TextStreamsKt;->forEachLine(Ljava/io/Reader;Lkotlin/jvm/functions/Function1;)V
 
     return-object v0
+.end method
+
+.method private static final readLines$lambda$0(Ljava/util/ArrayList;Ljava/lang/String;)Lkotlin/Unit;
+    .registers 3
+
+    const-string v0, "it"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 44
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p0
 .end method
 
 .method public static final readText(Ljava/io/Reader;)Ljava/lang/String;
@@ -246,7 +270,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 105
+    .line 111
     new-instance v0, Ljava/io/StringWriter;
 
     invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
@@ -257,15 +281,15 @@
 
     const/4 v3, 0x0
 
-    .line 106
+    .line 112
     invoke-static {p0, v0, v3, v1, v2}, Lkotlin/io/TextStreamsKt;->copyTo$default(Ljava/io/Reader;Ljava/io/Writer;IILjava/lang/Object;)J
 
-    .line 107
+    .line 113
     invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v0, "buffer.toString()"
+    const-string v0, "toString(...)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

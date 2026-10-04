@@ -24,13 +24,13 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;[BZ)V
     .registers 4
 
-    .line 407
+    .line 409
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 408
+    .line 410
     iput-object p2, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;->mJpegData:[B
 
-    .line 409
+    .line 411
     iput-boolean p3, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;->mIsBGImage:Z
 
     return-void
@@ -41,7 +41,7 @@
 .method isValid()Z
     .registers 3
 
-    .line 413
+    .line 415
     iget-object p0, p0, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager$JpegInfo;->mJpegData:[B
 
     if-eqz p0, :cond_6
@@ -53,7 +53,7 @@
     :cond_6
     const/4 p0, 0x0
 
-    .line 414
+    .line 416
     :goto_7
     invoke-static {}, Lcom/transsion/camera/app/common/groupcapture/GroupCaptureManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 

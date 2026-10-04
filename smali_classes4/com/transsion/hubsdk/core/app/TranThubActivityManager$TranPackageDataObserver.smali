@@ -24,12 +24,12 @@
 .method public constructor <init>(Lcom/transsion/hubsdk/core/app/TranThubActivityManager;Lcom/transsion/hubsdk/aosp/app/TranAospActivityManagerExt$ITranPackageDataObserverExtInner;)V
     .registers 3
 
-    .line 1456
+    .line 1497
     iput-object p1, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranPackageDataObserver;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/app/ITranPackageDataObserver$Stub;-><init>()V
 
-    .line 1457
+    .line 1498
     iput-object p2, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranPackageDataObserver;->mTranPackageDataObserver:Lcom/transsion/hubsdk/aosp/app/TranAospActivityManagerExt$ITranPackageDataObserverExtInner;
 
     return-void
@@ -40,12 +40,12 @@
 .method public onRemoveCompleted(Ljava/lang/String;Z)V
     .registers 3
 
-    .line 1462
+    .line 1503
     iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranPackageDataObserver;->mTranPackageDataObserver:Lcom/transsion/hubsdk/aosp/app/TranAospActivityManagerExt$ITranPackageDataObserverExtInner;
 
     if-eqz p0, :cond_7
 
-    .line 1463
+    .line 1504
     invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManagerExt$ITranPackageDataObserverExtInner;->onRemoveCompleted(Ljava/lang/String;Z)V
 
     :cond_7

@@ -15,7 +15,7 @@
         }
     .end annotation
 
-    .line 17
+    .line 13
     new-instance v0, Lkotlinx/coroutines/RunnableKt$Runnable$1;
 
     invoke-direct {v0, p0}, Lkotlinx/coroutines/RunnableKt$Runnable$1;-><init>(Lkotlin/jvm/functions/Function0;)V

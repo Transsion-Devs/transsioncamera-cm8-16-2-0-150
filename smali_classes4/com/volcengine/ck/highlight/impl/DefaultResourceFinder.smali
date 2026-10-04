@@ -68,7 +68,7 @@
 
     const/4 p0, 0x0
 
-    .line 26
+    .line 39
     new-array p0, p0, [Ljava/lang/String;
 
     .line 30

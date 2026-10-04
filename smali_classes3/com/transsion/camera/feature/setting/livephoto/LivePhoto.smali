@@ -17,6 +17,8 @@
 
 .field private mClosedByAIZoomSR:Z
 
+.field private mClosedByFlashSnapLite:Z
+
 .field private mClosedByGroupCapture:Z
 
 .field private mClosedBySuperNight:Z
@@ -77,7 +79,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 60
+    .line 61
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "LivePhoto"
@@ -92,25 +94,25 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 59
+    .line 60
     invoke-direct {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 71
+    .line 73
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mIsCameraStable:Z
 
-    .line 72
+    .line 74
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mSuperNightSwitch:Z
 
-    .line 255
+    .line 270
     new-instance v0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto$1;-><init>(Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
 
-    .line 324
+    .line 339
     new-instance v0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;)V
@@ -123,7 +125,7 @@
 .method static synthetic access$000(Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;)Lcom/transsion/camera/app/common/setting/StatusMonitor;
     .registers 1
 
-    .line 59
+    .line 60
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-object p0
@@ -132,7 +134,7 @@
 .method static synthetic access$100(Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;)Lcom/transsion/camera/app/common/setting/StatusMonitor;
     .registers 1
 
-    .line 59
+    .line 60
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-object p0
@@ -141,7 +143,7 @@
 .method static synthetic access$200(Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;)Lcom/transsion/camera/app/common/setting/StatusMonitor;
     .registers 1
 
-    .line 59
+    .line 60
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-object p0
@@ -150,7 +152,7 @@
 .method static synthetic access$300(Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;)Lcom/transsion/camera/app/common/setting/StatusMonitor;
     .registers 1
 
-    .line 59
+    .line 60
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-object p0
@@ -161,10 +163,10 @@
 
     const/4 v0, 0x0
 
-    .line 405
+    .line 420
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mResetByAllSwitchOff:Z
 
-    .line 406
+    .line 421
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->handleStateChanged()V
 
     return-void
@@ -175,10 +177,10 @@
 
     const/4 v0, 0x1
 
-    .line 410
+    .line 425
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mIgnoreSuperDefinition:Z
 
-    .line 411
+    .line 426
     const-string v0, "on"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->onValueChanged(Ljava/lang/String;)V
@@ -189,12 +191,12 @@
 .method private isCameraFacingBack()Z
     .registers 1
 
-    .line 419
+    .line 434
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 420
+    .line 435
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraInfoUtil;->isCameraFacingBack(Ljava/lang/String;)Z
 
     move-result p0
@@ -205,7 +207,7 @@
 .method private isSupportFullSize()Z
     .registers 1
 
-    .line 415
+    .line 430
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->isCameraFacingBack()Z
 
     move-result p0
@@ -233,7 +235,7 @@
 .method private synthetic lambda$new$0(Ljava/lang/String;Ljava/lang/String;)V
     .registers 13
 
-    .line 325
+    .line 340
     const-string v0, "key_super_night_lite_switch_state"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -242,16 +244,16 @@
 
     if-eqz v1, :cond_a
 
-    .line 326
+    .line 341
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mSuperNightLightState:Ljava/lang/String;
 
-    .line 328
+    .line 343
     :cond_a
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mIsCameraStable:Z
 
     if-nez v1, :cond_16
 
-    .line 329
+    .line 344
     sget-object p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "camera is not stable, not allow change state"
@@ -260,7 +262,7 @@
 
     return-void
 
-    .line 332
+    .line 347
     :cond_16
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -280,14 +282,14 @@
 
     if-eqz v0, :cond_90
 
-    .line 333
+    .line 348
     invoke-static {v2, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3f
 
-    .line 334
+    .line 349
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -298,18 +300,18 @@
 
     if-eqz v0, :cond_90
 
-    .line 335
+    .line 350
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedBySuperNight:Z
 
-    .line 336
+    .line 351
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mIgnoreSuperDefinition:Z
 
-    .line 337
+    .line 352
     invoke-virtual {p0, v3}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->onValueChanged(Ljava/lang/String;)V
 
     goto :goto_90
 
-    .line 340
+    .line 355
     :cond_3f
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -317,7 +319,7 @@
 
     move-result-object v0
 
-    .line 341
+    .line 356
     iget-boolean v7, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mIsGroupCaptureIconShow:Z
 
     if-eqz v7, :cond_5d
@@ -326,12 +328,12 @@
 
     const-string v8, "key_group_capture_icon_state"
 
-    .line 342
+    .line 357
     invoke-virtual {v7}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 341
+    .line 356
     invoke-virtual {v7, v8, v5, v9}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
@@ -349,7 +351,7 @@
     :cond_5d
     move v7, v6
 
-    .line 343
+    .line 358
     :goto_5e
     invoke-static {v0, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -366,32 +368,32 @@
     :cond_6a
     if-eqz v7, :cond_75
 
-    .line 344
+    .line 359
     :cond_6c
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedBySuperNight:Z
 
     if-eqz p1, :cond_121
 
-    .line 345
+    .line 360
     iput-boolean v6, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedBySuperNight:Z
 
-    .line 346
+    .line 361
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mResetByAllSwitchOff:Z
 
     return-void
 
-    .line 350
+    .line 365
     :cond_75
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mResetByAllSwitchOff:Z
 
     if-eqz v0, :cond_7d
 
-    .line 351
+    .line 366
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->handleResetByAllSwitchOff()V
 
     return-void
 
-    .line 354
+    .line 369
     :cond_7d
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedBySuperNight:Z
 
@@ -407,13 +409,13 @@
 
     if-eqz v0, :cond_90
 
-    .line 355
+    .line 370
     iput-boolean v6, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedBySuperNight:Z
 
-    .line 356
+    .line 371
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->handleStateChanged()V
 
-    .line 361
+    .line 376
     :cond_90
     :goto_90
     const-string v0, "key_group_capture_switch_state"
@@ -424,7 +426,7 @@
 
     if-eqz v0, :cond_fc
 
-    .line 362
+    .line 377
     const-string/jumbo v0, "value_group_capture_switch_on"
 
     invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -433,7 +435,7 @@
 
     if-eqz v0, :cond_b3
 
-    .line 363
+    .line 378
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -444,18 +446,18 @@
 
     if-eqz v0, :cond_fc
 
-    .line 364
+    .line 379
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByGroupCapture:Z
 
-    .line 365
+    .line 380
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mIgnoreSuperDefinition:Z
 
-    .line 366
+    .line 381
     invoke-virtual {p0, v3}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->onValueChanged(Ljava/lang/String;)V
 
     goto :goto_fc
 
-    .line 369
+    .line 384
     :cond_b3
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -463,7 +465,7 @@
 
     move-result-object v0
 
-    .line 370
+    .line 385
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mSuperNightSwitch:Z
 
     if-eqz v1, :cond_cc
@@ -484,7 +486,7 @@
 
     goto :goto_d8
 
-    .line 373
+    .line 388
     :cond_cc
     invoke-static {v0, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -498,32 +500,32 @@
 
     if-nez v0, :cond_e1
 
-    .line 374
+    .line 389
     :goto_d8
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByGroupCapture:Z
 
     if-eqz p1, :cond_121
 
-    .line 375
+    .line 390
     iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mResetByAllSwitchOff:Z
 
-    .line 376
+    .line 391
     iput-boolean v6, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByGroupCapture:Z
 
     return-void
 
-    .line 380
+    .line 395
     :cond_e1
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mResetByAllSwitchOff:Z
 
     if-eqz v0, :cond_e9
 
-    .line 381
+    .line 396
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->handleResetByAllSwitchOff()V
 
     return-void
 
-    .line 384
+    .line 399
     :cond_e9
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByGroupCapture:Z
 
@@ -539,13 +541,13 @@
 
     if-eqz v0, :cond_fc
 
-    .line 385
+    .line 400
     iput-boolean v6, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByGroupCapture:Z
 
-    .line 386
+    .line 401
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->handleStateChanged()V
 
-    .line 391
+    .line 406
     :cond_fc
     :goto_fc
     const-string v0, "key_live_photo_switch"
@@ -556,7 +558,7 @@
 
     if-eqz v0, :cond_113
 
-    .line 392
+    .line 407
     const-string/jumbo v0, "value_live_photo_interaction_off"
 
     invoke-static {p2, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -565,16 +567,16 @@
 
     if-eqz v0, :cond_113
 
-    .line 393
+    .line 408
     iput-boolean v6, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedBySuperNight:Z
 
-    .line 394
+    .line 409
     iput-boolean v6, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByGroupCapture:Z
 
-    .line 395
+    .line 410
     iput-boolean v6, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mCloseBySuperDefinition:Z
 
-    .line 399
+    .line 414
     :cond_113
     const-string v0, "key_super_night_lite_switch"
 
@@ -584,7 +586,7 @@
 
     if-eqz p1, :cond_121
 
-    .line 400
+    .line 415
     invoke-virtual {p2, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
@@ -598,7 +600,7 @@
 .method private postLivPhotoRestriction(Ljava/lang/String;)V
     .registers 4
 
-    .line 425
+    .line 440
     invoke-static {}, Lcom/transsion/camera/feature/setting/livephoto/LivePhotoRestriction;->getLivePhotoRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
 
     move-result-object v0
@@ -609,22 +611,22 @@
 
     move-result-object p1
 
-    .line 426
+    .line 441
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mIgnoreSuperDefinition:Z
 
     if-eqz v0, :cond_15
 
     const/4 v0, 0x0
 
-    .line 427
+    .line 442
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mIgnoreSuperDefinition:Z
 
-    .line 428
+    .line 443
     const-string v0, "key_super_definition"
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
 
-    .line 430
+    .line 445
     :cond_15
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -644,14 +646,14 @@
 .method public configParameters(Lcom/transsion/camera/adapter/CameraParameters;)I
     .registers 5
 
-    .line 235
+    .line 250
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mModeSupportLivePhoto:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1e
 
-    .line 236
+    .line 251
     const-string v0, "on"
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -662,10 +664,10 @@
 
     move-result v0
 
-    .line 237
+    .line 252
     invoke-virtual {p1, v0}, Lcom/transsion/camera/adapter/CameraParameters;->setLivePhotoMode(I)V
 
-    .line 238
+    .line 253
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p1
@@ -678,7 +680,7 @@
 
     goto :goto_21
 
-    .line 240
+    .line 255
     :cond_1e
     invoke-virtual {p1, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setLivePhotoMode(I)V
 
@@ -707,7 +709,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 141
+    .line 143
     const-string p0, "key_live_photo"
 
     return-object p0
@@ -722,7 +724,7 @@
 .method public getPreviewStateCallback()Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
     .registers 1
 
-    .line 252
+    .line 267
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
 
     return-object p0
@@ -742,7 +744,7 @@
 .method public getSettingType()Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
     .registers 1
 
-    .line 136
+    .line 138
     sget-object p0, Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;->PHOTO:Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
 
     return-object p0
@@ -759,7 +761,7 @@
         }
     .end annotation
 
-    .line 212
+    .line 227
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p0
@@ -781,10 +783,10 @@
 .method public init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
     .registers 4
 
-    .line 78
+    .line 80
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
-    .line 79
+    .line 81
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_super_night_lite_switch_state"
@@ -793,7 +795,7 @@
 
     invoke-virtual {p1, p2, p3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 80
+    .line 82
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_group_capture_switch_state"
@@ -802,7 +804,7 @@
 
     invoke-virtual {p1, p2, p3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 81
+    .line 83
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_live_photo"
@@ -811,7 +813,7 @@
 
     invoke-virtual {p1, p2, p3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 82
+    .line 84
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_live_photo_switch"
@@ -820,7 +822,7 @@
 
     invoke-virtual {p1, p2, p3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 83
+    .line 85
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_super_night_lite_switch"
@@ -847,17 +849,17 @@
 
     monitor-enter p0
 
-    .line 98
+    .line 100
     :try_start_1
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedPlatformValues(Ljava/util/List;)V
 
-    .line 99
+    .line 101
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedEntryValues(Ljava/util/List;)V
 
-    .line 100
+    .line 102
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setEntryValues(Ljava/util/List;)V
 
-    .line 101
+    .line 103
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->getKey()Ljava/lang/String;
@@ -872,14 +874,14 @@
 
     move-result-object v0
 
-    .line 103
+    .line 105
     invoke-interface {p1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_24
 
-    .line 104
+    .line 106
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->setValue(Ljava/lang/String;)V
 
     goto :goto_27
@@ -889,17 +891,17 @@
 
     goto :goto_2c
 
-    .line 106
+    .line 108
     :cond_24
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->setValue(Ljava/lang/String;)V
 
-    .line 108
+    .line 110
     :goto_27
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/setting/SettingBase;->setDefaultValue(Ljava/lang/String;)V
     :try_end_2a
     .catchall {:try_start_1 .. :try_end_2a} :catchall_22
 
-    .line 109
+    .line 111
     monitor-exit p0
 
     return-void
@@ -916,15 +918,15 @@
 .method public notifyCameraStable(Z)V
     .registers 3
 
-    .line 315
+    .line 330
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->notifyCameraStable(Z)V
 
-    .line 316
+    .line 331
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mIsCameraStable:Z
 
     if-eqz p1, :cond_20
 
-    .line 317
+    .line 332
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mModeSupportLivePhoto:Z
 
     if-eqz p1, :cond_20
@@ -937,7 +939,7 @@
 
     const-string/jumbo v0, "value_super_night_lite_switch_off"
 
-    .line 318
+    .line 333
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -946,10 +948,10 @@
 
     const/4 p1, 0x0
 
-    .line 319
+    .line 334
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedBySuperNight:Z
 
-    .line 320
+    .line 335
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->handleStateChanged()V
 
     :cond_20
@@ -959,12 +961,12 @@
 .method public notifyGroupCaptureIconHide()V
     .registers 2
 
-    .line 309
+    .line 324
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->notifyGroupCaptureIconHide()V
 
     const/4 v0, 0x0
 
-    .line 310
+    .line 325
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mIsGroupCaptureIconShow:Z
 
     return-void
@@ -973,12 +975,12 @@
 .method public notifyGroupCaptureIconShow()V
     .registers 2
 
-    .line 303
+    .line 318
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->notifyGroupCaptureIconShow()V
 
     const/4 v0, 0x1
 
-    .line 304
+    .line 319
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mIsGroupCaptureIconShow:Z
 
     return-void
@@ -987,7 +989,7 @@
 .method public onCameraIdChanged(Ljava/lang/String;[Ljava/lang/String;)V
     .registers 3
 
-    .line 118
+    .line 120
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/setting/SettingBase;->onCameraIdChanged(Ljava/lang/String;[Ljava/lang/String;)V
 
     return-void
@@ -998,18 +1000,18 @@
 
     monitor-enter p0
 
-    .line 130
+    .line 132
     :try_start_1
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->onModeClosed(Ljava/lang/String;)V
 
     const/4 p1, 0x0
 
-    .line 131
+    .line 133
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mModeSupportLivePhoto:Z
     :try_end_7
     .catchall {:try_start_1 .. :try_end_7} :catchall_9
 
-    .line 132
+    .line 134
     monitor-exit p0
 
     return-void
@@ -1028,10 +1030,10 @@
 .method public onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
     .registers 4
 
-    .line 123
+    .line 125
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
 
-    .line 124
+    .line 126
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->getKey()Ljava/lang/String;
 
     move-result-object p1
@@ -1042,7 +1044,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mModeSupportLivePhoto:Z
 
-    .line 125
+    .line 127
     sget-object p1, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1071,7 +1073,7 @@
 
     monitor-enter p0
 
-    .line 146
+    .line 148
     :try_start_1
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
@@ -1083,7 +1085,7 @@
 
     if-nez v0, :cond_44
 
-    .line 147
+    .line 149
     sget-object v0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1102,10 +1104,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 148
+    .line 150
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->setValue(Ljava/lang/String;)V
 
-    .line 149
+    .line 151
     iget-object v2, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->getKey()Ljava/lang/String;
@@ -1124,10 +1126,10 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V
 
-    .line 150
+    .line 152
     invoke-direct {p0, v4}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->postLivPhotoRestriction(Ljava/lang/String;)V
 
-    .line 151
+    .line 153
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->getKey()Ljava/lang/String;
@@ -1147,7 +1149,7 @@
 
     goto :goto_46
 
-    .line 153
+    .line 155
     :cond_44
     :goto_44
     monitor-exit p0
@@ -1185,7 +1187,7 @@
         }
     .end annotation
 
-    .line 162
+    .line 164
     sget-object v0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1216,7 +1218,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 164
+    .line 166
     const-string v0, "key_super_definition"
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1233,38 +1235,38 @@
 
     if-eqz v0, :cond_5e
 
-    .line 165
+    .line 167
     invoke-static {p2, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_4a
 
-    .line 166
+    .line 168
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 167
+    .line 169
     invoke-static {p1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_d3
+    if-eqz p1, :cond_105
 
-    .line 168
+    .line 170
     invoke-virtual {p0, v4}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->onValueChanged(Ljava/lang/String;)V
 
-    .line 169
+    .line 171
     iput-boolean v2, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mCloseBySuperDefinition:Z
 
     return-void
 
-    .line 172
+    .line 174
     :cond_4a
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mCloseBySuperDefinition:Z
 
-    if-eqz p1, :cond_d3
+    if-eqz p1, :cond_105
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
@@ -1274,17 +1276,17 @@
 
     move-result p1
 
-    if-eqz p1, :cond_d3
+    if-eqz p1, :cond_105
 
-    .line 173
+    .line 175
     invoke-virtual {p0, v3}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->onValueChanged(Ljava/lang/String;)V
 
-    .line 174
+    .line 176
     iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mCloseBySuperDefinition:Z
 
     return-void
 
-    .line 177
+    .line 179
     :cond_5e
     const-string v0, "key_ai_frame"
 
@@ -1294,38 +1296,38 @@
 
     if-eqz v0, :cond_90
 
-    .line 178
+    .line 180
     invoke-static {p2, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_7c
 
-    .line 179
+    .line 181
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 180
+    .line 182
     invoke-static {p1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_d3
+    if-eqz p1, :cond_105
 
-    .line 181
+    .line 183
     invoke-virtual {p0, v4}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->onValueChanged(Ljava/lang/String;)V
 
-    .line 182
+    .line 184
     iput-boolean v2, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByAIFrame:Z
 
     return-void
 
-    .line 185
+    .line 187
     :cond_7c
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByAIFrame:Z
 
-    if-eqz p1, :cond_d3
+    if-eqz p1, :cond_105
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
@@ -1335,17 +1337,17 @@
 
     move-result p1
 
-    if-eqz p1, :cond_d3
+    if-eqz p1, :cond_105
 
-    .line 186
+    .line 188
     invoke-virtual {p0, v3}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->onValueChanged(Ljava/lang/String;)V
 
-    .line 187
+    .line 189
     iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByAIFrame:Z
 
     return-void
 
-    .line 190
+    .line 192
     :cond_90
     const-string v0, "key_ai_zoom_sr"
 
@@ -1355,34 +1357,34 @@
 
     if-eqz v0, :cond_d4
 
-    .line 191
+    .line 193
     invoke-static {p2, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_ae
 
-    .line 192
+    .line 194
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 193
+    .line 195
     invoke-static {p1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_d3
+    if-eqz p1, :cond_105
 
-    .line 194
+    .line 196
     invoke-virtual {p0, v4}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->onValueChanged(Ljava/lang/String;)V
 
-    .line 195
+    .line 197
     iput-boolean v2, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByAIZoomSR:Z
 
     return-void
 
-    .line 198
+    .line 200
     :cond_ae
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -1392,10 +1394,10 @@
 
     move-result-object p1
 
-    .line 199
+    .line 201
     iget-boolean p2, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByAIZoomSR:Z
 
-    if-eqz p2, :cond_d3
+    if-eqz p2, :cond_105
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
@@ -1405,30 +1407,91 @@
 
     move-result p2
 
-    if-eqz p2, :cond_d3
+    if-eqz p2, :cond_105
 
-    .line 200
+    .line 202
     invoke-static {v4, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_d3
+    if-eqz p1, :cond_105
 
     iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mSuperNightSwitch:Z
 
-    if-eqz p1, :cond_d3
+    if-eqz p1, :cond_105
 
-    .line 201
+    .line 203
     invoke-virtual {p0, v3}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->onValueChanged(Ljava/lang/String;)V
 
-    .line 202
+    .line 204
     iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByAIZoomSR:Z
 
-    :cond_d3
     return-void
 
-    .line 206
+    .line 207
     :cond_d4
+    const-string v0, "key_best_moment_detect"
+
+    invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_106
+
+    .line 208
+    invoke-static {p2, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_f2
+
+    .line 209
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 210
+    invoke-static {p1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_105
+
+    .line 211
+    invoke-virtual {p0, v4}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->onValueChanged(Ljava/lang/String;)V
+
+    .line 212
+    iput-boolean v2, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByFlashSnapLite:Z
+
+    return-void
+
+    .line 215
+    :cond_f2
+    iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByFlashSnapLite:Z
+
+    if-eqz p1, :cond_105
+
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {v4, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_105
+
+    .line 216
+    invoke-virtual {p0, v3}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->onValueChanged(Ljava/lang/String;)V
+
+    .line 217
+    iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByFlashSnapLite:Z
+
+    :cond_105
+    return-void
+
+    .line 221
+    :cond_106
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->overrideValues(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
 
     return-void
@@ -1437,12 +1500,12 @@
 .method public pause()V
     .registers 2
 
-    .line 297
+    .line 312
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->pause()V
 
     const/4 v0, 0x0
 
-    .line 298
+    .line 313
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mCloseBySuperDefinition:Z
 
     return-void
@@ -1451,7 +1514,7 @@
 .method public postRestrictionAfterInitialized()V
     .registers 2
 
-    .line 157
+    .line 159
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -1464,27 +1527,27 @@
 .method public restoreToSupportedPlatformValue()V
     .registers 2
 
-    .line 286
+    .line 301
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->restoreToSupportedPlatformValue()V
 
     const/4 v0, 0x0
 
-    .line 287
+    .line 302
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedBySuperNight:Z
 
-    .line 288
+    .line 303
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByGroupCapture:Z
 
-    .line 289
+    .line 304
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mCloseBySuperDefinition:Z
 
-    .line 290
+    .line 305
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByAIFrame:Z
 
-    .line 291
+    .line 306
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mClosedByAIZoomSR:Z
 
-    .line 292
+    .line 307
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->mResetByAllSwitchOff:Z
 
     return-void
@@ -1499,22 +1562,22 @@
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
     .registers 4
 
-    .line 227
+    .line 242
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 228
+    .line 243
     const-string v0, "off"
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 229
+    .line 244
     const-string v1, "on"
 
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 230
+    .line 245
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/livephoto/LivePhoto;->initValueAndSupport(Ljava/util/List;Ljava/lang/String;)V
 
     return-void
@@ -1541,7 +1604,7 @@
 .method public setValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 113
+    .line 115
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
     return-void
@@ -1550,10 +1613,10 @@
 .method public unInit()V
     .registers 4
 
-    .line 88
+    .line 90
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->unInit()V
 
-    .line 89
+    .line 91
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_super_night_lite_switch_state"
@@ -1562,7 +1625,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 90
+    .line 92
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_group_capture_switch_state"
@@ -1571,7 +1634,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 91
+    .line 93
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_live_photo"
@@ -1580,7 +1643,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 92
+    .line 94
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_live_photo_switch"
@@ -1589,7 +1652,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 93
+    .line 95
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_super_night_lite_switch"

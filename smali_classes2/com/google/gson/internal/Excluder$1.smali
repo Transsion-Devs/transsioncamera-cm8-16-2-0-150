@@ -21,7 +21,7 @@
 
 
 # instance fields
-.field private delegate:Lcom/google/gson/TypeAdapter;
+.field private volatile delegate:Lcom/google/gson/TypeAdapter;
 
 .field final synthetic this$0:Lcom/google/gson/internal/Excluder;
 
@@ -38,7 +38,7 @@
 .method constructor <init>(Lcom/google/gson/internal/Excluder;ZZLcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)V
     .registers 6
 
-    .line 122
+    .line 121
     iput-object p1, p0, Lcom/google/gson/internal/Excluder$1;->this$0:Lcom/google/gson/internal/Excluder;
 
     iput-boolean p2, p0, Lcom/google/gson/internal/Excluder$1;->val$skipDeserialize:Z
@@ -57,14 +57,14 @@
 .method private delegate()Lcom/google/gson/TypeAdapter;
     .registers 4
 
-    .line 143
+    .line 149
     iget-object v0, p0, Lcom/google/gson/internal/Excluder$1;->delegate:Lcom/google/gson/TypeAdapter;
 
     if-eqz v0, :cond_5
 
     return-object v0
 
-    .line 144
+    .line 150
     :cond_5
     iget-object v0, p0, Lcom/google/gson/internal/Excluder$1;->val$gson:Lcom/google/gson/Gson;
 
@@ -72,7 +72,6 @@
 
     iget-object v2, p0, Lcom/google/gson/internal/Excluder$1;->val$type:Lcom/google/gson/reflect/TypeToken;
 
-    .line 146
     invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->getDelegateAdapter(Lcom/google/gson/TypeAdapterFactory;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
 
     move-result-object v0
@@ -87,19 +86,19 @@
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .registers 3
 
-    .line 127
+    .line 130
     iget-boolean v0, p0, Lcom/google/gson/internal/Excluder$1;->val$skipDeserialize:Z
 
     if-eqz v0, :cond_9
 
-    .line 128
+    .line 131
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->skipValue()V
 
     const/4 p0, 0x0
 
     return-object p0
 
-    .line 131
+    .line 134
     :cond_9
     invoke-direct {p0}, Lcom/google/gson/internal/Excluder$1;->delegate()Lcom/google/gson/TypeAdapter;
 
@@ -115,17 +114,17 @@
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 4
 
-    .line 135
+    .line 139
     iget-boolean v0, p0, Lcom/google/gson/internal/Excluder$1;->val$skipSerialize:Z
 
     if-eqz v0, :cond_8
 
-    .line 136
+    .line 140
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->nullValue()Lcom/google/gson/stream/JsonWriter;
 
     return-void
 
-    .line 139
+    .line 143
     :cond_8
     invoke-direct {p0}, Lcom/google/gson/internal/Excluder$1;->delegate()Lcom/google/gson/TypeAdapter;
 

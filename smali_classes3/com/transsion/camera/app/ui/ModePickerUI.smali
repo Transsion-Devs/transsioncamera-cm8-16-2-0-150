@@ -21,8 +21,7 @@
         Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;,
         Lcom/transsion/camera/app/ui/ModePickerUI$ActionInterceptImpl;,
         Lcom/transsion/camera/app/ui/ModePickerUI$OnModeSelectedListenerImpl;,
-        Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;,
-        Lcom/transsion/camera/app/ui/ModePickerUI$UpdateArrowState;
+        Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;
     }
 .end annotation
 
@@ -32,8 +31,6 @@
 
 
 # instance fields
-.field private mAlphaPathInterpolator:Landroid/view/animation/PathInterpolator;
-
 .field private mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
 .field private mCacheEnableMoreGuide:Z
@@ -110,12 +107,6 @@
 
 .field private mMakeUpUIShow:Z
 
-.field private mModeArrow:Landroid/widget/ImageView;
-
-.field private mModeArrowRoot:Landroid/view/View;
-
-.field private mModeArrowSvga:Lcom/opensource/svgaplayer/SVGAImageView;
-
 .field private mModeChangedListener:Lcom/transsion/camera/app/common/IAppUIListener$IModeChangedListener;
 
 .field private final mModeHorizontalScroll:Lcom/transsion/camera/app/ui/ModeHorizontalScroll2;
@@ -152,8 +143,6 @@
 
 .field protected mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
-.field private final mModeVerticalScroll:Lcom/transsion/camera/app/ui/ModeVerticalScroll;
-
 .field private mMoreModeCancelAlphaAnimation:Landroid/animation/ObjectAnimator;
 
 .field private mMoreModeCancelIcon:Landroid/widget/ImageView;
@@ -184,8 +173,6 @@
 
 .field protected mOldValue:Z
 
-.field private mOrderEditorFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IOrderEditorFragmentControl;
-
 .field private mOrientation:I
 
 .field private mPanelShow:Z
@@ -200,10 +187,6 @@
 
 .field private mRootView:Landroid/view/View;
 
-.field private mSVGACallback:Lcom/opensource/svgaplayer/SVGACallback;
-
-.field private mSVGAParser:Lcom/opensource/svgaplayer/SVGAParser;
-
 .field private mScreenFormType:I
 
 .field private mScreenFormTypeChanged:Z
@@ -211,8 +194,6 @@
 .field private final mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
 .field private final mScreenWidth:I
-
-.field private final mScrollConsumer:Lcom/transsion/camera/app/ui/ScrollConsumer;
 
 .field private mSelfTimerBegin:Z
 
@@ -230,46 +211,42 @@
 
 .field private final mTranslationXInterpolator:Landroid/view/animation/PathInterpolator;
 
-.field private mUpdateArrowState:Ljava/util/List;
-
-.field private final mUpdateArrowStateLock:Ljava/lang/Object;
-
 .field private mVipSelfieQuiting:Z
 
 
 # direct methods
-.method public static synthetic $r8$lambda$AMKVbJB0GxUzwxpZbv1lq89I0C4(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/view/View;)V
-    .registers 2
-
-    .line 0
-    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$setupViews$5(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$AkseECoxLpUSTK5zTKcYkp92bpw(Lcom/transsion/camera/app/ui/ModePickerUI;)V
-    .registers 1
-
-    .line 0
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$switchDefaultMode$6()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$DTf8ahXCuBYVZcxVMzKuWSbmUyM(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/transsion/camera/app/common/storage/DataStore;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$BCgltnmLP2HMrTKAed8A4-5274s(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
     .registers 3
 
     .line 0
-    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$setupViews$4(Lcom/transsion/camera/app/common/storage/DataStore;Landroid/view/View;)V
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$updateLayoutParams$8(Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$O3AYEZl5Gdsf5AZn3oPgRD3dUxI(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/animation/ValueAnimator;)V
+.method public static synthetic $r8$lambda$BvacuP0wq8E1IwxSM2qy12gNXWU(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    .registers 1
+
+    .line 0
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$updateMoreCancelRootState$9()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$FWHe_mX38Jn1YcdGHjyIcaf2M9c(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/view/View;)V
     .registers 2
 
     .line 0
-    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$exitMoreModeGuideAnimation$8(Landroid/animation/ValueAnimator;)V
+    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$setupViews$4(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$Syiv0l8djzZuGyO_JBWX2zV_000(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/animation/ValueAnimator;)V
+    .registers 2
+
+    .line 0
+    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$exitMoreModeGuideAnimation$7(Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method
@@ -283,11 +260,11 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$V0SthDVVDxeIoBY_OnuXtdbmCaM(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
-    .registers 3
+.method public static synthetic $r8$lambda$YXDv1TUGxPelR6rsk8rgOIQb00E(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    .registers 1
 
     .line 0
-    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$updateLayoutParams$9(Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$switchDefaultMode$5()V
 
     return-void
 .end method
@@ -301,20 +278,29 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$hXwKUueXoxQVk9ta-PD5gPeR0VM(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+.method public static synthetic $r8$lambda$bhm4AJEQdIoC60A8zIb-36B_DVI(Lcom/transsion/camera/app/ui/ModePickerUI;)V
     .registers 1
 
     .line 0
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$setupViews$3()V
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$abortShowOrHideModePickerRootUI$10()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$jBLuCKthnkYGSY74ciLm4c5oYas(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+.method public static synthetic $r8$lambda$cKceh6GPfp7YueIlB7-SMXPhs1o(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/animation/ValueAnimator;)V
+    .registers 2
+
+    .line 0
+    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$enterMoreModeGuideAnimation$6(Landroid/animation/ValueAnimator;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$dCdg17wz6BCkIRFEiBMAcN0bRKM(Lcom/transsion/camera/app/ui/ModePickerUI;)V
     .registers 1
 
     .line 0
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$abortShowOrHideModePickerRootUI$11()V
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$setupViews$2()V
 
     return-void
 .end method
@@ -328,29 +314,11 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$n3kYEq_2UW3dXOTH0dzv7rYpBt0(Lcom/transsion/camera/app/ui/ModePickerUI;)V
-    .registers 1
+.method public static synthetic $r8$lambda$vx2dzLeACzhWFJjYZ1DfuFrPJik(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/transsion/camera/app/common/storage/DataStore;Landroid/view/View;)V
+    .registers 3
 
     .line 0
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$updateMoreCancelRootState$10()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$uJ_qfOsYMqjepni1M47y28o3WMs(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/view/View;)V
-    .registers 2
-
-    .line 0
-    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$setupViews$2(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$xba2D5GhDKuLjqOjy7njj_-tDHo(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/animation/ValueAnimator;)V
-    .registers 2
-
-    .line 0
-    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$enterMoreModeGuideAnimation$7(Landroid/animation/ValueAnimator;)V
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/ModePickerUI;->lambda$setupViews$3(Lcom/transsion/camera/app/common/storage/DataStore;Landroid/view/View;)V
 
     return-void
 .end method
@@ -445,24 +413,6 @@
     return-object p0
 .end method
 
-.method static bridge synthetic -$$Nest$fgetmModeArrow(Lcom/transsion/camera/app/ui/ModePickerUI;)Landroid/widget/ImageView;
-    .registers 1
-
-    .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    return-object p0
-.end method
-
-.method static bridge synthetic -$$Nest$fgetmModeArrowSvga(Lcom/transsion/camera/app/ui/ModePickerUI;)Lcom/opensource/svgaplayer/SVGAImageView;
-    .registers 1
-
-    .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrowSvga:Lcom/opensource/svgaplayer/SVGAImageView;
-
-    return-object p0
-.end method
-
 .method static bridge synthetic -$$Nest$fgetmModeInformation(Lcom/transsion/camera/app/ui/ModePickerUI;)Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
     .registers 1
 
@@ -513,15 +463,6 @@
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorStartAction:Ljava/lang/Runnable;
-
-    return-object p0
-.end method
-
-.method static bridge synthetic -$$Nest$fgetmModeSelector(Lcom/transsion/camera/app/ui/ModePickerUI;)Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
-    .registers 1
-
-    .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     return-object p0
 .end method
@@ -598,24 +539,6 @@
     return p0
 .end method
 
-.method static bridge synthetic -$$Nest$fgetmOrderEditorFragmentControl(Lcom/transsion/camera/app/ui/ModePickerUI;)Lcom/transsion/camera/app/common/IAppUIControl$IOrderEditorFragmentControl;
-    .registers 1
-
-    .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOrderEditorFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IOrderEditorFragmentControl;
-
-    return-object p0
-.end method
-
-.method static bridge synthetic -$$Nest$fgetmSVGACallback(Lcom/transsion/camera/app/ui/ModePickerUI;)Lcom/opensource/svgaplayer/SVGACallback;
-    .registers 1
-
-    .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSVGACallback:Lcom/opensource/svgaplayer/SVGACallback;
-
-    return-object p0
-.end method
-
 .method static bridge synthetic -$$Nest$fgetmScreenFormType(Lcom/transsion/camera/app/ui/ModePickerUI;)I
     .registers 1
 
@@ -641,24 +564,6 @@
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mStopScroll:Z
 
     return p0
-.end method
-
-.method static bridge synthetic -$$Nest$fgetmUpdateArrowState(Lcom/transsion/camera/app/ui/ModePickerUI;)Ljava/util/List;
-    .registers 1
-
-    .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mUpdateArrowState:Ljava/util/List;
-
-    return-object p0
-.end method
-
-.method static bridge synthetic -$$Nest$fgetmUpdateArrowStateLock(Lcom/transsion/camera/app/ui/ModePickerUI;)Ljava/lang/Object;
-    .registers 1
-
-    .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mUpdateArrowStateLock:Ljava/lang/Object;
-
-    return-object p0
 .end method
 
 .method static bridge synthetic -$$Nest$fputmCurrentModeName(Lcom/transsion/camera/app/ui/ModePickerUI;Ljava/lang/String;)V
@@ -738,15 +643,6 @@
 
     .line 0
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mNeedSwitchMode:Z
-
-    return-void
-.end method
-
-.method static bridge synthetic -$$Nest$fputmSVGAParser(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/opensource/svgaplayer/SVGAParser;)V
-    .registers 2
-
-    .line 0
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSVGAParser:Lcom/opensource/svgaplayer/SVGAParser;
 
     return-void
 .end method
@@ -882,7 +778,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 92
+    .line 86
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "ModePickerUI"
@@ -894,217 +790,176 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/transsion/camera/app/ui/ModeSwitchScroller;Lcom/transsion/camera/app/ui/ModeVerticalScroll;Lcom/transsion/camera/app/ui/ModeHorizontalScroll2;Landroid/content/Context;Lcom/transsion/camera/app/ui/ScrollConsumer;Lcom/transsion/camera/app/common/IAppUIControl$IOrderEditorFragmentControl;Lcom/transsion/camera/app/mode/ModeOrderProvider;Lcom/transsion/camera/app/ui/ScreenManager;)V
-    .registers 18
+.method public constructor <init>(Lcom/transsion/camera/app/ui/ModeSwitchScroller;Lcom/transsion/camera/app/ui/ModeHorizontalScroll2;Landroid/content/Context;Lcom/transsion/camera/app/ui/ScrollConsumer;Lcom/transsion/camera/app/mode/ModeOrderProvider;Lcom/transsion/camera/app/ui/ScreenManager;)V
+    .registers 12
 
-    move-object/from16 v0, p7
-
-    .line 292
+    .line 260
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
-    new-instance v1, Landroid/view/animation/PathInterpolator;
+    .line 90
+    new-instance p4, Landroid/view/animation/PathInterpolator;
 
-    const v2, 0x3ea8f5c3    # 0.33f
-
-    const/4 v3, 0x0
-
-    const v4, 0x3f28f5c3    # 0.66f
-
-    const/high16 v5, 0x3f800000    # 1.0f
-
-    invoke-direct {v1, v2, v3, v4, v5}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
-
-    iput-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mGuideAlphaInterpolator:Landroid/view/animation/PathInterpolator;
-
-    .line 99
-    new-instance v1, Landroid/view/animation/PathInterpolator;
-
-    const/high16 v6, 0x3e800000    # 0.25f
-
-    invoke-direct {v1, v6, v3, v3, v5}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
-
-    iput-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mTranslationXInterpolator:Landroid/view/animation/PathInterpolator;
+    const v0, 0x3ea8f5c3    # 0.33f
 
     const/4 v1, 0x0
 
-    .line 107
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsModeSwitching:Z
+    const v2, 0x3f28f5c3    # 0.66f
 
-    .line 108
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsAnimationRunning:Z
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    const/4 v7, -0x1
+    invoke-direct {p4, v0, v1, v2, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
+
+    iput-object p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mGuideAlphaInterpolator:Landroid/view/animation/PathInterpolator;
+
+    .line 91
+    new-instance p4, Landroid/view/animation/PathInterpolator;
+
+    const/high16 v0, 0x3e800000    # 0.25f
+
+    invoke-direct {p4, v0, v1, v1, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
+
+    iput-object p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mTranslationXInterpolator:Landroid/view/animation/PathInterpolator;
+
+    const/4 p4, 0x0
+
+    .line 98
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsModeSwitching:Z
+
+    .line 99
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsAnimationRunning:Z
+
+    const/4 v2, -0x1
+
+    .line 113
+    iput v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOrientation:I
+
+    .line 123
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsCameraSwitching:Z
+
+    .line 124
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSelfTimerBegin:Z
+
+    .line 125
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRestoreSettingsBegin:Z
 
     .line 126
-    iput v7, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOrientation:I
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mFilterUIShow:Z
+
+    .line 127
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCelebrityUIShow:Z
+
+    .line 128
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mPortraitSpotUIShow:Z
+
+    .line 129
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMakeUpUIShow:Z
+
+    .line 130
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mFaceBeautyUIShow:Z
+
+    .line 131
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mPanelShow:Z
+
+    .line 132
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsDisableEnterMoreAnimation:Z
+
+    .line 134
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsResumeAfterEdit:Z
+
+    .line 135
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mFromResume:Z
+
+    .line 137
+    new-instance v2, Landroid/view/animation/PathInterpolator;
+
+    invoke-direct {v2, v0, v1, v1, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
+
+    iput-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mPathInterpolator:Landroid/view/animation/PathInterpolator;
+
+    .line 138
+    new-instance v0, Landroid/view/animation/PathInterpolator;
+
+    const v2, 0x3e4ccccd    # 0.2f
+
+    const v4, 0x3dcccccd    # 0.1f
+
+    invoke-direct {v0, v2, v1, v4, v3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
+
+    iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mTBPathInterpolator:Landroid/view/animation/PathInterpolator;
+
+    const/4 v0, 0x1
 
     .line 140
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsCameraSwitching:Z
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mLeftGuideRootMoveFollowTab:Z
 
-    .line 141
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSelfTimerBegin:Z
+    .line 165
+    new-instance v0, Landroid/animation/AnimatorSet;
 
-    .line 142
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRestoreSettingsBegin:Z
+    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 143
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mFilterUIShow:Z
+    iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAnim:Landroid/animation/AnimatorSet;
 
-    .line 144
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCelebrityUIShow:Z
-
-    .line 145
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mPortraitSpotUIShow:Z
-
-    .line 146
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMakeUpUIShow:Z
-
-    .line 147
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mFaceBeautyUIShow:Z
-
-    .line 148
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mPanelShow:Z
-
-    .line 149
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsDisableEnterMoreAnimation:Z
-
-    .line 151
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsResumeAfterEdit:Z
-
-    .line 152
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mFromResume:Z
-
-    .line 154
-    new-instance v7, Landroid/view/animation/PathInterpolator;
-
-    invoke-direct {v7, v6, v3, v3, v5}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
-
-    iput-object v7, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mPathInterpolator:Landroid/view/animation/PathInterpolator;
-
-    .line 155
-    new-instance v6, Landroid/view/animation/PathInterpolator;
-
-    const v7, 0x3e4ccccd    # 0.2f
-
-    const v8, 0x3dcccccd    # 0.1f
-
-    invoke-direct {v6, v7, v3, v8, v5}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
-
-    iput-object v6, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mTBPathInterpolator:Landroid/view/animation/PathInterpolator;
-
-    .line 156
-    new-instance v6, Landroid/view/animation/PathInterpolator;
-
-    invoke-direct {v6, v2, v3, v4, v5}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
-
-    iput-object v6, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mAlphaPathInterpolator:Landroid/view/animation/PathInterpolator;
-
-    const/4 v2, 0x1
-
-    .line 158
-    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mLeftGuideRootMoveFollowTab:Z
-
-    .line 183
-    new-instance v2, Landroid/animation/AnimatorSet;
-
-    invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
-
-    iput-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAnim:Landroid/animation/AnimatorSet;
-
-    .line 193
-    new-instance v2, Landroid/os/Handler;
+    .line 175
+    new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-direct {v2, v3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    iput-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMainHandler:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMainHandler:Landroid/os/Handler;
 
-    .line 194
-    new-instance v2, Ljava/util/ArrayList;
+    .line 179
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsInstantZoomShow:Z
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    .line 181
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsRecording:Z
 
-    iput-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mUpdateArrowState:Ljava/util/List;
+    .line 186
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsAnimationCanceled:Z
 
-    .line 195
-    new-instance v2, Ljava/lang/Object;
+    .line 187
+    iput-boolean p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsFocusable:Z
 
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
+    .line 188
+    new-instance p4, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda5;
 
-    iput-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mUpdateArrowStateLock:Ljava/lang/Object;
+    invoke-direct {p4, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda5;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
-    .line 199
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsInstantZoomShow:Z
+    iput-object p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorStartAction:Ljava/lang/Runnable;
 
-    .line 201
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsRecording:Z
+    .line 2741
+    new-instance p4, Lcom/transsion/camera/app/ui/ModePickerUI$16;
 
-    .line 206
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsAnimationCanceled:Z
+    invoke-direct {p4, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$16;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
-    .line 207
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsFocusable:Z
+    iput-object p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
 
-    .line 208
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda9;
-
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda9;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
-
-    iput-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorStartAction:Ljava/lang/Runnable;
-
-    .line 2661
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$16;
-
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$16;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
-
-    iput-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSVGACallback:Lcom/opensource/svgaplayer/SVGACallback;
-
-    .line 2963
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$17;
-
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$17;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
-
-    iput-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
-
-    .line 293
+    .line 261
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSwitchScroller:Lcom/transsion/camera/app/ui/ModeSwitchScroller;
 
-    .line 294
-    iput-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeVerticalScroll:Lcom/transsion/camera/app/ui/ModeVerticalScroll;
+    .line 262
+    iput-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeHorizontalScroll:Lcom/transsion/camera/app/ui/ModeHorizontalScroll2;
 
-    .line 295
-    iput-object p3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeHorizontalScroll:Lcom/transsion/camera/app/ui/ModeHorizontalScroll2;
+    .line 263
+    iput-object p6, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 296
-    iput-object p5, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScrollConsumer:Lcom/transsion/camera/app/ui/ScrollConsumer;
-
-    move-object/from16 p1, p8
-
-    .line 298
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
-
-    .line 299
-    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
+    .line 264
+    invoke-virtual {p6}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p1
 
     iput p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormType:I
 
-    .line 300
-    iput-object p6, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOrderEditorFragmentControl:Lcom/transsion/camera/app/common/IAppUIControl$IOrderEditorFragmentControl;
+    .line 265
+    iput-object p3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
-    .line 301
-    iput-object p4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
+    .line 266
+    iput-object p5, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
-    .line 302
-    iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
-
-    .line 303
-    invoke-virtual {p4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    .line 267
+    invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
 
@@ -1120,26 +975,26 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSellingPointItems:Ljava/util/List;
 
-    .line 304
+    .line 268
     new-instance p1, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
-    invoke-direct {p1, p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/transsion/camera/app/mode/ModeOrderProvider;)V
+    invoke-direct {p1, p0, p5}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/transsion/camera/app/mode/ModeOrderProvider;)V
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
-    .line 305
+    .line 269
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/ScreenUtils;->getRealMetrics(Landroid/content/Context;)Landroid/util/DisplayMetrics;
 
     move-result-object p1
 
-    .line 306
+    .line 270
     iget p1, p1, Landroid/util/DisplayMetrics;->widthPixels:I
 
     iput p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenWidth:I
 
-    .line 307
+    .line 271
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1154,7 +1009,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mTranslateDistance:I
 
-    .line 308
+    .line 272
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1177,7 +1032,7 @@
 
     if-eqz p1, :cond_22
 
-    .line 2245
+    .line 2097
     invoke-virtual {p1}, Landroid/animation/Animator;->isStarted()Z
 
     move-result p0
@@ -1190,16 +1045,16 @@
 
     if-eqz p0, :cond_22
 
-    .line 2246
+    .line 2098
     :cond_e
     invoke-virtual {p1}, Landroid/animation/Animator;->cancel()V
 
-    .line 2247
+    .line 2099
     invoke-virtual {p1}, Landroid/animation/Animator;->removeAllListeners()V
 
     if-eqz p2, :cond_22
 
-    .line 2249
+    .line 2101
     array-length p0, p2
 
     const/4 p1, 0x0
@@ -1209,7 +1064,7 @@
 
     aget-object v0, p2, p1
 
-    .line 2250
+    .line 2102
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     add-int/lit8 p1, p1, 0x1
@@ -1223,7 +1078,7 @@
 .method private cancelModePickerUIAnimation()V
     .registers 2
 
-    .line 713
+    .line 618
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerIn:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_f
@@ -1234,12 +1089,12 @@
 
     if-eqz v0, :cond_f
 
-    .line 714
+    .line 619
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerIn:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 716
+    .line 621
     :cond_f
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerOut:Landroid/animation/ObjectAnimator;
 
@@ -1251,7 +1106,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 717
+    .line 622
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/animation/Animator;->cancel()V
@@ -1263,7 +1118,7 @@
 .method private cannotUpdateCurrentTab()Z
     .registers 5
 
-    .line 1151
+    .line 1043
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentIsTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Z
@@ -1287,7 +1142,7 @@
     :goto_f
     const/4 v0, 0x1
 
-    .line 1152
+    .line 1044
     :goto_10
     sget-object v1, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1321,7 +1176,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1153
+    .line 1045
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v2}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentIsTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Z
@@ -1334,13 +1189,13 @@
 
     if-nez v2, :cond_45
 
-    .line 1154
+    .line 1046
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->notifyModeSwitch()V
 
     :cond_45
     if-eqz v0, :cond_6c
 
-    .line 1157
+    .line 1049
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1378,7 +1233,7 @@
 .method private cannotUpdateModeTabLayout()Z
     .registers 5
 
-    .line 2053
+    .line 1937
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mvalidModeList(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Z
@@ -1405,7 +1260,7 @@
     :goto_10
     if-eqz v0, :cond_39
 
-    .line 2055
+    .line 1939
     sget-object v1, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1445,18 +1300,18 @@
 .method private chooseModeUIToShow(Z)V
     .registers 8
 
-    .line 2563
+    .line 2378
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
-    if-eqz v0, :cond_126
+    if-eqz v0, :cond_120
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
     if-nez v0, :cond_a
 
-    goto/16 :goto_126
+    goto/16 :goto_120
 
-    .line 2568
+    .line 2383
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
@@ -1470,7 +1325,7 @@
 
     if-nez v0, :cond_1e
 
-    .line 2569
+    .line 2384
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "chooseModeUIToShow, mModeSelector is null."
@@ -1479,7 +1334,7 @@
 
     return-void
 
-    .line 2573
+    .line 2388
     :cond_1e
     iget v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormType:I
 
@@ -1491,32 +1346,32 @@
 
     const/16 v4, 0x8
 
-    if-eq v0, v2, :cond_ca
+    if-eq v0, v2, :cond_c4
 
     const/4 v5, 0x7
 
     if-ne v0, v5, :cond_2d
 
-    goto/16 :goto_ca
+    goto/16 :goto_c4
 
-    .line 2587
+    .line 2402
     :cond_2d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     if-eqz v0, :cond_34
 
-    .line 2588
+    .line 2403
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2590
+    .line 2405
     :cond_34
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->currentIsIabLayoutMode()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8e
+    if-eqz v0, :cond_8b
 
-    .line 2591
+    .line 2406
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsEditMode:Z
 
     if-nez v0, :cond_52
@@ -1531,17 +1386,17 @@
 
     if-nez v0, :cond_52
 
-    .line 2592
+    .line 2407
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2593
+    .line 2408
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2595
+    .line 2410
     :cond_52
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
@@ -1549,14 +1404,14 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
-    .line 2596
+    .line 2411
     invoke-virtual {v0}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->moreModeShow()Z
 
     move-result v0
 
     if-eqz v0, :cond_85
 
-    .line 2597
+    .line 2412
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isShowMoreModeGuideView()Z
 
     move-result v0
@@ -1571,7 +1426,7 @@
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
-    .line 2598
+    .line 2413
     const-string v1, "com.transsion.camera.feature.mode.more.MoreModeEntry"
 
     invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1586,65 +1441,62 @@
 
     if-eqz p1, :cond_85
 
-    .line 2601
+    .line 2416
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     move-result p1
 
     if-nez p1, :cond_85
 
-    .line 2602
+    .line 2417
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     invoke-virtual {p1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2605
+    .line 2420
     :cond_85
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
-    invoke-static {p1}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$mhide(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;)V
-
-    .line 2606
-    invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeArrowVisibility(Z)V
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$mhide(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;)V
 
     return-void
 
-    .line 2608
-    :cond_8e
+    .line 2422
+    :cond_8b
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result p1
 
-    if-nez p1, :cond_b7
+    if-nez p1, :cond_b4
 
-    .line 2609
+    .line 2423
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2610
+    .line 2424
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
-    if-eqz p1, :cond_a8
+    if-eqz p1, :cond_a5
 
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_a8
+    if-nez p1, :cond_a5
 
-    .line 2611
+    .line 2425
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2613
-    :cond_a8
+    .line 2427
+    :cond_a5
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsInstantZoomShow:Z
 
-    if-nez p1, :cond_b7
+    if-nez p1, :cond_b4
 
-    .line 2614
+    .line 2428
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
@@ -1655,37 +1507,34 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$mshow(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;Ljava/lang/String;)V
 
-    .line 2617
-    :cond_b7
+    .line 2431
+    :cond_b4
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideLeftRoot:Landroid/view/View;
 
-    if-eqz p1, :cond_c6
+    if-eqz p1, :cond_c3
 
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_c6
+    if-nez p1, :cond_c3
 
-    .line 2618
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideLeftRoot:Landroid/view/View;
+    .line 2432
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideLeftRoot:Landroid/view/View;
 
-    invoke-virtual {p1, v4}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2620
-    :cond_c6
-    invoke-virtual {p0, v3}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeArrowVisibility(Z)V
-
+    :cond_c3
     return-void
 
-    .line 2575
-    :cond_ca
-    :goto_ca
+    .line 2390
+    :cond_c4
+    :goto_c4
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2576
+    .line 2391
     sget-object p1, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1722,57 +1571,57 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2578
+    .line 2393
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsEditMode:Z
 
-    if-nez p1, :cond_120
+    if-nez p1, :cond_11a
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsPopSettingShow:Z
 
-    if-nez p1, :cond_120
+    if-nez p1, :cond_11a
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsRecording:Z
 
-    if-nez p1, :cond_120
+    if-nez p1, :cond_11a
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
-    if-eqz p1, :cond_120
+    if-eqz p1, :cond_11a
 
-    .line 2579
+    .line 2394
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsCameraSwitching:Z
 
-    if-nez v0, :cond_116
+    if-nez v0, :cond_110
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mVipSelfieQuiting:Z
 
-    if-nez v0, :cond_116
+    if-nez v0, :cond_110
 
-    .line 2580
+    .line 2395
     invoke-virtual {p1, v2}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->setEnabled(Z)V
 
-    .line 2582
-    :cond_116
+    .line 2397
+    :cond_110
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2583
+    .line 2398
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     invoke-virtual {p1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2585
-    :cond_120
+    .line 2400
+    :cond_11a
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$mhide(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;)V
 
     return-void
 
-    .line 2564
-    :cond_126
-    :goto_126
+    .line 2379
+    :cond_120
+    :goto_120
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "chooseModeUIToShow, mModeTabLayout, mCurrentModeUI is null."
@@ -1785,7 +1634,7 @@
 .method private enableModePickerUI()V
     .registers 4
 
-    .line 2509
+    .line 2348
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1830,7 +1679,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2514
+    .line 2353
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsVideoRecording:Z
 
     if-nez v0, :cond_4a
@@ -1849,7 +1698,7 @@
 
     const/4 v0, 0x1
 
-    .line 2515
+    .line 2354
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->setEnable(Z)V
 
     :cond_4a
@@ -1859,7 +1708,7 @@
 .method private enterMoreModeGuideAnimation()V
     .registers 7
 
-    .line 744
+    .line 649
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isShowMoreModeGuideView()Z
 
     move-result v0
@@ -1868,13 +1717,13 @@
 
     return-void
 
-    .line 747
+    .line 652
     :cond_7
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsDisableEnterMoreAnimation:Z
 
     if-eqz v0, :cond_13
 
-    .line 748
+    .line 653
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "enterMoreModeGuideAnimation: disable animation, return"
@@ -1883,7 +1732,7 @@
 
     return-void
 
-    .line 751
+    .line 656
     :cond_13
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
@@ -1899,7 +1748,7 @@
 
     goto/16 :goto_cd
 
-    .line 755
+    .line 660
     :cond_21
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideRightAlphaAnimation:Landroid/animation/ObjectAnimator;
 
@@ -1911,12 +1760,12 @@
 
     if-eqz v0, :cond_30
 
-    .line 756
+    .line 661
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideRightAlphaAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 758
+    .line 663
     :cond_30
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideRightTransXAnimation:Landroid/animation/ObjectAnimator;
 
@@ -1928,12 +1777,12 @@
 
     if-eqz v0, :cond_3f
 
-    .line 759
+    .line 664
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideRightTransXAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 761
+    .line 666
     :cond_3f
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideLeftAlphaAnimation:Landroid/animation/ObjectAnimator;
 
@@ -1945,12 +1794,12 @@
 
     if-eqz v0, :cond_4e
 
-    .line 762
+    .line 667
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideLeftAlphaAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 764
+    .line 669
     :cond_4e
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1974,10 +1823,10 @@
 
     const/4 v0, 0x1
 
-    .line 765
+    .line 670
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterMoreMode:Z
 
-    .line 766
+    .line 671
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     const/4 v1, 0x2
@@ -2000,26 +1849,26 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideRightAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 767
+    .line 672
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mGuideAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v2}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 768
+    .line 673
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideRightAnimation:Landroid/animation/ObjectAnimator;
 
-    new-instance v2, Lcom/transsion/camera/app/ui/ModePickerUI$3;
+    new-instance v2, Lcom/transsion/camera/app/ui/ModePickerUI$2;
 
-    invoke-direct {v2, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$3;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {v2, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$2;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 782
+    .line 687
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideRightAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 784
+    .line 689
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideLeftRoot:Landroid/view/View;
 
     new-array v1, v1, [F
@@ -2034,49 +1883,49 @@
 
     const-wide/16 v1, 0x64
 
-    .line 785
+    .line 690
     invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 786
+    .line 691
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideLeftAnimation:Landroid/animation/ObjectAnimator;
 
     const-wide/16 v1, 0x12c
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 787
+    .line 692
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideLeftAnimation:Landroid/animation/ObjectAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mGuideAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 788
+    .line 693
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideLeftAnimation:Landroid/animation/ObjectAnimator;
 
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$4;
+    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$3;
 
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$4;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$3;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 809
+    .line 714
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideLeftAnimation:Landroid/animation/ObjectAnimator;
 
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda10;
+    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda9;
 
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda10;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda9;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 812
+    .line 717
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideLeftAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
 
     return-void
 
-    .line 752
+    .line 657
     :cond_cd
     :goto_cd
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -2105,7 +1954,7 @@
 .method private exitMoreModeGuideAnimation()V
     .registers 9
 
-    .line 816
+    .line 721
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isShowMoreModeGuideView()Z
 
     move-result v0
@@ -2114,7 +1963,7 @@
 
     goto :goto_19
 
-    .line 819
+    .line 724
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
@@ -2130,7 +1979,7 @@
 
     goto/16 :goto_e4
 
-    .line 823
+    .line 728
     :cond_15
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterMoreMode:Z
 
@@ -2139,7 +1988,7 @@
     :goto_19
     return-void
 
-    .line 826
+    .line 731
     :cond_1a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideRightAnimation:Landroid/animation/ObjectAnimator;
 
@@ -2151,12 +2000,12 @@
 
     if-eqz v0, :cond_29
 
-    .line 827
+    .line 732
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideRightAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 829
+    .line 734
     :cond_29
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideLeftAnimation:Landroid/animation/ObjectAnimator;
 
@@ -2168,12 +2017,12 @@
 
     if-eqz v0, :cond_38
 
-    .line 830
+    .line 735
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterGuideLeftAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 832
+    .line 737
     :cond_38
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2197,10 +2046,10 @@
 
     const/4 v0, 0x0
 
-    .line 833
+    .line 738
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mEnterMoreMode:Z
 
-    .line 834
+    .line 739
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     const/4 v2, 0x2
@@ -2223,26 +2072,26 @@
 
     iput-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideRightAlphaAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 835
+    .line 740
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mGuideAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v1, v3}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 836
+    .line 741
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideRightAlphaAnimation:Landroid/animation/ObjectAnimator;
 
-    new-instance v3, Lcom/transsion/camera/app/ui/ModePickerUI$5;
+    new-instance v3, Lcom/transsion/camera/app/ui/ModePickerUI$4;
 
-    invoke-direct {v3, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$5;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {v3, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$4;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     invoke-virtual {v1, v3}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 855
+    .line 760
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
-    .line 856
+    .line 761
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -2267,41 +2116,41 @@
 
     aput v3, v7, v0
 
-    .line 855
+    .line 760
     const-string/jumbo v0, "translationX"
 
     invoke-static {v1, v0, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
-    .line 856
+    .line 761
     invoke-virtual {v0, v5, v6}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideRightTransXAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 857
+    .line 762
     invoke-virtual {v0, v5, v6}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 858
+    .line 763
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideRightTransXAnimation:Landroid/animation/ObjectAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mTranslationXInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 859
+    .line 764
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideRightTransXAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 860
+    .line 765
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideRightAlphaAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 862
+    .line 767
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideLeftRoot:Landroid/view/View;
 
     new-array v1, v2, [F
@@ -2316,42 +2165,42 @@
 
     const-wide/16 v1, 0x96
 
-    .line 863
+    .line 768
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 864
+    .line 769
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideLeftAlphaAnimation:Landroid/animation/ObjectAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mGuideAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 865
+    .line 770
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideLeftAlphaAnimation:Landroid/animation/ObjectAnimator;
 
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda12;
+    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda11;
 
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda12;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda11;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 869
+    .line 774
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideLeftAlphaAnimation:Landroid/animation/ObjectAnimator;
 
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$6;
+    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$5;
 
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$6;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$5;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 876
+    .line 781
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mExitGuideLeftAlphaAnimation:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
 
     return-void
 
-    .line 820
+    .line 725
     :cond_e4
     :goto_e4
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -2378,7 +2227,7 @@
 .method private getAnimatorDuration()I
     .registers 1
 
-    .line 2960
+    .line 2738
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p0
@@ -2398,7 +2247,7 @@
 .method private getTranslateDistance()I
     .registers 2
 
-    .line 2953
+    .line 2731
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -2409,7 +2258,7 @@
 
     return p0
 
-    .line 2956
+    .line 2734
     :cond_8
     iget p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mTranslateDistance:I
 
@@ -2419,7 +2268,7 @@
 .method private isModePickerVisible()Z
     .registers 2
 
-    .line 1085
+    .line 977
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_19
@@ -2457,7 +2306,7 @@
 .method private isShowMoreModeGuideView()Z
     .registers 2
 
-    .line 1077
+    .line 969
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2473,15 +2322,15 @@
     return p0
 .end method
 
-.method private synthetic lambda$abortShowOrHideModePickerRootUI$11()V
+.method private synthetic lambda$abortShowOrHideModePickerRootUI$10()V
     .registers 2
 
-    .line 2236
+    .line 2088
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMainHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_9
 
-    .line 2237
+    .line 2089
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorStartAction:Ljava/lang/Runnable;
 
     invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
@@ -2490,19 +2339,19 @@
     return-void
 .end method
 
-.method private synthetic lambda$enterMoreModeGuideAnimation$7(Landroid/animation/ValueAnimator;)V
+.method private synthetic lambda$enterMoreModeGuideAnimation$6(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 810
+    .line 715
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateMoreModeGuideLeftRootLocation()V
 
     return-void
 .end method
 
-.method private synthetic lambda$exitMoreModeGuideAnimation$8(Landroid/animation/ValueAnimator;)V
+.method private synthetic lambda$exitMoreModeGuideAnimation$7(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 866
+    .line 771
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateMoreModeGuideLeftRootLocation()V
 
     return-void
@@ -2511,14 +2360,14 @@
 .method private synthetic lambda$new$0()V
     .registers 4
 
-    .line 209
+    .line 189
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onAnimationStart[mModePickerRootAnimatorStartAction]: "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 210
+    .line 190
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
@@ -2527,7 +2376,7 @@
 
     if-eqz v0, :cond_30
 
-    .line 211
+    .line 191
     const-string v0, "com.transsion.camera.feature.mode.more.MoreModeEntry"
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
@@ -2538,18 +2387,18 @@
 
     if-nez v0, :cond_1d
 
-    .line 212
+    .line 192
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 214
+    .line 194
     :cond_1d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 215
+    .line 195
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isTabLayoutMode(Ljava/lang/String;)Z
@@ -2558,7 +2407,7 @@
 
     if-nez v0, :cond_2f
 
-    .line 216
+    .line 196
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
@@ -2566,7 +2415,7 @@
     :cond_2f
     return-void
 
-    .line 219
+    .line 199
     :cond_30
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
@@ -2578,18 +2427,18 @@
 .method private synthetic lambda$selectMoreTabView$1(Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;)V
     .registers 6
 
-    .line 261
+    .line 241
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->performClick()Z
 
     const/4 v0, 0x2
 
-    .line 262
+    .line 242
     new-array v0, v0, [I
 
-    .line 263
+    .line 243
     invoke-virtual {p1, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 264
+    .line 244
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2600,7 +2449,7 @@
 
     const/4 v2, 0x0
 
-    .line 265
+    .line 245
     aget v0, v0, v2
 
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
@@ -2629,12 +2478,12 @@
 
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 266
+    .line 246
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 267
+    .line 247
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setVisibility(I)V
@@ -2642,29 +2491,20 @@
     return-void
 .end method
 
-.method private synthetic lambda$setupViews$2(Landroid/view/View;)V
-    .registers 2
-
-    .line 429
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->startPullingModePanel()V
-
-    return-void
-.end method
-
-.method private synthetic lambda$setupViews$3()V
+.method private synthetic lambda$setupViews$2()V
     .registers 2
 
     const/4 v0, 0x1
 
-    .line 467
+    .line 379
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsSelectMoreTabView:Z
 
-    .line 468
+    .line 380
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreTabChangeListener:Lcom/transsion/camera/app/common/IAppUIListener$IMoreTabChangeListener;
 
     if-eqz v0, :cond_c
 
-    .line 469
+    .line 381
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/IAppUIListener$IMoreTabChangeListener;->onMoreTabChanged(Ljava/lang/String;)V
@@ -2673,10 +2513,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$setupViews$4(Lcom/transsion/camera/app/common/storage/DataStore;Landroid/view/View;)V
+.method private synthetic lambda$setupViews$3(Lcom/transsion/camera/app/common/storage/DataStore;Landroid/view/View;)V
     .registers 7
 
-    .line 436
+    .line 348
     iget-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
 
     invoke-static {p2}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
@@ -2687,7 +2527,7 @@
 
     goto :goto_2d
 
-    .line 439
+    .line 351
     :cond_9
     iget-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -2699,7 +2539,7 @@
 
     if-eqz p2, :cond_1b
 
-    .line 440
+    .line 352
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "shutter ui is processing, return"
@@ -2708,7 +2548,7 @@
 
     return-void
 
-    .line 443
+    .line 355
     :cond_1b
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
@@ -2718,7 +2558,7 @@
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
-    .line 444
+    .line 356
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/ModePickerUI;->isTabLayoutMode(Ljava/lang/String;)Z
 
     move-result p2
@@ -2732,16 +2572,16 @@
     :goto_2d
     return-void
 
-    .line 447
+    .line 359
     :cond_2e
     const-string p2, "0"
 
-    .line 448
+    .line 360
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 447
+    .line 359
     const-string v1, "key_more_mode_guide_click_time"
 
     invoke-virtual {p1, v1, p2, v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -2762,7 +2602,7 @@
 
     if-gt p2, v2, :cond_4f
 
-    .line 451
+    .line 363
     invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p2
@@ -2773,7 +2613,7 @@
 
     invoke-virtual {p1, v1, p2, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 453
+    .line 365
     :cond_4f
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAnim:Landroid/animation/AnimatorSet;
 
@@ -2783,25 +2623,25 @@
 
     if-eqz p1, :cond_5c
 
-    .line 454
+    .line 366
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->end()V
 
-    .line 456
+    .line 368
     :cond_5c
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mNotifyClickGuideIconListener:Lcom/transsion/camera/app/common/IAppUIListener$INotifyClickGuideIconListener;
 
     if-eqz p1, :cond_63
 
-    .line 457
+    .line 369
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUIListener$INotifyClickGuideIconListener;->notifyClickGuideIcon()V
 
-    .line 459
+    .line 371
     :cond_63
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsDisableEnterMoreAnimation:Z
 
-    .line 460
+    .line 372
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result p1
@@ -2816,13 +2656,13 @@
 
     if-nez p1, :cond_a5
 
-    .line 461
+    .line 373
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsSelectMoreTabView:Z
 
-    .line 462
+    .line 374
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateSpecifiedMode(Z)V
 
-    .line 463
+    .line 375
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getMoreTabView()Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;
@@ -2831,7 +2671,7 @@
 
     if-eqz p1, :cond_9d
 
-    .line 465
+    .line 377
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->getTab()Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
     move-result-object p1
@@ -2850,16 +2690,16 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->setText(Ljava/lang/CharSequence;)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
-    .line 466
+    .line 378
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMainHandler:Landroid/os/Handler;
 
-    new-instance p2, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda13;
+    new-instance p2, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda12;
 
-    invoke-direct {p2, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda13;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {p2, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda12;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     invoke-virtual {p1, p2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 473
+    .line 385
     :cond_9d
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
@@ -2869,17 +2709,17 @@
 
     return-void
 
-    .line 475
+    .line 387
     :cond_a5
     invoke-direct {p0, v3}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateSpecifiedMode(Z)V
 
     return-void
 .end method
 
-.method private synthetic lambda$setupViews$5(Landroid/view/View;)V
+.method private synthetic lambda$setupViews$4(Landroid/view/View;)V
     .registers 3
 
-    .line 483
+    .line 395
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsCameraSwitching:Z
 
     if-nez v0, :cond_37
@@ -2888,7 +2728,7 @@
 
     if-nez v0, :cond_37
 
-    .line 484
+    .line 396
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p1
@@ -2897,7 +2737,7 @@
 
     goto :goto_37
 
-    .line 487
+    .line 399
     :cond_f
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
@@ -2907,7 +2747,7 @@
 
     if-eqz p1, :cond_27
 
-    .line 488
+    .line 400
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p1, :cond_20
@@ -2918,7 +2758,7 @@
 
     goto :goto_37
 
-    .line 491
+    .line 403
     :cond_20
     invoke-static {}, Lcom/transsion/camera/utils/manager/GlobalClickManager;->checkCanClick()Z
 
@@ -2928,23 +2768,23 @@
 
     goto :goto_37
 
-    .line 495
+    .line 407
     :cond_27
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mupdateCurrentMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)V
 
-    .line 496
+    .line 408
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeAndNotify()V
 
-    .line 497
+    .line 409
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p0, :cond_37
 
     const/4 p1, 0x0
 
-    .line 498
+    .line 410
     invoke-interface {p0, p1, p1}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateIntentFromNegativeScreen(ZZ)V
 
     :cond_37
@@ -2952,10 +2792,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$switchDefaultMode$6()V
+.method private synthetic lambda$switchDefaultMode$5()V
     .registers 5
 
-    .line 557
+    .line 468
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getTabCount()I
@@ -2972,7 +2812,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 559
+    .line 470
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2987,16 +2827,16 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->setText(Ljava/lang/CharSequence;)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
-    .line 561
+    .line 472
     :cond_1d
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsSelectMoreTabView:Z
 
-    .line 562
+    .line 473
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreTabChangeListener:Lcom/transsion/camera/app/common/IAppUIListener$IMoreTabChangeListener;
 
     if-eqz v0, :cond_28
 
-    .line 563
+    .line 474
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/IAppUIListener$IMoreTabChangeListener;->onMoreTabChanged(Ljava/lang/String;)V
@@ -3005,10 +2845,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$updateLayoutParams$9(Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
+.method private synthetic lambda$updateLayoutParams$8(Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
     .registers 3
 
-    .line 1781
+    .line 1668
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -3021,7 +2861,7 @@
 
     iput p2, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1782
+    .line 1669
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -3029,10 +2869,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$updateMoreCancelRootState$10()V
+.method private synthetic lambda$updateMoreCancelRootState$9()V
     .registers 2
 
-    .line 1886
+    .line 1773
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     const/4 v0, 0x0
@@ -3045,12 +2885,12 @@
 .method private notifyModeSwitch()V
     .registers 2
 
-    .line 1515
+    .line 1405
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeChangedListener:Lcom/transsion/camera/app/common/IAppUIListener$IModeChangedListener;
 
     if-eqz v0, :cond_d
 
-    .line 1516
+    .line 1406
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentModeFeatureName(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/lang/String;
@@ -3063,55 +2903,10 @@
     return-void
 .end method
 
-.method private playSvgaAnimation(Ljava/lang/String;)V
-    .registers 5
-
-    .line 2532
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mUpdateArrowStateLock:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    .line 2533
-    :try_start_3
-    sget-object v1, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    const-string v2, "[playSvgaAnimation] stopAnimation "
-
-    invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 2534
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrowSvga:Lcom/opensource/svgaplayer/SVGAImageView;
-
-    invoke-virtual {v1}, Lcom/opensource/svgaplayer/SVGAImageView;->stopAnimation()V
-
-    .line 2535
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSVGAParser:Lcom/opensource/svgaplayer/SVGAParser;
-
-    new-instance v2, Lcom/transsion/camera/app/ui/ModePickerUI$14;
-
-    invoke-direct {v2, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$14;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
-
-    invoke-virtual {v1, p1, v2}, Lcom/opensource/svgaplayer/SVGAParser;->parse(Ljava/lang/String;Lcom/opensource/svgaplayer/SVGAParser$ParseCompletion;)V
-
-    .line 2552
-    monitor-exit v0
-
-    return-void
-
-    :catchall_1b
-    move-exception p0
-
-    monitor-exit v0
-    :try_end_1d
-    .catchall {:try_start_3 .. :try_end_1d} :catchall_1b
-
-    throw p0
-.end method
-
 .method private shouldHideModePickerUI()Z
     .registers 3
 
-    .line 2556
+    .line 2371
     iget v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormType:I
 
     const/4 v1, 0x4
@@ -3164,14 +2959,14 @@
 .method private startModePickerUIAnimation(IZ)V
     .registers 8
 
-    .line 673
+    .line 578
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->cancelModePickerUIAnimation()V
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_3c
 
-    .line 675
+    .line 580
     iget-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRoot:Landroid/view/ViewGroup;
 
     const/4 v1, 0x1
@@ -3196,7 +2991,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerOut:Landroid/animation/ObjectAnimator;
 
-    .line 676
+    .line 581
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v1, 0x3f28f5c3    # 0.66f
@@ -3209,78 +3004,45 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 677
+    .line 582
     iget-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerOut:Landroid/animation/ObjectAnimator;
 
-    new-instance v0, Lcom/transsion/camera/app/ui/ModePickerUI$2;
+    new-instance v0, Lcom/transsion/camera/app/ui/ModePickerUI$1;
 
-    invoke-direct {v0, p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI$2;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;I)V
+    invoke-direct {v0, p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI$1;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;I)V
 
     invoke-virtual {p2, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 705
+    .line 610
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
 
     return-void
 
-    .line 707
+    .line 612
     :cond_3c
     iget p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormType:I
 
     invoke-direct {p0, p1, p2, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateLayoutParams(IIZ)V
 
-    .line 708
+    .line 613
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->chooseModeUIToShow(Z)V
 
-    return-void
-.end method
-
-.method private startPullingModePanel()V
-    .registers 2
-
-    .line 904
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isModePickerVisible()Z
-
-    move-result v0
-
-    if-nez v0, :cond_7
-
-    goto :goto_15
-
-    .line 907
-    :cond_7
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScrollConsumer:Lcom/transsion/camera/app/ui/ScrollConsumer;
-
-    invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScrollConsumer;->spreadModePanel()V
-
-    .line 908
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
-
-    if-eqz p0, :cond_15
-
-    const/16 v0, 0x48
-
-    .line 909
-    invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
-
-    :cond_15
-    :goto_15
     return-void
 .end method
 
 .method private switchDefaultMode(Landroid/view/View;)V
     .registers 4
 
-    .line 544
+    .line 455
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p1
 
     if-eqz p1, :cond_50
 
-    .line 545
+    .line 456
     invoke-static {}, Lcom/transsion/camera/utils/manager/GlobalClickManager;->checkCanClick()Z
 
     move-result p1
@@ -3289,7 +3051,7 @@
 
     goto :goto_50
 
-    .line 548
+    .line 459
     :cond_d
     sget-object p1, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3319,7 +3081,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 550
+    .line 461
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsModeSwitching:Z
 
     if-nez p1, :cond_50
@@ -3330,13 +3092,13 @@
 
     goto :goto_50
 
-    .line 553
+    .line 464
     :cond_38
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p1, :cond_46
 
-    .line 554
+    .line 465
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$fgetmDefaultModeFeatureName(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/lang/String;
@@ -3347,7 +3109,7 @@
 
     invoke-interface {p1, v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IModePickerControl;->updateSpecifiedMode(Ljava/lang/String;Z)V
 
-    .line 556
+    .line 467
     :cond_46
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMainHandler:Landroid/os/Handler;
 
@@ -3367,16 +3129,16 @@
 
     const/4 v0, 0x0
 
-    .line 1508
+    .line 1398
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentTab(Z)V
 
-    .line 1509
+    .line 1399
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeSelector()V
 
-    .line 1510
+    .line 1400
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeUI()V
 
-    .line 1511
+    .line 1401
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->notifyModeSwitch()V
 
     return-void
@@ -3385,12 +3147,12 @@
 .method private updateCurrentModeSelector()V
     .registers 3
 
-    .line 1163
+    .line 1055
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_18
 
-    .line 1164
+    .line 1056
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v1}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mgetDefaultModeTitle(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/lang/String;
@@ -3399,41 +3161,30 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->updateDefaultValue(Ljava/lang/String;)V
 
-    .line 1165
+    .line 1057
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
-    invoke-static {v1}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentModeShowName(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentModeShowName(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->updateIndexByValue(Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->updateIndexByValue(Ljava/lang/String;)V
 
-    .line 1166
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
-
-    invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->isOutSideShown()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeArrowVisibility(Z)V
-
-    :cond_23
+    :cond_18
     return-void
 .end method
 
 .method private updateCurrentModeUI()V
     .registers 3
 
-    .line 1531
+    .line 1421
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-nez v0, :cond_d
 
-    .line 1532
+    .line 1422
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v0, "updateCurrentModeUI: mModeTabLayout is null"
@@ -3442,7 +3193,7 @@
 
     return-void
 
-    .line 1535
+    .line 1425
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
@@ -3470,7 +3221,7 @@
 
     const-string v1, "com.transsion.camera.feature.arcore.ARCoreModeEntry"
 
-    .line 1537
+    .line 1427
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -3486,7 +3237,7 @@
     :goto_2f
     const/4 v0, 0x0
 
-    .line 1538
+    .line 1428
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->chooseModeUIToShow(Z)V
 
     return-void
@@ -3499,7 +3250,7 @@
 
     move/from16 v1, p2
 
-    .line 1617
+    .line 1504
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRoot:Landroid/view/ViewGroup;
 
     if-eqz v2, :cond_275
@@ -3521,76 +3272,76 @@
 
     move v4, v3
 
-    .line 1624
+    .line 1511
     :cond_15
     iget-object v5, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mHoverTranslateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-static {v5}, Lcom/transsion/camera/utils/AnimationUtils;->stopAnimator(Landroid/animation/Animator;)V
 
-    .line 1625
+    .line 1512
     iget-object v5, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v5}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
-    .line 1626
+    .line 1513
     sget v6, Lcom/transsion/camera/R$dimen;->mode_picker_width_expanded_ui:I
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v6
 
-    .line 1627
+    .line 1514
     sget v7, Lcom/transsion/camera/R$dimen;->mode_picker_margin_port_expanded_ui:I
 
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v7
 
-    .line 1628
+    .line 1515
     sget v8, Lcom/transsion/camera/R$dimen;->mode_picker_margin_land_expanded_ui:I
 
     invoke-virtual {v5, v8}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v8
 
-    .line 1629
+    .line 1516
     sget v9, Lcom/transsion/camera/R$dimen;->mode_picker_margin_bottom_port_expanded_ui:I
 
     invoke-virtual {v5, v9}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v9
 
-    .line 1630
+    .line 1517
     sget v10, Lcom/transsion/camera/R$dimen;->mode_picker_margin_bottom_land_expanded_ui:I
 
     invoke-virtual {v5, v10}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v10
 
-    .line 1631
+    .line 1518
     iget-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v11}, Lcom/transsion/camera/app/ui/ScreenManager;->getModePlusBottomBarHeight()I
 
     move-result v11
 
-    .line 1632
+    .line 1519
     sget v12, Lcom/transsion/camera/R$dimen;->mode_tab_layout_left_right_margin:I
 
     invoke-virtual {v5, v12}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v12
 
-    .line 1633
+    .line 1520
     sget v13, Lcom/transsion/camera/R$dimen;->mode_picker_horizontal_margin_left_right_hover_ui:I
 
     invoke-virtual {v5, v13}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
     move-result v13
 
-    .line 1634
+    .line 1521
     iget-object v14, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v14}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -3599,13 +3350,13 @@
 
     check-cast v14, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1635
+    .line 1522
     invoke-virtual {v14, v3, v3, v3, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1637
+    .line 1524
     iget v15, v14, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1640
+    .line 1527
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -3614,10 +3365,10 @@
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1641
+    .line 1528
     invoke-virtual {v2, v3, v3, v3, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1642
+    .line 1529
     sget v3, Lcom/transsion/camera/R$dimen;->mode_selector_height:I
 
     invoke-virtual {v5, v3}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
@@ -3626,7 +3377,7 @@
 
     move/from16 p1, v15
 
-    .line 1644
+    .line 1531
     iget-object v15, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v15}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -3639,10 +3390,10 @@
 
     const/4 v11, 0x0
 
-    .line 1645
+    .line 1532
     invoke-virtual {v15, v11, v11, v11, v11}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1646
+    .line 1533
     iget-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
     invoke-virtual {v11}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getConfig()Lcom/transsion/camera/app/mode/ModePickerConfig;
@@ -3659,10 +3410,10 @@
 
     if-eqz v17, :cond_9f
 
-    .line 1647
+    .line 1534
     iput v11, v15, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1648
+    .line 1535
     sget v11, Lcom/transsion/camera/R$dimen;->more_mode_picker_list_margin:I
 
     invoke-virtual {v5, v11}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
@@ -3673,7 +3424,7 @@
 
     iput v11, v15, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1649
+    .line 1536
     iget-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v11, v15}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -3697,84 +3448,84 @@
 
     if-eq v4, v2, :cond_bd
 
-    .line 1678
+    .line 1565
     iput v6, v14, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1679
+    .line 1566
     iput v3, v14, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     const/16 v2, 0x55
 
-    .line 1680
+    .line 1567
     iput v2, v14, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1681
+    .line 1568
     iput v7, v14, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1682
+    .line 1569
     iput v9, v14, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     goto :goto_e3
 
-    .line 1669
+    .line 1556
     :cond_bd
     iput v3, v14, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1670
+    .line 1557
     iput v6, v14, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     const/16 v2, 0x53
 
-    .line 1671
+    .line 1558
     iput v2, v14, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1672
+    .line 1559
     iput v8, v14, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 1673
+    .line 1560
     iput v10, v14, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     goto :goto_e3
 
-    .line 1662
+    .line 1549
     :cond_ca
     iput v6, v14, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1663
+    .line 1550
     iput v3, v14, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     const/16 v2, 0x33
 
-    .line 1664
+    .line 1551
     iput v2, v14, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1665
+    .line 1552
     iput v7, v14, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1666
+    .line 1553
     iput v9, v14, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     goto :goto_e3
 
-    .line 1655
+    .line 1542
     :cond_d7
     iput v3, v14, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1656
+    .line 1543
     iput v6, v14, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     const/16 v2, 0x35
 
-    .line 1657
+    .line 1544
     iput v2, v14, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1658
+    .line 1545
     iput v8, v14, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1659
+    .line 1546
     iput v10, v14, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1685
+    .line 1572
     :goto_e3
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRoot:Landroid/view/ViewGroup;
 
@@ -3795,51 +3546,51 @@
 
     const/4 v3, -0x1
 
-    .line 1687
+    .line 1574
     iput v3, v14, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1688
+    .line 1575
     iput v3, v14, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1689
+    .line 1576
     iput v13, v2, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     const/16 v3, 0x15
 
-    .line 1690
+    .line 1577
     iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1691
+    .line 1578
     iget-object v3, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     const/4 v7, 0x0
 
     invoke-virtual {v3, v11, v7}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 1692
+    .line 1579
     iput v12, v15, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     iput v12, v15, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1693
+    .line 1580
     iget-object v3, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v3, v15}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1694
+    .line 1581
     iget-object v3, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v3, v14}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1695
+    .line 1582
     iget-object v3, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1696
+    .line 1583
     iput-boolean v5, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormTypeChanged:Z
 
-    .line 1697
+    .line 1584
     invoke-direct {v0, v6, v7}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeTabLayout(Ljava/lang/String;Z)V
 
     goto :goto_e8
@@ -3853,51 +3604,51 @@
 
     const/4 v3, -0x1
 
-    .line 1699
+    .line 1586
     iput v3, v14, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1700
+    .line 1587
     iput v3, v14, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1701
+    .line 1588
     iput v13, v2, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     const/16 v3, 0x13
 
-    .line 1702
+    .line 1589
     iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1703
+    .line 1590
     iget-object v3, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     const/16 v8, 0x10e
 
     invoke-virtual {v3, v8, v7}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 1704
+    .line 1591
     iput v12, v15, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     iput v12, v15, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1705
+    .line 1592
     iget-object v3, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v3, v15}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1706
+    .line 1593
     iget-object v3, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v3, v14}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1707
+    .line 1594
     iget-object v3, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1708
+    .line 1595
     iput-boolean v5, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormTypeChanged:Z
 
-    .line 1709
+    .line 1596
     invoke-direct {v0, v6, v7}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeTabLayout(Ljava/lang/String;Z)V
 
     goto :goto_e8
@@ -3925,7 +3676,7 @@
 
     if-ne v1, v3, :cond_e8
 
-    .line 1724
+    .line 1611
     sget v2, Lcom/transsion/camera/R$dimen;->mode_picker_width_flip:I
 
     move-object/from16 v3, v18
@@ -3936,7 +3687,7 @@
 
     iput v2, v14, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1725
+    .line 1612
     sget v2, Lcom/transsion/camera/R$dimen;->mode_picker_height_flip:I
 
     invoke-virtual {v3, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -3945,7 +3696,7 @@
 
     iput v2, v14, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1726
+    .line 1613
     sget v2, Lcom/transsion/camera/R$dimen;->mode_picker_left_margin_flip:I
 
     invoke-virtual {v3, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -3954,7 +3705,7 @@
 
     iput v2, v14, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1727
+    .line 1614
     sget v2, Lcom/transsion/camera/R$dimen;->mode_picker_bottom_margin_flip:I
 
     invoke-virtual {v3, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -3965,10 +3716,10 @@
 
     const/16 v2, 0x53
 
-    .line 1728
+    .line 1615
     iput v2, v14, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1729
+    .line 1616
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v14}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -3980,72 +3731,72 @@
 
     goto :goto_1aa
 
-    .line 1714
+    .line 1601
     :goto_187
     iput v7, v14, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
     move/from16 v7, v16
 
-    .line 1715
+    .line 1602
     iput v7, v14, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     const/16 v8, 0x51
 
-    .line 1716
+    .line 1603
     iput v8, v14, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     const/16 v8, 0x31
 
-    .line 1717
+    .line 1604
     iput v8, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1718
+    .line 1605
     iget-object v8, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     const/4 v9, 0x0
 
     invoke-virtual {v8, v9, v9}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 1719
+    .line 1606
     iget-object v8, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v8, v14}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1720
+    .line 1607
     iget-object v8, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v8, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1721
+    .line 1608
     iput-boolean v5, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormTypeChanged:Z
 
-    .line 1722
+    .line 1609
     invoke-direct {v0, v6, v9}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeTabLayout(Ljava/lang/String;Z)V
 
-    .line 1732
+    .line 1619
     :goto_1aa
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     if-eqz v2, :cond_243
 
-    .line 1734
+    .line 1621
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1735
+    .line 1622
     invoke-virtual {v2, v9, v9, v9, v9}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1737
+    .line 1624
     iget v6, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormType:I
 
     const/4 v8, 0x7
 
     if-ne v6, v8, :cond_1e1
 
-    .line 1738
+    .line 1625
     sget v6, Lcom/transsion/camera/R$dimen;->mode_selector_width_for_flip:I
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -4054,73 +3805,73 @@
 
     iput v6, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1739
+    .line 1626
     iget-object v6, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     sget v8, Lcom/transsion/camera/R$dimen;->mode_picker_item_height_flip:I
 
-    .line 1740
+    .line 1627
     invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v8
 
     sget v9, Lcom/transsion/camera/R$dimen;->mode_picker_item_text_size_flip:I
 
-    .line 1741
+    .line 1628
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v9
 
-    .line 1739
+    .line 1626
     invoke-virtual {v6, v8, v9}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->setItemSize(II)V
 
-    .line 1742
+    .line 1629
     iget-object v6, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     sget v8, Lcom/transsion/camera/R$dimen;->mode_picker_item_fading_edge_length_flip:I
 
-    .line 1743
+    .line 1630
     invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v8
 
-    .line 1742
+    .line 1629
     invoke-virtual {v6, v8}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->setInsideFadingEdgeLength(I)V
 
     goto :goto_1fd
 
-    .line 1745
+    .line 1632
     :cond_1e1
     iget-object v6, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     sget v8, Lcom/transsion/camera/R$dimen;->mode_picker_item_height_normal:I
 
-    .line 1746
+    .line 1633
     invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v8
 
     sget v9, Lcom/transsion/camera/R$dimen;->mode_picker_item_text_size_normal:I
 
-    .line 1747
+    .line 1634
     invoke-virtual {v3, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v9
 
-    .line 1745
+    .line 1632
     invoke-virtual {v6, v8, v9}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->setItemSize(II)V
 
-    .line 1748
+    .line 1635
     iget-object v6, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     sget v8, Lcom/transsion/camera/R$dimen;->mode_picker_item_fading_edge_length_normal:I
 
-    .line 1749
+    .line 1636
     invoke-virtual {v3, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v8
 
-    .line 1748
+    .line 1635
     invoke-virtual {v6, v8}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->setInsideFadingEdgeLength(I)V
 
     :goto_1fd
@@ -4128,15 +3879,15 @@
 
     const/16 v5, 0x11
 
-    .line 1753
+    .line 1640
     iput v5, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1754
+    .line 1641
     iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1755
+    .line 1642
     iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     rsub-int v2, v4, 0x168
@@ -4152,7 +3903,7 @@
 
     if-ne v1, v8, :cond_243
 
-    .line 1757
+    .line 1644
     sget v1, Lcom/transsion/camera/R$dimen;->mode_picker_selector_height_flip:I
 
     invoke-virtual {v3, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -4163,7 +3914,7 @@
 
     const/16 v5, 0x11
 
-    .line 1758
+    .line 1645
     iput v5, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     if-eq v4, v11, :cond_237
@@ -4172,7 +3923,7 @@
 
     if-eq v4, v8, :cond_22f
 
-    .line 1769
+    .line 1656
     iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     rsub-int v3, v4, 0x168
@@ -4183,7 +3934,7 @@
 
     goto :goto_23e
 
-    .line 1764
+    .line 1651
     :cond_22f
     iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
@@ -4195,7 +3946,7 @@
 
     goto :goto_23e
 
-    .line 1761
+    .line 1648
     :cond_237
     iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
@@ -4205,13 +3956,13 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setRotation(F)V
 
-    .line 1772
+    .line 1659
     :goto_23e
     iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1776
+    .line 1663
     :cond_243
     :goto_243
     iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
@@ -4226,7 +3977,7 @@
 
     move/from16 v1, p1
 
-    .line 1777
+    .line 1664
     filled-new-array {v1, v7}, [I
 
     move-result-object v1
@@ -4239,17 +3990,17 @@
 
     const-wide/16 v2, 0x190
 
-    .line 1778
+    .line 1665
     invoke-virtual {v1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1779
+    .line 1666
     iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mHoverTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mPathInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1780
+    .line 1667
     iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mHoverTranslateAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v2, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda8;
@@ -4258,7 +4009,7 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1784
+    .line 1671
     iget-object v0, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mHoverTranslateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -4266,7 +4017,7 @@
     :cond_274
     return-void
 
-    .line 1618
+    .line 1505
     :cond_275
     :goto_275
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -4278,60 +4029,31 @@
     return-void
 .end method
 
-.method private updateModeArrowView(Z)V
-    .registers 2
-
-    .line 2942
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    if-nez p0, :cond_5
-
-    return-void
-
-    :cond_5
-    if-eqz p1, :cond_d
-
-    .line 2946
-    sget p1, Lcom/transsion/camera/R$drawable;->ic_panel_up_arrow_black:I
-
-    invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    return-void
-
-    .line 2948
-    :cond_d
-    sget p1, Lcom/transsion/camera/R$drawable;->ic_panel_up_arrow:I
-
-    invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    return-void
-.end method
-
 .method private updateModePickerRotation(I)V
     .registers 3
 
-    .line 662
+    .line 567
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
     if-eqz v0, :cond_14
 
-    .line 663
+    .line 568
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-eqz v0, :cond_d
 
-    .line 664
+    .line 569
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/widget/TabLayout;->updateRotation(I)V
 
-    .line 666
+    .line 571
     :cond_d
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
     if-eqz p0, :cond_14
 
-    .line 667
+    .line 572
     invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$mupdateRotation(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;I)V
 
     :cond_14
@@ -4341,7 +4063,7 @@
 .method private updateModeSelectorLayout()V
     .registers 12
 
-    .line 2103
+    .line 1991
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->cannotUpdateModeTabLayout()Z
 
     move-result v0
@@ -4350,13 +4072,13 @@
 
     return-void
 
-    .line 2106
+    .line 1994
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     if-nez v0, :cond_14
 
-    .line 2107
+    .line 1995
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v0, "updateModeSelectorLayout mModeSelector is null."
@@ -4365,32 +4087,32 @@
 
     return-void
 
-    .line 2110
+    .line 1998
     :cond_14
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2111
+    .line 1999
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2114
+    .line 2002
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v2}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mgetAllMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/util/List;
 
     move-result-object v2
 
-    .line 2115
+    .line 2003
     invoke-interface {v2}, Ljava/util/Collection;->stream()Ljava/util/stream/Stream;
 
     move-result-object v2
 
-    new-instance v3, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda11;
+    new-instance v3, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda10;
 
-    invoke-direct {v3}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda11;-><init>()V
+    invoke-direct {v3}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda10;-><init>()V
 
     invoke-interface {v2, v3}, Ljava/util/stream/Stream;->map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
 
@@ -4408,7 +4130,7 @@
 
     check-cast v6, Ljava/util/List;
 
-    .line 2116
+    .line 2004
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v2}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$fgetmIsSupportMoreMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Z
@@ -4417,28 +4139,28 @@
 
     if-eqz v2, :cond_81
 
-    .line 2117
+    .line 2005
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getTabModeList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 2118
+    .line 2006
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getPanelModeList()Ljava/util/List;
 
     move-result-object v1
 
-    .line 2119
+    .line 2007
     invoke-interface {v0}, Ljava/util/Collection;->stream()Ljava/util/stream/Stream;
 
     move-result-object v2
 
-    new-instance v3, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda11;
+    new-instance v3, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda10;
 
-    invoke-direct {v3}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda11;-><init>()V
+    invoke-direct {v3}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda10;-><init>()V
 
     invoke-interface {v2, v3}, Ljava/util/stream/Stream;->map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
 
@@ -4454,14 +4176,14 @@
 
     check-cast v2, Ljava/util/List;
 
-    .line 2120
+    .line 2008
     invoke-interface {v1}, Ljava/util/Collection;->stream()Ljava/util/stream/Stream;
 
     move-result-object v3
 
-    new-instance v4, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda11;
+    new-instance v4, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda10;
 
-    invoke-direct {v4}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda11;-><init>()V
+    invoke-direct {v4}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda10;-><init>()V
 
     invoke-interface {v3, v4}, Ljava/util/stream/Stream;->map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
 
@@ -4490,7 +4212,7 @@
 
     move-object v8, v7
 
-    .line 2122
+    .line 2010
     :goto_84
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
@@ -4538,14 +4260,14 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
-    .line 2123
+    .line 2011
     invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mgetDefaultModeTitle(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/lang/String;
 
     move-result-object v9
 
     const/4 v10, 0x6
 
-    .line 2122
+    .line 2010
     invoke-virtual/range {v3 .. v10}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->setItemList(ZLjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;I)V
 
     return-void
@@ -4554,29 +4276,29 @@
 .method private updateModeTabLayout(Ljava/lang/String;Z)V
     .registers 13
 
-    .line 2061
+    .line 1945
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->cannotUpdateModeTabLayout()Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    goto/16 :goto_d2
+    goto/16 :goto_f6
 
-    .line 2064
+    .line 1948
     :cond_8
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->removeAllTabs()V
 
-    .line 2065
+    .line 1949
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mgetTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 2068
+    .line 1952
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/transsion/camera/utils/CameraUtil;->isTalkBackEnabled(Landroid/content/Context;)Z
@@ -4589,7 +4311,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 2070
+    .line 1954
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsFocusable:Z
 
     move v1, v2
@@ -4599,7 +4321,7 @@
     :cond_21
     move v1, v3
 
-    .line 2072
+    .line 1956
     :goto_22
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -4612,7 +4334,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_b4
+    if-eqz v5, :cond_d8
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4620,14 +4342,14 @@
 
     check-cast v5, Lcom/transsion/camera/app/common/FeatureResource;
 
-    .line 2073
+    .line 1957
     iget-object v6, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v6, v1}, Lcom/transsion/camera/app/ui/widget/TabLayout;->newTab(Z)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
     move-result-object v6
 
-    .line 2074
+    .line 1958
     iget-object v7, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSellingPointItems:Ljava/util/List;
 
     iget-object v8, v5, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
@@ -4642,7 +4364,7 @@
 
     iget-object v8, v5, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
-    .line 2075
+    .line 1959
     invoke-static {v7, v8}, Lcom/transsion/camera/app/ui/mode/ModeUIItem;->getVal(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v7
@@ -4656,7 +4378,7 @@
     :cond_4f
     move v7, v3
 
-    .line 2076
+    .line 1960
     :goto_50
     iget-object v8, v5, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureTitle:Ljava/lang/String;
 
@@ -4666,34 +4388,34 @@
 
     const-string v9, "AbstractModePickerUI"
 
-    .line 2077
+    .line 1961
     invoke-virtual {v8, v9}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->setContentDescriptionWithoutUpdate(Ljava/lang/CharSequence;)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
     move-result-object v8
 
-    .line 2078
+    .line 1962
     invoke-virtual {v8, v7}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->setShowPointIconWithoutUpdate(Z)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
     move-result-object v7
 
     iget-object v8, v5, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
-    .line 2079
+    .line 1963
     invoke-virtual {v7, v8}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->setFeatureNameWithoutUpdate(Ljava/lang/String;)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
     move-result-object v7
 
-    .line 2080
+    .line 1964
     invoke-virtual {v7}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->updateView()V
 
-    .line 2082
+    .line 1966
     iget-object v7, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v7, v5, p2}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mdefaultSelectedMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;Lcom/transsion/camera/app/common/FeatureResource;Z)Z
 
     move-result v5
 
-    .line 2083
+    .line 1967
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v7
@@ -4726,7 +4448,7 @@
     :goto_85
     move v4, v2
 
-    .line 2087
+    .line 1971
     :goto_86
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
 
@@ -4742,7 +4464,7 @@
 
     if-ne v7, v8, :cond_a6
 
-    .line 2088
+    .line 1972
     iget-object v7, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-eqz v5, :cond_a1
@@ -4767,31 +4489,71 @@
 
     goto :goto_ab
 
-    .line 2090
+    .line 1974
     :cond_a6
     iget-object v7, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v7, v6, v5}, Lcom/transsion/camera/app/ui/widget/TabLayout;->addTab(Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;Z)V
 
-    .line 2092
+    .line 1976
     :goto_ab
     invoke-virtual {v6}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->getText()Ljava/lang/CharSequence;
 
     move-result-object v5
 
+    .line 1977
+    iget-object v7, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
+
+    invoke-virtual {p0, v7}, Lcom/transsion/camera/app/ui/ModePickerUI;->isTabLayoutMode(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_d3
+
+    const-string v7, "com.transsion.camera.feature.mode.more.MoreModeEntry"
+
+    invoke-virtual {v6}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->getFeatureName()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_d3
+
+    iget-object v7, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
+
+    invoke-static {v7}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$fgetmCurrentModeItem(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Lcom/transsion/camera/app/common/FeatureResource;
+
+    move-result-object v7
+
+    if-eqz v7, :cond_d3
+
+    .line 1978
+    iget-object v5, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
+
+    invoke-static {v5}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$fgetmCurrentModeItem(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Lcom/transsion/camera/app/common/FeatureResource;
+
+    move-result-object v5
+
+    iget-object v5, v5, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureTitle:Ljava/lang/String;
+
+    .line 1980
+    :cond_d3
     invoke-virtual {v6, v5}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->setContentDescription(Ljava/lang/CharSequence;)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
     goto/16 :goto_27
 
-    .line 2094
-    :cond_b4
+    .line 1982
+    :cond_d8
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p2
 
     iget-boolean p2, p2, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5MoreModeStyle:Z
 
-    if-eqz p2, :cond_c4
+    if-eqz p2, :cond_e8
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
@@ -4799,33 +4561,33 @@
 
     move-result p2
 
-    if-eqz p2, :cond_c9
+    if-eqz p2, :cond_ed
 
-    .line 2095
-    :cond_c4
+    .line 1983
+    :cond_e8
     iget-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/ui/widget/TabLayout;->updateHeadFootPadding()V
 
-    :cond_c9
-    if-eqz p1, :cond_d2
+    :cond_ed
+    if-eqz p1, :cond_f6
 
-    if-nez v4, :cond_d2
+    if-nez v4, :cond_f6
 
-    .line 2098
+    .line 1986
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mupdateCurrentMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;Ljava/lang/String;)V
 
-    :cond_d2
-    :goto_d2
+    :cond_f6
+    :goto_f6
     return-void
 .end method
 
 .method private updateMoreCancelRootParams()V
     .registers 5
 
-    .line 1893
+    .line 1780
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getMoreTabView()Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;
@@ -4839,10 +4601,10 @@
     :cond_9
     const/4 v0, 0x2
 
-    .line 1896
+    .line 1783
     new-array v0, v0, [I
 
-    .line 1897
+    .line 1784
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getMoreTabView()Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;
@@ -4851,7 +4613,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 1898
+    .line 1785
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4862,7 +4624,7 @@
 
     const/4 v2, 0x0
 
-    .line 1899
+    .line 1786
     aget v0, v0, v2
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
@@ -4879,7 +4641,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
-    .line 1900
+    .line 1787
     invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -4898,7 +4660,7 @@
 
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1901
+    .line 1788
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -4909,7 +4671,7 @@
 .method private updateMoreCancelRootState()V
     .registers 3
 
-    .line 1884
+    .line 1771
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isTabLayoutMode(Ljava/lang/String;)Z
@@ -4922,14 +4684,14 @@
 
     if-eqz v0, :cond_14
 
-    .line 1885
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda4;
+    .line 1772
+    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda3;
 
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda4;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda3;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1889
+    .line 1776
     :cond_14
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateMoreCancelRootParams()V
 
@@ -4941,10 +4703,10 @@
 
     const/4 v0, 0x2
 
-    .line 880
+    .line 785
     new-array v0, v0, [I
 
-    .line 881
+    .line 786
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getMoreTabView()Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;
@@ -4953,7 +4715,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 882
+    .line 787
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideLeftRoot:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4962,7 +4724,7 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 883
+    .line 788
     iget v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenWidth:I
 
     const/4 v3, 0x0
@@ -4983,7 +4745,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
-    .line 884
+    .line 789
     invoke-virtual {v3}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -5008,14 +4770,14 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
-    .line 886
+    .line 791
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
     sub-int/2addr v2, v0
 
-    .line 887
+    .line 792
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideLeftRoot:Landroid/view/View;
 
     neg-int v0, v2
@@ -5024,7 +4786,7 @@
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 888
+    .line 793
     invoke-static {}, Lcom/transsion/camera/utils/MultiTouchManager;->resetState()V
 
     return-void
@@ -5033,7 +4795,7 @@
 .method private updateMoreModeGuideUI(Ljava/lang/String;)V
     .registers 3
 
-    .line 1905
+    .line 1792
     const-string v0, "com.transsion.camera.feature.mode.more.MoreModeEntry"
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -5042,12 +4804,12 @@
 
     if-eqz p1, :cond_c
 
-    .line 1906
+    .line 1793
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->enterMoreModeGuideAnimation()V
 
     return-void
 
-    .line 1908
+    .line 1795
     :cond_c
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->exitMoreModeGuideAnimation()V
 
@@ -5057,7 +4819,7 @@
 .method private updateMoreModeGuideView(Z)V
     .registers 2
 
-    .line 2931
+    .line 2720
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
 
     if-nez p0, :cond_5
@@ -5067,14 +4829,14 @@
     :cond_5
     if-eqz p1, :cond_d
 
-    .line 2935
+    .line 2724
     sget p1, Lcom/transsion/camera/R$drawable;->ic_more_mode_guide_right_black_icon:I
 
     invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     return-void
 
-    .line 2937
+    .line 2726
     :cond_d
     sget p1, Lcom/transsion/camera/R$drawable;->ic_more_mode_guide_right_icon:I
 
@@ -5086,7 +4848,7 @@
 .method private updateScrollHotArea()V
     .registers 10
 
-    .line 1089
+    .line 981
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -5095,10 +4857,10 @@
 
     const/4 v1, 0x4
 
-    .line 1090
+    .line 982
     new-array v2, v1, [F
 
-    .line 1091
+    .line 983
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v3}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -5117,7 +4879,7 @@
 
     if-ne v3, v8, :cond_7a
 
-    .line 1092
+    .line 984
     iget v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOrientation:I
 
     const/16 v3, 0x5a
@@ -5128,7 +4890,7 @@
 
     if-eq v1, v3, :cond_4d
 
-    .line 1103
+    .line 995
     sget v1, Lcom/transsion/camera/R$dimen;->mode_switch_scroll_hot_area_margin:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -5139,7 +4901,7 @@
 
     aput v1, v2, v5
 
-    .line 1104
+    .line 996
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenWidth()I
@@ -5158,10 +4920,10 @@
 
     aput v0, v2, v7
 
-    .line 1105
+    .line 997
     aput v4, v2, v8
 
-    .line 1106
+    .line 998
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenHeight()I
@@ -5182,11 +4944,11 @@
 
     goto/16 :goto_15c
 
-    .line 1095
+    .line 987
     :cond_4d
     aput v4, v2, v5
 
-    .line 1096
+    .line 988
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenWidth()I
@@ -5205,7 +4967,7 @@
 
     aput v1, v2, v7
 
-    .line 1097
+    .line 989
     sget v1, Lcom/transsion/camera/R$dimen;->mode_switch_scroll_hot_area_margin:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -5216,7 +4978,7 @@
 
     aput v1, v2, v8
 
-    .line 1098
+    .line 990
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenHeight()I
@@ -5237,7 +4999,7 @@
 
     goto/16 :goto_15c
 
-    .line 1109
+    .line 1001
     :cond_7a
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
@@ -5247,7 +5009,7 @@
 
     if-ne v3, v7, :cond_c5
 
-    .line 1110
+    .line 1002
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getColumnPreviewStartMargin()I
@@ -5258,7 +5020,7 @@
 
     aput v1, v2, v5
 
-    .line 1111
+    .line 1003
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getColumnPreviewStartMargin()I
@@ -5277,7 +5039,7 @@
 
     aput v1, v2, v7
 
-    .line 1112
+    .line 1004
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getTopBarHeight()I
@@ -5288,7 +5050,7 @@
 
     aput v1, v2, v8
 
-    .line 1113
+    .line 1005
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenHeight()I
@@ -5305,7 +5067,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 1114
+    .line 1006
     invoke-virtual {v3}, Lcom/transsion/camera/app/ui/ScreenManager;->getBottomHeight()I
 
     move-result v3
@@ -5328,7 +5090,7 @@
 
     goto/16 :goto_15c
 
-    .line 1115
+    .line 1007
     :cond_c5
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
@@ -5338,7 +5100,7 @@
 
     if-ne v3, v1, :cond_f2
 
-    .line 1116
+    .line 1008
     sget v1, Lcom/transsion/camera/R$dimen;->mode_switch_scroll_hot_area_margin:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -5349,7 +5111,7 @@
 
     aput v0, v2, v5
 
-    .line 1117
+    .line 1009
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenWidth()I
@@ -5360,10 +5122,10 @@
 
     aput v0, v2, v7
 
-    .line 1118
+    .line 1010
     aput v4, v2, v8
 
-    .line 1119
+    .line 1011
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenHeight()I
@@ -5384,7 +5146,7 @@
 
     goto :goto_15c
 
-    .line 1120
+    .line 1012
     :cond_f2
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
@@ -5396,10 +5158,10 @@
 
     if-ne v1, v3, :cond_119
 
-    .line 1121
+    .line 1013
     aput v4, v2, v5
 
-    .line 1122
+    .line 1014
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenWidth()I
@@ -5410,10 +5172,10 @@
 
     aput v0, v2, v7
 
-    .line 1123
+    .line 1015
     aput v4, v2, v8
 
-    .line 1124
+    .line 1016
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenHeight()I
@@ -5434,7 +5196,7 @@
 
     goto :goto_15c
 
-    .line 1125
+    .line 1017
     :cond_119
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
@@ -5446,18 +5208,18 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 1126
+    .line 1018
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result v1
 
     if-ne v1, v6, :cond_15c
 
-    .line 1127
+    .line 1019
     :cond_129
     aput v4, v2, v5
 
-    .line 1128
+    .line 1020
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenWidth()I
@@ -5468,7 +5230,7 @@
 
     aput v1, v2, v7
 
-    .line 1129
+    .line 1021
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getTopBarHeight()I
@@ -5479,7 +5241,7 @@
 
     aput v1, v2, v8
 
-    .line 1130
+    .line 1022
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenHeight()I
@@ -5496,7 +5258,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 1131
+    .line 1023
     invoke-virtual {v3}, Lcom/transsion/camera/app/ui/ScreenManager;->getBottomHeight()I
 
     move-result v3
@@ -5517,7 +5279,7 @@
 
     aput v0, v2, v6
 
-    .line 1133
+    .line 1025
     :cond_15c
     :goto_15c
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
@@ -5530,7 +5292,7 @@
 .method private updateSpecifiedMode(Z)V
     .registers 3
 
-    .line 897
+    .line 802
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getMoreTabView()Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;
@@ -5541,7 +5303,7 @@
 
     const/4 v0, 0x1
 
-    .line 899
+    .line 804
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->moreModeIconClick(ZZ)V
 
     :cond_c
@@ -5555,7 +5317,7 @@
 
     const/4 v0, 0x0
 
-    .line 2224
+    .line 2076
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->abortShowOrHideModePickerRootUI(Z)V
 
     return-void
@@ -5564,7 +5326,7 @@
 .method public abortShowOrHideModePickerRootUI(Z)V
     .registers 5
 
-    .line 2228
+    .line 2080
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5587,7 +5349,7 @@
 
     return-void
 
-    .line 2232
+    .line 2084
     :cond_19
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -5599,7 +5361,7 @@
 
     if-nez p1, :cond_2a
 
-    .line 2233
+    .line 2085
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
     new-array v0, v0, [Ljava/lang/Runnable;
@@ -5608,7 +5370,7 @@
 
     return-void
 
-    .line 2235
+    .line 2087
     :cond_2a
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -5624,7 +5386,7 @@
 
     invoke-direct {p0, p1, v2}, Lcom/transsion/camera/app/ui/ModePickerUI;->abortAnimator(Landroid/animation/Animator;[Ljava/lang/Runnable;)V
 
-    .line 2240
+    .line 2092
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
     new-array v0, v0, [Ljava/lang/Runnable;
@@ -5637,14 +5399,14 @@
 .method public canScrollToNext()Z
     .registers 2
 
-    .line 1011
+    .line 906
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 1012
+    .line 907
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->canScrollToNext()Z
@@ -5653,7 +5415,7 @@
 
     return p0
 
-    .line 1014
+    .line 909
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
@@ -5663,7 +5425,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 1015
+    .line 910
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->canScrollToNext()Z
@@ -5681,14 +5443,14 @@
 .method public canScrollToPrevious()Z
     .registers 2
 
-    .line 1023
+    .line 918
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 1024
+    .line 919
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->canScrollToPrevious()Z
@@ -5697,7 +5459,7 @@
 
     return p0
 
-    .line 1026
+    .line 921
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
@@ -5707,7 +5469,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 1027
+    .line 922
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->canScrollToPrevious()Z
@@ -5725,14 +5487,14 @@
 .method public canScrolling()Z
     .registers 2
 
-    .line 1035
+    .line 930
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 1036
+    .line 931
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->canScrolling()Z
@@ -5741,7 +5503,7 @@
 
     return p0
 
-    .line 1038
+    .line 933
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
@@ -5751,7 +5513,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 1039
+    .line 934
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->canScrolling()Z
@@ -5769,7 +5531,7 @@
 .method public cancelAnimation()V
     .registers 2
 
-    .line 1421
+    .line 1311
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_f
@@ -5780,7 +5542,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 1422
+    .line 1312
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->cancel()V
@@ -5792,7 +5554,7 @@
 .method public currentIsIabLayoutMode()Z
     .registers 1
 
-    .line 1227
+    .line 1118
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentIsTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Z
@@ -5805,12 +5567,12 @@
 .method public down(FF)V
     .registers 3
 
-    .line 915
+    .line 810
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-eqz p0, :cond_7
 
-    .line 916
+    .line 811
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/widget/TabLayout;->down(FF)V
 
     :cond_7
@@ -5820,12 +5582,12 @@
 .method public exitModeOnMoreTab()V
     .registers 2
 
-    .line 2526
+    .line 2365
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     if-eqz v0, :cond_7
 
-    .line 2527
+    .line 2366
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->switchDefaultMode(Landroid/view/View;)V
 
     :cond_7
@@ -5843,7 +5605,7 @@
 .method protected getTabAnimationInterpolator()Landroid/view/animation/Interpolator;
     .registers 2
 
-    .line 2913
+    .line 2703
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     sget v0, Lcom/transsion/camera/R$anim;->tab_animation_interpolator:I
@@ -5858,17 +5620,17 @@
 .method public hideModePicker()V
     .registers 12
 
-    .line 1388
+    .line 1278
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->cancelAnimation()V
 
-    .line 1389
+    .line 1279
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_d5
 
     const/4 v1, 0x2
 
-    .line 1390
+    .line 1280
     new-array v2, v1, [F
 
     fill-array-data v2, :array_d6
@@ -5881,7 +5643,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAlphaAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1391
+    .line 1281
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getTranslateDistance()I
@@ -5910,7 +5672,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerTranslateAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1392
+    .line 1282
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     new-array v4, v1, [F
@@ -5923,7 +5685,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelAlphaAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1393
+    .line 1283
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getTranslateDistance()I
@@ -5944,7 +5706,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelTranslateAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1394
+    .line 1284
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     new-array v4, v1, [F
@@ -5957,7 +5719,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAlphaAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1395
+    .line 1285
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getTranslateDistance()I
@@ -5978,14 +5740,14 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeModeGuideTranslateAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1396
+    .line 1286
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 1397
+    .line 1287
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
@@ -6000,7 +5762,7 @@
 
     if-nez v0, :cond_a7
 
-    .line 1398
+    .line 1288
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAlphaAnimation:Landroid/animation/ObjectAnimator;
@@ -6041,7 +5803,7 @@
 
     goto :goto_b6
 
-    .line 1402
+    .line 1292
     :cond_a7
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -6057,7 +5819,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1404
+    .line 1294
     :goto_b6
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -6065,16 +5827,16 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1405
+    .line 1295
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$9;
+    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$8;
 
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$9;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$8;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1416
+    .line 1306
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getAnimatorDuration()I
@@ -6114,15 +5876,10 @@
 .method public inflateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
     .registers 7
 
-    .line 313
+    .line 277
     iput-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRoot:Landroid/view/ViewGroup;
 
-    .line 315
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeVerticalScroll:Lcom/transsion/camera/app/ui/ModeVerticalScroll;
-
-    invoke-virtual {v0, p2}, Lcom/transsion/camera/app/ui/ModeVerticalScroll;->setModePickerLayout(Landroid/view/ViewGroup;)V
-
-    .line 316
+    .line 279
     sget v0, Lcom/transsion/camera/R$layout;->mode_picker_layout:I
 
     const/4 v1, 0x1
@@ -6133,22 +5890,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
-    .line 318
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
-
-    invoke-virtual {p1}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getConfig()Lcom/transsion/camera/app/mode/ModePickerConfig;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/transsion/camera/app/mode/ModePickerConfig;->modePickerStyleMore()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_7a
-
-    .line 319
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
-
+    .line 280
     sget p2, Lcom/transsion/camera/R$id;->more_mode_layout_guide_right_ui:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -6157,10 +5899,10 @@
 
     check-cast p1, Landroid/view/ViewStub;
 
-    .line 320
+    .line 281
     invoke-virtual {p1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    .line 321
+    .line 282
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->more_mode_guide_right_root:I
@@ -6171,7 +5913,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
-    .line 322
+    .line 283
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->more_mode_guide_right_icon:I
@@ -6184,7 +5926,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
 
-    .line 324
+    .line 285
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->more_mode_layout_guide_left_ui:I
@@ -6195,10 +5937,10 @@
 
     check-cast p1, Landroid/view/ViewStub;
 
-    .line 325
+    .line 286
     invoke-virtual {p1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    .line 326
+    .line 287
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->more_mode_guide_left_root:I
@@ -6209,7 +5951,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideLeftRoot:Landroid/view/View;
 
-    .line 328
+    .line 289
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->more_mode_cancel_ui:I
@@ -6220,10 +5962,10 @@
 
     check-cast p1, Landroid/view/ViewStub;
 
-    .line 329
+    .line 290
     invoke-virtual {p1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    .line 330
+    .line 291
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->more_mode_cancel_root:I
@@ -6234,7 +5976,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
-    .line 331
+    .line 292
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->more_mode_cancel_icon:I
@@ -6247,76 +5989,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelIcon:Landroid/widget/ImageView;
 
-    goto :goto_b8
-
-    .line 333
-    :cond_7a
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
-
-    sget p2, Lcom/transsion/camera/R$id;->mode_picker_arrow_ui:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/view/ViewStub;
-
-    .line 334
-    invoke-virtual {p1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
-
-    .line 336
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
-
-    sget p2, Lcom/transsion/camera/R$id;->mode_picker_arrow_root:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrowRoot:Landroid/view/View;
-
-    .line 337
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
-
-    sget p2, Lcom/transsion/camera/R$id;->mode_picker_arrow_icon:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/ImageView;
-
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    .line 338
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
-
-    sget p2, Lcom/transsion/camera/R$id;->mode_picker_arrow_svga:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/opensource/svgaplayer/SVGAImageView;
-
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrowSvga:Lcom/opensource/svgaplayer/SVGAImageView;
-
-    .line 340
-    new-instance p1, Lcom/transsion/camera/app/ui/ModePickerUI$1;
-
-    const-string/jumbo p2, "updateModeArrowState"
-
-    invoke-direct {p1, p0, p2}, Lcom/transsion/camera/app/ui/ModePickerUI$1;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;Ljava/lang/String;)V
-
-    .line 360
-    invoke-static {}, Lcom/transsion/camera/utils/threads/WorkThreadPools;->getInstance()Lcom/transsion/camera/utils/threads/WorkThreadPools;
-
-    move-result-object p2
-
-    invoke-virtual {p2, p1}, Lcom/transsion/camera/utils/threads/WorkThreadPools;->execute(Lcom/transsion/camera/utils/threads/WorkTask;)V
-
-    .line 362
-    :goto_b8
+    .line 293
     new-instance p1, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
@@ -6331,7 +6004,7 @@
 
     sget v2, Lcom/transsion/camera/R$id;->current_mode_name:I
 
-    .line 363
+    .line 294
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -6342,7 +6015,7 @@
 
     sget v3, Lcom/transsion/camera/R$id;->current_mode_cancel:I
 
-    .line 364
+    .line 295
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
@@ -6355,7 +6028,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
-    .line 365
+    .line 296
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->mode_picker_tab_frame:I
@@ -6368,7 +6041,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
-    .line 366
+    .line 297
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->mode_picker_container:I
@@ -6381,7 +6054,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    .line 367
+    .line 298
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->mode_picker_tab_layout:I
@@ -6394,14 +6067,14 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
-    .line 368
+    .line 299
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getTabAnimationDuration()I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/widget/TabLayout;->setTabAnimationDuration(I)V
 
-    .line 369
+    .line 300
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getTabAnimationInterpolator()Landroid/view/animation/Interpolator;
@@ -6410,12 +6083,12 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/widget/TabLayout;->setTabAnimationInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 370
+    .line 301
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setHorizontalFadingEdgeEnabled(Z)V
 
-    .line 371
+    .line 302
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -6436,7 +6109,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setFadingEdgeLength(I)V
 
-    .line 372
+    .line 303
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->isTalkBackEnabled(Landroid/content/Context;)Z
@@ -6445,32 +6118,32 @@
 
     const/4 p2, 0x0
 
-    if-eqz p1, :cond_138
+    if-eqz p1, :cond_e6
 
-    .line 373
+    .line 304
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setFocusable(Z)V
 
-    goto :goto_13d
+    goto :goto_eb
 
-    .line 375
-    :cond_138
+    .line 306
+    :cond_e6
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setFocusable(Z)V
 
-    .line 377
-    :goto_13d
+    .line 308
+    :goto_eb
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportFoldUI(Landroid/content/Context;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_163
+    if-eqz p1, :cond_111
 
-    .line 378
+    .line 309
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget v0, Lcom/transsion/camera/R$id;->mode_selector_layout_stub:I
@@ -6481,10 +6154,10 @@
 
     check-cast p1, Landroid/view/ViewStub;
 
-    .line 379
+    .line 310
     invoke-virtual {p1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    .line 380
+    .line 311
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget v0, Lcom/transsion/camera/R$id;->mode_selector_layout:I
@@ -6499,29 +6172,16 @@
 
     const/high16 v0, 0x60000
 
-    .line 381
+    .line 312
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
 
-    .line 384
-    :cond_163
+    .line 315
+    :cond_111
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSwitchScroller:Lcom/transsion/camera/app/ui/ModeSwitchScroller;
 
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/ui/ModeSwitchScroller;->setModeScroll(Lcom/transsion/camera/app/ui/ModeSwitchScroller$IModeScrollCallback;)V
 
-    .line 385
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
-
-    invoke-virtual {p1}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getConfig()Lcom/transsion/camera/app/mode/ModePickerConfig;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/transsion/camera/app/mode/ModePickerConfig;->modePickerStyleMore()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1a8
-
-    .line 386
+    .line 316
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -6532,10 +6192,10 @@
 
     const/16 v0, 0x11
 
-    .line 387
+    .line 317
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 388
+    .line 318
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -6552,12 +6212,12 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 389
+    .line 319
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 391
+    .line 321
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget v0, Lcom/transsion/camera/R$id;->current_mode_root:I
@@ -6566,94 +6226,25 @@
 
     move-result-object p1
 
-    .line 392
+    .line 322
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 393
+    .line 323
     iput p2, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 394
+    .line 324
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 396
-    :cond_1a8
+    .line 325
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeHorizontalScroll:Lcom/transsion/camera/app/ui/ModeHorizontalScroll2;
 
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/ui/ModeHorizontalScroll2;->setModeScroll(Lcom/transsion/camera/app/ui/ModeHorizontalScroll2$IModeScrollCallback;)V
 
-    .line 398
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isModePanelGuideSupported()Z
-
-    move-result p1
-
-    const/16 v0, 0x8
-
-    if-nez p1, :cond_1e5
-
-    .line 399
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    sget v1, Lcom/transsion/camera/R$array;->build_in_features_back_mode_order:I
-
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 400
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    sget v2, Lcom/transsion/camera/R$array;->build_in_features_front_mode_order:I
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 401
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    if-eqz v2, :cond_1e5
-
-    .line 402
-    array-length p1, p1
-
-    array-length v1, v1
-
-    invoke-static {p1, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result p1
-
-    const/4 v1, 0x6
-
-    if-ge p1, v1, :cond_1e0
-
-    .line 403
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    goto :goto_1e5
-
-    .line 405
-    :cond_1e0
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 410
-    :cond_1e5
-    :goto_1e5
+    .line 327
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getConfig()Lcom/transsion/camera/app/mode/ModePickerConfig;
@@ -6664,31 +6255,36 @@
 
     move-result p1
 
-    if-eqz p1, :cond_22f
+    if-eqz p1, :cond_19c
 
-    .line 411
+    .line 328
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
-    invoke-virtual {v1}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->moreModeShow()Z
+    invoke-virtual {v0}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->moreModeShow()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_202
+    if-eqz v0, :cond_16d
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isShowMoreModeGuideView()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_202
+    if-eqz v0, :cond_16d
 
     move v0, p2
 
-    :cond_202
+    goto :goto_16f
+
+    :cond_16d
+    const/16 v0, 0x8
+
+    :goto_16f
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 412
+    .line 329
     sget-object p1, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -6705,22 +6301,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_223
+    if-eqz v1, :cond_190
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isShowMoreModeGuideView()Z
 
     move-result v1
 
-    if-eqz v1, :cond_223
+    if-eqz v1, :cond_190
 
     const-string/jumbo v1, "visble"
 
-    goto :goto_225
+    goto :goto_192
 
-    :cond_223
+    :cond_190
     const-string v1, "gone"
 
-    :goto_225
+    :goto_192
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -6729,8 +6325,8 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 415
-    :cond_22f
+    .line 332
+    :cond_19c
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object p1
@@ -6739,20 +6335,20 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ModuleTransferManager;->registerTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
 
-    .line 416
+    .line 333
     iput-boolean p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOldValue:Z
 
-    .line 417
+    .line 334
     iget p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOrientation:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormType:I
 
     invoke-direct {p0, p1, v0, p2}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateLayoutParams(IIZ)V
 
-    .line 418
+    .line 335
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/ui/ModePickerUI;->chooseModeUIToShow(Z)V
 
-    .line 419
+    .line 336
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     return-object p0
@@ -6761,7 +6357,7 @@
 .method public isEnabled()Z
     .registers 1
 
-    .line 1069
+    .line 961
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-eqz p0, :cond_c
@@ -6785,7 +6381,7 @@
 .method public isFilterPanelShow()Z
     .registers 2
 
-    .line 2309
+    .line 2161
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mFilterUIShow:Z
 
     if-nez v0, :cond_1b
@@ -6824,29 +6420,10 @@
     return p0
 .end method
 
-.method public isModePanelGuideSupported()Z
-    .registers 2
-
-    .line 1073
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p0
-
-    sget v0, Lcom/transsion/camera/R$bool;->camera_mode_panel_guide_support:I
-
-    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public isModeTabScrolling()Z
     .registers 7
 
-    .line 1210
+    .line 1101
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     const/4 v1, 0x1
@@ -6859,7 +6436,7 @@
 
     if-eq v3, v1, :cond_f
 
-    .line 1211
+    .line 1102
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->isScrolling()Z
 
     move-result v0
@@ -6869,13 +6446,13 @@
     :cond_f
     move v0, v2
 
-    .line 1215
+    .line 1106
     :goto_10
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     if-eqz v3, :cond_20
 
-    .line 1216
+    .line 1107
     invoke-virtual {v3}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->isScrolling()Z
 
     move-result v3
@@ -6893,7 +6470,7 @@
     :cond_20
     move p0, v2
 
-    .line 1218
+    .line 1109
     :goto_21
     sget-object v3, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -6936,7 +6513,7 @@
 .method public isNeedShowModePickerAnim()Z
     .registers 4
 
-    .line 1353
+    .line 1243
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -6949,12 +6526,12 @@
 
     if-eqz v0, :cond_23
 
-    .line 1354
+    .line 1244
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_22
 
-    .line 1355
+    .line 1245
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -6981,7 +6558,7 @@
     :cond_22
     return v1
 
-    .line 1357
+    .line 1247
     :cond_23
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
@@ -7002,7 +6579,7 @@
 .method public isSupportUI5MoreModeStyle()Z
     .registers 2
 
-    .line 2657
+    .line 2470
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -7013,7 +6590,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
-    .line 2658
+    .line 2471
     invoke-virtual {v0}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getConfig()Lcom/transsion/camera/app/mode/ModePickerConfig;
 
     move-result-object v0
@@ -7045,7 +6622,7 @@
 .method public isTabLayoutMode(Ljava/lang/String;)Z
     .registers 2
 
-    .line 1223
+    .line 1114
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$misTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;Ljava/lang/String;)Z
@@ -7058,7 +6635,7 @@
 .method public modePickerHideAlphaAnimator(I)Landroid/animation/ObjectAnimator;
     .registers 5
 
-    .line 1504
+    .line 1394
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     const/4 v0, 0x1
@@ -7089,24 +6666,24 @@
 .method public modePickerShowAlphaAnimator(I)Landroid/animation/ObjectAnimator;
     .registers 5
 
-    .line 1494
+    .line 1384
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_f
 
-    .line 1495
+    .line 1385
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1496
+    .line 1386
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v2, "mode picker visibility: modePickerShowAlphaAnimator set mode picker visible"
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1498
+    .line 1388
     :cond_f
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
@@ -7166,54 +6743,54 @@
 
     goto :goto_86
 
-    .line 3024
+    .line 2802
     :pswitch_1d
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsVideoRecording:Z
 
-    .line 3025
+    .line 2803
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/ModePickerUI;->setEnable(Z)V
 
     return-void
 
-    .line 3021
+    .line 2799
     :pswitch_23
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsVideoRecording:Z
 
     return-void
 
-    .line 3028
+    .line 2806
     :pswitch_26
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsHALCaptureProcessing:Z
 
     return-void
 
-    .line 3046
+    .line 2824
     :pswitch_29
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsConfigurationChanging:Z
 
     return-void
 
-    .line 3042
+    .line 2820
     :pswitch_2c
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsConfigurationChanging:Z
 
     return-void
 
-    .line 2984
+    .line 2762
     :pswitch_2f
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsModeSwitching:Z
 
-    .line 2985
+    .line 2763
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsHALCaptureProcessing:Z
 
-    .line 2986
+    .line 2764
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result p1
 
     if-eqz p1, :cond_86
 
-    .line 2987
+    .line 2765
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->isTabLayoutMode(Ljava/lang/String;)Z
@@ -7222,12 +6799,12 @@
 
     if-nez p1, :cond_45
 
-    .line 2988
+    .line 2766
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateMoreCancelRootState()V
 
     return-void
 
-    .line 2990
+    .line 2768
     :cond_45
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
@@ -7237,24 +6814,24 @@
 
     return-void
 
-    .line 2981
+    .line 2759
     :pswitch_4d
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsModeSwitching:Z
 
     return-void
 
-    .line 3032
+    .line 2810
     :cond_50
     :pswitch_50
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsHALCaptureProcessing:Z
 
     return-void
 
-    .line 2995
+    .line 2773
     :cond_53
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsPaused:Z
 
-    .line 2996
+    .line 2774
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->isTalkBackEnabled(Landroid/content/Context;)Z
@@ -7267,12 +6844,12 @@
 
     if-nez p1, :cond_86
 
-    .line 2997
+    .line 2775
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-eqz p1, :cond_86
 
-    .line 2998
+    .line 2776
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getTabCount()I
 
     move-result p1
@@ -7280,7 +6857,7 @@
     :goto_69
     if-ge v2, p1, :cond_84
 
-    .line 3000
+    .line 2778
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getTabAt(I)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
@@ -7289,7 +6866,7 @@
 
     if-eqz v0, :cond_86
 
-    .line 3001
+    .line 2779
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->getView()Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;
 
     move-result-object v3
@@ -7298,7 +6875,7 @@
 
     goto :goto_86
 
-    .line 3004
+    .line 2782
     :cond_7a
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->getView()Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;
 
@@ -7310,7 +6887,7 @@
 
     goto :goto_69
 
-    .line 3006
+    .line 2784
     :cond_84
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsFocusable:Z
 
@@ -7318,40 +6895,40 @@
     :goto_86
     return-void
 
-    .line 3011
+    .line 2789
     :cond_87
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsModeSwitching:Z
 
-    .line 3012
+    .line 2790
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsVideoRecording:Z
 
-    .line 3013
+    .line 2791
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsHALCaptureProcessing:Z
 
-    .line 3014
+    .line 2792
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsSelectMoreTabView:Z
 
-    .line 3015
+    .line 2793
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRestoreSettingsBegin:Z
 
-    .line 3016
+    .line 2794
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsDisableEnterMoreAnimation:Z
 
-    .line 3017
+    .line 2795
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsConfigurationChanging:Z
 
-    .line 3018
+    .line 2796
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsPaused:Z
 
     return-void
 
-    .line 3038
+    .line 2816
     :cond_98
     iput-boolean v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRestoreSettingsBegin:Z
 
     return-void
 
-    .line 3035
+    .line 2813
     :cond_9b
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRestoreSettingsBegin:Z
 
@@ -7379,7 +6956,7 @@
 .method public notifyNeedSwitchMode(Z)V
     .registers 2
 
-    .line 224
+    .line 204
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mNeedSwitchMode:Z
 
     return-void
@@ -7388,7 +6965,7 @@
 .method public onBackPressed()Z
     .registers 4
 
-    .line 1545
+    .line 1435
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x1
@@ -7409,7 +6986,7 @@
 
     if-eqz v0, :cond_51
 
-    .line 1546
+    .line 1436
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$misVisible(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;)Z
 
     move-result v0
@@ -7420,21 +6997,21 @@
 
     if-eqz v0, :cond_51
 
-    .line 1547
+    .line 1437
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
     if-nez v0, :cond_51
 
-    .line 1548
+    .line 1438
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_51
 
-    .line 1549
+    .line 1439
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->currentIsDVMode()Z
@@ -7443,7 +7020,7 @@
 
     if-eqz v0, :cond_48
 
-    .line 1550
+    .line 1440
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_3a
@@ -7454,7 +7031,7 @@
 
     return v1
 
-    .line 1553
+    .line 1443
     :cond_3a
     invoke-static {}, Lcom/transsion/camera/utils/manager/GlobalClickManager;->checkCanClick()Z
 
@@ -7464,7 +7041,7 @@
 
     return v1
 
-    .line 1556
+    .line 1446
     :cond_41
     invoke-static {}, Lcom/transsion/camera/utils/manager/GlobalClickManager;->isModeReseting()Z
 
@@ -7474,18 +7051,18 @@
 
     return v1
 
-    .line 1560
+    .line 1450
     :cond_48
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mupdateCurrentMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)V
 
-    .line 1561
+    .line 1451
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeAndNotify()V
 
     return v1
 
-    .line 1564
+    .line 1454
     :cond_51
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportColumnOrBoth()Z
 
@@ -7501,7 +7078,7 @@
 
     if-eqz v0, :cond_74
 
-    .line 1567
+    .line 1457
     invoke-virtual {v0}, Landroid/view/View;->isEnabled()Z
 
     move-result v0
@@ -7516,7 +7093,7 @@
 
     if-nez v0, :cond_74
 
-    .line 1570
+    .line 1460
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->onBackPressed()Z
@@ -7525,7 +7102,7 @@
 
     return p0
 
-    .line 1572
+    .line 1462
     :cond_74
     iget v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormType:I
 
@@ -7537,7 +7114,7 @@
 
     if-eqz v0, :cond_8e
 
-    .line 1574
+    .line 1464
     invoke-virtual {v0}, Landroid/view/View;->isEnabled()Z
 
     move-result v0
@@ -7548,7 +7125,7 @@
 
     if-nez v0, :cond_8e
 
-    .line 1576
+    .line 1466
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->onBackPressed()Z
@@ -7566,12 +7143,12 @@
 .method public onConfigurationChanged()V
     .registers 1
 
-    .line 232
+    .line 212
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     if-eqz p0, :cond_7
 
-    .line 233
+    .line 213
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->onConfigurationChanged()V
 
     :cond_7
@@ -7610,20 +7187,20 @@
 .method public onOrientationChanged(IZ)V
     .registers 6
 
-    .line 645
+    .line 550
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSwitchScroller:Lcom/transsion/camera/app/ui/ModeSwitchScroller;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/ModeSwitchScroller;->onOrientationChanged(I)V
 
-    .line 646
+    .line 551
     iget v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOrientation:I
 
     if-eq v0, p1, :cond_2a
 
-    .line 648
+    .line 553
     iput p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOrientation:I
 
-    .line 649
+    .line 554
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -7634,12 +7211,12 @@
 
     if-ne v1, v2, :cond_18
 
-    .line 650
+    .line 555
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/ModePickerUI;->startModePickerUIAnimation(IZ)V
 
     goto :goto_2a
 
-    .line 651
+    .line 556
     :cond_18
     iget-object p2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
@@ -7660,22 +7237,22 @@
     :cond_26
     const/4 v2, 0x0
 
-    .line 652
+    .line 557
     :cond_27
     :goto_27
     invoke-direct {p0, p1, v2}, Lcom/transsion/camera/app/ui/ModePickerUI;->startModePickerUIAnimation(IZ)V
 
-    .line 655
+    .line 560
     :cond_2a
     :goto_2a
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-eqz p1, :cond_31
 
-    .line 656
+    .line 561
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateScrollHotArea()V
 
-    .line 658
+    .line 563
     :cond_31
     iget p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOrientation:I
 
@@ -7709,14 +7286,14 @@
 .method public playMoreModeGuideAnim()V
     .registers 7
 
-    .line 2204
+    .line 2038
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 2207
+    .line 2041
     :cond_5
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAnim:Landroid/animation/AnimatorSet;
 
@@ -7726,71 +7303,58 @@
 
     if-eqz v0, :cond_12
 
-    .line 2208
+    .line 2042
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->end()V
 
-    .line 2210
     :cond_12
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
+    const/4 v0, 0x3
 
-    const/4 v1, 0x3
+    .line 2044
+    new-array v1, v0, [F
 
-    new-array v2, v1, [F
+    fill-array-data v1, :array_58
 
-    fill-array-data v2, :array_64
+    invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
-    const-string v3, "scaleX"
+    move-result-object v1
 
-    invoke-static {v0, v3, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+    .line 2045
+    invoke-virtual {v1, v0}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    .line 2211
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
+    .line 2046
+    invoke-virtual {v1, v0}, Landroid/animation/ValueAnimator;->setRepeatMode(I)V
 
-    const/4 v2, 0x1
+    .line 2047
+    new-instance v0, Lcom/transsion/camera/app/ui/ModePickerUI$11;
 
-    .line 2212
-    invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->setRepeatMode(I)V
+    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$11;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
-    .line 2213
-    iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
+    invoke-virtual {v1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    new-array v4, v1, [F
+    .line 2062
+    new-instance v0, Lcom/transsion/camera/app/ui/ModePickerUI$12;
 
-    fill-array-data v4, :array_6e
+    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$12;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
-    const-string v5, "scaleY"
+    invoke-virtual {v1, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    invoke-static {v3, v5, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+    .line 2069
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAnim:Landroid/animation/AnimatorSet;
 
-    move-result-object v3
+    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 2214
-    invoke-virtual {v3, v1}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
-
-    .line 2215
-    invoke-virtual {v3, v2}, Landroid/animation/ValueAnimator;->setRepeatMode(I)V
-
-    .line 2217
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAnim:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    .line 2218
+    .line 2070
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAnim:Landroid/animation/AnimatorSet;
 
     const-wide/16 v1, 0x320
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2219
+    .line 2071
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAnim:Landroid/animation/AnimatorSet;
 
     new-instance v1, Landroid/view/animation/PathInterpolator;
@@ -7807,23 +7371,14 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2220
+    .line 2072
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
 
-    nop
-
-    :array_64
-    .array-data 4
-        0x3f800000    # 1.0f
-        0x3f99999a    # 1.2f
-        0x3f800000    # 1.0f
-    .end array-data
-
-    :array_6e
+    :array_58
     .array-data 4
         0x3f800000    # 1.0f
         0x3f99999a    # 1.2f
@@ -7834,14 +7389,14 @@
 .method public resetRecordingUI()V
     .registers 3
 
-    .line 3070
+    .line 2848
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "resetRecordingUI: "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3071
+    .line 2849
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRecordingAnimator:Landroid/animation/Animator;
 
     if-eqz v0, :cond_16
@@ -7852,28 +7407,28 @@
 
     if-eqz v0, :cond_16
 
-    .line 3072
+    .line 2850
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRecordingAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 3074
+    .line 2852
     :cond_16
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     if-eqz v0, :cond_2c
 
-    .line 3075
+    .line 2853
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 3076
+    .line 2854
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 3077
+    .line 2855
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     sget v0, Lcom/transsion/camera/app/common/R$id;->key_video_recording_state:I
@@ -7889,17 +7444,17 @@
 .method protected ringScreenLightUpdateUI()V
     .registers 3
 
-    .line 2922
+    .line 2712
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     if-eqz v0, :cond_9
 
-    .line 2923
+    .line 2713
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOldValue:Z
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->updateRingScreenLight(Z)V
 
-    .line 2925
+    .line 2715
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
@@ -7909,12 +7464,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/TabLayout;->setTabNormalTextColorState(Z)V
 
-    .line 2926
-    iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOldValue:Z
-
-    invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeArrowView(Z)V
-
-    .line 2927
+    .line 2716
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOldValue:Z
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateMoreModeGuideView(Z)V
@@ -7925,7 +7475,7 @@
 .method public scrollToNext()V
     .registers 4
 
-    .line 969
+    .line 864
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7946,7 +7496,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 970
+    .line 865
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isModePickerVisible()Z
 
     move-result v0
@@ -7965,7 +7515,7 @@
 
     goto :goto_50
 
-    .line 973
+    .line 868
     :cond_29
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -7982,24 +7532,24 @@
     :cond_34
     const/4 v0, 0x1
 
-    .line 976
+    .line 871
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mNeedSwitchMode:Z
 
-    .line 977
+    .line 872
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
 
     if-eqz v0, :cond_43
 
-    .line 978
+    .line 873
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->scrollToNext()V
 
     return-void
 
-    .line 980
+    .line 875
     :cond_43
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
@@ -8009,7 +7559,7 @@
 
     if-eqz v0, :cond_50
 
-    .line 981
+    .line 876
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->scrollToNext()V
@@ -8022,7 +7572,7 @@
 .method public scrollToPrevious()V
     .registers 4
 
-    .line 950
+    .line 845
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -8043,7 +7593,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 951
+    .line 846
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isModePickerVisible()Z
 
     move-result v0
@@ -8062,7 +7612,7 @@
 
     goto :goto_50
 
-    .line 954
+    .line 849
     :cond_29
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -8079,24 +7629,24 @@
     :cond_34
     const/4 v0, 0x1
 
-    .line 957
+    .line 852
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mNeedSwitchMode:Z
 
-    .line 958
+    .line 853
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
 
     if-eqz v0, :cond_43
 
-    .line 959
+    .line 854
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->scrollToPrevious()V
 
     return-void
 
-    .line 961
+    .line 856
     :cond_43
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
@@ -8106,7 +7656,7 @@
 
     if-eqz v0, :cond_50
 
-    .line 962
+    .line 857
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->scrollToPrevious()V
@@ -8119,7 +7669,7 @@
 .method public scrolling(FF)V
     .registers 5
 
-    .line 936
+    .line 831
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsEditMode:Z
 
     if-nez v0, :cond_2d
@@ -8132,7 +7682,7 @@
 
     goto :goto_2d
 
-    .line 939
+    .line 834
     :cond_b
     iget v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormType:I
 
@@ -8140,7 +7690,7 @@
 
     if-eq v0, v1, :cond_2d
 
-    .line 940
+    .line 835
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
@@ -8158,15 +7708,15 @@
     :cond_1e
     const/4 v0, 0x0
 
-    .line 942
+    .line 837
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mStopScroll:Z
 
-    .line 943
+    .line 838
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/app/ui/widget/TabLayout;->scrolling(FF)V
 
-    .line 944
+    .line 839
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 p1, 0xb8
@@ -8181,14 +7731,14 @@
 .method public selectMoreTabView(Ljava/lang/String;)V
     .registers 5
 
-    .line 238
+    .line 218
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->isTabLayoutMode(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 239
+    .line 219
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "selectMoreTabView: mode is tab layout mode, return"
@@ -8197,13 +7747,13 @@
 
     return-void
 
-    .line 242
+    .line 222
     :cond_e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-nez v0, :cond_1a
 
-    .line 243
+    .line 223
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "selectMoreTabView mModeTabLayout is null!"
@@ -8212,7 +7762,7 @@
 
     return-void
 
-    .line 246
+    .line 226
     :cond_1a
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getMoreTabView()Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;
 
@@ -8220,7 +7770,7 @@
 
     if-eqz v0, :cond_58
 
-    .line 248
+    .line 228
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -8231,33 +7781,33 @@
 
     const/4 p1, 0x1
 
-    .line 249
+    .line 229
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsSelectMoreTabView:Z
 
     :cond_2b
     const/4 p1, 0x0
 
-    .line 251
+    .line 231
     invoke-virtual {v0, p1, p1}, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->moreModeIconClick(ZZ)V
 
-    .line 252
+    .line 232
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsSelectMoreTabView:Z
 
-    .line 253
+    .line 233
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v1
 
     if-eqz v1, :cond_58
 
-    .line 254
+    .line 234
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-nez v1, :cond_3c
 
     goto :goto_58
 
-    .line 257
+    .line 237
     :cond_3c
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->getTab()Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
@@ -8271,17 +7821,17 @@
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->setText(Ljava/lang/CharSequence;)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
-    .line 259
+    .line 239
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     invoke-virtual {v1, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 260
+    .line 240
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMainHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda5;
+    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda4;
 
-    invoke-direct {v1, p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda5;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;)V
+    invoke-direct {v1, p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda4;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;)V
 
     invoke-virtual {p1, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -8293,7 +7843,7 @@
 .method public setAlpha(F)V
     .registers 5
 
-    .line 569
+    .line 480
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-eqz v0, :cond_44
@@ -8312,7 +7862,7 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 570
+    .line 481
     invoke-static {p1, v0}, Ljava/lang/Float;->compare(FF)I
 
     move-result v0
@@ -8321,7 +7871,7 @@
 
     goto :goto_44
 
-    .line 573
+    .line 484
     :cond_19
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -8341,24 +7891,24 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 574
+    .line 485
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 575
+    .line 486
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 576
+    .line 487
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
 
     if-eqz v0, :cond_44
 
-    .line 577
+    .line 488
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
@@ -8371,7 +7921,7 @@
 .method public setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
     .registers 2
 
-    .line 1918
+    .line 1805
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-void
@@ -8380,7 +7930,7 @@
 .method public setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
     .registers 2
 
-    .line 1914
+    .line 1801
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     return-void
@@ -8389,10 +7939,10 @@
 .method public setCelebrityUIShow(Z)V
     .registers 2
 
-    .line 2284
+    .line 2136
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCelebrityUIShow:Z
 
-    .line 2285
+    .line 2137
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isFilterPanelShow()Z
 
     move-result p1
@@ -8405,12 +7955,12 @@
 .method public setCurrentModeUIAlpha(F)V
     .registers 2
 
-    .line 582
+    .line 493
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
     if-eqz p0, :cond_7
 
-    .line 583
+    .line 494
     invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$msetAlpha(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;F)V
 
     :cond_7
@@ -8420,24 +7970,24 @@
 .method public setEnable(Z)V
     .registers 4
 
-    .line 1047
+    .line 942
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-eqz v0, :cond_7
 
-    .line 1048
+    .line 943
     invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 1050
+    .line 945
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
     if-eqz v0, :cond_e
 
-    .line 1051
+    .line 946
     invoke-static {v0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$msetEnable(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;Z)V
 
-    .line 1053
+    .line 948
     :cond_e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
@@ -8445,7 +7995,7 @@
 
     if-eqz p1, :cond_1a
 
-    .line 1054
+    .line 949
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mVipSelfieQuiting:Z
 
     if-nez v1, :cond_1a
@@ -8460,44 +8010,35 @@
     :goto_1b
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->setEnabled(Z)V
 
-    .line 1056
+    .line 951
     :cond_1e
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     if-eqz v0, :cond_25
 
-    .line 1057
+    .line 952
     invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 1059
+    .line 954
     :cond_25
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
-
-    if-eqz v0, :cond_2c
-
-    .line 1060
-    invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
-
-    .line 1062
-    :cond_2c
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
 
-    if-eqz p0, :cond_33
+    if-eqz p0, :cond_2c
 
-    .line 1063
+    .line 955
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
-    :cond_33
+    :cond_2c
     return-void
 .end method
 
 .method public setFaceBeautyUIShow(Z)V
     .registers 2
 
-    .line 2299
+    .line 2151
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mFaceBeautyUIShow:Z
 
-    .line 2300
+    .line 2152
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isFilterPanelShow()Z
 
     move-result p1
@@ -8510,10 +8051,10 @@
 .method public setFilterUIShow(Z)V
     .registers 2
 
-    .line 2279
+    .line 2131
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mFilterUIShow:Z
 
-    .line 2280
+    .line 2132
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isFilterPanelShow()Z
 
     move-result p1
@@ -8526,17 +8067,17 @@
 .method public setInstantZoomShow(ZZ)V
     .registers 4
 
-    .line 2264
+    .line 2116
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsInstantZoomShow:Z
 
-    .line 2265
+    .line 2117
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->chooseModeUIToShow(Z)V
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_c
 
-    .line 2267
+    .line 2119
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->setAlpha(F)V
 
     return-void
@@ -8549,7 +8090,7 @@
     :cond_f
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 2269
+    .line 2121
     :goto_11
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->setAlpha(F)V
 
@@ -8559,14 +8100,14 @@
 .method public setIsCameraSwitching(Z)V
     .registers 2
 
-    .line 1480
+    .line 1370
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsCameraSwitching:Z
 
     if-nez p1, :cond_7
 
     const/4 p1, 0x0
 
-    .line 1483
+    .line 1373
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mFromResume:Z
 
     :cond_7
@@ -8576,10 +8117,10 @@
 .method public setIsPopSettingShow(Z)V
     .registers 2
 
-    .line 2274
+    .line 2126
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsPopSettingShow:Z
 
-    .line 2275
+    .line 2127
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isFilterPanelShow()Z
 
     move-result p1
@@ -8589,22 +8130,13 @@
     return-void
 .end method
 
-.method public setIsResumeAfterEdit(Z)V
-    .registers 2
-
-    .line 2918
-    iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsResumeAfterEdit:Z
-
-    return-void
-.end method
-
 .method public setMakeUpUIShow(Z)V
     .registers 2
 
-    .line 2294
+    .line 2146
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMakeUpUIShow:Z
 
-    .line 2295
+    .line 2147
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isFilterPanelShow()Z
 
     move-result p1
@@ -8621,12 +8153,12 @@
 
     const/4 p1, 0x0
 
-    .line 1822
+    .line 1709
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeChangedListener:Lcom/transsion/camera/app/common/IAppUIListener$IModeChangedListener;
 
     return-void
 
-    .line 1824
+    .line 1711
     :cond_6
     new-instance v0, Lcom/transsion/camera/app/ui/ModePickerUI$ModeChangedListenerWrapper;
 
@@ -8640,14 +8172,14 @@
 .method public setModePickerOpaque()V
     .registers 2
 
-    .line 1376
+    .line 1266
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     if-eqz p0, :cond_9
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1377
+    .line 1267
     invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
     :cond_9
@@ -8657,14 +8189,14 @@
 .method public setModePickerUnOpaque()V
     .registers 2
 
-    .line 1382
+    .line 1272
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     if-eqz p0, :cond_8
 
     const/4 v0, 0x0
 
-    .line 1383
+    .line 1273
     invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
     :cond_8
@@ -8674,7 +8206,7 @@
 .method public setModePolicy(Lcom/transsion/camera/app/common/mode/IModeSwitchPolicy;)V
     .registers 2
 
-    .line 274
+    .line 254
     invoke-interface {p1}, Lcom/transsion/camera/app/common/mode/IModeSwitchPolicy;->getSpecifyMode()Ljava/lang/String;
 
     move-result-object p1
@@ -8687,14 +8219,14 @@
 .method public setModeSelectorEnable(Z)V
     .registers 3
 
-    .line 1600
+    .line 1490
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     if-eqz v0, :cond_10
 
     if-eqz p1, :cond_c
 
-    .line 1601
+    .line 1491
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mVipSelfieQuiting:Z
 
     if-nez p0, :cond_c
@@ -8716,7 +8248,7 @@
 .method public setModeSelectorVisibility(I)V
     .registers 5
 
-    .line 2257
+    .line 2109
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -8735,12 +8267,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2258
+    .line 2110
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     if-eqz p0, :cond_1d
 
-    .line 2259
+    .line 2111
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_1d
@@ -8750,15 +8282,15 @@
 .method public setMoreModeGuideEnable(Z)V
     .registers 5
 
-    .line 1952
+    .line 1839
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCacheEnableMoreGuide:Z
 
-    .line 1953
+    .line 1840
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_30
 
-    .line 1954
+    .line 1841
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -8789,14 +8321,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1955
+    .line 1842
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
     return-void
 
-    .line 1957
+    .line 1844
     :cond_30
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -8810,17 +8342,17 @@
 .method public setMoreModeGuideRightRootOpaque()V
     .registers 3
 
-    .line 1829
+    .line 1716
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     if-eqz v0, :cond_f
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 1830
+    .line 1717
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1831
+    .line 1718
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     const/4 v0, 0x0
@@ -8834,7 +8366,7 @@
 .method public setNotifyClickMoreModeGuideIconListener(Lcom/transsion/camera/app/common/IAppUIListener$INotifyClickGuideIconListener;)V
     .registers 2
 
-    .line 893
+    .line 798
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mNotifyClickGuideIconListener:Lcom/transsion/camera/app/common/IAppUIListener$INotifyClickGuideIconListener;
 
     return-void
@@ -8843,7 +8375,7 @@
 .method public setOnMoreTabChangeListener(Lcom/transsion/camera/app/common/IAppUIListener$IMoreTabChangeListener;)V
     .registers 2
 
-    .line 2626
+    .line 2439
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreTabChangeListener:Lcom/transsion/camera/app/common/IAppUIListener$IMoreTabChangeListener;
 
     return-void
@@ -8852,10 +8384,10 @@
 .method public setPanelShow(Z)V
     .registers 2
 
-    .line 2304
+    .line 2156
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mPanelShow:Z
 
-    .line 2305
+    .line 2157
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isFilterPanelShow()Z
 
     move-result p1
@@ -8868,10 +8400,10 @@
 .method public setPortraitSpotUIShow(Z)V
     .registers 2
 
-    .line 2289
+    .line 2141
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mPortraitSpotUIShow:Z
 
-    .line 2290
+    .line 2142
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isFilterPanelShow()Z
 
     move-result p1
@@ -8884,12 +8416,12 @@
 .method public setProSeekUIShow(Z)V
     .registers 2
 
-    .line 1583
+    .line 1473
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     if-eqz p0, :cond_7
 
-    .line 1584
+    .line 1474
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->setProSeekUIShow(Z)V
 
     :cond_7
@@ -8899,7 +8431,7 @@
 .method public setSelfTimerBegin(Z)V
     .registers 2
 
-    .line 1488
+    .line 1378
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSelfTimerBegin:Z
 
     return-void
@@ -8908,7 +8440,7 @@
 .method public setVipSelfieQuiting(Z)V
     .registers 2
 
-    .line 228
+    .line 208
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mVipSelfieQuiting:Z
 
     return-void
@@ -8917,21 +8449,21 @@
 .method public setupViews()V
     .registers 6
 
-    .line 424
+    .line 341
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 425
+    .line 342
     new-instance v1, Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-direct {v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;-><init>(Landroid/content/Context;)V
 
-    .line 426
+    .line 343
     new-instance v2, Landroid/view/GestureDetector;
 
     const/4 v3, 0x1
@@ -8940,70 +8472,57 @@
 
     invoke-direct {v2, v0, p0, v4, v3}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;Z)V
 
-    .line 427
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    if-eqz v0, :cond_20
-
-    .line 428
-    new-instance v3, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda0;
-
-    invoke-direct {v3, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
-
-    invoke-virtual {v0, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 433
-    :cond_20
+    .line 345
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_2a
 
-    .line 434
-    new-instance v3, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda1;
+    .line 346
+    new-instance v3, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda0;
 
-    invoke-direct {v3, p0, v1}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/transsion/camera/app/common/storage/DataStore;)V
+    invoke-direct {v3, p0, v1}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 478
+    .line 390
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealWithoutAnimation(Landroid/view/View;)V
 
-    .line 479
+    .line 391
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCacheEnableMoreGuide:Z
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->setMoreModeGuideEnable(Z)V
 
-    .line 482
-    :cond_36
+    .line 394
+    :cond_2a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
+    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda1;
+
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$msetOnClickListener(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;Landroid/view/View$OnClickListener;)V
+
+    .line 416
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
+
+    if-eqz v0, :cond_40
+
+    .line 417
     new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
-    invoke-static {v0, v1}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$msetOnClickListener(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;Landroid/view/View$OnClickListener;)V
-
-    .line 504
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
-
-    if-eqz v0, :cond_4c
-
-    .line 505
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda3;
-
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda3;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
-
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 507
-    :cond_4c
+    .line 419
+    :cond_40
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/widget/TabLayout;->setGestureDetector(Landroid/view/GestureDetector;)V
 
-    .line 508
+    .line 420
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabSelectedListenerImpl;
@@ -9012,7 +8531,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/TabLayout;->setOnTabSelectedListener(Lcom/transsion/camera/app/ui/widget/TabLayout$OnTabSelectedListener;)V
 
-    .line 509
+    .line 421
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$OnTabScrollListenerImpl;
@@ -9021,7 +8540,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/TabLayout;->setOnTabScrollListener(Lcom/transsion/camera/app/ui/widget/TabLayout$OnTabScrollListener;)V
 
-    .line 510
+    .line 422
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$ActionInterceptImpl;
@@ -9030,100 +8549,100 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/TabLayout;->setActionIntercept(Lcom/transsion/camera/app/ui/widget/TabLayout$ActionIntercept;)V
 
-    .line 511
+    .line 423
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 512
+    .line 424
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
-    if-eqz v0, :cond_81
+    if-eqz v0, :cond_75
 
-    .line 513
+    .line 425
     new-instance v2, Lcom/transsion/camera/app/ui/ModePickerUI$OnModeSelectedListenerImpl;
 
     invoke-direct {v2, p0, v4}, Lcom/transsion/camera/app/ui/ModePickerUI$OnModeSelectedListenerImpl;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;Lcom/transsion/camera/app/ui/ModePickerUI-IA;)V
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;->setOnModeSelectedListener(Lcom/transsion/camera/app/ui/widget/VerticalModeSelector$OnModeSelectedListener;)V
 
-    .line 515
-    :cond_81
+    .line 427
+    :cond_75
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeSelectorLayout()V
 
-    .line 516
+    .line 428
     invoke-direct {p0, v4, v1}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeTabLayout(Ljava/lang/String;Z)V
 
-    .line 517
+    .line 429
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentTab(Z)V
 
-    .line 518
+    .line 430
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeSelector()V
 
-    .line 519
+    .line 431
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->ringScreenLightUpdateUI()V
 
-    .line 520
+    .line 432
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/ui/ModePickerUI;->chooseModeUIToShow(Z)V
 
-    .line 521
+    .line 433
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateScrollHotArea()V
 
-    .line 522
+    .line 434
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentIsTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Z
 
     move-result v0
 
-    if-nez v0, :cond_f1
+    if-nez v0, :cond_e2
 
-    .line 523
+    .line 435
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d1
+    if-eqz v0, :cond_c5
 
-    .line 524
+    .line 436
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSpecifyMode:Ljava/lang/String;
 
-    if-eqz v0, :cond_ee
+    if-eqz v0, :cond_e2
 
-    .line 525
+    .line 437
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    sget v2, Lcom/transsion/camera/R$string;->back_cam_mode_default:I
+    sget v1, Lcom/transsion/camera/R$string;->back_cam_mode_default:I
 
-    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 526
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
+    .line 438
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v2
+    move-result-object v1
 
-    sget v3, Lcom/transsion/camera/R$string;->front_cam_mode_default:I
+    sget v2, Lcom/transsion/camera/R$string;->front_cam_mode_default:I
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    .line 527
-    iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
+    .line 439
+    iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
-    invoke-virtual {v3, v0, v0, v2, v2}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->setDefaultMode(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, v0, v0, v1, v1}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->setDefaultMode(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 529
+    .line 441
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$fgetmCurrentModeItem(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Lcom/transsion/camera/app/common/FeatureResource;
@@ -9134,62 +8653,57 @@
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->selectMoreTabView(Ljava/lang/String;)V
 
-    goto :goto_ee
+    return-void
 
-    .line 532
-    :cond_d1
+    .line 444
+    :cond_c5
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
-    const/16 v2, 0x8
+    const/16 v1, 0x8
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 533
+    .line 445
     iget v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormType:I
 
-    const/4 v2, 0x7
+    const/4 v1, 0x7
 
-    if-ne v0, v2, :cond_e3
+    if-ne v0, v1, :cond_d7
 
-    .line 534
+    .line 446
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
+
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$mhide(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;)V
+
+    return-void
+
+    .line 448
+    :cond_d7
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
-    invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$mhide(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;)V
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
-    goto :goto_ee
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentModeShowName(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/lang/String;
 
-    .line 536
-    :cond_e3
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
+    move-result-object p0
 
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
+    invoke-static {v0, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$mshow(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;Ljava/lang/String;)V
 
-    invoke-static {v2}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentModeShowName(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$mshow(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;Ljava/lang/String;)V
-
-    .line 539
-    :cond_ee
-    :goto_ee
-    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeArrowVisibility(Z)V
-
-    :cond_f1
+    :cond_e2
     return-void
 .end method
 
 .method public shouldExitCameraOnBackPressed()Z
     .registers 2
 
-    .line 1589
+    .line 1479
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
 
     if-eqz v0, :cond_17
 
-    .line 1590
+    .line 1480
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentIsTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Z
@@ -9202,7 +8716,7 @@
 
     return p0
 
-    .line 1593
+    .line 1483
     :cond_10
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
@@ -9212,7 +8726,7 @@
 
     return p0
 
-    .line 1596
+    .line 1486
     :cond_17
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
@@ -9226,10 +8740,10 @@
 .method public showModePicker()V
     .registers 12
 
-    .line 1239
+    .line 1130
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->cancelAnimation()V
 
-    .line 1240
+    .line 1131
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_e4
@@ -9240,14 +8754,14 @@
 
     if-eqz v0, :cond_e4
 
-    .line 1241
+    .line 1132
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "showModePicker: "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1242
+    .line 1133
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x2
@@ -9264,7 +8778,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAlphaAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1243
+    .line 1134
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getTranslateDistance()I
@@ -9293,7 +8807,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerTranslateAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1244
+    .line 1135
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     new-array v4, v1, [F
@@ -9306,7 +8820,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelAlphaAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1245
+    .line 1136
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getTranslateDistance()I
@@ -9327,7 +8841,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelTranslateAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1246
+    .line 1137
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     new-array v4, v1, [F
@@ -9340,7 +8854,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideAlphaAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1247
+    .line 1138
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getTranslateDistance()I
@@ -9361,14 +8875,14 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeModeGuideTranslateAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1248
+    .line 1139
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 1249
+    .line 1140
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
@@ -9383,7 +8897,7 @@
 
     if-nez v0, :cond_b6
 
-    .line 1250
+    .line 1141
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAlphaAnimation:Landroid/animation/ObjectAnimator;
@@ -9424,7 +8938,7 @@
 
     goto :goto_c5
 
-    .line 1254
+    .line 1145
     :cond_b6
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -9440,7 +8954,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1256
+    .line 1147
     :goto_c5
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -9448,16 +8962,16 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1257
+    .line 1148
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$7;
+    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$6;
 
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$7;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$6;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1278
+    .line 1169
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getAnimatorDuration()I
@@ -9472,7 +8986,7 @@
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1280
+    .line 1171
     :cond_e4
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeUI()V
 
@@ -9500,7 +9014,7 @@
 .method public showModePickerFromTBox()V
     .registers 14
 
-    .line 1288
+    .line 1179
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -9513,14 +9027,14 @@
 
     if-eqz v0, :cond_34
 
-    .line 1289
+    .line 1180
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isStarted()Z
 
     move-result v0
 
     if-eqz v0, :cond_34
 
-    .line 1290
+    .line 1181
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -9541,12 +9055,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1291
+    .line 1182
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsModeSwitching:Z
 
     if-eqz v0, :cond_33
 
-    .line 1292
+    .line 1183
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->cancel()V
@@ -9554,16 +9068,16 @@
     :cond_33
     return-void
 
-    .line 1296
+    .line 1187
     :cond_34
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->cancelAnimation()V
 
-    .line 1297
+    .line 1188
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_65
 
-    .line 1298
+    .line 1189
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -9600,7 +9114,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1300
+    .line 1191
     :cond_65
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isNeedShowModePickerAnim()Z
 
@@ -9608,7 +9122,7 @@
 
     if-eqz v0, :cond_135
 
-    .line 1301
+    .line 1192
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x2
@@ -9625,7 +9139,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAlphaAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1302
+    .line 1193
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     iget v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mTBTranslateDistance:I
@@ -9652,7 +9166,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerTranslateAnimation:Landroid/animation/ObjectAnimator;
 
-    .line 1303
+    .line 1194
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     new-array v4, v1, [F
@@ -9663,7 +9177,7 @@
 
     move-result-object v0
 
-    .line 1304
+    .line 1195
     iget-object v4, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     iget v8, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mTBTranslateDistance:I
@@ -9680,7 +9194,7 @@
 
     move-result-object v4
 
-    .line 1305
+    .line 1196
     iget-object v8, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     new-array v9, v1, [F
@@ -9691,7 +9205,7 @@
 
     move-result-object v3
 
-    .line 1306
+    .line 1197
     iget-object v8, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
     iget v9, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mTBTranslateDistance:I
@@ -9708,14 +9222,14 @@
 
     move-result-object v6
 
-    .line 1307
+    .line 1198
     new-instance v7, Landroid/animation/AnimatorSet;
 
     invoke-direct {v7}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v7, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 1308
+    .line 1199
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v7
@@ -9734,7 +9248,7 @@
 
     if-nez v7, :cond_f7
 
-    .line 1309
+    .line 1200
     iget-object v7, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget-object v10, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAlphaAnimation:Landroid/animation/ObjectAnimator;
@@ -9763,7 +9277,7 @@
 
     goto :goto_10a
 
-    .line 1312
+    .line 1203
     :cond_f7
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -9783,7 +9297,7 @@
 
     invoke-virtual {v3, v8}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1315
+    .line 1206
     :goto_10a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -9791,16 +9305,16 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1316
+    .line 1207
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$8;
+    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$7;
 
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$8;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/ModePickerUI$7;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1344
+    .line 1234
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -9809,14 +9323,14 @@
 
     if-eqz v0, :cond_12a
 
-    .line 1345
+    .line 1235
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
     const-wide/16 v1, 0x96
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
 
-    .line 1347
+    .line 1237
     :cond_12a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -9828,7 +9342,7 @@
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1349
+    .line 1239
     :cond_135
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeUI()V
 
@@ -9858,7 +9372,7 @@
 .method public showModeRegionOnSinked(Z)V
     .registers 3
 
-    .line 1366
+    .line 1256
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeSelector:Lcom/transsion/camera/app/ui/widget/VerticalModeSelector;
 
     if-eqz v0, :cond_b
@@ -9871,7 +9385,7 @@
 
     goto :goto_f
 
-    .line 1369
+    .line 1259
     :cond_b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
@@ -9880,7 +9394,7 @@
     :goto_f
     return-void
 
-    .line 1372
+    .line 1262
     :cond_10
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->chooseModeUIToShow(Z)V
 
@@ -9890,7 +9404,7 @@
 .method public showOrHideModePickerFromUnderwater(Z)V
     .registers 2
 
-    .line 2520
+    .line 2359
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     if-eqz p0, :cond_c
@@ -9904,7 +9418,7 @@
     :cond_8
     const/4 p1, 0x4
 
-    .line 2521
+    .line 2360
     :goto_9
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
@@ -9913,7 +9427,7 @@
 .end method
 
 .method public showOrHideModePickerRootUI(ZZZZ)V
-    .registers 31
+    .registers 30
 
     move-object/from16 v0, p0
 
@@ -9925,12 +9439,12 @@
 
     move/from16 v4, p4
 
-    .line 2323
+    .line 2175
     iget-object v5, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     if-nez v5, :cond_16
 
-    .line 2324
+    .line 2176
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "showOrHideModePickerRootUI: mModePickerLayout is null, return"
@@ -9939,7 +9453,7 @@
 
     return-void
 
-    .line 2327
+    .line 2179
     :cond_16
     sget-object v5, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -9981,30 +9495,30 @@
 
     invoke-static {v5, v6, v7}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 2329
+    .line 2181
     iget-boolean v6, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsAnimationRunning:Z
 
     if-eqz v6, :cond_55
 
     if-eqz v1, :cond_55
 
-    .line 2330
+    .line 2182
     const-string v0, "showOrHideModePickerRootUI: AnimationIsRunning, return"
 
     invoke-static {v5, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 2333
+    .line 2185
     :cond_55
     iget-object v6, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v6, :cond_5c
 
-    .line 2334
+    .line 2186
     invoke-virtual {v6}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2336
+    .line 2188
     :cond_5c
     iget-object v6, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -10014,7 +9528,7 @@
 
     if-eqz v2, :cond_6b
 
-    .line 2344
+    .line 2195
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getAnimatorDuration()I
 
     move-result v2
@@ -10035,13 +9549,13 @@
 
     goto :goto_76
 
-    .line 2346
+    .line 2197
     :cond_72
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->getTranslateDistance()I
 
     move-result v10
 
-    .line 2347
+    .line 2198
     :goto_76
     iget v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormType:I
 
@@ -10056,11 +9570,11 @@
     if-ne v11, v15, :cond_84
 
     :cond_80
-    move/from16 v18, v2
+    move/from16 v19, v2
 
-    goto/16 :goto_259
+    goto/16 :goto_230
 
-    .line 2378
+    .line 2220
     :cond_84
     iget-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
@@ -10070,14 +9584,14 @@
 
     if-eqz v11, :cond_92
 
-    .line 2379
+    .line 2221
     const-string v0, "no need to operate ModePickerLayout in MoreMode!"
 
     invoke-static {v5, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 2383
+    .line 2225
     :cond_92
     new-instance v11, Landroid/animation/AnimatorSet;
 
@@ -10085,24 +9599,111 @@
 
     iput-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 2384
-    iget-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
+    .line 2226
+    iget-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
+
+    int-to-float v10, v10
 
     const-wide/16 v16, 0x0
 
-    int-to-float v6, v1
+    const/4 v6, 0x1
 
-    const/4 v7, 0x1
+    new-array v7, v6, [F
 
-    move/from16 p2, v12
+    aput v10, v7, v2
 
-    new-array v12, v7, [F
+    const-string/jumbo v13, "translationY"
 
-    aput v6, v12, v2
+    invoke-static {v11, v13, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
-    const-string v13, "alpha"
+    move-result-object v7
 
-    invoke-static {v11, v13, v12}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+    invoke-virtual {v7, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v7
+
+    .line 2227
+    iget-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
+
+    move/from16 v18, v15
+
+    int-to-float v15, v1
+
+    move/from16 v19, v2
+
+    new-array v2, v6, [F
+
+    aput v15, v2, v19
+
+    const-string v12, "alpha"
+
+    invoke-static {v11, v12, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    .line 2228
+    iget-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
+
+    move-object/from16 v21, v2
+
+    new-array v2, v6, [F
+
+    aput v15, v2, v19
+
+    invoke-static {v11, v12, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    .line 2229
+    iget-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
+
+    move-object/from16 v22, v2
+
+    new-array v2, v6, [F
+
+    aput v10, v2, v19
+
+    invoke-static {v11, v13, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    .line 2230
+    iget-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
+
+    move-object/from16 v23, v2
+
+    new-array v2, v6, [F
+
+    aput v10, v2, v19
+
+    invoke-static {v11, v13, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    .line 2231
+    iget-object v11, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
+
+    new-array v13, v6, [F
+
+    aput v15, v13, v19
+
+    invoke-static {v11, v12, v13}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v11
 
@@ -10110,111 +9711,7 @@
 
     move-result-object v11
 
-    .line 2385
-    iget-object v12, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
-
-    int-to-float v10, v10
-
-    move/from16 v18, v2
-
-    new-array v2, v7, [F
-
-    aput v10, v2, v18
-
-    const-string/jumbo v15, "translationY"
-
-    invoke-static {v12, v15, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    .line 2386
-    iget-object v12, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
-
-    move-object/from16 v20, v2
-
-    new-array v2, v7, [F
-
-    aput v6, v2, v18
-
-    invoke-static {v12, v13, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    .line 2387
-    iget-object v12, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
-
-    move-object/from16 v21, v2
-
-    new-array v2, v7, [F
-
-    aput v6, v2, v18
-
-    invoke-static {v12, v13, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    .line 2388
-    iget-object v12, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
-
-    move-object/from16 v22, v2
-
-    new-array v2, v7, [F
-
-    aput v10, v2, v18
-
-    invoke-static {v12, v15, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    .line 2389
-    iget-object v12, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
-
-    move-object/from16 v23, v2
-
-    new-array v2, v7, [F
-
-    aput v10, v2, v18
-
-    invoke-static {v12, v15, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    .line 2390
-    iget-object v12, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
-
-    new-array v15, v7, [F
-
-    aput v6, v15, v18
-
-    invoke-static {v12, v13, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    move-result-object v6
-
-    .line 2391
+    .line 2232
     iget-object v12, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
     invoke-virtual {v12}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getConfig()Lcom/transsion/camera/app/mode/ModePickerConfig;
@@ -10225,141 +9722,130 @@
 
     move-result v12
 
-    const/4 v15, 0x7
+    const/4 v13, 0x6
 
-    const/16 v24, 0x6
+    const/4 v15, 0x3
 
-    const/4 v13, 0x3
+    move/from16 v24, v6
 
-    const/16 v25, 0x2
+    const/4 v6, 0x2
 
-    if-eqz v12, :cond_1e9
+    if-eqz v12, :cond_1c9
 
-    .line 2392
+    .line 2233
     iget-object v12, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
-    if-eqz v12, :cond_1b5
+    if-eqz v12, :cond_199
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
-    .line 2393
+    .line 2234
     invoke-static {v12}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentIsTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Z
 
     move-result v12
 
-    if-eqz v12, :cond_1b5
+    if-eqz v12, :cond_199
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
-    .line 2394
+    .line 2235
     invoke-static {v14, v12}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v12
 
-    if-nez v12, :cond_1b5
+    if-nez v12, :cond_199
 
     iget-object v12, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
-    .line 2395
+    .line 2236
     invoke-virtual {v12}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->moreModeShow()Z
 
     move-result v12
 
-    if-eqz v12, :cond_1b5
+    if-eqz v12, :cond_199
 
-    .line 2396
+    .line 2237
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
 
     iget-boolean v2, v2, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5MoreModeStyle:Z
 
-    if-eqz v2, :cond_16e
+    if-eqz v2, :cond_154
 
-    if-eqz v1, :cond_16e
+    if-eqz v1, :cond_154
 
-    if-eqz v4, :cond_16e
+    if-eqz v4, :cond_154
 
     cmp-long v2, v8, v16
 
-    if-nez v2, :cond_16e
+    if-nez v2, :cond_154
 
-    .line 2397
-    iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
-
-    new-array v4, v7, [Landroid/animation/Animator;
-
-    aput-object v11, v4, v18
-
-    invoke-virtual {v2, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
-
-    .line 2398
+    .line 2238
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v10}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 2399
+    .line 2239
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     const/4 v4, 0x0
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2400
+    .line 2240
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     invoke-virtual {v2, v10}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 2401
+    .line 2241
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setAlpha(F)V
 
-    goto :goto_180
+    goto :goto_164
 
-    .line 2403
-    :cond_16e
+    .line 2243
+    :cond_154
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
-    const/4 v4, 0x5
+    const/4 v4, 0x4
 
     new-array v4, v4, [Landroid/animation/Animator;
 
-    aput-object v11, v4, v18
+    aput-object v22, v4, v19
 
-    aput-object v22, v4, v7
+    aput-object v23, v4, v24
 
-    aput-object v23, v4, v25
+    aput-object v7, v4, v6
 
-    aput-object v20, v4, v13
-
-    aput-object v21, v4, p2
+    aput-object v21, v4, v15
 
     invoke-virtual {v2, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2405
-    :goto_180
+    .line 2245
+    :goto_164
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
-    if-eqz v1, :cond_18d
+    if-eqz v1, :cond_171
 
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isShowMoreModeGuideView()Z
 
     move-result v4
 
-    if-eqz v4, :cond_18d
+    if-eqz v4, :cond_171
 
-    move/from16 v4, v18
+    move/from16 v4, v19
 
-    goto :goto_18f
+    goto :goto_173
 
-    :cond_18d
+    :cond_171
     const/16 v4, 0x8
 
-    :goto_18f
+    :goto_173
     invoke-virtual {v2, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2406
+    .line 2246
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10368,22 +9854,22 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v1, :cond_1a8
+    if-eqz v1, :cond_18c
 
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isShowMoreModeGuideView()Z
 
     move-result v4
 
-    if-eqz v4, :cond_1a8
+    if-eqz v4, :cond_18c
 
     const-string/jumbo v4, "visible"
 
-    goto :goto_1aa
+    goto :goto_18e
 
-    :cond_1a8
+    :cond_18c
     const-string v4, "gone"
 
-    :goto_1aa
+    :goto_18e
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -10392,15 +9878,15 @@
 
     invoke-static {v5, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    goto :goto_21c
+    goto :goto_1f8
 
-    .line 2408
-    :cond_1b5
+    .line 2248
+    :cond_199
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v4
 
-    if-eqz v4, :cond_1db
+    if-eqz v4, :cond_1bd
 
     iget-object v4, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
@@ -10408,56 +9894,52 @@
 
     move-result v4
 
-    if-nez v4, :cond_1db
+    if-nez v4, :cond_1bd
 
-    .line 2409
+    .line 2249
     iget-object v4, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
-    new-array v5, v15, [Landroid/animation/Animator;
+    new-array v5, v13, [Landroid/animation/Animator;
+
+    aput-object v7, v5, v19
+
+    aput-object v21, v5, v24
+
+    aput-object v22, v5, v6
+
+    aput-object v23, v5, v15
+
+    const/16 v20, 0x4
+
+    aput-object v2, v5, v20
 
     aput-object v11, v5, v18
 
-    aput-object v20, v5, v7
-
-    aput-object v21, v5, v25
-
-    aput-object v22, v5, v13
-
-    aput-object v23, v5, p2
-
-    const/16 v19, 0x5
-
-    aput-object v2, v5, v19
-
-    aput-object v6, v5, v24
-
     invoke-virtual {v4, v5}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    goto :goto_21c
+    goto :goto_1f8
 
-    .line 2412
-    :cond_1db
+    .line 2252
+    :cond_1bd
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
-    new-array v4, v13, [Landroid/animation/Animator;
+    new-array v4, v6, [Landroid/animation/Animator;
 
-    aput-object v11, v4, v18
+    aput-object v7, v4, v19
 
-    aput-object v20, v4, v7
-
-    aput-object v21, v4, v25
+    aput-object v21, v4, v24
 
     invoke-virtual {v2, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    goto :goto_21c
+    goto :goto_1f8
 
-    .line 2416
-    :cond_1e9
+    .line 2256
+    :cond_1c9
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v4
 
-    if-eqz v4, :cond_20f
+    if-eqz v4, :cond_1ed
 
     iget-object v4, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
@@ -10465,65 +9947,56 @@
 
     move-result v4
 
-    if-nez v4, :cond_20f
+    if-nez v4, :cond_1ed
 
-    .line 2417
+    .line 2257
     iget-object v4, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
-    new-array v5, v15, [Landroid/animation/Animator;
+    new-array v5, v13, [Landroid/animation/Animator;
+
+    aput-object v7, v5, v19
+
+    aput-object v21, v5, v24
+
+    aput-object v22, v5, v6
+
+    aput-object v23, v5, v15
+
+    const/16 v20, 0x4
+
+    aput-object v2, v5, v20
 
     aput-object v11, v5, v18
 
-    aput-object v20, v5, v7
-
-    aput-object v21, v5, v25
-
-    aput-object v22, v5, v13
-
-    aput-object v23, v5, p2
-
-    const/16 v19, 0x5
-
-    aput-object v2, v5, v19
-
-    aput-object v6, v5, v24
-
     invoke-virtual {v4, v5}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    goto :goto_21c
+    goto :goto_1f8
 
-    .line 2420
-    :cond_20f
+    .line 2260
+    :cond_1ed
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
-    new-array v4, v13, [Landroid/animation/Animator;
+    new-array v4, v6, [Landroid/animation/Animator;
 
-    aput-object v11, v4, v18
+    aput-object v7, v4, v19
 
-    aput-object v20, v4, v7
-
-    aput-object v21, v4, v25
+    aput-object v21, v4, v24
 
     invoke-virtual {v2, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2423
-    :goto_21c
+    .line 2263
+    :goto_1f8
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget-object v4, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mPathInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v2, v4}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    if-eqz v1, :cond_249
+    if-eqz v1, :cond_220
 
-    .line 2425
-    iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mAlphaPathInterpolator:Landroid/view/animation/PathInterpolator;
+    if-eqz v3, :cond_215
 
-    invoke-virtual {v11, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    if-eqz v3, :cond_23e
-
-    .line 2427
+    .line 2266
     iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
@@ -10532,50 +10005,50 @@
 
     iget-boolean v2, v2, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5MoreModeStyle:Z
 
-    if-eqz v2, :cond_239
+    if-eqz v2, :cond_210
 
     const-wide/16 v4, 0xfa
 
-    goto :goto_23b
+    goto :goto_212
 
-    :cond_239
+    :cond_210
     const-wide/16 v4, 0x64
 
-    :goto_23b
+    :goto_212
     invoke-virtual {v1, v4, v5}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
 
-    .line 2429
-    :cond_23e
-    iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
-
-    new-instance v2, Lcom/transsion/camera/app/ui/ModePickerUI$12;
-
-    invoke-direct {v2, v0, v3}, Lcom/transsion/camera/app/ui/ModePickerUI$12;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;Z)V
-
-    invoke-virtual {v1, v2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    goto :goto_253
-
-    .line 2461
-    :cond_249
+    .line 2268
+    :cond_215
     iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
     new-instance v2, Lcom/transsion/camera/app/ui/ModePickerUI$13;
 
-    invoke-direct {v2, v0}, Lcom/transsion/camera/app/ui/ModePickerUI$13;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+    invoke-direct {v2, v0, v3}, Lcom/transsion/camera/app/ui/ModePickerUI$13;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;Z)V
 
     invoke-virtual {v1, v2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2505
-    :goto_253
+    goto :goto_22a
+
+    .line 2300
+    :cond_220
+    iget-object v1, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
+
+    new-instance v2, Lcom/transsion/camera/app/ui/ModePickerUI$14;
+
+    invoke-direct {v2, v0}, Lcom/transsion/camera/app/ui/ModePickerUI$14;-><init>(Lcom/transsion/camera/app/ui/ModePickerUI;)V
+
+    invoke-virtual {v1, v2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 2344
+    :goto_22a
     iget-object v0, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerRootAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
 
-    .line 2349
-    :goto_259
+    .line 2200
+    :goto_230
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
     invoke-virtual {v2}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getConfig()Lcom/transsion/camera/app/mode/ModePickerConfig;
@@ -10586,12 +10059,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2b2
+    if-eqz v2, :cond_27b
 
-    .line 2350
+    .line 2201
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
-    if-eqz v2, :cond_2a4
+    if-eqz v2, :cond_274
 
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
@@ -10599,127 +10072,100 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2a4
+    if-eqz v2, :cond_274
 
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
-    .line 2351
+    .line 2202
     invoke-static {v14, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-nez v2, :cond_2a4
+    if-nez v2, :cond_274
 
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
-    .line 2352
+    .line 2203
     invoke-virtual {v2}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->moreModeShow()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2a4
+    if-eqz v2, :cond_274
 
-    .line 2353
-    iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    if-eqz v2, :cond_288
-
-    .line 2354
-    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setAlpha(I)V
-
-    .line 2356
-    :cond_288
+    .line 2204
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     int-to-float v3, v1
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2357
+    .line 2205
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2358
+    .line 2206
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isShowMoreModeGuideView()Z
 
     move-result v3
 
-    if-eqz v3, :cond_29e
+    if-eqz v3, :cond_26e
 
-    move/from16 v13, v18
+    move/from16 v13, v19
 
-    goto :goto_2a0
+    goto :goto_270
 
-    :cond_29e
+    :cond_26e
     const/16 v13, 0x8
 
-    :goto_2a0
+    :goto_270
     invoke-virtual {v2, v13}, Landroid/view/View;->setVisibility(I)V
 
-    goto :goto_2bf
+    goto :goto_281
 
-    .line 2360
-    :cond_2a4
-    iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    if-eqz v2, :cond_2ab
-
-    .line 2361
-    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setAlpha(I)V
-
-    .line 2363
-    :cond_2ab
+    .line 2208
+    :cond_274
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     int-to-float v3, v1
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setAlpha(F)V
 
-    goto :goto_2bf
+    goto :goto_281
 
-    .line 2366
-    :cond_2b2
-    iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    if-eqz v2, :cond_2b9
-
-    .line 2367
-    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setAlpha(I)V
-
-    .line 2369
-    :cond_2b9
+    .line 2211
+    :cond_27b
     iget-object v2, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
     int-to-float v3, v1
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setAlpha(F)V
 
-    :goto_2bf
-    if-eqz v1, :cond_2cd
+    :goto_281
+    if-eqz v1, :cond_28f
 
-    .line 2372
+    .line 2214
     iget-object v0, v0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModePickerLayout:Landroid/widget/FrameLayout;
 
-    move/from16 v1, v18
+    move/from16 v1, v19
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2373
+    .line 2215
     const-string v0, "mode picker visibility: showOrHideModePickerRootUI set mode picker visible"
 
     invoke-static {v5, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    :cond_2cd
+    :cond_28f
     return-void
 .end method
 
 .method public startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
     .registers 7
 
-    .line 3055
+    .line 2833
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -10744,7 +10190,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3056
+    .line 2834
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     invoke-interface {p0, v1, p1}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->isNextRecordingAnimationEnable(Landroid/view/View;Z)Z
@@ -10753,7 +10199,7 @@
 
     if-eqz v1, :cond_69
 
-    .line 3057
+    .line 2835
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -10770,7 +10216,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
-    .line 3058
+    .line 2836
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
     move-result v3
@@ -10791,15 +10237,15 @@
 
     move-result-object v1
 
-    .line 3057
+    .line 2835
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3059
+    .line 2837
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRecordingAnimator:Landroid/animation/Animator;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/AnimationUtils;->stopAnimator(Landroid/animation/Animator;)V
 
-    .line 3060
+    .line 2838
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRootView:Landroid/view/View;
 
     invoke-interface {p0, v0, p1}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->createRecordingAnimationWithState(Landroid/view/View;Z)Landroid/animation/Animator;
@@ -10810,10 +10256,10 @@
 
     if-eqz p2, :cond_64
 
-    .line 3062
+    .line 2840
     invoke-virtual {p1, p2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 3064
+    .line 2842
     :cond_64
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRecordingAnimator:Landroid/animation/Animator;
 
@@ -10826,7 +10272,7 @@
 .method public stopScroll()V
     .registers 4
 
-    .line 988
+    .line 883
     const-string v0, "com.transsion.camera.feature.mode.more.MoreModeEntry"
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
@@ -10839,14 +10285,14 @@
 
     if-eqz v0, :cond_25
 
-    .line 989
+    .line 884
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getCenterNearestIndex()I
 
     move-result v0
 
-    .line 990
+    .line 885
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v2}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getTabCount()I
@@ -10857,22 +10303,22 @@
 
     if-ne v0, v2, :cond_21
 
-    .line 991
+    .line 886
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mLeftGuideRootMoveFollowTab:Z
 
     if-nez v0, :cond_21
 
-    .line 992
+    .line 887
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->enterMoreModeGuideAnimation()V
 
-    .line 995
+    .line 890
     :cond_21
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mLeftGuideRootMoveFollowTab:Z
 
-    .line 996
+    .line 891
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mStopScroll:Z
 
-    .line 998
+    .line 893
     :cond_25
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
@@ -10888,16 +10334,16 @@
 
     if-nez v0, :cond_35
 
-    .line 999
+    .line 894
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mStopScroll:Z
 
-    .line 1001
+    .line 896
     :cond_35
     iget v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mScreenFormType:I
 
     if-eq v0, v1, :cond_53
 
-    .line 1002
+    .line 897
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
@@ -10912,13 +10358,13 @@
 
     if-eqz v0, :cond_53
 
-    .line 1004
+    .line 899
     :cond_47
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->stopScroll()V
 
-    .line 1005
+    .line 900
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 v0, 0xb9
@@ -10930,9 +10376,9 @@
 .end method
 
 .method public unInit()V
-    .registers 3
+    .registers 2
 
-    .line 1607
+    .line 1497
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -10941,52 +10387,28 @@
 
     if-eqz v0, :cond_d
 
-    .line 1608
+    .line 1498
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mRecordingAnimator:Landroid/animation/Animator;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/AnimationUtils;->stopAnimator(Landroid/animation/Animator;)V
 
-    .line 1610
+    .line 1500
     :cond_d
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
 
-    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ModuleTransferManager;->unregisterTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
+    invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/ModuleTransferManager;->unregisterTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
 
-    .line 1611
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrowSvga:Lcom/opensource/svgaplayer/SVGAImageView;
-
-    if-eqz p0, :cond_1d
-
-    .line 1612
-    invoke-virtual {p0}, Lcom/opensource/svgaplayer/SVGAImageView;->clear()V
-
-    :cond_1d
-    return-void
-.end method
-
-.method public updateArrowEnableState(Z)V
-    .registers 2
-
-    .line 2150
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    if-eqz p0, :cond_7
-
-    .line 2151
-    invoke-virtual {p0, p1}, Landroid/view/View;->setClickable(Z)V
-
-    :cond_7
     return-void
 .end method
 
 .method public updateCurrentCamera(Ljava/lang/String;)V
     .registers 4
 
-    .line 1522
+    .line 1412
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->getConfig()Lcom/transsion/camera/app/mode/ModePickerConfig;
@@ -10999,12 +10421,12 @@
 
     if-eqz p1, :cond_4f
 
-    .line 1523
+    .line 1413
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     if-eqz p1, :cond_4f
 
-    .line 1524
+    .line 1414
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->moreModeShow()Z
@@ -11029,7 +10451,7 @@
     :goto_22
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1525
+    .line 1415
     sget-object p1, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -11077,10 +10499,10 @@
 .method public updateCurrentMode(Ljava/lang/String;ZZ)V
     .registers 5
 
-    .line 1191
+    .line 1082
     iput-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
-    .line 1192
+    .line 1083
     const-string v0, "com.transsion.camera.feature.mode.more.MoreModeEntry"
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -11089,25 +10511,25 @@
 
     if-nez v0, :cond_d
 
-    .line 1193
+    .line 1084
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->exitMoreModeGuideAnimation()V
 
-    .line 1195
+    .line 1086
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mupdateCurrentMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;Ljava/lang/String;)V
 
-    .line 1196
+    .line 1087
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentTab(Z)V
 
-    .line 1197
+    .line 1088
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeSelector()V
 
-    .line 1198
+    .line 1089
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeUI()V
 
-    .line 1199
+    .line 1090
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result p1
@@ -11124,13 +10546,13 @@
 
     if-eqz p3, :cond_2e
 
-    .line 1201
+    .line 1092
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateMoreTabView()V
 
     :cond_2e
     const/4 p1, 0x0
 
-    .line 1204
+    .line 1095
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsSelectMoreTabView:Z
 
     return-void
@@ -11139,14 +10561,14 @@
 .method public updateCurrentTab(Z)V
     .registers 4
 
-    .line 1137
+    .line 1029
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->cannotUpdateCurrentTab()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 1138
+    .line 1030
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo p1, "updateCurrentTab: cannot update currentTab "
@@ -11155,7 +10577,7 @@
 
     return-void
 
-    .line 1141
+    .line 1033
     :cond_f
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
@@ -11165,7 +10587,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
-    .line 1142
+    .line 1034
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isTabLayoutMode(Ljava/lang/String;)Z
 
     move-result v0
@@ -11178,10 +10600,10 @@
 
     const/4 v0, 0x1
 
-    .line 1143
+    .line 1035
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsDisableEnterMoreAnimation:Z
 
-    .line 1144
+    .line 1036
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getTabCount()I
@@ -11194,7 +10616,7 @@
 
     return-void
 
-    .line 1147
+    .line 1039
     :cond_2f
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
@@ -11212,7 +10634,7 @@
 .method public updateGuideRightRootVisibleState(I)V
     .registers 4
 
-    .line 723
+    .line 628
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isShowMoreModeGuideView()Z
 
     move-result v0
@@ -11221,7 +10643,7 @@
 
     goto :goto_46
 
-    .line 726
+    .line 631
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
@@ -11240,7 +10662,7 @@
 
     goto :goto_47
 
-    .line 734
+    .line 639
     :cond_14
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
@@ -11258,7 +10680,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
-    .line 735
+    .line 640
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -11267,7 +10689,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
-    .line 736
+    .line 641
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentIsTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Z
 
     move-result v0
@@ -11276,19 +10698,19 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
-    .line 737
+    .line 642
     invoke-virtual {v0}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->moreModeShow()Z
 
     move-result v0
 
     if-eqz v0, :cond_46
 
-    .line 738
+    .line 643
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 739
+    .line 644
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "more guide visibility: updateGuideRightRootVisibleState: state = visible"
@@ -11299,12 +10721,12 @@
     :goto_46
     return-void
 
-    .line 730
+    .line 635
     :cond_47
     :goto_47
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 731
+    .line 636
     sget-object p0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "more guide visibility: updateGuideRightRootVisibleState: state = gone or invisible"
@@ -11319,7 +10741,7 @@
 
     if-eqz p1, :cond_16
 
-    .line 1232
+    .line 1123
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentModeFeatureName(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/lang/String;
@@ -11332,294 +10754,22 @@
 
     if-nez v0, :cond_16
 
-    .line 1233
+    .line 1124
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mupdateCurrentMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;Ljava/lang/String;)V
 
-    .line 1234
+    .line 1125
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeAndNotify()V
 
     :cond_16
     return-void
 .end method
 
-.method public updateModeArrowState(ZZ)V
-    .registers 5
-
-    .line 2177
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    if-eqz v0, :cond_4c
-
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrowSvga:Lcom/opensource/svgaplayer/SVGAImageView;
-
-    if-nez v0, :cond_9
-
-    goto :goto_4c
-
-    .line 2181
-    :cond_9
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mUpdateArrowStateLock:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    .line 2182
-    :try_start_c
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSVGAParser:Lcom/opensource/svgaplayer/SVGAParser;
-
-    if-nez v1, :cond_1e
-
-    .line 2183
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mUpdateArrowState:Ljava/util/List;
-
-    new-instance v1, Lcom/transsion/camera/app/ui/ModePickerUI$UpdateArrowState;
-
-    invoke-direct {v1, p1, p2}, Lcom/transsion/camera/app/ui/ModePickerUI$UpdateArrowState;-><init>(ZZ)V
-
-    invoke-interface {p0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 2184
-    monitor-exit v0
-
-    return-void
-
-    :catchall_1c
-    move-exception p0
-
-    goto :goto_4a
-
-    .line 2186
-    :cond_1e
-    monitor-exit v0
-    :try_end_1f
-    .catchall {:try_start_c .. :try_end_1f} :catchall_1c
-
-    if-eqz p1, :cond_35
-
-    .line 2189
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    const/4 v0, 0x4
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    if-eqz p2, :cond_2f
-
-    .line 2191
-    const-string p1, "mode_picker_arrow_min_anim.svga"
-
-    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->playSvgaAnimation(Ljava/lang/String;)V
-
-    return-void
-
-    .line 2193
-    :cond_2f
-    const-string p1, "mode_picker_arrow_anim.svga"
-
-    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->playSvgaAnimation(Ljava/lang/String;)V
-
-    return-void
-
-    .line 2196
-    :cond_35
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrowSvga:Lcom/opensource/svgaplayer/SVGAImageView;
-
-    invoke-virtual {p1}, Lcom/opensource/svgaplayer/SVGAImageView;->isAnimating()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_4c
-
-    .line 2197
-    sget-object p1, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    const-string p2, "[updateModeArrowState] stopAnimation."
-
-    invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 2198
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrowSvga:Lcom/opensource/svgaplayer/SVGAImageView;
-
-    invoke-virtual {p0}, Lcom/opensource/svgaplayer/SVGAImageView;->stopAnimation()V
-
-    return-void
-
-    .line 2186
-    :goto_4a
-    :try_start_4a
-    monitor-exit v0
-    :try_end_4b
-    .catchall {:try_start_4a .. :try_end_4b} :catchall_1c
-
-    throw p0
-
-    :cond_4c
-    :goto_4c
-    return-void
-.end method
-
-.method public updateModeArrowVisibility(Z)V
-    .registers 7
-
-    .line 2156
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrowSvga:Lcom/opensource/svgaplayer/SVGAImageView;
-
-    if-eqz v0, :cond_16
-
-    invoke-virtual {v0}, Lcom/opensource/svgaplayer/SVGAImageView;->isAnimating()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_16
-
-    .line 2157
-    sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    const-string v1, "[updateModeArrowVisibility] stopAnimation."
-
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 2158
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrowSvga:Lcom/opensource/svgaplayer/SVGAImageView;
-
-    invoke-virtual {v0}, Lcom/opensource/svgaplayer/SVGAImageView;->stopAnimation()V
-
-    .line 2161
-    :cond_16
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrowRoot:Landroid/view/View;
-
-    const/4 v1, 0x4
-
-    const/4 v2, 0x0
-
-    if-eqz v0, :cond_2c
-
-    if-eqz p1, :cond_28
-
-    .line 2162
-    iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
-
-    invoke-static {v3}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$fgetmCurrentIsTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_28
-
-    move v3, v2
-
-    goto :goto_29
-
-    :cond_28
-    move v3, v1
-
-    :goto_29
-    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
-
-    .line 2165
-    :cond_2c
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    if-eqz v0, :cond_67
-
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isModePanelGuideSupported()Z
-
-    move-result v0
-
-    if-nez v0, :cond_67
-
-    .line 2166
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    sget v3, Lcom/transsion/camera/R$array;->build_in_features_back_mode_order:I
-
-    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2167
-    iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    sget v4, Lcom/transsion/camera/R$array;->build_in_features_front_mode_order:I
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 2168
-    array-length v0, v0
-
-    array-length v3, v3
-
-    invoke-static {v0, v3}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    const/4 v3, 0x6
-
-    if-ge v0, v3, :cond_5f
-
-    .line 2169
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    const/16 p1, 0x8
-
-    invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    return-void
-
-    .line 2171
-    :cond_5f
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeArrow:Landroid/widget/ImageView;
-
-    if-eqz p1, :cond_64
-
-    move v1, v2
-
-    :cond_64
-    invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    :cond_67
-    return-void
-.end method
-
-.method public updateModes(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 6
-
-    .line 1182
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
-
-    invoke-static {v0, p1, p2, p3, p4}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mupdateModeListAndDefaultMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;I)V
-
-    const/4 p1, 0x0
-
-    .line 1183
-    invoke-direct {p0, p2, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeTabLayout(Ljava/lang/String;Z)V
-
-    .line 1184
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeSelectorLayout()V
-
-    .line 1185
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentTab(Z)V
-
-    .line 1186
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeSelector()V
-
-    return-void
-.end method
-
 .method public updateModes(Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Z)V
     .registers 6
 
-    .line 1172
+    .line 1063
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0, p1, p2, p3}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mupdateModeListAndDefaultMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
@@ -11628,22 +10778,22 @@
 
     move-object p2, p3
 
-    .line 1173
+    .line 1064
     :cond_8
     invoke-direct {p0, p2, p4}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeTabLayout(Ljava/lang/String;Z)V
 
-    .line 1174
+    .line 1065
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModeSelectorLayout()V
 
     const/4 p1, 0x0
 
-    .line 1175
+    .line 1066
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentTab(Z)V
 
-    .line 1176
+    .line 1067
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateCurrentModeSelector()V
 
-    .line 1177
+    .line 1068
     iget p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mOrientation:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->updateModePickerRotation(I)V
@@ -11654,7 +10804,7 @@
 .method public updateMoreEditMode(Z)V
     .registers 2
 
-    .line 1922
+    .line 1809
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsEditMode:Z
 
     return-void
@@ -11663,12 +10813,12 @@
 .method public updateMoreGuideState(Z)V
     .registers 7
 
-    .line 1926
+    .line 1813
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
     if-eqz v0, :cond_ca
 
-    .line 1927
+    .line 1814
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isShowMoreModeGuideView()Z
 
     move-result v0
@@ -11677,7 +10827,7 @@
 
     goto/16 :goto_ca
 
-    .line 1930
+    .line 1817
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
@@ -11695,14 +10845,14 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
-    .line 1931
+    .line 1818
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$misVisible(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;)Z
 
     move-result v0
 
     if-nez v0, :cond_36
 
-    .line 1932
+    .line 1819
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isFilterPanelShow()Z
 
     move-result v0
@@ -11717,7 +10867,7 @@
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
-    .line 1933
+    .line 1820
     invoke-static {v2, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -11731,7 +10881,7 @@
     :cond_36
     move v0, v3
 
-    .line 1935
+    .line 1822
     :goto_37
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -11741,7 +10891,7 @@
 
     if-eqz v0, :cond_44
 
-    .line 1936
+    .line 1823
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsInstantZoomShow:Z
 
     if-nez v0, :cond_44
@@ -11754,7 +10904,7 @@
     :goto_45
     move v0, v1
 
-    .line 1939
+    .line 1826
     :cond_46
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeGuideRightRoot:Landroid/view/View;
 
@@ -11768,7 +10918,7 @@
     :goto_4d
     invoke-virtual {v1, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1940
+    .line 1827
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -11781,7 +10931,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeOrderProvider:Lcom/transsion/camera/app/mode/ModeOrderProvider;
 
-    .line 1941
+    .line 1828
     invoke-virtual {v3}, Lcom/transsion/camera/app/mode/ModeOrderProvider;->moreModeShow()Z
 
     move-result v3
@@ -11794,7 +10944,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeUI:Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;
 
-    .line 1942
+    .line 1829
     invoke-static {v3}, Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;->-$$Nest$misVisible(Lcom/transsion/camera/app/ui/ModePickerUI$CurrentModeUI;)Z
 
     move-result v3
@@ -11805,7 +10955,7 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1943
+    .line 1830
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isFilterPanelShow()Z
 
     move-result v3
@@ -11832,7 +10982,7 @@
 
     iget-object v3, v3, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
-    .line 1945
+    .line 1832
     invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -11843,10 +10993,10 @@
 
     move-result-object v1
 
-    .line 1940
+    .line 1827
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1946
+    .line 1833
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -11879,7 +11029,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1947
+    .line 1834
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeRightGuide:Landroid/widget/ImageView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setClickable(Z)V
@@ -11892,21 +11042,21 @@
 .method public updateMoreTabView()V
     .registers 3
 
-    .line 2630
+    .line 2443
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isSupportUI5MoreModeStyle()Z
 
     move-result v0
 
     if-eqz v0, :cond_40
 
-    .line 2631
+    .line 2444
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-nez v0, :cond_b
 
     goto :goto_40
 
-    .line 2634
+    .line 2447
     :cond_b
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getMoreTabView()Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;
 
@@ -11916,7 +11066,7 @@
 
     goto :goto_40
 
-    .line 2638
+    .line 2451
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mMoreModeCancelRoot:Landroid/view/View;
 
@@ -11924,7 +11074,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2639
+    .line 2452
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/ModePickerUI;->isTabLayoutMode(Ljava/lang/String;)Z
@@ -11939,21 +11089,21 @@
 
     const/4 v1, 0x1
 
-    .line 2640
+    .line 2453
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsSelectMoreTabView:Z
 
-    .line 2641
+    .line 2454
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mCurrentModeName:Ljava/lang/String;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIListener$IMoreTabChangeListener;->onMoreTabChanged(Ljava/lang/String;)V
 
-    .line 2643
+    .line 2456
     :cond_2d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->updateHeadFootPadding()V
 
-    .line 2644
+    .line 2457
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -11980,12 +11130,12 @@
 .method public updateRecordingState(Z)V
     .registers 2
 
-    .line 2314
+    .line 2166
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mIsRecording:Z
 
     const/4 p1, 0x0
 
-    .line 2315
+    .line 2167
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->chooseModeUIToShow(Z)V
 
     return-void
@@ -11994,14 +11144,14 @@
 .method public updateTabFeatureName()V
     .registers 4
 
-    .line 2138
+    .line 2026
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-eqz v0, :cond_23
 
     const/4 v0, 0x0
 
-    .line 2139
+    .line 2027
     :goto_5
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
@@ -12011,14 +11161,14 @@
 
     if-ge v0, v1, :cond_23
 
-    .line 2140
+    .line 2028
     iget-object v1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v1, v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mgetTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;I)Lcom/transsion/camera/app/common/FeatureResource;
 
     move-result-object v1
 
-    .line 2141
+    .line 2029
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v2, v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getTabAt(I)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
@@ -12027,7 +11177,7 @@
 
     if-eqz v2, :cond_20
 
-    .line 2143
+    .line 2031
     iget-object v1, v1, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
     invoke-virtual {v2, v1}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->setFeatureName(Ljava/lang/String;)Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
@@ -12046,7 +11196,7 @@
 
     if-eqz p1, :cond_1f
 
-    .line 2696
+    .line 2486
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentModeFeatureName(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/lang/String;
@@ -12059,12 +11209,12 @@
 
     if-nez v0, :cond_1f
 
-    .line 2697
+    .line 2487
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mupdateCurrentMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;Ljava/lang/String;)V
 
-    .line 2698
+    .line 2488
     iget-object p1, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
@@ -12084,7 +11234,7 @@
 .method public updateTabIndexOnResume(Ljava/lang/String;)V
     .registers 5
 
-    .line 2685
+    .line 2475
     sget-object v0, Lcom/transsion/camera/app/ui/ModePickerUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -12103,7 +11253,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
-    .line 2686
+    .line 2476
     invoke-static {v2}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mcurrentModeFeatureName(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;)Ljava/lang/String;
 
     move-result-object v2
@@ -12114,15 +11264,15 @@
 
     move-result-object v1
 
-    .line 2685
+    .line 2475
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    .line 2687
+    .line 2477
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mFromResume:Z
 
-    .line 2689
+    .line 2479
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-eqz v0, :cond_3d
@@ -12139,7 +11289,7 @@
 
     if-eqz p1, :cond_3d
 
-    .line 2690
+    .line 2480
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->checkTabIndex()V
@@ -12151,7 +11301,7 @@
 .method public updateTabSellingPointState()V
     .registers 6
 
-    .line 2127
+    .line 2015
     iget-object v0, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     if-eqz v0, :cond_38
@@ -12160,7 +11310,7 @@
 
     move v1, v0
 
-    .line 2128
+    .line 2016
     :goto_6
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
@@ -12170,14 +11320,14 @@
 
     if-ge v1, v2, :cond_38
 
-    .line 2129
+    .line 2017
     iget-object v2, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeInformation:Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;
 
     invoke-static {v2, v1}, Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;->-$$Nest$mgetTabLayoutMode(Lcom/transsion/camera/app/ui/ModePickerUI$ModeInformation;I)Lcom/transsion/camera/app/common/FeatureResource;
 
     move-result-object v2
 
-    .line 2130
+    .line 2018
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mSellingPointItems:Ljava/util/List;
 
     iget-object v4, v2, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
@@ -12194,7 +11344,7 @@
 
     iget-object v2, v2, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
-    .line 2131
+    .line 2019
     invoke-static {v3, v2}, Lcom/transsion/camera/app/ui/mode/ModeUIItem;->getVal(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v2
@@ -12208,7 +11358,7 @@
     :cond_2b
     move v2, v0
 
-    .line 2132
+    .line 2020
     :goto_2c
     iget-object v3, p0, Lcom/transsion/camera/app/ui/ModePickerUI;->mModeTabLayout:Lcom/transsion/camera/app/ui/widget/TabLayout;
 

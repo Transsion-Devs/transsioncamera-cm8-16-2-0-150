@@ -465,7 +465,7 @@
 
     iget-object v9, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mContext:Landroid/content/Context;
 
-    const-string v10, "text_water_mark_input_tip"
+    const-string/jumbo v10, "text_water_mark_input_tip"
 
     invoke-static {v9, v10}, Lcom/transsion/camera/utils/CameraUtil;->getString(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
@@ -508,7 +508,7 @@
 
     const/4 v11, 0x1
 
-    if-eqz v5, :cond_a6
+    if-eqz v5, :cond_a7
 
     .line 561
     iget-object v12, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mLocationPermission:Lcom/transsion/camera/app/common/permission/PermissionManager;
@@ -517,7 +517,7 @@
 
     move-result v12
 
-    if-nez v12, :cond_8e
+    if-nez v12, :cond_8f
 
     invoke-static {v11}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -527,7 +527,7 @@
 
     move-result v12
 
-    if-eqz v12, :cond_8e
+    if-eqz v12, :cond_8f
 
     .line 562
     invoke-static {v11}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -578,7 +578,7 @@
     invoke-static {v6, v7}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     .line 567
-    :cond_8e
+    :cond_8f
     invoke-virtual {v5}, Ljava/lang/String;->toCharArray()[C
 
     move-result-object v5
@@ -588,8 +588,8 @@
 
     move v7, v9
 
-    :goto_94
-    if-ge v7, v6, :cond_a6
+    :goto_95
+    if-ge v7, v6, :cond_a7
 
     aget-char v12, v5, v7
 
@@ -606,13 +606,13 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_94
+    goto :goto_95
 
     .line 572
-    :cond_a6
+    :cond_a7
     iget-boolean v5, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mHideDeviceInfo:Z
 
-    if-eqz v5, :cond_b7
+    if-eqz v5, :cond_b8
 
     iget-object v5, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mEditWaterMarkUIItems:Ljava/util/List;
 
@@ -620,7 +620,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_b7
+    if-eqz v5, :cond_b8
 
     .line 573
     iget-object v5, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mEditWaterMarkUIItems:Ljava/util/List;
@@ -628,7 +628,7 @@
     invoke-interface {v5, v4}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
     .line 575
-    :cond_b7
+    :cond_b8
     sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v1, v2, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -760,17 +760,17 @@
 
     iget v8, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mSingleLineBrandHeight:I
 
-    if-le v7, v8, :cond_141
+    if-le v7, v8, :cond_142
 
     move v7, v11
 
-    goto :goto_142
+    goto :goto_143
 
-    :cond_141
+    :cond_142
     const/4 v7, 0x0
 
     .line 592
-    :goto_142
+    :goto_143
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getDensity()I
 
     move-result v8
@@ -811,7 +811,7 @@
     add-float v14, v6, v12
 
     .line 597
-    :try_start_163
+    :try_start_164
     iget-object v15, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mEditWaterMarkUIItems:Ljava/util/List;
 
     invoke-interface {v15}, Ljava/util/List;->size()I
@@ -822,8 +822,8 @@
 
     const/16 v17, 0x0
 
-    :goto_16c
-    if-ltz v15, :cond_28e
+    :goto_16d
+    if-ltz v15, :cond_28f
 
     .line 598
     iget-object v11, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mEditWaterMarkUIItems:Ljava/util/List;
@@ -840,9 +840,9 @@
 
     const/high16 v18, 0x41d00000    # 26.0f
 
-    if-ne v11, v3, :cond_224
+    if-ne v11, v3, :cond_225
 
-    if-eqz v7, :cond_189
+    if-eqz v7, :cond_18a
 
     .line 600
     invoke-virtual {v8}, Landroid/graphics/Bitmap;->getHeight()I
@@ -855,18 +855,18 @@
 
     add-float v17, v17, v11
 
-    :cond_189
+    :cond_18a
     move/from16 v11, v17
 
-    goto :goto_18f
+    goto :goto_190
 
-    :catch_18c
+    :catch_18d
     move-exception v0
 
-    goto/16 :goto_296
+    goto/16 :goto_297
 
     .line 602
-    :goto_18f
+    :goto_190
     sget-object v3, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -982,7 +982,7 @@
     .line 608
     invoke-virtual {v9, v8, v2, v3, v13}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    if-eqz v7, :cond_221
+    if-eqz v7, :cond_222
 
     .line 610
     invoke-virtual {v8}, Landroid/graphics/Bitmap;->getHeight()I
@@ -995,17 +995,17 @@
 
     add-float v17, v11, v2
 
-    :goto_21f
+    :goto_220
     const/4 v3, 0x1
 
-    goto :goto_27d
+    goto :goto_27e
 
-    :cond_221
+    :cond_222
     move/from16 v17, v11
 
-    goto :goto_21f
+    goto :goto_220
 
-    :cond_224
+    :cond_225
     move-object/from16 v19, v4
 
     .line 613
@@ -1023,13 +1023,13 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_238
+    if-ne v2, v3, :cond_239
 
     iget-object v2, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mCityInfo:Ljava/lang/String;
 
-    goto :goto_23e
+    goto :goto_23f
 
-    :cond_238
+    :cond_239
     iget-object v2, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mContext:Landroid/content/Context;
 
     invoke-static {v2, v10}, Lcom/transsion/camera/utils/CameraUtil;->getString(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
@@ -1037,7 +1037,7 @@
     move-result-object v2
 
     .line 614
-    :goto_23e
+    :goto_23f
     iget-object v4, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mEditWaterMarkUIItems:Ljava/util/List;
 
     invoke-interface {v4, v15}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1058,11 +1058,11 @@
 
     move-result v4
 
-    if-eqz v4, :cond_255
+    if-eqz v4, :cond_256
 
-    goto :goto_265
+    goto :goto_266
 
-    :cond_255
+    :cond_256
     iget-object v2, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mEditWaterMarkUIItems:Ljava/util/List;
 
     invoke-interface {v2, v15}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1079,7 +1079,7 @@
 
     move-result-object v2
 
-    :goto_265
+    :goto_266
     mul-int/lit8 v4, v1, 0xc
 
     int-to-float v4, v4
@@ -1108,7 +1108,7 @@
 
     invoke-virtual {v9, v2, v4, v11, v5}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    :goto_27d
+    :goto_27e
     mul-int/lit8 v2, p2, 0x2
 
     int-to-float v2, v2
@@ -1127,22 +1127,22 @@
 
     const/4 v3, 0x3
 
-    goto/16 :goto_16c
+    goto/16 :goto_16d
 
-    :cond_28e
+    :cond_28f
     move-object/from16 v19, v4
 
     .line 620
     iget-object v0, v0, Lcom/transsion/camera/feature/setting/editwatermark/EditWaterMark;->mEditWaterMarkUIItems:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
-    :try_end_295
-    .catch Ljava/lang/Exception; {:try_start_163 .. :try_end_295} :catch_18c
+    :try_end_296
+    .catch Ljava/lang/Exception; {:try_start_164 .. :try_end_296} :catch_18d
 
     return-object v19
 
     .line 624
-    :goto_296
+    :goto_297
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-object v16

@@ -61,10 +61,10 @@
 .method public constructor <init>(I)V
     .registers 2
 
-    .line 3209
+    .line 3228
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3210
+    .line 3229
     iput p1, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;->mId:I
 
     return-void
@@ -85,7 +85,7 @@
 
     move v3, p3
 
-    .line 3222
+    .line 3241
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;-><init>(IIIII)V
 
     return-void
@@ -94,26 +94,26 @@
 .method public constructor <init>(IIIII)V
     .registers 6
 
-    .line 3213
+    .line 3232
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3214
+    .line 3233
     iput p1, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;->mId:I
 
-    .line 3215
+    .line 3234
     iput p2, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;->mGender:I
 
-    .line 3216
+    .line 3235
     iput p3, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;->mAge:I
 
     int-to-float p1, p4
 
-    .line 3217
+    .line 3236
     iput p1, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;->mDx:F
 
     int-to-float p1, p5
 
-    .line 3218
+    .line 3237
     iput p1, p0, Lcom/transsion/camera/utils/SettingInfo$CameraFace$FaceAttarInfo;->mDy:F
 
     return-void

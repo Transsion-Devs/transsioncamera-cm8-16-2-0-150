@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)V
     .registers 2
 
-    .line 268
+    .line 272
     iput-object p1, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$4;->this$0:Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onCancel()V
     .registers 1
 
-    .line 271
+    .line 275
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$4;->this$0:Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->-$$Nest$fgetmGuideDownLoadManager(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;
@@ -53,7 +53,7 @@
 .method public onCancelDetail()V
     .registers 1
 
-    .line 276
+    .line 280
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$4;->this$0:Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->-$$Nest$fgetmGuideDownLoadManager(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;

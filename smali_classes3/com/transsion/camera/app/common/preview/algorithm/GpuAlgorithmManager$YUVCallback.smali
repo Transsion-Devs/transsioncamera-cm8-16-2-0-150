@@ -27,7 +27,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)V
     .registers 2
 
-    .line 515
+    .line 510
     iput-object p1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .method public onPreviewFrame(Landroid/media/Image;II)V
     .registers 12
 
-    .line 519
+    .line 514
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->-$$Nest$fgetmSupportPostAlgoDeferRequest(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)Z
@@ -58,12 +58,12 @@
 
     if-eqz v0, :cond_1b
 
-    .line 520
+    .line 515
     invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->getNV21Buffer(Landroid/media/Image;)[B
 
     move-result-object v2
 
-    .line 521
+    .line 516
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
     move-result-object v1
@@ -87,7 +87,7 @@
 
     move v4, p3
 
-    .line 523
+    .line 518
     :goto_1d
     iget-object p2, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
@@ -99,7 +99,7 @@
 
     goto/16 :goto_b2
 
-    .line 529
+    .line 524
     :cond_27
     invoke-virtual {p1}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
 
@@ -109,17 +109,17 @@
 
     aget-object p2, p2, p3
 
-    .line 530
+    .line 525
     invoke-virtual {p2}, Landroid/media/Image$Plane;->getBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object p2
 
-    .line 531
+    .line 526
     invoke-virtual {p2}, Ljava/nio/Buffer;->remaining()I
 
     move-result v0
 
-    .line 534
+    .line 529
     invoke-virtual {p1}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
 
     move-result-object v1
@@ -128,17 +128,17 @@
 
     aget-object v1, v1, v2
 
-    .line 535
+    .line 530
     invoke-virtual {v1}, Landroid/media/Image$Plane;->getBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object v5
 
-    .line 536
+    .line 531
     invoke-virtual {v5}, Ljava/nio/Buffer;->remaining()I
 
     move-result v6
 
-    .line 539
+    .line 534
     invoke-virtual {v1}, Landroid/media/Image$Plane;->getPixelStride()I
 
     move-result v1
@@ -151,7 +151,7 @@
 
     add-int/2addr p1, v7
 
-    .line 543
+    .line 538
     iget-object v1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->mFrameData:[B
 
     if-eqz v1, :cond_56
@@ -160,19 +160,19 @@
 
     if-eq v1, p1, :cond_5a
 
-    .line 544
+    .line 539
     :cond_56
     new-array p1, p1, [B
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->mFrameData:[B
 
-    .line 547
+    .line 542
     :cond_5a
     iget-object p1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->mFrameData:[B
 
     invoke-virtual {p2, p1, p3, v0}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
 
-    .line 548
+    .line 543
     iget-object p1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->mFrameData:[B
 
     invoke-virtual {v5, p1, v0, v6}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
@@ -181,7 +181,7 @@
 
     goto :goto_96
 
-    .line 552
+    .line 547
     :cond_67
     invoke-virtual {p1}, Landroid/media/Image;->getPlanes()[Landroid/media/Image$Plane;
 
@@ -189,12 +189,12 @@
 
     aget-object p1, p1, v7
 
-    .line 553
+    .line 548
     invoke-virtual {p1}, Landroid/media/Image$Plane;->getBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object p1
 
-    .line 554
+    .line 549
     invoke-virtual {p1}, Ljava/nio/Buffer;->remaining()I
 
     move-result v1
@@ -203,7 +203,7 @@
 
     add-int/2addr v2, v6
 
-    .line 557
+    .line 552
     iget-object v7, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->mFrameData:[B
 
     if-eqz v7, :cond_7f
@@ -212,24 +212,24 @@
 
     if-eq v7, v2, :cond_83
 
-    .line 558
+    .line 553
     :cond_7f
     new-array v2, v2, [B
 
     iput-object v2, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->mFrameData:[B
 
-    .line 561
+    .line 556
     :cond_83
     iget-object v2, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->mFrameData:[B
 
     invoke-virtual {p2, v2, p3, v0}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
 
-    .line 562
+    .line 557
     iget-object p2, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->mFrameData:[B
 
     invoke-virtual {v5, p2, v0, v6}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
 
-    .line 563
+    .line 558
     iget-object p2, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->mFrameData:[B
 
     add-int/2addr v0, v6
@@ -238,7 +238,7 @@
 
     const p1, 0x32315659
 
-    .line 566
+    .line 561
     :goto_96
     iget-object p2, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
@@ -263,7 +263,7 @@
 
     check-cast p3, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
 
-    .line 567
+    .line 562
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$YUVCallback;->mFrameData:[B
 
     invoke-interface {p3, v0, v3, v4, p1}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->onPreviewFrame([BIII)V

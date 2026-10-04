@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
@@ -24,13 +24,13 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .registers 2
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda1;->f$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->$r8$lambda$XnqrdsYr9-FfKEdv8ZfxVRbFxNY(Lcom/transsion/camera/app/ui/AbstractTopBarUI;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->$r8$lambda$Rltm84Ybdyk5x_Z3cupAqHKSUHU(Lcom/transsion/camera/app/ui/AbstractTopBarUI;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

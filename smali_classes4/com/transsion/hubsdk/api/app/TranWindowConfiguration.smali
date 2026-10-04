@@ -82,6 +82,64 @@
     return-object p0
 .end method
 
+.method public getMultiWindowingId(Landroid/content/res/Configuration;)I
+    .registers 3
+
+    if-eqz p1, :cond_d
+
+    .line 217
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranWindowConfiguration;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranWindowConfigurationAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/app/ITranWindowConfigurationAdapter;->getMultiWindowingId(Landroid/content/res/Configuration;)I
+
+    move-result p0
+
+    return p0
+
+    .line 215
+    :cond_d
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "configuration cannot null"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public getMultiWindowingMode(Landroid/content/res/Configuration;)I
+    .registers 3
+
+    if-eqz p1, :cond_d
+
+    .line 210
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/app/TranWindowConfiguration;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranWindowConfigurationAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/app/ITranWindowConfigurationAdapter;->getMultiWindowingMode(Landroid/content/res/Configuration;)I
+
+    move-result p0
+
+    return p0
+
+    .line 208
+    :cond_d
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "configuration cannot null"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
 .method protected getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/app/ITranWindowConfigurationAdapter;
     .registers 3
 

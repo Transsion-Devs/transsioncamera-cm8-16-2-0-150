@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static color_style_selected_color:I = 0x7f06007c
+.field public static color_style_selected_color:I = 0x7f06007d
 
 
 # direct methods

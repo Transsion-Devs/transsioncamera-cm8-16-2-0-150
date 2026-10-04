@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static video_face_beauty_makeup_setting_entries_off:I = 0x7f1305e4
+.field public static video_face_beauty_makeup_setting_entries_off:I = 0x7f1305dd
 
-.field public static video_face_beauty_makeup_setting_entries_on:I = 0x7f1305e5
+.field public static video_face_beauty_makeup_setting_entries_on:I = 0x7f1305de
 
-.field public static video_makeup_setting_entries_off:I = 0x7f130606
+.field public static video_makeup_setting_entries_off:I = 0x7f1305ff
 
-.field public static video_makeup_setting_entries_on:I = 0x7f130607
+.field public static video_makeup_setting_entries_on:I = 0x7f130600
 
 
 # direct methods

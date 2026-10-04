@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.selects.WhileSelectKt"
     f = "WhileSelect.kt"
     l = {
-        0x29
+        0x25
     }
     m = "whileSelect"
 .end annotation

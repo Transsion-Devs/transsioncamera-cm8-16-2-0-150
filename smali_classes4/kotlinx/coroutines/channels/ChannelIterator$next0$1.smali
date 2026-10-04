@@ -26,7 +26,7 @@
     c = "kotlinx.coroutines.channels.ChannelIterator$DefaultImpls"
     f = "Channel.kt"
     l = {
-        0x24d
+        0x257
     }
     m = "next"
 .end annotation

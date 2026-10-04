@@ -44,20 +44,20 @@
 .method public constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;Landroid/os/Handler;)V
     .registers 3
 
-    .line 2131
+    .line 2118
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
-    .line 2132
+    .line 2119
     invoke-direct {p0, p2}, Lcom/transsion/camera/ui/setting/BaseRunnableController;-><init>(Landroid/os/Handler;)V
 
     const/4 p1, -0x1
 
-    .line 2128
+    .line 2115
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;->diffValue:I
 
     const/4 p1, 0x0
 
-    .line 2129
+    .line 2116
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;->isValueIncreasing:Z
 
     return-void
@@ -66,7 +66,7 @@
 .method static synthetic access$102(Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 2127
+    .line 2114
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->originalValue:Ljava/lang/Object;
 
     return-object p1
@@ -75,7 +75,7 @@
 .method static synthetic access$200(Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;)Ljava/lang/Object;
     .registers 1
 
-    .line 2127
+    .line 2114
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->originalValue:Ljava/lang/Object;
 
     return-object p0
@@ -84,7 +84,7 @@
 .method static synthetic access$302(Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 2127
+    .line 2114
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->originalValue:Ljava/lang/Object;
 
     return-object p1
@@ -93,7 +93,7 @@
 .method static synthetic access$400(Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;)Ljava/lang/Object;
     .registers 1
 
-    .line 2127
+    .line 2114
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->originalValue:Ljava/lang/Object;
 
     return-object p0
@@ -102,7 +102,7 @@
 .method static synthetic access$500(Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;)Ljava/lang/Object;
     .registers 1
 
-    .line 2127
+    .line 2114
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->originalValue:Ljava/lang/Object;
 
     return-object p0
@@ -111,7 +111,7 @@
 .method static synthetic access$600(Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;)Landroid/os/Handler;
     .registers 1
 
-    .line 2127
+    .line 2114
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->mUIHandler:Landroid/os/Handler;
 
     return-object p0
@@ -120,7 +120,7 @@
 .method static synthetic access$700(Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;)V
     .registers 1
 
-    .line 2127
+    .line 2114
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/BaseRunnableController;->stopControlLoop()V
 
     return-void
@@ -131,7 +131,7 @@
 .method protected applyNewValue(Ljava/lang/Integer;)V
     .registers 3
 
-    .line 2173
+    .line 2160
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -148,7 +148,7 @@
 .method protected bridge synthetic applyNewValue(Ljava/lang/Object;)V
     .registers 2
 
-    .line 2127
+    .line 2114
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;->applyNewValue(Ljava/lang/Integer;)V
@@ -159,7 +159,7 @@
 .method protected calculateStepParameters(I)V
     .registers 4
 
-    .line 2157
+    .line 2144
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->originalValue:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Integer;
@@ -182,7 +182,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;->diffValue:I
 
-    .line 2158
+    .line 2145
     iget p1, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->expectedValue:I
 
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->originalValue:Ljava/lang/Object;
@@ -213,7 +213,7 @@
 .method protected getControlRunnable()Ljava/lang/Runnable;
     .registers 2
 
-    .line 2137
+    .line 2124
     new-instance v0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController$1;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;)V
@@ -224,7 +224,7 @@
 .method protected getCurrentValue()Ljava/lang/Integer;
     .registers 1
 
-    .line 2168
+    .line 2155
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mProgress:I
@@ -239,7 +239,7 @@
 .method protected bridge synthetic getCurrentValue()Ljava/lang/Object;
     .registers 1
 
-    .line 2127
+    .line 2114
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$ZoomUIController;->getCurrentValue()Ljava/lang/Integer;
 
     move-result-object p0
@@ -250,7 +250,7 @@
 .method protected shouldContinue()Z
     .registers 2
 
-    .line 2163
+    .line 2150
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/BaseRunnableController;->isRunning:Z
 
     if-eqz v0, :cond_17

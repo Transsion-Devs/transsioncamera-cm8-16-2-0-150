@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;)V
     .registers 2
 
-    .line 479
+    .line 476
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$2;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .method public takePictureEnd(Z)V
     .registers 4
 
-    .line 490
+    .line 487
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$2;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;)Landroid/os/Handler;
@@ -64,20 +64,20 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 491
+    .line 488
     new-instance p1, Landroid/os/Message;
 
     invoke-direct {p1}, Landroid/os/Message;-><init>()V
 
-    .line 492
+    .line 489
     iput v0, p1, Landroid/os/Message;->what:I
 
-    .line 493
+    .line 490
     sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     iput-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 494
+    .line 491
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$2;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;)Landroid/os/Handler;
@@ -94,7 +94,7 @@
 .method public takePictureStart()V
     .registers 3
 
-    .line 482
+    .line 479
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection$2;->this$0:Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetection;)Landroid/os/Handler;

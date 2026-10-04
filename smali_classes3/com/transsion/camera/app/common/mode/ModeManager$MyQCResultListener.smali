@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/mode/ModeManager;)V
     .registers 2
 
-    .line 2952
+    .line 2947
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$MyQCResultListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public needQCNotifyActionToAppUI(I)I
     .registers 3
 
-    .line 2976
+    .line 2971
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$MyQCResultListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 2977
+    .line 2972
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$MyQCResultListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -76,12 +76,12 @@
 
     if-eqz p3, :cond_6
 
-    .line 2967
+    .line 2962
     invoke-interface {p3, p1, p2, p4, p5}, Lcom/transsion/camera/app/common/mode/ICameraMode;->needQCSaveJpegToFile([BZJ)I
 
     goto :goto_f
 
-    .line 2969
+    .line 2964
     :cond_6
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -102,12 +102,12 @@
 
     if-eqz p3, :cond_6
 
-    .line 2957
+    .line 2952
     invoke-interface {p3, p1, p2, p4}, Lcom/transsion/camera/app/common/mode/ICameraMode;->needQCUpdateThumbnailView(ILandroid/graphics/Bitmap;Lcom/transsion/camera/app/common/mode/TimestampInfo;)I
 
     goto :goto_f
 
-    .line 2959
+    .line 2954
     :cond_6
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;)V
     .registers 2
 
-    .line 969
+    .line 965
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI$4;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 972
+    .line 968
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 973
+    .line 969
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI$4;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->-$$Nest$fgetmDualDeviceRootLayout(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;)Landroid/view/View;
@@ -49,7 +49,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 974
+    .line 970
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI$4;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->-$$Nest$fgetmScreenFormType(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;)I
@@ -60,7 +60,7 @@
 
     invoke-static {p1, v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->-$$Nest$mupdateDualDeviceLayoutParameter(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;IZ)V
 
-    .line 975
+    .line 971
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI$4;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->-$$Nest$fgetmDualDeviceRootIn(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;)Landroid/animation/ObjectAnimator;

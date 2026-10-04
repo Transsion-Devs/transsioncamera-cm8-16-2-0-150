@@ -31,7 +31,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/underwater/UnderwaterVideoMode;)V
     .registers 2
 
-    .line 635
+    .line 605
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

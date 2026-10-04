@@ -1653,15 +1653,6 @@
     return-wide v0
 .end method
 
-.method protected getUIState()Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;
-    .registers 1
-
-    .line 188
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->mUIState:Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;
-
-    return-object p0
-.end method
-
 .method protected getVideoUIExt()Lcom/transsion/camera/app/common/ui/IVideoUIExt;
     .registers 1
 

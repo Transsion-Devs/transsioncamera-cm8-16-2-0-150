@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.internal.ChannelLimitedFlowMerge$collectTo$2$1"
     f = "Merge.kt"
     l = {
-        0x60
+        0x5c
     }
     m = "invokeSuspend"
 .end annotation
@@ -162,7 +162,7 @@
 
     move-result-object v0
 
-    .line 96
+    .line 92
     iget v1, p0, Lkotlinx/coroutines/flow/internal/ChannelLimitedFlowMerge$collectTo$2$1;->label:I
 
     const/4 v2, 0x1

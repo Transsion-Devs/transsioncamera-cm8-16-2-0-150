@@ -285,7 +285,7 @@
     :try_end_6b
     .catchall {:try_start_4a .. :try_end_6b} :catchall_71
 
-    .line 122
+    .line 117
     invoke-interface {v4, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     .line 110
@@ -296,7 +296,7 @@
     :catchall_71
     move-exception p0
 
-    .line 122
+    .line 117
     invoke-interface {v4, v3}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     throw p0

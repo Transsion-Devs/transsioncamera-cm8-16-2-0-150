@@ -24,7 +24,7 @@
     .line 0
     check-cast p1, Ljava/lang/Throwable;
 
-    invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$oUzrN49uOM3MzcMiQ3H3WjwTh2E(Ljava/lang/Throwable;)V
+    invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$TOyo4N0mxVoKM-asjQV5kYXTssc(Ljava/lang/Throwable;)V
 
     return-void
 .end method

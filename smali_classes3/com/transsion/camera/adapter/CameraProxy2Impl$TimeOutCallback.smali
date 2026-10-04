@@ -27,12 +27,12 @@
 .method private constructor <init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
     .registers 4
 
-    .line 2309
+    .line 2308
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2307
+    .line 2306
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
@@ -41,7 +41,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->mCallbackTriggered:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 2310
+    .line 2309
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmRequestHandler(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Landroid/os/Handler;
 
     move-result-object p1
@@ -56,12 +56,12 @@
 .method private constructor <init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;J)V
     .registers 6
 
-    .line 2313
+    .line 2312
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2307
+    .line 2306
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
@@ -70,7 +70,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->mCallbackTriggered:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 2314
+    .line 2313
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmRequestHandler(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Landroid/os/Handler;
 
     move-result-object p1
@@ -103,7 +103,7 @@
 .method protected final removeTimeOutCallback()V
     .registers 2
 
-    .line 2318
+    .line 2317
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmRequestHandler(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Landroid/os/Handler;
@@ -118,14 +118,14 @@
 .method public run()V
     .registers 2
 
-    .line 2323
+    .line 2322
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->shouldTriggerCallBack()Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    .line 2324
+    .line 2323
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->triggerTimeOutCallBack()V
 
     :cond_9
@@ -135,7 +135,7 @@
 .method protected final shouldTriggerCallBack()Z
     .registers 3
 
-    .line 2329
+    .line 2328
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->mCallbackTriggered:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v0, 0x0

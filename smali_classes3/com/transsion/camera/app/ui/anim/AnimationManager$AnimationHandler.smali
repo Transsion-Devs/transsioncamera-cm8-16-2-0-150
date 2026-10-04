@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/anim/AnimationManager;)V
     .registers 3
 
-    .line 229
+    .line 234
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
-    .line 230
+    .line 235
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -40,7 +40,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 3
 
-    .line 235
+    .line 240
     iget-object p0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager$AnimationHandler;->managerWeakReference:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -53,7 +53,7 @@
 
     goto :goto_19
 
-    .line 239
+    .line 244
     :cond_b
     iget p1, p1, Landroid/os/Message;->what:I
 
@@ -76,19 +76,19 @@
     :goto_19
     return-void
 
-    .line 248
+    .line 253
     :cond_1a
     invoke-static {p0}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$mfadeOutPreviewCover(Lcom/transsion/camera/app/ui/anim/AnimationManager;)V
 
     return-void
 
-    .line 245
+    .line 250
     :cond_1e
     invoke-static {p0}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$mhidePreviewCover(Lcom/transsion/camera/app/ui/anim/AnimationManager;)V
 
     return-void
 
-    .line 241
+    .line 246
     :cond_22
     invoke-static {p0}, Lcom/transsion/camera/app/ui/anim/AnimationManager;->-$$Nest$mdrawBlackPreviewCover(Lcom/transsion/camera/app/ui/anim/AnimationManager;)V
 

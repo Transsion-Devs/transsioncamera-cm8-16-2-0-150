@@ -22,10 +22,10 @@
 .method protected constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;II)V
     .registers 4
 
-    .line 1994
+    .line 1981
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
-    .line 1995
+    .line 1982
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;II)V
 
     return-void
@@ -36,7 +36,7 @@
 .method public isScaleStartWhenRecording()Z
     .registers 2
 
-    .line 2015
+    .line 2002
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mIsVideoStartRecording:Z
@@ -65,10 +65,10 @@
 .method protected onEnter(I)V
     .registers 2
 
-    .line 2058
+    .line 2045
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;->onEnter(I)V
 
-    .line 2059
+    .line 2046
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->onWideCameraSelected()V
@@ -79,7 +79,7 @@
 .method public progressToValue(I)I
     .registers 7
 
-    .line 2000
+    .line 1987
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRangeConverterProgressList(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Ljava/util/List;
@@ -98,7 +98,7 @@
 
     move-result v0
 
-    .line 2001
+    .line 1988
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {v1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRangeConverterProgressList(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Ljava/util/List;
@@ -138,7 +138,7 @@
 
     move p1, v1
 
-    .line 2007
+    .line 1994
     :cond_34
     :goto_34
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
@@ -175,12 +175,12 @@
 
     move-result v0
 
-    .line 2008
+    .line 1995
     rem-int/lit16 v1, p1, 0x3e8
 
     add-int v2, v0, v1
 
-    .line 2010
+    .line 1997
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -225,7 +225,7 @@
 .method public valueToProgress(I)I
     .registers 8
 
-    .line 2020
+    .line 2007
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->isScaleStartWhenRecording()Z
 
     move-result v0
@@ -234,7 +234,7 @@
 
     if-nez v0, :cond_8c
 
-    .line 2021
+    .line 2008
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRangeConverterProgressList(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Ljava/util/List;
@@ -251,7 +251,7 @@
 
     move-result v0
 
-    .line 2022
+    .line 2009
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRangeConverterProgressList(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Ljava/util/List;
@@ -291,7 +291,7 @@
 
     return v0
 
-    .line 2030
+    .line 2017
     :cond_39
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -315,7 +315,7 @@
 
     move-result v0
 
-    .line 2031
+    .line 2018
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {v2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRangeConverterValueNormalList(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Ljava/util/List;
@@ -333,7 +333,7 @@
     :goto_5b
     if-ge v1, v2, :cond_7b
 
-    .line 2032
+    .line 2019
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {v4}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRangeConverterValueNormalList(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Ljava/util/List;
@@ -368,7 +368,7 @@
 
     goto :goto_5b
 
-    .line 2038
+    .line 2025
     :cond_7b
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -388,7 +388,7 @@
 
     return p0
 
-    .line 2041
+    .line 2028
     :cond_8c
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -408,7 +408,7 @@
 
     if-ne v0, v2, :cond_d5
 
-    .line 2043
+    .line 2030
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRangeConverterValueList(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Ljava/util/List;
@@ -432,14 +432,14 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    .line 2044
+    .line 2031
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
     if-le v3, p1, :cond_a7
 
-    .line 2045
+    .line 2032
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmWideRangeConverterProgressList(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Ljava/util/List;
@@ -471,7 +471,7 @@
     :cond_d4
     return v1
 
-    .line 2050
+    .line 2037
     :cond_d5
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$WideRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 

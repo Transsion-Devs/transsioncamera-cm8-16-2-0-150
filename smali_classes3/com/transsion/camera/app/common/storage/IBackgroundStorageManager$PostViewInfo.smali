@@ -28,10 +28,10 @@
 .method public constructor <init>(J)V
     .registers 3
 
-    .line 78
+    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
+    .line 81
     iput-wide p1, p0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->mTimestamp:J
 
     return-void
@@ -42,7 +42,7 @@
 .method public getLastPostViewJpeg()[B
     .registers 1
 
-    .line 116
+    .line 118
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->mPostViewJpeg:[B
 
     return-object p0
@@ -51,7 +51,7 @@
 .method public getMediaStoreId()J
     .registers 3
 
-    .line 120
+    .line 122
     iget-wide v0, p0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->mMediaStoreId:J
 
     return-wide v0
@@ -60,7 +60,7 @@
 .method public getPostViewJpeg(J)[B
     .registers 5
 
-    .line 112
+    .line 114
     iget-wide v0, p0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->mMediaStoreId:J
 
     cmp-long p1, p1, v0
@@ -80,7 +80,7 @@
 .method public getTimestamp()J
     .registers 3
 
-    .line 104
+    .line 106
     iget-wide v0, p0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->mTimestamp:J
 
     return-wide v0
@@ -89,17 +89,17 @@
 .method public release()V
     .registers 2
 
-    .line 123
+    .line 125
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->mPostViewBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_a
 
-    .line 124
+    .line 126
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     const/4 v0, 0x0
 
-    .line 125
+    .line 127
     iput-object v0, p0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->mPostViewBitmap:Landroid/graphics/Bitmap;
 
     :cond_a
@@ -109,7 +109,7 @@
 .method public setMediaStoreId(J)Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
     .registers 3
 
-    .line 83
+    .line 85
     iput-wide p1, p0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->mMediaStoreId:J
 
     return-object p0
@@ -118,7 +118,7 @@
 .method public setPostViewBitmap(Landroid/graphics/Bitmap;)Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
     .registers 2
 
-    .line 93
+    .line 95
     iput-object p1, p0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->mPostViewBitmap:Landroid/graphics/Bitmap;
 
     return-object p0
@@ -127,7 +127,7 @@
 .method public setPostViewJpeg([B)Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;
     .registers 2
 
-    .line 88
+    .line 90
     iput-object p1, p0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$PostViewInfo;->mPostViewJpeg:[B
 
     return-object p0
@@ -136,7 +136,7 @@
 .method public toString()Ljava/lang/String;
     .registers 5
 
-    .line 100
+    .line 102
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -566,7 +566,7 @@
     move-result-object p0
 
     .line 86
-    const-string p1, "texture is too large: %d x %d"
+    const-string/jumbo p1, "texture is too large: %d x %d"
 
     invoke-static {p1, p0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 

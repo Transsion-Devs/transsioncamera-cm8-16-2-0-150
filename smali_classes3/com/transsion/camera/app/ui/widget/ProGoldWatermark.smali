@@ -252,7 +252,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mToastInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 512
+    .line 511
     new-instance p1, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$2;-><init>(Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;)V
@@ -265,7 +265,7 @@
 .method private clickLocationButton()V
     .registers 6
 
-    .line 378
+    .line 377
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mOptionLocation:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -276,7 +276,7 @@
 
     goto :goto_72
 
-    .line 381
+    .line 380
     :cond_9
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mLocationButtonCheck:Z
 
@@ -286,7 +286,7 @@
 
     if-nez v0, :cond_14
 
-    .line 382
+    .line 381
     const-string v0, "on"
 
     goto :goto_16
@@ -294,7 +294,7 @@
     :cond_14
     const-string v0, "off"
 
-    .line 383
+    .line 382
     :goto_16
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -308,7 +308,7 @@
 
     invoke-virtual {v1, v4, v0, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 384
+    .line 383
     sget-object v1, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -329,7 +329,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 385
+    .line 384
     iget-object v2, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mLocationPermission:Lcom/transsion/camera/app/common/permission/PermissionManager;
 
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/permission/PermissionManager;->checkCameraLocationPermissions()Z
@@ -338,57 +338,57 @@
 
     if-nez v2, :cond_50
 
-    .line 386
+    .line 385
     const-string v0, "[clickLocationButton]: request location permission"
 
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 387
+    .line 386
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mLocationPermission:Lcom/transsion/camera/app/common/permission/PermissionManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->requestCameraLocationPermissions()Z
 
     const/4 v0, 0x1
 
-    .line 388
+    .line 387
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mPermissionRequest:Z
 
     return-void
 
-    .line 391
+    .line 390
     :cond_50
     iget-boolean v2, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mLocationButtonCheck:Z
 
     if-eqz v2, :cond_5f
 
-    .line 392
+    .line 391
     const-string v2, "[clickLocationButton]: update location info"
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 393
+    .line 392
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mLocationReceiverHelper:Lcom/transsion/camera/app/common/location/LocationReceiveHelper;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/location/LocationReceiveHelper;->startRequestLocation()V
 
     goto :goto_64
 
-    .line 395
+    .line 394
     :cond_5f
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mLocationReceiverHelper:Lcom/transsion/camera/app/common/location/LocationReceiveHelper;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/location/LocationReceiveHelper;->stopRequestLocation()V
 
-    .line 397
+    .line 396
     :goto_64
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->showOrHideLocationPreviewText()V
 
-    .line 398
+    .line 397
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p0, :cond_72
 
-    .line 399
+    .line 398
     invoke-virtual {p0, v4}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     move-result-object p0
@@ -403,7 +403,7 @@
 .method private clickTimeButton()V
     .registers 7
 
-    .line 364
+    .line 363
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mOptionTime:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -414,7 +414,7 @@
 
     return-void
 
-    .line 367
+    .line 366
     :cond_9
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mTimeButtonCheck:Z
 
@@ -422,7 +422,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mTimeButtonCheck:Z
 
-    .line 368
+    .line 367
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -443,7 +443,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 369
+    .line 368
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mTimeButtonCheck:Z
 
     if-eqz v1, :cond_2e
@@ -455,7 +455,7 @@
     :cond_2e
     const-string v1, "off"
 
-    .line 370
+    .line 369
     :goto_30
     iget-object v2, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -469,19 +469,19 @@
 
     invoke-virtual {v2, v5, v1, v3, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 371
+    .line 370
     iget-object v2, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v2, :cond_47
 
-    .line 372
+    .line 371
     invoke-virtual {v2, v5}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     move-result-object v2
 
     invoke-virtual {v2, v5, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 374
+    .line 373
     :cond_47
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -513,7 +513,7 @@
 .method private currentAIArtMuseumMode()Z
     .registers 2
 
-    .line 303
+    .line 302
     const-string v0, "com.transsion.camera.feature.mode.aiartmuseum.AIArtMuseumModeEntry"
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mCurrentModeName:Ljava/lang/String;
@@ -526,48 +526,16 @@
 .end method
 
 .method private currentAIGCMode()Z
-    .registers 3
+    .registers 2
 
     .line 298
     const-string v0, "com.transsion.camera.feature.mode.aigc.AIGCModeEntry"
 
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mCurrentModeName:Ljava/lang/String;
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mCurrentModeName:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1f
-
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    if-eqz v0, :cond_1d
-
-    .line 299
-    invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->isIntentFromNegativeScreen()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1d
-
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->isAIGCFromNegativeScreen()Z
+    invoke-static {v0, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
-
-    if-eqz p0, :cond_1d
-
-    goto :goto_1f
-
-    :cond_1d
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1f
-    :goto_1f
-    const/4 p0, 0x1
 
     return p0
 .end method
@@ -575,7 +543,7 @@
 .method private currentLongExposureMode()Z
     .registers 2
 
-    .line 307
+    .line 306
     const-string v0, "com.transsion.camera.feature.mode.longexposure.LongExposureModeEntry"
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mCurrentModeName:Ljava/lang/String;
@@ -623,12 +591,12 @@
 
     if-eqz p1, :cond_30
 
-    .line 467
+    .line 466
     invoke-static {p1}, Lcom/transsion/camera/utils/LocationUtil;->location2Str(Landroid/location/Location;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 468
+    .line 467
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -641,7 +609,7 @@
 
     invoke-virtual {p0, v3, v0, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 469
+    .line 468
     sget-object p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -673,21 +641,21 @@
 .method private sendCityShow()V
     .registers 3
 
-    .line 496
+    .line 495
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x67
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 497
+    .line 496
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x65
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 498
+    .line 497
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mHandler:Landroid/os/Handler;
 
     const/16 v0, 0x66
@@ -700,21 +668,21 @@
 .method private sendLocationShowDelay(I)V
     .registers 6
 
-    .line 490
+    .line 489
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x67
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 491
+    .line 490
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x65
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 492
+    .line 491
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mHandler:Landroid/os/Handler;
 
     int-to-long v2, p1
@@ -727,7 +695,7 @@
 .method private sendNotShowCityInfo()V
     .registers 2
 
-    .line 509
+    .line 508
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mHandler:Landroid/os/Handler;
 
     const/16 v0, 0x68
@@ -740,21 +708,21 @@
 .method private sendNotShowLocationInfo()V
     .registers 3
 
-    .line 503
+    .line 502
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x65
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 504
+    .line 503
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x67
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 505
+    .line 504
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
@@ -888,7 +856,7 @@
 .method private shouldShowLocationText()Z
     .registers 4
 
-    .line 311
+    .line 310
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -925,7 +893,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 312
+    .line 311
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mLocationPermission:Lcom/transsion/camera/app/common/permission/PermissionManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/permission/PermissionManager;->checkCameraLocationPermissions()Z
@@ -989,7 +957,7 @@
 .method private shouldShowTimeAndBrandText()Z
     .registers 4
 
-    .line 338
+    .line 337
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1010,7 +978,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 339
+    .line 338
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mTimeButtonCheck:Z
 
     return p0
@@ -1051,7 +1019,7 @@
 .method private showOrHideLocationPreviewText()V
     .registers 4
 
-    .line 343
+    .line 342
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1080,7 +1048,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 345
+    .line 344
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mCityInfoStr:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1089,14 +1057,14 @@
 
     if-nez v0, :cond_30
 
-    .line 346
+    .line 345
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mCityInfoStr:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->showOrHideLocationPreviewText(Ljava/lang/String;)V
 
     return-void
 
-    .line 347
+    .line 346
     :cond_30
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mLocationInfoStr:Ljava/lang/String;
 
@@ -1106,7 +1074,7 @@
 
     if-nez v0, :cond_3d
 
-    .line 348
+    .line 347
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mLocationInfoStr:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->showOrHideLocationPreviewText(Ljava/lang/String;)V
@@ -1118,12 +1086,12 @@
 .method private showOrHideLocationPreviewText(Ljava/lang/String;)V
     .registers 3
 
-    .line 353
+    .line 352
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mProWMPreview:Lcom/transsion/camera/app/ui/widget/ProWMPreview;
 
     if-eqz v0, :cond_b
 
-    .line 354
+    .line 353
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->shouldShowLocationText()Z
 
     move-result p0
@@ -1137,12 +1105,12 @@
 .method private showOrHideTimePreviewText()V
     .registers 2
 
-    .line 332
+    .line 331
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mProWMPreview:Lcom/transsion/camera/app/ui/widget/ProWMPreview;
 
     if-eqz v0, :cond_b
 
-    .line 333
+    .line 332
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->shouldShowTimeAndBrandText()Z
 
     move-result p0
@@ -1218,10 +1186,10 @@
 .method private updatePreviewTexts()V
     .registers 1
 
-    .line 318
+    .line 317
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->showOrHideTimePreviewText()V
 
-    .line 319
+    .line 318
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->showOrHideLocationPreviewText()V
 
     return-void
@@ -1230,14 +1198,14 @@
 .method private updateSwitches()V
     .registers 3
 
-    .line 359
+    .line 358
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mOptionTimeCheckBox:Lcom/transsion/widgetslib/view/OSCheckBox;
 
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mTimeButtonCheck:Z
 
     invoke-virtual {v0, v1}, Lcom/transsion/widgetslib/view/OSCheckBox;->setChecked(Z)V
 
-    .line 360
+    .line 359
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mOptionLocationCheckBox:Lcom/transsion/widgetslib/view/OSCheckBox;
 
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mLocationButtonCheck:Z
@@ -1371,7 +1339,7 @@
 .method private whileGetCityInfoFromLocation(Landroid/location/Location;)V
     .registers 6
 
-    .line 475
+    .line 474
     :try_start_0
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mContext:Landroid/content/Context;
 
@@ -1383,7 +1351,7 @@
 
     move-result-object p1
 
-    .line 476
+    .line 475
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1406,7 +1374,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 477
+    .line 476
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -1421,7 +1389,7 @@
 
     if-nez v0, :cond_44
 
-    .line 478
+    .line 477
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v1, "key_plain_location_text"
@@ -1434,15 +1402,15 @@
 
     invoke-virtual {v0, v1, p1, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 479
+    .line 478
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mCityInfoStr:Ljava/lang/String;
 
-    .line 480
+    .line 479
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->sendCityShow()V
 
     return-void
 
-    .line 482
+    .line 481
     :cond_44
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->sendNotShowCityInfo()V
     :try_end_47
@@ -1453,7 +1421,7 @@
     :catch_48
     move-exception p0
 
-    .line 485
+    .line 484
     sget-object p1, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1478,7 +1446,7 @@
 .method private whileGettingLocation()V
     .registers 6
 
-    .line 411
+    .line 410
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mLocationButtonCheck:Z
 
     if-eqz v0, :cond_4c
@@ -1487,17 +1455,17 @@
 
     if-nez v0, :cond_4c
 
-    .line 412
+    .line 411
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mOptionLocationCheckBox:Lcom/transsion/widgetslib/view/OSCheckBox;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/widgetslib/view/OSCheckBox;->setChecked(Z)V
 
-    .line 413
+    .line 412
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mLocationButtonCheck:Z
 
-    .line 414
+    .line 413
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -1510,23 +1478,23 @@
 
     invoke-virtual {v0, v3, v4, v2, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 415
+    .line 414
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_28
 
-    .line 416
+    .line 415
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     move-result-object v0
 
     invoke-virtual {v0, v3, v4}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 418
+    .line 417
     :cond_28
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->showOrHideLocationPreviewText()V
 
-    .line 419
+    .line 418
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mToastInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->getContext()Landroid/content/Context;
@@ -1545,17 +1513,17 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 420
+    .line 419
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_47
 
-    .line 421
+    .line 420
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mToastInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUI;->showToast(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 423
+    .line 422
     :cond_47
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mLocationReceiverHelper:Lcom/transsion/camera/app/common/location/LocationReceiveHelper;
 
@@ -1579,7 +1547,7 @@
 .method getProWatermarkValue()Ljava/lang/String;
     .registers 1
 
-    .line 436
+    .line 435
     const-string p0, "2"
 
     return-object p0
@@ -2191,7 +2159,7 @@
 .method public onSelected()V
     .registers 3
 
-    .line 429
+    .line 428
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onSelected: "
@@ -2200,10 +2168,10 @@
 
     const/4 v0, 0x1
 
-    .line 430
+    .line 429
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mIsSelected:Z
 
-    .line 431
+    .line 430
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->recordLocation()V
 
     return-void
@@ -2212,15 +2180,15 @@
 .method public onUnSelected()V
     .registers 2
 
-    .line 405
+    .line 404
     invoke-super {p0}, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->onUnSelected()V
 
     const/4 v0, 0x0
 
-    .line 406
+    .line 405
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mIsSelected:Z
 
-    .line 407
+    .line 406
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->whileGettingLocation()V
 
     return-void
@@ -2229,15 +2197,15 @@
 .method public setSettingProvide(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;)V
     .registers 2
 
-    .line 325
+    .line 324
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->setSettingProvide(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;)V
 
-    .line 326
+    .line 325
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mProWMPreviewInfo:Lcom/transsion/camera/app/ui/widget/ProWMPreviewInfo;
 
     if-eqz p0, :cond_a
 
-    .line 327
+    .line 326
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/widget/ProWMPreviewInfo;->setSettingProvide(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;)V
 
     :cond_a
@@ -2418,7 +2386,7 @@
 .method updateCoverViewState(Z)V
     .registers 4
 
-    .line 441
+    .line 440
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mProWatermarkItemCoverView:Landroid/view/View;
 
     if-nez v0, :cond_5
@@ -2435,11 +2403,11 @@
     :cond_a
     const/4 v1, 0x0
 
-    .line 444
+    .line 443
     :goto_b
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 445
+    .line 444
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mProWatermarkItemCoverView:Landroid/view/View;
 
     xor-int/lit8 p1, p1, 0x1
@@ -2475,7 +2443,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 450
+    .line 449
     const-string v0, "on"
 
     goto :goto_7
@@ -2483,7 +2451,7 @@
     :cond_5
     const-string v0, "off"
 
-    .line 451
+    .line 450
     :goto_7
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -2497,19 +2465,19 @@
 
     invoke-virtual {v1, v4, v0, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 452
+    .line 451
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v1, :cond_1e
 
-    .line 453
+    .line 452
     invoke-virtual {v1, v4}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     move-result-object v1
 
     invoke-virtual {v1, v4, v0}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 455
+    .line 454
     :cond_1e
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->mIsSelected:Z
 
@@ -2520,10 +2488,10 @@
     :cond_23
     if-nez p1, :cond_28
 
-    .line 459
+    .line 458
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->whileGettingLocation()V
 
-    .line 461
+    .line 460
     :cond_28
     sget-object p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 

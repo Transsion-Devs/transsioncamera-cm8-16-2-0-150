@@ -27,10 +27,10 @@
 .method constructor <init>()V
     .registers 3
 
-    .line 67
+    .line 68
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 69
+    .line 70
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Feature;->STYLE_SYNC:Lcom/aiartmuseum/jni/IAIArtMuseum$Feature;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I

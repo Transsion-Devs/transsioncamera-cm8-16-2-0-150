@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__CollectKt$launchIn$1"
     f = "Collect.kt"
     l = {
-        0x32
+        0x2e
     }
     m = "invokeSuspend"
 .end annotation
@@ -147,7 +147,7 @@
 
     move-result-object v0
 
-    .line 49
+    .line 45
     iget v1, p0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$launchIn$1;->label:I
 
     const/4 v2, 0x1
@@ -172,7 +172,7 @@
     :cond_17
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 50
+    .line 46
     iget-object p1, p0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$launchIn$1;->$this_launchIn:Lkotlinx/coroutines/flow/Flow;
 
     iput v2, p0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$launchIn$1;->label:I
@@ -185,7 +185,7 @@
 
     return-object v0
 
-    .line 51
+    .line 47
     :cond_25
     :goto_25
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

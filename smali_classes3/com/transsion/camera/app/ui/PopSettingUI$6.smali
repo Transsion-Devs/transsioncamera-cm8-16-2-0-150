@@ -1,11 +1,14 @@
 .class Lcom/transsion/camera/app/ui/PopSettingUI$6;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/app/ui/PopSettingUI;->showPopOptionAnimation(Z)V
+    value = Lcom/transsion/camera/app/ui/PopSettingUI;->onPopupDismissEnd()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,41 +17,62 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
+
+
 # direct methods
 .method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI;)V
     .registers 2
 
-    .line 1066
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    .line 846
+    iput-object p1, p0, Lcom/transsion/camera/app/ui/PopSettingUI$6;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .registers 2
+.method public run()V
+    .registers 3
 
-    .line 1079
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
+    .line 849
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$6;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
 
-    return-void
-.end method
+    invoke-static {p0}, Lcom/transsion/camera/app/ui/PopSettingUI;->-$$Nest$fgetmViewMap(Lcom/transsion/camera/app/ui/PopSettingUI;)Ljava/util/Map;
 
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .registers 2
+    move-result-object p0
 
-    .line 1074
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+    invoke-interface {p0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    return-void
-.end method
+    move-result-object p0
 
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .registers 2
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    .line 1069
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
+    move-result-object p0
 
+    :goto_e
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1f
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    const/4 v1, 0x1
+
+    .line 850
+    invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
+
+    goto :goto_e
+
+    :cond_1f
     return-void
 .end method

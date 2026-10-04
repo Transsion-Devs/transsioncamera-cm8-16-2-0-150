@@ -435,16 +435,16 @@
     .registers 6
 
     .line 503
+    iget v0, p0, Lcom/transsion/camera/feature/mode/doc/DocumentMode;->mCount:I
+
+    div-int/lit8 v1, v0, 0x7
+
+    if-eqz v1, :cond_27
+
+    .line 504
     invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->getNV21Buffer(Landroid/media/Image;)[B
 
     move-result-object p1
-
-    .line 504
-    iget v0, p0, Lcom/transsion/camera/feature/mode/doc/DocumentMode;->mCount:I
-
-    div-int/lit8 v1, v0, 0x3
-
-    if-eqz v1, :cond_27
 
     const/4 v0, 0x0
 

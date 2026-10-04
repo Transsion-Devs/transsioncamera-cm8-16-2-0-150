@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Ljava/lang/Object;)V
     .registers 3
 
-    .line 2375
+    .line 2313
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$5;->val$waitDoneLock:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,18 +38,18 @@
 .method public run()V
     .registers 2
 
-    .line 2378
+    .line 2316
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$5;->val$waitDoneLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 2379
+    .line 2317
     :try_start_3
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$5;->val$waitDoneLock:Ljava/lang/Object;
 
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 2380
+    .line 2318
     monitor-exit v0
 
     return-void

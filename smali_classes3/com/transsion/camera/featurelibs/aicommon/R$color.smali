@@ -7,6 +7,6 @@
 
 .field public static ai_progress_background_color:I = 0x7f060032
 
-.field public static default_progress_view_progress_background_color:I = 0x7f060093
+.field public static default_progress_view_progress_background_color:I = 0x7f060094
 
-.field public static default_progress_view_progress_color:I = 0x7f060094
+.field public static default_progress_view_progress_color:I = 0x7f060095

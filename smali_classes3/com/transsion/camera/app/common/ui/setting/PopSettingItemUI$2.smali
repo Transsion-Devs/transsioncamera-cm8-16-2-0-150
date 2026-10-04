@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)V
     .registers 2
 
-    .line 492
+    .line 493
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$2;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 495
+    .line 496
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    .line 496
+    .line 497
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$2;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     const/4 p1, 0x0

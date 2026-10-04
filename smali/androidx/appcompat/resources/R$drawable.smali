@@ -3,4 +3,4 @@
 
 
 # static fields
-.field public static abc_vector_test:I = 0x7f0801c0
+.field public static abc_vector_test:I = 0x7f080192

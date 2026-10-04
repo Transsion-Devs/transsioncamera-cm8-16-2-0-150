@@ -54,7 +54,7 @@
 
     move-result-object v1
 
-    .line 45
+    .line 42
     iget v2, v0, Lkotlinx/coroutines/channels/ProduceKt$awaitClose$1;->label:I
 
     const/4 v3, 0x1
@@ -97,7 +97,7 @@
     :cond_3c
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 46
+    .line 43
     invoke-interface {v0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p2
@@ -110,7 +110,7 @@
 
     if-ne p2, p0, :cond_7f
 
-    .line 314
+    .line 310
     :try_start_4b
     iput-object p0, v0, Lkotlinx/coroutines/channels/ProduceKt$awaitClose$1;->L$0:Ljava/lang/Object;
 
@@ -118,7 +118,7 @@
 
     iput v3, v0, Lkotlinx/coroutines/channels/ProduceKt$awaitClose$1;->label:I
 
-    .line 315
+    .line 311
     new-instance p2, Lkotlinx/coroutines/CancellableContinuationImpl;
 
     invoke-static {v0}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -127,22 +127,22 @@
 
     invoke-direct {p2, v2, v3}, Lkotlinx/coroutines/CancellableContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;I)V
 
-    .line 321
+    .line 317
     invoke-virtual {p2}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
 
-    .line 49
+    .line 46
     new-instance v2, Lkotlinx/coroutines/channels/ProduceKt$awaitClose$4$1;
 
     invoke-direct {v2, p2}, Lkotlinx/coroutines/channels/ProduceKt$awaitClose$4$1;-><init>(Lkotlinx/coroutines/CancellableContinuation;)V
 
     invoke-interface {p0, v2}, Lkotlinx/coroutines/channels/SendChannel;->invokeOnClose(Lkotlin/jvm/functions/Function1;)V
 
-    .line 323
+    .line 319
     invoke-virtual {p2}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 314
+    .line 310
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p2
@@ -158,23 +158,23 @@
 
     return-object v1
 
-    .line 54
+    .line 51
     :cond_75
     :goto_75
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    .line 56
+    .line 53
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 54
+    .line 51
     :goto_7b
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     throw p0
 
-    .line 46
+    .line 43
     :cond_7f
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -192,7 +192,7 @@
 
     if-eqz p3, :cond_6
 
-    .line 45
+    .line 42
     sget-object p1, Lkotlinx/coroutines/channels/ProduceKt$awaitClose$2;->INSTANCE:Lkotlinx/coroutines/channels/ProduceKt$awaitClose$2;
 
     :cond_6
@@ -223,7 +223,7 @@
     .annotation build Lkotlinx/coroutines/ExperimentalCoroutinesApi;
     .end annotation
 
-    .line 95
+    .line 92
     sget-object v3, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
 
     sget-object v4, Lkotlinx/coroutines/CoroutineStart;->DEFAULT:Lkotlinx/coroutines/CoroutineStart;
@@ -267,7 +267,7 @@
     .annotation build Lkotlinx/coroutines/InternalCoroutinesApi;
     .end annotation
 
-    .line 117
+    .line 114
     sget-object v3, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
 
     move-object v0, p0
@@ -313,27 +313,27 @@
 
     const/4 v1, 0x4
 
-    .line 128
+    .line 125
     invoke-static {p2, p3, v0, v1, v0}, Lkotlinx/coroutines/channels/ChannelKt;->Channel$default(ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lkotlinx/coroutines/channels/Channel;
 
     move-result-object p2
 
-    .line 129
+    .line 126
     invoke-static {p0, p1}, Lkotlinx/coroutines/CoroutineContextKt;->newCoroutineContext(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
 
-    .line 130
+    .line 127
     new-instance p1, Lkotlinx/coroutines/channels/ProducerCoroutine;
 
     invoke-direct {p1, p0, p2}, Lkotlinx/coroutines/channels/ProducerCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/channels/Channel;)V
 
     if-eqz p5, :cond_14
 
-    .line 131
+    .line 128
     invoke-virtual {p1, p5}, Lkotlinx/coroutines/JobSupport;->invokeOnCompletion(Lkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/DisposableHandle;
 
-    .line 132
+    .line 129
     :cond_14
     invoke-virtual {p1, p4, p1, p6}, Lkotlinx/coroutines/AbstractCoroutine;->start(Lkotlinx/coroutines/CoroutineStart;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
@@ -347,7 +347,7 @@
 
     if-eqz p5, :cond_6
 
-    .line 91
+    .line 88
     sget-object p1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     :cond_6
@@ -357,7 +357,7 @@
 
     const/4 p2, 0x0
 
-    .line 90
+    .line 87
     :cond_b
     invoke-static {p0, p1, p2, p3}, Lkotlinx/coroutines/channels/ProduceKt;->produce(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/channels/ReceiveChannel;
 
@@ -373,7 +373,7 @@
 
     if-eqz p7, :cond_6
 
-    .line 111
+    .line 108
     sget-object p1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     :cond_6
@@ -388,7 +388,7 @@
 
     if-eqz p7, :cond_11
 
-    .line 113
+    .line 110
     sget-object p3, Lkotlinx/coroutines/CoroutineStart;->DEFAULT:Lkotlinx/coroutines/CoroutineStart;
 
     :cond_11
@@ -411,7 +411,7 @@
 
     move-object p3, p1
 
-    .line 110
+    .line 107
     invoke-static/range {p2 .. p7}, Lkotlinx/coroutines/channels/ProduceKt;->produce(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/channels/ReceiveChannel;
 
     move-result-object p0
@@ -426,7 +426,7 @@
 
     if-eqz p8, :cond_6
 
-    .line 121
+    .line 118
     sget-object p1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     :cond_6
@@ -441,7 +441,7 @@
 
     if-eqz p8, :cond_11
 
-    .line 123
+    .line 120
     sget-object p3, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
 
     :cond_11
@@ -449,7 +449,7 @@
 
     if-eqz p8, :cond_17
 
-    .line 124
+    .line 121
     sget-object p4, Lkotlinx/coroutines/CoroutineStart;->DEFAULT:Lkotlinx/coroutines/CoroutineStart;
 
     :cond_17
@@ -474,7 +474,7 @@
 
     move-object p2, p0
 
-    .line 120
+    .line 117
     invoke-static/range {p2 .. p8}, Lkotlinx/coroutines/channels/ProduceKt;->produce(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/channels/ReceiveChannel;
 
     move-result-object p0

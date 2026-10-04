@@ -7,7 +7,7 @@
 .method public static final isSchedulerWorker(Ljava/lang/Thread;)Z
     .registers 1
 
-    .line 1024
+    .line 1033
     instance-of p0, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$Worker;
 
     return p0
@@ -16,12 +16,12 @@
 .method public static final mayNotBlock(Ljava/lang/Thread;)Z
     .registers 2
 
-    .line 1031
+    .line 1040
     instance-of v0, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$Worker;
 
     if-eqz v0, :cond_e
 
-    .line 1032
+    .line 1041
     check-cast p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$Worker;
 
     iget-object p0, p0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$Worker;->state:Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;

@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static ic_auto_capture_help:I = 0x7f080413
+.field public static ic_auto_capture_help:I = 0x7f0803de
 
-.field public static ic_flash_snap_dark:I = 0x7f0804b0
+.field public static ic_flash_snap_dark:I = 0x7f08047b
 
-.field public static ic_flash_snap_light:I = 0x7f0804b1
+.field public static ic_flash_snap_light:I = 0x7f08047c
 
-.field public static video_thumbnail_dark:I = 0x7f080b69
+.field public static video_thumbnail_dark:I = 0x7f080ad7
 
 
 # direct methods

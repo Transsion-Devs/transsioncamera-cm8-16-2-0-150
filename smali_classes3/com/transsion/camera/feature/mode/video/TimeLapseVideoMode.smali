@@ -146,7 +146,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 94
+    .line 93
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "TimeLapseVideoMode"
@@ -161,42 +161,42 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
 
-    .line 109
+    .line 108
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 p1, 0x0
 
-    .line 99
+    .line 98
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     const/4 p2, 0x0
 
-    .line 104
+    .line 103
     iput-boolean p2, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->isCreateFileFail:Z
 
-    .line 105
+    .line 104
     iput p2, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimelapseEncodeRatio:I
 
     const/16 p2, 0x1e
 
-    .line 106
+    .line 105
     iput p2, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoFrameRate:I
 
-    .line 417
+    .line 419
     new-instance p2, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)V
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mPauseResumeListener:Landroid/view/View$OnClickListener;
 
-    .line 422
+    .line 424
     new-instance p2, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)V
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoSnapShotListener:Landroid/view/View$OnClickListener;
 
-    .line 110
+    .line 109
     new-instance p2, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$MainHandler;
 
     invoke-direct {p2, p0, p1}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$MainHandler;-><init>(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode-IA;)V
@@ -209,7 +209,7 @@
 .method static synthetic access$000(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     return-object p0
@@ -218,7 +218,7 @@
 .method static synthetic access$100(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     return-object p0
@@ -227,7 +227,7 @@
 .method static synthetic access$1000(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     return-object p0
@@ -236,7 +236,7 @@
 .method static synthetic access$1100(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;IILjava/lang/String;)V
     .registers 4
 
-    .line 92
+    .line 91
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToAppUI(IILjava/lang/String;)V
 
     return-void
@@ -245,7 +245,7 @@
 .method static synthetic access$1200(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Ljava/lang/String;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
     return-object p0
@@ -254,7 +254,7 @@
 .method static synthetic access$1300(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)I
     .registers 1
 
-    .line 92
+    .line 91
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoFrameWidth:I
 
     return p0
@@ -263,7 +263,7 @@
 .method static synthetic access$1400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)I
     .registers 1
 
-    .line 92
+    .line 91
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoFrameHeight:I
 
     return p0
@@ -272,7 +272,7 @@
 .method static synthetic access$1500(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)I
     .registers 1
 
-    .line 92
+    .line 91
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoFrameWidth:I
 
     return p0
@@ -281,7 +281,7 @@
 .method static synthetic access$1600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)I
     .registers 1
 
-    .line 92
+    .line 91
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoFrameHeight:I
 
     return p0
@@ -290,7 +290,7 @@
 .method static synthetic access$1700(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     return-object p0
@@ -299,7 +299,7 @@
 .method static synthetic access$1800(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     return-object p0
@@ -308,7 +308,7 @@
 .method static synthetic access$1900(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Landroid/content/Context;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     return-object p0
@@ -317,7 +317,7 @@
 .method static synthetic access$200(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
@@ -326,7 +326,7 @@
 .method static synthetic access$2000(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     return-object p0
@@ -335,7 +335,7 @@
 .method static synthetic access$2100(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     return-object p0
@@ -344,7 +344,7 @@
 .method static synthetic access$2200(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/CommonVideoHelper;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoHelper:Lcom/transsion/camera/app/common/mode/CommonVideoHelper;
 
     return-object p0
@@ -353,7 +353,7 @@
 .method static synthetic access$2300(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     return-object p0
@@ -362,7 +362,7 @@
 .method static synthetic access$2400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     return-object p0
@@ -371,7 +371,7 @@
 .method static synthetic access$2500(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)I
     .registers 1
 
-    .line 92
+    .line 91
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->getVideoOrientation()I
 
     move-result p0
@@ -382,7 +382,7 @@
 .method static synthetic access$2600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Z
     .registers 1
 
-    .line 92
+    .line 91
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPaused:Z
 
     return p0
@@ -391,7 +391,7 @@
 .method static synthetic access$2700(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Z
     .registers 1
 
-    .line 92
+    .line 91
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPaused:Z
 
     return p0
@@ -400,7 +400,7 @@
 .method static synthetic access$2800(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;IILjava/lang/String;)V
     .registers 4
 
-    .line 92
+    .line 91
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToAppUI(IILjava/lang/String;)V
 
     return-void
@@ -409,7 +409,7 @@
 .method static synthetic access$2900(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Z
     .registers 1
 
-    .line 92
+    .line 91
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPaused:Z
 
     return p0
@@ -418,7 +418,7 @@
 .method static synthetic access$300(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;Z)V
     .registers 2
 
-    .line 92
+    .line 91
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraMode;->lockAf(Z)V
 
     return-void
@@ -427,7 +427,7 @@
 .method static synthetic access$3000(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Z
     .registers 1
 
-    .line 92
+    .line 91
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPaused:Z
 
     return p0
@@ -436,7 +436,7 @@
 .method static synthetic access$3100(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;IILjava/lang/String;)V
     .registers 4
 
-    .line 92
+    .line 91
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToAppUI(IILjava/lang/String;)V
 
     return-void
@@ -445,7 +445,7 @@
 .method static synthetic access$3200(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Z
     .registers 1
 
-    .line 92
+    .line 91
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPaused:Z
 
     return p0
@@ -454,7 +454,7 @@
 .method static synthetic access$3300(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Z
     .registers 1
 
-    .line 92
+    .line 91
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPaused:Z
 
     return p0
@@ -463,7 +463,7 @@
 .method static synthetic access$3400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     return-object p0
@@ -472,7 +472,7 @@
 .method static synthetic access$3500(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     return-object p0
@@ -481,7 +481,7 @@
 .method static synthetic access$3600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     return-object p0
@@ -490,7 +490,7 @@
 .method static synthetic access$3700(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Z
     .registers 1
 
-    .line 92
+    .line 91
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPaused:Z
 
     return p0
@@ -499,7 +499,7 @@
 .method static synthetic access$3800(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     return-object p0
@@ -508,7 +508,7 @@
 .method static synthetic access$3900(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     return-object p0
@@ -517,7 +517,7 @@
 .method static synthetic access$400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Ljava/lang/Object;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mQualityLock:Ljava/lang/Object;
 
     return-object p0
@@ -526,7 +526,7 @@
 .method static synthetic access$4000(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;IILjava/lang/String;)V
     .registers 4
 
-    .line 92
+    .line 91
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToAppUI(IILjava/lang/String;)V
 
     return-void
@@ -535,7 +535,7 @@
 .method static synthetic access$4100(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     return-object p0
@@ -544,7 +544,7 @@
 .method static synthetic access$4200(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mModeStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     return-object p0
@@ -553,134 +553,134 @@
 .method static synthetic access$4300(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mModeStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     return-object p0
 .end method
 
-.method static synthetic access$4400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/IAppUI;
+.method static synthetic access$4400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Landroid/media/MediaScannerConnection;
     .registers 1
 
-    .line 92
+    .line 91
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoScannerConnection:Landroid/media/MediaScannerConnection;
+
+    return-object p0
+.end method
+
+.method static synthetic access$4500(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Landroid/media/MediaScannerConnection;
+    .registers 1
+
+    .line 91
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoScannerConnection:Landroid/media/MediaScannerConnection;
+
+    return-object p0
+.end method
+
+.method static synthetic access$4600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/IAppUI;
+    .registers 1
+
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
 .end method
 
-.method static synthetic access$4500(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/IAppUI;
+.method static synthetic access$4700(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
 .end method
 
-.method static synthetic access$4600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Z
+.method static synthetic access$4800(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Z
     .registers 1
 
-    .line 92
+    .line 91
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPaused:Z
 
     return p0
 .end method
 
-.method static synthetic access$4700(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Landroid/content/Context;
+.method static synthetic access$4900(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Landroid/content/Context;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     return-object p0
 .end method
 
-.method static synthetic access$4800(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/IAppUI;
+.method static synthetic access$5000(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
-.end method
-
-.method static synthetic access$4900(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/IAppUI;
-    .registers 1
-
-    .line 92
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    return-object p0
-.end method
-
-.method static synthetic access$5000(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;I)V
-    .registers 2
-
-    .line 92
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyRawActionToUI(I)V
-
-    return-void
 .end method
 
 .method static synthetic access$502(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;I)I
     .registers 2
 
-    .line 92
+    .line 91
     iput p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoRecodingOrientation:I
 
     return p1
 .end method
 
-.method static synthetic access$5100(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
+.method static synthetic access$5100(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 92
+    .line 91
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+
+    return-object p0
+.end method
+
+.method static synthetic access$5200(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;I)V
+    .registers 2
+
+    .line 91
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyRawActionToUI(I)V
+
+    return-void
+.end method
+
+.method static synthetic access$5300(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
+    .registers 1
+
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     return-object p0
 .end method
 
-.method static synthetic access$5200(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
+.method static synthetic access$5400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     return-object p0
 .end method
 
-.method static synthetic access$5300(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
+.method static synthetic access$5500(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     return-object p0
 .end method
 
-.method static synthetic access$5400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;Z)V
+.method static synthetic access$5600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;Z)V
     .registers 2
 
-    .line 92
+    .line 91
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraMode;->lockAf(Z)V
-
-    return-void
-.end method
-
-.method static synthetic access$5500(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
-    .registers 1
-
-    .line 92
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    return-object p0
-.end method
-
-.method static synthetic access$5600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)V
-    .registers 1
-
-    .line 92
-    invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToIdle()V
 
     return-void
 .end method
@@ -688,26 +688,26 @@
 .method static synthetic access$5700(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     return-object p0
 .end method
 
-.method static synthetic access$5802(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;J)J
-    .registers 3
-
-    .line 92
-    iput-wide p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mDuration:J
-
-    return-wide p1
-.end method
-
-.method static synthetic access$5900(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
+.method static synthetic access$5800(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)V
     .registers 1
 
-    .line 92
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
+    .line 91
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToIdle()V
+
+    return-void
+.end method
+
+.method static synthetic access$5900(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
+    .registers 1
+
+    .line 91
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     return-object p0
 .end method
@@ -715,115 +715,142 @@
 .method static synthetic access$600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mModeStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     return-object p0
 .end method
 
-.method static synthetic access$6000(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
-    .registers 1
+.method static synthetic access$6002(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;J)J
+    .registers 3
 
-    .line 92
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
+    .line 91
+    iput-wide p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mDuration:J
 
-    return-object p0
+    return-wide p1
 .end method
 
 .method static synthetic access$6100(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     return-object p0
 .end method
 
-.method static synthetic access$6200(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+.method static synthetic access$6200(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
     .registers 1
 
-    .line 92
+    .line 91
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
+
+    return-object p0
+.end method
+
+.method static synthetic access$6300(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
+    .registers 1
+
+    .line 91
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
+
+    return-object p0
+.end method
+
+.method static synthetic access$6400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+    .registers 1
+
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     return-object p0
 .end method
 
-.method static synthetic access$6300(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)J
+.method static synthetic access$6500(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)J
     .registers 3
 
-    .line 92
+    .line 91
     iget-wide v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mDuration:J
 
     return-wide v0
 .end method
 
-.method static synthetic access$6400(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
+.method static synthetic access$6600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/utils/debug/Log$Tag;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     return-object p0
 .end method
 
-.method static synthetic access$6500(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
+.method static synthetic access$6702(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;Ljava/lang/String;)Ljava/lang/String;
+    .registers 2
+
+    .line 91
+    iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mCurrentFile:Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method static synthetic access$6800(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     return-object p0
 .end method
 
-.method static synthetic access$6600(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+.method static synthetic access$6900(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     return-object p0
-.end method
-
-.method static synthetic access$6700(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
-    .registers 1
-
-    .line 92
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
-
-    return-object p0
-.end method
-
-.method static synthetic access$6800(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Ljava/lang/String;
-    .registers 1
-
-    .line 92
-    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoQuality:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method static synthetic access$6900(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)J
-    .registers 3
-
-    .line 92
-    iget-wide v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mDuration:J
-
-    return-wide v0
 .end method
 
 .method static synthetic access$700(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Z
     .registers 1
 
-    .line 92
+    .line 91
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPaused:Z
 
     return p0
 .end method
 
+.method static synthetic access$7000(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+    .registers 1
+
+    .line 91
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+
+    return-object p0
+.end method
+
+.method static synthetic access$7100(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Ljava/lang/String;
+    .registers 1
+
+    .line 91
+    iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoQuality:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method static synthetic access$7200(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)J
+    .registers 3
+
+    .line 91
+    iget-wide v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mDuration:J
+
+    return-wide v0
+.end method
+
 .method static synthetic access$800(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)V
     .registers 1
 
-    .line 92
+    .line 91
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToIdle()V
 
     return-void
@@ -832,7 +859,7 @@
 .method static synthetic access$900(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
     .registers 1
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     return-object p0
@@ -841,22 +868,22 @@
 .method private createVideoUISpec()Lcom/transsion/camera/app/common/ui/VideoUISpec;
     .registers 4
 
-    .line 405
+    .line 407
     new-instance v0, Lcom/transsion/camera/app/common/ui/VideoUISpec;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/ui/VideoUISpec;-><init>()V
 
     const-wide/16 v1, 0x0
 
-    .line 408
+    .line 410
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/ui/VideoUISpec;->setRecordingTotalSize(J)V
 
     const/4 v1, 0x1
 
-    .line 410
+    .line 412
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/VideoUISpec;->setSupportedPause(Z)V
 
-    .line 411
+    .line 413
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->isVssSupported()Z
@@ -865,12 +892,12 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/VideoUISpec;->setSupportedVss(Z)V
 
-    .line 412
+    .line 414
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mPauseResumeListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/VideoUISpec;->setPauseResumeListener(Landroid/view/View$OnClickListener;)V
 
-    .line 413
+    .line 415
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoSnapShotListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/ui/VideoUISpec;->setVideoSnapShotListener(Landroid/view/View$OnClickListener;)V
@@ -881,7 +908,7 @@
 .method private getCurrentVideoSize()Landroid/util/Size;
     .registers 6
 
-    .line 527
+    .line 529
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_video_quality"
@@ -896,7 +923,7 @@
 
     if-eqz v0, :cond_47
 
-    .line 528
+    .line 530
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v3
@@ -905,7 +932,7 @@
 
     goto :goto_47
 
-    .line 532
+    .line 534
     :cond_15
     :try_start_15
     const-string v3, "_"
@@ -914,42 +941,42 @@
 
     move-result v0
 
-    .line 533
+    .line 535
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 534
+    .line 536
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 536
+    .line 538
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->isSupportCustomVideoQuality(I)Z
 
     move-result v4
 
     if-eqz v4, :cond_33
 
-    .line 537
+    .line 539
     invoke-virtual {p0, v3}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->getCamcorderProfile(I)Landroid/media/CamcorderProfile;
 
     move-result-object p0
 
-    .line 538
+    .line 540
     invoke-static {p0}, Lcom/transsion/camera/utils/VideoQualityUtils;->setProfileConfigure(Landroid/media/CamcorderProfile;)V
 
     goto :goto_37
 
-    .line 540
+    .line 542
     :cond_33
     invoke-static {v3, v0}, Landroid/media/CamcorderProfile;->get(II)Landroid/media/CamcorderProfile;
 
     move-result-object p0
 
-    .line 543
+    .line 545
     :goto_37
     new-instance v0, Landroid/util/Size;
 
@@ -963,7 +990,7 @@
 
     return-object v0
 
-    .line 545
+    .line 547
     :catch_41
     new-instance p0, Landroid/util/Size;
 
@@ -971,7 +998,7 @@
 
     return-object p0
 
-    .line 529
+    .line 531
     :cond_47
     :goto_47
     new-instance p0, Landroid/util/Size;
@@ -984,7 +1011,7 @@
 .method private getEncodeVideoFrameRate()I
     .registers 1
 
-    .line 605
+    .line 607
     iget p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoFrameRate:I
 
     return p0
@@ -993,7 +1020,7 @@
 .method private getTimeLapseRate()D
     .registers 5
 
-    .line 609
+    .line 611
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_time_lapse"
@@ -1002,21 +1029,21 @@
 
     move-result-object v0
 
-    .line 610
+    .line 612
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     if-eqz v1, :cond_15
 
     if-eqz v0, :cond_15
 
-    .line 611
+    .line 613
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->setTimeLapseRate(I)V
 
-    .line 613
+    .line 615
     :cond_15
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1038,7 +1065,7 @@
 
     if-eqz v0, :cond_3f
 
-    .line 614
+    .line 616
     const-string v1, "0"
 
     invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1049,13 +1076,13 @@
 
     goto :goto_3f
 
-    .line 617
+    .line 619
     :cond_36
     invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
     move-result-wide v0
 
-    .line 618
+    .line 620
     iget p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoFrameRate:I
 
     int-to-double v2, p0
@@ -1074,19 +1101,19 @@
 .method private initTimeLapseRecorder()V
     .registers 2
 
-    .line 520
+    .line 522
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     if-nez v0, :cond_b
 
-    .line 521
+    .line 523
     new-instance v0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;-><init>(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
-    .line 523
+    .line 525
     :cond_b
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
@@ -1098,14 +1125,14 @@
 .method private initVideoModeUI(Landroid/view/LayoutInflater;Lcom/transsion/camera/app/common/ui/VideoUISpec;)V
     .registers 10
 
-    .line 357
+    .line 359
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getAboveMainCtrlInflateRoot()Landroid/view/ViewGroup;
 
     move-result-object v3
 
-    .line 364
+    .line 366
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1126,7 +1153,7 @@
 
     if-eq v0, v1, :cond_25
 
-    .line 375
+    .line 377
     new-instance v1, Lcom/transsion/camera/app/ui/mode/timelapsevideo/tecno/TimeLapseVideoUI;
 
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1148,7 +1175,7 @@
 
     move-object v2, p1
 
-    .line 371
+    .line 373
     new-instance v1, Lcom/transsion/camera/app/ui/mode/timelapsevideo/itel/TimeLapseVideoUI;
 
     iget-object v4, v6, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1166,7 +1193,7 @@
 
     move-object v2, p1
 
-    .line 367
+    .line 369
     new-instance v1, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;
 
     iget-object v4, v6, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1177,20 +1204,20 @@
 
     iput-object v1, v6, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
-    .line 380
+    .line 382
     :goto_3e
     iget-object p0, v6, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->initVideoUI(Lcom/transsion/camera/app/common/ui/VideoUISpec;)V
 
-    .line 381
+    .line 383
     iget-object p0, v6, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     iget-object p1, v6, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 382
+    .line 384
     iget-object p0, v6, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     iget p1, v6, Lcom/transsion/camera/app/common/mode/CameraMode;->mScreenFormType:I
@@ -1201,24 +1228,24 @@
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->setScreenFormType(II)V
 
-    .line 383
+    .line 385
     iget-object p0, v6, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     const/4 p1, 0x0
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->updateLayout(Z)V
 
-    .line 384
+    .line 386
     iget-object p0, v6, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->updateLowLight(Z)V
 
-    .line 385
+    .line 387
     iget-object p0, v6, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     if-eqz p0, :cond_75
 
-    .line 386
+    .line 388
     const-string p1, "key_time_lapse"
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryValue(Ljava/lang/String;)Ljava/lang/String;
@@ -1227,7 +1254,7 @@
 
     if-eqz p0, :cond_75
 
-    .line 388
+    .line 390
     iget-object p1, v6, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1251,7 +1278,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .registers 2
 
-    .line 418
+    .line 420
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->pauseResumeRecord()V
 
     return-void
@@ -1260,7 +1287,7 @@
 .method private synthetic lambda$new$1(Landroid/view/View;)V
     .registers 2
 
-    .line 423
+    .line 425
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->takeSnapShot()V
 
     return-void
@@ -1269,19 +1296,19 @@
 .method private pauseResumeRecord()V
     .registers 2
 
-    .line 454
+    .line 456
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     if-eqz v0, :cond_f
 
-    .line 455
+    .line 457
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$fgetmRecordingFlag(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 456
+    .line 458
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$mpauseResumeRecording(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)V
@@ -1293,19 +1320,19 @@
 .method private takeSnapShot()V
     .registers 3
 
-    .line 447
+    .line 449
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "videoSnapShot"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 448
+    .line 450
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     if-eqz v0, :cond_15
 
-    .line 449
+    .line 451
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mSnapShotCallback:Lcom/transsion/camera/app/common/recorder/IVideoContract$ISnapShotCallback;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$fgetmRecordingFlag(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)Z
@@ -1331,7 +1358,7 @@
         }
     .end annotation
 
-    .line 658
+    .line 660
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_video_quality"
@@ -1340,14 +1367,14 @@
 
     move-result-object p0
 
-    .line 659
+    .line 661
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     if-eqz p1, :cond_8a
 
-    .line 661
+    .line 663
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
@@ -1361,7 +1388,7 @@
 
     if-ge v4, v5, :cond_36
 
-    .line 663
+    .line 665
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1388,7 +1415,7 @@
 
     goto :goto_15
 
-    .line 665
+    .line 667
     :cond_36
     invoke-interface {p1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1398,7 +1425,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 666
+    .line 668
     sget-object v2, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1417,14 +1444,14 @@
 
     invoke-static {v2, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 667
+    .line 669
     invoke-interface {p1, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_64
 
-    .line 668
+    .line 670
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -1433,7 +1460,7 @@
 
     return-void
 
-    .line 670
+    .line 672
     :cond_64
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -1443,7 +1470,7 @@
 
     const/4 p0, 0x6
 
-    .line 671
+    .line 673
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -1456,7 +1483,7 @@
 
     if-eq p0, v2, :cond_7d
 
-    .line 674
+    .line 676
     invoke-interface {p1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -1465,7 +1492,7 @@
 
     goto :goto_83
 
-    .line 676
+    .line 678
     :cond_7d
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1473,7 +1500,7 @@
 
     check-cast p0, Ljava/lang/String;
 
-    .line 678
+    .line 680
     :goto_83
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1490,7 +1517,7 @@
 .method protected getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
     .registers 3
 
-    .line 1276
+    .line 1281
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object p0
@@ -1503,7 +1530,7 @@
 
     move-result-object v0
 
-    .line 1277
+    .line 1282
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/ZoomConfig;->setSupportedZoomTypes([I)Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object p0
@@ -1514,12 +1541,12 @@
 .method public getCurrentDuration()J
     .registers 3
 
-    .line 350
+    .line 352
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     if-eqz p0, :cond_9
 
-    .line 351
+    .line 353
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$mgetCurrentDuration(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)J
 
     move-result-wide v0
@@ -1535,7 +1562,7 @@
 .method public getDataFlowType()I
     .registers 2
 
-    .line 651
+    .line 653
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/taintdetection/TaintAlgorithm;->getInstance()Lcom/transsion/camera/app/common/algorithm/taintdetection/TaintAlgorithm;
 
     move-result-object p0
@@ -1555,7 +1582,7 @@
     :cond_d
     move p0, v0
 
-    .line 654
+    .line 656
     :goto_e
     invoke-static {v0, p0}, Lcom/transsion/camera/adapter/DataFlowSpec;->makeDataFlowSpec(II)I
 
@@ -1567,22 +1594,22 @@
 .method public getModeFeatures(Landroid/content/Context;)[Ljava/lang/String;
     .registers 2
 
-    .line 238
+    .line 240
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 239
+    .line 241
     const-string p1, "key_fingerprint_capture"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 240
+    .line 242
     const-string p1, "key_taint_detection"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 242
+    .line 244
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -1601,7 +1628,7 @@
 .method public getModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
     .registers 6
 
-    .line 627
+    .line 629
     invoke-static {}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoRestriction;->getRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
 
     move-result-object v0
@@ -1614,27 +1641,27 @@
 
     move-result-object v0
 
-    .line 628
+    .line 630
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isVersionTenOrHigher()Z
 
     move-result v1
 
     if-eqz v1, :cond_18
 
-    .line 629
+    .line 631
     const-string v1, "key_volume_key"
 
     const-string v2, "Shutter"
 
     invoke-virtual {v0, v1, v2, v2}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 632
+    .line 634
     :cond_18
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 633
+    .line 635
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v2
@@ -1645,12 +1672,12 @@
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
-    .line 634
+    .line 636
     invoke-interface {v2, v3}, Lcom/transsion/camera/adapter/ICameraDeviceInfo;->getSupportedVideoSizes(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v2
 
-    .line 635
+    .line 637
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurrentCameraId:Ljava/lang/String;
 
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1661,34 +1688,34 @@
 
     invoke-static {v3, v1, v2, v4}, Lcom/transsion/camera/utils/CameraUtil;->generateSupportedList(ILjava/util/ArrayList;Ljava/util/List;[I)V
 
-    .line 637
+    .line 639
     const-string v2, "8_60"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 638
+    .line 640
     const-string v2, "6_60"
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 639
+    .line 641
     invoke-direct {p0, v1, v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->updateVideoQualityRelation(Ljava/util/List;Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 640
+    .line 642
     invoke-static {}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoRestriction;->getCamModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/common/mode/CameraMode;->mergeRelation(Lcom/transsion/camera/app/common/relation/Relation;Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 641
+    .line 643
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->isCameraFacingBack()Z
 
     move-result p0
 
     if-nez p0, :cond_57
 
-    .line 642
+    .line 644
     invoke-static {}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoRestriction;->getFrontFlashModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object p0
@@ -1702,7 +1729,7 @@
 .method public getSettingGroup()J
     .registers 5
 
-    .line 233
+    .line 235
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->getSettingGroup()J
 
     move-result-wide v0
@@ -1725,10 +1752,10 @@
 .method public init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Ljava/lang/String;Lcom/transsion/camera/app/common/IApp$IIntentAction;I)V
     .registers 8
 
-    .line 148
+    .line 147
     invoke-super/range {p0 .. p7}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Ljava/lang/String;Lcom/transsion/camera/app/common/IApp$IIntentAction;I)V
 
-    .line 149
+    .line 148
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
@@ -1741,7 +1768,7 @@
 
     iput p2, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimelapseEncodeRatio:I
 
-    .line 150
+    .line 149
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -1754,14 +1781,14 @@
 
     iput p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoFrameRate:I
 
-    .line 151
+    .line 150
     new-instance p1, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;-><init>(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;)V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
-    .line 152
+    .line 151
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -1774,20 +1801,20 @@
 
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->initVideoModeUI(Landroid/view/LayoutInflater;Lcom/transsion/camera/app/common/ui/VideoUISpec;)V
 
-    .line 153
+    .line 152
     const-string p1, "key_time_lapse"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraMode;->registerKeyToMonitor(Ljava/lang/String;)V
 
-    .line 154
+    .line 153
     const-string p1, "key_time_lapse_duration"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraMode;->registerKeyToMonitor(Ljava/lang/String;)V
 
-    .line 155
+    .line 154
     invoke-interface {p3, p0}, Lcom/transsion/camera/app/common/IAppUI;->setModeNotifyCameraOperateActionCallBack(Lcom/transsion/camera/app/common/mode/IModeNotifyCameraOperateActionCallback;)V
 
-    .line 156
+    .line 155
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
@@ -1898,7 +1925,7 @@
 
     goto :goto_9e
 
-    .line 1249
+    .line 1254
     :pswitch_37
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
@@ -1906,7 +1933,7 @@
 
     return-void
 
-    .line 1245
+    .line 1250
     :pswitch_3d
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
@@ -1914,39 +1941,39 @@
 
     return-void
 
-    .line 1228
+    .line 1233
     :pswitch_43
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->onTimeLapseWheelHide()V
 
-    .line 1229
+    .line 1234
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p0, :cond_9e
 
-    .line 1230
+    .line 1235
     invoke-interface {p0, v0, v0}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerRootUI(ZZ)V
 
     return-void
 
-    .line 1221
+    .line 1226
     :pswitch_50
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->onTimeLapseWheelShow()V
 
-    .line 1222
+    .line 1227
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p0, :cond_9e
 
-    .line 1223
+    .line 1228
     invoke-interface {p0, v3, v0}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerRootUI(ZZ)V
 
     return-void
 
-    .line 1254
+    .line 1259
     :cond_5d
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -1960,12 +1987,12 @@
 
     if-eqz p0, :cond_9e
 
-    .line 1255
+    .line 1260
     invoke-virtual {p0, v0, v2}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
 
     return-void
 
-    .line 1234
+    .line 1239
     :cond_6d
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
@@ -1973,7 +2000,7 @@
 
     return-void
 
-    .line 1262
+    .line 1267
     :cond_73
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -1987,12 +2014,12 @@
 
     if-eqz p0, :cond_9e
 
-    .line 1263
+    .line 1268
     invoke-virtual {p0, v3, v2}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
 
     return-void
 
-    .line 1267
+    .line 1272
     :cond_83
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -2006,12 +2033,12 @@
 
     if-eqz p0, :cond_9e
 
-    .line 1268
+    .line 1273
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->resetRecordingUI()V
 
     return-void
 
-    .line 1239
+    .line 1244
     :cond_93
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isVersionTenOrHigher()Z
 
@@ -2021,7 +2048,7 @@
 
     const/16 p1, 0x7b
 
-    .line 1240
+    .line 1245
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyRawActionToUI(I)V
 
     :cond_9e
@@ -2049,15 +2076,15 @@
 .method protected notifyToVideoUI(Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;)V
     .registers 4
 
-    .line 301
+    .line 303
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToVideoUI(Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;)V
 
-    .line 302
+    .line 304
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     if-nez v0, :cond_1e
 
-    .line 303
+    .line 305
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2078,13 +2105,13 @@
 
     return-void
 
-    .line 306
+    .line 308
     :cond_1e
     sget-object v1, Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;->STATE_PRE_RECORDING:Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;
 
     if-ne v1, p1, :cond_2f
 
-    .line 307
+    .line 309
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->createVideoUISpec()Lcom/transsion/camera/app/common/ui/VideoUISpec;
 
     move-result-object v1
@@ -2093,12 +2120,12 @@
 
     const/16 v0, 0x52
 
-    .line 308
+    .line 310
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyRawActionToUI(I)V
 
     goto :goto_3c
 
-    .line 309
+    .line 311
     :cond_2f
     sget-object v0, Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;->STATE_SAVING:Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;
 
@@ -2111,10 +2138,10 @@
     :cond_37
     const/16 v0, 0x53
 
-    .line 310
+    .line 312
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyRawActionToUI(I)V
 
-    .line 312
+    .line 314
     :cond_3c
     :goto_3c
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
@@ -2127,28 +2154,28 @@
 .method public onBackPressed()Z
     .registers 4
 
-    .line 478
+    .line 480
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mMainHandler:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$MainHandler;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 479
+    .line 481
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     const/4 v2, 0x0
 
     if-eqz v0, :cond_15
 
-    .line 480
+    .line 482
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$fgetmRecordingFlag(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)Z
 
     move-result v0
 
     if-eqz v0, :cond_15
 
-    .line 481
+    .line 483
     invoke-virtual {p0, v2, v2}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->onShutterClick(II)Z
 
     return v1
@@ -2169,7 +2196,7 @@
 .method protected onCreateVideoHelper()Lcom/transsion/camera/app/common/mode/CommonVideoHelper;
     .registers 1
 
-    .line 141
+    .line 140
     new-instance p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoHelper;
 
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoHelper;-><init>()V
@@ -2180,12 +2207,12 @@
 .method public onFrameBufferTimeOut()V
     .registers 1
 
-    .line 695
+    .line 697
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     if-eqz p0, :cond_7
 
-    .line 696
+    .line 698
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$mstopTimeLapseVideoRecording(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)V
 
     :cond_7
@@ -2195,15 +2222,15 @@
 .method public onMediaCodecException()V
     .registers 2
 
-    .line 686
+    .line 688
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     if-eqz p0, :cond_7
 
-    .line 687
+    .line 689
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$monMediaCodecError(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)V
 
-    .line 689
+    .line 691
     :cond_7
     invoke-static {}, Lcom/transsion/camera/utils/dfx/mgr/ExManager;->get()Lcom/transsion/camera/utils/dfx/inter/IExDetection;
 
@@ -2219,10 +2246,10 @@
 .method public onMediaRecorderStarted()V
     .registers 3
 
-    .line 490
+    .line 492
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onMediaRecorderStarted()V
 
-    .line 491
+    .line 493
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoHelper:Lcom/transsion/camera/app/common/mode/CommonVideoHelper;
 
     const/4 v1, 0x1
@@ -2237,7 +2264,7 @@
 .method public onMediaRecorderStopped(IZ)V
     .registers 5
 
-    .line 503
+    .line 505
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     sget-object v1, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->AF_LOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
@@ -2246,14 +2273,14 @@
 
     const/4 v0, 0x0
 
-    .line 504
+    .line 506
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CameraMode;->lockAf(Z)V
 
-    .line 506
+    .line 508
     :cond_a
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onMediaRecorderStopped(IZ)V
 
-    .line 507
+    .line 509
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->stopProgressView()V
@@ -2264,12 +2291,12 @@
 .method public onMediaRecorderStopping(IZ)V
     .registers 3
 
-    .line 395
+    .line 397
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onMediaRecorderStopping(IZ)V
 
     const/16 p1, 0xc9
 
-    .line 396
+    .line 398
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyRawActionToUI(I)V
 
     return-void
@@ -2287,10 +2314,10 @@
 .method public onOrientationChanged(I)V
     .registers 2
 
-    .line 247
+    .line 249
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraMode;->onOrientationChanged(I)V
 
-    .line 248
+    .line 250
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->onOrientationChanged(I)V
@@ -2303,7 +2330,7 @@
 
     const/4 v0, 0x0
 
-    .line 345
+    .line 347
     invoke-virtual {p0, v0, v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->onShutterClick(II)Z
 
     return-void
@@ -2312,10 +2339,10 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 253
+    .line 255
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CameraMode;->onScreenFormChanged(IZ)V
 
-    .line 254
+    .line 256
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->onScreenFormChanged(IZ)V
@@ -2326,10 +2353,10 @@
 .method protected onSettingChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
 
-    .line 279
+    .line 281
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onSettingChanged(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 280
+    .line 282
     const-string v0, "key_time_lapse"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -2342,14 +2369,14 @@
 
     if-eqz v0, :cond_16
 
-    .line 281
+    .line 283
     invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->setTimeLapseRate(I)V
 
-    .line 283
+    .line 285
     :cond_16
     const-string v0, "key_time_lapse_duration"
 
@@ -2363,7 +2390,7 @@
 
     if-eqz p0, :cond_2e
 
-    .line 284
+    .line 286
     invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p1
@@ -2383,15 +2410,15 @@
 .method public onSettingReady()V
     .registers 3
 
-    .line 290
+    .line 292
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onSettingReady()V
 
-    .line 291
+    .line 293
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     if-eqz v0, :cond_23
 
-    .line 292
+    .line 294
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_time_lapse_duration"
@@ -2400,14 +2427,14 @@
 
     move-result-object v0
 
-    .line 293
+    .line 295
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_23
 
-    .line 294
+    .line 296
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -2429,7 +2456,7 @@
 .method public onShutterClick(II)Z
     .registers 5
 
-    .line 551
+    .line 553
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -2450,7 +2477,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 552
+    .line 554
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->checkPermitBeforeStart()Z
 
     move-result p1
@@ -2461,7 +2488,7 @@
 
     return p2
 
-    .line 556
+    .line 558
     :cond_20
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -2471,7 +2498,7 @@
 
     if-eqz p1, :cond_30
 
-    .line 557
+    .line 559
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "isModeTabScrolling return"
@@ -2483,7 +2510,7 @@
     :cond_30
     const-wide/16 v0, 0x3e8
 
-    .line 561
+    .line 563
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isFastDoubleClick(J)Z
 
     move-result p1
@@ -2498,16 +2525,16 @@
 
     goto :goto_68
 
-    .line 566
+    .line 568
     :cond_3e
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->initTimeLapseRecorder()V
 
-    .line 567
+    .line 569
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     if-eqz p1, :cond_68
 
-    .line 568
+    .line 570
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$fgetmRecordingFlag(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)Z
 
     move-result p1
@@ -2516,23 +2543,23 @@
 
     const/16 p1, 0xf
 
-    .line 569
+    .line 571
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyRawActionToUI(I)V
 
-    .line 570
+    .line 572
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$mstartTimeLapseVideoRecording(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)V
 
     goto :goto_68
 
-    .line 572
+    .line 574
     :cond_56
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$mstopTimeLapseVideoRecording(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)V
 
-    .line 573
+    .line 575
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$fgetmPreparingFlag(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)Z
@@ -2541,7 +2568,7 @@
 
     if-nez p1, :cond_68
 
-    .line 574
+    .line 576
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->stopProgressView()V
@@ -2554,10 +2581,10 @@
 .method public onShutterDown()V
     .registers 1
 
-    .line 1213
+    .line 1218
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onShutterDown()V
 
-    .line 1214
+    .line 1219
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->onShutterDown()V
@@ -2568,10 +2595,10 @@
 .method public onShutterUp(I)V
     .registers 2
 
-    .line 1207
+    .line 1212
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onShutterUp(I)V
 
-    .line 1208
+    .line 1213
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->onShutterUp()V
@@ -2582,7 +2609,7 @@
 .method protected onSnapShotStart()V
     .registers 2
 
-    .line 428
+    .line 430
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -2595,7 +2622,7 @@
 .method protected onVideoMediaRecorderInfoConstruct(Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;)V
     .registers 4
 
-    .line 443
+    .line 445
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -2612,18 +2639,18 @@
 .method public pause()V
     .registers 4
 
-    .line 326
+    .line 328
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->pause()V
 
-    .line 327
+    .line 329
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     if-eqz v0, :cond_a
 
-    .line 329
+    .line 331
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$mstopTimeLapseVideoRecording(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)V
 
-    .line 331
+    .line 333
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mMainHandler:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$MainHandler;
 
@@ -2631,20 +2658,20 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 332
+    .line 334
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     if-eqz v0, :cond_1c
 
-    .line 333
+    .line 335
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->hideInfo()V
 
-    .line 334
+    .line 336
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->stopProgressView()V
 
-    .line 336
+    .line 338
     :cond_1c
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isVersionTenOrHigher()Z
 
@@ -2652,18 +2679,18 @@
 
     if-eqz v0, :cond_28
 
-    .line 337
+    .line 339
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v2, 0x0
 
     invoke-interface {v0, v2, v2, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->sinkUI(ZIZ)V
 
-    .line 339
+    .line 341
     :cond_28
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 340
+    .line 342
     invoke-static {}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoRestriction;->getFaceDetectRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
 
     move-result-object v0
@@ -2674,7 +2701,7 @@
 
     move-result-object v0
 
-    .line 339
+    .line 341
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
     return-void
@@ -2683,12 +2710,12 @@
 .method protected prepareVideoData()I
     .registers 8
 
-    .line 168
+    .line 167
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->onCreateQuality()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 169
+    .line 168
     sget-object v1, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2707,12 +2734,12 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 170
+    .line 169
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mQualityLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 171
+    .line 170
     :try_start_1d
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
@@ -2724,17 +2751,17 @@
 
     if-eqz v3, :cond_48
 
-    .line 172
+    .line 171
     const-string v3, "prepareVideoData mRecordingFlag : true"
 
     invoke-static {v1, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 173
+    .line 172
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$mstopTimeLapseVideoRecording(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)V
 
-    .line 174
+    .line 173
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$fgetmRecordingFlag(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)Z
@@ -2745,7 +2772,7 @@
 
     if-eqz v1, :cond_48
 
-    .line 176
+    .line 175
     :try_start_39
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mQualityLock:Ljava/lang/Object;
 
@@ -2761,46 +2788,46 @@
     :catchall_41
     move-exception p0
 
-    goto/16 :goto_fa
+    goto/16 :goto_105
 
     :catch_44
     move-exception v1
 
-    .line 178
+    .line 177
     :try_start_45
     invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 182
+    .line 181
     :cond_48
     :goto_48
     iget-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPaused:Z
 
     if-nez v1, :cond_51
 
-    .line 183
+    .line 182
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->updateQuality(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_53
 
-    .line 185
+    .line 184
     :cond_51
     const-string v0, "-1"
 
     :goto_53
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_f8
+    if-eqz v0, :cond_103
 
-    .line 188
+    .line 187
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     if-nez v3, :cond_5c
 
-    goto/16 :goto_f8
+    goto/16 :goto_103
 
-    .line 193
+    .line 192
     :cond_5c
     const-string v3, "_"
 
@@ -2808,14 +2835,14 @@
 
     move-result v0
 
-    .line 195
+    .line 194
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 196
+    .line 195
     sget-object v4, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -2840,7 +2867,7 @@
 
     invoke-static {v4, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 197
+    .line 196
     iget-object v4, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
 
     invoke-virtual {v4, v3}, Lcom/transsion/camera/app/common/CameraRepository;->isBackSATCamera(Ljava/lang/String;)Z
@@ -2849,25 +2876,25 @@
 
     if-eqz v4, :cond_90
 
-    .line 198
+    .line 197
     const-string v3, "0"
 
-    .line 200
+    .line 199
     :cond_90
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->qualityValid(I)Z
 
     move-result v4
 
-    if-eqz v4, :cond_f6
+    if-eqz v4, :cond_101
 
-    .line 202
+    .line 201
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->isSupportCustomVideoQuality(I)Z
 
     move-result v4
 
     if-eqz v4, :cond_a8
 
-    .line 203
+    .line 202
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -2876,12 +2903,12 @@
 
     move-result-object v0
 
-    .line 204
+    .line 203
     invoke-static {v0}, Lcom/transsion/camera/utils/VideoQualityUtils;->setProfileConfigure(Landroid/media/CamcorderProfile;)V
 
     goto :goto_bc
 
-    .line 206
+    .line 205
     :cond_a8
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -2893,12 +2920,12 @@
 
     if-nez v4, :cond_b4
 
-    .line 207
+    .line 206
     monitor-exit v2
 
     return v1
 
-    .line 209
+    .line 208
     :cond_b4
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -2908,11 +2935,11 @@
 
     move-result-object v0
 
-    .line 211
+    .line 210
     :goto_bc
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->setVideoSize(Landroid/media/CamcorderProfile;)V
 
-    .line 212
+    .line 211
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v3, "key_video_quality"
@@ -2921,7 +2948,7 @@
 
     move-result-object v1
 
-    .line 214
+    .line 213
     const-string v3, "6_60"
 
     invoke-static {v1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -2938,7 +2965,7 @@
 
     if-eqz v1, :cond_e7
 
-    .line 215
+    .line 214
     :cond_d7
     iget v1, v0, Landroid/media/CamcorderProfile;->videoFrameRate:I
 
@@ -2946,7 +2973,7 @@
 
     if-ne v1, v3, :cond_e7
 
-    .line 216
+    .line 215
     iget v3, v0, Landroid/media/CamcorderProfile;->videoBitRate:I
 
     mul-int/lit8 v3, v3, 0x2
@@ -2955,49 +2982,61 @@
 
     mul-int/lit8 v1, v1, 0x2
 
-    .line 217
+    .line 216
     iput v1, v0, Landroid/media/CamcorderProfile;->videoFrameRate:I
 
-    .line 221
+    .line 220
     :cond_e7
+    new-instance v1, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;
+
+    invoke-direct {v1, v0}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;-><init>(Landroid/media/CamcorderProfile;)V
+
+    .line 221
+    invoke-virtual {v1}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;->build()Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoFileInfo:Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo;
+
+    .line 223
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
-    if-eqz v1, :cond_ee
-
-    .line 222
-    invoke-static {v1, v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$mprepareRecorder(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;Landroid/media/CamcorderProfile;)V
+    if-eqz v1, :cond_f9
 
     .line 224
-    :cond_ee
+    invoke-static {v1, v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$mprepareRecorder(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;Landroid/media/CamcorderProfile;)V
+
+    .line 226
+    :cond_f9
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->doPictureSizeUpdate(Lcom/transsion/camera/app/common/mode/ICameraMode;)V
 
-    .line 225
+    .line 227
     monitor-exit v2
 
     const/4 p0, 0x1
 
     return p0
 
-    .line 227
-    :cond_f6
+    .line 229
+    :cond_101
     monitor-exit v2
 
     return v1
 
-    .line 190
-    :cond_f8
-    :goto_f8
+    .line 189
+    :cond_103
+    :goto_103
     monitor-exit v2
 
     return v1
 
-    .line 227
-    :goto_fa
+    .line 229
+    :goto_105
     monitor-exit v2
-    :try_end_fb
-    .catchall {:try_start_45 .. :try_end_fb} :catchall_41
+    :try_end_106
+    .catchall {:try_start_45 .. :try_end_106} :catchall_41
 
     throw p0
 .end method
@@ -3016,18 +3055,18 @@
 .method public resume()V
     .registers 2
 
-    .line 317
+    .line 319
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->resume()V
 
-    .line 318
+    .line 320
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     if-eqz v0, :cond_f
 
-    .line 319
+    .line 321
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->hideInfo()V
 
-    .line 320
+    .line 322
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->resume()V
@@ -3039,7 +3078,7 @@
 .method protected sendNotification(Landroid/content/Context;)V
     .registers 2
 
-    .line 473
+    .line 475
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->sendNotification(Landroid/content/Context;)V
@@ -3050,12 +3089,12 @@
 .method protected setMediaInfo(Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;)V
     .registers 4
 
-    .line 598
+    .line 600
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->setMediaInfo(Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;)V
 
     const/4 v0, 0x0
 
-    .line 599
+    .line 601
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;->setAudioFlag(Z)Lcom/transsion/camera/app/common/recorder/data/VideoFileInfo$Builder;
 
     move-result-object p1
@@ -3068,7 +3107,7 @@
 
     move-result-object p1
 
-    .line 600
+    .line 602
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->getEncodeVideoFrameRate()I
 
     move-result v0
@@ -3077,7 +3116,7 @@
 
     move-result-object p1
 
-    .line 601
+    .line 603
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->isRecordTimeLimited()Z
 
     move-result p0
@@ -3090,7 +3129,7 @@
 .method protected showInfo(I)V
     .registers 2
 
-    .line 468
+    .line 470
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->showInfo(I)V
@@ -3101,19 +3140,19 @@
 .method public startRecording(Lcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;)Z
     .registers 4
 
-    .line 583
+    .line 585
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getOrientation()I
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mPreOrientation:I
 
-    .line 584
+    .line 586
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     if-nez v0, :cond_13
 
-    .line 586
+    .line 588
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[startRecording] cameraDeviceControl is null."
@@ -3124,23 +3163,23 @@
 
     return p0
 
-    .line 589
+    .line 591
     :cond_13
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->startRecording(Lcom/transsion/camera/adapter/CameraProxy$IMediaStartCallback;)V
 
     const/4 p1, 0x1
 
-    .line 590
+    .line 592
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyRecordStateChanged(Z)V
 
     const/4 v0, 0x2
 
     const/4 v1, 0x0
 
-    .line 591
+    .line 593
     invoke-virtual {p0, v0, p1, v1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->notifyToAppUI(IILjava/lang/String;)V
 
-    .line 592
+    .line 594
     sget-object v0, Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;->STATE_PRE_RECORDING:Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->notifyToVideoUI(Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;)V
@@ -3151,14 +3190,14 @@
 .method public stopRecording(Z)Z
     .registers 5
 
-    .line 496
+    .line 498
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mMainHandler:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$MainHandler;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 497
+    .line 499
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->mVideoHelper:Lcom/transsion/camera/app/common/mode/CommonVideoHelper;
 
     const/4 v1, 0x0
@@ -3167,7 +3206,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/mode/CommonVideoHelper;->adjustRingStreamVolume(ZLandroid/content/Context;)V
 
-    .line 498
+    .line 500
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->stopRecording(Z)Z
 
     move-result p0
@@ -3178,10 +3217,10 @@
 .method public unInit()V
     .registers 4
 
-    .line 259
+    .line 261
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->unInit()V
 
-    .line 260
+    .line 262
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v0
@@ -3190,41 +3229,41 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setVideoTimeLapseRate(Ljava/lang/String;)V
 
-    .line 261
+    .line 263
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mMainHandler:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$MainHandler;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 262
+    .line 264
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     if-eqz v0, :cond_19
 
-    .line 263
+    .line 265
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->unInitVideoUI()V
 
-    .line 265
+    .line 267
     :cond_19
     const-string v0, "key_time_lapse"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CameraMode;->unRegisterKeyToMonitor(Ljava/lang/String;)V
 
-    .line 266
+    .line 268
     const-string v0, "key_time_lapse_duration"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/mode/CameraMode;->unRegisterKeyToMonitor(Ljava/lang/String;)V
 
-    .line 267
+    .line 269
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mTimeLapseRecorder:Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;
 
     if-eqz v0, :cond_2a
 
-    .line 268
+    .line 270
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;->-$$Nest$mquit(Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode$TimeLapseRecorder;)V
 
-    .line 270
+    .line 272
     :cond_2a
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isVersionTenOrHigher()Z
 
@@ -3232,14 +3271,14 @@
 
     if-eqz v0, :cond_36
 
-    .line 271
+    .line 273
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v2, 0x0
 
     invoke-interface {v0, v2, v2, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->sinkUI(ZIZ)V
 
-    .line 273
+    .line 275
     :cond_36
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -3247,7 +3286,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUI;->setModeNotifyCameraOperateActionCallBack(Lcom/transsion/camera/app/common/mode/IModeNotifyCameraOperateActionCallback;)V
 
-    .line 274
+    .line 276
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
@@ -3260,15 +3299,15 @@
 .method protected updateLowLight(Z)V
     .registers 2
 
-    .line 161
+    .line 160
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonVideoMode;->updateLowLight(Z)V
 
-    .line 162
+    .line 161
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/video/TimeLapseVideoMode;->mVideoUI:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;
 
     if-eqz p0, :cond_a
 
-    .line 163
+    .line 162
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->updateLowLight(Z)V
 
     :cond_a

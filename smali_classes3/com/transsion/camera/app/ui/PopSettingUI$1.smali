@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI;)V
     .registers 2
 
-    .line 239
+    .line 240
     iput-object p1, p0, Lcom/transsion/camera/app/ui/PopSettingUI$1;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 242
+    .line 243
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 243
+    .line 244
     iget-object p1, p0, Lcom/transsion/camera/app/ui/PopSettingUI$1;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/PopSettingUI;->-$$Nest$fgetmPopSettingContainer(Lcom/transsion/camera/app/ui/PopSettingUI;)Lcom/transsion/camera/app/ui/popsetting/PopSettingContainer;
@@ -49,7 +49,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 244
+    .line 245
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$1;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/PopSettingUI;->-$$Nest$fgetmPopSettingIn(Lcom/transsion/camera/app/ui/PopSettingUI;)Landroid/animation/ObjectAnimator;

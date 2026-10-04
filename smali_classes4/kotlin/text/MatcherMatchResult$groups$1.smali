@@ -22,15 +22,37 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$6qTiT2TOre74mkZ4SBVT0fE9ajA(Lkotlin/text/MatcherMatchResult$groups$1;I)Lkotlin/text/MatchGroup;
+    .registers 2
+
+    .line 0
+    invoke-static {p0, p1}, Lkotlin/text/MatcherMatchResult$groups$1;->iterator$lambda$0(Lkotlin/text/MatcherMatchResult$groups$1;I)Lkotlin/text/MatchGroup;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method constructor <init>(Lkotlin/text/MatcherMatchResult;)V
     .registers 2
 
     iput-object p1, p0, Lkotlin/text/MatcherMatchResult$groups$1;->this$0:Lkotlin/text/MatcherMatchResult;
 
-    .line 358
+    .line 364
     invoke-direct {p0}, Lkotlin/collections/AbstractCollection;-><init>()V
 
     return-void
+.end method
+
+.method private static final iterator$lambda$0(Lkotlin/text/MatcherMatchResult$groups$1;I)Lkotlin/text/MatchGroup;
+    .registers 2
+
+    .line 368
+    invoke-virtual {p0, p1}, Lkotlin/text/MatcherMatchResult$groups$1;->get(I)Lkotlin/text/MatchGroup;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 
@@ -44,7 +66,7 @@
 
     goto :goto_6
 
-    .line 358
+    .line 364
     :cond_4
     instance-of v0, p1, Lkotlin/text/MatchGroup;
 
@@ -68,7 +90,7 @@
 .method public bridge contains(Lkotlin/text/MatchGroup;)Z
     .registers 2
 
-    .line 358
+    .line 364
     invoke-super {p0, p1}, Lkotlin/collections/AbstractCollection;->contains(Ljava/lang/Object;)Z
 
     move-result p0
@@ -79,7 +101,7 @@
 .method public get(I)Lkotlin/text/MatchGroup;
     .registers 4
 
-    .line 364
+    .line 370
     iget-object v0, p0, Lkotlin/text/MatcherMatchResult$groups$1;->this$0:Lkotlin/text/MatcherMatchResult;
 
     # invokes: Lkotlin/text/MatcherMatchResult;->getMatchResult()Ljava/util/regex/MatchResult;
@@ -92,7 +114,7 @@
 
     move-result-object v0
 
-    .line 365
+    .line 371
     invoke-virtual {v0}, Lkotlin/ranges/IntRange;->getStart()Ljava/lang/Integer;
 
     move-result-object v1
@@ -103,7 +125,7 @@
 
     if-ltz v1, :cond_29
 
-    .line 366
+    .line 372
     new-instance v1, Lkotlin/text/MatchGroup;
 
     iget-object p0, p0, Lkotlin/text/MatcherMatchResult$groups$1;->this$0:Lkotlin/text/MatcherMatchResult;
@@ -117,7 +139,7 @@
 
     move-result-object p0
 
-    const-string p1, "matchResult.group(index)"
+    const-string p1, "group(...)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -134,7 +156,7 @@
 .method public getSize()I
     .registers 1
 
-    .line 359
+    .line 365
     iget-object p0, p0, Lkotlin/text/MatcherMatchResult$groups$1;->this$0:Lkotlin/text/MatcherMatchResult;
 
     # invokes: Lkotlin/text/MatcherMatchResult;->getMatchResult()Ljava/util/regex/MatchResult;
@@ -162,7 +184,7 @@
 .method public iterator()Ljava/util/Iterator;
     .registers 3
 
-    .line 362
+    .line 368
     invoke-static {p0}, Lkotlin/collections/CollectionsKt;->getIndices(Ljava/util/Collection;)Lkotlin/ranges/IntRange;
 
     move-result-object v0
@@ -171,9 +193,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lkotlin/text/MatcherMatchResult$groups$1$iterator$1;
+    new-instance v1, Lkotlin/text/MatcherMatchResult$groups$1$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p0}, Lkotlin/text/MatcherMatchResult$groups$1$iterator$1;-><init>(Lkotlin/text/MatcherMatchResult$groups$1;)V
+    invoke-direct {v1, p0}, Lkotlin/text/MatcherMatchResult$groups$1$$ExternalSyntheticLambda0;-><init>(Lkotlin/text/MatcherMatchResult$groups$1;)V
 
     invoke-static {v0, v1}, Lkotlin/sequences/SequencesKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 

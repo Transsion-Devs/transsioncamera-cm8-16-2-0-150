@@ -32,7 +32,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;)V
     .registers 2
 
-    .line 201
+    .line 199
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 201
+    .line 199
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting$StatusChangeListener;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -65,7 +65,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 7
 
-    .line 204
+    .line 202
     const-string v0, "key_makeup_feature"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -76,7 +76,7 @@
 
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;
 
-    .line 205
+    .line 203
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mModeKey:Ljava/lang/String;
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;->access$000(Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;)Ljava/lang/String;
 
@@ -90,7 +90,7 @@
 
     if-eqz p1, :cond_46
 
-    .line 206
+    .line 204
     invoke-static {}, Lcom/transsion/camera/utils/MemoryUtils;->getTotalMemory()J
 
     move-result-wide v0
@@ -101,7 +101,7 @@
 
     if-gez p1, :cond_46
 
-    .line 207
+    .line 205
     const-string/jumbo p1, "{\"intensityArray\":[0.6,0.6],\"isContrast\":false,\"keyArray\":[],\"path\":\"\",\"styleNumber\":0,\"feature\":noeffect}"
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -110,14 +110,14 @@
 
     if-nez p1, :cond_46
 
-    .line 208
+    .line 206
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;
 
     const-string p2, "off"
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 209
+    .line 207
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/makeup/MuFaceBeautySetting;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;

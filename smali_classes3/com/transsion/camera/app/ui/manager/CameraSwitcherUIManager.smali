@@ -14,9 +14,9 @@
 
 .field private mCurrentModeName:Ljava/lang/String;
 
-.field private mInDualVideoMode:Z
+.field private mFrameAvailable:Z
 
-.field private mIsFirstSteadyFrameCome:Z
+.field private mInDualVideoMode:Z
 
 .field private mIsVideoRecording:Z
 
@@ -68,7 +68,7 @@
     const/4 p0, 0x0
 
     .line 49
-    iput-boolean p0, v0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mIsFirstSteadyFrameCome:Z
+    iput-boolean p0, v0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mFrameAvailable:Z
 
     .line 141
     new-instance p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager$1;
@@ -167,7 +167,7 @@
 .method private updateCameraSwitchViewBG()V
     .registers 3
 
-    .line 292
+    .line 299
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mCameraSwitcherUI:Lcom/transsion/camera/app/ui/ICameraSwitcherUI;
 
     if-eqz v0, :cond_1b
@@ -176,7 +176,7 @@
 
     if-eqz v0, :cond_1b
 
-    .line 293
+    .line 300
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_picture_size"
@@ -185,7 +185,7 @@
 
     move-result-object v0
 
-    .line 294
+    .line 301
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mCameraSwitcherUI:Lcom/transsion/camera/app/ui/ICameraSwitcherUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -285,7 +285,7 @@
 .method public hide()V
     .registers 3
 
-    .line 272
+    .line 279
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -298,7 +298,7 @@
 
     if-nez v0, :cond_2a
 
-    .line 273
+    .line 280
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mRootView:Landroid/view/View;
 
     if-nez v0, :cond_12
@@ -312,7 +312,7 @@
 
     move-result-object v0
 
-    .line 274
+    .line 281
     :goto_16
     instance-of v1, v0, Landroid/animation/Animator;
 
@@ -326,7 +326,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 275
+    .line 282
     sget-object p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "hide: dismiss"
@@ -335,7 +335,7 @@
 
     return-void
 
-    .line 279
+    .line 286
     :cond_2a
     invoke-super {p0}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->hide()V
 
@@ -345,239 +345,258 @@
 .method public notifyCameraOperateActionToUI(I)V
     .registers 6
 
-    const/4 v0, 0x2
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    if-eqz p1, :cond_d4
 
-    if-eq p1, v0, :cond_c6
+    const/4 v1, 0x1
 
-    const/4 v0, 0x3
+    if-eq p1, v1, :cond_d1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x2
 
-    if-eq p1, v0, :cond_bf
+    if-eq p1, v2, :cond_d4
 
-    const/4 v0, 0x4
+    const/4 v2, 0x3
 
-    if-eq p1, v0, :cond_bb
+    if-eq p1, v2, :cond_c8
 
-    const/16 v0, 0x8
+    const/4 v2, 0x4
 
-    if-eq p1, v0, :cond_b5
+    if-eq p1, v2, :cond_c4
 
-    const/16 v0, 0x9
+    const/16 v2, 0x8
 
-    if-eq p1, v0, :cond_b5
+    if-eq p1, v2, :cond_be
 
-    const/16 v0, 0xf
+    const/16 v2, 0x9
+
+    if-eq p1, v2, :cond_be
+
+    const/16 v2, 0xf
 
     const/4 v3, 0x0
 
-    if-eq p1, v0, :cond_9f
+    if-eq p1, v2, :cond_a8
 
-    const/16 v0, 0x10
+    const/16 v2, 0x10
 
-    if-eq p1, v0, :cond_89
+    if-eq p1, v2, :cond_92
 
-    const/16 v0, 0x14
+    const/16 v2, 0x14
 
-    if-eq p1, v0, :cond_bb
+    if-eq p1, v2, :cond_c4
 
-    const/16 v0, 0x1c
+    const/16 v2, 0x1c
 
-    if-eq p1, v0, :cond_71
+    if-eq p1, v2, :cond_7a
 
-    const/16 v0, 0x36
+    const/16 v2, 0x36
 
-    if-eq p1, v0, :cond_6d
+    if-eq p1, v2, :cond_76
 
-    const/16 v0, 0xc9
+    const/16 v2, 0xc9
 
-    if-eq p1, v0, :cond_89
+    if-eq p1, v2, :cond_92
 
-    const/16 v0, 0x2e
+    const/16 v2, 0x2e
 
-    if-eq p1, v0, :cond_9f
+    if-eq p1, v2, :cond_a8
 
-    const/16 v0, 0x2f
+    const/16 v2, 0x2f
 
-    if-eq p1, v0, :cond_89
+    if-eq p1, v2, :cond_92
 
-    const/16 v0, 0x90
+    const/16 v2, 0x90
 
-    if-eq p1, v0, :cond_9f
+    if-eq p1, v2, :cond_a8
 
-    const/16 v0, 0x91
+    const/16 v2, 0x91
 
-    if-eq p1, v0, :cond_89
+    if-eq p1, v2, :cond_92
 
-    const/16 v0, 0x9c
+    const/16 v2, 0x9c
 
-    if-eq p1, v0, :cond_53
+    if-eq p1, v2, :cond_5c
 
-    const/16 v0, 0x9d
+    const/16 v2, 0x9d
 
-    if-eq p1, v0, :cond_53
+    if-eq p1, v2, :cond_5c
 
-    const/16 v0, 0xc4
+    const/16 v2, 0xc4
 
-    if-eq p1, v0, :cond_c6
+    if-eq p1, v2, :cond_57
 
     const/16 v0, 0xc5
 
-    if-eq p1, v0, :cond_4e
+    if-eq p1, v0, :cond_52
 
-    goto/16 :goto_c9
+    goto/16 :goto_d6
 
-    .line 223
-    :cond_4e
-    invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->setEnable(Z)V
+    .line 230
+    :cond_52
+    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->setEnable(Z)V
 
-    goto/16 :goto_c9
+    goto/16 :goto_d6
 
-    .line 227
-    :cond_53
+    .line 216
+    :cond_57
+    invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->setEnable(Z)V
+
+    goto/16 :goto_d6
+
+    .line 234
+    :cond_5c
     sget-object v0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v3, "shot2shot end action need enable camera switcher button, action="
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 228
-    invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->setEnable(Z)V
+    .line 235
+    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->setEnable(Z)V
 
-    goto :goto_c9
+    goto :goto_d6
 
-    .line 220
-    :cond_6d
+    .line 227
+    :cond_76
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->updateCameraSwitchViewBG()V
 
-    goto :goto_c9
+    goto :goto_d6
 
-    .line 248
-    :cond_71
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mIsVideoRecording:Z
+    .line 255
+    :cond_7a
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mIsVideoRecording:Z
+
+    .line 256
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mFrameAvailable:Z
+
+    .line 257
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI4Animator:Z
+
+    if-eqz v0, :cond_d6
+
+    iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mInDualVideoMode:Z
+
+    if-nez v0, :cond_d6
+
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mCameraSwitcherUI:Lcom/transsion/camera/app/ui/ICameraSwitcherUI;
+
+    if-eqz v0, :cond_d6
+
+    .line 258
+    invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->resetRecordingUI()V
+
+    goto :goto_d6
 
     .line 249
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mIsFirstSteadyFrameCome:Z
+    :cond_92
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mIsVideoRecording:Z
 
     .line 250
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI4Animator:Z
+    iget-boolean v1, v1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI4Animator:Z
 
-    if-eqz v0, :cond_c9
+    if-eqz v1, :cond_d6
 
-    iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mInDualVideoMode:Z
+    iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mInDualVideoMode:Z
 
-    if-nez v0, :cond_c9
+    if-nez v1, :cond_d6
 
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mCameraSwitcherUI:Lcom/transsion/camera/app/ui/ICameraSwitcherUI;
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mCameraSwitcherUI:Lcom/transsion/camera/app/ui/ICameraSwitcherUI;
 
-    if-eqz v0, :cond_c9
+    if-eqz v1, :cond_d6
 
     .line 251
-    invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->resetRecordingUI()V
+    invoke-interface {v1, v0, v3}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
 
-    goto :goto_c9
+    goto :goto_d6
 
-    .line 242
-    :cond_89
+    .line 240
+    :cond_a8
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mIsVideoRecording:Z
 
-    .line 243
+    .line 241
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
 
     iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI4Animator:Z
 
-    if-eqz v0, :cond_c9
+    if-eqz v0, :cond_d6
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mInDualVideoMode:Z
 
-    if-nez v0, :cond_c9
+    if-nez v0, :cond_d6
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mCameraSwitcherUI:Lcom/transsion/camera/app/ui/ICameraSwitcherUI;
 
-    if-eqz v0, :cond_c9
+    if-eqz v0, :cond_d6
 
-    .line 244
+    .line 242
     invoke-interface {v0, v1, v3}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
 
-    goto :goto_c9
-
-    .line 233
-    :cond_9f
-    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mIsVideoRecording:Z
-
-    .line 234
-    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI4Animator:Z
-
-    if-eqz v0, :cond_c9
-
-    iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mInDualVideoMode:Z
-
-    if-nez v0, :cond_c9
-
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mCameraSwitcherUI:Lcom/transsion/camera/app/ui/ICameraSwitcherUI;
-
-    if-eqz v0, :cond_c9
-
-    .line 235
-    invoke-interface {v0, v2, v3}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
-
-    goto :goto_c9
-
-    .line 260
-    :cond_b5
-    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mIsFirstSteadyFrameCome:Z
-
-    .line 261
-    invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->setEnable(Z)V
-
-    goto :goto_c9
-
-    .line 256
-    :cond_bb
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->updateCameraSwitchViewBG()V
-
-    goto :goto_c9
-
-    .line 216
-    :cond_bf
-    invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->setEnable(Z)V
-
-    .line 217
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->updateCameraSwitchViewBG()V
-
-    goto :goto_c9
-
-    .line 213
-    :cond_c6
-    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->setEnable(Z)V
+    goto :goto_d6
 
     .line 267
-    :cond_c9
-    :goto_c9
+    :cond_be
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mFrameAvailable:Z
+
+    .line 268
+    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->setEnable(Z)V
+
+    goto :goto_d6
+
+    .line 263
+    :cond_c4
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->updateCameraSwitchViewBG()V
+
+    goto :goto_d6
+
+    .line 222
+    :cond_c8
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mFrameAvailable:Z
+
+    .line 223
+    invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->setEnable(Z)V
+
+    .line 224
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->updateCameraSwitchViewBG()V
+
+    goto :goto_d6
+
+    .line 219
+    :cond_d1
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mFrameAvailable:Z
+
+    goto :goto_d6
+
+    .line 213
+    :cond_d4
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mFrameAvailable:Z
+
+    .line 274
+    :cond_d6
+    :goto_d6
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->notifyCameraOperateActionToUI(I)V
 
     return-void
@@ -713,7 +732,7 @@
     if-eqz p1, :cond_31
 
     .line 116
-    iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mIsFirstSteadyFrameCome:Z
+    iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mFrameAvailable:Z
 
     if-nez v1, :cond_31
 
@@ -886,10 +905,10 @@
 .method public updateCurrentMode(Ljava/lang/String;)V
     .registers 3
 
-    .line 284
+    .line 291
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mCurrentModeName:Ljava/lang/String;
 
-    .line 285
+    .line 292
     const-string v0, "com.transsion.camera.feature.mode.dualvideo.DualVideoModeEntry"
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -898,12 +917,12 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mInDualVideoMode:Z
 
-    .line 286
+    .line 293
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/CameraSwitcherUIManager;->mCameraSwitcherUI:Lcom/transsion/camera/app/ui/ICameraSwitcherUI;
 
     if-eqz p0, :cond_11
 
-    .line 287
+    .line 294
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/ui/ICameraSwitcherUI;->updateModeName(Ljava/lang/String;)V
 
     :cond_11

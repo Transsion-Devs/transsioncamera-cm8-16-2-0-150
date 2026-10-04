@@ -1385,7 +1385,7 @@
     :cond_c
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieMode;->mWideSelfieUI:Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;
 
-    invoke-virtual {v0}, Lcom/transsion/camera/feature/common/BaseUI;->pause()V
+    invoke-virtual {v0}, Lcom/transsion/camera/feature/wideselfie/WideSelfieUI;->pause()V
 
     .line 387
     iget-object v0, p0, Lcom/transsion/camera/feature/wideselfie/WideSelfieMode;->mWideSelfiePreview:Lcom/transsion/camera/feature/wideselfie/WideSelfiePreview;

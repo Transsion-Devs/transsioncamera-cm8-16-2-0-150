@@ -70,9 +70,25 @@
 .end method
 
 .method public isSupport()Z
-    .registers 2
+    .registers 3
 
     .line 62
+    iget-object v0, p0, Lcom/transsion/camera/app/common/provider/FeatureEntryBase;->mResources:Landroid/content/res/Resources;
+
+    sget v1, Lcom/transsion/camera/app/common/R$bool;->voice_capture_support:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    const/4 p0, 0x0
+
+    return p0
+
+    .line 66
+    :cond_c
     iget-object p0, p0, Lcom/transsion/camera/app/common/provider/FeatureEntryBase;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/app/common/R$bool;->voice_detection_support:I

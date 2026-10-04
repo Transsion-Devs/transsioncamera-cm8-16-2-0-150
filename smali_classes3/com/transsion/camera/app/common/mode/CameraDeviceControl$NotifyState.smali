@@ -24,10 +24,10 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Ljava/lang/String;)V
     .registers 3
 
-    .line 961
+    .line 928
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 962
+    .line 929
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->mName:Ljava/lang/String;
 
     return-void
@@ -38,7 +38,7 @@
 .method enter()V
     .registers 2
 
-    .line 966
+    .line 933
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->mNotifyCount:I
 
     add-int/lit8 v0, v0, 0x1
@@ -51,7 +51,7 @@
 .method getCount()I
     .registers 1
 
-    .line 970
+    .line 937
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->mNotifyCount:I
 
     return p0
@@ -60,7 +60,7 @@
 .method getName()Ljava/lang/String;
     .registers 1
 
-    .line 974
+    .line 941
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->mName:Ljava/lang/String;
 
     return-object p0
@@ -71,7 +71,7 @@
 
     const/4 v0, 0x0
 
-    .line 978
+    .line 945
     iput v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;->mNotifyCount:I
 
     return-void

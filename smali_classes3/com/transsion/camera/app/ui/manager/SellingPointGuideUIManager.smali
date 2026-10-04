@@ -1735,7 +1735,7 @@
     .line 216
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SellingPointGuideUIManager;->mSellingPointGuideUI:Lcom/transsion/camera/app/ui/SellingPointGuideUI;
 
-    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->hideOverlayGuideWithAnim()V
+    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->hideOverlayGuide()V
 
     .line 217
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/SellingPointGuideUIManager;->mSellingPointGuideUI:Lcom/transsion/camera/app/ui/SellingPointGuideUI;

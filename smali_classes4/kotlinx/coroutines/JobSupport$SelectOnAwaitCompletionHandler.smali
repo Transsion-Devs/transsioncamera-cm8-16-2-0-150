@@ -38,13 +38,13 @@
         }
     .end annotation
 
-    .line 1269
+    .line 1266
     iput-object p1, p0, Lkotlinx/coroutines/JobSupport$SelectOnAwaitCompletionHandler;->this$0:Lkotlinx/coroutines/JobSupport;
 
-    .line 1271
+    .line 1268
     invoke-direct {p0}, Lkotlinx/coroutines/JobNode;-><init>()V
 
-    .line 1270
+    .line 1267
     iput-object p2, p0, Lkotlinx/coroutines/JobSupport$SelectOnAwaitCompletionHandler;->select:Lkotlinx/coroutines/selects/SelectInstance;
 
     return-void
@@ -55,7 +55,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 1269
+    .line 1266
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport$SelectOnAwaitCompletionHandler;->invoke(Ljava/lang/Throwable;)V
@@ -68,14 +68,14 @@
 .method public invoke(Ljava/lang/Throwable;)V
     .registers 3
 
-    .line 1273
+    .line 1270
     iget-object p1, p0, Lkotlinx/coroutines/JobSupport$SelectOnAwaitCompletionHandler;->this$0:Lkotlinx/coroutines/JobSupport;
 
     invoke-virtual {p1}, Lkotlinx/coroutines/JobSupport;->getState$kotlinx_coroutines_core()Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 1274
+    .line 1271
     instance-of v0, p1, Lkotlinx/coroutines/CompletedExceptionally;
 
     if-eqz v0, :cond_b
@@ -87,7 +87,7 @@
 
     move-result-object p1
 
-    .line 1275
+    .line 1272
     :goto_f
     iget-object v0, p0, Lkotlinx/coroutines/JobSupport$SelectOnAwaitCompletionHandler;->select:Lkotlinx/coroutines/selects/SelectInstance;
 

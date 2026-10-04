@@ -31,7 +31,7 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    .line 426
+    .line 434
     new-instance v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;-><init>()V

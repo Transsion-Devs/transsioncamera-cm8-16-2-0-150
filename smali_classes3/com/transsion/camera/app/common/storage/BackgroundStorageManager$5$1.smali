@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$5;)V
     .registers 2
 
-    .line 514
+    .line 521
     iput-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$5$1;->this$1:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$5;
 
     invoke-direct {p0}, Lcom/transsion/camera/app/common/storage/MediaSaver$MediaSaverListener2;-><init>()V
@@ -35,7 +35,7 @@
 .method public onFileSaved(Landroid/net/Uri;I)V
     .registers 8
 
-    .line 517
+    .line 524
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$5$1;->this$1:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$5;
 
     iget-object v1, v0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$5;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;

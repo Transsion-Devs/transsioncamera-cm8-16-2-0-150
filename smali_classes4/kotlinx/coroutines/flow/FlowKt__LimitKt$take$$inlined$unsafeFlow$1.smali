@@ -39,7 +39,7 @@
 
     iput p2, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$$inlined$unsafeFlow$1;->$count$inlined:I
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 8
+    .registers 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -96,34 +96,30 @@
 
     move-result-object v1
 
-    .line 106
+    .line 104
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$$inlined$unsafeFlow$1$1;->label:I
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_35
 
-    if-ne v2, v3, :cond_30
+    if-ne v2, v3, :cond_2d
 
     iget-object p0, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$$inlined$unsafeFlow$1$1;->L$0:Ljava/lang/Object;
 
-    move-object p1, p0
-
-    check-cast p1, Lkotlinx/coroutines/flow/FlowCollector;
-
-    :try_start_2a
+    :try_start_27
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_2d
-    .catch Lkotlinx/coroutines/flow/internal/AbortFlowException; {:try_start_2a .. :try_end_2d} :catch_2e
+    :try_end_2a
+    .catch Lkotlinx/coroutines/flow/internal/AbortFlowException; {:try_start_27 .. :try_end_2a} :catch_2b
 
-    goto :goto_57
+    goto :goto_5b
 
-    :catch_2e
-    move-exception p0
+    :catch_2b
+    move-exception p1
 
-    goto :goto_54
+    goto :goto_58
 
-    :cond_30
+    :cond_2d
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
@@ -132,45 +128,55 @@
 
     throw p0
 
-    :cond_38
+    :cond_35
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 114
-    new-instance p2, Lkotlin/jvm/internal/Ref$IntRef;
+    .line 112
+    new-instance p2, Ljava/lang/Object;
 
-    invoke-direct {p2}, Lkotlin/jvm/internal/Ref$IntRef;-><init>()V
+    invoke-direct {p2}, Ljava/lang/Object;-><init>()V
 
-    .line 116
-    :try_start_40
-    iget-object v2, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$$inlined$unsafeFlow$1;->$this_take$inlined:Lkotlinx/coroutines/flow/Flow;
+    .line 113
+    new-instance v2, Lkotlin/jvm/internal/Ref$IntRef;
 
-    new-instance v4, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;
+    invoke-direct {v2}, Lkotlin/jvm/internal/Ref$IntRef;-><init>()V
+
+    .line 115
+    :try_start_42
+    iget-object v4, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$$inlined$unsafeFlow$1;->$this_take$inlined:Lkotlinx/coroutines/flow/Flow;
+
+    new-instance v5, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;
 
     iget p0, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$$inlined$unsafeFlow$1;->$count$inlined:I
 
-    invoke-direct {v4, p2, p0, p1}, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;-><init>(Lkotlin/jvm/internal/Ref$IntRef;ILkotlinx/coroutines/flow/FlowCollector;)V
+    invoke-direct {v5, v2, p0, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;-><init>(Lkotlin/jvm/internal/Ref$IntRef;ILkotlinx/coroutines/flow/FlowCollector;Ljava/lang/Object;)V
 
-    iput-object p1, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$$inlined$unsafeFlow$1$1;->L$0:Ljava/lang/Object;
+    iput-object p2, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$$inlined$unsafeFlow$1$1;->L$0:Ljava/lang/Object;
 
     iput v3, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$$inlined$unsafeFlow$1$1;->label:I
 
-    invoke-interface {v2, v4, v0}, Lkotlinx/coroutines/flow/Flow;->collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {v4, v5, v0}, Lkotlinx/coroutines/flow/Flow;->collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
-    :try_end_51
-    .catch Lkotlinx/coroutines/flow/internal/AbortFlowException; {:try_start_40 .. :try_end_51} :catch_2e
+    :try_end_53
+    .catch Lkotlinx/coroutines/flow/internal/AbortFlowException; {:try_start_42 .. :try_end_53} :catch_56
 
-    if-ne p0, v1, :cond_57
+    if-ne p0, v1, :cond_5b
 
     return-object v1
 
-    .line 118
-    :goto_54
-    invoke-static {p0, p1}, Lkotlinx/coroutines/flow/internal/FlowExceptions_commonKt;->checkOwnership(Lkotlinx/coroutines/flow/internal/AbortFlowException;Lkotlinx/coroutines/flow/FlowCollector;)V
+    :catch_56
+    move-exception p1
 
-    .line 109
-    :cond_57
-    :goto_57
+    move-object p0, p2
+
+    .line 117
+    :goto_58
+    invoke-static {p1, p0}, Lkotlinx/coroutines/flow/internal/FlowExceptions_commonKt;->checkOwnership(Lkotlinx/coroutines/flow/internal/AbortFlowException;Ljava/lang/Object;)V
+
+    .line 107
+    :cond_5b
+    :goto_5b
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0

@@ -225,7 +225,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 35
+    .line 36
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "Camera2AgentImpl"
@@ -240,10 +240,10 @@
 .method constructor <init>(Landroid/content/Context;)V
     .registers 3
 
-    .line 48
+    .line 49
     invoke-direct {p0}, Lcom/transsion/camera/adapter/CameraAgent;-><init>()V
 
-    .line 39
+    .line 40
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -252,34 +252,34 @@
 
     const/4 v0, 0x0
 
-    .line 44
+    .line 45
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mPendingOpenCustomer:Lcom/transsion/camera/adapter/CameraAgent$Customer;
 
-    .line 45
+    .line 46
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mUnavailableList:Ljava/util/List;
 
-    .line 112
+    .line 113
     new-instance v0, Lcom/transsion/camera/adapter/CameraAgent2Impl$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$2;-><init>(Lcom/transsion/camera/adapter/CameraAgent2Impl;)V
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mAvailabilityCallback:Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
 
-    .line 161
+    .line 162
     new-instance v0, Lcom/transsion/camera/adapter/CameraAgent2Impl$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/adapter/CameraAgent2Impl;)V
 
     iput-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mReOpenRunnable:Ljava/lang/Runnable;
 
-    .line 51
+    .line 52
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mContext:Landroid/content/Context;
 
-    .line 52
+    .line 53
     const-string v0, "camera"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -290,14 +290,14 @@
 
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mCameraManager:Landroid/hardware/camera2/CameraManager;
 
-    .line 53
+    .line 54
     new-instance p1, Lcom/transsion/camera/adapter/CameraAgent2Impl$1;
 
     const-string v0, "initDeviceInfo"
 
     invoke-direct {p1, p0, v0}, Lcom/transsion/camera/adapter/CameraAgent2Impl$1;-><init>(Lcom/transsion/camera/adapter/CameraAgent2Impl;Ljava/lang/String;)V
 
-    .line 72
+    .line 73
     invoke-static {}, Lcom/transsion/camera/utils/threads/WorkThreadPools;->getInstance()Lcom/transsion/camera/utils/threads/WorkThreadPools;
 
     move-result-object p0
@@ -310,7 +310,7 @@
 .method private addUnavailable(Ljava/lang/String;)V
     .registers 3
 
-    .line 147
+    .line 148
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mUnavailableList:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -319,7 +319,7 @@
 
     if-nez v0, :cond_d
 
-    .line 148
+    .line 149
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mUnavailableList:Ljava/util/List;
 
     invoke-interface {p0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -331,7 +331,7 @@
 .method private checkCameraAvailable(Ljava/lang/String;)Z
     .registers 5
 
-    .line 157
+    .line 158
     sget-object v0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -352,7 +352,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 158
+    .line 159
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mUnavailableList:Ljava/util/List;
 
     invoke-interface {p0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -367,7 +367,7 @@
 .method private static convertCameraStateErrorCode(I)I
     .registers 4
 
-    .line 436
+    .line 439
     sget-object v0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -421,7 +421,7 @@
 .method private synthetic lambda$new$0()V
     .registers 4
 
-    .line 167
+    .line 168
     sget-object v0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -442,17 +442,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 168
+    .line 169
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mPendingOpenCustomer:Lcom/transsion/camera/adapter/CameraAgent$Customer;
 
     const/4 v1, 0x0
 
-    .line 169
+    .line 170
     invoke-virtual {p0, v1}, Lcom/transsion/camera/adapter/CameraAgent2Impl;->setPendingOpenCustomer(Lcom/transsion/camera/adapter/CameraAgent$Customer;)V
 
     if-eqz v0, :cond_27
 
-    .line 171
+    .line 172
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraAgent$Customer;->getCameraId()Ljava/lang/String;
 
     move-result-object v1
@@ -466,12 +466,12 @@
 .method private synthetic lambda$new$1()V
     .registers 5
 
-    .line 162
+    .line 163
     const-class v0, Lcom/transsion/camera/adapter/CameraAgent;
 
     monitor-enter v0
 
-    .line 163
+    .line 164
     :try_start_3
     sget-object v1, Lcom/transsion/camera/adapter/CameraAgent2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -493,19 +493,19 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 164
+    .line 165
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mPendingOpenCustomer:Lcom/transsion/camera/adapter/CameraAgent$Customer;
 
     if-eqz v1, :cond_33
 
-    .line 165
+    .line 166
     invoke-virtual {v1}, Lcom/transsion/camera/adapter/CameraAgent$Customer;->getCameraId()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-direct {p0, v1}, Lcom/transsion/camera/adapter/CameraAgent2Impl;->removeUnavailable(Ljava/lang/String;)V
 
-    .line 166
+    .line 167
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraAgent;->mRequestHandler:Landroid/os/Handler;
 
     new-instance v2, Lcom/transsion/camera/adapter/CameraAgent2Impl$$ExternalSyntheticLambda1;
@@ -521,7 +521,7 @@
 
     goto :goto_35
 
-    .line 175
+    .line 176
     :cond_33
     :goto_33
     monitor-exit v0
@@ -539,7 +539,7 @@
 .method private removeUnavailable(Ljava/lang/String;)V
     .registers 2
 
-    .line 153
+    .line 154
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mUnavailableList:Ljava/util/List;
 
     invoke-interface {p0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
@@ -552,12 +552,12 @@
 .method public getCameraDeviceInfo()Lcom/transsion/camera/adapter/ICameraDeviceInfo;
     .registers 6
 
-    .line 77
+    .line 78
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 78
+    .line 79
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mCameraDeviceInfo:Lcom/transsion/camera/adapter/CameraDeviceInfo2Impl;
     :try_end_5
@@ -565,7 +565,7 @@
 
     if-nez v1, :cond_2a
 
-    .line 80
+    .line 81
     :try_start_7
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mLock:Ljava/lang/Object;
 
@@ -584,7 +584,7 @@
     :catch_f
     move-exception v1
 
-    .line 82
+    .line 83
     :try_start_10
     sget-object v2, Lcom/transsion/camera/adapter/CameraAgent2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -608,7 +608,7 @@
 
     invoke-static {v2, v1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 85
+    .line 86
     :cond_2a
     :goto_2a
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mCameraDeviceInfo:Lcom/transsion/camera/adapter/CameraDeviceInfo2Impl;
@@ -617,7 +617,7 @@
 
     return-object p0
 
-    .line 86
+    .line 87
     :goto_2e
     monitor-exit v0
     :try_end_2f
@@ -629,7 +629,7 @@
 .method onCreateProxyCreator(Ljava/lang/String;)Lcom/transsion/camera/adapter/CameraAgent$CameraProxyCreator;
     .registers 3
 
-    .line 109
+    .line 110
     new-instance v0, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;
 
     invoke-direct {v0, p0, p1}, Lcom/transsion/camera/adapter/CameraAgent2Impl$Camera2ProxyCreatorImpl;-><init>(Lcom/transsion/camera/adapter/CameraAgent2Impl;Ljava/lang/String;)V
@@ -640,17 +640,17 @@
 .method public reInitFirstForPermission()V
     .registers 4
 
-    .line 95
+    .line 96
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mCameraDeviceInfo:Lcom/transsion/camera/adapter/CameraDeviceInfo2Impl;
 
     if-eqz v0, :cond_2e
 
-    .line 96
+    .line 97
     iget-object v0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 97
+    .line 98
     :try_start_7
     iget-object v1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mCameraDeviceInfo:Lcom/transsion/camera/adapter/CameraDeviceInfo2Impl;
 
@@ -662,24 +662,24 @@
 
     if-eqz v1, :cond_2a
 
-    .line 98
+    .line 99
     sget-object v1, Lcom/transsion/camera/adapter/CameraAgent2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v2, "reInitFirst start"
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 99
+    .line 100
     iget-object v2, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mCameraDeviceInfo:Lcom/transsion/camera/adapter/CameraDeviceInfo2Impl;
 
     invoke-virtual {v2}, Lcom/transsion/camera/adapter/CameraDeviceInfo2Impl;->initFirst()V
 
-    .line 100
+    .line 101
     const-string v2, "reInitFirst end"
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 101
+    .line 102
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mLock:Ljava/lang/Object;
 
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
@@ -691,7 +691,7 @@
 
     goto :goto_2c
 
-    .line 103
+    .line 104
     :cond_2a
     :goto_2a
     monitor-exit v0
@@ -712,10 +712,10 @@
 .method public setPendingOpenCustomer(Lcom/transsion/camera/adapter/CameraAgent$Customer;)V
     .registers 5
 
-    .line 465
+    .line 468
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->mPendingOpenCustomer:Lcom/transsion/camera/adapter/CameraAgent$Customer;
 
-    .line 466
+    .line 469
     sget-object v0, Lcom/transsion/camera/adapter/CameraAgent2Impl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;

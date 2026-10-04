@@ -66,7 +66,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    .line 1244
+    .line 1241
     check-cast p1, Lkotlinx/coroutines/JobSupport;
 
     check-cast p2, Lkotlinx/coroutines/selects/SelectInstance;
@@ -91,7 +91,7 @@
         }
     .end annotation
 
-    .line 1244
+    .line 1241
     # invokes: Lkotlinx/coroutines/JobSupport;->onAwaitInternalRegFunc(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
     invoke-static {p1, p2, p3}, Lkotlinx/coroutines/JobSupport;->access$onAwaitInternalRegFunc(Lkotlinx/coroutines/JobSupport;Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
 

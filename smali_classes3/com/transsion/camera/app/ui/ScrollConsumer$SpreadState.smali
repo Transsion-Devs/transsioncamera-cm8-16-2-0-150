@@ -119,28 +119,6 @@
     return p0
 .end method
 
-.method public spreadMode()V
-    .registers 3
-
-    .line 402
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ScrollConsumer$SpreadState;->this$0:Lcom/transsion/camera/app/ui/ScrollConsumer;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lcom/transsion/camera/app/ui/ScrollConsumer;->-$$Nest$fputmSpreadModeAfterShrinking(Lcom/transsion/camera/app/ui/ScrollConsumer;Z)V
-
-    .line 403
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/ScrollConsumer$SpreadState;->this$0:Lcom/transsion/camera/app/ui/ScrollConsumer;
-
-    invoke-static {v0}, Lcom/transsion/camera/app/ui/ScrollConsumer;->-$$Nest$fgetmShrinking(Lcom/transsion/camera/app/ui/ScrollConsumer;)Lcom/transsion/camera/app/ui/ScrollConsumer$State;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/transsion/camera/app/ui/ScrollConsumer$State;->enter(Lcom/transsion/camera/app/ui/ScrollConsumer$State;)V
-
-    return-void
-.end method
-
 .method public startScroll()V
     .registers 2
 

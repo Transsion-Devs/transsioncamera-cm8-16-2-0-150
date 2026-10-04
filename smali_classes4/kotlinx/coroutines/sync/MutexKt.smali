@@ -25,7 +25,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 300
+    .line 295
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "NO_OWNER"
@@ -34,7 +34,7 @@
 
     sput-object v0, Lkotlinx/coroutines/sync/MutexKt;->NO_OWNER:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 301
+    .line 296
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "ALREADY_LOCKED_BY_OWNER"
@@ -49,7 +49,7 @@
 .method public static final Mutex(Z)Lkotlinx/coroutines/sync/Mutex;
     .registers 2
 
-    .line 109
+    .line 105
     new-instance v0, Lkotlinx/coroutines/sync/MutexImpl;
 
     invoke-direct {v0, p0}, Lkotlinx/coroutines/sync/MutexImpl;-><init>(Z)V
@@ -66,7 +66,7 @@
 
     const/4 p0, 0x0
 
-    .line 108
+    .line 104
     :cond_5
     invoke-static {p0}, Lkotlinx/coroutines/sync/MutexKt;->Mutex(Z)Lkotlinx/coroutines/sync/Mutex;
 
@@ -143,7 +143,7 @@
 
     move-result-object v1
 
-    .line 120
+    .line 116
     iget v2, v0, Lkotlinx/coroutines/sync/MutexKt$withLock$1;->label:I
 
     const/4 v3, 0x1
@@ -180,7 +180,7 @@
     :cond_3c
     invoke-static {p3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 125
+    .line 120
     iput-object p0, v0, Lkotlinx/coroutines/sync/MutexKt$withLock$1;->L$0:Ljava/lang/Object;
 
     iput-object p1, v0, Lkotlinx/coroutines/sync/MutexKt$withLock$1;->L$1:Ljava/lang/Object;
@@ -197,7 +197,7 @@
 
     return-object v1
 
-    .line 127
+    .line 122
     :cond_4e
     :goto_4e
     :try_start_4e
@@ -209,7 +209,7 @@
 
     invoke-static {v3}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 129
+    .line 124
     invoke-interface {p0, p1}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     invoke-static {v3}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
@@ -246,7 +246,7 @@
 
     const/4 v0, 0x0
 
-    .line 125
+    .line 120
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
     invoke-interface {p0, p1, p3}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -255,7 +255,7 @@
 
     invoke-static {p3}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
-    .line 127
+    .line 122
     :try_start_b
     invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
@@ -265,7 +265,7 @@
 
     invoke-static {p3}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 129
+    .line 124
     invoke-interface {p0, p1}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     invoke-static {p3}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
@@ -298,14 +298,14 @@
     :cond_5
     const/4 p4, 0x0
 
-    .line 125
+    .line 120
     invoke-static {p4}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
     invoke-interface {p0, p1, p3}, Lkotlinx/coroutines/sync/Mutex;->lock(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     invoke-static {p5}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
-    .line 127
+    .line 122
     :try_start_f
     invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
@@ -315,7 +315,7 @@
 
     invoke-static {p5}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    .line 129
+    .line 124
     invoke-interface {p0, p1}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     invoke-static {p5}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V

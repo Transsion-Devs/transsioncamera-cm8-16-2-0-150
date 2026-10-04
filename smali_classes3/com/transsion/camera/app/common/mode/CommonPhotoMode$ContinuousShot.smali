@@ -90,12 +90,12 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;Landroid/content/Context;II)V
     .registers 7
 
-    .line 2755
+    .line 2767
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2728
+    .line 2740
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "ContinuousShot"
@@ -104,7 +104,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 2736
+    .line 2748
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
@@ -113,7 +113,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mBurstProgress:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 2737
+    .line 2749
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
@@ -122,24 +122,24 @@
 
     const/4 v0, 0x1
 
-    .line 2739
+    .line 2751
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotDone:Z
 
-    .line 2741
+    .line 2753
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 2742
+    .line 2754
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShutterState:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 2745
+    .line 2757
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -150,12 +150,12 @@
 
     const/16 p2, 0x14
 
-    .line 2757
+    .line 2769
     iput p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mMaxBurstNumber:I
 
     goto :goto_46
 
-    .line 2759
+    .line 2771
     :cond_3c
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -167,11 +167,11 @@
 
     iput p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mMaxBurstNumber:I
 
-    .line 2762
+    .line 2774
     :goto_46
     iput p4, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSoundResId:I
 
-    .line 2763
+    .line 2775
     iget-object p2, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p2}, Lcom/transsion/camera/app/common/IAppUI;->getActionSound()Lcom/transsion/camera/utils/sound/IActionSound;
@@ -180,14 +180,14 @@
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
-    .line 2765
+    .line 2777
     new-instance p2, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$InterceptShutterListener;
 
     invoke-direct {p2, p0, p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$InterceptShutterListener;-><init>(Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;)V
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShutterListener:Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$InterceptShutterListener;
 
-    .line 2766
+    .line 2778
     iget-object p0, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 p1, 0x9
@@ -202,7 +202,7 @@
 
     if-eqz p1, :cond_9
 
-    .line 2810
+    .line 2822
     sget-object p0, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->UNLOCK:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     if-ne p1, p0, :cond_7
@@ -224,7 +224,7 @@
 .method private synthetic lambda$onContinuousShotStop$1()V
     .registers 4
 
-    .line 3023
+    .line 3038
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -233,7 +233,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 3024
+    .line 3039
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -252,18 +252,18 @@
 .method private synthetic lambda$onPreviewStarted$0(Lcom/transsion/camera/utils/sound/IActionSound;I)V
     .registers 5
 
-    .line 2785
+    .line 2797
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSoundLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 2786
+    .line 2798
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-nez v1, :cond_d
 
-    .line 2787
+    .line 2799
     invoke-interface {p1, p2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
 
     goto :goto_f
@@ -273,11 +273,11 @@
 
     goto :goto_11
 
-    .line 2789
+    .line 2801
     :cond_d
     iput p2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSoundSampleId:I
 
-    .line 2791
+    .line 2803
     :goto_f
     monitor-exit v0
 
@@ -296,21 +296,21 @@
 
     if-eqz p1, :cond_15
 
-    .line 2815
+    .line 2827
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mAeAfLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
-    .line 2816
+    .line 2828
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->aeAfUnLock(Lcom/transsion/camera/app/common/mode/IAeAfLock$State;)Z
 
     move-result p1
 
     if-eqz p1, :cond_23
 
-    .line 2817
+    .line 2829
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     const/4 p1, 0x1
@@ -319,7 +319,7 @@
 
     return-void
 
-    .line 2820
+    .line 2832
     :cond_15
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mAeAfLockState:Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
@@ -329,7 +329,7 @@
 
     if-eqz p1, :cond_23
 
-    .line 2821
+    .line 2833
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     const/4 p1, 0x0
@@ -343,14 +343,23 @@
 .method private onContinuousShotDone()V
     .registers 5
 
-    .line 3066
+    .line 3081
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "onContinuousShotDone"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3067
+    .line 3082
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
+
+    iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;
+
+    check-cast v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
+
+    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->onContinuousShotStop()V
+
+    .line 3083
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -359,20 +368,20 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUI;->setContinuousShotEnd(Z)V
 
-    .line 3068
+    .line 3084
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->resetState()V
 
-    .line 3069
+    .line 3085
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotDone:Z
 
-    .line 3070
+    .line 3086
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->onContinuousShotDone()V
 
-    .line 3071
+    .line 3087
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -381,7 +390,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_38
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
@@ -391,10 +400,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_41
 
-    .line 3072
-    :cond_2f
+    .line 3088
+    :cond_38
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -405,8 +414,8 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 3074
-    :cond_38
+    .line 3090
+    :cond_41
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -421,7 +430,7 @@
 .method private onContinuousShotStop()V
     .registers 6
 
-    .line 3004
+    .line 3016
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -450,33 +459,52 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
+    .line 3019
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mBurstProgress:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v0
+
+    if-nez v0, :cond_33
+
+    .line 3020
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
+
+    iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;
+
+    check-cast v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
+
+    invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->onContinuousShotStop()V
+
+    :cond_33
     const/4 v0, 0x0
 
-    .line 3007
+    .line 3022
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->lock3AForContinuousShot(Z)V
 
-    .line 3008
+    .line 3023
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1, v0}, Lcom/transsion/camera/app/common/IAppUI;->setContinuousShotEnd(Z)V
 
-    .line 3009
+    .line 3024
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUIControl$IContinuousShotControl;->onContinuousShotStop()V
 
-    .line 3010
+    .line 3025
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->currentModeSupportLivePhoto()Z
 
     move-result v1
 
-    if-eqz v1, :cond_63
+    if-eqz v1, :cond_74
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
@@ -484,7 +512,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_63
+    if-eqz v1, :cond_74
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
@@ -492,14 +520,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_63
+    if-eqz v1, :cond_74
 
-    .line 3011
+    .line 3026
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-static {v1, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fputmLiveShotStopped(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;Z)V
 
-    .line 3012
+    .line 3027
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fgetmLivePhotoManager(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)Lcom/transsion/camera/app/common/livephoto/LivePhotoManager;
@@ -508,18 +536,18 @@
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/livephoto/LivePhotoManager;->start()V
 
-    .line 3013
+    .line 3028
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz v1, :cond_63
+    if-eqz v1, :cond_74
 
-    .line 3014
+    .line 3029
     invoke-interface {v1}, Lcom/transsion/camera/app/common/IAppUI;->playLivePhotoLottieAnimation()V
 
-    .line 3017
-    :cond_63
+    .line 3032
+    :cond_74
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mBurstProgress:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -528,17 +556,17 @@
 
     const/4 v2, 0x1
 
-    if-lez v1, :cond_6e
+    if-lez v1, :cond_7f
 
     move v1, v2
 
-    goto :goto_6f
+    goto :goto_80
 
-    :cond_6e
+    :cond_7f
     move v1, v0
 
-    .line 3018
-    :goto_6f
+    .line 3033
+    :goto_80
     iget-object v3, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mBurstProgress:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -553,26 +581,26 @@
 
     sub-int/2addr v3, v4
 
-    if-lez v3, :cond_7f
+    if-lez v3, :cond_90
 
     move v0, v2
 
-    :cond_7f
-    if-eqz v0, :cond_b1
+    :cond_90
+    if-eqz v0, :cond_c2
 
-    .line 3019
+    .line 3034
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-static {v2}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fgetmContinuousHideSaveAnimation(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_b1
+    if-eqz v2, :cond_c2
 
-    .line 3020
+    .line 3035
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->updateBurstCaptureThumbnail()V
 
-    .line 3021
+    .line 3036
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -581,7 +609,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a0
+    if-eqz v0, :cond_b1
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
@@ -591,10 +619,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d0
+    if-eqz v0, :cond_e1
 
-    .line 3022
-    :cond_a0
+    .line 3037
+    :cond_b1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->-$$Nest$fgetmCaptureHandler(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)Lcom/transsion/camera/app/common/mode/CommonPhotoMode$CaptureHandler;
@@ -609,20 +637,20 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    goto :goto_d0
+    goto :goto_e1
 
-    :cond_b1
-    if-eqz v0, :cond_b7
+    :cond_c2
+    if-eqz v0, :cond_c8
 
-    .line 3029
+    .line 3044
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->updateUIStateSaving()V
 
-    goto :goto_d0
+    goto :goto_e1
 
-    :cond_b7
-    if-eqz v1, :cond_cd
+    :cond_c8
+    if-eqz v1, :cond_de
 
-    .line 3031
+    .line 3046
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mMaxBurstNumber:I
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mBurstProgress:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -631,26 +659,26 @@
 
     move-result v1
 
-    if-eq v0, v1, :cond_cd
+    if-eq v0, v1, :cond_de
 
-    .line 3032
+    .line 3047
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->updateBurstCaptureThumbnail()V
 
-    .line 3033
+    .line 3048
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->updateUIStateSaving()V
 
-    .line 3034
+    .line 3049
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->onContinuousShotDone()V
 
-    goto :goto_d0
+    goto :goto_e1
 
-    .line 3036
-    :cond_cd
+    .line 3051
+    :cond_de
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->onContinuousShotDone()V
 
-    .line 3041
-    :cond_d0
-    :goto_d0
+    .line 3056
+    :cond_e1
+    :goto_e1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     iget p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSoundSampleId:I
@@ -665,7 +693,7 @@
 
     move-object/from16 v0, p0
 
-    .line 2964
+    .line 2976
     iget-object v1, v0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -680,14 +708,14 @@
 
     move-result-object v6
 
-    .line 2965
+    .line 2977
     iget-object v1, v0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v3, v1, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mPhotoHelper:Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mInternalStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
 
-    .line 2966
+    .line 2978
     invoke-interface {v1}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->getCameraDirectory()Ljava/lang/String;
 
     move-result-object v7
@@ -700,12 +728,12 @@
 
     move/from16 v10, p2
 
-    .line 2965
+    .line 2977
     invoke-virtual/range {v3 .. v10}, Lcom/transsion/camera/app/common/mode/CommonPhotoHelper;->createContentValues([BLandroid/graphics/Bitmap;Landroid/location/Location;Ljava/lang/String;JI)Landroid/content/ContentValues;
 
     move-result-object v11
 
-    .line 2967
+    .line 2979
     iget-object v1, v0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v10, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mInternalStorageOperator:Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
@@ -730,17 +758,17 @@
 .method private updateBurstCaptureThumbnail()V
     .registers 4
 
-    .line 3045
+    .line 3060
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mLatestBurstJpegData:[B
 
     if-eqz v0, :cond_15
 
-    .line 3046
+    .line 3061
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->updateThumbnailView([B)V
 
-    .line 3047
+    .line 3062
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -751,12 +779,12 @@
 
     invoke-interface {v0, v2, v1}, Lcom/transsion/camera/app/common/IAppUI;->updateBurstBrowserData(Landroid/net/Uri;Z)V
 
-    .line 3048
+    .line 3063
     iput-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mLatestBurstJpegData:[B
 
     return-void
 
-    .line 3050
+    .line 3065
     :cond_15
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -770,7 +798,7 @@
 .method private updateUIStateSaving()V
     .registers 4
 
-    .line 3055
+    .line 3070
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-boolean v1, v0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mResumed:Z
@@ -779,14 +807,14 @@
 
     if-nez v1, :cond_19
 
-    .line 3056
+    .line 3071
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "update UI to idle state if not resumed"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 3057
+    .line 3072
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -799,7 +827,7 @@
 
     return-void
 
-    .line 3061
+    .line 3076
     :cond_19
     iget-object p0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -819,7 +847,7 @@
 
     monitor-enter p0
 
-    .line 2935
+    .line 2947
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -849,7 +877,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2936
+    .line 2948
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStarted:Z
     :try_end_25
     .catchall {:try_start_1 .. :try_end_25} :catchall_27
@@ -880,7 +908,7 @@
 
     monitor-enter p0
 
-    .line 2848
+    .line 2860
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -910,12 +938,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2850
+    .line 2862
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotDone:Z
 
     if-eqz v0, :cond_34
 
-    .line 2851
+    .line 2863
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -926,7 +954,7 @@
     :try_end_30
     .catchall {:try_start_1 .. :try_end_30} :catchall_32
 
-    .line 2852
+    .line 2864
     monitor-exit p0
 
     return-void
@@ -936,7 +964,7 @@
 
     goto :goto_49
 
-    .line 2854
+    .line 2866
     :cond_34
     :try_start_34
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -949,19 +977,19 @@
 
     if-nez v0, :cond_47
 
-    .line 2855
+    .line 2867
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->stopContinuousShot()V
 
-    .line 2856
+    .line 2868
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->onContinuousShotStop()V
     :try_end_47
     .catchall {:try_start_34 .. :try_end_47} :catchall_32
 
-    .line 2858
+    .line 2870
     :cond_47
     monitor-exit p0
 
@@ -981,7 +1009,7 @@
 
     monitor-enter p0
 
-    .line 2866
+    .line 2878
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1027,12 +1055,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2869
+    .line 2881
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotDone:Z
 
     if-eqz v0, :cond_49
 
-    .line 2870
+    .line 2882
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1043,7 +1071,7 @@
     :try_end_44
     .catchall {:try_start_1 .. :try_end_44} :catchall_46
 
-    .line 2871
+    .line 2883
     monitor-exit p0
 
     return-void
@@ -1053,7 +1081,7 @@
 
     goto/16 :goto_d2
 
-    .line 2873
+    .line 2885
     :cond_49
     :try_start_49
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -1064,7 +1092,7 @@
 
     if-eqz v0, :cond_5c
 
-    .line 2874
+    .line 2886
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1075,12 +1103,12 @@
     :try_end_5a
     .catchall {:try_start_49 .. :try_end_5a} :catchall_46
 
-    .line 2875
+    .line 2887
     monitor-exit p0
 
     return-void
 
-    .line 2878
+    .line 2890
     :cond_5c
     :try_start_5c
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
@@ -1103,22 +1131,22 @@
 
     if-gtz v0, :cond_79
 
-    .line 2879
+    .line 2891
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {p1, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 2880
+    .line 2892
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->onContinuousShotStop()V
     :try_end_77
     .catchall {:try_start_5c .. :try_end_77} :catchall_46
 
-    .line 2881
+    .line 2893
     monitor-exit p0
 
     return-void
 
-    .line 2884
+    .line 2896
     :cond_79
     :try_start_79
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mBurstProgress:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -1129,7 +1157,7 @@
 
     if-ne v1, v0, :cond_8b
 
-    .line 2886
+    .line 2898
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v2, v2, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1142,7 +1170,7 @@
 
     invoke-interface {v2, v5, v3, v4}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 2888
+    .line 2900
     :cond_8b
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
@@ -1152,7 +1180,7 @@
 
     invoke-interface {v2, v0, v3}, Lcom/transsion/camera/app/common/IAppUIControl$IContinuousShotControl;->onContinuousShotProgress(II)V
 
-    .line 2890
+    .line 2902
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1181,40 +1209,40 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2893
+    .line 2905
     iget v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mMaxBurstNumber:I
 
     if-ne v2, v0, :cond_cb
 
-    .line 2894
+    .line 2906
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 2895
+    .line 2907
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     if-eqz v1, :cond_c8
 
-    .line 2896
+    .line 2908
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->stopContinuousShotCount()V
 
-    .line 2898
+    .line 2910
     :cond_c8
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->onContinuousShotStop()V
 
-    .line 2901
+    .line 2913
     :cond_cb
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mLatestBurstJpegData:[B
 
-    .line 2902
+    .line 2914
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->saveJpegToFile([BI)V
     :try_end_d0
     .catchall {:try_start_79 .. :try_end_d0} :catchall_46
 
-    .line 2903
+    .line 2915
     monitor-exit p0
 
     return-void
@@ -1233,13 +1261,13 @@
 
     monitor-enter p0
 
-    .line 2977
+    .line 2989
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mSaveProgress:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
-    .line 2979
+    .line 2991
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1274,7 +1302,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2982
+    .line 2994
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mSaveProgress:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -1293,7 +1321,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 2983
+    .line 2995
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v0
@@ -1321,7 +1349,7 @@
     :goto_54
     if-eqz p1, :cond_65
 
-    .line 2985
+    .line 2997
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1330,14 +1358,14 @@
 
     invoke-interface {v0, p1, v1}, Lcom/transsion/camera/app/common/IAppUI;->updateThumbnailUri(Landroid/net/Uri;Z)V
 
-    .line 2986
+    .line 2998
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0, p1, v2}, Lcom/transsion/camera/app/common/IAppUI;->updateBurstBrowserData(Landroid/net/Uri;Z)V
 
-    .line 2988
+    .line 3000
     :cond_65
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
@@ -1347,10 +1375,10 @@
 
     if-nez p1, :cond_70
 
-    .line 2989
+    .line 3001
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->updateBurstCaptureThumbnail()V
 
-    .line 2992
+    .line 3004
     :cond_70
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -1364,14 +1392,14 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setBurstProgress(I)V
 
-    .line 2993
+    .line 3005
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->captureDone()V
 
-    .line 2994
+    .line 3006
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->onContinuousShotDone()V
 
     goto :goto_98
@@ -1379,14 +1407,14 @@
     :cond_88
     if-eqz p1, :cond_98
 
-    .line 2997
+    .line 3009
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0, p1, v2}, Lcom/transsion/camera/app/common/IAppUI;->updateThumbnailUri(Landroid/net/Uri;Z)V
 
-    .line 2998
+    .line 3010
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1395,7 +1423,7 @@
     :try_end_98
     .catchall {:try_start_1 .. :try_end_98} :catchall_52
 
-    .line 3001
+    .line 3013
     :cond_98
     :goto_98
     monitor-exit p0
@@ -1414,20 +1442,20 @@
 .method public onPreviewStarted()V
     .registers 4
 
-    .line 2779
+    .line 2791
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSoundSampleId:I
 
     if-eqz v0, :cond_5
 
     goto :goto_13
 
-    .line 2783
+    .line 2795
     :cond_5
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-eqz v0, :cond_13
 
-    .line 2784
+    .line 2796
     iget v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSoundResId:I
 
     new-instance v2, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot$$ExternalSyntheticLambda1;
@@ -1444,25 +1472,25 @@
 .method public release()V
     .registers 4
 
-    .line 2954
+    .line 2966
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSoundLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 2955
+    .line 2967
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     if-eqz v1, :cond_12
 
-    .line 2956
+    .line 2968
     iget v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSoundSampleId:I
 
     invoke-interface {v1, v2}, Lcom/transsion/camera/utils/sound/IActionSound;->unload(I)V
 
     const/4 v1, 0x0
 
-    .line 2957
+    .line 2969
     iput-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     goto :goto_12
@@ -1472,14 +1500,14 @@
 
     goto :goto_1d
 
-    .line 2959
+    .line 2971
     :cond_12
     :goto_12
     monitor-exit v0
     :try_end_13
     .catchall {:try_start_3 .. :try_end_13} :catchall_10
 
-    .line 2960
+    .line 2972
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1490,7 +1518,7 @@
 
     return-void
 
-    .line 2959
+    .line 2971
     :goto_1d
     :try_start_1d
     monitor-exit v0
@@ -1503,27 +1531,27 @@
 .method resetState()V
     .registers 3
 
-    .line 2770
+    .line 2782
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mBurstProgress:Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 2771
+    .line 2783
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mSaveProgress:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 2772
+    .line 2784
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStarted:Z
 
-    .line 2773
+    .line 2785
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 2774
+    .line 2786
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShutterState:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
@@ -1534,14 +1562,14 @@
 .method public startContinuousShot()V
     .registers 4
 
-    .line 2798
+    .line 2810
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "startContinuousShot"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2799
+    .line 2811
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1550,27 +1578,27 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 2800
+    .line 2812
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->resetState()V
 
     const/4 v0, 0x0
 
-    .line 2801
+    .line 2813
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotDone:Z
 
     const/4 v0, 0x1
 
-    .line 2802
+    .line 2814
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStarted:Z
 
-    .line 2803
+    .line 2815
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStartTime:J
 
-    .line 2804
+    .line 2816
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/mode/CameraMode;->mImageProcessor:Lcom/transsion/camera/app/common/mode/IImageProcessor;
@@ -1579,10 +1607,10 @@
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;->onContinuousShotStart()V
 
-    .line 2805
+    .line 2817
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->lock3AForContinuousShot(Z)V
 
-    .line 2806
+    .line 2818
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -1599,7 +1627,7 @@
 
     monitor-enter p0
 
-    .line 2907
+    .line 2919
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1637,7 +1665,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 2908
+    .line 2920
     invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v2
@@ -1648,15 +1676,15 @@
 
     move-result-object v1
 
-    .line 2907
+    .line 2919
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2910
+    .line 2922
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStarted:Z
 
     if-nez v0, :cond_4c
 
-    .line 2911
+    .line 2923
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1667,7 +1695,7 @@
     :try_end_48
     .catchall {:try_start_1 .. :try_end_48} :catchall_4a
 
-    .line 2912
+    .line 2924
     monitor-exit p0
 
     return-void
@@ -1677,14 +1705,14 @@
 
     goto :goto_9d
 
-    .line 2914
+    .line 2926
     :cond_4c
     :try_start_4c
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotDone:Z
 
     if-eqz v0, :cond_5b
 
-    .line 2915
+    .line 2927
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1695,12 +1723,12 @@
     :try_end_59
     .catchall {:try_start_4c .. :try_end_59} :catchall_4a
 
-    .line 2916
+    .line 2928
     monitor-exit p0
 
     return-void
 
-    .line 2919
+    .line 2931
     :cond_5b
     :try_start_5b
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -1711,7 +1739,7 @@
 
     if-eqz v0, :cond_6e
 
-    .line 2920
+    .line 2932
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1722,12 +1750,12 @@
     :try_end_6c
     .catchall {:try_start_5b .. :try_end_6c} :catchall_4a
 
-    .line 2921
+    .line 2933
     monitor-exit p0
 
     return-void
 
-    .line 2924
+    .line 2936
     :cond_6e
     :try_start_6e
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
@@ -1740,7 +1768,7 @@
 
     move-result-object v0
 
-    .line 2925
+    .line 2937
     const-string v1, "on"
 
     invoke-static {v1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1749,7 +1777,7 @@
 
     if-nez v0, :cond_8b
 
-    .line 2926
+    .line 2938
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1760,12 +1788,12 @@
     :try_end_89
     .catchall {:try_start_6e .. :try_end_89} :catchall_4a
 
-    .line 2927
+    .line 2939
     monitor-exit p0
 
     return-void
 
-    .line 2929
+    .line 2941
     :cond_8b
     :try_start_8b
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShutterState:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -1778,7 +1806,7 @@
 
     if-nez v0, :cond_9b
 
-    .line 2930
+    .line 2942
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     iget v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mCaptureSoundSampleId:I
@@ -1787,7 +1815,7 @@
     :try_end_9b
     .catchall {:try_start_8b .. :try_end_9b} :catchall_4a
 
-    .line 2932
+    .line 2944
     :cond_9b
     monitor-exit p0
 
@@ -1807,7 +1835,7 @@
 
     monitor-enter p0
 
-    .line 2828
+    .line 2840
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1837,12 +1865,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2831
+    .line 2843
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotDone:Z
 
     if-eqz v0, :cond_34
 
-    .line 2832
+    .line 2844
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1853,7 +1881,7 @@
     :try_end_30
     .catchall {:try_start_1 .. :try_end_30} :catchall_32
 
-    .line 2833
+    .line 2845
     monitor-exit p0
 
     return-void
@@ -1863,7 +1891,7 @@
 
     goto :goto_66
 
-    .line 2835
+    .line 2847
     :cond_34
     :try_start_34
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
@@ -1876,10 +1904,10 @@
 
     if-eqz v0, :cond_52
 
-    .line 2836
+    .line 2848
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->updateBurstCaptureThumbnail()V
 
-    .line 2837
+    .line 2849
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1888,7 +1916,7 @@
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 2838
+    .line 2850
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1899,7 +1927,7 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 2840
+    .line 2852
     :cond_52
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotStopped:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -1909,19 +1937,19 @@
 
     if-nez v0, :cond_64
 
-    .line 2841
+    .line 2853
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->stopContinuousShot()V
 
-    .line 2842
+    .line 2854
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->onContinuousShotStop()V
     :try_end_64
     .catchall {:try_start_34 .. :try_end_64} :catchall_32
 
-    .line 2844
+    .line 2856
     :cond_64
     monitor-exit p0
 
@@ -1941,7 +1969,7 @@
 
     monitor-enter p0
 
-    .line 2941
+    .line 2953
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1949,7 +1977,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "terminateContinuousShot mBurstProgress: "
+    const-string/jumbo v2, "terminateContinuousShot mBurstProgress: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1971,12 +1999,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2944
+    .line 2956
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->mShotDone:Z
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_35
 
-    .line 2945
+    .line 2957
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->this$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1984,36 +2012,36 @@
     const-string v1, "do nothing if continuous shot is done"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-    :try_end_30
-    .catchall {:try_start_1 .. :try_end_30} :catchall_32
+    :try_end_31
+    .catchall {:try_start_1 .. :try_end_31} :catchall_33
 
-    .line 2946
+    .line 2958
     monitor-exit p0
 
     return-void
 
-    :catchall_32
+    :catchall_33
     move-exception v0
 
-    goto :goto_39
+    goto :goto_3a
 
-    .line 2949
-    :cond_34
-    :try_start_34
+    .line 2961
+    :cond_35
+    :try_start_35
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$ContinuousShot;->stopContinuousShot()V
-    :try_end_37
-    .catchall {:try_start_34 .. :try_end_37} :catchall_32
+    :try_end_38
+    .catchall {:try_start_35 .. :try_end_38} :catchall_33
 
-    .line 2950
+    .line 2962
     monitor-exit p0
 
     return-void
 
-    :goto_39
-    :try_start_39
+    :goto_3a
+    :try_start_3a
     monitor-exit p0
-    :try_end_3a
-    .catchall {:try_start_39 .. :try_end_3a} :catchall_32
+    :try_end_3b
+    .catchall {:try_start_3a .. :try_end_3b} :catchall_33
 
     throw v0
 .end method

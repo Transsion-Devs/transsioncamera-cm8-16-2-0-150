@@ -55,7 +55,7 @@
 
     move-result-object v1
 
-    .line 15
+    .line 11
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__CountKt$count$1;->label:I
 
     const/4 v3, 0x1
@@ -84,12 +84,12 @@
     :cond_35
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 16
+    .line 12
     new-instance p1, Lkotlin/jvm/internal/Ref$IntRef;
 
     invoke-direct {p1}, Lkotlin/jvm/internal/Ref$IntRef;-><init>()V
 
-    .line 17
+    .line 13
     new-instance v2, Lkotlinx/coroutines/flow/FlowKt__CountKt$count$2;
 
     invoke-direct {v2, p1}, Lkotlinx/coroutines/flow/FlowKt__CountKt$count$2;-><init>(Lkotlin/jvm/internal/Ref$IntRef;)V
@@ -109,7 +109,7 @@
     :cond_4d
     move-object p0, p1
 
-    .line 21
+    .line 17
     :goto_4e
     iget p0, p0, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
@@ -172,7 +172,7 @@
 
     move-result-object v1
 
-    .line 27
+    .line 23
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__CountKt$count$3;->label:I
 
     const/4 v3, 0x1
@@ -201,12 +201,12 @@
     :cond_35
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 28
+    .line 24
     new-instance p2, Lkotlin/jvm/internal/Ref$IntRef;
 
     invoke-direct {p2}, Lkotlin/jvm/internal/Ref$IntRef;-><init>()V
 
-    .line 29
+    .line 25
     new-instance v2, Lkotlinx/coroutines/flow/FlowKt__CountKt$count$4;
 
     invoke-direct {v2, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__CountKt$count$4;-><init>(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/internal/Ref$IntRef;)V
@@ -226,7 +226,7 @@
     :cond_4d
     move-object p0, p2
 
-    .line 35
+    .line 31
     :goto_4e
     iget p0, p0, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 

@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;,
-        Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;
+        Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;,
+        Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;
     }
 .end annotation
 
@@ -61,7 +61,7 @@
 
 .field private mTaintInfoTextView:Landroid/widget/TextView;
 
-.field private final mUIHandler:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;
+.field private mUIHandler:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;
 
 
 # direct methods
@@ -158,7 +158,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 47
+    .line 48
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "TaintDetectionUI"
@@ -171,36 +171,29 @@
 .end method
 
 .method public constructor <init>(Landroid/content/res/Resources;)V
-    .registers 4
+    .registers 5
 
-    .line 102
+    .line 103
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;-><init>()V
 
-    .line 64
+    .line 66
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mPreviewRect:Landroid/graphics/Rect;
 
-    .line 325
+    .line 336
     new-instance v0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$1;-><init>(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 103
-    new-instance v0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;-><init>(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI-IA;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mUIHandler:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;
-
     .line 104
     new-instance v0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;-><init>(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI-IA;)V
 
@@ -209,16 +202,16 @@
     .line 105
     new-instance v0, Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;-><init>(I)V
+    invoke-direct {v0, v2}, Lcom/transsion/camera/app/common/ui/HintInfo;-><init>(I)V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     .line 106
-    sget v1, Lcom/transsion/camera/R$string;->taint_detection_setting_hint_info:I
+    sget v2, Lcom/transsion/camera/R$string;->taint_detection_setting_hint_info:I
 
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
@@ -236,13 +229,23 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsForceTaintDetect:Z
 
+    if-eqz p1, :cond_3e
+
+    .line 110
+    new-instance p1, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;
+
+    invoke-direct {p1, p0, v1}, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;-><init>(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI-IA;)V
+
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mUIHandler:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;
+
+    :cond_3e
     return-void
 .end method
 
 .method static synthetic access$000(Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;)Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
     .registers 1
 
-    .line 46
+    .line 47
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     return-object p0
@@ -251,7 +254,7 @@
 .method private notifyDebugIfNeed(Lcom/effecttaint/labcv/core/lens/ImageQualityInterface$ImageQualityResult;)V
     .registers 5
 
-    .line 312
+    .line 323
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsForceTaintDetect:Z
 
     if-eqz v0, :cond_2b
@@ -260,19 +263,19 @@
 
     if-eqz v0, :cond_2b
 
-    .line 313
+    .line 324
     new-instance v0, Landroid/os/Message;
 
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
     const/16 v1, 0x64
 
-    .line 314
+    .line 325
     iput v1, v0, Landroid/os/Message;->what:I
 
     if-eqz p1, :cond_1e
 
-    .line 316
+    .line 327
     invoke-virtual {p1}, Lcom/effecttaint/labcv/core/lens/ImageQualityInterface$ImageQualityResult;->getScore()F
 
     move-result p1
@@ -290,16 +293,16 @@
     :cond_1e
     const/4 p1, 0x0
 
-    .line 318
+    .line 329
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    .line 320
+    .line 331
     :goto_21
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mUIHandler:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;
 
     invoke-virtual {p1, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 321
+    .line 332
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mUIHandler:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;
 
     invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
@@ -311,12 +314,12 @@
 .method private notifyStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
 
-    .line 374
+    .line 385
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p0, :cond_b
 
-    .line 375
+    .line 386
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     move-result-object p0
@@ -330,12 +333,12 @@
 .method private querySettingValue(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
 
-    .line 305
+    .line 316
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_9
 
-    .line 306
+    .line 317
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/setting/ISetting;->queryValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -353,7 +356,12 @@
 .method protected doCreateEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
     .registers 5
 
-    .line 113
+    .line 116
+    iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsForceTaintDetect:Z
+
+    if-eqz v0, :cond_16
+
+    .line 117
     sget v0, Lcom/transsion/camera/R$layout;->taint_detection_layout:I
 
     const/4 v1, 0x0
@@ -362,7 +370,7 @@
 
     move-result-object p1
 
-    .line 114
+    .line 118
     sget p2, Lcom/transsion/camera/R$id;->taint_detection_info:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -374,6 +382,11 @@
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mRootParent:Landroid/widget/FrameLayout;
 
     return-object p1
+
+    :cond_16
+    const/4 p0, 0x0
+
+    return-object p0
 .end method
 
 .method public bridge synthetic getExtraKey()Ljava/lang/String;
@@ -390,7 +403,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 190
+    .line 199
     const-string p0, "key_taint_detection"
 
     return-object p0
@@ -399,7 +412,7 @@
 .method public getValue()Ljava/lang/String;
     .registers 1
 
-    .line 181
+    .line 190
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p0, :cond_6
@@ -408,7 +421,7 @@
 
     return-object p0
 
-    .line 184
+    .line 193
     :cond_6
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
@@ -431,7 +444,7 @@
 .method public notifyCameraOperateAction(I)V
     .registers 6
 
-    .line 208
+    .line 217
     sget-object v0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -450,21 +463,21 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_d0
+    if-eqz p1, :cond_d6
 
     const/4 v1, 0x1
 
-    if-eq p1, v1, :cond_ca
+    if-eq p1, v1, :cond_d0
 
     const/16 v2, 0xb
 
-    if-eq p1, v2, :cond_bc
+    if-eq p1, v2, :cond_c2
 
     const/16 v2, 0xc
 
     const/4 v3, 0x0
 
-    if-eq p1, v2, :cond_b9
+    if-eq p1, v2, :cond_bf
 
     const/16 v2, 0x17
 
@@ -484,19 +497,19 @@
 
     const/16 v2, 0x2e
 
-    if-eq p1, v2, :cond_d0
+    if-eq p1, v2, :cond_d6
 
     const/16 v2, 0x2f
 
-    if-eq p1, v2, :cond_ca
+    if-eq p1, v2, :cond_d0
 
     const/16 v2, 0x35
 
-    if-eq p1, v2, :cond_d0
+    if-eq p1, v2, :cond_d6
 
     const/16 v2, 0x36
 
-    if-eq p1, v2, :cond_ca
+    if-eq p1, v2, :cond_d0
 
     const/16 v2, 0x4d
 
@@ -516,91 +529,91 @@
 
     const/16 v2, 0x6e
 
-    if-eq p1, v2, :cond_d0
+    if-eq p1, v2, :cond_d6
 
     const/16 v2, 0x6f
 
-    if-eq p1, v2, :cond_ca
+    if-eq p1, v2, :cond_d0
 
-    sparse-switch p1, :sswitch_data_dc
+    sparse-switch p1, :sswitch_data_e2
 
-    goto/16 :goto_db
+    goto/16 :goto_e1
 
-    .line 288
+    .line 297
     :sswitch_61
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsCelebrityPopupTipsShowing:Z
 
     return-void
 
-    .line 279
+    .line 288
     :sswitch_64
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsCelebrityPopupTipsShowing:Z
 
-    .line 280
+    .line 289
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz p1, :cond_db
+    if-eqz p1, :cond_e1
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    if-eqz p0, :cond_db
+    if-eqz p0, :cond_e1
 
-    .line 281
+    .line 290
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
     return-void
 
-    .line 285
+    .line 294
     :sswitch_72
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsOverlayGuideShowing:Z
 
     return-void
 
-    .line 273
+    .line 282
     :sswitch_75
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsOverlayGuideShowing:Z
 
-    .line 274
+    .line 283
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz p1, :cond_db
+    if-eqz p1, :cond_e1
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    if-eqz p0, :cond_db
+    if-eqz p0, :cond_e1
 
-    .line 275
+    .line 284
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
     return-void
 
-    .line 212
+    .line 221
     :sswitch_83
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsSelfTimeShowing:Z
 
-    .line 213
+    .line 222
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    if-eqz p0, :cond_db
+    if-eqz p0, :cond_e1
 
-    .line 214
+    .line 223
     invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->turnOnSwitch(Z)V
 
     return-void
 
-    .line 267
+    .line 276
     :cond_8d
     :sswitch_8d
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    if-eqz p0, :cond_db
+    if-eqz p0, :cond_e1
 
-    .line 268
+    .line 277
     invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->turnOnSwitch(Z)V
 
     return-void
 
-    .line 255
+    .line 264
     :cond_95
     :sswitch_95
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -611,108 +624,115 @@
 
     if-eqz v0, :cond_a0
 
-    .line 256
+    .line 265
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    .line 258
+    .line 267
     :cond_a0
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    if-eqz p0, :cond_db
+    if-eqz p0, :cond_e1
 
-    .line 259
+    .line 268
     invoke-interface {p0, v3}, Lcom/transsion/camera/app/common/setting/ISetting;->turnOnSwitch(Z)V
 
     return-void
 
-    .line 297
+    .line 308
     :cond_a8
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsZooming:Z
 
     return-void
 
-    .line 291
+    .line 300
     :cond_ab
+    invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_e1
+
+    .line 301
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsZooming:Z
 
-    .line 292
+    .line 302
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz p1, :cond_db
+    if-eqz p1, :cond_e1
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    if-eqz p0, :cond_db
+    if-eqz p0, :cond_e1
 
-    .line 293
+    .line 303
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
     return-void
 
-    .line 248
-    :cond_b9
-    :sswitch_b9
+    .line 257
+    :cond_bf
+    :sswitch_bf
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsSelfTimeShowing:Z
 
     return-void
 
-    .line 240
-    :cond_bc
-    :sswitch_bc
+    .line 249
+    :cond_c2
+    :sswitch_c2
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsSelfTimeShowing:Z
 
-    .line 241
+    .line 250
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz p1, :cond_db
+    if-eqz p1, :cond_e1
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    if-eqz p0, :cond_db
+    if-eqz p0, :cond_e1
 
-    .line 242
+    .line 251
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
     return-void
 
-    .line 235
-    :cond_ca
-    :sswitch_ca
+    .line 244
+    :cond_d0
+    :sswitch_d0
     const-string p0, "do some thing when needless"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 225
-    :cond_d0
-    :sswitch_d0
+    .line 234
+    :cond_d6
+    :sswitch_d6
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz p1, :cond_db
+    if-eqz p1, :cond_e1
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    if-eqz p0, :cond_db
+    if-eqz p0, :cond_e1
 
-    .line 226
+    .line 235
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
 
-    :cond_db
-    :goto_db
+    :cond_e1
+    :goto_e1
     return-void
 
-    :sswitch_data_dc
+    :sswitch_data_e2
     .sparse-switch
-        0xf -> :sswitch_d0
-        0x10 -> :sswitch_ca
+        0xf -> :sswitch_d6
+        0x10 -> :sswitch_d0
         0x11 -> :sswitch_95
         0x12 -> :sswitch_8d
         0x1c -> :sswitch_83
         0x20 -> :sswitch_83
-        0xbf -> :sswitch_d0
-        0x101 -> :sswitch_bc
-        0x102 -> :sswitch_b9
+        0xbf -> :sswitch_d6
+        0x101 -> :sswitch_c2
+        0x102 -> :sswitch_bf
         0x16b -> :sswitch_75
         0x16c -> :sswitch_72
         0x185 -> :sswitch_64
@@ -732,17 +752,17 @@
 .method public onShutterLongClick(II)Z
     .registers 5
 
-    .line 200
+    .line 209
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v0, :cond_8
 
     const/4 v1, 0x0
 
-    .line 201
+    .line 210
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->turnOnSwitch(Z)V
 
-    .line 203
+    .line 212
     :cond_8
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onShutterLongClick(II)Z
 
@@ -765,12 +785,12 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 2
 
-    .line 151
+    .line 158
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p1, :cond_c
 
-    .line 153
+    .line 160
     sget-object p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "mDeviceSetting is null!"
@@ -779,7 +799,7 @@
 
     return-void
 
-    .line 156
+    .line 163
     :cond_c
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mTaintDetSettingCallBack:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$TaintDetSettingCallBack;
 
@@ -806,19 +826,19 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 4
 
-    .line 161
+    .line 168
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p1, :cond_14
 
-    .line 163
+    .line 170
     const-string v0, "key_focus_state"
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 164
+    .line 171
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_taint_state"
@@ -834,7 +854,7 @@
 .method public setShutterControl(Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;)V
     .registers 2
 
-    .line 195
+    .line 204
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setShutterControl(Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;)V
 
     return-void
@@ -843,12 +863,17 @@
 .method public setupEntryView()V
     .registers 5
 
-    .line 120
+    .line 127
+    iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsForceTaintDetect:Z
+
+    if-eqz v0, :cond_61
+
+    .line 128
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mPreviewRect:Landroid/graphics/Rect;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2f
 
-    .line 121
+    .line 129
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mRootParent:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -857,7 +882,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 122
+    .line 130
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mPreviewRect:Landroid/graphics/Rect;
 
     iget v2, v1, Landroid/graphics/Rect;->left:I
@@ -868,7 +893,7 @@
 
     invoke-virtual {v0, v2, v1, v3, v3}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 123
+    .line 131
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mPreviewRect:Landroid/graphics/Rect;
 
     iget v2, v1, Landroid/graphics/Rect;->right:I
@@ -879,7 +904,7 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 124
+    .line 132
     iget v2, v1, Landroid/graphics/Rect;->bottom:I
 
     iget v1, v1, Landroid/graphics/Rect;->top:I
@@ -888,23 +913,18 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 125
+    .line 133
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mRootParent:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 127
-    :cond_2b
-    iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsForceTaintDetect:Z
-
-    if-eqz v0, :cond_61
-
-    .line 128
+    .line 135
+    :cond_2f
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mTaintInfoTextView:Landroid/widget/TextView;
 
     if-nez v0, :cond_61
 
-    .line 129
+    .line 136
     new-instance v0, Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mRootParent:Landroid/widget/FrameLayout;
@@ -919,31 +939,31 @@
 
     const/high16 v1, -0x10000
 
-    .line 130
+    .line 137
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 131
+    .line 138
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mTaintInfoTextView:Landroid/widget/TextView;
 
     const/high16 v1, 0x41a00000    # 20.0f
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 132
+    .line 139
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mTaintInfoTextView:Landroid/widget/TextView;
 
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 133
+    .line 140
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mTaintInfoTextView:Landroid/widget/TextView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 134
+    .line 141
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mRootParent:Landroid/widget/FrameLayout;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mTaintInfoTextView:Landroid/widget/TextView;
@@ -957,34 +977,40 @@
 .method public unInit()V
     .registers 4
 
-    .line 170
+    .line 177
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->unInit()V
 
-    .line 171
+    .line 178
+    iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mIsForceTaintDetect:Z
+
+    if-eqz v0, :cond_12
+
+    .line 179
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mRootParent:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 172
+    .line 180
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mUIHandler:Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI$UIHandler;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 173
+    .line 182
+    :cond_12
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_26
 
-    .line 174
+    .line 183
     const-string v1, "key_focus_state"
 
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 175
+    .line 184
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_taint_state"
@@ -993,14 +1019,14 @@
 
     invoke-virtual {v0, v1, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    :cond_22
+    :cond_26
     return-void
 .end method
 
 .method public updatePreviewRect(Landroid/graphics/Rect;)V
     .registers 2
 
-    .line 141
+    .line 148
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/taintdetection/TaintDetectionUI;->mPreviewRect:Landroid/graphics/Rect;
 
     return-void

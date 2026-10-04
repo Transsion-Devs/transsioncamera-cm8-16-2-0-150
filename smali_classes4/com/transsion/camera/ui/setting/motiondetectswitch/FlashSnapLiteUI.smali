@@ -24,7 +24,7 @@
 
 .field protected final mIconClickListener:Landroid/view/View$OnClickListener;
 
-.field private mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+.field private mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
 .field private mNeedShowIcon:Z
 
@@ -94,11 +94,11 @@
     return-object p0
 .end method
 
-.method static bridge synthetic -$$Nest$fgetmIconView(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Lcom/airbnb/lottie/LottieAnimationView;
+.method static bridge synthetic -$$Nest$fgetmIconView(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
     .registers 1
 
     .line 0
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     return-object p0
 .end method
@@ -151,10 +151,10 @@
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .registers 3
 
-    .line 47
+    .line 49
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;-><init>(Landroid/content/res/Resources;)V
 
-    .line 34
+    .line 36
     new-instance p1, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "FlashSnapLiteUI"
@@ -165,35 +165,35 @@
 
     const/4 p1, 0x0
 
-    .line 35
+    .line 37
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->DEFAULT_SELECTED:Z
 
     const/4 v0, 0x1
 
-    .line 36
+    .line 38
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mNeedShowIcon:Z
 
-    .line 37
+    .line 39
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mZoomWeelUIShowing:Z
 
-    .line 38
+    .line 40
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mFilterShowing:Z
 
-    .line 39
+    .line 41
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopSettingViewShowing:Z
 
-    .line 40
+    .line 42
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopWindowViewShowing:Z
 
-    .line 42
+    .line 44
     const-string v0, "flash_snap_switch.json"
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->ANIMATION:Ljava/lang/String;
 
-    .line 44
+    .line 46
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mDataCallBackAllowShowIcon:Z
 
-    .line 89
+    .line 90
     new-instance p1, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)V
@@ -206,7 +206,7 @@
 .method private isFacingBack()Z
     .registers 4
 
-    .line 270
+    .line 274
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
     move-result-object v0
@@ -242,7 +242,7 @@
     :cond_1e
     const/4 v0, 0x0
 
-    .line 271
+    .line 275
     :goto_1f
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -268,7 +268,7 @@
 .method private isIconVisible(Lcom/airbnb/lottie/LottieAnimationView;)Z
     .registers 2
 
-    .line 354
+    .line 359
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     move-result p0
@@ -288,21 +288,21 @@
 .method private synthetic lambda$hideIcon$4()V
     .registers 3
 
-    .line 313
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 318
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 314
+    .line 319
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 v1, 0x158
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 315
+    .line 320
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "hideIcon "
@@ -315,7 +315,7 @@
 .method private synthetic lambda$new$0(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
     .registers 3
 
-    .line 112
+    .line 113
     invoke-virtual {p1}, Lcom/airbnb/lottie/value/LottieFrameInfo;->getOverallProgress()F
 
     move-result p1
@@ -336,7 +336,7 @@
 .method private synthetic lambda$new$1(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
     .registers 3
 
-    .line 115
+    .line 116
     invoke-virtual {p1}, Lcom/airbnb/lottie/value/LottieFrameInfo;->getOverallProgress()F
 
     move-result p1
@@ -357,14 +357,14 @@
 .method private synthetic lambda$new$2(Landroid/view/View;)V
     .registers 6
 
-    .line 90
+    .line 91
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
 
     if-eqz v0, :cond_5
 
     goto :goto_b
 
-    .line 93
+    .line 94
     :cond_5
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
@@ -375,7 +375,7 @@
     :goto_b
     return-void
 
-    .line 96
+    .line 97
     :cond_c
     check-cast p1, Lcom/airbnb/lottie/LottieAnimationView;
 
@@ -385,7 +385,7 @@
 
     if-eqz p1, :cond_1c
 
-    .line 97
+    .line 98
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "mIconClickListener, onClick, return for animating"
@@ -394,7 +394,7 @@
 
     return-void
 
-    .line 100
+    .line 101
     :cond_1c
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
@@ -402,8 +402,8 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    .line 101
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 102
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
@@ -419,27 +419,27 @@
     :goto_2c
     invoke-virtual {v0, p1}, Lcom/airbnb/lottie/LottieAnimationView;->setSpeed(F)V
 
-    .line 102
+    .line 103
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
     if-eqz p1, :cond_39
 
-    .line 103
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 104
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/LottieAnimationView;->playAnimation()V
 
     goto :goto_3e
 
-    .line 105
+    .line 106
     :cond_39
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p1, v1}, Lcom/airbnb/lottie/LottieAnimationView;->setProgress(F)V
 
-    .line 107
+    .line 108
     :goto_3e
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     new-instance v0, Lcom/airbnb/lottie/model/KeyPath;
 
@@ -455,7 +455,7 @@
 
     move-result-object p1
 
-    .line 108
+    .line 109
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -473,12 +473,12 @@
 
     check-cast v0, Lcom/airbnb/lottie/model/KeyPath;
 
-    .line 109
+    .line 110
     invoke-virtual {v0}, Lcom/airbnb/lottie/model/KeyPath;->keysToString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 110
+    .line 111
     const-string v2, "Ellipse"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -495,9 +495,9 @@
 
     if-eqz v1, :cond_7f
 
-    .line 111
+    .line 112
     :cond_73
-    iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     sget-object v2, Lcom/airbnb/lottie/LottieProperty;->COLOR:Ljava/lang/Integer;
 
@@ -507,9 +507,9 @@
 
     invoke-virtual {v1, v0, v2, v3}, Lcom/airbnb/lottie/LottieAnimationView;->addValueCallback(Lcom/airbnb/lottie/model/KeyPath;Ljava/lang/Object;Lcom/airbnb/lottie/value/SimpleLottieValueCallback;)V
 
-    .line 114
+    .line 115
     :cond_7f
-    iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     sget-object v2, Lcom/airbnb/lottie/LottieProperty;->STROKE_COLOR:Ljava/lang/Integer;
 
@@ -521,21 +521,21 @@
 
     goto :goto_53
 
-    .line 118
+    .line 119
     :cond_8c
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->updateHint()V
 
-    .line 119
+    .line 120
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p1, :cond_9f
 
-    .line 120
+    .line 121
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
     if-eqz v0, :cond_9a
 
-    .line 121
+    .line 122
     const-string v0, "value_off_manual_on"
 
     goto :goto_9c
@@ -543,17 +543,17 @@
     :cond_9a
     const-string v0, "value_on_manual_off"
 
-    .line 120
+    .line 121
     :goto_9c
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 123
+    .line 124
     :cond_9f
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    if-eqz p1, :cond_b2
+    if-eqz p1, :cond_b5
 
-    .line 124
+    .line 125
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
     if-eqz p1, :cond_b2
@@ -564,30 +564,34 @@
 
     if-eqz p1, :cond_b2
 
-    .line 125
+    .line 126
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->showDialog()V
 
     .line 128
     :cond_b2
+    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->disableTwinkleGuide()V
+
+    .line 130
+    :cond_b5
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_be
 
     const/16 v0, 0x157
 
-    goto :goto_bd
+    goto :goto_c0
 
-    :cond_bb
+    :cond_be
     const/16 v0, 0x158
 
-    :goto_bd
+    :goto_c0
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 129
+    .line 131
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -614,25 +618,29 @@
 .method private synthetic lambda$showIcon$3()V
     .registers 4
 
-    .line 281
+    .line 285
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->isFacingBack()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9e
+    if-eqz v0, :cond_a5
 
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mDataCallBackAllowShowIcon:Z
 
-    if-eqz v0, :cond_9e
+    if-eqz v0, :cond_a5
 
-    .line 282
+    iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopSettingViewShowing:Z
+
+    if-nez v0, :cond_a5
+
+    .line 286
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "showIcon1: "
+    const-string v2, "showIcon: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -644,7 +652,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v2}, Lcom/airbnb/lottie/LottieAnimationView;->getProgress()F
 
@@ -656,9 +664,9 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
-    .line 283
+    .line 287
     invoke-virtual {v2}, Lcom/airbnb/lottie/LottieAnimationView;->isAnimating()Z
 
     move-result v2
@@ -669,11 +677,11 @@
 
     move-result-object v1
 
-    .line 282
+    .line 286
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 284
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 288
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->isAnimating()Z
 
@@ -681,21 +689,21 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_79
 
-    .line 285
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 289
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->cancelAnimation()V
 
-    .line 286
+    .line 290
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_66
 
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->getProgress()F
 
@@ -703,22 +711,22 @@
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_66
 
-    .line 287
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 291
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v0, v2}, Lcom/airbnb/lottie/LottieAnimationView;->setProgress(F)V
 
-    goto :goto_75
+    goto :goto_79
 
-    .line 288
-    :cond_62
+    .line 292
+    :cond_66
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    if-nez v0, :cond_75
+    if-nez v0, :cond_79
 
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->getProgress()F
 
@@ -726,21 +734,21 @@
 
     cmpl-float v0, v0, v2
 
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_79
 
-    .line 289
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 293
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieAnimationView;->setProgress(F)V
 
-    .line 292
-    :cond_75
-    :goto_75
+    .line 296
+    :cond_79
+    :goto_79
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    if-nez v0, :cond_8d
+    if-nez v0, :cond_91
 
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->getProgress()F
 
@@ -748,65 +756,68 @@
 
     cmpl-float v0, v0, v1
 
-    if-eqz v0, :cond_8d
+    if-eqz v0, :cond_91
 
-    .line 293
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 297
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->cancelAnimation()V
 
-    .line 294
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 298
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieAnimationView;->setProgress(F)V
 
-    .line 296
-    :cond_8d
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 300
+    :cond_91
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 297
+    .line 301
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    if-eqz v0, :cond_9e
+    if-eqz v0, :cond_a5
 
-    .line 298
+    .line 302
+    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->disableTwinkleGuide()V
+
+    .line 303
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 v0, 0x157
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    :cond_9e
+    :cond_a5
     return-void
 .end method
 
 .method private setIconDefault()V
     .registers 3
 
-    .line 346
+    .line 351
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
     if-eqz v0, :cond_13
 
-    .line 347
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 352
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieAnimationView;->setProgress(F)V
 
-    .line 348
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 353
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->switchIconColor(Lcom/airbnb/lottie/LottieAnimationView;)V
 
     const/4 v0, 0x0
 
-    .line 349
+    .line 354
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
     :cond_13
@@ -820,7 +831,7 @@
 
     if-ne p1, v0, :cond_7
 
-    .line 322
+    .line 327
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
     if-nez v0, :cond_e
@@ -834,7 +845,7 @@
 
     if-nez v0, :cond_27
 
-    .line 324
+    .line 329
     :cond_e
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -858,13 +869,13 @@
 
     return-void
 
-    .line 327
+    .line 332
     :cond_27
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-eqz v0, :cond_85
 
-    .line 328
+    .line 333
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -891,8 +902,8 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 329
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 334
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/LottieAnimationView;->isAnimating()Z
 
@@ -900,12 +911,12 @@
 
     if-eqz p1, :cond_58
 
-    .line 330
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 335
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p1}, Lcom/airbnb/lottie/LottieAnimationView;->cancelAnimation()V
 
-    .line 332
+    .line 337
     :cond_58
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
@@ -913,8 +924,8 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    .line 333
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 338
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-nez p1, :cond_64
 
@@ -928,31 +939,31 @@
     :goto_66
     invoke-virtual {v0, p1}, Lcom/airbnb/lottie/LottieAnimationView;->setProgress(F)V
 
-    .line 334
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 339
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->switchIconColor(Lcom/airbnb/lottie/LottieAnimationView;)V
 
-    .line 335
+    .line 340
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mDataCallBackAllowShowIcon:Z
 
     if-eqz p1, :cond_75
 
-    .line 336
+    .line 341
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->updateHint()V
 
-    .line 338
+    .line 343
     :cond_75
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p1, :cond_85
 
-    .line 339
+    .line 344
     iget-boolean p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
     if-eqz p0, :cond_80
 
-    .line 340
+    .line 345
     const-string p0, "1"
 
     goto :goto_82
@@ -960,7 +971,7 @@
     :cond_80
     const-string p0, "0"
 
-    .line 339
+    .line 344
     :goto_82
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
@@ -973,10 +984,10 @@
 .method public createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/interactive/CommonInteractive;)Landroid/view/View;
     .registers 5
 
-    .line 52
+    .line 54
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mEntryRootView:Landroid/view/ViewGroup;
 
-    .line 53
+    .line 55
     sget p3, Lcom/transsion/camera/R$layout;->flash_snap_switch_layout:I
 
     const/4 v0, 0x0
@@ -989,21 +1000,14 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mRootView:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    .line 54
+    .line 56
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->getLayoutParams()Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 55
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mRootView:Lcom/transsion/camera/app/ui/widget/RotateLayout;
-
-    iget p2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
-
-    invoke-virtual {p1, p2, v0}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
-
-    .line 56
+    .line 57
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mRootView:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     sget p2, Lcom/transsion/camera/R$id;->flash_snap_icon:I
@@ -1012,50 +1016,70 @@
 
     move-result-object p1
 
-    check-cast p1, Lcom/airbnb/lottie/LottieAnimationView;
+    check-cast p1, Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
-    .line 57
+    .line 58
     const-string p2, "flash_snap_switch.json"
 
     invoke-virtual {p1, p2}, Lcom/airbnb/lottie/LottieAnimationView;->setAnimation(Ljava/lang/String;)V
 
-    .line 58
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 59
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 59
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 60
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealWithoutAnimation(Landroid/view/View;)V
 
-    .line 60
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 61
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const/high16 p2, 0x3f800000    # 1.0f
 
     invoke-virtual {p1, p2}, Lcom/airbnb/lottie/LottieAnimationView;->setProgress(F)V
 
-    .line 61
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 62
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->switchIconColor(Lcom/airbnb/lottie/LottieAnimationView;)V
 
-    .line 62
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 63
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const/4 p2, 0x4
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 63
+    .line 64
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mRootView:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     return-object p0
+.end method
+
+.method disableTwinkleGuide()V
+    .registers 2
+
+    .line 418
+    iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
+
+    if-eqz v0, :cond_c
+
+    .line 419
+    invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideTwinkleGuide()V
+
+    .line 420
+    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
+
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->resetTwinkleGuide()V
+
+    :cond_c
+    return-void
 .end method
 
 .method protected getAnimatingColor(FZ)I
@@ -1063,7 +1087,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 156
+    .line 158
     iget v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIconOffColor:I
 
     goto :goto_7
@@ -1074,7 +1098,7 @@
     :goto_7
     if-eqz p2, :cond_c
 
-    .line 157
+    .line 159
     iget p2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIconOnColor:I
 
     goto :goto_e
@@ -1082,7 +1106,7 @@
     :cond_c
     iget p2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIconOffColor:I
 
-    .line 159
+    .line 161
     :goto_e
     iget-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
@@ -1101,7 +1125,7 @@
 
     div-float/2addr p1, v1
 
-    .line 167
+    .line 169
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mArgbEvaluator:Landroid/animation/ArgbEvaluator;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1142,12 +1166,12 @@
 .method public hideEntryView()V
     .registers 4
 
-    .line 134
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 136
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-eqz v0, :cond_35
 
-    .line 135
+    .line 137
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1158,7 +1182,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v2}, Landroid/view/View;->getTranslationX()F
 
@@ -1170,7 +1194,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v2}, Landroid/view/View;->getTranslationY()F
 
@@ -1184,8 +1208,8 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 136
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 138
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const/16 v0, 0x8
 
@@ -1198,14 +1222,14 @@
 .method protected hideIcon()V
     .registers 3
 
-    .line 307
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 312
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-nez v0, :cond_5
 
     goto :goto_17
 
-    .line 310
+    .line 315
     :cond_5
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->isIconVisible(Lcom/airbnb/lottie/LottieAnimationView;)Z
 
@@ -1213,12 +1237,12 @@
 
     if-eqz v0, :cond_17
 
-    .line 311
+    .line 316
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mRootView:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-eqz v0, :cond_17
 
-    .line 312
+    .line 317
     new-instance v1, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$$ExternalSyntheticLambda4;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$$ExternalSyntheticLambda4;-><init>(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;)V
@@ -1244,247 +1268,257 @@
 .method public notifyCameraOperateAction(I)V
     .registers 8
 
-    if-eqz p1, :cond_d8
+    if-eqz p1, :cond_e0
 
     const/16 v0, 0x13
 
-    if-eq p1, v0, :cond_d4
+    if-eq p1, v0, :cond_dc
 
     const/16 v0, 0x20
 
     const/4 v1, 0x1
 
-    if-eq p1, v0, :cond_cd
+    if-eq p1, v0, :cond_d5
 
     const/16 v0, 0x6d
 
-    if-eq p1, v0, :cond_b4
+    if-eq p1, v0, :cond_bc
 
     const/16 v0, 0x145
 
-    if-eq p1, v0, :cond_d8
+    if-eq p1, v0, :cond_e0
 
     const/16 v0, 0x154
 
-    if-eq p1, v0, :cond_ac
+    if-eq p1, v0, :cond_b4
 
     const/16 v0, 0xb
 
     const/4 v2, 0x0
 
-    if-eq p1, v0, :cond_a1
+    if-eq p1, v0, :cond_a9
 
     const/16 v0, 0xc
 
-    if-eq p1, v0, :cond_99
+    if-eq p1, v0, :cond_a1
 
     const/16 v0, 0x19
 
-    if-eq p1, v0, :cond_93
+    if-eq p1, v0, :cond_9b
 
     const/16 v0, 0x1a
 
-    if-eq p1, v0, :cond_90
+    if-eq p1, v0, :cond_98
 
     const/16 v0, 0x30
 
-    if-eq p1, v0, :cond_88
+    if-eq p1, v0, :cond_90
 
     const/16 v0, 0x31
 
-    if-eq p1, v0, :cond_74
+    if-eq p1, v0, :cond_7c
 
     const/16 v0, 0xcf
 
-    if-eq p1, v0, :cond_6c
+    if-eq p1, v0, :cond_74
 
     const/16 v0, 0xd0
 
-    if-eq p1, v0, :cond_5c
+    if-eq p1, v0, :cond_64
 
-    packed-switch p1, :pswitch_data_dc
+    packed-switch p1, :pswitch_data_e4
 
-    goto/16 :goto_d3
+    goto/16 :goto_db
 
-    .line 228
+    .line 230
     :pswitch_3d
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopWindowViewShowing:Z
 
     return-void
 
-    .line 225
+    .line 227
     :pswitch_40
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopWindowViewShowing:Z
 
     return-void
 
-    .line 231
-    :pswitch_43
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->hideEntryView()V
-
-    .line 232
-    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
-
     .line 233
-    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mNeedShowIcon:Z
+    :pswitch_43
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object p1
+
+    iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5PrivacyMode:Z
+
+    if-nez p1, :cond_50
 
     .line 234
-    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mDataCallBackAllowShowIcon:Z
+    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->hideEntryView()V
 
     .line 235
-    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mZoomWeelUIShowing:Z
-
-    .line 236
-    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mFilterShowing:Z
+    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mNeedShowIcon:Z
 
     .line 237
-    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopSettingViewShowing:Z
+    :cond_50
+    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
 
     .line 238
-    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopWindowViewShowing:Z
+    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mDataCallBackAllowShowIcon:Z
 
     .line 239
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
-
-    if-eqz p0, :cond_d3
+    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mZoomWeelUIShowing:Z
 
     .line 240
+    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mFilterShowing:Z
+
+    .line 241
+    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopSettingViewShowing:Z
+
+    .line 242
+    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopWindowViewShowing:Z
+
+    .line 243
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
+
+    if-eqz p0, :cond_db
+
+    .line 244
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->pause()V
 
     return-void
 
-    .line 211
-    :cond_5c
+    .line 213
+    :cond_64
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
 
-    if-nez p1, :cond_69
+    if-nez p1, :cond_71
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mFilterShowing:Z
 
-    if-nez p1, :cond_69
+    if-nez p1, :cond_71
 
-    .line 212
+    .line 214
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mNeedShowIcon:Z
 
-    .line 213
+    .line 215
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->showIcon()V
 
-    .line 215
-    :cond_69
+    .line 217
+    :cond_71
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopSettingViewShowing:Z
 
     return-void
 
-    .line 196
-    :cond_6c
+    .line 198
+    :cond_74
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mNeedShowIcon:Z
 
-    .line 197
+    .line 199
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->hideIcon()V
 
-    .line 198
+    .line 200
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopSettingViewShowing:Z
 
     return-void
 
-    .line 218
-    :cond_74
+    .line 220
+    :cond_7c
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
 
-    if-nez p1, :cond_85
+    if-nez p1, :cond_8d
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopSettingViewShowing:Z
 
-    if-nez p1, :cond_85
+    if-nez p1, :cond_8d
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mPopWindowViewShowing:Z
 
-    if-nez p1, :cond_85
+    if-nez p1, :cond_8d
 
-    .line 219
+    .line 221
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mNeedShowIcon:Z
 
-    .line 220
+    .line 222
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->showIcon()V
 
-    .line 222
-    :cond_85
+    .line 224
+    :cond_8d
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mFilterShowing:Z
 
     return-void
 
-    .line 201
-    :cond_88
+    .line 203
+    :cond_90
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mNeedShowIcon:Z
 
-    .line 202
+    .line 204
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mFilterShowing:Z
 
-    .line 203
+    .line 205
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->hideIcon()V
 
     return-void
 
-    .line 248
-    :cond_90
+    .line 252
+    :cond_98
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mZoomWeelUIShowing:Z
 
     return-void
 
-    .line 244
-    :cond_93
+    .line 248
+    :cond_9b
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mZoomWeelUIShowing:Z
 
-    .line 245
+    .line 249
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->hideIcon()V
 
     return-void
 
-    .line 188
-    :cond_99
+    .line 190
+    :cond_a1
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
 
-    .line 189
+    .line 191
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mNeedShowIcon:Z
 
-    .line 190
+    .line 192
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->showIcon()V
 
     return-void
 
-    .line 182
-    :cond_a1
+    .line 184
+    :cond_a9
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
 
-    .line 183
+    .line 185
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mNeedShowIcon:Z
 
-    .line 184
+    .line 186
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->hideIcon()V
 
-    .line 185
+    .line 187
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->hideHint()V
 
     return-void
 
-    .line 255
-    :cond_ac
+    .line 259
+    :cond_b4
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
-    if-eqz p0, :cond_d3
+    if-eqz p0, :cond_db
 
-    .line 256
+    .line 260
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;->onUserInteraction()V
 
     return-void
 
-    .line 260
-    :cond_b4
+    .line 264
+    :cond_bc
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mMotionCaptureGuideUI:Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
-    if-nez p1, :cond_d3
+    if-nez p1, :cond_db
 
-    .line 261
+    .line 265
     new-instance v0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionCaptureGuideUI;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
@@ -1507,32 +1541,32 @@
 
     return-void
 
-    .line 206
-    :cond_cd
+    .line 208
+    :cond_d5
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsSelfTimerStarted:Z
 
-    if-nez p1, :cond_d3
+    if-nez p1, :cond_db
 
-    .line 207
+    .line 209
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mNeedShowIcon:Z
 
-    :cond_d3
-    :goto_d3
+    :cond_db
+    :goto_db
     return-void
 
-    .line 193
-    :cond_d4
+    .line 195
+    :cond_dc
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->restoreDefaultState()V
 
     return-void
 
-    .line 252
-    :cond_d8
+    .line 256
+    :cond_e0
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->hideIcon()V
 
     return-void
 
-    :pswitch_data_dc
+    :pswitch_data_e4
     .packed-switch 0x1c
         :pswitch_43
         :pswitch_40
@@ -1546,6 +1580,26 @@
     .line 0
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IPreviewGestureListener;->onGestureTouchEvent(Landroid/view/MotionEvent;)V
 
+    return-void
+.end method
+
+.method public onOrientationChanged(I)V
+    .registers 3
+
+    .line 411
+    iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mOrientation:I
+
+    .line 412
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
+
+    if-eqz p0, :cond_a
+
+    const/4 v0, 0x1
+
+    .line 413
+    invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;->setOrientation(IZ)V
+
+    :cond_a
     return-void
 .end method
 
@@ -1563,7 +1617,7 @@
 .method protected restoreDefaultState()V
     .registers 4
 
-    .line 393
+    .line 398
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1592,33 +1646,33 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 394
+    .line 399
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
     if-eqz v0, :cond_33
 
-    .line 395
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 400
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieAnimationView;->setProgress(F)V
 
-    .line 396
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 401
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->switchIconColor(Lcom/airbnb/lottie/LottieAnimationView;)V
 
-    .line 397
+    .line 402
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
-    .line 399
+    .line 404
     :cond_33
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_3c
 
-    .line 400
+    .line 405
     const-string v0, "value_on_manual_off"
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
@@ -1630,7 +1684,7 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 4
 
-    .line 174
+    .line 176
     new-instance v0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$MotionDetectSwitchCallback;
 
     const/4 v1, 0x0
@@ -1639,7 +1693,7 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
 
-    .line 175
+    .line 177
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
     return-void
@@ -1657,8 +1711,8 @@
 .method protected showIcon()V
     .registers 3
 
-    .line 276
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 280
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-eqz v0, :cond_1f
 
@@ -1670,7 +1724,7 @@
 
     goto :goto_1f
 
-    .line 279
+    .line 283
     :cond_b
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mRootView:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -1682,7 +1736,7 @@
 
     if-eqz v0, :cond_1f
 
-    .line 280
+    .line 284
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mRootView:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$$ExternalSyntheticLambda3;
@@ -1699,7 +1753,7 @@
 .method protected switchIconColor(Lcom/airbnb/lottie/LottieAnimationView;)V
     .registers 3
 
-    .line 68
+    .line 69
     new-instance v0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$1;
 
     invoke-direct {v0, p0, p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI$1;-><init>(Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;Lcom/airbnb/lottie/LottieAnimationView;)V
@@ -1712,20 +1766,20 @@
 .method public unInit()V
     .registers 2
 
-    .line 385
+    .line 390
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->unInit()V
 
     const/4 v0, 0x0
 
-    .line 386
+    .line 391
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mDataCallBackAllowShowIcon:Z
 
-    .line 387
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/airbnb/lottie/LottieAnimationView;
+    .line 392
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapLiteUI;->mIconView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-eqz p0, :cond_d
 
-    .line 388
+    .line 393
     invoke-virtual {p0}, Lcom/airbnb/lottie/LottieAnimationView;->removeAllLottieOnCompositionLoadedListener()V
 
     :cond_d
@@ -1735,20 +1789,20 @@
 .method protected updateHint()V
     .registers 4
 
-    .line 142
+    .line 144
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 145
+    .line 147
     :cond_5
     iget-boolean v1, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mIsIconSelected:Z
 
     if-eqz v1, :cond_17
 
-    .line 146
+    .line 148
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
@@ -1763,7 +1817,7 @@
 
     goto :goto_22
 
-    .line 147
+    .line 149
     :cond_17
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->getHintState()Z
 
@@ -1777,7 +1831,7 @@
 
     goto :goto_2a
 
-    .line 151
+    .line 153
     :cond_22
     :goto_22
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
@@ -1788,7 +1842,7 @@
 
     return-void
 
-    .line 148
+    .line 150
     :cond_2a
     :goto_2a
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;

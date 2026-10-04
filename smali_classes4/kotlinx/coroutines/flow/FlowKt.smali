@@ -1905,13 +1905,13 @@
     return-object p0
 .end method
 
-.method public static final fixedPeriodTicker(Lkotlinx/coroutines/CoroutineScope;JJ)Lkotlinx/coroutines/channels/ReceiveChannel;
-    .registers 5
+.method public static final fixedPeriodTicker(Lkotlinx/coroutines/CoroutineScope;J)Lkotlinx/coroutines/channels/ReceiveChannel;
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lkotlinx/coroutines/CoroutineScope;",
-            "JJ)",
+            "J)",
             "Lkotlinx/coroutines/channels/ReceiveChannel<",
             "Lkotlin/Unit;",
             ">;"
@@ -1919,18 +1919,7 @@
     .end annotation
 
     .line 1
-    invoke-static {p0, p1, p2, p3, p4}, Lkotlinx/coroutines/flow/FlowKt__DelayKt;->fixedPeriodTicker(Lkotlinx/coroutines/CoroutineScope;JJ)Lkotlinx/coroutines/channels/ReceiveChannel;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic fixedPeriodTicker$default(Lkotlinx/coroutines/CoroutineScope;JJILjava/lang/Object;)Lkotlinx/coroutines/channels/ReceiveChannel;
-    .registers 7
-
-    .line 1
-    invoke-static/range {p0 .. p6}, Lkotlinx/coroutines/flow/FlowKt__DelayKt;->fixedPeriodTicker$default(Lkotlinx/coroutines/CoroutineScope;JJILjava/lang/Object;)Lkotlinx/coroutines/channels/ReceiveChannel;
+    invoke-static {p0, p1, p2}, Lkotlinx/coroutines/flow/FlowKt__DelayKt;->fixedPeriodTicker(Lkotlinx/coroutines/CoroutineScope;J)Lkotlinx/coroutines/channels/ReceiveChannel;
 
     move-result-object p0
 

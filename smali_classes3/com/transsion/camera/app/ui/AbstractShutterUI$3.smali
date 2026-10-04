@@ -34,7 +34,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
     .registers 2
 
-    .line 353
+    .line 349
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .method private synthetic lambda$updateUIState$0()V
     .registers 4
 
-    .line 376
+    .line 372
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmShutterButtonView(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/ui/view/ShutterButtonView;
@@ -56,7 +56,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 377
+    .line 373
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmSwipeOperationListener(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUIListener$ISwipeOperationListener;
@@ -65,7 +65,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 378
+    .line 374
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmSwipeOperationListener(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUIListener$ISwipeOperationListener;
@@ -76,7 +76,7 @@
 
     invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IAppUIListener$ISwipeOperationListener;->onNotifyUIStateChange(Z)V
 
-    .line 380
+    .line 376
     :cond_1c
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
@@ -96,7 +96,7 @@
 
     if-eqz p1, :cond_e
 
-    .line 357
+    .line 353
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUI;
@@ -109,7 +109,7 @@
 
     return-void
 
-    .line 359
+    .line 355
     :cond_e
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
@@ -127,7 +127,7 @@
 .method public startQuickVideo()V
     .registers 3
 
-    .line 365
+    .line 361
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmStatusMonitor(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -150,7 +150,7 @@
 .method public stopQuickVideo()V
     .registers 3
 
-    .line 370
+    .line 366
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmStatusMonitor(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -173,7 +173,7 @@
 .method public updateUIState()V
     .registers 3
 
-    .line 375
+    .line 371
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Landroid/os/Handler;

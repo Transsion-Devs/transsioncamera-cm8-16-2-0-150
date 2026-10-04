@@ -26,7 +26,7 @@
 .method private static synthetic $values()[Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
     .registers 2
 
-    .line 167
+    .line 165
     sget-object v0, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;->PHOTO:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
     sget-object v1, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;->VIDEO:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
@@ -41,7 +41,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 168
+    .line 166
     new-instance v0, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
     const-string v1, "PHOTO"
@@ -52,7 +52,7 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;->PHOTO:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
-    .line 169
+    .line 167
     new-instance v0, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
     const-string v1, "VIDEO"
@@ -63,7 +63,7 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;->VIDEO:Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
-    .line 167
+    .line 165
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;->$values()[Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
     move-result-object v0
@@ -76,7 +76,7 @@
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
 
-    .line 167
+    .line 165
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -85,7 +85,7 @@
 .method public static valueOf(Ljava/lang/String;)Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
     .registers 2
 
-    .line 167
+    .line 165
     const-class v0, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -100,7 +100,7 @@
 .method public static values()[Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
     .registers 1
 
-    .line 167
+    .line 165
     sget-object v0, Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;->$VALUES:[Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;
 
     invoke-virtual {v0}, [Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;->clone()Ljava/lang/Object;

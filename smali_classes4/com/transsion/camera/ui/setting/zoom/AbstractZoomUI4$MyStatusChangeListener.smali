@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;)V
     .registers 2
 
-    .line 2403
+    .line 2406
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 2403
+    .line 2406
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -58,7 +58,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 9
 
-    .line 2407
+    .line 2410
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     iget-object v0, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -85,7 +85,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2408
+    .line 2411
     const-string v0, "mode_entry_key"
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -98,7 +98,7 @@
 
     if-eqz v0, :cond_ea
 
-    .line 2409
+    .line 2412
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v3, "com.transsion.camera.feature.mode.macro.MacroModeEntry"
@@ -109,7 +109,7 @@
 
     iput-boolean v3, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInMacroMode:Z
 
-    .line 2410
+    .line 2413
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v3, "com.transsion.camera.feature.mode.video.VideoModeEntry"
@@ -120,7 +120,7 @@
 
     iput-boolean v3, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInVideoMode:Z
 
-    .line 2411
+    .line 2414
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v3, "com.transsion.camera.feature.funvideo.mode.FunVideoModeEntry"
@@ -131,7 +131,7 @@
 
     iput-boolean v3, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInFunVideoMode:Z
 
-    .line 2412
+    .line 2415
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v3, "com.transsion.camera.feature.mode.pmaster.PMasterModeEntry"
@@ -142,7 +142,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInPmasterMode:Z
 
-    .line 2413
+    .line 2416
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.video.TimeLapseVideoModeEntry"
@@ -153,7 +153,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInTimeLapseVideoMode:Z
 
-    .line 2414
+    .line 2417
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.supermoon.SuperMoonModeEntry"
@@ -164,7 +164,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInSuperMoonMode:Z
 
-    .line 2415
+    .line 2418
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.movie.MovieModeEntry"
@@ -175,7 +175,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInMovieMode:Z
 
-    .line 2416
+    .line 2419
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.aigc.AIGCModeEntry"
@@ -186,7 +186,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInAIGCMode:Z
 
-    .line 2417
+    .line 2420
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.aiartmuseum.AIArtMuseumModeEntry"
@@ -197,7 +197,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mAIArtMuseumMode:Z
 
-    .line 2418
+    .line 2421
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.vlog.VlogModeEntry"
@@ -208,7 +208,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInVlogMode:Z
 
-    .line 2419
+    .line 2422
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.doc.DocumentEntry"
@@ -219,7 +219,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInDocumentMode:Z
 
-    .line 2420
+    .line 2423
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.video.SlowMotionModeEntry"
@@ -230,7 +230,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInSlowMotionMode:Z
 
-    .line 2421
+    .line 2424
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.dualvideo.DualVideoModeEntry"
@@ -241,7 +241,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInDUalVideoMode:Z
 
-    .line 2422
+    .line 2425
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.autoscenedetection.ASDModeEntry"
@@ -252,7 +252,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInAsdMode:Z
 
-    .line 2423
+    .line 2426
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.professional.ProfessionalModeEntry"
@@ -263,7 +263,7 @@
 
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInProfessionMode:Z
 
-    .line 2424
+    .line 2427
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v4, "com.transsion.camera.feature.mode.supernight.SuperNightModeEntry"
@@ -276,7 +276,7 @@
 
     const-string v4, "com.transsion.camera.feature.supernightfilter.mode.SuperNightFilterModeEntry"
 
-    .line 2425
+    .line 2428
     invoke-static {v4, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v4
@@ -297,7 +297,7 @@
     :goto_d6
     iput-boolean v4, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInSuperNightMode:Z
 
-    .line 2426
+    .line 2429
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     invoke-static {v3, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -306,7 +306,7 @@
 
     iput-boolean v3, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInPamsterMode:Z
 
-    .line 2427
+    .line 2430
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v3, "com.transsion.camera.feature.mode.motioncapture.MotionCaptureModeEntry"
@@ -317,7 +317,7 @@
 
     iput-boolean v3, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInFlashSnapMode:Z
 
-    .line 2430
+    .line 2433
     :cond_ea
     const-string v0, "key_conflict_ui_state"
 
@@ -331,7 +331,7 @@
 
     if-eqz v0, :cond_239
 
-    .line 2431
+    .line 2434
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
@@ -715,7 +715,7 @@
 
     goto :goto_239
 
-    .line 2457
+    .line 2460
     :pswitch_22e
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
@@ -723,13 +723,13 @@
 
     goto :goto_239
 
-    .line 2443
+    .line 2446
     :pswitch_234
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->setZoomViewCanShow(Z)V
 
-    .line 2464
+    .line 2467
     :cond_239
     :goto_239
     const-string v0, "key_super_anti_video"
@@ -740,7 +740,7 @@
 
     if-eqz v0, :cond_2b2
 
-    .line 2465
+    .line 2468
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     const-string v5, "super"
@@ -751,7 +751,7 @@
 
     iput-boolean v5, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mSuperAntiVideoOn:Z
 
-    .line 2466
+    .line 2469
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
@@ -766,7 +766,7 @@
 
     iput v5, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mCurrentValue:I
 
-    .line 2467
+    .line 2470
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     iget-boolean v5, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mIsInVideoMode:Z
@@ -777,7 +777,7 @@
 
     if-nez v5, :cond_27e
 
-    .line 2468
+    .line 2471
     iget-object v5, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v5}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
@@ -786,7 +786,7 @@
 
     iput-object v5, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mNextSwitchCamera:Ljava/lang/String;
 
-    .line 2469
+    .line 2472
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -801,13 +801,13 @@
 
     if-nez v0, :cond_27e
 
-    .line 2470
+    .line 2473
     :cond_279
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     invoke-static {v0, p2}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->-$$Nest$mupdateZoomInfo(Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;Ljava/lang/String;)V
 
-    .line 2473
+    .line 2476
     :cond_27e
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
@@ -821,7 +821,7 @@
 
     if-eqz v0, :cond_2b2
 
-    .line 2474
+    .line 2477
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->-$$Nest$fgetmSuperAntivideoSupportWide(Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;)Z
@@ -830,7 +830,7 @@
 
     if-eqz v0, :cond_29d
 
-    .line 2475
+    .line 2478
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mNextSwitchCamera:Ljava/lang/String;
@@ -839,12 +839,12 @@
 
     if-eq v3, v5, :cond_2a7
 
-    .line 2476
+    .line 2479
     iput-object v5, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mNextSwitchCamera:Ljava/lang/String;
 
     goto :goto_2a7
 
-    .line 2479
+    .line 2482
     :cond_29d
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
@@ -856,21 +856,21 @@
 
     iput-object v3, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mNextSwitchCamera:Ljava/lang/String;
 
-    .line 2481
+    .line 2484
     :cond_2a7
     :goto_2a7
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     invoke-virtual {v0}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->updateProgressByZoom()V
 
-    .line 2482
+    .line 2485
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     iget v3, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mCurrentValue:I
 
     iput v3, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mLastCurrentValue:I
 
-    .line 2486
+    .line 2489
     :cond_2b2
     const-string v0, "key_vlog_correct_orientation"
 
@@ -886,21 +886,21 @@
 
     if-eqz p1, :cond_2fe
 
-    .line 2487
+    .line 2490
     const-string p1, ","
 
     invoke-static {p2, p1}, Lcom/transsion/camera/utils/StringUtils;->splitString(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object p1
 
-    .line 2488
+    .line 2491
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-eq v0, v4, :cond_2e5
 
-    .line 2489
+    .line 2492
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -923,7 +923,7 @@
 
     return-void
 
-    .line 2493
+    .line 2496
     :cond_2e5
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -935,7 +935,7 @@
 
     move-result p2
 
-    .line 2494
+    .line 2497
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -946,7 +946,7 @@
 
     move-result p1
 
-    .line 2495
+    .line 2498
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4$MyStatusChangeListener;->this$0:Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;
 
     invoke-virtual {p0, p2, p1}, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI4;->setOrientation(IZ)V

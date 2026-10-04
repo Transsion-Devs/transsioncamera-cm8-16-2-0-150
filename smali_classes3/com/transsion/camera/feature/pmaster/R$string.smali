@@ -14,27 +14,27 @@
 
 
 # static fields
-.field public static bw_camera_lens_covered_toast:I = 0x7f130190
+.field public static bw_camera_lens_covered_toast:I = 0x7f13018b
 
-.field public static dual_camera_always_info:I = 0x7f130285
+.field public static dual_camera_always_info:I = 0x7f130280
 
-.field public static dual_camera_lens_covered_toast:I = 0x7f130286
+.field public static dual_camera_lens_covered_toast:I = 0x7f130281
 
-.field public static dual_camera_lowlight_toast:I = 0x7f130287
+.field public static dual_camera_lowlight_toast:I = 0x7f130282
 
-.field public static dual_camera_too_close_toast:I = 0x7f130288
+.field public static dual_camera_too_close_toast:I = 0x7f130283
 
-.field public static fake_dual_camera_always_info:I = 0x7f1302a5
+.field public static fake_dual_camera_always_info:I = 0x7f1302a0
 
-.field public static guide_blur_content1:I = 0x7f1302fa
+.field public static guide_blur_content1:I = 0x7f1302f5
 
-.field public static guide_blur_content2:I = 0x7f1302fb
+.field public static guide_blur_content2:I = 0x7f1302f6
 
-.field public static guide_blur_title:I = 0x7f1302fc
+.field public static guide_blur_title:I = 0x7f1302f7
 
-.field public static pmaster_mode_description:I = 0x7f13046c
+.field public static pmaster_mode_description:I = 0x7f130465
 
-.field public static pmaster_mode_title:I = 0x7f13046d
+.field public static pmaster_mode_title:I = 0x7f130466
 
 
 # direct methods

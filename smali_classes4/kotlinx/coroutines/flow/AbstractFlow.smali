@@ -29,7 +29,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 224
+    .line 220
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -86,7 +86,7 @@
 
     move-result-object v1
 
-    .line 227
+    .line 223
     iget v2, v0, Lkotlinx/coroutines/flow/AbstractFlow$collect$1;->label:I
 
     const/4 v3, 0x1
@@ -123,7 +123,7 @@
     :cond_37
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 228
+    .line 224
     new-instance p2, Lkotlinx/coroutines/flow/internal/SafeCollector;
 
     invoke-interface {v0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
@@ -132,7 +132,7 @@
 
     invoke-direct {p2, p1, v2}, Lkotlinx/coroutines/flow/internal/SafeCollector;-><init>(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/CoroutineContext;)V
 
-    .line 230
+    .line 226
     :try_start_43
     iput-object p2, v0, Lkotlinx/coroutines/flow/AbstractFlow$collect$1;->L$0:Ljava/lang/Object;
 
@@ -151,11 +151,11 @@
     :cond_4e
     move-object p0, p2
 
-    .line 232
+    .line 228
     :goto_4f
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/internal/SafeCollector;->releaseIntercepted()V
 
-    .line 234
+    .line 230
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
@@ -165,7 +165,7 @@
 
     move-object p0, p2
 
-    .line 232
+    .line 228
     :goto_57
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/internal/SafeCollector;->releaseIntercepted()V
 

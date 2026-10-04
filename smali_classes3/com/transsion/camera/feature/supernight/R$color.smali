@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static guide_text_color:I = 0x7f0600ec
+.field public static guide_text_color:I = 0x7f0600ed
 
 
 # direct methods

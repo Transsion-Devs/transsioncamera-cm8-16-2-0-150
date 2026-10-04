@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;)V
     .registers 2
 
-    .line 339
+    .line 348
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$4;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreviewStarted()V
     .registers 4
 
-    .line 356
+    .line 365
     invoke-static {}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -65,7 +65,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 357
+    .line 366
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$4;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;->-$$Nest$fgetmFaceDetectionParameterConfigure(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;)Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;
@@ -74,7 +74,7 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;->resetFaceDetectionState()V
 
-    .line 359
+    .line 368
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$4;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;->-$$Nest$fgetmFaceDetectionParameterConfigure(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;)Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;->setFaceDetectionCallback(Lcom/transsion/camera/adapter/CameraProxy$FaceDetectionCallback;)V
 
-    .line 360
+    .line 369
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$4;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;->-$$Nest$mrequestFaceDetection(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;)V
@@ -100,7 +100,7 @@
 .method public onPreviewStopped()V
     .registers 5
 
-    .line 343
+    .line 352
     invoke-static {}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -109,14 +109,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 344
+    .line 353
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$4;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;->-$$Nest$fputmIsCapturing(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;Z)V
 
-    .line 345
+    .line 354
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$4;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;->-$$Nest$fgetmFaceDetectionParameterConfigure(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;)Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;
@@ -127,7 +127,7 @@
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;->setFaceDetectionCallback(Lcom/transsion/camera/adapter/CameraProxy$FaceDetectionCallback;)V
 
-    .line 346
+    .line 355
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$4;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;->-$$Nest$fgetmFaceDetectionParameterConfigure(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;)Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;
@@ -138,7 +138,7 @@
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetectionParameterConfigure;->stopFaceInfoDection(Z)V
 
-    .line 348
+    .line 357
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$4;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
@@ -147,7 +147,7 @@
 
     if-eqz p0, :cond_2e
 
-    .line 350
+    .line 359
     invoke-interface {p0, v2, v1}, Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;->onDataCallback(Ljava/lang/Object;I)V
 
     :cond_2e

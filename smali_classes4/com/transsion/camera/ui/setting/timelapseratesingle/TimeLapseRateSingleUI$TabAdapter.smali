@@ -37,15 +37,15 @@
 .method public constructor <init>(Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;[Ljava/lang/String;[Ljava/lang/String;)V
     .registers 4
 
-    .line 618
+    .line 617
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->this$0:Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 619
+    .line 618
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->mValues:[Ljava/lang/String;
 
-    .line 620
+    .line 619
     iput-object p3, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->mEntry:[Ljava/lang/String;
 
     return-void
@@ -54,7 +54,7 @@
 .method private synthetic lambda$onCreateViewHolder$0(Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;Landroid/view/View;)V
     .registers 3
 
-    .line 630
+    .line 629
     iget-object p1, p1, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;->mTextView:Landroid/widget/TextView;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
@@ -65,7 +65,7 @@
 
     return-void
 
-    .line 633
+    .line 632
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->this$0:Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;
 
@@ -85,7 +85,7 @@
 .method public getItemCount()I
     .registers 1
 
-    .line 652
+    .line 651
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->mValues:[Ljava/lang/String;
 
     array-length p0, p0
@@ -96,7 +96,7 @@
 .method public bridge synthetic onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .registers 3
 
-    .line 612
+    .line 611
     check-cast p1, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->onBindViewHolder(Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;I)V
@@ -107,7 +107,7 @@
 .method public onBindViewHolder(Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;I)V
     .registers 5
 
-    .line 640
+    .line 639
     iget-object v0, p1, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;->mTextView:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->mEntry:[Ljava/lang/String;
@@ -116,7 +116,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 641
+    .line 640
     iget-object v0, p1, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;->mTextView:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->mValues:[Ljava/lang/String;
@@ -125,21 +125,21 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 642
+    .line 641
     iget-object v0, p1, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;->mTextView:Landroid/widget/TextView;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 643
+    .line 642
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->this$0:Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;
 
     iget-object v1, p1, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;->mTextView:Landroid/widget/TextView;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->-$$Nest$mresetItemViewScale(Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;Landroid/view/View;)V
 
-    .line 644
+    .line 643
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->this$0:Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->-$$Nest$fgetmCurrentEntryValue(Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;)Ljava/lang/String;
@@ -156,7 +156,7 @@
 
     if-eqz p2, :cond_40
 
-    .line 645
+    .line 644
     iget-object p2, p1, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;->mTextView:Landroid/widget/TextView;
 
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->this$0:Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;
@@ -173,7 +173,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 647
+    .line 646
     :cond_40
     iget p2, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->mOrientation:I
 
@@ -192,7 +192,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .registers 3
 
-    .line 612
+    .line 611
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;
 
     move-result-object p0
@@ -203,7 +203,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;
     .registers 5
 
-    .line 626
+    .line 625
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p2
@@ -220,12 +220,12 @@
 
     move-result-object p1
 
-    .line 627
+    .line 626
     new-instance p2, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;
 
     invoke-direct {p2, p1}, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 628
+    .line 627
     iget-object p1, p2, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;->mTextView:Landroid/widget/TextView;
 
     const v0, 0x3f4ccccd    # 0.8f
@@ -234,7 +234,7 @@
 
     invoke-static {p1, v0, v1}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
-    .line 629
+    .line 628
     iget-object p1, p2, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabViewHolder;->mTextView:Landroid/widget/TextView;
 
     new-instance v0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter$$ExternalSyntheticLambda0;
@@ -249,7 +249,7 @@
 .method public onOrientationChanged(I)V
     .registers 5
 
-    .line 656
+    .line 655
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->this$0:Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->-$$Nest$fgetmTimeLapseTab(Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;)Landroidx/recyclerview/widget/RecyclerView;
@@ -264,13 +264,13 @@
 
     goto :goto_4a
 
-    .line 660
+    .line 659
     :cond_d
     iput p1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->mOrientation:I
 
     const/4 p1, 0x0
 
-    .line 661
+    .line 660
     :goto_10
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->this$0:Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;
 
@@ -284,7 +284,7 @@
 
     if-ge p1, v0, :cond_4a
 
-    .line 662
+    .line 661
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->this$0:Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;
 
     invoke-static {v0}, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->-$$Nest$fgetmTimeLapseTab(Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;)Landroidx/recyclerview/widget/RecyclerView;
@@ -295,7 +295,7 @@
 
     move-result-object v0
 
-    .line 663
+    .line 662
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->this$0:Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;
 
     invoke-static {v1}, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->-$$Nest$fgetmTimeLapseTab(Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;)Landroidx/recyclerview/widget/RecyclerView;
@@ -312,7 +312,7 @@
 
     goto :goto_47
 
-    .line 667
+    .line 666
     :cond_35
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getBindingAdapterPosition()I
 
@@ -322,7 +322,7 @@
 
     goto :goto_47
 
-    .line 671
+    .line 670
     :cond_3c
     iget v1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$TabAdapter;->mOrientation:I
 

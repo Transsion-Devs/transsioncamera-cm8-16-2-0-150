@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 1440
+    .line 1464
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$4;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public notifyKeyEvent(Lcom/transsion/camera/app/common/physicalkey/IKeyEventListener$KeyEventType;)V
     .registers 3
 
-    .line 1443
+    .line 1467
     sget-object v0, Lcom/transsion/camera/app/common/physicalkey/IKeyEventListener$KeyEventType;->FROM_SETTING:Lcom/transsion/camera/app/common/physicalkey/IKeyEventListener$KeyEventType;
 
     if-ne p1, v0, :cond_10
 
-    .line 1444
+    .line 1468
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$4;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity;->mAppUI:Lcom/transsion/camera/app/ui/BaseAppUI;
@@ -52,12 +52,12 @@
 
     const/16 p1, 0x1a2
 
-    .line 1445
+    .line 1469
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->notifyRawActionToAppUI(I)V
 
     return-void
 
-    .line 1448
+    .line 1472
     :cond_10
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$4;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -67,10 +67,10 @@
 
     const/16 v0, 0x126
 
-    .line 1449
+    .line 1473
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->notifyRawActionToAppUI(I)V
 
-    .line 1451
+    .line 1475
     :cond_1b
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$4;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -78,7 +78,7 @@
 
     if-eqz p0, :cond_24
 
-    .line 1452
+    .line 1476
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->notifyRecentAppChanged()V
 
     :cond_24

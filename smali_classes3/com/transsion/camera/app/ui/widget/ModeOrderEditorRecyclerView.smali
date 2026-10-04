@@ -2,9 +2,6 @@
 .super Landroidx/recyclerview/widget/RecyclerView;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/transsion/camera/app/ui/editor/IEditorMotionDetector;
-
 
 # instance fields
 .field private mLastMotionAction:I

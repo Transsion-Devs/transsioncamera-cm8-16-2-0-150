@@ -18,7 +18,7 @@
         }
     .end annotation
 
-    .line 362
+    .line 358
     new-instance v0, Lkotlinx/coroutines/flow/ReadonlySharedFlow;
 
     const/4 v1, 0x0
@@ -42,7 +42,7 @@
         }
     .end annotation
 
-    .line 368
+    .line 364
     new-instance v0, Lkotlinx/coroutines/flow/ReadonlyStateFlow;
 
     const/4 v1, 0x0
@@ -66,7 +66,7 @@
         }
     .end annotation
 
-    .line 161
+    .line 157
     sget-object v0, Lkotlinx/coroutines/channels/Channel;->Factory:Lkotlinx/coroutines/channels/Channel$Factory;
 
     invoke-virtual {v0}, Lkotlinx/coroutines/channels/Channel$Factory;->getCHANNEL_DEFAULT_CAPACITY$kotlinx_coroutines_core()I
@@ -79,12 +79,12 @@
 
     sub-int/2addr v0, p1
 
-    .line 163
+    .line 159
     instance-of v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;
 
     if-eqz v1, :cond_3c
 
-    .line 165
+    .line 161
     move-object v1, p0
 
     check-cast v1, Lkotlinx/coroutines/flow/internal/ChannelFlow;
@@ -95,10 +95,10 @@
 
     if-eqz v2, :cond_3c
 
-    .line 167
+    .line 163
     new-instance p0, Lkotlinx/coroutines/flow/SharingConfig;
 
-    .line 169
+    .line 165
     iget v3, v1, Lkotlinx/coroutines/flow/internal/ChannelFlow;->capacity:I
 
     const/4 v4, -0x3
@@ -115,7 +115,7 @@
 
     goto :goto_34
 
-    .line 172
+    .line 168
     :cond_26
     iget-object v4, v1, Lkotlinx/coroutines/flow/internal/ChannelFlow;->onBufferOverflow:Lkotlinx/coroutines/channels/BufferOverflow;
 
@@ -137,30 +137,30 @@
 
     const/4 v0, 0x1
 
-    .line 179
+    .line 175
     :cond_34
     :goto_34
     iget-object p1, v1, Lkotlinx/coroutines/flow/internal/ChannelFlow;->onBufferOverflow:Lkotlinx/coroutines/channels/BufferOverflow;
 
-    .line 180
+    .line 176
     iget-object v1, v1, Lkotlinx/coroutines/flow/internal/ChannelFlow;->context:Lkotlin/coroutines/CoroutineContext;
 
-    .line 167
+    .line 163
     invoke-direct {p0, v2, v0, p1, v1}, Lkotlinx/coroutines/flow/SharingConfig;-><init>(Lkotlinx/coroutines/flow/Flow;ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/coroutines/CoroutineContext;)V
 
     return-object p0
 
-    .line 185
+    .line 181
     :cond_3c
     new-instance p1, Lkotlinx/coroutines/flow/SharingConfig;
 
-    .line 188
+    .line 184
     sget-object v1, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
 
-    .line 189
+    .line 185
     sget-object v2, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
-    .line 185
+    .line 181
     invoke-direct {p1, p0, v0, v1, v2}, Lkotlinx/coroutines/flow/SharingConfig;-><init>(Lkotlinx/coroutines/flow/Flow;ILkotlinx/coroutines/channels/BufferOverflow;Lkotlin/coroutines/CoroutineContext;)V
 
     return-object p1
@@ -185,7 +185,7 @@
         }
     .end annotation
 
-    .line 208
+    .line 204
     sget-object v0, Lkotlinx/coroutines/flow/SharingStarted;->Companion:Lkotlinx/coroutines/flow/SharingStarted$Companion;
 
     invoke-virtual {v0}, Lkotlinx/coroutines/flow/SharingStarted$Companion;->getEagerly()Lkotlinx/coroutines/flow/SharingStarted;
@@ -205,7 +205,7 @@
     :cond_f
     sget-object v0, Lkotlinx/coroutines/CoroutineStart;->UNDISPATCHED:Lkotlinx/coroutines/CoroutineStart;
 
-    .line 209
+    .line 205
     :goto_11
     new-instance v1, Lkotlinx/coroutines/flow/FlowKt__ShareKt$launchSharing$1;
 
@@ -245,7 +245,7 @@
         }
     .end annotation
 
-    .line 337
+    .line 333
     new-instance v3, Lkotlinx/coroutines/flow/FlowKt__ShareKt$launchSharingDeferred$1;
 
     const/4 v0, 0x0
@@ -283,7 +283,7 @@
         }
     .end annotation
 
-    .line 402
+    .line 398
     new-instance v0, Lkotlinx/coroutines/flow/SubscribedSharedFlow;
 
     invoke-direct {v0, p0, p1}, Lkotlinx/coroutines/flow/SubscribedSharedFlow;-><init>(Lkotlinx/coroutines/flow/SharedFlow;Lkotlin/jvm/functions/Function2;)V
@@ -308,23 +308,23 @@
         }
     .end annotation
 
-    .line 140
+    .line 136
     invoke-static {p0, p3}, Lkotlinx/coroutines/flow/FlowKt__ShareKt;->configureSharing$FlowKt__ShareKt(Lkotlinx/coroutines/flow/Flow;I)Lkotlinx/coroutines/flow/SharingConfig;
 
     move-result-object p0
 
-    .line 143
+    .line 139
     iget v0, p0, Lkotlinx/coroutines/flow/SharingConfig;->extraBufferCapacity:I
 
-    .line 144
+    .line 140
     iget-object v1, p0, Lkotlinx/coroutines/flow/SharingConfig;->onBufferOverflow:Lkotlinx/coroutines/channels/BufferOverflow;
 
-    .line 141
+    .line 137
     invoke-static {p3, v0, v1}, Lkotlinx/coroutines/flow/SharedFlowKt;->MutableSharedFlow(IILkotlinx/coroutines/channels/BufferOverflow;)Lkotlinx/coroutines/flow/MutableSharedFlow;
 
     move-result-object v5
 
-    .line 147
+    .line 143
     iget-object v3, p0, Lkotlinx/coroutines/flow/SharingConfig;->context:Lkotlin/coroutines/CoroutineContext;
 
     iget-object v4, p0, Lkotlinx/coroutines/flow/SharingConfig;->upstream:Lkotlinx/coroutines/flow/Flow;
@@ -339,7 +339,7 @@
 
     move-result-object p0
 
-    .line 148
+    .line 144
     new-instance p1, Lkotlinx/coroutines/flow/ReadonlySharedFlow;
 
     invoke-direct {p1, v5, p0}, Lkotlinx/coroutines/flow/ReadonlySharedFlow;-><init>(Lkotlinx/coroutines/flow/SharedFlow;Lkotlinx/coroutines/Job;)V
@@ -356,7 +356,7 @@
 
     const/4 p3, 0x0
 
-    .line 135
+    .line 131
     :cond_5
     invoke-static {p0, p1, p2, p3}, Lkotlinx/coroutines/flow/FlowKt;->shareIn(Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/CoroutineScope;Lkotlinx/coroutines/flow/SharingStarted;I)Lkotlinx/coroutines/flow/SharedFlow;
 
@@ -385,26 +385,26 @@
 
     const/4 v0, 0x1
 
-    .line 326
+    .line 322
     invoke-static {p0, v0}, Lkotlinx/coroutines/flow/FlowKt__ShareKt;->configureSharing$FlowKt__ShareKt(Lkotlinx/coroutines/flow/Flow;I)Lkotlinx/coroutines/flow/SharingConfig;
 
     move-result-object p0
 
     const/4 v1, 0x0
 
-    .line 327
+    .line 323
     invoke-static {v1, v0, v1}, Lkotlinx/coroutines/CompletableDeferredKt;->CompletableDeferred$default(Lkotlinx/coroutines/Job;ILjava/lang/Object;)Lkotlinx/coroutines/CompletableDeferred;
 
     move-result-object v0
 
-    .line 328
+    .line 324
     iget-object v1, p0, Lkotlinx/coroutines/flow/SharingConfig;->context:Lkotlin/coroutines/CoroutineContext;
 
     iget-object p0, p0, Lkotlinx/coroutines/flow/SharingConfig;->upstream:Lkotlinx/coroutines/flow/Flow;
 
     invoke-static {p1, v1, p0, v0}, Lkotlinx/coroutines/flow/FlowKt__ShareKt;->launchSharingDeferred$FlowKt__ShareKt(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/flow/Flow;Lkotlinx/coroutines/CompletableDeferred;)V
 
-    .line 329
+    .line 325
     invoke-interface {v0, p2}, Lkotlinx/coroutines/Deferred;->await(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -431,17 +431,17 @@
 
     const/4 v0, 0x1
 
-    .line 312
+    .line 308
     invoke-static {p0, v0}, Lkotlinx/coroutines/flow/FlowKt__ShareKt;->configureSharing$FlowKt__ShareKt(Lkotlinx/coroutines/flow/Flow;I)Lkotlinx/coroutines/flow/SharingConfig;
 
     move-result-object p0
 
-    .line 313
+    .line 309
     invoke-static {p3}, Lkotlinx/coroutines/flow/StateFlowKt;->MutableStateFlow(Ljava/lang/Object;)Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v3
 
-    .line 314
+    .line 310
     iget-object v1, p0, Lkotlinx/coroutines/flow/SharingConfig;->context:Lkotlin/coroutines/CoroutineContext;
 
     iget-object v2, p0, Lkotlinx/coroutines/flow/SharingConfig;->upstream:Lkotlinx/coroutines/flow/Flow;
@@ -456,7 +456,7 @@
 
     move-result-object p0
 
-    .line 315
+    .line 311
     new-instance p1, Lkotlinx/coroutines/flow/ReadonlyStateFlow;
 
     invoke-direct {p1, v3, p0}, Lkotlinx/coroutines/flow/ReadonlyStateFlow;-><init>(Lkotlinx/coroutines/flow/StateFlow;Lkotlinx/coroutines/Job;)V

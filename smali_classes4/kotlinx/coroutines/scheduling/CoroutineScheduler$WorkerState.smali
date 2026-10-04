@@ -23,6 +23,8 @@
 
 
 # static fields
+.field private static final synthetic $ENTRIES:Lkotlin/enums/EnumEntries;
+
 .field private static final synthetic $VALUES:[Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
 .field public static final enum BLOCKING:Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
@@ -60,7 +62,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 995
+    .line 1004
     new-instance v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
     const-string v1, "CPU_ACQUIRED"
@@ -71,7 +73,7 @@
 
     sput-object v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;->CPU_ACQUIRED:Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
-    .line 1000
+    .line 1009
     new-instance v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
     const-string v1, "BLOCKING"
@@ -82,7 +84,7 @@
 
     sput-object v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;->BLOCKING:Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
-    .line 1005
+    .line 1014
     new-instance v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
     const-string v1, "PARKING"
@@ -93,7 +95,7 @@
 
     sput-object v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;->PARKING:Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
-    .line 1010
+    .line 1019
     new-instance v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
     const-string v1, "DORMANT"
@@ -104,7 +106,7 @@
 
     sput-object v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;->DORMANT:Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
-    .line 1015
+    .line 1024
     new-instance v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
     const-string v1, "TERMINATED"
@@ -121,6 +123,12 @@
 
     sput-object v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;->$VALUES:[Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;
 
+    invoke-static {v0}, Lkotlin/enums/EnumEntriesKt;->enumEntries([Ljava/lang/Enum;)Lkotlin/enums/EnumEntries;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;->$ENTRIES:Lkotlin/enums/EnumEntries;
+
     return-void
 .end method
 
@@ -132,10 +140,24 @@
         }
     .end annotation
 
-    .line 991
+    .line 1000
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
+.end method
+
+.method public static getEntries()Lkotlin/enums/EnumEntries;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlin/enums/EnumEntries;"
+        }
+    .end annotation
+
+    sget-object v0, Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;->$ENTRIES:Lkotlin/enums/EnumEntries;
+
+    return-object v0
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lkotlinx/coroutines/scheduling/CoroutineScheduler$WorkerState;

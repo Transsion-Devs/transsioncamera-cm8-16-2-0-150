@@ -24,33 +24,25 @@
 
 .field public static guide_star_layout:I = 0x7f0e00df
 
-.field public static guide_star_layout_flip:I = 0x7f0e00e0
+.field public static guide_stellar_track_layout:I = 0x7f0e00e0
 
-.field public static guide_star_layout_fold:I = 0x7f0e00e1
+.field public static guide_traffic_layout:I = 0x7f0e00e5
 
-.field public static guide_stellar_track_layout:I = 0x7f0e00e2
+.field public static long_exposure_main_layout:I = 0x7f0e0102
 
-.field public static guide_stellar_track_layout_flip:I = 0x7f0e00e3
+.field public static long_exposure_main_layout_content_ui5:I = 0x7f0e0103
 
-.field public static guide_stellar_track_layout_fold:I = 0x7f0e00e4
+.field public static long_exposure_main_layout_ui5:I = 0x7f0e0104
 
-.field public static guide_traffic_layout:I = 0x7f0e00e9
+.field public static long_exposure_scroller_layout:I = 0x7f0e0105
 
-.field public static long_exposure_main_layout:I = 0x7f0e0106
+.field public static long_exposure_scroller_layout_ui5:I = 0x7f0e0106
 
-.field public static long_exposure_main_layout_content_ui5:I = 0x7f0e0107
+.field public static scene_item_layout:I = 0x7f0e01ef
 
-.field public static long_exposure_main_layout_ui5:I = 0x7f0e0108
+.field public static scene_item_layout_ui4:I = 0x7f0e01f0
 
-.field public static long_exposure_scroller_layout:I = 0x7f0e0109
-
-.field public static long_exposure_scroller_layout_ui5:I = 0x7f0e010a
-
-.field public static scene_item_layout:I = 0x7f0e01f4
-
-.field public static scene_item_layout_ui4:I = 0x7f0e01f5
-
-.field public static stellar_track_check_box:I = 0x7f0e020f
+.field public static stellar_track_check_box:I = 0x7f0e020a
 
 
 # direct methods

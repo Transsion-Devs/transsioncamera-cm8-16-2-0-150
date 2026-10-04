@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)V
     .registers 2
 
-    .line 276
+    .line 271
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$1;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .method public takePictureEnd(Z)V
     .registers 3
 
-    .line 288
+    .line 283
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$1;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Landroid/os/Handler;
@@ -64,7 +64,7 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 289
+    .line 284
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$1;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Landroid/os/Handler;
@@ -85,7 +85,7 @@
 .method public takePictureStart()V
     .registers 3
 
-    .line 279
+    .line 274
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection$1;->this$0:Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;->-$$Nest$fgetmHandler(Lcom/transsion/camera/feature/setting/voicedetection/VoiceDetection;)Landroid/os/Handler;

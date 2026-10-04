@@ -57,10 +57,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 4
 
-    .line 40
+    .line 43
     invoke-direct {p0, p1}, Lcom/transsion/widgetslib/preference/OSListPreference;-><init>(Landroid/content/Context;)V
 
-    .line 23
+    .line 26
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "CustomOSListPreference"
@@ -71,24 +71,24 @@
 
     const/4 v0, 0x0
 
-    .line 34
+    .line 37
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mState:Z
 
-    .line 88
+    .line 91
     new-instance v0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mOnClickCallback:Landroid/view/View$OnClickListener;
 
-    .line 97
+    .line 100
     new-instance v0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference$1;-><init>(Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mOnMultiChoiceClickListener:Landroid/content/DialogInterface$OnMultiChoiceClickListener;
 
-    .line 41
+    .line 44
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -107,7 +107,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .registers 4
 
-    .line 89
+    .line 92
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -132,26 +132,26 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 90
+    .line 93
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mCustomSwitchButton:Landroid/widget/Switch;
 
     invoke-virtual {p1}, Landroid/widget/CompoundButton;->isChecked()Z
 
     move-result p1
 
-    .line 91
+    .line 94
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mCustomSwitchButton:Landroid/widget/Switch;
 
     xor-int/lit8 v1, p1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 92
+    .line 95
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mOnExtraChangeListener:Landroid/preference/Preference$OnPreferenceChangeListener;
 
     if-eqz p0, :cond_44
 
-    .line 93
+    .line 96
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -181,7 +181,7 @@
 .method public getCustomLayoutClickListener()Landroid/content/DialogInterface$OnMultiChoiceClickListener;
     .registers 1
 
-    .line 107
+    .line 110
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mOnMultiChoiceClickListener:Landroid/content/DialogInterface$OnMultiChoiceClickListener;
 
     return-object p0
@@ -190,7 +190,7 @@
 .method public getCustomLayoutSupport()Z
     .registers 1
 
-    .line 157
+    .line 172
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mCustomLayoutSupport:Z
 
     return p0
@@ -199,7 +199,7 @@
 .method public getSecondSummary()Ljava/lang/String;
     .registers 1
 
-    .line 115
+    .line 118
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondSummaryString:Ljava/lang/String;
 
     return-object p0
@@ -208,7 +208,7 @@
 .method public getSecondTitle()Ljava/lang/String;
     .registers 1
 
-    .line 111
+    .line 114
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondTitleString:Ljava/lang/String;
 
     return-object p0
@@ -217,7 +217,7 @@
 .method public getSwitchCkecked()Z
     .registers 1
 
-    .line 138
+    .line 153
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mState:Z
 
     return p0
@@ -226,21 +226,21 @@
 .method public hideDialog()V
     .registers 2
 
-    .line 142
+    .line 157
     invoke-virtual {p0}, Lcom/transsion/widgetslib/preference/OSDialogPreference;->getDialog()Landroid/app/Dialog;
 
     move-result-object p0
 
     if-eqz p0, :cond_f
 
-    .line 143
+    .line 158
     invoke-virtual {p0}, Landroid/app/Dialog;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 144
+    .line 159
     invoke-virtual {p0}, Landroid/app/Dialog;->dismiss()V
 
     :cond_f
@@ -250,10 +250,10 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .registers 5
 
-    .line 76
+    .line 79
     invoke-super {p0, p1}, Lcom/transsion/widgetslib/preference/OSDialogPreference;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 77
+    .line 80
     iget v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mUIMode:I
 
     iget v1, p1, Landroid/content/res/Configuration;->uiMode:I
@@ -262,7 +262,7 @@
 
     return-void
 
-    .line 80
+    .line 83
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -300,7 +300,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 82
+    .line 85
     iget v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mUIMode:I
 
     and-int/lit8 v0, v0, 0x30
@@ -311,10 +311,10 @@
 
     if-eq v0, v1, :cond_42
 
-    .line 83
+    .line 86
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->hideDialog()V
 
-    .line 85
+    .line 88
     :cond_42
     iget p1, p1, Landroid/content/res/Configuration;->uiMode:I
 
@@ -326,7 +326,7 @@
 .method protected onCreateDialogView()Landroid/view/View;
     .registers 5
 
-    .line 46
+    .line 49
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -347,7 +347,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 47
+    .line 50
     invoke-virtual {p0}, Lcom/transsion/widgetslib/preference/OSDialogPreference;->getDialogLayoutResource()I
 
     move-result v0
@@ -358,7 +358,7 @@
 
     return-object v1
 
-    .line 51
+    .line 54
     :cond_20
     iget-object v2, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -366,7 +366,7 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 52
+    .line 55
     invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -375,14 +375,14 @@
 
     move-result-object v2
 
-    .line 53
+    .line 56
     invoke-virtual {v2, v0, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mRootLayout:Landroid/view/View;
 
-    .line 54
+    .line 57
     sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->custom_perference:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -391,7 +391,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mCustomPerference:Landroid/view/View;
 
-    .line 55
+    .line 58
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mRootLayout:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->custom_switch_widget:I
@@ -404,7 +404,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mCustomSwitchButton:Landroid/widget/Switch;
 
-    .line 56
+    .line 59
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mRootLayout:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->preference_list_second_title:I
@@ -417,7 +417,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondTitleView:Landroid/widget/TextView;
 
-    .line 57
+    .line 60
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mRootLayout:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->preference_list_second_summary:I
@@ -430,7 +430,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondSummaryView:Landroid/widget/TextView;
 
-    .line 58
+    .line 61
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mRootLayout:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/featurelibs/commonwidget/R$id;->custom_layout:I
@@ -443,14 +443,14 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondLayout:Landroid/widget/LinearLayout;
 
-    .line 59
+    .line 62
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondTitleView:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondTitleString:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 60
+    .line 63
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondSummaryString:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -461,14 +461,14 @@
 
     if-eqz v0, :cond_84
 
-    .line 61
+    .line 64
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondSummaryView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_8b
 
-    .line 63
+    .line 66
     :cond_84
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondSummaryView:Landroid/widget/TextView;
 
@@ -476,7 +476,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 65
+    .line 68
     :goto_8b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mCustomSwitchButton:Landroid/widget/Switch;
 
@@ -484,24 +484,24 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/Switch;->setChecked(Z)V
 
-    .line 66
+    .line 69
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mCustomPerference:Landroid/view/View;
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mOnClickCallback:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 67
+    .line 70
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mCustomLayoutSupport:Z
 
     if-nez v0, :cond_a2
 
-    .line 68
+    .line 71
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 70
+    .line 73
     :cond_a2
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mRootLayout:Landroid/view/View;
 
@@ -511,7 +511,7 @@
 .method public setCustomLayoutSupport(Z)V
     .registers 2
 
-    .line 153
+    .line 168
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mCustomLayoutSupport:Z
 
     return-void
@@ -520,7 +520,7 @@
 .method public setDialogLayoutResource(I)V
     .registers 5
 
-    .line 120
+    .line 123
     invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -553,14 +553,14 @@
 .method public setOnExtraPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
     .registers 4
 
-    .line 124
+    .line 139
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "setOnExtraPreferenceChangeListener"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 125
+    .line 140
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mOnExtraChangeListener:Landroid/preference/Preference$OnPreferenceChangeListener;
 
     return-void
@@ -569,7 +569,7 @@
 .method public setSecondSummary(Ljava/lang/String;)V
     .registers 2
 
-    .line 149
+    .line 164
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondSummaryString:Ljava/lang/String;
 
     return-void
@@ -578,7 +578,7 @@
 .method public setSecondTitle(Ljava/lang/String;)V
     .registers 2
 
-    .line 129
+    .line 144
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mSecondTitleString:Ljava/lang/String;
 
     return-void
@@ -587,7 +587,7 @@
 .method public setSwitchChecked(Z)V
     .registers 5
 
-    .line 133
+    .line 148
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -606,8 +606,70 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 134
+    .line 149
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/widget/preference/CustomOSListPreference;->mState:Z
 
+    return-void
+.end method
+
+.method protected showDialog(Landroid/os/Bundle;)V
+    .registers 3
+
+    .line 128
+    invoke-super {p0, p1}, Lcom/transsion/widgetslib/preference/OSDialogPreference;->showDialog(Landroid/os/Bundle;)V
+
+    .line 129
+    invoke-virtual {p0}, Lcom/transsion/widgetslib/preference/OSDialogPreference;->getDialog()Landroid/app/Dialog;
+
+    move-result-object p1
+
+    .line 130
+    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2c
+
+    if-eqz p1, :cond_2c
+
+    invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    if-nez v0, :cond_16
+
+    goto :goto_2c
+
+    .line 133
+    :cond_16
+    invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcom/transsion/camera/utils/UIUtils;->isDarkMode(Landroid/content/Context;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_27
+
+    .line 134
+    sget p0, Lcom/transsion/camera/featurelibs/commonwidget/R$drawable;->bg_dialog_night_round_corner:I
+
+    goto :goto_29
+
+    .line 135
+    :cond_27
+    sget p0, Lcom/transsion/camera/featurelibs/commonwidget/R$drawable;->bg_dialog_round_corner:I
+
+    .line 133
+    :goto_29
+    invoke-virtual {p1, p0}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
+
+    :cond_2c
+    :goto_2c
     return-void
 .end method

@@ -1,14 +1,11 @@
 .class Lcom/transsion/camera/app/ui/PopSettingUI$7;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/transsion/camera/app/ui/PopSettingUI;->onPopupDismissEnd()V
+    value = Lcom/transsion/camera/app/ui/PopSettingUI;->onPopupDismissStart()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,61 +15,35 @@
 
 
 # instance fields
-.field final synthetic this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
+.field final synthetic val$view:Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI;)V
-    .registers 2
+.method constructor <init>(Lcom/transsion/camera/app/ui/PopSettingUI;Landroid/view/View;)V
+    .registers 3
 
-    .line 1096
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/PopSettingUI$7;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
+    .line 874
+    iput-object p2, p0, Lcom/transsion/camera/app/ui/PopSettingUI$7;->val$view:Landroid/view/View;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .registers 3
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .registers 2
 
-    .line 1099
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$7;->this$0:Lcom/transsion/camera/app/ui/PopSettingUI;
+    .line 877
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    invoke-static {p0}, Lcom/transsion/camera/app/ui/PopSettingUI;->-$$Nest$fgetmViewMap(Lcom/transsion/camera/app/ui/PopSettingUI;)Ljava/util/Map;
+    .line 878
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/PopSettingUI$7;->val$view:Landroid/view/View;
 
-    move-result-object p0
+    const/4 p1, 0x0
 
-    invoke-interface {p0}, Ljava/util/Map;->values()Ljava/util/Collection;
+    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
 
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_e
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1f
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    const/4 v1, 0x1
-
-    .line 1100
-    invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
-
-    goto :goto_e
-
-    :cond_1f
     return-void
 .end method

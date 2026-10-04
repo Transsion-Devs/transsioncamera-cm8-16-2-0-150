@@ -146,13 +146,24 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    const-wide v1, 0x3ff999999999999aL    # 1.6
+
+    .line 47
+    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v1
+
+    const-string v2, "16:10"
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .registers 3
 
-    .line 50
+    .line 51
     const-string v0, "key_picture_size"
 
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/app/ui/setting/spec/NoPresetListSettingUISpec;-><init>(Ljava/lang/String;Landroid/content/res/Resources;)V
@@ -163,12 +174,12 @@
 .method private static convertSizeStringToEntryString(Ljava/lang/String;)Ljava/lang/String;
     .registers 7
 
-    .line 90
+    .line 91
     invoke-static {p0}, Landroid/util/Size;->parseSize(Ljava/lang/String;)Landroid/util/Size;
 
     move-result-object p0
 
-    .line 92
+    .line 93
     invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
 
     move-result v0
@@ -193,14 +204,14 @@
 
     float-to-int v2, v2
 
-    .line 94
+    .line 95
     sget-object v3, Lcom/transsion/camera/ui/setting/picturesize/PictureSizeSettingUISpec;->RATIO_MAP:Ljava/util/HashMap;
 
     invoke-static {v3, p0}, Lcom/transsion/camera/ui/setting/picturesize/PictureSizeSettingUISpec;->findRatioString(Ljava/util/HashMap;Landroid/util/Size;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 99
+    .line 100
     const-string v4, "4:3"
 
     invoke-static {v3, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -243,10 +254,10 @@
 
     if-eqz v1, :cond_5d
 
-    .line 109
+    .line 110
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    .line 110
+    .line 111
     invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
@@ -271,7 +282,7 @@
 
     move-result-object p0
 
-    .line 109
+    .line 110
     const-string v0, "(%.1fM) %dx%d"
 
     invoke-static {v1, v0, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -280,11 +291,11 @@
 
     return-object p0
 
-    .line 111
+    .line 112
     :cond_5d
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    .line 112
+    .line 113
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -309,7 +320,7 @@
 
     move-result-object p0
 
-    .line 111
+    .line 112
     const-string v1, "(%dM) %dx%d"
 
     invoke-static {v0, v1, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -321,10 +332,10 @@
     :cond_7e
     if-eqz v1, :cond_a1
 
-    .line 115
+    .line 116
     sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    .line 116
+    .line 117
     invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
@@ -349,7 +360,7 @@
 
     move-result-object p0
 
-    .line 115
+    .line 116
     const-string v0, "%s(%.1fM) %dx%d"
 
     invoke-static {v1, v0, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -358,11 +369,11 @@
 
     return-object p0
 
-    .line 117
+    .line 118
     :cond_a1
     sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    .line 118
+    .line 119
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -387,7 +398,7 @@
 
     move-result-object p0
 
-    .line 117
+    .line 118
     const-string v1, "%s(%dM) %dx%d"
 
     invoke-static {v0, v1, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -400,7 +411,7 @@
 .method private static findRatioString(Ljava/util/HashMap;Landroid/util/Size;)Ljava/lang/String;
     .registers 11
 
-    .line 124
+    .line 125
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
 
     move-result v0
@@ -423,14 +434,14 @@
 
     move-result-object p1
 
-    .line 125
+    .line 126
     invoke-virtual {p0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1f
 
-    .line 126
+    .line 127
     invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -442,19 +453,19 @@
     :cond_1f
     const-wide v2, 0x7fefffffffffffffL    # Double.MAX_VALUE
 
-    .line 128
+    .line 129
     invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object p1
 
     const-wide/16 v2, 0x0
 
-    .line 129
+    .line 130
     invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v2
 
-    .line 130
+    .line 131
     invoke-virtual {p0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
     move-result-object v3
@@ -463,7 +474,7 @@
 
     move-result-object v3
 
-    .line 131
+    .line 132
     :cond_36
     :goto_36
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
@@ -472,14 +483,14 @@
 
     if-eqz v4, :cond_64
 
-    .line 132
+    .line 133
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/Double;
 
-    .line 133
+    .line 134
     invoke-virtual {v4}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide v5
@@ -498,7 +509,7 @@
 
     if-gez v5, :cond_36
 
-    .line 134
+    .line 135
     invoke-virtual {v4}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide v5
@@ -517,7 +528,7 @@
 
     goto :goto_36
 
-    .line 139
+    .line 140
     :cond_64
     invoke-virtual {p1}, Ljava/lang/Double;->doubleValue()D
 
@@ -529,7 +540,7 @@
 
     if-gez p1, :cond_78
 
-    .line 140
+    .line 141
     invoke-virtual {p0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -549,12 +560,12 @@
 .method protected createSupportEntries([Ljava/lang/String;)[Ljava/lang/String;
     .registers 5
 
-    .line 73
+    .line 74
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->mSupportedEntryValues:[Ljava/lang/String;
 
     array-length p1, p1
 
-    .line 74
+    .line 75
     new-array v0, p1, [Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -562,17 +573,17 @@
     :goto_6
     if-ge v1, p1, :cond_15
 
-    .line 76
+    .line 77
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->mSupportedEntryValues:[Ljava/lang/String;
 
     aget-object v2, v2, v1
 
-    .line 77
+    .line 78
     invoke-static {v2}, Lcom/transsion/camera/ui/setting/picturesize/PictureSizeSettingUISpec;->convertSizeStringToEntryString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 78
+    .line 79
     aput-object v2, v0, v1
 
     add-int/lit8 v1, v1, 0x1
@@ -594,15 +605,15 @@
 .method protected createSupportEntryValues(Ljava/util/List;)[Ljava/lang/String;
     .registers 2
 
-    .line 65
+    .line 66
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p0
 
-    .line 66
+    .line 67
     new-array p0, p0, [Ljava/lang/String;
 
-    .line 67
+    .line 68
     invoke-interface {p1, p0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     return-object p0
@@ -611,7 +622,7 @@
 .method protected initIcon(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .registers 2
 
-    .line 60
+    .line 61
     sget p0, Lcom/transsion/camera/R$drawable;->ic_picture_size:I
 
     invoke-static {p1, p0}, Lcom/transsion/camera/utils/ResCache;->getDrawable(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
@@ -624,7 +635,7 @@
 .method protected initTitle(Landroid/content/res/Resources;)Ljava/lang/String;
     .registers 2
 
-    .line 55
+    .line 56
     sget p0, Lcom/transsion/camera/R$string;->picture_size_setting_title:I
 
     invoke-virtual {p1, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;

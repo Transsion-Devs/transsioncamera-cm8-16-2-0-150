@@ -27,7 +27,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/ModeManager;I)V
     .registers 3
 
-    .line 1614
+    .line 1618
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$4;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     iput p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$4;->val$offlineType:I
@@ -42,7 +42,7 @@
 .method public run()V
     .registers 2
 
-    .line 1617
+    .line 1621
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$4;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmOfflineSwitchCallback(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUIListener$IBGOfflineSwitchCallback;
@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 1618
+    .line 1622
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$4;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmOfflineSwitchCallback(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUIListener$IBGOfflineSwitchCallback;

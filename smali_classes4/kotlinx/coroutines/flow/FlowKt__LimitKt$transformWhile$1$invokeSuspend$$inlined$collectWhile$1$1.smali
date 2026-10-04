@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__LimitKt$transformWhile$1$invokeSuspend$$inlined$collectWhile$1"
     f = "Limit.kt"
     l = {
-        0x8e
+        0x8b
     }
     m = "emit"
 .end annotation

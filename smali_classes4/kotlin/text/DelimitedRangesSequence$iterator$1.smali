@@ -38,15 +38,15 @@
 
     iput-object p1, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->this$0:Lkotlin/text/DelimitedRangesSequence;
 
-    .line 1178
+    .line 1207
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 1179
+    .line 1208
     iput v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextState:I
 
-    .line 1180
+    .line 1209
     # getter for: Lkotlin/text/DelimitedRangesSequence;->startIndex:I
     invoke-static {p1}, Lkotlin/text/DelimitedRangesSequence;->access$getStartIndex$p(Lkotlin/text/DelimitedRangesSequence;)I
 
@@ -69,7 +69,7 @@
 
     iput p1, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->currentStartIndex:I
 
-    .line 1181
+    .line 1210
     iput p1, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextSearchIndex:I
 
     return-void
@@ -78,24 +78,24 @@
 .method private final calcNext()V
     .registers 7
 
-    .line 1186
+    .line 1215
     iget v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextSearchIndex:I
 
     const/4 v1, 0x0
 
     if-gez v0, :cond_b
 
-    .line 1187
+    .line 1216
     iput v1, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextState:I
 
     const/4 v0, 0x0
 
-    .line 1188
+    .line 1217
     iput-object v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextItem:Lkotlin/ranges/IntRange;
 
     return-void
 
-    .line 1190
+    .line 1219
     :cond_b
     iget-object v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->this$0:Lkotlin/text/DelimitedRangesSequence;
 
@@ -141,7 +141,7 @@
 
     if-le v0, v4, :cond_46
 
-    .line 1191
+    .line 1220
     :cond_30
     new-instance v0, Lkotlin/ranges/IntRange;
 
@@ -162,12 +162,12 @@
 
     iput-object v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextItem:Lkotlin/ranges/IntRange;
 
-    .line 1192
+    .line 1221
     iput v2, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextSearchIndex:I
 
     goto :goto_9b
 
-    .line 1194
+    .line 1223
     :cond_46
     iget-object v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->this$0:Lkotlin/text/DelimitedRangesSequence;
 
@@ -197,7 +197,7 @@
 
     if-nez v0, :cond_76
 
-    .line 1196
+    .line 1225
     new-instance v0, Lkotlin/ranges/IntRange;
 
     iget v1, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->currentStartIndex:I
@@ -217,12 +217,12 @@
 
     iput-object v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextItem:Lkotlin/ranges/IntRange;
 
-    .line 1197
+    .line 1226
     iput v2, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextSearchIndex:I
 
     goto :goto_9b
 
-    .line 1199
+    .line 1228
     :cond_76
     invoke-virtual {v0}, Lkotlin/Pair;->component1()Ljava/lang/Object;
 
@@ -244,7 +244,7 @@
 
     move-result v0
 
-    .line 1200
+    .line 1229
     iget v4, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->currentStartIndex:I
 
     invoke-static {v4, v2}, Lkotlin/ranges/RangesKt;->until(II)Lkotlin/ranges/IntRange;
@@ -255,7 +255,7 @@
 
     add-int/2addr v2, v0
 
-    .line 1201
+    .line 1230
     iput v2, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->currentStartIndex:I
 
     if-nez v0, :cond_98
@@ -265,10 +265,10 @@
     :cond_98
     add-int/2addr v2, v1
 
-    .line 1202
+    .line 1231
     iput v2, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextSearchIndex:I
 
-    .line 1205
+    .line 1234
     :goto_9b
     iput v3, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextState:I
 
@@ -280,17 +280,17 @@
 .method public hasNext()Z
     .registers 3
 
-    .line 1222
+    .line 1251
     iget v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextState:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_8
 
-    .line 1223
+    .line 1252
     invoke-direct {p0}, Lkotlin/text/DelimitedRangesSequence$iterator$1;->calcNext()V
 
-    .line 1224
+    .line 1253
     :cond_8
     iget p0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextState:I
 
@@ -309,7 +309,7 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .registers 1
 
-    .line 1178
+    .line 1207
     invoke-virtual {p0}, Lkotlin/text/DelimitedRangesSequence$iterator$1;->next()Lkotlin/ranges/IntRange;
 
     move-result-object p0
@@ -320,23 +320,23 @@
 .method public next()Lkotlin/ranges/IntRange;
     .registers 4
 
-    .line 1210
+    .line 1239
     iget v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextState:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_8
 
-    .line 1211
+    .line 1240
     invoke-direct {p0}, Lkotlin/text/DelimitedRangesSequence$iterator$1;->calcNext()V
 
-    .line 1212
+    .line 1241
     :cond_8
     iget v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextState:I
 
     if-eqz v0, :cond_19
 
-    .line 1214
+    .line 1243
     iget-object v0, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextItem:Lkotlin/ranges/IntRange;
 
     const-string v2, "null cannot be cast to non-null type kotlin.ranges.IntRange"
@@ -345,15 +345,15 @@
 
     const/4 v2, 0x0
 
-    .line 1216
+    .line 1245
     iput-object v2, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextItem:Lkotlin/ranges/IntRange;
 
-    .line 1217
+    .line 1246
     iput v1, p0, Lkotlin/text/DelimitedRangesSequence$iterator$1;->nextState:I
 
     return-object v0
 
-    .line 1213
+    .line 1242
     :cond_19
     new-instance p0, Ljava/util/NoSuchElementException;
 

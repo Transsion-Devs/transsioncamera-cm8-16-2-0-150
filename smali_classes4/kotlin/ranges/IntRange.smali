@@ -57,7 +57,7 @@
 .method public static final synthetic access$getEMPTY$cp()Lkotlin/ranges/IntRange;
     .registers 1
 
-    .line 53
+    .line 54
     sget-object v0, Lkotlin/ranges/IntRange;->EMPTY:Lkotlin/ranges/IntRange;
 
     return-object v0
@@ -65,32 +65,6 @@
 
 
 # virtual methods
-.method public contains(I)Z
-    .registers 3
-
-    .line 66
-    invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->getFirst()I
-
-    move-result v0
-
-    if-gt v0, p1, :cond_e
-
-    invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->getLast()I
-
-    move-result p0
-
-    if-gt p1, p0, :cond_e
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_e
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
 

@@ -22,14 +22,14 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;)V
     .registers 3
 
-    .line 143
+    .line 145
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 144
+    .line 146
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -44,10 +44,10 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 149
+    .line 151
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 151
+    .line 153
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI$MainHandler;->mViewCache:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -58,7 +58,7 @@
 
     if-nez p0, :cond_17
 
-    .line 153
+    .line 155
     invoke-static {}, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -69,7 +69,7 @@
 
     return-void
 
-    .line 157
+    .line 159
     :cond_17
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -81,7 +81,7 @@
 
     if-eq v0, v1, :cond_3a
 
-    .line 167
+    .line 169
     invoke-static {}, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -106,13 +106,13 @@
 
     return-void
 
-    .line 163
+    .line 165
     :cond_3a
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;->-$$Nest$mhideContinuousShotView(Lcom/transsion/camera/app/ui/AbstractContinuousShotUI;)V
 
     return-void
 
-    .line 159
+    .line 161
     :cond_3e
     iget v0, p1, Landroid/os/Message;->arg1:I
 

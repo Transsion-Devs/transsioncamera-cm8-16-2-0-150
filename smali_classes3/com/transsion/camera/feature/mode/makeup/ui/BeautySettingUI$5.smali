@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$ContrastListener;
+.implements Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$SeekBarChangeListener;
 
 
 # annotations
@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
     .registers 2
 
-    .line 113
+    .line 144
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$5;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,51 +35,26 @@
 
 
 # virtual methods
-.method public closeContrast(Z)V
+.method public onProgressChanged(IZ)V
     .registers 3
 
-    .line 123
-    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$5;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
+    .line 147
+    iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$5;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
-    invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
+    invoke-static {p2}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
-    move-result-object v0
+    move-result-object p2
 
-    if-eqz v0, :cond_11
+    if-eqz p2, :cond_11
 
-    .line 124
+    .line 148
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$5;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     move-result-object p0
 
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->closeContrast(Z)V
-
-    :cond_11
-    return-void
-.end method
-
-.method public openContrast()V
-    .registers 2
-
-    .line 116
-    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$5;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
-
-    invoke-static {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_11
-
-    .line 117
-    iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$5;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;
-
-    invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->-$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->openContrast()V
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->progressChanged(I)V
 
     :cond_11
     return-void

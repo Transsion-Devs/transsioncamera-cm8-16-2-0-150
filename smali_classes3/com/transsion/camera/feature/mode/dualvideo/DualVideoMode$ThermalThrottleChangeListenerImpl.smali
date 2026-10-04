@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)V
     .registers 2
 
-    .line 1262
+    .line 1267
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onThermalChanged(I)V
     .registers 4
 
-    .line 1270
+    .line 1275
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -59,7 +59,7 @@
 
     return-void
 
-    .line 1274
+    .line 1279
     :cond_9
     new-instance p1, Landroid/util/Range;
 
@@ -77,7 +77,7 @@
 
     invoke-direct {p1, v0, v1}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
 
-    .line 1275
+    .line 1280
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -87,7 +87,7 @@
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->dualVideoFPSChange(Landroid/util/Range;)V
 
-    .line 1276
+    .line 1281
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -109,7 +109,7 @@
 .method public onThermalThrottleChanged(I)V
     .registers 4
 
-    .line 1265
+    .line 1270
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$ThermalThrottleChangeListenerImpl;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;

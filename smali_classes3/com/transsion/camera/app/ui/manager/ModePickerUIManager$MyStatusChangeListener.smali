@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)V
     .registers 2
 
-    .line 1206
+    .line 1108
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MyStatusChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 1206
+    .line 1108
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MyStatusChangeListener;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -58,7 +58,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
 
-    .line 1209
+    .line 1111
     const-string v0, "key_wide_camera_item_seleccted"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -69,9 +69,9 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_46
 
-    .line 1210
+    .line 1112
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
@@ -80,7 +80,7 @@
 
     const/4 v0, -0x1
 
-    sparse-switch p1, :sswitch_data_b0
+    sparse-switch p1, :sswitch_data_a8
 
     :goto_15
     move v1, v0
@@ -130,21 +130,12 @@
 
     :cond_38
     :goto_38
-    packed-switch v1, :pswitch_data_be
+    packed-switch v1, :pswitch_data_b6
 
-    goto :goto_af
+    goto :goto_a7
 
-    .line 1214
+    .line 1116
     :pswitch_3c
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MyStatusChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
-
-    invoke-static {p1}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmIsShowingGuide(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_af
-
-    .line 1215
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MyStatusChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePanelUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/IModePanelUI;
@@ -155,35 +146,35 @@
 
     return-void
 
-    .line 1221
-    :cond_4e
+    .line 1121
+    :cond_46
     const-string v0, "key_restore_settings_notify_ui"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_70
+    if-eqz v0, :cond_68
 
-    .line 1222
+    .line 1122
     const-string p1, "end"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_af
+    if-eqz p1, :cond_a7
 
-    .line 1223
+    .line 1123
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MyStatusChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePanelUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/IModePanelUI;
 
     move-result-object p1
 
-    if-eqz p1, :cond_af
+    if-eqz p1, :cond_a7
 
-    .line 1224
+    .line 1124
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MyStatusChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePanelUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/IModePanelUI;
@@ -194,40 +185,40 @@
 
     return-void
 
-    .line 1227
-    :cond_70
+    .line 1127
+    :cond_68
     const-string v0, "key_instant_zoom_ui_state"
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_af
+    if-eqz p1, :cond_a7
 
-    .line 1228
+    .line 1128
     const-string/jumbo p1, "value_instant_zoom_show"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_87
+    if-eqz p1, :cond_7f
 
-    .line 1229
+    .line 1129
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MyStatusChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {p1, v1}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fputmInstantZoomShow(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;Z)V
 
-    goto :goto_8c
+    goto :goto_84
 
-    .line 1231
-    :cond_87
+    .line 1131
+    :cond_7f
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MyStatusChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {p1, v2}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fputmInstantZoomShow(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;Z)V
 
-    .line 1233
-    :goto_8c
+    .line 1133
+    :goto_84
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MyStatusChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmCurrentModeName(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Ljava/lang/String;
@@ -240,9 +231,9 @@
 
     move-result p1
 
-    if-nez p1, :cond_af
+    if-nez p1, :cond_a7
 
-    .line 1234
+    .line 1134
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MyStatusChangeListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePickerUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/ModePickerUI;
@@ -263,18 +254,18 @@
 
     invoke-virtual {p1, p2, p0}, Lcom/transsion/camera/app/ui/ModePickerUI;->setInstantZoomShow(ZZ)V
 
-    :cond_af
-    :goto_af
+    :cond_a7
+    :goto_a7
     return-void
 
-    :sswitch_data_b0
+    :sswitch_data_a8
     .sparse-switch
         -0xcc955a9 -> :sswitch_2d
         -0x9c5ace4 -> :sswitch_23
         0x4e25a7fb -> :sswitch_17
     .end sparse-switch
 
-    :pswitch_data_be
+    :pswitch_data_b6
     .packed-switch 0x0
         :pswitch_3c
         :pswitch_3c

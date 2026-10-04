@@ -17,8 +17,8 @@
     c = "kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2$1$1"
     f = "Combine.kt"
     l = {
-        0x20,
-        0x21
+        0x1d,
+        0x1e
     }
     m = "emit"
 .end annotation

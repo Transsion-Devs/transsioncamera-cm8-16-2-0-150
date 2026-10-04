@@ -44,10 +44,10 @@
 .method constructor <init>(Landroid/database/Cursor;)V
     .registers 3
 
-    .line 1762
+    .line 1774
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1763
+    .line 1775
     const-string v0, "_id"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -56,7 +56,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mIdIndex:I
 
-    .line 1764
+    .line 1776
     const-string v0, "datetaken"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -65,7 +65,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mDateTakenIndex:I
 
-    .line 1765
+    .line 1777
     const-string/jumbo v0, "title"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -74,7 +74,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mTitleIndex:I
 
-    .line 1766
+    .line 1778
     const-string v0, "_display_name"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -83,7 +83,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mDisplayNameIndex:I
 
-    .line 1767
+    .line 1779
     const-string v0, "mime_type"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -92,7 +92,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mMimeTypeIndex:I
 
-    .line 1768
+    .line 1780
     const-string/jumbo v0, "width"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -101,7 +101,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mWidthIndex:I
 
-    .line 1769
+    .line 1781
     const-string v0, "height"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -110,7 +110,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mHeightIndex:I
 
-    .line 1770
+    .line 1782
     const-string v0, "orientation"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -119,7 +119,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mOrientationIndex:I
 
-    .line 1771
+    .line 1783
     const-string v0, "_data"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -128,7 +128,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mDataIndex:I
 
-    .line 1772
+    .line 1784
     const-string v0, "latitude"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -137,7 +137,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mLatitudeIndex:I
 
-    .line 1773
+    .line 1785
     const-string v0, "longitude"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -146,7 +146,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$ColumnIndices;->mLongitudeIndex:I
 
-    .line 1774
+    .line 1786
     const-string/jumbo v0, "xmp"
 
     invoke-interface {p1, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I

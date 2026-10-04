@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
     .registers 2
 
-    .line 205
+    .line 200
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$1;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +38,10 @@
 .method public onInflateFinished(Landroid/view/View;ILandroid/view/ViewGroup;)V
     .registers 4
 
-    .line 208
+    .line 203
     invoke-virtual {p3, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 209
+    .line 204
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$1;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-virtual {p0, p1, p2, p3}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->updateLayoutParams(Landroid/view/View;ILandroid/view/ViewGroup;)V

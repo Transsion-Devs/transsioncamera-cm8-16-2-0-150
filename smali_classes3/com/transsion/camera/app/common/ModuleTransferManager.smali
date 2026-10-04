@@ -42,6 +42,8 @@
 
 .field private mOnRegisterCompleteListenerList:Ljava/util/List;
 
+.field private mPhysicalKeyCode:I
+
 .field private final mRingScreenLightOpentime:I
 
 .field private mRingScreenLightState:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -51,7 +53,7 @@
 .method public static synthetic $r8$lambda$BdUo2cLGJe5Zh8bvMY5iutM-OEU(ZLcom/transsion/camera/app/common/IModuleTransfer;)V
     .registers 2
 
-    .line 163
+    .line 165
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/IModuleTransfer;->onTransfer(Z)V
 
     return-void
@@ -60,7 +62,7 @@
 .method public static synthetic $r8$lambda$niLotg95PXMD9f3CezHH4DZFQfI(Lcom/transsion/camera/app/common/ModuleTransferManager$OnRegisterCompleteListener;)V
     .registers 1
 
-    .line 135
+    .line 137
     invoke-interface {p0}, Lcom/transsion/camera/app/common/ModuleTransferManager$OnRegisterCompleteListener;->onComplete()V
 
     return-void
@@ -109,7 +111,7 @@
 .method private constructor <init>()V
     .registers 3
 
-    .line 56
+    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
@@ -164,10 +166,15 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mCurrentCameraId:Ljava/lang/String;
 
-    .line 48
-    iput-boolean v1, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->isAnimatorRunning:Z
+    const/4 v0, -0x1
+
+    .line 46
+    iput v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mPhysicalKeyCode:I
 
     .line 50
+    iput-boolean v1, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->isAnimatorRunning:Z
+
+    .line 52
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -178,7 +185,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mMainHandler:Landroid/os/Handler;
 
-    .line 52
+    .line 54
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -187,7 +194,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mRingScreenLightOpentime:I
 
-    .line 54
+    .line 56
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x2
@@ -202,7 +209,7 @@
 .method public static getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
     .registers 1
 
-    .line 95
+    .line 97
     sget-object v0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mModuleTransferManager:Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     return-object v0
@@ -213,7 +220,7 @@
 .method public getCameraStateManager()Lcom/transsion/camera/app/common/ModuleTransferManager$CameraStateManager;
     .registers 1
 
-    .line 75
+    .line 77
     iget-object p0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mCameraStateManager:Lcom/transsion/camera/app/common/ModuleTransferManager$CameraStateManager;
 
     return-object p0
@@ -222,7 +229,7 @@
 .method public getCurrentH()I
     .registers 1
 
-    .line 87
+    .line 89
     iget-object p0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mCurrentH:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -235,7 +242,7 @@
 .method public getCurrentW()I
     .registers 1
 
-    .line 79
+    .line 81
     iget-object p0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mCurrentW:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
@@ -248,10 +255,36 @@
 .method public getModeName()Ljava/lang/String;
     .registers 1
 
-    .line 71
+    .line 73
     iget-object p0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mCurrentModeName:Ljava/lang/String;
 
     return-object p0
+.end method
+
+.method public declared-synchronized getPhysicalKeyCode()I
+    .registers 2
+
+    monitor-enter p0
+
+    .line 196
+    :try_start_1
+    iget v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mPhysicalKeyCode:I
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_5
+    move-exception v0
+
+    :try_start_6
+    monitor-exit p0
+    :try_end_7
+    .catchall {:try_start_6 .. :try_end_7} :catchall_5
+
+    throw v0
 .end method
 
 .method public declared-synchronized getRingScreenLightState()Z
@@ -259,7 +292,7 @@
 
     monitor-enter p0
 
-    .line 181
+    .line 183
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mRingScreenLightState:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -287,7 +320,7 @@
 .method public isFrontCamera(Ljava/lang/String;)Z
     .registers 2
 
-    .line 99
+    .line 101
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object p0
@@ -298,7 +331,7 @@
 
     if-nez p0, :cond_17
 
-    .line 100
+    .line 102
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object p0
@@ -328,7 +361,7 @@
 
     monitor-enter p0
 
-    .line 134
+    .line 136
     :try_start_1
     iget-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mOnRegisterCompleteListenerList:Ljava/util/List;
 
@@ -340,7 +373,7 @@
 
     if-lez v0, :cond_1c
 
-    .line 135
+    .line 137
     iget-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mOnRegisterCompleteListenerList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/Collection;->stream()Ljava/util/stream/Stream;
@@ -362,7 +395,7 @@
 
     goto :goto_1e
 
-    .line 137
+    .line 139
     :cond_1c
     :goto_1c
     monitor-exit p0
@@ -385,13 +418,13 @@
 
     const/4 v0, 0x0
 
-    .line 130
+    .line 132
     :try_start_2
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/app/common/ModuleTransferManager;->onRingScreenLightChange(ZZ)V
     :try_end_5
     .catchall {:try_start_2 .. :try_end_5} :catchall_7
 
-    .line 131
+    .line 133
     monitor-exit p0
 
     return-void
@@ -412,7 +445,7 @@
 
     monitor-enter p0
 
-    .line 141
+    .line 143
     :try_start_1
     sget-object v0, Lcom/transsion/camera/app/common/ModuleTransferManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -446,7 +479,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mRingScreenLightState:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 143
+    .line 145
     invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v2
@@ -471,10 +504,10 @@
 
     move-result-object v1
 
-    .line 141
+    .line 143
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 146
+    .line 148
     iget-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mRingScreenLightState:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
@@ -483,7 +516,7 @@
 
     if-ne p1, v0, :cond_89
 
-    .line 148
+    .line 150
     iget v1, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mRingScreenLightOpentime:I
 
     if-lez v1, :cond_89
@@ -498,7 +531,7 @@
 
     if-eqz v1, :cond_89
 
-    .line 149
+    .line 151
     iget-object v1, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mDataStore:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -527,7 +560,7 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 150
+    .line 152
     iget-object v1, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mMainHandler:Landroid/os/Handler;
 
     new-instance v2, Lcom/transsion/camera/app/common/ModuleTransferManager$1;
@@ -547,7 +580,7 @@
 
     goto :goto_ab
 
-    .line 161
+    .line 163
     :cond_89
     :goto_89
     iget-object v1, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mModuleTransfers:Ljava/util/List;
@@ -564,10 +597,10 @@
 
     xor-int/2addr p2, v0
 
-    .line 162
+    .line 164
     iput-boolean p2, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->isAllowedInvoke:Z
 
-    .line 163
+    .line 165
     iget-object p2, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mModuleTransfers:Ljava/util/List;
 
     new-instance v0, Lcom/transsion/camera/app/common/ModuleTransferManager$$ExternalSyntheticLambda0;
@@ -576,7 +609,7 @@
 
     invoke-interface {p2, v0}, Ljava/lang/Iterable;->forEach(Ljava/util/function/Consumer;)V
 
-    .line 164
+    .line 166
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p2
@@ -585,7 +618,7 @@
     :try_end_a9
     .catchall {:try_start_1 .. :try_end_a9} :catchall_87
 
-    .line 166
+    .line 168
     :cond_a9
     monitor-exit p0
 
@@ -607,7 +640,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 119
+    .line 121
     :try_start_3
     iget-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mOnRegisterCompleteListenerList:Ljava/util/List;
 
@@ -624,7 +657,7 @@
 
     throw p1
 
-    .line 121
+    .line 123
     :cond_c
     :goto_c
     monitor-exit p0
@@ -637,7 +670,7 @@
 
     monitor-enter p0
 
-    .line 104
+    .line 106
     :try_start_1
     sget-object v0, Lcom/transsion/camera/app/common/ModuleTransferManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -657,7 +690,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 105
+    .line 107
     iget-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mModuleTransfers:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -666,7 +699,7 @@
 
     if-nez v0, :cond_27
 
-    .line 106
+    .line 108
     iget-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mModuleTransfers:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -680,7 +713,7 @@
 
     goto :goto_29
 
-    .line 108
+    .line 110
     :cond_27
     :goto_27
     monitor-exit p0
@@ -703,13 +736,13 @@
 
     const/4 v0, 0x1
 
-    .line 177
+    .line 179
     :try_start_2
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->isAllowedInvoke:Z
     :try_end_4
     .catchall {:try_start_2 .. :try_end_4} :catchall_6
 
-    .line 178
+    .line 180
     monitor-exit p0
 
     return-void
@@ -728,7 +761,7 @@
 .method public setCurrentH(I)V
     .registers 2
 
-    .line 91
+    .line 93
     iget-object p0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mCurrentH:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
@@ -739,7 +772,7 @@
 .method public setCurrentW(I)V
     .registers 2
 
-    .line 83
+    .line 85
     iget-object p0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mCurrentW:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
@@ -750,7 +783,7 @@
 .method public setDataStore(Lcom/transsion/camera/app/common/storage/DataStore;)V
     .registers 3
 
-    .line 169
+    .line 171
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -760,6 +793,33 @@
     return-void
 .end method
 
+.method public declared-synchronized setPhysicalKeyCode(I)V
+    .registers 2
+
+    monitor-enter p0
+
+    .line 192
+    :try_start_1
+    iput p1, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mPhysicalKeyCode:I
+    :try_end_3
+    .catchall {:try_start_1 .. :try_end_3} :catchall_5
+
+    .line 193
+    monitor-exit p0
+
+    return-void
+
+    :catchall_5
+    move-exception p1
+
+    :try_start_6
+    monitor-exit p0
+    :try_end_7
+    .catchall {:try_start_6 .. :try_end_7} :catchall_5
+
+    throw p1
+.end method
+
 .method public declared-synchronized unregisterCompleteListener(Lcom/transsion/camera/app/common/ModuleTransferManager$OnRegisterCompleteListener;)V
     .registers 3
 
@@ -767,7 +827,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 125
+    .line 127
     :try_start_3
     iget-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mOnRegisterCompleteListenerList:Ljava/util/List;
 
@@ -784,7 +844,7 @@
 
     throw p1
 
-    .line 127
+    .line 129
     :cond_c
     :goto_c
     monitor-exit p0
@@ -797,7 +857,7 @@
 
     monitor-enter p0
 
-    .line 111
+    .line 113
     :try_start_1
     sget-object v0, Lcom/transsion/camera/app/common/ModuleTransferManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -831,7 +891,7 @@
 
     if-eqz p1, :cond_2f
 
-    .line 113
+    .line 115
     iget-object v0, p0, Lcom/transsion/camera/app/common/ModuleTransferManager;->mModuleTransfers:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
@@ -845,7 +905,7 @@
 
     goto :goto_31
 
-    .line 115
+    .line 117
     :cond_2f
     :goto_2f
     monitor-exit p0

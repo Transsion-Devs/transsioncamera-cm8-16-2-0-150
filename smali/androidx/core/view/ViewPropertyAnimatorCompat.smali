@@ -157,56 +157,6 @@
     return-wide v0
 .end method
 
-.method public scaleX(F)Landroidx/core/view/ViewPropertyAnimatorCompat;
-    .registers 3
-
-    .line 408
-    iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    if-eqz v0, :cond_11
-
-    .line 409
-    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
-
-    :cond_11
-    return-object p0
-.end method
-
-.method public scaleY(F)Landroidx/core/view/ViewPropertyAnimatorCompat;
-    .registers 3
-
-    .line 438
-    iget-object v0, p0, Landroidx/core/view/ViewPropertyAnimatorCompat;->mView:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    if-eqz v0, :cond_11
-
-    .line 439
-    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
-
-    :cond_11
-    return-object p0
-.end method
-
 .method public setDuration(J)Landroidx/core/view/ViewPropertyAnimatorCompat;
     .registers 4
 

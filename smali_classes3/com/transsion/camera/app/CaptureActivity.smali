@@ -12,13 +12,3 @@
 
     return-void
 .end method
-
-
-# virtual methods
-.method protected needResetToAsdMode()Z
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method

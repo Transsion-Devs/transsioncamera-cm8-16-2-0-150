@@ -17,8 +17,8 @@
     c = "kotlinx.coroutines.selects.SelectImplementation"
     f = "Select.kt"
     l = {
-        0x1af,
-        0x1b2
+        0x1b6,
+        0x1b9
     }
     m = "doSelectSuspend"
 .end annotation

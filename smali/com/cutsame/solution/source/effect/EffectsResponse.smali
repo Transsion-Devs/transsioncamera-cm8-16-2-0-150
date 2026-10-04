@@ -6,6 +6,11 @@
 .implements Landroid/os/Parcelable;
 
 
+# annotations
+.annotation build Lkotlinx/android/parcel/Parcelize;
+.end annotation
+
+
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -63,6 +68,31 @@
     return-void
 .end method
 
+.method public constructor <init>()V
+    .registers 10
+
+    .line 0
+    const/16 v7, 0x1f
+
+    const/4 v8, 0x0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    const-wide/16 v3, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v8}, Lcom/cutsame/solution/source/effect/EffectsResponse;-><init>(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Lcom/cutsame/solution/source/effect/EffectList;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Lcom/cutsame/solution/source/effect/EffectList;)V
     .registers 8
 
@@ -95,6 +125,52 @@
 
     .line 7
     iput-object p6, p0, Lcom/cutsame/solution/source/effect/EffectsResponse;->e:Lcom/cutsame/solution/source/effect/EffectList;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Lcom/cutsame/solution/source/effect/EffectList;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .registers 10
+
+    and-int/lit8 p8, p7, 0x1
+
+    const-string v0, ""
+
+    if-eqz p8, :cond_7
+
+    move-object p1, v0
+
+    :cond_7
+    and-int/lit8 p8, p7, 0x2
+
+    if-eqz p8, :cond_c
+
+    move-object p2, v0
+
+    :cond_c
+    and-int/lit8 p8, p7, 0x4
+
+    if-eqz p8, :cond_12
+
+    const-wide/16 p3, -0x1
+
+    :cond_12
+    and-int/lit8 p8, p7, 0x8
+
+    if-eqz p8, :cond_17
+
+    move-object p5, v0
+
+    :cond_17
+    and-int/lit8 p7, p7, 0x10
+
+    if-eqz p7, :cond_1c
+
+    const/4 p6, 0x0
+
+    .line 8
+    :cond_1c
+    invoke-direct/range {p0 .. p6}, Lcom/cutsame/solution/source/effect/EffectsResponse;-><init>(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Lcom/cutsame/solution/source/effect/EffectList;)V
 
     return-void
 .end method

@@ -37,13 +37,13 @@
 .method private constructor <init>(Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;Landroid/view/View;)V
     .registers 3
 
-    .line 339
+    .line 350
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$ProcessingOrQueuingViewHolder;->this$0:Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;
 
-    .line 340
+    .line 351
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$RequestViewHolder;-><init>(Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;Landroid/view/View;)V
 
-    .line 341
+    .line 352
     sget p1, Lcom/transsion/camera/featurelibs/aicommon/R$id;->ai_fragment_list_item_progressbar:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -54,7 +54,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$ProcessingOrQueuingViewHolder;->mProgressBar:Landroid/widget/ProgressBar;
 
-    .line 343
+    .line 354
     sget p1, Lcom/transsion/camera/featurelibs/aicommon/R$id;->ai_fragment_list_item_content_progress:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -65,7 +65,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$ProcessingOrQueuingViewHolder;->mProgress:Landroid/widget/TextView;
 
-    .line 344
+    .line 355
     sget p1, Lcom/transsion/camera/featurelibs/aicommon/R$id;->ai_fragment_list_item_terminate:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -78,7 +78,7 @@
 
     const/4 p2, 0x0
 
-    .line 346
+    .line 357
     invoke-static {p1, p0, p2}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
     return-void
@@ -96,7 +96,7 @@
 .method private synthetic lambda$bindView$0(Lcom/transsion/camera/app/common/ai/AIRequest;Landroid/view/View;)V
     .registers 3
 
-    .line 360
+    .line 371
     invoke-static {p2}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p2
@@ -105,7 +105,7 @@
 
     return-void
 
-    .line 363
+    .line 374
     :cond_7
     iget-object p0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$ProcessingOrQueuingViewHolder;->this$0:Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;
 
@@ -123,15 +123,15 @@
 .method bindView(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/RequestItem;)V
     .registers 6
 
-    .line 351
+    .line 362
     invoke-super {p0, p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$RequestViewHolder;->bindView(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/RequestItem;)V
 
-    .line 353
+    .line 364
     invoke-virtual {p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/RequestItem;->request()Lcom/transsion/camera/app/common/ai/AIRequest;
 
     move-result-object p1
 
-    .line 355
+    .line 366
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$ProcessingOrQueuingViewHolder;->mProgressBar:Landroid/widget/ProgressBar;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ai/AIRequest;->getProgress()I
@@ -140,7 +140,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setProgress(I)V
 
-    .line 356
+    .line 367
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$ProcessingOrQueuingViewHolder;->mProgress:Landroid/widget/TextView;
 
     iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -151,7 +151,7 @@
 
     sget v2, Lcom/transsion/camera/featurelibs/aicommon/R$string;->ai_fragment_list_item_process:I
 
-    .line 357
+    .line 368
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ai/AIRequest;->getProgress()I
 
     move-result v3
@@ -168,10 +168,10 @@
 
     move-result-object v1
 
-    .line 356
+    .line 367
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 359
+    .line 370
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$ProcessingOrQueuingViewHolder;->mTerminateButton:Landroid/view/View;
 
     new-instance v1, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$ProcessingOrQueuingViewHolder$$ExternalSyntheticLambda0;
@@ -188,7 +188,7 @@
 
     if-eqz p2, :cond_2f
 
-    .line 368
+    .line 379
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -200,7 +200,7 @@
     :cond_9
     const/4 p1, 0x0
 
-    .line 371
+    .line 382
     invoke-interface {p2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -211,12 +211,12 @@
 
     move-result p2
 
-    .line 373
+    .line 384
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$ProcessingOrQueuingViewHolder;->mProgressBar:Landroid/widget/ProgressBar;
 
     invoke-virtual {v0, p2}, Landroid/widget/ProgressBar;->setProgress(I)V
 
-    .line 374
+    .line 385
     iget-object p2, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$ProcessingOrQueuingViewHolder;->mProgress:Landroid/widget/TextView;
 
     iget-object p0, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -227,7 +227,7 @@
 
     sget v0, Lcom/transsion/camera/featurelibs/aicommon/R$string;->ai_fragment_list_item_process:I
 
-    .line 375
+    .line 386
     filled-new-array {p1}, [Ljava/lang/Object;
 
     move-result-object p1
@@ -236,12 +236,12 @@
 
     move-result-object p0
 
-    .line 374
+    .line 385
     invoke-virtual {p2, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return-void
 
-    .line 369
+    .line 380
     :cond_2f
     :goto_2f
     invoke-virtual {p0, p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$ProcessingOrQueuingViewHolder;->bindView(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/RequestItem;)V

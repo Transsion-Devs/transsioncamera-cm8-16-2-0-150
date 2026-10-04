@@ -920,7 +920,7 @@
 .end method
 
 .method public notifyPictureTaken([BZIJ)I
-    .registers 11
+    .registers 10
 
     .line 279
     invoke-static {}, Lcom/transsion/camera/app/common/livephoto/PhotoTaskDataCache;->getInstance()Lcom/transsion/camera/app/common/livephoto/PhotoTaskDataCache;
@@ -986,7 +986,7 @@
 
     move-result-object v0
 
-    const/4 v1, -0x1
+    const/4 v1, -0x2
 
     if-nez v0, :cond_4e
 
@@ -1018,16 +1018,16 @@
 
     .line 298
     :cond_5b
-    iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mMotionCaptureManager:Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;
+    iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mMotionCaptureManager:Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;
 
-    iget-wide v3, v0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mTimestamp:J
+    iget-wide v2, v0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mTimestamp:J
 
-    invoke-virtual {v2, v3, v4}, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->removeMotionCaptureInfo(J)V
+    invoke-virtual {v1, v2, v3}, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->removeMotionCaptureInfo(J)V
 
     .line 299
-    iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mMotionCaptureManager:Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;
+    iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mMotionCaptureManager:Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;
 
-    invoke-virtual {v2, v0}, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->analyticsCapture(Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;)V
+    invoke-virtual {v1, v0}, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->analyticsCapture(Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;)V
 
     .line 301
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mMotionCaptureManager:Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;
@@ -1053,7 +1053,9 @@
 
     invoke-virtual/range {p0 .. p5}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->saveJpegToFile([BLandroid/graphics/Bitmap;ZJ)V
 
-    return v1
+    const/4 p0, -0x1
+
+    return p0
 .end method
 
 .method public onModeCaptureCompleted(Lcom/transsion/camera/adapter/CameraResults;Landroid/hardware/camera2/CaptureResult;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V

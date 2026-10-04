@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 2431
+    .line 2464
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraStateCallbackImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,17 +47,17 @@
 .method public onCameraStateChanged(I)V
     .registers 3
 
-    .line 2434
+    .line 2467
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraStateCallbackImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object v0, v0, Lcom/transsion/camera/app/BaseCameraActivity;->mModeManager:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     if-eqz v0, :cond_9
 
-    .line 2435
+    .line 2468
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/mode/ModeManager;->onCameraStateChanged(I)V
 
-    .line 2437
+    .line 2470
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraStateCallbackImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -65,7 +65,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 2438
+    .line 2471
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->updateCameraState(I)V
 
     :cond_12
@@ -73,15 +73,15 @@
 
     if-ne p1, v0, :cond_26
 
-    .line 2441
+    .line 2474
     new-instance p1, Landroid/os/Message;
 
     invoke-direct {p1}, Landroid/os/Message;-><init>()V
 
-    .line 2442
+    .line 2475
     iput v0, p1, Landroid/os/Message;->what:I
 
-    .line 2443
+    .line 2476
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraStateCallbackImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p0}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/BaseCameraActivity;)Landroid/os/Handler;
@@ -97,7 +97,7 @@
 
     if-ne p1, v0, :cond_38
 
-    .line 2445
+    .line 2478
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/taintdetection/TaintAlgorithm;->getInstance()Lcom/transsion/camera/app/common/algorithm/taintdetection/TaintAlgorithm;
 
     move-result-object p1
@@ -108,7 +108,7 @@
 
     if-nez p1, :cond_38
 
-    .line 2446
+    .line 2479
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraStateCallbackImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p0}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$mshowLensDirtyTipIfNeed(Lcom/transsion/camera/app/BaseCameraActivity;)V
@@ -120,7 +120,7 @@
 .method public onModeChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
 
-    .line 2453
+    .line 2486
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -147,7 +147,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2454
+    .line 2487
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraStateCallbackImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {v0}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmSeparateItemArray(Lcom/transsion/camera/app/BaseCameraActivity;)Ljava/util/ArrayList;
@@ -164,7 +164,7 @@
 
     if-nez v0, :cond_46
 
-    .line 2455
+    .line 2488
     invoke-static {v2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -177,7 +177,7 @@
 
     if-nez p1, :cond_64
 
-    .line 2456
+    .line 2489
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraStateCallbackImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmSeparateItemArray(Lcom/transsion/camera/app/BaseCameraActivity;)Ljava/util/ArrayList;
@@ -188,7 +188,7 @@
 
     goto :goto_64
 
-    .line 2458
+    .line 2491
     :cond_46
     invoke-static {v2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -202,7 +202,7 @@
 
     if-eqz p1, :cond_64
 
-    .line 2459
+    .line 2492
     :cond_52
     invoke-static {v2, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -216,14 +216,14 @@
 
     if-nez p1, :cond_64
 
-    .line 2460
+    .line 2493
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraStateCallbackImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/BaseCameraActivity;->loadLatestThumbnail(Z)V
 
-    .line 2462
+    .line 2495
     :cond_64
     :goto_64
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraStateCallbackImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
@@ -232,10 +232,10 @@
 
     if-eqz p1, :cond_6d
 
-    .line 2463
+    .line 2496
     invoke-virtual {p1}, Lcom/transsion/camera/feature/thumbnailtransition/ThumbnailTransitionManager;->onModeChanged()V
 
-    .line 2465
+    .line 2498
     :cond_6d
     invoke-static {v2, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -263,10 +263,10 @@
 
     const/4 p2, 0x0
 
-    .line 2466
+    .line 2499
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/ui/BaseAppUI;->updateThumbnail(Landroid/graphics/Bitmap;)V
 
-    .line 2468
+    .line 2501
     :cond_89
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraStateCallbackImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -274,12 +274,12 @@
 
     if-eqz p2, :cond_ab
 
-    .line 2469
+    .line 2502
     iget-object p2, p1, Lcom/transsion/camera/app/BaseCameraActivity;->mAppUI:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     if-eqz p2, :cond_ab
 
-    .line 2470
+    .line 2503
     invoke-static {p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmSeparateItemArray(Lcom/transsion/camera/app/BaseCameraActivity;)Ljava/util/ArrayList;
 
     move-result-object p1
@@ -290,7 +290,7 @@
 
     invoke-virtual {p2, p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->setSeparateCaptureNumber(I)V
 
-    .line 2471
+    .line 2504
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$CameraStateCallbackImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity;->mModeManager:Lcom/transsion/camera/app/common/mode/ModeManager;

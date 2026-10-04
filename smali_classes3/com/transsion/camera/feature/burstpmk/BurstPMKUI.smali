@@ -211,7 +211,7 @@
 .method private isLandscape(I)Z
     .registers 2
 
-    .line 195
+    .line 204
     iget-object p0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mUISpec:Lcom/transsion/camera/feature/burstpmk/BurstPMKUISpec;
 
     iget-boolean p0, p0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mSupportLandscape:Z
@@ -256,7 +256,7 @@
 .method private synthetic lambda$updateOrientation$1(I)V
     .registers 5
 
-    .line 403
+    .line 414
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mRootView:Landroid/view/View;
 
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
@@ -283,14 +283,14 @@
 
     invoke-static {v0, v1, v2}, Lcom/transsion/camera/feature/common/utils/Utils;->setOrientation(Landroid/view/View;IZ)V
 
-    .line 404
+    .line 415
     invoke-direct {p0}, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->updateLayout()V
 
     const/16 v0, 0x5a
 
     if-ne p1, v0, :cond_21
 
-    .line 405
+    .line 416
     iget v1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
     if-ne v1, v0, :cond_27
@@ -302,7 +302,7 @@
 
     if-ne p1, v0, :cond_2a
 
-    .line 407
+    .line 418
     :cond_27
     invoke-direct {p0}, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->changeDirection()V
 
@@ -313,7 +313,7 @@
 .method private updateChildLayout()V
     .registers 6
 
-    .line 283
+    .line 294
     iget-object v0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mBridgeLayout:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -322,7 +322,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 284
+    .line 295
     iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mNotifyText:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -331,7 +331,7 @@
 
     check-cast v1, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 286
+    .line 297
     iget v2, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
     invoke-direct {p0, v2}, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->isLandscape(I)Z
@@ -340,7 +340,7 @@
 
     if-eqz v2, :cond_3b
 
-    .line 287
+    .line 298
     iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mUISpec:Lcom/transsion/camera/feature/burstpmk/BurstPMKUISpec;
 
     iget v3, v2, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
@@ -355,7 +355,7 @@
 
     iput v3, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
-    .line 289
+    .line 300
     iget v3, v2, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgWidth:I
 
     int-to-float v3, v3
@@ -368,10 +368,10 @@
 
     iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
-    .line 291
+    .line 302
     iget-object v2, p0, Lcom/transsion/camera/feature/common/BaseUI;->mContext:Landroid/content/Context;
 
-    .line 292
+    .line 303
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -386,7 +386,7 @@
 
     goto :goto_5d
 
-    .line 294
+    .line 305
     :cond_3b
     iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mUISpec:Lcom/transsion/camera/feature/burstpmk/BurstPMKUISpec;
 
@@ -402,7 +402,7 @@
 
     iput v3, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
-    .line 296
+    .line 307
     iget v3, v2, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
 
     int-to-float v3, v3
@@ -415,10 +415,10 @@
 
     iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
-    .line 298
+    .line 309
     iget-object v2, p0, Lcom/transsion/camera/feature/common/BaseUI;->mContext:Landroid/content/Context;
 
-    .line 299
+    .line 310
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -431,25 +431,25 @@
 
     iput v2, v1, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
-    .line 302
+    .line 313
     :goto_5d
     iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mBridgeLayout:Landroid/view/View;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 303
+    .line 314
     iget-object v0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mNotifyText:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 305
+    .line 316
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
     if-eqz v0, :cond_7c
 
-    .line 306
+    .line 317
     iget-object v0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mNotifyText:Landroid/widget/TextView;
 
     iget p0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
@@ -475,7 +475,7 @@
 .method private updateLayout()V
     .registers 4
 
-    .line 202
+    .line 211
     iget-object v0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mRotateRoot:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-eqz v0, :cond_18
@@ -494,16 +494,16 @@
 
     goto :goto_18
 
-    .line 207
+    .line 216
     :cond_11
     invoke-direct {p0}, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->updateRootLayout()V
 
-    .line 208
+    .line 217
     invoke-direct {p0}, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->updateChildLayout()V
 
     return-void
 
-    .line 203
+    .line 212
     :cond_18
     :goto_18
     sget-object v0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -556,7 +556,7 @@
 .method private updateRootLayout()V
     .registers 10
 
-    .line 212
+    .line 221
     iget-object v0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mRotateRoot:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -567,10 +567,10 @@
 
     const/4 v1, 0x0
 
-    .line 213
+    .line 222
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 215
+    .line 224
     iget v2, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
     invoke-direct {p0, v2}, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->isLandscape(I)Z
@@ -579,7 +579,7 @@
 
     if-eqz v2, :cond_20
 
-    .line 216
+    .line 225
     iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mUISpec:Lcom/transsion/camera/feature/burstpmk/BurstPMKUISpec;
 
     iget v3, v2, Lcom/transsion/camera/feature/common/BaseUISpec;->mThumbBgHeight:I
@@ -596,7 +596,7 @@
 
     goto :goto_2b
 
-    .line 219
+    .line 228
     :cond_20
     iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mUISpec:Lcom/transsion/camera/feature/burstpmk/BurstPMKUISpec;
 
@@ -612,7 +612,7 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 223
+    .line 232
     :goto_2b
     iget v2, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
@@ -622,10 +622,10 @@
 
     const/16 v2, 0x35
 
-    .line 224
+    .line 233
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 225
+    .line 234
     iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mUISpec:Lcom/transsion/camera/feature/burstpmk/BurstPMKUISpec;
 
     iget v4, v2, Lcom/transsion/camera/feature/common/BaseUISpec;->mSurfaceWidth:I
@@ -655,10 +655,10 @@
     :cond_49
     const/16 v2, 0x33
 
-    .line 228
+    .line 237
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 229
+    .line 238
     iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mUISpec:Lcom/transsion/camera/feature/burstpmk/BurstPMKUISpec;
 
     iget-object v4, v2, Lcom/transsion/camera/feature/common/BaseUISpec;->mStartPoint:Landroid/graphics/Point;
@@ -675,7 +675,7 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 232
+    .line 241
     :goto_5a
     iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mUISpec:Lcom/transsion/camera/feature/burstpmk/BurstPMKUISpec;
 
@@ -699,14 +699,14 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 235
+    .line 244
     iget-object v2, p0, Lcom/transsion/camera/feature/common/BaseUI;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Lcom/transsion/camera/utils/ScreenUtils;->getCurrentWindowSize(Landroid/content/Context;)Landroid/util/Size;
 
     move-result-object v2
 
-    .line 237
+    .line 246
     iget-object v4, p0, Lcom/transsion/camera/feature/common/BaseUI;->mContext:Landroid/content/Context;
 
     invoke-static {v4}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI(Landroid/content/Context;)Z
@@ -715,7 +715,7 @@
 
     if-eqz v4, :cond_115
 
-    .line 238
+    .line 247
     iget v2, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
     const/16 v4, 0xa
@@ -730,7 +730,7 @@
 
     if-ne v2, v3, :cond_bd
 
-    .line 239
+    .line 248
     iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mPreviewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
@@ -747,16 +747,16 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 240
+    .line 249
     iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mSwitchPreviewValue:Ljava/lang/String;
 
     invoke-static {v8, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_14a
 
-    .line 241
+    .line 250
     new-instance v1, Ljava/math/BigDecimal;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mPreviewRect:Landroid/graphics/Rect;
@@ -767,12 +767,12 @@
 
     invoke-direct {v1, v2}, Ljava/math/BigDecimal;-><init>(I)V
 
-    .line 242
+    .line 251
     new-instance v2, Ljava/math/BigDecimal;
 
     invoke-direct {v2, v7}, Ljava/math/BigDecimal;-><init>(I)V
 
-    .line 243
+    .line 252
     sget-object v3, Ljava/math/RoundingMode;->HALF_UP:Ljava/math/RoundingMode;
 
     invoke-virtual {v1, v2, v4, v3}, Ljava/math/BigDecimal;->divide(Ljava/math/BigDecimal;ILjava/math/RoundingMode;)Ljava/math/BigDecimal;
@@ -787,15 +787,15 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    goto/16 :goto_139
+    goto/16 :goto_14a
 
-    .line 245
+    .line 254
     :cond_bd
     iget v2, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
     if-ne v2, v7, :cond_f4
 
-    .line 246
+    .line 255
     iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mPreviewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
@@ -811,60 +811,6 @@
     float-to-int v1, v6
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
-
-    .line 247
-    iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mSwitchPreviewValue:Ljava/lang/String;
-
-    invoke-static {v8, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_139
-
-    .line 248
-    new-instance v1, Ljava/math/BigDecimal;
-
-    iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mPreviewRect:Landroid/graphics/Rect;
-
-    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
-
-    move-result v2
-
-    invoke-direct {v1, v2}, Ljava/math/BigDecimal;-><init>(I)V
-
-    .line 249
-    new-instance v2, Ljava/math/BigDecimal;
-
-    invoke-direct {v2, v7}, Ljava/math/BigDecimal;-><init>(I)V
-
-    .line 250
-    sget-object v3, Ljava/math/RoundingMode;->HALF_UP:Ljava/math/RoundingMode;
-
-    invoke-virtual {v1, v2, v4, v3}, Ljava/math/BigDecimal;->divide(Ljava/math/BigDecimal;ILjava/math/RoundingMode;)Ljava/math/BigDecimal;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/math/BigDecimal;->intValue()I
-
-    move-result v1
-
-    add-int/lit16 v1, v1, 0x13e
-
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    goto :goto_139
-
-    .line 253
-    :cond_f4
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
-
-    .line 254
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
-
-    const/4 v1, -0x1
-
-    .line 255
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
     .line 256
     iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mSwitchPreviewValue:Ljava/lang/String;
@@ -873,9 +819,63 @@
 
     move-result v1
 
-    if-eqz v1, :cond_139
+    if-eqz v1, :cond_14a
 
     .line 257
+    new-instance v1, Ljava/math/BigDecimal;
+
+    iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mPreviewRect:Landroid/graphics/Rect;
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
+
+    move-result v2
+
+    invoke-direct {v1, v2}, Ljava/math/BigDecimal;-><init>(I)V
+
+    .line 258
+    new-instance v2, Ljava/math/BigDecimal;
+
+    invoke-direct {v2, v7}, Ljava/math/BigDecimal;-><init>(I)V
+
+    .line 259
+    sget-object v3, Ljava/math/RoundingMode;->HALF_UP:Ljava/math/RoundingMode;
+
+    invoke-virtual {v1, v2, v4, v3}, Ljava/math/BigDecimal;->divide(Ljava/math/BigDecimal;ILjava/math/RoundingMode;)Ljava/math/BigDecimal;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/math/BigDecimal;->intValue()I
+
+    move-result v1
+
+    add-int/lit16 v1, v1, 0x13e
+
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+
+    goto :goto_14a
+
+    .line 262
+    :cond_f4
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+
+    .line 263
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+
+    const/4 v1, -0x1
+
+    .line 264
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    .line 265
+    iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mSwitchPreviewValue:Ljava/lang/String;
+
+    invoke-static {v8, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_14a
+
+    .line 266
     iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mPreviewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
@@ -896,27 +896,51 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    goto :goto_139
+    goto :goto_14a
 
-    .line 261
+    .line 270
     :cond_115
     iget v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mScreenFormType:I
 
     const/4 v4, 0x4
 
-    if-eq v4, v1, :cond_11d
+    if-eq v4, v1, :cond_12e
 
     const/4 v4, 0x5
 
-    if-ne v4, v1, :cond_139
+    if-ne v4, v1, :cond_11e
 
-    .line 263
-    :cond_11d
+    goto :goto_12e
+
+    .line 277
+    :cond_11e
+    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_14a
+
+    .line 278
+    iget v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+
+    iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mPreviewRect:Landroid/graphics/Rect;
+
+    iget v2, v2, Landroid/graphics/Rect;->top:I
+
+    sub-int/2addr v1, v2
+
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+
+    goto :goto_14a
+
+    .line 272
+    :cond_12e
+    :goto_12e
     iget v1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
-    if-ne v1, v3, :cond_130
+    if-ne v1, v3, :cond_141
 
-    .line 264
+    .line 273
     iget v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     invoke-virtual {v2}, Landroid/util/Size;->getWidth()I
@@ -933,10 +957,10 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    goto :goto_139
+    goto :goto_14a
 
-    .line 266
-    :cond_130
+    .line 275
+    :cond_141
     iget v1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     iget-object v2, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mPreviewRect:Landroid/graphics/Rect;
@@ -947,14 +971,14 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 271
-    :cond_139
-    :goto_139
+    .line 282
+    :cond_14a
+    :goto_14a
     iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mRotateRoot:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 273
+    .line 284
     sget-object v1, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1221,7 +1245,7 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 312
+    .line 323
     iput p1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mScreenFormType:I
 
     return-void
@@ -1276,17 +1300,48 @@
     return-void
 .end method
 
+.method public pause()V
+    .registers 3
+
+    .line 186
+    invoke-super {p0}, Lcom/transsion/camera/feature/common/BaseUI;->pause()V
+
+    .line 187
+    iget-object v0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mBridgeLayout:Landroid/view/View;
+
+    if-eqz v0, :cond_13
+
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_13
+
+    .line 188
+    iget-object v0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mBridgeLayout:Landroid/view/View;
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 190
+    :cond_13
+    invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseUI;->cancelPendingUpdates()V
+
+    return-void
+.end method
+
 .method public readyUI()V
     .registers 2
 
-    .line 186
+    .line 195
     new-instance v0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;)V
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/common/BaseUI;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 187
+    .line 196
     invoke-super {p0}, Lcom/transsion/camera/feature/common/BaseUI;->readyUI()V
 
     return-void
@@ -1331,7 +1386,7 @@
 .method public updateOrientation(I)V
     .registers 5
 
-    .line 395
+    .line 406
     sget-object v0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1350,14 +1405,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 396
+    .line 407
     iget-object v0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mUISpec:Lcom/transsion/camera/feature/burstpmk/BurstPMKUISpec;
 
     iget-boolean v0, v0, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mSupportLandscape:Z
 
     if-eqz v0, :cond_35
 
-    .line 397
+    .line 408
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -1370,14 +1425,14 @@
 
     const/4 p1, 0x0
 
-    .line 400
+    .line 411
     :cond_28
     iget v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
-    .line 401
+    .line 412
     iput p1, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
-    .line 402
+    .line 413
     new-instance p1, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0, v0}, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;I)V
@@ -1386,7 +1441,7 @@
 
     return-void
 
-    .line 411
+    .line 422
     :cond_35
     new-instance p1, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI$$ExternalSyntheticLambda1;
 
@@ -1400,7 +1455,7 @@
 .method public updateSwitchPreviewValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 191
+    .line 200
     iput-object p1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mSwitchPreviewValue:Ljava/lang/String;
 
     return-void
@@ -1409,19 +1464,19 @@
 .method protected updateUI()V
     .registers 9
 
-    .line 319
+    .line 330
     iget-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mCapturing:Z
 
-    .line 320
+    .line 331
     iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mOffset:Landroid/graphics/Point;
 
-    .line 321
+    .line 332
     iget v2, p0, Lcom/transsion/camera/feature/common/BaseUI;->mOrientation:I
 
-    .line 322
+    .line 333
     iget-boolean v3, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mSpeedWarn:Z
 
-    .line 324
+    .line 335
     sget-object v4, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1456,14 +1511,14 @@
 
     if-eqz v1, :cond_b1
 
-    .line 329
+    .line 340
     iget v0, v1, Landroid/graphics/Point;->y:I
 
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
     move-result v0
 
-    .line 330
+    .line 341
     iget v1, v1, Landroid/graphics/Point;->y:I
 
     const/16 v4, 0xb4
@@ -1480,7 +1535,7 @@
 
     if-le v0, v7, :cond_75
 
-    .line 333
+    .line 344
     iget-boolean v0, v6, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mSupportLandscape:Z
 
     if-eqz v0, :cond_6d
@@ -1491,7 +1546,7 @@
 
     if-eqz v0, :cond_6d
 
-    .line 334
+    .line 345
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI(Landroid/content/Context;)Z
@@ -1502,12 +1557,12 @@
 
     if-ne v2, v5, :cond_61
 
-    .line 336
+    .line 347
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_down:I
 
     goto/16 :goto_bb
 
-    .line 337
+    .line 348
     :cond_61
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_up:I
 
@@ -1516,12 +1571,12 @@
     :cond_65
     if-ne v2, v5, :cond_6a
 
-    .line 340
+    .line 351
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_up:I
 
     goto :goto_bb
 
-    .line 341
+    .line 352
     :cond_6a
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_down:I
 
@@ -1530,12 +1585,12 @@
     :cond_6d
     if-ne v2, v4, :cond_72
 
-    .line 345
+    .line 356
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_up:I
 
     goto :goto_bb
 
-    .line 346
+    .line 357
     :cond_72
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_down:I
 
@@ -1544,7 +1599,7 @@
     :cond_75
     if-gez v1, :cond_a9
 
-    .line 348
+    .line 359
     iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mUISpec:Lcom/transsion/camera/feature/burstpmk/BurstPMKUISpec;
 
     iget v6, v1, Lcom/transsion/camera/feature/common/BaseUISpec;->mWarningOffset:I
@@ -1553,7 +1608,7 @@
 
     if-le v0, v6, :cond_a9
 
-    .line 351
+    .line 362
     iget-boolean v0, v1, Lcom/transsion/camera/feature/burstpmk/BaseBurstPMKUISpec;->mSupportLandscape:Z
 
     if-eqz v0, :cond_a1
@@ -1564,7 +1619,7 @@
 
     if-eqz v0, :cond_a1
 
-    .line 352
+    .line 363
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseUI;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI(Landroid/content/Context;)Z
@@ -1575,12 +1630,12 @@
 
     if-ne v2, v5, :cond_96
 
-    .line 354
+    .line 365
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_up:I
 
     goto :goto_bb
 
-    .line 355
+    .line 366
     :cond_96
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_down:I
 
@@ -1589,12 +1644,12 @@
     :cond_99
     if-ne v2, v5, :cond_9e
 
-    .line 358
+    .line 369
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_down:I
 
     goto :goto_bb
 
-    .line 359
+    .line 370
     :cond_9e
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_up:I
 
@@ -1603,12 +1658,12 @@
     :cond_a1
     if-ne v2, v4, :cond_a6
 
-    .line 364
+    .line 375
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_down:I
 
     goto :goto_bb
 
-    .line 365
+    .line 376
     :cond_a6
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_up:I
 
@@ -1617,12 +1672,12 @@
     :cond_a9
     if-eqz v3, :cond_ae
 
-    .line 369
+    .line 380
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_warining_toast_pmk_trace_little_quick:I
 
     goto :goto_bb
 
-    .line 371
+    .line 382
     :cond_ae
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_ok:I
 
@@ -1631,28 +1686,28 @@
     :cond_b1
     if-eqz v3, :cond_b6
 
-    .line 376
+    .line 387
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_warining_toast_pmk_trace_little_quick:I
 
     goto :goto_bb
 
-    .line 378
+    .line 389
     :cond_b6
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_ok:I
 
     goto :goto_bb
 
-    .line 382
+    .line 393
     :cond_b9
     sget v0, Lcom/transsion/camera/feature/panoramawideselfie/R$string;->arc_ids_toast_pmk_tap_shutter:I
 
-    .line 385
+    .line 396
     :goto_bb
     iget-object v1, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mNotifyText:Landroid/widget/TextView;
 
     if-eqz v1, :cond_d1
 
-    .line 386
+    .line 397
     iget-boolean v2, p0, Lcom/transsion/camera/feature/common/BaseUI;->mIsSaving:Z
 
     if-eqz v2, :cond_c6
@@ -1669,7 +1724,7 @@
 
     if-lez v0, :cond_d1
 
-    .line 388
+    .line 399
     iget-object p0, p0, Lcom/transsion/camera/feature/burstpmk/BurstPMKUI;->mNotifyText:Landroid/widget/TextView;
 
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setText(I)V

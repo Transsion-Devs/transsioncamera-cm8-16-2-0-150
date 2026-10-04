@@ -109,7 +109,7 @@
 
     move-result-object v1
 
-    .line 29
+    .line 25
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__CountKt$count$4$emit$1;->label:I
 
     const/4 v3, 0x1
@@ -138,7 +138,7 @@
     :cond_35
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 30
+    .line 26
     iget-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__CountKt$count$4;->$predicate:Lkotlin/jvm/functions/Function2;
 
     iput-object p0, v0, Lkotlinx/coroutines/flow/FlowKt__CountKt$count$4$emit$1;->L$0:Ljava/lang/Object;
@@ -163,7 +163,7 @@
 
     if-eqz p1, :cond_54
 
-    .line 31
+    .line 27
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__CountKt$count$4;->$i:Lkotlin/jvm/internal/Ref$IntRef;
 
     iget p1, p0, Lkotlin/jvm/internal/Ref$IntRef;->element:I
@@ -172,7 +172,7 @@
 
     iput p1, p0, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    .line 33
+    .line 29
     :cond_54
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

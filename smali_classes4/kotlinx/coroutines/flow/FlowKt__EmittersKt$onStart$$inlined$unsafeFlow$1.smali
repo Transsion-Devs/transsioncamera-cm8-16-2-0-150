@@ -39,7 +39,7 @@
 
     iput-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;->$this_onStart$inlined:Lkotlinx/coroutines/flow/Flow;
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    .line 106
+    .line 104
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1$1;->label:I
 
     const/4 v3, 0x2
@@ -150,18 +150,18 @@
     :cond_46
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 114
+    .line 112
     new-instance p2, Lkotlinx/coroutines/flow/internal/SafeCollector;
 
-    .line 329
+    .line 326
     invoke-interface {v0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v2
 
-    .line 114
+    .line 112
     invoke-direct {p2, p1, v2}, Lkotlinx/coroutines/flow/internal/SafeCollector;-><init>(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/CoroutineContext;)V
 
-    .line 117
+    .line 115
     :try_start_52
     iget-object v2, p0, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;->$action$inlined:Lkotlin/jvm/functions/Function2;
 
@@ -196,11 +196,11 @@
 
     move-object p0, p2
 
-    .line 119
+    .line 117
     :goto_6d
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/internal/SafeCollector;->releaseIntercepted()V
 
-    .line 121
+    .line 119
     iget-object p0, v2, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1;->$this_onStart$inlined:Lkotlinx/coroutines/flow/Flow;
 
     const/4 p2, 0x0
@@ -222,7 +222,7 @@
     :goto_81
     return-object v1
 
-    .line 109
+    .line 107
     :cond_82
     :goto_82
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -234,7 +234,7 @@
 
     move-object p0, p2
 
-    .line 119
+    .line 117
     :goto_87
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/internal/SafeCollector;->releaseIntercepted()V
 

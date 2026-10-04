@@ -17,9 +17,9 @@
     c = "kotlinx.coroutines.channels.TickerChannelsKt"
     f = "TickerChannels.kt"
     l = {
-        0x6a,
-        0x6c,
-        0x6d
+        0x66,
+        0x68,
+        0x69
     }
     m = "fixedDelayTicker"
 .end annotation

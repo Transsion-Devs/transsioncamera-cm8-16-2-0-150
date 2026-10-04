@@ -140,15 +140,13 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 129
+    .line 130
     invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 130
-    const-string v0, "path"
-
-    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    .line 131
+    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-static {p0}, Lkotlin/io/FilesKt__FilePathComponentsKt;->getRootLength$FilesKt__FilePathComponentsKt(Ljava/lang/String;)I
 
@@ -156,38 +154,36 @@
 
     const/4 v1, 0x0
 
-    .line 131
+    .line 132
     invoke-virtual {p0, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string v3, "substring(...)"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 132
+    .line 133
     invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v4
 
-    const-string p0, "this as java.lang.String).substring(startIndex)"
+    invoke-static {v4, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v4, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 133
+    .line 134
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
     move-result p0
 
-    if-nez p0, :cond_30
+    if-nez p0, :cond_2c
 
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p0
 
-    goto :goto_66
+    goto :goto_62
 
-    :cond_30
+    :cond_2c
     const/4 p0, 0x1
 
     new-array v5, p0, [C
@@ -210,7 +206,7 @@
 
     check-cast p0, Ljava/lang/Iterable;
 
-    .line 1549
+    .line 1563
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -221,40 +217,40 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1620
+    .line 1634
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    :goto_50
+    :goto_4c
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_65
+    if-eqz v1, :cond_61
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1621
+    .line 1635
     check-cast v1, Ljava/lang/String;
 
-    .line 133
+    .line 134
     new-instance v3, Ljava/io/File;
 
     invoke-direct {v3, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 1621
+    .line 1635
     invoke-interface {v0, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_50
+    goto :goto_4c
 
-    :cond_65
+    :cond_61
     move-object p0, v0
 
-    .line 134
-    :goto_66
+    .line 135
+    :goto_62
     new-instance v0, Lkotlin/io/FilePathComponents;
 
     new-instance v1, Ljava/io/File;

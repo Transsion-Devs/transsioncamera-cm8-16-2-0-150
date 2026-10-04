@@ -36,22 +36,22 @@
         }
     .end annotation
 
-    .line 648
+    .line 644
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 649
+    .line 645
     iput-object p1, p0, Lkotlinx/coroutines/CompletedContinuation;->result:Ljava/lang/Object;
 
-    .line 650
+    .line 646
     iput-object p2, p0, Lkotlinx/coroutines/CompletedContinuation;->cancelHandler:Lkotlinx/coroutines/CancelHandler;
 
-    .line 651
+    .line 647
     iput-object p3, p0, Lkotlinx/coroutines/CompletedContinuation;->onCancellation:Lkotlin/jvm/functions/Function1;
 
-    .line 652
+    .line 648
     iput-object p4, p0, Lkotlinx/coroutines/CompletedContinuation;->idempotentResume:Ljava/lang/Object;
 
-    .line 653
+    .line 649
     iput-object p5, p0, Lkotlinx/coroutines/CompletedContinuation;->cancelCause:Ljava/lang/Throwable;
 
     return-void
@@ -89,7 +89,7 @@
 
     move-object p5, v0
 
-    .line 648
+    .line 644
     :cond_15
     invoke-direct/range {p0 .. p5}, Lkotlinx/coroutines/CompletedContinuation;-><init>(Ljava/lang/Object;Lkotlinx/coroutines/CancelHandler;Lkotlin/jvm/functions/Function1;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
@@ -315,7 +315,7 @@
 .method public final getCancelled()Z
     .registers 1
 
-    .line 655
+    .line 651
     iget-object p0, p0, Lkotlinx/coroutines/CompletedContinuation;->cancelCause:Ljava/lang/Throwable;
 
     if-eqz p0, :cond_6
@@ -434,14 +434,14 @@
         }
     .end annotation
 
-    .line 658
+    .line 654
     iget-object v0, p0, Lkotlinx/coroutines/CompletedContinuation;->cancelHandler:Lkotlinx/coroutines/CancelHandler;
 
     if-eqz v0, :cond_7
 
     invoke-virtual {p1, v0, p2}, Lkotlinx/coroutines/CancellableContinuationImpl;->callCancelHandler(Lkotlinx/coroutines/CancelHandler;Ljava/lang/Throwable;)V
 
-    .line 659
+    .line 655
     :cond_7
     iget-object p0, p0, Lkotlinx/coroutines/CompletedContinuation;->onCancellation:Lkotlin/jvm/functions/Function1;
 

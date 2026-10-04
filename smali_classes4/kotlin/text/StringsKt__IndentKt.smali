@@ -4,33 +4,90 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$3BvvMery65JEhzYBhCrX5rYm0VE(Ljava/lang/String;)Ljava/lang/String;
+    .registers 1
+
+    .line 0
+    invoke-static {p0}, Lkotlin/text/StringsKt__IndentKt;->getIndentFunction$lambda$0$StringsKt__IndentKt(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$fNhk8osE5fmKswSs2oW3GpnF78I(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .registers 2
+
+    .line 0
+    invoke-static {p0, p1}, Lkotlin/text/StringsKt__IndentKt;->getIndentFunction$lambda$1$StringsKt__IndentKt(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method private static final getIndentFunction$StringsKt__IndentKt(Ljava/lang/String;)Lkotlin/jvm/functions/Function1;
     .registers 2
 
-    .line 104
+    .line 110
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_c
 
-    sget-object p0, Lkotlin/text/StringsKt__IndentKt$getIndentFunction$1;->INSTANCE:Lkotlin/text/StringsKt__IndentKt$getIndentFunction$1;
+    new-instance p0, Lkotlin/text/StringsKt__IndentKt$$ExternalSyntheticLambda0;
+
+    invoke-direct {p0}, Lkotlin/text/StringsKt__IndentKt$$ExternalSyntheticLambda0;-><init>()V
 
     return-object p0
 
-    .line 105
-    :cond_9
-    new-instance v0, Lkotlin/text/StringsKt__IndentKt$getIndentFunction$2;
+    .line 111
+    :cond_c
+    new-instance v0, Lkotlin/text/StringsKt__IndentKt$$ExternalSyntheticLambda1;
 
-    invoke-direct {v0, p0}, Lkotlin/text/StringsKt__IndentKt$getIndentFunction$2;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p0}, Lkotlin/text/StringsKt__IndentKt$$ExternalSyntheticLambda1;-><init>(Ljava/lang/String;)V
 
     return-object v0
+.end method
+
+.method private static final getIndentFunction$lambda$0$StringsKt__IndentKt(Ljava/lang/String;)Ljava/lang/String;
+    .registers 2
+
+    const-string v0, "line"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method private static final getIndentFunction$lambda$1$StringsKt__IndentKt(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .registers 3
+
+    const-string v0, "line"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 111
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method private static final indentWidth$StringsKt__IndentKt(Ljava/lang/String;)I
     .registers 5
 
-    .line 151
+    .line 158
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -42,12 +99,12 @@
 
     if-ge v1, v0, :cond_16
 
-    .line 152
+    .line 159
     invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v3
 
-    .line 101
+    .line 107
     invoke-static {v3}, Lkotlin/text/CharsKt__CharJVMKt;->isWhitespace(C)Z
 
     move-result v3
@@ -92,22 +149,22 @@
 
     invoke-static {v2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 71
+    .line 76
     invoke-static {v1}, Lkotlin/text/StringsKt__StringsKt;->lines(Ljava/lang/CharSequence;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 73
+    .line 78
     move-object v3, v0
 
     check-cast v3, Ljava/lang/Iterable;
 
-    .line 766
+    .line 774
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 857
+    .line 865
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -128,19 +185,19 @@
 
     check-cast v6, Ljava/lang/String;
 
-    .line 74
-    invoke-static {v6}, Lkotlin/text/StringsKt__StringsJVMKt;->isBlank(Ljava/lang/CharSequence;)Z
+    .line 79
+    invoke-static {v6}, Lkotlin/text/StringsKt__StringsKt;->isBlank(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
     if-nez v6, :cond_1e
 
-    .line 857
+    .line 865
     invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1e
 
-    .line 1549
+    .line 1563
     :cond_35
     new-instance v3, Ljava/util/ArrayList;
 
@@ -152,7 +209,7 @@
 
     invoke-direct {v3, v5}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1620
+    .line 1634
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v5
@@ -170,10 +227,10 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    .line 1621
+    .line 1635
     check-cast v8, Ljava/lang/String;
 
-    .line 75
+    .line 80
     invoke-static {v8}, Lkotlin/text/StringsKt__IndentKt;->indentWidth$StringsKt__IndentKt(Ljava/lang/String;)I
 
     move-result v8
@@ -182,12 +239,12 @@
 
     move-result-object v8
 
-    .line 1621
+    .line 1635
     invoke-interface {v3, v8}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_46
 
-    .line 76
+    .line 81
     :cond_5c
     invoke-static {v3}, Lkotlin/collections/CollectionsKt;->minOrNull(Ljava/lang/Iterable;)Ljava/lang/Comparable;
 
@@ -197,7 +254,7 @@
 
     if-eqz v3, :cond_69
 
-    .line 73
+    .line 78
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -207,7 +264,7 @@
     :cond_69
     move v3, v6
 
-    .line 78
+    .line 83
     :goto_6a
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -229,20 +286,20 @@
 
     move-result-object v2
 
-    .line 113
+    .line 119
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->getLastIndex(Ljava/util/List;)I
 
     move-result v4
 
-    .line 114
+    .line 120
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 1569
+    .line 1583
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1865
+    .line 1879
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -264,7 +321,7 @@
 
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
-    .line 1579
+    .line 1593
     :cond_9c
     check-cast v5, Ljava/lang/String;
 
@@ -272,9 +329,9 @@
 
     if-ne v6, v4, :cond_aa
 
-    .line 115
+    .line 121
     :cond_a2
-    invoke-static {v5}, Lkotlin/text/StringsKt__StringsJVMKt;->isBlank(Ljava/lang/CharSequence;)Z
+    invoke-static {v5}, Lkotlin/text/StringsKt__StringsKt;->isBlank(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
@@ -284,7 +341,7 @@
 
     goto :goto_ba
 
-    .line 78
+    .line 83
     :cond_aa
     invoke-static {v5, v3}, Lkotlin/text/StringsKt___StringsKt;->drop(Ljava/lang/String;I)Ljava/lang/String;
 
@@ -292,7 +349,7 @@
 
     if-eqz v6, :cond_ba
 
-    .line 118
+    .line 124
     invoke-interface {v2, v6}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
@@ -310,7 +367,7 @@
     :goto_ba
     if-eqz v5, :cond_bf
 
-    .line 1579
+    .line 1593
     invoke-interface {v7, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :cond_bf
@@ -318,7 +375,7 @@
 
     goto :goto_8b
 
-    .line 120
+    .line 126
     :cond_c1
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -346,14 +403,10 @@
 
     check-cast v0, Ljava/lang/StringBuilder;
 
-    .line 121
+    .line 127
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
-
-    const-string v1, "mapIndexedNotNull { inde\u2026\"\\n\")\n        .toString()"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -373,19 +426,19 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 35
-    invoke-static {p2}, Lkotlin/text/StringsKt__StringsJVMKt;->isBlank(Ljava/lang/CharSequence;)Z
+    .line 39
+    invoke-static {p2}, Lkotlin/text/StringsKt__StringsKt;->isBlank(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-nez v0, :cond_ca
+    if-nez v0, :cond_c5
 
-    .line 36
+    .line 40
     invoke-static {p0}, Lkotlin/text/StringsKt__StringsKt;->lines(Ljava/lang/CharSequence;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 38
+    .line 42
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result p0
@@ -406,20 +459,20 @@
 
     move-result-object p1
 
-    .line 113
+    .line 119
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->getLastIndex(Ljava/util/List;)I
 
     move-result v1
 
-    .line 114
+    .line 120
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 1569
+    .line 1583
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1865
+    .line 1879
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -445,7 +498,7 @@
 
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
-    .line 1579
+    .line 1593
     :cond_4d
     move-object v7, v5
 
@@ -457,9 +510,9 @@
 
     if-ne v4, v1, :cond_5e
 
-    .line 115
+    .line 121
     :cond_55
-    invoke-static {v7}, Lkotlin/text/StringsKt__StringsJVMKt;->isBlank(Ljava/lang/CharSequence;)Z
+    invoke-static {v7}, Lkotlin/text/StringsKt__StringsKt;->isBlank(Ljava/lang/CharSequence;)Z
 
     move-result v4
 
@@ -471,7 +524,7 @@
 
     goto :goto_a3
 
-    .line 151
+    .line 158
     :cond_5e
     invoke-interface {v7}, Ljava/lang/CharSequence;->length()I
 
@@ -484,12 +537,12 @@
 
     if-ge v8, v4, :cond_74
 
-    .line 152
+    .line 159
     invoke-interface {v7, v8}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v10
 
-    .line 39
+    .line 43
     invoke-static {v10}, Lkotlin/text/CharsKt__CharJVMKt;->isWhitespace(C)Z
 
     move-result v10
@@ -524,7 +577,7 @@
 
     move-object v8, p2
 
-    .line 43
+    .line 47
     invoke-static/range {v7 .. v12}, Lkotlin/text/StringsKt__StringsJVMKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;IZILjava/lang/Object;)Z
 
     move-result p2
@@ -545,7 +598,7 @@
 
     move-result-object v5
 
-    const-string p2, "this as java.lang.String).substring(startIndex)"
+    const-string p2, "substring(...)"
 
     invoke-static {v5, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -553,7 +606,7 @@
     :goto_97
     if-eqz v5, :cond_a3
 
-    .line 118
+    .line 124
     invoke-interface {p1, v5}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
@@ -571,7 +624,7 @@
     :goto_a3
     if-eqz v7, :cond_a8
 
-    .line 1579
+    .line 1593
     invoke-interface {v2, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :cond_a8
@@ -581,7 +634,7 @@
 
     goto :goto_3c
 
-    .line 120
+    .line 126
     :cond_ab
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -609,19 +662,15 @@
 
     check-cast p0, Ljava/lang/StringBuilder;
 
-    .line 121
+    .line 127
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string p1, "mapIndexedNotNull { inde\u2026\"\\n\")\n        .toString()"
-
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
     return-object p0
 
-    .line 35
-    :cond_ca
+    .line 39
+    :cond_c5
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "marginPrefix must be non-blank string."
@@ -638,7 +687,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 70
     const-string v0, ""
 
     invoke-static {p0, v0}, Lkotlin/text/StringsKt__IndentKt;->replaceIndent(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -659,7 +708,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 28
     const-string v0, ""
 
     invoke-static {p0, v0, p1}, Lkotlin/text/StringsKt__IndentKt;->replaceIndentByMargin(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -676,7 +725,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 26
+    .line 27
     const-string p1, "|"
 
     :cond_6

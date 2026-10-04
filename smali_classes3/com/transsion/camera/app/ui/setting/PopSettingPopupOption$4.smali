@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;)V
     .registers 2
 
-    .line 798
+    .line 700
     iput-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption$4;->this$0:Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreDraw()Z
     .registers 4
 
-    .line 801
+    .line 703
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption$4;->this$0:Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;->-$$Nest$fgetmItemText(Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;)Landroid/widget/TextView;
@@ -51,7 +51,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 802
+    .line 704
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption$4;->this$0:Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;->-$$Nest$fgetmItemText(Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;)Landroid/widget/TextView;
@@ -68,7 +68,7 @@
 
     if-le v0, v1, :cond_2d
 
-    .line 804
+    .line 706
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption$4;->this$0:Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;->-$$Nest$fgetmItemText(Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;)Landroid/widget/TextView;
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setSelected(Z)V
 
-    .line 805
+    .line 707
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption$4;->this$0:Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;->-$$Nest$fgetmItemText(Lcom/transsion/camera/app/ui/setting/PopSettingPopupOption;)Landroid/widget/TextView;

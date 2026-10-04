@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1$second$1"
     f = "Combine.kt"
     l = {
-        0x59
+        0x56
     }
     m = "invokeSuspend"
 .end annotation
@@ -153,7 +153,7 @@
 
     move-result-object v0
 
-    .line 88
+    .line 85
     iget v1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$second$1;->label:I
 
     const/4 v2, 0x1
@@ -182,7 +182,7 @@
 
     check-cast p1, Lkotlinx/coroutines/channels/ProducerScope;
 
-    .line 89
+    .line 86
     iget-object v1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$second$1;->$flow2:Lkotlinx/coroutines/flow/Flow;
 
     new-instance v3, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$second$1$1;
@@ -199,7 +199,7 @@
 
     return-object v0
 
-    .line 92
+    .line 89
     :cond_2e
     :goto_2e
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

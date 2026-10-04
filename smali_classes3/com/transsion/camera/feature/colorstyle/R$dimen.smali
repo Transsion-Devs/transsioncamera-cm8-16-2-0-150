@@ -90,11 +90,11 @@
 
 .field public static color_style_width_expand_90:I = 0x7f0701c9
 
-.field public static flip_color_style_bottom_margin:I = 0x7f070366
+.field public static flip_color_style_bottom_margin:I = 0x7f07035d
 
-.field public static flip_color_style_switcher_height:I = 0x7f070367
+.field public static flip_color_style_switcher_height:I = 0x7f07035e
 
-.field public static flip_color_style_top_margin:I = 0x7f070368
+.field public static flip_color_style_top_margin:I = 0x7f07035f
 
 
 # direct methods

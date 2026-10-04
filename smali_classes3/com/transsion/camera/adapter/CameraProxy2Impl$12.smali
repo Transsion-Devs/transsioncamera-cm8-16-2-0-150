@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
     .registers 2
 
-    .line 4300
+    .line 4272
     iput-object p1, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$12;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;-><init>()V
@@ -35,10 +35,10 @@
 .method public onActive(Landroid/hardware/camera2/CameraCaptureSession;)V
     .registers 4
 
-    .line 4323
+    .line 4295
     invoke-super {p0, p1}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;->onActive(Landroid/hardware/camera2/CameraCaptureSession;)V
 
-    .line 4324
+    .line 4296
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -65,10 +65,10 @@
 .method public onCaptureQueueEmpty(Landroid/hardware/camera2/CameraCaptureSession;)V
     .registers 4
 
-    .line 4329
+    .line 4301
     invoke-super {p0, p1}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;->onCaptureQueueEmpty(Landroid/hardware/camera2/CameraCaptureSession;)V
 
-    .line 4330
+    .line 4302
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -95,10 +95,10 @@
 .method public onClosed(Landroid/hardware/camera2/CameraCaptureSession;)V
     .registers 4
 
-    .line 4335
+    .line 4307
     invoke-super {p0, p1}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;->onClosed(Landroid/hardware/camera2/CameraCaptureSession;)V
 
-    .line 4336
+    .line 4308
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -125,7 +125,7 @@
 .method public onConfigureFailed(Landroid/hardware/camera2/CameraCaptureSession;)V
     .registers 5
 
-    .line 4310
+    .line 4282
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -146,7 +146,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 4311
+    .line 4283
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$12;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$mnotifySessionFail(Lcom/transsion/camera/adapter/CameraProxy2Impl;)V
@@ -157,7 +157,7 @@
 .method public onConfigured(Landroid/hardware/camera2/CameraCaptureSession;)V
     .registers 5
 
-    .line 4304
+    .line 4276
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -178,7 +178,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 4305
+    .line 4277
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$12;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$mnotifySession(Lcom/transsion/camera/adapter/CameraProxy2Impl;Landroid/hardware/camera2/CameraCaptureSession;)V
@@ -189,10 +189,10 @@
 .method public onReady(Landroid/hardware/camera2/CameraCaptureSession;)V
     .registers 4
 
-    .line 4316
+    .line 4288
     invoke-super {p0, p1}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;->onReady(Landroid/hardware/camera2/CameraCaptureSession;)V
 
-    .line 4317
+    .line 4289
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$12;->this$0:Lcom/transsion/camera/adapter/CameraProxy2Impl;
 
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$fgetmAbortCaptureLock(Lcom/transsion/camera/adapter/CameraProxy2Impl;)Lcom/transsion/camera/utils/StateWait;
@@ -201,7 +201,7 @@
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/StateWait;->notifyState()V
 
-    .line 4318
+    .line 4290
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -228,10 +228,10 @@
 .method public onSurfacePrepared(Landroid/hardware/camera2/CameraCaptureSession;Landroid/view/Surface;)V
     .registers 4
 
-    .line 4341
+    .line 4313
     invoke-super {p0, p1, p2}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;->onSurfacePrepared(Landroid/hardware/camera2/CameraCaptureSession;Landroid/view/Surface;)V
 
-    .line 4342
+    .line 4314
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0

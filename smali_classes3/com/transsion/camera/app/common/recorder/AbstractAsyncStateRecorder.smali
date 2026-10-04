@@ -267,7 +267,7 @@
 .end method
 
 .method protected getVideoBitRate()I
-    .registers 9
+    .registers 10
 
     .line 493
     iget-object v0, p0, Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -347,131 +347,157 @@
 
     const-string v5, "8"
 
-    const-string v6, "6"
+    const-string v6, "11"
 
-    const-string v7, "6_60"
+    const-string v7, "6"
 
-    if-eqz v2, :cond_76
+    const-string v8, "6_60"
+
+    if-eqz v2, :cond_81
 
     .line 504
+    invoke-static {v1, v8}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_7e
+
+    .line 505
     invoke-static {v1, v7}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-nez v2, :cond_73
+    if-eqz v2, :cond_5a
 
-    .line 505
+    goto :goto_7e
+
+    .line 507
+    :cond_5a
     invoke-static {v1, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_58
+    if-eqz v2, :cond_63
 
-    goto :goto_73
+    mul-int/lit8 p0, p0, 0x11
 
-    .line 507
-    :cond_58
+    goto :goto_b2
+
+    .line 509
+    :cond_63
     invoke-static {v1, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_61
+    if-eqz v2, :cond_6c
 
     mul-int/lit8 p0, p0, 0x19
 
-    goto :goto_9e
+    goto :goto_b2
 
-    .line 509
-    :cond_61
+    .line 511
+    :cond_6c
     invoke-static {v1, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_6a
+    if-eqz v2, :cond_75
 
     mul-int/lit8 p0, p0, 0x1e
 
-    goto :goto_9e
+    goto :goto_b2
 
-    .line 511
-    :cond_6a
+    .line 513
+    :cond_75
     invoke-static {v1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_97
+    if-eqz v2, :cond_ab
 
     mul-int/lit8 p0, p0, 0x5
 
-    goto :goto_9e
+    goto :goto_b2
 
-    :cond_73
-    :goto_73
+    :cond_7e
+    :goto_7e
     mul-int/lit8 p0, p0, 0xa
 
-    goto :goto_9e
+    goto :goto_b2
 
-    .line 515
-    :cond_76
+    .line 517
+    :cond_81
+    invoke-static {v1, v8}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_b0
+
+    .line 518
     invoke-static {v1, v7}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-nez v2, :cond_9c
+    if-eqz v2, :cond_8e
 
-    .line 516
+    goto :goto_b0
+
+    .line 520
+    :cond_8e
     invoke-static {v1, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_83
-
-    goto :goto_9c
-
-    .line 518
-    :cond_83
-    invoke-static {v1, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_99
-
-    .line 519
-    invoke-static {v1, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_90
-
-    goto :goto_99
-
-    .line 521
-    :cond_90
-    invoke-static {v1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_97
 
-    goto :goto_73
+    mul-int/lit8 p0, p0, 0x22
 
+    goto :goto_b2
+
+    .line 522
     :cond_97
+    invoke-static {v1, v5}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_ad
+
+    .line 523
+    invoke-static {v1, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_a4
+
+    goto :goto_ad
+
+    .line 525
+    :cond_a4
+    invoke-static {v1, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_ab
+
+    goto :goto_7e
+
+    :cond_ab
     const/4 p0, 0x0
 
-    goto :goto_9e
+    goto :goto_b2
 
-    :cond_99
-    :goto_99
+    :cond_ad
+    :goto_ad
     mul-int/lit8 p0, p0, 0x32
 
-    goto :goto_9e
+    goto :goto_b2
 
-    :cond_9c
-    :goto_9c
+    :cond_b0
+    :goto_b0
     mul-int/lit8 p0, p0, 0x14
 
-    .line 526
-    :goto_9e
+    .line 530
+    :goto_b2
     sget-object v2, Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;

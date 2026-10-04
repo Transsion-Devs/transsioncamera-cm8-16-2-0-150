@@ -229,28 +229,28 @@
 
     long-to-int v0, p1
 
-    .line 306
+    .line 295
     div-int/lit16 v0, v0, 0x3e8
 
     const-wide/16 v1, 0x3e8
 
-    .line 307
+    .line 296
     rem-long/2addr p1, v1
 
     long-to-int p1, p1
 
-    .line 308
+    .line 297
     rem-int/lit8 p2, v0, 0x3c
 
-    .line 309
+    .line 298
     div-int/lit8 v1, v0, 0x3c
 
     rem-int/lit8 v1, v1, 0x3c
 
-    .line 310
+    .line 299
     div-int/lit16 v0, v0, 0xe10
 
-    .line 312
+    .line 301
     sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -267,7 +267,7 @@
 
     div-int/lit8 p1, p1, 0x64
 
-    .line 313
+    .line 302
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -276,19 +276,19 @@
 
     move-result-object p1
 
-    .line 312
+    .line 301
     const-string v3, "%02d:%02d:%02d.%1d"
 
     invoke-static {v2, v3, p1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 314
+    .line 303
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mSingleRateMode:Z
 
     if-eqz p0, :cond_48
 
-    .line 315
+    .line 304
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -320,7 +320,7 @@
 .method private getRecordResultDuring(J)Ljava/lang/String;
     .registers 7
 
-    .line 268
+    .line 257
     iget v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->mTimeLapseRate:I
 
     const/4 v1, 0x1
@@ -329,19 +329,19 @@
 
     int-to-long v2, v0
 
-    .line 269
+    .line 258
     div-long v2, p1, v2
 
     invoke-direct {p0, v2, v3}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->formatTime(J)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 270
+    .line 259
     iget-boolean v2, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mSingleRateMode:Z
 
     if-eqz v2, :cond_19
 
-    .line 271
+    .line 260
     iget p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI;->mTimeLapseRate:I
 
     int-to-long v2, p0
@@ -407,19 +407,19 @@
     :goto_44
     int-to-long v2, v0
 
-    .line 286
+    .line 275
     div-long/2addr p1, v2
 
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->formatTime(J)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 287
+    .line 276
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mSingleRateMode:Z
 
     if-eqz p0, :cond_53
 
-    .line 288
+    .line 277
     invoke-static {p1, p2, v1}, Lcom/transsion/camera/utils/UIUtils;->formatTime(JZ)Ljava/lang/String;
 
     move-result-object p0
@@ -664,7 +664,7 @@
 .method protected createVideoUIExt()Lcom/transsion/camera/app/common/ui/IVideoUIExt;
     .registers 2
 
-    .line 345
+    .line 334
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -680,7 +680,7 @@
     :cond_a
     const/4 p0, 0x0
 
-    .line 348
+    .line 337
     new-array p0, p0, [Ljava/lang/Object;
 
     const-string v0, "com.transsion.camera.app.ui.mode.timelapsevideo.TimeLapseVideoUI5Ext"
@@ -697,10 +697,10 @@
 .method public hideInfo()V
     .registers 2
 
-    .line 301
+    .line 290
     invoke-super {p0}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->hideInfo()V
 
-    .line 302
+    .line 291
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -713,10 +713,10 @@
 .method public onHideRecordingUI()V
     .registers 1
 
-    .line 199
+    .line 194
     invoke-super {p0}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->onHideRecordingUI()V
 
-    .line 200
+    .line 195
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->stopProgressView()V
 
     return-void
@@ -725,10 +725,10 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 164
+    .line 159
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->onScreenFormChanged(IZ)V
 
-    .line 165
+    .line 160
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->updateLayout(Z)V
 
     return-void
@@ -737,15 +737,15 @@
 .method protected onShowRecordingUI()V
     .registers 5
 
-    .line 185
+    .line 180
     invoke-super {p0}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->onShowRecordingUI()V
 
-    .line 187
+    .line 182
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mSingleRateMode:Z
 
     if-eqz v0, :cond_27
 
-    .line 188
+    .line 183
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -776,29 +776,29 @@
 
     goto :goto_29
 
-    .line 187
+    .line 182
     :cond_27
     const-string v0, "00:00:00.0/00:00:00.0"
 
-    .line 190
+    .line 185
     :goto_29
     iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->mRecordingTimeView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 191
+    .line 186
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mProgressView:Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;
 
     if-eqz v0, :cond_3e
 
-    .line 192
+    .line 187
     sget-object v0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "mProgressView.start()"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 193
+    .line 188
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mProgressView:Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;->start()V
@@ -810,12 +810,12 @@
 .method public onShutterDown()V
     .registers 2
 
-    .line 322
+    .line 311
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mDownAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 323
+    .line 312
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mDownAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
@@ -826,12 +826,12 @@
 .method public onShutterUp()V
     .registers 2
 
-    .line 327
+    .line 316
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mUpAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 328
+    .line 317
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mUpAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
@@ -854,15 +854,15 @@
 .method protected onUpdateRecordingUI(Z)V
     .registers 2
 
-    .line 253
+    .line 242
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->onUpdateRecordingUI(Z)V
 
-    .line 254
+    .line 243
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mProgressView:Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;
 
     if-eqz p0, :cond_a
 
-    .line 255
+    .line 244
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;->pause(Z)V
 
     :cond_a
@@ -872,24 +872,24 @@
 .method public resume()V
     .registers 3
 
-    .line 233
+    .line 222
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mProgressView:Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;
 
     if-eqz v0, :cond_23
 
-    .line 234
+    .line 223
     sget-object v0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "mProgressView.reset()"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 235
+    .line 224
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mProgressView:Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;->reset()V
 
-    .line 236
+    .line 225
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mProgressView:Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;
 
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -915,15 +915,15 @@
 .method protected ringScreenLightUpdateUI()V
     .registers 2
 
-    .line 216
+    .line 205
     invoke-super {p0}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->ringScreenLightUpdateUI()V
 
-    .line 217
+    .line 206
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mProgressView:Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;
 
     if-eqz v0, :cond_c
 
-    .line 218
+    .line 207
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->mLowLight:Z
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;->updateLowLight(Z)V
@@ -935,7 +935,7 @@
 .method public setTimeLapseDuration(J)V
     .registers 3
 
-    .line 248
+    .line 237
     iput-wide p1, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mTotalDuration:J
 
     return-void
@@ -944,7 +944,7 @@
 .method public showFileTooShortInfo()V
     .registers 4
 
-    .line 295
+    .line 284
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->mResources:Landroid/content/res/Resources;
@@ -957,7 +957,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 296
+    .line 285
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -970,7 +970,7 @@
 .method protected showTime(JZ)V
     .registers 8
 
-    .line 170
+    .line 165
     iget-wide v0, p0, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->mRecordingTotalDuration:J
 
     const-wide/16 v2, 0x0
@@ -987,7 +987,7 @@
 
     sub-long/2addr p1, v0
 
-    .line 173
+    .line 168
     :cond_f
     iget-wide v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mTotalDuration:J
 
@@ -1003,18 +1003,18 @@
 
     if-eqz p3, :cond_22
 
-    .line 174
+    .line 169
     iget-object p3, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mVideoProgressListener:Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI$VideoProgressListener;
 
     invoke-interface {p3}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/ProductTimeLapseVideoUI$VideoProgressListener;->onProgressEnd()V
 
-    .line 176
+    .line 171
     :cond_22
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->formatTime(J)Ljava/lang/String;
 
     move-result-object p3
 
-    .line 177
+    .line 172
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1035,12 +1035,12 @@
 
     move-result-object p1
 
-    .line 178
+    .line 173
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->mRecordingTimeView:Landroid/widget/TextView;
 
     if-eqz p0, :cond_45
 
-    .line 179
+    .line 174
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :cond_45
@@ -1050,19 +1050,19 @@
 .method public stopProgressView()V
     .registers 3
 
-    .line 241
+    .line 230
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mProgressView:Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;
 
     if-eqz v0, :cond_10
 
-    .line 242
+    .line 231
     sget-object v0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "mProgressView.stop()"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 243
+    .line 232
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mProgressView:Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/RecordingProgressView;->stop()V
@@ -1074,15 +1074,15 @@
 .method public unInitVideoUI()V
     .registers 3
 
-    .line 224
+    .line 213
     invoke-super {p0}, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->unInitVideoUI()V
 
-    .line 225
+    .line 214
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mShutterPanel:Landroid/view/View;
 
     if-eqz v0, :cond_12
 
-    .line 226
+    .line 215
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -1093,13 +1093,13 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 228
+    .line 217
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mDownAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->end()V
 
-    .line 229
+    .line 218
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mUpAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->end()V
@@ -1348,31 +1348,17 @@
 
     return-void
 
-    .line 142
     :cond_c2
-    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
+    if-eqz v7, :cond_e0
 
-    move-result p1
-
-    if-eqz p1, :cond_cd
-
-    const/16 v0, 0x94
-
-    const/16 v5, 0x22
-
-    move v6, v4
-
-    :cond_cd
-    if-eqz v7, :cond_eb
-
-    .line 149
+    .line 144
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/video/VideoUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     instance-of v2, p1, Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz v2, :cond_e0
+    if-eqz v2, :cond_d5
 
-    .line 150
+    .line 145
     check-cast p1, Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
@@ -1383,13 +1369,13 @@
 
     move-result p1
 
-    goto :goto_e1
+    goto :goto_d6
 
-    :cond_e0
+    :cond_d5
     move p1, v4
 
-    .line 152
-    :goto_e1
+    .line 147
+    :goto_d6
     iget-object v2, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mShutterPanel:Landroid/view/View;
 
     invoke-static {v6}, Ljava/lang/Math;->abs(I)I
@@ -1398,10 +1384,10 @@
 
     invoke-virtual {v2, v4, p1, v4, v3}, Landroid/view/View;->setPadding(IIII)V
 
-    goto :goto_f4
+    goto :goto_e9
 
-    .line 154
-    :cond_eb
+    .line 149
+    :cond_e0
     iget-object p1, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mShutterPanel:Landroid/view/View;
 
     invoke-static {v6}, Ljava/lang/Math;->abs(I)I
@@ -1410,14 +1396,14 @@
 
     invoke-virtual {p1, v4, v2, v4, v4}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 156
-    :goto_f4
+    .line 151
+    :goto_e9
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 157
+    .line 152
     iput v5, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 158
+    .line 153
     iget-object p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mShutterPanel:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -1428,34 +1414,10 @@
 .method protected updateTimeInterval()J
     .registers 3
 
-    .line 205
-    sget-object v0, Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;->STATE_PAUSE_RECORDING:Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;
-
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->getUIState()Lcom/transsion/camera/app/common/ui/IVideoUI$VideoUIState;
-
-    move-result-object v1
-
-    if-ne v0, v1, :cond_d
-
-    .line 206
+    .line 200
     invoke-super {p0}, Lcom/transsion/camera/app/ui/mode/video/CommonVideoUI;->updateTimeInterval()J
 
     move-result-wide v0
-
-    return-wide v0
-
-    .line 208
-    :cond_d
-    iget-boolean p0, p0, Lcom/transsion/camera/app/ui/mode/timelapsevideo/infinix/TimeLapseVideoUI;->mSingleRateMode:Z
-
-    if-eqz p0, :cond_14
-
-    const-wide/16 v0, 0x3e8
-
-    return-wide v0
-
-    :cond_14
-    const-wide/16 v0, 0x64
 
     return-wide v0
 .end method

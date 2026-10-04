@@ -18,11 +18,11 @@
 
 .field public static abc_config_activityShortDur:I = 0x7f0c000e
 
-.field public static cancel_button_image_alpha:I = 0x7f0c0033
+.field public static cancel_button_image_alpha:I = 0x7f0c0034
 
-.field public static config_tooltipAnimTime:I = 0x7f0c0035
+.field public static config_tooltipAnimTime:I = 0x7f0c0036
 
-.field public static status_bar_notification_info_maxnum:I = 0x7f0c00e3
+.field public static status_bar_notification_info_maxnum:I = 0x7f0c00e7
 
 
 # direct methods

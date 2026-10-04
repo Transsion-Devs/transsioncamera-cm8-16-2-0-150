@@ -20,13 +20,13 @@
 
 .field public static androidx_window_activity_scope:I = 0x7f0b00a2
 
-.field public static locale:I = 0x7f0b0382
+.field public static locale:I = 0x7f0b0383
 
-.field public static ltr:I = 0x7f0b0391
+.field public static ltr:I = 0x7f0b0392
 
-.field public static never:I = 0x7f0b043c
+.field public static never:I = 0x7f0b0439
 
-.field public static rtl:I = 0x7f0b058c
+.field public static rtl:I = 0x7f0b0588
 
 
 # direct methods

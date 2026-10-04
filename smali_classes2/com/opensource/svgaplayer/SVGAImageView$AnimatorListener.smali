@@ -101,17 +101,11 @@
 
     check-cast p0, Lcom/opensource/svgaplayer/SVGAImageView;
 
-    if-eqz p0, :cond_13
+    if-eqz p0, :cond_d
 
     invoke-virtual {p0}, Lcom/opensource/svgaplayer/SVGAImageView;->getCallback()Lcom/opensource/svgaplayer/SVGACallback;
 
-    move-result-object p0
-
-    if-eqz p0, :cond_13
-
-    invoke-interface {p0}, Lcom/opensource/svgaplayer/SVGACallback;->onRepeat()V
-
-    :cond_13
+    :cond_d
     return-void
 .end method
 

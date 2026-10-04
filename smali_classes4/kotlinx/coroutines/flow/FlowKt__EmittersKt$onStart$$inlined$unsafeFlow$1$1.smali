@@ -17,8 +17,8 @@
     c = "kotlinx.coroutines.flow.FlowKt__EmittersKt$onStart$$inlined$unsafeFlow$1"
     f = "Emitters.kt"
     l = {
-        0x75,
-        0x79
+        0x73,
+        0x77
     }
     m = "collect"
 .end annotation

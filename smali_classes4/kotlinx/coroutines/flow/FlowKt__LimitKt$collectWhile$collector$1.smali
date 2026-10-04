@@ -48,7 +48,7 @@
 
     iput-object p1, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$collectWhile$collector$1;->$predicate:Lkotlin/jvm/functions/Function2;
 
-    .line 126
+    .line 123
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -103,7 +103,7 @@
 
     move-result-object v1
 
-    .line 127
+    .line 124
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$collectWhile$collector$1$emit$1;->label:I
 
     const/4 v3, 0x1
@@ -132,7 +132,7 @@
     :cond_35
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 130
+    .line 127
     iget-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$collectWhile$collector$1;->$predicate:Lkotlin/jvm/functions/Function2;
 
     iput-object p0, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$collectWhile$collector$1$emit$1;->L$0:Ljava/lang/Object;
@@ -157,16 +157,16 @@
 
     if-eqz p1, :cond_50
 
-    .line 133
+    .line 130
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 131
+    .line 128
     :cond_50
     new-instance p1, Lkotlinx/coroutines/flow/internal/AbortFlowException;
 
-    invoke-direct {p1, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Lkotlinx/coroutines/flow/FlowCollector;)V
+    invoke-direct {p1, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Ljava/lang/Object;)V
 
     throw p1
 .end method
@@ -196,7 +196,7 @@
 
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
-    .line 130
+    .line 127
     iget-object v0, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$collectWhile$collector$1;->$predicate:Lkotlin/jvm/functions/Function2;
 
     invoke-interface {v0, p1, p2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -211,16 +211,16 @@
 
     if-eqz p1, :cond_1e
 
-    .line 133
+    .line 130
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 131
+    .line 128
     :cond_1e
     new-instance p1, Lkotlinx/coroutines/flow/internal/AbortFlowException;
 
-    invoke-direct {p1, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Lkotlinx/coroutines/flow/FlowCollector;)V
+    invoke-direct {p1, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Ljava/lang/Object;)V
 
     throw p1
 .end method

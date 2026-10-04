@@ -22,10 +22,10 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;Landroid/os/Looper;)V
     .registers 3
 
-    .line 548
+    .line 547
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$GoldWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
-    .line 549
+    .line 548
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
@@ -45,7 +45,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 5
 
-    .line 554
+    .line 553
     invoke-static {}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -80,7 +80,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 555
+    .line 554
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$GoldWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->-$$Nest$fgetmLocationButtonCheck(Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;)Z
@@ -91,7 +91,7 @@
 
     goto :goto_5d
 
-    .line 558
+    .line 557
     :cond_31
     iget p1, p1, Landroid/os/Message;->what:I
 
@@ -99,7 +99,7 @@
 
     goto :goto_5d
 
-    .line 569
+    .line 568
     :pswitch_37
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$GoldWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
@@ -125,14 +125,14 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 570
+    .line 569
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$GoldWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p1, :cond_5d
 
-    .line 571
+    .line 570
     invoke-static {p0}, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;->-$$Nest$fgetmToastInfo(Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;)Lcom/transsion/camera/app/common/ui/HintInfo;
 
     move-result-object p0
@@ -143,7 +143,7 @@
     :goto_5d
     return-void
 
-    .line 566
+    .line 565
     :pswitch_5e
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$GoldWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
@@ -151,7 +151,7 @@
 
     return-void
 
-    .line 563
+    .line 562
     :pswitch_64
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$GoldWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 
@@ -163,7 +163,7 @@
 
     return-void
 
-    .line 560
+    .line 559
     :pswitch_6e
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProGoldWatermark$GoldWaterMarkHandler;->this$0:Lcom/transsion/camera/app/ui/widget/ProGoldWatermark;
 

@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/transsion/camera/ui/setting/level/LevelUI$UIHandler;,
-        Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;
+        Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;,
+        Lcom/transsion/camera/ui/setting/level/LevelUI$UIHandler;
     }
 .end annotation
 
@@ -39,7 +39,7 @@
 
 .field private mSensor:Landroid/hardware/Sensor;
 
-.field private mSensorEventListener:Landroid/hardware/SensorEventListener;
+.field private final mSensorEventListener:Landroid/hardware/SensorEventListener;
 
 .field private mSensorManager:Landroid/hardware/SensorManager;
 
@@ -121,31 +121,38 @@
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .registers 3
 
-    .line 58
+    .line 53
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;-><init>()V
 
-    .line 53
+    .line 42
+    new-instance p1, Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;
+
+    invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;-><init>(Lcom/transsion/camera/ui/setting/level/LevelUI;)V
+
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorEventListener:Landroid/hardware/SensorEventListener;
+
+    .line 49
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
-    .line 319
+    .line 328
     new-instance p1, Lcom/transsion/camera/ui/setting/level/LevelUI$1;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/level/LevelUI$1;-><init>(Lcom/transsion/camera/ui/setting/level/LevelUI;)V
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 59
+    .line 54
     sget-object p1, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "init"
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 60
+    .line 55
     new-instance p1, Lcom/transsion/camera/ui/setting/level/LevelUI$UIHandler;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/level/LevelUI$UIHandler;-><init>(Lcom/transsion/camera/ui/setting/level/LevelUI;)V
@@ -168,13 +175,13 @@
 
     return-void
 
-    .line 272
+    .line 279
     :cond_7
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->showView()V
 
     return-void
 
-    .line 269
+    .line 276
     :cond_b
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->hideView()V
 
@@ -186,21 +193,55 @@
 
     const/4 v0, 0x0
 
-    .line 287
+    .line 294
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mIsShown:Z
 
     const/4 v0, 0x4
 
-    .line 288
+    .line 295
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->setLevelViewVisibility(I)V
 
+    .line 296
+    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->disable()V
+
     return-void
+.end method
+
+.method private isLevelOn()Z
+    .registers 2
+
+    .line 97
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
+
+    if-eqz p0, :cond_12
+
+    .line 98
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "on"
+
+    invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_12
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_12
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method private setLevelViewVisibility(I)V
     .registers 4
 
-    .line 280
+    .line 287
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mLevelView:Lcom/transsion/camera/ui/setting/level/Gradienter;
 
     if-eqz v0, :cond_2c
@@ -211,12 +252,12 @@
 
     if-eq v0, p1, :cond_2c
 
-    .line 281
+    .line 288
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mLevelView:Lcom/transsion/camera/ui/setting/level/Gradienter;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 282
+    .line 289
     sget-object p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -254,7 +295,7 @@
 
     const/4 v0, 0x1
 
-    .line 332
+    .line 345
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->showOrHideGradienterInMainThread(ZZ)V
 
     return-void
@@ -263,7 +304,7 @@
 .method private showOrHideGradienterInMainThread(ZZ)V
     .registers 8
 
-    .line 336
+    .line 349
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mHandler:Lcom/transsion/camera/ui/setting/level/LevelUI$UIHandler;
 
     const/4 v1, 0x0
@@ -278,7 +319,7 @@
 
     if-eqz p1, :cond_20
 
-    .line 338
+    .line 351
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mHandler:Lcom/transsion/camera/ui/setting/level/LevelUI$UIHandler;
 
     const/4 p1, 0x2
@@ -300,7 +341,7 @@
 
     return-void
 
-    .line 340
+    .line 353
     :cond_20
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mHandler:Lcom/transsion/camera/ui/setting/level/LevelUI$UIHandler;
 
@@ -327,7 +368,7 @@
 .method private showView()V
     .registers 4
 
-    .line 292
+    .line 300
     sget-object v0, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -348,18 +389,21 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 293
+    .line 301
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->updateRootLayoutRect()V
 
     const/4 v0, 0x1
 
-    .line 294
+    .line 302
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mIsShown:Z
 
     const/4 v0, 0x0
 
-    .line 295
+    .line 303
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->setLevelViewVisibility(I)V
+
+    .line 304
+    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->enable()V
 
     return-void
 .end method
@@ -367,14 +411,14 @@
 .method private updateLevelRootLayout()V
     .registers 5
 
-    .line 224
+    .line 231
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mLevelView:Lcom/transsion/camera/ui/setting/level/Gradienter;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 227
+    .line 234
     :cond_5
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -384,10 +428,10 @@
 
     const/4 v1, 0x0
 
-    .line 228
+    .line 235
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 229
+    .line 236
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -402,7 +446,7 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 230
+    .line 237
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     const-string v2, "key_fold_switch_preview"
@@ -411,7 +455,7 @@
 
     move-result-object v1
 
-    .line 231
+    .line 238
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI(Landroid/content/Context;)Z
@@ -428,14 +472,14 @@
 
     const-string v2, "on"
 
-    .line 233
+    .line 240
     invoke-static {v2, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_48
 
-    .line 234
+    .line 241
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -450,7 +494,7 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 236
+    .line 243
     :cond_48
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mLevelView:Lcom/transsion/camera/ui/setting/level/Gradienter;
 
@@ -462,19 +506,19 @@
 .method private updateRootLayoutRect()V
     .registers 6
 
-    .line 302
+    .line 311
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->getEntryView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 303
+    .line 312
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 304
+    .line 313
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     iget v3, v2, Landroid/graphics/Rect;->left:I
@@ -485,7 +529,7 @@
 
     invoke-virtual {v1, v3, v2, v4, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 305
+    .line 314
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
@@ -494,7 +538,7 @@
 
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 306
+    .line 315
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
@@ -503,10 +547,10 @@
 
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 307
+    .line 316
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 308
+    .line 317
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->updateLevelRootLayout()V
 
     return-void
@@ -515,79 +559,83 @@
 
 # virtual methods
 .method public disable()V
-    .registers 4
+    .registers 3
 
-    .line 115
+    .line 120
     sget-object v0, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "disable+"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 116
-    iget-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensor:Landroid/hardware/Sensor;
+    .line 121
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorManager:Landroid/hardware/SensorManager;
 
-    if-nez v1, :cond_c
+    if-eqz v0, :cond_28
 
-    return-void
-
-    .line 119
-    :cond_c
     iget-boolean v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mEnabled:Z
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_10
 
-    .line 120
-    const-string p0, "disabled,so return"
+    goto :goto_28
 
-    invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_16
+    :cond_10
     const/4 v1, 0x0
-
-    .line 123
-    iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mEnabled:Z
 
     .line 124
-    iget-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorManager:Landroid/hardware/SensorManager;
-
-    iget-object v2, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorEventListener:Landroid/hardware/SensorEventListener;
-
-    invoke-virtual {v1, v2}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
-
-    const/4 v1, 0x0
-
-    .line 125
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorEventListener:Landroid/hardware/SensorEventListener;
+    iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mEnabled:Z
 
     .line 126
-    const-string p0, "disable-"
+    :try_start_13
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorEventListener:Landroid/hardware/SensorEventListener;
 
-    invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
+    :try_end_18
+    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_18} :catch_19
 
+    goto :goto_21
+
+    :catch_19
+    move-exception p0
+
+    .line 128
+    sget-object v0, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string v1, "unregisterListener error"
+
+    invoke-static {v0, v1, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 130
+    :goto_21
+    sget-object p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string v0, "disable-"
+
+    invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    :cond_28
+    :goto_28
     return-void
 .end method
 
 .method protected doCreateEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
     .registers 6
 
-    .line 65
+    .line 60
     sget-object v0, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "doCreateEntryView+"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 66
+    .line 61
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mContext:Landroid/content/Context;
 
-    .line 67
+    .line 62
     const-string v2, "sensor"
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -600,14 +648,14 @@
 
     const/4 v2, 0x1
 
-    .line 68
+    .line 63
     invoke-virtual {v1, v2}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensor:Landroid/hardware/Sensor;
 
-    .line 69
+    .line 64
     sget v1, Lcom/transsion/camera/R$layout;->level:I
 
     const/4 v2, 0x0
@@ -616,7 +664,7 @@
 
     move-result-object p1
 
-    .line 70
+    .line 65
     sget p2, Lcom/transsion/camera/R$id;->img_level:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -627,7 +675,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mLevelView:Lcom/transsion/camera/ui/setting/level/Gradienter;
 
-    .line 71
+    .line 66
     const-string p0, "doCreateEntryView-"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
@@ -638,60 +686,76 @@
 .method public enable()V
     .registers 5
 
-    .line 100
+    .line 102
     sget-object v0, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "enable+"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 101
+    .line 103
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensor:Landroid/hardware/Sensor;
 
-    if-nez v1, :cond_c
+    if-eqz v1, :cond_38
+
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorManager:Landroid/hardware/SensorManager;
+
+    if-nez v1, :cond_10
+
+    goto :goto_38
+
+    .line 106
+    :cond_10
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->isLevelOn()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1c
+
+    .line 107
+    const-string p0, "level is off, skip register"
+
+    invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 104
-    :cond_c
+    .line 110
+    :cond_1c
     iget-boolean v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mEnabled:Z
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_26
 
-    .line 105
+    .line 111
     const-string p0, "enabled,so return"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 108
-    :cond_16
-    new-instance v1, Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;
+    :cond_26
+    const/4 v1, 0x1
 
-    invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/level/LevelUI$SensorEventListenerImpl;-><init>(Lcom/transsion/camera/ui/setting/level/LevelUI;)V
+    .line 114
+    iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mEnabled:Z
 
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorEventListener:Landroid/hardware/SensorEventListener;
+    .line 115
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorManager:Landroid/hardware/SensorManager;
 
-    const/4 v2, 0x1
-
-    .line 109
-    iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mEnabled:Z
-
-    .line 110
-    iget-object v2, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorManager:Landroid/hardware/SensorManager;
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorEventListener:Landroid/hardware/SensorEventListener;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensor:Landroid/hardware/Sensor;
 
     const/4 v3, 0x3
 
-    invoke-virtual {v2, v1, p0, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+    invoke-virtual {v1, v2, p0, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    .line 111
+    .line 116
     const-string p0, "enable-"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
+    :cond_38
+    :goto_38
     return-void
 .end method
 
@@ -709,7 +773,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 154
+    .line 158
     const-string p0, "key_level"
 
     return-object p0
@@ -718,7 +782,7 @@
 .method protected getLevelView()Lcom/transsion/camera/ui/setting/level/Gradienter;
     .registers 1
 
-    .line 345
+    .line 358
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mLevelView:Lcom/transsion/camera/ui/setting/level/Gradienter;
 
     return-object p0
@@ -727,7 +791,7 @@
 .method public getValue()Ljava/lang/String;
     .registers 1
 
-    .line 159
+    .line 163
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p0, :cond_6
@@ -736,7 +800,7 @@
 
     return-object p0
 
-    .line 162
+    .line 166
     :cond_6
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
@@ -750,7 +814,7 @@
 
     const/4 v0, 0x0
 
-    .line 82
+    .line 77
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->showOrHideGradienterInMainThread(Z)V
 
     return-void
@@ -786,18 +850,27 @@
 
     if-eq p1, v0, :cond_9
 
-    return-void
+    goto :goto_16
 
-    .line 92
+    .line 89
     :cond_9
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->disable()V
 
     return-void
 
-    .line 89
+    .line 84
     :cond_d
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->isLevelOn()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_16
+
+    .line 85
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->enable()V
 
+    :cond_16
+    :goto_16
     return-void
 .end method
 
@@ -813,10 +886,10 @@
 .method public onOrientationChanged(I)V
     .registers 2
 
-    .line 219
+    .line 226
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onOrientationChanged(I)V
 
-    .line 220
+    .line 227
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->updateLevelRootLayout()V
 
     return-void
@@ -825,10 +898,10 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 213
+    .line 220
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onScreenFormChanged(IZ)V
 
-    .line 214
+    .line 221
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->updateLevelRootLayout()V
 
     return-void
@@ -848,12 +921,12 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 4
 
-    .line 181
+    .line 188
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p1, :cond_c
 
-    .line 183
+    .line 190
     sget-object p1, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "mDeviceSetting is null!"
@@ -862,7 +935,7 @@
 
     goto :goto_1a
 
-    .line 185
+    .line 192
     :cond_c
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
@@ -878,20 +951,20 @@
 
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->showOrHideGradienterInMainThread(ZZ)V
 
-    .line 188
+    .line 195
     :goto_1a
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p1, :cond_2e
 
-    .line 189
+    .line 196
     const-string v0, "key_level"
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 190
+    .line 197
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_fold_switch_preview"
@@ -922,14 +995,14 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 4
 
-    .line 196
+    .line 203
     sget-object v0, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "setSettingMonitor"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 197
+    .line 204
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-void
@@ -938,7 +1011,7 @@
 .method public setupEntryView()V
     .registers 1
 
-    .line 77
+    .line 72
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->updateLevelRootLayout()V
 
     return-void
@@ -947,29 +1020,32 @@
 .method public unInit()V
     .registers 4
 
-    .line 168
+    .line 173
+    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->disable()V
+
+    .line 174
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->unInit()V
 
-    .line 169
+    .line 175
     sget-object v0, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "unInit"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 170
+    .line 176
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_21
 
-    .line 171
+    .line 177
     const-string v1, "key_level"
 
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 172
+    .line 178
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_fold_switch_preview"
@@ -978,21 +1054,24 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 174
-    :cond_1e
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->disable()V
-
+    :cond_21
     const/4 v0, 0x4
 
-    .line 175
+    .line 180
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->setLevelViewVisibility(I)V
 
-    .line 176
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mHandler:Lcom/transsion/camera/ui/setting/level/LevelUI$UIHandler;
+    .line 181
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mHandler:Lcom/transsion/camera/ui/setting/level/LevelUI$UIHandler;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+
+    .line 182
+    iput-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensorManager:Landroid/hardware/SensorManager;
+
+    .line 183
+    iput-object v1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mSensor:Landroid/hardware/Sensor;
 
     return-void
 .end method
@@ -1000,7 +1079,7 @@
 .method public updateCameraState(I)V
     .registers 5
 
-    .line 313
+    .line 322
     sget-object v0, Lcom/transsion/camera/ui/setting/level/LevelUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1023,12 +1102,12 @@
 
     if-ne p1, v0, :cond_2b
 
-    .line 314
+    .line 323
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p1, :cond_2b
 
-    .line 315
+    .line 324
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
     move-result-object p1
@@ -1050,12 +1129,12 @@
 .method public updatePreviewRect(Landroid/graphics/Rect;)V
     .registers 3
 
-    .line 202
+    .line 209
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/level/LevelUI;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 203
+    .line 210
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/level/LevelUI;->updateRootLayoutRect()V
 
     return-void

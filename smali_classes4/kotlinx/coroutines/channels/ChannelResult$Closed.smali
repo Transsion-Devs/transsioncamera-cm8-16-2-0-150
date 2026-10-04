@@ -22,7 +22,7 @@
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .registers 2
 
-    .line 464
+    .line 472
     invoke-direct {p0}, Lkotlinx/coroutines/channels/ChannelResult$Failed;-><init>()V
 
     iput-object p1, p0, Lkotlinx/coroutines/channels/ChannelResult$Closed;->cause:Ljava/lang/Throwable;
@@ -35,7 +35,7 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 3
 
-    .line 465
+    .line 473
     instance-of v0, p1, Lkotlinx/coroutines/channels/ChannelResult$Closed;
 
     if-eqz v0, :cond_12
@@ -65,7 +65,7 @@
 .method public hashCode()I
     .registers 1
 
-    .line 466
+    .line 474
     iget-object p0, p0, Lkotlinx/coroutines/channels/ChannelResult$Closed;->cause:Ljava/lang/Throwable;
 
     if-eqz p0, :cond_9
@@ -85,7 +85,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 467
+    .line 475
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

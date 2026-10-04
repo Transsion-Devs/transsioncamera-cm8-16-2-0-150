@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static is_support_makeup:I = 0x7f0500e8
+.field public static is_support_makeup:I = 0x7f0500f1
 
-.field public static makeup_mode_support_tele_camera:I = 0x7f050122
+.field public static makeup_mode_support_tele_camera:I = 0x7f05012c
 
-.field public static makeup_mode_support_wide_camera:I = 0x7f050123
+.field public static makeup_mode_support_wide_camera:I = 0x7f05012d
 
-.field public static show_dot_view_guide:I = 0x7f05018a
+.field public static show_dot_view_guide:I = 0x7f050195
 
 
 # direct methods

@@ -85,7 +85,7 @@
 
     move-result-object v1
 
-    .line 21
+    .line 17
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$filterIsInstance$$inlined$filter$2$2$1;->label:I
 
     const/4 v3, 0x1
@@ -110,10 +110,10 @@
     :cond_31
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 53
+    .line 49
     iget-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$filterIsInstance$$inlined$filter$2$2;->$this_unsafeFlow:Lkotlinx/coroutines/flow/FlowCollector;
 
-    .line 41
+    .line 37
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$filterIsInstance$$inlined$filter$2$2;->$klass$inlined:Lkotlin/reflect/KClass;
 
     invoke-interface {p0, p1}, Lkotlin/reflect/KClass;->isInstance(Ljava/lang/Object;)Z
@@ -122,7 +122,7 @@
 
     if-eqz p0, :cond_47
 
-    .line 223
+    .line 219
     iput v3, v0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$filterIsInstance$$inlined$filter$2$2$1;->label:I
 
     invoke-interface {p2, p1, v0}, Lkotlinx/coroutines/flow/FlowCollector;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -133,7 +133,7 @@
 
     return-object v1
 
-    .line 53
+    .line 49
     :cond_47
     :goto_47
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

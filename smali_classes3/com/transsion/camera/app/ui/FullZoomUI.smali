@@ -1173,31 +1173,6 @@
 .method private synthetic lambda$new$4(Ljava/lang/String;Ljava/lang/String;)V
     .registers 12
 
-    .line 183
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[onStatusChanged] key:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, ",value:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
     .line 184
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -1221,130 +1196,130 @@
 
     const/4 v8, 0x1
 
-    sparse-switch v0, :sswitch_data_534
+    sparse-switch v0, :sswitch_data_516
 
-    :goto_30
+    :goto_12
     move p1, v2
 
-    goto :goto_7e
+    goto :goto_60
 
-    :sswitch_32
+    :sswitch_14
     const-string v0, "key_super_anti_video"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_3b
+    if-nez p1, :cond_1d
 
-    goto :goto_30
+    goto :goto_12
 
-    :cond_3b
+    :cond_1d
     move p1, v1
 
-    goto :goto_7e
+    goto :goto_60
 
-    :sswitch_3d
+    :sswitch_1f
     const-string v0, "key_conflict_ui_state"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_46
+    if-nez p1, :cond_28
 
-    goto :goto_30
+    goto :goto_12
 
-    :cond_46
+    :cond_28
     move p1, v5
 
-    goto :goto_7e
+    goto :goto_60
 
-    :sswitch_48
+    :sswitch_2a
     const-string v0, "key_fun_video_record"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_51
+    if-nez p1, :cond_33
 
-    goto :goto_30
+    goto :goto_12
 
-    :cond_51
+    :cond_33
     move p1, v6
 
-    goto :goto_7e
+    goto :goto_60
 
-    :sswitch_53
+    :sswitch_35
     const-string v0, "key_wide_camera_item_seleccted"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_5c
+    if-nez p1, :cond_3e
 
-    goto :goto_30
+    goto :goto_12
 
-    :cond_5c
+    :cond_3e
     move p1, v3
 
-    goto :goto_7e
+    goto :goto_60
 
-    :sswitch_5e
+    :sswitch_40
     const-string v0, "key_exposure_time"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_67
+    if-nez p1, :cond_49
 
-    goto :goto_30
+    goto :goto_12
 
-    :cond_67
+    :cond_49
     move p1, v4
 
-    goto :goto_7e
+    goto :goto_60
 
-    :sswitch_69
+    :sswitch_4b
     const-string v0, "key_check_storage"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_72
+    if-nez p1, :cond_54
 
-    goto :goto_30
+    goto :goto_12
 
-    :cond_72
+    :cond_54
     move p1, v8
 
-    goto :goto_7e
+    goto :goto_60
 
-    :sswitch_74
+    :sswitch_56
     const-string v0, "key_vlog_correct_orientation"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_7d
+    if-nez p1, :cond_5f
 
-    goto :goto_30
+    goto :goto_12
 
-    :cond_7d
+    :cond_5f
     move p1, v7
 
-    :goto_7e
-    packed-switch p1, :pswitch_data_552
+    :goto_60
+    packed-switch p1, :pswitch_data_534
 
-    goto/16 :goto_533
+    goto/16 :goto_515
 
     .line 460
-    :pswitch_83
+    :pswitch_65
     const-string p1, "super"
 
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1373,150 +1348,182 @@
     return-void
 
     .line 292
-    :pswitch_9f
+    :pswitch_81
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
 
     move-result p1
 
-    sparse-switch p1, :sswitch_data_564
+    sparse-switch p1, :sswitch_data_546
 
-    :goto_a9
+    :goto_8b
     move v1, v2
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
-    :sswitch_ac
+    :sswitch_8e
     const-string/jumbo p1, "value_video_portrait_spot_panel_on"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_b6
+    if-nez p1, :cond_98
 
-    goto :goto_a9
+    goto :goto_8b
 
-    :cond_b6
+    :cond_98
     const/16 v1, 0x16
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
-    :sswitch_ba
+    :sswitch_9c
     const-string/jumbo p1, "value_long_exposure_ui_off"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_c4
+    if-nez p1, :cond_a6
 
-    goto :goto_a9
+    goto :goto_8b
 
-    :cond_c4
+    :cond_a6
     const/16 v1, 0x15
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
-    :sswitch_c8
+    :sswitch_aa
     const-string/jumbo p1, "value_timelapse_setting_ui_on"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_d2
+    if-nez p1, :cond_b4
 
-    goto :goto_a9
+    goto :goto_8b
 
-    :cond_d2
+    :cond_b4
     const/16 v1, 0x14
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
-    :sswitch_d6
+    :sswitch_b8
     const-string/jumbo p1, "value_dv_video_mode_bottom_ui_off"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_e0
+    if-nez p1, :cond_c2
 
-    goto :goto_a9
+    goto :goto_8b
 
-    :cond_e0
+    :cond_c2
     const/16 v1, 0x13
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
-    :sswitch_e4
+    :sswitch_c6
     const-string/jumbo p1, "value_ai_art_museum_ui_off"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_ee
+    if-nez p1, :cond_d0
 
-    goto :goto_a9
+    goto :goto_8b
 
-    :cond_ee
+    :cond_d0
     const/16 v1, 0x12
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
-    :sswitch_f2
+    :sswitch_d4
     const-string/jumbo p1, "value_timelapse_setting_ui_off"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_fc
+    if-nez p1, :cond_de
 
-    goto :goto_a9
+    goto :goto_8b
 
-    :cond_fc
+    :cond_de
     const/16 v1, 0x11
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
-    :sswitch_100
+    :sswitch_e2
     const-string/jumbo p1, "value_ai_art_museum_ui_on"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_10a
+    if-nez p1, :cond_ec
 
-    goto :goto_a9
+    goto :goto_8b
 
-    :cond_10a
+    :cond_ec
     const/16 v1, 0x10
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
-    :sswitch_10e
+    :sswitch_f0
     const-string/jumbo p1, "value_video_portrait_spot_panel_off"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_118
+    if-nez p1, :cond_fa
 
-    goto :goto_a9
+    goto :goto_8b
 
-    :cond_118
+    :cond_fa
     const/16 v1, 0xf
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
-    :sswitch_11c
+    :sswitch_fe
     const-string/jumbo p1, "value_zoomwheel_view_show"
+
+    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_108
+
+    goto :goto_8b
+
+    :cond_108
+    const/16 v1, 0xe
+
+    goto/16 :goto_1cb
+
+    :sswitch_10c
+    const-string/jumbo p1, "value_zoomwheel_view_hide"
+
+    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_117
+
+    goto/16 :goto_8b
+
+    :cond_117
+    const/16 v1, 0xd
+
+    goto/16 :goto_1cb
+
+    :sswitch_11b
+    const-string/jumbo p1, "value_facebeauty_ui_on"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1524,15 +1531,15 @@
 
     if-nez p1, :cond_126
 
-    goto :goto_a9
+    goto/16 :goto_8b
 
     :cond_126
-    const/16 v1, 0xe
+    const/16 v1, 0xc
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
     :sswitch_12a
-    const-string/jumbo p1, "value_zoomwheel_view_hide"
+    const-string/jumbo p1, "value_aigc_effect_ui_off"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1540,15 +1547,15 @@
 
     if-nez p1, :cond_135
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
     :cond_135
-    const/16 v1, 0xd
+    const/16 v1, 0xb
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
     :sswitch_139
-    const-string/jumbo p1, "value_facebeauty_ui_on"
+    const-string/jumbo p1, "value_facebeauty_ui_off"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1556,15 +1563,15 @@
 
     if-nez p1, :cond_144
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
     :cond_144
-    const/16 v1, 0xc
+    const/16 v1, 0xa
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
     :sswitch_148
-    const-string/jumbo p1, "value_aigc_effect_ui_off"
+    const-string/jumbo p1, "value_long_exposure_ui_on"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1572,15 +1579,15 @@
 
     if-nez p1, :cond_153
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
     :cond_153
-    const/16 v1, 0xb
+    const/16 v1, 0x9
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
     :sswitch_157
-    const-string/jumbo p1, "value_facebeauty_ui_off"
+    const-string/jumbo p1, "value_videoportrait_bar_show"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1588,15 +1595,15 @@
 
     if-nez p1, :cond_162
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
     :cond_162
-    const/16 v1, 0xa
+    const/16 v1, 0x8
 
-    goto/16 :goto_1e9
+    goto/16 :goto_1cb
 
     :sswitch_166
-    const-string/jumbo p1, "value_long_exposure_ui_on"
+    const-string/jumbo p1, "value_videoportrait_bar_hide"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1604,167 +1611,135 @@
 
     if-nez p1, :cond_171
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
     :cond_171
-    const/16 v1, 0x9
-
-    goto/16 :goto_1e9
-
-    :sswitch_175
-    const-string/jumbo p1, "value_videoportrait_bar_show"
-
-    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_180
-
-    goto/16 :goto_a9
-
-    :cond_180
-    const/16 v1, 0x8
-
-    goto/16 :goto_1e9
-
-    :sswitch_184
-    const-string/jumbo p1, "value_videoportrait_bar_hide"
-
-    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_18f
-
-    goto/16 :goto_a9
-
-    :cond_18f
     const/4 v1, 0x7
 
-    goto :goto_1e9
+    goto :goto_1cb
 
-    :sswitch_191
+    :sswitch_173
     const-string/jumbo p1, "value_video_filter_ui_on"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_1e9
+    if-nez p1, :cond_1cb
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
-    :sswitch_19c
+    :sswitch_17e
     const-string/jumbo p1, "value_video_filter_ui_off"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_1a7
+    if-nez p1, :cond_189
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
-    :cond_1a7
+    :cond_189
     move v1, v5
 
-    goto :goto_1e9
+    goto :goto_1cb
 
-    :sswitch_1a9
+    :sswitch_18b
     const-string/jumbo p1, "value_filter_ui_off_no_show"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_1b4
+    if-nez p1, :cond_196
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
-    :cond_1b4
+    :cond_196
     move v1, v6
 
-    goto :goto_1e9
+    goto :goto_1cb
 
-    :sswitch_1b6
+    :sswitch_198
     const-string/jumbo p1, "value_filter_ui_on"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_1c1
+    if-nez p1, :cond_1a3
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
-    :cond_1c1
+    :cond_1a3
     move v1, v3
 
-    goto :goto_1e9
+    goto :goto_1cb
 
-    :sswitch_1c3
+    :sswitch_1a5
     const-string/jumbo p1, "value_dv_video_mode_bottom_ui_on"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_1ce
+    if-nez p1, :cond_1b0
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
-    :cond_1ce
+    :cond_1b0
     move v1, v4
 
-    goto :goto_1e9
+    goto :goto_1cb
 
-    :sswitch_1d0
+    :sswitch_1b2
     const-string/jumbo p1, "value_filter_ui_off"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_1db
+    if-nez p1, :cond_1bd
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
-    :cond_1db
+    :cond_1bd
     move v1, v8
 
-    goto :goto_1e9
+    goto :goto_1cb
 
-    :sswitch_1dd
+    :sswitch_1bf
     const-string/jumbo p1, "value_aigc_effect_ui_on"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_1e8
+    if-nez p1, :cond_1ca
 
-    goto/16 :goto_a9
+    goto/16 :goto_8b
 
-    :cond_1e8
+    :cond_1ca
     move v1, v7
 
-    :cond_1e9
-    :goto_1e9
+    :cond_1cb
+    :goto_1cb
     const-wide/16 p1, 0x32
 
-    packed-switch v1, :pswitch_data_5c2
+    packed-switch v1, :pswitch_data_5a4
 
-    goto/16 :goto_533
+    goto/16 :goto_515
 
     .line 369
-    :pswitch_1f0
+    :pswitch_1d2
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mCurrentCameraId:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->isCameraFacingBack(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 370
     iput-boolean v8, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsVideoPortraitSpotPanelOn:Z
@@ -1775,7 +1750,7 @@
     return-void
 
     .line 421
-    :pswitch_1fe
+    :pswitch_1e0
     iput-boolean v7, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsLongExposureSettingUIShow:Z
 
     .line 422
@@ -1787,7 +1762,7 @@
     return-void
 
     .line 358
-    :pswitch_207
+    :pswitch_1e9
     iput-boolean v8, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsTimeLapseSettingUIShow:Z
 
     .line 359
@@ -1796,14 +1771,14 @@
     return-void
 
     .line 343
-    :pswitch_20d
+    :pswitch_1ef
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mCurrentCameraId:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->isCameraFacingBack(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 344
     iput-boolean v8, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsNeedAnimate:Z
@@ -1817,14 +1792,14 @@
     return-void
 
     .line 409
-    :pswitch_21e
+    :pswitch_200
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mCurrentCameraId:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->isCameraFacingBack(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 410
     iput-boolean v7, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mAIArtMuseumUIOn:Z
@@ -1841,7 +1816,7 @@
     return-void
 
     .line 362
-    :pswitch_231
+    :pswitch_213
     iput-boolean v7, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsTimeLapseSettingUIShow:Z
 
     .line 363
@@ -1850,7 +1825,7 @@
     .line 364
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    if-nez p1, :cond_533
+    if-nez p1, :cond_515
 
     .line 365
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
@@ -1858,7 +1833,7 @@
     return-void
 
     .line 400
-    :pswitch_23e
+    :pswitch_220
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -1876,14 +1851,14 @@
     return-void
 
     .line 375
-    :pswitch_250
+    :pswitch_232
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mCurrentCameraId:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->isCameraFacingBack(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 376
     iput-boolean v7, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsVideoPortraitSpotPanelOn:Z
@@ -1894,7 +1869,7 @@
     return-void
 
     .line 350
-    :pswitch_25e
+    :pswitch_240
     iput-boolean v7, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIfNeedShow:Z
 
     .line 351
@@ -1903,7 +1878,7 @@
     return-void
 
     .line 354
-    :pswitch_263
+    :pswitch_245
     iput-boolean v8, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIfNeedShow:Z
 
     .line 355
@@ -1912,14 +1887,14 @@
     return-void
 
     .line 322
-    :pswitch_268
+    :pswitch_24a
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mCurrentCameraId:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->isCameraFacingBack(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 323
     iput-boolean v8, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFaceBeautyOn:Z
@@ -1933,7 +1908,7 @@
     return-void
 
     .line 390
-    :pswitch_278
+    :pswitch_25a
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -1951,14 +1926,14 @@
     return-void
 
     .line 329
-    :pswitch_28a
+    :pswitch_26c
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mCurrentCameraId:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->isCameraFacingBack(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 330
     iput-boolean v7, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFaceBeautyOn:Z
@@ -1975,7 +1950,7 @@
     return-void
 
     .line 417
-    :pswitch_29d
+    :pswitch_27f
     iput-boolean v8, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsLongExposureSettingUIShow:Z
 
     .line 418
@@ -1984,7 +1959,7 @@
     return-void
 
     .line 308
-    :pswitch_2a3
+    :pswitch_285
     iput-boolean v8, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsVideoPortraitBarOn:Z
 
     .line 309
@@ -1997,7 +1972,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 311
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
@@ -2005,7 +1980,7 @@
     return-void
 
     .line 315
-    :pswitch_2b3
+    :pswitch_295
     iput-boolean v7, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsVideoPortraitBarOn:Z
 
     .line 316
@@ -2018,7 +1993,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 318
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
@@ -2026,7 +2001,7 @@
     return-void
 
     .line 295
-    :pswitch_2c3
+    :pswitch_2a5
     iput-boolean v8, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFilterUIOn:Z
 
     .line 296
@@ -2038,14 +2013,14 @@
     return-void
 
     .line 337
-    :pswitch_2cb
+    :pswitch_2ad
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mCurrentCameraId:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->isCameraFacingBack(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 338
     iput-boolean v8, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsNeedAnimate:Z
@@ -2056,7 +2031,7 @@
     return-void
 
     .line 302
-    :pswitch_2d9
+    :pswitch_2bb
     iput-boolean v7, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFilterUIOn:Z
 
     .line 303
@@ -2071,7 +2046,7 @@
     return-void
 
     .line 381
-    :pswitch_2e4
+    :pswitch_2c6
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -2089,14 +2064,14 @@
     return-void
 
     .line 440
-    :pswitch_2f6
+    :pswitch_2d8
     const-string/jumbo p1, "value_fun_video_start_recording"
 
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_313
+    if-eqz p1, :cond_2f5
 
     .line 441
     iput-boolean v8, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
@@ -2119,7 +2094,7 @@
     return-void
 
     .line 444
-    :cond_313
+    :cond_2f5
     iput-boolean v7, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
     .line 445
@@ -2140,28 +2115,28 @@
     return-void
 
     .line 186
-    :pswitch_327
+    :pswitch_309
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
-    if-eq v8, p1, :cond_332
+    if-eq v8, p1, :cond_314
 
-    if-eq v6, p1, :cond_332
+    if-eq v6, p1, :cond_314
 
-    if-ne v5, p1, :cond_330
+    if-ne v5, p1, :cond_312
 
-    goto :goto_332
+    goto :goto_314
 
-    :cond_330
+    :cond_312
     move p1, v7
 
-    goto :goto_333
+    goto :goto_315
 
-    :cond_332
-    :goto_332
+    :cond_314
+    :goto_314
     move p1, v8
 
     .line 189
-    :goto_333
+    :goto_315
     const-string/jumbo v0, "value_wide_camera_item_first_zoom_seleccted"
 
     invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -2170,7 +2145,7 @@
 
     const-string v1, "com.transsion.camera.feature.mode.autoscenedetection.ASDModeEntry"
 
-    if-eqz v0, :cond_35c
+    if-eqz v0, :cond_33e
 
     .line 190
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->AsdSupportFiveItems()Z
@@ -2184,104 +2159,104 @@
 
     move-result v1
 
-    if-eqz p1, :cond_34e
+    if-eqz p1, :cond_330
 
     .line 192
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-eq p1, v4, :cond_352
+    if-eq p1, v4, :cond_334
 
-    :cond_34e
-    if-eqz v0, :cond_357
+    :cond_330
+    if-eqz v0, :cond_339
 
-    if-eqz v1, :cond_357
+    if-eqz v1, :cond_339
 
     .line 193
-    :cond_352
+    :cond_334
     invoke-direct {p0, v8}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
     .line 195
-    :cond_357
+    :cond_339
     invoke-direct {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
     .line 197
-    :cond_35c
+    :cond_33e
     const-string/jumbo v0, "value_wide_camera_item_second_zoom_seleccted"
 
     invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_390
+    if-eqz v0, :cond_372
 
-    if-eqz p1, :cond_375
+    if-eqz p1, :cond_357
 
     .line 199
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne p1, v4, :cond_370
+    if-ne p1, v4, :cond_352
 
     .line 200
     invoke-direct {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
     .line 202
-    :cond_370
+    :cond_352
     invoke-direct {p0, v2}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
     .line 204
-    :cond_375
+    :cond_357
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne p1, v5, :cond_384
+    if-ne p1, v5, :cond_366
 
     .line 205
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->currentFocalLengthMode()Z
 
     move-result p1
 
-    if-eqz p1, :cond_4aa
+    if-eqz p1, :cond_48c
 
     .line 206
     invoke-direct {p0, v6}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
-    :cond_384
-    if-ne p1, v6, :cond_38b
+    :cond_366
+    if-ne p1, v6, :cond_36d
 
     .line 210
     invoke-direct {p0, v3}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
     .line 212
-    :cond_38b
+    :cond_36d
     invoke-direct {p0, v8}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
     .line 215
-    :cond_390
+    :cond_372
     const-string/jumbo v0, "value_wide_camera_item_second_zoom_animation"
 
     invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b0
+    if-eqz v0, :cond_392
 
     .line 216
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne p1, v5, :cond_4aa
+    if-ne p1, v5, :cond_48c
 
     .line 217
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->AsdSupportFiveItems()Z
@@ -2295,24 +2270,24 @@
 
     move-result v0
 
-    if-eqz p1, :cond_4aa
+    if-eqz p1, :cond_48c
 
-    if-eqz v0, :cond_4aa
+    if-eqz v0, :cond_48c
 
     .line 220
     invoke-direct {p0, v4}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
     .line 223
-    :cond_3b0
+    :cond_392
     const-string/jumbo v0, "value_wide_camera_item_wide_cam_seleccted"
 
     invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3d4
+    if-eqz v0, :cond_3b6
 
     .line 224
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->AsdSupportFiveItems()Z
@@ -2326,219 +2301,219 @@
 
     move-result v1
 
-    if-eqz v0, :cond_3cc
+    if-eqz v0, :cond_3ae
 
-    if-eqz v1, :cond_3cc
+    if-eqz v1, :cond_3ae
 
     .line 227
     invoke-direct {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
-    :cond_3cc
-    if-eqz p1, :cond_3cf
+    :cond_3ae
+    if-eqz p1, :cond_3b1
 
     move v2, v8
 
     .line 229
-    :cond_3cf
+    :cond_3b1
     invoke-direct {p0, v2}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
     .line 231
-    :cond_3d4
+    :cond_3b6
     const-string/jumbo v0, "value_macro_camera_item_second_zoom_seleccted"
 
     invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3fc
+    if-eqz v0, :cond_3de
 
     .line 232
     iget v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne v0, v4, :cond_3e7
+    if-ne v0, v4, :cond_3c9
 
     xor-int/2addr p1, v8
 
     .line 233
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
-    :cond_3e7
-    if-ne v0, v3, :cond_3ee
+    :cond_3c9
+    if-ne v0, v3, :cond_3d0
 
     .line 235
     invoke-direct {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
-    :cond_3ee
-    if-ne v0, v6, :cond_3f5
+    :cond_3d0
+    if-ne v0, v6, :cond_3d7
 
     .line 237
     invoke-direct {p0, v8}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
-    :cond_3f5
-    if-ne v0, v5, :cond_4aa
+    :cond_3d7
+    if-ne v0, v5, :cond_48c
 
     .line 239
     invoke-direct {p0, v4}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
     .line 241
-    :cond_3fc
+    :cond_3de
     const-string/jumbo v0, "value_macro_camera_item_zoom_seleccted"
 
     invoke-static {v0, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_41f
+    if-eqz v0, :cond_401
 
     .line 242
     iget v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne v0, v4, :cond_40e
+    if-ne v0, v4, :cond_3f0
 
     .line 243
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
-    :cond_40e
-    if-ne v0, v3, :cond_418
+    :cond_3f0
+    if-ne v0, v3, :cond_3fa
 
-    if-eqz p1, :cond_413
+    if-eqz p1, :cond_3f5
 
     move v2, v8
 
     .line 245
-    :cond_413
+    :cond_3f5
     invoke-direct {p0, v2}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
-    :cond_418
-    if-ne v0, v6, :cond_4aa
+    :cond_3fa
+    if-ne v0, v6, :cond_48c
 
     .line 247
     invoke-direct {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
     .line 249
-    :cond_41f
+    :cond_401
     const-string/jumbo p1, "value_focal_camera_item_third_zoom_seleccted"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_43f
+    if-eqz p1, :cond_421
 
     .line 250
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne p1, v6, :cond_431
+    if-ne p1, v6, :cond_413
 
     .line 251
     invoke-direct {p0, v4}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
-    :cond_431
-    if-ne p1, v3, :cond_438
+    :cond_413
+    if-ne p1, v3, :cond_41a
 
     .line 253
     invoke-direct {p0, v8}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
-    :cond_438
-    if-ne p1, v5, :cond_4aa
+    :cond_41a
+    if-ne p1, v5, :cond_48c
 
     .line 255
     invoke-direct {p0, v3}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto/16 :goto_4aa
+    goto/16 :goto_48c
 
     .line 257
-    :cond_43f
+    :cond_421
     const-string/jumbo p1, "value_macro_camera_item_street_photo_first_zoom_seleccted"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_456
+    if-eqz p1, :cond_438
 
     .line 258
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne p1, v5, :cond_450
+    if-ne p1, v5, :cond_432
 
     .line 259
     invoke-direct {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto :goto_4aa
+    goto :goto_48c
 
-    :cond_450
-    if-ne p1, v6, :cond_4aa
+    :cond_432
+    if-ne p1, v6, :cond_48c
 
     .line 261
     invoke-direct {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto :goto_4aa
+    goto :goto_48c
 
     .line 263
-    :cond_456
+    :cond_438
     const-string/jumbo p1, "value_macro_camera_item_street_photo_second_zoom_seleccted"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_46d
+    if-eqz p1, :cond_44f
 
     .line 264
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne p1, v5, :cond_467
+    if-ne p1, v5, :cond_449
 
     .line 265
     invoke-direct {p0, v8}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto :goto_4aa
+    goto :goto_48c
 
-    :cond_467
-    if-ne p1, v6, :cond_4aa
+    :cond_449
+    if-ne p1, v6, :cond_48c
 
     .line 267
     invoke-direct {p0, v8}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto :goto_4aa
+    goto :goto_48c
 
     .line 269
-    :cond_46d
+    :cond_44f
     const-string/jumbo p1, "value_wide_camera_item_tele_zoom_selected"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_48c
+    if-eqz p1, :cond_46e
 
     .line 270
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne p1, v5, :cond_4aa
+    if-ne p1, v5, :cond_48c
 
     .line 271
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->AsdSupportFiveItems()Z
@@ -2552,29 +2527,29 @@
 
     move-result v0
 
-    if-eqz p1, :cond_4aa
+    if-eqz p1, :cond_48c
 
-    if-eqz v0, :cond_4aa
+    if-eqz v0, :cond_48c
 
     .line 274
     invoke-direct {p0, v3}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
-    goto :goto_4aa
+    goto :goto_48c
 
     .line 277
-    :cond_48c
+    :cond_46e
     const-string/jumbo p1, "value_wide_camera_item_tele_second_zoom_selected"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_4aa
+    if-eqz p1, :cond_48c
 
     .line 278
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne p1, v5, :cond_4aa
+    if-ne p1, v5, :cond_48c
 
     .line 279
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->AsdSupportFiveItems()Z
@@ -2588,23 +2563,23 @@
 
     move-result v0
 
-    if-eqz p1, :cond_4aa
+    if-eqz p1, :cond_48c
 
-    if-eqz v0, :cond_4aa
+    if-eqz v0, :cond_48c
 
     .line 282
     invoke-direct {p0, v6}, Lcom/transsion/camera/app/ui/FullZoomUI;->startTranslateXWithAnimation(I)V
 
     .line 286
-    :cond_4aa
-    :goto_4aa
+    :cond_48c
+    :goto_48c
     const-string/jumbo p1, "value_send_current_view_status"
 
     invoke-static {p1, p2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
 
@@ -2612,14 +2587,14 @@
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 287
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->currentFocalLengthMode()Z
 
     move-result p1
 
-    if-nez p1, :cond_533
+    if-nez p1, :cond_515
 
     .line 288
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateZoomLayoutStyle()V
@@ -2627,20 +2602,20 @@
     return-void
 
     .line 430
-    :pswitch_4c5
+    :pswitch_4a7
     iput-object p2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mExposureTime:Ljava/lang/String;
 
     return-void
 
     .line 433
-    :pswitch_4c8
+    :pswitch_4aa
     const-string/jumbo p1, "value_storage_sufficient"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 434
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
@@ -2649,11 +2624,11 @@
 
     move-result p1
 
-    if-nez p1, :cond_533
+    if-nez p1, :cond_515
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 435
     new-instance p1, Landroid/os/Handler;
@@ -2673,7 +2648,7 @@
     return-void
 
     .line 464
-    :pswitch_4ef
+    :pswitch_4d1
     const-string p1, "com.transsion.camera.feature.mode.vlog.VlogModeEntry"
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
@@ -2682,7 +2657,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_533
+    if-eqz p1, :cond_515
 
     .line 465
     const-string p1, ","
@@ -2696,7 +2671,7 @@
 
     move-result v0
 
-    if-eq v0, v4, :cond_51c
+    if-eq v0, v4, :cond_4fe
 
     .line 467
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -2720,7 +2695,7 @@
     return-void
 
     .line 471
-    :cond_51c
+    :cond_4fe
     invoke-interface {p1, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p2
@@ -2745,91 +2720,91 @@
     .line 473
     invoke-direct {p0, p2, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->setOrientation(IZ)V
 
-    :cond_533
-    :goto_533
+    :cond_515
+    :goto_515
     return-void
 
-    :sswitch_data_534
+    :sswitch_data_516
     .sparse-switch
-        -0x76350356 -> :sswitch_74
-        -0x581e5b9c -> :sswitch_69
-        0x1964f925 -> :sswitch_5e
-        0x47dd8aea -> :sswitch_53
-        0x4be4d535 -> :sswitch_48
-        0x50497713 -> :sswitch_3d
-        0x7ddb1282 -> :sswitch_32
+        -0x76350356 -> :sswitch_56
+        -0x581e5b9c -> :sswitch_4b
+        0x1964f925 -> :sswitch_40
+        0x47dd8aea -> :sswitch_35
+        0x4be4d535 -> :sswitch_2a
+        0x50497713 -> :sswitch_1f
+        0x7ddb1282 -> :sswitch_14
     .end sparse-switch
 
-    :pswitch_data_552
+    :pswitch_data_534
     .packed-switch 0x0
-        :pswitch_4ef
-        :pswitch_4c8
-        :pswitch_4c5
-        :pswitch_327
-        :pswitch_2f6
-        :pswitch_9f
-        :pswitch_83
+        :pswitch_4d1
+        :pswitch_4aa
+        :pswitch_4a7
+        :pswitch_309
+        :pswitch_2d8
+        :pswitch_81
+        :pswitch_65
     .end packed-switch
 
-    :sswitch_data_564
+    :sswitch_data_546
     .sparse-switch
-        -0x7b2286b7 -> :sswitch_1dd
-        -0x71d81a63 -> :sswitch_1d0
-        -0x68523a71 -> :sswitch_1c3
-        -0x66c4e80f -> :sswitch_1b6
-        -0x593d69e7 -> :sswitch_1a9
-        -0x48d6b4a7 -> :sswitch_19c
-        -0x3c27f54b -> :sswitch_191
-        -0x24caae7b -> :sswitch_184
-        -0x24c5b0c0 -> :sswitch_175
-        0x3750687 -> :sswitch_166
-        0x6a3b3dc -> :sswitch_157
-        0x16d1af45 -> :sswitch_148
-        0x18fd05d2 -> :sswitch_139
-        0x275812b7 -> :sswitch_12a
-        0x275d1072 -> :sswitch_11c
-        0x276804c9 -> :sswitch_10e
-        0x2baa12c2 -> :sswitch_100
-        0x47a78cc0 -> :sswitch_f2
-        0x499844ec -> :sswitch_e4
-        0x5e0aebbf -> :sswitch_d6
-        0x6568806e -> :sswitch_c8
-        0x6b2bc9c7 -> :sswitch_ba
-        0x7d246345 -> :sswitch_ac
+        -0x7b2286b7 -> :sswitch_1bf
+        -0x71d81a63 -> :sswitch_1b2
+        -0x68523a71 -> :sswitch_1a5
+        -0x66c4e80f -> :sswitch_198
+        -0x593d69e7 -> :sswitch_18b
+        -0x48d6b4a7 -> :sswitch_17e
+        -0x3c27f54b -> :sswitch_173
+        -0x24caae7b -> :sswitch_166
+        -0x24c5b0c0 -> :sswitch_157
+        0x3750687 -> :sswitch_148
+        0x6a3b3dc -> :sswitch_139
+        0x16d1af45 -> :sswitch_12a
+        0x18fd05d2 -> :sswitch_11b
+        0x275812b7 -> :sswitch_10c
+        0x275d1072 -> :sswitch_fe
+        0x276804c9 -> :sswitch_f0
+        0x2baa12c2 -> :sswitch_e2
+        0x47a78cc0 -> :sswitch_d4
+        0x499844ec -> :sswitch_c6
+        0x5e0aebbf -> :sswitch_b8
+        0x6568806e -> :sswitch_aa
+        0x6b2bc9c7 -> :sswitch_9c
+        0x7d246345 -> :sswitch_8e
     .end sparse-switch
 
-    :pswitch_data_5c2
+    :pswitch_data_5a4
     .packed-switch 0x0
-        :pswitch_2e4
-        :pswitch_2d9
-        :pswitch_2cb
-        :pswitch_2c3
-        :pswitch_2d9
-        :pswitch_2d9
-        :pswitch_2c3
-        :pswitch_2b3
-        :pswitch_2a3
-        :pswitch_29d
-        :pswitch_28a
-        :pswitch_278
-        :pswitch_268
-        :pswitch_263
-        :pswitch_25e
-        :pswitch_250
-        :pswitch_23e
-        :pswitch_231
-        :pswitch_21e
-        :pswitch_20d
-        :pswitch_207
-        :pswitch_1fe
-        :pswitch_1f0
+        :pswitch_2c6
+        :pswitch_2bb
+        :pswitch_2ad
+        :pswitch_2a5
+        :pswitch_2bb
+        :pswitch_2bb
+        :pswitch_2a5
+        :pswitch_295
+        :pswitch_285
+        :pswitch_27f
+        :pswitch_26c
+        :pswitch_25a
+        :pswitch_24a
+        :pswitch_245
+        :pswitch_240
+        :pswitch_232
+        :pswitch_220
+        :pswitch_213
+        :pswitch_200
+        :pswitch_1ef
+        :pswitch_1e9
+        :pswitch_1e0
+        :pswitch_1d2
     .end packed-switch
 .end method
 
 .method private synthetic lambda$notifyCameraOperateActionToUI$10()V
     .registers 4
 
-    .line 1946
+    .line 1937
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mShouldShow:Z
 
     if-eqz v0, :cond_1b
@@ -2854,7 +2829,7 @@
 
     if-nez v0, :cond_1b
 
-    .line 1947
+    .line 1938
     :cond_18
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
 
@@ -2865,7 +2840,7 @@
 .method private synthetic lambda$notifyCameraOperateActionToUI$11()V
     .registers 4
 
-    .line 1956
+    .line 1947
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mShouldShow:Z
 
     if-eqz v0, :cond_1b
@@ -2890,7 +2865,7 @@
 
     if-nez v0, :cond_1b
 
-    .line 1957
+    .line 1948
     :cond_18
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
 
@@ -2901,7 +2876,7 @@
 .method private synthetic lambda$notifyCameraOperateActionToUI$12()V
     .registers 4
 
-    .line 1979
+    .line 1970
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mShouldShow:Z
 
     if-eqz v0, :cond_1b
@@ -2926,7 +2901,7 @@
 
     if-nez v0, :cond_1b
 
-    .line 1980
+    .line 1971
     :cond_18
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
 
@@ -2937,7 +2912,7 @@
 .method private synthetic lambda$notifyCameraOperateActionToUI$6(I)V
     .registers 3
 
-    .line 1663
+    .line 1669
     new-instance v0, Lcom/transsion/camera/app/ui/FullZoomUI$7;
 
     invoke-direct {v0, p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI$7;-><init>(Lcom/transsion/camera/app/ui/FullZoomUI;I)V
@@ -2952,7 +2927,7 @@
 .method private synthetic lambda$notifyCameraOperateActionToUI$7()V
     .registers 3
 
-    .line 1704
+    .line 1707
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
 
     if-nez v0, :cond_17
@@ -2969,15 +2944,15 @@
 
     const/4 v0, 0x0
 
-    .line 1705
+    .line 1708
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsNeedAnimate:Z
 
     const/4 v0, 0x1
 
-    .line 1706
+    .line 1709
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->show(Z)V
 
-    .line 1707
+    .line 1710
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
 
     :cond_17
@@ -2987,7 +2962,7 @@
 .method private synthetic lambda$notifyCameraOperateActionToUI$8()V
     .registers 3
 
-    .line 1713
+    .line 1716
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
 
     if-nez v0, :cond_14
@@ -3004,10 +2979,10 @@
 
     const/4 v0, 0x1
 
-    .line 1714
+    .line 1717
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->show(Z)V
 
-    .line 1715
+    .line 1718
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
 
     :cond_14
@@ -3017,7 +2992,7 @@
 .method private synthetic lambda$notifyCameraOperateActionToUI$9()V
     .registers 4
 
-    .line 1887
+    .line 1878
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mShouldShow:Z
 
     if-eqz v0, :cond_1f
@@ -3032,7 +3007,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
 
-    .line 1888
+    .line 1879
     invoke-virtual {v1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -3047,7 +3022,7 @@
 
     if-nez v0, :cond_1f
 
-    .line 1889
+    .line 1880
     :cond_1c
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
 
@@ -3383,14 +3358,14 @@
 .method private runFullZoomUIRotateAnimator()V
     .registers 8
 
-    .line 2279
+    .line 2270
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 2282
+    .line 2273
     :cond_5
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomIn:Landroid/animation/ObjectAnimator;
 
@@ -3402,12 +3377,12 @@
 
     if-eqz v0, :cond_14
 
-    .line 2283
+    .line 2274
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomIn:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 2285
+    .line 2276
     :cond_14
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomOut:Landroid/animation/ObjectAnimator;
 
@@ -3419,12 +3394,12 @@
 
     if-eqz v0, :cond_23
 
-    .line 2286
+    .line 2277
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 2289
+    .line 2280
     :cond_23
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
 
@@ -3452,7 +3427,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomOut:Landroid/animation/ObjectAnimator;
 
-    .line 2290
+    .line 2281
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
 
     new-array v1, v1, [F
@@ -3471,17 +3446,17 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomIn:Landroid/animation/ObjectAnimator;
 
-    .line 2291
+    .line 2282
     sget-object v1, Lcom/transsion/camera/app/ui/FullZoomUI;->ROTATE_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2292
+    .line 2283
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2293
+    .line 2284
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomOut:Landroid/animation/ObjectAnimator;
 
     new-instance v1, Lcom/transsion/camera/app/ui/FullZoomUI$9;
@@ -3490,7 +3465,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2305
+    .line 2296
     iget-object p0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
@@ -4056,33 +4031,6 @@
 .method private unSupportZoomingMode(Ljava/lang/String;)Z
     .registers 7
 
-    .line 489
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[unSupportZoomingMode] = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, ",mIsSuperAntiVideoOn"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsSuperAntiVideoOn:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
     .line 490
     sget-object v0, Lcom/transsion/camera/utils/CameraConstant;->UNSUPPORTZOOMINGMAP:Ljava/util/HashMap;
 
@@ -4094,69 +4042,69 @@
 
     const/4 v1, 0x1
 
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_c
 
     move p1, v0
 
-    goto :goto_2d
+    goto :goto_d
 
-    :cond_2c
+    :cond_c
     move p1, v1
 
     .line 493
-    :goto_2d
+    :goto_d
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mContentRoot:Lcom/transsion/camera/app/ui/widget/HorizontalAverageLayout;
 
-    if-eqz v2, :cond_46
+    if-eqz v2, :cond_26
 
-    if-eqz p1, :cond_3e
+    if-eqz p1, :cond_1e
 
     .line 494
     iget-boolean v3, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInVideoMode:Z
 
-    if-eqz v3, :cond_3c
+    if-eqz v3, :cond_1c
 
     iget-boolean v3, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsSuperAntiVideoOn:Z
 
-    if-eqz v3, :cond_3c
+    if-eqz v3, :cond_1c
 
-    goto :goto_3e
+    goto :goto_1e
 
-    :cond_3c
+    :cond_1c
     move v3, v0
 
-    goto :goto_3f
+    goto :goto_1f
 
-    :cond_3e
-    :goto_3e
+    :cond_1e
+    :goto_1e
     move v3, v1
 
-    :goto_3f
+    :goto_1f
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->currentFocalLengthMode()Z
 
     move-result v4
 
     invoke-virtual {v2, v3, v4}, Lcom/transsion/camera/app/ui/widget/HorizontalAverageLayout;->setUnSupportZoomingStatus(ZZ)V
 
-    :cond_46
-    if-eqz p1, :cond_52
+    :cond_26
+    if-eqz p1, :cond_32
 
     .line 496
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInVideoMode:Z
 
-    if-eqz p1, :cond_51
+    if-eqz p1, :cond_31
 
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsSuperAntiVideoOn:Z
 
-    if-eqz p0, :cond_51
+    if-eqz p0, :cond_31
 
-    goto :goto_52
+    goto :goto_32
 
-    :cond_51
+    :cond_31
     return v0
 
-    :cond_52
-    :goto_52
+    :cond_32
+    :goto_32
     return v1
 .end method
 
@@ -4646,7 +4594,7 @@
 .method private updateFullZoomUILayout(ZI)V
     .registers 9
 
-    .line 2061
+    .line 2052
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
@@ -4657,12 +4605,12 @@
 
     if-ne v0, v1, :cond_10
 
-    .line 2062
+    .line 2053
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
     if-eqz v0, :cond_10
 
-    .line 2063
+    .line 2054
     iget v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mRecordingOrientation:I
 
     goto :goto_11
@@ -4670,20 +4618,20 @@
     :cond_10
     move v0, p2
 
-    .line 2067
+    .line 2058
     :goto_11
     iget v2, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
     invoke-direct {p0, v0, v2}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateZoomContainerLayout(II)V
 
-    .line 2069
+    .line 2060
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
 
     if-nez v0, :cond_1b
 
     goto :goto_4d
 
-    .line 2074
+    .line 2065
     :cond_1b
     iget v2, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
@@ -4706,12 +4654,12 @@
     :cond_28
     if-ne v1, v2, :cond_35
 
-    .line 2080
+    .line 2071
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
     if-eqz v1, :cond_35
 
-    .line 2081
+    .line 2072
     iget p2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mRecordingOrientation:I
 
     move p1, v4
@@ -4724,7 +4672,7 @@
 
     move p1, v3
 
-    .line 2095
+    .line 2086
     :cond_35
     :goto_35
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -4734,19 +4682,19 @@
     :goto_39
     if-ge v3, v0, :cond_4d
 
-    .line 2097
+    .line 2088
     iget-object v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 2098
+    .line 2089
     instance-of v2, v1, Lcom/transsion/camera/app/ui/widget/IRotatable;
 
     if-eqz v2, :cond_4a
 
-    .line 2099
+    .line 2090
     check-cast v1, Lcom/transsion/camera/app/ui/widget/IRotatable;
 
     invoke-interface {v1, p2, p1}, Lcom/transsion/camera/app/ui/widget/IRotatable;->setOrientation(IZ)V
@@ -4764,7 +4712,7 @@
 .method private updateHorizontalLayout(I)V
     .registers 4
 
-    .line 2264
+    .line 2255
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4775,7 +4723,7 @@
 
     if-eqz p1, :cond_18
 
-    .line 2265
+    .line 2256
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
     const/4 v1, 0x2
@@ -4791,12 +4739,12 @@
 
     const/16 p1, 0x11
 
-    .line 2273
+    .line 2264
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     goto :goto_29
 
-    .line 2267
+    .line 2258
     :cond_18
     :goto_18
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mOrientation:I
@@ -4807,7 +4755,7 @@
 
     const p1, 0x800013
 
-    .line 2268
+    .line 2259
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     goto :goto_29
@@ -4815,10 +4763,10 @@
     :cond_24
     const p1, 0x800015
 
-    .line 2270
+    .line 2261
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2275
+    .line 2266
     :cond_29
     :goto_29
     iget-object p0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
@@ -5031,7 +4979,7 @@
 .method private updateRootViewLayout(I)V
     .registers 6
 
-    .line 2241
+    .line 2232
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
 
     if-eqz v0, :cond_60
@@ -5042,7 +4990,7 @@
 
     goto :goto_60
 
-    .line 2244
+    .line 2235
     :cond_9
     iget v2, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mBottomBarHeight:I
 
@@ -5073,7 +5021,7 @@
 
     goto :goto_38
 
-    .line 2257
+    .line 2248
     :cond_1e
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInVlogMode:Z
 
@@ -5091,7 +5039,7 @@
 
     goto :goto_4b
 
-    .line 2258
+    .line 2249
     :cond_2d
     invoke-virtual {v0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
@@ -5115,7 +5063,7 @@
     :goto_3a
     if-nez p1, :cond_44
 
-    .line 2248
+    .line 2239
     sget p1, Lcom/transsion/camera/R$dimen;->full_zoom_root_margin_bottom_normal:I
 
     invoke-virtual {v1, p1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -5127,7 +5075,7 @@
 
     goto :goto_4b
 
-    .line 2250
+    .line 2241
     :cond_44
     sget p1, Lcom/transsion/camera/R$dimen;->full_zoom_root_margin_bottom_column:I
 
@@ -5137,7 +5085,7 @@
 
     goto :goto_42
 
-    .line 2260
+    .line 2251
     :goto_4b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
 
@@ -5167,18 +5115,18 @@
 .method private updateZoomContainerLayout(II)V
     .registers 15
 
-    .line 2105
+    .line 2096
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    if-eqz v0, :cond_289
+    if-eqz v0, :cond_217
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     if-nez v1, :cond_a
 
-    goto/16 :goto_289
+    goto/16 :goto_217
 
-    .line 2109
+    .line 2100
     :cond_a
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -5188,10 +5136,10 @@
 
     const/4 v1, 0x0
 
-    .line 2110
+    .line 2101
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 2111
+    .line 2102
     iput p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mLastOrientation:I
 
     const/4 v2, 0x1
@@ -5214,7 +5162,7 @@
 
     const/4 v11, 0x2
 
-    if-ne p2, v2, :cond_109
+    if-ne p2, v2, :cond_108
 
     if-eq p1, v7, :cond_cd
 
@@ -5224,10 +5172,10 @@
 
     const/16 v2, 0x53
 
-    .line 2150
+    .line 2141
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2151
+    .line 2142
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->zoom_root_expand_start_margin:I
@@ -5238,12 +5186,12 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 2152
+    .line 2143
     iget v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
     if-ne v2, v11, :cond_4d
 
-    .line 2153
+    .line 2144
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->zoom_root_2_items_expand_0_bottom_margin:I
@@ -5259,7 +5207,7 @@
     :cond_4d
     if-ne v2, v10, :cond_5b
 
-    .line 2155
+    .line 2146
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->zoom_root_4_items_expand_0_bottom_margin:I
@@ -5272,7 +5220,7 @@
 
     goto/16 :goto_ff
 
-    .line 2157
+    .line 2148
     :cond_5b
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
@@ -5286,16 +5234,16 @@
 
     goto/16 :goto_ff
 
-    .line 2137
+    .line 2128
     :cond_67
     iput v6, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2138
+    .line 2129
     iget v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
     if-ne v2, v11, :cond_78
 
-    .line 2139
+    .line 2130
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->zoom_root_2_items_expand_90_bottom_margin:I
@@ -5311,7 +5259,7 @@
     :cond_78
     if-ne v2, v10, :cond_85
 
-    .line 2141
+    .line 2132
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->zoom_root_4_items_expand_90_bottom_margin:I
@@ -5324,7 +5272,7 @@
 
     goto :goto_8f
 
-    .line 2143
+    .line 2134
     :cond_85
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
@@ -5336,7 +5284,7 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 2145
+    .line 2136
     :goto_8f
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
@@ -5350,11 +5298,11 @@
 
     goto :goto_ff
 
-    .line 2126
+    .line 2117
     :cond_9a
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2127
+    .line 2118
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->zoom_root_expand_start_margin:I
@@ -5365,12 +5313,12 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 2128
+    .line 2119
     iget v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
     if-ne v2, v11, :cond_b5
 
-    .line 2129
+    .line 2120
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->zoom_root_2_items_expand_0_bottom_margin:I
@@ -5386,7 +5334,7 @@
     :cond_b5
     if-ne v2, v10, :cond_c2
 
-    .line 2131
+    .line 2122
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->zoom_root_4_items_expand_0_bottom_margin:I
@@ -5399,7 +5347,7 @@
 
     goto :goto_ff
 
-    .line 2133
+    .line 2124
     :cond_c2
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
@@ -5413,16 +5361,16 @@
 
     goto :goto_ff
 
-    .line 2115
+    .line 2106
     :cond_cd
     iput v4, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2116
+    .line 2107
     iget v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
     if-ne v2, v11, :cond_de
 
-    .line 2117
+    .line 2108
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->zoom_root_2_items_expand_90_bottom_margin:I
@@ -5438,7 +5386,7 @@
     :cond_de
     if-ne v2, v10, :cond_eb
 
-    .line 2119
+    .line 2110
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->zoom_root_4_items_expand_90_bottom_margin:I
@@ -5451,7 +5399,7 @@
 
     goto :goto_f5
 
-    .line 2121
+    .line 2112
     :cond_eb
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
@@ -5463,7 +5411,7 @@
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 2123
+    .line 2114
     :goto_f5
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
@@ -5476,228 +5424,228 @@
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     :goto_ff
-    add-int/lit16 p1, p1, 0x10e
+    add-int/2addr p1, v8
 
-    .line 2161
+    .line 2152
     rem-int/2addr p1, v3
 
-    .line 2162
+    .line 2153
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v2, p1, v1}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    goto/16 :goto_205
+    goto/16 :goto_204
 
-    :cond_109
-    if-eqz p2, :cond_1fc
+    :cond_108
+    if-eqz p2, :cond_1fb
 
     const/4 v2, 0x3
 
-    if-eq p2, v2, :cond_1fc
+    if-eq p2, v2, :cond_1fb
 
-    if-ne p2, v11, :cond_112
+    if-ne p2, v11, :cond_111
 
-    goto/16 :goto_1fc
+    goto/16 :goto_1fb
 
-    :cond_112
-    if-ne p2, v10, :cond_160
+    :cond_111
+    if-ne p2, v10, :cond_15f
 
-    .line 2169
+    .line 2160
     iput v4, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2170
-    iget v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
+    .line 2161
+    iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne v2, v11, :cond_125
+    if-ne p1, v11, :cond_124
 
-    .line 2171
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+    .line 2162
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
-    sget v3, Lcom/transsion/camera/R$dimen;->zoom_root_2_items_lr_hover_bottom_margin:I
+    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_2_items_lr_hover_bottom_margin:I
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v2
+    move-result p1
 
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    goto :goto_14f
+    goto :goto_14e
 
-    :cond_125
-    if-ne v2, v10, :cond_132
+    :cond_124
+    if-ne p1, v10, :cond_131
+
+    .line 2164
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+
+    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_4_items_lr_hover_bottom_margin:I
+
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+
+    goto :goto_14e
+
+    .line 2166
+    :cond_131
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
+
+    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->unSupportZoomingMode(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_144
+
+    .line 2167
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+
+    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_3_items_unzooming_lr_hover_bottom_margin:I
+
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+
+    goto :goto_14e
+
+    .line 2169
+    :cond_144
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+
+    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_3_items_lr_hover_bottom_margin:I
+
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+
+    .line 2172
+    :goto_14e
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+
+    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_expand_start_margin:I
+
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     .line 2173
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    sget v3, Lcom/transsion/camera/R$dimen;->zoom_root_4_items_lr_hover_bottom_margin:I
+    invoke-virtual {p1, v1, v1}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    goto/16 :goto_204
 
-    move-result v2
-
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
-
-    goto :goto_14f
-
-    .line 2175
-    :cond_132
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
-
-    invoke-direct {p0, v2}, Lcom/transsion/camera/app/ui/FullZoomUI;->unSupportZoomingMode(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_145
-
-    .line 2176
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
-
-    sget v3, Lcom/transsion/camera/R$dimen;->zoom_root_3_items_unzooming_lr_hover_bottom_margin:I
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
-
-    goto :goto_14f
-
-    .line 2178
-    :cond_145
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
-
-    sget v3, Lcom/transsion/camera/R$dimen;->zoom_root_3_items_lr_hover_bottom_margin:I
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
-
-    .line 2181
-    :goto_14f
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
-
-    sget v3, Lcom/transsion/camera/R$dimen;->zoom_root_expand_start_margin:I
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
-
-    .line 2182
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
-
-    invoke-virtual {v2, v1, v1}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
-
-    goto/16 :goto_205
-
-    :cond_160
+    :cond_15f
     const/4 v2, 0x5
 
-    if-ne p2, v2, :cond_1ae
+    if-ne p2, v2, :cond_1ad
 
-    .line 2184
+    .line 2175
     iput v6, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2185
-    iget v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
+    .line 2176
+    iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ne v2, v11, :cond_174
+    if-ne p1, v11, :cond_173
 
-    .line 2186
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+    .line 2177
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
-    sget v3, Lcom/transsion/camera/R$dimen;->zoom_root_2_items_lr_hover_bottom_margin:I
+    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_2_items_lr_hover_bottom_margin:I
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v2
+    move-result p1
 
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    goto :goto_19e
+    goto :goto_19d
 
-    :cond_174
-    if-ne v2, v10, :cond_181
+    :cond_173
+    if-ne p1, v10, :cond_180
+
+    .line 2179
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+
+    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_4_items_lr_hover_bottom_margin:I
+
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+
+    goto :goto_19d
+
+    .line 2181
+    :cond_180
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
+
+    invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->unSupportZoomingMode(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_193
+
+    .line 2182
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+
+    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_3_items_unzooming_lr_hover_bottom_margin:I
+
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+
+    goto :goto_19d
+
+    .line 2184
+    :cond_193
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+
+    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_3_items_lr_hover_bottom_margin:I
+
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+
+    .line 2187
+    :goto_19d
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+
+    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_expand_start_margin:I
+
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     .line 2188
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    sget v3, Lcom/transsion/camera/R$dimen;->zoom_root_4_items_lr_hover_bottom_margin:I
+    invoke-virtual {p1, v9, v1}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    goto :goto_204
 
-    move-result v2
-
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
-
-    goto :goto_19e
-
-    .line 2190
-    :cond_181
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
-
-    invoke-direct {p0, v2}, Lcom/transsion/camera/app/ui/FullZoomUI;->unSupportZoomingMode(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_194
-
-    .line 2191
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
-
-    sget v3, Lcom/transsion/camera/R$dimen;->zoom_root_3_items_unzooming_lr_hover_bottom_margin:I
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
-
-    goto :goto_19e
-
-    .line 2193
-    :cond_194
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
-
-    sget v3, Lcom/transsion/camera/R$dimen;->zoom_root_3_items_lr_hover_bottom_margin:I
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
-
-    .line 2196
-    :goto_19e
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
-
-    sget v3, Lcom/transsion/camera/R$dimen;->zoom_root_expand_start_margin:I
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    .line 2197
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
-
-    invoke-virtual {v2, v9, v1}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
-
-    goto :goto_205
-
-    :cond_1ae
+    :cond_1ad
     const/4 v1, 0x7
 
-    if-ne p2, v1, :cond_205
+    if-ne p2, v1, :cond_204
 
-    .line 2199
+    .line 2190
     iput v5, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 2200
+    .line 2191
     iget-object v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
     sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_flip_right_margin_pixel:I
@@ -5708,223 +5656,122 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    if-eqz p1, :cond_1e2
+    if-eqz p1, :cond_1e1
 
-    if-eq p1, v7, :cond_1c8
+    if-eq p1, v7, :cond_1c7
 
-    if-eq p1, v9, :cond_1c8
+    if-eq p1, v9, :cond_1c7
 
-    if-eq p1, v8, :cond_1c8
+    if-eq p1, v8, :cond_1c7
 
-    if-eq p1, v3, :cond_1e2
+    if-eq p1, v3, :cond_1e1
 
-    goto :goto_205
-
-    .line 2213
-    :cond_1c8
-    iget-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
-
-    if-eqz v1, :cond_1d7
-
-    .line 2214
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
-
-    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_flip_0_or_90_recording_top_margin_pixel:I
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    goto :goto_205
-
-    .line 2216
-    :cond_1d7
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
-
-    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_flip_180_or_270_top_margin_pixel:I
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    goto :goto_205
+    goto :goto_204
 
     .line 2204
-    :cond_1e2
-    iget-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
+    :cond_1c7
+    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    if-eqz v1, :cond_1f1
+    if-eqz p1, :cond_1d6
 
     .line 2205
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
-    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_flip_180_or_270_recording_top_margin_pixel:I
+    sget v1, Lcom/transsion/camera/R$dimen;->zoom_root_flip_0_or_90_recording_top_margin_pixel:I
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    goto :goto_205
-
-    .line 2207
-    :cond_1f1
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
-
-    sget v2, Lcom/transsion/camera/R$dimen;->zoom_root_flip_0_or_90_top_margin_pixel:I
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    goto :goto_205
-
-    :cond_1fc
-    :goto_1fc
-    const/16 v2, 0x51
-
-    .line 2166
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
-    .line 2167
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
-
-    invoke-virtual {v2, v1, v1}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
-
-    .line 2223
-    :cond_205
-    :goto_205
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[updateZoomContainerLayout] gravity:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v2, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v2, " orientation:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, " leftMargin:"
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, " bottomMargin:"
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p1, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, " topMargin:"
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, " rightMargin:"
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
-
-    .line 2226
-    invoke-virtual {p1}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->getOrientation()I
+    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result p1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    const-string p1, ", mVideoRecording: "
+    goto :goto_204
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 2207
+    :cond_1d6
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
+    sget v1, Lcom/transsion/camera/R$dimen;->zoom_root_flip_180_or_270_top_margin_pixel:I
+
+    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+
+    goto :goto_204
+
+    .line 2195
+    :cond_1e1
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    if-eqz p1, :cond_1f0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 2196
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
-    move-result-object p1
+    sget v1, Lcom/transsion/camera/R$dimen;->zoom_root_flip_180_or_270_recording_top_margin_pixel:I
 
-    .line 2227
-    invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
+    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result-object v1
+    move-result p1
 
-    iget-boolean v1, v1, Lcom/transsion/camera/app/common/CommonConfigUtil;->mAppDebugLogEnable:Z
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    if-eqz v1, :cond_271
+    goto :goto_204
 
-    .line 2228
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    .line 2198
+    :cond_1f0
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mResources:Landroid/content/res/Resources;
 
-    new-instance v2, Ljava/lang/Throwable;
+    sget v1, Lcom/transsion/camera/R$dimen;->zoom_root_flip_0_or_90_top_margin_pixel:I
 
-    invoke-direct {v2}, Ljava/lang/Throwable;-><init>()V
+    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    invoke-static {v1, p1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result p1
 
-    goto :goto_276
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 2230
-    :cond_271
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    goto :goto_204
 
-    invoke-static {v1, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    :cond_1fb
+    :goto_1fb
+    const/16 p1, 0x51
 
-    .line 2232
-    :goto_276
+    .line 2157
+    iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+
+    .line 2158
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
+
+    invoke-virtual {p1, v1, v1}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
+
+    .line 2223
+    :cond_204
+    :goto_204
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2234
+    .line 2225
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    if-eqz p1, :cond_283
+    if-eqz p1, :cond_211
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInVlogMode:Z
 
-    if-eqz p1, :cond_286
+    if-eqz p1, :cond_214
 
-    .line 2235
-    :cond_283
+    .line 2226
+    :cond_211
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateRootViewLayout(I)V
 
-    .line 2237
-    :cond_286
+    .line 2228
+    :cond_214
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateHorizontalLayout(I)V
 
-    :cond_289
-    :goto_289
+    :cond_217
+    :goto_217
     return-void
 .end method
 
@@ -7430,300 +7277,300 @@
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_488
+    if-eqz p1, :cond_47c
 
-    if-eq p1, v0, :cond_47e
+    if-eq p1, v0, :cond_472
 
     const/4 v2, 0x2
 
-    if-eq p1, v2, :cond_470
+    if-eq p1, v2, :cond_464
 
     const/4 v2, 0x3
 
-    if-eq p1, v2, :cond_448
+    if-eq p1, v2, :cond_43c
 
     const/4 v2, 0x5
 
-    if-eq p1, v2, :cond_448
+    if-eq p1, v2, :cond_43c
 
     const/4 v3, 0x7
 
-    if-eq p1, v3, :cond_448
+    if-eq p1, v3, :cond_43c
 
     const/16 v4, 0x13
 
-    if-eq p1, v4, :cond_43c
+    if-eq p1, v4, :cond_430
 
     const/16 v4, 0x14
 
-    if-eq p1, v4, :cond_403
+    if-eq p1, v4, :cond_3f7
 
     const/16 v4, 0x19
 
-    if-eq p1, v4, :cond_3f5
+    if-eq p1, v4, :cond_3e9
 
     const/16 v4, 0x1a
 
     const-wide/16 v5, 0x64
 
-    if-eq p1, v4, :cond_3b8
+    if-eq p1, v4, :cond_3ac
 
     const/16 v4, 0x24
 
-    if-eq p1, v4, :cond_3a8
+    if-eq p1, v4, :cond_39c
 
     const/16 v4, 0x25
 
-    if-eq p1, v4, :cond_344
+    if-eq p1, v4, :cond_38f
 
     const/16 v4, 0x30
 
-    if-eq p1, v4, :cond_33a
+    if-eq p1, v4, :cond_385
 
     const/16 v4, 0x31
 
-    if-eq p1, v4, :cond_322
+    if-eq p1, v4, :cond_36d
 
     const/16 v4, 0x52
 
-    if-eq p1, v4, :cond_308
+    if-eq p1, v4, :cond_353
 
     const/16 v4, 0x53
 
     const/4 v7, 0x0
 
-    if-eq p1, v4, :cond_2c6
+    if-eq p1, v4, :cond_2b2
+
+    const/16 v4, 0x5a
+
+    if-eq p1, v4, :cond_2af
+
+    const/16 v4, 0x5b
+
+    if-eq p1, v4, :cond_2a7
 
     const/4 v4, -0x1
 
-    sparse-switch p1, :sswitch_data_48e
+    sparse-switch p1, :sswitch_data_482
 
-    packed-switch p1, :pswitch_data_584
+    packed-switch p1, :pswitch_data_56c
 
-    packed-switch p1, :pswitch_data_58e
+    packed-switch p1, :pswitch_data_576
 
-    packed-switch p1, :pswitch_data_59c
+    goto/16 :goto_47b
 
-    goto/16 :goto_487
-
-    .line 1774
-    :pswitch_7c
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->hide()V
-
-    return-void
-
-    .line 1647
-    :pswitch_80
+    .line 1653
+    :pswitch_81
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsPausing:Z
 
     return-void
 
     .line 1579
-    :pswitch_83
+    :pswitch_84
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->setEnable(Z)V
 
     return-void
 
-    .line 1919
-    :pswitch_87
+    .line 1910
+    :pswitch_88
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mShouldShow:Z
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mSelfTimerBegin:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mContinusShot:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
-    .line 1920
+    .line 1911
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->show(Z)V
 
-    .line 1921
+    .line 1912
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
 
-    .line 1922
+    .line 1913
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsPopWindowShow:Z
 
     return-void
 
-    .line 1904
-    :pswitch_a8
+    .line 1895
+    :pswitch_a9
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p1
 
-    if-eq p1, v0, :cond_c1
+    if-eq p1, v0, :cond_c2
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 1905
+    .line 1896
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p1
 
     const/4 v3, 0x4
 
-    if-eq p1, v3, :cond_c1
+    if-eq p1, v3, :cond_c2
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 1906
+    .line 1897
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p1
 
-    if-ne p1, v2, :cond_c6
+    if-ne p1, v2, :cond_c7
 
-    .line 1907
-    :cond_c1
+    .line 1898
+    :cond_c2
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsPopWindowShow:Z
 
-    .line 1908
+    .line 1899
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
 
-    .line 1910
-    :cond_c6
+    .line 1901
+    :cond_c7
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
-    .line 1911
+    .line 1902
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFaceBeautyOn:Z
 
-    .line 1912
+    .line 1903
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsPopSettingShow:Z
 
-    .line 1913
+    .line 1904
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsTimeLapseSettingUIShow:Z
 
-    .line 1914
+    .line 1905
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsNeedAnimate:Z
 
-    .line 1915
+    .line 1906
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
 
     return-void
 
-    .line 1628
-    :pswitch_d8
+    .line 1634
+    :pswitch_d9
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCameraSwitching:Z
 
-    .line 1629
+    .line 1635
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mSelfTimerBegin:Z
 
-    .line 1630
+    .line 1636
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mContinusShot:Z
 
-    .line 1631
+    .line 1637
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    .line 1632
+    .line 1638
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mQuickRecording:Z
 
-    .line 1633
+    .line 1639
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideSaving:Z
 
-    .line 1634
+    .line 1640
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
 
-    .line 1635
+    .line 1641
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsPausing:Z
 
-    .line 1636
+    .line 1642
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsRestoringDefault:Z
 
-    .line 1637
+    .line 1643
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFlipPageShow:Z
 
-    .line 1638
+    .line 1644
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mHideZoomForFlip:Z
 
-    .line 1639
+    .line 1645
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsSuperNightLiteSwitchShow:Z
 
-    .line 1640
+    .line 1646
     iput v4, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mRecordingOrientation:I
 
-    .line 1642
+    .line 1648
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI4Animator:Z
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
-    .line 1643
+    .line 1649
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->resetRecordingUI()V
 
     return-void
 
-    .line 2003
-    :sswitch_fe
+    .line 1994
+    :sswitch_ff
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mOrientation:I
 
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateZoomContainerLayout(II)V
 
-    .line 2004
+    .line 1995
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mbSegmentDragging:Z
 
     return-void
 
-    .line 1999
-    :sswitch_108
+    .line 1990
+    :sswitch_109
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mbSegmentDragging:Z
 
-    .line 2000
+    .line 1991
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mOrientation:I
 
     iput p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFreeShotDraggingOrientation:I
 
     return-void
 
-    .line 1995
-    :sswitch_10f
+    .line 1986
+    :sswitch_110
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsSegmentEmpty:Z
 
-    .line 1996
+    .line 1987
     invoke-virtual {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->setRootViewTranslationY(F)V
 
     return-void
 
-    .line 1989
-    :sswitch_115
+    .line 1980
+    :sswitch_116
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsSegmentEmpty:Z
 
-    .line 1990
+    .line 1981
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p1
 
-    if-eq p1, v0, :cond_487
+    if-eq p1, v0, :cond_47b
 
-    .line 1991
+    .line 1982
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mVlogTranslationDis:I
 
     int-to-float p1, p1
@@ -7733,43 +7580,43 @@
     return-void
 
     .line 1597
-    :sswitch_126
+    :sswitch_127
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsSuperNightLiteSwitchShow:Z
 
     return-void
 
     .line 1594
-    :sswitch_129
+    :sswitch_12a
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsSuperNightLiteSwitchShow:Z
 
     return-void
 
-    .line 1811
-    :sswitch_12c
+    .line 1802
+    :sswitch_12d
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInSuperNightMode:Z
 
-    if-nez p1, :cond_134
+    if-nez p1, :cond_135
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInLongExposureMode:Z
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
-    .line 1812
-    :cond_134
+    .line 1803
+    :cond_135
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
 
     return-void
 
-    .line 1953
-    :sswitch_137
+    .line 1944
+    :sswitch_138
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
-    if-ne v3, p1, :cond_487
+    if-ne v3, p1, :cond_47b
 
-    .line 1954
+    .line 1945
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFlipPageShow:Z
 
-    .line 1955
+    .line 1946
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -7786,16 +7633,16 @@
 
     return-void
 
-    .line 1943
-    :sswitch_14f
+    .line 1934
+    :sswitch_150
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
-    if-ne v3, p1, :cond_487
+    if-ne v3, p1, :cond_47b
 
-    .line 1944
+    .line 1935
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFlipPageShow:Z
 
-    .line 1945
+    .line 1936
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -7812,156 +7659,156 @@
 
     return-void
 
-    .line 1936
-    :sswitch_167
+    .line 1927
+    :sswitch_168
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
-    if-ne v3, p1, :cond_487
+    if-ne v3, p1, :cond_47b
 
-    .line 1937
+    .line 1928
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsNeedAnimate:Z
 
-    .line 1938
+    .line 1929
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFlipPageShow:Z
 
-    .line 1939
+    .line 1930
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
 
     return-void
 
-    .line 1817
-    :sswitch_173
+    .line 1808
+    :sswitch_174
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
 
     return-void
 
-    .line 1931
-    :sswitch_176
+    .line 1922
+    :sswitch_177
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mImageStyleShow:Z
 
-    .line 1932
+    .line 1923
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
 
     return-void
 
-    .line 1926
-    :sswitch_17c
+    .line 1917
+    :sswitch_17d
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFilterUIOn:Z
 
-    .line 1927
+    .line 1918
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mImageStyleShow:Z
 
-    .line 1928
+    .line 1919
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
 
     return-void
 
-    .line 1897
-    :sswitch_184
+    .line 1888
+    :sswitch_185
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mOnTouchSeekBarSwitchCamID:Z
 
-    .line 1898
+    .line 1889
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mSettingUIList:Ljava/util/List;
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mModeChangedBegin:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
     iget-boolean v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCameraSwitching:Z
 
-    if-nez v2, :cond_487
-
-    if-nez p1, :cond_198
-
-    .line 1899
-    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
+    if-nez v2, :cond_47b
 
     if-nez p1, :cond_199
 
-    :cond_198
+    .line 1890
+    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
+
+    if-nez p1, :cond_19a
+
+    :cond_199
     move v0, v1
 
-    .line 1900
-    :cond_199
+    .line 1891
+    :cond_19a
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
     invoke-virtual {p0, p1, v1, v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateRootViewPadding(IZZ)V
 
     return-void
 
-    .line 1894
-    :sswitch_19f
+    .line 1885
+    :sswitch_1a0
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mOnTouchSeekBarSwitchCamID:Z
 
     return-void
 
-    .line 1868
-    :sswitch_1a2
+    .line 1859
+    :sswitch_1a3
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mQuickRecording:Z
 
-    goto :goto_1bc
+    goto :goto_1bd
 
-    .line 1623
-    :sswitch_1a5
+    .line 1629
+    :sswitch_1a6
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mQuickRecording:Z
 
-    .line 1624
+    .line 1630
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mShouldShow:Z
 
-    .line 1625
+    .line 1631
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
 
     return-void
 
-    .line 1744
-    :sswitch_1ad
+    .line 1747
+    :sswitch_1ae
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsZoomWheelShowing:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInVlogMode:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
-    .line 1745
+    .line 1748
     invoke-virtual {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->setRootViewTranslationY(F)V
 
     return-void
 
-    .line 1838
-    :sswitch_1b9
+    .line 1829
+    :sswitch_1ba
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mGraduationViewIsMoving:Z
 
     return-void
 
-    .line 1870
-    :goto_1bc
-    :sswitch_1bc
+    .line 1861
+    :goto_1bd
+    :sswitch_1bd
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mContinusShot:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
-    .line 1871
+    .line 1862
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mShouldShow:Z
 
-    .line 1872
+    .line 1863
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsNeedAnimate:Z
 
-    .line 1873
+    .line 1864
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->show(Z)V
 
-    .line 1874
+    .line 1865
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
 
     return-void
 
-    .line 1885
-    :sswitch_1cb
+    .line 1876
+    :sswitch_1cc
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsPopSettingShow:Z
 
-    .line 1886
+    .line 1877
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -7978,252 +7825,207 @@
 
     return-void
 
-    .line 1878
-    :sswitch_1df
+    .line 1869
+    :sswitch_1e0
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFaceBeautyOn:Z
 
-    .line 1879
+    .line 1870
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsPopSettingShow:Z
 
-    .line 1880
+    .line 1871
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsTimeLapseSettingUIShow:Z
 
-    .line 1881
+    .line 1872
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsNeedAnimate:Z
 
-    .line 1882
+    .line 1873
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
 
     return-void
 
-    .line 1650
-    :sswitch_1eb
+    .line 1656
+    :sswitch_1ec
     iget v2, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
-    if-eq v3, v2, :cond_1f1
+    if-eq v3, v2, :cond_1f2
 
-    .line 1651
+    .line 1657
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    .line 1653
-    :cond_1f1
+    .line 1659
+    :cond_1f2
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideSaving:Z
 
-    .line 1654
+    .line 1660
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
 
     iget-boolean v2, v2, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI4Animator:Z
 
-    if-nez v2, :cond_2c6
+    if-nez v2, :cond_2b2
 
-    .line 1655
+    .line 1661
     invoke-virtual {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->setRootViewTranslationY(F)V
 
-    goto/16 :goto_2c6
+    goto/16 :goto_2b2
 
-    .line 1986
-    :sswitch_200
+    .line 1977
+    :sswitch_201
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFaceBeautyOn:Z
 
     return-void
 
-    .line 1857
-    :sswitch_203
+    .line 1848
+    :sswitch_204
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
 
-    goto :goto_25d
+    goto :goto_25e
 
     .line 1540
-    :sswitch_207
+    :sswitch_208
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsMoreMode:Z
 
     return-void
 
     .line 1537
-    :sswitch_20a
+    :sswitch_20b
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsMoreMode:Z
 
     return-void
 
-    .line 1798
-    :goto_20d
-    :sswitch_20d
+    .line 1789
+    :goto_20e
+    :sswitch_20e
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result p1
 
-    if-ge v1, p1, :cond_487
+    if-ge v1, p1, :cond_47b
 
-    .line 1799
+    .line 1790
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p1
 
-    .line 1800
+    .line 1791
     invoke-virtual {p1}, Landroid/view/View;->isSelected()Z
 
     move-result p1
 
-    if-eqz p1, :cond_22f
+    if-eqz p1, :cond_230
 
     add-int/lit8 p1, v1, -0x1
 
-    if-ltz p1, :cond_22f
+    if-ltz p1, :cond_230
 
-    .line 1802
+    .line 1793
     iget-object p0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p0
 
-    .line 1803
+    .line 1794
     invoke-virtual {p0}, Landroid/view/View;->performClick()Z
 
     return-void
 
-    :cond_22f
+    :cond_230
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_20d
+    goto :goto_20e
 
-    .line 1786
-    :goto_232
-    :sswitch_232
+    .line 1777
+    :goto_233
+    :sswitch_233
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result p1
 
-    if-ge v1, p1, :cond_487
+    if-ge v1, p1, :cond_47b
 
-    .line 1787
+    .line 1778
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p1
 
-    .line 1788
+    .line 1779
     invoke-virtual {p1}, Landroid/view/View;->isSelected()Z
 
     move-result p1
 
-    if-eqz p1, :cond_25a
+    if-eqz p1, :cond_25b
 
     add-int/lit8 p1, v1, 0x1
 
-    .line 1789
+    .line 1780
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
-    if-ge p1, v0, :cond_25a
+    if-ge p1, v0, :cond_25b
 
-    .line 1790
+    .line 1781
     iget-object p0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p0
 
-    .line 1791
+    .line 1782
     invoke-virtual {p0}, Landroid/view/View;->performClick()Z
 
     return-void
 
-    :cond_25a
+    :cond_25b
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_232
+    goto :goto_233
 
-    .line 1859
-    :goto_25d
-    :sswitch_25d
+    .line 1850
+    :goto_25e
+    :sswitch_25e
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInTimeLapsePhotoMode:Z
 
-    if-nez p1, :cond_263
+    if-nez p1, :cond_264
 
-    .line 1860
+    .line 1851
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    .line 1862
-    :cond_263
+    .line 1853
+    :cond_264
     iput v4, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mRecordingOrientation:I
 
-    .line 1863
+    .line 1854
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->setEnable(Z)V
 
-    .line 1864
+    .line 1855
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mSelfTimerBegin:Z
 
-    .line 1865
+    .line 1856
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mContinusShot:Z
 
     return-void
 
-    .line 1825
-    :pswitch_26d
-    :sswitch_26d
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
-
-    .line 1826
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsNeedAnimate:Z
-
-    .line 1827
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
-
-    return-void
-
-    .line 1591
-    :sswitch_275
-    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
-
-    return-void
-
-    .line 1779
-    :pswitch_278
-    :sswitch_278
-    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mSelfTimerBegin:Z
-
-    if-nez p1, :cond_487
-
-    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsZoomWheelShowing:Z
-
-    if-nez p1, :cond_487
-
-    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsNeedShowUI:Z
-
-    if-eqz p1, :cond_487
-
-    .line 1780
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsNeedAnimate:Z
-
-    .line 1781
-    invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->show(Z)V
-
-    .line 1782
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
-
-    return-void
-
     .line 1573
-    :sswitch_28d
+    :sswitch_26e
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideSaving:Z
 
     .line 1574
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
     invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
 
@@ -8231,7 +8033,7 @@
 
     cmpl-float p1, p1, v7
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
     .line 1575
     invoke-virtual {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->setRootViewTranslationY(F)V
@@ -8239,10 +8041,10 @@
     return-void
 
     .line 1543
-    :sswitch_29f
+    :sswitch_280
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsVideoPortraitBarOn:Z
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
     .line 1544
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsVideoPortraitBarOn:Z
@@ -8250,7 +8052,7 @@
     return-void
 
     .line 1600
-    :sswitch_2a6
+    :sswitch_287
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mSelfTimerBegin:Z
 
     .line 1601
@@ -8261,106 +8063,127 @@
 
     return-void
 
-    .line 1758
-    :sswitch_2ae
+    .line 1761
+    :sswitch_28f
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCameraSwitching:Z
 
-    .line 1759
+    .line 1762
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsPausing:Z
 
-    .line 1760
+    .line 1763
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInAIGCMode:Z
 
-    if-nez p1, :cond_2b8
-
-    .line 1761
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mAIGCEffectUIOn:Z
-
-    .line 1763
-    :cond_2b8
-    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mAIArtMuseumMode:Z
-
-    if-nez p1, :cond_487
+    if-nez p1, :cond_299
 
     .line 1764
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mAIGCEffectUIOn:Z
+
+    .line 1766
+    :cond_299
+    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mAIArtMuseumMode:Z
+
+    if-nez p1, :cond_47b
+
+    .line 1767
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mAIArtMuseumUIOn:Z
 
     return-void
 
-    .line 1753
-    :sswitch_2bf
+    .line 1756
+    :sswitch_2a0
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInAIGCMode:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
-    .line 1754
+    .line 1757
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mAIGCEffectUIOn:Z
 
     return-void
 
-    .line 1660
-    :cond_2c6
-    :goto_2c6
-    :pswitch_2c6
-    :sswitch_2c6
+    .line 1816
+    :cond_2a7
+    :pswitch_2a7
+    :sswitch_2a7
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
+
+    .line 1817
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsNeedAnimate:Z
+
+    .line 1818
+    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
+
+    return-void
+
+    .line 1591
+    :cond_2af
+    :sswitch_2af
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
+
+    return-void
+
+    .line 1666
+    :cond_2b2
+    :goto_2b2
+    :pswitch_2b2
+    :sswitch_2b2
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
 
     iget-boolean v2, v2, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI4Animator:Z
 
-    if-eqz v2, :cond_2eb
+    if-eqz v2, :cond_2d7
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
 
-    .line 1661
+    .line 1667
     invoke-interface {p0, v2, v1}, Lcom/transsion/camera/app/common/ui/anim/IRecordingAnimationManager;->isNextRecordingAnimationEnable(Landroid/view/View;Z)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2eb
+    if-eqz v2, :cond_2d7
 
-    .line 1662
+    .line 1668
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
 
     invoke-direct {p0, v2}, Lcom/transsion/camera/app/ui/FullZoomUI;->unSupportZoomingMode(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-nez v2, :cond_2e7
+    if-nez v2, :cond_2d3
 
-    .line 1663
+    .line 1669
     new-instance v2, Lcom/transsion/camera/app/ui/FullZoomUI$$ExternalSyntheticLambda2;
 
     invoke-direct {v2, p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/app/ui/FullZoomUI;I)V
 
     invoke-static {v2}, Lcom/transsion/camera/utils/UIUtils;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    goto :goto_2f6
-
-    .line 1675
-    :cond_2e7
-    invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->notifyCameraOperateActionToUI(I)V
-
-    goto :goto_2f6
-
-    :cond_2eb
-    const/16 v2, 0xc9
-
-    if-ne p1, v2, :cond_2f3
-
-    .line 1679
-    invoke-virtual {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->setRootViewTranslationY(F)V
-
-    goto :goto_2f6
+    goto :goto_2e2
 
     .line 1681
-    :cond_2f3
+    :cond_2d3
+    invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->notifyCameraOperateActionToUI(I)V
+
+    goto :goto_2e2
+
+    :cond_2d7
+    const/16 v2, 0xc9
+
+    if-ne p1, v2, :cond_2df
+
+    .line 1685
+    invoke-virtual {p0, v7}, Lcom/transsion/camera/app/ui/FullZoomUI;->setRootViewTranslationY(F)V
+
+    goto :goto_2e2
+
+    .line 1687
+    :cond_2df
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->onRecordingStateChange(I)V
 
-    .line 1686
-    :goto_2f6
-    :sswitch_2f6
+    .line 1692
+    :goto_2e2
+    :sswitch_2e2
     iget-object v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
 
     const-string v3, "com.transsion.camera.feature.mode.longexposure.LongExposureModeEntry"
@@ -8369,130 +8192,44 @@
 
     move-result v2
 
-    if-eqz v2, :cond_302
-
-    .line 1687
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsLongExposureSettingUIShow:Z
-
-    .line 1689
-    :cond_302
-    invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->setEnable(Z)V
-
-    .line 1690
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mSelfTimerBegin:Z
-
-    goto :goto_344
-
-    .line 1607
-    :cond_308
-    :pswitch_308
-    :sswitch_308
-    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
-
-    .line 1608
-    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI4Animator:Z
-
-    if-eqz v0, :cond_31e
-
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
-
-    invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->unSupportZoomingMode(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_31e
-
-    .line 1609
-    invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->notifyCameraOperateActionToUI(I)V
-
-    return-void
-
-    .line 1611
-    :cond_31e
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->onRecordingStateChange(I)V
-
-    return-void
-
-    .line 1976
-    :cond_322
-    :sswitch_322
-    iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
-
-    if-ne v3, p1, :cond_487
-
-    .line 1977
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mHideZoomForFlip:Z
-
-    .line 1978
-    new-instance p1, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    new-instance v0, Lcom/transsion/camera/app/ui/FullZoomUI$$ExternalSyntheticLambda9;
-
-    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/FullZoomUI$$ExternalSyntheticLambda9;-><init>(Lcom/transsion/camera/app/ui/FullZoomUI;)V
-
-    invoke-virtual {p1, v0, v5, v6}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    return-void
-
-    .line 1966
-    :cond_33a
-    :sswitch_33a
-    iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
-
-    if-ne v3, p1, :cond_487
-
-    .line 1967
-    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mHideZoomForFlip:Z
-
-    .line 1968
-    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
-
-    return-void
-
-    .line 1692
-    :cond_344
-    :goto_344
-    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mShouldShow:Z
+    if-eqz v2, :cond_2ee
 
     .line 1693
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mContinusShot:Z
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsLongExposureSettingUIShow:Z
 
     .line 1695
-    :sswitch_348
-    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mModeChangedBegin:Z
+    :cond_2ee
+    invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->setEnable(Z)V
 
     .line 1696
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mSelfTimerBegin:Z
+
+    .line 1698
+    :sswitch_2f3
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mModeChangedBegin:Z
+
+    .line 1699
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIfNeedShow:Z
 
     const/16 v1, 0x9
 
-    if-ne p1, v1, :cond_368
+    if-ne p1, v1, :cond_313
 
-    .line 1697
+    .line 1700
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInTimeLapseVideoMode:Z
 
-    if-eqz p1, :cond_368
+    if-eqz p1, :cond_313
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mSettingUIList:Ljava/util/List;
 
-    if-eqz p1, :cond_368
+    if-eqz p1, :cond_313
 
-    .line 1698
+    .line 1701
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
 
-    if-eqz p1, :cond_368
+    if-eqz p1, :cond_313
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mCurrentCameraId:Ljava/lang/String;
 
@@ -8500,33 +8237,33 @@
 
     move-result p1
 
-    if-eqz p1, :cond_368
+    if-eqz p1, :cond_313
 
-    .line 1699
+    .line 1702
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsNeedShowUI:Z
 
-    .line 1701
-    :cond_368
+    .line 1704
+    :cond_313
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsZoomWheelShowing:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->needToWait()Z
 
     move-result p1
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
-    .line 1702
+    .line 1705
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsNeedShowUI:Z
 
-    if-eqz p1, :cond_38c
+    if-eqz p1, :cond_337
 
-    .line 1703
+    .line 1706
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -8543,20 +8280,20 @@
 
     return-void
 
-    .line 1711
-    :cond_38c
+    .line 1714
+    :cond_337
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mSettingUIList:Ljava/util/List;
 
-    if-eqz p1, :cond_396
+    if-eqz p1, :cond_341
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
-    .line 1712
-    :cond_396
+    .line 1715
+    :cond_341
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -8573,19 +8310,114 @@
 
     return-void
 
-    .line 1615
-    :cond_3a8
-    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mContinusShot:Z
+    .line 1607
+    :cond_353
+    :pswitch_353
+    :sswitch_353
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    .line 1617
-    :sswitch_3aa
+    .line 1608
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI4Animator:Z
+
+    if-eqz v0, :cond_369
+
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
+
+    invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->unSupportZoomingMode(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_369
+
+    .line 1609
+    invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->notifyCameraOperateActionToUI(I)V
+
+    return-void
+
+    .line 1611
+    :cond_369
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->onRecordingStateChange(I)V
+
+    return-void
+
+    .line 1967
+    :cond_36d
+    :sswitch_36d
+    iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
+
+    if-ne v3, p1, :cond_47b
+
+    .line 1968
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mHideZoomForFlip:Z
+
+    .line 1969
+    new-instance p1, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    new-instance v0, Lcom/transsion/camera/app/ui/FullZoomUI$$ExternalSyntheticLambda9;
+
+    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/FullZoomUI$$ExternalSyntheticLambda9;-><init>(Lcom/transsion/camera/app/ui/FullZoomUI;)V
+
+    invoke-virtual {p1, v0, v5, v6}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    return-void
+
+    .line 1957
+    :cond_385
+    :sswitch_385
+    iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
+
+    if-ne v3, p1, :cond_47b
+
+    .line 1958
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mHideZoomForFlip:Z
+
+    .line 1959
+    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
+
+    return-void
+
+    .line 1623
+    :cond_38f
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportShutterUiNewStyle:Z
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_399
+
+    .line 1624
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mShouldShow:Z
+
+    .line 1626
+    :cond_399
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mContinusShot:Z
+
+    return-void
+
+    .line 1615
+    :cond_39c
+    iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mContinusShot:Z
+
+    .line 1617
+    :sswitch_39e
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object p1
+
+    iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportShutterUiNewStyle:Z
+
+    if-eqz p1, :cond_47b
 
     .line 1618
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mShouldShow:Z
@@ -8595,65 +8427,65 @@
 
     return-void
 
-    .line 1841
-    :cond_3b8
+    .line 1832
+    :cond_3ac
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsVideoPortraitBarOn:Z
 
-    if-eqz p1, :cond_3be
+    if-eqz p1, :cond_3b2
 
-    .line 1842
+    .line 1833
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsVideoPortraitBarOn:Z
 
-    .line 1844
-    :cond_3be
+    .line 1835
+    :cond_3b2
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsZoomWheelEnd:Z
 
-    .line 1845
+    .line 1836
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIfNeedShow:Z
 
-    .line 1846
+    .line 1837
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mGraduationViewIsMoving:Z
 
-    .line 1847
+    .line 1838
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsZoomWheelShowing:Z
 
-    .line 1848
+    .line 1839
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->unSupportZoomingMode(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mShouldShow:Z
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
-    .line 1849
+    .line 1840
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInSuperNightMode:Z
 
-    if-nez p1, :cond_3e3
+    if-nez p1, :cond_3d7
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInProMode:Z
 
-    if-nez p1, :cond_3e3
+    if-nez p1, :cond_3d7
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsSuperNightLiteSwitchShow:Z
 
-    if-eqz p1, :cond_3df
+    if-eqz p1, :cond_3d3
 
-    goto :goto_3e3
+    goto :goto_3d7
 
-    .line 1852
-    :cond_3df
+    .line 1843
+    :cond_3d3
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
 
     return-void
 
-    .line 1850
-    :cond_3e3
-    :goto_3e3
+    .line 1841
+    :cond_3d7
+    :goto_3d7
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -8670,34 +8502,34 @@
 
     return-void
 
-    .line 1830
-    :cond_3f5
+    .line 1821
+    :cond_3e9
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIfNeedShow:Z
 
-    .line 1831
+    .line 1822
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mGraduationViewIsMoving:Z
 
-    .line 1832
+    .line 1823
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsZoomWheelShowing:Z
 
-    .line 1833
+    .line 1824
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInIntentVideoMode:Z
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
-    .line 1834
+    .line 1825
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
 
     return-void
 
     .line 1554
-    :cond_403
+    :cond_3f7
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsRestoringDefault:Z
 
     .line 1555
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsNeedShowUI:Z
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
     .line 1556
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFaceBeautyOn:Z
@@ -8723,13 +8555,13 @@
     .line 1563
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mSettingUIList:Ljava/util/List;
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
 
-    if-lez p1, :cond_487
+    if-lez p1, :cond_47b
 
     .line 1564
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mSettingUIList:Ljava/util/List;
@@ -8738,13 +8570,13 @@
 
     move-result-object p0
 
-    :cond_42a
-    :goto_42a
+    :cond_41e
+    :goto_41e
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p1
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -8752,15 +8584,15 @@
 
     check-cast p1, Lcom/transsion/camera/app/common/ui/setting/IWideCameraItemUI;
 
-    if-eqz p1, :cond_42a
+    if-eqz p1, :cond_41e
 
     .line 1566
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/IWideCameraItemUI;->restoreDefaultValue()V
 
-    goto :goto_42a
+    goto :goto_41e
 
     .line 1548
-    :cond_43c
+    :cond_430
     const-string p1, "com.transsion.camera.feature.mode.autoscenedetection.ASDModeEntry"
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
@@ -8776,35 +8608,35 @@
 
     return-void
 
-    .line 1725
-    :cond_448
-    :sswitch_448
+    .line 1728
+    :cond_43c
+    :sswitch_43c
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mModeChangedBegin:Z
 
-    .line 1728
-    :sswitch_44a
+    .line 1731
+    :sswitch_43e
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIfNeedShow:Z
 
-    .line 1730
+    .line 1733
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsZoomWheelShowing:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsNeedShowUI:Z
 
-    if-eqz p1, :cond_487
+    if-eqz p1, :cond_47b
 
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->needToWait()Z
 
     move-result p1
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
-    .line 1731
+    .line 1734
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -8822,7 +8654,7 @@
     return-void
 
     .line 1582
-    :cond_470
+    :cond_464
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
 
     .line 1583
@@ -8842,119 +8674,109 @@
 
     return-void
 
-    .line 1768
-    :cond_47e
+    .line 1771
+    :cond_472
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCameraSwitching:Z
 
-    .line 1769
+    .line 1772
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mGraduationViewIsMoving:Z
 
-    if-nez p1, :cond_487
+    if-nez p1, :cond_47b
 
-    .line 1770
+    .line 1773
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWhenCamSwitchEnd()V
 
-    :cond_487
-    :goto_487
+    :cond_47b
+    :goto_47b
     return-void
 
-    .line 1749
-    :cond_488
+    .line 1752
+    :cond_47c
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCameraSwitching:Z
 
-    .line 1750
+    .line 1753
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
 
     return-void
 
     nop
 
-    :sswitch_data_48e
+    :sswitch_data_482
     .sparse-switch
-        0x7 -> :sswitch_448
-        0x8 -> :sswitch_2bf
-        0x9 -> :sswitch_348
-        0xa -> :sswitch_2ae
-        0xb -> :sswitch_2a6
-        0xc -> :sswitch_2f6
-        0x17 -> :sswitch_29f
-        0x3a -> :sswitch_28d
-        0x4c -> :sswitch_278
-        0x5a -> :sswitch_275
-        0x5b -> :sswitch_26d
-        0x5e -> :sswitch_44a
-        0x6d -> :sswitch_25d
-        0x7c -> :sswitch_232
-        0x7d -> :sswitch_20d
-        0x81 -> :sswitch_33a
-        0x82 -> :sswitch_322
-        0x83 -> :sswitch_33a
-        0x84 -> :sswitch_322
-        0x90 -> :sswitch_308
-        0x91 -> :sswitch_2c6
-        0x92 -> :sswitch_20a
-        0x9b -> :sswitch_207
-        0xa7 -> :sswitch_203
-        0xb4 -> :sswitch_200
-        0xb5 -> :sswitch_322
-        0xc9 -> :sswitch_1eb
-        0xcf -> :sswitch_1df
-        0xd0 -> :sswitch_1cb
-        0xd2 -> :sswitch_3aa
-        0xd3 -> :sswitch_1bc
-        0xdf -> :sswitch_1b9
-        0xe7 -> :sswitch_1ad
-        0xe9 -> :sswitch_1a5
-        0xea -> :sswitch_1a2
-        0xeb -> :sswitch_19f
-        0xec -> :sswitch_184
-        0xed -> :sswitch_275
-        0xee -> :sswitch_26d
-        0xf2 -> :sswitch_17c
-        0xf3 -> :sswitch_176
-        0xf7 -> :sswitch_33a
-        0xf8 -> :sswitch_322
-        0x101 -> :sswitch_173
-        0x102 -> :sswitch_26d
-        0x109 -> :sswitch_167
-        0x10a -> :sswitch_14f
-        0x10b -> :sswitch_167
-        0x10c -> :sswitch_137
-        0x111 -> :sswitch_12c
-        0x112 -> :sswitch_26d
-        0x11c -> :sswitch_44a
-        0x121 -> :sswitch_12c
-        0x127 -> :sswitch_129
-        0x128 -> :sswitch_126
-        0x140 -> :sswitch_115
-        0x141 -> :sswitch_10f
-        0x143 -> :sswitch_108
-        0x144 -> :sswitch_fe
-        0x18b -> :sswitch_173
-        0x18c -> :sswitch_26d
+        0x7 -> :sswitch_43c
+        0x8 -> :sswitch_2a0
+        0x9 -> :sswitch_2f3
+        0xa -> :sswitch_28f
+        0xb -> :sswitch_287
+        0xc -> :sswitch_2e2
+        0x17 -> :sswitch_280
+        0x3a -> :sswitch_26e
+        0x5e -> :sswitch_43e
+        0x6d -> :sswitch_25e
+        0x7c -> :sswitch_233
+        0x7d -> :sswitch_20e
+        0x81 -> :sswitch_385
+        0x82 -> :sswitch_36d
+        0x83 -> :sswitch_385
+        0x84 -> :sswitch_36d
+        0x90 -> :sswitch_353
+        0x91 -> :sswitch_2b2
+        0x92 -> :sswitch_20b
+        0x9b -> :sswitch_208
+        0xa7 -> :sswitch_204
+        0xb4 -> :sswitch_201
+        0xb5 -> :sswitch_36d
+        0xc9 -> :sswitch_1ec
+        0xcf -> :sswitch_1e0
+        0xd0 -> :sswitch_1cc
+        0xd2 -> :sswitch_39e
+        0xd3 -> :sswitch_1bd
+        0xdf -> :sswitch_1ba
+        0xe7 -> :sswitch_1ae
+        0xe9 -> :sswitch_1a6
+        0xea -> :sswitch_1a3
+        0xeb -> :sswitch_1a0
+        0xec -> :sswitch_185
+        0xed -> :sswitch_2af
+        0xee -> :sswitch_2a7
+        0xf2 -> :sswitch_17d
+        0xf3 -> :sswitch_177
+        0xf7 -> :sswitch_385
+        0xf8 -> :sswitch_36d
+        0x101 -> :sswitch_174
+        0x102 -> :sswitch_2a7
+        0x109 -> :sswitch_168
+        0x10a -> :sswitch_150
+        0x10b -> :sswitch_168
+        0x10c -> :sswitch_138
+        0x111 -> :sswitch_12d
+        0x112 -> :sswitch_2a7
+        0x11c -> :sswitch_43e
+        0x121 -> :sswitch_12d
+        0x127 -> :sswitch_12a
+        0x128 -> :sswitch_127
+        0x140 -> :sswitch_116
+        0x141 -> :sswitch_110
+        0x143 -> :sswitch_109
+        0x144 -> :sswitch_ff
+        0x18b -> :sswitch_174
+        0x18c -> :sswitch_2a7
     .end sparse-switch
 
-    :pswitch_data_584
+    :pswitch_data_56c
     .packed-switch 0xe
-        :pswitch_26d
-        :pswitch_308
-        :pswitch_2c6
+        :pswitch_2a7
+        :pswitch_353
+        :pswitch_2b2
     .end packed-switch
 
-    :pswitch_data_58e
+    :pswitch_data_576
     .packed-switch 0x1c
-        :pswitch_d8
-        :pswitch_a8
-        :pswitch_87
-        :pswitch_83
-        :pswitch_80
-    .end packed-switch
-
-    :pswitch_data_59c
-    .packed-switch 0x48
-        :pswitch_7c
-        :pswitch_278
-        :pswitch_278
+        :pswitch_d9
+        :pswitch_a9
+        :pswitch_88
+        :pswitch_84
+        :pswitch_81
     .end packed-switch
 .end method
 
@@ -9058,13 +8880,13 @@
 
     goto/16 :goto_88
 
-    .line 2334
+    .line 2325
     :cond_1e
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->hide()V
 
     goto :goto_4e
 
-    .line 2360
+    .line 2351
     :cond_22
     iget v4, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mOrientation:I
 
@@ -9072,15 +8894,15 @@
 
     invoke-direct {p0, v4, v6}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateZoomContainerLayout(II)V
 
-    .line 2361
+    .line 2352
     iget-boolean v4, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsSuperAntiVideoOn:Z
 
     if-eqz v4, :cond_30
 
-    .line 2362
+    .line 2353
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->showWideCamera()V
 
-    .line 2364
+    .line 2355
     :cond_30
     iget v4, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
@@ -9088,7 +8910,7 @@
 
     if-ne v5, p1, :cond_38
 
-    .line 2366
+    .line 2357
     :cond_36
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
@@ -9097,10 +8919,10 @@
 
     if-ne v5, p1, :cond_3f
 
-    .line 2370
+    .line 2361
     invoke-virtual {p0, v4, v3, v1}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateRootViewPadding(IZZ)V
 
-    .line 2374
+    .line 2365
     :cond_3f
     iget v1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
@@ -9108,22 +8930,22 @@
 
     if-ne v5, p1, :cond_88
 
-    .line 2376
+    .line 2367
     :cond_45
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideSaving:Z
 
     if-nez p1, :cond_4b
 
-    .line 2377
+    .line 2368
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    .line 2379
+    .line 2370
     :cond_4b
     iput v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mRecordingOrientation:I
 
     return-void
 
-    .line 2336
+    .line 2327
     :cond_4e
     :goto_4e
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInSlowMotionMode:Z
@@ -9134,31 +8956,31 @@
 
     if-eqz v5, :cond_59
 
-    .line 2337
+    .line 2328
     :cond_56
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->hide()V
 
-    .line 2339
+    .line 2330
     :cond_59
     iget-boolean v5, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsSuperAntiVideoOn:Z
 
     if-eqz v5, :cond_60
 
-    .line 2340
+    .line 2331
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->hideWideCamera()V
 
-    .line 2342
+    .line 2333
     :cond_60
     iget v5, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mRecordingOrientation:I
 
     if-ne v5, v0, :cond_68
 
-    .line 2343
+    .line 2334
     iget v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mOrientation:I
 
     iput v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mRecordingOrientation:I
 
-    .line 2345
+    .line 2336
     :cond_68
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsPopWindowShow:Z
 
@@ -9176,28 +8998,28 @@
 
     if-ne v0, v5, :cond_78
 
-    .line 2348
+    .line 2339
     :cond_76
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsPopWindowShow:Z
 
-    .line 2351
+    .line 2342
     :cond_78
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->setEnable(Z)V
 
-    .line 2352
+    .line 2343
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsVideoPortraitBarOn:Z
 
-    .line 2353
+    .line 2344
     iput-boolean v3, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFaceBeautyOn:Z
 
-    .line 2354
+    .line 2345
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
     if-ne v2, v0, :cond_88
 
     if-ne v4, p1, :cond_88
 
-    .line 2356
+    .line 2347
     invoke-virtual {p0, v0, v3, v1}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateRootViewPadding(IZZ)V
 
     :cond_88
@@ -9229,7 +9051,7 @@
 .end method
 
 .method protected resetIndicatorPosition()V
-    .registers 6
+    .registers 5
 
     .line 1475
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
@@ -9288,35 +9110,14 @@
 
     return-void
 
-    .line 1483
     :cond_3a
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[resetIndicatorPosition] mItemsCount:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
     const/4 v0, 0x0
 
     .line 1484
-    :goto_53
+    :goto_3b
     iget v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mItemsCount:I
 
-    if-ge v0, v1, :cond_b5
+    if-ge v0, v1, :cond_63
 
     .line 1485
     iget-object v1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomLayout:Landroid/widget/FrameLayout;
@@ -9325,7 +9126,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_b2
+    if-eqz v1, :cond_60
 
     .line 1487
     invoke-virtual {v1}, Landroid/view/View;->isSelected()Z
@@ -9335,7 +9136,7 @@
     .line 1488
     instance-of v3, v1, Lcom/transsion/camera/app/ui/widget/FocalItemView;
 
-    if-eqz v3, :cond_6d
+    if-eqz v3, :cond_55
 
     .line 1489
     check-cast v1, Lcom/transsion/camera/app/ui/widget/FocalItemView;
@@ -9344,57 +9145,8 @@
 
     move-result v2
 
-    .line 1491
-    :cond_6d
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "[resetIndicatorPosition] selected:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v4, ",i:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v4, " alpha:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
-
-    invoke-virtual {v4}, Landroid/view/View;->getAlpha()F
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v4, " visibility:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v4, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
-
-    invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    if-eqz v2, :cond_b2
+    :cond_55
+    if-eqz v2, :cond_60
 
     .line 1493
     iput v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mSelectIndex:I
@@ -9409,19 +9161,19 @@
 
     return-void
 
-    :cond_b2
+    :cond_60
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_53
+    goto :goto_3b
 
-    :cond_b5
+    :cond_63
     return-void
 .end method
 
 .method protected setRootViewAlpha(F)V
     .registers 3
 
-    .line 2322
+    .line 2313
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -9442,7 +9194,7 @@
 
     if-eqz v0, :cond_1b
 
-    .line 2323
+    .line 2314
     invoke-virtual {v0}, Landroid/animation/Animator;->isStarted()Z
 
     move-result v0
@@ -9451,7 +9203,7 @@
 
     return-void
 
-    .line 2326
+    .line 2317
     :cond_1b
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->setRootViewAlpha(F)V
 
@@ -9461,7 +9213,7 @@
 .method protected setRootViewTranslationY(F)V
     .registers 4
 
-    .line 2310
+    .line 2301
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -9482,7 +9234,7 @@
 
     if-eqz v0, :cond_1b
 
-    .line 2311
+    .line 2302
     invoke-virtual {v0}, Landroid/animation/Animator;->isStarted()Z
 
     move-result v0
@@ -9491,7 +9243,7 @@
 
     goto :goto_2d
 
-    .line 2314
+    .line 2305
     :cond_1b
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInIntentVideoMode:Z
 
@@ -9514,7 +9266,7 @@
     :goto_2d
     return-void
 
-    .line 2317
+    .line 2308
     :cond_2e
     invoke-super {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->setRootViewTranslationY(F)V
 
@@ -9698,163 +9450,167 @@
 
     move-result-object v1
 
+    new-instance v2, Ljava/lang/Throwable;
+
+    invoke-direct {v2}, Ljava/lang/Throwable;-><init>()V
+
     .line 1291
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 1293
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
     const/4 v1, 0x7
 
-    if-ne v1, v0, :cond_55
+    if-ne v1, v0, :cond_5a
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mHideZoomForFlip:Z
 
-    if-nez v0, :cond_4f
+    if-nez v0, :cond_54
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFlipPageShow:Z
 
-    if-eqz v0, :cond_55
+    if-eqz v0, :cond_5a
 
-    :cond_4f
+    :cond_54
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    if-nez v0, :cond_55
+    if-nez v0, :cond_5a
 
-    goto/16 :goto_184
+    goto/16 :goto_189
 
     .line 1296
-    :cond_55
+    :cond_5a
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsPopSettingShow:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsMoreMode:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mModeChangedBegin:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mQuickRecording:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsRestoringDefault:Z
 
-    if-eqz v0, :cond_6b
+    if-eqz v0, :cond_70
 
-    goto/16 :goto_184
+    goto/16 :goto_189
 
     .line 1299
-    :cond_6b
+    :cond_70
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mIsNeedShowUI:Z
 
-    if-eqz v0, :cond_184
+    if-eqz v0, :cond_189
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
 
-    if-eqz v0, :cond_184
+    if-eqz v0, :cond_189
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mSettingUIList:Ljava/util/List;
 
-    if-eqz v0, :cond_184
+    if-eqz v0, :cond_189
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-eqz v0, :cond_184
+    if-eqz v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCouldShow:Z
 
-    if-eqz v0, :cond_184
+    if-eqz v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCameraSwitching:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mImageStyleShow:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFilterUIOn:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsFaceBeautyOn:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     .line 1302
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->isDVVideoModeBottomUIOn()Z
 
     move-result v0
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsVideoPortraitBarOn:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsVideoPortraitSpotPanelOn:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mAIGCEffectUIOn:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mAIArtMuseumUIOn:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsTimeLapseSettingUIShow:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsLongExposureSettingUIShow:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsCapturing:Z
 
-    if-eqz v0, :cond_c9
+    if-eqz v0, :cond_ce
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInProMode:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInSuperNightMode:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInLongExposureMode:Z
 
-    if-nez v0, :cond_184
+    if-nez v0, :cond_189
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInAIGCMode:Z
 
-    if-eqz v0, :cond_c9
+    if-eqz v0, :cond_ce
 
-    goto/16 :goto_184
+    goto/16 :goto_189
 
     .line 1309
-    :cond_c9
+    :cond_ce
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
     const/4 v2, 0x3
 
-    if-ne v0, v2, :cond_108
+    if-ne v0, v2, :cond_10d
 
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInProMode:Z
 
-    if-eqz v0, :cond_108
+    if-eqz v0, :cond_10d
 
     .line 1310
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mBottomBarHeight:I
@@ -9884,7 +9640,7 @@
 
     move-result v2
 
-    if-ge v2, v0, :cond_108
+    if-ge v2, v0, :cond_10d
 
     .line 1312
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -9914,17 +9670,17 @@
 
     invoke-virtual {v2, v3, v4, v5, v0}, Landroid/view/View;->setPadding(IIII)V
 
-    :cond_108
-    if-eqz p1, :cond_10d
+    :cond_10d
+    if-eqz p1, :cond_112
 
     .line 1318
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->resetIndicatorPosition()V
 
     .line 1321
-    :cond_10d
+    :cond_112
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mInMovieMode:Z
 
-    if-nez p1, :cond_11f
+    if-nez p1, :cond_124
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
 
@@ -9936,30 +9692,30 @@
 
     cmpl-float p1, p1, v0
 
-    if-eqz p1, :cond_11f
+    if-eqz p1, :cond_124
 
     .line 1322
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->setRootViewTranslationY(F)V
 
     .line 1324
-    :cond_11f
+    :cond_124
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI4Animator:Z
 
-    if-nez p1, :cond_12e
+    if-nez p1, :cond_133
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRecordingAnimator:Landroid/animation/Animator;
 
-    if-eqz p1, :cond_12e
+    if-eqz p1, :cond_133
 
     .line 1325
     invoke-virtual {p1}, Landroid/animation/Animator;->cancel()V
 
     .line 1327
-    :cond_12e
+    :cond_133
     const-string p1, "com.transsion.camera.feature.mode.more.MoreModeEntry"
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
@@ -9968,7 +9724,7 @@
 
     move-result p1
 
-    if-nez p1, :cond_184
+    if-nez p1, :cond_189
 
     const/high16 p1, 0x3f800000    # 1.0f
 
@@ -9978,7 +9734,7 @@
     .line 1329
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIfNeedShow:Z
 
-    if-eqz p1, :cond_184
+    if-eqz p1, :cond_189
 
     .line 1330
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->cancelAnimation()V
@@ -9986,11 +9742,11 @@
     .line 1331
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mIsNeedAnimate:Z
 
-    if-eqz p1, :cond_180
+    if-eqz p1, :cond_185
 
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
-    if-eq v1, p1, :cond_180
+    if-eq v1, p1, :cond_185
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
 
@@ -9998,7 +9754,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_180
+    if-eqz p1, :cond_185
 
     .line 1332
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mRootView:Landroid/view/View;
@@ -10007,7 +9763,7 @@
 
     new-array v0, v0, [F
 
-    fill-array-data v0, :array_186
+    fill-array-data v0, :array_18a
 
     const-string v1, "alpha"
 
@@ -10045,19 +9801,17 @@
 
     return-void
 
-    :cond_180
+    :cond_185
     const/4 p1, 0x0
 
     .line 1343
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->setRootViewVisibility(I)V
 
-    :cond_184
-    :goto_184
+    :cond_189
+    :goto_189
     return-void
 
-    nop
-
-    :array_186
+    :array_18a
     .array-data 4
         0x0
         0x3f800000    # 1.0f
@@ -11365,12 +11119,12 @@
 .method public updatePreviewRect(Landroid/graphics/Rect;)V
     .registers 3
 
-    .line 2055
+    .line 2046
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mPreviewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 2056
+    .line 2047
     iget p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateRootViewLayout(I)V
@@ -11381,15 +11135,15 @@
 .method public updateRootViewPadding(IZ)V
     .registers 4
 
-    .line 2013
+    .line 2004
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->updateRootViewPadding(IZ)V
 
     const/4 v0, 0x0
 
-    .line 2014
+    .line 2005
     invoke-virtual {p0, p1, p2, v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateRootViewPadding(IZZ)V
 
-    .line 2015
+    .line 2006
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI(Landroid/content/Context;)Z
@@ -11398,7 +11152,7 @@
 
     if-nez p1, :cond_1c
 
-    .line 2016
+    .line 2007
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
     if-eqz p1, :cond_1c
@@ -11409,12 +11163,12 @@
 
     const/4 p1, 0x0
 
-    .line 2017
+    .line 2008
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->setRootViewTranslationY(F)V
 
     return-void
 
-    .line 2021
+    .line 2012
     :cond_1c
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mCurrentMode:Ljava/lang/String;
 
@@ -11432,7 +11186,7 @@
 
     if-nez p1, :cond_3d
 
-    .line 2022
+    .line 2013
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -11452,53 +11206,14 @@
 .end method
 
 .method public updateRootViewPadding(IZZ)V
-    .registers 7
+    .registers 6
 
-    .line 2027
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[updateRootViewPadding] screenFormType = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p1, ", animation = "
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p1, " withSelectedItem:"
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p1, ", mModeChangedBegin "
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mModeChangedBegin:Z
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 2029
+    .line 2020
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mFullZoomContainer:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    if-nez p1, :cond_3c
+    if-nez p1, :cond_c
 
-    .line 2030
+    .line 2021
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "onScreenFormChanged, mFullZoomContainer is null"
@@ -11507,74 +11222,74 @@
 
     return-void
 
-    .line 2033
-    :cond_3c
+    .line 2024
+    :cond_c
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mSettingUIList:Ljava/util/List;
 
     const/4 p2, 0x1
 
-    if-eqz p1, :cond_5d
+    if-eqz p1, :cond_2d
 
-    .line 2034
+    .line 2025
     iget v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
-    if-eq p2, v0, :cond_50
+    if-eq p2, v0, :cond_20
 
     const/4 v1, 0x4
 
-    if-eq v1, v0, :cond_50
+    if-eq v1, v0, :cond_20
 
     const/4 v1, 0x5
 
-    if-ne v1, v0, :cond_4c
+    if-ne v1, v0, :cond_1c
 
-    goto :goto_50
+    goto :goto_20
 
-    .line 2041
-    :cond_4c
+    .line 2032
+    :cond_1c
     invoke-direct {p0, p1, p3}, Lcom/transsion/camera/app/ui/FullZoomUI;->addItemViews(Ljava/util/List;Z)V
 
-    goto :goto_5d
+    goto :goto_2d
 
-    .line 2037
-    :cond_50
-    :goto_50
+    .line 2028
+    :cond_20
+    :goto_20
     new-instance p1, Ljava/util/ArrayList;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mSettingUIList:Ljava/util/List;
 
     invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 2038
+    .line 2029
     invoke-static {p1}, Ljava/util/Collections;->reverse(Ljava/util/List;)V
 
-    .line 2039
+    .line 2030
     invoke-direct {p0, p1, p3}, Lcom/transsion/camera/app/ui/FullZoomUI;->addItemViews(Ljava/util/List;Z)V
 
-    .line 2045
-    :cond_5d
-    :goto_5d
+    .line 2036
+    :cond_2d
+    :goto_2d
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mOrientation:I
 
-    .line 2046
+    .line 2037
     iget p3, p0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
 
-    if-ne p3, p2, :cond_69
+    if-ne p3, p2, :cond_39
 
-    .line 2047
+    .line 2038
     iget-boolean p2, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mVideoRecording:Z
 
-    if-eqz p2, :cond_69
+    if-eqz p2, :cond_39
 
     iget p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI;->mRecordingOrientation:I
 
-    :cond_69
+    :cond_39
     const/4 p2, 0x0
 
-    .line 2049
+    .line 2040
     invoke-direct {p0, p2, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->updateFullZoomUILayout(ZI)V
 
-    .line 2050
+    .line 2041
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->resetIndicatorPosition()V
 
     return-void

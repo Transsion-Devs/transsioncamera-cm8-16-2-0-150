@@ -22,9 +22,9 @@
     .registers 1
 
     .line 0
-    new-instance p0, Lcom/transsion/camera/manager/BaseImageryGuideManagerFactory;
+    new-instance p0, Lcom/transsion/camera/app/ui/manager/factory/HintUIManagerFactory;
 
-    invoke-direct {p0}, Lcom/transsion/camera/manager/BaseImageryGuideManagerFactory;-><init>()V
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/factory/HintUIManagerFactory;-><init>()V
 
     return-object p0
 .end method

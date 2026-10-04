@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)V
     .registers 2
 
-    .line 324
+    .line 346
     iput-object p1, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$5;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 2
 
-    .line 327
+    .line 349
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$5;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fgetmIAlgoRenderer(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)Lcom/transsion/camera/app/common/preview/algorithm/IAlgoRenderer;
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 328
+    .line 350
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$5;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fgetmIAlgoRenderer(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)Lcom/transsion/camera/app/common/preview/algorithm/IAlgoRenderer;
@@ -56,7 +56,7 @@
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/preview/algorithm/IAlgoRenderer;->onSurfaceDestroyed()V
 
-    .line 330
+    .line 352
     :cond_11
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$5;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_28
 
-    .line 331
+    .line 353
     iget-object v0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$5;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fgetmGLProgram(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;)Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;
@@ -75,14 +75,14 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;->release()V
 
-    .line 332
+    .line 354
     iget-object p0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$5;->this$0:Lcom/transsion/camera/app/ui/opengl/GLPreviewView;
 
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$fputmGLProgram(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;Lcom/transsion/camera/app/ui/opengl/Texture2dProgram;)V
 
-    .line 334
+    .line 356
     :cond_28
     invoke-static {}, Lcom/transsion/camera/app/ui/opengl/GLPreviewView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 

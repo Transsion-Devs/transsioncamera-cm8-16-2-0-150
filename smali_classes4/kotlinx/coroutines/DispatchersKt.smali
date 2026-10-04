@@ -11,7 +11,7 @@
 .method public static final synthetic getIO(Lkotlinx/coroutines/Dispatchers;)Lkotlinx/coroutines/CoroutineDispatcher;
     .registers 1
 
-    .line 107
+    .line 103
     invoke-static {}, Lkotlinx/coroutines/Dispatchers;->getIO()Lkotlinx/coroutines/CoroutineDispatcher;
 
     move-result-object p0

@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static motion_capture_guide_page_indicator_normal_color:I = 0x7f0602cf
+.field public static motion_capture_guide_page_indicator_normal_color:I = 0x7f0602d0
 
-.field public static motion_capture_guide_page_indicator_select_color:I = 0x7f0602d0
+.field public static motion_capture_guide_page_indicator_select_color:I = 0x7f0602d1
 
-.field public static motion_capture_guide_page_indicator_select_color_dark:I = 0x7f0602d1
+.field public static motion_capture_guide_page_indicator_select_color_dark:I = 0x7f0602d2
 
 
 # direct methods

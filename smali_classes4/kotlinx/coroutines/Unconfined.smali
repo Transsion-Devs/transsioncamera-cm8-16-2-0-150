@@ -23,7 +23,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 13
+    .line 9
     invoke-direct {p0}, Lkotlinx/coroutines/CoroutineDispatcher;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public dispatch(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
     .registers 3
 
-    .line 24
+    .line 20
     sget-object p0, Lkotlinx/coroutines/YieldContext;->Key:Lkotlinx/coroutines/YieldContext$Key;
 
     invoke-interface {p1, p0}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
@@ -47,12 +47,12 @@
 
     const/4 p1, 0x1
 
-    .line 27
+    .line 23
     iput-boolean p1, p0, Lkotlinx/coroutines/YieldContext;->dispatcherWasUnconfined:Z
 
     return-void
 
-    .line 30
+    .line 26
     :cond_e
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
@@ -76,7 +76,7 @@
     .annotation build Lkotlinx/coroutines/ExperimentalCoroutinesApi;
     .end annotation
 
-    .line 17
+    .line 13
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string p1, "limitedParallelism is not supported for Dispatchers.Unconfined"
@@ -89,7 +89,7 @@
 .method public toString()Ljava/lang/String;
     .registers 1
 
-    .line 35
+    .line 31
     const-string p0, "Dispatchers.Unconfined"
 
     return-object p0

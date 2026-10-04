@@ -14,39 +14,39 @@
 
 
 # static fields
-.field public static ic_filter_abao:I = 0x7f080493
+.field public static ic_filter_abao:I = 0x7f08045e
 
-.field public static ic_filter_bgold:I = 0x7f080494
+.field public static ic_filter_bgold:I = 0x7f08045f
 
-.field public static ic_filter_blackgold:I = 0x7f080495
+.field public static ic_filter_blackgold:I = 0x7f080460
 
-.field public static ic_filter_blue:I = 0x7f080496
+.field public static ic_filter_blue:I = 0x7f080461
 
-.field public static ic_filter_bright:I = 0x7f080497
+.field public static ic_filter_bright:I = 0x7f080462
 
-.field public static ic_filter_cyberpunk:I = 0x7f080498
+.field public static ic_filter_cyberpunk:I = 0x7f080463
 
-.field public static ic_filter_deep:I = 0x7f080499
+.field public static ic_filter_deep:I = 0x7f080464
 
-.field public static ic_filter_electronic:I = 0x7f08049a
+.field public static ic_filter_electronic:I = 0x7f080465
 
-.field public static ic_filter_greenorange:I = 0x7f08049b
+.field public static ic_filter_greenorange:I = 0x7f080466
 
-.field public static ic_filter_move:I = 0x7f08049c
+.field public static ic_filter_move:I = 0x7f080467
 
-.field public static ic_filter_original:I = 0x7f08049d
+.field public static ic_filter_original:I = 0x7f080468
 
-.field public static ic_filter_romatic:I = 0x7f08049e
+.field public static ic_filter_romatic:I = 0x7f080469
 
-.field public static ic_filter_sunset:I = 0x7f08049f
+.field public static ic_filter_sunset:I = 0x7f08046a
 
-.field public static ic_filter_transsion_original:I = 0x7f0804a0
+.field public static ic_filter_transsion_original:I = 0x7f08046b
 
-.field public static ic_supernight_filter:I = 0x7f08074f
+.field public static ic_supernight_filter:I = 0x7f0806df
 
-.field public static ic_supernight_filter_selected:I = 0x7f080750
+.field public static ic_supernight_filter_selected:I = 0x7f0806e0
 
-.field public static supernight_filter_indicator_shape:I = 0x7f080af6
+.field public static supernight_filter_indicator_shape:I = 0x7f080a5f
 
 
 # direct methods

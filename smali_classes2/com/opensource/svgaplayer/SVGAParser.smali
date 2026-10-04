@@ -2581,18 +2581,3 @@
 
     return-object p0
 .end method
-
-.method public final parse(Ljava/lang/String;Lcom/opensource/svgaplayer/SVGAParser$ParseCompletion;)V
-    .registers 4
-
-    const-string v0, "assetsName"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    .line 349
-    invoke-virtual {p0, p1, p2, v0}, Lcom/opensource/svgaplayer/SVGAParser;->decodeFromAssets(Ljava/lang/String;Lcom/opensource/svgaplayer/SVGAParser$ParseCompletion;Lcom/opensource/svgaplayer/SVGAParser$PlayCallback;)V
-
-    return-void
-.end method

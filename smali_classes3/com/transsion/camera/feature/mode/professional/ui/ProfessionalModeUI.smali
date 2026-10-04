@@ -1840,19 +1840,25 @@
     .line 1288
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalModeUI;->mZoomScaling:Z
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_1a
 
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalModeUI;->mInstantZoomShow:Z
 
-    if-eqz v0, :cond_9
+    if-nez v0, :cond_1a
 
-    goto :goto_15
+    iget v0, p0, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalModeUI;->mUIState:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_e
+
+    goto :goto_1a
 
     .line 1291
-    :cond_9
+    :cond_e
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalModeUI;->mSettingBarRootUI:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1a
 
     .line 1292
     new-instance v1, Lcom/transsion/camera/feature/mode/professional/ui/ProfessionalModeUI$$ExternalSyntheticLambda1;
@@ -1861,8 +1867,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    :cond_15
-    :goto_15
+    :cond_1a
+    :goto_1a
     return-void
 .end method
 

@@ -14,19 +14,19 @@
 
 
 # static fields
-.field public static guide_top_bar_root:I = 0x7f0b02d7
+.field public static guide_top_bar_root:I = 0x7f0b02d8
 
-.field public static img_exit_icon:I = 0x7f0b031b
+.field public static img_exit_icon:I = 0x7f0b031c
 
-.field public static mode_title:I = 0x7f0b03d8
+.field public static mode_title:I = 0x7f0b03d5
 
-.field public static motion_capture_help_content:I = 0x7f0b040f
+.field public static motion_capture_help_content:I = 0x7f0b040c
 
-.field public static motion_capture_help_content_1:I = 0x7f0b0410
+.field public static motion_capture_help_content_1:I = 0x7f0b040d
 
-.field public static motion_capture_help_content_2:I = 0x7f0b0411
+.field public static motion_capture_help_content_2:I = 0x7f0b040e
 
-.field public static motion_capture_help_content_3:I = 0x7f0b0412
+.field public static motion_capture_help_content_3:I = 0x7f0b040f
 
 
 # direct methods

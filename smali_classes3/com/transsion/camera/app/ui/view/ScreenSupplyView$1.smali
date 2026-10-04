@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field final synthetic this$0:Lcom/transsion/camera/app/ui/view/ScreenSupplyView;
+
 .field final synthetic val$apertureView:Landroid/view/View;
 
 .field final synthetic val$previewScreenSupplyView:Landroid/view/View;
@@ -24,7 +26,9 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/view/ScreenSupplyView;Landroid/view/View;Landroid/view/View;)V
     .registers 4
 
-    .line 358
+    .line 394
+    iput-object p1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$1;->this$0:Lcom/transsion/camera/app/ui/view/ScreenSupplyView;
+
     iput-object p2, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$1;->val$previewScreenSupplyView:Landroid/view/View;
 
     iput-object p3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$1;->val$apertureView:Landroid/view/View;
@@ -36,25 +40,51 @@
 
 
 # virtual methods
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .registers 2
+
+    .line 411
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$1;->this$0:Lcom/transsion/camera/app/ui/view/ScreenSupplyView;
+
+    const/4 p1, 0x0
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->-$$Nest$fputmEnterOutAnimator(Lcom/transsion/camera/app/ui/view/ScreenSupplyView;Landroid/animation/AnimatorSet;)V
+
+    return-void
+.end method
+
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .registers 2
+
+    .line 406
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$1;->this$0:Lcom/transsion/camera/app/ui/view/ScreenSupplyView;
+
+    const/4 p1, 0x0
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->-$$Nest$fputmEnterOutAnimator(Lcom/transsion/camera/app/ui/view/ScreenSupplyView;Landroid/animation/AnimatorSet;)V
+
+    return-void
+.end method
+
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 361
+    .line 397
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$1;->val$previewScreenSupplyView:Landroid/view/View;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 362
+    .line 398
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$1;->val$apertureView:Landroid/view/View;
 
     if-eqz p1, :cond_12
 
-    .line 363
+    .line 399
     invoke-virtual {p1, v0}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 364
+    .line 400
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$1;->val$apertureView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V

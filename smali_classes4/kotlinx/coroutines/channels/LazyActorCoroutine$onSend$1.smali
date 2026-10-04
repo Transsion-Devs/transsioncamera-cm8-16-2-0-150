@@ -66,7 +66,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    .line 192
+    .line 189
     check-cast p1, Lkotlinx/coroutines/channels/LazyActorCoroutine;
 
     check-cast p2, Lkotlinx/coroutines/selects/SelectInstance;
@@ -92,7 +92,7 @@
         }
     .end annotation
 
-    .line 192
+    .line 189
     # invokes: Lkotlinx/coroutines/channels/LazyActorCoroutine;->onSendRegFunction(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
     invoke-static {p1, p2, p3}, Lkotlinx/coroutines/channels/LazyActorCoroutine;->access$onSendRegFunction(Lkotlinx/coroutines/channels/LazyActorCoroutine;Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V
 

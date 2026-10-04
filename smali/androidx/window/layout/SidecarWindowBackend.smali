@@ -130,7 +130,7 @@
 
     if-eqz v0, :cond_b
 
-    .line 249
+    .line 1741
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v1
@@ -139,7 +139,7 @@
 
     goto :goto_26
 
-    .line 250
+    .line 1742
     :cond_b
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -200,7 +200,7 @@
 
     if-eqz p0, :cond_c
 
-    .line 246
+    .line 1741
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v1
@@ -209,7 +209,7 @@
 
     return v0
 
-    .line 247
+    .line 1742
     :cond_c
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 

@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static video_face_item_circle_color:I = 0x7f06061e
+.field public static video_face_item_circle_color:I = 0x7f060620
 
 
 # direct methods

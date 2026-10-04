@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)V
     .registers 2
 
-    .line 166
+    .line 162
     iput-object p1, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$2;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 3
 
-    .line 169
+    .line 165
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$2;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->-$$Nest$fgetmGpuProcessers(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)Ljava/util/concurrent/CopyOnWriteArrayList;
@@ -62,12 +62,12 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;
 
-    .line 170
+    .line 166
     invoke-interface {v1}, Lcom/transsion/camera/app/common/preview/algorithm/IGpuProcessor;->onModeUnInit()V
 
     goto :goto_a
 
-    .line 172
+    .line 168
     :cond_1a
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$2;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
@@ -77,28 +77,19 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->clear()V
 
-    .line 173
-    iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$2;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
-
-    invoke-static {v0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->-$$Nest$fgetmCurrentModeAlgoList(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->clear()V
-
-    .line 174
+    .line 169
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$2;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->-$$Nest$fputmHasTranssionFilterAlgo(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;Z)V
 
-    .line 175
+    .line 170
     iget-object v0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$2;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->-$$Nest$fputmHasMakeupAlgo(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;Z)V
 
-    .line 176
+    .line 171
     iget-object p0, p0, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager$2;->this$0:Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;->-$$Nest$mdestoryResources(Lcom/transsion/camera/app/common/preview/algorithm/GpuAlgorithmManager;)V

@@ -22,7 +22,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 2126
+    .line 2148
     invoke-static {}, Lcom/transsion/camera/app/common/IApp$State;->values()[Lcom/transsion/camera/app/common/IApp$State;
 
     move-result-object v0

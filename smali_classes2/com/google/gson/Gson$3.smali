@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/Gson$3;
+.class Lcom/google/gson/Gson$3;
 .super Lcom/google/gson/TypeAdapter;
 .source "SourceFile"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -24,7 +24,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 369
+    .line 520
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Number;
     .registers 3
 
-    .line 371
+    .line 523
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     move-result-object p0
@@ -44,14 +44,14 @@
 
     if-ne p0, v0, :cond_d
 
-    .line 372
+    .line 524
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
     const/4 p0, 0x0
 
     return-object p0
 
-    .line 375
+    .line 527
     :cond_d
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextLong()J
 
@@ -67,7 +67,7 @@
 .method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .registers 2
 
-    .line 369
+    .line 520
     invoke-virtual {p0, p1}, Lcom/google/gson/Gson$3;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Number;
 
     move-result-object p0
@@ -80,12 +80,12 @@
 
     if-nez p2, :cond_6
 
-    .line 379
+    .line 533
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->nullValue()Lcom/google/gson/stream/JsonWriter;
 
     return-void
 
-    .line 382
+    .line 536
     :cond_6
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -99,7 +99,7 @@
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
 
-    .line 369
+    .line 520
     check-cast p2, Ljava/lang/Number;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/gson/Gson$3;->write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Number;)V

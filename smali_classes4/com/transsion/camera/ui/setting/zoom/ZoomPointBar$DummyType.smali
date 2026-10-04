@@ -21,7 +21,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)V
     .registers 2
 
-    .line 791
+    .line 812
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -79,7 +79,7 @@
 .method public getZoomItems()Ljava/util/List;
     .registers 1
 
-    .line 806
+    .line 827
     sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object p0

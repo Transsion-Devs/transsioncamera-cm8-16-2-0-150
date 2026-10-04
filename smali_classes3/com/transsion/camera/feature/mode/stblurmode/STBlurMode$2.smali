@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)V
     .registers 2
 
-    .line 844
+    .line 845
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$2;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 1
 
-    .line 847
+    .line 848
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode$2;->this$0:Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;->-$$Nest$mcreateFacelighting(Lcom/transsion/camera/feature/mode/stblurmode/STBlurMode;)V

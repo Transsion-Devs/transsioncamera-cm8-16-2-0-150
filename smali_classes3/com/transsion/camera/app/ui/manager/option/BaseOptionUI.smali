@@ -57,10 +57,12 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$8zqpVaPfNDMEnutE1mlsRz0sHNo(ZLcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;)V
-    .registers 2
+    .registers 3
+
+    const/4 v0, 0x1
 
     .line 180
-    invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onScreenSupply(Z)V
+    invoke-interface {p1, p0, v0}, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;->onScreenSupply(ZZ)V
 
     return-void
 .end method

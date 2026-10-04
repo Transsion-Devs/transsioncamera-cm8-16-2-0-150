@@ -27,7 +27,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;)V
     .registers 3
 
-    .line 396
+    .line 403
     iput-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$4;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$4;->val$listener:Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;
@@ -42,7 +42,7 @@
 .method public varargs onBackgroundImageSaveCompleted(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;I[Ljava/lang/Object;)V
     .registers 7
 
-    .line 409
+    .line 416
     iget-object p3, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$4;->val$listener:Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;
 
     const/4 v0, 0x0
@@ -51,12 +51,12 @@
 
     invoke-interface {p3, p1, p2, v0}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveCompleted(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;I[Ljava/lang/Object;)V
 
-    .line 410
+    .line 417
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/taps/entity/BaseInfo;->getTimestampKey()J
 
     move-result-wide p1
 
-    .line 411
+    .line 418
     iget-object p3, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$4;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
     invoke-static {p3}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$fgetmFailedLowQualityPicture(Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;)Ljava/util/Set;
@@ -65,7 +65,7 @@
 
     monitor-enter p3
 
-    .line 412
+    .line 419
     :try_start_13
     iget-object v0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$4;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
@@ -83,7 +83,7 @@
 
     if-nez v0, :cond_43
 
-    .line 414
+    .line 421
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -115,7 +115,7 @@
 
     goto :goto_6b
 
-    .line 417
+    .line 424
     :cond_43
     :goto_43
     iget-object p1, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$4;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
@@ -142,7 +142,7 @@
 
     if-eqz p1, :cond_69
 
-    .line 418
+    .line 425
     invoke-static {}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -151,12 +151,12 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 419
+    .line 426
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$4;->this$0:Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager;->deleteWrongStateLowQualityPictures()V
 
-    .line 421
+    .line 428
     :cond_69
     monitor-exit p3
 
@@ -173,7 +173,7 @@
 .method public varargs onBackgroundImageSaveProgressed(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;[Ljava/lang/Object;)V
     .registers 3
 
-    .line 404
+    .line 411
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$4;->val$listener:Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveProgressed(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;[Ljava/lang/Object;)V
@@ -184,7 +184,7 @@
 .method public onBackgroundImageSaveStarted(J)V
     .registers 3
 
-    .line 399
+    .line 406
     iget-object p0, p0, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$4;->val$listener:Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;->onBackgroundImageSaveStarted(J)V

@@ -25,15 +25,15 @@
 
 
 # static fields
-.field private static final _size$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+.field private static final synthetic _size$volatile$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
-.field private static final core$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic core$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
 
 # instance fields
-.field private volatile _size:I
+.field private volatile synthetic _size$volatile:I
 
-.field private volatile core:Ljava/lang/Object;
+.field private volatile synthetic core$volatile:Ljava/lang/Object;
 
 .field private final weakRefQueue:Ljava/lang/ref/ReferenceQueue;
     .annotation system Ldalvik/annotation/Signature;
@@ -49,7 +49,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    const-string v0, "_size"
+    const-string v0, "_size$volatile"
 
     const-class v1, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;
 
@@ -57,17 +57,17 @@
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->_size$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->_size$volatile$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     const-class v0, Ljava/lang/Object;
 
-    const-string v2, "core"
+    const-string v2, "core$volatile"
 
     invoke-static {v1, v0, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     return-void
 .end method
@@ -90,21 +90,21 @@
 .method public constructor <init>(Z)V
     .registers 4
 
-    .line 20
+    .line 16
     invoke-direct {p0}, Lkotlin/collections/AbstractMutableMap;-><init>()V
 
-    .line 22
+    .line 18
     new-instance v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$Core;
 
     const/16 v1, 0x10
 
     invoke-direct {v0, p0, v1}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$Core;-><init>(Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;I)V
 
-    iput-object v0, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core:Ljava/lang/Object;
+    iput-object v0, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$volatile:Ljava/lang/Object;
 
     if-eqz p1, :cond_14
 
-    .line 23
+    .line 19
     new-instance p1, Ljava/lang/ref/ReferenceQueue;
 
     invoke-direct {p1}, Ljava/lang/ref/ReferenceQueue;-><init>()V
@@ -129,7 +129,7 @@
 
     const/4 p1, 0x0
 
-    .line 14
+    .line 10
     :cond_5
     invoke-direct {p0, p1}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;-><init>(Z)V
 
@@ -139,17 +139,19 @@
 .method public static final synthetic access$decrementSize(Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;)V
     .registers 1
 
-    .line 13
+    .line 9
     invoke-direct {p0}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->decrementSize()V
 
     return-void
 .end method
 
-.method public static final synthetic access$getCore$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.method public static final synthetic access$getCore$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
     .registers 1
 
-    .line 13
-    sget-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 9
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->getCore$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -157,7 +159,7 @@
 .method public static final synthetic access$getWeakRefQueue$p(Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;)Ljava/lang/ref/ReferenceQueue;
     .registers 1
 
-    .line 13
+    .line 9
     iget-object p0, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->weakRefQueue:Ljava/lang/ref/ReferenceQueue;
 
     return-object p0
@@ -173,9 +175,11 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->getCore$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 81
+    move-result-object v0
+
+    .line 77
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -190,12 +194,46 @@
 .method private final decrementSize()V
     .registers 2
 
-    sget-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->_size$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->get_size$volatile$FU()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
-    .line 28
+    move-result-object v0
+
+    .line 24
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->decrementAndGet(Ljava/lang/Object;)I
 
     return-void
+.end method
+
+.method private final synthetic getCore$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic getCore$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic get_size$volatile()I
+    .registers 1
+
+    iget p0, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->_size$volatile:I
+
+    return p0
+.end method
+
+.method private static final synthetic get_size$volatile$FU()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->_size$volatile$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    return-object v0
 .end method
 
 .method private final declared-synchronized putSynchronized(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -209,9 +247,11 @@
     monitor-enter p0
 
     :try_start_1
-    sget-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->getCore$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 49
+    move-result-object v0
+
+    .line 45
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -220,7 +260,7 @@
 
     move-object v1, v0
 
-    :goto_a
+    :goto_c
     const/4 v5, 0x4
 
     const/4 v6, 0x0
@@ -231,53 +271,71 @@
 
     move-object v3, p2
 
-    .line 51
+    .line 47
     invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$Core;->putImpl$default(Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$Core;Ljava/lang/Object;Ljava/lang/Object;Lkotlinx/coroutines/debug/internal/HashedWeakRef;ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 52
+    .line 48
     # getter for: Lkotlinx/coroutines/debug/internal/ConcurrentWeakMapKt;->REHASH:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMapKt;->access$getREHASH$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object p2
-    :try_end_17
-    .catchall {:try_start_1 .. :try_end_17} :catchall_27
+    :try_end_19
+    .catchall {:try_start_1 .. :try_end_19} :catchall_2b
 
-    if-eq p1, p2, :cond_1b
+    if-eq p1, p2, :cond_1d
 
     monitor-exit p0
 
     return-object p1
 
-    .line 53
-    :cond_1b
-    :try_start_1b
+    .line 49
+    :cond_1d
+    :try_start_1d
     invoke-virtual {v1}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$Core;->rehash()Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$Core;
 
     move-result-object v1
 
-    sget-object p1, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->getCore$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 54
+    move-result-object p1
+
+    .line 50
     invoke-virtual {p1, p0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
     move-object p1, v2
 
     move-object p2, v3
 
-    goto :goto_a
+    goto :goto_c
 
-    :catchall_27
+    :catchall_2b
     move-exception v0
 
     move-object p1, v0
 
     monitor-exit p0
-    :try_end_2a
-    .catchall {:try_start_1b .. :try_end_2a} :catchall_27
+    :try_end_2e
+    .catchall {:try_start_1d .. :try_end_2e} :catchall_2b
 
     throw p1
+.end method
+
+.method private final synthetic setCore$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$volatile:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private final synthetic set_size$volatile(I)V
+    .registers 2
+
+    iput p1, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->_size$volatile:I
+
+    return-void
 .end method
 
 
@@ -285,7 +343,7 @@
 .method public clear()V
     .registers 3
 
-    .line 66
+    .line 62
     invoke-virtual {p0}, Lkotlin/collections/AbstractMutableMap;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -330,9 +388,11 @@
     return-object p0
 
     :cond_4
-    sget-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->getCore$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 30
+    move-result-object v0
+
+    .line 26
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -357,7 +417,7 @@
         }
     .end annotation
 
-    .line 62
+    .line 58
     new-instance v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$KeyValueSet;
 
     sget-object v1, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$entries$1;->INSTANCE:Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$entries$1;
@@ -377,7 +437,7 @@
         }
     .end annotation
 
-    .line 59
+    .line 55
     new-instance v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$KeyValueSet;
 
     sget-object v1, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$keys$1;->INSTANCE:Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap$keys$1;
@@ -390,9 +450,11 @@
 .method public getSize()I
     .registers 2
 
-    sget-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->_size$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->get_size$volatile$FU()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
-    .line 26
+    move-result-object v0
+
+    .line 22
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
 
     move-result p0
@@ -408,9 +470,11 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->getCore$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 33
+    move-result-object v0
+
+    .line 29
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -433,27 +497,29 @@
 
     move-result-object p1
 
-    .line 34
+    .line 30
     # getter for: Lkotlinx/coroutines/debug/internal/ConcurrentWeakMapKt;->REHASH:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMapKt;->access$getREHASH$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object p2
 
-    if-ne p1, p2, :cond_1c
+    if-ne p1, p2, :cond_1e
 
     invoke-direct {p0, v2, v3}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->putSynchronized(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    :cond_1c
-    if-nez p1, :cond_23
+    :cond_1e
+    if-nez p1, :cond_27
 
-    .line 35
-    sget-object p2, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->_size$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    .line 31
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->get_size$volatile$FU()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    move-result-object p2
 
     invoke-virtual {p2, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->incrementAndGet(Ljava/lang/Object;)I
 
-    :cond_23
+    :cond_27
     return-object p1
 .end method
 
@@ -474,9 +540,11 @@
     return-object v0
 
     :cond_4
-    sget-object v1, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->core$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->getCore$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 40
+    move-result-object v1
+
+    .line 36
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -499,39 +567,41 @@
 
     move-result-object p1
 
-    .line 41
+    .line 37
     # getter for: Lkotlinx/coroutines/debug/internal/ConcurrentWeakMapKt;->REHASH:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMapKt;->access$getREHASH$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v1
 
-    if-ne p1, v1, :cond_20
+    if-ne p1, v1, :cond_22
 
     invoke-direct {p0, v3, v0}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->putSynchronized(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    :cond_20
-    if-eqz p1, :cond_27
+    :cond_22
+    if-eqz p1, :cond_2b
 
-    .line 42
-    sget-object v0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->_size$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    .line 38
+    invoke-static {}, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->get_size$volatile$FU()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    move-result-object v0
 
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->decrementAndGet(Ljava/lang/Object;)I
 
-    :cond_27
+    :cond_2b
     return-object p1
 .end method
 
 .method public final runWeakRefQueueCleaningLoopUntilInterrupted()V
     .registers 3
 
-    .line 70
+    .line 66
     iget-object v0, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->weakRefQueue:Ljava/lang/ref/ReferenceQueue;
 
     if-eqz v0, :cond_1d
 
-    .line 73
+    .line 69
     :goto_4
     :try_start_4
     iget-object v0, p0, Lkotlinx/coroutines/debug/internal/ConcurrentWeakMap;->weakRefQueue:Ljava/lang/ref/ReferenceQueue;
@@ -552,7 +622,7 @@
 
     goto :goto_4
 
-    .line 76
+    .line 72
     :catch_15
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -562,7 +632,7 @@
 
     return-void
 
-    .line 70
+    .line 66
     :cond_1d
     new-instance p0, Ljava/lang/IllegalStateException;
 

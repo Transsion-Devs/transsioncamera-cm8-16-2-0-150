@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 635
+    .line 641
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,10 +34,10 @@
 
     const/4 p0, 0x0
 
-    .line 649
+    .line 658
     invoke-static {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfputisPostALgoBSSing(Z)V
 
-    .line 650
+    .line 659
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetmShot2ShotCallback()Ljava/lang/ref/WeakReference;
 
     move-result-object p0
@@ -54,7 +54,7 @@
 
     if-eqz p0, :cond_21
 
-    .line 651
+    .line 660
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetmShot2ShotCallback()Ljava/lang/ref/WeakReference;
 
     move-result-object p0
@@ -72,18 +72,18 @@
 .end method
 
 .method public onNextReady(Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
-    .registers 2
+    .registers 3
 
     if-eqz p1, :cond_f
 
-    .line 638
+    .line 644
     invoke-interface {p1}, Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;->isCusDeferRequestMode()Z
 
     move-result p0
 
     if-eqz p0, :cond_f
 
-    .line 639
+    .line 645
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetmCallback()Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;
 
     move-result-object p0
@@ -93,10 +93,10 @@
     :cond_f
     const/4 p0, 0x0
 
-    .line 641
+    .line 647
     invoke-static {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfputisPostALgoShot2Shoting(Z)V
 
-    .line 642
+    .line 648
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetmShot2ShotCallback()Ljava/lang/ref/WeakReference;
 
     move-result-object p0
@@ -113,7 +113,7 @@
 
     if-eqz p0, :cond_30
 
-    .line 643
+    .line 649
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetmShot2ShotCallback()Ljava/lang/ref/WeakReference;
 
     move-result-object p0
@@ -126,14 +126,42 @@
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;->onNextReady(Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
 
+    .line 651
     :cond_30
+    invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetsShot2ShotCallbacks()Ljava/util/List;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_38
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_48
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;
+
+    .line 652
+    invoke-interface {v0, p1}, Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;->onNextReady(Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
+
+    goto :goto_38
+
+    :cond_48
     return-void
 .end method
 
 .method public processPreview()V
     .registers 1
 
-    .line 657
+    .line 666
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetmShot2ShotCallback()Ljava/lang/ref/WeakReference;
 
     move-result-object p0
@@ -150,7 +178,7 @@
 
     if-eqz p0, :cond_1d
 
-    .line 658
+    .line 667
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetmShot2ShotCallback()Ljava/lang/ref/WeakReference;
 
     move-result-object p0
@@ -170,7 +198,7 @@
 .method public saveHighQualityJpegDone()V
     .registers 1
 
-    .line 664
+    .line 673
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetmShot2ShotCallback()Ljava/lang/ref/WeakReference;
 
     move-result-object p0
@@ -187,7 +215,7 @@
 
     if-eqz p0, :cond_1d
 
-    .line 665
+    .line 674
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetmShot2ShotCallback()Ljava/lang/ref/WeakReference;
 
     move-result-object p0

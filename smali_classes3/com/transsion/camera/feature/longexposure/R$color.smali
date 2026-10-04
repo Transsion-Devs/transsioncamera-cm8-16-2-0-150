@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static long_exposure_check_box_text_color:I = 0x7f060116
+.field public static long_exposure_check_box_text_color:I = 0x7f060117
 
-.field public static long_exposure_item_selected_color:I = 0x7f060117
+.field public static long_exposure_item_selected_color:I = 0x7f060118
 
-.field public static long_exposure_item_unselected_color:I = 0x7f060118
+.field public static long_exposure_item_unselected_color:I = 0x7f060119
 
 
 # direct methods

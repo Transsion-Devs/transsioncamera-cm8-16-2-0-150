@@ -83,7 +83,7 @@
 
     const/4 p1, 0x0
 
-    .line 336
+    .line 341
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mIsModeChanging:Z
 
     return-void
@@ -92,33 +92,33 @@
 .method private initUnderModeUI(Landroid/view/LayoutInflater;)V
     .registers 3
 
-    .line 149
+    .line 154
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->onCreateUnderwaterUI()Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
-    .line 150
+    .line 155
     new-instance p1, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$1;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$1;-><init>(Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;)V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mCountDownListener:Lcom/transsion/camera/app/ui/mode/underwater/CircleCountDownView$OnCountDownListener;
 
-    .line 173
+    .line 178
     new-instance p1, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;)V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mDrainageSoundCallback:Lcom/transsion/camera/utils/sound/IActionSound$IPlayCallback;
 
-    .line 189
+    .line 194
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/mode/underwater/CommonUnderwaterUI;->initUnderwaterUI()V
 
-    .line 190
+    .line 195
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -131,7 +131,7 @@
 
     invoke-virtual {p1, v0, p0}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->updateCapturedNumber(ZI)V
 
-    .line 191
+    .line 196
     sget-object p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "initUnderModeUI: init UnderwaterMode UI"
@@ -144,7 +144,7 @@
 .method private synthetic lambda$initUnderModeUI$0(Z)V
     .registers 5
 
-    .line 174
+    .line 179
     sget-object v0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -173,36 +173,36 @@
 
     if-eqz p1, :cond_60
 
-    .line 176
+    .line 181
     iget-boolean p1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mResumed:Z
 
     if-eqz p1, :cond_60
 
-    .line 177
+    .line 182
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->exitModeOnMoreTab()V
 
-    .line 178
+    .line 183
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v0, 0x1
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideSwitcher(Z)V
 
-    .line 179
+    .line 184
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerFromUnderwater(Z)V
 
-    .line 180
+    .line 185
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->isCameraFacingBack()Z
 
     move-result p1
 
     if-eqz p1, :cond_4e
 
-    .line 181
+    .line 186
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -221,7 +221,7 @@
 
     return-void
 
-    .line 183
+    .line 188
     :cond_4e
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -241,7 +241,7 @@
 
     return-void
 
-    .line 186
+    .line 191
     :cond_60
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
@@ -257,7 +257,7 @@
 .method public buildCaptureInfo()Lcom/transsion/camera/app/common/mode/CaptureInfo;
     .registers 4
 
-    .line 302
+    .line 307
     new-instance v0, Lcom/transsion/camera/app/common/mode/CaptureInfo;
 
     iget v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mCaptureOrientation:I
@@ -284,7 +284,7 @@
         }
     .end annotation
 
-    .line 314
+    .line 319
     new-instance v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     invoke-direct {v0, p0, p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;-><init>(Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;Lcom/transsion/camera/app/common/ICameraControl$IContinuousShotCallback;)V
@@ -308,7 +308,7 @@
 
     const/4 p0, 0x1
 
-    .line 309
+    .line 314
     invoke-static {p0, p0}, Lcom/transsion/camera/adapter/DataFlowSpec;->makeDataFlowSpec(II)I
 
     move-result p0
@@ -319,34 +319,34 @@
 .method public getModeFeatures(Landroid/content/Context;)[Ljava/lang/String;
     .registers 2
 
-    .line 259
+    .line 264
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 260
+    .line 265
     const-string p1, "key_tran_plugin"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 261
+    .line 266
     const-string p1, "key_shutter_sound_optional"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 264
+    .line 269
     const-string p1, "key_setting_smart_denoise"
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 265
+    .line 270
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result p1
 
     new-array p1, p1, [Ljava/lang/String;
 
-    .line 266
+    .line 271
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p0
@@ -359,12 +359,12 @@
 .method public getModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
     .registers 12
 
-    .line 271
+    .line 276
     invoke-static {}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterModeRestriction;->getRelation()Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object v0
 
-    .line 273
+    .line 278
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v2, "key_picture_size"
@@ -377,14 +377,14 @@
 
     if-eqz v1, :cond_55
 
-    .line 275
+    .line 280
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v4
 
     if-lez v4, :cond_55
 
-    .line 278
+    .line 283
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -402,12 +402,12 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 279
+    .line 284
     invoke-static {v5}, Landroid/util/Size;->parseSize(Ljava/lang/String;)Landroid/util/Size;
 
     move-result-object v6
 
-    .line 280
+    .line 285
     invoke-virtual {v6}, Landroid/util/Size;->getWidth()I
 
     move-result v7
@@ -426,7 +426,7 @@
 
     sub-double/2addr v7, v9
 
-    .line 281
+    .line 286
     invoke-static {v7, v8}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide v6
@@ -444,7 +444,7 @@
 
     const/4 v3, 0x0
 
-    .line 288
+    .line 293
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -453,11 +453,11 @@
 
     move-object v3, v1
 
-    .line 290
+    .line 295
     :cond_52
     invoke-virtual {v0, v2, v3, v3}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 292
+    .line 297
     :cond_55
     sget-object v1, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -477,21 +477,21 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 293
+    .line 298
     invoke-static {}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterModeRestriction;->getCamModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/common/mode/CameraMode;->mergeRelation(Lcom/transsion/camera/app/common/relation/Relation;Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 294
+    .line 299
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->isCameraFacingBack()Z
 
     move-result p0
 
     if-nez p0, :cond_7f
 
-    .line 295
+    .line 300
     invoke-static {}, Lcom/transsion/camera/feature/mode/underwater/UnderwaterModeRestriction;->getFrontFlashModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object p0
@@ -505,7 +505,7 @@
 .method protected getOpenCamerId(Ljava/lang/String;Landroid/content/Context;ZLcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Ljava/lang/String;IZ)Ljava/lang/String;
     .registers 8
 
-    .line 384
+    .line 389
     invoke-virtual {p0, p2, p3, p4}, Lcom/transsion/camera/app/common/mode/CameraMode;->isSupportSAT(Landroid/content/Context;ZLcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)Z
 
     move-result p0
@@ -522,10 +522,10 @@
 
     if-eqz p0, :cond_12
 
-    .line 385
+    .line 390
     const-string p5, "0"
 
-    .line 389
+    .line 394
     :cond_12
     sget-object p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -551,7 +551,7 @@
 .method public getSettingGroup()J
     .registers 5
 
-    .line 254
+    .line 259
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->getSettingGroup()J
 
     move-result-wide v0
@@ -698,7 +698,7 @@
 .method public onBackPressedForUI()Z
     .registers 1
 
-    .line 319
+    .line 324
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->isUserAMonkey()Z
 
     move-result p0
@@ -718,7 +718,7 @@
 .method public onCameraStateChanged(I)V
     .registers 5
 
-    .line 220
+    .line 225
     sget-object v0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -737,7 +737,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 221
+    .line 226
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onCameraStateChanged(I)V
 
     return-void
@@ -757,7 +757,7 @@
 .method protected onCreateUnderwaterUI()Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
     .registers 8
 
-    .line 215
+    .line 220
     new-instance v0, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -788,7 +788,7 @@
 .method public onModeChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
 
-    .line 196
+    .line 201
     sget-object v0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -813,10 +813,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 197
+    .line 202
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CameraMode;->onModeChanged(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 198
+    .line 203
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p2}, Lcom/transsion/camera/app/common/IAppUI;->getMainHandler()Landroid/os/Handler;
@@ -835,7 +835,7 @@
 .method public onShutterClick(II)Z
     .registers 6
 
-    .line 339
+    .line 344
     sget-object v0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -860,7 +860,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
-    .line 340
+    .line 345
     invoke-virtual {v2}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->isPowerLongPressed()Z
 
     move-result v2
@@ -871,10 +871,10 @@
 
     move-result-object v1
 
-    .line 339
+    .line 344
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 341
+    .line 346
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->isPowerLongPressed()Z
@@ -900,11 +900,11 @@
 
     return p0
 
-    .line 348
+    .line 353
     :cond_40
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mIsModeChanging:Z
 
-    .line 349
+    .line 354
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -919,7 +919,7 @@
 
     return v1
 
-    .line 346
+    .line 351
     :cond_50
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onShutterClick(II)Z
 
@@ -931,7 +931,7 @@
 .method protected onShutterClickBefore(I)Z
     .registers 6
 
-    .line 328
+    .line 333
     invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->isUserAMonkey()Z
 
     move-result v0
@@ -952,7 +952,7 @@
 
     if-gez v0, :cond_1c
 
-    .line 329
+    .line 334
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "Do not take pictures for 5 seconds after the camera is started in monkey scene."
@@ -963,7 +963,7 @@
 
     return p0
 
-    .line 333
+    .line 338
     :cond_1c
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onShutterClickBefore(I)Z
 
@@ -975,7 +975,7 @@
 .method public onShutterLongClick(II)Z
     .registers 6
 
-    .line 359
+    .line 364
     sget-object v0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1000,7 +1000,7 @@
 
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
-    .line 360
+    .line 365
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->isPowerLongPressed()Z
 
     move-result p1
@@ -1011,10 +1011,10 @@
 
     move-result-object p1
 
-    .line 359
+    .line 364
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 361
+    .line 366
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->isPowerLongPressed()Z
@@ -1040,11 +1040,11 @@
 
     return p0
 
-    .line 370
+    .line 375
     :cond_40
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mIsModeChanging:Z
 
-    .line 371
+    .line 376
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -1059,7 +1059,7 @@
 
     return v0
 
-    .line 366
+    .line 371
     :cond_50
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -1069,7 +1069,7 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(I)V
 
-    .line 367
+    .line 372
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 p1, 0x0
@@ -1090,10 +1090,10 @@
 .method public pause()V
     .registers 6
 
-    .line 132
+    .line 137
     invoke-static {}, Lcom/transsion/camera/utils/StatusBarUtils;->enable()V
 
-    .line 133
+    .line 138
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     const-string v1, "pause on UnderwaterMode"
@@ -1102,12 +1102,12 @@
 
     invoke-static {v0, v2, v1}, Lcom/transsion/camera/utils/UnderwaterUtils;->writeUnderwaterSetting(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 134
+    .line 139
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mIsModeChanging:Z
 
     if-nez v0, :cond_24
 
-    .line 135
+    .line 140
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     new-instance v1, Landroid/content/Intent;
@@ -1120,48 +1120,48 @@
 
     const-string/jumbo v4, "val_not_underwater"
 
-    .line 136
+    .line 141
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v1
 
-    .line 135
+    .line 140
     invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 138
+    .line 143
     :cond_24
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->pause()V
 
-    .line 139
+    .line 144
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     if-eqz v0, :cond_48
 
-    .line 140
+    .line 145
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "stopDrainageSound after pause"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 141
+    .line 146
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mDrainageSoundCallback:Lcom/transsion/camera/utils/sound/IActionSound$IPlayCallback;
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/ui/mode/underwater/CommonUnderwaterUI;->stopDrainageSound(Lcom/transsion/camera/utils/sound/IActionSound$IPlayCallback;Z)Z
 
-    .line 142
+    .line 147
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->stopCountDown(Z)Z
 
-    .line 143
+    .line 148
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->unRegisterReceiver()V
 
-    .line 144
+    .line 149
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     invoke-virtual {p0, v2}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->hideNotice(Z)V
@@ -1182,7 +1182,7 @@
 .end method
 
 .method public resume()V
-    .registers 4
+    .registers 5
 
     .line 119
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->resume()V
@@ -1197,36 +1197,57 @@
     .line 121
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
-    iget-object v1, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mDrainageSoundCallback:Lcom/transsion/camera/utils/sound/IActionSound$IPlayCallback;
+    iget-object v2, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mDrainageSoundCallback:Lcom/transsion/camera/utils/sound/IActionSound$IPlayCallback;
 
-    iget-object v2, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mCountDownListener:Lcom/transsion/camera/app/ui/mode/underwater/CircleCountDownView$OnCountDownListener;
+    iget-object v3, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mCountDownListener:Lcom/transsion/camera/app/ui/mode/underwater/CircleCountDownView$OnCountDownListener;
 
-    invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->registerReceiver(Lcom/transsion/camera/utils/sound/IActionSound$IPlayCallback;Lcom/transsion/camera/app/ui/mode/underwater/CircleCountDownView$OnCountDownListener;)V
+    invoke-virtual {v0, v2, v3}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->registerReceiver(Lcom/transsion/camera/utils/sound/IActionSound$IPlayCallback;Lcom/transsion/camera/app/ui/mode/underwater/CircleCountDownView$OnCountDownListener;)V
 
     .line 122
+    invoke-static {}, Lcom/transsion/camera/utils/MonkeyUtils;->isUserAMonkey()Z
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_1f
+
+    .line 123
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+
+    invoke-interface {v0, v2}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerFromUnderwater(Z)V
+
+    goto :goto_24
+
+    .line 125
+    :cond_1f
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+
+    invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerFromUnderwater(Z)V
+
+    .line 127
+    :goto_24
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v1, 0x7b
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 123
+    .line 128
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mResumeTimestamp:J
 
-    .line 124
+    .line 129
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
-    const/4 v1, 0x1
+    const-string v1, "resume on UnderwaterMode"
 
-    const-string v2, "resume on UnderwaterMode"
+    invoke-static {v0, v2, v1}, Lcom/transsion/camera/utils/UnderwaterUtils;->writeUnderwaterSetting(Landroid/content/Context;ILjava/lang/String;)V
 
-    invoke-static {v0, v1, v2}, Lcom/transsion/camera/utils/UnderwaterUtils;->writeUnderwaterSetting(Landroid/content/Context;ILjava/lang/String;)V
-
-    .line 125
+    .line 130
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
     new-instance v0, Landroid/content/Intent;
@@ -1239,15 +1260,15 @@
 
     const-string/jumbo v2, "val_underwater"
 
-    .line 126
+    .line 131
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 125
+    .line 130
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 127
+    .line 132
     invoke-static {}, Lcom/transsion/camera/utils/StatusBarUtils;->disable()V
 
     return-void
@@ -1328,17 +1349,17 @@
 .method public updateCapturedNumber(I)V
     .registers 3
 
-    .line 236
+    .line 241
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CameraMode;->updateCapturedNumber(I)V
 
-    .line 237
+    .line 242
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/underwater/UnderwaterMode;->mUnderwaterUI:Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;
 
     if-eqz p0, :cond_b
 
     const/4 v0, 0x1
 
-    .line 238
+    .line 243
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/app/ui/mode/underwater/UnderwaterUI;->updateCapturedNumber(ZI)V
 
     :cond_b

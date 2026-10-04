@@ -7,7 +7,7 @@
 .method public constructor <init>(Lkotlinx/coroutines/Job;)V
     .registers 2
 
-    .line 65
+    .line 60
     invoke-direct {p0, p1}, Lkotlinx/coroutines/JobImpl;-><init>(Lkotlinx/coroutines/Job;)V
 
     return-void

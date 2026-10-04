@@ -38,7 +38,7 @@
 .method public constructor <init>(Ljava/lang/String;II)V
     .registers 4
 
-    .line 54
+    .line 59
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper;-><init>(Ljava/lang/String;)V
 
     const/4 p1, 0x0
@@ -53,10 +53,10 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mOfflineJniListener:Lcom/transsion/camera/adapter/platformcamera/OfflineImageAvaliableListener;
 
-    .line 55
+    .line 60
     iput p2, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mWidth:I
 
-    .line 56
+    .line 61
     iput p3, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mHeight:I
 
     return-void
@@ -67,7 +67,7 @@
 
     const/4 v0, 0x0
 
-    .line 132
+    .line 137
     :try_start_1
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mReleaseLock:Ljava/lang/Object;
 
@@ -76,20 +76,20 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_4} :catch_b1
     .catchall {:try_start_1 .. :try_end_4} :catchall_ae
 
-    .line 133
+    .line 138
     :try_start_4
     iget-boolean v2, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mIsReleased:Z
 
     if-eqz v2, :cond_15
 
-    .line 134
+    .line 139
     sget-object p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "ImageReader is release, return"
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 135
+    .line 140
     monitor-exit v1
 
     return-void
@@ -101,7 +101,7 @@
 
     goto/16 :goto_a0
 
-    .line 137
+    .line 142
     :cond_15
     sget-object v2, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -109,7 +109,7 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 139
+    .line 144
     invoke-virtual {p1}, Landroid/media/ImageReader;->acquireNextImage()Landroid/media/Image;
 
     move-result-object p1
@@ -118,20 +118,20 @@
 
     if-nez p1, :cond_34
 
-    .line 141
+    .line 146
     :try_start_22
     const-string p0, "[acquireImageQcom] image is null"
 
     invoke-static {v2, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 142
+    .line 147
     monitor-exit v1
     :try_end_28
     .catchall {:try_start_22 .. :try_end_28} :catchall_2e
 
     if-eqz p1, :cond_c0
 
-    .line 171
+    .line 176
     invoke-virtual {p1}, Landroid/media/Image;->close()V
 
     return-void
@@ -147,7 +147,7 @@
 
     goto/16 :goto_a0
 
-    .line 144
+    .line 149
     :cond_34
     :try_start_34
     invoke-virtual {p1}, Landroid/media/Image;->getHardwareBuffer()Landroid/hardware/HardwareBuffer;
@@ -156,28 +156,28 @@
 
     if-nez v0, :cond_49
 
-    .line 146
+    .line 151
     const-string p0, "[acquireImageQcom] imageHardwareBuffer is null"
 
     invoke-static {v2, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 147
+    .line 152
     monitor-exit v1
     :try_end_40
     .catchall {:try_start_34 .. :try_end_40} :catchall_2e
 
     if-eqz v0, :cond_45
 
-    .line 168
+    .line 173
     invoke-virtual {v0}, Landroid/hardware/HardwareBuffer;->close()V
 
-    .line 171
+    .line 176
     :cond_45
     invoke-virtual {p1}, Landroid/media/Image;->close()V
 
     return-void
 
-    .line 149
+    .line 154
     :cond_49
     :try_start_49
     invoke-static {}, Lcom/transsion/camera/adapter/platformcamera/OfflineController;->getInstance()Lcom/transsion/camera/adapter/platformcamera/OfflineController;
@@ -188,7 +188,7 @@
 
     move-result-object v2
 
-    .line 150
+    .line 155
     iget-object v3, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mCameraProxy:Lcom/transsion/camera/adapter/CameraProxy;
 
     if-eqz v3, :cond_9e
@@ -197,7 +197,7 @@
 
     goto :goto_9e
 
-    .line 153
+    .line 158
     :cond_58
     invoke-virtual {v3}, Lcom/transsion/camera/adapter/CameraProxy;->getCameraParameters()Lcom/transsion/camera/adapter/CameraParameters;
 
@@ -207,14 +207,14 @@
 
     move-result-object v3
 
-    .line 154
+    .line 159
     iget-object v4, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mCameraProxy:Lcom/transsion/camera/adapter/CameraProxy;
 
     invoke-virtual {v4}, Lcom/transsion/camera/adapter/CameraProxy;->isMultiCamera()Z
 
     move-result v4
 
-    .line 156
+    .line 161
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v5
@@ -233,14 +233,14 @@
 
     if-nez v4, :cond_8f
 
-    .line 157
+    .line 162
     invoke-interface {v3, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Landroid/util/Size;
 
-    .line 158
+    .line 163
     iget v4, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mWidth:I
 
     invoke-virtual {v3}, Landroid/util/Size;->getWidth()I
@@ -266,7 +266,7 @@
     :goto_8e
     move v7, v6
 
-    .line 162
+    .line 167
     :cond_8f
     invoke-static {}, Lcom/transsion/camera/adapter/platformcamera/OfflineController;->getInstance()Lcom/transsion/camera/adapter/platformcamera/OfflineController;
 
@@ -274,21 +274,21 @@
 
     invoke-virtual {p0, v2, v7}, Lcom/transsion/camera/adapter/platformcamera/OfflineController;->offlineJniHwBuffer(Landroid/hardware/HardwareBuffer;Z)V
 
-    .line 163
+    .line 168
     monitor-exit v1
     :try_end_97
     .catchall {:try_start_49 .. :try_end_97} :catchall_2e
 
-    .line 168
+    .line 173
     :goto_97
     invoke-virtual {v0}, Landroid/hardware/HardwareBuffer;->close()V
 
-    .line 171
+    .line 176
     invoke-virtual {p1}, Landroid/media/Image;->close()V
 
     return-void
 
-    .line 151
+    .line 156
     :cond_9e
     :goto_9e
     :try_start_9e
@@ -298,7 +298,7 @@
 
     goto :goto_97
 
-    .line 163
+    .line 168
     :goto_a0
     :try_start_a0
     monitor-exit v1
@@ -350,7 +350,7 @@
 
     move-object p1, v0
 
-    .line 165
+    .line 170
     :goto_b3
     :try_start_b3
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
@@ -359,13 +359,13 @@
 
     if-eqz v0, :cond_bb
 
-    .line 168
+    .line 173
     invoke-virtual {v0}, Landroid/hardware/HardwareBuffer;->close()V
 
     :cond_bb
     if-eqz p1, :cond_c0
 
-    .line 171
+    .line 176
     invoke-virtual {p1}, Landroid/media/Image;->close()V
 
     :cond_c0
@@ -377,16 +377,16 @@
     :goto_c2
     if-eqz v0, :cond_c7
 
-    .line 168
+    .line 173
     invoke-virtual {v0}, Landroid/hardware/HardwareBuffer;->close()V
 
     :cond_c7
     if-eqz p1, :cond_cc
 
-    .line 171
+    .line 176
     invoke-virtual {p1}, Landroid/media/Image;->close()V
 
-    .line 173
+    .line 178
     :cond_cc
     throw p0
 .end method
@@ -396,12 +396,12 @@
 .method protected disableBGEnable()V
     .registers 2
 
-    .line 77
+    .line 82
     invoke-super {p0}, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper;->disableBGEnable()V
 
     const/4 v0, 0x0
 
-    .line 78
+    .line 83
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mIsOfflineJniEnable:Z
 
     return-void
@@ -410,7 +410,7 @@
 .method protected getImageAvailableListener(Ljava/lang/String;)Landroid/media/ImageReader$OnImageAvailableListener;
     .registers 3
 
-    .line 83
+    .line 88
     const-string v0, "QcomJpegPic"
 
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -419,12 +419,12 @@
 
     if-eqz v0, :cond_b
 
-    .line 84
+    .line 89
     iget-object p0, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mOfflineJniListener:Lcom/transsion/camera/adapter/platformcamera/OfflineImageAvaliableListener;
 
     return-object p0
 
-    .line 86
+    .line 91
     :cond_b
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->getImageAvailableListener(Ljava/lang/String;)Landroid/media/ImageReader$OnImageAvailableListener;
 
@@ -436,7 +436,7 @@
 .method protected isEnable()Z
     .registers 1
 
-    .line 66
+    .line 71
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mIsOfflineJniEnable:Z
 
     return p0
@@ -445,7 +445,7 @@
 .method protected isNeedReleaseAfterCheckNum()Z
     .registers 4
 
-    .line 111
+    .line 116
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -466,7 +466,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 112
+    .line 117
     invoke-super {p0}, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper;->isNeedReleaseAfterCheckNum()Z
 
     move-result v0
@@ -494,7 +494,7 @@
 .method protected isUnnecessaryChangeCaptureCount()Z
     .registers 2
 
-    .line 92
+    .line 97
     invoke-super {p0}, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper;->isUnnecessaryChangeCaptureCount()Z
 
     move-result v0
@@ -518,7 +518,7 @@
 .method protected isUnnecessaryChangePictureCount()Z
     .registers 2
 
-    .line 97
+    .line 102
     invoke-super {p0}, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper;->isUnnecessaryChangePictureCount()Z
 
     move-result v0
@@ -542,7 +542,7 @@
 .method protected onProcessSerialImage(Landroid/media/ImageReader;)V
     .registers 3
 
-    .line 117
+    .line 122
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -553,7 +553,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 118
+    .line 123
     iget-object v0, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mCameraProxy:Lcom/transsion/camera/adapter/CameraProxy;
 
     if-eqz v0, :cond_18
@@ -564,18 +564,18 @@
 
     if-eqz v0, :cond_18
 
-    .line 119
+    .line 124
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->acquireImageQcom(Landroid/media/ImageReader;)V
 
     return-void
 
-    .line 121
+    .line 126
     :cond_18
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->acquireImage(Landroid/media/ImageReader;)V
 
     return-void
 
-    .line 124
+    .line 129
     :cond_1c
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper;->onProcessSerialImage(Landroid/media/ImageReader;)V
 
@@ -585,10 +585,10 @@
 .method protected resetBGEnable(ZZ)V
     .registers 3
 
-    .line 71
+    .line 76
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper;->resetBGEnable(ZZ)V
 
-    .line 72
+    .line 77
     iput-boolean p2, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mIsOfflineJniEnable:Z
 
     return-void
@@ -597,7 +597,7 @@
 .method public setCameraProxy(Lcom/transsion/camera/adapter/CameraProxy;)V
     .registers 2
 
-    .line 177
+    .line 182
     iput-object p1, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mCameraProxy:Lcom/transsion/camera/adapter/CameraProxy;
 
     return-void
@@ -606,10 +606,10 @@
 .method protected setCustomEnable(ZZ)V
     .registers 3
 
-    .line 60
+    .line 65
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper;->setCustomEnable(ZZ)V
 
-    .line 61
+    .line 66
     iput-boolean p2, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mIsOfflineJniEnable:Z
 
     return-void
@@ -618,7 +618,7 @@
 .method protected shouldReleaseSurface()Z
     .registers 4
 
-    .line 102
+    .line 107
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CaptureSurface$Helper;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -639,7 +639,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 103
+    .line 108
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/bgservice/BgOfflineJniHelper;->mIsOfflineJniEnable:Z
 
     if-eqz v0, :cond_1e
@@ -648,7 +648,7 @@
 
     return p0
 
-    .line 106
+    .line 111
     :cond_1e
     invoke-super {p0}, Lcom/transsion/camera/app/common/bgservice/BgServiceHelper;->shouldReleaseSurface()Z
 

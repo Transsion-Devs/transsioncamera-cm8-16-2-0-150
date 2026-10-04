@@ -38,7 +38,7 @@
         }
     .end annotation
 
-    .line 228
+    .line 226
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     iput-object p2, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->val$data:[B
@@ -63,7 +63,7 @@
 
     if-eq v0, p4, :cond_1e
 
-    .line 232
+    .line 230
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -89,7 +89,7 @@
     :cond_1e
     mul-int v1, p2, p3
 
-    .line 236
+    .line 234
     invoke-static {v0}, Landroid/graphics/ImageFormat;->getBitsPerPixel(I)I
 
     move-result v0
@@ -98,7 +98,7 @@
 
     div-int/lit8 v1, v1, 0x8
 
-    .line 238
+    .line 236
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -139,17 +139,17 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 240
+    .line 238
     array-length v0, p1
 
     const/4 v2, 0x0
 
     if-ge v0, v1, :cond_64
 
-    .line 241
+    .line 239
     new-array v0, v1, [B
 
-    .line 242
+    .line 240
     array-length v1, p1
 
     invoke-static {p1, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
@@ -161,7 +161,7 @@
     :cond_64
     move-object v4, p1
 
-    .line 246
+    .line 244
     :goto_65
     :try_start_65
     new-instance p1, Ljava/io/ByteArrayOutputStream;
@@ -170,7 +170,7 @@
     :try_end_6a
     .catch Ljava/io/IOException; {:try_start_65 .. :try_end_6a} :catch_85
 
-    .line 247
+    .line 245
     :try_start_6a
     new-instance v3, Landroid/graphics/YuvImage;
 
@@ -184,7 +184,7 @@
 
     invoke-direct/range {v3 .. v8}, Landroid/graphics/YuvImage;-><init>([BIII[I)V
 
-    .line 249
+    .line 247
     new-instance p2, Landroid/graphics/Rect;
 
     invoke-direct {p2, v2, v2, v6, v7}, Landroid/graphics/Rect;-><init>(IIII)V
@@ -193,14 +193,14 @@
 
     invoke-virtual {v3, p2, p3, p1}, Landroid/graphics/YuvImage;->compressToJpeg(Landroid/graphics/Rect;ILjava/io/OutputStream;)Z
 
-    .line 251
+    .line 249
     invoke-virtual {p1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p2
     :try_end_81
     .catchall {:try_start_6a .. :try_end_81} :catchall_88
 
-    .line 252
+    .line 250
     :try_start_81
     invoke-virtual {p1}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_84
@@ -220,7 +220,7 @@
 
     move-object p2, v0
 
-    .line 246
+    .line 244
     :try_start_8a
     invoke-virtual {p1}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_8d
@@ -241,7 +241,7 @@
     :try_end_94
     .catch Ljava/io/IOException; {:try_start_90 .. :try_end_94} :catch_85
 
-    .line 253
+    .line 251
     :goto_94
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
@@ -251,7 +251,7 @@
 .method private mirrorJpeg([B)[B
     .registers 4
 
-    .line 259
+    .line 257
     :try_start_0
     new-instance p0, Ljava/io/ByteArrayOutputStream;
 
@@ -259,7 +259,7 @@
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_5} :catch_2c
 
-    .line 260
+    .line 258
     :try_start_5
     array-length v0, p1
 
@@ -271,29 +271,29 @@
 
     const/4 v0, 0x1
 
-    .line 261
+    .line 259
     invoke-static {p1, v1, v0}, Lcom/transsion/camera/utils/BitmapUtils;->rotateAndMirror(Landroid/graphics/Bitmap;IZ)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    .line 262
+    .line 260
     sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v1, 0x64
 
     invoke-virtual {p1, v0, v1, p0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 263
+    .line 261
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 264
+    .line 262
     invoke-virtual {p0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p1
     :try_end_1e
     .catchall {:try_start_5 .. :try_end_1e} :catchall_22
 
-    .line 265
+    .line 263
     :try_start_1e
     invoke-virtual {p0}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_21
@@ -304,7 +304,7 @@
     :catchall_22
     move-exception p1
 
-    .line 259
+    .line 257
     :try_start_23
     invoke-virtual {p0}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_26
@@ -326,7 +326,7 @@
     :catch_2c
     move-exception p0
 
-    .line 266
+    .line 264
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     const/4 p0, 0x0
@@ -339,12 +339,12 @@
 .method public run()V
     .registers 13
 
-    .line 273
+    .line 271
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 274
+    .line 272
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v2
@@ -353,7 +353,7 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 277
+    .line 275
     iget-object v2, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->val$data:[B
 
     iget v3, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->val$width:I
@@ -368,7 +368,7 @@
 
     if-nez v2, :cond_2a
 
-    .line 279
+    .line 277
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -377,14 +377,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 280
+    .line 278
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->triggerCaptureFailed()V
 
     return-void
 
-    .line 285
+    .line 283
     :cond_2a
     iget-object v3, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
@@ -394,14 +394,14 @@
 
     if-eqz v3, :cond_47
 
-    .line 286
+    .line 284
     invoke-direct {p0, v2}, Lcom/transsion/camera/feature/common/BaseCapture$3;->mirrorJpeg([B)[B
 
     move-result-object v2
 
     if-nez v2, :cond_47
 
-    .line 288
+    .line 286
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -410,20 +410,20 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 289
+    .line 287
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->triggerCaptureFailed()V
 
     return-void
 
-    .line 294
+    .line 292
     :cond_47
     iget-object v3, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     iget-object v3, v3, Lcom/transsion/camera/feature/common/BaseCapture;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
-    .line 295
+    .line 293
     invoke-interface {v3}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getLocationManager()Lcom/transsion/camera/app/common/location/LocationManager;
 
     move-result-object v3
@@ -436,23 +436,23 @@
 
     const v3, 0x14000
 
-    .line 297
+    .line 295
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/BitmapUtils;->createBitmapFromByte([BI)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    .line 298
+    .line 296
     new-instance v4, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;
 
     invoke-direct {v4}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;-><init>()V
 
-    .line 299
+    .line 297
     invoke-virtual {v4, v8}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;->updateLocation(Landroid/location/Location;)V
 
-    .line 300
+    .line 298
     invoke-virtual {v4, v3}, Lcom/transsion/camera/adapter/CameraResultsCustomImpl;->updateThumbnailSize(Landroid/graphics/Bitmap;)V
 
-    .line 304
+    .line 302
     iget-object v5, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     iget-object v5, v5, Lcom/transsion/camera/feature/common/BaseCapture;->mCameraId:Ljava/lang/String;
@@ -463,26 +463,26 @@
 
     if-eqz v5, :cond_75
 
-    .line 307
+    .line 305
     const-string v5, "1"
 
     const/4 v6, 0x5
 
     goto :goto_78
 
-    .line 311
+    .line 309
     :cond_75
     const-string v5, "0"
 
     const/4 v6, 0x6
 
-    .line 314
+    .line 312
     :goto_78
     new-instance v7, Ljava/util/HashMap;
 
     invoke-direct {v7}, Ljava/util/HashMap;-><init>()V
 
-    .line 315
+    .line 313
     sget v9, Lcom/transsion/camera/utils/exif/ExifInterface;->TAG_USER_COMMENT:I
 
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -505,7 +505,7 @@
 
     invoke-interface {v7, v9, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 316
+    .line 314
     sget v5, Lcom/transsion/camera/utils/exif/ExifInterface;->TAG_SCENE_TYPE:I
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -518,15 +518,15 @@
 
     invoke-interface {v7, v9, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 317
+    .line 315
     invoke-virtual {v4, v7}, Lcom/transsion/camera/adapter/CameraResults;->setOtherValues(Ljava/util/Map;)V
 
-    .line 318
+    .line 316
     invoke-static {v2, v3, v4}, Lcom/transsion/camera/app/common/algorithm/exif/ExifWriter;->writeExif([BLandroid/graphics/Bitmap;Lcom/transsion/camera/adapter/CameraResults;)[B
 
     move-result-object v6
 
-    .line 319
+    .line 317
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v2
@@ -539,7 +539,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 320
+    .line 318
     invoke-static {v6, v5}, Lcom/transsion/camera/utils/exif/ExifTools;->getExifByteValue([BI)Ljava/lang/String;
 
     move-result-object v4
@@ -550,10 +550,10 @@
 
     move-result-object v3
 
-    .line 319
+    .line 317
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 321
+    .line 319
     iget-object v2, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v2}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmThumbnailOperator(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/ICapture$IThumbnailOperator;
@@ -562,7 +562,7 @@
 
     if-eqz v2, :cond_d8
 
-    .line 322
+    .line 320
     iget-object v2, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v2}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmThumbnailOperator(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/feature/common/ICapture$IThumbnailOperator;
@@ -571,7 +571,7 @@
 
     invoke-interface {v2, v6}, Lcom/transsion/camera/feature/common/ICapture$IThumbnailOperator;->updateView([B)V
 
-    .line 326
+    .line 324
     :cond_d8
     iget-object v2, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
@@ -581,7 +581,7 @@
 
     if-nez v2, :cond_ef
 
-    .line 327
+    .line 325
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -590,14 +590,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 328
+    .line 326
     iget-object p0, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture;->triggerCaptureFailed()V
 
     return-void
 
-    .line 331
+    .line 329
     :cond_ef
     iget-object v2, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
@@ -607,7 +607,7 @@
 
     move-result-object v2
 
-    .line 333
+    .line 331
     invoke-interface {v2}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->getCameraDirectory()Ljava/lang/String;
 
     move-result-object v7
@@ -616,12 +616,12 @@
 
     iget v10, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->val$height:I
 
-    .line 332
+    .line 330
     invoke-virtual/range {v5 .. v10}, Lcom/transsion/camera/feature/common/CommonModeHelper;->createContentValues([BLjava/lang/String;Landroid/location/Location;II)Landroid/content/ContentValues;
 
     move-result-object v2
 
-    .line 335
+    .line 333
     iget-object v3, p0, Lcom/transsion/camera/feature/common/BaseCapture$3;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v3}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmStorageOperator(Lcom/transsion/camera/feature/common/BaseCapture;)Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;
@@ -638,14 +638,14 @@
 
     invoke-interface {v3, v2, v6, v4, p0}, Lcom/transsion/camera/app/common/storage/IStorage$IStorageOperator;->addPhotoSaveRequest(Landroid/content/ContentValues;[BLandroid/graphics/Bitmap;Lcom/transsion/camera/app/common/storage/MediaSaver$MediaSaverListener;)V
 
-    .line 338
+    .line 336
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
     sub-long/2addr v2, v0
 
-    .line 339
+    .line 337
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0

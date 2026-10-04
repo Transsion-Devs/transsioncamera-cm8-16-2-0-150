@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static make_up_default_option:I = 0x7f0c008d
+.field public static make_up_default_option:I = 0x7f0c0091
 
-.field public static platform_config_type:I = 0x7f0c00b6
+.field public static platform_config_type:I = 0x7f0c00ba
 
-.field public static portrait_enhance_support:I = 0x7f0c00bc
+.field public static portrait_enhance_support:I = 0x7f0c00c0
 
-.field public static second_zoom_default_value:I = 0x7f0c00c5
+.field public static second_zoom_default_value:I = 0x7f0c00c9
 
 
 # direct methods

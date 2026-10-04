@@ -63,17 +63,17 @@
 
     iget-object v2, p0, Lcom/tencent/qgame/animplayer/z1OoOcase$z1OoObyte;->z1OoOdo:Landroid/media/MediaCodec;
 
-    const-string v3, "this"
+    const-string/jumbo v3, "this"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkExpressionValueIsNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0, v1, v2}, Lcom/tencent/qgame/animplayer/z1OoOcase;->z1OoOdo(Lcom/tencent/qgame/animplayer/z1OoOcase;Landroid/media/MediaExtractor;Landroid/media/MediaCodec;)V
-    :try_end_12
-    .catchall {:try_start_0 .. :try_end_12} :catchall_13
+    :try_end_13
+    .catchall {:try_start_0 .. :try_end_13} :catchall_14
 
     return-void
 
-    :catchall_13
+    :catchall_14
     move-exception v0
 
     sget-object v1, Lcom/tencent/qgame/animplayer/util/ALog;->INSTANCE:Lcom/tencent/qgame/animplayer/util/ALog;

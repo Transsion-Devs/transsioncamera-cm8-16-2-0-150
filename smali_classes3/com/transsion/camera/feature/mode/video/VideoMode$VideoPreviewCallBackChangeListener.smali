@@ -31,7 +31,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/video/VideoMode;)V
     .registers 2
 
-    .line 1144
+    .line 1143
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

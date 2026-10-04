@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/SecureCameraActivity;)V
     .registers 2
 
-    .line 382
+    .line 380
     iput-object p1, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,12 +35,12 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .registers 5
 
-    .line 385
+    .line 383
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 386
+    .line 384
     invoke-static {}, Lcom/transsion/camera/app/SecureCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p2
@@ -83,7 +83,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 388
+    .line 386
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -94,7 +94,7 @@
 
     const/4 v1, -0x1
 
-    sparse-switch p2, :sswitch_data_c2
+    sparse-switch p2, :sswitch_data_a6
 
     goto :goto_63
 
@@ -145,79 +145,49 @@
     const/4 v1, 0x0
 
     :goto_63
-    packed-switch v1, :pswitch_data_d0
+    packed-switch v1, :pswitch_data_b4
 
-    goto :goto_c1
+    goto :goto_a4
 
-    .line 398
+    .line 396
     :pswitch_67
-    iget-object p1, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
-
-    iget-boolean p2, p1, Lcom/transsion/camera/app/QuickActivity;->mSuperResumed:Z
-
-    if-nez p2, :cond_c1
-
-    invoke-static {p1}, Lcom/transsion/camera/app/SecureCameraActivity;->-$$Nest$fgetmFinished(Lcom/transsion/camera/app/SecureCameraActivity;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_c1
-
-    iget-object p1, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lcom/transsion/camera/app/SecureCameraActivity;->isPowerScreenOn(Landroid/content/Context;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_c1
-
     iget-object p1, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
 
     iget-object p1, p1, Lcom/transsion/camera/app/BaseCameraActivity;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 399
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenFormType()I
 
     move-result p1
 
     const/4 p2, 0x6
 
-    if-eq p2, p1, :cond_c1
+    if-eq p2, p1, :cond_a4
 
-    .line 400
-    iget-object p1, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
-
-    invoke-static {p1, v0}, Lcom/transsion/camera/app/SecureCameraActivity;->-$$Nest$fputmFinished(Lcom/transsion/camera/app/SecureCameraActivity;Z)V
-
-    .line 401
+    .line 397
     iget-object p1, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/SecureCameraActivity;->unRegisterScreenOff()V
 
-    .line 402
+    .line 398
     iget-object p0, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
 
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
     return-void
 
-    .line 391
-    :pswitch_9a
+    .line 389
+    :pswitch_7d
     iget-object p1, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
 
     iget-boolean p2, p1, Lcom/transsion/camera/app/QuickActivity;->mSuperResumed:Z
 
-    if-nez p2, :cond_c1
+    if-nez p2, :cond_a4
 
     invoke-static {p1}, Lcom/transsion/camera/app/SecureCameraActivity;->-$$Nest$fgetmFinished(Lcom/transsion/camera/app/SecureCameraActivity;)Z
 
     move-result p1
 
-    if-nez p1, :cond_c1
+    if-nez p1, :cond_a4
 
     iget-object p1, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
 
@@ -229,38 +199,40 @@
 
     move-result p1
 
-    if-nez p1, :cond_c1
+    if-nez p1, :cond_a4
 
-    .line 392
+    .line 390
     iget-object p1, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/SecureCameraActivity;->-$$Nest$fputmFinished(Lcom/transsion/camera/app/SecureCameraActivity;Z)V
 
-    .line 393
+    .line 391
     iget-object p1, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/SecureCameraActivity;->unRegisterScreenOff()V
 
-    .line 394
+    .line 392
     iget-object p0, p0, Lcom/transsion/camera/app/SecureCameraActivity$1;->this$0:Lcom/transsion/camera/app/SecureCameraActivity;
 
     invoke-virtual {p0}, Landroid/app/Activity;->finish()V
 
-    :cond_c1
-    :goto_c1
+    :cond_a4
+    :goto_a4
     return-void
 
-    :sswitch_data_c2
+    nop
+
+    :sswitch_data_a6
     .sparse-switch
         -0x7ed8ea7f -> :sswitch_59
         0x311a1d6c -> :sswitch_4e
         0x6633ee65 -> :sswitch_43
     .end sparse-switch
 
-    :pswitch_data_d0
+    :pswitch_data_b4
     .packed-switch 0x0
-        :pswitch_9a
+        :pswitch_7d
         :pswitch_67
-        :pswitch_9a
+        :pswitch_7d
     .end packed-switch
 .end method

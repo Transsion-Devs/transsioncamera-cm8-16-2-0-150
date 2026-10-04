@@ -92,7 +92,7 @@
 
     add-long/2addr p0, v0
 
-    .line 1465
+    .line 1044
     invoke-static {p0, p1}, Lkotlin/time/Duration;->constructor-impl(J)J
 
     move-result-wide p0
@@ -111,7 +111,7 @@
 
     add-long/2addr p0, v0
 
-    .line 1464
+    .line 1043
     invoke-static {p0, p1}, Lkotlin/time/Duration;->constructor-impl(J)J
 
     move-result-wide p0
@@ -122,22 +122,19 @@
 .method private static final durationOfMillisNormalized(J)J
     .registers 8
 
-    .line 1474
-    new-instance v0, Lkotlin/ranges/LongRange;
+    const-wide v0, -0x431bde82d7aL
 
-    const-wide v1, -0x431bde82d7aL
+    cmp-long v0, v0, p0
 
-    const-wide v3, 0x431bde82d7aL
+    if-gtz v0, :cond_1b
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lkotlin/ranges/LongRange;-><init>(JJ)V
+    const-wide v0, 0x431bde82d7bL
 
-    invoke-virtual {v0, p0, p1}, Lkotlin/ranges/LongRange;->contains(J)Z
+    cmp-long v0, p0, v0
 
-    move-result v0
+    if-gez v0, :cond_1b
 
-    if-eqz v0, :cond_1e
-
-    .line 1475
+    .line 1054
     invoke-static {p0, p1}, Lkotlin/time/DurationKt;->millisToNanos(J)J
 
     move-result-wide p0
@@ -148,14 +145,14 @@
 
     return-wide p0
 
-    :cond_1e
+    :cond_1b
     const-wide v2, -0x3fffffffffffffffL    # -2.0000000000000004
 
     const-wide v4, 0x3fffffffffffffffL    # 1.9999999999999998
 
     move-wide v0, p0
 
-    .line 1477
+    .line 1056
     invoke-static/range {v0 .. v5}, Lkotlin/ranges/RangesKt;->coerceIn(JJJ)J
 
     move-result-wide p0
@@ -174,7 +171,7 @@
 
     shl-long/2addr p0, v0
 
-    .line 1463
+    .line 1042
     invoke-static {p0, p1}, Lkotlin/time/Duration;->constructor-impl(J)J
 
     move-result-wide p0
@@ -183,32 +180,29 @@
 .end method
 
 .method private static final durationOfNanosNormalized(J)J
-    .registers 7
+    .registers 4
 
-    .line 1467
-    new-instance v0, Lkotlin/ranges/LongRange;
+    const-wide v0, -0x3ffffffffffa14bfL    # -2.0000000001722644
 
-    const-wide v1, -0x3ffffffffffa14bfL    # -2.0000000001722644
+    cmp-long v0, v0, p0
 
-    const-wide v3, 0x3ffffffffffa14bfL    # 1.9999999999138678
+    if-gtz v0, :cond_17
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lkotlin/ranges/LongRange;-><init>(JJ)V
+    const-wide v0, 0x3ffffffffffa14c0L    # 1.999999999913868
 
-    invoke-virtual {v0, p0, p1}, Lkotlin/ranges/LongRange;->contains(J)Z
+    cmp-long v0, p0, v0
 
-    move-result v0
+    if-gez v0, :cond_17
 
-    if-eqz v0, :cond_1a
-
-    .line 1468
+    .line 1047
     invoke-static {p0, p1}, Lkotlin/time/DurationKt;->durationOfNanos(J)J
 
     move-result-wide p0
 
     return-wide p0
 
-    .line 1470
-    :cond_1a
+    .line 1049
+    :cond_17
     invoke-static {p0, p1}, Lkotlin/time/DurationKt;->nanosToMillis(J)J
 
     move-result-wide p0
@@ -239,7 +233,7 @@
 
     int-to-long v0, v0
 
-    .line 1460
+    .line 1039
     div-long/2addr p0, v0
 
     return-wide p0
@@ -252,7 +246,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1100
+    .line 857
     sget-object v0, Lkotlin/time/DurationUnit;->NANOSECONDS:Lkotlin/time/DurationUnit;
 
     const-wide v1, 0x3ffffffffffa14bfL    # 1.9999999999138678
@@ -261,20 +255,17 @@
 
     move-result-wide v1
 
-    .line 1101
-    new-instance v3, Lkotlin/ranges/LongRange;
+    neg-long v3, v1
 
-    neg-long v4, v1
+    cmp-long v3, v3, p0
 
-    invoke-direct {v3, v4, v5, v1, v2}, Lkotlin/ranges/LongRange;-><init>(JJ)V
+    if-gtz v3, :cond_22
 
-    invoke-virtual {v3, p0, p1}, Lkotlin/ranges/LongRange;->contains(J)Z
+    cmp-long v1, p0, v1
 
-    move-result v1
+    if-gtz v1, :cond_22
 
-    if-eqz v1, :cond_25
-
-    .line 1102
+    .line 859
     invoke-static {p0, p1, p2, v0}, Lkotlin/time/DurationUnitKt__DurationUnitJvmKt;->convertDurationUnitOverflow(JLkotlin/time/DurationUnit;Lkotlin/time/DurationUnit;)J
 
     move-result-wide p0
@@ -285,8 +276,8 @@
 
     return-wide p0
 
-    .line 1104
-    :cond_25
+    .line 861
+    :cond_22
     sget-object v0, Lkotlin/time/DurationUnit;->MILLISECONDS:Lkotlin/time/DurationUnit;
 
     invoke-static {p0, p1, p2, v0}, Lkotlin/time/DurationUnitKt__DurationUnitJvmKt;->convertDurationUnit(JLkotlin/time/DurationUnit;Lkotlin/time/DurationUnit;)J
@@ -297,7 +288,7 @@
 
     const-wide v5, 0x3fffffffffffffffL    # 1.9999999999999998
 
-    .line 1105
+    .line 862
     invoke-static/range {v1 .. v6}, Lkotlin/ranges/RangesKt;->coerceIn(JJJ)J
 
     move-result-wide p0

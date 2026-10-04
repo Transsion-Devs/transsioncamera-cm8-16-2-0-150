@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;)V
     .registers 2
 
-    .line 196
+    .line 197
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .method public takePictureEnd(Z)V
     .registers 2
 
-    .line 214
+    .line 215
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     const/4 p1, 0x0
@@ -66,7 +66,7 @@
 .method public takePictureStart()V
     .registers 3
 
-    .line 199
+    .line 200
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mModeKey:Ljava/lang/String;
@@ -82,14 +82,14 @@
 
     if-nez v0, :cond_21
 
-    .line 200
+    .line 201
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;->-$$Nest$fputmIsCapturing(Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;Z)V
 
-    .line 201
+    .line 202
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/facedetection/FaceDetection$2;->this$0:Lcom/transsion/camera/feature/setting/facedetection/FaceDetection;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
@@ -102,7 +102,7 @@
 
     const/4 v1, 0x0
 
-    .line 203
+    .line 204
     invoke-interface {p0, v0, v1}, Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;->onDataCallback(Ljava/lang/Object;I)V
 
     :cond_21

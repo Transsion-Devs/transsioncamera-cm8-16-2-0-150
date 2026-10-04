@@ -1409,7 +1409,7 @@
 
     iget v2, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetectAlgorithmImpl;->mDiffPixel:I
 
-    if-ge v0, v2, :cond_88
+    if-ge v0, v2, :cond_89
 
     .line 337
     iget v0, p1, Landroid/graphics/Rect;->right:I
@@ -1424,7 +1424,7 @@
 
     iget v2, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetectAlgorithmImpl;->mDiffPixel:I
 
-    if-ge v0, v2, :cond_88
+    if-ge v0, v2, :cond_89
 
     .line 338
     iget v0, p1, Landroid/graphics/Rect;->bottom:I
@@ -1439,7 +1439,7 @@
 
     iget v2, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetectAlgorithmImpl;->mDiffPixel:I
 
-    if-ge v0, v2, :cond_88
+    if-ge v0, v2, :cond_89
 
     .line 339
     iget p1, p1, Landroid/graphics/Rect;->top:I
@@ -1454,14 +1454,14 @@
 
     iget p2, p0, Lcom/transsion/camera/feature/setting/gesturedetection/GestureDetectAlgorithmImpl;->mDiffPixel:I
 
-    if-ge p1, p2, :cond_88
+    if-ge p1, p2, :cond_89
 
     .line 340
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p2, "the pixel diff <"
+    const-string/jumbo p2, "the pixel diff <"
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1479,7 +1479,7 @@
 
     return p0
 
-    :cond_88
+    :cond_89
     const/4 p0, 0x1
 
     return p0

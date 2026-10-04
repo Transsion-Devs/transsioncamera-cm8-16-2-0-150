@@ -27,10 +27,10 @@
 
     const/4 v0, 0x0
 
-    .line 2368
+    .line 2367
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;-><init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;Lcom/transsion/camera/adapter/CameraProxy2Impl-IA;)V
 
-    .line 2369
+    .line 2368
     iput-object p2, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$AFPreCaptureTimeOutCallback;->mDelegate:Lcom/transsion/camera/adapter/CameraProxy$CameraAutoFocusCallback;
 
     return-void
@@ -41,10 +41,10 @@
 
     const/4 v0, 0x0
 
-    .line 2373
+    .line 2372
     invoke-direct {p0, p1, p3, p4, v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;-><init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;JLcom/transsion/camera/adapter/CameraProxy2Impl-IA;)V
 
-    .line 2374
+    .line 2373
     iput-object p2, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$AFPreCaptureTimeOutCallback;->mDelegate:Lcom/transsion/camera/adapter/CameraProxy$CameraAutoFocusCallback;
 
     return-void
@@ -73,14 +73,14 @@
 .method public onAutoFocus(Z)V
     .registers 5
 
-    .line 2385
+    .line 2384
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->shouldTriggerCallBack()Z
 
     move-result v0
 
     if-eqz v0, :cond_26
 
-    .line 2386
+    .line 2385
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -101,10 +101,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2387
+    .line 2386
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->removeTimeOutCallback()V
 
-    .line 2388
+    .line 2387
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$AFPreCaptureTimeOutCallback;->mDelegate:Lcom/transsion/camera/adapter/CameraProxy$CameraAutoFocusCallback;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/adapter/CameraProxy$CameraAutoFocusCallback;->onAutoFocus(Z)V
@@ -116,7 +116,7 @@
 .method protected triggerTimeOutCallBack()V
     .registers 3
 
-    .line 2379
+    .line 2378
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -125,7 +125,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2380
+    .line 2379
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$AFPreCaptureTimeOutCallback;->mDelegate:Lcom/transsion/camera/adapter/CameraProxy$CameraAutoFocusCallback;
 
     const/4 v0, 0x0

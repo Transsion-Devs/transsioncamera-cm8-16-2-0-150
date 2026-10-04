@@ -9,19 +9,15 @@
 # instance fields
 .field public final synthetic f$0:Z
 
-.field public final synthetic f$1:I
-
 
 # direct methods
-.method public synthetic constructor <init>(ZI)V
-    .registers 3
+.method public synthetic constructor <init>(Z)V
+    .registers 2
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda6;->f$0:Z
-
-    iput p2, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda6;->f$1:I
 
     return-void
 .end method
@@ -29,16 +25,14 @@
 
 # virtual methods
 .method public final accept(Ljava/lang/Object;)V
-    .registers 3
+    .registers 2
 
     .line 0
-    iget-boolean v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda6;->f$0:Z
-
-    iget p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda6;->f$1:I
+    iget-boolean p0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$$ExternalSyntheticLambda6;->f$0:Z
 
     check-cast p1, Lcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;
 
-    invoke-static {v0, p0, p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$AzmjWiWEdQMbEhNO2xGlA10tY64(ZILcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;)V
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->$r8$lambda$zM6gYOdzi0DHopH4acqy-WoHvT0(ZLcom/transsion/camera/app/common/IAppUIControl$IZoomKeyEventCallback;)V
 
     return-void
 .end method

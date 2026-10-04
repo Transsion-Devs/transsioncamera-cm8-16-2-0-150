@@ -17,10 +17,10 @@
     c = "kotlinx.coroutines.channels.TickerChannelsKt"
     f = "TickerChannels.kt"
     l = {
+        0x50,
         0x54,
-        0x58,
-        0x5e,
-        0x60
+        0x5a,
+        0x5c
     }
     m = "fixedPeriodTicker"
 .end annotation

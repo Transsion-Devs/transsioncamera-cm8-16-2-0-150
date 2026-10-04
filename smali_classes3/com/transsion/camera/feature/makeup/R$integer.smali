@@ -14,15 +14,15 @@
 
 
 # static fields
-.field public static face_beauty_type:I = 0x7f0c0044
+.field public static face_beauty_type:I = 0x7f0c0045
 
-.field public static facebeauty_root_gravity_flags:I = 0x7f0c0045
+.field public static facebeauty_root_gravity_flags:I = 0x7f0c0046
 
-.field public static make_up_default_option:I = 0x7f0c008d
+.field public static make_up_default_option:I = 0x7f0c0091
 
-.field public static makeup_rv_layout_gravity_flags:I = 0x7f0c008f
+.field public static makeup_rv_layout_gravity_flags:I = 0x7f0c0093
 
-.field public static video_facebeauty_default_root_gravity_flags:I = 0x7f0c0106
+.field public static video_facebeauty_default_root_gravity_flags:I = 0x7f0c010a
 
 
 # direct methods

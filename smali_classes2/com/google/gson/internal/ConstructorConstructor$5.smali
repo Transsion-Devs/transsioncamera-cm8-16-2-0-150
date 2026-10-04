@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/gson/internal/ConstructorConstructor;->newDefaultImplementationConstructor(Ljava/lang/reflect/Type;Ljava/lang/Class;)Lcom/google/gson/internal/ObjectConstructor;
+    value = Lcom/google/gson/internal/ConstructorConstructor;->newSpecialCollectionConstructor(Ljava/lang/reflect/Type;Ljava/lang/Class;)Lcom/google/gson/internal/ObjectConstructor;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,19 +18,15 @@
 
 
 # instance fields
-.field final synthetic this$0:Lcom/google/gson/internal/ConstructorConstructor;
-
 .field final synthetic val$type:Ljava/lang/reflect/Type;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/gson/internal/ConstructorConstructor;Ljava/lang/reflect/Type;)V
-    .registers 3
+.method constructor <init>(Ljava/lang/reflect/Type;)V
+    .registers 2
 
-    .line 144
-    iput-object p1, p0, Lcom/google/gson/internal/ConstructorConstructor$5;->this$0:Lcom/google/gson/internal/ConstructorConstructor;
-
-    iput-object p2, p0, Lcom/google/gson/internal/ConstructorConstructor$5;->val$type:Ljava/lang/reflect/Type;
+    .line 186
+    iput-object p1, p0, Lcom/google/gson/internal/ConstructorConstructor$5;->val$type:Ljava/lang/reflect/Type;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,7 +38,7 @@
 .method public construct()Ljava/lang/Object;
     .registers 4
 
-    .line 147
+    .line 189
     iget-object v0, p0, Lcom/google/gson/internal/ConstructorConstructor$5;->val$type:Ljava/lang/reflect/Type;
 
     instance-of v1, v0, Ljava/lang/reflect/ParameterizedType;
@@ -51,7 +47,7 @@
 
     if-eqz v1, :cond_37
 
-    .line 148
+    .line 190
     check-cast v0, Ljava/lang/reflect/ParameterizedType;
 
     invoke-interface {v0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
@@ -62,12 +58,12 @@
 
     aget-object v0, v0, v1
 
-    .line 149
+    .line 191
     instance-of v1, v0, Ljava/lang/Class;
 
     if-eqz v1, :cond_1c
 
-    .line 150
+    .line 193
     check-cast v0, Ljava/lang/Class;
 
     invoke-static {v0}, Ljava/util/EnumSet;->noneOf(Ljava/lang/Class;)Ljava/util/EnumSet;
@@ -76,7 +72,7 @@
 
     return-object p0
 
-    .line 152
+    .line 196
     :cond_1c
     new-instance v0, Lcom/google/gson/JsonIOException;
 
@@ -102,7 +98,7 @@
 
     throw v0
 
-    .line 155
+    .line 199
     :cond_37
     new-instance v0, Lcom/google/gson/JsonIOException;
 

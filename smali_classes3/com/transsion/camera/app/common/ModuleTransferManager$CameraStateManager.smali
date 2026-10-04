@@ -26,12 +26,12 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/ModuleTransferManager;)V
     .registers 14
 
-    .line 200
+    .line 210
     iput-object p1, p0, Lcom/transsion/camera/app/common/ModuleTransferManager$CameraStateManager;->this$0:Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 205
+    .line 215
     const-string v10, "TimeLapseVideoModeEntry"
 
     const-string v11, "MakeUpModeEntry"
@@ -74,7 +74,7 @@
 .method public addCameraChangeListener(Lcom/transsion/camera/app/common/ModuleTransferManager$OnCameraChangeListener;)V
     .registers 2
 
-    .line 221
+    .line 231
     iput-object p1, p0, Lcom/transsion/camera/app/common/ModuleTransferManager$CameraStateManager;->mOnCameraChangeListener:Lcom/transsion/camera/app/common/ModuleTransferManager$OnCameraChangeListener;
 
     return-void
@@ -87,7 +87,7 @@
 
     move v1, v0
 
-    .line 237
+    .line 247
     :goto_2
     iget-object v2, p0, Lcom/transsion/camera/app/common/ModuleTransferManager$CameraStateManager;->mSupportModeList:Ljava/util/List;
 
@@ -97,7 +97,7 @@
 
     if-ge v1, v2, :cond_23
 
-    .line 238
+    .line 248
     iget-object v2, p0, Lcom/transsion/camera/app/common/ModuleTransferManager$CameraStateManager;->this$0:Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getModeName()Ljava/lang/String;

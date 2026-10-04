@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;)V
     .registers 2
 
-    .line 729
+    .line 732
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MySurfaceTextureListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
     .registers 7
 
-    .line 732
+    .line 735
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MySurfaceTextureListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -87,10 +87,10 @@
 
     if-lez p3, :cond_42
 
-    .line 734
+    .line 737
     invoke-virtual {p1, p2, p3}, Landroid/graphics/SurfaceTexture;->setDefaultBufferSize(II)V
 
-    .line 735
+    .line 738
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MySurfaceTextureListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -100,7 +100,7 @@
 
     if-eqz v0, :cond_42
 
-    .line 736
+    .line 739
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MySurfaceTextureListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -117,7 +117,7 @@
 .method public onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
     .registers 4
 
-    .line 754
+    .line 757
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MySurfaceTextureListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -149,7 +149,7 @@
 .method public onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
     .registers 7
 
-    .line 743
+    .line 746
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MySurfaceTextureListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -183,10 +183,10 @@
 
     if-lez p3, :cond_3a
 
-    .line 745
+    .line 748
     invoke-virtual {p1, p2, p3}, Landroid/graphics/SurfaceTexture;->setDefaultBufferSize(II)V
 
-    .line 746
+    .line 749
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MySurfaceTextureListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -196,7 +196,7 @@
 
     if-eqz v0, :cond_3a
 
-    .line 747
+    .line 750
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode$MySurfaceTextureListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;

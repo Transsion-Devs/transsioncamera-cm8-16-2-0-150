@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 11
+    .line 7
     invoke-direct {p0}, Lkotlinx/coroutines/EventLoop;-><init>()V
 
     return-void
@@ -21,7 +21,7 @@
 .method protected reschedule(JLkotlinx/coroutines/EventLoopImplBase$DelayedTask;)V
     .registers 4
 
-    .line 21
+    .line 18
     sget-object p0, Lkotlinx/coroutines/DefaultExecutor;->INSTANCE:Lkotlinx/coroutines/DefaultExecutor;
 
     invoke-virtual {p0, p1, p2, p3}, Lkotlinx/coroutines/EventLoopImplBase;->schedule(JLkotlinx/coroutines/EventLoopImplBase$DelayedTask;)V
@@ -32,20 +32,21 @@
 .method protected final unpark()V
     .registers 2
 
-    .line 15
+    .line 12
     invoke-virtual {p0}, Lkotlinx/coroutines/EventLoopImplPlatform;->getThread()Ljava/lang/Thread;
 
     move-result-object p0
 
-    .line 16
+    .line 13
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
     if-eq v0, p0, :cond_1c
 
-    .line 17
-    invoke-static {}, Lkotlinx/coroutines/AbstractTimeSourceKt;->getTimeSource()Lkotlinx/coroutines/AbstractTimeSource;
+    .line 14
+    # getter for: Lkotlinx/coroutines/AbstractTimeSourceKt;->timeSource:Lkotlinx/coroutines/AbstractTimeSource;
+    invoke-static {}, Lkotlinx/coroutines/AbstractTimeSourceKt;->access$getTimeSource$p()Lkotlinx/coroutines/AbstractTimeSource;
 
     move-result-object v0
 

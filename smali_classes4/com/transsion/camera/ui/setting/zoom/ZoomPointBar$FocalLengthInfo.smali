@@ -24,13 +24,13 @@
 .method public constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;Ljava/lang/String;I)V
     .registers 4
 
-    .line 755
+    .line 776
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 756
+    .line 777
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$FocalLengthInfo;->mFocalLength:Ljava/lang/String;
 
-    .line 757
+    .line 778
     iput p3, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$FocalLengthInfo;->mZoomRatio:I
 
     return-void

@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+.field public final synthetic f$0:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/transsion/camera/app/ui/AbstractTopBarUI;)V
+.method public synthetic constructor <init>(Z)V
     .registers 2
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda4;->f$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+    iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda4;->f$0:Z
 
     return-void
 .end method
@@ -28,11 +28,11 @@
     .registers 2
 
     .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda4;->f$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+    iget-boolean p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda4;->f$0:Z
 
     check-cast p1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->$r8$lambda$P9Elju5E3u7ALH8wslW2z-5auck(Lcom/transsion/camera/app/ui/AbstractTopBarUI;Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;)V
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->$r8$lambda$epPeUFIjT9-LXg09d3g0xVlEcLo(ZLcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;)V
 
     return-void
 .end method

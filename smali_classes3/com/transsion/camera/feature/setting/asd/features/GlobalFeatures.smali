@@ -72,6 +72,8 @@
 
 .field private mPmasterSupportSuperAirawSR:Z
 
+.field private mQcomAirawSN2SRSupport:Z
+
 .field private mQcomCaptureFlowSupport:Z
 
 .field private mSTBlurModeHDRSupport:Z
@@ -136,7 +138,7 @@
 .method public constructor <init>()V
     .registers 4
 
-    .line 87
+    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 20
@@ -300,12 +302,15 @@
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mPmasterModeISOSupportType:I
 
     .line 84
-    iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mIsHdrLimitedByMemory:Z
-
-    .line 85
     iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mForceSuperResolution:Z
 
-    .line 88
+    .line 85
+    iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mIsHdrLimitedByMemory:Z
+
+    .line 86
+    iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mQcomAirawSN2SRSupport:Z
+
+    .line 89
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->init()V
 
     return-void
@@ -316,14 +321,14 @@
 
     const/4 v0, -0x1
 
-    .line 92
+    .line 93
     invoke-static {v0}, Lcom/transsion/camera/utils/FeatureSupport;->getSuperResolutionDebug(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperResolutionDebug:I
 
-    .line 93
+    .line 94
     sget-object v0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -344,7 +349,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 94
+    .line 95
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -353,7 +358,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAsdDefaultValue:Ljava/lang/String;
 
-    .line 95
+    .line 96
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -362,7 +367,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperResolutionHDRLimitZoom:I
 
-    .line 97
+    .line 98
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -371,7 +376,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLimitBV:I
 
-    .line 98
+    .line 99
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -380,7 +385,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mFrontLimitBV:I
 
-    .line 99
+    .line 100
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -389,7 +394,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mWideLimitBV:I
 
-    .line 100
+    .line 101
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -398,7 +403,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLongFocusLimitBV:I
 
-    .line 102
+    .line 103
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -407,7 +412,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTFAiShutterLimitISO:I
 
-    .line 103
+    .line 104
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -416,7 +421,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAiRawRemosaicLimitISO:I
 
-    .line 105
+    .line 106
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -425,7 +430,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLimitUseISO:Z
 
-    .line 106
+    .line 107
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -434,7 +439,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLimitISO:I
 
-    .line 107
+    .line 108
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -443,7 +448,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mFrontLimitISO:I
 
-    .line 108
+    .line 109
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -452,7 +457,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mWideLimitISO:I
 
-    .line 109
+    .line 110
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -461,7 +466,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLongFocusLimitISO:I
 
-    .line 111
+    .line 112
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -470,7 +475,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionAINRSupport:Z
 
-    .line 112
+    .line 113
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -479,7 +484,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionAINRLimitISO:I
 
-    .line 113
+    .line 114
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -488,7 +493,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionAINRMaxISO:I
 
-    .line 114
+    .line 115
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -497,7 +502,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionAINRLimitBV:I
 
-    .line 115
+    .line 116
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -506,7 +511,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionAINRMaxBV:I
 
-    .line 117
+    .line 118
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -515,7 +520,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAiRawZoomRangeList:[I
 
-    .line 118
+    .line 119
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -524,7 +529,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAINRZoomRangeList:[I
 
-    .line 120
+    .line 121
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -533,7 +538,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperNightLiteSupportFrontCamera:Z
 
-    .line 121
+    .line 122
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -542,7 +547,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperNightLiteSupportBackWideCamera:Z
 
-    .line 122
+    .line 123
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -551,7 +556,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mHighDefinitionModeSupport:Z
 
-    .line 123
+    .line 124
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -560,7 +565,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mFullSizeSupport:Z
 
-    .line 124
+    .line 125
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -569,7 +574,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mPlatformMfnrSupport:Z
 
-    .line 125
+    .line 126
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -578,7 +583,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAiSuperResolutionSupport:Z
 
-    .line 126
+    .line 127
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -587,7 +592,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAiSuperDefinitionAlgoSupport:Z
 
-    .line 127
+    .line 128
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -596,7 +601,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAsdEnhanceLightSupport:Z
 
-    .line 128
+    .line 129
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -605,7 +610,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionFilterSupport:Z
 
-    .line 130
+    .line 131
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -614,7 +619,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTurboFusionSupport:Z
 
-    .line 131
+    .line 132
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -623,7 +628,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperAiRawSupport:Z
 
-    .line 132
+    .line 133
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -634,7 +639,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mQcomCaptureFlowSupport:Z
 
-    .line 133
+    .line 134
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -643,7 +648,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTFShot2ShotSkipToMFLL:Z
 
-    .line 134
+    .line 135
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -652,7 +657,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperAiRawShot2ShotSkipToMFLL:Z
 
-    .line 136
+    .line 137
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -661,7 +666,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mHdrAsdBothSupport:Z
 
-    .line 137
+    .line 138
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -670,7 +675,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mFilterSupportMfnr:Z
 
-    .line 138
+    .line 139
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -679,7 +684,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mFilterSupportAsd:Z
 
-    .line 139
+    .line 140
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -690,7 +695,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperNightAsdSupport:Z
 
-    .line 141
+    .line 142
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -699,7 +704,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSTBlurModeHDRSupport:Z
 
-    .line 142
+    .line 143
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -708,7 +713,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mPmasterModeISOSupport:Z
 
-    .line 143
+    .line 144
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -717,7 +722,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSecondItemZoomValue:I
 
-    .line 144
+    .line 145
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -726,7 +731,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mHdrMaxZoomRatio:I
 
-    .line 145
+    .line 146
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -735,7 +740,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAiRawSprdSupport:Z
 
-    .line 146
+    .line 147
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -746,7 +751,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLivePhotoAlgorithmType:I
 
-    .line 147
+    .line 148
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -755,7 +760,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mDXOTestSupport:Z
 
-    .line 148
+    .line 149
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -764,7 +769,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperDefinitionEscapeNight:Z
 
-    .line 149
+    .line 150
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -775,7 +780,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mMagicSkyMultiFrameSupport:Z
 
-    .line 150
+    .line 151
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -784,7 +789,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAirawMfnrReplaceRemosaic:Z
 
-    .line 151
+    .line 152
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -793,7 +798,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAirawNightQuadSupportSR:Z
 
-    .line 152
+    .line 153
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -802,7 +807,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mPmasterModeISOSupportType:I
 
-    .line 153
+    .line 154
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -810,15 +815,6 @@
     iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mPmasterSupportSuperAirawSR:Z
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mPmasterSupportSuperAirawSR:Z
-
-    .line 154
-    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
-
-    move-result-object v0
-
-    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsHdrLimitedByMemory:Z
-
-    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mIsHdrLimitedByMemory:Z
 
     .line 155
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
@@ -829,6 +825,24 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mForceSuperResolution:Z
 
+    .line 156
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsHdrLimitedByMemory:Z
+
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mIsHdrLimitedByMemory:Z
+
+    .line 157
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mQcomAirawSN2SRSupport:Z
+
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mQcomAirawSN2SRSupport:Z
+
     return-void
 .end method
 
@@ -837,7 +851,7 @@
 .method public getAINRZoomRangeList()[I
     .registers 1
 
-    .line 179
+    .line 181
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAINRZoomRangeList:[I
 
     return-object p0
@@ -846,7 +860,7 @@
 .method public getAiRawRemosaicLimitISO()I
     .registers 1
 
-    .line 207
+    .line 209
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAiRawRemosaicLimitISO:I
 
     return p0
@@ -855,7 +869,7 @@
 .method public getAsdDefaultValue()Ljava/lang/String;
     .registers 1
 
-    .line 167
+    .line 169
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAsdDefaultValue:Ljava/lang/String;
 
     return-object p0
@@ -864,7 +878,7 @@
 .method public getFrontLimitBV()I
     .registers 1
 
-    .line 191
+    .line 193
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mFrontLimitBV:I
 
     return p0
@@ -873,7 +887,7 @@
 .method public getFrontLimitISO()I
     .registers 1
 
-    .line 215
+    .line 217
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mFrontLimitISO:I
 
     return p0
@@ -882,7 +896,7 @@
 .method public getHdrMaxZoomRatio()I
     .registers 1
 
-    .line 187
+    .line 189
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mHdrMaxZoomRatio:I
 
     return p0
@@ -891,7 +905,7 @@
 .method public getLimitBV()I
     .registers 1
 
-    .line 183
+    .line 185
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLimitBV:I
 
     return p0
@@ -900,7 +914,7 @@
 .method public getLimitBVValue(ZLcom/transsion/camera/app/common/setting/ISettingManager$SettingController;I)I
     .registers 6
 
-    .line 369
+    .line 377
     iget v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperResolutionDebug:I
 
     const/4 v1, -0x1
@@ -909,7 +923,7 @@
 
     return v0
 
-    .line 372
+    .line 380
     :cond_6
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -925,7 +939,7 @@
 
     if-nez v0, :cond_5b
 
-    .line 373
+    .line 381
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -942,7 +956,7 @@
 
     goto :goto_5b
 
-    .line 375
+    .line 383
     :cond_23
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -960,7 +974,7 @@
 
     if-eqz p1, :cond_42
 
-    .line 376
+    .line 384
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object p1
@@ -977,7 +991,7 @@
 
     goto :goto_56
 
-    .line 378
+    .line 386
     :cond_42
     invoke-interface {p2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
@@ -989,14 +1003,14 @@
 
     if-eqz p1, :cond_51
 
-    .line 379
+    .line 387
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getFrontLimitBV()I
 
     move-result p0
 
     return p0
 
-    .line 381
+    .line 389
     :cond_51
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getLimitBV()I
 
@@ -1004,7 +1018,7 @@
 
     return p0
 
-    .line 377
+    .line 385
     :cond_56
     :goto_56
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getLongFocusLimitBV()I
@@ -1013,7 +1027,7 @@
 
     return p0
 
-    .line 374
+    .line 382
     :cond_5b
     :goto_5b
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getWideLimitBV()I
@@ -1026,7 +1040,7 @@
 .method public getLimitISO()I
     .registers 1
 
-    .line 211
+    .line 213
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLimitISO:I
 
     return p0
@@ -1035,7 +1049,7 @@
 .method public getLimitISOValue(ZLcom/transsion/camera/app/common/setting/ISettingManager$SettingController;I)I
     .registers 6
 
-    .line 386
+    .line 394
     iget v0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperResolutionDebug:I
 
     const/4 v1, -0x1
@@ -1044,7 +1058,7 @@
 
     return v0
 
-    .line 389
+    .line 397
     :cond_6
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -1060,7 +1074,7 @@
 
     if-nez v0, :cond_5b
 
-    .line 390
+    .line 398
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -1077,7 +1091,7 @@
 
     goto :goto_5b
 
-    .line 392
+    .line 400
     :cond_23
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
@@ -1095,7 +1109,7 @@
 
     if-eqz p1, :cond_42
 
-    .line 393
+    .line 401
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object p1
@@ -1112,7 +1126,7 @@
 
     goto :goto_56
 
-    .line 395
+    .line 403
     :cond_42
     invoke-interface {p2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
@@ -1124,14 +1138,14 @@
 
     if-eqz p1, :cond_51
 
-    .line 396
+    .line 404
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getFrontLimitISO()I
 
     move-result p0
 
     return p0
 
-    .line 398
+    .line 406
     :cond_51
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getLimitISO()I
 
@@ -1139,7 +1153,7 @@
 
     return p0
 
-    .line 394
+    .line 402
     :cond_56
     :goto_56
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getLongFocusLimitISO()I
@@ -1148,7 +1162,7 @@
 
     return p0
 
-    .line 391
+    .line 399
     :cond_5b
     :goto_5b
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->getWideLimitISO()I
@@ -1161,7 +1175,7 @@
 .method public getLivePhotoAlgorithmType()I
     .registers 1
 
-    .line 163
+    .line 165
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLivePhotoAlgorithmType:I
 
     return p0
@@ -1170,7 +1184,7 @@
 .method public getLongFocusLimitBV()I
     .registers 1
 
-    .line 199
+    .line 201
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLongFocusLimitBV:I
 
     return p0
@@ -1179,7 +1193,7 @@
 .method public getLongFocusLimitISO()I
     .registers 1
 
-    .line 223
+    .line 225
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLongFocusLimitISO:I
 
     return p0
@@ -1188,7 +1202,7 @@
 .method public getPmasterModeISOSupportType()I
     .registers 1
 
-    .line 159
+    .line 161
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mPmasterModeISOSupportType:I
 
     return p0
@@ -1197,7 +1211,7 @@
 .method public getSecondItemZoomValue()I
     .registers 1
 
-    .line 251
+    .line 253
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSecondItemZoomValue:I
 
     return p0
@@ -1206,7 +1220,7 @@
 .method public getSuperResolutionHDRLimitZoom()I
     .registers 1
 
-    .line 171
+    .line 173
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperResolutionHDRLimitZoom:I
 
     return p0
@@ -1215,7 +1229,7 @@
 .method public getTFAiShutterLimitISO()I
     .registers 1
 
-    .line 203
+    .line 205
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTFAiShutterLimitISO:I
 
     return p0
@@ -1224,7 +1238,7 @@
 .method public getTranssionAINRLimitBV()I
     .registers 1
 
-    .line 243
+    .line 245
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionAINRLimitBV:I
 
     return p0
@@ -1233,7 +1247,7 @@
 .method public getTranssionAINRLimitISO()I
     .registers 1
 
-    .line 235
+    .line 237
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionAINRLimitISO:I
 
     return p0
@@ -1242,7 +1256,7 @@
 .method public getTranssionAINRMaxBV()I
     .registers 1
 
-    .line 247
+    .line 249
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionAINRMaxBV:I
 
     return p0
@@ -1251,7 +1265,7 @@
 .method public getTranssionAINRMaxISO()I
     .registers 1
 
-    .line 239
+    .line 241
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionAINRMaxISO:I
 
     return p0
@@ -1260,7 +1274,7 @@
 .method public getWideLimitBV()I
     .registers 1
 
-    .line 195
+    .line 197
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mWideLimitBV:I
 
     return p0
@@ -1269,7 +1283,7 @@
 .method public getWideLimitISO()I
     .registers 1
 
-    .line 219
+    .line 221
     iget p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mWideLimitISO:I
 
     return p0
@@ -1278,7 +1292,7 @@
 .method public getZoomRangeList()[I
     .registers 1
 
-    .line 175
+    .line 177
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAiRawZoomRangeList:[I
 
     return-object p0
@@ -1287,7 +1301,7 @@
 .method public isAiRawMfnrReplaceRemosaic()Z
     .registers 1
 
-    .line 351
+    .line 353
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAirawMfnrReplaceRemosaic:Z
 
     return p0
@@ -1296,7 +1310,7 @@
 .method public isAiRawSprdSupport()Z
     .registers 1
 
-    .line 335
+    .line 337
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAiRawSprdSupport:Z
 
     return p0
@@ -1305,7 +1319,7 @@
 .method public isAiSuperDefinitionAlgoSupport()Z
     .registers 1
 
-    .line 279
+    .line 281
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAiSuperDefinitionAlgoSupport:Z
 
     return p0
@@ -1314,7 +1328,7 @@
 .method public isAiSuperResolutionSupport()Z
     .registers 1
 
-    .line 275
+    .line 277
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAiSuperResolutionSupport:Z
 
     return p0
@@ -1323,7 +1337,7 @@
 .method public isAirawNightQuadSupportSR()Z
     .registers 1
 
-    .line 355
+    .line 357
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAirawNightQuadSupportSR:Z
 
     return p0
@@ -1332,7 +1346,7 @@
 .method public isAsdEnhanceLightSupport()Z
     .registers 1
 
-    .line 283
+    .line 285
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAsdEnhanceLightSupport:Z
 
     return p0
@@ -1341,7 +1355,7 @@
 .method public isDXOTestSupport()Z
     .registers 1
 
-    .line 339
+    .line 341
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mDXOTestSupport:Z
 
     return p0
@@ -1350,7 +1364,7 @@
 .method public isFilterSupportAsd()Z
     .registers 1
 
-    .line 319
+    .line 321
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mFilterSupportAsd:Z
 
     return p0
@@ -1359,7 +1373,7 @@
 .method public isFilterSupportMfnr()Z
     .registers 1
 
-    .line 315
+    .line 317
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mFilterSupportMfnr:Z
 
     return p0
@@ -1377,7 +1391,7 @@
 .method public isFullSizeSupport()Z
     .registers 1
 
-    .line 267
+    .line 269
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mFullSizeSupport:Z
 
     return p0
@@ -1386,7 +1400,7 @@
 .method public isHdrAsdBothSupport()Z
     .registers 1
 
-    .line 311
+    .line 313
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mHdrAsdBothSupport:Z
 
     return p0
@@ -1395,7 +1409,7 @@
 .method public isHdrLimitedByMemory()Z
     .registers 1
 
-    .line 362
+    .line 369
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mIsHdrLimitedByMemory:Z
 
     return p0
@@ -1404,7 +1418,7 @@
 .method public isHighDefinitionModeSupport()Z
     .registers 1
 
-    .line 263
+    .line 265
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mHighDefinitionModeSupport:Z
 
     return p0
@@ -1413,7 +1427,7 @@
 .method public isLimitUseISO()Z
     .registers 1
 
-    .line 227
+    .line 229
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mLimitUseISO:Z
 
     return p0
@@ -1422,7 +1436,7 @@
 .method public isMagicSkyMultiFrameSupport()Z
     .registers 1
 
-    .line 347
+    .line 349
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mMagicSkyMultiFrameSupport:Z
 
     return p0
@@ -1431,7 +1445,7 @@
 .method public isPlatformMfnrSupport()Z
     .registers 1
 
-    .line 271
+    .line 273
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mPlatformMfnrSupport:Z
 
     return p0
@@ -1440,7 +1454,7 @@
 .method public isPmasterModeISOSupport()Z
     .registers 1
 
-    .line 331
+    .line 333
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mPmasterModeISOSupport:Z
 
     return p0
@@ -1449,8 +1463,17 @@
 .method public isPmasterSupportSuperAirawSR()Z
     .registers 1
 
-    .line 359
+    .line 361
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mPmasterSupportSuperAirawSR:Z
+
+    return p0
+.end method
+
+.method public isQcomAirawSN2SRSupport()Z
+    .registers 1
+
+    .line 373
+    iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mQcomAirawSN2SRSupport:Z
 
     return p0
 .end method
@@ -1458,7 +1481,7 @@
 .method public isQcomCaptureFlowSupport()Z
     .registers 1
 
-    .line 299
+    .line 301
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mQcomCaptureFlowSupport:Z
 
     return p0
@@ -1467,7 +1490,7 @@
 .method public isSTBlurModeHDRSupport()Z
     .registers 1
 
-    .line 327
+    .line 329
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSTBlurModeHDRSupport:Z
 
     return p0
@@ -1476,7 +1499,7 @@
 .method public isSuperAiRawShot2ShotSkipToMFLL()Z
     .registers 1
 
-    .line 307
+    .line 309
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperAiRawShot2ShotSkipToMFLL:Z
 
     return p0
@@ -1485,7 +1508,7 @@
 .method public isSuperAiRawSupport()Z
     .registers 1
 
-    .line 295
+    .line 297
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperAiRawSupport:Z
 
     return p0
@@ -1494,7 +1517,7 @@
 .method public isSuperDefinitionEscapeNight()Z
     .registers 1
 
-    .line 343
+    .line 345
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperDefinitionEscapeNight:Z
 
     return p0
@@ -1503,7 +1526,7 @@
 .method public isSuperNightAsdSupport()Z
     .registers 1
 
-    .line 323
+    .line 325
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperNightAsdSupport:Z
 
     return p0
@@ -1512,7 +1535,7 @@
 .method public isSuperNightLiteSupportBackWideCamera()Z
     .registers 1
 
-    .line 255
+    .line 257
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperNightLiteSupportBackWideCamera:Z
 
     return p0
@@ -1521,7 +1544,7 @@
 .method public isSuperNightLiteSupportFrontCamera()Z
     .registers 1
 
-    .line 259
+    .line 261
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mSuperNightLiteSupportFrontCamera:Z
 
     return p0
@@ -1530,7 +1553,7 @@
 .method public isTFShot2ShotSkipToMFLL()Z
     .registers 1
 
-    .line 303
+    .line 305
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTFShot2ShotSkipToMFLL:Z
 
     return p0
@@ -1539,7 +1562,7 @@
 .method public isTranssionAINRSupport()Z
     .registers 1
 
-    .line 231
+    .line 233
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionAINRSupport:Z
 
     return p0
@@ -1548,7 +1571,7 @@
 .method public isTranssionFilterSupport()Z
     .registers 1
 
-    .line 287
+    .line 289
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTranssionFilterSupport:Z
 
     return p0
@@ -1557,7 +1580,7 @@
 .method public isTurboFusionSupport()Z
     .registers 1
 
-    .line 291
+    .line 293
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mTurboFusionSupport:Z
 
     return p0
@@ -1566,7 +1589,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 404
+    .line 412
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1725,7 +1748,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAiRawZoomRangeList:[I
 
-    .line 423
+    .line 431
     invoke-static {v1}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
 
     move-result-object v1
@@ -1738,7 +1761,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mAINRZoomRangeList:[I
 
-    .line 424
+    .line 432
     invoke-static {v1}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
 
     move-result-object v1
@@ -1973,7 +1996,23 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mForceSuperResolution:Z
+    iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mForceSuperResolution:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", mIsHdrLimitedByMemory="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mIsHdrLimitedByMemory:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", mQcomAirawSN2SRSupport="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/asd/features/GlobalFeatures;->mQcomAirawSN2SRSupport:Z
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 

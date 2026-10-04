@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static normal_1_1_preview_margin_offset:I = 0x7f07081d
+.field public static normal_1_1_preview_margin_offset:I = 0x7f07080c
 
-.field public static stabilizer_size:I = 0x7f070c6f
+.field public static stabilizer_size:I = 0x7f070c57
 
 
 # direct methods

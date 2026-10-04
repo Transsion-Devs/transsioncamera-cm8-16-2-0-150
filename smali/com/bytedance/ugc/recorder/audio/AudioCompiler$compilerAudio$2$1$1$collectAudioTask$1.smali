@@ -201,7 +201,7 @@
 
     iget-object v3, p0, Lcom/bytedance/ugc/recorder/audio/AudioCompiler$compilerAudio$2$1$1$collectAudioTask$1;->$audioModel:Lcom/bytedance/ies/nle/editor_jni/NLEModel;
 
-    .line 20
+    .line 355
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -237,7 +237,7 @@
     :goto_44
     iput-object p1, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 22
+    .line 357
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2

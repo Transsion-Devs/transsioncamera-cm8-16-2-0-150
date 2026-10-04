@@ -36,7 +36,7 @@
 
     iget p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$$ExternalSyntheticLambda3;->f$1:I
 
-    invoke-static {v0, p0}, Lcom/transsion/camera/app/BaseCameraActivity;->$r8$lambda$_LTc3DqoFRcG0HH33sNFAdBRVqk(Lcom/transsion/camera/app/BaseCameraActivity;I)V
+    invoke-static {v0, p0}, Lcom/transsion/camera/app/BaseCameraActivity;->$r8$lambda$9c-B9Rv2aLX0WhzzvEc0BMUSuFQ(Lcom/transsion/camera/app/BaseCameraActivity;I)V
 
     return-void
 .end method

@@ -31,7 +31,7 @@
     .line 26
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/MotionDetectSwitchEntry;->mSetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_4c
 
     .line 27
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
@@ -42,19 +42,40 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_28
 
     .line 28
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/transsion/camera/utils/CustomConfigUtil;->isSupportFlashLiteV2()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_20
+
+    .line 29
+    new-instance v0, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLiteV2;
+
+    invoke-direct {v0}, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLiteV2;-><init>()V
+
+    iput-object v0, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/MotionDetectSwitchEntry;->mSetting:Lcom/transsion/camera/app/common/setting/SettingBase;
+
+    goto :goto_4c
+
+    .line 31
+    :cond_20
     new-instance v0, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapLite;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/MotionDetectSwitchEntry;->mSetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
-    goto :goto_3a
+    goto :goto_4c
 
-    .line 29
-    :cond_16
+    .line 33
+    :cond_28
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -63,9 +84,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_45
 
-    .line 30
+    .line 34
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -74,32 +95,32 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_3d
 
-    goto :goto_33
+    goto :goto_45
 
-    .line 33
-    :cond_2b
+    .line 37
+    :cond_3d
     new-instance v0, Lcom/transsion/camera/feature/setting/motiondetectswitch/MotionDetectSwitch;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/setting/motiondetectswitch/MotionDetectSwitch;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/MotionDetectSwitchEntry;->mSetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
-    goto :goto_3a
+    goto :goto_4c
 
-    .line 31
-    :cond_33
-    :goto_33
+    .line 35
+    :cond_45
+    :goto_45
     new-instance v0, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapV2;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/setting/motiondetectswitch/FlashSnapV2;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/MotionDetectSwitchEntry;->mSetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
-    .line 36
-    :cond_3a
-    :goto_3a
+    .line 40
+    :cond_4c
+    :goto_4c
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/MotionDetectSwitchEntry;->mSetting:Lcom/transsion/camera/app/common/setting/SettingBase;
 
     return-object p0
@@ -108,7 +129,7 @@
 .method public getFeatureName()Ljava/lang/String;
     .registers 1
 
-    .line 46
+    .line 50
     const-class p0, Lcom/transsion/camera/feature/setting/motiondetectswitch/MotionDetectSwitchEntry;
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -121,7 +142,7 @@
 .method public getType()Ljava/lang/Class;
     .registers 1
 
-    .line 41
+    .line 45
     const-class p0, Lcom/transsion/camera/app/common/setting/ICameraSetting;
 
     return-object p0
@@ -130,7 +151,7 @@
 .method public isSupport()Z
     .registers 3
 
-    .line 51
+    .line 55
     iget-object v0, p0, Lcom/transsion/camera/app/common/provider/FeatureEntryBase;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/app/common/R$bool;->motion_capture_mode_support:I
@@ -145,7 +166,7 @@
 
     sget v0, Lcom/transsion/camera/app/common/R$bool;->motion_capture_mode_v2_support:I
 
-    .line 52
+    .line 56
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
 
     move-result p0

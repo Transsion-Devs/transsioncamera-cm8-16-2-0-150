@@ -26,7 +26,7 @@
     .end annotation
 .end field
 
-.field private final data:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+.field private final synthetic data:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
 
 # direct methods
@@ -42,15 +42,15 @@
         }
     .end annotation
 
-    .line 2741
+    .line 2749
     invoke-direct {p0, p1, p2, p3, p5}, Lkotlinx/coroutines/internal/Segment;-><init>(JLkotlinx/coroutines/internal/Segment;I)V
 
-    .line 2742
+    .line 2750
     iput-object p4, p0, Lkotlinx/coroutines/channels/ChannelSegment;->_channel:Lkotlinx/coroutines/channels/BufferedChannel;
 
     new-instance p1, Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    .line 2745
+    .line 2753
     sget p2, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
     mul-int/lit8 p2, p2, 0x2
@@ -62,15 +62,25 @@
     return-void
 .end method
 
+.method private final synthetic getData()Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/channels/ChannelSegment;->data:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    return-object p0
+.end method
+
 .method private final setElementLazy(ILjava/lang/Object;)V
     .registers 3
 
-    .line 2766
-    iget-object p0, p0, Lkotlinx/coroutines/channels/ChannelSegment;->data:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    .line 2774
+    invoke-direct {p0}, Lkotlinx/coroutines/channels/ChannelSegment;->getData()Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    move-result-object p0
 
     mul-int/lit8 p1, p1, 0x2
 
-    invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->lazySet(ILjava/lang/Object;)V
+    invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
 
     return-void
 .end method
@@ -80,8 +90,10 @@
 .method public final casState$kotlinx_coroutines_core(ILjava/lang/Object;Ljava/lang/Object;)Z
     .registers 4
 
-    .line 2779
-    iget-object p0, p0, Lkotlinx/coroutines/channels/ChannelSegment;->data:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    .line 2787
+    invoke-direct {p0}, Lkotlinx/coroutines/channels/ChannelSegment;->getData()Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    move-result-object p0
 
     mul-int/lit8 p1, p1, 0x2
 
@@ -99,7 +111,7 @@
 
     const/4 v0, 0x0
 
-    .line 2762
+    .line 2770
     invoke-direct {p0, p1, v0}, Lkotlinx/coroutines/channels/ChannelSegment;->setElementLazy(ILjava/lang/Object;)V
 
     return-void
@@ -108,8 +120,10 @@
 .method public final getAndSetState$kotlinx_coroutines_core(ILjava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 2781
-    iget-object p0, p0, Lkotlinx/coroutines/channels/ChannelSegment;->data:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    .line 2789
+    invoke-direct {p0}, Lkotlinx/coroutines/channels/ChannelSegment;->getData()Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    move-result-object p0
 
     mul-int/lit8 p1, p1, 0x2
 
@@ -132,7 +146,7 @@
         }
     .end annotation
 
-    .line 2743
+    .line 2751
     iget-object p0, p0, Lkotlinx/coroutines/channels/ChannelSegment;->_channel:Lkotlinx/coroutines/channels/BufferedChannel;
 
     invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
@@ -148,8 +162,10 @@
         }
     .end annotation
 
-    .line 2757
-    iget-object p0, p0, Lkotlinx/coroutines/channels/ChannelSegment;->data:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    .line 2765
+    invoke-direct {p0}, Lkotlinx/coroutines/channels/ChannelSegment;->getData()Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    move-result-object p0
 
     mul-int/lit8 p1, p1, 0x2
 
@@ -163,7 +179,7 @@
 .method public getNumberOfSlots()I
     .registers 1
 
-    .line 2746
+    .line 2754
     sget p0, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
     return p0
@@ -172,8 +188,10 @@
 .method public final getState$kotlinx_coroutines_core(I)Ljava/lang/Object;
     .registers 2
 
-    .line 2773
-    iget-object p0, p0, Lkotlinx/coroutines/channels/ChannelSegment;->data:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    .line 2781
+    invoke-direct {p0}, Lkotlinx/coroutines/channels/ChannelSegment;->getData()Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    move-result-object p0
 
     mul-int/lit8 p1, p1, 0x2
 
@@ -189,7 +207,7 @@
 .method public onCancellation(ILjava/lang/Throwable;Lkotlin/coroutines/CoroutineContext;)V
     .registers 7
 
-    .line 2791
+    .line 2799
     sget p2, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
     if-lt p1, p2, :cond_6
@@ -206,20 +224,20 @@
 
     sub-int/2addr p1, p2
 
-    .line 2795
+    .line 2803
     :cond_a
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/ChannelSegment;->getElement$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object p2
 
-    .line 2800
+    .line 2808
     :cond_e
     :goto_e
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/ChannelSegment;->getState$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 2803
+    .line 2811
     instance-of v2, v1, Lkotlinx/coroutines/Waiter;
 
     if-nez v2, :cond_73
@@ -230,7 +248,7 @@
 
     goto :goto_73
 
-    .line 2824
+    .line 2832
     :cond_1b
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_SEND:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_SEND$p()Lkotlinx/coroutines/internal/Symbol;
@@ -248,7 +266,7 @@
 
     goto :goto_62
 
-    .line 2840
+    .line 2848
     :cond_28
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->RESUMING_BY_EB:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getRESUMING_BY_EB$p()Lkotlinx/coroutines/internal/Symbol;
@@ -266,7 +284,7 @@
 
     goto :goto_e
 
-    .line 2843
+    .line 2851
     :cond_35
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->DONE_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getDONE_RCV$p()Lkotlinx/coroutines/internal/Symbol;
@@ -281,7 +299,7 @@
 
     goto :goto_99
 
-    .line 2846
+    .line 2854
     :cond_40
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
 
@@ -294,7 +312,7 @@
     :cond_47
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 2847
+    .line 2855
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -317,14 +335,14 @@
 
     throw p0
 
-    .line 2827
+    .line 2835
     :cond_62
     :goto_62
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/ChannelSegment;->cleanElement$kotlinx_coroutines_core(I)V
 
     if-eqz v0, :cond_99
 
-    .line 2830
+    .line 2838
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/ChannelSegment;->getChannel()Lkotlinx/coroutines/channels/BufferedChannel;
 
     move-result-object p0
@@ -341,7 +359,7 @@
     :goto_73
     if-eqz v0, :cond_7a
 
-    .line 2806
+    .line 2814
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_SEND:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_SEND$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -355,7 +373,7 @@
 
     move-result-object v2
 
-    .line 2807
+    .line 2815
     :goto_7e
     invoke-virtual {p0, p1, v1, v2}, Lkotlinx/coroutines/channels/ChannelSegment;->casState$kotlinx_coroutines_core(ILjava/lang/Object;Ljava/lang/Object;)Z
 
@@ -363,17 +381,17 @@
 
     if-eqz v1, :cond_e
 
-    .line 2814
+    .line 2822
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/ChannelSegment;->cleanElement$kotlinx_coroutines_core(I)V
 
     xor-int/lit8 v1, v0, 0x1
 
-    .line 2815
+    .line 2823
     invoke-virtual {p0, p1, v1}, Lkotlinx/coroutines/channels/ChannelSegment;->onCancelledRequest(IZ)V
 
     if-eqz v0, :cond_99
 
-    .line 2818
+    .line 2826
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/ChannelSegment;->getChannel()Lkotlinx/coroutines/channels/BufferedChannel;
 
     move-result-object p0
@@ -394,7 +412,7 @@
 
     if-eqz p2, :cond_11
 
-    .line 2857
+    .line 2865
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/ChannelSegment;->getChannel()Lkotlinx/coroutines/channels/BufferedChannel;
 
     move-result-object p2
@@ -413,7 +431,7 @@
 
     invoke-virtual {p2, v0, v1}, Lkotlinx/coroutines/channels/BufferedChannel;->waitExpandBufferCompletion$kotlinx_coroutines_core(J)V
 
-    .line 2858
+    .line 2866
     :cond_11
     invoke-virtual {p0}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
 
@@ -428,7 +446,7 @@
         }
     .end annotation
 
-    .line 2759
+    .line 2767
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/ChannelSegment;->getElement$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -441,8 +459,10 @@
 .method public final setState$kotlinx_coroutines_core(ILjava/lang/Object;)V
     .registers 3
 
-    .line 2776
-    iget-object p0, p0, Lkotlinx/coroutines/channels/ChannelSegment;->data:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    .line 2784
+    invoke-direct {p0}, Lkotlinx/coroutines/channels/ChannelSegment;->getData()Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    move-result-object p0
 
     mul-int/lit8 p1, p1, 0x2
 
@@ -461,7 +481,7 @@
         }
     .end annotation
 
-    .line 2753
+    .line 2761
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/channels/ChannelSegment;->setElementLazy(ILjava/lang/Object;)V
 
     return-void

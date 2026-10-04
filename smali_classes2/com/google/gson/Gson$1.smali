@@ -28,7 +28,7 @@
 .method constructor <init>(Lcom/google/gson/Gson;)V
     .registers 2
 
-    .line 313
+    .line 454
     iput-object p1, p0, Lcom/google/gson/Gson$1;->this$0:Lcom/google/gson/Gson;
 
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
@@ -41,7 +41,7 @@
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Double;
     .registers 3
 
-    .line 315
+    .line 457
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     move-result-object p0
@@ -50,14 +50,14 @@
 
     if-ne p0, v0, :cond_d
 
-    .line 316
+    .line 458
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
     const/4 p0, 0x0
 
     return-object p0
 
-    .line 319
+    .line 461
     :cond_d
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextDouble()D
 
@@ -73,7 +73,7 @@
 .method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
     .registers 2
 
-    .line 313
+    .line 454
     invoke-virtual {p0, p1}, Lcom/google/gson/Gson$1;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Double;
 
     move-result-object p0
@@ -86,22 +86,22 @@
 
     if-nez p2, :cond_6
 
-    .line 323
+    .line 467
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->nullValue()Lcom/google/gson/stream/JsonWriter;
 
     return-void
 
-    .line 326
+    .line 470
     :cond_6
     invoke-virtual {p2}, Ljava/lang/Number;->doubleValue()D
 
     move-result-wide v0
 
-    .line 327
+    .line 471
     invoke-static {v0, v1}, Lcom/google/gson/Gson;->checkValidFloatingPoint(D)V
 
-    .line 328
-    invoke-virtual {p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
+    .line 472
+    invoke-virtual {p1, v0, v1}, Lcom/google/gson/stream/JsonWriter;->value(D)Lcom/google/gson/stream/JsonWriter;
 
     return-void
 .end method
@@ -109,7 +109,7 @@
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
 
-    .line 313
+    .line 454
     check-cast p2, Ljava/lang/Number;
 
     invoke-virtual {p0, p1, p2}, Lcom/google/gson/Gson$1;->write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Number;)V

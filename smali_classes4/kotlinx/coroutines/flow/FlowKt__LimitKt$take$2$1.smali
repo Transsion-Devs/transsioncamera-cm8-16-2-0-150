@@ -32,6 +32,8 @@
 
 .field final synthetic $count:I
 
+.field final synthetic $ownershipMarker:Ljava/lang/Object;
+
 .field final synthetic $this_unsafeFlow:Lkotlinx/coroutines/flow/FlowCollector;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -43,15 +45,17 @@
 
 
 # direct methods
-.method constructor <init>(Lkotlin/jvm/internal/Ref$IntRef;ILkotlinx/coroutines/flow/FlowCollector;)V
-    .registers 4
+.method constructor <init>(Lkotlin/jvm/internal/Ref$IntRef;ILkotlinx/coroutines/flow/FlowCollector;Ljava/lang/Object;)V
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lkotlin/jvm/internal/Ref$IntRef;",
             "I",
             "Lkotlinx/coroutines/flow/FlowCollector<",
-            "-TT;>;)V"
+            "-TT;>;",
+            "Ljava/lang/Object;",
+            ")V"
         }
     .end annotation
 
@@ -60,6 +64,8 @@
     iput p2, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;->$count:I
 
     iput-object p3, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;->$this_unsafeFlow:Lkotlinx/coroutines/flow/FlowCollector;
+
+    iput-object p4, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;->$ownershipMarker:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -115,7 +121,7 @@
 
     move-result-object v1
 
-    .line 55
+    .line 52
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1$emit$1;->label:I
 
     const/4 v3, 0x2
@@ -130,7 +136,7 @@
 
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_5f
+    goto :goto_61
 
     :cond_2c
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -149,7 +155,7 @@
     :cond_38
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 60
+    .line 57
     iget-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;->$consumed:Lkotlin/jvm/internal/Ref$IntRef;
 
     iget v2, p2, Lkotlin/jvm/internal/Ref$IntRef;->element:I
@@ -162,7 +168,7 @@
 
     if-ge v2, p2, :cond_54
 
-    .line 61
+    .line 58
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;->$this_unsafeFlow:Lkotlinx/coroutines/flow/FlowCollector;
 
     iput v4, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1$emit$1;->label:I
@@ -173,9 +179,9 @@
 
     if-ne p0, v1, :cond_51
 
-    goto :goto_5e
+    goto :goto_60
 
-    .line 63
+    .line 60
     :cond_51
     :goto_51
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -183,22 +189,24 @@
     return-object p0
 
     :cond_54
-    iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;->$this_unsafeFlow:Lkotlinx/coroutines/flow/FlowCollector;
+    iget-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;->$this_unsafeFlow:Lkotlinx/coroutines/flow/FlowCollector;
+
+    iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1;->$ownershipMarker:Ljava/lang/Object;
 
     iput v3, v0, Lkotlinx/coroutines/flow/FlowKt__LimitKt$take$2$1$emit$1;->label:I
 
-    # invokes: Lkotlinx/coroutines/flow/FlowKt__LimitKt;->emitAbort$FlowKt__LimitKt(Lkotlinx/coroutines/flow/FlowCollector;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    invoke-static {p0, p1, v0}, Lkotlinx/coroutines/flow/FlowKt__LimitKt;->access$emitAbort$FlowKt__LimitKt(Lkotlinx/coroutines/flow/FlowCollector;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    # invokes: Lkotlinx/coroutines/flow/FlowKt__LimitKt;->emitAbort$FlowKt__LimitKt(Lkotlinx/coroutines/flow/FlowCollector;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p2, p1, p0, v0}, Lkotlinx/coroutines/flow/FlowKt__LimitKt;->access$emitAbort$FlowKt__LimitKt(Lkotlinx/coroutines/flow/FlowCollector;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    if-ne p0, v1, :cond_5f
+    if-ne p0, v1, :cond_61
 
-    :goto_5e
+    :goto_60
     return-object v1
 
-    :cond_5f
-    :goto_5f
+    :cond_61
+    :goto_61
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0

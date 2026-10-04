@@ -4,6 +4,8 @@
 
 
 # static fields
+.field private static final synthetic $ENTRIES:Lkotlin/enums/EnumEntries;
+
 .field private static final synthetic $VALUES:[Lkotlin/LazyThreadSafetyMode;
 
 .field public static final enum NONE:Lkotlin/LazyThreadSafetyMode;
@@ -33,7 +35,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 54
+    .line 70
     new-instance v0, Lkotlin/LazyThreadSafetyMode;
 
     const-string v1, "SYNCHRONIZED"
@@ -44,7 +46,7 @@
 
     sput-object v0, Lkotlin/LazyThreadSafetyMode;->SYNCHRONIZED:Lkotlin/LazyThreadSafetyMode;
 
-    .line 60
+    .line 78
     new-instance v0, Lkotlin/LazyThreadSafetyMode;
 
     const-string v1, "PUBLICATION"
@@ -55,7 +57,7 @@
 
     sput-object v0, Lkotlin/LazyThreadSafetyMode;->PUBLICATION:Lkotlin/LazyThreadSafetyMode;
 
-    .line 67
+    .line 86
     new-instance v0, Lkotlin/LazyThreadSafetyMode;
 
     const-string v1, "NONE"
@@ -72,13 +74,19 @@
 
     sput-object v0, Lkotlin/LazyThreadSafetyMode;->$VALUES:[Lkotlin/LazyThreadSafetyMode;
 
+    invoke-static {v0}, Lkotlin/enums/EnumEntriesKt;->enumEntries([Ljava/lang/Enum;)Lkotlin/enums/EnumEntries;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlin/LazyThreadSafetyMode;->$ENTRIES:Lkotlin/enums/EnumEntries;
+
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .registers 3
 
-    .line 49
+    .line 61
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -103,7 +111,7 @@
 
     sget-object v0, Lkotlin/LazyThreadSafetyMode;->$VALUES:[Lkotlin/LazyThreadSafetyMode;
 
-    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

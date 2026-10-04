@@ -13,7 +13,7 @@
 
     if-ltz p1, :cond_19
 
-    .line 339
+    .line 344
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -26,13 +26,13 @@
 
     move-result-object p0
 
-    const-string p1, "this as java.lang.String).substring(startIndex)"
+    const-string p1, "substring(...)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 
-    .line 338
+    .line 343
     :cond_19
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -72,7 +72,7 @@
 
     if-ltz p1, :cond_16
 
-    .line 363
+    .line 368
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -91,7 +91,7 @@
 
     return-object p0
 
-    .line 362
+    .line 367
     :cond_16
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -129,7 +129,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 71
+    .line 75
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -138,14 +138,14 @@
 
     const/4 v0, 0x0
 
-    .line 73
+    .line 77
     invoke-interface {p0, v0}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result p0
 
     return p0
 
-    .line 72
+    .line 76
     :cond_11
     new-instance p0, Ljava/util/NoSuchElementException;
 
@@ -163,14 +163,14 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 179
+    .line 186
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
     if-eqz v0, :cond_14
 
-    .line 181
+    .line 188
     invoke-static {p0}, Lkotlin/text/StringsKt__StringsKt;->getLastIndex(Ljava/lang/CharSequence;)I
 
     move-result v0
@@ -181,7 +181,7 @@
 
     return p0
 
-    .line 180
+    .line 187
     :cond_14
     new-instance p0, Ljava/util/NoSuchElementException;
 
@@ -201,7 +201,7 @@
 
     if-ltz p1, :cond_1a
 
-    .line 567
+    .line 572
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -216,13 +216,13 @@
 
     move-result-object p0
 
-    const-string p1, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string p1, "substring(...)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 
-    .line 566
+    .line 571
     :cond_1a
     new-instance p0, Ljava/lang/StringBuilder;
 

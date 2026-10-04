@@ -32,6 +32,8 @@
 
 .field private static sInstance:Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
+.field private static sShot2ShotCallbacks:Ljava/util/List;
+
 
 # instance fields
 .field private isLastTimestampDiff:J
@@ -180,6 +182,15 @@
     return-object v0
 .end method
 
+.method static bridge synthetic -$$Nest$sfgetsShot2ShotCallbacks()Ljava/util/List;
+    .registers 1
+
+    .line 0
+    sget-object v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->sShot2ShotCallbacks:Ljava/util/List;
+
+    return-object v0
+.end method
+
 .method static bridge synthetic -$$Nest$sfputisDelaySetTZConfig(Z)V
     .registers 1
 
@@ -219,12 +230,19 @@
 
     sput-object v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
+    .line 86
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sput-object v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->sShot2ShotCallbacks:Ljava/util/List;
+
     const/4 v0, 0x0
 
-    .line 88
+    .line 89
     sput-object v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->sInstance:Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
-    .line 635
+    .line 641
     new-instance v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController$3;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController$3;-><init>()V
@@ -237,10 +255,10 @@
 .method private constructor <init>(Landroid/content/Context;)V
     .registers 6
 
-    .line 132
+    .line 133
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 86
+    .line 87
     invoke-static {}, Lcom/transsion/camera/utils/CameraUtil;->getRam()I
 
     move-result v0
@@ -267,7 +285,7 @@
     :goto_14
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIspHidlMemLimit:Z
 
-    .line 87
+    .line 88
     invoke-static {v2}, Lcom/transsion/camera/utils/FeatureSupport;->getDeferOnNextCapAfterJpeg(I)I
 
     move-result v0
@@ -284,10 +302,10 @@
     :goto_1f
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mDeferOnNextCapAfterJpeg:Z
 
-    .line 89
+    .line 90
     iput-boolean v3, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mDeferSupport:Z
 
-    .line 91
+    .line 92
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
@@ -296,44 +314,44 @@
 
     const/4 v0, 0x0
 
-    .line 93
+    .line 94
     iput-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
-    .line 96
+    .line 97
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIspHidlCaptureSurfaceList:Ljava/util/List;
 
-    .line 97
+    .line 98
     iput-boolean v3, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIsPostAlgoSurfaceEmpty:Z
 
-    .line 99
+    .line 100
     iput-boolean v2, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mPostAlgoDied:Z
 
-    .line 100
+    .line 101
     new-instance v0, Ljava/util/Stack;
 
     invoke-direct {v0}, Ljava/util/Stack;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mBufferCacheItemList:Ljava/util/Stack;
 
-    .line 105
+    .line 106
     new-instance v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController$1;-><init>(Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mHighQualityMediaSaverListener:Lcom/transsion/camera/app/common/taps/OnBackgroundImageStateChangeListener;
 
-    .line 523
+    .line 529
     new-instance v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController$2;-><init>(Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlEventCallback:Lcom/transsion/camera/app/common/isphidl/IISPHidlService$IISPHidlServiceCallback;
 
-    .line 133
+    .line 134
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -344,10 +362,10 @@
 
     move-result v0
 
-    .line 135
+    .line 136
     iput-object p1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mContext:Landroid/content/Context;
 
-    .line 136
+    .line 137
     sget-object v1, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -368,7 +386,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 137
+    .line 138
     invoke-static {}, Lcom/transsion/camera/app_info/AppInfo;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -397,12 +415,12 @@
 
     move-result-object v2
 
-    .line 136
+    .line 137
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     if-eqz v0, :cond_bb
 
-    .line 138
+    .line 139
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIspHidlMemLimit:Z
 
     if-nez v0, :cond_bb
@@ -425,7 +443,7 @@
 
     if-eqz v0, :cond_bb
 
-    .line 139
+    .line 140
     const-string v0, "com.transsion.camera.feature.isphidl.ISPHidlImpl"
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -440,23 +458,23 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
-    .line 141
+    .line 142
     :cond_bb
     invoke-direct {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->initSupportModes()V
 
-    .line 142
+    .line 143
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->hasService()Z
 
     move-result p1
 
     if-eqz p1, :cond_c8
 
-    .line 143
+    .line 144
     invoke-direct {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->init()V
 
     return-void
 
-    .line 145
+    .line 146
     :cond_c8
     const-string p0, "hasISPHidlService: false"
 
@@ -468,19 +486,19 @@
 .method public static createInstance(Landroid/content/Context;)V
     .registers 2
 
-    .line 127
+    .line 128
     sget-object v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->sInstance:Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
     if-nez v0, :cond_e
 
-    .line 128
+    .line 129
     new-instance v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;-><init>(Landroid/content/Context;)V
 
     sput-object v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->sInstance:Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
-    .line 129
+    .line 130
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->createInstance()V
 
     :cond_e
@@ -494,7 +512,7 @@
 
     move v1, v0
 
-    .line 613
+    .line 619
     :goto_2
     iget-object v2, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mBufferCacheItemList:Ljava/util/Stack;
 
@@ -504,7 +522,7 @@
 
     if-ge v1, v2, :cond_6e
 
-    .line 614
+    .line 620
     iget-object v2, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mBufferCacheItemList:Ljava/util/Stack;
 
     invoke-virtual {v2, v1}, Ljava/util/AbstractList;->get(I)Ljava/lang/Object;
@@ -513,7 +531,7 @@
 
     check-cast v2, Lcom/transsion/camera/app/common/isphidl/BufferCacheItem;
 
-    .line 615
+    .line 621
     sget-object v3, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -548,7 +566,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 616
+    .line 622
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/isphidl/BufferCacheItem;->getTimeStamp()J
 
     move-result-wide v3
@@ -559,7 +577,7 @@
 
     goto :goto_5a
 
-    .line 619
+    .line 625
     :cond_45
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/isphidl/BufferCacheItem;->getTimeStamp()J
 
@@ -573,7 +591,7 @@
 
     if-lez v5, :cond_69
 
-    .line 621
+    .line 627
     iget-wide p1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isLastTimestampDiff:J
 
     invoke-static {p1, p2}, Ljava/lang/Math;->abs(J)J
@@ -605,7 +623,7 @@
 
     return-object p0
 
-    .line 623
+    .line 629
     :cond_69
     iput-wide v3, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isLastTimestampDiff:J
 
@@ -613,7 +631,7 @@
 
     goto :goto_2
 
-    .line 625
+    .line 631
     :cond_6e
     iget-object p1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mBufferCacheItemList:Ljava/util/Stack;
 
@@ -623,7 +641,7 @@
 
     if-lez p1, :cond_85
 
-    .line 626
+    .line 632
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mBufferCacheItemList:Ljava/util/Stack;
 
     invoke-virtual {p0}, Ljava/util/AbstractCollection;->size()I
@@ -649,7 +667,7 @@
 .method public static getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
     .registers 1
 
-    .line 158
+    .line 159
     sget-object v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->sInstance:Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
     return-object v0
@@ -658,7 +676,7 @@
 .method private init()V
     .registers 4
 
-    .line 149
+    .line 150
     sget-object v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -679,14 +697,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 150
+    .line 151
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlEventCallback:Lcom/transsion/camera/app/common/isphidl/IISPHidlService$IISPHidlServiceCallback;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/isphidl/IISPHidlService;->setIISPHidlServiceCallback(Lcom/transsion/camera/app/common/isphidl/IISPHidlService$IISPHidlServiceCallback;)V
 
-    .line 151
+    .line 152
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "ISPHidlCaptureThread"
@@ -695,10 +713,10 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlCaptureThread:Landroid/os/HandlerThread;
 
-    .line 152
+    .line 153
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 153
+    .line 154
     new-instance v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController$ISPHidlHandler;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlCaptureThread:Landroid/os/HandlerThread;
@@ -713,7 +731,7 @@
 
     const/4 v0, 0x1
 
-    .line 154
+    .line 155
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mInit:Z
 
     return-void
@@ -722,12 +740,12 @@
 .method private initSupportModes()V
     .registers 3
 
-    .line 707
+    .line 716
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_3f
 
-    .line 708
+    .line 717
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mSupportModes:Ljava/util/Set;
 
     const/4 v1, 0x0
@@ -738,7 +756,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 709
+    .line 718
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mSupportModes:Ljava/util/Set;
 
     const/16 v1, 0xa
@@ -749,7 +767,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 710
+    .line 719
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mSupportModes:Ljava/util/Set;
 
     const/16 v1, 0x1e
@@ -760,16 +778,25 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 711
+    .line 720
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
 
     iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIspHidlHDRSupport:Z
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_3f
 
-    .line 712
+    .line 721
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportBackgroundShot2shotPMaster:Z
+
+    if-eqz v0, :cond_3f
+
+    .line 722
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mSupportModes:Ljava/util/Set;
 
     const/16 v0, 0x10
@@ -780,17 +807,17 @@
 
     invoke-interface {p0, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    :cond_37
+    :cond_3f
     return-void
 .end method
 
 .method private manageCache(Lcom/transsion/camera/app/common/isphidl/BufferCacheItem;Ljava/util/Stack;Z)V
     .registers 5
 
-    .line 671
+    .line 680
     monitor-enter p2
 
-    .line 672
+    .line 681
     :goto_1
     :try_start_1
     invoke-virtual {p2}, Ljava/util/AbstractCollection;->size()I
@@ -811,7 +838,7 @@
 
     const/4 p0, 0x0
 
-    .line 673
+    .line 682
     invoke-virtual {p2, p0}, Ljava/util/AbstractList;->remove(I)Ljava/lang/Object;
 
     goto :goto_1
@@ -821,11 +848,11 @@
 
     goto :goto_19
 
-    .line 675
+    .line 684
     :cond_14
     invoke-virtual {p2, p1}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 676
+    .line 685
     monitor-exit p2
 
     return-void
@@ -841,12 +868,12 @@
 .method private releaseSurfaces()V
     .registers 6
 
-    .line 515
+    .line 521
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIspHidlCaptureSurfaceList:Ljava/util/List;
 
     monitor-enter v0
 
-    .line 516
+    .line 522
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIspHidlCaptureSurfaceList:Ljava/util/List;
 
@@ -867,7 +894,7 @@
 
     check-cast v2, Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
-    .line 517
+    .line 523
     iget-object v3, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mHandler:Landroid/os/Handler;
 
     const/4 v4, 0x1
@@ -885,13 +912,13 @@
 
     goto :goto_29
 
-    .line 519
+    .line 525
     :cond_22
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIspHidlCaptureSurfaceList:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->clear()V
 
-    .line 520
+    .line 526
     monitor-exit v0
 
     return-void
@@ -909,25 +936,25 @@
 .method public activityResume(I)V
     .registers 4
 
-    .line 174
+    .line 175
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_13
 
-    .line 175
+    .line 176
     new-instance v0, Landroid/os/Message;
 
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
     const/4 v1, 0x6
 
-    .line 176
+    .line 177
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 177
+    .line 178
     iput p1, v0, Landroid/os/Message;->arg1:I
 
-    .line 178
+    .line 179
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
@@ -939,25 +966,25 @@
 .method public addCaptureSurface(Lcom/transsion/camera/app/common/mode/CaptureSurface;)V
     .registers 12
 
-    .line 320
+    .line 326
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIspHidlCaptureSurfaceList:Ljava/util/List;
 
     monitor-enter v0
 
-    .line 321
+    .line 327
     :try_start_3
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 322
+    .line 328
     iget-object v3, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIspHidlCaptureSurfaceList:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    .line 323
+    .line 329
     :cond_d
     :goto_d
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
@@ -966,14 +993,14 @@
 
     if-eqz v4, :cond_4f
 
-    .line 324
+    .line 330
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/transsion/camera/app/common/mode/CaptureSurface;
 
-    .line 325
+    .line 331
     invoke-virtual {v4}, Lcom/transsion/camera/app/common/mode/CaptureSurface;->getPreReleaseTime()J
 
     move-result-wide v4
@@ -992,7 +1019,7 @@
 
     if-lez v6, :cond_d
 
-    .line 327
+    .line 333
     sget-object v6, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1017,7 +1044,7 @@
 
     invoke-static {v6, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 328
+    .line 334
     invoke-interface {v3}, Ljava/util/Iterator;->remove()V
 
     goto :goto_d
@@ -1027,13 +1054,13 @@
 
     goto :goto_56
 
-    .line 331
+    .line 337
     :cond_4f
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIspHidlCaptureSurfaceList:Ljava/util/List;
 
     invoke-interface {p0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 332
+    .line 338
     monitor-exit v0
 
     return-void
@@ -1049,7 +1076,7 @@
 .method public cacheBuffer([BIIJZ)V
     .registers 13
 
-    .line 268
+    .line 274
     new-instance v0, Lcom/transsion/camera/app/common/isphidl/BufferCacheItem;
 
     move-object v1, p1
@@ -1062,12 +1089,12 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/app/common/isphidl/BufferCacheItem;-><init>([BIIJ)V
 
-    .line 269
+    .line 275
     iget-object p1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mBufferCacheItemList:Ljava/util/Stack;
 
     invoke-direct {p0, v0, p1, p6}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->manageCache(Lcom/transsion/camera/app/common/isphidl/BufferCacheItem;Ljava/util/Stack;Z)V
 
-    .line 270
+    .line 276
     sget-object p1, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -1104,20 +1131,20 @@
 .method public configPostAlgo(Lcom/transsion/camera/adapter/CameraParameters;[[I[ILandroid/hardware/camera2/CaptureResult;I)V
     .registers 14
 
-    .line 209
+    .line 210
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mPostAlgoDied:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_12
 
-    .line 210
+    .line 211
     invoke-virtual {p1, v1}, Lcom/transsion/camera/adapter/CameraParameters;->setPostAlgoOn(Z)V
 
-    .line 211
+    .line 212
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mDeferSupport:Z
 
-    .line 212
+    .line 213
     sget-object p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "configPostAlgo: mPostAlgoDied return"
@@ -1126,7 +1153,7 @@
 
     return-void
 
-    .line 215
+    .line 216
     :cond_12
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;
 
@@ -1144,7 +1171,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->configAlgo(Lcom/transsion/camera/adapter/CameraParameters;[[I[ILandroid/hardware/camera2/CaptureResult;I)V
 
-    .line 216
+    .line 217
     invoke-virtual {v3}, Lcom/transsion/camera/adapter/CameraParameters;->getPostAlgoType()I
 
     move-result p1
@@ -1173,7 +1200,7 @@
     :goto_2f
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mDeferSupport:Z
 
-    .line 217
+    .line 218
     invoke-virtual {v3}, Lcom/transsion/camera/adapter/CameraParameters;->postAlgoOn()Z
 
     move-result p1
@@ -1191,17 +1218,17 @@
     :cond_3e
     sput-boolean v1, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isPostALgoShot2Shoting:Z
 
-    .line 218
+    .line 219
     sput-boolean v1, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isPostALgoBSSing:Z
 
-    .line 219
+    .line 220
     invoke-virtual {v3}, Lcom/transsion/camera/adapter/CameraParameters;->getPostAlgoType()I
 
     move-result p1
 
     if-nez p1, :cond_50
 
-    .line 220
+    .line 221
     sget-object p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "configPostAlgo: post algo type is none"
@@ -1210,7 +1237,7 @@
 
     return-void
 
-    .line 223
+    .line 224
     :cond_50
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
 
@@ -1218,7 +1245,7 @@
 
     if-eqz p1, :cond_5b
 
-    .line 224
+    .line 225
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/isphidl/IISPHidlService;->configCaptureParam()V
@@ -1230,7 +1257,7 @@
 .method public getBackgroundServiceType(I)Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
     .registers 2
 
-    .line 375
+    .line 381
     sget-object p0, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;->BG_SERVICE:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager$BackgroundServiceType;
 
     return-object p0
@@ -1239,7 +1266,7 @@
 .method public getHandler()Landroid/os/Handler;
     .registers 1
 
-    .line 301
+    .line 307
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mHandler:Landroid/os/Handler;
 
     return-object p0
@@ -1248,7 +1275,7 @@
 .method public hasService()Z
     .registers 2
 
-    .line 162
+    .line 163
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
 
     move-result v0
@@ -1276,7 +1303,7 @@
 .method public isNeedASDShot2ShotSkipPolicy()Z
     .registers 2
 
-    .line 306
+    .line 312
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -1328,7 +1355,7 @@
 .method public isPostAlgoShot2Shoting()Z
     .registers 2
 
-    .line 292
+    .line 298
     sget-boolean v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isPostALgoShot2Shoting:Z
 
     if-eqz v0, :cond_a
@@ -1350,7 +1377,7 @@
 .method public isPostAlgoShot2ShotingOriginal()Z
     .registers 1
 
-    .line 296
+    .line 302
     sget-boolean p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isPostALgoShot2Shoting:Z
 
     return p0
@@ -1359,7 +1386,7 @@
 .method public isPostAlgoSurfaceEmpty()Z
     .registers 1
 
-    .line 170
+    .line 171
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIsPostAlgoSurfaceEmpty:Z
 
     return p0
@@ -1368,7 +1395,7 @@
 .method public isReady()Z
     .registers 1
 
-    .line 370
+    .line 376
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->hasService()Z
 
     move-result p0
@@ -1379,7 +1406,7 @@
 .method public isServiceSupport()Z
     .registers 1
 
-    .line 166
+    .line 167
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     if-eqz p0, :cond_6
@@ -1405,7 +1432,7 @@
 .method public isSupport()Z
     .registers 1
 
-    .line 365
+    .line 371
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
 
     move-result p0
@@ -1416,7 +1443,7 @@
 .method public isSupportDefer(I)Z
     .registers 3
 
-    .line 380
+    .line 386
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mSupportModes:Ljava/util/Set;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1452,10 +1479,10 @@
 .method public onBackgroundStorageCreate(Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager;)V
     .registers 2
 
-    .line 347
+    .line 353
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager;->setBackgroundService(Lcom/transsion/camera/app/common/taps/IBackgroundController;)V
 
-    .line 348
+    .line 354
     iput-object p1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mOnHighQualityJpegAvailableListener:Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager;
 
     return-void
@@ -1470,14 +1497,14 @@
 .method public onBackgroundStorageReady(Lcom/transsion/camera/app/common/storage/IBackgroundStorageManager;)V
     .registers 2
 
-    .line 358
+    .line 364
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
 
     move-result p1
 
     if-eqz p1, :cond_b
 
-    .line 359
+    .line 365
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/isphidl/IISPHidlService;->onStorageReady()V
@@ -1491,26 +1518,26 @@
 
     const/4 v0, 0x0
 
-    .line 274
+    .line 280
     sput-boolean v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isPostALgoShot2Shoting:Z
 
-    .line 275
+    .line 281
     sput-boolean v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isPostALgoBSSing:Z
 
-    .line 276
+    .line 282
     sput-boolean v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isDelaySetTZConfig:Z
 
-    .line 277
+    .line 283
     sput-boolean v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isThumbnailClicked:Z
 
-    .line 278
+    .line 284
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
 
     move-result v0
 
     if-eqz v0, :cond_14
 
-    .line 279
+    .line 285
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/isphidl/IISPHidlService;->flush([J)V
@@ -1526,7 +1553,7 @@
 
     const/4 v1, 0x0
 
-    .line 430
+    .line 436
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->setTapCapConfig(JII)V
 
     return-void
@@ -1535,14 +1562,14 @@
 .method public onLowQualityJpegSaved(JLjava/lang/String;)V
     .registers 5
 
-    .line 423
+    .line 429
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 424
+    .line 430
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     const-string v0, ""
@@ -1558,10 +1585,10 @@
 
     const/4 v0, 0x1
 
-    .line 395
+    .line 401
     sput-boolean v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isThumbnailClicked:Z
 
-    .line 396
+    .line 402
     sget-boolean v1, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isPostALgoBSSing:Z
 
     if-nez v1, :cond_e
@@ -1570,12 +1597,12 @@
 
     const/4 v3, 0x0
 
-    .line 397
+    .line 403
     invoke-virtual {p0, v1, v2, v0, v3}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->setTZCapConfig(JII)V
 
     return-void
 
-    .line 400
+    .line 406
     :cond_e
     sput-boolean v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isDelaySetTZConfig:Z
 
@@ -1587,7 +1614,7 @@
 
     const/4 v0, 0x2
 
-    .line 246
+    .line 251
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->pause(I)V
 
     return-void
@@ -1598,77 +1625,109 @@
 
     const/4 v0, 0x0
 
-    .line 250
+    .line 255
     sput-boolean v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isPostALgoShot2Shoting:Z
 
-    .line 251
+    .line 256
     sput-boolean v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isPostALgoBSSing:Z
 
-    .line 252
+    .line 257
     sput-boolean v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isDelaySetTZConfig:Z
 
-    .line 253
+    .line 258
     iget-object v1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mBufferCacheItemList:Ljava/util/Stack;
 
     invoke-virtual {v1}, Ljava/util/AbstractCollection;->clear()V
 
-    .line 254
+    .line 259
+    sget-object v1, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->sShot2ShotCallbacks:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->clear()V
+
+    .line 260
     sget-boolean v1, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isThumbnailClicked:Z
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_18
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_18
 
     const/4 p1, 0x1
 
-    .line 257
-    :cond_13
+    .line 263
+    :cond_18
     sput-boolean v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isThumbnailClicked:Z
 
-    .line 258
+    .line 264
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_25
 
-    .line 259
+    .line 265
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/isphidl/IISPHidlService;->pause(I)V
 
-    .line 261
-    :cond_20
+    .line 267
+    :cond_25
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mHandler:Landroid/os/Handler;
 
-    if-eqz p0, :cond_2a
+    if-eqz p0, :cond_2f
 
     const/4 p1, 0x5
 
     const-wide/16 v0, 0x7530
 
-    .line 262
+    .line 268
     invoke-virtual {p0, p1, v0, v1}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    :cond_2a
+    :cond_2f
+    return-void
+.end method
+
+.method public registerShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
+    .registers 2
+
+    .line 241
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_13
+
+    sget-object p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->sShot2ShotCallbacks:Ljava/util/List;
+
+    invoke-interface {p0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_13
+
+    .line 242
+    sget-object p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->sShot2ShotCallbacks:Ljava/util/List;
+
+    invoke-interface {p0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_13
     return-void
 .end method
 
 .method public removeCaptureSurface(Lcom/transsion/camera/app/common/mode/CaptureSurface;)V
     .registers 3
 
-    .line 340
+    .line 346
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIspHidlCaptureSurfaceList:Ljava/util/List;
 
     monitor-enter v0
 
-    .line 341
+    .line 347
     :try_start_3
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIspHidlCaptureSurfaceList:Ljava/util/List;
 
     invoke-interface {p0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 342
+    .line 348
     monitor-exit v0
 
     return-void
@@ -1686,19 +1745,19 @@
 .method public resume()V
     .registers 2
 
-    .line 183
+    .line 184
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 184
+    .line 185
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/isphidl/IISPHidlService;->resume()V
 
-    .line 186
+    .line 187
     :cond_b
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mHandler:Landroid/os/Handler;
 
@@ -1706,7 +1765,7 @@
 
     const/4 v0, 0x0
 
-    .line 187
+    .line 188
     invoke-virtual {p0, v0}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     :cond_13
@@ -1716,7 +1775,7 @@
 .method public set2XRemosaicAvailable(Z)V
     .registers 2
 
-    .line 229
+    .line 230
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLAlgoManager;
 
     move-result-object p0
@@ -1738,43 +1797,24 @@
     return-void
 .end method
 
-.method public setSettingShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
-    .registers 3
-
-    .line 240
-    invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_b
-
-    .line 241
-    iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
-
-    invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/isphidl/IISPHidlService;->setSettingShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
-
-    :cond_b
-    return-void
-.end method
-
 .method public setShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
     .registers 3
 
-    .line 233
+    .line 234
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
 
     move-result v0
 
     if-eqz v0, :cond_18
 
-    .line 234
+    .line 235
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     sput-object v0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mShot2ShotCallback:Ljava/lang/ref/WeakReference;
 
-    .line 235
+    .line 236
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     if-nez p1, :cond_13
@@ -1796,21 +1836,21 @@
 .method public setTZCapConfig(JII)V
     .registers 6
 
-    .line 284
+    .line 290
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->hasService()Z
 
     move-result v0
 
     if-eqz v0, :cond_c
 
-    .line 285
+    .line 291
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     invoke-interface {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/isphidl/IISPHidlService;->setTZCapConfig(JII)I
 
     return-void
 
-    .line 287
+    .line 293
     :cond_c
     sget-object p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1828,7 +1868,7 @@
 
     if-eq p4, v0, :cond_6
 
-    .line 407
+    .line 413
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->setTZCapConfig(JII)V
 
     :cond_6
@@ -1838,7 +1878,7 @@
 .method public startPostAlgo(Landroid/view/Surface;Landroid/util/Size;Landroid/util/Size;Ljava/util/List;Landroid/util/Size;III)[Lcom/transsion/camera/app/common/mode/SurfaceInfo;
     .registers 20
 
-    .line 193
+    .line 194
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->isServiceSupport()Z
 
     move-result v0
@@ -1847,7 +1887,7 @@
 
     if-eqz v0, :cond_32
 
-    .line 194
+    .line 195
     iget-object v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/isphidl/IISPHidlService;->hasISPHidlService()Z
@@ -1860,16 +1900,16 @@
 
     if-nez v0, :cond_16
 
-    .line 195
+    .line 196
     invoke-direct {p0}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->init()V
 
     :cond_16
     const/4 v0, 0x0
 
-    .line 197
+    .line 198
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mPostAlgoDied:Z
 
-    .line 198
+    .line 199
     iget-object v2, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mISPHidlService:Lcom/transsion/camera/app/common/isphidl/IISPHidlService;
 
     move-object v3, p1
@@ -1899,17 +1939,28 @@
     :cond_2e
     move v1, v0
 
-    .line 200
+    .line 201
     :goto_2f
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIsPostAlgoSurfaceEmpty:Z
 
     return-object p1
 
-    .line 203
+    .line 204
     :cond_32
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->mIsPostAlgoSurfaceEmpty:Z
 
     const/4 p0, 0x0
 
     return-object p0
+.end method
+
+.method public unRegisterShot2ShotCallback(Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;)V
+    .registers 2
+
+    .line 247
+    sget-object p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->sShot2ShotCallbacks:Ljava/util/List;
+
+    invoke-interface {p0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    return-void
 .end method

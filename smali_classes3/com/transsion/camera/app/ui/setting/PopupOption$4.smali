@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/setting/PopupOption;)V
     .registers 2
 
-    .line 441
+    .line 457
     iput-object p1, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$4;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,19 +38,19 @@
 .method public onDismiss()V
     .registers 3
 
-    .line 444
+    .line 460
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$4;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->doOnDismiss()V
 
-    .line 445
+    .line 461
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$4;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fputmDownEventInBounds(Lcom/transsion/camera/app/ui/setting/PopupOption;Z)V
 
-    .line 446
+    .line 462
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$4;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fgetmPopupWindowListener(Lcom/transsion/camera/app/ui/setting/PopupOption;)Lcom/transsion/camera/app/common/IAppUIListener$IPopupWindowListener;
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 447
+    .line 463
     iget-object v0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$4;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/setting/PopupOption;->-$$Nest$fgetmPopupWindowListener(Lcom/transsion/camera/app/ui/setting/PopupOption;)Lcom/transsion/camera/app/common/IAppUIListener$IPopupWindowListener;
@@ -68,7 +68,7 @@
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIListener$IPopupWindowListener;->onPopupDismissEnd()V
 
-    .line 449
+    .line 465
     :cond_1c
     iget-object p0, p0, Lcom/transsion/camera/app/ui/setting/PopupOption$4;->this$0:Lcom/transsion/camera/app/ui/setting/PopupOption;
 

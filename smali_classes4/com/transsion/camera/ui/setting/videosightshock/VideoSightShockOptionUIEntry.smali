@@ -18,7 +18,7 @@
 .method public createTopBarItemUI()Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
     .registers 4
 
-    .line 17
+    .line 22
     new-instance v0, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockOptionItemUI;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/videosightshock/VideoSightShockOptionUISpec;
@@ -32,4 +32,19 @@
     iput-object v0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mITopBarItemUI:Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
     return-object v0
+.end method
+
+.method public isSupported()Z
+    .registers 2
+
+    .line 17
+    iget-object p0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mResources:Landroid/content/res/Resources;
+
+    sget v0, Lcom/transsion/camera/app/common/R$bool;->video_sight_shock_support:I
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p0
+
+    return p0
 .end method

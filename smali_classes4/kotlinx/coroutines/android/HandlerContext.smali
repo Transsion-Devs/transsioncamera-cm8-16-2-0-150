@@ -7,8 +7,6 @@
 
 
 # instance fields
-.field private volatile _immediate:Lkotlinx/coroutines/android/HandlerContext;
-
 .field private final handler:Landroid/os/Handler;
 
 .field private final immediate:Lkotlinx/coroutines/android/HandlerContext;
@@ -19,11 +17,11 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$AXU9Ipeju1KWZ01G6KHwtONG4Wk(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
+.method public static synthetic $r8$lambda$jZSHGbAeTJnvHXIdcC6c6XK5CWs(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
     .registers 2
 
     .line 0
-    invoke-static {p0, p1}, Lkotlinx/coroutines/android/HandlerContext;->invokeOnTimeout$lambda$3(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
+    invoke-static {p0, p1}, Lkotlinx/coroutines/android/HandlerContext;->invokeOnTimeout$lambda$2(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
 
     return-void
 .end method
@@ -33,7 +31,7 @@
 
     const/4 v0, 0x0
 
-    .line 128
+    .line 124
     invoke-direct {p0, p1, p2, v0}, Lkotlinx/coroutines/android/HandlerContext;-><init>(Landroid/os/Handler;Ljava/lang/String;Z)V
 
     return-void
@@ -48,7 +46,7 @@
 
     const/4 p2, 0x0
 
-    .line 125
+    .line 121
     :cond_5
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/android/HandlerContext;-><init>(Landroid/os/Handler;Ljava/lang/String;)V
 
@@ -60,42 +58,34 @@
 
     const/4 v0, 0x0
 
-    .line 118
+    .line 114
     invoke-direct {p0, v0}, Lkotlinx/coroutines/android/HandlerDispatcher;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 115
+    .line 111
     iput-object p1, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
-    .line 116
+    .line 112
     iput-object p2, p0, Lkotlinx/coroutines/android/HandlerContext;->name:Ljava/lang/String;
 
-    .line 117
+    .line 113
     iput-boolean p3, p0, Lkotlinx/coroutines/android/HandlerContext;->invokeImmediately:Z
 
-    if-eqz p3, :cond_d
+    if-eqz p3, :cond_e
 
-    move-object v0, p0
+    move-object p3, p0
 
-    .line 131
-    :cond_d
-    iput-object v0, p0, Lkotlinx/coroutines/android/HandlerContext;->_immediate:Lkotlinx/coroutines/android/HandlerContext;
+    goto :goto_14
 
-    .line 133
-    iget-object p3, p0, Lkotlinx/coroutines/android/HandlerContext;->_immediate:Lkotlinx/coroutines/android/HandlerContext;
-
-    if-nez p3, :cond_1b
-
-    .line 134
+    .line 127
+    :cond_e
     new-instance p3, Lkotlinx/coroutines/android/HandlerContext;
 
     const/4 v0, 0x1
 
     invoke-direct {p3, p1, p2, v0}, Lkotlinx/coroutines/android/HandlerContext;-><init>(Landroid/os/Handler;Ljava/lang/String;Z)V
 
-    iput-object p3, p0, Lkotlinx/coroutines/android/HandlerContext;->_immediate:Lkotlinx/coroutines/android/HandlerContext;
-
-    .line 133
-    :cond_1b
+    .line 126
+    :goto_14
     iput-object p3, p0, Lkotlinx/coroutines/android/HandlerContext;->immediate:Lkotlinx/coroutines/android/HandlerContext;
 
     return-void
@@ -104,7 +94,7 @@
 .method public static final synthetic access$getHandler$p(Lkotlinx/coroutines/android/HandlerContext;)Landroid/os/Handler;
     .registers 1
 
-    .line 114
+    .line 110
     iget-object p0, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
     return-object p0
@@ -113,7 +103,7 @@
 .method private final cancelOnRejection(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
     .registers 6
 
-    .line 166
+    .line 159
     new-instance v0, Ljava/util/concurrent/CancellationException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -138,7 +128,7 @@
 
     invoke-static {p1, v0}, Lkotlinx/coroutines/JobKt;->cancel(Lkotlin/coroutines/CoroutineContext;Ljava/util/concurrent/CancellationException;)V
 
-    .line 167
+    .line 160
     invoke-static {}, Lkotlinx/coroutines/Dispatchers;->getIO()Lkotlinx/coroutines/CoroutineDispatcher;
 
     move-result-object p0
@@ -148,10 +138,10 @@
     return-void
 .end method
 
-.method private static final invokeOnTimeout$lambda$3(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
+.method private static final invokeOnTimeout$lambda$2(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
     .registers 2
 
-    .line 159
+    .line 152
     iget-object p0, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
     invoke-virtual {p0, p1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
@@ -164,7 +154,7 @@
 .method public dispatch(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
     .registers 4
 
-    .line 141
+    .line 134
     iget-object v0, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
     invoke-virtual {v0, p2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
@@ -173,7 +163,7 @@
 
     if-nez v0, :cond_b
 
-    .line 142
+    .line 135
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/android/HandlerContext;->cancelOnRejection(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
 
     :cond_b
@@ -181,26 +171,32 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .registers 4
 
-    .line 175
+    .line 169
     instance-of v0, p1, Lkotlinx/coroutines/android/HandlerContext;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_14
 
     check-cast p1, Lkotlinx/coroutines/android/HandlerContext;
 
-    iget-object p1, p1, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
+    iget-object v0, p1, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
-    iget-object p0, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
+    iget-object v1, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
-    if-ne p1, p0, :cond_e
+    if-ne v0, v1, :cond_14
+
+    iget-boolean p1, p1, Lkotlinx/coroutines/android/HandlerContext;->invokeImmediately:Z
+
+    iget-boolean p0, p0, Lkotlinx/coroutines/android/HandlerContext;->invokeImmediately:Z
+
+    if-ne p1, p0, :cond_14
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_e
+    :cond_14
     const/4 p0, 0x0
 
     return p0
@@ -209,7 +205,7 @@
 .method public bridge synthetic getImmediate()Lkotlinx/coroutines/MainCoroutineDispatcher;
     .registers 1
 
-    .line 114
+    .line 110
     invoke-virtual {p0}, Lkotlinx/coroutines/android/HandlerContext;->getImmediate()Lkotlinx/coroutines/android/HandlerContext;
 
     move-result-object p0
@@ -220,7 +216,7 @@
 .method public getImmediate()Lkotlinx/coroutines/android/HandlerContext;
     .registers 1
 
-    .line 133
+    .line 126
     iget-object p0, p0, Lkotlinx/coroutines/android/HandlerContext;->immediate:Lkotlinx/coroutines/android/HandlerContext;
 
     return-object p0
@@ -229,7 +225,7 @@
 .method public bridge synthetic getImmediate()Lkotlinx/coroutines/android/HandlerDispatcher;
     .registers 1
 
-    .line 114
+    .line 110
     invoke-virtual {p0}, Lkotlinx/coroutines/android/HandlerContext;->getImmediate()Lkotlinx/coroutines/android/HandlerContext;
 
     move-result-object p0
@@ -238,14 +234,28 @@
 .end method
 
 .method public hashCode()I
-    .registers 1
+    .registers 2
 
-    .line 176
-    iget-object p0, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
+    .line 171
+    iget-object v0, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+    invoke-static {v0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
-    move-result p0
+    move-result v0
+
+    iget-boolean p0, p0, Lkotlinx/coroutines/android/HandlerContext;->invokeImmediately:Z
+
+    if-eqz p0, :cond_d
+
+    const/16 p0, 0x4cf
+
+    goto :goto_f
+
+    :cond_d
+    const/16 p0, 0x4d5
+
+    :goto_f
+    xor-int/2addr p0, v0
 
     return p0
 .end method
@@ -253,7 +263,7 @@
 .method public invokeOnTimeout(JLjava/lang/Runnable;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/DisposableHandle;
     .registers 8
 
-    .line 158
+    .line 151
     iget-object v0, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
     const-wide v1, 0x3fffffffffffffffL    # 1.9999999999999998
@@ -268,18 +278,18 @@
 
     if-eqz p1, :cond_17
 
-    .line 159
+    .line 152
     new-instance p1, Lkotlinx/coroutines/android/HandlerContext$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0, p3}, Lkotlinx/coroutines/android/HandlerContext$$ExternalSyntheticLambda0;-><init>(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
 
     return-object p1
 
-    .line 161
+    .line 154
     :cond_17
     invoke-direct {p0, p4, p3}, Lkotlinx/coroutines/android/HandlerContext;->cancelOnRejection(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Runnable;)V
 
-    .line 162
+    .line 155
     sget-object p0, Lkotlinx/coroutines/NonDisposableHandle;->INSTANCE:Lkotlinx/coroutines/NonDisposableHandle;
 
     return-object p0
@@ -288,7 +298,7 @@
 .method public isDispatchNeeded(Lkotlin/coroutines/CoroutineContext;)Z
     .registers 2
 
-    .line 137
+    .line 130
     iget-boolean p1, p0, Lkotlinx/coroutines/android/HandlerContext;->invokeImmediately:Z
 
     if-eqz p1, :cond_17
@@ -335,12 +345,12 @@
         }
     .end annotation
 
-    .line 17
+    .line 13
     new-instance v0, Lkotlinx/coroutines/android/HandlerContext$scheduleResumeAfterDelay$$inlined$Runnable$1;
 
     invoke-direct {v0, p3, p0}, Lkotlinx/coroutines/android/HandlerContext$scheduleResumeAfterDelay$$inlined$Runnable$1;-><init>(Lkotlinx/coroutines/CancellableContinuation;Lkotlinx/coroutines/android/HandlerContext;)V
 
-    .line 150
+    .line 143
     iget-object v1, p0, Lkotlinx/coroutines/android/HandlerContext;->handler:Landroid/os/Handler;
 
     const-wide v2, 0x3fffffffffffffffL    # 1.9999999999999998
@@ -355,7 +365,7 @@
 
     if-eqz p1, :cond_1f
 
-    .line 151
+    .line 144
     new-instance p1, Lkotlinx/coroutines/android/HandlerContext$scheduleResumeAfterDelay$1;
 
     invoke-direct {p1, p0, v0}, Lkotlinx/coroutines/android/HandlerContext$scheduleResumeAfterDelay$1;-><init>(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
@@ -364,7 +374,7 @@
 
     return-void
 
-    .line 153
+    .line 146
     :cond_1f
     invoke-interface {p3}, Lkotlinx/coroutines/CancellableContinuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
@@ -378,14 +388,14 @@
 .method public toString()Ljava/lang/String;
     .registers 2
 
-    .line 170
+    .line 163
     invoke-virtual {p0}, Lkotlinx/coroutines/MainCoroutineDispatcher;->toStringInternalImpl()Ljava/lang/String;
 
     move-result-object v0
 
     if-nez v0, :cond_26
 
-    .line 171
+    .line 164
     iget-object v0, p0, Lkotlinx/coroutines/android/HandlerContext;->name:Ljava/lang/String;
 
     if-nez v0, :cond_10
@@ -396,7 +406,7 @@
 
     move-result-object v0
 
-    .line 172
+    .line 165
     :cond_10
     iget-boolean p0, p0, Lkotlinx/coroutines/android/HandlerContext;->invokeImmediately:Z
 

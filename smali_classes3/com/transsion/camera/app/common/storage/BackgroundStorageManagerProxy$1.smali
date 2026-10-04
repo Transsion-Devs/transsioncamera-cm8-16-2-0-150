@@ -21,7 +21,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/storage/BackgroundStorageManagerProxy;)V
     .registers 2
 
-    .line 97
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

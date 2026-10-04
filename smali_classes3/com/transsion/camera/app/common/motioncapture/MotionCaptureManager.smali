@@ -1756,12 +1756,12 @@
 .method private updateModeCaptureInfo(Lcom/transsion/camera/adapter/CameraResults;Landroid/hardware/camera2/CaptureResult;)V
     .registers 9
 
-    .line 685
+    .line 688
     invoke-virtual {p1}, Lcom/transsion/camera/adapter/CameraResults;->getBestMomentDetectResult()I
 
     move-result p1
 
-    .line 686
+    .line 689
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-virtual {p2, v0}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -1774,7 +1774,7 @@
 
     move-result-wide v0
 
-    .line 687
+    .line 690
     sget-object v2, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1797,7 +1797,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 689
+    .line 692
     invoke-virtual {p2}, Landroid/hardware/camera2/CaptureResult;->getFrameNumber()J
 
     move-result-wide v4
@@ -1824,10 +1824,10 @@
 
     move-result-object p2
 
-    .line 687
+    .line 690
     invoke-static {v2, p2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 692
+    .line 695
     iget-boolean p2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsWaitingBestMoment:Z
 
     if-eqz p2, :cond_72
@@ -1846,27 +1846,27 @@
 
     const/4 p1, 0x0
 
-    .line 695
+    .line 698
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsWaitingBestMoment:Z
 
-    .line 696
+    .line 699
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mDoSilentCaptureOnNextReady:Z
 
-    .line 697
+    .line 700
     iget-object p0, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mMainHandler:Landroid/os/Handler;
 
     const/16 p1, 0xb
 
     invoke-virtual {p0, p1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 698
+    .line 701
     const-string/jumbo p0, "updateModeCaptureInfo, silent capture canceled"
 
     invoke-static {v2, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 701
+    .line 704
     :cond_72
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->findCaptureInfoByTimestamp(J)Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;
 
@@ -1874,14 +1874,14 @@
 
     if-nez p0, :cond_7f
 
-    .line 703
+    .line 706
     const-string/jumbo p0, "updateModeCaptureInfo, null info"
 
     invoke-static {v2, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 706
+    .line 709
     :cond_7f
     iget-wide v3, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mSilentCaptureTimestamp:J
 
@@ -1889,16 +1889,16 @@
 
     if-nez p2, :cond_88
 
-    .line 707
+    .line 710
     iput p1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mBmDetectResultOfSilentCapture:I
 
     goto :goto_8a
 
-    .line 709
+    .line 712
     :cond_88
     iput p1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mBmDetectResult:I
 
-    .line 711
+    .line 714
     :goto_8a
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -2009,7 +2009,7 @@
 .method public findCaptureInfoByTimestamp(J)Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;
     .registers 6
 
-    .line 715
+    .line 718
     iget-object v0, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mMotionCaptureInfos:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2024,7 +2024,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 717
+    .line 720
     sget-object p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -2055,7 +2055,7 @@
 
     return-object v0
 
-    .line 721
+    .line 724
     :cond_31
     iget-object p0, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mMotionCaptureInfos:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -2063,7 +2063,7 @@
 
     move-result-object p0
 
-    .line 722
+    .line 725
     invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -2081,14 +2081,14 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 723
+    .line 726
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;
 
-    .line 724
+    .line 727
     iget-wide v1, v0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mSilentCaptureTimestamp:J
 
     cmp-long v1, v1, p1
@@ -2436,115 +2436,119 @@
 .method public notifyCameraOperateAction(I)V
     .registers 5
 
+    const/16 v0, 0x1c
+
+    const/4 v1, 0x0
+
+    if-eq p1, v0, :cond_77
+
     const/16 v0, 0x24
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    if-eq p1, v0, :cond_6a
+    if-eq p1, v0, :cond_6e
 
     const/16 v0, 0x25
 
-    const/4 v2, 0x0
-
-    if-eq p1, v0, :cond_67
+    if-eq p1, v0, :cond_6b
 
     const/16 v0, 0x4d
 
-    if-eq p1, v0, :cond_64
+    if-eq p1, v0, :cond_68
 
     const/16 v0, 0x4e
 
-    if-eq p1, v0, :cond_61
+    if-eq p1, v0, :cond_65
 
     const/16 v0, 0x6e
 
-    if-eq p1, v0, :cond_5e
+    if-eq p1, v0, :cond_62
 
     const/16 v0, 0x6f
 
-    if-eq p1, v0, :cond_5b
+    if-eq p1, v0, :cond_5f
 
     const/16 v0, 0xd2
 
-    if-eq p1, v0, :cond_52
+    if-eq p1, v0, :cond_56
 
     const/16 v0, 0xd3
 
-    if-eq p1, v0, :cond_4f
+    if-eq p1, v0, :cond_53
 
     const/16 v0, 0xf4
 
-    if-eq p1, v0, :cond_64
+    if-eq p1, v0, :cond_68
 
     const/16 v0, 0xf5
 
-    if-eq p1, v0, :cond_61
+    if-eq p1, v0, :cond_65
 
     const/16 v0, 0x152
 
-    if-eq p1, v0, :cond_4c
+    if-eq p1, v0, :cond_50
 
     const/16 v0, 0x153
 
-    if-eq p1, v0, :cond_49
+    if-eq p1, v0, :cond_4d
 
-    packed-switch p1, :pswitch_data_74
+    packed-switch p1, :pswitch_data_7a
 
-    packed-switch p1, :pswitch_data_7e
+    packed-switch p1, :pswitch_data_84
 
     return-void
 
     .line 660
-    :pswitch_39
-    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsWheelZoomShowing:Z
-
-    return-void
-
-    .line 656
-    :pswitch_3c
-    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsLowlightHintShowing:Z
-
-    .line 657
+    :pswitch_3d
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsWheelZoomShowing:Z
 
     return-void
 
-    .line 653
-    :pswitch_41
-    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsZooming:Z
+    .line 656
+    :pswitch_40
+    iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsLowlightHintShowing:Z
+
+    .line 657
+    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsWheelZoomShowing:Z
 
     return-void
 
-    .line 649
-    :pswitch_44
-    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsLowlightHintShowing:Z
-
-    .line 650
+    .line 653
+    :pswitch_45
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsZooming:Z
 
     return-void
 
-    .line 646
-    :cond_49
-    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mGuideViewShowing:Z
+    .line 649
+    :pswitch_48
+    iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsLowlightHintShowing:Z
+
+    .line 650
+    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsZooming:Z
 
     return-void
 
-    .line 643
-    :cond_4c
+    .line 646
+    :cond_4d
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mGuideViewShowing:Z
 
     return-void
 
+    .line 643
+    :cond_50
+    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mGuideViewShowing:Z
+
+    return-void
+
     .line 640
-    :cond_4f
-    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsShutterGuideLayoutShowing:Z
+    :cond_53
+    iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsShutterGuideLayoutShowing:Z
 
     return-void
 
     .line 635
-    :cond_52
-    iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsShutterGuideLayoutShowing:Z
+    :cond_56
+    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsShutterGuideLayoutShowing:Z
 
     .line 636
     invoke-direct {p0}, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->hideLowlightHint()V
@@ -2555,40 +2559,40 @@
     return-void
 
     .line 624
-    :cond_5b
-    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsAeAfHintShowing:Z
-
-    return-void
-
-    .line 621
-    :cond_5e
+    :cond_5f
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsAeAfHintShowing:Z
 
     return-void
 
-    .line 618
-    :cond_61
-    :pswitch_61
-    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsFragmentShowing:Z
+    .line 621
+    :cond_62
+    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsAeAfHintShowing:Z
 
     return-void
 
-    .line 612
-    :cond_64
-    :pswitch_64
+    .line 618
+    :cond_65
+    :pswitch_65
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsFragmentShowing:Z
 
     return-void
 
+    .line 612
+    :cond_68
+    :pswitch_68
+    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsFragmentShowing:Z
+
+    return-void
+
     .line 632
-    :cond_67
-    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsContinuousShooting:Z
+    :cond_6b
+    iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsContinuousShooting:Z
 
     return-void
 
     .line 627
-    :cond_6a
-    iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsContinuousShooting:Z
+    :cond_6e
+    iput-boolean v2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsContinuousShooting:Z
 
     .line 628
     invoke-direct {p0}, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->hideLowlightHint()V
@@ -2598,21 +2602,25 @@
 
     return-void
 
-    nop
+    .line 663
+    :cond_77
+    iput-boolean v1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->mIsFragmentShowing:Z
 
-    :pswitch_data_74
+    return-void
+
+    :pswitch_data_7a
     .packed-switch 0x11
-        :pswitch_64
-        :pswitch_61
-        :pswitch_61
+        :pswitch_68
+        :pswitch_65
+        :pswitch_65
     .end packed-switch
 
-    :pswitch_data_7e
+    :pswitch_data_84
     .packed-switch 0x17
-        :pswitch_44
-        :pswitch_41
-        :pswitch_3c
-        :pswitch_39
+        :pswitch_48
+        :pswitch_45
+        :pswitch_40
+        :pswitch_3d
     .end packed-switch
 .end method
 
@@ -2655,7 +2663,7 @@
 .method public onModeCaptureCompleted(Lcom/transsion/camera/adapter/CameraResults;Landroid/hardware/camera2/CaptureResult;)V
     .registers 3
 
-    .line 668
+    .line 671
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->updateModeCaptureInfo(Lcom/transsion/camera/adapter/CameraResults;Landroid/hardware/camera2/CaptureResult;)V
 
     return-void
@@ -2666,12 +2674,12 @@
 
     if-eqz p3, :cond_6
 
-    .line 673
+    .line 676
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;->updateModeCaptureInfo(Lcom/transsion/camera/adapter/CameraResults;Landroid/hardware/camera2/CaptureResult;)V
 
     return-void
 
-    .line 676
+    .line 679
     :cond_6
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -2683,7 +2691,7 @@
 
     if-nez p4, :cond_19
 
-    .line 678
+    .line 681
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -2694,7 +2702,7 @@
 
     return-void
 
-    .line 680
+    .line 683
     :cond_19
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 

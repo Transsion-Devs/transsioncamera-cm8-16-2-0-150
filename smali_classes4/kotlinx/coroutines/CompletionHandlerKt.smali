@@ -45,7 +45,7 @@
         }
     .end annotation
 
-    .line 22
+    .line 18
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void

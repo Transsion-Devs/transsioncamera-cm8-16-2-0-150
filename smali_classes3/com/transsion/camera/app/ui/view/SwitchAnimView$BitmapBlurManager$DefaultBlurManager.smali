@@ -21,10 +21,10 @@
 .method constructor <init>()V
     .registers 2
 
-    .line 676
+    .line 682
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 677
+    .line 683
     invoke-static {}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -41,7 +41,7 @@
 .method public blur(Landroid/graphics/Bitmap;IZ)Landroid/graphics/Bitmap;
     .registers 4
 
-    .line 682
+    .line 688
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/BitmapUtils;->blurBitmap(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -52,7 +52,7 @@
 .method public getPreferFactor()I
     .registers 1
 
-    .line 707
+    .line 713
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -74,7 +74,7 @@
 .method public getRadiusDefault()I
     .registers 1
 
-    .line 702
+    .line 708
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0

@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static motion_capture_mode_skip_capture_algorithm:I = 0x7f05012f
+.field public static motion_capture_mode_skip_capture_algorithm:I = 0x7f050138
 
 
 # direct methods

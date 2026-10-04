@@ -24,7 +24,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractHintUI;I)V
     .registers 3
 
-    .line 1832
+    .line 1840
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     iput p2, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$3;->val$orientation:I
@@ -39,10 +39,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 5
 
-    .line 1835
+    .line 1843
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1836
+    .line 1844
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mCommonHintRoot:Landroid/widget/FrameLayout;
@@ -51,7 +51,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1837
+    .line 1845
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmScreenFormType(Lcom/transsion/camera/app/ui/AbstractHintUI;)I
@@ -64,7 +64,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/transsion/camera/app/ui/AbstractHintUI;->updateProgressBarLayout(IZI)V
 
-    .line 1838
+    .line 1846
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractHintUI;->-$$Nest$fgetmFoldAnimatorIn(Lcom/transsion/camera/app/ui/AbstractHintUI;)Landroid/animation/ObjectAnimator;

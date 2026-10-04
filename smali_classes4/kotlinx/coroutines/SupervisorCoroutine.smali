@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 72
+    .line 67
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/internal/ScopeCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)V
 
     return-void

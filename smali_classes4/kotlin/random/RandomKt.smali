@@ -7,7 +7,7 @@
 .method public static final Random(J)Lkotlin/random/Random;
     .registers 5
 
-    .line 333
+    .line 337
     new-instance v0, Lkotlin/random/XorWowRandom;
 
     long-to-int v1, p0
@@ -34,7 +34,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 382
+    .line 386
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -69,7 +69,7 @@
 
     return-void
 
-    .line 378
+    .line 382
     :cond_3
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -97,7 +97,7 @@
 .method public static final fastLog2(I)I
     .registers 1
 
-    .line 372
+    .line 376
     invoke-static {p0}, Ljava/lang/Integer;->numberOfLeadingZeros(I)I
 
     move-result p0

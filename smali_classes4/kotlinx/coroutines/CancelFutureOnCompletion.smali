@@ -25,10 +25,10 @@
         }
     .end annotation
 
-    .line 37
+    .line 33
     invoke-direct {p0}, Lkotlinx/coroutines/JobNode;-><init>()V
 
-    .line 36
+    .line 32
     iput-object p1, p0, Lkotlinx/coroutines/CancelFutureOnCompletion;->future:Ljava/util/concurrent/Future;
 
     return-void
@@ -39,7 +39,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 35
+    .line 31
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/CancelFutureOnCompletion;->invoke(Ljava/lang/Throwable;)V
@@ -54,7 +54,7 @@
 
     if-eqz p1, :cond_8
 
-    .line 41
+    .line 37
     iget-object p0, p0, Lkotlinx/coroutines/CancelFutureOnCompletion;->future:Ljava/util/concurrent/Future;
 
     const/4 p1, 0x0

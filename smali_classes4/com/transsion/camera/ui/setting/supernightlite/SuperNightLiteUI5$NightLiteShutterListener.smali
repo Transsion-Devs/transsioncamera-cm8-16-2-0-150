@@ -56,12 +56,12 @@
 .method public onShutterCancel()V
     .registers 1
 
-    .line 203
+    .line 198
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$NightLiteShutterListener;->mListener:Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;
 
     if-eqz p0, :cond_7
 
-    .line 204
+    .line 199
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;->onShutterCancel()V
 
     :cond_7
@@ -84,7 +84,7 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_3c
 
     .line 168
     invoke-static {}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -118,111 +118,67 @@
     :goto_24
     invoke-virtual {v0, v3}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->setNightLiteCaptureEnable(Z)V
 
+    .line 170
+    invoke-virtual {v0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->isNightLiteCaptureEnable()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3c
+
+    # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+    invoke-static {v0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->access$000(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;)Lcom/transsion/camera/app/common/IAppUI;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_3c
+
     .line 171
-    :cond_27
+    # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+    invoke-static {v0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->access$100(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;)Lcom/transsion/camera/app/common/IAppUI;
+
+    move-result-object v0
+
+    const/16 v3, 0x178
+
+    invoke-interface {v0, v3}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
+
+    .line 174
+    :cond_3c
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$NightLiteShutterListener;->mListener:Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;
 
-    if-eqz p0, :cond_32
+    if-eqz p0, :cond_47
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;->onShutterClick(II)Z
 
     move-result p0
 
-    if-eqz p0, :cond_32
+    if-eqz p0, :cond_47
 
     return v2
 
-    :cond_32
+    :cond_47
     return v1
 .end method
 
 .method public onShutterDown()V
-    .registers 3
-
-    .line 181
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$NightLiteShutterListener;->mListener:Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;
-
-    if-eqz v0, :cond_7
-
-    .line 182
-    invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;->onShutterDown()V
+    .registers 1
 
     .line 184
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$NightLiteShutterListener;->mListener:Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;
+
+    if-eqz p0, :cond_7
+
+    .line 185
+    invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;->onShutterDown()V
+
     :cond_7
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$NightLiteShutterListener;->mContext:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;
-
-    if-eqz p0, :cond_41
-
-    .line 186
-    invoke-static {}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    move-result-object v0
-
-    const-string v1, "onShutterDown"
-
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 187
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->superNightLiteOn()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_28
-
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI;->nightLiteSwitch()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_28
-
-    const/4 v0, 0x1
-
-    goto :goto_29
-
-    :cond_28
-    const/4 v0, 0x0
-
-    :goto_29
-    invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->setNightLiteCaptureEnable(Z)V
-
-    .line 188
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->isNightLiteCaptureEnable()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_41
-
-    # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
-    invoke-static {p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->access$000(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;)Lcom/transsion/camera/app/common/IAppUI;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_41
-
-    .line 189
-    # getter for: Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
-    invoke-static {p0}, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;->access$100(Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5;)Lcom/transsion/camera/app/common/IAppUI;
-
-    move-result-object p0
-
-    const/16 v0, 0x178
-
-    invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
-
-    :cond_41
     return-void
 .end method
 
 .method public onShutterLongClick(II)Z
     .registers 3
 
-    .line 176
+    .line 179
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$NightLiteShutterListener;->mListener:Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;
 
     if-eqz p0, :cond_c
@@ -246,12 +202,12 @@
 .method public onShutterUp(I)V
     .registers 2
 
-    .line 196
+    .line 191
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/supernightlite/SuperNightLiteUI5$NightLiteShutterListener;->mListener:Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;
 
     if-eqz p0, :cond_7
 
-    .line 197
+    .line 192
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IShutterResponseListener;->onShutterUp(I)V
 
     :cond_7

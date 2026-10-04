@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)V
     .registers 2
 
-    .line 96
+    .line 95
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$4;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onProgressChanged(IZ)V
     .registers 3
 
-    .line 99
+    .line 98
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$4;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {p2}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$fgetmakeUpBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpBottomUI;
@@ -47,7 +47,7 @@
 
     if-eqz p2, :cond_11
 
-    .line 100
+    .line 99
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$4;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$fgetmakeUpBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpBottomUI;

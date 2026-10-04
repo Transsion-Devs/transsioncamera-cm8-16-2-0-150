@@ -31,7 +31,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 18
+    .line 19
     new-instance v0, Lcom/transsion/camera/thub/TranSchedManagerProxy;
 
     const/4 v1, 0x0

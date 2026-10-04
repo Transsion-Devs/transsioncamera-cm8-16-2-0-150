@@ -20,6 +20,8 @@
 
 .field private mAnimShow:Z
 
+.field private final mAnimatorListener:Landroid/animation/Animator$AnimatorListener;
+
 .field private final mBarClickListener:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$BarClickListener;
 
 .field private mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
@@ -64,11 +66,11 @@
     .end annotation
 .end field
 
-.field private final mSinkTranslateDistance:I
-
 .field private mSlimBodyRoot:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
 .field private mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
+
+.field private final mTabletCustomBottomHeight:I
 
 .field private final mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -100,6 +102,15 @@
     return-void
 .end method
 
+.method static bridge synthetic -$$Nest$fgetmAnimShow(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Z
+    .registers 1
+
+    .line 0
+    iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAnimShow:Z
+
+    return p0
+.end method
+
 .method static bridge synthetic -$$Nest$fgetmBottomUI(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
     .registers 1
 
@@ -107,6 +118,26 @@
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     return-object p0
+.end method
+
+.method static bridge synthetic -$$Nest$mcomputeFilterRootVisibility(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
+    .registers 1
+
+    .line 0
+    invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->computeFilterRootVisibility()V
+
+    return-void
+.end method
+
+.method static bridge synthetic -$$Nest$misFloatEqual(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;FF)Z
+    .registers 3
+
+    .line 0
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->isFloatEqual(FF)Z
+
+    move-result p0
+
+    return p0
 .end method
 
 .method static bridge synthetic -$$Nest$msettingUIAnimShowOrHide(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;I)Z
@@ -120,10 +151,19 @@
     return p0
 .end method
 
+.method static bridge synthetic -$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
+    .registers 1
+
+    .line 0
+    sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    return-object v0
+.end method
+
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 40
+    .line 45
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "BeautySettingUI"
@@ -138,57 +178,64 @@
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .registers 8
 
-    .line 210
+    .line 259
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 60
+    .line 66
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSelfTimerCapturing:Z
 
-    .line 71
+    .line 77
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$1;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$1;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
 
     iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 82
+    .line 90
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$2;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$2;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
 
-    iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+    iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAnimatorListener:Landroid/animation/Animator$AnimatorListener;
 
-    .line 93
+    .line 122
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$3;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$3;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
 
-    iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBarClickListener:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$BarClickListener;
+    iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 104
+    .line 133
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$4;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$4;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
 
-    iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSeekBarChangeListener:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$SeekBarChangeListener;
+    iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBarClickListener:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$BarClickListener;
 
-    .line 113
+    .line 144
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$5;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$5;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
 
+    iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSeekBarChangeListener:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$SeekBarChangeListener;
+
+    .line 153
+    new-instance v1, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$6;
+
+    invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$6;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
+
     iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mContrastListener:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$ContrastListener;
 
-    .line 328
+    .line 390
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
 
     iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
 
-    .line 211
+    .line 260
     sget v1, Lcom/transsion/camera/featurelibs/makeupRes/R$dimen;->bottom_ui_translate_anim_distance:I
 
     invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDimension(I)F
@@ -197,25 +244,25 @@
 
     iput v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateDistance:F
 
-    .line 212
-    sget v2, Lcom/transsion/camera/featurelibs/makeupRes/R$dimen;->sink_shutter_translate_distance:I
+    .line 261
+    sget v2, Lcom/transsion/camera/featurelibs/makeupRes/R$dimen;->mu_rv_height:I
 
-    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
+    invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    iput v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSinkTranslateDistance:I
+    iput v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUIDefaultHeight:I
 
-    .line 213
-    sget v2, Lcom/transsion/camera/featurelibs/makeupRes/R$dimen;->mu_rv_height:I
+    .line 262
+    sget v2, Lcom/transsion/camera/feature/makeup/R$dimen;->tablet_custom_bottom_region_height:I
 
     invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result p1
 
-    iput p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUIDefaultHeight:I
+    iput p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTabletCustomBottomHeight:I
 
-    .line 214
+    .line 263
     new-instance p1, Landroid/view/animation/PathInterpolator;
 
     const/high16 v2, 0x3e800000    # 0.25f
@@ -228,7 +275,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mPathInterpolator:Landroid/view/animation/PathInterpolator;
 
-    .line 215
+    .line 264
     new-instance p1, Landroid/view/animation/PathInterpolator;
 
     const v2, 0x3ea8f5c3    # 0.33f
@@ -239,7 +286,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
-    .line 216
+    .line 265
     new-instance p1, Landroid/view/animation/PathInterpolator;
 
     const v2, 0x3ecccccd    # 0.4f
@@ -252,10 +299,10 @@
 
     const/4 p1, 0x2
 
-    .line 217
+    .line 266
     new-array v2, p1, [F
 
-    fill-array-data v2, :array_90
+    fill-array-data v2, :array_98
 
     invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
@@ -265,10 +312,10 @@
 
     const-wide/16 v4, 0x12c
 
-    .line 218
+    .line 267
     invoke-virtual {v2, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 219
+    .line 268
     new-array p1, p1, [F
 
     aput v3, p1, v0
@@ -283,12 +330,14 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
-    .line 220
+    .line 269
     invoke-virtual {p1, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     return-void
 
-    :array_90
+    nop
+
+    :array_98
     .array-data 4
         0x0
         0x3f800000    # 1.0f
@@ -298,14 +347,21 @@
 .method private addAnimatorListener()V
     .registers 3
 
-    .line 144
+    .line 191
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 145
+    .line 192
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
+
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAnimatorListener:Landroid/animation/Animator$AnimatorListener;
+
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 193
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
@@ -318,7 +374,7 @@
 .method private cancelAnimation()V
     .registers 2
 
-    .line 224
+    .line 273
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_f
@@ -329,12 +385,12 @@
 
     if-eqz v0, :cond_f
 
-    .line 225
+    .line 274
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 227
+    .line 276
     :cond_f
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -346,7 +402,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 228
+    .line 277
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -355,15 +411,43 @@
     return-void
 .end method
 
+.method private computeFilterRootVisibility()V
+    .registers 2
+
+    .line 174
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
+
+    if-eqz v0, :cond_f
+
+    .line 175
+    iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAnimShow:Z
+
+    if-eqz p0, :cond_a
+
+    const/4 p0, 0x0
+
+    goto :goto_c
+
+    :cond_a
+    const/16 p0, 0x8
+
+    .line 176
+    :goto_c
+    invoke-virtual {v0, p0}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_f
+    return-void
+.end method
+
 .method private hideEntryRootView()V
     .registers 2
 
-    .line 376
+    .line 438
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
     if-eqz v0, :cond_13
 
-    .line 377
+    .line 439
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -372,10 +456,10 @@
 
     const/4 v0, 0x1
 
-    .line 379
+    .line 441
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mNeedShow:Z
 
-    .line 380
+    .line 442
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
     const/4 v0, 0x4
@@ -389,41 +473,46 @@
 .method private hideSettingUI()V
     .registers 3
 
-    .line 233
+    .line 282
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
-    if-eqz v0, :cond_b
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_11
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_11
+
+    .line 283
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->setAlpha(F)V
 
     return-void
 
-    .line 236
-    :cond_b
+    .line 286
+    :cond_11
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->cancelAnimation()V
 
-    .line 237
+    .line 287
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2a
 
-    const/4 v1, 0x0
-
-    .line 238
+    .line 288
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 239
+    .line 289
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 240
+    .line 290
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateDistance:F
@@ -432,32 +521,27 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 242
-    :cond_25
+    .line 292
+    :cond_2a
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_31
 
-    .line 243
+    .line 293
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->resetToInitState()V
 
-    .line 245
-    :cond_2c
+    .line 295
+    :cond_31
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_39
 
-    .line 246
+    .line 296
     invoke-interface {v0, v1, v1, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->sinkUI(ZIZ)V
 
-    .line 247
-    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->transitionShutterToRegular()V
-
-    .line 249
+    .line 299
     :cond_39
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->notifyConflictUI(Z)V
 
@@ -469,7 +553,7 @@
 
     sub-float/2addr p1, p2
 
-    .line 135
+    .line 182
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result p0
@@ -493,15 +577,15 @@
 .method private synthetic lambda$new$0(Z)V
     .registers 3
 
-    .line 329
+    .line 391
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mLowLight:Z
 
     if-eq v0, p1, :cond_9
 
-    .line 330
+    .line 392
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mLowLight:Z
 
-    .line 331
+    .line 393
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->ringScreenLightUpdateUI()V
 
     :cond_9
@@ -511,23 +595,23 @@
 .method private synthetic lambda$ringScreenLightUpdateUI$1()V
     .registers 3
 
-    .line 338
+    .line 400
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     if-eqz v0, :cond_9
 
-    .line 339
+    .line 401
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mLowLight:Z
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->updateLowLight(Z)V
 
-    .line 341
+    .line 403
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     if-eqz v0, :cond_12
 
-    .line 342
+    .line 404
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mLowLight:Z
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->updateLowLight(Z)V
@@ -539,7 +623,7 @@
 .method private notifyConflictUI(Z)V
     .registers 3
 
-    .line 130
+    .line 170
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_conflict_ui_state"
@@ -566,14 +650,21 @@
 .method private removeAnimatorListener()V
     .registers 3
 
-    .line 149
+    .line 197
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->removeUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 150
+    .line 198
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
+
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAnimatorListener:Landroid/animation/Animator$AnimatorListener;
+
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 199
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
@@ -586,12 +677,12 @@
 .method private ringScreenLightUpdateUI()V
     .registers 3
 
-    .line 336
+    .line 398
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
     if-eqz v0, :cond_c
 
-    .line 337
+    .line 399
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;)V
@@ -605,7 +696,7 @@
 .method private settingUIAnimShowOrHide(I)Z
     .registers 9
 
-    .line 191
+    .line 240
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     const/4 v1, 0x0
@@ -630,13 +721,13 @@
 
     goto :goto_36
 
-    .line 194
+    .line 243
     :cond_16
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->updateFeatureRv(I)V
 
-    .line 196
+    .line 245
     iget v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mCurrentUIType:I
 
     const/4 v2, 0x1
@@ -648,7 +739,7 @@
 
     goto :goto_30
 
-    .line 199
+    .line 248
     :cond_22
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
@@ -666,12 +757,12 @@
 
     goto :goto_20
 
-    .line 204
+    .line 253
     :cond_30
     :goto_30
     iput p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mCurrentUIType:I
 
-    .line 206
+    .line 255
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->showOrHide(Z)V
 
     return v2
@@ -684,22 +775,22 @@
 .method private showEntryRootView()V
     .registers 3
 
-    .line 387
+    .line 449
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
     if-eqz v0, :cond_e
 
-    .line 388
+    .line 450
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mNeedShow:Z
 
     if-eqz v1, :cond_e
 
     const/4 v1, 0x0
 
-    .line 389
+    .line 451
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mNeedShow:Z
 
-    .line 390
+    .line 452
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_e
@@ -709,7 +800,7 @@
 .method private showEntryRootViewAndInitState()V
     .registers 3
 
-    .line 396
+    .line 458
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     if-eqz v0, :cond_18
@@ -718,24 +809,24 @@
 
     if-eqz v1, :cond_18
 
-    .line 397
+    .line 459
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->resetToInitState()V
 
-    .line 398
+    .line 460
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 399
+    .line 461
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 401
+    .line 463
     :cond_18
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->showEntryRootView()V
 
@@ -745,12 +836,12 @@
 .method private showOrHide(Z)V
     .registers 9
 
-    .line 154
+    .line 203
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->cancelAnimation()V
 
-    if-eqz p1, :cond_ad
+    if-eqz p1, :cond_a1
 
-    .line 156
+    .line 205
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
@@ -774,7 +865,7 @@
     :cond_14
     move v1, v2
 
-    .line 157
+    .line 206
     :goto_15
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAnimShow:Z
 
@@ -787,7 +878,7 @@
     :cond_1c
     move v1, v0
 
-    .line 159
+    .line 208
     :goto_1d
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
@@ -801,7 +892,7 @@
 
     invoke-virtual {v4, v6}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 160
+    .line 209
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAnimShow:Z
 
     if-eqz p1, :cond_31
@@ -822,13 +913,13 @@
 
     goto :goto_3a
 
-    .line 161
+    .line 210
     :cond_37
     iget v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateDistance:F
 
     neg-float v0, v0
 
-    .line 162
+    .line 211
     :goto_3a
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -840,31 +931,31 @@
 
     invoke-virtual {v1, v4}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 163
+    .line 212
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAnimShow:Z
 
     if-eqz p1, :cond_64
 
-    .line 164
+    .line 213
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x64
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 165
+    .line 214
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 166
+    .line 215
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 167
+    .line 216
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mPathInterpolator:Landroid/view/animation/PathInterpolator;
@@ -873,7 +964,7 @@
 
     goto :goto_7e
 
-    .line 169
+    .line 218
     :cond_64
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
@@ -881,94 +972,82 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 170
+    .line 219
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 171
+    .line 220
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mFadeOutInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 172
+    .line 221
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mFadeOutInterpolator:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 174
+    .line 223
     :goto_7e
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 175
+    .line 224
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 176
+    .line 225
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz p1, :cond_a8
+    if-eqz p1, :cond_9c
 
-    .line 177
+    .line 226
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAnimShow:Z
 
-    if-eqz v0, :cond_9b
+    if-eqz v0, :cond_94
 
-    .line 178
-    iget v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSinkTranslateDistance:I
+    .line 227
+    invoke-interface {p1, v3, v2, v3}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->sinkUI(ZIZ)V
 
-    invoke-interface {p1, v3, v0, v3}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->sinkUI(ZIZ)V
+    goto :goto_9c
 
-    .line 179
-    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->transitionShutterToSmall()V
-
-    goto :goto_a8
-
-    .line 181
-    :cond_9b
+    .line 230
+    :cond_94
     invoke-interface {p1, v2, v2, v3}, Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;->sinkUI(ZIZ)V
 
-    .line 182
-    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->transitionShutterToRegular()V
-
-    .line 183
+    .line 232
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     invoke-virtual {p1, v2, v3}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->notifyState(IZ)V
 
-    .line 186
-    :cond_a8
-    :goto_a8
+    .line 235
+    :cond_9c
+    :goto_9c
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mAnimShow:Z
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->notifyConflictUI(Z)V
 
-    :cond_ad
+    :cond_a1
     return-void
 .end method
 
 .method private updateMakeUpTopUI()V
     .registers 6
 
-    .line 313
+    .line 375
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSettingDataList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 314
+    .line 376
     :cond_6
     :goto_6
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -977,21 +1056,21 @@
 
     if-eqz v1, :cond_3d
 
-    .line 315
+    .line 377
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ISettingUI$ISettingData;
 
-    .line 316
+    .line 378
     iget-object v2, v1, Lcom/transsion/camera/app/common/ui/setting/ISettingUI$ISettingData;->iSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/setting/ISetting;->isModeSupport()Z
 
     move-result v2
 
-    .line 317
+    .line 379
     const-string v3, "key_mu_slimbody"
 
     iget-object v4, v1, Lcom/transsion/camera/app/common/ui/setting/ISettingUI$ISettingData;->key:Ljava/lang/String;
@@ -1002,14 +1081,14 @@
 
     if-eqz v3, :cond_28
 
-    .line 318
+    .line 380
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->setSlimBodyBarState(Z)V
 
     goto :goto_37
 
-    .line 319
+    .line 381
     :cond_28
     const-string v3, "key_makeup_feature"
 
@@ -1021,7 +1100,7 @@
 
     if-eqz v1, :cond_37
 
-    .line 320
+    .line 382
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->setMakeUpBarState(Z)V
@@ -1030,7 +1109,7 @@
     :goto_37
     if-nez v2, :cond_6
 
-    .line 323
+    .line 385
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
     goto :goto_6
@@ -1042,30 +1121,30 @@
 
 # virtual methods
 .method public createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/interactive/CommonInteractive;)Landroid/view/View;
-    .registers 7
+    .registers 8
 
-    .line 254
+    .line 304
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "init createEntryView"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 255
+    .line 305
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryRootView:Landroid/view/ViewGroup;
 
-    .line 256
-    sget v0, Lcom/transsion/camera/feature/makeup/R$layout;->facebeauty_root_layout:I
+    .line 306
+    sget v1, Lcom/transsion/camera/feature/makeup/R$layout;->facebeauty_root_layout:I
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p1, v1, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
-    .line 257
+    .line 307
     sget p2, Lcom/transsion/camera/feature/makeup/R$id;->facebeauty_root:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -1076,7 +1155,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
 
-    .line 258
+    .line 308
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/feature/makeup/R$id;->slimbody_root:I
@@ -1089,7 +1168,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSlimBodyRoot:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
-    .line 259
+    .line 309
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/feature/makeup/R$id;->top_ui:I
@@ -1102,100 +1181,137 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
-    .line 260
+    .line 310
     invoke-virtual {p3}, Lcom/transsion/camera/app/common/interactive/CommonInteractive;->getIAppUI()Lcom/transsion/camera/app/common/IAppUI;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 261
+    .line 311
     invoke-virtual {p3}, Lcom/transsion/camera/app/common/interactive/CommonInteractive;->getAppUIRect()Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
-    .line 262
-    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
+    .line 312
+    invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
 
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    move-result p1
 
-    move-result-object p1
+    .line 314
+    iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
-    check-cast p1, Landroid/widget/FrameLayout$LayoutParams;
+    invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    .line 263
-    iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
+    move-result-object p2
 
-    invoke-interface {p2}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
+    check-cast p2, Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result p2
+    .line 315
+    iput p1, p2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 264
-    iput p2, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
-
-    .line 265
+    .line 316
     iget-object p3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
-    invoke-virtual {p3, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p3, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 266
-    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
+    .line 317
+    iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     iget-object p3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBarClickListener:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$BarClickListener;
 
-    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSeekBarChangeListener:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$SeekBarChangeListener;
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSeekBarChangeListener:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$SeekBarChangeListener;
 
-    iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mContrastListener:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$ContrastListener;
+    iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mContrastListener:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$ContrastListener;
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {p1, p3, v0, v1, v2}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->setListener(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$BarClickListener;Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$SeekBarChangeListener;Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$ContrastListener;Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$SeekBarStatusListener;)V
+    invoke-virtual {p2, p3, v1, v2, v3}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->setListener(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$BarClickListener;Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$SeekBarChangeListener;Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$ContrastListener;Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI$SeekBarStatusListener;)V
 
-    .line 267
-    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
+    .line 319
+    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_92
+
+    .line 320
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string p3, "mTabletCustomBottomHeight:"
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget p3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTabletCustomBottomHeight:I
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 321
+    iget p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mTabletCustomBottomHeight:I
+
+    add-int/2addr p1, p2
+
+    .line 322
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string p3, "bottomRegionHeight:"
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 325
+    :cond_92
+    iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
     sget p3, Lcom/transsion/camera/feature/makeup/R$id;->bottom_ui:I
 
-    invoke-virtual {p1, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p2, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object p1
+    move-result-object p2
 
-    check-cast p1, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
+    check-cast p2, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
-    iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
+    iput-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
-    .line 268
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    .line 326
+    invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object p1
+    move-result-object p2
 
-    check-cast p1, Landroid/widget/FrameLayout$LayoutParams;
+    check-cast p2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 269
-    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
-
-    move-result p3
-
-    if-eqz p3, :cond_7b
-
-    add-int/lit8 p2, p2, 0x17
-
-    .line 272
-    :cond_7b
+    .line 327
     iget p3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUIDefaultHeight:I
 
-    sub-int/2addr p2, p3
+    sub-int/2addr p1, p3
 
-    iput p2, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+    iput p1, p2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 273
-    iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
+    .line 328
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 275
+    .line 331
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -1204,10 +1320,10 @@
 
     invoke-virtual {p1, p2, p3}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->setUIInterface(Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;)V
 
-    .line 276
+    .line 332
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->addAnimatorListener()V
 
-    .line 277
+    .line 333
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object p1
@@ -1216,7 +1332,7 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/ModuleTransferManager;->registerTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
 
-    .line 278
+    .line 334
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object p1
@@ -1227,10 +1343,10 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mLowLight:Z
 
-    .line 279
+    .line 335
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->ringScreenLightUpdateUI()V
 
-    .line 280
+    .line 336
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
     return-object p0
@@ -1247,12 +1363,12 @@
 .method public enableUIStatus(Z)V
     .registers 2
 
-    .line 543
+    .line 624
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     if-eqz p0, :cond_7
 
-    .line 544
+    .line 625
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->enableBottomUIStatus(Z)V
 
     :cond_7
@@ -1262,7 +1378,7 @@
 .method public getEntryRootView()Landroid/view/ViewGroup;
     .registers 1
 
-    .line 352
+    .line 414
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryRootView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -1271,7 +1387,7 @@
 .method public getEntryView()Landroid/view/View;
     .registers 1
 
-    .line 357
+    .line 419
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
     return-object p0
@@ -1291,7 +1407,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 409
+    .line 471
     const-string p0, "key_mu_slimbody"
 
     return-object p0
@@ -1308,27 +1424,27 @@
         }
     .end annotation
 
-    .line 419
+    .line 481
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 420
+    .line 482
     const-string v0, "key_mu_slimbody"
 
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 421
+    .line 483
     const-string v0, "key_mu_face_beauty"
 
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 422
+    .line 484
     const-string v0, "key_makeup_feature"
 
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 423
+    .line 485
     const-string v0, "key_gender_attribute_value"
 
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1339,7 +1455,7 @@
 .method public getValue()Ljava/lang/String;
     .registers 1
 
-    .line 414
+    .line 476
     const-string p0, ""
 
     return-object p0
@@ -1348,13 +1464,13 @@
 .method public hideEntryView()V
     .registers 1
 
-    .line 294
+    .line 356
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->hideEntryView()V
 
-    .line 295
+    .line 357
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->hideEntryRootView()V
 
-    .line 296
+    .line 358
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->hideSettingUI()V
 
     return-void
@@ -1376,95 +1492,127 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_84
+    if-eqz p1, :cond_b7
 
     const/4 v1, 0x1
 
-    if-eq p1, v1, :cond_80
+    if-eq p1, v1, :cond_b3
 
     const/4 v2, 0x2
 
-    if-eq p1, v2, :cond_7c
+    if-eq p1, v2, :cond_af
 
     const/16 v2, 0x9
 
-    if-eq p1, v2, :cond_80
-
-    const/16 v2, 0x10
-
-    if-eq p1, v2, :cond_78
+    if-eq p1, v2, :cond_b3
 
     const/16 v2, 0x19
 
-    if-eq p1, v2, :cond_71
+    if-eq p1, v2, :cond_a8
 
     const/16 v2, 0x1a
 
-    if-eq p1, v2, :cond_69
+    if-eq p1, v2, :cond_a0
 
-    const/16 v2, 0x24
+    const/16 v2, 0x4d
 
-    if-eq p1, v2, :cond_7c
+    if-eq p1, v2, :cond_91
 
-    const/16 v2, 0x25
+    const/16 v2, 0x4e
 
-    if-eq p1, v2, :cond_78
+    if-eq p1, v2, :cond_82
 
-    packed-switch p1, :pswitch_data_96
+    packed-switch p1, :pswitch_data_ca
 
-    packed-switch p1, :pswitch_data_a2
+    packed-switch p1, :pswitch_data_d6
 
-    goto :goto_70
+    goto/16 :goto_a7
 
-    .line 502
-    :pswitch_28
+    .line 536
+    :pswitch_25
+    invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->hideSettingUI()V
+
+    .line 537
+    invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->showEntryRootView()V
+
+    return-void
+
+    .line 558
+    :pswitch_2c
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSelfTimerCapturing:Z
 
-    .line 503
+    .line 559
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
 
-    if-eqz p1, :cond_31
+    if-eqz p1, :cond_35
 
-    .line 504
-    invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->hideDialog()V
+    .line 560
+    invoke-virtual {p1, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->setGoFragmentFlag(Z)V
 
-    .line 506
-    :cond_31
+    .line 562
+    :cond_35
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSlimBodyRoot:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
-    if-eqz p1, :cond_38
+    if-eqz p1, :cond_3c
 
-    .line 507
+    .line 563
+    invoke-virtual {p1, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->setGoFragmentFlag(Z)V
+
+    .line 565
+    :cond_3c
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
+
+    if-eqz p1, :cond_43
+
+    .line 566
+    invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->hideDialog()V
+
+    .line 568
+    :cond_43
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSlimBodyRoot:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
+
+    if-eqz p1, :cond_4a
+
+    .line 569
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->hideDialog()V
 
-    .line 509
-    :cond_38
+    .line 571
+    :cond_4a
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
+
+    if-eqz p1, :cond_51
+
+    .line 572
+    invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->resetToInitState()V
+
+    .line 574
+    :cond_51
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->setEnable(Z)V
 
     return-void
 
-    .line 523
-    :pswitch_3c
+    .line 588
+    :pswitch_55
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSelfTimerCapturing:Z
 
-    .line 524
+    .line 589
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->setEnable(Z)V
 
-    .line 525
+    .line 590
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->enableUIStatus(Z)V
 
-    .line 526
+    .line 591
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->showEntryRootView()V
 
-    .line 527
+    .line 592
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
-    if-eqz p1, :cond_70
+    if-eqz p1, :cond_a7
 
-    .line 528
+    .line 593
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 529
+    .line 594
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     const/high16 p1, 0x3f800000    # 1.0f
@@ -1473,111 +1621,146 @@
 
     return-void
 
-    .line 493
-    :pswitch_56
+    .line 549
+    :pswitch_6f
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSelfTimerCapturing:Z
 
-    .line 494
+    .line 550
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->setEnable(Z)V
 
-    .line 495
+    .line 551
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->enableUIStatus(Z)V
 
-    .line 496
+    .line 552
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->hideEntryRootView()V
 
-    .line 497
+    .line 553
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
-    if-eqz p0, :cond_70
+    if-eqz p0, :cond_a7
 
-    .line 498
+    .line 554
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->hideDialog()V
 
     return-void
 
-    .line 488
-    :cond_69
+    .line 613
+    :cond_82
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
+
+    if-eqz p1, :cond_89
+
+    .line 614
+    invoke-virtual {p1, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->setGoFragmentFlag(Z)V
+
+    .line 616
+    :cond_89
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSlimBodyRoot:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
+
+    if-eqz p0, :cond_a7
+
+    .line 617
+    invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->setGoFragmentFlag(Z)V
+
+    return-void
+
+    .line 605
+    :cond_91
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
+
+    if-eqz p1, :cond_98
+
+    .line 606
+    invoke-virtual {p1, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->setGoFragmentFlag(Z)V
+
+    .line 608
+    :cond_98
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSlimBodyRoot:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
+
+    if-eqz p0, :cond_a7
+
+    .line 609
+    invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->setGoFragmentFlag(Z)V
+
+    return-void
+
+    .line 544
+    :cond_a0
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSelfTimerCapturing:Z
 
-    if-nez p1, :cond_70
+    if-nez p1, :cond_a7
 
-    .line 489
+    .line 545
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->showEntryRootViewAndInitState()V
 
-    :cond_70
-    :goto_70
+    :cond_a7
+    :goto_a7
     return-void
 
-    .line 484
-    :cond_71
+    .line 540
+    :cond_a8
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->hideSettingUI()V
 
-    .line 485
+    .line 541
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->hideEntryRootView()V
 
     return-void
 
-    .line 477
-    :cond_78
-    :pswitch_78
-    invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->showEntryRootView()V
-
-    return-void
-
-    .line 472
-    :cond_7c
+    .line 533
+    :cond_af
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->hideEntryRootView()V
 
     return-void
 
-    .line 537
-    :cond_80
-    :pswitch_80
+    .line 602
+    :cond_b3
+    :pswitch_b3
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->setEnable(Z)V
 
     return-void
 
-    .line 514
-    :cond_84
-    :pswitch_84
+    .line 579
+    :cond_b7
+    :pswitch_b7
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;
 
-    if-eqz p1, :cond_8b
+    if-eqz p1, :cond_be
 
-    .line 515
+    .line 580
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyExRoot;->hideDialog()V
 
-    .line 517
-    :cond_8b
+    .line 582
+    :cond_be
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSlimBodyRoot:Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;
 
-    if-eqz p1, :cond_92
+    if-eqz p1, :cond_c5
 
-    .line 518
+    .line 583
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/SlimBodyRoot;->hideDialog()V
 
-    .line 520
-    :cond_92
+    .line 585
+    :cond_c5
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->setEnable(Z)V
 
     return-void
 
-    :pswitch_data_96
+    nop
+
+    :pswitch_data_ca
     .packed-switch 0xb
-        :pswitch_56
-        :pswitch_3c
-        :pswitch_84
-        :pswitch_80
+        :pswitch_6f
+        :pswitch_55
+        :pswitch_b7
+        :pswitch_b3
     .end packed-switch
 
-    :pswitch_data_a2
+    :pswitch_data_d6
     .packed-switch 0x1c
-        :pswitch_28
-        :pswitch_84
-        :pswitch_80
-        :pswitch_80
-        :pswitch_78
+        :pswitch_2c
+        :pswitch_b7
+        :pswitch_b3
+        :pswitch_b3
+        :pswitch_25
     .end packed-switch
 .end method
 
@@ -1586,7 +1769,7 @@
 
     const-wide/16 v0, 0xc8
 
-    .line 445
+    .line 507
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isFastDoubleClick(J)Z
 
     move-result v0
@@ -1597,7 +1780,7 @@
 
     return v1
 
-    .line 449
+    .line 511
     :cond_a
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSelfTimerCapturing:Z
 
@@ -1607,7 +1790,7 @@
 
     goto :goto_25
 
-    .line 452
+    .line 514
     :cond_10
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
@@ -1621,7 +1804,7 @@
 
     goto :goto_25
 
-    .line 455
+    .line 517
     :cond_1b
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
@@ -1636,7 +1819,7 @@
     :goto_25
     return v2
 
-    .line 458
+    .line 520
     :cond_26
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
@@ -1654,7 +1837,7 @@
 
     if-eqz v0, :cond_3b
 
-    .line 459
+    .line 521
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->onBackPressed()Z
@@ -1664,7 +1847,7 @@
     :cond_3b
     if-eqz v2, :cond_40
 
-    .line 462
+    .line 524
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->showOrHide(Z)V
 
     :cond_40
@@ -1694,7 +1877,7 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 2
 
-    .line 429
+    .line 491
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mNeedToMonitorSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     return-void
@@ -1711,10 +1894,10 @@
         }
     .end annotation
 
-    .line 434
+    .line 496
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setDeviceSettingData(Ljava/util/List;)V
 
-    .line 435
+    .line 497
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mSettingDataList:Ljava/util/List;
 
     return-void
@@ -1738,7 +1921,7 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 440
+    .line 502
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-void
@@ -1747,13 +1930,13 @@
 .method public setupEntryView()V
     .registers 4
 
-    .line 285
+    .line 341
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setupEntryView()V
 
-    .line 286
+    .line 342
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->updateMakeUpTopUI()V
 
-    .line 287
+    .line 343
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -1762,34 +1945,54 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->registerSettingData(Lcom/transsion/camera/app/common/setting/StatusMonitor;Ljava/util/List;)V
 
-    .line 288
+    .line 344
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->showEntryRootView()V
 
-    .line 289
+    .line 345
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->hideSettingUI()V
 
+    .line 346
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
+
+    if-eqz v0, :cond_25
+
+    .line 347
+    invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->getState()I
+
+    move-result v0
+
+    if-eqz v0, :cond_25
+
+    .line 349
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->notifyState(IZ)V
+
+    :cond_25
     return-void
 .end method
 
 .method public unInit()V
     .registers 3
 
-    .line 301
+    .line 363
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->unInit()V
 
-    .line 302
+    .line 364
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "unInit createEntryView"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 304
+    .line 366
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;->unregisterSettingData()V
 
-    .line 305
+    .line 367
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object v0
@@ -1798,18 +2001,18 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ModuleTransferManager;->unregisterTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
 
-    .line 306
+    .line 368
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->removeAnimatorListener()V
 
     const/4 v0, 0x0
 
-    .line 307
+    .line 369
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/FaceBeautyBottomUI;
 
-    .line 308
+    .line 370
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->makeUpTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;
 
-    .line 309
+    .line 371
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/BeautySettingUI;->mEntryView:Landroid/view/View;
 
     return-void

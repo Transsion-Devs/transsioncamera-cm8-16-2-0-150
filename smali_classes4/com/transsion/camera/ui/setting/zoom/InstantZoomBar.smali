@@ -472,7 +472,7 @@
 
     move v2, v1
 
-    .line 406
+    .line 426
     :goto_3
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mItemList:Ljava/util/List;
 
@@ -482,7 +482,7 @@
 
     if-ge v1, v3, :cond_25
 
-    .line 407
+    .line 427
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mItemList:Ljava/util/List;
 
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -491,7 +491,7 @@
 
     check-cast v3, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;
 
-    .line 408
+    .line 428
     iget-object v4, v3, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;->mBounds:Landroid/graphics/RectF;
 
     invoke-virtual {v4, p1, p2}, Landroid/graphics/RectF;->contains(FF)Z
@@ -502,14 +502,14 @@
 
     const/4 v2, 0x1
 
-    .line 409
+    .line 429
     iput-boolean v2, v3, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;->mIsSelected:Z
 
     move v2, v1
 
     goto :goto_22
 
-    .line 412
+    .line 432
     :cond_20
     iput-boolean v0, v3, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;->mIsSelected:Z
 
@@ -518,7 +518,7 @@
 
     goto :goto_3
 
-    .line 415
+    .line 435
     :cond_25
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->handleItemSelected(I)V
 
@@ -528,18 +528,18 @@
 .method private handleItemSelected(I)V
     .registers 3
 
-    .line 419
+    .line 439
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mSelectedIndex:I
 
     if-eq p1, v0, :cond_9
 
-    .line 420
+    .line 440
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mSelectedIndex:I
 
-    .line 421
+    .line 441
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->doInvalidate()V
 
-    .line 424
+    .line 444
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mItemList:Ljava/util/List;
 
@@ -549,25 +549,25 @@
 
     check-cast p1, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;
 
-    .line 425
+    .line 445
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mZoomRatio:I
 
     iget p1, p1, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;->mValue:I
 
     if-eq v0, p1, :cond_20
 
-    .line 426
+    .line 446
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mZoomRatio:I
 
-    .line 427
+    .line 447
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mListener:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$InstantZoomSelectedListener;
 
     if-eqz v0, :cond_20
 
-    .line 428
+    .line 448
     invoke-interface {v0, p1}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$InstantZoomSelectedListener;->onInstantZoomSelected(I)V
 
-    .line 431
+    .line 451
     :cond_20
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mAccessHelper:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$AccessHelper;
 
@@ -589,12 +589,12 @@
 
     if-gez v0, :cond_23
 
-    .line 391
+    .line 411
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mRightEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {p2}, Landroid/widget/EdgeEffect;->onRelease()V
 
-    .line 392
+    .line 412
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mLeftEdgeEffect:Landroid/widget/EdgeEffect;
 
     neg-float p1, p1
@@ -621,7 +621,7 @@
 
     invoke-virtual {p2, p1, v0}, Landroid/widget/EdgeEffect;->onPull(FF)V
 
-    .line 393
+    .line 413
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     return-void
@@ -631,12 +631,12 @@
 
     if-lez p2, :cond_40
 
-    .line 398
+    .line 418
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mLeftEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {p2}, Landroid/widget/EdgeEffect;->onRelease()V
 
-    .line 399
+    .line 419
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mRightEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
@@ -657,7 +657,7 @@
 
     invoke-virtual {p2, p1, p3}, Landroid/widget/EdgeEffect;->onPull(FF)V
 
-    .line 400
+    .line 420
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     :cond_40
@@ -853,17 +853,17 @@
 .method private releaseEdgeEffect()V
     .registers 2
 
-    .line 384
+    .line 404
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mLeftEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {v0}, Landroid/widget/EdgeEffect;->onRelease()V
 
-    .line 385
+    .line 405
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mRightEdgeEffect:Landroid/widget/EdgeEffect;
 
     invoke-virtual {v0}, Landroid/widget/EdgeEffect;->onRelease()V
 
-    .line 386
+    .line 406
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
     return-void
@@ -1242,7 +1242,7 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 6
+    .registers 9
 
     .line 342
     invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
@@ -1286,28 +1286,119 @@
 
     .line 355
     :cond_1f
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-nez v0, :cond_60
+
+    const/4 v0, -0x1
+
+    move v3, v0
+
+    move v2, v1
+
+    .line 357
+    :goto_28
+    iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mItemList:Ljava/util/List;
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-ge v2, v4, :cond_4c
+
+    .line 358
+    iget-object v4, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mItemList:Ljava/util/List;
+
+    invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;
+
+    .line 359
+    iget-object v4, v4, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;->mBounds:Landroid/graphics/RectF;
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v5
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v6
+
+    invoke-virtual {v4, v5, v6}, Landroid/graphics/RectF;->contains(FF)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_49
+
+    move v3, v2
+
+    :cond_49
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_28
+
+    :cond_4c
+    if-eq v3, v0, :cond_67
+
+    .line 364
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mItemList:Ljava/util/List;
+
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;
+
+    iget v0, v0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$Item;->mValue:I
+
+    .line 365
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mListener:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$InstantZoomSelectedListener;
+
+    if-eqz v2, :cond_67
+
+    .line 366
+    invoke-interface {v2, v0}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$InstantZoomSelectedListener;->onInstantZoomBarTouchDown(I)V
+
+    goto :goto_67
+
+    .line 370
+    :cond_60
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mListener:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$InstantZoomSelectedListener;
+
+    if-eqz v0, :cond_67
+
+    .line 371
+    invoke-interface {v0, v1}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$InstantZoomSelectedListener;->onInstantZoomBarTouchDown(I)V
+
+    .line 375
+    :cond_67
+    :goto_67
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_6f
+    if-eqz v0, :cond_b7
 
-    if-eq v0, v2, :cond_5a
+    if-eq v0, v2, :cond_a2
 
     const/4 v3, 0x2
 
-    if-eq v0, v3, :cond_2f
+    if-eq v0, v3, :cond_77
 
     const/4 v3, 0x3
 
-    if-eq v0, v3, :cond_5a
+    if-eq v0, v3, :cond_a2
 
-    goto :goto_75
+    goto :goto_bd
 
-    .line 360
-    :cond_2f
+    .line 380
+    :cond_77
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -1326,18 +1417,18 @@
 
     cmpl-float v0, v0, v1
 
-    if-lez v0, :cond_43
+    if-lez v0, :cond_8b
 
-    .line 361
+    .line 381
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mIsMoving:Z
 
-    .line 363
-    :cond_43
+    .line 383
+    :cond_8b
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mIsMoving:Z
 
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_bd
 
-    .line 364
+    .line 384
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mTouchDownX:F
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -1346,7 +1437,7 @@
 
     sub-float/2addr v0, v1
 
-    .line 365
+    .line 385
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
@@ -1357,15 +1448,15 @@
 
     invoke-direct {p0, v0, v1, p1}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->handleOverscroll(FFF)V
 
-    goto :goto_75
+    goto :goto_bd
 
-    .line 371
-    :cond_5a
+    .line 391
+    :cond_a2
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mIsMoving:Z
 
-    if-nez v0, :cond_69
+    if-nez v0, :cond_b1
 
-    .line 372
+    .line 392
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -1376,32 +1467,32 @@
 
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->handleActionUp(FF)V
 
-    .line 374
-    :cond_69
+    .line 394
+    :cond_b1
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mIsMoving:Z
 
-    .line 375
+    .line 395
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->releaseEdgeEffect()V
 
-    goto :goto_75
+    goto :goto_bd
 
-    .line 357
-    :cond_6f
+    .line 377
+    :cond_b7
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result p1
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mTouchDownX:F
 
-    :cond_75
-    :goto_75
+    :cond_bd
+    :goto_bd
     return v2
 .end method
 
 .method public setInstantZoomSelectedListener(Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$InstantZoomSelectedListener;)V
     .registers 2
 
-    .line 440
+    .line 460
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mListener:Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar$InstantZoomSelectedListener;
 
     return-void
@@ -1521,7 +1612,7 @@
 .method public updateBackgroundColor(Z)V
     .registers 3
 
-    .line 435
+    .line 455
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->mBackgroundPaint:Landroid/graphics/Paint;
 
     if-eqz p1, :cond_7
@@ -1536,7 +1627,7 @@
     :goto_9
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 436
+    .line 456
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/zoom/InstantZoomBar;->doInvalidate()V
 
     return-void

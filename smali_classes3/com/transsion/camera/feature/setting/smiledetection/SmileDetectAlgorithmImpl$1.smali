@@ -22,7 +22,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 87
+    .line 97
     invoke-static {}, Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;->values()[Lcom/stmobile/facebasejni/common/FaceCommon$FaceOrientation;
 
     move-result-object v0

@@ -27,8 +27,8 @@
     c = "kotlinx.coroutines.flow.FlowKt__ZipKt$combine$6$2"
     f = "Zip.kt"
     l = {
-        0x124,
-        0x124
+        0x120,
+        0x120
     }
     m = "invokeSuspend"
 .end annotation
@@ -136,7 +136,7 @@
 
     move-result-object v0
 
-    .line 292
+    .line 288
     iget v1, p0, Lkotlinx/coroutines/flow/FlowKt__ZipKt$combine$6$2;->label:I
 
     const/4 v2, 0x2
@@ -233,7 +233,7 @@
 
     check-cast v0, [Ljava/lang/Object;
 
-    .line 292
+    .line 288
     iget-object v1, p0, Lkotlinx/coroutines/flow/FlowKt__ZipKt$combine$6$2;->$transform:Lkotlin/jvm/functions/Function2;
 
     invoke-interface {v1, v0, p0}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

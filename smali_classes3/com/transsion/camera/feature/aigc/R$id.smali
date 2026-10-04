@@ -54,17 +54,17 @@
 
 .field public static aigc_template_list:I = 0x7f0b009b
 
-.field public static guide_big_image_explanation_id:I = 0x7f0b02d0
+.field public static guide_big_image_explanation_id:I = 0x7f0b02d1
 
-.field public static guide_top_bar_root:I = 0x7f0b02d7
+.field public static guide_top_bar_root:I = 0x7f0b02d8
 
-.field public static img_exit_icon:I = 0x7f0b031b
+.field public static img_exit_icon:I = 0x7f0b031c
 
-.field public static mode_title:I = 0x7f0b03d8
+.field public static mode_title:I = 0x7f0b03d5
 
-.field public static setting_ui_item_aigc_option:I = 0x7f0b05c9
+.field public static setting_ui_item_aigc_option:I = 0x7f0b05c5
 
-.field public static tab_control_view_container:I = 0x7f0b0683
+.field public static tab_control_view_container:I = 0x7f0b067f
 
 
 # direct methods

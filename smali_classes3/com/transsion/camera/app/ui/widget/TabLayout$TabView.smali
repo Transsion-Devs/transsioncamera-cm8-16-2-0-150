@@ -17,6 +17,8 @@
 # instance fields
 .field private mImageView:Landroid/widget/ImageView;
 
+.field private mIsPressed:Z
+
 .field private mRootLayout:Landroid/view/View;
 
 .field private mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
@@ -30,13 +32,13 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/widget/TabLayout;Landroid/content/Context;)V
     .registers 5
 
-    .line 1340
+    .line 1341
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->this$0:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
-    .line 1341
+    .line 1342
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1346
+    .line 1347
     iget p2, p1, Lcom/transsion/camera/app/ui/widget/TabLayout;->mTabPaddingStart:I
 
     iget v0, p1, Lcom/transsion/camera/app/ui/widget/TabLayout;->mTabPaddingTop:I
@@ -49,18 +51,18 @@
 
     const/16 p1, 0x11
 
-    .line 1348
+    .line 1349
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setGravity(I)V
 
     const/4 p1, 0x1
 
-    .line 1349
+    .line 1350
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1350
+    .line 1351
     invoke-virtual {p0, p1}, Landroid/view/View;->setClickable(Z)V
 
-    .line 1352
+    .line 1353
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -71,7 +73,7 @@
 
     move-result-object p1
 
-    .line 1351
+    .line 1352
     invoke-static {p0, p1}, Landroidx/core/view/ViewCompat;->setPointerIcon(Landroid/view/View;Landroidx/core/view/PointerIconCompat;)V
 
     return-void
@@ -80,7 +82,7 @@
 .method private updateUI()V
     .registers 9
 
-    .line 1490
+    .line 1503
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
     const/4 v1, 0x0
@@ -96,7 +98,7 @@
     :cond_a
     move-object v0, v1
 
-    .line 1491
+    .line 1504
     :goto_b
     iget-object v2, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
@@ -111,13 +113,13 @@
     :cond_14
     move-object v2, v1
 
-    .line 1493
+    .line 1506
     :goto_15
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    .line 1494
+    .line 1507
     iget-object v4, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     const/16 v5, 0x8
@@ -126,7 +128,7 @@
 
     if-eqz v4, :cond_60
 
-    .line 1495
+    .line 1508
     iget-object v4, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
     if-eqz v4, :cond_36
@@ -143,14 +145,14 @@
 
     if-eqz v4, :cond_36
 
-    .line 1496
+    .line 1509
     iget-object v4, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setAllCaps(Z)V
 
     goto :goto_41
 
-    .line 1498
+    .line 1511
     :cond_36
     iget-object v4, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
@@ -165,39 +167,39 @@
     :goto_41
     if-nez v3, :cond_51
 
-    .line 1501
+    .line 1514
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1502
+    .line 1515
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1503
+    .line 1516
     invoke-virtual {p0, v6}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_5b
 
-    .line 1505
+    .line 1518
     :cond_51
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1506
+    .line 1519
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1508
+    .line 1521
     :goto_5b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1511
+    .line 1524
     :cond_60
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
@@ -209,7 +211,7 @@
 
     if-eqz v0, :cond_98
 
-    .line 1512
+    .line 1525
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mRootLayout:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/R$id;->img_selling_point_layer:I
@@ -222,10 +224,10 @@
 
     if-eqz v0, :cond_79
 
-    .line 1514
+    .line 1527
     invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    .line 1516
+    .line 1529
     :cond_79
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mRootLayout:Landroid/view/View;
 
@@ -239,21 +241,21 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mImageView:Landroid/widget/ImageView;
 
-    .line 1517
+    .line 1530
     invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     if-nez v0, :cond_92
 
-    .line 1518
+    .line 1531
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mImageView:Landroid/widget/ImageView;
 
     sget v1, Lcom/transsion/camera/R$drawable;->ic_picker_selling_point:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1520
+    .line 1533
     :cond_92
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mImageView:Landroid/widget/ImageView;
 
@@ -261,13 +263,13 @@
 
     return-void
 
-    .line 1521
+    .line 1534
     :cond_98
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mImageView:Landroid/widget/ImageView;
 
     if-eqz p0, :cond_9f
 
-    .line 1522
+    .line 1535
     invoke-virtual {p0, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
     :cond_9f
@@ -279,7 +281,7 @@
 .method public getTab()Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
     .registers 1
 
-    .line 1527
+    .line 1540
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
     return-object p0
@@ -288,7 +290,7 @@
 .method public initTabNormalTextColor()V
     .registers 3
 
-    .line 1401
+    .line 1414
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->this$0:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout;->-$$Nest$fgetisOriginal(Lcom/transsion/camera/app/ui/widget/TabLayout;)Ljava/lang/Boolean;
@@ -301,7 +303,7 @@
 
     if-nez v0, :cond_21
 
-    .line 1402
+    .line 1415
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->this$0:Lcom/transsion/camera/app/ui/widget/TabLayout;
@@ -310,7 +312,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextAppearance(I)V
 
-    .line 1403
+    .line 1416
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     const-string v0, "#000000"
@@ -323,7 +325,7 @@
 
     return-void
 
-    .line 1405
+    .line 1418
     :cond_21
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
@@ -337,42 +339,27 @@
 .end method
 
 .method public moreModeIconClick(ZZ)V
-    .registers 5
+    .registers 3
 
-    .line 1391
-    invoke-super {p0}, Landroid/view/View;->performClick()Z
-
-    move-result v0
-
-    .line 1392
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
-
-    if-eqz v1, :cond_13
-
-    if-nez v0, :cond_e
-
-    const/4 v0, 0x0
-
-    .line 1394
-    invoke-virtual {p0, v0}, Landroid/view/View;->playSoundEffect(I)V
-
-    .line 1396
-    :cond_e
+    .line 1408
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
+    if-eqz p0, :cond_7
+
+    .line 1409
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->select(ZZ)V
 
-    :cond_13
+    :cond_7
     return-void
 .end method
 
 .method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
     .registers 2
 
-    .line 1428
+    .line 1441
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 1430
+    .line 1443
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
@@ -389,10 +376,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .registers 2
 
-    .line 1435
+    .line 1448
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 1437
+    .line 1450
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
@@ -409,17 +396,17 @@
 .method public onMeasure(II)V
     .registers 6
 
-    .line 1442
+    .line 1455
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 1443
+    .line 1456
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v1
 
-    .line 1444
+    .line 1457
     iget-object v2, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->this$0:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
     invoke-virtual {v2}, Lcom/transsion/camera/app/ui/widget/TabLayout;->getTabMaxWidth()I
@@ -432,7 +419,7 @@
 
     if-le v0, v2, :cond_1e
 
-    .line 1452
+    .line 1465
     :cond_14
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->this$0:Lcom/transsion/camera/app/ui/widget/TabLayout;
 
@@ -444,17 +431,85 @@
 
     move-result p1
 
-    .line 1459
+    .line 1472
     :cond_1e
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     return-void
 .end method
 
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+    .registers 5
+
+    .line 1358
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_27
+
+    const/4 v2, 0x0
+
+    if-eq v0, v1, :cond_11
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_e
+
+    goto :goto_29
+
+    .line 1369
+    :cond_e
+    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mIsPressed:Z
+
+    goto :goto_29
+
+    .line 1363
+    :cond_11
+    iget-boolean v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mIsPressed:Z
+
+    if-eqz v0, :cond_24
+
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_24
+
+    invoke-virtual {p0}, Landroid/view/View;->isClickable()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_24
+
+    .line 1364
+    invoke-virtual {p0, v2}, Landroid/view/View;->playSoundEffect(I)V
+
+    .line 1366
+    :cond_24
+    iput-boolean v2, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mIsPressed:Z
+
+    goto :goto_29
+
+    .line 1360
+    :cond_27
+    iput-boolean v1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mIsPressed:Z
+
+    .line 1372
+    :goto_29
+    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public performClick()Z
     .registers 6
 
-    .line 1358
+    .line 1378
     invoke-static {}, Lcom/transsion/camera/app/common/vibrate/VibratorController;->getInstance()Lcom/transsion/camera/app/common/vibrate/VibratorController;
 
     move-result-object v0
@@ -467,7 +522,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 1359
+    .line 1379
     invoke-static {}, Lcom/transsion/camera/app/common/vibrate/VibratorController;->getInstance()Lcom/transsion/camera/app/common/vibrate/VibratorController;
 
     move-result-object v0
@@ -480,13 +535,13 @@
 
     goto :goto_1a
 
-    .line 1362
+    .line 1382
     :cond_16
     invoke-super {p0}, Landroid/view/View;->performClick()Z
 
     move-result v0
 
-    .line 1365
+    .line 1385
     :goto_1a
     invoke-static {}, Lcom/transsion/camera/app/ui/widget/TabLayout;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -516,7 +571,7 @@
 
     invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1366
+    .line 1386
     invoke-static {p0}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result v2
@@ -527,7 +582,7 @@
 
     return v3
 
-    .line 1369
+    .line 1389
     :cond_44
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -547,7 +602,7 @@
 
     if-eqz v2, :cond_60
 
-    .line 1370
+    .line 1390
     invoke-static {}, Lcom/transsion/camera/app/ui/widget/TabLayout;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -558,26 +613,18 @@
 
     return v3
 
-    .line 1373
+    .line 1393
     :cond_60
-    iget-object v2, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
-
-    if-eqz v2, :cond_6f
-
-    if-nez v0, :cond_69
-
-    .line 1375
-    invoke-virtual {p0, v3}, Landroid/view/View;->playSoundEffect(I)V
-
-    .line 1377
-    :cond_69
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
+    if-eqz p0, :cond_68
+
+    .line 1394
     invoke-virtual {p0, v1, v3}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->select(ZZ)V
 
     return v1
 
-    :cond_6f
+    :cond_68
     return v0
 .end method
 
@@ -586,12 +633,12 @@
 
     const/4 v0, 0x0
 
-    .line 1470
+    .line 1483
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->setTab(Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;)V
 
     const/4 v0, 0x0
 
-    .line 1471
+    .line 1484
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->setSelected(Z)V
 
     return-void
@@ -600,18 +647,18 @@
 .method public setSelected(Z)V
     .registers 6
 
-    .line 1411
+    .line 1424
     invoke-super {p0, p1}, Landroid/view/View;->setSelected(Z)V
 
-    .line 1415
+    .line 1428
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_28
 
-    .line 1416
+    .line 1429
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setSelected(Z)V
 
-    .line 1417
+    .line 1430
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     const-string v1, "#33000000"
@@ -628,7 +675,7 @@
 
     if-eqz p1, :cond_25
 
-    .line 1419
+    .line 1432
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->this$0:Lcom/transsion/camera/app/ui/widget/TabLayout;
@@ -639,7 +686,7 @@
 
     return-void
 
-    .line 1421
+    .line 1434
     :cond_25
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->initTabNormalTextColor()V
 
@@ -650,15 +697,15 @@
 .method setTab(Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;)V
     .registers 3
 
-    .line 1463
+    .line 1476
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
     if-eq p1, v0, :cond_9
 
-    .line 1464
+    .line 1477
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
-    .line 1465
+    .line 1478
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->update()V
 
     :cond_9
@@ -668,17 +715,17 @@
 .method final update()V
     .registers 5
 
-    .line 1475
+    .line 1488
     iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTab:Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;
 
-    .line 1477
+    .line 1490
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
     const/4 v2, 0x0
 
     if-nez v1, :cond_26
 
-    .line 1478
+    .line 1491
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -689,17 +736,17 @@
 
     sget v3, Lcom/transsion/camera/R$layout;->mode_picker_tab_item:I
 
-    .line 1479
+    .line 1492
     invoke-virtual {v1, v3, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mRootLayout:Landroid/view/View;
 
-    .line 1480
+    .line 1493
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1481
+    .line 1494
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mRootLayout:Landroid/view/View;
 
     sget v3, Lcom/transsion/camera/R$id;->tv_mode_item:I
@@ -712,13 +759,13 @@
 
     iput-object v1, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mTextView:Landroid/widget/TextView;
 
-    .line 1484
+    .line 1497
     :cond_26
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->updateUI()V
 
     if-eqz v0, :cond_32
 
-    .line 1486
+    .line 1499
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/widget/TabLayout$Tab;->isSelected()Z
 
     move-result v0
@@ -736,7 +783,7 @@
 .method public updateRotation(F)V
     .registers 3
 
-    .line 1385
+    .line 1402
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/TabLayout$TabView;->mRootLayout:Landroid/view/View;
 
     if-eqz p0, :cond_f
@@ -752,7 +799,7 @@
     :cond_b
     const/4 v0, 0x0
 
-    .line 1386
+    .line 1403
     :goto_c
     invoke-virtual {p0, v0}, Landroid/view/View;->setRotation(F)V
 

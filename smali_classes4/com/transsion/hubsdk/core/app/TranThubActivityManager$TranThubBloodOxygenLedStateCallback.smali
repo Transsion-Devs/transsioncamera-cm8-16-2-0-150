@@ -24,12 +24,12 @@
 .method public constructor <init>(Lcom/transsion/hubsdk/core/app/TranThubActivityManager;Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranBloodOxygenLedStateCallback;)V
     .registers 3
 
-    .line 1526
+    .line 1613
     iput-object p1, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubBloodOxygenLedStateCallback;->this$0:Lcom/transsion/hubsdk/core/app/TranThubActivityManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/app/ITranBloodOxygenLedStateCallback$Stub;-><init>()V
 
-    .line 1527
+    .line 1614
     iput-object p2, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubBloodOxygenLedStateCallback;->mCallback:Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranBloodOxygenLedStateCallback;
 
     return-void
@@ -40,12 +40,12 @@
 .method public onBloodOxygenLedStateChange(I)V
     .registers 2
 
-    .line 1532
+    .line 1619
     iget-object p0, p0, Lcom/transsion/hubsdk/core/app/TranThubActivityManager$TranThubBloodOxygenLedStateCallback;->mCallback:Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranBloodOxygenLedStateCallback;
 
     if-eqz p0, :cond_7
 
-    .line 1533
+    .line 1620
     invoke-interface {p0, p1}, Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranBloodOxygenLedStateCallback;->onBloodOxygenLedStateChange(I)V
 
     :cond_7

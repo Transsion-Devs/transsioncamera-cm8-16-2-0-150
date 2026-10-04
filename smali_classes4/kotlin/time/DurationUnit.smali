@@ -4,6 +4,8 @@
 
 
 # static fields
+.field private static final synthetic $ENTRIES:Lkotlin/enums/EnumEntries;
+
 .field private static final synthetic $VALUES:[Lkotlin/time/DurationUnit;
 
 .field public static final enum DAYS:Lkotlin/time/DurationUnit;
@@ -53,7 +55,7 @@
 .method static constructor <clinit>()V
     .registers 4
 
-    .line 19
+    .line 18
     new-instance v0, Lkotlin/time/DurationUnit;
 
     const/4 v1, 0x0
@@ -66,7 +68,7 @@
 
     sput-object v0, Lkotlin/time/DurationUnit;->NANOSECONDS:Lkotlin/time/DurationUnit;
 
-    .line 23
+    .line 22
     new-instance v0, Lkotlin/time/DurationUnit;
 
     const/4 v1, 0x1
@@ -79,7 +81,7 @@
 
     sput-object v0, Lkotlin/time/DurationUnit;->MICROSECONDS:Lkotlin/time/DurationUnit;
 
-    .line 27
+    .line 26
     new-instance v0, Lkotlin/time/DurationUnit;
 
     const/4 v1, 0x2
@@ -92,7 +94,7 @@
 
     sput-object v0, Lkotlin/time/DurationUnit;->MILLISECONDS:Lkotlin/time/DurationUnit;
 
-    .line 31
+    .line 30
     new-instance v0, Lkotlin/time/DurationUnit;
 
     const/4 v1, 0x3
@@ -105,7 +107,7 @@
 
     sput-object v0, Lkotlin/time/DurationUnit;->SECONDS:Lkotlin/time/DurationUnit;
 
-    .line 35
+    .line 34
     new-instance v0, Lkotlin/time/DurationUnit;
 
     const/4 v1, 0x4
@@ -118,7 +120,7 @@
 
     sput-object v0, Lkotlin/time/DurationUnit;->MINUTES:Lkotlin/time/DurationUnit;
 
-    .line 39
+    .line 38
     new-instance v0, Lkotlin/time/DurationUnit;
 
     const/4 v1, 0x5
@@ -131,7 +133,7 @@
 
     sput-object v0, Lkotlin/time/DurationUnit;->HOURS:Lkotlin/time/DurationUnit;
 
-    .line 43
+    .line 42
     new-instance v0, Lkotlin/time/DurationUnit;
 
     const/4 v1, 0x6
@@ -150,6 +152,12 @@
 
     sput-object v0, Lkotlin/time/DurationUnit;->$VALUES:[Lkotlin/time/DurationUnit;
 
+    invoke-static {v0}, Lkotlin/enums/EnumEntriesKt;->enumEntries([Ljava/lang/Enum;)Lkotlin/enums/EnumEntries;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlin/time/DurationUnit;->$ENTRIES:Lkotlin/enums/EnumEntries;
+
     return-void
 .end method
 
@@ -159,7 +167,7 @@
     .line 13
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 15
+    .line 14
     iput-object p3, p0, Lkotlin/time/DurationUnit;->timeUnit:Ljava/util/concurrent/TimeUnit;
 
     return-void
@@ -184,7 +192,7 @@
 
     sget-object v0, Lkotlin/time/DurationUnit;->$VALUES:[Lkotlin/time/DurationUnit;
 
-    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -198,7 +206,7 @@
 .method public final getTimeUnit$kotlin_stdlib()Ljava/util/concurrent/TimeUnit;
     .registers 1
 
-    .line 15
+    .line 14
     iget-object p0, p0, Lkotlin/time/DurationUnit;->timeUnit:Ljava/util/concurrent/TimeUnit;
 
     return-object p0

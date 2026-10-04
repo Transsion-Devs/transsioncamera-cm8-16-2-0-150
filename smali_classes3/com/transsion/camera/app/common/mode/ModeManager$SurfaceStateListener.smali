@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/mode/ModeManager;)V
     .registers 2
 
-    .line 2748
+    .line 2743
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .method private performSurfaceChanged()V
     .registers 5
 
-    .line 2834
+    .line 2829
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/common/mode/ModeManager;)Landroid/os/Handler;
@@ -56,7 +56,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 2835
+    .line 2830
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -69,7 +69,7 @@
 
     if-eqz v0, :cond_2c
 
-    .line 2836
+    .line 2831
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceObject(Lcom/transsion/camera/app/common/mode/ModeManager;)Ljava/lang/Object;
@@ -92,16 +92,16 @@
 
     goto :goto_53
 
-    .line 2838
+    .line 2833
     :cond_2c
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 2839
+    .line 2834
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 2840
+    .line 2835
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceObject(Lcom/transsion/camera/app/common/mode/ModeManager;)Ljava/lang/Object;
@@ -110,7 +110,7 @@
 
     iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 2841
+    .line 2836
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceWidth(Lcom/transsion/camera/app/common/mode/ModeManager;)I
@@ -119,7 +119,7 @@
 
     iput v1, v0, Landroid/os/Message;->arg1:I
 
-    .line 2842
+    .line 2837
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceHeight(Lcom/transsion/camera/app/common/mode/ModeManager;)I
@@ -128,7 +128,7 @@
 
     iput v1, v0, Landroid/os/Message;->arg2:I
 
-    .line 2843
+    .line 2838
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/common/mode/ModeManager;)Landroid/os/Handler;
@@ -137,7 +137,7 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 2845
+    .line 2840
     :goto_53
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -149,7 +149,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 2846
+    .line 2841
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -162,14 +162,14 @@
 
     if-eqz v0, :cond_6f
 
-    .line 2847
+    .line 2842
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$mhandlerPreviewViewChanged(Lcom/transsion/camera/app/common/mode/ModeManager;)V
 
     return-void
 
-    .line 2849
+    .line 2844
     :cond_6f
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -185,7 +185,7 @@
 .method private updateSurface(Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;Ljava/lang/Object;II)V
     .registers 8
 
-    .line 2780
+    .line 2775
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -224,7 +224,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2781
+    .line 2776
     sget-object v0, Lcom/transsion/camera/app/common/mode/ModeManager$5;->$SwitchMap$com$transsion$camera$app$common$IAppUIListener$ISurfaceStatusListener$SurfaceType:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -245,35 +245,35 @@
 
     if-eq p1, v1, :cond_57
 
-    .line 2795
+    .line 2790
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmPreviewSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;Z)V
 
-    .line 2796
+    .line 2791
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p1, p3}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmPreviewSurfaceWidth(Lcom/transsion/camera/app/common/mode/ModeManager;I)V
 
-    .line 2797
+    .line 2792
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p1, p4}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmPreviewSurfaceHeight(Lcom/transsion/camera/app/common/mode/ModeManager;I)V
 
-    .line 2798
+    .line 2793
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0, p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmPreviewSurfaceObject(Lcom/transsion/camera/app/common/mode/ModeManager;Ljava/lang/Object;)V
 
     return-void
 
-    .line 2791
+    .line 2786
     :cond_57
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmSlaveSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;Z)V
 
-    .line 2792
+    .line 2787
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -284,13 +284,13 @@
 
     return-void
 
-    .line 2787
+    .line 2782
     :cond_66
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmBackgroundSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;Z)V
 
-    .line 2788
+    .line 2783
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -301,13 +301,13 @@
 
     return-void
 
-    .line 2783
+    .line 2778
     :cond_75
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fputmAuxSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;Z)V
 
-    .line 2784
+    .line 2779
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -324,7 +324,7 @@
 .method public surfaceAvailable(Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;Ljava/lang/Object;II)V
     .registers 8
 
-    .line 2752
+    .line 2747
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -375,10 +375,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2754
+    .line 2749
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->updateSurface(Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;Ljava/lang/Object;II)V
 
-    .line 2755
+    .line 2750
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmModeSupportBackgroundPreview(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
@@ -387,7 +387,7 @@
 
     if-eqz p2, :cond_76
 
-    .line 2756
+    .line 2751
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmBackgroundSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
@@ -404,7 +404,7 @@
 
     if-eqz p2, :cond_101
 
-    .line 2757
+    .line 2752
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -433,7 +433,7 @@
 
     goto/16 :goto_101
 
-    .line 2759
+    .line 2754
     :cond_76
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -443,7 +443,7 @@
 
     if-eqz p2, :cond_aa
 
-    .line 2760
+    .line 2755
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmAuxSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
@@ -460,7 +460,63 @@
 
     if-eqz p2, :cond_101
 
-    .line 2761
+    .line 2756
+    iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
+
+    invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
+
+    move-result-object p2
+
+    iget-object p3, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
+
+    invoke-static {p3}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceObject(Lcom/transsion/camera/app/common/mode/ModeManager;)Ljava/lang/Object;
+
+    move-result-object p3
+
+    iget-object p4, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
+
+    invoke-static {p4}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceWidth(Lcom/transsion/camera/app/common/mode/ModeManager;)I
+
+    move-result p4
+
+    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
+
+    invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceHeight(Lcom/transsion/camera/app/common/mode/ModeManager;)I
+
+    move-result v0
+
+    invoke-virtual {p2, p3, p4, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->setMainPreviewDisplay(Ljava/lang/Object;II)V
+
+    goto :goto_101
+
+    .line 2758
+    :cond_aa
+    iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
+
+    invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmModeSupportSlavePreview(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_de
+
+    .line 2759
+    iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
+
+    invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmSlaveSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_101
+
+    iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
+
+    invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_101
+
+    .line 2760
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -490,62 +546,6 @@
     goto :goto_101
 
     .line 2763
-    :cond_aa
-    iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
-
-    invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmModeSupportSlavePreview(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_de
-
-    .line 2764
-    iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
-
-    invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmSlaveSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_101
-
-    iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
-
-    invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_101
-
-    .line 2765
-    iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
-
-    invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
-
-    move-result-object p2
-
-    iget-object p3, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
-
-    invoke-static {p3}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceObject(Lcom/transsion/camera/app/common/mode/ModeManager;)Ljava/lang/Object;
-
-    move-result-object p3
-
-    iget-object p4, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
-
-    invoke-static {p4}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceWidth(Lcom/transsion/camera/app/common/mode/ModeManager;)I
-
-    move-result p4
-
-    iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
-
-    invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmPreviewSurfaceHeight(Lcom/transsion/camera/app/common/mode/ModeManager;)I
-
-    move-result v0
-
-    invoke-virtual {p2, p3, p4, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->setMainPreviewDisplay(Ljava/lang/Object;II)V
-
-    goto :goto_101
-
-    .line 2768
     :cond_de
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -555,7 +555,7 @@
 
     if-eqz p2, :cond_101
 
-    .line 2769
+    .line 2764
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -582,7 +582,7 @@
 
     invoke-virtual {p2, p3, p4, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->setMainPreviewDisplay(Ljava/lang/Object;II)V
 
-    .line 2773
+    .line 2768
     :cond_101
     :goto_101
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -695,7 +695,7 @@
 .method public surfaceChanged(Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;Ljava/lang/Object;II)V
     .registers 8
 
-    .line 2804
+    .line 2799
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -734,10 +734,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2807
+    .line 2802
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->updateSurface(Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;Ljava/lang/Object;II)V
 
-    .line 2809
+    .line 2804
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmModeSupportBackgroundPreview(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
@@ -746,7 +746,7 @@
 
     if-eqz p2, :cond_4f
 
-    .line 2810
+    .line 2805
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmBackgroundSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
@@ -763,12 +763,12 @@
 
     if-eqz p2, :cond_92
 
-    .line 2811
+    .line 2806
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->performSurfaceChanged()V
 
     goto :goto_92
 
-    .line 2813
+    .line 2808
     :cond_4f
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -778,7 +778,7 @@
 
     if-eqz p2, :cond_6b
 
-    .line 2814
+    .line 2809
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmAuxSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
@@ -795,12 +795,12 @@
 
     if-eqz p2, :cond_92
 
-    .line 2815
+    .line 2810
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->performSurfaceChanged()V
 
     goto :goto_92
 
-    .line 2817
+    .line 2812
     :cond_6b
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -810,7 +810,7 @@
 
     if-eqz p2, :cond_87
 
-    .line 2818
+    .line 2813
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p2}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmSlaveSurfaceReady(Lcom/transsion/camera/app/common/mode/ModeManager;)Z
@@ -827,12 +827,12 @@
 
     if-eqz p2, :cond_92
 
-    .line 2819
+    .line 2814
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->performSurfaceChanged()V
 
     goto :goto_92
 
-    .line 2822
+    .line 2817
     :cond_87
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
@@ -842,10 +842,10 @@
 
     if-eqz p2, :cond_92
 
-    .line 2823
+    .line 2818
     invoke-direct {p0}, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->performSurfaceChanged()V
 
-    .line 2827
+    .line 2822
     :cond_92
     :goto_92
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -958,7 +958,7 @@
 .method public surfaceDestroyed(Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;Ljava/lang/Object;)V
     .registers 5
 
-    .line 2855
+    .line 2850
     invoke-static {}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p2
@@ -1039,12 +1039,12 @@
 
     invoke-static {p2, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2859
+    .line 2854
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$mresetSurfaceStatus(Lcom/transsion/camera/app/common/mode/ModeManager;)V
 
-    .line 2861
+    .line 2856
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -1057,7 +1057,7 @@
 
     invoke-virtual {p1, p2, v0, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->updateAuxPreviewSurface(Ljava/lang/Object;II)V
 
-    .line 2862
+    .line 2857
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/common/mode/ModeManager;)Landroid/os/Handler;
@@ -1072,7 +1072,7 @@
 .method public surfaceDrawn()V
     .registers 3
 
-    .line 2876
+    .line 2871
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -1083,7 +1083,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 2877
+    .line 2872
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -1092,7 +1092,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 2878
+    .line 2873
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -1101,7 +1101,7 @@
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/mode/ICameraMode;->onSurfaceDrawn()V
 
-    .line 2880
+    .line 2875
     :cond_1c
     invoke-static {}, Lcom/transsion/camera/utils/AssetLoaderUtil;->getIsSupportAssets()Z
 
@@ -1115,7 +1115,7 @@
 
     if-nez v0, :cond_2d
 
-    .line 2881
+    .line 2876
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$maddResourcesToContext(Lcom/transsion/camera/app/common/mode/ModeManager;)V
@@ -1127,12 +1127,12 @@
 .method public surfaceShow(Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;Z)V
     .registers 4
 
-    .line 2867
+    .line 2862
     sget-object v0, Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;->AUX:Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;
 
     if-ne v0, p1, :cond_e
 
-    .line 2868
+    .line 2863
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
@@ -1143,13 +1143,13 @@
 
     return-void
 
-    .line 2869
+    .line 2864
     :cond_e
     sget-object v0, Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;->Background:Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener$SurfaceType;
 
     if-ne v0, p1, :cond_1b
 
-    .line 2870
+    .line 2865
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ModeManager$SurfaceStateListener;->this$0:Lcom/transsion/camera/app/common/mode/ModeManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/ModeManager;->-$$Nest$fgetmDeviceControl(Lcom/transsion/camera/app/common/mode/ModeManager;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl;

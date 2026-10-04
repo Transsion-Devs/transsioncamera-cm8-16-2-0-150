@@ -48,27 +48,27 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar;)V
     .registers 3
 
-    .line 715
+    .line 736
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 705
+    .line 726
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mSwitchState:I
 
-    .line 713
+    .line 734
     const-string v0, ""
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mText:Ljava/lang/String;
 
-    .line 716
+    .line 737
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mBounds:Landroid/graphics/RectF;
 
-    .line 717
+    .line 738
     iput p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mItemType:I
 
     return-void
@@ -88,14 +88,14 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
 
-    .line 739
+    .line 760
     instance-of v0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_f
 
-    .line 740
+    .line 761
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mDefaultRatio:I
 
     check-cast p1, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;
@@ -115,14 +115,14 @@
 .method public getCurrentCenterX(F)F
     .registers 4
 
-    .line 733
+    .line 754
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mSwitchState:I
 
     const/4 v1, 0x3
 
     if-ne v0, v1, :cond_c
 
-    .line 734
+    .line 755
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mStartX:F
 
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mOffsetX:F
@@ -142,7 +142,7 @@
 .method public getRatio()I
     .registers 2
 
-    .line 726
+    .line 747
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mFocalLengthItems:[Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$FocalLengthInfo;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/ArrayUtils;->isEmpty([Ljava/lang/Object;)Z
@@ -151,7 +151,7 @@
 
     if-nez v0, :cond_11
 
-    .line 727
+    .line 748
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mFocalLengthItems:[Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$FocalLengthInfo;
 
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mFocalLengthIndex:I
@@ -162,7 +162,7 @@
 
     return p0
 
-    .line 729
+    .line 750
     :cond_11
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mCurrentRatio:I
 
@@ -172,7 +172,7 @@
 .method public hashCode()I
     .registers 1
 
-    .line 747
+    .line 768
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mDefaultRatio:I
 
     return p0
@@ -181,14 +181,14 @@
 .method public reset()V
     .registers 2
 
-    .line 721
+    .line 742
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mDefaultRatio:I
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mCurrentRatio:I
 
     const/4 v0, 0x0
 
-    .line 722
+    .line 743
     iput v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomPointBar$ZoomItem;->mItemType:I
 
     return-void

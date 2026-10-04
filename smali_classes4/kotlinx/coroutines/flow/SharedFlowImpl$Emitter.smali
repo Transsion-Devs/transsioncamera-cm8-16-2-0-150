@@ -58,19 +58,19 @@
         }
     .end annotation
 
-    .line 702
+    .line 712
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 703
+    .line 713
     iput-object p1, p0, Lkotlinx/coroutines/flow/SharedFlowImpl$Emitter;->flow:Lkotlinx/coroutines/flow/SharedFlowImpl;
 
-    .line 704
+    .line 714
     iput-wide p2, p0, Lkotlinx/coroutines/flow/SharedFlowImpl$Emitter;->index:J
 
-    .line 705
+    .line 715
     iput-object p4, p0, Lkotlinx/coroutines/flow/SharedFlowImpl$Emitter;->value:Ljava/lang/Object;
 
-    .line 706
+    .line 716
     iput-object p5, p0, Lkotlinx/coroutines/flow/SharedFlowImpl$Emitter;->cont:Lkotlin/coroutines/Continuation;
 
     return-void
@@ -81,7 +81,7 @@
 .method public dispose()V
     .registers 2
 
-    .line 708
+    .line 718
     iget-object v0, p0, Lkotlinx/coroutines/flow/SharedFlowImpl$Emitter;->flow:Lkotlinx/coroutines/flow/SharedFlowImpl;
 
     # invokes: Lkotlinx/coroutines/flow/SharedFlowImpl;->cancelEmitter(Lkotlinx/coroutines/flow/SharedFlowImpl$Emitter;)V

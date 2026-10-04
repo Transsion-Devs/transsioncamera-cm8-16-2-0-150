@@ -25,7 +25,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 9
+    .registers 15
 
     .line 17
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -201,110 +201,110 @@
     .line 50
     invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object v7
 
-    const-string v4, "19.7:9"
+    const-string v8, "19.7:9"
 
-    invoke-virtual {v3, v0, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v7, v8}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide v7, 0x400199999999999aL    # 2.2
+    const-wide v9, 0x400199999999999aL    # 2.2
 
     .line 51
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v9, v10}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object v9
 
-    const-string v4, "19.8:9"
+    const-string v10, "19.8:9"
 
-    invoke-virtual {v3, v0, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v9, v10}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide v7, 0x40020b60b60b60b6L    # 2.2555555555555555
+    const-wide v9, 0x40020b60b60b60b6L    # 2.2555555555555555
 
     .line 52
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v9, v10}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object v9
 
-    const-string v4, "20.3:9"
+    const-string v10, "20.3:9"
 
-    invoke-virtual {v3, v0, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v9, v10}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide v7, 0x4001e26af37c048dL    # 2.2355555555555555
+    const-wide v11, 0x4001e26af37c048dL    # 2.2355555555555555
 
     .line 53
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v11, v12}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object v11
 
-    const-string v4, "20.12:9"
+    const-string v12, "20.12:9"
 
-    invoke-virtual {v3, v0, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v11, v12}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide v7, 0x4001c71c71c71c72L    # 2.2222222222222223
+    const-wide v11, 0x4001c71c71c71c72L    # 2.2222222222222223
 
     .line 54
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v11, v12}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object v11
 
-    const-string v4, "20:9"
+    const-string v12, "20:9"
 
-    invoke-virtual {v3, v0, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v11, v12}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide v7, 0x400238e38e38e38eL    # 2.2777777777777777
+    const-wide v11, 0x400238e38e38e38eL    # 2.2777777777777777
 
     .line 55
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v11, v12}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object v11
 
-    const-string v4, "20.5:9"
+    const-string v12, "20.5:9"
 
-    invoke-virtual {v3, v0, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v11, v12}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide v7, 0x40024fa4fa4fa4fbL    # 2.288888888888889
+    const-wide v11, 0x40024fa4fa4fa4fbL    # 2.288888888888889
 
     .line 56
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v11, v12}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object v11
 
-    const-string v4, "20.6:9"
+    const-string v12, "20.6:9"
 
-    invoke-virtual {v3, v0, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v11, v12}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide v7, 0x4002e38e38e38e39L    # 2.361111111111111
+    const-wide v11, 0x4002e38e38e38e39L    # 2.361111111111111
 
     .line 57
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v11, v12}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object v11
 
-    const-string v4, "21:9"
+    const-string v12, "21:9"
 
-    invoke-virtual {v3, v0, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v11, v12}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide v7, 0x40038e38e38e38e4L    # 2.4444444444444446
+    const-wide v13, 0x40038e38e38e38e4L    # 2.4444444444444446
 
     .line 58
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v13, v14}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v7
+    move-result-object v13
 
-    const-string v8, "22:9"
+    const-string v14, "22:9"
 
-    invoke-virtual {v3, v7, v8}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v13, v14}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide v7, 0x3ff999999999999aL    # 1.6
+    const-wide v13, 0x3ff999999999999aL    # 1.6
 
     .line 59
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v13, v14}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v7
+    move-result-object v13
 
-    const-string v8, "16:10"
+    const-string v14, "16:10"
 
-    invoke-virtual {v3, v7, v8}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v13, v14}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 62
     new-instance v3, Landroid/util/ArrayMap;
@@ -317,9 +317,18 @@
     invoke-virtual {v3, v5, v6}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 65
-    invoke-virtual {v3, v0, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v11, v12}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 66
+    invoke-virtual {v3, v9, v10}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 67
+    invoke-virtual {v3, v7, v8}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 68
+    invoke-virtual {v3, v0, v4}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 71
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
@@ -328,17 +337,17 @@
 
     const/4 v3, 0x1
 
-    .line 70
+    .line 73
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     invoke-virtual {v0, v1, v3}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 71
+    .line 74
     invoke-virtual {v0, v2, v3}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 74
+    .line 77
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -357,7 +366,7 @@
 
     return p0
 
-    .line 231
+    .line 234
     :cond_4
     invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
 
@@ -375,12 +384,12 @@
 .method private static filterSizes(Ljava/util/List;)Ljava/util/List;
     .registers 12
 
-    .line 84
+    .line 87
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 85
+    .line 88
     sget-object v1, Lcom/transsion/camera/utils/PictureSizeHelper;->sMaxCountMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v1}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
@@ -406,17 +415,17 @@
 
     invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
 
-    .line 86
+    .line 89
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 87
+    .line 90
     invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_f
 
-    .line 90
+    .line 93
     :cond_27
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -436,12 +445,12 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 91
+    .line 94
     invoke-static {v1}, Lcom/transsion/camera/utils/PictureSizeHelper;->valueToSize(Ljava/lang/String;)Landroid/util/Size;
 
     move-result-object v1
 
-    .line 92
+    .line 95
     invoke-virtual {v1}, Landroid/util/Size;->getWidth()I
 
     move-result v2
@@ -456,7 +465,7 @@
 
     div-double/2addr v2, v4
 
-    .line 94
+    .line 97
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v4
@@ -478,14 +487,14 @@
 
     check-cast v5, Ljava/util/Map$Entry;
 
-    .line 95
+    .line 98
     invoke-interface {v5}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Ljava/util/List;
 
-    .line 96
+    .line 99
     invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
@@ -520,18 +529,18 @@
 
     if-gez v5, :cond_4e
 
-    .line 97
+    .line 100
     invoke-interface {v6, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_2b
 
-    .line 103
+    .line 106
     :cond_89
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 104
+    .line 107
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -554,21 +563,21 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 105
+    .line 108
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/Double;
 
-    .line 106
+    .line 109
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Ljava/util/List;
 
-    .line 107
+    .line 110
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v3
@@ -577,7 +586,7 @@
 
     goto :goto_96
 
-    .line 110
+    .line 113
     :cond_b5
     sget-object v3, Lcom/transsion/camera/utils/PictureSizeHelper;->sMaxCountMap:Landroid/util/ArrayMap;
 
@@ -589,7 +598,7 @@
 
     if-eqz v2, :cond_96
 
-    .line 112
+    .line 115
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -598,21 +607,21 @@
 
     move-result-object v1
 
-    .line 113
+    .line 116
     invoke-interface {p0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_96
 
-    .line 116
+    .line 119
     :cond_cb
     invoke-static {p0}, Lcom/transsion/camera/utils/CameraUtil;->sortSizeInDescending(Ljava/util/List;)V
 
-    .line 118
+    .line 121
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 119
+    .line 122
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -630,7 +639,7 @@
 
     check-cast v3, Landroid/util/Size;
 
-    .line 120
+    .line 123
     invoke-static {v3}, Lcom/transsion/camera/utils/PictureSizeHelper;->sizeToStr(Landroid/util/Size;)Ljava/lang/String;
 
     move-result-object v3
@@ -646,19 +655,19 @@
 .method public static filterValuesOnShown(Ljava/util/List;Ljava/lang/String;Landroid/util/Size;Z)Ljava/util/List;
     .registers 5
 
-    .line 290
+    .line 293
     sget-object v0, Lcom/transsion/camera/utils/PictureSizeHelper;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 291
+    .line 294
     :try_start_3
     invoke-static {p2, p3}, Lcom/transsion/camera/utils/PictureSizeHelper;->initScreenRatio(Landroid/util/Size;Z)V
 
-    .line 292
+    .line 295
     invoke-interface {p0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 293
+    .line 296
     invoke-static {p0}, Lcom/transsion/camera/utils/PictureSizeHelper;->filterSizes(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p0
@@ -670,7 +679,7 @@
     :catchall_f
     move-exception p0
 
-    .line 294
+    .line 297
     monitor-exit v0
     :try_end_11
     .catchall {:try_start_3 .. :try_end_11} :catchall_f
@@ -681,14 +690,14 @@
 .method private static findClosestRatio(Ljava/lang/Double;)Ljava/lang/Double;
     .registers 11
 
-    .line 319
+    .line 337
     sget-object v0, Lcom/transsion/camera/utils/PictureSizeHelper;->INVALID_RATIO:Ljava/lang/Double;
 
     invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide v0
 
-    .line 320
+    .line 338
     sget-object v2, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_MAP:Landroid/util/ArrayMap;
 
     invoke-virtual {v2}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
@@ -715,7 +724,7 @@
 
     check-cast v5, Ljava/lang/Double;
 
-    .line 321
+    .line 339
     invoke-virtual {p0}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide v6
@@ -734,7 +743,7 @@
 
     if-gez v8, :cond_15
 
-    .line 324
+    .line 342
     invoke-virtual {v5}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide v0
@@ -743,7 +752,7 @@
 
     goto :goto_15
 
-    .line 327
+    .line 345
     :cond_38
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isDumpToleranceSupport()Z
 
@@ -763,14 +772,14 @@
 
     if-lez p0, :cond_53
 
-    .line 329
+    .line 347
     sget-object p0, Lcom/transsion/camera/utils/PictureSizeHelper;->INVALID_RATIO:Ljava/lang/Double;
 
     invoke-virtual {p0}, Ljava/lang/Double;->doubleValue()D
 
     move-result-wide v0
 
-    .line 331
+    .line 349
     :cond_53
     invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
@@ -782,7 +791,7 @@
 .method private static findFullRatioFromString(Ljava/lang/String;)Z
     .registers 4
 
-    .line 171
+    .line 174
     sget-object v0, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_FULL_MAP:Landroid/util/ArrayMap;
 
     invoke-virtual {v0}, Landroid/util/ArrayMap;->entrySet()Ljava/util/Set;
@@ -806,7 +815,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 172
+    .line 175
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -817,14 +826,14 @@
 
     if-eqz v2, :cond_a
 
-    .line 173
+    .line 176
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Ljava/lang/Double;
 
-    .line 174
+    .line 177
     sget-object v0, Lcom/transsion/camera/utils/PictureSizeHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -856,7 +865,7 @@
 .method public static getFullScreenRatio()Ljava/lang/String;
     .registers 3
 
-    .line 253
+    .line 256
     invoke-static {}, Lcom/transsion/camera/utils/ScreenUtils;->getScreenRatio()D
 
     move-result-wide v0
@@ -865,12 +874,12 @@
 
     move-result-object v0
 
-    .line 254
+    .line 257
     invoke-static {v0}, Lcom/transsion/camera/utils/PictureSizeHelper;->findClosestRatio(Ljava/lang/Double;)Ljava/lang/Double;
 
     move-result-object v0
 
-    .line 256
+    .line 259
     sget-object v1, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_FULL_MAP:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, v0}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
@@ -879,7 +888,7 @@
 
     if-eqz v2, :cond_1b
 
-    .line 257
+    .line 260
     invoke-virtual {v1, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -888,7 +897,7 @@
 
     return-object v0
 
-    .line 259
+    .line 262
     :cond_1b
     invoke-virtual {v1}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
 
@@ -910,7 +919,7 @@
 
     check-cast v0, Ljava/lang/Double;
 
-    .line 260
+    .line 263
     invoke-virtual {v1, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -919,22 +928,72 @@
 
     return-object v0
 
-    .line 264
+    .line 267
     :cond_36
     const-string v0, ""
 
     return-object v0
 .end method
 
+.method public static getPictureRatioCustomizedIndia()Ljava/lang/String;
+    .registers 2
+
+    .line 321
+    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->getMarket()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 322
+    const-string v1, "in"
+
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_11
+
+    .line 323
+    invoke-static {}, Lcom/transsion/camera/utils/PictureSizeHelper;->getFullScreenRatio()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 325
+    :cond_11
+    const-string v0, "4:3"
+
+    return-object v0
+.end method
+
+.method public static getPictureRatioDefaultForStore(Z)Ljava/lang/String;
+    .registers 1
+
+    if-eqz p0, :cond_7
+
+    .line 330
+    invoke-static {}, Lcom/transsion/camera/utils/PictureSizeHelper;->getPictureRatioCustomizedIndia()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 332
+    :cond_7
+    const-string p0, "4:3"
+
+    return-object p0
+.end method
+
 .method public static getStandardAspectRatioOfString(Ljava/lang/String;)Ljava/lang/String;
     .registers 5
 
-    .line 143
+    .line 146
     invoke-static {p0}, Lcom/transsion/camera/utils/PictureSizeHelper;->valueToSize(Ljava/lang/String;)Landroid/util/Size;
 
     move-result-object p0
 
-    .line 144
+    .line 147
     invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
 
     move-result v0
@@ -949,7 +1008,7 @@
 
     div-double/2addr v0, v2
 
-    .line 145
+    .line 148
     invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object p0
@@ -958,7 +1017,7 @@
 
     move-result-object p0
 
-    .line 146
+    .line 149
     sget-object v0, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_MAP:Landroid/util/ArrayMap;
 
     invoke-virtual {v0, p0}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
@@ -967,7 +1026,7 @@
 
     if-eqz v1, :cond_26
 
-    .line 147
+    .line 150
     invoke-virtual {v0, p0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -976,11 +1035,11 @@
 
     goto :goto_28
 
-    .line 146
+    .line 149
     :cond_26
     const-string p0, ""
 
-    .line 149
+    .line 152
     :goto_28
     sget-object v0, Lcom/transsion/camera/utils/PictureSizeHelper;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1008,12 +1067,12 @@
 
     const/4 v0, 0x1
 
-    .line 274
+    .line 277
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 268
+    .line 271
     invoke-static {}, Lcom/transsion/camera/utils/ScreenUtils;->getScreenRatio()D
 
     move-result-wide v1
@@ -1022,37 +1081,37 @@
 
     move-result-object v1
 
-    .line 269
+    .line 272
     invoke-static {v1}, Lcom/transsion/camera/utils/PictureSizeHelper;->findClosestRatio(Ljava/lang/Double;)Ljava/lang/Double;
 
     move-result-object v1
 
-    .line 270
+    .line 273
     invoke-static {p0}, Lcom/transsion/camera/utils/PictureSizeHelper;->isMaxSensorSize16_9(Landroid/util/Size;)Z
 
     move-result p0
 
-    .line 272
+    .line 275
     sget-object v2, Lcom/transsion/camera/utils/PictureSizeHelper;->sMaxCountMap:Landroid/util/ArrayMap;
 
     invoke-virtual {v2}, Landroid/util/ArrayMap;->clear()V
 
     if-nez p0, :cond_22
 
-    .line 274
+    .line 277
     sget-object p0, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_4_3_D:Ljava/lang/Double;
 
     invoke-virtual {v2, p0, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_27
 
-    .line 276
+    .line 279
     :cond_22
     sget-object p0, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_16_9_D:Ljava/lang/Double;
 
     invoke-virtual {v2, p0, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 278
+    .line 281
     :goto_27
     sget-object p0, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_1_1_D:Ljava/lang/Double;
 
@@ -1060,12 +1119,12 @@
 
     if-eqz p1, :cond_33
 
-    .line 280
+    .line 283
     sget-object p0, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_16_9_D:Ljava/lang/Double;
 
     invoke-virtual {v2, p0, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 282
+    .line 285
     :cond_33
     sget-object p0, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_MAP:Landroid/util/ArrayMap;
 
@@ -1075,69 +1134,24 @@
 
     if-eqz p0, :cond_44
 
-    .line 283
+    .line 286
     invoke-virtual {v2, v1}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result p0
 
     if-nez p0, :cond_44
 
-    .line 284
+    .line 287
     invoke-virtual {v2, v1, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_44
     return-void
 .end method
 
-.method public static isCommonRatio(D)Z
-    .registers 6
-
-    .line 303
-    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isDumpToleranceSupport()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_c
-
-    const-wide v0, 0x3f947ae147ae147bL    # 0.02
-
-    goto :goto_11
-
-    :cond_c
-    const-wide v0, 0x3f8cac083126e979L    # 0.014
-
-    .line 304
-    :goto_11
-    sget-object v2, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_4_3_D:Ljava/lang/Double;
-
-    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v2
-
-    sub-double/2addr p0, v2
-
-    invoke-static {p0, p1}, Ljava/lang/Math;->abs(D)D
-
-    move-result-wide p0
-
-    cmpg-double p0, p0, v0
-
-    if-gez p0, :cond_22
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_22
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
 .method public static isFullRatio(D)Z
     .registers 6
 
-    .line 298
+    .line 301
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isDumpToleranceSupport()Z
 
     move-result v0
@@ -1151,7 +1165,7 @@
     :cond_c
     const-wide v0, 0x3f8cac083126e979L    # 0.014
 
-    .line 299
+    .line 302
     :goto_11
     sget-object v2, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_4_3_D:Ljava/lang/Double;
 
@@ -1214,7 +1228,7 @@
 .method public static isFullScreenRatioChanged(Ljava/lang/String;)Z
     .registers 5
 
-    .line 235
+    .line 238
     invoke-static {p0}, Lcom/transsion/camera/utils/PictureSizeHelper;->findFullRatioFromString(Ljava/lang/String;)Z
 
     move-result v0
@@ -1225,7 +1239,7 @@
 
     return v1
 
-    .line 240
+    .line 243
     :cond_8
     invoke-static {}, Lcom/transsion/camera/utils/ScreenUtils;->getScreenRatio()D
 
@@ -1235,12 +1249,12 @@
 
     move-result-object v0
 
-    .line 241
+    .line 244
     invoke-static {v0}, Lcom/transsion/camera/utils/PictureSizeHelper;->findClosestRatio(Ljava/lang/Double;)Ljava/lang/Double;
 
     move-result-object v0
 
-    .line 243
+    .line 246
     sget-object v2, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_FULL_MAP:Landroid/util/ArrayMap;
 
     invoke-virtual {v2, v0}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
@@ -1249,7 +1263,7 @@
 
     if-eqz v3, :cond_23
 
-    .line 244
+    .line 247
     invoke-virtual {v2, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -1258,11 +1272,11 @@
 
     goto :goto_25
 
-    .line 243
+    .line 246
     :cond_23
     const-string v0, ""
 
-    .line 246
+    .line 249
     :goto_25
     invoke-static {p0, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
@@ -1281,7 +1295,7 @@
 .method public static isMaxSensorSize16_9(Landroid/util/Size;)Z
     .registers 7
 
-    .line 126
+    .line 129
     invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
 
     move-result v0
@@ -1296,7 +1310,7 @@
 
     div-double/2addr v0, v2
 
-    .line 127
+    .line 130
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isDumpToleranceSupport()Z
 
     move-result p0
@@ -1310,7 +1324,7 @@
     :cond_17
     const-wide v2, 0x3f8cac083126e979L    # 0.014
 
-    .line 128
+    .line 131
     :goto_1c
     sget-object p0, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_16_9_D:Ljava/lang/Double;
 
@@ -1341,7 +1355,7 @@
 .method public static isSmallRatio(D)Z
     .registers 6
 
-    .line 313
+    .line 316
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isDumpToleranceSupport()Z
 
     move-result v0
@@ -1355,54 +1369,9 @@
     :cond_c
     const-wide v0, 0x3f8cac083126e979L    # 0.014
 
-    .line 314
+    .line 317
     :goto_11
     sget-object v2, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_1_1_D:Ljava/lang/Double;
-
-    invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v2
-
-    sub-double/2addr p0, v2
-
-    invoke-static {p0, p1}, Ljava/lang/Math;->abs(D)D
-
-    move-result-wide p0
-
-    cmpg-double p0, p0, v0
-
-    if-gez p0, :cond_22
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_22
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static isVideoRatio(D)Z
-    .registers 6
-
-    .line 308
-    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isDumpToleranceSupport()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_c
-
-    const-wide v0, 0x3f947ae147ae147bL    # 0.02
-
-    goto :goto_11
-
-    :cond_c
-    const-wide v0, 0x3f8cac083126e979L    # 0.014
-
-    .line 309
-    :goto_11
-    sget-object v2, Lcom/transsion/camera/utils/PictureSizeHelper;->RATIO_16_9_D:Ljava/lang/Double;
 
     invoke-virtual {v2}, Ljava/lang/Double;->doubleValue()D
 
@@ -1435,7 +1404,7 @@
 
     return-object p0
 
-    .line 186
+    .line 189
     :cond_3
     new-instance v0, Ljava/util/ArrayList;
 
@@ -1443,14 +1412,14 @@
 
     const/4 v1, 0x0
 
-    .line 187
+    .line 190
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/util/Size;
 
-    .line 188
+    .line 191
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     const/4 v2, 0x1
@@ -1459,7 +1428,7 @@
 
     goto :goto_77
 
-    .line 193
+    .line 196
     :cond_16
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1480,7 +1449,7 @@
 
     check-cast v3, Landroid/util/Size;
 
-    .line 194
+    .line 197
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v4
@@ -1501,7 +1470,7 @@
 
     mul-double/2addr v4, v6
 
-    .line 195
+    .line 198
     invoke-static {v3}, Lcom/transsion/camera/utils/PictureSizeHelper;->area(Landroid/util/Size;)I
 
     move-result v6
@@ -1512,14 +1481,14 @@
 
     if-gez v6, :cond_5e
 
-    .line 199
+    .line 202
     invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v6
 
     if-nez v6, :cond_5b
 
-    .line 200
+    .line 203
     invoke-static {v2}, Lcom/transsion/camera/utils/PictureSizeHelper;->area(Landroid/util/Size;)I
 
     move-result v6
@@ -1540,16 +1509,16 @@
 
     if-gez v4, :cond_5b
 
-    .line 201
+    .line 204
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_5e
 
-    .line 203
+    .line 206
     :cond_5b
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 207
+    .line 210
     :cond_5e
     :goto_5e
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1567,7 +1536,7 @@
 
     goto :goto_1b
 
-    .line 213
+    .line 216
     :cond_68
     :goto_68
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1582,7 +1551,7 @@
 
     if-nez p0, :cond_77
 
-    .line 214
+    .line 217
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_77
@@ -1593,7 +1562,7 @@
 .method private static sizeToStr(Landroid/util/Size;)Ljava/lang/String;
     .registers 3
 
-    .line 224
+    .line 227
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1624,7 +1593,7 @@
 .method private static valueToSize(Ljava/lang/String;)Landroid/util/Size;
     .registers 1
 
-    .line 220
+    .line 223
     invoke-static {p0}, Landroid/util/Size;->parseSize(Ljava/lang/String;)Landroid/util/Size;
 
     move-result-object p0

@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.internal.ChannelFlow$collect$2"
     f = "ChannelFlow.kt"
     l = {
-        0x7b
+        0x77
     }
     m = "invokeSuspend"
 .end annotation
@@ -166,7 +166,7 @@
 
     move-result-object v0
 
-    .line 122
+    .line 118
     iget v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow$collect$2;->label:I
 
     const/4 v2, 0x1
@@ -195,7 +195,7 @@
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
-    .line 123
+    .line 119
     iget-object v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow$collect$2;->$collector:Lkotlinx/coroutines/flow/FlowCollector;
 
     iget-object v3, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow$collect$2;->this$0:Lkotlinx/coroutines/flow/internal/ChannelFlow;
@@ -214,7 +214,7 @@
 
     return-object v0
 
-    .line 124
+    .line 120
     :cond_2f
     :goto_2f
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

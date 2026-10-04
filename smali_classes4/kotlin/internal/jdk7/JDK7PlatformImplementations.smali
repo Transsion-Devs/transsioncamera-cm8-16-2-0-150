@@ -1,4 +1,4 @@
-.class public Lkotlin/internal/jdk7/JDK7PlatformImplementations;
+.class public abstract Lkotlin/internal/jdk7/JDK7PlatformImplementations;
 .super Lkotlin/internal/PlatformImplementations;
 .source "SourceFile"
 

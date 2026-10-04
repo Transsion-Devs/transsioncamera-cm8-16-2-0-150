@@ -24,7 +24,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 39
+    .line 40
     invoke-direct {p0}, Lcom/google/gson/JsonElement;-><init>()V
 
     return-void
@@ -35,23 +35,8 @@
 .method public equals(Ljava/lang/Object;)Z
     .registers 2
 
-    if-eq p0, p1, :cond_9
-
-    .line 65
+    .line 63
     instance-of p0, p1, Lcom/google/gson/JsonNull;
-
-    if-eqz p0, :cond_7
-
-    goto :goto_9
-
-    :cond_7
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_9
-    :goto_9
-    const/4 p0, 0x1
 
     return p0
 .end method

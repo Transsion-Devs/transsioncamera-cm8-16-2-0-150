@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)V
     .registers 2
 
-    .line 2044
+    .line 1986
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public notifyDeviceClosed(Ljava/lang/String;)V
     .registers 4
 
-    .line 2091
+    .line 2033
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmClosedState(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
@@ -53,7 +53,7 @@
 
     return-void
 
-    .line 2095
+    .line 2037
     :cond_d
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -63,7 +63,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2096
+    .line 2038
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     const/4 p1, 0x1
@@ -76,7 +76,7 @@
 .method public notifyDeviceDisconnected(Ljava/lang/String;)V
     .registers 2
 
-    .line 2101
+    .line 2043
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmCameraDisconnectedListerner(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IApp$ICameraDisconnectedListener;
@@ -85,7 +85,7 @@
 
     if-eqz p1, :cond_11
 
-    .line 2102
+    .line 2044
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmCameraDisconnectedListerner(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IApp$ICameraDisconnectedListener;
@@ -105,12 +105,12 @@
 
     if-eq p2, p1, :cond_8
 
-    .line 2109
+    .line 2051
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1, p2}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$mnotifyCameraError(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;I)V
 
-    .line 2111
+    .line 2053
     :cond_8
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
@@ -124,12 +124,12 @@
 .method public notifyDeviceOpened(Ljava/lang/String;)V
     .registers 5
 
-    .line 2048
+    .line 1990
     const-string v0, "onCameraOpened"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/debug/TraceUtil;->begin(Ljava/lang/String;)V
 
-    .line 2049
+    .line 1991
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmOpenedState(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
@@ -142,7 +142,7 @@
 
     if-nez p1, :cond_5d
 
-    .line 2051
+    .line 1993
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmNeedOpenSlave(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Z
@@ -151,14 +151,14 @@
 
     if-eqz p1, :cond_59
 
-    .line 2052
+    .line 1994
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fputmNeedOpenSlave(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Z)V
 
-    .line 2053
+    .line 1995
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmSlaveDevice(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl;
@@ -167,7 +167,7 @@
 
     if-eqz p1, :cond_59
 
-    .line 2054
+    .line 1996
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -198,7 +198,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2055
+    .line 1997
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmSlaveDevice(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl;
@@ -215,13 +215,13 @@
 
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->openCamera(Ljava/lang/String;)V
 
-    .line 2058
+    .line 2000
     :cond_59
     invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
 
     return-void
 
-    .line 2062
+    .line 2004
     :cond_5d
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -231,7 +231,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2064
+    .line 2006
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmSettingManager(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/setting/SettingManager;
@@ -242,7 +242,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/setting/SettingManager;->updateModeDeviceRequester(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;)V
 
-    .line 2065
+    .line 2007
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmMainDevice(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl;
@@ -251,7 +251,7 @@
 
     if-eqz p1, :cond_8c
 
-    .line 2066
+    .line 2008
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmMainDevice(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl;
@@ -270,7 +270,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->setSettingDeviceConfigurator(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceConfigurator;)V
 
-    .line 2068
+    .line 2010
     :cond_8c
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
@@ -280,7 +280,7 @@
 
     if-eqz p1, :cond_a7
 
-    .line 2069
+    .line 2011
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmSlaveDevice(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl;
@@ -299,7 +299,7 @@
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->setSettingDeviceConfigurator(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceConfigurator;)V
 
-    .line 2073
+    .line 2015
     :cond_a7
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
@@ -309,7 +309,7 @@
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/setting/SettingManager;->createAllSettings()V
 
-    .line 2075
+    .line 2017
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUI;
@@ -318,7 +318,7 @@
 
     if-eqz p1, :cond_c3
 
-    .line 2076
+    .line 2018
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUI;
@@ -329,7 +329,7 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 2078
+    .line 2020
     :cond_c3
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
@@ -337,21 +337,21 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$mnotifyCameraState(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;I)V
 
-    .line 2081
+    .line 2023
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;
 
     move-result-object p1
 
-    .line 2082
+    .line 2024
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmNextMode(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;
 
     move-result-object v0
 
-    .line 2083
+    .line 2025
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$mswitchMode(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Z
@@ -380,13 +380,13 @@
 
     if-eqz v1, :cond_f6
 
-    .line 2084
+    .line 2026
     :cond_f1
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0, p1, v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$mstartWithMode(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Lcom/transsion/camera/app/common/mode/ICameraMode;Lcom/transsion/camera/app/common/mode/ICameraMode;)V
 
-    .line 2086
+    .line 2028
     :cond_f6
     invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
 
@@ -396,7 +396,7 @@
 .method public notifyFirstSteadyFrame(Ljava/lang/String;)V
     .registers 4
 
-    .line 2166
+    .line 2108
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmFirstFrameState(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
@@ -411,7 +411,7 @@
 
     goto :goto_4b
 
-    .line 2171
+    .line 2113
     :cond_d
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -421,7 +421,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2172
+    .line 2114
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUI;
@@ -430,7 +430,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 2173
+    .line 2115
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUI;
@@ -441,7 +441,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 2176
+    .line 2118
     :cond_29
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
@@ -451,7 +451,7 @@
 
     if-eqz v0, :cond_3a
 
-    .line 2177
+    .line 2119
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmFirstFrameCallback(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/adapter/CameraProxy$CameraPreviewFrameCallback;
@@ -460,7 +460,7 @@
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/adapter/CameraProxy$CameraPreviewFrameCallback;->onFirstSteadyFrame(Ljava/lang/String;)V
 
-    .line 2179
+    .line 2121
     :cond_3a
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
@@ -470,7 +470,7 @@
 
     if-eqz p1, :cond_4b
 
-    .line 2180
+    .line 2122
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -487,7 +487,7 @@
 .method public notifyStartCreatSession(Ljava/lang/String;)V
     .registers 4
 
-    .line 2116
+    .line 2058
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUI;
@@ -496,7 +496,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 2117
+    .line 2059
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUI;
@@ -507,13 +507,13 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 2120
+    .line 2062
     :cond_13
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$monModeSettingReady(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)V
 
-    .line 2122
+    .line 2064
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmStartCreatSessionState(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
@@ -528,7 +528,7 @@
 
     return-void
 
-    .line 2126
+    .line 2068
     :cond_25
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -544,7 +544,7 @@
 .method public notifyStartPreview(ILjava/lang/String;)V
     .registers 6
 
-    .line 2131
+    .line 2073
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmStartPreviewingState(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
@@ -555,14 +555,14 @@
 
     if-ne p1, v1, :cond_f
 
-    .line 2133
+    .line 2075
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmStartPreviewedState(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/CameraDeviceControl$NotifyState;
 
     move-result-object v0
 
-    .line 2135
+    .line 2077
     :cond_f
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
@@ -574,7 +574,7 @@
 
     return-void
 
-    .line 2139
+    .line 2081
     :cond_18
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -600,14 +600,14 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2141
+    .line 2083
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p2, p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$mnotifyCameraState(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;I)V
 
     if-ne p1, v1, :cond_4f
 
-    .line 2142
+    .line 2084
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUI;
@@ -616,7 +616,7 @@
 
     if-eqz p1, :cond_4f
 
-    .line 2143
+    .line 2085
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUI;
@@ -627,7 +627,7 @@
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 2146
+    .line 2088
     :cond_4f
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
@@ -643,7 +643,7 @@
 .method public notifyStopPreview(Ljava/lang/String;)V
     .registers 2
 
-    .line 2151
+    .line 2093
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -658,12 +658,12 @@
 .method public notifySwitchOfflineFailed(I)V
     .registers 4
 
-    .line 2186
+    .line 2128
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->checkNotifyBgOfflineErr()V
 
-    .line 2187
+    .line 2129
     invoke-static {}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->getInstance()Lcom/transsion/camera/app/common/bgservice/BGServiceController;
 
     move-result-object v0
@@ -672,7 +672,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/bgservice/BGServiceController;->setSwitchingOffline(Z)V
 
-    .line 2188
+    .line 2130
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmOfflineSwitchCallback(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUIListener$IBGOfflineSwitchCallback;
@@ -681,7 +681,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 2189
+    .line 2131
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmOfflineSwitchCallback(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/IAppUIListener$IBGOfflineSwitchCallback;
@@ -690,7 +690,7 @@
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IBGOfflineSwitchCallback;->onOfflineSwitchFinish(I)V
 
-    .line 2191
+    .line 2133
     :cond_1e
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
@@ -702,7 +702,7 @@
 .method public notifyTakePictureFailed(Ljava/lang/String;)V
     .registers 3
 
-    .line 2157
+    .line 2099
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -711,7 +711,7 @@
 
     if-eqz p1, :cond_14
 
-    .line 2158
+    .line 2100
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraDeviceControl$3;->this$0:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$fgetmCurrentMode(Lcom/transsion/camera/app/common/mode/CameraDeviceControl;)Lcom/transsion/camera/app/common/mode/ICameraMode;
@@ -726,7 +726,7 @@
 
     return-void
 
-    .line 2160
+    .line 2102
     :cond_14
     invoke-static {}, Lcom/transsion/camera/app/common/mode/CameraDeviceControl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 

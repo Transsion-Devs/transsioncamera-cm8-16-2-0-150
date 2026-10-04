@@ -27,10 +27,10 @@
 .method constructor <init>()V
     .registers 3
 
-    .line 91
+    .line 93
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 93
+    .line 95
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->GRASSLAND:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -45,7 +45,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 94
+    .line 96
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->KREMLIN:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -60,7 +60,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 95
+    .line 97
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->TAJMAHAL:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -75,7 +75,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 96
+    .line 98
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->PENIDA:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -90,7 +90,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 97
+    .line 99
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->PYRAMIDS:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -105,7 +105,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 98
+    .line 100
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->VOLCANO:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -120,7 +120,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 99
+    .line 101
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->BADSHAHI:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -135,7 +135,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 100
+    .line 102
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;->SUNTEMPLE:Lcom/aiartmuseum/jni/IAIArtMuseum$Travel;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I

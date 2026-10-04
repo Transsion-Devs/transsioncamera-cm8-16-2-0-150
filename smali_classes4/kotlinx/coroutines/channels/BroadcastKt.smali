@@ -26,31 +26,31 @@
     .annotation build Lkotlinx/coroutines/ObsoleteCoroutinesApi;
     .end annotation
 
-    .line 124
+    .line 120
     invoke-static {p0, p1}, Lkotlinx/coroutines/CoroutineContextKt;->newCoroutineContext(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
 
-    .line 125
+    .line 121
     invoke-static {p2}, Lkotlinx/coroutines/channels/BroadcastChannelKt;->BroadcastChannel(I)Lkotlinx/coroutines/channels/BroadcastChannel;
 
     move-result-object p1
 
-    .line 126
+    .line 122
     invoke-virtual {p3}, Lkotlinx/coroutines/CoroutineStart;->isLazy()Z
 
     move-result p2
 
     if-eqz p2, :cond_14
 
-    .line 127
+    .line 123
     new-instance p2, Lkotlinx/coroutines/channels/LazyBroadcastCoroutine;
 
     invoke-direct {p2, p0, p1, p5}, Lkotlinx/coroutines/channels/LazyBroadcastCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/channels/BroadcastChannel;Lkotlin/jvm/functions/Function2;)V
 
     goto :goto_1a
 
-    .line 128
+    .line 124
     :cond_14
     new-instance p2, Lkotlinx/coroutines/channels/BroadcastCoroutine;
 
@@ -61,10 +61,10 @@
     :goto_1a
     if-eqz p4, :cond_1f
 
-    .line 129
+    .line 125
     invoke-virtual {p2, p4}, Lkotlinx/coroutines/JobSupport;->invokeOnCompletion(Lkotlin/jvm/functions/Function1;)Lkotlinx/coroutines/DisposableHandle;
 
-    .line 130
+    .line 126
     :cond_1f
     invoke-virtual {p2, p3, p2, p5}, Lkotlinx/coroutines/AbstractCoroutine;->start(Lkotlinx/coroutines/CoroutineStart;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
@@ -90,7 +90,7 @@
     .annotation build Lkotlinx/coroutines/ObsoleteCoroutinesApi;
     .end annotation
 
-    .line 51
+    .line 47
     sget-object v0, Lkotlinx/coroutines/GlobalScope;->INSTANCE:Lkotlinx/coroutines/GlobalScope;
 
     invoke-static {}, Lkotlinx/coroutines/Dispatchers;->getUnconfined()Lkotlinx/coroutines/CoroutineDispatcher;
@@ -101,19 +101,19 @@
 
     move-result-object v0
 
-    .line 48
+    .line 44
     sget-object v1, Lkotlinx/coroutines/CoroutineExceptionHandler;->Key:Lkotlinx/coroutines/CoroutineExceptionHandler$Key;
 
     new-instance v2, Lkotlinx/coroutines/channels/BroadcastKt$broadcast$$inlined$CoroutineExceptionHandler$1;
 
     invoke-direct {v2, v1}, Lkotlinx/coroutines/channels/BroadcastKt$broadcast$$inlined$CoroutineExceptionHandler$1;-><init>(Lkotlinx/coroutines/CoroutineExceptionHandler$Key;)V
 
-    .line 51
+    .line 47
     invoke-static {v0, v2}, Lkotlinx/coroutines/CoroutineScopeKt;->plus(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/CoroutineScope;
 
     move-result-object v3
 
-    .line 55
+    .line 51
     new-instance v7, Lkotlinx/coroutines/channels/BroadcastKt$broadcast$1;
 
     invoke-direct {v7, p0}, Lkotlinx/coroutines/channels/BroadcastKt$broadcast$1;-><init>(Lkotlinx/coroutines/channels/ReceiveChannel;)V
@@ -148,7 +148,7 @@
 
     if-eqz p7, :cond_6
 
-    .line 118
+    .line 114
     sget-object p1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     :cond_6
@@ -163,7 +163,7 @@
 
     if-eqz p7, :cond_11
 
-    .line 120
+    .line 116
     sget-object p3, Lkotlinx/coroutines/CoroutineStart;->LAZY:Lkotlinx/coroutines/CoroutineStart;
 
     :cond_11
@@ -186,7 +186,7 @@
 
     move-object p3, p1
 
-    .line 117
+    .line 113
     invoke-static/range {p2 .. p7}, Lkotlinx/coroutines/channels/BroadcastKt;->broadcast(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/channels/BroadcastChannel;
 
     move-result-object p0
@@ -208,10 +208,10 @@
 
     if-eqz p3, :cond_b
 
-    .line 49
+    .line 45
     sget-object p2, Lkotlinx/coroutines/CoroutineStart;->LAZY:Lkotlinx/coroutines/CoroutineStart;
 
-    .line 47
+    .line 43
     :cond_b
     invoke-static {p0, p1, p2}, Lkotlinx/coroutines/channels/BroadcastKt;->broadcast(Lkotlinx/coroutines/channels/ReceiveChannel;ILkotlinx/coroutines/CoroutineStart;)Lkotlinx/coroutines/channels/BroadcastChannel;
 

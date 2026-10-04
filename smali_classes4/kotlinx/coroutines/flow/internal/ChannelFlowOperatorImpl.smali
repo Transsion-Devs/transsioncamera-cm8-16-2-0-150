@@ -30,7 +30,7 @@
         }
     .end annotation
 
-    .line 188
+    .line 184
     invoke-direct {p0, p1, p2, p3, p4}, Lkotlinx/coroutines/flow/internal/ChannelFlowOperator;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)V
 
     return-void
@@ -43,7 +43,7 @@
 
     if-eqz p6, :cond_6
 
-    .line 185
+    .line 181
     sget-object p2, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     :cond_6
@@ -58,10 +58,10 @@
 
     if-eqz p5, :cond_11
 
-    .line 187
+    .line 183
     sget-object p4, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
 
-    .line 183
+    .line 179
     :cond_11
     invoke-direct {p0, p1, p2, p3, p4}, Lkotlinx/coroutines/flow/internal/ChannelFlowOperatorImpl;-><init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)V
 
@@ -84,7 +84,7 @@
         }
     .end annotation
 
-    .line 190
+    .line 186
     new-instance v0, Lkotlinx/coroutines/flow/internal/ChannelFlowOperatorImpl;
 
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowOperator;->flow:Lkotlinx/coroutines/flow/Flow;
@@ -104,7 +104,7 @@
         }
     .end annotation
 
-    .line 192
+    .line 188
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowOperator;->flow:Lkotlinx/coroutines/flow/Flow;
 
     return-object p0
@@ -125,7 +125,7 @@
         }
     .end annotation
 
-    .line 195
+    .line 191
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowOperator;->flow:Lkotlinx/coroutines/flow/Flow;
 
     invoke-interface {p0, p1, p2}, Lkotlinx/coroutines/flow/Flow;->collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;

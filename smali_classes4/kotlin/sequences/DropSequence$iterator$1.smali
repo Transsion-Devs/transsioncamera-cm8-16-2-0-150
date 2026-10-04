@@ -28,10 +28,10 @@
 .method constructor <init>(Lkotlin/sequences/DropSequence;)V
     .registers 3
 
-    .line 489
+    .line 540
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 490
+    .line 541
     # getter for: Lkotlin/sequences/DropSequence;->sequence:Lkotlin/sequences/Sequence;
     invoke-static {p1}, Lkotlin/sequences/DropSequence;->access$getSequence$p(Lkotlin/sequences/DropSequence;)Lkotlin/sequences/Sequence;
 
@@ -43,7 +43,7 @@
 
     iput-object v0, p0, Lkotlin/sequences/DropSequence$iterator$1;->iterator:Ljava/util/Iterator;
 
-    .line 491
+    .line 542
     # getter for: Lkotlin/sequences/DropSequence;->count:I
     invoke-static {p1}, Lkotlin/sequences/DropSequence;->access$getCount$p(Lkotlin/sequences/DropSequence;)I
 
@@ -57,7 +57,7 @@
 .method private final drop()V
     .registers 2
 
-    .line 495
+    .line 546
     :goto_0
     iget v0, p0, Lkotlin/sequences/DropSequence$iterator$1;->left:I
 
@@ -71,12 +71,12 @@
 
     if-eqz v0, :cond_18
 
-    .line 496
+    .line 547
     iget-object v0, p0, Lkotlin/sequences/DropSequence$iterator$1;->iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    .line 497
+    .line 548
     iget v0, p0, Lkotlin/sequences/DropSequence$iterator$1;->left:I
 
     add-int/lit8 v0, v0, -0x1
@@ -94,10 +94,10 @@
 .method public hasNext()Z
     .registers 1
 
-    .line 507
+    .line 558
     invoke-direct {p0}, Lkotlin/sequences/DropSequence$iterator$1;->drop()V
 
-    .line 508
+    .line 559
     iget-object p0, p0, Lkotlin/sequences/DropSequence$iterator$1;->iterator:Ljava/util/Iterator;
 
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
@@ -110,10 +110,10 @@
 .method public next()Ljava/lang/Object;
     .registers 1
 
-    .line 502
+    .line 553
     invoke-direct {p0}, Lkotlin/sequences/DropSequence$iterator$1;->drop()V
 
-    .line 503
+    .line 554
     iget-object p0, p0, Lkotlin/sequences/DropSequence$iterator$1;->iterator:Ljava/util/Iterator;
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;

@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__DelayKt$sample$2"
     f = "Delay.kt"
     l = {
-        0x1a7
+        0x19e
     }
     m = "invokeSuspend"
 .end annotation
@@ -140,13 +140,13 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 14
+    .registers 12
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 277
+    .line 271
     iget v1, p0, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2;->label:I
 
     const/4 v2, 0x1
@@ -175,7 +175,7 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_56
+    goto :goto_53
 
     :cond_20
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -199,7 +199,7 @@
 
     check-cast p1, Lkotlinx/coroutines/flow/FlowCollector;
 
-    .line 278
+    .line 272
     new-instance v7, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2$values$1;
 
     iget-object v1, p0, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2;->$this_sample:Lkotlinx/coroutines/flow/Flow;
@@ -218,42 +218,38 @@
 
     move-result-object v1
 
-    .line 281
-    new-instance v11, Lkotlin/jvm/internal/Ref$ObjectRef;
+    .line 275
+    new-instance v5, Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    invoke-direct {v11}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
+    invoke-direct {v5}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    .line 282
-    iget-wide v5, p0, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2;->$periodMillis:J
+    .line 276
+    iget-wide v6, p0, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2;->$periodMillis:J
 
-    const/4 v9, 0x2
-
-    const/4 v10, 0x0
-
-    const-wide/16 v7, 0x0
-
-    invoke-static/range {v4 .. v10}, Lkotlinx/coroutines/flow/FlowKt;->fixedPeriodTicker$default(Lkotlinx/coroutines/CoroutineScope;JJILjava/lang/Object;)Lkotlinx/coroutines/channels/ReceiveChannel;
+    invoke-static {v4, v6, v7}, Lkotlinx/coroutines/flow/FlowKt;->fixedPeriodTicker(Lkotlinx/coroutines/CoroutineScope;J)Lkotlinx/coroutines/channels/ReceiveChannel;
 
     move-result-object v4
 
-    move-object v6, p1
+    move-object v6, v5
 
     move-object v5, v1
 
     move-object v1, v4
 
-    move-object v4, v11
+    move-object v4, v6
 
-    .line 283
-    :cond_56
-    :goto_56
+    move-object v6, p1
+
+    .line 277
+    :cond_53
+    :goto_53
     iget-object p1, v4, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     sget-object v7, Lkotlinx/coroutines/flow/internal/NullSurrogateKt;->DONE:Lkotlinx/coroutines/internal/Symbol;
 
-    if-eq p1, v7, :cond_8e
+    if-eq p1, v7, :cond_8b
 
-    .line 58
+    .line 54
     new-instance p1, Lkotlinx/coroutines/selects/SelectImplementation;
 
     invoke-interface {p0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
@@ -262,7 +258,7 @@
 
     invoke-direct {p1, v7}, Lkotlinx/coroutines/selects/SelectImplementation;-><init>(Lkotlin/coroutines/CoroutineContext;)V
 
-    .line 285
+    .line 279
     invoke-interface {v5}, Lkotlinx/coroutines/channels/ReceiveChannel;->getOnReceiveCatching()Lkotlinx/coroutines/selects/SelectClause1;
 
     move-result-object v7
@@ -273,7 +269,7 @@
 
     invoke-interface {p1, v7, v8}, Lkotlinx/coroutines/selects/SelectBuilder;->invoke(Lkotlinx/coroutines/selects/SelectClause1;Lkotlin/jvm/functions/Function2;)V
 
-    .line 296
+    .line 290
     invoke-interface {v1}, Lkotlinx/coroutines/channels/ReceiveChannel;->getOnReceive()Lkotlinx/coroutines/selects/SelectClause1;
 
     move-result-object v7
@@ -284,7 +280,7 @@
 
     invoke-interface {p1, v7, v8}, Lkotlinx/coroutines/selects/SelectBuilder;->invoke(Lkotlinx/coroutines/selects/SelectClause1;Lkotlin/jvm/functions/Function2;)V
 
-    .line 62
+    .line 58
     iput-object v6, p0, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2;->L$0:Ljava/lang/Object;
 
     iput-object v5, p0, Lkotlinx/coroutines/flow/FlowKt__DelayKt$sample$2;->L$1:Ljava/lang/Object;
@@ -299,12 +295,12 @@
 
     move-result-object p1
 
-    if-ne p1, v0, :cond_56
+    if-ne p1, v0, :cond_53
 
     return-object v0
 
-    .line 303
-    :cond_8e
+    .line 297
+    :cond_8b
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0

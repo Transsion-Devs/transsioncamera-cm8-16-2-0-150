@@ -32,6 +32,10 @@
 
 .field private static final PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
+.field private static final POP_VIEW_INDEX:I = 0x0
+
+.field private static final ROOT_VIEW_INDEX:I = 0x1
+
 .field private static final SETTING_KEY:Ljava/lang/String; = "key_setting_qrcode"
 
 .field private static final TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -102,6 +106,10 @@
 
 .field private mLastResult:Ljava/lang/String;
 
+.field private mLeftBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+.field private mLeftTopBoxBitmap:Landroid/graphics/Bitmap;
+
 .field private final mMinRecognizeSize:I
 
 .field private mMoreIcon:Landroid/widget/ImageView;
@@ -127,6 +135,10 @@
 .field private final mQRcodeSettingCallBack:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;
 
 .field private final mResources:Landroid/content/res/Resources;
+
+.field private mRightBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+.field private mRightTopBoxBitmap:Landroid/graphics/Bitmap;
 
 .field private mRootView:Landroid/view/View;
 
@@ -165,15 +177,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$9_m6y5KxkSZ3xZUUz16Yl5P5-hs(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Landroid/graphics/Rect;)V
-    .registers 2
-
-    .line 0
-    invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->lambda$new$6(Landroid/graphics/Rect;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$K1azjH4_NJ4qqk5QvQZq2f1j9vU(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)V
     .registers 1
 
@@ -183,11 +186,11 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Pl4i25ZRmCQfQR9SHCdz7QbSoBU(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Ljava/lang/String;Ljava/lang/Object;)V
+.method public static synthetic $r8$lambda$RRC-RZPAx6IPFNmT0YqqFwn4-4o(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;ZLandroid/view/View;)V
     .registers 3
 
     .line 0
-    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->lambda$new$5(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->lambda$runViewAnim$5(ZLandroid/view/View;)V
 
     return-void
 .end method
@@ -210,11 +213,29 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$exg8UOny1fDdA49-NCPIhxlLWwQ(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 3
+
+    .line 0
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->lambda$new$6(Ljava/lang/String;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$gy8BPrUb3xjJbOddiQsa9AS7fPo(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Landroid/widget/FrameLayout$LayoutParams;Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
     .registers 4
 
     .line 0
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->lambda$updateSettingUILayout$3(Landroid/widget/FrameLayout$LayoutParams;Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$lUIJ8jYNz0JFzpcV4hHWA2awxBQ(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Landroid/graphics/Rect;)V
+    .registers 2
+
+    .line 0
+    invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->lambda$new$7(Landroid/graphics/Rect;)V
 
     return-void
 .end method
@@ -438,7 +459,7 @@
 .method static constructor <clinit>()V
     .registers 5
 
-    .line 130
+    .line 135
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "QRcodeUI"
@@ -447,7 +468,7 @@
 
     sput-object v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 132
+    .line 137
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const/high16 v1, 0x3e800000    # 0.25f
@@ -460,7 +481,7 @@
 
     sput-object v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
-    .line 133
+    .line 138
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v1, 0x3ea8f5c3    # 0.33f
@@ -477,38 +498,38 @@
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .registers 5
 
-    .line 249
+    .line 260
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;-><init>()V
 
-    .line 143
+    .line 148
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCenterPoint:Landroid/graphics/Point;
 
-    .line 144
+    .line 149
     new-instance v0, Landroid/graphics/Point;
 
     invoke-direct {v0}, Landroid/graphics/Point;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mInitialPoint:Landroid/graphics/Point;
 
-    .line 159
+    .line 164
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPreviewRect:Landroid/graphics/Rect;
 
-    .line 160
+    .line 165
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLastQRcodeRect:Landroid/graphics/Rect;
 
-    .line 161
+    .line 166
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
@@ -517,98 +538,98 @@
 
     const/4 v0, 0x0
 
-    .line 177
+    .line 182
     iput v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mOrientation:I
 
     const-wide/16 v1, 0x0
 
-    .line 178
+    .line 183
     iput-wide v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCLickToastTime:J
 
     const/4 v1, 0x0
 
-    .line 182
+    .line 187
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentCodeType:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
-    .line 183
+    .line 188
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsClickToast:Z
 
-    .line 184
+    .line 189
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsClickCancel:Z
 
-    .line 185
+    .line 190
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsShowBoxView:Z
 
     const/4 v2, 0x1
 
-    .line 186
+    .line 191
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsInitialLocation:Z
 
-    .line 187
+    .line 192
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAllowUpdateResult:Z
 
-    .line 188
+    .line 193
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsPopSettingOrZoomBarShow:Z
 
-    .line 189
+    .line 194
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsZoomUI3Show:Z
 
-    .line 190
+    .line 195
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsFilterUIShow:Z
 
-    .line 191
+    .line 196
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsImageStyleUIShow:Z
 
-    .line 192
+    .line 197
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsCelebritySceneUIShow:Z
 
-    .line 193
+    .line 198
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsCLickPopSettingUIBackIcon:Z
 
-    .line 194
+    .line 199
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAllowClickMoreIcon:Z
 
-    .line 196
+    .line 201
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsAutoMacroSwitchShowing:Z
 
-    .line 197
+    .line 202
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsSuperNightLiteSwitchShowing:Z
 
-    .line 198
+    .line 203
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsPause:Z
 
-    .line 1539
-    new-instance v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda6;
-
-    invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda6;-><init>(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
-
-    .line 1555
+    .line 1621
     new-instance v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda7;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda7;-><init>(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)V
 
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
+
+    .line 1637
+    new-instance v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda8;
+
+    invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda8;-><init>(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;)V
+
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIQrCodeToastCallback:Lcom/transsion/camera/ui/setting/qrcode/IQrCodeToastCallback;
 
-    .line 250
+    .line 261
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
-    .line 251
+    .line 262
     new-instance v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;-><init>(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI-IA;)V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mUIHandler:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
 
-    .line 252
+    .line 263
     new-instance v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;-><init>(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI-IA;)V
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mQRcodeSettingCallBack:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QRcodeSettingCallback;
 
-    .line 253
+    .line 264
     sget v0, Lcom/transsion/camera/R$dimen;->qrcode_min_recognize_size:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -617,7 +638,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMinRecognizeSize:I
 
-    .line 254
+    .line 265
     sget v0, Lcom/transsion/camera/R$dimen;->qrcode_pop_window_margin_right:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -626,7 +647,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopViewMarginRight:I
 
-    .line 255
+    .line 266
     sget v0, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_bottom_margin:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -635,7 +656,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIconMarginBottom:I
 
-    .line 256
+    .line 267
     sget v0, Lcom/transsion/camera/R$dimen;->qrcode_toast_layout_height:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -644,7 +665,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRootLayoutHeight:I
 
-    .line 257
+    .line 268
     sget v0, Lcom/transsion/camera/R$dimen;->qrcode_toast_layout_margin_bottom:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -653,7 +674,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRootLayoutMarginBottom:I
 
-    .line 258
+    .line 269
     sget v0, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_left:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -662,7 +683,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRootLayoutMarginLeft:I
 
-    .line 259
+    .line 270
     sget v0, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_right:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -671,7 +692,7 @@
 
     iput v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRootLayoutMarginRight:I
 
-    .line 260
+    .line 271
     sget v0, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_bottom_horizontal:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -686,7 +707,7 @@
 .method private connectWifi()V
     .registers 12
 
-    .line 1423
+    .line 1505
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.settings.panel.action.WIFI"
@@ -695,32 +716,32 @@
 
     const/high16 v1, 0x10000000
 
-    .line 1424
+    .line 1506
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1425
+    .line 1507
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/CameraUtil;->startActivity(Landroid/content/Context;Landroid/content/Intent;)Z
 
-    .line 1426
+    .line 1508
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     const-string v1, "wifi"
 
-    .line 1427
+    .line 1509
     invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 1428
+    .line 1510
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1429
+    .line 1511
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     const-string v2, "S:"
@@ -751,7 +772,7 @@
 
     move-result-object v1
 
-    .line 1430
+    .line 1512
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     const-string v3, "P:"
@@ -778,7 +799,7 @@
 
     move-result-object v2
 
-    .line 1431
+    .line 1513
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     const-string v5, "T:"
@@ -805,7 +826,7 @@
 
     move-result-object p0
 
-    .line 1432
+    .line 1514
     sget-object v3, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -836,12 +857,12 @@
 
     invoke-static {v3, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1434
+    .line 1516
     new-instance v5, Landroid/net/wifi/WifiConfiguration;
 
     invoke-direct {v5}, Landroid/net/wifi/WifiConfiguration;-><init>()V
 
-    .line 1435
+    .line 1517
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -860,7 +881,7 @@
 
     iput-object v6, v5, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
-    .line 1437
+    .line 1519
     invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
 
     move-result v6
@@ -873,14 +894,14 @@
 
     if-eqz v6, :cond_bc
 
-    .line 1438
+    .line 1520
     iget-object p0, v5, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
     invoke-virtual {p0, v10}, Ljava/util/BitSet;->set(I)V
 
     goto/16 :goto_136
 
-    .line 1440
+    .line 1522
     :cond_bc
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -956,7 +977,7 @@
     :goto_f1
     packed-switch v4, :pswitch_data_176
 
-    .line 1451
+    .line 1533
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -975,7 +996,7 @@
 
     return-void
 
-    .line 1443
+    .line 1525
     :pswitch_109
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -998,10 +1019,10 @@
     :pswitch_11e
     const/4 p0, 0x4
 
-    .line 1447
+    .line 1529
     invoke-virtual {v5, p0}, Landroid/net/wifi/WifiConfiguration;->setSecurityParams(I)V
 
-    .line 1448
+    .line 1530
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1018,7 +1039,7 @@
 
     iput-object p0, v5, Landroid/net/wifi/WifiConfiguration;->preSharedKey:Ljava/lang/String;
 
-    .line 1459
+    .line 1541
     :goto_136
     invoke-virtual {v0, v5}, Landroid/net/wifi/WifiManager;->addNetwork(Landroid/net/wifi/WifiConfiguration;)I
 
@@ -1026,14 +1047,14 @@
 
     if-ne p0, v9, :cond_142
 
-    .line 1461
+    .line 1543
     const-string p0, "Failed to add network configuration!"
 
     invoke-static {v3, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1465
+    .line 1547
     :cond_142
     invoke-virtual {v0, p0, v8}, Landroid/net/wifi/WifiManager;->enableNetwork(IZ)Z
 
@@ -1041,14 +1062,14 @@
 
     if-nez p0, :cond_14e
 
-    .line 1467
+    .line 1549
     const-string p0, "Failed to enable network!"
 
     invoke-static {v3, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 1469
+    .line 1551
     :cond_14e
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -1090,34 +1111,34 @@
 .method private createContact(Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
 
-    .line 1414
+    .line 1496
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.INSERT"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1415
+    .line 1497
     const-string v1, "vnd.android.cursor.dir/contact"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1416
+    .line 1498
     const-string v1, "name"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1417
+    .line 1499
     const-string p1, "phone"
 
     invoke-virtual {v0, p1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     const/high16 p1, 0x10000000
 
-    .line 1418
+    .line 1500
     invoke-virtual {v0, p1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1419
+    .line 1501
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
@@ -1128,16 +1149,16 @@
 .method private doQrcodeViewCLose()V
     .registers 1
 
-    .line 1262
+    .line 1340
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hideIcon()V
 
-    .line 1263
+    .line 1341
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hideToast()V
 
-    .line 1264
+    .line 1342
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hideBoxView()V
 
-    .line 1265
+    .line 1343
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hidePopWindow()V
 
     return-void
@@ -1146,7 +1167,7 @@
 .method private getMarginOffsetInExpandForm()I
     .registers 3
 
-    .line 823
+    .line 901
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsAutoMacroSwitchShowing:Z
 
     if-eqz v0, :cond_13
@@ -1155,7 +1176,7 @@
 
     if-eqz v1, :cond_13
 
-    .line 824
+    .line 902
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_expand_margin_offset:I
@@ -1171,7 +1192,7 @@
     :cond_13
     if-nez v0, :cond_1c
 
-    .line 826
+    .line 904
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsSuperNightLiteSwitchShowing:Z
 
     if-eqz v0, :cond_1a
@@ -1183,7 +1204,7 @@
 
     return p0
 
-    .line 827
+    .line 905
     :cond_1c
     :goto_1c
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
@@ -1200,7 +1221,7 @@
 .method private getMarginOffsetInHoverForm()I
     .registers 3
 
-    .line 813
+    .line 891
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsAutoMacroSwitchShowing:Z
 
     if-eqz v0, :cond_13
@@ -1209,7 +1230,7 @@
 
     if-eqz v1, :cond_13
 
-    .line 814
+    .line 892
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v0, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_hover_margin_offset:I
@@ -1225,7 +1246,7 @@
     :cond_13
     if-nez v0, :cond_1c
 
-    .line 816
+    .line 894
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsSuperNightLiteSwitchShowing:Z
 
     if-eqz v0, :cond_1a
@@ -1237,7 +1258,7 @@
 
     return p0
 
-    .line 817
+    .line 895
     :cond_1c
     :goto_1c
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
@@ -1254,14 +1275,14 @@
 .method private getResultType(Ljava/lang/String;)Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
     .registers 7
 
-    .line 1319
+    .line 1401
     const-string v0, ":"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1320
+    .line 1402
     const-string v1, "https://"
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -1280,7 +1301,7 @@
 
     goto :goto_80
 
-    .line 1322
+    .line 1404
     :cond_17
     const-string v1, "MT:[A-Z0-9.-]{19,}"
 
@@ -1290,7 +1311,7 @@
 
     if-eqz v1, :cond_22
 
-    .line 1323
+    .line 1405
     sget-object p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->MATTER:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     return-object p0
@@ -1298,7 +1319,7 @@
     :cond_22
     const/4 v1, 0x0
 
-    .line 1324
+    .line 1406
     aget-object v2, v0, v1
 
     const-string v3, "smsto"
@@ -1309,12 +1330,12 @@
 
     if-eqz v2, :cond_30
 
-    .line 1325
+    .line 1407
     sget-object p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->SMS:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     return-object p0
 
-    .line 1326
+    .line 1408
     :cond_30
     aget-object v2, v0, v1
 
@@ -1326,12 +1347,12 @@
 
     if-eqz v2, :cond_3d
 
-    .line 1327
+    .line 1409
     sget-object p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->WIFI:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     return-object p0
 
-    .line 1328
+    .line 1410
     :cond_3d
     aget-object v2, v0, v1
 
@@ -1343,12 +1364,12 @@
 
     if-eqz v2, :cond_4a
 
-    .line 1329
+    .line 1411
     sget-object p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->TEL:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     return-object p0
 
-    .line 1330
+    .line 1412
     :cond_4a
     aget-object v2, v0, v1
 
@@ -1360,12 +1381,12 @@
 
     if-eqz v2, :cond_57
 
-    .line 1331
+    .line 1413
     sget-object p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->FIDO:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     return-object p0
 
-    .line 1332
+    .line 1414
     :cond_57
     aget-object v0, v0, v1
 
@@ -1377,12 +1398,12 @@
 
     if-eqz v0, :cond_7d
 
-    .line 1333
+    .line 1415
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->getVcardInfo(Ljava/lang/String;)Ljava/util/HashMap;
 
     move-result-object p0
 
-    .line 1334
+    .line 1416
     const-string p1, "name"
 
     invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1391,7 +1412,7 @@
 
     check-cast p1, Ljava/lang/String;
 
-    .line 1335
+    .line 1417
     invoke-virtual {p0, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -1402,24 +1423,24 @@
 
     if-eqz p0, :cond_7a
 
-    .line 1337
+    .line 1419
     sget-object p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->VCARD:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     return-object p0
 
-    .line 1339
+    .line 1421
     :cond_7a
     sget-object p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->TEXT:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     return-object p0
 
-    .line 1342
+    .line 1424
     :cond_7d
     sget-object p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->TEXT:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     return-object p0
 
-    .line 1321
+    .line 1403
     :cond_80
     :goto_80
     sget-object p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->URI:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
@@ -1441,12 +1462,12 @@
         }
     .end annotation
 
-    .line 1347
+    .line 1429
     new-instance p0, Ljava/util/HashMap;
 
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 1350
+    .line 1432
     const-string v0, "N:"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -1459,7 +1480,7 @@
 
     if-eqz v1, :cond_25
 
-    .line 1351
+    .line 1433
     invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v1
@@ -1485,7 +1506,7 @@
     :cond_25
     move-object v0, v3
 
-    .line 1353
+    .line 1435
     :goto_26
     const-string v1, "TEL:"
 
@@ -1495,7 +1516,7 @@
 
     if-eqz v4, :cond_42
 
-    .line 1354
+    .line 1436
     invoke-virtual {p1, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v3
@@ -1516,13 +1537,13 @@
 
     move-result-object v3
 
-    .line 1356
+    .line 1438
     :cond_42
     const-string p1, "name"
 
     invoke-virtual {p0, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1357
+    .line 1439
     const-string p1, "tel"
 
     invoke-virtual {p0, p1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1541,7 +1562,7 @@
         }
     .end annotation
 
-    .line 869
+    .line 947
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPreviewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
@@ -1554,7 +1575,7 @@
 
     return p0
 
-    .line 874
+    .line 952
     :cond_a
     new-instance v0, Ljava/util/ArrayList;
 
@@ -1564,7 +1585,7 @@
 
     move v2, v1
 
-    .line 875
+    .line 953
     :goto_11
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -1572,7 +1593,7 @@
 
     if-ge v2, v3, :cond_53
 
-    .line 876
+    .line 954
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1583,12 +1604,12 @@
 
     move-result-object v3
 
-    .line 877
+    .line 955
     invoke-virtual {v3}, Landroid/graphics/Rect;->centerX()I
 
     move-result v4
 
-    .line 878
+    .line 956
     invoke-virtual {v3}, Landroid/graphics/Rect;->centerY()I
 
     move-result v3
@@ -1599,7 +1620,7 @@
 
     add-int/2addr v3, v5
 
-    .line 879
+    .line 957
     iget-object v5, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCenterPoint:Landroid/graphics/Point;
 
     iget v5, v5, Landroid/graphics/Point;->x:I
@@ -1642,7 +1663,7 @@
 
     goto :goto_11
 
-    .line 882
+    .line 960
     :cond_53
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1656,7 +1677,7 @@
 
     move p0, v1
 
-    .line 883
+    .line 961
     :goto_5e
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1664,7 +1685,7 @@
 
     if-ge v1, v4, :cond_e9
 
-    .line 884
+    .line 962
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -1683,7 +1704,7 @@
 
     if-gtz v4, :cond_81
 
-    .line 885
+    .line 963
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -1699,7 +1720,7 @@
 
     goto :goto_e5
 
-    .line 887
+    .line 965
     :cond_81
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1731,7 +1752,7 @@
 
     if-gtz v4, :cond_e5
 
-    .line 888
+    .line 966
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -1762,7 +1783,7 @@
 
     if-lt v4, v5, :cond_e5
 
-    .line 889
+    .line 967
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -1793,7 +1814,7 @@
 
     if-lt v4, v5, :cond_e5
 
-    .line 890
+    .line 968
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -1819,7 +1840,7 @@
 .method private hideBoxView()V
     .registers 3
 
-    .line 1109
+    .line 1187
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mBoxView:Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;
 
     if-eqz v0, :cond_1c
@@ -1832,24 +1853,24 @@
 
     const/4 v0, 0x0
 
-    .line 1110
+    .line 1188
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsShowBoxView:Z
 
-    .line 1111
+    .line 1189
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mBoxView:Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1112
+    .line 1190
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz p0, :cond_1c
 
     const/16 v0, 0x108
 
-    .line 1113
+    .line 1191
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     :cond_1c
@@ -1859,12 +1880,12 @@
 .method private hideIcon()V
     .registers 3
 
-    .line 1147
+    .line 1225
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_29
 
-    .line 1148
+    .line 1226
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -1873,24 +1894,24 @@
 
     const/4 v0, 0x0
 
-    .line 1149
+    .line 1227
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->runViewAnim(ZLandroid/view/View;)V
 
-    .line 1150
+    .line 1228
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz p0, :cond_29
 
     const/16 v0, 0x116
 
-    .line 1151
+    .line 1229
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     return-void
 
-    .line 1154
+    .line 1232
     :cond_1a
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
@@ -1900,7 +1921,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1155
+    .line 1233
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     const/4 v0, 0x4
@@ -1914,7 +1935,7 @@
 .method private hidePopWindow()V
     .registers 2
 
-    .line 1255
+    .line 1333
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
@@ -1925,7 +1946,7 @@
 
     return-void
 
-    .line 1258
+    .line 1336
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
@@ -1937,7 +1958,7 @@
 .method private hideToast()V
     .registers 3
 
-    .line 1128
+    .line 1206
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-eqz v0, :cond_19
@@ -1950,19 +1971,19 @@
 
     const/4 v0, 0x0
 
-    .line 1129
+    .line 1207
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->runViewAnim(ZLandroid/view/View;)V
 
-    .line 1130
+    .line 1208
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz p0, :cond_19
 
     const/16 v0, 0x16e
 
-    .line 1131
+    .line 1209
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     :cond_19
@@ -1972,7 +1993,7 @@
 .method private initPopupWindow()V
     .registers 4
 
-    .line 291
+    .line 319
     new-instance v0, Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
@@ -1985,15 +2006,15 @@
 
     const/4 v1, 0x1
 
-    .line 292
+    .line 320
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setTouchable(Z)V
 
-    .line 293
+    .line 321
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 294
+    .line 322
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
@@ -2004,7 +2025,7 @@
 
     if-eqz v1, :cond_26
 
-    .line 295
+    .line 323
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     sget v2, Lcom/transsion/camera/R$drawable;->qrcode_pop_corners_dark:I
@@ -2023,18 +2044,18 @@
 
     goto :goto_21
 
-    .line 294
+    .line 322
     :goto_2b
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 296
+    .line 324
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     sget v1, Lcom/transsion/camera/R$style;->qrcode_pop_window_anim_style:I
 
     invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 297
+    .line 325
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     new-instance v1, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda0;
@@ -2054,7 +2075,7 @@
         }
     .end annotation
 
-    .line 1363
+    .line 1445
     sget-object v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2073,7 +2094,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1364
+    .line 1446
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result p1
@@ -2110,7 +2131,7 @@
 
     if-eq p1, v2, :cond_f2
 
-    .line 1406
+    .line 1488
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     const-string v0, "clipboard"
@@ -2121,7 +2142,7 @@
 
     check-cast p1, Landroid/content/ClipboardManager;
 
-    .line 1407
+    .line 1489
     const-string v0, "text"
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
@@ -2130,12 +2151,12 @@
 
     move-result-object p0
 
-    .line 1408
+    .line 1490
     invoke-virtual {p1, p0}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
 
     return-void
 
-    .line 1398
+    .line 1480
     :cond_4a
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
@@ -2143,7 +2164,7 @@
 
     move-result-object p1
 
-    .line 1399
+    .line 1481
     const-string v0, "name"
 
     invoke-virtual {p1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2152,7 +2173,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 1400
+    .line 1482
     const-string v1, "tel"
 
     invoke-virtual {p1, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2165,19 +2186,19 @@
 
     if-eqz p1, :cond_67
 
-    .line 1402
+    .line 1484
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->createContact(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_67
     return-void
 
-    .line 1395
+    .line 1477
     :cond_68
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->connectWifi()V
 
     return-void
 
-    .line 1381
+    .line 1463
     :cond_6c
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
@@ -2185,14 +2206,14 @@
 
     move-result-object p1
 
-    .line 1382
+    .line 1464
     new-instance v0, Landroid/content/Intent;
 
     const-string v3, "android.intent.action.DIAL"
 
     invoke-direct {v0, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1383
+    .line 1465
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2225,17 +2246,17 @@
 
     invoke-virtual {v0, p1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 1384
+    .line 1466
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1385
+    .line 1467
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/CameraUtil;->startActivity(Landroid/content/Context;Landroid/content/Intent;)Z
 
     return-void
 
-    .line 1373
+    .line 1455
     :cond_a2
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
@@ -2243,7 +2264,7 @@
 
     move-result-object p1
 
-    .line 1374
+    .line 1456
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2264,37 +2285,37 @@
 
     move-result-object v0
 
-    .line 1375
+    .line 1457
     new-instance v2, Landroid/content/Intent;
 
     const-string v3, "android.intent.action.SENDTO"
 
     invoke-direct {v2, v3, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 1376
+    .line 1458
     const-string v0, "sms_body"
 
     aget-object p1, p1, v4
 
     invoke-virtual {v2, v0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1377
+    .line 1459
     invoke-virtual {v2, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1378
+    .line 1460
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-static {p0, v2}, Lcom/transsion/camera/utils/CameraUtil;->startActivity(Landroid/content/Context;Landroid/content/Intent;)Z
 
     return-void
 
-    .line 1388
+    .line 1470
     :cond_d6
     new-instance p1, Landroid/content/Intent;
 
     invoke-direct {p1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1389
+    .line 1471
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -2303,28 +2324,28 @@
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 1390
+    .line 1472
     const-string v0, "com.google.android.gms"
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1391
+    .line 1473
     invoke-virtual {p1, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1392
+    .line 1474
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/CameraUtil;->startActivity(Landroid/content/Context;Landroid/content/Intent;)Z
 
     return-void
 
-    .line 1367
+    .line 1449
     :cond_f2
     new-instance p1, Landroid/content/Intent;
 
     invoke-direct {p1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1368
+    .line 1450
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -2333,10 +2354,10 @@
 
     invoke-virtual {p1, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 1369
+    .line 1451
     invoke-virtual {p1, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1370
+    .line 1452
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/CameraUtil;->startActivity(Landroid/content/Context;Landroid/content/Intent;)Z
@@ -2347,7 +2368,7 @@
 .method private isExceedMinRecognizeSize(Landroid/graphics/Rect;)Z
     .registers 4
 
-    .line 865
+    .line 943
     invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
     move-result v0
@@ -2379,7 +2400,7 @@
 
     sub-int/2addr p4, p2
 
-    .line 286
+    .line 314
     invoke-direct {p0, p4}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopWindowContent(I)V
 
     return-void
@@ -2390,7 +2411,7 @@
 
     const/4 v0, 0x1
 
-    .line 304
+    .line 332
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAllowClickMoreIcon:Z
 
     return-void
@@ -2399,17 +2420,17 @@
 .method private synthetic lambda$initPopupWindow$2()V
     .registers 5
 
-    .line 298
+    .line 326
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mUIHandler:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
 
     if-eqz v0, :cond_10
 
     const/16 v1, 0x67
 
-    .line 299
+    .line 327
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 300
+    .line 328
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mUIHandler:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
 
     const-wide/16 v2, 0x3e8
@@ -2419,15 +2440,15 @@
     :cond_10
     const/4 v0, 0x0
 
-    .line 302
+    .line 330
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAllowClickMoreIcon:Z
 
-    .line 303
+    .line 331
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     check-cast v0, Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 304
+    .line 332
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUI;->getMainHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -2443,10 +2464,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$new$5(Ljava/lang/String;Ljava/lang/Object;)V
+.method private synthetic lambda$new$6(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 5
 
-    .line 1540
+    .line 1622
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -2512,24 +2533,24 @@
 
     return-void
 
-    .line 1548
+    .line 1630
     :pswitch_31
     invoke-virtual {p0, v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updateSettingUILayout(Z)V
 
     return-void
 
-    .line 1543
+    .line 1625
     :pswitch_35
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->doQrcodeViewCLose()V
 
     const/4 p1, 0x0
 
-    .line 1544
+    .line 1626
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLastResult:Ljava/lang/String;
 
-    .line 1545
+    .line 1627
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentCodeType:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     return-void
@@ -2549,10 +2570,10 @@
     .end packed-switch
 .end method
 
-.method private synthetic lambda$new$6(Landroid/graphics/Rect;)V
+.method private synthetic lambda$new$7(Landroid/graphics/Rect;)V
     .registers 2
 
-    .line 1556
+    .line 1638
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsClickCancel:Z
 
     if-nez p1, :cond_f
@@ -2565,10 +2586,10 @@
 
     if-nez p1, :cond_f
 
-    .line 1557
+    .line 1639
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->showToast()V
 
-    .line 1559
+    .line 1641
     :cond_f
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsFilterUIShow:Z
 
@@ -2586,17 +2607,26 @@
 
     if-nez p1, :cond_22
 
-    .line 1560
+    .line 1642
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->showIcon()V
 
     :cond_22
     return-void
 .end method
 
+.method private synthetic lambda$runViewAnim$5(ZLandroid/view/View;)V
+    .registers 3
+
+    .line 1351
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->runViewAnim(ZLandroid/view/View;)V
+
+    return-void
+.end method
+
 .method private synthetic lambda$updateSettingUILayout$3(Landroid/widget/FrameLayout$LayoutParams;Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
     .registers 5
 
-    .line 777
+    .line 855
     const-string v0, "iconProperty"
 
     invoke-virtual {p3, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -2611,7 +2641,7 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 778
+    .line 856
     const-string v0, "toastProperty"
 
     invoke-virtual {p3, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -2626,17 +2656,17 @@
 
     iput p3, p2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 779
+    .line 857
     iget-object p3, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p3, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 780
+    .line 858
     iget-object p3, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p3, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 781
+    .line 859
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget p3, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopViewMarginRight:I
@@ -2647,7 +2677,7 @@
 
     add-int/2addr v0, p1
 
-    .line 782
+    .line 860
     invoke-virtual {p2}, Landroid/widget/PopupWindow;->getWidth()I
 
     move-result p1
@@ -2658,7 +2688,7 @@
 
     move-result p0
 
-    .line 781
+    .line 859
     invoke-virtual {p2, p3, v0, p1, p0}, Landroid/widget/PopupWindow;->update(IIII)V
 
     return-void
@@ -2667,7 +2697,7 @@
 .method private synthetic lambda$updateSettingUILayout$4(Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
     .registers 4
 
-    .line 796
+    .line 874
     const-string v0, "iconLeftMargin"
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -2682,7 +2712,7 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 797
+    .line 875
     const-string v0, "iconRightMargin"
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -2697,7 +2727,7 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 798
+    .line 876
     const-string v0, "iconTopMargin"
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -2712,7 +2742,7 @@
 
     iput v0, p1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 799
+    .line 877
     const-string v0, "iconBottomMargin"
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -2727,7 +2757,7 @@
 
     iput p2, p1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 800
+    .line 878
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -2735,43 +2765,133 @@
     return-void
 .end method
 
+.method private loadBoxBitmap()V
+    .registers 4
+
+    .line 337
+    const-string v0, "loadBoxBitmap"
+
+    invoke-static {v0}, Lcom/transsion/camera/utils/debug/TraceUtil;->begin(Ljava/lang/String;)V
+
+    .line 338
+    sget-object v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "loadBoxBitmap  mLeftTopBoxBitmap ="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLeftTopBoxBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 339
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLeftTopBoxBitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_2d
+
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRightTopBoxBitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_2d
+
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLeftBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_2d
+
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRightBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+    if-nez v0, :cond_4d
+
+    .line 340
+    :cond_2d
+    sget v0, Lcom/transsion/camera/R$drawable;->ic_qrcode_left_top:I
+
+    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->vectorDrawableToBitmap(I)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLeftTopBoxBitmap:Landroid/graphics/Bitmap;
+
+    .line 341
+    sget v0, Lcom/transsion/camera/R$drawable;->ic_qrcode_right_top:I
+
+    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->vectorDrawableToBitmap(I)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRightTopBoxBitmap:Landroid/graphics/Bitmap;
+
+    .line 342
+    sget v0, Lcom/transsion/camera/R$drawable;->ic_qrcode_left_bottom:I
+
+    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->vectorDrawableToBitmap(I)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLeftBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+    .line 343
+    sget v0, Lcom/transsion/camera/R$drawable;->ic_qrcode_right_bottom:I
+
+    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->vectorDrawableToBitmap(I)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRightBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+    .line 345
+    :cond_4d
+    invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
+
+    return-void
+.end method
+
 .method private onClicks(Landroid/view/View;)V
     .registers 4
 
-    .line 1290
+    .line 1372
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result p1
 
-    .line 1291
+    .line 1373
     sget v0, Lcom/transsion/camera/R$id;->qrcode_toast_cancel:I
 
     const/4 v1, 0x1
 
     if-ne p1, v0, :cond_f
 
-    .line 1292
+    .line 1374
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsClickCancel:Z
 
-    .line 1293
+    .line 1375
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hideToast()V
 
     return-void
 
-    .line 1294
+    .line 1376
     :cond_f
     sget v0, Lcom/transsion/camera/R$id;->qrcode_more_icon:I
 
     if-ne p1, v0, :cond_3b
 
-    .line 1295
+    .line 1377
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAllowClickMoreIcon:Z
 
     if-nez p1, :cond_18
 
     goto :goto_7c
 
-    .line 1298
+    .line 1380
     :cond_18
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentCodeType:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
@@ -2795,7 +2915,7 @@
 
     goto :goto_37
 
-    .line 1301
+    .line 1383
     :cond_2d
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
@@ -2807,20 +2927,20 @@
 
     return-void
 
-    .line 1299
+    .line 1381
     :cond_37
     :goto_37
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->showOrHidePopupWindow()V
 
     return-void
 
-    .line 1303
+    .line 1385
     :cond_3b
     sget v0, Lcom/transsion/camera/R$id;->qrcode_toast_text_view:I
 
     if-ne p1, v0, :cond_5f
 
-    .line 1304
+    .line 1386
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->getResultType(Ljava/lang/String;)Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
@@ -2829,7 +2949,7 @@
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->intentFC(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;)V
 
-    .line 1305
+    .line 1387
     sget-object p1, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->TEXT:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
@@ -2844,10 +2964,10 @@
 
     if-eqz p1, :cond_7c
 
-    .line 1306
+    .line 1388
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsClickToast:Z
 
-    .line 1307
+    .line 1389
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -2856,36 +2976,36 @@
 
     return-void
 
-    .line 1309
+    .line 1391
     :cond_5f
     sget v0, Lcom/transsion/camera/R$id;->qrcode_pop_btn_fcf:I
 
     if-ne p1, v0, :cond_6e
 
-    .line 1310
+    .line 1392
     sget-object p1, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->TEXT:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->intentFC(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;)V
 
-    .line 1311
+    .line 1393
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->dismiss()V
 
     return-void
 
-    .line 1312
+    .line 1394
     :cond_6e
     sget v0, Lcom/transsion/camera/R$id;->qrcode_pop_btn_fcs:I
 
     if-ne p1, v0, :cond_7c
 
-    .line 1313
+    .line 1395
     sget-object p1, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->URI:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->intentFC(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;)V
 
-    .line 1314
+    .line 1396
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->dismiss()V
@@ -2898,12 +3018,12 @@
 .method private resetBoxViewRect()V
     .registers 1
 
-    .line 1094
+    .line 1172
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mBoxView:Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;
 
     if-eqz p0, :cond_7
 
-    .line 1095
+    .line 1173
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->resetRect()V
 
     :cond_7
@@ -2913,7 +3033,7 @@
 .method private resetLastQrcodeInfo()V
     .registers 2
 
-    .line 1100
+    .line 1178
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLastQRcodeRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
@@ -2922,12 +3042,12 @@
 
     if-nez v0, :cond_d
 
-    .line 1101
+    .line 1179
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLastQRcodeRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 1103
+    .line 1181
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLastResult:Ljava/lang/String;
 
@@ -2935,7 +3055,7 @@
 
     const/4 v0, 0x0
 
-    .line 1104
+    .line 1182
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLastResult:Ljava/lang/String;
 
     :cond_14
@@ -2949,18 +3069,41 @@
 
     return-void
 
+    .line 1350
     :cond_3
-    if-eqz p1, :cond_8
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    if-eq v0, v1, :cond_18
+
+    .line 1351
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mUIHandler:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
+
+    new-instance v1, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda6;
+
+    invoke-direct {v1, p0, p1, p2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda6;-><init>(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;ZLandroid/view/View;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+
+    :cond_18
+    if-eqz p1, :cond_1d
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    goto :goto_9
+    goto :goto_1e
 
-    :cond_8
+    :cond_1d
     const/4 v0, 0x0
 
-    .line 1273
-    :goto_9
+    .line 1355
+    :goto_1e
     invoke-virtual {p2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
@@ -2977,7 +3120,7 @@
 
     sget-object v1, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->ANIMATOR_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
-    .line 1274
+    .line 1356
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -2986,12 +3129,12 @@
 
     invoke-direct {v1, p0, p2, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$1;-><init>(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Landroid/view/View;Z)V
 
-    .line 1275
+    .line 1357
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
-    .line 1286
+    .line 1368
     invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->start()V
 
     return-void
@@ -3000,7 +3143,7 @@
 .method private showIcon()V
     .registers 4
 
-    .line 1137
+    .line 1215
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_36
@@ -3015,14 +3158,14 @@
 
     if-nez v0, :cond_36
 
-    .line 1138
+    .line 1216
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     const/4 v1, 0x1
 
     invoke-direct {p0, v1, v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->runViewAnim(ZLandroid/view/View;)V
 
-    .line 1139
+    .line 1217
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentCodeType:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     sget-object v2, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->TEXT:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
@@ -3052,14 +3195,14 @@
     :goto_2a
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updateIconState(Z)V
 
-    .line 1140
+    .line 1218
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz p0, :cond_36
 
     const/16 v0, 0x115
 
-    .line 1141
+    .line 1219
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     :cond_36
@@ -3069,21 +3212,21 @@
 .method private showOrHidePopupWindow()V
     .registers 7
 
-    .line 1170
+    .line 1248
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 1173
+    .line 1251
     :cond_5
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopView()V
 
-    .line 1174
+    .line 1252
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopWindowBtn()V
 
-    .line 1175
+    .line 1253
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
@@ -3092,14 +3235,14 @@
 
     if-eqz v0, :cond_19
 
-    .line 1176
+    .line 1254
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->dismiss()V
 
     return-void
 
-    .line 1178
+    .line 1256
     :cond_19
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mUIHandler:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
 
@@ -3107,16 +3250,16 @@
 
     const/16 v1, 0x67
 
-    .line 1179
+    .line 1257
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1181
+    .line 1259
     :cond_22
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopWindowResult(Ljava/lang/String;)V
 
-    .line 1182
+    .line 1260
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/4 v1, 0x4
@@ -3125,7 +3268,7 @@
 
     if-ne v0, v1, :cond_4d
 
-    .line 1183
+    .line 1261
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_left_hover_bottom_margin:I
@@ -3134,7 +3277,7 @@
 
     move-result v0
 
-    .line 1184
+    .line 1262
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_left_hover_right_margin:I
@@ -3143,21 +3286,21 @@
 
     move-result v1
 
-    .line 1185
+    .line 1263
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
-    .line 1186
+    .line 1264
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result p0
 
     add-int/2addr v1, p0
 
-    .line 1185
+    .line 1263
     invoke-virtual {v3, v4, v2, v1, v0}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     return-void
@@ -3169,7 +3312,7 @@
 
     if-ne v0, v1, :cond_71
 
-    .line 1188
+    .line 1266
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_right_hover_top_margin:I
@@ -3178,7 +3321,7 @@
 
     move-result v0
 
-    .line 1189
+    .line 1267
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v2, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_right_hover_left_margin:I
@@ -3187,21 +3330,21 @@
 
     move-result v1
 
-    .line 1190
+    .line 1268
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
-    .line 1191
+    .line 1269
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result p0
 
     add-int/2addr v1, p0
 
-    .line 1190
+    .line 1268
     invoke-virtual {v2, v4, v3, v1, v0}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     return-void
@@ -3211,7 +3354,7 @@
 
     if-ne v0, v1, :cond_102
 
-    .line 1194
+    .line 1272
     iget v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mOrientation:I
 
     const/16 v1, 0x5a
@@ -3226,7 +3369,7 @@
 
     if-eq v0, v1, :cond_a3
 
-    .line 1216
+    .line 1294
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_left_expand_0_180:I
@@ -3235,7 +3378,7 @@
 
     move-result v0
 
-    .line 1217
+    .line 1295
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v2, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_bottom_expand_0_180:I
@@ -3244,14 +3387,14 @@
 
     move-result v1
 
-    .line 1218
+    .line 1296
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
-    .line 1219
+    .line 1297
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result p0
@@ -3260,12 +3403,12 @@
 
     const/16 p0, 0x53
 
-    .line 1218
+    .line 1296
     invoke-virtual {v2, v3, p0, v0, v1}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     return-void
 
-    .line 1208
+    .line 1286
     :cond_a3
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
@@ -3275,7 +3418,7 @@
 
     move-result v0
 
-    .line 1209
+    .line 1287
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v2, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_left_expand_90_270:I
@@ -3284,26 +3427,26 @@
 
     move-result v1
 
-    .line 1210
+    .line 1288
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
-    .line 1211
+    .line 1289
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result p0
 
     add-int/2addr v0, p0
 
-    .line 1210
+    .line 1288
     invoke-virtual {v2, v4, v3, v0, v1}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     return-void
 
-    .line 1202
+    .line 1280
     :cond_c2
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
@@ -3313,7 +3456,7 @@
 
     move-result v0
 
-    .line 1203
+    .line 1281
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v2, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_bottom_expand_0_180:I
@@ -3322,14 +3465,14 @@
 
     move-result v1
 
-    .line 1204
+    .line 1282
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
-    .line 1205
+    .line 1283
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result p0
@@ -3338,12 +3481,12 @@
 
     const/16 p0, 0x35
 
-    .line 1204
+    .line 1282
     invoke-virtual {v2, v3, p0, v0, v1}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     return-void
 
-    .line 1196
+    .line 1274
     :cond_e3
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
@@ -3353,7 +3496,7 @@
 
     move-result v0
 
-    .line 1197
+    .line 1275
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v3, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_left_expand_90_270:I
@@ -3362,26 +3505,26 @@
 
     move-result v1
 
-    .line 1198
+    .line 1276
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
-    .line 1199
+    .line 1277
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result p0
 
     add-int/2addr v0, p0
 
-    .line 1198
+    .line 1276
     invoke-virtual {v3, v4, v2, v0, v1}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     return-void
 
-    .line 1223
+    .line 1301
     :cond_102
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
@@ -3391,7 +3534,7 @@
 
     iget-object v4, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
-    .line 1224
+    .line 1302
     invoke-interface {v4}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
 
     move-result v4
@@ -3408,7 +3551,7 @@
 
     add-int/2addr v4, p0
 
-    .line 1223
+    .line 1301
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     return-void
@@ -3417,7 +3560,7 @@
 .method private showToast()V
     .registers 3
 
-    .line 1119
+    .line 1197
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-eqz v0, :cond_19
@@ -3430,29 +3573,85 @@
 
     const/4 v0, 0x1
 
-    .line 1120
+    .line 1198
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->runViewAnim(ZLandroid/view/View;)V
 
-    .line 1121
+    .line 1199
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz p0, :cond_19
 
     const/16 v0, 0x16d
 
-    .line 1122
+    .line 1200
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     :cond_19
     return-void
 .end method
 
+.method private unInitBoxBitmap()V
+    .registers 3
+
+    .line 348
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLeftTopBoxBitmap:Landroid/graphics/Bitmap;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_a
+
+    .line 349
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 350
+    iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLeftTopBoxBitmap:Landroid/graphics/Bitmap;
+
+    .line 352
+    :cond_a
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRightTopBoxBitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_13
+
+    .line 353
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 354
+    iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRightTopBoxBitmap:Landroid/graphics/Bitmap;
+
+    .line 356
+    :cond_13
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLeftBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_1c
+
+    .line 357
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 358
+    iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLeftBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+    .line 360
+    :cond_1c
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRightBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_25
+
+    .line 361
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 362
+    iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRightBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+    :cond_25
+    return-void
+.end method
+
 .method private updateBoxViewRect(Landroid/graphics/Rect;Landroid/graphics/Point;)V
     .registers 7
 
-    .line 1072
+    .line 1150
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPreviewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
@@ -3465,7 +3664,7 @@
 
     goto :goto_7c
 
-    .line 1075
+    .line 1153
     :cond_b
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPreviewRect:Landroid/graphics/Rect;
 
@@ -3487,7 +3686,7 @@
 
     if-eq v0, v1, :cond_5b
 
-    .line 1076
+    .line 1154
     :cond_1f
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPreviewRect:Landroid/graphics/Rect;
 
@@ -3503,7 +3702,7 @@
 
     div-float/2addr v0, v1
 
-    .line 1077
+    .line 1155
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPreviewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
@@ -3518,7 +3717,7 @@
 
     div-float/2addr v1, p2
 
-    .line 1078
+    .line 1156
     iget p2, p1, Landroid/graphics/Rect;->left:I
 
     int-to-float p2, p2
@@ -3537,7 +3736,7 @@
 
     iput p2, p1, Landroid/graphics/Rect;->left:I
 
-    .line 1079
+    .line 1157
     iget p2, p1, Landroid/graphics/Rect;->top:I
 
     int-to-float p2, p2
@@ -3548,7 +3747,7 @@
 
     iput p2, p1, Landroid/graphics/Rect;->top:I
 
-    .line 1080
+    .line 1158
     iget p2, p1, Landroid/graphics/Rect;->right:I
 
     int-to-float p2, p2
@@ -3565,7 +3764,7 @@
 
     iput p2, p1, Landroid/graphics/Rect;->right:I
 
-    .line 1081
+    .line 1159
     iget p2, p1, Landroid/graphics/Rect;->bottom:I
 
     int-to-float p2, p2
@@ -3576,7 +3775,7 @@
 
     iput p2, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 1083
+    .line 1161
     :cond_5b
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mBoxView:Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;
 
@@ -3588,27 +3787,27 @@
 
     const/4 p2, 0x1
 
-    .line 1084
+    .line 1162
     iput-boolean p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsShowBoxView:Z
 
-    .line 1085
+    .line 1163
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mBoxView:Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1086
+    .line 1164
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     if-eqz p2, :cond_75
 
     const/16 v0, 0x107
 
-    .line 1087
+    .line 1165
     invoke-interface {p2, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 1090
+    .line 1168
     :cond_75
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mBoxView:Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;
 
@@ -3626,7 +3825,7 @@
 
     if-eqz p1, :cond_a
 
-    .line 1162
+    .line 1240
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     sget p1, Lcom/transsion/camera/R$drawable;->ic_qrcode_more_active:I
@@ -3635,13 +3834,13 @@
 
     return-void
 
-    .line 1164
+    .line 1242
     :cond_a
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {p1}, Landroid/widget/PopupWindow;->dismiss()V
 
-    .line 1165
+    .line 1243
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     sget p1, Lcom/transsion/camera/R$drawable;->ic_qrcode_more_inactive:I
@@ -3654,29 +3853,29 @@
 .method private updatePopSettingUIState(Z)V
     .registers 3
 
-    .line 1530
+    .line 1612
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsPopSettingOrZoomBarShow:Z
 
     if-eqz p1, :cond_17
 
-    .line 1532
+    .line 1614
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mUIHandler:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 1533
+    .line 1615
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     const/16 v0, 0x17b
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 1534
+    .line 1616
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->doQrcodeViewCLose()V
 
-    .line 1535
+    .line 1617
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->resetLastQrcodeInfo()V
 
     :cond_17
@@ -3686,7 +3885,7 @@
 .method private updatePopView()V
     .registers 5
 
-    .line 1238
+    .line 1316
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
     if-eqz v0, :cond_7c
@@ -3709,7 +3908,7 @@
 
     goto :goto_7c
 
-    .line 1243
+    .line 1321
     :cond_15
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
@@ -3726,7 +3925,7 @@
     :cond_20
     sget v0, Lcom/transsion/camera/R$color;->qrcode_pop_window_text_color:I
 
-    .line 1244
+    .line 1322
     :goto_22
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
@@ -3743,7 +3942,7 @@
     :cond_2d
     sget v1, Lcom/transsion/camera/R$drawable;->qrcode_pop_corners:I
 
-    .line 1245
+    .line 1323
     :goto_2f
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopWindowResultView:Landroid/widget/TextView;
 
@@ -3755,7 +3954,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1246
+    .line 1324
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcF:Landroid/widget/Button;
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
@@ -3766,7 +3965,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1247
+    .line 1325
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcS:Landroid/widget/Button;
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
@@ -3777,7 +3976,7 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1248
+    .line 1326
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
@@ -3788,7 +3987,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1249
+    .line 1327
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcF:Landroid/widget/Button;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
@@ -3799,7 +3998,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1250
+    .line 1328
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcS:Landroid/widget/Button;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
@@ -3810,7 +4009,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1251
+    .line 1329
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopWindowRootLayout:Landroid/widget/RelativeLayout;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
@@ -3829,7 +4028,7 @@
 .method private updatePopWindowBtn()V
     .registers 3
 
-    .line 1230
+    .line 1308
     sget-object v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->TEXT:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentCodeType:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
@@ -3840,7 +4039,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 1231
+    .line 1309
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcS:Landroid/widget/Button;
 
     const/16 v0, 0x8
@@ -3849,7 +4048,7 @@
 
     return-void
 
-    .line 1233
+    .line 1311
     :cond_12
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcS:Landroid/widget/Button;
 
@@ -3863,7 +4062,7 @@
 .method private updatePopWindowContent(I)V
     .registers 4
 
-    .line 959
+    .line 1037
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopWindowSplitView:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -3872,45 +4071,45 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 960
+    .line 1038
     iput p1, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
 
-    .line 961
+    .line 1039
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopWindowSplitView:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 962
+    .line 1040
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopWindowSplitView:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
-    .line 963
+    .line 1041
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcF:Landroid/widget/Button;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 964
+    .line 1042
     iput p1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 965
+    .line 1043
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcF:Landroid/widget/Button;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 966
+    .line 1044
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcS:Landroid/widget/Button;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 967
+    .line 1045
     iput p1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 968
+    .line 1046
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcS:Landroid/widget/Button;
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -3921,20 +4120,20 @@
 .method private updatePopWindowResult(Ljava/lang/String;)V
     .registers 4
 
-    .line 950
+    .line 1028
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->getResultType(Ljava/lang/String;)Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     move-result-object v0
 
-    .line 951
+    .line 1029
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopWindowResultView:Landroid/widget/TextView;
 
     if-eqz v1, :cond_b
 
-    .line 952
+    .line 1030
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 954
+    .line 1032
     :cond_b
     sget-object p1, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;->TEXT:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
@@ -3966,7 +4165,7 @@
     :goto_1f
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updateIconState(Z)V
 
-    .line 955
+    .line 1033
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopWindowBtn()V
 
     return-void
@@ -3983,7 +4182,7 @@
         }
     .end annotation
 
-    .line 833
+    .line 911
     sget-object v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4002,7 +4201,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 834
+    .line 912
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
@@ -4013,7 +4212,7 @@
 
     if-le v1, v2, :cond_4a
 
-    .line 835
+    .line 913
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->handleMultipleQrCode(Ljava/util/List;)I
 
     move-result v1
@@ -4022,7 +4221,7 @@
 
     if-eq v1, v2, :cond_6e
 
-    .line 837
+    .line 915
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -4035,7 +4234,7 @@
 
     iput-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
-    .line 838
+    .line 916
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -4048,7 +4247,7 @@
 
     iput-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentImageSize:Landroid/graphics/Point;
 
-    .line 839
+    .line 917
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -4063,7 +4262,7 @@
 
     goto :goto_6e
 
-    .line 842
+    .line 920
     :cond_4a
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -4077,7 +4276,7 @@
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
-    .line 843
+    .line 921
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -4090,7 +4289,7 @@
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentImageSize:Landroid/graphics/Point;
 
-    .line 844
+    .line 922
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -4103,7 +4302,7 @@
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentQRcodeRect:Landroid/graphics/Rect;
 
-    .line 846
+    .line 924
     :cond_6e
     :goto_6e
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
@@ -4114,7 +4313,7 @@
 
     iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentCodeType:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
-    .line 847
+    .line 925
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentQRcodeRect:Landroid/graphics/Rect;
 
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->isExceedMinRecognizeSize(Landroid/graphics/Rect;)Z
@@ -4123,44 +4322,44 @@
 
     if-nez v1, :cond_82
 
-    .line 848
+    .line 926
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->doQrcodeViewCLose()V
 
     return-void
 
-    .line 851
+    .line 929
     :cond_82
     invoke-interface {p1}, Ljava/util/List;->clear()V
 
-    .line 852
+    .line 930
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentCodeType:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updateToastText(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;)V
 
-    .line 853
+    .line 931
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopWindowResult(Ljava/lang/String;)V
 
-    .line 854
+    .line 932
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLastResult:Ljava/lang/String;
 
     if-nez p1, :cond_9d
 
-    .line 855
+    .line 933
     iput-boolean v3, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsClickCancel:Z
 
-    .line 856
+    .line 934
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLastResult:Ljava/lang/String;
 
-    .line 857
+    .line 935
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentQRcodeRect:Landroid/graphics/Rect;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLastQRcodeRect:Landroid/graphics/Rect;
 
-    .line 859
+    .line 937
     :cond_9d
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentQRcodeRect:Landroid/graphics/Rect;
 
@@ -4168,7 +4367,7 @@
 
     invoke-direct {p0, p1, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updateBoxViewRect(Landroid/graphics/Rect;Landroid/graphics/Point;)V
 
-    .line 860
+    .line 938
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4217,7 +4416,7 @@
 .method private updateToastText(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;)V
     .registers 9
 
-    .line 899
+    .line 977
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_15d
@@ -4232,7 +4431,7 @@
 
     goto/16 :goto_15d
 
-    .line 904
+    .line 982
     :cond_e
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
@@ -4266,7 +4465,7 @@
 
     if-eq p1, v4, :cond_48
 
-    .line 934
+    .line 1012
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$string;->qrcode_copy_function_title:I
@@ -4275,7 +4474,7 @@
 
     move-result-object p1
 
-    .line 935
+    .line 1013
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4296,7 +4495,7 @@
 
     goto/16 :goto_109
 
-    .line 931
+    .line 1009
     :cond_48
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
@@ -4308,7 +4507,7 @@
 
     goto/16 :goto_109
 
-    .line 927
+    .line 1005
     :cond_52
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
@@ -4318,7 +4517,7 @@
 
     move-result-object p1
 
-    .line 928
+    .line 1006
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4339,7 +4538,7 @@
 
     goto/16 :goto_109
 
-    .line 922
+    .line 1000
     :cond_71
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
@@ -4365,7 +4564,7 @@
 
     move-result-object p1
 
-    .line 923
+    .line 1001
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v5, Lcom/transsion/camera/R$string;->qrcode_join_function_title:I
@@ -4374,7 +4573,7 @@
 
     move-result-object v4
 
-    .line 924
+    .line 1002
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -4393,7 +4592,7 @@
 
     goto :goto_109
 
-    .line 917
+    .line 995
     :cond_a5
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
@@ -4403,7 +4602,7 @@
 
     move-result-object p1
 
-    .line 918
+    .line 996
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v5, Lcom/transsion/camera/R$string;->qrcode_call_function_title:I
@@ -4412,7 +4611,7 @@
 
     move-result-object v4
 
-    .line 919
+    .line 997
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -4443,7 +4642,7 @@
 
     goto :goto_109
 
-    .line 908
+    .line 986
     :cond_d1
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
@@ -4453,7 +4652,7 @@
 
     move-result-object p1
 
-    .line 910
+    .line 988
     :try_start_d9
     new-instance v4, Ljava/net/URI;
 
@@ -4472,7 +4671,7 @@
     :catch_e5
     move-exception v4
 
-    .line 912
+    .line 990
     sget-object v5, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v6, "Illegal URI!"
@@ -4481,7 +4680,7 @@
 
     const/4 v4, 0x0
 
-    .line 914
+    .line 992
     :goto_ee
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -4508,7 +4707,7 @@
 
     move-result-object p1
 
-    .line 938
+    .line 1016
     :goto_109
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
@@ -4520,7 +4719,7 @@
 
     if-ne v4, v2, :cond_158
 
-    .line 939
+    .line 1017
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->getResultType(Ljava/lang/String;)Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$QrCodeType;
@@ -4531,7 +4730,7 @@
 
     if-ne v2, v4, :cond_158
 
-    .line 940
+    .line 1018
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -4556,7 +4755,7 @@
 
     move-result-object p1
 
-    .line 941
+    .line 1019
     invoke-static {}, Landroid/text/BidiFormatter;->getInstance()Landroid/text/BidiFormatter;
 
     move-result-object v0
@@ -4565,7 +4764,7 @@
 
     move-result-object p1
 
-    .line 942
+    .line 1020
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$string;->qrcode_join_function_title:I
@@ -4574,7 +4773,7 @@
 
     move-result-object v0
 
-    .line 943
+    .line 1021
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4591,7 +4790,7 @@
 
     move-result-object p1
 
-    .line 946
+    .line 1024
     :cond_158
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastTextView:Landroid/widget/TextView;
 
@@ -4602,22 +4801,99 @@
     return-void
 .end method
 
+.method private vectorDrawableToBitmap(I)Landroid/graphics/Bitmap;
+    .registers 6
+
+    .line 368
+    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
+
+    invoke-static {p0, p1}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    .line 369
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result p1
+
+    .line 370
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    move-result v0
+
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    .line 369
+    invoke-static {p1, v0, v1}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+
+    move-result-object p1
+
+    .line 371
+    new-instance v0, Landroid/graphics/Canvas;
+
+    invoke-direct {v0, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    .line 372
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v1
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    invoke-virtual {p0, v3, v3, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 373
+    invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    return-object p1
+.end method
+
 
 # virtual methods
-.method protected doCreateEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 5
+.method public destroy()V
+    .registers 1
 
-    .line 265
+    .line 647
+    invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->destroy()V
+
+    .line 648
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->unInitBoxBitmap()V
+
+    .line 650
+    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
+
+    invoke-static {p0}, Lcom/transsion/camera/utils/ViewCache;->destroy(Landroid/content/Context;)V
+
+    return-void
+.end method
+
+.method protected doCreateEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
+    .registers 6
+
+    .line 276
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
-    .line 266
-    sget v0, Lcom/transsion/camera/R$layout;->qrcode_pop_layout:I
-
     const/4 v1, 0x0
+
+    .line 278
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/ViewCache;->getViewCache(Landroid/content/Context;I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
+
+    if-nez v0, :cond_1d
+
+    .line 280
+    sget v0, Lcom/transsion/camera/R$layout;->qrcode_pop_layout:I
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -4625,7 +4901,52 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
-    .line 267
+    .line 281
+    iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
+
+    invoke-static {v2, v1, v0}, Lcom/transsion/camera/utils/ViewCache;->addViewCache(Landroid/content/Context;ILandroid/view/View;)V
+
+    goto :goto_32
+
+    .line 282
+    :cond_1d
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    instance-of v0, v0, Landroid/view/ViewGroup;
+
+    if-eqz v0, :cond_32
+
+    .line 283
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
+
+    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 286
+    :cond_32
+    :goto_32
+    iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v2}, Lcom/transsion/camera/utils/ViewCache;->getViewCache(Landroid/content/Context;I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
+
+    if-nez v0, :cond_4b
+
+    .line 288
     sget v0, Lcom/transsion/camera/R$layout;->qrcode_root_layout:I
 
     invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
@@ -4634,7 +4955,41 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
-    .line 268
+    .line 289
+    iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
+
+    invoke-static {p2, v2, p1}, Lcom/transsion/camera/utils/ViewCache;->addViewCache(Landroid/content/Context;ILandroid/view/View;)V
+
+    goto :goto_60
+
+    .line 290
+    :cond_4b
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    instance-of p1, p1, Landroid/view/ViewGroup;
+
+    if-eqz p1, :cond_60
+
+    .line 291
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/ViewGroup;
+
+    iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
+
+    invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 294
+    :cond_60
+    :goto_60
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
+
     sget p2, Lcom/transsion/camera/R$id;->qrcode_box_view:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -4645,7 +5000,23 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mBoxView:Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;
 
-    .line 269
+    .line 295
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->loadBoxBitmap()V
+
+    .line 296
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mBoxView:Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;
+
+    iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLeftTopBoxBitmap:Landroid/graphics/Bitmap;
+
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRightTopBoxBitmap:Landroid/graphics/Bitmap;
+
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRightBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mLeftBottomBoxBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {p1, p2, v0, v1, v2}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->setBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)V
+
+    .line 297
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->qrcode_more_icon:I
@@ -4658,7 +5029,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
-    .line 270
+    .line 298
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->qrcode_toast_rotate_layout:I
@@ -4671,7 +5042,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    .line 271
+    .line 299
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->qrcode_toast_text_view:I
@@ -4684,7 +5055,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastTextView:Landroid/widget/TextView;
 
-    .line 272
+    .line 300
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->qrcode_toast_cancel:I
@@ -4697,7 +5068,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastCancelView:Landroid/widget/ImageView;
 
-    .line 273
+    .line 301
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->qrcode_pop_btn_fcf:I
@@ -4710,7 +5081,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcF:Landroid/widget/Button;
 
-    .line 274
+    .line 302
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->qrcode_pop_btn_fcs:I
@@ -4723,7 +5094,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcS:Landroid/widget/Button;
 
-    .line 275
+    .line 303
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->qrcode_pop_text_view:I
@@ -4736,7 +5107,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopWindowResultView:Landroid/widget/TextView;
 
-    .line 276
+    .line 304
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->qrcode_pop_split_view:I
@@ -4749,7 +5120,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopWindowSplitView:Landroid/widget/ImageView;
 
-    .line 277
+    .line 305
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
     sget p2, Lcom/transsion/camera/R$id;->qrcode_pop_root_layout:I
@@ -4762,46 +5133,46 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopWindowRootLayout:Landroid/widget/RelativeLayout;
 
-    .line 278
+    .line 306
     iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-static {p2}, Lcom/transsion/camera/utils/UIUtils;->isDarkMode(Landroid/content/Context;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_9e
+    if-eqz p2, :cond_f9
 
-    .line 279
+    .line 307
     iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     sget v0, Lcom/transsion/camera/R$drawable;->qrcode_pop_corners_dark:I
 
-    :goto_99
+    :goto_f4
     invoke-virtual {p2, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
-    goto :goto_a3
+    goto :goto_fe
 
-    :cond_9e
+    :cond_f9
     iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     sget v0, Lcom/transsion/camera/R$drawable;->qrcode_pop_corners:I
 
-    goto :goto_99
+    goto :goto_f4
 
-    .line 278
-    :goto_a3
+    .line 306
+    :goto_fe
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 280
+    .line 308
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mBoxView:Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIQrCodeToastCallback:Lcom/transsion/camera/ui/setting/qrcode/IQrCodeToastCallback;
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->setDrawRectCallBack(Lcom/transsion/camera/ui/setting/qrcode/IQrCodeToastCallback;)V
 
-    .line 281
+    .line 309
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     new-instance p2, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda1;
@@ -4810,7 +5181,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 282
+    .line 310
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcF:Landroid/widget/Button;
 
     new-instance p2, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda1;
@@ -4819,7 +5190,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 283
+    .line 311
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mButtonFcS:Landroid/widget/Button;
 
     new-instance p2, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda1;
@@ -4828,7 +5199,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 284
+    .line 312
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastTextView:Landroid/widget/TextView;
 
     new-instance p2, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda1;
@@ -4837,7 +5208,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 285
+    .line 313
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastCancelView:Landroid/widget/ImageView;
 
     new-instance p2, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda1;
@@ -4846,7 +5217,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 286
+    .line 314
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopWindowRootLayout:Landroid/widget/RelativeLayout;
 
     new-instance p2, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda2;
@@ -4855,7 +5226,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 287
+    .line 315
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mRootView:Landroid/view/View;
 
     return-object p0
@@ -4875,7 +5246,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 357
+    .line 426
     const-string p0, "key_setting_qrcode"
 
     return-object p0
@@ -4884,7 +5255,7 @@
 .method protected getMoreIconMargins(II)Landroid/graphics/Rect;
     .registers 3
 
-    .line 596
+    .line 674
     new-instance p0, Landroid/graphics/Rect;
 
     const p1, 0x7fffffff
@@ -4897,7 +5268,7 @@
 .method public getValue()Ljava/lang/String;
     .registers 1
 
-    .line 362
+    .line 431
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p0, :cond_6
@@ -4906,7 +5277,7 @@
 
     return-object p0
 
-    .line 365
+    .line 434
     :cond_6
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
@@ -4981,7 +5352,7 @@
 
     const/16 v3, 0x6a
 
-    .line 397
+    .line 466
     const-string v4, "key_setting_fragment_notify_ui"
 
     if-eq p1, v3, :cond_131
@@ -5012,11 +5383,11 @@
 
     goto/16 :goto_1bc
 
-    .line 406
+    .line 475
     :pswitch_47
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAllowUpdateResult:Z
 
-    .line 407
+    .line 476
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     const-string p1, "end"
@@ -5025,11 +5396,11 @@
 
     return-void
 
-    .line 500
+    .line 569
     :sswitch_51
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsCelebritySceneUIShow:Z
 
-    .line 501
+    .line 570
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
@@ -5040,12 +5411,12 @@
 
     if-nez p1, :cond_61
 
-    .line 502
+    .line 571
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
     goto :goto_74
 
-    .line 503
+    .line 572
     :cond_61
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -5063,39 +5434,39 @@
 
     if-nez p1, :cond_74
 
-    .line 505
+    .line 574
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->showIcon()V
 
-    .line 507
+    .line 576
     :cond_74
     :goto_74
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsCLickPopSettingUIBackIcon:Z
 
     return-void
 
-    .line 472
+    .line 541
     :sswitch_77
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsCelebritySceneUIShow:Z
 
-    .line 473
+    .line 542
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
     if-eqz p1, :cond_83
 
-    .line 474
+    .line 543
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
     return-void
 
-    .line 476
+    .line 545
     :cond_83
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hideIcon()V
 
     return-void
 
-    .line 563
+    .line 632
     :sswitch_87
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -5103,12 +5474,12 @@
 
     if-eqz p1, :cond_91
 
-    .line 564
+    .line 633
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
     return-void
 
-    .line 565
+    .line 634
     :cond_91
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -5126,12 +5497,12 @@
 
     if-nez p1, :cond_1bc
 
-    .line 567
+    .line 636
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->showIcon()V
 
     return-void
 
-    .line 556
+    .line 625
     :sswitch_a5
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -5139,64 +5510,64 @@
 
     if-eqz p1, :cond_af
 
-    .line 557
+    .line 626
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
     return-void
 
-    .line 559
+    .line 628
     :cond_af
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hideIcon()V
 
     return-void
 
-    .line 553
+    .line 622
     :sswitch_b3
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsCLickPopSettingUIBackIcon:Z
 
     return-void
 
-    .line 522
+    .line 591
     :sswitch_b6
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsAutoMacroSwitchShowing:Z
 
-    .line 523
+    .line 592
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updateSettingUILayout(Z)V
 
     return-void
 
-    .line 518
+    .line 587
     :sswitch_bc
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsAutoMacroSwitchShowing:Z
 
-    .line 519
+    .line 588
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updateSettingUILayout(Z)V
 
     return-void
 
-    .line 514
+    .line 583
     :sswitch_c2
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsSuperNightLiteSwitchShowing:Z
 
-    .line 515
+    .line 584
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updateSettingUILayout(Z)V
 
     return-void
 
-    .line 510
+    .line 579
     :sswitch_c8
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsSuperNightLiteSwitchShowing:Z
 
-    .line 511
+    .line 580
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updateSettingUILayout(Z)V
 
     return-void
 
-    .line 490
+    .line 559
     :sswitch_ce
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsImageStyleUIShow:Z
 
-    .line 491
+    .line 560
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
@@ -5207,12 +5578,12 @@
 
     if-nez p1, :cond_de
 
-    .line 492
+    .line 561
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
     goto :goto_f1
 
-    .line 493
+    .line 562
     :cond_de
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -5230,114 +5601,114 @@
 
     if-nez p1, :cond_f1
 
-    .line 495
+    .line 564
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->showIcon()V
 
-    .line 497
+    .line 566
     :cond_f1
     :goto_f1
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsCLickPopSettingUIBackIcon:Z
 
     return-void
 
-    .line 464
+    .line 533
     :sswitch_f4
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsImageStyleUIShow:Z
 
-    .line 465
+    .line 534
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
     if-eqz p1, :cond_100
 
-    .line 466
+    .line 535
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
     return-void
 
-    .line 468
+    .line 537
     :cond_100
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hideIcon()V
 
     return-void
 
-    .line 437
+    .line 506
     :sswitch_104
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsPause:Z
 
-    .line 438
+    .line 507
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAllowUpdateResult:Z
 
-    .line 439
+    .line 508
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsZoomUI3Show:Z
 
     return-void
 
-    .line 410
+    .line 479
     :sswitch_10b
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsPause:Z
 
-    .line 411
+    .line 480
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsFilterUIShow:Z
 
-    .line 412
+    .line 481
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsZoomUI3Show:Z
 
-    .line 413
+    .line 482
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsImageStyleUIShow:Z
 
-    .line 414
+    .line 483
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsCLickPopSettingUIBackIcon:Z
 
-    .line 415
+    .line 484
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
-    .line 416
+    .line 485
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAllowUpdateResult:Z
 
-    .line 417
+    .line 486
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mUIHandler:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 418
+    .line 487
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->doQrcodeViewCLose()V
 
-    .line 419
+    .line 488
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->resetLastQrcodeInfo()V
 
     return-void
 
-    .line 533
+    .line 602
     :cond_126
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
     return-void
 
-    .line 549
+    .line 618
     :cond_12a
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hideIcon()V
 
-    .line 550
+    .line 619
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hidePopWindow()V
 
     return-void
 
-    .line 400
+    .line 469
     :cond_131
     :pswitch_131
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAllowUpdateResult:Z
 
-    .line 401
+    .line 470
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mUIHandler:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 402
+    .line 471
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->doQrcodeViewCLose()V
 
-    .line 403
+    .line 472
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     const-string p1, "begin"
@@ -5346,11 +5717,11 @@
 
     return-void
 
-    .line 480
+    .line 549
     :cond_143
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsFilterUIShow:Z
 
-    .line 481
+    .line 550
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
@@ -5361,12 +5732,12 @@
 
     if-nez p1, :cond_153
 
-    .line 482
+    .line 551
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
     goto :goto_16a
 
-    .line 483
+    .line 552
     :cond_153
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -5388,39 +5759,39 @@
 
     if-nez p1, :cond_16a
 
-    .line 485
+    .line 554
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->showIcon()V
 
-    .line 487
+    .line 556
     :cond_16a
     :goto_16a
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsCLickPopSettingUIBackIcon:Z
 
     return-void
 
-    .line 456
+    .line 525
     :cond_16d
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsFilterUIShow:Z
 
-    .line 457
+    .line 526
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
     if-eqz p1, :cond_179
 
-    .line 458
+    .line 527
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
     return-void
 
-    .line 460
+    .line 529
     :cond_179
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hideIcon()V
 
     return-void
 
-    .line 536
+    .line 605
     :cond_17d
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -5428,10 +5799,10 @@
 
     if-nez p1, :cond_198
 
-    .line 537
+    .line 606
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsZoomUI3Show:Z
 
-    .line 538
+    .line 607
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
@@ -5448,10 +5819,10 @@
 
     if-nez p1, :cond_198
 
-    .line 540
+    .line 609
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->showIcon()V
 
-    .line 544
+    .line 613
     :cond_198
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -5467,13 +5838,13 @@
 
     if-nez p1, :cond_1bc
 
-    .line 545
+    .line 614
     :cond_1a6
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
     return-void
 
-    .line 526
+    .line 595
     :cond_1aa
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -5481,49 +5852,49 @@
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updatePopSettingUIState(Z)V
 
-    .line 527
+    .line 596
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
     if-nez p1, :cond_1bc
 
-    .line 528
+    .line 597
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsZoomUI3Show:Z
 
-    .line 529
+    .line 598
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->hideIcon()V
 
     :cond_1bc
     :goto_1bc
     return-void
 
-    .line 452
+    .line 521
     :cond_1bd
     :pswitch_1bd
     :sswitch_1bd
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAllowUpdateResult:Z
 
-    .line 453
+    .line 522
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mIsZoomUI3Show:Z
 
     return-void
 
-    .line 431
+    .line 500
     :cond_1c2
     :pswitch_1c2
     :sswitch_1c2
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAllowUpdateResult:Z
 
-    .line 432
+    .line 501
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mUIHandler:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 433
+    .line 502
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->doQrcodeViewCLose()V
 
-    .line 434
+    .line 503
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->resetLastQrcodeInfo()V
 
     return-void
@@ -5577,17 +5948,17 @@
 .method public onOrientationChanged(I)V
     .registers 4
 
-    .line 325
+    .line 394
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onOrientationChanged(I)V
 
-    .line 326
+    .line 395
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_15
 
-    .line 327
+    .line 396
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
@@ -5596,18 +5967,18 @@
 
     if-eqz v0, :cond_15
 
-    .line 328
+    .line 397
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
 
-    .line 331
+    .line 400
     :cond_15
     iput p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mOrientation:I
 
     const/4 p1, 0x0
 
-    .line 332
+    .line 401
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->updateSettingUILayout(Z)V
 
     return-void
@@ -5616,10 +5987,10 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 337
+    .line 406
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onScreenFormChanged(IZ)V
 
-    .line 338
+    .line 407
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
     invoke-static {p1}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI(Landroid/content/Context;)Z
@@ -5628,7 +5999,7 @@
 
     if-nez p1, :cond_18
 
-    .line 339
+    .line 408
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {p1}, Landroid/widget/PopupWindow;->isShowing()Z
@@ -5637,7 +6008,7 @@
 
     if-eqz p1, :cond_18
 
-    .line 340
+    .line 409
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->dismiss()V
@@ -5660,7 +6031,7 @@
 .method public setAeAfLock(Lcom/transsion/camera/app/common/mode/IAeAfLock;)V
     .registers 2
 
-    .line 352
+    .line 421
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mAeAfLock:Lcom/transsion/camera/app/common/mode/IAeAfLock;
 
     return-void
@@ -5669,10 +6040,10 @@
 .method public setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
     .registers 2
 
-    .line 391
+    .line 460
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 
-    .line 392
+    .line 461
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     return-void
@@ -5681,19 +6052,19 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 3
 
-    .line 371
+    .line 440
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p1, :cond_b
 
-    .line 373
+    .line 442
     sget-object p1, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "mDeviceSetting is null!"
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 375
+    .line 444
     :cond_b
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
@@ -5722,12 +6093,12 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 4
 
-    .line 380
+    .line 449
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p1, :cond_27
 
-    .line 382
+    .line 451
     const-string v0, "key_setting_fragment_notify_ui"
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
@@ -5736,7 +6107,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
-    .line 383
+    .line 452
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_quick_video_action"
@@ -5745,7 +6116,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 384
+    .line 453
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_fold_switch_preview"
@@ -5754,7 +6125,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 385
+    .line 454
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_shutter_guide_layout_action"
@@ -5770,10 +6141,10 @@
 .method public setupEntryView()V
     .registers 1
 
-    .line 310
+    .line 379
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->initPopupWindow()V
 
-    .line 311
+    .line 380
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setupEntryView()V
 
     return-void
@@ -5782,55 +6153,55 @@
 .method public unInit()V
     .registers 4
 
-    .line 577
+    .line 655
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->unInit()V
 
     const-wide/16 v0, 0x0
 
-    .line 578
+    .line 656
     iput-wide v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCLickToastTime:J
 
     const/4 v0, 0x0
 
-    .line 579
+    .line 657
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCurrentResult:Ljava/lang/String;
 
-    .line 580
+    .line 658
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mUIHandler:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$UIHandler;
 
     if-eqz v1, :cond_11
 
-    .line 581
+    .line 659
     invoke-virtual {v1, v0}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 583
+    .line 661
     :cond_11
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->doQrcodeViewCLose()V
 
-    .line 584
+    .line 662
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->resetBoxViewRect()V
 
-    .line 585
+    .line 663
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->resetLastQrcodeInfo()V
 
-    .line 586
+    .line 664
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mBoxView:Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;
 
     invoke-virtual {v0}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->unInit()V
 
-    .line 587
+    .line 665
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_3c
 
-    .line 588
+    .line 666
     const-string v1, "key_quick_video_action"
 
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 589
+    .line 667
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_fold_switch_preview"
@@ -5839,7 +6210,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 590
+    .line 668
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_shutter_guide_layout_action"
@@ -5855,10 +6226,10 @@
 .method public updatePreviewRect(Landroid/graphics/Rect;)V
     .registers 5
 
-    .line 316
+    .line 385
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPreviewRect:Landroid/graphics/Rect;
 
-    .line 317
+    .line 386
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mCenterPoint:Landroid/graphics/Point;
 
     invoke-virtual {p1}, Landroid/graphics/Rect;->centerX()I
@@ -5873,7 +6244,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/graphics/Point;->set(II)V
 
-    .line 318
+    .line 387
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mInitialPoint:Landroid/graphics/Point;
 
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPreviewRect:Landroid/graphics/Rect;
@@ -5888,7 +6259,7 @@
 
     iput v1, p1, Landroid/graphics/Point;->x:I
 
-    .line 319
+    .line 388
     invoke-static {}, Lcom/transsion/camera/utils/ScreenUtils;->getScreenSize()Landroid/util/Size;
 
     move-result-object v0
@@ -5931,12 +6302,12 @@
 
     move-object/from16 v0, p0
 
-    .line 601
+    .line 679
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     invoke-static {v1}, Lcom/transsion/camera/utils/AnimationUtils;->stopAnimator(Landroid/animation/Animator;)V
 
-    .line 603
+    .line 681
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     if-eqz v1, :cond_4a1
@@ -5951,7 +6322,7 @@
 
     goto/16 :goto_4a1
 
-    .line 606
+    .line 684
     :cond_15
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -5961,10 +6332,10 @@
 
     const/16 v2, 0x55
 
-    .line 607
+    .line 685
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 608
+    .line 686
     iget-object v3, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5973,7 +6344,7 @@
 
     check-cast v3, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 609
+    .line 687
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     const-string v5, "key_fold_switch_preview"
@@ -5982,47 +6353,47 @@
 
     move-result-object v4
 
-    .line 611
+    .line 689
     iget v5, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 612
+    .line 690
     iget v6, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 613
+    .line 691
     iget v7, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 614
+    .line 692
     iget v8, v1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 615
+    .line 693
     iget v9, v3, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     const v10, 0x800055
 
-    .line 621
+    .line 699
     iput v10, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     const/4 v10, 0x0
 
-    .line 622
+    .line 700
     invoke-virtual {v3, v10, v10, v10, v10}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 623
+    .line 701
     invoke-virtual {v1, v10, v10, v10, v10}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 624
+    .line 702
     iget-object v11, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     const/4 v12, 0x0
 
     invoke-virtual {v11, v12}, Landroid/view/View;->setRotation(F)V
 
-    .line 625
+    .line 703
     iget-object v11, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
     invoke-virtual {v11, v12}, Landroid/view/View;->setRotation(F)V
 
-    .line 626
+    .line 704
     iget v11, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     iget v12, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mOrientation:I
@@ -6031,7 +6402,7 @@
 
     move-result-object v11
 
-    .line 627
+    .line 705
     iget v12, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/16 v13, 0x51
@@ -6055,7 +6426,7 @@
 
     if-ne v12, v2, :cond_1f2
 
-    .line 651
+    .line 729
     iget v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mOrientation:I
 
     const/16 v12, 0xb4
@@ -6066,10 +6437,10 @@
 
     if-eq v4, v15, :cond_c3
 
-    .line 690
+    .line 768
     iput v14, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 691
+    .line 769
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v14, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_left_expand_0_180:I
@@ -6078,7 +6449,7 @@
 
     move-result v4
 
-    .line 692
+    .line 770
     iget-object v14, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v2, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_bottom_expand_0_180:I
@@ -6087,14 +6458,14 @@
 
     move-result v2
 
-    .line 693
+    .line 771
     invoke-direct {v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->getMarginOffsetInExpandForm()I
 
     move-result v14
 
     sub-int/2addr v2, v14
 
-    .line 694
+    .line 772
     iget-object v14, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v14}, Landroid/view/View;->getVisibility()I
@@ -6112,7 +6483,7 @@
     :cond_9a
     const/16 v16, 0x0
 
-    .line 695
+    .line 773
     :goto_9c
     iget v14, v11, Landroid/graphics/Rect;->bottom:I
 
@@ -6132,7 +6503,7 @@
 
     iput v12, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 696
+    .line 774
     iget v11, v11, Landroid/graphics/Rect;->left:I
 
     invoke-static {v11, v4}, Lcom/transsion/camera/utils/UIUtils;->getMarginFromRect(II)I
@@ -6141,10 +6512,10 @@
 
     iput v11, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 697
+    .line 775
     iput v13, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 698
+    .line 776
     iget-object v11, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v12, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_bottom_vertical_expand:I
@@ -6168,10 +6539,10 @@
     :cond_c3
     const/16 v2, 0x33
 
-    .line 676
+    .line 754
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 677
+    .line 755
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_bottom_expand_90_270:I
@@ -6180,14 +6551,14 @@
 
     move-result v2
 
-    .line 678
+    .line 756
     invoke-direct {v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->getMarginOffsetInExpandForm()I
 
     move-result v4
 
     sub-int v4, v2, v4
 
-    .line 679
+    .line 757
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v12, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_left_expand_90_270:I
@@ -6196,7 +6567,7 @@
 
     move-result v2
 
-    .line 680
+    .line 758
     iget-object v12, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v12}, Landroid/view/View;->getVisibility()I
@@ -6214,7 +6585,7 @@
     :cond_ea
     const/16 v16, 0x0
 
-    .line 681
+    .line 759
     :goto_ec
     iget v12, v11, Landroid/graphics/Rect;->left:I
 
@@ -6234,7 +6605,7 @@
 
     iput v12, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 682
+    .line 760
     iget v11, v11, Landroid/graphics/Rect;->top:I
 
     invoke-static {v11, v2}, Lcom/transsion/camera/utils/UIUtils;->getMarginFromRect(II)I
@@ -6243,10 +6614,10 @@
 
     iput v11, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 683
+    .line 761
     iput v14, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 684
+    .line 762
     iget-object v11, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v12, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_left_horizontal_expand:I
@@ -6257,7 +6628,7 @@
 
     iput v11, v3, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 685
+    .line 763
     iget-object v11, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v12, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_bottom_horizontal_expand:I
@@ -6279,10 +6650,10 @@
     :cond_11c
     const/16 v2, 0x35
 
-    .line 665
+    .line 743
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 666
+    .line 744
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_left_expand_0_180:I
@@ -6291,7 +6662,7 @@
 
     move-result v2
 
-    .line 667
+    .line 745
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v12, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_bottom_expand_0_180:I
@@ -6300,14 +6671,14 @@
 
     move-result v4
 
-    .line 668
+    .line 746
     invoke-direct {v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->getMarginOffsetInExpandForm()I
 
     move-result v12
 
     sub-int/2addr v4, v12
 
-    .line 669
+    .line 747
     iget-object v12, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v12}, Landroid/view/View;->getVisibility()I
@@ -6325,7 +6696,7 @@
     :cond_142
     const/16 v16, 0x0
 
-    .line 670
+    .line 748
     :goto_144
     iget v12, v11, Landroid/graphics/Rect;->top:I
 
@@ -6345,7 +6716,7 @@
 
     iput v12, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 671
+    .line 749
     iget v11, v11, Landroid/graphics/Rect;->right:I
 
     invoke-static {v11, v2}, Lcom/transsion/camera/utils/UIUtils;->getMarginFromRect(II)I
@@ -6354,10 +6725,10 @@
 
     iput v11, v1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 672
+    .line 750
     iput v13, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 673
+    .line 751
     iget-object v11, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v12, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_bottom_vertical_expand:I
@@ -6382,10 +6753,10 @@
     :cond_16a
     const/16 v2, 0x55
 
-    .line 653
+    .line 731
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 654
+    .line 732
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v4, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_bottom_expand_90_270:I
@@ -6394,14 +6765,14 @@
 
     move-result v2
 
-    .line 655
+    .line 733
     invoke-direct {v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->getMarginOffsetInExpandForm()I
 
     move-result v4
 
     sub-int/2addr v2, v4
 
-    .line 656
+    .line 734
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v12, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_margin_left_expand_90_270:I
@@ -6410,7 +6781,7 @@
 
     move-result v4
 
-    .line 657
+    .line 735
     iget-object v12, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v12}, Landroid/view/View;->getVisibility()I
@@ -6428,7 +6799,7 @@
     :cond_190
     const/16 v16, 0x0
 
-    .line 658
+    .line 736
     :goto_192
     iget v12, v11, Landroid/graphics/Rect;->right:I
 
@@ -6448,7 +6819,7 @@
 
     iput v12, v1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 659
+    .line 737
     iget v11, v11, Landroid/graphics/Rect;->bottom:I
 
     invoke-static {v11, v4}, Lcom/transsion/camera/utils/UIUtils;->getMarginFromRect(II)I
@@ -6459,10 +6830,10 @@
 
     const/16 v11, 0x55
 
-    .line 660
+    .line 738
     iput v11, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 661
+    .line 739
     iget-object v11, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v12, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_right_horizontal_expand:I
@@ -6473,7 +6844,7 @@
 
     iput v11, v3, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 662
+    .line 740
     iget-object v11, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v12, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_bottom_horizontal_expand:I
@@ -6490,7 +6861,7 @@
 
     goto :goto_168
 
-    .line 701
+    .line 779
     :goto_1c2
     iget v13, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mOrientation:I
 
@@ -6500,7 +6871,7 @@
 
     goto :goto_1d8
 
-    .line 705
+    .line 783
     :cond_1c9
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
@@ -6508,7 +6879,7 @@
 
     invoke-virtual {v10, v13}, Landroid/view/View;->setRotation(F)V
 
-    .line 706
+    .line 784
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
     iget v13, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mOrientation:I
@@ -6519,7 +6890,7 @@
 
     goto :goto_1ee
 
-    .line 702
+    .line 780
     :cond_1d8
     :goto_1d8
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
@@ -6534,7 +6905,7 @@
 
     invoke-virtual {v10, v13}, Landroid/view/View;->setRotation(F)V
 
-    .line 703
+    .line 781
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
     iget v13, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mOrientation:I
@@ -6557,17 +6928,17 @@
     :cond_1f2
     const/4 v2, 0x3
 
-    .line 708
+    .line 786
     const-string v14, "on"
 
     if-ne v12, v2, :cond_2a9
 
-    .line 709
+    .line 787
     iget v2, v11, Landroid/graphics/Rect;->bottom:I
 
     iget-object v12, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
-    .line 710
+    .line 788
     invoke-interface {v12}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
 
     move-result v12
@@ -6582,14 +6953,14 @@
 
     add-int/2addr v12, v13
 
-    .line 709
+    .line 787
     invoke-static {v2, v12}, Lcom/transsion/camera/utils/UIUtils;->getMarginFromRect(II)I
 
     move-result v2
 
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 711
+    .line 789
     iget v2, v11, Landroid/graphics/Rect;->right:I
 
     iget-object v11, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
@@ -6606,7 +6977,7 @@
 
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 712
+    .line 790
     iget v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mOrientation:I
 
     if-eq v2, v10, :cond_274
@@ -6617,24 +6988,24 @@
 
     const/16 v2, 0x51
 
-    .line 732
+    .line 810
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 733
+    .line 811
     iget-object v2, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
 
     move-result v2
 
-    .line 734
+    .line 812
     invoke-static {v4, v14}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-eqz v4, :cond_23f
 
-    .line 735
+    .line 813
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v10, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_bottom_vertical_hover_switch:I
@@ -6645,7 +7016,7 @@
 
     goto :goto_247
 
-    .line 736
+    .line 814
     :cond_23f
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
@@ -6665,29 +7036,29 @@
     :cond_24b
     const/16 v2, 0x53
 
-    .line 722
+    .line 800
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 723
+    .line 801
     iget v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRootLayoutMarginLeft:I
 
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 724
+    .line 802
     iget-object v2, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
 
     move-result v2
 
-    .line 725
+    .line 803
     invoke-static {v4, v14}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-eqz v4, :cond_268
 
-    .line 726
+    .line 804
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v10, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_bottom_horizontal_hover_switch:I
@@ -6698,7 +7069,7 @@
 
     goto :goto_270
 
-    .line 727
+    .line 805
     :cond_268
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
@@ -6718,29 +7089,29 @@
     :cond_274
     const/16 v2, 0x55
 
-    .line 714
+    .line 792
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 715
+    .line 793
     iget v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRootLayoutMarginRight:I
 
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 716
+    .line 794
     iget-object v2, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
 
     move-result v2
 
-    .line 717
+    .line 795
     invoke-static {v4, v14}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-eqz v4, :cond_291
 
-    .line 718
+    .line 796
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v10, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_margin_bottom_horizontal_hover_switch:I
@@ -6751,7 +7122,7 @@
 
     goto :goto_299
 
-    .line 719
+    .line 797
     :cond_291
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
@@ -6766,11 +7137,11 @@
 
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 739
+    .line 817
     :goto_29c
     iget v4, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 740
+    .line 818
     iget v2, v3, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     :goto_2a0
@@ -6794,7 +7165,7 @@
 
     if-ne v12, v2, :cond_30e
 
-    .line 742
+    .line 820
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v10, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_left_hover_bottom_margin:I
@@ -6803,7 +7174,7 @@
 
     move-result v2
 
-    .line 743
+    .line 821
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v12, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_left_hover_right_margin:I
@@ -6812,14 +7183,14 @@
 
     move-result v10
 
-    .line 744
+    .line 822
     invoke-direct {v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->getMarginOffsetInHoverForm()I
 
     move-result v12
 
     sub-int/2addr v10, v12
 
-    .line 745
+    .line 823
     iget-object v12, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v12}, Landroid/view/View;->getVisibility()I
@@ -6837,7 +7208,7 @@
     :cond_2ce
     const/16 v16, 0x0
 
-    .line 747
+    .line 825
     :goto_2d0
     iget v12, v11, Landroid/graphics/Rect;->bottom:I
 
@@ -6847,7 +7218,7 @@
 
     iput v12, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 748
+    .line 826
     iget v11, v11, Landroid/graphics/Rect;->right:I
 
     if-eqz v16, :cond_2de
@@ -6868,17 +7239,17 @@
 
     const/16 v11, 0x15
 
-    .line 749
+    .line 827
     iput v11, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 750
+    .line 828
     invoke-static {v4, v14}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-eqz v4, :cond_2f8
 
-    .line 751
+    .line 829
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v11, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_right_margin_left_hover:I
@@ -6889,7 +7260,7 @@
 
     goto :goto_300
 
-    .line 752
+    .line 830
     :cond_2f8
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
@@ -6902,7 +7273,7 @@
     :goto_300
     iput v4, v3, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 753
+    .line 831
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
     const/high16 v11, 0x43870000    # 270.0f
@@ -6926,10 +7297,10 @@
 
     const/16 v2, 0x33
 
-    .line 755
+    .line 833
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 756
+    .line 834
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v10, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_right_hover_top_margin:I
@@ -6938,7 +7309,7 @@
 
     move-result v2
 
-    .line 757
+    .line 835
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v12, Lcom/transsion/camera/R$dimen;->qrcode_more_icon_right_hover_left_margin:I
@@ -6947,14 +7318,14 @@
 
     move-result v10
 
-    .line 758
+    .line 836
     invoke-direct {v0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->getMarginOffsetInHoverForm()I
 
     move-result v12
 
     sub-int v12, v10, v12
 
-    .line 759
+    .line 837
     iget-object v10, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v10}, Landroid/view/View;->getVisibility()I
@@ -6972,7 +7343,7 @@
     :cond_338
     const/16 v16, 0x0
 
-    .line 761
+    .line 839
     :goto_33a
     iget v10, v11, Landroid/graphics/Rect;->left:I
 
@@ -6992,7 +7363,7 @@
 
     iput v10, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 762
+    .line 840
     iget v10, v11, Landroid/graphics/Rect;->top:I
 
     invoke-static {v10, v2}, Lcom/transsion/camera/utils/UIUtils;->getMarginFromRect(II)I
@@ -7003,17 +7374,17 @@
 
     const/16 v10, 0x13
 
-    .line 763
+    .line 841
     iput v10, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 764
+    .line 842
     invoke-static {v4, v14}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-eqz v4, :cond_362
 
-    .line 765
+    .line 843
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
     sget v10, Lcom/transsion/camera/R$dimen;->qrcode_toast_root_layout_left_margin_right_hover_switch:I
@@ -7024,7 +7395,7 @@
 
     goto :goto_36a
 
-    .line 766
+    .line 844
     :cond_362
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mResources:Landroid/content/res/Resources;
 
@@ -7037,7 +7408,7 @@
     :goto_36a
     iput v4, v3, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 767
+    .line 845
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopView:Landroid/view/View;
 
     const/high16 v10, 0x42b40000    # 90.0f
@@ -7067,7 +7438,7 @@
 
     goto :goto_3e5
 
-    .line 629
+    .line 707
     :cond_37f
     :goto_37f
     iget v2, v11, Landroid/graphics/Rect;->right:I
@@ -7086,7 +7457,7 @@
 
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 630
+    .line 708
     iget v2, v11, Landroid/graphics/Rect;->bottom:I
 
     iget-object v4, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
@@ -7105,7 +7476,7 @@
 
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 631
+    .line 709
     iget v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mOrientation:I
 
     if-eq v2, v10, :cond_3cc
@@ -7116,10 +7487,10 @@
 
     const/16 v2, 0x51
 
-    .line 644
+    .line 722
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 645
+    .line 723
     iget-object v2, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
@@ -7137,15 +7508,15 @@
     :cond_3b8
     const/16 v2, 0x53
 
-    .line 638
+    .line 716
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 639
+    .line 717
     iget v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRootLayoutMarginLeft:I
 
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 640
+    .line 718
     iget-object v2, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
@@ -7163,15 +7534,15 @@
     :cond_3cc
     const/16 v2, 0x55
 
-    .line 633
+    .line 711
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 634
+    .line 712
     iget v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRootLayoutMarginRight:I
 
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 635
+    .line 713
     iget-object v2, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->getModePlusBottomBarHeight()I
@@ -7184,16 +7555,16 @@
 
     iput v2, v3, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 648
+    .line 726
     :goto_3df
     iget v4, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 649
+    .line 727
     iget v2, v3, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     goto/16 :goto_2a0
 
-    .line 770
+    .line 848
     :goto_3e5
     iget-object v13, v0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
 
@@ -7205,7 +7576,7 @@
 
     if-eqz p1, :cond_429
 
-    .line 771
+    .line 849
     const-string v2, "iconProperty"
 
     filled-new-array {v6, v10}, [I
@@ -7216,7 +7587,7 @@
 
     move-result-object v2
 
-    .line 772
+    .line 850
     const-string v5, "toastProperty"
 
     filled-new-array {v9, v4}, [I
@@ -7227,7 +7598,7 @@
 
     move-result-object v4
 
-    .line 773
+    .line 851
     filled-new-array {v2, v4}, [Landroid/animation/PropertyValuesHolder;
 
     move-result-object v2
@@ -7240,17 +7611,17 @@
 
     const-wide/16 v4, 0x190
 
-    .line 774
+    .line 852
     invoke-virtual {v2, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 775
+    .line 853
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v4, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v2, v4}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 776
+    .line 854
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v4, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda3;
@@ -7259,14 +7630,14 @@
 
     invoke-virtual {v2, v4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 784
+    .line 862
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_499
 
-    .line 786
+    .line 864
     :cond_429
     iget-object v4, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
@@ -7274,7 +7645,7 @@
 
     if-eqz v16, :cond_47e
 
-    .line 788
+    .line 866
     const-string v3, "iconLeftMargin"
 
     filled-new-array {v7, v12}, [I
@@ -7285,7 +7656,7 @@
 
     move-result-object v3
 
-    .line 789
+    .line 867
     const-string v4, "iconRightMargin"
 
     filled-new-array {v8, v11}, [I
@@ -7296,7 +7667,7 @@
 
     move-result-object v4
 
-    .line 790
+    .line 868
     const-string v7, "iconTopMargin"
 
     filled-new-array {v5, v2}, [I
@@ -7307,7 +7678,7 @@
 
     move-result-object v2
 
-    .line 791
+    .line 869
     const-string v5, "iconBottomMargin"
 
     filled-new-array {v6, v10}, [I
@@ -7318,7 +7689,7 @@
 
     move-result-object v5
 
-    .line 792
+    .line 870
     filled-new-array {v3, v4, v2, v5}, [Landroid/animation/PropertyValuesHolder;
 
     move-result-object v2
@@ -7331,17 +7702,17 @@
 
     const-wide/16 v3, 0x1c2
 
-    .line 793
+    .line 871
     invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 794
+    .line 872
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v3, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 795
+    .line 873
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v3, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda4;
@@ -7350,20 +7721,20 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 802
+    .line 880
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_483
 
-    .line 804
+    .line 882
     :cond_47e
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mMoreIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 806
+    .line 884
     :goto_483
     iget-object v2, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mPopupWindow:Landroid/widget/PopupWindow;
 
@@ -7375,7 +7746,7 @@
 
     add-int/2addr v4, v1
 
-    .line 807
+    .line 885
     invoke-virtual {v2}, Landroid/widget/PopupWindow;->getWidth()I
 
     move-result v1
@@ -7386,10 +7757,10 @@
 
     move-result v5
 
-    .line 806
+    .line 884
     invoke-virtual {v2, v3, v4, v1, v5}, Landroid/widget/PopupWindow;->update(IIII)V
 
-    .line 809
+    .line 887
     :goto_499
     iget-object v1, v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->mToastRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 

@@ -46,20 +46,20 @@
 .method private constructor <init>(Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;Landroid/view/View;)V
     .registers 4
 
-    .line 476
+    .line 487
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->this$0:Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;
 
-    .line 477
+    .line 488
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$RequestViewHolder;-><init>(Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;Landroid/view/View;)V
 
     const/4 p1, 0x1
 
-    .line 474
+    .line 485
     new-array p1, p1, [J
 
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mLastClickTime:[J
 
-    .line 479
+    .line 490
     sget p1, Lcom/transsion/camera/featurelibs/aicommon/R$id;->ai_fragment_list_item_delete:I
 
     invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -68,7 +68,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mDeleteButton:Landroid/view/View;
 
-    .line 480
+    .line 491
     sget v0, Lcom/transsion/camera/featurelibs/aicommon/R$id;->ai_fragment_list_item_retry:I
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -81,10 +81,10 @@
 
     const/4 v0, 0x0
 
-    .line 482
+    .line 493
     invoke-static {p1, p0, v0}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
-    .line 483
+    .line 494
     invoke-static {p2, p0, v0}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
     return-void
@@ -102,7 +102,7 @@
 .method private synthetic lambda$bindView$0(Lcom/transsion/camera/app/common/ai/AIRequest;Landroid/view/View;)V
     .registers 5
 
-    .line 549
+    .line 560
     invoke-static {p2}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p2
@@ -111,7 +111,7 @@
 
     return-void
 
-    .line 552
+    .line 563
     :cond_7
     invoke-static {}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -137,7 +137,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 553
+    .line 564
     iget-object p0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->this$0:Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;
 
     invoke-static {p0}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;->-$$Nest$fgetmRequestOperator(Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;)Lcom/transsion/camera/featurelibs/aicommon/ui/request/IRequestOperator;
@@ -152,7 +152,7 @@
 .method private synthetic lambda$bindView$1(Lcom/transsion/camera/app/common/ai/AIRequest;Landroid/view/View;)V
     .registers 5
 
-    .line 557
+    .line 568
     invoke-static {p2}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p2
@@ -164,7 +164,7 @@
     :cond_7
     const-wide/16 v0, 0x12c
 
-    .line 560
+    .line 571
     iget-object p2, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mLastClickTime:[J
 
     invoke-static {v0, v1, p2}, Lcom/transsion/camera/utils/CameraUtil;->isFastDoubleClick(J[J)Z
@@ -176,7 +176,7 @@
     :goto_11
     return-void
 
-    .line 563
+    .line 574
     :cond_12
     invoke-static {}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -202,7 +202,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 564
+    .line 575
     iget-object p0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->this$0:Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;
 
     invoke-static {p0}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;->-$$Nest$fgetmRequestOperator(Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter;)Lcom/transsion/camera/featurelibs/aicommon/ui/request/IRequestOperator;
@@ -219,25 +219,25 @@
 .method bindView(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/RequestItem;)V
     .registers 8
 
-    .line 488
+    .line 499
     invoke-super {p0, p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$RequestViewHolder;->bindView(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/RequestItem;)V
 
-    .line 490
+    .line 501
     invoke-virtual {p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/RequestItem;->request()Lcom/transsion/camera/app/common/ai/AIRequest;
 
     move-result-object p1
 
-    .line 492
+    .line 503
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mDeleteButton:Landroid/view/View;
 
-    .line 493
+    .line 504
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 495
+    .line 506
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ai/AIRequest;->getResponseCode()I
 
     move-result v1
@@ -254,22 +254,22 @@
 
     packed-switch v1, :pswitch_data_c6
 
-    .line 538
+    .line 549
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$RequestViewHolder;->mDescription:Landroid/widget/TextView;
 
     sget v2, Lcom/transsion/camera/featurelibs/aicommon/R$string;->ai_fragment_processing_failed:I
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 540
+    .line 551
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mRetryButton:Landroid/view/View;
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 542
+    .line 553
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
-    .line 543
+    .line 554
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mRetryButton:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getId()I
@@ -278,7 +278,7 @@
 
     invoke-virtual {v0, v4, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 544
+    .line 555
     iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -295,7 +295,7 @@
 
     goto :goto_b1
 
-    .line 518
+    .line 529
     :pswitch_48
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$RequestViewHolder;->mDescription:Landroid/widget/TextView;
 
@@ -303,23 +303,23 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setText(I)V
 
-    .line 520
+    .line 531
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mRetryButton:Landroid/view/View;
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 522
+    .line 533
     invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
-    .line 523
+    .line 534
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 524
+    .line 535
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
     goto :goto_b1
 
-    .line 508
+    .line 519
     :pswitch_5e
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$RequestViewHolder;->mDescription:Landroid/widget/TextView;
 
@@ -327,23 +327,23 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setText(I)V
 
-    .line 510
+    .line 521
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mRetryButton:Landroid/view/View;
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 512
+    .line 523
     invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
-    .line 513
+    .line 524
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 514
+    .line 525
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
     goto :goto_b1
 
-    .line 498
+    .line 509
     :pswitch_74
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$RequestViewHolder;->mDescription:Landroid/widget/TextView;
 
@@ -351,23 +351,23 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setText(I)V
 
-    .line 500
+    .line 511
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mRetryButton:Landroid/view/View;
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 502
+    .line 513
     invoke-virtual {v0, v4}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
-    .line 503
+    .line 514
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
-    .line 504
+    .line 515
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
     goto :goto_b1
 
-    .line 528
+    .line 539
     :cond_8a
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$RequestViewHolder;->mDescription:Landroid/widget/TextView;
 
@@ -375,15 +375,15 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 530
+    .line 541
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mRetryButton:Landroid/view/View;
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 532
+    .line 543
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout$LayoutParams;->removeRule(I)V
 
-    .line 533
+    .line 544
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mRetryButton:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getId()I
@@ -392,7 +392,7 @@
 
     invoke-virtual {v0, v4, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 534
+    .line 545
     iget-object v1, p0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -407,7 +407,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
-    .line 548
+    .line 559
     :goto_b1
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mDeleteButton:Landroid/view/View;
 
@@ -417,7 +417,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 556
+    .line 567
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder;->mRetryButton:Landroid/view/View;
 
     new-instance v1, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$FailedViewHolder$$ExternalSyntheticLambda1;

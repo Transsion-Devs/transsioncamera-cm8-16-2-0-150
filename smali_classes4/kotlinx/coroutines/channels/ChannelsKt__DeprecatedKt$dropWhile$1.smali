@@ -20,11 +20,11 @@
     c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$dropWhile$1"
     f = "Deprecated.kt"
     l = {
-        0xb5,
-        0xb6,
-        0xb7,
-        0xbb,
-        0xbc
+        0xd3,
+        0xd4,
+        0xd5,
+        0xd9,
+        0xda
     }
     m = "invokeSuspend"
 .end annotation
@@ -129,7 +129,7 @@
 
     move-result-object v0
 
-    .line 180
+    .line 210
     iget v1, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$dropWhile$1;->label:I
 
     const/4 v2, 0x5
@@ -253,7 +253,7 @@
 
     check-cast p1, Lkotlinx/coroutines/channels/ProducerScope;
 
-    .line 181
+    .line 211
     iget-object v1, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$dropWhile$1;->$this_dropWhile:Lkotlinx/coroutines/channels/ReceiveChannel;
 
     invoke-interface {v1}, Lkotlinx/coroutines/channels/ReceiveChannel;->iterator()Lkotlinx/coroutines/channels/ChannelIterator;
@@ -292,7 +292,7 @@
 
     move-result-object p1
 
-    .line 182
+    .line 212
     iget-object v9, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$dropWhile$1;->$predicate:Lkotlin/jvm/functions/Function2;
 
     iput-object v1, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$dropWhile$1;->L$0:Ljava/lang/Object;
@@ -331,7 +331,7 @@
 
     if-nez p1, :cond_be
 
-    .line 183
+    .line 213
     iput-object v9, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$dropWhile$1;->L$0:Ljava/lang/Object;
 
     iput-object v7, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$dropWhile$1;->L$1:Ljava/lang/Object;
@@ -358,7 +358,7 @@
 
     goto :goto_73
 
-    .line 187
+    .line 217
     :cond_c0
     :goto_c0
     iget-object p1, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$dropWhile$1;->$this_dropWhile:Lkotlinx/coroutines/channels/ReceiveChannel;
@@ -404,7 +404,7 @@
 
     move-result-object p1
 
-    .line 188
+    .line 218
     iput-object v4, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$dropWhile$1;->L$0:Ljava/lang/Object;
 
     iput-object v1, p0, Lkotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$dropWhile$1;->L$1:Ljava/lang/Object;
@@ -420,7 +420,7 @@
     :goto_ef
     return-object v0
 
-    .line 190
+    .line 220
     :cond_f0
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 

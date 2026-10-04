@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)V
     .registers 2
 
-    .line 301
+    .line 295
     iput-object p1, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
     .registers 7
 
-    .line 304
+    .line 298
     invoke-static {}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -104,7 +104,7 @@
 
     invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 307
+    .line 301
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p2}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmPreviewWidth(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)I
@@ -121,7 +121,7 @@
 
     if-lez p2, :cond_d6
 
-    .line 308
+    .line 302
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p2}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSlaveScreen(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Z
@@ -146,7 +146,7 @@
 
     if-lez p2, :cond_a8
 
-    .line 309
+    .line 303
     invoke-static {}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p2
@@ -185,7 +185,7 @@
 
     invoke-static {p2, p3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 310
+    .line 304
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p2}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSurfaceDisplayWidth(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)I
@@ -202,7 +202,7 @@
 
     goto :goto_b7
 
-    .line 312
+    .line 306
     :cond_a8
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
@@ -218,7 +218,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/graphics/SurfaceTexture;->setDefaultBufferSize(II)V
 
-    .line 315
+    .line 309
     :goto_b7
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
@@ -228,7 +228,7 @@
 
     if-eqz p2, :cond_d6
 
-    .line 316
+    .line 310
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p2}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSurfaceStatusListener(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;
@@ -258,7 +258,7 @@
 .method public onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
     .registers 4
 
-    .line 343
+    .line 337
     invoke-static {}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -267,7 +267,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 344
+    .line 338
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSurfaceStatusListener(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;
@@ -276,7 +276,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 345
+    .line 339
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSurfaceStatusListener(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;
@@ -296,7 +296,7 @@
 .method public onSurfaceTextureDrawn()V
     .registers 2
 
-    .line 359
+    .line 353
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSurfaceStatusListener(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;
@@ -305,7 +305,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 360
+    .line 354
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSurfaceStatusListener(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;
@@ -321,7 +321,7 @@
 .method public onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
     .registers 7
 
-    .line 323
+    .line 317
     invoke-static {}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -378,7 +378,7 @@
 
     invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 328
+    .line 322
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p2}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmPreviewWidth(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)I
@@ -395,7 +395,7 @@
 
     if-lez p2, :cond_d6
 
-    .line 329
+    .line 323
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p2}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSlaveScreen(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Z
@@ -420,7 +420,7 @@
 
     if-lez p2, :cond_a8
 
-    .line 330
+    .line 324
     invoke-static {}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p2
@@ -459,7 +459,7 @@
 
     invoke-static {p2, p3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 331
+    .line 325
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p2}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSurfaceDisplayWidth(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)I
@@ -476,7 +476,7 @@
 
     goto :goto_b7
 
-    .line 333
+    .line 327
     :cond_a8
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
@@ -492,7 +492,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/graphics/SurfaceTexture;->setDefaultBufferSize(II)V
 
-    .line 335
+    .line 329
     :goto_b7
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
@@ -502,7 +502,7 @@
 
     if-eqz p2, :cond_d6
 
-    .line 336
+    .line 330
     iget-object p2, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p2}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSurfaceStatusListener(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;
@@ -532,7 +532,7 @@
 .method public onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
     .registers 3
 
-    .line 352
+    .line 346
     iget-object v0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSurfaceStatusListener(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;
@@ -541,7 +541,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 353
+    .line 347
     iget-object p0, p0, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController$SurfaceTextureListener;->this$0:Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;->-$$Nest$fgetmSurfaceStatusListener(Lcom/transsion/camera/app/ui/preview/GLSurfaceViewController;)Lcom/transsion/camera/app/common/IAppUIListener$ISurfaceStatusListener;

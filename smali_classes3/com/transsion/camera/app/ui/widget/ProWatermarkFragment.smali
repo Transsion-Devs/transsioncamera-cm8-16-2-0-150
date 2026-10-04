@@ -315,7 +315,7 @@
 .method private currentAIArtMuseumMode()Z
     .registers 2
 
-    .line 384
+    .line 383
     const-string v0, "com.transsion.camera.feature.mode.aiartmuseum.AIArtMuseumModeEntry"
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mCurrentModeName:Ljava/lang/String;
@@ -328,48 +328,16 @@
 .end method
 
 .method private currentAIGCMode()Z
-    .registers 3
+    .registers 2
 
     .line 379
     const-string v0, "com.transsion.camera.feature.mode.aigc.AIGCModeEntry"
 
-    iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mCurrentModeName:Ljava/lang/String;
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mCurrentModeName:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1f
-
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    if-eqz v0, :cond_1d
-
-    .line 380
-    invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->isIntentFromNegativeScreen()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1d
-
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->isAIGCFromNegativeScreen()Z
+    invoke-static {v0, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
-
-    if-eqz p0, :cond_1d
-
-    goto :goto_1f
-
-    :cond_1d
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1f
-    :goto_1f
-    const/4 p0, 0x1
 
     return p0
 .end method
@@ -903,7 +871,7 @@
 .method public onPageSelected(I)V
     .registers 5
 
-    .line 402
+    .line 401
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -922,15 +890,15 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 403
+    .line 402
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->updateSelectPage(I)V
 
-    .line 406
+    .line 405
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p1, :cond_34
 
-    .line 407
+    .line 406
     const-string v0, "key_pro_watermark"
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
@@ -941,7 +909,7 @@
 
     iget p0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mSelectIndex:I
 
-    .line 408
+    .line 407
     invoke-interface {v1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -952,7 +920,7 @@
 
     move-result-object p0
 
-    .line 407
+    .line 406
     invoke-virtual {p1, v0, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_34
@@ -1415,7 +1383,7 @@
 .method public setLocationManager(Lcom/transsion/camera/app/common/location/LocationManager;)V
     .registers 2
 
-    .line 432
+    .line 431
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mLocationManager:Lcom/transsion/camera/app/common/location/LocationManager;
 
     return-void
@@ -1424,7 +1392,7 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 388
+    .line 387
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-void
@@ -1433,7 +1401,7 @@
 .method public setSettingProvide(Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;)V
     .registers 2
 
-    .line 392
+    .line 391
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mSettingProvide:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
 
     return-void
@@ -1442,7 +1410,7 @@
 .method public unInit()V
     .registers 3
 
-    .line 436
+    .line 435
     sget-object v0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "unInit"
@@ -1451,33 +1419,33 @@
 
     const/4 v0, 0x0
 
-    .line 437
+    .line 436
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 438
+    .line 437
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 439
+    .line 438
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mProEditWatermark:Lcom/transsion/camera/app/ui/widget/ProEditWatermark;
 
     if-eqz v1, :cond_16
 
-    .line 440
+    .line 439
     invoke-virtual {v1}, Lcom/transsion/camera/app/ui/widget/ProEditWatermark;->unInit()V
 
-    .line 441
+    .line 440
     iput-object v0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mProEditWatermark:Lcom/transsion/camera/app/ui/widget/ProEditWatermark;
 
-    .line 443
+    .line 442
     :cond_16
     iget-object v1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mViewPager:Landroidx/viewpager/widget/ViewPager;
 
     if-eqz v1, :cond_22
 
-    .line 444
+    .line 443
     invoke-virtual {v1, v0}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
-    .line 445
+    .line 444
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mViewPager:Landroidx/viewpager/widget/ViewPager;
 
     invoke-virtual {p0, v0}, Landroidx/viewpager/widget/ViewPager;->setOnPageChangeListener(Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;)V
@@ -1513,10 +1481,10 @@
 .method public updateSelectPage(I)V
     .registers 4
 
-    .line 413
+    .line 412
     iput p1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mSelectIndex:I
 
-    .line 414
+    .line 413
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mProWatermarkViews:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
@@ -1525,7 +1493,7 @@
 
     if-eqz p1, :cond_12
 
-    .line 415
+    .line 414
     sget-object p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[updateSelectPage]: proWatermarkViews is null or size is 0"
@@ -1534,7 +1502,7 @@
 
     return-void
 
-    .line 418
+    .line 417
     :cond_12
     iget-object p1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mProWatermarkViews:Ljava/util/List;
 
@@ -1555,7 +1523,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;
 
-    .line 419
+    .line 418
     iget v1, p0, Lcom/transsion/camera/app/ui/widget/ProWatermarkFragment;->mSelectIndex:I
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/ProWatermarkView;->updateSelectedState(I)V

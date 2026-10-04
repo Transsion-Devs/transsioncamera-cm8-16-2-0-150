@@ -218,7 +218,7 @@
 .method public static synthetic $r8$lambda$kQ4eeBLsmJGtcnjuRwJSURefkpo(Ljava/lang/Throwable;)V
     .registers 3
 
-    .line 490
+    .line 491
     sget-object v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "Failed to load composition"
@@ -447,21 +447,21 @@
 .method private addOnPreDrawListener()V
     .registers 3
 
-    .line 990
+    .line 987
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     iget-boolean v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxSupport:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 991
+    .line 988
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     iget-boolean v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxSupport:Z
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
 
-    .line 992
+    .line 989
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -480,17 +480,17 @@
 .method private animateTreasureBoxItemBackground(I)V
     .registers 7
 
-    .line 331
+    .line 335
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentTreasureBoxItemRes:I
 
     if-ne v0, p1, :cond_13
 
-    .line 332
+    .line 336
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 333
+    .line 337
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -501,7 +501,7 @@
 
     return-void
 
-    .line 338
+    .line 342
     :cond_13
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
@@ -515,7 +515,7 @@
 
     move-result v0
 
-    .line 339
+    .line 343
     sget v1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_background_black_dark_no_alpha_ui5:I
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -547,7 +547,7 @@
     :cond_33
     move v2, v3
 
-    .line 346
+    .line 350
     :goto_34
     iget v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentTreasureBoxItemRes:I
 
@@ -555,12 +555,12 @@
 
     if-ne v1, v3, :cond_4f
 
-    .line 347
+    .line 351
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 348
+    .line 352
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -569,12 +569,12 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 349
+    .line 353
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 350
+    .line 354
     iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentTreasureBoxItemRes:I
 
     return-void
@@ -586,11 +586,11 @@
 
     return-void
 
-    .line 358
+    .line 362
     :cond_54
     iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTargetTreasureBoxItemRes:I
 
-    .line 359
+    .line 363
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v1, :cond_65
@@ -601,7 +601,7 @@
 
     if-eqz v1, :cond_65
 
-    .line 360
+    .line 364
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->cancel()V
@@ -609,7 +609,7 @@
     :cond_65
     const/4 v1, 0x2
 
-    .line 363
+    .line 367
     new-array v1, v1, [F
 
     const/4 v3, 0x0
@@ -628,10 +628,10 @@
 
     const-wide/16 v3, 0x1f4
 
-    .line 364
+    .line 368
     invoke-virtual {v0, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 365
+    .line 369
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Landroid/view/animation/AccelerateDecelerateInterpolator;
@@ -640,7 +640,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 366
+    .line 370
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda0;
@@ -649,7 +649,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 370
+    .line 374
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$1;
@@ -658,7 +658,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 389
+    .line 393
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
@@ -669,14 +669,14 @@
 .method private changeIconColor()V
     .registers 8
 
-    .line 1167
+    .line 1164
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-nez v0, :cond_5
 
     goto :goto_70
 
-    .line 1170
+    .line 1167
     :cond_5
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
@@ -684,7 +684,7 @@
 
     move-result-object v0
 
-    .line 1171
+    .line 1168
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     new-instance v2, Lcom/airbnb/lottie/model/KeyPath;
@@ -701,7 +701,7 @@
 
     move-result-object v1
 
-    .line 1172
+    .line 1169
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -719,12 +719,12 @@
 
     check-cast v2, Lcom/airbnb/lottie/model/KeyPath;
 
-    .line 1173
+    .line 1170
     invoke-virtual {v2}, Lcom/airbnb/lottie/model/KeyPath;->keysToString()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1174
+    .line 1171
     iget-object v4, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
     const-string v5, "on"
@@ -733,7 +733,7 @@
 
     move-result v4
 
-    .line 1175
+    .line 1172
     const-string v5, "icon"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -755,7 +755,7 @@
     :cond_48
     iget-object v3, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
-    .line 1176
+    .line 1173
     invoke-virtual {v3}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
 
     move-result-object v3
@@ -768,7 +768,7 @@
 
     if-nez v3, :cond_63
 
-    .line 1177
+    .line 1174
     iget-object v3, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     sget-object v5, Lcom/airbnb/lottie/LottieProperty;->COLOR:Ljava/lang/Integer;
@@ -781,7 +781,7 @@
 
     goto :goto_20
 
-    .line 1180
+    .line 1177
     :cond_63
     iget-object v3, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
@@ -803,7 +803,7 @@
 .method private static convertZoom(Ljava/lang/String;)I
     .registers 1
 
-    .line 784
+    .line 781
     :try_start_0
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -822,7 +822,7 @@
 .method private createSupportEntries()Z
     .registers 7
 
-    .line 754
+    .line 751
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->getSupport()Ljava/util/List;
 
     move-result-object v0
@@ -831,7 +831,7 @@
 
     if-nez v0, :cond_f
 
-    .line 756
+    .line 753
     sget-object p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "mDeviceSetting\'s support is null!"
@@ -840,7 +840,7 @@
 
     return v1
 
-    .line 760
+    .line 757
     :cond_f
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
@@ -848,14 +848,14 @@
 
     move-result-object v2
 
-    .line 761
+    .line 758
     iget-object v3, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {v3}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentStreamIds()[I
 
     move-result-object v3
 
-    .line 763
+    .line 760
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v4
@@ -868,7 +868,7 @@
 
     if-nez v3, :cond_4a
 
-    .line 764
+    .line 761
     iget-object v4, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     const-string v5, "key_camera_zoom"
@@ -877,7 +877,7 @@
 
     move-result-object v4
 
-    .line 765
+    .line 762
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v5
@@ -890,7 +890,7 @@
 
     move-result v4
 
-    .line 766
+    .line 763
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v5
@@ -899,7 +899,7 @@
 
     move-result-object v4
 
-    .line 767
+    .line 764
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
@@ -908,25 +908,25 @@
 
     move-object v2, v4
 
-    .line 771
+    .line 768
     :cond_4a
     iget-object v4, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v4, v2, v3, v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->createSupportedEntries(Ljava/lang/String;[ILjava/util/List;)V
 
-    .line 772
+    .line 769
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getSupportedEntryValues()[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 774
+    .line 771
     array-length v0, v0
 
     if-nez v0, :cond_73
 
-    .line 775
+    .line 772
     sget-object v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -962,7 +962,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 1187
+    .line 1184
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIconOffColor:I
 
     goto :goto_7
@@ -973,7 +973,7 @@
     :goto_7
     if-eqz p2, :cond_c
 
-    .line 1188
+    .line 1185
     iget p2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIconOnColor:I
 
     goto :goto_15
@@ -999,7 +999,7 @@
 
     div-float/2addr p1, v1
 
-    .line 1191
+    .line 1188
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mArgbEvaluator:Landroid/animation/ArgbEvaluator;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1029,26 +1029,26 @@
 .method private getEntryTextColor(I)I
     .registers 7
 
-    .line 1017
+    .line 1014
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 1018
+    .line 1015
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
     const-string v2, "color"
 
-    .line 1019
+    .line 1016
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1018
+    .line 1015
     const-string v4, "color_control_activated"
 
     invoke-virtual {v1, v4, v2, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
@@ -1064,13 +1064,13 @@
     :cond_1a
     const/4 p1, 0x0
 
-    .line 1022
+    .line 1019
     :goto_1b
     iget-boolean v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mScreenSupply:Z
 
     if-eqz v2, :cond_40
 
-    .line 1023
+    .line 1020
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     instance-of v3, v2, Lcom/transsion/camera/app/ui/setting/spec/ListSettingUISpec;
@@ -1085,7 +1085,7 @@
 
     if-eqz p1, :cond_34
 
-    .line 1024
+    .line 1021
     iget p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSupplyColor:I
 
     invoke-virtual {v0, p0}, Landroid/content/Context;->getColor(I)I
@@ -1101,7 +1101,7 @@
 
     return p0
 
-    .line 1026
+    .line 1023
     :cond_39
     iget p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSupplyColor:I
 
@@ -1111,7 +1111,7 @@
 
     return p0
 
-    .line 1029
+    .line 1026
     :cond_40
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
@@ -1127,7 +1127,7 @@
 
     if-eqz p1, :cond_55
 
-    .line 1030
+    .line 1027
     iget p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mNormalColor:I
 
     invoke-virtual {v0, p0}, Landroid/content/Context;->getColor(I)I
@@ -1143,7 +1143,7 @@
 
     return p0
 
-    .line 1032
+    .line 1029
     :cond_5a
     iget p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mNormalColor:I
 
@@ -1157,7 +1157,7 @@
 .method private getLottieAssetsPath(Ljava/lang/String;)Ljava/lang/String;
     .registers 3
 
-    .line 521
+    .line 522
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1184,7 +1184,7 @@
 .method private initIconColor(Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;)V
     .registers 3
 
-    .line 1145
+    .line 1142
     new-instance v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$4;
 
     invoke-direct {v0, p0, p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$4;-><init>(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;)V
@@ -1197,7 +1197,7 @@
 .method private interceptClickByLowPower()Z
     .registers 4
 
-    .line 740
+    .line 737
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mBatteryStatus:I
 
     const/4 v1, 0x2
@@ -1210,21 +1210,21 @@
 
     if-ne v0, v2, :cond_1f
 
-    .line 741
+    .line 738
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPowerResponder:Lcom/transsion/camera/app/common/battery/IBatteryListener;
 
     if-eqz v0, :cond_1f
 
-    .line 742
+    .line 739
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPopupOptionsControl:Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;
 
     if-eqz v0, :cond_15
 
-    .line 743
+    .line 740
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;->dismissPopup()V
 
-    .line 745
+    .line 742
     :cond_15
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPowerResponder:Lcom/transsion/camera/app/common/battery/IBatteryListener;
 
@@ -1245,15 +1245,15 @@
 .method private isCameraFacingBack()Z
     .registers 1
 
-    .line 930
+    .line 927
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    .line 931
+    .line 928
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object p0
 
-    .line 930
+    .line 927
     invoke-static {p0}, Lcom/transsion/camera/adapter/CameraInfoUtil;->isCameraFacingBack(Ljava/lang/String;)Z
 
     move-result p0
@@ -1352,7 +1352,7 @@
 .method private synthetic lambda$animateTreasureBoxItemBackground$0(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 367
+    .line 371
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1363,7 +1363,7 @@
 
     move-result p1
 
-    .line 368
+    .line 372
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
@@ -1374,7 +1374,7 @@
 .method private synthetic lambda$changeIconColor$4(ZLcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
     .registers 3
 
-    .line 1178
+    .line 1175
     invoke-virtual {p2}, Lcom/airbnb/lottie/value/LottieFrameInfo;->getOverallProgress()F
 
     move-result p2
@@ -1393,7 +1393,7 @@
 .method private synthetic lambda$changeIconColor$5(ZLcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
     .registers 3
 
-    .line 1181
+    .line 1178
     invoke-virtual {p2}, Lcom/airbnb/lottie/value/LottieFrameInfo;->getOverallProgress()F
 
     move-result p2
@@ -1412,12 +1412,12 @@
 .method private synthetic lambda$onScreenSupply$6()V
     .registers 2
 
-    .line 1222
+    .line 1221
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
     if-eqz v0, :cond_7
 
-    .line 1223
+    .line 1222
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateEntryView()V
 
     :cond_7
@@ -1427,7 +1427,7 @@
 .method private synthetic lambda$setupEntryView$3(Landroid/view/View;)V
     .registers 6
 
-    .line 542
+    .line 543
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
@@ -1438,7 +1438,7 @@
 
     goto/16 :goto_10e
 
-    .line 545
+    .line 546
     :cond_a
     sget-object v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1446,7 +1446,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 546
+    .line 547
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->interceptClickByLowPower()Z
 
     move-result v1
@@ -1475,7 +1475,7 @@
 
     if-nez v1, :cond_10e
 
-    .line 547
+    .line 548
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->isDVHintShowing()Z
 
     move-result v1
@@ -1494,7 +1494,7 @@
 
     goto/16 :goto_10e
 
-    .line 550
+    .line 551
     :cond_3f
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -1512,12 +1512,12 @@
 
     invoke-virtual {v1, v3, v2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(ILjava/lang/String;)V
 
-    .line 551
+    .line 552
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     if-eqz v1, :cond_6e
 
-    .line 552
+    .line 553
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -1538,14 +1538,14 @@
 
     if-eqz v1, :cond_6e
 
-    .line 553
+    .line 554
     const-string p0, "setupEntryView, live photo view is animating, not allow click"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 556
+    .line 557
     :cond_6e
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
@@ -1555,14 +1555,14 @@
 
     if-eqz v1, :cond_a0
 
-    .line 557
+    .line 558
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-interface {v1, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IPopupOptionControl;->updateCurrentPopWindowKey(Ljava/lang/String;)V
 
-    .line 558
+    .line 559
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
@@ -1579,7 +1579,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
-    .line 559
+    .line 560
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
 
     move-result-object v0
@@ -1592,7 +1592,7 @@
 
     if-eqz v0, :cond_a0
 
-    .line 560
+    .line 561
     :cond_99
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -1600,7 +1600,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 563
+    .line 564
     :cond_a0
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSellingPointData:Lcom/tencent/mmkv/MMKV;
 
@@ -1610,7 +1610,7 @@
 
     if-eqz v1, :cond_de
 
-    .line 564
+    .line 565
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1633,19 +1633,19 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/tencent/mmkv/MMKV;->encode(Ljava/lang/String;Z)Z
 
-    .line 565
+    .line 566
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->shouldUpdateTint()Z
 
     move-result v0
 
     if-eqz v0, :cond_cc
 
-    .line 566
+    .line 567
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCommonRes:Landroid/graphics/drawable/Drawable;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateTintForEntryView(Landroid/graphics/drawable/Drawable;)V
 
-    .line 568
+    .line 569
     :cond_cc
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
@@ -1653,7 +1653,7 @@
 
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieAnimationView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 569
+    .line 570
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
@@ -1664,21 +1664,21 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 571
+    .line 572
     :cond_de
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mOverrideClickListener:Landroid/view/View$OnClickListener;
 
     if-eqz v0, :cond_ef
 
-    .line 572
+    .line 573
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPopupOptionsControl:Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;
 
     if-eqz v0, :cond_e9
 
-    .line 573
+    .line 574
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;->dismissPopup()V
 
-    .line 575
+    .line 576
     :cond_e9
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mOverrideClickListener:Landroid/view/View$OnClickListener;
 
@@ -1686,7 +1686,7 @@
 
     return-void
 
-    .line 577
+    .line 578
     :cond_ef
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
@@ -1694,7 +1694,7 @@
 
     move-result-object p1
 
-    .line 578
+    .line 579
     array-length p1, p1
 
     const/4 v0, 0x2
@@ -1709,22 +1709,22 @@
 
     goto :goto_10b
 
-    .line 581
+    .line 582
     :cond_100
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPopupOptionsControl:Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;
 
     if-eqz p1, :cond_107
 
-    .line 582
+    .line 583
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;->dismissPopup()V
 
-    .line 584
+    .line 585
     :cond_107
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->setToNextIndex()V
 
     return-void
 
-    .line 579
+    .line 580
     :cond_10b
     :goto_10b
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->showPopupIfNeed()V
@@ -1737,30 +1737,30 @@
 .method private synthetic lambda$setupLottieAnimation$1(IZFLcom/airbnb/lottie/LottieComposition;)V
     .registers 7
 
-    .line 467
+    .line 468
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-nez v0, :cond_5
 
     goto :goto_72
 
-    .line 470
+    .line 471
     :cond_5
     iput-object p4, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mComposition:Lcom/airbnb/lottie/LottieComposition;
 
-    .line 471
+    .line 472
     invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->isAnimating()Z
 
     move-result p4
 
     if-eqz p4, :cond_12
 
-    .line 472
+    .line 473
     iget-object p4, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p4}, Lcom/airbnb/lottie/LottieAnimationView;->cancelAnimation()V
 
-    .line 474
+    .line 475
     :cond_12
     iget-object p4, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mComposition:Lcom/airbnb/lottie/LottieComposition;
 
@@ -1768,12 +1768,12 @@
 
     if-eqz p4, :cond_5f
 
-    .line 475
+    .line 476
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {v1, p4}, Lcom/airbnb/lottie/LottieAnimationView;->setComposition(Lcom/airbnb/lottie/LottieComposition;)V
 
-    .line 476
+    .line 477
     iget-object p4, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {p4}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
@@ -1794,7 +1794,7 @@
 
     if-nez p1, :cond_33
 
-    .line 477
+    .line 478
     const-string p1, "off"
 
     goto :goto_35
@@ -1802,7 +1802,7 @@
     :cond_33
     const-string p1, "on"
 
-    .line 478
+    .line 479
     :goto_35
     iget-object p4, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
@@ -1814,7 +1814,7 @@
 
     goto :goto_5a
 
-    .line 479
+    .line 480
     :cond_3f
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mComposition:Lcom/airbnb/lottie/LottieComposition;
 
@@ -1836,37 +1836,37 @@
 
     if-nez p1, :cond_5a
 
-    .line 480
+    .line 481
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const-string p4, "images"
 
     invoke-virtual {p1, p4}, Lcom/airbnb/lottie/LottieAnimationView;->setImageAssetsFolder(Ljava/lang/String;)V
 
-    .line 482
+    .line 483
     :cond_5a
     :goto_5a
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p1, v0}, Lcom/airbnb/lottie/LottieAnimationView;->setProgress(F)V
 
-    .line 484
+    .line 485
     :cond_5f
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->changeIconColor()V
 
     if-eqz p2, :cond_72
 
-    .line 485
+    .line 486
     iget-boolean p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxSupport:Z
 
     if-eqz p1, :cond_72
 
-    .line 486
+    .line 487
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p1, p3, v0}, Lcom/airbnb/lottie/LottieAnimationView;->setMinAndMaxProgress(FF)V
 
-    .line 487
+    .line 488
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p0}, Lcom/airbnb/lottie/LottieAnimationView;->playAnimation()V
@@ -1911,14 +1911,14 @@
 .method private processAnimationIfNeed()Z
     .registers 4
 
-    .line 455
+    .line 456
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxSupport:Z
 
     if-eqz v0, :cond_2a
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
-    .line 456
+    .line 457
     const-string v1, "on"
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1940,7 +1940,7 @@
     :cond_18
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPreEntryValue:Ljava/lang/String;
 
-    .line 457
+    .line 458
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -1969,7 +1969,7 @@
 .method private registerKeyToMonitor(Ljava/lang/String;)V
     .registers 3
 
-    .line 1045
+    .line 1042
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
@@ -1982,33 +1982,33 @@
 .method private setValueByIndex(I)V
     .registers 4
 
-    .line 791
+    .line 788
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getSupportedEntryValues()[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 792
+    .line 789
     array-length v1, v0
 
-    .line 793
+    .line 790
     rem-int/2addr p1, v1
 
-    .line 794
+    .line 791
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
     iput-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPreEntryValue:Ljava/lang/String;
 
-    .line 795
+    .line 792
     aget-object p1, v0, p1
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
-    .line 797
+    .line 794
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateEntryView()V
 
-    .line 798
+    .line 795
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->processAnimationIfNeed()Z
 
     move-result p1
@@ -2017,33 +2017,33 @@
 
     const/4 p1, 0x1
 
-    .line 799
+    .line 796
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->setAnimation(Z)V
 
-    .line 800
+    .line 797
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->changeIconColor()V
 
-    .line 802
+    .line 799
     :cond_20
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p1, :cond_29
 
-    .line 803
+    .line 800
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 805
+    .line 802
     :cond_29
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mItemSelectHook:Lcom/transsion/camera/app/common/ui/setting/IPopSettingItemUI$ItemSelectHook;
 
     if-eqz p1, :cond_30
 
-    .line 806
+    .line 803
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/IPopSettingItemUI$ItemSelectHook;->onItemSelected()V
 
-    .line 808
+    .line 805
     :cond_30
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->doOnValueChanged()V
 
@@ -2053,7 +2053,7 @@
 .method private setupLottieAnimation(IZF)V
     .registers 6
 
-    .line 461
+    .line 462
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getSupportedAnimation()[Ljava/lang/String;
@@ -2066,7 +2066,7 @@
 
     if-eq p1, v1, :cond_3a
 
-    .line 462
+    .line 463
     array-length v1, v0
 
     if-ge p1, v1, :cond_3a
@@ -2077,7 +2077,7 @@
 
     goto :goto_3a
 
-    .line 465
+    .line 466
     :cond_13
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
@@ -2091,23 +2091,23 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda2;
+    new-instance v1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda1;
 
-    invoke-direct {v1, p0, p1, p2, p3}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;IZF)V
+    invoke-direct {v1, p0, p1, p2, p3}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;IZF)V
 
-    .line 466
+    .line 467
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieTask;->addListener(Lcom/airbnb/lottie/LottieListener;)Lcom/airbnb/lottie/LottieTask;
 
     move-result-object p1
 
-    new-instance p2, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda3;
+    new-instance p2, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda2;
 
-    invoke-direct {p2}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda3;-><init>()V
+    invoke-direct {p2}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda2;-><init>()V
 
-    .line 490
+    .line 491
     invoke-virtual {p1, p2}, Lcom/airbnb/lottie/LottieTask;->addFailureListener(Lcom/airbnb/lottie/LottieListener;)Lcom/airbnb/lottie/LottieTask;
 
-    .line 492
+    .line 493
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     new-instance p2, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$2;
@@ -2124,14 +2124,14 @@
 .method private shouldShown()Z
     .registers 2
 
-    .line 1040
+    .line 1037
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getSupportedEntryValues()[Ljava/lang/String;
 
     move-result-object p0
 
-    .line 1041
+    .line 1038
     array-length p0, p0
 
     const/4 v0, 0x1
@@ -2149,7 +2149,7 @@
 .method private shouldUpdateTint()Z
     .registers 2
 
-    .line 1007
+    .line 1004
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
@@ -2164,7 +2164,7 @@
 .method private showPopupIfNeed()V
     .registers 7
 
-    .line 815
+    .line 812
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPopupOptionsControl:Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;
 
     new-instance v2, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$PopupOptionStateCallbackImpl;
@@ -2187,7 +2187,7 @@
 
     if-eqz p0, :cond_1c
 
-    .line 818
+    .line 815
     iget-object p0, v1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
     const/4 v0, 0x1
@@ -2196,7 +2196,7 @@
 
     return-void
 
-    .line 820
+    .line 817
     :cond_1c
     iget-object p0, v1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
@@ -2210,7 +2210,7 @@
 .method private showSellingPointsIfNeed()V
     .registers 4
 
-    .line 957
+    .line 954
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIsSellingPoint:Z
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSellingPointData:Lcom/tencent/mmkv/MMKV;
@@ -2221,19 +2221,19 @@
 
     if-eqz v0, :cond_84
 
-    .line 958
+    .line 955
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
     if-nez v0, :cond_15
 
-    .line 959
+    .line 956
     sget-object v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "showSellingPointsIfNeed, mEntryLayout is null"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 961
+    .line 958
     :cond_15
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
@@ -2247,7 +2247,7 @@
 
     if-nez v0, :cond_29
 
-    .line 963
+    .line 960
     sget-object p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "showSellingPointsIfNeed, viewStub is null"
@@ -2256,11 +2256,11 @@
 
     return-void
 
-    .line 966
+    .line 963
     :cond_29
     invoke-virtual {v0}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
-    .line 967
+    .line 964
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
     iget v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mItemSellingPointsImgId:I
@@ -2275,7 +2275,7 @@
 
     if-nez v0, :cond_42
 
-    .line 969
+    .line 966
     sget-object p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "showSellingPointsIfNeed, mEntrySellingImg is null"
@@ -2284,7 +2284,7 @@
 
     return-void
 
-    .line 972
+    .line 969
     :cond_42
     invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
@@ -2292,14 +2292,14 @@
 
     if-nez v0, :cond_4f
 
-    .line 973
+    .line 970
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntrySellingImg:Landroid/widget/ImageView;
 
     iget v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntrySellingPointsResId:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 975
+    .line 972
     :cond_4f
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntrySellingImg:Landroid/widget/ImageView;
 
@@ -2307,12 +2307,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 976
+    .line 973
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxSupport:Z
 
     if-eqz v0, :cond_8d
 
-    .line 977
+    .line 974
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntrySellingImg:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2321,7 +2321,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 978
+    .line 975
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -2336,7 +2336,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
-    .line 979
+    .line 976
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -2351,14 +2351,14 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 980
+    .line 977
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntrySellingImg:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 
-    .line 983
+    .line 980
     :cond_84
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntrySellingImg:Landroid/widget/ImageView;
 
@@ -2366,7 +2366,7 @@
 
     const/16 v0, 0x8
 
-    .line 984
+    .line 981
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
     :cond_8d
@@ -2376,7 +2376,7 @@
 .method private unRegisterKeyToMonitor(Ljava/lang/String;)V
     .registers 3
 
-    .line 1049
+    .line 1046
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
@@ -2389,7 +2389,7 @@
 .method private updateClickEntryView()V
     .registers 4
 
-    .line 850
+    .line 847
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getIcon()Landroid/graphics/drawable/Drawable;
@@ -2400,7 +2400,7 @@
 
     goto :goto_6d
 
-    .line 854
+    .line 851
     :cond_9
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
@@ -2412,15 +2412,15 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCommonRes:Landroid/graphics/drawable/Drawable;
 
-    .line 855
+    .line 852
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->showSellingPointsIfNeed()V
 
-    .line 856
+    .line 853
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCommonRes:Landroid/graphics/drawable/Drawable;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateTintForEntryView(Landroid/graphics/drawable/Drawable;)V
 
-    .line 857
+    .line 854
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-eqz v0, :cond_6d
@@ -2429,12 +2429,12 @@
 
     if-eqz v1, :cond_6d
 
-    .line 858
+    .line 855
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCommonRes:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v1}, Lcom/airbnb/lottie/LottieAnimationView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 859
+    .line 856
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
@@ -2445,12 +2445,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 860
+    .line 857
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mScreenSupply:Z
 
     if-eqz v0, :cond_59
 
-    .line 861
+    .line 858
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -2465,14 +2465,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 862
+    .line 859
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     sget v1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_high_light_background:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 863
+    .line 860
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     sget v0, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_high_light_background:I
@@ -2485,7 +2485,7 @@
 
     return-void
 
-    .line 865
+    .line 862
     :cond_59
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
@@ -2505,7 +2505,7 @@
 
     const/4 v1, 0x0
 
-    .line 866
+    .line 863
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateTreasureBoxItemBackground(Ljava/lang/String;Z)V
 
     :cond_6d
@@ -2516,12 +2516,12 @@
 .method private updateEntryDescription()V
     .registers 4
 
-    .line 917
+    .line 914
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 918
+    .line 915
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getTitle()Ljava/lang/String;
@@ -2530,22 +2530,22 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 919
+    .line 916
     const-string v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
-    .line 920
+    .line 917
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 921
+    .line 918
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v2, :cond_2d
 
-    .line 922
+    .line 919
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->isCameraFacingBack()Z
 
     move-result v2
@@ -2559,14 +2559,14 @@
     :cond_25
     const-string v2, "front"
 
-    .line 923
+    .line 920
     :goto_27
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 924
+    .line 921
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 926
+    .line 923
     :cond_2d
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
@@ -2582,7 +2582,7 @@
 .method private updateEntryDrawable(I)V
     .registers 3
 
-    .line 935
+    .line 932
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getSupportedEntryDrawables()[Landroid/graphics/drawable/Drawable;
@@ -2591,44 +2591,44 @@
 
     if-eqz v0, :cond_55
 
-    .line 936
+    .line 933
     aget-object p1, v0, p1
 
     if-nez p1, :cond_d
 
     goto :goto_55
 
-    .line 939
+    .line 936
     :cond_d
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object p1
 
-    .line 940
+    .line 937
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCommonRes:Landroid/graphics/drawable/Drawable;
 
-    .line 941
+    .line 938
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->showSellingPointsIfNeed()V
 
-    .line 942
+    .line 939
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->shouldUpdateTint()Z
 
     move-result p1
 
     if-eqz p1, :cond_26
 
-    .line 943
+    .line 940
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCommonRes:Landroid/graphics/drawable/Drawable;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateTintForEntryView(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_2c
 
-    .line 945
+    .line 942
     :cond_26
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCommonRes:Landroid/graphics/drawable/Drawable;
 
@@ -2636,7 +2636,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 947
+    .line 944
     :goto_2c
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
@@ -2646,7 +2646,7 @@
 
     if-eqz p1, :cond_43
 
-    .line 948
+    .line 945
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->processAnimationIfNeed()Z
 
     move-result p1
@@ -2659,12 +2659,12 @@
 
     const/4 p1, 0x0
 
-    .line 949
+    .line 946
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->setAnimation(Z)V
 
     goto :goto_4a
 
-    .line 951
+    .line 948
     :cond_43
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
@@ -2672,7 +2672,7 @@
 
     invoke-virtual {p1, v0}, Lcom/airbnb/lottie/LottieAnimationView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 953
+    .line 950
     :goto_4a
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
@@ -2692,7 +2692,7 @@
 .method private updateEntryView()V
     .registers 3
 
-    .line 832
+    .line 829
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getType()I
@@ -2703,12 +2703,12 @@
 
     if-ne v0, v1, :cond_d
 
-    .line 833
+    .line 830
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateClickEntryView()V
 
     return-void
 
-    .line 835
+    .line 832
     :cond_d
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateListEntryView()V
 
@@ -2737,17 +2737,17 @@
 
     const/4 v0, 0x0
 
-    .line 889
+    .line 886
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIsShouldGone:Z
 
-    .line 890
+    .line 887
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
     if-nez v1, :cond_8
 
     return-void
 
-    .line 893
+    .line 890
     :cond_8
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->shouldShown()Z
 
@@ -2757,10 +2757,10 @@
 
     if-nez v1, :cond_2c
 
-    .line 894
+    .line 891
     iput-boolean v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIsShouldGone:Z
 
-    .line 895
+    .line 892
     sget-object v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2785,7 +2785,7 @@
 
     return-void
 
-    .line 899
+    .line 896
     :cond_2c
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
@@ -2797,7 +2797,7 @@
 
     if-gez v1, :cond_6f
 
-    .line 901
+    .line 898
     sget-object v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2808,7 +2808,7 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 902
+    .line 899
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->getKey()Ljava/lang/String;
 
     move-result-object v3
@@ -2829,7 +2829,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
-    .line 903
+    .line 900
     invoke-virtual {v3}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getSupportedEntryValues()[Ljava/lang/String;
 
     move-result-object v3
@@ -2844,31 +2844,31 @@
 
     move-result-object v1
 
-    .line 901
+    .line 898
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 904
+    .line 901
     iput-boolean v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIsShouldGone:Z
 
     return-void
 
-    .line 908
+    .line 905
     :cond_6f
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
     if-eqz v2, :cond_76
 
-    .line 909
+    .line 906
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 911
+    .line 908
     :cond_76
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateEntryDescription()V
 
-    .line 912
+    .line 909
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateEntryDrawable(I)V
 
-    .line 913
+    .line 910
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateHighLightShow(I)V
 
     return-void
@@ -2877,12 +2877,12 @@
 .method private updateTintForEntryView(Landroid/graphics/drawable/Drawable;)V
     .registers 3
 
-    .line 872
+    .line 869
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mScreenSupply:Z
 
     if-eqz v0, :cond_c
 
-    .line 873
+    .line 870
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->getTintList()Landroid/content/res/ColorStateList;
 
     move-result-object p0
@@ -2894,7 +2894,7 @@
     :cond_c
     const/4 p0, 0x0
 
-    .line 875
+    .line 872
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
     return-void
@@ -2905,15 +2905,15 @@
 .method public cancelAnimation()V
     .registers 2
 
-    .line 514
+    .line 515
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-eqz v0, :cond_e
 
-    .line 515
+    .line 516
     invoke-virtual {v0}, Lcom/airbnb/lottie/LottieAnimationView;->cancelAnimation()V
 
-    .line 516
+    .line 517
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -3010,116 +3010,26 @@
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     .line 265
-    invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    const-string/jumbo p3, "top_bar_animation_icon_on"
-
-    invoke-static {p1, p3}, Lcom/transsion/camera/utils/CameraUtil;->getColor(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIconOnColor:I
-
-    .line 266
-    invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    const-string/jumbo p3, "top_bar_animation_icon_off"
-
-    invoke-static {p1, p3}, Lcom/transsion/camera/utils/CameraUtil;->getColor(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIconOffColor:I
-
-    .line 267
-    invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    const-string/jumbo p2, "top_bar_animation_icon_low_light"
-
-    invoke-static {p1, p2}, Lcom/transsion/camera/utils/CameraUtil;->getColor(Landroid/content/Context;Ljava/lang/String;)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIconLowLightColor:I
-
-    .line 268
-    iget-boolean p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxSupport:Z
-
-    const/4 p2, 0x0
-
-    if-nez p1, :cond_9b
-
-    .line 269
-    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
-
-    const/16 p3, 0x8
-
-    invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 270
-    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPopSettingContainer:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/LinearLayout$LayoutParams;
-
-    .line 271
-    iget-object p3, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
-
-    invoke-virtual {p3}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p3
-
-    sget p4, Lcom/transsion/camera/app/common/R$dimen;->pop_setting_container_margin_top_ui3:I
-
-    invoke-virtual {p3, p4}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result p3
-
-    float-to-int p3, p3
-
-    iput p3, p1, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
-
-    .line 272
-    iget-object p3, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPopSettingContainer:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p3, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    goto :goto_a6
-
-    .line 273
-    :cond_9b
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5:Z
 
-    if-eqz p1, :cond_a6
+    const/4 p2, 0x0
 
-    .line 274
+    if-eqz p1, :cond_53
+
+    .line 266
     invoke-virtual {p0, p2, p11}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateTreasureBoxItemBackground(Ljava/lang/String;Z)V
 
-    .line 276
-    :cond_a6
-    :goto_a6
+    .line 268
+    :cond_53
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
     invoke-virtual {p1, p11}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 277
+    .line 269
     const-string p1, "SellingPoint"
 
     invoke-static {p1}, Lcom/tencent/mmkv/MMKV;->mmkvWithID(Ljava/lang/String;)Lcom/tencent/mmkv/MMKV;
@@ -3128,7 +3038,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSellingPointData:Lcom/tencent/mmkv/MMKV;
 
-    .line 278
+    .line 270
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     iget-object p3, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
@@ -3139,13 +3049,13 @@
 
     invoke-virtual {p1, p3}, Lcom/airbnb/lottie/LottieAnimationView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 279
+    .line 271
     iput p8, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntrySellingPointsResId:I
 
-    .line 280
+    .line 272
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->showSellingPointsIfNeed()V
 
-    .line 281
+    .line 273
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     iget-object p3, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
@@ -3156,7 +3066,7 @@
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 282
+    .line 274
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     iget-boolean p3, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mScreenSupply:Z
@@ -3165,86 +3075,22 @@
 
     invoke-direct {p0, p1, p3}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateItemTextStrokeAvailable(Landroid/view/View;Z)V
 
-    .line 283
+    .line 275
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateLayoutParams()V
 
-    .line 284
+    .line 276
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
 
     const p3, 0x3f4ccccd    # 0.8f
 
     invoke-static {p1, p3, p2}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
-    .line 286
-    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
-
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
-
-    .line 287
-    invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object p2
-
-    .line 286
-    const-string p3, "pop_setting_item_supply_color"
-
-    const-string p4, "color"
-
-    invoke-virtual {p1, p3, p4, p2}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSupplyColor:I
-
-    .line 288
-    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
-
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
-
-    .line 289
-    invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object p2
-
-    .line 288
-    const-string p3, "pop_setting_item_normal_color"
-
-    invoke-virtual {p1, p3, p4, p2}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mNormalColor:I
-
-    .line 290
+    .line 278
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->initIconColor(Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;)V
 
-    .line 291
+    .line 279
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
 
     return-object p0
@@ -3261,7 +3107,7 @@
 .method public doAnimation()V
     .registers 4
 
-    .line 840
+    .line 837
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getSupportedAnimation()[Ljava/lang/String;
@@ -3272,7 +3118,7 @@
 
     return-void
 
-    .line 844
+    .line 841
     :cond_9
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
@@ -3282,14 +3128,14 @@
 
     move-result v1
 
-    .line 845
+    .line 842
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     aget-object v0, v0, v1
 
     invoke-virtual {v2, v0}, Lcom/airbnb/lottie/LottieAnimationView;->setAnimation(Ljava/lang/String;)V
 
-    .line 846
+    .line 843
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     invoke-virtual {p0}, Lcom/airbnb/lottie/LottieAnimationView;->playAnimation()V
@@ -3300,7 +3146,7 @@
 .method public doOnStatusChanged(Ljava/lang/String;)V
     .registers 5
 
-    .line 1111
+    .line 1108
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxSupport:Z
 
     if-eqz v0, :cond_14
@@ -3317,12 +3163,12 @@
 
     if-eqz v0, :cond_14
 
-    .line 1112
+    .line 1109
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->getSettingValue()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1114
+    .line 1111
     :cond_14
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
@@ -3334,10 +3180,10 @@
 
     if-eqz v0, :cond_35
 
-    .line 1115
+    .line 1112
     const-string v1, "key_picture_size"
 
-    .line 1116
+    .line 1113
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->getKey()Ljava/lang/String;
 
     move-result-object v2
@@ -3350,36 +3196,36 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
-    .line 1117
+    .line 1114
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_35
 
-    .line 1118
+    .line 1115
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->createSupportEntries()Z
 
-    .line 1120
+    .line 1117
     :cond_35
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
     if-nez v0, :cond_69
 
-    .line 1123
+    .line 1120
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->createSupportEntries()Z
 
-    .line 1124
+    .line 1121
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateEntryView()V
 
-    .line 1125
+    .line 1122
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->processAnimationIfNeed()Z
 
     move-result p1
 
     if-eqz p1, :cond_69
 
-    .line 1126
+    .line 1123
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
@@ -3396,32 +3242,32 @@
 
     if-eqz p1, :cond_63
 
-    .line 1127
+    .line 1124
     iget-boolean p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mLivePhotoIconClicked:Z
 
     const/4 v1, 0x0
 
     if-eqz p1, :cond_5f
 
-    .line 1128
+    .line 1125
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mLivePhotoIconClicked:Z
 
-    .line 1129
+    .line 1126
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->setAnimation(Z)V
 
     goto :goto_66
 
-    .line 1131
+    .line 1128
     :cond_5f
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->setAnimation(Z)V
 
     goto :goto_66
 
-    .line 1134
+    .line 1131
     :cond_63
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->setAnimation(Z)V
 
-    .line 1136
+    .line 1133
     :goto_66
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->changeIconColor()V
 
@@ -3438,7 +3284,7 @@
 .method public getEntryView()Landroid/view/View;
     .registers 1
 
-    .line 536
+    .line 537
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
     return-object p0
@@ -3447,7 +3293,7 @@
 .method public getIsShouldGone()Z
     .registers 1
 
-    .line 885
+    .line 882
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIsShouldGone:Z
 
     return p0
@@ -3456,7 +3302,7 @@
 .method public getItemType()Ljava/lang/String;
     .registers 1
 
-    .line 416
+    .line 417
     const-string p0, "POP_SETTING"
 
     return-object p0
@@ -3514,7 +3360,7 @@
 .method public getSettingUISpec()Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
     .registers 1
 
-    .line 600
+    .line 601
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     return-object p0
@@ -3567,7 +3413,7 @@
 
     const/high16 p0, -0x1000000
 
-    .line 880
+    .line 877
     invoke-static {p0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
     move-result-object p0
@@ -3590,55 +3436,68 @@
     return-void
 .end method
 
+.method public initColor(III)V
+    .registers 4
+
+    .line 284
+    iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIconOnColor:I
+
+    .line 285
+    iput p2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIconOffColor:I
+
+    .line 286
+    iput p3, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIconLowLightColor:I
+
+    return-void
+.end method
+
+.method public initColorId(II)V
+    .registers 3
+
+    .line 291
+    iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSupplyColor:I
+
+    .line 292
+    iput p2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mNormalColor:I
+
+    return-void
+.end method
+
 .method public notifyCameraOperateAction(I)V
-    .registers 5
+    .registers 4
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_15
 
     const/4 v1, 0x0
 
-    if-eq p1, v0, :cond_1d
+    if-eq p1, v0, :cond_12
 
-    const/16 v2, 0x20
+    const/16 v0, 0x20
 
-    if-eq p1, v2, :cond_1a
+    if-eq p1, v0, :cond_f
 
-    const/16 v2, 0x36
+    const/16 v0, 0x36
 
-    if-eq p1, v2, :cond_1d
-
-    const/16 v2, 0x4a
-
-    if-eq p1, v2, :cond_17
-
-    const/16 v0, 0x4c
-
-    if-eq p1, v0, :cond_1a
+    if-eq p1, v0, :cond_12
 
     return-void
 
-    .line 711
-    :cond_17
-    iput-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mHidePopup:Z
-
-    return-void
-
-    .line 715
-    :cond_1a
+    .line 712
+    :cond_f
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mHidePopup:Z
 
     return-void
 
-    .line 722
-    :cond_1d
+    .line 719
+    :cond_12
     iput-boolean v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->isCameraSwitching:Z
 
     return-void
 
-    .line 718
-    :cond_20
+    .line 715
+    :cond_15
     iput-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->isCameraSwitching:Z
 
     return-void
@@ -3687,7 +3546,7 @@
 .method public onEntryViewClick(Landroid/view/View;)V
     .registers 6
 
-    .line 420
+    .line 421
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->interceptClickByLowPower()Z
 
     move-result v0
@@ -3696,7 +3555,7 @@
 
     goto/16 :goto_85
 
-    .line 423
+    .line 424
     :cond_8
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSellingPointData:Lcom/tencent/mmkv/MMKV;
 
@@ -3708,7 +3567,7 @@
 
     if-eqz v2, :cond_46
 
-    .line 424
+    .line 425
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3729,19 +3588,19 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/tencent/mmkv/MMKV;->encode(Ljava/lang/String;Z)Z
 
-    .line 425
+    .line 426
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->shouldUpdateTint()Z
 
     move-result v0
 
     if-eqz v0, :cond_34
 
-    .line 426
+    .line 427
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCommonRes:Landroid/graphics/drawable/Drawable;
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateTintForEntryView(Landroid/graphics/drawable/Drawable;)V
 
-    .line 428
+    .line 429
     :cond_34
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
@@ -3749,7 +3608,7 @@
 
     invoke-virtual {v0, v2}, Lcom/airbnb/lottie/LottieAnimationView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 429
+    .line 430
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
@@ -3760,7 +3619,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 431
+    .line 432
     :cond_46
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mOverrideClickListener:Landroid/view/View$OnClickListener;
 
@@ -3768,15 +3627,15 @@
 
     if-eqz v0, :cond_58
 
-    .line 432
+    .line 433
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPopupOptionsControl:Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;
 
     if-eqz v0, :cond_52
 
-    .line 433
+    .line 434
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;->dismissPopup()V
 
-    .line 435
+    .line 436
     :cond_52
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mOverrideClickListener:Landroid/view/View$OnClickListener;
 
@@ -3784,7 +3643,7 @@
 
     goto :goto_6f
 
-    .line 437
+    .line 438
     :cond_58
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
@@ -3792,30 +3651,30 @@
 
     move-result-object p1
 
-    .line 438
+    .line 439
     array-length p1, p1
 
     if-le p1, v2, :cond_65
 
-    .line 439
+    .line 440
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->showPopupIfNeed()V
 
     goto :goto_6f
 
-    .line 441
+    .line 442
     :cond_65
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPopupOptionsControl:Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;
 
     if-eqz p1, :cond_6c
 
-    .line 442
+    .line 443
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;->dismissPopup()V
 
-    .line 444
+    .line 445
     :cond_6c
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->setToNextIndex()V
 
-    .line 447
+    .line 448
     :goto_6f
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->processAnimationIfNeed()Z
 
@@ -3823,7 +3682,7 @@
 
     if-eqz p1, :cond_85
 
-    .line 448
+    .line 449
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getSupportedEntryValues()[Ljava/lang/String;
@@ -3839,7 +3698,7 @@
     :cond_7f
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->setAnimation(Z)V
 
-    .line 449
+    .line 450
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->changeIconColor()V
 
     :cond_85
@@ -3859,10 +3718,10 @@
     return-void
 .end method
 
-.method public onScreenSupply(Z)V
-    .registers 5
+.method public onScreenSupply(ZZ)V
+    .registers 6
 
-    .line 1209
+    .line 1206
     sget-object v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3881,10 +3740,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1210
+    .line 1207
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mScreenSupply:Z
 
-    .line 1211
+    .line 1208
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getAlpha()F
@@ -3899,25 +3758,25 @@
 
     if-gez v0, :cond_2b
 
-    .line 1212
+    .line 1209
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1214
+    .line 1211
     :cond_2b
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mScreenSupply:Z
 
     if-eqz v0, :cond_42
 
-    .line 1215
+    .line 1212
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     sget v1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_high_light_background:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1216
+    .line 1213
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     sget v1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_high_light_background:I
@@ -3935,10 +3794,10 @@
 
     const/4 v1, 0x0
 
-    .line 1218
+    .line 1215
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateTreasureBoxItemBackground(Ljava/lang/String;Z)V
 
-    .line 1220
+    .line 1217
     :goto_47
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
@@ -3946,22 +3805,25 @@
 
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateItemTextStrokeAvailable(Landroid/view/View;Z)V
 
-    .line 1221
+    if-eqz p2, :cond_5a
+
+    .line 1220
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mUIHandler:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$UIHandler;
 
-    new-instance v0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda1;
+    new-instance p2, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda3;
 
-    invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)V
+    invoke-direct {p2, p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda3;-><init>(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)V
 
-    invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {p1, p2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
+    :cond_5a
     return-void
 .end method
 
 .method public optionBarFastDoubleClick()Z
     .registers 3
 
-    .line 409
+    .line 410
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->getItemType()Ljava/lang/String;
 
     move-result-object p0
@@ -3981,7 +3843,7 @@
     :cond_e
     const-wide/16 v0, 0x12c
 
-    .line 412
+    .line 413
     sget-object p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mLastClickTime:[J
 
     invoke-static {v0, v1, p0}, Lcom/transsion/camera/utils/CameraUtil;->isFastDoubleClick(J[J)Z
@@ -3994,7 +3856,7 @@
 .method public overrideClickListener(Landroid/view/View$OnClickListener;)V
     .registers 2
 
-    .line 612
+    .line 613
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mOverrideClickListener:Landroid/view/View$OnClickListener;
 
     return-void
@@ -4003,7 +3865,7 @@
 .method public playAnimation(ZF)V
     .registers 5
 
-    .line 508
+    .line 509
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
@@ -4012,7 +3874,7 @@
 
     move-result v0
 
-    .line 509
+    .line 510
     invoke-direct {p0, v0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->setupLottieAnimation(IZF)V
 
     return-void
@@ -4027,7 +3889,7 @@
 .method public setAnimation(Z)V
     .registers 4
 
-    .line 502
+    .line 503
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
@@ -4038,7 +3900,7 @@
 
     const/4 v1, 0x0
 
-    .line 503
+    .line 504
     invoke-direct {p0, v0, p1, v1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->setupLottieAnimation(IZF)V
 
     return-void
@@ -4062,7 +3924,7 @@
 .method public setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
     .registers 2
 
-    .line 731
+    .line 728
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     return-void
@@ -4071,12 +3933,12 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 4
 
-    .line 637
+    .line 638
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p1, :cond_1f
 
-    .line 639
+    .line 640
     sget-object p1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -4101,7 +3963,7 @@
 
     return-void
 
-    .line 643
+    .line 644
     :cond_1f
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->getSettingValue()Ljava/lang/String;
 
@@ -4109,7 +3971,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
-    .line 644
+    .line 645
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
@@ -4124,12 +3986,12 @@
 
     if-eqz p1, :cond_37
 
-    .line 645
+    .line 646
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPreEntryValue:Ljava/lang/String;
 
-    .line 648
+    .line 649
     :cond_37
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->createSupportEntries()Z
 
@@ -4139,7 +4001,7 @@
 
     return-void
 
-    .line 652
+    .line 653
     :cond_3e
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
@@ -4153,7 +4015,7 @@
 
     if-ne p1, v0, :cond_5b
 
-    .line 654
+    .line 655
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getSupportedEntryValues()[Ljava/lang/String;
@@ -4162,38 +4024,38 @@
 
     const/4 v0, 0x0
 
-    .line 655
+    .line 656
     aget-object p1, p1, v0
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
-    .line 656
+    .line 657
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v0, :cond_5b
 
-    .line 657
+    .line 658
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
 
-    .line 661
+    .line 662
     :cond_5b
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p1, :cond_69
 
-    .line 662
+    .line 663
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 663
+    .line 664
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->registerKeyToMonitor(Ljava/lang/String;)V
 
     return-void
 
-    .line 665
+    .line 666
     :cond_69
     sget-object p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -4221,7 +4083,7 @@
 .method public setDirection(I)V
     .registers 2
 
-    .line 526
+    .line 527
     iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mDirection:I
 
     return-void
@@ -4230,12 +4092,12 @@
 .method public setEnable(Z)V
     .registers 2
 
-    .line 605
+    .line 606
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
     if-eqz p0, :cond_7
 
-    .line 606
+    .line 607
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
     :cond_7
@@ -4245,7 +4107,7 @@
 .method public setHintControl(Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;)V
     .registers 2
 
-    .line 676
+    .line 677
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     return-void
@@ -4254,7 +4116,7 @@
 .method public setIsSellingPoint(Z)V
     .registers 2
 
-    .line 1199
+    .line 1196
     iput-boolean p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mIsSellingPoint:Z
 
     return-void
@@ -4263,7 +4125,7 @@
 .method public setItemSelectHook(Lcom/transsion/camera/app/common/ui/setting/IPopSettingItemUI$ItemSelectHook;)V
     .registers 2
 
-    .line 632
+    .line 633
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mItemSelectHook:Lcom/transsion/camera/app/common/ui/setting/IPopSettingItemUI$ItemSelectHook;
 
     return-void
@@ -4272,7 +4134,7 @@
 .method public setPointRes(Landroid/graphics/drawable/Drawable;)V
     .registers 2
 
-    .line 1204
+    .line 1201
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPointRes:Landroid/graphics/drawable/Drawable;
 
     return-void
@@ -4281,7 +4143,7 @@
 .method public setPopupOptionsControl(Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;)V
     .registers 2
 
-    .line 617
+    .line 618
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPopupOptionsControl:Lcom/transsion/camera/app/common/ui/setting/IPopupOptionControl;
 
     return-void
@@ -4290,7 +4152,7 @@
 .method public setPositionInPopSetting(I)V
     .registers 2
 
-    .line 622
+    .line 623
     iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mPositionInPopSetting:I
 
     return-void
@@ -4299,7 +4161,7 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 671
+    .line 672
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-void
@@ -4308,7 +4170,7 @@
 .method public setSettingOptionControl(Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;)V
     .registers 2
 
-    .line 681
+    .line 682
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingOptionControl:Lcom/transsion/camera/app/common/IAppUIControl$ISettingOptionControl;
 
     return-void
@@ -4323,7 +4185,7 @@
 .method protected setToNextIndex()V
     .registers 3
 
-    .line 825
+    .line 822
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
@@ -4338,7 +4200,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 827
+    .line 824
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->setValueByIndex(I)V
 
     :cond_10
@@ -4354,7 +4216,7 @@
 .method public setupEntryView()V
     .registers 3
 
-    .line 541
+    .line 542
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
 
     new-instance v1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$$ExternalSyntheticLambda6;
@@ -4363,7 +4225,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 588
+    .line 589
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getEntryViewId()I
@@ -4372,7 +4234,7 @@
 
     if-lez v0, :cond_1d
 
-    .line 589
+    .line 590
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryImageView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
@@ -4383,7 +4245,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
 
-    .line 591
+    .line 592
     :cond_1d
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateEntryView()V
 
@@ -4445,7 +4307,7 @@
 .method protected updateHighLightShow(I)V
     .registers 3
 
-    .line 1011
+    .line 1008
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->getEntryTextColor(I)I
@@ -4454,19 +4316,19 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1012
+    .line 1009
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryLayout:Landroid/view/View;
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
 
-    .line 1013
+    .line 1010
     invoke-virtual {v0, p0}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->shouldHighLightShow(Ljava/lang/String;)Z
 
     move-result p0
 
-    .line 1012
+    .line 1009
     invoke-virtual {p1, p0}, Landroid/view/View;->setSelected(Z)V
 
     return-void
@@ -4475,14 +4337,14 @@
 .method public updateLayoutParams()V
     .registers 5
 
-    .line 393
+    .line 397
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 394
+    .line 398
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4491,12 +4353,12 @@
 
     check-cast v1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 395
+    .line 399
     iget-boolean v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxSupport:Z
 
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_42
 
-    .line 396
+    .line 400
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -4513,7 +4375,7 @@
 
     iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 397
+    .line 401
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -4530,10 +4392,10 @@
 
     const/4 v2, 0x0
 
-    .line 398
+    .line 402
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginStart(I)V
 
-    .line 399
+    .line 403
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
@@ -4548,46 +4410,13 @@
 
     iput v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    goto :goto_5f
-
-    .line 401
-    :cond_43
-    iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    sget v3, Lcom/transsion/camera/app/common/R$dimen;->pop_setting_item_width:I
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    .line 402
-    iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    sget v3, Lcom/transsion/camera/app/common/R$dimen;->pop_setting_item_width:I
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    iput v2, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
-
-    .line 404
-    :goto_5f
+    .line 405
+    :cond_42
     iget-object v2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryRoot:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 405
+    .line 406
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mEntryText:Landroid/widget/TextView;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -4598,7 +4427,7 @@
 .method public updateScreenForm(I)V
     .registers 2
 
-    .line 627
+    .line 628
     iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mScreenFormType:I
 
     return-void
@@ -4607,10 +4436,10 @@
 .method public updateSupportEntries()V
     .registers 1
 
-    .line 1105
+    .line 1102
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->createSupportEntries()Z
 
-    .line 1106
+    .line 1103
     invoke-direct {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->updateEntryView()V
 
     return-void
@@ -4619,18 +4448,18 @@
 .method public updateTreasureBoxItemBackground(Ljava/lang/String;Z)V
     .registers 6
 
-    .line 296
+    .line 297
     iget-boolean v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mScreenSupply:Z
 
-    if-nez v0, :cond_a0
+    if-nez v0, :cond_aa
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     if-nez v0, :cond_a
 
-    goto/16 :goto_a0
+    goto/16 :goto_aa
 
-    .line 299
+    .line 300
     :cond_a
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -4638,52 +4467,63 @@
 
     iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportUI5:Z
 
-    if-eqz v0, :cond_8e
+    if-eqz v0, :cond_98
 
-    .line 300
-    const-string v0, "4:3"
+    if-nez p1, :cond_2f
 
-    if-nez p1, :cond_27
-
-    .line 301
+    .line 302
     new-instance p1, Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-static {}, Lcom/transsion/camera/app_info/AppInfo;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {p1, v1}, Lcom/transsion/camera/app/common/storage/DataStore;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, v0}, Lcom/transsion/camera/app/common/storage/DataStore;-><init>(Landroid/content/Context;)V
 
-    .line 302
-    const-string v1, "key_picture_ratio"
+    .line 305
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
-    const-string v2, "_global_scope"
+    move-result-object v0
 
-    invoke-virtual {p1, v1, v0, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iget-boolean v0, v0, Lcom/transsion/camera/utils/CustomConfigUtil;->mIsPictureRatioCustomizedIndia:Z
+
+    .line 304
+    invoke-static {v0}, Lcom/transsion/camera/utils/PictureSizeHelper;->getPictureRatioDefaultForStore(Z)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "_global_scope"
+
+    .line 303
+    const-string v2, "key_picture_ratio"
+
+    invoke-virtual {p1, v2, v0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 305
-    :cond_27
+    .line 309
+    :cond_2f
+    const-string v0, "4:3"
+
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-nez v0, :cond_35
+    if-nez v0, :cond_3f
 
     const-string v0, "1:1"
 
-    .line 306
+    .line 310
     invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_41
+    if-eqz p1, :cond_4b
 
-    :cond_35
+    :cond_3f
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 307
+    .line 311
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getCurrentMode()Ljava/lang/String;
 
     move-result-object p1
@@ -4692,12 +4532,12 @@
 
     move-result p1
 
-    if-eqz p1, :cond_70
+    if-eqz p1, :cond_7a
 
-    :cond_41
+    :cond_4b
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 308
+    .line 312
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getCurrentMode()Ljava/lang/String;
 
     move-result-object p1
@@ -4708,11 +4548,11 @@
 
     move-result p1
 
-    if-nez p1, :cond_70
+    if-nez p1, :cond_7a
 
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 309
+    .line 313
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getCurrentMode()Ljava/lang/String;
 
     move-result-object p1
@@ -4721,11 +4561,11 @@
 
     move-result p1
 
-    if-nez p1, :cond_70
+    if-nez p1, :cond_7a
 
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 310
+    .line 314
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getCurrentMode()Ljava/lang/String;
 
     move-result-object p1
@@ -4734,55 +4574,55 @@
 
     move-result p1
 
-    if-eqz p1, :cond_68
+    if-eqz p1, :cond_72
 
-    goto :goto_70
+    goto :goto_7a
 
-    :cond_68
-    if-eqz p2, :cond_6d
-
-    .line 314
-    sget p1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_background_black_light_no_alpha_ui5:I
-
-    goto :goto_77
-
-    .line 315
-    :cond_6d
-    sget p1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_background_black_light_ui5:I
-
-    goto :goto_77
-
-    :cond_70
-    :goto_70
-    if-eqz p2, :cond_75
-
-    .line 311
-    sget p1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_background_black_dark_no_alpha_ui5:I
-
-    goto :goto_77
-
-    .line 312
-    :cond_75
-    sget p1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_background_black_dark_ui5:I
-
-    :goto_77
-    if-eqz p2, :cond_7d
+    :cond_72
+    if-eqz p2, :cond_77
 
     .line 318
+    sget p1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_background_black_light_no_alpha_ui5:I
+
+    goto :goto_81
+
+    .line 319
+    :cond_77
+    sget p1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_background_black_light_ui5:I
+
+    goto :goto_81
+
+    :cond_7a
+    :goto_7a
+    if-eqz p2, :cond_7f
+
+    .line 315
+    sget p1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_background_black_dark_no_alpha_ui5:I
+
+    goto :goto_81
+
+    .line 316
+    :cond_7f
+    sget p1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_background_black_dark_ui5:I
+
+    :goto_81
+    if-eqz p2, :cond_87
+
+    .line 322
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->animateTreasureBoxItemBackground(I)V
 
     return-void
 
-    .line 320
-    :cond_7d
+    .line 324
+    :cond_87
     iput p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentTreasureBoxItemRes:I
 
-    .line 321
+    .line 325
     iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 322
+    .line 326
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4793,15 +4633,15 @@
 
     return-void
 
-    .line 325
-    :cond_8e
+    .line 329
+    :cond_98
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     sget p2, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_background:I
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 326
+    .line 330
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mTreasureBoxItemBackground:Landroid/widget/ImageView;
 
     sget p1, Lcom/transsion/camera/app/common/R$drawable;->ic_treasure_box_item_background:I
@@ -4812,7 +4652,7 @@
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    :cond_a0
-    :goto_a0
+    :cond_aa
+    :goto_aa
     return-void
 .end method

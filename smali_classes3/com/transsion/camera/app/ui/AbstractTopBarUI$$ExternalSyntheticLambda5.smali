@@ -3,34 +3,36 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.implements Ljava/util/function/Consumer;
 
 
 # instance fields
-.field public final synthetic f$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+.field public final synthetic f$0:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/transsion/camera/app/ui/AbstractTopBarUI;)V
+.method public synthetic constructor <init>(Z)V
     .registers 2
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda5;->f$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+    iput-boolean p1, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda5;->f$0:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public final accept(Ljava/lang/Object;)V
     .registers 2
 
     .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda5;->f$0:Lcom/transsion/camera/app/ui/AbstractTopBarUI;
+    iget-boolean p0, p0, Lcom/transsion/camera/app/ui/AbstractTopBarUI$$ExternalSyntheticLambda5;->f$0:Z
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->$r8$lambda$biOsHr9KZWLCmYQAdFG4ieXlps4(Lcom/transsion/camera/app/ui/AbstractTopBarUI;Landroid/animation/ValueAnimator;)V
+    check-cast p1, Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/AbstractTopBarUI;->$r8$lambda$oLP_U_1hAeRigOstX3FLtVAtl-g(ZLcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;)V
 
     return-void
 .end method

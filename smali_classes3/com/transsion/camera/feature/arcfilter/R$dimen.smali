@@ -76,11 +76,11 @@
 
 .field public static arc_filter_width_expand_90:I = 0x7f070120
 
-.field public static flip_arc_filter_bottom_margin:I = 0x7f070362
+.field public static flip_arc_filter_bottom_margin:I = 0x7f070359
 
-.field public static flip_arc_filter_switcher_height:I = 0x7f070363
+.field public static flip_arc_filter_switcher_height:I = 0x7f07035a
 
-.field public static flip_arc_filter_top_margin:I = 0x7f070364
+.field public static flip_arc_filter_top_margin:I = 0x7f07035b
 
 
 # direct methods

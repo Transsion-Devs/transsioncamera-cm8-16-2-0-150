@@ -34,7 +34,7 @@
 
     const/4 v0, 0x1
 
-    .line 138
+    .line 135
     invoke-direct {p0, p1, p2, v0, v0}, Lkotlinx/coroutines/channels/ChannelCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/channels/Channel;ZZ)V
 
     return-void
@@ -45,7 +45,7 @@
 .method public bridge synthetic getChannel()Lkotlinx/coroutines/channels/SendChannel;
     .registers 1
 
-    .line 136
+    .line 133
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/ChannelCoroutine;->getChannel()Lkotlinx/coroutines/channels/Channel;
 
     move-result-object p0
@@ -56,7 +56,7 @@
 .method public isActive()Z
     .registers 1
 
-    .line 140
+    .line 137
     invoke-super {p0}, Lkotlinx/coroutines/AbstractCoroutine;->isActive()Z
 
     move-result p0
@@ -67,7 +67,7 @@
 .method protected onCancelled(Ljava/lang/Throwable;Z)V
     .registers 4
 
-    .line 147
+    .line 144
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/ChannelCoroutine;->get_channel()Lkotlinx/coroutines/channels/Channel;
 
     move-result-object v0
@@ -80,7 +80,7 @@
 
     if-nez p2, :cond_13
 
-    .line 148
+    .line 145
     invoke-virtual {p0}, Lkotlinx/coroutines/AbstractCoroutine;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -94,7 +94,7 @@
 .method public bridge synthetic onCompleted(Ljava/lang/Object;)V
     .registers 2
 
-    .line 136
+    .line 133
     check-cast p1, Lkotlin/Unit;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/ProducerCoroutine;->onCompleted(Lkotlin/Unit;)V
@@ -105,7 +105,7 @@
 .method protected onCompleted(Lkotlin/Unit;)V
     .registers 3
 
-    .line 143
+    .line 140
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/ChannelCoroutine;->get_channel()Lkotlinx/coroutines/channels/Channel;
 
     move-result-object p0

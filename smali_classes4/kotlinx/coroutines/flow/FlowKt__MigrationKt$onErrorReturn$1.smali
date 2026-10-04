@@ -56,7 +56,7 @@
 .method public final invoke(Ljava/lang/Throwable;)Ljava/lang/Boolean;
     .registers 2
 
-    .line 302
+    .line 298
     sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     return-object p0
@@ -65,7 +65,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 302
+    .line 298
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/flow/FlowKt__MigrationKt$onErrorReturn$1;->invoke(Ljava/lang/Throwable;)Ljava/lang/Boolean;

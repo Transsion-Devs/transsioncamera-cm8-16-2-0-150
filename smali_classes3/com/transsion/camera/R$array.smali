@@ -365,544 +365,544 @@
 
 .field public static location_setting_entry_drawables:I = 0x7f030170
 
-.field public static macro_master_guide_ui_description:I = 0x7f030187
+.field public static macro_master_guide_ui_description:I = 0x7f030185
 
-.field public static macro_mode_left_top_bar_setting_ui_entries:I = 0x7f030188
+.field public static macro_mode_left_top_bar_setting_ui_entries:I = 0x7f030186
 
-.field public static macro_mode_left_top_bar_setting_ui_entries_40:I = 0x7f030189
+.field public static macro_mode_left_top_bar_setting_ui_entries_40:I = 0x7f030187
 
-.field public static macro_mode_pop_setting_ui_entries:I = 0x7f03018a
+.field public static macro_mode_pop_setting_ui_entries:I = 0x7f030188
 
-.field public static macro_mode_pop_setting_ui_entries_40:I = 0x7f03018b
+.field public static macro_mode_pop_setting_ui_entries_40:I = 0x7f030189
 
-.field public static macro_mode_preference_setting_ui_entries:I = 0x7f03018c
+.field public static macro_mode_preference_setting_ui_entries:I = 0x7f03018a
 
-.field public static macro_mode_right_top_bar_setting_ui_entries:I = 0x7f03018d
+.field public static macro_mode_right_top_bar_setting_ui_entries:I = 0x7f03018b
 
-.field public static macro_mode_right_top_bar_setting_ui_entries_40:I = 0x7f03018e
+.field public static macro_mode_right_top_bar_setting_ui_entries_40:I = 0x7f03018c
 
-.field public static macro_mode_setting_ui_entries:I = 0x7f03018f
+.field public static macro_mode_setting_ui_entries:I = 0x7f03018d
 
-.field public static macro_mode_setting_wide_tele_zoom_ui_entries:I = 0x7f030190
+.field public static macro_mode_setting_wide_tele_zoom_ui_entries:I = 0x7f03018e
 
-.field public static macro_mode_top_bar_setting_ui_entries:I = 0x7f030191
+.field public static macro_mode_top_bar_setting_ui_entries:I = 0x7f03018f
 
-.field public static macro_torch_setting_entries:I = 0x7f030192
+.field public static macro_torch_setting_entries:I = 0x7f030190
 
-.field public static macro_torch_setting_entry_drawables:I = 0x7f030193
+.field public static macro_torch_setting_entry_drawables:I = 0x7f030191
 
-.field public static macro_torch_setting_entry_values:I = 0x7f030194
+.field public static macro_torch_setting_entry_values:I = 0x7f030192
 
-.field public static macro_zoom_lens:I = 0x7f030195
+.field public static macro_zoom_lens:I = 0x7f030193
 
-.field public static macro_zoom_setting_entries:I = 0x7f030196
+.field public static macro_zoom_setting_entries:I = 0x7f030194
 
-.field public static macro_zoom_setting_entry_drawables:I = 0x7f030197
+.field public static macro_zoom_setting_entry_drawables:I = 0x7f030195
 
-.field public static macro_zoom_setting_entry_values:I = 0x7f030198
+.field public static macro_zoom_setting_entry_values:I = 0x7f030196
 
-.field public static metering_mode_entry_ext_highlight_drawables:I = 0x7f0301b2
+.field public static metering_mode_entry_ext_highlight_drawables:I = 0x7f0301b0
 
-.field public static metering_mode_setting_entries:I = 0x7f0301b3
+.field public static metering_mode_setting_entries:I = 0x7f0301b1
 
-.field public static metering_mode_setting_entry_drawables:I = 0x7f0301b4
+.field public static metering_mode_setting_entry_drawables:I = 0x7f0301b2
 
-.field public static metering_mode_setting_entry_ext_drawables:I = 0x7f0301b5
+.field public static metering_mode_setting_entry_ext_drawables:I = 0x7f0301b3
 
-.field public static metering_mode_setting_entry_values:I = 0x7f0301b6
+.field public static metering_mode_setting_entry_values:I = 0x7f0301b4
 
-.field public static metering_mode_setting_entry_values_all:I = 0x7f0301b7
+.field public static metering_mode_setting_entry_values_all:I = 0x7f0301b5
 
-.field public static mirror_setting_entry_drawables:I = 0x7f0301b8
+.field public static mirror_setting_entry_drawables:I = 0x7f0301b6
 
-.field public static mood_light_setting_entry_drawables:I = 0x7f0301bb
+.field public static mood_light_setting_entry_drawables:I = 0x7f0301b9
 
-.field public static moon_detection_setting_entries:I = 0x7f0301bc
+.field public static moon_detection_setting_entries:I = 0x7f0301ba
 
-.field public static moon_detection_setting_entry_drawables:I = 0x7f0301bd
+.field public static moon_detection_setting_entry_drawables:I = 0x7f0301bb
 
-.field public static multiple_person_setting_entry_drawables:I = 0x7f0301d4
+.field public static multiple_person_setting_entry_drawables:I = 0x7f0301d2
 
-.field public static nonsupport_dual_color_modes:I = 0x7f0301d5
+.field public static nonsupport_dual_color_modes:I = 0x7f0301d3
 
-.field public static one_click_efficiency_setting_entries:I = 0x7f0301e4
+.field public static one_click_efficiency_setting_entries:I = 0x7f0301e2
 
-.field public static one_click_efficiency_setting_entry_drawables:I = 0x7f0301e5
+.field public static one_click_efficiency_setting_entry_drawables:I = 0x7f0301e3
 
-.field public static one_click_efficiency_setting_entry_value:I = 0x7f0301e6
+.field public static one_click_efficiency_setting_entry_value:I = 0x7f0301e4
 
-.field public static photo_mode_preference_setting_ui_entries:I = 0x7f0301e7
+.field public static photo_mode_preference_setting_ui_entries:I = 0x7f0301e5
 
-.field public static photo_mode_setting_ui_entries:I = 0x7f0301e8
+.field public static photo_mode_setting_ui_entries:I = 0x7f0301e6
 
-.field public static photo_mode_top_bar_setting_ui_entries:I = 0x7f0301ea
+.field public static photo_mode_top_bar_setting_ui_entries:I = 0x7f0301e8
 
-.field public static picture_ratio_setting_entry_drawables:I = 0x7f0301eb
+.field public static picture_ratio_setting_entry_drawables:I = 0x7f0301e9
 
-.field public static portrait_architecture_setting_entry_drawables:I = 0x7f030218
+.field public static portrait_architecture_setting_entry_drawables:I = 0x7f030216
 
-.field public static portrait_enhance_default:I = 0x7f030219
+.field public static portrait_enhance_default:I = 0x7f030217
 
-.field public static portrait_flare_pop_setting_entry_drawables:I = 0x7f03021a
+.field public static portrait_flare_pop_setting_entry_drawables:I = 0x7f030218
 
-.field public static portrait_flare_pop_setting_entry_values:I = 0x7f03021b
+.field public static portrait_flare_pop_setting_entry_values:I = 0x7f030219
 
-.field public static portrait_flare_setting_entries:I = 0x7f03021c
+.field public static portrait_flare_setting_entries:I = 0x7f03021a
 
-.field public static portrait_flare_setting_entry_drawables:I = 0x7f03021d
+.field public static portrait_flare_setting_entry_drawables:I = 0x7f03021b
 
-.field public static portrait_flare_setting_entry_values:I = 0x7f03021e
+.field public static portrait_flare_setting_entry_values:I = 0x7f03021c
 
-.field public static portrait_support_video_quality:I = 0x7f03021f
+.field public static portrait_support_video_quality:I = 0x7f03021d
 
-.field public static portraitmode_enhance_setting_entries:I = 0x7f030220
+.field public static portraitmode_enhance_setting_entries:I = 0x7f03021e
 
-.field public static portraitmode_enhance_setting_entry_drawables:I = 0x7f030221
+.field public static portraitmode_enhance_setting_entry_drawables:I = 0x7f03021f
 
-.field public static portraitmode_enhance_setting_entry_values:I = 0x7f030222
+.field public static portraitmode_enhance_setting_entry_values:I = 0x7f030220
 
-.field public static preIsp_support_setting_entry_animations:I = 0x7f030223
+.field public static preIsp_support_setting_entry_animations:I = 0x7f030221
 
-.field public static pro_video_hdr10_setting_entry_drawables:I = 0x7f030230
+.field public static pro_video_hdr10_setting_entry_drawables:I = 0x7f03022e
 
-.field public static pro_video_hdr10_setting_entry_values:I = 0x7f030231
+.field public static pro_video_hdr10_setting_entry_values:I = 0x7f03022f
 
-.field public static pro_video_hdr10_setting_entrys:I = 0x7f030232
+.field public static pro_video_hdr10_setting_entrys:I = 0x7f030230
 
-.field public static pro_watermark_customize_by_region:I = 0x7f030233
+.field public static pro_watermark_customize_by_region:I = 0x7f030231
 
-.field public static pro_watermark_items:I = 0x7f030234
+.field public static pro_watermark_items:I = 0x7f030232
 
-.field public static pro_watermark_setting_entries:I = 0x7f030235
+.field public static pro_watermark_setting_entries:I = 0x7f030233
 
-.field public static pro_watermark_setting_entry_drawables:I = 0x7f030236
+.field public static pro_watermark_setting_entry_drawables:I = 0x7f030234
 
-.field public static pro_watermark_setting_entry_values:I = 0x7f030237
+.field public static pro_watermark_setting_entry_values:I = 0x7f030235
 
-.field public static qrcode_setting_entry_drawables:I = 0x7f03023b
+.field public static qrcode_setting_entry_drawables:I = 0x7f030239
 
-.field public static quick_capture_support_mode:I = 0x7f03023c
+.field public static quick_capture_support_mode:I = 0x7f03023a
 
-.field public static real_video_mode_category:I = 0x7f03023d
+.field public static real_video_mode_category:I = 0x7f03023b
 
-.field public static recording_effect_setting_entries:I = 0x7f03023e
+.field public static recording_effect_setting_entries:I = 0x7f03023c
 
-.field public static recording_effect_setting_entry_drawables:I = 0x7f03023f
+.field public static recording_effect_setting_entry_drawables:I = 0x7f03023d
 
-.field public static recording_effect_setting_entry_values:I = 0x7f030240
+.field public static recording_effect_setting_entry_values:I = 0x7f03023e
 
-.field public static sat_wide_camera_zoom_list:I = 0x7f030241
+.field public static sat_wide_camera_zoom_list:I = 0x7f03023f
 
-.field public static screen_flash_setting_entry_drawables:I = 0x7f030242
+.field public static screen_flash_setting_entry_drawables:I = 0x7f030240
 
-.field public static second_zoom_setting_entries:I = 0x7f030243
+.field public static second_zoom_setting_entries:I = 0x7f030241
 
-.field public static second_zoom_setting_entry_drawables:I = 0x7f030244
+.field public static second_zoom_setting_entry_drawables:I = 0x7f030242
 
-.field public static second_zoom_setting_entry_values:I = 0x7f030245
+.field public static second_zoom_setting_entry_values:I = 0x7f030243
 
-.field public static self_timer_pop_setting_entry_drawables:I = 0x7f030246
+.field public static self_timer_pop_setting_entry_drawables:I = 0x7f030244
 
-.field public static self_timer_setting_entries:I = 0x7f030247
+.field public static self_timer_setting_entries:I = 0x7f030245
 
-.field public static self_timer_setting_entry_drawables:I = 0x7f030248
+.field public static self_timer_setting_entry_drawables:I = 0x7f030246
 
-.field public static self_timer_setting_entry_values:I = 0x7f030249
+.field public static self_timer_setting_entry_values:I = 0x7f030247
 
-.field public static selling_point_entry:I = 0x7f03024a
+.field public static selling_point_entry:I = 0x7f030248
 
-.field public static shot2shot_policy_low_mem_overlay:I = 0x7f03024b
+.field public static shot2shot_policy_low_mem_overlay:I = 0x7f030249
 
-.field public static shutter_sound_setting_entry_drawables:I = 0x7f03024c
+.field public static shutter_sound_setting_entry_drawables:I = 0x7f03024a
 
-.field public static shutter_type_aigc:I = 0x7f03024d
+.field public static shutter_type_aigc:I = 0x7f03024b
 
-.field public static shutter_type_aigc_black:I = 0x7f03024e
+.field public static shutter_type_aigc_black:I = 0x7f03024c
 
-.field public static shutter_type_aigc_processing:I = 0x7f03024f
+.field public static shutter_type_aigc_processing:I = 0x7f03024d
 
-.field public static shutter_type_asd:I = 0x7f030250
+.field public static shutter_type_asd:I = 0x7f03024e
 
-.field public static shutter_type_asd_black:I = 0x7f030251
+.field public static shutter_type_asd_black:I = 0x7f03024f
 
-.field public static shutter_type_long_exposure_idle:I = 0x7f030252
+.field public static shutter_type_long_exposure_idle:I = 0x7f030250
 
-.field public static shutter_type_long_exposure_processing:I = 0x7f030253
+.field public static shutter_type_long_exposure_processing:I = 0x7f030251
 
-.field public static shutter_type_more:I = 0x7f030254
+.field public static shutter_type_more:I = 0x7f030252
 
-.field public static shutter_type_photo:I = 0x7f030255
+.field public static shutter_type_photo:I = 0x7f030253
 
-.field public static shutter_type_photo_black:I = 0x7f030256
+.field public static shutter_type_photo_black:I = 0x7f030254
 
-.field public static shutter_type_professional:I = 0x7f030257
+.field public static shutter_type_professional:I = 0x7f030255
 
-.field public static shutter_type_professional_self:I = 0x7f030258
+.field public static shutter_type_professional_self:I = 0x7f030256
 
-.field public static shutter_type_professional_stop:I = 0x7f030259
+.field public static shutter_type_professional_stop:I = 0x7f030257
 
-.field public static shutter_type_selftimer:I = 0x7f03025a
+.field public static shutter_type_selftimer:I = 0x7f030258
 
-.field public static shutter_type_selftimer_black:I = 0x7f03025b
+.field public static shutter_type_selftimer_black:I = 0x7f030259
 
-.field public static shutter_type_selftimer_gesture:I = 0x7f03025c
+.field public static shutter_type_selftimer_gesture:I = 0x7f03025a
 
-.field public static shutter_type_selftimer_gesture_black:I = 0x7f03025d
+.field public static shutter_type_selftimer_gesture_black:I = 0x7f03025b
 
-.field public static shutter_type_slow_motion:I = 0x7f03025e
+.field public static shutter_type_slow_motion:I = 0x7f03025c
 
-.field public static shutter_type_slow_motion_2s:I = 0x7f03025f
+.field public static shutter_type_slow_motion_2s:I = 0x7f03025d
 
-.field public static shutter_type_slow_motion_2s_black:I = 0x7f030260
+.field public static shutter_type_slow_motion_2s_black:I = 0x7f03025e
 
-.field public static shutter_type_slow_motion_4s:I = 0x7f030261
+.field public static shutter_type_slow_motion_4s:I = 0x7f03025f
 
-.field public static shutter_type_slow_motion_4s_black:I = 0x7f030262
+.field public static shutter_type_slow_motion_4s_black:I = 0x7f030260
 
-.field public static shutter_type_super_anti_video_processing:I = 0x7f030264
+.field public static shutter_type_super_anti_video_processing:I = 0x7f030262
 
-.field public static shutter_type_super_night:I = 0x7f030265
+.field public static shutter_type_super_night:I = 0x7f030263
 
-.field public static shutter_type_super_night_black:I = 0x7f030266
+.field public static shutter_type_super_night_black:I = 0x7f030264
 
-.field public static shutter_type_super_night_lite_process:I = 0x7f030267
+.field public static shutter_type_super_night_lite_process:I = 0x7f030265
 
-.field public static shutter_type_super_night_lite_process_black:I = 0x7f030268
+.field public static shutter_type_super_night_lite_process_black:I = 0x7f030266
 
-.field public static shutter_type_super_night_mode_lite_process:I = 0x7f030269
+.field public static shutter_type_super_night_mode_lite_process:I = 0x7f030267
 
-.field public static shutter_type_super_night_mode_lite_process_black:I = 0x7f03026a
+.field public static shutter_type_super_night_mode_lite_process_black:I = 0x7f030268
 
-.field public static shutter_type_super_night_stable:I = 0x7f03026b
+.field public static shutter_type_super_night_stable:I = 0x7f030269
 
-.field public static shutter_type_super_night_stable_black:I = 0x7f03026c
+.field public static shutter_type_super_night_stable_black:I = 0x7f03026a
 
-.field public static shutter_type_time_lapse:I = 0x7f03026d
+.field public static shutter_type_time_lapse:I = 0x7f03026b
 
-.field public static shutter_type_time_lapse_black:I = 0x7f03026e
+.field public static shutter_type_time_lapse_black:I = 0x7f03026c
 
-.field public static shutter_type_underwater:I = 0x7f03026f
+.field public static shutter_type_underwater:I = 0x7f03026d
 
-.field public static shutter_type_video:I = 0x7f030270
+.field public static shutter_type_video:I = 0x7f03026e
 
-.field public static shutter_type_video_black:I = 0x7f030271
+.field public static shutter_type_video_black:I = 0x7f03026f
 
-.field public static shutter_type_vlog:I = 0x7f030272
+.field public static shutter_type_vlog:I = 0x7f030270
 
-.field public static single_person_setting_entry_drawables:I = 0x7f030273
+.field public static single_person_setting_entry_drawables:I = 0x7f030271
 
-.field public static slow_motion_master_guide_ui_description:I = 0x7f030276
+.field public static slow_motion_master_guide_ui_description:I = 0x7f030274
 
-.field public static slowmotion_mode_left_top_bar_setting_ui_entries:I = 0x7f030277
+.field public static slowmotion_mode_left_top_bar_setting_ui_entries:I = 0x7f030275
 
-.field public static slowmotion_mode_left_top_bar_setting_ui_entries_40:I = 0x7f030278
+.field public static slowmotion_mode_left_top_bar_setting_ui_entries_40:I = 0x7f030276
 
-.field public static slowmotion_mode_pop_setting_ui_entries:I = 0x7f030279
+.field public static slowmotion_mode_pop_setting_ui_entries:I = 0x7f030277
 
-.field public static slowmotion_mode_pop_setting_ui_entries_40:I = 0x7f03027a
+.field public static slowmotion_mode_pop_setting_ui_entries_40:I = 0x7f030278
 
-.field public static slowmotion_mode_preference_setting_ui_entries:I = 0x7f03027b
+.field public static slowmotion_mode_preference_setting_ui_entries:I = 0x7f030279
 
-.field public static slowmotion_mode_right_top_bar_setting_ui_entries:I = 0x7f03027c
+.field public static slowmotion_mode_right_top_bar_setting_ui_entries:I = 0x7f03027a
 
-.field public static slowmotion_mode_right_top_bar_setting_ui_entries_40:I = 0x7f03027d
+.field public static slowmotion_mode_right_top_bar_setting_ui_entries_40:I = 0x7f03027b
 
-.field public static slowmotion_mode_setting_ui_entries:I = 0x7f03027e
+.field public static slowmotion_mode_setting_ui_entries:I = 0x7f03027c
 
-.field public static slowmotion_mode_top_bar_setting_ui_entries:I = 0x7f03027f
+.field public static slowmotion_mode_top_bar_setting_ui_entries:I = 0x7f03027d
 
-.field public static some_reflection_classes:I = 0x7f030282
+.field public static some_reflection_classes:I = 0x7f030280
 
-.field public static split_style_setting_entries:I = 0x7f030283
+.field public static split_style_setting_entries:I = 0x7f030281
 
-.field public static split_style_setting_entry_drawables:I = 0x7f030284
+.field public static split_style_setting_entry_drawables:I = 0x7f030282
 
-.field public static split_style_setting_entry_values:I = 0x7f030285
+.field public static split_style_setting_entry_values:I = 0x7f030283
 
-.field public static storage_setting_entries:I = 0x7f03028f
+.field public static storage_setting_entries:I = 0x7f03028d
 
-.field public static storage_setting_entry_drawables:I = 0x7f030290
+.field public static storage_setting_entry_drawables:I = 0x7f03028e
 
-.field public static storage_setting_entry_values:I = 0x7f030291
+.field public static storage_setting_entry_values:I = 0x7f03028f
 
-.field public static street_photo_style_entry_drawables:I = 0x7f03029c
+.field public static street_photo_style_entry_drawables:I = 0x7f03029a
 
-.field public static street_photo_style_setting_entry_values:I = 0x7f03029e
+.field public static street_photo_style_setting_entry_values:I = 0x7f03029c
 
-.field public static super_ai_guide_anti_video_layout_id:I = 0x7f0302a0
+.field public static super_ai_guide_anti_video_layout_id:I = 0x7f03029e
 
-.field public static super_anti_video_entry_animations:I = 0x7f0302a1
+.field public static super_anti_video_entry_animations:I = 0x7f03029f
 
-.field public static super_anti_video_setting_entries:I = 0x7f0302a2
+.field public static super_anti_video_setting_entries:I = 0x7f0302a0
 
-.field public static super_anti_video_setting_entry_drawables:I = 0x7f0302a3
+.field public static super_anti_video_setting_entry_drawables:I = 0x7f0302a1
 
-.field public static super_anti_video_setting_entry_values:I = 0x7f0302a4
+.field public static super_anti_video_setting_entry_values:I = 0x7f0302a2
 
-.field public static super_definition_setting_entries:I = 0x7f0302a5
+.field public static super_definition_setting_entries:I = 0x7f0302a3
 
-.field public static super_definition_setting_entry_drawables:I = 0x7f0302a6
+.field public static super_definition_setting_entry_drawables:I = 0x7f0302a4
 
-.field public static super_definition_setting_entry_values:I = 0x7f0302a7
+.field public static super_definition_setting_entry_values:I = 0x7f0302a5
 
-.field public static super_guide_anti_video_layout_id:I = 0x7f0302a8
+.field public static super_guide_anti_video_layout_id:I = 0x7f0302a6
 
-.field public static super_night_stable_pop_setting_entry_drawables:I = 0x7f0302b2
+.field public static super_night_stable_pop_setting_entry_drawables:I = 0x7f0302b0
 
-.field public static super_night_stable_pop_setting_entry_values:I = 0x7f0302b3
+.field public static super_night_stable_pop_setting_entry_values:I = 0x7f0302b1
 
-.field public static super_night_stable_setting_entries:I = 0x7f0302b4
+.field public static super_night_stable_setting_entries:I = 0x7f0302b2
 
-.field public static super_night_stable_setting_entry_drawables:I = 0x7f0302b5
+.field public static super_night_stable_setting_entry_drawables:I = 0x7f0302b3
 
-.field public static support_60fps_ai_focus_video_quality:I = 0x7f0302c7
+.field public static support_60fps_ai_focus_video_quality:I = 0x7f0302c5
 
-.field public static switch_screen_setting_entries:I = 0x7f0302c8
+.field public static switch_screen_setting_entries:I = 0x7f0302c6
 
-.field public static switch_screen_setting_entry_drawables:I = 0x7f0302c9
+.field public static switch_screen_setting_entry_drawables:I = 0x7f0302c7
 
-.field public static switch_screen_setting_entry_values:I = 0x7f0302ca
+.field public static switch_screen_setting_entry_values:I = 0x7f0302c8
 
-.field public static taint_detection_setting_entry_drawables:I = 0x7f0302cd
+.field public static taint_detection_setting_entry_drawables:I = 0x7f0302cb
 
-.field public static tele_camera_setting_entries:I = 0x7f0302d1
+.field public static tele_camera_setting_entries:I = 0x7f0302cf
 
-.field public static tele_camera_setting_entry_drawables:I = 0x7f0302d2
+.field public static tele_camera_setting_entry_drawables:I = 0x7f0302d0
 
-.field public static tele_camera_setting_entry_values:I = 0x7f0302d3
+.field public static tele_camera_setting_entry_values:I = 0x7f0302d1
 
-.field public static time_lapse_master_guide_ui_description:I = 0x7f0302d4
+.field public static time_lapse_master_guide_ui_description:I = 0x7f0302d2
 
-.field public static time_lapse_mode_preference_setting_ui_entries:I = 0x7f0302d5
+.field public static time_lapse_mode_preference_setting_ui_entries:I = 0x7f0302d3
 
-.field public static time_lapse_video_mode_front_setting_ui_entries:I = 0x7f0302d6
+.field public static time_lapse_video_mode_front_setting_ui_entries:I = 0x7f0302d4
 
-.field public static time_lapse_video_mode_guide_single:I = 0x7f0302d8
+.field public static time_lapse_video_mode_guide_single:I = 0x7f0302d5
 
-.field public static time_lapse_video_mode_interactive_setting_ui_back_entries_version_ten:I = 0x7f0302d9
+.field public static time_lapse_video_mode_interactive_setting_ui_back_entries_version_ten:I = 0x7f0302d6
 
-.field public static time_lapse_video_mode_left_top_bar_setting_ui_entries:I = 0x7f0302da
+.field public static time_lapse_video_mode_left_top_bar_setting_ui_entries:I = 0x7f0302d7
 
-.field public static time_lapse_video_mode_left_top_bar_setting_ui_entries_40:I = 0x7f0302db
+.field public static time_lapse_video_mode_left_top_bar_setting_ui_entries_40:I = 0x7f0302d8
 
-.field public static time_lapse_video_mode_pop_setting_ui_entries:I = 0x7f0302dc
+.field public static time_lapse_video_mode_pop_setting_ui_entries:I = 0x7f0302d9
 
-.field public static time_lapse_video_mode_pop_setting_ui_entries_40:I = 0x7f0302dd
+.field public static time_lapse_video_mode_pop_setting_ui_entries_40:I = 0x7f0302da
 
-.field public static time_lapse_video_mode_right_top_bar_setting_ui_entries:I = 0x7f0302de
+.field public static time_lapse_video_mode_right_top_bar_setting_ui_entries:I = 0x7f0302db
 
-.field public static time_lapse_video_mode_right_top_bar_setting_ui_entries_40:I = 0x7f0302df
+.field public static time_lapse_video_mode_right_top_bar_setting_ui_entries_40:I = 0x7f0302dc
 
-.field public static time_lapse_video_mode_setting_ui_entries_version_ten:I = 0x7f0302e0
+.field public static time_lapse_video_mode_setting_ui_entries_version_ten:I = 0x7f0302dd
 
-.field public static time_lapse_video_mode_top_bar_setting_ui_entries:I = 0x7f0302e1
+.field public static time_lapse_video_mode_top_bar_setting_ui_entries:I = 0x7f0302de
 
-.field public static touch_capture_pop_setting_entry_drawables:I = 0x7f0302e2
+.field public static touch_capture_pop_setting_entry_drawables:I = 0x7f0302df
 
-.field public static touch_capture_setting_entries:I = 0x7f0302e3
+.field public static touch_capture_setting_entries:I = 0x7f0302e0
 
-.field public static touch_capture_setting_entry_drawables:I = 0x7f0302e4
+.field public static touch_capture_setting_entry_drawables:I = 0x7f0302e1
 
-.field public static touch_capture_setting_entry_values:I = 0x7f0302e5
+.field public static touch_capture_setting_entry_values:I = 0x7f0302e2
 
-.field public static underwater_mode_preference_setting_ui_entries:I = 0x7f0302f1
+.field public static underwater_mode_preference_setting_ui_entries:I = 0x7f0302ee
 
-.field public static underwater_mode_setting_ui_entries:I = 0x7f0302f2
+.field public static underwater_mode_setting_ui_entries:I = 0x7f0302ef
 
-.field public static underwater_mode_top_bar_setting_ui_entries:I = 0x7f0302f3
+.field public static underwater_mode_top_bar_setting_ui_entries:I = 0x7f0302f0
 
-.field public static unsupport_flash_style_one_stage_modes:I = 0x7f0302f4
+.field public static unsupport_flash_style_one_stage_modes:I = 0x7f0302f1
 
-.field public static use_google_photos_default_for_market:I = 0x7f0302f5
+.field public static use_google_photos_default_for_market:I = 0x7f0302f2
 
-.field public static video_asd_setting_entries:I = 0x7f0302f6
+.field public static video_asd_setting_entries:I = 0x7f0302f3
 
-.field public static video_asd_setting_entry_drawables:I = 0x7f0302f7
+.field public static video_asd_setting_entry_drawables:I = 0x7f0302f4
 
-.field public static video_asd_setting_entry_values:I = 0x7f0302f8
+.field public static video_asd_setting_entry_values:I = 0x7f0302f5
 
-.field public static video_enhance_setting_entries:I = 0x7f0302fa
+.field public static video_enhance_setting_entries:I = 0x7f0302f7
 
-.field public static video_enhance_setting_entry_drawables:I = 0x7f0302fb
+.field public static video_enhance_setting_entry_drawables:I = 0x7f0302f8
 
-.field public static video_enhance_setting_entry_values:I = 0x7f0302fc
+.field public static video_enhance_setting_entry_values:I = 0x7f0302f9
 
-.field public static video_flash_facade_setting_entries:I = 0x7f030309
+.field public static video_flash_facade_setting_entries:I = 0x7f030306
 
-.field public static video_flash_facade_setting_entry_drawables:I = 0x7f03030a
+.field public static video_flash_facade_setting_entry_drawables:I = 0x7f030307
 
-.field public static video_flash_facade_setting_entry_values:I = 0x7f03030b
+.field public static video_flash_facade_setting_entry_values:I = 0x7f030308
 
-.field public static video_flash_setting_entries:I = 0x7f03030c
+.field public static video_flash_setting_entries:I = 0x7f030309
 
-.field public static video_flash_setting_entry_drawables:I = 0x7f03030d
+.field public static video_flash_setting_entry_drawables:I = 0x7f03030a
 
-.field public static video_flash_setting_entry_values:I = 0x7f03030e
+.field public static video_flash_setting_entry_values:I = 0x7f03030b
 
-.field public static video_fps_setting_entries:I = 0x7f03030f
+.field public static video_fps_setting_entries:I = 0x7f03030c
 
-.field public static video_fps_setting_entry_drawables:I = 0x7f030310
+.field public static video_fps_setting_entry_drawables:I = 0x7f03030d
 
-.field public static video_fps_setting_entry_values:I = 0x7f030311
+.field public static video_fps_setting_entry_values:I = 0x7f03030e
 
-.field public static video_guide_item_entries:I = 0x7f030312
+.field public static video_guide_item_entries:I = 0x7f03030f
 
-.field public static video_hdr_setting_entries:I = 0x7f030313
+.field public static video_hdr_setting_entries:I = 0x7f030310
 
-.field public static video_hdr_setting_entry_drawables:I = 0x7f030314
+.field public static video_hdr_setting_entry_drawables:I = 0x7f030311
 
-.field public static video_hdr_setting_entry_values:I = 0x7f030315
+.field public static video_hdr_setting_entry_values:I = 0x7f030312
 
-.field public static video_makeup_support_video_quality:I = 0x7f030320
+.field public static video_makeup_support_video_quality:I = 0x7f03031d
 
-.field public static video_master_guide_ui_description:I = 0x7f030321
+.field public static video_master_guide_ui_description:I = 0x7f03031e
 
-.field public static video_mode_category:I = 0x7f030322
+.field public static video_mode_category:I = 0x7f03031f
 
-.field public static video_mode_interactive_setting_ui_back_entries:I = 0x7f030324
+.field public static video_mode_interactive_setting_ui_back_entries:I = 0x7f030321
 
-.field public static video_mode_interactive_setting_ui_front_entries:I = 0x7f030325
+.field public static video_mode_interactive_setting_ui_front_entries:I = 0x7f030322
 
-.field public static video_mode_left_top_bar_setting_ui_entries:I = 0x7f030326
+.field public static video_mode_left_top_bar_setting_ui_entries:I = 0x7f030323
 
-.field public static video_mode_left_top_bar_setting_ui_entries_40:I = 0x7f030327
+.field public static video_mode_left_top_bar_setting_ui_entries_40:I = 0x7f030324
 
-.field public static video_mode_option_setting_ui_entries:I = 0x7f030328
+.field public static video_mode_option_setting_ui_entries:I = 0x7f030325
 
-.field public static video_mode_pop_setting_ui_entries:I = 0x7f030329
+.field public static video_mode_pop_setting_ui_entries:I = 0x7f030326
 
-.field public static video_mode_pop_setting_ui_entries_40:I = 0x7f03032a
+.field public static video_mode_pop_setting_ui_entries_40:I = 0x7f030327
 
-.field public static video_mode_preference_setting_ui_entries:I = 0x7f03032b
+.field public static video_mode_preference_setting_ui_entries:I = 0x7f030328
 
-.field public static video_mode_right_top_bar_setting_ui_entries:I = 0x7f03032c
+.field public static video_mode_right_top_bar_setting_ui_entries:I = 0x7f030329
 
-.field public static video_mode_right_top_bar_setting_ui_entries_40:I = 0x7f03032d
+.field public static video_mode_right_top_bar_setting_ui_entries_40:I = 0x7f03032a
 
-.field public static video_mode_setting_ui_entries:I = 0x7f03032e
+.field public static video_mode_setting_ui_entries:I = 0x7f03032b
 
-.field public static video_mode_top_bar_setting_ui_entries:I = 0x7f03032f
+.field public static video_mode_top_bar_setting_ui_entries:I = 0x7f03032c
 
-.field public static video_portrait_level_setting_entries:I = 0x7f030330
+.field public static video_portrait_level_setting_entries:I = 0x7f03032d
 
-.field public static video_portrait_level_setting_entry_drawables:I = 0x7f030331
+.field public static video_portrait_level_setting_entry_drawables:I = 0x7f03032e
 
-.field public static video_portrait_level_setting_entry_values:I = 0x7f030332
+.field public static video_portrait_level_setting_entry_values:I = 0x7f03032f
 
-.field public static video_portrait_setting_entries:I = 0x7f030333
+.field public static video_portrait_setting_entries:I = 0x7f030330
 
-.field public static video_portrait_setting_entry_drawables:I = 0x7f030334
+.field public static video_portrait_setting_entry_drawables:I = 0x7f030331
 
-.field public static video_portrait_setting_entry_values:I = 0x7f030335
+.field public static video_portrait_setting_entry_values:I = 0x7f030332
 
-.field public static video_portrait_spot_setting_entries:I = 0x7f030336
+.field public static video_portrait_spot_setting_entries:I = 0x7f030333
 
-.field public static video_portrait_spot_setting_entry_drawables:I = 0x7f030337
+.field public static video_portrait_spot_setting_entry_drawables:I = 0x7f030334
 
-.field public static video_portrait_spot_setting_entry_values:I = 0x7f030338
+.field public static video_portrait_spot_setting_entry_values:I = 0x7f030335
 
-.field public static video_preisp_pop_setting_entry_drawables:I = 0x7f030339
+.field public static video_preisp_pop_setting_entry_drawables:I = 0x7f030336
 
-.field public static video_preisp_pop_setting_entry_values:I = 0x7f03033a
+.field public static video_preisp_pop_setting_entry_values:I = 0x7f030337
 
-.field public static video_preisp_setting_entries:I = 0x7f03033b
+.field public static video_preisp_setting_entries:I = 0x7f030338
 
-.field public static video_preisp_setting_entry_drawables:I = 0x7f03033c
+.field public static video_preisp_setting_entry_drawables:I = 0x7f030339
 
-.field public static video_preisp_setting_entry_values:I = 0x7f03033d
+.field public static video_preisp_setting_entry_values:I = 0x7f03033a
 
-.field public static video_quality_custom_item:I = 0x7f03033e
+.field public static video_quality_custom_item:I = 0x7f03033b
 
-.field public static video_quality_setting_entries_fps_all:I = 0x7f030340
+.field public static video_quality_setting_entries_fps_all:I = 0x7f03033d
 
-.field public static video_quality_setting_entry_drawables_fps_all:I = 0x7f030342
+.field public static video_quality_setting_entry_drawables_fps_all:I = 0x7f03033f
 
-.field public static video_quality_setting_entry_values:I = 0x7f030343
+.field public static video_quality_setting_entry_values:I = 0x7f030340
 
-.field public static video_quality_setting_entry_values_all:I = 0x7f030344
+.field public static video_quality_setting_entry_values_all:I = 0x7f030341
 
-.field public static video_quality_support_anti_video:I = 0x7f030345
+.field public static video_quality_support_anti_video:I = 0x7f030342
 
-.field public static video_quality_support_super_anti_video:I = 0x7f030346
+.field public static video_quality_support_super_anti_video:I = 0x7f030343
 
-.field public static video_sight_shock_setting_entries:I = 0x7f030347
+.field public static video_sight_shock_setting_entries:I = 0x7f030344
 
-.field public static video_sight_shock_setting_entry_drawables:I = 0x7f030348
+.field public static video_sight_shock_setting_entry_drawables:I = 0x7f030345
 
-.field public static video_sight_shock_setting_entry_values:I = 0x7f030349
+.field public static video_sight_shock_setting_entry_values:I = 0x7f030346
 
-.field public static video_size_setting_entries:I = 0x7f03034a
+.field public static video_size_setting_entries:I = 0x7f030347
 
-.field public static video_size_setting_entry_drawables:I = 0x7f03034b
+.field public static video_size_setting_entry_drawables:I = 0x7f030348
 
-.field public static video_size_setting_entry_values:I = 0x7f03034c
+.field public static video_size_setting_entry_values:I = 0x7f030349
 
-.field public static video_supernight_setting_entries:I = 0x7f03034d
+.field public static video_supernight_setting_entries:I = 0x7f03034a
 
-.field public static video_supernight_setting_entry_drawables:I = 0x7f03034e
+.field public static video_supernight_setting_entry_drawables:I = 0x7f03034b
 
-.field public static video_supernight_setting_entry_values:I = 0x7f03034f
+.field public static video_supernight_setting_entry_values:I = 0x7f03034c
 
-.field public static video_time_lapse_single_setting_entries:I = 0x7f030350
+.field public static video_time_lapse_single_setting_entries:I = 0x7f03034d
 
-.field public static video_time_lapse_single_setting_entry_drawables:I = 0x7f030351
+.field public static video_time_lapse_single_setting_entry_drawables:I = 0x7f03034e
 
-.field public static video_time_lapse_single_setting_entry_values:I = 0x7f030352
+.field public static video_time_lapse_single_setting_entry_values:I = 0x7f03034f
 
-.field public static vip_selfie_support_mode:I = 0x7f030353
+.field public static vip_selfie_support_mode:I = 0x7f030350
 
-.field public static voice_detection_pop_setting_entry_drawables:I = 0x7f030368
+.field public static voice_detection_pop_setting_entry_drawables:I = 0x7f030365
 
-.field public static voice_detection_setting_entries:I = 0x7f030369
+.field public static voice_detection_setting_entries:I = 0x7f030366
 
-.field public static voice_detection_setting_entry_drawables:I = 0x7f03036a
+.field public static voice_detection_setting_entry_drawables:I = 0x7f030367
 
-.field public static voice_detection_setting_entry_values:I = 0x7f03036b
+.field public static voice_detection_setting_entry_values:I = 0x7f030368
 
-.field public static volume_key_setting_entries:I = 0x7f03036c
+.field public static volume_key_setting_entries:I = 0x7f030369
 
-.field public static volume_key_setting_entry_drawables:I = 0x7f03036d
+.field public static volume_key_setting_entry_drawables:I = 0x7f03036a
 
-.field public static volume_key_setting_entry_values:I = 0x7f03036e
+.field public static volume_key_setting_entry_values:I = 0x7f03036b
 
-.field public static white_balance_setting_entries:I = 0x7f03036f
+.field public static white_balance_setting_entries:I = 0x7f03036c
 
-.field public static white_balance_setting_entry_drawables:I = 0x7f030370
+.field public static white_balance_setting_entry_drawables:I = 0x7f03036d
 
-.field public static white_balance_setting_entry_values:I = 0x7f030371
+.field public static white_balance_setting_entry_values:I = 0x7f03036e
 
-.field public static wide_and_main_reapte_range:I = 0x7f030372
+.field public static wide_and_main_reapte_range:I = 0x7f03036f
 
-.field public static wide_camera_item_text:I = 0x7f030373
+.field public static wide_camera_item_text:I = 0x7f030370
 
-.field public static wide_camera_item_text_center_zoom:I = 0x7f030374
+.field public static wide_camera_item_text_center_zoom:I = 0x7f030371
 
-.field public static wide_camera_item_text_center_zoom_india:I = 0x7f030375
+.field public static wide_camera_item_text_center_zoom_india:I = 0x7f030372
 
-.field public static wide_camera_item_text_india:I = 0x7f030376
+.field public static wide_camera_item_text_india:I = 0x7f030373
 
-.field public static wide_camera_setting_entries:I = 0x7f030377
+.field public static wide_camera_setting_entries:I = 0x7f030374
 
-.field public static wide_camera_setting_entry_drawables:I = 0x7f030378
+.field public static wide_camera_setting_entry_drawables:I = 0x7f030375
 
-.field public static wide_camera_setting_entry_values:I = 0x7f030379
+.field public static wide_camera_setting_entry_values:I = 0x7f030376
 
-.field public static wide_camera_zoom_list:I = 0x7f03037a
+.field public static wide_camera_zoom_list:I = 0x7f030377
 
-.field public static wide_camera_zoom_list_india:I = 0x7f03037b
+.field public static wide_camera_zoom_list_india:I = 0x7f030378
 
-.field public static wide_camera_zoom_normal_list:I = 0x7f03037c
+.field public static wide_camera_zoom_normal_list:I = 0x7f030379
 
-.field public static wide_range_converter_progress_list:I = 0x7f03037d
+.field public static wide_range_converter_progress_list:I = 0x7f03037a
 
-.field public static wide_range_converter_progress_list_india:I = 0x7f03037e
+.field public static wide_range_converter_progress_list_india:I = 0x7f03037b
 
-.field public static wide_range_converter_value_list:I = 0x7f03037f
+.field public static wide_range_converter_value_list:I = 0x7f03037c
 
-.field public static wide_range_converter_value_list_india:I = 0x7f030380
+.field public static wide_range_converter_value_list_india:I = 0x7f03037d
 
-.field public static wide_range_converter_value_normal_list:I = 0x7f030381
+.field public static wide_range_converter_value_normal_list:I = 0x7f03037e
 
-.field public static wm_config_prop_values:I = 0x7f030383
+.field public static wm_config_prop_values:I = 0x7f030380
 
-.field public static zoom_range:I = 0x7f030384
+.field public static zoom_range:I = 0x7f030381

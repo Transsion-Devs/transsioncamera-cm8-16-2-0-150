@@ -34,10 +34,10 @@
 
     iput-object p1, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->this$0:Lkotlin/sequences/FilteringSequence;
 
-    .line 163
+    .line 196
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 164
+    .line 197
     # getter for: Lkotlin/sequences/FilteringSequence;->sequence:Lkotlin/sequences/Sequence;
     invoke-static {p1}, Lkotlin/sequences/FilteringSequence;->access$getSequence$p(Lkotlin/sequences/FilteringSequence;)Lkotlin/sequences/Sequence;
 
@@ -51,7 +51,7 @@
 
     const/4 p1, -0x1
 
-    .line 165
+    .line 198
     iput p1, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->nextState:I
 
     return-void
@@ -60,7 +60,7 @@
 .method private final calcNext()V
     .registers 4
 
-    .line 169
+    .line 202
     :cond_0
     iget-object v0, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->iterator:Ljava/util/Iterator;
 
@@ -70,14 +70,14 @@
 
     if-eqz v0, :cond_2c
 
-    .line 170
+    .line 203
     iget-object v0, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 171
+    .line 204
     iget-object v1, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->this$0:Lkotlin/sequences/FilteringSequence;
 
     # getter for: Lkotlin/sequences/FilteringSequence;->predicate:Lkotlin/jvm/functions/Function1;
@@ -104,12 +104,12 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 172
+    .line 205
     iput-object v0, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
     const/4 v0, 0x1
 
-    .line 173
+    .line 206
     iput v0, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->nextState:I
 
     return-void
@@ -117,7 +117,7 @@
     :cond_2c
     const/4 v0, 0x0
 
-    .line 177
+    .line 210
     iput v0, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->nextState:I
 
     return-void
@@ -128,17 +128,17 @@
 .method public hasNext()Z
     .registers 3
 
-    .line 193
+    .line 226
     iget v0, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->nextState:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_8
 
-    .line 194
+    .line 227
     invoke-direct {p0}, Lkotlin/sequences/FilteringSequence$iterator$1;->calcNext()V
 
-    .line 195
+    .line 228
     :cond_8
     iget p0, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->nextState:I
 
@@ -157,36 +157,36 @@
 .method public next()Ljava/lang/Object;
     .registers 4
 
-    .line 181
+    .line 214
     iget v0, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->nextState:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_8
 
-    .line 182
+    .line 215
     invoke-direct {p0}, Lkotlin/sequences/FilteringSequence$iterator$1;->calcNext()V
 
-    .line 183
+    .line 216
     :cond_8
     iget v0, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->nextState:I
 
     if-eqz v0, :cond_14
 
-    .line 185
+    .line 218
     iget-object v0, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
     const/4 v2, 0x0
 
-    .line 186
+    .line 219
     iput-object v2, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
-    .line 187
+    .line 220
     iput v1, p0, Lkotlin/sequences/FilteringSequence$iterator$1;->nextState:I
 
     return-object v0
 
-    .line 184
+    .line 217
     :cond_14
     new-instance p0, Ljava/util/NoSuchElementException;
 

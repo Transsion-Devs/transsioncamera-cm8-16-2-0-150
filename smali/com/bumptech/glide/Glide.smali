@@ -944,14 +944,9 @@
 .method private static getAnnotationGeneratedGlideModules(Landroid/content/Context;)Lcom/bumptech/glide/GeneratedAppGlideModule;
     .registers 3
 
-    .line 313
-    :try_start_0
-    const-string v0, "com.bumptech.glide.GeneratedAppGlideModuleImpl"
-
     .line 315
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
+    :try_start_0
+    const-class v0, Lcom/bumptech/glide/GeneratedAppGlideModuleImpl;
 
     .line 316
     const-class v1, Landroid/content/Context;
@@ -978,48 +973,48 @@
     move-result-object p0
 
     check-cast p0, Lcom/bumptech/glide/GeneratedAppGlideModule;
-    :try_end_1e
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_1e} :catch_33
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_1e} :catch_2e
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_1e} :catch_29
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_1e} :catch_24
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_1e} :catch_1f
+    :try_end_1a
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_1a} :catch_2f
+    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_1a} :catch_2a
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_1a} :catch_25
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_1a} :catch_20
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_1a} :catch_1b
 
     return-object p0
 
-    :catch_1f
+    :catch_1b
     move-exception p0
 
     .line 335
     invoke-static {p0}, Lcom/bumptech/glide/Glide;->throwIncorrectGlideModule(Ljava/lang/Exception;)V
 
-    goto :goto_41
+    goto :goto_3d
 
-    :catch_24
+    :catch_20
     move-exception p0
 
     .line 333
     invoke-static {p0}, Lcom/bumptech/glide/Glide;->throwIncorrectGlideModule(Ljava/lang/Exception;)V
 
-    goto :goto_41
+    goto :goto_3d
 
-    :catch_29
+    :catch_25
     move-exception p0
 
     .line 331
     invoke-static {p0}, Lcom/bumptech/glide/Glide;->throwIncorrectGlideModule(Ljava/lang/Exception;)V
 
-    goto :goto_41
+    goto :goto_3d
 
-    :catch_2e
+    :catch_2a
     move-exception p0
 
     .line 329
     invoke-static {p0}, Lcom/bumptech/glide/Glide;->throwIncorrectGlideModule(Ljava/lang/Exception;)V
 
-    goto :goto_41
+    goto :goto_3d
 
-    :catch_33
+    :catch_2f
     const/4 p0, 0x5
 
     .line 319
@@ -1029,15 +1024,15 @@
 
     move-result p0
 
-    if-eqz p0, :cond_41
+    if-eqz p0, :cond_3d
 
     .line 320
     const-string p0, "Failed to find GeneratedAppGlideModule. You should include an annotationProcessor compile dependency on com.github.bumptech.glide:compiler in your application and a @GlideModule annotated AppGlideModule implementation or LibraryGlideModules will be silently ignored"
 
     invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_41
-    :goto_41
+    :cond_3d
+    :goto_3d
     const/4 p0, 0x0
 
     return-object p0

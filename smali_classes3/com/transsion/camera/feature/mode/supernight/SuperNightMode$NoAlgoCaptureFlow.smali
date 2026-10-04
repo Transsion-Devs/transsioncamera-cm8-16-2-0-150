@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)V
     .registers 2
 
-    .line 1180
+    .line 1182
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NoAlgoCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;-><init>(Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;)V
@@ -35,7 +35,7 @@
 .method isNeedDeviceCaptureSound()Z
     .registers 3
 
-    .line 1188
+    .line 1190
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$NoAlgoCaptureFlow;->this$0:Lcom/transsion/camera/feature/mode/supernight/SuperNightMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -55,7 +55,7 @@
 
     move-result v0
 
-    .line 1189
+    .line 1191
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->mIsPostAlgoOn:Z
 
     if-nez v1, :cond_26
@@ -89,10 +89,10 @@
 .method onCaptureStart()V
     .registers 2
 
-    .line 1183
+    .line 1185
     invoke-super {p0}, Lcom/transsion/camera/feature/mode/supernight/SuperNightMode$CaptureFlow;->onCaptureStart()V
 
-    .line 1184
+    .line 1186
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0

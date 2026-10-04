@@ -29,10 +29,10 @@
 .method constructor <init>()V
     .registers 3
 
-    .line 114
+    .line 119
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 116
+    .line 121
     const-string v0, "1_1"
 
     invoke-static {}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->-$$Nest$sfgetsRatioSpecMap1_1()Ljava/util/Map;
@@ -41,7 +41,7 @@
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 117
+    .line 122
     const-string v0, "4_3"
 
     invoke-static {}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->-$$Nest$sfgetsRatioSpecMap4_3()Ljava/util/Map;
@@ -50,7 +50,7 @@
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 118
+    .line 123
     const-string v0, "16_9"
 
     invoke-static {}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->-$$Nest$sfgetsRatioSpecMap16_9()Ljava/util/Map;
@@ -59,7 +59,7 @@
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 119
+    .line 124
     const-string v0, "full"
 
     invoke-static {}, Lcom/transsion/camera/feature/mode/aiartmuseum/preview/spec/BitmapRenderSpec;->-$$Nest$sfgetsRatioSpecMapFull()Ljava/util/Map;

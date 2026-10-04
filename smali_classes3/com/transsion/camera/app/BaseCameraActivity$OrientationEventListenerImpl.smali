@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;Landroid/content/Context;)V
     .registers 3
 
-    .line 1639
+    .line 1663
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$OrientationEventListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
-    .line 1640
+    .line 1664
     invoke-direct {p0, p2}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -42,7 +42,7 @@
 
     return-void
 
-    .line 1652
+    .line 1676
     :cond_4
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$OrientationEventListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_15
 
-    .line 1653
+    .line 1677
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$OrientationEventListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {v0}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fgetmPhysicalKeyManager(Lcom/transsion/camera/app/BaseCameraActivity;)Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/physicalkey/PhysicalKeyManager;->onOrientationChanged(I)V
 
-    .line 1657
+    .line 1681
     :cond_15
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$OrientationEventListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
@@ -73,19 +73,19 @@
 
     move-result p1
 
-    .line 1658
+    .line 1682
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$OrientationEventListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fputmOriginalOrientation(Lcom/transsion/camera/app/BaseCameraActivity;I)V
 
-    .line 1659
+    .line 1683
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$OrientationEventListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/BaseCameraActivity;->correctOrientation(I)I
 
     move-result p1
 
-    .line 1660
+    .line 1684
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$OrientationEventListenerImpl;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/BaseCameraActivity;->changeAndNotifyOrientation(I)V

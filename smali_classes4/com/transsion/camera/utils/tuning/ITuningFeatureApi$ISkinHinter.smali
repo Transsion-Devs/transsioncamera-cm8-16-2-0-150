@@ -13,8 +13,5 @@
 .method public abstract getCurrentSkinValue()Ljava/lang/String;
 .end method
 
-.method public abstract printCurrentSkin()Ljava/lang/CharSequence;
-.end method
-
 .method public abstract setCurrentSkin(Ljava/lang/String;)V
 .end method

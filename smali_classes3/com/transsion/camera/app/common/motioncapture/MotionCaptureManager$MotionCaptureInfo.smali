@@ -38,37 +38,37 @@
 .method public constructor <init>(Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager;IJ)V
     .registers 7
 
-    .line 741
+    .line 744
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v0, -0x1
 
-    .line 734
+    .line 737
     iput-wide v0, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mSilentCaptureTimestamp:J
 
     const/4 p1, -0x1
 
-    .line 735
+    .line 738
     iput p1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mBmDetectResultOfSilentCapture:I
 
-    .line 736
+    .line 739
     iput p1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mBmDetectResult:I
 
-    .line 738
+    .line 741
     iput p1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mBanding:I
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 739
+    .line 742
     iput v0, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mMainFreq:F
 
-    .line 740
+    .line 743
     iput p1, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mMotionIntensity:I
 
-    .line 742
+    .line 745
     iput p2, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mCaptureType:I
 
-    .line 743
+    .line 746
     iput-wide p3, p0, Lcom/transsion/camera/app/common/motioncapture/MotionCaptureManager$MotionCaptureInfo;->mTimestamp:J
 
     return-void
@@ -79,7 +79,7 @@
 .method public toString()Ljava/lang/String;
     .registers 4
 
-    .line 748
+    .line 751
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

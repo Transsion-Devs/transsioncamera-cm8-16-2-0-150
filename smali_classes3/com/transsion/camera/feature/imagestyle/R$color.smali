@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static image_style_item_selected_color:I = 0x7f060105
+.field public static image_style_item_selected_color:I = 0x7f060106
 
-.field public static image_style_item_unselected_color:I = 0x7f060106
+.field public static image_style_item_unselected_color:I = 0x7f060107
 
 
 # direct methods

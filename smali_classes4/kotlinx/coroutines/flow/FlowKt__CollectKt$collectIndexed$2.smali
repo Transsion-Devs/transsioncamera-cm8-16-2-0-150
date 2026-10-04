@@ -50,7 +50,7 @@
 
     iput-object p1, p0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collectIndexed$2;->$action:Lkotlin/jvm/functions/Function3;
 
-    .line 60
+    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -71,7 +71,7 @@
         }
     .end annotation
 
-    .line 62
+    .line 58
     iget-object v0, p0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collectIndexed$2;->$action:Lkotlin/jvm/functions/Function3;
 
     iget v1, p0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collectIndexed$2;->index:I
@@ -82,12 +82,12 @@
 
     if-ltz v1, :cond_1c
 
-    .line 35
+    .line 32
     invoke-static {v1}, Lkotlin/coroutines/jvm/internal/Boxing;->boxInt(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    .line 62
+    .line 58
     invoke-interface {v0, p0, p1, p2}, Lkotlin/jvm/functions/Function3;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -105,7 +105,7 @@
 
     return-object p0
 
-    .line 33
+    .line 30
     :cond_1c
     new-instance p0, Ljava/lang/ArithmeticException;
 
@@ -141,7 +141,7 @@
 
     invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
-    .line 62
+    .line 58
     iget-object v0, p0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collectIndexed$2;->$action:Lkotlin/jvm/functions/Function3;
 
     iget v1, p0, Lkotlinx/coroutines/flow/FlowKt__CollectKt$collectIndexed$2;->index:I
@@ -152,19 +152,19 @@
 
     if-ltz v1, :cond_21
 
-    .line 35
+    .line 32
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    .line 62
+    .line 58
     invoke-interface {v0, p0, p1, p2}, Lkotlin/jvm/functions/Function3;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 33
+    .line 30
     :cond_21
     new-instance p0, Ljava/lang/ArithmeticException;
 

@@ -13,7 +13,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 241
+    .line 237
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "NONE"
@@ -22,7 +22,7 @@
 
     sput-object v0, Lkotlinx/coroutines/flow/StateFlowKt;->NONE:Lkotlinx/coroutines/internal/Symbol;
 
-    .line 243
+    .line 239
     new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
     const-string v1, "PENDING"
@@ -46,7 +46,7 @@
         }
     .end annotation
 
-    .line 187
+    .line 183
     new-instance v0, Lkotlinx/coroutines/flow/StateFlowImpl;
 
     if-nez p0, :cond_6
@@ -108,7 +108,7 @@
 
     if-ne p2, v0, :cond_e
 
-    .line 423
+    .line 419
     :goto_9
     sget-object v0, Lkotlinx/coroutines/channels/BufferOverflow;->DROP_OLDEST:Lkotlinx/coroutines/channels/BufferOverflow;
 
@@ -116,7 +116,7 @@
 
     return-object p0
 
-    .line 426
+    .line 422
     :cond_e
     invoke-static {p0, p1, p2, p3}, Lkotlinx/coroutines/flow/SharedFlowKt;->fuseSharedFlow(Lkotlinx/coroutines/flow/SharedFlow;Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)Lkotlinx/coroutines/flow/Flow;
 
@@ -139,18 +139,18 @@
         }
     .end annotation
 
-    .line 215
+    .line 211
     :cond_0
     invoke-interface {p0}, Lkotlinx/coroutines/flow/MutableStateFlow;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 216
+    .line 212
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 217
+    .line 213
     invoke-interface {p0, v0, v1}, Lkotlinx/coroutines/flow/MutableStateFlow;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
@@ -174,18 +174,18 @@
         }
     .end annotation
 
-    .line 231
+    .line 227
     :cond_0
     invoke-interface {p0}, Lkotlinx/coroutines/flow/MutableStateFlow;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 232
+    .line 228
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 233
+    .line 229
     invoke-interface {p0, v0, v1}, Lkotlinx/coroutines/flow/MutableStateFlow;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -209,18 +209,18 @@
         }
     .end annotation
 
-    .line 199
+    .line 195
     :cond_0
     invoke-interface {p0}, Lkotlinx/coroutines/flow/MutableStateFlow;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 200
+    .line 196
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 201
+    .line 197
     invoke-interface {p0, v0, v1}, Lkotlinx/coroutines/flow/MutableStateFlow;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0

@@ -426,6 +426,50 @@
     return-void
 .end method
 
+.method public disable2(I)V
+    .registers 4
+
+    .line 351
+    iget-object p0, p0, Lcom/transsion/hubsdk/core/statusbar/TranThubStatusBarManager;->mService:Lcom/transsion/hubsdk/internal/statusbar/ITranStatusBarService;
+
+    if-nez p0, :cond_5
+
+    return-void
+
+    .line 355
+    :cond_5
+    :try_start_5
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/internal/statusbar/ITranStatusBarService;->disable2(I)V
+    :try_end_8
+    .catch Landroid/os/RemoteException; {:try_start_5 .. :try_end_8} :catch_9
+
+    return-void
+
+    :catch_9
+    move-exception p0
+
+    .line 357
+    sget-object p1, Lcom/transsion/hubsdk/core/statusbar/TranThubStatusBarManager;->TAG:Ljava/lang/String;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "disable:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
 .method public enableAction(Ljava/lang/String;Ljava/lang/String;Z)V
     .registers 4
 
@@ -764,7 +808,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 355
+    .line 368
     iput-object p1, p0, Lcom/transsion/hubsdk/core/statusbar/TranThubStatusBarManager;->mService:Lcom/transsion/hubsdk/internal/statusbar/ITranStatusBarService;
 
     return-void

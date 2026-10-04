@@ -22,14 +22,14 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
     .registers 3
 
-    .line 1558
+    .line 1447
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 1559
+    .line 1448
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -44,10 +44,10 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 1564
+    .line 1453
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 1566
+    .line 1455
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$MainHandler;->mViewCache:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -58,7 +58,7 @@
 
     if-nez p0, :cond_17
 
-    .line 1568
+    .line 1457
     invoke-static {}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$sfgetmTag()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -69,7 +69,7 @@
 
     return-void
 
-    .line 1571
+    .line 1460
     :cond_17
     iget v0, p1, Landroid/os/Message;->what:I
 
@@ -81,7 +81,7 @@
 
     if-eq v0, v1, :cond_3a
 
-    .line 1581
+    .line 1470
     invoke-static {}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$sfgetmTag()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -106,13 +106,13 @@
 
     return-void
 
-    .line 1578
+    .line 1467
     :cond_3a
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->notifyContinuousShotStop()V
 
     return-void
 
-    .line 1573
+    .line 1462
     :cond_3e
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmContinuousShutterButtonView(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
@@ -120,7 +120,7 @@
 
     if-eqz v0, :cond_4f
 
-    .line 1574
+    .line 1463
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmContinuousShutterButtonView(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/ui/view/ContinuousShotButtonView;
 
     move-result-object p0

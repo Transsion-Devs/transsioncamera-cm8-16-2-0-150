@@ -20,7 +20,7 @@
     .annotation build Lkotlinx/coroutines/InternalCoroutinesApi;
     .end annotation
 
-    .line 20
+    .line 16
     monitor-enter p0
 
     const/4 v0, 0x1

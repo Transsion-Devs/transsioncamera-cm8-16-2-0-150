@@ -34,7 +34,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractShutterUI;)V
     .registers 2
 
-    .line 273
+    .line 269
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
 .method private synthetic lambda$updateUIState$0()V
     .registers 3
 
-    .line 300
+    .line 296
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmSwipeOperationListener(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUIListener$ISwipeOperationListener;
@@ -54,7 +54,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 301
+    .line 297
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmSwipeOperationListener(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUIListener$ISwipeOperationListener;
@@ -65,7 +65,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIListener$ISwipeOperationListener;->onNotifyUIStateChange(Z)V
 
-    .line 303
+    .line 299
     :cond_12
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
@@ -85,7 +85,7 @@
 .method public isPreviewReady()Z
     .registers 2
 
-    .line 339
+    .line 335
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUI;
@@ -123,12 +123,12 @@
 .method public notifyCsViewAnimationChange(Z)V
     .registers 5
 
-    .line 309
+    .line 305
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fputmCsViewAnimationStart(Lcom/transsion/camera/app/ui/AbstractShutterUI;Z)V
 
-    .line 310
+    .line 306
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUI;
@@ -139,7 +139,7 @@
 
     goto :goto_7f
 
-    .line 313
+    .line 309
     :cond_e
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
@@ -149,7 +149,7 @@
 
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/IAppUI;->notifyCsViewAnimationChange(Z)V
 
-    .line 314
+    .line 310
     invoke-static {}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$sfgetmTag()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -208,7 +208,7 @@
 
     if-nez p1, :cond_7f
 
-    .line 319
+    .line 315
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmIsContinuousShooting(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Z
@@ -233,7 +233,7 @@
 
     if-nez p1, :cond_7f
 
-    .line 320
+    .line 316
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUI;
@@ -256,7 +256,7 @@
 .method public onCSViewMoving()V
     .registers 4
 
-    .line 326
+    .line 322
     invoke-static {}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$sfgetmTag()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -295,7 +295,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 328
+    .line 324
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmIsCameraSwitching(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Z
@@ -317,7 +317,7 @@
     :cond_3d
     return-void
 
-    .line 329
+    .line 325
     :cond_3e
     :goto_3e
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
@@ -330,7 +330,7 @@
 .method public resetCSViewStatus()V
     .registers 2
 
-    .line 335
+    .line 331
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUI;
@@ -349,7 +349,7 @@
 
     if-eqz p1, :cond_e
 
-    .line 277
+    .line 273
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUI;
@@ -362,7 +362,7 @@
 
     return-void
 
-    .line 279
+    .line 275
     :cond_e
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
@@ -380,7 +380,7 @@
 .method public startContinuousShot()V
     .registers 4
 
-    .line 285
+    .line 281
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmShutterListener(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUIListener$IShutterListener;
@@ -389,7 +389,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 286
+    .line 282
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmShutterListener(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/IAppUIListener$IShutterListener;
@@ -402,7 +402,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/transsion/camera/app/common/IAppUIListener$IShutterListener;->onShutterLongClick(II)V
 
-    .line 288
+    .line 284
     :cond_13
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
@@ -426,7 +426,7 @@
 .method public stopContinuousShot()V
     .registers 3
 
-    .line 293
+    .line 289
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmStatusMonitor(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -449,7 +449,7 @@
 .method public updateUIState()V
     .registers 3
 
-    .line 298
+    .line 294
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractShutterUI$2;->this$0:Lcom/transsion/camera/app/ui/AbstractShutterUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractShutterUI;->-$$Nest$fgetmMainHandler(Lcom/transsion/camera/app/ui/AbstractShutterUI;)Landroid/os/Handler;

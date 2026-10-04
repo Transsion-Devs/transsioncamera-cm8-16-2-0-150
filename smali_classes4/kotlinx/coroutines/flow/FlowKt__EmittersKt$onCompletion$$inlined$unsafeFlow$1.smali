@@ -39,7 +39,7 @@
 
     iput-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1;->$action$inlined:Lkotlin/jvm/functions/Function3;
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    .line 106
+    .line 104
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1$1;->label:I
 
     const/4 v3, 0x3
@@ -181,7 +181,7 @@
     :cond_58
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 115
+    .line 113
     :try_start_5b
     iget-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1;->$this_onCompletion$inlined:Lkotlinx/coroutines/flow/Flow;
 
@@ -201,20 +201,20 @@
 
     goto :goto_aa
 
-    .line 126
+    .line 124
     :cond_6a
     :goto_6a
     new-instance p2, Lkotlinx/coroutines/flow/internal/SafeCollector;
 
-    .line 329
+    .line 326
     invoke-interface {v0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v2
 
-    .line 126
+    .line 124
     invoke-direct {p2, p1, v2}, Lkotlinx/coroutines/flow/internal/SafeCollector;-><init>(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/CoroutineContext;)V
 
-    .line 129
+    .line 127
     :try_start_73
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onCompletion$$inlined$unsafeFlow$1;->$action$inlined:Lkotlin/jvm/functions/Function3;
 
@@ -245,11 +245,11 @@
     :cond_8a
     move-object p0, p2
 
-    .line 131
+    .line 129
     :goto_8b
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/internal/SafeCollector;->releaseIntercepted()V
 
-    .line 109
+    .line 107
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
@@ -259,13 +259,13 @@
 
     move-object p0, p2
 
-    .line 131
+    .line 129
     :goto_93
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/internal/SafeCollector;->releaseIntercepted()V
 
     throw p1
 
-    .line 122
+    .line 120
     :goto_97
     new-instance p2, Lkotlinx/coroutines/flow/ThrowingCollector;
 
@@ -289,7 +289,7 @@
     :goto_aa
     return-object v1
 
-    .line 123
+    .line 121
     :cond_ab
     :goto_ab
     throw p0

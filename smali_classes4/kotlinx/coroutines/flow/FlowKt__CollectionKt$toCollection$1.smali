@@ -28,7 +28,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__CollectionKt"
     f = "Collection.kt"
     l = {
-        0x1a
+        0x16
     }
     m = "toCollection"
 .end annotation

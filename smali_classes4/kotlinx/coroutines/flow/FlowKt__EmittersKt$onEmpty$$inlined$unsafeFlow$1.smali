@@ -39,7 +39,7 @@
 
     iput-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1;->$action$inlined:Lkotlin/jvm/functions/Function2;
 
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    .line 106
+    .line 104
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1$1;->label:I
 
     const/4 v3, 0x2
@@ -154,14 +154,14 @@
     :cond_4a
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 114
+    .line 112
     new-instance p2, Lkotlin/jvm/internal/Ref$BooleanRef;
 
     invoke-direct {p2}, Lkotlin/jvm/internal/Ref$BooleanRef;-><init>()V
 
     iput-boolean v4, p2, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
-    .line 115
+    .line 113
     iget-object v2, p0, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1;->$this_onEmpty$inlined:Lkotlinx/coroutines/flow/Flow;
 
     new-instance v5, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onEmpty$1$1;
@@ -189,24 +189,24 @@
 
     move-object p0, p2
 
-    .line 119
+    .line 117
     :goto_6c
     iget-boolean p0, p0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
     if-eqz p0, :cond_9b
 
-    .line 120
+    .line 118
     new-instance p0, Lkotlinx/coroutines/flow/internal/SafeCollector;
 
-    .line 329
+    .line 326
     invoke-interface {v0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p2
 
-    .line 120
+    .line 118
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/flow/internal/SafeCollector;-><init>(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/CoroutineContext;)V
 
-    .line 123
+    .line 121
     :try_start_79
     iget-object p1, v2, Lkotlinx/coroutines/flow/FlowKt__EmittersKt$onEmpty$$inlined$unsafeFlow$1;->$action$inlined:Lkotlin/jvm/functions/Function2;
 
@@ -239,7 +239,7 @@
     :goto_92
     return-object v1
 
-    .line 125
+    .line 123
     :cond_93
     :goto_93
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/internal/SafeCollector;->releaseIntercepted()V
@@ -251,7 +251,7 @@
 
     throw p1
 
-    .line 109
+    .line 107
     :cond_9b
     :goto_9b
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

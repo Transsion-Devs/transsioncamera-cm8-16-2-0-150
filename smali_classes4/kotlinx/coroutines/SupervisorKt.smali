@@ -7,7 +7,7 @@
 .method public static final SupervisorJob(Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/CompletableJob;
     .registers 2
 
-    .line 33
+    .line 27
     new-instance v0, Lkotlinx/coroutines/SupervisorJobImpl;
 
     invoke-direct {v0, p0}, Lkotlinx/coroutines/SupervisorJobImpl;-><init>(Lkotlinx/coroutines/Job;)V
@@ -18,7 +18,7 @@
 .method public static final synthetic SupervisorJob(Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/Job;
     .registers 1
 
-    .line 39
+    .line 33
     invoke-static {p0}, Lkotlinx/coroutines/SupervisorKt;->SupervisorJob(Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/CompletableJob;
 
     move-result-object p0
@@ -35,7 +35,7 @@
 
     const/4 p0, 0x0
 
-    .line 33
+    .line 27
     :cond_5
     invoke-static {p0}, Lkotlinx/coroutines/SupervisorKt;->SupervisorJob(Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/CompletableJob;
 
@@ -53,7 +53,7 @@
 
     const/4 p0, 0x0
 
-    .line 39
+    .line 33
     :cond_5
     invoke-static {p0}, Lkotlinx/coroutines/SupervisorKt;->SupervisorJob(Lkotlinx/coroutines/Job;)Lkotlinx/coroutines/Job;
 
@@ -76,7 +76,7 @@
         }
     .end annotation
 
-    .line 60
+    .line 55
     new-instance v0, Lkotlinx/coroutines/SupervisorCoroutine;
 
     invoke-interface {p1}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
@@ -85,12 +85,12 @@
 
     invoke-direct {v0, v1, p1}, Lkotlinx/coroutines/SupervisorCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)V
 
-    .line 61
+    .line 56
     invoke-static {v0, v0, p0}, Lkotlinx/coroutines/intrinsics/UndispatchedKt;->startUndispatchedOrReturn(Lkotlinx/coroutines/internal/ScopeCoroutine;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 59
+    .line 54
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0

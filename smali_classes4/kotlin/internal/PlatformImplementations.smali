@@ -1,4 +1,4 @@
-.class public Lkotlin/internal/PlatformImplementations;
+.class public abstract Lkotlin/internal/PlatformImplementations;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -15,7 +15,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 13
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 32
+    .line 34
     sget-object p0, Lkotlin/internal/PlatformImplementations$ReflectThrowable;->addSuppressed:Ljava/lang/reflect/Method;
 
     if-eqz p0, :cond_15
@@ -52,7 +52,7 @@
 .method public defaultPlatformRandom()Lkotlin/random/Random;
     .registers 1
 
-    .line 45
+    .line 47
     new-instance p0, Lkotlin/random/FallbackThreadLocalRandom;
 
     invoke-direct {p0}, Lkotlin/random/FallbackThreadLocalRandom;-><init>()V

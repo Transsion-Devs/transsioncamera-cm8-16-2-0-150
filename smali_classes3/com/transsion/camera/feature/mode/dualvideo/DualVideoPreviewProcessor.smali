@@ -1533,14 +1533,14 @@
     .line 220
     iput v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mScreenFormType:I
 
-    .line 1226
+    .line 1229
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$2;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceAvailableListener:Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
 
-    .line 1232
+    .line 1235
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$3;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$3;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
@@ -1553,12 +1553,12 @@
 .method private cancelMainAnimatorSetLocked()V
     .registers 3
 
-    .line 1708
+    .line 1711
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainAnimatorSetLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1709
+    .line 1712
     :try_start_3
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -1570,7 +1570,7 @@
 
     if-eqz v1, :cond_15
 
-    .line 1710
+    .line 1713
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
@@ -1586,10 +1586,10 @@
     :goto_15
     const/4 v1, 0x0
 
-    .line 1712
+    .line 1715
     iput-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 1713
+    .line 1716
     monitor-exit v0
 
     return-void
@@ -1605,28 +1605,28 @@
 .method private createSurfaceTexture()V
     .registers 5
 
-    .line 1097
+    .line 1100
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     if-eqz v0, :cond_6
 
     goto/16 :goto_cc
 
-    .line 1100
+    .line 1103
     :cond_6
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->startRendererRequestThread()V
 
-    .line 1101
+    .line 1104
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->startTakePictureThread()V
 
-    .line 1102
+    .line 1105
     invoke-static {}, Lcom/transsion/camera/app/ui/opengl/GLUtils;->createOESTexture()I
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveOESTextureId:I
 
-    .line 1103
+    .line 1106
     new-instance v0, Landroid/graphics/SurfaceTexture;
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveOESTextureId:I
@@ -1635,14 +1635,14 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 1104
+    .line 1107
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceAvailableListener:Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRendererRequestHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;Landroid/os/Handler;)V
 
-    .line 1105
+    .line 1108
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1679,12 +1679,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1107
+    .line 1110
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveSurfaceListener:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$SurfaceTextureListener;
 
     if-eqz v0, :cond_5b
 
-    .line 1108
+    .line 1111
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
@@ -1693,26 +1693,26 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$SurfaceTextureListener;->onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
 
-    .line 1111
+    .line 1114
     :cond_5b
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mCanvas:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;
 
     if-nez v0, :cond_66
 
-    .line 1112
+    .line 1115
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLES20Canvas;
 
     invoke-direct {v0}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLES20Canvas;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mCanvas:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;
 
-    .line 1115
+    .line 1118
     :cond_66
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-nez v0, :cond_77
 
-    .line 1116
+    .line 1119
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     sget v1, Lcom/transsion/camera/feature/mode/dualvideo/R$drawable;->ic_pip_left_top:I
@@ -1725,13 +1725,13 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
-    .line 1118
+    .line 1121
     :cond_77
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftBottomTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-nez v0, :cond_88
 
-    .line 1119
+    .line 1122
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     sget v1, Lcom/transsion/camera/feature/mode/dualvideo/R$drawable;->ic_pip_left_bottom:I
@@ -1744,13 +1744,13 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftBottomTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
-    .line 1121
+    .line 1124
     :cond_88
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipRightTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-nez v0, :cond_99
 
-    .line 1122
+    .line 1125
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     sget v1, Lcom/transsion/camera/feature/mode/dualvideo/R$drawable;->ic_pip_right_top:I
@@ -1763,13 +1763,13 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipRightTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
-    .line 1124
+    .line 1127
     :cond_99
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipRightBottomTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-nez v0, :cond_aa
 
-    .line 1125
+    .line 1128
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     sget v1, Lcom/transsion/camera/feature/mode/dualvideo/R$drawable;->ic_pip_right_bottom:I
@@ -1782,13 +1782,13 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipRightBottomTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
-    .line 1127
+    .line 1130
     :cond_aa
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDragHandleTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-nez v0, :cond_bb
 
-    .line 1128
+    .line 1131
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     sget v1, Lcom/transsion/camera/feature/mode/dualvideo/R$drawable;->ic_drag_handle:I
@@ -1801,13 +1801,13 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDragHandleTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
-    .line 1130
+    .line 1133
     :cond_bb
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mBigDragHandleTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-nez v0, :cond_cc
 
-    .line 1131
+    .line 1134
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     sget v1, Lcom/transsion/camera/feature/mode/dualvideo/R$drawable;->ic_big_drag_handle:I
@@ -1828,7 +1828,7 @@
 .method private destroySurfaceTexture()V
     .registers 5
 
-    .line 1136
+    .line 1139
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1847,7 +1847,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1137
+    .line 1140
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v2
@@ -1862,32 +1862,32 @@
 
     move-result-object v1
 
-    .line 1136
+    .line 1139
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1138
+    .line 1141
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveOESTextureId:I
 
     const/4 v1, 0x0
 
     if-lez v0, :cond_38
 
-    .line 1140
+    .line 1143
     filled-new-array {v0}, [I
 
     move-result-object v0
 
     const/4 v2, 0x1
 
-    .line 1141
+    .line 1144
     invoke-static {v2, v0, v1}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
 
     const/4 v0, -0x1
 
-    .line 1142
+    .line 1145
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveOESTextureId:I
 
-    .line 1145
+    .line 1148
     :cond_38
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
@@ -1895,122 +1895,122 @@
 
     if-eqz v0, :cond_4b
 
-    .line 1146
+    .line 1149
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveSurfaceListener:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$SurfaceTextureListener;
 
     if-eqz v3, :cond_44
 
-    .line 1147
+    .line 1150
     invoke-interface {v3, v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$SurfaceTextureListener;->onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
 
-    .line 1149
+    .line 1152
     :cond_44
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->release()V
 
-    .line 1150
+    .line 1153
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveSurfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 1152
+    .line 1155
     :cond_4b
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->stopRenderRequestThread()V
 
-    .line 1153
+    .line 1156
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->stopTakePictureThread()V
 
-    .line 1154
+    .line 1157
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
 
-    .line 1155
+    .line 1158
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
 
     const-wide/16 v0, 0x0
 
-    .line 1156
+    .line 1159
     iput-wide v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mFrameCount:J
 
-    .line 1158
+    .line 1161
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-eqz v0, :cond_62
 
-    .line 1159
+    .line 1162
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/UploadedTexture;->recycle()V
 
-    .line 1160
+    .line 1163
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
-    .line 1162
+    .line 1165
     :cond_62
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftBottomTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-eqz v0, :cond_6b
 
-    .line 1163
+    .line 1166
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/UploadedTexture;->recycle()V
 
-    .line 1164
+    .line 1167
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftBottomTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
-    .line 1166
+    .line 1169
     :cond_6b
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipRightTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-eqz v0, :cond_74
 
-    .line 1167
+    .line 1170
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/UploadedTexture;->recycle()V
 
-    .line 1168
+    .line 1171
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipRightTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
-    .line 1170
+    .line 1173
     :cond_74
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipRightBottomTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-eqz v0, :cond_7d
 
-    .line 1171
+    .line 1174
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/UploadedTexture;->recycle()V
 
-    .line 1172
+    .line 1175
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipRightBottomTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
-    .line 1174
+    .line 1177
     :cond_7d
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDragHandleTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-eqz v0, :cond_86
 
-    .line 1175
+    .line 1178
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/UploadedTexture;->recycle()V
 
-    .line 1176
+    .line 1179
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDragHandleTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
-    .line 1178
+    .line 1181
     :cond_86
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mBigDragHandleTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     if-eqz v0, :cond_8f
 
-    .line 1179
+    .line 1182
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/UploadedTexture;->recycle()V
 
-    .line 1180
+    .line 1183
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mBigDragHandleTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
-    .line 1182
+    .line 1185
     :cond_8f
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mCanvas:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;
 
     if-eqz v0, :cond_98
 
-    .line 1183
+    .line 1186
     invoke-interface {v0}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;->deleteRecycledResources()V
 
-    .line 1184
+    .line 1187
     iput-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mCanvas:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;
 
     :cond_98
@@ -2026,7 +2026,7 @@
 
     move/from16 v2, p2
 
-    .line 581
+    .line 583
     iget-boolean v3, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDrawAuxView:Z
 
     if-eqz v3, :cond_11f
@@ -2041,16 +2041,16 @@
 
     goto/16 :goto_11f
 
-    .line 585
+    .line 587
     :cond_14
     invoke-interface {v3, v1, v2}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;->setSize(II)V
 
     const/4 v3, 0x0
 
-    .line 586
+    .line 588
     invoke-static {v3, v3, v1, v2}, Landroid/opengl/GLES20;->glViewport(IIII)V
 
-    .line 587
+    .line 589
     iget v2, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     const/4 v3, 0x1
@@ -2065,7 +2065,7 @@
 
     goto/16 :goto_da
 
-    .line 604
+    .line 606
     :cond_27
     iget v2, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
@@ -2079,7 +2079,7 @@
 
     if-ne v2, v3, :cond_11f
 
-    .line 606
+    .line 608
     :cond_31
     iget v2, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRectPortX:I
 
@@ -2091,7 +2091,7 @@
 
     sub-int/2addr v2, v5
 
-    .line 607
+    .line 609
     iget v5, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRectPortY:I
 
     iget v6, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewWidth:I
@@ -2100,17 +2100,17 @@
 
     sub-int/2addr v5, v3
 
-    .line 608
+    .line 610
     iget v3, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRectWidth:I
 
     add-int/2addr v3, v4
 
-    .line 609
+    .line 611
     iget v6, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRectHeight:I
 
     add-int/2addr v6, v4
 
-    .line 610
+    .line 612
     iget-object v4, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPaint:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLPaint;
 
     invoke-virtual {v4}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLPaint;->getLineWidth()F
@@ -2123,7 +2123,7 @@
 
     float-to-int v4, v4
 
-    .line 612
+    .line 614
     iget-object v8, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     invoke-virtual {v8}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/UploadedTexture;->getWidth()I
@@ -2136,7 +2136,7 @@
 
     div-int v14, v8, v9
 
-    .line 613
+    .line 615
     iget-object v8, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     invoke-virtual {v8}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/UploadedTexture;->getHeight()I
@@ -2149,7 +2149,7 @@
 
     div-int v15, v8, v1
 
-    .line 614
+    .line 616
     iget-object v10, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     iget-object v11, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mCanvas:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;
@@ -2176,7 +2176,7 @@
 
     invoke-virtual/range {v10 .. v15}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/BasicTexture;->draw(Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;IIII)V
 
-    .line 615
+    .line 617
     iget-object v10, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipLeftBottomTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     iget-object v11, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mCanvas:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;
@@ -2203,7 +2203,7 @@
 
     move v1, v13
 
-    .line 616
+    .line 618
     iget-object v10, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipRightTopTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     iget-object v11, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mCanvas:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;
@@ -2226,7 +2226,7 @@
 
     invoke-virtual/range {v10 .. v15}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/BasicTexture;->draw(Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;IIII)V
 
-    .line 617
+    .line 619
     iget-object v10, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipRightBottomTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     iget-object v11, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mCanvas:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;
@@ -2235,7 +2235,7 @@
 
     invoke-virtual/range {v10 .. v15}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/BasicTexture;->draw(Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;IIII)V
 
-    .line 620
+    .line 622
     iget-object v1, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mCanvas:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;
 
     int-to-float v2, v2
@@ -2280,7 +2280,7 @@
 
     return-void
 
-    .line 589
+    .line 591
     :cond_da
     :goto_da
     iget v2, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
@@ -2297,7 +2297,7 @@
 
     float-to-int v2, v2
 
-    .line 593
+    .line 595
     iget v5, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDragHandleRealWidth:I
 
     mul-int v6, v5, v1
@@ -2306,10 +2306,10 @@
 
     mul-int/2addr v1, v3
 
-    .line 594
+    .line 596
     div-int/2addr v1, v3
 
-    .line 595
+    .line 597
     iget v6, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDragHandleRealHeight:I
 
     iget v7, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
@@ -2318,12 +2318,12 @@
 
     div-int v12, v6, v3
 
-    .line 596
+    .line 598
     iget v3, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDragHandleInitWidth:I
 
     if-ne v5, v3, :cond_105
 
-    .line 597
+    .line 599
     iget-object v7, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDragHandleTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
     iget-object v8, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mCanvas:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;
@@ -2340,7 +2340,7 @@
 
     goto :goto_113
 
-    .line 600
+    .line 602
     :cond_105
     iget-object v7, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mBigDragHandleTexture:Lcom/transsion/camera/feature/mode/dualvideo/glrender/BitmapTexture;
 
@@ -2356,7 +2356,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/BasicTexture;->draw(Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;IIII)V
 
-    .line 603
+    .line 605
     :goto_113
     iget-object v1, v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mCanvas:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLCanvas;
 
@@ -2382,7 +2382,7 @@
 .method private getBitMap(I)Landroid/graphics/Bitmap;
     .registers 6
 
-    .line 1645
+    .line 1648
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2393,7 +2393,7 @@
 
     move-result-object p0
 
-    .line 1648
+    .line 1651
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result p1
@@ -2408,12 +2408,12 @@
 
     move-result-object p1
 
-    .line 1649
+    .line 1652
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1650
+    .line 1653
     invoke-virtual {v0}, Landroid/graphics/Canvas;->getWidth()I
 
     move-result v1
@@ -2426,7 +2426,7 @@
 
     invoke-virtual {p0, v3, v3, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1651
+    .line 1654
     invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     return-object p1
@@ -2435,7 +2435,7 @@
 .method private isMainThread()Z
     .registers 2
 
-    .line 1394
+    .line 1397
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object p0
@@ -2459,7 +2459,7 @@
 .method private synthetic lambda$runDividerAnimator$11(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 1625
+    .line 1628
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2478,7 +2478,7 @@
 .method private synthetic lambda$runDividerAnimator$12(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 1629
+    .line 1632
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2497,7 +2497,7 @@
 .method private synthetic lambda$runDividerAnimator$13(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 1633
+    .line 1636
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2516,7 +2516,7 @@
 .method private synthetic lambda$runMainScreenAnimator$3(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 1550
+    .line 1553
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2535,7 +2535,7 @@
 .method private synthetic lambda$runMainScreenAnimator$4(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 1554
+    .line 1557
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2554,7 +2554,7 @@
 .method private synthetic lambda$runMainScreenAnimator$5(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 1558
+    .line 1561
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2573,7 +2573,7 @@
 .method private synthetic lambda$runMainScreenAnimator$6(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 1562
+    .line 1565
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2586,7 +2586,7 @@
 
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainViewPortHeight:I
 
-    .line 1563
+    .line 1566
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->speedUpRefreshRate()V
 
     return-void
@@ -2595,7 +2595,7 @@
 .method private synthetic lambda$runSlaveScreenAnimator$10(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 1605
+    .line 1608
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2614,7 +2614,7 @@
 .method private synthetic lambda$runSlaveScreenAnimator$7(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 1593
+    .line 1596
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2633,7 +2633,7 @@
 .method private synthetic lambda$runSlaveScreenAnimator$8(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 1597
+    .line 1600
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2652,7 +2652,7 @@
 .method private synthetic lambda$runSlaveScreenAnimator$9(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 1601
+    .line 1604
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -2671,12 +2671,12 @@
 .method private synthetic lambda$setSplitDividerEnable$14(Z)V
     .registers 2
 
-    .line 1718
+    .line 1721
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz p0, :cond_7
 
-    .line 1719
+    .line 1722
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->setSplitDividerEnable(Z)V
 
     :cond_7
@@ -2686,12 +2686,12 @@
 .method private synthetic lambda$updateAuxViewInfo$1()V
     .registers 2
 
-    .line 969
+    .line 972
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz v0, :cond_a
 
-    .line 970
+    .line 973
     iget p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
 
     float-to-int p0, p0
@@ -2705,12 +2705,12 @@
 .method private synthetic lambda$updateAuxViewInfo$2()V
     .registers 5
 
-    .line 987
+    .line 990
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz v0, :cond_13
 
-    .line 988
+    .line 991
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
 
     float-to-int v1, v1
@@ -2736,7 +2736,7 @@
 .method private synthetic lambda$updatePreviewPortInfo$0()V
     .registers 5
 
-    .line 944
+    .line 947
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetX:I
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetY:I
@@ -2747,7 +2747,7 @@
 
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->runMainScreenAnimator(IIII)V
 
-    .line 945
+    .line 948
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetX:I
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetY:I
@@ -2764,14 +2764,14 @@
 .method private loadFromDataStore()V
     .registers 12
 
-    .line 1435
+    .line 1438
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1436
+    .line 1439
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI(Landroid/content/Context;)Z
@@ -2786,7 +2786,7 @@
 
     if-eqz v1, :cond_c7
 
-    .line 1440
+    .line 1443
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mScreenFormType:I
 
     if-ne v1, v4, :cond_1c
@@ -2802,7 +2802,7 @@
 
     const/16 v4, 0x438
 
-    .line 1447
+    .line 1450
     :goto_20
     iget-object v5, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -2814,7 +2814,7 @@
 
     move-result-object v5
 
-    .line 1448
+    .line 1451
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
@@ -2823,7 +2823,7 @@
 
     int-to-float v6, v1
 
-    .line 1449
+    .line 1452
     invoke-static {v5}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v5
@@ -2832,7 +2832,7 @@
 
     iput v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
 
-    .line 1451
+    .line 1454
     :cond_38
     iget-object v5, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -2842,7 +2842,7 @@
 
     move-result-object v5
 
-    .line 1452
+    .line 1455
     iget-object v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v8, "pip_view_y_percent"
@@ -2851,7 +2851,7 @@
 
     move-result-object v6
 
-    .line 1453
+    .line 1456
     iget-object v8, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v9, "pip_view_width_percent"
@@ -2860,7 +2860,7 @@
 
     move-result-object v8
 
-    .line 1454
+    .line 1457
     iget-object v9, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v10, "pip_view_height_percent"
@@ -2869,7 +2869,7 @@
 
     move-result-object v0
 
-    .line 1455
+    .line 1458
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v7
@@ -2882,7 +2882,7 @@
 
     if-nez v7, :cond_8e
 
-    .line 1456
+    .line 1459
     invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v7
@@ -2897,7 +2897,7 @@
 
     int-to-float v4, v4
 
-    .line 1457
+    .line 1460
     invoke-static {v5}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v5
@@ -2908,7 +2908,7 @@
 
     int-to-float v1, v1
 
-    .line 1458
+    .line 1461
     invoke-static {v6}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v5
@@ -2917,7 +2917,7 @@
 
     iput v5, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayY:F
 
-    .line 1459
+    .line 1462
     invoke-static {v8}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v5
@@ -2926,7 +2926,7 @@
 
     iput v4, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayWidth:F
 
-    .line 1460
+    .line 1463
     invoke-static {v0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v0
@@ -2935,7 +2935,7 @@
 
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayHeight:F
 
-    .line 1462
+    .line 1465
     :cond_8e
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2983,7 +2983,7 @@
 
     return-void
 
-    .line 1465
+    .line 1468
     :cond_c7
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -2995,7 +2995,7 @@
 
     move-result-object v1
 
-    .line 1466
+    .line 1469
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v1
@@ -3004,7 +3004,7 @@
 
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
 
-    .line 1468
+    .line 1471
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v5, "pip_view_port"
@@ -3013,14 +3013,14 @@
 
     move-result-object v0
 
-    .line 1469
+    .line 1472
     const-string v1, "_"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1470
+    .line 1473
     array-length v1, v0
 
     const/4 v5, 0x1
@@ -3029,7 +3029,7 @@
 
     const/4 v1, 0x0
 
-    .line 1471
+    .line 1474
     aget-object v1, v0, v1
 
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -3040,7 +3040,7 @@
 
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
 
-    .line 1472
+    .line 1475
     aget-object v1, v0, v5
 
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -3053,7 +3053,7 @@
 
     const/4 v1, 0x2
 
-    .line 1473
+    .line 1476
     aget-object v1, v0, v1
 
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -3064,7 +3064,7 @@
 
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayWidth:F
 
-    .line 1474
+    .line 1477
     aget-object v1, v0, v4
 
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -3075,7 +3075,7 @@
 
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayHeight:F
 
-    .line 1476
+    .line 1479
     :cond_110
     sget-object v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3109,10 +3109,10 @@
 .method private processHandleDrawAuxView(Z)V
     .registers 4
 
-    .line 1531
+    .line 1534
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->setDrawAuxView(Z)V
 
-    .line 1532
+    .line 1535
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz v0, :cond_16
@@ -3129,7 +3129,7 @@
 
     if-ne v0, v1, :cond_16
 
-    .line 1534
+    .line 1537
     :cond_11
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
@@ -3142,12 +3142,12 @@
 .method private processHandleSwitchScreen()V
     .registers 1
 
-    .line 1539
+    .line 1542
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoMsgCallback:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoMsgCallback;
 
     if-eqz p0, :cond_7
 
-    .line 1540
+    .line 1543
     invoke-interface {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoMsgCallback;->notifySwitchScreenEnd()V
 
     :cond_7
@@ -3161,7 +3161,7 @@
 
     if-ne p1, v0, :cond_3c
 
-    .line 845
+    .line 848
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3176,7 +3176,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipInitEdgeOffset:I
 
-    .line 846
+    .line 849
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3191,7 +3191,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipInitEdgeYOffset:I
 
-    .line 847
+    .line 850
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3206,7 +3206,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerUpEdgeOffset:I
 
-    .line 848
+    .line 851
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3228,7 +3228,7 @@
 
     if-ne p1, v0, :cond_78
 
-    .line 850
+    .line 853
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3243,7 +3243,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipInitEdgeOffset:I
 
-    .line 851
+    .line 854
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3258,7 +3258,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipInitEdgeYOffset:I
 
-    .line 852
+    .line 855
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3273,7 +3273,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerUpEdgeOffset:I
 
-    .line 853
+    .line 856
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3290,7 +3290,7 @@
 
     goto :goto_b0
 
-    .line 855
+    .line 858
     :cond_78
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
@@ -3306,7 +3306,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipInitEdgeOffset:I
 
-    .line 856
+    .line 859
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3321,7 +3321,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipInitEdgeYOffset:I
 
-    .line 857
+    .line 860
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3336,7 +3336,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerUpEdgeOffset:I
 
-    .line 858
+    .line 861
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3351,19 +3351,19 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDownEdgeOffset:I
 
-    .line 860
+    .line 863
     :goto_b0
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz v0, :cond_b7
 
-    .line 861
+    .line 864
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->onScreenFormChanged(I)V
 
     :cond_b7
     const/4 p1, 0x0
 
-    .line 863
+    .line 866
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->updateViewPortInfo(Z)V
 
     return-void
@@ -3372,7 +3372,7 @@
 .method private rgbToJpeg([III)V
     .registers 15
 
-    .line 1063
+    .line 1066
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/CameraUtil;->getP3VideoPreviewSwitch(Landroid/content/Context;)I
@@ -3383,14 +3383,14 @@
 
     if-ne v0, v1, :cond_29
 
-    .line 1065
+    .line 1068
     sget-object v0, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {v0}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
 
     move-result-object v0
 
-    .line 1066
+    .line 1069
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {p2, p3, v2, v1, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;ZLandroid/graphics/ColorSpace;)Landroid/graphics/Bitmap;
@@ -3411,17 +3411,17 @@
 
     move v10, p3
 
-    .line 1067
+    .line 1070
     invoke-virtual/range {v3 .. v10}, Landroid/graphics/Bitmap;->setPixels([IIIIIII)V
 
-    .line 1068
+    .line 1071
     sget-object p1, Landroid/graphics/ColorSpace$Named;->DISPLAY_P3:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {p1}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
 
     move-result-object p1
 
-    .line 1069
+    .line 1072
     invoke-virtual {v3, p1}, Landroid/graphics/Bitmap;->setColorSpace(Landroid/graphics/ColorSpace;)V
 
     goto :goto_32
@@ -3433,14 +3433,14 @@
 
     move v10, p3
 
-    .line 1071
+    .line 1074
     sget-object p1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v4, v6, v10, p1}, Landroid/graphics/Bitmap;->createBitmap([IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    .line 1082
+    .line 1085
     :goto_32
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPictureCallback:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoPictureCallback;
 
@@ -3448,7 +3448,7 @@
 
     const/4 p1, 0x0
 
-    .line 1083
+    .line 1086
     invoke-interface {p0, p1, v3}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoPictureCallback;->notifyVideoPictureTaken([BLandroid/graphics/Bitmap;)V
 
     :cond_3a
@@ -3458,7 +3458,7 @@
 .method private saveDividerScreenInfo()V
     .registers 8
 
-    .line 1398
+    .line 1401
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
@@ -3471,19 +3471,19 @@
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 1399
+    .line 1402
     invoke-virtual {v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1398
+    .line 1401
     const-string v3, "divider_up_screen_height"
 
     const/4 v4, 0x1
 
     invoke-virtual {v0, v3, v1, v2, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1401
+    .line 1404
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewHeight:I
 
     int-to-float v0, v0
@@ -3498,7 +3498,7 @@
 
     float-to-int v0, v0
 
-    .line 1402
+    .line 1405
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -3507,24 +3507,24 @@
 
     iget-object v5, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 1403
+    .line 1406
     invoke-virtual {v5}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1402
+    .line 1405
     const-string v6, "divider_up_crop_offset"
 
     invoke-virtual {v2, v6, v3, v5, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1405
+    .line 1408
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
 
     div-float/2addr v2, v1
 
     float-to-int v1, v2
 
-    .line 1406
+    .line 1409
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
@@ -3533,17 +3533,17 @@
 
     iget-object v5, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 1407
+    .line 1410
     invoke-virtual {v5}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1406
+    .line 1409
     const-string v6, "divider_down_crop_offset"
 
     invoke-virtual {v2, v6, v3, v5, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1408
+    .line 1411
     sget-object v2, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3582,14 +3582,14 @@
 .method private saveToDataStore()V
     .registers 7
 
-    .line 1413
+    .line 1416
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1414
+    .line 1417
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
@@ -3606,7 +3606,7 @@
 
     invoke-virtual {v1, v3, v2, v0, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1416
+    .line 1419
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -3653,7 +3653,7 @@
 
     invoke-virtual {v1, v3, v2, v0, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1418
+    .line 1421
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI(Landroid/content/Context;)Z
@@ -3662,7 +3662,7 @@
 
     if-eqz v1, :cond_e1
 
-    .line 1419
+    .line 1422
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
@@ -3673,17 +3673,17 @@
 
     div-float/2addr v2, v3
 
-    .line 1420
+    .line 1423
     invoke-static {v2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1419
+    .line 1422
     const-string v3, "divider_display_y_percent"
 
     invoke-virtual {v1, v3, v2, v0, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1421
+    .line 1424
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
@@ -3694,17 +3694,17 @@
 
     div-float/2addr v2, v3
 
-    .line 1422
+    .line 1425
     invoke-static {v2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1421
+    .line 1424
     const-string v3, "pip_view_x_percent"
 
     invoke-virtual {v1, v3, v2, v0, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1423
+    .line 1426
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayY:F
@@ -3715,17 +3715,17 @@
 
     div-float/2addr v2, v3
 
-    .line 1424
+    .line 1427
     invoke-static {v2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1423
+    .line 1426
     const-string v3, "pip_view_y_percent"
 
     invoke-virtual {v1, v3, v2, v0, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1425
+    .line 1428
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayWidth:F
@@ -3736,17 +3736,17 @@
 
     div-float/2addr v2, v3
 
-    .line 1426
+    .line 1429
     invoke-static {v2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1425
+    .line 1428
     const-string v3, "pip_view_width_percent"
 
     invoke-virtual {v1, v3, v2, v0, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1427
+    .line 1430
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayHeight:F
@@ -3757,17 +3757,17 @@
 
     div-float/2addr v2, v3
 
-    .line 1428
+    .line 1431
     invoke-static {v2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1427
+    .line 1430
     const-string v3, "pip_view_height_percent"
 
     invoke-virtual {v1, v3, v2, v0, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1429
+    .line 1432
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3823,14 +3823,14 @@
 .method private sendHandlerMessage(IIJ)V
     .registers 7
 
-    .line 1481
+    .line 1484
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 1485
+    .line 1488
     :cond_5
     invoke-virtual {v0, p1}, Landroid/os/Handler;->removeMessages(I)V
 
@@ -3842,7 +3842,7 @@
 
     if-nez v0, :cond_19
 
-    .line 1487
+    .line 1490
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, p1, p2, v1}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
@@ -3853,7 +3853,7 @@
 
     return-void
 
-    .line 1489
+    .line 1492
     :cond_19
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mHandler:Landroid/os/Handler;
 
@@ -3869,7 +3869,7 @@
 .method private setDrawAuxView(Z)V
     .registers 5
 
-    .line 1088
+    .line 1091
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3890,19 +3890,19 @@
 
     const/16 v0, 0x69
 
-    .line 1091
+    .line 1094
     filled-new-array {v0, p1}, [I
 
     move-result-object v0
 
-    .line 1092
+    .line 1095
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     const/4 v2, 0x1
 
     invoke-interface {v1, v2, v0, v2}, Lcom/transsion/camera/app/common/preview/IPreviewOperator;->loadGLResources(Z[II)V
 
-    .line 1093
+    .line 1096
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->setPIPViewSelected(Z)V
@@ -3913,7 +3913,7 @@
 .method private setSplitDividerEnable(Z)V
     .registers 4
 
-    .line 1717
+    .line 1720
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     check-cast v0, Landroid/app/Activity;
@@ -3930,14 +3930,14 @@
 .method private speedUpRefreshRate()V
     .registers 7
 
-    .line 1243
+    .line 1246
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x3ea
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1244
+    .line 1247
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mHandler:Landroid/os/Handler;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -3960,7 +3960,7 @@
 .method private startRendererRequestThread()V
     .registers 3
 
-    .line 1189
+    .line 1192
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "SlaveRenderReqThd"
@@ -3969,10 +3969,10 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRendererRequestThread:Landroid/os/HandlerThread;
 
-    .line 1190
+    .line 1193
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 1191
+    .line 1194
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRendererRequestThread:Landroid/os/HandlerThread;
@@ -3991,7 +3991,7 @@
 .method private startTakePictureThread()V
     .registers 3
 
-    .line 1208
+    .line 1211
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "DualVideoTakePicThd"
@@ -4000,10 +4000,10 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mTakePictureThread:Landroid/os/HandlerThread;
 
-    .line 1209
+    .line 1212
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 1210
+    .line 1213
     new-instance v0, Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mTakePictureThread:Landroid/os/HandlerThread;
@@ -4022,15 +4022,15 @@
 .method private stopRenderRequestThread()V
     .registers 4
 
-    .line 1195
+    .line 1198
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRendererRequestThread:Landroid/os/HandlerThread;
 
     if-eqz v0, :cond_1c
 
-    .line 1196
+    .line 1199
     invoke-virtual {v0}, Landroid/os/HandlerThread;->quitSafely()Z
 
-    .line 1198
+    .line 1201
     :try_start_7
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRendererRequestThread:Landroid/os/HandlerThread;
 
@@ -4040,10 +4040,10 @@
 
     const/4 v0, 0x0
 
-    .line 1199
+    .line 1202
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRendererRequestThread:Landroid/os/HandlerThread;
 
-    .line 1200
+    .line 1203
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRendererRequestHandler:Landroid/os/Handler;
     :try_end_13
     .catch Ljava/lang/InterruptedException; {:try_start_7 .. :try_end_13} :catch_14
@@ -4053,7 +4053,7 @@
     :catch_14
     move-exception p0
 
-    .line 1202
+    .line 1205
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "Interrupted while trying to join mRespondThread"
@@ -4067,15 +4067,15 @@
 .method private stopTakePictureThread()V
     .registers 4
 
-    .line 1214
+    .line 1217
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mTakePictureThread:Landroid/os/HandlerThread;
 
     if-eqz v0, :cond_1c
 
-    .line 1215
+    .line 1218
     invoke-virtual {v0}, Landroid/os/HandlerThread;->quitSafely()Z
 
-    .line 1217
+    .line 1220
     :try_start_7
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mTakePictureThread:Landroid/os/HandlerThread;
 
@@ -4085,10 +4085,10 @@
 
     const/4 v0, 0x0
 
-    .line 1218
+    .line 1221
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mTakePictureThread:Landroid/os/HandlerThread;
 
-    .line 1219
+    .line 1222
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mTakePictureHandler:Landroid/os/Handler;
     :try_end_13
     .catch Ljava/lang/InterruptedException; {:try_start_7 .. :try_end_13} :catch_14
@@ -4098,7 +4098,7 @@
     :catch_14
     move-exception p0
 
-    .line 1221
+    .line 1224
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "Interrupted while trying to join DualVideoTakePicThd"
@@ -4112,27 +4112,27 @@
 .method private takePicture(II)V
     .registers 16
 
-    .line 1025
+    .line 1028
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     mul-int v2, p1, p2
 
-    .line 1026
+    .line 1029
     new-array v3, v2, [I
 
-    .line 1028
+    .line 1031
     invoke-static {v3}, Ljava/nio/IntBuffer;->wrap([I)Ljava/nio/IntBuffer;
 
     move-result-object v10
 
     const/4 v11, 0x0
 
-    .line 1029
+    .line 1032
     invoke-virtual {v10, v11}, Ljava/nio/IntBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 1030
+    .line 1033
     sget-object v12, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v4, "glReadPixels E"
@@ -4151,15 +4151,15 @@
 
     move v7, p2
 
-    .line 1031
+    .line 1034
     invoke-static/range {v4 .. v10}, Landroid/opengl/GLES20;->glReadPixels(IIIIIILjava/nio/Buffer;)V
 
-    .line 1033
+    .line 1036
     const-string p1, "glReadPixels X"
 
     invoke-static {v12, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1035
+    .line 1038
     new-array p1, v2, [I
 
     move p2, v11
@@ -4182,7 +4182,7 @@
 
     add-int v8, v2, v5
 
-    .line 1041
+    .line 1044
     aget v8, v3, v8
 
     shr-int/lit8 v9, v8, 0x10
@@ -4205,7 +4205,7 @@
 
     add-int v9, v4, v5
 
-    .line 1045
+    .line 1048
     aput v8, p1, v9
 
     add-int/lit8 v5, v5, 0x1
@@ -4217,13 +4217,13 @@
 
     goto :goto_2a
 
-    .line 1048
+    .line 1051
     :cond_53
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 1049
+    .line 1052
     sget-object p2, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -4244,7 +4244,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1050
+    .line 1053
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mTakePictureHandler:Landroid/os/Handler;
 
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$1;
@@ -4259,7 +4259,7 @@
 .method private updateAuxViewInfo()V
     .registers 4
 
-    .line 966
+    .line 969
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     const/4 v1, 0x1
@@ -4274,7 +4274,7 @@
 
     goto/16 :goto_bc
 
-    .line 979
+    .line 982
     :cond_c
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
@@ -4297,10 +4297,10 @@
     :goto_18
     const/4 v0, 0x0
 
-    .line 981
+    .line 984
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDrawAuxView:Z
 
-    .line 982
+    .line 985
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
@@ -4325,7 +4325,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRectPortX:I
 
-    .line 983
+    .line 986
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayY:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
@@ -4350,7 +4350,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRectPortY:I
 
-    .line 984
+    .line 987
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayWidth:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
@@ -4375,7 +4375,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRectWidth:I
 
-    .line 985
+    .line 988
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayHeight:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
@@ -4400,7 +4400,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRectHeight:I
 
-    .line 986
+    .line 989
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     check-cast v0, Landroid/app/Activity;
@@ -4411,14 +4411,14 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 991
+    .line 994
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPaint:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLPaint;
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRectColor:I
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLPaint;->setColor(I)V
 
-    .line 992
+    .line 995
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPaint:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLPaint;
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipFrameStrokeWidth:I
@@ -4435,7 +4435,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLPaint;->setLineWidth(F)V
 
-    .line 993
+    .line 996
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4482,7 +4482,7 @@
 
     return-void
 
-    .line 968
+    .line 971
     :cond_bc
     :goto_bc
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
@@ -4495,29 +4495,29 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 974
+    .line 977
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerLineInitHeight:I
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerLineRealHeight:I
 
-    .line 975
+    .line 978
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDragHandleInitWidth:I
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDragHandleRealWidth:I
 
-    .line 976
+    .line 979
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDragHandleInitHeight:I
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDragHandleRealHeight:I
 
-    .line 977
+    .line 980
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPaint:Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLPaint;
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mLineColor:I
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/glrender/GLPaint;->setColor(I)V
 
-    .line 978
+    .line 981
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4544,7 +4544,7 @@
 .method private updatePreviewPortInfo(Z)V
     .registers 11
 
-    .line 879
+    .line 882
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     const/high16 v1, 0x40000000    # 2.0f
@@ -4569,7 +4569,7 @@
 
     goto :goto_5b
 
-    .line 891
+    .line 894
     :cond_12
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
@@ -4581,7 +4581,7 @@
 
     if-ne v0, v8, :cond_74
 
-    .line 893
+    .line 896
     :cond_1b
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
 
@@ -4607,7 +4607,7 @@
 
     if-gez v0, :cond_53
 
-    .line 894
+    .line 897
     :cond_33
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewWidth:I
 
@@ -4627,14 +4627,14 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
 
-    .line 895
+    .line 898
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipInitEdgeYOffset:I
 
     int-to-float v0, v0
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayY:F
 
-    .line 896
+    .line 899
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewWidth:I
 
     int-to-float v0, v0
@@ -4645,7 +4645,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayWidth:F
 
-    .line 897
+    .line 900
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewHeight:I
 
     int-to-float v0, v0
@@ -4656,19 +4656,19 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayHeight:F
 
-    .line 899
+    .line 902
     :cond_53
     iput-boolean v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mIsDividerChanging:Z
 
-    .line 900
+    .line 903
     iput-boolean v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mIsPIPRectViewEnable:Z
 
-    .line 901
+    .line 904
     invoke-direct {p0, v6}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->setSplitDividerEnable(Z)V
 
     goto :goto_74
 
-    .line 881
+    .line 884
     :cond_5b
     :goto_5b
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
@@ -4677,7 +4677,7 @@
 
     if-gez v0, :cond_68
 
-    .line 882
+    .line 885
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewHeight:I
 
     int-to-float v0, v0
@@ -4691,41 +4691,41 @@
     :cond_68
     if-eqz p1, :cond_6d
 
-    .line 885
+    .line 888
     iput-boolean v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDrawAuxView:Z
 
     goto :goto_6f
 
-    .line 887
+    .line 890
     :cond_6d
     iput-boolean v7, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDrawAuxView:Z
 
-    .line 889
+    .line 892
     :goto_6f
     iput-boolean v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mIsPIPRectViewEnable:Z
 
-    .line 890
+    .line 893
     invoke-direct {p0, v7}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->setSplitDividerEnable(Z)V
 
-    .line 904
+    .line 907
     :cond_74
     :goto_74
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     if-ne v0, v7, :cond_9a
 
-    .line 905
+    .line 908
     iput v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetX:I
 
-    .line 906
+    .line 909
     iput v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetY:I
 
-    .line 907
+    .line 910
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetHeight:I
 
-    .line 908
+    .line 911
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
@@ -4744,34 +4744,34 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetX:I
 
-    .line 909
+    .line 912
     iput v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetY:I
 
     sub-int/2addr v1, v0
 
-    .line 910
+    .line 913
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetWidth:I
 
-    .line 911
+    .line 914
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
 
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetHeight:I
 
-    .line 912
+    .line 915
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetWidth:I
 
     goto/16 :goto_16b
 
-    .line 913
+    .line 916
     :cond_9a
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     if-ne v0, v3, :cond_be
 
-    .line 914
+    .line 917
     iput v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetY:I
 
-    .line 915
+    .line 918
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
@@ -4792,51 +4792,51 @@
 
     sub-int/2addr v1, v0
 
-    .line 916
+    .line 919
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetWidth:I
 
-    .line 917
+    .line 920
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
 
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetHeight:I
 
-    .line 918
+    .line 921
     iput v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetX:I
 
-    .line 919
+    .line 922
     iput v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetY:I
 
-    .line 920
+    .line 923
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetWidth:I
 
-    .line 921
+    .line 924
     iput v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetHeight:I
 
     goto/16 :goto_16b
 
-    .line 922
+    .line 925
     :cond_be
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     if-ne v0, v2, :cond_117
 
-    .line 923
+    .line 926
     iput v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetX:I
 
-    .line 924
+    .line 927
     iput v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetY:I
 
-    .line 925
+    .line 928
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetWidth:I
 
-    .line 926
+    .line 929
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetHeight:I
 
-    .line 927
+    .line 930
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayY:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
@@ -4861,7 +4861,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetX:I
 
-    .line 928
+    .line 931
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
@@ -4886,7 +4886,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetY:I
 
-    .line 929
+    .line 932
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayHeight:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
@@ -4911,7 +4911,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetWidth:I
 
-    .line 930
+    .line 933
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayWidth:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
@@ -4938,7 +4938,7 @@
 
     goto :goto_16b
 
-    .line 932
+    .line 935
     :cond_117
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayY:F
 
@@ -4964,7 +4964,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetX:I
 
-    .line 933
+    .line 936
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
@@ -4989,7 +4989,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetY:I
 
-    .line 934
+    .line 937
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayHeight:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
@@ -5014,7 +5014,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetWidth:I
 
-    .line 935
+    .line 938
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayWidth:F
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
@@ -5039,18 +5039,18 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetHeight:I
 
-    .line 936
+    .line 939
     iput v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetX:I
 
-    .line 937
+    .line 940
     iput v6, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetY:I
 
-    .line 938
+    .line 941
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetWidth:I
 
-    .line 939
+    .line 942
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetHeight:I
@@ -5058,7 +5058,7 @@
     :goto_16b
     if-eqz p1, :cond_17a
 
-    .line 943
+    .line 946
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     check-cast p1, Landroid/app/Activity;
@@ -5071,48 +5071,48 @@
 
     goto :goto_19a
 
-    .line 948
+    .line 951
     :cond_17a
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetX:I
 
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainViewPortX:I
 
-    .line 949
+    .line 952
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetY:I
 
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainViewPortY:I
 
-    .line 950
+    .line 953
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetWidth:I
 
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainViewPortWidth:I
 
-    .line 951
+    .line 954
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTargetHeight:I
 
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainViewPortHeight:I
 
-    .line 952
+    .line 955
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetX:I
 
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveViewPortX:I
 
-    .line 953
+    .line 956
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetY:I
 
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveViewPortY:I
 
-    .line 954
+    .line 957
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetWidth:I
 
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveViewPortWidth:I
 
-    .line 955
+    .line 958
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTargetHeight:I
 
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveViewPortHeight:I
 
-    .line 958
+    .line 961
     :goto_19a
     sget-object p1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5166,7 +5166,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 960
+    .line 963
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -5203,7 +5203,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 962
+    .line 965
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -5234,7 +5234,7 @@
 .method private updateRenderSurfaceSize(II)V
     .registers 5
 
-    .line 833
+    .line 836
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
 
     if-ne v0, p1, :cond_28
@@ -5243,7 +5243,7 @@
 
     if-ne v0, p2, :cond_28
 
-    .line 834
+    .line 837
     sget-object p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -5270,14 +5270,14 @@
 
     return-void
 
-    .line 837
+    .line 840
     :cond_28
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
 
-    .line 838
+    .line 841
     iput p2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceHeight:I
 
-    .line 839
+    .line 842
     sget-object p1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -5308,7 +5308,7 @@
 
     const/4 p1, 0x0
 
-    .line 840
+    .line 843
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->updateViewPortInfo(Z)V
 
     return-void
@@ -5317,10 +5317,10 @@
 .method private updateTouchArea()V
     .registers 7
 
-    .line 999
+    .line 1002
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->saveDividerScreenInfo()V
 
-    .line 1001
+    .line 1004
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     const/4 v1, 0x1
@@ -5329,7 +5329,7 @@
 
     if-ne v0, v1, :cond_31
 
-    .line 1002
+    .line 1005
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTouchArea:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewRect:Landroid/graphics/Rect;
@@ -5352,7 +5352,7 @@
 
     invoke-virtual {v0, v2, v1, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1004
+    .line 1007
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTouchArea:Landroid/graphics/Rect;
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
@@ -5377,7 +5377,7 @@
 
     return-void
 
-    .line 1006
+    .line 1009
     :cond_31
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
@@ -5385,7 +5385,7 @@
 
     if-ne v0, v1, :cond_5e
 
-    .line 1007
+    .line 1010
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTouchArea:Landroid/graphics/Rect;
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
@@ -5408,7 +5408,7 @@
 
     invoke-virtual {v0, v2, v1, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1009
+    .line 1012
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTouchArea:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewRect:Landroid/graphics/Rect;
@@ -5433,7 +5433,7 @@
 
     return-void
 
-    .line 1011
+    .line 1014
     :cond_5e
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
@@ -5441,7 +5441,7 @@
 
     if-ne v0, v1, :cond_77
 
-    .line 1012
+    .line 1015
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTouchArea:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewRect:Landroid/graphics/Rect;
@@ -5456,20 +5456,20 @@
 
     invoke-virtual {v0, v2, v1, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1014
+    .line 1017
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTouchArea:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v2, v2, v2, v2}, Landroid/graphics/Rect;->set(IIII)V
 
     return-void
 
-    .line 1016
+    .line 1019
     :cond_77
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTouchArea:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v2, v2, v2, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1017
+    .line 1020
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTouchArea:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewRect:Landroid/graphics/Rect;
@@ -5490,7 +5490,7 @@
 .method private updateViewPortInfo(Z)V
     .registers 4
 
-    .line 867
+    .line 870
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSurfaceWidth:I
 
     if-eqz v0, :cond_1b
@@ -5509,19 +5509,19 @@
 
     goto :goto_1b
 
-    .line 873
+    .line 876
     :cond_11
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->updatePreviewPortInfo(Z)V
 
-    .line 874
+    .line 877
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->updateAuxViewInfo()V
 
-    .line 875
+    .line 878
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->updateTouchArea()V
 
     return-void
 
-    .line 868
+    .line 871
     :cond_1b
     :goto_1b
     sget-object p1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -5576,12 +5576,12 @@
 .method public getDualSwitchButtonVisible()Z
     .registers 1
 
-    .line 1677
+    .line 1680
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz p0, :cond_9
 
-    .line 1678
+    .line 1681
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->getDualSwitchButtonVisible()Z
 
     move-result p0
@@ -5597,7 +5597,7 @@
 .method protected getDualVideoPreviewUI()Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
     .registers 1
 
-    .line 1703
+    .line 1706
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     return-object p0
@@ -5606,7 +5606,7 @@
 .method public getItemVisibility()I
     .registers 1
 
-    .line 1694
+    .line 1697
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->getItemVisibility()I
@@ -5619,7 +5619,7 @@
 .method public getMainAndSlaveRatio()F
     .registers 3
 
-    .line 1657
+    .line 1660
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainViewPortWidth:I
 
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainViewPortHeight:I
@@ -5644,12 +5644,12 @@
 .method public hideDualDeviceItem(Z)V
     .registers 2
 
-    .line 1661
+    .line 1664
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz p0, :cond_7
 
-    .line 1662
+    .line 1665
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->hideDualDeviceRoot(Z)V
 
     :cond_7
@@ -5935,7 +5935,7 @@
 .method public isPopSettingShow(Z)V
     .registers 2
 
-    .line 1667
+    .line 1670
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->isPopSettingShow(Z)Z
@@ -5963,7 +5963,7 @@
 .method public onDown(Landroid/view/MotionEvent;)Z
     .registers 4
 
-    .line 505
+    .line 507
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     const/4 v1, 0x3
@@ -5976,7 +5976,7 @@
 
     if-ne v0, v1, :cond_19
 
-    .line 507
+    .line 509
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
@@ -5986,7 +5986,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 508
+    .line 510
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->imitatePIPViewsTouch(Landroid/view/MotionEvent;)V
@@ -5995,7 +5995,7 @@
 
     return p0
 
-    .line 512
+    .line 514
     :cond_19
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IPreviewGestureListener;->onDown(Landroid/view/MotionEvent;)Z
 
@@ -6007,7 +6007,7 @@
 .method public onDragMove(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .registers 7
 
-    .line 529
+    .line 531
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     const/4 v1, 0x3
@@ -6020,7 +6020,7 @@
 
     if-ne v0, v1, :cond_19
 
-    .line 531
+    .line 533
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
@@ -6030,7 +6030,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 532
+    .line 534
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->imitatePIPViewsTouch(Landroid/view/MotionEvent;)V
@@ -6039,7 +6039,7 @@
 
     return p0
 
-    .line 536
+    .line 538
     :cond_19
     invoke-super {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/IAppUIListener$IPreviewGestureListener;->onDragMove(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
 
@@ -6082,7 +6082,7 @@
 .method public onRelativePreviewRectChanged(Landroid/graphics/Rect;)V
     .registers 8
 
-    .line 436
+    .line 438
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6103,7 +6103,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 437
+    .line 439
     invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
     move-result v2
@@ -6146,10 +6146,10 @@
 
     move-result-object v1
 
-    .line 436
+    .line 438
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 440
+    .line 442
     invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
 
     move-result v0
@@ -6172,7 +6172,7 @@
 
     const-wide v4, 0x3ffc71c71c71c71cL    # 1.7777777777777777
 
-    .line 441
+    .line 443
     invoke-static {v2, v3, v4, v5}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result v0
@@ -6193,7 +6193,7 @@
 
     goto :goto_e3
 
-    .line 448
+    .line 450
     :cond_73
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewRect:Landroid/graphics/Rect;
 
@@ -6201,26 +6201,26 @@
 
     move-result v0
 
-    .line 449
+    .line 451
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 450
+    .line 452
     invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
     move-result v2
 
     iput v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewWidth:I
 
-    .line 451
+    .line 453
     invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
 
     move-result v2
 
     iput v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewHeight:I
 
-    .line 453
+    .line 455
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI(Landroid/content/Context;)Z
@@ -6231,12 +6231,12 @@
 
     if-nez v0, :cond_98
 
-    .line 455
+    .line 457
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->loadFromDataStore()V
 
     goto :goto_9f
 
-    .line 458
+    .line 460
     :cond_98
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewHeight:I
 
@@ -6248,7 +6248,7 @@
 
     div-float v1, v2, v0
 
-    .line 461
+    .line 463
     :cond_9f
     :goto_9f
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
@@ -6259,14 +6259,14 @@
 
     if-ltz v0, :cond_ab
 
-    .line 462
+    .line 464
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
 
     mul-float/2addr v0, v1
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
 
-    .line 465
+    .line 467
     :cond_ab
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
 
@@ -6292,44 +6292,44 @@
 
     if-ltz v0, :cond_d7
 
-    .line 466
+    .line 468
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
 
     mul-float/2addr v0, v1
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
 
-    .line 467
+    .line 469
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayY:F
 
     mul-float/2addr v0, v1
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayY:F
 
-    .line 468
+    .line 470
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayWidth:F
 
     mul-float/2addr v0, v1
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayWidth:F
 
-    .line 469
+    .line 471
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayHeight:F
 
     mul-float/2addr v0, v1
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayHeight:F
 
-    .line 472
+    .line 474
     :cond_d7
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz v0, :cond_de
 
-    .line 473
+    .line 475
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->setPreviewRect(Landroid/graphics/Rect;)V
 
-    .line 476
+    .line 478
     :cond_de
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mScreenFormType:I
 
@@ -6354,15 +6354,15 @@
 .method public onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
     .registers 6
 
-    .line 481
+    .line 483
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mTouchInfoCallback:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$TouchInfoCallback;
 
     if-eqz p1, :cond_7
 
-    .line 482
+    .line 484
     invoke-interface {p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$TouchInfoCallback;->sendScaleArea()V
 
-    .line 484
+    .line 486
     :cond_7
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
@@ -6383,7 +6383,7 @@
 
     const-wide/16 v2, 0x0
 
-    .line 486
+    .line 488
     invoke-direct {p0, p1, v1, v2, v3}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->sendHandlerMessage(IIJ)V
 
     :cond_19
@@ -6393,7 +6393,7 @@
 .method public onScaleEnd(Landroid/view/ScaleGestureDetector;)Z
     .registers 5
 
-    .line 493
+    .line 495
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     const/4 v0, 0x0
@@ -6408,11 +6408,11 @@
 
     if-ne p1, v2, :cond_19
 
-    .line 495
+    .line 497
     :cond_b
     invoke-direct {p0, v1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->processHandleDrawAuxView(Z)V
 
-    .line 496
+    .line 498
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRecordingFlag:Z
 
     if-eqz p1, :cond_19
@@ -6421,7 +6421,7 @@
 
     const-wide/16 v1, 0xbb8
 
-    .line 497
+    .line 499
     invoke-direct {p0, p1, v0, v1, v2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->sendHandlerMessage(IIJ)V
 
     :cond_19
@@ -6431,10 +6431,10 @@
 .method public onScreenFormChanged(IZLandroid/graphics/Rect;)V
     .registers 7
 
-    .line 407
+    .line 409
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mScreenFormType:I
 
-    .line 408
+    .line 410
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6455,7 +6455,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 409
+    .line 411
     invoke-virtual {p3}, Landroid/graphics/Rect;->width()I
 
     move-result v2
@@ -6484,10 +6484,10 @@
 
     move-result-object v1
 
-    .line 408
+    .line 410
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 412
+    .line 414
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI(Landroid/content/Context;)Z
@@ -6496,51 +6496,51 @@
 
     if-nez v0, :cond_66
 
-    .line 413
+    .line 415
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->resetAuxData()V
 
-    .line 414
+    .line 416
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 415
+    .line 417
     invoke-virtual {p3}, Landroid/graphics/Rect;->width()I
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewWidth:I
 
-    .line 416
+    .line 418
     invoke-virtual {p3}, Landroid/graphics/Rect;->height()I
 
     move-result v0
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPreviewViewHeight:I
 
-    .line 418
+    .line 420
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz v0, :cond_66
 
-    .line 419
+    .line 421
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->onScreenFormChanged(I)V
 
-    .line 420
+    .line 422
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-virtual {v0, p3}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->setPreviewRect(Landroid/graphics/Rect;)V
 
-    .line 424
+    .line 426
     :cond_66
     iget-object p3, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz p3, :cond_6d
 
-    .line 425
+    .line 427
     invoke-virtual {p3, p1, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->onScreenFormChanged(IZ)V
 
-    .line 427
+    .line 429
     :cond_6d
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mScreenFormType:I
 
@@ -6552,7 +6552,7 @@
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .registers 7
 
-    .line 517
+    .line 519
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     const/4 v1, 0x3
@@ -6565,7 +6565,7 @@
 
     if-ne v0, v1, :cond_19
 
-    .line 519
+    .line 521
     :cond_a
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
@@ -6575,7 +6575,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 520
+    .line 522
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-virtual {p0, p2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->imitatePIPViewsTouch(Landroid/view/MotionEvent;)V
@@ -6584,7 +6584,7 @@
 
     return p0
 
-    .line 524
+    .line 526
     :cond_19
     invoke-super {p0, p1, p2, p3, p4}, Lcom/transsion/camera/app/common/IAppUIListener$IPreviewGestureListener;->onDragMove(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
 
@@ -6607,7 +6607,7 @@
 .method public onSingleTapUp(FF)Z
     .registers 8
 
-    .line 556
+    .line 558
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6632,7 +6632,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 557
+    .line 559
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRecordingFlag:Z
 
     const/4 v2, 0x0
@@ -6651,7 +6651,7 @@
 
     if-ne v1, v4, :cond_37
 
-    .line 559
+    .line 561
     :cond_2d
     invoke-direct {p0, v3}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->processHandleDrawAuxView(Z)V
 
@@ -6659,10 +6659,10 @@
 
     const-wide/16 v3, 0xbb8
 
-    .line 560
+    .line 562
     invoke-direct {p0, v1, v2, v3, v4}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->sendHandlerMessage(IIJ)V
 
-    .line 563
+    .line 565
     :cond_37
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainTouchArea:Landroid/graphics/Rect;
 
@@ -6698,22 +6698,22 @@
 
     if-gez v1, :cond_63
 
-    .line 565
+    .line 567
     const-string v1, "onSingleTapUp, in main touch area"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 566
+    .line 568
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mTouchInfoCallback:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$TouchInfoCallback;
 
     if-eqz v1, :cond_63
 
-    .line 567
+    .line 569
     const-string v3, "device_main"
 
     invoke-interface {v1, v3}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$TouchInfoCallback;->sendSingleUpAreaName(Ljava/lang/String;)V
 
-    .line 570
+    .line 572
     :cond_63
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveTouchArea:Landroid/graphics/Rect;
 
@@ -6749,17 +6749,17 @@
 
     if-gez p1, :cond_8f
 
-    .line 572
+    .line 574
     const-string p1, "onSingleTapUp, in slave touch area"
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 573
+    .line 575
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mTouchInfoCallback:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$TouchInfoCallback;
 
     if-eqz p0, :cond_8f
 
-    .line 574
+    .line 576
     const-string p1, "device_slave"
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$TouchInfoCallback;->sendSingleUpAreaName(Ljava/lang/String;)V
@@ -6771,7 +6771,7 @@
 .method public onUp(Landroid/view/MotionEvent;)Z
     .registers 5
 
-    .line 541
+    .line 543
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainSplitValue:I
 
     const/4 v1, 0x3
@@ -6786,7 +6786,7 @@
 
     if-ne v0, v1, :cond_19
 
-    .line 543
+    .line 545
     :cond_b
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
@@ -6796,14 +6796,14 @@
 
     if-eqz v0, :cond_19
 
-    .line 544
+    .line 546
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->imitatePIPViewsTouch(Landroid/view/MotionEvent;)V
 
     return v2
 
-    .line 548
+    .line 550
     :cond_19
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
@@ -6815,12 +6815,12 @@
 
     if-nez v0, :cond_28
 
-    .line 549
+    .line 551
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->hideDualDeviceRoot(Z)V
 
-    .line 551
+    .line 553
     :cond_28
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IPreviewGestureListener;->onUp(Landroid/view/MotionEvent;)Z
 
@@ -6832,15 +6832,15 @@
 .method public pause()V
     .registers 3
 
-    .line 303
+    .line 305
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz v0, :cond_7
 
-    .line 304
+    .line 306
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->pause()V
 
-    .line 306
+    .line 308
     :cond_7
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mHandler:Landroid/os/Handler;
 
@@ -6848,17 +6848,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 307
+    .line 309
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x3ea
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 308
+    .line 310
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->cancelMainAnimatorSetLocked()V
 
-    .line 309
+    .line 311
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_27
@@ -6869,7 +6869,7 @@
 
     if-eqz v0, :cond_27
 
-    .line 310
+    .line 312
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
@@ -6877,10 +6877,10 @@
     :cond_27
     const/4 v0, 0x0
 
-    .line 312
+    .line 314
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 313
+    .line 315
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_39
@@ -6891,12 +6891,12 @@
 
     if-eqz v1, :cond_39
 
-    .line 314
+    .line 316
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 316
+    .line 318
     :cond_39
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -6908,19 +6908,19 @@
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 320
+    .line 322
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerDisplayY:F
 
-    .line 321
+    .line 323
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayX:F
 
-    .line 322
+    .line 324
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayY:F
 
-    .line 323
+    .line 325
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayWidth:F
 
-    .line 324
+    .line 326
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPipDisplayHeight:F
 
     return-void
@@ -6929,12 +6929,12 @@
 .method public resume()V
     .registers 1
 
-    .line 297
+    .line 299
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz p0, :cond_7
 
-    .line 298
+    .line 300
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->resume()V
 
     :cond_7
@@ -6944,7 +6944,7 @@
 .method public runDividerAnimator(IIIIII)V
     .registers 8
 
-    .line 1618
+    .line 1621
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_f
@@ -6955,7 +6955,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 1619
+    .line 1622
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
@@ -6963,10 +6963,10 @@
     :cond_f
     const/4 v0, 0x0
 
-    .line 1621
+    .line 1624
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 1623
+    .line 1626
     filled-new-array {p1, p2}, [I
 
     move-result-object p1
@@ -6975,14 +6975,14 @@
 
     move-result-object p1
 
-    .line 1624
+    .line 1627
     new-instance p2, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda7;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda7;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1627
+    .line 1630
     filled-new-array {p3, p4}, [I
 
     move-result-object p2
@@ -6991,14 +6991,14 @@
 
     move-result-object p2
 
-    .line 1628
+    .line 1631
     new-instance p3, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda8;
 
     invoke-direct {p3, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda8;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     invoke-virtual {p2, p3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1631
+    .line 1634
     filled-new-array {p5, p6}, [I
 
     move-result-object p3
@@ -7007,14 +7007,14 @@
 
     move-result-object p3
 
-    .line 1632
+    .line 1635
     new-instance p4, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda9;
 
     invoke-direct {p4, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda9;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     invoke-virtual {p3, p4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1636
+    .line 1639
     new-instance p4, Landroid/animation/AnimatorSet;
 
     invoke-direct {p4}, Landroid/animation/AnimatorSet;-><init>()V
@@ -7023,17 +7023,17 @@
 
     const-wide/16 p5, 0x12c
 
-    .line 1637
+    .line 1640
     invoke-virtual {p4, p5, p6}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1638
+    .line 1641
     iget-object p4, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerAnimatorSet:Landroid/animation/AnimatorSet;
 
     sget-object p5, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {p4, p5}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1639
+    .line 1642
     iget-object p4, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerAnimatorSet:Landroid/animation/AnimatorSet;
 
     const/4 p5, 0x3
@@ -7054,7 +7054,7 @@
 
     invoke-virtual {p4, p5}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1640
+    .line 1643
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDividerAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
@@ -7065,10 +7065,10 @@
 .method public runMainScreenAnimator(IIII)V
     .registers 9
 
-    .line 1546
+    .line 1549
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->cancelMainAnimatorSetLocked()V
 
-    .line 1548
+    .line 1551
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainViewPortX:I
 
     filled-new-array {v0, p1}, [I
@@ -7079,14 +7079,14 @@
 
     move-result-object p1
 
-    .line 1549
+    .line 1552
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda11;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda11;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1552
+    .line 1555
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainViewPortY:I
 
     filled-new-array {v0, p2}, [I
@@ -7097,14 +7097,14 @@
 
     move-result-object p2
 
-    .line 1553
+    .line 1556
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda12;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda12;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1556
+    .line 1559
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainViewPortWidth:I
 
     filled-new-array {v0, p3}, [I
@@ -7115,14 +7115,14 @@
 
     move-result-object p3
 
-    .line 1557
+    .line 1560
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda13;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda13;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     invoke-virtual {p3, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1560
+    .line 1563
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainViewPortHeight:I
 
     filled-new-array {v0, p4}, [I
@@ -7133,19 +7133,19 @@
 
     move-result-object p4
 
-    .line 1561
+    .line 1564
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda14;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda14;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     invoke-virtual {p4, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1566
+    .line 1569
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainAnimatorSetLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1567
+    .line 1570
     :try_start_4e
     new-instance v1, Landroid/animation/AnimatorSet;
 
@@ -7155,17 +7155,17 @@
 
     const-wide/16 v2, 0x190
 
-    .line 1568
+    .line 1571
     invoke-virtual {v1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1569
+    .line 1572
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainAnimatorSet:Landroid/animation/AnimatorSet;
 
     sget-object v2, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1570
+    .line 1573
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainAnimatorSet:Landroid/animation/AnimatorSet;
 
     const/4 v2, 0x4
@@ -7190,7 +7190,7 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1571
+    .line 1574
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainAnimatorSet:Landroid/animation/AnimatorSet;
 
     new-instance p2, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$4;
@@ -7199,12 +7199,12 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1581
+    .line 1584
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mMainAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1582
+    .line 1585
     monitor-exit v0
 
     return-void
@@ -7222,7 +7222,7 @@
 .method public runSlaveScreenAnimator(IIII)V
     .registers 8
 
-    .line 1586
+    .line 1589
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_f
@@ -7233,7 +7233,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 1587
+    .line 1590
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
@@ -7241,10 +7241,10 @@
     :cond_f
     const/4 v0, 0x0
 
-    .line 1589
+    .line 1592
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 1591
+    .line 1594
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveViewPortX:I
 
     filled-new-array {v0, p1}, [I
@@ -7255,14 +7255,14 @@
 
     move-result-object p1
 
-    .line 1592
+    .line 1595
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda3;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1595
+    .line 1598
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveViewPortY:I
 
     filled-new-array {v0, p2}, [I
@@ -7273,14 +7273,14 @@
 
     move-result-object p2
 
-    .line 1596
+    .line 1599
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda4;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1599
+    .line 1602
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveViewPortWidth:I
 
     filled-new-array {v0, p3}, [I
@@ -7291,14 +7291,14 @@
 
     move-result-object p3
 
-    .line 1600
+    .line 1603
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda5;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda5;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     invoke-virtual {p3, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1603
+    .line 1606
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveViewPortHeight:I
 
     filled-new-array {v0, p4}, [I
@@ -7309,14 +7309,14 @@
 
     move-result-object p4
 
-    .line 1604
+    .line 1607
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda6;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$$ExternalSyntheticLambda6;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
 
     invoke-virtual {p4, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1608
+    .line 1611
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -7325,17 +7325,17 @@
 
     const-wide/16 v1, 0x190
 
-    .line 1609
+    .line 1612
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1610
+    .line 1613
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
     sget-object v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1611
+    .line 1614
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
     const/4 v1, 0x4
@@ -7360,7 +7360,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1612
+    .line 1615
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p0}, Landroid/animation/AnimatorSet;->start()V
@@ -7371,12 +7371,12 @@
 .method public setDualDeviceButtonEnable(Z)V
     .registers 2
 
-    .line 1688
+    .line 1691
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz p0, :cond_7
 
-    .line 1689
+    .line 1692
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->setDualDeviceButtonEnable(Z)V
 
     :cond_7
@@ -7386,12 +7386,12 @@
 .method public setDualDeviceGroupRootVisibility(I)V
     .registers 2
 
-    .line 291
+    .line 293
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz p0, :cond_7
 
-    .line 292
+    .line 294
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->setDualDeviceGroupRootVisibility(I)V
 
     :cond_7
@@ -7401,12 +7401,12 @@
 .method public setDualDeviceItemEnable(Z)V
     .registers 2
 
-    .line 285
+    .line 287
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz p0, :cond_7
 
-    .line 286
+    .line 288
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->setDualDeviceItemEnable(Z)V
 
     :cond_7
@@ -7416,7 +7416,7 @@
 .method public setDualVideoInPlatformMTK(Z)V
     .registers 2
 
-    .line 1699
+    .line 1702
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoInPlatformMTK:Z
 
     return-void
@@ -7425,7 +7425,7 @@
 .method public setOrientation(I)V
     .registers 2
 
-    .line 1684
+    .line 1687
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->setOrientation(I)V
@@ -7436,14 +7436,14 @@
 .method public setRecordingFlag(Z)V
     .registers 5
 
-    .line 382
+    .line 384
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 385
+    .line 387
     :cond_5
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -7465,19 +7465,19 @@
 
     const/16 v0, 0x68
 
-    .line 388
+    .line 390
     filled-new-array {v0, p1}, [I
 
     move-result-object v0
 
-    .line 389
+    .line 391
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     const/4 v2, 0x1
 
     invoke-interface {v1, v2, v0, v2}, Lcom/transsion/camera/app/common/preview/IPreviewOperator;->loadGLResources(Z[II)V
 
-    .line 390
+    .line 392
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object v0
@@ -7488,7 +7488,7 @@
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setDualVideoWindowCutRatio(F)V
 
-    .line 391
+    .line 393
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -7501,14 +7501,14 @@
 .method public setSplitStyleAndValue(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$SplitStyle;IZZZ)V
     .registers 9
 
-    .line 356
+    .line 358
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 360
+    .line 362
     :cond_5
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mHandler:Landroid/os/Handler;
 
@@ -7516,10 +7516,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 361
+    .line 363
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->cancelMainAnimatorSetLocked()V
 
-    .line 363
+    .line 365
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_1e
@@ -7530,7 +7530,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 364
+    .line 366
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
@@ -7538,15 +7538,15 @@
     :cond_1e
     const/4 v0, 0x0
 
-    .line 366
+    .line 368
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveAnimatorSet:Landroid/animation/AnimatorSet;
 
     const/4 v0, 0x5
 
-    .line 368
+    .line 370
     new-array v0, v0, [I
 
-    .line 369
+    .line 371
     sget-object v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$SplitStyle;->STYLE_UP_DOWN:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$SplitStyle;
 
     const/4 v2, 0x0
@@ -7555,7 +7555,7 @@
 
     const/16 p1, 0x65
 
-    .line 370
+    .line 372
     aput p1, v0, v2
 
     goto :goto_32
@@ -7563,31 +7563,31 @@
     :cond_2e
     const/16 p1, 0x66
 
-    .line 372
+    .line 374
     aput p1, v0, v2
 
     :goto_32
     const/4 p1, 0x1
 
-    .line 374
+    .line 376
     aput p2, v0, p1
 
     const/4 p2, 0x2
 
-    .line 375
+    .line 377
     aput p3, v0, p2
 
     const/4 p2, 0x3
 
-    .line 376
+    .line 378
     aput p4, v0, p2
 
     const/4 p2, 0x4
 
-    .line 377
+    .line 379
     aput p5, v0, p2
 
-    .line 378
+    .line 380
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     invoke-interface {p0, p1, v0, p1}, Lcom/transsion/camera/app/common/preview/IPreviewOperator;->loadGLResources(Z[II)V
@@ -7598,7 +7598,7 @@
 .method public setSurfaceTextureListener(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$SurfaceTextureListener;)V
     .registers 2
 
-    .line 328
+    .line 330
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mSlaveSurfaceListener:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$SurfaceTextureListener;
 
     return-void
@@ -7607,7 +7607,7 @@
 .method public setTouchInfoCallback(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$TouchInfoCallback;)V
     .registers 2
 
-    .line 344
+    .line 346
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mTouchInfoCallback:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$TouchInfoCallback;
 
     return-void
@@ -7616,7 +7616,7 @@
 .method public setVideoMsgCallback(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoMsgCallback;)V
     .registers 2
 
-    .line 340
+    .line 342
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoMsgCallback:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoMsgCallback;
 
     return-void
@@ -7625,7 +7625,7 @@
 .method public setVideoPictureCallback(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoPictureCallback;)V
     .registers 2
 
-    .line 336
+    .line 338
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mPictureCallback:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoPictureCallback;
 
     return-void
@@ -7634,7 +7634,7 @@
 .method public setVideoRecorderCallback(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoRecorderCallback;)V
     .registers 2
 
-    .line 332
+    .line 334
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mRecorderCallback:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoRecorderCallback;
 
     return-void
@@ -7643,12 +7643,12 @@
 .method public showOrHideDualDeviceButton(Z)V
     .registers 2
 
-    .line 1671
+    .line 1674
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualVideoPreviewUI:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;
 
     if-eqz p0, :cond_7
 
-    .line 1672
+    .line 1675
     invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->showOrHideDualDeviceButton(Z)V
 
     :cond_7
@@ -7669,14 +7669,14 @@
 .method public takeVideoPicture()V
     .registers 3
 
-    .line 348
+    .line 350
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "takeVideoPicture"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 349
+    .line 351
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-eqz p0, :cond_11
@@ -7685,15 +7685,15 @@
 
     const/16 v1, 0x67
 
-    .line 350
+    .line 352
     invoke-interface {p0, v0, v1}, Lcom/transsion/camera/app/common/preview/IPreviewOperator;->loadGLResource(ZI)V
 
     :cond_11
     return-void
 .end method
 
-.method public unInit()V
-    .registers 2
+.method public unInit(Z)V
+    .registers 3
 
     .line 275
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
@@ -7712,24 +7712,27 @@
     .line 279
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->unInit()V
 
-    .line 281
     :cond_e
+    if-nez p1, :cond_13
+
+    .line 282
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->saveToDataStore()V
 
+    :cond_13
     return-void
 .end method
 
 .method public updateSurfaceSize(II)V
     .registers 6
 
-    .line 395
+    .line 397
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 398
+    .line 400
     :cond_5
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -7757,12 +7760,12 @@
 
     const/16 v0, 0x64
 
-    .line 402
+    .line 404
     filled-new-array {v0, p1, p2}, [I
 
     move-result-object p1
 
-    .line 403
+    .line 405
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->mDualPreviewOperator:Lcom/transsion/camera/app/common/preview/IPreviewOperator;
 
     const/4 p2, 0x1

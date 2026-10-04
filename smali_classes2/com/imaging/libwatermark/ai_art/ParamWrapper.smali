@@ -27,16 +27,16 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
+    .line 31
     iput-object p1, p0, Lcom/imaging/libwatermark/ai_art/ParamWrapper;->image:Landroid/graphics/Bitmap;
 
-    .line 29
+    .line 32
     iput-object p2, p0, Lcom/imaging/libwatermark/ai_art/ParamWrapper;->params:Lcom/imaging/libwatermark/ai_art/AIArtWatermarkParam;
 
-    .line 31
+    .line 34
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result p2
@@ -57,7 +57,7 @@
     :goto_1e
     iput-boolean p2, p0, Lcom/imaging/libwatermark/ai_art/ParamWrapper;->isLandscape:Z
 
-    .line 32
+    .line 35
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result p1
@@ -86,7 +86,7 @@
 
     goto :goto_2c
 
-    .line 33
+    .line 36
     :goto_34
     iput p1, p0, Lcom/imaging/libwatermark/ai_art/ParamWrapper;->watermarkHeight:I
 
@@ -206,7 +206,7 @@
 .method public final getImage()Landroid/graphics/Bitmap;
     .registers 1
 
-    .line 28
+    .line 31
     iget-object p0, p0, Lcom/imaging/libwatermark/ai_art/ParamWrapper;->image:Landroid/graphics/Bitmap;
 
     return-object p0
@@ -215,7 +215,7 @@
 .method public final getParams()Lcom/imaging/libwatermark/ai_art/AIArtWatermarkParam;
     .registers 1
 
-    .line 29
+    .line 32
     iget-object p0, p0, Lcom/imaging/libwatermark/ai_art/ParamWrapper;->params:Lcom/imaging/libwatermark/ai_art/AIArtWatermarkParam;
 
     return-object p0
@@ -224,7 +224,7 @@
 .method public final getWatermarkHeight()I
     .registers 1
 
-    .line 33
+    .line 36
     iget p0, p0, Lcom/imaging/libwatermark/ai_art/ParamWrapper;->watermarkHeight:I
 
     return p0
@@ -233,7 +233,7 @@
 .method public final getWatermarkWidth()I
     .registers 1
 
-    .line 32
+    .line 35
     iget p0, p0, Lcom/imaging/libwatermark/ai_art/ParamWrapper;->watermarkWidth:I
 
     return p0
@@ -264,7 +264,7 @@
 .method public final isLandscape()Z
     .registers 1
 
-    .line 31
+    .line 34
     iget-boolean p0, p0, Lcom/imaging/libwatermark/ai_art/ParamWrapper;->isLandscape:Z
 
     return p0

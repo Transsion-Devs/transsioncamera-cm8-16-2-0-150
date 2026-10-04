@@ -1,4 +1,4 @@
-.class final Lcom/google/gson/internal/bind/TypeAdapters$30;
+.class Lcom/google/gson/internal/bind/TypeAdapters$30;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
@@ -7,21 +7,31 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/gson/internal/bind/TypeAdapters;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/gson/internal/bind/TypeAdapters;->newFactory(Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/TypeAdapter;)Lcom/google/gson/TypeAdapterFactory;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# direct methods
-.method constructor <init>()V
-    .registers 1
+# instance fields
+.field final synthetic val$type:Lcom/google/gson/reflect/TypeToken;
 
-    .line 808
+.field final synthetic val$typeAdapter:Lcom/google/gson/TypeAdapter;
+
+
+# direct methods
+.method constructor <init>(Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/TypeAdapter;)V
+    .registers 3
+
+    .line 1045
+    iput-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$30;->val$type:Lcom/google/gson/reflect/TypeToken;
+
+    iput-object p2, p0, Lcom/google/gson/internal/bind/TypeAdapters$30;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,47 +42,20 @@
 .method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
     .registers 3
 
-    .line 811
-    invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
+    .line 1049
+    iget-object p1, p0, Lcom/google/gson/internal/bind/TypeAdapters$30;->val$type:Lcom/google/gson/reflect/TypeToken;
 
-    move-result-object p0
-
-    .line 812
-    const-class p1, Ljava/lang/Enum;
-
-    invoke-virtual {p1, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_1f
-
-    if-ne p0, p1, :cond_f
-
-    goto :goto_1f
-
-    .line 815
-    :cond_f
-    invoke-virtual {p0}, Ljava/lang/Class;->isEnum()Z
+    invoke-virtual {p2, p1}, Lcom/google/gson/reflect/TypeToken;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_19
+    if-eqz p1, :cond_b
 
-    .line 816
-    invoke-virtual {p0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+    iget-object p0, p0, Lcom/google/gson/internal/bind/TypeAdapters$30;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
 
-    move-result-object p0
+    return-object p0
 
-    .line 818
-    :cond_19
-    new-instance p1, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;
-
-    invoke-direct {p1, p0}, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;-><init>(Ljava/lang/Class;)V
-
-    return-object p1
-
-    :cond_1f
-    :goto_1f
+    :cond_b
     const/4 p0, 0x0
 
     return-object p0

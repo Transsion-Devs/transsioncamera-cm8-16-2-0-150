@@ -23,7 +23,7 @@
 
     const/4 v0, 0x0
 
-    .line 40
+    .line 46
     new-array v0, v0, [Ljava/lang/reflect/Type;
 
     sput-object v0, Lcom/google/gson/internal/$Gson$Types;->EMPTY_TYPE_ARRAY:[Ljava/lang/reflect/Type;
@@ -34,7 +34,7 @@
 .method public static arrayOf(Ljava/lang/reflect/Type;)Ljava/lang/reflect/GenericArrayType;
     .registers 2
 
-    .line 64
+    .line 69
     new-instance v0, Lcom/google/gson/internal/$Gson$Types$GenericArrayTypeImpl;
 
     invoke-direct {v0, p0}, Lcom/google/gson/internal/$Gson$Types$GenericArrayTypeImpl;-><init>(Ljava/lang/reflect/Type;)V
@@ -45,15 +45,15 @@
 .method public static canonicalize(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
     .registers 4
 
-    .line 104
+    .line 107
     instance-of v0, p0, Ljava/lang/Class;
 
     if-eqz v0, :cond_1b
 
-    .line 105
+    .line 108
     check-cast p0, Ljava/lang/Class;
 
-    .line 106
+    .line 109
     invoke-virtual {p0}, Ljava/lang/Class;->isArray()Z
 
     move-result v0
@@ -77,23 +77,23 @@
     :cond_1a
     return-object p0
 
-    .line 108
+    .line 111
     :cond_1b
     instance-of v0, p0, Ljava/lang/reflect/ParameterizedType;
 
     if-eqz v0, :cond_33
 
-    .line 109
+    .line 112
     check-cast p0, Ljava/lang/reflect/ParameterizedType;
 
-    .line 110
+    .line 113
     new-instance v0, Lcom/google/gson/internal/$Gson$Types$ParameterizedTypeImpl;
 
+    .line 114
     invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getOwnerType()Ljava/lang/reflect/Type;
 
     move-result-object v1
 
-    .line 111
     invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getRawType()Ljava/lang/reflect/Type;
 
     move-result-object v2
@@ -106,16 +106,16 @@
 
     return-object v0
 
-    .line 113
+    .line 116
     :cond_33
     instance-of v0, p0, Ljava/lang/reflect/GenericArrayType;
 
     if-eqz v0, :cond_43
 
-    .line 114
+    .line 117
     check-cast p0, Ljava/lang/reflect/GenericArrayType;
 
-    .line 115
+    .line 118
     new-instance v0, Lcom/google/gson/internal/$Gson$Types$GenericArrayTypeImpl;
 
     invoke-interface {p0}, Ljava/lang/reflect/GenericArrayType;->getGenericComponentType()Ljava/lang/reflect/Type;
@@ -126,16 +126,16 @@
 
     return-object v0
 
-    .line 117
+    .line 120
     :cond_43
     instance-of v0, p0, Ljava/lang/reflect/WildcardType;
 
     if-eqz v0, :cond_57
 
-    .line 118
+    .line 121
     check-cast p0, Ljava/lang/reflect/WildcardType;
 
-    .line 119
+    .line 122
     new-instance v0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;
 
     invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getUpperBounds()[Ljava/lang/reflect/Type;
@@ -157,7 +157,7 @@
 .method static checkNotPrimitive(Ljava/lang/reflect/Type;)V
     .registers 2
 
-    .line 457
+    .line 487
     instance-of v0, p0, Ljava/lang/Class;
 
     if-eqz v0, :cond_f
@@ -190,12 +190,12 @@
 .method private static declaringClassOf(Ljava/lang/reflect/TypeVariable;)Ljava/lang/Class;
     .registers 2
 
-    .line 450
+    .line 482
     invoke-interface {p0}, Ljava/lang/reflect/TypeVariable;->getGenericDeclaration()Ljava/lang/reflect/GenericDeclaration;
 
     move-result-object p0
 
-    .line 451
+    .line 483
     instance-of v0, p0, Ljava/lang/Class;
 
     if-eqz v0, :cond_b
@@ -210,30 +210,13 @@
     return-object p0
 .end method
 
-.method static equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+.method private static equal(Ljava/lang/Object;Ljava/lang/Object;)Z
     .registers 2
 
-    if-eq p0, p1, :cond_d
-
-    if-eqz p0, :cond_b
-
-    .line 162
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    .line 170
+    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
-
-    if-eqz p0, :cond_b
-
-    goto :goto_d
-
-    :cond_b
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_d
-    :goto_d
-    const/4 p0, 0x1
 
     return p0
 .end method
@@ -247,20 +230,20 @@
 
     return v0
 
-    .line 173
+    .line 179
     :cond_4
     instance-of v1, p0, Ljava/lang/Class;
 
     if-eqz v1, :cond_d
 
-    .line 175
+    .line 181
     invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
     return p0
 
-    .line 177
+    .line 183
     :cond_d
     instance-of v1, p0, Ljava/lang/reflect/ParameterizedType;
 
@@ -268,21 +251,21 @@
 
     if-eqz v1, :cond_47
 
-    .line 178
+    .line 184
     instance-of v1, p1, Ljava/lang/reflect/ParameterizedType;
 
     if-nez v1, :cond_17
 
     return v2
 
-    .line 183
+    .line 189
     :cond_17
     check-cast p0, Ljava/lang/reflect/ParameterizedType;
 
-    .line 184
+    .line 190
     check-cast p1, Ljava/lang/reflect/ParameterizedType;
 
-    .line 185
+    .line 191
     invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getOwnerType()Ljava/lang/reflect/Type;
 
     move-result-object v1
@@ -297,7 +280,7 @@
 
     if-eqz v1, :cond_46
 
-    .line 186
+    .line 192
     invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getRawType()Ljava/lang/reflect/Type;
 
     move-result-object v1
@@ -312,7 +295,7 @@
 
     if-eqz v1, :cond_46
 
-    .line 187
+    .line 193
     invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
     move-result-object p0
@@ -332,27 +315,27 @@
     :cond_46
     return v2
 
-    .line 189
+    .line 195
     :cond_47
     instance-of v1, p0, Ljava/lang/reflect/GenericArrayType;
 
     if-eqz v1, :cond_61
 
-    .line 190
+    .line 196
     instance-of v0, p1, Ljava/lang/reflect/GenericArrayType;
 
     if-nez v0, :cond_50
 
     return v2
 
-    .line 194
+    .line 200
     :cond_50
     check-cast p0, Ljava/lang/reflect/GenericArrayType;
 
-    .line 195
+    .line 201
     check-cast p1, Ljava/lang/reflect/GenericArrayType;
 
-    .line 196
+    .line 202
     invoke-interface {p0}, Ljava/lang/reflect/GenericArrayType;->getGenericComponentType()Ljava/lang/reflect/Type;
 
     move-result-object p0
@@ -367,27 +350,27 @@
 
     return p0
 
-    .line 198
+    .line 204
     :cond_61
     instance-of v1, p0, Ljava/lang/reflect/WildcardType;
 
     if-eqz v1, :cond_8c
 
-    .line 199
+    .line 205
     instance-of v1, p1, Ljava/lang/reflect/WildcardType;
 
     if-nez v1, :cond_6a
 
     return v2
 
-    .line 203
+    .line 209
     :cond_6a
     check-cast p0, Ljava/lang/reflect/WildcardType;
 
-    .line 204
+    .line 210
     check-cast p1, Ljava/lang/reflect/WildcardType;
 
-    .line 205
+    .line 211
     invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getUpperBounds()[Ljava/lang/reflect/Type;
 
     move-result-object v1
@@ -402,7 +385,7 @@
 
     if-eqz v1, :cond_8b
 
-    .line 206
+    .line 212
     invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getLowerBounds()[Ljava/lang/reflect/Type;
 
     move-result-object p0
@@ -422,27 +405,27 @@
     :cond_8b
     return v2
 
-    .line 208
+    .line 214
     :cond_8c
     instance-of v1, p0, Ljava/lang/reflect/TypeVariable;
 
-    if-eqz v1, :cond_b2
+    if-eqz v1, :cond_b6
 
-    .line 209
+    .line 215
     instance-of v1, p1, Ljava/lang/reflect/TypeVariable;
 
     if-nez v1, :cond_95
 
     return v2
 
-    .line 212
+    .line 218
     :cond_95
     check-cast p0, Ljava/lang/reflect/TypeVariable;
 
-    .line 213
+    .line 219
     check-cast p1, Ljava/lang/reflect/TypeVariable;
 
-    .line 214
+    .line 220
     invoke-interface {p0}, Ljava/lang/reflect/TypeVariable;->getGenericDeclaration()Ljava/lang/reflect/GenericDeclaration;
 
     move-result-object v1
@@ -451,9 +434,13 @@
 
     move-result-object v3
 
-    if-ne v1, v3, :cond_b2
+    invoke-static {v1, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 215
+    move-result v1
+
+    if-eqz v1, :cond_b6
+
+    .line 221
     invoke-interface {p0}, Ljava/lang/reflect/TypeVariable;->getName()Ljava/lang/String;
 
     move-result-object p0
@@ -466,35 +453,35 @@
 
     move-result p0
 
-    if-eqz p0, :cond_b2
+    if-eqz p0, :cond_b6
 
     return v0
 
-    :cond_b2
+    :cond_b6
     return v2
 .end method
 
 .method public static getArrayComponentType(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
     .registers 2
 
-    .line 292
+    .line 301
     instance-of v0, p0, Ljava/lang/reflect/GenericArrayType;
 
     if-eqz v0, :cond_b
 
+    .line 302
     check-cast p0, Ljava/lang/reflect/GenericArrayType;
 
-    .line 293
     invoke-interface {p0}, Ljava/lang/reflect/GenericArrayType;->getGenericComponentType()Ljava/lang/reflect/Type;
 
     move-result-object p0
 
     return-object p0
 
+    .line 303
     :cond_b
     check-cast p0, Ljava/lang/Class;
 
-    .line 294
     invoke-virtual {p0}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
 
     move-result-object p0
@@ -505,61 +492,46 @@
 .method public static getCollectionElementType(Ljava/lang/reflect/Type;Ljava/lang/Class;)Ljava/lang/reflect/Type;
     .registers 3
 
-    .line 302
+    .line 312
     const-class v0, Ljava/util/Collection;
 
     invoke-static {p0, p1, v0}, Lcom/google/gson/internal/$Gson$Types;->getSupertype(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;
 
     move-result-object p0
 
-    .line 304
-    instance-of p1, p0, Ljava/lang/reflect/WildcardType;
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_13
-
-    .line 305
-    check-cast p0, Ljava/lang/reflect/WildcardType;
-
-    invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getUpperBounds()[Ljava/lang/reflect/Type;
-
-    move-result-object p0
-
-    aget-object p0, p0, v0
-
-    .line 307
-    :cond_13
+    .line 314
     instance-of p1, p0, Ljava/lang/reflect/ParameterizedType;
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_14
 
-    .line 308
+    .line 315
     check-cast p0, Ljava/lang/reflect/ParameterizedType;
 
     invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
     move-result-object p0
 
-    aget-object p0, p0, v0
+    const/4 p1, 0x0
+
+    aget-object p0, p0, p1
 
     return-object p0
 
-    .line 310
-    :cond_20
+    .line 317
+    :cond_14
     const-class p0, Ljava/lang/Object;
 
     return-object p0
 .end method
 
-.method static getGenericSupertype(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;
+.method private static getGenericSupertype(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;
     .registers 6
 
     if-ne p2, p1, :cond_3
 
     return-object p0
 
-    .line 242
+    .line 244
     :cond_3
     invoke-virtual {p2}, Ljava/lang/Class;->isInterface()Z
 
@@ -567,12 +539,12 @@
 
     if-eqz p0, :cond_32
 
-    .line 243
+    .line 245
     invoke-virtual {p1}, Ljava/lang/Class;->getInterfaces()[Ljava/lang/Class;
 
     move-result-object p0
 
-    .line 244
+    .line 246
     array-length v0, p0
 
     const/4 v1, 0x0
@@ -580,12 +552,12 @@
     :goto_f
     if-ge v1, v0, :cond_32
 
-    .line 245
+    .line 247
     aget-object v2, p0, v1
 
     if-ne v2, p2, :cond_1c
 
-    .line 246
+    .line 248
     invoke-virtual {p1}, Ljava/lang/Class;->getGenericInterfaces()[Ljava/lang/reflect/Type;
 
     move-result-object p0
@@ -594,7 +566,7 @@
 
     return-object p0
 
-    .line 247
+    .line 249
     :cond_1c
     invoke-virtual {p2, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
@@ -602,7 +574,7 @@
 
     if-eqz v2, :cond_2f
 
-    .line 248
+    .line 250
     invoke-virtual {p1}, Ljava/lang/Class;->getGenericInterfaces()[Ljava/lang/reflect/Type;
 
     move-result-object p1
@@ -622,7 +594,7 @@
 
     goto :goto_f
 
-    .line 254
+    .line 256
     :cond_32
     invoke-virtual {p1}, Ljava/lang/Class;->isInterface()Z
 
@@ -630,27 +602,27 @@
 
     if-nez p0, :cond_58
 
-    .line 255
+    .line 257
     :goto_38
     const-class p0, Ljava/lang/Object;
 
     if-eq p1, p0, :cond_58
 
-    .line 256
+    .line 258
     invoke-virtual {p1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
     move-result-object p0
 
     if-ne p0, p2, :cond_47
 
-    .line 258
+    .line 260
     invoke-virtual {p1}, Ljava/lang/Class;->getGenericSuperclass()Ljava/lang/reflect/Type;
 
     move-result-object p0
 
     return-object p0
 
-    .line 259
+    .line 261
     :cond_47
     invoke-virtual {p2, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
@@ -658,7 +630,7 @@
 
     if-eqz v0, :cond_56
 
-    .line 260
+    .line 262
     invoke-virtual {p1}, Ljava/lang/Class;->getGenericSuperclass()Ljava/lang/reflect/Type;
 
     move-result-object p1
@@ -681,7 +653,7 @@
 .method public static getMapKeyAndValueTypes(Ljava/lang/reflect/Type;Ljava/lang/Class;)[Ljava/lang/reflect/Type;
     .registers 6
 
-    .line 323
+    .line 330
     const-class v0, Ljava/util/Properties;
 
     const/4 v1, 0x1
@@ -692,7 +664,7 @@
 
     if-ne p0, v0, :cond_10
 
-    .line 324
+    .line 331
     new-array p0, v3, [Ljava/lang/reflect/Type;
 
     const-class p1, Ljava/lang/String;
@@ -703,7 +675,7 @@
 
     return-object p0
 
-    .line 327
+    .line 334
     :cond_10
     const-class v0, Ljava/util/Map;
 
@@ -711,22 +683,22 @@
 
     move-result-object p0
 
-    .line 329
+    .line 336
     instance-of p1, p0, Ljava/lang/reflect/ParameterizedType;
 
     if-eqz p1, :cond_21
 
-    .line 330
+    .line 337
     check-cast p0, Ljava/lang/reflect/ParameterizedType;
 
-    .line 331
+    .line 338
     invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
     move-result-object p0
 
     return-object p0
 
-    .line 333
+    .line 340
     :cond_21
     new-array p0, v3, [Ljava/lang/reflect/Type;
 
@@ -742,41 +714,41 @@
 .method public static getRawType(Ljava/lang/reflect/Type;)Ljava/lang/Class;
     .registers 5
 
-    .line 128
+    .line 131
     instance-of v0, p0, Ljava/lang/Class;
 
     if-eqz v0, :cond_7
 
-    .line 130
+    .line 133
     check-cast p0, Ljava/lang/Class;
 
     return-object p0
 
-    .line 132
+    .line 135
     :cond_7
     instance-of v0, p0, Ljava/lang/reflect/ParameterizedType;
 
     if-eqz v0, :cond_19
 
-    .line 133
+    .line 136
     check-cast p0, Ljava/lang/reflect/ParameterizedType;
 
-    .line 138
+    .line 140
     invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getRawType()Ljava/lang/reflect/Type;
 
     move-result-object p0
 
-    .line 139
+    .line 141
     instance-of v0, p0, Ljava/lang/Class;
 
     invoke-static {v0}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
 
-    .line 140
+    .line 142
     check-cast p0, Ljava/lang/Class;
 
     return-object p0
 
-    .line 142
+    .line 144
     :cond_19
     instance-of v0, p0, Ljava/lang/reflect/GenericArrayType;
 
@@ -784,14 +756,14 @@
 
     if-eqz v0, :cond_31
 
-    .line 143
+    .line 145
     check-cast p0, Ljava/lang/reflect/GenericArrayType;
 
     invoke-interface {p0}, Ljava/lang/reflect/GenericArrayType;->getGenericComponentType()Ljava/lang/reflect/Type;
 
     move-result-object p0
 
-    .line 144
+    .line 146
     invoke-static {p0}, Lcom/google/gson/internal/$Gson$Types;->getRawType(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object p0
@@ -806,30 +778,31 @@
 
     return-object p0
 
-    .line 146
+    .line 148
     :cond_31
     instance-of v0, p0, Ljava/lang/reflect/TypeVariable;
 
     if-eqz v0, :cond_38
 
-    .line 149
+    .line 151
     const-class p0, Ljava/lang/Object;
 
     return-object p0
 
-    .line 151
+    .line 153
     :cond_38
     instance-of v0, p0, Ljava/lang/reflect/WildcardType;
 
     if-eqz v0, :cond_49
 
-    .line 152
+    .line 154
     check-cast p0, Ljava/lang/reflect/WildcardType;
 
     invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getUpperBounds()[Ljava/lang/reflect/Type;
 
     move-result-object p0
 
+    .line 157
     aget-object p0, p0, v1
 
     invoke-static {p0}, Lcom/google/gson/internal/$Gson$Types;->getRawType(Ljava/lang/reflect/Type;)Ljava/lang/Class;
@@ -841,7 +814,7 @@
     :cond_49
     if-nez p0, :cond_4e
 
-    .line 155
+    .line 160
     const-string v0, "null"
 
     goto :goto_56
@@ -855,7 +828,7 @@
 
     move-result-object v0
 
-    .line 156
+    .line 161
     :goto_56
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -884,15 +857,15 @@
     throw v1
 .end method
 
-.method static getSupertype(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;
+.method private static getSupertype(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;
     .registers 4
 
-    .line 278
+    .line 280
     instance-of v0, p0, Ljava/lang/reflect/WildcardType;
 
     if-eqz v0, :cond_d
 
-    .line 280
+    .line 283
     check-cast p0, Ljava/lang/reflect/WildcardType;
 
     invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getUpperBounds()[Ljava/lang/reflect/Type;
@@ -901,9 +874,10 @@
 
     const/4 v0, 0x0
 
+    .line 286
     aget-object p0, p0, v0
 
-    .line 282
+    .line 288
     :cond_d
     invoke-virtual {p2, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
@@ -911,12 +885,12 @@
 
     invoke-static {v0}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
 
-    .line 284
+    .line 292
     invoke-static {p0, p1, p2}, Lcom/google/gson/internal/$Gson$Types;->getGenericSupertype(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;
 
     move-result-object p2
 
-    .line 283
+    .line 289
     invoke-static {p0, p1, p2}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
 
     move-result-object p0
@@ -924,28 +898,10 @@
     return-object p0
 .end method
 
-.method static hashCodeOrZero(Ljava/lang/Object;)I
-    .registers 1
-
-    if-eqz p0, :cond_7
-
-    .line 224
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-
-    :cond_7
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
 .method private static indexOf([Ljava/lang/Object;Ljava/lang/Object;)I
     .registers 5
 
-    .line 437
+    .line 469
     array-length v0, p0
 
     const/4 v1, 0x0
@@ -953,7 +909,7 @@
     :goto_2
     if-ge v1, v0, :cond_10
 
-    .line 438
+    .line 470
     aget-object v2, p0, v1
 
     invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -969,7 +925,7 @@
 
     goto :goto_2
 
-    .line 442
+    .line 474
     :cond_10
     new-instance p0, Ljava/util/NoSuchElementException;
 
@@ -981,7 +937,7 @@
 .method public static varargs newParameterizedTypeWithOwner(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)Ljava/lang/reflect/ParameterizedType;
     .registers 4
 
-    .line 54
+    .line 60
     new-instance v0, Lcom/google/gson/internal/$Gson$Types$ParameterizedTypeImpl;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/google/gson/internal/$Gson$Types$ParameterizedTypeImpl;-><init>(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V
@@ -989,297 +945,372 @@
     return-object v0
 .end method
 
+.method public static requiresOwnerType(Ljava/lang/reflect/Type;)Z
+    .registers 3
+
+    .line 498
+    instance-of v0, p0, Ljava/lang/Class;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_19
+
+    .line 499
+    check-cast p0, Ljava/lang/Class;
+
+    .line 500
+    invoke-virtual {p0}, Ljava/lang/Class;->getModifiers()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/reflect/Modifier;->isStatic(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_19
+
+    .line 501
+    invoke-virtual {p0}, Ljava/lang/Class;->getDeclaringClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_19
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_19
+    return v1
+.end method
+
 .method public static resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
     .registers 4
 
-    .line 337
-    new-instance v0, Ljava/util/HashSet;
+    .line 345
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    invoke-static {p0, p1, p2, v0}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Collection;)Ljava/lang/reflect/Type;
+    invoke-static {p0, p1, p2, v0}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Map;)Ljava/lang/reflect/Type;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method private static resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Collection;)Ljava/lang/reflect/Type;
-    .registers 12
+.method private static resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Map;)Ljava/lang/reflect/Type;
+    .registers 13
 
-    .line 344
-    :cond_0
-    instance-of v0, p2, Ljava/lang/reflect/TypeVariable;
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_18
+    .line 356
+    :cond_1
+    instance-of v1, p2, Ljava/lang/reflect/TypeVariable;
 
-    .line 345
-    move-object v0, p2
-
-    check-cast v0, Ljava/lang/reflect/TypeVariable;
-
-    .line 346
-    invoke-interface {p3, v0}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_e
-
-    return-object p2
-
-    .line 350
-    :cond_e
-    invoke-interface {p3, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    .line 352
-    invoke-static {p0, p1, v0}, Lcom/google/gson/internal/$Gson$Types;->resolveTypeVariable(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/TypeVariable;)Ljava/lang/reflect/Type;
-
-    move-result-object p2
-
-    if-ne p2, v0, :cond_0
-
-    return-object p2
+    if-eqz v1, :cond_24
 
     .line 357
-    :cond_18
-    instance-of v0, p2, Ljava/lang/Class;
+    move-object v1, p2
 
-    if-eqz v0, :cond_35
+    check-cast v1, Ljava/lang/reflect/TypeVariable;
 
-    move-object v0, p2
+    .line 358
+    invoke-interface {p3, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v0, Ljava/lang/Class;
+    move-result-object v2
 
-    invoke-virtual {v0}, Ljava/lang/Class;->isArray()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_35
+    check-cast v2, Ljava/lang/reflect/Type;
 
     .line 359
-    invoke-virtual {v0}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
+    sget-object v3, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
 
-    move-result-object p2
+    if-eqz v2, :cond_16
 
-    .line 360
-    invoke-static {p0, p1, p2, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Collection;)Ljava/lang/reflect/Type;
-
-    move-result-object p0
-
-    if-ne p2, p0, :cond_30
-
-    return-object v0
-
-    .line 363
-    :cond_30
-    invoke-static {p0}, Lcom/google/gson/internal/$Gson$Types;->arrayOf(Ljava/lang/reflect/Type;)Ljava/lang/reflect/GenericArrayType;
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 365
-    :cond_35
-    instance-of v0, p2, Ljava/lang/reflect/GenericArrayType;
-
-    if-eqz v0, :cond_4b
-
-    .line 366
-    check-cast p2, Ljava/lang/reflect/GenericArrayType;
-
-    .line 367
-    invoke-interface {p2}, Ljava/lang/reflect/GenericArrayType;->getGenericComponentType()Ljava/lang/reflect/Type;
-
-    move-result-object v0
-
-    .line 368
-    invoke-static {p0, p1, v0, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Collection;)Ljava/lang/reflect/Type;
-
-    move-result-object p0
-
-    if-ne v0, p0, :cond_46
+    if-ne v2, v3, :cond_15
 
     return-object p2
 
-    .line 371
-    :cond_46
+    :cond_15
+    return-object v2
+
+    .line 365
+    :cond_16
+    invoke-interface {p3, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    if-nez v0, :cond_1c
+
+    move-object v0, v1
+
+    .line 370
+    :cond_1c
+    invoke-static {p0, p1, v1}, Lcom/google/gson/internal/$Gson$Types;->resolveTypeVariable(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/TypeVariable;)Ljava/lang/reflect/Type;
+
+    move-result-object p2
+
+    if-ne p2, v1, :cond_1
+
+    goto/16 :goto_d9
+
+    .line 375
+    :cond_24
+    instance-of v1, p2, Ljava/lang/Class;
+
+    if-eqz v1, :cond_49
+
+    move-object v1, p2
+
+    check-cast v1, Ljava/lang/Class;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->isArray()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_49
+
+    .line 377
+    invoke-virtual {v1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
+
+    move-result-object p2
+
+    .line 379
+    invoke-static {p0, p1, p2, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Map;)Ljava/lang/reflect/Type;
+
+    move-result-object p0
+
+    .line 380
+    invoke-static {p2, p0}, Lcom/google/gson/internal/$Gson$Types;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_42
+
+    move-object p2, v1
+
+    goto/16 :goto_d9
+
+    :cond_42
     invoke-static {p0}, Lcom/google/gson/internal/$Gson$Types;->arrayOf(Ljava/lang/reflect/Type;)Ljava/lang/reflect/GenericArrayType;
 
     move-result-object p0
 
-    return-object p0
+    :goto_46
+    move-object p2, p0
 
-    .line 373
-    :cond_4b
-    instance-of v0, p2, Ljava/lang/reflect/ParameterizedType;
+    goto/16 :goto_d9
 
-    const/4 v1, 0x1
+    .line 383
+    :cond_49
+    instance-of v1, p2, Ljava/lang/reflect/GenericArrayType;
+
+    if-eqz v1, :cond_64
+
+    .line 384
+    check-cast p2, Ljava/lang/reflect/GenericArrayType;
+
+    .line 385
+    invoke-interface {p2}, Ljava/lang/reflect/GenericArrayType;->getGenericComponentType()Ljava/lang/reflect/Type;
+
+    move-result-object v1
+
+    .line 387
+    invoke-static {p0, p1, v1, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Map;)Ljava/lang/reflect/Type;
+
+    move-result-object p0
+
+    .line 388
+    invoke-static {v1, p0}, Lcom/google/gson/internal/$Gson$Types;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_5f
+
+    goto/16 :goto_d9
+
+    :cond_5f
+    invoke-static {p0}, Lcom/google/gson/internal/$Gson$Types;->arrayOf(Ljava/lang/reflect/Type;)Ljava/lang/reflect/GenericArrayType;
+
+    move-result-object p0
+
+    goto :goto_46
+
+    .line 391
+    :cond_64
+    instance-of v1, p2, Ljava/lang/reflect/ParameterizedType;
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_8c
+    const/4 v3, 0x1
 
-    .line 374
+    if-eqz v1, :cond_a8
+
+    .line 392
     check-cast p2, Ljava/lang/reflect/ParameterizedType;
 
-    .line 375
+    .line 393
     invoke-interface {p2}, Ljava/lang/reflect/ParameterizedType;->getOwnerType()Ljava/lang/reflect/Type;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 376
-    invoke-static {p0, p1, v0, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Collection;)Ljava/lang/reflect/Type;
-
-    move-result-object v3
-
-    if-eq v3, v0, :cond_5f
-
-    move v0, v1
-
-    goto :goto_60
-
-    :cond_5f
-    move v0, v2
-
-    .line 379
-    :goto_60
-    invoke-interface {p2}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
+    .line 394
+    invoke-static {p0, p1, v1, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Map;)Ljava/lang/reflect/Type;
 
     move-result-object v4
 
-    .line 380
-    array-length v5, v4
+    .line 395
+    invoke-static {v4, v1}, Lcom/google/gson/internal/$Gson$Types;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    :goto_65
-    if-ge v2, v5, :cond_80
+    move-result v1
 
-    .line 381
-    aget-object v6, v4, v2
+    xor-int/2addr v1, v3
 
-    invoke-static {p0, p1, v6, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Collection;)Ljava/lang/reflect/Type;
+    .line 397
+    invoke-interface {p2}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
-    move-result-object v6
+    move-result-object v5
 
-    .line 382
-    aget-object v7, v4, v2
+    .line 398
+    array-length v6, v5
 
-    if-eq v6, v7, :cond_7d
+    :goto_7e
+    if-ge v2, v6, :cond_9d
 
-    if-nez v0, :cond_7b
+    .line 399
+    aget-object v7, v5, v2
 
-    .line 384
-    invoke-virtual {v4}, [Ljava/lang/reflect/Type;->clone()Ljava/lang/Object;
+    .line 400
+    invoke-static {p0, p1, v7, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Map;)Ljava/lang/reflect/Type;
 
-    move-result-object v0
+    move-result-object v7
 
-    move-object v4, v0
+    .line 401
+    aget-object v8, v5, v2
 
-    check-cast v4, [Ljava/lang/reflect/Type;
+    invoke-static {v7, v8}, Lcom/google/gson/internal/$Gson$Types;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move v0, v1
+    move-result v8
 
-    .line 387
-    :cond_7b
-    aput-object v6, v4, v2
+    if-nez v8, :cond_9a
 
-    :cond_7d
+    if-nez v1, :cond_98
+
+    .line 403
+    invoke-virtual {v5}, [Ljava/lang/reflect/Type;->clone()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v5, v1
+
+    check-cast v5, [Ljava/lang/reflect/Type;
+
+    move v1, v3
+
+    .line 406
+    :cond_98
+    aput-object v7, v5, v2
+
+    :cond_9a
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_65
+    goto :goto_7e
 
-    :cond_80
-    if-eqz v0, :cond_8b
+    :cond_9d
+    if-eqz v1, :cond_d9
 
-    .line 392
+    .line 412
     invoke-interface {p2}, Ljava/lang/reflect/ParameterizedType;->getRawType()Ljava/lang/reflect/Type;
 
     move-result-object p0
 
-    invoke-static {v3, p0, v4}, Lcom/google/gson/internal/$Gson$Types;->newParameterizedTypeWithOwner(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)Ljava/lang/reflect/ParameterizedType;
+    invoke-static {v4, p0, v5}, Lcom/google/gson/internal/$Gson$Types;->newParameterizedTypeWithOwner(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)Ljava/lang/reflect/ParameterizedType;
 
     move-result-object p0
 
-    return-object p0
+    goto :goto_46
 
-    :cond_8b
-    return-object p2
+    .line 416
+    :cond_a8
+    instance-of v1, p2, Ljava/lang/reflect/WildcardType;
 
-    .line 395
-    :cond_8c
-    instance-of v0, p2, Ljava/lang/reflect/WildcardType;
+    if-eqz v1, :cond_d9
 
-    if-eqz v0, :cond_be
-
-    .line 396
+    .line 417
     check-cast p2, Ljava/lang/reflect/WildcardType;
 
-    .line 397
+    .line 418
     invoke-interface {p2}, Ljava/lang/reflect/WildcardType;->getLowerBounds()[Ljava/lang/reflect/Type;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 398
+    .line 419
     invoke-interface {p2}, Ljava/lang/reflect/WildcardType;->getUpperBounds()[Ljava/lang/reflect/Type;
 
-    move-result-object v3
+    move-result-object v4
 
-    .line 400
-    array-length v4, v0
+    .line 421
+    array-length v5, v1
 
-    if-ne v4, v1, :cond_ac
+    if-ne v5, v3, :cond_c8
 
-    .line 401
-    aget-object v1, v0, v2
+    .line 422
+    aget-object v3, v1, v2
 
-    invoke-static {p0, p1, v1, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Collection;)Ljava/lang/reflect/Type;
+    .line 423
+    invoke-static {p0, p1, v3, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Map;)Ljava/lang/reflect/Type;
 
     move-result-object p0
 
-    .line 402
-    aget-object p1, v0, v2
+    .line 424
+    aget-object p1, v1, v2
 
-    if-eq p0, p1, :cond_be
+    if-eq p0, p1, :cond_d9
 
-    .line 403
+    .line 425
     invoke-static {p0}, Lcom/google/gson/internal/$Gson$Types;->supertypeOf(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;
 
+    move-result-object p2
+
+    goto :goto_d9
+
+    .line 428
+    :cond_c8
+    array-length v1, v4
+
+    if-ne v1, v3, :cond_d9
+
+    .line 429
+    aget-object v1, v4, v2
+
+    .line 430
+    invoke-static {p0, p1, v1, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Map;)Ljava/lang/reflect/Type;
+
     move-result-object p0
 
-    return-object p0
+    .line 431
+    aget-object p1, v4, v2
 
-    .line 405
-    :cond_ac
-    array-length v0, v3
+    if-eq p0, p1, :cond_d9
 
-    if-ne v0, v1, :cond_be
-
-    .line 406
-    aget-object v0, v3, v2
-
-    invoke-static {p0, p1, v0, p3}, Lcom/google/gson/internal/$Gson$Types;->resolve(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/Type;Ljava/util/Collection;)Ljava/lang/reflect/Type;
-
-    move-result-object p0
-
-    .line 407
-    aget-object p1, v3, v2
-
-    if-eq p0, p1, :cond_be
-
-    .line 408
+    .line 432
     invoke-static {p0}, Lcom/google/gson/internal/$Gson$Types;->subtypeOf(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;
 
-    move-result-object p0
+    move-result-object p2
 
-    return-object p0
+    :cond_d9
+    :goto_d9
+    if-eqz v0, :cond_de
 
-    :cond_be
+    .line 445
+    invoke-interface {p3, v0, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_de
     return-object p2
 .end method
 
-.method static resolveTypeVariable(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/TypeVariable;)Ljava/lang/reflect/Type;
+.method private static resolveTypeVariable(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/TypeVariable;)Ljava/lang/reflect/Type;
     .registers 4
 
-    .line 420
+    .line 452
     invoke-static {p2}, Lcom/google/gson/internal/$Gson$Types;->declaringClassOf(Ljava/lang/reflect/TypeVariable;)Ljava/lang/Class;
 
     move-result-object v0
@@ -1288,18 +1319,18 @@
 
     goto :goto_20
 
-    .line 427
+    .line 459
     :cond_7
     invoke-static {p0, p1, v0}, Lcom/google/gson/internal/$Gson$Types;->getGenericSupertype(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/Class;)Ljava/lang/reflect/Type;
 
     move-result-object p0
 
-    .line 428
+    .line 460
     instance-of p1, p0, Ljava/lang/reflect/ParameterizedType;
 
     if-eqz p1, :cond_20
 
-    .line 429
+    .line 461
     invoke-virtual {v0}, Ljava/lang/Class;->getTypeParameters()[Ljava/lang/reflect/TypeVariable;
 
     move-result-object p1
@@ -1308,7 +1339,7 @@
 
     move-result p1
 
-    .line 430
+    .line 462
     check-cast p0, Ljava/lang/reflect/ParameterizedType;
 
     invoke-interface {p0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
@@ -1327,12 +1358,12 @@
 .method public static subtypeOf(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;
     .registers 3
 
-    .line 75
+    .line 80
     instance-of v0, p0, Ljava/lang/reflect/WildcardType;
 
     if-eqz v0, :cond_b
 
-    .line 76
+    .line 81
     check-cast p0, Ljava/lang/reflect/WildcardType;
 
     invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getUpperBounds()[Ljava/lang/reflect/Type;
@@ -1344,7 +1375,7 @@
     :cond_b
     const/4 v0, 0x1
 
-    .line 78
+    .line 83
     new-array v0, v0, [Ljava/lang/reflect/Type;
 
     const/4 v1, 0x0
@@ -1353,7 +1384,7 @@
 
     move-object p0, v0
 
-    .line 80
+    .line 85
     :goto_12
     new-instance v0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;
 
@@ -1367,7 +1398,7 @@
 .method public static supertypeOf(Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;
     .registers 5
 
-    .line 90
+    .line 94
     instance-of v0, p0, Ljava/lang/reflect/WildcardType;
 
     const/4 v1, 0x0
@@ -1376,7 +1407,7 @@
 
     if-eqz v0, :cond_d
 
-    .line 91
+    .line 95
     check-cast p0, Ljava/lang/reflect/WildcardType;
 
     invoke-interface {p0}, Ljava/lang/reflect/WildcardType;->getLowerBounds()[Ljava/lang/reflect/Type;
@@ -1385,7 +1416,7 @@
 
     goto :goto_12
 
-    .line 93
+    .line 97
     :cond_d
     new-array v0, v2, [Ljava/lang/reflect/Type;
 
@@ -1393,7 +1424,7 @@
 
     move-object p0, v0
 
-    .line 95
+    .line 99
     :goto_12
     new-instance v0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;
 
@@ -1411,7 +1442,7 @@
 .method public static typeToString(Ljava/lang/reflect/Type;)Ljava/lang/String;
     .registers 2
 
-    .line 228
+    .line 230
     instance-of v0, p0, Ljava/lang/Class;
 
     if-eqz v0, :cond_b

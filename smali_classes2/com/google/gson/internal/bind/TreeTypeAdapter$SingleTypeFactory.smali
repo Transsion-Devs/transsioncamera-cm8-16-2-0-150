@@ -31,10 +31,10 @@
 .method constructor <init>(Ljava/lang/Object;Lcom/google/gson/reflect/TypeToken;ZLjava/lang/Class;)V
     .registers 6
 
-    .line 127
+    .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 131
+    .line 163
     instance-of v0, p1, Lcom/google/gson/JsonDeserializer;
 
     if-eqz v0, :cond_a
@@ -58,17 +58,17 @@
     :cond_11
     const/4 p1, 0x0
 
-    .line 134
+    .line 164
     :goto_12
     invoke-static {p1}, Lcom/google/gson/internal/$Gson$Preconditions;->checkArgument(Z)V
 
-    .line 135
+    .line 165
     iput-object p2, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->exactType:Lcom/google/gson/reflect/TypeToken;
 
-    .line 136
+    .line 166
     iput-boolean p3, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->matchRawType:Z
 
-    .line 137
+    .line 167
     iput-object p4, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->hierarchyType:Ljava/lang/Class;
 
     return-void
@@ -79,12 +79,12 @@
 .method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
     .registers 10
 
-    .line 143
+    .line 174
     iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->exactType:Lcom/google/gson/reflect/TypeToken;
 
     if-eqz v0, :cond_1f
 
-    .line 144
+    .line 175
     invoke-virtual {v0, p2}, Lcom/google/gson/reflect/TypeToken;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -120,10 +120,10 @@
 
     goto :goto_29
 
+    .line 176
     :cond_1f
     iget-object v0, p0, Lcom/google/gson/internal/bind/TreeTypeAdapter$SingleTypeFactory;->hierarchyType:Ljava/lang/Class;
 
-    .line 145
     invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
 
     move-result-object v1
@@ -135,7 +135,7 @@
     :goto_29
     if-eqz v0, :cond_37
 
-    .line 146
+    .line 178
     new-instance v1, Lcom/google/gson/internal/bind/TreeTypeAdapter;
 
     const/4 v2, 0x0

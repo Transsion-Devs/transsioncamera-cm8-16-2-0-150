@@ -13,7 +13,7 @@
 
     if-eqz p2, :cond_11
 
-    .line 85
+    .line 84
     invoke-interface {p2, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -31,7 +31,7 @@
 
     goto :goto_17
 
-    .line 86
+    .line 85
     :cond_15
     instance-of p2, p1, Ljava/lang/CharSequence;
 
@@ -44,7 +44,7 @@
 
     return-void
 
-    .line 87
+    .line 86
     :cond_1f
     instance-of p2, p1, Ljava/lang/Character;
 
@@ -60,9 +60,9 @@
 
     return-void
 
-    .line 88
+    .line 87
     :cond_2d
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p1
 

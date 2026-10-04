@@ -43,10 +43,10 @@
         }
     .end annotation
 
-    .line 145
+    .line 141
     invoke-direct {p0, p2, p3, p4}, Lkotlinx/coroutines/flow/internal/ChannelFlow;-><init>(Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)V
 
-    .line 141
+    .line 137
     iput-object p1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlowOperator;->flow:Lkotlinx/coroutines/flow/Flow;
 
     return-void
@@ -55,7 +55,7 @@
 .method public static final synthetic access$collectWithContextUndispatched(Lkotlinx/coroutines/flow/internal/ChannelFlowOperator;Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .registers 4
 
-    .line 140
+    .line 136
     invoke-direct {p0, p1, p2, p3}, Lkotlinx/coroutines/flow/internal/ChannelFlowOperator;->collectWithContextUndispatched(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -84,33 +84,33 @@
         }
     .end annotation
 
-    .line 162
+    .line 158
     iget v0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->capacity:I
 
     const/4 v1, -0x3
 
     if-ne v0, v1, :cond_41
 
-    .line 163
+    .line 159
     invoke-interface {p2}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v0
 
-    .line 164
+    .line 160
     iget-object v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->context:Lkotlin/coroutines/CoroutineContext;
 
     invoke-static {v0, v1}, Lkotlinx/coroutines/CoroutineContextKt;->newCoroutineContext(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v1
 
-    .line 166
+    .line 162
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_23
 
-    .line 167
+    .line 163
     invoke-virtual {p0, p1, p2}, Lkotlinx/coroutines/flow/internal/ChannelFlowOperator;->flowCollect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -128,7 +128,7 @@
 
     return-object p0
 
-    .line 169
+    .line 165
     :cond_23
     sget-object v2, Lkotlin/coroutines/ContinuationInterceptor;->Key:Lkotlin/coroutines/ContinuationInterceptor$Key;
 
@@ -146,7 +146,7 @@
 
     if-eqz v0, :cond_41
 
-    .line 170
+    .line 166
     invoke-direct {p0, p1, v1, p2}, Lkotlinx/coroutines/flow/internal/ChannelFlowOperator;->collectWithContextUndispatched(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -164,7 +164,7 @@
 
     return-object p0
 
-    .line 173
+    .line 169
     :cond_41
     invoke-super {p0, p1, p2}, Lkotlinx/coroutines/flow/internal/ChannelFlow;->collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -205,7 +205,7 @@
         }
     .end annotation
 
-    .line 157
+    .line 153
     new-instance v0, Lkotlinx/coroutines/flow/internal/SendingCollector;
 
     invoke-direct {v0, p1}, Lkotlinx/coroutines/flow/internal/SendingCollector;-><init>(Lkotlinx/coroutines/channels/SendChannel;)V
@@ -244,7 +244,7 @@
         }
     .end annotation
 
-    .line 150
+    .line 146
     invoke-interface {p3}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v0
@@ -254,7 +254,7 @@
 
     move-result-object v2
 
-    .line 152
+    .line 148
     new-instance v4, Lkotlinx/coroutines/flow/internal/ChannelFlowOperator$collectWithContextUndispatched$2;
 
     const/4 p1, 0x0
@@ -274,17 +274,6 @@
     invoke-static/range {v1 .. v7}, Lkotlinx/coroutines/flow/internal/ChannelFlowKt;->withContextUndispatched$default(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
-
-    invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p0, p1, :cond_1e
-
-    return-object p0
-
-    :cond_1e
-    sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 .end method
@@ -353,7 +342,7 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 177
+    .line 173
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

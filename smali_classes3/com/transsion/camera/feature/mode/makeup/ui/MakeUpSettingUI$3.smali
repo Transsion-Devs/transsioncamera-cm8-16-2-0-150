@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;)V
     .registers 2
 
-    .line 88
+    .line 87
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$3;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,10 +40,10 @@
 
     const/4 v0, 0x0
 
-    .line 91
+    .line 90
     sput-boolean v0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpTopUI;->isPressBack:Z
 
-    .line 92
+    .line 91
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI$3;->this$0:Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;
 
     invoke-static {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;->-$$Nest$msettingUIAnimShowOrHide(Lcom/transsion/camera/feature/mode/makeup/ui/MakeUpSettingUI;I)Z

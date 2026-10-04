@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/FullZoomUI;)V
     .registers 2
 
-    .line 2293
+    .line 2284
     iput-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI$9;->this$0:Lcom/transsion/camera/app/ui/FullZoomUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,17 +35,17 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 6
 
-    .line 2296
+    .line 2287
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 2297
+    .line 2288
     iget-object p1, p0, Lcom/transsion/camera/app/ui/FullZoomUI$9;->this$0:Lcom/transsion/camera/app/ui/FullZoomUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->-$$Nest$fgetmOrientation(Lcom/transsion/camera/app/ui/FullZoomUI;)I
 
     move-result p1
 
-    .line 2298
+    .line 2289
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI$9;->this$0:Lcom/transsion/camera/app/ui/FullZoomUI;
 
     iget v1, v0, Lcom/transsion/camera/app/ui/AbstractWideCameraUI;->mScreenFormType:I
@@ -54,7 +54,7 @@
 
     if-ne v1, v2, :cond_23
 
-    .line 2299
+    .line 2290
     invoke-static {v0}, Lcom/transsion/camera/app/ui/FullZoomUI;->-$$Nest$fgetmVideoRecording(Lcom/transsion/camera/app/ui/FullZoomUI;)Z
 
     move-result p1
@@ -76,7 +76,7 @@
 
     move-result p1
 
-    .line 2301
+    .line 2292
     :cond_23
     :goto_23
     iget-object v0, p0, Lcom/transsion/camera/app/ui/FullZoomUI$9;->this$0:Lcom/transsion/camera/app/ui/FullZoomUI;
@@ -95,7 +95,7 @@
     :goto_2c
     invoke-static {v0, v2, p1}, Lcom/transsion/camera/app/ui/FullZoomUI;->-$$Nest$mupdateFullZoomUILayout(Lcom/transsion/camera/app/ui/FullZoomUI;ZI)V
 
-    .line 2302
+    .line 2293
     iget-object p0, p0, Lcom/transsion/camera/app/ui/FullZoomUI$9;->this$0:Lcom/transsion/camera/app/ui/FullZoomUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/FullZoomUI;->-$$Nest$fgetmFullZoomIn(Lcom/transsion/camera/app/ui/FullZoomUI;)Landroid/animation/ObjectAnimator;

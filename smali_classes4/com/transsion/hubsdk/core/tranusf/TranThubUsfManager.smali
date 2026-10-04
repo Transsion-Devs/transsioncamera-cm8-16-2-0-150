@@ -176,12 +176,12 @@
 .method public enableNightNetwork(Z)V
     .registers 2
 
-    .line 247
+    .line 260
     iget-object p0, p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->mTranUsfManager:Lcom/transsion/hubsdk/tranusf/ITranUsfManager;
 
     if-eqz p0, :cond_10
 
-    .line 249
+    .line 262
     :try_start_4
     invoke-interface {p0, p1}, Lcom/transsion/hubsdk/tranusf/ITranUsfManager;->enableNightNetwork(Z)V
     :try_end_7
@@ -189,7 +189,7 @@
 
     return-void
 
-    .line 251
+    .line 264
     :catch_8
     sget-object p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->TAG:Ljava/lang/String;
 
@@ -199,7 +199,44 @@
 
     return-void
 
-    .line 254
+    .line 267
+    :cond_10
+    sget-object p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->TAG:Ljava/lang/String;
+
+    const-string p1, "Usf Service not found!!!"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
+.method public enableThermalUx(Ljava/lang/String;J)V
+    .registers 4
+
+    .line 221
+    iget-object p0, p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->mTranUsfManager:Lcom/transsion/hubsdk/tranusf/ITranUsfManager;
+
+    if-eqz p0, :cond_10
+
+    .line 223
+    :try_start_4
+    invoke-interface {p0, p1, p2, p3}, Lcom/transsion/hubsdk/tranusf/ITranUsfManager;->enableThermalUx(Ljava/lang/String;J)V
+    :try_end_7
+    .catch Landroid/os/RemoteException; {:try_start_4 .. :try_end_7} :catch_8
+
+    return-void
+
+    .line 225
+    :catch_8
+    sget-object p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->TAG:Ljava/lang/String;
+
+    const-string p1, "enableThermalUx remote exception"
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    .line 228
     :cond_10
     sget-object p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->TAG:Ljava/lang/String;
 
@@ -213,12 +250,12 @@
 .method public fastFreeze(Ljava/lang/String;)V
     .registers 2
 
-    .line 221
+    .line 234
     iget-object p0, p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->mTranUsfManager:Lcom/transsion/hubsdk/tranusf/ITranUsfManager;
 
     if-eqz p0, :cond_10
 
-    .line 223
+    .line 236
     :try_start_4
     invoke-interface {p0, p1}, Lcom/transsion/hubsdk/tranusf/ITranUsfManager;->fastFreeze(Ljava/lang/String;)V
     :try_end_7
@@ -226,7 +263,7 @@
 
     return-void
 
-    .line 225
+    .line 238
     :catch_8
     sget-object p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->TAG:Ljava/lang/String;
 
@@ -236,7 +273,7 @@
 
     return-void
 
-    .line 228
+    .line 241
     :cond_10
     sget-object p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->TAG:Ljava/lang/String;
 
@@ -287,12 +324,12 @@
 .method public fastUnfreeze(Ljava/lang/String;)V
     .registers 2
 
-    .line 234
+    .line 247
     iget-object p0, p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->mTranUsfManager:Lcom/transsion/hubsdk/tranusf/ITranUsfManager;
 
     if-eqz p0, :cond_10
 
-    .line 236
+    .line 249
     :try_start_4
     invoke-interface {p0, p1}, Lcom/transsion/hubsdk/tranusf/ITranUsfManager;->fastUnfreeze(Ljava/lang/String;)V
     :try_end_7
@@ -300,7 +337,7 @@
 
     return-void
 
-    .line 238
+    .line 251
     :catch_8
     sget-object p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->TAG:Ljava/lang/String;
 
@@ -310,7 +347,7 @@
 
     return-void
 
-    .line 241
+    .line 254
     :cond_10
     sget-object p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->TAG:Ljava/lang/String;
 
@@ -496,12 +533,12 @@
 .method public isEnableNightNetwork()Z
     .registers 2
 
-    .line 260
+    .line 273
     iget-object p0, p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->mTranUsfManager:Lcom/transsion/hubsdk/tranusf/ITranUsfManager;
 
     if-eqz p0, :cond_11
 
-    .line 262
+    .line 275
     :try_start_4
     invoke-interface {p0}, Lcom/transsion/hubsdk/tranusf/ITranUsfManager;->isEnableNightNetwork()Z
 
@@ -511,7 +548,7 @@
 
     return p0
 
-    .line 264
+    .line 277
     :catch_9
     sget-object p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->TAG:Ljava/lang/String;
 
@@ -521,7 +558,7 @@
 
     goto :goto_18
 
-    .line 267
+    .line 280
     :cond_11
     sget-object p0, Lcom/transsion/hubsdk/core/tranusf/TranThubUsfManager;->TAG:Ljava/lang/String;
 

@@ -16,13 +16,13 @@
 .method public constructor <init>(Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;Ljava/lang/StackTraceElement;)V
     .registers 3
 
-    .line 12
+    .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
+    .line 10
     iput-object p1, p0, Lkotlinx/coroutines/debug/internal/StackTraceFrame;->callerFrame:Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
 
-    .line 16
+    .line 12
     iput-object p2, p0, Lkotlinx/coroutines/debug/internal/StackTraceFrame;->stackTraceElement:Ljava/lang/StackTraceElement;
 
     return-void
@@ -33,7 +33,7 @@
 .method public getCallerFrame()Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
     .registers 1
 
-    .line 14
+    .line 10
     iget-object p0, p0, Lkotlinx/coroutines/debug/internal/StackTraceFrame;->callerFrame:Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
 
     return-object p0
@@ -42,7 +42,7 @@
 .method public getStackTraceElement()Ljava/lang/StackTraceElement;
     .registers 1
 
-    .line 18
+    .line 14
     iget-object p0, p0, Lkotlinx/coroutines/debug/internal/StackTraceFrame;->stackTraceElement:Ljava/lang/StackTraceElement;
 
     return-object p0

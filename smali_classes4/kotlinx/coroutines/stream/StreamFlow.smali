@@ -20,11 +20,11 @@
 
 
 # static fields
-.field private static final consumed$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+.field private static final synthetic consumed$volatile$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
 
 # instance fields
-.field private volatile consumed:I
+.field private volatile synthetic consumed$volatile:I
 
 .field private final stream:Ljava/util/stream/Stream;
     .annotation system Ldalvik/annotation/Signature;
@@ -42,13 +42,13 @@
 
     const-class v0, Lkotlinx/coroutines/stream/StreamFlow;
 
-    const-string v1, "consumed"
+    const-string v1, "consumed$volatile"
 
     invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/stream/StreamFlow;->consumed$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/stream/StreamFlow;->consumed$volatile$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     return-void
 .end method
@@ -63,15 +63,39 @@
         }
     .end annotation
 
-    .line 19
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlinx/coroutines/stream/StreamFlow;->stream:Ljava/util/stream/Stream;
 
     const/4 p1, 0x0
 
-    .line 20
-    iput p1, p0, Lkotlinx/coroutines/stream/StreamFlow;->consumed:I
+    .line 16
+    iput p1, p0, Lkotlinx/coroutines/stream/StreamFlow;->consumed$volatile:I
+
+    return-void
+.end method
+
+.method private final synthetic getConsumed$volatile()I
+    .registers 1
+
+    iget p0, p0, Lkotlinx/coroutines/stream/StreamFlow;->consumed$volatile:I
+
+    return p0
+.end method
+
+.method private static final synthetic getConsumed$volatile$FU()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/stream/StreamFlow;->consumed$volatile$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic setConsumed$volatile(I)V
+    .registers 2
+
+    iput p1, p0, Lkotlinx/coroutines/stream/StreamFlow;->consumed$volatile:I
 
     return-void
 .end method
@@ -127,7 +151,7 @@
 
     move-result-object v1
 
-    .line 22
+    .line 18
     iget v2, v0, Lkotlinx/coroutines/stream/StreamFlow$collect$1;->label:I
 
     const/4 v3, 0x1
@@ -157,14 +181,14 @@
 
     move-object p1, v2
 
-    goto :goto_58
+    goto :goto_5a
 
     :catchall_37
     move-exception p0
 
     move-object p1, v2
 
-    goto :goto_7f
+    goto :goto_81
 
     :cond_3a
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -178,8 +202,10 @@
     :cond_42
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 23
-    sget-object p2, Lkotlinx/coroutines/stream/StreamFlow;->consumed$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    .line 19
+    invoke-static {}, Lkotlinx/coroutines/stream/StreamFlow;->getConsumed$volatile$FU()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    move-result-object p2
 
     const/4 v2, 0x0
 
@@ -187,17 +213,17 @@
 
     move-result p2
 
-    if-eqz p2, :cond_85
+    if-eqz p2, :cond_87
 
-    .line 25
-    :try_start_4e
+    .line 21
+    :try_start_50
     iget-object p2, p0, Lkotlinx/coroutines/stream/StreamFlow;->stream:Ljava/util/stream/Stream;
 
     invoke-interface {p2}, Ljava/util/stream/BaseStream;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
-    :try_end_54
-    .catchall {:try_start_4e .. :try_end_54} :catchall_7b
+    :try_end_56
+    .catchall {:try_start_50 .. :try_end_56} :catchall_7d
 
     move-object v4, p1
 
@@ -207,20 +233,20 @@
 
     move-object p2, v4
 
-    :cond_58
-    :goto_58
-    :try_start_58
+    :cond_5a
+    :goto_5a
+    :try_start_5a
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_73
+    if-eqz v2, :cond_75
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 26
+    .line 22
     iput-object p1, v0, Lkotlinx/coroutines/stream/StreamFlow$collect$1;->L$0:Ljava/lang/Object;
 
     iput-object p2, v0, Lkotlinx/coroutines/stream/StreamFlow$collect$1;->L$1:Ljava/lang/Object;
@@ -232,30 +258,30 @@
     invoke-interface {p2, v2, v0}, Lkotlinx/coroutines/flow/FlowCollector;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v2
-    :try_end_6e
-    .catchall {:try_start_58 .. :try_end_6e} :catchall_71
+    :try_end_70
+    .catchall {:try_start_5a .. :try_end_70} :catchall_73
 
-    if-ne v2, v1, :cond_58
+    if-ne v2, v1, :cond_5a
 
     return-object v1
 
-    :catchall_71
+    :catchall_73
     move-exception p0
 
-    goto :goto_7f
+    goto :goto_81
 
-    .line 29
-    :cond_73
+    .line 25
+    :cond_75
     iget-object p0, p1, Lkotlinx/coroutines/stream/StreamFlow;->stream:Ljava/util/stream/Stream;
 
     invoke-interface {p0}, Ljava/util/stream/BaseStream;->close()V
 
-    .line 31
+    .line 27
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    :catchall_7b
+    :catchall_7d
     move-exception p1
 
     move-object v4, p1
@@ -264,16 +290,16 @@
 
     move-object p0, v4
 
-    .line 29
-    :goto_7f
+    .line 25
+    :goto_81
     iget-object p1, p1, Lkotlinx/coroutines/stream/StreamFlow;->stream:Ljava/util/stream/Stream;
 
     invoke-interface {p1}, Ljava/util/stream/BaseStream;->close()V
 
     throw p0
 
-    .line 23
-    :cond_85
+    .line 19
+    :cond_87
     new-instance p0, Ljava/lang/IllegalStateException;
 
     const-string p1, "Stream.consumeAsFlow can be collected only once"

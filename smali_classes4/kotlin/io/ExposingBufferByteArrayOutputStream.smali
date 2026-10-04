@@ -7,7 +7,7 @@
 .method public constructor <init>(I)V
     .registers 2
 
-    .line 98
+    .line 104
     invoke-direct {p0, p1}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
 
     return-void
@@ -18,7 +18,7 @@
 .method public final getBuffer()[B
     .registers 2
 
-    .line 99
+    .line 105
     iget-object p0, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
 
     const-string v0, "buf"

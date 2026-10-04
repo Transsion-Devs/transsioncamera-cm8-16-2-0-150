@@ -30,9 +30,9 @@
     .line 0
     iget-object p0, p0, Lcom/transsion/aicore/nexusflow/NexusFlow$$ExternalSyntheticLambda3;->f$0:Ljava/lang/String;
 
-    check-cast p1, Ljava/lang/String;
+    check-cast p1, Landroid/os/Bundle;
 
-    invoke-static {p0, p1}, Lcom/transsion/aicore/nexusflow/NexusFlow;->$r8$lambda$dESfeuJWuMceStAC9dIi6aKBERQ(Ljava/lang/String;Ljava/lang/String;)Lkotlin/Unit;
+    invoke-static {p0, p1}, Lcom/transsion/aicore/nexusflow/NexusFlow;->$r8$lambda$xyTMrtAmHFExxoYifnIB_OiVC58(Ljava/lang/String;Landroid/os/Bundle;)Lkotlin/Unit;
 
     move-result-object p0
 

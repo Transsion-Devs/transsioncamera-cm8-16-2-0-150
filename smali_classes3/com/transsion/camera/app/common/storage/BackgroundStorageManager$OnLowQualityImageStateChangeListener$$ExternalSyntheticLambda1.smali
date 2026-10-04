@@ -24,7 +24,7 @@
     .line 0
     check-cast p1, Lcom/transsion/camera/app/common/taps/IThumbnailController;
 
-    invoke-static {p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$OnLowQualityImageStateChangeListener;->$r8$lambda$yLcPxYLU7M9k--YcSZSWWHh1GO0(Lcom/transsion/camera/app/common/taps/IThumbnailController;)V
+    invoke-static {p1}, Lcom/transsion/camera/app/common/storage/BackgroundStorageManager$OnLowQualityImageStateChangeListener;->$r8$lambda$UnZB6mMdZ6vrsLx0d4XYIqqXmTY(Lcom/transsion/camera/app/common/taps/IThumbnailController;)V
 
     return-void
 .end method

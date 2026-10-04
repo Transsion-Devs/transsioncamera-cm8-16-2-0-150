@@ -28,7 +28,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__ReduceKt"
     f = "Reduce.kt"
     l = {
-        0x2c
+        0x28
     }
     m = "fold"
 .end annotation

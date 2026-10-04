@@ -131,12 +131,16 @@
 
     int-to-long v2, p1
 
-    goto :goto_33
+    goto :goto_37
 
     :cond_31
-    const-wide/16 v2, 0x2710
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
-    :goto_33
+    move-result-object p1
+
+    iget-wide v2, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mBackgroundShot2ShotResetTime:J
+
+    :goto_37
     iput-wide v2, p0, Lcom/transsion/camera/app/common/taps/skilpolicy/BackgroundShot2ShotSkipPolicy;->mResetDelayMillis:J
 
     .line 48
@@ -153,7 +157,7 @@
 
     iput-boolean v4, p0, Lcom/transsion/camera/app/common/taps/skilpolicy/BackgroundShot2ShotSkipPolicy;->mIsSystemSupportDefer:Z
 
-    if-nez v4, :cond_4c
+    if-nez v4, :cond_50
 
     .line 50
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
@@ -162,12 +166,12 @@
 
     iget-boolean v5, v5, Lcom/transsion/camera/utils/CustomConfigUtil;->mShot2ShotPolicyUseDecrease:Z
 
-    if-eqz v5, :cond_4c
+    if-eqz v5, :cond_50
 
     move-object v0, v1
 
     .line 51
-    :cond_4c
+    :cond_50
     iput-object v0, p0, Lcom/transsion/camera/app/common/taps/skilpolicy/BackgroundShot2ShotSkipPolicy;->mCurrentCount:Ljava/util/Set;
 
     .line 52
@@ -364,7 +368,7 @@
 .method private isSystemSupportDefer()Z
     .registers 4
 
-    .line 165
+    .line 170
     sget p0, Lcom/transsion/camera/app/common/taps/skilpolicy/BackgroundShot2ShotSkipPolicy;->TAPS2_MODE:I
 
     if-lez p0, :cond_2a
@@ -385,7 +389,7 @@
 
     if-eq p0, v0, :cond_27
 
-    .line 174
+    .line 179
     sget-object v0, Lcom/transsion/camera/app/common/taps/skilpolicy/BackgroundShot2ShotSkipPolicy;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -414,7 +418,7 @@
     :cond_29
     return v0
 
-    .line 178
+    .line 183
     :cond_2a
     :goto_2a
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
@@ -867,6 +871,19 @@
     .catchall {:try_start_31 .. :try_end_32} :catchall_30
 
     throw p1
+.end method
+
+.method public isCurrentProcessingCountEmpty()Z
+    .registers 1
+
+    .line 166
+    iget-object p0, p0, Lcom/transsion/camera/app/common/taps/skilpolicy/BackgroundShot2ShotSkipPolicy;->mCurrentProcessingCount:Ljava/util/Set;
+
+    invoke-interface {p0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public onCaptureCustomDefer(Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V

@@ -131,21 +131,21 @@
     .line 39
     invoke-direct {p0}, Lcom/transsion/camera/manager/BaseImageryGuideManager;-><init>()V
 
-    .line 79
+    .line 83
     new-instance v0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$1;-><init>(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mUpdateResourceCallback:Lcom/transsion/camera/feature/imageryguide/callBack/IUpdateImageryGuideCallback;
 
-    .line 103
+    .line 107
     new-instance v0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$2;-><init>(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mUpdateImageryConfigCallBack:Lcom/transsion/camera/feature/imageryguide/callBack/IUpdateImageryGuideCallback;
 
-    .line 268
+    .line 272
     new-instance v0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$4;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$4;-><init>(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)V
@@ -160,7 +160,7 @@
 
     if-eqz p1, :cond_cd
 
-    .line 281
+    .line 285
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isInRuMarket()Z
 
     move-result p0
@@ -169,18 +169,18 @@
 
     goto/16 :goto_cd
 
-    .line 285
+    .line 289
     :cond_a
     invoke-virtual {p1}, Lcom/transsion/camera/feature/imageryguide/bean/ImageryGuideBean;->getSaleModeBeanList()Ljava/util/List;
 
     move-result-object p0
 
-    .line 286
+    .line 290
     invoke-virtual {p1}, Lcom/transsion/camera/feature/imageryguide/bean/ImageryGuideBean;->getModeBeanList()Ljava/util/List;
 
     move-result-object p1
 
-    .line 287
+    .line 291
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -205,7 +205,7 @@
 
     check-cast v0, Lcom/transsion/camera/feature/imageryguide/bean/ModeBean;
 
-    .line 288
+    .line 292
     invoke-virtual {v0}, Lcom/transsion/camera/feature/imageryguide/bean/ModeBean;->getModeName()Ljava/lang/String;
 
     move-result-object v4
@@ -218,7 +218,7 @@
 
     goto :goto_16
 
-    .line 291
+    .line 295
     :cond_32
     :goto_32
     invoke-virtual {v0}, Lcom/transsion/camera/feature/imageryguide/bean/ModeBean;->getDetailBeansList()Ljava/util/List;
@@ -231,7 +231,7 @@
 
     if-ge v2, v3, :cond_16
 
-    .line 292
+    .line 296
     invoke-virtual {v0}, Lcom/transsion/camera/feature/imageryguide/bean/ModeBean;->getDetailBeansList()Ljava/util/List;
 
     move-result-object v3
@@ -246,14 +246,14 @@
 
     move-result-object v3
 
-    .line 293
+    .line 297
     invoke-static {v3, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v3
 
     if-eqz v3, :cond_6e
 
-    .line 294
+    .line 298
     sget-object v1, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -272,7 +272,7 @@
 
     invoke-static {v1, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 295
+    .line 299
     invoke-virtual {v0}, Lcom/transsion/camera/feature/imageryguide/bean/ModeBean;->getDetailBeansList()Ljava/util/List;
 
     move-result-object v0
@@ -286,7 +286,7 @@
 
     goto :goto_32
 
-    .line 301
+    .line 305
     :cond_71
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -306,7 +306,7 @@
 
     check-cast p1, Lcom/transsion/camera/feature/imageryguide/bean/ModeBean;
 
-    .line 302
+    .line 306
     invoke-virtual {p1}, Lcom/transsion/camera/feature/imageryguide/bean/ModeBean;->getModeName()Ljava/lang/String;
 
     move-result-object v0
@@ -322,7 +322,7 @@
     :cond_8c
     move v0, v2
 
-    .line 305
+    .line 309
     :goto_8d
     invoke-virtual {p1}, Lcom/transsion/camera/feature/imageryguide/bean/ModeBean;->getDetailBeansList()Ljava/util/List;
 
@@ -334,7 +334,7 @@
 
     if-ge v0, v4, :cond_75
 
-    .line 306
+    .line 310
     invoke-virtual {p1}, Lcom/transsion/camera/feature/imageryguide/bean/ModeBean;->getDetailBeansList()Ljava/util/List;
 
     move-result-object v4
@@ -349,14 +349,14 @@
 
     move-result-object v4
 
-    .line 307
+    .line 311
     invoke-static {v4, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v4
 
     if-eqz v4, :cond_c9
 
-    .line 308
+    .line 312
     sget-object v4, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -375,7 +375,7 @@
 
     invoke-static {v4, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 309
+    .line 313
     invoke-virtual {p1}, Lcom/transsion/camera/feature/imageryguide/bean/ModeBean;->getDetailBeansList()Ljava/util/List;
 
     move-result-object p1
@@ -392,7 +392,7 @@
     :cond_cc
     return-void
 
-    .line 282
+    .line 286
     :cond_cd
     :goto_cd
     sget-object p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -407,10 +407,10 @@
 .method private getEnterFragmentMode()Ljava/lang/String;
     .registers 5
 
-    .line 201
+    .line 205
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mCurrentMode:Ljava/lang/String;
 
-    .line 202
+    .line 206
     const-string v1, "com.transsion.camera.feature.supernightfilter.mode.SuperNightFilterModeEntry"
 
     invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -423,7 +423,7 @@
 
     const-string v3, "com.transsion.camera.feature.mode.supernight.SuperNightModeEntry"
 
-    .line 203
+    .line 207
     invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -433,7 +433,7 @@
     :cond_14
     move-object v0, v1
 
-    .line 206
+    .line 210
     :cond_15
     iget-object v1, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mCurrentMode:Ljava/lang/String;
 
@@ -449,7 +449,7 @@
 
     const-string v1, "com.transsion.camera.feature.wideselfie.WideSelfieModeEntry"
 
-    .line 207
+    .line 211
     invoke-static {p0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -469,7 +469,7 @@
 .method private synthetic lambda$parasData$0()V
     .registers 1
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/imageryguide/GuideUIManager;->onRequestFailed()V
@@ -480,7 +480,7 @@
 .method private synthetic lambda$parasData$1()V
     .registers 1
 
-    .line 166
+    .line 170
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/imageryguide/GuideUIManager;->onImageryConfigSucceed()V
@@ -491,7 +491,7 @@
 .method private synthetic lambda$parasData$2()V
     .registers 1
 
-    .line 169
+    .line 173
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/imageryguide/GuideUIManager;->onRequestFailed()V
@@ -502,19 +502,19 @@
 .method private parasData([B)V
     .registers 11
 
-    .line 126
+    .line 130
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, p1}, Ljava/lang/String;-><init>([B)V
 
-    .line 127
+    .line 131
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_13
 
-    .line 128
+    .line 132
     sget-object p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[parseData] jsonString invalid !!!"
@@ -523,40 +523,40 @@
 
     return-void
 
-    .line 133
+    .line 137
     :cond_13
     :try_start_13
     new-instance p1, Lorg/json/JSONObject;
 
     invoke-direct {p1, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 134
+    .line 138
     const-string v0, "data"
 
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 136
+    .line 140
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 137
+    .line 141
     const-string v1, "content"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 138
+    .line 142
     const-string/jumbo v2, "version"
 
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 139
+    .line 143
     sget-object v2, Lcom/transsion/camera/feature/imageryguide/ImageryGuideConstant;->IMAGERY_GUIDE_FILE_ROOT:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/transsion/camera/feature/imageryguide/utils/FileUtils;->readVersionFromDirectory(Ljava/lang/String;)Ljava/lang/String;
@@ -565,7 +565,7 @@
     :try_end_36
     .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_36} :catch_63
 
-    .line 140
+    .line 144
     const-string v3, " ,version :"
 
     const-string v4, "[parasData] fileVersion: "
@@ -585,7 +585,7 @@
 
     if-ltz v5, :cond_65
 
-    .line 141
+    .line 145
     sget-object p1, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -613,7 +613,7 @@
 
     goto :goto_d0
 
-    .line 144
+    .line 148
     :cond_65
     sget-object v5, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -647,12 +647,12 @@
 
     invoke-static {v5, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 146
+    .line 150
     new-instance p1, Lcom/google/gson/Gson;
 
     invoke-direct {p1}, Lcom/google/gson/Gson;-><init>()V
 
-    .line 147
+    .line 151
     const-class v2, Lcom/transsion/camera/feature/imageryguide/bean/ImageryGuideBean;
 
     invoke-virtual {p1, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
@@ -663,7 +663,7 @@
 
     if-nez p1, :cond_a7
 
-    .line 149
+    .line 153
     new-instance p1, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)V
@@ -672,7 +672,7 @@
 
     return-void
 
-    .line 153
+    .line 157
     :cond_a7
     invoke-static {}, Lcom/transsion/camera/utils/threads/WorkThreadPools;->getInstance()Lcom/transsion/camera/utils/threads/WorkThreadPools;
 
@@ -686,25 +686,25 @@
 
     invoke-virtual {v1, v2}, Lcom/transsion/camera/utils/threads/WorkThreadPools;->execute(Lcom/transsion/camera/utils/threads/WorkTask;)V
 
-    .line 162
+    .line 166
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideDownLoadManager:Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;->cancelAllRequest()V
 
-    .line 163
+    .line 167
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mCacheManager:Lcom/transsion/camera/feature/imageryguide/cache/CacheManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/imageryguide/cache/CacheManager;->deleteStorageData()V
 
-    .line 164
+    .line 168
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->deleteEE1AiArtPartialIfNeed(Lcom/transsion/camera/feature/imageryguide/bean/ImageryGuideBean;)V
 
-    .line 165
+    .line 169
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mCacheManager:Lcom/transsion/camera/feature/imageryguide/cache/CacheManager;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/imageryguide/cache/CacheManager;->initStorageData(Lcom/transsion/camera/feature/imageryguide/bean/ImageryGuideBean;)V
 
-    .line 166
+    .line 170
     new-instance p1, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;)V
@@ -715,7 +715,7 @@
 
     return-void
 
-    .line 169
+    .line 173
     :goto_d0
     new-instance v0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager$$ExternalSyntheticLambda2;
 
@@ -723,7 +723,7 @@
 
     invoke-static {v0}, Lcom/transsion/camera/utils/UIUtils;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 170
+    .line 174
     sget-object p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -750,7 +750,7 @@
 .method public enterFragment()V
     .registers 4
 
-    .line 192
+    .line 196
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mSupportModes:Ljava/util/List;
 
     if-eqz v0, :cond_29
@@ -765,7 +765,7 @@
 
     if-nez v0, :cond_29
 
-    .line 193
+    .line 197
     sget-object v0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -790,7 +790,7 @@
 
     return-void
 
-    .line 197
+    .line 201
     :cond_29
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
 
@@ -810,12 +810,12 @@
 .method public exitImageryGuideFragment()V
     .registers 2
 
-    .line 245
+    .line 249
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/imageryguide/GuideUIManager;->exitImageryGuideFragment()V
 
-    .line 246
+    .line 250
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideDownLoadManager:Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;->cancelAllRequest()V
@@ -882,7 +882,7 @@
 .method public onBackPressed()Z
     .registers 1
 
-    .line 265
+    .line 269
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/imageryguide/GuideUIManager;->onBackPressed()Z
@@ -895,14 +895,14 @@
 .method public onClick(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    .line 251
+    .line 255
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 254
+    .line 258
     :cond_5
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mCacheManager:Lcom/transsion/camera/feature/imageryguide/cache/CacheManager;
 
@@ -914,19 +914,19 @@
 
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideDownLoadManager:Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;
 
-    .line 255
+    .line 259
     invoke-virtual {v0}, Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;->isNetworkAvailable()Z
 
     move-result v0
 
     if-eqz v0, :cond_22
 
-    .line 256
+    .line 260
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/imageryguide/GuideUIManager;->showNetWeakTips()V
 
-    .line 257
+    .line 261
     sget-object p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[onClick]:  net is null !!! , shouldn\'t enter detail fragment"
@@ -935,7 +935,7 @@
 
     return-void
 
-    .line 261
+    .line 265
     :cond_22
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
 
@@ -955,7 +955,7 @@
 .method public requestDetailResource(Ljava/lang/String;Ljava/lang/String;I)V
     .registers 7
 
-    .line 228
+    .line 232
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideDownLoadManager:Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mUpdateResourceCallback:Lcom/transsion/camera/feature/imageryguide/callBack/IUpdateImageryGuideCallback;
@@ -964,7 +964,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 231
+    .line 235
     invoke-static {}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideConstant;->getDetailPath()Ljava/lang/String;
 
     move-result-object v2
@@ -985,7 +985,7 @@
 
     move-result-object p2
 
-    .line 228
+    .line 232
     invoke-virtual {v0, p0, p1, p3, p2}, Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;->downLoadResourceIfNeed(Lcom/transsion/camera/feature/imageryguide/callBack/IUpdateImageryGuideCallback;Ljava/lang/String;ILjava/lang/String;)Z
 
     return-void
@@ -994,7 +994,7 @@
 .method public requestImageryGuideReSourceIfNeed(Ljava/lang/String;Ljava/lang/String;)Z
     .registers 5
 
-    .line 236
+    .line 240
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideDownLoadManager:Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;->isNetworkAvailable()Z
@@ -1005,7 +1005,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 237
+    .line 241
     sget-object p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[requestImageryJsonData] net is null !!!"
@@ -1014,7 +1014,7 @@
 
     return v1
 
-    .line 240
+    .line 244
     :cond_11
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideDownLoadManager:Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;
 
@@ -1030,7 +1030,7 @@
 .method public requestImageryJsonData()V
     .registers 5
 
-    .line 215
+    .line 219
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideDownLoadManager:Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;->isNetworkAvailable()Z
@@ -1039,7 +1039,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 216
+    .line 220
     sget-object p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[requestImageryJsonData] net is null !!!"
@@ -1048,7 +1048,7 @@
 
     return-void
 
-    .line 219
+    .line 223
     :cond_10
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isSupportImageryGuideDebugEnable()Z
 
@@ -1056,16 +1056,16 @@
 
     if-eqz v0, :cond_19
 
-    .line 220
+    .line 224
     const-string v0, "https://test-api-camera.shalltry.com/camera/api/v2/usermanual/get"
 
     goto :goto_1b
 
-    .line 221
+    .line 225
     :cond_19
     const-string v0, "https://client.cameratechplatform.com/camera/api/v2/usermanual/get"
 
-    .line 222
+    .line 226
     :goto_1b
     sget-object v1, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1085,7 +1085,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 223
+    .line 227
     iget-object v1, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideDownLoadManager:Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mUpdateImageryConfigCallBack:Lcom/transsion/camera/feature/imageryguide/callBack/IUpdateImageryGuideCallback;
@@ -1098,7 +1098,7 @@
 .method public resume()V
     .registers 1
 
-    .line 181
+    .line 185
     invoke-virtual {p0}, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->exitImageryGuideFragment()V
 
     return-void
@@ -1127,7 +1127,7 @@
 .end method
 
 .method public supportModesEntry([Ljava/lang/String;[Ljava/lang/String;)V
-    .registers 3
+    .registers 4
 
     .line 75
     invoke-static {p1, p2}, Lcom/transsion/camera/feature/imageryguide/utils/StringUtils;->mergeAndRemoveDuplicates([Ljava/lang/String;[Ljava/lang/String;)Ljava/util/List;
@@ -1137,9 +1137,37 @@
     iput-object p1, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mSupportModes:Ljava/util/List;
 
     .line 76
-    iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
+    const-string p2, "com.transsion.camera.feature.supernightfilter.mode.SuperNightFilterModeEntry"
 
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/feature/imageryguide/GuideUIManager;->setSupportModeEntry(Ljava/util/List;)V
+    invoke-interface {p1, p2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1d
+
+    iget-object p1, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mSupportModes:Ljava/util/List;
+
+    const-string v0, "com.transsion.camera.feature.mode.supernight.SuperNightModeEntry"
+
+    .line 77
+    invoke-interface {p1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1d
+
+    .line 78
+    iget-object p1, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mSupportModes:Ljava/util/List;
+
+    invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 80
+    :cond_1d
+    iget-object p1, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
+
+    iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mSupportModes:Ljava/util/List;
+
+    invoke-virtual {p1, p0}, Lcom/transsion/camera/feature/imageryguide/GuideUIManager;->setSupportModeEntry(Ljava/util/List;)V
 
     return-void
 .end method
@@ -1147,12 +1175,12 @@
 .method public unInit()V
     .registers 2
 
-    .line 186
+    .line 190
     iget-object v0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideDownLoadManager:Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/imageryguide/downLoad/GuideDownLoadManager;->unInit()V
 
-    .line 187
+    .line 191
     iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/ImageryGuideManager;->mGuideUIManager:Lcom/transsion/camera/feature/imageryguide/GuideUIManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/imageryguide/GuideUIManager;->unInit()V

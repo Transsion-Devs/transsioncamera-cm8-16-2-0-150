@@ -37,7 +37,7 @@
 
     const/4 v0, 0x0
 
-    .line 5931
+    .line 5796
     invoke-direct {p0, p1, p2, v0}, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;-><init>(Lcom/transsion/camera/app/ui/BaseAppUI;Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;Z)V
 
     return-void
@@ -46,15 +46,15 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;Z)V
     .registers 4
 
-    .line 5934
+    .line 5799
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5935
+    .line 5800
     iput-object p2, p0, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->mNext:Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;
 
-    .line 5936
+    .line 5801
     iput-boolean p3, p0, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->mIsLast:Z
 
     return-void
@@ -63,17 +63,17 @@
 .method private synthetic lambda$deliver$0()V
     .registers 2
 
-    .line 5945
+    .line 5810
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->mNext:Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;
 
     if-eqz v0, :cond_8
 
-    .line 5946
+    .line 5811
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->process()V
 
     return-void
 
-    .line 5948
+    .line 5813
     :cond_8
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
@@ -89,7 +89,7 @@
 .method public final deliver()V
     .registers 3
 
-    .line 5944
+    .line 5809
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$fgetmUIHandler(Lcom/transsion/camera/app/ui/BaseAppUI;)Landroid/os/Handler;
@@ -108,7 +108,7 @@
 .method public process()V
     .registers 1
 
-    .line 5940
+    .line 5805
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->deliver()V
 
     return-void

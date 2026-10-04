@@ -22,10 +22,10 @@
 .method protected constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;II)V
     .registers 4
 
-    .line 2092
+    .line 2079
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$TeleRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
-    .line 2093
+    .line 2080
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;II)V
 
     return-void
@@ -36,7 +36,7 @@
 .method public currentRange(I)Z
     .registers 2
 
-    .line 2098
+    .line 2085
     iget p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;->mMin:I
 
     if-lt p1, p0, :cond_6
@@ -54,10 +54,10 @@
 .method protected onEnter(I)V
     .registers 2
 
-    .line 2122
+    .line 2109
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;->onEnter(I)V
 
-    .line 2123
+    .line 2110
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$TeleRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->onTeleCameraSelected()V
@@ -68,7 +68,7 @@
 .method public progressToValue(I)I
     .registers 5
 
-    .line 2103
+    .line 2090
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$TeleRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget-object v0, v0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
@@ -77,7 +77,7 @@
 
     move-result v0
 
-    .line 2104
+    .line 2091
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$TeleRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget-object v1, v1, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;
@@ -86,14 +86,14 @@
 
     move-result v1
 
-    .line 2105
+    .line 2092
     rem-int/lit8 v2, v0, 0xa
 
     if-eqz v2, :cond_15
 
     sub-int/2addr v0, v2
 
-    .line 2109
+    .line 2096
     :cond_15
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$TeleRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
@@ -136,7 +136,7 @@
 .method public valueToProgress(I)I
     .registers 2
 
-    .line 2117
+    .line 2104
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$TeleRangeConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/AbstractZoomUI;->mCameraRepository:Lcom/transsion/camera/app/common/CameraRepository;

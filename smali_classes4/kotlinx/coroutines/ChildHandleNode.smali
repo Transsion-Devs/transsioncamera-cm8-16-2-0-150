@@ -14,10 +14,10 @@
 .method public constructor <init>(Lkotlinx/coroutines/ChildJob;)V
     .registers 2
 
-    .line 1437
+    .line 1434
     invoke-direct {p0}, Lkotlinx/coroutines/JobCancellingNode;-><init>()V
 
-    .line 1436
+    .line 1433
     iput-object p1, p0, Lkotlinx/coroutines/ChildHandleNode;->childJob:Lkotlinx/coroutines/ChildJob;
 
     return-void
@@ -28,7 +28,7 @@
 .method public childCancelled(Ljava/lang/Throwable;)Z
     .registers 2
 
-    .line 1440
+    .line 1437
     invoke-virtual {p0}, Lkotlinx/coroutines/JobNode;->getJob()Lkotlinx/coroutines/JobSupport;
 
     move-result-object p0
@@ -43,7 +43,7 @@
 .method public getParent()Lkotlinx/coroutines/Job;
     .registers 1
 
-    .line 1438
+    .line 1435
     invoke-virtual {p0}, Lkotlinx/coroutines/JobNode;->getJob()Lkotlinx/coroutines/JobSupport;
 
     move-result-object p0
@@ -54,7 +54,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 1435
+    .line 1432
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/ChildHandleNode;->invoke(Ljava/lang/Throwable;)V
@@ -67,7 +67,7 @@
 .method public invoke(Ljava/lang/Throwable;)V
     .registers 2
 
-    .line 1439
+    .line 1436
     iget-object p1, p0, Lkotlinx/coroutines/ChildHandleNode;->childJob:Lkotlinx/coroutines/ChildJob;
 
     invoke-virtual {p0}, Lkotlinx/coroutines/JobNode;->getJob()Lkotlinx/coroutines/JobSupport;

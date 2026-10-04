@@ -393,7 +393,7 @@
     :try_end_a0
     .catchall {:try_start_8c .. :try_end_a0} :catchall_1c
 
-    .line 122
+    .line 117
     invoke-interface {p0, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 
     .line 53
@@ -412,7 +412,7 @@
 
     move-object p0, v12
 
-    .line 122
+    .line 117
     :goto_ab
     invoke-interface {p0, v4}, Lkotlinx/coroutines/sync/Mutex;->unlock(Ljava/lang/Object;)V
 

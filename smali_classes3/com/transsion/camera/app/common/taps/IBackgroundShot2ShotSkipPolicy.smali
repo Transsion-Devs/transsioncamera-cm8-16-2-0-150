@@ -10,6 +10,9 @@
 .method public abstract isCaptureFull(I)Z
 .end method
 
+.method public abstract isCurrentProcessingCountEmpty()Z
+.end method
+
 .method public abstract onCaptureCustomDefer(Lcom/transsion/camera/adapter/CameraProxy$ICameraCaptureState;)V
 .end method
 

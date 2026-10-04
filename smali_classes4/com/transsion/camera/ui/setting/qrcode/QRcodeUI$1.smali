@@ -35,7 +35,7 @@
     :cond_4
     const/4 p1, 0x4
 
-    .line 1283
+    .line 1365
     :goto_5
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
@@ -45,7 +45,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Landroid/view/View;Z)V
     .registers 4
 
-    .line 1275
+    .line 1357
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$1;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$1;->val$view:Landroid/view/View;
@@ -62,10 +62,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 1278
+    .line 1360
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1279
+    .line 1361
     invoke-static {}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -94,7 +94,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1280
+    .line 1362
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object p1
@@ -105,7 +105,7 @@
 
     if-ne p1, v0, :cond_3a
 
-    .line 1281
+    .line 1363
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$1;->val$view:Landroid/view/View;
 
     iget-boolean p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$1;->val$isShow:Z
@@ -124,7 +124,7 @@
 
     return-void
 
-    .line 1283
+    .line 1365
     :cond_3a
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$1;->this$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 

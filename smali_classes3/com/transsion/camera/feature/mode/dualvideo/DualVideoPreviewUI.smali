@@ -497,7 +497,7 @@
 
     const/4 v0, 0x3
 
-    .line 932
+    .line 928
     new-array v1, v0, [F
 
     fill-array-data v1, :array_32
@@ -508,7 +508,7 @@
 
     move-result-object v1
 
-    .line 933
+    .line 929
     new-array v0, v0, [F
 
     fill-array-data v0, :array_3c
@@ -519,7 +519,7 @@
 
     move-result-object v0
 
-    .line 934
+    .line 930
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     filled-new-array {v1, v0}, [Landroid/animation/PropertyValuesHolder;
@@ -532,13 +532,13 @@
 
     const-wide/16 v1, 0x78
 
-    .line 935
+    .line 931
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 936
+    .line 932
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 937
+    .line 933
     new-instance v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI$3;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI$3;-><init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;)V
@@ -565,14 +565,14 @@
 .method private addAnimatorListener()V
     .registers 3
 
-    .line 782
+    .line 778
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAlphaUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 783
+    .line 779
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
@@ -749,14 +749,14 @@
 .method private synthetic lambda$updateDualDeviceLayoutParameter$0(ZILandroid/widget/FrameLayout$LayoutParams;Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
     .registers 8
 
-    .line 473
+    .line 469
     const-string v0, "padding"
 
     const/4 v1, 0x0
 
     if-eqz p1, :cond_15
 
-    .line 474
+    .line 470
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {p5, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -773,7 +773,7 @@
 
     goto :goto_24
 
-    .line 476
+    .line 472
     :cond_15
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
@@ -792,10 +792,10 @@
     :goto_24
     const/16 p1, 0x55
 
-    .line 478
+    .line 474
     iput p1, p3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 479
+    .line 475
     const-string p1, "rootBottomMargin"
 
     invoke-virtual {p5, p1}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -812,10 +812,10 @@
 
     const/4 p1, -0x1
 
-    .line 480
+    .line 476
     iput p1, p3, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 481
+    .line 477
     const-string p2, "rootHeight"
 
     invoke-virtual {p5, p2}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -830,20 +830,20 @@
 
     iput p2, p3, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 482
+    .line 478
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {p2, p3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     const/16 p2, 0x51
 
-    .line 483
+    .line 479
     iput p2, p4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 484
+    .line 480
     iput p1, p4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 485
+    .line 481
     const-string p1, "itemBottomMargin"
 
     invoke-virtual {p5, p1}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -858,12 +858,12 @@
 
     iput p1, p4, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 486
+    .line 482
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p1, v1, v1}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 487
+    .line 483
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p0, p4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -874,12 +874,12 @@
 .method private onAlphaAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .registers 2
 
-    .line 764
+    .line 760
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-eqz p0, :cond_11
 
-    .line 765
+    .line 761
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -899,12 +899,12 @@
 .method private onDualDeviceItemSelected(Lcom/transsion/camera/feature/mode/dualvideo/widght/DualDeviceGroupItem;)V
     .registers 4
 
-    .line 805
+    .line 801
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v0, :cond_9
 
-    .line 806
+    .line 802
     iget-object v1, p1, Lcom/transsion/camera/feature/mode/dualvideo/widght/DualDeviceGroupItem;->dualDeviceGroupId:Ljava/lang/String;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->onValueChanged(Ljava/lang/String;)V
@@ -912,17 +912,17 @@
     :cond_9
     const/4 v0, 0x1
 
-    .line 808
+    .line 804
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->hideDualDeviceRoot(Z)V
 
-    .line 809
+    .line 805
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUI;->switchCamera(Ljava/lang/String;)V
 
-    .line 810
+    .line 806
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
@@ -939,7 +939,7 @@
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 811
+    .line 807
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -952,19 +952,19 @@
 .method private onTranslateAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .registers 5
 
-    .line 770
+    .line 766
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-eqz v0, :cond_2c
 
-    .line 771
+    .line 767
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mScreenFormType:I
 
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_1f
 
-    .line 772
+    .line 768
     iget p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mOrientation:I
 
     if-eqz p0, :cond_11
@@ -973,7 +973,7 @@
 
     if-ne p0, v1, :cond_1f
 
-    .line 773
+    .line 769
     :cond_11
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
@@ -989,7 +989,7 @@
 
     return-void
 
-    .line 777
+    .line 773
     :cond_1f
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
@@ -1010,14 +1010,14 @@
 .method private removeAnimatorListener()V
     .registers 3
 
-    .line 787
+    .line 783
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAlphaUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->removeUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 788
+    .line 784
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
@@ -1059,7 +1059,7 @@
 .method private runDualDeviceRootAnimator()V
     .registers 8
 
-    .line 957
+    .line 953
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceRootIn:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_f
@@ -1070,12 +1070,12 @@
 
     if-eqz v0, :cond_f
 
-    .line 958
+    .line 954
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceRootIn:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 960
+    .line 956
     :cond_f
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceRootOut:Landroid/animation/ObjectAnimator;
 
@@ -1087,12 +1087,12 @@
 
     if-eqz v0, :cond_1e
 
-    .line 961
+    .line 957
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceRootOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 965
+    .line 961
     :cond_1e
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceRootLayout:Landroid/view/View;
 
@@ -1120,7 +1120,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceRootOut:Landroid/animation/ObjectAnimator;
 
-    .line 966
+    .line 962
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceRootLayout:Landroid/view/View;
 
     new-array v1, v1, [F
@@ -1139,17 +1139,17 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceRootIn:Landroid/animation/ObjectAnimator;
 
-    .line 967
+    .line 963
     sget-object v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->DUAL_DEVICE_INTERPOLATOR_IN:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 968
+    .line 964
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceRootOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 969
+    .line 965
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceRootOut:Landroid/animation/ObjectAnimator;
 
     new-instance v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI$4;
@@ -1158,7 +1158,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 978
+    .line 974
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceRootOut:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ObjectAnimator;->start()V
@@ -1169,7 +1169,7 @@
 .method private setDualDeviceAnimator()V
     .registers 8
 
-    .line 751
+    .line 747
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1184,7 +1184,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateDistance:F
 
-    .line 753
+    .line 749
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v1, 0x3dcccccd    # 0.1f
@@ -1197,7 +1197,7 @@
 
     const/4 v1, 0x2
 
-    .line 754
+    .line 750
     new-array v2, v1, [F
 
     fill-array-data v2, :array_4a
@@ -1210,15 +1210,15 @@
 
     const-wide/16 v3, 0xc8
 
-    .line 755
+    .line 751
     invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 756
+    .line 752
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 758
+    .line 754
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateDistance:F
 
     new-array v1, v1, [F
@@ -1239,10 +1239,10 @@
 
     iput-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
-    .line 759
+    .line 755
     invoke-virtual {v1, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 760
+    .line 756
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
@@ -1259,7 +1259,7 @@
 .method private setEnable(Z)V
     .registers 2
 
-    .line 792
+    .line 788
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsItemGroupHide:Z
 
     return-void
@@ -1275,13 +1275,13 @@
     .line 416
     iget-object v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_36c
+    if-eqz v0, :cond_357
 
     iget-object v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-nez v0, :cond_e
 
-    goto/16 :goto_36c
+    goto/16 :goto_357
 
     .line 419
     :cond_e
@@ -1325,32 +1325,7 @@
 
     check-cast v5, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 428
-    iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    invoke-interface {v3}, Lcom/transsion/camera/app/common/IAppUI;->getGoogleLensUIButtonVisible()I
-
-    move-result v3
-
-    if-nez v3, :cond_46
-
-    .line 429
-    iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    sget v7, Lcom/transsion/camera/feature/mode/dualvideo/R$dimen;->dual_device_device_group_button_end_lens_margin:I
-
-    invoke-virtual {v3, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v3
-
-    goto :goto_52
-
-    .line 431
-    :cond_46
+    .line 427
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1363,23 +1338,22 @@
 
     move-result v3
 
-    .line 434
-    :goto_52
+    .line 430
     iget v7, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 437
+    .line 433
     iget v8, v4, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 439
+    .line 435
     iget v9, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     const/4 v10, 0x3
 
     const/4 v11, 0x0
 
-    if-ne v6, v10, :cond_75
+    if-ne v6, v10, :cond_60
 
-    .line 445
+    .line 441
     iget-object v2, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     const-string v12, "hover_support_setting_ui_bottom_margin"
@@ -1388,7 +1362,7 @@
 
     move-result v2
 
-    .line 446
+    .line 442
     iget-object v12, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v12}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1409,54 +1383,54 @@
 
     move v2, v11
 
-    goto :goto_82
+    goto :goto_6d
 
-    :cond_75
-    if-nez v6, :cond_7f
+    :cond_60
+    if-nez v6, :cond_6a
 
     sub-int/2addr v0, v2
 
-    .line 451
+    .line 447
     iget-object v12, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v12, v6}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->getItemBottomMarginDst(Landroid/content/Context;I)I
 
     move-result v12
 
-    goto :goto_82
+    goto :goto_6d
 
-    :cond_7f
+    :cond_6a
     move v0, v11
 
     move v2, v0
 
     move v12, v2
 
-    .line 454
-    :goto_82
+    .line 450
+    :goto_6d
     iget-object v13, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v13, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;->calculateBottomPanelPaddingHeight(I)I
 
     move-result v13
 
-    if-ltz v13, :cond_8c
+    if-ltz v13, :cond_77
 
     const/4 v15, 0x1
 
-    goto :goto_8d
+    goto :goto_78
 
-    :cond_8c
+    :cond_77
     move v15, v11
 
-    .line 456
-    :goto_8d
+    .line 452
+    :goto_78
     invoke-virtual {v4, v11, v11, v11, v11}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 457
+    .line 453
     invoke-virtual {v5, v11, v11, v11, v11}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 458
+    .line 454
     iget-object v14, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-static {v14}, Lcom/transsion/camera/utils/FeatureSupport;->isOnlySupportTBHoverUI(Landroid/content/Context;)Z
@@ -1465,11 +1439,11 @@
 
     const/16 v11, 0x10e
 
-    if-eqz v14, :cond_103
+    if-eqz v14, :cond_ee
 
-    if-eqz p2, :cond_103
+    if-eqz p2, :cond_ee
 
-    .line 459
+    .line 455
     const-string v10, "rootBottomMargin"
 
     filled-new-array {v8, v2}, [I
@@ -1480,7 +1454,7 @@
 
     move-result-object v2
 
-    .line 461
+    .line 457
     const-string v8, "rootHeight"
 
     filled-new-array {v7, v0}, [I
@@ -1491,7 +1465,7 @@
 
     move-result-object v0
 
-    .line 463
+    .line 459
     const-string v7, "itemBottomMargin"
 
     filled-new-array {v9, v12}, [I
@@ -1502,26 +1476,26 @@
 
     move-result-object v7
 
-    if-eqz v15, :cond_c6
+    if-eqz v15, :cond_b1
 
-    .line 465
+    .line 461
     iget-object v8, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v8}, Landroid/view/View;->getPaddingBottom()I
 
     move-result v8
 
-    goto :goto_cc
+    goto :goto_b7
 
-    .line 466
-    :cond_c6
+    .line 462
+    :cond_b1
     iget-object v8, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v8}, Landroid/view/View;->getPaddingTop()I
 
     move-result v8
 
-    :goto_cc
+    :goto_b7
     invoke-static {v13}, Ljava/lang/Math;->abs(I)I
 
     move-result v9
@@ -1530,14 +1504,14 @@
 
     move-result-object v8
 
-    .line 465
+    .line 461
     const-string v9, "padding"
 
     invoke-static {v9, v8}, Landroid/animation/PropertyValuesHolder;->ofInt(Ljava/lang/String;[I)Landroid/animation/PropertyValuesHolder;
 
     move-result-object v8
 
-    .line 468
+    .line 464
     filled-new-array {v2, v0, v7, v8}, [Landroid/animation/PropertyValuesHolder;
 
     move-result-object v0
@@ -1550,17 +1524,17 @@
 
     const-wide/16 v7, 0x190
 
-    .line 469
+    .line 465
     invoke-virtual {v0, v7, v8}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 470
+    .line 466
     iget-object v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v2, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 472
+    .line 468
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI$$ExternalSyntheticLambda0;
@@ -1571,51 +1545,51 @@
 
     invoke-virtual {v7, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 489
+    .line 485
     iget-object v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mHoverAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     const/4 v2, 0x0
 
-    goto/16 :goto_354
+    goto/16 :goto_33f
 
-    :cond_103
+    :cond_ee
     move v14, v15
 
     const/16 v7, 0x55
 
-    if-eqz v6, :cond_10a
+    if-eqz v6, :cond_f5
 
-    if-ne v6, v10, :cond_10d
+    if-ne v6, v10, :cond_f8
 
-    :cond_10a
+    :cond_f5
     const/4 v8, 0x0
 
-    goto/16 :goto_314
+    goto/16 :goto_2ff
 
-    .line 509
-    :cond_10d
+    .line 505
+    :cond_f8
     iget-object v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2, v2, v2, v2}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 510
+    .line 506
     iget v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mOrientation:I
 
     const/16 v2, 0x5a
 
-    if-eq v0, v2, :cond_284
+    if-eq v0, v2, :cond_26f
 
     const/16 v3, 0xb4
 
-    if-eq v0, v3, :cond_20d
+    if-eq v0, v3, :cond_1f8
 
-    if-eq v0, v11, :cond_197
+    if-eq v0, v11, :cond_182
 
-    .line 554
+    .line 550
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1630,7 +1604,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 555
+    .line 551
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1647,10 +1621,10 @@
 
     const/16 v3, 0x35
 
-    .line 556
+    .line 552
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 557
+    .line 553
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1665,7 +1639,7 @@
 
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 558
+    .line 554
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1680,7 +1654,7 @@
 
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 560
+    .line 556
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1695,7 +1669,7 @@
 
     iput v7, v5, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 561
+    .line 557
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1710,10 +1684,10 @@
 
     iput v7, v5, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 562
+    .line 558
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 563
+    .line 559
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1728,7 +1702,7 @@
 
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 564
+    .line 560
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1743,10 +1717,10 @@
 
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    goto/16 :goto_2fa
+    goto/16 :goto_2e5
 
-    .line 539
-    :cond_197
+    .line 535
+    :cond_182
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1761,7 +1735,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 540
+    .line 536
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1776,10 +1750,10 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 541
+    .line 537
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 542
+    .line 538
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1794,7 +1768,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 543
+    .line 539
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1809,7 +1783,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 545
+    .line 541
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1824,7 +1798,7 @@
 
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 546
+    .line 542
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1839,10 +1813,10 @@
 
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 547
+    .line 543
     iput v7, v5, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 548
+    .line 544
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1857,7 +1831,7 @@
 
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 549
+    .line 545
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1872,10 +1846,10 @@
 
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    goto/16 :goto_2fa
+    goto/16 :goto_2e5
 
-    .line 526
-    :cond_20d
+    .line 522
+    :cond_1f8
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1890,7 +1864,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 527
+    .line 523
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1907,10 +1881,10 @@
 
     const/16 v3, 0x53
 
-    .line 528
+    .line 524
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 529
+    .line 525
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1925,7 +1899,7 @@
 
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 530
+    .line 526
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1940,7 +1914,7 @@
 
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 532
+    .line 528
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1955,7 +1929,7 @@
 
     iput v7, v5, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 533
+    .line 529
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1970,10 +1944,10 @@
 
     iput v7, v5, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 534
+    .line 530
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 535
+    .line 531
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1988,7 +1962,7 @@
 
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 536
+    .line 532
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2003,10 +1977,10 @@
 
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    goto :goto_2fa
+    goto :goto_2e5
 
-    .line 513
-    :cond_284
+    .line 509
+    :cond_26f
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2021,7 +1995,7 @@
 
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 514
+    .line 510
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2038,10 +2012,10 @@
 
     const/16 v3, 0x33
 
-    .line 515
+    .line 511
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 516
+    .line 512
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2056,7 +2030,7 @@
 
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 517
+    .line 513
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2071,7 +2045,7 @@
 
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 519
+    .line 515
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2086,7 +2060,7 @@
 
     iput v7, v5, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 520
+    .line 516
     iget-object v7, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2101,10 +2075,10 @@
 
     iput v7, v5, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 521
+    .line 517
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 522
+    .line 518
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2119,7 +2093,7 @@
 
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 523
+    .line 519
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2134,8 +2108,8 @@
 
     iput v3, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 567
-    :goto_2fa
+    .line 563
+    :goto_2e5
     iget-object v3, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     const/4 v8, 0x0
@@ -2144,32 +2118,32 @@
 
     add-int/2addr v0, v2
 
-    .line 568
+    .line 564
     rem-int/lit16 v0, v0, 0x168
 
-    .line 569
+    .line 565
     iget-object v2, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 570
+    .line 566
     iget-object v2, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v2, v0, v8}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 571
+    .line 567
     iget-object v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v0, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     move v2, v8
 
-    goto :goto_354
+    goto :goto_33f
 
-    :goto_314
-    if-eqz v14, :cond_32a
+    :goto_2ff
+    if-eqz v14, :cond_315
 
-    .line 492
+    .line 488
     iget-object v9, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v9}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
@@ -2180,7 +2154,7 @@
 
     move-result v9
 
-    .line 493
+    .line 489
     iget-object v10, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     invoke-static {v13}, Ljava/lang/Math;->abs(I)I
@@ -2189,10 +2163,10 @@
 
     invoke-virtual {v10, v8, v9, v3, v13}, Landroid/view/View;->setPadding(IIII)V
 
-    goto :goto_333
+    goto :goto_31e
 
-    .line 495
-    :cond_32a
+    .line 491
+    :cond_315
     iget-object v9, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     invoke-static {v13}, Ljava/lang/Math;->abs(I)I
@@ -2201,109 +2175,109 @@
 
     invoke-virtual {v9, v8, v10, v3, v8}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 497
-    :goto_333
+    .line 493
+    :goto_31e
     iput v7, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 498
+    .line 494
     iput v2, v4, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     const/4 v2, -0x1
 
-    .line 499
+    .line 495
     iput v2, v4, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 500
+    .line 496
     iput v0, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 501
+    .line 497
     iget-object v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     const/16 v0, 0x51
 
-    .line 503
+    .line 499
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 504
+    .line 500
     iput v2, v5, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 505
+    .line 501
     iput v12, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 506
+    .line 502
     iget-object v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2, v2}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 507
+    .line 503
     iget-object v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v0, v5}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 573
-    :goto_354
+    .line 569
+    :goto_33f
     iget-object v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupAdapter:Lcom/transsion/camera/feature/mode/dualvideo/widght/DualDeviceGroupAdapter;
 
-    if-eqz v0, :cond_36c
+    if-eqz v0, :cond_357
 
     const/4 v0, 0x1
 
-    if-ne v6, v0, :cond_35c
+    if-ne v6, v0, :cond_347
 
-    goto :goto_35d
+    goto :goto_348
 
-    :cond_35c
+    :cond_347
     move v11, v2
 
-    .line 575
-    :goto_35d
+    .line 571
+    :goto_348
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
 
-    if-eqz v0, :cond_367
+    if-eqz v0, :cond_352
 
-    if-nez v6, :cond_367
+    if-nez v6, :cond_352
 
-    .line 576
+    .line 572
     iget v11, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mOrientation:I
 
-    .line 578
-    :cond_367
+    .line 574
+    :cond_352
     iget-object v0, v1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupAdapter:Lcom/transsion/camera/feature/mode/dualvideo/widght/DualDeviceGroupAdapter;
 
     invoke-virtual {v0, v11}, Lcom/transsion/camera/feature/mode/dualvideo/widght/DualDeviceGroupAdapter;->setOrientation(I)V
 
-    :cond_36c
-    :goto_36c
+    :cond_357
+    :goto_357
     return-void
 .end method
 
 .method private updatePIPViewLayoutRect()V
     .registers 8
 
-    .line 583
+    .line 579
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPRectView:Lcom/transsion/camera/feature/mode/dualvideo/DragRectView;
 
     if-eqz v0, :cond_78
 
     const/4 v1, 0x0
 
-    .line 584
+    .line 580
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 585
+    .line 581
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mScreenFormType:I
 
     const/4 v2, 0x1
 
     if-ne v0, v2, :cond_30
 
-    .line 586
+    .line 582
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2316,7 +2290,7 @@
 
     move-result v0
 
-    .line 587
+    .line 583
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2329,7 +2303,7 @@
 
     move-result v3
 
-    .line 588
+    .line 584
     iget-object v4, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPRectView:Lcom/transsion/camera/feature/mode/dualvideo/DragRectView;
 
     iget v5, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPreviewViewWidth:I
@@ -2342,7 +2316,7 @@
 
     goto :goto_3b
 
-    .line 590
+    .line 586
     :cond_30
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPRectView:Lcom/transsion/camera/feature/mode/dualvideo/DragRectView;
 
@@ -2354,7 +2328,7 @@
 
     invoke-virtual {v0, v3, v1, v4}, Lcom/transsion/camera/feature/mode/dualvideo/DragRectView;->setAreaSize(III)V
 
-    .line 592
+    .line 588
     :goto_3b
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPRectView:Lcom/transsion/camera/feature/mode/dualvideo/DragRectView;
 
@@ -2364,7 +2338,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 593
+    .line 589
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPRectView:Lcom/transsion/camera/feature/mode/dualvideo/DragRectView;
 
     invoke-static {v3}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
@@ -2373,7 +2347,7 @@
 
     if-ne v2, v3, :cond_5b
 
-    .line 594
+    .line 590
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPDisplayWidth:I
 
     iget v3, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPDisplayY:I
@@ -2392,7 +2366,7 @@
 
     goto :goto_66
 
-    .line 597
+    .line 593
     :cond_5b
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPDisplayX:I
 
@@ -2404,23 +2378,23 @@
 
     invoke-virtual {v0, v2, v3, v4, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 599
+    .line 595
     :goto_66
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPDisplayWidth:I
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 600
+    .line 596
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPDisplayHeight:I
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 601
+    .line 597
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPRectView:Lcom/transsion/camera/feature/mode/dualvideo/DragRectView;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 602
+    .line 598
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPRectView:Lcom/transsion/camera/feature/mode/dualvideo/DragRectView;
 
     invoke-virtual {p0, v1}, Landroid/view/View;->setSelected(Z)V
@@ -2432,17 +2406,17 @@
 .method private updateSplitDividerViewLayout()V
     .registers 7
 
-    .line 607
+    .line 603
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mSplitDivider:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_b9
 
     const/4 v1, 0x0
 
-    .line 608
+    .line 604
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 609
+    .line 605
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPreviewViewHeight:I
 
     int-to-float v0, v0
@@ -2461,7 +2435,7 @@
 
     const-wide v4, 0x3ffc71c71c71c71cL    # 1.7777777777777777
 
-    .line 610
+    .line 606
     invoke-static {v2, v3, v4, v5}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result v0
@@ -2472,7 +2446,7 @@
 
     if-nez v0, :cond_47
 
-    .line 611
+    .line 607
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2503,7 +2477,7 @@
 
     return-void
 
-    .line 615
+    .line 611
     :cond_47
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2533,7 +2507,7 @@
 
     invoke-static {v0, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 617
+    .line 613
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPreviewViewWidth:I
 
     if-lez v0, :cond_b9
@@ -2542,12 +2516,12 @@
 
     if-lez v0, :cond_b9
 
-    .line 618
+    .line 614
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDividerDisplayHeight:I
 
     if-nez v0, :cond_7e
 
-    .line 619
+    .line 615
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mSplitDivider:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
@@ -2556,7 +2530,7 @@
 
     iput v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDividerDisplayHeight:I
 
-    .line 621
+    .line 617
     :cond_7e
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mSplitDivider:Landroid/widget/ImageView;
 
@@ -2566,7 +2540,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 622
+    .line 618
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPIPRectView:Lcom/transsion/camera/feature/mode/dualvideo/DragRectView;
 
     invoke-static {v2}, Landroidx/core/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
@@ -2577,7 +2551,7 @@
 
     if-ne v3, v2, :cond_a0
 
-    .line 623
+    .line 619
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPreviewViewWidth:I
 
     iget v3, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDividerDisplayY:I
@@ -2596,7 +2570,7 @@
 
     goto :goto_b0
 
-    .line 626
+    .line 622
     :cond_a0
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDividerDisplayY:I
 
@@ -2614,13 +2588,13 @@
 
     invoke-virtual {v0, v1, v4, v5, v2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 629
+    .line 625
     :goto_b0
     iget v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mPreviewViewWidth:I
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 630
+    .line 626
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mSplitDivider:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -2753,7 +2727,7 @@
 .method public getItemVisibility()I
     .registers 1
 
-    .line 928
+    .line 924
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
@@ -2796,7 +2770,7 @@
 .method public hideDualDeviceRoot(Z)V
     .registers 7
 
-    .line 859
+    .line 855
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsItemGroupHide:Z
 
     if-nez v0, :cond_5
@@ -2808,7 +2782,7 @@
 
     if-eqz p1, :cond_15
 
-    .line 862
+    .line 858
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsPopSettingShow:Z
 
     if-nez p1, :cond_15
@@ -2817,12 +2791,12 @@
 
     if-eq p1, v0, :cond_15
 
-    .line 863
+    .line 859
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1, v0, v0}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerRootUI(ZZ)V
 
-    .line 865
+    .line 861
     :cond_15
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -2830,10 +2804,10 @@
 
     invoke-interface {p1, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 866
+    .line 862
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsDualDeviceRootHide:Z
 
-    .line 867
+    .line 863
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     const/4 v1, 0x2
@@ -2844,12 +2818,12 @@
 
     invoke-virtual {p1, v2}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 868
+    .line 864
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 869
+    .line 865
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mScreenFormType:I
 
     const/4 v2, 0x0
@@ -2858,7 +2832,7 @@
 
     if-ne p1, v0, :cond_5a
 
-    .line 870
+    .line 866
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mOrientation:I
 
     if-eqz p1, :cond_4c
@@ -2869,7 +2843,7 @@
 
     goto :goto_4c
 
-    .line 873
+    .line 869
     :cond_3d
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -2887,7 +2861,7 @@
 
     goto :goto_68
 
-    .line 871
+    .line 867
     :cond_4c
     :goto_4c
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
@@ -2904,7 +2878,7 @@
 
     goto :goto_68
 
-    .line 876
+    .line 872
     :cond_5a
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -2920,7 +2894,7 @@
 
     invoke-virtual {p1, v1}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 878
+    .line 874
     :goto_68
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -2928,14 +2902,14 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 879
+    .line 875
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDisappearAnimatorEndListener:Landroid/animation/AnimatorListenerAdapter;
 
     invoke-virtual {p1, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 880
+    .line 876
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
@@ -3262,7 +3236,7 @@
 .method public isDualDeviceRootHide()Z
     .registers 1
 
-    .line 892
+    .line 888
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsDualDeviceRootHide:Z
 
     return p0
@@ -3282,7 +3256,7 @@
 .method public isPopSettingShow(Z)Z
     .registers 2
 
-    .line 884
+    .line 880
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsPopSettingShow:Z
 
     return p1
@@ -3588,17 +3562,17 @@
 
     const/4 v0, 0x0
 
-    .line 826
+    .line 822
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsStartRecording:Z
 
-    .line 827
+    .line 823
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsDualDeviceRootHide:Z
 
     if-nez v0, :cond_b
 
     const/4 v0, 0x1
 
-    .line 828
+    .line 824
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->hideDualDeviceRoot(Z)V
 
     :cond_b
@@ -3608,14 +3582,14 @@
 .method public resetRecordingUI()V
     .registers 3
 
-    .line 997
+    .line 993
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "resetRecordingUI: "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 998
+    .line 994
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mRecordingAnimator:Landroid/animation/Animator;
 
     if-eqz v0, :cond_16
@@ -3626,28 +3600,28 @@
 
     if-eqz v0, :cond_16
 
-    .line 999
+    .line 995
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mRecordingAnimator:Landroid/animation/Animator;
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 1001
+    .line 997
     :cond_16
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_2c
 
-    .line 1002
+    .line 998
     invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 1003
+    .line 999
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1004
+    .line 1000
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     sget v0, Lcom/transsion/camera/app/common/R$id;->key_video_recording_state:I
@@ -3680,7 +3654,7 @@
 .method public setDualDeviceButtonEnable(Z)V
     .registers 2
 
-    .line 911
+    .line 907
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
@@ -3691,7 +3665,7 @@
 .method public setDualDeviceGroupRootVisibility(I)V
     .registers 2
 
-    .line 888
+    .line 884
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
@@ -3702,21 +3676,21 @@
 .method public setDualDeviceItemEnable(Z)V
     .registers 3
 
-    .line 796
+    .line 792
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupAdapter:Lcom/transsion/camera/feature/mode/dualvideo/widght/DualDeviceGroupAdapter;
 
     if-eqz v0, :cond_7
 
-    .line 797
+    .line 793
     invoke-virtual {v0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/widght/DualDeviceGroupAdapter;->setItemEnable(Z)V
 
-    .line 799
+    .line 795
     :cond_7
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDeviceGroupRecyclerView:Landroidx/recyclerview/widget/RecyclerView;
 
     if-eqz p0, :cond_e
 
-    .line 800
+    .line 796
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
     :cond_e
@@ -3726,10 +3700,10 @@
 .method public setOrientation(I)V
     .registers 5
 
-    .line 915
+    .line 911
     iput p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mOrientation:I
 
-    .line 916
+    .line 912
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -3742,30 +3716,30 @@
 
     if-nez v0, :cond_17
 
-    .line 917
+    .line 913
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupAdapter:Lcom/transsion/camera/feature/mode/dualvideo/widght/DualDeviceGroupAdapter;
 
     if-eqz v0, :cond_1f
 
-    .line 918
+    .line 914
     iget v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mOrientation:I
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/feature/mode/dualvideo/widght/DualDeviceGroupAdapter;->setOrientation(I)V
 
     goto :goto_1f
 
-    .line 920
+    .line 916
     :cond_17
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mScreenFormType:I
 
     if-ne v0, v1, :cond_1f
 
-    .line 921
+    .line 917
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->runDualDeviceRootAnimator()V
 
     return-void
 
-    .line 924
+    .line 920
     :cond_1f
     :goto_1f
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButton:Lcom/transsion/camera/app/ui/widget/RotateImageView;
@@ -3891,12 +3865,12 @@
 .method public setSplitDividerEnable(Z)V
     .registers 2
 
-    .line 951
+    .line 947
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mSplitDivider:Landroid/widget/ImageView;
 
     if-eqz p0, :cond_7
 
-    .line 952
+    .line 948
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
     :cond_7
@@ -4038,7 +4012,7 @@
 .method public showDualDeviceRoot()V
     .registers 7
 
-    .line 833
+    .line 829
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsStartRecording:Z
 
     if-nez v0, :cond_77
@@ -4049,7 +4023,7 @@
 
     goto :goto_77
 
-    .line 836
+    .line 832
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -4057,7 +4031,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 837
+    .line 833
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mScreenFormType:I
 
     const/4 v1, 0x1
@@ -4066,21 +4040,21 @@
 
     if-eq v0, v1, :cond_1b
 
-    .line 838
+    .line 834
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0, v2, v2}, Lcom/transsion/camera/app/common/IAppUI;->showOrHideModePickerRootUI(ZZ)V
 
-    .line 840
+    .line 836
     :cond_1b
     iput-boolean v2, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsDualDeviceRootHide:Z
 
-    .line 841
+    .line 837
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 842
+    .line 838
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     const/4 v3, 0x2
@@ -4091,19 +4065,19 @@
 
     invoke-virtual {v0, v4}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 843
+    .line 839
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 844
+    .line 840
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mScreenFormType:I
 
     const/4 v4, 0x0
 
     if-ne v0, v1, :cond_5d
 
-    .line 845
+    .line 841
     iget v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mOrientation:I
 
     if-eqz v0, :cond_4f
@@ -4114,7 +4088,7 @@
 
     goto :goto_4f
 
-    .line 848
+    .line 844
     :cond_40
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -4132,7 +4106,7 @@
 
     goto :goto_6b
 
-    .line 846
+    .line 842
     :cond_4f
     :goto_4f
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
@@ -4149,7 +4123,7 @@
 
     goto :goto_6b
 
-    .line 851
+    .line 847
     :cond_5d
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -4165,7 +4139,7 @@
 
     invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 854
+    .line 850
     :goto_6b
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -4173,7 +4147,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 855
+    .line 851
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
@@ -4194,7 +4168,7 @@
 
     if-eqz p1, :cond_9
 
-    .line 897
+    .line 893
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     const/4 p1, 0x0
@@ -4203,7 +4177,7 @@
 
     return-void
 
-    .line 899
+    .line 895
     :cond_9
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -4213,14 +4187,14 @@
 
     if-eqz p1, :cond_2f
 
-    .line 900
+    .line 896
     sget-object p1, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "showOrHideDualDeviceButton: dismiss"
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 901
+    .line 897
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     if-nez p1, :cond_1e
@@ -4234,7 +4208,7 @@
 
     move-result-object p1
 
-    .line 902
+    .line 898
     :goto_22
     instance-of v0, p1, Landroid/animation/Animator;
 
@@ -4250,7 +4224,7 @@
 
     return-void
 
-    .line 906
+    .line 902
     :cond_2f
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
@@ -4289,12 +4263,12 @@
 .method public showOrhideDualVideoGroupItem()V
     .registers 2
 
-    .line 818
+    .line 814
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsDualDeviceRootHide:Z
 
     if-eqz v0, :cond_8
 
-    .line 819
+    .line 815
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->showDualDeviceRoot()V
 
     return-void
@@ -4302,7 +4276,7 @@
     :cond_8
     const/4 v0, 0x1
 
-    .line 821
+    .line 817
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->hideDualDeviceRoot(Z)V
 
     return-void
@@ -4336,7 +4310,7 @@
 .method public startRecordingAnimation(ZLandroid/animation/Animator$AnimatorListener;)V
     .registers 7
 
-    .line 983
+    .line 979
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->isNextRecordingAnimationEnable(Landroid/view/View;Z)Z
@@ -4345,7 +4319,7 @@
 
     if-eqz v0, :cond_4f
 
-    .line 984
+    .line 980
     sget-object v0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4364,7 +4338,7 @@
 
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
-    .line 985
+    .line 981
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
     move-result v3
@@ -4385,15 +4359,15 @@
 
     move-result-object v1
 
-    .line 984
+    .line 980
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 986
+    .line 982
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mRecordingAnimator:Landroid/animation/Animator;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/AnimationUtils;->stopAnimator(Landroid/animation/Animator;)V
 
-    .line 987
+    .line 983
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mDualDeviceGroupButtonRoot:Landroid/view/ViewGroup;
 
     invoke-virtual {p0, v0, p1}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->createRecordingAnimationWithState(Landroid/view/View;Z)Landroid/animation/Animator;
@@ -4404,10 +4378,10 @@
 
     if-eqz p2, :cond_4a
 
-    .line 989
+    .line 985
     invoke-virtual {p1, p2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 991
+    .line 987
     :cond_4a
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mRecordingAnimator:Landroid/animation/Animator;
 
@@ -4420,7 +4394,7 @@
 .method public startRecordingHideDeviceRoot(Z)V
     .registers 2
 
-    .line 815
+    .line 811
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewUI;->mIsStartRecording:Z
 
     return-void

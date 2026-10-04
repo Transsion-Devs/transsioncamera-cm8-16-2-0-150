@@ -319,14 +319,14 @@
 
     iput-object v4, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 721
+    .line 730
     new-instance v4, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI$$ExternalSyntheticLambda5;
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI$$ExternalSyntheticLambda5;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;)V
 
     iput-object v4, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mSettingDataCallback:Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
-    .line 742
+    .line 751
     new-instance v4, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI$$ExternalSyntheticLambda6;
 
     invoke-direct {v4, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI$$ExternalSyntheticLambda6;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;)V
@@ -589,7 +589,7 @@
 .method private getAnimatorDuration()I
     .registers 1
 
-    .line 1004
+    .line 1026
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p0
@@ -882,7 +882,7 @@
 
     if-ne p2, p1, :cond_1e
 
-    .line 723
+    .line 732
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object p1
@@ -893,18 +893,18 @@
 
     if-ne p1, p2, :cond_12
 
-    .line 724
+    .line 733
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->resetUI()V
 
     return-void
 
-    .line 725
+    .line 734
     :cond_12
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mEntryView:Landroid/view/View;
 
     if-eqz p1, :cond_1e
 
-    .line 726
+    .line 735
     new-instance p2, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;)V
@@ -918,15 +918,15 @@
 .method private synthetic lambda$new$4(Z)V
     .registers 3
 
-    .line 743
+    .line 752
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mLowLight:Z
 
     if-eq v0, p1, :cond_9
 
-    .line 744
+    .line 753
     iput-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mLowLight:Z
 
-    .line 745
+    .line 754
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->ringScreenLightUpdateUI()V
 
     :cond_9
@@ -936,12 +936,12 @@
 .method private synthetic lambda$ringScreenLightUpdateUI$5()V
     .registers 2
 
-    .line 752
+    .line 761
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;
 
     if-eqz v0, :cond_9
 
-    .line 753
+    .line 762
     iget-boolean p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mLowLight:Z
 
     invoke-virtual {v0, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;->updateLowLight(Z)V
@@ -1033,12 +1033,12 @@
         }
     .end annotation
 
-    .line 789
+    .line 798
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-nez v0, :cond_c
 
-    .line 790
+    .line 799
     sget-object p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "mStatusMonitor is null! Please check it!"
@@ -1047,7 +1047,7 @@
 
     return-void
 
-    .line 793
+    .line 802
     :cond_c
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1066,7 +1066,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 794
+    .line 803
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mSettingChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
@@ -1102,29 +1102,29 @@
 .method private resetUI()V
     .registers 3
 
-    .line 732
+    .line 741
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 733
+    .line 742
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->showEntryRootView()V
 
-    .line 734
+    .line 743
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
     if-eqz v0, :cond_e
 
     const/4 v1, 0x0
 
-    .line 735
+    .line 744
     invoke-virtual {v0, v1, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
-    .line 737
+    .line 746
     :cond_e
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
     if-eqz p0, :cond_15
 
-    .line 738
+    .line 747
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->hideAutoHint()V
 
     :cond_15
@@ -1217,22 +1217,22 @@
 .method private showEntryRootView()V
     .registers 3
 
-    .line 690
+    .line 699
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mEntryView:Landroid/view/View;
 
     if-eqz v0, :cond_e
 
-    .line 691
+    .line 700
     iget-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mNeedShow:Z
 
     if-eqz v1, :cond_e
 
     const/4 v1, 0x0
 
-    .line 692
+    .line 701
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mNeedShow:Z
 
-    .line 693
+    .line 702
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_e
@@ -1426,7 +1426,7 @@
         }
     .end annotation
 
-    .line 799
+    .line 808
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1444,7 +1444,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 800
+    .line 809
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mSettingChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
@@ -1538,17 +1538,6 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 390
-    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
-
-    iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mBarClickListener:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$BarClickListener;
-
-    iget-object p3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mSeekBarChangeListener:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$SeekBarChangeListener;
-
-    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mContrastListener:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$ContrastListener;
-
-    invoke-virtual {p1, p2, p3, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->setListener(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$BarClickListener;Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$SeekBarChangeListener;Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$ContrastListener;)V
-
     .line 391
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mEntryView:Landroid/view/View;
 
@@ -1574,13 +1563,6 @@
     check-cast p1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;
-
-    .line 394
-    iget-object p2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    iget-object p3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
-
-    invoke-virtual {p1, p2, p3}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;->setUIInterface(Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;)V
 
     .line 395
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->updateSettingUILayout(Z)V
@@ -1628,9 +1610,6 @@
     move-result-object p2
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 400
-    invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->addAnimatorListener()V
 
     .line 401
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mEntryView:Landroid/view/View;
@@ -1725,7 +1704,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 700
+    .line 709
     const-string p0, "key_mu_face_beauty"
 
     return-object p0
@@ -1742,17 +1721,17 @@
         }
     .end annotation
 
-    .line 710
+    .line 719
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 711
+    .line 720
     const-string v0, "key_mu_face_beauty"
 
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 712
+    .line 721
     const-string v0, "key_video_facebeauty"
 
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1763,7 +1742,7 @@
 .method public getValue()Ljava/lang/String;
     .registers 1
 
-    .line 705
+    .line 714
     const-string p0, ""
 
     return-object p0
@@ -1772,20 +1751,20 @@
 .method public hideEntryView()V
     .registers 3
 
-    .line 666
+    .line 675
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->hideEntryView()V
 
-    .line 667
+    .line 676
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "hideEntryView"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 668
+    .line 677
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 669
+    .line 678
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideEntryRootView()V
 
     return-void
@@ -1841,362 +1820,401 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_18d
+    if-eqz p1, :cond_1ac
 
     const/4 v1, 0x1
 
-    if-eq p1, v1, :cond_175
+    if-eq p1, v1, :cond_194
 
     const/4 v2, 0x2
 
-    if-eq p1, v2, :cond_16a
+    if-eq p1, v2, :cond_189
 
     const/4 v2, 0x3
 
-    if-eq p1, v2, :cond_167
+    if-eq p1, v2, :cond_186
 
     const/16 v2, 0x9
 
-    if-eq p1, v2, :cond_187
+    if-eq p1, v2, :cond_1a6
 
     const/16 v2, 0x13
 
-    if-eq p1, v2, :cond_15f
+    if-eq p1, v2, :cond_17e
 
     const/16 v2, 0x20
 
-    if-eq p1, v2, :cond_14c
+    if-eq p1, v2, :cond_16b
 
     const/16 v2, 0xa5
 
-    if-eq p1, v2, :cond_13b
+    if-eq p1, v2, :cond_15a
 
     const/16 v2, 0xc6
 
-    if-eq p1, v2, :cond_133
+    if-eq p1, v2, :cond_152
 
     const/16 v2, 0x149
 
-    if-eq p1, v2, :cond_167
+    if-eq p1, v2, :cond_186
 
     const/16 v2, 0x1c
 
-    if-eq p1, v2, :cond_11f
+    if-eq p1, v2, :cond_137
 
     const/16 v2, 0x1d
 
-    if-eq p1, v2, :cond_10e
+    if-eq p1, v2, :cond_126
+
+    const/16 v2, 0x4d
+
+    if-eq p1, v2, :cond_11e
+
+    const/16 v2, 0x4e
+
+    if-eq p1, v2, :cond_116
 
     const/16 v2, 0x7c
 
-    if-eq p1, v2, :cond_fd
+    if-eq p1, v2, :cond_105
 
     const/16 v2, 0x7d
 
-    if-eq p1, v2, :cond_fd
+    if-eq p1, v2, :cond_105
 
     const/16 v2, 0xcf
 
-    if-eq p1, v2, :cond_d1
+    if-eq p1, v2, :cond_d9
 
     const/16 v2, 0xd0
 
-    if-eq p1, v2, :cond_c9
+    if-eq p1, v2, :cond_d1
 
-    packed-switch p1, :pswitch_data_198
+    packed-switch p1, :pswitch_data_1b8
 
-    packed-switch p1, :pswitch_data_1a2
+    packed-switch p1, :pswitch_data_1c2
 
-    goto/16 :goto_14b
+    goto/16 :goto_16a
 
-    .line 914
-    :pswitch_44
+    .line 923
+    :pswitch_4c
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mRecording:Z
 
-    if-nez p1, :cond_59
+    if-nez p1, :cond_61
 
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mZoomWheelShowing:Z
 
-    if-eqz p1, :cond_59
+    if-eqz p1, :cond_61
 
-    .line 915
+    .line 924
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 916
+    .line 925
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->showEntryRootView()V
 
-    .line 917
+    .line 926
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
-    if-eqz p1, :cond_59
+    if-eqz p1, :cond_61
 
-    .line 918
+    .line 927
     invoke-virtual {p1, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
-    .line 921
-    :cond_59
+    .line 930
+    :cond_61
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mZoomWheelShowing:Z
 
     return-void
 
-    .line 906
-    :pswitch_5c
+    .line 915
+    :pswitch_64
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mZoomWheelShowing:Z
 
-    .line 907
+    .line 916
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 908
+    .line 917
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideEntryRootView()V
 
-    .line 909
+    .line 918
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
-    if-eqz p0, :cond_14b
+    if-eqz p0, :cond_16a
 
-    .line 910
+    .line 919
     invoke-virtual {p0, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
     return-void
 
-    .line 860
-    :pswitch_6c
+    .line 869
+    :pswitch_74
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14b
+    if-eqz p1, :cond_16a
 
-    .line 861
+    .line 870
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mRecording:Z
 
-    if-nez p1, :cond_87
+    if-nez p1, :cond_8f
 
     iget-boolean p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mZoomScaling:Z
 
-    if-eqz p1, :cond_87
+    if-eqz p1, :cond_8f
 
-    .line 862
+    .line 871
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 863
+    .line 872
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->showEntryRootView()V
 
-    .line 864
+    .line 873
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
-    if-eqz p1, :cond_87
+    if-eqz p1, :cond_8f
 
-    .line 865
+    .line 874
     invoke-virtual {p1, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
-    .line 868
-    :cond_87
+    .line 877
+    :cond_8f
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mZoomScaling:Z
 
     return-void
 
-    .line 850
-    :pswitch_8a
+    .line 859
+    :pswitch_92
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14b
+    if-eqz p1, :cond_16a
 
-    .line 851
+    .line 860
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mZoomScaling:Z
 
-    .line 852
+    .line 861
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 853
+    .line 862
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideEntryRootView()V
 
-    .line 854
+    .line 863
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
-    if-eqz p0, :cond_14b
+    if-eqz p0, :cond_16a
 
-    .line 855
+    .line 864
     invoke-virtual {p0, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
     return-void
 
-    .line 897
-    :pswitch_a0
+    .line 906
+    :pswitch_a8
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mRecording:Z
 
-    .line 898
+    .line 907
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->setEnable(Z)V
 
-    .line 899
+    .line 908
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 900
+    .line 909
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->showEntryRootView()V
 
-    .line 901
+    .line 910
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
-    if-eqz p0, :cond_14b
+    if-eqz p0, :cond_16a
 
-    .line 902
+    .line 911
     invoke-virtual {p0, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
     return-void
 
-    .line 881
-    :pswitch_b3
+    .line 890
+    :pswitch_bb
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
-    if-eqz p1, :cond_ba
+    if-eqz p1, :cond_c2
 
-    .line 882
+    .line 891
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->hideDialog()V
 
-    .line 884
-    :cond_ba
+    .line 893
+    :cond_c2
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mRecording:Z
 
-    .line 885
+    .line 894
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->setEnable(Z)V
 
-    .line 886
+    .line 895
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 888
+    .line 897
     invoke-direct {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->notifyConflictUI(Z)V
 
-    .line 889
+    .line 898
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideEntryRootView()V
 
     return-void
 
-    .line 981
-    :cond_c9
+    .line 993
+    :cond_d1
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mIsPopSettingShow:Z
 
-    .line 982
+    .line 994
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->setEnabled(Z)V
 
     return-void
 
-    .line 965
-    :cond_d1
+    .line 977
+    :cond_d9
     iput-boolean v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mIsPopSettingShow:Z
 
-    .line 966
+    .line 978
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hidePopSettingTitle()V
 
-    .line 967
+    .line 979
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyBottomRoot:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_e1
+    if-nez p1, :cond_e9
 
-    .line 968
+    .line 980
     invoke-direct {p0, v1, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->showOrHide(ZZ)V
 
-    .line 970
-    :cond_e1
+    .line 982
+    :cond_e9
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
-    if-eqz p1, :cond_e8
+    if-eqz p1, :cond_f0
 
-    .line 971
+    .line 983
     invoke-virtual {p1, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
-    .line 973
-    :cond_e8
+    .line 985
+    :cond_f0
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
-    if-eqz p1, :cond_14b
+    if-eqz p1, :cond_16a
 
-    .line 974
+    .line 986
     invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
 
     move-result p1
 
-    if-nez p1, :cond_f7
+    if-nez p1, :cond_ff
 
-    .line 975
+    .line 987
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->hideAutoHint()V
 
-    .line 977
-    :cond_f7
+    .line 989
+    :cond_ff
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->setEnabled(Z)V
 
     return-void
 
-    .line 842
-    :cond_fd
+    .line 851
+    :cond_105
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14b
+    if-eqz p1, :cond_16a
 
-    .line 843
+    .line 852
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 844
+    .line 853
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
-    if-eqz p0, :cond_14b
+    if-eqz p0, :cond_16a
 
-    .line 845
+    .line 854
     invoke-virtual {p0, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
     return-void
 
-    .line 991
-    :cond_10e
+    .line 1016
+    :cond_116
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
+
+    if-eqz p0, :cond_16a
+
+    .line 1017
+    invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->setGoFragmentFlag(Z)V
+
+    return-void
+
+    .line 1011
+    :cond_11e
+    iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
+
+    if-eqz p0, :cond_16a
+
+    .line 1012
+    invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->setGoFragmentFlag(Z)V
+
+    return-void
+
+    .line 1003
+    :cond_126
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14b
+    if-eqz p1, :cond_16a
 
-    .line 992
+    .line 1004
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 993
+    .line 1005
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
-    if-eqz p0, :cond_14b
+    if-eqz p0, :cond_16a
 
-    .line 994
+    .line 1006
     invoke-virtual {p0, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
     return-void
 
-    .line 932
-    :cond_11f
+    .line 941
+    :cond_137
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
 
-    if-eqz p1, :cond_126
+    if-eqz p1, :cond_13e
 
-    .line 933
+    .line 942
+    invoke-virtual {p1, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->setGoFragmentFlag(Z)V
+
+    .line 944
+    :cond_13e
+    iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyExRoot:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;
+
+    if-eqz p1, :cond_145
+
+    .line 945
     invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyExRoot;->hideDialog()V
 
-    .line 935
-    :cond_126
+    .line 947
+    :cond_145
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mRecording:Z
 
-    .line 936
+    .line 948
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->setEnable(Z)V
 
-    .line 937
+    .line 949
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->getKeys()Ljava/util/List;
 
     move-result-object p1
@@ -2205,8 +2223,8 @@
 
     return-void
 
-    .line 959
-    :cond_133
+    .line 971
+    :cond_152
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->getKeys()Ljava/util/List;
 
     move-result-object p1
@@ -2215,54 +2233,54 @@
 
     return-void
 
-    .line 985
-    :cond_13b
+    .line 997
+    :cond_15a
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 986
+    .line 998
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-eqz p1, :cond_14b
+    if-eqz p1, :cond_16a
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
-    if-eqz p0, :cond_14b
+    if-eqz p0, :cond_16a
 
-    .line 987
+    .line 999
     invoke-virtual {p0, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
-    :cond_14b
-    :goto_14b
+    :cond_16a
+    :goto_16a
     return-void
 
-    .line 872
-    :cond_14c
+    .line 881
+    :cond_16b
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->setEnable(Z)V
 
-    .line 873
+    .line 882
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 874
+    .line 883
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->showEntryRootView()V
 
-    .line 875
+    .line 884
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
-    if-eqz p1, :cond_15c
+    if-eqz p1, :cond_17b
 
-    .line 876
+    .line 885
     invoke-virtual {p1, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
-    .line 878
-    :cond_15c
+    .line 887
+    :cond_17b
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mIsPopSettingShow:Z
 
     return-void
 
-    .line 962
-    :cond_15f
+    .line 974
+    :cond_17e
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->getKeys()Ljava/util/List;
 
     move-result-object p1
@@ -2271,27 +2289,27 @@
 
     return-void
 
-    .line 929
-    :cond_167
+    .line 938
+    :cond_186
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mIsPopSettingShow:Z
 
     return-void
 
-    .line 924
-    :cond_16a
+    .line 933
+    :cond_189
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->getKeys()Ljava/util/List;
 
     move-result-object p1
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->unRegisterKeyToMonitor(Ljava/util/List;)V
 
-    .line 925
+    .line 934
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideEntryRootView()V
 
     return-void
 
-    .line 948
-    :cond_175
+    .line 960
+    :cond_194
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getSettingController()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
@@ -2302,60 +2320,62 @@
 
     move-result p1
 
-    .line 949
+    .line 961
     iget v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mCurrentCameraFacing:I
 
-    if-eq v2, p1, :cond_187
+    if-eq v2, p1, :cond_1a6
 
-    .line 950
+    .line 962
     iput p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mCurrentCameraFacing:I
 
-    .line 951
+    .line 963
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mIsPopSettingShow:Z
 
-    .line 955
-    :cond_187
-    :pswitch_187
+    .line 967
+    :cond_1a6
+    :pswitch_1a6
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mRecording:Z
 
-    .line 956
+    .line 968
     invoke-virtual {p0, v1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->setEnable(Z)V
 
     return-void
 
-    .line 944
-    :cond_18d
+    .line 956
+    :cond_1ac
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->getKeys()Ljava/util/List;
 
     move-result-object p1
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->unRegisterKeyToMonitor(Ljava/util/List;)V
 
-    .line 945
+    .line 957
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->setEnable(Z)V
 
     return-void
 
-    :pswitch_data_198
+    nop
+
+    :pswitch_data_1b8
     .packed-switch 0xe
-        :pswitch_187
-        :pswitch_b3
-        :pswitch_a0
+        :pswitch_1a6
+        :pswitch_bb
+        :pswitch_a8
     .end packed-switch
 
-    :pswitch_data_1a2
+    :pswitch_data_1c2
     .packed-switch 0x17
-        :pswitch_8a
-        :pswitch_6c
-        :pswitch_5c
-        :pswitch_44
+        :pswitch_92
+        :pswitch_74
+        :pswitch_64
+        :pswitch_4c
     .end packed-switch
 .end method
 
 .method public onBackPressed()Z
     .registers 3
 
-    .line 814
+    .line 823
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -2376,7 +2396,7 @@
 
     return p0
 
-    .line 817
+    .line 826
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mEntryView:Landroid/view/View;
 
@@ -2392,7 +2412,7 @@
 
     return v1
 
-    .line 820
+    .line 829
     :cond_1e
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
@@ -2406,7 +2426,7 @@
 
     return v1
 
-    .line 823
+    .line 832
     :cond_29
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
@@ -2420,13 +2440,13 @@
 
     return v1
 
-    .line 827
+    .line 836
     :cond_34
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
     if-eqz v0, :cond_3c
 
-    .line 828
+    .line 837
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->onBackPressed()Z
 
     move-result v1
@@ -2434,10 +2454,10 @@
     :cond_3c
     if-eqz v1, :cond_41
 
-    .line 831
+    .line 840
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
 
-    .line 833
+    .line 842
     :cond_41
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hidePopSettingTitle()V
 
@@ -2523,7 +2543,7 @@
 .method public onPreviewClick()Z
     .registers 2
 
-    .line 806
+    .line 815
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result v0
@@ -2534,10 +2554,10 @@
 
     if-eqz v0, :cond_d
 
-    .line 807
+    .line 816
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;->onBackPressed()Z
 
-    .line 809
+    .line 818
     :cond_d
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->onBackPressed()Z
 
@@ -2703,12 +2723,12 @@
 .method protected ringScreenLightUpdateUI()V
     .registers 3
 
-    .line 750
+    .line 759
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mEntryView:Landroid/view/View;
 
     if-eqz v0, :cond_c
 
-    .line 751
+    .line 760
     new-instance v1, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;)V
@@ -2745,15 +2765,15 @@
         }
     .end annotation
 
-    .line 761
+    .line 770
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setDeviceSettingData(Ljava/util/List;)V
 
-    .line 762
+    .line 771
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mSettingDataList:Ljava/util/List;
 
     if-eqz p1, :cond_3c
 
-    .line 764
+    .line 773
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -2772,7 +2792,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ui/setting/ISettingUI$ISettingData;
 
-    .line 765
+    .line 774
     const-string v1, "key_mu_face_beauty"
 
     iget-object v2, v0, Lcom/transsion/camera/app/common/ui/setting/ISettingUI$ISettingData;->key:Ljava/lang/String;
@@ -2783,14 +2803,14 @@
 
     if-eqz v1, :cond_26
 
-    .line 766
+    .line 775
     iget-object v0, v0, Lcom/transsion/camera/app/common/ui/setting/ISettingUI$ISettingData;->iSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautySetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     goto :goto_b
 
-    .line 767
+    .line 776
     :cond_26
     const-string v1, "key_video_facebeauty"
 
@@ -2802,14 +2822,14 @@
 
     if-eqz v1, :cond_b
 
-    .line 768
+    .line 777
     iget-object v0, v0, Lcom/transsion/camera/app/common/ui/setting/ISettingUI$ISettingData;->iSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautySetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v0, :cond_b
 
-    .line 770
+    .line 779
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mSettingDataCallback:Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
@@ -2865,22 +2885,22 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 779
+    .line 788
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p1, :cond_c
 
-    .line 781
+    .line 790
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->getKeys()Ljava/util/List;
 
     move-result-object p1
 
-    .line 782
+    .line 791
     invoke-direct {p0, p1}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->registerKeyToMonitor(Ljava/util/List;)V
 
     return-void
 
-    .line 784
+    .line 793
     :cond_c
     sget-object p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2904,24 +2924,55 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    const/4 v0, 0x0
-
-    .line 652
-    iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mRecording:Z
-
     .line 653
-    iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mZoomWheelShowing:Z
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
+
+    if-eqz v0, :cond_17
 
     .line 654
-    iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mZoomScaling:Z
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mBarClickListener:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$BarClickListener;
+
+    iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mSeekBarChangeListener:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$SeekBarChangeListener;
+
+    iget-object v3, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mContrastListener:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$ContrastListener;
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->setListener(Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$BarClickListener;Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$SeekBarChangeListener;Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI$ContrastListener;)V
 
     .line 656
-    invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
+    :cond_17
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;
+
+    if-eqz v0, :cond_22
 
     .line 657
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mIAppUI:Lcom/transsion/camera/app/common/IAppUI;
+
+    iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
+
+    invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;->setUIInterface(Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/feature/mode/makeup/ui/interactive/ITopUI;)V
+
+    .line 659
+    :cond_22
+    invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->addAnimatorListener()V
+
+    const/4 v0, 0x0
+
+    .line 661
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mRecording:Z
+
+    .line 662
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mZoomWheelShowing:Z
+
+    .line 663
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mZoomScaling:Z
+
+    .line 665
+    invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->hideSettingUI()V
+
+    .line 666
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->showEntryRootView()V
 
-    .line 658
+    .line 667
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;
 
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
@@ -2930,69 +2981,60 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;->registerSettingData(Lcom/transsion/camera/app/common/setting/StatusMonitor;Ljava/util/List;)V
 
-    .line 659
+    .line 668
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
 
-    if-eqz p0, :cond_27
+    if-eqz p0, :cond_42
 
-    .line 660
+    .line 669
     invoke-virtual {p0, v0, v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;->notifyState(IZ)V
 
-    :cond_27
+    :cond_42
     return-void
 .end method
 
 .method public unInit()V
-    .registers 4
+    .registers 3
 
-    .line 674
+    .line 683
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->unInit()V
 
-    .line 675
+    .line 684
     sget-object v0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string/jumbo v1, "unInit"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 676
+    .line 685
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;->unregisterSettingData()V
 
-    .line 677
+    .line 686
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautySetting:Lcom/transsion/camera/app/common/setting/ISetting;
-
-    const/4 v1, 0x0
 
     if-eqz v0, :cond_18
 
-    .line 678
+    const/4 v1, 0x0
+
+    .line 687
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
 
-    .line 680
+    .line 689
     :cond_18
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
+    iget-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
 
-    invoke-virtual {v0, v2}, Lcom/transsion/camera/app/common/ModuleTransferManager;->unregisterTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
+    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ModuleTransferManager;->unregisterTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
 
-    .line 681
+    .line 690
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->removeAnimatorListener()V
 
-    .line 682
-    iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mVideoFaceBeautyBottomUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyBottomUI;
-
-    .line 683
-    iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mFaceBeautyTopUI:Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautyTopUI;
-
-    .line 684
-    iput-object v1, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mEntryView:Landroid/view/View;
-
-    .line 685
+    .line 694
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->getKeys()Ljava/util/List;
 
     move-result-object v0
@@ -3001,7 +3043,7 @@
 
     const/4 v0, 0x0
 
-    .line 686
+    .line 695
     iput-boolean v0, p0, Lcom/transsion/camera/feature/mode/makeup/ui/VideoFaceBeautySettingUI;->mIsPopSettingShow:Z
 
     return-void

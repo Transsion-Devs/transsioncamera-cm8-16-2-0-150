@@ -146,7 +146,7 @@
 .method public static synthetic $r8$lambda$0a4mjWsCrMfSE416vQ5IbeQJvoo(Landroid/view/View;Landroid/animation/ValueAnimator;)V
     .registers 3
 
-    .line 981
+    .line 1037
     const-string v0, "alpha"
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -159,7 +159,7 @@
 
     move-result p1
 
-    .line 982
+    .line 1038
     invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
 
     return-void
@@ -206,7 +206,7 @@
 .method public static synthetic $r8$lambda$w7vU8TcVf4Lp8CA5l3ctfWNlRow(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;Landroid/animation/ValueAnimator;)V
     .registers 4
 
-    .line 1006
+    .line 1062
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -215,10 +215,10 @@
 
     if-eqz v0, :cond_1c
 
-    .line 1007
+    .line 1063
     check-cast p1, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 1008
+    .line 1064
     const-string/jumbo v0, "topMargin"
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->getAnimatedValue(Ljava/lang/String;)Ljava/lang/Object;
@@ -233,7 +233,7 @@
 
     iput p2, p1, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
-    .line 1009
+    .line 1065
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     :cond_1c
@@ -359,6 +359,17 @@
     return p0
 .end method
 
+.method static bridge synthetic -$$Nest$mgetCurrentFloatingWindowTitle(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)Ljava/lang/String;
+    .registers 1
+
+    .line 0
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->getCurrentFloatingWindowTitle()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method static bridge synthetic -$$Nest$mupdatePreviewRect(Lcom/transsion/camera/app/ui/SellingPointGuideUI;Landroid/graphics/Rect;)V
     .registers 2
 
@@ -380,7 +391,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 67
+    .line 69
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "SellingPointGuideUI"
@@ -395,10 +406,10 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/transsion/camera/app/ui/ScreenManager;Lcom/transsion/camera/app/common/storage/DataStore;)V
     .registers 11
 
-    .line 166
+    .line 168
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 82
+    .line 84
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v1, 0x3ea8f5c3    # 0.33f
@@ -413,7 +424,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->OVERLAY_GUIDE_ROOT_SHOW_PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
-    .line 84
+    .line 86
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     const v5, 0x3e4ccccd    # 0.2f
@@ -424,49 +435,49 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->OVERLAY_GUIDE_ROOT_HIDE_PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
-    .line 86
+    .line 88
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     invoke-direct {v0, v5, v2, v6, v4}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->OVERLAY_GUIDE_CONTENT_SHOW_ANIM_PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
-    .line 88
+    .line 90
     new-instance v0, Landroid/view/animation/PathInterpolator;
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->OVERLAY_GUIDE_ICON_SHOW_ANIM_PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
-    .line 117
+    .line 119
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayImageViewList:Ljava/util/ArrayList;
 
-    .line 118
+    .line 120
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayTextRootList:Ljava/util/ArrayList;
 
-    .line 119
+    .line 121
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayTitleTextViewList:Ljava/util/ArrayList;
 
-    .line 120
+    .line 122
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayContentTextViewList:Ljava/util/ArrayList;
 
-    .line 121
+    .line 123
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -475,64 +486,64 @@
 
     const/4 v0, -0x1
 
-    .line 125
+    .line 127
     iput v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowMarginTop:I
 
-    .line 126
+    .line 128
     iput v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideMarginTop:I
 
-    .line 127
+    .line 129
     iput v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideMarginBottom:I
 
     const-wide/high16 v0, -0x4010000000000000L    # -1.0
 
-    .line 128
+    .line 130
     iput-wide v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mPreviewRatio:D
 
     const/4 v0, 0x0
 
-    .line 132
+    .line 134
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsCameraSwitching:Z
 
-    .line 133
+    .line 135
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsPrivacyModeEnable:Z
 
-    .line 134
+    .line 136
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsHideByPrivacyMode:Z
 
-    .line 135
+    .line 137
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsSuperNightLiteAnimBegin:Z
 
-    .line 136
+    .line 138
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsSelfTimerBegin:Z
 
-    .line 137
+    .line 139
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsZoomBegin:Z
 
-    .line 138
+    .line 140
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsQuickVideoBegin:Z
 
-    .line 139
+    .line 141
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsPopSettingShow:Z
 
-    .line 144
+    .line 146
     new-instance v0, Lcom/transsion/camera/app/ui/SellingPointGuideUI$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$1;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mPreviewRectListener:Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;
 
-    .line 157
+    .line 159
     new-instance v0, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mModuleTransfer:Lcom/transsion/camera/app/common/IModuleTransfer;
 
-    .line 167
+    .line 169
     iput-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
-    .line 168
+    .line 170
     new-instance p1, Lcom/transsion/camera/app/ui/SellingPointGuideUI$UIHandler;
 
     const/4 v0, 0x0
@@ -541,10 +552,10 @@
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
-    .line 169
+    .line 171
     iput-object p3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 170
+    .line 172
     iput-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     return-void
@@ -555,7 +566,7 @@
 
     if-nez p1, :cond_9
 
-    .line 488
+    .line 544
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -564,7 +575,7 @@
 
     return p0
 
-    .line 489
+    .line 545
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
@@ -585,7 +596,7 @@
 .method private createFloatingWindowItem(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;I)Landroid/view/View;
     .registers 6
 
-    .line 467
+    .line 516
     sget v0, Lcom/transsion/camera/R$layout;->floating_window_view_pager_layout:I
 
     const/4 v1, 0x0
@@ -594,7 +605,7 @@
 
     move-result-object p1
 
-    .line 470
+    .line 519
     sget p2, Lcom/transsion/camera/R$id;->floating_window_background:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -603,7 +614,7 @@
 
     check-cast p2, Landroid/widget/ImageView;
 
-    .line 471
+    .line 520
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowDrawableIdList:Ljava/util/List;
 
     invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -618,43 +629,61 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 472
+    .line 521
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 474
-    sget p2, Lcom/transsion/camera/R$id;->floating_window_title:I
+    .line 523
+    sget v0, Lcom/transsion/camera/R$id;->floating_window_title:I
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object p2
+    move-result-object v0
 
-    check-cast p2, Landroid/widget/TextView;
+    check-cast v0, Landroid/widget/TextView;
 
-    .line 475
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
+    .line 524
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
-    invoke-interface {p0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object p0
+    move-result-object p3
 
-    check-cast p0, Ljava/lang/CharSequence;
+    check-cast p3, Ljava/lang/CharSequence;
 
-    invoke-virtual {p2, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 p0, 0x1
+    const/4 p3, 0x1
 
-    .line 476
-    invoke-virtual {p2, p0}, Landroid/widget/TextView;->setSelected(Z)V
+    .line 525
+    invoke-virtual {v0, p3}, Landroid/widget/TextView;->setSelected(Z)V
 
+    .line 527
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
+
+    invoke-static {p0}, Lcom/transsion/camera/utils/CameraUtil;->isTalkBackEnabled(Landroid/content/Context;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_49
+
+    const/4 p0, 0x2
+
+    .line 528
+    invoke-static {v0, p0}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
+
+    .line 530
+    invoke-static {p2, p0}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
+
+    :cond_49
     return-object p1
 .end method
 
 .method private createOverlayGuideItem(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;I)Landroid/view/View;
     .registers 6
 
-    .line 562
+    .line 618
     sget v0, Lcom/transsion/camera/R$layout;->overlay_guide_view_pager_layout:I
 
     const/4 v1, 0x0
@@ -663,7 +692,7 @@
 
     move-result-object p1
 
-    .line 565
+    .line 621
     sget p2, Lcom/transsion/camera/R$id;->overlay_guide_image:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -672,7 +701,7 @@
 
     check-cast p2, Landroid/widget/ImageView;
 
-    .line 566
+    .line 622
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideDrawableIdList:Ljava/util/List;
 
     invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -687,29 +716,29 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 567
+    .line 623
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     const/4 v0, 0x1
 
-    .line 568
+    .line 624
     invoke-virtual {p2, v0}, Landroid/view/View;->setClipToOutline(Z)V
 
-    .line 569
-    new-instance v0, Lcom/transsion/camera/app/ui/SellingPointGuideUI$4;
+    .line 625
+    new-instance v0, Lcom/transsion/camera/app/ui/SellingPointGuideUI$5;
 
-    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$4;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
+    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$5;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 576
+    .line 632
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayImageViewList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 578
+    .line 634
     sget p2, Lcom/transsion/camera/R$id;->overlay_guide_text_root:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -718,12 +747,12 @@
 
     check-cast p2, Landroid/widget/LinearLayout;
 
-    .line 579
+    .line 635
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayTextRootList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 581
+    .line 637
     sget p2, Lcom/transsion/camera/R$id;->overlay_guide_title:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -732,7 +761,7 @@
 
     check-cast p2, Landroid/widget/TextView;
 
-    .line 582
+    .line 638
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
     invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -743,12 +772,12 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 583
+    .line 639
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayTitleTextViewList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 585
+    .line 641
     sget p2, Lcom/transsion/camera/R$id;->overlay_guide_content:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -757,7 +786,7 @@
 
     check-cast p2, Landroid/widget/TextView;
 
-    .line 586
+    .line 642
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointContentList:Ljava/util/List;
 
     invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -768,12 +797,12 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 587
+    .line 643
     iget-object p3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayContentTextViewList:Ljava/util/ArrayList;
 
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 589
+    .line 645
     sget p2, Lcom/transsion/camera/R$id;->overlay_guide_scroll_view:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -782,14 +811,14 @@
 
     check-cast p2, Landroid/widget/ScrollView;
 
-    .line 590
+    .line 646
     new-instance p3, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda1;
 
     invoke-direct {p3, p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
 
     invoke-virtual {p2, p3}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 609
+    .line 665
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayScrollViewList:Ljava/util/ArrayList;
 
     invoke-virtual {p0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -800,7 +829,7 @@
 .method private enableInfiniteLoop()Z
     .registers 2
 
-    .line 482
+    .line 538
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -819,12 +848,81 @@
     return p0
 .end method
 
+.method private getCurrentFloatingWindowTitle()Ljava/lang/String;
+    .registers 4
+
+    .line 417
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
+
+    const-string v1, ""
+
+    if-eqz v0, :cond_31
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    goto :goto_31
+
+    .line 420
+    :cond_d
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1c
+
+    .line 421
+    iget v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentFloatingViewPagerPosition:I
+
+    invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->calculateActualViewPagerPos(I)I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_1e
+
+    .line 422
+    :cond_1c
+    iget v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentFloatingViewPagerPosition:I
+
+    :goto_1e
+    if-ltz v0, :cond_31
+
+    .line 423
+    iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v0, v2, :cond_31
+
+    .line 424
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
+
+    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/String;
+
+    return-object p0
+
+    :cond_31
+    :goto_31
+    return-object v1
+.end method
+
 .method private getMarginBottomForOverlayGuide(DLandroid/graphics/Rect;)I
     .registers 6
 
     const-wide v0, 0x3ff5555555555555L    # 1.3333333333333333
 
-    .line 246
+    .line 248
     invoke-static {p1, p2, v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result v0
@@ -833,7 +931,7 @@
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    .line 247
+    .line 249
     invoke-static {p1, p2, v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result v0
@@ -845,14 +943,14 @@
     :cond_14
     const-wide v0, 0x3ffc71c71c71c71cL    # 1.7777777777777777
 
-    .line 249
+    .line 251
     invoke-static {p1, p2, v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result p1
 
     if-eqz p1, :cond_29
 
-    .line 250
+    .line 252
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/ScreenManager;->getScreenHeight()I
@@ -870,7 +968,7 @@
 
     return p0
 
-    .line 248
+    .line 250
     :cond_2b
     :goto_2b
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
@@ -887,7 +985,7 @@
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    .line 220
+    .line 222
     invoke-static {p1, p2, v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result v0
@@ -896,7 +994,7 @@
 
     const-wide v0, 0x3ff5555555555555L    # 1.3333333333333333
 
-    .line 221
+    .line 223
     invoke-static {p1, p2, v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result v0
@@ -905,7 +1003,7 @@
 
     const-wide v0, 0x3ffc71c71c71c71cL    # 1.7777777777777777
 
-    .line 222
+    .line 224
     invoke-static {p1, p2, v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result p1
@@ -914,7 +1012,7 @@
 
     goto :goto_2c
 
-    .line 225
+    .line 227
     :cond_1f
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
@@ -930,7 +1028,7 @@
 
     return p0
 
-    .line 223
+    .line 225
     :cond_2c
     :goto_2c
     iget p0, p3, Landroid/graphics/Rect;->top:I
@@ -943,14 +1041,14 @@
 
     const-wide v0, 0x3ffc71c71c71c71cL    # 1.7777777777777777
 
-    .line 233
+    .line 235
     invoke-static {p1, p2, v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
-    .line 234
+    .line 236
     iget p0, p3, Landroid/graphics/Rect;->top:I
 
     return p0
@@ -958,7 +1056,7 @@
     :cond_e
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    .line 235
+    .line 237
     invoke-static {p1, p2, v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result p3
@@ -967,7 +1065,7 @@
 
     if-nez p3, :cond_24
 
-    .line 236
+    .line 238
     invoke-static {p1, p2, v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result p1
@@ -981,7 +1079,7 @@
 
     return p0
 
-    .line 237
+    .line 239
     :cond_24
     :goto_24
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
@@ -993,61 +1091,10 @@
     return p0
 .end method
 
-.method private hideOverlayGuide()V
-    .registers 6
-
-    .line 1096
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
-
-    if-nez v0, :cond_c
-
-    .line 1097
-    sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    const-string v0, "[hideOverlayGuide] return."
-
-    invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    return-void
-
-    .line 1100
-    :cond_c
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
-
-    move-result v0
-
-    if-nez v0, :cond_27
-
-    .line 1101
-    iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
-
-    invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    const-string v3, "key_selling_point_guide_show"
-
-    const-string v4, "false"
-
-    invoke-virtual {v0, v3, v4, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-
-    .line 1102
-    iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
-
-    const/16 v0, 0x8
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_27
-    return-void
-.end method
-
 .method private initContentAppearAnim(Landroid/widget/ImageView;Landroid/widget/LinearLayout;)V
     .registers 10
 
-    .line 1017
+    .line 1073
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1060,7 +1107,7 @@
 
     move-result v2
 
-    .line 1019
+    .line 1075
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1075,7 +1122,7 @@
 
     const/4 v5, 0x0
 
-    .line 1021
+    .line 1077
     iget-object v6, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->OVERLAY_GUIDE_CONTENT_SHOW_ANIM_PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     const/16 v4, 0x1f4
@@ -1086,7 +1133,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->startTranslateAnimation(Landroid/view/View;IIIILandroid/view/animation/PathInterpolator;)V
 
-    .line 1024
+    .line 1080
     iget-object v6, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->OVERLAY_GUIDE_CONTENT_SHOW_ANIM_PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     const/4 v2, 0x0
@@ -1095,7 +1142,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->startAlphaAnimation(Landroid/view/View;FFIILandroid/view/animation/PathInterpolator;)V
 
-    .line 1028
+    .line 1084
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1108,7 +1155,7 @@
 
     move-result v2
 
-    .line 1030
+    .line 1086
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1123,14 +1170,14 @@
 
     const/16 v5, 0x64
 
-    .line 1032
+    .line 1088
     iget-object v6, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->OVERLAY_GUIDE_CONTENT_SHOW_ANIM_PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     move-object v1, p2
 
     invoke-direct/range {v0 .. v6}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->startTranslateAnimation(Landroid/view/View;IIIILandroid/view/animation/PathInterpolator;)V
 
-    .line 1035
+    .line 1091
     iget-object v6, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->OVERLAY_GUIDE_CONTENT_SHOW_ANIM_PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     const/4 v2, 0x0
@@ -1142,10 +1189,87 @@
     return-void
 .end method
 
+.method private initFloatingWindowTalkBack()V
+    .registers 3
+
+    .line 384
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/transsion/camera/utils/CameraUtil;->isTalkBackEnabled(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    goto :goto_3b
+
+    .line 387
+    :cond_9
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
+
+    if-eqz v0, :cond_3b
+
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowViewPager:Landroidx/viewpager/widget/ViewPager;
+
+    if-nez v1, :cond_12
+
+    goto :goto_3b
+
+    :cond_12
+    const/4 v1, 0x1
+
+    .line 391
+    invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(Z)V
+
+    .line 392
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
+
+    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
+
+    .line 394
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowViewPager:Landroidx/viewpager/widget/ViewPager;
+
+    const/4 v1, 0x4
+
+    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
+
+    .line 397
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
+
+    sget v1, Lcom/transsion/camera/R$id;->expand_floating_window_icon:I
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    if-eqz v0, :cond_31
+
+    const/4 v1, 0x2
+
+    .line 399
+    invoke-static {v0, v1}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
+
+    .line 403
+    :cond_31
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
+
+    new-instance v1, Lcom/transsion/camera/app/ui/SellingPointGuideUI$3;
+
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$3;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
+
+    :cond_3b
+    :goto_3b
+    return-void
+.end method
+
 .method private initFloatingWindowUI()V
     .registers 3
 
-    .line 345
+    .line 347
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/R$id;->floating_window_root:I
@@ -1158,10 +1282,10 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
-    .line 346
+    .line 348
     invoke-static {v0}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealWithoutAnimation(Landroid/view/View;)V
 
-    .line 347
+    .line 349
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
     new-instance v1, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda3;
@@ -1170,7 +1294,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 368
+    .line 370
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/R$id;->floating_window_view_pager:I
@@ -1185,10 +1309,10 @@
 
     const/4 v1, 0x1
 
-    .line 369
+    .line 371
     invoke-virtual {v0, v1}, Landroid/view/View;->setClipToOutline(Z)V
 
-    .line 370
+    .line 372
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowViewPager:Landroidx/viewpager/widget/ViewPager;
 
     new-instance v1, Lcom/transsion/camera/app/ui/SellingPointGuideUI$2;
@@ -1197,13 +1321,16 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
+    .line 380
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->initFloatingWindowTalkBack()V
+
     return-void
 .end method
 
 .method private initFloatingWindowViewPager(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)V
     .registers 8
 
-    .line 498
+    .line 554
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowDrawableIdList:Ljava/util/List;
 
     if-eqz v0, :cond_8c
@@ -1218,7 +1345,7 @@
 
     if-eqz v0, :cond_8c
 
-    .line 499
+    .line 555
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -1229,7 +1356,7 @@
 
     if-eqz v0, :cond_8c
 
-    .line 500
+    .line 556
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -1240,7 +1367,7 @@
 
     if-eqz v0, :cond_8c
 
-    .line 501
+    .line 557
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -1249,40 +1376,40 @@
 
     goto :goto_8c
 
-    .line 506
+    .line 562
     :cond_29
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 507
+    .line 563
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 508
+    .line 564
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
     move-result v2
 
     if-eqz v2, :cond_48
 
-    .line 509
+    .line 565
     iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
-    .line 510
+    .line 566
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
     add-int/lit8 v2, v2, -0x1
 
-    .line 509
+    .line 565
     invoke-direct {p0, p1, p2, v2}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->createFloatingWindowItem(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 511
+    .line 567
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_48
@@ -1290,7 +1417,7 @@
 
     move v3, v2
 
-    .line 514
+    .line 570
     :goto_4a
     iget-object v4, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
@@ -1300,72 +1427,72 @@
 
     if-ge v3, v4, :cond_5c
 
-    .line 515
+    .line 571
     invoke-direct {p0, p1, p2, v3}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->createFloatingWindowItem(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 516
+    .line 572
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_4a
 
-    .line 518
+    .line 574
     :cond_5c
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 520
+    .line 576
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
     move-result v1
 
     if-eqz v1, :cond_6c
 
-    .line 521
+    .line 577
     invoke-direct {p0, p1, p2, v2}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->createFloatingWindowItem(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;I)Landroid/view/View;
 
     move-result-object p1
 
-    .line 522
+    .line 578
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 525
+    .line 581
     :cond_6c
     new-instance p1, Lcom/transsion/camera/app/ui/sellingpointguide/SellingPointViewPagerAdapter;
 
     invoke-direct {p1, v0}, Lcom/transsion/camera/app/ui/sellingpointguide/SellingPointViewPagerAdapter;-><init>(Ljava/util/List;)V
 
-    .line 526
+    .line 582
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowViewPager:Landroidx/viewpager/widget/ViewPager;
 
     invoke-virtual {p2, p1}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
-    .line 527
+    .line 583
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
     move-result p1
 
     iput p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentFloatingViewPagerPosition:I
 
-    .line 528
+    .line 584
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowViewPager:Landroidx/viewpager/widget/ViewPager;
 
     invoke-virtual {p2, p1}, Landroidx/viewpager/widget/ViewPager;->setCurrentItem(I)V
 
-    .line 530
+    .line 586
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowViewPager:Landroidx/viewpager/widget/ViewPager;
 
-    new-instance p2, Lcom/transsion/camera/app/ui/SellingPointGuideUI$3;
+    new-instance p2, Lcom/transsion/camera/app/ui/SellingPointGuideUI$4;
 
-    invoke-direct {p2, p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$3;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;Ljava/util/List;)V
+    invoke-direct {p2, p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$4;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;Ljava/util/List;)V
 
     invoke-virtual {p1, p2}, Landroidx/viewpager/widget/ViewPager;->addOnPageChangeListener(Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;)V
 
     return-void
 
-    .line 502
+    .line 558
     :cond_8c
     :goto_8c
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1384,7 +1511,7 @@
 
     move v1, v0
 
-    .line 445
+    .line 494
     :goto_2
     iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
@@ -1394,24 +1521,24 @@
 
     if-ge v1, v2, :cond_66
 
-    .line 446
+    .line 495
     new-instance v2, Landroid/widget/ImageView;
 
     iget-object v3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
     invoke-direct {v2, v3}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 447
+    .line 496
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 449
+    .line 498
     new-instance v3, Landroid/widget/LinearLayout$LayoutParams;
 
     const/4 v4, -0x2
 
     invoke-direct {v3, v4, v4}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 451
+    .line 500
     iget-object v4, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->size()I
@@ -1424,7 +1551,7 @@
 
     if-eq v1, v4, :cond_33
 
-    .line 452
+    .line 501
     iget-object v4, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1439,7 +1566,7 @@
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup$MarginLayoutParams;->setMarginEnd(I)V
 
-    .line 455
+    .line 504
     :cond_33
     iget-object v4, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
@@ -1455,7 +1582,7 @@
 
     iput v4, v3, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
-    .line 457
+    .line 506
     iget-object v4, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1470,7 +1597,7 @@
 
     iput v4, v3, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
-    .line 459
+    .line 508
     invoke-virtual {v2, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     if-nez v1, :cond_55
@@ -1480,16 +1607,16 @@
     :cond_55
     move v5, v0
 
-    .line 460
+    .line 509
     :goto_56
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setSelected(Z)V
 
-    .line 461
+    .line 510
     sget v3, Lcom/transsion/camera/R$drawable;->overlay_guide_page_indicator_dot_color:I
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 462
+    .line 511
     iget-object v3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuidePageIndicator:Landroid/widget/LinearLayout;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
@@ -1505,7 +1632,7 @@
 .method private initOverlayGuideUI()V
     .registers 3
 
-    .line 381
+    .line 430
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/R$id;->overlay_guide_root:I
@@ -1518,7 +1645,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
 
-    .line 382
+    .line 431
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/R$id;->overlay_guide_container:I
@@ -1531,7 +1658,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideContainer:Landroid/widget/LinearLayout;
 
-    .line 384
+    .line 433
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/R$id;->close_overlay_guide_icon:I
@@ -1544,14 +1671,14 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCloseOverlayGuideIcon:Landroid/widget/ImageView;
 
-    .line 385
+    .line 434
     new-instance v1, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda4;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda4;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 394
+    .line 443
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/R$id;->overlay_guide_viewpager:I
@@ -1564,7 +1691,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideViewPager:Landroidx/viewpager/widget/ViewPager;
 
-    .line 395
+    .line 444
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/R$id;->overlay_guide_page_indicator:I
@@ -1577,7 +1704,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuidePageIndicator:Landroid/widget/LinearLayout;
 
-    .line 397
+    .line 446
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/R$id;->mode_switch_icon_root:I
@@ -1590,7 +1717,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mModeSwitchIconRoot:Landroid/widget/FrameLayout;
 
-    .line 398
+    .line 447
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/R$id;->mode_switch_icon_text:I
@@ -1603,7 +1730,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mModeSwitchText:Landroid/widget/TextView;
 
-    .line 399
+    .line 448
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
     sget v1, Lcom/transsion/camera/R$id;->mode_switch_icon:I
@@ -1616,7 +1743,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mModeSwitchIcon:Landroid/widget/ImageView;
 
-    .line 400
+    .line 449
     new-instance v1, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda5;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda5;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
@@ -1629,7 +1756,7 @@
 .method private initOverlayGuideViewPager(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)V
     .registers 8
 
-    .line 614
+    .line 670
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideDrawableIdList:Ljava/util/List;
 
     if-eqz v0, :cond_9a
@@ -1644,7 +1771,7 @@
 
     if-eqz v0, :cond_9a
 
-    .line 615
+    .line 671
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -1655,7 +1782,7 @@
 
     if-eqz v0, :cond_9a
 
-    .line 616
+    .line 672
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -1666,7 +1793,7 @@
 
     if-eqz v0, :cond_9a
 
-    .line 617
+    .line 673
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -1675,65 +1802,65 @@
 
     goto :goto_9a
 
-    .line 622
+    .line 678
     :cond_29
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayTitleTextViewList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 623
+    .line 679
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayContentTextViewList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 624
+    .line 680
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayScrollViewList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 625
+    .line 681
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayImageViewList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 626
+    .line 682
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayTextRootList:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 628
+    .line 684
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 629
+    .line 685
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 630
+    .line 686
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
     move-result v2
 
     if-eqz v2, :cond_61
 
-    .line 631
+    .line 687
     iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
-    .line 632
+    .line 688
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v2
 
     add-int/lit8 v2, v2, -0x1
 
-    .line 631
+    .line 687
     invoke-direct {p0, p1, p2, v2}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->createOverlayGuideItem(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 633
+    .line 689
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_61
@@ -1741,7 +1868,7 @@
 
     move v3, v2
 
-    .line 636
+    .line 692
     :goto_63
     iget-object v4, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
@@ -1751,60 +1878,60 @@
 
     if-ge v3, v4, :cond_75
 
-    .line 637
+    .line 693
     invoke-direct {p0, p1, p2, v3}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->createOverlayGuideItem(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 638
+    .line 694
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_63
 
-    .line 640
+    .line 696
     :cond_75
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 642
+    .line 698
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
     move-result v1
 
     if-eqz v1, :cond_85
 
-    .line 643
+    .line 699
     invoke-direct {p0, p1, p2, v2}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->createOverlayGuideItem(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;I)Landroid/view/View;
 
     move-result-object p1
 
-    .line 644
+    .line 700
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 647
+    .line 703
     :cond_85
     new-instance p1, Lcom/transsion/camera/app/ui/sellingpointguide/SellingPointViewPagerAdapter;
 
     invoke-direct {p1, v0}, Lcom/transsion/camera/app/ui/sellingpointguide/SellingPointViewPagerAdapter;-><init>(Ljava/util/List;)V
 
-    .line 648
+    .line 704
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideViewPager:Landroidx/viewpager/widget/ViewPager;
 
     invoke-virtual {p2, p1}, Landroidx/viewpager/widget/ViewPager;->setAdapter(Landroidx/viewpager/widget/PagerAdapter;)V
 
-    .line 649
+    .line 705
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideViewPager:Landroidx/viewpager/widget/ViewPager;
 
-    new-instance p2, Lcom/transsion/camera/app/ui/SellingPointGuideUI$5;
+    new-instance p2, Lcom/transsion/camera/app/ui/SellingPointGuideUI$6;
 
-    invoke-direct {p2, p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$5;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;Ljava/util/List;)V
+    invoke-direct {p2, p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$6;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;Ljava/util/List;)V
 
     invoke-virtual {p1, p2}, Landroidx/viewpager/widget/ViewPager;->addOnPageChangeListener(Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;)V
 
     return-void
 
-    .line 618
+    .line 674
     :cond_9a
     :goto_9a
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1819,7 +1946,7 @@
 .method private synthetic lambda$createOverlayGuideItem$4(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .registers 5
 
-    .line 591
+    .line 647
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
@@ -1842,7 +1969,7 @@
 
     goto :goto_23
 
-    .line 600
+    .line 656
     :cond_12
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
@@ -1850,18 +1977,18 @@
 
     const-wide/16 v0, 0xbb8
 
-    .line 601
+    .line 657
     invoke-virtual {p0, p2, v0, v1}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
     goto :goto_23
 
-    .line 594
+    .line 650
     :cond_1c
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_23
 
-    .line 595
+    .line 651
     invoke-virtual {p0, p2}, Landroid/os/Handler;->removeMessages(I)V
 
     :cond_23
@@ -1874,7 +2001,7 @@
 .method private synthetic lambda$initFloatingWindowUI$1(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .registers 3
 
-    .line 348
+    .line 350
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p1
@@ -1885,7 +2012,7 @@
 
     return p0
 
-    .line 351
+    .line 353
     :cond_8
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1897,7 +2024,7 @@
 
     goto :goto_18
 
-    .line 357
+    .line 359
     :cond_10
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsPopSettingShow:Z
 
@@ -1905,7 +2032,7 @@
 
     return p2
 
-    .line 360
+    .line 362
     :cond_15
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->switchFloatingWindowToOverlayGuide()V
 
@@ -1916,22 +2043,22 @@
 .method private synthetic lambda$initOverlayGuideUI$2(Landroid/view/View;)V
     .registers 3
 
-    .line 386
+    .line 435
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->hideOverlayGuideWithAnim()V
 
-    .line 387
+    .line 436
     const-string/jumbo p1, "value_none_guide"
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->setGuideStatus(Ljava/lang/String;)V
 
-    .line 388
+    .line 437
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
     move-result p1
 
     if-eqz p1, :cond_18
 
-    .line 389
+    .line 438
     iget p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentOverlayGuidePagerPosition:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->calculateActualViewPagerPos(I)I
@@ -1942,11 +2069,11 @@
 
     goto :goto_1a
 
-    .line 390
+    .line 439
     :cond_18
     iget p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentOverlayGuidePagerPosition:I
 
-    .line 391
+    .line 440
     :goto_1a
     const-string v0, "0"
 
@@ -1958,7 +2085,7 @@
 .method private synthetic lambda$initOverlayGuideUI$3(Landroid/view/View;)V
     .registers 6
 
-    .line 401
+    .line 450
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p1, :cond_a8
@@ -1971,13 +2098,13 @@
 
     goto/16 :goto_a8
 
-    .line 405
+    .line 454
     :cond_c
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsCameraSwitching:Z
 
     if-eqz p1, :cond_18
 
-    .line 406
+    .line 455
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "overlay guide switch mode, return for camera is switching"
@@ -1986,7 +2113,7 @@
 
     return-void
 
-    .line 410
+    .line 459
     :cond_18
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
@@ -1994,7 +2121,7 @@
 
     if-eqz p1, :cond_27
 
-    .line 411
+    .line 460
     iget p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentOverlayGuidePagerPosition:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->calculateActualViewPagerPos(I)I
@@ -2005,11 +2132,11 @@
 
     goto :goto_29
 
-    .line 412
+    .line 461
     :cond_27
     iget p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentOverlayGuidePagerPosition:I
 
-    .line 414
+    .line 463
     :goto_29
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointModeList:Ljava/util/List;
 
@@ -2021,15 +2148,15 @@
 
     if-ge p1, v0, :cond_a8
 
-    .line 415
+    .line 464
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->hideOverlayGuideWithAnim()V
 
-    .line 416
+    .line 465
     const-string/jumbo v0, "value_none_guide"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->setGuideStatus(Ljava/lang/String;)V
 
-    .line 418
+    .line 467
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointModeList:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2038,10 +2165,10 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 419
+    .line 468
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
-    .line 420
+    .line 469
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2052,15 +2179,15 @@
 
     move-result-object v1
 
-    .line 419
+    .line 468
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 421
+    .line 470
     iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
-    .line 422
+    .line 471
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -2071,12 +2198,12 @@
 
     move-result-object v2
 
-    .line 421
+    .line 470
     invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v2
 
-    .line 423
+    .line 472
     invoke-interface {v1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v3
@@ -2089,7 +2216,7 @@
 
     if-nez v3, :cond_78
 
-    .line 424
+    .line 473
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "not support this mode, return"
@@ -2098,11 +2225,11 @@
 
     return-void
 
-    .line 429
+    .line 478
     :cond_78
     iget-object v3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 430
+    .line 479
     invoke-interface {v3}, Lcom/transsion/camera/app/common/IAppUI;->getSettingController()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     move-result-object v3
@@ -2111,7 +2238,7 @@
 
     move-result-object v3
 
-    .line 429
+    .line 478
     invoke-static {v3}, Lcom/transsion/camera/adapter/CameraInfoUtil;->isCameraFacingBack(Ljava/lang/String;)Z
 
     move-result v3
@@ -2123,7 +2250,7 @@
     :cond_89
     move-object v1, v2
 
-    .line 432
+    .line 481
     :goto_8a
     const-string v2, "com.transsion.camera.feature.mode.autoscenedetection.ASDModeEntry"
 
@@ -2133,27 +2260,27 @@
 
     if-nez v2, :cond_a3
 
-    .line 433
+    .line 482
     invoke-interface {v1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_9e
 
-    .line 434
+    .line 483
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1, v0}, Lcom/transsion/camera/app/common/IAppUI;->switchModeByOverlayGuide(Ljava/lang/String;)V
 
     goto :goto_a3
 
-    .line 436
+    .line 485
     :cond_9e
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v1, v0}, Lcom/transsion/camera/app/common/IAppUI;->switchCamera(Ljava/lang/String;)V
 
-    .line 439
+    .line 488
     :cond_a3
     :goto_a3
     const-string v0, "1"
@@ -2168,15 +2295,15 @@
 .method private synthetic lambda$new$0(Z)V
     .registers 3
 
-    .line 158
+    .line 160
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsLowLight:Z
 
     if-eq v0, p1, :cond_9
 
-    .line 159
+    .line 161
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsLowLight:Z
 
-    .line 160
+    .line 162
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->ringScreenLightUpdateUI()V
 
     :cond_9
@@ -2186,7 +2313,7 @@
 .method private synthetic lambda$updateLayoutParamsWithAnim$5(Landroid/widget/FrameLayout$LayoutParams;Landroid/animation/ValueAnimator;)V
     .registers 3
 
-    .line 802
+    .line 858
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -2199,7 +2326,7 @@
 
     iput p2, p1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 803
+    .line 859
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -2210,12 +2337,12 @@
 .method private ringScreenLightUpdateUI()V
     .registers 6
 
-    .line 695
+    .line 751
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_38
 
-    .line 696
+    .line 752
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
     sget v1, Lcom/transsion/camera/R$color;->screen_supply_color:I
@@ -2224,7 +2351,7 @@
 
     move-result v0
 
-    .line 698
+    .line 754
     invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v1
@@ -2237,27 +2364,27 @@
 
     float-to-int v1, v1
 
-    .line 699
+    .line 755
     invoke-static {v0}, Landroid/graphics/Color;->red(I)I
 
     move-result v2
 
-    .line 700
+    .line 756
     invoke-static {v0}, Landroid/graphics/Color;->green(I)I
 
     move-result v3
 
-    .line 701
+    .line 757
     invoke-static {v0}, Landroid/graphics/Color;->blue(I)I
 
     move-result v0
 
-    .line 697
+    .line 753
     invoke-static {v1, v2, v3, v0}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v0
 
-    .line 702
+    .line 758
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
 
     iget-boolean v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsLowLight:Z
@@ -2266,7 +2393,7 @@
 
     goto :goto_35
 
-    .line 703
+    .line 759
     :cond_2d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
@@ -2276,17 +2403,17 @@
 
     move-result v0
 
-    .line 702
+    .line 758
     :goto_35
     invoke-virtual {v1, v0}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 706
+    .line 762
     :cond_38
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCloseOverlayGuideIcon:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_48
 
-    .line 707
+    .line 763
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsLowLight:Z
 
     if-eqz v1, :cond_43
@@ -2295,15 +2422,15 @@
 
     goto :goto_45
 
-    .line 708
+    .line 764
     :cond_43
     sget v1, Lcom/transsion/camera/R$drawable;->ic_close_guide_normal:I
 
-    .line 707
+    .line 763
     :goto_45
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 711
+    .line 767
     :cond_48
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayTitleTextViewList:Ljava/util/ArrayList;
 
@@ -2313,7 +2440,7 @@
 
     move v0, v1
 
-    .line 712
+    .line 768
     :goto_4e
     iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayTitleTextViewList:Ljava/util/ArrayList;
 
@@ -2323,7 +2450,7 @@
 
     if-ge v0, v2, :cond_79
 
-    .line 713
+    .line 769
     iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayTitleTextViewList:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2332,7 +2459,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 714
+    .line 770
     iget-boolean v3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsLowLight:Z
 
     if-eqz v3, :cond_6b
@@ -2347,7 +2474,7 @@
 
     goto :goto_73
 
-    .line 715
+    .line 771
     :cond_6b
     iget-object v3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
@@ -2357,7 +2484,7 @@
 
     move-result v3
 
-    .line 713
+    .line 769
     :goto_73
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
@@ -2365,13 +2492,13 @@
 
     goto :goto_4e
 
-    .line 719
+    .line 775
     :cond_79
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayContentTextViewList:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_a8
 
-    .line 720
+    .line 776
     :goto_7d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayContentTextViewList:Ljava/util/ArrayList;
 
@@ -2381,7 +2508,7 @@
 
     if-ge v1, v0, :cond_a8
 
-    .line 721
+    .line 777
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayContentTextViewList:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2390,7 +2517,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 722
+    .line 778
     iget-boolean v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsLowLight:Z
 
     if-eqz v2, :cond_9a
@@ -2405,7 +2532,7 @@
 
     goto :goto_a2
 
-    .line 723
+    .line 779
     :cond_9a
     iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
@@ -2415,7 +2542,7 @@
 
     move-result v2
 
-    .line 721
+    .line 777
     :goto_a2
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
@@ -2423,7 +2550,7 @@
 
     goto :goto_7d
 
-    .line 727
+    .line 783
     :cond_a8
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mModeSwitchIcon:Landroid/widget/ImageView;
 
@@ -2433,7 +2560,7 @@
 
     if-eqz v1, :cond_c9
 
-    .line 729
+    .line 785
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsLowLight:Z
 
     if-eqz v1, :cond_b7
@@ -2445,11 +2572,11 @@
     :cond_b7
     sget v1, Lcom/transsion/camera/R$drawable;->ic_mode_switch:I
 
-    .line 728
+    .line 784
     :goto_b9
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 730
+    .line 786
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mModeSwitchText:Landroid/widget/TextView;
 
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsLowLight:Z
@@ -2473,12 +2600,12 @@
 .method private showOverlayGuide()V
     .registers 8
 
-    .line 1041
+    .line 1097
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsPrivacyModeEnable:Z
 
     if-eqz v1, :cond_c
 
-    .line 1042
+    .line 1098
     sget-object v0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[showOverlayGuide] return, mIsPrivacyModeEnable is true"
@@ -2487,7 +2614,7 @@
 
     return-void
 
-    .line 1046
+    .line 1102
     :cond_c
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
 
@@ -2501,14 +2628,14 @@
 
     if-ne v1, v2, :cond_9c
 
-    .line 1047
+    .line 1103
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1049
+    .line 1105
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
 
     const/4 v5, 0x0
@@ -2525,7 +2652,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->startAlphaAnimation(Landroid/view/View;FFIILandroid/view/animation/PathInterpolator;)V
 
-    .line 1053
+    .line 1109
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayImageViewList:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -2542,7 +2669,7 @@
 
     if-nez v1, :cond_5a
 
-    .line 1054
+    .line 1110
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayImageViewList:Ljava/util/ArrayList;
 
     iget v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentFloatingViewPagerPosition:I
@@ -2555,10 +2682,10 @@
 
     const/4 v2, 0x0
 
-    .line 1055
+    .line 1111
     invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1056
+    .line 1112
     iget-object v3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayTextRootList:Ljava/util/ArrayList;
 
     iget v4, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentFloatingViewPagerPosition:I
@@ -2569,13 +2696,13 @@
 
     check-cast v3, Landroid/widget/LinearLayout;
 
-    .line 1057
+    .line 1113
     invoke-virtual {v3, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1058
+    .line 1114
     invoke-direct {p0, v1, v3}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->initContentAppearAnim(Landroid/widget/ImageView;Landroid/widget/LinearLayout;)V
 
-    .line 1061
+    .line 1117
     :cond_5a
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
@@ -2583,7 +2710,7 @@
 
     if-eqz v1, :cond_6f
 
-    .line 1062
+    .line 1118
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuidePageIndicator:Landroid/widget/LinearLayout;
 
     const/4 v5, 0x0
@@ -2602,7 +2729,7 @@
 
     goto :goto_75
 
-    .line 1066
+    .line 1122
     :cond_6f
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuidePageIndicator:Landroid/widget/LinearLayout;
 
@@ -2610,7 +2737,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1069
+    .line 1125
     :goto_75
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCloseOverlayGuideIcon:Landroid/widget/ImageView;
 
@@ -2628,26 +2755,26 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->startAlphaAnimation(Landroid/view/View;FFIILandroid/view/animation/PathInterpolator;)V
 
-    .line 1072
+    .line 1128
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mModeSwitchIconRoot:Landroid/widget/FrameLayout;
 
     iget-object v6, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->OVERLAY_GUIDE_ICON_SHOW_ANIM_PATH_INTERPOLATOR:Landroid/view/animation/PathInterpolator;
 
     invoke-direct/range {v0 .. v6}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->startAlphaAnimation(Landroid/view/View;FFIILandroid/view/animation/PathInterpolator;)V
 
-    .line 1077
+    .line 1133
     const-string/jumbo v1, "value_overlay_guide"
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->setGuideStatus(Ljava/lang/String;)V
 
-    .line 1079
+    .line 1135
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v2, 0x16b
 
     invoke-interface {v1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 1080
+    .line 1136
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideTwinkleGuide()V
@@ -2661,7 +2788,7 @@
 
     if-nez p1, :cond_a
 
-    .line 971
+    .line 1027
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[startAlphaAnimation] return"
@@ -2673,7 +2800,7 @@
     :cond_a
     const/4 v0, 0x2
 
-    .line 975
+    .line 1031
     new-array v0, v0, [F
 
     const/4 v1, 0x0
@@ -2684,14 +2811,14 @@
 
     aput p3, v0, p2
 
-    .line 976
+    .line 1032
     const-string p2, "alpha"
 
     invoke-static {p2, v0}, Landroid/animation/PropertyValuesHolder;->ofFloat(Ljava/lang/String;[F)Landroid/animation/PropertyValuesHolder;
 
     move-result-object p2
 
-    .line 977
+    .line 1033
     filled-new-array {p2}, [Landroid/animation/PropertyValuesHolder;
 
     move-result-object p2
@@ -2704,15 +2831,15 @@
 
     int-to-long v0, p4
 
-    .line 978
+    .line 1034
     invoke-virtual {p2, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 979
+    .line 1035
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p2, p6}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 980
+    .line 1036
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p4, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda0;
@@ -2721,23 +2848,23 @@
 
     invoke-virtual {p2, p4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 984
+    .line 1040
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance p4, Lcom/transsion/camera/app/ui/SellingPointGuideUI$7;
+    new-instance p4, Lcom/transsion/camera/app/ui/SellingPointGuideUI$8;
 
-    invoke-direct {p4, p0, p3, p1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$7;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;FLandroid/view/View;)V
+    invoke-direct {p4, p0, p3, p1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$8;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;FLandroid/view/View;)V
 
     invoke-virtual {p2, p4}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 993
+    .line 1049
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     int-to-long p2, p5
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 994
+    .line 1050
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAlphaAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
@@ -2748,19 +2875,19 @@
 .method private startTranslateAnimation(Landroid/view/View;IIIILandroid/view/animation/PathInterpolator;)V
     .registers 8
 
-    .line 999
+    .line 1055
     const-string/jumbo v0, "topMargin"
 
     filled-new-array {p2, p3}, [I
 
     move-result-object p2
 
-    .line 1000
+    .line 1056
     invoke-static {v0, p2}, Landroid/animation/PropertyValuesHolder;->ofInt(Ljava/lang/String;[I)Landroid/animation/PropertyValuesHolder;
 
     move-result-object p2
 
-    .line 1001
+    .line 1057
     filled-new-array {p2}, [Landroid/animation/PropertyValuesHolder;
 
     move-result-object p2
@@ -2773,20 +2900,20 @@
 
     int-to-long p3, p4
 
-    .line 1002
+    .line 1058
     invoke-virtual {p2, p3, p4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1003
+    .line 1059
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p2, p6}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1004
+    .line 1060
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p2
 
-    .line 1005
+    .line 1061
     iget-object p3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p4, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda6;
@@ -2795,14 +2922,14 @@
 
     invoke-virtual {p3, p4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1012
+    .line 1068
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     int-to-long p2, p5
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 1013
+    .line 1069
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mTranslateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
@@ -2813,12 +2940,12 @@
 .method private updateLayoutParams(D)V
     .registers 7
 
-    .line 754
+    .line 810
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
     if-nez v0, :cond_c
 
-    .line 755
+    .line 811
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[updateLayoutParams] return"
@@ -2827,7 +2954,7 @@
 
     return-void
 
-    .line 760
+    .line 816
     :cond_c
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2835,17 +2962,17 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 762
+    .line 818
     iget v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowMarginTop:I
 
     const/4 v2, -0x1
 
     if-eq v1, v2, :cond_27
 
-    .line 763
+    .line 819
     iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
-    .line 764
+    .line 820
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -2862,11 +2989,11 @@
 
     goto :goto_35
 
-    .line 766
+    .line 822
     :cond_27
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
-    .line 767
+    .line 823
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2882,13 +3009,13 @@
     :goto_35
     const/4 v1, 0x5
 
-    .line 769
+    .line 825
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 770
+    .line 826
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
-    .line 771
+    .line 827
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2901,12 +3028,12 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 773
+    .line 829
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 775
+    .line 831
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->updateOverlayGuideLayoutByPreviewRatio(D)V
 
     return-void
@@ -2915,12 +3042,12 @@
 .method private updateLayoutParamsWithAnim(IID)V
     .registers 9
 
-    .line 779
+    .line 835
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
     if-nez v0, :cond_c
 
-    .line 780
+    .line 836
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "[updateLayoutParamsWithAnim] return"
@@ -2929,7 +3056,7 @@
 
     return-void
 
-    .line 785
+    .line 841
     :cond_c
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2939,13 +3066,13 @@
 
     const/4 v1, 0x5
 
-    .line 787
+    .line 843
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 788
+    .line 844
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
-    .line 789
+    .line 845
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2958,10 +3085,10 @@
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 791
+    .line 847
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
-    .line 793
+    .line 849
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2976,7 +3103,7 @@
 
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
-    .line 795
+    .line 851
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2993,12 +3120,12 @@
 
     move-result-object p1
 
-    .line 791
+    .line 847
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
-    .line 797
+    .line 853
     new-instance p2, Landroid/view/animation/PathInterpolator;
 
     const v1, 0x3dcccccd    # 0.1f
@@ -3009,25 +3136,25 @@
 
     invoke-direct {p2, v3, v1, v3, v2}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
-    .line 799
+    .line 855
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     const-wide/16 v1, 0x12c
 
-    .line 800
+    .line 856
     invoke-virtual {p1, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 801
+    .line 857
     new-instance p2, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda7;
 
     invoke-direct {p2, p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$$ExternalSyntheticLambda7;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;Landroid/widget/FrameLayout$LayoutParams;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 805
+    .line 861
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 807
+    .line 863
     invoke-direct {p0, p3, p4}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->updateOverlayGuideLayoutByPreviewRatio(D)V
 
     return-void
@@ -3036,7 +3163,7 @@
 .method private updateOverlayGuideLayoutByPreviewRatio(D)V
     .registers 10
 
-    .line 811
+    .line 867
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_c1
@@ -3051,7 +3178,7 @@
 
     goto/16 :goto_c1
 
-    .line 818
+    .line 874
     :cond_e
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3059,43 +3186,43 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 819
+    .line 875
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideContainer:Landroid/widget/LinearLayout;
 
-    .line 820
+    .line 876
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 821
+    .line 877
     iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCloseOverlayGuideIcon:Landroid/widget/ImageView;
 
-    .line 822
+    .line 878
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 824
+    .line 880
     iget v3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideMarginTop:I
 
     const/4 v4, -0x1
 
     if-eq v3, v4, :cond_2b
 
-    .line 825
+    .line 881
     iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 827
+    .line 883
     :cond_2b
     iget v3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideMarginBottom:I
 
     if-eq v3, v4, :cond_31
 
-    .line 828
+    .line 884
     iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     :cond_31
@@ -3107,7 +3234,7 @@
 
     const-wide v3, 0x3ff5555555555555L    # 1.3333333333333333
 
-    .line 831
+    .line 887
     invoke-static {p1, p2, v3, v4}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result v5
@@ -3116,7 +3243,7 @@
 
     const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
 
-    .line 832
+    .line 888
     invoke-static {p1, p2, v5, v6}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result v5
@@ -3128,14 +3255,14 @@
     :cond_4b
     const-wide v5, 0x3ffc71c71c71c71cL    # 1.7777777777777777
 
-    .line 836
+    .line 892
     invoke-static {p1, p2, v5, v6}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
 
     move-result p1
 
     if-eqz p1, :cond_82
 
-    .line 837
+    .line 893
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p1, v3, v4}, Lcom/transsion/camera/app/ui/ScreenManager;->getTopBarHeight(D)I
@@ -3144,7 +3271,7 @@
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 838
+    .line 894
     invoke-virtual {p2, v5, v6}, Lcom/transsion/camera/app/ui/ScreenManager;->getTopBarHeight(D)I
 
     move-result p2
@@ -3153,7 +3280,7 @@
 
     iput p1, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 839
+    .line 895
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p1, v3, v4}, Lcom/transsion/camera/app/ui/ScreenManager;->getTopBarHeight(D)I
@@ -3162,7 +3289,7 @@
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
-    .line 840
+    .line 896
     invoke-virtual {p2, v5, v6}, Lcom/transsion/camera/app/ui/ScreenManager;->getTopBarHeight(D)I
 
     move-result p2
@@ -3171,7 +3298,7 @@
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
-    .line 841
+    .line 897
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
@@ -3188,7 +3315,7 @@
 
     goto :goto_b1
 
-    .line 843
+    .line 899
     :cond_82
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
@@ -3198,7 +3325,7 @@
 
     iput p1, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 844
+    .line 900
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mScreenManager:Lcom/transsion/camera/app/ui/ScreenManager;
 
     invoke-virtual {p1, v3, v4}, Lcom/transsion/camera/app/ui/ScreenManager;->getTopBarHeight(D)I
@@ -3207,7 +3334,7 @@
 
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
-    .line 845
+    .line 901
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
@@ -3228,10 +3355,10 @@
     :goto_a0
     const/4 p1, 0x0
 
-    .line 833
+    .line 889
     iput p1, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 834
+    .line 890
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3246,26 +3373,26 @@
 
     iput p1, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 849
+    .line 905
     :cond_b1
     :goto_b1
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 850
+    .line 906
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 851
+    .line 907
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCloseOverlayGuideIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 
-    .line 814
+    .line 870
     :cond_c1
     :goto_c1
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -3280,7 +3407,7 @@
 .method private updatePreviewRect(Landroid/graphics/Rect;)V
     .registers 7
 
-    .line 735
+    .line 791
     invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
 
     move-result v0
@@ -3299,28 +3426,28 @@
 
     div-double/2addr v0, v2
 
-    .line 737
+    .line 793
     invoke-direct {p0, v0, v1, p1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->getMarginTopForFloatingWindow(DLandroid/graphics/Rect;)I
 
     move-result v2
 
     iput v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowMarginTop:I
 
-    .line 738
+    .line 794
     invoke-direct {p0, v0, v1, p1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->getMarginTopForOverlayGuide(DLandroid/graphics/Rect;)I
 
     move-result v2
 
     iput v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideMarginTop:I
 
-    .line 739
+    .line 795
     invoke-direct {p0, v0, v1, p1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->getMarginBottomForOverlayGuide(DLandroid/graphics/Rect;)I
 
     move-result v2
 
     iput v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideMarginBottom:I
 
-    .line 741
+    .line 797
     iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mPreviewRect:Landroid/graphics/Rect;
 
     if-eqz v2, :cond_3c
@@ -3333,7 +3460,7 @@
 
     if-nez v2, :cond_3c
 
-    .line 742
+    .line 798
     iget-wide v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mPreviewRatio:D
 
     iget-object v4, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mPreviewRect:Landroid/graphics/Rect;
@@ -3342,25 +3469,25 @@
 
     move-result v2
 
-    .line 743
+    .line 799
     invoke-direct {p0, v0, v1, p1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->getMarginTopForFloatingWindow(DLandroid/graphics/Rect;)I
 
     move-result v3
 
-    .line 744
+    .line 800
     invoke-direct {p0, v2, v3, v0, v1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->updateLayoutParamsWithAnim(IID)V
 
     goto :goto_3f
 
-    .line 746
+    .line 802
     :cond_3c
     invoke-direct {p0, v0, v1}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->updateLayoutParams(D)V
 
-    .line 749
+    .line 805
     :goto_3f
     iput-wide v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mPreviewRatio:D
 
-    .line 750
+    .line 806
     iput-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mPreviewRect:Landroid/graphics/Rect;
 
     return-void
@@ -3371,17 +3498,17 @@
 .method public getGuideStatus(Ljava/lang/String;)Ljava/lang/String;
     .registers 4
 
-    .line 180
+    .line 182
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     const-string v0, "key_selling_point_guide_status"
 
-    .line 181
+    .line 183
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 180
+    .line 182
     invoke-virtual {p0, v0, p1, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -3392,12 +3519,12 @@
 .method public hideFloatingWindow()V
     .registers 3
 
-    .line 1085
+    .line 1141
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
     if-nez v0, :cond_c
 
-    .line 1086
+    .line 1142
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[hideFloatingWindow] return."
@@ -3406,7 +3533,7 @@
 
     return-void
 
-    .line 1089
+    .line 1145
     :cond_c
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
@@ -3414,14 +3541,14 @@
 
     if-nez v0, :cond_19
 
-    .line 1090
+    .line 1146
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1092
+    .line 1148
     :cond_19
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
@@ -3432,15 +3559,66 @@
     return-void
 .end method
 
-.method public hideOverlayGuideWithAnim()V
-    .registers 10
+.method public hideOverlayGuide()V
+    .registers 6
 
-    .line 1107
+    .line 1152
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
 
     if-nez v0, :cond_c
 
-    .line 1108
+    .line 1153
+    sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string v0, "[hideOverlayGuide] return."
+
+    invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    return-void
+
+    .line 1156
+    :cond_c
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_27
+
+    .line 1157
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
+
+    invoke-virtual {v0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const-string v3, "key_selling_point_guide_show"
+
+    const-string v4, "false"
+
+    invoke-virtual {v0, v3, v4, v1, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    .line 1158
+    iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
+
+    const/16 v0, 0x8
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_27
+    return-void
+.end method
+
+.method public hideOverlayGuideWithAnim()V
+    .registers 10
+
+    .line 1163
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
+
+    if-nez v0, :cond_c
+
+    .line 1164
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[hideOverlayGuideWithAnim] return."
@@ -3449,7 +3627,7 @@
 
     return-void
 
-    .line 1111
+    .line 1167
     :cond_c
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
@@ -3457,14 +3635,14 @@
 
     if-nez v0, :cond_3c
 
-    .line 1112
+    .line 1168
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x3e8
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1113
+    .line 1169
     iget-object v3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideRoot:Landroid/widget/FrameLayout;
 
     const/4 v7, 0x0
@@ -3481,14 +3659,14 @@
 
     invoke-direct/range {v2 .. v8}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->startAlphaAnimation(Landroid/view/View;FFIILandroid/view/animation/PathInterpolator;)V
 
-    .line 1117
+    .line 1173
     iget-object p0, v2, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 v0, 0x16c
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    .line 1118
+    .line 1174
     iget-object p0, v2, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -3510,7 +3688,7 @@
 .method public inflateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
     .registers 6
 
-    .line 295
+    .line 297
     sget v0, Lcom/transsion/camera/R$layout;->selling_point_guide_layout:I
 
     const/4 v1, 0x1
@@ -3521,34 +3699,34 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
-    .line 297
+    .line 299
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->initFloatingWindowUI()V
 
-    .line 298
+    .line 300
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->initOverlayGuideUI()V
 
-    .line 300
+    .line 302
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->initOverlayGuidePageIndicator()V
 
-    .line 301
+    .line 303
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->initFloatingWindowViewPager(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)V
 
-    .line 302
+    .line 304
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->initOverlayGuideViewPager(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)V
 
-    .line 304
+    .line 306
     iget-wide p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mPreviewRatio:D
 
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->updateLayoutParams(D)V
 
-    .line 306
+    .line 308
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
 
     iget-boolean p1, p1, Lcom/transsion/camera/utils/CustomConfigUtil;->mSupportSellingPointVideo:Z
 
-    .line 308
+    .line 310
     const-string/jumbo p2, "value_floating_window"
 
     if-eqz p1, :cond_2c
@@ -3565,14 +3743,14 @@
 
     move-result-object v0
 
-    .line 307
+    .line 309
     invoke-static {p2, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p2
 
     if-eqz p2, :cond_59
 
-    .line 309
+    .line 311
     iget-object p2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentModeName:Ljava/lang/String;
 
     const-string v0, "com.transsion.camera.feature.mode.autoscenedetection.ASDModeEntry"
@@ -3585,7 +3763,7 @@
 
     if-nez p1, :cond_52
 
-    .line 311
+    .line 313
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -3600,17 +3778,17 @@
 
     invoke-virtual {p1, v1, v2, p2, v0}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 313
+    .line 315
     :cond_52
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->showFloatingWindowWithAnim()V
 
     goto :goto_59
 
-    .line 315
+    .line 317
     :cond_56
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->hideFloatingWindow()V
 
-    .line 319
+    .line 321
     :cond_59
     :goto_59
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
@@ -3623,7 +3801,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsLowLight:Z
 
-    .line 320
+    .line 322
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object p1
@@ -3632,10 +3810,10 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/ModuleTransferManager;->registerTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
 
-    .line 321
+    .line 323
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->ringScreenLightUpdateUI()V
 
-    .line 323
+    .line 325
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mRoot:Landroid/view/View;
 
     return-object p0
@@ -3694,73 +3872,73 @@
 
     return-void
 
-    .line 1134
+    .line 1190
     :cond_2f
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsSuperNightLiteAnimBegin:Z
 
     return-void
 
-    .line 1131
+    .line 1187
     :cond_32
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsSuperNightLiteAnimBegin:Z
 
     return-void
 
-    .line 1152
+    .line 1208
     :cond_35
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsQuickVideoBegin:Z
 
     return-void
 
-    .line 1149
+    .line 1205
     :cond_38
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsQuickVideoBegin:Z
 
     return-void
 
-    .line 1158
+    .line 1214
     :cond_3b
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsPopSettingShow:Z
 
     return-void
 
-    .line 1155
+    .line 1211
     :cond_3e
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsPopSettingShow:Z
 
     return-void
 
-    .line 1146
+    .line 1202
     :cond_41
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsZoomBegin:Z
 
     return-void
 
-    .line 1143
+    .line 1199
     :cond_44
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsZoomBegin:Z
 
     return-void
 
-    .line 1140
+    .line 1196
     :cond_47
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsSelfTimerBegin:Z
 
     return-void
 
-    .line 1137
+    .line 1193
     :cond_4a
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsSelfTimerBegin:Z
 
     return-void
 
-    .line 1128
+    .line 1184
     :cond_4d
     iput-boolean v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsCameraSwitching:Z
 
     return-void
 
-    .line 1125
+    .line 1181
     :cond_50
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsCameraSwitching:Z
 
@@ -3770,17 +3948,17 @@
 .method public onPrivacyModeChange(ZF)V
     .registers 5
 
-    .line 1167
+    .line 1223
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsPrivacyModeEnable:Z
 
-    .line 1168
+    .line 1224
     const-string/jumbo p2, "value_floating_window"
 
     const-string/jumbo v0, "value_none_guide"
 
     if-eqz p1, :cond_37
 
-    .line 1169
+    .line 1225
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->getGuideStatus(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -3795,18 +3973,18 @@
 
     const/4 p1, 0x1
 
-    .line 1170
+    .line 1226
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsHideByPrivacyMode:Z
 
-    .line 1171
+    .line 1227
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->hideFloatingWindow()V
 
-    .line 1172
+    .line 1228
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->setFloatingWindowClickIconId(Ljava/lang/String;)V
 
     return-void
 
-    .line 1173
+    .line 1229
     :cond_20
     const-string/jumbo p1, "value_overlay_guide"
 
@@ -3820,18 +3998,18 @@
 
     if-eqz p1, :cond_61
 
-    .line 1174
-    invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->hideOverlayGuide()V
+    .line 1230
+    invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->hideOverlayGuide()V
 
-    .line 1175
+    .line 1231
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->setGuideStatus(Ljava/lang/String;)V
 
-    .line 1176
+    .line 1232
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->setOverlayGuideClickIconId(Ljava/lang/String;)V
 
     return-void
 
-    .line 1179
+    .line 1235
     :cond_37
     iget-boolean p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsSuperNightLiteAnimBegin:Z
 
@@ -3853,14 +4031,14 @@
 
     const-string v1, "com.transsion.camera.feature.mode.autoscenedetection.ASDModeEntry"
 
-    .line 1180
+    .line 1236
     invoke-static {p1, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_61
 
-    .line 1181
+    .line 1237
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->getGuideStatus(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -3873,10 +4051,10 @@
 
     const/4 p1, 0x0
 
-    .line 1182
+    .line 1238
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsHideByPrivacyMode:Z
 
-    .line 1183
+    .line 1239
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->showFloatingWindow()V
 
     :cond_61
@@ -3888,19 +4066,19 @@
 
     const/4 v0, 0x0
 
-    .line 327
+    .line 329
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsSuperNightLiteAnimBegin:Z
 
-    .line 328
+    .line 330
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsSelfTimerBegin:Z
 
-    .line 329
+    .line 331
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsZoomBegin:Z
 
-    .line 330
+    .line 332
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsQuickVideoBegin:Z
 
-    .line 331
+    .line 333
     const-string/jumbo v0, "value_none_guide"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->getGuideStatus(Ljava/lang/String;)Ljava/lang/String;
@@ -3915,12 +4093,12 @@
 
     if-eqz v1, :cond_1d
 
-    .line 332
+    .line 334
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->hideOverlayGuideWithAnim()V
 
     return-void
 
-    .line 333
+    .line 335
     :cond_1d
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsHideByPrivacyMode:Z
 
@@ -3938,7 +4116,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 334
+    .line 336
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->hideFloatingWindow()V
 
     :cond_31
@@ -3948,7 +4126,7 @@
 .method public resume()V
     .registers 3
 
-    .line 339
+    .line 341
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsHideByPrivacyMode:Z
 
     if-nez v0, :cond_17
@@ -3967,7 +4145,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 340
+    .line 342
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->showFloatingWindow()V
 
     :cond_17
@@ -3977,7 +4155,7 @@
 .method public setAllModeResources(Ljava/util/List;)V
     .registers 15
 
-    .line 262
+    .line 264
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -3990,32 +4168,32 @@
 
     move-result-object v0
 
-    .line 263
+    .line 265
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 264
+    .line 266
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 265
+    .line 267
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 266
+    .line 268
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 267
+    .line 269
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
-    .line 269
+    .line 271
     array-length v6, v0
 
     const/4 v7, 0x0
@@ -4025,7 +4203,7 @@
 
     aget-object v8, v0, v7
 
-    .line 270
+    .line 272
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v9
@@ -4044,7 +4222,7 @@
 
     check-cast v10, Lcom/transsion/camera/app/common/FeatureResource;
 
-    .line 271
+    .line 273
     iget-object v11, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v11}, Lcom/transsion/camera/app/common/IAppUI;->isSecureCamera()Z
@@ -4057,14 +4235,14 @@
 
     iget-object v12, v10, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
-    .line 272
+    .line 274
     invoke-static {v11, v12}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v11
 
     if-eqz v11, :cond_55
 
-    .line 273
+    .line 275
     sget-object v10, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v11, "[setAllModeResources] in secure camera, remove ai art museum mode resources"
@@ -4073,7 +4251,7 @@
 
     goto :goto_2f
 
-    .line 276
+    .line 278
     :cond_55
     iget-object v11, v10, Lcom/transsion/camera/app/common/FeatureResource;->mFeatureName:Ljava/lang/String;
 
@@ -4083,20 +4261,20 @@
 
     if-eqz v11, :cond_2f
 
-    .line 277
+    .line 279
     invoke-interface {v3, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 278
+    .line 280
     iget-object v11, v10, Lcom/transsion/camera/app/common/FeatureResource;->mSellingPointTitle:Ljava/lang/String;
 
     invoke-interface {v1, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 279
+    .line 281
     iget-object v11, v10, Lcom/transsion/camera/app/common/FeatureResource;->mSellingPointContent:Ljava/lang/String;
 
     invoke-interface {v2, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 281
+    .line 283
     iget v11, v10, Lcom/transsion/camera/app/common/FeatureResource;->mFloatingWindowDrawableId:I
 
     invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4105,7 +4283,7 @@
 
     invoke-interface {v4, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 282
+    .line 284
     iget v10, v10, Lcom/transsion/camera/app/common/FeatureResource;->mOverlayGuideDrawableId:I
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4121,20 +4299,20 @@
 
     goto :goto_27
 
-    .line 287
+    .line 289
     :cond_80
     iput-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
-    .line 288
+    .line 290
     iput-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointContentList:Ljava/util/List;
 
-    .line 289
+    .line 291
     iput-object v3, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointModeList:Ljava/util/List;
 
-    .line 290
+    .line 292
     iput-object v4, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowDrawableIdList:Ljava/util/List;
 
-    .line 291
+    .line 293
     iput-object v5, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideDrawableIdList:Ljava/util/List;
 
     return-void
@@ -4143,15 +4321,15 @@
 .method public setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
     .registers 3
 
-    .line 174
+    .line 176
     iput-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 175
+    .line 177
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mPreviewRectListener:Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUI;->registerPreviewRectListener(Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;)V
 
-    .line 176
+    .line 178
     iget-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IPrivacyControl;->registerPrivacyCallback(Lcom/transsion/camera/app/common/IPrivacyCallback;)V
@@ -4162,7 +4340,7 @@
 .method public setFloatingWindowClickIconId(Ljava/lang/String;)V
     .registers 3
 
-    .line 215
+    .line 217
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -4177,17 +4355,17 @@
 .method public setGuideStatus(Ljava/lang/String;)V
     .registers 5
 
-    .line 185
+    .line 187
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 186
+    .line 188
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 185
+    .line 187
     const-string v2, "key_selling_point_guide_status"
 
     invoke-virtual {p0, v2, p1, v0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
@@ -4198,12 +4376,12 @@
 .method public setOverlayGuideClickIconId(Ljava/lang/String;)V
     .registers 6
 
-    .line 190
+    .line 192
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
     move-result v0
 
-    .line 191
+    .line 193
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
     move-result v1
@@ -4227,7 +4405,7 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 192
+    .line 194
     :goto_19
     iget v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentOverlayGuidePagerPosition:I
 
@@ -4237,7 +4415,7 @@
 
     goto :goto_53
 
-    .line 199
+    .line 201
     :cond_20
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -4249,25 +4427,25 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
-    .line 200
+    .line 202
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
     move-result v3
 
     if-eqz v3, :cond_36
 
-    .line 201
+    .line 203
     iget p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentOverlayGuidePagerPosition:I
 
     add-int/lit8 p0, p0, -0x1
 
     goto :goto_38
 
-    .line 202
+    .line 204
     :cond_36
     iget p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentOverlayGuidePagerPosition:I
 
-    .line 200
+    .line 202
     :goto_38
     invoke-interface {v2, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -4289,12 +4467,12 @@
 
     const/16 p1, 0x2a
 
-    .line 199
+    .line 201
     invoke-virtual {v0, p1, p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(ILjava/lang/String;)V
 
     return-void
 
-    .line 193
+    .line 195
     :cond_53
     :goto_53
     sget-object p1, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -4337,7 +4515,7 @@
 
     if-ltz p2, :cond_31
 
-    .line 206
+    .line 208
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -4348,7 +4526,7 @@
 
     goto :goto_31
 
-    .line 210
+    .line 212
     :cond_b
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
@@ -4360,7 +4538,7 @@
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mSellingPointTitleList:Ljava/util/List;
 
-    .line 211
+    .line 213
     invoke-interface {p0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
@@ -4381,12 +4559,12 @@
 
     const/16 p1, 0x2a
 
-    .line 210
+    .line 212
     invoke-virtual {v0, p1, p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(ILjava/lang/String;)V
 
     return-void
 
-    .line 207
+    .line 209
     :cond_31
     :goto_31
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -4413,7 +4591,7 @@
 .method public showFloatingWindow()V
     .registers 5
 
-    .line 891
+    .line 947
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowDrawableIdList:Ljava/util/List;
 
     if-eqz v0, :cond_78
@@ -4428,7 +4606,7 @@
 
     if-eqz v0, :cond_78
 
-    .line 892
+    .line 948
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -4439,7 +4617,7 @@
 
     if-eqz v0, :cond_78
 
-    .line 893
+    .line 949
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -4450,7 +4628,7 @@
 
     if-eqz v0, :cond_78
 
-    .line 894
+    .line 950
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -4459,13 +4637,13 @@
 
     goto :goto_78
 
-    .line 899
+    .line 955
     :cond_29
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
     if-nez v0, :cond_35
 
-    .line 900
+    .line 956
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[showFloatingWindow] return, mFloatingWindowRoot is null"
@@ -4474,13 +4652,13 @@
 
     return-void
 
-    .line 904
+    .line 960
     :cond_35
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsPrivacyModeEnable:Z
 
     if-eqz v0, :cond_41
 
-    .line 905
+    .line 961
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[showFloatingWindow] return, mIsPrivacyModeEnable is true"
@@ -4489,7 +4667,7 @@
 
     return-void
 
-    .line 909
+    .line 965
     :cond_41
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentModeName:Ljava/lang/String;
 
@@ -4501,7 +4679,7 @@
 
     if-nez v0, :cond_53
 
-    .line 910
+    .line 966
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[showFloatingWindow] return, current mode do not show floating window"
@@ -4510,7 +4688,7 @@
 
     return-void
 
-    .line 914
+    .line 970
     :cond_53
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
@@ -4522,19 +4700,19 @@
 
     if-ne v0, v1, :cond_69
 
-    .line 915
+    .line 971
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 916
+    .line 972
     const-string/jumbo v0, "value_floating_window"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->setGuideStatus(Ljava/lang/String;)V
 
-    .line 918
+    .line 974
     :cond_69
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
@@ -4542,7 +4720,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 919
+    .line 975
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0xbb8
@@ -4551,7 +4729,7 @@
 
     return-void
 
-    .line 895
+    .line 951
     :cond_78
     :goto_78
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -4566,7 +4744,7 @@
 .method public showFloatingWindowWithAnim()V
     .registers 7
 
-    .line 923
+    .line 979
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowDrawableIdList:Ljava/util/List;
 
     if-eqz v0, :cond_a1
@@ -4581,7 +4759,7 @@
 
     if-eqz v0, :cond_a1
 
-    .line 924
+    .line 980
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -4592,7 +4770,7 @@
 
     if-eqz v0, :cond_a1
 
-    .line 925
+    .line 981
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -4603,7 +4781,7 @@
 
     if-eqz v0, :cond_a1
 
-    .line 926
+    .line 982
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -4612,13 +4790,13 @@
 
     goto :goto_a1
 
-    .line 931
+    .line 987
     :cond_29
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
     if-nez v0, :cond_35
 
-    .line 932
+    .line 988
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[showFloatingWindowWithAnim] return."
@@ -4627,13 +4805,13 @@
 
     return-void
 
-    .line 936
+    .line 992
     :cond_35
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsPrivacyModeEnable:Z
 
     if-eqz v0, :cond_41
 
-    .line 937
+    .line 993
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[showFloatingWindowWithAnim] return, mIsPrivacyModeEnable is true"
@@ -4642,7 +4820,7 @@
 
     return-void
 
-    .line 941
+    .line 997
     :cond_41
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentModeName:Ljava/lang/String;
 
@@ -4654,7 +4832,7 @@
 
     if-nez v0, :cond_53
 
-    .line 942
+    .line 998
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[showFloatingWindowWithAnim] return, current mode do not show floating window"
@@ -4663,7 +4841,7 @@
 
     return-void
 
-    .line 946
+    .line 1002
     :cond_53
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
@@ -4675,7 +4853,7 @@
 
     if-ne v0, v1, :cond_a0
 
-    .line 947
+    .line 1003
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mFloatingWindowRoot:Lcom/transsion/camera/app/ui/sellingpointguide/FloatingWindowRoot;
 
     const/4 v1, 0x2
@@ -4684,7 +4862,7 @@
 
     fill-array-data v1, :array_aa
 
-    .line 948
+    .line 1004
     const-string v2, "alpha"
 
     invoke-static {v0, v2, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
@@ -4693,10 +4871,10 @@
 
     const-wide/16 v1, 0xc8
 
-    .line 949
+    .line 1005
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 950
+    .line 1006
     new-instance v1, Landroid/view/animation/PathInterpolator;
 
     const v2, 0x3ea8f5c3    # 0.33f
@@ -4709,32 +4887,32 @@
 
     invoke-direct {v1, v2, v4, v3, v5}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
-    .line 952
+    .line 1008
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 953
-    new-instance v1, Lcom/transsion/camera/app/ui/SellingPointGuideUI$6;
+    .line 1009
+    new-instance v1, Lcom/transsion/camera/app/ui/SellingPointGuideUI$7;
 
-    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$6;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
+    invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI$7;-><init>(Lcom/transsion/camera/app/ui/SellingPointGuideUI;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 960
+    .line 1016
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 962
+    .line 1018
     const-string/jumbo v0, "value_floating_window"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->setGuideStatus(Ljava/lang/String;)V
 
-    .line 963
+    .line 1019
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x3e9
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 964
+    .line 1020
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0xbb8
@@ -4744,7 +4922,7 @@
     :cond_a0
     return-void
 
-    .line 927
+    .line 983
     :cond_a1
     :goto_a1
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -4767,7 +4945,7 @@
 .method public switchFloatingWindowToOverlayGuide()V
     .registers 5
 
-    .line 863
+    .line 919
     const-string/jumbo v0, "value_none_guide"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->getGuideStatus(Ljava/lang/String;)Ljava/lang/String;
@@ -4782,7 +4960,7 @@
 
     if-nez v0, :cond_18
 
-    .line 864
+    .line 920
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[switchFloatingWindowToOverlayGuide] return, current status is not floating window"
@@ -4791,13 +4969,13 @@
 
     return-void
 
-    .line 868
+    .line 924
     :cond_18
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mIsCameraSwitching:Z
 
     if-eqz v0, :cond_24
 
-    .line 869
+    .line 925
     sget-object p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[switchFloatingWindowToOverlayGuide] return, camera is switching"
@@ -4806,21 +4984,21 @@
 
     return-void
 
-    .line 873
+    .line 929
     :cond_24
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->showOverlayGuide()V
 
-    .line 874
+    .line 930
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->hideFloatingWindow()V
 
-    .line 876
+    .line 932
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->enableInfiniteLoop()Z
 
     move-result v0
 
     if-eqz v0, :cond_37
 
-    .line 877
+    .line 933
     iget v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentFloatingViewPagerPosition:I
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->calculateActualViewPagerPos(I)I
@@ -4829,14 +5007,14 @@
 
     goto :goto_39
 
-    .line 878
+    .line 934
     :cond_37
     iget v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentFloatingViewPagerPosition:I
 
     :goto_39
     iput v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentOverlayGuidePagerPosition:I
 
-    .line 880
+    .line 936
     iget-object v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayTitleTextViewList:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4847,10 +5025,10 @@
 
     const/4 v1, 0x1
 
-    .line 881
+    .line 937
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
 
-    .line 883
+    .line 939
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mOverlayGuideViewPager:Landroidx/viewpager/widget/ViewPager;
 
     iget v1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentOverlayGuidePagerPosition:I
@@ -4859,21 +5037,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroidx/viewpager/widget/ViewPager;->setCurrentItem(IZ)V
 
-    .line 885
+    .line 941
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0x3e8
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 886
+    .line 942
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0xbb8
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 887
+    .line 943
     const-string v0, "1"
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->setFloatingWindowClickIconId(Ljava/lang/String;)V
@@ -4884,15 +5062,15 @@
 .method public unInit()V
     .registers 3
 
-    .line 855
+    .line 911
     iget-object v0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_7
 
-    .line 856
+    .line 912
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IPrivacyControl;->unregisterPrivacyCallback(Lcom/transsion/camera/app/common/IPrivacyCallback;)V
 
-    .line 858
+    .line 914
     :cond_7
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
@@ -4902,7 +5080,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ModuleTransferManager;->unregisterTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
 
-    .line 859
+    .line 915
     iget-object p0, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mUIHandler:Landroid/os/Handler;
 
     const/4 v0, 0x0
@@ -4915,7 +5093,7 @@
 .method public updateCurrentModeName(Ljava/lang/String;)V
     .registers 2
 
-    .line 258
+    .line 260
     iput-object p1, p0, Lcom/transsion/camera/app/ui/SellingPointGuideUI;->mCurrentModeName:Ljava/lang/String;
 
     return-void

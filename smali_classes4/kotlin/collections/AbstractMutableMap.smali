@@ -11,7 +11,7 @@
 .method protected constructor <init>()V
     .registers 1
 
-    .line 19
+    .line 18
     invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
 
     return-void

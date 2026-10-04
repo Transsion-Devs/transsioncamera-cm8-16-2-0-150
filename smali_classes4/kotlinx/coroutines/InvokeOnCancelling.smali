@@ -4,11 +4,11 @@
 
 
 # static fields
-.field private static final _invoked$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+.field private static final synthetic _invoked$volatile$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
 
 # instance fields
-.field private volatile _invoked:I
+.field private volatile synthetic _invoked$volatile:I
 
 .field private final handler:Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -25,13 +25,13 @@
 
     const-class v0, Lkotlinx/coroutines/InvokeOnCancelling;
 
-    const-string v1, "_invoked"
+    const-string v1, "_invoked$volatile"
 
     invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/InvokeOnCancelling;->_invoked$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/InvokeOnCancelling;->_invoked$volatile$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     return-void
 .end method
@@ -46,11 +46,35 @@
         }
     .end annotation
 
-    .line 1427
+    .line 1424
     invoke-direct {p0}, Lkotlinx/coroutines/JobCancellingNode;-><init>()V
 
-    .line 1426
+    .line 1423
     iput-object p1, p0, Lkotlinx/coroutines/InvokeOnCancelling;->handler:Lkotlin/jvm/functions/Function1;
+
+    return-void
+.end method
+
+.method private final synthetic get_invoked$volatile()I
+    .registers 1
+
+    iget p0, p0, Lkotlinx/coroutines/InvokeOnCancelling;->_invoked$volatile:I
+
+    return p0
+.end method
+
+.method private static final synthetic get_invoked$volatile$FU()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/InvokeOnCancelling;->_invoked$volatile$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic set_invoked$volatile(I)V
+    .registers 2
+
+    iput p1, p0, Lkotlinx/coroutines/InvokeOnCancelling;->_invoked$volatile:I
 
     return-void
 .end method
@@ -60,7 +84,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 1425
+    .line 1422
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/InvokeOnCancelling;->invoke(Ljava/lang/Throwable;)V
@@ -73,8 +97,10 @@
 .method public invoke(Ljava/lang/Throwable;)V
     .registers 5
 
-    .line 1431
-    sget-object v0, Lkotlinx/coroutines/InvokeOnCancelling;->_invoked$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    .line 1428
+    invoke-static {}, Lkotlinx/coroutines/InvokeOnCancelling;->get_invoked$volatile$FU()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
@@ -84,12 +110,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_11
 
     iget-object p0, p0, Lkotlinx/coroutines/InvokeOnCancelling;->handler:Lkotlin/jvm/functions/Function1;
 
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_f
+    :cond_11
     return-void
 .end method

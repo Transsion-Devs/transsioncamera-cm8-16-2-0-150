@@ -27,10 +27,10 @@
 .method constructor <init>()V
     .registers 3
 
-    .line 104
+    .line 106
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 106
+    .line 108
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->AFICAN_BOGOLANFINI:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -45,7 +45,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 107
+    .line 109
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->PAINTED_TATTOO:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -60,7 +60,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 108
+    .line 110
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->INDONESIAN_BATIK:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -75,7 +75,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 109
+    .line 111
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->MAASAI_FABRIC:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -90,7 +90,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 110
+    .line 112
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->ANIME_CUSTOMIZATION:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -105,7 +105,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 111
+    .line 113
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->KHOKHLOMA_GOLD_PATTERNED:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -120,7 +120,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 112
+    .line 114
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->GOLD_PLATED_GARMENTS:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
@@ -135,7 +135,7 @@
 
     invoke-virtual {p0, v1, v0}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 113
+    .line 115
     sget-object v0, Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;->BLUE_AND_WHITE_PORCELAIN:Lcom/aiartmuseum/jni/IAIArtMuseum$Partial;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I

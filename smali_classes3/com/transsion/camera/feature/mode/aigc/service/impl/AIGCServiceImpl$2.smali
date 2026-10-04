@@ -28,7 +28,7 @@
 
     if-eqz p0, :cond_5
 
-    .line 437
+    .line 436
     invoke-interface {p0}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$ICallback;->onResult()V
 
     :cond_5
@@ -38,7 +38,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$ICallback;)V
     .registers 3
 
-    .line 412
+    .line 411
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$2;->this$0:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$2;->val$callback:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$ICallback;
@@ -47,7 +47,7 @@
 
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$InitCallback;-><init>(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl-IA;)V
 
-    .line 414
+    .line 413
     new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 p2, 0x0
@@ -64,7 +64,7 @@
 .method public onResult(Landroid/os/Bundle;)V
     .registers 5
 
-    .line 418
+    .line 417
     invoke-static {}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -73,7 +73,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 419
+    .line 418
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$2;->mResultReceived:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
@@ -86,7 +86,7 @@
 
     if-eqz v0, :cond_88
 
-    .line 420
+    .line 419
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$2;->this$0:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$fgetmLockGuard(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;)Ljava/lang/Object;
@@ -97,7 +97,7 @@
 
     if-nez p1, :cond_31
 
-    .line 422
+    .line 421
     :try_start_1c
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$2;->this$0:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;
 
@@ -107,7 +107,7 @@
 
     invoke-virtual {p1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 423
+    .line 422
     invoke-static {}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -123,7 +123,7 @@
 
     goto :goto_86
 
-    .line 425
+    .line 424
     :cond_31
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$2;->this$0:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;
 
@@ -139,7 +139,7 @@
 
     invoke-virtual {v1, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 426
+    .line 425
     invoke-static {}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -166,13 +166,13 @@
 
     invoke-static {p1, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 428
+    .line 427
     :goto_5e
     monitor-exit v0
     :try_end_5f
     .catchall {:try_start_1c .. :try_end_5f} :catchall_2f
 
-    .line 430
+    .line 429
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$2;->this$0:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$fgetmInitialized(Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;)Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -185,18 +185,18 @@
 
     if-eqz p1, :cond_73
 
-    .line 431
+    .line 430
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$2;->val$callback:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$ICallback;
 
     if-eqz p0, :cond_72
 
-    .line 432
+    .line 431
     invoke-interface {p0}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$ICallback;->onResult()V
 
     :cond_72
     return-void
 
-    .line 435
+    .line 434
     :cond_73
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl$2;->this$0:Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;
 
@@ -216,7 +216,7 @@
 
     return-void
 
-    .line 428
+    .line 427
     :goto_86
     :try_start_86
     monitor-exit v0
@@ -225,7 +225,7 @@
 
     throw p0
 
-    .line 442
+    .line 441
     :cond_88
     invoke-static {}, Lcom/transsion/camera/feature/mode/aigc/service/impl/AIGCServiceImpl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 

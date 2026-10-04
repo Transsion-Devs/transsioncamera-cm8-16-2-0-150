@@ -71,7 +71,7 @@
 .method private getTranslationPreviewRect(Landroid/graphics/Rect;)Landroid/graphics/Rect;
     .registers 7
 
-    .line 85
+    .line 80
     iget-object v0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager5;->mPreviewMoveDistance:Ljava/util/function/ToIntFunction;
 
     invoke-static {v0}, Ljava/util/Optional;->ofNullable(Ljava/lang/Object;)Ljava/util/Optional;
@@ -82,14 +82,14 @@
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/app/ui/anim/AnimationManager5$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/app/ui/anim/AnimationManager5;)V
 
-    .line 86
+    .line 81
     invoke-virtual {v0, v1}, Ljava/util/Optional;->map(Ljava/util/function/Function;)Ljava/util/Optional;
 
     move-result-object p0
 
     const/4 v0, 0x0
 
-    .line 87
+    .line 82
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -104,7 +104,7 @@
 
     move-result p0
 
-    .line 88
+    .line 83
     sget-object v0, Lcom/transsion/camera/app/ui/anim/AnimationManager5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -129,14 +129,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 89
+    .line 84
     invoke-static {p0}, Ljava/lang/Math;->abs(I)I
 
     move-result v1
 
     if-lez v1, :cond_66
 
-    .line 90
+    .line 85
     new-instance v1, Landroid/graphics/Rect;
 
     iget v2, p1, Landroid/graphics/Rect;->left:I
@@ -153,7 +153,7 @@
 
     invoke-direct {v1, v2, v3, v4, p1}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 92
+    .line 87
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -179,7 +179,7 @@
 .method private synthetic lambda$getTranslationPreviewRect$2(Ljava/util/function/ToIntFunction;)Ljava/lang/Integer;
     .registers 2
 
-    .line 86
+    .line 81
     iget-object p0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager;->mCurrentMode:Ljava/lang/String;
 
     invoke-interface {p1, p0}, Ljava/util/function/ToIntFunction;->applyAsInt(Ljava/lang/Object;)I
@@ -351,12 +351,12 @@
 .method public getAnimatorUpdateListener(Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;)Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;
     .registers 3
 
-    .line 102
+    .line 97
     sget-object v0, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;->UI5_ANIM_PREVIEW_TRANSLATION:Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;
 
     if-ne p1, v0, :cond_7
 
-    .line 103
+    .line 98
     iget-object p0, p0, Lcom/transsion/camera/app/ui/anim/AnimationManager5;->mPreviewTranslationListener:Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;
 
     return-object p0
@@ -365,14 +365,6 @@
     const/4 p0, 0x0
 
     return-object p0
-.end method
-
-.method protected getPreviewRectChangeAnimDuration()J
-    .registers 3
-
-    const-wide/16 v0, 0x1c2
-
-    return-wide v0
 .end method
 
 .method public setPreviewMoveDistance(Ljava/util/function/ToIntFunction;)V

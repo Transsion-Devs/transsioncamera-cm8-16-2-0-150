@@ -7,7 +7,7 @@
 .method public static final CoroutineScope(Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/CoroutineScope;
     .registers 4
 
-    .line 277
+    .line 274
     new-instance v0, Lkotlinx/coroutines/internal/ContextScope;
 
     sget-object v1, Lkotlinx/coroutines/Job;->Key:Lkotlinx/coroutines/Job$Key;
@@ -42,7 +42,7 @@
 .method public static final MainScope()Lkotlinx/coroutines/CoroutineScope;
     .registers 3
 
-    .line 118
+    .line 115
     new-instance v0, Lkotlinx/coroutines/internal/ContextScope;
 
     const/4 v1, 0x0
@@ -69,7 +69,7 @@
 .method public static final cancel(Lkotlinx/coroutines/CoroutineScope;Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 3
 
-    .line 295
+    .line 292
     invoke-static {p1, p2}, Lkotlinx/coroutines/ExceptionsKt;->CancellationException(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/util/concurrent/CancellationException;
 
     move-result-object p1
@@ -82,7 +82,7 @@
 .method public static final cancel(Lkotlinx/coroutines/CoroutineScope;Ljava/util/concurrent/CancellationException;)V
     .registers 4
 
-    .line 286
+    .line 283
     invoke-interface {p0}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v0
@@ -97,12 +97,12 @@
 
     if-eqz v0, :cond_12
 
-    .line 287
+    .line 284
     invoke-interface {v0, p1}, Lkotlinx/coroutines/Job;->cancel(Ljava/util/concurrent/CancellationException;)V
 
     return-void
 
-    .line 286
+    .line 283
     :cond_12
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -138,7 +138,7 @@
 
     const/4 p2, 0x0
 
-    .line 295
+    .line 292
     :cond_5
     invoke-static {p0, p1, p2}, Lkotlinx/coroutines/CoroutineScopeKt;->cancel(Lkotlinx/coroutines/CoroutineScope;Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -154,7 +154,7 @@
 
     const/4 p1, 0x0
 
-    .line 285
+    .line 282
     :cond_5
     invoke-static {p0, p1}, Lkotlinx/coroutines/CoroutineScopeKt;->cancel(Lkotlinx/coroutines/CoroutineScope;Ljava/util/concurrent/CancellationException;)V
 
@@ -175,7 +175,7 @@
         }
     .end annotation
 
-    .line 263
+    .line 260
     new-instance v0, Lkotlinx/coroutines/internal/ScopeCoroutine;
 
     invoke-interface {p1}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
@@ -184,12 +184,12 @@
 
     invoke-direct {v0, v1, p1}, Lkotlinx/coroutines/internal/ScopeCoroutine;-><init>(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)V
 
-    .line 264
+    .line 261
     invoke-static {v0, v0, p0}, Lkotlinx/coroutines/intrinsics/UndispatchedKt;->startUndispatchedOrReturn(Lkotlinx/coroutines/internal/ScopeCoroutine;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 262
+    .line 259
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
@@ -215,7 +215,7 @@
         }
     .end annotation
 
-    .line 329
+    .line 326
     invoke-interface {p0}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -238,7 +238,7 @@
 
     const/4 p0, 0x3
 
-    .line 329
+    .line 326
     invoke-static {p0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
 
     const/4 p0, 0x0
@@ -249,7 +249,7 @@
 .method public static final ensureActive(Lkotlinx/coroutines/CoroutineScope;)V
     .registers 1
 
-    .line 313
+    .line 310
     invoke-interface {p0}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -262,7 +262,7 @@
 .method public static final isActive(Lkotlinx/coroutines/CoroutineScope;)Z
     .registers 2
 
-    .line 137
+    .line 134
     invoke-interface {p0}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p0
@@ -298,7 +298,7 @@
 .method public static final plus(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;)Lkotlinx/coroutines/CoroutineScope;
     .registers 3
 
-    .line 96
+    .line 93
     new-instance v0, Lkotlinx/coroutines/internal/ContextScope;
 
     invoke-interface {p0}, Lkotlinx/coroutines/CoroutineScope;->getCoroutineContext()Lkotlin/coroutines/CoroutineContext;

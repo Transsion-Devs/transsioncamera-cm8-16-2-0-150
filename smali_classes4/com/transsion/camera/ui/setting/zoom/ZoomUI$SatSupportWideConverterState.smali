@@ -22,10 +22,10 @@
 .method protected constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;II)V
     .registers 4
 
-    .line 1964
+    .line 1951
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$SatSupportWideConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
-    .line 1965
+    .line 1952
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;-><init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;II)V
 
     return-void
@@ -36,7 +36,7 @@
 .method public currentRange(I)Z
     .registers 3
 
-    .line 1976
+    .line 1963
     iget v0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;->mMin:I
 
     if-lt p1, v0, :cond_a
@@ -58,10 +58,10 @@
 .method protected onEnter(I)V
     .registers 2
 
-    .line 1970
+    .line 1957
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$RangeConverterState;->onEnter(I)V
 
-    .line 1971
+    .line 1958
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$SatSupportWideConverterState;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->onSatCameraSelected()V

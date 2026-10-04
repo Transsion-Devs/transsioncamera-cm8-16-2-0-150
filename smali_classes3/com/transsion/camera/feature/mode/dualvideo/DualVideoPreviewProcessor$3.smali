@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)V
     .registers 2
 
-    .line 1232
+    .line 1235
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$3;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 5
 
-    .line 1235
+    .line 1238
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$3;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmDualPreviewCallback(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoPreviewCallback;
@@ -57,7 +57,7 @@
 
     invoke-virtual {v0, v3, v1, v2, v2}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$DualVideoPreviewCallback;->draw(Landroid/graphics/SurfaceTexture;III)Z
 
-    .line 1236
+    .line 1239
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$3;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmDualPreviewOperator(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)Lcom/transsion/camera/app/common/preview/IPreviewOperator;
@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_22
 
-    .line 1237
+    .line 1240
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor$3;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;->-$$Nest$fgetmDualPreviewOperator(Lcom/transsion/camera/feature/mode/dualvideo/DualVideoPreviewProcessor;)Lcom/transsion/camera/app/common/preview/IPreviewOperator;

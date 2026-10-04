@@ -948,24 +948,26 @@
     invoke-direct {p0, p3, p4}, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->initFilter(II)V
 
     .line 255
-    invoke-virtual {p0}, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->updateCameraInfo()V
+    iget-object v1, p0, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->cameraMatrix:[F
+
+    invoke-virtual {p1, v1}, Landroid/graphics/SurfaceTexture;->getTransformMatrix([F)V
 
     .line 260
     iget-object v1, p0, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->mVSSEngine:Lcom/transsion/camera/base_business/vss_sdk/VSSEngine;
 
     const/4 v8, 0x0
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_1d
 
     .line 261
     aget v1, p6, v8
 
     invoke-direct {p0, p2, v1, p3, p4}, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->drawNoEffect(IIII)V
 
-    goto :goto_26
+    goto :goto_28
 
     .line 263
-    :cond_1b
+    :cond_1d
     aget v2, p5, v8
 
     aget v3, p6, v8
@@ -980,8 +982,8 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->drawEffect(IIIII)V
 
-    :goto_26
-    if-eqz p10, :cond_90
+    :goto_28
+    if-eqz p10, :cond_92
 
     .line 268
     sget-object v1, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1026,7 +1028,7 @@
 
     const/4 v9, 0x1
 
-    if-eqz v2, :cond_63
+    if-eqz v2, :cond_65
 
     .line 273
     iget-object v2, p0, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->mTexTransformMatrixVerticalMirror:[F
@@ -1041,18 +1043,18 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->drawTexture(I[FIII)V
 
-    :goto_61
+    :goto_63
     move v10, p4
 
-    goto :goto_7f
+    goto :goto_81
 
     .line 274
-    :cond_63
+    :cond_65
     invoke-static {}, Lcom/transsion/camera/base_business/vss_sdk/VSSConfig;->isTransformMatrixHorizontalMirror()Z
 
     move-result v2
 
-    if-eqz v2, :cond_74
+    if-eqz v2, :cond_76
 
     .line 275
     iget-object v2, p0, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->mTexTransformMatrixHorizontalMirror:[F
@@ -1067,10 +1069,10 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->drawTexture(I[FIII)V
 
-    goto :goto_61
+    goto :goto_63
 
     .line 277
-    :cond_74
+    :cond_76
     iget-object v2, p0, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->mTexTransformMatrix:[F
 
     aget v5, p6, v9
@@ -1086,7 +1088,7 @@
     move v10, v4
 
     .line 279
-    :goto_7f
+    :goto_81
     aget v1, p5, v9
 
     .line 281
@@ -1107,25 +1109,25 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->drawTexture(I[FIII)V
 
-    goto :goto_92
+    goto :goto_94
 
-    :cond_90
+    :cond_92
     move v10, p4
 
     move v4, v6
 
     .line 284
-    :goto_92
+    :goto_94
     aget v1, p5, v8
 
     .line 285
     iget-boolean v2, p0, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->enableBlur:Z
 
-    if-eqz v2, :cond_a5
+    if-eqz v2, :cond_a7
 
     iget-object v2, p0, Lcom/transsion/camera/base_business/vss_sdk/VSSDrawer;->gaussianBlur2D:Lcom/transsion/camera/utils/gles/render/gaussianblur/GaussianBlur2D;
 
-    if-eqz v2, :cond_a5
+    if-eqz v2, :cond_a7
 
     .line 286
     invoke-virtual {v2, v1, p3, p4}, Lcom/transsion/camera/utils/gles/render/gaussianblur/GaussianBlur2D;->draw(III)Z
@@ -1138,7 +1140,7 @@
     move-result v1
 
     .line 289
-    :cond_a5
+    :cond_a7
     invoke-static {v8, v8, v7, v4}, Landroid/opengl/GLES20;->glViewport(IIII)V
 
     .line 290

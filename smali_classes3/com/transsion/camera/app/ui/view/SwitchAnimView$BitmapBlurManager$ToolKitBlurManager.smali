@@ -25,10 +25,10 @@
 .method constructor <init>()V
     .registers 3
 
-    .line 613
+    .line 619
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 614
+    .line 620
     invoke-static {}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -37,7 +37,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 615
+    .line 621
     invoke-interface {p0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$IBlurManager;->getPreferFactor()I
 
     move-result v0
@@ -48,7 +48,7 @@
 
     const/16 v0, 0x18
 
-    .line 617
+    .line 623
     iput v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$BitmapBlurManager$ToolKitBlurManager;->mRadiusMax:I
 
     return-void
@@ -61,7 +61,7 @@
     :cond_1c
     const/16 v1, 0xc
 
-    .line 623
+    .line 629
     div-int/2addr v1, v0
 
     iput v1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$BitmapBlurManager$ToolKitBlurManager;->mRadiusMax:I
@@ -74,14 +74,14 @@
 .method public blur(Landroid/graphics/Bitmap;IZ)Landroid/graphics/Bitmap;
     .registers 7
 
-    .line 628
+    .line 634
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result p0
 
     if-eqz p0, :cond_10
 
-    .line 629
+    .line 635
     invoke-static {}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -92,7 +92,7 @@
 
     return-object p1
 
-    .line 632
+    .line 638
     :cond_10
     sget-object p0, Lcom/transsion/camera/utils/BitmapPoolUtil;->INSTANCE:Lcom/transsion/camera/utils/BitmapPoolUtil;
 
@@ -102,7 +102,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 633
+    .line 639
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v1
@@ -111,7 +111,7 @@
 
     goto :goto_31
 
-    .line 638
+    .line 644
     :cond_1f
     sget-object v1, Lcom/google/android/renderscript/Toolkit;->INSTANCE:Lcom/google/android/renderscript/Toolkit;
 
@@ -127,13 +127,13 @@
 
     if-eqz p3, :cond_30
 
-    .line 640
+    .line 646
     invoke-virtual {p0, p1}, Lcom/transsion/camera/utils/BitmapPoolUtil;->put(Landroid/graphics/Bitmap;)V
 
     :cond_30
     return-object p2
 
-    .line 634
+    .line 640
     :cond_31
     :goto_31
     invoke-static {}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -150,7 +150,7 @@
 .method public destroy()V
     .registers 1
 
-    .line 647
+    .line 653
     sget-object p0, Lcom/transsion/camera/utils/BitmapPoolUtil;->INSTANCE:Lcom/transsion/camera/utils/BitmapPoolUtil;
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/BitmapPoolUtil;->clearMemory()V
@@ -169,7 +169,7 @@
 .method public getRadiusMax()I
     .registers 1
 
-    .line 652
+    .line 658
     iget p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$BitmapBlurManager$ToolKitBlurManager;->mRadiusMax:I
 
     return p0

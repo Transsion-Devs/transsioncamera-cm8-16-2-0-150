@@ -25,10 +25,10 @@
 .method public constructor <init>(Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranProcessObserverInner;)V
     .registers 2
 
-    .line 868
+    .line 875
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 869
+    .line 876
     iput-object p1, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager$TranAospProcessObserver;->mObserver:Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranProcessObserverInner;
 
     return-void
@@ -39,7 +39,7 @@
 .method public onForegroundActivitiesChanged(IIZ)V
     .registers 4
 
-    .line 874
+    .line 881
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager$TranAospProcessObserver;->mObserver:Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranProcessObserverInner;
 
     invoke-interface {p0, p1, p2, p3}, Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranProcessObserverInner;->onForegroundActivitiesChanged(IIZ)V
@@ -50,7 +50,7 @@
 .method public onForegroundServicesChanged(III)V
     .registers 4
 
-    .line 879
+    .line 886
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager$TranAospProcessObserver;->mObserver:Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranProcessObserverInner;
 
     invoke-interface {p0, p1, p2, p3}, Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranProcessObserverInner;->onForegroundServicesChanged(III)V
@@ -61,7 +61,7 @@
 .method public onProcessDied(II)V
     .registers 3
 
-    .line 884
+    .line 891
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityManager$TranAospProcessObserver;->mObserver:Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranProcessObserverInner;
 
     invoke-interface {p0, p1, p2}, Lcom/transsion/hubsdk/api/app/TranActivityManager$ITranProcessObserverInner;->onProcessDied(II)V

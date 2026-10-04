@@ -33,7 +33,7 @@
 
     sput-object v0, Lkotlinx/coroutines/flow/internal/NoOpContinuation;->INSTANCE:Lkotlinx/coroutines/flow/internal/NoOpContinuation;
 
-    .line 150
+    .line 176
     sget-object v0, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     sput-object v0, Lkotlinx/coroutines/flow/internal/NoOpContinuation;->context:Lkotlin/coroutines/CoroutineContext;
@@ -44,7 +44,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 149
+    .line 175
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -55,7 +55,7 @@
 .method public getContext()Lkotlin/coroutines/CoroutineContext;
     .registers 1
 
-    .line 150
+    .line 176
     sget-object p0, Lkotlinx/coroutines/flow/internal/NoOpContinuation;->context:Lkotlin/coroutines/CoroutineContext;
 
     return-object p0

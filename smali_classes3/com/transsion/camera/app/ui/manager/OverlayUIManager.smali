@@ -122,7 +122,7 @@
 
     if-eqz p1, :cond_2f
 
-    .line 524
+    .line 525
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -131,7 +131,7 @@
 
     goto :goto_2f
 
-    .line 528
+    .line 529
     :cond_a
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -152,7 +152,7 @@
 
     if-eqz v0, :cond_e
 
-    .line 529
+    .line 530
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -185,7 +185,7 @@
 
     goto/16 :goto_c1
 
-    .line 543
+    .line 544
     :cond_4
     iget v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenFormType:I
 
@@ -199,24 +199,24 @@
 
     invoke-interface {p1, v0, v1, v2}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->initSettingUI(IILandroid/content/Context;)V
 
-    .line 545
+    .line 546
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz v0, :cond_18
 
-    .line 546
+    .line 547
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
-    .line 549
+    .line 550
     :cond_18
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mShutterControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
 
     if-eqz v0, :cond_1f
 
-    .line 550
+    .line 551
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setShutterControl(Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;)V
 
-    .line 553
+    .line 554
     :cond_1f
     iget v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mBatteryStatus:I
 
@@ -224,89 +224,89 @@
 
     invoke-interface {p1, v0, v1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->setBatteryStatus(II)V
 
-    .line 555
+    .line 556
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_2d
 
-    .line 556
+    .line 557
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setHintControl(Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;)V
 
-    .line 559
+    .line 560
     :cond_2d
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mUIStateControl:Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;
 
     if-eqz v0, :cond_34
 
-    .line 560
+    .line 561
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setUIStateControl(Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;)V
 
-    .line 563
+    .line 564
     :cond_34
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mShutterControl:Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
 
     if-eqz v0, :cond_3d
 
-    .line 564
+    .line 565
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraOperationControl:Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setCameraOperateActionControl(Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;)V
 
-    .line 567
+    .line 568
     :cond_3d
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_44
 
-    .line 568
+    .line 569
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 571
+    .line 572
     :cond_44
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingStatusListener:Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;
 
     if-eqz v0, :cond_4b
 
-    .line 572
+    .line 573
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->setSettingStatusListener(Lcom/transsion/camera/app/common/IApp$ModeAndSettingStatusListener;)V
 
-    .line 575
+    .line 576
     :cond_4b
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mPhysicalKeyControl:Lcom/transsion/camera/app/common/IAppUIControl$IPhysicalKeyControl;
 
     if-eqz v0, :cond_52
 
-    .line 576
+    .line 577
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->setPhysicalKeyControl(Lcom/transsion/camera/app/common/IAppUIControl$IPhysicalKeyControl;)V
 
-    .line 579
+    .line 580
     :cond_52
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mWideCameraControl:Lcom/transsion/camera/app/common/IAppUIControl$IWideCameraControl;
 
     if-eqz v0, :cond_59
 
-    .line 580
+    .line 581
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->setWideCameraControl(Lcom/transsion/camera/app/common/IAppUIControl$IWideCameraControl;)V
 
-    .line 583
+    .line 584
     :cond_59
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mModeFeatureSupport:Lcom/transsion/camera/app/common/mode/IModeFeatureSupport;
 
     if-eqz v0, :cond_60
 
-    .line 584
+    .line 585
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->setModeFeatureSupport(Lcom/transsion/camera/app/common/mode/IModeFeatureSupport;)V
 
-    .line 587
+    .line 588
     :cond_60
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mAeAfLock:Lcom/transsion/camera/app/common/mode/IAeAfLock;
 
     if-eqz v0, :cond_67
 
-    .line 588
+    .line 589
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->setAeAfLock(Lcom/transsion/camera/app/common/mode/IAeAfLock;)V
 
-    .line 591
+    .line 592
     :cond_67
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
@@ -328,14 +328,14 @@
 
     if-eqz v0, :cond_82
 
-    .line 592
+    .line 593
     new-instance v0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager$WideCameraListenerImpl;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/app/ui/manager/OverlayUIManager$WideCameraListenerImpl;-><init>(Lcom/transsion/camera/app/ui/manager/OverlayUIManager;Lcom/transsion/camera/app/ui/manager/OverlayUIManager-IA;)V
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 594
+    .line 595
     :cond_82
     const-string/jumbo v0, "wide_camera"
 
@@ -349,14 +349,14 @@
 
     if-eqz v0, :cond_97
 
-    .line 595
+    .line 596
     new-instance v0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager$WideCameraListenerImpl;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/app/ui/manager/OverlayUIManager$WideCameraListenerImpl;-><init>(Lcom/transsion/camera/app/ui/manager/OverlayUIManager;Lcom/transsion/camera/app/ui/manager/OverlayUIManager-IA;)V
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 598
+    .line 599
     :cond_97
     const-string v0, "front_wide_camera"
 
@@ -370,35 +370,35 @@
 
     if-eqz v0, :cond_ab
 
-    .line 599
+    .line 600
     new-instance v0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager$WideCameraListenerImpl;
 
     invoke-direct {v0, p0, v1}, Lcom/transsion/camera/app/ui/manager/OverlayUIManager$WideCameraListenerImpl;-><init>(Lcom/transsion/camera/app/ui/manager/OverlayUIManager;Lcom/transsion/camera/app/ui/manager/OverlayUIManager-IA;)V
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->overrideClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 601
+    .line 602
     :cond_ab
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setAppUIRect(Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;)V
 
-    .line 602
+    .line 603
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mActionSound:Lcom/transsion/camera/utils/sound/IActionSound;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setActionSound(Lcom/transsion/camera/utils/sound/IActionSound;)V
 
-    .line 603
+    .line 604
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mCurrentModeName:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->updateCurrentMode(Ljava/lang/String;)V
 
-    .line 604
+    .line 605
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mModeFeatureConfig:Lcom/transsion/camera/app/common/IModeFeatureConfig;
 
     if-eqz p0, :cond_c1
 
-    .line 605
+    .line 606
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->setModeFeatureConfig(Lcom/transsion/camera/app/common/IModeFeatureConfig;)V
 
     :cond_c1
@@ -415,7 +415,7 @@
 
     move v0, p0
 
-    .line 693
+    .line 694
     :goto_4
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -423,7 +423,7 @@
 
     if-ge v0, v1, :cond_15
 
-    .line 694
+    .line 695
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
@@ -450,7 +450,7 @@
 
     goto :goto_21
 
-    .line 614
+    .line 615
     :cond_3
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->getEntryView()Landroid/view/View;
 
@@ -460,11 +460,11 @@
 
     goto :goto_21
 
-    .line 618
+    .line 619
     :cond_a
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->hideEntryView()V
 
-    .line 620
+    .line 621
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->getEntryRootView()Landroid/view/ViewGroup;
 
     move-result-object v1
@@ -473,20 +473,20 @@
 
     goto :goto_21
 
-    .line 625
+    .line 626
     :cond_14
     iget-boolean p0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mOnTouchSeekBarSwitchCam:Z
 
     if-eqz p0, :cond_21
 
-    .line 626
+    .line 627
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->isEntryViewRetained()Z
 
     move-result p0
 
     if-nez p0, :cond_21
 
-    .line 627
+    .line 628
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     :cond_21
@@ -497,14 +497,14 @@
 .method private unInitOverlaySettingUIs(Ljava/util/List;)V
     .registers 3
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_22
 
     .line 470
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-lez v0, :cond_1f
+    if-lez v0, :cond_22
 
     .line 471
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -516,7 +516,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_22
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -530,9 +530,12 @@
     .line 474
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->unInit()V
 
+    .line 475
+    invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->destroy()V
+
     goto :goto_c
 
-    :cond_1f
+    :cond_22
     return-void
 .end method
 
@@ -543,7 +546,7 @@
 
     goto/16 :goto_b4
 
-    .line 637
+    .line 638
     :cond_4
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->getEntryView()Landroid/view/View;
 
@@ -551,12 +554,12 @@
 
     if-nez v0, :cond_40
 
-    .line 639
+    .line 640
     instance-of v0, p1, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     if-eqz v0, :cond_27
 
-    .line 640
+    .line 641
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->isEntryViewCreated()Z
 
     move-result v0
@@ -571,7 +574,7 @@
 
     goto/16 :goto_b4
 
-    .line 643
+    .line 644
     :cond_1c
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mInflater:Landroid/view/LayoutInflater;
 
@@ -585,13 +588,13 @@
 
     goto :goto_40
 
-    .line 645
+    .line 646
     :cond_27
     instance-of v0, p1, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;
 
     if-eqz v0, :cond_36
 
-    .line 646
+    .line 647
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mInflater:Landroid/view/LayoutInflater;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mCameraRootView:Landroid/view/ViewGroup;
@@ -604,7 +607,7 @@
 
     goto :goto_40
 
-    .line 648
+    .line 649
     :cond_36
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mInflater:Landroid/view/LayoutInflater;
 
@@ -616,7 +619,7 @@
 
     move-result-object v0
 
-    .line 653
+    .line 654
     :cond_40
     :goto_40
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mPreviewRect:Landroid/graphics/Rect;
@@ -635,7 +638,7 @@
 
     if-lez v1, :cond_55
 
-    .line 654
+    .line 655
     :cond_50
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mPreviewRect:Landroid/graphics/Rect;
 
@@ -644,7 +647,7 @@
     :cond_55
     if-nez v0, :cond_72
 
-    .line 658
+    .line 659
     sget-object p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -669,21 +672,21 @@
 
     return-void
 
-    .line 662
+    .line 663
     :cond_72
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->setupEntryView()V
 
-    .line 663
+    .line 664
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mCurrentModeName:Ljava/lang/String;
 
     invoke-interface {p1, v1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->updateCurrentMode(Ljava/lang/String;)V
 
-    .line 665
+    .line 666
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mOnTouchSeekBarSwitchCam:Z
 
     if-eqz v1, :cond_b4
 
-    .line 666
+    .line 667
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->getEntryRootView()Landroid/view/ViewGroup;
 
     move-result-object v1
@@ -692,7 +695,7 @@
 
     const/4 v2, 0x0
 
-    .line 668
+    .line 669
     :goto_85
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -700,14 +703,14 @@
 
     if-ge v2, v3, :cond_9e
 
-    .line 669
+    .line 670
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
     if-ne v3, v0, :cond_9b
 
-    .line 670
+    .line 671
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->isEntryViewRetained()Z
 
     move-result v3
@@ -716,7 +719,7 @@
 
     goto :goto_b4
 
-    .line 673
+    .line 674
     :cond_98
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
@@ -730,7 +733,7 @@
 
     goto :goto_b4
 
-    .line 681
+    .line 682
     :cond_a1
     invoke-interface {p1}, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;->isEntryViewRetained()Z
 
@@ -738,19 +741,19 @@
 
     if-eqz p1, :cond_b1
 
-    .line 682
+    .line 683
     invoke-direct {p0, v1, v0}, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->isSettingViewExist(Landroid/view/ViewGroup;Landroid/view/View;)Z
 
     move-result p0
 
     if-nez p0, :cond_b4
 
-    .line 683
+    .line 684
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     return-void
 
-    .line 686
+    .line 687
     :cond_b1
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
@@ -764,14 +767,14 @@
 
     if-eqz p1, :cond_2b
 
-    .line 495
+    .line 496
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-lez v0, :cond_2b
 
-    .line 496
+    .line 497
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -790,12 +793,12 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;
 
-    .line 497
+    .line 498
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->removeCommonSettingUIEntryView(Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;)V
 
     if-eqz v1, :cond_c
 
-    .line 499
+    .line 500
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v2
@@ -806,7 +809,7 @@
 
     if-nez v2, :cond_c
 
-    .line 501
+    .line 502
     invoke-interface {v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->unInit()V
 
     goto :goto_c
@@ -814,14 +817,14 @@
     :cond_2b
     if-eqz p2, :cond_6b
 
-    .line 506
+    .line 507
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-lez v0, :cond_6b
 
-    .line 507
+    .line 508
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -841,7 +844,7 @@
 
     if-eqz v0, :cond_52
 
-    .line 508
+    .line 509
     invoke-interface {v0}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -852,10 +855,10 @@
 
     if-nez v1, :cond_52
 
-    .line 509
+    .line 510
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->initCommonSettingUI(Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;)V
 
-    .line 511
+    .line 512
     :cond_52
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -863,7 +866,7 @@
 
     if-eqz v0, :cond_67
 
-    .line 512
+    .line 513
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getSettingProvide()Lcom/transsion/camera/app/common/setting/ISettingManager$SettingProvide;
 
     move-result-object v1
@@ -876,16 +879,16 @@
 
     move-result-object v1
 
-    .line 513
+    .line 514
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/ui/setting/ISettingUI;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    .line 515
+    .line 516
     :cond_67
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->updateCommonSettingUIEntryView(Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;)V
 
     goto :goto_37
 
-    .line 518
+    .line 519
     :cond_6b
     iget-object p0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -893,7 +896,7 @@
 
     const/16 p1, 0x13d
 
-    .line 519
+    .line 520
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
     :cond_74
@@ -1329,12 +1332,12 @@
 .method public onDown(Landroid/view/MotionEvent;)Z
     .registers 4
 
-    .line 481
+    .line 482
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mCommonSettingUIs:Ljava/util/List;
 
     if-eqz v0, :cond_18
 
-    .line 482
+    .line 483
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1352,18 +1355,18 @@
 
     check-cast v1, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;
 
-    .line 483
+    .line 484
     invoke-interface {v1, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IPreviewGestureListener;->onDown(Landroid/view/MotionEvent;)Z
 
     goto :goto_8
 
-    .line 486
+    .line 487
     :cond_18
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/OverlayUIManager;->mModeSettingUIs:Ljava/util/List;
 
     if-eqz p0, :cond_30
 
-    .line 487
+    .line 488
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -1381,7 +1384,7 @@
 
     check-cast v0, Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;
 
-    .line 488
+    .line 489
     invoke-interface {v0, p1}, Lcom/transsion/camera/app/common/IAppUIListener$IPreviewGestureListener;->onDown(Landroid/view/MotionEvent;)Z
 
     goto :goto_20

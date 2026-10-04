@@ -30,7 +30,7 @@
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/liveresult/LiveResult$$ExternalSyntheticLambda0;->f$0:Lcom/transsion/camera/feature/setting/liveresult/LiveResult;
 
-    invoke-static {p0, p1, p2, p3}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->$r8$lambda$k6B2_Jt65LIht5MExutvZMNf9YQ(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
+    invoke-static {p0, p1, p2, p3}, Lcom/transsion/camera/feature/setting/liveresult/LiveResult;->$r8$lambda$QeNa4krixabQOcER2h418pMP4KY(Lcom/transsion/camera/feature/setting/liveresult/LiveResult;Landroid/hardware/camera2/CaptureResult;Landroid/util/Size;Lcom/transsion/camera/adapter/platformcamera/IPlatformCamera2;)V
 
     return-void
 .end method

@@ -22,9 +22,9 @@
 
 .field public static flip_arc_filter_setting_entry_drawables:I = 0x7f0300db
 
-.field public static transsion_filter_setting_entries:I = 0x7f0302e6
+.field public static transsion_filter_setting_entries:I = 0x7f0302e3
 
-.field public static transsion_filter_setting_entry_values:I = 0x7f0302e7
+.field public static transsion_filter_setting_entry_values:I = 0x7f0302e4
 
 
 # direct methods

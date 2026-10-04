@@ -530,7 +530,7 @@
 
     move-result-object v3
 
-    .line 1569
+    .line 203
     check-cast v3, Ljava/security/cert/Certificate;
 
     .line 129
@@ -623,7 +623,7 @@
 
     move-result-object v2
 
-    .line 1569
+    .line 207
     check-cast v2, Ljava/security/cert/Certificate;
 
     .line 134

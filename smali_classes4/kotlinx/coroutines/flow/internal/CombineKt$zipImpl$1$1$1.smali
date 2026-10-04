@@ -27,31 +27,12 @@
 # instance fields
 .field final synthetic $collectJob:Lkotlinx/coroutines/CompletableJob;
 
-.field final synthetic $this_unsafeFlow:Lkotlinx/coroutines/flow/FlowCollector;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlinx/coroutines/flow/FlowCollector<",
-            "TR;>;"
-        }
-    .end annotation
-.end field
-
 
 # direct methods
-.method constructor <init>(Lkotlinx/coroutines/CompletableJob;Lkotlinx/coroutines/flow/FlowCollector;)V
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lkotlinx/coroutines/CompletableJob;",
-            "Lkotlinx/coroutines/flow/FlowCollector<",
-            "-TR;>;)V"
-        }
-    .end annotation
+.method constructor <init>(Lkotlinx/coroutines/CompletableJob;)V
+    .registers 2
 
     iput-object p1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$1;->$collectJob:Lkotlinx/coroutines/CompletableJob;
-
-    iput-object p2, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$1;->$this_unsafeFlow:Lkotlinx/coroutines/flow/FlowCollector;
 
     const/4 p1, 0x1
 
@@ -65,7 +46,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 106
+    .line 103
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$1;->invoke(Ljava/lang/Throwable;)V
@@ -78,7 +59,7 @@
 .method public final invoke(Ljava/lang/Throwable;)V
     .registers 3
 
-    .line 108
+    .line 105
     iget-object p1, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$1;->$collectJob:Lkotlinx/coroutines/CompletableJob;
 
     invoke-interface {p1}, Lkotlinx/coroutines/Job;->isActive()Z
@@ -91,9 +72,9 @@
 
     new-instance v0, Lkotlinx/coroutines/flow/internal/AbortFlowException;
 
-    iget-object p0, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$1;->$this_unsafeFlow:Lkotlinx/coroutines/flow/FlowCollector;
+    iget-object p0, p0, Lkotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$1;->$collectJob:Lkotlinx/coroutines/CompletableJob;
 
-    invoke-direct {v0, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Lkotlinx/coroutines/flow/FlowCollector;)V
+    invoke-direct {v0, p0}, Lkotlinx/coroutines/flow/internal/AbortFlowException;-><init>(Ljava/lang/Object;)V
 
     invoke-interface {p1, v0}, Lkotlinx/coroutines/Job;->cancel(Ljava/util/concurrent/CancellationException;)V
 

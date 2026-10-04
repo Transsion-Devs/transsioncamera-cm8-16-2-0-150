@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static image_style_layout:I = 0x7f0e00f4
+.field public static image_style_layout:I = 0x7f0e00f0
 
-.field public static image_style_thumbnail_item:I = 0x7f0e00f5
+.field public static image_style_thumbnail_item:I = 0x7f0e00f1
 
-.field public static image_style_thumbnail_item_ui5:I = 0x7f0e00f6
+.field public static image_style_thumbnail_item_ui5:I = 0x7f0e00f2
 
 
 # direct methods

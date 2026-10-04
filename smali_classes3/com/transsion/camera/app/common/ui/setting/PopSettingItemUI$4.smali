@@ -49,7 +49,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;)V
     .registers 3
 
-    .line 1145
+    .line 1142
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$4;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iput-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$4;->val$view:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
@@ -62,7 +62,7 @@
 .method private synthetic lambda$onCompositionLoaded$0(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
     .registers 3
 
-    .line 1154
+    .line 1151
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$4;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
@@ -99,7 +99,7 @@
 .method private synthetic lambda$onCompositionLoaded$1(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
     .registers 3
 
-    .line 1159
+    .line 1156
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$4;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iget-object p1, p1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mCurrentEntryValue:Ljava/lang/String;
@@ -138,7 +138,7 @@
 .method public onCompositionLoaded(Lcom/airbnb/lottie/LottieComposition;)V
     .registers 7
 
-    .line 1148
+    .line 1145
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$4;->val$view:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     new-instance v0, Lcom/airbnb/lottie/model/KeyPath;
@@ -155,7 +155,7 @@
 
     move-result-object p1
 
-    .line 1149
+    .line 1146
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -174,12 +174,12 @@
 
     check-cast v0, Lcom/airbnb/lottie/model/KeyPath;
 
-    .line 1150
+    .line 1147
     invoke-virtual {v0}, Lcom/airbnb/lottie/model/KeyPath;->keysToString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1151
+    .line 1148
     const-string v2, "icon"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -194,7 +194,7 @@
 
     iget-object v1, v1, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
 
-    .line 1152
+    .line 1149
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -205,7 +205,7 @@
 
     if-nez v1, :cond_49
 
-    .line 1153
+    .line 1150
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$4;->val$view:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     sget-object v3, Lcom/airbnb/lottie/LottieProperty;->COLOR:Ljava/lang/Integer;
@@ -216,7 +216,7 @@
 
     invoke-virtual {v1, v0, v3, v4}, Lcom/airbnb/lottie/LottieAnimationView;->addValueCallback(Lcom/airbnb/lottie/model/KeyPath;Ljava/lang/Object;Lcom/airbnb/lottie/value/SimpleLottieValueCallback;)V
 
-    .line 1157
+    .line 1154
     :cond_49
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$4;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
@@ -232,7 +232,7 @@
 
     if-eqz v1, :cond_15
 
-    .line 1158
+    .line 1155
     iget-object v1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$4;->val$view:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     sget-object v2, Lcom/airbnb/lottie/LottieProperty;->STROKE_COLOR:Ljava/lang/Integer;

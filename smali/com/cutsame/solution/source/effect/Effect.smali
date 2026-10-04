@@ -6,6 +6,11 @@
 .implements Landroid/os/Parcelable;
 
 
+# annotations
+.annotation build Lkotlinx/android/parcel/Parcelize;
+.end annotation
+
+
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -109,6 +114,41 @@
     return-void
 .end method
 
+.method public constructor <init>()V
+    .registers 14
+
+    .line 0
+    const/16 v11, 0x3ff
+
+    const/4 v12, 0x0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v12}, Lcom/cutsame/solution/source/effect/Effect;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
     .registers 12
 
@@ -180,6 +220,93 @@
 
     .line 12
     iput-object p10, p0, Lcom/cutsame/solution/source/effect/Effect;->j:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .registers 14
+
+    and-int/lit8 p12, p11, 0x1
+
+    const-string v0, ""
+
+    if-eqz p12, :cond_7
+
+    move-object p1, v0
+
+    :cond_7
+    and-int/lit8 p12, p11, 0x2
+
+    if-eqz p12, :cond_c
+
+    move-object p2, v0
+
+    :cond_c
+    and-int/lit8 p12, p11, 0x4
+
+    if-eqz p12, :cond_11
+
+    move-object p3, v0
+
+    :cond_11
+    and-int/lit8 p12, p11, 0x8
+
+    if-eqz p12, :cond_16
+
+    move-object p4, v0
+
+    :cond_16
+    and-int/lit8 p12, p11, 0x10
+
+    if-eqz p12, :cond_1b
+
+    const/4 p5, 0x1
+
+    :cond_1b
+    and-int/lit8 p12, p11, 0x20
+
+    if-eqz p12, :cond_20
+
+    move-object p6, v0
+
+    :cond_20
+    and-int/lit8 p12, p11, 0x40
+
+    if-eqz p12, :cond_29
+
+    .line 13
+    new-instance p7, Ljava/util/ArrayList;
+
+    invoke-direct {p7}, Ljava/util/ArrayList;-><init>()V
+
+    :cond_29
+    and-int/lit16 p12, p11, 0x80
+
+    if-eqz p12, :cond_32
+
+    .line 14
+    new-instance p8, Ljava/util/ArrayList;
+
+    invoke-direct {p8}, Ljava/util/ArrayList;-><init>()V
+
+    :cond_32
+    and-int/lit16 p12, p11, 0x100
+
+    if-eqz p12, :cond_37
+
+    move-object p9, v0
+
+    :cond_37
+    and-int/lit16 p11, p11, 0x200
+
+    if-eqz p11, :cond_3c
+
+    move-object p10, v0
+
+    .line 15
+    :cond_3c
+    invoke-direct/range {p0 .. p10}, Lcom/cutsame/solution/source/effect/Effect;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

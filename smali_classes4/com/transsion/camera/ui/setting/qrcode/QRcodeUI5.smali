@@ -50,7 +50,7 @@
 .method public constructor <init>(Landroid/content/res/Resources;)V
     .registers 2
 
-    .line 39
+    .line 36
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;-><init>(Landroid/content/res/Resources;)V
 
     .line 19
@@ -86,7 +86,7 @@
 .method protected getMoreIconMargins(II)Landroid/graphics/Rect;
     .registers 6
 
-    .line 61
+    .line 58
     sget-object v0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -111,78 +111,23 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 62
+    .line 59
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->getMoreIconMargins(II)Landroid/graphics/Rect;
 
     move-result-object p2
 
-    if-nez p1, :cond_6d
+    if-nez p1, :cond_3f
 
     const/16 p1, 0x10
 
-    .line 64
+    .line 61
     invoke-static {p1}, Lcom/transsion/camera/utils/UIUtils;->dp(I)I
 
     move-result p1
 
     iput p1, p2, Landroid/graphics/Rect;->right:I
 
-    .line 65
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;->mPreviewRect:Landroid/graphics/Rect;
-
-    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
-
-    invoke-static {p1, v0, v1}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(Landroid/graphics/Rect;D)Z
-
-    move-result p1
-
-    const/16 v0, 0xa
-
-    if-eqz p1, :cond_5c
-
-    .line 66
-    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
-
-    invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lcom/transsion/camera/app/common/manager/IScreenManager;->getModePlusBottomBarHeight()I
-
-    move-result p1
-
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;->mPreviewRect:Landroid/graphics/Rect;
-
-    invoke-virtual {p0}, Landroid/graphics/Rect;->width()I
-
-    move-result p0
-
-    int-to-float p0, p0
-
-    const v1, 0x3eaaaaac
-
-    mul-float/2addr p0, v1
-
-    invoke-static {p0}, Ljava/lang/Math;->round(F)I
-
-    move-result p0
-
-    div-int/lit8 p0, p0, 0x2
-
-    add-int/2addr p1, p0
-
-    invoke-static {v0}, Lcom/transsion/camera/utils/UIUtils;->dp(I)I
-
-    move-result p0
-
-    add-int/2addr p1, p0
-
-    iput p1, p2, Landroid/graphics/Rect;->bottom:I
-
-    return-object p2
-
-    .line 68
-    :cond_5c
+    .line 62
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUI;->getScreenManager()Lcom/transsion/camera/app/common/manager/IScreenManager;
@@ -193,7 +138,9 @@
 
     move-result p0
 
-    invoke-static {v0}, Lcom/transsion/camera/utils/UIUtils;->dp(I)I
+    const/16 p1, 0xa
+
+    invoke-static {p1}, Lcom/transsion/camera/utils/UIUtils;->dp(I)I
 
     move-result p1
 
@@ -201,7 +148,7 @@
 
     iput p0, p2, Landroid/graphics/Rect;->bottom:I
 
-    :cond_6d
+    :cond_3f
     return-object p2
 .end method
 
@@ -239,15 +186,15 @@
 .method public setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
     .registers 2
 
-    .line 44
+    .line 41
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->setAppUI(Lcom/transsion/camera/app/common/IAppUI;)V
 
-    .line 45
+    .line 42
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz p1, :cond_c
 
-    .line 46
+    .line 43
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;->mPreviewRectListener:Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;
 
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/IAppUI;->registerPreviewRectListener(Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;)V
@@ -268,17 +215,17 @@
 .method public unInit()V
     .registers 3
 
-    .line 52
+    .line 49
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_9
 
-    .line 53
+    .line 50
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI5;->mPreviewRectListener:Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUI;->unregisterPreviewRectListener(Lcom/transsion/camera/app/common/IAppUIListener$IPreviewRectListener;)V
 
-    .line 55
+    .line 52
     :cond_9
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->unInit()V
 

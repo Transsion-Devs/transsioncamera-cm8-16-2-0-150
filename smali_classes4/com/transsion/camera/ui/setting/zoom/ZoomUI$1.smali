@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)V
     .registers 2
 
-    .line 1145
+    .line 1132
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 1148
+    .line 1135
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    .line 1149
+    .line 1136
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmGraduationContainer(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/app/ui/widget/RotateLayout;
@@ -49,7 +49,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1150
+    .line 1137
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmGraduationView(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/app/ui/widget/GraduationView;
@@ -64,10 +64,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 1155
+    .line 1142
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1156
+    .line 1143
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p1}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmGraduationContainer(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/app/ui/widget/RotateLayout;
@@ -78,7 +78,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1157
+    .line 1144
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->-$$Nest$fgetmGraduationView(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)Lcom/transsion/camera/app/ui/widget/GraduationView;

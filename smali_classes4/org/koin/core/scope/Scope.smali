@@ -1392,7 +1392,7 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1446
+    .line 410
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -1408,7 +1408,7 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    .line 1447
+    .line 411
     check-cast v4, Lorg/koin/core/scope/Scope;
 
     .line 366
@@ -1416,7 +1416,7 @@
 
     move-result-object v4
 
-    .line 1447
+    .line 411
     check-cast v4, Ljava/lang/Iterable;
 
     .line 1448

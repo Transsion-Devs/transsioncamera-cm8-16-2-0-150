@@ -43,7 +43,7 @@
     .line 29
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;-><init>(Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;)V
 
-    .line 89
+    .line 90
     new-instance p1, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI;)V
@@ -56,14 +56,14 @@
 .method private synthetic lambda$new$0()V
     .registers 2
 
-    .line 94
+    .line 95
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-eqz p0, :cond_8
 
     const/4 v0, 0x1
 
-    .line 95
+    .line 96
     invoke-virtual {p0, v0}, Landroid/view/View;->setEnabled(Z)V
 
     :cond_8
@@ -73,7 +73,7 @@
 .method private synthetic lambda$new$1(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
 
-    .line 90
+    .line 91
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const-string p2, "key_google_lens_visible"
@@ -86,13 +86,13 @@
 
     goto :goto_18
 
-    .line 92
+    .line 93
     :cond_c
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-eqz p1, :cond_18
 
-    .line 93
+    .line 94
     new-instance p2, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI;)V
@@ -107,14 +107,14 @@
 .method private sendGoogleLensEvent(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
 
-    .line 130
+    .line 131
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-nez p0, :cond_5
 
     return-void
 
-    .line 133
+    .line 134
     :cond_5
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->getStatusResponder(Ljava/lang/String;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
@@ -128,19 +128,19 @@
 .method private updateEntryVisibility()V
     .registers 4
 
-    .line 55
+    .line 56
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_9
 
-    .line 56
+    .line 57
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->updateShouldGone(Z)V
 
     return-void
 
-    .line 59
+    .line 60
     :cond_9
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSupport()Ljava/util/List;
 
@@ -148,7 +148,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 60
+    .line 61
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -162,12 +162,12 @@
     :cond_17
     const/4 v0, 0x0
 
-    .line 64
+    .line 65
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->updateShouldGone(Z)V
 
     return-void
 
-    .line 61
+    .line 62
     :cond_1c
     :goto_1c
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->updateShouldGone(Z)V
@@ -187,56 +187,49 @@
 
     move-result-object p1
 
+    iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryRootLayout:Landroid/view/View;
+
     .line 38
     invoke-virtual {p1, p4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object p3
+    move-result-object p1
 
-    check-cast p3, Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
+    check-cast p1, Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
-    iput-object p3, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
+    iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     .line 39
-    invoke-virtual {p3, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 40
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object p2
+    move-result-object p1
 
-    invoke-static {p2}, Lcom/transsion/camera/utils/CameraUtil;->isTalkBackEnabled(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->isTalkBackEnabled(Landroid/content/Context;)Z
 
-    move-result p2
+    move-result p1
 
-    if-eqz p2, :cond_20
+    if-eqz p1, :cond_1f
 
-    .line 41
-    iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
+    .line 40
+    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
-    const/4 p3, 0x1
+    const/4 p2, 0x1
 
-    invoke-virtual {p2, p3}, Landroid/view/View;->setFocusable(Z)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setFocusable(Z)V
+
+    .line 42
+    :cond_1f
+    iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
+
+    const p2, 0x3f4ccccd    # 0.8f
+
+    const/4 p3, 0x0
+
+    invoke-static {p1, p2, p3}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
 
     .line 43
-    :cond_20
-    iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
+    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryRootLayout:Landroid/view/View;
 
-    const p3, 0x3f4ccccd    # 0.8f
-
-    const/4 p4, 0x0
-
-    invoke-static {p2, p3, p4}, Lcom/transsion/camera/utils/MultiTouchManager;->pressSealAnimation(Landroid/view/View;FLandroid/animation/AnimatorListenerAdapter;)V
-
-    .line 44
-    iget-object p2, p0, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
-
-    const-string p3, "key_google_lens_visible"
-
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI;->mMonitorListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
-
-    invoke-virtual {p2, p3, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
-
-    return-object p1
+    return-object p0
 .end method
 
 .method public bridge synthetic getExtraKey()Ljava/lang/String;
@@ -253,7 +246,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 112
+    .line 113
     const-string p0, "key_google_lens"
 
     return-object p0
@@ -262,7 +255,7 @@
 .method public notifyCameraOperateAction(I)V
     .registers 3
 
-    .line 117
+    .line 118
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->notifyCameraOperateAction(I)V
 
     const/16 v0, 0xb
@@ -279,7 +272,7 @@
 
     goto :goto_21
 
-    .line 124
+    .line 125
     :cond_10
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
@@ -291,7 +284,7 @@
 
     return-void
 
-    .line 120
+    .line 121
     :cond_19
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
@@ -309,7 +302,7 @@
 .method public onClick(Landroid/view/View;)V
     .registers 3
 
-    .line 76
+    .line 77
     invoke-static {p1}, Lcom/transsion/camera/utils/MultiTouchManager;->canPerformClick(Landroid/view/View;)Z
 
     move-result p1
@@ -318,7 +311,7 @@
 
     return-void
 
-    .line 79
+    .line 80
     :cond_7
     const-string p1, "google_lens_clicked"
 
@@ -326,7 +319,7 @@
 
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI;->sendGoogleLensEvent(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 80
+    .line 81
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
@@ -350,12 +343,12 @@
 .method public setEnable(Z)V
     .registers 2
 
-    .line 69
+    .line 70
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
 
     if-eqz p0, :cond_7
 
-    .line 70
+    .line 71
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
     :cond_7
@@ -374,19 +367,33 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 107
+    .line 108
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     return-void
 .end method
 
 .method public setupEntryView()V
-    .registers 1
+    .registers 4
 
-    .line 50
+    .line 48
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->setupEntryView()V
 
-    .line 51
+    .line 49
+    iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mEntryView:Lcom/transsion/camera/app/ui/widget/RotateLottieAnimationView;
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 50
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
+
+    const-string v1, "key_google_lens_visible"
+
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI;->mMonitorListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
+
+    invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
+
+    .line 52
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI;->updateEntryVisibility()V
 
     return-void
@@ -395,10 +402,10 @@
 .method public unInit()V
     .registers 3
 
-    .line 85
+    .line 86
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->unInit()V
 
-    .line 86
+    .line 87
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/googlelens/GoogleLensTopBarItemUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_google_lens_visible"

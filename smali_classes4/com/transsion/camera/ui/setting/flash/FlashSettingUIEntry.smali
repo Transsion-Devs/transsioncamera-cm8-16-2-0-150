@@ -156,7 +156,7 @@
 .method public createCommonUI()Lcom/transsion/camera/app/common/ui/setting/ICommonSettingUI;
     .registers 3
 
-    .line 84
+    .line 82
     iget-object v0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mSettingUIFactory:Lcom/transsion/camera/app/common/provider/ISettingUIFactory;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mResources:Landroid/content/res/Resources;
@@ -173,12 +173,12 @@
 .method public createPopSettingItemUI()Lcom/transsion/camera/app/common/ui/setting/IPopSettingItemUI;
     .registers 4
 
-    .line 74
+    .line 72
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/FlashSettingUIEntry;->mFlashFacadeSupport:Z
 
     if-eqz v0, :cond_10
 
-    .line 75
+    .line 73
     new-instance v0, Lcom/transsion/camera/ui/setting/flash/FlashCadePopSettingItemUI;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mResources:Landroid/content/res/Resources;
@@ -191,7 +191,7 @@
 
     goto :goto_1b
 
-    .line 77
+    .line 75
     :cond_10
     new-instance v0, Lcom/transsion/camera/ui/setting/flash/FlashPopSettingItemUI;
 
@@ -203,7 +203,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mIPopSettingItemUI:Lcom/transsion/camera/app/common/ui/setting/IPopSettingItemUI;
 
-    .line 79
+    .line 77
     :goto_1b
     iget-object p0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mIPopSettingItemUI:Lcom/transsion/camera/app/common/ui/setting/IPopSettingItemUI;
 
@@ -216,7 +216,7 @@
     .line 62
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/FlashSettingUIEntry;->mFlashFacadeSupport:Z
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_10
 
     .line 63
     new-instance v0, Lcom/transsion/camera/ui/setting/flash/FlashFacadeTopBarItemUI;
@@ -229,21 +229,10 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mITopBarItemUI:Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
-    .line 64
-    new-instance v0, Lcom/transsion/camera/ui/setting/flash/FlashCadePopSettingItemUI;
+    goto :goto_1b
 
-    iget-object v1, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mResources:Landroid/content/res/Resources;
-
-    iget-object v2, p0, Lcom/transsion/camera/ui/setting/flash/FlashSettingUIEntry;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
-
-    invoke-direct {v0, v1, v2}, Lcom/transsion/camera/ui/setting/flash/FlashCadePopSettingItemUI;-><init>(Landroid/content/res/Resources;Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mIPopSettingItemUI:Lcom/transsion/camera/app/common/ui/setting/IPopSettingItemUI;
-
-    goto :goto_31
-
-    .line 66
-    :cond_1b
+    .line 65
+    :cond_10
     new-instance v0, Lcom/transsion/camera/ui/setting/flash/FlashTopBarItemUI;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mResources:Landroid/content/res/Resources;
@@ -255,18 +244,7 @@
     iput-object v0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mITopBarItemUI:Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
     .line 67
-    new-instance v0, Lcom/transsion/camera/ui/setting/flash/FlashPopSettingItemUI;
-
-    iget-object v1, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mResources:Landroid/content/res/Resources;
-
-    iget-object v2, p0, Lcom/transsion/camera/ui/setting/flash/FlashSettingUIEntry;->mSettingUISpec:Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;
-
-    invoke-direct {v0, v1, v2}, Lcom/transsion/camera/ui/setting/flash/FlashPopSettingItemUI;-><init>(Landroid/content/res/Resources;Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mIPopSettingItemUI:Lcom/transsion/camera/app/common/ui/setting/IPopSettingItemUI;
-
-    .line 69
-    :goto_31
+    :goto_1b
     iget-object p0, p0, Lcom/transsion/camera/app/common/provider/SettingUIEntryBase;->mITopBarItemUI:Lcom/transsion/camera/app/common/ui/setting/ITopBarItemUI;
 
     return-object p0

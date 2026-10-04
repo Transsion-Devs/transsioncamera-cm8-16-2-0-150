@@ -69,18 +69,18 @@
 
 .field public static accessibility_custom_action_9:I = 0x7f0b0035
 
-.field public static tag_accessibility_actions:I = 0x7f0b068c
+.field public static tag_accessibility_actions:I = 0x7f0b0688
 
-.field public static tag_accessibility_clickable_spans:I = 0x7f0b068d
+.field public static tag_accessibility_clickable_spans:I = 0x7f0b0689
 
-.field public static tag_accessibility_heading:I = 0x7f0b068e
+.field public static tag_accessibility_heading:I = 0x7f0b068a
 
-.field public static tag_accessibility_pane_title:I = 0x7f0b068f
+.field public static tag_accessibility_pane_title:I = 0x7f0b068b
 
-.field public static tag_screen_reader_focusable:I = 0x7f0b0693
+.field public static tag_screen_reader_focusable:I = 0x7f0b068f
 
-.field public static tag_state_description:I = 0x7f0b0694
+.field public static tag_state_description:I = 0x7f0b0690
 
-.field public static tag_unhandled_key_listeners:I = 0x7f0b0697
+.field public static tag_unhandled_key_listeners:I = 0x7f0b0693
 
-.field public static tag_window_insets_animation_callback:I = 0x7f0b0698
+.field public static tag_window_insets_animation_callback:I = 0x7f0b0694

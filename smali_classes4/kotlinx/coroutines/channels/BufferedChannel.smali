@@ -27,37 +27,37 @@
 
 
 # static fields
-.field private static final _closeCause$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic _closeCause$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-.field private static final bufferEnd$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+.field private static final synthetic bufferEnd$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-.field private static final bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic bufferEndSegment$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-.field private static final closeHandler$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic closeHandler$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-.field private static final completedExpandBuffersAndPauseFlag$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+.field private static final synthetic completedExpandBuffersAndPauseFlag$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-.field private static final receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic receiveSegment$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-.field private static final receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+.field private static final synthetic receivers$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-.field private static final sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic sendSegment$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-.field private static final sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+.field private static final synthetic sendersAndCloseStatus$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
 
 # instance fields
-.field private volatile _closeCause:Ljava/lang/Object;
+.field private volatile synthetic _closeCause$volatile:Ljava/lang/Object;
 
-.field private volatile bufferEnd:J
+.field private volatile synthetic bufferEnd$volatile:J
 
-.field private volatile bufferEndSegment:Ljava/lang/Object;
+.field private volatile synthetic bufferEndSegment$volatile:Ljava/lang/Object;
 
 .field private final capacity:I
 
-.field private volatile closeHandler:Ljava/lang/Object;
+.field private volatile synthetic closeHandler$volatile:Ljava/lang/Object;
 
-.field private volatile completedExpandBuffersAndPauseFlag:J
+.field private volatile synthetic completedExpandBuffersAndPauseFlag$volatile:J
 
 .field public final onUndeliveredElement:Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -75,20 +75,20 @@
     .end annotation
 .end field
 
-.field private volatile receiveSegment:Ljava/lang/Object;
+.field private volatile synthetic receiveSegment$volatile:Ljava/lang/Object;
 
-.field private volatile receivers:J
+.field private volatile synthetic receivers$volatile:J
 
-.field private volatile sendSegment:Ljava/lang/Object;
+.field private volatile synthetic sendSegment$volatile:Ljava/lang/Object;
 
-.field private volatile sendersAndCloseStatus:J
+.field private volatile synthetic sendersAndCloseStatus$volatile:J
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 3
 
-    const-string v0, "sendersAndCloseStatus"
+    const-string v0, "sendersAndCloseStatus$volatile"
 
     const-class v1, Lkotlinx/coroutines/channels/BufferedChannel;
 
@@ -96,33 +96,33 @@
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    const-string v0, "receivers"
-
-    invoke-static {v1, v0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-
-    move-result-object v0
-
-    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-
-    const-string v0, "bufferEnd"
+    const-string v0, "receivers$volatile"
 
     invoke-static {v1, v0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEnd$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    const-string v0, "completedExpandBuffersAndPauseFlag"
+    const-string v0, "bufferEnd$volatile"
 
     invoke-static {v1, v0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEnd$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    const-string v0, "sendSegment"
+    const-string v0, "completedExpandBuffersAndPauseFlag$volatile"
+
+    invoke-static {v1, v0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    const-string v0, "sendSegment$volatile"
 
     const-class v2, Ljava/lang/Object;
 
@@ -130,39 +130,39 @@
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    const-string v0, "receiveSegment"
-
-    invoke-static {v1, v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    move-result-object v0
-
-    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    const-string v0, "bufferEndSegment"
+    const-string v0, "receiveSegment$volatile"
 
     invoke-static {v1, v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    const-string v0, "_closeCause"
-
-    invoke-static {v1, v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    move-result-object v0
-
-    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->_closeCause$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    const-string v0, "closeHandler"
+    const-string v0, "bufferEndSegment$volatile"
 
     invoke-static {v1, v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->closeHandler$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    const-string v0, "_closeCause$volatile"
+
+    invoke-static {v1, v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->_closeCause$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    const-string v0, "closeHandler$volatile"
+
+    invoke-static {v1, v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->closeHandler$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     return-void
 .end method
@@ -194,14 +194,14 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEnd:J
+    iput-wide v0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEnd$volatile:J
 
     .line 87
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndCounter()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag:J
+    iput-wide v0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$volatile:J
 
     .line 98
     new-instance v2, Lkotlinx/coroutines/channels/ChannelSegment;
@@ -217,10 +217,10 @@
     invoke-direct/range {v2 .. v7}, Lkotlinx/coroutines/channels/ChannelSegment;-><init>(JLkotlinx/coroutines/channels/ChannelSegment;Lkotlinx/coroutines/channels/BufferedChannel;I)V
 
     .line 99
-    iput-object v2, v6, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment:Ljava/lang/Object;
+    iput-object v2, v6, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$volatile:Ljava/lang/Object;
 
     .line 100
-    iput-object v2, v6, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment:Ljava/lang/Object;
+    iput-object v2, v6, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$volatile:Ljava/lang/Object;
 
     .line 105
     invoke-direct {v6}, Lkotlinx/coroutines/channels/BufferedChannel;->isRendezvousOrUnlimited()Z
@@ -239,7 +239,7 @@
     invoke-static {v2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     :cond_32
-    iput-object v2, v6, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment:Ljava/lang/Object;
+    iput-object v2, v6, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$volatile:Ljava/lang/Object;
 
     if-eqz p2, :cond_3c
 
@@ -257,13 +257,13 @@
     :goto_3d
     iput-object p0, v6, Lkotlinx/coroutines/channels/BufferedChannel;->onUndeliveredElementReceiveCancellationConstructor:Lkotlin/jvm/functions/Function3;
 
-    .line 1721
+    .line 1729
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->NO_CLOSE_CAUSE:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getNO_CLOSE_CAUSE$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object p0
 
-    iput-object p0, v6, Lkotlinx/coroutines/channels/BufferedChannel;->_closeCause:Ljava/lang/Object;
+    iput-object p0, v6, Lkotlinx/coroutines/channels/BufferedChannel;->_closeCause$volatile:Ljava/lang/Object;
 
     return-void
 
@@ -347,38 +347,46 @@
     return-object p0
 .end method
 
-.method public static final synthetic access$getReceiveSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.method public static final synthetic access$getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
     .registers 1
 
     .line 36
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public static final synthetic access$getReceivers$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+.method public static final synthetic access$getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
     .registers 1
 
     .line 36
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public static final synthetic access$getSendSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.method public static final synthetic access$getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
     .registers 1
 
     .line 36
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public static final synthetic access$getSendersAndCloseStatus$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+.method public static final synthetic access$getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
     .registers 1
 
     .line 36
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -612,7 +620,7 @@
 
     const/4 v1, 0x1
 
-    .line 2115
+    .line 2123
     invoke-static {v0, v1, v0}, Lkotlinx/coroutines/internal/InlineList;->constructor-impl$default(Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)Ljava/lang/Object;
 
     move-result-object v0
@@ -622,7 +630,7 @@
 
     if-eqz p1, :cond_6e
 
-    .line 2118
+    .line 2126
     sget v3, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
     sub-int/2addr v3, v1
@@ -630,7 +638,7 @@
     :goto_c
     if-ge v2, v3, :cond_67
 
-    .line 2120
+    .line 2128
     iget-wide v4, p1, Lkotlinx/coroutines/internal/Segment;->id:J
 
     sget v6, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
@@ -647,7 +655,7 @@
 
     if-ltz v4, :cond_6e
 
-    .line 2123
+    .line 2131
     :cond_1a
     invoke-virtual {p1, v3}, Lkotlinx/coroutines/channels/ChannelSegment;->getState$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
@@ -655,7 +663,7 @@
 
     if-eqz v4, :cond_57
 
-    .line 2125
+    .line 2133
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->IN_BUFFER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getIN_BUFFER$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -665,13 +673,13 @@
 
     goto :goto_57
 
-    .line 2131
+    .line 2139
     :cond_27
     instance-of v5, v4, Lkotlinx/coroutines/channels/WaiterEB;
 
     if-eqz v5, :cond_41
 
-    .line 2132
+    .line 2140
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v5
@@ -682,7 +690,7 @@
 
     if-eqz v5, :cond_1a
 
-    .line 2133
+    .line 2141
     check-cast v4, Lkotlinx/coroutines/channels/WaiterEB;
 
     iget-object v4, v4, Lkotlinx/coroutines/channels/WaiterEB;->waiter:Lkotlinx/coroutines/Waiter;
@@ -691,18 +699,18 @@
 
     move-result-object v0
 
-    .line 2134
+    .line 2142
     invoke-virtual {p1, v3, v1}, Lkotlinx/coroutines/channels/ChannelSegment;->onCancelledRequest(IZ)V
 
     goto :goto_64
 
-    .line 2138
+    .line 2146
     :cond_41
     instance-of v5, v4, Lkotlinx/coroutines/Waiter;
 
     if-eqz v5, :cond_64
 
-    .line 2139
+    .line 2147
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v5
@@ -713,17 +721,17 @@
 
     if-eqz v5, :cond_1a
 
-    .line 2140
+    .line 2148
     invoke-static {v0, v4}, Lkotlinx/coroutines/internal/InlineList;->plus-FjFbRPM(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 2141
+    .line 2149
     invoke-virtual {p1, v3, v1}, Lkotlinx/coroutines/channels/ChannelSegment;->onCancelledRequest(IZ)V
 
     goto :goto_64
 
-    .line 2126
+    .line 2134
     :cond_57
     :goto_57
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
@@ -736,7 +744,7 @@
 
     if-eqz v4, :cond_1a
 
-    .line 2127
+    .line 2135
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
 
     :cond_64
@@ -745,7 +753,7 @@
 
     goto :goto_c
 
-    .line 2150
+    .line 2158
     :cond_67
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getPrev()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
@@ -758,19 +766,19 @@
     :cond_6e
     if-eqz v0, :cond_94
 
-    .line 39
+    .line 35
     instance-of p1, v0, Ljava/util/ArrayList;
 
     if-nez p1, :cond_7a
 
     check-cast v0, Lkotlinx/coroutines/Waiter;
 
-    .line 2153
+    .line 2161
     invoke-direct {p0, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->resumeReceiverOnClosedChannel(Lkotlinx/coroutines/Waiter;)V
 
     return-void
 
-    .line 41
+    .line 37
     :cond_7a
     const-string p1, "null cannot be cast to non-null type java.util.ArrayList<E of kotlinx.coroutines.internal.InlineList>{ kotlin.collections.TypeAliasesKt.ArrayList<E of kotlinx.coroutines.internal.InlineList> }"
 
@@ -778,7 +786,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 42
+    .line 38
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -788,14 +796,14 @@
     :goto_86
     if-ge v2, p1, :cond_94
 
-    .line 43
+    .line 39
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Lkotlinx/coroutines/Waiter;
 
-    .line 2153
+    .line 2161
     invoke-direct {p0, p2}, Lkotlinx/coroutines/channels/BufferedChannel;->resumeReceiverOnClosedChannel(Lkotlinx/coroutines/Waiter;)V
 
     add-int/lit8 p1, p1, -0x1
@@ -816,16 +824,20 @@
         }
     .end annotation
 
-    .line 1953
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 1961
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 1954
+    move-result-object v1
+
+    .line 1962
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -842,14 +854,16 @@
 
     cmp-long v2, v2, v4
 
-    if-lez v2, :cond_1a
+    if-lez v2, :cond_1e
 
     move-object v0, v1
 
-    :cond_1a
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    :cond_1e
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 1955
+    move-result-object v1
+
+    .line 1963
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -866,12 +880,12 @@
 
     cmp-long v1, v1, v3
 
-    if-lez v1, :cond_2e
+    if-lez v1, :cond_34
 
     move-object v0, p0
 
-    .line 1958
-    :cond_2e
+    .line 1966
+    :cond_34
     check-cast v0, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     invoke-static {v0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListKt;->close(Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;)Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
@@ -886,12 +900,12 @@
 .method private final completeCancel(J)V
     .registers 3
 
-    .line 1942
+    .line 1950
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/channels/BufferedChannel;->completeClose(J)Lkotlinx/coroutines/channels/ChannelSegment;
 
     move-result-object p1
 
-    .line 1945
+    .line 1953
     invoke-direct {p0, p1}, Lkotlinx/coroutines/channels/BufferedChannel;->removeUnprocessedElements(Lkotlinx/coroutines/channels/ChannelSegment;)V
 
     return-void
@@ -907,19 +921,19 @@
         }
     .end annotation
 
-    .line 1913
+    .line 1921
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->closeLinkedList()Lkotlinx/coroutines/channels/ChannelSegment;
 
     move-result-object v0
 
-    .line 1923
+    .line 1931
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->isConflatedDropOldest()Z
 
     move-result v1
 
     if-eqz v1, :cond_17
 
-    .line 1924
+    .line 1932
     invoke-direct {p0, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->markAllEmptyCellsAsClosed(Lkotlinx/coroutines/channels/ChannelSegment;)J
 
     move-result-wide v1
@@ -930,10 +944,10 @@
 
     if-eqz v3, :cond_17
 
-    .line 1926
+    .line 1934
     invoke-virtual {p0, v1, v2}, Lkotlinx/coroutines/channels/BufferedChannel;->dropFirstElementUntilTheSpecifiedCellIsInTheBuffer(J)V
 
-    .line 1930
+    .line 1938
     :cond_17
     invoke-direct {p0, v0, p1, p2}, Lkotlinx/coroutines/channels/BufferedChannel;->cancelSuspendedReceiveRequests(Lkotlinx/coroutines/channels/ChannelSegment;J)V
 
@@ -943,7 +957,7 @@
 .method private final completeCloseOrCancel()V
     .registers 1
 
-    .line 1902
+    .line 1910
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->isClosedForSend()Z
 
     return-void
@@ -962,7 +976,9 @@
     return-void
 
     :cond_7
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     .line 1176
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -974,8 +990,10 @@
     move-object v4, v0
 
     .line 1178
-    :goto_10
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEnd$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    :goto_12
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEnd$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     .line 1181
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->getAndIncrement(Ljava/lang/Object;)J
@@ -1002,37 +1020,37 @@
 
     const-wide/16 v9, 0x0
 
-    if-gtz v1, :cond_3a
+    if-gtz v1, :cond_3e
 
     .line 1193
     iget-wide v0, v4, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long v0, v0, v2
 
-    if-gez v0, :cond_36
+    if-gez v0, :cond_3a
 
     invoke-virtual {v4}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3a
 
     .line 1194
     invoke-direct {p0, v2, v3, v4}, Lkotlinx/coroutines/channels/BufferedChannel;->moveSegmentBufferEndToSpecifiedOrLast(JLkotlinx/coroutines/channels/ChannelSegment;)V
 
     .line 1196
-    :cond_36
+    :cond_3a
     invoke-static {p0, v9, v10, v8, v7}, Lkotlinx/coroutines/channels/BufferedChannel;->incCompletedExpandBufferAttempts$default(Lkotlinx/coroutines/channels/BufferedChannel;JILjava/lang/Object;)V
 
     return-void
 
     .line 1201
-    :cond_3a
+    :cond_3e
     iget-wide v11, v4, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long v1, v11, v2
 
-    if-eqz v1, :cond_4b
+    if-eqz v1, :cond_4f
 
     move-object v1, p0
 
@@ -1041,22 +1059,22 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_49
+    if-nez p0, :cond_4d
 
-    :goto_47
+    :goto_4b
     move-object p0, v1
 
-    goto :goto_10
+    goto :goto_12
 
-    :cond_49
+    :cond_4d
     move-object v4, p0
 
-    goto :goto_4c
+    goto :goto_50
 
-    :cond_4b
+    :cond_4f
     move-object v1, p0
 
-    :goto_4c
+    :goto_50
     int-to-long v2, v0
 
     .line 1213
@@ -1069,7 +1087,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_5a
+    if-eqz p0, :cond_5e
 
     .line 1222
     invoke-static {v1, v9, v10, v8, v7}, Lkotlinx/coroutines/channels/BufferedChannel;->incCompletedExpandBufferAttempts$default(Lkotlinx/coroutines/channels/BufferedChannel;JILjava/lang/Object;)V
@@ -1077,10 +1095,10 @@
     return-void
 
     .line 1228
-    :cond_5a
+    :cond_5e
     invoke-static {v1, v9, v10, v8, v7}, Lkotlinx/coroutines/channels/BufferedChannel;->incCompletedExpandBufferAttempts$default(Lkotlinx/coroutines/channels/BufferedChannel;JILjava/lang/Object;)V
 
-    goto :goto_47
+    goto :goto_4b
 .end method
 
 .method private final findSegmentBufferEnd(JLkotlinx/coroutines/channels/ChannelSegment;J)Lkotlinx/coroutines/channels/ChannelSegment;
@@ -1097,9 +1115,11 @@
 
     move-wide v2, p1
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 2465
+    move-result-object v0
+
+    .line 2473
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->createSegmentFunction()Lkotlin/reflect/KFunction;
 
     move-result-object v4
@@ -1108,86 +1128,86 @@
 
     move-object/from16 v5, p3
 
-    .line 73
-    :goto_b
+    .line 69
+    :goto_d
     invoke-static {v5, v2, v3, v4}, Lkotlinx/coroutines/internal/ConcurrentLinkedListKt;->findSegmentInternal(Lkotlinx/coroutines/internal/Segment;JLkotlin/jvm/functions/Function2;)Ljava/lang/Object;
 
     move-result-object v6
 
-    .line 74
+    .line 70
     invoke-static {v6}, Lkotlinx/coroutines/internal/SegmentOrClosed;->isClosed-impl(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-nez v7, :cond_49
+    if-nez v7, :cond_4b
 
     invoke-static {v6}, Lkotlinx/coroutines/internal/SegmentOrClosed;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
 
     move-result-object v7
 
-    :cond_19
-    :goto_19
+    :cond_1b
+    :goto_1b
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v8
 
     check-cast v8, Lkotlinx/coroutines/internal/Segment;
 
-    .line 46
+    .line 42
     iget-wide v9, v8, Lkotlinx/coroutines/internal/Segment;->id:J
 
     iget-wide v11, v7, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long v9, v9, v11
 
-    if-ltz v9, :cond_28
+    if-ltz v9, :cond_2a
 
-    goto :goto_49
+    goto :goto_4b
 
-    .line 47
-    :cond_28
+    .line 43
+    :cond_2a
     invoke-virtual {v7}, Lkotlinx/coroutines/internal/Segment;->tryIncPointers$kotlinx_coroutines_core()Z
 
     move-result v9
 
-    if-nez v9, :cond_2f
+    if-nez v9, :cond_31
 
-    goto :goto_b
+    goto :goto_d
 
-    .line 48
-    :cond_2f
+    .line 44
+    :cond_31
     invoke-static {v0, p0, v8, v7}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_3f
+    if-eqz v9, :cond_41
 
-    .line 49
+    .line 45
     invoke-virtual {v8}, Lkotlinx/coroutines/internal/Segment;->decPointers$kotlinx_coroutines_core()Z
 
     move-result v0
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_4b
 
     invoke-virtual {v8}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->remove()V
 
-    goto :goto_49
+    goto :goto_4b
 
-    .line 52
-    :cond_3f
+    .line 48
+    :cond_41
     invoke-virtual {v7}, Lkotlinx/coroutines/internal/Segment;->decPointers$kotlinx_coroutines_core()Z
 
     move-result v8
 
-    if-eqz v8, :cond_19
+    if-eqz v8, :cond_1b
 
     invoke-virtual {v7}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->remove()V
 
-    goto :goto_19
+    goto :goto_1b
 
-    .line 2466
-    :cond_49
-    :goto_49
+    .line 2474
+    :cond_4b
+    :goto_4b
     invoke-static {v6}, Lkotlinx/coroutines/internal/SegmentOrClosed;->isClosed-impl(Ljava/lang/Object;)Z
 
     move-result v0
@@ -1198,21 +1218,21 @@
 
     const/4 v10, 0x0
 
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_5f
 
-    .line 2471
+    .line 2479
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->completeCloseOrCancel()V
 
-    .line 2474
+    .line 2482
     invoke-direct/range {p0 .. p3}, Lkotlinx/coroutines/channels/BufferedChannel;->moveSegmentBufferEndToSpecifiedOrLast(JLkotlinx/coroutines/channels/ChannelSegment;)V
 
-    .line 2477
+    .line 2485
     invoke-static {p0, v8, v9, v7, v10}, Lkotlinx/coroutines/channels/BufferedChannel;->incCompletedExpandBufferAttempts$default(Lkotlinx/coroutines/channels/BufferedChannel;JILjava/lang/Object;)V
 
     return-object v10
 
-    .line 2481
-    :cond_5d
+    .line 2489
+    :cond_5f
     invoke-static {v6}, Lkotlinx/coroutines/internal/SegmentOrClosed;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
 
     move-result-object v0
@@ -1221,19 +1241,23 @@
 
     check-cast v6, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2483
+    .line 2491
     iget-wide v4, v6, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long v0, v4, v2
 
-    if-lez v0, :cond_89
+    if-lez v0, :cond_8f
 
-    .line 2489
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEnd$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .line 2497
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEnd$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     const-wide/16 v2, 0x1
 
     add-long v2, p4, v2
+
+    iget-wide v4, v6, Lkotlinx/coroutines/internal/Segment;->id:J
 
     sget v11, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
@@ -1247,9 +1271,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_85
+    if-eqz v0, :cond_8b
 
-    .line 2490
+    .line 2498
     iget-wide v2, v6, Lkotlinx/coroutines/internal/Segment;->id:J
 
     int-to-long v4, v11
@@ -1260,16 +1284,16 @@
 
     invoke-direct {p0, v2, v3}, Lkotlinx/coroutines/channels/BufferedChannel;->incCompletedExpandBufferAttempts(J)V
 
-    goto :goto_88
+    goto :goto_8e
 
-    .line 2492
-    :cond_85
+    .line 2500
+    :cond_8b
     invoke-static {p0, v8, v9, v7, v10}, Lkotlinx/coroutines/channels/BufferedChannel;->incCompletedExpandBufferAttempts$default(Lkotlinx/coroutines/channels/BufferedChannel;JILjava/lang/Object;)V
 
-    :goto_88
+    :goto_8e
     return-object v10
 
-    :cond_89
+    :cond_8f
     return-object v6
 .end method
 
@@ -1285,107 +1309,109 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 2416
+    move-result-object v0
+
+    .line 2424
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->createSegmentFunction()Lkotlin/reflect/KFunction;
 
     move-result-object v1
 
     check-cast v1, Lkotlin/jvm/functions/Function2;
 
-    .line 73
-    :goto_8
+    .line 69
+    :goto_a
     invoke-static {p3, p1, p2, v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListKt;->findSegmentInternal(Lkotlinx/coroutines/internal/Segment;JLkotlin/jvm/functions/Function2;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 74
+    .line 70
     invoke-static {v2}, Lkotlinx/coroutines/internal/SegmentOrClosed;->isClosed-impl(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_46
+    if-nez v3, :cond_48
 
     invoke-static {v2}, Lkotlinx/coroutines/internal/SegmentOrClosed;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
 
     move-result-object v3
 
-    :cond_16
-    :goto_16
+    :cond_18
+    :goto_18
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lkotlinx/coroutines/internal/Segment;
 
-    .line 46
+    .line 42
     iget-wide v5, v4, Lkotlinx/coroutines/internal/Segment;->id:J
 
     iget-wide v7, v3, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long v5, v5, v7
 
-    if-ltz v5, :cond_25
+    if-ltz v5, :cond_27
 
-    goto :goto_46
+    goto :goto_48
 
-    .line 47
-    :cond_25
+    .line 43
+    :cond_27
     invoke-virtual {v3}, Lkotlinx/coroutines/internal/Segment;->tryIncPointers$kotlinx_coroutines_core()Z
 
     move-result v5
 
-    if-nez v5, :cond_2c
+    if-nez v5, :cond_2e
 
-    goto :goto_8
+    goto :goto_a
 
-    .line 48
-    :cond_2c
+    .line 44
+    :cond_2e
     invoke-static {v0, p0, v4, v3}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_3c
+    if-eqz v5, :cond_3e
 
-    .line 49
+    .line 45
     invoke-virtual {v4}, Lkotlinx/coroutines/internal/Segment;->decPointers$kotlinx_coroutines_core()Z
 
     move-result v0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_48
 
     invoke-virtual {v4}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->remove()V
 
-    goto :goto_46
+    goto :goto_48
 
-    .line 52
-    :cond_3c
+    .line 48
+    :cond_3e
     invoke-virtual {v3}, Lkotlinx/coroutines/internal/Segment;->decPointers$kotlinx_coroutines_core()Z
 
     move-result v4
 
-    if-eqz v4, :cond_16
+    if-eqz v4, :cond_18
 
     invoke-virtual {v3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->remove()V
 
-    goto :goto_16
+    goto :goto_18
 
-    .line 2417
-    :cond_46
-    :goto_46
+    .line 2425
+    :cond_48
+    :goto_48
     invoke-static {v2}, Lkotlinx/coroutines/internal/SegmentOrClosed;->isClosed-impl(Ljava/lang/Object;)Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_64
 
-    .line 2422
+    .line 2430
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->completeCloseOrCancel()V
 
-    .line 2428
+    .line 2436
     iget-wide p1, p3, Lkotlinx/coroutines/internal/Segment;->id:J
 
     sget v0, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
@@ -1400,27 +1426,27 @@
 
     cmp-long p0, p1, v2
 
-    if-gez p0, :cond_61
+    if-gez p0, :cond_63
 
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
-    :cond_61
+    :cond_63
     return-object v1
 
-    .line 2433
-    :cond_62
+    .line 2441
+    :cond_64
     invoke-static {v2}, Lkotlinx/coroutines/internal/SegmentOrClosed;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
 
     move-result-object p3
 
     check-cast p3, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2435
+    .line 2443
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->isRendezvousOrUnlimited()Z
 
     move-result v0
 
-    if-nez v0, :cond_aa
+    if-nez v0, :cond_ae
 
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndCounter()J
 
@@ -1434,74 +1460,76 @@
 
     cmp-long v0, p1, v2
 
-    if-gtz v0, :cond_aa
+    if-gtz v0, :cond_ae
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    :cond_7c
-    :goto_7c
+    move-result-object v0
+
+    :cond_80
+    :goto_80
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lkotlinx/coroutines/internal/Segment;
 
-    .line 46
+    .line 42
     iget-wide v3, v2, Lkotlinx/coroutines/internal/Segment;->id:J
 
     iget-wide v5, p3, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long v3, v3, v5
 
-    if-gez v3, :cond_aa
+    if-gez v3, :cond_ae
 
-    .line 47
+    .line 43
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/Segment;->tryIncPointers$kotlinx_coroutines_core()Z
 
     move-result v3
 
-    if-eqz v3, :cond_aa
+    if-eqz v3, :cond_ae
 
-    .line 48
+    .line 44
     invoke-static {v0, p0, v2, p3}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_a0
+    if-eqz v3, :cond_a4
 
-    .line 49
+    .line 45
     invoke-virtual {v2}, Lkotlinx/coroutines/internal/Segment;->decPointers$kotlinx_coroutines_core()Z
 
     move-result v0
 
-    if-eqz v0, :cond_aa
+    if-eqz v0, :cond_ae
 
     invoke-virtual {v2}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->remove()V
 
-    goto :goto_aa
+    goto :goto_ae
 
-    .line 52
-    :cond_a0
+    .line 48
+    :cond_a4
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/Segment;->decPointers$kotlinx_coroutines_core()Z
 
     move-result v2
 
-    if-eqz v2, :cond_7c
+    if-eqz v2, :cond_80
 
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->remove()V
 
-    goto :goto_7c
+    goto :goto_80
 
-    .line 2439
-    :cond_aa
-    :goto_aa
+    .line 2447
+    :cond_ae
+    :goto_ae
     iget-wide v2, p3, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long p1, v2, p1
 
-    if-lez p1, :cond_c7
+    if-lez p1, :cond_cb
 
-    .line 2443
+    .line 2451
     sget p1, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
     int-to-long v4, p1
@@ -1510,7 +1538,7 @@
 
     invoke-direct {p0, v2, v3}, Lkotlinx/coroutines/channels/BufferedChannel;->updateReceiversCounterIfLower(J)V
 
-    .line 2449
+    .line 2457
     iget-wide v2, p3, Lkotlinx/coroutines/internal/Segment;->id:J
 
     int-to-long p1, p1
@@ -1523,14 +1551,14 @@
 
     cmp-long p0, v2, p0
 
-    if-gez p0, :cond_c6
+    if-gez p0, :cond_ca
 
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
-    :cond_c6
+    :cond_ca
     return-object v1
 
-    :cond_c7
+    :cond_cb
     return-object p3
 .end method
 
@@ -1546,107 +1574,109 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 2361
+    move-result-object v0
+
+    .line 2369
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->createSegmentFunction()Lkotlin/reflect/KFunction;
 
     move-result-object v1
 
     check-cast v1, Lkotlin/jvm/functions/Function2;
 
-    .line 73
-    :goto_8
+    .line 69
+    :goto_a
     invoke-static {p3, p1, p2, v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListKt;->findSegmentInternal(Lkotlinx/coroutines/internal/Segment;JLkotlin/jvm/functions/Function2;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 74
+    .line 70
     invoke-static {v2}, Lkotlinx/coroutines/internal/SegmentOrClosed;->isClosed-impl(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_46
+    if-nez v3, :cond_48
 
     invoke-static {v2}, Lkotlinx/coroutines/internal/SegmentOrClosed;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
 
     move-result-object v3
 
-    :cond_16
-    :goto_16
+    :cond_18
+    :goto_18
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lkotlinx/coroutines/internal/Segment;
 
-    .line 46
+    .line 42
     iget-wide v5, v4, Lkotlinx/coroutines/internal/Segment;->id:J
 
     iget-wide v7, v3, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long v5, v5, v7
 
-    if-ltz v5, :cond_25
+    if-ltz v5, :cond_27
 
-    goto :goto_46
+    goto :goto_48
 
-    .line 47
-    :cond_25
+    .line 43
+    :cond_27
     invoke-virtual {v3}, Lkotlinx/coroutines/internal/Segment;->tryIncPointers$kotlinx_coroutines_core()Z
 
     move-result v5
 
-    if-nez v5, :cond_2c
+    if-nez v5, :cond_2e
 
-    goto :goto_8
+    goto :goto_a
 
-    .line 48
-    :cond_2c
+    .line 44
+    :cond_2e
     invoke-static {v0, p0, v4, v3}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_3c
+    if-eqz v5, :cond_3e
 
-    .line 49
+    .line 45
     invoke-virtual {v4}, Lkotlinx/coroutines/internal/Segment;->decPointers$kotlinx_coroutines_core()Z
 
     move-result v0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_48
 
     invoke-virtual {v4}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->remove()V
 
-    goto :goto_46
+    goto :goto_48
 
-    .line 52
-    :cond_3c
+    .line 48
+    :cond_3e
     invoke-virtual {v3}, Lkotlinx/coroutines/internal/Segment;->decPointers$kotlinx_coroutines_core()Z
 
     move-result v4
 
-    if-eqz v4, :cond_16
+    if-eqz v4, :cond_18
 
     invoke-virtual {v3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->remove()V
 
-    goto :goto_16
+    goto :goto_18
 
-    .line 2362
-    :cond_46
-    :goto_46
+    .line 2370
+    :cond_48
+    :goto_48
     invoke-static {v2}, Lkotlinx/coroutines/internal/SegmentOrClosed;->isClosed-impl(Ljava/lang/Object;)Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_64
 
-    .line 2367
+    .line 2375
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->completeCloseOrCancel()V
 
-    .line 2373
+    .line 2381
     iget-wide p1, p3, Lkotlinx/coroutines/internal/Segment;->id:J
 
     sget v0, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
@@ -1661,29 +1691,29 @@
 
     cmp-long p0, p1, v2
 
-    if-gez p0, :cond_61
+    if-gez p0, :cond_63
 
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
-    :cond_61
+    :cond_63
     return-object v1
 
-    .line 2378
-    :cond_62
+    .line 2386
+    :cond_64
     invoke-static {v2}, Lkotlinx/coroutines/internal/SegmentOrClosed;->getSegment-impl(Ljava/lang/Object;)Lkotlinx/coroutines/internal/Segment;
 
     move-result-object p3
 
     check-cast p3, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2380
+    .line 2388
     iget-wide v2, p3, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long p1, v2, p1
 
-    if-lez p1, :cond_85
+    if-lez p1, :cond_87
 
-    .line 2384
+    .line 2392
     sget p1, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
     int-to-long v4, p1
@@ -1692,7 +1722,7 @@
 
     invoke-direct {p0, v2, v3}, Lkotlinx/coroutines/channels/BufferedChannel;->updateSendersCounterIfLower(J)V
 
-    .line 2390
+    .line 2398
     iget-wide v2, p3, Lkotlinx/coroutines/internal/Segment;->id:J
 
     int-to-long p1, p1
@@ -1705,40 +1735,40 @@
 
     cmp-long p0, v2, p0
 
-    if-gez p0, :cond_84
+    if-gez p0, :cond_86
 
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
-    :cond_84
+    :cond_86
     return-object v1
 
-    :cond_85
+    :cond_87
     return-object p3
 .end method
 
-.method private final getAndUpdate$atomicfu(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Ljava/lang/Object;
+.method private final synthetic getAndUpdate$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
     .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
+            "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
             "Lkotlin/jvm/functions/Function1;",
-            "Ljava/lang/Object;",
             ")",
             "Ljava/lang/Object;"
         }
     .end annotation
 
     :cond_0
-    invoke-virtual {p1, p3}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {p1, p3, p0, v0}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p2, p1, p0, v0}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -1747,10 +1777,28 @@
     return-object p0
 .end method
 
+.method private final synthetic getBufferEnd$volatile()J
+    .registers 3
+
+    iget-wide v0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEnd$volatile:J
+
+    return-wide v0
+.end method
+
+.method private static final synthetic getBufferEnd$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEnd$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    return-object v0
+.end method
+
 .method private final getBufferEndCounter()J
     .registers 3
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEnd$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEnd$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     .line 72
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
@@ -1758,6 +1806,54 @@
     move-result-wide v0
 
     return-wide v0
+.end method
+
+.method private final synthetic getBufferEndSegment$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic getCloseHandler$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->closeHandler$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic getCloseHandler$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->closeHandler$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic getCompletedExpandBuffersAndPauseFlag$volatile()J
+    .registers 3
+
+    iget-wide v0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$volatile:J
+
+    return-wide v0
+.end method
+
+.method private static final synthetic getCompletedExpandBuffersAndPauseFlag$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    return-object v0
 .end method
 
 .method public static synthetic getOnReceive$annotations()V
@@ -1793,7 +1889,7 @@
 .method private final getReceiveException()Ljava/lang/Throwable;
     .registers 2
 
-    .line 1729
+    .line 1737
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getCloseCause()Ljava/lang/Throwable;
 
     move-result-object p0
@@ -1810,10 +1906,92 @@
     return-object p0
 .end method
 
+.method private final synthetic getReceiveSegment$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic getReceivers$volatile()J
+    .registers 3
+
+    iget-wide v0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$volatile:J
+
+    return-wide v0
+.end method
+
+.method private static final synthetic getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic getSendSegment$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic getSendersAndCloseStatus$volatile()J
+    .registers 3
+
+    iget-wide v0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$volatile:J
+
+    return-wide v0
+.end method
+
+.method private static final synthetic getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$volatile$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic get_closeCause$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->_closeCause$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic get_closeCause$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->_closeCause$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
 .method private final incCompletedExpandBufferAttempts(J)V
     .registers 7
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCompletedExpandBuffersAndPauseFlag$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     .line 1370
     invoke-virtual {v0, p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->addAndGet(Ljava/lang/Object;J)J
@@ -1828,11 +2006,13 @@
 
     cmp-long p1, p1, v2
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1f
 
     .line 1376
-    :goto_f
-    sget-object p1, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    :goto_11
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCompletedExpandBuffersAndPauseFlag$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object p1
 
     invoke-virtual {p1, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
@@ -1842,11 +2022,11 @@
 
     cmp-long p1, p1, v2
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1f
 
-    goto :goto_f
+    goto :goto_11
 
-    :cond_1b
+    :cond_1f
     return-void
 .end method
 
@@ -1880,54 +2060,56 @@
 .method private final invokeCloseHandler()V
     .registers 4
 
-    .line 1809
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->closeHandler$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 1816
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCloseHandler$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    :cond_2
+    move-result-object v0
+
+    :cond_4
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_f
 
-    .line 1813
+    .line 1821
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->CLOSE_HANDLER_CLOSED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getCLOSE_HANDLER_CLOSED$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v2
 
-    goto :goto_11
+    goto :goto_13
 
-    .line 1817
-    :cond_d
+    .line 1825
+    :cond_f
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->CLOSE_HANDLER_INVOKED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getCLOSE_HANDLER_INVOKED$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v2
 
-    .line 1810
-    :goto_11
+    .line 1818
+    :goto_13
     invoke-static {v0, p0, v1, v2}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_4
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_1c
 
     return-void
 
-    :cond_1a
+    :cond_1c
     const/4 v0, 0x1
 
-    .line 1822
+    .line 1830
     invoke-static {v1, v0}, Lkotlin/jvm/internal/TypeIntrinsics;->beforeCheckcastToFunctionOfArity(Ljava/lang/Object;I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lkotlin/jvm/functions/Function1;
 
-    .line 1823
+    .line 1831
     check-cast v1, Lkotlin/jvm/functions/Function1;
 
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getCloseCause()Ljava/lang/Throwable;
@@ -1949,7 +2131,7 @@
         }
     .end annotation
 
-    .line 2295
+    .line 2303
     :cond_0
     invoke-virtual {p1, p2}, Lkotlinx/coroutines/channels/ChannelSegment;->getState$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
@@ -1959,7 +2141,7 @@
 
     if-eqz v0, :cond_48
 
-    .line 2298
+    .line 2306
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->IN_BUFFER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getIN_BUFFER$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -1969,7 +2151,7 @@
 
     goto :goto_48
 
-    .line 2309
+    .line 2317
     :cond_e
     sget-object p1, Lkotlinx/coroutines/channels/BufferedChannelKt;->BUFFERED:Lkotlinx/coroutines/internal/Symbol;
 
@@ -1979,7 +2161,7 @@
 
     return p2
 
-    .line 2311
+    .line 2319
     :cond_14
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_SEND:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_SEND$p()Lkotlinx/coroutines/internal/Symbol;
@@ -1990,7 +2172,7 @@
 
     return v1
 
-    .line 2313
+    .line 2321
     :cond_1b
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
 
@@ -2000,7 +2182,7 @@
 
     return v1
 
-    .line 2316
+    .line 2324
     :cond_22
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->DONE_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getDONE_RCV$p()Lkotlinx/coroutines/internal/Symbol;
@@ -2011,7 +2193,7 @@
 
     return v1
 
-    .line 2319
+    .line 2327
     :cond_29
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->POISONED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getPOISONED$p()Lkotlinx/coroutines/internal/Symbol;
@@ -2022,7 +2204,7 @@
 
     return v1
 
-    .line 2323
+    .line 2331
     :cond_30
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->RESUMING_BY_EB:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getRESUMING_BY_EB$p()Lkotlinx/coroutines/internal/Symbol;
@@ -2033,7 +2215,7 @@
 
     return p2
 
-    .line 2327
+    .line 2335
     :cond_37
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->RESUMING_BY_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getRESUMING_BY_RCV$p()Lkotlinx/coroutines/internal/Symbol;
@@ -2044,7 +2226,7 @@
 
     return v1
 
-    .line 2338
+    .line 2346
     :cond_3e
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiversCounter$kotlinx_coroutines_core()J
 
@@ -2059,7 +2241,7 @@
     :cond_47
     return v1
 
-    .line 2300
+    .line 2308
     :cond_48
     :goto_48
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->POISONED:Lkotlinx/coroutines/internal/Symbol;
@@ -2073,7 +2255,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2304
+    .line 2312
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->expandBuffer()V
 
     return v1
@@ -2108,12 +2290,12 @@
 
     and-long/2addr p1, v4
 
-    .line 2219
+    .line 2227
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/channels/BufferedChannel;->completeCancel(J)V
 
     return v2
 
-    .line 2222
+    .line 2230
     :cond_1b
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -2142,12 +2324,12 @@
     :cond_36
     and-long/2addr p1, v4
 
-    .line 2209
+    .line 2217
     invoke-direct {p0, p1, p2}, Lkotlinx/coroutines/channels/BufferedChannel;->completeClose(J)Lkotlinx/coroutines/channels/ChannelSegment;
 
     if-eqz p3, :cond_44
 
-    .line 2213
+    .line 2221
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->hasElements$kotlinx_coroutines_core()Z
 
     move-result p0
@@ -2179,7 +2361,7 @@
 
     const/4 v0, 0x1
 
-    .line 2191
+    .line 2199
     invoke-direct {p0, p1, p2, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->isClosed(JZ)Z
 
     move-result p0
@@ -2200,7 +2382,7 @@
 
     const/4 v0, 0x0
 
-    .line 2184
+    .line 2192
     invoke-direct {p0, p1, p2, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->isClosed(JZ)Z
 
     move-result p0
@@ -2250,21 +2432,21 @@
     return p0
 .end method
 
-.method private final loop$atomicfu(Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lkotlin/jvm/functions/Function1;)V
     .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
+            "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;",
             "Lkotlin/jvm/functions/Function1;",
-            "Ljava/lang/Object;",
             ")V"
         }
     .end annotation
 
     .line 0
     :goto_0
-    invoke-virtual {p1, p3}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
+    invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v0
 
@@ -2272,30 +2454,30 @@
 
     move-result-object p0
 
-    invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
 
-.method private final loop$atomicfu(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lkotlin/jvm/functions/Function1;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
+            "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
             "Lkotlin/jvm/functions/Function1;",
-            "Ljava/lang/Object;",
             ")V"
         }
     .end annotation
 
     .line 0
     :goto_0
-    invoke-virtual {p1, p3}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
@@ -2310,7 +2492,7 @@
         }
     .end annotation
 
-    .line 1974
+    .line 1982
     :cond_0
     sget v0, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
@@ -2323,7 +2505,7 @@
 
     if-ge v3, v0, :cond_3c
 
-    .line 1976
+    .line 1984
     iget-wide v3, p1, Lkotlinx/coroutines/internal/Segment;->id:J
 
     sget v5, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
@@ -2336,7 +2518,7 @@
 
     add-long/2addr v3, v5
 
-    .line 1977
+    .line 1985
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiversCounter$kotlinx_coroutines_core()J
 
     move-result-wide v5
@@ -2347,7 +2529,7 @@
 
     return-wide v1
 
-    .line 1980
+    .line 1988
     :cond_1a
     invoke-virtual {p1, v0}, Lkotlinx/coroutines/channels/ChannelSegment;->getState$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
@@ -2355,7 +2537,7 @@
 
     if-eqz v1, :cond_2c
 
-    .line 1983
+    .line 1991
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->IN_BUFFER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getIN_BUFFER$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -2365,7 +2547,7 @@
 
     goto :goto_2c
 
-    .line 1991
+    .line 1999
     :cond_27
     sget-object v2, Lkotlinx/coroutines/channels/BufferedChannelKt;->BUFFERED:Lkotlinx/coroutines/internal/Symbol;
 
@@ -2373,7 +2555,7 @@
 
     return-wide v3
 
-    .line 1985
+    .line 1993
     :cond_2c
     :goto_2c
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
@@ -2386,7 +2568,7 @@
 
     if-eqz v1, :cond_1a
 
-    .line 1986
+    .line 1994
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
 
     :cond_39
@@ -2394,7 +2576,7 @@
 
     goto :goto_4
 
-    .line 1998
+    .line 2006
     :cond_3c
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getPrev()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
@@ -2410,9 +2592,12 @@
 .method private final markCancellationStarted()V
     .registers 7
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .line 1899
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    :goto_2
+    move-result-object v0
+
+    :goto_4
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
@@ -2423,7 +2608,7 @@
 
     long-to-int v1, v4
 
-    if-nez v1, :cond_22
+    if-nez v1, :cond_24
 
     const-wide v4, 0xfffffffffffffffL
 
@@ -2431,7 +2616,7 @@
 
     const/4 v1, 0x1
 
-    .line 1894
+    .line 1902
     # invokes: Lkotlinx/coroutines/channels/BufferedChannelKt;->constructSendersAndCloseStatus(JI)J
     invoke-static {v4, v5, v1}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$constructSendersAndCloseStatus(JI)J
 
@@ -2439,31 +2624,34 @@
 
     move-object v1, p0
 
-    .line 1893
+    .line 1901
     invoke-virtual/range {v0 .. v5}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
     move-result p0
 
-    if-eqz p0, :cond_20
+    if-eqz p0, :cond_22
 
-    goto :goto_22
-
-    :cond_20
-    move-object p0, v1
-
-    goto :goto_2
+    goto :goto_24
 
     :cond_22
-    :goto_22
+    move-object p0, v1
+
+    goto :goto_4
+
+    :cond_24
+    :goto_24
     return-void
 .end method
 
 .method private final markCancelled()V
     .registers 7
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .line 1888
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    :goto_2
+    move-result-object v0
+
+    :goto_4
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
@@ -2474,7 +2662,7 @@
 
     const/4 v1, 0x3
 
-    .line 1882
+    .line 1890
     # invokes: Lkotlinx/coroutines/channels/BufferedChannelKt;->constructSendersAndCloseStatus(JI)J
     invoke-static {v4, v5, v1}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$constructSendersAndCloseStatus(JI)J
 
@@ -2486,22 +2674,25 @@
 
     move-result p0
 
-    if-eqz p0, :cond_19
+    if-eqz p0, :cond_1b
 
     return-void
 
-    :cond_19
+    :cond_1b
     move-object p0, v1
 
-    goto :goto_2
+    goto :goto_4
 .end method
 
 .method private final markClosed()V
     .registers 8
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .line 1871
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    :goto_2
+    move-result-object v0
+
+    :goto_4
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
@@ -2514,58 +2705,58 @@
 
     const-wide v4, 0xfffffffffffffffL
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_20
 
     const/4 v6, 0x1
 
-    if-eq v1, v6, :cond_16
+    if-eq v1, v6, :cond_18
 
-    goto :goto_2b
+    goto :goto_2d
 
-    :cond_16
+    :cond_18
     and-long/2addr v4, v2
 
     const/4 v1, 0x3
 
-    .line 1869
+    .line 1877
     # invokes: Lkotlinx/coroutines/channels/BufferedChannelKt;->constructSendersAndCloseStatus(JI)J
     invoke-static {v4, v5, v1}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$constructSendersAndCloseStatus(JI)J
 
     move-result-wide v4
 
-    :goto_1c
+    :goto_1e
     move-object v1, p0
 
-    goto :goto_25
+    goto :goto_27
 
-    :cond_1e
+    :cond_20
     and-long/2addr v4, v2
 
     const/4 v1, 0x2
 
-    .line 1867
+    .line 1875
     # invokes: Lkotlinx/coroutines/channels/BufferedChannelKt;->constructSendersAndCloseStatus(JI)J
     invoke-static {v4, v5, v1}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$constructSendersAndCloseStatus(JI)J
 
     move-result-wide v4
 
-    goto :goto_1c
+    goto :goto_1e
 
-    .line 1865
-    :goto_25
+    .line 1873
+    :goto_27
     invoke-virtual/range {v0 .. v5}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
     move-result p0
 
-    if-eqz p0, :cond_2c
+    if-eqz p0, :cond_2e
 
-    :goto_2b
+    :goto_2d
     return-void
 
-    :cond_2c
+    :cond_2e
     move-object p0, v1
 
-    goto :goto_2
+    goto :goto_4
 .end method
 
 .method private final moveSegmentBufferEndToSpecifiedOrLast(JLkotlinx/coroutines/channels/ChannelSegment;)V
@@ -2578,7 +2769,7 @@
         }
     .end annotation
 
-    .line 2513
+    .line 2521
     :goto_0
     iget-wide v0, p3, Lkotlinx/coroutines/internal/Segment;->id:J
 
@@ -2586,7 +2777,7 @@
 
     if-gez v0, :cond_11
 
-    .line 2514
+    .line 2522
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object v0
@@ -2602,7 +2793,7 @@
 
     goto :goto_0
 
-    .line 2520
+    .line 2528
     :cond_11
     :goto_11
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/Segment;->isRemoved()Z
@@ -2611,7 +2802,7 @@
 
     if-eqz p1, :cond_22
 
-    .line 2521
+    .line 2529
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object p1
@@ -2627,71 +2818,73 @@
 
     goto :goto_11
 
-    .line 2526
+    .line 2534
     :cond_22
     :goto_22
-    sget-object p1, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    :cond_24
-    :goto_24
+    move-result-object p1
+
+    :cond_26
+    :goto_26
     invoke-virtual {p1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Lkotlinx/coroutines/internal/Segment;
 
-    .line 46
+    .line 42
     iget-wide v0, p2, Lkotlinx/coroutines/internal/Segment;->id:J
 
     iget-wide v2, p3, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long v0, v0, v2
 
-    if-ltz v0, :cond_33
+    if-ltz v0, :cond_35
 
     return-void
 
-    .line 47
-    :cond_33
+    .line 43
+    :cond_35
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/Segment;->tryIncPointers$kotlinx_coroutines_core()Z
 
     move-result v0
 
-    if-nez v0, :cond_3a
+    if-nez v0, :cond_3c
 
     goto :goto_11
 
-    .line 48
-    :cond_3a
+    .line 44
+    :cond_3c
     invoke-static {p1, p0, p2, p3}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_4c
 
-    .line 49
+    .line 45
     invoke-virtual {p2}, Lkotlinx/coroutines/internal/Segment;->decPointers$kotlinx_coroutines_core()Z
 
     move-result p0
 
-    if-eqz p0, :cond_49
+    if-eqz p0, :cond_4b
 
     invoke-virtual {p2}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->remove()V
 
-    :cond_49
+    :cond_4b
     return-void
 
-    .line 52
-    :cond_4a
+    .line 48
+    :cond_4c
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/Segment;->decPointers$kotlinx_coroutines_core()Z
 
     move-result p2
 
-    if-eqz p2, :cond_24
+    if-eqz p2, :cond_26
 
     invoke-virtual {p3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->remove()V
 
-    goto :goto_24
+    goto :goto_26
 .end method
 
 .method private final onClosedReceiveCatchingOnNoWaiterSuspend(Lkotlinx/coroutines/CancellableContinuation;)V
@@ -2827,7 +3020,7 @@
         }
     .end annotation
 
-    .line 315
+    .line 311
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
     invoke-static {p2}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -2838,7 +3031,7 @@
 
     invoke-direct {v0, v1, v2}, Lkotlinx/coroutines/CancellableContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;I)V
 
-    .line 321
+    .line 317
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
 
     .line 135
@@ -2863,7 +3056,7 @@
 
     invoke-static {p1, p0}, Lkotlin/ExceptionsKt;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
-    .line 220
+    .line 216
     sget-object p0, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
     invoke-static {p1}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
@@ -2884,7 +3077,7 @@
 
     move-result-object p0
 
-    .line 220
+    .line 216
     sget-object p1, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
     invoke-static {p0}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
@@ -2897,13 +3090,13 @@
 
     invoke-interface {v0, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    .line 323
+    .line 319
     :goto_3f
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 314
+    .line 310
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p1
@@ -2921,7 +3114,7 @@
 
     return-object p0
 
-    .line 324
+    .line 320
     :cond_53
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -3140,8 +3333,8 @@
     .end annotation
 
     .line 667
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
@@ -3161,8 +3354,8 @@
     if-nez v1, :cond_69
 
     .line 681
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v1
 
@@ -3393,8 +3586,8 @@
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 732
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object p1
 
@@ -3428,8 +3621,8 @@
 
     .line 890
     :cond_57
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v1
 
@@ -3660,7 +3853,7 @@
     :cond_3a
     invoke-static {p5}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 332
+    .line 328
     iput-object p0, v0, Lkotlinx/coroutines/channels/BufferedChannel$receiveCatchingOnNoWaiterSuspend$1;->L$0:Ljava/lang/Object;
 
     iput-object p1, v0, Lkotlinx/coroutines/channels/BufferedChannel$receiveCatchingOnNoWaiterSuspend$1;->L$1:Ljava/lang/Object;
@@ -3671,7 +3864,7 @@
 
     iput v3, v0, Lkotlinx/coroutines/channels/BufferedChannel$receiveCatchingOnNoWaiterSuspend$1;->label:I
 
-    .line 333
+    .line 329
     invoke-static {v0}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p5
@@ -3749,8 +3942,8 @@
 
     .line 858
     :cond_82
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object p0
 
@@ -3777,8 +3970,8 @@
 
     .line 890
     :cond_97
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object p1
 
@@ -3953,13 +4146,13 @@
 
     goto :goto_f5
 
-    .line 342
+    .line 338
     :goto_11b
     invoke-virtual {p5}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p5
 
-    .line 332
+    .line 328
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p0
@@ -3973,7 +4166,7 @@
 
     return-object v1
 
-    .line 343
+    .line 339
     :cond_12b
     :goto_12b
     check-cast p5, Lkotlinx/coroutines/channels/ChannelResult;
@@ -3984,11 +4177,11 @@
 
     return-object p0
 
-    .line 339
+    .line 335
     :goto_132
     invoke-virtual {p5}, Lkotlinx/coroutines/CancellableContinuationImpl;->releaseClaimedReusableContinuation$kotlinx_coroutines_core()V
 
-    .line 340
+    .line 336
     throw p0
 .end method
 
@@ -4008,8 +4201,8 @@
         }
     .end annotation
 
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
@@ -4035,8 +4228,8 @@
     return-object p0
 
     :cond_15
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v1
 
@@ -4221,8 +4414,8 @@
 
     .line 858
     :cond_8
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object p6
 
@@ -4248,8 +4441,8 @@
     return-object p0
 
     :cond_1d
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object p7
 
@@ -4486,8 +4679,8 @@
 
     .line 858
     :cond_1f
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object p1
 
@@ -4512,8 +4705,8 @@
     return-void
 
     :cond_33
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object p2
 
@@ -4664,7 +4857,7 @@
         }
     .end annotation
 
-    .line 333
+    .line 329
     invoke-static {p5}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v0
@@ -4733,8 +4926,8 @@
 
     .line 858
     :cond_31
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object p0
 
@@ -4761,8 +4954,8 @@
 
     .line 890
     :cond_46
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object p1
 
@@ -4925,14 +5118,14 @@
 
     goto :goto_9f
 
-    .line 342
+    .line 338
     :cond_bb
     :goto_bb
     invoke-virtual {v6}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 332
+    .line 328
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p1
@@ -4944,11 +5137,11 @@
     :cond_c8
     return-object p0
 
-    .line 339
+    .line 335
     :goto_c9
     invoke-virtual {v6}, Lkotlinx/coroutines/CancellableContinuationImpl;->releaseClaimedReusableContinuation$kotlinx_coroutines_core()V
 
-    .line 340
+    .line 336
     throw p0
 .end method
 
@@ -4965,8 +5158,8 @@
     .end annotation
 
     .line 858
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object p2
 
@@ -4992,8 +5185,8 @@
 
     .line 890
     :cond_14
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v0
 
@@ -5154,19 +5347,19 @@
         }
     .end annotation
 
-    .line 2013
+    .line 2021
     iget-object v0, p0, Lkotlinx/coroutines/channels/BufferedChannel;->onUndeliveredElement:Lkotlin/jvm/functions/Function1;
 
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    .line 2021
+    .line 2029
     invoke-static {v1, v2, v1}, Lkotlinx/coroutines/internal/InlineList;->constructor-impl$default(Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 2024
+    .line 2032
     :cond_8
     sget v4, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
@@ -5177,7 +5370,7 @@
 
     if-ge v5, v4, :cond_b3
 
-    .line 2026
+    .line 2034
     iget-wide v6, p1, Lkotlinx/coroutines/internal/Segment;->id:J
 
     sget v8, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
@@ -5190,13 +5383,13 @@
 
     add-long/2addr v6, v8
 
-    .line 2030
+    .line 2038
     :cond_16
     invoke-virtual {p1, v4}, Lkotlinx/coroutines/channels/ChannelSegment;->getState$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object v8
 
-    .line 2033
+    .line 2041
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->DONE_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getDONE_RCV$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -5204,12 +5397,12 @@
 
     if-eq v8, v9, :cond_bb
 
-    .line 2035
+    .line 2043
     sget-object v9, Lkotlinx/coroutines/channels/BufferedChannelKt;->BUFFERED:Lkotlinx/coroutines/internal/Symbol;
 
     if-ne v8, v9, :cond_48
 
-    .line 2037
+    .line 2045
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiversCounter$kotlinx_coroutines_core()J
 
     move-result-wide v9
@@ -5218,7 +5411,7 @@
 
     if-ltz v9, :cond_bb
 
-    .line 2039
+    .line 2047
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v9
@@ -5231,26 +5424,26 @@
 
     if-eqz v0, :cond_40
 
-    .line 2042
+    .line 2050
     invoke-virtual {p1, v4}, Lkotlinx/coroutines/channels/ChannelSegment;->getElement$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object v5
 
-    .line 2043
+    .line 2051
     invoke-static {v0, v5, v1}, Lkotlinx/coroutines/internal/OnUndeliveredElementKt;->callUndeliveredElementCatchingException(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;Lkotlinx/coroutines/internal/UndeliveredElementException;)Lkotlinx/coroutines/internal/UndeliveredElementException;
 
     move-result-object v1
 
-    .line 2047
+    .line 2055
     :cond_40
     invoke-virtual {p1, v4}, Lkotlinx/coroutines/channels/ChannelSegment;->cleanElement$kotlinx_coroutines_core(I)V
 
-    .line 2048
+    .line 2056
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
 
     goto/16 :goto_af
 
-    .line 2053
+    .line 2061
     :cond_48
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->IN_BUFFER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getIN_BUFFER$p()Lkotlinx/coroutines/internal/Symbol;
@@ -5263,7 +5456,7 @@
 
     goto :goto_a2
 
-    .line 2062
+    .line 2070
     :cond_51
     instance-of v9, v8, Lkotlinx/coroutines/Waiter;
 
@@ -5275,7 +5468,7 @@
 
     goto :goto_6e
 
-    .line 2086
+    .line 2094
     :cond_5a
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->RESUMING_BY_EB:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getRESUMING_BY_EB$p()Lkotlinx/coroutines/internal/Symbol;
@@ -5293,7 +5486,7 @@
 
     goto :goto_bb
 
-    .line 2089
+    .line 2097
     :cond_67
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->RESUMING_BY_EB:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getRESUMING_BY_EB$p()Lkotlinx/coroutines/internal/Symbol;
@@ -5304,7 +5497,7 @@
 
     goto :goto_af
 
-    .line 2064
+    .line 2072
     :cond_6e
     :goto_6e
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiversCounter$kotlinx_coroutines_core()J
@@ -5315,7 +5508,7 @@
 
     if-ltz v9, :cond_bb
 
-    .line 2066
+    .line 2074
     instance-of v9, v8, Lkotlinx/coroutines/channels/WaiterEB;
 
     if-eqz v9, :cond_80
@@ -5328,13 +5521,13 @@
 
     goto :goto_83
 
-    .line 2067
+    .line 2075
     :cond_80
     move-object v9, v8
 
     check-cast v9, Lkotlinx/coroutines/Waiter;
 
-    .line 2069
+    .line 2077
     :goto_83
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
 
@@ -5348,31 +5541,31 @@
 
     if-eqz v0, :cond_97
 
-    .line 2072
+    .line 2080
     invoke-virtual {p1, v4}, Lkotlinx/coroutines/channels/ChannelSegment;->getElement$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object v5
 
-    .line 2073
+    .line 2081
     invoke-static {v0, v5, v1}, Lkotlinx/coroutines/internal/OnUndeliveredElementKt;->callUndeliveredElementCatchingException(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;Lkotlinx/coroutines/internal/UndeliveredElementException;)Lkotlinx/coroutines/internal/UndeliveredElementException;
 
     move-result-object v1
 
-    .line 2076
+    .line 2084
     :cond_97
     invoke-static {v3, v9}, Lkotlinx/coroutines/internal/InlineList;->plus-FjFbRPM(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 2079
+    .line 2087
     invoke-virtual {p1, v4}, Lkotlinx/coroutines/channels/ChannelSegment;->cleanElement$kotlinx_coroutines_core(I)V
 
-    .line 2080
+    .line 2088
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
 
     goto :goto_af
 
-    .line 2055
+    .line 2063
     :cond_a2
     :goto_a2
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
@@ -5385,7 +5578,7 @@
 
     if-eqz v8, :cond_16
 
-    .line 2057
+    .line 2065
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
 
     :goto_af
@@ -5393,7 +5586,7 @@
 
     goto/16 :goto_b
 
-    .line 2095
+    .line 2103
     :cond_b3
     invoke-virtual {p1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getPrev()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
@@ -5407,19 +5600,19 @@
     :goto_bb
     if-eqz v3, :cond_e1
 
-    .line 39
+    .line 35
     instance-of p1, v3, Ljava/util/ArrayList;
 
     if-nez p1, :cond_c7
 
     check-cast v3, Lkotlinx/coroutines/Waiter;
 
-    .line 2098
+    .line 2106
     invoke-direct {p0, v3}, Lkotlinx/coroutines/channels/BufferedChannel;->resumeSenderOnCancelledChannel(Lkotlinx/coroutines/Waiter;)V
 
     goto :goto_e1
 
-    .line 41
+    .line 37
     :cond_c7
     const-string p1, "null cannot be cast to non-null type java.util.ArrayList<E of kotlinx.coroutines.internal.InlineList>{ kotlin.collections.TypeAliasesKt.ArrayList<E of kotlinx.coroutines.internal.InlineList> }"
 
@@ -5427,7 +5620,7 @@
 
     check-cast v3, Ljava/util/ArrayList;
 
-    .line 42
+    .line 38
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result p1
@@ -5437,14 +5630,14 @@
     :goto_d3
     if-ge v5, p1, :cond_e1
 
-    .line 43
+    .line 39
     invoke-virtual {v3, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lkotlinx/coroutines/Waiter;
 
-    .line 2098
+    .line 2106
     invoke-direct {p0, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->resumeSenderOnCancelledChannel(Lkotlinx/coroutines/Waiter;)V
 
     add-int/lit8 p1, p1, -0x1
@@ -5457,7 +5650,7 @@
 
     return-void
 
-    .line 2100
+    .line 2108
     :cond_e4
     throw v1
 .end method
@@ -5467,7 +5660,7 @@
 
     const/4 v0, 0x1
 
-    .line 2160
+    .line 2168
     invoke-direct {p0, p1, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->resumeWaiterOnClosedChannel(Lkotlinx/coroutines/Waiter;Z)V
 
     return-void
@@ -5478,7 +5671,7 @@
 
     const/4 v0, 0x0
 
-    .line 2166
+    .line 2174
     invoke-direct {p0, p1, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->resumeWaiterOnClosedChannel(Lkotlinx/coroutines/Waiter;Z)V
 
     return-void
@@ -5487,7 +5680,7 @@
 .method private final resumeWaiterOnClosedChannel(Lkotlinx/coroutines/Waiter;Z)V
     .registers 4
 
-    .line 2170
+    .line 2178
     instance-of v0, p1, Lkotlinx/coroutines/channels/BufferedChannel$SendBroadcast;
 
     if-eqz v0, :cond_16
@@ -5510,7 +5703,7 @@
 
     return-void
 
-    .line 2171
+    .line 2179
     :cond_16
     instance-of v0, p1, Lkotlinx/coroutines/CancellableContinuation;
 
@@ -5546,7 +5739,7 @@
 
     return-void
 
-    .line 2172
+    .line 2180
     :cond_35
     instance-of p2, p1, Lkotlinx/coroutines/channels/ReceiveCatching;
 
@@ -5580,7 +5773,7 @@
 
     return-void
 
-    .line 2173
+    .line 2181
     :cond_55
     instance-of p2, p1, Lkotlinx/coroutines/channels/BufferedChannel$BufferedChannelIterator;
 
@@ -5592,7 +5785,7 @@
 
     return-void
 
-    .line 2174
+    .line 2182
     :cond_5f
     instance-of p2, p1, Lkotlinx/coroutines/selects/SelectInstance;
 
@@ -5611,7 +5804,7 @@
     :cond_6d
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 2175
+    .line 2183
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5653,8 +5846,8 @@
     .end annotation
 
     .line 113
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
@@ -5668,8 +5861,8 @@
     .line 274
     :cond_a
     :goto_a
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v1
 
@@ -5881,7 +6074,7 @@
         }
     .end annotation
 
-    .line 315
+    .line 311
     new-instance v0, Lkotlinx/coroutines/CancellableContinuationImpl;
 
     invoke-static {p2}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -5892,7 +6085,7 @@
 
     invoke-direct {v0, v1, v2}, Lkotlinx/coroutines/CancellableContinuationImpl;-><init>(Lkotlin/coroutines/Continuation;I)V
 
-    .line 321
+    .line 317
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
 
     .line 222
@@ -5906,8 +6099,8 @@
     invoke-direct {v9, v0}, Lkotlinx/coroutines/channels/BufferedChannel$SendBroadcast;-><init>(Lkotlinx/coroutines/CancellableContinuation;)V
 
     .line 244
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v1
 
@@ -5921,8 +6114,8 @@
     .line 274
     :cond_20
     :goto_20
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v3
 
@@ -6111,13 +6304,13 @@
 
     goto :goto_99
 
-    .line 323
+    .line 319
     :goto_ab
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 314
+    .line 310
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object p1
@@ -6161,8 +6354,8 @@
 
     .line 244
     :goto_c
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v1
 
@@ -6176,8 +6369,8 @@
     .line 274
     :cond_16
     :goto_16
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v2
 
@@ -6437,32 +6630,32 @@
 
     move-result v7
 
-    if-eqz v7, :cond_e2
+    if-eqz v7, :cond_ea
 
     const/4 v8, 0x1
 
-    if-eq v7, v8, :cond_de
+    if-eq v7, v8, :cond_e6
 
     const/4 v9, 0x2
 
-    if-eq v7, v9, :cond_d4
+    if-eq v7, v9, :cond_dc
 
     const/4 v10, 0x4
 
-    if-eq v7, v10, :cond_c5
+    if-eq v7, v10, :cond_cd
 
     const-string v11, "unexpected"
 
     const/4 v12, 0x5
 
-    if-ne v7, v12, :cond_be
+    if-ne v7, v12, :cond_c6
 
     .line 390
     invoke-virtual/range {p1 .. p1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
     .line 244
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v1
 
@@ -6475,8 +6668,8 @@
 
     .line 274
     :goto_2d
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v2
 
@@ -6516,7 +6709,7 @@
 
     cmp-long v3, v10, v13
 
-    if-eqz v3, :cond_67
+    if-eqz v3, :cond_69
 
     .line 288
     # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->findSegmentSend(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;
@@ -6524,23 +6717,25 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_60
+    if-nez v3, :cond_62
 
-    if-eqz v7, :cond_5c
+    if-eqz v7, :cond_5e
 
     .line 296
     invoke-interface/range {p8 .. p8}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    return-void
+    move-result-object p0
 
-    :cond_5c
+    goto/16 :goto_c3
+
+    :cond_5e
     move-object/from16 v11, p4
 
     const/4 v10, 0x4
 
     goto :goto_2d
 
-    :cond_60
+    :cond_62
     move-object v1, v3
 
     move-object v0, p0
@@ -6549,9 +6744,9 @@
 
     move-object/from16 v3, p3
 
-    goto :goto_6c
+    goto :goto_6e
 
-    :cond_67
+    :cond_69
     move-object v0, p0
 
     move-object/from16 v3, p3
@@ -6559,35 +6754,35 @@
     move-object/from16 v6, p6
 
     .line 304
-    :goto_6c
+    :goto_6e
     # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->updateCellSend(Lkotlinx/coroutines/channels/ChannelSegment;ILjava/lang/Object;JLjava/lang/Object;Z)I
     invoke-static/range {v0 .. v7}, Lkotlinx/coroutines/channels/BufferedChannel;->access$updateCellSend(Lkotlinx/coroutines/channels/BufferedChannel;Lkotlinx/coroutines/channels/ChannelSegment;ILjava/lang/Object;JLjava/lang/Object;Z)I
 
     move-result v10
 
-    if-eqz v10, :cond_b7
+    if-eqz v10, :cond_bc
 
-    if-eq v10, v8, :cond_b3
+    if-eq v10, v8, :cond_b7
 
-    if-eq v10, v9, :cond_9d
+    if-eq v10, v9, :cond_a0
 
     const/4 v2, 0x3
 
-    if-eq v10, v2, :cond_95
+    if-eq v10, v2, :cond_98
 
     const/4 v2, 0x4
 
-    if-eq v10, v2, :cond_86
+    if-eq v10, v2, :cond_88
 
-    if-eq v10, v12, :cond_7f
+    if-eq v10, v12, :cond_81
 
-    goto :goto_82
+    goto :goto_84
 
     .line 341
-    :cond_7f
+    :cond_81
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
-    :goto_82
+    :goto_84
     move-object/from16 v11, p4
 
     move v10, v2
@@ -6595,25 +6790,27 @@
     goto :goto_2d
 
     .line 334
-    :cond_86
+    :cond_88
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiversCounter$kotlinx_coroutines_core()J
 
     move-result-wide v2
 
     cmp-long p0, v4, v2
 
-    if-gez p0, :cond_91
+    if-gez p0, :cond_93
 
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
     .line 335
-    :cond_91
+    :cond_93
     invoke-interface/range {p8 .. p8}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    return-void
+    move-result-object p0
+
+    goto :goto_c3
 
     .line 347
-    :cond_95
+    :cond_98
     new-instance p0, Ljava/lang/IllegalStateException;
 
     move-object/from16 v0, p4
@@ -6623,8 +6820,8 @@
 
     throw p0
 
-    :cond_9d
-    if-eqz v7, :cond_a6
+    :cond_a0
+    if-eqz v7, :cond_aa
 
     .line 323
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
@@ -6632,50 +6829,59 @@
     .line 324
     invoke-interface/range {p8 .. p8}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    return-void
+    move-result-object p0
 
-    :cond_a6
-    if-eqz v6, :cond_aa
+    goto :goto_c3
+
+    :cond_aa
+    if-eqz v6, :cond_ae
 
     move-object v3, v6
 
-    goto :goto_ab
+    goto :goto_af
 
-    :cond_aa
+    :cond_ae
     const/4 v3, 0x0
 
-    :goto_ab
-    if-eqz v3, :cond_b0
+    :goto_af
+    if-eqz v3, :cond_b4
 
     .line 326
     # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->prepareSenderForSuspension(Lkotlinx/coroutines/Waiter;Lkotlinx/coroutines/channels/ChannelSegment;I)V
     invoke-static {p0, v3, v1, v2}, Lkotlinx/coroutines/channels/BufferedChannel;->access$prepareSenderForSuspension(Lkotlinx/coroutines/channels/BufferedChannel;Lkotlinx/coroutines/Waiter;Lkotlinx/coroutines/channels/ChannelSegment;I)V
 
     .line 395
-    :cond_b0
+    :cond_b4
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    return-void
+    goto :goto_c3
 
     .line 315
-    :cond_b3
+    :cond_b7
     invoke-interface/range {p7 .. p7}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    return-void
+    move-result-object p0
+
+    goto :goto_c3
 
     .line 310
-    :cond_b7
+    :cond_bc
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
     .line 311
     invoke-interface/range {p7 .. p7}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    return-void
-
-    :cond_be
-    move-object v0, v11
+    move-result-object p0
 
     .line 269
+    :goto_c3
+    check-cast p0, Lkotlin/Unit;
+
+    return-void
+
+    :cond_c6
+    move-object v0, v11
+
     new-instance p0, Ljava/lang/IllegalStateException;
 
     .line 399
@@ -6684,24 +6890,24 @@
     throw p0
 
     .line 386
-    :cond_c5
+    :cond_cd
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiversCounter$kotlinx_coroutines_core()J
 
     move-result-wide v0
 
     cmp-long p0, p4, v0
 
-    if-gez p0, :cond_d0
+    if-gez p0, :cond_d8
 
     invoke-virtual/range {p1 .. p1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
     .line 387
-    :cond_d0
+    :cond_d8
     invoke-interface/range {p8 .. p8}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     return-void
 
-    :cond_d4
+    :cond_dc
     move-object/from16 v1, p1
 
     move/from16 v2, p2
@@ -6715,12 +6921,12 @@
     return-void
 
     .line 380
-    :cond_de
+    :cond_e6
     invoke-interface/range {p7 .. p7}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     return-void
 
-    :cond_e2
+    :cond_ea
     move-object/from16 v1, p1
 
     .line 376
@@ -6747,7 +6953,7 @@
         }
     .end annotation
 
-    .line 333
+    .line 329
     invoke-static/range {p6 .. p6}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->intercepted(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v0
@@ -6802,8 +7008,8 @@
     invoke-virtual/range {p1 .. p1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
     .line 244
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v1
 
@@ -6816,8 +7022,8 @@
 
     .line 274
     :goto_33
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v2
 
@@ -7063,14 +7269,14 @@
 
     goto :goto_ac
 
-    .line 342
+    .line 338
     :cond_e5
     :goto_e5
     invoke-virtual {v6}, Lkotlinx/coroutines/CancellableContinuationImpl;->getResult()Ljava/lang/Object;
 
     move-result-object p0
 
-    .line 332
+    .line 328
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v0
@@ -7088,18 +7294,90 @@
 
     return-object p0
 
-    .line 343
+    .line 339
     :cond_f9
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 339
+    .line 335
     :goto_fc
     invoke-virtual {v6}, Lkotlinx/coroutines/CancellableContinuationImpl;->releaseClaimedReusableContinuation$kotlinx_coroutines_core()V
 
-    .line 340
+    .line 336
     throw p0
+.end method
+
+.method private final synthetic setBufferEnd$volatile(J)V
+    .registers 3
+
+    iput-wide p1, p0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEnd$volatile:J
+
+    return-void
+.end method
+
+.method private final synthetic setBufferEndSegment$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$volatile:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private final synthetic setCloseHandler$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/channels/BufferedChannel;->closeHandler$volatile:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private final synthetic setCompletedExpandBuffersAndPauseFlag$volatile(J)V
+    .registers 3
+
+    iput-wide p1, p0, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$volatile:J
+
+    return-void
+.end method
+
+.method private final synthetic setReceiveSegment$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$volatile:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private final synthetic setReceivers$volatile(J)V
+    .registers 3
+
+    iput-wide p1, p0, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$volatile:J
+
+    return-void
+.end method
+
+.method private final synthetic setSendSegment$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$volatile:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private final synthetic setSendersAndCloseStatus$volatile(J)V
+    .registers 3
+
+    iput-wide p1, p0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$volatile:J
+
+    return-void
+.end method
+
+.method private final synthetic set_closeCause$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/channels/BufferedChannel;->_closeCause$volatile:Ljava/lang/Object;
+
+    return-void
 .end method
 
 .method private final shouldSendSuspend(J)Z
@@ -7411,20 +7689,20 @@
     throw p0
 .end method
 
-.method private final update$atomicfu(Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)V
+.method private final synthetic update$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lkotlin/jvm/functions/Function1;)V
     .registers 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
+            "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;",
             "Lkotlin/jvm/functions/Function1;",
-            "Ljava/lang/Object;",
             ")V"
         }
     .end annotation
 
     :goto_0
-    invoke-virtual {p1, p3}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
+    invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
 
@@ -7432,7 +7710,7 @@
 
     move-result-object p0
 
-    invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -7442,9 +7720,9 @@
 
     move-result-wide v4
 
-    move-object v0, p1
+    move-object v1, p1
 
-    move-object v1, p3
+    move-object v0, p2
 
     invoke-virtual/range {v0 .. v5}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
@@ -7455,9 +7733,9 @@
     return-void
 
     :cond_1b
-    move-object p1, v0
+    move-object p2, v0
 
-    move-object p3, v1
+    move-object p1, v1
 
     goto :goto_0
 .end method
@@ -7480,10 +7758,12 @@
     .line 1246
     instance-of v1, v0, Lkotlinx/coroutines/Waiter;
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_37
 
     .line 1254
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
@@ -7491,7 +7771,7 @@
 
     cmp-long v1, p3, v1
 
-    if-ltz v1, :cond_35
+    if-ltz v1, :cond_37
 
     .line 1260
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->RESUMING_BY_EB:Lkotlinx/coroutines/internal/Symbol;
@@ -7503,14 +7783,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_37
 
     .line 1261
     invoke-direct {p0, v0, p1, p2}, Lkotlinx/coroutines/channels/BufferedChannel;->tryResumeSender(Ljava/lang/Object;Lkotlinx/coroutines/channels/ChannelSegment;I)Z
 
     move-result p0
 
-    if-eqz p0, :cond_29
+    if-eqz p0, :cond_2b
 
     .line 1264
     sget-object p0, Lkotlinx/coroutines/channels/BufferedChannelKt;->BUFFERED:Lkotlinx/coroutines/internal/Symbol;
@@ -7522,7 +7802,7 @@
     return p0
 
     .line 1268
-    :cond_29
+    :cond_2b
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_SEND:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_SEND$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -7538,7 +7818,7 @@
     return p0
 
     .line 1275
-    :cond_35
+    :cond_37
     invoke-direct {p0, p1, p2, p3, p4}, Lkotlinx/coroutines/channels/BufferedChannel;->updateCellExpandBufferSlow(Lkotlinx/coroutines/channels/ChannelSegment;IJ)Z
 
     move-result p0
@@ -7570,10 +7850,12 @@
 
     const/4 v3, 0x1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_46
 
     .line 1302
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
@@ -7581,7 +7863,7 @@
 
     cmp-long v1, p3, v4
 
-    if-gez v1, :cond_23
+    if-gez v1, :cond_25
 
     .line 1313
     new-instance v1, Lkotlinx/coroutines/channels/WaiterEB;
@@ -7601,7 +7883,7 @@
     return v3
 
     .line 1321
-    :cond_23
+    :cond_25
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->RESUMING_BY_EB:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getRESUMING_BY_EB$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -7618,7 +7900,7 @@
 
     move-result p0
 
-    if-eqz p0, :cond_39
+    if-eqz p0, :cond_3b
 
     .line 1325
     sget-object p0, Lkotlinx/coroutines/channels/BufferedChannelKt;->BUFFERED:Lkotlinx/coroutines/internal/Symbol;
@@ -7628,7 +7910,7 @@
     return v3
 
     .line 1329
-    :cond_39
+    :cond_3b
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_SEND:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_SEND$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -7642,18 +7924,18 @@
     return v2
 
     .line 1337
-    :cond_44
+    :cond_46
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_SEND:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_SEND$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_4b
+    if-ne v0, v1, :cond_4d
 
     return v2
 
-    :cond_4b
-    if-nez v0, :cond_58
+    :cond_4d
+    if-nez v0, :cond_5a
 
     .line 1343
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->IN_BUFFER:Lkotlinx/coroutines/internal/Symbol;
@@ -7670,60 +7952,60 @@
     return v3
 
     .line 1346
-    :cond_58
+    :cond_5a
     sget-object v1, Lkotlinx/coroutines/channels/BufferedChannelKt;->BUFFERED:Lkotlinx/coroutines/internal/Symbol;
 
-    if-ne v0, v1, :cond_5d
+    if-ne v0, v1, :cond_5f
 
     return v3
 
     .line 1348
-    :cond_5d
+    :cond_5f
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->POISONED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getPOISONED$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_99
+    if-eq v0, v1, :cond_9b
 
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->DONE_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getDONE_RCV$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_99
+    if-eq v0, v1, :cond_9b
 
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_RCV$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_70
+    if-ne v0, v1, :cond_72
 
-    goto :goto_99
+    goto :goto_9b
 
     .line 1351
-    :cond_70
+    :cond_72
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_77
+    if-ne v0, v1, :cond_79
 
     return v3
 
     .line 1355
-    :cond_77
+    :cond_79
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->RESUMING_BY_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getRESUMING_BY_RCV$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_7e
+    if-ne v0, v1, :cond_80
 
     goto :goto_0
 
-    :cond_7e
+    :cond_80
     new-instance p0, Ljava/lang/IllegalStateException;
 
     .line 1356
@@ -7749,8 +8031,8 @@
 
     throw p0
 
-    :cond_99
-    :goto_99
+    :cond_9b
+    :goto_9b
     return v3
 .end method
 
@@ -7772,10 +8054,12 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_31
+    if-nez v0, :cond_33
 
     .line 1002
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v1
 
     .line 1007
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
@@ -7788,9 +8072,9 @@
 
     cmp-long v1, p3, v1
 
-    if-ltz v1, :cond_2b
+    if-ltz v1, :cond_2d
 
-    if-nez p5, :cond_1d
+    if-nez p5, :cond_1f
 
     .line 1013
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->SUSPEND_NO_WAITER:Lkotlinx/coroutines/internal/Symbol;
@@ -7801,12 +8085,12 @@
     return-object p0
 
     .line 1016
-    :cond_1d
+    :cond_1f
     invoke-virtual {p1, p2, v0, p5}, Lkotlinx/coroutines/channels/ChannelSegment;->casState$kotlinx_coroutines_core(ILjava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2d
 
     .line 1019
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->expandBuffer()V
@@ -7819,7 +8103,7 @@
 
     return-object p0
 
-    :cond_2b
+    :cond_2d
     move-object v0, p0
 
     move-object v1, p1
@@ -7830,13 +8114,13 @@
 
     move-object v5, p5
 
-    goto :goto_47
+    goto :goto_49
 
     .line 1025
-    :cond_31
+    :cond_33
     sget-object v1, Lkotlinx/coroutines/channels/BufferedChannelKt;->BUFFERED:Lkotlinx/coroutines/internal/Symbol;
 
-    if-ne v0, v1, :cond_2b
+    if-ne v0, v1, :cond_2d
 
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->DONE_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getDONE_RCV$p()Lkotlinx/coroutines/internal/Symbol;
@@ -7847,7 +8131,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2d
 
     .line 1027
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->expandBuffer()V
@@ -7860,7 +8144,7 @@
     return-object p0
 
     .line 1031
-    :goto_47
+    :goto_49
     invoke-direct/range {v0 .. v5}, Lkotlinx/coroutines/channels/BufferedChannel;->updateCellReceiveSlow(Lkotlinx/coroutines/channels/ChannelSegment;IJLjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -8065,7 +8349,9 @@
     .line 1051
     :cond_8a
     :goto_8a
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v1
 
     .line 1056
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
@@ -8078,7 +8364,7 @@
 
     cmp-long v1, p3, v1
 
-    if-gez v1, :cond_ac
+    if-gez v1, :cond_ae
 
     .line 1061
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->POISONED:Lkotlinx/coroutines/internal/Symbol;
@@ -8103,8 +8389,8 @@
 
     return-object p0
 
-    :cond_ac
-    if-nez p5, :cond_b3
+    :cond_ae
+    if-nez p5, :cond_b5
 
     .line 1073
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->SUSPEND_NO_WAITER:Lkotlinx/coroutines/internal/Symbol;
@@ -8115,7 +8401,7 @@
     return-object p0
 
     .line 1076
-    :cond_b3
+    :cond_b5
     invoke-virtual {p1, p2, v0, p5}, Lkotlinx/coroutines/channels/ChannelSegment;->casState$kotlinx_coroutines_core(ILjava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -8488,22 +8774,27 @@
 .method private final updateReceiversCounterIfLower(J)V
     .registers 10
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .line 2560
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    :goto_2
+    move-result-object v0
+
+    :goto_4
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v3
 
     cmp-long v1, v3, p1
 
-    if-ltz v1, :cond_b
+    if-ltz v1, :cond_d
 
-    goto :goto_15
+    goto :goto_19
 
-    .line 2555
-    :cond_b
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .line 2563
+    :cond_d
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v1
 
     move-object v2, p0
 
@@ -8513,25 +8804,28 @@
 
     move-result p0
 
-    if-eqz p0, :cond_16
+    if-eqz p0, :cond_1a
 
-    :goto_15
+    :goto_19
     return-void
 
-    :cond_16
+    :cond_1a
     move-object p0, v2
 
     move-wide p1, v5
 
-    goto :goto_2
+    goto :goto_4
 .end method
 
 .method private final updateSendersCounterIfLower(J)V
     .registers 10
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .line 2545
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    :goto_2
+    move-result-object v0
+
+    :goto_4
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v3
@@ -8542,25 +8836,27 @@
 
     cmp-long v5, v1, p1
 
-    if-ltz v5, :cond_11
+    if-ltz v5, :cond_13
 
-    goto :goto_23
+    goto :goto_27
 
-    :cond_11
+    :cond_13
     const/16 v5, 0x3c
 
     shr-long v5, v3, v5
 
     long-to-int v5, v5
 
-    .line 2541
+    .line 2549
     # invokes: Lkotlinx/coroutines/channels/BufferedChannelKt;->constructSendersAndCloseStatus(JI)J
     invoke-static {v1, v2, v5}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$constructSendersAndCloseStatus(JI)J
 
     move-result-wide v5
 
-    .line 2542
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .line 2550
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v1
 
     move-object v2, p0
 
@@ -8568,15 +8864,15 @@
 
     move-result p0
 
-    if-eqz p0, :cond_24
+    if-eqz p0, :cond_28
 
-    :goto_23
+    :goto_27
     return-void
 
-    :cond_24
+    :cond_28
     move-object p0, v2
 
-    goto :goto_2
+    goto :goto_4
 .end method
 
 
@@ -8586,7 +8882,7 @@
 
     const/4 v0, 0x0
 
-    .line 1760
+    .line 1768
     invoke-virtual {p0, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->cancelImpl$kotlinx_coroutines_core(Ljava/lang/Throwable;)Z
 
     return-void
@@ -8595,7 +8891,7 @@
 .method public final cancel(Ljava/util/concurrent/CancellationException;)V
     .registers 2
 
-    .line 1762
+    .line 1770
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/BufferedChannel;->cancelImpl$kotlinx_coroutines_core(Ljava/lang/Throwable;)Z
 
     return-void
@@ -8604,7 +8900,7 @@
 .method public final cancel(Ljava/lang/Throwable;)Z
     .registers 2
 
-    .line 1757
+    .line 1765
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/channels/BufferedChannel;->cancelImpl$kotlinx_coroutines_core(Ljava/lang/Throwable;)Z
 
     move-result p0
@@ -8617,7 +8913,7 @@
 
     if-nez p1, :cond_9
 
-    .line 1765
+    .line 1773
     new-instance p1, Ljava/util/concurrent/CancellationException;
 
     const-string v0, "Channel was cancelled"
@@ -8637,16 +8933,18 @@
 .method public final checkSegmentStructureInvariants()V
     .registers 11
 
-    .line 2669
+    .line 2677
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->isRendezvousOrUnlimited()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_30
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 2670
+    move-result-object v0
+
+    .line 2678
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -8656,12 +8954,12 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_15
 
-    goto :goto_46
+    goto :goto_4c
 
-    .line 2671
-    :cond_13
+    .line 2679
+    :cond_15
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8676,7 +8974,7 @@
 
     move-result-object p0
 
-    .line 2670
+    .line 2678
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -8687,9 +8985,11 @@
 
     throw v0
 
-    .line 2675
-    :cond_2e
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 2683
+    :cond_30
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -8699,7 +8999,9 @@
 
     iget-wide v0, v0, Lkotlinx/coroutines/internal/Segment;->id:J
 
-    sget-object v2, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v2
 
     invoke-virtual {v2, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -8711,15 +9013,17 @@
 
     cmp-long v0, v0, v2
 
-    if-gtz v0, :cond_20a
+    if-gtz v0, :cond_21c
 
-    :goto_46
+    :goto_4c
     const/4 v0, 0x3
 
-    .line 2680
+    .line 2688
     new-array v0, v0, [Lkotlinx/coroutines/channels/ChannelSegment;
 
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -8729,7 +9033,9 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -8739,7 +9045,9 @@
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v1
 
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -8755,23 +9063,23 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 766
+    .line 4159
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 857
+    .line 4160
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    :cond_73
-    :goto_73
+    :cond_7f
+    :goto_7f
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_8a
+    if-eqz v4, :cond_96
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -8781,119 +9089,105 @@
 
     check-cast v5, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2681
+    .line 2689
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->NULL_SEGMENT:Lkotlinx/coroutines/channels/ChannelSegment;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getNULL_SEGMENT$p()Lkotlinx/coroutines/channels/ChannelSegment;
 
     move-result-object v6
 
-    if-eq v5, v6, :cond_73
+    if-eq v5, v6, :cond_7f
 
-    .line 857
+    .line 4160
     invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_73
+    goto :goto_7f
 
-    .line 2310
-    :cond_8a
+    .line 4162
+    :cond_96
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 2311
+    .line 4163
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_204
+    if-eqz v1, :cond_216
 
-    .line 2312
+    .line 4164
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 2313
+    .line 4165
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-nez v4, :cond_9f
+    if-nez v4, :cond_ab
 
-    goto :goto_b9
+    goto :goto_c5
 
-    .line 2314
-    :cond_9f
+    .line 4166
+    :cond_ab
     move-object v4, v1
 
     check-cast v4, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2682
+    .line 2690
     iget-wide v4, v4, Lkotlinx/coroutines/internal/Segment;->id:J
 
-    .line 2316
-    :cond_a4
+    .line 4168
+    :cond_b0
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v6
 
-    .line 2317
+    .line 4169
     move-object v7, v6
 
     check-cast v7, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2682
+    .line 2690
     iget-wide v7, v7, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long v9, v4, v7
 
-    if-lez v9, :cond_b3
+    if-lez v9, :cond_bf
 
     move-object v1, v6
 
     move-wide v4, v7
 
     .line 2322
-    :cond_b3
+    :cond_bf
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-nez v6, :cond_a4
+    if-nez v6, :cond_b0
 
-    .line 2682
-    :goto_b9
+    .line 2690
+    :goto_c5
     check-cast v1, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2683
+    .line 2691
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getPrev()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object v0
 
-    if-nez v0, :cond_1e9
+    if-nez v0, :cond_1fb
 
-    .line 2690
-    :goto_c1
+    .line 2698
+    :goto_cd
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1e8
+    if-eqz v0, :cond_1fa
 
-    .line 2692
-    invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
-
-    check-cast v0, Lkotlinx/coroutines/channels/ChannelSegment;
-
-    invoke-virtual {v0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getPrev()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_101
-
+    .line 2700
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object v0
@@ -8906,12 +9200,26 @@
 
     move-result-object v0
 
-    if-ne v0, v1, :cond_e6
+    if-eqz v0, :cond_10d
 
-    goto :goto_101
+    invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
-    .line 2693
-    :cond_e6
+    move-result-object v0
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    check-cast v0, Lkotlinx/coroutines/channels/ChannelSegment;
+
+    invoke-virtual {v0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getPrev()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
+
+    move-result-object v0
+
+    if-ne v0, v1, :cond_f2
+
+    goto :goto_10d
+
+    .line 2701
+    :cond_f2
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -8926,7 +9234,7 @@
 
     move-result-object p0
 
-    .line 2692
+    .line 2700
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -8937,38 +9245,38 @@
 
     throw v0
 
-    .line 2699
-    :cond_101
-    :goto_101
+    .line 2707
+    :cond_10d
+    :goto_10d
     sget v0, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
     move v4, v2
 
     move v5, v4
 
-    :goto_105
-    if-ge v4, v0, :cond_19e
+    :goto_111
+    if-ge v4, v0, :cond_1aa
 
-    .line 2700
+    .line 2708
     invoke-virtual {v1, v4}, Lkotlinx/coroutines/channels/ChannelSegment;->getState$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object v6
 
-    .line 2701
+    .line 2709
     sget-object v7, Lkotlinx/coroutines/channels/BufferedChannelKt;->BUFFERED:Lkotlinx/coroutines/internal/Symbol;
 
     invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-nez v7, :cond_19a
+    if-nez v7, :cond_1a6
 
-    .line 2702
+    .line 2710
     instance-of v7, v6, Lkotlinx/coroutines/Waiter;
 
-    if-nez v7, :cond_19a
+    if-nez v7, :cond_1a6
 
-    .line 2703
+    .line 2711
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_RCV$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -8978,13 +9286,13 @@
 
     move-result v7
 
-    if-eqz v7, :cond_123
+    if-eqz v7, :cond_12f
 
     move v7, v3
 
-    goto :goto_12b
+    goto :goto_137
 
-    :cond_123
+    :cond_12f
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_SEND:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_SEND$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -8994,14 +9302,14 @@
 
     move-result v7
 
-    :goto_12b
-    if-eqz v7, :cond_12f
+    :goto_137
+    if-eqz v7, :cond_13b
 
     move v7, v3
 
-    goto :goto_137
+    goto :goto_143
 
-    :cond_12f
+    :cond_13b
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v7
@@ -9010,41 +9318,41 @@
 
     move-result v7
 
-    :goto_137
+    :goto_143
     const-string v8, "Check failed."
 
-    if-eqz v7, :cond_14f
+    if-eqz v7, :cond_15b
 
-    .line 2708
+    .line 2716
     invoke-virtual {v1, v4}, Lkotlinx/coroutines/channels/ChannelSegment;->getElement$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object v6
 
-    if-nez v6, :cond_143
+    if-nez v6, :cond_14f
 
     move v6, v3
 
-    goto :goto_144
+    goto :goto_150
 
-    :cond_143
+    :cond_14f
     move v6, v2
 
-    :goto_144
-    if-eqz v6, :cond_149
+    :goto_150
+    if-eqz v6, :cond_155
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_19a
+    goto :goto_1a6
 
-    :cond_149
+    :cond_155
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
-    .line 2711
-    :cond_14f
+    .line 2719
+    :cond_15b
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->POISONED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getPOISONED$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -9054,13 +9362,13 @@
 
     move-result v7
 
-    if-eqz v7, :cond_15b
+    if-eqz v7, :cond_167
 
     move v7, v3
 
-    goto :goto_163
+    goto :goto_16f
 
-    :cond_15b
+    :cond_167
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->DONE_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getDONE_RCV$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -9070,39 +9378,39 @@
 
     move-result v7
 
-    :goto_163
-    if-eqz v7, :cond_177
+    :goto_16f
+    if-eqz v7, :cond_183
 
-    .line 2714
+    .line 2722
     invoke-virtual {v1, v4}, Lkotlinx/coroutines/channels/ChannelSegment;->getElement$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object v6
 
-    if-nez v6, :cond_16d
+    if-nez v6, :cond_179
 
     move v6, v3
 
-    goto :goto_16e
+    goto :goto_17a
 
-    :cond_16d
+    :cond_179
     move v6, v2
 
-    :goto_16e
-    if-eqz v6, :cond_171
+    :goto_17a
+    if-eqz v6, :cond_17d
 
-    goto :goto_19a
+    goto :goto_1a6
 
-    :cond_171
+    :cond_17d
     new-instance p0, Ljava/lang/IllegalStateException;
 
     invoke-direct {p0, v8}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
-    :cond_177
+    :cond_183
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 2717
+    .line 2725
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -9131,61 +9439,67 @@
 
     throw v0
 
-    :cond_19a
-    :goto_19a
+    :cond_1a6
+    :goto_1a6
     add-int/lit8 v4, v4, 0x1
 
-    goto/16 :goto_105
+    goto/16 :goto_111
 
-    .line 2724
-    :cond_19e
+    .line 2732
+    :cond_1aa
     sget v0, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
-    if-ne v5, v0, :cond_1dc
+    if-ne v5, v0, :cond_1ee
 
-    .line 2725
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 2733
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eq v1, v0, :cond_1bd
+    if-eq v1, v0, :cond_1cf
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eq v1, v0, :cond_1bd
+    if-eq v1, v0, :cond_1cf
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-ne v1, v0, :cond_1bb
+    if-ne v1, v0, :cond_1cd
 
-    goto :goto_1bd
+    goto :goto_1cf
 
-    :cond_1bb
+    :cond_1cd
     move v0, v2
 
-    goto :goto_1be
+    goto :goto_1d0
 
-    :cond_1bd
-    :goto_1bd
+    :cond_1cf
+    :goto_1cf
     move v0, v3
 
-    :goto_1be
-    if-eqz v0, :cond_1c1
+    :goto_1d0
+    if-eqz v0, :cond_1d3
 
-    goto :goto_1dc
+    goto :goto_1ee
 
-    .line 2726
-    :cond_1c1
+    .line 2734
+    :cond_1d3
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9200,7 +9514,7 @@
 
     move-result-object p0
 
-    .line 2725
+    .line 2733
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -9211,9 +9525,9 @@
 
     throw v0
 
-    .line 2730
-    :cond_1dc
-    :goto_1dc
+    .line 2738
+    :cond_1ee
+    :goto_1ee
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object v0
@@ -9224,18 +9538,53 @@
 
     check-cast v1, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    goto/16 :goto_c1
+    goto/16 :goto_cd
 
-    :cond_1e8
+    :cond_1fa
     return-void
 
-    .line 2684
-    :cond_1e9
+    .line 2692
+    :cond_1fb
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "All processed segments should be unreachable from the data structure, but the `prev` link of the leftmost segment is non-null.\nChannel state: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 2691
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 4163
+    :cond_216
+    new-instance p0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw p0
+
+    .line 2684
+    :cond_21c
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "bufferEndSegment should not have lower id than receiveSegment.\nChannel state: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -9255,41 +9604,6 @@
     invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    .line 2311
-    :cond_204
-    new-instance p0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw p0
-
-    .line 2676
-    :cond_20a
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "bufferEndSegment should not have lower id than receiveSegment.\nChannel state: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 2675
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 .method public close(Ljava/lang/Throwable;)Z
@@ -9297,7 +9611,7 @@
 
     const/4 v0, 0x0
 
-    .line 1754
+    .line 1762
     invoke-virtual {p0, p1, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->closeOrCancelImpl(Ljava/lang/Throwable;Z)Z
 
     move-result p0
@@ -9310,13 +9624,15 @@
 
     if-eqz p2, :cond_5
 
-    .line 1788
+    .line 1796
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->markCancellationStarted()V
 
     :cond_5
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->_closeCause$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->get_closeCause$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 1791
+    move-result-object v0
+
+    .line 1799
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->NO_CLOSE_CAUSE:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getNO_CLOSE_CAUSE$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -9326,37 +9642,39 @@
 
     move-result p1
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_17
 
-    .line 1793
+    .line 1801
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->markCancelled()V
 
-    goto :goto_18
+    goto :goto_1a
 
-    :cond_15
+    :cond_17
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->markClosed()V
 
-    .line 1795
-    :goto_18
+    .line 1803
+    :goto_1a
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->completeCloseOrCancel()V
 
-    .line 1799
+    .line 1807
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->onClosedIdempotent()V
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_25
 
-    .line 1800
+    .line 1808
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->invokeCloseHandler()V
 
-    :cond_23
+    :cond_25
     return p1
 .end method
 
 .method protected final dropFirstElementUntilTheSpecifiedCellIsInTheBuffer(J)V
-    .registers 12
+    .registers 13
 
     .line 807
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     .line 810
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -9366,95 +9684,108 @@
     check-cast v0, Lkotlinx/coroutines/channels/ChannelSegment;
 
     .line 811
-    :goto_8
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    :goto_a
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v1
 
     .line 814
     invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
-    move-result-wide v3
+    move-result-wide v4
 
     .line 815
-    iget v2, p0, Lkotlinx/coroutines/channels/BufferedChannel;->capacity:I
+    iget v1, p0, Lkotlinx/coroutines/channels/BufferedChannel;->capacity:I
 
-    int-to-long v5, v2
+    int-to-long v1, v1
 
-    add-long/2addr v5, v3
+    add-long/2addr v1, v4
 
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndCounter()J
 
-    move-result-wide v7
+    move-result-wide v6
 
-    invoke-static {v5, v6, v7, v8}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v1, v2, v6, v7}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-wide v5
+    move-result-wide v1
 
-    cmp-long v2, p1, v5
+    cmp-long v1, p1, v1
 
-    if-gez v2, :cond_1f
+    if-gez v1, :cond_23
 
     return-void
 
-    :cond_1f
-    const-wide/16 v5, 0x1
-
-    add-long/2addr v5, v3
-
-    move-object v2, p0
-
     .line 818
-    invoke-virtual/range {v1 .. v6}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
+    :cond_23
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v2
+
+    const-wide/16 v6, 0x1
+
+    add-long/2addr v6, v4
+
+    move-object v3, p0
+
+    invoke-virtual/range {v2 .. v7}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
     move-result p0
 
-    if-eqz p0, :cond_6e
+    move-object v2, v3
+
+    if-eqz p0, :cond_79
 
     .line 820
     sget p0, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
-    int-to-long v5, p0
+    int-to-long v6, p0
 
-    div-long v5, v3, v5
+    div-long v6, v4, v6
 
-    int-to-long v7, p0
+    int-to-long v8, p0
 
     .line 821
-    rem-long v7, v3, v7
+    rem-long v8, v4, v8
 
-    long-to-int p0, v7
+    long-to-int p0, v8
 
     .line 824
-    iget-wide v7, v0, Lkotlinx/coroutines/internal/Segment;->id:J
+    iget-wide v8, v0, Lkotlinx/coroutines/internal/Segment;->id:J
 
-    cmp-long v1, v7, v5
+    cmp-long v1, v8, v6
 
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_4a
 
     .line 826
-    invoke-direct {v2, v5, v6, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->findSegmentReceive(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;
+    invoke-direct {v2, v6, v7, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->findSegmentReceive(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;
 
     move-result-object v1
 
-    if-nez v1, :cond_3f
+    if-nez v1, :cond_48
 
-    goto :goto_6e
+    goto :goto_79
 
-    :cond_3f
-    move-object v0, v1
+    :cond_48
+    move-object v3, v1
 
-    :cond_40
+    goto :goto_4b
+
+    :cond_4a
+    move-object v3, v0
+
+    :goto_4b
     const/4 v7, 0x0
 
-    move-wide v5, v3
+    move-wide v5, v4
 
     move v4, p0
-
-    move-object v3, v0
 
     .line 836
     invoke-direct/range {v2 .. v7}, Lkotlinx/coroutines/channels/BufferedChannel;->updateCellReceive(Lkotlinx/coroutines/channels/ChannelSegment;IJLjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
+
+    move-wide v4, v5
 
     .line 838
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->FAILED:Lkotlinx/coroutines/internal/Symbol;
@@ -9462,29 +9793,29 @@
 
     move-result-object v0
 
-    if-ne p0, v0, :cond_5a
+    if-ne p0, v0, :cond_65
 
     .line 842
     invoke-virtual {v2}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersCounter$kotlinx_coroutines_core()J
 
     move-result-wide v0
 
-    cmp-long p0, v5, v0
+    cmp-long p0, v4, v0
 
-    if-gez p0, :cond_6b
+    if-gez p0, :cond_76
 
     invoke-virtual {v3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
-    goto :goto_6b
+    goto :goto_76
 
     .line 847
-    :cond_5a
+    :cond_65
     invoke-virtual {v3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
     .line 849
     iget-object v0, v2, Lkotlinx/coroutines/channels/BufferedChannel;->onUndeliveredElement:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v0, :cond_6b
+    if-eqz v0, :cond_76
 
     const/4 v1, 0x2
 
@@ -9494,34 +9825,36 @@
 
     move-result-object p0
 
-    if-nez p0, :cond_6a
+    if-nez p0, :cond_75
 
-    goto :goto_6b
+    goto :goto_76
 
-    :cond_6a
+    :cond_75
     throw p0
 
-    :cond_6b
-    :goto_6b
+    :cond_76
+    :goto_76
     move-object p0, v2
 
     move-object v0, v3
 
-    goto :goto_8
+    goto :goto_a
 
-    :cond_6e
-    :goto_6e
+    :cond_79
+    :goto_79
     move-object p0, v2
 
-    goto :goto_8
+    goto :goto_a
 .end method
 
 .method protected final getCloseCause()Ljava/lang/Throwable;
     .registers 2
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->_closeCause$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->get_closeCause$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 1723
+    move-result-object v0
+
+    .line 1731
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -9746,7 +10079,9 @@
 .method public final getReceiversCounter$kotlinx_coroutines_core()J
     .registers 3
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     .line 71
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
@@ -9759,7 +10094,7 @@
 .method protected final getSendException()Ljava/lang/Throwable;
     .registers 2
 
-    .line 1726
+    .line 1734
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getCloseCause()Ljava/lang/Throwable;
 
     move-result-object p0
@@ -9779,7 +10114,9 @@
 .method public final getSendersCounter$kotlinx_coroutines_core()J
     .registers 5
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     .line 70
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
@@ -9794,61 +10131,67 @@
 .end method
 
 .method public final hasElements$kotlinx_coroutines_core()Z
-    .registers 11
+    .registers 10
 
-    .line 2247
+    .line 2255
     :cond_0
     :goto_0
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 2249
+    move-result-object v0
+
+    .line 2257
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lkotlinx/coroutines/channels/ChannelSegment;
-
-    .line 2251
-    invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiversCounter$kotlinx_coroutines_core()J
-
-    move-result-wide v4
-
-    .line 2252
-    invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersCounter$kotlinx_coroutines_core()J
-
-    move-result-wide v2
-
-    cmp-long v2, v2, v4
-
-    const/4 v3, 0x0
-
-    if-gtz v2, :cond_16
-
-    return v3
-
-    .line 2258
-    :cond_16
-    sget v2, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
-
-    int-to-long v6, v2
-
-    div-long v6, v4, v6
+    check-cast v0, Lkotlinx/coroutines/channels/ChannelSegment;
 
     .line 2259
-    iget-wide v8, v1, Lkotlinx/coroutines/internal/Segment;->id:J
+    invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiversCounter$kotlinx_coroutines_core()J
 
-    cmp-long v8, v8, v6
+    move-result-wide v3
 
-    if-eqz v8, :cond_34
+    .line 2260
+    invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersCounter$kotlinx_coroutines_core()J
 
-    .line 2261
-    invoke-direct {p0, v6, v7, v1}, Lkotlinx/coroutines/channels/BufferedChannel;->findSegmentReceive(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;
+    move-result-wide v1
 
-    move-result-object v1
+    cmp-long v1, v1, v3
 
-    if-nez v1, :cond_34
+    const/4 v2, 0x0
+
+    if-gtz v1, :cond_18
+
+    return v2
+
+    .line 2266
+    :cond_18
+    sget v1, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
+
+    int-to-long v5, v1
+
+    div-long v5, v3, v5
 
     .line 2267
+    iget-wide v7, v0, Lkotlinx/coroutines/internal/Segment;->id:J
+
+    cmp-long v7, v7, v5
+
+    if-eqz v7, :cond_3a
+
+    .line 2269
+    invoke-direct {p0, v5, v6, v0}, Lkotlinx/coroutines/channels/BufferedChannel;->findSegmentReceive(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;
+
+    move-result-object v0
+
+    if-nez v0, :cond_3a
+
+    .line 2275
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
+
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -9857,45 +10200,47 @@
 
     iget-wide v0, v0, Lkotlinx/coroutines/internal/Segment;->id:J
 
-    cmp-long v0, v0, v6
+    cmp-long v0, v0, v5
 
     if-gez v0, :cond_0
 
-    return v3
+    return v2
 
-    .line 2269
-    :cond_34
-    invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
+    .line 2277
+    :cond_3a
+    invoke-virtual {v0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
-    int-to-long v2, v2
+    int-to-long v1, v1
 
-    .line 2271
-    rem-long v2, v4, v2
+    .line 2279
+    rem-long v1, v3, v1
 
-    long-to-int v0, v2
+    long-to-int v1, v1
 
-    .line 2272
-    invoke-direct {p0, v1, v0, v4, v5}, Lkotlinx/coroutines/channels/BufferedChannel;->isCellNonEmpty(Lkotlinx/coroutines/channels/ChannelSegment;IJ)Z
+    .line 2280
+    invoke-direct {p0, v0, v1, v3, v4}, Lkotlinx/coroutines/channels/BufferedChannel;->isCellNonEmpty(Lkotlinx/coroutines/channels/ChannelSegment;IJ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_49
 
     const/4 p0, 0x1
 
     return p0
 
-    :cond_43
-    sget-object v2, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    :cond_49
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    const-wide/16 v0, 0x1
+    move-result-object v1
 
-    add-long v6, v4, v0
+    const-wide/16 v5, 0x1
 
-    move-object v3, p0
+    add-long/2addr v5, v3
 
-    .line 2274
-    invoke-virtual/range {v2 .. v7}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
+    move-object v2, p0
+
+    .line 2282
+    invoke-virtual/range {v1 .. v6}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
     goto :goto_0
 .end method
@@ -9910,35 +10255,44 @@
         }
     .end annotation
 
-    .line 1828
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->closeHandler$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 1836
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCloseHandler$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
     invoke-static {v0, p0, v1, p1}, Lkotlin/SafePublicationLazyImpl$$ExternalSyntheticBackportWithForwarding0;->m(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_a
+    if-eqz v0, :cond_c
 
     return-void
 
-    .line 1830
-    :cond_a
+    .line 1834
+    :cond_c
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCloseHandler$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
+
+    :cond_10
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1839
+    .line 1847
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->CLOSE_HANDLER_CLOSED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getCLOSE_HANDLER_CLOSED$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_2c
+    if-ne v1, v2, :cond_34
 
-    .line 1843
-    sget-object v1, Lkotlinx/coroutines/channels/BufferedChannel;->closeHandler$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .line 1851
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCloseHandler$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v1
 
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->CLOSE_HANDLER_CLOSED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getCLOSE_HANDLER_CLOSED$p()Lkotlinx/coroutines/internal/Symbol;
@@ -9954,9 +10308,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_10
 
-    .line 1844
+    .line 1852
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->getCloseCause()Ljava/lang/Throwable;
 
     move-result-object p0
@@ -9965,14 +10319,14 @@
 
     return-void
 
-    .line 1848
-    :cond_2c
+    .line 1856
+    :cond_34
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->CLOSE_HANDLER_INVOKED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getCLOSE_HANDLER_INVOKED$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object p0
 
-    if-ne v1, p0, :cond_3a
+    if-ne v1, p0, :cond_42
 
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -9982,10 +10336,10 @@
 
     throw p0
 
-    :cond_3a
+    :cond_42
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 1849
+    .line 1857
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -10012,8 +10366,10 @@
 .method public isClosedForReceive()Z
     .registers 3
 
-    .line 2188
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .line 2196
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
@@ -10029,8 +10385,10 @@
 .method public isClosedForSend()Z
     .registers 3
 
-    .line 2181
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .line 2189
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
@@ -10054,7 +10412,7 @@
 .method public isEmpty()Z
     .registers 3
 
-    .line 2229
+    .line 2237
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->isClosedForReceive()Z
 
     move-result v0
@@ -10065,7 +10423,7 @@
 
     return v1
 
-    .line 2231
+    .line 2239
     :cond_8
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->hasElements$kotlinx_coroutines_core()Z
 
@@ -10075,7 +10433,7 @@
 
     return v1
 
-    .line 2234
+    .line 2242
     :cond_f
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->isClosedForReceive()Z
 
@@ -10224,8 +10582,8 @@
     .end annotation
 
     .line 244
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
@@ -10239,8 +10597,8 @@
     .line 274
     :cond_a
     :goto_a
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v1
 
@@ -10498,8 +10856,8 @@
         }
     .end annotation
 
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v1
 
@@ -10513,8 +10871,8 @@
     .line 274
     :cond_a
     :goto_a
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v2
 
@@ -10736,7 +11094,9 @@
     .registers 3
 
     .line 625
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
@@ -10754,14 +11114,16 @@
 
     move-object/from16 v0, p0
 
-    .line 2564
+    .line 2572
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    .line 2566
+    move-result-object v2
+
+    .line 2574
     invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
@@ -10776,28 +11138,28 @@
 
     const/4 v4, 0x2
 
-    if-eq v2, v4, :cond_1e
+    if-eq v2, v4, :cond_20
 
-    if-eq v2, v3, :cond_18
+    if-eq v2, v3, :cond_1a
 
-    goto :goto_23
+    goto :goto_25
 
-    .line 2568
-    :cond_18
+    .line 2576
+    :cond_1a
     const-string v2, "cancelled,"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_23
+    goto :goto_25
 
-    .line 2567
-    :cond_1e
+    .line 2575
+    :cond_20
     const-string v2, "closed,"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2571
-    :goto_23
+    .line 2579
+    :goto_25
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10820,15 +11182,17 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2573
+    .line 2581
     const-string v2, "data=["
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2574
+    .line 2582
     new-array v2, v3, [Lkotlinx/coroutines/channels/ChannelSegment;
 
-    sget-object v3, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v3
 
     invoke-virtual {v3, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -10838,7 +11202,9 @@
 
     aput-object v3, v2, v6
 
-    sget-object v3, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v3
 
     invoke-virtual {v3, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -10848,7 +11214,9 @@
 
     aput-object v3, v2, v7
 
-    sget-object v3, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v3
 
     invoke-virtual {v3, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -10862,23 +11230,23 @@
 
     check-cast v2, Ljava/lang/Iterable;
 
-    .line 766
+    .line 4123
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 857
+    .line 4124
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :cond_6e
-    :goto_6e
+    :cond_76
+    :goto_76
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_85
+    if-eqz v4, :cond_8d
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -10888,109 +11256,109 @@
 
     check-cast v8, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2575
+    .line 2583
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->NULL_SEGMENT:Lkotlinx/coroutines/channels/ChannelSegment;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getNULL_SEGMENT$p()Lkotlinx/coroutines/channels/ChannelSegment;
 
     move-result-object v9
 
-    if-eq v8, v9, :cond_6e
+    if-eq v8, v9, :cond_76
 
-    .line 857
+    .line 4124
     invoke-interface {v3, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_6e
+    goto :goto_76
 
-    .line 2310
-    :cond_85
+    .line 4126
+    :cond_8d
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .line 2311
+    .line 4127
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_205
+    if-eqz v3, :cond_20d
 
-    .line 2312
+    .line 4128
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 2313
+    .line 4129
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-nez v4, :cond_9a
+    if-nez v4, :cond_a2
 
-    goto :goto_b4
+    goto :goto_bc
 
-    .line 2314
-    :cond_9a
+    .line 4130
+    :cond_a2
     move-object v4, v3
 
     check-cast v4, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2576
+    .line 2584
     iget-wide v8, v4, Lkotlinx/coroutines/internal/Segment;->id:J
 
-    .line 2316
-    :cond_9f
+    .line 4132
+    :cond_a7
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 2317
+    .line 4133
     move-object v10, v4
 
     check-cast v10, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2576
+    .line 2584
     iget-wide v10, v10, Lkotlinx/coroutines/internal/Segment;->id:J
 
     cmp-long v12, v8, v10
 
-    if-lez v12, :cond_ae
+    if-lez v12, :cond_b6
 
     move-object v3, v4
 
     move-wide v8, v10
 
     .line 2322
-    :cond_ae
+    :cond_b6
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-nez v4, :cond_9f
+    if-nez v4, :cond_a7
 
-    .line 2576
-    :goto_b4
+    .line 2584
+    :goto_bc
     check-cast v3, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2577
+    .line 2585
     invoke-virtual {v0}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiversCounter$kotlinx_coroutines_core()J
 
     move-result-wide v10
 
-    .line 2578
+    .line 2586
     invoke-virtual {v0}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersCounter$kotlinx_coroutines_core()J
 
     move-result-wide v12
 
-    .line 2581
-    :goto_be
+    .line 2589
+    :goto_c6
     sget v0, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
     move v2, v6
 
-    :goto_c1
-    if-ge v2, v0, :cond_1db
+    :goto_c9
+    if-ge v2, v0, :cond_1e3
 
-    .line 2582
+    .line 2590
     iget-wide v8, v3, Lkotlinx/coroutines/internal/Segment;->id:J
 
     sget v4, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
@@ -11005,113 +11373,113 @@
 
     cmp-long v4, v8, v12
 
-    if-ltz v4, :cond_d3
+    if-ltz v4, :cond_db
 
     cmp-long v14, v8, v10
 
-    if-gez v14, :cond_1e4
+    if-gez v14, :cond_1ec
 
-    .line 2584
-    :cond_d3
+    .line 2592
+    :cond_db
     invoke-virtual {v3, v2}, Lkotlinx/coroutines/channels/ChannelSegment;->getState$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object v14
 
-    .line 2585
+    .line 2593
     invoke-virtual {v3, v2}, Lkotlinx/coroutines/channels/ChannelSegment;->getElement$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object v15
 
-    .line 2587
+    .line 2595
     instance-of v6, v14, Lkotlinx/coroutines/CancellableContinuation;
 
-    if-eqz v6, :cond_f5
+    if-eqz v6, :cond_fd
 
     cmp-long v6, v8, v10
 
-    if-gez v6, :cond_e9
+    if-gez v6, :cond_f1
 
-    if-ltz v4, :cond_e9
-
-    .line 2589
-    const-string v4, "receive"
-
-    goto/16 :goto_1a2
-
-    :cond_e9
-    if-gez v4, :cond_f1
-
-    if-ltz v6, :cond_f1
-
-    .line 2590
-    const-string v4, "send"
-
-    goto/16 :goto_1a2
-
-    .line 2591
-    :cond_f1
-    const-string v4, "cont"
-
-    goto/16 :goto_1a2
-
-    .line 2594
-    :cond_f5
-    instance-of v6, v14, Lkotlinx/coroutines/selects/SelectInstance;
-
-    if-eqz v6, :cond_10f
-
-    cmp-long v6, v8, v10
-
-    if-gez v6, :cond_103
-
-    if-ltz v4, :cond_103
-
-    .line 2596
-    const-string v4, "onReceive"
-
-    goto/16 :goto_1a2
-
-    :cond_103
-    if-gez v4, :cond_10b
-
-    if-ltz v6, :cond_10b
+    if-ltz v4, :cond_f1
 
     .line 2597
-    const-string v4, "onSend"
+    const-string v4, "receive"
 
-    goto/16 :goto_1a2
+    goto/16 :goto_1aa
+
+    :cond_f1
+    if-gez v4, :cond_f9
+
+    if-ltz v6, :cond_f9
 
     .line 2598
-    :cond_10b
-    const-string v4, "select"
+    const-string v4, "send"
 
-    goto/16 :goto_1a2
+    goto/16 :goto_1aa
 
-    .line 2601
-    :cond_10f
-    instance-of v4, v14, Lkotlinx/coroutines/channels/ReceiveCatching;
+    .line 2599
+    :cond_f9
+    const-string v4, "cont"
 
-    if-eqz v4, :cond_117
-
-    const-string v4, "receiveCatching"
-
-    goto/16 :goto_1a2
+    goto/16 :goto_1aa
 
     .line 2602
+    :cond_fd
+    instance-of v6, v14, Lkotlinx/coroutines/selects/SelectInstance;
+
+    if-eqz v6, :cond_117
+
+    cmp-long v6, v8, v10
+
+    if-gez v6, :cond_10b
+
+    if-ltz v4, :cond_10b
+
+    .line 2604
+    const-string v4, "onReceive"
+
+    goto/16 :goto_1aa
+
+    :cond_10b
+    if-gez v4, :cond_113
+
+    if-ltz v6, :cond_113
+
+    .line 2605
+    const-string v4, "onSend"
+
+    goto/16 :goto_1aa
+
+    .line 2606
+    :cond_113
+    const-string v4, "select"
+
+    goto/16 :goto_1aa
+
+    .line 2609
     :cond_117
-    instance-of v4, v14, Lkotlinx/coroutines/channels/BufferedChannel$SendBroadcast;
+    instance-of v4, v14, Lkotlinx/coroutines/channels/ReceiveCatching;
 
     if-eqz v4, :cond_11f
 
+    const-string v4, "receiveCatching"
+
+    goto/16 :goto_1aa
+
+    .line 2610
+    :cond_11f
+    instance-of v4, v14, Lkotlinx/coroutines/channels/BufferedChannel$SendBroadcast;
+
+    if-eqz v4, :cond_127
+
     const-string v4, "sendBroadcast"
 
-    goto/16 :goto_1a2
+    goto/16 :goto_1aa
 
-    .line 2603
-    :cond_11f
+    .line 2611
+    :cond_127
     instance-of v4, v14, Lkotlinx/coroutines/channels/WaiterEB;
 
-    if-eqz v4, :cond_13b
+    if-eqz v4, :cond_143
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -11131,10 +11499,10 @@
 
     move-result-object v4
 
-    goto/16 :goto_1a2
+    goto/16 :goto_1aa
 
-    .line 2604
-    :cond_13b
+    .line 2612
+    :cond_143
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->RESUMING_BY_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getRESUMING_BY_RCV$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -11144,13 +11512,13 @@
 
     move-result v4
 
-    if-eqz v4, :cond_147
+    if-eqz v4, :cond_14f
 
     move v4, v7
 
-    goto :goto_14f
+    goto :goto_157
 
-    :cond_147
+    :cond_14f
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->RESUMING_BY_EB:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getRESUMING_BY_EB$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -11160,22 +11528,22 @@
 
     move-result v4
 
-    :goto_14f
-    if-eqz v4, :cond_154
+    :goto_157
+    if-eqz v4, :cond_15c
 
     const-string v4, "resuming_sender"
 
-    goto :goto_1a2
+    goto :goto_1aa
 
-    :cond_154
-    if-nez v14, :cond_158
+    :cond_15c
+    if-nez v14, :cond_160
 
     move v4, v7
 
-    goto :goto_160
+    goto :goto_168
 
-    .line 2605
-    :cond_158
+    .line 2613
+    :cond_160
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->IN_BUFFER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getIN_BUFFER$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -11185,14 +11553,14 @@
 
     move-result v4
 
-    :goto_160
-    if-eqz v4, :cond_164
+    :goto_168
+    if-eqz v4, :cond_16c
 
     move v4, v7
 
-    goto :goto_16c
+    goto :goto_174
 
-    :cond_164
+    :cond_16c
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->DONE_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getDONE_RCV$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -11202,14 +11570,14 @@
 
     move-result v4
 
-    :goto_16c
-    if-eqz v4, :cond_170
+    :goto_174
+    if-eqz v4, :cond_178
 
     move v4, v7
 
-    goto :goto_178
+    goto :goto_180
 
-    :cond_170
+    :cond_178
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->POISONED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getPOISONED$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -11219,14 +11587,14 @@
 
     move-result v4
 
-    :goto_178
-    if-eqz v4, :cond_17c
+    :goto_180
+    if-eqz v4, :cond_184
 
     move v4, v7
 
-    goto :goto_184
+    goto :goto_18c
 
-    :cond_17c
+    :cond_184
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_RCV$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -11236,14 +11604,14 @@
 
     move-result v4
 
-    :goto_184
-    if-eqz v4, :cond_188
+    :goto_18c
+    if-eqz v4, :cond_190
 
     move v4, v7
 
-    goto :goto_190
+    goto :goto_198
 
-    :cond_188
+    :cond_190
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_SEND:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_SEND$p()Lkotlinx/coroutines/internal/Symbol;
 
@@ -11253,14 +11621,14 @@
 
     move-result v4
 
-    :goto_190
-    if-eqz v4, :cond_194
+    :goto_198
+    if-eqz v4, :cond_19c
 
     move v4, v7
 
-    goto :goto_19c
+    goto :goto_1a4
 
-    :cond_194
+    :cond_19c
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->getCHANNEL_CLOSED()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v4
@@ -11269,18 +11637,18 @@
 
     move-result v4
 
-    :goto_19c
-    if-nez v4, :cond_1d6
+    :goto_1a4
+    if-nez v4, :cond_1de
 
-    .line 2606
+    .line 2614
     invoke-virtual {v14}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    :goto_1a2
-    if-eqz v15, :cond_1c4
+    :goto_1aa
+    if-eqz v15, :cond_1cc
 
-    .line 2609
+    .line 2617
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -11305,10 +11673,10 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_1d6
+    goto :goto_1de
 
-    .line 2611
-    :cond_1c4
+    .line 2619
+    :cond_1cc
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -11323,16 +11691,16 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1d6
-    :goto_1d6
+    :cond_1de
+    :goto_1de
     add-int/lit8 v2, v2, 0x1
 
     const/4 v6, 0x0
 
-    goto/16 :goto_c1
+    goto/16 :goto_c9
 
-    .line 2615
-    :cond_1db
+    .line 2623
+    :cond_1e3
     invoke-virtual {v3}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object v0
@@ -11341,15 +11709,15 @@
 
     check-cast v3, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    if-nez v3, :cond_202
+    if-nez v3, :cond_20a
 
-    .line 2617
-    :cond_1e4
+    .line 2625
+    :cond_1ec
     invoke-static {v1}, Lkotlin/text/StringsKt;->last(Ljava/lang/CharSequence;)C
 
     move-result v0
 
-    if-ne v0, v5, :cond_1f8
+    if-ne v0, v5, :cond_200
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
@@ -11361,30 +11729,30 @@
 
     move-result-object v0
 
-    const-string v2, "this.deleteCharAt(index)"
+    const-string v2, "deleteCharAt(...)"
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2618
-    :cond_1f8
+    .line 2626
+    :cond_200
     const-string v0, "]"
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2620
+    .line 2628
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    :cond_202
+    :cond_20a
     const/4 v6, 0x0
 
-    goto/16 :goto_be
+    goto/16 :goto_c6
 
-    .line 2311
-    :cond_205
+    .line 4127
+    :cond_20d
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -11395,12 +11763,12 @@
 .method public final toStringDebug$kotlinx_coroutines_core()Ljava/lang/String;
     .registers 11
 
-    .line 2626
+    .line 2634
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2628
+    .line 2636
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -11439,7 +11807,9 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v2, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCompletedExpandBuffersAndPauseFlag$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v2
 
     invoke-virtual {v2, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
@@ -11451,23 +11821,25 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v2, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v2
 
     invoke-virtual {v2, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
-    move-result-wide v3
+    move-result-wide v2
 
-    const/16 v5, 0x3c
+    const/16 v4, 0x3c
 
-    shr-long/2addr v3, v5
+    shr-long/2addr v2, v4
 
-    long-to-int v3, v3
+    long-to-int v2, v2
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const/16 v3, 0x2c
+    const/16 v2, 0x2c
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -11475,53 +11847,57 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2629
-    invoke-virtual {v2, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    move-result-wide v1
+    move-result-object v1
 
-    shr-long/2addr v1, v5
+    .line 2637
+    invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
-    long-to-int v1, v1
+    move-result-wide v5
 
-    const/4 v2, 0x3
+    shr-long v3, v5, v4
+
+    long-to-int v1, v3
+
+    const/4 v3, 0x3
 
     const/4 v4, 0x2
 
     const/4 v5, 0x1
 
-    if-eq v1, v5, :cond_76
+    if-eq v1, v5, :cond_7f
 
-    if-eq v1, v4, :cond_70
+    if-eq v1, v4, :cond_79
 
-    if-eq v1, v2, :cond_6a
+    if-eq v1, v3, :cond_73
 
-    goto :goto_7b
+    goto :goto_84
 
-    .line 2632
-    :cond_6a
+    .line 2640
+    :cond_73
     const-string v1, "CANCELLED,"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_7b
+    goto :goto_84
 
-    .line 2631
-    :cond_70
+    .line 2639
+    :cond_79
     const-string v1, "CLOSED,"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_7b
+    goto :goto_84
 
-    .line 2630
-    :cond_76
+    .line 2638
+    :cond_7f
     const-string v1, "CANCELLATION_STARTED,"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2635
-    :goto_7b
+    .line 2643
+    :goto_84
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -11530,33 +11906,37 @@
 
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v6, Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v6
 
     invoke-virtual {v6, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-static {v7}, Lkotlinx/coroutines/DebugStringsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6}, Lkotlinx/coroutines/DebugStringsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v7, ",RCV_SEGM="
+    const-string v6, ",RCV_SEGM="
 
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v7, Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    invoke-virtual {v7, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v6
 
-    move-result-object v8
+    invoke-virtual {v6, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v8}, Lkotlinx/coroutines/DebugStringsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v8
+    invoke-static {v6}, Lkotlinx/coroutines/DebugStringsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
+
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -11564,32 +11944,34 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2636
+    .line 2644
     invoke-direct {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->isRendezvousOrUnlimited()Z
 
     move-result v1
 
-    if-nez v1, :cond_cf
+    if-nez v1, :cond_de
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, ",EB_SEGM="
+    const-string v6, ",EB_SEGM="
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v8, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    invoke-virtual {v8, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v6
 
-    move-result-object v8
+    invoke-virtual {v6, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v8}, Lkotlinx/coroutines/DebugStringsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v8
+    invoke-static {v6}, Lkotlinx/coroutines/DebugStringsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
+
+    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -11597,32 +11979,42 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2637
-    :cond_cf
+    .line 2645
+    :cond_de
     const-string v1, "  "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2639
-    new-array v1, v2, [Lkotlinx/coroutines/channels/ChannelSegment;
+    .line 2647
+    new-array v1, v3, [Lkotlinx/coroutines/channels/ChannelSegment;
 
-    invoke-virtual {v7, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    move-result-object v2
+    move-result-object v3
 
-    const/4 v7, 0x0
+    invoke-virtual {v3, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    aput-object v2, v1, v7
+    move-result-object v3
 
-    invoke-virtual {v6, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v6, 0x0
 
-    move-result-object v2
+    aput-object v3, v1, v6
 
-    aput-object v2, v1, v5
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    sget-object v2, Lkotlinx/coroutines/channels/BufferedChannel;->bufferEndSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    move-result-object v3
 
-    invoke-virtual {v2, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    aput-object v3, v1, v5
+
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -11634,178 +12026,178 @@
 
     check-cast p0, Ljava/lang/Iterable;
 
-    .line 766
+    .line 4142
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 857
+    .line 4143
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    :cond_fa
-    :goto_fa
+    :cond_113
+    :goto_113
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_111
+    if-eqz v3, :cond_12a
 
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    move-object v4, v2
+    move-object v4, v3
 
     check-cast v4, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2640
+    .line 2648
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->NULL_SEGMENT:Lkotlinx/coroutines/channels/ChannelSegment;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getNULL_SEGMENT$p()Lkotlinx/coroutines/channels/ChannelSegment;
 
     move-result-object v5
 
-    if-eq v4, v5, :cond_fa
+    if-eq v4, v5, :cond_113
 
-    .line 857
-    invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    .line 4143
+    invoke-interface {v1, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_fa
+    goto :goto_113
 
-    .line 2310
-    :cond_111
+    .line 4145
+    :cond_12a
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    .line 2311
+    .line 4146
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_22c
+    if-eqz v1, :cond_245
 
-    .line 2312
+    .line 4147
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 2313
+    .line 4148
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_126
+    if-nez v3, :cond_13f
 
-    goto :goto_140
+    goto :goto_159
 
-    .line 2314
-    :cond_126
-    move-object v2, v1
+    .line 4149
+    :cond_13f
+    move-object v3, v1
 
-    check-cast v2, Lkotlinx/coroutines/channels/ChannelSegment;
+    check-cast v3, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2641
-    iget-wide v4, v2, Lkotlinx/coroutines/internal/Segment;->id:J
+    .line 2649
+    iget-wide v3, v3, Lkotlinx/coroutines/internal/Segment;->id:J
 
-    .line 2316
-    :cond_12b
+    .line 4151
+    :cond_144
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v5
 
-    .line 2317
-    move-object v6, v2
+    .line 4152
+    move-object v7, v5
 
-    check-cast v6, Lkotlinx/coroutines/channels/ChannelSegment;
+    check-cast v7, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2641
-    iget-wide v8, v6, Lkotlinx/coroutines/internal/Segment;->id:J
+    .line 2649
+    iget-wide v7, v7, Lkotlinx/coroutines/internal/Segment;->id:J
 
-    cmp-long v6, v4, v8
+    cmp-long v9, v3, v7
 
-    if-lez v6, :cond_13a
+    if-lez v9, :cond_153
 
-    move-object v1, v2
+    move-object v1, v5
 
-    move-wide v4, v8
+    move-wide v3, v7
 
     .line 2322
-    :cond_13a
+    :cond_153
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v5
 
-    if-nez v2, :cond_12b
+    if-nez v5, :cond_144
 
-    .line 2641
-    :goto_140
+    .line 2649
+    :goto_159
     check-cast v1, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    .line 2644
-    :cond_142
+    .line 2652
+    :cond_15b
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-static {v1}, Lkotlinx/coroutines/DebugStringsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "=["
+    const-string v3, "=["
 
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/Segment;->isRemoved()Z
 
-    move-result v2
+    move-result v3
 
-    if-eqz v2, :cond_15c
+    if-eqz v3, :cond_175
 
-    const-string v2, "*"
+    const-string v3, "*"
 
-    goto :goto_15e
+    goto :goto_177
 
-    :cond_15c
-    const-string v2, ""
+    :cond_175
+    const-string v3, ""
 
-    :goto_15e
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_177
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v4, v1, Lkotlinx/coroutines/internal/Segment;->id:J
+    iget-wide v3, v1, Lkotlinx/coroutines/internal/Segment;->id:J
 
-    invoke-virtual {p0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v2, ",prev="
+    const-string v3, ",prev="
 
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getPrev()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Lkotlinx/coroutines/channels/ChannelSegment;
+    check-cast v3, Lkotlinx/coroutines/channels/ChannelSegment;
 
     const/4 v4, 0x0
 
-    if-eqz v2, :cond_179
+    if-eqz v3, :cond_192
 
-    invoke-static {v2}, Lkotlinx/coroutines/DebugStringsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3}, Lkotlinx/coroutines/DebugStringsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    goto :goto_17a
+    goto :goto_193
 
-    :cond_179
-    move-object v2, v4
+    :cond_192
+    move-object v3, v4
 
-    :goto_17a
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_193
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -11813,68 +12205,68 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2645
+    .line 2653
     sget p0, Lkotlinx/coroutines/channels/BufferedChannelKt;->SEGMENT_SIZE:I
 
-    move v2, v7
+    move v3, v6
 
-    :goto_18a
-    if-ge v2, p0, :cond_1f9
+    :goto_1a3
+    if-ge v3, p0, :cond_212
 
-    .line 2646
-    invoke-virtual {v1, v2}, Lkotlinx/coroutines/channels/ChannelSegment;->getState$kotlinx_coroutines_core(I)Ljava/lang/Object;
+    .line 2654
+    invoke-virtual {v1, v3}, Lkotlinx/coroutines/channels/ChannelSegment;->getState$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
     move-result-object v5
 
-    .line 2647
-    invoke-virtual {v1, v2}, Lkotlinx/coroutines/channels/ChannelSegment;->getElement$kotlinx_coroutines_core(I)Ljava/lang/Object;
+    .line 2655
+    invoke-virtual {v1, v3}, Lkotlinx/coroutines/channels/ChannelSegment;->getElement$kotlinx_coroutines_core(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v7
 
-    .line 2649
+    .line 2657
     instance-of v8, v5, Lkotlinx/coroutines/CancellableContinuation;
 
-    if-eqz v8, :cond_19b
+    if-eqz v8, :cond_1b4
 
     const-string v5, "cont"
 
-    goto :goto_1cf
+    goto :goto_1e8
 
-    .line 2650
-    :cond_19b
+    .line 2658
+    :cond_1b4
     instance-of v8, v5, Lkotlinx/coroutines/selects/SelectInstance;
 
-    if-eqz v8, :cond_1a2
+    if-eqz v8, :cond_1bb
 
     const-string v5, "select"
 
-    goto :goto_1cf
+    goto :goto_1e8
 
-    .line 2651
-    :cond_1a2
+    .line 2659
+    :cond_1bb
     instance-of v8, v5, Lkotlinx/coroutines/channels/ReceiveCatching;
 
-    if-eqz v8, :cond_1a9
+    if-eqz v8, :cond_1c2
 
     const-string v5, "receiveCatching"
 
-    goto :goto_1cf
+    goto :goto_1e8
 
-    .line 2652
-    :cond_1a9
+    .line 2660
+    :cond_1c2
     instance-of v8, v5, Lkotlinx/coroutines/channels/BufferedChannel$SendBroadcast;
 
-    if-eqz v8, :cond_1b0
+    if-eqz v8, :cond_1c9
 
     const-string v5, "send(broadcast)"
 
-    goto :goto_1cf
+    goto :goto_1e8
 
-    .line 2653
-    :cond_1b0
+    .line 2661
+    :cond_1c9
     instance-of v8, v5, Lkotlinx/coroutines/channels/WaiterEB;
 
-    if-eqz v8, :cond_1cb
+    if-eqz v8, :cond_1e4
 
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -11894,16 +12286,16 @@
 
     move-result-object v5
 
-    goto :goto_1cf
+    goto :goto_1e8
 
-    .line 2654
-    :cond_1cb
+    .line 2662
+    :cond_1e4
     invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 2656
-    :goto_1cf
+    .line 2664
+    :goto_1e8
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -11912,7 +12304,7 @@
 
     invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v9, "]=("
 
@@ -11920,9 +12312,9 @@
 
     invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v5, "),"
 
@@ -11934,38 +12326,38 @@
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    goto :goto_18a
+    goto :goto_1a3
 
-    .line 2658
-    :cond_1f9
+    .line 2666
+    :cond_212
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "next="
+    const-string v3, "next="
 
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Lkotlinx/coroutines/channels/ChannelSegment;
+    check-cast v3, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    if-eqz v2, :cond_20f
+    if-eqz v3, :cond_228
 
-    invoke-static {v2}, Lkotlinx/coroutines/DebugStringsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3}, Lkotlinx/coroutines/DebugStringsKt;->getHexAddress(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
-    :cond_20f
+    :cond_228
     invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "]  "
+    const-string v3, "]  "
 
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -11973,7 +12365,7 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2660
+    .line 2668
     invoke-virtual {v1}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->getNext()Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;
 
     move-result-object p0
@@ -11982,17 +12374,17 @@
 
     check-cast v1, Lkotlinx/coroutines/channels/ChannelSegment;
 
-    if-nez v1, :cond_142
+    if-nez v1, :cond_15b
 
-    .line 2663
+    .line 2671
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 2311
-    :cond_22c
+    .line 4146
+    :cond_245
     new-instance p0, Ljava/util/NoSuchElementException;
 
     invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -12003,14 +12395,18 @@
 .method public tryReceive-PtdJZtk()Ljava/lang/Object;
     .registers 12
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     .line 764
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v0
 
-    sget-object v2, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v2
 
     .line 765
     invoke-virtual {v2, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
@@ -12022,7 +12418,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1d
+    if-eqz v4, :cond_21
 
     .line 768
     sget-object v0, Lkotlinx/coroutines/channels/ChannelResult;->Companion:Lkotlinx/coroutines/channels/ChannelResult$Companion;
@@ -12037,14 +12433,14 @@
 
     return-object p0
 
-    :cond_1d
+    :cond_21
     const-wide v4, 0xfffffffffffffffL
 
     and-long/2addr v2, v4
 
     cmp-long v0, v0, v2
 
-    if-ltz v0, :cond_2e
+    if-ltz v0, :cond_32
 
     .line 772
     sget-object p0, Lkotlinx/coroutines/channels/ChannelResult;->Companion:Lkotlinx/coroutines/channels/ChannelResult$Companion;
@@ -12056,15 +12452,15 @@
     return-object p0
 
     .line 783
-    :cond_2e
+    :cond_32
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_RCV:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_RCV$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v5
 
     .line 858
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receiveSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceiveSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
@@ -12076,12 +12472,12 @@
     check-cast v0, Lkotlinx/coroutines/channels/ChannelSegment;
 
     .line 890
-    :goto_3c
+    :goto_40
     invoke-virtual {p0}, Lkotlinx/coroutines/channels/BufferedChannel;->isClosedForReceive()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_51
 
     .line 796
     sget-object v0, Lkotlinx/coroutines/channels/ChannelResult;->Companion:Lkotlinx/coroutines/channels/ChannelResult$Companion;
@@ -12097,9 +12493,9 @@
     return-object p0
 
     .line 890
-    :cond_4d
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->receivers$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    :cond_51
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getReceivers$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v1
 
@@ -12127,7 +12523,7 @@
 
     cmp-long v1, v8, v6
 
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_71
 
     .line 901
     # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->findSegmentReceive(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;
@@ -12135,23 +12531,23 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_6b
+    if-nez v1, :cond_6f
 
-    goto :goto_3c
+    goto :goto_40
 
-    :cond_6b
-    :goto_6b
+    :cond_6f
+    :goto_6f
     move-object v0, p0
+
+    goto :goto_73
+
+    :cond_71
+    move-object v1, v0
 
     goto :goto_6f
 
-    :cond_6d
-    move-object v1, v0
-
-    goto :goto_6b
-
     .line 908
-    :goto_6f
+    :goto_73
     # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->updateCellReceive(Lkotlinx/coroutines/channels/ChannelSegment;IJLjava/lang/Object;)Ljava/lang/Object;
     invoke-static/range {v0 .. v5}, Lkotlinx/coroutines/channels/BufferedChannel;->access$updateCellReceive(Lkotlinx/coroutines/channels/BufferedChannel;Lkotlinx/coroutines/channels/ChannelSegment;IJLjava/lang/Object;)Ljava/lang/Object;
 
@@ -12169,28 +12565,28 @@
 
     move-result-object v6
 
-    if-ne p0, v6, :cond_96
+    if-ne p0, v6, :cond_9a
 
     .line 913
     instance-of p0, v5, Lkotlinx/coroutines/Waiter;
 
-    if-eqz p0, :cond_83
+    if-eqz p0, :cond_87
 
     check-cast v5, Lkotlinx/coroutines/Waiter;
 
-    goto :goto_84
+    goto :goto_88
 
-    :cond_83
+    :cond_87
     const/4 v5, 0x0
 
-    :goto_84
-    if-eqz v5, :cond_89
+    :goto_88
+    if-eqz v5, :cond_8d
 
     # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->prepareReceiverForSuspension(Lkotlinx/coroutines/Waiter;Lkotlinx/coroutines/channels/ChannelSegment;I)V
     invoke-static {v1, v5, v0, v2}, Lkotlinx/coroutines/channels/BufferedChannel;->access$prepareReceiverForSuspension(Lkotlinx/coroutines/channels/BufferedChannel;Lkotlinx/coroutines/Waiter;Lkotlinx/coroutines/channels/ChannelSegment;I)V
 
     .line 791
-    :cond_89
+    :cond_8d
     invoke-virtual {v1, v3, v4}, Lkotlinx/coroutines/channels/BufferedChannel;->waitExpandBufferCompletion$kotlinx_coroutines_core(J)V
 
     .line 792
@@ -12206,13 +12602,13 @@
     return-object p0
 
     .line 916
-    :cond_96
+    :cond_9a
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->FAILED:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getFAILED$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v2
 
-    if-ne p0, v2, :cond_a9
+    if-ne p0, v2, :cond_ad
 
     .line 923
     invoke-virtual {v1}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersCounter$kotlinx_coroutines_core()J
@@ -12221,23 +12617,23 @@
 
     cmp-long p0, v3, v6
 
-    if-gez p0, :cond_a7
+    if-gez p0, :cond_ab
 
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
-    :cond_a7
+    :cond_ab
     move-object p0, v1
 
-    goto :goto_3c
+    goto :goto_40
 
     .line 926
-    :cond_a9
+    :cond_ad
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->SUSPEND_NO_WAITER:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getSUSPEND_NO_WAITER$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v1
 
-    if-eq p0, v1, :cond_b9
+    if-eq p0, v1, :cond_bd
 
     .line 935
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
@@ -12252,7 +12648,7 @@
     return-object p0
 
     .line 929
-    :cond_b9
+    :cond_bd
     new-instance p0, Ljava/lang/IllegalStateException;
 
     .line 882
@@ -12273,7 +12669,9 @@
     .end annotation
 
     .line 188
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
@@ -12283,7 +12681,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_15
 
     sget-object p0, Lkotlinx/coroutines/channels/ChannelResult;->Companion:Lkotlinx/coroutines/channels/ChannelResult$Companion;
 
@@ -12294,15 +12692,15 @@
     return-object p0
 
     .line 197
-    :cond_13
+    :cond_15
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->INTERRUPTED_SEND:Lkotlinx/coroutines/internal/Symbol;
     invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$getINTERRUPTED_SEND$p()Lkotlinx/coroutines/internal/Symbol;
 
     move-result-object v6
 
     .line 244
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendSegment$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$FU$p()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendSegment$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     move-result-object v0
 
@@ -12314,10 +12712,10 @@
     check-cast v0, Lkotlinx/coroutines/channels/ChannelSegment;
 
     .line 274
-    :cond_21
-    :goto_21
-    # getter for: Lkotlinx/coroutines/channels/BufferedChannel;->sendersAndCloseStatus$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$FU$p()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    :cond_23
+    :goto_23
+    # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->access$getSendersAndCloseStatus$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v1
 
@@ -12355,7 +12753,7 @@
 
     cmp-long v8, v8, v2
 
-    if-eqz v8, :cond_5c
+    if-eqz v8, :cond_5e
 
     .line 288
     # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->findSegmentSend(JLkotlinx/coroutines/channels/ChannelSegment;)Lkotlinx/coroutines/channels/ChannelSegment;
@@ -12363,9 +12761,9 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_56
+    if-nez v2, :cond_58
 
-    if-eqz v7, :cond_21
+    if-eqz v7, :cond_23
 
     .line 209
     sget-object p1, Lkotlinx/coroutines/channels/ChannelResult;->Companion:Lkotlinx/coroutines/channels/ChannelResult$Companion;
@@ -12380,7 +12778,7 @@
 
     return-object p0
 
-    :cond_56
+    :cond_58
     move-object v0, v2
 
     move v2, v1
@@ -12391,9 +12789,9 @@
 
     move-object v3, p1
 
-    goto :goto_60
+    goto :goto_62
 
-    :cond_5c
+    :cond_5e
     move-object v3, p1
 
     move v2, v1
@@ -12403,7 +12801,7 @@
     move-object v0, p0
 
     .line 304
-    :goto_60
+    :goto_62
     # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->updateCellSend(Lkotlinx/coroutines/channels/ChannelSegment;ILjava/lang/Object;JLjava/lang/Object;Z)I
     invoke-static/range {v0 .. v7}, Lkotlinx/coroutines/channels/BufferedChannel;->access$updateCellSend(Lkotlinx/coroutines/channels/BufferedChannel;Lkotlinx/coroutines/channels/ChannelSegment;ILjava/lang/Object;JLjava/lang/Object;Z)I
 
@@ -12413,55 +12811,55 @@
 
     move-object v0, v1
 
-    if-eqz p0, :cond_cc
+    if-eqz p0, :cond_ce
 
     const/4 v1, 0x1
 
-    if-eq p0, v1, :cond_c3
+    if-eq p0, v1, :cond_c5
 
     const/4 v1, 0x2
 
-    if-eq p0, v1, :cond_9c
+    if-eq p0, v1, :cond_9e
 
     const/4 v1, 0x3
 
-    if-eq p0, v1, :cond_94
+    if-eq p0, v1, :cond_96
 
     const/4 v1, 0x4
 
-    if-eq p0, v1, :cond_7e
+    if-eq p0, v1, :cond_80
 
     const/4 v1, 0x5
 
-    if-eq p0, v1, :cond_78
+    if-eq p0, v1, :cond_7a
 
-    goto :goto_7b
+    goto :goto_7d
 
     .line 341
-    :cond_78
+    :cond_7a
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
-    :goto_7b
+    :goto_7d
     move-object p0, p1
 
     move-object p1, v3
 
-    goto :goto_21
+    goto :goto_23
 
     .line 334
-    :cond_7e
+    :cond_80
     invoke-virtual {p1}, Lkotlinx/coroutines/channels/BufferedChannel;->getReceiversCounter$kotlinx_coroutines_core()J
 
     move-result-wide v1
 
     cmp-long p0, v4, v1
 
-    if-gez p0, :cond_89
+    if-gez p0, :cond_8b
 
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
     .line 209
-    :cond_89
+    :cond_8b
     sget-object p0, Lkotlinx/coroutines/channels/ChannelResult;->Companion:Lkotlinx/coroutines/channels/ChannelResult$Companion;
 
     invoke-virtual {p1}, Lkotlinx/coroutines/channels/BufferedChannel;->getSendException()Ljava/lang/Throwable;
@@ -12475,7 +12873,7 @@
     return-object p0
 
     .line 347
-    :cond_94
+    :cond_96
     new-instance p0, Ljava/lang/IllegalStateException;
 
     .line 269
@@ -12485,8 +12883,8 @@
 
     throw p0
 
-    :cond_9c
-    if-eqz v7, :cond_ac
+    :cond_9e
+    if-eqz v7, :cond_ae
 
     .line 323
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
@@ -12505,26 +12903,26 @@
     return-object p0
 
     .line 326
-    :cond_ac
+    :cond_ae
     instance-of p0, v6, Lkotlinx/coroutines/Waiter;
 
-    if-eqz p0, :cond_b3
+    if-eqz p0, :cond_b5
 
     check-cast v6, Lkotlinx/coroutines/Waiter;
 
-    goto :goto_b4
+    goto :goto_b6
 
-    :cond_b3
+    :cond_b5
     const/4 v6, 0x0
 
-    :goto_b4
-    if-eqz v6, :cond_b9
+    :goto_b6
+    if-eqz v6, :cond_bb
 
     # invokes: Lkotlinx/coroutines/channels/BufferedChannel;->prepareSenderForSuspension(Lkotlinx/coroutines/Waiter;Lkotlinx/coroutines/channels/ChannelSegment;I)V
     invoke-static {p1, v6, v0, v2}, Lkotlinx/coroutines/channels/BufferedChannel;->access$prepareSenderForSuspension(Lkotlinx/coroutines/channels/BufferedChannel;Lkotlinx/coroutines/Waiter;Lkotlinx/coroutines/channels/ChannelSegment;I)V
 
     .line 205
-    :cond_b9
+    :cond_bb
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
 
     .line 206
@@ -12537,7 +12935,7 @@
     return-object p0
 
     .line 200
-    :cond_c3
+    :cond_c5
     sget-object p0, Lkotlinx/coroutines/channels/ChannelResult;->Companion:Lkotlinx/coroutines/channels/ChannelResult$Companion;
 
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -12549,7 +12947,7 @@
     return-object p0
 
     .line 310
-    :cond_cc
+    :cond_ce
     invoke-virtual {v0}, Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;->cleanPrev()V
 
     .line 200
@@ -12565,7 +12963,7 @@
 .end method
 
 .method public final waitExpandBufferCompletion$kotlinx_coroutines_core(J)V
-    .registers 19
+    .registers 21
 
     move-object/from16 v1, p0
 
@@ -12576,7 +12974,7 @@
 
     if-eqz v0, :cond_a
 
-    goto/16 :goto_82
+    goto/16 :goto_8c
 
     .line 1397
     :cond_a
@@ -12587,7 +12985,7 @@
 
     cmp-long v0, v2, p1
 
-    if-lez v0, :cond_98
+    if-lez v0, :cond_ac
 
     .line 1402
     # getter for: Lkotlinx/coroutines/channels/BufferedChannelKt;->EXPAND_BUFFER_COMPLETION_WAIT_ITERATIONS:I
@@ -12602,14 +13000,16 @@
     :goto_18
     const-wide v7, 0x3fffffffffffffffL    # 1.9999999999999998
 
-    if-ge v2, v0, :cond_3a
+    if-ge v2, v0, :cond_3c
 
     .line 1404
     invoke-direct {v1}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndCounter()J
 
     move-result-wide v3
 
-    sget-object v5, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCompletedExpandBuffersAndPauseFlag$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v5
 
     .line 1406
     invoke-virtual {v5, v1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
@@ -12620,7 +13020,7 @@
 
     cmp-long v5, v3, v7
 
-    if-nez v5, :cond_37
+    if-nez v5, :cond_39
 
     .line 1412
     invoke-direct {v1}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndCounter()J
@@ -12629,20 +13029,22 @@
 
     cmp-long v3, v3, v7
 
-    if-nez v3, :cond_37
+    if-nez v3, :cond_39
 
-    goto :goto_82
+    goto :goto_8c
 
-    :cond_37
+    :cond_39
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_18
 
-    .line 1402
-    :cond_3a
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    .line 1390
+    :cond_3c
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCompletedExpandBuffersAndPauseFlag$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    :goto_3c
+    move-result-object v0
+
+    :goto_40
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
@@ -12661,57 +13063,62 @@
 
     move-result v2
 
-    if-eqz v2, :cond_95
+    if-eqz v2, :cond_a9
 
     .line 1421
-    :goto_4d
+    :goto_51
     invoke-direct {v1}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndCounter()J
 
     move-result-wide v2
 
-    sget-object v0, Lkotlinx/coroutines/channels/BufferedChannel;->completedExpandBuffersAndPauseFlag$FU:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCompletedExpandBuffersAndPauseFlag$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    move-wide v4, v2
+    move-result-object v0
 
     .line 1424
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
-    move-result-wide v2
+    move-result-wide v4
 
-    and-long v10, v2, v7
+    and-long v10, v4, v7
 
     const-wide/high16 v12, 0x4000000000000000L    # 2.0
 
-    and-long/2addr v12, v2
+    and-long/2addr v12, v4
 
     const-wide/16 v14, 0x0
 
-    cmp-long v12, v12, v14
+    cmp-long v0, v12, v14
 
-    if-eqz v12, :cond_65
+    if-eqz v0, :cond_6a
 
-    move v12, v9
+    move v0, v9
 
-    goto :goto_66
+    goto :goto_6b
 
-    :cond_65
-    move v12, v6
+    :cond_6a
+    move v0, v6
 
-    :goto_66
-    cmp-long v13, v4, v10
+    :goto_6b
+    cmp-long v12, v2, v10
 
-    if-nez v13, :cond_86
+    if-nez v12, :cond_91
 
     .line 1430
     invoke-direct {v1}, Lkotlinx/coroutines/channels/BufferedChannel;->getBufferEndCounter()J
 
-    move-result-wide v13
+    move-result-wide v12
 
-    cmp-long v4, v4, v13
+    cmp-long v2, v2, v12
 
-    if-nez v4, :cond_86
+    if-nez v2, :cond_91
 
-    :goto_72
+    .line 1390
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCompletedExpandBuffersAndPauseFlag$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
+
+    :goto_7b
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
 
     move-result-wide v2
@@ -12728,42 +13135,57 @@
 
     move-result v2
 
-    if-eqz v2, :cond_83
+    move-object v1, v0
 
-    :goto_82
+    if-eqz v2, :cond_8d
+
+    :goto_8c
     return-void
 
-    :cond_83
+    :cond_8d
+    move-object v0, v1
+
     move-object/from16 v1, p0
 
-    goto :goto_72
+    goto :goto_7b
 
-    :cond_86
-    if-nez v12, :cond_92
+    :cond_91
+    if-nez v0, :cond_a6
+
+    .line 1440
+    invoke-static {}, Lkotlinx/coroutines/channels/BufferedChannel;->getCompletedExpandBuffersAndPauseFlag$volatile$FU()Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
+    move-result-object v0
 
     .line 1443
     # invokes: Lkotlinx/coroutines/channels/BufferedChannelKt;->constructEBCompletedAndPauseFlag(JZ)J
     invoke-static {v10, v11, v9}, Lkotlinx/coroutines/channels/BufferedChannelKt;->access$constructEBCompletedAndPauseFlag(JZ)J
 
-    move-result-wide v4
+    move-result-wide v1
+
+    move-wide/from16 v16, v4
+
+    move-wide v4, v1
+
+    move-wide/from16 v2, v16
 
     move-object/from16 v1, p0
 
     invoke-virtual/range {v0 .. v5}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->compareAndSet(Ljava/lang/Object;JJ)Z
 
-    goto :goto_4d
+    goto :goto_51
 
-    :cond_92
+    :cond_a6
     move-object/from16 v1, p0
 
-    goto :goto_4d
+    goto :goto_51
 
-    :cond_95
+    :cond_a9
     move-object/from16 v1, p0
 
-    goto :goto_3c
+    goto :goto_40
 
-    :cond_98
+    :cond_ac
     move-object/from16 v1, p0
 
     goto/16 :goto_a

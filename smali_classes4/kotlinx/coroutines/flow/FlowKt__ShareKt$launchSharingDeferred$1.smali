@@ -27,7 +27,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__ShareKt$launchSharingDeferred$1"
     f = "Share.kt"
     l = {
-        0x154
+        0x150
     }
     m = "invokeSuspend"
 .end annotation
@@ -168,7 +168,7 @@
 
     move-result-object v0
 
-    .line 337
+    .line 333
     iget v1, p0, Lkotlinx/coroutines/flow/FlowKt__ShareKt$launchSharingDeferred$1;->label:I
 
     const/4 v2, 0x1
@@ -205,13 +205,13 @@
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
-    .line 339
+    .line 335
     :try_start_20
     new-instance v1, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v1}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    .line 340
+    .line 336
     iget-object v3, p0, Lkotlinx/coroutines/flow/FlowKt__ShareKt$launchSharingDeferred$1;->$upstream:Lkotlinx/coroutines/flow/Flow;
 
     new-instance v4, Lkotlinx/coroutines/flow/FlowKt__ShareKt$launchSharingDeferred$1$1;
@@ -232,19 +232,19 @@
 
     return-object v0
 
-    .line 353
+    .line 349
     :cond_37
     :goto_37
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 349
+    .line 345
     :goto_3a
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__ShareKt$launchSharingDeferred$1;->$result:Lkotlinx/coroutines/CompletableDeferred;
 
     invoke-interface {p0, p1}, Lkotlinx/coroutines/CompletableDeferred;->completeExceptionally(Ljava/lang/Throwable;)Z
 
-    .line 351
+    .line 347
     throw p1
 .end method

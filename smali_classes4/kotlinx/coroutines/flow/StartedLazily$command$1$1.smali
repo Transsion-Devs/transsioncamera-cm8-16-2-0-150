@@ -113,7 +113,7 @@
 
     move-result-object v1
 
-    .line 155
+    .line 151
     iget v2, v0, Lkotlinx/coroutines/flow/StartedLazily$command$1$1$emit$1;->label:I
 
     const/4 v3, 0x1
@@ -140,17 +140,17 @@
 
     if-lez p1, :cond_4e
 
-    .line 156
+    .line 152
     iget-object p1, p0, Lkotlinx/coroutines/flow/StartedLazily$command$1$1;->$started:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iget-boolean p2, p1, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
     if-nez p2, :cond_4e
 
-    .line 157
+    .line 153
     iput-boolean v3, p1, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
-    .line 158
+    .line 154
     iget-object p0, p0, Lkotlinx/coroutines/flow/StartedLazily$command$1$1;->$$this$flow:Lkotlinx/coroutines/flow/FlowCollector;
 
     sget-object p1, Lkotlinx/coroutines/flow/SharingCommand;->START:Lkotlinx/coroutines/flow/SharingCommand;
@@ -165,7 +165,7 @@
 
     return-object v1
 
-    .line 160
+    .line 156
     :cond_4b
     :goto_4b
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -181,7 +181,7 @@
 .method public bridge synthetic emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .registers 3
 
-    .line 155
+    .line 151
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I

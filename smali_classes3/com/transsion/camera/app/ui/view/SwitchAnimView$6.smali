@@ -24,7 +24,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/view/SwitchAnimView;Landroid/animation/ValueAnimator;)V
     .registers 3
 
-    .line 515
+    .line 521
     iput-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$6;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$6;->val$blurAnimator:Landroid/animation/ValueAnimator;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 518
+    .line 524
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$6;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     invoke-static {p1}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$fgetmIsFadeBlurAnimReStart(Lcom/transsion/camera/app/ui/view/SwitchAnimView;)Z
@@ -48,14 +48,14 @@
 
     if-nez p1, :cond_17
 
-    .line 519
+    .line 525
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$6;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 520
+    .line 526
     invoke-static {}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -64,7 +64,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 522
+    .line 528
     :cond_17
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$6;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
@@ -78,14 +78,14 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 4
 
-    .line 527
+    .line 533
     iget-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$6;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$6;->val$blurAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 528
+    .line 534
     invoke-static {}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1

@@ -22,10 +22,10 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/SubDeviceControl;Ljava/lang/String;)V
     .registers 3
 
-    .line 1464
+    .line 1431
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
-    .line 1465
+    .line 1432
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/SubDeviceControl$State;-><init>(Lcom/transsion/camera/app/common/mode/SubDeviceControl;Ljava/lang/String;)V
 
     return-void
@@ -36,7 +36,7 @@
 .method changeParameter(Ljava/lang/String;)V
     .registers 2
 
-    .line 1510
+    .line 1477
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCamera(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/adapter/CameraProxy;
@@ -47,7 +47,7 @@
 
     return-void
 
-    .line 1513
+    .line 1480
     :cond_9
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -59,7 +59,7 @@
 
     move-result-object p1
 
-    .line 1514
+    .line 1481
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmSettingDeviceConfigurator(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceConfigurator;
@@ -74,7 +74,7 @@
 .method varargs changeParameterByKey([Ljava/lang/String;)V
     .registers 3
 
-    .line 1519
+    .line 1486
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCamera(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/adapter/CameraProxy;
@@ -85,7 +85,7 @@
 
     return-void
 
-    .line 1522
+    .line 1489
     :cond_9
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -97,7 +97,7 @@
 
     move-result-object v0
 
-    .line 1523
+    .line 1490
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmSettingDeviceConfigurator(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceConfigurator;
@@ -112,7 +112,7 @@
 .method previewError()V
     .registers 2
 
-    .line 1486
+    .line 1453
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmOpenedState(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl$State;
@@ -129,7 +129,7 @@
 .method previewStarted()V
     .registers 4
 
-    .line 1470
+    .line 1437
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmSettingDeviceConfigurator(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceConfigurator;
@@ -138,7 +138,7 @@
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceConfigurator;->onPreviewStarted()V
 
-    .line 1471
+    .line 1438
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmNotifyCallback(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;
@@ -147,7 +147,7 @@
 
     if-eqz v0, :cond_21
 
-    .line 1472
+    .line 1439
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmNotifyCallback(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;
@@ -164,7 +164,7 @@
 
     invoke-interface {v0, v2, v1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;->notifyStartPreview(ILjava/lang/String;)V
 
-    .line 1474
+    .line 1441
     :cond_21
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -182,7 +182,7 @@
 
     if-eqz v0, :cond_44
 
-    .line 1475
+    .line 1442
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCamera(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/adapter/CameraProxy;
@@ -201,7 +201,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/adapter/CameraProxy;->setActionSound(Lcom/transsion/camera/utils/sound/IActionSound;)V
 
-    .line 1477
+    .line 1444
     :cond_44
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -211,14 +211,14 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl$State;->enter()V
 
-    .line 1478
+    .line 1445
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isLowPlatform()Z
 
     move-result v0
 
     if-eqz v0, :cond_71
 
-    .line 1479
+    .line 1446
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetTAG(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -229,7 +229,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1480
+    .line 1447
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCamera(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/adapter/CameraProxy;
@@ -255,7 +255,7 @@
 .method stopPreview()V
     .registers 3
 
-    .line 1491
+    .line 1458
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCamera(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/adapter/CameraProxy;
@@ -264,7 +264,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 1492
+    .line 1459
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCamera(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/adapter/CameraProxy;
@@ -273,7 +273,7 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/adapter/CameraProxy;->stopPreview()V
 
-    .line 1494
+    .line 1461
     :cond_11
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -283,7 +283,7 @@
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceConfigurator;->onPreviewStopped()V
 
-    .line 1495
+    .line 1462
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmNotifyCallback(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;
@@ -292,7 +292,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 1496
+    .line 1463
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmNotifyCallback(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;
@@ -307,7 +307,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/mode/SubDeviceControl$NotifyDeviceStateCallback;->notifyStopPreview(Ljava/lang/String;)V
 
-    .line 1498
+    .line 1465
     :cond_31
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -323,7 +323,7 @@
 .method stopRepeating()V
     .registers 2
 
-    .line 1503
+    .line 1470
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCamera(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/adapter/CameraProxy;
@@ -332,7 +332,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 1504
+    .line 1471
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCamera(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/adapter/CameraProxy;
@@ -348,7 +348,7 @@
 .method updateAuxSurfaceModeSupport(Z)V
     .registers 3
 
-    .line 1528
+    .line 1495
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCamera(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/adapter/CameraProxy;
@@ -359,7 +359,7 @@
 
     return-void
 
-    .line 1531
+    .line 1498
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
@@ -375,7 +375,7 @@
 .method updateSlaveSurfaceModeSupported(Z)V
     .registers 3
 
-    .line 1536
+    .line 1503
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 
     invoke-static {v0}, Lcom/transsion/camera/app/common/mode/SubDeviceControl;->-$$Nest$fgetmCamera(Lcom/transsion/camera/app/common/mode/SubDeviceControl;)Lcom/transsion/camera/adapter/CameraProxy;
@@ -386,7 +386,7 @@
 
     return-void
 
-    .line 1539
+    .line 1506
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/SubDeviceControl$PreviewingState;->this$0:Lcom/transsion/camera/app/common/mode/SubDeviceControl;
 

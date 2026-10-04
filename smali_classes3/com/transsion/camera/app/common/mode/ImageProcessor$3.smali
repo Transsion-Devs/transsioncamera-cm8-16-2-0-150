@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/mode/ImageProcessor;)V
     .registers 2
 
-    .line 498
+    .line 493
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor$3;->this$0:Lcom/transsion/camera/app/common/mode/ImageProcessor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPictureTaken(Lcom/transsion/camera/app/common/mode/PictureInfo;)V
     .registers 5
 
-    .line 501
+    .line 496
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor$3;->this$0:Lcom/transsion/camera/app/common/mode/ImageProcessor;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -61,7 +61,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 502
+    .line 497
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/mode/PictureInfo;->getPicCountRemaining()I
 
     move-result v2
@@ -72,17 +72,17 @@
 
     move-result-object v1
 
-    .line 501
+    .line 496
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 503
+    .line 498
     invoke-static {}, Lcom/transsion/camera/manager/ScreenRelay;->getInstance()Lcom/transsion/camera/manager/ScreenRelay;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/transsion/camera/manager/ScreenRelay;->imageAvailable()V
 
-    .line 504
+    .line 499
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor$3;->this$0:Lcom/transsion/camera/app/common/mode/ImageProcessor;
 
     new-instance v1, Lcom/transsion/camera/app/common/mode/PictureInfo$Builder;
@@ -109,7 +109,7 @@
 .method public onPictureTakenFail(J)V
     .registers 5
 
-    .line 509
+    .line 504
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor$3;->this$0:Lcom/transsion/camera/app/common/mode/ImageProcessor;
 
     iget-object v0, v0, Lcom/transsion/camera/app/common/mode/ImageProcessor;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -118,14 +118,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 510
+    .line 505
     invoke-static {}, Lcom/transsion/camera/manager/ScreenRelay;->getInstance()Lcom/transsion/camera/manager/ScreenRelay;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/transsion/camera/manager/ScreenRelay;->captureFail()V
 
-    .line 511
+    .line 506
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/ImageProcessor$3;->this$0:Lcom/transsion/camera/app/common/mode/ImageProcessor;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/ImageProcessor;->onPictureDataFail(J)V

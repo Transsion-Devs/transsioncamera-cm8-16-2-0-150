@@ -50,7 +50,7 @@
 .method public getFeatureName()Ljava/lang/String;
     .registers 1
 
-    .line 39
+    .line 44
     const-class p0, Lcom/transsion/camera/feature/setting/videoeffect/VideoEffectStyleEntry;
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -70,8 +70,23 @@
         }
     .end annotation
 
-    .line 34
+    .line 39
     const-class p0, Lcom/transsion/camera/app/common/setting/ICameraSetting;
 
     return-object p0
+.end method
+
+.method public isSupport()Z
+    .registers 2
+
+    .line 34
+    iget-object p0, p0, Lcom/transsion/camera/app/common/provider/FeatureEntryBase;->mResources:Landroid/content/res/Resources;
+
+    sget v0, Lcom/transsion/camera/app/common/R$bool;->video_effect_support:I
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p0
+
+    return p0
 .end method

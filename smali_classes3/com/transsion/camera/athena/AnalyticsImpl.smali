@@ -185,7 +185,7 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_2e
 
     .line 203
     new-instance v0, Lorg/json/JSONObject;
@@ -193,28 +193,28 @@
     invoke-direct {v0, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     .line 204
-    const-string p1, "thermal"
+    const-string/jumbo p1, "thermal"
 
     invoke-virtual {v0, p1}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
 
     move-result p1
 
     div-int/lit8 p1, p1, 0x64
-    :try_end_2a
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_2a} :catch_2b
+    :try_end_2b
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_2b} :catch_2c
 
     return p1
 
-    :catch_2b
+    :catch_2c
     move-exception p1
 
-    goto :goto_2e
+    goto :goto_2f
 
-    :cond_2d
+    :cond_2e
     return p0
 
     .line 207
-    :goto_2e
+    :goto_2f
     sget-object v0, Lcom/transsion/camera/athena/AnalyticsImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -367,12 +367,12 @@
 
     const/16 v19, -0x1
 
-    sparse-switch v16, :sswitch_data_348
+    sparse-switch v16, :sswitch_data_34a
 
     :goto_7e
     move-object/from16 v2, v18
 
-    goto/16 :goto_1c2
+    goto/16 :goto_1c3
 
     :sswitch_82
     const-string v2, "facebeauty_time"
@@ -388,7 +388,7 @@
     :cond_8b
     const/16 v1, 0x19
 
-    goto/16 :goto_171
+    goto/16 :goto_172
 
     :sswitch_8f
     const-string v2, "camera_time"
@@ -404,7 +404,7 @@
     :cond_98
     const/16 v1, 0x18
 
-    goto/16 :goto_171
+    goto/16 :goto_172
 
     :sswitch_9c
     const-string v2, "fun_download"
@@ -420,7 +420,7 @@
     :cond_a5
     const/16 v1, 0x17
 
-    goto/16 :goto_171
+    goto/16 :goto_172
 
     :sswitch_a9
     const-string v2, "more_mode"
@@ -436,7 +436,7 @@
     :cond_b2
     const/16 v1, 0x16
 
-    goto/16 :goto_171
+    goto/16 :goto_172
 
     :sswitch_b6
     const-string v2, "dv_mode_enter"
@@ -452,7 +452,7 @@
     :cond_bf
     const/16 v1, 0x15
 
-    goto/16 :goto_171
+    goto/16 :goto_172
 
     :sswitch_c3
     const-string v2, "serialization_feature"
@@ -468,280 +468,280 @@
     :cond_cc
     const/16 v1, 0x14
 
-    goto/16 :goto_171
+    goto/16 :goto_172
 
     :sswitch_d0
-    const-string v2, "thermal_warning"
+    const-string/jumbo v2, "thermal_warning"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_d9
+    if-nez v1, :cond_da
 
     goto :goto_7e
 
-    :cond_d9
+    :cond_da
     const/16 v1, 0x13
 
-    goto/16 :goto_171
+    goto/16 :goto_172
 
-    :sswitch_dd
+    :sswitch_de
     const-string v2, "ar2_download"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_e6
+    if-nez v1, :cond_e7
 
     goto :goto_7e
 
-    :cond_e6
+    :cond_e7
     const/16 v1, 0x12
 
-    goto/16 :goto_171
+    goto/16 :goto_172
 
-    :sswitch_ea
+    :sswitch_eb
     const-string v2, "fun_record"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_f3
+    if-nez v1, :cond_f4
 
     goto :goto_7e
 
-    :cond_f3
+    :cond_f4
     const/16 v1, 0x11
 
-    goto/16 :goto_171
+    goto/16 :goto_172
 
-    :sswitch_f7
+    :sswitch_f8
     const-string v2, "capture"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_101
+    if-nez v1, :cond_102
 
     goto/16 :goto_7e
 
-    :cond_101
+    :cond_102
     const/16 v1, 0x10
 
-    goto/16 :goto_171
+    goto/16 :goto_172
 
-    :sswitch_105
+    :sswitch_106
     invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_10d
+    if-nez v1, :cond_10e
 
     goto/16 :goto_7e
 
-    :cond_10d
+    :cond_10e
     const/16 v1, 0xf
 
-    goto/16 :goto_171
+    goto/16 :goto_172
 
-    :sswitch_111
+    :sswitch_112
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_119
+    if-nez v1, :cond_11a
 
     goto/16 :goto_7e
 
-    :cond_119
+    :cond_11a
     const/16 v1, 0xe
 
-    goto :goto_171
+    goto :goto_172
 
-    :sswitch_11c
+    :sswitch_11d
     invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_124
+    if-nez v1, :cond_125
 
     goto/16 :goto_7e
 
-    :cond_124
+    :cond_125
     const/16 v1, 0xd
 
-    goto :goto_171
+    goto :goto_172
 
-    :sswitch_127
+    :sswitch_128
     invoke-virtual {v1, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_12f
+    if-nez v1, :cond_130
 
     goto/16 :goto_7e
 
-    :cond_12f
+    :cond_130
     const/16 v1, 0xc
 
-    goto :goto_171
+    goto :goto_172
 
-    :sswitch_132
+    :sswitch_133
     invoke-virtual {v1, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_13a
+    if-nez v1, :cond_13b
 
     goto/16 :goto_7e
 
-    :cond_13a
+    :cond_13b
     const/16 v1, 0xb
 
-    goto :goto_171
+    goto :goto_172
 
-    :sswitch_13d
+    :sswitch_13e
     invoke-virtual {v1, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_145
+    if-nez v1, :cond_146
 
     goto/16 :goto_7e
 
-    :cond_145
+    :cond_146
     const/16 v1, 0xa
 
-    goto :goto_171
+    goto :goto_172
 
-    :sswitch_148
+    :sswitch_149
     invoke-virtual {v1, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_150
+    if-nez v1, :cond_151
 
     goto/16 :goto_7e
 
-    :cond_150
+    :cond_151
     const/16 v1, 0x9
 
-    goto :goto_171
+    goto :goto_172
 
-    :sswitch_153
+    :sswitch_154
     invoke-virtual {v1, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_15b
+    if-nez v1, :cond_15c
 
     goto/16 :goto_7e
 
-    :cond_15b
+    :cond_15c
     const/16 v1, 0x8
 
-    goto :goto_171
+    goto :goto_172
 
-    :sswitch_15e
+    :sswitch_15f
     invoke-virtual {v1, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_166
+    if-nez v1, :cond_167
 
     goto/16 :goto_7e
 
-    :cond_166
+    :cond_167
     const/4 v1, 0x7
 
-    goto :goto_171
+    goto :goto_172
 
-    :sswitch_168
+    :sswitch_169
     invoke-virtual {v1, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_170
+    if-nez v1, :cond_171
 
     goto/16 :goto_7e
 
-    :cond_170
+    :cond_171
     const/4 v1, 0x6
 
-    :goto_171
+    :goto_172
     move/from16 v19, v1
 
     goto/16 :goto_7e
 
-    :sswitch_175
+    :sswitch_176
     invoke-virtual {v1, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_17d
+    if-nez v1, :cond_17e
 
     goto/16 :goto_7e
 
-    :cond_17d
+    :cond_17e
     move-object/from16 v2, v18
 
     const/16 v19, 0x5
 
-    goto :goto_1c2
+    goto :goto_1c3
 
-    :sswitch_182
+    :sswitch_183
     invoke-virtual {v1, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_18a
+    if-nez v1, :cond_18b
 
     goto/16 :goto_7e
 
-    :cond_18a
+    :cond_18b
     move-object/from16 v2, v18
 
     const/16 v19, 0x4
 
-    goto :goto_1c2
+    goto :goto_1c3
 
-    :sswitch_18f
+    :sswitch_190
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_197
+    if-nez v1, :cond_198
 
     goto/16 :goto_7e
 
-    :cond_197
+    :cond_198
     move-object/from16 v2, v18
 
     const/16 v19, 0x3
 
-    goto :goto_1c2
+    goto :goto_1c3
 
-    :sswitch_19c
+    :sswitch_19d
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_1a4
+    if-nez v1, :cond_1a5
 
     goto/16 :goto_7e
 
-    :cond_1a4
+    :cond_1a5
     move-object/from16 v2, v18
 
     const/16 v19, 0x2
 
-    goto :goto_1c2
+    goto :goto_1c3
 
-    :sswitch_1a9
+    :sswitch_1aa
     move-object/from16 v2, v17
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -750,35 +750,35 @@
 
     move-object/from16 v2, v18
 
-    if-nez v1, :cond_1b4
+    if-nez v1, :cond_1b5
 
-    goto :goto_1c2
+    goto :goto_1c3
 
-    :cond_1b4
+    :cond_1b5
     const/16 v19, 0x1
 
-    goto :goto_1c2
+    goto :goto_1c3
 
-    :sswitch_1b7
+    :sswitch_1b8
     move-object/from16 v2, v18
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_1c0
+    if-nez v1, :cond_1c1
 
-    goto :goto_1c2
+    goto :goto_1c3
 
-    :cond_1c0
+    :cond_1c1
     const/16 v19, 0x0
 
-    :goto_1c2
-    packed-switch v19, :pswitch_data_3b2
+    :goto_1c3
+    packed-switch v19, :pswitch_data_3b4
 
     return-void
 
-    :pswitch_1c6
+    :pswitch_1c7
     const v0, 0xa6466d
 
     .line 125
@@ -792,7 +792,7 @@
 
     return-void
 
-    :pswitch_1d2
+    :pswitch_1d3
     move-object/from16 v2, p2
 
     const/4 v3, 0x2
@@ -806,7 +806,7 @@
 
     return-void
 
-    :pswitch_1de
+    :pswitch_1df
     move-object/from16 v2, p2
 
     const/4 v3, 0x2
@@ -820,7 +820,7 @@
 
     return-void
 
-    :pswitch_1ec
+    :pswitch_1ed
     move-object/from16 v2, p2
 
     const/4 v3, 0x2
@@ -834,7 +834,7 @@
 
     return-void
 
-    :pswitch_1fa
+    :pswitch_1fb
     move-object/from16 v2, p2
 
     const/4 v3, 0x2
@@ -848,7 +848,7 @@
 
     return-void
 
-    :pswitch_208
+    :pswitch_209
     move-object/from16 v2, p2
 
     const/4 v3, 0x2
@@ -862,7 +862,7 @@
 
     return-void
 
-    :pswitch_216
+    :pswitch_217
     move-object/from16 v2, p2
 
     const/4 v3, 0x2
@@ -936,7 +936,7 @@
     const-wide v0, 0x195e85a818L
 
     .line 155
-    const-string v3, "thermal_warning"
+    const-string/jumbo v3, "thermal_warning"
 
     const/4 v5, 0x2
 
@@ -944,7 +944,7 @@
 
     return-void
 
-    :pswitch_262
+    :pswitch_264
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -958,7 +958,7 @@
 
     return-void
 
-    :pswitch_270
+    :pswitch_272
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -972,7 +972,7 @@
 
     return-void
 
-    :pswitch_27e
+    :pswitch_280
     move-object/from16 v2, p2
 
     const-wide v0, 0x195e85a811L
@@ -986,7 +986,7 @@
 
     return-void
 
-    :pswitch_28c
+    :pswitch_28e
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -998,7 +998,7 @@
 
     return-void
 
-    :pswitch_298
+    :pswitch_29a
     move-object/from16 v2, p2
 
     const/4 v4, 0x3
@@ -1010,7 +1010,7 @@
 
     return-void
 
-    :pswitch_2a4
+    :pswitch_2a6
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -1022,7 +1022,7 @@
 
     return-void
 
-    :pswitch_2b0
+    :pswitch_2b2
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -1034,7 +1034,7 @@
 
     return-void
 
-    :pswitch_2bc
+    :pswitch_2be
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -1046,7 +1046,7 @@
 
     return-void
 
-    :pswitch_2c8
+    :pswitch_2ca
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -1058,7 +1058,7 @@
 
     return-void
 
-    :pswitch_2d2
+    :pswitch_2d4
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -1070,7 +1070,7 @@
 
     return-void
 
-    :pswitch_2dc
+    :pswitch_2de
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -1082,7 +1082,7 @@
 
     return-void
 
-    :pswitch_2e8
+    :pswitch_2ea
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -1094,7 +1094,7 @@
 
     return-void
 
-    :pswitch_2f4
+    :pswitch_2f6
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -1106,7 +1106,7 @@
 
     return-void
 
-    :pswitch_300
+    :pswitch_302
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -1118,7 +1118,7 @@
 
     return-void
 
-    :pswitch_30a
+    :pswitch_30c
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -1130,7 +1130,7 @@
 
     return-void
 
-    :pswitch_316
+    :pswitch_318
     move-object/from16 v2, p2
 
     const/4 v5, 0x2
@@ -1142,7 +1142,7 @@
 
     return-void
 
-    :pswitch_322
+    :pswitch_324
     move-object/from16 v2, p2
 
     const-wide v3, 0x195e94ea43L
@@ -1154,7 +1154,7 @@
 
     return-void
 
-    :pswitch_32e
+    :pswitch_330
     move-object/from16 v2, p2
 
     const/4 v1, 0x3
@@ -1168,7 +1168,7 @@
 
     return-void
 
-    :pswitch_33c
+    :pswitch_33e
     move-object/from16 v0, p2
 
     const/4 v5, 0x2
@@ -1180,27 +1180,27 @@
 
     return-void
 
-    :sswitch_data_348
+    :sswitch_data_34a
     .sparse-switch
-        -0x79c99d08 -> :sswitch_1b7
-        -0x76bbb26c -> :sswitch_1a9
-        -0x7413ec21 -> :sswitch_19c
-        -0x424ae70a -> :sswitch_18f
-        -0x3bbecae4 -> :sswitch_182
-        -0x350b54cc -> :sswitch_175
-        -0x318067b9 -> :sswitch_168
-        -0x2aed2e41 -> :sswitch_15e
-        -0x29c6c8d8 -> :sswitch_153
-        0x178ff -> :sswitch_148
-        0x1bc66 -> :sswitch_13d
-        0x273988 -> :sswitch_132
-        0x5a5c588 -> :sswitch_127
-        0x6343f30 -> :sswitch_11c
-        0x6b0147b -> :sswitch_111
-        0x105c429d -> :sswitch_105
-        0x20efc746 -> :sswitch_f7
-        0x25017f11 -> :sswitch_ea
-        0x48ff54e6 -> :sswitch_dd
+        -0x79c99d08 -> :sswitch_1b8
+        -0x76bbb26c -> :sswitch_1aa
+        -0x7413ec21 -> :sswitch_19d
+        -0x424ae70a -> :sswitch_190
+        -0x3bbecae4 -> :sswitch_183
+        -0x350b54cc -> :sswitch_176
+        -0x318067b9 -> :sswitch_169
+        -0x2aed2e41 -> :sswitch_15f
+        -0x29c6c8d8 -> :sswitch_154
+        0x178ff -> :sswitch_149
+        0x1bc66 -> :sswitch_13e
+        0x273988 -> :sswitch_133
+        0x5a5c588 -> :sswitch_128
+        0x6343f30 -> :sswitch_11d
+        0x6b0147b -> :sswitch_112
+        0x105c429d -> :sswitch_106
+        0x20efc746 -> :sswitch_f8
+        0x25017f11 -> :sswitch_eb
+        0x48ff54e6 -> :sswitch_de
         0x51fb66f4 -> :sswitch_d0
         0x5b401da7 -> :sswitch_c3
         0x5f8ab709 -> :sswitch_b6
@@ -1210,34 +1210,34 @@
         0x7cd36633 -> :sswitch_82
     .end sparse-switch
 
-    :pswitch_data_3b2
+    :pswitch_data_3b4
     .packed-switch 0x0
-        :pswitch_33c
-        :pswitch_32e
-        :pswitch_322
-        :pswitch_316
-        :pswitch_30a
-        :pswitch_300
-        :pswitch_2f4
-        :pswitch_2e8
-        :pswitch_2dc
-        :pswitch_2d2
-        :pswitch_2c8
-        :pswitch_2bc
-        :pswitch_2b0
-        :pswitch_2a4
-        :pswitch_298
-        :pswitch_28c
-        :pswitch_27e
-        :pswitch_270
-        :pswitch_262
-        :pswitch_216
-        :pswitch_208
-        :pswitch_1fa
-        :pswitch_1ec
-        :pswitch_1de
-        :pswitch_1d2
-        :pswitch_1c6
+        :pswitch_33e
+        :pswitch_330
+        :pswitch_324
+        :pswitch_318
+        :pswitch_30c
+        :pswitch_302
+        :pswitch_2f6
+        :pswitch_2ea
+        :pswitch_2de
+        :pswitch_2d4
+        :pswitch_2ca
+        :pswitch_2be
+        :pswitch_2b2
+        :pswitch_2a6
+        :pswitch_29a
+        :pswitch_28e
+        :pswitch_280
+        :pswitch_272
+        :pswitch_264
+        :pswitch_217
+        :pswitch_209
+        :pswitch_1fb
+        :pswitch_1ed
+        :pswitch_1df
+        :pswitch_1d3
+        :pswitch_1c7
     .end packed-switch
 .end method
 

@@ -15,11 +15,11 @@
 
 
 # static fields
-.field private static final _disposer$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final synthetic _disposer$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
 
 # instance fields
-.field private volatile _disposer:Ljava/lang/Object;
+.field private volatile synthetic _disposer$volatile:Ljava/lang/Object;
 
 .field private final continuation:Lkotlinx/coroutines/CancellableContinuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -49,7 +49,7 @@
 
     const-class v0, Ljava/lang/Object;
 
-    const-string v1, "_disposer"
+    const-string v1, "_disposer$volatile"
 
     const-class v2, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;
 
@@ -57,7 +57,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->_disposer$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sput-object v0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->_disposer$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     return-void
 .end method
@@ -74,12 +74,36 @@
         }
     .end annotation
 
-    .line 103
+    .line 95
     iput-object p1, p0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->this$0:Lkotlinx/coroutines/AwaitAll;
 
     invoke-direct {p0}, Lkotlinx/coroutines/JobNode;-><init>()V
 
     iput-object p2, p0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->continuation:Lkotlinx/coroutines/CancellableContinuation;
+
+    return-void
+.end method
+
+.method private final synthetic get_disposer$volatile()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->_disposer$volatile:Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method private static final synthetic get_disposer$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    .registers 1
+
+    sget-object v0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->_disposer$volatile$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    return-object v0
+.end method
+
+.method private final synthetic set_disposer$volatile(Ljava/lang/Object;)V
+    .registers 2
+
+    iput-object p1, p0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->_disposer$volatile:Ljava/lang/Object;
 
     return-void
 .end method
@@ -96,9 +120,11 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->_disposer$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->get_disposer$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 108
+    move-result-object v0
+
+    .line 100
     invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -111,7 +137,7 @@
 .method public final getHandle()Lkotlinx/coroutines/DisposableHandle;
     .registers 1
 
-    .line 104
+    .line 96
     iget-object p0, p0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->handle:Lkotlinx/coroutines/DisposableHandle;
 
     if-eqz p0, :cond_5
@@ -131,7 +157,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 103
+    .line 95
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->invoke(Ljava/lang/Throwable;)V
@@ -146,7 +172,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 113
+    .line 105
     iget-object v0, p0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->continuation:Lkotlinx/coroutines/CancellableContinuation;
 
     invoke-interface {v0, p1}, Lkotlinx/coroutines/CancellableContinuation;->tryResumeWithException(Ljava/lang/Throwable;)Ljava/lang/Object;
@@ -155,12 +181,12 @@
 
     if-eqz p1, :cond_4a
 
-    .line 115
+    .line 107
     iget-object v0, p0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->continuation:Lkotlinx/coroutines/CancellableContinuation;
 
     invoke-interface {v0, p1}, Lkotlinx/coroutines/CancellableContinuation;->completeResume(Ljava/lang/Object;)V
 
-    .line 118
+    .line 110
     invoke-virtual {p0}, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->getDisposer()Lkotlinx/coroutines/AwaitAll$DisposeHandlersOnCancel;
 
     move-result-object p0
@@ -172,12 +198,12 @@
     return-void
 
     :cond_19
-    # getter for: Lkotlinx/coroutines/AwaitAll;->notCompletedCount$FU:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-    invoke-static {}, Lkotlinx/coroutines/AwaitAll;->access$getNotCompletedCount$FU$p()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    # invokes: Lkotlinx/coroutines/AwaitAll;->getNotCompletedCount$volatile$FU()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/AwaitAll;->access$getNotCompletedCount$volatile$FU()Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     move-result-object p1
 
-    .line 120
+    .line 112
     iget-object v0, p0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->this$0:Lkotlinx/coroutines/AwaitAll;
 
     invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->decrementAndGet(Ljava/lang/Object;)I
@@ -186,7 +212,7 @@
 
     if-nez p1, :cond_4a
 
-    .line 121
+    .line 113
     iget-object p1, p0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->continuation:Lkotlinx/coroutines/CancellableContinuation;
 
     iget-object p0, p0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->this$0:Lkotlinx/coroutines/AwaitAll;
@@ -196,14 +222,14 @@
 
     move-result-object p0
 
-    .line 11335
+    .line 120
     new-instance v0, Ljava/util/ArrayList;
 
     array-length v1, p0
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 11670
+    .line 121
     array-length v1, p0
 
     const/4 v2, 0x0
@@ -213,19 +239,19 @@
 
     aget-object v3, p0, v2
 
-    .line 121
+    .line 113
     invoke-interface {v3}, Lkotlinx/coroutines/Deferred;->getCompleted()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 11671
+    .line 122
     invoke-interface {v0, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_35
 
-    .line 121
+    .line 113
     :cond_43
     invoke-static {v0}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -247,9 +273,11 @@
         }
     .end annotation
 
-    sget-object v0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->_disposer$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-static {}, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->get_disposer$volatile$FU()Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    .line 109
+    move-result-object v0
+
+    .line 101
     invoke-virtual {v0, p0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
@@ -258,7 +286,7 @@
 .method public final setHandle(Lkotlinx/coroutines/DisposableHandle;)V
     .registers 2
 
-    .line 104
+    .line 96
     iput-object p1, p0, Lkotlinx/coroutines/AwaitAll$AwaitAllNode;->handle:Lkotlinx/coroutines/DisposableHandle;
 
     return-void

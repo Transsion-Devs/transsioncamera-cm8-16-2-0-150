@@ -1353,17 +1353,6 @@
     return-void
 .end method
 
-.method public bridge synthetic updateOfflineConfig(Ljava/util/List;)I
-    .registers 2
-
-    .line 29
-    invoke-super {p0, p1}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->updateOfflineConfig(Ljava/util/List;)I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public bridge synthetic updateQcomPicSurface(Lcom/transsion/camera/adapter/IBGSurface;)V
     .registers 2
 

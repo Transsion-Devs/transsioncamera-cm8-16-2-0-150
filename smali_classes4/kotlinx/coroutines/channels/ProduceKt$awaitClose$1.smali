@@ -17,7 +17,7 @@
     c = "kotlinx.coroutines.channels.ProduceKt"
     f = "Produce.kt"
     l = {
-        0x99
+        0x96
     }
     m = "awaitClose"
 .end annotation

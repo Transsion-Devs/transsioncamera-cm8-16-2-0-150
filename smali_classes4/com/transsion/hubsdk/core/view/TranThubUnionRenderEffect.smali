@@ -33,7 +33,7 @@
 .method private getTranUnionRenderEffectImpl()Lcom/transsion/hubsdk/view/TranUnionRenderEffect;
     .registers 1
 
-    .line 220
+    .line 235
     iget-object p0, p0, Lcom/transsion/hubsdk/core/view/TranThubUnionRenderEffect;->mTranUnionRenderEffect:Lcom/transsion/hubsdk/view/TranUnionRenderEffect;
 
     return-object p0
@@ -530,11 +530,50 @@
     return-void
 .end method
 
+.method public setCustomBlender(Ljava/lang/Object;)V
+    .registers 2
+
+    .line 231
+    invoke-direct {p0}, Lcom/transsion/hubsdk/core/view/TranThubUnionRenderEffect;->getTranUnionRenderEffectImpl()Lcom/transsion/hubsdk/view/TranUnionRenderEffect;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1}, Lcom/transsion/hubsdk/view/TranUnionRenderEffect;->setCustomBlender(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public setOffscreenRenderingOptimization(Z)V
+    .registers 2
+
+    .line 226
+    invoke-direct {p0}, Lcom/transsion/hubsdk/core/view/TranThubUnionRenderEffect;->getTranUnionRenderEffectImpl()Lcom/transsion/hubsdk/view/TranUnionRenderEffect;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1}, Lcom/transsion/hubsdk/view/TranUnionRenderEffect;->setOffscreenRenderingOptimization(Z)V
+
+    return-void
+.end method
+
 .method public setRealObject(Lcom/transsion/hubsdk/view/TranUnionRenderEffect;)V
     .registers 2
 
     .line 31
     iput-object p1, p0, Lcom/transsion/hubsdk/core/view/TranThubUnionRenderEffect;->mTranUnionRenderEffect:Lcom/transsion/hubsdk/view/TranUnionRenderEffect;
+
+    return-void
+.end method
+
+.method public setRequestWindowType(I)V
+    .registers 2
+
+    .line 221
+    invoke-direct {p0}, Lcom/transsion/hubsdk/core/view/TranThubUnionRenderEffect;->getTranUnionRenderEffectImpl()Lcom/transsion/hubsdk/view/TranUnionRenderEffect;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1}, Lcom/transsion/hubsdk/view/TranUnionRenderEffect;->setRequestWindowType(I)V
 
     return-void
 .end method

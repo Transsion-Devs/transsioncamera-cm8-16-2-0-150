@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;)V
     .registers 3
 
-    .line 5756
+    .line 5622
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$TopBarUIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
-    .line 5757
+    .line 5623
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;-><init>(Lcom/transsion/camera/app/ui/BaseAppUI;Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;)V
 
     return-void
@@ -36,17 +36,17 @@
 .method public process()V
     .registers 2
 
-    .line 5762
+    .line 5628
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$TopBarUIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$mdoInflateTopBarUI(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
-    .line 5763
+    .line 5629
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$TopBarUIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$mdoUpdateTopBarSettingUIList(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
-    .line 5764
+    .line 5630
     invoke-super {p0}, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->process()V
 
     return-void

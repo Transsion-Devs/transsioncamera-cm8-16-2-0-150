@@ -13,7 +13,7 @@
 
     const/16 v0, 0xa
 
-    .line 57
+    .line 72
     invoke-static {p0, v0}, Lkotlin/text/StringsKt__StringNumberConversionsKt;->toIntOrNull(Ljava/lang/String;I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -28,10 +28,10 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 67
+    .line 82
     invoke-static {p1}, Lkotlin/text/CharsKt__CharJVMKt;->checkRadix(I)I
 
-    .line 69
+    .line 84
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -45,14 +45,14 @@
     :cond_10
     const/4 v2, 0x0
 
-    .line 76
+    .line 91
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
 
     const/16 v4, 0x30
 
-    .line 77
+    .line 92
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
 
     move-result v4
@@ -68,27 +68,27 @@
     return-object v1
 
     :cond_24
-    const/16 v6, 0x2d
+    const/16 v6, 0x2b
 
-    if-ne v3, v6, :cond_2c
+    if-eq v3, v6, :cond_31
 
+    const/16 v5, 0x2d
+
+    if-eq v3, v5, :cond_2d
+
+    return-object v1
+
+    :cond_2d
     const/high16 v5, -0x80000000
 
     move v3, v4
 
     goto :goto_35
 
-    :cond_2c
-    const/16 v6, 0x2b
-
-    if-ne v3, v6, :cond_32
-
+    :cond_31
     move v3, v2
 
     goto :goto_35
-
-    :cond_32
-    return-object v1
 
     :cond_33
     move v3, v2
@@ -103,7 +103,7 @@
     :goto_39
     if-ge v4, v0, :cond_59
 
-    .line 102
+    .line 117
     invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v8
@@ -121,7 +121,7 @@
 
     if-ne v7, v6, :cond_4e
 
-    .line 107
+    .line 122
     div-int v7, v5, p1
 
     if-ge v2, v7, :cond_4f
@@ -148,7 +148,7 @@
     :cond_59
     if-eqz v3, :cond_60
 
-    .line 124
+    .line 139
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -174,7 +174,7 @@
 
     const/16 v0, 0xa
 
-    .line 132
+    .line 152
     invoke-static {p0, v0}, Lkotlin/text/StringsKt__StringNumberConversionsKt;->toLongOrNull(Ljava/lang/String;I)Ljava/lang/Long;
 
     move-result-object p0
@@ -193,10 +193,10 @@
 
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 142
+    .line 162
     invoke-static {v1}, Lkotlin/text/CharsKt__CharJVMKt;->checkRadix(I)I
 
-    .line 144
+    .line 164
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -210,14 +210,14 @@
     :cond_14
     const/4 v4, 0x0
 
-    .line 151
+    .line 171
     invoke-virtual {v0, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v5
 
     const/16 v6, 0x30
 
-    .line 152
+    .line 172
     invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
 
     move-result v6
@@ -233,21 +233,24 @@
     return-object v3
 
     :cond_2a
-    const/16 v9, 0x2d
+    const/16 v9, 0x2b
 
-    if-ne v5, v9, :cond_32
+    if-eq v5, v9, :cond_37
 
+    const/16 v4, 0x2d
+
+    if-eq v5, v4, :cond_33
+
+    return-object v3
+
+    :cond_33
     const-wide/high16 v7, -0x8000000000000000L
 
     move v4, v6
 
     goto :goto_3e
 
-    :cond_32
-    const/16 v9, 0x2b
-
-    if-ne v5, v9, :cond_3c
-
+    :cond_37
     move/from16 v19, v6
 
     move v6, v4
@@ -255,9 +258,6 @@
     move/from16 v4, v19
 
     goto :goto_3e
-
-    :cond_3c
-    return-object v3
 
     :cond_3d
     move v6, v4
@@ -272,7 +272,7 @@
     :goto_46
     if-ge v4, v2, :cond_77
 
-    .line 177
+    .line 197
     invoke-virtual {v0, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v5
@@ -296,7 +296,7 @@
 
     int-to-long v13, v1
 
-    .line 182
+    .line 202
     div-long v13, v7, v13
 
     cmp-long v15, v11, v13
@@ -342,7 +342,7 @@
     :cond_77
     if-eqz v6, :cond_7e
 
-    .line 199
+    .line 219
     invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0

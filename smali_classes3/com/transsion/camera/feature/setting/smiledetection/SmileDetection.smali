@@ -56,15 +56,11 @@
 
 .field private mIsModeSupport:Z
 
-.field private mIsModeSupportOriginal:Z
-
 .field private mIsPause:Z
 
 .field private mIsTakePicture:Z
 
 .field private mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
-
-.field private mRestored:Z
 
 .field private mResumed:Z
 
@@ -130,29 +126,11 @@
     return p0
 .end method
 
-.method static bridge synthetic -$$Nest$fgetmIsModeSupportOriginal(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)Z
-    .registers 1
-
-    .line 0
-    iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupportOriginal:Z
-
-    return p0
-.end method
-
 .method static bridge synthetic -$$Nest$fgetmIsTakePicture(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)Z
     .registers 1
 
     .line 0
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsTakePicture:Z
-
-    return p0
-.end method
-
-.method static bridge synthetic -$$Nest$fgetmRestored(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)Z
-    .registers 1
-
-    .line 0
-    iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mRestored:Z
 
     return p0
 .end method
@@ -202,15 +180,6 @@
     return-void
 .end method
 
-.method static bridge synthetic -$$Nest$fputmIsModeSupport(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;Z)V
-    .registers 2
-
-    .line 0
-    iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupport:Z
-
-    return-void
-.end method
-
 .method static bridge synthetic -$$Nest$fputmIsTakePicture(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;Z)V
     .registers 2
 
@@ -234,15 +203,6 @@
 
     .line 0
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mSupportCapture:Z
-
-    return-void
-.end method
-
-.method static bridge synthetic -$$Nest$msyncRemoteCaptureFragment(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)V
-    .registers 1
-
-    .line 0
-    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->syncRemoteCaptureFragment()V
 
     return-void
 .end method
@@ -296,52 +256,46 @@
     .line 69
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupport:Z
 
-    .line 70
-    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupportOriginal:Z
-
     const/4 v1, 0x1
 
-    .line 72
+    .line 71
     iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mSupportCapture:Z
 
-    .line 73
+    .line 72
     iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mResumed:Z
 
-    .line 74
+    .line 73
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsPause:Z
 
-    .line 75
-    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mRestored:Z
-
-    .line 76
+    .line 74
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsTakePicture:Z
 
     const/4 v2, 0x0
 
-    .line 79
+    .line 77
     iput-object v2, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mDefaultValue:Ljava/lang/String;
 
-    .line 80
+    .line 78
     iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mAllowSmileCapture:Z
 
-    .line 81
+    .line 79
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mCloseByFlashSnapLite:Z
 
-    .line 83
+    .line 81
     new-instance v0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mSettingPreviewDataCallback:Lcom/transsion/camera/adapter/CameraProxy$CameraSettingPreviewDataCallback;
 
-    .line 254
+    .line 250
     new-instance v0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$1;-><init>(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)V
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mDevicePictureStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$DevicePictureStateCallback;
 
-    .line 310
+    .line 306
     new-instance v0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$2;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$2;-><init>(Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;)V
@@ -369,39 +323,60 @@
     return-object p0
 .end method
 
+.method private clearRemoteCaptureSmileState()V
+    .registers 5
+
+    .line 383
+    iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
+
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    const-string v2, "remote_capture_state_smile"
+
+    const-string v3, "false"
+
+    invoke-virtual {v0, v2, v3, p0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    return-void
+.end method
+
 .method private detectorImage(Landroid/media/Image;II)V
     .registers 6
 
-    .line 104
+    .line 102
     invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->getNV21Buffer(Landroid/media/Image;)[B
 
     move-result-object p1
 
-    .line 105
+    .line 103
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x66
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 106
+    .line 104
     new-instance v0, Landroid/os/Message;
 
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
-    .line 107
+    .line 105
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 108
+    .line 106
     iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 109
+    .line 107
     iput p2, v0, Landroid/os/Message;->arg1:I
 
-    .line 110
+    .line 108
     iput p3, v0, Landroid/os/Message;->arg2:I
 
-    .line 111
+    .line 109
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
@@ -412,7 +387,7 @@
 .method private synthetic lambda$new$0(Landroid/media/Image;III)V
     .registers 6
 
-    .line 84
+    .line 82
     const-string p4, "off"
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -435,40 +410,40 @@
 
     goto :goto_40
 
-    .line 87
+    .line 85
     :cond_15
     sget-boolean p4, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mInit:Z
 
     if-nez p4, :cond_26
 
-    .line 88
+    .line 86
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     const/16 p2, 0x64
 
     invoke-virtual {p1, p2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 89
+    .line 87
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, p2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 
-    .line 92
+    .line 90
     :cond_26
     iget-boolean p4, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mSupportCapture:Z
 
     if-eqz p4, :cond_39
 
-    .line 93
+    .line 91
     iget p4, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIgnoreFrame:I
 
     const/16 v0, 0xa
 
     if-le p4, v0, :cond_34
 
-    .line 94
+    .line 92
     invoke-direct {p0, p1, p2, p3}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->detectorImage(Landroid/media/Image;II)V
 
     return-void
@@ -476,12 +451,12 @@
     :cond_34
     add-int/lit8 p4, p4, 0x1
 
-    .line 96
+    .line 94
     iput p4, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIgnoreFrame:I
 
     return-void
 
-    .line 99
+    .line 97
     :cond_39
     sget-object p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -497,7 +472,7 @@
 .method private syncRemoteCaptureFragment()V
     .registers 5
 
-    .line 387
+    .line 379
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     iget-boolean v1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupport:Z
@@ -530,7 +505,7 @@
 .method public configCommand(Lcom/transsion/camera/adapter/CameraProxy;)V
     .registers 4
 
-    .line 408
+    .line 404
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupport:Z
 
     if-eqz v0, :cond_16
@@ -547,14 +522,14 @@
 
     if-eqz v0, :cond_16
 
-    .line 409
+    .line 405
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mSettingPreviewDataCallback:Lcom/transsion/camera/adapter/CameraProxy$CameraSettingPreviewDataCallback;
 
     invoke-virtual {p1, p0}, Lcom/transsion/camera/adapter/CameraProxy;->registerSettingPreviewDataCallback(Lcom/transsion/camera/adapter/CameraProxy$CameraSettingPreviewDataCallback;)V
 
     return-void
 
-    .line 411
+    .line 407
     :cond_16
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mSettingPreviewDataCallback:Lcom/transsion/camera/adapter/CameraProxy$CameraSettingPreviewDataCallback;
 
@@ -592,7 +567,7 @@
 .method public getDevicePictureStateCallback()Lcom/transsion/camera/app/common/setting/ICameraSetting$DevicePictureStateCallback;
     .registers 1
 
-    .line 251
+    .line 247
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mDevicePictureStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$DevicePictureStateCallback;
 
     return-object p0
@@ -601,7 +576,7 @@
 .method public getKey()Ljava/lang/String;
     .registers 1
 
-    .line 210
+    .line 207
     const-string p0, "key_smile_detection"
 
     return-object p0
@@ -616,7 +591,7 @@
 .method public getPreviewStateCallback()Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
     .registers 1
 
-    .line 307
+    .line 303
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mPreviewStateCallback:Lcom/transsion/camera/app/common/setting/ICameraSetting$PreviewStateCallback;
 
     return-object p0
@@ -636,7 +611,7 @@
 .method public getSettingType()Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
     .registers 1
 
-    .line 205
+    .line 202
     sget-object p0, Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;->PHOTO_AND_VIDEO:Lcom/transsion/camera/app/common/setting/ICameraSetting$SettingType;
 
     return-object p0
@@ -653,7 +628,7 @@
         }
     .end annotation
 
-    .line 302
+    .line 298
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getEntryValues()Ljava/util/List;
 
     move-result-object p0
@@ -675,23 +650,23 @@
 .method public init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
     .registers 6
 
-    .line 117
+    .line 115
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/storage/DataStore;)V
 
-    .line 118
+    .line 116
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mContext:Landroid/content/Context;
 
-    .line 119
+    .line 117
     new-instance p3, Landroid/os/HandlerThread;
 
     const-string v0, "smiledetection"
 
     invoke-direct {p3, v0}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    .line 120
+    .line 118
     invoke-virtual {p3}, Ljava/lang/Thread;->start()V
 
-    .line 121
+    .line 119
     new-instance v0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection$SmileDetectionHandler;
 
     invoke-virtual {p3}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -704,45 +679,45 @@
 
     iput-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
-    .line 122
+    .line 120
     new-instance p3, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;
 
     invoke-direct {p3, p1, p2}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectAlgorithmImpl;-><init>(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;)V
 
     iput-object p3, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mSmileAlgorithm:Lcom/transsion/camera/feature/setting/smiledetection/ISmileDetectAlgorithm;
 
-    .line 123
+    .line 121
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     if-eqz p1, :cond_47
 
-    .line 124
+    .line 122
     const-string p2, "key_smile_state"
 
     invoke-virtual {p1, p2, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 125
+    .line 123
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_remote_capture"
 
     invoke-virtual {p1, p2, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 126
+    .line 124
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_shutter_guide_layout_action"
 
     invoke-virtual {p1, p2, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 127
+    .line 125
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_ui_state_action"
 
     invoke-virtual {p1, p2, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 128
+    .line 126
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string p2, "key_touch_capture_status"
@@ -766,7 +741,7 @@
         }
     .end annotation
 
-    .line 181
+    .line 179
     sget-object v0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -791,22 +766,22 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 182
+    .line 180
     iput-object p2, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mDefaultValue:Ljava/lang/String;
 
-    .line 183
+    .line 181
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedPlatformValues(Ljava/util/List;)V
 
-    .line 184
+    .line 182
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setSupportedEntryValues(Ljava/util/List;)V
 
-    .line 185
+    .line 183
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setEntryValues(Ljava/util/List;)V
 
-    .line 186
+    .line 184
     invoke-virtual {p0, p2}, Lcom/transsion/camera/app/common/setting/SettingBase;->setDefaultValue(Ljava/lang/String;)V
 
-    .line 187
+    .line 185
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
@@ -815,7 +790,7 @@
 
     if-le p1, v1, :cond_43
 
-    .line 188
+    .line 186
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->getKey()Ljava/lang/String;
@@ -832,16 +807,13 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mDefaultValue:Ljava/lang/String;
 
-    .line 190
+    .line 188
     :cond_43
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mDefaultValue:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 191
-    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->syncRemoteCaptureFragment()V
-
-    .line 192
+    .line 189
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -866,7 +838,7 @@
 .method public isModeSupport()Z
     .registers 1
 
-    .line 383
+    .line 375
     iget-boolean p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupport:Z
 
     return p0
@@ -879,24 +851,24 @@
 
     const/4 v0, 0x0
 
-    .line 242
+    .line 238
     :try_start_2
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupport:Z
 
-    .line 243
+    .line 239
     invoke-direct {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->syncRemoteCaptureFragment()V
 
-    .line 244
+    .line 240
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->onModeClosed(Ljava/lang/String;)V
 
-    .line 245
+    .line 241
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     const/16 v0, 0x69
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 246
+    .line 242
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->getKey()Ljava/lang/String;
@@ -907,7 +879,7 @@
     :try_end_1a
     .catchall {:try_start_2 .. :try_end_1a} :catchall_1c
 
-    .line 247
+    .line 243
     monitor-exit p0
 
     return-void
@@ -926,10 +898,10 @@
 .method public onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
     .registers 4
 
-    .line 232
+    .line 228
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/setting/SettingBase;->onModeOpened(Ljava/lang/String;Lcom/transsion/camera/app/common/mode/ICameraMode$ModeType;[Ljava/lang/String;)V
 
-    .line 233
+    .line 229
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->getKey()Ljava/lang/String;
 
     move-result-object p1
@@ -938,14 +910,16 @@
 
     move-result p1
 
-    iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupportOriginal:Z
-
-    .line 234
     iput-boolean p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupport:Z
 
-    if-eqz p1, :cond_26
+    .line 230
+    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->syncRemoteCaptureFragment()V
 
-    .line 235
+    .line 231
+    iget-boolean p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupport:Z
+
+    if-eqz p1, :cond_29
+
     const-string p1, "on"
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -956,9 +930,9 @@
 
     move-result p1
 
-    if-eqz p1, :cond_26
+    if-eqz p1, :cond_29
 
-    .line 236
+    .line 232
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     const/16 p1, 0x68
@@ -967,14 +941,14 @@
 
     invoke-virtual {p0, p1, p2, p3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    :cond_26
+    :cond_29
     return-void
 .end method
 
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 8
 
-    .line 337
+    .line 329
     sget-object v0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -999,7 +973,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 338
+    .line 330
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -1085,7 +1059,7 @@
 
     goto/16 :goto_ff
 
-    .line 355
+    .line 347
     :pswitch_5f
     const-string p1, "remote_capture_state_smile"
 
@@ -1097,7 +1071,7 @@
 
     if-eqz p1, :cond_ff
 
-    .line 356
+    .line 348
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->getKey()Ljava/lang/String;
@@ -1118,7 +1092,7 @@
 
     return-void
 
-    .line 340
+    .line 332
     :pswitch_7d
     check-cast p2, Ljava/lang/CharSequence;
 
@@ -1130,32 +1104,32 @@
 
     if-eqz v0, :cond_9d
 
-    .line 341
+    .line 333
     new-instance p2, Landroid/os/Message;
 
     invoke-direct {p2}, Landroid/os/Message;-><init>()V
 
-    .line 342
+    .line 334
     iput p1, p2, Landroid/os/Message;->what:I
 
-    .line 343
+    .line 335
     sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     iput-object v0, p2, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 344
+    .line 336
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 345
+    .line 337
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, p2, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     return-void
 
-    .line 346
+    .line 338
     :cond_9d
     const-string v0, "smile_invalid_state"
 
@@ -1165,32 +1139,32 @@
 
     if-eqz p2, :cond_ff
 
-    .line 347
+    .line 339
     new-instance p2, Landroid/os/Message;
 
     invoke-direct {p2}, Landroid/os/Message;-><init>()V
 
-    .line 348
+    .line 340
     iput p1, p2, Landroid/os/Message;->what:I
 
-    .line 349
+    .line 341
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     iput-object v0, p2, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 350
+    .line 342
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 351
+    .line 343
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, p2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 
-    .line 371
+    .line 363
     :pswitch_bb
     iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsTakePicture:Z
 
@@ -1206,12 +1180,12 @@
 
     if-eqz p2, :cond_ff
 
-    .line 372
+    .line 364
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p2, p1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 373
+    .line 365
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
@@ -1224,7 +1198,7 @@
 
     return-void
 
-    .line 360
+    .line 352
     :pswitch_db
     check-cast p2, Ljava/lang/CharSequence;
 
@@ -1240,7 +1214,7 @@
 
     const-string p1, "shutter_guide_layout_show"
 
-    .line 361
+    .line 353
     invoke-static {p2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -1249,7 +1223,7 @@
 
     goto :goto_100
 
-    .line 366
+    .line 358
     :cond_f1
     const-string/jumbo p1, "value_state_idle"
 
@@ -1259,7 +1233,7 @@
 
     if-eqz p1, :cond_ff
 
-    .line 367
+    .line 359
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, v0, v3, v4}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
@@ -1268,7 +1242,7 @@
     :goto_ff
     return-void
 
-    .line 362
+    .line 354
     :cond_100
     :goto_100
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
@@ -1279,12 +1253,12 @@
 
     if-eqz p1, :cond_10d
 
-    .line 363
+    .line 355
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 365
+    .line 357
     :cond_10d
     iput-boolean v1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mAllowSmileCapture:Z
 
@@ -1310,7 +1284,7 @@
 .method public onValueChanged(Ljava/lang/String;)V
     .registers 6
 
-    .line 275
+    .line 271
     sget-object v0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1329,7 +1303,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 276
+    .line 272
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->getKey()Ljava/lang/String;
@@ -1344,7 +1318,7 @@
 
     invoke-virtual {v0, v1, p1, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 277
+    .line 273
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -1355,10 +1329,10 @@
 
     if-nez v0, :cond_7b
 
-    .line 278
+    .line 274
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
-    .line 279
+    .line 275
     invoke-static {}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectionRestriction;->getRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
 
     move-result-object v0
@@ -1371,12 +1345,12 @@
 
     move-result-object v0
 
-    .line 280
+    .line 276
     iget-object v1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v1, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
 
-    .line 281
+    .line 277
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->getKey()Ljava/lang/String;
@@ -1385,7 +1359,7 @@
 
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;->requestChangeSettingValue(Ljava/lang/String;)V
 
-    .line 283
+    .line 279
     const-string v0, "on"
 
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -1394,14 +1368,14 @@
 
     if-eqz p1, :cond_64
 
-    .line 284
+    .line 280
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     const/16 v0, 0x68
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 285
+    .line 281
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     const/16 v0, 0x64
@@ -1412,7 +1386,7 @@
 
     goto :goto_72
 
-    .line 287
+    .line 283
     :cond_64
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
@@ -1420,14 +1394,14 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 288
+    .line 284
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     const/16 v0, 0x65
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 290
+    .line 286
     :goto_72
     iget-object p1, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
 
@@ -1463,7 +1437,7 @@
         }
     .end annotation
 
-    .line 503
+    .line 499
     const-string p3, "key_best_moment_detect"
 
     invoke-virtual {p1, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1472,7 +1446,7 @@
 
     if-eqz p1, :cond_10
 
-    .line 504
+    .line 500
     const-string p1, "off"
 
     invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1488,15 +1462,15 @@
 .method public pause()V
     .registers 4
 
-    .line 220
+    .line 217
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->pause()V
 
     const/4 v0, 0x1
 
-    .line 221
+    .line 218
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsPause:Z
 
-    .line 222
+    .line 219
     const-string v1, "on"
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -1509,24 +1483,19 @@
 
     if-eqz v1, :cond_19
 
-    .line 223
+    .line 220
     iget-object v1, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     const/16 v2, 0x69
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 225
+    .line 222
     :cond_19
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mAllowSmileCapture:Z
 
-    const/4 v0, 0x0
-
-    .line 226
-    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupport:Z
-
-    .line 227
-    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->syncRemoteCaptureFragment()V
+    .line 223
+    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->clearRemoteCaptureSmileState()V
 
     return-void
 .end method
@@ -1534,7 +1503,7 @@
 .method public postRestrictionAfterInitialized()V
     .registers 4
 
-    .line 197
+    .line 194
     invoke-static {}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetectionRestriction;->getRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
 
     move-result-object v0
@@ -1551,7 +1520,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 199
+    .line 196
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->postRestriction(Lcom/transsion/camera/app/common/relation/Relation;)V
@@ -1561,15 +1530,13 @@
 .end method
 
 .method public restoreToSupportedPlatformValue()V
-    .registers 2
+    .registers 1
 
-    .line 296
+    .line 292
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->restoreToSupportedPlatformValue()V
 
-    const/4 v0, 0x1
-
-    .line 297
-    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mRestored:Z
+    .line 293
+    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->syncRemoteCaptureFragment()V
 
     return-void
 .end method
@@ -1577,15 +1544,18 @@
 .method public resume()V
     .registers 5
 
-    .line 134
+    .line 132
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->resume()V
 
     const/4 v0, 0x0
 
-    .line 135
+    .line 133
     iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsPause:Z
 
-    .line 136
+    .line 134
+    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->syncRemoteCaptureFragment()V
+
+    .line 135
     const-string v0, "on"
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
@@ -1596,9 +1566,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2b
 
-    .line 137
+    .line 136
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     const/16 v1, 0x68
@@ -1607,28 +1577,20 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 138
-    iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
+    .line 137
+    iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
-    const/16 v1, 0x6a
+    const/16 v0, 0x6a
 
-    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {p0, v0, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 140
-    :cond_28
-    iget-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupportOriginal:Z
-
-    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mIsModeSupport:Z
-
-    .line 141
-    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->syncRemoteCaptureFragment()V
-
+    :cond_2b
     return-void
 .end method
 
@@ -1641,22 +1603,22 @@
 .method public setCameraCapabilities(Lcom/transsion/camera/adapter/ICameraCapabilities;)V
     .registers 3
 
-    .line 395
+    .line 391
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 396
+    .line 392
     const-string v0, "on"
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 397
+    .line 393
     const-string v0, "off"
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 398
+    .line 394
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->initValueAndSupport(Ljava/util/List;Ljava/lang/String;)V
 
     return-void
@@ -1683,12 +1645,12 @@
 .method public turnOnSwitch(Z)V
     .registers 5
 
-    .line 163
+    .line 161
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->turnOnSwitch(Z)V
 
     if-eqz p1, :cond_e
 
-    .line 164
+    .line 162
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/CameraUtil;->hasVisibleFragment(Landroid/content/Context;)Z
@@ -1699,7 +1661,7 @@
 
     return-void
 
-    .line 167
+    .line 165
     :cond_e
     sget-object v0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1719,31 +1681,31 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 168
+    .line 166
     new-instance v0, Landroid/os/Message;
 
     invoke-direct {v0}, Landroid/os/Message;-><init>()V
 
     const/16 v1, 0x67
 
-    .line 169
+    .line 167
     iput v1, v0, Landroid/os/Message;->what:I
 
-    .line 170
+    .line 168
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
 
     iput-object v2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 171
+    .line 169
     iget-object v2, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     if-eqz p1, :cond_42
 
-    .line 173
+    .line 171
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x7d0
@@ -1752,7 +1714,7 @@
 
     return-void
 
-    .line 175
+    .line 173
     :cond_42
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
@@ -1764,20 +1726,27 @@
 .method public unInit()V
     .registers 3
 
-    .line 146
+    .line 143
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->unInit()V
 
-    .line 147
+    .line 144
+    sget-object v0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string/jumbo v1, "unInit"
+
+    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    .line 145
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1d
 
     const/16 v1, 0x65
 
-    .line 148
+    .line 146
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 149
+    .line 147
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -1786,52 +1755,48 @@
 
     invoke-virtual {v0}, Landroid/os/Looper;->quitSafely()V
 
-    .line 151
-    :cond_15
+    .line 149
+    :cond_1d
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_42
 
-    .line 152
+    .line 150
     const-string v1, "key_smile_state"
 
     invoke-virtual {v0, v1, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 153
+    .line 151
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_remote_capture"
 
     invoke-virtual {v0, v1, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 154
+    .line 152
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_shutter_guide_layout_action"
 
     invoke-virtual {v0, v1, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 155
+    .line 153
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_ui_state_action"
 
     invoke-virtual {v0, v1, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 156
+    .line 154
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_touch_capture_status"
 
     invoke-virtual {v0, v1, p0}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 158
-    :cond_3a
-    sget-object p0, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    const-string/jumbo v0, "uninit"
-
-    invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    .line 156
+    :cond_42
+    invoke-direct {p0}, Lcom/transsion/camera/feature/setting/smiledetection/SmileDetection;->clearRemoteCaptureSmileState()V
 
     return-void
 .end method

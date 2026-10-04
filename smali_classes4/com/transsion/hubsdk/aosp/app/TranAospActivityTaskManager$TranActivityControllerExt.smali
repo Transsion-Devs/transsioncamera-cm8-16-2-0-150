@@ -22,7 +22,7 @@
 .method public constructor <init>(Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;)V
     .registers 2
 
-    .line 241
+    .line 243
     iput-object p1, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     invoke-direct {p0}, Lcom/transsion/hubsdk/api/app/ITranActivityController$Stub;-><init>()V
@@ -35,7 +35,7 @@
 .method public activityResuming(Ljava/lang/String;)Z
     .registers 3
 
-    .line 253
+    .line 255
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -45,7 +45,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 254
+    .line 256
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -68,7 +68,7 @@
 .method public activityStarting(Landroid/content/Intent;Ljava/lang/String;)Z
     .registers 4
 
-    .line 245
+    .line 247
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -78,7 +78,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 246
+    .line 248
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -101,7 +101,7 @@
 .method public appCrashed(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;JLjava/lang/String;)Z
     .registers 16
 
-    .line 261
+    .line 263
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -111,7 +111,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 262
+    .line 264
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -146,7 +146,7 @@
 .method public appEarlyNotResponding(Ljava/lang/String;ILjava/lang/String;)I
     .registers 5
 
-    .line 269
+    .line 271
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -156,7 +156,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 270
+    .line 272
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -179,7 +179,7 @@
 .method public appNotResponding(Ljava/lang/String;ILjava/lang/String;)I
     .registers 5
 
-    .line 277
+    .line 279
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -189,7 +189,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 278
+    .line 280
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -212,7 +212,7 @@
 .method public systemNotResponding(Ljava/lang/String;)I
     .registers 3
 
-    .line 285
+    .line 287
     iget-object v0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;
@@ -222,7 +222,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 286
+    .line 288
     iget-object p0, p0, Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager$TranActivityControllerExt;->this$0:Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;
 
     # getter for: Lcom/transsion/hubsdk/aosp/app/TranAospActivityTaskManager;->mController:Lcom/transsion/hubsdk/api/app/ITranActivityController;

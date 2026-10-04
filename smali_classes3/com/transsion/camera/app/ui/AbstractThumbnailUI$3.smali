@@ -29,7 +29,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/AbstractThumbnailUI;Landroid/graphics/Bitmap;Z)V
     .registers 4
 
-    .line 413
+    .line 416
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->val$bitmap:Landroid/graphics/Bitmap;
@@ -46,36 +46,36 @@
 .method public run()V
     .registers 4
 
-    .line 416
+    .line 419
     const-string/jumbo v0, "updateThumbnailView"
 
     invoke-static {v0}, Lcom/transsion/camera/utils/debug/TraceUtil;->begin(Ljava/lang/String;)V
 
-    .line 417
+    .line 420
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->val$bitmap:Landroid/graphics/Bitmap;
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_26
 
-    .line 418
+    .line 421
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->mPreviousThumbnailView:Lcom/transsion/camera/app/ui/widget/RoundedThumbnailView;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/RoundedThumbnailView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 419
+    .line 422
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->-$$Nest$mwrapDrawable(Lcom/transsion/camera/app/ui/AbstractThumbnailUI;)V
 
-    .line 420
+    .line 423
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->hideThumbnailBg()V
 
-    .line 421
+    .line 424
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -86,7 +86,7 @@
 
     goto :goto_93
 
-    .line 423
+    .line 426
     :cond_26
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
@@ -96,15 +96,15 @@
 
     move-result-object v0
 
-    .line 424
+    .line 427
     instance-of v2, v0, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v2, :cond_40
 
-    .line 425
+    .line 428
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 426
+    .line 429
     iget-object v1, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     iget-object v1, v1, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->mPreviousThumbnailView:Lcom/transsion/camera/app/ui/widget/RoundedThumbnailView;
@@ -117,7 +117,7 @@
 
     goto :goto_47
 
-    .line 428
+    .line 431
     :cond_40
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
@@ -125,7 +125,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/RoundedThumbnailView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 430
+    .line 433
     :goto_47
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
@@ -135,7 +135,7 @@
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/RoundedThumbnailView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 431
+    .line 434
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->mThumbnailBg:Landroid/view/View;
@@ -144,12 +144,12 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 432
+    .line 435
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->beforeThumbnailAnimation()V
 
-    .line 433
+    .line 436
     iget-object v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     iget-object v0, v0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -164,7 +164,7 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->val$bitmap:Landroid/graphics/Bitmap;
 
-    .line 434
+    .line 437
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -187,32 +187,32 @@
 
     move-result-object v1
 
-    .line 433
+    .line 436
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 436
+    .line 439
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->val$needAnimation:Z
 
     if-eqz v0, :cond_93
 
-    .line 437
+    .line 440
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractThumbnailUI$3;->this$0:Lcom/transsion/camera/app/ui/AbstractThumbnailUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/AbstractThumbnailUI;->playThumbnailAnimation()V
 
-    .line 441
+    .line 444
     :cond_93
     :goto_93
     invoke-static {}, Lcom/transsion/camera/utils/debug/TraceUtil;->end()V
 
-    .line 442
+    .line 445
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setShot2SeeEndTime()V
 
-    .line 443
+    .line 446
     invoke-static {}, Lcom/transsion/camera/utils/dfx/mgr/ExManager;->get()Lcom/transsion/camera/utils/dfx/inter/IExDetection;
 
     move-result-object p0

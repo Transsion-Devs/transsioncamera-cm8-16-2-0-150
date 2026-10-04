@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/transsion/camera/ui/setting/qrcode/IQrCodeToastCallback;
+.implements Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
 
 # instance fields
@@ -24,13 +24,13 @@
 
 
 # virtual methods
-.method public final onTranslateToast(Landroid/graphics/Rect;)V
-    .registers 2
+.method public final onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 3
 
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI$$ExternalSyntheticLambda7;->f$0:Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->$r8$lambda$9_m6y5KxkSZ3xZUUz16Yl5P5-hs(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Landroid/graphics/Rect;)V
+    invoke-static {p0, p1, p2}, Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;->$r8$lambda$exg8UOny1fDdA49-NCPIhxlLWwQ(Lcom/transsion/camera/ui/setting/qrcode/QRcodeUI;Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
 .end method

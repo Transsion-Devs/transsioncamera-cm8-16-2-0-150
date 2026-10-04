@@ -56,15 +56,15 @@
 
 .field public static ai_art_museum_tab_control_view_container:I = 0x7f0b0068
 
-.field public static guide_big_image_explanation_id:I = 0x7f0b02d0
+.field public static guide_big_image_explanation_id:I = 0x7f0b02d1
 
-.field public static guide_top_bar_root:I = 0x7f0b02d7
+.field public static guide_top_bar_root:I = 0x7f0b02d8
 
-.field public static img_exit_icon:I = 0x7f0b031b
+.field public static img_exit_icon:I = 0x7f0b031c
 
-.field public static mode_title:I = 0x7f0b03d8
+.field public static mode_title:I = 0x7f0b03d5
 
-.field public static setting_ui_item_ai_art_museum_option:I = 0x7f0b05c8
+.field public static setting_ui_item_ai_art_museum_option:I = 0x7f0b05c4
 
 
 # direct methods

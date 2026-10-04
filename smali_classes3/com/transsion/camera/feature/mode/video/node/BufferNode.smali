@@ -175,18 +175,18 @@
     .line 71
     sget-object v0, Lcom/transsion/camera/feature/mode/video/node/BufferNode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    const-string v1, "thread in"
+    const-string/jumbo v1, "thread in"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     .line 73
-    :goto_7
+    :goto_8
     iget-boolean v0, p0, Lcom/transsion/camera/feature/mode/video/node/BufferNode;->mRunning:Z
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_3f
 
     .line 75
-    :try_start_b
+    :try_start_c
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/video/node/BufferNode;->mBlockingQueue:Ljava/util/concurrent/ArrayBlockingQueue;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ArrayBlockingQueue;->take()Ljava/lang/Object;
@@ -195,7 +195,7 @@
 
     check-cast v0, Lcom/transsion/camera/feature/mode/video/node/NodeData;
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_20
 
     .line 77
     sget-object v0, Lcom/transsion/camera/feature/mode/video/node/BufferNode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -204,23 +204,23 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    goto :goto_7
+    goto :goto_8
 
-    :catch_1d
+    :catch_1e
     move-exception v0
 
-    goto :goto_23
+    goto :goto_24
 
     .line 81
-    :cond_1f
+    :cond_20
     invoke-virtual {p0, v0}, Lcom/transsion/camera/feature/mode/video/node/BufferNode;->processInternal(Lcom/transsion/camera/feature/mode/video/node/NodeData;)Z
-    :try_end_22
-    .catch Ljava/lang/InterruptedException; {:try_start_b .. :try_end_22} :catch_1d
+    :try_end_23
+    .catch Ljava/lang/InterruptedException; {:try_start_c .. :try_end_23} :catch_1e
 
-    goto :goto_7
+    goto :goto_8
 
     .line 83
-    :goto_23
+    :goto_24
     sget-object v1, Lcom/transsion/camera/feature/mode/video/node/BufferNode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -243,10 +243,10 @@
 
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    goto :goto_7
+    goto :goto_8
 
     .line 87
-    :cond_3e
+    :cond_3f
     sget-object v0, Lcom/transsion/camera/feature/mode/video/node/BufferNode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -277,7 +277,7 @@
     invoke-virtual {p0}, Ljava/util/concurrent/ArrayBlockingQueue;->clear()V
 
     .line 90
-    const-string p0, "thread out"
+    const-string/jumbo p0, "thread out"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 

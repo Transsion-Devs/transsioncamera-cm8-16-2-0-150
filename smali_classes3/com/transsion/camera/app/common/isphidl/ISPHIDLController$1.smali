@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;)V
     .registers 2
 
-    .line 105
+    .line 106
     iput-object p1, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController$1;->this$0:Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public varargs onBackgroundImageSaveCompleted(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;I[Ljava/lang/Object;)V
     .registers 6
 
-    .line 117
+    .line 118
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p3
@@ -65,7 +65,7 @@
 
     invoke-static {p3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 118
+    .line 119
     iget-object p0, p0, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController$1;->this$0:Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/taps/entity/BaseInfo;->getTimestampKey()J
@@ -86,7 +86,7 @@
 
     invoke-virtual {p0, v0, v1, p2, p1}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->setTZCapConfig(JII)V
 
-    .line 120
+    .line 121
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetmShot2ShotCallback()Ljava/lang/ref/WeakReference;
 
     move-result-object p0
@@ -103,7 +103,7 @@
 
     if-eqz p0, :cond_4c
 
-    .line 121
+    .line 122
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetmShot2ShotCallback()Ljava/lang/ref/WeakReference;
 
     move-result-object p0
@@ -123,7 +123,7 @@
 .method public varargs onBackgroundImageSaveProgressed(Lcom/transsion/camera/app/common/taps/entity/BackgroundImageInfo;[Ljava/lang/Object;)V
     .registers 4
 
-    .line 113
+    .line 114
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -150,7 +150,7 @@
 .method public onBackgroundImageSaveStarted(J)V
     .registers 5
 
-    .line 108
+    .line 109
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0

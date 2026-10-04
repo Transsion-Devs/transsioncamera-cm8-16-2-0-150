@@ -36,7 +36,7 @@
 
     iget-boolean p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$$ExternalSyntheticLambda0;->f$1:Z
 
-    invoke-static {v0, p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->$r8$lambda$Gj5LyztMcH9YDK87BOPzvghlTm8(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;Z)V
+    invoke-static {v0, p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->$r8$lambda$1TwCrqcXP4fDkpfUWIB8fC4t0Fg(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;Z)V
 
     return-void
 .end method

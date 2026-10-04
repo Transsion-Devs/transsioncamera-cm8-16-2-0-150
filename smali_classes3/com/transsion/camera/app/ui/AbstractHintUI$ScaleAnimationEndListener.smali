@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/AbstractHintUI;)V
     .registers 2
 
-    .line 1443
+    .line 1451
     iput-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$ScaleAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -44,17 +44,17 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 1446
+    .line 1454
     iget-object p1, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$ScaleAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     iget-boolean v0, p1, Lcom/transsion/camera/app/ui/AbstractHintUI;->mIsNeedWaitScale:Z
 
     if-eqz v0, :cond_e
 
-    .line 1447
+    .line 1455
     invoke-virtual {p1}, Lcom/transsion/camera/app/ui/AbstractHintUI;->hideAsdHintViewWithAnim()V
 
-    .line 1448
+    .line 1456
     iget-object p0, p0, Lcom/transsion/camera/app/ui/AbstractHintUI$ScaleAnimationEndListener;->this$0:Lcom/transsion/camera/app/ui/AbstractHintUI;
 
     const/4 p1, 0x0

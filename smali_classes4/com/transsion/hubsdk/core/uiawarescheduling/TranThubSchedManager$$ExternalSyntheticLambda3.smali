@@ -36,7 +36,7 @@
 
     iget p0, p0, Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager$$ExternalSyntheticLambda3;->f$1:I
 
-    invoke-static {v0, p0}, Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager;->$r8$lambda$yRPrT9eeLu9UWmqQk7NihWilpKU(Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager;I)Ljava/lang/Object;
+    invoke-static {v0, p0}, Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager;->$r8$lambda$dd251w8R951ZUa0RRxTpQhxkOu8(Lcom/transsion/hubsdk/core/uiawarescheduling/TranThubSchedManager;I)Ljava/lang/Object;
 
     move-result-object p0
 

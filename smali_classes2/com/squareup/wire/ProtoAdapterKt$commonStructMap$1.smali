@@ -551,12 +551,12 @@
 
     invoke-direct {p0, v0}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    .line 1354
+    .line 388
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p1
 
-    .line 1355
+    .line 1236
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -572,10 +572,10 @@
 
     move-result-object v0
 
-    .line 1356
+    .line 1237
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 1354
+    .line 388
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1

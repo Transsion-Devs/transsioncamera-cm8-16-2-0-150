@@ -267,7 +267,7 @@
 .method private isValidValue(Ljava/lang/String;)Z
     .registers 2
 
-    .line 461
+    .line 460
     const-string p0, "override_values_off"
 
     invoke-static {p1, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -278,7 +278,7 @@
 
     const-string/jumbo p0, "value_change_on"
 
-    .line 462
+    .line 461
     invoke-static {p1, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -287,7 +287,7 @@
 
     const-string/jumbo p0, "value_change_off"
 
-    .line 463
+    .line 462
     invoke-static {p1, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -410,7 +410,7 @@
 .method private supposeOnExistCase()Z
     .registers 2
 
-    .line 426
+    .line 425
     iget-object p0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mModeKey:Ljava/lang/String;
 
     const-string v0, "com.transsion.camera.feature.mode.video.TimeLapseVideoModeEntry"
@@ -922,7 +922,7 @@
 .method public isSupportAntiVideoType()I
     .registers 1
 
-    .line 467
+    .line 466
     iget p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;->mSupportType:I
 
     return p0
@@ -2016,7 +2016,7 @@
 .end method
 
 .method public unInit()V
-    .registers 6
+    .registers 4
 
     .line 415
     invoke-super {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->unInit()V
@@ -2051,24 +2051,11 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 421
     :cond_20
-    iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "key_anti_video_manual_value"
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v0, v3, v1, v2, v4}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-
-    .line 422
-    iput-boolean v4, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;->mIsValueInitiated:Z
+    .line 421
+    iput-boolean v0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;->mIsValueInitiated:Z
 
     return-void
 .end method

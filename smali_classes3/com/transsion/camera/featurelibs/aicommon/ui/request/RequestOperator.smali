@@ -160,7 +160,7 @@
 
     invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "terminate request@"
+    const-string/jumbo v0, "terminate request@"
 
     invoke-virtual {p4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -191,24 +191,24 @@
 
     move-result p3
 
-    if-eq p2, p3, :cond_32
+    if-eq p2, p3, :cond_33
 
     .line 88
     sget p1, Lcom/transsion/camera/featurelibs/aicommon/R$string;->ai_dialog_terminate_status_changed_toast:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestOperator;->showToast(I)V
 
-    goto :goto_3f
+    goto :goto_40
 
     .line 90
-    :cond_32
+    :cond_33
     iget-object p2, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestOperator;->mRequestRepo:Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestRepo;
 
     invoke-virtual {p2, p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestRepo;->terminate(Lcom/transsion/camera/app/common/ai/AIRequest;)Z
 
     move-result p1
 
-    if-nez p1, :cond_3f
+    if-nez p1, :cond_40
 
     .line 91
     sget p1, Lcom/transsion/camera/featurelibs/aicommon/R$string;->ai_dialog_terminate_status_changed_toast:I
@@ -216,8 +216,8 @@
     invoke-direct {p0, p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestOperator;->showToast(I)V
 
     .line 95
-    :cond_3f
-    :goto_3f
+    :cond_40
+    :goto_40
     invoke-direct {p0}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestOperator;->hideDialog()V
 
     return-void

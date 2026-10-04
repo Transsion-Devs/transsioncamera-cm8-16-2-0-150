@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static ic_bokeh:I = 0x7f08042b
+.field public static ic_bokeh:I = 0x7f0803f6
 
 
 # direct methods

@@ -3,4 +3,4 @@
 
 
 # static fields
-.field public static Theme_Camera_XOS:I = 0x7f1402f4
+.field public static Theme_Camera_XOS:I = 0x7f1402f3

@@ -25,8 +25,6 @@
 
 
 # instance fields
-.field private final MAX_QUEUE_SIZE:I
-
 .field private final faceInfoBound:Landroid/os/Bundle;
 
 .field private final faceInfos:Ljava/util/LinkedList;
@@ -81,7 +79,7 @@
 
 .field private mCCTValue:I
 
-.field private final mCamExceptionBundleQueue:Ljava/util/LinkedList;
+.field private final mCamExceptionEvents:Ljava/util/Map;
 
 .field private mCameraBootMethod:I
 
@@ -196,8 +194,6 @@
 .field private mIsInMode:Z
 
 .field private mIsMultiGenderOrMultiSkin:I
-
-.field private mIsQueueExceeded:Z
 
 .field private mIsTriggerTypeSet:Z
 
@@ -369,10 +365,28 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$ftnd1P_24NSYcQKf9I_WuEPt62k(JLcom/transsion/camera/utils/analytics/AnalyticsUtils$FaceInfoWrapper;)Z
+.method public static synthetic $r8$lambda$8j5X6QgNv8VrTCS5-JFLffGyPdc(Lcom/transsion/camera/utils/analytics/AnalyticsUtils;I)V
+    .registers 2
+
+    .line 0
+    invoke-direct {p0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->lambda$setCameraEndTime$5(I)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$erOv2A9ol-wZzCxphfrSQ0t46p0(Lcom/transsion/camera/utils/analytics/AnalyticsUtils;ILandroid/os/Bundle;)V
+    .registers 3
+
+    .line 0
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->lambda$enqueueCameraExceptionEvent$7(ILandroid/os/Bundle;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$regi3OZ-XRSfiNbq-5b8CW59NGg(JLcom/transsion/camera/utils/analytics/AnalyticsUtils$FaceInfoWrapper;)Z
     .registers 5
 
-    .line 1915
+    .line 1923
     iget-wide v0, p2, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$FaceInfoWrapper;->time:J
 
     cmp-long p0, v0, p0
@@ -392,7 +406,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 70
+    .line 73
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "AnalyticsUtils"
@@ -401,7 +415,7 @@
 
     sput-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    .line 360
+    .line 365
     const-string v0, ""
 
     sput-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mOobeCountry:Ljava/lang/String;
@@ -412,491 +426,483 @@
 .method private constructor <init>(Landroid/content/Context;Z)V
     .registers 15
 
-    .line 766
+    .line 772
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 160
+    .line 163
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLock:Ljava/lang/Object;
 
-    .line 164
+    .line 167
     const-string v0, "0"
 
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraId:Ljava/lang/String;
 
-    .line 165
+    .line 168
     const-string v1, ""
 
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeName:Ljava/lang/String;
 
     const/4 v2, 0x0
 
-    .line 166
+    .line 169
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAsdValue:I
 
-    .line 167
+    .line 170
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAsdEffect:I
 
-    .line 168
+    .line 171
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoAsdValue:I
 
-    .line 169
+    .line 172
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoAsdEffect:I
 
     const/4 v3, 0x0
 
-    .line 170
+    .line 173
     iput v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mZoomValue:F
 
-    .line 171
+    .line 174
     iput v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTotalZoomValue:F
 
-    .line 172
+    .line 175
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPictureRatioValue:Ljava/lang/String;
 
-    .line 173
+    .line 176
     const-string v4, "off"
 
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterValue:Ljava/lang/String;
 
-    .line 174
+    .line 177
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFunVideoFilterValue:Ljava/lang/String;
 
-    .line 175
+    .line 178
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSuperNightFilterValue:Ljava/lang/String;
 
-    .line 176
+    .line 179
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHdrValue:Ljava/lang/String;
 
-    .line 177
+    .line 180
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSelfTimerValue:Ljava/lang/String;
 
-    .line 178
+    .line 181
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLivePhotoValue:Ljava/lang/String;
 
     const/4 v5, -0x1
 
-    .line 179
+    .line 182
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoSex:I
 
-    .line 180
+    .line 183
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoAge:I
 
-    .line 181
+    .line 184
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAntiVideoValue:Ljava/lang/String;
 
-    .line 182
+    .line 185
     const-string v6, "video_facebeauty_off"
 
     iput-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoBeautyValue:Ljava/lang/String;
 
-    .line 183
+    .line 186
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoPortraitValue:Ljava/lang/String;
 
-    .line 184
+    .line 187
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoSpotValue:Ljava/lang/String;
 
-    .line 185
+    .line 188
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoHDRValue:Ljava/lang/String;
 
-    .line 186
+    .line 189
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSmileValue:Ljava/lang/String;
 
-    .line 187
+    .line 190
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHdValue:Ljava/lang/String;
 
-    .line 188
+    .line 191
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoPreIspValue:Ljava/lang/String;
 
-    .line 189
+    .line 192
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAutoVideoFPS:Ljava/lang/String;
 
-    .line 190
+    .line 193
     const-string v6, "1"
 
     iput-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoTimeLapseRate:Ljava/lang/String;
 
-    .line 191
+    .line 194
     const-string v6, "unlimited"
 
     iput-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoTimeLapseDuration:Ljava/lang/String;
 
-    .line 192
+    .line 195
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHumanEffectValue:Ljava/lang/String;
 
-    .line 193
+    .line 196
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mShutterSoundOptional:I
 
     const-wide/16 v6, 0x0
 
-    .line 195
+    .line 198
     iput-wide v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraStartTime:J
 
-    .line 196
+    .line 199
     iput-wide v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterStartTime:J
 
-    .line 197
+    .line 200
     iput-wide v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterSuperNightStartTime:J
 
-    .line 198
+    .line 201
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraIdFilterCache:Ljava/lang/String;
 
-    .line 199
+    .line 202
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraIdFilterSuperNightCache:Ljava/lang/String;
 
-    .line 200
+    .line 203
     iput-wide v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyStartTime:J
 
-    .line 201
+    .line 204
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraIdFacebeautyCache:Ljava/lang/String;
 
-    .line 202
+    .line 205
     iput-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoDetected:Z
 
-    .line 203
+    .line 206
     iput-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsFaceBeautyMode:Z
 
-    .line 211
+    .line 214
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVolumeShutter:I
 
-    .line 213
+    .line 216
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mBurstProgress:I
 
-    .line 215
+    .line 218
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGPS:Ljava/lang/String;
 
-    .line 217
+    .line 220
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAutoMacroSwitch:Ljava/lang/String;
 
-    .line 286
+    .line 291
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlowMotionFps:I
 
-    .line 294
+    .line 299
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mNightAlgo:I
 
-    .line 295
+    .line 300
     const-string v8, "auto"
 
     iput-object v8, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlash:Ljava/lang/String;
 
-    .line 296
+    .line 301
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFocusCount:I
 
-    .line 297
+    .line 302
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceCount:I
 
-    .line 298
+    .line 303
     iput v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMaxFaceRatio:F
 
-    .line 300
+    .line 305
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mArcoreAudioId:I
 
-    .line 301
+    .line 306
     iput-wide v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeReumeTime:J
 
     const/4 v8, 0x0
 
-    .line 302
+    .line 307
     iput-object v8, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureExif:Lcom/transsion/camera/utils/analytics/CaptureExif;
 
-    .line 303
+    .line 308
     iput-object v8, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAsdenHanceValue:Ljava/lang/String;
 
-    .line 304
+    .line 309
     iput-object v8, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mImageStyleValue:Ljava/lang/String;
 
-    .line 305
+    .line 310
     iput-object v8, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimbodyValue:[I
 
-    .line 306
+    .line 311
     iput-object v8, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyValue:[I
 
-    .line 307
+    .line 312
     const-string v9, "-1"
 
     iput-object v9, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGenderValue:Ljava/lang/String;
 
-    .line 308
+    .line 313
     iput-object v9, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAgeValue:Ljava/lang/String;
 
-    .line 309
+    .line 314
     const-string v10, "grid"
 
     iput-object v10, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMoreModeDisplayType:Ljava/lang/String;
 
-    .line 310
+    .line 315
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsMultiGenderOrMultiSkin:I
 
-    .line 311
+    .line 316
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlashSnapButtonValue:I
 
-    .line 313
+    .line 318
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSkyType:I
 
-    .line 361
+    .line 366
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAR2Name:Ljava/lang/String;
 
-    .line 362
+    .line 367
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAR2Size:I
 
-    .line 363
+    .line 368
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAR2Type:Ljava/lang/String;
 
-    .line 364
+    .line 369
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAR2NetType:Ljava/lang/String;
 
-    .line 365
+    .line 370
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAR2Sort:Ljava/lang/String;
 
-    .line 366
+    .line 371
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAR2VideoDuration:I
 
     const/16 v10, -0x3e8
 
-    .line 395
+    .line 400
     iput v10, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mBvValue:I
 
-    .line 396
+    .line 401
     iput v10, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCCTValue:I
 
-    .line 397
+    .line 402
     iput v10, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLVValue:I
 
-    .line 398
+    .line 403
     iput v10, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTintValue:I
 
-    .line 403
+    .line 408
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMakeUpValue:I
 
-    .line 404
+    .line 409
     iput v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMakeUpIntensityValue:F
 
-    .line 407
+    .line 412
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoMakeUpValue:I
 
-    .line 408
+    .line 413
     iput v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoMakeUpIntensityValue:F
 
-    .line 410
+    .line 415
     const-string v10, "f0.0"
 
     iput-object v10, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mBlurValue:Ljava/lang/String;
 
-    .line 412
+    .line 417
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTranssionFilterValue:I
 
-    .line 414
+    .line 419
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoEffectValue:I
 
-    .line 416
+    .line 421
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoFrameValue:I
 
-    .line 419
+    .line 424
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoEnhanceValue:Ljava/lang/String;
 
-    .line 420
+    .line 425
     iput-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoSuperNightEnable:Z
 
-    .line 422
+    .line 427
     iput-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoSuperNightYUVEnable:Z
 
-    .line 423
+    .line 428
     iput-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoEnhanceYUVEnable:Z
 
-    .line 425
+    .line 430
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoPortraitLevelValue:I
 
-    .line 427
+    .line 432
     iput-wide v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartTime:J
 
-    .line 432
+    .line 437
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartType:I
 
-    .line 433
+    .line 438
     iput-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsFirstConnectService:Z
 
-    .line 434
+    .line 439
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraBootMethod:I
 
-    .line 443
+    .line 448
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureValue:I
 
-    .line 444
+    .line 449
     iput-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoRecording:Z
 
     const-wide/16 v10, -0x1
 
-    .line 445
+    .line 450
     iput-wide v10, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLastTemperatureTimeForRecording:J
 
-    .line 448
+    .line 453
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v10, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureForRecording:Ljava/util/List;
 
-    .line 451
+    .line 456
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v10, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureForCapture:Ljava/util/List;
 
-    .line 453
+    .line 458
     new-instance v10, Ljava/util/LinkedList;
 
     invoke-direct {v10}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v10, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsForCaptureStart:Ljava/util/LinkedList;
 
-    .line 454
+    .line 459
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLowestFpsValueForCapture:I
 
-    .line 456
+    .line 461
     iput-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsInMode:Z
 
-    .line 457
+    .line 462
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureCountForMode:I
 
-    .line 458
+    .line 463
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureTotalForMode:I
 
-    .line 463
+    .line 468
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsValue:I
 
-    .line 464
+    .line 469
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsCountForMode:I
 
-    .line 465
+    .line 470
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsTotalForMode:I
 
-    .line 473
+    .line 478
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoStatus:I
 
-    .line 474
+    .line 479
     const-string v10, "0_1"
 
     iput-object v10, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoCameraIds:Ljava/lang/String;
 
-    .line 475
+    .line 480
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoCameraNames:Ljava/lang/String;
 
     const/4 v1, 0x2
 
-    .line 476
+    .line 481
     iput v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoWindowStyle:I
 
-    .line 477
+    .line 482
     iput v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoWindowCutRatio:F
 
-    .line 480
+    .line 485
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mClickZoomValue:I
 
-    .line 494
+    .line 499
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureType:I
 
-    .line 500
+    .line 505
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAIShutterValue:I
 
-    .line 502
+    .line 507
     iput-wide v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGuideFragmentStartTime:J
 
-    .line 515
+    .line 520
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenType:I
 
-    .line 531
+    .line 536
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mShot2SeeTime:I
 
-    .line 533
+    .line 538
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mShot2ClickThumbnail:I
 
-    .line 542
+    .line 547
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mEditWaterMarkBrandValue:Ljava/lang/String;
 
-    .line 543
+    .line 548
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGoldWaterMarkValue:Ljava/lang/String;
 
-    .line 544
+    .line 549
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGoldWatermarkBgValue:Ljava/lang/String;
 
-    .line 546
+    .line 551
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mActivityOrientation:I
 
-    .line 555
+    .line 560
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenBrightnessMode:I
 
-    .line 556
+    .line 561
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenBrightness:I
 
-    .line 558
+    .line 563
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSuperNightLightValue:I
 
-    .line 562
+    .line 567
     iput-object v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPortraitFlareValue:Ljava/lang/String;
 
-    .line 585
+    .line 590
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlareRemoverEffectValue:I
 
-    .line 598
+    .line 603
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCelebritySceneType:I
 
-    .line 601
+    .line 606
     iput v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHdr10PlusValue:I
 
-    .line 605
+    .line 610
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAutoZoomValue:I
 
-    .line 614
+    .line 620
     iput-object v9, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTriggerType:Ljava/lang/String;
 
-    .line 615
+    .line 621
     iput-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsTriggerTypeSet:Z
 
-    .line 1706
+    .line 1714
     iput-wide v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceDetectTime:J
 
-    .line 1909
+    .line 1917
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->faceInfos:Ljava/util/LinkedList;
 
-    .line 1910
+    .line 1918
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->faceInfoBound:Landroid/os/Bundle;
 
-    .line 2044
+    .line 2052
     iput-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenFlashShow:Z
 
-    .line 2045
+    .line 2053
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mNightHawkDetected:I
 
-    .line 2533
-    new-instance v0, Ljava/util/LinkedList;
+    .line 2541
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionBundleQueue:Ljava/util/LinkedList;
+    iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionEvents:Ljava/util/Map;
 
-    const/16 v0, 0x14
+    if-eqz p2, :cond_166
 
-    .line 2534
-    iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->MAX_QUEUE_SIZE:I
-
-    .line 2535
-    iput-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsQueueExceeded:Z
-
-    if-eqz p2, :cond_16c
-
-    .line 768
+    .line 774
     const-string p2, "com.transsion.camera.athena.AnalyticsImpl"
 
     filled-new-array {p1}, [Ljava/lang/Object;
@@ -911,41 +917,41 @@
 
     iput-object p2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
-    goto :goto_16e
+    goto :goto_168
 
-    .line 770
-    :cond_16c
+    .line 776
+    :cond_166
     iput-object v8, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
-    .line 772
-    :goto_16e
+    .line 778
+    :goto_168
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mContext:Landroid/content/Context;
 
-    .line 773
+    .line 779
     new-instance p1, Lcom/transsion/camera/utils/analytics/beauty/NormalFaceBeauty;
 
     invoke-direct {p1, v8}, Lcom/transsion/camera/utils/analytics/beauty/NormalFaceBeauty;-><init>(Lcom/transsion/camera/utils/analytics/beauty/IFaceBeauty;)V
 
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mNormalFaceBeauty:Lcom/transsion/camera/utils/analytics/beauty/NormalFaceBeauty;
 
-    .line 774
+    .line 780
     new-instance p2, Lcom/transsion/camera/utils/analytics/beauty/MultiFaceBeauty;
 
     invoke-direct {p2, p1}, Lcom/transsion/camera/utils/analytics/beauty/MultiFaceBeauty;-><init>(Lcom/transsion/camera/utils/analytics/beauty/IFaceBeauty;)V
 
     iput-object p2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMultiFaceBeauty:Lcom/transsion/camera/utils/analytics/beauty/MultiFaceBeauty;
 
-    .line 775
+    .line 781
     new-instance p1, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-direct {p1, p2}, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;-><init>(Lcom/transsion/camera/utils/analytics/beauty/IFaceBeauty;)V
 
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
-    .line 776
+    .line 782
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeauty:Lcom/transsion/camera/utils/analytics/beauty/IFaceBeauty;
 
-    .line 777
+    .line 783
     const-string p1, "face_beauty_v3_0"
 
     invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->getBooleanResource(Ljava/lang/String;)Z
@@ -954,7 +960,7 @@
 
     iput-boolean p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyV3:Z
 
-    .line 778
+    .line 784
     sget-object p1, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -981,7 +987,7 @@
 .method private checkFaceValid()V
     .registers 7
 
-    .line 1733
+    .line 1741
     iget-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceDetectTime:J
 
     const-wide/16 v2, 0x0
@@ -1009,19 +1015,19 @@
     :cond_16
     return-void
 
-    .line 1734
+    .line 1742
     :cond_17
     :goto_17
     iput-wide v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceDetectTime:J
 
     const/4 v0, 0x0
 
-    .line 1735
+    .line 1743
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceCount:I
 
     const/4 v0, 0x0
 
-    .line 1736
+    .line 1744
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMaxFaceRatio:F
 
     return-void
@@ -1032,7 +1038,7 @@
 
     if-eqz p0, :cond_35
 
-    .line 1506
+    .line 1512
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -1041,18 +1047,18 @@
 
     goto :goto_35
 
-    .line 1509
+    .line 1515
     :cond_9
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 1510
+    .line 1516
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1511
+    .line 1517
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v2, ":"
@@ -1064,7 +1070,7 @@
     :goto_1b
     if-ge v2, v0, :cond_30
 
-    .line 1513
+    .line 1519
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1075,7 +1081,7 @@
 
     if-eq v2, v3, :cond_2d
 
-    .line 1515
+    .line 1521
     const-string v3, ","
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1085,7 +1091,7 @@
 
     goto :goto_1b
 
-    .line 1518
+    .line 1524
     :cond_30
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1093,7 +1099,7 @@
 
     return-object p0
 
-    .line 1507
+    .line 1513
     :cond_35
     :goto_35
     const-string p0, ""
@@ -1104,29 +1110,29 @@
 .method private duration(ILjava/lang/String;)V
     .registers 10
 
-    .line 1791
+    .line 1799
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsTotalForMode:I
 
-    .line 1792
+    .line 1800
     iget v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsCountForMode:I
 
-    .line 1793
+    .line 1801
     iget v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureTotalForMode:I
 
-    .line 1794
+    .line 1802
     iget v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureCountForMode:I
 
-    .line 1795
+    .line 1803
     invoke-static {p2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->simpleModeName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 1796
+    .line 1804
     new-instance v4, Landroid/os/Bundle;
 
     invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
 
-    .line 1797
+    .line 1805
     iget-object v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraId:Ljava/lang/String;
 
     invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -1137,47 +1143,47 @@
 
     invoke-virtual {v4, v6, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1798
+    .line 1806
     const-string v5, "key_time_duration"
 
     invoke-virtual {v4, v5, p1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1799
+    .line 1807
     const-string v5, "key_mode"
 
     invoke-virtual {v4, v5, p2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1800
+    .line 1808
     const-string v5, "key_temp_board_total"
 
     invoke-virtual {v4, v5, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1801
+    .line 1809
     const-string v5, "key_temp_board_count"
 
     invoke-virtual {v4, v5, v3}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1802
+    .line 1810
     const-string v5, "key_fps_total"
 
     invoke-virtual {v4, v5, v0}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1803
+    .line 1811
     const-string v5, "key_fps_count"
 
     invoke-virtual {v4, v5, v1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1804
+    .line 1812
     iget-object v5, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v5, :cond_43
 
-    .line 1805
+    .line 1813
     const-string v6, "duration"
 
     invoke-interface {v5, v6, v4}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1809
+    .line 1817
     :cond_43
     sget-object v4, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1199,7 +1205,7 @@
 
     invoke-static {v4, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1810
+    .line 1818
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1216,7 +1222,7 @@
 
     invoke-static {v4, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1811
+    .line 1819
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1233,7 +1239,7 @@
 
     invoke-static {v4, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1812
+    .line 1820
     const-string p0, "="
 
     const-string p1, "avgTemperature:"
@@ -1242,7 +1248,7 @@
 
     if-eqz v3, :cond_ad
 
-    .line 1813
+    .line 1821
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1273,7 +1279,7 @@
 
     goto :goto_c5
 
-    .line 1816
+    .line 1824
     :cond_ad
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1293,13 +1299,13 @@
 
     invoke-static {v4, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1818
+    .line 1826
     :goto_c5
     const-string p1, "avgFps:"
 
     if-eqz v1, :cond_eb
 
-    .line 1819
+    .line 1827
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1330,7 +1336,7 @@
 
     return-void
 
-    .line 1822
+    .line 1830
     :cond_eb
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -1356,82 +1362,25 @@
 .method private enqueueCameraExceptionEvent(I)V
     .registers 5
 
-    .line 2552
-    iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionBundleQueue:Ljava/util/LinkedList;
+    .line 2559
+    invoke-direct {p0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getCamExceptionBundle(I)Landroid/os/Bundle;
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
+    move-result-object v0
 
-    move-result v0
-
-    const/16 v1, 0x14
-
-    if-le v0, v1, :cond_3b
-
-    .line 2553
-    iget-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsQueueExceeded:Z
-
-    if-nez v0, :cond_35
-
-    .line 2554
-    sget-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[enqueueCameraExceptionEvent] Queue size exceeded, size = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionBundleQueue:Ljava/util/LinkedList;
-
-    invoke-virtual {v2}, Ljava/util/LinkedList;->size()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v2, ", type = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 2560
+    invoke-static {}, Lcom/transsion/camera/utils/dfx/mgr/ExManager;->get()Lcom/transsion/camera/utils/dfx/inter/IExDetection;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+    invoke-interface {v1}, Lcom/transsion/camera/utils/dfx/inter/IExDetection;->getDfxHandler()Landroid/os/Handler;
 
-    const/4 v0, 0x1
+    move-result-object v1
 
-    .line 2555
-    iput-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsQueueExceeded:Z
+    new-instance v2, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$$ExternalSyntheticLambda0;
 
-    .line 2557
-    :cond_35
-    iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionBundleQueue:Ljava/util/LinkedList;
+    invoke-direct {v2, p0, p1, v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/utils/analytics/AnalyticsUtils;ILandroid/os/Bundle;)V
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->poll()Ljava/lang/Object;
-
-    goto :goto_3e
-
-    :cond_3b
-    const/4 v0, 0x0
-
-    .line 2559
-    iput-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsQueueExceeded:Z
-
-    .line 2561
-    :goto_3e
-    invoke-direct {p0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getCamExceptionBundle(I)Landroid/os/Bundle;
-
-    move-result-object p1
-
-    .line 2562
-    iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionBundleQueue:Ljava/util/LinkedList;
-
-    invoke-virtual {p0, p1}, Ljava/util/LinkedList;->offer(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
@@ -1439,38 +1388,38 @@
 .method private getCamExceptionBundle(I)Landroid/os/Bundle;
     .registers 6
 
-    .line 2542
+    .line 2549
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2543
+    .line 2550
     iget-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeName:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->simpleModeName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2544
+    .line 2551
     const-string v2, "key_camera_id"
 
     iget-object v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraId:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v3}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2545
+    .line 2552
     const-string v2, "key_mode"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2546
+    .line 2553
     const-string v1, "key_camera_name"
 
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraNameValue:Ljava/lang/String;
 
     invoke-virtual {v0, v1, p0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2547
+    .line 2554
     const-string p0, "cam_error_type"
 
     invoke-virtual {v0, p0, p1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
@@ -1481,7 +1430,7 @@
 .method public static getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
     .registers 1
 
-    .line 782
+    .line 788
     sget-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->sInstance:Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     return-object v0
@@ -1490,7 +1439,7 @@
 .method private getVideoEnhanceDescription()Ljava/lang/String;
     .registers 3
 
-    .line 2369
+    .line 2377
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoEnhanceValue:Ljava/lang/String;
 
     const-string v1, "off"
@@ -1503,7 +1452,7 @@
 
     return-object v1
 
-    .line 2370
+    .line 2378
     :cond_b
     iget-boolean p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoSuperNightEnable:Z
 
@@ -1522,7 +1471,7 @@
 .method private getVideoEnhanceYUVDescription()Ljava/lang/String;
     .registers 2
 
-    .line 2378
+    .line 2386
     iget-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoEnhanceYUVEnable:Z
 
     if-nez v0, :cond_7
@@ -1531,7 +1480,7 @@
 
     return-object p0
 
-    .line 2379
+    .line 2387
     :cond_7
     iget-boolean p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoSuperNightYUVEnable:Z
 
@@ -1548,75 +1497,101 @@
 .end method
 
 .method private handleCameraExceptionEventQueue(I)V
-    .registers 6
+    .registers 9
+
+    .line 2564
+    iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionEvents:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v0
+
+    const-string v1, "cam_exception"
+
+    const-string v2, "cam_use_total_time"
+
+    const/4 v3, 0x0
+
+    if-eqz v0, :cond_18
 
     .line 2566
-    iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionBundleQueue:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->poll()Ljava/lang/Object;
+    invoke-direct {p0, v3}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getCamExceptionBundle(I)Landroid/os/Bundle;
 
     move-result-object v0
-
-    check-cast v0, Landroid/os/Bundle;
-
-    const/4 v1, 0x0
 
     .line 2567
-    const-string v2, "cam_exception"
-
-    const-string v3, "cam_use_total_time"
-
-    if-eqz v0, :cond_2f
+    invoke-virtual {v0, v2, p1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
     .line 2568
-    invoke-virtual {v0, v3, p1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {p0, v1, v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2569
-    invoke-virtual {p0, v2, v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    .line 2571
-    iget-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionBundleQueue:Ljava/util/LinkedList;
-
-    invoke-virtual {p1}, Ljava/util/LinkedList;->poll()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/os/Bundle;
-
-    :goto_1d
-    if-eqz p1, :cond_2e
-
-    .line 2573
-    invoke-virtual {p1, v3, v1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    .line 2574
-    invoke-virtual {p0, v2, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    .line 2575
-    iget-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionBundleQueue:Ljava/util/LinkedList;
-
-    invoke-virtual {p1}, Ljava/util/LinkedList;->poll()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/os/Bundle;
-
-    goto :goto_1d
-
-    :cond_2e
     return-void
 
-    .line 2578
-    :cond_2f
-    invoke-direct {p0, v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getCamExceptionBundle(I)Landroid/os/Bundle;
+    .line 2573
+    :cond_18
+    iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionEvents:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    .line 2579
-    invoke-virtual {v0, v3, p1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    .line 2580
-    invoke-virtual {p0, v2, v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
+    move-result-object v0
+
+    const/4 v4, 0x1
+
+    :goto_23
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_48
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Integer;
+
+    .line 2574
+    iget-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionEvents:Ljava/util/Map;
+
+    invoke-interface {v6, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/os/Bundle;
+
+    if-nez v5, :cond_3a
+
+    goto :goto_23
+
+    :cond_3a
+    if-eqz v4, :cond_41
+
+    .line 2579
+    invoke-virtual {v5, v2, p1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+
+    move v4, v3
+
+    goto :goto_44
+
+    .line 2582
+    :cond_41
+    invoke-virtual {v5, v2, v3}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+
+    .line 2584
+    :goto_44
+    invoke-virtual {p0, v1, v5}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    goto :goto_23
+
+    .line 2586
+    :cond_48
+    iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionEvents:Ljava/util/Map;
+
+    invoke-interface {p0}, Ljava/util/Map;->clear()V
 
     return-void
 .end method
@@ -1624,7 +1599,7 @@
 .method public static init(Landroid/content/Context;)V
     .registers 4
 
-    .line 760
+    .line 766
     const-string v0, "persist.sys.fans.support"
 
     const-string v1, "0"
@@ -1639,14 +1614,14 @@
 
     move-result v0
 
-    .line 761
+    .line 767
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v1
 
     iget-boolean v1, v1, Lcom/transsion/camera/utils/CustomConfigUtil;->mEnableAthena:Z
 
-    .line 762
+    .line 768
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v2
@@ -1655,7 +1630,7 @@
 
     sput-object v2, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mOobeCountry:Ljava/lang/String;
 
-    .line 763
+    .line 769
     new-instance v2, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     if-nez v0, :cond_25
@@ -1681,6 +1656,35 @@
     return-void
 .end method
 
+.method private synthetic lambda$enqueueCameraExceptionEvent$7(ILandroid/os/Bundle;)V
+    .registers 3
+
+    .line 2560
+    iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCamExceptionEvents:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-interface {p0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private synthetic lambda$setCameraEndTime$5(I)V
+    .registers 2
+
+    if-nez p1, :cond_3
+
+    const/4 p1, 0x1
+
+    .line 1555
+    :cond_3
+    invoke-direct {p0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->handleCameraExceptionEventQueue(I)V
+
+    return-void
+.end method
+
 .method private static launchStartType(I)Ljava/lang/String;
     .registers 2
 
@@ -1698,30 +1702,30 @@
 
     if-eq p0, v0, :cond_e
 
-    .line 2442
+    .line 2450
     const-string p0, ""
 
     return-object p0
 
-    .line 2434
+    .line 2442
     :cond_e
     const-string p0, "hard"
 
     return-object p0
 
-    .line 2436
+    .line 2444
     :cond_11
     const-string p0, "warm"
 
     return-object p0
 
-    .line 2438
+    .line 2446
     :cond_14
     const-string p0, "cold"
 
     return-object p0
 
-    .line 2432
+    .line 2440
     :cond_17
     const-string p0, "unknown"
 
@@ -1731,40 +1735,40 @@
 .method private resetCaptureParameters()V
     .registers 4
 
-    .line 1082
+    .line 1088
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->resetFocus()V
 
-    .line 1083
+    .line 1089
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureExif:Lcom/transsion/camera/utils/analytics/CaptureExif;
 
     if-eqz v0, :cond_a
 
-    .line 1084
+    .line 1090
     invoke-virtual {v0}, Lcom/transsion/camera/utils/analytics/CaptureExif;->resetCaptureExif()V
 
     :cond_a
     const/4 v0, 0x0
 
-    .line 1086
+    .line 1092
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceCount:I
 
     const-wide/16 v1, 0x0
 
-    .line 1087
+    .line 1093
     iput-wide v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceDetectTime:J
 
     const/4 v1, 0x0
 
-    .line 1088
+    .line 1094
     iput v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMaxFaceRatio:F
 
-    .line 1089
+    .line 1095
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAIShutterValue:I
 
-    .line 1090
+    .line 1096
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVolumeShutter:I
 
-    .line 1091
+    .line 1097
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mBurstProgress:I
 
     return-void
@@ -1775,18 +1779,18 @@
 
     const/4 v0, -0x1
 
-    .line 1119
+    .line 1125
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoSex:I
 
-    .line 1120
+    .line 1126
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoAge:I
 
     const/4 v0, 0x0
 
-    .line 1121
+    .line 1127
     iput-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoDetected:Z
 
-    .line 1122
+    .line 1128
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsMultiGenderOrMultiSkin:I
 
     return-void
@@ -1795,33 +1799,33 @@
 .method private resetVideoParameters()V
     .registers 4
 
-    .line 1522
+    .line 1528
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->resetFocus()V
 
     const/4 v0, 0x0
 
-    .line 1523
+    .line 1529
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceCount:I
 
     const-wide/16 v1, 0x0
 
-    .line 1524
+    .line 1530
     iput-wide v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceDetectTime:J
 
     const/4 v1, 0x0
 
-    .line 1525
+    .line 1531
     iput v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMaxFaceRatio:F
 
-    .line 1526
+    .line 1532
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mNightHawkDetected:I
 
-    .line 1527
+    .line 1533
     const-string v1, "-1"
 
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTriggerType:Ljava/lang/String;
 
-    .line 1528
+    .line 1534
     iput-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsTriggerTypeSet:Z
 
     return-void
@@ -1830,7 +1834,7 @@
 .method private saveFpsForCapturing(I)V
     .registers 3
 
-    .line 2128
+    .line 2136
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsForCaptureStart:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/AbstractCollection;->isEmpty()Z
@@ -1839,7 +1843,7 @@
 
     if-nez v0, :cond_13
 
-    .line 2130
+    .line 2138
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLowestFpsValueForCapture:I
 
     if-ltz v0, :cond_10
@@ -1851,7 +1855,7 @@
     :cond_f
     return-void
 
-    .line 2131
+    .line 2139
     :cond_10
     :goto_10
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLowestFpsValueForCapture:I
@@ -1861,7 +1865,7 @@
     :cond_13
     const/4 p1, -0x1
 
-    .line 2134
+    .line 2142
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLowestFpsValueForCapture:I
 
     return-void
@@ -1870,17 +1874,17 @@
 .method private saveFpsForMode(I)V
     .registers 3
 
-    .line 2114
+    .line 2122
     iget-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsInMode:Z
 
     if-eqz v0, :cond_15
 
-    .line 2115
+    .line 2123
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsTotalForMode:I
 
     if-gtz v0, :cond_b
 
-    .line 2116
+    .line 2124
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsTotalForMode:I
 
     goto :goto_e
@@ -1888,10 +1892,10 @@
     :cond_b
     add-int/2addr v0, p1
 
-    .line 2118
+    .line 2126
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsTotalForMode:I
 
-    .line 2120
+    .line 2128
     :goto_e
     iget p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsCountForMode:I
 
@@ -1904,10 +1908,10 @@
     :cond_15
     const/4 p1, 0x0
 
-    .line 2122
+    .line 2130
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsCountForMode:I
 
-    .line 2123
+    .line 2131
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsTotalForMode:I
 
     return-void
@@ -1916,17 +1920,17 @@
 .method private saveTemperatureForMode(I)V
     .registers 3
 
-    .line 2094
+    .line 2102
     iget-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsInMode:Z
 
     if-eqz v0, :cond_15
 
-    .line 2095
+    .line 2103
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureTotalForMode:I
 
     if-gtz v0, :cond_b
 
-    .line 2096
+    .line 2104
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureTotalForMode:I
 
     goto :goto_e
@@ -1934,10 +1938,10 @@
     :cond_b
     add-int/2addr v0, p1
 
-    .line 2098
+    .line 2106
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureTotalForMode:I
 
-    .line 2100
+    .line 2108
     :goto_e
     iget p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureCountForMode:I
 
@@ -1950,10 +1954,10 @@
     :cond_15
     const/4 p1, 0x0
 
-    .line 2102
+    .line 2110
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureTotalForMode:I
 
-    .line 2103
+    .line 2111
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureCountForMode:I
 
     return-void
@@ -1962,21 +1966,21 @@
 .method private saveTemperatureForRecording(I)V
     .registers 7
 
-    .line 2080
+    .line 2088
     iget-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoRecording:Z
 
     const-wide/16 v1, -0x1
 
     if-eqz v0, :cond_29
 
-    .line 2081
+    .line 2089
     iget-wide v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLastTemperatureTimeForRecording:J
 
     cmp-long v0, v3, v1
 
     if-eqz v0, :cond_19
 
-    .line 2083
+    .line 2091
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -1994,7 +1998,7 @@
     :cond_18
     return-void
 
-    .line 2084
+    .line 2092
     :cond_19
     :goto_19
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureForRecording:Ljava/util/List;
@@ -2005,7 +2009,7 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2085
+    .line 2093
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -2014,13 +2018,13 @@
 
     return-void
 
-    .line 2088
+    .line 2096
     :cond_29
     iget-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureForRecording:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->clear()V
 
-    .line 2089
+    .line 2097
     iput-wide v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLastTemperatureTimeForRecording:J
 
     return-void
@@ -2029,29 +2033,29 @@
 .method private setFilterTime()V
     .registers 10
 
-    .line 1234
+    .line 1240
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 1235
+    .line 1241
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraIdFilterCache:Ljava/lang/String;
 
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 1236
+    .line 1242
     iget-object v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v3, :cond_3f
 
-    .line 1237
+    .line 1243
     new-instance v3, Landroid/os/Bundle;
 
     invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
 
-    .line 1238
+    .line 1244
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2082,12 +2086,12 @@
 
     invoke-virtual {v3, v5, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1239
+    .line 1245
     const-string v4, "key_camera_id"
 
     invoke-virtual {v3, v4, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1240
+    .line 1246
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v4, "filter_time"
@@ -2097,10 +2101,10 @@
     :cond_3f
     const-wide/16 v2, 0x0
 
-    .line 1242
+    .line 1248
     iput-wide v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterStartTime:J
 
-    .line 1243
+    .line 1249
     sget-object p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2131,7 +2135,7 @@
 .method public static setFrontWideCameraId(Ljava/lang/String;)V
     .registers 1
 
-    .line 1636
+    .line 1644
     sput-object p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->sFrontWideCameraId:Ljava/lang/String;
 
     return-void
@@ -2140,29 +2144,29 @@
 .method private setSuperNightFilterTime()V
     .registers 10
 
-    .line 1247
+    .line 1253
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 1248
+    .line 1254
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraIdFilterSuperNightCache:Ljava/lang/String;
 
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 1249
+    .line 1255
     iget-object v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v3, :cond_3f
 
-    .line 1250
+    .line 1256
     new-instance v3, Landroid/os/Bundle;
 
     invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
 
-    .line 1251
+    .line 1257
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2193,12 +2197,12 @@
 
     invoke-virtual {v3, v5, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1252
+    .line 1258
     const-string v4, "key_camera_id"
 
     invoke-virtual {v3, v4, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1253
+    .line 1259
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v4, "filter_supernight_time"
@@ -2208,10 +2212,10 @@
     :cond_3f
     const-wide/16 v2, 0x0
 
-    .line 1255
+    .line 1261
     iput-wide v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterSuperNightStartTime:J
 
-    .line 1256
+    .line 1262
     sget-object p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2242,7 +2246,7 @@
 .method public static setsWideCameraId(Ljava/lang/String;)V
     .registers 1
 
-    .line 1628
+    .line 1636
     sput-object p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->sWideCameraId:Ljava/lang/String;
 
     return-void
@@ -2253,7 +2257,7 @@
 
     if-eqz p0, :cond_1c
 
-    .line 1096
+    .line 1102
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -2264,7 +2268,7 @@
 
     goto :goto_1c
 
-    .line 1097
+    .line 1103
     :cond_a
     const-string v0, "."
 
@@ -2286,7 +2290,7 @@
 
     return-object p0
 
-    .line 1096
+    .line 1102
     :cond_1c
     :goto_1c
     const-string p0, ""
@@ -2297,7 +2301,7 @@
 .method private updateFaceInfo()V
     .registers 5
 
-    .line 1101
+    .line 1107
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v0, :cond_46
@@ -2314,23 +2318,23 @@
 
     goto :goto_46
 
-    .line 1104
+    .line 1110
     :cond_e
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/analytics/storage/FaceInfo;->updateFaceInfo(Landroid/content/Context;)V
 
-    .line 1105
+    .line 1111
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoSex:I
 
     if-eq v0, v1, :cond_2c
 
-    .line 1106
+    .line 1112
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1107
+    .line 1113
     iget v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoSex:I
 
     add-int/lit8 v2, v2, -0x1
@@ -2339,39 +2343,39 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1108
+    .line 1114
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v3, "sex"
 
     invoke-interface {v2, v3, v0}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1110
+    .line 1116
     :cond_2c
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoAge:I
 
     if-eq v0, v1, :cond_43
 
-    .line 1111
+    .line 1117
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1112
+    .line 1118
     const-string v1, "key_age_id"
 
     iget v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoAge:I
 
     invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1113
+    .line 1119
     iget-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v2, "age"
 
     invoke-interface {v1, v2, v0}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1115
+    .line 1121
     :cond_43
     invoke-direct {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->resetFaceInfo()V
 
@@ -2387,7 +2391,7 @@
 
     monitor-enter p0
 
-    .line 1914
+    .line 1922
     :try_start_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -2397,16 +2401,16 @@
 
     sub-long/2addr v0, v2
 
-    .line 1915
+    .line 1923
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->faceInfos:Ljava/util/LinkedList;
 
-    new-instance v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$$ExternalSyntheticLambda0;
+    new-instance v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$$ExternalSyntheticLambda2;
 
-    invoke-direct {v3, v0, v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$$ExternalSyntheticLambda0;-><init>(J)V
+    invoke-direct {v3, v0, v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$$ExternalSyntheticLambda2;-><init>(J)V
 
     invoke-interface {v2, v3}, Ljava/util/Collection;->removeIf(Ljava/util/function/Predicate;)Z
 
-    .line 1916
+    .line 1924
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->faceInfos:Ljava/util/LinkedList;
 
     new-instance v1, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$FaceInfoWrapper;
@@ -2417,7 +2421,7 @@
     :try_end_1c
     .catchall {:try_start_1 .. :try_end_1c} :catchall_1e
 
-    .line 1917
+    .line 1925
     monitor-exit p0
 
     return-void
@@ -2436,12 +2440,12 @@
 .method public age(I)V
     .registers 2
 
-    .line 1155
+    .line 1161
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoAge:I
 
     const/4 p1, 0x1
 
-    .line 1156
+    .line 1162
     iput-boolean p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoDetected:Z
 
     return-void
@@ -2452,14 +2456,14 @@
 
     move-object/from16 v0, p0
 
-    .line 832
+    .line 838
     iget v1, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureValue:I
 
     const/4 v2, -0x1
 
     if-eq v1, v2, :cond_10
 
-    .line 834
+    .line 840
     iget-object v2, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureForCapture:Ljava/util/List;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2468,7 +2472,7 @@
 
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 836
+    .line 842
     :cond_10
     new-instance v1, Ljava/util/ArrayList;
 
@@ -2476,7 +2480,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 837
+    .line 843
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -2487,7 +2491,7 @@
 
     if-le v2, v3, :cond_2b
 
-    .line 838
+    .line 844
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -2500,18 +2504,18 @@
 
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    .line 840
+    .line 846
     :cond_2b
     invoke-static {v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->covertListToString(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 842
+    .line 848
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 843
+    .line 849
     iget-object v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsForCaptureStart:Ljava/util/LinkedList;
 
     invoke-virtual {v5}, Ljava/util/AbstractCollection;->isEmpty()Z
@@ -2520,7 +2524,7 @@
 
     if-nez v5, :cond_5a
 
-    .line 844
+    .line 850
     iget-object v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsForCaptureStart:Ljava/util/LinkedList;
 
     invoke-virtual {v5}, Ljava/util/LinkedList;->pollFirst()Ljava/lang/Object;
@@ -2529,12 +2533,12 @@
 
     check-cast v5, Ljava/lang/Integer;
 
-    .line 845
+    .line 851
     iget v6, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLowestFpsValueForCapture:I
 
     if-eqz v5, :cond_5a
 
-    .line 846
+    .line 852
     invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
 
     move-result v7
@@ -2543,30 +2547,30 @@
 
     if-lez v6, :cond_5a
 
-    .line 847
+    .line 853
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 848
+    .line 854
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 851
+    .line 857
     :cond_5a
     invoke-static {v2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->covertListToString(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 853
+    .line 859
     iget-object v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeName:Ljava/lang/String;
 
     invoke-static {v5}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->simpleModeName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 854
+    .line 860
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
@@ -2579,10 +2583,10 @@
 
     iput v6, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureTime:I
 
-    .line 855
+    .line 861
     invoke-direct {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->checkFaceValid()V
 
-    .line 856
+    .line 862
     iget-object v6, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const v7, 0x461c4000    # 10000.0f
@@ -2593,12 +2597,12 @@
 
     if-eqz v6, :cond_403
 
-    .line 857
+    .line 863
     new-instance v6, Landroid/os/Bundle;
 
     invoke-direct {v6}, Landroid/os/Bundle;-><init>()V
 
-    .line 858
+    .line 864
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraId:Ljava/lang/String;
 
     invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -2609,61 +2613,61 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 859
+    .line 865
     const-string v10, "key_mode"
 
     invoke-virtual {v6, v10, v5}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 860
+    .line 866
     const-string v10, "key_asd"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAsdValue:I
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 861
+    .line 867
     const-string v10, "key_asd_effect"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAsdEffect:I
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 862
+    .line 868
     const-string v10, "key_camera_zoom"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mZoomValue:F
 
     invoke-virtual {v6, v10, v11}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    .line 863
+    .line 869
     const-string v10, "key_total_zoom"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTotalZoomValue:F
 
     invoke-virtual {v6, v10, v11}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    .line 864
+    .line 870
     const-string v10, "key_picture_ratio"
 
     iget-object v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPictureRatioValue:Ljava/lang/String;
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 865
+    .line 871
     const-string v10, "key_filter"
 
     iget-object v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterValue:Ljava/lang/String;
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 866
+    .line 872
     const-string v10, "key_supernight_filter"
 
     iget-object v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSuperNightFilterValue:Ljava/lang/String;
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 867
+    .line 873
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHdrValue:Ljava/lang/String;
 
     invoke-static {v10}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getHdrId(Ljava/lang/String;)I
@@ -2674,7 +2678,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 868
+    .line 874
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLivePhotoValue:Ljava/lang/String;
 
     invoke-static {v10}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getLivePhotoValue(Ljava/lang/String;)I
@@ -2685,7 +2689,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 869
+    .line 875
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSelfTimerValue:Ljava/lang/String;
 
     invoke-static {v10}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getTimerId(Ljava/lang/String;)I
@@ -2696,7 +2700,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 870
+    .line 876
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeauty:Lcom/transsion/camera/utils/analytics/beauty/IFaceBeauty;
 
     invoke-interface {v10}, Lcom/transsion/camera/utils/analytics/beauty/IFaceBeauty;->getReportValueInt()I
@@ -2707,7 +2711,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 871
+    .line 877
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHdValue:Ljava/lang/String;
 
     invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -2718,7 +2722,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 872
+    .line 878
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSmileValue:Ljava/lang/String;
 
     invoke-static {v10}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getSmileValue(Ljava/lang/String;)I
@@ -2729,14 +2733,14 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 873
+    .line 879
     const-string v10, "focus_num"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFocusCount:I
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 874
+    .line 880
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlash:Ljava/lang/String;
 
     invoke-static {v10}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getFlashValue(Ljava/lang/String;)I
@@ -2747,14 +2751,14 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 875
+    .line 881
     const-string v10, "face_num"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceCount:I
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 876
+    .line 882
     iget v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMaxFaceRatio:F
 
     mul-float/2addr v10, v7
@@ -2765,14 +2769,14 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 877
+    .line 883
     const-string v10, "capture_duration"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureTime:I
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 878
+    .line 884
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAsdenHanceValue:Ljava/lang/String;
 
     invoke-static {v10}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getAsdEnhanceValue(Ljava/lang/String;)I
@@ -2783,7 +2787,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 879
+    .line 885
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mImageStyleValue:Ljava/lang/String;
 
     invoke-static {v10}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getImageStyleValue(Ljava/lang/String;)I
@@ -2794,21 +2798,21 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 880
+    .line 886
     const-string v10, "key_setting_skin_optimization"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSkinOptimizationValue:I
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 881
+    .line 887
     const-string v10, "key_moon_detection"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMoonDetectionValue:I
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 882
+    .line 888
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGenderValue:Ljava/lang/String;
 
     invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -2821,7 +2825,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 883
+    .line 889
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAgeValue:Ljava/lang/String;
 
     invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -2832,7 +2836,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 884
+    .line 890
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHumanEffectValue:Ljava/lang/String;
 
     invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -2843,43 +2847,43 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 885
+    .line 891
     const-string v10, "magic_sky_type"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSkyType:I
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 886
+    .line 892
     const-string v10, "key_scene_preset"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCelebritySceneType:I
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 887
+    .line 893
     const-string v10, "key_shot2shot_count"
 
     iget v11, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mShot2ShotCount:I
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 888
+    .line 894
     const-string v10, "key_temp_board_values"
 
     invoke-virtual {v6, v10, v1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 889
+    .line 895
     const-string v10, "key_fps_values"
 
     invoke-virtual {v6, v10, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 891
+    .line 897
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureExif:Lcom/transsion/camera/utils/analytics/CaptureExif;
 
     if-eqz v10, :cond_1c3
 
-    .line 892
+    .line 898
     const-string v11, "exif_flash"
 
     invoke-virtual {v10}, Lcom/transsion/camera/utils/analytics/CaptureExif;->analyticsFlash()I
@@ -2888,7 +2892,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 893
+    .line 899
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureExif:Lcom/transsion/camera/utils/analytics/CaptureExif;
 
     iget v10, v10, Lcom/transsion/camera/utils/analytics/CaptureExif;->mISOSpeed:I
@@ -2897,7 +2901,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 894
+    .line 900
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureExif:Lcom/transsion/camera/utils/analytics/CaptureExif;
 
     iget-wide v10, v10, Lcom/transsion/camera/utils/analytics/CaptureExif;->mExposureTime:D
@@ -2912,7 +2916,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 895
+    .line 901
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureExif:Lcom/transsion/camera/utils/analytics/CaptureExif;
 
     iget-wide v10, v10, Lcom/transsion/camera/utils/analytics/CaptureExif;->mExposureBiasValue:D
@@ -2925,7 +2929,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 897
+    .line 903
     :cond_1c3
     const-string v10, "night_algo"
 
@@ -2933,7 +2937,7 @@
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 898
+    .line 904
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSuperNightStable:Ljava/lang/String;
 
     invoke-static {v10}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getSuperNightStable(Ljava/lang/String;)I
@@ -2944,7 +2948,7 @@
 
     invoke-virtual {v6, v11, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 899
+    .line 905
     iget-object v10, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyValue:[I
 
     const/4 v11, 0x6
@@ -2957,12 +2961,12 @@
 
     if-eqz v10, :cond_23c
 
-    .line 901
+    .line 907
     array-length v15, v10
 
     if-ge v15, v3, :cond_1ea
 
-    .line 902
+    .line 908
     const-string v15, "parameter_1"
 
     move/from16 v16, v3
@@ -2976,24 +2980,24 @@
     :cond_1ea
     move/from16 v16, v3
 
-    .line 903
+    .line 909
     array-length v3, v10
 
     if-lt v3, v14, :cond_217
 
-    .line 904
+    .line 910
     const-string v3, "parameter_4"
 
     aget v15, v10, v9
 
     invoke-virtual {v6, v3, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 905
+    .line 911
     iget-boolean v3, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyV3:Z
 
     if-eqz v3, :cond_202
 
-    .line 906
+    .line 912
     const-string v3, "skin_color_card"
 
     aget v15, v10, v8
@@ -3002,7 +3006,7 @@
 
     goto :goto_209
 
-    .line 908
+    .line 914
     :cond_202
     const-string v3, "parameter_5"
 
@@ -3010,7 +3014,7 @@
 
     invoke-virtual {v6, v3, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 910
+    .line 916
     :goto_209
     const-string v3, "parameter_6"
 
@@ -3018,42 +3022,42 @@
 
     invoke-virtual {v6, v3, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 911
+    .line 917
     const-string v3, "parameter_7"
 
     aget v15, v10, v4
 
     invoke-virtual {v6, v3, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 913
+    .line 919
     :cond_217
     :goto_217
     array-length v3, v10
 
     if-lt v3, v13, :cond_22f
 
-    .line 914
+    .line 920
     const-string v3, "parameter_15"
 
     aget v15, v10, v12
 
     invoke-virtual {v6, v3, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 915
+    .line 921
     const-string v3, "parameter_16"
 
     aget v15, v10, v11
 
     invoke-virtual {v6, v3, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 916
+    .line 922
     const-string v3, "parameter_17"
 
     aget v15, v10, v14
 
     invoke-virtual {v6, v3, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 918
+    .line 924
     :cond_22f
     array-length v3, v10
 
@@ -3061,7 +3065,7 @@
 
     if-lt v3, v15, :cond_23e
 
-    .line 919
+    .line 925
     const-string v3, "parameter_18"
 
     aget v10, v10, v13
@@ -3073,26 +3077,26 @@
     :cond_23c
     move/from16 v16, v3
 
-    .line 922
+    .line 928
     :cond_23e
     :goto_23e
     iget-object v3, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimbodyValue:[I
 
     if-eqz v3, :cond_288
 
-    .line 924
+    .line 930
     array-length v10, v3
 
     if-ge v10, v8, :cond_254
 
-    .line 925
+    .line 931
     const-string v10, "parameter_2"
 
     aget v11, v3, v9
 
     invoke-virtual {v6, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 926
+    .line 932
     const-string v10, "parameter_3"
 
     aget v3, v3, v4
@@ -3101,105 +3105,105 @@
 
     goto :goto_288
 
-    .line 927
+    .line 933
     :cond_254
     array-length v10, v3
 
     if-lt v10, v13, :cond_288
 
-    .line 928
+    .line 934
     const-string v10, "parameter_8"
 
     aget v13, v3, v9
 
     invoke-virtual {v6, v10, v13}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 929
+    .line 935
     const-string v10, "parameter_9"
 
     aget v4, v3, v4
 
     invoke-virtual {v6, v10, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 930
+    .line 936
     const-string v4, "parameter_10"
 
     aget v10, v3, v16
 
     invoke-virtual {v6, v4, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 931
+    .line 937
     const-string v4, "parameter_11"
 
     aget v10, v3, v8
 
     invoke-virtual {v6, v4, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 932
+    .line 938
     const-string v4, "parameter_12"
 
     aget v10, v3, v14
 
     invoke-virtual {v6, v4, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 933
+    .line 939
     const-string v4, "parameter_13"
 
     aget v10, v3, v12
 
     invoke-virtual {v6, v4, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 934
+    .line 940
     const-string v4, "parameter_14"
 
     aget v3, v3, v11
 
     invoke-virtual {v6, v4, v3}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 937
+    .line 943
     :cond_288
     :goto_288
     iget-object v3, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMotionSnapInfo:Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;
 
-    .line 938
+    .line 944
     const-string v4, "key_snap_button"
 
     if-eqz v3, :cond_2b7
 
-    .line 939
+    .line 945
     iget v10, v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mSnapButtonValue:I
 
     invoke-virtual {v6, v4, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 940
+    .line 946
     const-string v4, "key_snap_type"
 
     iget v10, v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mSnapType:I
 
     invoke-virtual {v6, v4, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 941
+    .line 947
     const-string v4, "key_snap_trigger_mode"
 
     iget v10, v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mSnapTriggerMode:I
 
     invoke-virtual {v6, v4, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 942
+    .line 948
     const-string v4, "key_snap_banding"
 
     iget v10, v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mBanding:I
 
     invoke-virtual {v6, v4, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 943
+    .line 949
     const-string v4, "key_snap_main_freq"
 
     iget v10, v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mMainFreq:F
 
     invoke-virtual {v6, v4, v10}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    .line 944
+    .line 950
     const-string v4, "key_motion_intensity"
 
     iget v3, v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;->mMotionIntensity:I
@@ -3208,7 +3212,7 @@
 
     goto :goto_2d4
 
-    .line 946
+    .line 952
     :cond_2b7
     sget-object v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3230,12 +3234,12 @@
 
     invoke-static {v3, v10}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 947
+    .line 953
     iget v3, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlashSnapButtonValue:I
 
     invoke-virtual {v6, v4, v3}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 949
+    .line 955
     :goto_2d4
     iget-boolean v3, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenFlashShow:Z
 
@@ -3247,299 +3251,299 @@
 
     invoke-virtual {v6, v4, v3}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 950
+    .line 956
     const-string v3, "bv_value"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mBvValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 951
+    .line 957
     const-string v3, "lv_value"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLVValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 952
+    .line 958
     const-string v3, "cct_value"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCCTValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 953
+    .line 959
     const-string v3, "tint_value"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTintValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 954
+    .line 960
     const-string v3, "key_makeup"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMakeUpValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 955
+    .line 961
     const-string v3, "key_makeup_intensity"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMakeUpIntensityValue:F
 
     invoke-virtual {v6, v3, v4}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    .line 956
+    .line 962
     const-string v3, "key_blur"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mBlurValue:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 957
+    .line 963
     const-string v3, "key_click_zoom"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mClickZoomValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 958
+    .line 964
     const-string v3, "key_camera_name"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraNameValue:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 959
+    .line 965
     const-string v3, "key_capture_type"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureType:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 960
+    .line 966
     const-string v3, "key_ai_shutter"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAIShutterValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 961
+    .line 967
     const-string v3, "key_vip_value"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVIPCaptureValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 962
+    .line 968
     const-string v3, "key_screen_type"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenType:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 963
+    .line 969
     const-string v3, "key_luminance"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLuminanceValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 964
+    .line 970
     const-string v3, "key_front_dual_flash_color_temp"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFrontDualFlashColorTemp:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 965
+    .line 971
     const-string v3, "key_front_dual_flash_strength_mode"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFrontDualFlashStrengthMode:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 966
+    .line 972
     const-string v3, "key_portraitmode_enhance"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPortraitModeEnhanceValue:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 967
+    .line 973
     const-string v3, "key_shot2see_time"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mShot2SeeTime:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 968
+    .line 974
     const-string v3, "key_brand_watermark"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mEditWaterMarkBrandValue:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 969
+    .line 975
     const-string v3, "key_gold_watermark"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGoldWaterMarkValue:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 970
+    .line 976
     const-string v3, "key_pro_watermark_type"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGoldWatermarkBgValue:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 971
+    .line 977
     const-string v3, "key_activity_orientation"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mActivityOrientation:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 972
+    .line 978
     const-string v3, "key_screen_brightness_mode"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenBrightnessMode:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 973
+    .line 979
     const-string v3, "key_screen_brightness"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenBrightness:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 974
+    .line 980
     iget-object v3, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->faceInfoBound:Landroid/os/Bundle;
 
     invoke-virtual {v6, v3}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    .line 975
+    .line 981
     const-string v3, "key_super_night_light"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSuperNightLightValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 976
+    .line 982
     const-string v3, "key_portrait_flare"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPortraitFlareValue:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 977
+    .line 983
     const-string v3, "key_volume_shutter"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVolumeShutter:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 978
+    .line 984
     const-string v3, "key_burst_progress"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mBurstProgress:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 979
+    .line 985
     const-string v3, "key_gps"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGPS:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 980
+    .line 986
     const-string v3, "key_macro_usage"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAutoMacroSwitch:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 981
+    .line 987
     const-string v3, "key_aigc_effect"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAIGCEffectValue:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 982
+    .line 988
     const-string v3, "key_ai_art"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAIArtValue:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 983
+    .line 989
     const-string v3, "key_long_exposure_scene"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLongExposureSceneValue:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 984
+    .line 990
     const-string v3, "key_shutter_sound_optional"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mShutterSoundOptional:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 985
+    .line 991
     const-string v3, "key_setting_focus_distance"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mStreetPhotoFocalDistanceValue:F
 
     invoke-virtual {v6, v3, v4}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    .line 986
+    .line 992
     const-string v3, "key_street_photo_style"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mStreetPhotoStyleValue:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 987
+    .line 993
     const-string v3, "key_is_multi_gender_or_skin"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsMultiGenderOrMultiSkin:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 988
+    .line 994
     const-string v3, "key_flare_remover_effect"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlareRemoverEffectValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 989
+    .line 995
     const-string v3, "key_auto_zoom"
 
     iget v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAutoZoomValue:I
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 990
+    .line 996
     const-string v3, "media_id"
 
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSaveUriId:Ljava/lang/String;
 
     invoke-virtual {v6, v3, v4}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 991
+    .line 997
     iget-object v3, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v4, "capture"
 
     invoke-interface {v3, v4, v6}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 993
+    .line 999
     :cond_403
     sget-object v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3553,7 +3557,7 @@
 
     if-eqz v4, :cond_a4a
 
-    .line 994
+    .line 1000
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3570,7 +3574,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 995
+    .line 1001
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3601,7 +3605,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 996
+    .line 1002
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3630,7 +3634,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 997
+    .line 1003
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3659,7 +3663,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 998
+    .line 1004
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3678,7 +3682,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 999
+    .line 1005
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3713,7 +3717,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1000
+    .line 1006
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3742,7 +3746,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1001
+    .line 1007
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3771,7 +3775,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1002
+    .line 1008
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3790,7 +3794,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1003
+    .line 1009
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3809,7 +3813,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1004
+    .line 1010
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3832,7 +3836,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1005
+    .line 1011
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3851,7 +3855,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1006
+    .line 1012
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3870,7 +3874,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1007
+    .line 1013
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3889,7 +3893,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1008
+    .line 1014
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3908,7 +3912,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1009
+    .line 1015
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3927,7 +3931,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1010
+    .line 1016
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3946,7 +3950,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1011
+    .line 1017
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3965,7 +3969,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1012
+    .line 1018
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3984,7 +3988,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1013
+    .line 1019
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4003,7 +4007,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1014
+    .line 1020
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4022,15 +4026,15 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1015
+    .line 1021
     iget-object v4, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureExif:Lcom/transsion/camera/utils/analytics/CaptureExif;
 
     if-eqz v4, :cond_636
 
-    .line 1016
+    .line 1022
     invoke-virtual {v4}, Lcom/transsion/camera/utils/analytics/CaptureExif;->printLog()V
 
-    .line 1018
+    .line 1024
     :cond_636
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -4050,7 +4054,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1019
+    .line 1025
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4069,7 +4073,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1020
+    .line 1026
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4098,23 +4102,23 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1021
+    .line 1027
     iget-object v3, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyValue:[I
 
-    .line 1022
+    .line 1028
     const-string v4, "]:"
 
     if-eqz v3, :cond_6af
 
     move v5, v9
 
-    .line 1023
+    .line 1029
     :goto_68b
     array-length v6, v3
 
     if-ge v5, v6, :cond_6af
 
-    .line 1024
+    .line 1030
     sget-object v6, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -4143,19 +4147,19 @@
 
     goto :goto_68b
 
-    .line 1027
+    .line 1033
     :cond_6af
     iget-object v3, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimbodyValue:[I
 
     if-eqz v3, :cond_6d7
 
-    .line 1029
+    .line 1035
     :goto_6b3
     array-length v5, v3
 
     if-ge v9, v5, :cond_6d7
 
-    .line 1030
+    .line 1036
     sget-object v5, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -4184,13 +4188,13 @@
 
     goto :goto_6b3
 
-    .line 1033
+    .line 1039
     :cond_6d7
     iget-object v3, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMotionSnapInfo:Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;
 
     if-eqz v3, :cond_6f2
 
-    .line 1035
+    .line 1041
     sget-object v4, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -4211,7 +4215,7 @@
 
     goto :goto_70a
 
-    .line 1037
+    .line 1043
     :cond_6f2
     sget-object v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -4233,7 +4237,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1039
+    .line 1045
     :goto_70a
     sget-object v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -4255,7 +4259,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1040
+    .line 1046
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4274,7 +4278,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1041
+    .line 1047
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4293,7 +4297,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1042
+    .line 1048
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4312,7 +4316,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1043
+    .line 1049
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4331,7 +4335,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1044
+    .line 1050
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4350,7 +4354,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1045
+    .line 1051
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4369,7 +4373,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1046
+    .line 1052
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4388,7 +4392,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1047
+    .line 1053
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4407,7 +4411,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1048
+    .line 1054
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4426,7 +4430,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1049
+    .line 1055
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4445,7 +4449,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1050
+    .line 1056
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4464,7 +4468,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1051
+    .line 1057
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4483,7 +4487,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1052
+    .line 1058
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4502,7 +4506,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1053
+    .line 1059
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4521,7 +4525,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1054
+    .line 1060
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4540,7 +4544,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1055
+    .line 1061
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4559,7 +4563,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1056
+    .line 1062
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4586,7 +4590,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1057
+    .line 1063
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4605,7 +4609,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1058
+    .line 1064
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4624,7 +4628,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1059
+    .line 1065
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4643,7 +4647,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1060
+    .line 1066
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4662,7 +4666,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1061
+    .line 1067
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4681,7 +4685,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1062
+    .line 1068
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4700,7 +4704,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1063
+    .line 1069
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4719,7 +4723,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1064
+    .line 1070
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4738,7 +4742,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1065
+    .line 1071
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4757,7 +4761,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1066
+    .line 1072
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4776,7 +4780,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1067
+    .line 1073
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4795,7 +4799,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1068
+    .line 1074
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4814,7 +4818,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1069
+    .line 1075
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4833,7 +4837,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1070
+    .line 1076
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4852,7 +4856,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1071
+    .line 1077
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4871,7 +4875,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1072
+    .line 1078
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4890,7 +4894,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1073
+    .line 1079
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4909,7 +4913,7 @@
 
     invoke-static {v3, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1074
+    .line 1080
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4932,7 +4936,7 @@
 
     invoke-static {v3, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1075
+    .line 1081
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4951,11 +4955,11 @@
 
     invoke-static {v3, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1077
+    .line 1083
     :cond_a4a
     invoke-direct {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->updateFaceInfo()V
 
-    .line 1078
+    .line 1084
     invoke-direct {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->resetCaptureParameters()V
 
     return-void
@@ -4964,55 +4968,55 @@
 .method public dualVideo(I)V
     .registers 4
 
-    .line 2519
+    .line 2527
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoStatus:I
 
-    .line 2520
+    .line 2528
     iget-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz p1, :cond_35
 
-    .line 2521
+    .line 2529
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 2522
+    .line 2530
     const-string v0, "key_dualvideo_status"
 
     iget v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoStatus:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2523
+    .line 2531
     const-string v0, "key_dualvideo_camera_ids"
 
     iget-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoCameraIds:Ljava/lang/String;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2524
+    .line 2532
     const-string v0, "key_dualvideo_camera_names"
 
     iget-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoCameraNames:Ljava/lang/String;
 
     invoke-virtual {p1, v0, v1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2525
+    .line 2533
     const-string v0, "key_dualvideo_window_style"
 
     iget v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoWindowStyle:I
 
     invoke-virtual {p1, v0, v1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2526
+    .line 2534
     const-string v0, "key_dualvideo_windowcut_ratio"
 
     iget v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoWindowCutRatio:F
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    .line 2527
+    .line 2535
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v0, "dual_video"
@@ -5026,14 +5030,14 @@
 .method public focus()V
     .registers 3
 
-    .line 1713
+    .line 1721
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFocusCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFocusCount:I
 
-    .line 1714
+    .line 1722
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -5046,7 +5050,7 @@
 .method public getCameraId()Ljava/lang/String;
     .registers 1
 
-    .line 1166
+    .line 1172
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraId:Ljava/lang/String;
 
     return-object p0
@@ -5055,7 +5059,7 @@
 .method public inCreaseShot2ShotCount()V
     .registers 2
 
-    .line 1723
+    .line 1731
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mShot2ShotCount:I
 
     add-int/lit8 v0, v0, 0x1
@@ -5068,7 +5072,7 @@
 .method public isFaceBeautyMode()Z
     .registers 1
 
-    .line 1126
+    .line 1132
     iget-boolean p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsFaceBeautyMode:Z
 
     return p0
@@ -5077,7 +5081,7 @@
 .method public isFaceInfoDetected()Z
     .registers 1
 
-    .line 1130
+    .line 1136
     iget-boolean p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoDetected:Z
 
     return p0
@@ -5086,12 +5090,12 @@
 .method public logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
     .registers 3
 
-    .line 2038
+    .line 2046
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz p0, :cond_7
 
-    .line 2039
+    .line 2047
     invoke-interface {p0, p1, p2}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
     :cond_7
@@ -5101,7 +5105,7 @@
 .method public needFaceInfoDetection()Z
     .registers 5
 
-    .line 1134
+    .line 1140
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const/4 v1, 0x0
@@ -5110,7 +5114,7 @@
 
     return v1
 
-    .line 1138
+    .line 1144
     :cond_6
     iget-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoDetected:Z
 
@@ -5129,7 +5133,7 @@
     :cond_13
     const/4 v1, 0x1
 
-    .line 1144
+    .line 1150
     :cond_14
     :goto_14
     sget-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -5166,7 +5170,7 @@
 
     const/4 v0, 0x1
 
-    .line 2052
+    .line 2060
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mNightHawkDetected:I
 
     return-void
@@ -5175,7 +5179,7 @@
 .method public onAppServiceConnected(Z)V
     .registers 5
 
-    .line 2414
+    .line 2422
     sget-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5194,7 +5198,7 @@
 
     iget v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartType:I
 
-    .line 2415
+    .line 2423
     invoke-static {v2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->launchStartType(I)Ljava/lang/String;
 
     move-result-object v2
@@ -5205,15 +5209,15 @@
 
     move-result-object v1
 
-    .line 2414
+    .line 2422
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2416
+    .line 2424
     iput-boolean p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsFirstConnectService:Z
 
     if-nez p1, :cond_2b
 
-    .line 2418
+    .line 2426
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->resetCameraLaunchStartTime()V
 
     :cond_2b
@@ -5223,7 +5227,7 @@
 .method public onCamError(I)V
     .registers 2
 
-    .line 2538
+    .line 2545
     invoke-direct {p0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->enqueueCameraExceptionEvent(I)V
 
     return-void
@@ -5232,24 +5236,24 @@
 .method public onRecordStarted()V
     .registers 3
 
-    .line 1327
+    .line 1333
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureForRecording:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
     const-wide/16 v0, -0x1
 
-    .line 1328
+    .line 1334
     iput-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLastTemperatureTimeForRecording:J
 
-    .line 1329
+    .line 1335
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureValue:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_17
 
-    .line 1331
+    .line 1337
     iget-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureForRecording:Ljava/util/List;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5261,7 +5265,7 @@
     :cond_17
     const/4 v0, 0x1
 
-    .line 1333
+    .line 1339
     iput-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoRecording:Z
 
     return-void
@@ -5270,32 +5274,32 @@
 .method public quitCameraResetValue()V
     .registers 3
 
-    .line 1685
+    .line 1693
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-virtual {v0}, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;->clearValue()V
 
-    .line 1686
+    .line 1694
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMultiFaceBeauty:Lcom/transsion/camera/utils/analytics/beauty/MultiFaceBeauty;
 
     invoke-virtual {v0}, Lcom/transsion/camera/utils/analytics/beauty/MultiFaceBeauty;->clearValue()V
 
     const/4 v0, 0x0
 
-    .line 1687
+    .line 1695
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mShot2ShotCount:I
 
     const/4 v0, -0x1
 
-    .line 1688
+    .line 1696
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsValue:I
 
-    .line 1689
+    .line 1697
     iget-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsForCaptureStart:Ljava/util/LinkedList;
 
     invoke-virtual {v1}, Ljava/util/LinkedList;->clear()V
 
-    .line 1690
+    .line 1698
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureValue:I
 
     return-void
@@ -5304,29 +5308,29 @@
 .method public recordEnterGoProModeOperation(Ljava/lang/String;)V
     .registers 4
 
-    .line 2295
+    .line 2303
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v0, :cond_15
 
-    .line 2296
+    .line 2304
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2297
+    .line 2305
     const-string v1, "enter_gopro_type"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2298
+    .line 2306
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v1, "gopro_mode_enter"
 
     invoke-interface {p0, v1, v0}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2301
+    .line 2309
     :cond_15
     sget-object p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5352,36 +5356,36 @@
 .method public recordEnterMoreModeOperation(Ljava/lang/String;)V
     .registers 5
 
-    .line 2272
+    .line 2280
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v0, :cond_1c
 
-    .line 2273
+    .line 2281
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2274
+    .line 2282
     const-string v1, "key_enter_more_mode"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2275
+    .line 2283
     const-string v1, "key_more_mode_display_type"
 
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMoreModeDisplayType:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2276
+    .line 2284
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v1, "more_mode"
 
     invoke-interface {p0, v1, v0}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2279
+    .line 2287
     :cond_1c
     sget-object p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5407,29 +5411,29 @@
 .method public recordExitMoreModeOperation(Ljava/lang/String;)V
     .registers 4
 
-    .line 2284
+    .line 2292
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v0, :cond_15
 
-    .line 2285
+    .line 2293
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 2286
+    .line 2294
     const-string v1, "key_exit_more_mode"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2287
+    .line 2295
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v1, "more_mode"
 
     invoke-interface {p0, v1, v0}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2290
+    .line 2298
     :cond_15
     sget-object p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5455,7 +5459,7 @@
 .method public reportPortraitArchData()V
     .registers 4
 
-    .line 1590
+    .line 1598
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPortraitArchParameterVersion:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -5464,7 +5468,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 1591
+    .line 1599
     sget-object p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "[reportPortraitArchData] return !!!"
@@ -5473,32 +5477,32 @@
 
     return-void
 
-    .line 1594
+    .line 1602
     :cond_10
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v0, :cond_27
 
-    .line 1595
+    .line 1603
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1596
+    .line 1604
     const-string v1, "key_portrait_arch_parameter_version"
 
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPortraitArchParameterVersion:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1598
+    .line 1606
     iget-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v2, "serialization_feature"
 
     invoke-interface {v1, v2, v0}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1600
+    .line 1608
     :cond_27
     sget-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -5526,7 +5530,7 @@
 .method public reportShutterTriggerTypeData(Z)V
     .registers 5
 
-    .line 786
+    .line 792
     iget-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsTriggerTypeSet:Z
 
     const-string v1, "-1"
@@ -5543,15 +5547,15 @@
     :goto_a
     const/16 v2, 0x2f
 
-    .line 787
+    .line 793
     invoke-virtual {p0, v2, v0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(ILjava/lang/String;I)V
 
     const/4 p1, 0x0
 
-    .line 788
+    .line 794
     iput-boolean p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsTriggerTypeSet:Z
 
-    .line 789
+    .line 795
     iput-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTriggerType:Ljava/lang/String;
 
     return-void
@@ -5562,20 +5566,20 @@
 
     const/4 v0, -0x1
 
-    .line 2423
+    .line 2431
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartType:I
 
     const-wide/16 v0, 0x0
 
-    .line 2424
+    .line 2432
     iput-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartTime:J
 
     const/4 v2, 0x0
 
-    .line 2425
+    .line 2433
     iput v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraBootMethod:I
 
-    .line 2426
+    .line 2434
     iput-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mStartCaptureTime:J
 
     return-void
@@ -5586,12 +5590,12 @@
 
     const/4 v0, 0x0
 
-    .line 1718
+    .line 1726
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFocusCount:I
 
     const-wide/16 v0, 0x0
 
-    .line 1719
+    .line 1727
     iput-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFocusTime:J
 
     return-void
@@ -5602,7 +5606,7 @@
 
     const/4 v0, 0x0
 
-    .line 1727
+    .line 1735
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mShot2ShotCount:I
 
     return-void
@@ -5611,7 +5615,7 @@
 .method public setAIArtValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2688
+    .line 2693
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAIArtValue:Ljava/lang/String;
 
     return-void
@@ -5620,7 +5624,7 @@
 .method public setAIGCEffectValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2684
+    .line 2689
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAIGCEffectValue:Ljava/lang/String;
 
     return-void
@@ -5629,7 +5633,7 @@
 .method public setAIShutterValue(I)V
     .registers 2
 
-    .line 2619
+    .line 2624
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAIShutterValue:I
 
     return-void
@@ -5638,7 +5642,7 @@
 .method public setASDalgorithmResult(I)V
     .registers 2
 
-    .line 1178
+    .line 1184
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAsdValue:I
 
     return-void
@@ -5647,7 +5651,7 @@
 .method public setASDeffect(I)V
     .registers 2
 
-    .line 1182
+    .line 1188
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAsdEffect:I
 
     return-void
@@ -5656,7 +5660,7 @@
 .method public setActivityOrientation(I)V
     .registers 2
 
-    .line 2667
+    .line 2672
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mActivityOrientation:I
 
     return-void
@@ -5665,7 +5669,7 @@
 .method public setAgeValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1920
+    .line 1928
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAgeValue:Ljava/lang/String;
 
     return-void
@@ -5674,7 +5678,7 @@
 .method public setAiMoonDetectionValue(I)V
     .registers 2
 
-    .line 2357
+    .line 2365
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMoonDetectionValue:I
 
     return-void
@@ -5683,7 +5687,7 @@
 .method public setAntiVideoValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1268
+    .line 1274
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAntiVideoValue:Ljava/lang/String;
 
     return-void
@@ -5692,7 +5696,7 @@
 .method public setAutoMacroSwitch(Ljava/lang/String;)V
     .registers 2
 
-    .line 1577
+    .line 1585
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAutoMacroSwitch:Ljava/lang/String;
 
     return-void
@@ -5701,7 +5705,7 @@
 .method public setAutoVideoFPS(Ljava/lang/String;)V
     .registers 2
 
-    .line 1319
+    .line 1325
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAutoVideoFPS:Ljava/lang/String;
 
     return-void
@@ -5710,7 +5714,7 @@
 .method public setAutoWaterMarkValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2631
+    .line 2636
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAutoWaterMarkValue:Ljava/lang/String;
 
     return-void
@@ -5719,7 +5723,7 @@
 .method public setAutoZoomValue(I)V
     .registers 2
 
-    .line 2708
+    .line 2713
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAutoZoomValue:I
 
     return-void
@@ -5728,7 +5732,7 @@
 .method public setBlurValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2329
+    .line 2337
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mBlurValue:Ljava/lang/String;
 
     return-void
@@ -5737,7 +5741,7 @@
 .method public setBodySlimDone()V
     .registers 1
 
-    .line 1657
+    .line 1665
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;->setBodySlim()V
@@ -5748,7 +5752,7 @@
 .method public setBurstProgress(I)V
     .registers 2
 
-    .line 1569
+    .line 1577
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mBurstProgress:I
 
     return-void
@@ -5757,7 +5761,7 @@
 .method public setButtPlumpDone()V
     .registers 1
 
-    .line 1673
+    .line 1681
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;->setButtPlump()V
@@ -5768,12 +5772,12 @@
 .method public setBvValue(I)V
     .registers 2
 
-    .line 2306
+    .line 2314
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mBvValue:I
 
     add-int/lit8 p1, p1, 0x32
 
-    .line 2307
+    .line 2315
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLVValue:I
 
     return-void
@@ -5782,7 +5786,7 @@
 .method public setCCTValue(I)V
     .registers 2
 
-    .line 2311
+    .line 2319
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCCTValue:I
 
     return-void
@@ -5791,7 +5795,7 @@
 .method public setCameraBootMethod(I)V
     .registers 2
 
-    .line 2402
+    .line 2410
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraBootMethod:I
 
     return-void
@@ -5800,26 +5804,26 @@
 .method public setCameraEndTime()V
     .registers 11
 
-    .line 1536
+    .line 1542
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 1537
+    .line 1543
     iget-wide v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraStartTime:J
 
     const-wide/16 v4, 0x0
 
     cmp-long v2, v2, v4
 
-    if-eqz v2, :cond_6d
+    if-eqz v2, :cond_77
 
-    .line 1538
+    .line 1544
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 1539
+    .line 1545
     iget-wide v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraStartTime:J
 
     sub-long/2addr v0, v6
@@ -5828,43 +5832,50 @@
 
     cmp-long v6, v0, v6
 
-    if-lez v6, :cond_50
+    if-lez v6, :cond_5a
 
-    .line 1541
+    .line 1547
     new-instance v6, Landroid/os/Bundle;
 
     invoke-direct {v6}, Landroid/os/Bundle;-><init>()V
 
     long-to-int v7, v0
 
-    .line 1542
+    .line 1548
     const-string v8, "key_time_duration"
 
     invoke-virtual {v6, v8, v7}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1543
+    .line 1549
     iget-object v8, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v8, :cond_2d
 
-    .line 1544
+    .line 1550
     const-string v9, "camera_time"
 
     invoke-interface {v8, v9, v6}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1547
+    .line 1553
     :cond_2d
     div-int/lit16 v7, v7, 0x3e8
 
-    if-nez v7, :cond_32
+    .line 1554
+    invoke-static {}, Lcom/transsion/camera/utils/dfx/mgr/ExManager;->get()Lcom/transsion/camera/utils/dfx/inter/IExDetection;
 
-    const/4 v7, 0x1
+    move-result-object v6
 
-    .line 1548
-    :cond_32
-    invoke-direct {p0, v7}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->handleCameraExceptionEventQueue(I)V
+    invoke-interface {v6}, Lcom/transsion/camera/utils/dfx/inter/IExDetection;->getDfxHandler()Landroid/os/Handler;
 
-    .line 1550
+    move-result-object v6
+
+    new-instance v8, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$$ExternalSyntheticLambda1;
+
+    invoke-direct {v8, p0, v7}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/utils/analytics/AnalyticsUtils;I)V
+
+    invoke-virtual {v6, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 1558
     sget-object v6, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -5887,11 +5898,11 @@
 
     invoke-static {v6, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1552
-    :cond_50
+    .line 1560
+    :cond_5a
     iput-wide v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraStartTime:J
 
-    .line 1553
+    .line 1561
     sget-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5916,45 +5927,45 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1555
-    :cond_6d
+    .line 1563
+    :cond_77
     iget-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterStartTime:J
 
     cmp-long v0, v0, v4
 
-    if-eqz v0, :cond_76
+    if-eqz v0, :cond_80
 
-    .line 1556
+    .line 1564
     invoke-direct {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setFilterTime()V
 
-    .line 1559
-    :cond_76
+    .line 1567
+    :cond_80
     iget-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterSuperNightStartTime:J
 
     cmp-long v0, v0, v4
 
-    if-eqz v0, :cond_7f
+    if-eqz v0, :cond_89
 
-    .line 1560
+    .line 1568
     invoke-direct {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setSuperNightFilterTime()V
 
-    :cond_7f
+    :cond_89
     return-void
 .end method
 
 .method public setCameraId(Ljava/lang/String;)V
     .registers 3
 
-    .line 1160
+    .line 1166
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLock:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1161
+    .line 1167
     :try_start_3
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraId:Ljava/lang/String;
 
-    .line 1162
+    .line 1168
     monitor-exit v0
 
     return-void
@@ -5972,7 +5983,7 @@
 .method public setCameraLaunchEndTime()V
     .registers 9
 
-    .line 2446
+    .line 2454
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartType:I
 
     const/4 v1, -0x1
@@ -5989,7 +6000,7 @@
 
     goto/16 :goto_2de
 
-    .line 2451
+    .line 2459
     :cond_f
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -6003,55 +6014,55 @@
 
     move-result-object v0
 
-    .line 2452
+    .line 2460
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeName:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->simpleModeName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 2453
+    .line 2461
     iget-object v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v3, :cond_e7
 
-    .line 2454
+    .line 2462
     new-instance v3, Landroid/os/Bundle;
 
     invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
 
-    .line 2455
+    .line 2463
     const-string v6, "key_time_duration"
 
     invoke-virtual {v3, v6, v0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2456
+    .line 2464
     const-string v6, "key_camera_launch_type"
 
     iget v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartType:I
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2457
+    .line 2465
     const-string v6, "key_camera_id"
 
     iget-object v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraId:Ljava/lang/String;
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2458
+    .line 2466
     const-string v6, "key_mode"
 
     invoke-virtual {v3, v6, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2459
+    .line 2467
     const-string v6, "key_camera_name"
 
     iget-object v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraNameValue:Ljava/lang/String;
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2460
+    .line 2468
     iget-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAntiVideoValue:Ljava/lang/String;
 
     invoke-static {v6}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getAntivideoValue(Ljava/lang/String;)I
@@ -6062,28 +6073,28 @@
 
     invoke-virtual {v3, v7, v6}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2461
+    .line 2469
     const-string v6, "asd_enhance"
 
     iget-object v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAsdenHanceValue:Ljava/lang/String;
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2462
+    .line 2470
     const-string v6, "image_style"
 
     iget-object v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mImageStyleValue:Ljava/lang/String;
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2463
+    .line 2471
     const-string v6, "key_video_enhance"
 
     iget-object v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoEnhanceValue:Ljava/lang/String;
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2464
+    .line 2472
     const-string v6, "key_video_enhance_yuv"
 
     invoke-direct {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getVideoEnhanceYUVDescription()Ljava/lang/String;
@@ -6092,7 +6103,7 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2465
+    .line 2473
     iget-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlash:Ljava/lang/String;
 
     invoke-static {v6}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getFlashValue(Ljava/lang/String;)I
@@ -6103,7 +6114,7 @@
 
     invoke-virtual {v3, v7, v6}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2466
+    .line 2474
     iget-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHdrValue:Ljava/lang/String;
 
     invoke-static {v6}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getHdrId(Ljava/lang/String;)I
@@ -6114,7 +6125,7 @@
 
     invoke-virtual {v3, v7, v6}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2467
+    .line 2475
     iget-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLivePhotoValue:Ljava/lang/String;
 
     invoke-static {v6}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getLivePhotoValue(Ljava/lang/String;)I
@@ -6125,7 +6136,7 @@
 
     invoke-virtual {v3, v7, v6}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2468
+    .line 2476
     iget-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoHDRValue:Ljava/lang/String;
 
     invoke-static {v6}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getVideoVideoHdrValue(Ljava/lang/String;)I
@@ -6136,7 +6147,7 @@
 
     invoke-virtual {v3, v7, v6}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2469
+    .line 2477
     iget-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHdValue:Ljava/lang/String;
 
     invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -6147,70 +6158,70 @@
 
     invoke-virtual {v3, v7, v6}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2470
+    .line 2478
     const-string v6, "key_portraitmode_enhance"
 
     iget-object v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPortraitModeEnhanceValue:Ljava/lang/String;
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2471
+    .line 2479
     const-string v6, "key_filter"
 
     iget-object v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterValue:Ljava/lang/String;
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2472
+    .line 2480
     const-string v6, "key_setting_skin_optimization"
 
     iget v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSkinOptimizationValue:I
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2473
+    .line 2481
     const-string v6, "key_moon_detection"
 
     iget v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMoonDetectionValue:I
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2474
+    .line 2482
     const-string v6, "key_transsion_filter"
 
     iget v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTranssionFilterValue:I
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2475
+    .line 2483
     const-string v6, "key_screen_brightness_mode"
 
     iget v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenBrightnessMode:I
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2476
+    .line 2484
     const-string v6, "key_screen_brightness"
 
     iget v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenBrightness:I
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2477
+    .line 2485
     const-string v6, "key_camera_boot_method"
 
     iget v7, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraBootMethod:I
 
     invoke-virtual {v3, v6, v7}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2478
+    .line 2486
     iget-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v7, "camera_launch_time"
 
     invoke-interface {v6, v7, v3}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2480
+    .line 2488
     :cond_e7
     sget-object v3, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -6226,7 +6237,7 @@
 
     if-eqz v6, :cond_2d4
 
-    .line 2481
+    .line 2489
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -6243,7 +6254,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2482
+    .line 2490
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6266,7 +6277,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2483
+    .line 2491
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6285,7 +6296,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2484
+    .line 2492
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6302,7 +6313,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2485
+    .line 2493
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6321,7 +6332,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2486
+    .line 2494
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6344,7 +6355,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2487
+    .line 2495
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6363,7 +6374,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2488
+    .line 2496
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6384,7 +6395,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2489
+    .line 2497
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6405,7 +6416,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2490
+    .line 2498
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6424,7 +6435,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2491
+    .line 2499
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6443,7 +6454,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2492
+    .line 2500
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6462,7 +6473,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2493
+    .line 2501
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6481,7 +6492,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2494
+    .line 2502
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6500,7 +6511,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2495
+    .line 2503
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6519,7 +6530,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2496
+    .line 2504
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6538,7 +6549,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2497
+    .line 2505
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6557,7 +6568,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2498
+    .line 2506
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6576,7 +6587,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2499
+    .line 2507
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6595,7 +6606,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2500
+    .line 2508
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6622,7 +6633,7 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2501
+    .line 2509
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6641,24 +6652,24 @@
 
     invoke-static {v3, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2503
+    .line 2511
     :cond_2d4
     iput v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartType:I
 
     const/4 v0, 0x0
 
-    .line 2504
+    .line 2512
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraBootMethod:I
 
-    .line 2505
+    .line 2513
     iput-wide v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartTime:J
 
-    .line 2506
+    .line 2514
     iput-wide v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mStartCaptureTime:J
 
     return-void
 
-    .line 2447
+    .line 2455
     :cond_2de
     :goto_2de
     sget-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -6673,7 +6684,7 @@
 
     iget v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartType:I
 
-    .line 2448
+    .line 2456
     invoke-static {v2}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->launchStartType(I)Ljava/lang/String;
 
     move-result-object v2
@@ -6692,7 +6703,7 @@
 
     move-result-object p0
 
-    .line 2447
+    .line 2455
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
@@ -6701,7 +6712,7 @@
 .method public setCameraNameValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2611
+    .line 2616
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraNameValue:Ljava/lang/String;
 
     return-void
@@ -6710,7 +6721,7 @@
 .method public setCameraStartTime()V
     .registers 3
 
-    .line 1532
+    .line 1538
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -6723,7 +6734,7 @@
 .method public setCaptureExif(Lcom/transsion/camera/utils/analytics/CaptureExif;)V
     .registers 2
 
-    .line 1873
+    .line 1881
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureExif:Lcom/transsion/camera/utils/analytics/CaptureExif;
 
     return-void
@@ -6732,7 +6743,7 @@
 .method public setCaptureType(I)V
     .registers 2
 
-    .line 2615
+    .line 2620
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCaptureType:I
 
     return-void
@@ -6741,7 +6752,7 @@
 .method public setCelebritySceneType(I)V
     .registers 2
 
-    .line 1928
+    .line 1936
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCelebritySceneType:I
 
     return-void
@@ -6750,39 +6761,39 @@
 .method public setClickIconId(I)V
     .registers 5
 
-    .line 1828
+    .line 1836
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeName:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->simpleModeName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1829
+    .line 1837
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 1830
+    .line 1838
     const-string v2, "key_icon_click"
 
     invoke-virtual {v1, v2, p1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1831
+    .line 1839
     const-string v2, "key_mode"
 
     invoke-virtual {v1, v2, v0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1832
+    .line 1840
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz p0, :cond_1e
 
-    .line 1833
+    .line 1841
     const-string v2, "click"
 
     invoke-interface {p0, v2, v1}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1836
+    .line 1844
     :cond_1e
     sget-object p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -6814,29 +6825,29 @@
 .method public setClickIconId(ILjava/lang/String;)V
     .registers 7
 
-    .line 1841
+    .line 1849
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeName:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->simpleModeName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1842
+    .line 1850
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 1843
+    .line 1851
     const-string v2, "key_icon_click"
 
     invoke-virtual {v1, v2, p1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1844
+    .line 1852
     const-string v2, "key_icon_click_value"
 
     invoke-virtual {v1, v2, p2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1845
+    .line 1853
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v2
@@ -6853,30 +6864,30 @@
 
     if-eqz v2, :cond_2c
 
-    .line 1846
+    .line 1854
     const-string v2, "key_icon_click_value2"
 
     iget-object v3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSaveUriId:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v3}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1848
+    .line 1856
     :cond_2c
     const-string v2, "key_mode"
 
     invoke-virtual {v1, v2, v0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1849
+    .line 1857
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v2, :cond_3a
 
-    .line 1850
+    .line 1858
     const-string v3, "click"
 
     invoke-interface {v2, v3, v1}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1853
+    .line 1861
     :cond_3a
     sget-object v1, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -6922,49 +6933,49 @@
 .method public setClickIconId(ILjava/lang/String;I)V
     .registers 7
 
-    .line 1858
+    .line 1866
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeName:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->simpleModeName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1859
+    .line 1867
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 1860
+    .line 1868
     const-string v2, "key_icon_click"
 
     invoke-virtual {v1, v2, p1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1861
+    .line 1869
     const-string v2, "key_icon_click_value"
 
     invoke-virtual {v1, v2, p2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1862
+    .line 1870
     const-string v2, "key_icon_click_value2"
 
     invoke-virtual {v1, v2, p3}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1863
+    .line 1871
     const-string v2, "key_mode"
 
     invoke-virtual {v1, v2, v0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1864
+    .line 1872
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz p0, :cond_28
 
-    .line 1865
+    .line 1873
     const-string v2, "click"
 
     invoke-interface {p0, v2, v1}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1868
+    .line 1876
     :cond_28
     sget-object p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -7008,7 +7019,7 @@
 .method public setClickZoomValue(I)V
     .registers 2
 
-    .line 2607
+    .line 2612
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mClickZoomValue:I
 
     return-void
@@ -7017,7 +7028,7 @@
 .method public setDualVideoCameraIds(Ljava/lang/String;)V
     .registers 2
 
-    .line 2587
+    .line 2592
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoCameraIds:Ljava/lang/String;
 
     return-void
@@ -7026,7 +7037,7 @@
 .method public setDualVideoCameraNames(Ljava/lang/String;)V
     .registers 2
 
-    .line 2591
+    .line 2596
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoCameraNames:Ljava/lang/String;
 
     return-void
@@ -7035,7 +7046,7 @@
 .method public setDualVideoWindowCutRatio(F)V
     .registers 2
 
-    .line 2599
+    .line 2604
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoWindowCutRatio:F
 
     return-void
@@ -7044,7 +7055,7 @@
 .method public setDualVideoWindowStyle(I)V
     .registers 2
 
-    .line 2595
+    .line 2600
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mDualVideoWindowStyle:I
 
     return-void
@@ -7053,7 +7064,7 @@
 .method public setEditWaterMarkBrandValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2655
+    .line 2660
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mEditWaterMarkBrandValue:Ljava/lang/String;
 
     return-void
@@ -7064,15 +7075,15 @@
 
     const/4 v0, 0x0
 
-    .line 1611
+    .line 1619
     iput-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsFaceBeautyMode:Z
 
-    .line 1613
+    .line 1621
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 1614
+    .line 1622
     iget-wide v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyStartTime:J
 
     const-wide/16 v4, 0x0
@@ -7081,22 +7092,22 @@
 
     if-eqz v2, :cond_67
 
-    .line 1615
+    .line 1623
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    .line 1616
+    .line 1624
     iget-object v6, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v6, :cond_4a
 
-    .line 1617
+    .line 1625
     new-instance v6, Landroid/os/Bundle;
 
     invoke-direct {v6}, Landroid/os/Bundle;-><init>()V
 
-    .line 1618
+    .line 1626
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -7123,7 +7134,7 @@
 
     invoke-virtual {v6, v1, v0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1619
+    .line 1627
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraIdFacebeautyCache:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -7134,18 +7145,18 @@
 
     invoke-virtual {v6, v1, v0}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1620
+    .line 1628
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v1, "facebeauty_time"
 
     invoke-interface {v0, v1, v6}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1622
+    .line 1630
     :cond_4a
     iput-wide v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyStartTime:J
 
-    .line 1623
+    .line 1631
     sget-object p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -7177,21 +7188,21 @@
 .method public setFaceBeautyStartTime()V
     .registers 3
 
-    .line 1605
+    .line 1613
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyStartTime:J
 
-    .line 1606
+    .line 1614
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraId:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraIdFacebeautyCache:Ljava/lang/String;
 
     const/4 v0, 0x1
 
-    .line 1607
+    .line 1615
     iput-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsFaceBeautyMode:Z
 
     return-void
@@ -7200,12 +7211,12 @@
 .method public setFaceBeautyValue(Ljava/lang/String;)V
     .registers 3
 
-    .line 1644
+    .line 1652
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mNormalFaceBeauty:Lcom/transsion/camera/utils/analytics/beauty/NormalFaceBeauty;
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/utils/analytics/beauty/NormalFaceBeauty;->setFaceBeautyValue(Ljava/lang/String;)V
 
-    .line 1645
+    .line 1653
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;->setFaceBeautyValue(Ljava/lang/String;)V
@@ -7216,10 +7227,10 @@
 .method public setFilterValue(Ljava/lang/String;Ljava/lang/String;)V
     .registers 7
 
-    .line 1206
+    .line 1212
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterValue:Ljava/lang/String;
 
-    .line 1207
+    .line 1213
     iget-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterStartTime:J
 
     const-wide/16 v2, 0x0
@@ -7230,7 +7241,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 1208
+    .line 1214
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraIdFilterCache:Ljava/lang/String;
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -7239,7 +7250,7 @@
 
     if-eqz v0, :cond_22
 
-    .line 1209
+    .line 1215
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -7254,11 +7265,11 @@
 
     if-eqz v0, :cond_25
 
-    .line 1210
+    .line 1216
     :cond_22
     invoke-direct {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setFilterTime()V
 
-    .line 1213
+    .line 1219
     :cond_25
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -7272,14 +7283,14 @@
 
     if-nez p1, :cond_39
 
-    .line 1214
+    .line 1220
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterStartTime:J
 
-    .line 1215
+    .line 1221
     iput-object p2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraIdFilterCache:Ljava/lang/String;
 
     :cond_39
@@ -7289,7 +7300,7 @@
 .method public setFlareRemoverEffectValue(I)V
     .registers 2
 
-    .line 2692
+    .line 2697
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlareRemoverEffectValue:I
 
     return-void
@@ -7298,7 +7309,7 @@
 .method public setFlash(Ljava/lang/String;)V
     .registers 2
 
-    .line 1709
+    .line 1717
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlash:Ljava/lang/String;
 
     return-void
@@ -7307,7 +7318,7 @@
 .method public setFlashSnapButtonValue(I)V
     .registers 2
 
-    .line 1897
+    .line 1905
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlashSnapButtonValue:I
 
     return-void
@@ -7316,7 +7327,7 @@
 .method public setFrontDualFlashColorTemp(I)V
     .registers 2
 
-    .line 2639
+    .line 2644
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFrontDualFlashColorTemp:I
 
     return-void
@@ -7325,7 +7336,7 @@
 .method public setFrontDualFlashStrengthMode(I)V
     .registers 2
 
-    .line 2643
+    .line 2648
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFrontDualFlashStrengthMode:I
 
     return-void
@@ -7334,7 +7345,7 @@
 .method public setFunVideoFilterValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2002
+    .line 2010
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFunVideoFilterValue:Ljava/lang/String;
 
     return-void
@@ -7343,7 +7354,7 @@
 .method public setGPS(Ljava/lang/String;)V
     .registers 2
 
-    .line 1573
+    .line 1581
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGPS:Ljava/lang/String;
 
     return-void
@@ -7352,7 +7363,7 @@
 .method public setGenderValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1893
+    .line 1901
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGenderValue:Ljava/lang/String;
 
     return-void
@@ -7361,7 +7372,7 @@
 .method public setGoldWaterMarkValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2659
+    .line 2664
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGoldWaterMarkValue:Ljava/lang/String;
 
     return-void
@@ -7370,7 +7381,7 @@
 .method public setGoldWatermarkBgValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2663
+    .line 2668
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mGoldWatermarkBgValue:Ljava/lang/String;
 
     return-void
@@ -7379,7 +7390,7 @@
 .method public setGuideFragmentEndTime()V
     .registers 7
 
-    .line 2514
+    .line 2522
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7410,7 +7421,7 @@
 
     invoke-virtual {p0, v1, v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(ILjava/lang/String;)V
 
-    .line 2515
+    .line 2523
     sget-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -7443,7 +7454,7 @@
 .method public setGuideFragmentStartTime()V
     .registers 3
 
-    .line 2510
+    .line 2518
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -7456,7 +7467,7 @@
 .method public setHdValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1264
+    .line 1270
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHdValue:Ljava/lang/String;
 
     return-void
@@ -7465,7 +7476,7 @@
 .method public setHdr10PlusValue(I)V
     .registers 2
 
-    .line 2680
+    .line 2685
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHdr10PlusValue:I
 
     return-void
@@ -7474,7 +7485,7 @@
 .method public setHdrValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1296
+    .line 1302
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHdrValue:Ljava/lang/String;
 
     return-void
@@ -7483,7 +7494,7 @@
 .method public setHeadShrinkDone()V
     .registers 1
 
-    .line 1661
+    .line 1669
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;->setHeadShrink()V
@@ -7494,7 +7505,7 @@
 .method public setImageStyle(Ljava/lang/String;)V
     .registers 2
 
-    .line 1881
+    .line 1889
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mImageStyleValue:Ljava/lang/String;
 
     return-void
@@ -7503,7 +7514,7 @@
 .method public setIsMultiGenderOrMultiSkin(I)V
     .registers 2
 
-    .line 1932
+    .line 1940
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsMultiGenderOrMultiSkin:I
 
     return-void
@@ -7512,13 +7523,13 @@
 .method public setKeyVideoDurationAndDuration(Ljava/lang/String;Ljava/lang/String;J)V
     .registers 5
 
-    .line 2716
+    .line 2721
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mKeyVideoDuration:Ljava/lang/String;
 
-    .line 2717
+    .line 2722
     iput-object p2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoQuality:Ljava/lang/String;
 
-    .line 2718
+    .line 2723
     iput-wide p3, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoDuration:J
 
     return-void
@@ -7527,21 +7538,21 @@
 .method public setLaunchStartTime(I)V
     .registers 6
 
-    .line 2387
+    .line 2395
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartType:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_e
 
-    .line 2388
+    .line 2396
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartTime:J
 
-    .line 2389
+    .line 2397
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartType:I
 
     return-void
@@ -7551,12 +7562,12 @@
 
     if-ne v0, v1, :cond_1f
 
-    .line 2390
+    .line 2398
     iget-boolean v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsFirstConnectService:Z
 
     if-eqz v2, :cond_1f
 
-    .line 2391
+    .line 2399
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -7565,7 +7576,7 @@
 
     const/4 p1, 0x0
 
-    .line 2392
+    .line 2400
     iput-boolean p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsFirstConnectService:Z
 
     return-void
@@ -7573,7 +7584,7 @@
     :cond_1f
     if-ne v0, v1, :cond_36
 
-    .line 2394
+    .line 2402
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -7588,14 +7599,14 @@
 
     if-lez v0, :cond_36
 
-    .line 2396
+    .line 2404
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartTime:J
 
-    .line 2397
+    .line 2405
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLaunchStartType:I
 
     :cond_36
@@ -7605,7 +7616,7 @@
 .method public setLegLengthenDone()V
     .registers 1
 
-    .line 1681
+    .line 1689
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;->setLegLengthen()V
@@ -7616,7 +7627,7 @@
 .method public setLegSlimDone()V
     .registers 1
 
-    .line 1677
+    .line 1685
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;->setLegSlim()V
@@ -7627,7 +7638,7 @@
 .method public setLivePhotoValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1300
+    .line 1306
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLivePhotoValue:Ljava/lang/String;
 
     return-void
@@ -7636,7 +7647,7 @@
 .method public setLongExposureSceneValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2696
+    .line 2701
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLongExposureSceneValue:Ljava/lang/String;
 
     return-void
@@ -7645,7 +7656,7 @@
 .method public setLuminanceValue(I)V
     .registers 2
 
-    .line 2635
+    .line 2640
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mLuminanceValue:I
 
     return-void
@@ -7654,10 +7665,10 @@
 .method public setMakeUpValue(IF)V
     .registers 3
 
-    .line 2319
+    .line 2327
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMakeUpValue:I
 
-    .line 2320
+    .line 2328
     iput p2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMakeUpIntensityValue:F
 
     return-void
@@ -7666,7 +7677,7 @@
 .method public setModeName(Ljava/lang/String;)V
     .registers 2
 
-    .line 1170
+    .line 1176
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeName:Ljava/lang/String;
 
     return-void
@@ -7677,15 +7688,15 @@
 
     const/4 v0, 0x0
 
-    .line 1778
+    .line 1786
     iput-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsInMode:Z
 
-    .line 1779
+    .line 1787
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 1780
+    .line 1788
     iget-wide v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeReumeTime:J
 
     const-wide/16 v4, 0x0
@@ -7704,15 +7715,15 @@
 
     const-wide/16 v2, 0x3e8
 
-    .line 1783
+    .line 1791
     div-long/2addr v0, v2
 
     long-to-int v0, v0
 
-    .line 1784
+    .line 1792
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->duration(ILjava/lang/String;)V
 
-    .line 1786
+    .line 1794
     :cond_1d
     iput-wide v4, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeReumeTime:J
 
@@ -7723,7 +7734,7 @@
 .method public setModeResumeTime()V
     .registers 3
 
-    .line 1766
+    .line 1774
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -7732,21 +7743,21 @@
 
     const/4 v0, 0x0
 
-    .line 1768
+    .line 1776
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureCountForMode:I
 
-    .line 1769
+    .line 1777
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureTotalForMode:I
 
-    .line 1771
+    .line 1779
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsCountForMode:I
 
-    .line 1772
+    .line 1780
     iput v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsTotalForMode:I
 
     const/4 v0, 0x1
 
-    .line 1774
+    .line 1782
     iput-boolean v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsInMode:Z
 
     return-void
@@ -7755,7 +7766,7 @@
 .method public setMoreModeDisplayType(Ljava/lang/String;)V
     .registers 2
 
-    .line 2268
+    .line 2276
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMoreModeDisplayType:Ljava/lang/String;
 
     return-void
@@ -7764,7 +7775,7 @@
 .method public setMotionSnapInfo(Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;)V
     .registers 2
 
-    .line 649
+    .line 655
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMotionSnapInfo:Lcom/transsion/camera/utils/analytics/AnalyticsUtils$MotionSnapInfo;
 
     return-void
@@ -7773,7 +7784,7 @@
 .method public setMultiBeautyValue([I)V
     .registers 2
 
-    .line 1889
+    .line 1897
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyValue:[I
 
     return-void
@@ -7782,7 +7793,7 @@
 .method public setMultiFBMode(Ljava/lang/String;)V
     .registers 2
 
-    .line 1698
+    .line 1706
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMultiFaceBeauty:Lcom/transsion/camera/utils/analytics/beauty/MultiFaceBeauty;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/utils/analytics/beauty/MultiFaceBeauty;->setMode(Ljava/lang/String;)V
@@ -7793,7 +7804,7 @@
 .method public setPictureRatioValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1202
+    .line 1208
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPictureRatioValue:Ljava/lang/String;
 
     return-void
@@ -7806,7 +7817,7 @@
 
     if-ne p2, v0, :cond_5
 
-    .line 1582
+    .line 1590
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPortraitArchParameterVersion:Ljava/lang/String;
 
     :cond_5
@@ -7816,7 +7827,7 @@
 .method public setPortraitFlareValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1312
+    .line 1318
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPortraitFlareValue:Ljava/lang/String;
 
     return-void
@@ -7825,7 +7836,7 @@
 .method public setPortraitModeEnhanceValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2647
+    .line 2652
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mPortraitModeEnhanceValue:Ljava/lang/String;
 
     return-void
@@ -7834,7 +7845,7 @@
 .method public setSaveUriId(Ljava/lang/String;)V
     .registers 2
 
-    .line 2712
+    .line 2717
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSaveUriId:Ljava/lang/String;
 
     return-void
@@ -7843,10 +7854,10 @@
 .method public setScreenBrightness(II)V
     .registers 3
 
-    .line 2671
+    .line 2676
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenBrightnessMode:I
 
-    .line 2672
+    .line 2677
     iput p2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenBrightness:I
 
     return-void
@@ -7855,7 +7866,7 @@
 .method public setScreenFlashMode(Z)V
     .registers 2
 
-    .line 2048
+    .line 2056
     iput-boolean p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenFlashShow:Z
 
     return-void
@@ -7864,7 +7875,7 @@
 .method public setSelfTimerValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1304
+    .line 1310
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSelfTimerValue:Ljava/lang/String;
 
     return-void
@@ -7873,7 +7884,7 @@
 .method public setShot2ClickThumbnail(Z)V
     .registers 6
 
-    .line 2406
+    .line 2414
     iget-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mStartCaptureTime:J
 
     const-wide/16 v2, 0x0
@@ -7882,7 +7893,7 @@
 
     if-eqz v0, :cond_20
 
-    .line 2407
+    .line 2415
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -7904,13 +7915,13 @@
     :cond_17
     const/16 p1, 0x22
 
-    .line 2409
+    .line 2417
     :goto_19
     invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2408
+    .line 2416
     invoke-virtual {p0, p1, v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setClickIconId(ILjava/lang/String;)V
 
     :cond_20
@@ -7920,7 +7931,7 @@
 .method public setShot2SeeEndTime()V
     .registers 5
 
-    .line 2651
+    .line 2656
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -7939,7 +7950,7 @@
 .method public setShoulderSlimDone()V
     .registers 1
 
-    .line 1665
+    .line 1673
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;->setShoulderSlim()V
@@ -7950,7 +7961,7 @@
 .method public setShutterSoundOptional(I)V
     .registers 2
 
-    .line 1323
+    .line 1329
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mShutterSoundOptional:I
 
     return-void
@@ -7959,7 +7970,7 @@
 .method public setSkinOptimizationValue(I)V
     .registers 2
 
-    .line 2353
+    .line 2361
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSkinOptimizationValue:I
 
     return-void
@@ -7968,7 +7979,7 @@
 .method public setSkyType(I)V
     .registers 2
 
-    .line 1924
+    .line 1932
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSkyType:I
 
     return-void
@@ -7977,7 +7988,7 @@
 .method public setSlimBodyEnable(Z)V
     .registers 2
 
-    .line 1649
+    .line 1657
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/utils/analytics/beauty/AbstractFaceBeauty;->setEnable(Z)V
@@ -7988,7 +7999,7 @@
 .method public setSlimBodyMode(I)V
     .registers 2
 
-    .line 1653
+    .line 1661
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;->setMode(I)V
@@ -7999,7 +8010,7 @@
 .method public setSlimbodyValue([I)V
     .registers 2
 
-    .line 1885
+    .line 1893
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimbodyValue:[I
 
     return-void
@@ -8008,7 +8019,7 @@
 .method public setSlowMotionFps(I)V
     .registers 2
 
-    .line 1758
+    .line 1766
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlowMotionFps:I
 
     return-void
@@ -8017,7 +8028,7 @@
 .method public setStreetPhotoFocalDistanceValue(F)V
     .registers 2
 
-    .line 2700
+    .line 2705
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mStreetPhotoFocalDistanceValue:F
 
     return-void
@@ -8026,7 +8037,7 @@
 .method public setStreetPhotoStyleValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2704
+    .line 2709
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mStreetPhotoStyleValue:Ljava/lang/String;
 
     return-void
@@ -8035,10 +8046,10 @@
 .method public setSuperNightFilterValue(Ljava/lang/String;Ljava/lang/String;)V
     .registers 7
 
-    .line 1220
+    .line 1226
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSuperNightFilterValue:Ljava/lang/String;
 
-    .line 1221
+    .line 1227
     iget-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterSuperNightStartTime:J
 
     const-wide/16 v2, 0x0
@@ -8049,7 +8060,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 1222
+    .line 1228
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraIdFilterSuperNightCache:Ljava/lang/String;
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -8058,7 +8069,7 @@
 
     if-eqz v0, :cond_22
 
-    .line 1223
+    .line 1229
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -8073,11 +8084,11 @@
 
     if-eqz v0, :cond_25
 
-    .line 1224
+    .line 1230
     :cond_22
     invoke-direct {p0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setSuperNightFilterTime()V
 
-    .line 1227
+    .line 1233
     :cond_25
     invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -8091,14 +8102,14 @@
 
     if-nez p1, :cond_39
 
-    .line 1228
+    .line 1234
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFilterSuperNightStartTime:J
 
-    .line 1229
+    .line 1235
     iput-object p2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraIdFilterSuperNightCache:Ljava/lang/String;
 
     :cond_39
@@ -8108,7 +8119,7 @@
 .method public setSuperNightLightValue(I)V
     .registers 2
 
-    .line 2676
+    .line 2681
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSuperNightLightValue:I
 
     return-void
@@ -8117,7 +8128,7 @@
 .method public setTintValue(I)V
     .registers 2
 
-    .line 2315
+    .line 2323
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTintValue:I
 
     return-void
@@ -8126,7 +8137,7 @@
 .method public setTotalZoomValue(F)V
     .registers 2
 
-    .line 1198
+    .line 1204
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTotalZoomValue:F
 
     return-void
@@ -8135,7 +8146,7 @@
 .method public setTranssionFilterValue(I)V
     .registers 2
 
-    .line 2333
+    .line 2341
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTranssionFilterValue:I
 
     return-void
@@ -8144,12 +8155,12 @@
 .method public setTriggerType(Ljava/lang/String;)V
     .registers 2
 
-    .line 1936
+    .line 1944
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTriggerType:Ljava/lang/String;
 
     const/4 p1, 0x1
 
-    .line 1937
+    .line 1945
     iput-boolean p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mIsTriggerTypeSet:Z
 
     return-void
@@ -8158,7 +8169,7 @@
 .method public setVideoAsdAlgorithmResult(I)V
     .registers 2
 
-    .line 1186
+    .line 1192
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoAsdValue:I
 
     return-void
@@ -8167,7 +8178,7 @@
 .method public setVideoAsdEffect(I)V
     .registers 2
 
-    .line 1190
+    .line 1196
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoAsdEffect:I
 
     return-void
@@ -8176,7 +8187,7 @@
 .method public setVideoBeautyValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1272
+    .line 1278
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoBeautyValue:Ljava/lang/String;
 
     return-void
@@ -8185,7 +8196,7 @@
 .method public setVideoEffectValue(I)V
     .registers 2
 
-    .line 2337
+    .line 2345
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoEffectValue:I
 
     return-void
@@ -8194,7 +8205,7 @@
 .method public setVideoEnhanceValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2361
+    .line 2369
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoEnhanceValue:Ljava/lang/String;
 
     return-void
@@ -8203,7 +8214,7 @@
 .method public setVideoEnhanceYUVEnable(Z)V
     .registers 2
 
-    .line 2383
+    .line 2391
     iput-boolean p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoEnhanceYUVEnable:Z
 
     return-void
@@ -8212,7 +8223,7 @@
 .method public setVideoFrameValue(I)V
     .registers 2
 
-    .line 2341
+    .line 2349
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoFrameValue:I
 
     return-void
@@ -8221,7 +8232,7 @@
 .method public setVideoHDRValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1284
+    .line 1290
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoHDRValue:Ljava/lang/String;
 
     return-void
@@ -8230,10 +8241,10 @@
 .method public setVideoMakeUpValue(IF)V
     .registers 3
 
-    .line 2324
+    .line 2332
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoMakeUpValue:I
 
-    .line 2325
+    .line 2333
     iput p2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoMakeUpIntensityValue:F
 
     return-void
@@ -8242,7 +8253,7 @@
 .method public setVideoPortraitLevelValue(I)V
     .registers 2
 
-    .line 2603
+    .line 2608
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoPortraitLevelValue:I
 
     return-void
@@ -8251,7 +8262,7 @@
 .method public setVideoPortraitValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1276
+    .line 1282
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoPortraitValue:Ljava/lang/String;
 
     return-void
@@ -8260,7 +8271,7 @@
 .method public setVideoPreIspValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1315
+    .line 1321
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoPreIspValue:Ljava/lang/String;
 
     return-void
@@ -8269,7 +8280,7 @@
 .method public setVideoRecordingEffectValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2345
+    .line 2353
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoRecordingEffectValue:Ljava/lang/String;
 
     return-void
@@ -8278,7 +8289,7 @@
 .method public setVideoRecordingEffectZoomValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 2349
+    .line 2357
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoRecordingEffectZoomValue:Ljava/lang/String;
 
     return-void
@@ -8287,7 +8298,7 @@
 .method public setVideoSpotValue(Ljava/lang/String;)V
     .registers 2
 
-    .line 1280
+    .line 1286
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoSpotValue:Ljava/lang/String;
 
     return-void
@@ -8296,7 +8307,7 @@
 .method public setVideoSuperNightEnable(Z)V
     .registers 2
 
-    .line 2365
+    .line 2373
     iput-boolean p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoSuperNightEnable:Z
 
     return-void
@@ -8305,7 +8316,7 @@
 .method public setVideoSuperNightYUVEnable(Z)V
     .registers 2
 
-    .line 2374
+    .line 2382
     iput-boolean p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoSuperNightYUVEnable:Z
 
     return-void
@@ -8314,7 +8325,7 @@
 .method public setVideoTimeLapseDuration(Ljava/lang/String;)V
     .registers 2
 
-    .line 1292
+    .line 1298
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoTimeLapseDuration:Ljava/lang/String;
 
     return-void
@@ -8323,7 +8334,7 @@
 .method public setVideoTimeLapseRate(Ljava/lang/String;)V
     .registers 2
 
-    .line 1288
+    .line 1294
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoTimeLapseRate:Ljava/lang/String;
 
     return-void
@@ -8332,7 +8343,7 @@
 .method public setVolumeShutter(I)V
     .registers 2
 
-    .line 1565
+    .line 1573
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVolumeShutter:I
 
     return-void
@@ -8341,7 +8352,7 @@
 .method public setWaistSlimDone()V
     .registers 1
 
-    .line 1669
+    .line 1677
     iget-object p0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimBody:Lcom/transsion/camera/utils/analytics/beauty/SlimBody;
 
     invoke-virtual {p0}, Lcom/transsion/camera/utils/analytics/beauty/SlimBody;->setWaistSlim()V
@@ -8352,7 +8363,7 @@
 .method public setZoomValue(F)V
     .registers 2
 
-    .line 1194
+    .line 1200
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mZoomValue:F
 
     return-void
@@ -8361,12 +8372,12 @@
 .method public sex(I)V
     .registers 2
 
-    .line 1150
+    .line 1156
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoSex:I
 
     const/4 p1, 0x1
 
-    .line 1151
+    .line 1157
     iput-boolean p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceInfoDetected:Z
 
     return-void
@@ -8375,26 +8386,26 @@
 .method public startCapture()V
     .registers 3
 
-    .line 793
+    .line 799
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mStartCaptureTime:J
 
-    .line 798
+    .line 804
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureForCapture:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 799
+    .line 805
     iget v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureValue:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_19
 
-    .line 801
+    .line 807
     iget-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureForCapture:Ljava/util/List;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -8403,7 +8414,7 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 804
+    .line 810
     :cond_19
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsForCaptureStart:Ljava/util/LinkedList;
 
@@ -8421,31 +8432,31 @@
 .method public startVideo()V
     .registers 4
 
-    .line 1337
+    .line 1343
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     if-eqz v0, :cond_17
 
-    .line 1338
+    .line 1344
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1339
+    .line 1345
     const-string v1, "start_trigger_type"
 
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTriggerType:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1340
+    .line 1346
     iget-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v2, "video"
 
     invoke-interface {v1, v2, v0}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1343
+    .line 1349
     :cond_17
     sget-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -8467,7 +8478,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1345
+    .line 1351
     const-string v0, "-1"
 
     iput-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTriggerType:Ljava/lang/String;
@@ -8478,7 +8489,7 @@
 .method public superNightAlgorithm(I)V
     .registers 2
 
-    .line 1754
+    .line 1762
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mNightAlgo:I
 
     return-void
@@ -8487,7 +8498,7 @@
 .method public superNightStable(Ljava/lang/String;)V
     .registers 2
 
-    .line 1750
+    .line 1758
     iput-object p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSuperNightStable:Ljava/lang/String;
 
     return-void
@@ -8496,19 +8507,19 @@
 .method public thermalWaring(I)V
     .registers 6
 
-    .line 2056
+    .line 2064
     iget-object v0, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeName:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->simpleModeName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2057
+    .line 2065
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 2058
+    .line 2066
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraId:Ljava/lang/String;
 
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -8519,7 +8530,7 @@
 
     invoke-virtual {v1, v3, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2059
+    .line 2067
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlash:Ljava/lang/String;
 
     invoke-static {v2}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getFlashValue(Ljava/lang/String;)I
@@ -8530,22 +8541,22 @@
 
     invoke-virtual {v1, v3, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2060
+    .line 2068
     const-string v2, "key_mode"
 
     invoke-virtual {v1, v2, v0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2061
+    .line 2069
     const-string v2, "key_temp_warning_type"
 
     invoke-virtual {v1, v2, p1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 2062
+    .line 2070
     const-string v2, "thermal_warning"
 
     invoke-virtual {p0, v2, v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2064
+    .line 2072
     sget-object v1, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -8584,7 +8595,7 @@
 .method public updateCurrentScreenType(I)V
     .registers 2
 
-    .line 2627
+    .line 2632
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenType:I
 
     return-void
@@ -8593,10 +8604,10 @@
 .method public updateFaceCount(I)V
     .registers 4
 
-    .line 1741
+    .line 1749
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceCount:I
 
-    .line 1742
+    .line 1750
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -8609,13 +8620,13 @@
 .method public updateFps(I)V
     .registers 2
 
-    .line 2108
+    .line 2116
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFpsValue:I
 
-    .line 2109
+    .line 2117
     invoke-direct {p0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->saveFpsForMode(I)V
 
-    .line 2110
+    .line 2118
     invoke-direct {p0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->saveFpsForCapturing(I)V
 
     return-void
@@ -8624,7 +8635,7 @@
 .method public updateMaxFaceRatio(F)V
     .registers 2
 
-    .line 1746
+    .line 1754
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMaxFaceRatio:F
 
     return-void
@@ -8633,7 +8644,7 @@
 .method public updateTemperatureValue(I)V
     .registers 5
 
-    .line 2071
+    .line 2079
     sget-object v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -8652,13 +8663,13 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2074
+    .line 2082
     iput p1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureValue:I
 
-    .line 2075
+    .line 2083
     invoke-direct {p0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->saveTemperatureForRecording(I)V
 
-    .line 2076
+    .line 2084
     invoke-direct {p0, p1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->saveTemperatureForMode(I)V
 
     return-void
@@ -8667,7 +8678,7 @@
 .method public video()V
     .registers 7
 
-    .line 1353
+    .line 1359
     iget-object v1, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mKeyVideoDuration:Ljava/lang/String;
 
     iget-object v2, p0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoQuality:Ljava/lang/String;
@@ -8686,7 +8697,7 @@
 .method public video(Ljava/lang/String;Ljava/lang/String;J)V
     .registers 11
 
-    .line 1349
+    .line 1355
     sget-object v5, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
 
     move-object v0, p0
@@ -8707,56 +8718,56 @@
 
     move-object/from16 v0, p0
 
-    .line 1357
+    .line 1363
     new-instance v1, Ljava/util/ArrayList;
 
     iget-object v2, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTemperatureForRecording:Ljava/util/List;
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 1358
+    .line 1364
     invoke-static {v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->covertListToString(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    .line 1359
+    .line 1365
     iput-boolean v2, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoRecording:Z
 
-    .line 1360
+    .line 1366
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    .line 1361
+    .line 1367
     invoke-static/range {p2 .. p2}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getVideoQuality(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 1362
+    .line 1368
     invoke-direct {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->checkFaceValid()V
 
-    .line 1363
+    .line 1369
     iget-object v6, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mModeName:Ljava/lang/String;
 
     invoke-static {v6}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->simpleModeName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 1365
+    .line 1371
     iget-object v7, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const/4 v8, 0x3
 
     if-eqz v7, :cond_281
 
-    .line 1366
+    .line 1372
     new-instance v7, Landroid/os/Bundle;
 
     invoke-direct {v7}, Landroid/os/Bundle;-><init>()V
 
-    .line 1367
+    .line 1373
     iget-object v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraId:Ljava/lang/String;
 
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -8767,7 +8778,7 @@
 
     invoke-virtual {v7, v10, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1368
+    .line 1374
     iget-object v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAntiVideoValue:Ljava/lang/String;
 
     invoke-static {v9}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getAntivideoValue(Ljava/lang/String;)I
@@ -8778,7 +8789,7 @@
 
     invoke-virtual {v7, v10, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1369
+    .line 1375
     iget-object v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoBeautyValue:Ljava/lang/String;
 
     invoke-static {v9}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getVideoBeautyValue(Ljava/lang/String;)I
@@ -8789,7 +8800,7 @@
 
     invoke-virtual {v7, v10, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1370
+    .line 1376
     iget-object v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoPortraitValue:Ljava/lang/String;
 
     invoke-static {v9}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getVideoPortraitValue(Ljava/lang/String;)I
@@ -8800,7 +8811,7 @@
 
     invoke-virtual {v7, v10, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1371
+    .line 1377
     iget-object v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoSpotValue:Ljava/lang/String;
 
     invoke-static {v9}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getVideoSpotValue(Ljava/lang/String;)I
@@ -8811,7 +8822,7 @@
 
     invoke-virtual {v7, v10, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1372
+    .line 1378
     iget-object v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoHDRValue:Ljava/lang/String;
 
     invoke-static {v9}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getVideoVideoHdrValue(Ljava/lang/String;)I
@@ -8822,7 +8833,7 @@
 
     invoke-virtual {v7, v10, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1373
+    .line 1379
     const-string v9, "key_video_mode"
 
     invoke-virtual {v7, v9, v6}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
@@ -8831,47 +8842,47 @@
 
     long-to-int v9, v9
 
-    .line 1374
+    .line 1380
     div-int/lit16 v9, v9, 0x3e8
 
     const-string v10, "key_video_duration"
 
     invoke-virtual {v7, v10, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1375
+    .line 1381
     const-string v9, "key_video_quality"
 
     invoke-virtual {v7, v9, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1376
+    .line 1382
     const-string v5, "key_slowmotion_fps"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlowMotionFps:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1377
+    .line 1383
     const-string v5, "focus_num"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFocusCount:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1378
+    .line 1384
     const-string v5, "key_ar_voice_id"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mArcoreAudioId:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1379
+    .line 1385
     const-string v5, "face_num"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceCount:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1380
+    .line 1386
     iget v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mMaxFaceRatio:F
 
     const v9, 0x461c4000    # 10000.0f
@@ -8884,7 +8895,7 @@
 
     invoke-virtual {v7, v9, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1381
+    .line 1387
     iget-object v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFlash:Ljava/lang/String;
 
     invoke-static {v5}, Lcom/transsion/camera/utils/analytics/BigDataUtils;->getFlashValue(Ljava/lang/String;)I
@@ -8895,21 +8906,21 @@
 
     invoke-virtual {v7, v9, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1382
+    .line 1388
     const-string v5, "key_camera_zoom"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mZoomValue:F
 
     invoke-virtual {v7, v5, v9}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    .line 1383
+    .line 1389
     const-string v5, "key_total_zoom"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTotalZoomValue:F
 
     invoke-virtual {v7, v5, v9}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    .line 1384
+    .line 1390
     iget-object v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoTimeLapseRate:Ljava/lang/String;
 
     const-string v9, "0"
@@ -8932,7 +8943,7 @@
 
     invoke-virtual {v7, v10, v5}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1385
+    .line 1391
     iget-object v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoTimeLapseDuration:Ljava/lang/String;
 
     invoke-virtual {v9, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -8953,63 +8964,63 @@
 
     invoke-virtual {v7, v9, v5}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1386
+    .line 1392
     const-string v5, "night_hawk"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mNightHawkDetected:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1387
+    .line 1393
     const-string v5, "key_video_makeup"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoMakeUpValue:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1388
+    .line 1394
     const-string v5, "key_video_makeup_intensity"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoMakeUpIntensityValue:F
 
     invoke-virtual {v7, v5, v9}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    .line 1389
+    .line 1395
     const-string v5, "key_transsion_filter"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTranssionFilterValue:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1390
+    .line 1396
     const-string v5, "key_video_effect"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoEffectValue:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1391
+    .line 1397
     const-string v5, "key_video_frame"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoFrameValue:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1392
+    .line 1398
     const-string v5, "key_recording_effect"
 
     iget-object v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoRecordingEffectValue:Ljava/lang/String;
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1393
+    .line 1399
     const-string v5, "key_recording_effect_zoom"
 
     iget-object v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoRecordingEffectZoomValue:Ljava/lang/String;
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1394
+    .line 1400
     const-string v5, "key_video_enhance"
 
     invoke-direct {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getVideoEnhanceDescription()Ljava/lang/String;
@@ -9018,7 +9029,7 @@
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1395
+    .line 1401
     const-string v5, "key_video_enhance_yuv"
 
     invoke-direct {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getVideoEnhanceYUVDescription()Ljava/lang/String;
@@ -9027,42 +9038,42 @@
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1396
+    .line 1402
     const-string v5, "key_video_portrait_level"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoPortraitLevelValue:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1397
+    .line 1403
     const-string v5, "key_camera_name"
 
     iget-object v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mCameraNameValue:Ljava/lang/String;
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1398
+    .line 1404
     const-string v5, "key_vip_value"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVIPCaptureValue:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1399
+    .line 1405
     const-string v5, "key_screen_type"
 
     iget v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenType:I
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1400
+    .line 1406
     const-string v5, "key_auto_watermark"
 
     iget-object v9, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAutoWaterMarkValue:Ljava/lang/String;
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1401
+    .line 1407
     iget-object v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeauty:Lcom/transsion/camera/utils/analytics/beauty/IFaceBeauty;
 
     invoke-interface {v5}, Lcom/transsion/camera/utils/analytics/beauty/IFaceBeauty;->getReportValue()Ljava/lang/String;
@@ -9073,7 +9084,7 @@
 
     invoke-virtual {v7, v9, v5}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1402
+    .line 1408
     iget-object v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyValue:[I
 
     const/4 v9, 0x6
@@ -9090,12 +9101,12 @@
 
     if-eqz v5, :cond_1c9
 
-    .line 1404
+    .line 1410
     array-length v15, v5
 
     if-ge v15, v14, :cond_177
 
-    .line 1405
+    .line 1411
     const-string v15, "parameter_1"
 
     move/from16 v16, v2
@@ -9109,24 +9120,24 @@
     :cond_177
     move/from16 v16, v2
 
-    .line 1406
+    .line 1412
     array-length v2, v5
 
     if-lt v2, v13, :cond_1a4
 
-    .line 1407
+    .line 1413
     const-string v2, "parameter_4"
 
     aget v15, v5, v16
 
     invoke-virtual {v7, v2, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1408
+    .line 1414
     iget-boolean v2, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyV3:Z
 
     if-eqz v2, :cond_18f
 
-    .line 1409
+    .line 1415
     const-string v2, "skin_color_card"
 
     aget v15, v5, v8
@@ -9135,7 +9146,7 @@
 
     goto :goto_196
 
-    .line 1411
+    .line 1417
     :cond_18f
     const-string v2, "parameter_5"
 
@@ -9143,7 +9154,7 @@
 
     invoke-virtual {v7, v2, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1413
+    .line 1419
     :goto_196
     const-string v2, "parameter_6"
 
@@ -9151,42 +9162,42 @@
 
     invoke-virtual {v7, v2, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1414
+    .line 1420
     const-string v2, "parameter_7"
 
     aget v15, v5, v12
 
     invoke-virtual {v7, v2, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1416
+    .line 1422
     :cond_1a4
     :goto_1a4
     array-length v2, v5
 
     if-lt v2, v11, :cond_1bc
 
-    .line 1417
+    .line 1423
     const-string v2, "parameter_15"
 
     aget v15, v5, v10
 
     invoke-virtual {v7, v2, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1418
+    .line 1424
     const-string v2, "parameter_16"
 
     aget v15, v5, v9
 
     invoke-virtual {v7, v2, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1419
+    .line 1425
     const-string v2, "parameter_17"
 
     aget v15, v5, v13
 
     invoke-virtual {v7, v2, v15}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1421
+    .line 1427
     :cond_1bc
     array-length v2, v5
 
@@ -9194,7 +9205,7 @@
 
     if-lt v2, v15, :cond_1cb
 
-    .line 1422
+    .line 1428
     const-string v2, "parameter_18"
 
     aget v5, v5, v11
@@ -9206,26 +9217,26 @@
     :cond_1c9
     move/from16 v16, v2
 
-    .line 1425
+    .line 1431
     :cond_1cb
     :goto_1cb
     iget-object v2, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimbodyValue:[I
 
     if-eqz v2, :cond_215
 
-    .line 1427
+    .line 1433
     array-length v5, v2
 
     if-ge v5, v8, :cond_1e1
 
-    .line 1428
+    .line 1434
     const-string v5, "parameter_2"
 
     aget v9, v2, v16
 
     invoke-virtual {v7, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1429
+    .line 1435
     const-string v5, "parameter_3"
 
     aget v2, v2, v12
@@ -9234,62 +9245,62 @@
 
     goto :goto_215
 
-    .line 1430
+    .line 1436
     :cond_1e1
     array-length v5, v2
 
     if-lt v5, v11, :cond_215
 
-    .line 1431
+    .line 1437
     const-string v5, "parameter_8"
 
     aget v11, v2, v16
 
     invoke-virtual {v7, v5, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1432
+    .line 1438
     const-string v5, "parameter_9"
 
     aget v11, v2, v12
 
     invoke-virtual {v7, v5, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1433
+    .line 1439
     const-string v5, "parameter_10"
 
     aget v11, v2, v14
 
     invoke-virtual {v7, v5, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1434
+    .line 1440
     const-string v5, "parameter_11"
 
     aget v11, v2, v8
 
     invoke-virtual {v7, v5, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1435
+    .line 1441
     const-string v5, "parameter_12"
 
     aget v11, v2, v13
 
     invoke-virtual {v7, v5, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1436
+    .line 1442
     const-string v5, "parameter_13"
 
     aget v10, v2, v10
 
     invoke-virtual {v7, v5, v10}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1437
+    .line 1443
     const-string v5, "parameter_14"
 
     aget v2, v2, v9
 
     invoke-virtual {v7, v5, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1440
+    .line 1446
     :cond_215
     :goto_215
     const-string v2, "key_luminance"
@@ -9298,108 +9309,108 @@
 
     invoke-virtual {v7, v2, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1441
+    .line 1447
     const-string v2, "key_front_dual_flash_color_temp"
 
     iget v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFrontDualFlashColorTemp:I
 
     invoke-virtual {v7, v2, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1442
+    .line 1448
     const-string v2, "key_front_dual_flash_strength_mode"
 
     iget v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFrontDualFlashStrengthMode:I
 
     invoke-virtual {v7, v2, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1443
+    .line 1449
     const-string v2, "key_activity_orientation"
 
     iget v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mActivityOrientation:I
 
     invoke-virtual {v7, v2, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1444
+    .line 1450
     const-string v2, "key_screen_brightness_mode"
 
     iget v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenBrightnessMode:I
 
     invoke-virtual {v7, v2, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1445
+    .line 1451
     const-string v2, "key_screen_brightness"
 
     iget v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mScreenBrightness:I
 
     invoke-virtual {v7, v2, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1446
+    .line 1452
     const-string v2, "key_video_asd"
 
     iget v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoAsdValue:I
 
     invoke-virtual {v7, v2, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1447
+    .line 1453
     const-string v2, "key_video_asd_effect"
 
     iget v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoAsdEffect:I
 
     invoke-virtual {v7, v2, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1448
+    .line 1454
     const-string v2, "key_hdr_10"
 
     iget v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mHdr10PlusValue:I
 
     invoke-virtual {v7, v2, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1449
+    .line 1455
     const-string v2, "key_video_preisp"
 
     iget-object v5, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mVideoPreIspValue:Ljava/lang/String;
 
     invoke-virtual {v7, v2, v5}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1450
+    .line 1456
     const-string v2, "key_temp_board_values"
 
     invoke-virtual {v7, v2, v1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object/from16 v1, p5
 
-    .line 1451
+    .line 1457
     invoke-virtual {v7, v1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    .line 1452
+    .line 1458
     const-string v1, "key_variable_fps"
 
     iget-object v2, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAutoVideoFPS:Ljava/lang/String;
 
     invoke-virtual {v7, v1, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1453
+    .line 1459
     const-string v1, "key_trigger_type"
 
     iget-object v2, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mTriggerType:Ljava/lang/String;
 
     invoke-virtual {v7, v1, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1454
+    .line 1460
     const-string v1, "media_id"
 
     iget-object v2, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSaveUriId:Ljava/lang/String;
 
     invoke-virtual {v7, v1, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1455
+    .line 1461
     iget-object v1, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mAthenaAnalyticsImpl:Lcom/transsion/camera/utils/analytics/AbstractAnalytics;
 
     const-string v2, "video"
 
     invoke-interface {v1, v2, v7}, Lcom/transsion/camera/utils/analytics/AbstractAnalytics;->logEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 1457
+    .line 1463
     :cond_281
     sget-object v1, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -9413,7 +9424,7 @@
 
     if-eqz v2, :cond_67e
 
-    .line 1458
+    .line 1464
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9432,7 +9443,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1459
+    .line 1465
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9449,7 +9460,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1460
+    .line 1466
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9480,7 +9491,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1461
+    .line 1467
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9509,7 +9520,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1462
+    .line 1468
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9538,7 +9549,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1463
+    .line 1469
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9567,7 +9578,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1464
+    .line 1470
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9596,7 +9607,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1465
+    .line 1471
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9623,7 +9634,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1466
+    .line 1472
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9642,7 +9653,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1467
+    .line 1473
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9661,7 +9672,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1468
+    .line 1474
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9680,7 +9691,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1469
+    .line 1475
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9699,7 +9710,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1470
+    .line 1476
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9718,7 +9729,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1471
+    .line 1477
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9737,7 +9748,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1472
+    .line 1478
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9756,7 +9767,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1473
+    .line 1479
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9775,7 +9786,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1474
+    .line 1480
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9794,7 +9805,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1475
+    .line 1481
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9813,7 +9824,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1476
+    .line 1482
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9832,7 +9843,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1477
+    .line 1483
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9855,12 +9866,12 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1478
+    .line 1484
     iget-object v2, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mFaceBeautyValue:[I
 
     if-eqz v2, :cond_4ad
 
-    .line 1479
+    .line 1485
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9883,13 +9894,13 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1480
+    .line 1486
     :cond_4ad
     iget-object v2, v0, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->mSlimbodyValue:[I
 
     if-eqz v2, :cond_4cb
 
-    .line 1481
+    .line 1487
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9912,7 +9923,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1482
+    .line 1488
     :cond_4cb
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -9934,7 +9945,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1483
+    .line 1489
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9955,7 +9966,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1484
+    .line 1490
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9978,7 +9989,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1485
+    .line 1491
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9997,7 +10008,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1486
+    .line 1492
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10016,7 +10027,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1487
+    .line 1493
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10035,7 +10046,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1488
+    .line 1494
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10054,7 +10065,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1489
+    .line 1495
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10073,7 +10084,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1490
+    .line 1496
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10092,7 +10103,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1491
+    .line 1497
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10111,7 +10122,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1492
+    .line 1498
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10130,7 +10141,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1493
+    .line 1499
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10157,7 +10168,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1494
+    .line 1500
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10176,7 +10187,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1495
+    .line 1501
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10195,7 +10206,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1496
+    .line 1502
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10214,7 +10225,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1497
+    .line 1503
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10233,7 +10244,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1498
+    .line 1504
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10252,7 +10263,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1499
+    .line 1505
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10271,7 +10282,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1500
+    .line 1506
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10290,7 +10301,7 @@
 
     invoke-static {v1, v2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1502
+    .line 1508
     :cond_67e
     invoke-direct {v0}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->resetVideoParameters()V
 

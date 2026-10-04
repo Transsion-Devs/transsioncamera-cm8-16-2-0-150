@@ -34,12 +34,12 @@
 .method public constructor <init>(Lkotlin/coroutines/CoroutineContext;ZZ)V
     .registers 4
 
-    .line 41
+    .line 38
     invoke-direct {p0, p3}, Lkotlinx/coroutines/JobSupport;-><init>(Z)V
 
     if-eqz p2, :cond_10
 
-    .line 51
+    .line 48
     sget-object p2, Lkotlinx/coroutines/Job;->Key:Lkotlinx/coroutines/Job$Key;
 
     invoke-interface {p1, p2}, Lkotlin/coroutines/CoroutineContext;->get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
@@ -50,7 +50,7 @@
 
     invoke-virtual {p0, p2}, Lkotlinx/coroutines/JobSupport;->initParentJob(Lkotlinx/coroutines/Job;)V
 
-    .line 58
+    .line 55
     :cond_10
     invoke-interface {p1, p0}, Lkotlin/coroutines/CoroutineContext;->plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
@@ -72,7 +72,7 @@
 .method protected afterResume(Ljava/lang/Object;)V
     .registers 2
 
-    .line 105
+    .line 102
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/JobSupport;->afterCompletion(Ljava/lang/Object;)V
 
     return-void
@@ -81,7 +81,7 @@
 .method protected cancellationExceptionMessage()Ljava/lang/String;
     .registers 2
 
-    .line 86
+    .line 83
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -106,7 +106,7 @@
 .method public final getContext()Lkotlin/coroutines/CoroutineContext;
     .registers 1
 
-    .line 58
+    .line 55
     iget-object p0, p0, Lkotlinx/coroutines/AbstractCoroutine;->context:Lkotlin/coroutines/CoroutineContext;
 
     return-object p0
@@ -115,7 +115,7 @@
 .method public getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
     .registers 1
 
-    .line 63
+    .line 60
     iget-object p0, p0, Lkotlinx/coroutines/AbstractCoroutine;->context:Lkotlin/coroutines/CoroutineContext;
 
     return-object p0
@@ -124,7 +124,7 @@
 .method public final handleOnCompletionException$kotlinx_coroutines_core(Ljava/lang/Throwable;)V
     .registers 2
 
-    .line 108
+    .line 105
     iget-object p0, p0, Lkotlinx/coroutines/AbstractCoroutine;->context:Lkotlin/coroutines/CoroutineContext;
 
     invoke-static {p0, p1}, Lkotlinx/coroutines/CoroutineExceptionHandlerKt;->handleCoroutineException(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Throwable;)V
@@ -135,7 +135,7 @@
 .method public isActive()Z
     .registers 1
 
-    .line 65
+    .line 62
     invoke-super {p0}, Lkotlinx/coroutines/JobSupport;->isActive()Z
 
     move-result p0
@@ -146,7 +146,7 @@
 .method public nameString$kotlinx_coroutines_core()Ljava/lang/String;
     .registers 4
 
-    .line 112
+    .line 109
     iget-object v0, p0, Lkotlinx/coroutines/AbstractCoroutine;->context:Lkotlin/coroutines/CoroutineContext;
 
     invoke-static {v0}, Lkotlinx/coroutines/CoroutineContextKt;->getCoroutineName(Lkotlin/coroutines/CoroutineContext;)Ljava/lang/String;
@@ -161,7 +161,7 @@
 
     return-object p0
 
-    .line 113
+    .line 110
     :cond_d
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -210,12 +210,12 @@
 .method protected final onCompletionInternal(Ljava/lang/Object;)V
     .registers 3
 
-    .line 90
+    .line 87
     instance-of v0, p1, Lkotlinx/coroutines/CompletedExceptionally;
 
     if-eqz v0, :cond_10
 
-    .line 91
+    .line 88
     check-cast p1, Lkotlinx/coroutines/CompletedExceptionally;
 
     iget-object v0, p1, Lkotlinx/coroutines/CompletedExceptionally;->cause:Ljava/lang/Throwable;
@@ -228,7 +228,7 @@
 
     return-void
 
-    .line 93
+    .line 90
     :cond_10
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/AbstractCoroutine;->onCompleted(Ljava/lang/Object;)V
 
@@ -242,7 +242,7 @@
 
     const/4 v1, 0x1
 
-    .line 100
+    .line 97
     invoke-static {p1, v0, v1, v0}, Lkotlinx/coroutines/CompletionStateKt;->toState$default(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -251,14 +251,14 @@
 
     move-result-object p1
 
-    .line 101
+    .line 98
     sget-object v0, Lkotlinx/coroutines/JobSupportKt;->COMPLETING_WAITING_CHILDREN:Lkotlinx/coroutines/internal/Symbol;
 
     if-ne p1, v0, :cond_f
 
     return-void
 
-    .line 102
+    .line 99
     :cond_f
     invoke-virtual {p0, p1}, Lkotlinx/coroutines/AbstractCoroutine;->afterResume(Ljava/lang/Object;)V
 
@@ -279,7 +279,7 @@
         }
     .end annotation
 
-    .line 126
+    .line 123
     invoke-virtual {p1, p3, p2, p0}, Lkotlinx/coroutines/CoroutineStart;->invoke(Lkotlin/jvm/functions/Function2;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
 
     return-void

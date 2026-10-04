@@ -135,11 +135,20 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$4cp0TMoAl9_NqN1MwNN93wu_gro(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Ljava/lang/String;Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$YuH59vA_6tEapLhEUrBQDLZrY2I(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
 
     .line 0
-    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->lambda$new$1(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->lambda$new$2(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$b-BvwUFCBYX5Qu9UbgXoy2k8jS4(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Landroid/view/ViewStub;Landroid/view/View;)V
+    .registers 3
+
+    .line 0
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->lambda$loadAdjustUI$1(Landroid/view/ViewStub;Landroid/view/View;)V
 
     return-void
 .end method
@@ -147,7 +156,7 @@
 .method public static synthetic $r8$lambda$fBTMk_ITCnjPblGQJejz1T0Jnfo(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .registers 2
 
-    .line 131
+    .line 135
     const/4 p0, 0x1
 
     return p0
@@ -216,6 +225,15 @@
     return-void
 .end method
 
+.method static bridge synthetic -$$Nest$msendEmptyMessageIfSameThread(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Landroid/os/Handler;I)V
+    .registers 3
+
+    .line 0
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->sendEmptyMessageIfSameThread(Landroid/os/Handler;I)V
+
+    return-void
+.end method
+
 .method static bridge synthetic -$$Nest$mtriggerAdjustUIHide(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)V
     .registers 1
 
@@ -273,7 +291,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 57
+    .line 59
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "DualFlashAdjustUI"
@@ -288,10 +306,10 @@
 .method public constructor <init>(Landroid/content/res/Resources;Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;I)V
     .registers 4
 
-    .line 113
+    .line 115
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;-><init>(Landroid/content/res/Resources;Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;)V
 
-    .line 76
+    .line 78
     new-instance p1, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-direct {p1}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;-><init>()V
@@ -300,43 +318,43 @@
 
     const/4 p1, -0x1
 
-    .line 93
+    .line 95
     iput p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
 
     const/4 p1, 0x0
 
-    .line 96
+    .line 98
     iput p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStrengthModeProgressBarWidth:I
 
-    .line 97
+    .line 99
     iput p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStrengthModeProgressBarHeight:I
 
-    .line 98
+    .line 100
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsDocumentEnter:Z
 
-    .line 99
+    .line 101
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFilterUIShown:Z
 
-    .line 100
+    .line 102
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsInSettingFragment:Z
 
-    .line 101
+    .line 103
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mInIntentVideoReview:Z
 
-    .line 102
+    .line 104
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsInWaterMarkFragment:Z
 
-    .line 104
+    .line 106
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mShowBySetting:Z
 
-    .line 233
-    new-instance p1, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$$ExternalSyntheticLambda1;
+    .line 257
+    new-instance p1, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$$ExternalSyntheticLambda2;
 
-    invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)V
+    invoke-direct {p1, p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$$ExternalSyntheticLambda2;-><init>(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)V
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
-    .line 114
+    .line 116
     new-instance p1, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     const/4 p2, 0x2
@@ -345,24 +363,24 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
-    .line 115
+    .line 117
     new-instance p1, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-direct {p1, p2, p3}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;-><init>(II)V
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashDefaultInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
-    .line 116
+    .line 118
     new-instance p1, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-direct {p1, p2, p3}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;-><init>(II)V
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashCodeInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
-    .line 117
+    .line 119
     iput p3, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultFlashStrengthMode:I
 
-    .line 118
+    .line 120
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -371,7 +389,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mLuminanceAdjustSupportForCamera:[I
 
-    .line 119
+    .line 121
     sget-object p1, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -402,7 +420,7 @@
 .method static synthetic access$000(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)Z
     .registers 1
 
-    .line 56
+    .line 58
     iget-boolean p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mThrLevelLuminanceSupported:Z
 
     return p0
@@ -411,7 +429,7 @@
 .method static synthetic access$100(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)I
     .registers 1
 
-    .line 56
+    .line 58
     iget p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFoldType:I
 
     return p0
@@ -420,7 +438,7 @@
 .method static synthetic access$1002(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Z)Z
     .registers 2
 
-    .line 56
+    .line 58
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
     return p1
@@ -429,7 +447,7 @@
 .method static synthetic access$1100(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)Landroid/os/Handler;
     .registers 1
 
-    .line 56
+    .line 58
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     return-object p0
@@ -438,7 +456,7 @@
 .method static synthetic access$1200(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)Landroid/os/Handler;
     .registers 1
 
-    .line 56
+    .line 58
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     return-object p0
@@ -447,7 +465,7 @@
 .method static synthetic access$1300(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)Landroid/os/Handler;
     .registers 1
 
-    .line 56
+    .line 58
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     return-object p0
@@ -456,7 +474,7 @@
 .method static synthetic access$200(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)V
     .registers 1
 
-    .line 56
+    .line 58
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideAdjustUI()V
 
     return-void
@@ -465,7 +483,7 @@
 .method static synthetic access$302(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Z)Z
     .registers 2
 
-    .line 56
+    .line 58
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
     return p1
@@ -474,7 +492,7 @@
 .method static synthetic access$402(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Z)Z
     .registers 2
 
-    .line 56
+    .line 58
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
     return p1
@@ -483,7 +501,7 @@
 .method static synthetic access$500(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)V
     .registers 1
 
-    .line 56
+    .line 58
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideAdjustUI()V
 
     return-void
@@ -492,7 +510,7 @@
 .method static synthetic access$600(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)V
     .registers 1
 
-    .line 56
+    .line 58
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideAdjustUI()V
 
     return-void
@@ -501,7 +519,7 @@
 .method static synthetic access$702(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Z)Z
     .registers 2
 
-    .line 56
+    .line 58
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
     return p1
@@ -510,7 +528,7 @@
 .method static synthetic access$802(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Z)Z
     .registers 2
 
-    .line 56
+    .line 58
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
     return p1
@@ -519,7 +537,7 @@
 .method static synthetic access$902(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Z)Z
     .registers 2
 
-    .line 56
+    .line 58
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
     return p1
@@ -528,22 +546,22 @@
 .method private enterSettingFragment()V
     .registers 3
 
-    .line 972
+    .line 1026
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_e
 
-    .line 973
+    .line 1027
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideAdjustUI()V
 
     const/4 v0, 0x0
 
-    .line 974
+    .line 1028
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateFrontFlashUIState(I)V
 
-    .line 975
+    .line 1029
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mShowBySetting:Z
 
     :cond_e
@@ -553,7 +571,7 @@
 .method private exitSettingFragment()V
     .registers 2
 
-    .line 980
+    .line 1034
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mShowBySetting:Z
 
     if-eqz v0, :cond_b
@@ -562,13 +580,13 @@
 
     if-nez v0, :cond_b
 
-    .line 981
+    .line 1035
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->showAdjustUI()V
 
     :cond_b
     const/4 v0, 0x0
 
-    .line 983
+    .line 1037
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mShowBySetting:Z
 
     return-void
@@ -577,7 +595,7 @@
 .method private facingFront()Z
     .registers 1
 
-    .line 732
+    .line 784
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez p0, :cond_6
@@ -586,7 +604,7 @@
 
     return p0
 
-    .line 735
+    .line 787
     :cond_6
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
 
@@ -602,7 +620,7 @@
 .method private hideColorLayoutIfNeed()V
     .registers 5
 
-    .line 739
+    .line 791
     sget-object v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -633,25 +651,25 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 740
+    .line 792
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mThrLevelLuminanceSupported:Z
 
     const/16 v1, 0x8
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_4b
+    if-eqz v0, :cond_47
 
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFoldType:I
 
-    if-eqz v0, :cond_4b
+    if-eqz v0, :cond_47
 
-    .line 741
+    .line 793
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->camFacingSupport()Z
 
     move-result v0
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_43
 
     iget v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
@@ -663,62 +681,56 @@
 
     if-eqz v0, :cond_3f
 
-    goto :goto_45
+    goto :goto_43
 
-    .line 745
+    .line 797
     :cond_3f
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorLayout:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {p0, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateFlashColorLayoutVisibility(I)V
 
     return-void
 
-    .line 743
-    :cond_45
-    :goto_45
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorLayout:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
+    .line 795
+    :cond_43
+    :goto_43
+    invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateFlashColorLayoutVisibility(I)V
 
     return-void
 
-    .line 748
-    :cond_4b
+    .line 800
+    :cond_47
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthLayout:Landroid/widget/RelativeLayout;
 
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_57
 
-    .line 749
+    .line 801
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->shouldShowFlashStrengthLayout()Z
 
     move-result v3
 
-    if-eqz v3, :cond_57
+    if-eqz v3, :cond_53
 
     move v3, v2
 
-    goto :goto_58
+    goto :goto_54
 
-    :cond_57
+    :cond_53
     move v3, v1
 
-    :goto_58
+    :goto_54
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 751
-    :cond_5b
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorLayout:Landroid/widget/RelativeLayout;
-
+    .line 803
+    :cond_57
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->shouldShowFlashColorLayout()Z
 
-    move-result p0
+    move-result v0
 
-    if-eqz p0, :cond_64
+    if-eqz v0, :cond_5e
 
     move v1, v2
 
-    :cond_64
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    :cond_5e
+    invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateFlashColorLayoutVisibility(I)V
 
     return-void
 .end method
@@ -726,14 +738,14 @@
 .method private hideFlashColorUI()V
     .registers 2
 
-    .line 774
+    .line 832
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorLayout:Landroid/widget/RelativeLayout;
 
     if-eqz p0, :cond_9
 
     const/16 v0, 0x8
 
-    .line 775
+    .line 833
     invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
     :cond_9
@@ -743,7 +755,7 @@
 .method private isFlashModeOff()Z
     .registers 3
 
-    .line 715
+    .line 767
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     const/4 v0, 0x0
@@ -752,7 +764,7 @@
 
     return v0
 
-    .line 718
+    .line 770
     :cond_6
     invoke-interface {p0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSettingValue()Ljava/lang/String;
 
@@ -778,7 +790,7 @@
 .method private isLuminanceAdjustSupported()Z
     .registers 7
 
-    .line 767
+    .line 825
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mLuminanceAdjustSupportForCamera:[I
 
     array-length v1, v0
@@ -792,7 +804,7 @@
 
     aget v4, v0, v3
 
-    .line 768
+    .line 826
     iget-boolean v5, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsLuminanceAdjustSupported:Z
 
     if-lez v4, :cond_f
@@ -813,24 +825,75 @@
 
     goto :goto_5
 
-    .line 770
+    .line 828
     :cond_16
     iget-boolean p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsLuminanceAdjustSupported:Z
 
     return p0
 .end method
 
-.method private synthetic lambda$new$1(Ljava/lang/String;Ljava/lang/String;)V
+.method private synthetic lambda$loadAdjustUI$1(Landroid/view/ViewStub;Landroid/view/View;)V
+    .registers 4
+
+    const/4 p1, -0x1
+
+    .line 143
+    invoke-virtual {p2}, Landroid/view/View;->getId()I
+
+    move-result v0
+
+    if-ne p1, v0, :cond_8
+
+    goto :goto_12
+
+    .line 146
+    :cond_8
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthLayout:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object p1
+
+    .line 147
+    instance-of v0, p1, Landroid/widget/RelativeLayout$LayoutParams;
+
+    if-nez v0, :cond_13
+
+    :goto_12
+    return-void
+
+    .line 150
+    :cond_13
+    check-cast p1, Landroid/widget/RelativeLayout$LayoutParams;
+
+    const/4 v0, 0x3
+
+    .line 151
+    invoke-virtual {p2}, Landroid/view/View;->getId()I
+
+    move-result p2
+
+    invoke-virtual {p1, v0, p2}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
+
+    .line 152
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthLayout:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$new$2(Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
 
-    .line 234
+    .line 258
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_6
 
     goto/16 :goto_8d
 
-    .line 237
+    .line 261
     :cond_6
     sget-object v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -856,7 +919,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 238
+    .line 262
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     const-string v1, "key_super_definition"
@@ -875,7 +938,7 @@
     :goto_30
     if-eqz v0, :cond_3a
 
-    .line 239
+    .line 263
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -889,7 +952,7 @@
     :cond_3a
     const/4 v2, 0x0
 
-    .line 240
+    .line 264
     :goto_3b
     const-string v0, "key_video_portrait"
 
@@ -899,7 +962,7 @@
 
     if-nez v0, :cond_5f
 
-    .line 241
+    .line 265
     invoke-static {v1, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -915,7 +978,7 @@
     :cond_4f
     const-string v0, "key_360_video_hdr"
 
-    .line 242
+    .line 266
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -924,14 +987,14 @@
 
     const-string v0, "key_anti_video"
 
-    .line 243
+    .line 267
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_6e
 
-    .line 244
+    .line 268
     :cond_5f
     const-string v0, "on"
 
@@ -941,14 +1004,14 @@
 
     if-eqz v0, :cond_6e
 
-    .line 245
+    .line 269
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     const/16 v1, 0xd
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 248
+    .line 272
     :cond_6e
     const-string v0, "key_iso"
 
@@ -960,14 +1023,14 @@
 
     const-string v0, "key_exposure_time"
 
-    .line 249
+    .line 273
     invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-eqz p1, :cond_8d
 
-    .line 250
+    .line 274
     :cond_7e
     const-string p1, "auto"
 
@@ -977,7 +1040,7 @@
 
     if-nez p1, :cond_8d
 
-    .line 251
+    .line 275
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     const/16 p1, 0xe
@@ -992,10 +1055,10 @@
 .method private processFrontDualFlashClick()V
     .registers 3
 
-    .line 616
+    .line 668
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->showAdjustUI()V
 
-    .line 617
+    .line 669
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_adjust_ui_show_and_hide_ae_lock"
@@ -1014,7 +1077,7 @@
 .method private processLuminancePreviewStart()V
     .registers 4
 
-    .line 549
+    .line 591
     sget-object v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1035,17 +1098,17 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 550
+    .line 592
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
 
     if-nez v0, :cond_20
 
-    .line 551
+    .line 593
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideAdjustUI()V
 
     return-void
 
-    .line 553
+    .line 595
     :cond_20
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->showAdjustUI()V
 
@@ -1055,7 +1118,7 @@
 .method private refreshUIState(I)V
     .registers 2
 
-    .line 688
+    .line 740
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateColorTempState(I)V
 
     return-void
@@ -1064,29 +1127,63 @@
 .method private removeSpreadBarSwitchDelay()V
     .registers 2
 
-    .line 639
+    .line 691
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_9
 
     const/16 v0, 0x8
 
-    .line 640
+    .line 692
     invoke-virtual {p0, v0}, Landroid/os/Handler;->removeMessages(I)V
 
     :cond_9
     return-void
 .end method
 
+.method private sendEmptyMessageIfSameThread(Landroid/os/Handler;I)V
+    .registers 4
+
+    .line 658
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object p0
+
+    invoke-virtual {p1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    if-ne p0, v0, :cond_14
+
+    .line 659
+    invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
+
+    move-result-object p0
+
+    .line 660
+    iput p2, p0, Landroid/os/Message;->what:I
+
+    .line 661
+    invoke-virtual {p1, p0}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
+
+    return-void
+
+    .line 663
+    :cond_14
+    invoke-virtual {p1, p2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    return-void
+.end method
+
 .method private shouldShowFlashColorLayout()Z
     .registers 3
 
-    .line 756
+    .line 814
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->facingFront()Z
 
     move-result v0
 
-    .line 757
+    .line 815
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mLuminanceAdjustSupportForCamera:[I
 
     aget v0, v1, v0
@@ -1112,12 +1209,12 @@
 .method private shouldShowFlashStrengthLayout()Z
     .registers 2
 
-    .line 761
+    .line 819
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->facingFront()Z
 
     move-result v0
 
-    .line 762
+    .line 820
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mLuminanceAdjustSupportForCamera:[I
 
     aget p0, p0, v0
@@ -1139,14 +1236,14 @@
 .method private triggerAdjustUIHide()V
     .registers 2
 
-    .line 257
+    .line 281
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
 
     if-nez v0, :cond_5
 
     goto :goto_19
 
-    .line 260
+    .line 284
     :cond_5
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
 
@@ -1165,10 +1262,10 @@
     :cond_12
     const/4 v0, 0x0
 
-    .line 263
+    .line 287
     invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateFrontFlashUIState(I)V
 
-    .line 264
+    .line 288
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideAdjustUI()V
 
     :cond_19
@@ -1179,7 +1276,7 @@
 .method private updateColorTempState(I)V
     .registers 7
 
-    .line 288
+    .line 312
     const-string v0, ""
 
     const/16 v1, 0x8
@@ -1188,19 +1285,19 @@
 
     const/4 v3, 0x1
 
-    if-eq p1, v3, :cond_bf
+    if-eq p1, v3, :cond_cb
 
     const/4 v4, 0x2
 
-    if-eq p1, v4, :cond_68
+    if-eq p1, v4, :cond_6e
 
     const/4 v4, 0x3
 
     if-eq p1, v4, :cond_10
 
-    goto/16 :goto_115
+    goto/16 :goto_127
 
-    .line 318
+    .line 354
     :cond_10
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mThrLevelLuminanceSupported:Z
 
@@ -1208,227 +1305,260 @@
 
     iget p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFoldType:I
 
-    if-nez p1, :cond_36
+    if-nez p1, :cond_3c
 
-    .line 319
+    .line 355
     :cond_18
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
 
+    if-eqz p1, :cond_24
+
+    .line 356
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 320
+    .line 357
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p1, v3}, Landroid/view/View;->setSelected(Z)V
+
+    .line 359
+    :cond_24
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
 
+    if-eqz p1, :cond_30
+
+    .line 360
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 361
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p1, v2}, Landroid/view/View;->setSelected(Z)V
+
+    .line 363
+    :cond_30
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
+
+    if-eqz p1, :cond_3c
+
+    .line 364
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 365
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p1, v2}, Landroid/view/View;->setSelected(Z)V
+
+    .line 368
+    :cond_3c
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget v3, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultFlashStrengthMode:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
+
+    .line 369
+    invoke-interface {v2}, Lcom/transsion/camera/app/common/setting/ISetting;->getStoreScope()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 368
+    invoke-virtual {p1, v1, v0, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result p1
+
+    iput p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mSelectedStrengthMode:I
+
+    .line 370
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashCodeInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
+
+    invoke-virtual {p1, v4}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashColorTemp(I)V
+
+    .line 371
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashCodeInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
+
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
+
+    goto/16 :goto_127
+
+    .line 334
+    :cond_6e
+    iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mThrLevelLuminanceSupported:Z
+
+    if-eqz p1, :cond_76
+
+    iget p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFoldType:I
+
+    if-nez p1, :cond_9a
+
+    .line 335
+    :cond_76
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
+
+    if-eqz p1, :cond_82
+
+    .line 336
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 337
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p1, v2}, Landroid/view/View;->setSelected(Z)V
+
+    .line 339
+    :cond_82
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
+
+    if-eqz p1, :cond_8e
+
+    .line 340
+    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
+
+    .line 341
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p1, v3}, Landroid/view/View;->setSelected(Z)V
+
+    .line 343
+    :cond_8e
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
+
+    if-eqz p1, :cond_9a
+
+    .line 344
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 345
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p1, v2}, Landroid/view/View;->setSelected(Z)V
+
+    .line 348
+    :cond_9a
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget v3, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultFlashStrengthMode:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
+
+    .line 349
+    invoke-interface {v2}, Lcom/transsion/camera/app/common/setting/ISetting;->getStoreScope()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 348
+    invoke-virtual {p1, v1, v0, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result p1
+
+    iput p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mSelectedStrengthMode:I
+
+    .line 350
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashDefaultInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
+
+    invoke-virtual {p1, v4}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashColorTemp(I)V
+
+    .line 351
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashDefaultInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
+
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
+
+    goto :goto_127
+
+    .line 314
+    :cond_cb
+    iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mThrLevelLuminanceSupported:Z
+
+    if-eqz p1, :cond_d3
+
+    iget p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFoldType:I
+
+    if-nez p1, :cond_f7
+
+    .line 315
+    :cond_d3
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
+
+    if-eqz p1, :cond_df
+
+    .line 316
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 317
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
+
+    invoke-virtual {p1, v2}, Landroid/view/View;->setSelected(Z)V
+
+    .line 319
+    :cond_df
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
+
+    if-eqz p1, :cond_eb
+
+    .line 320
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 321
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 322
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setSelected(Z)V
 
     .line 323
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
+    :cond_eb
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
 
-    invoke-virtual {p1, v2}, Landroid/view/View;->setSelected(Z)V
+    if-eqz p1, :cond_f7
 
     .line 324
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
+    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
+
+    .line 325
+    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v3}, Landroid/view/View;->setSelected(Z)V
-
-    .line 326
-    :cond_36
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
-
-    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget v3, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultFlashStrengthMode:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
-
-    .line 327
-    invoke-interface {v2}, Lcom/transsion/camera/app/common/setting/ISetting;->getStoreScope()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 326
-    invoke-virtual {p1, v1, v0, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mSelectedStrengthMode:I
 
     .line 328
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashCodeInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
-
-    invoke-virtual {p1, v4}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashColorTemp(I)V
-
-    .line 329
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashCodeInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
-
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
-
-    goto/16 :goto_115
-
-    .line 304
-    :cond_68
-    iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mThrLevelLuminanceSupported:Z
-
-    if-eqz p1, :cond_70
-
-    iget p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFoldType:I
-
-    if-nez p1, :cond_8e
-
-    .line 305
-    :cond_70
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 306
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
-
-    .line 307
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 308
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v2}, Landroid/view/View;->setSelected(Z)V
-
-    .line 309
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v2}, Landroid/view/View;->setSelected(Z)V
-
-    .line 310
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v3}, Landroid/view/View;->setSelected(Z)V
-
-    .line 312
-    :cond_8e
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
-
-    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget v3, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultFlashStrengthMode:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
-
-    .line 313
-    invoke-interface {v2}, Lcom/transsion/camera/app/common/setting/ISetting;->getStoreScope()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 312
-    invoke-virtual {p1, v1, v0, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result p1
-
-    iput p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mSelectedStrengthMode:I
-
-    .line 314
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashDefaultInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
-
-    invoke-virtual {p1, v4}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashColorTemp(I)V
-
-    .line 315
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashDefaultInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
-
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
-
-    goto :goto_115
-
-    .line 290
-    :cond_bf
-    iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mThrLevelLuminanceSupported:Z
-
-    if-eqz p1, :cond_c7
-
-    iget p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFoldType:I
-
-    if-nez p1, :cond_e5
-
-    .line 291
-    :cond_c7
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 292
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 293
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
-
-    .line 294
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v3}, Landroid/view/View;->setSelected(Z)V
-
-    .line 295
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v2}, Landroid/view/View;->setSelected(Z)V
-
-    .line 296
-    iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, v2}, Landroid/view/View;->setSelected(Z)V
-
-    .line 298
-    :cond_e5
+    :cond_f7
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -1451,12 +1581,12 @@
 
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
-    .line 299
+    .line 329
     invoke-interface {v2}, Lcom/transsion/camera/app/common/setting/ISetting;->getStoreScope()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 298
+    .line 328
     invoke-virtual {p1, v1, v0, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->getValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -1467,28 +1597,28 @@
 
     iput p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mSelectedStrengthMode:I
 
-    .line 300
+    .line 330
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-virtual {p1, v3}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashColorTemp(I)V
 
-    .line 301
+    .line 331
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
-    .line 334
-    :goto_115
+    .line 376
+    :goto_127
     iget p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mSelectedStrengthMode:I
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateStrengthModeState(I)V
 
-    .line 335
+    .line 377
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
 
-    if-eqz p1, :cond_127
+    if-eqz p1, :cond_139
 
-    .line 336
+    .line 378
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mSelectedStrengthMode:I
 
     iget v1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStrengthModeProgressBarWidth:I
@@ -1497,14 +1627,29 @@
 
     invoke-virtual {p1, v0, v1, p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;->setStrengthMode(III)V
 
-    :cond_127
+    :cond_139
+    return-void
+.end method
+
+.method private updateFlashColorLayoutVisibility(I)V
+    .registers 2
+
+    .line 808
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorLayout:Landroid/widget/RelativeLayout;
+
+    if-eqz p0, :cond_7
+
+    .line 809
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_7
     return-void
 .end method
 
 .method private updateFrontDualFlashTemValue(Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;)V
     .registers 5
 
-    .line 1003
+    .line 1057
     sget-object v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1533,12 +1678,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 1004
+    .line 1058
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_46
 
-    .line 1005
+    .line 1059
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1572,7 +1717,7 @@
 .method private updateFrontFlashUIState(I)V
     .registers 5
 
-    .line 987
+    .line 1041
     sget-object v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1591,10 +1736,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 988
+    .line 1042
     iput p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
 
-    .line 989
+    .line 1043
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p1, :cond_3f
@@ -1603,7 +1748,7 @@
 
     if-eqz p1, :cond_3f
 
-    .line 990
+    .line 1044
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1639,7 +1784,7 @@
 .method private updateRotationIcon(I)V
     .registers 4
 
-    .line 995
+    .line 1049
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mLowRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     if-eqz v0, :cond_1a
@@ -1654,15 +1799,15 @@
 
     int-to-float p1, p1
 
-    .line 996
+    .line 1050
     invoke-virtual {v0, p1}, Landroid/view/View;->setRotation(F)V
 
-    .line 997
+    .line 1051
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mMediumRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setRotation(F)V
 
-    .line 998
+    .line 1052
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mHighRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setRotation(F)V
@@ -1674,17 +1819,17 @@
 .method private updateSpreadBarDelay()V
     .registers 5
 
-    .line 624
+    .line 676
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_10
 
     const/16 v1, 0x8
 
-    .line 625
+    .line 677
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 626
+    .line 678
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     const-wide/16 v2, 0x1388
@@ -1714,7 +1859,7 @@
 
     goto/16 :goto_168
 
-    .line 378
+    .line 420
     :cond_c
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mMediumRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
@@ -1722,14 +1867,14 @@
 
     invoke-virtual {p1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 379
+    .line 421
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mHighRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     sget v4, Lcom/transsion/camera/R$drawable;->ic_front_dual_flash_high_selected:I
 
     invoke-virtual {p1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 380
+    .line 422
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
@@ -1738,19 +1883,19 @@
 
     invoke-virtual {p1, v4}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashColorTemp(I)V
 
-    .line 381
+    .line 423
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iget p1, p1, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->mFrontDualFlashColorTemp:I
 
     if-ne p1, v3, :cond_33
 
-    .line 382
+    .line 424
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-virtual {p1, v2}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashTemLevel(I)V
 
-    .line 383
+    .line 425
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
@@ -1760,12 +1905,12 @@
     :cond_33
     if-ne p1, v2, :cond_3f
 
-    .line 385
+    .line 427
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashDefaultInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-virtual {p1, v2}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashTemLevel(I)V
 
-    .line 386
+    .line 428
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashDefaultInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
@@ -1775,17 +1920,17 @@
     :cond_3f
     if-ne p1, v0, :cond_4a
 
-    .line 388
+    .line 430
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashCodeInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-virtual {p1, v2}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashTemLevel(I)V
 
-    .line 389
+    .line 431
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashCodeInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
-    .line 391
+    .line 433
     :cond_4a
     :goto_4a
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -1810,7 +1955,7 @@
 
     invoke-virtual {p1, v0, v2, v3, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 392
+    .line 434
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1839,7 +1984,7 @@
 
     goto/16 :goto_168
 
-    .line 361
+    .line 403
     :cond_81
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mMediumRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
@@ -1847,14 +1992,14 @@
 
     invoke-virtual {p1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 362
+    .line 404
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mHighRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     sget v4, Lcom/transsion/camera/R$drawable;->ic_front_dual_flash_high_unselected:I
 
     invoke-virtual {p1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 363
+    .line 405
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
@@ -1863,19 +2008,19 @@
 
     invoke-virtual {p1, v4}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashColorTemp(I)V
 
-    .line 364
+    .line 406
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iget p1, p1, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->mFrontDualFlashColorTemp:I
 
     if-ne p1, v3, :cond_a8
 
-    .line 365
+    .line 407
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-virtual {p1, v3}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashTemLevel(I)V
 
-    .line 366
+    .line 408
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
@@ -1885,12 +2030,12 @@
     :cond_a8
     if-ne p1, v2, :cond_b4
 
-    .line 368
+    .line 410
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashDefaultInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-virtual {p1, v3}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashTemLevel(I)V
 
-    .line 369
+    .line 411
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashDefaultInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
@@ -1900,17 +2045,17 @@
     :cond_b4
     if-ne p1, v0, :cond_bf
 
-    .line 371
+    .line 413
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashCodeInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-virtual {p1, v3}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashTemLevel(I)V
 
-    .line 372
+    .line 414
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashCodeInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
-    .line 374
+    .line 416
     :cond_bf
     :goto_bf
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -1935,7 +2080,7 @@
 
     invoke-virtual {p1, v0, v2, v3, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 375
+    .line 417
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1964,7 +2109,7 @@
 
     goto :goto_168
 
-    .line 344
+    .line 386
     :cond_f5
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mMediumRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
@@ -1972,14 +2117,14 @@
 
     invoke-virtual {p1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 345
+    .line 387
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mHighRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     sget v4, Lcom/transsion/camera/R$drawable;->ic_front_dual_flash_high_unselected:I
 
     invoke-virtual {p1, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 346
+    .line 388
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
@@ -1988,19 +2133,19 @@
 
     invoke-virtual {p1, v4}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashColorTemp(I)V
 
-    .line 347
+    .line 389
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iget p1, p1, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->mFrontDualFlashColorTemp:I
 
     if-ne p1, v3, :cond_11c
 
-    .line 348
+    .line 390
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-virtual {p1, v1}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashTemLevel(I)V
 
-    .line 349
+    .line 391
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashWarmInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
@@ -2010,12 +2155,12 @@
     :cond_11c
     if-ne p1, v2, :cond_128
 
-    .line 351
+    .line 393
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashDefaultInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-virtual {p1, v1}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashTemLevel(I)V
 
-    .line 352
+    .line 394
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashDefaultInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
@@ -2025,17 +2170,17 @@
     :cond_128
     if-ne p1, v0, :cond_133
 
-    .line 354
+    .line 396
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashCodeInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-virtual {p1, v1}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashTemLevel(I)V
 
-    .line 355
+    .line 397
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashCodeInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
-    .line 357
+    .line 399
     :cond_133
     :goto_133
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
@@ -2060,7 +2205,7 @@
 
     invoke-virtual {p1, v0, v2, v3, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 358
+    .line 400
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2087,7 +2232,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 397
+    .line 439
     :goto_168
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
@@ -2101,7 +2246,7 @@
 .method protected camFacingSupport()Z
     .registers 4
 
-    .line 723
+    .line 775
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mLuminanceAdjustSupportForCamera:[I
 
     const/4 v1, 0x0
@@ -2116,13 +2261,13 @@
 
     goto :goto_16
 
-    .line 727
+    .line 779
     :cond_a
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->facingFront()Z
 
     move-result v0
 
-    .line 728
+    .line 780
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mLuminanceAdjustSupportForCamera:[I
 
     aget p0, p0, v0
@@ -2141,14 +2286,14 @@
 .method public createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/interactive/CommonInteractive;)Landroid/view/View;
     .registers 5
 
-    .line 151
+    .line 175
     invoke-virtual {p3}, Lcom/transsion/camera/app/common/interactive/CommonInteractive;->getIAppUI()Lcom/transsion/camera/app/common/IAppUI;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    .line 152
+    .line 176
     invoke-super {p0, p1, p2, p3}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Lcom/transsion/camera/app/common/interactive/CommonInteractive;)Landroid/view/View;
 
     move-result-object p0
@@ -2159,10 +2304,10 @@
 .method public doHideAnimation()V
     .registers 2
 
-    .line 473
+    .line 515
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->doHideAnimation()V
 
-    .line 474
+    .line 516
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustView:Landroid/view/View;
 
     if-eqz v0, :cond_14
@@ -2173,7 +2318,7 @@
 
     if-nez v0, :cond_14
 
-    .line 475
+    .line 517
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustView:Landroid/view/View;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustViewHideAnim:Landroid/view/animation/Animation;
@@ -2187,7 +2332,7 @@
 .method protected doShowAnimation()V
     .registers 3
 
-    .line 481
+    .line 523
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustView:Landroid/view/View;
 
     if-eqz v0, :cond_1c
@@ -2210,7 +2355,7 @@
 
     if-ne v0, v1, :cond_1c
 
-    .line 482
+    .line 524
     :cond_15
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustView:Landroid/view/View;
 
@@ -2236,36 +2381,36 @@
 .method public hideAdjustUI(Z)V
     .registers 4
 
-    .line 693
+    .line 745
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideAdjustUI(Z)V
 
-    .line 694
+    .line 746
     sget-object v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "hideAdjustUI"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 695
+    .line 747
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorTempProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_12
 
-    .line 696
+    .line 748
     invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;->setAllowedMove(Z)V
 
-    .line 698
+    .line 750
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
 
     if-eqz v0, :cond_19
 
-    .line 699
+    .line 751
     invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;->setAllowedMove(Z)V
 
-    .line 701
+    .line 753
     :cond_19
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
@@ -2273,22 +2418,22 @@
 
     const/4 v1, 0x1
 
-    .line 702
+    .line 754
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
 
-    .line 704
+    .line 756
     :cond_21
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_28
 
-    .line 705
+    .line 757
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideFrontDualFlashUI()V
 
     :cond_28
     if-eqz p1, :cond_37
 
-    .line 708
+    .line 760
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_front_dual_flash_ui_visible"
@@ -2299,10 +2444,10 @@
 
     const-string v1, "front_dual_flash_ui_hide"
 
-    .line 709
+    .line 761
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 711
+    .line 763
     :cond_37
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->removeSpreadBarSwitchDelay()V
 
@@ -2312,10 +2457,10 @@
 .method public hideEntryView()V
     .registers 2
 
-    .line 544
+    .line 586
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideEntryView()V
 
-    .line 545
+    .line 587
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     const/16 v0, 0x8
@@ -2328,7 +2473,7 @@
 .method public initHandler()V
     .registers 3
 
-    .line 157
+    .line 181
     new-instance v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$FrontAdjustUIHandler;
 
     const/4 v1, 0x0
@@ -2343,17 +2488,17 @@
 .method public initLuminanceSupport()V
     .registers 6
 
-    .line 172
+    .line 196
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v0, :cond_6e
 
-    .line 173
+    .line 197
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getSupport()Ljava/util/List;
 
     move-result-object v0
 
-    .line 174
+    .line 198
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2374,14 +2519,14 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 175
+    .line 199
     const-string v3, ","
 
     invoke-static {v1, v3}, Lcom/transsion/camera/utils/StringUtils;->splitString(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 176
+    .line 200
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v3
@@ -2402,7 +2547,7 @@
 
     if-eqz v2, :cond_c
 
-    .line 177
+    .line 201
     invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -2415,7 +2560,7 @@
 
     if-ne v1, v4, :cond_c
 
-    .line 178
+    .line 202
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mLuminanceAdjustSupportForCamera:[I
 
     const/4 v2, 0x2
@@ -2424,7 +2569,7 @@
 
     goto :goto_c
 
-    .line 182
+    .line 206
     :cond_44
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->isLuminanceAdjustSupported()Z
 
@@ -2432,10 +2577,10 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mIsSupport:Z
 
-    .line 183
+    .line 207
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mAeAfShow:Z
 
-    .line 184
+    .line 208
     sget-object v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2482,27 +2627,27 @@
 .method public loadAdjustUI(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)Landroid/view/View;
     .registers 6
 
-    .line 125
+    .line 127
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mThrLevelLuminanceSupported:Z
 
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_26
 
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFoldType:I
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_26
 
-    .line 126
+    .line 128
     sget v0, Lcom/transsion/camera/R$layout;->thr_level_luminance_adjust_view:I
 
     invoke-virtual {p1, v0, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object p1
 
-    .line 127
+    .line 129
     sget p2, Lcom/transsion/camera/R$id;->thr_level_luminance_layout:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -2513,156 +2658,7 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mThrLevelLuminanceRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
-    goto :goto_73
-
-    .line 129
-    :cond_1b
-    sget v0, Lcom/transsion/camera/R$layout;->front_dual_flash_adjust_view:I
-
-    invoke-virtual {p1, v0, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object p1
-
     .line 130
-    sget p2, Lcom/transsion/camera/R$id;->front_dual_flash_adjust_layout:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/widget/RelativeLayout;
-
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashAdjustLayout:Landroid/widget/RelativeLayout;
-
-    .line 131
-    new-instance v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$$ExternalSyntheticLambda0;
-
-    invoke-direct {v0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$$ExternalSyntheticLambda0;-><init>()V
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
-
-    .line 132
-    iget-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashAdjustLayout:Landroid/widget/RelativeLayout;
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->setFocusableInTouchMode(Z)V
-
-    .line 133
-    sget p2, Lcom/transsion/camera/R$id;->flash_cold_color_temp_layout:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/widget/FrameLayout;
-
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
-
-    .line 134
-    sget p2, Lcom/transsion/camera/R$id;->flash_default_color_temp_layout:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/widget/FrameLayout;
-
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
-
-    .line 135
-    sget p2, Lcom/transsion/camera/R$id;->flash_warm_color_temp_layout:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/widget/FrameLayout;
-
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
-
-    .line 136
-    sget p2, Lcom/transsion/camera/R$id;->flash_color_temp_progress_bar:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;
-
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorTempProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;
-
-    .line 137
-    new-instance v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$ColorTempChangeListener;
-
-    invoke-direct {v0, p0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$ColorTempChangeListener;-><init>(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI-IA;)V
-
-    invoke-virtual {p2, v0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;->addColorTempChangeListener(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar$ColorTempChangeListener;)V
-
-    .line 138
-    sget p2, Lcom/transsion/camera/R$id;->flash_strength_layout:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/widget/RelativeLayout;
-
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthLayout:Landroid/widget/RelativeLayout;
-
-    .line 140
-    :goto_73
-    sget p2, Lcom/transsion/camera/R$id;->low_rotation_icon:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/transsion/camera/app/ui/widget/RotateImageView;
-
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mLowRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
-
-    .line 141
-    sget p2, Lcom/transsion/camera/R$id;->medium_rotation_icon:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/transsion/camera/app/ui/widget/RotateImageView;
-
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mMediumRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
-
-    .line 142
-    sget p2, Lcom/transsion/camera/R$id;->high_rotation_icon:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/transsion/camera/app/ui/widget/RotateImageView;
-
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mHighRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
-
-    .line 143
-    sget p2, Lcom/transsion/camera/R$id;->flash_strength_mode_progress_bar:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
-
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
-
-    .line 144
-    new-instance v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$StrengthModeChangeListener;
-
-    invoke-direct {v0, p0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$StrengthModeChangeListener;-><init>(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI-IA;)V
-
-    invoke-virtual {p2, v0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;->addStrengthModeChangeListener(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar$StrengthModeChangeListener;)V
-
-    .line 145
     sget p2, Lcom/transsion/camera/R$id;->flash_color_layout:I
 
     invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -2673,13 +2669,216 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorLayout:Landroid/widget/RelativeLayout;
 
+    goto/16 :goto_af
+
+    .line 132
+    :cond_26
+    sget v0, Lcom/transsion/camera/R$layout;->front_dual_flash_adjust_view:I
+
+    invoke-virtual {p1, v0, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object p1
+
+    .line 133
+    sget p2, Lcom/transsion/camera/R$id;->flash_strength_layout:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/widget/RelativeLayout;
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthLayout:Landroid/widget/RelativeLayout;
+
+    .line 134
+    sget p2, Lcom/transsion/camera/R$id;->front_dual_flash_adjust_layout:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/widget/RelativeLayout;
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashAdjustLayout:Landroid/widget/RelativeLayout;
+
+    .line 135
+    new-instance v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$$ExternalSyntheticLambda0;-><init>()V
+
+    invoke-virtual {p2, v0}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    .line 136
+    iget-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashAdjustLayout:Landroid/widget/RelativeLayout;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p2, v0}, Landroid/view/View;->setFocusableInTouchMode(Z)V
+
+    .line 137
+    iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mContext:Landroid/content/Context;
+
+    invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p2
+
+    sget v0, Lcom/transsion/camera/R$bool;->front_dual_flash_support:I
+
+    invoke-virtual {p2, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_af
+
+    .line 139
+    sget p2, Lcom/transsion/camera/R$id;->flash_color_layout_stub:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/view/ViewStub;
+
+    if-eqz p2, :cond_af
+
+    .line 141
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthLayout:Landroid/widget/RelativeLayout;
+
+    if-eqz v0, :cond_72
+
+    .line 142
+    new-instance v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$$ExternalSyntheticLambda1;
+
+    invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)V
+
+    invoke-virtual {p2, v0}, Landroid/view/ViewStub;->setOnInflateListener(Landroid/view/ViewStub$OnInflateListener;)V
+
+    .line 155
+    :cond_72
+    invoke-virtual {p2}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
+
+    .line 156
+    sget p2, Lcom/transsion/camera/R$id;->flash_color_layout:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/widget/RelativeLayout;
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorLayout:Landroid/widget/RelativeLayout;
+
+    .line 157
+    sget p2, Lcom/transsion/camera/R$id;->flash_cold_color_temp_layout:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/widget/FrameLayout;
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mColdColorTempLayout:Landroid/widget/FrameLayout;
+
+    .line 158
+    sget p2, Lcom/transsion/camera/R$id;->flash_default_color_temp_layout:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/widget/FrameLayout;
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDefaultColorTempLayout:Landroid/widget/FrameLayout;
+
+    .line 159
+    sget p2, Lcom/transsion/camera/R$id;->flash_warm_color_temp_layout:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/widget/FrameLayout;
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mWarmColorTempLayout:Landroid/widget/FrameLayout;
+
+    .line 160
+    sget p2, Lcom/transsion/camera/R$id;->flash_color_temp_progress_bar:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorTempProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;
+
+    .line 161
+    new-instance v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$ColorTempChangeListener;
+
+    invoke-direct {v0, p0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$ColorTempChangeListener;-><init>(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI-IA;)V
+
+    invoke-virtual {p2, v0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;->addColorTempChangeListener(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar$ColorTempChangeListener;)V
+
+    .line 165
+    :cond_af
+    :goto_af
+    sget p2, Lcom/transsion/camera/R$id;->low_rotation_icon:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/transsion/camera/app/ui/widget/RotateImageView;
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mLowRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
+
+    .line 166
+    sget p2, Lcom/transsion/camera/R$id;->medium_rotation_icon:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/transsion/camera/app/ui/widget/RotateImageView;
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mMediumRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
+
+    .line 167
+    sget p2, Lcom/transsion/camera/R$id;->high_rotation_icon:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/transsion/camera/app/ui/widget/RotateImageView;
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mHighRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
+
+    .line 168
+    sget p2, Lcom/transsion/camera/R$id;->flash_strength_mode_progress_bar:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
+
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
+
+    .line 169
+    new-instance v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$StrengthModeChangeListener;
+
+    invoke-direct {v0, p0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$StrengthModeChangeListener;-><init>(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI-IA;)V
+
+    invoke-virtual {p2, v0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;->addStrengthModeChangeListener(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar$StrengthModeChangeListener;)V
+
     return-object p1
 .end method
 
 .method public loadAnimation(Landroid/content/Context;)V
     .registers 3
 
-    .line 488
+    .line 530
     sget v0, Lcom/transsion/camera/R$anim;->front_dual_flash_adjust_bar_show:I
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
@@ -2688,7 +2887,7 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustViewShowAnim:Landroid/view/animation/Animation;
 
-    .line 489
+    .line 531
     sget v0, Lcom/transsion/camera/R$anim;->front_dual_flash_adjust_bar_hide:I
 
     invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
@@ -2697,14 +2896,14 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustViewHideAnim:Landroid/view/animation/Animation;
 
-    .line 490
+    .line 532
     new-instance v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$1;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$1;-><init>(Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;)V
 
     invoke-virtual {p1, v0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 506
+    .line 548
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustViewShowAnim:Landroid/view/animation/Animation;
 
     new-instance v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$2;
@@ -2721,10 +2920,10 @@
 
     const/4 v0, 0x0
 
-    .line 632
+    .line 684
     iput v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mVerticalAdjustViewMarginLeft:I
 
-    .line 633
+    .line 685
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mAppUIRect:Lcom/transsion/camera/app/common/IAppUIControl$IAppUIRect;
 
     if-eqz v0, :cond_1e
@@ -2735,7 +2934,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 634
+    .line 686
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v1, Lcom/transsion/camera/R$dimen;->flash_new_luminance_adjust_view_margin_top:I
@@ -2761,7 +2960,7 @@
 .method public notifyCameraOperateAction(I)V
     .registers 5
 
-    .line 781
+    .line 839
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->notifyCameraOperateAction(I)V
 
     const/4 v0, 0x2
@@ -2770,519 +2969,498 @@
 
     const/4 v2, 0x0
 
-    if-eq p1, v0, :cond_185
+    if-eq p1, v0, :cond_174
 
     const/4 v0, 0x3
 
-    if-eq p1, v0, :cond_173
+    if-eq p1, v0, :cond_162
 
     const/16 v0, 0x14
 
-    if-eq p1, v0, :cond_162
+    if-eq p1, v0, :cond_151
 
     const/16 v0, 0x15
 
-    if-eq p1, v0, :cond_144
+    if-eq p1, v0, :cond_133
 
     const/16 v0, 0x17
 
-    if-eq p1, v0, :cond_132
+    if-eq p1, v0, :cond_121
 
     const/16 v0, 0x18
 
-    if-eq p1, v0, :cond_123
+    if-eq p1, v0, :cond_112
 
     const/16 v0, 0x1c
 
-    if-eq p1, v0, :cond_120
+    if-eq p1, v0, :cond_10f
 
     const/16 v0, 0x1d
 
-    if-eq p1, v0, :cond_10d
+    if-eq p1, v0, :cond_fc
 
     const/16 v0, 0x24
 
-    if-eq p1, v0, :cond_109
+    if-eq p1, v0, :cond_f8
 
     const/16 v0, 0x25
 
-    if-eq p1, v0, :cond_ea
+    if-eq p1, v0, :cond_d9
 
     const/16 v0, 0x5d
 
-    if-eq p1, v0, :cond_109
+    if-eq p1, v0, :cond_f8
 
     const/16 v0, 0x5e
 
-    if-eq p1, v0, :cond_ea
+    if-eq p1, v0, :cond_d9
 
     const/16 v0, 0x66
 
-    if-eq p1, v0, :cond_e7
+    if-eq p1, v0, :cond_d3
 
     const/16 v0, 0x67
 
-    if-eq p1, v0, :cond_e4
+    if-eq p1, v0, :cond_cd
 
     const/16 v0, 0x6d
 
-    if-eq p1, v0, :cond_d3
+    if-eq p1, v0, :cond_bc
 
     const/16 v0, 0x6e
 
-    if-eq p1, v0, :cond_109
+    if-eq p1, v0, :cond_f8
 
-    sparse-switch p1, :sswitch_data_1ac
+    sparse-switch p1, :sswitch_data_19a
 
-    packed-switch p1, :pswitch_data_23e
+    packed-switch p1, :pswitch_data_22c
 
-    goto/16 :goto_1aa
+    goto/16 :goto_199
 
-    .line 961
+    .line 1015
     :sswitch_4b
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mInIntentVideoReview:Z
 
     return-void
 
-    .line 889
+    .line 941
     :sswitch_4e
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideAdjustUI()V
 
-    .line 890
+    .line 942
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateFrontFlashUIState(I)V
 
     return-void
 
-    .line 896
+    .line 948
     :sswitch_55
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsDocumentEnter:Z
 
     return-void
 
-    .line 893
+    .line 945
     :sswitch_58
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsDocumentEnter:Z
 
     return-void
 
-    .line 919
+    .line 971
     :pswitch_5b
     :sswitch_5b
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFilterUIShown:Z
 
-    .line 920
+    .line 972
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->hideColorLayoutIfNeed()V
 
     return-void
 
-    .line 928
+    .line 980
     :sswitch_61
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->isNewCamera4()Z
 
     move-result p1
 
-    if-nez p1, :cond_1aa
+    if-nez p1, :cond_199
 
-    .line 929
+    .line 981
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->hideAdjustUI(Z)V
 
-    .line 930
+    .line 982
     iput v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
 
     return-void
 
-    .line 938
+    .line 990
     :sswitch_6d
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->hideFlashColorUI()V
 
     return-void
 
-    .line 964
+    .line 1018
     :sswitch_71
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mInIntentVideoReview:Z
 
     return-void
 
-    .line 934
+    .line 986
     :sswitch_74
+    invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateFrontFlashUIState(I)V
+
+    .line 987
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->hideAdjustUI(Z)V
 
-    .line 935
-    iput v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
-
     return-void
 
-    .line 844
-    :sswitch_7a
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1aa
-
-    invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->camFacingSupport()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1aa
-
-    .line 845
-    iget p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
-
-    if-ne p1, v1, :cond_1aa
-
-    .line 846
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
-
-    const/16 p1, 0x8
-
-    invoke-virtual {p0, p1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    return-void
-
-    .line 946
-    :sswitch_92
+    .line 998
+    :sswitch_7b
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsInSettingFragment:Z
 
-    .line 948
-    :sswitch_94
+    .line 1000
+    :sswitch_7d
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->exitSettingFragment()V
 
     return-void
 
-    .line 941
-    :sswitch_98
+    .line 993
+    :sswitch_81
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsInSettingFragment:Z
 
-    .line 943
-    :sswitch_9a
+    .line 995
+    :sswitch_83
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->enterSettingFragment()V
 
     return-void
 
-    .line 823
-    :sswitch_9e
+    .line 882
+    :sswitch_87
     sget-object p1, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "Preview started."
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 824
+    .line 883
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
-    .line 825
+    .line 884
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
 
     move-result p1
 
-    if-eqz p1, :cond_c9
+    if-eqz p1, :cond_b2
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->camFacingSupport()Z
 
     move-result p1
 
-    if-eqz p1, :cond_c9
+    if-eqz p1, :cond_b2
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsInSettingFragment:Z
 
-    if-nez p1, :cond_c9
+    if-nez p1, :cond_b2
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsInWaterMarkFragment:Z
 
-    if-nez p1, :cond_c9
+    if-nez p1, :cond_b2
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mInIntentVideoReview:Z
 
-    if-nez p1, :cond_c9
+    if-nez p1, :cond_b2
 
-    .line 827
+    .line 886
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
-    if-eqz p0, :cond_1aa
+    if-eqz p0, :cond_199
 
     const/16 p1, 0xb
 
-    .line 828
+    .line 887
     invoke-virtual {p0, p1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 
-    .line 831
-    :cond_c9
+    .line 890
+    :cond_b2
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
-    if-eqz p0, :cond_1aa
+    if-eqz p0, :cond_199
 
     const/16 p1, 0xa
 
-    .line 832
+    .line 891
     invoke-virtual {p0, p1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 
-    .line 837
-    :cond_d3
+    .line 896
+    :cond_bc
     sget-object p1, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "All ui manager loaded."
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 839
+    .line 898
     iget p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
 
-    if-ne p1, v1, :cond_1aa
+    if-ne p1, v1, :cond_199
 
-    .line 840
+    .line 899
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     invoke-interface {p0, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
 
     return-void
 
-    .line 958
-    :cond_e4
-    :sswitch_e4
+    .line 1011
+    :cond_cd
+    :sswitch_cd
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsInWaterMarkFragment:Z
 
+    .line 1012
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->exitSettingFragment()V
+
     return-void
 
-    .line 953
-    :cond_e7
-    :sswitch_e7
+    .line 1005
+    :cond_d3
+    :sswitch_d3
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsInWaterMarkFragment:Z
 
+    .line 1006
+    invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->enterSettingFragment()V
+
     return-void
 
-    .line 859
-    :cond_ea
-    :pswitch_ea
-    :sswitch_ea
+    .line 911
+    :cond_d9
+    :pswitch_d9
+    :sswitch_d9
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mIsSceneSupport:Z
 
-    if-nez p1, :cond_1aa
+    if-nez p1, :cond_199
 
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mAeAfShow:Z
 
-    if-nez p1, :cond_1aa
+    if-nez p1, :cond_199
 
-    .line 860
+    .line 912
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 861
+    .line 913
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraInfoUtil;->isCameraFacingFront(Ljava/lang/String;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_106
+    if-eqz p1, :cond_f5
 
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->isLuminanceAdjustSupported()Z
 
     move-result p1
 
-    if-eqz p1, :cond_106
+    if-eqz p1, :cond_f5
 
-    .line 862
+    .line 914
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mIsSupport:Z
 
-    .line 864
-    :cond_106
+    .line 916
+    :cond_f5
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mIsSceneSupport:Z
 
     return-void
 
-    .line 814
-    :cond_109
-    :pswitch_109
-    :sswitch_109
+    .line 872
+    :cond_f8
+    :pswitch_f8
+    :sswitch_f8
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->triggerAdjustUIHide()V
 
     return-void
 
-    .line 817
-    :cond_10d
+    .line 876
+    :cond_fc
+    :sswitch_fc
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
 
     move-result p1
 
-    if-eqz p1, :cond_1aa
+    if-eqz p1, :cond_199
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->camFacingSupport()Z
 
     move-result p1
 
-    if-eqz p1, :cond_1aa
+    if-eqz p1, :cond_199
 
-    .line 818
+    .line 877
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateFrontFlashUIState(I)V
 
-    .line 819
+    .line 878
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideAdjustUI()V
 
     return-void
 
-    .line 925
-    :cond_120
-    :pswitch_120
-    :sswitch_120
+    .line 977
+    :cond_10f
+    :pswitch_10f
+    :sswitch_10f
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFilterUIShown:Z
 
     return-void
 
-    .line 794
-    :cond_123
+    .line 852
+    :cond_112
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorTempProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;
 
-    if-eqz p1, :cond_12a
+    if-eqz p1, :cond_119
 
-    .line 795
+    .line 853
     invoke-virtual {p1, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;->setAllowedMove(Z)V
 
-    .line 797
-    :cond_12a
+    .line 855
+    :cond_119
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
 
-    if-eqz p0, :cond_1aa
+    if-eqz p0, :cond_199
 
-    .line 798
+    .line 856
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;->setAllowedMove(Z)V
 
     return-void
 
-    .line 784
-    :cond_132
+    .line 842
+    :cond_121
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorTempProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;
 
-    if-eqz p1, :cond_139
+    if-eqz p1, :cond_128
 
-    .line 785
+    .line 843
     invoke-virtual {p1, v2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;->setAllowedMove(Z)V
 
-    .line 787
-    :cond_139
+    .line 845
+    :cond_128
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
 
-    if-eqz p1, :cond_140
+    if-eqz p1, :cond_12f
 
-    .line 788
+    .line 846
     invoke-virtual {p1, v2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;->setAllowedMove(Z)V
 
-    .line 791
-    :cond_140
+    .line 849
+    :cond_12f
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateFrontFlashUIState(I)V
 
     return-void
 
-    .line 869
-    :cond_144
-    :sswitch_144
+    .line 921
+    :cond_133
+    :sswitch_133
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
 
     move-result p1
 
-    if-eqz p1, :cond_1aa
+    if-eqz p1, :cond_199
 
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->camFacingSupport()Z
 
     move-result p1
 
-    if-nez p1, :cond_151
+    if-nez p1, :cond_140
 
-    goto :goto_1aa
+    goto :goto_199
 
-    .line 873
-    :cond_151
+    .line 925
+    :cond_140
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->isFlashModeOff()Z
 
     move-result p1
 
-    if-nez p1, :cond_1aa
+    if-nez p1, :cond_199
 
     iget p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
 
-    if-ne p1, v1, :cond_1aa
+    if-ne p1, v1, :cond_199
 
-    .line 874
+    .line 926
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateFrontFlashUIState(I)V
 
-    .line 875
+    .line 927
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->hideAdjustUI()V
 
     return-void
 
-    .line 879
-    :cond_162
+    .line 931
+    :cond_151
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
 
-    if-eqz p1, :cond_169
+    if-eqz p1, :cond_158
 
-    .line 880
+    .line 932
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;->resetValue()V
 
-    .line 882
-    :cond_169
+    .line 934
+    :cond_158
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorTempProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;
 
-    if-eqz p1, :cond_170
+    if-eqz p1, :cond_15f
 
-    .line 883
+    .line 935
     invoke-virtual {p1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;->resetValue()V
 
-    .line 885
-    :cond_170
+    .line 937
+    :cond_15f
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mIsInSettingFragment:Z
 
     return-void
 
-    .line 910
-    :cond_173
+    .line 962
+    :cond_162
     sget-object p1, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "Mode switch end in luminance ui"
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 912
+    .line 964
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
-    if-eqz p1, :cond_181
+    if-eqz p1, :cond_170
 
-    .line 913
+    .line 965
     invoke-interface {p1, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
 
-    .line 915
-    :cond_181
+    .line 967
+    :cond_170
     invoke-virtual {p0, v2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateSettingUILayout(Z)V
 
     return-void
 
-    .line 900
-    :cond_185
+    .line 952
+    :cond_174
     sget-object p1, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "Mode switch begin in luminance ui"
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 901
+    .line 953
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->hideAdjustUI(Z)V
 
-    .line 902
+    .line 954
     iput v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
 
-    .line 904
+    .line 956
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
-    if-eqz p1, :cond_1aa
+    if-eqz p1, :cond_199
 
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz p1, :cond_1aa
+    if-eqz p1, :cond_199
 
     const-string v0, "com.transsion.camera.feature.supernightfilter.mode.SuperNightFilterModeEntry"
 
@@ -3294,72 +3472,70 @@
 
     move-result p1
 
-    if-nez p1, :cond_1aa
+    if-nez p1, :cond_199
 
-    .line 905
+    .line 957
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     invoke-interface {p0, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
 
-    :cond_1aa
-    :goto_1aa
+    :cond_199
+    :goto_199
     return-void
 
-    nop
-
-    :sswitch_data_1ac
+    :sswitch_data_19a
     .sparse-switch
-        0x8 -> :sswitch_9e
-        0xb -> :sswitch_109
-        0xc -> :sswitch_ea
-        0xd -> :sswitch_109
-        0xe -> :sswitch_ea
-        0xf -> :sswitch_109
-        0x10 -> :sswitch_ea
-        0x11 -> :sswitch_98
-        0x12 -> :sswitch_92
-        0x4b -> :sswitch_7a
+        0x8 -> :sswitch_87
+        0xb -> :sswitch_f8
+        0xc -> :sswitch_d9
+        0xd -> :sswitch_f8
+        0xe -> :sswitch_d9
+        0xf -> :sswitch_f8
+        0x10 -> :sswitch_d9
+        0x11 -> :sswitch_81
+        0x12 -> :sswitch_7b
         0x4d -> :sswitch_74
         0x86 -> :sswitch_71
         0x92 -> :sswitch_6d
-        0xa3 -> :sswitch_9a
-        0xa4 -> :sswitch_94
-        0xa9 -> :sswitch_109
-        0xb0 -> :sswitch_e7
-        0xb1 -> :sswitch_e4
+        0xa3 -> :sswitch_83
+        0xa4 -> :sswitch_7d
+        0xa9 -> :sswitch_f8
+        0xb0 -> :sswitch_d3
+        0xb1 -> :sswitch_cd
         0xcf -> :sswitch_61
-        0xe9 -> :sswitch_144
+        0xd1 -> :sswitch_fc
+        0xe9 -> :sswitch_133
         0xf2 -> :sswitch_5b
-        0xf3 -> :sswitch_120
-        0xf4 -> :sswitch_e7
-        0xf5 -> :sswitch_e4
-        0x101 -> :sswitch_109
-        0x102 -> :sswitch_ea
-        0x10d -> :sswitch_109
-        0x10e -> :sswitch_ea
+        0xf3 -> :sswitch_10f
+        0xf4 -> :sswitch_d3
+        0xf5 -> :sswitch_cd
+        0x101 -> :sswitch_f8
+        0x102 -> :sswitch_d9
+        0x10d -> :sswitch_f8
+        0x10e -> :sswitch_d9
         0x10f -> :sswitch_58
         0x110 -> :sswitch_55
         0x12b -> :sswitch_4e
-        0x137 -> :sswitch_109
-        0x147 -> :sswitch_109
+        0x137 -> :sswitch_f8
+        0x147 -> :sswitch_f8
         0x148 -> :sswitch_4b
-        0x18b -> :sswitch_109
-        0x18c -> :sswitch_ea
+        0x18b -> :sswitch_f8
+        0x18c -> :sswitch_d9
     .end sparse-switch
 
-    :pswitch_data_23e
+    :pswitch_data_22c
     .packed-switch 0x2e
-        :pswitch_109
-        :pswitch_ea
+        :pswitch_f8
+        :pswitch_d9
         :pswitch_5b
-        :pswitch_120
+        :pswitch_10f
     .end packed-switch
 .end method
 
 .method public onBackPressed()Z
     .registers 3
 
-    .line 532
+    .line 574
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
 
     const/4 v1, 0x1
@@ -3370,20 +3546,20 @@
 
     if-eqz v0, :cond_13
 
-    .line 533
+    .line 575
     iget-boolean p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isAnimationRunning:Z
 
     if-nez p0, :cond_12
 
     const/16 p0, 0x8
 
-    .line 534
+    .line 576
     invoke-virtual {v0, p0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_12
     return v1
 
-    .line 538
+    .line 580
     :cond_13
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onBackPressed()Z
 
@@ -3412,17 +3588,17 @@
 .method public onLongPress(FF)Z
     .registers 5
 
-    .line 442
+    .line 484
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_8
 
     const/4 v1, 0x1
 
-    .line 443
+    .line 485
     invoke-interface {v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->setEnableHintUI(Z)V
 
-    .line 445
+    .line 487
     :cond_8
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onLongPress(FF)Z
 
@@ -3434,10 +3610,10 @@
 .method public onOrientationChanged(I)V
     .registers 4
 
-    .line 450
+    .line 492
     iput p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mOrientation:I
 
-    .line 451
+    .line 493
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mLowRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     if-eqz v0, :cond_1c
@@ -3452,20 +3628,20 @@
 
     const/4 v1, 0x1
 
-    .line 452
+    .line 494
     invoke-virtual {v0, p1, v1}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
-    .line 453
+    .line 495
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mMediumRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v0, p1, v1}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
-    .line 454
+    .line 496
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mHighRotationIcon:Lcom/transsion/camera/app/ui/widget/RotateImageView;
 
     invoke-virtual {v0, p1, v1}, Lcom/transsion/camera/app/ui/widget/RotateImageView;->setOrientation(IZ)V
 
-    .line 456
+    .line 498
     :cond_1c
     iget p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
@@ -3479,7 +3655,7 @@
 
     const/4 p1, 0x0
 
-    .line 458
+    .line 500
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateSettingUILayout(Z)V
 
     :cond_28
@@ -3489,18 +3665,18 @@
 .method public onScreenFormChanged(IZ)V
     .registers 4
 
-    .line 464
+    .line 506
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->onScreenFormChanged(IZ)V
 
-    .line 465
+    .line 507
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->hideColorLayoutIfNeed()V
 
-    .line 466
+    .line 508
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
 
     if-eqz p1, :cond_13
 
-    .line 467
+    .line 509
     iget p2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mSelectedStrengthMode:I
 
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStrengthModeProgressBarWidth:I
@@ -3524,14 +3700,14 @@
 .method public processAnimationComplete()V
     .registers 2
 
-    .line 525
+    .line 567
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mUIHandler:Landroid/os/Handler;
 
     if-eqz p0, :cond_9
 
     const/16 v0, 0x9
 
-    .line 526
+    .line 568
     invoke-virtual {p0, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     :cond_9
@@ -3552,10 +3728,10 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 5
 
-    .line 559
+    .line 601
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    .line 560
+    .line 602
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
@@ -3564,7 +3740,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
-    .line 561
+    .line 603
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     new-instance v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI$FlashChangeListener;
@@ -3575,12 +3751,12 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
 
-    .line 562
+    .line 604
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     if-eqz p1, :cond_2c
 
-    .line 563
+    .line 605
     const-string v0, "-1"
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/storage/DataStore;->getGlobalScope()Ljava/lang/String;
@@ -3615,20 +3791,20 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 4
 
-    .line 211
+    .line 235
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
-    .line 212
+    .line 236
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
-    .line 213
+    .line 237
     const-string v0, "key_video_portrait"
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusChangeListener:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 214
+    .line 238
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_super_definition"
@@ -3637,7 +3813,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 215
+    .line 239
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_360_video_hdr"
@@ -3646,7 +3822,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 216
+    .line 240
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_anti_video"
@@ -3655,7 +3831,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 217
+    .line 241
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_iso"
@@ -3664,7 +3840,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->registerValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 218
+    .line 242
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v0, "key_exposure_time"
@@ -3679,10 +3855,10 @@
 .method public setupEntryView()V
     .registers 5
 
-    .line 569
+    .line 611
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->setupEntryView()V
 
-    .line 570
+    .line 612
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->isTorchMode()Z
 
     move-result v0
@@ -3695,12 +3871,12 @@
 
     if-eqz v0, :cond_2b
 
-    .line 571
+    .line 613
     iget v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mCurrentState:I
 
     if-eqz v0, :cond_2b
 
-    .line 572
+    .line 614
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz v0, :cond_2b
@@ -3711,7 +3887,7 @@
 
     const/4 v1, 0x1
 
-    .line 574
+    .line 616
     invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v2
@@ -3722,7 +3898,7 @@
 
     move-result-object p0
 
-    .line 573
+    .line 615
     const-string v3, "dual_front_flash_state_key"
 
     invoke-virtual {v0, v3, v2, p0, v1}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
@@ -3734,10 +3910,10 @@
 .method public showAdjustUI()V
     .registers 8
 
-    .line 646
+    .line 698
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->showAdjustUI()V
 
-    .line 647
+    .line 699
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mIsZoomScaling:Z
 
     if-nez v0, :cond_95
@@ -3748,7 +3924,7 @@
 
     goto/16 :goto_95
 
-    .line 650
+    .line 702
     :cond_d
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->getFrontDualFlashValue()[Ljava/lang/String;
 
@@ -3756,7 +3932,7 @@
 
     if-nez v0, :cond_1b
 
-    .line 652
+    .line 704
     sget-object p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "The flash value is null."
@@ -3768,7 +3944,7 @@
     :cond_1b
     const/4 v1, 0x0
 
-    .line 655
+    .line 707
     aget-object v2, v0, v1
 
     invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -3777,22 +3953,22 @@
 
     const/4 v3, 0x1
 
-    .line 656
+    .line 708
     aget-object v0, v0, v3
 
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 657
+    .line 709
     iget-object v4, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v4, :cond_30
 
-    .line 658
+    .line 710
     invoke-interface {v4}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideTwinkleGuide()V
 
-    .line 660
+    .line 712
     :cond_30
     sget-object v4, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3818,63 +3994,63 @@
 
     invoke-static {v4, v5}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 661
+    .line 713
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     if-eqz v4, :cond_5a
 
-    .line 662
+    .line 714
     invoke-virtual {v4, v2}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashColorTemp(I)V
 
-    .line 663
+    .line 715
     iget-object v4, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFrontDualFlashInfo:Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;
 
     invoke-virtual {v4, v0}, Lcom/transsion/camera/feature/setting/flashfacade/info/FrontDualFlashInfo;->updateFrontDualFlashTemLevel(I)V
 
-    .line 665
+    .line 717
     :cond_5a
     invoke-direct {p0, v2}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->refreshUIState(I)V
 
-    .line 666
+    .line 718
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mFlashAdjustView:Landroid/view/View;
 
     if-eqz v0, :cond_64
 
-    .line 667
+    .line 719
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 669
+    .line 721
     :cond_64
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashColorTempProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;
 
     if-eqz v0, :cond_6b
 
-    .line 670
+    .line 722
     invoke-virtual {v0, v3}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashColorTempProgressBar;->setAllowedMove(Z)V
 
-    .line 672
+    .line 724
     :cond_6b
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mFlashStrengthModeProgressBar:Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;
 
     if-eqz v0, :cond_72
 
-    .line 673
+    .line 725
     invoke-virtual {v0, v3}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FlashStrengthModeProgressBar;->setAllowedMove(Z)V
 
-    .line 675
+    .line 727
     :cond_72
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_79
 
-    .line 676
+    .line 728
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->showFrontDualFlashUI()V
 
-    .line 678
+    .line 730
     :cond_79
     invoke-direct {p0, v3}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateFrontFlashUIState(I)V
 
-    .line 679
+    .line 731
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v2, "key_front_dual_flash_ui_visible"
@@ -3885,19 +4061,19 @@
 
     const-string v3, "front_dual_flash_ui_show"
 
-    .line 680
+    .line 732
     invoke-virtual {v0, v2, v3}, Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;->statusChanged(Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 681
+    .line 733
     invoke-virtual {p0, v1}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->setAdjustUIOrientation(I)V
 
-    .line 682
+    .line 734
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateSpreadBarDelay()V
 
-    .line 683
+    .line 735
     invoke-virtual {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->doShowAnimation()V
 
-    .line 684
+    .line 736
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->hideColorLayoutIfNeed()V
 
     :cond_95
@@ -3908,17 +4084,17 @@
 .method public unInit()V
     .registers 4
 
-    .line 223
+    .line 247
     invoke-super {p0}, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->unInit()V
 
-    .line 224
+    .line 248
     sget-object v0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "unInit: "
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 225
+    .line 249
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_video_portrait"
@@ -3927,7 +4103,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 226
+    .line 250
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_super_definition"
@@ -3936,7 +4112,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 227
+    .line 251
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_360_video_hdr"
@@ -3945,7 +4121,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 228
+    .line 252
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_anti_video"
@@ -3954,7 +4130,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 229
+    .line 253
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_iso"
@@ -3963,7 +4139,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/setting/StatusMonitor;->unregisterValueChangedListener(Ljava/lang/String;Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusChangeListener;)V
 
-    .line 230
+    .line 254
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     const-string v1, "key_exposure_time"
@@ -3978,14 +4154,14 @@
 .method protected updateSettingUILayout(Z)V
     .registers 11
 
-    .line 1010
+    .line 1064
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mThrLevelLuminanceRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     if-nez p1, :cond_5
 
     return-void
 
-    .line 1013
+    .line 1067
     :cond_5
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3995,10 +4171,10 @@
 
     const/4 v0, 0x0
 
-    .line 1014
+    .line 1068
     invoke-virtual {p1, v0, v0, v0, v0}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 1015
+    .line 1069
     iget v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     const/4 v2, 0x4
@@ -4025,7 +4201,7 @@
 
     goto :goto_73
 
-    .line 1022
+    .line 1076
     :cond_24
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->facingFront()Z
 
@@ -4033,7 +4209,7 @@
 
     if-eqz v1, :cond_49
 
-    .line 1023
+    .line 1077
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_width_hover:I
@@ -4044,7 +4220,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1024
+    .line 1078
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_height_hover:I
@@ -4055,7 +4231,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1025
+    .line 1079
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_left_margin_hover:I
@@ -4068,7 +4244,7 @@
 
     goto :goto_67
 
-    .line 1027
+    .line 1081
     :cond_49
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
@@ -4080,7 +4256,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1028
+    .line 1082
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_height_normal:I
@@ -4091,7 +4267,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1029
+    .line 1083
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_left_margin_normal:I
@@ -4102,7 +4278,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1031
+    .line 1085
     :goto_67
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
@@ -4116,7 +4292,7 @@
 
     goto/16 :goto_21b
 
-    .line 1017
+    .line 1071
     :cond_73
     :goto_73
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
@@ -4129,7 +4305,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1018
+    .line 1072
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_height_normal_fold:I
@@ -4140,7 +4316,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1019
+    .line 1073
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_left_margin_normal_fold:I
@@ -4151,7 +4327,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1020
+    .line 1074
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_top_margin_normal_fold:I
@@ -4167,7 +4343,7 @@
     :cond_9d
     if-ne v1, v6, :cond_151
 
-    .line 1034
+    .line 1088
     iget v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mOrientation:I
 
     if-eq v1, v5, :cond_127
@@ -4178,7 +4354,7 @@
 
     if-eq v1, v4, :cond_d3
 
-    .line 1055
+    .line 1109
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_width_expand:I
@@ -4189,7 +4365,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1056
+    .line 1110
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_height_expand:I
@@ -4200,7 +4376,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1057
+    .line 1111
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_left_margin_expand:I
@@ -4211,7 +4387,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1058
+    .line 1112
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_top_margin_expand:I
@@ -4224,7 +4400,7 @@
 
     goto/16 :goto_21b
 
-    .line 1048
+    .line 1102
     :cond_d3
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
@@ -4236,7 +4412,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1049
+    .line 1103
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_width_expand:I
@@ -4247,7 +4423,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1050
+    .line 1104
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_left_margin_expand_270:I
@@ -4258,7 +4434,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1051
+    .line 1105
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_top_margin_expand_270:I
@@ -4271,7 +4447,7 @@
 
     goto/16 :goto_21b
 
-    .line 1042
+    .line 1096
     :cond_fd
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
@@ -4283,7 +4459,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1043
+    .line 1097
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_height_expand:I
@@ -4294,7 +4470,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1044
+    .line 1098
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_left_margin_expand_180:I
@@ -4305,7 +4481,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1045
+    .line 1099
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_top_margin_expand_180:I
@@ -4318,7 +4494,7 @@
 
     goto/16 :goto_21b
 
-    .line 1036
+    .line 1090
     :cond_127
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
@@ -4330,7 +4506,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1037
+    .line 1091
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_width_expand:I
@@ -4341,7 +4517,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1038
+    .line 1092
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_left_margin_expand_90:I
@@ -4352,7 +4528,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1039
+    .line 1093
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_top_margin_expand_90:I
@@ -4368,7 +4544,7 @@
     :cond_151
     if-ne v1, v7, :cond_19d
 
-    .line 1062
+    .line 1116
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_width_normal:I
@@ -4379,7 +4555,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1063
+    .line 1117
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_height_hover:I
@@ -4390,7 +4566,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1064
+    .line 1118
     const-string v1, "on"
 
     iget-object v8, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mSwitchPreviewValue:Ljava/lang/String;
@@ -4401,7 +4577,7 @@
 
     if-eqz v1, :cond_187
 
-    .line 1065
+    .line 1119
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_left_margin_hover:I
@@ -4412,7 +4588,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1066
+    .line 1120
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_top_margin_hover_priview_down:I
@@ -4425,7 +4601,7 @@
 
     goto/16 :goto_21b
 
-    .line 1068
+    .line 1122
     :cond_187
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
@@ -4437,7 +4613,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1069
+    .line 1123
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_top_margin_hover:I
@@ -4453,7 +4629,7 @@
     :cond_19d
     if-ne v1, v3, :cond_1c8
 
-    .line 1072
+    .line 1126
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_height_hover:I
@@ -4464,7 +4640,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1073
+    .line 1127
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_width_hover:I
@@ -4475,7 +4651,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1074
+    .line 1128
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_left_margin_hover_right:I
@@ -4486,7 +4662,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1075
+    .line 1129
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_top_margin_hover_right:I
@@ -4502,7 +4678,7 @@
     :cond_1c8
     if-ne v1, v2, :cond_1f3
 
-    .line 1077
+    .line 1131
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_height_hover:I
@@ -4513,7 +4689,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1078
+    .line 1132
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_width_hover:I
@@ -4524,7 +4700,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1079
+    .line 1133
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_left_margin_hover_left:I
@@ -4535,7 +4711,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1080
+    .line 1134
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_top_margin_hover_left:I
@@ -4548,7 +4724,7 @@
 
     goto :goto_21b
 
-    .line 1082
+    .line 1136
     :cond_1f3
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
@@ -4560,7 +4736,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1083
+    .line 1137
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_height_column:I
@@ -4571,7 +4747,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1084
+    .line 1138
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_left_margin_column:I
@@ -4582,7 +4758,7 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1085
+    .line 1139
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mResources:Landroid/content/res/Resources;
 
     sget v8, Lcom/transsion/camera/R$dimen;->flash_luminance_adjust_view_top_margin_column:I
@@ -4593,13 +4769,13 @@
 
     iput v1, p1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1088
+    .line 1142
     :goto_21b
     iget v1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mScreenFormType:I
 
     if-ne v1, v6, :cond_225
 
-    .line 1089
+    .line 1143
     iget v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mOrientation:I
 
     add-int/2addr v1, v5
@@ -4632,14 +4808,14 @@
 
     goto :goto_23e
 
-    .line 1100
+    .line 1154
     :cond_234
     :goto_234
     iget v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mOrientation:I
 
     goto :goto_23e
 
-    .line 1093
+    .line 1147
     :cond_237
     :goto_237
     iget v1, p0, Lcom/transsion/camera/ui/setting/flash/AbstractFlashAdjustUI;->mOrientation:I
@@ -4650,27 +4826,27 @@
 
     goto :goto_232
 
-    .line 1102
+    .line 1156
     :cond_23e
     :goto_23e
     iget v2, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
     iput v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStrengthModeProgressBarWidth:I
 
-    .line 1103
+    .line 1157
     iget v2, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     iput v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mStrengthModeProgressBarHeight:I
 
-    .line 1104
+    .line 1158
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->updateRotationIcon(I)V
 
-    .line 1105
+    .line 1159
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mThrLevelLuminanceRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {v2, v1, v0}, Lcom/transsion/camera/app/ui/widget/RotateLayout;->setOrientation(IZ)V
 
-    .line 1106
+    .line 1160
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/flash/frontdualflash/FrontDualFlashAdjustUI;->mThrLevelLuminanceRotateLayout:Lcom/transsion/camera/app/ui/widget/RotateLayout;
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V

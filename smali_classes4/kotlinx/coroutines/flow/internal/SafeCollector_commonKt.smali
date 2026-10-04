@@ -18,7 +18,7 @@
 
     const/4 v0, 0x0
 
-    .line 26
+    .line 24
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -37,18 +37,18 @@
 
     move-result v0
 
-    .line 84
+    .line 82
     iget v1, p0, Lkotlinx/coroutines/flow/internal/SafeCollector;->collectContextSize:I
 
     if-ne v0, v1, :cond_19
 
     return-void
 
-    .line 85
+    .line 83
     :cond_19
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    .line 86
+    .line 84
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -57,24 +57,24 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 87
+    .line 85
     iget-object p0, p0, Lkotlinx/coroutines/flow/internal/SafeCollector;->collectContext:Lkotlin/coroutines/CoroutineContext;
 
-    .line 86
+    .line 84
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 87
+    .line 85
     const-string p0, ",\n\t\tbut emission happened in "
 
-    .line 86
+    .line 84
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 88
+    .line 86
     const-string p0, ".\n\t\tPlease refer to \'flow\' documentation or use \'flowOn\' instead"
 
-    .line 86
+    .line 84
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -105,7 +105,7 @@
 
     goto :goto_b
 
-    .line 97
+    .line 95
     :cond_7
     instance-of v0, p0, Lkotlinx/coroutines/internal/ScopeCoroutine;
 
@@ -114,7 +114,7 @@
     :goto_b
     return-object p0
 
-    .line 98
+    .line 96
     :cond_c
     invoke-interface {p0}, Lkotlinx/coroutines/Job;->getParent()Lkotlinx/coroutines/Job;
 
@@ -137,7 +137,7 @@
         }
     .end annotation
 
-    .line 107
+    .line 105
     new-instance v0, Lkotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1;
 
     invoke-direct {v0, p0}, Lkotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1;-><init>(Lkotlin/jvm/functions/Function2;)V

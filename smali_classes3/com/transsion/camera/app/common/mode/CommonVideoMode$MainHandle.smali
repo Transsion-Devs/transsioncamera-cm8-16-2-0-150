@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/common/mode/CommonVideoMode;)V
     .registers 2
 
-    .line 261
+    .line 260
     iput-object p1, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$MainHandle;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -44,7 +44,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 3
 
-    .line 264
+    .line 263
     iget p1, p1, Landroid/os/Message;->what:I
 
     const/4 v0, 0x1
@@ -57,7 +57,7 @@
 
     return-void
 
-    .line 269
+    .line 268
     :cond_9
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$MainHandle;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 
@@ -67,7 +67,7 @@
 
     return-void
 
-    .line 266
+    .line 265
     :cond_10
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonVideoMode$MainHandle;->this$0:Lcom/transsion/camera/app/common/mode/CommonVideoMode;
 

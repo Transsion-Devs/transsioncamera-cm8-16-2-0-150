@@ -32,7 +32,7 @@
 .method private constructor <init>(Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;)V
     .registers 2
 
-    .line 429
+    .line 428
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 429
+    .line 428
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$StatusChangeListener;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -65,7 +65,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
 
-    .line 433
+    .line 432
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
@@ -131,7 +131,7 @@
 
     goto/16 :goto_aa
 
-    .line 452
+    .line 451
     :pswitch_32
     const-string p1, "begin"
 
@@ -141,7 +141,7 @@
 
     if-eqz p1, :cond_aa
 
-    .line 453
+    .line 452
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;
 
     const/4 p1, 0x0
@@ -150,7 +150,7 @@
 
     return-void
 
-    .line 435
+    .line 434
     :pswitch_41
     const-string p1, "null"
 
@@ -160,7 +160,7 @@
 
     if-eqz p1, :cond_ab
 
-    .line 436
+    .line 435
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;->-$$Nest$fgetmAntiVideoMonitor(Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;)Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$AntiVideoMonitor;
@@ -189,7 +189,7 @@
 
     if-eqz p1, :cond_aa
 
-    .line 437
+    .line 436
     sget-object p1, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance p2, Ljava/lang/StringBuilder;
@@ -214,7 +214,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 438
+    .line 437
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;
 
     invoke-static {p1}, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;->-$$Nest$fgetmManualValue(Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;)Ljava/lang/String;
@@ -227,7 +227,7 @@
 
     if-eqz p1, :cond_97
 
-    .line 439
+    .line 438
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mDefaultValue:Ljava/lang/String;
@@ -239,7 +239,7 @@
 
     return-void
 
-    .line 441
+    .line 440
     :cond_97
     iget-object p1, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;
 
@@ -263,7 +263,7 @@
     :goto_aa
     return-void
 
-    .line 445
+    .line 444
     :cond_ab
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;
 
@@ -275,7 +275,7 @@
 
     return-void
 
-    .line 449
+    .line 448
     :pswitch_b5
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/antivideo/AntiVideo$StatusChangeListener;->this$0:Lcom/transsion/camera/feature/setting/antivideo/AntiVideo;
 

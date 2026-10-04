@@ -25,27 +25,6 @@
     return p0
 .end method
 
-.method private static final differenceModulo(JJJ)J
-    .registers 6
-
-    .line 25
-    invoke-static {p0, p1, p4, p5}, Lkotlin/internal/ProgressionUtilKt;->mod(JJ)J
-
-    move-result-wide p0
-
-    invoke-static {p2, p3, p4, p5}, Lkotlin/internal/ProgressionUtilKt;->mod(JJ)J
-
-    move-result-wide p2
-
-    sub-long/2addr p0, p2
-
-    invoke-static {p0, p1, p4, p5}, Lkotlin/internal/ProgressionUtilKt;->mod(JJ)J
-
-    move-result-wide p0
-
-    return-wide p0
-.end method
-
 .method public static final getProgressionLastElement(III)I
     .registers 3
 
@@ -96,84 +75,6 @@
     throw p0
 .end method
 
-.method public static final getProgressionLastElement(JJJ)J
-    .registers 10
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p4, v0
-
-    if-lez v0, :cond_16
-
-    cmp-long v0, p0, p2
-
-    if-ltz v0, :cond_c
-
-    move-wide p0, p2
-
-    goto :goto_1f
-
-    :cond_c
-    move-wide v2, p2
-
-    move-wide p2, p0
-
-    move-wide p0, v2
-
-    .line 69
-    invoke-static/range {p0 .. p5}, Lkotlin/internal/ProgressionUtilKt;->differenceModulo(JJJ)J
-
-    move-result-wide p2
-
-    sub-long p2, p0, p2
-
-    return-wide p2
-
-    :cond_16
-    move-wide v2, p2
-
-    move-wide p2, p0
-
-    move-wide p0, v2
-
-    if-gez v0, :cond_2a
-
-    cmp-long v0, p2, p0
-
-    if-gtz v0, :cond_20
-
-    :goto_1f
-    return-wide p0
-
-    :cond_20
-    neg-long p4, p4
-
-    move-wide v2, p2
-
-    move-wide p2, p0
-
-    move-wide p0, v2
-
-    .line 70
-    invoke-static/range {p0 .. p5}, Lkotlin/internal/ProgressionUtilKt;->differenceModulo(JJJ)J
-
-    move-result-wide p0
-
-    add-long/2addr p2, p0
-
-    return-wide p2
-
-    .line 71
-    :cond_2a
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Step is zero."
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
 .method private static final mod(II)I
     .registers 2
 
@@ -188,24 +89,4 @@
     add-int/2addr p0, p1
 
     return p0
-.end method
-
-.method private static final mod(JJ)J
-    .registers 6
-
-    .line 15
-    rem-long/2addr p0, p2
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p0, v0
-
-    if-ltz v0, :cond_8
-
-    return-wide p0
-
-    :cond_8
-    add-long/2addr p0, p2
-
-    return-wide p0
 .end method

@@ -14,13 +14,13 @@
 
 
 # static fields
-.field public static bridge_bg_color:I = 0x7f06005f
+.field public static bridge_bg_color:I = 0x7f060060
 
-.field public static horizontal_Line_Color:I = 0x7f0600ff
+.field public static horizontal_Line_Color:I = 0x7f060100
 
-.field public static line_color:I = 0x7f060114
+.field public static line_color:I = 0x7f060115
 
-.field public static wideselfie_bg_border_color:I = 0x7f060668
+.field public static wideselfie_bg_border_color:I = 0x7f06066a
 
 
 # direct methods

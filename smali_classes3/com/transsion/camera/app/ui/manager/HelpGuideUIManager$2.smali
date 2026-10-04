@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;)V
     .registers 2
 
-    .line 417
+    .line 428
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public bridge synthetic onStatusChanged(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 3
 
-    .line 417
+    .line 428
     check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -49,7 +49,7 @@
 .method public onStatusChanged(Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
 
-    .line 420
+    .line 431
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     iget-object v0, p1, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
@@ -58,7 +58,7 @@
 
     goto/16 :goto_a5
 
-    .line 424
+    .line 435
     :cond_8
     const-string/jumbo v0, "torch"
 
@@ -82,7 +82,7 @@
 
     goto/16 :goto_a6
 
-    .line 429
+    .line 440
     :cond_1f
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
@@ -97,7 +97,7 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
-    .line 430
+    .line 441
     # getter for: Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->access$400(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;)Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
@@ -111,7 +111,7 @@
 
     move-result-object v0
 
-    .line 429
+    .line 440
     const-string v1, "dual_front_flash_state_key"
 
     const-string v2, "-1"
@@ -124,7 +124,7 @@
 
     move-result p1
 
-    .line 431
+    .line 442
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     const-string v1, "front_dual_flash_ui_show"
@@ -135,7 +135,7 @@
 
     invoke-static {v0, p2}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->-$$Nest$fputmFrontDualFlashUIShow(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;Z)V
 
-    .line 432
+    .line 443
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p2
@@ -168,7 +168,7 @@
 
     invoke-static {p2, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 433
+    .line 444
     iget-object p2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     invoke-static {p2}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->-$$Nest$fgetmFrontDualFlashUIShow(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;)Z
@@ -181,21 +181,21 @@
 
     if-eqz p2, :cond_8b
 
-    .line 434
+    .line 445
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     iget-object p1, p1, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
 
     invoke-interface {p1, v1}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->updateVisibility(Z)V
 
-    .line 435
+    .line 446
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     invoke-static {p0, v0}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->-$$Nest$fputmShowByAdjustUIHide(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;Z)V
 
     return-void
 
-    .line 436
+    .line 447
     :cond_8b
     iget-object p2, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
@@ -207,7 +207,7 @@
 
     if-eq p1, v0, :cond_a5
 
-    .line 437
+    .line 448
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     iget-object p2, p1, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;
@@ -218,7 +218,7 @@
 
     invoke-interface {p2, p1}, Lcom/transsion/camera/app/ui/IHelpGuideUI;->updateVisibility(Z)V
 
-    .line 438
+    .line 449
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     invoke-static {p0, v1}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->-$$Nest$fputmShowByAdjustUIHide(Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;Z)V
@@ -227,7 +227,7 @@
     :goto_a5
     return-void
 
-    .line 425
+    .line 436
     :cond_a6
     :goto_a6
     invoke-static {}, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -238,7 +238,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 426
+    .line 437
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager$2;->this$0:Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;
 
     iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/HelpGuideUIManager;->mHelpGuideUI:Lcom/transsion/camera/app/ui/IHelpGuideUI;

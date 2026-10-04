@@ -77,7 +77,7 @@
 
     move-result-object v1
 
-    .line 101
+    .line 97
     iget v2, v0, Lkotlinx/coroutines/channels/TickerChannelsKt$fixedDelayTicker$1;->label:I
 
     const/4 v3, 0x3
@@ -143,7 +143,7 @@
     :cond_53
     invoke-static {p5}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 106
+    .line 102
     iput-object p4, v0, Lkotlinx/coroutines/channels/TickerChannelsKt$fixedDelayTicker$1;->L$0:Ljava/lang/Object;
 
     iput-wide p0, v0, Lkotlinx/coroutines/channels/TickerChannelsKt$fixedDelayTicker$1;->J$0:J
@@ -158,7 +158,7 @@
 
     goto :goto_7f
 
-    .line 108
+    .line 104
     :cond_63
     :goto_63
     sget-object p2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -180,7 +180,7 @@
     :cond_72
     move-object p2, p4
 
-    .line 109
+    .line 105
     :goto_73
     iput-object p2, v0, Lkotlinx/coroutines/channels/TickerChannelsKt$fixedDelayTicker$1;->L$0:Ljava/lang/Object;
 
@@ -251,7 +251,7 @@
 
     move-result-object v2
 
-    .line 78
+    .line 74
     iget v3, v1, Lkotlinx/coroutines/channels/TickerChannelsKt$fixedPeriodTicker$1;->label:I
 
     const/4 v4, 0x4
@@ -359,8 +359,9 @@
     :cond_79
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 83
-    invoke-static {}, Lkotlinx/coroutines/AbstractTimeSourceKt;->getTimeSource()Lkotlinx/coroutines/AbstractTimeSource;
+    .line 79
+    # getter for: Lkotlinx/coroutines/AbstractTimeSourceKt;->timeSource:Lkotlinx/coroutines/AbstractTimeSource;
+    invoke-static {}, Lkotlinx/coroutines/AbstractTimeSourceKt;->access$getTimeSource$p()Lkotlinx/coroutines/AbstractTimeSource;
 
     move-result-object v0
 
@@ -386,7 +387,7 @@
 
     move-object/from16 v0, p4
 
-    .line 84
+    .line 80
     iput-object v0, v1, Lkotlinx/coroutines/channels/TickerChannelsKt$fixedPeriodTicker$1;->L$0:Ljava/lang/Object;
 
     move-wide/from16 v10, p0
@@ -410,7 +411,7 @@
     :cond_a6
     move-wide v7, v8
 
-    .line 85
+    .line 81
     :goto_a7
     invoke-static {v10, v11}, Lkotlinx/coroutines/EventLoop_commonKt;->delayToNanos(J)J
 
@@ -419,7 +420,7 @@
     :goto_ab
     add-long/2addr v7, v9
 
-    .line 88
+    .line 84
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     iput-object v0, v1, Lkotlinx/coroutines/channels/TickerChannelsKt$fixedPeriodTicker$1;->L$0:Ljava/lang/Object;
@@ -447,9 +448,10 @@
 
     move-object v3, v0
 
-    .line 89
+    .line 85
     :goto_c3
-    invoke-static {}, Lkotlinx/coroutines/AbstractTimeSourceKt;->getTimeSource()Lkotlinx/coroutines/AbstractTimeSource;
+    # getter for: Lkotlinx/coroutines/AbstractTimeSourceKt;->timeSource:Lkotlinx/coroutines/AbstractTimeSource;
+    invoke-static {}, Lkotlinx/coroutines/AbstractTimeSourceKt;->access$getTimeSource$p()Lkotlinx/coroutines/AbstractTimeSource;
 
     move-result-object v0
 
@@ -471,7 +473,7 @@
 
     const-wide/16 v4, 0x0
 
-    .line 90
+    .line 86
     invoke-static {v13, v14, v4, v5}, Lkotlin/ranges/RangesKt;->coerceAtLeast(JJ)J
 
     move-result-wide v13
@@ -486,14 +488,14 @@
 
     sub-long v4, v11, v9
 
-    .line 92
+    .line 88
     rem-long/2addr v4, v7
 
     sub-long v4, v7, v4
 
     add-long v9, v11, v4
 
-    .line 94
+    .line 90
     invoke-static {v4, v5}, Lkotlinx/coroutines/EventLoop_commonKt;->delayNanosToMillis(J)J
 
     move-result-wide v4
@@ -528,7 +530,7 @@
     :cond_101
     const/4 v0, 0x3
 
-    .line 96
+    .line 92
     invoke-static {v13, v14}, Lkotlinx/coroutines/EventLoop_commonKt;->delayNanosToMillis(J)J
 
     move-result-wide v4
@@ -583,7 +585,7 @@
 
     cmp-long v2, p0, v0
 
-    .line 68
+    .line 64
     const-string v3, " ms"
 
     if-ltz v2, :cond_44
@@ -592,7 +594,7 @@
 
     if-ltz v0, :cond_25
 
-    .line 70
+    .line 66
     sget-object v0, Lkotlinx/coroutines/GlobalScope;->INSTANCE:Lkotlinx/coroutines/GlobalScope;
 
     invoke-static {}, Lkotlinx/coroutines/Dispatchers;->getUnconfined()Lkotlinx/coroutines/CoroutineDispatcher;
@@ -626,7 +628,7 @@
     :cond_25
     move-wide v5, p2
 
-    .line 69
+    .line 65
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -653,7 +655,7 @@
 
     throw p1
 
-    .line 68
+    .line 64
     :cond_44
     new-instance p2, Ljava/lang/StringBuilder;
 
@@ -696,7 +698,7 @@
 
     if-eqz p7, :cond_b
 
-    .line 65
+    .line 61
     sget-object p4, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     :cond_b
@@ -704,10 +706,10 @@
 
     if-eqz p6, :cond_11
 
-    .line 66
+    .line 62
     sget-object p5, Lkotlinx/coroutines/channels/TickerMode;->FIXED_PERIOD:Lkotlinx/coroutines/channels/TickerMode;
 
-    .line 62
+    .line 58
     :cond_11
     invoke-static/range {p0 .. p5}, Lkotlinx/coroutines/channels/TickerChannelsKt;->ticker(JJLkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/channels/TickerMode;)Lkotlinx/coroutines/channels/ReceiveChannel;
 

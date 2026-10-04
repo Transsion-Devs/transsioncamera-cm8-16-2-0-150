@@ -32,7 +32,7 @@
         }
     .end annotation
 
-    .line 326
+    .line 327
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->val$surfaceView:Landroid/view/SurfaceView;
@@ -47,7 +47,7 @@
 .method public onError(ILjava/lang/String;)V
     .registers 6
 
-    .line 417
+    .line 418
     invoke-static {}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -74,7 +74,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 418
+    .line 419
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     const/4 p1, 0x0
@@ -87,7 +87,7 @@
 .method public onProgress(F)V
     .registers 4
 
-    .line 331
+    .line 332
     invoke-static {}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -127,7 +127,7 @@
         }
     .end annotation
 
-    .line 338
+    .line 339
     invoke-static {}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p3
@@ -136,7 +136,7 @@
 
     invoke-static {p3, v0}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 340
+    .line 341
     iget-object p3, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     const/4 v0, 0x2
@@ -145,7 +145,7 @@
 
     if-nez p1, :cond_1b
 
-    .line 343
+    .line 344
     invoke-static {}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -156,13 +156,13 @@
 
     return-void
 
-    .line 347
+    .line 348
     :cond_1b
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 349
+    .line 350
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -183,19 +183,19 @@
 
     check-cast v4, Lcom/ss/android/ugc/cut_ui/MediaItem;
 
-    .line 351
+    .line 352
     invoke-virtual {v4}, Lcom/ss/android/ugc/cut_ui/MediaItem;->isMutable()Z
 
     move-result v5
 
     if-eqz v5, :cond_26
 
-    .line 352
+    .line 353
     invoke-virtual {p3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_26
 
-    .line 356
+    .line 357
     :cond_3a
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
@@ -207,7 +207,7 @@
 
     move-result-object p1
 
-    .line 358
+    .line 359
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -224,7 +224,7 @@
 
     if-eq v1, v3, :cond_5e
 
-    .line 359
+    .line 360
     invoke-static {}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -235,7 +235,7 @@
 
     return-void
 
-    .line 364
+    .line 365
     :cond_5e
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -255,7 +255,7 @@
 
     check-cast v1, Lcom/transsion/camera/feature/mode/vlog/bean/VlogMediaItem;
 
-    .line 365
+    .line 366
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     invoke-static {v3}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$fgetmCurrentPage(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;)I
@@ -281,7 +281,7 @@
 
     if-ne v3, v0, :cond_92
 
-    .line 367
+    .line 368
     invoke-virtual {v1}, Lcom/transsion/camera/feature/mode/vlog/bean/VlogMediaItem;->getPortraitSource()Ljava/lang/String;
 
     move-result-object v3
@@ -296,7 +296,7 @@
 
     goto :goto_f6
 
-    .line 372
+    .line 373
     :cond_92
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -315,7 +315,7 @@
 
     check-cast v6, Lcom/ss/android/ugc/cut_ui/MediaItem;
 
-    .line 373
+    .line 374
     invoke-virtual {v1}, Lcom/transsion/camera/feature/mode/vlog/bean/VlogMediaItem;->getMaterial_id()Ljava/lang/String;
 
     move-result-object v7
@@ -332,7 +332,7 @@
 
     goto :goto_97
 
-    .line 377
+    .line 378
     :cond_b0
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
@@ -342,7 +342,7 @@
 
     if-ne v3, v4, :cond_c0
 
-    .line 378
+    .line 379
     invoke-virtual {v1}, Lcom/transsion/camera/feature/mode/vlog/bean/VlogMediaItem;->getOriginSource()Ljava/lang/String;
 
     move-result-object v3
@@ -351,7 +351,7 @@
 
     goto :goto_db
 
-    .line 380
+    .line 381
     :cond_c0
     iget-object v3, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
@@ -365,7 +365,7 @@
 
     if-nez v3, :cond_d4
 
-    .line 381
+    .line 382
     invoke-virtual {v1}, Lcom/transsion/camera/feature/mode/vlog/bean/VlogMediaItem;->getPortraitSource()Ljava/lang/String;
 
     move-result-object v3
@@ -374,7 +374,7 @@
 
     goto :goto_db
 
-    .line 383
+    .line 384
     :cond_d4
     invoke-virtual {v1}, Lcom/transsion/camera/feature/mode/vlog/bean/VlogMediaItem;->getLandscapeSource()Ljava/lang/String;
 
@@ -382,7 +382,7 @@
 
     invoke-virtual {v6, v3}, Lcom/ss/android/ugc/cut_ui/MediaItem;->setSource(Ljava/lang/String;)V
 
-    .line 387
+    .line 388
     :goto_db
     invoke-virtual {v6}, Lcom/ss/android/ugc/cut_ui/MediaItem;->getSource()Ljava/lang/String;
 
@@ -390,14 +390,14 @@
 
     invoke-virtual {v6, v3}, Lcom/ss/android/ugc/cut_ui/MediaItem;->setMediaSrcPath(Ljava/lang/String;)V
 
-    .line 388
+    .line 389
     invoke-virtual {v1}, Lcom/transsion/camera/feature/mode/vlog/bean/VlogMediaItem;->getOriginDuration()J
 
     move-result-wide v3
 
     invoke-virtual {v6, v3, v4}, Lcom/ss/android/ugc/cut_ui/MediaItem;->setOriDuration(J)V
 
-    .line 389
+    .line 390
     invoke-virtual {v1}, Lcom/transsion/camera/feature/mode/vlog/bean/VlogMediaItem;->getSourceStartTime()J
 
     move-result-wide v3
@@ -406,12 +406,12 @@
 
     const/4 v1, 0x0
 
-    .line 390
+    .line 391
     invoke-virtual {v6, v1}, Lcom/ss/android/ugc/cut_ui/MediaItem;->setVolume(F)V
 
     goto/16 :goto_62
 
-    .line 395
+    .line 396
     :cond_f6
     :goto_f6
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
@@ -422,7 +422,7 @@
 
     monitor-enter p1
 
-    .line 396
+    .line 397
     :try_start_fd
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
@@ -432,7 +432,7 @@
 
     if-nez v0, :cond_134
 
-    .line 397
+    .line 398
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     const/4 v1, 0x3
@@ -441,7 +441,7 @@
     :try_end_10b
     .catchall {:try_start_fd .. :try_end_10b} :catchall_115
 
-    .line 399
+    .line 400
     :try_start_10b
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
@@ -464,7 +464,7 @@
     :catch_117
     move-exception v0
 
-    .line 401
+    .line 402
     :try_start_118
     invoke-static {}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -490,14 +490,14 @@
 
     invoke-static {v1, v0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 404
+    .line 405
     :cond_134
     :goto_134
     monitor-exit p1
     :try_end_135
     .catchall {:try_start_118 .. :try_end_135} :catchall_115
 
-    .line 407
+    .line 408
     :try_start_135
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
@@ -512,7 +512,7 @@
     :catch_13d
     move-exception p1
 
-    .line 409
+    .line 410
     invoke-static {}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p2
@@ -521,7 +521,7 @@
 
     invoke-static {p2, p3, p1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 410
+    .line 411
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor$1;->this$0:Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;
 
     invoke-static {p0}, Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;->-$$Nest$mcheckSdkState(Lcom/transsion/camera/feature/mode/vlog/engine/TemplateEditor;)Z
@@ -529,7 +529,7 @@
     :goto_14c
     return-void
 
-    .line 404
+    .line 405
     :goto_14d
     :try_start_14d
     monitor-exit p1

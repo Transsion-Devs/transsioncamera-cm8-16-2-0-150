@@ -20,25 +20,25 @@
 
 .field public static ai_art_gdpr_user_agreement_link:I = 0x7f130033
 
-.field public static common_agree:I = 0x7f1301cd
+.field public static common_agree:I = 0x7f1301c8
 
-.field public static common_cancel:I = 0x7f1301ce
+.field public static common_cancel:I = 0x7f1301c9
 
-.field public static common_large_image_ratio:I = 0x7f1301d0
+.field public static common_large_image_ratio:I = 0x7f1301cb
 
-.field public static common_network_error:I = 0x7f1301d1
+.field public static common_network_error:I = 0x7f1301cc
 
-.field public static common_privacy_policy:I = 0x7f1301d2
+.field public static common_privacy_policy:I = 0x7f1301cd
 
-.field public static common_process_time_hint:I = 0x7f1301d3
+.field public static common_process_time_hint:I = 0x7f1301ce
 
-.field public static common_processing_error:I = 0x7f1301d4
+.field public static common_processing_error:I = 0x7f1301cf
 
-.field public static common_user_agreement:I = 0x7f1301d5
+.field public static common_user_agreement:I = 0x7f1301d0
 
-.field public static common_user_announcement:I = 0x7f1301d6
+.field public static common_user_announcement:I = 0x7f1301d1
 
-.field public static common_user_notice:I = 0x7f1301d7
+.field public static common_user_notice:I = 0x7f1301d2
 
 
 # direct methods

@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static image_style_item_number:I = 0x7f0c0064
+.field public static image_style_item_number:I = 0x7f0c0067
 
 
 # direct methods

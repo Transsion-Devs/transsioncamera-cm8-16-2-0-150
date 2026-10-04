@@ -795,10 +795,10 @@
 
     const/high16 p0, 0x3f800000    # 1.0f
 
-    .line 608
+    .line 607
     invoke-virtual {p1, p0}, Landroid/view/View;->setScaleX(F)V
 
-    .line 609
+    .line 608
     invoke-virtual {p1, p0}, Landroid/view/View;->setScaleY(F)V
 
     return-void
@@ -1403,11 +1403,11 @@
 
     goto :goto_7d
 
-    .line 592
+    .line 591
     :cond_35
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mIsPopSettingShow:Z
 
-    .line 593
+    .line 592
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mIndicator:Landroid/widget/TextView;
 
     if-eqz p1, :cond_7d
@@ -1416,12 +1416,12 @@
 
     if-nez p0, :cond_7d
 
-    .line 594
+    .line 593
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    .line 598
+    .line 597
     :cond_43
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mIndicator:Landroid/widget/TextView;
 
@@ -1435,26 +1435,26 @@
 
     if-nez p0, :cond_7d
 
-    .line 599
+    .line 598
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    .line 582
+    .line 581
     :cond_53
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mIsPopSettingShow:Z
 
-    .line 583
+    .line 582
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mIndicator:Landroid/widget/TextView;
 
     if-eqz p1, :cond_5e
 
     const/16 v0, 0x8
 
-    .line 584
+    .line 583
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 586
+    .line 585
     :cond_5e
     sget-object p1, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1476,41 +1476,41 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 587
+    .line 586
     iget-boolean p1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mScrollBarShown:Z
 
     if-eqz p1, :cond_7d
 
-    .line 588
+    .line 587
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->hideScrollBar()V
 
     :cond_7d
     :goto_7d
     return-void
 
-    .line 577
+    .line 576
     :cond_7e
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mIsRecord:Z
 
-    .line 578
+    .line 577
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mIndicator:Landroid/widget/TextView;
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    .line 572
+    .line 571
     :cond_86
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mIsRecord:Z
 
-    .line 573
+    .line 572
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mUIHandler:Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI$UIHandler;
 
     const/4 v0, 0x2
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 574
+    .line 573
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->hideScrollBar()V
 
     return-void
@@ -1519,7 +1519,7 @@
     :cond_92
     iput-boolean v2, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mIsRecord:Z
 
-    .line 568
+    .line 567
     :cond_94
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->mTimeLapseTab:Landroidx/recyclerview/widget/RecyclerView;
 
@@ -1529,7 +1529,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 569
+    .line 568
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/timelapseratesingle/TimeLapseRateSingleUI;->hideScrollBar()V
 
     return-void

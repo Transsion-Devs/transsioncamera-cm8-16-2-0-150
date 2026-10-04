@@ -76,11 +76,11 @@
     .line 33
     const-string v4, "WatermarkPainterSpark"
 
-    if-lez v1, :cond_280
+    if-lez v1, :cond_278
 
     if-gt v2, v3, :cond_17
 
-    goto/16 :goto_280
+    goto/16 :goto_278
 
     :cond_17
     if-eqz p4, :cond_1c
@@ -401,13 +401,9 @@
     :goto_116
     iget-object v1, v0, Lcom/imaging/libwatermark/painters/WatermarkPainterSpark;->context:Landroid/content/Context;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
+    sget v2, Lcom/imaging/libwatermark/R$font;->tos_bold:I
 
-    move-result-object v1
-
-    const-string v2, "font/tos_bold.ttf"
-
-    invoke-static {v1, v2}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {v1, v2}, Landroidx/core/content/res/ResourcesCompat;->getFont(Landroid/content/Context;I)Landroid/graphics/Typeface;
 
     move-result-object v1
 
@@ -429,30 +425,30 @@
 
     const/high16 v18, 0x41c00000    # 24.0f
 
-    if-nez p4, :cond_13f
+    if-nez p4, :cond_13b
 
-    if-eqz v7, :cond_13c
+    if-eqz v7, :cond_138
 
     const/high16 v19, 0x41e80000    # 29.0f
 
-    goto :goto_146
+    goto :goto_142
 
-    :cond_13c
+    :cond_138
     move/from16 v19, v18
 
-    goto :goto_146
+    goto :goto_142
 
-    :cond_13f
-    if-eqz v7, :cond_144
+    :cond_13b
+    if-eqz v7, :cond_140
 
     const/high16 v19, 0x41b00000    # 22.0f
 
-    goto :goto_146
+    goto :goto_142
 
-    :cond_144
+    :cond_140
     const/high16 v19, 0x41900000    # 18.0f
 
-    :goto_146
+    :goto_142
     mul-float v15, p6, v19
 
     .line 91
@@ -484,7 +480,7 @@
 
     invoke-virtual {v14, v4, v9}, Lcom/imaging/libwatermark/utils/LogUtils;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-eqz v7, :cond_17e
+    if-eqz v7, :cond_17a
 
     .line 95
     invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
@@ -513,27 +509,27 @@
 
     add-float/2addr v9, v15
 
-    goto :goto_18b
+    goto :goto_187
 
-    :cond_17e
+    :cond_17a
     move/from16 v20, v1
 
     move/from16 v21, v5
 
-    if-nez p4, :cond_187
+    if-nez p4, :cond_183
 
     const/high16 v1, 0x42580000    # 54.0f
 
-    goto :goto_189
+    goto :goto_185
 
-    :cond_187
+    :cond_183
     const/high16 v1, 0x42380000    # 46.0f
 
-    :goto_189
+    :goto_185
     mul-float v9, p6, v1
 
     .line 99
-    :goto_18b
+    :goto_187
     invoke-virtual {v8, v11, v6, v9, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     .line 102
@@ -545,23 +541,23 @@
 
     move-result v5
 
-    if-eqz v5, :cond_19c
+    if-eqz v5, :cond_198
 
     invoke-virtual/range {p1 .. p1}, Lcom/imaging/libwatermark/data/WatermarkPaintInfo;->getLensInfo()Ljava/lang/String;
 
     move-result-object v1
 
-    :cond_19c
-    if-nez p4, :cond_1a1
+    :cond_198
+    if-nez p4, :cond_19d
 
     const/high16 v15, 0x41b80000    # 23.0f
 
-    goto :goto_1a3
+    goto :goto_19f
 
-    :cond_1a1
+    :cond_19d
     const/high16 v15, 0x41900000    # 18.0f
 
-    :goto_1a3
+    :goto_19f
     mul-float v5, p6, v15
 
     .line 103
@@ -589,7 +585,7 @@
 
     const/high16 v9, 0x42340000    # 45.0f
 
-    if-eqz v21, :cond_1cd
+    if-eqz v21, :cond_1c9
 
     .line 107
     invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
@@ -614,23 +610,23 @@
 
     add-float/2addr v11, v2
 
-    goto :goto_1d5
+    goto :goto_1d1
 
-    :cond_1cd
-    if-nez p4, :cond_1d2
+    :cond_1c9
+    if-nez p4, :cond_1ce
 
     const/high16 v2, 0x42540000    # 53.0f
 
-    goto :goto_1d3
+    goto :goto_1cf
 
-    :cond_1d2
+    :cond_1ce
     move v2, v9
 
-    :goto_1d3
+    :goto_1cf
     mul-float v11, p6, v2
 
     .line 111
-    :goto_1d5
+    :goto_1d1
     const-string v2, "#020202"
 
     invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -651,7 +647,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_240
+    if-eqz v1, :cond_23c
 
     .line 116
     new-instance v10, Landroid/graphics/Rect;
@@ -673,30 +669,30 @@
 
     move-result v2
 
-    if-nez p4, :cond_206
+    if-nez p4, :cond_202
 
-    if-eqz v21, :cond_203
+    if-eqz v21, :cond_1ff
 
     move v11, v9
 
-    goto :goto_20d
+    goto :goto_209
 
-    :cond_203
+    :cond_1ff
     const/high16 v11, 0x41f00000    # 30.0f
 
-    goto :goto_20d
+    goto :goto_209
 
-    :cond_206
-    if-eqz v21, :cond_20b
+    :cond_202
+    if-eqz v21, :cond_207
 
     const/high16 v11, 0x421c0000    # 39.0f
 
-    goto :goto_20d
+    goto :goto_209
 
-    :cond_20b
+    :cond_207
     const/high16 v11, 0x41d80000    # 27.0f
 
-    :goto_20d
+    :goto_209
     mul-float v9, p6, v11
 
     add-float v11, v9, v2
@@ -749,31 +745,27 @@
     invoke-virtual {v8, v1, v10, v15, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
     .line 132
-    :cond_240
+    :cond_23c
     iget-object v0, v0, Lcom/imaging/libwatermark/painters/WatermarkPainterSpark;->context:Landroid/content/Context;
 
-    invoke-virtual {v0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
+    sget v1, Lcom/imaging/libwatermark/R$font;->tos_regular:I
 
-    move-result-object v0
-
-    const-string v1, "font/tos_regular.ttf"
-
-    invoke-static {v0, v1}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {v0, v1}, Landroidx/core/content/res/ResourcesCompat;->getFont(Landroid/content/Context;I)Landroid/graphics/Typeface;
 
     move-result-object v0
 
     invoke-virtual {v3, v0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    if-nez p4, :cond_254
+    if-nez p4, :cond_24c
 
     const/high16 v0, 0x41980000    # 19.0f
 
-    goto :goto_256
+    goto :goto_24e
 
-    :cond_254
+    :cond_24c
     const/high16 v0, 0x41700000    # 15.0f
 
-    :goto_256
+    :goto_24e
     mul-float v0, v0, p6
 
     .line 133
@@ -788,18 +780,18 @@
 
     invoke-virtual {v3, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    if-nez p4, :cond_268
+    if-nez p4, :cond_260
 
     const/high16 v18, 0x41d80000    # 27.0f
 
-    :cond_268
+    :cond_260
     mul-float v0, p6, v18
 
     sub-float/2addr v13, v0
 
     sub-float v13, v13, v20
 
-    if-nez v21, :cond_276
+    if-nez v21, :cond_26e
 
     .line 140
     invoke-virtual/range {p1 .. p1}, Lcom/imaging/libwatermark/data/WatermarkPaintInfo;->getLocationInfo()Ljava/lang/String;
@@ -809,8 +801,8 @@
     .line 141
     invoke-virtual {v8, v0, v5, v13, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    :cond_276
-    if-nez v7, :cond_27f
+    :cond_26e
+    if-nez v7, :cond_277
 
     .line 146
     invoke-virtual/range {p1 .. p1}, Lcom/imaging/libwatermark/data/WatermarkPaintInfo;->getTimeInfo()Ljava/lang/String;
@@ -820,12 +812,12 @@
     .line 147
     invoke-virtual {v8, v0, v6, v13, v3}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    :cond_27f
+    :cond_277
     return-object v16
 
     .line 34
-    :cond_280
-    :goto_280
+    :cond_278
+    :goto_278
     sget-object v0, Lcom/imaging/libwatermark/utils/LogUtils;->INSTANCE:Lcom/imaging/libwatermark/utils/LogUtils;
 
     const-string v1, "invalid width or height"

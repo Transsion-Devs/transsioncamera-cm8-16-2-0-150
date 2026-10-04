@@ -49,10 +49,19 @@
     return-object p0
 .end method
 
+.method static bridge synthetic -$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
+    .registers 1
+
+    .line 0
+    sget-object v0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    return-object v0
+.end method
+
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 26
+    .line 28
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "AIFrameTopBar"
@@ -67,10 +76,10 @@
 .method public constructor <init>(Landroid/content/res/Resources;Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;Lcom/transsion/camera/ui/setting/aiframe/AIFrameCommonSettingUI;)V
     .registers 4
 
-    .line 34
+    .line 36
     invoke-direct {p0, p2}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;-><init>(Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;)V
 
-    .line 61
+    .line 60
     new-instance p2, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;)V
@@ -84,13 +93,13 @@
 
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mShowPopupTipsAction:Ljava/lang/Runnable;
 
-    .line 35
+    .line 37
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mResources:Landroid/content/res/Resources;
 
-    .line 36
+    .line 38
     iput-object p3, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mCommonSettingUI:Lcom/transsion/camera/ui/setting/aiframe/AIFrameCommonSettingUI;
 
-    .line 37
+    .line 39
     new-instance p1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -101,7 +110,7 @@
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mMainHandler:Landroid/os/Handler;
 
-    .line 38
+    .line 40
     sget-object p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "AIFrameTopBarItemUI init"
@@ -114,7 +123,7 @@
 .method static synthetic access$000(Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;)Lcom/transsion/camera/app/common/setting/ISetting;
     .registers 1
 
-    .line 25
+    .line 27
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     return-object p0
@@ -123,7 +132,7 @@
 .method private isAIFrameDisabledByZoom()Z
     .registers 2
 
-    .line 151
+    .line 163
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     const-string v0, "key_camera_zoom"
@@ -132,14 +141,14 @@
 
     move-result-object p0
 
-    .line 152
+    .line 164
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
 
     sget v0, Lcom/transsion/camera/utils/SettingInfo;->AI_FRAME_MAX_ZOOM:I
 
-    if-lt p0, v0, :cond_12
+    if-le p0, v0, :cond_12
 
     const/4 p0, 0x1
 
@@ -154,7 +163,7 @@
 .method private synthetic lambda$new$0(Ljava/lang/Object;I)V
     .registers 3
 
-    .line 62
+    .line 61
     const-string p2, "ai_zoom_entries_changed"
 
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -163,12 +172,12 @@
 
     if-eqz p1, :cond_12
 
-    .line 63
+    .line 62
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1}, Lcom/transsion/camera/app/common/IAppUI;->updateTopBarUI()V
 
-    .line 64
+    .line 63
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUI;->updatePopSettingUI()V
@@ -180,14 +189,14 @@
 .method private showPopupTips()V
     .registers 5
 
-    .line 136
+    .line 142
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 139
+    .line 145
     :cond_5
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISetting;->getDataStore()Lcom/transsion/camera/app/common/storage/DataStore;
 
@@ -203,14 +212,14 @@
 
     move-result-object v0
 
-    .line 141
+    .line 147
     invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_21
 
-    .line 142
+    .line 148
     sget-object p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "showPopupTips, return for showed"
@@ -219,8 +228,43 @@
 
     return-void
 
-    .line 147
+    .line 152
     :cond_21
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mRecommendPopupTipsView:Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
+
+    if-nez v0, :cond_41
+
+    .line 153
+    new-instance v0, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
+
+    invoke-static {}, Lcom/transsion/camera/app_info/AppInfo;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mRecommendPopupTipsView:Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
+
+    const/4 v1, 0x0
+
+    .line 154
+    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;->setCloseImageVisible(I)V
+
+    .line 155
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mRecommendPopupTipsView:Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
+
+    iget-object v1, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mResources:Landroid/content/res/Resources;
+
+    sget v2, Lcom/transsion/camera/R$color;->popup_tips_ai_frame_bg:I
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;->setBackGroundColor(I)V
+
+    .line 159
+    :cond_41
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mMainHandler:Landroid/os/Handler;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mShowPopupTipsAction:Ljava/lang/Runnable;
@@ -235,38 +279,9 @@
 
 # virtual methods
 .method public createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;IIII)Landroid/view/View;
-    .registers 10
-
-    .line 54
-    new-instance v0, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
-
-    invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;-><init>(Landroid/content/Context;)V
-
-    iput-object v0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mRecommendPopupTipsView:Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
-
-    const/4 v1, 0x0
-
-    .line 55
-    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;->setCloseImageVisible(I)V
+    .registers 7
 
     .line 56
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mRecommendPopupTipsView:Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
-
-    iget-object v1, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mResources:Landroid/content/res/Resources;
-
-    sget v2, Lcom/transsion/camera/R$color;->popup_tips_ai_frame_bg:I
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;->setBackGroundColor(I)V
-
-    .line 57
     invoke-super/range {p0 .. p6}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->createEntryView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;IIII)Landroid/view/View;
 
     move-result-object p0
@@ -460,12 +475,12 @@
 .method public onEntryViewClick(Landroid/view/View;Z)Z
     .registers 5
 
-    .line 81
+    .line 80
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->onEntryViewClick(Landroid/view/View;Z)Z
 
     move-result p1
 
-    .line 82
+    .line 81
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mCommonSettingUI:Lcom/transsion/camera/ui/setting/aiframe/AIFrameCommonSettingUI;
 
     const-string v0, "on"
@@ -480,29 +495,36 @@
 
     invoke-virtual {p2, v0}, Lcom/transsion/camera/ui/setting/aiframe/AIFrameCommonSettingUI;->updateHint(Z)V
 
-    .line 83
-    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
+    .line 82
+    iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
-    if-eqz p0, :cond_1c
+    if-eqz p2, :cond_23
+
+    const/16 v0, 0xd1
+
+    .line 83
+    invoke-interface {p2, v0}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
+
+    .line 84
+    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/16 p2, 0x190
 
-    .line 84
     invoke-interface {p0, p2}, Lcom/transsion/camera/app/common/IAppUIControl$ICameraOperationControl;->notifyRawActionToAppUI(I)V
 
-    :cond_1c
+    :cond_23
     return p1
 .end method
 
 .method public onOrientationChanged(IZ)V
     .registers 3
 
-    .line 157
+    .line 169
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mRecommendPopupTipsView:Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;
 
     if-eqz p0, :cond_7
 
-    .line 158
+    .line 170
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/widget/RecommendPopupTipsView;->onOrientationChanged(I)V
 
     :cond_7
@@ -521,15 +543,15 @@
 .method public setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
     .registers 2
 
-    .line 44
+    .line 46
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
-    .line 45
+    .line 47
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p1, :cond_c
 
-    .line 46
+    .line 48
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mSettingDataCallback:Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
 
     invoke-interface {p1, p0}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
@@ -550,10 +572,10 @@
 .method public setHintControl(Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;)V
     .registers 2
 
-    .line 75
+    .line 74
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->setHintControl(Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;)V
 
-    .line 76
+    .line 75
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mCommonSettingUI:Lcom/transsion/camera/ui/setting/aiframe/AIFrameCommonSettingUI;
 
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/aiframe/AIFrameCommonSettingUI;->setHintControl(Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;)V
@@ -564,7 +586,7 @@
 .method public setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
     .registers 2
 
-    .line 70
+    .line 69
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->setSettingMonitor(Lcom/transsion/camera/app/common/setting/StatusMonitor;)V
 
     return-void
@@ -573,31 +595,31 @@
 .method public unInit()V
     .registers 3
 
-    .line 164
+    .line 176
     invoke-super {p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->unInit()V
 
-    .line 165
+    .line 177
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mMainHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mShowPopupTipsAction:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 166
+    .line 178
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/aiframe/AIFrameTopBarItemUI;->mCommonSettingUI:Lcom/transsion/camera/ui/setting/aiframe/AIFrameCommonSettingUI;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/ui/setting/aiframe/AIFrameCommonSettingUI;->updateHint(Z)V
 
-    .line 167
+    .line 179
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     if-eqz p0, :cond_18
 
     const/4 v0, 0x0
 
-    .line 168
+    .line 180
     invoke-interface {p0, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
 
     :cond_18

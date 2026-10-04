@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/widget/ConfirmDialog;)V
     .registers 2
 
-    .line 248
+    .line 250
     iput-object p1, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$1;->this$0:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
     .registers 5
 
-    .line 252
+    .line 254
     invoke-static {}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -59,7 +59,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 253
+    .line 255
     iget-object p0, p0, Lcom/transsion/camera/app/ui/widget/ConfirmDialog$1;->this$0:Lcom/transsion/camera/app/ui/widget/ConfirmDialog;
 
     invoke-static {p0, p2}, Lcom/transsion/camera/app/ui/widget/ConfirmDialog;->-$$Nest$monCutoutPositionChanged(Lcom/transsion/camera/app/ui/widget/ConfirmDialog;Landroid/view/WindowInsets;)V

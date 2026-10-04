@@ -22,7 +22,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 985
+    .line 991
     invoke-static {}, Lcom/transsion/camera/app/common/mode/IAeAfLock$State;->values()[Lcom/transsion/camera/app/common/mode/IAeAfLock$State;
 
     move-result-object v0

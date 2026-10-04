@@ -14,77 +14,73 @@
 
 
 # static fields
-.field public static ic_long_exposure:I = 0x7f08056c
+.field public static ic_long_exposure:I = 0x7f080535
 
-.field public static ic_long_exposure_capture_bulb_off:I = 0x7f08056d
+.field public static ic_long_exposure_capture_bulb_off:I = 0x7f080536
 
-.field public static ic_long_exposure_capture_bulb_off_dark:I = 0x7f08056e
+.field public static ic_long_exposure_capture_bulb_off_dark:I = 0x7f080537
 
-.field public static ic_long_exposure_capture_bulb_on:I = 0x7f08056f
+.field public static ic_long_exposure_capture_bulb_on:I = 0x7f080538
 
-.field public static ic_long_exposure_capture_bulb_on_dark:I = 0x7f080570
+.field public static ic_long_exposure_capture_bulb_on_dark:I = 0x7f080539
 
-.field public static ic_long_exposure_shutter_processing:I = 0x7f080571
+.field public static ic_long_exposure_shutter_processing:I = 0x7f08053a
 
-.field public static ic_long_exposure_tripod:I = 0x7f080572
+.field public static ic_long_exposure_tripod:I = 0x7f08053b
 
-.field public static long_exposure_capture_auto_off:I = 0x7f080857
+.field public static long_exposure_capture_auto_off:I = 0x7f0807e8
 
-.field public static long_exposure_capture_auto_off_low_light:I = 0x7f080858
+.field public static long_exposure_capture_auto_off_low_light:I = 0x7f0807e9
 
-.field public static long_exposure_capture_auto_on:I = 0x7f080859
+.field public static long_exposure_capture_auto_on:I = 0x7f0807ea
 
-.field public static long_exposure_capture_bulb_off:I = 0x7f08085a
+.field public static long_exposure_capture_bulb_off:I = 0x7f0807eb
 
-.field public static long_exposure_capture_bulb_off_low_light:I = 0x7f08085b
+.field public static long_exposure_capture_bulb_off_low_light:I = 0x7f0807ec
 
-.field public static long_exposure_capture_bulb_on:I = 0x7f08085c
+.field public static long_exposure_capture_bulb_on:I = 0x7f0807ed
 
-.field public static long_exposure_guide_flowing_water:I = 0x7f08085d
+.field public static long_exposure_guide_flowing_water:I = 0x7f0807ee
 
-.field public static long_exposure_guide_handheld_normal:I = 0x7f08085e
+.field public static long_exposure_guide_handheld_normal:I = 0x7f0807ef
 
-.field public static long_exposure_guide_light_painting:I = 0x7f08085f
+.field public static long_exposure_guide_light_painting:I = 0x7f0807f0
 
-.field public static long_exposure_guide_placed_fold:I = 0x7f080860
+.field public static long_exposure_guide_placed_normal:I = 0x7f0807f1
 
-.field public static long_exposure_guide_placed_hover:I = 0x7f080861
+.field public static long_exposure_guide_star:I = 0x7f0807f2
 
-.field public static long_exposure_guide_placed_normal:I = 0x7f080862
+.field public static long_exposure_guide_stellar_track:I = 0x7f0807f3
 
-.field public static long_exposure_guide_star:I = 0x7f080863
+.field public static long_exposure_guide_traffic:I = 0x7f0807f4
 
-.field public static long_exposure_guide_stellar_track:I = 0x7f080864
+.field public static long_exposure_item_cover_selected:I = 0x7f0807f5
 
-.field public static long_exposure_guide_traffic:I = 0x7f080865
+.field public static long_exposure_item_cover_selected_ui4:I = 0x7f0807f6
 
-.field public static long_exposure_item_cover_selected:I = 0x7f080866
+.field public static long_exposure_item_cover_ui4:I = 0x7f0807f7
 
-.field public static long_exposure_item_cover_selected_ui4:I = 0x7f080867
+.field public static long_exposure_option_off:I = 0x7f0807f8
 
-.field public static long_exposure_item_cover_ui4:I = 0x7f080868
+.field public static long_exposure_option_on:I = 0x7f0807f9
 
-.field public static long_exposure_option_off:I = 0x7f080869
+.field public static long_exposure_scene_flowing_water:I = 0x7f0807fa
 
-.field public static long_exposure_option_on:I = 0x7f08086a
+.field public static long_exposure_scene_light_painting:I = 0x7f0807fb
 
-.field public static long_exposure_scene_flowing_water:I = 0x7f08086b
+.field public static long_exposure_scene_star:I = 0x7f0807fc
 
-.field public static long_exposure_scene_light_painting:I = 0x7f08086c
+.field public static long_exposure_scene_stellar_track:I = 0x7f0807fd
 
-.field public static long_exposure_scene_star:I = 0x7f08086d
+.field public static long_exposure_scene_title_color:I = 0x7f0807fe
 
-.field public static long_exposure_scene_stellar_track:I = 0x7f08086e
+.field public static long_exposure_scene_traffic:I = 0x7f0807ff
 
-.field public static long_exposure_scene_title_color:I = 0x7f08086f
+.field public static long_exposure_shutter_processing:I = 0x7f080800
 
-.field public static long_exposure_scene_traffic:I = 0x7f080870
+.field public static long_exposure_tripod_off:I = 0x7f080801
 
-.field public static long_exposure_shutter_processing:I = 0x7f080871
-
-.field public static long_exposure_tripod_off:I = 0x7f080872
-
-.field public static long_exposure_tripod_on:I = 0x7f080873
+.field public static long_exposure_tripod_on:I = 0x7f080802
 
 
 # direct methods

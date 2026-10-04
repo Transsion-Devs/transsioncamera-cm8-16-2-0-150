@@ -21,7 +21,7 @@
 .method public constructor <init>(Lkotlinx/coroutines/CoroutineExceptionHandler$Key;)V
     .registers 2
 
-    .line 48
+    .line 44
     invoke-direct {p0, p1}, Lkotlin/coroutines/AbstractCoroutineContextElement;-><init>(Lkotlin/coroutines/CoroutineContext$Key;)V
 
     return-void

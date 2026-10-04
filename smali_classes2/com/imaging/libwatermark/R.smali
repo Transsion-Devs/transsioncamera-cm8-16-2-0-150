@@ -5,7 +5,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/imaging/libwatermark/R$drawable;
+        Lcom/imaging/libwatermark/R$drawable;,
+        Lcom/imaging/libwatermark/R$font;
     }
 .end annotation
 

@@ -3,36 +3,40 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/airbnb/lottie/value/SimpleLottieValueCallback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
+.field public final synthetic f$1:Z
+
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;)V
-    .registers 2
+.method public synthetic constructor <init>(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Z)V
+    .registers 3
 
     .line 0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda6;->f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
+    iput-boolean p2, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda6;->f$1:Z
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final getValue(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Object;
+.method public final run()V
     .registers 2
 
     .line 0
-    iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda6;->f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
+    iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda6;->f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$geG8OGrb08viwtQKlHsvd2iuAZ0(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
+    iget-boolean p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda6;->f$1:Z
 
-    move-result-object p0
+    invoke-static {v0, p0}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$eEep1LxFRJLxojylMfkxFevHba8(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;Z)V
 
-    return-object p0
+    return-void
 .end method

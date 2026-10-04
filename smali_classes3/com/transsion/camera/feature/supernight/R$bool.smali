@@ -14,25 +14,25 @@
 
 
 # static fields
-.field public static super_night_default_thumbnail_source_screenshot:I = 0x7f0501ba
+.field public static super_night_default_thumbnail_source_screenshot:I = 0x7f0501c4
 
-.field public static super_night_mode_is_support_fill_view:I = 0x7f0501bf
+.field public static super_night_mode_is_support_fill_view:I = 0x7f0501c9
 
-.field public static super_night_support_countdown_time:I = 0x7f0501c0
+.field public static super_night_support_countdown_time:I = 0x7f0501ca
 
-.field public static supernight_front_support_torch:I = 0x7f0501c5
+.field public static supernight_front_support_torch:I = 0x7f0501cf
 
-.field public static supernight_guide_support:I = 0x7f0501c6
+.field public static supernight_guide_support:I = 0x7f0501d0
 
-.field public static supernight_mode_support_aux_preview:I = 0x7f0501ca
+.field public static supernight_mode_support_aux_preview:I = 0x7f0501d4
 
-.field public static supernight_mode_support_face_beauty:I = 0x7f0501cb
+.field public static supernight_mode_support_face_beauty:I = 0x7f0501d5
 
-.field public static supernight_mode_support_front_wide_camera:I = 0x7f0501cc
+.field public static supernight_mode_support_front_wide_camera:I = 0x7f0501d6
 
-.field public static supernight_mode_support_tele_camera:I = 0x7f0501cd
+.field public static supernight_mode_support_tele_camera:I = 0x7f0501d7
 
-.field public static supernight_mode_support_wide_camera:I = 0x7f0501ce
+.field public static supernight_mode_support_wide_camera:I = 0x7f0501d8
 
 
 # direct methods

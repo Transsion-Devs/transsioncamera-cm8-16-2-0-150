@@ -22,7 +22,7 @@
 .method private constructor <init>(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;)V
     .registers 2
 
-    .line 517
+    .line 520
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -44,38 +44,33 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 5
 
-    .line 521
+    .line 524
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_3c
+    if-eq v0, v1, :cond_51
 
     const/4 v2, 0x2
 
-    if-eq v0, v2, :cond_2f
+    if-eq v0, v2, :cond_44
 
     const/4 v1, 0x3
 
-    if-eq v0, v1, :cond_29
+    if-eq v0, v1, :cond_3e
 
     const/4 v1, 0x5
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_24
 
-    goto :goto_28
+    const/4 v1, 0x6
 
-    .line 535
-    :cond_f
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
+    if-eq v0, v1, :cond_12
 
-    invoke-static {v0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$fgetmShutterControl(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;)Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
+    goto :goto_3d
 
-    move-result-object v0
-
-    if-eqz v0, :cond_28
-
-    .line 536
+    .line 544
+    :cond_12
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Integer;
@@ -84,7 +79,37 @@
 
     move-result p1
 
-    .line 537
+    invoke-static {p1}, Lcom/transsion/camera/utils/CameraUtil;->stopTranLightScene(I)V
+
+    .line 545
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
+
+    const/4 p1, 0x0
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$fputmLastScene(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;I)V
+
+    return-void
+
+    .line 538
+    :cond_24
+    iget-object v0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
+
+    invoke-static {v0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$fgetmShutterControl(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;)Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3d
+
+    .line 539
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    .line 540
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$fgetmShutterControl(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;)Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;
@@ -93,25 +118,25 @@
 
     invoke-interface {p0, p1}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->updateShutterType(I)V
 
-    :cond_28
-    :goto_28
+    :cond_3d
+    :goto_3d
     return-void
 
-    .line 530
-    :cond_29
+    .line 533
+    :cond_3e
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$mupdateSelfTimerNum(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;)V
 
     return-void
 
-    .line 526
-    :cond_2f
+    .line 529
+    :cond_44
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     invoke-static {p1, v1, v1}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$mhideSelfTimerView(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;ZZ)V
 
-    .line 527
+    .line 530
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     const-string p1, "self_timer_idle"
@@ -120,8 +145,8 @@
 
     return-void
 
-    .line 523
-    :cond_3c
+    .line 526
+    :cond_51
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI$UIHandler;->this$0:Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;
 
     invoke-static {p0}, Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;->-$$Nest$mshowSelfTimerView(Lcom/transsion/camera/ui/setting/selftimer/SelfTimerUI;)V

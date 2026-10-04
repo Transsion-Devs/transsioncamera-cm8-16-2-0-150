@@ -25,7 +25,7 @@
 .method protected constructor <init>(Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder;)V
     .registers 2
 
-    .line 532
+    .line 536
     iput-object p1, p0, Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder$RecorderListener;->this$0:Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,14 +78,14 @@
 .method public onError(II)V
     .registers 3
 
-    .line 538
+    .line 542
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder$RecorderListener;->errorHappened(I)Z
 
     move-result p1
 
     if-eqz p1, :cond_c
 
-    .line 539
+    .line 543
     iget-object p0, p0, Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder$RecorderListener;->this$0:Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder;
 
     const/4 p1, 0x0
@@ -99,14 +99,14 @@
 .method public onInfo(II)V
     .registers 4
 
-    .line 549
+    .line 553
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder$RecorderListener;->reachedMax(I)Z
 
     move-result p1
 
     if-eqz p1, :cond_c
 
-    .line 550
+    .line 554
     iget-object p1, p0, Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder$RecorderListener;->this$0:Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder;
 
     const/4 v0, 0x1
@@ -118,7 +118,7 @@
 
     if-ne p2, p1, :cond_1f
 
-    .line 553
+    .line 557
     invoke-static {}, Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -127,7 +127,7 @@
 
     invoke-static {p1, p2}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 554
+    .line 558
     iget-object p0, p0, Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder$RecorderListener;->this$0:Lcom/transsion/camera/app/common/recorder/AbstractAsyncStateRecorder;
 
     const/4 p1, 0x2

@@ -24,10 +24,10 @@
 .method public constructor <init>(Lcom/transsion/camera/feature/common/BaseCapture;)V
     .registers 4
 
-    .line 464
+    .line 462
     iput-object p1, p0, Lcom/transsion/camera/feature/common/BaseCapture$IdleState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
-    .line 465
+    .line 463
     const-string v0, "IdleState"
 
     const/4 v1, 0x0
@@ -42,16 +42,16 @@
 .method protected createStream()V
     .registers 2
 
-    .line 470
+    .line 468
     monitor-enter p0
 
     const/4 v0, 0x1
 
-    .line 471
+    .line 469
     :try_start_2
     iput-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$IdleState;->mStreamCreated:Z
 
-    .line 472
+    .line 470
     monitor-exit p0
 
     return-void
@@ -69,16 +69,16 @@
 .method protected destroyStream()V
     .registers 2
 
-    .line 488
+    .line 486
     monitor-enter p0
 
     const/4 v0, 0x0
 
-    .line 489
+    .line 487
     :try_start_2
     iput-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$IdleState;->mStreamCreated:Z
 
-    .line 490
+    .line 488
     monitor-exit p0
 
     return-void
@@ -96,21 +96,21 @@
 .method protected onEntry()V
     .registers 3
 
-    .line 495
+    .line 493
     monitor-enter p0
 
     const/4 v0, 0x0
 
-    .line 498
+    .line 496
     :try_start_2
     iput-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$IdleState;->mStreamCreated:Z
 
-    .line 499
+    .line 497
     monitor-exit p0
     :try_end_5
     .catchall {:try_start_2 .. :try_end_5} :catchall_16
 
-    .line 501
+    .line 499
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture$IdleState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v1}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fgetmPendingCreate(Lcom/transsion/camera/feature/common/BaseCapture;)Z
@@ -119,12 +119,12 @@
 
     if-eqz v1, :cond_15
 
-    .line 502
+    .line 500
     iget-object v1, p0, Lcom/transsion/camera/feature/common/BaseCapture$IdleState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
     invoke-static {v1, v0}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$fputmPendingCreate(Lcom/transsion/camera/feature/common/BaseCapture;Z)V
 
-    .line 503
+    .line 501
     invoke-virtual {p0}, Lcom/transsion/camera/feature/common/BaseCapture$IdleState;->createStream()V
 
     :cond_15
@@ -133,7 +133,7 @@
     :catchall_16
     move-exception v0
 
-    .line 499
+    .line 497
     :try_start_17
     monitor-exit p0
     :try_end_18
@@ -145,16 +145,16 @@
 .method protected onStreamAvailable()V
     .registers 3
 
-    .line 477
+    .line 475
     monitor-enter p0
 
-    .line 478
+    .line 476
     :try_start_1
     iget-boolean v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$IdleState;->mStreamCreated:Z
 
     if-nez v0, :cond_12
 
-    .line 479
+    .line 477
     invoke-static {}, Lcom/transsion/camera/feature/common/BaseCapture;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -163,7 +163,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 480
+    .line 478
     monitor-exit p0
 
     return-void
@@ -173,7 +173,7 @@
 
     goto :goto_1d
 
-    .line 482
+    .line 480
     :cond_12
     iget-object v0, p0, Lcom/transsion/camera/feature/common/BaseCapture$IdleState;->this$0:Lcom/transsion/camera/feature/common/BaseCapture;
 
@@ -183,7 +183,7 @@
 
     invoke-virtual {v0}, Lcom/transsion/camera/feature/common/BaseCapture$AbstractState;->entry()V
 
-    .line 483
+    .line 481
     monitor-exit p0
 
     return-void

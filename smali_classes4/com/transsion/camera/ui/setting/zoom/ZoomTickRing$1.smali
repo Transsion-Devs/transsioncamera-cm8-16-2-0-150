@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;)V
     .registers 2
 
-    .line 362
+    .line 365
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 365
+    .line 368
     invoke-static {}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -44,7 +44,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 366
+    .line 369
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;
 
     const/4 p1, 0x0
@@ -57,7 +57,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 371
+    .line 374
     invoke-static {}, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 372
+    .line 375
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing$1;->this$0:Lcom/transsion/camera/ui/setting/zoom/ZoomTickRing;
 
     const/4 p1, 0x0

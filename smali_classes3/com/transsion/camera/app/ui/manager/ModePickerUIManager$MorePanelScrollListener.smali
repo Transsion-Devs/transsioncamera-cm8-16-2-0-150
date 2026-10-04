@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)V
     .registers 2
 
-    .line 204
+    .line 180
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MorePanelScrollListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public notifyNeedSwitchMode()V
     .registers 2
 
-    .line 214
+    .line 190
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MorePanelScrollListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePickerUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/ModePickerUI;
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 215
+    .line 191
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MorePanelScrollListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePickerUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/ModePickerUI;
@@ -74,7 +74,7 @@
 .method public onMorePanelScroll()V
     .registers 2
 
-    .line 207
+    .line 183
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MorePanelScrollListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePickerUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/ModePickerUI;
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 208
+    .line 184
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager$MorePanelScrollListener;->this$0:Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;->-$$Nest$fgetmModePickerUI(Lcom/transsion/camera/app/ui/manager/ModePickerUIManager;)Lcom/transsion/camera/app/ui/ModePickerUI;

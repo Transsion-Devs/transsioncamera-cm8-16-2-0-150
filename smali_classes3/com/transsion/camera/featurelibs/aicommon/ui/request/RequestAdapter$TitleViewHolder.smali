@@ -22,10 +22,10 @@
 .method private constructor <init>(Landroid/view/View;)V
     .registers 3
 
-    .line 215
+    .line 214
     invoke-direct {p0, p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$BaseViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 216
+    .line 215
     sget v0, Lcom/transsion/camera/featurelibs/aicommon/R$id;->ai_fragment_list_item_title:I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -53,7 +53,7 @@
 .method bindView(Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/TitleItem;)V
     .registers 2
 
-    .line 221
+    .line 220
     iget-object p0, p0, Lcom/transsion/camera/featurelibs/aicommon/ui/request/RequestAdapter$TitleViewHolder;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Lcom/transsion/camera/featurelibs/aicommon/ui/request/item/TitleItem;->getTitle()I

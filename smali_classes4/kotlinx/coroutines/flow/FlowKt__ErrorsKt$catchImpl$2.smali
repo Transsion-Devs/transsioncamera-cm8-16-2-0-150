@@ -117,7 +117,7 @@
 
     move-result-object v1
 
-    .line 156
+    .line 152
     iget v2, v0, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$catchImpl$2$emit$1;->label:I
 
     const/4 v3, 0x1
@@ -154,7 +154,7 @@
     :cond_37
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 158
+    .line 154
     :try_start_3a
     iget-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$catchImpl$2;->$collector:Lkotlinx/coroutines/flow/FlowCollector;
 
@@ -172,19 +172,19 @@
 
     return-object v1
 
-    .line 163
+    .line 159
     :cond_47
     :goto_47
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 160
+    .line 156
     :goto_4a
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__ErrorsKt$catchImpl$2;->$fromDownstream:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iput-object p1, p0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 161
+    .line 157
     throw p1
 .end method

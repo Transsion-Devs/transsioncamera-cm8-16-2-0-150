@@ -9,97 +9,112 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .registers 10
 
-    .line 15
+    .line 16
     new-instance v0, Lcom/transsion/camera/app/common/relation/RelationGroup;
 
     invoke-direct {v0}, Lcom/transsion/camera/app/common/relation/RelationGroup;-><init>()V
 
     sput-object v0, Lcom/transsion/camera/feature/setting/livephoto/LivePhotoRestriction;->sRelationGroup:Lcom/transsion/camera/app/common/relation/RelationGroup;
 
-    .line 18
+    .line 19
     const-string v1, "key_live_photo"
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/relation/RelationGroup;->setHeaderKey(Ljava/lang/String;)V
 
-    .line 19
+    .line 20
     const-string v2, "key_super_definition"
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/common/relation/RelationGroup;->setBodyKeys(Ljava/lang/String;)V
 
-    .line 20
+    .line 21
     const-string v3, "key_ai_frame"
 
     invoke-virtual {v0, v3}, Lcom/transsion/camera/app/common/relation/RelationGroup;->setBodyKeys(Ljava/lang/String;)V
 
-    .line 21
+    .line 22
     const-string v4, "key_ai_zoom_sr"
 
     invoke-virtual {v0, v4}, Lcom/transsion/camera/app/common/relation/RelationGroup;->setBodyKeys(Ljava/lang/String;)V
 
-    .line 22
-    new-instance v5, Lcom/transsion/camera/app/common/relation/Relation$Builder;
-
-    const-string v6, "on"
-
-    invoke-direct {v5, v1, v6}, Lcom/transsion/camera/app/common/relation/Relation$Builder;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
     .line 23
-    const-string v6, "off"
+    const-string v5, "key_best_moment_detect"
 
-    const-string v7, "off,on"
-
-    invoke-virtual {v5, v2, v6, v7}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
-
-    move-result-object v5
+    invoke-virtual {v0, v5}, Lcom/transsion/camera/app/common/relation/RelationGroup;->setBodyKeys(Ljava/lang/String;)V
 
     .line 24
-    invoke-virtual {v5, v3, v6, v7}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
+    new-instance v6, Lcom/transsion/camera/app/common/relation/Relation$Builder;
 
-    move-result-object v5
+    const-string v7, "on"
+
+    invoke-direct {v6, v1, v7}, Lcom/transsion/camera/app/common/relation/Relation$Builder;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 25
-    invoke-virtual {v5, v4, v6, v7}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
+    const-string v8, "off"
 
-    move-result-object v5
+    const-string v9, "off,on"
+
+    invoke-virtual {v6, v2, v8, v9}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
+
+    move-result-object v6
 
     .line 26
-    invoke-virtual {v5}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->build()Lcom/transsion/camera/app/common/relation/Relation;
+    invoke-virtual {v6, v3, v8, v9}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
 
-    move-result-object v5
-
-    .line 22
-    invoke-virtual {v0, v5}, Lcom/transsion/camera/app/common/relation/RelationGroup;->addRelation(Lcom/transsion/camera/app/common/relation/Relation;)V
+    move-result-object v6
 
     .line 27
-    new-instance v5, Lcom/transsion/camera/app/common/relation/Relation$Builder;
+    invoke-virtual {v6, v4, v8, v9}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
 
-    invoke-direct {v5, v1, v6}, Lcom/transsion/camera/app/common/relation/Relation$Builder;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v6
+
+    .line 28
+    invoke-virtual {v6, v5, v8, v9}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
+
+    move-result-object v6
+
+    .line 29
+    invoke-virtual {v6}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->build()Lcom/transsion/camera/app/common/relation/Relation;
+
+    move-result-object v6
+
+    .line 24
+    invoke-virtual {v0, v6}, Lcom/transsion/camera/app/common/relation/RelationGroup;->addRelation(Lcom/transsion/camera/app/common/relation/Relation;)V
+
+    .line 30
+    new-instance v6, Lcom/transsion/camera/app/common/relation/Relation$Builder;
+
+    invoke-direct {v6, v1, v8}, Lcom/transsion/camera/app/common/relation/Relation$Builder;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v1, 0x0
 
-    .line 28
-    invoke-virtual {v5, v2, v1, v1}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
+    .line 31
+    invoke-virtual {v6, v2, v1, v1}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
 
     move-result-object v2
 
-    .line 29
+    .line 32
     invoke-virtual {v2, v3, v1, v1}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
 
     move-result-object v2
 
-    .line 30
+    .line 33
     invoke-virtual {v2, v4, v1, v1}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
 
     move-result-object v1
 
-    .line 31
+    .line 34
+    invoke-virtual {v1, v5, v7, v9}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/transsion/camera/app/common/relation/Relation$Builder;
+
+    move-result-object v1
+
+    .line 35
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/relation/Relation$Builder;->build()Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object v1
 
-    .line 27
+    .line 30
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/relation/RelationGroup;->addRelation(Lcom/transsion/camera/app/common/relation/Relation;)V
 
     return-void
@@ -108,7 +123,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 13
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -117,7 +132,7 @@
 .method static getLivePhotoRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
     .registers 1
 
-    .line 35
+    .line 39
     sget-object v0, Lcom/transsion/camera/feature/setting/livephoto/LivePhotoRestriction;->sRelationGroup:Lcom/transsion/camera/app/common/relation/RelationGroup;
 
     return-object v0

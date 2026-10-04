@@ -68,12 +68,12 @@
         }
     .end annotation
 
-    .line 27
+    .line 23
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__CollectionKt$toCollection$2;->$destination:Ljava/util/Collection;
 
     invoke-interface {p0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    .line 28
+    .line 24
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0

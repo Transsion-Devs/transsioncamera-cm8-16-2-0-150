@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/feature/setting/qrcode/QRcode;)V
     .registers 2
 
-    .line 311
+    .line 312
     iput-object p1, p0, Lcom/transsion/camera/feature/setting/qrcode/QRcode$1;->this$0:Lcom/transsion/camera/feature/setting/qrcode/QRcode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onPreviewStarted()V
     .registers 3
 
-    .line 321
+    .line 322
     invoke-static {}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -47,7 +47,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 322
+    .line 323
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/qrcode/QRcode$1;->this$0:Lcom/transsion/camera/feature/setting/qrcode/QRcode;
 
     invoke-virtual {v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getSettingDataCallback()Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;
@@ -56,7 +56,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$fputmDataCallback(Lcom/transsion/camera/feature/setting/qrcode/QRcode;Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
 
-    .line 323
+    .line 324
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/qrcode/QRcode$1;->this$0:Lcom/transsion/camera/feature/setting/qrcode/QRcode;
 
     invoke-static {v0}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$fgetmIsModeSupport(Lcom/transsion/camera/feature/setting/qrcode/QRcode;)Z
@@ -65,7 +65,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 324
+    .line 325
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/qrcode/QRcode$1;->this$0:Lcom/transsion/camera/feature/setting/qrcode/QRcode;
 
     # getter for: Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDeviceRequester:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingDeviceRequester;
@@ -88,7 +88,7 @@
 .method public onPreviewStopped()V
     .registers 3
 
-    .line 314
+    .line 315
     invoke-static {}, Lcom/transsion/camera/feature/setting/qrcode/QRcode;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -97,7 +97,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 315
+    .line 316
     iget-object p0, p0, Lcom/transsion/camera/feature/setting/qrcode/QRcode$1;->this$0:Lcom/transsion/camera/feature/setting/qrcode/QRcode;
 
     const/4 v0, 0x0

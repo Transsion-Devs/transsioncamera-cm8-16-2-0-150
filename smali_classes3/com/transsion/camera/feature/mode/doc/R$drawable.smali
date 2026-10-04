@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static ic_doc_correct:I = 0x7f080470
+.field public static ic_doc_correct:I = 0x7f08043b
 
 
 # direct methods

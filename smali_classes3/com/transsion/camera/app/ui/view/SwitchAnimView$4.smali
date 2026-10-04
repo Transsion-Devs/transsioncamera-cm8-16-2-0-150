@@ -33,14 +33,14 @@
 
     if-eqz p0, :cond_b
 
-    .line 448
+    .line 454
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v0
 
     if-nez v0, :cond_b
 
-    .line 449
+    .line 455
     invoke-virtual {p1, p0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     :cond_b
@@ -50,7 +50,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/view/SwitchAnimView;Landroid/os/Looper;)V
     .registers 3
 
-    .line 439
+    .line 445
     iput-object p1, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$4;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -61,7 +61,7 @@
 .method private synthetic lambda$handleMessage$1(Landroid/os/Message;Landroid/widget/ImageView;)V
     .registers 6
 
-    .line 444
+    .line 450
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$4;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$fgetmLock(Lcom/transsion/camera/app/ui/view/SwitchAnimView;)Ljava/lang/Object;
@@ -70,7 +70,7 @@
 
     monitor-enter v0
 
-    .line 445
+    .line 451
     :try_start_7
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -86,7 +86,7 @@
 
     if-nez v1, :cond_2a
 
-    .line 446
+    .line 452
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$4;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -97,7 +97,7 @@
 
     move-result-object p0
 
-    .line 447
+    .line 453
     new-instance p1, Lcom/transsion/camera/app/ui/view/SwitchAnimView$4$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0, p2}, Lcom/transsion/camera/app/ui/view/SwitchAnimView$4$$ExternalSyntheticLambda1;-><init>(Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V
@@ -111,7 +111,7 @@
 
     goto :goto_2c
 
-    .line 453
+    .line 459
     :cond_2a
     :goto_2a
     monitor-exit v0
@@ -131,14 +131,14 @@
 .method public handleMessage(Landroid/os/Message;)V
     .registers 4
 
-    .line 442
+    .line 448
     iget v0, p1, Landroid/os/Message;->what:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_17
 
-    .line 443
+    .line 449
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/SwitchAnimView$4;->this$0:Lcom/transsion/camera/app/ui/view/SwitchAnimView;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/view/SwitchAnimView;->-$$Nest$mgetCurrentImageView(Lcom/transsion/camera/app/ui/view/SwitchAnimView;)Landroid/widget/ImageView;

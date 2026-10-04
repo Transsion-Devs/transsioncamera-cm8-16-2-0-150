@@ -52,6 +52,15 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$CZNMi2TEr3aDWA0UuqHFsTrP67Q(Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;)V
+    .registers 1
+
+    .line 0
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->ringScreenLightUpdateUI()V
+
+    return-void
+.end method
+
 .method static bridge synthetic -$$Nest$fgetmHandler(Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;)Landroid/os/Handler;
     .registers 1
 
@@ -184,7 +193,7 @@
 .method private doSetPreviewSize(II)V
     .registers 7
 
-    .line 265
+    .line 267
     sget-object v0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -219,7 +228,7 @@
 
     div-double/2addr v0, p1
 
-    .line 267
+    .line 269
     iget-wide p1, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreviewAspectRatio:D
 
     invoke-static {v0, v1, p1, p2}, Lcom/transsion/camera/utils/CameraUtil;->isSameAspectRatio(DD)Z
@@ -228,24 +237,24 @@
 
     if-nez p1, :cond_3e
 
-    .line 268
+    .line 270
     iput-wide v0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreviewAspectRatio:D
 
-    .line 269
+    .line 271
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->updateScreenFlashUILayout()V
 
-    .line 270
+    .line 272
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->setDisplaySquareAlpha()V
 
-    .line 271
+    .line 273
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->updateBottomCoverView()V
 
-    .line 272
+    .line 274
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreviewScreenSupplyView:Lcom/transsion/camera/app/ui/view/ScreenSupplyView;
 
     if-eqz p0, :cond_3e
 
-    .line 273
+    .line 275
     invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->updatePreviewRatio(D)V
 
     :cond_3e
@@ -255,7 +264,7 @@
 .method private processScreenFlashEnterOut(Z)V
     .registers 5
 
-    .line 186
+    .line 188
     sget-object v0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -274,37 +283,37 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 187
+    .line 189
     iget-object v1, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreviewScreenSupplyView:Lcom/transsion/camera/app/ui/view/ScreenSupplyView;
 
     if-nez v1, :cond_20
 
-    .line 188
+    .line 190
     const-string p0, "mPreviewScreenSupplyView is null"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 191
+    .line 193
     :cond_20
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mScreenFlashEnter:Z
 
     if-eq v0, p1, :cond_33
 
-    .line 192
+    .line 194
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mScreenFlashEnter:Z
 
     if-eqz p1, :cond_2e
 
-    .line 195
+    .line 197
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mApertureView:Lcom/transsion/camera/app/ui/aperture/ApertureView;
 
     invoke-virtual {v1, v1, p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->fadeIn(Landroid/view/View;Landroid/view/View;)V
 
     return-void
 
-    .line 197
+    .line 199
     :cond_2e
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mApertureView:Lcom/transsion/camera/app/ui/aperture/ApertureView;
 
@@ -317,12 +326,12 @@
 .method private ringScreenLightUpdateUI()V
     .registers 2
 
-    .line 180
+    .line 182
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mOldValue:Z
 
     invoke-direct {p0, v0}, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->processScreenFlashEnterOut(Z)V
 
-    .line 182
+    .line 184
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->updateBottomCoverView()V
 
     return-void
@@ -331,12 +340,12 @@
 .method private updateBottomCoverView()V
     .registers 3
 
-    .line 218
+    .line 220
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mBottomCoverView:Landroid/view/View;
 
     if-nez v0, :cond_c
 
-    .line 219
+    .line 221
     sget-object p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "mBottomCoverView is null"
@@ -345,7 +354,7 @@
 
     return-void
 
-    .line 222
+    .line 224
     :cond_c
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mOldValue:Z
 
@@ -355,7 +364,7 @@
 
     if-eqz v1, :cond_1a
 
-    .line 223
+    .line 225
     iget p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mScreenSupplyColor:I
 
     invoke-virtual {v0, p0}, Landroid/view/View;->setBackgroundColor(I)V
@@ -365,7 +374,7 @@
     :cond_1a
     const/high16 p0, -0x1000000
 
-    .line 225
+    .line 227
     invoke-virtual {v0, p0}, Landroid/view/View;->setBackgroundColor(I)V
 
     return-void
@@ -374,7 +383,7 @@
 .method private updateScreenFlashUILayout()V
     .registers 10
 
-    .line 279
+    .line 281
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreviewUIRootView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -385,7 +394,7 @@
 
     move-result-object v0
 
-    .line 280
+    .line 282
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
 
     move-result v1
@@ -398,7 +407,7 @@
 
     move-result v5
 
-    .line 281
+    .line 283
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
 
     move-result v1
@@ -413,7 +422,7 @@
 
     int-to-double v0, v0
 
-    .line 283
+    .line 285
     iget-wide v3, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreviewAspectRatio:D
 
     mul-double v6, v0, v3
@@ -422,7 +431,7 @@
 
     iput v2, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mTargetHeight:I
 
-    .line 285
+    .line 287
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/manager/IScreenManager;->getTopBarHeight()I
@@ -431,21 +440,21 @@
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
-    .line 286
+    .line 288
     invoke-interface {v2}, Lcom/transsion/camera/app/common/manager/IScreenManager;->getModePlusBottomBarHeight()I
 
     move-result v7
 
     iget v8, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mTargetHeight:I
 
-    .line 285
+    .line 287
     invoke-static/range {v3 .. v8}, Lcom/transsion/camera/utils/CameraUtil;->getTopMargin(DIIII)I
 
     move-result v2
 
     iput v2, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mMarginTop:I
 
-    .line 287
+    .line 289
     iget v3, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mTargetHeight:I
 
     sub-int v3, v5, v3
@@ -454,7 +463,7 @@
 
     iput v3, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mMarginBottom:I
 
-    .line 288
+    .line 290
     iget-object v2, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
     invoke-interface {v2}, Lcom/transsion/camera/app/common/manager/IScreenManager;->getTopBarHeight()I
@@ -475,14 +484,14 @@
 
     iget-object v0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
-    .line 289
+    .line 291
     invoke-interface {v0}, Lcom/transsion/camera/app/common/manager/IScreenManager;->getTopBarHeight()I
 
     move-result v0
 
     sub-int/2addr v5, v0
 
-    .line 288
+    .line 290
     invoke-direct {p0, v2, v5}, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->updateTranslucentRectLayout(II)V
 
     return-void
@@ -491,7 +500,7 @@
 .method private updateSize()V
     .registers 3
 
-    .line 260
+    .line 262
     iget v0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreWidth:I
 
     iget v1, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreHeight:I
@@ -504,12 +513,12 @@
 .method private updateTopPaddingView()V
     .registers 4
 
-    .line 203
+    .line 205
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mApertureView:Lcom/transsion/camera/app/ui/aperture/ApertureView;
 
     if-nez v0, :cond_c
 
-    .line 204
+    .line 206
     sget-object p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "mTopPaddingView is null"
@@ -518,7 +527,7 @@
 
     return-void
 
-    .line 207
+    .line 209
     :cond_c
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mOldValue:Z
 
@@ -526,21 +535,21 @@
 
     if-eqz v1, :cond_1a
 
-    .line 209
+    .line 211
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 210
+    .line 212
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mApertureView:Lcom/transsion/camera/app/ui/aperture/ApertureView;
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 
-    .line 212
+    .line 214
     :cond_1a
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 213
+    .line 215
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mApertureView:Lcom/transsion/camera/app/ui/aperture/ApertureView;
 
     const/4 v0, 0x4
@@ -553,7 +562,7 @@
 .method private updateTranslucentRectLayout(II)V
     .registers 6
 
-    .line 293
+    .line 295
     sget-object v0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -578,15 +587,15 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 294
+    .line 296
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreviewScreenSupplyView:Lcom/transsion/camera/app/ui/view/ScreenSupplyView;
 
     if-eqz v0, :cond_26
 
-    .line 295
+    .line 297
     invoke-virtual {v0, p1, p2}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->updateOffset(II)V
 
-    .line 298
+    .line 300
     :cond_26
     iget-object p2, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mViewRoot:Landroid/view/ViewGroup;
 
@@ -598,24 +607,24 @@
 
     move-result-object p2
 
-    .line 299
+    .line 301
     invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
 
     move-result p2
 
-    .line 301
+    .line 303
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mApertureView:Lcom/transsion/camera/app/ui/aperture/ApertureView;
 
     if-eqz v0, :cond_50
 
-    .line 302
+    .line 304
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 303
+    .line 305
     iget-object v1, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mScreenManager:Lcom/transsion/camera/app/common/manager/IScreenManager;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/manager/IScreenManager;->getOriginTopBarHeight()I
@@ -628,10 +637,10 @@
 
     const/4 p1, 0x0
 
-    .line 304
+    .line 306
     invoke-virtual {v0, p1, p1, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
-    .line 305
+    .line 307
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mApertureView:Lcom/transsion/camera/app/ui/aperture/ApertureView;
 
     invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -645,15 +654,15 @@
 .method public onAbsolutePreviewRectChanged(Landroid/graphics/Rect;)V
     .registers 2
 
-    .line 161
+    .line 163
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->onAbsolutePreviewRectChanged(Landroid/graphics/Rect;)V
 
-    .line 162
+    .line 164
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreviewScreenSupplyView:Lcom/transsion/camera/app/ui/view/ScreenSupplyView;
 
     if-eqz p0, :cond_a
 
-    .line 163
+    .line 165
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->onAbsolutePreviewRectChanged(Landroid/graphics/Rect;)V
 
     :cond_a
@@ -781,6 +790,26 @@
     invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/ModuleTransferManager;->registerTransferListener(Lcom/transsion/camera/app/common/IModuleTransfer;)V
 
     .line 119
+    invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getRingScreenLightState()Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mOldValue:Z
+
+    .line 120
+    iget-object p1, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mHandler:Landroid/os/Handler;
+
+    new-instance v0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager$$ExternalSyntheticLambda0;
+
+    invoke-direct {v0, p0}, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;)V
+
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 121
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mViewRoot:Landroid/view/ViewGroup;
 
     return-object p0
@@ -789,15 +818,15 @@
 .method public onOrientationChanged(IZ)V
     .registers 3
 
-    .line 141
+    .line 143
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->onOrientationChanged(IZ)V
 
-    .line 142
+    .line 144
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreviewScreenSupplyView:Lcom/transsion/camera/app/ui/view/ScreenSupplyView;
 
     if-eqz p0, :cond_a
 
-    .line 143
+    .line 145
     invoke-virtual {p0, p1, p2}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->onOrientationChanged(IZ)V
 
     :cond_a
@@ -807,15 +836,15 @@
 .method public onRelativePreviewRectChanged(Landroid/graphics/Rect;)V
     .registers 2
 
-    .line 169
+    .line 171
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->onRelativePreviewRectChanged(Landroid/graphics/Rect;)V
 
-    .line 170
+    .line 172
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreviewScreenSupplyView:Lcom/transsion/camera/app/ui/view/ScreenSupplyView;
 
     if-eqz p0, :cond_a
 
-    .line 171
+    .line 173
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->onRelativePreviewRectChanged(Landroid/graphics/Rect;)V
 
     :cond_a
@@ -831,12 +860,12 @@
 .method public setDisplaySquareAlpha()V
     .registers 3
 
-    .line 230
+    .line 232
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreviewScreenSupplyView:Lcom/transsion/camera/app/ui/view/ScreenSupplyView;
 
     if-nez v0, :cond_c
 
-    .line 231
+    .line 233
     sget-object p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v0, "mPreviewScreenSupplyView is null"
@@ -845,7 +874,7 @@
 
     return-void
 
-    .line 234
+    .line 236
     :cond_c
     iget-boolean v1, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mOldValue:Z
 
@@ -860,7 +889,7 @@
     :cond_15
     const/4 p0, 0x0
 
-    .line 238
+    .line 240
     invoke-virtual {v0, p0}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -869,7 +898,7 @@
     :goto_1a
     const/4 p0, 0x4
 
-    .line 235
+    .line 237
     invoke-virtual {v0, p0}, Landroid/view/View;->setVisibility(I)V
 
     return-void
@@ -878,15 +907,15 @@
 .method public setEnable(Z)V
     .registers 2
 
-    .line 133
+    .line 135
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->setEnable(Z)V
 
-    .line 134
+    .line 136
     iget-object p0, p0, Lcom/transsion/camera/app/common/manager/AbstractViewManager;->mRootView:Landroid/view/View;
 
     if-eqz p0, :cond_a
 
-    .line 135
+    .line 137
     invoke-virtual {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
     :cond_a
@@ -896,7 +925,7 @@
 .method public setPreviewSize(II)V
     .registers 6
 
-    .line 245
+    .line 247
     sget-object v0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -929,20 +958,20 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 246
+    .line 248
     iput p1, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreWidth:I
 
-    .line 247
+    .line 249
     iput p2, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mPreHeight:I
 
-    .line 248
+    .line 250
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mViewRoot:Landroid/view/ViewGroup;
 
     if-nez v0, :cond_31
 
     return-void
 
-    .line 251
+    .line 253
     :cond_31
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
@@ -950,24 +979,24 @@
 
     invoke-virtual {v0, p1}, Lcom/transsion/camera/app/common/ModuleTransferManager;->setCurrentW(I)V
 
-    .line 252
+    .line 254
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object p1
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/ModuleTransferManager;->setCurrentH(I)V
 
-    .line 254
+    .line 256
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object p1
 
     const/16 p2, 0x3e8
 
-    .line 255
+    .line 257
     iput p2, p1, Landroid/os/Message;->what:I
 
-    .line 256
+    .line 258
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RingScreenLightUIManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p0, p1}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
@@ -978,7 +1007,7 @@
 .method public unInit()V
     .registers 2
 
-    .line 128
+    .line 130
     invoke-static {}, Lcom/transsion/camera/app/common/ModuleTransferManager;->getTransferManager()Lcom/transsion/camera/app/common/ModuleTransferManager;
 
     move-result-object v0
@@ -993,7 +1022,7 @@
 .method public updateCurrentCamera(Ljava/lang/String;)V
     .registers 2
 
-    .line 176
+    .line 178
     invoke-static {p1}, Lcom/transsion/camera/adapter/CameraInfoUtil;->isCameraFacingFront(Ljava/lang/String;)Z
 
     move-result p1

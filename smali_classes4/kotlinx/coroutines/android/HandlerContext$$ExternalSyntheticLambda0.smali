@@ -36,7 +36,7 @@
 
     iget-object p0, p0, Lkotlinx/coroutines/android/HandlerContext$$ExternalSyntheticLambda0;->f$1:Ljava/lang/Runnable;
 
-    invoke-static {v0, p0}, Lkotlinx/coroutines/android/HandlerContext;->$r8$lambda$AXU9Ipeju1KWZ01G6KHwtONG4Wk(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
+    invoke-static {v0, p0}, Lkotlinx/coroutines/android/HandlerContext;->$r8$lambda$jZSHGbAeTJnvHXIdcC6c6XK5CWs(Lkotlinx/coroutines/android/HandlerContext;Ljava/lang/Runnable;)V
 
     return-void
 .end method

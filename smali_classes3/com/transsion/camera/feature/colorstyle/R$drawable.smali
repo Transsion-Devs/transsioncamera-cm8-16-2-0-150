@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static ic_color_style:I = 0x7f080455
+.field public static ic_color_style:I = 0x7f080420
 
-.field public static ic_color_style_selected:I = 0x7f080456
+.field public static ic_color_style_selected:I = 0x7f080421
 
-.field public static ic_split:I = 0x7f08073c
+.field public static ic_split:I = 0x7f0806cc
 
 
 # direct methods

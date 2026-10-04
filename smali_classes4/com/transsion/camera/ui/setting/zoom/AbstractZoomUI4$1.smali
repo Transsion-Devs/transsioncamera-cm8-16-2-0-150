@@ -37,14 +37,14 @@
 
 
 # virtual methods
-.method public onShoulderButtonZoomSwipeEnd()V
-    .registers 1
+.method public onContinuousZoomSwiping(ZI)V
+    .registers 3
 
     return-void
 .end method
 
-.method public onShoulderButtonZoomSwiping(ZI)V
-    .registers 3
+.method public onCriticalZoomSwitchSwiping(Z)V
+    .registers 2
 
     return-void
 .end method
@@ -1913,5 +1913,11 @@
     invoke-interface {p0, v4, v2, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
     :cond_1e7
+    return-void
+.end method
+
+.method public onZoomSwipeEnd()V
+    .registers 1
+
     return-void
 .end method

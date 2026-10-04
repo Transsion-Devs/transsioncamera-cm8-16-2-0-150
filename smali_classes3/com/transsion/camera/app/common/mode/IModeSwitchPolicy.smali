@@ -7,9 +7,6 @@
 .method public abstract getBackModes()[Ljava/lang/String;
 .end method
 
-.method public abstract getDataStoreModeNames(Ljava/lang/String;)[Ljava/lang/String;
-.end method
-
 .method public abstract getDefaultMode(Ljava/lang/String;)Ljava/lang/String;
 .end method
 
@@ -22,9 +19,6 @@
 .method public abstract getRestoreModeByFacing(I)Ljava/lang/String;
 .end method
 
-.method public abstract getSmartModeNames(Ljava/lang/String;)[Ljava/lang/String;
-.end method
-
 .method public abstract getSpecifyMode()Ljava/lang/String;
 .end method
 
@@ -34,17 +28,8 @@
 .method public abstract init()V
 .end method
 
-.method public abstract isSmartModeOrder()Z
-.end method
-
-.method public abstract saveARCorePosition([Ljava/lang/String;[Ljava/lang/String;)V
-.end method
-
 .method public abstract setSourceIntent(Landroid/content/Intent;)V
 .end method
 
 .method public abstract updateMetaInfo(Landroid/os/Bundle;)V
-.end method
-
-.method public abstract updateSmartModeNames()V
 .end method

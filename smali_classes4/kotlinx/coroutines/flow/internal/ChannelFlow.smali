@@ -34,16 +34,16 @@
 .method public constructor <init>(Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)V
     .registers 4
 
-    .line 45
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
+    .line 44
     iput-object p1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->context:Lkotlin/coroutines/CoroutineContext;
 
-    .line 50
+    .line 46
     iput p2, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->capacity:I
 
-    .line 52
+    .line 48
     iput-object p3, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->onBufferOverflow:Lkotlinx/coroutines/channels/BufferOverflow;
 
     return-void
@@ -68,7 +68,7 @@
         }
     .end annotation
 
-    .line 122
+    .line 118
     new-instance v0, Lkotlinx/coroutines/flow/internal/ChannelFlow$collect$2;
 
     const/4 v1, 0x0
@@ -183,21 +183,21 @@
         }
     .end annotation
 
-    .line 76
+    .line 72
     iget-object v0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->context:Lkotlin/coroutines/CoroutineContext;
 
     invoke-interface {p1, v0}, Lkotlin/coroutines/CoroutineContext;->plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object p1
 
-    .line 79
+    .line 75
     sget-object v0, Lkotlinx/coroutines/channels/BufferOverflow;->SUSPEND:Lkotlinx/coroutines/channels/BufferOverflow;
 
     if-eq p3, v0, :cond_b
 
     goto :goto_25
 
-    .line 86
+    .line 82
     :cond_b
     iget p3, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->capacity:I
 
@@ -237,11 +237,11 @@
     :cond_20
     const p2, 0x7fffffff
 
-    .line 99
+    .line 95
     :goto_23
     iget-object p3, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->onBufferOverflow:Lkotlinx/coroutines/channels/BufferOverflow;
 
-    .line 101
+    .line 97
     :goto_25
     iget-object v0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->context:Lkotlin/coroutines/CoroutineContext;
 
@@ -261,7 +261,7 @@
 
     return-object p0
 
-    .line 103
+    .line 99
     :cond_36
     invoke-virtual {p0, p1, p2, p3}, Lkotlinx/coroutines/flow/internal/ChannelFlow;->create(Lkotlin/coroutines/CoroutineContext;ILkotlinx/coroutines/channels/BufferOverflow;)Lkotlinx/coroutines/flow/internal/ChannelFlow;
 
@@ -279,7 +279,7 @@
         }
     .end annotation
 
-    .line 60
+    .line 56
     new-instance v0, Lkotlinx/coroutines/flow/internal/ChannelFlow$collectToFun$1;
 
     const/4 v1, 0x0
@@ -292,7 +292,7 @@
 .method public final getProduceCapacity$kotlinx_coroutines_core()I
     .registers 2
 
-    .line 63
+    .line 59
     iget p0, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->capacity:I
 
     const/4 v0, -0x3
@@ -317,7 +317,7 @@
         }
     .end annotation
 
-    .line 119
+    .line 115
     iget-object v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->context:Lkotlin/coroutines/CoroutineContext;
 
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/internal/ChannelFlow;->getProduceCapacity$kotlinx_coroutines_core()I
@@ -350,14 +350,14 @@
 .method public toString()Ljava/lang/String;
     .registers 11
 
-    .line 130
+    .line 126
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x4
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 131
+    .line 127
     invoke-virtual {p0}, Lkotlinx/coroutines/flow/internal/ChannelFlow;->additionalToStringProps()Ljava/lang/String;
 
     move-result-object v1
@@ -366,7 +366,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 132
+    .line 128
     :cond_f
     iget-object v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->context:Lkotlin/coroutines/CoroutineContext;
 
@@ -392,7 +392,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 133
+    .line 129
     :cond_2b
     iget v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->capacity:I
 
@@ -418,7 +418,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 134
+    .line 130
     :cond_46
     iget-object v1, p0, Lkotlinx/coroutines/flow/internal/ChannelFlow;->onBufferOverflow:Lkotlinx/coroutines/channels/BufferOverflow;
 
@@ -444,7 +444,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 135
+    .line 131
     :cond_62
     new-instance v9, Ljava/lang/StringBuilder;
 

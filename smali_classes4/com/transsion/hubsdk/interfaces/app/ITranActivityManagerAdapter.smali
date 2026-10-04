@@ -4,6 +4,9 @@
 
 
 # virtual methods
+.method public abstract applyToAppLockAsUser(ILandroid/os/Bundle;I)Landroid/os/Bundle;
+.end method
+
 .method public abstract backgroundAllowlistUid(I)V
 .end method
 
@@ -25,6 +28,9 @@
             ">;)V"
         }
     .end annotation
+.end method
+
+.method public abstract doClean(ZZZZ[I[Ljava/lang/String;Landroid/os/Bundle;)Z
 .end method
 
 .method public abstract enableHiber(Z)V
@@ -248,6 +254,9 @@
 .method public abstract registerTaskStackListener(Lcom/transsion/hubsdk/api/app/TranTaskStackListener;)V
 .end method
 
+.method public abstract registerTranNecessityServices(Lcom/transsion/hubsdk/api/app/ITranNecessityWindowService;)V
+.end method
+
 .method public abstract registerUserSwitchObserver(Lcom/transsion/hubsdk/api/app/TranUserSwitchObserver;Ljava/lang/String;)V
 .end method
 
@@ -348,6 +357,9 @@
 .end method
 
 .method public abstract stopAppForUser(Ljava/lang/String;I)V
+.end method
+
+.method public abstract swipeUpClean(Ljava/lang/String;I)Z
 .end method
 
 .method public abstract switchMemFusion(Z)V

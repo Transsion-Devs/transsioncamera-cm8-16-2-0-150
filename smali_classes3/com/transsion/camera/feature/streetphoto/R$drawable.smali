@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static ic_streetphoto:I = 0x7f080742
+.field public static ic_streetphoto:I = 0x7f0806d2
 
 
 # direct methods

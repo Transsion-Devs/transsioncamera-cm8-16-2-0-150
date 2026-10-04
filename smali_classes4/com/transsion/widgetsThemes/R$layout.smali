@@ -3,4 +3,4 @@
 
 
 # static fields
-.field public static os_footer_menu_2:I = 0x7f0e017e
+.field public static os_footer_menu_2:I = 0x7f0e0179

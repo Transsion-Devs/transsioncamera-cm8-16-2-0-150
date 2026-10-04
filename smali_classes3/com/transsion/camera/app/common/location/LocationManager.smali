@@ -12,6 +12,8 @@
 
 .field private mKeys:Ljava/util/List;
 
+.field private mLastStartTimeMs:J
+
 .field private mLocationProvider:Lcom/transsion/camera/app/common/location/LocationProvider;
 
 .field mLocationUpdateListener:Lcom/transsion/camera/app/common/location/LocationProvider$ILocationUpdateListener;
@@ -30,7 +32,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 17
+    .line 19
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "LocationManager"
@@ -45,24 +47,29 @@
 .method public constructor <init>(Landroid/app/Activity;)V
     .registers 4
 
-    .line 27
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
+    .line 24
     new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mKeys:Ljava/util/List;
 
-    .line 70
+    const-wide/16 v0, 0x0
+
+    .line 25
+    iput-wide v0, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mLastStartTimeMs:J
+
+    .line 79
     new-instance v0, Lcom/transsion/camera/app/common/location/LocationManager$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lcom/transsion/camera/app/common/location/LocationManager$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/common/location/LocationManager;)V
 
     iput-object v0, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mLocationUpdateListener:Lcom/transsion/camera/app/common/location/LocationProvider$ILocationUpdateListener;
 
-    .line 28
+    .line 32
     new-instance v0, Lcom/transsion/camera/app/common/location/LocationProvider;
 
     iget-object v1, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mLocationUpdateListener:Lcom/transsion/camera/app/common/location/LocationProvider$ILocationUpdateListener;
@@ -77,10 +84,10 @@
 .method private synthetic lambda$new$0(Landroid/location/Location;)V
     .registers 5
 
-    .line 71
+    .line 80
     iput-object p1, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mCurrentLocation:Landroid/location/Location;
 
-    .line 72
+    .line 81
     sget-object v0, Lcom/transsion/camera/app/common/location/LocationManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -99,7 +106,11 @@
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Landroid/location/Location;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -115,7 +126,7 @@
 .method public clearAllLocationRequests(Ljava/lang/String;)V
     .registers 5
 
-    .line 84
+    .line 93
     sget-object v0, Lcom/transsion/camera/app/common/location/LocationManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -154,12 +165,17 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 85
+    .line 94
     iget-object p1, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mKeys:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->clear()V
 
-    .line 86
+    const-wide/16 v0, 0x0
+
+    .line 95
+    iput-wide v0, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mLastStartTimeMs:J
+
+    .line 96
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/location/LocationManager;->stopReceivingLocation()V
 
     return-void
@@ -168,7 +184,7 @@
 .method public getCurrentLocation(Ljava/lang/String;)Landroid/location/Location;
     .registers 5
 
-    .line 57
+    .line 66
     sget-object v0, Lcom/transsion/camera/app/common/location/LocationManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -187,7 +203,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 58
+    .line 67
     iget-object v1, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mKeys:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -196,12 +212,12 @@
 
     if-eqz p1, :cond_21
 
-    .line 59
+    .line 68
     iget-object p0, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mCurrentLocation:Landroid/location/Location;
 
     return-object p0
 
-    .line 61
+    .line 70
     :cond_21
     const-string p0, "Location not received yet or this key is switched off. "
 
@@ -215,7 +231,7 @@
 .method public getLastKnownLocation()Landroid/location/Location;
     .registers 1
 
-    .line 66
+    .line 75
     iget-object p0, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mLocationProvider:Lcom/transsion/camera/app/common/location/LocationProvider;
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/location/LocationProvider;->getLastKnownLocation()Landroid/location/Location;
@@ -226,9 +242,9 @@
 .end method
 
 .method public recordLocation(ZLjava/lang/String;)V
-    .registers 6
+    .registers 7
 
-    .line 37
+    .line 41
     sget-object v0, Lcom/transsion/camera/app/common/location/LocationManager;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -273,53 +289,83 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_49
+    const-wide/16 v0, 0x0
 
-    .line 39
-    invoke-virtual {p0}, Lcom/transsion/camera/app/common/location/LocationManager;->startReceivingLocation()V
+    if-eqz p1, :cond_5f
 
-    .line 40
+    .line 43
     iget-object p1, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mKeys:Ljava/util/List;
 
     invoke-interface {p1, p2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_59
+    if-nez p1, :cond_47
 
-    .line 41
-    iget-object p0, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mKeys:Ljava/util/List;
+    .line 44
+    iget-object p1, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mKeys:Ljava/util/List;
 
-    invoke-interface {p0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 46
+    :cond_47
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide p1
+
+    .line 47
+    iget-wide v2, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mLastStartTimeMs:J
+
+    cmp-long v0, v2, v0
+
+    if-eqz v0, :cond_59
+
+    sub-long v0, p1, v2
+
+    const-wide/16 v2, 0x3e8
+
+    cmp-long v0, v0, v2
+
+    if-ltz v0, :cond_71
+
+    .line 48
+    :cond_59
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/location/LocationManager;->startReceivingLocation()V
+
+    .line 49
+    iput-wide p1, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mLastStartTimeMs:J
 
     return-void
 
-    .line 44
-    :cond_49
+    .line 52
+    :cond_5f
     iget-object p1, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mKeys:Ljava/util/List;
 
     invoke-interface {p1, p2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 45
+    .line 53
     iget-object p1, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mKeys:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result p1
 
-    if-eqz p1, :cond_59
+    if-eqz p1, :cond_71
 
-    .line 46
+    .line 54
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/location/LocationManager;->stopReceivingLocation()V
 
-    :cond_59
+    .line 55
+    iput-wide v0, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mLastStartTimeMs:J
+
+    :cond_71
     return-void
 .end method
 
 .method public startReceivingLocation()V
     .registers 2
 
-    .line 76
+    .line 85
     iget-object p0, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mLocationProvider:Lcom/transsion/camera/app/common/location/LocationProvider;
 
     const/4 v0, 0x1
@@ -332,7 +378,7 @@
 .method public stopReceivingLocation()V
     .registers 2
 
-    .line 80
+    .line 89
     iget-object p0, p0, Lcom/transsion/camera/app/common/location/LocationManager;->mLocationProvider:Lcom/transsion/camera/app/common/location/LocationProvider;
 
     const/4 v0, 0x0

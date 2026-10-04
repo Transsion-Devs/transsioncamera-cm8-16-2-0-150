@@ -32,12 +32,12 @@
 
     iput-object p1, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->this$0:Lkotlin/sequences/GeneratorSequence;
 
-    .line 586
+    .line 637
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, -0x2
 
-    .line 588
+    .line 639
     iput p1, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     return-void
@@ -46,7 +46,7 @@
 .method private final calcNext()V
     .registers 3
 
-    .line 591
+    .line 642
     iget v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     const/4 v1, -0x2
@@ -94,7 +94,7 @@
     :cond_25
     const/4 v0, 0x1
 
-    .line 592
+    .line 643
     :goto_26
     iput v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
@@ -106,15 +106,15 @@
 .method public hasNext()Z
     .registers 2
 
-    .line 608
+    .line 659
     iget v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     if-gez v0, :cond_7
 
-    .line 609
+    .line 660
     invoke-direct {p0}, Lkotlin/sequences/GeneratorSequence$iterator$1;->calcNext()V
 
-    .line 610
+    .line 661
     :cond_7
     iget p0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
@@ -133,21 +133,21 @@
 .method public next()Ljava/lang/Object;
     .registers 3
 
-    .line 596
+    .line 647
     iget v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     if-gez v0, :cond_7
 
-    .line 597
+    .line 648
     invoke-direct {p0}, Lkotlin/sequences/GeneratorSequence$iterator$1;->calcNext()V
 
-    .line 599
+    .line 650
     :cond_7
     iget v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     if-eqz v0, :cond_16
 
-    .line 601
+    .line 652
     iget-object v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
     const-string v1, "null cannot be cast to non-null type T of kotlin.sequences.GeneratorSequence"
@@ -156,12 +156,12 @@
 
     const/4 v1, -0x1
 
-    .line 603
+    .line 654
     iput v1, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     return-object v0
 
-    .line 600
+    .line 651
     :cond_16
     new-instance p0, Ljava/util/NoSuchElementException;
 

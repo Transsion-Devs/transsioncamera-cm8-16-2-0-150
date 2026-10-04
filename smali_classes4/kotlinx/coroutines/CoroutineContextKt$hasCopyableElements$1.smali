@@ -58,7 +58,7 @@
 
     if-nez p1, :cond_9
 
-    .line 40
+    .line 36
     instance-of p0, p2, Lkotlinx/coroutines/CopyableThreadContextElement;
 
     if-eqz p0, :cond_7
@@ -85,7 +85,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 40
+    .line 36
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z

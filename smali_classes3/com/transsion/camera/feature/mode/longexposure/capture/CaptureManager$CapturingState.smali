@@ -630,7 +630,7 @@
 
     move-result-object v0
 
-    const-string v1, "this should not happen!!!"
+    const-string/jumbo v1, "this should not happen!!!"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 

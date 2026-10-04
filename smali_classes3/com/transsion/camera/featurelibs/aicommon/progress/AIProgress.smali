@@ -646,7 +646,7 @@
     :try_start_1
     sget-object v0, Lcom/transsion/camera/featurelibs/aicommon/progress/AIProgress;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    const-string v1, "terminateProgress"
+    const-string/jumbo v1, "terminateProgress"
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
@@ -661,21 +661,21 @@
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
-    :try_end_11
-    .catchall {:try_start_1 .. :try_end_11} :catchall_13
+    :try_end_12
+    .catchall {:try_start_1 .. :try_end_12} :catchall_14
 
     .line 165
     monitor-exit p0
 
     return-void
 
-    :catchall_13
+    :catchall_14
     move-exception v0
 
-    :try_start_14
+    :try_start_15
     monitor-exit p0
-    :try_end_15
-    .catchall {:try_start_14 .. :try_end_15} :catchall_13
+    :try_end_16
+    .catchall {:try_start_15 .. :try_end_16} :catchall_14
 
     throw v0
 .end method

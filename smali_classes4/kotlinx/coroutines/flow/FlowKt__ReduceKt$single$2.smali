@@ -70,7 +70,7 @@
         }
     .end annotation
 
-    .line 58
+    .line 54
     iget-object p0, p0, Lkotlinx/coroutines/flow/FlowKt__ReduceKt$single$2;->$result:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object p2, p0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
@@ -79,15 +79,15 @@
 
     if-ne p2, v0, :cond_d
 
-    .line 59
+    .line 55
     iput-object p1, p0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 60
+    .line 56
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 58
+    .line 54
     :cond_d
     new-instance p0, Ljava/lang/IllegalArgumentException;
 

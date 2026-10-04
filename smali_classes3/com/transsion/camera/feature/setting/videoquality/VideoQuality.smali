@@ -643,12 +643,12 @@
 .end method
 
 .method private mergeFaceBeautyRelation(Lcom/transsion/camera/app/common/relation/Relation;)V
-    .registers 3
+    .registers 4
 
     .line 311
     iget-object v0, p0, Lcom/transsion/camera/feature/setting/videoquality/VideoQuality;->mFaceBeautySupportVideoQuality:[Ljava/lang/String;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_27
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -656,22 +656,37 @@
 
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
 
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_27
+
+    if-eqz p1, :cond_27
+
+    .line 312
+    const-string v0, "key_super_anti_video"
+
+    invoke-virtual {p0, v0}, Lcom/transsion/camera/app/common/setting/SettingBase;->queryValue(Ljava/lang/String;)Ljava/lang/String;
+
     move-result-object p0
 
-    invoke-interface {v0, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    const-string v0, "super"
+
+    invoke-static {v0, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_19
-
-    if-eqz p1, :cond_19
+    if-nez p0, :cond_27
 
     .line 313
     const-string p0, "key_video_facebeauty"
 
     invoke-virtual {p1, p0}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
 
-    :cond_19
+    :cond_27
     return-void
 .end method
 
@@ -1108,24 +1123,9 @@
 .end method
 
 .method private storeValue(Ljava/lang/String;)V
-    .registers 5
+    .registers 6
 
     .line 502
-    invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    .line 503
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
-
-    .line 505
-    :cond_d
     iget-object v0, p0, Lcom/transsion/camera/app/common/setting/SettingBase;->mSettingDataStore:Lcom/transsion/camera/app/common/storage/DataStore;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/videoquality/VideoQuality;->getKey()Ljava/lang/String;
@@ -1134,24 +1134,39 @@
 
     iget-boolean v2, p0, Lcom/transsion/camera/feature/setting/videoquality/VideoQuality;->mNeedNewVideoMemory:Z
 
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_f
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/setting/videoquality/VideoQuality;->getStoreScope()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v2
 
-    goto :goto_20
+    goto :goto_13
 
-    :cond_1c
+    :cond_f
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getGlobalScope()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v2
 
-    :goto_20
-    const/4 v2, 0x0
+    :goto_13
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v1, p1, p0, v2}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-virtual {v0, v1, p1, v2, v3}, Lcom/transsion/camera/app/common/storage/DataStore;->setValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
+    .line 503
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/setting/SettingBase;->getValue()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_24
+
+    .line 504
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
+
+    :cond_24
     return-void
 .end method
 
@@ -2973,10 +2988,10 @@
 
     .line 487
     :cond_72
-    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/videoquality/VideoQuality;->storeValue(Ljava/lang/String;)V
 
     .line 488
-    invoke-direct {p0, p1}, Lcom/transsion/camera/feature/setting/videoquality/VideoQuality;->storeValue(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lcom/transsion/camera/app/common/setting/SettingBase;->setValue(Ljava/lang/String;)V
 
     .line 489
     iget-object p2, p0, Lcom/transsion/camera/feature/setting/videoquality/VideoQuality;->mVideoQualityMonitor:Lcom/transsion/camera/feature/setting/videoquality/VideoQuality$VideoQualityMonitor;

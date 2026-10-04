@@ -30,7 +30,7 @@
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/ui/ModePickerUI$$ExternalSyntheticLambda2;->f$0:Lcom/transsion/camera/app/ui/ModePickerUI;
 
-    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->$r8$lambda$AMKVbJB0GxUzwxpZbv1lq89I0C4(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/view/View;)V
+    invoke-static {p0, p1}, Lcom/transsion/camera/app/ui/ModePickerUI;->$r8$lambda$U-OWi2f85rbJDPiJZlLPiT_nhxQ(Lcom/transsion/camera/app/ui/ModePickerUI;Landroid/view/View;)V
 
     return-void
 .end method

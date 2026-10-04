@@ -131,7 +131,7 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 71
+    .line 70
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "UltraHDMode"
@@ -146,10 +146,10 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 8
 
-    .line 82
+    .line 81
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;-><init>(Ljava/lang/String;)V
 
-    .line 72
+    .line 71
     new-instance p1, Lcom/transsion/camera/app/common/ui/HintInfo;
 
     const/4 v0, 0x1
@@ -160,7 +160,7 @@
 
     const/16 p1, 0x32
 
-    .line 73
+    .line 72
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -205,14 +205,14 @@
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->superDefinitionValues:Ljava/util/List;
 
-    .line 92
+    .line 91
     new-instance p1, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$1;-><init>(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)V
 
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->cameraOperateActionCallback:Lcom/transsion/camera/app/common/mode/IModeNotifyCameraOperateActionCallback;
 
-    .line 393
+    .line 410
     new-instance p1, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$2;
 
     invoke-direct {p1, p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$2;-><init>(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)V
@@ -225,7 +225,7 @@
 .method static synthetic access$000(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 70
+    .line 69
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -234,7 +234,7 @@
 .method static synthetic access$100(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
     .registers 1
 
-    .line 70
+    .line 69
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     return-object p0
@@ -243,7 +243,7 @@
 .method static synthetic access$200(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 70
+    .line 69
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -252,7 +252,7 @@
 .method static synthetic access$300(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
     .registers 1
 
-    .line 70
+    .line 69
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mStatusResponder:Lcom/transsion/camera/app/common/setting/StatusMonitor$StatusResponder;
 
     return-object p0
@@ -261,7 +261,7 @@
 .method static synthetic access$400(Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;)Lcom/transsion/camera/app/common/IAppUI;
     .registers 1
 
-    .line 70
+    .line 69
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     return-object p0
@@ -270,20 +270,20 @@
 .method private findSuitableInfo()Ljava/lang/Integer;
     .registers 7
 
-    .line 271
+    .line 288
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->getLargestSupportedPictureSize()Landroid/util/Size;
 
     const/4 v0, 0x0
 
-    .line 272
+    .line 289
     iput-object v0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mClosestMP:Ljava/lang/Integer;
 
-    .line 273
+    .line 290
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mLargest:Landroid/util/Size;
 
     if-eqz v0, :cond_65
 
-    .line 274
+    .line 291
     invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
 
     move-result v0
@@ -306,7 +306,7 @@
 
     div-float/2addr v0, v1
 
-    .line 276
+    .line 293
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->superDefinitionValues:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -329,7 +329,7 @@
 
     check-cast v3, Ljava/lang/Integer;
 
-    .line 277
+    .line 294
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
@@ -346,14 +346,14 @@
 
     if-gez v5, :cond_25
 
-    .line 280
+    .line 297
     iput-object v3, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mClosestMP:Ljava/lang/Integer;
 
     move v2, v4
 
     goto :goto_25
 
-    .line 283
+    .line 300
     :cond_44
     sget-object v1, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -383,7 +383,7 @@
 
     goto :goto_6c
 
-    .line 285
+    .line 302
     :cond_65
     sget-object v0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -391,7 +391,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 287
+    .line 304
     :goto_6c
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mClosestMP:Ljava/lang/Integer;
 
@@ -401,12 +401,12 @@
 .method private hideTip()V
     .registers 2
 
-    .line 257
+    .line 274
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_9
 
-    .line 258
+    .line 275
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mAutoHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->hideHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
@@ -418,12 +418,12 @@
 .method private showTip()V
     .registers 2
 
-    .line 252
+    .line 269
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     if-eqz v0, :cond_9
 
-    .line 253
+    .line 270
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mAutoHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-interface {v0, p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->showHint(Lcom/transsion/camera/app/common/ui/HintInfo;)V
@@ -432,12 +432,77 @@
     return-void
 .end method
 
+.method private updateSuperDefinitionBody(Lcom/transsion/camera/app/common/relation/Relation;Ljava/util/List;)V
+    .registers 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/transsion/camera/app/common/relation/Relation;",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)V"
+        }
+    .end annotation
+
+    if-eqz p2, :cond_28
+
+    .line 160
+    invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_9
+
+    goto :goto_28
+
+    .line 163
+    :cond_9
+    const-string p0, "on"
+
+    invoke-interface {p2, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_12
+
+    goto :goto_28
+
+    .line 166
+    :cond_12
+    const-string p0, "billion"
+
+    invoke-interface {p2, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_28
+
+    .line 167
+    const-string v0, ","
+
+    invoke-static {v0, p2}, Ljava/lang/String;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
+
+    move-result-object p2
+
+    .line 168
+    const-string v0, "key_super_definition"
+
+    invoke-virtual {p1, v0}, Lcom/transsion/camera/app/common/relation/Relation;->removeBody(Ljava/lang/String;)V
+
+    .line 169
+    invoke-virtual {p1, v0, p0, p2}, Lcom/transsion/camera/app/common/relation/Relation;->addBody(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_28
+    :goto_28
+    return-void
+.end method
+
 
 # virtual methods
 .method public buildCaptureInfo()Lcom/transsion/camera/app/common/mode/CaptureInfo;
     .registers 4
 
-    .line 231
+    .line 248
     new-instance v0, Lcom/transsion/camera/app/common/mode/CaptureInfo;
 
     iget v1, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->mCaptureOrientation:I
@@ -464,7 +529,7 @@
         }
     .end annotation
 
-    .line 236
+    .line 253
     new-instance v0, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     invoke-direct {v0, p0, p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;-><init>(Lcom/transsion/camera/app/common/ICameraControl$IPictureCallback;Lcom/transsion/camera/app/common/ICameraControl$IContinuousShotCallback;)V
@@ -475,7 +540,7 @@
 .method public bridge synthetic createImageProcessor()Lcom/transsion/camera/app/common/mode/IImageProcessor;
     .registers 1
 
-    .line 70
+    .line 69
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->createImageProcessor()Lcom/transsion/camera/app/common/mode/CommonPhotoImageProcessor;
 
     move-result-object p0
@@ -486,14 +551,14 @@
 .method protected doShutterClick(II)Z
     .registers 6
 
-    .line 360
+    .line 377
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->doShutterClick(II)Z
 
     move-result p1
 
     if-eqz p1, :cond_3e
 
-    .line 361
+    .line 378
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->isSupport200M()Z
 
     move-result v0
@@ -506,7 +571,7 @@
 
     if-nez v0, :cond_3e
 
-    .line 362
+    .line 379
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mCaptureHandler:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
 
     if-eqz v0, :cond_3e
@@ -515,7 +580,7 @@
 
     if-ne p2, v0, :cond_3e
 
-    .line 363
+    .line 380
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->getShutterTypeSelftimerOff()I
@@ -524,7 +589,7 @@
 
     invoke-interface {p2, v0}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->updateShutterType(I)V
 
-    .line 364
+    .line 381
     iget-object p2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v0, -0x1
@@ -535,21 +600,21 @@
 
     invoke-interface {p2, v2, v0, v1}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 365
+    .line 382
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mCaptureHandler:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
 
     const/4 v0, 0x1
 
     invoke-virtual {p2, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 366
+    .line 383
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mCaptureHandler:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
 
     const-wide/16 v1, 0x7d0
 
     invoke-virtual {p2, v0, v1, v2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 367
+    .line 384
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 p2, 0x0
@@ -561,23 +626,40 @@
 .end method
 
 .method protected getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
-    .registers 2
+    .registers 3
 
-    .line 240
+    .line 257
     invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackTeleCameraId()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_14
+    if-nez v0, :cond_f
 
-    .line 241
+    invoke-virtual {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackWideCameraId()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_d
+
+    goto :goto_f
+
+    :cond_d
+    const/4 p0, 0x0
+
+    return-object p0
+
+    .line 258
+    :cond_f
+    :goto_f
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->getBackZoomConfig()Lcom/transsion/camera/app/common/ZoomConfig;
 
     move-result-object p0
 
     const/4 v0, 0x2
 
-    filled-new-array {v0}, [I
+    const/16 v1, 0x80
+
+    filled-new-array {v0, v1}, [I
 
     move-result-object v0
 
@@ -586,17 +668,12 @@
     move-result-object p0
 
     return-object p0
-
-    :cond_14
-    const/4 p0, 0x0
-
-    return-object p0
 .end method
 
 .method public getDataFlowType()I
     .registers 3
 
-    .line 126
+    .line 125
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -609,7 +686,7 @@
 
     if-eqz p0, :cond_11
 
-    .line 127
+    .line 126
     invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isForceCloseOfflineJNISupport()Z
 
     move-result p0
@@ -624,7 +701,7 @@
     :cond_13
     const/16 p0, 0x8
 
-    .line 135
+    .line 134
     :goto_15
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/watermark/Watermark;->algorithmMigrate()Z
 
@@ -634,7 +711,7 @@
 
     const/4 p0, 0x3
 
-    .line 138
+    .line 137
     :cond_1c
     invoke-static {}, Lcom/transsion/camera/app/common/algorithm/taintdetection/TaintAlgorithm;->getInstance()Lcom/transsion/camera/app/common/algorithm/taintdetection/TaintAlgorithm;
 
@@ -648,7 +725,7 @@
 
     const/4 v0, 0x4
 
-    .line 141
+    .line 140
     :cond_27
     invoke-static {p0, v0}, Lcom/transsion/camera/adapter/DataFlowSpec;->makeDataFlowSpec(II)I
 
@@ -660,14 +737,14 @@
 .method public getLargestSupportedPictureSize()Landroid/util/Size;
     .registers 4
 
-    .line 292
+    .line 309
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getCameraId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 293
+    .line 310
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     invoke-interface {v1}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->getStreamIds()[I
@@ -676,21 +753,21 @@
 
     if-eqz v1, :cond_18
 
-    .line 294
+    .line 311
     array-length v2, v1
 
     if-lez v2, :cond_18
 
     const/4 v0, 0x0
 
-    .line 295
+    .line 312
     aget v0, v1, v0
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 299
+    .line 316
     :cond_18
     invoke-static {}, Lcom/transsion/camera/adapter/CameraAgentFactory;->getCameraAgent()Lcom/transsion/camera/adapter/CameraAgent;
 
@@ -712,117 +789,126 @@
 .method public getModeFeatures(Landroid/content/Context;)[Ljava/lang/String;
     .registers 4
 
-    .line 158
+    .line 175
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 159
+    .line 176
     const-string v0, "key_tran_plugin"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 160
+    .line 177
     const-string v0, "key_super_definition"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 161
+    .line 178
     const-string v0, "key_high_resolution"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 162
+    .line 179
     const-string v0, "key_asd"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 163
+    .line 180
     const-string v0, "key_hdr"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 164
+    .line 181
     const-string v0, "key_mood_light"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 165
+    .line 182
     const-string v0, "key_voice_detection"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 166
+    .line 183
     const-string v0, "key_taint_detection"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 167
+    .line 184
     const-string v0, "key_super_night_lite"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 168
+    .line 185
     const-string v0, "key_super_night_light"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 169
+    .line 186
     const-string v0, "key_edit_watermark"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 170
+    .line 187
     const-string v0, "key_gold_watermark"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 171
+    .line 188
     const-string v0, "key_pro_watermark"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 172
+    .line 189
     const-string v0, "key_shutter_sound_optional"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 173
+    .line 190
     const-string v0, "key_fingerprint_capture"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 174
+    .line 191
     const-string v0, "key_touch_capture"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 175
+    .line 192
     const-string v0, "key_airaw_tf"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 176
+    .line 193
     invoke-static {}, Lcom/transsion/camera/utils/CameraUtil;->getRam()I
 
     move-result v0
 
     const/16 v1, 0x68
 
-    if-ge v0, v1, :cond_67
+    if-lt v0, v1, :cond_6b
 
-    .line 177
+    const-string/jumbo v0, "ultrahd_yuv_super_resolution_support"
+
+    invoke-static {v0}, Lcom/transsion/camera/utils/CameraUtil;->getBooleanResource(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_70
+
+    .line 194
+    :cond_6b
     const-string v0, "key_super_resolution"
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 179
-    :cond_67
+    .line 196
+    :cond_70
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->supportPostAlgo()Z
 
     move-result p0
 
-    if-nez p0, :cond_75
+    if-nez p0, :cond_7e
 
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
@@ -830,23 +916,23 @@
 
     iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mAiRawSprdSupport:Z
 
-    if-eqz p0, :cond_7a
+    if-eqz p0, :cond_83
 
-    .line 180
-    :cond_75
+    .line 197
+    :cond_7e
     const-string p0, "ai_raw_lite"
 
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 182
-    :cond_7a
+    .line 199
+    :cond_83
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result p0
 
     new-array p0, p0, [Ljava/lang/String;
 
-    .line 183
+    .line 200
     invoke-virtual {p1, p0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p0
@@ -857,35 +943,51 @@
 .end method
 
 .method public getModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
-    .registers 3
+    .registers 4
 
-    .line 151
+    .line 150
     invoke-static {}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDRestriction;->getRestriction()Lcom/transsion/camera/app/common/relation/RelationGroup;
-
-    move-result-object p0
-
-    const-string v0, "on"
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v0, v1}, Lcom/transsion/camera/app/common/relation/RelationGroup;->getRelation(Ljava/lang/String;Z)Lcom/transsion/camera/app/common/relation/Relation;
-
-    move-result-object p0
-
-    .line 152
-    invoke-static {}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDRestriction;->getCamModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/transsion/camera/app/common/mode/CameraMode;->mergeRelation(Lcom/transsion/camera/app/common/relation/Relation;Lcom/transsion/camera/app/common/relation/Relation;)V
+    const-string v1, "on"
 
-    return-object p0
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Lcom/transsion/camera/app/common/relation/RelationGroup;->getRelation(Ljava/lang/String;Z)Lcom/transsion/camera/app/common/relation/Relation;
+
+    move-result-object v0
+
+    .line 151
+    iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
+
+    if-eqz v1, :cond_18
+
+    .line 152
+    const-string v2, "key_super_definition"
+
+    invoke-interface {v1, v2}, Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;->queryEntryValues(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v1
+
+    .line 153
+    invoke-direct {p0, v0, v1}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->updateSuperDefinitionBody(Lcom/transsion/camera/app/common/relation/Relation;Ljava/util/List;)V
+
+    .line 155
+    :cond_18
+    invoke-static {}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDRestriction;->getCamModeRelation()Lcom/transsion/camera/app/common/relation/Relation;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Lcom/transsion/camera/app/common/mode/CameraMode;->mergeRelation(Lcom/transsion/camera/app/common/relation/Relation;Lcom/transsion/camera/app/common/relation/Relation;)V
+
+    return-object v0
 .end method
 
 .method public getSettingGroup()J
     .registers 5
 
-    .line 146
+    .line 145
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->getSettingGroup()J
 
     move-result-wide v0
@@ -908,7 +1010,7 @@
 .method public getUltraHDTips()V
     .registers 5
 
-    .line 304
+    .line 321
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->findSuitableInfo()Ljava/lang/Integer;
 
     move-result-object v0
@@ -919,7 +1021,7 @@
 
     if-nez v1, :cond_12
 
-    .line 307
+    .line 324
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mAutoHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -928,7 +1030,7 @@
 
     return-void
 
-    .line 310
+    .line 327
     :cond_12
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
@@ -946,7 +1048,7 @@
 
     if-eqz v1, :cond_39
 
-    .line 311
+    .line 328
     sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     iget-object v2, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -971,7 +1073,7 @@
 
     goto :goto_49
 
-    .line 313
+    .line 330
     :cond_39
     iget-object v1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
 
@@ -989,20 +1091,20 @@
 
     move-result-object v0
 
-    .line 315
+    .line 332
     :goto_49
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mAutoHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v1, v0}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 316
+    .line 333
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mAutoHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setHighlight(Z)V
 
-    .line 317
+    .line 334
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mAutoHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->enableBackground(Z)V
@@ -1013,17 +1115,17 @@
 .method public init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Ljava/lang/String;Lcom/transsion/camera/app/common/IApp$IIntentAction;I)V
     .registers 8
 
-    .line 87
+    .line 86
     invoke-super/range {p0 .. p7}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->init(Landroid/content/Context;Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;Lcom/transsion/camera/app/common/IAppUI;Lcom/transsion/camera/app/common/mode/CameraDeviceControl;Ljava/lang/String;Lcom/transsion/camera/app/common/IApp$IIntentAction;I)V
 
-    .line 88
+    .line 87
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     iget-object p2, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->cameraOperateActionCallback:Lcom/transsion/camera/app/common/mode/IModeNotifyCameraOperateActionCallback;
 
     invoke-interface {p1, p2}, Lcom/transsion/camera/app/common/IAppUI;->setModeNotifyCameraOperateActionCallBack(Lcom/transsion/camera/app/common/mode/IModeNotifyCameraOperateActionCallback;)V
 
-    .line 89
+    .line 88
     new-instance p1, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
 
     const/4 p2, 0x0
@@ -1046,7 +1148,7 @@
 .method public isNeedDeviceCaptureSound()Z
     .registers 3
 
-    .line 263
+    .line 280
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v1, "key_super_night_lite"
@@ -1057,7 +1159,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 265
+    .line 282
     const-string p0, "off"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1066,7 +1168,7 @@
 
     return p0
 
-    .line 267
+    .line 284
     :cond_11
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->isNeedDeviceCaptureSound()Z
 
@@ -1078,7 +1180,7 @@
 .method protected isShot2ShotEnable()Z
     .registers 2
 
-    .line 326
+    .line 343
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->isSupport200M()Z
 
     move-result v0
@@ -1089,7 +1191,7 @@
 
     return p0
 
-    .line 329
+    .line 346
     :cond_8
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->isShot2ShotEnable()Z
 
@@ -1109,7 +1211,7 @@
 .method public isSuperNightOn()Z
     .registers 2
 
-    .line 334
+    .line 351
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mSettingController:Lcom/transsion/camera/app/common/setting/ISettingManager$SettingController;
 
     const-string v0, "key_super_night_lite"
@@ -1120,7 +1222,7 @@
 
     if-eqz p0, :cond_14
 
-    .line 335
+    .line 352
     const-string v0, "on"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1142,7 +1244,7 @@
 .method protected isSupport200M()Z
     .registers 1
 
-    .line 321
+    .line 338
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p0
@@ -1155,17 +1257,17 @@
 .method public onConfigBeforeStartPreview()V
     .registers 2
 
-    .line 388
+    .line 405
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onConfigBeforeStartPreview()V
 
-    .line 389
+    .line 406
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->isSupport200M()Z
 
     move-result v0
 
     if-eqz v0, :cond_10
 
-    .line 390
+    .line 407
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCameraDeviceControl:Lcom/transsion/camera/app/common/mode/CameraDeviceControl;
 
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mTZShot2ShotCallback:Lcom/transsion/camera/adapter/CameraProxy$Shot2ShotCallback;
@@ -1179,10 +1281,10 @@
 .method public onModeCaptureFailed(Z[J)V
     .registers 4
 
-    .line 374
+    .line 391
     invoke-super {p0, p1, p2}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onModeCaptureFailed(Z[J)V
 
-    .line 375
+    .line 392
     iget p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurShutterPriority:I
 
     const/16 p2, 0xa
@@ -1198,7 +1300,7 @@
     :cond_c
     const/4 p1, 0x0
 
-    .line 376
+    .line 393
     :goto_d
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->isSupport200M()Z
 
@@ -1208,28 +1310,28 @@
 
     if-nez p1, :cond_2e
 
-    .line 377
+    .line 394
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mCaptureHandler:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
 
     if-eqz p1, :cond_22
 
-    .line 378
+    .line 395
     invoke-virtual {p1, v0}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 379
+    .line 396
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mCaptureHandler:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
 
     const/4 p2, 0x2
 
     invoke-virtual {p1, p2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 381
+    .line 398
     :cond_22
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/IAppUI;->setShutterEnabled(Z)V
 
-    .line 382
+    .line 399
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 p1, -0x1
@@ -1245,14 +1347,14 @@
 .method protected onShutterClickBefore(I)Z
     .registers 8
 
-    .line 340
+    .line 357
     invoke-super {p0, p1}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->onShutterClickBefore(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_45
 
-    .line 341
+    .line 358
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->isSupport200M()Z
 
     move-result v1
@@ -1267,7 +1369,7 @@
 
     const/4 v1, 0x0
 
-    .line 342
+    .line 359
     sput-boolean v1, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mSaveHighQualityJpegDone:Z
 
     const/16 v2, 0xa
@@ -1283,7 +1385,7 @@
     :cond_1c
     move p1, v1
 
-    .line 344
+    .line 361
     :goto_1d
     iget-object v2, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mCaptureHandler:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
 
@@ -1291,7 +1393,7 @@
 
     if-nez p1, :cond_45
 
-    .line 345
+    .line 362
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->getShutterTypeSelftimerOff()I
@@ -1300,7 +1402,7 @@
 
     invoke-interface {p1, v2}, Lcom/transsion/camera/app/common/IAppUIControl$IShutterControl;->updateShutterType(I)V
 
-    .line 346
+    .line 363
     iget-object p1, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v2, -0x1
@@ -1311,19 +1413,19 @@
 
     invoke-interface {p1, v5, v2, v4}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 347
+    .line 364
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mCaptureHandler:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
 
     invoke-virtual {p1, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 348
+    .line 365
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mCaptureHandler:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
 
     const-wide/16 v4, 0x7d0
 
     invoke-virtual {p1, v3, v4, v5}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 349
+    .line 366
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {p0, v1}, Lcom/transsion/camera/app/common/IAppUI;->setShutterEnabled(Z)V
@@ -1335,13 +1437,13 @@
 .method public pause()V
     .registers 5
 
-    .line 203
+    .line 220
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->pause()V
 
-    .line 204
+    .line 221
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->hideTip()V
 
-    .line 205
+    .line 222
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mCaptureHandler:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
 
     const/4 v1, 0x2
@@ -1350,15 +1452,15 @@
 
     if-eqz v0, :cond_14
 
-    .line 206
+    .line 223
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 207
+    .line 224
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->mCaptureHandler:Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode$CaptureHandler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 209
+    .line 226
     :cond_14
     iget v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mCurShutterPriority:I
 
@@ -1373,7 +1475,7 @@
     :cond_1c
     const/4 v0, 0x0
 
-    .line 210
+    .line 227
     :goto_1d
     invoke-virtual {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->isSupport200M()Z
 
@@ -1383,7 +1485,7 @@
 
     if-nez v0, :cond_39
 
-    .line 211
+    .line 228
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     invoke-interface {v0}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->getCurrentUIState()I
@@ -1392,7 +1494,7 @@
 
     if-ne v0, v1, :cond_34
 
-    .line 212
+    .line 229
     iget-object v0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v1, -0x1
@@ -1401,7 +1503,7 @@
 
     invoke-interface {v0, v2, v1, v3}, Lcom/transsion/camera/app/common/IAppUIControl$IUIStateControl;->updateUIState(IILjava/lang/String;)V
 
-    .line 214
+    .line 231
     :cond_34
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
@@ -1425,7 +1527,7 @@
 .method public resume()V
     .registers 1
 
-    .line 198
+    .line 215
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->resume()V
 
     return-void
@@ -1434,7 +1536,7 @@
 .method public supportPostAlgo()Z
     .registers 1
 
-    .line 193
+    .line 210
     invoke-static {}, Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;->getInstance()Lcom/transsion/camera/app/common/isphidl/ISPHIDLController;
 
     move-result-object p0
@@ -1449,7 +1551,7 @@
 .method public supportPostAlgoDeferRequest()Z
     .registers 2
 
-    .line 188
+    .line 205
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object v0
@@ -1477,13 +1579,13 @@
 .method public unInit()V
     .registers 2
 
-    .line 220
+    .line 237
     invoke-super {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->unInit()V
 
-    .line 221
+    .line 238
     invoke-direct {p0}, Lcom/transsion/camera/feature/mode/ultrahd/UltraHDMode;->hideTip()V
 
-    .line 222
+    .line 239
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CameraMode;->mAppUI:Lcom/transsion/camera/app/common/IAppUI;
 
     const/4 v0, 0x0

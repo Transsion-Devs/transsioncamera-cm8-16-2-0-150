@@ -7,6 +7,15 @@
 .method public abstract cancelTranSchedUxTags(I)Z
 .end method
 
+.method public abstract cancelTranSchedUxTagsAsync(ILcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager$ITranSchedManagerCallback;)V
+.end method
+
+.method public abstract cancelTransSchedUxTagsByName(ILjava/lang/String;)Z
+.end method
+
+.method public abstract cancelTransSchedUxTagsByNameAsync(ILjava/lang/String;Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager$ITranSchedManagerCallback;)V
+.end method
+
 .method public abstract getTranSchedScene()I
 .end method
 
@@ -20,4 +29,7 @@
 .end method
 
 .method public abstract setTranSchedUxTagsByName(ILjava/lang/String;)Z
+.end method
+
+.method public abstract setTranSchedUxTagsByNameAsync(ILjava/lang/String;Lcom/transsion/hubsdk/api/uiawarescheduling/TranSchedManager$ITranSchedManagerCallback;)V
 .end method

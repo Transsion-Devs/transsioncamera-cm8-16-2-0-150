@@ -16,7 +16,7 @@
 
 .field private static final MODEL_DIRECTORY_PATH:Ljava/lang/String; = "aiartmuseum/model"
 
-.field private static final MODEL_FILE_NAME:Ljava/lang/String; = "Transsion_Segment_Pre.mnn"
+.field private static final MODEL_FILE_NAME:Ljava/lang/String; = "hand_landmark.tflite"
 
 .field private static final RESULT_SUCCESS:J
 
@@ -92,7 +92,7 @@
 .method private copyAssets()V
     .registers 9
 
-    .line 86
+    .line 90
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -117,7 +117,7 @@
 
     move-result-object v0
 
-    .line 87
+    .line 91
     const-string v1, "AIArtMuseum_fingerprint"
 
     const/4 v2, 0x0
@@ -126,10 +126,10 @@
 
     move-result-object v1
 
-    .line 88
+    .line 92
     sget-object v2, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
 
-    .line 90
+    .line 94
     sget-object v3, Lcom/transsion/camera/app_info/AppInfo;->app:Landroid/app/Application;
 
     const-string v4, "assets"
@@ -142,7 +142,7 @@
 
     move-result-object v3
 
-    .line 91
+    .line 95
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -163,7 +163,7 @@
 
     iput-object v4, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mModelDirectoryPath:Ljava/lang/String;
 
-    .line 93
+    .line 97
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -174,7 +174,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v5, "Transsion_Segment_Pre.mnn"
+    const-string v5, "hand_landmark.tflite"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -186,7 +186,7 @@
 
     move-result v4
 
-    .line 95
+    .line 99
     sget-object v5, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -219,26 +219,26 @@
 
     if-eqz v4, :cond_9a
 
-    .line 98
+    .line 102
     invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_9a
 
-    .line 99
+    .line 103
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mModelReady:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 100
+    .line 104
     invoke-direct {p0}, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->handleInit()V
 
     return-void
 
-    .line 102
+    .line 106
     :cond_9a
     invoke-static {}, Lcom/transsion/camera/utils/threads/WorkThreadPools;->getInstance()Lcom/transsion/camera/utils/threads/WorkThreadPools;
 
@@ -258,7 +258,7 @@
 .method private handleInit()V
     .registers 8
 
-    .line 117
+    .line 121
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mModelDirectoryPath:Ljava/lang/String;
 
     const-wide/16 v1, 0x0
@@ -267,7 +267,7 @@
 
     move-result-wide v3
 
-    .line 118
+    .line 122
     sget-object v0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -296,7 +296,7 @@
 
     invoke-static {v0, v5}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 119
+    .line 123
     iget-object p0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mInitialized:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     cmp-long v0, v1, v3
@@ -319,7 +319,7 @@
 .method private setEffectImpl()V
     .registers 6
 
-    .line 144
+    .line 148
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mEffect:Ljava/lang/String;
 
     iget-boolean v1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mSync:Z
@@ -328,7 +328,7 @@
 
     move-result v0
 
-    .line 145
+    .line 149
     iget-object v1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mEffect:Ljava/lang/String;
 
     iget-object v2, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mEffectValue:Ljava/lang/String;
@@ -337,7 +337,7 @@
 
     move-result v1
 
-    .line 147
+    .line 151
     sget-object v2, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -392,7 +392,7 @@
 
     goto :goto_57
 
-    .line 155
+    .line 159
     :cond_51
     iget-boolean p0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mBackCamera:Z
 
@@ -400,7 +400,7 @@
 
     return-void
 
-    .line 151
+    .line 155
     :cond_57
     :goto_57
     const-string p0, "setEffect invalid param!!!"
@@ -428,14 +428,14 @@
     .line 70
     iget-object p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mModelReady:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-virtual {p1, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 71
     iget-object p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mInitialized:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-virtual {p1, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 73
     invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
@@ -444,40 +444,50 @@
 
     iget-boolean p1, p1, Lcom/transsion/camera/app/common/CommonConfigUtil;->mTonesAssetSupport:Z
 
-    if-eqz p1, :cond_36
+    if-eqz p1, :cond_3e
 
     .line 75
     invoke-static {}, Lcom/transsion/camera/utils/manager/CamAssetManager;->getInstance()Lcom/transsion/camera/utils/manager/CamAssetManager;
 
     move-result-object p1
 
-    const-string v0, "aiartmuseum/model"
+    const-string v1, "aiartmuseum/model"
 
-    invoke-virtual {p1, v0}, Lcom/transsion/camera/utils/manager/CamAssetManager;->getAssetPath(Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {p1, v1}, Lcom/transsion/camera/utils/manager/CamAssetManager;->getAssetPath(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object p1
 
-    .line 76
+    if-nez p1, :cond_2e
+
+    .line 77
+    const-string p0, "init failed, modelPath is null!"
+
+    invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    return-void
+
+    .line 80
+    :cond_2e
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mModelDirectoryPath:Ljava/lang/String;
 
-    .line 77
+    .line 81
     iget-object p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mModelReady:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 78
+    .line 82
     invoke-direct {p0}, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->handleInit()V
 
     return-void
 
-    .line 81
-    :cond_36
+    .line 85
+    :cond_3e
     invoke-direct {p0}, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->copyAssets()V
 
     return-void
@@ -486,7 +496,7 @@
 .method public process(I[IIIII)V
     .registers 13
 
-    .line 181
+    .line 185
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mModelReady:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
@@ -495,7 +505,7 @@
 
     if-nez v0, :cond_10
 
-    .line 182
+    .line 186
     sget-object p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "process model not ready!"
@@ -504,7 +514,7 @@
 
     return-void
 
-    .line 186
+    .line 190
     :cond_10
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mInitialized:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -514,10 +524,10 @@
 
     if-nez v0, :cond_36
 
-    .line 187
+    .line 191
     invoke-direct {p0}, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->handleInit()V
 
-    .line 189
+    .line 193
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mInitialized:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
@@ -526,7 +536,7 @@
 
     if-eqz v0, :cond_3d
 
-    .line 190
+    .line 194
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mEffect:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -543,7 +553,7 @@
 
     if-nez v0, :cond_36
 
-    .line 191
+    .line 195
     invoke-direct {p0}, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->setEffectImpl()V
 
     :cond_36
@@ -561,7 +571,7 @@
 
     goto :goto_45
 
-    .line 194
+    .line 198
     :cond_3d
     sget-object p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -571,7 +581,7 @@
 
     return-void
 
-    .line 199
+    .line 203
     :goto_45
     invoke-static/range {v0 .. v5}, Lcom/aiartmuseum/jni/AIArtMuseum;->AIArtMuseum_JNI_ProcessTexture(I[IIIII)J
 
@@ -581,7 +591,7 @@
 .method public setEffect(Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
 
-    .line 124
+    .line 128
     sget-object v0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -606,18 +616,18 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 126
+    .line 130
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mEffect:Ljava/lang/String;
 
-    .line 127
+    .line 131
     iput-object p2, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mEffectValue:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    .line 128
+    .line 132
     iput-boolean p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mSync:Z
 
-    .line 130
+    .line 134
     iget-object p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mModelReady:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
@@ -626,14 +636,14 @@
 
     if-nez p1, :cond_33
 
-    .line 131
+    .line 135
     const-string p0, "setEffect model not ready!"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 135
+    .line 139
     :cond_33
     iget-object p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mInitialized:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -643,14 +653,14 @@
 
     if-nez p1, :cond_41
 
-    .line 136
+    .line 140
     const-string p0, "setEffect not mInitialized!"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 140
+    .line 144
     :cond_41
     invoke-direct {p0}, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->setEffectImpl()V
 
@@ -660,7 +670,7 @@
 .method public setEffect(Ljava/lang/String;Ljava/lang/String;Z)V
     .registers 7
 
-    .line 160
+    .line 164
     sget-object v0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -691,16 +701,16 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 162
+    .line 166
     iput-object p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mEffect:Ljava/lang/String;
 
-    .line 163
+    .line 167
     iput-object p2, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mEffectValue:Ljava/lang/String;
 
-    .line 164
+    .line 168
     iput-boolean p3, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mSync:Z
 
-    .line 166
+    .line 170
     iget-object p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mModelReady:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
@@ -709,14 +719,14 @@
 
     if-nez p1, :cond_3a
 
-    .line 167
+    .line 171
     const-string p0, "setEffect model not ready!"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 171
+    .line 175
     :cond_3a
     iget-object p1, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mInitialized:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -726,14 +736,14 @@
 
     if-nez p1, :cond_48
 
-    .line 172
+    .line 176
     const-string p0, "setEffect not mInitialized!"
 
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-void
 
-    .line 176
+    .line 180
     :cond_48
     invoke-direct {p0}, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->setEffectImpl()V
 
@@ -743,7 +753,7 @@
 .method public unInit()V
     .registers 4
 
-    .line 204
+    .line 208
     sget-object v0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -772,14 +782,14 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 205
+    .line 209
     iget-object v0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mModelReady:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 206
+    .line 210
     iget-object p0, p0, Lcom/transsion/camera/featurelibs/aiartmuseum/AIArtMuseumEngineImpl;->mInitialized:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v0, 0x1
@@ -790,7 +800,7 @@
 
     if-eqz p0, :cond_35
 
-    .line 207
+    .line 211
     invoke-static {}, Lcom/aiartmuseum/jni/AIArtMuseum;->AIArtMuseum_JNI_ReleaseEngine()J
 
     :cond_35

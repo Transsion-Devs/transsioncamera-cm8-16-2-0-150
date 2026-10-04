@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;)V
     .registers 2
 
-    .line 100
+    .line 105
     iput-object p1, p0, Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager$RemoteCaptureFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .method public onFragmentDestroy()V
     .registers 2
 
-    .line 113
+    .line 118
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager$RemoteCaptureFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 114
+    .line 119
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager$RemoteCaptureFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -74,7 +74,7 @@
 .method public onFragmentResume()V
     .registers 2
 
-    .line 103
+    .line 108
     iget-object v0, p0, Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager$RemoteCaptureFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;)Lcom/transsion/camera/app/common/IAppUI;
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 104
+    .line 109
     iget-object p0, p0, Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager$RemoteCaptureFragmentStateListenerImpl;->this$0:Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;
 
     invoke-static {p0}, Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;->-$$Nest$fgetmAppUI(Lcom/transsion/camera/app/ui/manager/RemoteCaptureManager;)Lcom/transsion/camera/app/common/IAppUI;

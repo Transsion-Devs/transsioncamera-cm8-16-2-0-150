@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static ic_guide_blur_content:I = 0x7f0804fa
+.field public static ic_guide_blur_content:I = 0x7f0804c3
 
 
 # direct methods

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/ui/opengl/GLPreviewView;Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;)V
     .registers 3
 
-    .line 554
+    .line 576
     iput-object p2, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$9;->val$callbacker:Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 1
 
-    .line 557
+    .line 579
     iget-object p0, p0, Lcom/transsion/camera/app/ui/opengl/GLPreviewView$9;->val$callbacker:Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/preview/IPreviewCallbacker;->modePauseCallback()V

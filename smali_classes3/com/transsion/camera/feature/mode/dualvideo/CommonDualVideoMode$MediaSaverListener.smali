@@ -29,15 +29,15 @@
 .method constructor <init>(Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;Ljava/lang/Object;I)V
     .registers 4
 
-    .line 704
+    .line 703
     iput-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 705
+    .line 704
     iput-object p2, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->mFile:Ljava/lang/Object;
 
-    .line 706
+    .line 705
     iput p3, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->mReason:I
 
     return-void
@@ -48,7 +48,7 @@
 .method public onFileSaved(Landroid/net/Uri;)V
     .registers 5
 
-    .line 711
+    .line 710
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;
 
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mTag:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -72,25 +72,30 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_30
+    .line 711
+    iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;
+
+    invoke-virtual {v0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->notifyToIdle()V
+
+    if-eqz p1, :cond_35
 
     .line 714
-    :try_start_1c
+    :try_start_21
     iget-object v0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;
 
     iget-object v1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->mFile:Ljava/lang/Object;
 
     invoke-static {v0, p1, v1}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->-$$Nest$mupdateThumbnail(Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;Landroid/net/Uri;Ljava/lang/Object;)V
-    :try_end_23
-    .catch Ljava/io/IOException; {:try_start_1c .. :try_end_23} :catch_23
+    :try_end_28
+    .catch Ljava/io/IOException; {:try_start_21 .. :try_end_28} :catch_28
 
     .line 718
-    :catch_23
+    :catch_28
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;
 
     iget-boolean v0, p1, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->mPaused:Z
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_35
 
     .line 719
     # getter for: Lcom/transsion/camera/app/common/mode/CameraMode;->mContext:Landroid/content/Context;
@@ -101,26 +106,21 @@
     invoke-virtual {p1, v0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->sendNotification(Landroid/content/Context;)V
 
     .line 723
-    :cond_30
-    iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;
-
-    invoke-virtual {p1}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->notifyToIdle()V
-
-    .line 724
+    :cond_35
     iget p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->mReason:I
 
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_40
 
-    .line 725
+    .line 724
     iget-object p1, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;
 
     const/4 v0, 0x4
 
     invoke-virtual {p1, v0}, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;->showInfo(I)V
 
-    .line 727
+    .line 726
     :cond_40
     iget-object p0, p0, Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode$MediaSaverListener;->this$0:Lcom/transsion/camera/feature/mode/dualvideo/CommonDualVideoMode;
 

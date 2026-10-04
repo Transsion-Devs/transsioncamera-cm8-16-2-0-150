@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 71
+    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .registers 5
 
-    .line 74
+    .line 75
     invoke-static {}, Lcom/transsion/camera/app/manager/OptimizeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -69,7 +69,7 @@
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
     .registers 4
 
-    .line 79
+    .line 80
     invoke-static {}, Lcom/transsion/camera/app/manager/OptimizeManager;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0

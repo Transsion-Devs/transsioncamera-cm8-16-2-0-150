@@ -25,7 +25,7 @@
 .method public constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 2030
+    .line 2052
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$IntentProxy;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public startActivityForResult(Lcom/transsion/camera/app/common/IApp$ActivityResultCallback;)V
     .registers 3
 
-    .line 2033
+    .line 2055
     iget-object v0, p0, Lcom/transsion/camera/app/BaseCameraActivity$IntentProxy;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-static {v0, p1}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$fputmActivityResultCallback(Lcom/transsion/camera/app/BaseCameraActivity;Lcom/transsion/camera/app/common/IApp$ActivityResultCallback;)V
 
-    .line 2034
+    .line 2056
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$IntentProxy;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-virtual {p1}, Lcom/transsion/camera/app/common/IApp$ActivityResultCallback;->getIntent()Landroid/content/Intent;

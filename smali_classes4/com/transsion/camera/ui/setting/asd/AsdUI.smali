@@ -277,7 +277,7 @@
 .method private checkWideMacroEnable()Z
     .registers 3
 
-    .line 617
+    .line 624
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     const-string v1, "key_macro"
@@ -294,7 +294,7 @@
 
     iput-boolean v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mIsMacroEnable:Z
 
-    .line 618
+    .line 625
     iget-boolean p0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mIsWideCamera:Z
 
     if-eqz p0, :cond_18
@@ -341,7 +341,7 @@
 
     if-nez p1, :cond_22
 
-    goto/16 :goto_49f
+    goto/16 :goto_4b6
 
     :cond_22
     const/4 v1, 0x0
@@ -350,7 +350,7 @@
 
     const/4 v4, 0x0
 
-    if-ne p2, v3, :cond_344
+    if-ne p2, v3, :cond_35b
 
     .line 242
     invoke-virtual {p1}, Lcom/transsion/camera/feature/setting/asd/AsdResult;->getAlgorithmResult()I
@@ -517,9 +517,9 @@
 
     if-eq v6, v11, :cond_2e0
 
-    packed-switch v6, :pswitch_data_4a0
+    packed-switch v6, :pswitch_data_4b8
 
-    packed-switch v6, :pswitch_data_4c0
+    packed-switch v6, :pswitch_data_4d8
 
     goto/16 :goto_162
 
@@ -1225,25 +1225,53 @@
 
     goto/16 :goto_c5
 
-    .line 450
+    .line 451
     :goto_304
-    iget v12, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mFakeAsdCameraVersion:I
+    invoke-virtual {p1}, Lcom/transsion/camera/feature/setting/asd/AsdResult;->getHumanResult()I
 
-    if-ne v12, v3, :cond_32d
+    move-result v12
 
-    if-ne v5, v3, :cond_349
+    if-lez v12, :cond_31b
 
     .line 452
+    iget-object v6, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mResources:Landroid/content/res/Resources;
+
+    sget v10, Lcom/transsion/camera/R$drawable;->ic_asd_portrait:I
+
+    invoke-virtual {v6, v10, v4}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v6
+
+    .line 453
+    iget-object v10, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mResources:Landroid/content/res/Resources;
+
+    sget v11, Lcom/transsion/camera/R$string;->asd_dynamic_portrait:I
+
+    invoke-virtual {v10, v11}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v11
+
+    move v10, v3
+
+    .line 457
+    :cond_31b
+    iget v12, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mFakeAsdCameraVersion:I
+
+    if-ne v12, v3, :cond_344
+
+    if-ne v5, v3, :cond_360
+
+    .line 459
     iget v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mWarningType:I
 
-    if-eq v5, v3, :cond_31f
+    if-eq v5, v3, :cond_336
 
-    if-eq v5, v7, :cond_311
+    if-eq v5, v7, :cond_328
 
-    goto :goto_349
+    goto :goto_360
 
-    .line 462
-    :cond_311
+    .line 469
+    :cond_328
     iget-object v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$string;->night_scene_camera_low_light:I
@@ -1252,40 +1280,15 @@
 
     move-result-object v9
 
-    .line 467
-    iget-object v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
-
-    invoke-virtual {v5, v3}, Lcom/transsion/camera/app/common/ui/HintInfo;->enableBackground(Z)V
-
-    goto :goto_33f
-
-    .line 454
-    :cond_31f
-    iget-object v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mResources:Landroid/content/res/Resources;
-
-    sget v6, Lcom/transsion/camera/R$string;->night_scene_camera_covered:I
-
-    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    .line 459
-    iget-object v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
-
-    invoke-virtual {v5, v3}, Lcom/transsion/camera/app/common/ui/HintInfo;->enableBackground(Z)V
-
-    goto :goto_33f
-
-    .line 472
-    :cond_32d
-    iget v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mWarningType:I
-
-    if-eq v5, v3, :cond_332
-
-    goto :goto_349
-
     .line 474
-    :cond_332
+    iget-object v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
+
+    invoke-virtual {v5, v3}, Lcom/transsion/camera/app/common/ui/HintInfo;->enableBackground(Z)V
+
+    goto :goto_356
+
+    .line 461
+    :cond_336
     iget-object v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mResources:Landroid/content/res/Resources;
 
     sget v6, Lcom/transsion/camera/R$string;->night_scene_camera_covered:I
@@ -1293,13 +1296,38 @@
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v9
+
+    .line 466
+    iget-object v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
+
+    invoke-virtual {v5, v3}, Lcom/transsion/camera/app/common/ui/HintInfo;->enableBackground(Z)V
+
+    goto :goto_356
 
     .line 479
+    :cond_344
+    iget v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mWarningType:I
+
+    if-eq v5, v3, :cond_349
+
+    goto :goto_360
+
+    .line 481
+    :cond_349
+    iget-object v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mResources:Landroid/content/res/Resources;
+
+    sget v6, Lcom/transsion/camera/R$string;->night_scene_camera_covered:I
+
+    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    .line 486
     iget-object v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v5, v3}, Lcom/transsion/camera/app/common/ui/HintInfo;->enableBackground(Z)V
 
-    :goto_33f
+    :goto_356
     move v10, v3
 
     move-object v6, v4
@@ -1308,9 +1336,9 @@
 
     move-object v11, v8
 
-    goto :goto_349
+    goto :goto_360
 
-    :cond_344
+    :cond_35b
     move v10, v1
 
     move-object v6, v4
@@ -1321,124 +1349,124 @@
 
     move-object v11, v9
 
-    .line 484
-    :cond_349
-    :goto_349
+    .line 491
+    :cond_360
+    :goto_360
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/asd/AsdUI;->checkWideMacroEnable()Z
 
     move-result v5
 
-    if-eqz v5, :cond_350
+    if-eqz v5, :cond_367
 
     move v10, v1
 
-    :cond_350
-    if-eqz v10, :cond_486
+    :cond_367
+    if-eqz v10, :cond_49d
 
-    .line 487
+    .line 494
     iget-boolean v5, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mNeedShowAsdUI:Z
 
-    if-eqz v5, :cond_486
+    if-eqz v5, :cond_49d
 
-    .line 488
+    .line 495
     iget-object p2, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
-    if-eqz p2, :cond_49f
+    if-eqz p2, :cond_4b6
 
-    if-eqz v9, :cond_362
+    if-eqz v9, :cond_379
 
-    .line 490
+    .line 497
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2, v9}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    goto :goto_367
+    goto :goto_37e
 
-    .line 492
-    :cond_362
+    .line 499
+    :cond_379
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2, v4}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    :goto_367
-    if-eqz v8, :cond_36f
+    :goto_37e
+    if-eqz v8, :cond_386
 
-    .line 495
+    .line 502
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2, v8}, Lcom/transsion/camera/app/common/ui/HintInfo;->setDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_374
+    goto :goto_38b
 
-    .line 497
-    :cond_36f
+    .line 504
+    :cond_386
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2, v4}, Lcom/transsion/camera/app/common/ui/HintInfo;->setDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :goto_374
-    if-eqz v11, :cond_37c
+    :goto_38b
+    if-eqz v11, :cond_393
 
-    .line 500
+    .line 507
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2, v11}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherMessage(Ljava/lang/String;)V
 
-    goto :goto_381
+    goto :goto_398
 
-    .line 502
-    :cond_37c
+    .line 509
+    :cond_393
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2, v4}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherMessage(Ljava/lang/String;)V
 
-    :goto_381
-    if-eqz v6, :cond_389
+    :goto_398
+    if-eqz v6, :cond_3a0
 
-    .line 505
+    .line 512
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2, v6}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_38e
+    goto :goto_3a5
 
-    .line 507
-    :cond_389
+    .line 514
+    :cond_3a0
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2, v4}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :goto_38e
-    if-eqz v9, :cond_392
+    :goto_3a5
+    if-eqz v9, :cond_3a9
 
-    if-nez v8, :cond_396
+    if-nez v8, :cond_3ad
 
-    :cond_392
-    if-eqz v11, :cond_3a1
+    :cond_3a9
+    if-eqz v11, :cond_3b8
 
-    if-eqz v6, :cond_3a1
+    if-eqz v6, :cond_3b8
 
-    .line 510
-    :cond_396
+    .line 517
+    :cond_3ad
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2, v3}, Lcom/transsion/camera/app/common/ui/HintInfo;->setIsAsdDynamic(Z)V
 
-    .line 511
+    .line 518
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->enableBackground(Z)V
 
-    goto :goto_3a6
+    goto :goto_3bd
 
-    .line 513
-    :cond_3a1
+    .line 520
+    :cond_3b8
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setIsAsdDynamic(Z)V
 
-    .line 515
-    :goto_3a6
+    .line 522
+    :goto_3bd
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1453,24 +1481,24 @@
 
     invoke-static {v0, p2}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 516
+    .line 523
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/ui/HintInfo;->isAsdDynamic()Z
 
     move-result p2
 
-    if-eqz p2, :cond_408
+    if-eqz p2, :cond_41f
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mCurrentAsdHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    if-eqz p2, :cond_408
+    if-eqz p2, :cond_41f
 
-    if-eqz p2, :cond_408
+    if-eqz p2, :cond_41f
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 518
+    .line 525
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/ui/HintInfo;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
@@ -1481,11 +1509,11 @@
 
     move-result-object v0
 
-    if-ne p2, v0, :cond_408
+    if-ne p2, v0, :cond_41f
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 519
+    .line 526
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/ui/HintInfo;->getMessage()Ljava/lang/String;
 
     move-result-object p2
@@ -1500,11 +1528,11 @@
 
     move-result p2
 
-    if-eqz p2, :cond_408
+    if-eqz p2, :cond_41f
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 520
+    .line 527
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/ui/HintInfo;->getOtherDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
@@ -1515,11 +1543,11 @@
 
     move-result-object v0
 
-    if-ne p2, v0, :cond_408
+    if-ne p2, v0, :cond_41f
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 521
+    .line 528
     invoke-virtual {p2}, Lcom/transsion/camera/app/common/ui/HintInfo;->getOtherMessage()Ljava/lang/String;
 
     move-result-object p2
@@ -1534,15 +1562,15 @@
 
     move-result p2
 
-    if-eqz p2, :cond_408
+    if-eqz p2, :cond_41f
 
-    goto/16 :goto_49f
+    goto/16 :goto_4b6
 
-    .line 525
-    :cond_408
+    .line 532
+    :cond_41f
     invoke-virtual {p0, p1}, Lcom/transsion/camera/ui/setting/asd/AsdUI;->updateGuideUIState(Lcom/transsion/camera/feature/setting/asd/AsdResult;)V
 
-    .line 527
+    .line 534
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mCurrentAsdHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -1553,7 +1581,7 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/ui/HintInfo;->setDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 528
+    .line 535
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mCurrentAsdHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -1564,7 +1592,7 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 529
+    .line 536
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mCurrentAsdHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -1575,7 +1603,7 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 530
+    .line 537
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mCurrentAsdHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -1586,7 +1614,7 @@
 
     invoke-virtual {p1, p2}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherMessage(Ljava/lang/String;)V
 
-    .line 531
+    .line 538
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mDeviceSetting:Lcom/transsion/camera/app/common/setting/ISetting;
 
     const-string p2, "key_camera_zoom"
@@ -1599,7 +1627,7 @@
 
     move-result p1
 
-    .line 532
+    .line 539
     sget p2, Lcom/transsion/camera/ui/setting/asd/AsdUI;->BASE_SHOW_AUX_ZOOM_VALUE:I
 
     sget v0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->ZOOM_RATIO_UNIT:F
@@ -1608,7 +1636,7 @@
 
     mul-int/2addr p2, v1
 
-    .line 533
+    .line 540
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getTwinkleGuideMode()Ljava/lang/String;
@@ -1621,11 +1649,11 @@
 
     move-result v1
 
-    if-nez v1, :cond_465
+    if-nez v1, :cond_47c
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 534
+    .line 541
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->getTwinkleGuideMode()Ljava/lang/String;
 
     move-result-object v1
@@ -1636,29 +1664,29 @@
 
     move-result v1
 
-    if-eqz v1, :cond_470
+    if-eqz v1, :cond_487
 
-    :cond_465
+    :cond_47c
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
-    .line 535
+    .line 542
     invoke-virtual {v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->isSuperNightGuideSupport()Z
 
     move-result v1
 
-    if-eqz v1, :cond_470
+    if-eqz v1, :cond_487
 
     float-to-int p2, v0
 
     mul-int/lit8 p2, p2, 0xa
 
-    .line 538
-    :cond_470
+    .line 545
+    :cond_487
     iget-boolean v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mIsTeleCamera:Z
 
-    if-eqz v0, :cond_47c
+    if-eqz v0, :cond_493
 
-    .line 539
+    .line 546
     invoke-static {}, Lcom/transsion/camera/app/common/CameraRepository;->getInstance()Lcom/transsion/camera/app/common/CameraRepository;
 
     move-result-object v0
@@ -1667,10 +1695,10 @@
 
     move-result p1
 
-    :cond_47c
-    if-gt p1, p2, :cond_49f
+    :cond_493
+    if-gt p1, p2, :cond_4b6
 
-    .line 542
+    .line 549
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -1679,8 +1707,8 @@
 
     return-void
 
-    .line 546
-    :cond_486
+    .line 553
+    :cond_49d
     invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
 
     move-result-object p1
@@ -1689,27 +1717,29 @@
 
     invoke-direct {p0, p1}, Lcom/transsion/camera/ui/setting/asd/AsdUI;->hideAsdResult(Z)V
 
-    if-nez p2, :cond_49f
+    if-nez p2, :cond_4b6
 
-    .line 548
+    .line 555
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setASDalgorithmResult(I)V
 
-    .line 549
+    .line 556
     invoke-static {}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->getInstance()Lcom/transsion/camera/utils/analytics/AnalyticsUtils;
 
     move-result-object p0
 
     invoke-virtual {p0, v1}, Lcom/transsion/camera/utils/analytics/AnalyticsUtils;->setASDeffect(I)V
 
-    :cond_49f
-    :goto_49f
+    :cond_4b6
+    :goto_4b6
     return-void
 
-    :pswitch_data_4a0
+    nop
+
+    :pswitch_data_4b8
     .packed-switch 0x1
         :pswitch_2ce
         :pswitch_2bc
@@ -1727,7 +1757,7 @@
         :pswitch_1e4
     .end packed-switch
 
-    :pswitch_data_4c0
+    :pswitch_data_4d8
     .packed-switch 0x10
         :pswitch_1d2
         :pswitch_1c0
@@ -1751,61 +1781,61 @@
 .method private hideAsdResult(Z)V
     .registers 5
 
-    .line 571
+    .line 578
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     if-eqz v0, :cond_41
 
-    .line 572
+    .line 579
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 573
+    .line 580
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 574
+    .line 581
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherMessage(Ljava/lang/String;)V
 
-    .line 575
+    .line 582
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 576
+    .line 583
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lcom/transsion/camera/app/common/ui/HintInfo;->setTwinkleEnabled(Z)V
 
-    .line 577
+    .line 584
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mCurrentAsdHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setMessage(Ljava/lang/String;)V
 
-    .line 578
+    .line 585
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mCurrentAsdHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 579
+    .line 586
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mCurrentAsdHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherMessage(Ljava/lang/String;)V
 
-    .line 580
+    .line 587
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mCurrentAsdHint:Lcom/transsion/camera/app/common/ui/HintInfo;
 
     invoke-virtual {v0, v1}, Lcom/transsion/camera/app/common/ui/HintInfo;->setOtherDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 581
+    .line 588
     iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mHintInfo:Lcom/transsion/camera/app/common/ui/HintInfo;
@@ -1814,7 +1844,7 @@
 
     if-eqz p1, :cond_41
 
-    .line 583
+    .line 590
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/AbstractCommonSettingUI;->mHintControl:Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;
 
     invoke-interface {p0}, Lcom/transsion/camera/app/common/IAppUIControl$IHintControl;->resetTwinkleGuide()V
@@ -1826,7 +1856,7 @@
 .method private registerListenerToMonitor(Ljava/lang/String;)V
     .registers 3
 
-    .line 589
+    .line 596
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mStatusChangeListener:Lcom/transsion/camera/ui/setting/asd/AsdUI$StatusChangeListener;
@@ -1839,7 +1869,7 @@
 .method private unRegisterListenerToMonitor(Ljava/lang/String;)V
     .registers 3
 
-    .line 593
+    .line 600
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mStatusMonitor:Lcom/transsion/camera/app/common/setting/StatusMonitor;
 
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mStatusChangeListener:Lcom/transsion/camera/ui/setting/asd/AsdUI$StatusChangeListener;
@@ -1934,13 +1964,13 @@
 
     return-void
 
-    .line 564
+    .line 571
     :cond_10
     iput-boolean v1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mNeedShowAsdUI:Z
 
     const/4 p1, 0x0
 
-    .line 565
+    .line 572
     iget v0, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mState:I
 
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/ui/setting/asd/AsdUI;->doUpdateAsdResult(Lcom/transsion/camera/feature/setting/asd/AsdResult;I)V
@@ -1950,10 +1980,10 @@
     :cond_19
     const/4 p1, 0x0
 
-    .line 559
+    .line 566
     iput-boolean p1, p0, Lcom/transsion/camera/ui/setting/asd/AsdUI;->mNeedShowAsdUI:Z
 
-    .line 560
+    .line 567
     invoke-direct {p0, v1}, Lcom/transsion/camera/ui/setting/asd/AsdUI;->hideAsdResult(Z)V
 
     return-void

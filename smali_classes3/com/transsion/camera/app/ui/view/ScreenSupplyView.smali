@@ -30,6 +30,8 @@
 
 .field private mDensity:F
 
+.field private mEnterOutAnimator:Landroid/animation/AnimatorSet;
+
 .field private mInPreviewRoundedPath:Landroid/graphics/Path;
 
 .field private mInPreviewRoundedRadius:F
@@ -69,10 +71,19 @@
     return-void
 .end method
 
+.method static bridge synthetic -$$Nest$fputmEnterOutAnimator(Lcom/transsion/camera/app/ui/view/ScreenSupplyView;Landroid/animation/AnimatorSet;)V
+    .registers 2
+
+    .line 0
+    iput-object p1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mEnterOutAnimator:Landroid/animation/AnimatorSet;
+
+    return-void
+.end method
+
 .method static constructor <clinit>()V
     .registers 2
 
-    .line 29
+    .line 30
     new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "ScreenSupplyView"
@@ -87,17 +98,17 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 3
 
-    .line 80
+    .line 82
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 40
+    .line 41
     new-instance p2, Landroid/graphics/RectF;
 
     invoke-direct {p2}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
-    .line 41
+    .line 42
     new-instance p2, Landroid/graphics/Rect;
 
     invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
@@ -106,10 +117,10 @@
 
     const/high16 p2, 0x41a00000    # 20.0f
 
-    .line 46
+    .line 47
     iput p2, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedRadius:F
 
-    .line 47
+    .line 48
     new-instance p2, Landroid/graphics/RectF;
 
     invoke-direct {p2}, Landroid/graphics/RectF;-><init>()V
@@ -118,29 +129,49 @@
 
     const/4 p2, 0x0
 
-    .line 57
+    .line 58
     iput p2, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenFormType:I
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 58
+    .line 59
     iput p2, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->SCREEN_FLASH_VIEW_MAX_ALPHA:F
 
     const/4 p2, 0x0
 
-    .line 59
+    .line 60
     iput p2, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->NORMAL_ALPHA:F
 
-    .line 60
+    .line 62
     new-instance p2, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/app/ui/view/ScreenSupplyView;)V
 
     iput-object p2, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewTranslationListener:Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;
 
-    .line 81
+    .line 83
     invoke-direct {p0, p1}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->init(Landroid/content/Context;)V
 
+    return-void
+.end method
+
+.method private cancelEnterOutAnimator()V
+    .registers 2
+
+    .line 444
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mEnterOutAnimator:Landroid/animation/AnimatorSet;
+
+    if-eqz v0, :cond_a
+
+    .line 445
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
+
+    const/4 v0, 0x0
+
+    .line 446
+    iput-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mEnterOutAnimator:Landroid/animation/AnimatorSet;
+
+    :cond_a
     return-void
 .end method
 
@@ -149,7 +180,7 @@
 
     const/4 p0, 0x2
 
-    .line 389
+    .line 451
     new-array p0, p0, [F
 
     const/4 v0, 0x0
@@ -170,7 +201,7 @@
 .method private init(Landroid/content/Context;)V
     .registers 5
 
-    .line 90
+    .line 92
     invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -183,7 +214,7 @@
 
     iput v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mDensity:F
 
-    .line 91
+    .line 93
     sget v0, Lcom/transsion/camera/R$color;->screen_supply_color:I
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
@@ -192,7 +223,7 @@
 
     iput p1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenSupplyColor:I
 
-    .line 93
+    .line 95
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result p1
@@ -207,40 +238,40 @@
 
     iget v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenSupplyColor:I
 
-    .line 94
+    .line 96
     invoke-static {v0}, Landroid/graphics/Color;->red(I)I
 
     move-result v0
 
     iget v1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenSupplyColor:I
 
-    .line 95
+    .line 97
     invoke-static {v1}, Landroid/graphics/Color;->green(I)I
 
     move-result v1
 
     iget v2, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenSupplyColor:I
 
-    .line 96
+    .line 98
     invoke-static {v2}, Landroid/graphics/Color;->blue(I)I
 
     move-result v2
 
-    .line 92
+    .line 94
     invoke-static {p1, v0, v1, v2}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result p1
 
     iput p1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenSupplyTranslucentColor:I
 
-    .line 97
+    .line 99
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object p1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewPaint:Landroid/graphics/Paint;
 
-    .line 98
+    .line 100
     iget p0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenSupplyTranslucentColor:I
 
     invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setColor(I)V
@@ -251,7 +282,7 @@
 .method private is169Ratio()Z
     .registers 5
 
-    .line 333
+    .line 368
     iget-wide v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRatio:D
 
     const-wide v2, 0x3ffc71c720000000L    # 1.7777777910232544
@@ -266,7 +297,7 @@
 .method private is21259Ratio()Z
     .registers 5
 
-    .line 342
+    .line 377
     iget-wide v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRatio:D
 
     const-wide v2, 0x4002e38e40000000L    # 2.3611111640930176
@@ -281,7 +312,7 @@
 .method private is229Ratio()Z
     .registers 5
 
-    .line 346
+    .line 381
     iget-wide v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRatio:D
 
     const-wide v2, 0x40038e38e0000000L    # 2.444444417953491
@@ -296,7 +327,7 @@
 .method private is43Ratio()Z
     .registers 5
 
-    .line 329
+    .line 364
     iget-wide v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRatio:D
 
     const-wide v2, 0x3ff5555560000000L    # 1.3333333730697632
@@ -313,7 +344,7 @@
 
     sub-double/2addr p0, p2
 
-    .line 351
+    .line 386
     invoke-static {p0, p1}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide p0
@@ -337,7 +368,7 @@
 .method private isSquareRatio()Z
     .registers 5
 
-    .line 325
+    .line 360
     iget-wide v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRatio:D
 
     const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
@@ -356,7 +387,7 @@
 
     return-void
 
-    .line 64
+    .line 66
     :cond_3
     sget-object p2, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -384,7 +415,7 @@
 
     invoke-static {p2, p3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 65
+    .line 67
     iget-object p2, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     iget-object p3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mRelativePreviewRect:Landroid/graphics/Rect;
@@ -395,7 +426,7 @@
 
     iget p3, p3, Landroid/graphics/Rect;->top:I
 
-    .line 67
+    .line 69
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
@@ -412,7 +443,7 @@
 
     iget v1, v1, Landroid/graphics/Rect;->bottom:I
 
-    .line 69
+    .line 71
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -421,10 +452,10 @@
 
     int-to-float p1, v1
 
-    .line 65
+    .line 67
     invoke-virtual {p2, v0, p3, v2, p1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 71
+    .line 73
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->update()V
 
     return-void
@@ -433,36 +464,49 @@
 .method private update()V
     .registers 3
 
-    .line 124
+    .line 126
     iget v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenFormType:I
 
     const/4 v1, 0x2
 
-    if-eq v1, v0, :cond_13
+    if-eq v1, v0, :cond_1d
 
     const/4 v1, 0x1
 
-    if-eq v1, v0, :cond_13
+    if-eq v1, v0, :cond_1d
 
     const/4 v1, 0x4
 
-    if-eq v1, v0, :cond_13
+    if-eq v1, v0, :cond_1d
 
     const/4 v1, 0x5
 
     if-ne v1, v0, :cond_f
 
-    goto :goto_13
+    goto :goto_1d
 
-    .line 130
+    .line 131
     :cond_f
+    invoke-static {}, Lcom/transsion/camera/utils/FeatureSupport;->isTabletDevice()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_19
+
+    .line 132
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->updateForTablet()V
+
+    return-void
+
+    .line 134
+    :cond_19
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->updateForNormalAndFlip()V
 
     return-void
 
-    .line 128
-    :cond_13
-    :goto_13
+    .line 130
+    :cond_1d
+    :goto_1d
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->updateForFold()V
 
     return-void
@@ -471,7 +515,7 @@
 .method private updateForFold()V
     .registers 11
 
-    .line 138
+    .line 142
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->isEmpty()Z
@@ -482,7 +526,7 @@
 
     return-void
 
-    .line 142
+    .line 146
     :cond_9
     new-instance v0, Landroid/graphics/Path;
 
@@ -490,14 +534,14 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewPath:Landroid/graphics/Path;
 
-    .line 143
+    .line 147
     iget-object v1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     sget-object v2, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->addRect(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V
 
-    .line 169
+    .line 173
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->isSquareRatio()Z
 
     move-result v0
@@ -506,7 +550,7 @@
 
     if-eqz v0, :cond_3f
 
-    .line 170
+    .line 174
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
@@ -521,7 +565,7 @@
 
     add-float/2addr v0, v4
 
-    .line 171
+    .line 175
     iget-object v5, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v5}, Landroid/graphics/RectF;->width()F
@@ -532,7 +576,7 @@
 
     add-float/2addr v5, v4
 
-    .line 172
+    .line 176
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -546,7 +590,7 @@
 
     goto/16 :goto_1cb
 
-    .line 173
+    .line 177
     :cond_3f
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->is43Ratio()Z
 
@@ -558,7 +602,7 @@
 
     if-eqz v0, :cond_94
 
-    .line 174
+    .line 178
     iget v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenFormType:I
 
     if-ne v4, v0, :cond_71
@@ -569,7 +613,7 @@
 
     if-eq v0, v3, :cond_71
 
-    .line 176
+    .line 180
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
@@ -584,7 +628,7 @@
 
     sub-float/2addr v0, v3
 
-    .line 177
+    .line 181
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -606,7 +650,7 @@
 
     goto :goto_8d
 
-    .line 179
+    .line 183
     :cond_71
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
@@ -622,7 +666,7 @@
 
     add-float/2addr v0, v3
 
-    .line 180
+    .line 184
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -637,7 +681,7 @@
 
     goto :goto_6e
 
-    .line 182
+    .line 186
     :goto_8d
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
@@ -647,7 +691,7 @@
 
     goto :goto_3b
 
-    .line 183
+    .line 187
     :cond_94
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->is169Ratio()Z
 
@@ -655,7 +699,7 @@
 
     if-eqz v0, :cond_12a
 
-    .line 184
+    .line 188
     iget v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenFormType:I
 
     const v5, 0x447e1666
@@ -670,7 +714,7 @@
 
     if-eq v0, v3, :cond_d9
 
-    .line 186
+    .line 190
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
@@ -685,7 +729,7 @@
 
     sub-float/2addr v0, v3
 
-    .line 187
+    .line 191
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -702,7 +746,7 @@
 
     add-float/2addr v3, v4
 
-    .line 188
+    .line 192
     iget-object v4, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->height()F
@@ -726,7 +770,7 @@
 
     goto :goto_fe
 
-    .line 190
+    .line 194
     :cond_d9
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
@@ -742,7 +786,7 @@
 
     add-float/2addr v0, v3
 
-    .line 191
+    .line 195
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -757,7 +801,7 @@
 
     add-float/2addr v3, v4
 
-    .line 192
+    .line 196
     iget-object v4, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->height()F
@@ -770,7 +814,7 @@
 
     goto :goto_d5
 
-    .line 194
+    .line 198
     :goto_fe
     iget v7, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenFormType:I
 
@@ -789,7 +833,7 @@
 
     goto/16 :goto_1cb
 
-    .line 196
+    .line 200
     :cond_10a
     :goto_10a
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
@@ -802,7 +846,7 @@
 
     mul-float/2addr v0, v3
 
-    .line 197
+    .line 201
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -813,7 +857,7 @@
 
     mul-float/2addr v3, v4
 
-    .line 198
+    .line 202
     iget-object v4, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->height()F
@@ -830,7 +874,7 @@
 
     goto/16 :goto_1cb
 
-    .line 200
+    .line 204
     :cond_12a
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->is21259Ratio()Z
 
@@ -846,7 +890,7 @@
 
     goto :goto_198
 
-    .line 207
+    .line 211
     :cond_137
     iget v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenFormType:I
 
@@ -858,7 +902,7 @@
 
     if-eq v0, v3, :cond_16d
 
-    .line 209
+    .line 213
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
@@ -873,7 +917,7 @@
 
     add-float/2addr v0, v3
 
-    .line 210
+    .line 214
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -888,7 +932,7 @@
 
     add-float v5, v3, v4
 
-    .line 211
+    .line 215
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -906,7 +950,7 @@
 
     goto :goto_1cb
 
-    .line 213
+    .line 217
     :cond_16d
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
@@ -922,7 +966,7 @@
 
     add-float/2addr v0, v3
 
-    .line 214
+    .line 218
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -937,7 +981,7 @@
 
     add-float v5, v3, v4
 
-    .line 215
+    .line 219
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -952,7 +996,7 @@
 
     goto :goto_16b
 
-    .line 202
+    .line 206
     :cond_198
     :goto_198
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
@@ -973,7 +1017,7 @@
 
     add-float/2addr v0, v4
 
-    .line 203
+    .line 207
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -992,7 +1036,7 @@
 
     add-float/2addr v5, v3
 
-    .line 204
+    .line 208
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -1011,7 +1055,7 @@
 
     add-float/2addr v3, v6
 
-    .line 219
+    .line 223
     :goto_1cb
     iget-object v4, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
@@ -1023,14 +1067,14 @@
 
     div-float/2addr v4, v1
 
-    .line 221
+    .line 225
     iget-object v1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     iget v6, v1, Landroid/graphics/RectF;->left:F
 
     add-float/2addr v6, v4
 
-    .line 222
+    .line 226
     iget v1, v1, Landroid/graphics/RectF;->top:F
 
     add-float/2addr v1, v3
@@ -1039,19 +1083,19 @@
 
     add-float/2addr v5, v1
 
-    .line 225
+    .line 229
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3, v6, v1, v0, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 226
+    .line 230
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedPath:Landroid/graphics/Path;
 
-    .line 227
+    .line 231
     iget-object v1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedRect:Landroid/graphics/RectF;
 
     iget v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedRadius:F
@@ -1064,7 +1108,7 @@
 
     invoke-virtual {v0, v1, v5, v3, v2}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 230
+    .line 234
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -1073,7 +1117,7 @@
 .method private updateForNormalAndFlip()V
     .registers 9
 
-    .line 237
+    .line 272
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->isEmpty()Z
@@ -1084,7 +1128,7 @@
 
     return-void
 
-    .line 241
+    .line 276
     :cond_9
     new-instance v0, Landroid/graphics/Path;
 
@@ -1092,14 +1136,14 @@
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewPath:Landroid/graphics/Path;
 
-    .line 242
+    .line 277
     iget-object v1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     sget-object v2, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->addRect(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V
 
-    .line 262
+    .line 297
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->isSquareRatio()Z
 
     move-result v0
@@ -1108,7 +1152,7 @@
 
     if-eqz v0, :cond_3a
 
-    .line 263
+    .line 298
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
@@ -1119,7 +1163,7 @@
 
     mul-float/2addr v0, v3
 
-    .line 264
+    .line 299
     iget-object v4, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->height()F
@@ -1128,7 +1172,7 @@
 
     mul-float/2addr v4, v3
 
-    .line 265
+    .line 300
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -1142,7 +1186,7 @@
 
     goto/16 :goto_ef
 
-    .line 266
+    .line 301
     :cond_3a
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->is43Ratio()Z
 
@@ -1150,7 +1194,7 @@
 
     if-eqz v0, :cond_69
 
-    .line 267
+    .line 302
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->height()F
@@ -1169,7 +1213,7 @@
 
     sub-float/2addr v0, v4
 
-    .line 268
+    .line 303
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -1188,7 +1232,7 @@
 
     sub-float v4, v3, v5
 
-    .line 269
+    .line 304
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -1197,7 +1241,7 @@
 
     goto :goto_36
 
-    .line 270
+    .line 305
     :cond_69
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->is169Ratio()Z
 
@@ -1205,7 +1249,7 @@
 
     if-eqz v0, :cond_a4
 
-    .line 271
+    .line 306
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
@@ -1224,7 +1268,7 @@
 
     add-float/2addr v0, v4
 
-    .line 272
+    .line 307
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -1243,7 +1287,7 @@
 
     add-float v4, v3, v5
 
-    .line 273
+    .line 308
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -1265,7 +1309,7 @@
 
     goto :goto_ef
 
-    .line 274
+    .line 309
     :cond_a4
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->is229Ratio()Z
 
@@ -1273,7 +1317,7 @@
 
     if-eqz v0, :cond_dd
 
-    .line 276
+    .line 311
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
@@ -1292,7 +1336,7 @@
 
     add-float/2addr v0, v4
 
-    .line 277
+    .line 312
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -1311,7 +1355,7 @@
 
     add-float v4, v3, v5
 
-    .line 278
+    .line 313
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
@@ -1328,7 +1372,7 @@
 
     goto :goto_a1
 
-    .line 281
+    .line 316
     :cond_dd
     iget v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mDensity:F
 
@@ -1340,7 +1384,7 @@
 
     mul-float/2addr v4, v0
 
-    .line 283
+    .line 318
     iget v5, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mTopOffset:I
 
     int-to-float v5, v5
@@ -1357,7 +1401,7 @@
 
     move v0, v7
 
-    .line 286
+    .line 321
     :goto_ef
     iget-object v5, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
@@ -1369,14 +1413,14 @@
 
     div-float/2addr v5, v1
 
-    .line 288
+    .line 323
     iget-object v1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     iget v6, v1, Landroid/graphics/RectF;->left:F
 
     add-float/2addr v6, v5
 
-    .line 289
+    .line 324
     iget v1, v1, Landroid/graphics/RectF;->top:F
 
     add-float/2addr v1, v3
@@ -1385,19 +1429,19 @@
 
     add-float/2addr v4, v1
 
-    .line 292
+    .line 327
     iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3, v6, v1, v0, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 293
+    .line 328
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedPath:Landroid/graphics/Path;
 
-    .line 294
+    .line 329
     iget-object v1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedRect:Landroid/graphics/RectF;
 
     iget v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedRadius:F
@@ -1410,7 +1454,156 @@
 
     invoke-virtual {v0, v1, v5, v3, v2}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 297
+    .line 332
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    return-void
+.end method
+
+.method private updateForTablet()V
+    .registers 8
+
+    .line 241
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    return-void
+
+    .line 244
+    :cond_9
+    new-instance v0, Landroid/graphics/Path;
+
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+
+    iput-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewPath:Landroid/graphics/Path;
+
+    .line 245
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
+
+    sget-object v2, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->addRect(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V
+
+    .line 248
+    iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
+
+    move-result v0
+
+    const v1, 0x3f333333    # 0.7f
+
+    mul-float/2addr v0, v1
+
+    .line 249
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->isSquareRatio()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_29
+
+    move v1, v0
+
+    goto :goto_3d
+
+    .line 252
+    :cond_29
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
+
+    invoke-virtual {v1}, Landroid/graphics/RectF;->width()F
+
+    move-result v1
+
+    const/high16 v3, 0x40800000    # 4.0f
+
+    mul-float/2addr v1, v3
+
+    const/high16 v3, 0x40400000    # 3.0f
+
+    div-float/2addr v1, v3
+
+    iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
+
+    invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
+
+    move-result v3
+
+    sub-float/2addr v3, v0
+
+    sub-float/2addr v1, v3
+
+    .line 254
+    :goto_3d
+    iget-object v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
+
+    invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
+
+    move-result v3
+
+    sub-float/2addr v3, v0
+
+    const/high16 v4, 0x40000000    # 2.0f
+
+    div-float/2addr v3, v4
+
+    .line 255
+    iget-object v5, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
+
+    invoke-virtual {v5}, Landroid/graphics/RectF;->height()F
+
+    move-result v5
+
+    sub-float/2addr v5, v1
+
+    div-float/2addr v5, v4
+
+    .line 257
+    iget-object v4, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
+
+    iget v6, v4, Landroid/graphics/RectF;->left:F
+
+    add-float/2addr v6, v3
+
+    .line 258
+    iget v3, v4, Landroid/graphics/RectF;->top:F
+
+    add-float/2addr v3, v5
+
+    add-float/2addr v0, v6
+
+    add-float/2addr v1, v3
+
+    .line 261
+    iget-object v4, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedRect:Landroid/graphics/RectF;
+
+    invoke-virtual {v4, v6, v3, v0, v1}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 262
+    new-instance v0, Landroid/graphics/Path;
+
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+
+    iput-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedPath:Landroid/graphics/Path;
+
+    .line 263
+    iget-object v1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedRect:Landroid/graphics/RectF;
+
+    iget v3, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedRadius:F
+
+    iget v4, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mDensity:F
+
+    mul-float v5, v3, v4
+
+    mul-float/2addr v3, v4
+
+    invoke-virtual {v0, v1, v5, v3, v2}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
+
+    .line 265
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -1421,21 +1614,24 @@
 .method public fadeIn(Landroid/view/View;Landroid/view/View;)V
     .registers 7
 
-    .line 355
+    .line 390
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->cancelEnterOutAnimator()V
+
+    .line 391
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
     const-wide/16 v1, 0x64
 
-    .line 356
+    .line 392
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
     const/4 v1, 0x0
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 357
+    .line 393
     const-string v3, "alpha"
 
     invoke-direct {p0, p1, v3, v1, v2}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->getTargetViewAnimator(Landroid/view/View;Ljava/lang/String;FF)Landroid/animation/Animator;
@@ -1448,14 +1644,17 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 358
+    .line 394
     new-instance v1, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$1;
 
     invoke-direct {v1, p0, p1, p2}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$1;-><init>(Lcom/transsion/camera/app/ui/view/ScreenSupplyView;Landroid/view/View;Landroid/view/View;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 368
+    .line 414
+    iput-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mEnterOutAnimator:Landroid/animation/AnimatorSet;
+
+    .line 415
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -1464,21 +1663,24 @@
 .method public fadeOut(Landroid/view/View;Landroid/view/View;)V
     .registers 7
 
-    .line 372
+    .line 419
+    invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->cancelEnterOutAnimator()V
+
+    .line 420
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
     const-wide/16 v1, 0x64
 
-    .line 373
+    .line 421
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     const/4 v2, 0x0
 
-    .line 374
+    .line 422
     const-string v3, "alpha"
 
     invoke-direct {p0, p1, v3, v1, v2}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->getTargetViewAnimator(Landroid/view/View;Ljava/lang/String;FF)Landroid/animation/Animator;
@@ -1491,14 +1693,17 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 375
+    .line 423
     new-instance v1, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$2;
 
     invoke-direct {v1, p0, p1, p2}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView$2;-><init>(Lcom/transsion/camera/app/ui/view/ScreenSupplyView;Landroid/view/View;Landroid/view/View;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 385
+    .line 439
+    iput-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mEnterOutAnimator:Landroid/animation/AnimatorSet;
+
+    .line 440
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -1507,12 +1712,12 @@
 .method public getAnimatorUpdateListener(Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;)Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;
     .registers 3
 
-    .line 398
+    .line 460
     sget-object v0, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;->UI5_ANIM_PREVIEW_TRANSLATION:Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;
 
     if-ne p1, v0, :cond_7
 
-    .line 399
+    .line 461
     iget-object p0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewTranslationListener:Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;
 
     return-object p0
@@ -1532,10 +1737,10 @@
 .method protected onAttachedToWindow()V
     .registers 3
 
-    .line 407
+    .line 469
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 408
+    .line 470
     sget-object v0, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;->UI5_ANIM_PREVIEW_TRANSLATION:Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->getAnimatorUpdateListener(Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;)Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;
@@ -1544,7 +1749,7 @@
 
     if-eqz p0, :cond_12
 
-    .line 410
+    .line 472
     invoke-static {}, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;->getInstance()Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;
 
     move-result-object v1
@@ -1558,10 +1763,10 @@
 .method protected onDetachedFromWindow()V
     .registers 3
 
-    .line 416
+    .line 478
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 417
+    .line 479
     sget-object v0, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;->UI5_ANIM_PREVIEW_TRANSLATION:Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->getAnimatorUpdateListener(Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimationDescription;)Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder$AnimatorUpdateListener;
@@ -1570,7 +1775,7 @@
 
     if-eqz p0, :cond_12
 
-    .line 419
+    .line 481
     invoke-static {}, Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;->getInstance()Lcom/transsion/camera/app/common/ui/anim/UnionAnimatorHolder;
 
     move-result-object v1
@@ -1584,30 +1789,30 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .registers 3
 
-    .line 313
+    .line 348
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 314
+    .line 349
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewPath:Landroid/graphics/Path;
 
     if-eqz v0, :cond_1b
 
-    .line 316
+    .line 351
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mInPreviewRoundedPath:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipOutPath(Landroid/graphics/Path;)Z
 
-    .line 317
+    .line 352
     iget v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenSupplyTranslucentColor:I
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 318
+    .line 353
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewPath:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipOutPath(Landroid/graphics/Path;)Z
 
-    .line 320
+    .line 355
     iget p0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenSupplyColor:I
 
     invoke-virtual {p1, p0}, Landroid/graphics/Canvas;->drawColor(I)V
@@ -1619,17 +1824,17 @@
 .method public onOrientationChanged(IZ)V
     .registers 3
 
-    .line 112
+    .line 114
     iput p1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mOrientation:I
 
     const/4 p1, 0x1
 
-    .line 113
+    .line 115
     iget p2, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenFormType:I
 
     if-ne p1, p2, :cond_a
 
-    .line 114
+    .line 116
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->update()V
 
     :cond_a
@@ -1639,17 +1844,17 @@
 .method public onRelativePreviewRectChanged(Landroid/graphics/Rect;)V
     .registers 3
 
-    .line 306
+    .line 341
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mRelativePreviewRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 307
+    .line 342
     iget-object v0, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0, p1}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 308
+    .line 343
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->update()V
 
     return-void
@@ -1658,10 +1863,10 @@
 .method public onScreenFormChanged(IZ)V
     .registers 3
 
-    .line 119
+    .line 121
     iput p1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mScreenFormType:I
 
-    .line 120
+    .line 122
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->update()V
 
     return-void
@@ -1670,13 +1875,13 @@
 .method public updateOffset(II)V
     .registers 3
 
-    .line 102
+    .line 104
     iput p1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mTopOffset:I
 
-    .line 103
+    .line 105
     iput p2, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mBottomOffset:I
 
-    .line 104
+    .line 106
     invoke-direct {p0}, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->update()V
 
     return-void
@@ -1685,7 +1890,7 @@
 .method public updatePreviewRatio(D)V
     .registers 3
 
-    .line 108
+    .line 110
     iput-wide p1, p0, Lcom/transsion/camera/app/ui/view/ScreenSupplyView;->mPreviewRatio:D
 
     return-void

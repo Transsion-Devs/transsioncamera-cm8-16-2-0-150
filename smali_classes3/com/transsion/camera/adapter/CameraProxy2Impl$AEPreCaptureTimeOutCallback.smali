@@ -27,10 +27,10 @@
 
     const/4 v0, 0x0
 
-    .line 2341
+    .line 2340
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;-><init>(Lcom/transsion/camera/adapter/CameraProxy2Impl;Lcom/transsion/camera/adapter/CameraProxy2Impl-IA;)V
 
-    .line 2342
+    .line 2341
     iput-object p2, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$AEPreCaptureTimeOutCallback;->mDelegate:Lcom/transsion/camera/adapter/CaptureResultMonitor$AEPreCaptureResultCallback;
 
     return-void
@@ -50,14 +50,14 @@
 .method public onAEPreCaptureDone()V
     .registers 3
 
-    .line 2353
+    .line 2352
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->shouldTriggerCallBack()Z
 
     move-result v0
 
     if-eqz v0, :cond_17
 
-    .line 2354
+    .line 2353
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -66,10 +66,10 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2355
+    .line 2354
     invoke-virtual {p0}, Lcom/transsion/camera/adapter/CameraProxy2Impl$TimeOutCallback;->removeTimeOutCallback()V
 
-    .line 2356
+    .line 2355
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$AEPreCaptureTimeOutCallback;->mDelegate:Lcom/transsion/camera/adapter/CaptureResultMonitor$AEPreCaptureResultCallback;
 
     invoke-interface {p0}, Lcom/transsion/camera/adapter/CaptureResultMonitor$AEPreCaptureResultCallback;->onAEPreCaptureDone()V
@@ -81,7 +81,7 @@
 .method protected triggerTimeOutCallBack()V
     .registers 3
 
-    .line 2347
+    .line 2346
     invoke-static {}, Lcom/transsion/camera/adapter/CameraProxy2Impl;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -90,7 +90,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 2348
+    .line 2347
     iget-object p0, p0, Lcom/transsion/camera/adapter/CameraProxy2Impl$AEPreCaptureTimeOutCallback;->mDelegate:Lcom/transsion/camera/adapter/CaptureResultMonitor$AEPreCaptureResultCallback;
 
     invoke-interface {p0}, Lcom/transsion/camera/adapter/CaptureResultMonitor$AEPreCaptureResultCallback;->onAEPreCaptureDone()V

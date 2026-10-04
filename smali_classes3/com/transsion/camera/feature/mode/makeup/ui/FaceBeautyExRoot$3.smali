@@ -27,70 +27,70 @@
 .method constructor <init>()V
     .registers 6
 
-    .line 199
+    .line 205
     invoke-direct {p0}, Ljava/util/HashMap;-><init>()V
 
-    .line 201
+    .line 207
     const-string v0, "soften"
 
     const-string v1, "15"
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 202
+    .line 208
     const-string/jumbo v0, "whiten"
 
     const-string v2, "10"
 
     invoke-virtual {p0, v0, v2}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 203
+    .line 209
     const-string v0, "neutral"
 
     const-string v3, "20"
 
     invoke-virtual {p0, v0, v3}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 204
+    .line 210
     const-string v0, "cold"
 
     const-string v4, "0"
 
     invoke-virtual {p0, v0, v4}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 205
+    .line 211
     const-string/jumbo v0, "warm"
 
     invoke-virtual {p0, v0, v2}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 206
+    .line 212
     const-string v0, "brown"
 
     invoke-virtual {p0, v0, v4}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 207
+    .line 213
     const-string v0, "face"
 
     invoke-virtual {p0, v0, v3}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 208
+    .line 214
     const-string v0, "eye"
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 209
+    .line 215
     const-string v0, "cuttingface"
 
     invoke-virtual {p0, v0, v4}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 210
+    .line 216
     const-string v0, "nose"
 
     const-string v1, "30"
 
     invoke-virtual {p0, v0, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 211
+    .line 217
     const-string v0, "head"
 
     invoke-virtual {p0, v0, v4}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

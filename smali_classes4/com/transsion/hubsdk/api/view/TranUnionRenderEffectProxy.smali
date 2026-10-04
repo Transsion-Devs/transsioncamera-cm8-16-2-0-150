@@ -1024,3 +1024,48 @@
 
     return-void
 .end method
+
+.method public setCustomBlender(Ljava/lang/Object;)V
+    .registers 3
+
+    .line 515
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/view/TranUnionRenderEffectProxy;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/view/ITranUnionRenderEffectAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/view/ITranUnionRenderEffectAdapter;->setCustomBlender(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public setOffscreenRenderingOptimization(Z)V
+    .registers 3
+
+    .line 506
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/view/TranUnionRenderEffectProxy;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/view/ITranUnionRenderEffectAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/view/ITranUnionRenderEffectAdapter;->setOffscreenRenderingOptimization(Z)V
+
+    return-void
+.end method
+
+.method public setRequestWindowType(I)V
+    .registers 3
+
+    .line 498
+    sget-object v0, Lcom/transsion/hubsdk/common/version/TranVersion$Core;->VERSION_33461:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/transsion/hubsdk/api/view/TranUnionRenderEffectProxy;->getService(Ljava/lang/String;)Lcom/transsion/hubsdk/interfaces/view/ITranUnionRenderEffectAdapter;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lcom/transsion/hubsdk/interfaces/view/ITranUnionRenderEffectAdapter;->setRequestWindowType(I)V
+
+    return-void
+.end method

@@ -26,7 +26,7 @@
     c = "kotlinx.coroutines.flow.FlowKt__ReduceKt"
     f = "Reduce.kt"
     l = {
-        0xb7
+        0xb3
     }
     m = "first"
 .end annotation

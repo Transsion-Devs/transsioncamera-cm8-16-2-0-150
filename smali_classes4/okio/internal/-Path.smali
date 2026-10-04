@@ -1338,7 +1338,7 @@
 
     invoke-interface {v0, p0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    .line 1549
+    .line 429
     :cond_7a
     new-instance p0, Ljava/util/ArrayList;
 
@@ -1350,7 +1350,7 @@
 
     invoke-direct {p0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1620
+    .line 430
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -1364,7 +1364,7 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    .line 1621
+    .line 431
     check-cast v2, Lokio/ByteString;
 
     .line 53
@@ -1372,7 +1372,7 @@
 
     move-result-object v2
 
-    .line 1621
+    .line 431
     invoke-interface {p0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_89

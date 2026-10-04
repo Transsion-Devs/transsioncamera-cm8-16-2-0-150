@@ -22,10 +22,10 @@
 .method public constructor <init>(Lcom/transsion/camera/app/ui/BaseAppUI;Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;)V
     .registers 3
 
-    .line 5769
+    .line 5635
     iput-object p1, p0, Lcom/transsion/camera/app/ui/BaseAppUI$PopSettingUIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
-    .line 5770
+    .line 5636
     invoke-direct {p0, p1, p2}, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;-><init>(Lcom/transsion/camera/app/ui/BaseAppUI;Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;)V
 
     return-void
@@ -36,17 +36,17 @@
 .method public process()V
     .registers 2
 
-    .line 5775
+    .line 5641
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$PopSettingUIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$mdoInflatePopSettingUI(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
-    .line 5776
+    .line 5642
     iget-object v0, p0, Lcom/transsion/camera/app/ui/BaseAppUI$PopSettingUIInflateStage;->this$0:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     invoke-static {v0}, Lcom/transsion/camera/app/ui/BaseAppUI;->-$$Nest$mdoUpdatePopSettingUIList(Lcom/transsion/camera/app/ui/BaseAppUI;)V
 
-    .line 5777
+    .line 5643
     invoke-super {p0}, Lcom/transsion/camera/app/ui/BaseAppUI$UIInflateStage;->process()V
 
     return-void

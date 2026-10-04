@@ -15,6 +15,17 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$U6ymqgkz1XYKOZ0dNC2YoMMGvcw(Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;Ljava/lang/String;ZI)Ljava/lang/Object;
+    .registers 4
+
+    .line 0
+    invoke-direct {p0, p1, p2, p3}, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;->lambda$setEnabled$1(Ljava/lang/String;ZI)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static synthetic $r8$lambda$pTuTUyKS5S-fwH7xirg5TPChTPo(Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;Ljava/lang/String;I)Ljava/lang/Object;
     .registers 3
 
@@ -55,6 +66,23 @@
     return-void
 .end method
 
+.method private synthetic lambda$setEnabled$1(Ljava/lang/String;ZI)Ljava/lang/Object;
+    .registers 4
+
+    .line 42
+    iget-object p0, p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;->mService:Lcom/transsion/hubsdk/content/om/ITranOverlayManager;
+
+    if-eqz p0, :cond_7
+
+    .line 43
+    invoke-interface {p0, p1, p2, p3}, Lcom/transsion/hubsdk/content/om/ITranOverlayManager;->setEnabled(Ljava/lang/String;ZI)V
+
+    :cond_7
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
 .method private synthetic lambda$setEnabledExclusiveInCategory$0(Ljava/lang/String;I)Ljava/lang/Object;
     .registers 3
 
@@ -74,6 +102,50 @@
 
 
 # virtual methods
+.method public setEnabled(Ljava/lang/String;ZI)V
+    .registers 6
+
+    .line 41
+    new-instance v0, Lcom/transsion/hubsdk/common/bp/TranTimeOutOrExceptionExecute;
+
+    invoke-direct {v0}, Lcom/transsion/hubsdk/common/bp/TranTimeOutOrExceptionExecute;-><init>()V
+
+    new-instance v1, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;
+
+    invoke-direct {v1, p0, p1, p2, p3}, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;Ljava/lang/String;ZI)V
+
+    const-string p0, "overlay"
+
+    invoke-virtual {v0, v1, p0}, Lcom/transsion/hubsdk/common/bp/TranTimeOutOrExceptionExecute;->timeOutAndExceptionRun(Lcom/transsion/hubsdk/common/bp/TranTimeOutOrExceptionExecute$TimeOutAndExceptionRunnable;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 47
+    sget-object p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;->TAG:Ljava/lang/String;
+
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "setEnabled packageName:"
+
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, ", enable:"
+
+    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p0, p1}, Lcom/transsion/hubsdk/common/util/TranSdkLog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+.end method
+
 .method public setEnabledExclusiveInCategory(Ljava/lang/String;I)V
     .registers 5
 
@@ -82,9 +154,9 @@
 
     invoke-direct {v0}, Lcom/transsion/hubsdk/common/bp/TranTimeOutOrExceptionExecute;-><init>()V
 
-    new-instance v1, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;
+    new-instance v1, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda1;
 
-    invoke-direct {v1, p0, p1, p2}, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;Ljava/lang/String;I)V
+    invoke-direct {v1, p0, p1, p2}, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager$$ExternalSyntheticLambda1;-><init>(Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;Ljava/lang/String;I)V
 
     const-string p0, "overlay"
 
@@ -117,7 +189,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 45
+    .line 56
     iput-object p1, p0, Lcom/transsion/hubsdk/core/content/om/TranThubOverlayManager;->mService:Lcom/transsion/hubsdk/content/om/ITranOverlayManager;
 
     return-void

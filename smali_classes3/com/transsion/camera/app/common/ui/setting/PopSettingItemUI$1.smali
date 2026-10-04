@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;IF)V
     .registers 4
 
-    .line 370
+    .line 374
     iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iput p2, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$1;->val$newDrawableRes:I
@@ -43,7 +43,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 3
 
-    .line 383
+    .line 387
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$fgetmTreasureBoxItemBackground(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)Landroid/widget/ImageView;
@@ -54,7 +54,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 384
+    .line 388
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$fgetmTreasureBoxItemBackground(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)Landroid/widget/ImageView;
@@ -69,7 +69,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 385
+    .line 389
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$fgetmTreasureBoxItemBackground(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)Landroid/widget/ImageView;
@@ -80,7 +80,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 386
+    .line 390
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     iget p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$1;->val$newDrawableRes:I
@@ -93,7 +93,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 2
 
-    .line 378
+    .line 382
     iget-object p0, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {p0}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$fgetmTargetTreasureBoxItemRes(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)I
@@ -108,7 +108,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;Z)V
     .registers 3
 
-    .line 373
+    .line 377
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$fgetmTreasureBoxItemBackground(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)Landroid/widget/ImageView;
@@ -119,7 +119,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 374
+    .line 378
     iget-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI$1;->this$0:Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;
 
     invoke-static {p1}, Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;->-$$Nest$fgetmTreasureBoxItemBackground(Lcom/transsion/camera/app/common/ui/setting/PopSettingItemUI;)Landroid/widget/ImageView;

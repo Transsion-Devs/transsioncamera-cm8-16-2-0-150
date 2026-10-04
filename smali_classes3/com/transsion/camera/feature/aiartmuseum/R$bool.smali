@@ -20,6 +20,8 @@
 
 .field public static ai_art_museum_mode_support_wide_camera:I = 0x7f050006
 
+.field public static ai_art_style_mondrian_support:I = 0x7f050008
+
 
 # direct methods
 .method private constructor <init>()V

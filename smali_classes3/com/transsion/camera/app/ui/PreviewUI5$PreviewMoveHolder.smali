@@ -33,15 +33,15 @@
 .method constructor <init>(Lcom/transsion/camera/app/common/manager/IScreenManager;)V
     .registers 3
 
-    .line 814
+    .line 815
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 812
+    .line 813
     iput-boolean v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mIsPaused:Z
 
-    .line 815
+    .line 816
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -54,7 +54,7 @@
 .method private getPreviewMoveDistance(Lcom/transsion/camera/app/common/manager/IScreenManager;)I
     .registers 3
 
-    .line 868
+    .line 869
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mCurrentScene:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     invoke-direct {p0, p1, v0}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->getPreviewMoveDistance(Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;)I
@@ -67,7 +67,7 @@
 .method private getPreviewMoveDistance(Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;)I
     .registers 6
 
-    .line 881
+    .line 882
     invoke-static {}, Lcom/transsion/camera/app/ui/PreviewUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -94,7 +94,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 882
+    .line 883
     iget-wide v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mPreviewAspectRatio:D
 
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mCurrentMode:Ljava/lang/String;
@@ -111,7 +111,7 @@
 .method protected clone()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 2
 
-    .line 853
+    .line 854
     :try_start_0
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
@@ -126,7 +126,7 @@
     :catch_7
     move-exception p0
 
-    .line 855
+    .line 856
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -137,7 +137,7 @@
 .method protected bridge synthetic clone()Ljava/lang/Object;
     .registers 1
 
-    .line 807
+    .line 808
     invoke-virtual {p0}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->clone()Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
 
     move-result-object p0
@@ -154,7 +154,7 @@
 
     return v0
 
-    .line 890
+    .line 891
     :cond_4
     iget-object v1, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mScreenManager:Ljava/lang/ref/WeakReference;
 
@@ -166,7 +166,7 @@
 
     if-nez v1, :cond_18
 
-    .line 892
+    .line 893
     invoke-static {}, Lcom/transsion/camera/app/ui/PreviewUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -177,18 +177,18 @@
 
     return v0
 
-    .line 895
+    .line 896
     :cond_18
     invoke-direct {p0, v1}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->getPreviewMoveDistance(Lcom/transsion/camera/app/common/manager/IScreenManager;)I
 
     move-result p0
 
-    .line 896
+    .line 897
     invoke-direct {p1, v1}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->getPreviewMoveDistance(Lcom/transsion/camera/app/common/manager/IScreenManager;)I
 
     move-result p1
 
-    .line 897
+    .line 898
     invoke-static {}, Lcom/transsion/camera/app/ui/PreviewUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0
@@ -215,7 +215,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 898
+    .line 899
     invoke-static {p1, p0}, Ljava/lang/Integer;->compare(II)I
 
     move-result p0
@@ -226,7 +226,7 @@
 .method public getCurrentScene()Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
     .registers 1
 
-    .line 860
+    .line 861
     iget-object p0, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mCurrentScene:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     return-object p0
@@ -235,7 +235,7 @@
 .method public getPreviewMoveDistance()I
     .registers 2
 
-    .line 864
+    .line 865
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mCurrentScene:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
     invoke-virtual {p0, v0}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->getPreviewMoveDistance(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;)I
@@ -248,7 +248,7 @@
 .method public getPreviewMoveDistance(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;)I
     .registers 3
 
-    .line 872
+    .line 873
     iget-object v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mScreenManager:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
@@ -259,7 +259,7 @@
 
     if-nez v0, :cond_15
 
-    .line 874
+    .line 875
     invoke-static {}, Lcom/transsion/camera/app/ui/PreviewUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p0
@@ -272,7 +272,7 @@
 
     return p0
 
-    .line 877
+    .line 878
     :cond_15
     invoke-direct {p0, v0, p1}, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->getPreviewMoveDistance(Lcom/transsion/camera/app/common/manager/IScreenManager;Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;)I
 
@@ -284,7 +284,7 @@
 .method public setCurrentMode(Ljava/lang/String;)Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 2
 
-    .line 833
+    .line 834
     iput-object p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mCurrentMode:Ljava/lang/String;
 
     return-object p0
@@ -293,18 +293,18 @@
 .method public setCurrentScene(Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;)Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 4
 
-    .line 819
+    .line 820
     iget-boolean v0, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mIsPaused:Z
 
     if-eqz v0, :cond_5
 
     return-object p0
 
-    .line 822
+    .line 823
     :cond_5
     iput-object p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mCurrentScene:Lcom/transsion/camera/app/common/manager/IScreenManager$PreviewMoveScene;
 
-    .line 823
+    .line 824
     invoke-static {}, Lcom/transsion/camera/app/ui/PreviewUI5;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object p1
@@ -339,7 +339,7 @@
 .method public setPausedState(Z)Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 2
 
-    .line 838
+    .line 839
     iput-boolean p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mIsPaused:Z
 
     return-object p0
@@ -348,7 +348,7 @@
 .method public setPreviewAspectRatio(D)Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;
     .registers 3
 
-    .line 828
+    .line 829
     iput-wide p1, p0, Lcom/transsion/camera/app/ui/PreviewUI5$PreviewMoveHolder;->mPreviewAspectRatio:D
 
     return-object p0
@@ -357,7 +357,7 @@
 .method public toString()Ljava/lang/String;
     .registers 4
 
-    .line 845
+    .line 846
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

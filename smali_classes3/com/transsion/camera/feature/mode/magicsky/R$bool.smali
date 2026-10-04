@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static magicsky_guide_support:I = 0x7f050118
+.field public static magicsky_guide_support:I = 0x7f050122
 
-.field public static magicsky_mode_support_macro_camera:I = 0x7f050119
+.field public static magicsky_mode_support_macro_camera:I = 0x7f050123
 
-.field public static magicsky_mode_support_wide_camera:I = 0x7f05011a
+.field public static magicsky_mode_support_wide_camera:I = 0x7f050124
 
 
 # direct methods

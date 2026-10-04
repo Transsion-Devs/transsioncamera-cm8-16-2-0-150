@@ -18,7 +18,7 @@
         }
     .end annotation
 
-    .line 26
+    .line 23
     new-instance v0, Lkotlinx/coroutines/selects/UnbiasedSelectImplementation;
 
     invoke-interface {p1}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
@@ -27,10 +27,10 @@
 
     invoke-direct {v0, v1}, Lkotlinx/coroutines/selects/UnbiasedSelectImplementation;-><init>(Lkotlin/coroutines/CoroutineContext;)V
 
-    .line 27
+    .line 24
     invoke-interface {p0, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 28
+    .line 25
     invoke-virtual {v0, p1}, Lkotlinx/coroutines/selects/UnbiasedSelectImplementation;->doSelect(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -52,7 +52,7 @@
         }
     .end annotation
 
-    .line 26
+    .line 23
     new-instance p0, Lkotlinx/coroutines/selects/UnbiasedSelectImplementation;
 
     const/4 p0, 0x3

@@ -3,14 +3,8 @@
 .source "SourceFile"
 
 
-# static fields
-.field private static final TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-
 # instance fields
 .field private mCallback:Lcom/transsion/camera/ui/setting/qrcode/IQrCodeToastCallback;
-
-.field private final mContext:Landroid/content/Context;
 
 .field private final mDrawRect:Landroid/graphics/Rect;
 
@@ -43,27 +37,12 @@
     return-void
 .end method
 
-.method static constructor <clinit>()V
-    .registers 2
-
-    .line 23
-    new-instance v0, Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    const-string v1, "QRcodeBoxView"
-
-    invoke-direct {v0, v1}, Lcom/transsion/camera/utils/debug/Log$Tag;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
 
     const/4 v0, 0x0
 
-    .line 45
+    .line 38
     invoke-direct {p0, p1, p2, v0}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     return-void
@@ -72,41 +51,38 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 4
 
-    .line 49
+    .line 42
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 26
-    new-instance p2, Landroid/graphics/Rect;
+    .line 19
+    new-instance p1, Landroid/graphics/Rect;
 
-    invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
+
+    .line 20
+    new-instance p1, Landroid/graphics/Rect;
+
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mVertexRect:Landroid/graphics/Rect;
 
     .line 27
-    new-instance p2, Landroid/graphics/Rect;
+    new-instance p1, Landroid/graphics/Rect;
 
-    invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mVertexRect:Landroid/graphics/Rect;
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLastRect:Landroid/graphics/Rect;
 
-    .line 34
-    new-instance p2, Landroid/graphics/Rect;
+    .line 28
+    new-instance p1, Landroid/graphics/Rect;
 
-    invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLastRect:Landroid/graphics/Rect;
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mPreviewRect:Landroid/graphics/Rect;
 
-    .line 35
-    new-instance p2, Landroid/graphics/Rect;
-
-    invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mPreviewRect:Landroid/graphics/Rect;
-
-    .line 50
-    iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mContext:Landroid/content/Context;
-
-    .line 51
+    .line 43
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->init()V
 
     return-void
@@ -115,43 +91,7 @@
 .method private init()V
     .registers 3
 
-    .line 55
-    sget v0, Lcom/transsion/camera/R$drawable;->ic_qrcode_left_top:I
-
-    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->vectorDrawableToBitmap(I)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLeftTopBox:Landroid/graphics/Bitmap;
-
-    .line 56
-    sget v0, Lcom/transsion/camera/R$drawable;->ic_qrcode_right_top:I
-
-    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->vectorDrawableToBitmap(I)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mRightTopBox:Landroid/graphics/Bitmap;
-
-    .line 57
-    sget v0, Lcom/transsion/camera/R$drawable;->ic_qrcode_left_bottom:I
-
-    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->vectorDrawableToBitmap(I)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLeftBottomBox:Landroid/graphics/Bitmap;
-
-    .line 58
-    sget v0, Lcom/transsion/camera/R$drawable;->ic_qrcode_right_bottom:I
-
-    invoke-direct {p0, v0}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->vectorDrawableToBitmap(I)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mRightBottomBox:Landroid/graphics/Bitmap;
-
-    .line 59
+    .line 47
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
@@ -160,10 +100,10 @@
 
     const/4 v1, 0x1
 
-    .line 60
+    .line 48
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 61
+    .line 49
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mPaint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
@@ -176,7 +116,7 @@
 .method private synthetic lambda$runTranslateBoxViewAnim$0(Landroid/animation/ValueAnimator;)V
     .registers 4
 
-    .line 128
+    .line 106
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
 
     const-string v1, "topOffset"
@@ -193,7 +133,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->top:I
 
-    .line 129
+    .line 107
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
 
     const-string v1, "leftOffset"
@@ -210,7 +150,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->left:I
 
-    .line 130
+    .line 108
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
 
     const-string v1, "rightOffset"
@@ -227,7 +167,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->right:I
 
-    .line 131
+    .line 109
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
 
     const-string v1, "bottomOffset"
@@ -244,7 +184,7 @@
 
     iput p1, v0, Landroid/graphics/Rect;->bottom:I
 
-    .line 132
+    .line 110
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -253,7 +193,7 @@
 .method private runTranslateBoxViewAnim()V
     .registers 6
 
-    .line 122
+    .line 96
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLastRect:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -274,7 +214,7 @@
 
     move-result-object v0
 
-    .line 123
+    .line 98
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLastRect:Landroid/graphics/Rect;
 
     iget v1, v1, Landroid/graphics/Rect;->left:I
@@ -295,7 +235,7 @@
 
     move-result-object v1
 
-    .line 124
+    .line 100
     iget-object v2, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLastRect:Landroid/graphics/Rect;
 
     iget v2, v2, Landroid/graphics/Rect;->right:I
@@ -316,7 +256,7 @@
 
     move-result-object v2
 
-    .line 125
+    .line 102
     iget-object v3, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLastRect:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->bottom:I
@@ -337,7 +277,7 @@
 
     move-result-object v3
 
-    .line 126
+    .line 104
     filled-new-array {v1, v2, v0, v3}, [Landroid/animation/PropertyValuesHolder;
 
     move-result-object v0
@@ -348,14 +288,14 @@
 
     iput-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mValueAnimator:Landroid/animation/ValueAnimator;
 
-    .line 127
+    .line 105
     new-instance v1, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView$$ExternalSyntheticLambda0;-><init>(Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 134
+    .line 112
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mValueAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Landroid/view/animation/LinearInterpolator;
@@ -364,14 +304,14 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 135
+    .line 113
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mValueAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x64
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 136
+    .line 114
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mValueAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->start()V
@@ -379,64 +319,15 @@
     return-void
 .end method
 
-.method private vectorDrawableToBitmap(I)Landroid/graphics/Bitmap;
-    .registers 6
-
-    .line 140
-    iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mContext:Landroid/content/Context;
-
-    invoke-static {p0, p1}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    .line 141
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result p1
-
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v0
-
-    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {p1, v0, v1}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object p1
-
-    .line 142
-    new-instance v0, Landroid/graphics/Canvas;
-
-    invoke-direct {v0, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
-
-    .line 143
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v1
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p0, v3, v3, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 144
-    invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    return-object p1
-.end method
-
 
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .registers 6
 
-    .line 112
+    .line 86
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 113
+    .line 87
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLeftTopBox:Landroid/graphics/Bitmap;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
@@ -453,7 +344,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 114
+    .line 88
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mRightTopBox:Landroid/graphics/Bitmap;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
@@ -470,7 +361,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 115
+    .line 89
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLeftBottomBox:Landroid/graphics/Bitmap;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
@@ -487,7 +378,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 116
+    .line 90
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mRightBottomBox:Landroid/graphics/Bitmap;
 
     iget-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
@@ -504,14 +395,14 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 117
+    .line 91
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mCallback:Lcom/transsion/camera/ui/setting/qrcode/IQrCodeToastCallback;
 
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/ui/setting/qrcode/IQrCodeToastCallback;->onTranslateToast(Landroid/graphics/Rect;)V
 
-    .line 118
+    .line 92
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
 
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLastRect:Landroid/graphics/Rect;
@@ -522,7 +413,7 @@
 .method public resetRect()V
     .registers 2
 
-    .line 76
+    .line 66
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mVertexRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
@@ -531,12 +422,12 @@
 
     if-nez v0, :cond_d
 
-    .line 77
+    .line 67
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mVertexRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 79
+    .line 69
     :cond_d
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLastRect:Landroid/graphics/Rect;
 
@@ -546,12 +437,12 @@
 
     if-nez v0, :cond_1a
 
-    .line 80
+    .line 70
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLastRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 82
+    .line 72
     :cond_1a
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
 
@@ -561,7 +452,7 @@
 
     if-nez v0, :cond_27
 
-    .line 83
+    .line 73
     iget-object p0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Landroid/graphics/Rect;->setEmpty()V
@@ -570,78 +461,46 @@
     return-void
 .end method
 
+.method public setBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)V
+    .registers 5
+
+    .line 118
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLeftTopBox:Landroid/graphics/Bitmap;
+
+    .line 119
+    iput-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mRightTopBox:Landroid/graphics/Bitmap;
+
+    .line 120
+    iput-object p3, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mRightBottomBox:Landroid/graphics/Bitmap;
+
+    .line 121
+    iput-object p4, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLeftBottomBox:Landroid/graphics/Bitmap;
+
+    return-void
+.end method
+
 .method public setDrawRectCallBack(Lcom/transsion/camera/ui/setting/qrcode/IQrCodeToastCallback;)V
     .registers 2
 
-    .line 107
+    .line 81
     iput-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mCallback:Lcom/transsion/camera/ui/setting/qrcode/IQrCodeToastCallback;
 
     return-void
 .end method
 
 .method public unInit()V
-    .registers 3
+    .registers 1
 
-    .line 88
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLeftTopBox:Landroid/graphics/Bitmap;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_a
-
-    .line 89
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
-
-    .line 90
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLeftTopBox:Landroid/graphics/Bitmap;
-
-    .line 92
-    :cond_a
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLeftBottomBox:Landroid/graphics/Bitmap;
-
-    if-eqz v0, :cond_13
-
-    .line 93
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
-
-    .line 94
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLeftBottomBox:Landroid/graphics/Bitmap;
-
-    .line 96
-    :cond_13
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mRightTopBox:Landroid/graphics/Bitmap;
-
-    if-eqz v0, :cond_1c
-
-    .line 97
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
-
-    .line 98
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mRightTopBox:Landroid/graphics/Bitmap;
-
-    .line 100
-    :cond_1c
-    iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mRightBottomBox:Landroid/graphics/Bitmap;
-
-    if-eqz v0, :cond_25
-
-    .line 101
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
-
-    .line 102
-    iput-object v1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mRightBottomBox:Landroid/graphics/Bitmap;
-
-    :cond_25
     return-void
 .end method
 
 .method public updateRect(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
     .registers 7
 
-    .line 65
+    .line 53
     iput-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mPreviewRect:Landroid/graphics/Rect;
 
-    .line 66
+    .line 54
     iget-object v0, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mVertexRect:Landroid/graphics/Rect;
 
     iget v1, p1, Landroid/graphics/Rect;->left:I
@@ -660,7 +519,7 @@
 
     invoke-virtual {v0, v1, v2, v3, p1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 67
+    .line 56
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mLastRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1}, Landroid/graphics/Rect;->isEmpty()Z
@@ -669,7 +528,7 @@
 
     if-eqz p1, :cond_36
 
-    .line 68
+    .line 57
     iget-object p1, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mDrawRect:Landroid/graphics/Rect;
 
     iget-object p2, p0, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->mVertexRect:Landroid/graphics/Rect;
@@ -692,12 +551,12 @@
 
     invoke-virtual {p1, v0, v1, v2, p2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 69
+    .line 59
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 
-    .line 71
+    .line 61
     :cond_36
     invoke-direct {p0}, Lcom/transsion/camera/ui/setting/qrcode/view/QRcodeBoxView;->runTranslateBoxViewAnim()V
 

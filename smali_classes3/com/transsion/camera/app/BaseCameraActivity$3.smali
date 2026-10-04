@@ -21,7 +21,7 @@
 .method constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 1309
+    .line 1332
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,11 +32,11 @@
 .method public run()V
     .registers 4
 
-    .line 1314
+    .line 1337
     :try_start_0
     invoke-static {}, Ljava/lang/System;->runFinalization()V
 
-    .line 1315
+    .line 1338
     invoke-static {}, Ljava/lang/System;->gc()V
     :try_end_6
     .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_6} :catch_7
@@ -46,7 +46,7 @@
     :catch_7
     move-exception p0
 
-    .line 1317
+    .line 1340
     invoke-static {}, Lcom/transsion/camera/app/BaseCameraActivity;->-$$Nest$sfgetTAG()Lcom/transsion/camera/utils/debug/Log$Tag;
 
     move-result-object v0

@@ -14,9 +14,9 @@
 
 
 # static fields
-.field public static lowlight_brightness_threshold:I = 0x7f0c0074
+.field public static lowlight_brightness_threshold:I = 0x7f0c0078
 
-.field public static max_continuous_shot_number:I = 0x7f0c0097
+.field public static max_continuous_shot_number:I = 0x7f0c009b
 
 
 # direct methods

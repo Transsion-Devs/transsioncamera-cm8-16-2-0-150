@@ -30,7 +30,7 @@
     .line 0
     iget-object p0, p0, Lcom/transsion/camera/app/common/mode/CommonPhotoMode$$ExternalSyntheticLambda4;->f$0:Lcom/transsion/camera/app/common/mode/CommonPhotoMode;
 
-    invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->$r8$lambda$gnvUXfPox-t3NzFDP2GHIl4ovU0(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)V
+    invoke-static {p0}, Lcom/transsion/camera/app/common/mode/CommonPhotoMode;->$r8$lambda$ft-BSb5mlw09XEecGSH_dlZgyKQ(Lcom/transsion/camera/app/common/mode/CommonPhotoMode;)V
 
     return-void
 .end method

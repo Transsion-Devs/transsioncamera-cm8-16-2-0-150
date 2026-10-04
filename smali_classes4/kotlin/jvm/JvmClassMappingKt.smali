@@ -77,11 +77,13 @@
 
     goto/16 :goto_91
 
+    .line 66
     :cond_2e
     const-class p0, Ljava/lang/Short;
 
     goto/16 :goto_91
 
+    .line 62
     :sswitch_32
     const-string v2, "float"
 
@@ -93,11 +95,13 @@
 
     goto :goto_91
 
+    .line 68
     :cond_3b
     const-class p0, Ljava/lang/Float;
 
     goto :goto_91
 
+    .line 62
     :sswitch_3e
     const-string v2, "boolean"
 
@@ -109,11 +113,13 @@
 
     goto :goto_91
 
+    .line 63
     :cond_47
     const-class p0, Ljava/lang/Boolean;
 
     goto :goto_91
 
+    .line 62
     :sswitch_4a
     const-string v2, "void"
 
@@ -125,11 +131,13 @@
 
     goto :goto_91
 
+    .line 71
     :cond_53
     const-class p0, Ljava/lang/Void;
 
     goto :goto_91
 
+    .line 62
     :sswitch_56
     const-string v2, "long"
 
@@ -141,11 +149,13 @@
 
     goto :goto_91
 
+    .line 69
     :cond_5f
     const-class p0, Ljava/lang/Long;
 
     goto :goto_91
 
+    .line 62
     :sswitch_62
     const-string v2, "char"
 
@@ -157,11 +167,13 @@
 
     goto :goto_91
 
+    .line 64
     :cond_6b
     const-class p0, Ljava/lang/Character;
 
     goto :goto_91
 
+    .line 62
     :sswitch_6e
     const-string v2, "byte"
 
@@ -173,11 +185,13 @@
 
     goto :goto_91
 
+    .line 65
     :cond_77
     const-class p0, Ljava/lang/Byte;
 
     goto :goto_91
 
+    .line 62
     :sswitch_7a
     const-string v2, "int"
 
@@ -189,11 +203,13 @@
 
     goto :goto_91
 
+    .line 67
     :cond_83
     const-class p0, Ljava/lang/Integer;
 
     goto :goto_91
 
+    .line 62
     :sswitch_86
     const-string v2, "double"
 
@@ -205,9 +221,11 @@
 
     goto :goto_91
 
+    .line 70
     :cond_8f
     const-class p0, Ljava/lang/Double;
 
+    .line 62
     :goto_91
     invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 

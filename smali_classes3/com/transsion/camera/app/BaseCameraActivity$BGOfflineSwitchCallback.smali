@@ -25,7 +25,7 @@
 .method private constructor <init>(Lcom/transsion/camera/app/BaseCameraActivity;)V
     .registers 2
 
-    .line 2223
+    .line 2245
     iput-object p1, p0, Lcom/transsion/camera/app/BaseCameraActivity$BGOfflineSwitchCallback;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,14 +47,14 @@
 .method public onOfflineSwitchFinish(I)V
     .registers 2
 
-    .line 2226
+    .line 2248
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity$BGOfflineSwitchCallback;->this$0:Lcom/transsion/camera/app/BaseCameraActivity;
 
     iget-object p0, p0, Lcom/transsion/camera/app/BaseCameraActivity;->mAppUI:Lcom/transsion/camera/app/ui/BaseAppUI;
 
     if-eqz p0, :cond_9
 
-    .line 2227
+    .line 2249
     invoke-virtual {p0, p1}, Lcom/transsion/camera/app/ui/BaseAppUI;->onOfflineSwitchFinish(I)V
 
     :cond_9

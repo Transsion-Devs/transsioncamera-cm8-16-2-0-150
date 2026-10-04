@@ -15,7 +15,7 @@
 
     const/4 p4, 0x1
 
-    .line 272
+    .line 280
     invoke-virtual {p2, p4}, Landroid/graphics/ImageDecoder;->setAllocator(I)V
 
     const/16 p4, 0x5a
@@ -28,7 +28,7 @@
 
     goto :goto_1e
 
-    .line 277
+    .line 285
     :cond_d
     invoke-virtual {p3}, Landroid/graphics/ImageDecoder$ImageInfo;->getSize()Landroid/util/Size;
 
@@ -53,7 +53,7 @@
 
     goto :goto_2e
 
-    .line 275
+    .line 283
     :cond_1e
     :goto_1e
     invoke-virtual {p3}, Landroid/graphics/ImageDecoder$ImageInfo;->getSize()Landroid/util/Size;
@@ -76,7 +76,7 @@
 
     goto :goto_1c
 
-    .line 279
+    .line 287
     :goto_2e
     invoke-static {p0}, Ljava/lang/Integer;->highestOneBit(I)I
 
@@ -84,12 +84,12 @@
 
     invoke-virtual {p2, p0}, Landroid/graphics/ImageDecoder;->setTargetSampleSize(I)V
 
-    .line 280
+    .line 288
     sget-boolean p0, Lcom/transsion/camera/utils/BitmapUtils;->sWcgSupport:Z
 
     if-eqz p0, :cond_42
 
-    .line 281
+    .line 289
     sget-object p0, Landroid/graphics/ColorSpace$Named;->DISPLAY_P3:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {p0}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -99,60 +99,6 @@
     invoke-virtual {p2, p0}, Landroid/graphics/ImageDecoder;->setTargetColorSpace(Landroid/graphics/ColorSpace;)V
 
     :cond_42
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$q9YSC94NZnqb4L6HGqLspgcHq6s(ILandroid/graphics/ImageDecoder;Landroid/graphics/ImageDecoder$ImageInfo;Landroid/graphics/ImageDecoder$Source;)V
-    .registers 6
-
-    const/4 p3, 0x1
-
-    .line 244
-    invoke-virtual {p1, p3}, Landroid/graphics/ImageDecoder;->setAllocator(I)V
-
-    .line 245
-    invoke-virtual {p2}, Landroid/graphics/ImageDecoder$ImageInfo;->getSize()Landroid/util/Size;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
-
-    move-result p2
-
-    int-to-double p2, p2
-
-    int-to-double v0, p0
-
-    div-double/2addr p2, v0
-
-    invoke-static {p2, p3}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide p2
-
-    double-to-int p0, p2
-
-    .line 246
-    invoke-static {p0}, Ljava/lang/Integer;->highestOneBit(I)I
-
-    move-result p0
-
-    invoke-virtual {p1, p0}, Landroid/graphics/ImageDecoder;->setTargetSampleSize(I)V
-
-    .line 247
-    sget-boolean p0, Lcom/transsion/camera/utils/BitmapUtils;->sWcgSupport:Z
-
-    if-eqz p0, :cond_28
-
-    .line 248
-    sget-object p0, Landroid/graphics/ColorSpace$Named;->DISPLAY_P3:Landroid/graphics/ColorSpace$Named;
-
-    invoke-static {p0}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Landroid/graphics/ImageDecoder;->setTargetColorSpace(Landroid/graphics/ColorSpace;)V
-
-    :cond_28
     return-void
 .end method
 
@@ -174,7 +120,7 @@
 .method public static bitmapToJpeg(Landroid/graphics/Bitmap;)[B
     .registers 4
 
-    .line 626
+    .line 647
     :try_start_0
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
@@ -182,7 +128,7 @@
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_5} :catch_1e
 
-    .line 627
+    .line 648
     :try_start_5
     sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -190,14 +136,14 @@
 
     invoke-virtual {p0, v1, v2, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 628
+    .line 649
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p0
     :try_end_10
     .catchall {:try_start_5 .. :try_end_10} :catchall_14
 
-    .line 629
+    .line 650
     :try_start_10
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_13
@@ -208,7 +154,7 @@
     :catchall_14
     move-exception p0
 
-    .line 626
+    .line 647
     :try_start_15
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_18
@@ -230,7 +176,7 @@
     :catch_1e
     move-exception p0
 
-    .line 630
+    .line 651
     sget-object v0, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -273,7 +219,7 @@
 
     goto/16 :goto_29f
 
-    .line 725
+    .line 746
     :cond_b
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
@@ -283,19 +229,19 @@
 
     move-result-object v10
 
-    .line 727
+    .line 748
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
-    .line 728
+    .line 749
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v17
 
     mul-int v11, v3, v17
 
-    .line 730
+    .line 751
     new-array v1, v11, [I
 
     const/4 v4, 0x0
@@ -308,7 +254,7 @@
 
     move/from16 v7, v17
 
-    .line 731
+    .line 752
     invoke-virtual/range {v0 .. v7}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
     add-int/lit8 v0, v3, -0x1
@@ -319,16 +265,16 @@
 
     add-int/lit8 v5, v4, 0x1
 
-    .line 738
+    .line 759
     new-array v6, v11, [I
 
-    .line 739
+    .line 760
     new-array v12, v11, [I
 
-    .line 740
+    .line 761
     new-array v11, v11, [I
 
-    .line 742
+    .line 763
     invoke-static {v3, v7}, Ljava/lang/Math;->max(II)I
 
     move-result v13
@@ -347,7 +293,7 @@
 
     move/from16 v16, v9
 
-    .line 746
+    .line 767
     new-array v9, v15, [I
 
     const/4 v14, 0x0
@@ -357,7 +303,7 @@
     :goto_49
     if-ge v14, v15, :cond_52
 
-    .line 748
+    .line 769
     div-int v18, v14, v4
 
     aput v18, v9, v14
@@ -369,7 +315,7 @@
     :cond_52
     const/4 v14, 0x2
 
-    .line 753
+    .line 774
     new-array v4, v14, [I
 
     const/4 v14, 0x3
@@ -432,7 +378,7 @@
 
     move/from16 v4, v17
 
-    .line 765
+    .line 786
     invoke-static {v1, v4}, Ljava/lang/Math;->max(II)I
 
     move-result v5
@@ -447,52 +393,52 @@
 
     add-int v17, v1, v8
 
-    .line 766
+    .line 787
     aget-object v34, v32, v17
 
     and-int v17, v5, v31
 
     shr-int/lit8 v17, v17, 0x10
 
-    .line 767
+    .line 788
     aput v17, v34, v4
 
     and-int v17, v5, v30
 
     shr-int/lit8 v17, v17, 0x8
 
-    .line 768
+    .line 789
     aput v17, v34, v16
 
     and-int/lit16 v5, v5, 0xff
 
     const/16 v30, 0x2
 
-    .line 769
+    .line 790
     aput v5, v34, v30
 
-    .line 770
+    .line 791
     invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
     move-result v5
 
     sub-int v5, v14, v5
 
-    .line 771
+    .line 792
     aget v31, v34, v4
 
     mul-int v4, v31, v5
 
     add-int v21, v21, v4
 
-    .line 772
+    .line 793
     aget v4, v34, v16
 
     mul-int v35, v4, v5
 
     add-int v22, v22, v35
 
-    .line 773
+    .line 794
     aget v34, v34, v30
 
     mul-int v5, v5, v34
@@ -539,17 +485,17 @@
     :goto_e6
     if-ge v1, v3, :cond_16d
 
-    .line 788
+    .line 809
     aget v5, v9, v21
 
     aput v5, v6, v18
 
-    .line 789
+    .line 810
     aget v5, v9, v22
 
     aput v5, v12, v18
 
-    .line 790
+    .line 811
     aget v5, v9, v23
 
     aput v5, v11, v18
@@ -564,26 +510,26 @@
 
     add-int v5, v5, v33
 
-    .line 797
+    .line 818
     rem-int v5, v5, v33
 
     aget-object v5, v32, v5
 
     const/16 v17, 0x0
 
-    .line 799
+    .line 820
     aget v34, v5, v17
 
     sub-int v24, v24, v34
 
-    .line 800
+    .line 821
     aget v34, v5, v16
 
     sub-int v25, v25, v34
 
     const/16 v34, 0x2
 
-    .line 801
+    .line 822
     aget v35, v5, v34
 
     sub-int v26, v26, v35
@@ -596,7 +542,7 @@
 
     add-int/lit8 v1, v34, 0x1
 
-    .line 804
+    .line 825
     invoke-static {v1, v0}, Ljava/lang/Math;->min(II)I
 
     move-result v1
@@ -608,7 +554,7 @@
     :cond_121
     move/from16 v35, v1
 
-    .line 806
+    .line 827
     :goto_123
     aget v1, v13, v35
 
@@ -622,21 +568,21 @@
 
     const/16 v17, 0x0
 
-    .line 808
+    .line 829
     aput v34, v5, v17
 
     and-int v36, v1, v30
 
     shr-int/lit8 v36, v36, 0x8
 
-    .line 809
+    .line 830
     aput v36, v5, v16
 
     and-int/lit16 v1, v1, 0xff
 
     const/16 v37, 0x2
 
-    .line 810
+    .line 831
     aput v1, v5, v37
 
     add-int v27, v27, v34
@@ -653,29 +599,29 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    .line 820
+    .line 841
     rem-int v4, v4, v33
 
-    .line 821
+    .line 842
     rem-int v1, v4, v33
 
     aget-object v1, v32, v1
 
     const/16 v17, 0x0
 
-    .line 823
+    .line 844
     aget v5, v1, v17
 
     add-int v24, v24, v5
 
-    .line 824
+    .line 845
     aget v34, v1, v16
 
     add-int v25, v25, v34
 
     const/16 v37, 0x2
 
-    .line 825
+    .line 846
     aget v1, v1, v37
 
     add-int v26, v26, v1
@@ -748,7 +694,7 @@
 
     const/4 v3, 0x0
 
-    .line 840
+    .line 861
     invoke-static {v3, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v17
@@ -757,48 +703,48 @@
 
     add-int v17, v0, v8
 
-    .line 842
+    .line 863
     aget-object v28, v32, v17
 
-    .line 844
+    .line 865
     aget v17, v6, v27
 
     aput v17, v28, v3
 
-    .line 845
+    .line 866
     aget v3, v12, v27
 
     aput v3, v28, v16
 
-    .line 846
+    .line 867
     aget v3, v11, v27
 
     const/16 v37, 0x2
 
     aput v3, v28, v37
 
-    .line 848
+    .line 869
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
     move-result v3
 
     sub-int v3, v14, v3
 
-    .line 850
+    .line 871
     aget v29, v6, v27
 
     mul-int v29, v29, v3
 
     add-int v5, v5, v29
 
-    .line 851
+    .line 872
     aget v29, v12, v27
 
     mul-int v29, v29, v3
 
     add-int v15, v15, v29
 
-    .line 852
+    .line 873
     aget v27, v11, v27
 
     mul-int v27, v27, v3
@@ -809,19 +755,19 @@
 
     const/16 v17, 0x0
 
-    .line 855
+    .line 876
     aget v3, v28, v17
 
     add-int v23, v23, v3
 
-    .line 856
+    .line 877
     aget v3, v28, v16
 
     add-int v24, v24, v3
 
     const/16 v37, 0x2
 
-    .line 857
+    .line 878
     aget v3, v28, v37
 
     add-int v25, v25, v3
@@ -833,17 +779,17 @@
 
     const/16 v37, 0x2
 
-    .line 859
+    .line 880
     aget v3, v28, v17
 
     add-int v19, v19, v3
 
-    .line 860
+    .line 881
     aget v3, v28, v16
 
     add-int v21, v21, v3
 
-    .line 861
+    .line 882
     aget v3, v28, v37
 
     add-int v22, v22, v3
@@ -874,7 +820,7 @@
 
     const/high16 v27, -0x1000000
 
-    .line 871
+    .line 892
     aget v28, v20, v1
 
     and-int v27, v28, v27
@@ -907,26 +853,26 @@
 
     add-int v27, v27, v33
 
-    .line 878
+    .line 899
     rem-int v27, v27, v33
 
     aget-object v27, v32, v27
 
     const/16 v17, 0x0
 
-    .line 880
+    .line 901
     aget v28, v27, v17
 
     sub-int v19, v19, v28
 
-    .line 881
+    .line 902
     aget v28, v27, v16
 
     sub-int v21, v21, v28
 
     const/16 v37, 0x2
 
-    .line 882
+    .line 903
     aget v28, v27, v37
 
     sub-int v22, v22, v28
@@ -937,7 +883,7 @@
 
     add-int v0, v28, v14
 
-    .line 885
+    .line 906
     invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v0
@@ -946,25 +892,25 @@
 
     aput v0, v13, v28
 
-    .line 887
+    .line 908
     :cond_243
     aget v0, v13, v28
 
     add-int/2addr v0, v4
 
-    .line 889
+    .line 910
     aget v29, v6, v0
 
     const/16 v17, 0x0
 
     aput v29, v27, v17
 
-    .line 890
+    .line 911
     aget v30, v12, v0
 
     aput v30, v27, v16
 
-    .line 891
+    .line 912
     aget v0, v11, v0
 
     const/16 v37, 0x2
@@ -985,27 +931,27 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    .line 901
+    .line 922
     rem-int v3, v3, v33
 
-    .line 902
+    .line 923
     aget-object v0, v32, v3
 
     const/16 v17, 0x0
 
-    .line 904
+    .line 925
     aget v27, v0, v17
 
     add-int v19, v19, v27
 
-    .line 905
+    .line 926
     aget v29, v0, v16
 
     add-int v21, v21, v29
 
     const/16 v37, 0x2
 
-    .line 906
+    .line 927
     aget v0, v0, v37
 
     add-int v22, v22, v0
@@ -1050,7 +996,7 @@
 
     move/from16 v13, v26
 
-    .line 915
+    .line 936
     invoke-virtual/range {v10 .. v17}, Landroid/graphics/Bitmap;->setPixels([IIIIIII)V
 
     return-object v10
@@ -1063,12 +1009,12 @@
 .method private static computeInitialSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
     .registers 11
 
-    .line 380
+    .line 388
     iget v0, p0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     int-to-double v0, v0
 
-    .line 381
+    .line 389
     iget p0, p0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     int-to-double v2, p0
@@ -1088,7 +1034,7 @@
 
     div-double/2addr v4, v6
 
-    .line 383
+    .line 391
     invoke-static {v4, v5}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v4
@@ -1111,19 +1057,19 @@
 
     div-double/2addr v0, v5
 
-    .line 385
+    .line 393
     invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v0
 
     div-double/2addr v2, v5
 
-    .line 386
+    .line 394
     invoke-static {v2, v3}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v2
 
-    .line 385
+    .line 393
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(DD)D
 
     move-result-wide v0
@@ -1155,7 +1101,7 @@
 .method private static computeSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
     .registers 3
 
-    .line 363
+    .line 371
     invoke-static {p0, p1, p2}, Lcom/transsion/camera/utils/BitmapUtils;->computeInitialSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
 
     move-result p0
@@ -1179,7 +1125,7 @@
     :cond_f
     add-int/lit8 p0, p0, 0x7
 
-    .line 372
+    .line 380
     div-int/2addr p0, p1
 
     mul-int/2addr p0, p1
@@ -1190,14 +1136,14 @@
 .method private static covertYuvDataToJpeg([BIIII)[B
     .registers 13
 
-    .line 324
+    .line 332
     new-instance v0, Landroid/graphics/Rect;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v1, v1, p2, p3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 325
+    .line 333
     new-instance v2, Landroid/graphics/YuvImage;
 
     const/4 v7, 0x0
@@ -1212,7 +1158,7 @@
 
     invoke-direct/range {v2 .. v7}, Landroid/graphics/YuvImage;-><init>([BIII[I)V
 
-    .line 326
+    .line 334
     new-instance p0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {p0}, Ljava/io/ByteArrayOutputStream;-><init>()V
@@ -1226,16 +1172,16 @@
     :cond_1b
     const/4 p1, 0x2
 
-    .line 330
+    .line 338
     invoke-static {p1}, Landroid/media/CameraProfile;->getJpegEncodingQualityParameter(I)I
 
     move-result p4
 
-    .line 334
+    .line 342
     :cond_20
     invoke-virtual {v2, v0, p4, p0}, Landroid/graphics/YuvImage;->compressToJpeg(Landroid/graphics/Rect;ILjava/io/OutputStream;)Z
 
-    .line 335
+    .line 343
     invoke-virtual {p0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object p0
@@ -1248,7 +1194,7 @@
 
     const/4 v0, 0x0
 
-    .line 340
+    .line 348
     :try_start_1
     new-instance v1, Landroid/graphics/BitmapFactory$Options;
 
@@ -1256,17 +1202,17 @@
 
     const/4 v2, 0x1
 
-    .line 341
+    .line 349
     iput-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 342
+    .line 350
     array-length v2, p0
 
     const/4 v3, 0x0
 
     invoke-static {p0, v3, v2, v1}, Landroid/graphics/BitmapFactory;->decodeByteArray([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 343
+    .line 351
     iget-boolean v2, v1, Landroid/graphics/BitmapFactory$Options;->mCancel:Z
 
     if-nez v2, :cond_3f
@@ -1283,7 +1229,7 @@
 
     goto :goto_3f
 
-    .line 346
+    .line 354
     :cond_1c
     invoke-static {v1, v4, p1}, Lcom/transsion/camera/utils/BitmapUtils;->computeSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
 
@@ -1291,23 +1237,23 @@
 
     iput p1, v1, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 347
+    .line 355
     iput-boolean v3, v1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 349
+    .line 357
     iput-boolean v3, v1, Landroid/graphics/BitmapFactory$Options;->inDither:Z
 
-    .line 350
+    .line 358
     sget-object p1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     iput-object p1, v1, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 351
+    .line 359
     sget-boolean p1, Lcom/transsion/camera/utils/BitmapUtils;->sWcgSupport:Z
 
     if-eqz p1, :cond_39
 
-    .line 352
+    .line 360
     sget-object p1, Landroid/graphics/ColorSpace$Named;->DISPLAY_P3:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {p1}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -1323,7 +1269,7 @@
 
     goto :goto_40
 
-    .line 354
+    .line 362
     :cond_39
     :goto_39
     array-length p1, p0
@@ -1340,7 +1286,7 @@
     :goto_3f
     return-object v0
 
-    .line 356
+    .line 364
     :goto_40
     sget-object p1, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1354,7 +1300,7 @@
 .method public static createBitmapFromExif(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
     .registers 1
 
-    .line 228
+    .line 236
     invoke-static {p0}, Lcom/transsion/camera/utils/ExifUtils;->createExifInterface(Ljava/io/InputStream;)Landroid/media/ExifInterface;
 
     move-result-object p0
@@ -1369,7 +1315,7 @@
 .method public static createBitmapFromExif(Ljava/lang/String;)Landroid/graphics/Bitmap;
     .registers 1
 
-    .line 224
+    .line 232
     invoke-static {p0}, Lcom/transsion/camera/utils/ExifUtils;->createExifInterface(Ljava/lang/String;)Landroid/media/ExifInterface;
 
     move-result-object p0
@@ -1384,7 +1330,7 @@
 .method public static createBitmapFromExif([B)Landroid/graphics/Bitmap;
     .registers 1
 
-    .line 220
+    .line 228
     invoke-static {p0}, Lcom/transsion/camera/utils/ExifUtils;->createExifInterface([B)Landroid/media/ExifInterface;
 
     move-result-object p0
@@ -1396,62 +1342,17 @@
     return-object p0
 .end method
 
-.method public static createBitmapFromJpeg([BI)Landroid/graphics/Bitmap;
-    .registers 3
-
-    .line 243
-    new-instance v0, Lcom/transsion/camera/utils/BitmapUtils$$ExternalSyntheticLambda1;
-
-    invoke-direct {v0, p1}, Lcom/transsion/camera/utils/BitmapUtils$$ExternalSyntheticLambda1;-><init>(I)V
-
-    .line 253
-    :try_start_5
-    invoke-static {p0}, Landroid/graphics/ImageDecoder;->createSource([B)Landroid/graphics/ImageDecoder$Source;
-
-    move-result-object p0
-
-    invoke-static {p0, v0}, Landroid/graphics/ImageDecoder;->decodeBitmap(Landroid/graphics/ImageDecoder$Source;Landroid/graphics/ImageDecoder$OnHeaderDecodedListener;)Landroid/graphics/Bitmap;
-
-    move-result-object p0
-
-    .line 254
-    sget-object p1, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    const-string v0, "[createBitmapFromJpeg] end"
-
-    invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-    :try_end_14
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_14} :catch_15
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_5 .. :try_end_14} :catch_15
-
-    return-object p0
-
-    :catch_15
-    move-exception p0
-
-    .line 257
-    sget-object p1, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
-
-    const-string v0, "[createBitmapFromJpeg] fail"
-
-    invoke-static {p1, v0, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
 .method public static createBitmapFromJpeg([BIZ)Landroid/graphics/Bitmap;
     .registers 5
 
-    .line 263
+    .line 271
     invoke-static {p0}, Lcom/transsion/camera/utils/ExifUtils;->createExifInterface([B)Landroid/media/ExifInterface;
 
     move-result-object v0
 
     if-eqz v0, :cond_b
 
-    .line 266
+    .line 274
     invoke-static {v0}, Lcom/transsion/camera/utils/ExifUtils;->getOrientationFromExif(Landroid/media/ExifInterface;)I
 
     move-result v0
@@ -1461,13 +1362,13 @@
     :cond_b
     const/4 v0, 0x0
 
-    .line 271
+    .line 279
     :goto_c
     new-instance v1, Lcom/transsion/camera/utils/BitmapUtils$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, v0, p1}, Lcom/transsion/camera/utils/BitmapUtils$$ExternalSyntheticLambda0;-><init>(II)V
 
-    .line 286
+    .line 294
     :try_start_11
     invoke-static {p0}, Landroid/graphics/ImageDecoder;->createSource([B)Landroid/graphics/ImageDecoder$Source;
 
@@ -1477,14 +1378,14 @@
 
     move-result-object p0
 
-    .line 287
+    .line 295
     sget-object p1, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string v1, "[createBitmapFromJpeg] end"
 
     invoke-static {p1, v1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 288
+    .line 296
     invoke-static {p0, v0, p2}, Lcom/transsion/camera/utils/BitmapUtils;->rotateAndMirror(Landroid/graphics/Bitmap;IZ)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -1497,7 +1398,7 @@
     :catch_25
     move-exception p0
 
-    .line 290
+    .line 298
     sget-object p1, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p2, "[createBitmapFromJpeg] fail"
@@ -1516,7 +1417,7 @@
 
     const-wide/16 v1, -0x1
 
-    .line 118
+    .line 126
     invoke-static {v0, p0, p1, v1, v2}, Lcom/transsion/camera/utils/BitmapUtils;->createBitmapFromVideo(Ljava/lang/String;Ljava/io/FileDescriptor;IJ)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -1529,7 +1430,7 @@
 
     const/4 v0, 0x0
 
-    .line 110
+    .line 118
     invoke-static {v0, p0, p1, p2, p3}, Lcom/transsion/camera/utils/BitmapUtils;->createBitmapFromVideo(Ljava/lang/String;Ljava/io/FileDescriptor;IJ)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -1544,7 +1445,7 @@
 
     const-wide/16 v1, -0x1
 
-    .line 114
+    .line 122
     invoke-static {p0, v0, p1, v1, v2}, Lcom/transsion/camera/utils/BitmapUtils;->createBitmapFromVideo(Ljava/lang/String;Ljava/io/FileDescriptor;IJ)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -1557,7 +1458,7 @@
 
     const/4 v0, 0x0
 
-    .line 106
+    .line 114
     invoke-static {p0, v0, p1, p2, p3}, Lcom/transsion/camera/utils/BitmapUtils;->createBitmapFromVideo(Ljava/lang/String;Ljava/io/FileDescriptor;IJ)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -1568,7 +1469,7 @@
 .method private static createBitmapFromVideo(Ljava/lang/String;Ljava/io/FileDescriptor;IJ)Landroid/graphics/Bitmap;
     .registers 14
 
-    .line 123
+    .line 131
     sget-object v0, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1599,7 +1500,7 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 124
+    .line 132
     new-instance v2, Landroid/media/MediaMetadataRetriever;
 
     invoke-direct {v2}, Landroid/media/MediaMetadataRetriever;-><init>()V
@@ -1608,7 +1509,7 @@
 
     if-eqz p0, :cond_3b
 
-    .line 127
+    .line 135
     :try_start_2e
     invoke-virtual {v2, p0}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/lang/String;)V
     :try_end_31
@@ -1639,11 +1540,11 @@
     :cond_3b
     if-eqz p1, :cond_118
 
-    .line 129
+    .line 137
     :try_start_3d
     invoke-virtual {v2, p1}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/io/FileDescriptor;)V
 
-    .line 133
+    .line 141
     :goto_40
     const-string p0, "[createBitmapFromVideo 1]"
 
@@ -1651,7 +1552,7 @@
 
     const/16 p0, 0x9
 
-    .line 136
+    .line 144
     invoke-virtual {v2, p0}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
 
     move-result-object p0
@@ -1681,7 +1582,7 @@
     :cond_5d
     move-wide v3, p0
 
-    .line 140
+    .line 148
     :goto_5e
     invoke-virtual {v2, v3, v4}, Landroid/media/MediaMetadataRetriever;->getFrameAtTime(J)Landroid/graphics/Bitmap;
 
@@ -1698,7 +1599,7 @@
 
     move v6, p2
 
-    .line 142
+    .line 150
     :try_start_67
     invoke-virtual/range {v2 .. v7}, Landroid/media/MediaMetadataRetriever;->getScaledFrameAtTime(JIII)Landroid/graphics/Bitmap;
 
@@ -1722,7 +1623,7 @@
     :cond_72
     move v6, p2
 
-    .line 145
+    .line 153
     :goto_73
     const-string p1, "[createBitmapFromVideo 2]"
 
@@ -1731,7 +1632,7 @@
     .catch Ljava/lang/RuntimeException; {:try_start_67 .. :try_end_78} :catch_6c
     .catchall {:try_start_67 .. :try_end_78} :catchall_32
 
-    .line 151
+    .line 159
     :try_start_78
     invoke-virtual {v2}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_7b
@@ -1744,7 +1645,7 @@
 
     move-object p1, v0
 
-    .line 153
+    .line 161
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_9a
@@ -1758,7 +1659,7 @@
 
     goto :goto_39
 
-    .line 147
+    .line 155
     :goto_86
     :try_start_86
     sget-object p2, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1767,12 +1668,12 @@
 
     invoke-static {p2, p3}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 148
+    .line 156
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
     :try_end_90
     .catchall {:try_start_86 .. :try_end_90} :catchall_32
 
-    .line 151
+    .line 159
     :try_start_90
     invoke-virtual {v2}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_93
@@ -1785,7 +1686,7 @@
 
     move-object p0, v0
 
-    .line 153
+    .line 161
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     :goto_99
@@ -1794,7 +1695,7 @@
     :goto_9a
     if-nez p0, :cond_a4
 
-    .line 157
+    .line 165
     sget-object p0, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "Video thumbnail bitmap is null !"
@@ -1803,18 +1704,18 @@
 
     return-object v1
 
-    .line 161
+    .line 169
     :cond_a4
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result p1
 
-    .line 162
+    .line 170
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result p2
 
-    .line 163
+    .line 171
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
 
     move-result p3
@@ -1831,7 +1732,7 @@
 
     mul-float/2addr p1, p4
 
-    .line 167
+    .line 175
     invoke-static {p1}, Ljava/lang/Math;->round(F)I
 
     move-result p1
@@ -1840,21 +1741,21 @@
 
     mul-float/2addr p4, p2
 
-    .line 168
+    .line 176
     invoke-static {p4}, Ljava/lang/Math;->round(F)I
 
     move-result p2
 
     const/4 p3, 0x1
 
-    .line 169
+    .line 177
     invoke-static {p0, p1, p2, p3}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
     goto :goto_e9
 
-    .line 171
+    .line 179
     :cond_c7
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -1872,24 +1773,24 @@
 
     move-result-object p1
 
-    .line 172
+    .line 180
     new-instance p2, Landroid/graphics/Paint;
 
     invoke-direct {p2}, Landroid/graphics/Paint;-><init>()V
 
-    .line 173
+    .line 181
     new-instance p3, Landroid/graphics/Canvas;
 
     invoke-direct {p3, p1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 174
+    .line 182
     new-instance p4, Landroid/graphics/Matrix;
 
     invoke-direct {p4}, Landroid/graphics/Matrix;-><init>()V
 
     invoke-virtual {p3, p0, p4, p2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    .line 176
+    .line 184
     :goto_e9
     sget-object p2, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -1897,17 +1798,17 @@
 
     invoke-static {p2, p3}, Lcom/transsion/camera/utils/debug/Log;->v(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 178
+    .line 186
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result p3
 
     if-nez p3, :cond_f9
 
-    .line 179
+    .line 187
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 182
+    .line 190
     :cond_f9
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -1927,7 +1828,7 @@
 
     return-object p1
 
-    .line 151
+    .line 159
     :goto_10e
     :try_start_10e
     invoke-virtual {v2}, Landroid/media/MediaMetadataRetriever;->release()V
@@ -1941,14 +1842,14 @@
 
     move-object p1, v0
 
-    .line 153
+    .line 161
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 155
+    .line 163
     :goto_117
     throw p0
 
-    .line 151
+    .line 159
     :cond_118
     :try_start_118
     invoke-virtual {v2}, Landroid/media/MediaMetadataRetriever;->release()V
@@ -1962,7 +1863,7 @@
 
     move-object p0, v0
 
-    .line 153
+    .line 161
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-object v1
@@ -1971,7 +1872,7 @@
 .method public static createBitmapFromYUV([BIIIIIIZ)Landroid/graphics/Bitmap;
     .registers 11
 
-    .line 298
+    .line 306
     sget-object v0, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2018,12 +1919,12 @@
 
     if-eqz p0, :cond_78
 
-    .line 302
+    .line 310
     invoke-static {p0, p1, p2, p3, p5}, Lcom/transsion/camera/utils/BitmapUtils;->covertYuvDataToJpeg([BIIII)[B
 
     move-result-object p0
 
-    .line 303
+    .line 311
     invoke-static {p2, p3}, Ljava/lang/Math;->min(II)I
 
     move-result p1
@@ -2040,25 +1941,25 @@
 
     double-to-int p1, p1
 
-    .line 304
+    .line 312
     invoke-static {p1}, Ljava/lang/Integer;->highestOneBit(I)I
 
     move-result p1
 
-    .line 305
+    .line 313
     new-instance p2, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {p2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 306
+    .line 314
     iput p1, p2, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 307
+    .line 315
     sget-boolean p1, Lcom/transsion/camera/utils/BitmapUtils;->sWcgSupport:Z
 
     if-eqz p1, :cond_60
 
-    .line 308
+    .line 316
     sget-object p1, Landroid/graphics/ColorSpace$Named;->DISPLAY_P3:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {p1}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -2067,7 +1968,7 @@
 
     iput-object p1, p2, Landroid/graphics/BitmapFactory$Options;->inPreferredColorSpace:Landroid/graphics/ColorSpace;
 
-    .line 311
+    .line 319
     :cond_60
     :try_start_60
     array-length p1, p0
@@ -2078,12 +1979,12 @@
 
     move-result-object p0
 
-    .line 312
+    .line 320
     const-string p1, "[createBitmapFromYuv] end"
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 313
+    .line 321
     invoke-static {p0, p6, p7}, Lcom/transsion/camera/utils/BitmapUtils;->rotateAndMirror(Landroid/graphics/Bitmap;IZ)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -2095,7 +1996,7 @@
     :catch_70
     move-exception p0
 
-    .line 315
+    .line 323
     sget-object p1, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p2, "createBitmapFromYuv fail"
@@ -2111,7 +2012,7 @@
 
     const/4 v0, 0x0
 
-    .line 191
+    .line 199
     invoke-static {v0, p0, p1}, Lcom/transsion/camera/utils/BitmapUtils;->createScaledBitmapFromVideo(Ljava/lang/String;Ljava/io/FileDescriptor;I)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -2124,7 +2025,7 @@
 
     const/4 v0, 0x0
 
-    .line 187
+    .line 195
     invoke-static {p0, v0, p1}, Lcom/transsion/camera/utils/BitmapUtils;->createScaledBitmapFromVideo(Ljava/lang/String;Ljava/io/FileDescriptor;I)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -2135,12 +2036,12 @@
 .method private static createScaledBitmapFromVideo(Ljava/lang/String;Ljava/io/FileDescriptor;I)Landroid/graphics/Bitmap;
     .registers 11
 
-    .line 195
+    .line 203
     new-instance v1, Landroid/media/MediaMetadataRetriever;
 
     invoke-direct {v1}, Landroid/media/MediaMetadataRetriever;-><init>()V
 
-    .line 196
+    .line 204
     sget-object v0, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2175,7 +2076,7 @@
 
     if-eqz p0, :cond_38
 
-    .line 199
+    .line 207
     :try_start_2e
     invoke-virtual {v1, p0}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/lang/String;)V
 
@@ -2198,7 +2099,7 @@
     :cond_38
     if-eqz p1, :cond_67
 
-    .line 201
+    .line 209
     invoke-virtual {v1, p1}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/io/FileDescriptor;)V
 
     :goto_3d
@@ -2210,7 +2111,7 @@
 
     move v5, p2
 
-    .line 205
+    .line 213
     invoke-virtual/range {v1 .. v6}, Landroid/media/MediaMetadataRetriever;->getScaledFrameAtTime(JIII)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -2218,7 +2119,7 @@
     .catch Ljava/lang/RuntimeException; {:try_start_2e .. :try_end_46} :catch_35
     .catchall {:try_start_2e .. :try_end_46} :catchall_32
 
-    .line 211
+    .line 219
     :try_start_46
     invoke-virtual {v1}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_49
@@ -2231,19 +2132,19 @@
 
     move-object p1, v0
 
-    .line 213
+    .line 221
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-object p0
 
-    .line 208
+    .line 216
     :goto_50
     :try_start_50
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
     :try_end_53
     .catchall {:try_start_50 .. :try_end_53} :catchall_32
 
-    .line 211
+    .line 219
     :try_start_53
     invoke-virtual {v1}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_56
@@ -2256,13 +2157,13 @@
 
     move-object p0, v0
 
-    .line 213
+    .line 221
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     :goto_5c
     return-object v7
 
-    .line 211
+    .line 219
     :goto_5d
     :try_start_5d
     invoke-virtual {v1}, Landroid/media/MediaMetadataRetriever;->release()V
@@ -2276,14 +2177,14 @@
 
     move-object p1, v0
 
-    .line 213
+    .line 221
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 215
+    .line 223
     :goto_66
     throw p0
 
-    .line 211
+    .line 219
     :cond_67
     :try_start_67
     invoke-virtual {v1}, Landroid/media/MediaMetadataRetriever;->release()V
@@ -2297,7 +2198,7 @@
 
     move-object p0, v0
 
-    .line 213
+    .line 221
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-object v7
@@ -2306,7 +2207,7 @@
 .method public static decodeBitmap(I)Landroid/graphics/Bitmap;
     .registers 2
 
-    .line 664
+    .line 685
     sget-object v0, Lcom/transsion/camera/app_info/AppInfo;->app:Landroid/app/Application;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2323,7 +2224,7 @@
 .method public static decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
     .registers 1
 
-    .line 660
+    .line 681
     invoke-static {p0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -2356,7 +2257,7 @@
     :goto_d
     if-ge v7, v0, :cond_7c
 
-    .line 434
+    .line 442
     aget v8, p1, v6
 
     const/high16 v9, 0xff0000
@@ -2440,10 +2341,10 @@
     :goto_52
     int-to-byte v10, v12
 
-    .line 447
+    .line 455
     aput-byte v10, p0, v5
 
-    .line 448
+    .line 456
     rem-int/lit8 v5, v4, 0x2
 
     if-nez v5, :cond_76
@@ -2469,7 +2370,7 @@
     :goto_66
     int-to-byte v8, v8
 
-    .line 449
+    .line 457
     aput-byte v8, p0, v2
 
     add-int/lit8 v2, v2, 0x2
@@ -2491,7 +2392,7 @@
     :goto_73
     int-to-byte v8, v11
 
-    .line 450
+    .line 458
     aput-byte v8, p0, v5
 
     :cond_76
@@ -2515,7 +2416,7 @@
 .method public static getAlpha(Landroid/graphics/Bitmap;)[B
     .registers 11
 
-    .line 458
+    .line 466
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
@@ -2528,7 +2429,7 @@
 
     new-array v2, v0, [I
 
-    .line 459
+    .line 467
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v1
@@ -2541,7 +2442,7 @@
 
     new-array v9, v1, [B
 
-    .line 460
+    .line 468
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v4
@@ -2569,7 +2470,7 @@
     :goto_2a
     if-ge p0, v0, :cond_42
 
-    .line 463
+    .line 471
     aget v1, v2, p0
 
     ushr-int/lit8 v1, v1, 0x18
@@ -2580,7 +2481,7 @@
 
     int-to-byte v1, v1
 
-    .line 465
+    .line 473
     aput-byte v1, v9, p0
 
     goto :goto_3f
@@ -2592,7 +2493,7 @@
 
     int-to-byte v1, v1
 
-    .line 467
+    .line 475
     aput-byte v1, v9, p0
 
     :goto_3f
@@ -2607,12 +2508,12 @@
 .method public static getColorSpace()Landroid/graphics/ColorSpace;
     .registers 1
 
-    .line 668
+    .line 689
     sget-boolean v0, Lcom/transsion/camera/utils/BitmapUtils;->sWcgSupport:Z
 
     if-eqz v0, :cond_b
 
-    .line 669
+    .line 690
     sget-object v0, Landroid/graphics/ColorSpace$Named;->DISPLAY_P3:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {v0}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -2621,7 +2522,7 @@
 
     return-object v0
 
-    .line 671
+    .line 692
     :cond_b
     sget-object v0, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
 
@@ -2637,7 +2538,7 @@
 
     mul-int v0, p0, p1
 
-    .line 411
+    .line 419
     new-array v2, v0, [I
 
     const/4 v5, 0x0
@@ -2654,7 +2555,7 @@
 
     move-object v1, p2
 
-    .line 412
+    .line 420
     invoke-virtual/range {v1 .. v8}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
     int-to-float p0, v8
@@ -2665,7 +2566,7 @@
 
     float-to-double v5, p0
 
-    .line 413
+    .line 421
     invoke-static {v5, v6}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v5
@@ -2692,47 +2593,105 @@
 
     new-array p0, v0, [B
 
-    .line 414
+    .line 422
     invoke-static {p0, v2, v4, v8}, Lcom/transsion/camera/utils/BitmapUtils;->encodeYUV420SP([B[III)V
 
     return-object p0
 .end method
 
 .method public static getTargetBitmap(Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
-    .registers 9
-
-    .line 489
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    .line 490
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v4
-
-    .line 491
-    new-instance v5, Landroid/graphics/Matrix;
-
-    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
-
-    .line 492
-    invoke-virtual {v5, p1, p1}, Landroid/graphics/Matrix;->postScale(FF)Z
-
-    const/4 v2, 0x0
-
-    const/4 v6, 0x1
+    .registers 11
 
     const/4 v1, 0x0
 
-    move-object v0, p0
+    if-eqz p0, :cond_40
 
-    .line 493
-    invoke-static/range {v0 .. v6}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
+    .line 497
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRecycled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    goto :goto_40
+
+    .line 502
+    :cond_a
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v5
+
+    .line 503
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v6
+
+    .line 504
+    new-instance v7, Landroid/graphics/Matrix;
+
+    invoke-direct {v7}, Landroid/graphics/Matrix;-><init>()V
+
+    .line 505
+    invoke-virtual {v7, p1, p1}, Landroid/graphics/Matrix;->postScale(FF)Z
+
+    const/4 v4, 0x0
+
+    const/4 v8, 0x1
+
+    const/4 v3, 0x0
+
+    move-object v2, p0
+
+    .line 507
+    :try_start_1e
+    invoke-static/range {v2 .. v8}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
+
+    move-result-object p0
+    :try_end_22
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1e .. :try_end_22} :catch_23
+
+    return-object p0
+
+    :catch_23
+    move-exception v0
+
+    move-object p0, v0
+
+    .line 509
+    sget-object p1, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "getTargetBitmap failed: "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object p0
 
-    return-object p0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    return-object v1
+
+    .line 498
+    :cond_40
+    :goto_40
+    sget-object p0, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+
+    const-string p1, "getTargetBitmap failed: Source bitmap is null or recycled"
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    return-object v1
 .end method
 
 .method private static getThumbnailFromExif(Landroid/media/ExifInterface;)Landroid/graphics/Bitmap;
@@ -2740,26 +2699,26 @@
 
     if-eqz p0, :cond_17
 
-    .line 232
+    .line 240
     invoke-virtual {p0}, Landroid/media/ExifInterface;->hasThumbnail()Z
 
     move-result v0
 
     if-eqz v0, :cond_17
 
-    .line 233
+    .line 241
     invoke-virtual {p0}, Landroid/media/ExifInterface;->getThumbnailBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     if-eqz v0, :cond_17
 
-    .line 235
+    .line 243
     invoke-static {p0}, Lcom/transsion/camera/utils/ExifUtils;->getOrientationFromExif(Landroid/media/ExifInterface;)I
 
     move-result p0
 
-    .line 236
+    .line 244
     invoke-static {v0, p0}, Lcom/transsion/camera/utils/BitmapUtils;->rotateBitmap(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -2790,7 +2749,7 @@
 
     const/4 v0, 0x4
 
-    .line 474
+    .line 482
     new-array v1, v0, [B
 
     const/4 v2, 0x0
@@ -2804,7 +2763,7 @@
 
     int-to-byte v3, v3
 
-    .line 476
+    .line 484
     aput-byte v3, v1, v2
 
     add-int/lit8 v2, v2, 0x1
@@ -2815,10 +2774,19 @@
     return-object v1
 .end method
 
+.method public static isWcgSupportEnabled()Z
+    .registers 1
+
+    .line 69
+    sget-boolean v0, Lcom/transsion/camera/utils/BitmapUtils;->sWcgSupport:Z
+
+    return v0
+.end method
+
 .method public static mergeBytes([B[B)[B
     .registers 5
 
-    .line 482
+    .line 490
     array-length v0, p0
 
     array-length v1, p1
@@ -2827,14 +2795,14 @@
 
     new-array v0, v0, [B
 
-    .line 483
+    .line 491
     array-length v1, p0
 
     const/4 v2, 0x0
 
     invoke-static {p0, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 484
+    .line 492
     array-length p0, p0
 
     array-length v1, p1
@@ -2847,7 +2815,7 @@
 .method public static montageBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
     .registers 13
 
-    .line 584
+    .line 605
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v0
@@ -2866,7 +2834,7 @@
 
     goto/16 :goto_ff
 
-    .line 588
+    .line 609
     :cond_11
     sget-object v0, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -2908,7 +2876,7 @@
 
     invoke-static {v0, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 589
+    .line 610
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -2945,12 +2913,12 @@
 
     invoke-static {v0, v3}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 591
+    .line 612
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
 
-    .line 592
+    .line 613
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v5
@@ -2959,7 +2927,7 @@
 
     if-eq v5, v3, :cond_df
 
-    .line 594
+    .line 615
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v5
@@ -2972,7 +2940,7 @@
 
     div-int/2addr v5, v7
 
-    .line 595
+    .line 616
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v7
@@ -2985,12 +2953,12 @@
 
     move-result-object v7
 
-    .line 596
+    .line 617
     new-instance v8, Landroid/graphics/Canvas;
 
     invoke-direct {v8, v7}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 597
+    .line 618
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -3027,7 +2995,7 @@
 
     invoke-static {v0, v4}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 598
+    .line 619
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v4
@@ -3042,16 +3010,16 @@
 
     goto :goto_db
 
-    .line 602
+    .line 623
     :cond_cb
     invoke-static {p1, v3, v5}, Lcom/transsion/camera/utils/BitmapUtils;->resizeBitmap(Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    .line 603
+    .line 624
     invoke-virtual {v8, p0, v6, v6, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 604
+    .line 625
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result p0
@@ -3062,14 +3030,14 @@
 
     return-object v7
 
-    .line 599
+    .line 620
     :cond_db
     :goto_db
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->w(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-object v2
 
-    .line 607
+    .line 628
     :cond_df
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
@@ -3087,15 +3055,15 @@
 
     move-result-object v0
 
-    .line 608
+    .line 629
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 609
+    .line 630
     invoke-virtual {v1, p0, v6, v6, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 610
+    .line 631
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result p0
@@ -3106,7 +3074,7 @@
 
     return-object v0
 
-    .line 585
+    .line 606
     :cond_ff
     :goto_ff
     sget-object p0, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -3123,18 +3091,18 @@
 
     goto :goto_2f
 
-    .line 564
+    .line 585
     :cond_3
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 566
+    .line 587
     instance-of v1, v0, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v1, :cond_1d
 
-    .line 567
+    .line 588
     move-object v1, v0
 
     check-cast v1, Landroid/graphics/drawable/BitmapDrawable;
@@ -3145,17 +3113,17 @@
 
     if-eqz v1, :cond_1d
 
-    .line 568
+    .line 589
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v2
 
     if-nez v2, :cond_1d
 
-    .line 569
+    .line 590
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 572
+    .line 593
     :cond_1d
     instance-of v1, v0, Landroid/graphics/drawable/VectorDrawable;
 
@@ -3165,19 +3133,19 @@
 
     const/4 v1, 0x0
 
-    .line 573
+    .line 594
     invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_2a
 
-    .line 575
+    .line 596
     :cond_27
     invoke-virtual {p0, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :goto_2a
     if-eqz v0, :cond_2f
 
-    .line 579
+    .line 600
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
     :cond_2f
@@ -3190,21 +3158,21 @@
 
     if-eqz p0, :cond_11
 
-    .line 713
+    .line 734
     invoke-virtual {p0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object p0
 
     if-eqz p0, :cond_11
 
-    .line 714
+    .line 735
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v0
 
     if-nez v0, :cond_11
 
-    .line 715
+    .line 736
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_11
@@ -3216,7 +3184,7 @@
 
     int-to-float p1, p1
 
-    .line 617
+    .line 638
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
@@ -3227,7 +3195,7 @@
 
     int-to-float p2, p2
 
-    .line 618
+    .line 639
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v0
@@ -3236,15 +3204,15 @@
 
     div-float/2addr p2, v0
 
-    .line 619
+    .line 640
     new-instance v5, Landroid/graphics/Matrix;
 
     invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 620
+    .line 641
     invoke-virtual {v5, p1, p2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 621
+    .line 642
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v3
@@ -3286,14 +3254,14 @@
     :goto_8
     if-eqz p0, :cond_5
 
-    .line 69
+    .line 77
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v0
 
     if-nez v0, :cond_5
 
-    .line 70
+    .line 78
     new-instance v6, Landroid/graphics/Matrix;
 
     invoke-direct {v6}, Landroid/graphics/Matrix;-><init>()V
@@ -3302,7 +3270,7 @@
 
     add-int/lit16 p1, p1, 0x168
 
-    .line 74
+    .line 82
     rem-int/lit16 p1, p1, 0x168
 
     const/4 p2, 0x0
@@ -3330,7 +3298,7 @@
 
     goto :goto_47
 
-    .line 82
+    .line 90
     :cond_30
     sget-object p2, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3352,12 +3320,12 @@
 
     goto :goto_5e
 
-    .line 79
+    .line 87
     :cond_47
     :goto_47
     invoke-virtual {v6, v1, v0}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 80
+    .line 88
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v0
@@ -3368,12 +3336,12 @@
 
     goto :goto_5e
 
-    .line 76
+    .line 84
     :cond_53
     :goto_53
     invoke-virtual {v6, v0, v1}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 77
+    .line 85
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
@@ -3386,14 +3354,14 @@
     :goto_5e
     if-eqz p1, :cond_77
 
-    .line 85
+    .line 93
     rem-int/lit8 p2, p1, 0x5a
 
     if-nez p2, :cond_77
 
     int-to-float p1, p1
 
-    .line 87
+    .line 95
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result p2
@@ -3416,7 +3384,7 @@
 
     goto :goto_8d
 
-    .line 89
+    .line 97
     :cond_77
     sget-object p2, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3436,7 +3404,7 @@
 
     invoke-static {p2, p1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 93
+    .line 101
     :goto_8d
     :try_start_8d
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
@@ -3465,7 +3433,7 @@
 
     if-eq v1, p0, :cond_a6
 
-    .line 95
+    .line 103
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_a2
     .catch Ljava/lang/OutOfMemoryError; {:try_start_99 .. :try_end_a2} :catch_a3
@@ -3491,7 +3459,7 @@
 
     goto :goto_a4
 
-    .line 99
+    .line 107
     :goto_aa
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
@@ -3504,7 +3472,7 @@
 
     const/4 v0, 0x0
 
-    .line 65
+    .line 73
     invoke-static {p0, p1, v0}, Lcom/transsion/camera/utils/BitmapUtils;->rotateAndMirror(Landroid/graphics/Bitmap;IZ)Landroid/graphics/Bitmap;
 
     move-result-object p0
@@ -3517,7 +3485,7 @@
 
     if-nez p1, :cond_a
 
-    .line 677
+    .line 698
     sget-object p0, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     const-string p1, "bm is null"
@@ -3526,7 +3494,7 @@
 
     return-void
 
-    .line 681
+    .line 702
     :cond_a
     sget-object v0, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
@@ -3534,12 +3502,12 @@
 
     invoke-static {v0, v1}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 682
+    .line 703
     invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
     move-result-object v1
 
-    .line 683
+    .line 704
     new-instance v2, Ljava/io/File;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -3562,17 +3530,17 @@
 
     invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 684
+    .line 705
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v1
 
     if-nez v1, :cond_38
 
-    .line 685
+    .line 706
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
 
-    .line 688
+    .line 709
     :cond_38
     new-instance v1, Ljava/text/SimpleDateFormat;
 
@@ -3580,7 +3548,7 @@
 
     invoke-direct {v1, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 689
+    .line 710
     new-instance v3, Ljava/util/Date;
 
     invoke-direct {v3}, Ljava/util/Date;-><init>()V
@@ -3589,7 +3557,7 @@
 
     move-result-object v1
 
-    .line 691
+    .line 712
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3614,31 +3582,31 @@
 
     move-result-object v1
 
-    .line 694
+    .line 715
     :try_start_65
     new-instance v2, Ljava/io/File;
 
     invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 695
+    .line 716
     new-instance v3, Ljava/io/FileOutputStream;
 
     invoke-direct {v3, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 696
+    .line 717
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v4, 0x64
 
     invoke-virtual {p1, v2, v4, v3}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 697
+    .line 718
     invoke-virtual {v3}, Ljava/io/OutputStream;->flush()V
 
-    .line 698
+    .line 719
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
 
-    .line 699
+    .line 720
     const-string p1, "\u5df2\u7ecf\u4fdd\u5b58"
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
@@ -3658,17 +3626,17 @@
 
     goto :goto_8a
 
-    .line 706
+    .line 727
     :goto_86
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_96
 
-    .line 702
+    .line 723
     :goto_8a
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 703
+    .line 724
     sget-object v0, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -3677,7 +3645,7 @@
 
     invoke-static {v0, p1}, Lcom/transsion/camera/utils/debug/Log;->i(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
-    .line 708
+    .line 729
     :goto_96
     filled-new-array {v1}, [Ljava/lang/String;
 
@@ -3699,7 +3667,7 @@
 
     return-object v0
 
-    .line 500
+    .line 518
     :cond_4
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRecycled()Z
 
@@ -3709,112 +3677,117 @@
 
     return-object v0
 
-    .line 503
+    .line 521
     :cond_b
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v1
 
-    const/high16 v2, 0x3f400000    # 0.75f
+    const/high16 v3, 0x3f400000    # 0.75f
 
-    cmpl-float v2, p1, v2
+    cmpl-float v3, p1, v3
 
-    if-lez v2, :cond_1a
+    if-lez v3, :cond_1a
 
-    .line 505
+    .line 523
     invoke-static {p0, p1}, Lcom/transsion/camera/utils/BitmapUtils;->getTargetBitmap(Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
 
     move-result-object p0
 
     return-object p0
 
-    .line 507
+    .line 525
     :cond_1a
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v2
+    move-result v3
 
-    const/high16 v3, 0x3f000000    # 0.5f
+    const/high16 v4, 0x3f000000    # 0.5f
 
-    .line 510
-    invoke-static {p0, v3}, Lcom/transsion/camera/utils/BitmapUtils;->getTargetBitmap(Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
-
-    move-result-object p0
-
-    .line 511
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    int-to-float v2, v2
-
-    div-float/2addr v4, v2
-
-    :cond_2b
-    :goto_2b
-    cmpl-float v4, v4, p1
-
-    if-lez v4, :cond_46
-
-    .line 513
-    invoke-static {p0, v3}, Lcom/transsion/camera/utils/BitmapUtils;->getTargetBitmap(Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
+    .line 528
+    invoke-static {p0, v4}, Lcom/transsion/camera/utils/BitmapUtils;->getTargetBitmap(Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
 
     move-result-object p0
 
-    .line 514
+    if-eqz p0, :cond_69
+
+    .line 530
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v4
+    move-result v0
 
-    int-to-float v4, v4
+    int-to-float v0, v0
 
-    div-float/2addr v4, v2
+    int-to-float v3, v3
 
-    mul-float v5, v4, v3
+    div-float/2addr v0, v3
+
+    :cond_2d
+    :goto_2d
+    cmpl-float v0, v0, p1
+
+    if-lez v0, :cond_48
+
+    .line 532
+    invoke-static {p0, v4}, Lcom/transsion/camera/utils/BitmapUtils;->getTargetBitmap(Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
+
+    move-result-object p0
+
+    .line 533
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    div-float/2addr v0, v3
+
+    mul-float v5, v0, v4
 
     cmpg-float v5, v5, p1
 
-    if-gez v5, :cond_2b
+    if-gez v5, :cond_2d
 
-    div-float v3, p1, v4
+    div-float v4, p1, v0
 
     const v5, 0x3c23d70a    # 0.01f
 
-    sub-float/2addr v3, v5
+    sub-float/2addr v4, v5
 
-    goto :goto_2b
+    goto :goto_2d
 
-    .line 519
-    :cond_46
+    .line 538
+    :cond_48
     sget-object p1, Lcom/transsion/camera/utils/BitmapUtils;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v3, "scaleDownBitmapLinearAntiAlias "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    sub-long/2addr v3, v0
+    sub-long/2addr v3, v1
 
-    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v0, "ms"
+    const-string v1, "ms"
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
     return-object p0
+
+    :cond_69
+    return-object v0
 .end method
